@@ -10,7 +10,7 @@
     SearchUIForceTouchGestureRecognizer * _forceTouchRecognizer;
     NUIContainerStackView * _innerContainer;
     SFSearchResult * _result;
-    SearchUIThumbnailView * _thumbnailView;
+    SearchUIImageView * _thumbnailView;
 }
 
 @property (retain) SearchUIAccessoryViewController *accessoryViewControllerForResult;
@@ -25,7 +25,7 @@
 @property (retain) SFSearchResult *result;
 @property (retain) NUIContainerStackView *sizingContainer;
 @property (readonly) Class superclass;
-@property (retain) SearchUIThumbnailView *thumbnailView;
+@property (retain) SearchUIImageView *thumbnailView;
 
 + (void)addViewIfNecessary:(id)arg1 toStackView:(id)arg2 removeFromStackView:(id)arg3;
 + (id)textForTitleText:(id)arg1;

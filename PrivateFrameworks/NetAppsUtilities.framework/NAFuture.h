@@ -3,10 +3,12 @@
  */
 
 @interface NAFuture : NSObject <NAPromise> {
-    NSObject<OS_dispatch_queue> * _accessQueue;
     NSMutableArray * _completionBlocks;
     NSString * _descriptor;
     bool  _finished;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     NSError * _resultError;
     id  _resultValue;
 }

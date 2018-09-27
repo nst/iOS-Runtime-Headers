@@ -10,14 +10,15 @@
     bool  _coalescingRequests;
     NSMutableDictionary * _coelscingTransactionPackets;
     double  _invalidatationTimestamp;
+    NSDate * _lastReceivedCommandDate;
     MRNowPlayingArtwork * _nowPlayingArtwork;
     NSDictionary * _nowPlayingInfo;
     _MRPlaybackQueueProtobuf * _playbackQueue;
-    MRPlaybackQueuePlayerClient * _playbackQueueClient;
     unsigned int  _playbackState;
     double  _playbackStateSetToPlayTimestamp;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
+    MRPlaybackQueueSubscriptionController * _subscriptionController;
     NSArray * _supportedCommands;
     NSMutableArray * _transactionSources;
     bool  _triggerInvalidation;
@@ -25,14 +26,15 @@
 
 @property (nonatomic) unsigned long long capabilities;
 @property (nonatomic, readonly) MRNowPlayingPlayerClientCallbacks *clientCallbacks;
+@property (nonatomic, readonly) bool hasReceivedCommandRecently;
 @property (nonatomic) double invalidatationTimestamp;
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
 @property (nonatomic, readonly) _MRContentItemProtobuf *nowPlayingContentItem;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
-@property (nonatomic, readonly) MRPlaybackQueuePlayerClient *playbackQueueClient;
 @property (nonatomic) unsigned int playbackState;
 @property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
+@property (nonatomic, readonly) MRPlaybackQueueSubscriptionController *subscriptionController;
 @property (nonatomic, copy) NSArray *supportedCommands;
 
 - (void).cxx_destruct;
@@ -40,20 +42,20 @@
 - (void)_onQueue_sendTransaction:(unsigned long long)arg1 withPackets:(id)arg2;
 - (void)addPendingRequest:(id)arg1;
 - (void)beginSendingTransactions;
-- (void)cacheContentItemUpdates:(id)arg1;
+- (void)cacheContentItemChangesForPendingRequests:(id)arg1;
 - (unsigned long long)capabilities;
 - (void)clearCachedContentItemArtworkForItems:(id)arg1;
 - (id)clientCallbacks;
 - (id)debugDescription;
 - (id)description;
 - (void)endSendingTransactions;
+- (bool)hasReceivedCommandRecently;
 - (id)initWithPlayerPath:(id)arg1;
 - (double)invalidatationTimestamp;
 - (id)nowPlayingArtwork;
 - (id)nowPlayingContentItem;
 - (id)nowPlayingInfo;
 - (id)playbackQueue;
-- (id)playbackQueueClient;
 - (unsigned int)playbackState;
 - (id)playerPath;
 - (void)preProcessChangePlaybackRateCommandWithOptions:(id)arg1;
@@ -69,6 +71,7 @@
 - (void)setPlayerPath:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)startCachingContentItemUpdatesForItem:(id)arg1 forPendingRequest:(id)arg2;
+- (id)subscriptionController;
 - (id)supportedCommands;
 - (bool)testAndSetCoalescingInvalidations;
 - (bool)testAndSetCoalescingRequests;

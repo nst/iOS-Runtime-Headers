@@ -2,16 +2,28 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKTickNodeFactory : NSObject
+@interface NTKTickNodeFactory : NSObject {
+    CLKDevice * _device;
+    NSDictionary * _imagesDictionary;
+    SKTexture * _tickTexture;
+    SKTextureAtlas * _tickTextureAtlas;
+}
 
-+ (id)_shaderCache;
-+ (id)_shaderWithTickWidth:(double)arg1 filterWidth:(double)arg2;
-+ (id)_tickTexture;
-+ (void)colorizeTicks:(id)arg1 baseColor:(id)arg2 accentColor:(id)arg3 baseAlpha:(double)arg4 accentAlpha:(double)arg5 accentModulo:(long long)arg6;
-+ (id)imagesDictionary;
-+ (void)layoutNodes:(id)arg1 offset:(unsigned long long)arg2 center:(struct CGPoint { double x1; double x2; })arg3 radius:(double)arg4 angleMultiplier:(double)arg5 scale:(double)arg6 rotate:(bool)arg7 round:(bool)arg8;
-+ (void)setBackgroundColor:(id)arg1 onTicks:(id)arg2;
-+ (id)textureAtlas;
-+ (id)ticks:(unsigned int)arg1 center:(struct CGPoint { double x1; double x2; })arg2 radius:(double)arg3 color1:(id)arg4 color2:(id)arg5 smallSize:(struct CGSize { double x1; double x2; })arg6 largeSize:(struct CGSize { double x1; double x2; })arg7 smallFilterWidth:(double)arg8 largeFilterWidth:(double)arg9 l1mod:(unsigned int)arg10 l2mod:(unsigned int)arg11;
++ (void)_deallocInstance;
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_asyncDeallocInstance;
+- (id)_shaderCacheForDevice:(id)arg1;
+- (id)_shaderWithTickWidth:(double)arg1 filterWidth:(double)arg2 forDevice:(id)arg3;
+- (id)_tickTextureForDevice:(id)arg1;
+- (void)colorizeTicks:(id)arg1 baseColor:(id)arg2 accentColor:(id)arg3 baseAlpha:(double)arg4 accentAlpha:(double)arg5 accentModulo:(long long)arg6;
+- (void)dealloc;
+- (id)imagesDictionaryForDevice:(id)arg1;
+- (id)init;
+- (void)layoutNodes:(id)arg1 forDevice:(id)arg2 offset:(unsigned long long)arg3 center:(struct CGPoint { double x1; double x2; })arg4 radius:(double)arg5 angleMultiplier:(double)arg6 scale:(double)arg7 rotate:(bool)arg8 round:(bool)arg9;
+- (void)setBackgroundColor:(id)arg1 onTicks:(id)arg2;
+- (id)textureAtlasForDevice:(id)arg1;
+- (id)ticks:(unsigned int)arg1 forDevice:(id)arg2 center:(struct CGPoint { double x1; double x2; })arg3 radius:(double)arg4 color1:(id)arg5 color2:(id)arg6 smallSize:(struct CGSize { double x1; double x2; })arg7 largeSize:(struct CGSize { double x1; double x2; })arg8 smallFilterWidth:(double)arg9 largeFilterWidth:(double)arg10 l1mod:(unsigned int)arg11 l2mod:(unsigned int)arg12;
 
 @end

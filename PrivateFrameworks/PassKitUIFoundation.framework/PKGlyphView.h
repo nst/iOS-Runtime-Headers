@@ -3,7 +3,7 @@
  */
 
 @interface PKGlyphView : UIView <LAUIPearlGlyphViewDelegate, PKFingerprintGlyphViewDelegate> {
-    PKCheckGlyphLayer * _checkLayer;
+    LAUICheckmarkLayer * _checkLayer;
     long long  _colorMode;
     struct CGImage { } * _customImage;
     struct UIEdgeInsets { 
@@ -15,6 +15,7 @@
     CALayer * _customImageLayer;
     <PKGlyphViewDelegate> * _delegate;
     PKFingerprintGlyphView * _fingerprintView;
+    NSObject<OS_dispatch_group> * _lastAnimationGroup;
     double  _lastAnimationWillFinish;
     struct { 
         unsigned int showingPhone : 1; 
@@ -35,8 +36,10 @@
     NSMutableArray * _transitionCompletionHandlers;
     unsigned long long  _transitionIndex;
     bool  _transitioning;
+    bool  _transitioningAnimated;
     PKMicaLayer * _userIntentArrowLayer;
-    PKMicaLayer * _userIntentPhoneLayer;
+    PKMicaLayer * _userIntentDeviceLayer;
+    CALayer * _userIntentLayer;
 }
 
 @property (nonatomic, readonly) long long colorMode;
@@ -52,15 +55,16 @@
 @property (readonly) Class superclass;
 
 + (bool)automaticallyNotifiesObserversOfState;
++ (id)sharedStaticResources;
 
 - (void).cxx_destruct;
 - (void)_applyColorMode:(bool)arg1;
 - (void)_endPhoneWiggle;
 - (void)_executeAfterMinimumAnimationDurationForStateTransition:(id /* block */)arg1;
+- (void)_executeAfterMinimumAnimationDurationForStateTransitionWithDelayRatio:(double)arg1 handler:(id /* block */)arg2;
 - (void)_executeTransitionCompletionHandlers:(bool)arg1;
 - (void)_finishTransitionForIndex:(unsigned long long)arg1;
 - (void)_layoutContentLayer:(id)arg1;
-- (double)_minimumAnimationDurationForStateTransition;
 - (void)_performTransitionWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (struct CGPoint { double x1; double x2; })_phonePositionDeltaWhileShownFromRotationPercentage:(double)arg1 toPercentage:(double)arg2;
 - (struct CGPoint { double x1; double x2; })_phonePositionWhileShownWithRotationPercentage:(double)arg1;
@@ -71,7 +75,7 @@
 - (void)_setRecognizedIfNecessaryWithTransitionIndex:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)_setSecondaryColor:(struct UIColor { Class x1; }*)arg1 animated:(bool)arg2;
 - (void)_startPhoneWiggle;
-- (void)_updateCheckViewStateAnimated:(bool)arg1;
+- (void)_updateCheckViewStateAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_updateCustomImageLayerOpacityAnimated:(bool)arg1;
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)_updatePhoneLayoutWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
@@ -83,6 +87,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customImageAlignmentEdgeInsets;
 - (void)dealloc;
 - (id)delegate;
+- (void)didMoveToWindow;
 - (bool)fadeOnRecognized;
 - (void)fingerprintGlyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -98,6 +103,7 @@
 - (void)setState:(long long)arg1;
 - (void)setState:(long long)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (long long)state;
+- (void)tintColorDidChange;
 - (void)updateRasterizationScale:(double)arg1;
 
 @end

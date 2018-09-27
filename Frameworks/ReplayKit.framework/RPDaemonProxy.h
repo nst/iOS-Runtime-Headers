@@ -29,6 +29,7 @@
 - (oneway void)getSystemBroadcastExtensionInfo:(id /* block */)arg1;
 - (id)init;
 - (oneway void)pauseRecording;
+- (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)recordingLockInterrupted:(id)arg1;
 - (oneway void)recordingTimerDidUpdate:(id)arg1;
 - (oneway void)reportCameraUsage:(int)arg1;
@@ -42,13 +43,13 @@
 - (oneway void)setMicrophoneEnabledPersistent:(bool)arg1;
 - (oneway void)setupBroadcastWithHostBundleID:(id)arg1 broadcastExtensionBundleID:(id)arg2 broadcastConfigurationData:(id)arg3 userInfo:(id)arg4 handler:(id /* block */)arg5;
 - (oneway void)startRecordingWindowLayerContextIDs:(id)arg1 windowSize:(struct CGSize { double x1; double x2; })arg2 microphoneEnabled:(bool)arg3 cameraEnabled:(bool)arg4 broadcast:(bool)arg5 systemRecording:(bool)arg6 captureEnabled:(bool)arg7 listenerEndpoint:(id)arg8 withHandler:(id /* block */)arg9;
-- (oneway void)stopRecordingWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)stopRecordingWithHandler:(id /* block */)arg1;
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(id /* block */)arg3;
 - (oneway void)synchronousGetCurrentState:(id /* block */)arg1;
+- (oneway void)synchronousIsBroadcastingWithPreferredExtension:(id)arg1 handler:(id /* block */)arg2;
 - (oneway void)updateBroadcastServiceInfo:(id)arg1;
 - (oneway void)updateBroadcastURL:(id)arg1;
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
-- (oneway void)updateScreenRecordingState:(bool)arg1;
+- (oneway void)updateScreenRecordingState;
 
 @end

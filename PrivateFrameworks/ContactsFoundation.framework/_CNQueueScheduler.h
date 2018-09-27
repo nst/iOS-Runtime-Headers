@@ -11,6 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 - (void).cxx_destruct;
 - (id)_queueForQualityOfService:(unsigned long long)arg1;

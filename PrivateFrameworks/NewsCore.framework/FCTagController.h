@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCTagController : NSObject <FCAppConfigurationObserving, FCJSONEncodableObjectProviding, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
-    FCAppConfigurationManager * _appConfigurationManager;
+@interface FCTagController : NSObject <FCCoreConfigurationObserving, FCJSONEncodableObjectProviding, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
     FCAssetManager * _assetManager;
+    <FCCoreConfigurationManager> * _configurationManager;
     FCCKContentDatabase * _contentDatabase;
     NSCache * _fastCache;
     NSMutableDictionary * _prefetchedTags;
@@ -12,8 +12,8 @@
     FCTagRecordSource * _tagRecordSource;
 }
 
-@property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
 @property (nonatomic, retain) FCAssetManager *assetManager;
+@property (nonatomic, retain) <FCCoreConfigurationManager> *configurationManager;
 @property (nonatomic, retain) FCCKContentDatabase *contentDatabase;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -34,9 +34,9 @@
 - (void)_fetchTagForTagID:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_refreshTagsBasedOnAgeForTagIDs:(id)arg1;
-- (id)appConfigurationManager;
-- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (id)assetManager;
+- (id)configurationManager;
+- (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (id)contentDatabase;
 - (void)dealloc;
 - (id)expectedFastCachedTagForID:(id)arg1;
@@ -51,13 +51,13 @@
 - (void)fetchTagsForTagIDs:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 callbackQueue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
-- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 appConfigurationManager:(id)arg4;
+- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 configurationManager:(id)arg4;
 - (id)jsonEncodableObject;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)prefetchedTags;
 - (void)saveTagsToCache:(id)arg1;
-- (void)setAppConfigurationManager:(id)arg1;
 - (void)setAssetManager:(id)arg1;
+- (void)setConfigurationManager:(id)arg1;
 - (void)setContentDatabase:(id)arg1;
 - (void)setFastCache:(id)arg1;
 - (void)setPrefetchedTags:(id)arg1;

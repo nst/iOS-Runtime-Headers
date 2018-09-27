@@ -4,7 +4,7 @@
 
 @interface IKCSSMediaQueryAndList : IKCSSMediaQueryList {
     bool  _negated;
-    NSMutableArray * _queryList;
+    IKMutableArray * _queryList;
     NSString * _type;
 }
 

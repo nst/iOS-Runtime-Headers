@@ -4,7 +4,7 @@
 
 @interface NSMatchingPredicateOperator : NSStringPredicateOperator {
     int  _contextLock;
-    struct { id x1; void x2; } * _regexContext;
+    struct { id x1; void x2; long long x3; } * _regexContext;
 }
 
 - (void)_clearContext;

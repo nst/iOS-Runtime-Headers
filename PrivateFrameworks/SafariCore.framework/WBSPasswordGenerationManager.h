@@ -3,12 +3,21 @@
  */
 
 @interface WBSPasswordGenerationManager : NSObject {
+    struct _LXLexicon { } * _lexiconForEnglish;
+    struct _LXLexicon { } * _lexiconForUserLocale;
     NSDictionary * _passwordRequirementsByDomain;
 }
 
 @property (nonatomic, copy) NSDictionary *passwordRequirementsByDomain;
 
++ (bool)passwordLooksLikePasswordManagerGeneratedPassword:(id)arg1;
++ (id)requirementsForPasswordRuleSet:(id)arg1 respectingMinLength:(id)arg2 maxLength:(id)arg3;
+
 - (void).cxx_destruct;
+- (void)_lexiconEnumerateEntries:(struct _LXLexicon { }*)arg1 forString:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_moreTypeablePassword;
+- (bool)_tokensContainUnwantedWords:(id)arg1;
+- (void)dealloc;
 - (id)defaultRequirementsForDomain:(id)arg1;
 - (id)defaultRequirementsForURL:(id)arg1;
 - (id)generatedPasswordMatchingRequirements:(id)arg1;

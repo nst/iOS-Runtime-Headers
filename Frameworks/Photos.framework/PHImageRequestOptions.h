@@ -28,6 +28,8 @@
     long long  _rank;
     int  _requestID;
     long long  _resizeMode;
+    NSObject<OS_dispatch_queue> * _resultHandlerQueue;
+    bool  _routeToNewImageManager;
     bool  _synchronous;
     long long  _version;
 }
@@ -48,6 +50,8 @@
 @property (nonatomic) long long rank;
 @property (nonatomic) int requestID;
 @property (nonatomic) long long resizeMode;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *resultHandlerQueue;
+@property (nonatomic) bool routeToNewImageManager;
 @property (getter=isSynchronous, nonatomic) bool synchronous;
 @property (nonatomic) long long version;
 
@@ -75,6 +79,8 @@
 - (int)requestID;
 - (int)requestIDOrNextIfInvalid;
 - (long long)resizeMode;
+- (id)resultHandlerQueue;
+- (bool)routeToNewImageManager;
 - (void)setAllowPlaceholder:(bool)arg1;
 - (void)setAllowSecondaryOpportunisticImage:(bool)arg1;
 - (void)setAspectRatioHint:(double)arg1;
@@ -91,6 +97,8 @@
 - (void)setRank:(long long)arg1;
 - (void)setRequestID:(int)arg1;
 - (void)setResizeMode:(long long)arg1;
+- (void)setResultHandlerQueue:(id)arg1;
+- (void)setRouteToNewImageManager:(bool)arg1;
 - (void)setSynchronous:(bool)arg1;
 - (void)setVersion:(long long)arg1;
 - (long long)version;

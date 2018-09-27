@@ -86,8 +86,6 @@
 - (id)dataForExistingData:(id)arg1 digest:(const struct array<unsigned char, 20> { unsigned char x1[20]; }*)arg2 filename:(id)arg3 temporaryPath:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
-- (id)dataFromAssetsLibraryURL:(id)arg1;
-- (void)dataFromAssetsLibraryURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataFromExternalReferenceURL:(id)arg1 useFileCoordination:(bool)arg2;
 - (id)dataFromFileURL:(id)arg1 useFileCoordination:(bool)arg2;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;

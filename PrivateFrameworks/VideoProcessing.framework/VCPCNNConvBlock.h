@@ -3,40 +3,27 @@
  */
 
 @interface VCPCNNConvBlock : VCPCNNBlock {
-    int (* CalculateDotProductOfChunk;
     bool  _batchNorm;
-    float * _batchNormBeta;
-    float * _batchNormGamma;
-    float * _batchNormMean;
-    float * _batchNormVar;
     VCPCNNData * _bias;
     int  _chunk;
-    bool  _disableReLU;
     VCPCNNData * _filter;
     int  _filterNum;
     int  _filterSize;
     int  _groups;
-    MPSCNNConvolution * _mpsConv;
     int  _padSize;
     int  _padding;
+    bool  _reLU;
     int  _stride;
 }
 
++ (Class)convBlockClass:(int)arg1;
++ (id)convBlockWithFilterSize:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(bool)arg4 padding:(bool)arg5;
++ (id)convBlockWithFilterSize:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(bool)arg4 padding:(bool)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(bool)arg8;
+
 - (void).cxx_destruct;
-- (int)chunkFourForward;
 - (int)constructBlock:(id)arg1 context:(id)arg2;
-- (void)dealloc;
-- (int)fillConvWeightsGPU;
-- (int)forward;
-- (int)gpuForward;
-- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 disableReLU:(bool)arg4 padding:(bool)arg5;
-- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 disableReLU:(bool)arg4 padding:(bool)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(bool)arg8;
-- (bool)isFilterSizeSupported:(int)arg1;
-- (int)readBatchNormParam:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 quantFactor:(short)arg2;
-- (int)readFromDisk:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 quantFactor:(short)arg2;
-- (void)releaseBatchNormMemory;
-- (int)straightForward;
-- (int)straightForwardForChunkFour;
+- (id)initWithParameters:(int)arg1 filterNum:(int)arg2 chunk:(int)arg3 reLU:(bool)arg4 padding:(bool)arg5 groups:(int)arg6 stride:(int)arg7 batchNorm:(bool)arg8;
+- (int)initializeRest;
 - (bool)supportGPU;
 - (bool)useGPU;
 

@@ -7,6 +7,7 @@
     bool  _isRunning;
     MSPJournal * _journal;
     NSMutableSet * _lockedCacheZoneNames;
+    NSObject<OS_dispatch_queue> * _operationQueue;
     bool  _pendingCachesFetchesExecutionTimerScheduled;
     NSMutableArray * _pendingFetchRequests;
     NSOperationQueue * _queue;

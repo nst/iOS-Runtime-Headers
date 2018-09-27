@@ -9,6 +9,7 @@
     NSObject<OS_dispatch_queue> * _delegateQueue;
     IDSSession * _idsSession;
     NSMutableData * _relayData;
+    HMDCameraIDSSessionInviterDeviceVerifier * _sessionInviterDeviceVerifier;
     HMDSnapshotFile * _snapshotFile;
     NSObject<OS_dispatch_source> * _socketSource;
 }
@@ -22,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSSession *idsSession;
 @property (nonatomic, retain) NSMutableData *relayData;
+@property (nonatomic, readonly) HMDCameraIDSSessionInviterDeviceVerifier *sessionInviterDeviceVerifier;
 @property (nonatomic, readonly) HMDSnapshotFile *snapshotFile;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *socketSource;
 @property (readonly) Class superclass;
@@ -39,11 +41,12 @@
 - (id)delegate;
 - (id)delegateQueue;
 - (id)idsSession;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 snapshotFile:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 sessionInviterDeviceVerifier:(id)arg3 snapshotFile:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;
 - (id)logIdentifier;
 - (id)relayData;
 - (void)service:(id)arg1 account:(id)arg2 inviteReceivedForSession:(id)arg3 fromID:(id)arg4 withContext:(id)arg5;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
+- (id)sessionInviterDeviceVerifier;
 - (void)sessionStarted:(id)arg1;
 - (void)setBytesSoFar:(unsigned long long)arg1;
 - (void)setBytesToReceive:(unsigned long long)arg1;

@@ -19,7 +19,7 @@
 - (void)CADDatabaseGetNextAssignableColorWithReply:(id /* block */)arg1;
 - (void)CADDatabaseGetSequenceNumber:(id /* block */)arg1;
 - (void)CADDatabaseGetUUID:(id /* block */)arg1;
-- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 reply:(id /* block */)arg4;
+- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarsWithIDs:(id)arg2 optionsMask:(unsigned long long)arg3 reply:(id /* block */)arg4;
 - (void)CADDatabaseLastConfirmedSplashScreenVersion:(id /* block */)arg1;
 - (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(long long)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseRebuildOccurrenceCacheWithReply:(id /* block */)arg1;
@@ -30,5 +30,6 @@
 - (void)CADDatabaseSetInitializationOptions:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseSetShowsDeclinedEvents:(bool)arg1 reply:(id /* block */)arg2;
 - (bool)_CADDatabaseCanModifyCalendarDatabase;
+- (id)_importData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 outError:(int*)arg4;
 
 @end

@@ -5,6 +5,7 @@
 @interface MDLMaterialProperty : NSObject <MDLNamed, NSCopying> {
     struct CGColor { } * _color;
     void _float;
+    bool  _isDefaultValue;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _matrix;
@@ -28,6 +29,7 @@
 @property (nonatomic) void float3Value;
 @property (nonatomic) void float4Value;
 @property (nonatomic) float floatValue;
+@property (nonatomic) bool isDefaultValue;
 @property (nonatomic) float luminance;
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } matrix4x4;
 @property (nonatomic, copy) NSString *name;
@@ -57,6 +59,7 @@
 - (id)initWithName:(id)arg1 semantic:(unsigned long long)arg2 matrix4x4:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg3;
 - (id)initWithName:(id)arg1 semantic:(unsigned long long)arg2 string:(id)arg3;
 - (id)initWithName:(id)arg1 semantic:(unsigned long long)arg2 textureSampler:(id)arg3;
+- (bool)isDefaultValue;
 - (float)luminance;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })matrix4x4;
 - (id)name;
@@ -66,6 +69,7 @@
 - (void)setFloat3Value;
 - (void)setFloat4Value;
 - (void)setFloatValue:(float)arg1;
+- (void)setIsDefaultValue:(bool)arg1;
 - (void)setLuminance:(float)arg1;
 - (void)setMatrix4x4:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setMatrix4x4Value:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;

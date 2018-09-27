@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetDiscoveryController : NSObject <WGWidgetDataSourceObserver, WGWidgetListEditViewControllerDataSource, WGWidgetListEditViewControllerDelegate, WGWidgetViewControllerDelegate> {
+@interface WGWidgetDiscoveryController : NSObject <LSApplicationWorkspaceObserverProtocol, WGWidgetDataSourceObserver, WGWidgetListEditViewControllerDataSource, WGWidgetListEditViewControllerDelegate, WGWidgetViewControllerDelegate> {
     struct NSMutableDictionary { Class x1; } * _archive;
     NSObject<OS_dispatch_queue> * _archiveWriteQueue;
     NSMutableDictionary * _dataSourceIdentifiersToDatumIdentifiers;
@@ -38,6 +38,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableDictionary *widgetIDsToPendingTestCompletions;
 @property (nonatomic, retain) NSMutableDictionary *widgetIDsToPendingTestTearDowns;
+@property (getter=_widgetIDsToWidgets, nonatomic, readonly) NSMutableDictionary *widgetIDsToWidgets;
 
 + (id /* block */)generatorForWidgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 timeout:(unsigned long long)arg3;
 + (long long)layoutModeForSize:(struct CGSize { double x1; double x2; })arg1;
@@ -55,6 +56,7 @@
 - (id)_insertWidgetWithIdentifier:(id)arg1 atTop:(bool)arg2;
 - (void)_invalidateVisibleIdentifiersForGroup:(id)arg1;
 - (void)_invalidateWidgetListEditViewControllerStatusBarAssertion:(id)arg1;
+- (bool)_isApplicationLockedOutWithProxy:(id)arg1;
 - (bool)_isElementWithIdentifierEnabled:(id)arg1;
 - (bool)_isElementWithIdentifierKnown:(id)arg1;
 - (id)_newWidgetListEditViewController;
@@ -75,8 +77,11 @@
 - (bool)_setEnabled:(bool)arg1 forElementWithIdentifier:(id)arg2;
 - (void)_setPresentedEditViewController:(id)arg1;
 - (void)_setPresentedEditViewControllerStatusBarAssertion:(id)arg1;
+- (void)_updateLockedOutStateForWidget:(id)arg1;
+- (void)_updateLockedOutStateForWidget:(id)arg1 withContainingAppProxy:(id)arg2;
 - (id)_updatePublicationStateOfDatumWithIdentifier:(id)arg1 visibilityChanged:(bool)arg2 contentStateChanged:(bool)arg3 insertAtTop:(bool)arg4 notifyingObservers:(bool)arg5;
 - (void)_widget:(id)arg1 withIdentifier:(id)arg2 didRemoveSnapshotAtURL:(id)arg3;
+- (id)_widgetIDsToWidgets;
 - (void)_widgetListEditViewControllerWillDisappear:(id)arg1;
 - (void)_widgetViewControllerDidRemoveSnapshot:(id)arg1;
 - (void)_widgetViewControllerRequestsAdd:(id)arg1;
@@ -86,6 +91,7 @@
 - (void)debugWidgetWithBundleID:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)debuggingHandler;
 - (id)delegate;
+- (void)deviceManagementPolicyDidChange:(id)arg1;
 - (id)disabledInterfaceItemIdentifiersForWidgetListEditViewController:(id)arg1;
 - (id)disabledWidgetIdentifiers;
 - (void)dismissWidgetListEditViewController:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
@@ -130,10 +136,10 @@
 - (id)widgetListEditViewController:(id)arg1 defaultGroupForItemWithIdentifier:(id)arg2;
 - (void)widgetListEditViewController:(id)arg1 didReorderItemsWithIdentifiersInGroups:(id)arg2;
 - (id)widgetListEditViewController:(id)arg1 displayNameForItemWithIdentifier:(id)arg2;
-- (id)widgetListEditViewController:(id)arg1 iconForItemWithIdentifier:(id)arg2;
 - (bool)widgetListEditViewController:(id)arg1 isItemWithIdentifierEnabled:(id)arg2;
 - (bool)widgetListEditViewController:(id)arg1 isItemWithIdentifierNew:(id)arg2;
 - (id)widgetListEditViewController:(id)arg1 itemIdentifiersForGroup:(id)arg2;
+- (void)widgetListEditViewController:(id)arg1 requestsIconForItemWithIdentifier:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)widgetListEditViewController:(id)arg1 setEnabled:(bool)arg2 forItemsWithIdentifiers:(id)arg3;
 - (bool)widgetListEditViewControllerShouldIncludeInternalWidgets:(id)arg1;
 - (id)widgetWithIdentifier:(id)arg1 delegate:(id)arg2 forRequesterWithIdentifier:(id)arg3;

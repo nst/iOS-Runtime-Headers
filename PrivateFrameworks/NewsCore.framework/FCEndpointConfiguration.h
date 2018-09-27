@@ -5,16 +5,23 @@
 @interface FCEndpointConfiguration : NSObject {
     NSString * _clientAPIBaseURLString;
     NSString * _notificationsBaseURLString;
+    NSString * _remoteDataSourceBaseUrlString;
+    NSString * _staticAssetBaseUrlString;
 }
 
 @property (nonatomic, readonly) NSString *clientAPIBaseURLString;
 @property (nonatomic, readonly) NSString *notificationsBaseURLString;
+@property (nonatomic, readonly) NSString *remoteDataSourceBaseUrlString;
+@property (nonatomic, readonly) NSString *staticAssetBaseUrlString;
 
 - (void).cxx_destruct;
 - (id)clientAPIBaseURLString;
 - (unsigned long long)hash;
 - (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2;
+- (id)initWithClientAPIBaseURLString:(id)arg1 notificationsBaseURLString:(id)arg2 staticAssetBaseUrlString:(id)arg3 remoteDataSourceBaseUrl:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (id)notificationsBaseURLString;
+- (id)remoteDataSourceBaseUrlString;
+- (id)staticAssetBaseUrlString;
 
 @end

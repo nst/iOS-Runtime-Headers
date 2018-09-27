@@ -3,18 +3,12 @@
  */
 
 @interface _SFPBLatLng : PBCodable <NSSecureCoding, _SFPBLatLng> {
-    struct { 
-        unsigned int lat : 1; 
-        unsigned int lng : 1; 
-    }  _has;
     double  _lat;
     double  _lng;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasLat;
-@property (nonatomic, readonly) bool hasLng;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) double lat;
@@ -22,8 +16,6 @@
 @property (readonly) Class superclass;
 
 - (id)dictionaryRepresentation;
-- (bool)hasLat;
-- (bool)hasLng;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

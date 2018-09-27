@@ -13,9 +13,9 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)assertionEndpoint;
 - (unsigned int)contextId;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

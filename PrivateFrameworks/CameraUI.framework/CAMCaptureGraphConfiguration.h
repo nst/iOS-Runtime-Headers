@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMCaptureGraphConfiguration : NSObject <NSCoding> {
+@interface CAMCaptureGraphConfiguration : NSObject {
     long long  _audioConfiguration;
     long long  _device;
+    bool  _enableAutoLowLightVideoIfSupported;
     long long  _mode;
     long long  _photoEncodingBehavior;
     unsigned long long  _previewConfiguration;
@@ -12,11 +13,13 @@
     long long  _previewSampleBufferVideoFormat;
     long long  _videoConfiguration;
     long long  _videoEncodingBehavior;
+    bool  _videoHDRSuspended;
     CAMVideoThumbnailOutputConfiguration * _videoThumbnailOutputConfiguration;
 }
 
 @property (nonatomic, readonly) long long audioConfiguration;
 @property (nonatomic, readonly) long long device;
+@property (nonatomic, readonly) bool enableAutoLowLightVideoIfSupported;
 @property (nonatomic, readonly) long long mode;
 @property (nonatomic, readonly) long long photoEncodingBehavior;
 @property (nonatomic, readonly) unsigned long long previewConfiguration;
@@ -24,6 +27,7 @@
 @property (nonatomic, readonly) long long previewSampleBufferVideoFormat;
 @property (nonatomic, readonly) long long videoConfiguration;
 @property (nonatomic, readonly) long long videoEncodingBehavior;
+@property (getter=isVideoHDRSuspended, nonatomic, readonly) bool videoHDRSuspended;
 @property (nonatomic, readonly) CAMVideoThumbnailOutputConfiguration *videoThumbnailOutputConfiguration;
 
 - (void).cxx_destruct;
@@ -31,9 +35,9 @@
 - (id)completeDescription;
 - (id)description;
 - (long long)device;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 previewConfiguration:(unsigned long long)arg5 previewSampleBufferVideoFormat:(long long)arg6 previewFilters:(id)arg7 videoThumbnailOutputConfiguration:(id)arg8 photoEncodingBehavior:(long long)arg9 videoEncodingBehavior:(long long)arg10;
-- (id)initWithCoder:(id)arg1;
+- (bool)enableAutoLowLightVideoIfSupported;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 previewConfiguration:(unsigned long long)arg5 previewSampleBufferVideoFormat:(long long)arg6 previewFilters:(id)arg7 videoThumbnailOutputConfiguration:(id)arg8 photoEncodingBehavior:(long long)arg9 videoEncodingBehavior:(long long)arg10 enableAutoLowLightVideoIfSupported:(bool)arg11 videoHDRSuspended:(bool)arg12;
+- (bool)isVideoHDRSuspended;
 - (long long)mode;
 - (long long)photoEncodingBehavior;
 - (unsigned long long)previewConfiguration;

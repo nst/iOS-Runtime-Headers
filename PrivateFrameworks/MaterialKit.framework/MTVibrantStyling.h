@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) long long style;
 @property (nonatomic, readonly, copy) UIVibrancyEffect *visualEffect;
 
++ (long long)highContrastStyleForPrivateStyle:(long long)arg1;
 + (id)vibrantStylingWithPrivateStyle:(long long)arg1;
 
 - (void).cxx_destruct;

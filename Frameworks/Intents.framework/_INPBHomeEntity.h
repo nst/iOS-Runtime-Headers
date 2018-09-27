@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBHomeEntity : PBCodable <NSCopying> {
+@interface _INPBHomeEntity : PBCodable <NSCopying, NSSecureCoding, _INPBHomeEntity> {
     int  _deviceType;
     int  _entityType;
     struct { 
@@ -10,24 +10,23 @@
         unsigned int entityType : 1; 
     }  _has;
     _INPBString * _name;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) int deviceType;
 @property (nonatomic) int entityType;
 @property (nonatomic) bool hasDeviceType;
 @property (nonatomic) bool hasEntityType;
 @property (nonatomic, readonly) bool hasName;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBString *name;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)StringAsDeviceType:(id)arg1;
 - (int)StringAsEntityType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (int)deviceType;
 - (id)deviceTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
@@ -38,7 +37,6 @@
 - (bool)hasName;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (bool)readFrom:(id)arg1;
 - (void)setDeviceType:(int)arg1;
@@ -46,7 +44,6 @@
 - (void)setHasDeviceType:(bool)arg1;
 - (void)setHasEntityType:(bool)arg1;
 - (void)setName:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

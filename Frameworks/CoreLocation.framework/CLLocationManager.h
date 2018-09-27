@@ -130,7 +130,6 @@
 - (void)onClientEventError:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
-- (void)onClientEventHistoricLocation:(id)arg1;
 - (void)onClientEventInterrupted:(id)arg1;
 - (void)onClientEventLocation:(id)arg1 forceMapMatching:(bool)arg2 type:(id)arg3;
 - (void)onClientEventLocationUnavailable:(id)arg1;
@@ -229,6 +228,10 @@
 + (id)referenceFrameDescription:(int)arg1;
 + (id)regionDescription:(id)arg1;
 + (id)regionStateDescription:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)_af_createSiriLocationManagerWithSetupBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 

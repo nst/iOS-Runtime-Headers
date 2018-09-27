@@ -36,6 +36,7 @@
 + (id)sharedAssetManagerWithEnabledInputModesProvider:(id /* block */)arg1;
 + (id)singletonInstanceWithEnabledInputModesProvider:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (id)activeInputModeLevels;
 - (void)addAssets:(id)arg1;
 - (long long)amountOfPurgeableAssetsWithUrgency:(int)arg1;

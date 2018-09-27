@@ -13,6 +13,7 @@
 - (unsigned long long)halfLife;
 - (bool)hasGlobalUserFeedback;
 - (bool)hasVideo;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isPaid;
 - (NSDate *)publishDate;
 - (COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *)publisherCohort;

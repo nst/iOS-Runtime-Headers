@@ -14,6 +14,7 @@
 - (struct CGSize { double x1; double x2; })documentIconSize;
 - (double)entryViewMaxHandWritingPluginShelfHeight;
 - (id)fullscreenPickerActionLayoutAxisPrioritiesForWidth:(double)arg1;
+- (bool)isAppStripInKeyboard;
 - (bool)lowClearanceInLandscape;
 - (double)maxPrimaryColumnWidthForInterfaceOrientation:(long long)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minTranscriptMarginInsets;

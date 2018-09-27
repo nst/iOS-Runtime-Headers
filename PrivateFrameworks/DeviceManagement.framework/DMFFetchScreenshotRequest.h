@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchScreenshotRequest : CATTaskRequest {
+@interface DMFFetchScreenshotRequest : DMFTaskRequest {
     unsigned long long  _maxHeight;
     unsigned long long  _maxWidth;
     NSString * _sessionToken;
+    bool  _usesPixels;
 }
 
 @property (nonatomic) unsigned long long maxHeight;
 @property (nonatomic) unsigned long long maxWidth;
 @property (nonatomic, copy) NSString *sessionToken;
+@property (nonatomic) bool usesPixels;
 
 + (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
@@ -24,5 +26,7 @@
 - (void)setMaxHeight:(unsigned long long)arg1;
 - (void)setMaxWidth:(unsigned long long)arg1;
 - (void)setSessionToken:(id)arg1;
+- (void)setUsesPixels:(bool)arg1;
+- (bool)usesPixels;
 
 @end

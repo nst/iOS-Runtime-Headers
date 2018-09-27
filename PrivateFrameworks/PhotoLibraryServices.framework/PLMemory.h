@@ -2,14 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLMemory : PLManagedObject <PLSearchableAssetCollection> {
+@interface PLMemory : PLManagedObject <PLCloudDeletable, PLSearchableAssetCollection> {
     bool  _needsPersistenceUpdate;
 }
 
 @property (nonatomic, retain) NSData *assetListPredicate;
 @property (nonatomic, retain) NSData *blacklistedFeature;
 @property (nonatomic) short category;
+@property (nonatomic) short cloudDeleteState;
+@property (readonly) long long cloudDeletionType;
 @property (nonatomic) short cloudLocalState;
+@property (readonly, copy) NSString *cloudUUIDForDeletion;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, retain) NSSet *curatedAssets;
 @property (readonly, copy) NSString *debugDescription;
@@ -18,6 +21,8 @@
 @property (nonatomic) bool favorite;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, readonly) NSDate *keyAssetCreationDate;
+@property (nonatomic, readonly) NSString *keyAssetUUID;
 @property (nonatomic, retain) NSDate *lastMoviePlayedDate;
 @property (nonatomic, retain) NSDate *lastViewedDate;
 @property (nonatomic, retain) NSDictionary *movieAssetState;
@@ -25,6 +30,7 @@
 @property (nonatomic, retain) NSData *movieData;
 @property (nonatomic) bool needsPersistenceUpdate;
 @property (nonatomic) short notificationState;
+@property (nonatomic, readonly) unsigned long long numberOfAssets;
 @property (nonatomic) bool pending;
 @property (nonatomic) long long pendingPlayCount;
 @property (nonatomic) long long pendingShareCount;
@@ -35,10 +41,14 @@
 @property (nonatomic) bool rejected;
 @property (nonatomic, retain) NSSet *representativeAssets;
 @property (nonatomic) double score;
+@property (nonatomic, readonly) NSDate *searchableEndDate;
+@property (nonatomic, readonly) NSDate *searchableStartDate;
 @property (nonatomic) long long shareCount;
 @property (nonatomic) short subcategory;
+@property (nonatomic, readonly) NSString *subtitle;
 @property (nonatomic, retain) NSString *subtitle;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) bool userCreated;
 @property (nonatomic, retain) NSString *uuid;
@@ -47,10 +57,13 @@
 + (id)_memoriesMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(long long)arg3 inManagedObjectContext:(id)arg4;
 + (bool)_shouldPrefetchMemoryMovieCuratedAssetsInPhotoLibrary:(id)arg1;
 + (id)baseSearchIndexPredicate;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
 + (void)deleteMemoriesWithObjectIDs:(id)arg1 inPhotoLibrary:(id)arg2;
 + (void)deletePendingMemoriesCreatedBefore:(id)arg1 inPhotoLibrary:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
++ (bool)indexTitleForMemoryCategory:(unsigned long long)arg1;
 + (id)insertIntoPhotoLibrary:(id)arg1 withUUID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 creationDate:(id)arg5;
 + (id)memoriesToPrefetchInPhotoLibrary:(id)arg1;
 + (id)memoriesToUploadInPhotoLibrary:(id)arg1 limit:(long long)arg2;
@@ -60,18 +73,25 @@
 
 - (id)assetUUIDsForPreviewWithCount:(unsigned long long)arg1;
 - (id)calculateKeyAsset;
+- (long long)cloudDeletionType;
+- (id)cloudUUIDForDeletion;
 - (id)cplFullRecord;
 - (id)cplMemoryChange;
 - (void)delete;
 - (void)didSave;
 - (bool)isSyncableChange;
 - (bool)isValidForPersistence;
+- (id)keyAssetCreationDate;
+- (id)keyAssetUUID;
 - (bool)needsPersistenceUpdate;
+- (unsigned long long)numberOfAssets;
 - (void)persistMetadataToFileSystem;
 - (void)prepareForDeletion;
 - (void)removePersistedFileSystemData;
 - (unsigned long long)searchIndexCategory;
 - (id)searchIndexContents;
+- (id)searchableEndDate;
+- (id)searchableStartDate;
 - (void)setKeyAsset:(id)arg1;
 - (void)setNeedsPersistenceUpdate:(bool)arg1;
 - (bool)supportsCloudUpload;

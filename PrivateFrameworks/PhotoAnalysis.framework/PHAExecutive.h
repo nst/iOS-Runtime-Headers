@@ -3,26 +3,35 @@
  */
 
 @interface PHAExecutive : NSObject <NSXPCListenerDelegate, PHPhotoLibraryAvailabilityObserver> {
+    PHAActivityLog * _activityLog;
     NSObject<OS_xpc_object> * _backgroundAnalysisActivity;
     bool  _backgroundAnalysisActivityTriggered;
     NSObject<OS_dispatch_source> * _backgroundAnalysisMonitorTimer;
     NSMutableSet * _clients;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _connectedClientsLock;
     long long  _countOfCoordinatorsRunningBackgroundAnalysis;
-    NSObject<OS_dispatch_queue> * _executiveStateQueue;
+    PHAActivityLog * _currentLog;
+    PFSerialQueue<PFDTransactionDispatchQueue> * _executiveStateQueue;
     bool  _isPhotoAnalysisAgent;
     NSMutableDictionary * _managersByLibraryPath;
     PHAPhotoLibraryList * _photoLibraryList;
+    NSMutableArray * _processingLog;
+    bool  _shouldDeferActivity;
     PHASleepWakeMonitor * _sleepWakeMonitor;
     unsigned char  _state;
+    bool  _turboMode;
+    NSObject<OS_voucher> * _turboModeBoostVoucher;
 }
 
+@property (readonly) PHAActivityLog *activityLog;
 @property (retain) NSObject<OS_xpc_object> *backgroundAnalysisActivity;
 @property (retain) NSObject<OS_dispatch_source> *backgroundAnalysisMonitorTimer;
 @property (retain) NSMutableSet *clients;
 @property long long countOfCoordinatorsRunningBackgroundAnalysis;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (retain) NSObject<OS_dispatch_queue> *executiveStateQueue;
 @property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *managersByLibraryPath;
 @property (retain) PHAPhotoLibraryList *photoLibraryList;
@@ -35,13 +44,15 @@
 - (void).cxx_destruct;
 - (void)_backgroundActivityDidBegin;
 - (void)_cleanupAfterBackgroundActivityFinishedForDefer:(bool)arg1 skipActivityStateCheck:(bool)arg2 message:(id)arg3;
-- (void)_dispatchAsyncToQueue:(id)arg1 withTransactionBlock:(id /* block */)arg2;
 - (void)_installBackgroundAnalysisMonitor;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (bool)_photoAnalysisEnabled;
 - (void)_registerBackgroundActivity;
-- (void)_stopAllBackgroundAnalysisWithCompletion:(id /* block */)arg1 queue:(id)arg2;
+- (void)_startBackgroundAnalysis;
+- (void)_stopAllBackgroundAnalysisWithCompletion:(id /* block */)arg1;
 - (id)_urlForSystemPhotoLibrary;
+- (id)activityLog;
+- (void)addProcessingActivityToStatusDictionary:(id)arg1;
 - (id)backgroundAnalysisActivity;
 - (id)backgroundAnalysisMonitorTimer;
 - (void)checkQuiescenceForManager:(id)arg1;
@@ -52,9 +63,11 @@
 - (void)dispatchAsyncToExecutiveStateQueue:(id /* block */)arg1;
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)dumpStatusToLog;
-- (id)executiveStateQueue;
+- (void)handleOperation:(id)arg1;
 - (bool)hasConnectedClientsForManager:(id)arg1;
+- (bool)hasPhotosConnectionForManager:(id)arg1;
 - (id)init;
+- (bool)isTurboMode;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)managerForPhotoLibraryURL:(id)arg1;
 - (id)managersByLibraryPath;
@@ -65,11 +78,11 @@
 - (void)setBackgroundAnalysisMonitorTimer:(id)arg1;
 - (void)setClients:(id)arg1;
 - (void)setCountOfCoordinatorsRunningBackgroundAnalysis:(long long)arg1;
-- (void)setExecutiveStateQueue:(id)arg1;
 - (void)setManagersByLibraryPath:(id)arg1;
 - (void)setPhotoLibraryList:(id)arg1;
 - (void)setSleepWakeMonitor:(id)arg1;
 - (void)setState:(unsigned char)arg1;
+- (void)setTurboMode;
 - (void)shutdown;
 - (id)sleepWakeMonitor;
 - (void)startup;

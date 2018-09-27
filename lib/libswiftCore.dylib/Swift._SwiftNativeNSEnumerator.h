@@ -4,6 +4,4 @@
 
 @interface Swift._SwiftNativeNSEnumerator : _SwiftNativeNSEnumeratorBase
 
-- (id)init;
-
 @end

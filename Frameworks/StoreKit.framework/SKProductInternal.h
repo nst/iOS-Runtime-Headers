@@ -13,9 +13,10 @@
     NSDecimalNumber * _price;
     NSLocale * _priceLocale;
     NSString * _productIdentifier;
+    NSString * _subscriptionGroupIdentifier;
     SKProductSubscriptionPeriod * _subscriptionPeriod;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

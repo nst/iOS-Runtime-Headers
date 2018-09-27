@@ -42,6 +42,18 @@
         unsigned int flags; 
         long long epoch; 
     }  _frameGovernorReferenceTime;
+    bool  _haveSeenFirstAudioSampleBuffer;
+    bool  _haveSeenFirstVideoSampleBuffer;
+    unsigned long long  _inferencesInputIndex;
+    struct __CFDictionary { } * _intermediateJPEGCompressionOptions;
+    float  _intermediateJPEGCompressionQuality;
+    struct FigPhotoCompressionSession { } * _intermediateJPEGCompressionSession;
+    bool  _intermediateJPEGCompressionSetupIsComplete;
+    struct __CFDictionary { } * _intermediateJPEGContainerOptions;
+    int  _intermediateJPEGDownstreamRetainedBufferCount;
+    struct opaqueCMFormatDescription { } * _intermediateJPEGFormatDescription;
+    int  _intermediateJPEGSurfaceLocalRetainedBufferCount;
+    struct FigPhotoSurfacePool { } * _intermediateJPEGSurfacePool;
     NSMutableArray * _irisRequestsInFlight;
     NSMutableArray * _irisRequestsSoonToBeEmitted;
     NSMutableArray * _lastEmittedBuffers;
@@ -81,6 +93,7 @@
     FigIrisAutoTrimmer * _trimmer;
     bool  _valveDraining;
     bool  _valveOpen;
+    long long  _valveOpenerSettingsID;
 }
 
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } beginIrisMovieCaptureTime;
@@ -90,13 +103,17 @@
 + (void)initialize;
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_adjustedStartTimeForTrimmedStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ensuringAtLeast3FramesBeforeStillTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ensuringFrameIsAfterTrimmedStartTime:(bool)arg3 butNotEarlierThanOriginalStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (struct opaqueCMSampleBuffer { }*)_createIntermediateJPEGSampleBufferFromUncompressedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (int)_emissionStatusForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forInputIndex:(unsigned long long)arg2;
 - (void)_emitIrisRequest:(id)arg1 withEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_emitIrisRequestsOlderThanTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_emitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned long long)arg2;
+- (unsigned long long)_emittingInputsCount;
 - (void)_enqueueIrisRequest:(id)arg1;
+- (void)_feedTrimmerWithInferencesSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_feedTrimmerWithVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (bool)_fillInRefMovieStartAndTrimTimesForStillImageTimesBeforeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)_fillInStartAndTrimTimesForMasterMovieWithInfo:(id)arg1;
 - (bool)_haveEnoughVideoStagedToStartFirstIrisRecording:(id)arg1 currentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
@@ -106,7 +123,14 @@
 - (void)_informDelegateOfSoonToBeEmittedIrisRequestsForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_prepareToEmitFramesFromStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 throughEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_processQueuedVideoFrames;
+- (void)_releaseJPEGEncodeResources;
 - (void)_serviceIrisRequestsForCurrentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 emitBuffers:(bool)arg2 ensureStillImageTimesAreStaged:(bool)arg3;
+- (int)_setupIntermediateJPEGCompressionOptions;
+- (int)_setupIntermediateJPEGCompressionSession;
+- (int)_setupIntermediateJPEGContainerOptions;
+- (int)_setupIntermediateJPEGFormatDescriptionFromSourceBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)_setupIntermediateJPEGSurfacePool;
+- (int)_setupJPEGEncodeResources;
 - (void)_tagStillImageVISKeyFrames;
 - (id)_temporaryURLForIrisWithSettingsID:(long long)arg1 isOriginalRecording:(bool)arg2;
 - (void)_trimQueueForInputIndex:(unsigned long long)arg1;
@@ -119,10 +143,11 @@
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })endIrisMovieCaptureTime;
-- (bool)enqueueIrisRequest:(id)arg1;
+- (int)enqueueIrisRequest:(id)arg1;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (id)initWithNumberOfVideoInputs:(unsigned long long)arg1 numberOfAudioInputs:(unsigned long long)arg2 numberOfMetadataInputs:(unsigned long long)arg3 autoTrimMethod:(int)arg4 temporaryMovieDirectoryURL:(id)arg5 emitIrisRequestDelegate:(id)arg6;
+- (id)initWithNumberOfVideoInputs:(unsigned long long)arg1 numberOfAudioInputs:(unsigned long long)arg2 numberOfMetadataInputs:(unsigned long long)arg3 autoTrimMethod:(int)arg4 intermediateJPEGCompressionQuality:(float)arg5 temporaryMovieDirectoryURL:(id)arg6 emitIrisRequestDelegate:(id)arg7;
+- (int)intermediateJPEGDownstreamRetainedBufferCount;
 - (struct OpaqueCMClock { }*)masterClock;
 - (bool)openValveWithIrisRequest:(id)arg1;
 - (void)prepareForCurrentConfigurationToBecomeLive;
@@ -130,6 +155,7 @@
 - (void)setBeginIrisMovieCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setBufferingTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setEndIrisMovieCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setIntermediateJPEGDownstreamRetainedBufferCount:(int)arg1;
 - (void)setMasterClock:(struct OpaqueCMClock { }*)arg1;
 - (void)setTargetFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })targetFrameDuration;

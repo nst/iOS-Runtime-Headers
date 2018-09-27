@@ -25,8 +25,6 @@
 - (void)_setUseSwitchForOrientationLockWithSpecifier:(id)arg1;
 - (id)carPreferences;
 - (void)dealloc;
-- (void)didAcceptEnteredPIN:(id)arg1;
-- (void)didCancelEnteringPIN;
 - (void)discoveryControllerSettingsDidChange:(id)arg1;
 - (void)discoveryControllerVisibilityDidChange:(id)arg1;
 - (void)enableEdge:(id)arg1;
@@ -36,13 +34,11 @@
 - (void)homeButtonCustomizeControllerDidFinish:(id)arg1;
 - (id)init;
 - (void)loadHomeButtonSettings:(id)arg1;
-- (id)parentalControlsEnabled:(id)arg1;
+- (void)loadView;
 - (void)profileNotification:(id)arg1;
 - (void)setCarPreferences:(id)arg1;
-- (bool)shouldDeferPushForSpecifierID:(id)arg1;
 - (void)shutDown:(id)arg1;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(bool)arg1;
 
 @end

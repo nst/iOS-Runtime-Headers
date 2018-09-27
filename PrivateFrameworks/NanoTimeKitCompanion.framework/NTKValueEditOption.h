@@ -6,12 +6,12 @@
     unsigned long long  _value;
 }
 
-+ (id)_localizedNameForActionForValue:(unsigned long long)arg1;
-+ (id)_localizedNameForValue:(unsigned long long)arg1;
-+ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
-+ (id)_optionWithValue:(unsigned long long)arg1;
-+ (id)_snapshotKeyForValue:(unsigned long long)arg1;
-+ (bool)_valueIsValid:(unsigned long long)arg1;
++ (id)_localizedNameForActionForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_localizedNameForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_optionWithValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (bool)_valueIsValid:(unsigned long long)arg1 forDevice:(id)arg2;
 + (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
@@ -22,7 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithJSONObjectRepresentation:(id)arg1;
+- (id)initWithJSONObjectRepresentation:(id)arg1 forDevice:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isValidOption;
 - (id)localizedName;

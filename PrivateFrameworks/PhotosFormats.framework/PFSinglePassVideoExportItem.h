@@ -18,6 +18,7 @@
     NSString * _identifier;
     AVAsset * _inputAsset;
     NSObject<OS_dispatch_group> * _inputReadingCompletionGroup;
+    bool  _maximizePowerEfficiency;
     unsigned long long  _minimumChunkLength;
     bool  _needsCurrentEncodingBitRateUpdate;
     unsigned long long  _outputFileLastEndOffset;
@@ -49,6 +50,7 @@
 @property (retain) NSString *identifier;
 @property (retain) AVAsset *inputAsset;
 @property (retain) NSObject<OS_dispatch_group> *inputReadingCompletionGroup;
+@property bool maximizePowerEfficiency;
 @property unsigned long long minimumChunkLength;
 @property bool needsCurrentEncodingBitRateUpdate;
 @property unsigned long long outputFileLastEndOffset;
@@ -84,7 +86,9 @@
 - (id)identifier;
 - (id)init;
 - (id)inputAsset;
+- (double)inputAssetDuration;
 - (id)inputReadingCompletionGroup;
+- (bool)maximizePowerEfficiency;
 - (unsigned long long)minimumChunkLength;
 - (bool)needsCurrentEncodingBitRateUpdate;
 - (void)notifyDataAvailableToHandler:(id /* block */)arg1 ignoreMinimumChunkLength:(bool)arg2;
@@ -109,6 +113,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setInputAsset:(id)arg1;
 - (void)setInputReadingCompletionGroup:(id)arg1;
+- (void)setMaximizePowerEfficiency:(bool)arg1;
 - (void)setMinimumChunkLength:(unsigned long long)arg1;
 - (void)setNeedsCurrentEncodingBitRateUpdate:(bool)arg1;
 - (void)setOutputFileLastEndOffset:(unsigned long long)arg1;

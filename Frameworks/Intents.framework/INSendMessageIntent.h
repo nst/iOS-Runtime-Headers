@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSendMessageIntent : INIntent <ATXSlotResolver, INSendMessageIntentExport>
+@interface INSendMessageIntent : INIntent <INSendMessageIntentExport>
 
+@property (nonatomic, copy) NSArray *attachments;
 @property (nonatomic, readonly, copy) NSString *content;
 @property (nonatomic, readonly, copy) NSString *conversationIdentifier;
 @property (readonly, copy) NSString *debugDescription;
@@ -17,10 +18,23 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
++ (id)_ignoredParameters;
+
+- (id)_categoryVerb;
 - (id)_dictionaryRepresentation;
+- (long long)_intentCategory;
+- (bool)_isUserConfirmationRequired;
+- (bool)_isValidSubProducer:(id)arg1;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (id)_redactedDictionaryRepresentation;
+- (void)_setMetadata:(id)arg1;
+- (id)_spotlightContentType;
+- (bool)_supportsBackgroundExecution;
 - (id)_typedBackingStore;
+- (id)_validParameterCombinationsWithSchema:(id)arg1;
+- (id)attachments;
+- (bool)configureAttributeSet:(id)arg1 includingData:(bool)arg2;
 - (id)content;
 - (id)conversationIdentifier;
 - (id)domain;
@@ -32,6 +46,7 @@
 - (id)recipients;
 - (id)sender;
 - (id)serviceName;
+- (void)setAttachments:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setConversationIdentifier:(id)arg1;
 - (void)setDomain:(id)arg1;
@@ -47,17 +62,20 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
-+ (bool)isRequired;
-+ (id)resolveIntentFromSlot:(id)arg1;
-+ (id)slotFromContext:(id)arg1;
-
 - (void)apr_getArgsInto:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
+
+- (id)apui_keyPeople;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
 - (long long)cd_interactionMechanism;
 - (id)cd_recipients;
 - (bool)cd_saveToPeopleStore;
-- (id)contextMetadata;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
+
+- (id)vcui_keyPeople;
 
 @end

@@ -5,7 +5,6 @@
 @interface ACDDatabase : NSObject {
     NSManagedObjectContext * _context;
     id  _contextDidSaveNotificationObserver;
-    NSManagedObjectModel * _model;
     NSString * _path;
     NSPersistentStore * _store;
 }
@@ -28,8 +27,12 @@
 
 - (void).cxx_destruct;
 - (id)_accountPropertyWithKey:(id)arg1 owner:(id)arg2;
+- (bool)_createLocalBackupCopy:(id*)arg1;
 - (bool)_databaseFileExists;
 - (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
+- (id)_localBackupDirectoryPath;
+- (id)_localBackupDirectoryURL;
+- (id)_localBackupStorePath;
 - (void)_setupManagedObjectContext;
 - (id)_store;
 - (unsigned long long)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;

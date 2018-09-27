@@ -9,6 +9,7 @@
     NSDate * _ingestedDate;
     NSString * _issuerCountryCode;
     NSData * _manifestHash;
+    NSString * _organizationName;
     NSString * _passIdentifier;
     NSArray * _paymentApplications;
     PKCurrencyAmount * _peerPaymentAccountBalance;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSDate *ingestedDate;
 @property (nonatomic, copy) NSString *issuerCountryCode;
 @property (nonatomic, copy) NSData *manifestHash;
+@property (nonatomic, copy) NSString *organizationName;
 @property (nonatomic, copy) NSString *passIdentifier;
 @property (nonatomic, retain) NSArray *paymentApplications;
 @property (nonatomic, retain) PKCurrencyAmount *peerPaymentAccountBalance;
@@ -54,6 +56,7 @@
 - (bool)isEqualToRemotePaymentInstrument:(id)arg1;
 - (id)issuerCountryCode;
 - (id)manifestHash;
+- (id)organizationName;
 - (id)passIdentifier;
 - (id)paymentApplications;
 - (id)peerPaymentAccountBalance;
@@ -68,6 +71,7 @@
 - (void)setIngestedDate:(id)arg1;
 - (void)setIssuerCountryCode:(id)arg1;
 - (void)setManifestHash:(id)arg1;
+- (void)setOrganizationName:(id)arg1;
 - (void)setPassIdentifier:(id)arg1;
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPeerPaymentAccountBalance:(id)arg1;
@@ -76,6 +80,7 @@
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
 - (void)setPrimaryPaymentApplication:(id)arg1;
 - (void)setSupportsAutomaticSelection:(bool)arg1;
+- (id)sortedPaymentApplications:(id)arg1 ascending:(bool)arg2;
 - (bool)supportsAutomaticSelection;
 
 @end

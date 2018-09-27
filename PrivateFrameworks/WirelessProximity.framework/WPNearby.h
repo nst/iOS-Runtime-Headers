@@ -43,6 +43,7 @@
 - (void)discoveredCharacteristicsAndServices:(id)arg1 forPeripheral:(id)arg2;
 - (id)discoveredPeers;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;

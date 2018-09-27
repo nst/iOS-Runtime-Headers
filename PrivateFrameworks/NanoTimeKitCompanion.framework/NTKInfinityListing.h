@@ -4,6 +4,7 @@
 
 @interface NTKInfinityListing : NSObject <NSCopying, NTKAVListing> {
     NTKInfinityListingAttributes * _attributes;
+    CLKDevice * _device;
     NSString * _filename;
     UIImage * _image;
     unsigned long long  _playback;
@@ -21,8 +22,8 @@
 @property (nonatomic) unsigned long long type;
 @property (nonatomic, readonly) CLKVideo *video;
 
-+ (id)listingWithFilename:(id)arg1;
-+ (id)listingWithFilename:(id)arg1 type:(unsigned long long)arg2 attributes:(id)arg3;
++ (id)listingForDevice:(id)arg1 withFilename:(id)arg2;
++ (id)listingForDevice:(id)arg1 withFilename:(id)arg2 type:(unsigned long long)arg3 attributes:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)attributes;
@@ -32,7 +33,7 @@
 - (id)description;
 - (void)discardAssets;
 - (id)image;
-- (id)initWithFilename:(id)arg1;
+- (id)initForDevice:(id)arg1 withFilename:(id)arg2;
 - (unsigned long long)playback;
 - (void)setAttributes:(id)arg1;
 - (void)setPlayback:(unsigned long long)arg1;

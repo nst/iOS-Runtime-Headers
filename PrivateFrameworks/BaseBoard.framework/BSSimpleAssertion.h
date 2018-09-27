@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) bool valid;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

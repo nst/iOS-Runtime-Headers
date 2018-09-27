@@ -5,19 +5,19 @@
 @interface PSUIPearlPasscodeController : PSUIBiometricController <BKUIPearlEnrollControllerDelegate, LAUIDelegate> {
     PSPearlAttentionGroupController * _attentionGroupController;
     LAContext * _authContext;
-    PSSetupController * _enrollFaceController;
+    PSEnrollmentNavigationController * _enrollFaceController;
     PSSpecifier * _enrollFaceSpecifier;
-    PSSpecifier * _removeFaceSpecifier;
+    OBPrivacyPresenter * _presenter;
 }
 
 @property (nonatomic, retain) PSPearlAttentionGroupController *attentionGroupController;
 @property (nonatomic, retain) LAContext *authContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) PSSetupController *enrollFaceController;
+@property (nonatomic, retain) PSEnrollmentNavigationController *enrollFaceController;
 @property (nonatomic, retain) PSSpecifier *enrollFaceSpecifier;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) PSSpecifier *removeFaceSpecifier;
+@property (nonatomic, retain) OBPrivacyPresenter *presenter;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (id)biometricLogo;
 - (id)biometricTableViewHeader;
 - (void)dealloc;
-- (void)dismissPearlIDAboutSheet:(id)arg1;
+- (void)deleteAllIdentities;
 - (void)enroll:(id)arg1;
 - (void)enrollBiometric;
 - (id)enrollFaceController;
@@ -36,7 +36,7 @@
 - (id)headerForUseBiometricSection;
 - (id)init;
 - (bool)isEnrolled;
-- (bool)isSafariAutofillRestricted;
+- (bool)isEnrollmentAvailable;
 - (unsigned long long)numberOfAppsUsingPearl;
 - (id)numberOfAppsUsingPearlDescription:(id)arg1;
 - (id)passcodeController;
@@ -44,16 +44,13 @@
 - (id)pearlEnrollSpecifiers;
 - (void)pearlLearnMoreTapped:(id)arg1;
 - (void)popPearlEnrollmentController;
-- (void)removeFace:(id)arg1;
-- (id)removeFaceSpecifier;
-- (id)safariAutoFillEnabled:(id)arg1;
+- (id)presenter;
 - (void)setAttentionGroupController:(id)arg1;
 - (void)setAuthContext:(id)arg1;
 - (void)setBiometricUnlockEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setEnrollFaceController:(id)arg1;
 - (void)setEnrollFaceSpecifier:(id)arg1;
-- (void)setRemoveFaceSpecifier:(id)arg1;
-- (void)setSafariAutoFillEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setPresenter:(id)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 

@@ -16,6 +16,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3;
 - (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_noteExternalChangeForKey:(id)arg1;

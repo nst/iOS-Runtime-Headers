@@ -4,14 +4,14 @@
 
 @interface FBSScene : NSObject <BSDescriptionProviding, FBSSceneLayerDelegate, FBSSceneUpdaterDelegate>
 
-@property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
+@property (nonatomic, readonly) FBSSceneClientSettings *clientSettings;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSSceneDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly, retain) NSArray *layers;
-@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (nonatomic, readonly) NSArray *layers;
+@property (nonatomic, readonly) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
@@ -57,7 +57,7 @@
 - (void)updater:(id)arg1 didReceiveMessage:(id)arg2 withResponse:(id /* block */)arg3;
 - (void)updater:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)uiCanReceiveDeviceOrientationEvents;
 - (id)uiClientSettings;

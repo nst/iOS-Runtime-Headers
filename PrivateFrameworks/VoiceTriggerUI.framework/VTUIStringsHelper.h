@@ -19,6 +19,7 @@
 - (id)_siriLanguageSubstitutedString:(id)arg1;
 - (id)heySiriTriggerPhrase;
 - (id)init;
+- (id)localizedAudioStringForKey:(id)arg1;
 - (void)setSiriLanguage:(id)arg1;
 - (void)setupForCurrentLocaleAndSiriLanguage;
 - (id)siriLanguageStringForKey:(id)arg1;

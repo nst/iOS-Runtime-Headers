@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarDaemon.framework/CalendarDaemon
  */
 
-@interface CADServer : NSObject <CalActivatable, ClientConnectionDelegate, NSXPCListenerDelegate> {
+@interface CADServer : NSObject <CalActivatable, ClientConnectionDelegate, DatabaseChangeHandling, NSXPCListenerDelegate> {
     NSXPCListener * _NSXPCListener;
     bool  _active;
     int  _backgroundTaskCount;
@@ -35,6 +35,7 @@
 - (void)_enableICloudBackups;
 - (void)_exitWithStatus:(int)arg1;
 - (void)_finishInitializationWithDataAvailable;
+- (void)_handleDatabaseChanged;
 - (void)_handleXPCConnection:(id)arg1;
 - (void)_protectedDataDidBecomeAvailable;
 - (void)_registerForIdentityOrphanCleanup;

@@ -5,11 +5,13 @@
 @interface CAMeshTransform : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     void * _impl;
     unsigned long long  _normalization;
+    bool  _replicatesEdges;
     long long  _subdivisionSteps;
 }
 
 @property (readonly, copy) NSString *depthNormalization;
 @property (readonly) unsigned long long faceCount;
+@property (readonly) bool replicatesEdges;
 @property (readonly) int subdivisionSteps;
 @property (readonly) unsigned long long vertexCount;
 
@@ -39,6 +41,7 @@
 - (id)initWithVertexCount:(unsigned long long)arg1 vertices:(const struct CAMeshVertex { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CAPoint3D { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg2 faceCount:(unsigned long long)arg3 faces:(const struct CAMeshFace { unsigned int x1[4]; float x2[4]; }*)arg4 depthNormalization:(id)arg5;
 - (id)meshTransformForLayer:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (bool)replicatesEdges;
 - (int)subdivisionSteps;
 - (struct CAMeshVertex { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CAPoint3D { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })vertexAtIndex:(unsigned long long)arg1;
 - (unsigned long long)vertexCount;

@@ -18,7 +18,6 @@
 + (id)defaultValueForProperty:(int)arg1;
 + (id)properties;
 
-- (id)autorelease;
 - (id)boxedDefaultValueForProperty:(int)arg1;
 - (id)boxedValueForProperty:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,9 +31,6 @@
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (bool)overridesProperty:(int)arg1;
 - (id)properties;
-- (oneway void)release;
-- (id)retain;
-- (unsigned long long)retainCount;
 - (id)valueForProperty:(int)arg1;
 
 @end

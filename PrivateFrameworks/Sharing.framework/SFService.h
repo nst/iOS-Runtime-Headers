@@ -14,6 +14,7 @@
     unsigned char  _deviceColorCode;
     unsigned char  _deviceModelCode;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    bool  _duetSync;
     id /* block */  _errorHandler;
     id /* block */  _eventMessageHandler;
     NSString * _fixedPIN;
@@ -29,7 +30,6 @@
     CUAppleIDClient * _myAppleIDInfoClient;
     bool  _needsAWDL;
     bool  _needsKeyboard;
-    bool  _needsNAN;
     bool  _needsSetup;
     bool  _overrideScreenOff;
     NSDictionary * _pairSetupACL;
@@ -74,6 +74,7 @@
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucatCrypto;
     bool  _wakeDevice;
     bool  _watchLocked;
+    bool  _wifiP2P;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -85,6 +86,7 @@
 @property (nonatomic) unsigned char deviceColorCode;
 @property (nonatomic) unsigned char deviceModelCode;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic) bool duetSync;
 @property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic, copy) id /* block */ eventMessageHandler;
 @property (nonatomic, copy) NSString *fixedPIN;
@@ -98,7 +100,6 @@
 @property (nonatomic, retain) CUAppleIDClient *myAppleIDInfoClient;
 @property (nonatomic) bool needsAWDL;
 @property (nonatomic) bool needsKeyboard;
-@property (nonatomic) bool needsNAN;
 @property (nonatomic) bool needsSetup;
 @property (nonatomic) bool overrideScreenOff;
 @property (nonatomic, copy) NSDictionary *pairSetupACL;
@@ -130,6 +131,7 @@
 @property (nonatomic) bool touchRemoteEnabled;
 @property (nonatomic) bool wakeDevice;
 @property (nonatomic) bool watchLocked;
+@property (nonatomic) bool wifiP2P;
 
 + (bool)supportsSecureCoding;
 
@@ -165,6 +167,7 @@
 - (unsigned char)deviceColorCode;
 - (unsigned char)deviceModelCode;
 - (id)dispatchQueue;
+- (bool)duetSync;
 - (void)encodeWithCoder:(id)arg1;
 - (id /* block */)errorHandler;
 - (id /* block */)eventMessageHandler;
@@ -182,7 +185,6 @@
 - (id)myAppleIDInfoClient;
 - (bool)needsAWDL;
 - (bool)needsKeyboard;
-- (bool)needsNAN;
 - (bool)needsSetup;
 - (bool)overrideScreenOff;
 - (id)pairSetupACL;
@@ -228,6 +230,7 @@
 - (void)setDeviceColorCode:(unsigned char)arg1;
 - (void)setDeviceModelCode:(unsigned char)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setDuetSync:(bool)arg1;
 - (int)setEncryptionReadKey:(const char *)arg1 readKeyLen:(unsigned long long)arg2 writeKey:(const char *)arg3 writeKeyLen:(unsigned long long)arg4 peer:(id)arg5;
 - (void)setErrorHandler:(id /* block */)arg1;
 - (void)setEventMessageHandler:(id /* block */)arg1;
@@ -242,7 +245,6 @@
 - (void)setMyAppleIDInfoClient:(id)arg1;
 - (void)setNeedsAWDL:(bool)arg1;
 - (void)setNeedsKeyboard:(bool)arg1;
-- (void)setNeedsNAN:(bool)arg1;
 - (void)setNeedsSetup:(bool)arg1;
 - (void)setOverrideScreenOff:(bool)arg1;
 - (void)setPairSetupACL:(id)arg1;
@@ -274,6 +276,7 @@
 - (void)setTouchRemoteEnabled:(bool)arg1;
 - (void)setWakeDevice:(bool)arg1;
 - (void)setWatchLocked:(bool)arg1;
+- (void)setWifiP2P:(bool)arg1;
 - (id /* block */)showPINHandler;
 - (id /* block */)showPINHandlerEx;
 - (bool)supportsAirPlayReceiver;
@@ -287,5 +290,6 @@
 - (void)updateWithService:(id)arg1;
 - (bool)wakeDevice;
 - (bool)watchLocked;
+- (bool)wifiP2P;
 
 @end

@@ -36,6 +36,7 @@
 - (void)setDuration:(long long)arg1;
 - (void)setDuration:(long long)arg1 animated:(bool)arg2;
 - (void)setHideOffWhenCollapsed:(bool)arg1;
+- (void)setHideOffWhenCollapsed:(bool)arg1 needsReloadData:(bool)arg2;
 - (id)shownIndexesWhileCollapsed;
 - (id)titleForMenuItemAtIndex:(long long)arg1;
 

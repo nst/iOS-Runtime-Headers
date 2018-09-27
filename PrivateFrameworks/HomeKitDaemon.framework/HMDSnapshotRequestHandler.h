@@ -32,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (void)_addSupportedResolutionsFrom:(id)arg1 to:(id)arg2;
+- (id)_getOptionsForRequestToAccessory:(id)arg1 forResolution:(id)arg2;
 - (void)_getSupportedVideoResolutions:(id)arg1 streamingTierType:(unsigned long long)arg2;
 - (void)_handleImageResourceData:(id)arg1 error:(id)arg2 requestedResolution:(id)arg3 snapshotDataTrasaction:(id)arg4;
 - (void)_handleSupportedParameters:(id)arg1 sessionID:(id)arg2 streamingTierType:(unsigned long long)arg3;

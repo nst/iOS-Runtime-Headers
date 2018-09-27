@@ -35,6 +35,8 @@
 - (void)dealloc;
 - (int)direction;
 - (id)errorBarCustomFormulaForSeriesIndex:(unsigned long long)arg1 dataType:(int)arg2;
+- (bool)hasCategoryReferences;
+- (bool)hasTractReference;
 - (id)init;
 - (id)initWithChartInfo:(id)arg1;
 - (void)invalidateAndSynchronizeMediator;

@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSProcessExecutionProvisionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) NSError *error;
+@property (nonatomic, readonly) NSError *error;
 @property (readonly) unsigned long long hash;
 @property (getter=isMonitoring, nonatomic, readonly) bool monitoring;
 @property (nonatomic, readonly) <FBSProcess> *process;
@@ -30,7 +30,6 @@
 - (void)_stopMonitoring;
 - (void)_updateProgress;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

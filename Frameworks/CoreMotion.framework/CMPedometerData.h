@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@interface CMPedometerData : NSObject <HDSensorDatum, NSCopying, NSSecureCoding> {
+@interface CMPedometerData : NSObject <HDCoreMotionDatum, NSCopying, NSSecureCoding> {
     NSNumber * fActiveTime;
     NSNumber * fCurrentCadence;
     NSNumber * fCurrentPace;
     NSNumber * fDistance;
+    NSNumber * fElevationAscended;
+    NSNumber * fElevationDescended;
     NSDate * fEndDate;
     NSNumber * fFloorsAscended;
     NSNumber * fFloorsDescended;
@@ -26,6 +28,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSNumber *distance;
+@property (nonatomic, readonly) NSNumber *elevationAscended;
+@property (nonatomic, readonly) NSNumber *elevationDescended;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSNumber *floorsAscended;
 @property (nonatomic, readonly) NSNumber *floorsDescended;
@@ -51,12 +55,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)distance;
+- (id)elevationAscended;
+- (id)elevationDescended;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)floorsAscended;
 - (id)floorsDescended;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15 elevationAscended:(id)arg16 elevationDescended:(id)arg17;
 - (bool)isOdometerDistance;
 - (bool)isOdometerPace;
 - (id)numberOfPushes;
@@ -68,7 +74,11 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)date;
-- (long long)recordID;
+- (id)hd_datestamp;
+- (id)hd_epochDatestamp;
+- (bool)hd_hasWorkout;
+- (long long)hd_recordID;
+- (id)hd_sourceID;
+- (id)hd_unitForType:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
 
 @property (nonatomic) int verbosity;
 
++ (id)defaultLogger;
 + (id)logger;
 
 - (void)dealloc;

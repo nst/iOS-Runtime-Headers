@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSTonePurchase : SSPurchase <NSCoding, NSCopying, SSXPCCoding> {
+@interface SSTonePurchase : SSPurchase <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSArray * _allowedToneStyles;
     NSString * _assigneeContactIdentifier;
     NSNumber * _assigneeIdentifier;
@@ -21,6 +21,8 @@
 @property bool shouldMakeDefaultRingtone;
 @property bool shouldMakeDefaultTextTone;
 @property (readonly) Class superclass;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addEntriesToDatabaseEncoding:(id)arg1;

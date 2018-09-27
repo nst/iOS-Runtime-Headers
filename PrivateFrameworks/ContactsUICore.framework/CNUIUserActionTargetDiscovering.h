@@ -3,18 +3,17 @@
  */
 
 @interface CNUIUserActionTargetDiscovering : NSObject <CNUIUserActionTargetDiscovering> {
-    CNCache * _cache;
+    CNUIUserActionTargetDiscoveryCache * _cache;
     <CNUIUserActionDiscoveringEnvironment> * _discoveringEnvironment;
 }
 
-@property (nonatomic, readonly) CNCache *cache;
+@property (nonatomic, readonly) CNUIUserActionTargetDiscoveryCache *cache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <CNUIUserActionDiscoveringEnvironment> *discoveringEnvironment;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)applicationProxiesForIntent:(id)arg1 environment:(id)arg2;
 + (bool)isSkypeAvailableWithEnvironment:(id)arg1;
 
 - (void).cxx_destruct;

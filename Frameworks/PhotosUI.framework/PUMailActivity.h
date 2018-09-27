@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity> {
+@interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUMomentShareActivity> {
     PLManagedAsset * _currentVideo;
     PUActivityItemSource * _currentVideoItemSource;
     bool  _didCheckMailDropAvailable;
@@ -22,12 +22,22 @@
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
 
++ (id)_expirationStringForMomentShare:(id)arg1;
++ (id)_momentShareLinkActivityItemsForURL:(id)arg1 momentShare:(id)arg2;
++ (id)_momentShareLinkPrompt;
++ (id)_momentShareLinkSubjectForMomentShare:(id)arg1;
++ (id)_momentShareLinkTitleForMomentShare:(id)arg1;
 + (bool)allowedToModifyEmailAccounts;
 + (void)openEmailAccountPrefs;
++ (bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
 
 - (void).cxx_destruct;
+- (bool)_canPerformForIndividualAssetsWithActivityItems:(id)arg1;
+- (bool)_canPerformWithLink;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
 - (bool)_isMailDropEnabled;
+- (bool)_momentShareLinkDidFail;
+- (void)_prepareWithMomentShareLink:(id)arg1;
 - (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_pu_cleanup;
 - (void)_remakeAndSendVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2;
@@ -45,6 +55,7 @@
 - (id)itemSourceController;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)mailComposeViewController;
+- (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setItemSourceController:(id)arg1;
 

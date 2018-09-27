@@ -33,6 +33,7 @@
 - (id)fetchTableNamesWithError:(id*)arg1;
 - (id)fetchTableWithName:(id)arg1 error:(id*)arg2;
 - (id)initWithPath:(id)arg1 dataProtectionClass:(long long)arg2 options:(long long)arg3;
+- (bool)insertIntoTableWithName:(id)arg1 record:(id)arg2 error:(id*)arg3;
 - (bool)insertIntoTableWithName:(id)arg1 valueMap:(id)arg2 error:(id*)arg3;
 - (bool)openWithError:(id*)arg1;
 - (long long)options;
@@ -44,6 +45,7 @@
 - (bool)rollbackToSavepointWithName:(id)arg1 error:(id*)arg2;
 - (bool)rollbackTransactionWithError:(id*)arg1;
 - (bool)savepointWithName:(id)arg1 error:(id*)arg2;
+- (id)selectRecordsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 recordBuilder:(id)arg7 error:(id*)arg8;
 - (id)selectValueMapsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;
 - (id)selectValueTuplesFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;
 - (id)selectValuesFromTableWithName:(id)arg1 columnName:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;

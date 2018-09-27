@@ -10,6 +10,7 @@
     bool  _shared;
     PKServicePersonality * _solePersonality;
     NSArray * _subsystems;
+    NSObject<OS_dispatch_source> * _terminationTimer;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *_sync;
@@ -23,14 +24,17 @@
 @property (retain) PKServicePersonality *solePersonality;
 @property (retain) NSArray *subsystems;
 @property (readonly) Class superclass;
+@property (retain) NSObject<OS_dispatch_source> *terminationTimer;
 
 + (int)_defaultRun:(int)arg1 arguments:(const char **)arg2;
 + (id)defaultService;
 + (void)main;
 
 - (void).cxx_destruct;
+- (void)_prepareToRun;
 - (bool)_processDefaultSubsystemName:(id)arg1;
 - (id)_sync;
+- (void)cancelTermination;
 - (void)checkEnvironment:(id)arg1;
 - (id)configuredSubsystemList;
 - (id)connectionForPlugInNamed:(id)arg1;
@@ -52,6 +56,7 @@
 - (id)plugInPrincipalForPlugInNamed:(id)arg1;
 - (void)registerPersonality:(id)arg1;
 - (void)run;
+- (void)scheduleTermination:(double)arg1;
 - (id)serviceListener;
 - (void)setDelegate:(id)arg1;
 - (void)setPersonalities:(id)arg1;
@@ -59,10 +64,12 @@
 - (void)setShared:(bool)arg1;
 - (void)setSolePersonality:(id)arg1;
 - (void)setSubsystems:(id)arg1;
+- (void)setTerminationTimer:(id)arg1;
 - (void)set_sync:(id)arg1;
 - (bool)shared;
 - (id)solePersonality;
 - (id)subsystems;
+- (id)terminationTimer;
 - (bool)unregisterPersonality:(id)arg1;
 
 @end

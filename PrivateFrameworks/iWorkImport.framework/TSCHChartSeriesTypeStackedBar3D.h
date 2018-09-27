@@ -8,5 +8,6 @@
 
 - (id)g_genericToSpecificPropertyMap3DStackedBar;
 - (id)genericToSpecificPropertyMap;
+- (bool)supportsRoundedCorners;
 
 @end

@@ -8,6 +8,7 @@
 - (NSString *)articleID;
 - (unsigned long long)articleLikingStatus;
 - (CKRecord *)asCKRecord;
+- (NSString *)deviceID;
 - (NSDate *)firstSeenAt;
 - (NSDate *)firstSeenAtOfMaxVersionSeen;
 - (unsigned long long)flags;
@@ -19,5 +20,6 @@
 - (NSDate *)lastVisitedAt;
 - (long long)maxVersionRead;
 - (long long)maxVersionSeen;
+- (NSString *)sourceChannelTagID;
 
 @end

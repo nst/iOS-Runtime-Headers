@@ -11,6 +11,7 @@
     bool  _likelyPINEntry;
     NSString * _prompt;
     long long  _returnKeyType;
+    RTIDataPayload * _rtiDataPayload;
     bool  _secure;
     long long  _spellCheckingType;
     NSString * _title;
@@ -24,6 +25,7 @@
 @property (getter=_isLikelyPINEntry, setter=_setLikelyPINEntry:, nonatomic) bool likelyPINEntry;
 @property (nonatomic, copy) NSString *prompt;
 @property (getter=_returnKeyType, setter=_setReturnKeyType:, nonatomic) long long returnKeyType;
+@property (nonatomic, retain) RTIDataPayload *rtiDataPayload;
 @property (getter=_isSecure, setter=_setSecure:, nonatomic) bool secure;
 @property (getter=_spellCheckingType, setter=_setSpellCheckingType:, nonatomic) long long spellCheckingType;
 @property (nonatomic, copy) NSString *title;
@@ -57,8 +59,10 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToAttributes:(id)arg1;
 - (id)prompt;
+- (id)rtiDataPayload;
 - (void)setPINEntryAttributes:(id)arg1;
 - (void)setPrompt:(id)arg1;
+- (void)setRtiDataPayload:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

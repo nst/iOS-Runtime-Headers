@@ -16,4 +16,9 @@
 - (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 options:(long long)arg2;
 - (unsigned long long)whitelistLevelForTagID:(NSString *)arg1;
 
+@optional
+
+- (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 configurationSet:(long long)arg2;
+- (FCFeedPersonalizedArticles *)sortArticles:(NSArray *)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
+
 @end

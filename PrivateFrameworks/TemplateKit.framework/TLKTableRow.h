@@ -7,13 +7,12 @@
     bool  _isSubHeader;
 }
 
-@property (retain) NSArray *data;
-@property bool isSubHeader;
+@property (nonatomic, retain) NSArray *data;
+@property (nonatomic) bool isSubHeader;
 
 - (void).cxx_destruct;
 - (id)data;
 - (bool)isSubHeader;
-- (id)observableProperties;
 - (void)setData:(id)arg1;
 - (void)setIsSubHeader:(bool)arg1;
 

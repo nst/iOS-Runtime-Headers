@@ -18,10 +18,13 @@
 @property (nonatomic, readonly, copy) INSpeakableString *organizationName;
 @property (nonatomic, readonly, copy) INBalanceAmount *secondaryBalance;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (id)accountNumber;
 - (long long)accountType;
 - (id)balance;
@@ -37,5 +40,9 @@
 - (id)nickname;
 - (id)organizationName;
 - (id)secondaryBalance;
+
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
+
+- (id)acs_formattedAccountName;
 
 @end

@@ -5,7 +5,6 @@
 @interface PLMomentClustering : NSObject {
     NSMutableDictionary * __clustersByNodeObjectID;
     NSMutableDictionary * __clustersByObjectID;
-    CLGeocoder * __geocoder;
     NSMutableDictionary * __markedNodesByObjectID;
     unsigned long long  __minimumNumberOfNodes;
     PLMomentNodeCache * __nodeCache;
@@ -36,7 +35,6 @@
 
 @property (nonatomic, readonly) NSMutableDictionary *_clustersByNodeObjectID;
 @property (nonatomic, readonly) NSMutableDictionary *_clustersByObjectID;
-@property (nonatomic, readonly) CLGeocoder *_geocoder;
 @property (nonatomic, readonly) NSMutableDictionary *_markedNodesByObjectID;
 @property (setter=_setMinimumNumberOfNodes:, nonatomic) unsigned long long _minimumNumberOfNodes;
 @property (nonatomic, readonly) PLMomentNodeCache *_nodeCache;
@@ -65,7 +63,7 @@
 @property (nonatomic) double theta;
 @property (setter=_setUpdatedClusters:, nonatomic, copy) NSSet *updatedClusters;
 
-+ (double)maximumClusterTime;
++ (double)maximumClusterDuration;
 
 - (id)_clustersByMergingUserInfluencedClusters:(id)arg1;
 - (id)_clustersByNodeObjectID;
@@ -73,7 +71,6 @@
 - (id)_clustersBySplittingUserInfluencedClusters:(id)arg1;
 - (id)_clustersSplitByLocationsOfInterest:(id)arg1;
 - (void)_commonPLMomentClusteringManagerInitialization;
-- (id)_geocoder;
 - (id)_markedNodesByObjectID;
 - (unsigned long long)_minimumNumberOfNodes;
 - (id)_nodeCache;
@@ -100,7 +97,6 @@
 - (void)dealloc;
 - (id)deletedClusters;
 - (id)generateClustersForAssets:(id)arg1;
-- (void)generateClustersForAssets:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (bool)hasLocationsOfInterestInformation;
 - (bool)hasMarkedNodes;
 - (id)init;

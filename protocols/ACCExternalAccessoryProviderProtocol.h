@@ -17,6 +17,7 @@
 - (void)initialEAAccessoriesAttachedAfterClientConnection:(NSArray *)arg1;
 - (void)nmeaSentenceArrived:(NSString *)arg1 forAccessoryUUID:(NSString *)arg2;
 - (void)startDestinationSharingForUUID:(NSString *)arg1;
+- (void)startDestinationSharingForUUID:(NSString *)arg1 options:(unsigned long long)arg2;
 - (void)stopDestinationSharingForUUID:(NSString *)arg1;
 - (void)updateAccessoryInfo:(NSDictionary *)arg1;
 - (void)vehicleStatusUpdate:(NSDictionary *)arg1 forAccessoryUUID:(NSString *)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFManagementLockRequest : CATTaskRequest {
+@interface DMFManagementLockRequest : DMFTaskRequest {
     NSString * _lockedByLabel;
     NSString * _passcode;
 }

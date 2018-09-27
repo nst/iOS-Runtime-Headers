@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NRDeviceCollectionDiff *diff;
 @property (nonatomic) NRDeviceCollectionHistory *historyManager;
 @property (nonatomic) unsigned long long index;
+@property (nonatomic, readonly) NRPBDeviceCollectionHistoryEntry *protobuf;
 @property (nonatomic, readonly) NRMutableDeviceCollection *state;
 @property (nonatomic) unsigned int switchIndex;
 
@@ -30,7 +31,9 @@
 - (unsigned long long)index;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistory:(id)arg1 index:(unsigned long long)arg2 date:(id)arg3 diff:(id)arg4 switchIndex:(unsigned int)arg5;
+- (id)initWithProtobuf:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)protobuf;
 - (void)setDate:(id)arg1;
 - (void)setDiff:(id)arg1;
 - (void)setHistoryManager:(id)arg1;

@@ -85,6 +85,7 @@
 - (void)closeConnection;
 - (id)connection;
 - (void)countdownCanceled;
+- (void)createConnectionIfNecessary;
 - (void)dealloc;
 - (id)delegate;
 - (void)didStartCaptureTimer;

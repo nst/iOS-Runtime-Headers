@@ -16,6 +16,7 @@
 - (NSString *)coverArticleListID;
 - (FCAssetHandle *)coverImageAssetHandle;
 - (NSString *)feedIDForBin:(long long)arg1;
+- (FCAssetHandle *)feedNavImageAssetHandle;
 - (NSString *)freeFeedIDForBin:(long long)arg1;
 - (FCColor *)groupTitleColor;
 - (unsigned long long)groupingEligibility;
@@ -23,6 +24,7 @@
 - (NSArray *)iAdCategories;
 - (NSArray *)iAdKeywords;
 - (NSString *)identifier;
+- (bool)isArticleReadCountReportingEnabled;
 - (bool)isAuthenticationSetup;
 - (bool)isBlockedExplicitContent;
 - (bool)isDeprecated;
@@ -33,7 +35,7 @@
 - (bool)isNotificationEnabled;
 - (bool)isPublic;
 - (bool)isPurchaseSetup;
-- (bool)isRealTimeTrackingEnabed;
+- (bool)isRealTimeTrackingEnabled;
 - (bool)isSubscribable;
 - (NSDate *)loadDate;
 - (long long)minimumNewsVersion;

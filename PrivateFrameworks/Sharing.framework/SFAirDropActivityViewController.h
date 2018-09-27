@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFAirDropActivityViewController : UIViewController <SFAirDropBrowserDelegate, SFCollectionViewDelegateLayout, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate, UICollectionViewDataSource> {
+@interface SFAirDropActivityViewController : UIViewController <SFAirDropBrowserBatchDelegate, SFCollectionViewDelegateLayout, SFPersonCollectionViewCellDelegate, SFWirelessSettingsControllerDelegate, UICollectionViewDataSource> {
     NSLayoutConstraint * _airDropActiveIconLeftConstraint;
     SFAirDropActiveIconView * _airDropActiveIconView;
     NSLayoutConstraint * _airDropIconLeftConstraint;
@@ -12,11 +12,7 @@
     NSArray * _airdropViewYConstraints;
     long long  _attachmentCount;
     SFAirDropBrowser * _browser;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _cachedPreferredItemSize;
-    NSCache * _cachedPreferredItemSizesByString;
+    bool  _browserPaused;
     NSMutableOrderedSet * _cachedSharedItems;
     UICollectionView * _collectionView;
     SFCollectionViewLayout * _collectionViewLayout;
@@ -24,6 +20,7 @@
     NSObject<SFAirDropActivityViewControllerDelegate> * _delegate;
     UICollectionView * _detailCollectionView;
     SFCollectionViewLayout * _detailCollectionViewLayout;
+    bool  _didSelectNode;
     UIButton * _doneButton;
     UIFocusContainerGuide * _fcg;
     long long  _generatedPreviews;
@@ -37,6 +34,7 @@
     NSArray * _largeTextAirdropViewYConstraints;
     NSArray * _largeTextTextViewConstraints;
     struct __SFOperation { } * _logger;
+    bool  _manuallyManageBrowsing;
     struct CGSize { 
         double width; 
         double height; 
@@ -45,19 +43,18 @@
     UITextView * _noAWDLTextView;
     NSLayoutConstraint * _noWifiRightConstraint;
     UITextView * _noWifiTextView;
-    NSMutableArray * _objectChanges;
     NSOperationQueue * _operationQueue;
     bool  _otherActivityViewPresented;
     NSString * _overriddenInstructionsText;
     NSString * _overriddenNoAWDLText;
     NSString * _overriddenNoWiFIBTText;
     NSString * _overriddenTitleText;
+    NSArray * _people;
     unsigned long long  _peopleStartTimestamp;
     NSMutableDictionary * _personToProgress;
     NSMutableDictionary * _personToSharedItemsRequestID;
     NSMutableDictionary * _personToStoredTransferFinalState;
     id  _progressToken;
-    SFPersonCollectionViewCell * _prototypeActivityCell;
     NSMapTable * _realNameToFirstSeenTimestamp;
     UIButton * _reportBugButton;
     NSString * _sendingAppBundleID;
@@ -66,6 +63,8 @@
     }  _sendingApplicationAuditToken;
     NSString * _sessionID;
     bool  _sharedItemsAvailable;
+    int  _sharedItemsCount;
+    NSMutableDictionary * _sharedItemsMap;
     long long  _sharedItemsRequestID;
     NSMutableDictionary * _sharedItemsRequestIDToPreviewPhoto;
     bool  _shouldExpandTextIfNeeded;
@@ -83,6 +82,7 @@
 @property (nonatomic) NSObject<SFAirDropActivityViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool manuallyManageBrowsing;
 @property (nonatomic) bool otherActivityViewPresented;
 @property (nonatomic, copy) NSString *overriddenInstructionsText;
 @property (nonatomic, copy) NSString *overriddenNoAWDLText;
@@ -98,28 +98,25 @@
 
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_cachedPreferredItemSize;
-- (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForString:(id)arg1;
 - (void)_collectTelemetryForPeople:(id)arg1;
 - (void)_createiOSLayoutConstraints;
 - (void)_createtvOSLayoutConstraints;
 - (void)_emitTelemetryForPerson:(id)arg1;
 - (id)_fontWithStyle:(id)arg1 maxSizeCategory:(id)arg2 traits:(unsigned int)arg3;
+- (void)_setIsLoadingActivityItemProviders:(bool)arg1;
 - (void)_startTelemetry;
 - (void)_stopTelemetry;
 - (void)_updateExclusionPathsForTextViews;
 - (void)_updateFontSizes;
-- (bool)addAttributedString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
-- (bool)addData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
-- (bool)addImage:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
+- (bool)addAttributedString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
+- (bool)addData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 itemIndex:(int)arg6;
+- (bool)addImage:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
 - (bool)addItemProvider:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
 - (bool)addItemProvider:(id)arg1 withDataType:(id)arg2 attachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
-- (bool)addString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
-- (bool)addURL:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
+- (bool)addString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
+- (bool)addURL:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
 - (id)attributedStringWithTitle:(id)arg1 content:(id)arg2;
-- (void)browser:(id)arg1 didDeletePersonAtIndex:(unsigned long long)arg2;
-- (void)browser:(id)arg1 didInsertPersonAtIndex:(unsigned long long)arg2;
-- (void)browserDidChangePeople:(id)arg1;
-- (void)browserWillChangePeople:(id)arg1;
+- (void)browserDidUpdatePeople:(id)arg1;
 - (struct CGSize { double x1; double x2; })calculatePreferredContentSize;
 - (id)cellForPerson:(id)arg1;
 - (void)cleanupWithSelectedActivityType:(id)arg1;
@@ -130,26 +127,30 @@
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 preferredSizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
-- (bool)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 completion:(id /* block */)arg6;
+- (bool)createURLPayloadForData:(id)arg1 ofType:(id)arg2 withAttachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5 itemIndex:(int)arg6 completion:(id /* block */)arg7;
 - (bool)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)delegate;
 - (void)didEnterBackground:(id)arg1;
 - (void)doneButtonAction:(id)arg1;
 - (void)enableAirDropRequiredFeatures;
+- (bool)enableModernShareSheeet;
 - (void)generateSpecialPreviewPhotoForRequestID:(long long)arg1;
-- (void)handleImageItemProvider:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
-- (void)handleLivePhotoItemProvider:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
+- (void)handleImageItemProvider:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
+- (void)handleLivePhotoItemProvider:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4 itemIndex:(int)arg5;
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
 - (void)handleOtherItemProvider:(id)arg1 withDataType:(id)arg2 attachmentName:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
+- (id)indexSetToIndexPaths:(id)arg1 inSection:(long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)instructionsText;
 - (void)invalidate;
 - (bool)isBluetoothEnabled;
+- (bool)isDebugMode;
 - (bool)isTetheredModeEnabled;
 - (bool)isValidPayload:(id)arg1 toPerson:(id)arg2 invalidMessage:(id*)arg3;
 - (bool)isWifiEnabled;
+- (bool)manuallyManageBrowsing;
 - (id)noAWDLText;
 - (id)noWiFiBTText;
 - (bool)otherActivityViewPresented;
@@ -164,6 +165,7 @@
 - (struct { unsigned int x1[8]; })sendingApplicationAuditToken;
 - (void)setDarkStyleOnLegacyApp:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setManuallyManageBrowsing:(bool)arg1;
 - (void)setNeedsRequestingSharedItems;
 - (void)setOtherActivityViewPresented:(bool)arg1;
 - (void)setOverriddenInstructionsText:(id)arg1;

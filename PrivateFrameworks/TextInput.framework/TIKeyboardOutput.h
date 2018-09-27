@@ -28,11 +28,13 @@
 @property (nonatomic, copy) NSString *textToCommit;
 @property (nonatomic) bool unmarkIfNecessary;
 
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
+
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)acceptedCandidate;
 - (id)customInfo;
-- (void)dealloc;
 - (void)deleteBackward;
 - (void)deleteBackward:(unsigned long long)arg1;
 - (void)deleteForward;
@@ -64,5 +66,9 @@
 - (bool)shouldSendCurrentLocation;
 - (id)textToCommit;
 - (bool)unmarkIfNecessary;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (void)copyTo:(id)arg1;
 
 @end

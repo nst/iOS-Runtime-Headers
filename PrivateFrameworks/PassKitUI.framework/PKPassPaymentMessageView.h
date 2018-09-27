@@ -15,12 +15,11 @@
 - (id)_alertImage;
 - (id)_bodyLabel;
 - (id)_bottomRule;
-- (void)_layoutPaymentSubviews;
-- (void)_layoutValueAddedServiceSubviews;
+- (void)_layoutCompactSubviews;
 - (id)_titleLabel;
 - (void)dealloc;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2 title:(id)arg3 body:(id)arg4;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2 title:(id)arg3 body:(id)arg4 buttonTitle:(id)arg5 action:(SEL)arg6 isImportant:(bool)arg7;
+- (id)initWithPass:(id)arg1 title:(id)arg2 body:(id)arg3;
+- (id)initWithPass:(id)arg1 title:(id)arg2 body:(id)arg3 buttonTitle:(id)arg4 action:(SEL)arg5 isImportant:(bool)arg6;
 - (void)layoutSubviews;
 
 @end

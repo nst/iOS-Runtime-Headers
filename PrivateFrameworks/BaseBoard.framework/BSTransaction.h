@@ -29,21 +29,21 @@
 }
 
 @property (getter=isAborted, nonatomic, readonly) bool aborted;
-@property (nonatomic, readonly, retain) NSArray *allErrors;
+@property (nonatomic, readonly) NSArray *allErrors;
 @property (getter=isAuditHistoryEnabled, nonatomic) bool auditHistoryEnabled;
-@property (nonatomic, readonly, retain) NSArray *childTransactions;
+@property (nonatomic, readonly) NSArray *childTransactions;
 @property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) NSError *error;
+@property (nonatomic, readonly) NSError *error;
 @property (getter=isFailed, nonatomic, readonly) bool failed;
 @property (getter=isFinishedWorking, nonatomic, readonly) bool finishedWorking;
 @property (readonly) unsigned long long hash;
 @property (getter=isInterrupted, nonatomic, readonly) bool interrupted;
 @property (getter=isInterruptible, nonatomic, readonly) bool interruptible;
-@property (nonatomic, readonly, retain) NSSet *milestones;
-@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSSet *milestones;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (getter=isRunning, nonatomic, readonly) bool running;
 @property (getter=hasStarted, nonatomic, readonly) bool started;
 @property (nonatomic, readonly) unsigned long long state;
@@ -51,6 +51,7 @@
 
 + (id)_defaultTransactionLog;
 
+- (void).cxx_destruct;
 - (void)_abortForError:(id)arg1;
 - (void)_addAuditHistoryItem:(id)arg1;
 - (void)_addChildTransactionRelationship:(id)arg1;

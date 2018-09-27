@@ -25,8 +25,8 @@
 @property (readonly) Class superclass;
 
 + (void)_configureSnapshot:(id)arg1 withCompatibilityInfo:(id)arg2 forLaunchRequest:(id)arg3;
-+ (long long)_defaultOutputFormat;
 + (void)_flushManifestQueue;
++ (long long)_outputFormatForSnapshot:(id)arg1;
 + (void)_queue_noteManifestInvalidated:(id)arg1;
 + (id)_snapshotPredicateForRequest:(id)arg1;
 + (id)acquireManifestForContainerIdentity:(id)arg1 store:(id)arg2 creatingIfNecessary:(bool)arg3;
@@ -54,6 +54,7 @@
 - (void)_queue_gatherPaths:(id)arg1 forSnapshot:(id)arg2;
 - (void)_queue_handleMemoryPressure;
 - (void)_queue_incrementClientCount;
+- (bool)_queue_purgeSnapshotsWithProtectedContent;
 - (void)_queue_reallyCheckClientCount;
 - (void)_queue_reapExpiredAndInvalidSnapshots;
 - (id)_queue_snapshotGroupForID:(id)arg1 creatingIfNeeded:(bool)arg2;
@@ -86,6 +87,7 @@
 - (id)identity;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (void)purgeSnapshotsWithProtectedContent;
 - (void)saveSnapshot:(id)arg1 atPath:(id)arg2 withContext:(id)arg3;
 - (id)snapshotsForGroupID:(id)arg1;
 - (id)snapshotsForGroupID:(id)arg1 fetchRequest:(id)arg2;

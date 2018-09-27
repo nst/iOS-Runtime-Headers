@@ -29,13 +29,14 @@
 - (void)hostApplicationDidEnterBackground:(bool)arg1;
 - (id)hostContext;
 - (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
 - (bool)isAvailable;
 - (bool)isRemote;
 - (void)keyCommandWasPerformed:(id)arg1;
 - (void)keyCommandsWithCompletionHandler:(id /* block */)arg1;
 - (void)notifyFirstTimeAppearanceWithActions:(unsigned long long)arg1;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(id /* block */)arg1;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(id /* block */)arg1;
 - (id)request;
 - (void)setAccessoryViewController:(id)arg1;
 - (void)setAllowInteractiveTransitions:(bool)arg1;

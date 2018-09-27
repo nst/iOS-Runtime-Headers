@@ -30,8 +30,8 @@
 + (long long)activityCategory;
 
 - (void).cxx_destruct;
-- (id)_activityImage;
-- (id)_activitySettingsImage;
+- (id)_activityBundleImageConfiguration;
+- (id)_activitySettingsBundleImageConfiguration;
 - (void)_createStreamsPickerContainerWithExisting:(bool)arg1;
 - (void)_handleDismissWithSuccess:(bool)arg1;
 - (void)_performPresentationOnViewController:(id)arg1 completion:(id /* block */)arg2;

@@ -54,7 +54,7 @@
 - (void)streamedVideoPlaybackStartedActuallyPlaying:(id)arg1;
 - (void)userBrowsedOneUpFor:(double)arg1;
 - (void)userDidPlayAssetInOneUp:(id)arg1;
-- (void)userStartedViewingAssetCollection:(id)arg1;
+- (void)userStartedViewingCollection:(id)arg1 withListViewItemSelectionTrackerKey:(struct __CFString { }*)arg2;
 - (void)userStartedViewingCurrentAssetOfBrowsingViewModel:(id)arg1 inContext:(id)arg2;
 - (void)userStoppedViewingCurrentAssetOfBrowsingViewModel:(id)arg1 inContext:(id)arg2;
 - (void)userViewedAssetInOneUp:(id)arg1;

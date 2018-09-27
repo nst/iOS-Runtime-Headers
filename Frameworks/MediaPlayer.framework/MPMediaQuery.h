@@ -187,4 +187,14 @@
 
 - (id)_MPUSDS_searchPredicate;
 
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
++ (id)_vui_moviesQueryWithMediaLibrary:(id)arg1 rentals:(bool)arg2;
++ (id)vui_episodesQueryWithMediaLibrary:(id)arg1;
++ (id)vui_homeVideosQueryWithMediaLibrary:(id)arg1;
++ (id)vui_movieRentalsQueryWithMediaLibrary:(id)arg1;
++ (id)vui_moviesQueryWithMediaLibrary:(id)arg1;
+
+- (void)_vui_configureMediaQueryWithMediaLibrary:(id)arg1;
+
 @end

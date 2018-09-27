@@ -2,19 +2,15 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMIncomingHomeInvitation : HMHomeInvitation <HFPrettyDescription, HFStateDumpSerializable> {
+@interface HMIncomingHomeInvitation : HMHomeInvitation {
     HMHomeManager * _homeManager;
     HMUser * _inviter;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHomeManager *homeManager;
 @property (nonatomic, readonly, copy) NSString *homeName;
 @property (nonatomic, readonly, copy) NSUUID *homeUUID;
 @property (nonatomic, readonly) HMUser *inviter;
-@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -23,10 +19,10 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1 homeManager:(id)arg2;
 - (void)_acceptInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)_acceptInviteWithPresenceAuthStatus:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_cancelInviteWithCompletionHandler:(id /* block */)arg1;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)acceptInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)acceptInviteWithPresenceAuthStatus:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
@@ -42,7 +38,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

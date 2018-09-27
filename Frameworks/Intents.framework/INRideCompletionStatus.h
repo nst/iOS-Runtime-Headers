@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideCompletionStatus : NSObject <INRideCompletionStatusExport, NSCopying, NSSecureCoding> {
+@interface INRideCompletionStatus : NSObject <INCacheableContainer, INRideCompletionStatusExport, NSCopying, NSSecureCoding> {
     bool  _canceledByService;
     bool  _completed;
     NSUserActivity * _completionUserActivity;
@@ -40,6 +40,8 @@
 - (id)_dictionaryRepresentation;
 - (id)_initCompleted:(bool)arg1 canceledByService:(bool)arg2 missedPickup:(bool)arg3 amount:(id)arg4 feedbackType:(unsigned long long)arg5 outstanding:(bool)arg6;
 - (id)_initWithValue:(id)arg1;
+- (id)_intents_cacheableObjects;
+- (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_newValue;
 - (id)completionUserActivity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

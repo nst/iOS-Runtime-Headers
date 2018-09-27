@@ -23,6 +23,7 @@
     id /* block */  _lockedOnAnimationCompletion;
     bool  _nonSilentActivation;
     bool  _passcodeSet;
+    id /* block */  _prepareWatchForForcedSUCompletion;
     NSString * _remoteActivationUserAgent;
     RUIStyle * _remoteUIStyle;
     NSMutableDictionary * _reportMapping;
@@ -57,6 +58,7 @@
 @property (nonatomic, copy) id /* block */ lockedOnAnimationCompletion;
 @property (nonatomic) bool nonSilentActivation;
 @property (nonatomic) bool passcodeSet;
+@property (nonatomic, copy) id /* block */ prepareWatchForForcedSUCompletion;
 @property (nonatomic, copy) NSString *remoteActivationUserAgent;
 @property (nonatomic, retain) RUIStyle *remoteUIStyle;
 @property (nonatomic, retain) NSMutableDictionary *reportMapping;
@@ -131,6 +133,7 @@
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (double)offsetEventTime;
 - (bool)passcodeSet;
+- (id /* block */)prepareWatchForForcedSUCompletion;
 - (void)queryGizmoForOfflineTerms;
 - (void)queryGizmoForShowWarrantySentinelAndRestoreDeviceName:(id)arg1;
 - (void)refreshTimeoutTimer;
@@ -141,6 +144,7 @@
 - (id)ruiDelegate;
 - (id)ruiLoader;
 - (bool)selectedPairedUnlock;
+- (void)sendDemoWatchWirelessCredentials;
 - (void)sendGizmoPasscodeRestrictions;
 - (void)sendProxyActivationRequest:(id)arg1;
 - (void)sendProxyActivationWithCustomRequest:(id)arg1;
@@ -167,6 +171,7 @@
 - (void)setLockedOnAnimationCompletion:(id /* block */)arg1;
 - (void)setNonSilentActivation:(bool)arg1;
 - (void)setPasscodeSet:(bool)arg1;
+- (void)setPrepareWatchForForcedSUCompletion:(id /* block */)arg1;
 - (void)setRemoteActivationUserAgent:(id)arg1;
 - (void)setRemoteUIStyle:(id)arg1;
 - (void)setReportMapping:(id)arg1;
@@ -191,9 +196,12 @@
 - (void)tellGizmoToShowLockedOnAnimationTimeToFlash:(double)arg1 animationCompletion:(id /* block */)arg2;
 - (void)tellGizmoToUpdateSyncProgressTo:(double)arg1 withState:(long long)arg2;
 - (void)tellWatchLanguagesAndLocaleWithCompletion:(id /* block */)arg1;
+- (void)tellWatchToPrepareForForcedSUWithCompletion:(id /* block */)arg1;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;
 - (id)viewControllerForAlertPresentation;
+- (void)watchDidIngestWirelessCredentials:(id)arg1;
+- (void)watchDidPrepareForForcedSU:(id)arg1;
 - (void)watchDidPrepareForInitialSync:(id)arg1;
 - (void)watchDidRespondWithLanguageAndLocaleStatus:(id)arg1;
 

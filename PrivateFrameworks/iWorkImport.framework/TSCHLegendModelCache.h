@@ -14,6 +14,7 @@
     }  mLargestCellSize;
     TSCHLegendViewCache * mLastLegendViewCache;
     double  mLastLegendWidth;
+    bool  mLegendIsRTL;
     bool  mLegendOn;
     TSCHLegendCellMetrics * mMetrics;
     double  mOpacity;
@@ -31,6 +32,7 @@
 @property (readonly) id fill;
 @property (readonly) double horizontalCellSpacing;
 @property (readonly) struct CGSize { double x1; double x2; } largestCellSize;
+@property (readonly) bool legendIsRTL;
 @property (readonly) bool legendOn;
 @property (readonly) double opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
@@ -50,6 +52,7 @@
 - (double)horizontalCellSpacing;
 - (id)initWithChartModel:(id)arg1 textEditingSelectionPair:(id)arg2;
 - (struct CGSize { double x1; double x2; })largestCellSize;
+- (bool)legendIsRTL;
 - (bool)legendOn;
 - (double)opacity;
 - (id)paragraphStyle;

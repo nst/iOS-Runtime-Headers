@@ -16,6 +16,7 @@
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (bool)isBackedByTrigger;
 - (bool)isConstrained;
+- (bool)isFileBackedFuture;
 - (bool)isUnique;
 - (void)setConstrained:(bool)arg1;
 - (bool)shouldIndex;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUReviewAsset : NSObject <PUCAMReviewAsset, PUEditableAsset> {
+@interface PUReviewAsset : NSObject <PUCAMReviewAsset, PUEditableAsset, PXShareable> {
     bool  _HDR;
     PFAssetAdjustments * _assetAdjustments;
     NSString * _burstIdentifier;
@@ -40,6 +40,7 @@
     UIImage * _providedPreviewImage;
     NSURL * _providedVideoURL;
     bool  _representsBurst;
+    bool  _requiresConfidentiality;
     AVAsset * providedAVAsset;
     AVAudioMix * providedAudioMix;
     PHLivePhoto * providedLivePhoto;
@@ -81,6 +82,7 @@
 @property (nonatomic, readonly) unsigned long long numberOfRepresentedAssets;
 @property (nonatomic, readonly) int originalEXIFOrientation;
 @property (nonatomic, readonly) unsigned long long originalFilesize;
+@property (nonatomic, readonly) unsigned long long originalResourceChoice;
 @property (nonatomic, readonly, copy) NSString *pathForOriginalImageFile;
 @property (nonatomic, readonly, copy) NSString *pathForOriginalVideoFile;
 @property (nonatomic, readonly, copy) NSString *pathForTrimmedVideoFile;
@@ -100,12 +102,17 @@
 @property (nonatomic, readonly) UIImage *providedPreviewImage;
 @property (nonatomic, readonly) NSURL *providedVideoURL;
 @property (nonatomic, readonly) bool representsBurst;
+@property (nonatomic, readonly) bool requiresConfidentiality;
 @property (getter=isResourceDownloadPossible, nonatomic, readonly) bool resourceDownloadPossible;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uniformTypeIdentifier;
 @property (nonatomic, readonly) NSString *uuid;
 @property (nonatomic, readonly) PFVideoAVObjectBuilder *videoObjectBuilder;
 
++ (unsigned long long)_confidentialityWarningsVersionForAdjustments:(id)arg1;
++ (bool)_shouldCheckConfidentiality;
++ (bool)_shouldShowConfidentialityWarningForAdjustments:(id)arg1;
++ (bool)_shouldShowConfidentialityWarningForMetadata:(id)arg1 creationDate:(id)arg2;
 + (id)createUniqueMediaDirectoryForAssetWithIdentifier:(id)arg1;
 + (id)fileURLForAdjustmentsInDirectory:(id)arg1;
 + (id)fileURLForFullsizeImageInDirectory:(id)arg1 extension:(id)arg2;
@@ -120,6 +127,7 @@
 - (bool)_linkFileAtURL:(id)arg1 toURL:(id)arg2;
 - (void)_removeFileAtURL:(id)arg1;
 - (id)_uniqueDestinationURLForFileURL:(id)arg1 inDirectory:(id)arg2;
+- (id)adjustmentOutputForInputBaseVersion:(long long)arg1 withLivePhotoSupport:(bool)arg2;
 - (double)aspectRatio;
 - (id)assetAdjustments;
 - (id)burstIdentifier;
@@ -136,13 +144,14 @@
 - (id)initWithAVAsset:(id)arg1 audioMix:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 captureDate:(id)arg5 duration:(double)arg6 previewImage:(id)arg7 videoURL:(id)arg8 adjustments:(id)arg9 identifier:(id)arg10;
 - (id)initWithConformingAsset:(id)arg1;
 - (id)initWithLivePhoto:(id)arg1 fullsizeUnadjustedImageURL:(id)arg2 fullsizeUnadjustedVideoURL:(id)arg3 assetAdjustments:(id)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6 captureDate:(id)arg7 metadata:(id)arg8 duration:(double)arg9 previewImage:(id)arg10 identifier:(id)arg11;
-- (id)initWithPhoto:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 captureDate:(id)arg4 metadata:(id)arg5 burstIdentifier:(id)arg6 representedCount:(unsigned long long)arg7 fullsizeImageURL:(id)arg8 fullsizeUnadjustedImageURL:(id)arg9 assetAdjustments:(id)arg10 identifier:(id)arg11;
+- (id)initWithPhoto:(id)arg1 mediaSubtypes:(unsigned long long)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 captureDate:(id)arg5 metadata:(id)arg6 burstIdentifier:(id)arg7 representedCount:(unsigned long long)arg8 fullsizeImageURL:(id)arg9 fullsizeUnadjustedImageURL:(id)arg10 assetAdjustments:(id)arg11 identifier:(id)arg12;
 - (id)initWithReviewAsset:(id)arg1;
 - (id)initWithReviewAsset:(id)arg1 baseImageURL:(id)arg2 renderedImageURL:(id)arg3 baseVideoURL:(id)arg4 renderedVideoURL:(id)arg5 pixelWidth:(unsigned long long)arg6 pixelHeight:(unsigned long long)arg7 assetAdjustments:(id)arg8 duration:(double)arg9;
 - (id)initWithReviewAsset:(id)arg1 baseImageURL:(id)arg2 renderedImageURL:(id)arg3 baseVideoURL:(id)arg4 renderedVideoURL:(id)arg5 previewImage:(id)arg6 pixelWidth:(unsigned long long)arg7 pixelHeight:(unsigned long long)arg8 assetAdjustments:(id)arg9 duration:(double)arg10;
 - (id)initWithReviewAsset:(id)arg1 linkFileURLsToUniquePathsInDirectory:(id)arg2;
 - (id)initWithReviewAsset:(id)arg1 linkFileURLsToUniquePathsInDirectory:(id)arg2 canPlayPhotoIris:(bool)arg3;
 - (id)initWithReviewAsset:(id)arg1 primaryResourceURL:(id)arg2;
+- (id)inputForAdjustmentWithMediaProvider:(id)arg1 canHandleAdjustments:(id /* block */)arg2;
 - (bool)isAdjusted;
 - (bool)isAnimatedImage;
 - (bool)isContentAdjustmentAllowed;
@@ -154,6 +163,7 @@
 - (bool)isLivePhoto;
 - (bool)isLivePhotoPlaceholder;
 - (bool)isLivePhotoVisibilityAdjustmentAllowed;
+- (bool)isOriginalRaw;
 - (bool)isPhotoIrisPlaceholder;
 - (bool)isResourceDownloadPossible;
 - (bool)isTemporaryPlaceholder;
@@ -168,6 +178,7 @@
 - (unsigned long long)numberOfRepresentedAssets;
 - (int)originalEXIFOrientation;
 - (unsigned long long)originalFilesize;
+- (unsigned long long)originalResourceChoice;
 - (id)pathForOriginalImageFile;
 - (id)pathForOriginalVideoFile;
 - (id)pathForTrimmedVideoFile;
@@ -177,6 +188,7 @@
 - (unsigned long long)pixelWidth;
 - (long long)playbackStyle;
 - (long long)playbackVariation;
+- (id)primaryRenderedMediaURL;
 - (id)providedAVAsset;
 - (id)providedAudioMix;
 - (id)providedFullsizeImageURL;
@@ -192,6 +204,9 @@
 - (void)removeAllFilesAtReferencedURLs;
 - (bool)representsBurst;
 - (unsigned long long)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)requiresConfidentiality;
+- (id)reviewAssetRevertingAdjustments;
+- (id)reviewAssetWithAdjustmentOutput:(id)arg1 adjustmentData:(id)arg2 formatIdentifier:(id)arg3 version:(id)arg4;
 - (id)uniformTypeIdentifier;
 - (id)uuid;
 - (id)videoObjectBuilder;

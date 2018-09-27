@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUICalendarIconImage : SearchUIAppIconImage <NSSecureCoding> {
+@interface SearchUICalendarIconImage : SearchUIAppIconImage {
     NSDate * _date;
 }
 

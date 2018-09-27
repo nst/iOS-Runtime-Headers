@@ -48,7 +48,7 @@
 - (void).cxx_destruct;
 - (id)_componentsForDate:(id)arg1 timeZone:(id)arg2;
 - (id)absoluteRange;
-- (void)applyToEKEvent:(id)arg1 isAllDay:(bool)arg2;
+- (void)applyToEKEvent:(id)arg1 isAllDay:(bool)arg2 isFloating:(bool)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (struct SGUnixTimestamp_ { double x1; })end;
@@ -70,5 +70,6 @@
 - (id)startDateComponents;
 - (id)startTimeZone;
 - (long long)startUTCOffsetSeconds;
+- (bool)startedMoreThan24HoursAgo;
 
 @end

@@ -5,6 +5,7 @@
 @interface INExtensionContext : NSExtensionContext <INExtensionContextVending> {
     id  _activeHandlerForIntent;
     <INIntentHandlerProvidingPrivate> * _extensionHandler;
+    bool  _isPrivateExtension;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -46,7 +47,9 @@
 - (oneway void)handleIntent:(id)arg1 completion:(id /* block */)arg2;
 - (oneway void)handleIntent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)handleIntent:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)initWithInputItems:(id)arg1 extension:(id)arg2;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (id)initWithInputItems:(id)arg1 privateIntentHandlerProvider:(id)arg2;
 - (oneway void)resolveIntentSlot:(id)arg1 forIntent:(id)arg2 completionBlock:(id /* block */)arg3;
 - (oneway void)resolveIntentSlots:(id)arg1 forIntent:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setActiveHandlerForIntent:(id)arg1;

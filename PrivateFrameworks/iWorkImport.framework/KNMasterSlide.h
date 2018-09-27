@@ -90,6 +90,7 @@
 - (void)setThumbnailTextForBodyPlaceholder:(id)arg1;
 - (void)setThumbnailTextForTitlePlaceholder:(id)arg1;
 - (bool)slideObjectsLayerWithMaster;
+- (bool)supportsBuilds;
 - (id)tagsforNewPlaceholderInfos:(id)arg1;
 - (id)thumbnailTextForBodyPlaceholder;
 - (id)thumbnailTextForPlaceholder:(id)arg1;

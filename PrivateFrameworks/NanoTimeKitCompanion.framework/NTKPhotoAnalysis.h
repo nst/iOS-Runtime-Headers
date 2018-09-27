@@ -34,7 +34,9 @@
 @property (nonatomic, readonly) unsigned int version;
 
 + (id)analysisWithImage:(id)arg1 alignment:(id)arg2;
++ (id)analysisWithImage:(id)arg1 alignment:(unsigned long long)arg2 deviceSizeClass:(unsigned long long)arg3;
 + (id)defaultAnalysis;
++ (id)invalidAnalysis;
 + (bool)supportsSecureCoding;
 
 - (float)bgBrightness;

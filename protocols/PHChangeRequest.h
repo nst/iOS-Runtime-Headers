@@ -13,7 +13,13 @@
 - (bool)isClientEntitled;
 - (NSString *)managedEntityName;
 - (NSManagedObjectID *)objectID;
+- (bool)prepareForPhotoLibraryCheck:(PHPhotoLibrary *)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (NSString *)uuid;
+
+@optional
+
+- (void)changeFailedOnClientWithError:(NSError *)arg1;
+- (void)changeFailedOnDaemonWithError:(NSError *)arg1;
 
 @end

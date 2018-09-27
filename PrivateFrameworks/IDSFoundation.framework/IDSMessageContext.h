@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *originalDestinationDevice;
 @property (nonatomic, copy) NSString *outgoingResponseIdentifier;
 @property (nonatomic, retain) NSNumber *priority;
+@property (nonatomic, copy) NSString *senderCorrelationIdentifier;
 @property (nonatomic, readonly) NSDate *serverReceivedTime;
 @property (nonatomic, copy) NSNumber *serverTimestamp;
 @property (nonatomic, copy) NSString *serviceIdentifier;
@@ -58,6 +59,7 @@
 - (id)originalDestinationDevice;
 - (id)outgoingResponseIdentifier;
 - (id)priority;
+- (id)senderCorrelationIdentifier;
 - (id)serverReceivedTime;
 - (id)serverTimestamp;
 - (id)serviceIdentifier;
@@ -75,6 +77,7 @@
 - (void)setOriginalDestinationDevice:(id)arg1;
 - (void)setOutgoingResponseIdentifier:(id)arg1;
 - (void)setPriority:(id)arg1;
+- (void)setSenderCorrelationIdentifier:(id)arg1;
 - (void)setServerTimestamp:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setStorageGuid:(id)arg1;

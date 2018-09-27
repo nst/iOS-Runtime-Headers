@@ -5,6 +5,9 @@
 @interface MPCModelGenericAVItemAssetLoadResult : NSObject {
     bool  _allowsAssetCaching;
     bool  _allowsAssetInfoCaching;
+    NSURL * _alternateHLSKeyCertificateURL;
+    NSURL * _alternateHLSKeyServerURL;
+    NSURL * _alternateHLSPlaylistURL;
     NSString * _assetPathExtension;
     long long  _assetProtectionType;
     long long  _assetQualityType;
@@ -23,6 +26,9 @@
 
 @property (nonatomic) bool allowsAssetCaching;
 @property (nonatomic) bool allowsAssetInfoCaching;
+@property (nonatomic, copy) NSURL *alternateHLSKeyCertificateURL;
+@property (nonatomic, copy) NSURL *alternateHLSKeyServerURL;
+@property (nonatomic, copy) NSURL *alternateHLSPlaylistURL;
 @property (nonatomic, copy) NSString *assetPathExtension;
 @property (nonatomic) long long assetProtectionType;
 @property (nonatomic) long long assetQualityType;
@@ -44,6 +50,9 @@
 - (void).cxx_destruct;
 - (bool)allowsAssetCaching;
 - (bool)allowsAssetInfoCaching;
+- (id)alternateHLSKeyCertificateURL;
+- (id)alternateHLSKeyServerURL;
+- (id)alternateHLSPlaylistURL;
 - (id)assetPathExtension;
 - (long long)assetProtectionType;
 - (long long)assetQualityType;
@@ -57,6 +66,9 @@
 - (id)purchaseBundleDictionary;
 - (void)setAllowsAssetCaching:(bool)arg1;
 - (void)setAllowsAssetInfoCaching:(bool)arg1;
+- (void)setAlternateHLSKeyCertificateURL:(id)arg1;
+- (void)setAlternateHLSKeyServerURL:(id)arg1;
+- (void)setAlternateHLSPlaylistURL:(id)arg1;
 - (void)setAssetPathExtension:(id)arg1;
 - (void)setAssetProtectionType:(long long)arg1;
 - (void)setAssetQualityType:(long long)arg1;

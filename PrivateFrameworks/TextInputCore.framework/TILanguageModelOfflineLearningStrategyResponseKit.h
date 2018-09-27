@@ -3,7 +3,10 @@
  */
 
 @interface TILanguageModelOfflineLearningStrategyResponseKit : NSObject <TILanguageModelOfflineLearningStrategy> {
+    NSURL * _directory;
     TILanguageModelOfflineLearningTask * _learningTask;
+    NSMutableDictionary * _recipientModels;
+    RKMessageResponseManager * _trainer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +15,7 @@
 @property (readonly) TILanguageModelOfflineLearningTask *learningTask;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (id)filterMessages:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1 andDirectory:(id)arg2;

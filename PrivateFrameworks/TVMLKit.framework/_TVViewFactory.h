@@ -6,7 +6,7 @@
 
 + (id)_organizerViewWithElement:(id)arg1 elements:(id)arg2 existingView:(id)arg3;
 + (id)imageStackViewWithElement:(id)arg1 existingView:(id)arg2;
-+ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2;
++ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 scaleMode:(long long)arg4;
 + (id)organizerViewWithElements:(id)arg1 existingView:(id)arg2;
 
 - (id)_activityIndicatorViewForElement:(id)arg1 existingView:(id)arg2;

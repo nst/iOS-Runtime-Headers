@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFDevicePropertyNotificationSubscriptionRequest : CATTaskRequest {
+@interface DMFDevicePropertyNotificationSubscriptionRequest : DMFTaskRequest {
     NSArray * _propertyKeys;
 }
 

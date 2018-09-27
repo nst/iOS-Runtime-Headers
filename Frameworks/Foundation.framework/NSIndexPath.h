@@ -13,9 +13,11 @@
 @property (nonatomic, readonly) unsigned long long element;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long item;
-@property (nonatomic, readonly) long long kind;
 @property (readonly) unsigned long long length;
 @property (getter=pu_isValid, nonatomic, readonly) bool pu_valid;
+@property (nonatomic, readonly) long long px_item;
+@property (nonatomic, readonly) long long px_kind;
+@property (nonatomic, readonly) long long px_section;
 @property (nonatomic, readonly) long long row;
 @property (nonatomic, readonly) long long section;
 @property (readonly) Class superclass;
@@ -80,15 +82,6 @@
 - (bool)pu_isValid;
 - (id)pu_shortDescription;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
-+ (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
-
-- (long long)item;
-- (long long)row;
-- (long long)section;
-
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 + (id)bs_emptyPath;
@@ -124,14 +117,21 @@
 - (void)na_each:(id /* block */)arg1;
 - (id)na_indexPathStartingAtPosition:(unsigned long long)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
-+ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2 withKind:(long long)arg3;
-+ (id)px_indexPathsForItems:(id)arg1 inSection:(long long)arg2;
++ (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
 
 - (long long)item;
-- (long long)kind;
+- (long long)row;
+- (long long)section;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_indexPathForItem:(long long)arg1 inSection:(long long)arg2;
++ (id)px_indexPathForItem:(long long)arg1 inSection:(long long)arg2 withKind:(long long)arg3;
++ (id)px_indexPathsForItems:(id)arg1 inSection:(long long)arg2;
+
 - (id)px_alteredIndexPathAfterDeletingItemAtIndexPath:(id)arg1;
 - (id)px_alteredIndexPathAfterDeletingItemsAtIndexPaths:(id)arg1;
 - (id)px_alteredIndexPathAfterInsertingItemAtIndexPath:(id)arg1;
@@ -140,7 +140,23 @@
 - (id)px_indexPathAfterDeletingItemAtIndexPath:(id)arg1;
 - (id)px_indexPathAfterInsertingItemAtIndexPath:(id)arg1;
 - (id)px_indexPathByChangingIndexAtPosition:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
-- (long long)section;
+- (long long)px_item;
+- (long long)px_kind;
+- (long long)px_section;
+
+// Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
+
++ (id)pt_indexPathForRow:(long long)arg1 inSection:(long long)arg2;
+
+- (long long)pt_row;
+- (long long)pt_section;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
+- (id)indexPathByConcatenatingIndexPath:(id)arg1;
+- (id)indexPathByInsertingFirstIndex:(unsigned long long)arg1;
+- (id)initWithString:(id)arg1;
+- (id)stringValue;
 
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
@@ -148,5 +164,14 @@
 
 - (long long)tk_row;
 - (long long)tk_section;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
++ (id)indexPathForRow:(long long)arg1 inSection:(long long)arg2;
+
+- (long long)item;
+- (long long)row;
+- (long long)section;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface HDAuthorizationServer : NSObject {
+    HDClientAuthorizationOracle * _authorizationOracle;
     NSMutableArray * _authorizationRequestIdentifiers;
     HDXPCClient * _client;
     int  _invalidated;
@@ -24,11 +25,12 @@
 - (void)_performIfAuthorizedForTypes:(id)arg1 sharing:(bool)arg2 onQueue:(id)arg3 usingBlock:(id /* block */)arg4 errorHandler:(id /* block */)arg5;
 - (void)_queue_beginAuthorizationRequestDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_enqueueAuthorizationRequestForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 authorizationNeededHandler:(id /* block */)arg4 requestCompletionHandler:(id /* block */)arg5;
-- (void)_setAuthorizationStatusesEntitled:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)_setAuthorizationStatusesEntitled:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned long long)arg4 completion:(id /* block */)arg5;
 - (id)allAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)allAuthorizationRecordsForType:(id)arg1 error:(id*)arg2;
 - (id)allDocumentAuthorizationRecordsForType:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
 - (id)allObjectAuthorizationsForSampleWithUUID:(id)arg1 error:(id*)arg2;
+- (id)allSourcesRequestingTypes:(id)arg1 error:(id*)arg2;
 - (id)authorizationRequestIdentifiers;
 - (id)authorizationStatusForType:(id)arg1 error:(id*)arg2;
 - (void)beginAuthorizationRequestDelegateTransactionWithRequestRecord:(id)arg1 completion:(id /* block */)arg2;
@@ -55,7 +57,7 @@
 - (bool)resetAuthorizationStatusForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)resetAuthorizationStatusesForObjects:(id)arg1 error:(id*)arg2;
 - (void)setAuthorizationRequestIdentifiers:(id)arg1;
-- (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)setAuthorizationStatuses:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned long long)arg4 completion:(id /* block */)arg5;
 - (void)setInvalidated:(int)arg1;
 - (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;

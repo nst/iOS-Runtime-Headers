@@ -5,7 +5,7 @@
 @interface _WKVisitedLinkStore : NSObject <WKObject> {
     struct ObjectStorage<WebKit::VisitedLinkStore> { 
         struct type { 
-            unsigned char __lx[208]; 
+            unsigned char __lx[200]; 
         } data; 
     }  _visitedLinkStore;
 }

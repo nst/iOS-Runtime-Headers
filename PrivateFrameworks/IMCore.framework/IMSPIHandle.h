@@ -3,28 +3,33 @@
  */
 
 @interface IMSPIHandle : NSObject {
-    int  _abIdentifier;
     NSString * _address;
-    IMPerson * _person;
+    NSString * _countryCode;
+    bool  _haveFetchedIMPerson;
+    IMPerson * _imPerson;
+    bool  _isMe;
 }
 
-@property int abIdentifier;
-@property (retain) NSString *address;
+@property (readonly) NSString *address;
+@property (readonly) NSString *businessName;
 @property (readonly) NSString *cnContactID;
+@property (readonly) NSString *countryCode;
 @property (readonly) NSString *displayName;
-@property (readonly) NSString *identifier;
-@property (retain) IMPerson *person;
+@property (readonly) bool isBusiness;
+@property (readonly) bool isMe;
 
 - (void).cxx_destruct;
-- (int)abIdentifier;
 - (id)address;
+- (id)businessName;
 - (id)cnContactID;
+- (id)countryCode;
 - (id)description;
 - (id)displayName;
-- (id)identifier;
+- (unsigned long long)hash;
+- (id)initWithAddress:(id)arg1 countryCode:(id)arg2 isMe:(bool)arg3;
+- (bool)isBusiness;
+- (bool)isEqual:(id)arg1;
+- (bool)isMe;
 - (id)person;
-- (void)setAbIdentifier:(int)arg1;
-- (void)setAddress:(id)arg1;
-- (void)setPerson:(id)arg1;
 
 @end

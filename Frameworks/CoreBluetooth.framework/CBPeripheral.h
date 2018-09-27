@@ -3,9 +3,13 @@
  */
 
 @interface CBPeripheral : CBPeer {
+    NSString * _BDAddress;
+    long long  _PID;
     NSNumber * _RSSI;
+    long long  _VID;
     NSMutableDictionary * _attributes;
     bool  _canSendWriteWithoutResponse;
+    bool  _connectedToSystem;
     <CBPeripheralDelegate> * _delegate;
     struct { 
         unsigned int didUpdateName : 1; 
@@ -32,8 +36,12 @@
     unsigned int  _writesPending;
 }
 
+@property (retain) NSString *BDAddress;
+@property long long PID;
 @property (retain) NSNumber *RSSI;
+@property long long VID;
 @property bool canSendWriteWithoutResponse;
+@property (getter=isConnectedToSystem, nonatomic, readonly) bool connectedToSystem;
 @property (nonatomic) <CBPeripheralDelegate> *delegate;
 @property (nonatomic, readonly) bool isConnectedToSystem;
 @property (nonatomic, readonly, retain) NSHashTable *l2capChannels;
@@ -43,7 +51,10 @@
 @property unsigned int writesPending;
 
 - (void).cxx_destruct;
+- (id)BDAddress;
+- (long long)PID;
 - (id)RSSI;
+- (long long)VID;
 - (id)attributeForHandle:(id)arg1;
 - (bool)canSendWriteWithoutResponse;
 - (void)dealloc;
@@ -83,6 +94,7 @@
 - (void)invalidateAllAttributes;
 - (bool)isConnected;
 - (bool)isConnectedToSystem;
+- (bool)isConnectedToSystem;
 - (void)isReadyForUpdates;
 - (id)l2capChannelForPeer:(id)arg1 withPsm:(unsigned short)arg2;
 - (id)l2capChannels;
@@ -101,15 +113,20 @@
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (id)services;
 - (void)setAttribute:(id)arg1 forHandle:(id)arg2;
+- (void)setBDAddress:(id)arg1;
 - (void)setBroadcastValue:(bool)arg1 forCharacteristic:(id)arg2;
 - (void)setCanSendWriteWithoutResponse:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHighPriorityStream:(bool)arg1 duration:(id)arg2;
 - (void)setName:(id)arg1;
 - (void)setNotifyValue:(bool)arg1 forCharacteristic:(id)arg2;
 - (void)setOrphan;
+- (void)setPID:(long long)arg1;
+- (void)setPeripheralName:(id)arg1;
 - (void)setRSSI:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setState:(long long)arg1;
+- (void)setVID:(long long)arg1;
 - (void)setWritesPending:(unsigned int)arg1;
 - (long long)state;
 - (void)tag:(id)arg1;

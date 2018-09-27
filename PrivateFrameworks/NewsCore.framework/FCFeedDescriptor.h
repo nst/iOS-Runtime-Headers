@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long feedFilterOptions;
 @property (nonatomic, readonly) <FCFeedPaginating> *feedPaginator;
+@property (nonatomic, readonly) long long feedPersonalizationConfigurationSet;
 @property (nonatomic, readonly) long long feedSortMethod;
 @property (nonatomic) long long feedType;
 @property (readonly) unsigned long long hash;
@@ -49,8 +50,9 @@
 - (id)description;
 - (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (long long)feedFilterOptions;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)feedPaginator;
+- (long long)feedPersonalizationConfigurationSet;
 - (long long)feedSortMethod;
 - (long long)feedType;
 - (void)fetchHeadlinesWithContext:(id)arg1 forIdentifiers:(id)arg2 downloadAssets:(bool)arg3 qualityOfService:(long long)arg4 completion:(id /* block */)arg5;
@@ -74,13 +76,13 @@
 - (bool)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
 - (id)name;
-- (id)offlineFeedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;
 - (id)otherArticleIDs;
 - (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setContext:(id)arg1;
 - (void)setFeedType:(long long)arg1;
 - (void)setOtherArticleIDs:(id)arg1;
-- (bool)shouldFilterFeedGroupEmitter:(id)arg1 withCoreConfiguration:(id)arg2;
+- (bool)shouldFilterFeedGroupEmitter:(id)arg1 withConfiguration:(id)arg2;
 - (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(bool)arg3 maxCachedAge:(double)arg4;
 - (id)streamOfLatestHeadlinesWithContext:(id)arg1;
 - (bool)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2 error:(id*)arg3;

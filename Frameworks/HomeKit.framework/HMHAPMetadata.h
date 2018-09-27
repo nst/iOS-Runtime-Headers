@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (bool)applyProtoBufData:(id)arg1 callbackOperations:(id)arg2;
+- (id)categoryForCategoryType:(id)arg1;
 - (id)categoryForNumber:(id)arg1;
 - (id)characteristicTypeDescription:(id)arg1;
 - (id)hapCategoryMap;

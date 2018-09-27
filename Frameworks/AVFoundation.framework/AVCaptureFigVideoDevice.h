@@ -6,7 +6,25 @@
     float  _ISOKVO;
     long long  _activeColorSpace;
     AVCaptureDeviceFormat * _activeDepthDataFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _activeDepthDataMinFrameDuration;
     AVCaptureDeviceFormat * _activeFormat;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _activeMaxExposureDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _activeMaxExposureDurationClientOverride;
     struct { 
         long long value; 
         int timescale; 
@@ -102,7 +120,9 @@
         float blueGain; 
     }  _grayWorldDeviceWhiteBalanceGainsKVO;
     NSDictionary * _h264EncoderLimitations;
+    NSDictionary * _hevcEncoderSettings;
     bool  _highDynamicRangeSceneDetectionEnabled;
+    int  _highestSystemPressureLevelEncountered;
     long long  _imageControlMode;
     bool  _isConnected;
     bool  _isStillImageStabilizationScene;
@@ -116,6 +136,7 @@
     float  _lensPositionKVO;
     NSString * _localizedName;
     bool  _lowLightBoostEnabled;
+    bool  _lowLightVideoCaptureEnabled;
     AVCaptureDeviceControlRequestQueue * _manualExposureControlRequests;
     AVCaptureDeviceControlRequestQueue * _manualFocusControlRequests;
     AVCaptureDeviceControlRequestQueue * _manualWhiteBalanceControlRequests;
@@ -142,6 +163,7 @@
     float  _torchLevel;
     long long  _torchMode;
     bool  _videoHDREnabled;
+    bool  _videoHDRSuspended;
     long long  _videoZoomDownscaleStageHint;
     bool  _videoZoomDrawOverlay;
     float  _videoZoomFactor;
@@ -200,8 +222,9 @@
 - (void)_performBlockOnMainThread:(id /* block */)arg1;
 - (double)_predictedTempForGains:(struct { float x1; float x2; float x3; })arg1;
 - (void)_rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2 duration:(double)arg3 rampType:(int)arg4;
-- (id)_recommendedFrameRateRangeForVideoFormat:(id)arg1 depthFormat:(id)arg2 systemPressureLevel:(id)arg3;
+- (id)_recommendedFrameRateRangeForVideoFormat:(id)arg1 depthFormat:(id)arg2 figSystemPressureLevel:(int)arg3;
 - (void)_reconnectToFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
+- (void)_resetVideoHDRSuspended;
 - (void)_restoreFigCaptureSourceProperties;
 - (void)_setActiveFormat:(id)arg1 resetVideoZoomFactorAndMinMaxFrameDurations:(bool)arg2;
 - (void)_setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -225,7 +248,6 @@
 - (void)_setHighDynamicRangeScene:(bool)arg1;
 - (void)_setImageControlMode:(long long)arg1;
 - (void)_setIsStillImageStabilizationScene:(bool)arg1;
-- (void)_setLowLightBoostEnabled:(bool)arg1;
 - (void)_setMaxAvailableVideoZoomFactor:(double)arg1;
 - (void)_setMinAvailableVideoZoomFactor:(double)arg1;
 - (void)_setPhotoSettingsForSceneMonitoring:(id)arg1;
@@ -246,14 +268,17 @@
 - (double)_whiteBalanceTemperatureForMixingFactor:(double)arg1;
 - (long long)activeColorSpace;
 - (id)activeDepthDataFormat;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeDepthDataMinFrameDuration;
 - (id)activeFormat;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeMaxExposureDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeMaxExposureDurationClientOverride;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
+- (bool)appliesSessionPresetMaxIntegrationTimeOverrideToActiveFormat;
 - (long long)autoFocusRangeRestriction;
 - (bool)automaticallyAdjustsImageControlMode;
 - (bool)automaticallyAdjustsVideoHDREnabled;
-- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (id)availableBoxedMetadataFormatDescriptions;
 - (id)bravoCameraSelectionBehavior;
 - (bool)cachesFigCaptureSourceConfigurationChanges;
@@ -279,6 +304,7 @@
 - (int)faceRectangleAngle;
 - (struct OpaqueFigCaptureSource { }*)figCaptureSource;
 - (long long)flashMode;
+- (float)focalLength;
 - (long long)focusMode;
 - (struct CGPoint { double x1; double x2; })focusPointOfInterest;
 - (id)formats;
@@ -286,6 +312,7 @@
 - (bool)hasFlash;
 - (bool)hasMediaType:(id)arg1;
 - (bool)hasTorch;
+- (int)hevcTurboModeVersion;
 - (long long)imageControlMode;
 - (id)init;
 - (bool)isActiveVideoMaxFrameDurationSet;
@@ -294,6 +321,7 @@
 - (bool)isAdjustingFocus;
 - (bool)isAdjustingWhiteBalance;
 - (bool)isAutoFocusRangeRestrictionSupported;
+- (bool)isAutoRedEyeReductionSupported;
 - (bool)isCameraIntrinsicMatrixDeliverySupported;
 - (bool)isConnected;
 - (bool)isDiagnosticsTestSupported:(id)arg1;
@@ -313,6 +341,7 @@
 - (bool)isHDRSupported;
 - (bool)isHEIFSupported;
 - (bool)isHEVCPreferred;
+- (bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (bool)isHEVCSupported;
 - (bool)isHighDynamicRangeScene;
 - (bool)isHighDynamicRangeSceneDetectionEnabled;
@@ -323,8 +352,7 @@
 - (bool)isLockedForConfiguration;
 - (bool)isLockingFocusWithCustomLensPositionSupported;
 - (bool)isLockingWhiteBalanceWithCustomDeviceGainsSupported;
-- (bool)isLowLightBoostEnabled;
-- (bool)isLowLightBoostSupported;
+- (bool)isLowLightVideoCaptureEnabled;
 - (bool)isMachineReadableCodeDetectionSupported;
 - (bool)isRampingVideoZoom;
 - (bool)isRawStillImageCaptureSupported;
@@ -338,6 +366,7 @@
 - (bool)isTorchAvailable;
 - (bool)isTorchModeSupported:(long long)arg1;
 - (bool)isVideoHDREnabled;
+- (bool)isVideoHDRSuspended;
 - (bool)isVideoStabilizationSupported;
 - (bool)isWhiteBalanceModeSupported:(long long)arg1;
 - (bool)isWideColorSupported;
@@ -365,13 +394,14 @@
 - (id)runDiagnosticsWithTestType:(id)arg1;
 - (void)setActiveColorSpace:(long long)arg1;
 - (void)setActiveDepthDataFormat:(id)arg1;
+- (void)setActiveDepthDataMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
+- (void)setActiveMaxExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setAutoFocusRangeRestriction:(long long)arg1;
 - (void)setAutomaticallyAdjustsImageControlMode:(bool)arg1;
 - (void)setAutomaticallyAdjustsVideoHDREnabled:(bool)arg1;
-- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setCachesFigCaptureSourceConfigurationChanges:(bool)arg1;
 - (void)setExposureMode:(long long)arg1;
 - (void)setExposureModeCustomWithDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ISO:(float)arg2 completionHandler:(id /* block */)arg3;
@@ -386,6 +416,7 @@
 - (void)setFocusPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setHighDynamicRangeSceneDetectionEnabled:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
+- (void)setLowLightVideoCaptureEnabled:(bool)arg1;
 - (void)setProvidesStortorgetMetadata:(bool)arg1;
 - (void)setSmileDetectionEnabled:(bool)arg1;
 - (void)setSmoothAutoFocusEnabled:(bool)arg1;
@@ -393,6 +424,7 @@
 - (void)setTorchMode:(long long)arg1;
 - (bool)setTorchModeOnWithLevel:(float)arg1 error:(id*)arg2;
 - (void)setVideoHDREnabled:(bool)arg1;
+- (void)setVideoHDRSuspended:(bool)arg1;
 - (void)setVideoZoomDownscaleStageHint:(long long)arg1;
 - (void)setVideoZoomDrawOverlay:(bool)arg1;
 - (void)setVideoZoomFactor:(double)arg1;

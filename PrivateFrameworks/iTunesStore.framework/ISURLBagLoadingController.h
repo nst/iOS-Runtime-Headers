@@ -10,9 +10,12 @@
     NSError * _bagLoadingError;
     NSHashTable * _bagObservers;
     bool  _hasSuccessfullyLoadedBag;
+    bool  _loadingBag;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
 }
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;
+@property (getter=isLoadingBag, nonatomic, readonly) bool loadingBag;
 
 + (id)sharedBagLoadingController;
 
@@ -27,6 +30,8 @@
 - (id)bagDictionary;
 - (void)dealloc;
 - (id)init;
+- (bool)isLoadingBag;
+- (void)reloadBag;
 - (void)removeBagObserver:(id)arg1;
 - (void)requestAccessToBagUsingBlock:(id /* block */)arg1;
 

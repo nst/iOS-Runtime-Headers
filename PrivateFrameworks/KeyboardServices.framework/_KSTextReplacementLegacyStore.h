@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
  */
 
-@interface _KSTextReplacementLegacyStore : NSObject <NSManagedObjectContextFaultingDelegate, _KSTextReplacementStoreProtocol> {
+@interface _KSTextReplacementLegacyStore : NSObject <NSManagedObjectContextFaultingDelegate, _KSTextReplacementSyncProtocol> {
     NSURL * _baseURL;
+    NSString * _cacheFilePath;
+    bool  _didScheduleCacheUpdate;
     bool  _forceMaintenance;
     long long  _importedSinceMaintenance;
     NSDate * _lastMaintenanceDate;
@@ -13,14 +15,20 @@
     NSPersistentStore * _persistentStore;
     NSPersistentStoreCoordinator * _persistentStoreCoordinator;
     NSDate * _persistentStoreDidLoadTime;
+    bool  _shouldDisableCaching;
+    bool  _shouldUpdateTheCache;
     bool  _suspendedForAccountChange;
+    NSDate * _ubiquityStoreLoadStartTime;
+    bool  _ubiquityStoreLoaded;
     NSObject<OS_os_transaction> * _uptimeTransaction;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;
+@property (nonatomic, retain) NSString *cacheFilePath;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didScheduleCacheUpdate;
 @property (nonatomic) bool forceMaintenance;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long importedSinceMaintenance;
@@ -31,11 +39,16 @@
 @property (nonatomic, retain) NSPersistentStore *persistentStore;
 @property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain) NSDate *persistentStoreDidLoadTime;
+@property (nonatomic) bool shouldDisableCaching;
+@property (nonatomic) bool shouldUpdateTheCache;
 @property (readonly) Class superclass;
 @property (nonatomic) bool suspendedForAccountChange;
+@property (nonatomic, retain) NSDate *ubiquityStoreLoadStartTime;
+@property (nonatomic) bool ubiquityStoreLoaded;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)basePersistentStoreURL;
++ (id)cachedStorePath;
 + (id)legacyImportFilePaths;
 + (id)legacyImportWordKeyPairsFromFiles:(id)arg1;
 + (id)legacyStorePath;
@@ -48,6 +61,7 @@
 - (bool)_shouldMergeShortcut:(id)arg1 phrase:(id)arg2 intoContext:(id)arg3;
 - (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)baseURL;
+- (id)cacheFilePath;
 - (void)cleanup;
 - (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)currentStoreIndentity;
@@ -56,12 +70,15 @@
 - (void)didMaintenance;
 - (void)didMergeEntriesForNewUbiquityIdentity:(id)arg1;
 - (void)didMergeEntriesForOtherLocalPeers:(id)arg1;
+- (bool)didScheduleCacheUpdate;
 - (void)endMinimumUptime;
 - (id)entityDescription;
+- (id)entriesFromCache:(id*)arg1;
 - (id)entriesMatchingPredicate:(id)arg1;
 - (id)entriesMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (id)entriesUsingSortDescriptors:(id)arg1;
 - (bool)forceMaintenance;
+- (void)iCloudAccountDidChange:(id)arg1;
 - (void)importLegacyEntries;
 - (void)importSampleShortcutsIfNecessary;
 - (long long)importedSinceMaintenance;
@@ -97,11 +114,16 @@
 - (void)removeAllEntries;
 - (id)removeEntriesWithPredicate:(id)arg1;
 - (void)requestMinimumUptime;
+- (void)requestSync:(unsigned long long)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
 - (void)retirePersistentStoreAtURL:(id)arg1;
+- (void)runLegacyMigration;
 - (void)runMaintenanceIncludeLocalVariations:(bool)arg1;
 - (bool)save;
+- (void)scheduleCacheUpdate:(id)arg1;
 - (void)setBaseURL:(id)arg1;
+- (void)setCacheFilePath:(id)arg1;
+- (void)setDidScheduleCacheUpdate:(bool)arg1;
 - (void)setForceMaintenance:(bool)arg1;
 - (void)setImportedSinceMaintenance:(long long)arg1;
 - (void)setLastMaintenanceDate:(id)arg1;
@@ -111,10 +133,20 @@
 - (void)setPersistentStore:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
 - (void)setPersistentStoreDidLoadTime:(id)arg1;
+- (void)setShouldDisableCaching:(bool)arg1;
+- (void)setShouldUpdateTheCache:(bool)arg1;
 - (void)setSuspendedForAccountChange:(bool)arg1;
+- (void)setUbiquityStoreLoadStartTime:(id)arg1;
+- (void)setUbiquityStoreLoaded:(bool)arg1;
+- (bool)shouldDisableCaching;
+- (bool)shouldUpdateTheCache;
 - (id)storeURLForMergeAfterUbiquityIdentityChangeFromToken:(id)arg1 toToken:(id)arg2 withLastKnownToken:(id)arg3 shouldDeleteFirst:(bool*)arg4;
 - (bool)suspendedForAccountChange;
 - (id)textReplacementEntries;
+- (id)ubiquityStoreLoadStartTime;
+- (bool)ubiquityStoreLoaded;
+- (void)unloadPersistentStore;
 - (id)workQueue;
+- (bool)writeEntriesToCache:(id)arg1;
 
 @end

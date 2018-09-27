@@ -14,6 +14,7 @@
     bool  _didReceiveActions;
     bool  _didSynchronize;
     bool  _didUpdateClientSettings;
+    bool  _hostingPolicyForDisplay;
     bool  _hostingPolicyForScene;
     bool  _internalObserver;
     bool  _updateApplied;
@@ -49,6 +50,7 @@
 - (id)sceneManager:(id)arg1 createDefaultTransitionContextForScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didCreateScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
+- (long long)sceneManager:(id)arg1 hostingPolicyForDisplay:(id)arg2;
 - (long long)sceneManager:(id)arg1 hostingPolicyForScene:(id)arg2;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didReceiveActions:(id)arg3;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didUpdateClientSettingsWithDiff:(id)arg3 oldClientSettings:(id)arg4 transitionContext:(id)arg5;

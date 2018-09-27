@@ -13,6 +13,7 @@
     UIViewController * _serviceViewController;
 }
 
+@property (readonly) unsigned long long _clientType;
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -20,9 +21,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (unsigned long long)_clientType;
 - (void)_commonInitializationWithAccount:(id)arg1 accountStore:(id)arg2 username:(id)arg3 accountDescription:(id)arg4 youTube:(bool)arg5 presentationBlock:(id /* block */)arg6;
 - (void)_didInstantiateRemoteViewController;
 - (void)_dismissAndCompleteWithIdentity:(id)arg1 error:(id)arg2 extensionCompletion:(id /* block */)arg3;
+- (id)_extensionItemForAccount:(id)arg1 accountDescription:(id)arg2 username:(id)arg3 youTube:(bool)arg4;
 - (void)_extensionRequestDidCancelWithError:(id)arg1;
 - (void)_extensionRequestDidCompleteWithTokens:(id)arg1 extensionCompletion:(id /* block */)arg2;
 - (void)_presentInternetOfflineError;

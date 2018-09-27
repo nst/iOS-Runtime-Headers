@@ -11,6 +11,7 @@
     NSDate * _lastStatusDate;
     int  _notificationToken;
     NSMutableArray * _statusBlocks;
+    long long  _subscriptionStatusAccessPolicy;
 }
 
 @property (readonly, copy) SSVSubscriptionStatus *lastKnownStatus;
@@ -28,6 +29,7 @@
 + (void)updateWithResponseDictionary:(id)arg1 accountIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_accountStoreChangedNotification;
 - (id)_copyStatusDateFromUserDefaults;
 - (id)_copyStatusFromUserDefaults;
 - (id)_copyValidStatusForStatus:(id)arg1;
@@ -36,6 +38,7 @@
 - (void)_fireStatusBlocksWithStatus:(id)arg1 isFinal:(bool)arg2 error:(id)arg3;
 - (void)_handleRequestResponseWithStatus:(id)arg1 isFinal:(bool)arg2 error:(id)arg3;
 - (void)_invalidateLastKnownStatus;
+- (void)_updateSubscriptionStatusAccessPolicyAllowingNotification:(bool)arg1;
 - (void)_validateLastKnownStatus;
 - (void)dealloc;
 - (void)getStatusWithOptions:(id)arg1 statusBlock:(id /* block */)arg2;

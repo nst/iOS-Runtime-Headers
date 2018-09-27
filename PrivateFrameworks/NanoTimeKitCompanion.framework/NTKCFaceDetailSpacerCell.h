@@ -8,4 +8,6 @@
 + (id)reuseIdentifier;
 + (double)rowHeight;
 
+- (double)rowHeight;
+
 @end

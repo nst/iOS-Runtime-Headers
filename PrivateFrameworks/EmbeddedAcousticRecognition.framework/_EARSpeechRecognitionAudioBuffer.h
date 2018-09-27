@@ -23,5 +23,6 @@
 - (void)addAudioSamples:(const short*)arg1 count:(unsigned long long)arg2;
 - (void)cancelRecognition;
 - (void)endAudio;
+- (void)triggerServerSideEndPointer;
 
 @end

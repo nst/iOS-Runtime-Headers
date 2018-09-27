@@ -6,6 +6,7 @@
     NSHTTPURLResponseInternal * _httpInternal;
 }
 
+@property (nonatomic, readonly) double _iAd_cacheControlMaxAge;
 @property (readonly, copy) NSDictionary *allHeaderFields;
 @property (readonly) long long statusCode;
 @property (readonly) bool tsu_isSuccess;
@@ -40,9 +41,9 @@
 - (int)sl_twitterResponseType:(id)arg1;
 - (int)sl_twitterResponseTypeFromResponseObject:(id)arg1 looseAuthFailureMatching:(bool)arg2;
 
-// Image: /System/Library/PrivateFrameworks/DistributedEvaluation.framework/DistributedEvaluation
+// Image: /System/Library/Frameworks/iAd.framework/iAd
 
-- (bool)_fides_statusIsHTTPOK;
+- (double)_iAd_cacheControlMaxAge;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -78,6 +79,8 @@
 - (long long)maxExpectedContentLength;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (bool)tsu_isSuccessStatusCode:(long long)arg1;
 
 - (bool)tsu_isSuccess;
 

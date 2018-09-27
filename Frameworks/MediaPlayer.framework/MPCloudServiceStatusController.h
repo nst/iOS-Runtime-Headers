@@ -23,7 +23,6 @@
     unsigned long long  _matchStatusObservationCount;
     bool  _observingNetworkReachability;
     SSVPlaybackLease * _playbackLease;
-    unsigned long long  _purchaseHistoryObservationCount;
     bool  _shouldPlaybackRequireSubscriptionLease;
     unsigned long long  _shouldPlaybackRequireSubscriptionLeaseObservationCount;
     unsigned long long  _subscriptionAvailabilityObservationCount;
@@ -49,16 +48,13 @@
 + (id)sharedController;
 
 - (void).cxx_destruct;
-- (void)_accountStoreChangedNotification:(id)arg1;
 - (id)_activeAccount;
-- (void)_beginObservingAccountStoreDidChange;
 - (void)_beginObservingURLBag;
 - (void)_beginUsingSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
 - (bool)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(bool*)arg1;
 - (void)_cloudClientAuthenticationDidChange;
 - (bool)_currentCloudLibraryEnabled;
 - (bool)_currentPurchaseHistoryEnabled;
-- (void)_endObservingAccountStoreDidChange;
 - (void)_endObservingURLBag;
 - (void)_endUsingSubscriptionLease;
 - (id)_existingPlaybackLease;

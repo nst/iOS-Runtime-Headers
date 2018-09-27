@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKNode : UIResponder <NSCoding, NSCopying, UIFocusItem> {
+@interface SKNode : UIResponder <NSCopying, NSSecureCoding, UIFocusItem> {
     NSMutableArray * _actions;
     NSMutableDictionary * _attributeValues;
     NSMutableArray * _children;
@@ -40,6 +40,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) GKEntity *entity;
 @property (nonatomic) long long focusBehavior;
+@property (nonatomic, readonly) <UIFocusItemContainer> *focusItemContainer;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } globalAccumulatedBoundingVerts;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } globalBoundingVerts;
@@ -48,6 +49,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) const struct CGPath { }*outline;
 @property (nonatomic, readonly) SKNode *parent;
+@property (nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
 @property (getter=isPaused, nonatomic) bool paused;
 @property bool performFullCapture;
 @property (nonatomic, retain) SKPhysicsBody *physicsBody;
@@ -69,9 +71,15 @@
 
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
++ (id)debugHierarchyChildGroupingID;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 + (id)node;
 + (id)nodeFromCaptureData:(id)arg1;
 + (id)nodeWithFileNamed:(id)arg1;
++ (id)nodeWithFileNamed:(id)arg1 securelyWithClasses:(id)arg2 andError:(id*)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (struct shared_ptr<PKCAether> { struct PKCAether {} *x1; struct __shared_weak_count {} *x2; })_aether;
@@ -97,7 +105,6 @@
 - (bool)_isEligibleForFocus;
 - (bool)_isEligibleForFocusInteraction;
 - (struct SKCNode { int (**x1)(); id x2; struct unordered_map<std::__1::basic_string<char>, SKAttributeValue *, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, SKAttributeValue *> > > { struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *> > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKAttributeValue *>, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; }*)_makeBackingNode;
-- (id)_parentFocusEnvironment;
 - (bool)_pathFromPhysicsBodyToPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void***)arg1 outSize:(unsigned long long*)arg2;
 - (void)_performCleanup;
 - (void)_processSearchTokens:(struct vector<Token, std::__1::allocator<Token> > { struct Token {} *x1; struct Token {} *x2; struct __compressed_pair<Token *, std::__1::allocator<Token> > { struct Token {} *x_3_1_1; } x3; })arg1 visited:(struct set<SKNode *, std::__1::less<SKNode *>, std::__1::allocator<SKNode *> > { struct __tree<SKNode *, std::__1::less<SKNode *>, std::__1::allocator<SKNode *> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<SKNode *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<SKNode *> > { unsigned long long x_3_2_1; } x_1_1_3; } x1; }*)arg2 usingBlock:(id /* block */)arg3 stopPointer:(bool*)arg4;
@@ -136,9 +143,6 @@
 - (id)createDebugHierarchyVisualRepresentation;
 - (id)createFullCaptureData;
 - (void)dealloc;
-- (id)debugHierarchyChildGroupingID;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
 - (void)debugPrint;
 - (id)description;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
@@ -171,6 +175,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (const struct CGPath { }*)outline;
 - (id)parent;
+- (id)parentFocusEnvironment;
 - (bool)performFullCapture;
 - (id)physicsBody;
 - (id)physicsField;

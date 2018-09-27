@@ -54,6 +54,7 @@
 
 + (id)animationInfo;
 
+- (void).cxx_destruct;
 - (bool)aboveIntercept;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(bool)arg5;
@@ -64,7 +65,6 @@
 - (bool)crossesIntercept;
 - (bool)currentAboveIntercept;
 - (bool)currentAtIntercept;
-- (void)dealloc;
 - (double)duration;
 - (bool)elementUndefined;
 - (bool)horizontalChart;

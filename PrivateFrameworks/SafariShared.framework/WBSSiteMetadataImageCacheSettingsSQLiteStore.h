@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _databaseQueue;
     NSURL * _databaseURL;
     bool  _isClosed;
+    long long  _protectionType;
 }
 
 @property (nonatomic, readonly) WBSSQLiteDatabase *database;
@@ -42,6 +43,7 @@
 - (bool)deleteEntryWithHost:(id)arg1;
 - (id)entryWithHost:(id)arg1;
 - (id)initWithDatabaseURL:(id)arg1;
+- (id)initWithDatabaseURL:(id)arg1 protectionType:(long long)arg2;
 - (bool)saveEntry:(id)arg1;
 
 @end

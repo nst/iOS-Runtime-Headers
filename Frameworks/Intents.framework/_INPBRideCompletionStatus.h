@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRideCompletionStatus : PBCodable <NSCopying> {
+@interface _INPBRideCompletionStatus : PBCodable <NSCopying, NSSecureCoding, _INPBRideCompletionStatus> {
     bool  _canceled;
     bool  _canceledByService;
     bool  _completed;
     _INPBUserActivity * _completionUserActivity;
-    NSMutableArray * _defaultTippingOptions;
+    NSArray * _defaultTippingOptions;
     struct { 
         int *list; 
         unsigned long long count; 
@@ -23,14 +23,16 @@
     bool  _missedPickup;
     bool  _outstanding;
     _INPBCurrencyAmountValue * _paymentAmount;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool canceled;
 @property (nonatomic) bool canceledByService;
 @property (nonatomic) bool completed;
 @property (nonatomic, retain) _INPBUserActivity *completionUserActivity;
-@property (nonatomic, retain) NSMutableArray *defaultTippingOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSArray *defaultTippingOptions;
+@property (nonatomic, readonly) unsigned long long defaultTippingOptionsCount;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) int*feedbackTypes;
 @property (nonatomic, readonly) unsigned long long feedbackTypesCount;
 @property (nonatomic) bool hasCanceled;
@@ -40,13 +42,13 @@
 @property (nonatomic) bool hasMissedPickup;
 @property (nonatomic) bool hasOutstanding;
 @property (nonatomic, readonly) bool hasPaymentAmount;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool missedPickup;
 @property (nonatomic) bool outstanding;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *paymentAmount;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
 + (Class)defaultTippingOptionsType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsFeedbackTypes:(id)arg1;
@@ -59,11 +61,9 @@
 - (bool)completed;
 - (id)completionUserActivity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)defaultTippingOptions;
 - (id)defaultTippingOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)defaultTippingOptionsCount;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (int)feedbackTypeAtIndex:(unsigned long long)arg1;
 - (int*)feedbackTypes;
@@ -78,7 +78,6 @@
 - (bool)hasPaymentAmount;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)missedPickup;
 - (bool)outstanding;
 - (id)paymentAmount;
@@ -97,7 +96,6 @@
 - (void)setMissedPickup:(bool)arg1;
 - (void)setOutstanding:(bool)arg1;
 - (void)setPaymentAmount:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

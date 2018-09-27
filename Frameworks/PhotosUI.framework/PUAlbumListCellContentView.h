@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumListCellContentView : UIView <UITextFieldDelegate> {
+@interface PUAlbumListCellContentView : UIView <UIGestureRecognizerDelegate, UITextFieldDelegate> {
     PXUIButton * __deleteButton;
     bool  __showsTitleAndSubtitle;
     UILabel * __subtitleLabel;
+    UILabel * __titleLabel;
     UITextField * __titleTextField;
+    PUSharedAlbumAvatarView * _avatarView;
     bool  _combinesPhotoDecorations;
     UIView * _customImageView;
     <PUAlbumListCellDelegate> * _delegate;
@@ -15,19 +17,24 @@
     bool  _enabled;
     bool  _highlighted;
     long long  _layout;
+    bool  _showsAvatarView;
     bool  _showsDeleteButtonWhenEditing;
     PUStackView * _stackView;
     NSString * _subtitle;
     UIFont * _subtitleFont;
     NSString * _title;
     UIFont * _titleFont;
+    bool  _topInsetEnabled;
+    bool  _usesLabelForTitle;
     double  _xInset;
 }
 
 @property (setter=_setDeleteButton:, nonatomic, retain) PXUIButton *_deleteButton;
 @property (setter=_setShowsTitleAndSubtitle:, nonatomic) bool _showsTitleAndSubtitle;
 @property (setter=_setSubtitleLabel:, nonatomic, retain) UILabel *_subtitleLabel;
+@property (setter=_setTitleLabel:, nonatomic, retain) UILabel *_titleLabel;
 @property (setter=_setTitleTextField:, nonatomic, retain) UITextField *_titleTextField;
+@property (nonatomic, retain) PUSharedAlbumAvatarView *avatarView;
 @property (nonatomic) bool combinesPhotoDecorations;
 @property (nonatomic, retain) UIView *customImageView;
 @property (readonly, copy) NSString *debugDescription;
@@ -39,13 +46,17 @@
 @property (readonly) unsigned long long hash;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic) long long layout;
+@property (nonatomic) bool showsAvatarView;
 @property (nonatomic) bool showsDeleteButtonWhenEditing;
+@property (nonatomic, readonly) UIView *springLoadingTargetView;
 @property (setter=_setStackView:, nonatomic, retain) PUStackView *stackView;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, retain) UIFont *subtitleFont;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIFont *titleFont;
+@property (nonatomic) bool topInsetEnabled;
+@property (nonatomic) bool usesLabelForTitle;
 @property (nonatomic) double xInset;
 
 - (void).cxx_destruct;
@@ -56,24 +67,30 @@
 - (void)_setShowsTitleAndSubtitle:(bool)arg1;
 - (void)_setStackView:(id)arg1;
 - (void)_setSubtitleLabel:(id)arg1;
+- (void)_setTitleLabel:(id)arg1;
 - (void)_setTitleTextField:(id)arg1;
 - (bool)_showsTitleAndSubtitle;
 - (id)_subtitleLabel;
 - (double)_titleFieldAlpha;
+- (id)_titleLabel;
 - (id)_titleTextField;
 - (long long)_titleTextFieldClearButtonModeForLayout:(long long)arg1;
+- (void)_updateAvatarView;
 - (void)_updateDeleteButtonAnimated:(bool)arg1;
 - (void)_updateStackViewAnimated:(bool)arg1;
 - (void)_updateSubtitleLabelAnimated:(bool)arg1;
 - (void)_updateSubtitleLabelStyle;
 - (void)_updateSubviewOrdering;
 - (void)_updateTitleFieldAnimated:(bool)arg1;
-- (void)_updateTitleTextFieldsStyle;
+- (void)_updateTitleStyle;
+- (id)avatarView;
 - (void)cancelPerformRetitleAction;
 - (bool)combinesPhotoDecorations;
 - (id)customImageView;
 - (id)delegate;
 - (unsigned long long)editCapabilities;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleLabelTap:(id)arg1;
 - (void)handleTransitionFade:(bool)arg1 animate:(bool)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isEditing;
@@ -82,6 +99,7 @@
 - (long long)layout;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (void)setAvatarView:(id)arg1;
 - (void)setCombinesPhotoDecorations:(bool)arg1;
 - (void)setCustomImageView:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -93,6 +111,7 @@
 - (void)setEnabled:(bool)arg1 animated:(bool)arg2;
 - (void)setHighlighted:(bool)arg1;
 - (void)setLayout:(long long)arg1;
+- (void)setShowsAvatarView:(bool)arg1;
 - (void)setShowsDeleteButtonWhenEditing:(bool)arg1;
 - (void)setShowsTitle:(bool)arg1 animated:(bool)arg2;
 - (void)setSubtitle:(id)arg1;
@@ -100,9 +119,13 @@
 - (void)setSubtitleFont:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleFont:(id)arg1;
+- (void)setTopInsetEnabled:(bool)arg1;
+- (void)setUsesLabelForTitle:(bool)arg1;
 - (void)setXInset:(double)arg1;
+- (bool)showsAvatarView;
 - (bool)showsDeleteButtonWhenEditing;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)springLoadingTargetView;
 - (id)stackView;
 - (id)subtitle;
 - (id)subtitleFont;
@@ -112,6 +135,8 @@
 - (bool)textFieldShouldReturn:(id)arg1;
 - (id)title;
 - (id)titleFont;
+- (bool)topInsetEnabled;
+- (bool)usesLabelForTitle;
 - (double)xInset;
 
 @end

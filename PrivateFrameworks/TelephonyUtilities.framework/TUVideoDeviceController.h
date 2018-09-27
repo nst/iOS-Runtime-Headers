@@ -3,18 +3,23 @@
  */
 
 @interface TUVideoDeviceController : NSObject <TUVideoDeviceControllerProviderDelegate> {
-    <TUVideoDeviceControllerProvider> * _provider;
+    bool  _hasRefreshedPreviewAfterError;
+    <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> * _provider;
     NSObject<OS_dispatch_queue> * _serialQueue;
     bool  _wantsPreview;
 }
 
+@property (nonatomic, readonly, copy) NSArray *availableVideoEffects;
 @property (nonatomic, retain) AVCaptureDevice *currentInputDevice;
+@property (nonatomic, retain) TUVideoEffect *currentVideoEffect;
 @property (nonatomic) int currentVideoOrientation;
+@property (nonatomic) bool hasRefreshedPreviewAfterError;
 @property (nonatomic, readonly, copy) NSArray *inputDevices;
 @property (nonatomic, retain) CALayer *localBackLayer;
 @property (nonatomic, retain) CALayer *localFrontLayer;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } localScreenContentsRect;
 @property (getter=isPreviewRunning, nonatomic, readonly) bool previewRunning;
-@property (nonatomic, readonly) <TUVideoDeviceControllerProvider> *provider;
+@property (nonatomic, readonly) <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> *provider;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
 @property (nonatomic) bool wantsPreview;
 
@@ -22,12 +27,15 @@
 + (int)_videoOrientationForTUOrientation:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)availableVideoEffects;
 - (void)captureDevicesChangedForProvider:(id)arg1;
 - (id)currentInputDevice;
+- (id)currentVideoEffect;
 - (int)currentVideoOrientation;
 - (id)debugDescription;
 - (void)didStartPreviewForProvider:(id)arg1;
 - (void)didStopPreviewForProvider:(id)arg1;
+- (bool)hasRefreshedPreviewAfterError;
 - (id)init;
 - (id)initWithProvider:(id)arg1 serialQueue:(id)arg2;
 - (id)initWithSerialQueue:(id)arg1;
@@ -35,6 +43,7 @@
 - (bool)isPreviewRunning;
 - (id)localBackLayer;
 - (id)localFrontLayer;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })localScreenContentsRect;
 - (void)noteBeginAnimationToPIP;
 - (void)noteBeginAnimationToPreview;
 - (void)noteEndAnimationToPIP;
@@ -47,7 +56,9 @@
 - (void)provider:(id)arg1 didReceiveFirstPreviewFrameFromCameraUniqueID:(id)arg2;
 - (id)serialQueue;
 - (void)setCurrentInputDevice:(id)arg1;
+- (void)setCurrentVideoEffect:(id)arg1;
 - (void)setCurrentVideoOrientation:(int)arg1;
+- (void)setHasRefreshedPreviewAfterError:(bool)arg1;
 - (void)setLocalBackLayer:(id)arg1;
 - (void)setLocalFrontLayer:(id)arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1 localLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg2;

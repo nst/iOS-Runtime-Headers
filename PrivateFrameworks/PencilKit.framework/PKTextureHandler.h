@@ -22,10 +22,12 @@
 - (unsigned int)eraserTexture;
 - (unsigned int)gradientTextureFrom:(double)arg1;
 - (id)init;
+- (unsigned int)loadTexture:(int*)arg1 image:(struct CGImage { }*)arg2 wrap:(bool)arg3;
 - (unsigned int)loadTexture:(int*)arg1 name:(id)arg2 forInk:(bool)arg3;
 - (unsigned int)loadTexture:(int*)arg1 name:(id)arg2 wrap:(bool)arg3 forInk:(bool)arg4;
 - (unsigned int)paperTexture;
 - (struct CGSize { double x1; double x2; })paperTextureSize;
+- (unsigned int)textureWithImage:(struct CGImage { }*)arg1 textureName:(id)arg2 wrap:(bool)arg3;
 - (unsigned int)textureWithName:(id)arg1;
 - (unsigned int)textureWithName:(id)arg1 forInk:(bool)arg2;
 - (unsigned int)textureWithName:(id)arg1 wrap:(bool)arg2;

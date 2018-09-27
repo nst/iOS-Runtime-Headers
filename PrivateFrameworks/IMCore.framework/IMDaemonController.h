@@ -22,6 +22,7 @@
     IMLocalObject * _localObject;
     NSObject<OS_dispatch_queue> * _localObjectLockQueue;
     bool  _preventReconnect;
+    id /* block */  _prewarmingBlock;
     NSProtocolChecker * _protocol;
     NSObject<OS_dispatch_queue> * _remoteDaemonLockQueue;
     NSObject<OS_dispatch_queue> * _remoteMessageQueue;
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) bool isConnected;
 @property (nonatomic, readonly) bool isConnecting;
 @property (nonatomic, readonly) IMDaemonListener *listener;
+@property (nonatomic, copy) id /* block */ prewarmingBlock;
 @property (nonatomic, retain) NSMutableDictionary *requestQOSClassCompletionBlocks;
 @property (getter=isRequestingConnection, nonatomic, readonly) bool requestingConnection;
 
@@ -112,6 +114,7 @@
 - (void)localObjectDiedNotification:(id)arg1;
 - (bool)localObjectExists;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id /* block */)prewarmingBlock;
 - (void)remoteObjectDiedNotification:(id)arg1;
 - (bool)remoteObjectExists;
 - (bool)removeListenerID:(id)arg1;
@@ -125,6 +128,7 @@
 - (void)setMyPicture:(id)arg1 smallPictureData:(id)arg2;
 - (void)setMyStatus:(unsigned long long)arg1 message:(id)arg2;
 - (void)setMyStatus:(unsigned long long)arg1 message:(id)arg2 forAccount:(id)arg3;
+- (void)setPrewarmingBlock:(id /* block */)arg1;
 - (void)setRequestQOSClassCompletionBlocks:(id)arg1;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidResume;

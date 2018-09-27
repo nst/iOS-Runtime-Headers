@@ -3,7 +3,7 @@
  */
 
 @interface NSObservationSource : NSObject <NSObservable> {
-    id  _observers;
+    /* Warning: unhandled array encoding: '[4@]' */ id  _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,7 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (id*)_observerStorage;
+- (void*)_observerStorageOfSize:(unsigned long long)arg1;
 - (void)dealloc;
 
 @end

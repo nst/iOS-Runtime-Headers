@@ -17,7 +17,6 @@
     NSString * _label;
     int  _listenerPort;
     bool  _needsSetup;
-    UIViewController * _presentingViewController;
     NSMutableDictionary * _requestMap;
     NSString * _serviceType;
     id /* block */  _sessionEndedHandler;
@@ -37,7 +36,6 @@
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic) bool needsSetup;
-@property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) NSString *serviceType;
 @property (nonatomic, copy) id /* block */ sessionEndedHandler;
 @property (nonatomic, copy) id /* block */ sessionStartedHandler;
@@ -66,7 +64,6 @@
 - (id /* block */)invalidationHandler;
 - (id)label;
 - (bool)needsSetup;
-- (id)presentingViewController;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (id)serviceType;
 - (id /* block */)sessionEndedHandler;
@@ -80,7 +77,6 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setNeedsSetup:(bool)arg1;
-- (void)setPresentingViewController:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSessionEndedHandler:(id /* block */)arg1;
 - (void)setSessionStartedHandler:(id /* block */)arg1;

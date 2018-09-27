@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
  */
 
-@interface MediaControlsHomeObserver : NSObject <HMHomeDelegate, HMHomeManagerDelegate> {
+@interface MediaControlsHomeObserver : NSObject <HFHomeManagerObserver, HFHomeObserver> {
     <MediaControlsHomeObserverDelegate> * _delegate;
     HMHomeManager * _homeManager;
     NSMutableSet * _knownUIDs;

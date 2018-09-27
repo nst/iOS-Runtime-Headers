@@ -3,15 +3,15 @@
  */
 
 @interface FCNotificationController : NSObject <FCUserInfoObserving> {
-    FCAppConfigurationManager * _appConfigManager;
     FCCommandQueue * _commandQueue;
+    <FCCoreConfigurationManager> * _configurationManager;
     NSString * _deviceToken;
     NSString * _notificationsUserID;
     FCUserInfo * _userInfo;
 }
 
-@property (nonatomic, retain) FCAppConfigurationManager *appConfigManager;
 @property (nonatomic, retain) FCCommandQueue *commandQueue;
+@property (nonatomic, retain) <FCCoreConfigurationManager> *configurationManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceToken;
@@ -22,19 +22,19 @@
 
 - (void).cxx_destruct;
 - (void)_registerDeviceToken:(id)arg1;
-- (id)appConfigManager;
 - (id)appendBreakingNewsIfNeededToChannelIDs:(id)arg1;
 - (id)commandQueue;
+- (id)configurationManager;
 - (void)dealloc;
 - (id)deviceToken;
 - (id)init;
-- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 appConfigurationManager:(id)arg3;
+- (id)initWithUserInfo:(id)arg1 commandQueue:(id)arg2 configurationManager:(id)arg3;
 - (id)notificationsUserID;
 - (bool)refreshNotificationsForChannelIDs:(id)arg1 paidChannelIDs:(id)arg2;
 - (void)registerDeviceToken:(id)arg1;
 - (bool)registerNotificationsForTagID:(id)arg1 isPaid:(bool)arg2;
-- (void)setAppConfigManager:(id)arg1;
 - (void)setCommandQueue:(id)arg1;
+- (void)setConfigurationManager:(id)arg1;
 - (void)setDeviceToken:(id)arg1;
 - (void)setNotificationsUserID:(id)arg1;
 - (void)setUserInfo:(id)arg1;

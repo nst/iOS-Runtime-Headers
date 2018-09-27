@@ -5,6 +5,8 @@
 @interface CKMediaObject : NSObject <QLPreviewItem> {
     NSURL * _cachedHighQualityFileURL;
     NSObject<OS_dispatch_group> * _highQualityFetchInProgressGroup;
+    bool  _isFromMe;
+    bool  _suppressPreviewForUnknownSender;
     <CKFileTransfer> * _transfer;
 }
 
@@ -16,8 +18,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSURL *fileURL;
 @property (nonatomic, readonly, copy) NSString *filename;
+@property (nonatomic, readonly) bool generatePreviewOutOfProcess;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *highQualityFetchInProgressGroup;
+@property (nonatomic) bool isFromMe;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly, copy) NSString *mimeType;
 @property (nonatomic, readonly) bool needsAnimation;
@@ -25,9 +29,11 @@
 @property (nonatomic, readonly) NSString *previewItemTitle;
 @property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) Class superclass;
+@property (nonatomic) bool suppressPreviewForUnknownSender;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
 @property (nonatomic, retain) <CKFileTransfer> *transfer;
 @property (nonatomic, readonly, copy) NSString *transferGUID;
+@property (nonatomic, readonly) bool validatePreviewFormat;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;
@@ -65,13 +71,15 @@
 - (id)fileURL;
 - (id)filename;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
+- (bool)generatePreviewOutOfProcess;
 - (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)highQualityFetchInProgressGroup;
 - (id)icon;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(bool)arg2 suppressPreview:(bool)arg3;
 - (Class)inlineStickerBalloonViewClass;
 - (bool)isEqual:(id)arg1;
+- (bool)isFromMe;
 - (bool)isPreviewable;
 - (bool)isPromisedItem;
 - (id)location;
@@ -90,14 +98,20 @@
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)setCachedHighQualityFileURL:(id)arg1;
 - (void)setHighQualityFetchInProgressGroup:(id)arg1;
+- (void)setIsFromMe:(bool)arg1;
+- (void)setSuppressPreviewForUnknownSender:(bool)arg1;
 - (void)setTransfer:(id)arg1;
 - (bool)shouldBeQuickLooked;
 - (bool)shouldShowDisclosure;
 - (bool)shouldShowViewer;
 - (id)subtitle;
+- (bool)suppressPreviewForUnknownSender;
 - (id)title;
+- (bool)transcoderPreviewGenerationFailed;
 - (id)transcoderUserInfo;
 - (id)transfer;
 - (id)transferGUID;
+- (bool)validPreviewExistsAtURL:(id)arg1;
+- (bool)validatePreviewFormat;
 
 @end

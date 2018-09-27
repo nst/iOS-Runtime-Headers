@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VMVoicemailManager : NSObject {
+@interface VMVoicemailManager : NSObject <VMClientXPCProtocol> {
     VMVoicemailCapabilities * _capabilities;
     VMClientWrapper * _client;
     NSObject<OS_dispatch_queue> * _completionQueue;
-    NSObject<OS_dispatch_queue> * _concurrentDispatchQueue;
     bool  _messageWaiting;
     bool  _online;
+    NSObject<OS_dispatch_queue> * _serialDispatchQueue;
     unsigned long long  _storageUsage;
     bool  _subscribed;
     bool  _syncInProgress;
@@ -25,8 +25,10 @@
 @property (nonatomic, readonly) bool canChangePassword;
 @property (nonatomic, retain) VMVoicemailCapabilities *capabilities;
 @property (nonatomic, retain) VMClientWrapper *client;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *completionQueue;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *concurrentDispatchQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long mailboxGreetingState;
 @property (nonatomic, readonly) bool mailboxRequiresSetup;
 @property (nonatomic, readonly) double maximumGreetingDuration;
@@ -34,8 +36,11 @@
 @property (getter=isMessageWaiting, nonatomic) bool messageWaiting;
 @property (nonatomic, readonly) unsigned long long minimumPasswordLength;
 @property (getter=isOnline, nonatomic) bool online;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialDispatchQueue;
+@property (nonatomic, readonly) <VMServerXPCProtocol> *serverConnection;
 @property (nonatomic) unsigned long long storageUsage;
 @property (getter=isSubscribed, nonatomic) bool subscribed;
+@property (readonly) Class superclass;
 @property (getter=isSyncInProgress, nonatomic) bool syncInProgress;
 @property (nonatomic) int token;
 @property (getter=isTranscribing, nonatomic) bool transcribing;
@@ -54,7 +59,6 @@
 - (void)changePassword:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)client;
 - (id)completionQueue;
-- (id)concurrentDispatchQueue;
 - (unsigned long long)countOfVoicemailsPassingTest:(id /* block */)arg1;
 - (id)dataForVoicemailWithIdentifier:(unsigned long long)arg1;
 - (void)dealloc;
@@ -76,6 +80,8 @@
 - (double)maximumGreetingDuration;
 - (unsigned long long)maximumPasswordLength;
 - (unsigned long long)minimumPasswordLength;
+- (void)obliterate;
+- (void)performSynchronousBlock:(id /* block */)arg1;
 - (id)removeVoicemailFromTrash:(id)arg1;
 - (id)removeVoicemailsFromTrash:(id)arg1;
 - (void)reportTranscriptionProblemForVoicemail:(id)arg1;
@@ -84,10 +90,12 @@
 - (void)retrieveDataForVoicemail:(id)arg1;
 - (void)retrieveGreetingWithCompletionHandler:(id /* block */)arg1;
 - (void)saveGreeting:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)serialDispatchQueue;
 - (id)serverConnection;
 - (id)serverConnectionWithErrorHandler:(id /* block */)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setClient:(id)arg1;
+- (void)setCompletionQueue:(id)arg1;
 - (void)setMessageWaiting:(bool)arg1;
 - (void)setOnline:(bool)arg1;
 - (void)setStorageUsage:(unsigned long long)arg1;

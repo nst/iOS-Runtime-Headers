@@ -80,6 +80,7 @@
 - (void)_locallyPersistStillImageResult:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_locallyPersistVideoCaptureResult:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)_locationController;
+- (void)_mainThread_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_notifyDelegateOfCompletedStillImageLocalPersistenceForRequest:(id)arg1 withResult:(id)arg2;
 - (void)_notifyDelegateOfCompletedStillImageRemotePersistenceForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned long long)arg3 error:(id)arg4;
 - (void)_notifyDelegateOfCompletedVideoLocalPersistenceForRequest:(id)arg1 withResult:(id)arg2;
@@ -103,9 +104,10 @@
 - (unsigned int)_videoLocalPowerAssertionReasonForCoordinationInfo:(id)arg1;
 - (id)_videoPersistenceUUIDForRequest:(id)arg1 withResult:(id)arg2;
 - (unsigned int)_videoRemotePowerAssertionReasonForCoordinationInfo:(id)arg1;
-- (void)_writeDataToURL:(id)arg1 withData:(id)arg2 duringBurst:(bool)arg3 error:(out id*)arg4;
-- (void)_writeJPEGToURL:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(bool)arg5 error:(out id*)arg6;
+- (bool)_writeDataToURL:(id)arg1 withData:(id)arg2 duringBurst:(bool)arg3 error:(out id*)arg4;
+- (bool)_writeJPEGToURL:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(bool)arg5 error:(out id*)arg6;
 - (id)_xmpEncodedDiagnosticDataFromDictionary:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)initWithLocationController:(id)arg1 burstController:(id)arg2 protectionController:(id)arg3 powerController:(id)arg4 irisVideoController:(id)arg5;
 - (void)panoramaRequest:(id)arg1 didCompleteCaptureWithResult:(id)arg2;

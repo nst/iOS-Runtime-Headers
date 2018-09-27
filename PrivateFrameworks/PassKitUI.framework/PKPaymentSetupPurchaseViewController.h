@@ -4,6 +4,7 @@
 
 @interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupDelegate, PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentSetupRequiresPreflightProtocol, PKPaymentSetupViewControllerDelegate, RemoteUIControllerDelegate> {
     bool  _acceptedTerms;
+    UIActivityIndicatorView * _activityIndicator;
     PKPaymentSetupPurchaseAmountView * _amountView;
     PKPaymentAuthorizationCoordinator * _authorizationCoordinator;
     UIImage * _cardImage;
@@ -22,6 +23,7 @@
 }
 
 @property (nonatomic) bool acceptedTerms;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, retain) PKPaymentSetupPurchaseAmountView *amountView;
 @property (nonatomic, retain) PKPaymentAuthorizationCoordinator *authorizationCoordinator;
 @property (nonatomic, retain) UIImage *cardImage;
@@ -57,6 +59,7 @@
 - (void)_showSpinner:(bool)arg1;
 - (id)_spinnerBarButton;
 - (bool)acceptedTerms;
+- (id)activityIndicator;
 - (id)amountView;
 - (id)authorizationCoordinator;
 - (id)cardImage;
@@ -77,6 +80,7 @@
 - (id)purchaseController;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long*)arg3;
 - (void)setAcceptedTerms:(bool)arg1;
+- (void)setActivityIndicator:(id)arg1;
 - (void)setAmountView:(id)arg1;
 - (void)setAuthorizationCoordinator:(id)arg1;
 - (void)setCardImage:(id)arg1;

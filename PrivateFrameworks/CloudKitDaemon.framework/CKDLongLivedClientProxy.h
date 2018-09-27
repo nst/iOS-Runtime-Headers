@@ -28,6 +28,7 @@
 - (bool)hasDisplaysSystemAcceptPromptEntitlement;
 - (bool)hasLightweightPCSEntitlement;
 - (bool)hasMasqueradingEntitlement;
+- (bool)hasNonLegacyShareURLEntitlement;
 - (bool)hasOutOfProcessUIEntitlement;
 - (bool)hasParticipantPIIEntitlement;
 - (bool)hasProtectionDataEntitlement;

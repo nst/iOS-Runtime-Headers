@@ -20,6 +20,7 @@
 - (id)dispatchQueue;
 - (void)flushDynamicData;
 - (id)init;
+- (id)initWithAssetPlistURL:(id)arg1;
 - (id)initWithDynamicDataURL:(id)arg1;
 - (id)initWithDynamicDataURL:(id)arg1 displayStringsProvider:(id)arg2;
 - (id)initWithDynamicDataURL:(id)arg1 withBundleURL:(id)arg2;

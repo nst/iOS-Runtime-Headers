@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPaymentMethodValue : PBCodable <NSCopying> {
+@interface _INPBPaymentMethodValue : PBCodable <NSCopying, NSSecureCoding, _INPBPaymentMethodValue> {
     struct { 
         unsigned int type : 1; 
     }  _has;
@@ -10,28 +10,27 @@
     NSString * _identificationHint;
     NSString * _name;
     int  _type;
-    PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasIcon;
 @property (nonatomic, readonly) bool hasIdentificationHint;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic) bool hasType;
 @property (nonatomic, readonly) bool hasValueMetadata;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBImageValue *icon;
-@property (nonatomic, retain) NSString *identificationHint;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *identificationHint;
+@property (nonatomic, copy) NSString *name;
+@property (readonly) Class superclass;
 @property (nonatomic) int type;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasIcon;
 - (bool)hasIdentificationHint;
@@ -42,7 +41,6 @@
 - (id)icon;
 - (id)identificationHint;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (bool)readFrom:(id)arg1;
 - (void)setHasType:(bool)arg1;
@@ -53,7 +51,6 @@
 - (void)setValueMetadata:(id)arg1;
 - (int)type;
 - (id)typeAsString:(int)arg1;
-- (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

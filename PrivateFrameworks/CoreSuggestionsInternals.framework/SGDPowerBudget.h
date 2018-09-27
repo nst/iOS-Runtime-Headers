@@ -3,11 +3,11 @@
  */
 
 @interface SGDPowerBudget : NSObject {
-    CDAttribute * _attribute;
     <NSObject> * _batteryObserver;
-    unsigned long long  _budgetingToken;
+    bool  _discretionaryWorkInProgress;
     NSDate * _lastPlugInTime;
     NSObject<OS_os_log> * _log;
+    _DASScheduler * _scheduler;
     SGDPowerBudgetThrottlingState * _throttlingState;
 }
 
@@ -16,16 +16,15 @@
 - (void).cxx_destruct;
 - (void)_endDuetBudgetedWork;
 - (void)_endThrottleBudgetedWork;
+- (void)_endWork;
 - (bool)_hasDuetBudgetRemaining;
 - (bool)_hasThrottleBudgetRemaining;
 - (void)_startDuetBudgetedWork;
 - (void)_startThrottleBudgetedWork;
-- (bool)_updateAttribute;
+- (void)_startWork;
 - (bool)canDoDiscretionaryWork;
 - (void)dealloc;
 - (void)doDiscretionaryWork:(id /* block */)arg1 orElse:(id /* block */)arg2;
-- (void)endWork;
 - (id)init;
-- (void)startWork;
 
 @end

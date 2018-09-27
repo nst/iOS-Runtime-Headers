@@ -14,6 +14,7 @@
         unsigned int requestStyle : 1; 
         unsigned int timeToLiveSeconds : 1; 
         unsigned int updateBehavior : 1; 
+        unsigned int useAuthProxy : 1; 
     }  _has;
     NSString * _localizationURL;
     int  _requestStyle;
@@ -25,6 +26,7 @@
     unsigned int  _timeToLiveSeconds;
     PBUnknownFields * _unknownFields;
     int  _updateBehavior;
+    bool  _useAuthProxy;
     unsigned int  _version;
 }
 
@@ -39,6 +41,7 @@
 @property (nonatomic) bool hasRequestStyle;
 @property (nonatomic) bool hasTimeToLiveSeconds;
 @property (nonatomic) bool hasUpdateBehavior;
+@property (nonatomic) bool hasUseAuthProxy;
 @property (nonatomic, retain) NSString *localizationURL;
 @property (nonatomic) int requestStyle;
 @property (nonatomic) int scale;
@@ -49,6 +52,7 @@
 @property (nonatomic) unsigned int timeToLiveSeconds;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int updateBehavior;
+@property (nonatomic) bool useAuthProxy;
 @property (nonatomic) unsigned int version;
 
 + (id)buildDisputedBordersQueryItemsForCountry:(id)arg1 region:(id)arg2;
@@ -96,6 +100,7 @@
 - (bool)hasRequestStyle;
 - (bool)hasTimeToLiveSeconds;
 - (bool)hasUpdateBehavior;
+- (bool)hasUseAuthProxy;
 - (unsigned long long)hash;
 - (bool)isAvailableForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (bool)isDisputedBordersWhitelistedForCountry:(id)arg1 region:(id)arg2;
@@ -123,6 +128,7 @@
 - (void)setHasRequestStyle:(bool)arg1;
 - (void)setHasTimeToLiveSeconds:(bool)arg1;
 - (void)setHasUpdateBehavior:(bool)arg1;
+- (void)setHasUseAuthProxy:(bool)arg1;
 - (void)setLocalizationURL:(id)arg1;
 - (void)setRequestStyle:(int)arg1;
 - (void)setScale:(int)arg1;
@@ -132,6 +138,7 @@
 - (void)setSupportedLanguages:(id)arg1;
 - (void)setTimeToLiveSeconds:(unsigned int)arg1;
 - (void)setUpdateBehavior:(int)arg1;
+- (void)setUseAuthProxy:(bool)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (int)size;
 - (id)sizeAsString:(int)arg1;
@@ -144,6 +151,7 @@
 - (id)unknownFields;
 - (int)updateBehavior;
 - (id)updateBehaviorAsString:(int)arg1;
+- (bool)useAuthProxy;
 - (unsigned int)version;
 - (void)writeTo:(id)arg1;
 

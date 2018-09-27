@@ -41,6 +41,7 @@
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; } mapDisplayStyle;
 @property (nonatomic) long long mapType;
 @property (nonatomic) bool showsBuildings;
+@property (nonatomic) bool showsPointLabels;
 @property (nonatomic) bool showsPointsOfInterest;
 @property (nonatomic) bool showsVenues;
 @property (readonly) struct CGSize { double x1; double x2; } size;
@@ -83,9 +84,11 @@
 - (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3;
 - (void)setMapType:(long long)arg1;
 - (void)setShowsBuildings:(bool)arg1;
+- (void)setShowsPointLabels:(bool)arg1;
 - (void)setShowsPointsOfInterest:(bool)arg1;
 - (void)setShowsVenues:(bool)arg1;
 - (bool)showsBuildings;
+- (bool)showsPointLabels;
 - (bool)showsPointsOfInterest;
 - (bool)showsVenues;
 - (struct CGSize { double x1; double x2; })size;

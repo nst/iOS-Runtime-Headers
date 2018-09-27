@@ -15,8 +15,6 @@
 - (void)confirmActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (void)requestActivationForToken:(id)arg1 withUUID:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 locale:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)requestMetadataForToken:(id)arg1 withUUID:(id)arg2 requestedLocale:(id)arg3 requestInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)setXpcConnection:(id)arg1;
 - (id)xpcConnection;

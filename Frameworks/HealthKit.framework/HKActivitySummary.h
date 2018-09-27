@@ -138,8 +138,4 @@
 - (id)as_pushesStringWithContext:(id)arg1;
 - (id)as_stepsStringWithContext:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-- (bool)hd_isEnergyBurnedGoalSet;
-
 @end

@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)commandQueuer;
 - (void)executeCommand:(id)arg1 completion:(id /* block */)arg2;
+- (void)executeCommand:(id)arg1 peerInfo:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithClientLiteWithConnectionName:(id)arg1;
 - (id)initWithServiceHelper:(id)arg1 withConnectionName:(id)arg2;
 - (id)queue;

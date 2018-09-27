@@ -21,11 +21,11 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)deviceID;
 - (void)encodeWithCoder:(id)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -34,7 +34,6 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isUserCentric;
 - (id)key;
-- (unsigned long long)length;
 - (void)setDeviceID:(unsigned long long)arg1;
 - (void)setIsEphemeral:(bool)arg1;
 - (void)setIsUserCentric:(bool)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUZoomableGridViewController : PUPhotosGridViewController <PUCloudQuotaControllerDelegate, PUMagnfiedViewControllerDelegate, PXCPLServiceUIDelegate> {
+@interface PUZoomableGridViewController : PUPhotosGridViewController <PUMagnfiedViewControllerDelegate, PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PXPhotosGlobalFooterViewModelPresentationDelegate> {
     NSIndexPath * __dynamicLayoutTransitionAnchorIndexPath;
     struct CGPoint { 
         double x; 
@@ -17,12 +17,13 @@
     UITapGestureRecognizer * __tapGestureRecognizer;
     NSIndexPath * __transitionExplicitAnchorIndexPath;
     PUGridZoomLevelInfo * __zoomLevelInfo;
-    PUCloudQuotaController * _cloudQuotaController;
+    PXCloudQuotaController * _cloudQuotaController;
     PXCPLServiceUI * _cplServiceUI;
     PUZoomableGridTransition * _currentGridZoomTransitionInfo;
     NSTimer * _globalFooterAutoScrollMinimumIdleTimer;
     bool  _globalFooterDidAutoScroll;
     NSTimer * _globalFooterImportantInformationUpdatesTimer;
+    bool  _iCPLEnabled;
     bool  _isDisplayingEmptyPlaceholderView;
     bool  _isDisplayingGlobalFooterView;
     PUGridMagnifiedImageViewController * _magnifiedImageViewController;
@@ -55,6 +56,7 @@
 @property (nonatomic, retain) PUZoomableGridViewControllerSpec *zoomableGridSpec;
 
 - (void).cxx_destruct;
+- (void)_accountStoreDidChange:(id)arg1;
 - (id)_beginInteractiveTransitionWithReferenceItemPath:(id)arg1 zoomingOut:(bool)arg2;
 - (bool)_collectionView:(id)arg1 shouldApplyTransitionContentOffset:(struct CGPoint { double x1; double x2; })arg2 contentSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)_conditionallyRevealPhotosGlobalFooterView;
@@ -153,6 +155,7 @@
 - (void)preheatAssets;
 - (void)prepareForTransitionToZoomableViewController:(id)arg1 anchorItemIndexPath:(id)arg2 anchorShiftsColumns:(bool)arg3 animated:(bool)arg4 interactive:(bool)arg5;
 - (id)presentingViewControllerForCloudQuotaController:(id)arg1;
+- (id)presentingViewControllerForViewModel:(id)arg1;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)processDataSourceChange:(id)arg1;
 - (bool)pu_shouldActAsTabRootViewController;
@@ -161,7 +164,7 @@
 - (bool)respondsToSelector:(SEL)arg1;
 - (bool)scrollViewShouldScrollToTop:(id)arg1;
 - (bool)serviceUI:(id)arg1 performAction:(long long)arg2;
-- (void)serviceUI:(id)arg1 progressDidChange:(double)arg2;
+- (void)serviceUI:(id)arg1 progressDidChange:(float)arg2;
 - (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setSelected:(bool)arg1 itemsAtIndexes:(id)arg2 inSection:(long long)arg3 animated:(bool)arg4;

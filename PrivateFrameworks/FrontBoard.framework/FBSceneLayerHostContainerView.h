@@ -15,10 +15,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) NSArray *hostedLayers;
-@property (nonatomic, readonly, retain) FBScene *scene;
+@property (nonatomic, readonly) NSArray *hostedLayers;
+@property (nonatomic, readonly) FBScene *scene;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_adjustHostViewFrame:(id)arg1;
 - (id)_createHostViewForLayer:(id)arg1;
 - (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;

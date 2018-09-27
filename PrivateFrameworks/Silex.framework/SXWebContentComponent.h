@@ -18,6 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *layout;
+@property (nonatomic, readonly) NSString *resourceIdentifier;
 @property (nonatomic, readonly) int role;
 @property (nonatomic, readonly) NSString *style;
 @property (readonly) Class superclass;

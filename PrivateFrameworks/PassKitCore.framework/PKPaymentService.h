@@ -40,6 +40,7 @@
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)archiveMessageWithIdentifier:(id)arg1;
+- (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)consistencyCheck;
 - (void)dealloc;
 - (id)defaultExpressFelicaTransitPassIdentifier;
@@ -53,7 +54,10 @@
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)downloadAllPaymentPasses;
 - (id)expressPassInformationForMode:(id)arg1;
+- (id)expressPassInformationWithPassUniqueIdentifier:(id)arg1;
 - (id)expressPassesInformation;
+- (id)expressPassesInformationWithAutomaticSelectionTechnologyType:(long long)arg1;
+- (id)expressPassesInformationWithCardType:(long long)arg1;
 - (bool)hasPaymentDeviceFieldProperties;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
@@ -73,6 +77,7 @@
 - (id)paymentDeviceFieldProperties;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
@@ -81,6 +86,8 @@
 - (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
 - (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
 - (void)remoteServiceDidSuspend:(id)arg1;
+- (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeExpressPassesWithCardType:(long long)arg1 completion:(id /* block */)arg2;
 - (void)sanitizeExpressPasses;
 - (void)scheduleAutomaticPresentationAvailableNotificationForPassWithUniqueIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)scheduleSetupReminders;
@@ -106,6 +113,7 @@
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 limit:(long long)arg6 completion:(id /* block */)arg7;
 - (void)transactionsWithTransactionSource:(unsigned long long)arg1 withBackingData:(unsigned long long)arg2 limit:(long long)arg3 completion:(id /* block */)arg4;
 - (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
+- (void)valueAddedServiceTransactionWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)valueAddedServiceTransactionsForPassWithUniqueIdentifier:(id)arg1 limit:(long long)arg2 completion:(id /* block */)arg3;
 - (void)valueAddedServiceTransactionsForPaymentTransaction:(id)arg1 limit:(long long)arg2 completion:(id /* block */)arg3;
 

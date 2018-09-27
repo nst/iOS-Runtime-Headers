@@ -53,10 +53,13 @@
 + (bool)isSupportedAutoLoopRecipe:(id)arg1;
 + (id)newImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(double)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(bool)arg4;
 + (void)updatePhotoEditModel:(id)arg1 fromPortraitMetadata:(id)arg2;
++ (id)whiteBalanceEnumMap;
++ (id)whiteBalanceIntToString:(unsigned long long)arg1;
++ (unsigned long long)whiteBalanceStringToInt:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_exportLivePhotoVideoToURL:(id)arg1 preset:(id)arg2 composition:(id)arg3 metadata:(id)arg4 completion:(id /* block */)arg5;
-- (void)_generateJPEGImageDataForComposition:(id)arg1 withCompressionQuality:(double)arg2 livePhotoPairingIdentifier:(id)arg3 properties:(id)arg4 depthData:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)_generateJPEGImageDataForComposition:(id)arg1 withCompressionQuality:(double)arg2 livePhotoPairingIdentifier:(id)arg3 properties:(id)arg4 depthData:(id)arg5 matte:(id)arg6 completionHandler:(id /* block */)arg7;
 - (id)_smartBWAdjustments;
 - (double)_smartBWBaseValueForKey:(id)arg1 defaultValue:(double)arg2;
 - (id)_smartColorAdjustments;

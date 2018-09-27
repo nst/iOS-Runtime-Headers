@@ -44,17 +44,14 @@
 
 - (void).cxx_destruct;
 - (id)UTIType;
+- (id)_getIrisBundleLocation;
 - (id)_getIrisBundleURL;
-- (id)_getTempIrisBundleLocation;
-- (id)_getTempIrisFolder;
-- (void)_removeAppendedBundle;
 - (void)_savePreview:(id)arg1;
 - (id)_savedPreviewFromURL:(id)arg1;
 - (id)cachedPreview;
 - (id)calculateIrisVideoPath;
 - (bool)canShareItem;
 - (id)createdDate;
-- (void)dealloc;
 - (id)description;
 - (id)dragItem;
 - (id)fileIcon;

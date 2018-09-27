@@ -6,7 +6,6 @@
     PXActionPerformer * __activePerformer;
     NSArray * __allowedActionTypes;
     PXPhotoKitAssetCollectionActionManager * __assetCollectionActionManager;
-    NSMutableSet * __disabledActionTypes;
     PXActionRowTile * __measuringActionRowTile;
     PHFetchResult * __peopleFetchResult;
     NSArray * __performableActionTypes;
@@ -18,6 +17,7 @@
     PXReusableObjectPool * __tileReusePool;
     NSMutableSet * __tilesInUse;
     PXTilingController * __tilingController;
+    PXPhotosDetailsViewModel * __viewModel;
     <PXActionPerformerDelegate> * _actionPerformerDelegate;
     bool  _allowCreateMemoryAction;
     bool  _allowRevealInMomentAction;
@@ -45,7 +45,6 @@
 @property (setter=_setActivePerformer:, nonatomic, retain) PXActionPerformer *_activePerformer;
 @property (setter=_setAllowedActionTypes:, nonatomic, retain) NSArray *_allowedActionTypes;
 @property (setter=_setAssetCollectionActionManager:, nonatomic, retain) PXPhotoKitAssetCollectionActionManager *_assetCollectionActionManager;
-@property (nonatomic, readonly) NSMutableSet *_disabledActionTypes;
 @property (nonatomic, readonly) PXActionRowTile *_measuringActionRowTile;
 @property (setter=_setPeopleFetchResult:, nonatomic, retain) PHFetchResult *_peopleFetchResult;
 @property (setter=_setPerformableActionTypes:, nonatomic, retain) NSArray *_performableActionTypes;
@@ -57,6 +56,7 @@
 @property (nonatomic, readonly) PXReusableObjectPool *_tileReusePool;
 @property (nonatomic, readonly) NSMutableSet *_tilesInUse;
 @property (nonatomic, readonly) PXTilingController *_tilingController;
+@property (setter=_setViewModel:, nonatomic, retain) PXPhotosDetailsViewModel *_viewModel;
 @property (nonatomic) <PXActionPerformerDelegate> *actionPerformerDelegate;
 @property (nonatomic) bool allowCreateMemoryAction;
 @property (nonatomic) bool allowRevealInMomentAction;
@@ -93,7 +93,6 @@
 - (id)_allowedActionTypes;
 - (id)_assetCollectionActionManager;
 - (id)_createNewLayout;
-- (id)_disabledActionTypes;
 - (id)_extendedTraitCollection;
 - (void)_handleContentSizeCategoryDidChange:(id)arg1;
 - (void)_invalidateActionManager;
@@ -120,6 +119,7 @@
 - (void)_setPerformableActionTypes:(id)arg1;
 - (void)_setPhotosDataSource:(id)arg1;
 - (void)_setRowHeight:(double)arg1;
+- (void)_setViewModel:(id)arg1;
 - (id)_specManager;
 - (id)_tileAnimator;
 - (id)_tileReusePool;
@@ -132,6 +132,7 @@
 - (void)_updatePeopleFetchResultIfNeeded;
 - (void)_updatePerformableActionTypesIfNeeded;
 - (void)_updateRowHeightIfNeeded;
+- (id)_viewModel;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)actionPerformerDelegate;

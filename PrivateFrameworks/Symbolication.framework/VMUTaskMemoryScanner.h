@@ -12,6 +12,15 @@
     VMUClassInfoMap * _classInfoIndexer;
     id * _classInfos;
     unsigned int  _classInfosCount;
+    VMURangeArray * _dataSegmentsRangeArrayOutsideSharedCache;
+    struct _VMURange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _dataSegmentsRangeInSharedCache;
+    struct _VMURange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _dataSegmentsRangeOutsideSharedCache;
     VMUDebugTimer * _debugTimer;
     bool  _exactScanningEnabled;
     /* Warning: unhandled struct encoding: '{_VMUInstanceValues=Q@}' */ struct _VMUInstanceValues { unsigned long long x1; id x2; } * _instanceValues;
@@ -19,6 +28,7 @@
     unsigned int  _instanceValuesSize;
     bool  _javaScriptCoreUsingPoisoning;
     unsigned long long  _maxInteriorOffset;
+    VMUTaskMemoryCache * _memoryCache;
     id /* block */  _nodeLogger;
     VMUObjectIdentifier * _objectIdentifier;
     unsigned long long  _physicalFootprint;
@@ -33,7 +43,6 @@
     struct _VMURegionMap { void *x1; struct _VMURegionNode {} *x2; unsigned int x3; unsigned long long x4; unsigned long long x5; unsigned int x6[0]; } * _regionMap;
     struct _VMURegionNode { id x1; void x2; unsigned long long x3; struct _VMURegionNode {} *x4; struct { /* ? */ } *x5; unsigned int x6; unsigned long long x7; unsigned long long x8; } * _regions;
     unsigned int  _regionsCount;
-    bool  _saveNodeLabelsInGraph;
     struct _VMUScanLocationCache {} ** _scanCaches;
     unsigned int  _scanningMask;
     bool  _showRawClassNames;
@@ -44,6 +53,7 @@
     struct _VMUThreadNode { unsigned long long x1; unsigned int x2; unsigned int x3; unsigned long long *x4; } * _threads;
     unsigned int  _threadsCount;
     void * _userMarkedAbandoned;
+    NSMutableDictionary * _variantCachesByIsaIndex;
     NSMutableArray * _zoneNames;
     struct _VMUZoneNode { unsigned long long x1; id x2; struct malloc_introspection_t {} x3; } * _zones;
     unsigned int  _zonesCount;
@@ -59,6 +69,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned int mallocNodeCount;
 @property (nonatomic) unsigned long long maxInteriorOffset;
+@property (nonatomic, readonly) VMUTaskMemoryCache *memoryCache;
 @property (nonatomic, readonly) unsigned int nodeCount;
 @property (nonatomic, readonly) unsigned int nodeNamespaceSize;
 @property (nonatomic, readonly) VMUObjectIdentifier *objectIdentifier;
@@ -69,7 +80,6 @@
 @property (nonatomic, readonly) NSString *processName;
 @property (nonatomic, readonly) VMUClassInfoMap *realizedClasses;
 @property (nonatomic, readonly) unsigned int regionCount;
-@property (nonatomic) bool saveNodeLabelsInGraph;
 @property (nonatomic) unsigned int scanningMask;
 @property (nonatomic) bool showRawClassNames;
 @property (readonly) Class superclass;
@@ -83,12 +93,16 @@
 
 - (void).cxx_destruct;
 - (void)_buildRegionPageBlockMaps;
+- (id)_cachedVariantForGenericInfo:(id)arg1 variantKey:(unsigned long long)arg2;
 - (void)_callRemoteMallocEnumerators:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)_destroyLinearClassInfos;
 - (void)_findMarkedAbandonedBlocks;
 - (void)_fixupBlockIsas;
+- (void)_identifyNonObjectsPointedToByTypedIvars;
+- (unsigned int)_indexForClassInfo:(id)arg1;
 - (id)_initWithTask:(unsigned int)arg1 options:(unsigned long long)arg2;
 - (void)_orderedScanWithScanner:(id /* block */)arg1 recorder:(id /* block */)arg2 keepMapped:(bool)arg3 actions:(id /* block */)arg4;
+- (void)_registerVariant:(id)arg1 forGenericInfo:(id)arg2 variantKey:(unsigned long long)arg3;
 - (unsigned int)_removeFalsePositiveLeakedVMregionsFromNodes:(unsigned int*)arg1 nodeCount:(unsigned int)arg2 recorder:(id /* block */)arg3;
 - (void)_sortAndClassifyBlocks;
 - (void)_sortBlocks;
@@ -101,6 +115,7 @@
 - (void)addMallocNodes:(id)arg1;
 - (void)addMallocNodesFromTask;
 - (void)addRootNodesFromTask;
+- (bool)addressIsInDataSegment:(unsigned long long)arg1;
 - (id)binaryImagesDescription;
 - (id)classInfoForObjectAtAddress:(unsigned long long)arg1;
 - (void*)contentForNode:(unsigned int)arg1;
@@ -122,6 +137,7 @@
 - (unsigned int)mallocNodeCount;
 - (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (unsigned long long)maxInteriorOffset;
+- (id)memoryCache;
 - (unsigned int)nodeCount;
 - (id)nodeDescription:(unsigned int)arg1;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
@@ -136,12 +152,12 @@
 - (id)processName;
 - (id)processSnapshotGraph;
 - (id)processSnapshotGraphWithMallocStackLogs:(bool)arg1;
+- (id)processSnapshotGraphWithOptions:(unsigned long long)arg1;
 - (id)realizedClasses;
 - (id)referenceDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg4 alignmentSpacing:(unsigned int)arg5;
 - (void)refineTypesWithOverlay:(id)arg1;
 - (unsigned int)regionCount;
 - (void)removeRootReachableNodes;
-- (bool)saveNodeLabelsInGraph;
 - (void)scanNodesForReferences:(id /* block */)arg1;
 - (unsigned int)scanningMask;
 - (void)setAbandonedMarkingEnabled:(bool)arg1;
@@ -150,11 +166,12 @@
 - (void)setMaxInteriorOffset:(unsigned long long)arg1;
 - (void)setNodeScanningLogger:(id /* block */)arg1;
 - (void)setReferenceScanningLogger:(id /* block */)arg1;
-- (void)setSaveNodeLabelsInGraph:(bool)arg1;
 - (void)setScanningMask:(unsigned int)arg1;
 - (void)setShowRawClassNames:(bool)arg1;
+- (id)shortLabelForNode:(unsigned int)arg1;
 - (bool)showRawClassNames;
 - (unsigned int)task;
+- (void)unmapAllRegions;
 - (bool)validateAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned int)vmPageSize;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;

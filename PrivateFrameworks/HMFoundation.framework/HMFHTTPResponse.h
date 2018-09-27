@@ -13,21 +13,16 @@
 @property (nonatomic, readonly) HMFHTTPRequest *request;
 @property (nonatomic, readonly) long long statusCode;
 
-+ (id)shortDescription;
-
 - (void).cxx_destruct;
+- (id)attributeDescriptions;
 - (id)body;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugDescription;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (id)headerFields;
 - (id)init;
 - (id)initWithRequest:(id)arg1 internalResponse:(id)arg2;
 - (id)internal;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)request;
-- (id)shortDescription;
 - (long long)statusCode;
 
 @end

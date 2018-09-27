@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_appResultSection;
+- (unsigned int)_lexiconTokenIDForToken:(id)arg1 lexicon:(struct _LXLexicon { }*)arg2;
 - (id)_newSuggestionSection;
 - (id)_originalTopResultFromSections:(id)arg1;
 - (id)_suggestionResultFromSuggestion:(id)arg1 forQuery:(id)arg2;
@@ -19,6 +20,7 @@
 - (id)contactSuggestions:(id)arg1 maxCount:(long long)arg2;
 - (id)dedupedSuggestions:(id)arg1 dedupeQueries:(id)arg2 maxCount:(long long)arg3;
 - (id)displayedText;
+- (id)initForSession:(id)arg1 withQuery:(id)arg2;
 - (id)makeSuggestionsSection;
 - (bool)readyToUpdate;
 - (void)searchDaemonLocalSuggestionsData:(id)arg1;

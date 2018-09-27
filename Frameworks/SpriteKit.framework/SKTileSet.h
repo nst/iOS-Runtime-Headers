@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTileSet : NSObject <NSCoding, NSCopying> {
+@interface SKTileSet : NSObject <NSCopying, NSSecureCoding> {
     SKTileGroup * _defaultTileGroup;
     struct CGSize { 
         double width; 
@@ -26,6 +26,7 @@
 + (void)clearTileSetTableCache;
 + (id)findTileSetInBundleNamed:(id)arg1;
 + (id)recursivePathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
++ (bool)supportsSecureCoding;
 + (id)tileSetFromURL:(id)arg1;
 + (id)tileSetNamed:(id)arg1;
 + (id)tileSetWithTileGroups:(id)arg1;
@@ -47,6 +48,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTileGroups:(id)arg1;
 - (id)initWithTileGroups:(id)arg1 tileSetType:(unsigned long long)arg2;
+- (bool)isEqualToNode:(id)arg1;
 - (void)lookForMissingDefinitionsInGroups;
 - (id)name;
 - (void)observeAllTileDefinitions;

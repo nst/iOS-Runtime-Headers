@@ -24,7 +24,6 @@
 - (id)_existingInputsWithContext:(id)arg1 without:(id)arg2;
 - (id)_existingOutputsWithContext:(id)arg1 without:(id)arg2;
 - (bool)_isStillImageMode:(long long)arg1;
-- (bool)_isVideoMode:(long long)arg1;
 - (double)_minimumExecutionTime;
 - (void)_performPostConfigurationSanityCheckForGraphConfiguration:(id)arg1 withContext:(id)arg2;
 - (void)_performPostConfigurationSetupForGraphConfiguration:(id)arg1 withContext:(id)arg2;
@@ -45,6 +44,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGraphConfiguration:(id)arg1 minimumExecutionTime:(double)arg2 requestID:(int)arg3;
 - (bool)requiresSessionModification;
+- (id)sessionModificationLogReason;
 - (id)userInfo;
 
 @end

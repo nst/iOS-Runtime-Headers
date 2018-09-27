@@ -7,6 +7,8 @@
 + (id)IOTrackingPrefix;
 + (void)addValue:(long long)arg1 forDPKey:(id)arg2 scalarKeyPrefix:(id)arg3;
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
++ (id)blacklistFileCreationKey;
++ (id)blacklistFileRemovalKey;
 + (id)budgetUpdateKey;
 + (void)clearDPKey:(id)arg1 scalarKeyPrefix:(id)arg2;
 + (void)clearScalarKey:(id)arg1;

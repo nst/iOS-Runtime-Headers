@@ -8,7 +8,7 @@
     bool  _allowIrisUI;
     bool  _enforceDisableIrisUI;
     PUFeedSettings * _feedSettings;
-    bool  _forcePlacesMapDisplay;
+    PUImportSettings * _importSettings;
     Class  _interfaceThemeClass;
     PUIrisSettings * _irisSettings;
     PUMedusaSettings * _medusaSettings;
@@ -20,7 +20,9 @@
     PUPhotoEditProtoSettings * _photoEditingSettings;
     PUPhotosGridSettings * _photosGridSettings;
     PUSceneSettings * _sceneSettings;
+    PUSearchSettings * _searchSettings;
     PUSlideshowSettings * _slideshowSettings;
+    PUTabbedLibrarySettings * _tabbedLibrarySettings;
     PUTilingViewSettings * _tilingViewSettings;
     PUWelcomeSettings * _welcomeSettings;
     PUWorkaroundSettings * _workaroundSettings;
@@ -30,7 +32,7 @@
 @property (nonatomic, retain) PUAlbumListSettings *albumListSettings;
 @property (nonatomic) bool allowIrisUI;
 @property (nonatomic, retain) PUFeedSettings *feedSettings;
-@property (nonatomic) bool forcePlacesMapDisplay;
+@property (nonatomic, retain) PUImportSettings *importSettings;
 @property (nonatomic, retain) Class interfaceThemeClass;
 @property (nonatomic, retain) PUIrisSettings *irisSettings;
 @property (nonatomic, retain) PUMedusaSettings *medusaSettings;
@@ -42,7 +44,9 @@
 @property (nonatomic, retain) PUPhotoEditProtoSettings *photoEditingSettings;
 @property (nonatomic, retain) PUPhotosGridSettings *photosGridSettings;
 @property (nonatomic, retain) PUSceneSettings *sceneSettings;
+@property (nonatomic, retain) PUSearchSettings *searchSettings;
 @property (nonatomic, retain) PUSlideshowSettings *slideshowSettings;
+@property (nonatomic, retain) PUTabbedLibrarySettings *tabbedLibrarySettings;
 @property (nonatomic, retain) PUTilingViewSettings *tilingViewSettings;
 @property (nonatomic, retain) PUWelcomeSettings *welcomeSettings;
 @property (nonatomic, retain) PUWorkaroundSettings *workaroundSettings;
@@ -69,7 +73,7 @@
 - (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
 - (id)archiveValueForKey:(id)arg1;
 - (id)feedSettings;
-- (bool)forcePlacesMapDisplay;
+- (id)importSettings;
 - (Class)interfaceThemeClass;
 - (id)irisSettings;
 - (bool)irisUIEnabled;
@@ -84,13 +88,14 @@
 - (id)photosGridSettings;
 - (void)restoreDefaultValues;
 - (id)sceneSettings;
+- (id)searchSettings;
 - (void)setAirPlaySettings:(id)arg1;
 - (void)setAlbumListSettings:(id)arg1;
 - (void)setAllowIrisUI:(bool)arg1;
 - (void)setDefaultValues;
 - (void)setEnforceDisableIrisUI:(bool)arg1;
 - (void)setFeedSettings:(id)arg1;
-- (void)setForcePlacesMapDisplay:(bool)arg1;
+- (void)setImportSettings:(id)arg1;
 - (void)setInterfaceThemeClass:(Class)arg1;
 - (void)setIrisSettings:(id)arg1;
 - (void)setMedusaSettings:(id)arg1;
@@ -102,11 +107,14 @@
 - (void)setPhotoEditingSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
 - (void)setSceneSettings:(id)arg1;
+- (void)setSearchSettings:(id)arg1;
 - (void)setSlideshowSettings:(id)arg1;
+- (void)setTabbedLibrarySettings:(id)arg1;
 - (void)setTilingViewSettings:(id)arg1;
 - (void)setWelcomeSettings:(id)arg1;
 - (void)setWorkaroundSettings:(id)arg1;
 - (id)slideshowSettings;
+- (id)tabbedLibrarySettings;
 - (id)tilingViewSettings;
 - (id)welcomeSettings;
 - (id)workaroundSettings;

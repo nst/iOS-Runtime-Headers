@@ -91,6 +91,7 @@
 @property (nonatomic, retain) NSArray *thumbnailURLs;
 
 + (id)availableNetworks;
++ (id)errorFromDictionary:(id)arg1;
 + (id)paymentBillingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;
 + (id)paymentContactInvalidErrorWithContactField:(id)arg1 localizedDescription:(id)arg2;
 + (id)paymentShippingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;

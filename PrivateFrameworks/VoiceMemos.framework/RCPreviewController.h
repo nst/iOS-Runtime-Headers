@@ -12,6 +12,7 @@
     double  _currentRateTarget;
     double  _currentTimeDelegateUpdateRate;
     double  _currentTimeTarget;
+    bool  _didJumpTime;
     bool  _isPreparingForPreview;
     NSURL * _lastPlayedAssetReferenceURL;
     NSString * _lastRouteKeyForRouteUsageLog;
@@ -32,6 +33,7 @@
 @property (nonatomic) double currentTimeDelegateUpdateRate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didJumpTime;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct { double x1; double x2; } playableTimeRange;
 @property (nonatomic, readonly) float rate;
@@ -60,14 +62,18 @@
 - (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(bool)arg2;
 - (void)_postDelegateCurrentTimeUpdate;
 - (void)_postDelegateDidBeginPlaybackWithRate:(float)arg1;
+- (void)_postDelegateJumpTimeUpdate;
 - (void)_readyToPlay_playPlayer:(id)arg1;
 - (id)_recreateAVPlayer;
 - (void)_setPreparingToPlay:(bool)arg1 notifyObservers:(bool)arg2;
 - (void)_stopMonitoringUnderylingAssetPath;
 - (void)addObserver:(id)arg1;
+- (void)beginScrubbing;
 - (double)currentTime;
 - (double)currentTimeDelegateUpdateRate;
 - (void)dealloc;
+- (bool)didJumpTime;
+- (void)endScrubbing;
 - (void)handlePreviewEnded;
 - (id)init;
 - (void)pause;
@@ -79,10 +85,12 @@
 - (void)playerDidBecomeInvalid:(id)arg1;
 - (float)rate;
 - (void)removeObserver:(id)arg1;
+- (void)sendCurrentTimeUpdates;
 - (void)setAVPlayerItem:(id)arg1;
 - (void)setAVState:(id)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTimeDelegateUpdateRate:(double)arg1;
+- (void)setDidJumpTime:(bool)arg1;
 - (void)setPlayableTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setRate:(float)arg1;
 - (void)setUseVoiceMemoSettings:(bool)arg1;

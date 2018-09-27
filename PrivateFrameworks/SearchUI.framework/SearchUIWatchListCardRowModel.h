@@ -5,6 +5,7 @@
 @interface SearchUIWatchListCardRowModel : SearchUICardSectionRowModel {
     long long  _buttonState;
     <SearchUIWatchListCardRowModelDelegate> * _delegate;
+    bool  _hasError;
     bool  _hasLoaded;
     SFImage * _image;
     SearchUIWatchListCardsManager * _manager;
@@ -15,6 +16,7 @@
 @property long long buttonState;
 @property (retain) SFWatchListCardSection *cardSection;
 @property <SearchUIWatchListCardRowModelDelegate> *delegate;
+@property (nonatomic) bool hasError;
 @property bool hasLoaded;
 @property (retain) SFImage *image;
 @property (retain) SearchUIWatchListCardsManager *manager;
@@ -24,13 +26,16 @@
 - (void).cxx_destruct;
 - (long long)buttonState;
 - (id)delegate;
+- (bool)hasError;
 - (bool)hasLoaded;
 - (id)image;
 - (id)initWithResult:(id)arg1 cardSection:(id)arg2 asyncRowManager:(id)arg3;
 - (id)manager;
 - (id)punchout;
+- (int)separatorStyle;
 - (void)setButtonState:(long long)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHasError:(bool)arg1;
 - (void)setHasLoaded:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setManager:(id)arg1;

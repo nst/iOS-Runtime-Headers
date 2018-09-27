@@ -4,6 +4,7 @@
 
 @interface CALNPersistedNotificationsContext : NSManagedObjectContext
 
++ (id)logHandle;
 + (id)pathForSentinelFile;
 + (bool)shouldBehaveAsRestart;
 

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) _OSLogDirectoryReference *diagnosticsDirectoryReference;
 @property (nonatomic, readonly) _OSLogDirectoryReference *timesyncReference;
 
-+ (id)localDBRef;
++ (id)localDBRefWithError:(id*)arg1;
 + (id)referenceWithURL:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;

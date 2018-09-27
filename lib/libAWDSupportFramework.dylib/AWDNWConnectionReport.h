@@ -3,6 +3,7 @@
  */
 
 @interface AWDNWConnectionReport : PBCodable <NSCopying> {
+    NSMutableArray * _activities;
     int  _appleApp;
     int  _appleHost;
     unsigned long long  _bestRTT;
@@ -16,6 +17,7 @@
     int  _connectedInterfaceType;
     int  _connectionMode;
     unsigned long long  _connectionReuseCount;
+    NSString * _connectionUUID;
     unsigned long long  _currentRTT;
     bool  _customProxyConfigured;
     unsigned long long  _dataStallCount;
@@ -134,6 +136,7 @@
     bool  _weakFallback;
 }
 
+@property (nonatomic, retain) NSMutableArray *activities;
 @property (nonatomic) int appleApp;
 @property (nonatomic) int appleHost;
 @property (nonatomic) unsigned long long bestRTT;
@@ -147,6 +150,7 @@
 @property (nonatomic) int connectedInterfaceType;
 @property (nonatomic) int connectionMode;
 @property (nonatomic) unsigned long long connectionReuseCount;
+@property (nonatomic, retain) NSString *connectionUUID;
 @property (nonatomic) unsigned long long currentRTT;
 @property (nonatomic) bool customProxyConfigured;
 @property (nonatomic) unsigned long long dataStallCount;
@@ -169,6 +173,7 @@
 @property (nonatomic) bool hasConnectedInterfaceType;
 @property (nonatomic) bool hasConnectionMode;
 @property (nonatomic) bool hasConnectionReuseCount;
+@property (nonatomic, readonly) bool hasConnectionUUID;
 @property (nonatomic) bool hasCurrentRTT;
 @property (nonatomic) bool hasCustomProxyConfigured;
 @property (nonatomic) bool hasDataStallCount;
@@ -263,6 +268,8 @@
 @property (nonatomic) int usedProxyType;
 @property (nonatomic) bool weakFallback;
 
++ (Class)activitiesType;
+
 - (int)StringAsAppleApp:(id)arg1;
 - (int)StringAsAppleHost:(id)arg1;
 - (int)StringAsConnectedAddressFamily:(id)arg1;
@@ -273,6 +280,10 @@
 - (int)StringAsStackLevel:(id)arg1;
 - (int)StringAsTlsVersion:(id)arg1;
 - (int)StringAsUsedProxyType:(id)arg1;
+- (id)activities;
+- (id)activitiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)activitiesCount;
+- (void)addActivities:(id)arg1;
 - (int)appleApp;
 - (id)appleAppAsString:(int)arg1;
 - (int)appleHost;
@@ -283,6 +294,7 @@
 - (unsigned long long)bytesOut;
 - (unsigned long long)bytesOutOfOrder;
 - (unsigned long long)bytesRetransmitted;
+- (void)clearActivities;
 - (int)connectedAddressFamily;
 - (id)connectedAddressFamilyAsString:(int)arg1;
 - (unsigned long long)connectedAddressIndex;
@@ -291,6 +303,7 @@
 - (int)connectionMode;
 - (id)connectionModeAsString:(int)arg1;
 - (unsigned long long)connectionReuseCount;
+- (id)connectionUUID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)currentRTT;
@@ -320,6 +333,7 @@
 - (bool)hasConnectedInterfaceType;
 - (bool)hasConnectionMode;
 - (bool)hasConnectionReuseCount;
+- (bool)hasConnectionUUID;
 - (bool)hasCurrentRTT;
 - (bool)hasCustomProxyConfigured;
 - (bool)hasDataStallCount;
@@ -399,6 +413,7 @@
 - (unsigned long long)resolutionMilliseconds;
 - (bool)resolutionRequired;
 - (unsigned long long)secondsSinceInterfaceChange;
+- (void)setActivities:(id)arg1;
 - (void)setAppleApp:(int)arg1;
 - (void)setAppleHost:(int)arg1;
 - (void)setBestRTT:(unsigned long long)arg1;
@@ -412,6 +427,7 @@
 - (void)setConnectedInterfaceType:(int)arg1;
 - (void)setConnectionMode:(int)arg1;
 - (void)setConnectionReuseCount:(unsigned long long)arg1;
+- (void)setConnectionUUID:(id)arg1;
 - (void)setCurrentRTT:(unsigned long long)arg1;
 - (void)setCustomProxyConfigured:(bool)arg1;
 - (void)setDataStallCount:(unsigned long long)arg1;

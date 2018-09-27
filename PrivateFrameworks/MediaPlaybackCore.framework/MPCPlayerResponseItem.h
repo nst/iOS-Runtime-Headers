@@ -20,6 +20,7 @@
     bool  _placeholder;
     MPCPlayerResponse * _response;
     long long  _revision;
+    unsigned long long  _seekSupport;
 }
 
 @property (nonatomic, readonly) NSString *contentItemIdentifier;
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly) long long revision;
 
 - (void).cxx_destruct;
+- (unsigned long long)_determineSeekSupport;
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
 - (id)contentItemIdentifier;
 - (id)dislikeCommand;

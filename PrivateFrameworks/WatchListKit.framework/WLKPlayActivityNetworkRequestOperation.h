@@ -12,5 +12,6 @@
 - (id)_requestPropertiesWithServerRouteKey:(id)arg1 queryParameters:(id)arg2 additionalHeaderFields:(id)arg3;
 - (id)initWithMessageEnvelope:(id)arg1;
 - (id)initWithServerRouteKey:(id)arg1 serverRouteReplacements:(id)arg2 queryParameters:(id)arg3;
+- (id)nextExpectedReportMillis;
 
 @end

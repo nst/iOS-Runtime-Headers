@@ -11,6 +11,7 @@
         unsigned long long location; 
         unsigned long long length; 
     }  _bottomBorderRowRange;
+    <TSTCategoryProviding> * _categoryProvider;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -39,6 +40,7 @@
 
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } bodySideBorderColumnRange;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } bottomBorderRowRange;
+@property (nonatomic) <TSTCategoryProviding> *categoryProvider;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } footerRowSeparatorRowRange;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } headerColumnSeparatorColumnRange;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } headerRowSeparatorRowRange;
@@ -52,19 +54,23 @@
 - (void).cxx_destruct;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })bodySideBorderColumnRange;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })bottomBorderRowRange;
+- (id)categoryProvider;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })footerRowSeparatorRowRange;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerColumnSeparatorColumnRange;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerRowSeparatorRowRange;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })headerSideBorderColumnRange;
-- (id)initWithStrokeProvider:(id)arg1 tableProvider:(id)arg2;
+- (id)initWithStrokeProvider:(id)arg1 tableProvider:(id)arg2 categoryProvider:(id)arg3;
 - (void)invalidate;
 - (bool)isValid;
+- (bool)p_headerColumnSeparatorColumnRangeIsValid;
+- (bool)p_headerRowSeparatorRowRangeIsValid;
 - (int)p_strokeTypeForColumn:(unsigned int)arg1;
 - (int)p_strokeTypeForRow:(unsigned int)arg1;
 - (void)p_updateStrokeLayer:(id)arg1 forColumnStrokeType:(int)arg2;
 - (void)p_updateStrokeLayer:(id)arg1 forRowStrokeType:(int)arg2;
 - (void)setBodySideBorderColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setBottomBorderRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setCategoryProvider:(id)arg1;
 - (void)setFooterRowSeparatorRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setHeaderColumnSeparatorColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setHeaderRowSeparatorRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

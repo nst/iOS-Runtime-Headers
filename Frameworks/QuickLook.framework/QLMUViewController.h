@@ -8,6 +8,7 @@
 
 @property long long currentEditNumber;
 
+- (bool)canBecomeFirstResponder;
 - (void)controllerWillDismissSignatureCaptureView:(id)arg1;
 - (void)controllerWillDismissSignatureManagerView:(id)arg1;
 - (void)controllerWillShowSignatureCaptureView:(id)arg1;

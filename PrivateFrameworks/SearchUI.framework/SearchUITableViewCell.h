@@ -8,6 +8,7 @@
     SearchUIDropTarget * _dropTarget;
     bool  _isExpanded;
     <SearchUIRowModel> * _rowModel;
+    UIViewController<SearchUIResultShortLook> * _shortLookViewController;
     UIView * _sizingContainer;
     unsigned long long  _style;
 }
@@ -20,6 +21,7 @@
 @property (readonly) unsigned long long hash;
 @property bool isExpanded;
 @property (retain) <SearchUIRowModel> *rowModel;
+@property UIViewController<SearchUIResultShortLook> *shortLookViewController;
 @property (retain) UIView *sizingContainer;
 @property unsigned long long style;
 @property (readonly) Class superclass;
@@ -54,9 +56,11 @@
 - (void)setIsExpanded:(bool)arg1;
 - (void)setRowModel:(id)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (void)setShortLookViewController:(id)arg1;
 - (void)setSizingContainer:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setupKeyboardHandler;
+- (id)shortLookViewController;
 - (bool)shouldHideBottomSeparator;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)sizingContainer;

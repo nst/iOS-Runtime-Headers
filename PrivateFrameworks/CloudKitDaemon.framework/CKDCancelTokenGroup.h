@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSMutableArray *cancelTokens;
 
 - (void).cxx_destruct;
-- (void)addCancelToken:(id)arg1;
+- (void)addCancelToken:(id)arg1 withOperation:(id)arg2;
 - (void)cancel;
 - (id)cancelTokens;
 - (id)init;

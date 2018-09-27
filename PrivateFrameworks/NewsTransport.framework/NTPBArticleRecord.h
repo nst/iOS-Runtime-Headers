@@ -15,6 +15,7 @@
     NSString * _contentURL;
     NSString * _coverArt;
     NSString * _excerptURL;
+    NSMutableArray * _experimentalTitles;
     NSString * _flintDocumentURL;
     NSMutableArray * _flintFontResourceIDs;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _globalCohort;
@@ -58,6 +59,9 @@
     NSString * _shortExcerpt;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _sourceChannelCohort;
     NSString * _sourceChannelTagID;
+    NSString * _stocksClusterID;
+    NSString * _stocksMetadata;
+    NSString * _stocksScores;
     int  _storyType;
     NSString * _subtitle;
     long long  _thumbnailFocalFrame;
@@ -102,6 +106,7 @@
 @property (nonatomic, retain) NSString *coverArt;
 @property (nonatomic, readonly) NSArray *endOfArticleTopicIDs;
 @property (nonatomic, retain) NSString *excerptURL;
+@property (nonatomic, retain) NSMutableArray *experimentalTitles;
 @property (nonatomic, retain) NSString *flintDocumentURL;
 @property (nonatomic, retain) NSMutableArray *flintFontResourceIDs;
 @property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *globalCohort;
@@ -129,6 +134,9 @@
 @property (nonatomic, readonly) bool hasShortExcerpt;
 @property (nonatomic, readonly) bool hasSourceChannelCohort;
 @property (nonatomic, readonly) bool hasSourceChannelTagID;
+@property (nonatomic, readonly) bool hasStocksClusterID;
+@property (nonatomic, readonly) bool hasStocksMetadata;
+@property (nonatomic, readonly) bool hasStocksScores;
 @property (nonatomic) bool hasStoryType;
 @property (nonatomic, readonly) bool hasSubtitle;
 @property (nonatomic) bool hasThumbnailFocalFrame;
@@ -175,6 +183,9 @@
 @property (nonatomic, retain) NSString *shortExcerpt;
 @property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *sourceChannelCohort;
 @property (nonatomic, retain) NSString *sourceChannelTagID;
+@property (nonatomic, retain) NSString *stocksClusterID;
+@property (nonatomic, retain) NSString *stocksMetadata;
+@property (nonatomic, retain) NSString *stocksScores;
 @property (nonatomic) int storyType;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic) long long thumbnailFocalFrame;
@@ -210,6 +221,7 @@
 
 + (Class)allowedStorefrontIDsType;
 + (Class)blockedStorefrontIDsType;
++ (Class)experimentalTitlesType;
 + (Class)flintFontResourceIDsType;
 + (Class)iAdCategoriesType;
 + (Class)iAdKeywordsType;
@@ -222,6 +234,7 @@
 - (id)accessoryText;
 - (void)addAllowedStorefrontIDs:(id)arg1;
 - (void)addBlockedStorefrontIDs:(id)arg1;
+- (void)addExperimentalTitles:(id)arg1;
 - (void)addFlintFontResourceIDs:(id)arg1;
 - (void)addIAdCategories:(id)arg1;
 - (void)addIAdKeywords:(id)arg1;
@@ -242,6 +255,7 @@
 - (unsigned long long)blockedStorefrontIDsCount;
 - (void)clearAllowedStorefrontIDs;
 - (void)clearBlockedStorefrontIDs;
+- (void)clearExperimentalTitles;
 - (void)clearFlintFontResourceIDs;
 - (void)clearIAdCategories;
 - (void)clearIAdKeywords;
@@ -259,6 +273,9 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)excerptURL;
+- (id)experimentalTitles;
+- (id)experimentalTitlesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)experimentalTitlesCount;
 - (id)flintDocumentURL;
 - (id)flintFontResourceIDs;
 - (id)flintFontResourceIDsAtIndex:(unsigned long long)arg1;
@@ -288,6 +305,9 @@
 - (bool)hasShortExcerpt;
 - (bool)hasSourceChannelCohort;
 - (bool)hasSourceChannelTagID;
+- (bool)hasStocksClusterID;
+- (bool)hasStocksMetadata;
+- (bool)hasStocksScores;
 - (bool)hasStoryType;
 - (bool)hasSubtitle;
 - (bool)hasThumbnailFocalFrame;
@@ -359,6 +379,7 @@
 - (void)setContentURL:(id)arg1;
 - (void)setCoverArt:(id)arg1;
 - (void)setExcerptURL:(id)arg1;
+- (void)setExperimentalTitles:(id)arg1;
 - (void)setFlintDocumentURL:(id)arg1;
 - (void)setFlintFontResourceIDs:(id)arg1;
 - (void)setGlobalCohort:(id)arg1;
@@ -400,6 +421,9 @@
 - (void)setShortExcerpt:(id)arg1;
 - (void)setSourceChannelCohort:(id)arg1;
 - (void)setSourceChannelTagID:(id)arg1;
+- (void)setStocksClusterID:(id)arg1;
+- (void)setStocksMetadata:(id)arg1;
+- (void)setStocksScores:(id)arg1;
 - (void)setStoryType:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setThumbnailFocalFrame:(long long)arg1;
@@ -432,6 +456,9 @@
 - (id)shortExcerpt;
 - (id)sourceChannelCohort;
 - (id)sourceChannelTagID;
+- (id)stocksClusterID;
+- (id)stocksMetadata;
+- (id)stocksScores;
 - (int)storyType;
 - (id)subtitle;
 - (long long)thumbnailFocalFrame;

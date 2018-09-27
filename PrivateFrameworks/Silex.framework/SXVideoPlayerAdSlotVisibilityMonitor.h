@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVideoPlayerAdSlotVisibilityMonitor : SXVisibilityMonitor {
-    SXKeyValueObserver * _observer;
+@interface SXVideoPlayerAdSlotVisibilityMonitor : SVVisibilityMonitor {
+    SVKeyValueObserver * _observer;
 }
 
-@property (nonatomic, readonly) SXKeyValueObserver *observer;
+@property (nonatomic, readonly) SVKeyValueObserver *observer;
 
 - (void).cxx_destruct;
 - (id)initWithVideoPlayerViewController:(id)arg1 videoAdSlotVisiblePercentageProvider:(id)arg2;

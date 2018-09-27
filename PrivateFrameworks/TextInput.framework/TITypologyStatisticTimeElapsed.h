@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) double elapsedTime;
 @property (nonatomic, retain) TITypologyTimer *timer;
 
+- (void).cxx_destruct;
 - (double)adjustedElapsedTime;
 - (id)adjustedTimer;
 - (id)aggregateReport;
-- (void)dealloc;
 - (double)elapsedTime;
 - (id)init;
 - (void)setAdjustedTimer:(id)arg1;

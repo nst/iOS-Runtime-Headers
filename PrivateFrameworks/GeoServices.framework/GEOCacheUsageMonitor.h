@@ -3,9 +3,9 @@
  */
 
 @interface GEOCacheUsageMonitor : NSObject {
-    NSLock * _lock;
-    NSMutableDictionary * _tileSetStyleToHits;
-    NSMutableDictionary * _tileSetStyleToMisses;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSMutableDictionary * _tileCacheHitData;
+    NSMutableDictionary * _tileCacheMissData;
     NSObject<OS_dispatch_source> * _timer;
     NSMutableDictionary * _typeToHits;
     NSMutableDictionary * _typeToMisses;
@@ -14,13 +14,16 @@
 + (id)sharedMonitor;
 
 - (void).cxx_destruct;
+- (void)_flush;
+- (void)_recordTileCacheEventWithKey:(id)arg1 cacheEventDict:(id)arg2 tileSizeInBytes:(unsigned int)arg3 error:(id)arg4;
 - (void)_startTimerIfNecessary;
 - (void)dealloc;
 - (void)flush;
 - (id)init;
-- (void)recordCacheHitForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)recordCacheHitForType:(int)arg1;
-- (void)recordCacheMissForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)recordCacheMissForType:(int)arg1;
+- (void)recordTileCacheHitForReason:(unsigned char)arg1 tileSource:(unsigned char)arg2 firstAccess:(bool)arg3 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg4 tileSizeInBytes:(unsigned int)arg5;
+- (void)recordTileCacheMissForReason:(unsigned char)arg1 missType:(int)arg2 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3 loadError:(id)arg4;
+- (void)recordTileCacheMissForReason:(unsigned char)arg1 missType:(int)arg2 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg3 tileSizeInBytes:(unsigned int)arg4 httpStatus:(unsigned int)arg5;
 
 @end

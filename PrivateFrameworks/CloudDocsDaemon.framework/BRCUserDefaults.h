@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) NSSet *blacklistedThumbnailExtensions;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *cacheDeletePushXPCActivity;
 @property (nonatomic, readonly) double cacheDeleteRecomputeInterval;
+@property (nonatomic, readonly) unsigned long long computeEvictableBatchSize;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *configurationUpdateXPCActivity;
 @property (nonatomic, readonly) unsigned long long copyShareIDsBatchSize;
 @property (nonatomic, readonly) long long dbAutovacuumBatchSize;
@@ -50,6 +51,7 @@
 @property (nonatomic, readonly) double downloadSizeRefreshInterval;
 @property (nonatomic, readonly) NSDictionary *downloadThrottleParams;
 @property (nonatomic, readonly) unsigned long long downloadWillRetryProgressMaxCount;
+@property (nonatomic, readonly) double eventMetricTimeout;
 @property (nonatomic, readonly) NSSet *excludedExtensionsWorthPreserving;
 @property (nonatomic, readonly) NSSet *excludedFilenamesWorthPreserving;
 @property (nonatomic, readonly) NSSet *excludedFilenamesWorthWarningAtLogout;
@@ -244,6 +246,7 @@
 - (bool)boolForKey:(id)arg1 inheritFromGlobal:(bool)arg2 byDefault:(bool)arg3;
 - (id)cacheDeletePushXPCActivity;
 - (double)cacheDeleteRecomputeInterval;
+- (unsigned long long)computeEvictableBatchSize;
 - (id)configurationUpdateXPCActivity;
 - (unsigned long long)copyShareIDsBatchSize;
 - (long long)dbAutovacuumBatchSize;
@@ -266,6 +269,7 @@
 - (double)downloadSizeRefreshInterval;
 - (id)downloadThrottleParams;
 - (unsigned long long)downloadWillRetryProgressMaxCount;
+- (double)eventMetricTimeout;
 - (id)excludedExtensionsWorthPreserving;
 - (id)excludedFilenamesWorthPreserving;
 - (id)excludedFilenamesWorthWarningAtLogout;

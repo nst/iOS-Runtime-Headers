@@ -25,10 +25,20 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_addNotificationRequestToLayoutsInProgress:(id)arg1;
+- (void)_clearUnsafeNotification:(id)arg1;
+- (void)_didPostNotificationRequest:(id)arg1;
+- (void)_didRemoveNotificationRequest:(id)arg1;
 - (bool)_isRegisteredDestination:(id)arg1;
+- (bool)_layoutsInProgressContainsNotificationRequest:(id)arg1;
+- (id)_notificationLayoutsInProgress;
 - (void)_performOperationForRequestDestinations:(id)arg1 block:(id /* block */)arg2;
 - (void)_registerAlertDestination:(id)arg1;
 - (void)_registerDestination:(id)arg1;
+- (void)_removeNotificationRequestFromLayoutsInProgress:(id)arg1;
+- (void)_setNotificationLayoutsInProgress:(id)arg1;
+- (bool)_shouldPostNotificationRequest:(id)arg1;
+- (void)_willPostNotificationRequest:(id)arg1;
 - (void)addDispatcherSourceDelegate:(id)arg1;
 - (id)alertQueue;
 - (id)alertingController;
@@ -43,6 +53,9 @@
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
 - (void)destination:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
 - (void)destination:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
+- (void)destination:(id)arg1 setAllowsCriticalAlerts:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setAllowsNotifications:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)destination:(id)arg1 setDeliverQuietly:(bool)arg2 forSectionIdentifier:(id)arg3;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2 suppressAlerts:(bool)arg3;
 - (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;

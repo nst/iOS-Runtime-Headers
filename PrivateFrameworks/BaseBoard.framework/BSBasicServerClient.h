@@ -17,6 +17,7 @@
 
 + (id)wrapperWithConnection:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
 - (id)description;

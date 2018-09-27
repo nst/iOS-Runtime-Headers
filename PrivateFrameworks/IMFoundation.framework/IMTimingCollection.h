@@ -31,4 +31,8 @@
 + (id)IMCoreSetupTimingCollection;
 + (void)IMCoreSetupTimingCollectionEnd;
 
+// Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
+
++ (id)IMDaemonCoreMessageReceivedTimingCollection;
+
 @end

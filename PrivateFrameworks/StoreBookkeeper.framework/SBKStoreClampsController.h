@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@interface SBKStoreClampsController : NSObject <NSCoding> {
+@interface SBKStoreClampsController : NSObject <NSSecureCoding> {
     double  _accountIdentifierCheckTimestamp;
     double  _authenticationNeededTimestamp;
     double  _backOffUntil;
@@ -27,6 +27,7 @@
 @property double userCancelledSignInBackOffUntil;
 
 + (id)sharedClampsController;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)_canScheduleTransactionBasedOfNetworkingBlocked:(id)arg1 error:(id*)arg2;

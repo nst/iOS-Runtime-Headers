@@ -24,7 +24,7 @@
 + (id)_responseWithGEODirectionsRouteResponse:(id)arg1 routeRequest:(id)arg2 request:(id)arg3 origin:(id)arg4 destination:(id)arg5 error:(id*)arg6;
 
 - (void).cxx_destruct;
-- (id)_completeRoutesFromRouteSet;
+- (void)_completeRoutesFromRouteSet;
 - (id)_geoResponse;
 - (id)_incidentDescription;
 - (id)_initWithGEORouteResponse:(id)arg1 routeRequest:(id)arg2 request:(id)arg3 origin:(id)arg4 destination:(id)arg5;

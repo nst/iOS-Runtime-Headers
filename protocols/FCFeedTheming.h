@@ -27,11 +27,11 @@
 - (FCAssetHandle *)nameImageAssetHandle;
 - (FCAssetHandle *)nameImageCompactAssetHandle;
 - (FCAssetHandle *)nameImageForDarkBackgroundAssetHandle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageForDarkBackgroundInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageForDarkBackgroundInsets;
 - (struct CGSize { double x1; double x2; })nameImageForDarkBackgroundSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageInsets;
 - (FCAssetHandle *)nameImageMaskAssetHandle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
 - (struct CGSize { double x1; double x2; })nameImageMaskSize;
 - (struct CGSize { double x1; double x2; })nameImageSize;
 

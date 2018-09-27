@@ -47,6 +47,7 @@
 - (bool)canHelpPruneZoneName:(id)arg1;
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (void)clearHistory;
+- (id)consumedArticleIDsForTagID:(id)arg1 fromTime:(id)arg2;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (bool)hasArticleBeenConsumed:(id)arg1;
 - (bool)hasArticleBeenMarkedAsOffensive:(id)arg1;
@@ -61,7 +62,7 @@
 - (id)lastVisitedDateForArticleID:(id)arg1;
 - (unsigned long long)likingStatusForArticleID:(id)arg1;
 - (void)loadLocalCachesFromStore;
-- (void)markArticle:(id)arg1 asArticleConsumed:(bool)arg2;
+- (void)markArticle:(id)arg1 asArticleConsumed:(bool)arg2 sourceChannelTagID:(id)arg3;
 - (void)markArticle:(id)arg1 asOffensive:(bool)arg2;
 - (bool)markArticle:(id)arg1 withLikingStatus:(unsigned long long)arg2;
 - (bool)markArticleAsReadWithArticleID:(id)arg1 articleVersion:(long long)arg2 readDate:(id)arg3;
@@ -79,7 +80,6 @@
 - (double)softMaxRecordAgeWhenMigratingZoneName:(id)arg1;
 - (unsigned long long)softMaxRecordCountWhenMigratingZoneName:(id)arg1;
 - (id)syncReadingHistoryItemRecords:(id)arg1 deletedArticleIDs:(id)arg2 didRemoveLastVisitedAt:(out bool*)arg3;
-- (bool)toggleArticleHasBeenConsumed:(id)arg1;
 - (bool)toggleArticleHasBeenMarkedAsOffensive:(id)arg1;
 
 @end

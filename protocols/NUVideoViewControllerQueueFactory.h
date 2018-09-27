@@ -5,6 +5,6 @@
 
 @required
 
-- (SXVideoQueue *)createQueueWithVideoItems:(NSOrderedSet *)arg1;
+- (SVVideoQueue *)createQueueWithVideoItems:(NSOrderedSet *)arg1;
 
 @end

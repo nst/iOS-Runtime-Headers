@@ -11,7 +11,6 @@
     unsigned long long  _attemptIndex;
     unsigned long long  _authenticationType;
     unsigned long long  _capabilityForUIDisplay;
-    <CDPStateUIProvider> * _cdpUiProvider;
     id  _clientInfo;
     AKDevice * _companionDevice;
     AKAnisetteData * _companionDeviceAnisetteData;
@@ -41,10 +40,10 @@
     NSNumber * _longitude;
     long long  _maximumLoginAttempts;
     NSString * _message;
-    AKNativeAccountRecoveryController * _nativeRecoveryController;
     bool  _needsCredentialRecovery;
     bool  _needsNewAppleID;
     bool  _needsPasswordChange;
+    bool  _needsRepair;
     NSString * _password;
     NSString * _passwordPromptTitle;
     NSString * _proxiedAppBundleID;
@@ -96,10 +95,9 @@
 @property (nonatomic) bool _shouldSendIdentityTokenForRemoteUI;
 @property (nonatomic, readonly) bool _shouldSkipInitialReachabilityCheck;
 @property (nonatomic, copy) NSString *altDSID;
-@property (nonatomic, copy) <AKAnisetteServiceProtocol> *anisetteDataProvider;
+@property (nonatomic, retain) <AKAnisetteServiceProtocol> *anisetteDataProvider;
 @property (nonatomic) bool anticipateEscrowAttempt;
 @property (nonatomic) unsigned long long authenticationType;
-@property (nonatomic, retain) <CDPStateUIProvider> *cdpUiProvider;
 @property (nonatomic, retain) id clientInfo;
 @property (nonatomic, copy) AKDevice *companionDevice;
 @property (nonatomic, retain) AKAnisetteData *companionDeviceAnisetteData;
@@ -115,8 +113,8 @@
 @property (nonatomic, copy) NSString *generatedCode;
 @property (setter=setHasEmptyPassword:, nonatomic, copy) NSNumber *hasEmptyPassword;
 @property (readonly) unsigned long long hash;
-@property (copy) NSString *helpAnchor;
-@property (copy) NSString *helpBook;
+@property (nonatomic, copy) NSString *helpAnchor;
+@property (nonatomic, copy) NSString *helpBook;
 @property (nonatomic, copy) NSDictionary *httpHeadersForRemoteUI;
 @property (setter=setAppleIDLoginEnabled:, nonatomic, copy) NSNumber *isAppleIDLoginEnabled;
 @property (nonatomic) bool isEphemeral;
@@ -129,6 +127,7 @@
 @property (nonatomic) bool needsCredentialRecovery;
 @property (nonatomic) bool needsNewAppleID;
 @property (nonatomic) bool needsPasswordChange;
+@property (nonatomic) bool needsRepair;
 @property (nonatomic, copy) AKDevice *proxiedDevice;
 @property (nonatomic, retain) AKAnisetteData *proxiedDeviceAnisetteData;
 @property (nonatomic, copy) NSString *reason;
@@ -148,7 +147,7 @@
 @property (nonatomic) bool shouldUpdatePersistentServiceTokens;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsPiggybacking;
-@property (retain) NSString *title;
+@property (nonatomic, retain) NSString *title;
 @property (nonatomic, copy) NSString *username;
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
@@ -196,7 +195,6 @@
 - (id)authKitAccount:(id*)arg1;
 - (id)authKitAccountForSilentServiceToken:(id*)arg1;
 - (unsigned long long)authenticationType;
-- (id)cdpUiProvider;
 - (id)clientInfo;
 - (id)companionDevice;
 - (id)companionDeviceAnisetteData;
@@ -208,7 +206,6 @@
 - (id)deviceColor;
 - (id)deviceEnclosureColor;
 - (void)dismissBasicLoginUIWithCompletion:(id /* block */)arg1;
-- (void)dismissNativeRecoveryUIWithCompletion:(id /* block */)arg1;
 - (void)dismissSecondFactorUIWithCompletion:(id /* block */)arg1;
 - (id)displayString;
 - (id)displayTitle;
@@ -231,9 +228,9 @@
 - (bool)needsCredentialRecovery;
 - (bool)needsNewAppleID;
 - (bool)needsPasswordChange;
+- (bool)needsRepair;
 - (void)presentBasicLoginUIWithCompletion:(id /* block */)arg1;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(id /* block */)arg4;
-- (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(id /* block */)arg4;
 - (void)presentSecondFactorUIWithCompletion:(id /* block */)arg1;
 - (id)proxiedDevice;
@@ -248,7 +245,6 @@
 - (void)setAnticipateEscrowAttempt:(bool)arg1;
 - (void)setAppleIDLoginEnabled:(id)arg1;
 - (void)setAuthenticationType:(unsigned long long)arg1;
-- (void)setCdpUiProvider:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setCompanionDevice:(id)arg1;
 - (void)setCompanionDeviceAnisetteData:(id)arg1;
@@ -274,6 +270,7 @@
 - (void)setNeedsCredentialRecovery:(bool)arg1;
 - (void)setNeedsNewAppleID:(bool)arg1;
 - (void)setNeedsPasswordChange:(bool)arg1;
+- (void)setNeedsRepair:(bool)arg1;
 - (void)setProxiedDevice:(id)arg1;
 - (void)setProxiedDeviceAnisetteData:(id)arg1;
 - (void)setReason:(id)arg1;

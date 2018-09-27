@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSNull : NSObject <AFSecurityDigestibleChunksProviding, CAAction, NSCopying, NSSecureCoding, PQLBindable, SiriCoreSQLiteValue, TSDMixing, TSDPathPainter, TSSPropertyValueArchiving>
+@interface NSNull : NSObject <AADataType, AFSecurityDigestibleChunksProviding, CAAction, NSCopying, NSSecureCoding, PQLBindable, SiriCoreSQLiteValue, TSDMixing, TSDPathPainter, TSSPropertyValueArchiving>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -42,6 +42,10 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)valueForKey:(id)arg1;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)_mapkit_fakeNil;
@@ -75,6 +79,10 @@
 - (id)siriCoreSQLiteValue_toNumber;
 - (id)siriCoreSQLiteValue_toString;
 - (long long)siriCoreSQLiteValue_type;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 

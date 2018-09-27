@@ -4,10 +4,6 @@
 
 @interface _SFPBApiResults : PBCodable <NSSecureCoding, _SFPBApiResults> {
     NSArray * _flights;
-    struct { 
-        unsigned int status : 1; 
-        unsigned int resultType : 1; 
-    }  _has;
     int  _resultType;
     int  _status;
 }
@@ -15,8 +11,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *flights;
-@property (nonatomic, readonly) bool hasResultType;
-@property (nonatomic, readonly) bool hasStatus;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) int resultType;
@@ -30,8 +24,6 @@
 - (id)flights;
 - (id)flightsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)flightsCount;
-- (bool)hasResultType;
-- (bool)hasStatus;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

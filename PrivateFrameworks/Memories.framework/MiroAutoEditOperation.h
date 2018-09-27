@@ -42,6 +42,7 @@
 - (void)setMemory:(id)arg1;
 - (void)setRequestID:(int)arg1;
 - (void)setShouldSave:(bool)arg1;
+- (bool)shouldCancelOnNonLocalAssets;
 - (bool)shouldDownload;
 - (bool)shouldSave;
 - (void)start;

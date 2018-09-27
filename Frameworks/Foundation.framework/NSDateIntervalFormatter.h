@@ -77,4 +77,9 @@
 - (bool)px_customizesAttributedString;
 - (id)px_dateTemplateForGranularity:(unsigned long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
+
++ (id)st_sharedAbbreviatedDayIntervalDateFormatter;
++ (id)st_sharedAbbreviatedHourIntervalDateFormatter;
+
 @end

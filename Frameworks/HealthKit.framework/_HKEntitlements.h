@@ -22,7 +22,9 @@
 - (id)_initWithEntitlementValues:(id)arg1;
 - (id)_typesFromIdentifierArray:(id)arg1;
 - (id)applicationIdentifier;
+- (id)description;
 - (id)entitlementValues;
+- (bool)hasAccessEntitlementWithIdentifer:(id)arg1;
 - (bool)hasEntitlement:(id)arg1;
 - (id)init;
 - (id)stringForEntitlement:(id)arg1;

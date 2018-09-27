@@ -68,16 +68,15 @@
 @property (nonatomic) double weightY;
 
 + (id)descriptorsForModelInputScore;
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)cleanup;
 - (void)dealloc;
 - (unsigned long long)getDirectiveTypeFromString:(id)arg1;
 - (id)init;
-- (void)processDirectives:(id)arg1 isL2:(bool)arg2;
-- (void)processFeatureVector:(id)arg1 featureValues:(float*)arg2 maxCount:(unsigned long long)arg3 useExperimental:(bool)arg4;
-- (void)processL2FeatureVector:(id)arg1 populatingValues:(float*)arg2 useExperimental:(bool)arg3 scoreValue:(char *)arg4 count:(int)arg5;
-- (float)processOutput:(float)arg1;
+- (void)processDirectives:(id)arg1;
+- (void)processL2FeatureVector:(id)arg1 populatingValues:(float*)arg2 scoreValue:(char *)arg3 count:(int)arg4;
 - (void)processResultSetValuesWithMap:(id)arg1 serverFeatures:(id)arg2;
 - (id)processingContext;
 - (void)setProcessingContext:(id)arg1;

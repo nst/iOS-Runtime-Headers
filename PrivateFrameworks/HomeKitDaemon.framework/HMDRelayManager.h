@@ -11,7 +11,6 @@
     HMDHome * _home;
     IDSService * _idsService;
     HMFNetMonitor * _networkMonitor;
-    bool  _networkReachable;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSHashTable * _relayAccessories;
     NSMutableArray * _relayStreams;
@@ -30,7 +29,6 @@
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) IDSService *idsService;
 @property (nonatomic, readonly) HMFNetMonitor *networkMonitor;
-@property (getter=isNetworkReachable, nonatomic) bool networkReachable;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSHashTable *relayAccessories;
 @property (nonatomic, readonly) NSMutableArray *relayStreams;
@@ -81,7 +79,6 @@
 - (id)init;
 - (id)initWithHome:(id)arg1;
 - (bool)isEnabled;
-- (bool)isNetworkReachable;
 - (bool)isSupported;
 - (id)logIdentifier;
 - (id)networkMonitor;
@@ -99,7 +96,6 @@
 - (void)setCurrentState:(unsigned long long)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setHome:(id)arg1;
-- (void)setNetworkReachable:(bool)arg1;
 - (void)setSupported:(bool)arg1;
 - (void)startAccessories:(id)arg1;
 - (id)urlSession;

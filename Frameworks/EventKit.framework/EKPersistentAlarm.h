@@ -23,6 +23,7 @@
 - (id)originalAlarm;
 - (long long)proximity;
 - (id)relativeOffset;
+- (id)semanticIdentifier;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
 - (void)setAlarmType:(long long)arg1;

@@ -54,6 +54,28 @@
                 } __value_; 
             } __r_; 
         } phoneSeq; 
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
+            struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
+                struct __rep { 
+                    union { 
+                        struct __long { 
+                            char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
+                        } __l; 
+                        struct __short { 
+                            BOOL __data_[23]; 
+                            struct { 
+                                unsigned char __size_; 
+                            } ; 
+                        } __s; 
+                        struct __raw { 
+                            unsigned long long __words[3]; 
+                        } __r; 
+                    } ; 
+                } __value_; 
+            } __r_; 
+        } ipaPhoneSeq; 
     }  _quasarToken;
 }
 
@@ -61,6 +83,7 @@
 @property (nonatomic, readonly) double end;
 @property (nonatomic, readonly) bool hasSpaceAfter;
 @property (nonatomic, readonly) bool hasSpaceBefore;
+@property (nonatomic, readonly) NSString *ipaPhoneSequence;
 @property (nonatomic, readonly) NSString *phoneSequence;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Token={basic_string<char' */ struct  quasarToken; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}} */
 @property (nonatomic, readonly) double silenceStart;
@@ -77,7 +100,8 @@
 - (bool)hasSpaceAfter;
 - (bool)hasSpaceBefore;
 - (unsigned long long)hash;
-- (id)initWithTokenName:(id)arg1 start:(double)arg2 end:(double)arg3 silenceStart:(double)arg4 confidence:(double)arg5 hasSpaceAfter:(bool)arg6 hasSpaceBefore:(bool)arg7 phoneSequence:(id)arg8;
+- (id)initWithTokenName:(id)arg1 start:(double)arg2 end:(double)arg3 silenceStart:(double)arg4 confidence:(double)arg5 hasSpaceAfter:(bool)arg6 hasSpaceBefore:(bool)arg7 phoneSequence:(id)arg8 ipaPhoneSequence:(id)arg9;
+- (id)ipaPhoneSequence;
 - (bool)isEqual:(id)arg1;
 - (id)phoneSequence;
 - (struct Token { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; })quasarToken;

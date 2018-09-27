@@ -2,7 +2,7 @@
    Image: /usr/lib/system/introspection/libdispatch.dylib
  */
 
-@interface OS_dispatch_queue_mgr : OS_dispatch_queue <OS_dispatch_queue_mgr>
+@interface OS_dispatch_queue_mgr : OS_dispatch_queue_serial <OS_dispatch_queue_mgr>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

@@ -28,7 +28,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFilteredElevation:(const struct CLElevationChangeEntry { double x1; double x2; unsigned int x3; unsigned int x4; int x5; double x6; int x7; int x8; float x9; unsigned char x10; }*)arg1;
+- (id)initWithFilteredElevation:(const struct CLElevationChangeEntry { double x1; double x2; unsigned int x3; unsigned int x4; int x5; double x6; int x7; int x8; float x9; unsigned char x10; unsigned short x11; float x12; }*)arg1;
 - (id)initWithRecordId:(unsigned long long)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(id)arg5 elevationDescended:(id)arg6;
 - (id)initWithSignificantElevation:(const struct CLSignificantElevation { int x1; unsigned char x2[16]; double x3; double x4; unsigned int x5; unsigned int x6; }*)arg1;
 - (unsigned long long)recordId;

@@ -42,7 +42,6 @@
 
 - (void).cxx_destruct;
 - (bool)_createSubsystemsWithLaunchOptions:(id)arg1;
-- (void)_updateShortcutItemsForApplication:(id)arg1;
 - (bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)application:(id)arg1 performActionForShortcutItem:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -66,6 +65,7 @@
 - (id)remoteShutterController;
 - (void)setWindow:(id)arg1;
 - (id)timelapseController;
+- (void)updateShortcutItemsForApplication:(id)arg1;
 - (id)viewfinderViewController;
 - (id)window;
 

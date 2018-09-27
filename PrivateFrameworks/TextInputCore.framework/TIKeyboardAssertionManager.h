@@ -26,10 +26,10 @@
 + (id)sharedAssertionManager;
 + (id)singletonInstance;
 
+- (void).cxx_destruct;
 - (void)addAssertionForObject:(id)arg1;
 - (id)assertions;
 - (long long)backgroundActivityAssertions;
-- (void)dealloc;
 - (id)delegate;
 - (bool)hasAssertions;
 - (bool)hasBackgroundActivityAssertions;

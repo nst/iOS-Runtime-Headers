@@ -38,6 +38,7 @@
 - (id)request;
 - (id)sessionConfiguration;
 - (void)setDelegate:(id)arg1;
+- (void)shouldLoadRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)urlSessionDelegate;
 - (void)willParseData;
 

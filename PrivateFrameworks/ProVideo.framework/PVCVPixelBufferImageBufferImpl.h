@@ -17,10 +17,12 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)canCreateCVPixelBuffer;
+- (bool)canCreateHGBitmap;
 - (struct CGImage { }*)cgImage;
 - (bool)cvPixelBufferRequiresCopy;
 - (struct HGRef<HGCVPixelBuffer> { struct HGCVPixelBuffer {} *x1; })cvPixelBufferWithColorSpace:(id)arg1;
 - (void)dealloc;
+- (struct HGRef<HGBitmap> { struct HGBitmap {} *x1; })hgBitmapWithColorSpace:(id)arg1;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (id)initWithHGCVPixelBuffer:(struct HGRef<HGCVPixelBuffer> { struct HGCVPixelBuffer {} *x1; })arg1;
 - (struct CGSize { double x1; double x2; })size;

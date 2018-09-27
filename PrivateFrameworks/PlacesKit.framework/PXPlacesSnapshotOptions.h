@@ -7,7 +7,8 @@
     PKExtendedTraitCollection * _extendedTraitCollection;
     <PXPlacesMapGeotaggableInfoDelegate> * _geotaggableInformationDelegate;
     NSObject<OS_dispatch_queue> * _queue;
-    bool  _shouldSkipSyncCachedImage;
+    bool  _shouldSkipPlaceholder;
+    bool  _showsPointLabels;
     unsigned long long  _snapshotMapType;
     struct CGSize { 
         double width; 
@@ -20,7 +21,8 @@
 @property (nonatomic, retain) PKExtendedTraitCollection *extendedTraitCollection;
 @property (nonatomic, retain) <PXPlacesMapGeotaggableInfoDelegate> *geotaggableInformationDelegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) bool shouldSkipSyncCachedImage;
+@property (nonatomic) bool shouldSkipPlaceholder;
+@property (nonatomic) bool showsPointLabels;
 @property (nonatomic) unsigned long long snapshotMapType;
 @property (nonatomic) struct CGSize { double x1; double x2; } viewSize;
 @property (nonatomic) double visibleDistance;
@@ -35,11 +37,13 @@
 - (void)setExtendedTraitCollection:(id)arg1;
 - (void)setGeotaggableInformationDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setShouldSkipSyncCachedImage:(bool)arg1;
+- (void)setShouldSkipPlaceholder:(bool)arg1;
+- (void)setShowsPointLabels:(bool)arg1;
 - (void)setSnapshotMapType:(unsigned long long)arg1;
 - (void)setViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setVisibleDistance:(double)arg1;
-- (bool)shouldSkipSyncCachedImage;
+- (bool)shouldSkipPlaceholder;
+- (bool)showsPointLabels;
 - (unsigned long long)snapshotMapType;
 - (struct CGSize { double x1; double x2; })viewSize;
 - (double)visibleDistance;

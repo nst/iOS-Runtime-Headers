@@ -10,6 +10,7 @@
 
 @property (nonatomic) bool disableAssetCleaning;
 @property (nonatomic) bool disableCache;
+@property (nonatomic) bool disableNewBackend;
 @property (nonatomic) bool disableServerTimeoutFallback;
 @property (nonatomic) bool enableAudioDump;
 @property (nonatomic) bool enableHomePodSimulation;
@@ -19,7 +20,6 @@
 @property (nonatomic, retain) NSUserDefaults *internalDefaults;
 @property (nonatomic) bool isInternalBuild;
 @property (nonatomic) float serverTTSTimeout;
-@property (nonatomic) bool useNewBackend;
 
 + (id)standardInstance;
 
@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (bool)disableAssetCleaning;
 - (bool)disableCache;
+- (bool)disableNewBackend;
 - (bool)disableServerTimeoutFallback;
 - (bool)enableAudioDump;
 - (bool)enableHomePodSimulation;
@@ -40,6 +41,7 @@
 - (float)serverTTSTimeout;
 - (void)setDisableAssetCleaning:(bool)arg1;
 - (void)setDisableCache:(bool)arg1;
+- (void)setDisableNewBackend:(bool)arg1;
 - (void)setDisableServerTimeoutFallback:(bool)arg1;
 - (void)setEnableAudioDump:(bool)arg1;
 - (void)setEnableHomePodSimulation:(bool)arg1;
@@ -48,7 +50,5 @@
 - (void)setInternalDefaults:(id)arg1;
 - (void)setIsInternalBuild:(bool)arg1;
 - (void)setServerTTSTimeout:(float)arg1;
-- (void)setUseNewBackend:(bool)arg1;
-- (bool)useNewBackend;
 
 @end

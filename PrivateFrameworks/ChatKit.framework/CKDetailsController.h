@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKDetailsController : CKScrollViewController <CKAttachmentCollectionManagerDelegate, CKAvatarPickerViewControllerDelegate, CKBusinessInfoViewDelegate, CKDetailsAddGroupNameViewDelegate, CKDetailsContactsManagerDelegate, CKDetailsContactsTableViewCellDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, CKSharedAssetsControllerDelegate, CNAvatarViewDelegate, FMFMapViewControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIViewControllerPreviewingDelegate> {
+@interface CKDetailsController : CKScrollViewController <CKAttachmentCollectionManagerDelegate, CKBusinessInfoViewDelegate, CKDetailsAddGroupNameViewDelegate, CKDetailsContactsManagerDelegate, CKDetailsContactsTableViewCellDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, CKSharedAssetsControllerDelegate, CNAvatarViewDelegate, FMFMapViewControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIViewControllerPreviewingDelegate> {
     CKGroupRecipientSelectionController * _addRecipientsController;
     NSMutableArray * _attachmentCollectionManagerArray;
     CKAvatarPickerViewController * _avatarPickerViewController;
@@ -31,7 +31,6 @@
     FMFMapViewController * _mapViewController;
     CKEntity * _presentedEntity;
     id  _selfWeakWrapper;
-    bool  _shouldShowDownloadMoreCell;
     CNContactStore * _suggestionsEnabledContactStore;
     CKDetailsTableView * _tableView;
     unsigned long long  _undownloadedPhotoAttachmentCount;
@@ -69,7 +68,7 @@
 @property (nonatomic, retain) FMFMapViewController *mapViewController;
 @property (nonatomic, retain) CKEntity *presentedEntity;
 @property (nonatomic, retain) id selfWeakWrapper;
-@property (nonatomic) bool shouldShowDownloadMoreCell;
+@property (nonatomic, readonly) bool shouldShowDownloadMoreCell;
 @property (nonatomic, retain) CNContactStore *suggestionsEnabledContactStore;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKDetailsTableView *tableView;
@@ -79,13 +78,17 @@
 - (void).cxx_destruct;
 - (bool)_canLeaveConversation;
 - (void)_configureSeparatorForCell:(id)arg1 indexPath:(id)arg2;
+- (void)_didFetchAttachments:(id)arg1;
 - (bool)_fmfExpirationDateIsValid;
 - (void)_handleKeyboardWillHideNotification:(id)arg1;
 - (void)_handleKeyboardWillShowNotification:(id)arg1;
 - (void)_handlePurgedAttachmentDownloadNotification:(id)arg1;
 - (void)_insertRowForNewlyDownloadedAttachmentsWithTransferGUIDs:(id)arg1;
+- (void)_lastAddressedHandleUpdateNotification:(id)arg1;
 - (void)_presentRemoveRecipientSheetForHandle:(id)arg1 fromView:(id)arg2;
+- (unsigned long long)_purgedAttachmentCount;
 - (void)_requestCallTypeForEntity:(id)arg1 withAddresses:(id)arg2 withLabels:(id)arg3 faceTimeAudioEnabled:(bool)arg4;
+- (void)_resetPurgedAttachmentCount;
 - (void)_showContactCardForEntity:(id)arg1 fromView:(id)arg2;
 - (void)_toggleSharingStateFromABCard;
 - (void)_updateDownloadFooterView;
@@ -212,7 +215,6 @@
 - (void)setMapViewController:(id)arg1;
 - (void)setPresentedEntity:(id)arg1;
 - (void)setSelfWeakWrapper:(id)arg1;
-- (void)setShouldShowDownloadMoreCell:(bool)arg1;
 - (void)setSuggestionsEnabledContactStore:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (void)setUndownloadedPhotoAttachmentCount:(unsigned long long)arg1;
@@ -232,6 +234,7 @@
 - (bool)shouldShowFMFView;
 - (bool)shouldShowGroupAddNameField;
 - (void)showMapkitBusinessData;
+- (id)simTypeCellForIndexPath:(id)arg1;
 - (id)suggestionsEnabledContactStore;
 - (id)tableView;
 - (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;

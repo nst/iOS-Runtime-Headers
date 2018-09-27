@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableDictionary *propertyNameToPropertyMap;
 @property (nonatomic, retain) NSMutableDictionary *selectorToPropertyMap;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)propertyNameToPropertyMap;

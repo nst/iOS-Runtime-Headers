@@ -18,9 +18,9 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSData *provisioningPostData;
+@property (nonatomic, copy) NSData *provisioningPostData;
 @property (nonatomic) int provisioningStatus;
-@property (nonatomic, retain) NSURL *provisioningURL;
+@property (nonatomic, copy) NSURL *provisioningURL;
 @property (getter=isProvisioningURLInvalid, nonatomic, readonly) bool provisioningURLInvalid;
 @property (getter=isRoamingEnabled, nonatomic) bool roamingEnabled;
 @property (readonly) Class superclass;

@@ -3,14 +3,14 @@
  */
 
 @interface NTPersonalizationFeatureCTRLookupOperation : FCOperation {
-    <FRReadonlyPersonalizationAggregateStore> * _aggregateStore;
+    <FCReadonlyPersonalizationAggregateStore> * _aggregateStore;
     id /* block */  _lookupCompletion;
     NSArray * _lookupRequests;
     FCPersonalizationTreatment * _personalizationTreatment;
     NSDictionary * _result;
 }
 
-@property (nonatomic, retain) <FRReadonlyPersonalizationAggregateStore> *aggregateStore;
+@property (nonatomic, retain) <FCReadonlyPersonalizationAggregateStore> *aggregateStore;
 @property (nonatomic, copy) id /* block */ lookupCompletion;
 @property (nonatomic, copy) NSArray *lookupRequests;
 @property (nonatomic, copy) FCPersonalizationTreatment *personalizationTreatment;

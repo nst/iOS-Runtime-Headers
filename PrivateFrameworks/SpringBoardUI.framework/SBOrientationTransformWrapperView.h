@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)_updateGeometry;
 - (void)addContentView:(id)arg1;
+- (void)bringContentSubviewToFront:(id)arg1;
 - (long long)containerOrientation;
 - (long long)contentOrientation;
 - (id)contentViews;

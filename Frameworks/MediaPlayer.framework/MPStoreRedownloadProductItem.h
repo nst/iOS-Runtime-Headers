@@ -13,6 +13,9 @@
 @property (nonatomic, readonly) NSURL *HLSKeyServerURL;
 @property (nonatomic, readonly) NSURL *HLSPlaylistURL;
 @property (nonatomic, readonly, copy) NSArray *allFlavors;
+@property (nonatomic, readonly) NSURL *alternateHLSKeyCertificateURL;
+@property (nonatomic, readonly) NSURL *alternateHLSKeyServerURL;
+@property (nonatomic, readonly) NSURL *alternateHLSPlaylistURL;
 @property (nonatomic, readonly) MPStoreRedownloadProductItemAsset *asset;
 @property (nonatomic, copy) NSURL *fallbackStreamingKeyCertificateURL;
 @property (nonatomic, copy) NSURL *fallbackStreamingKeyServerURL;
@@ -29,6 +32,9 @@
 - (void)_enumerateAssetDictionariesWithBlock:(id /* block */)arg1;
 - (id)_initWithResponseDictionary:(id)arg1;
 - (id)allFlavors;
+- (id)alternateHLSKeyCertificateURL;
+- (id)alternateHLSKeyServerURL;
+- (id)alternateHLSPlaylistURL;
 - (id)asset;
 - (id)assetForFlavor:(id)arg1;
 - (id)fallbackStreamingKeyCertificateURL;

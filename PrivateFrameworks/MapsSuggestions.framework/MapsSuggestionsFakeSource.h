@@ -40,13 +40,14 @@
 - (unsigned long long)calledStart;
 - (unsigned long long)calledStop;
 - (unsigned long long)calledUpdateSuggestionEntries;
-- (bool)canProduceEntriesOfType:(unsigned long long)arg1;
+- (bool)canProduceEntriesOfType:(long long)arg1;
 - (double)frequency;
 - (id)initWithDelegate:(id)arg1 name:(id)arg2;
 - (bool)isNowStopped;
 - (void)pushAdditionOfEntries:(struct NSArray { Class x1; }*)arg1 deleteMissing:(bool)arg2;
 - (void)pushDeletionOfEntries:(struct NSArray { Class x1; }*)arg1;
 - (void)pushEntries:(struct NSArray { Class x1; }*)arg1;
+- (bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(id /* block */)arg3;
 - (bool)sendCopies;
 - (void)setCalledStart:(unsigned long long)arg1;
 - (void)setCalledStop:(unsigned long long)arg1;

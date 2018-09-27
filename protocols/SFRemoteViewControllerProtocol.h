@@ -5,6 +5,7 @@
 
 @required
 
+- (void)didChangeFullScreen:(bool)arg1;
 - (void)didDecideCookieSharingForURL:(NSURL *)arg1 shouldCancel:(bool)arg2;
 - (void)didFinishInitialLoad:(bool)arg1;
 - (void)didLoadWebView;

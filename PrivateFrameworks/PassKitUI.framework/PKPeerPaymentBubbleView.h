@@ -39,6 +39,7 @@
     UILabel * _statusLabel;
     NSTimer * _testTimer;
     bool  _testTransition;
+    bool  _usesWatchColors;
 }
 
 @property (nonatomic) unsigned long long action;
@@ -60,8 +61,10 @@
 @property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
 @property (nonatomic) bool testTransition;
+@property (nonatomic) bool usesWatchColors;
 @property (nonatomic, readonly) bool wantsOutline;
 
++ (id)applePayLogo;
 + (id)generatedSnapshotForDataURL:(id)arg1 contentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 isFromMe:(bool)arg3;
 + (id)referenceBackgroundColor;
 + (id)referenceBackgroundColorForState:(unsigned long long)arg1;
@@ -69,6 +72,7 @@
 + (struct CGSize { double x1; double x2; })referenceSizeForPeerPaymentStatusResponse:(id)arg1;
 + (struct CGSize { double x1; double x2; })referenceSizeForState:(unsigned long long)arg1;
 + (struct CGSize { double x1; double x2; })referenceSizeForState:(unsigned long long)arg1 andAction:(unsigned long long)arg2;
++ (id)referenceWatchBackgroundColorForState:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_actionButtonTapped:(id)arg1;
@@ -94,6 +98,7 @@
 - (id)init;
 - (id)initWithAmount:(id)arg1 currency:(id)arg2 state:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCurrencyAmount:(id)arg1 state:(unsigned long long)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)interactiveViews;
 - (bool)isLiveRenderingEnabled;
@@ -114,6 +119,7 @@
 - (void)setState:(unsigned long long)arg1;
 - (void)setState:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)setTestTransition:(bool)arg1;
+- (void)setUsesWatchColors:(bool)arg1;
 - (bool)showsActionSpinner;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned long long)state;
@@ -122,5 +128,6 @@
 - (void)updateWithPeerPaymentMessage:(id)arg1 animated:(bool)arg2;
 - (void)updateWithPeerPaymentStatus:(long long)arg1 animated:(bool)arg2;
 - (void)updateWithPeerPaymentStatusResponse:(id)arg1 animated:(bool)arg2;
+- (bool)usesWatchColors;
 
 @end

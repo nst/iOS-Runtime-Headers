@@ -69,7 +69,7 @@
 - (id /* block */)invalidationHandler;
 - (bool)latencyCritical;
 - (bool)lePipeCapable;
-- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 error:(id)arg3;
+- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didDisconnectFromPeer:(id)arg2 error:(id)arg3;
 - (void)nearby:(id)arg1 didReceiveData:(id)arg2 fromPeer:(id)arg3;
 - (void)nearby:(id)arg1 didSendData:(id)arg2 toPeer:(id)arg3 error:(id)arg4;

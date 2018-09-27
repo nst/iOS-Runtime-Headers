@@ -24,6 +24,7 @@
 - (bool)canRenew;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
+- (id)displayedHostname;
 - (id)dsid;
 - (id)fullName;
 - (id)iCloudAuthTokenWithError:(id*)arg1;

@@ -4,6 +4,7 @@
 
 @interface TIAutocorrectionList : NSObject <NSSecureCoding> {
     TIKeyboardCandidate * _autocorrection;
+    bool  _containsProactiveTriggers;
     NSArray * _emojiList;
     NSArray * _predictions;
     NSArray * _proactiveTriggers;
@@ -11,21 +12,27 @@
 
 @property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;
 @property (nonatomic, readonly) NSArray *candidates;
+@property (nonatomic) bool containsProactiveTriggers;
 @property (nonatomic, readonly) NSArray *emojiList;
 @property (nonatomic, readonly) NSArray *predictions;
 @property (nonatomic, readonly) NSArray *proactiveTriggers;
 @property (nonatomic, readonly) bool shouldAcceptTopCandidate;
 
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
+
 + (id)autocorrectionListWithCandidates:(id)arg1 shouldAcceptTopCandidate:(bool)arg2;
++ (id)listWithAutocorrection:(id)arg1;
 + (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2;
 + (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2 emojiList:(id)arg3;
++ (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2 emojiList:(id)arg3 proactiveTriggers:(id)arg4;
 + (id)listWithPredictions:(id)arg1 emojiList:(id)arg2 proactiveTriggers:(id)arg3;
 + (id)listWithPredictions:(id)arg1 proactiveTriggers:(id)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)autocorrection;
 - (id)candidates;
-- (void)dealloc;
+- (bool)containsProactiveTriggers;
 - (id)description;
 - (id)emojiList;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +43,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)predictions;
 - (id)proactiveTriggers;
+- (void)setContainsProactiveTriggers:(bool)arg1;
 - (bool)shouldAcceptTopCandidate;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (void)updateLabelsWithSmartPunctuation:(id)arg1;
 
 @end

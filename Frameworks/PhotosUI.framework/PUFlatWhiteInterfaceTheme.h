@@ -32,7 +32,6 @@
 @property (nonatomic, readonly) NSDictionary *cloudFeedInvitationTitleTextAttributes;
 @property (nonatomic, readonly) NSDictionary *cloudFeedLargerDefaultTextAttributes;
 @property (nonatomic, readonly) NSDictionary *cloudFeedLargerEmphasizedTextAttributes;
-@property (nonatomic, readonly) UIImage *cloudFeedMiniChevronImage;
 @property (nonatomic, readonly) UIImage *cloudFeedSectionHeaderBackgroundImage;
 @property (nonatomic, readonly) UIColor *cloudFeedSeparatorColor;
 @property (nonatomic, readonly) double cloudFeedSeparatorHeight;
@@ -72,7 +71,6 @@
 @property (nonatomic, readonly) double photoCollectionToolbarTextTitleSpacerWidth;
 @property (nonatomic, readonly) UIColor *photoCollectionViewBackgroundColor;
 @property (nonatomic, readonly) int photoCollectionViewBackgroundColorValue;
-@property (nonatomic, readonly) UIColor *photoCollectionViewSecondScreenBackgroundColor;
 @property (nonatomic, readonly) UIColor *photoEditingActiveFilterTitleColor;
 @property (nonatomic, readonly) UIColor *photoEditingAdjustmentsBarBackgroundColor;
 @property (nonatomic, readonly) UIColor *photoEditingAdjustmentsBarCurrentPositionMarkerColor;
@@ -125,8 +123,11 @@
 @property (nonatomic, readonly) UIColor *playheadColor;
 @property (nonatomic, readonly) UIImage *regularLoadErrorIcon;
 @property (nonatomic, readonly) UIColor *scrubberPlaceholderColor;
+@property (nonatomic, readonly) UIFont *searchItalicTitleLabelFont;
 @property (nonatomic, readonly) UIFont *searchRecentLabelFont;
 @property (nonatomic, readonly) UIColor *searchRecentLabelTextColor;
+@property (nonatomic, readonly) UIFont *searchResultCountLabelFont;
+@property (nonatomic, readonly) UIColor *searchResultCountTextColor;
 @property (nonatomic, readonly) double searchSingleTitleBottomBaselineDistance;
 @property (nonatomic, readonly) double searchSingleTitleTopBaselineDistance;
 @property (nonatomic, readonly) double searchSubtitleBottomBaselineDistance;
@@ -166,7 +167,6 @@
 @property (nonatomic, readonly) double videoPaletteBottomMargin;
 @property (nonatomic, readonly) double videoPaletteSideMargin;
 @property (nonatomic, readonly) UIColor *videoScrubberTileBackgroundColor;
-@property (nonatomic, readonly) UIFont *wallpaperCategoryLabelFont;
 
 - (id)_commentsFont;
 - (void)_configurePhotoCollectionGlobalFooterLabel:(id)arg1 withFontDescriptor:(id)arg2 textColor:(id)arg3;
@@ -201,7 +201,6 @@
 - (id)cloudFeedInvitationTitleTextAttributes;
 - (id)cloudFeedLargerDefaultTextAttributes;
 - (id)cloudFeedLargerEmphasizedTextAttributes;
-- (id)cloudFeedMiniChevronImage;
 - (id)cloudFeedSectionHeaderBackgroundImage;
 - (id)cloudFeedSeparatorColor;
 - (double)cloudFeedSeparatorHeight;
@@ -212,10 +211,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })commentsButtonTextInset;
 - (id)compactLoadErrorIcon;
 - (void)configureAlbumListDeleteButton:(id)arg1;
-- (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(id)arg1;
-- (void)configureAlbumListEmptyStackViewPhonePhotoDecoration:(id)arg1;
 - (void)configureAlbumListSectionTitleLabel:(id)arg1;
-- (void)configureAlbumListStackViewPadPhotoDecoration:(id)arg1;
 - (void)configureAlbumListStackViewPhonePhotoDecoration:(id)arg1;
 - (void)configureAlbumListSubtitleLabel:(id)arg1 asOpaque:(bool)arg2;
 - (void)configureAlbumListTitleLabel:(id)arg1 asOpaque:(bool)arg2;
@@ -233,6 +229,8 @@
 - (void)configureEditPluginUserDefaultsAccessorySwitch:(id)arg1;
 - (void)configureEditPluginUserDefaultsCell:(id)arg1 withIcon:(id)arg2 title:(id)arg3;
 - (void)configureEditPluginUserDefaultsTableView:(id)arg1;
+- (void)configureImportHeaderSubtitleLabel:(id)arg1;
+- (void)configureImportHeaderTitleLabel:(id)arg1;
 - (void)configureMapViewAnnotationCountLabel:(id)arg1;
 - (void)configurePhotoCollectionGlobalFooterProgressView:(id)arg1 paused:(bool)arg2;
 - (void)configurePhotoCollectionGlobalFooterSubtitleLabel:(id)arg1;
@@ -242,6 +240,7 @@
 - (void)configurePhotoCollectionHeaderLocationsLabel:(id)arg1 forStyle:(long long)arg2;
 - (void)configurePhotoCollectionHeaderTitleLabel:(id)arg1 forStyle:(long long)arg2;
 - (void)configureProgressIndicatorMessageLabel:(id)arg1;
+- (void)configureSearchResultCountLabel:(id)arg1;
 - (void)configureSearchSubtitleLabel:(id)arg1;
 - (void)configureSearchTitleLabel:(id)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(id)arg1;
@@ -292,7 +291,6 @@
 - (double)photoCollectionToolbarTextTitleSpacerWidth;
 - (id)photoCollectionViewBackgroundColor;
 - (int)photoCollectionViewBackgroundColorValue;
-- (id)photoCollectionViewSecondScreenBackgroundColor;
 - (id)photoEditingActiveFilterTitleColor;
 - (id)photoEditingAdjustmentsBarBackgroundColor;
 - (id)photoEditingAdjustmentsBarCurrentPositionMarkerColor;
@@ -347,8 +345,12 @@
 - (id)scrubberPlaceholderColor;
 - (id)searchDefaultAttributes;
 - (id)searchDimmedAttributes;
+- (id)searchItalicTitleAttributes;
+- (id)searchItalicTitleLabelFont;
 - (id)searchRecentLabelFont;
 - (id)searchRecentLabelTextColor;
+- (id)searchResultCountLabelFont;
+- (id)searchResultCountTextColor;
 - (double)searchSingleTitleBottomBaselineDistance;
 - (double)searchSingleTitleTopBaselineDistance;
 - (double)searchSubtitleBottomBaselineDistance;
@@ -398,6 +400,5 @@
 - (double)videoPaletteBottomMargin;
 - (double)videoPaletteSideMargin;
 - (id)videoScrubberTileBackgroundColor;
-- (id)wallpaperCategoryLabelFont;
 
 @end

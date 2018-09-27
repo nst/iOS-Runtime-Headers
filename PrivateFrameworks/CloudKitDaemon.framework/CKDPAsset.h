@@ -3,6 +3,7 @@
  */
 
 @interface CKDPAsset : PBCodable <NSCopying> {
+    NSString * _assetAuthorizationResponseUUID;
     NSData * _assetCopyMetadata;
     NSData * _clearAssetKey;
     NSString * _contentBaseURL;
@@ -28,6 +29,7 @@
     NSString * _uploadReceipt;
 }
 
+@property (nonatomic, retain) NSString *assetAuthorizationResponseUUID;
 @property (nonatomic, retain) NSData *assetCopyMetadata;
 @property (nonatomic, retain) NSData *clearAssetKey;
 @property (nonatomic, retain) NSString *contentBaseURL;
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) NSString *downloadToken;
 @property (nonatomic) long long downloadTokenExpiration;
 @property (nonatomic) long long downloadURLExpiration;
+@property (nonatomic, readonly) bool hasAssetAuthorizationResponseUUID;
 @property (nonatomic, readonly) bool hasAssetCopyMetadata;
 @property (nonatomic, readonly) bool hasClearAssetKey;
 @property (nonatomic, readonly) bool hasContentBaseURL;
@@ -66,6 +69,7 @@
 @property (nonatomic, retain) NSString *uploadReceipt;
 
 - (void).cxx_destruct;
+- (id)assetAuthorizationResponseUUID;
 - (id)assetCopyMetadata;
 - (id)clearAssetKey;
 - (id)contentBaseURL;
@@ -79,6 +83,7 @@
 - (id)downloadToken;
 - (long long)downloadTokenExpiration;
 - (long long)downloadURLExpiration;
+- (bool)hasAssetAuthorizationResponseUUID;
 - (bool)hasAssetCopyMetadata;
 - (bool)hasClearAssetKey;
 - (bool)hasContentBaseURL;
@@ -107,6 +112,7 @@
 - (id)recordId;
 - (id)referenceSignature;
 - (id)requestor;
+- (void)setAssetAuthorizationResponseUUID:(id)arg1;
 - (void)setAssetCopyMetadata:(id)arg1;
 - (void)setClearAssetKey:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;

@@ -42,5 +42,6 @@
 - (id)titleHeaderViewController;
 - (void)updateViewConstraints;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

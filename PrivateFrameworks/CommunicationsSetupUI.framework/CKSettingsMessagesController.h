@@ -5,17 +5,23 @@
 @interface CKSettingsMessagesController : CNFRegListController <AKAppleIDAuthenticationDelegate, CNFRegWizardControllerDelegate, IMCloudKitEventHandler> {
     id  _beginMappingID;
     CKNSExtension * _ckExtension;
+    IMCTXPCServiceSubscriptionInfo * _ctSubscriptionInfo;
     CKFilteringListController * _filteringController;
+    CKMultipleCTSubscriptionsController * _mmsAllowsGroupMessagingController;
+    CKMultipleCTSubscriptionsController * _mmsMessagingController;
     int  _profileToken;
     bool  _showingChildViewController;
 }
 
 @property (retain) id beginMappingID;
 @property (nonatomic, retain) CKNSExtension *ckExtension;
+@property (nonatomic, retain) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKFilteringListController *filteringController;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CKMultipleCTSubscriptionsController *mmsAllowsGroupMessagingController;
+@property (nonatomic, retain) CKMultipleCTSubscriptionsController *mmsMessagingController;
 @property (readonly) Class superclass;
 
 + (id)currentKeepMessages;
@@ -32,9 +38,12 @@
 - (id)_madridSettingsController;
 - (void)_setupAccountHandlers;
 - (void)_setupAccountHandlersForDisabling;
+- (void)_setupMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(bool)arg2;
+- (void)_setupMultipleSubscriptionsMMSGroupSpecifiers:(id)arg1 wantsMMSBasicGroup:(bool)arg2;
 - (void)_showAuthKitSignInIfNecessary;
 - (void)_showMadridSetupIfNecessary;
 - (void)_showMadridSetupIfNecessary:(bool)arg1;
+- (void)_showPrivacySheet:(id)arg1;
 - (void)_showSignInController;
 - (id)_smsRelayDevicesController;
 - (void)_startListeningForProfileChanges;
@@ -56,6 +65,7 @@
 - (id)ckExtension;
 - (id)contactPhotoSettingsSpecifierIdentifiers;
 - (id)controllerForSpecifier:(id)arg1;
+- (id)ctSubscriptionInfo;
 - (void)dealloc;
 - (id)deliveryReceiptSpecifierIdentifiers;
 - (void)endMatchingExtensions;
@@ -66,6 +76,7 @@
 - (id)getAccountSummaryForSpecifier:(id)arg1;
 - (id)getAudioMessageAutoKeep:(id)arg1;
 - (id)getKeepMessages:(id)arg1;
+- (id)getMessagesAccounts:(id)arg1;
 - (id)getPreviewTranscodingEnabled:(id)arg1;
 - (id)getRaiseToListenEnabled:(id)arg1;
 - (id)getSMSRelayDevicesSummary:(id)arg1;
@@ -78,12 +89,15 @@
 - (bool)isPersonalCompanionEnabled;
 - (id)isSiriToneNotificationEnabled:(id)arg1;
 - (id)logName;
+- (id)madridAccountsMultipleSubscriptionsSpecifierIdentifiers;
 - (id)madridAccountsSpecifierIdentifiers;
 - (id)madridSigninButtonTextForSpecifier:(id)arg1;
 - (id)madridSigninSpecifiers;
 - (void)madridSigninTappedWithSpecifier:(id)arg1;
 - (id)madridSwitchSpecifierIdentifiers;
 - (void)messageFilteringTapped:(id)arg1;
+- (id)mmsAllowsGroupMessagingController;
+- (id)mmsMessagingController;
 - (void)newCarrierNotification;
 - (void)notifyThatConversationFilteringChanged;
 - (id)raiseToListenSpecifierIdentifiers;
@@ -93,11 +107,15 @@
 - (void)setBeginMappingID:(id)arg1;
 - (void)setCkExtension:(id)arg1;
 - (void)setConversationListFilteringEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setCtSubscriptionInfo:(id)arg1;
 - (void)setDeliveryReportsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setFilteringController:(id)arg1;
 - (void)setKeepMessages:(id)arg1 specifier:(id)arg2;
 - (void)setMMSEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setMessagesAccounts:(id)arg1 specifier:(id)arg2;
+- (void)setMmsAllowsGroupMessagingController:(id)arg1;
+- (void)setMmsMessagingController:(id)arg1;
 - (void)setPreviewTranscodingEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setRaiseToListenEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setReadReceiptsEnabled:(id)arg1 specifier:(id)arg2;
@@ -111,6 +129,7 @@
 - (bool)shouldShowContactPhotoSettings;
 - (bool)shouldShowDeliveryReceipts;
 - (bool)shouldShowGenericSettings;
+- (bool)shouldShowIDSSubscriptions;
 - (bool)shouldShowMadridAccounts;
 - (bool)shouldShowMadridSignin;
 - (bool)shouldShowMadridSwitch;

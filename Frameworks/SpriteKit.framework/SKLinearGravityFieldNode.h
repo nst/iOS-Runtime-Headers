@@ -4,6 +4,8 @@
 
 @interface SKLinearGravityFieldNode : SKFieldNode
 
++ (bool)supportsSecureCoding;
+
 - (id)_descriptionClassName;
 - (void)_initialize;
 - (void)encodeWithCoder:(id)arg1;

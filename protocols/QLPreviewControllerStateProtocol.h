@@ -7,7 +7,7 @@
 
 - (void)beginInteractiveTransition;
 - (void)currentPreviewItemViewControllerHasUnsavedEdits:(bool)arg1;
-- (void)expandContentOfURL:(NSURL *)arg1;
+- (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(NSUUID *)arg2;
 - (void)openURLIfAllowed:(NSURL *)arg1;
 - (void)presentAlertControllerForScenario:(long long)arg1;
 - (void)previewCollectionPrefersWhitePointAdaptivityStyle:(long long)arg1;
@@ -16,9 +16,12 @@
 - (void)setCanChangeCurrentPage:(bool)arg1;
 - (void)setFullScreen:(bool)arg1;
 - (void)setFullscreenBackgroundColor:(UIColor *)arg1;
+- (void)setNavBarCanBeVisible:(bool)arg1;
 - (void)setPrinter:(id <QLPrintingProtocol>)arg1;
 - (void)setToolbarCanBeVisible:(bool)arg1;
 - (void)showShareSheet;
+- (void)showShareSheetWithPopoverTracker:(void *)arg1 dismissCompletion:(void *)arg2; // needs 2 arg types, found 6: <QLRemotePopoverTracker> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)triggerQuickLookDismissal;
 - (void)updateKeyCommands;
 - (void)updateOverlayButtons:(bool)arg1;
 - (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;

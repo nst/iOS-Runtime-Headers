@@ -19,6 +19,7 @@
 
 + (id)defaultCachePath;
 + (id)defaultEngine;
++ (void)load;
 
 - (void).cxx_destruct;
 - (void)addAdditionalFilter:(id)arg1 forSink:(id)arg2;
@@ -27,12 +28,14 @@
 - (id)currentLocation;
 - (bool)detachSink:(id)arg1;
 - (id)fakeSource;
-- (void)hintRefreshOfType:(unsigned long long)arg1;
+- (void)hintRefreshOfType:(long long)arg1;
 - (id)initWithManager:(id)arg1;
 - (bool)loadStorageFromFile:(id)arg1;
+- (bool)loadStorageFromFile:(id)arg1 callback:(id /* block */)arg2 callbackQueue:(id)arg3;
 - (id)manager;
 - (int)mapType;
 - (void)removeAdditionalFilter:(id)arg1 forSink:(id)arg2;
+- (bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(id /* block */)arg3;
 - (void)reset;
 - (bool)saveStorageToFile:(id)arg1;
 - (void)setAutomobileOptions:(id)arg1;

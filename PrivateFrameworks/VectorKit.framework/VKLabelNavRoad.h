@@ -34,11 +34,14 @@
     }  _routeOffset;
     NSString * _shieldDisplayGroup;
     NSString * _shieldGroup;
-    struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
+    struct vector<gm::Matrix<double, 2, 1>, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { 
         struct Matrix<double, 2, 1> {} *__begin_; 
         struct Matrix<double, 2, 1> {} *__end_; 
-        struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
+        struct __compressed_pair<gm::Matrix<double, 2, 1> *, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { 
             struct Matrix<double, 2, 1> {} *__value_; 
+            struct StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> { 
+                struct Allocator {} *_allocator; 
+            } __value_; 
         } __end_cap_; 
     }  _simplifiedPoints;
     bool  _suppressRoadSignIfShieldPresent;
@@ -82,8 +85,8 @@
 - (void)_updateWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1;
 - (void)_updateWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1 threshold:(double)arg2;
 - (bool)_worldPointForRoadOffset:(float)arg1 worldPoint:(struct Mercator3<double> { double x1[3]; }*)arg2;
-- (void)_worldRoadPoints:(struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x_3_1_1; } x3; }*)arg1;
-- (void)appendSimplifiedWorldRoadPoints:(struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x_3_1_1; } x3; }*)arg1;
+- (void)_worldRoadPoints:(struct vector<gm::Matrix<double, 2, 1>, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { struct Matrix<double, 2, 1> {} *x_3_1_1; struct StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> { struct Allocator {} *x_2_2_1; } x_3_1_2; } x3; }*)arg1;
+- (void)appendSimplifiedWorldRoadPoints:(struct vector<gm::Matrix<double, 2, 1>, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, geo::StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> > { struct Matrix<double, 2, 1> {} *x_3_1_1; struct StdAllocator<gm::Matrix<double, 2, 1>, lhp::Allocator> { struct Allocator {} *x_2_2_1; } x_3_1_2; } x3; }*)arg1;
 - (bool)areLabelsDisabled;
 - (void)clearRoadSign;
 - (void)createLabelWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; struct LabelLayoutContext {} *x3; struct LabelNavLayoutContext {} *x4; }*)arg1 isShieldLabel:(bool)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7 artworkCache:(struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_3_1_1; } x3; }*)arg8;

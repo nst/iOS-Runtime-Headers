@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
  */
 
-@interface WGWidgetPlatterView : MTTitledPlatterView {
+@interface WGWidgetPlatterView : PLTitledPlatterView {
     long long  _buttonMode;
     UIView * _compatibilityDarkeningView;
     WGWidgetListItemViewController * _listItem;

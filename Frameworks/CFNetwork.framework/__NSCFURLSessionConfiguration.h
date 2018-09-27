@@ -9,6 +9,7 @@
     long long  _HTTPMaximumConnectionsPerHost;
     bool  _HTTPShouldSetCookies;
     bool  _HTTPShouldUsePipelining;
+    long long  _IDSMessageTimeout;
     unsigned long long  _TCPAdaptiveReadTimeout;
     unsigned long long  _TCPAdaptiveWriteTimeout;
     int  _TLSMaximumSupportedProtocol;
@@ -24,6 +25,7 @@
     bool  _allowsTCPFastOpen;
     bool  _allowsTLSSessionResumption;
     bool  _allowsTLSSessionTickets;
+    bool  _alwaysPerformDefaultTrustEvaluation;
     <NSURLSessionAppleIDContext> * _appleIDContext;
     NSData * _atsContext;
     NSSet * _authenticatorStatusCodes;
@@ -45,6 +47,7 @@
     bool  _discretionary;
     NSString * _disposition;
     bool  _duetPreauthorized;
+    long long  _expiredDNSBehavior;
     unsigned long long  _forcedNetworkServiceType;
     bool  _forcesNewConnections;
     NSString * _identifier;
@@ -82,6 +85,7 @@
     unsigned long long  _requestCachePolicy;
     bool  _requiresClientToOpenFiles;
     bool  _requiresPowerPluggedIn;
+    bool  _requiresSecureHTTPSProxyConnection;
     bool  _requiresSustainedDataDelivery;
     bool  _respectsAllowsCellularAccessForDiscretionaryTasks;
     bool  _sessionSendsLaunchEvents;
@@ -101,6 +105,7 @@
     double  _timeoutIntervalForRequest;
     double  _timeoutIntervalForResource;
     long long  _timingDataOptions;
+    NSString * _tlsCachePrefix;
     NSString * _tlsTrustPinningPolicyName;
     bool  _usePipeliningHeuristics;
     bool  _waitsForConnectivity;
@@ -121,6 +126,7 @@
 - (id)URLCache;
 - (id)URLCredentialStorage;
 - (id)_CTDataConnectionServiceType;
+- (long long)_IDSMessageTimeout;
 - (unsigned long long)_TCPAdaptiveReadTimeout;
 - (unsigned long long)_TCPAdaptiveWriteTimeout;
 - (bool)_allowTCPIOConnectionStreamTask;
@@ -133,6 +139,7 @@
 - (bool)_allowsTCPFastOpen;
 - (bool)_allowsTLSSessionResumption;
 - (bool)_allowsTLSSessionTickets;
+- (bool)_alwaysPerformDefaultTrustEvaluation;
 - (id)_appleIDContext;
 - (id)_atsContext;
 - (id)_authenticatorStatusCodes;
@@ -152,6 +159,7 @@
 - (bool)_disablesUseOfProxySession;
 - (bool)_disallowsSPDY;
 - (bool)_duetPreauthorized;
+- (long long)_expiredDNSBehavior;
 - (unsigned long long)_forcedNetworkServiceType;
 - (bool)_forcesNewConnections;
 - (bool)_ignoreDidReceiveResponseDisposition;
@@ -179,6 +187,7 @@
 - (bool)_preventsSystemHTTPProxyAuthentication;
 - (bool)_requiresClientToOpenFiles;
 - (bool)_requiresPowerPluggedIn;
+- (bool)_requiresSecureHTTPSProxyConnection;
 - (bool)_requiresSustainedDataDelivery;
 - (bool)_respectsAllowsCellularAccessForDiscretionaryTasks;
 - (bool)_sessionSendsLaunchOnDemandEvents;
@@ -192,6 +201,7 @@
 - (id)_suppressedAutoAddedHTTPHeaders;
 - (id)_tcpConnectionPoolName;
 - (long long)_timingDataOptions;
+- (id)_tlsCachePrefix;
 - (id)_tlsTrustPinningPolicyName;
 - (bool)_usePipeliningHeuristics;
 - (id)_watchAppBundleIdentifier;
@@ -255,6 +265,7 @@
 - (void)setURLCredentialStorage:(id)arg1;
 - (void)setWaitsForConnectivity:(bool)arg1;
 - (void)set_CTDataConnectionServiceType:(id)arg1;
+- (void)set_IDSMessageTimeout:(long long)arg1;
 - (void)set_TCPAdaptiveReadTimeout:(unsigned long long)arg1;
 - (void)set_TCPAdaptiveWriteTimeout:(unsigned long long)arg1;
 - (void)set_allowTCPIOConnectionStreamTask:(bool)arg1;
@@ -267,6 +278,7 @@
 - (void)set_allowsTCPFastOpen:(bool)arg1;
 - (void)set_allowsTLSSessionResumption:(bool)arg1;
 - (void)set_allowsTLSSessionTickets:(bool)arg1;
+- (void)set_alwaysPerformDefaultTrustEvaluation:(bool)arg1;
 - (void)set_appleIDContext:(id)arg1;
 - (void)set_atsContext:(id)arg1;
 - (void)set_authenticatorStatusCodes:(id)arg1;
@@ -284,6 +296,7 @@
 - (void)set_disablesUseOfProxySession:(bool)arg1;
 - (void)set_disallowsSPDY:(bool)arg1;
 - (void)set_duetPreauthorized:(bool)arg1;
+- (void)set_expiredDNSBehavior:(long long)arg1;
 - (void)set_forcedNetworkServiceType:(unsigned long long)arg1;
 - (void)set_forcesNewConnections:(bool)arg1;
 - (void)set_ignoreDidReceiveResponseDisposition:(bool)arg1;
@@ -311,6 +324,7 @@
 - (void)set_proxySession:(bool)arg1;
 - (void)set_requiresClientToOpenFiles:(bool)arg1;
 - (void)set_requiresPowerPluggedIn:(bool)arg1;
+- (void)set_requiresSecureHTTPSProxyConnection:(bool)arg1;
 - (void)set_requiresSustainedDataDelivery:(bool)arg1;
 - (void)set_respectsAllowsCellularAccessForDiscretionaryTasks:(bool)arg1;
 - (void)set_sessionSendsLaunchOnDemandEvents:(bool)arg1;
@@ -324,6 +338,7 @@
 - (void)set_suppressedAutoAddedHTTPHeaders:(id)arg1;
 - (void)set_tcpConnectionPoolName:(id)arg1;
 - (void)set_timingDataOptions:(long long)arg1;
+- (void)set_tlsCachePrefix:(id)arg1;
 - (void)set_tlsTrustPinningPolicyName:(id)arg1;
 - (void)set_usePipeliningHeuristics:(bool)arg1;
 - (void)set_watchAppBundleIdentifier:(id)arg1;

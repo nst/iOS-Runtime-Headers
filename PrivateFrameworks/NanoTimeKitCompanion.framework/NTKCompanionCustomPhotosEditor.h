@@ -26,7 +26,7 @@
 - (void)generateGalleryPreviewResourceDirectoryWithCompletion:(id /* block */)arg1;
 - (void)imageAndCropForPhotoAtIndex:(long long)arg1 completion:(id /* block */)arg2;
 - (void)imageInPhotoLibraryForPhotoAtIndex:(long long)arg1 completion:(id /* block */)arg2;
-- (id)initWithResourceDirectory:(id)arg1;
+- (id)initWithResourceDirectory:(id)arg1 forDevice:(id)arg2;
 - (bool)isPhotoInPhotoLibraryAtIndex:(long long)arg1;
 - (struct CGSize { double x1; double x2; })minimumNormalizedCropSizeForPhotoAtIndex:(long long)arg1;
 - (void)movePhotoAtIndex:(long long)arg1 toIndex:(long long)arg2;

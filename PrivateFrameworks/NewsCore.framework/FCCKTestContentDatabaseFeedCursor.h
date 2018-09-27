@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCCKTestContentDatabaseFeedCursor : NSObject <NSCoding, NSCopying> {
+@interface FCCKTestContentDatabaseFeedCursor : NSObject <NSCopying, NSSecureCoding> {
     NSNumber * _order;
     NSNumber * _subOrder;
 }
 
 @property (nonatomic, copy) NSNumber *order;
 @property (nonatomic, copy) NSNumber *subOrder;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -34,14 +34,17 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (id)_displayNameForRecipientAddress:(id)arg1 contactResolver:(id)arg2 foundInContacts:(bool*)arg3;
 + (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
 + (id)_peerPaymentPassURL;
++ (id)displayNameForAddress:(id)arg1 contactResolver:(id)arg2;
 + (id)displayableErrorForError:(id)arg1;
 + (bool)errorIsIdentityVerificationRequiredError:(id)arg1;
 + (bool)errorIsTermsAcceptanceRequiredError:(id)arg1;
 + (unsigned long long)proposedResolutionForError:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_contactResolver;
 - (id)_defaultAlternateFundingSourceForMode:(unsigned long long)arg1;
 - (bool)_ensureState:(unsigned long long)arg1;
 - (void)_handleAccountChanged:(id)arg1;
@@ -53,6 +56,7 @@
 - (void)_updateLastUsedAlternateFundingSource;
 - (id)account;
 - (void)aggDAuthorizedQuoteWithSuccess:(bool)arg1 authorizedQuote:(id)arg2;
+- (id)contactForHandle:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayNameForRecipientAddress:(id)arg1;

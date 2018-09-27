@@ -15,6 +15,7 @@
 + (id)serviceInterface;
 + (id)sharedPreferencesController;
 
+- (void).cxx_destruct;
 - (void)_disconnect;
 - (void)_pushValue:(id)arg1 toPreference:(id)arg2 domain:(id)arg3;
 - (void)createConnectionIfNecessary;

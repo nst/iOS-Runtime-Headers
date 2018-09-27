@@ -24,7 +24,6 @@
 - (bool)isRecentlyAddedAlbum;
 - (bool)isStandInAlbum;
 - (bool)isUserLibraryAlbum;
-- (bool)isWallpaperAlbum;
 - (NSNumber *)kind;
 - (int)kindValue;
 - (NSMutableOrderedSet *)mutableAssets;

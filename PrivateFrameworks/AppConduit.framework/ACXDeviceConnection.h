@@ -33,6 +33,7 @@
 - (void)activeComplicationsWithErrorCompletion:(id /* block */)arg1;
 - (void)addObserver:(id)arg1;
 - (void)cancelPendingInstallations;
+- (void)cancelUpdatePendingForCompanionApp:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
 - (void)fetchApplicationWithContainingApplicationBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchInfoForApplicationWithBundleID:(id)arg1 completion:(id /* block */)arg2;
@@ -72,6 +73,7 @@
 - (void)setAlwaysInstall:(id)arg1 forDevice:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setObserverReEstablishTimer:(id)arg1;
+- (void)setUpdatePendingForCompanionApp:(id)arg1 completion:(id /* block */)arg2;
 - (void)setXpcConnection:(id)arg1;
 - (void)updateInstallProgressForApplication:(id)arg1 progress:(double)arg2 phase:(unsigned long long)arg3;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 completion:(id /* block */)arg3;

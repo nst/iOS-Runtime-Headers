@@ -3,9 +3,6 @@
  */
 
 @interface _CPSessionMissingSuggestionsFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSessionMissingSuggestionsFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-    }  _has;
     NSArray * _suggestions;
     unsigned long long  _timestamp;
 }
@@ -14,20 +11,17 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, copy) NSArray *suggestions;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
 - (void)addSuggestions:(id)arg1;
 - (void)clearSuggestions;
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

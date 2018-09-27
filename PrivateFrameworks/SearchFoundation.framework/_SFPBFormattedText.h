@@ -4,11 +4,6 @@
 
 @interface _SFPBFormattedText : PBCodable <NSSecureCoding, _SFPBFormattedText> {
     _SFPBImage * _glyph;
-    struct { 
-        unsigned int isEmphasized : 1; 
-        unsigned int isBold : 1; 
-        unsigned int textColor : 1; 
-    }  _has;
     bool  _isBold;
     bool  _isEmphasized;
     _SFPBText * _text;
@@ -18,11 +13,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _SFPBImage *glyph;
-@property (nonatomic, readonly) bool hasGlyph;
-@property (nonatomic, readonly) bool hasIsBold;
-@property (nonatomic, readonly) bool hasIsEmphasized;
-@property (nonatomic, readonly) bool hasText;
-@property (nonatomic, readonly) bool hasTextColor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isBold;
 @property (nonatomic) bool isEmphasized;
@@ -34,11 +24,6 @@
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)glyph;
-- (bool)hasGlyph;
-- (bool)hasIsBold;
-- (bool)hasIsEmphasized;
-- (bool)hasText;
-- (bool)hasTextColor;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

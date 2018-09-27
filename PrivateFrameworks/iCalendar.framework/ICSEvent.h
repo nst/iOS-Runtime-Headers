@@ -85,7 +85,8 @@
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 - (id)attendeeEmailAddresses;
-- (id)entityWithParentEntity:(id)arg1;
+- (id)entityWithParentEntity:(id)arg1 withCalendar:(id)arg2;
+- (id)entityWithParentEntity:(id)arg1 withCalendar:(id)arg2 withCorrectnessFlag:(bool*)arg3;
 - (id)firstValueOfPropertyForName:(id)arg1;
 - (int)method;
 

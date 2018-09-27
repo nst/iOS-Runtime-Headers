@@ -17,8 +17,8 @@
     id /* block */  _ak_useIDAction;
     NSString * _ak_username;
     long long  _alertStyle;
-    id  _codeEntryObserver;
     <AKBasicLoginAlertControllerDelegate> * _delegate;
+    <NSObject> * _didEnterCodeObserver;
     NSString * _generatedCode;
 }
 
@@ -44,8 +44,15 @@
 @property (nonatomic, copy) NSString *username;
 
 - (void).cxx_destruct;
+- (void)_beginObservingDidEnterCodeNotifications;
+- (void)_clearPasswordField;
+- (void)_didEnterCode:(id)arg1;
+- (void)_dismissAndShowiForgot:(id)arg1;
+- (void)_endObservingDidEnterCodeNotifications;
 - (id)_interpolatedReasonString;
 - (void)_jiggleTheAlert;
+- (id)_passwordField;
+- (void)_passwordFieldDidChange:(id)arg1;
 - (void)_setupAuthenticateAndCancelButtons;
 - (void)_setupViewControllerForAlertStyle;
 - (void)_setupViewControllerForDefaultStyle;
@@ -66,7 +73,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (bool)disablesAutomaticKeyboardDismissal;
-- (void)dismissAndShowiForgot;
 - (id /* block */)forgotIDAction;
 - (id /* block */)forgotPasswordAction;
 - (id)generatedCode;

@@ -35,6 +35,7 @@
 - (id /* block */)errorHandler;
 - (id)info;
 - (id)initWithConnectionInfo:(id)arg1 errorHandler:(id /* block */)arg2 reconnectHandler:(id /* block */)arg3;
+- (void)invalidate;
 - (id)lastLifecycleNotification;
 - (void)performRemoteBlock:(id /* block */)arg1;
 - (void)performRemoteBlock:(id /* block */)arg1 withErrorHandler:(id /* block */)arg2;

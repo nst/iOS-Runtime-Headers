@@ -5,6 +5,7 @@
 
 @required
 
+- (void)addGestureRecognizersToView:(UIView *)arg1;
 - (void)configureForHighlightMode;
 - (void)configureForSelectionMode;
 - (void)rangedMagnifierWithState:(long long)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;

@@ -2,32 +2,32 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBIntentSlotResolutionMulticardinalResult : PBCodable <NSCopying> {
-    NSMutableArray * _resolutionResults;
-    PBUnknownFields * _unknownFields;
+@interface _INPBIntentSlotResolutionMulticardinalResult : PBCodable <NSCopying, NSSecureCoding, _INPBIntentSlotResolutionMulticardinalResult> {
+    struct { }  _has;
+    NSArray * _resolutionResults;
 }
 
-@property (nonatomic, retain) NSMutableArray *resolutionResults;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *resolutionResults;
+@property (nonatomic, readonly) unsigned long long resolutionResultsCount;
+@property (readonly) Class superclass;
 
-+ (id)options;
 + (Class)resolutionResultsType;
 
 - (void).cxx_destruct;
 - (void)addResolutionResults:(id)arg1;
 - (void)clearResolutionResults;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)resolutionResults;
 - (id)resolutionResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resolutionResultsCount;
 - (void)setResolutionResults:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,18 +3,22 @@
  */
 
 @interface PHAVisionServicePersistenceDelegate : NSObject <PVPersistenceDelegate> {
-    unsigned int  _activeFaceAlgorithmVersion;
+    unsigned int  _faceAlgorithmUmbrellaVersion;
     bool  _personBuilderMergeCandidatesDisabled;
     PHAManager * _photoAnalysisManager;
     PHPhotoLibrary * _photoLibrary;
+    unsigned int  _sceneAlgorithmUmbrellaVersion;
 }
 
-@property (nonatomic) unsigned int activeFaceAlgorithmVersion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int faceAlgorithmUmbrellaVersion;
 @property (readonly) unsigned long long hash;
-@property bool personBuilderMergeCandidatesDisabled;
+@property (nonatomic) bool personBuilderMergeCandidatesDisabled;
+@property (nonatomic) unsigned int sceneAlgorithmUmbrellaVersion;
 @property (readonly) Class superclass;
+
++ (void)enumerateFetchResult:(id)arg1 withBatchSize:(unsigned long long)arg2 handler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_buildPersonsFromUpdatedFaceGroups:(id)arg1 faceClusterer:(id)arg2 keyFaceUpdateBlock:(id /* block */)arg3 canceler:(id)arg4 context:(id)arg5;
@@ -22,7 +26,6 @@
 - (bool)_cleanupMergeCandidatesForVerifiedPersons:(id)arg1 inLibrary:(id)arg2 minimumFaceGroupSize:(unsigned long long)arg3 canceler:(id)arg4 error:(id*)arg5;
 - (bool)_completePersonBuildingWithPersonsToUpdate:(id)arg1 facesToRemoveByPerson:(id)arg2 facesToAddByPerson:(id)arg3 updateFaceGroup:(id)arg4 newMergeCandidatePairs:(id)arg5 newInvalidMergeCandidatePairs:(id)arg6 faceInFaceGroupByCSN:(id)arg7 personCache:(id)arg8 keyFaceUpdateBlock:(id /* block */)arg9 canceler:(id)arg10 context:(id)arg11 error:(id*)arg12;
 - (id)_duplicateFaceCSNsOnAssetForPerson:(id)arg1 faceCSNsOnPerson:(id)arg2 faceByCSNCache:(id)arg3;
-- (void)_enumerateFetchResult:(id)arg1 withBatchSize:(unsigned long long)arg2 handler:(id /* block */)arg3;
 - (void)_enumeratePersonsWithLocalIdentifiers:(id)arg1 fetchOptions:(id)arg2 personCache:(id)arg3 usingBlock:(id /* block */)arg4;
 - (id)_faceToFaceCountMapForFaces:(id)arg1;
 - (id)_fetchPHFacesForFaceIdentifiers:(id)arg1;
@@ -30,7 +33,7 @@
 - (id)_fetchResultForUngroupedFacesWithNonZeroClusterSequenceNumberInPhotoLibrary:(id)arg1;
 - (void)_getMergeCandidates:(id)arg1 invalidMergeCandidates:(id)arg2 forPersonsWithLocalIdentifiers:(id)arg3;
 - (void)_getRejectedTrainingFaceCSNs:(id*)arg1 rejectedFaceCSNs:(id*)arg2 rejectedPersonLocalIdentifiers:(id*)arg3 forPerson:(id)arg4 faceInFaceGroupByCSN:(id)arg5;
-- (void)_getTrainingFacesByPerson:(id*)arg1 confirmedFaceCSNs:(id*)arg2 faceCSNsByPerson:(id*)arg3 faceCSNsByMigratedPerson:(id*)arg4 mergeCandidates:(id*)arg5 invalidMergeCandidates:(id*)arg6 rejectedPersonsByPerson:(id*)arg7 faceInFaceGroupByCSN:(id*)arg8 inFaces:(id)arg9 personCache:(id)arg10 canceler:(id)arg11;
+- (void)_getTrainingFacesByPerson:(id*)arg1 confirmedFaceCSNs:(id*)arg2 faceCSNsByPerson:(id*)arg3 faceCSNsByMigratedPerson:(id*)arg4 faceCSNsByQuickClassificationPerson:(id*)arg5 mergeCandidates:(id*)arg6 invalidMergeCandidates:(id*)arg7 rejectedPersonsByPerson:(id*)arg8 faceInFaceGroupByCSN:(id*)arg9 inFaces:(id)arg10 personCache:(id)arg11 canceler:(id)arg12;
 - (unsigned long long)_level0ClusterIdForFaceCSN:(unsigned long long)arg1 level0Clusters:(id)arg2;
 - (id)_localIdentifiersOfUnverifiedPersonsAssociatedWithFaceGroups:(id)arg1 withCanceler:(id)arg2;
 - (id)_pvFaceprintForPHFace:(id)arg1;
@@ -39,7 +42,6 @@
 - (bool)_ungroupFaceClusterSequenceNumbers:(id)arg1 canceler:(id)arg2 error:(id*)arg3;
 - (void)_updateFaceCSNsToAddByPerson:(id)arg1 faceCSNsToRemoveByPerson:(id)arg2 faceInFaceGroupByCSN:(id)arg3 faceCSNsByPersonLocalIdentifier:(id)arg4 faceCSNsByMigratedPersonLocalIdentifier:(id)arg5 personsToUpdate:(id)arg6;
 - (id)_updatedFaceGroupByFGLocalIdentifierFromClusterCSNsWithCanceler:(id)arg1 fetchLimit:(unsigned long long)arg2;
-- (unsigned int)activeFaceAlgorithmVersion;
 - (id)allAlgorithmicFaceGroups:(id*)arg1;
 - (id)allPersons:(id*)arg1;
 - (id)assetForIdentifier:(id)arg1 error:(id*)arg2;
@@ -63,6 +65,7 @@
 - (bool)deleteEmptyGroupsAndReturnError:(id*)arg1;
 - (id)deterministicallyOrderedFaceIdentifiersWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2;
 - (id)dirtyFaceCropsWithLimit:(unsigned long long)arg1;
+- (unsigned int)faceAlgorithmUmbrellaVersion;
 - (id)faceAssociatedWithFaceCrop:(id)arg1;
 - (id)faceLocalIdentifiersInFaceGroupWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)faceprintsByFaceLocalIdentifiers:(id)arg1 version:(unsigned int)arg2 error:(id*)arg3;
@@ -70,7 +73,7 @@
 - (id)facesForClusteringWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(bool)arg3;
 - (id)facesForFaceLocalIdentifiers:(id)arg1 error:(id*)arg2;
 - (id)facesForPersonWithLocalIdentifier:(id)arg1 error:(id*)arg2;
-- (id)facesFromAsset:(id)arg1 error:(id*)arg2;
+- (id)facesFromAsset:(id)arg1;
 - (id)facesFromFaceGroupWithMostNumberOfFacesOnPerson:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)fetchAssetWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)fetchFaceWithClusterSequenceNumber:(id)arg1 error:(id*)arg2;
@@ -94,6 +97,7 @@
 - (id)newClusteringEligibleFacesFetchPredicate;
 - (id)newUnclusteredClusteringEligibleFacesFetchOptions;
 - (id)newUnclusteredFacesFetchPredicate;
+- (id)otherFacesOnAssetWithFace:(id)arg1 options:(id)arg2;
 - (bool)persistChangesToAlgorithmicFaceGroups:(id)arg1 faceCSNByLocalIdentifierForNewlyClusteredFaces:(id)arg2 faceCSNsOfUnclusteredFaces:(id)arg3 localIdentifiersOfUnclusteredFaces:(id)arg4 persistenceCompletionBlock:(id /* block */)arg5 canceler:(id)arg6 error:(id*)arg7;
 - (bool)persistFaces:(id)arg1 deleteFaces:(id)arg2 forAsset:(id)arg3 persistedFaces:(id*)arg4 error:(id*)arg5;
 - (bool)persistGeneratedFaceCrops:(id)arg1 error:(id*)arg2;
@@ -112,9 +116,11 @@
 - (bool)removeAutoAssignedFacesFromVerifiedPersonsAndPrepareForPersonBuilding:(id)arg1 canceler:(id)arg2 error:(id*)arg3;
 - (bool)resetClusterSequenceNumberOfFacesWithLocalIdentifiers:(id)arg1 error:(id*)arg2;
 - (bool)resetLibraryClustersWithCanceler:(id)arg1 error:(id*)arg2;
-- (void)setActiveFaceAlgorithmVersion:(unsigned int)arg1;
+- (unsigned int)sceneAlgorithmUmbrellaVersion;
+- (void)setFaceAlgorithmUmbrellaVersion:(unsigned int)arg1;
 - (bool)setKeyFaceOfAlgorithmicFaceGroupToFaceWithClusterSequenceNumbers:(id)arg1 error:(id*)arg2;
 - (void)setPersonBuilderMergeCandidatesDisabled:(bool)arg1;
+- (void)setSceneAlgorithmUmbrellaVersion:(unsigned int)arg1;
 - (id)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(id)arg1 faceClusterer:(id)arg2 canceler:(id)arg3 context:(id)arg4 error:(id*)arg5;
 - (id)unclusteredClusteringEligibleFaceLocalIdentifiers:(id*)arg1;
 - (bool)ungroupFaceClusterSequenceNumbers:(id)arg1 batchSizeForUnclusteringFaces:(unsigned long long)arg2 canceler:(id)arg3 error:(id*)arg4;

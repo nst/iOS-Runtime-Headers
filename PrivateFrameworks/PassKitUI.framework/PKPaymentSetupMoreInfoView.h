@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupMoreInfoView : UIView {
+@interface PKPaymentSetupMoreInfoView : UIScrollView {
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _boundSize;
     long long  _context;
     UIImageView * _customImageView;
     PKTableHeaderView * _headerView;
@@ -25,5 +29,6 @@
 - (void)layoutSubviews;
 - (id)moreInfoItem;
 - (id)pass;
+- (void)pk_applyAppearance:(id)arg1;
 
 @end

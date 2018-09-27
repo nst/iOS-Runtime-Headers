@@ -3,17 +3,19 @@
  */
 
 @interface HMFTimer : HMFObject {
-    NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFTimerDelegate> * _delegate;
+    NSDate * _fireDate;
     unsigned long long  _leeway;
+    HMFUnfairLock * _lock;
     unsigned long long  _options;
+    NSObject<OS_dispatch_queue> * _queue;
     bool  _running;
     double  _timeInterval;
     NSObject<OS_dispatch_source> * _timer;
 }
 
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property <HMFTimerDelegate> *delegate;
+@property (readonly, copy) NSDate *fireDate;
 @property (nonatomic, readonly) unsigned long long leeway;
 @property (nonatomic, readonly) unsigned long long options;
 @property (getter=isRunning, nonatomic) bool running;
@@ -23,18 +25,13 @@
 + (id)shortDescription;
 
 - (void).cxx_destruct;
-- (void)_fire;
-- (void)_handleExpiration;
-- (void)_kick;
-- (void)_resume;
-- (void)_suspend;
-- (id)clientQueue;
+- (void)__fire;
+- (void)__handleExpiration;
+- (id)attributeDescriptions;
 - (void)dealloc;
-- (id)debugDescription;
 - (id)delegate;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (void)fire;
+- (id)fireDate;
 - (id)init;
 - (id)initWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
 - (bool)isRunning;
@@ -43,8 +40,8 @@
 - (unsigned long long)options;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
+- (void)setFireDate:(id)arg1;
 - (void)setRunning:(bool)arg1;
-- (id)shortDescription;
 - (void)suspend;
 - (double)timeInterval;
 - (id)timer;

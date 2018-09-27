@@ -3,6 +3,7 @@
  */
 
 @interface WBSCloudHistoryStore : NSObject <WBSCloudHistoryDataStore> {
+    NSOperationQueue * _cloudKitOperationQueue;
     WBSCloudHistoryConfiguration * _configuration;
     CKDatabase * _database;
     NSObject<OS_dispatch_queue> * _databaseQueue;
@@ -25,6 +26,7 @@
 - (void)_resetRecordZone;
 - (void)_saveCloudHistoryVisits:(id)arg1 tombstones:(id)arg2 longLivedOperationPersistenceCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_saveRecords:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_scheduleOperation:(id)arg1;
 - (bool)_shouldTryToResetRecordZoneForError:(id)arg1;
 - (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(id /* block */)arg1;
 - (void)fetchRecordsWithServerChangeTokenData:(id)arg1 completion:(id /* block */)arg2;

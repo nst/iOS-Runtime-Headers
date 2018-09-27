@@ -37,6 +37,7 @@
 - (unsigned long long)hash;
 - (int)identifier;
 - (bool)isEqual:(id)arg1;
+- (bool)isLocal;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setDeviceInfoDeprecated:(id)arg1;

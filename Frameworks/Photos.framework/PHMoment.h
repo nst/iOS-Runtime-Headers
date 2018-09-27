@@ -3,7 +3,6 @@
  */
 
 @interface PHMoment : PHAssetCollection {
-    NSData * _approximateLocationData;
     short  _generationType;
     NSDate * _modificationDate;
     NSDate * _representativeDate;
@@ -16,7 +15,7 @@
 @property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, readonly) NSDate *representativeDate;
 
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
@@ -25,8 +24,8 @@
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_cacheLocationWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)_decodeTitlesIfNeeded;
-- (id)approximateLocation;
 - (bool)canPerformEditOperation:(long long)arg1;
 - (bool)canShowAvalancheStacks;
 - (Class)changeRequestClass;

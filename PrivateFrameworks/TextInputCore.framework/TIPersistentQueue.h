@@ -6,7 +6,7 @@
     NSURL * _presentedItemURL;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)dequeueObjects:(id /* block */)arg1;
 - (void)enqueueObjects:(id /* block */)arg1;
 - (id)initWithURL:(id)arg1;

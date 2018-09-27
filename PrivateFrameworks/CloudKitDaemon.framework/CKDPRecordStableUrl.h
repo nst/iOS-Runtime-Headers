@@ -3,13 +3,16 @@
  */
 
 @interface CKDPRecordStableUrl : PBCodable <NSCopying> {
+    NSString * _displayedHostname;
     NSData * _encryptedPublicSharingKey;
     NSData * _protectedFullToken;
     NSString * _routingKey;
     NSData * _shortTokenHash;
 }
 
+@property (nonatomic, retain) NSString *displayedHostname;
 @property (nonatomic, retain) NSData *encryptedPublicSharingKey;
+@property (nonatomic, readonly) bool hasDisplayedHostname;
 @property (nonatomic, readonly) bool hasEncryptedPublicSharingKey;
 @property (nonatomic, readonly) bool hasProtectedFullToken;
 @property (nonatomic, readonly) bool hasRoutingKey;
@@ -23,7 +26,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)displayedHostname;
 - (id)encryptedPublicSharingKey;
+- (bool)hasDisplayedHostname;
 - (bool)hasEncryptedPublicSharingKey;
 - (bool)hasProtectedFullToken;
 - (bool)hasRoutingKey;
@@ -34,6 +39,7 @@
 - (id)protectedFullToken;
 - (bool)readFrom:(id)arg1;
 - (id)routingKey;
+- (void)setDisplayedHostname:(id)arg1;
 - (void)setEncryptedPublicSharingKey:(id)arg1;
 - (void)setProtectedFullToken:(id)arg1;
 - (void)setRoutingKey:(id)arg1;

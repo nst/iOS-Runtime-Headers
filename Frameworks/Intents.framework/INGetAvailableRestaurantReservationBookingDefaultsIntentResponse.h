@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetAvailableRestaurantReservationBookingDefaultsIntentResponse : INIntentResponse <INGetAvailableRestaurantReservationBookingDefaultsIntentResponseExport> {
+@interface INGetAvailableRestaurantReservationBookingDefaultsIntentResponse : INIntentResponse <INGetAvailableRestaurantReservationBookingDefaultsIntentResponseExport, INImageProxyInjecting> {
     NSDate * _defaultBookingDate;
     unsigned long long  _defaultPartySize;
     NSNumber * _maximumPartySize;
@@ -16,8 +16,8 @@
 @property (nonatomic, readonly) unsigned long long defaultPartySize;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSNumber *maximumPartySize;
-@property (nonatomic, retain) NSNumber *minimumPartySize;
+@property (nonatomic, copy) NSNumber *maximumPartySize;
+@property (nonatomic, copy) NSNumber *minimumPartySize;
 @property (nonatomic, copy) INImage *providerImage;
 @property (readonly) Class superclass;
 
@@ -25,7 +25,10 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (long long)code;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultBookingDate;
 - (unsigned long long)defaultPartySize;
 - (void)encodeWithCoder:(id)arg1;

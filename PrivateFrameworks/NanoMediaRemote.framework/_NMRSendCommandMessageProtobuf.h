@@ -3,6 +3,7 @@
  */
 
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying> {
+    NSString * _bundleID;
     int  _command;
     struct { 
         unsigned int timestamp : 1; 
@@ -14,7 +15,9 @@
     double  _timestamp;
 }
 
+@property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic) int command;
+@property (nonatomic, readonly) bool hasBundleID;
 @property (nonatomic) bool hasCommand;
 @property (nonatomic, readonly) bool hasOptions;
 @property (nonatomic) bool hasOriginIdentifier;
@@ -25,12 +28,14 @@
 
 - (void).cxx_destruct;
 - (int)StringAsCommand:(id)arg1;
+- (id)bundleID;
 - (int)command;
 - (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasBundleID;
 - (bool)hasCommand;
 - (bool)hasOptions;
 - (bool)hasOriginIdentifier;
@@ -41,6 +46,7 @@
 - (id)options;
 - (int)originIdentifier;
 - (bool)readFrom:(id)arg1;
+- (void)setBundleID:(id)arg1;
 - (void)setCommand:(int)arg1;
 - (void)setHasCommand:(bool)arg1;
 - (void)setHasOriginIdentifier:(bool)arg1;

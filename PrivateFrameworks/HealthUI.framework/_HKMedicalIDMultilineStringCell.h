@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_updateTextColor;
 - (id)description;
 - (id)detailLabel;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
@@ -21,6 +22,7 @@
 - (void)setTitleLabel:(id)arg1;
 - (void)setUpConstraints;
 - (void)setupSubviews;
+- (void)tintColorDidChange;
 - (id)titleLabel;
 
 @end

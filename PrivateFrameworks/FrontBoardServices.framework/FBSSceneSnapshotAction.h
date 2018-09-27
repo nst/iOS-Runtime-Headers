@@ -21,12 +21,12 @@
 @property (nonatomic, copy) id /* block */ requestHandler;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_executeNextRequest;
 - (void)_finishAllRequests;
 - (bool)_remainsActionable;
 - (id)clientExtendedData;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (void)executeRequestsWithHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2 expirationHandler:(id /* block */)arg3;
 - (double)expirationInterval;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INStartWorkoutIntent : INIntent <ATXSlotResolver, INStartWorkoutIntentExport>
+@interface INStartWorkoutIntent : INIntent <INStartWorkoutIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -16,14 +16,18 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (id)_categoryVerb;
 - (id)_dictionaryRepresentation;
+- (long long)_intentCategory;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_typedBackingStore;
 - (id)domain;
 - (id)goalValue;
 - (id)initWithWorkoutName:(id)arg1 goalValue:(id)arg2 workoutGoalUnitType:(long long)arg3 workoutLocationType:(long long)arg4 isOpenEnded:(id)arg5;
 - (id)isOpenEnded;
+- (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
 - (id)parametersByName;
 - (void)setDomain:(id)arg1;
 - (void)setGoalValue:(id)arg1;
@@ -38,16 +42,17 @@
 - (long long)workoutLocationType;
 - (id)workoutName;
 
-// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+// Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-+ (bool)isRequired;
-+ (id)resolveIntentFromSlot:(id)arg1;
-+ (id)slotFromContext:(id)arg1;
+- (id)_intentsui_backgroundHandlingAssertionForAppBundleIdentifier:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
 - (void)apr_getArgsInto:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 
-- (id)contextMetadata;
+- (void)requestCard:(id)arg1 reply:(id /* block */)arg2;
+- (unsigned long long)servicePriorityForCardRequest:(id)arg1;
 
 @end

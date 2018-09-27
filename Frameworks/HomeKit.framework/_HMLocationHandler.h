@@ -22,7 +22,6 @@
 @property (nonatomic, retain) NSThread *myThread;
 @property (readonly) Class superclass;
 
-+ (id)createLocationHandler;
 + (id)sharedHandler;
 
 - (void).cxx_destruct;

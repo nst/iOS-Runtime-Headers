@@ -25,6 +25,7 @@
 - (bool)isKeyAsset;
 - (long long)position;
 - (id)proposedIdentifierForItemIdentifier:(id)arg1;
+- (id)proposedScopedIdentifierForItemScopedIdentifier:(id)arg1;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setKeyAsset:(bool)arg1;
 - (void)setPosition:(long long)arg1;

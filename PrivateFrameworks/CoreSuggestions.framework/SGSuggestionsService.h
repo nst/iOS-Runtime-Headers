@@ -2,23 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceFidesProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceSearchToShareProtocol> {
+@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceFidesProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol> {
+    _PASLock * _cacheLock;
     SGDaemonConnection * _daemonConnection;
-    SGKeyValueCacheFile * _emailCache;
     bool  _keepDirty;
     NSString * _machServiceName;
     <SGDSuggestManagerAllProtocol> * _managerForTesting;
-    NSString * _maybeFormat;
-    SGKeyValueCacheFile * _phoneCache;
     bool  _queuesRequestsIfBusy;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
-
++ (id)_daemonConnectionForMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(bool)arg3;
 + (id)filteredSearchableItemsFromItems:(id)arg1;
++ (bool)hasEntitlement:(id)arg1;
 + (void)initialize;
 + (bool)isHarvestingSupported;
 + (void)prepareForQuery;
@@ -28,13 +23,11 @@
 + (id)serviceForInternal;
 + (id)serviceForMail;
 + (id)serviceForMessages;
-+ (id)serviceForSearchToShare;
 + (id)wantedSearchableItemsFromItems:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addSearchableItemMetadata:(id)arg1 htmlData:(id)arg2 completion:(id /* block */)arg3;
 - (id)_remoteSuggestionManager;
-- (id)_remoteSuggestionManagerForSTS;
 - (bool)addInteractions:(id)arg1 bundleId:(id)arg2 error:(id*)arg3;
 - (void)addInteractions:(id)arg1 bundleId:(id)arg2 withCompletion:(id /* block */)arg3;
 - (bool)addSearchableItems:(id)arg1 error:(id*)arg2;
@@ -80,7 +73,6 @@
 - (void)contactMatchesWithContactIdentifiers:(id)arg1 limitTo:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
 - (bool)daemonExit:(id*)arg1;
 - (void)daemonExitWithCompletion:(id /* block */)arg1;
-- (void)dealloc;
 - (void)deleteCloudKitZoneWithCompletion:(id /* block */)arg1;
 - (void)deleteInteractionsWithBundleId:(id)arg1 completion:(id /* block */)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1 groupIdentifiers:(id)arg2 completion:(id /* block */)arg3;
@@ -90,10 +82,6 @@
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2 completion:(id /* block */)arg3;
 - (bool)deregisterContactsChangeObserverWithToken:(id)arg1;
 - (bool)deregisterEventsChangeObserverWithToken:(id)arg1;
-- (void)didEndSearch:(id)arg1;
-- (void)didEngageResult:(id)arg1;
-- (void)didEngageSuggestion:(id)arg1;
-- (void)didStartSearch:(id)arg1;
 - (bool)drainQueueCompletely:(id*)arg1;
 - (void)drainQueueCompletelyWithCompletion:(id /* block */)arg1;
 - (id)emailAddressIsSignificant:(id)arg1 error:(id*)arg2;
@@ -107,8 +95,8 @@
 - (void)fullDownloadRequestBatch:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (id)harvestedSuggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (void)harvestedSuggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
-- (bool)hasEntitlement:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2;
+- (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(bool)arg3;
 - (bool)isEnabledWithError:(id*)arg1;
 - (void)isEventCandidateForURL:(id)arg1 andTitle:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)keepDirty:(bool)arg1;
@@ -125,10 +113,8 @@
 - (void)logMetricSuggestedContactDetailUsed:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
 - (void)messagesToRefreshWithCompletion:(id /* block */)arg1;
 - (id)messagesToRefreshWithError:(id*)arg1;
-- (void)modelMetadataUpdateWithPayload:(id)arg1 completion:(id /* block */)arg2;
 - (id)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(bool)arg3 error:(id*)arg4;
 - (void)namesForDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(bool)arg3 withCompletion:(id /* block */)arg4;
-- (void)namesForUnknownDetail:(id)arg1 limitTo:(unsigned long long)arg2 prependMaybe:(bool)arg3 withCompletion:(id /* block */)arg4;
 - (id)originFromRecordId:(id)arg1 error:(id*)arg2;
 - (void)originFromRecordId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)planReceivedFromServerWithPayload:(id)arg1 completion:(id /* block */)arg2;
@@ -139,10 +125,9 @@
 - (bool)prepareForRealtimeExtraction:(id*)arg1;
 - (void)prepareForRealtimeExtractionWithCompletion:(id /* block */)arg1;
 - (void)purgeSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2 completion:(id /* block */)arg3;
-- (void)queryPredictionsFeedbackReportForConversation:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)queryPredictionsForConversation:(id)arg1 count:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (bool)queuesRequestsIfBusy;
 - (void)realtimeSuggestionsFromURL:(id)arg1 title:(id)arg2 HTMLPayload:(id)arg3 extractionDate:(id)arg4 withCompletion:(id /* block */)arg5;
+- (void)refreshCacheSnapshot;
 - (id)registerContactsChangeObserver:(id /* block */)arg1;
 - (id)registerEventsChangeObserver:(id /* block */)arg1;
 - (bool)rejectContact:(id)arg1 error:(id*)arg2;
@@ -157,8 +142,6 @@
 - (void)rejectEventByRecordId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)rejectRecord:(id)arg1 error:(id*)arg2;
 - (void)rejectRecord:(id)arg1 withCompletion:(id /* block */)arg2;
-- (id)relevantABRecordIDsWithLimit:(long long)arg1 error:(id*)arg2;
-- (void)relevantABRecordIDsWithLimit:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (bool)removeAllStoredPseudoContacts:(id*)arg1;
 - (void)removeAllStoredPseudoContactsWithCompletion:(id /* block */)arg1;
 - (bool)reportMessagesFound:(id)arg1 lost:(id)arg2 error:(id*)arg3;
@@ -167,9 +150,6 @@
 - (void)resetConfirmationAndRejectionHistoryWithCompletion:(id /* block */)arg1;
 - (bool)resolveFullDownloadRequests:(id)arg1 error:(id*)arg2;
 - (void)resolveFullDownloadRequests:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)searchViewDidAppear:(id)arg1;
-- (void)searchViewDidDisappear:(id)arg1;
-- (void)sendCustomFeedback:(id)arg1;
 - (bool)sendRTCLogs:(id*)arg1;
 - (void)setManagerForTesting:(id)arg1;
 - (void)setQueuesRequestsIfBusy:(bool)arg1;

@@ -13,7 +13,6 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithSource:(id)arg1;
 - (id)source;
 

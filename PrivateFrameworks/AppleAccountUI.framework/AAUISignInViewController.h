@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUISignInViewController : UIViewController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate> {
+@interface AAUISignInViewController : UIViewController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     AAUIHeaderView * _accountsHeaderView;
     long long  _akServiceType;
     bool  _allowsAccountCreation;
@@ -61,9 +61,9 @@
 - (void)_nextButtonSelected:(id)arg1;
 - (id)_passwordCell;
 - (id)_passwordFieldIndexPath;
-- (void)_presentAppleIDPrivacyInformationPane;
 - (void)_presentCreateAppleIDPane;
 - (void)_presentForgotAppleIDPane;
+- (void)_prewarmSignInFlowIfApplicable;
 - (void)_repairCloudAccountWithAuthenticationResults:(id)arg1;
 - (void)_setAkServiceType:(long long)arg1;
 - (void)_setEnabled:(bool)arg1;
@@ -105,7 +105,6 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (bool)textFieldShouldReturn:(id)arg1;
-- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;

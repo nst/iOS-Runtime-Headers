@@ -7,6 +7,7 @@
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic, copy) NSString *flowScriptHint;
 @property (nonatomic, copy) NSArray *scriptIdentifiers;
+@property (nonatomic, retain) SACFAbstractClientCommand *signalPayload;
 
 + (id)signal;
 + (id)signalWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,5 +22,7 @@
 - (void)setDomain:(id)arg1;
 - (void)setFlowScriptHint:(id)arg1;
 - (void)setScriptIdentifiers:(id)arg1;
+- (void)setSignalPayload:(id)arg1;
+- (id)signalPayload;
 
 @end

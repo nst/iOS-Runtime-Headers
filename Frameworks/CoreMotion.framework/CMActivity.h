@@ -24,9 +24,12 @@
             unsigned int wifiHint : 1; 
             unsigned int btHint : 1; 
         } vehicularFlags; 
+        int vehicularConfidence; 
         float drivingStowedLikelihoodSum; 
         float drivingArmLikelihoodSum; 
         float ssLikelihoodSum; 
+        int workoutDetectionType; 
+        double workoutDetectionTime; 
     }  fActivity;
 }
 
@@ -40,14 +43,14 @@
 
 + (bool)supportsSecureCoding;
 
-- (struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; struct { unsigned int x_14_1_1 : 1; unsigned int x_14_1_2 : 1; unsigned int x_14_1_3 : 1; unsigned int x_14_1_4 : 1; unsigned int x_14_1_5 : 1; } x14; float x15; float x16; float x17; })activity;
+- (struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; struct { unsigned int x_14_1_1 : 1; unsigned int x_14_1_2 : 1; unsigned int x_14_1_3 : 1; unsigned int x_14_1_4 : 1; unsigned int x_14_1_5 : 1; } x14; int x15; float x16; float x17; float x18; int x19; double x20; })activity;
 - (int)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasExitedVehicle;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; struct { unsigned int x_14_1_1 : 1; unsigned int x_14_1_2 : 1; unsigned int x_14_1_3 : 1; unsigned int x_14_1_4 : 1; unsigned int x_14_1_5 : 1; } x14; float x15; float x16; float x17; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; struct { unsigned int x_14_1_1 : 1; unsigned int x_14_1_2 : 1; unsigned int x_14_1_3 : 1; unsigned int x_14_1_4 : 1; unsigned int x_14_1_5 : 1; } x14; int x15; float x16; float x17; float x18; int x19; double x20; })arg1;
 - (bool)isDriving;
 - (bool)isMoving;
 - (bool)isRunning;

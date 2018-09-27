@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamControlMessageHandler : HMFObject <HMDCameraSettingsControlManagerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging, HMFTimerDelegate> {
+@interface HMDCameraStreamControlMessageHandler : HMFObject <HMDCameraStreamControlManagerDelegate, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
     id /* block */  _messageSender;
-    HMFMessageDispatcher * _msgDispatcher;
     HMFNetMonitor * _networkMonitor;
     HMDNotificationRegistration * _notificationRegistration;
     NSUUID * _profileUniqueIdentifier;
@@ -14,7 +13,6 @@
     HMDService * _streamManagementService;
     HMDCameraStreamManagerSession * _streamSession;
     HMDCameraStreamSnapshotHandler * _streamSnapshotHandler;
-    HMDCameraSettingsControlManager * _streamStatusManager;
     HMDCameraSupportedConfigurationCache * _supportedConfigCache;
     NSUUID * _uniqueIdentifier;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -25,7 +23,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id /* block */ messageSender;
-@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) HMFNetMonitor *networkMonitor;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSUUID *profileUniqueIdentifier;
@@ -35,8 +32,7 @@
 @property (nonatomic, retain) HMDCameraStreamManagerSession *streamSession;
 @property (nonatomic, readonly, copy) NSString *streamSessionID;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
-@property (nonatomic, readonly) HMDCameraSettingsControlManager *streamStatusManager;
-@property (nonatomic, readonly) unsigned long long streamingStatus;
+@property (getter=isStreamingSessionInProgress, nonatomic, readonly) bool streamingSessionInProgress;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HMDCameraSupportedConfigurationCache *supportedConfigCache;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
@@ -49,12 +45,14 @@
 - (void)_handleReconfigureMessage:(id)arg1;
 - (void)_handleRemoteSetupMessage:(id)arg1;
 - (void)_handleSetAudioState:(id)arg1;
+- (void)_handleSetAudioVolume:(id)arg1;
 - (void)_handleStartMessage:(id)arg1;
 - (void)_handleStopMessage:(id)arg1;
 - (bool)_isNegotiateMessage:(id)arg1;
 - (bool)_isReconfigureMessage:(id)arg1;
 - (bool)_isRemoteSetupMessage:(id)arg1;
 - (bool)_isSetAudioStreamSettingMessage:(id)arg1;
+- (bool)_isSetAudioVolumeMessage:(id)arg1;
 - (bool)_isStartMessage:(id)arg1;
 - (bool)_isStopMessage:(id)arg1;
 - (void)_resetCurrentStreamState:(id)arg1;
@@ -62,6 +60,7 @@
 - (void)_stopStream:(id)arg1;
 - (id)accessory;
 - (void)dealloc;
+- (id)description;
 - (void)handleAccessoryIsNotReachable:(id)arg1;
 - (void)handleActivePhoneCallEstablishedNotification:(id)arg1;
 - (void)handleForegroundAppsNotification:(id)arg1;
@@ -69,15 +68,15 @@
 - (unsigned long long)hash;
 - (id)initWithWorkQueue:(id)arg1 streamSnapshotHandler:(id)arg2 messageSender:(id /* block */)arg3 accessory:(id)arg4 streamManagementService:(id)arg5 msgDispatcher:(id)arg6 profileUniqueIdentifier:(id)arg7 networkMonitor:(id)arg8 residentMessageHandler:(id)arg9;
 - (bool)isEqual:(id)arg1;
+- (bool)isStreamingSessionInProgress;
 - (id)logIdentifier;
 - (id /* block */)messageSender;
-- (id)msgDispatcher;
 - (id)networkMonitor;
 - (id)notificationRegistration;
 - (id)profileUniqueIdentifier;
 - (void)registerForMessages;
 - (id)residentMessageHandler;
-- (void)setMsgDispatcher:(id)arg1;
+- (void)setAudioVolume:(id)arg1 callback:(id /* block */)arg2;
 - (void)setNetworkMonitor:(id)arg1;
 - (void)setStreamSession:(id)arg1;
 - (void)setSupportedConfigCache:(id)arg1;
@@ -93,8 +92,6 @@
 - (id)streamSession;
 - (id)streamSessionID;
 - (id)streamSnapshotHandler;
-- (id)streamStatusManager;
-- (unsigned long long)streamingStatus;
 - (id)supportedConfigCache;
 - (void)timerDidFire:(id)arg1;
 - (id)uniqueIdentifier;

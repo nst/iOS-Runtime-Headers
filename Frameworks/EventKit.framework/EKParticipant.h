@@ -39,6 +39,7 @@
 - (id)comment;
 - (id)contactPredicate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)displayNameRaw;
 - (id)emailAddress;
 - (id)firstName;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
@@ -58,6 +59,7 @@
 - (id)proposedStartDate;
 - (id)proposedStartDateForEvent:(id)arg1;
 - (int)proposedStartDateStatus;
+- (id)semanticIdentifier;
 - (void)setComment:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddress:(id)arg1;

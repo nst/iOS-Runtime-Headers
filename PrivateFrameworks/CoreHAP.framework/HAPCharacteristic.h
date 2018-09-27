@@ -6,6 +6,7 @@
     HAPCharacteristicMetadata * _accessoryMetadata;
     bool  _eventNotificationsEnabled;
     NSNumber * _instanceID;
+    HMFUnfairLock * _lock;
     HAPCharacteristicMetadata * _metadata;
     unsigned long long  _properties;
     HAPService * _service;
@@ -58,6 +59,7 @@
 - (void)setProperties:(unsigned long long)arg1;
 - (void)setService:(id)arg1;
 - (void)setShouldValidateValueAfterReading:(bool)arg1;
+- (void)setStateNumber:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setValueUpdatedTime:(id)arg1;

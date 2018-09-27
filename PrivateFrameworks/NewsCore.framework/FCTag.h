@@ -18,6 +18,7 @@
     FCHeadlineTemplate * _defaultHeadlineTemplate;
     NSString * _defaultSectionID;
     NTPBFeedConfiguration * _feedConfiguration;
+    FCAssetHandle * _feedNavImageAssetHandle;
     NSString * _foregroundColorHexString;
     NSString * _groupTitleColorHexString;
     unsigned long long  _groupingEligibility;
@@ -28,12 +29,13 @@
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
     NSString * _identifier;
+    bool  _isArticleReadCountReportingEnabled;
     bool  _isDeprecated;
     bool  _isExplicitContent;
     bool  _isHidden;
     bool  _isNotificationEnabled;
     bool  _isPublic;
-    bool  _isRealTimeTrackingEnabed;
+    bool  _isRealTimeTrackingEnabled;
     NSDate * _loadDate;
     FCAssetHandle * _logoImageAssetHandle;
     long long  _minimumNewsVersion;
@@ -42,7 +44,7 @@
     FCAssetHandle * _nameImageAssetHandle;
     FCAssetHandle * _nameImageCompactAssetHandle;
     FCAssetHandle * _nameImageForDarkBackgroundAssetHandle;
-    struct UIEdgeInsets { 
+    struct FCEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
@@ -52,14 +54,14 @@
         double width; 
         double height; 
     }  _nameImageForDarkBackgroundSize;
-    struct UIEdgeInsets { 
+    struct FCEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
         double right; 
     }  _nameImageInsets;
     FCAssetHandle * _nameImageMaskAssetHandle;
-    struct UIEdgeInsets { 
+    struct FCEdgeInsets { 
         double top; 
         double left; 
         double bottom; 
@@ -131,6 +133,7 @@
 @property (nonatomic, readonly, copy) NSString *defaultSectionID;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NTPBFeedConfiguration *feedConfiguration;
+@property (nonatomic, readonly) FCAssetHandle *feedNavImageAssetHandle;
 @property (nonatomic, readonly) long long feedType;
 @property (nonatomic, readonly) FCColor *foregroundColor;
 @property (nonatomic, copy) NSString *foregroundColorHexString;
@@ -145,13 +148,14 @@
 @property (nonatomic, readonly) NSArray *iAdCategories;
 @property (nonatomic, readonly) NSArray *iAdKeywords;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly) bool isArticleReadCountReportingEnabled;
 @property (nonatomic, readonly) bool isBlockedExplicitContent;
 @property (nonatomic, readonly) bool isDeprecated;
 @property (nonatomic, readonly) bool isExplicitContent;
 @property (nonatomic, readonly) bool isHidden;
 @property (nonatomic, readonly) bool isNotificationEnabled;
 @property (nonatomic, readonly) bool isPublic;
-@property (nonatomic, readonly) bool isRealTimeTrackingEnabed;
+@property (nonatomic, readonly) bool isRealTimeTrackingEnabled;
 @property (nonatomic, readonly) bool isSubscribable;
 @property (nonatomic, readonly) bool isWhite;
 @property (nonatomic, readonly) bool isWhitelisted;
@@ -164,11 +168,11 @@
 @property (nonatomic, retain) FCAssetHandle *nameImageAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageCompactAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageForDarkBackgroundAssetHandle;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } nameImageForDarkBackgroundInsets;
+@property (nonatomic, readonly) struct FCEdgeInsets { double x1; double x2; double x3; double x4; } nameImageForDarkBackgroundInsets;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } nameImageForDarkBackgroundSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } nameImageInsets;
+@property (nonatomic, readonly) struct FCEdgeInsets { double x1; double x2; double x3; double x4; } nameImageInsets;
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskAssetHandle;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } nameImageMaskInsets;
+@property (nonatomic, readonly) struct FCEdgeInsets { double x1; double x2; double x3; double x4; } nameImageMaskInsets;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } nameImageMaskSize;
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetHQAssetHandle;
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetLQAssetHandle;
@@ -238,6 +242,7 @@
 - (id)description;
 - (id)feedConfiguration;
 - (id)feedIDForBin:(long long)arg1;
+- (id)feedNavImageAssetHandle;
 - (long long)feedType;
 - (id)foregroundColor;
 - (id)foregroundColorHexString;
@@ -260,6 +265,7 @@
 - (id)initWithData:(id)arg1 context:(id)arg2;
 - (id)initWithTagRecord:(id)arg1 assetManager:(id)arg2 interestToken:(id)arg3;
 - (id)initWithTagType:(unsigned long long)arg1 identifier:(id)arg2 name:(id)arg3;
+- (bool)isArticleReadCountReportingEnabled;
 - (bool)isAuthenticationSetup;
 - (bool)isBlockedExplicitContent;
 - (bool)isDeprecated;
@@ -271,7 +277,7 @@
 - (bool)isNotificationEnabled;
 - (bool)isPublic;
 - (bool)isPurchaseSetup;
-- (bool)isRealTimeTrackingEnabed;
+- (bool)isRealTimeTrackingEnabled;
 - (bool)isSubscribable;
 - (bool)isWhite;
 - (bool)isWhitelisted;
@@ -284,11 +290,11 @@
 - (id)nameImageAssetHandle;
 - (id)nameImageCompactAssetHandle;
 - (id)nameImageForDarkBackgroundAssetHandle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageForDarkBackgroundInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageForDarkBackgroundInsets;
 - (struct CGSize { double x1; double x2; })nameImageForDarkBackgroundSize;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageInsets;
 - (id)nameImageMaskAssetHandle;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
+- (struct FCEdgeInsets { double x1; double x2; double x3; double x4; })nameImageMaskInsets;
 - (struct CGSize { double x1; double x2; })nameImageMaskSize;
 - (id)nameImageMaskWidgetHQAssetHandle;
 - (id)nameImageMaskWidgetLQAssetHandle;

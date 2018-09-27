@@ -32,7 +32,6 @@
 - (bool)_addOutputWithNoConnections:(id)arg1 exceptionReason:(id*)arg2;
 - (bool)_addVideoPreviewLayer:(id)arg1 exceptionReason:(id*)arg2;
 - (bool)_addVideoPreviewLayerWithNoConnection:(id)arg1 exceptionReason:(id*)arg2;
-- (bool)_allowsRecordingOfPhotoFormats;
 - (void)_beginConfiguration;
 - (bool)_buildAndRunGraph;
 - (bool)_canAddConnection:(id)arg1 failureReason:(id*)arg2;
@@ -73,8 +72,9 @@
 - (id)_stopError;
 - (bool)_stopFigCaptureSession;
 - (void)_teardownFigCaptureSession;
+- (void)_updateDepthDataDeliveryEnabledForAllConnectedSourceDevices;
+- (void)_updateDepthDataDeliveryEnabledForSourceDevice:(id)arg1;
 - (void)_updateDeviceActiveFormatsAndActiveConnections;
-- (void)_updateSourceDeviceDepthDataDeliveryEnabled;
 - (void)addConnection:(id)arg1;
 - (void)addInput:(id)arg1;
 - (void)addInputWithNoConnections:(id)arg1;

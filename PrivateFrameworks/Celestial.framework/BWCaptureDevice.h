@@ -13,7 +13,7 @@
 - (long long)activeFormatIndex;
 - (int)captureStillImageNowWithSettings:(id)arg1;
 - (struct OpaqueCMClock { }*)clock;
-- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; float x17; unsigned char x18; double x19; int x20; int x21; int x22; float x23; float x24; int x25; int x26; unsigned char x27; int x28; int x29; float x30; float x31; int x32; int x33; int x34; int x35; long long x36; }*)arg1;
+- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1;
 - (float)maximumFrameRate;
 - (float)minimumFrameRate;
 - (int)position;

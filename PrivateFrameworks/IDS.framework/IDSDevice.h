@@ -117,6 +117,8 @@
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
 - (id)hmd_capabilities;
+- (id)hmd_handlesForService:(id)arg1;
+- (id)hmd_preferredHandleForService:(id)arg1;
 - (id)hmd_productInfo;
 - (id)hmd_version;
 

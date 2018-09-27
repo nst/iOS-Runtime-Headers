@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) FBSSceneTransitionContext *transitionContext;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)setTransitionContext:(id)arg1;

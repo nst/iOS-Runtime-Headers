@@ -21,18 +21,20 @@
         double totalValue; 
         unsigned long long count; 
     }  _mediumQualityResults;
+    NSString * _outputType;
 }
 
 @property (nonatomic, readonly) NSDictionary *measurementsDictionaryRepresentation;
 
 + (id)sharedInstance;
-+ (void)startMeasurements;
++ (void)startMeasurementsForOutputType:(id)arg1;
 + (void)stopMeasurements;
 
-- (id)_measurementsDictionaryForImageQuality:(long long)arg1;
-- (id)init;
+- (void).cxx_destruct;
+- (id)_measurementsDictionaryForOutputQuality:(long long)arg1;
+- (id)initWithOutputType:(id)arg1;
 - (id)measurementsDictionaryRepresentation;
-- (struct { double x1; double x2; double x3; unsigned long long x4; })measurementsForImageQuality:(long long)arg1;
-- (void)reportLatency:(double)arg1 forImageQuality:(long long)arg2;
+- (struct { double x1; double x2; double x3; unsigned long long x4; })measurementsForOutputQuality:(long long)arg1;
+- (void)reportLatency:(double)arg1 forOutputQuality:(long long)arg2;
 
 @end

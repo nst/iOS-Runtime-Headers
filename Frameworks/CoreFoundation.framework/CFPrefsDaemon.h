@@ -6,7 +6,7 @@
     NSObject<OS_xpc_object> * _listener;
     const char * _name;
     int  _role;
-    union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned long long x2; } * _shmem;
+    unsigned int * _shmem;
     struct __CFSet { } * _sourceCache;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
@@ -14,7 +14,7 @@
     bool  _testMode;
 }
 
-- (void)_initializeShmemPage:(union { /* ? */ }**)arg1;
+- (void)_initializeShmemPage:(void *)arg1; // needs 1 arg types, found 2: /* Warning: Unrecognized filer type: '' using 'void*' */ void***, unsigned int
 - (void)checkIn;
 - (void)flushDomainInAgents:(const char *)arg1;
 - (void)flushDomainInDaemon:(const char *)arg1;
@@ -32,7 +32,7 @@
 - (id)listener;
 - (void)logDomainInconsistencyForProcess:(int)arg1 message:(id)arg2 source:(id)arg3;
 - (int)role;
-- (union { struct _CFPrefsShmemEntry { int x_1_1_1; unsigned int x_1_1_2; } x1; unsigned long long x2; }*)shmem;
+- (/* Warning: Unrecognized filer type: '' using 'void*' */ void**)shmem:(SEL)arg1;
 - (void)synchronousWithSourceCache:(id /* block */)arg1;
 - (unsigned int)userID;
 - (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(bool)arg4 managed:(bool)arg5 managedUsesContainer:(bool)arg6 cloudStoreEntitlement:(id)arg7 cloudConfigurationPath:(struct __CFString { }*)arg8 performWithSourceLock:(id /* block */)arg9 afterReleasingSourceLock:(id /* block */)arg10;

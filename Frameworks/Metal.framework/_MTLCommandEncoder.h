@@ -12,6 +12,7 @@
 }
 
 @property (nonatomic, readonly) <MTLDevice> *device;
+@property (readonly) unsigned long long dispatchType;
 @property (getter=globalTraceObjectID, nonatomic) unsigned long long globalTraceObjectID;
 @property (copy) NSString *label;
 @property (nonatomic) unsigned long long numThisEncoder;
@@ -21,6 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)device;
+- (unsigned long long)dispatchType;
 - (void)endEncoding;
 - (void)filterCounterRangeWithFirstBatch:(unsigned int)arg1 lastBatch:(unsigned int)arg2 filterIndex:(unsigned int)arg3;
 - (id)formattedDescription:(unsigned long long)arg1;
@@ -29,6 +31,8 @@
 - (id)initWithCommandBuffer:(id)arg1;
 - (void)insertDebugSignpost:(id)arg1;
 - (id)label;
+- (void)memoryBarrierNotificationWithResources:(const id*)arg1 count:(unsigned long long)arg2;
+- (void)memoryBarrierNotificationWithScope:(unsigned long long)arg1;
 - (unsigned long long)numThisEncoder;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;

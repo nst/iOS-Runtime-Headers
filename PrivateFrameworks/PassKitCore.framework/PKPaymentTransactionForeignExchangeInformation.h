@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)destinationCurrencyAmount;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)exchangeRate;
@@ -23,6 +24,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToForeignExchangeInformation:(id)arg1;
 - (bool)isValid;
+- (unsigned long long)itemType;
 - (id)jsonDictionaryRepresentation;
 - (id)jsonString;
 - (id)recordTypesAndNames;

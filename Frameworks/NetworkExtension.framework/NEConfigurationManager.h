@@ -13,7 +13,6 @@
     <NEConfigurationManagerDelegate> * _delegate;
     NSString * _description;
     long long  _generation;
-    id /* block */  _getIndexDelegateCallback;
     bool  _hasReadPermission;
     bool  _hasVPNAPIEntitlement;
     NEHelper * _helper;
@@ -36,7 +35,6 @@
 @property (retain) NSKeyedUnarchiver *decoder;
 @property (retain) <NEConfigurationManagerDelegate> *delegate;
 @property long long generation;
-@property (copy) id /* block */ getIndexDelegateCallback;
 @property bool hasReadPermission;
 @property bool hasVPNAPIEntitlement;
 @property (readonly) NEHelper *helper;
@@ -72,7 +70,6 @@
 - (id)decodeConfigurationWithIdentifier:(id)arg1;
 - (id)decoder;
 - (id)delegate;
-- (void)deregisterForChangeNotifications;
 - (id)description;
 - (void)didLoadConfiguration:(id)arg1;
 - (void)didLoadConfiguration:(id)arg1 withSignature:(id)arg2;
@@ -83,7 +80,6 @@
 - (id)filterIndexWithFilter:(id)arg1;
 - (long long)generation;
 - (void)getCurrentIndexWithCompletionHandler:(id /* block */)arg1;
-- (id /* block */)getIndexDelegateCallback;
 - (void)handleApplicationsRemoved:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)handleFileRemovedWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePluginTypesRemoved:(id)arg1 configuration:(id)arg2 vpn:(id)arg3 updateSCPreferences:(struct __SCPreferences { }*)arg4;
@@ -92,6 +88,7 @@
 - (id)helper;
 - (id /* block */)incomingMessageHandler;
 - (id)init;
+- (id)initForAllUsers;
 - (id)initWithPluginType:(id)arg1;
 - (id)initWithUserUUID:(id)arg1;
 - (bool)isNEHelper;
@@ -131,7 +128,6 @@
 - (void)setDecoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGeneration:(long long)arg1;
-- (void)setGetIndexDelegateCallback:(id /* block */)arg1;
 - (void)setHasReadPermission:(bool)arg1;
 - (void)setHasVPNAPIEntitlement:(bool)arg1;
 - (void)setIncomingMessageHandler:(id /* block */)arg1;
@@ -141,9 +137,11 @@
 - (void)setLoadedConfigurations:(id)arg1;
 - (void)setLoadedIndex:(id)arg1;
 - (void)setSCPreferencesSignature:(id)arg1;
+- (void)showObsoleteAppAlert;
 - (void)syncWithSystemConfigurationWithAppNameCallback:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)triggerLocalAuthenticationForConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (void)updateSCPreferencesSignatureOnDisk;
+- (void)upgradeLegacyPluginConfigurationsWithUpgradeInfo:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (id)userUUID;
 
 @end

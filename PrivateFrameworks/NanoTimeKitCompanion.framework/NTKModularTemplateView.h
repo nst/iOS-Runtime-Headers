@@ -8,6 +8,7 @@
     NSDate * _timeTravelDate;
 }
 
+@property (nonatomic) bool canUseCurvedText;
 @property (nonatomic, retain) CLKComplicationTemplate *complicationTemplate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -32,6 +33,7 @@
 - (id)complicationTemplate;
 - (unsigned long long)highlightMode;
 - (void)setComplicationTemplate:(id)arg1;
+- (void)setComplicationTemplate:(id)arg1 reason:(long long)arg2;
 - (void)setContainsOverrideFaceColor:(id)arg1;
 - (void)setHighlightMode:(unsigned long long)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;

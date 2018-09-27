@@ -2,18 +2,32 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUICellularPlanTableCell : PSTableCell
+@interface PSUICellularPlanTableCell : PSTableCell {
+    PSUIBadgeView * _badgeView;
+    UILabel * _nameLabel;
+    UILabel * _numberLabel;
+    UILabel * _statusLabel;
+}
 
-+ (id)checkIcon;
-+ (id)spacerIcon;
+@property (nonatomic, retain) PSUIBadgeView *badgeView;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UILabel *numberLabel;
+@property (nonatomic, retain) UILabel *statusLabel;
 
-- (id)accessoryText;
++ (long long)cellStyle;
+
+- (void).cxx_destruct;
+- (id)badgeView;
 - (bool)canBeChecked;
-- (id)detailText;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (id)primaryText;
+- (bool)canReload;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)nameLabel;
+- (id)numberLabel;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setChecked:(bool)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBadgeView:(id)arg1;
+- (void)setNameLabel:(id)arg1;
+- (void)setNumberLabel:(id)arg1;
+- (void)setStatusLabel:(id)arg1;
+- (id)statusLabel;
 
 @end

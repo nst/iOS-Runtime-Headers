@@ -70,7 +70,7 @@
 + (id)sharedService;
 
 - (void).cxx_destruct;
-- (void)_reset;
+- (void)_resetDetails;
 - (void)addObserver:(id)arg1;
 - (unsigned long long)alternateRouteIndexForRoute:(id)arg1;
 - (id)alternateRoutes;
@@ -93,7 +93,7 @@
 - (id)etaRouteForRoute:(id)arg1;
 - (bool)guidancePromptsEnabled;
 - (int)headingOrientation;
-- (id)init;
+- (id)initPrivate;
 - (bool)isDetour;
 - (bool)isInVehicle;
 - (bool)isOpenForClient:(id)arg1;

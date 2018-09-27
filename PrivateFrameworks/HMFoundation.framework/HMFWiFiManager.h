@@ -2,39 +2,41 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFWiFiManager : HMFObject {
-    bool  _hmdWoWAssterted;
-    struct __WiFiManagerClient { } * _wifiClientReference;
-    struct __WiFiDeviceClient { } * _wifiDeviceReference;
-    bool  _wifiLinkState;
+@interface HMFWiFiManager : HMFObject <HMFWiFiManagerDataSourceDelegate> {
+    HMFMACAddress * _MACAddress;
+    NSString * _currentNetworkSSID;
+    <HMFWiFiManagerDataSource> * _dataSource;
+    HMFUnfairLock * _lock;
+    bool  _shouldAssertWoW;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic) bool hmdWoWAssterted;
-@property (nonatomic) struct __WiFiManagerClient { }*wifiClientReference;
-@property (nonatomic) struct __WiFiDeviceClient { }*wifiDeviceReference;
-@property (nonatomic) bool wifiLinkState;
+@property (readonly, copy) HMFMACAddress *MACAddress;
+@property (nonatomic, copy) NSString *currentNetworkSSID;
+@property (nonatomic, readonly) <HMFWiFiManagerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldAssertWoW;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (void)initialize;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)_initalizeWiFiDevice:(struct __WiFiDeviceClient { }*)arg1;
-- (void)dealloc;
-- (void)handleWiFiLinkChange:(bool)arg1;
-- (bool)hmdWoWAssterted;
+- (id)MACAddress;
+- (void)currentNetworkDidChangeForDataSource:(id)arg1;
+- (id)currentNetworkSSID;
+- (id)dataSource;
+- (void)dataSource:(id)arg1 didChangeLinkAvailability:(bool)arg2;
+- (void)dataSource:(id)arg1 didChangeWoWState:(bool)arg2;
 - (id)init;
+- (id)initWithWorkQueue:(id)arg1 dataSource:(id)arg2;
 - (void)releaseWoWAssertion;
-- (void)setHmdWoWAssterted:(bool)arg1;
-- (void)setWifiClientReference:(struct __WiFiManagerClient { }*)arg1;
-- (void)setWifiDeviceReference:(struct __WiFiDeviceClient { }*)arg1;
-- (void)setWifiLinkState:(bool)arg1;
-- (void)startWithWiFiDevice:(struct __WiFiDeviceClient { }*)arg1;
+- (void)setCurrentNetworkSSID:(id)arg1;
+- (void)setShouldAssertWoW:(bool)arg1;
+- (bool)shouldAssertWoW;
 - (void)takeWoWAssertion;
-- (struct __WiFiManagerClient { }*)wifiClientReference;
-- (struct __WiFiDeviceClient { }*)wifiDeviceReference;
-- (bool)wifiLinkState;
 - (id)workQueue;
 
 @end

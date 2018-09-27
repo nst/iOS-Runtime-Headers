@@ -33,6 +33,7 @@
     bool  _timeoutFired;
     id /* block */  _timeoutHandler;
     NSObject<OS_dispatch_source> * _timeoutTimer;
+    bool  _trackPeers;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -57,6 +58,7 @@
 @property (nonatomic) bool targetUserSession;
 @property (nonatomic) double timeout;
 @property (nonatomic, copy) id /* block */ timeoutHandler;
+@property (nonatomic) bool trackPeers;
 
 + (bool)supportsSecureCoding;
 
@@ -120,8 +122,10 @@
 - (void)setTargetUserSession:(bool)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTimeoutHandler:(id /* block */)arg1;
+- (void)setTrackPeers:(bool)arg1;
 - (bool)targetUserSession;
 - (double)timeout;
 - (id /* block */)timeoutHandler;
+- (bool)trackPeers;
 
 @end

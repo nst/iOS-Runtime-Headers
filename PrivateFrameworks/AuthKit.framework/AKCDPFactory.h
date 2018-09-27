@@ -8,6 +8,7 @@
 + (id)cdpErrorDomain;
 + (id)cdpIDMSRecordMIDKey;
 + (id)cdpIDMSRecordPRKKey;
++ (id)cdpStateUIController;
 + (id)context;
 + (id)contextWithAuthResults:(id)arg1;
 + (id)followUpController;

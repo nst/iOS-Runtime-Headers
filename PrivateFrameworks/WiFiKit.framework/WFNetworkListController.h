@@ -98,6 +98,7 @@
 - (void)_powerDidChangeNotification:(id)arg1;
 - (void)_powerStateChanged;
 - (void)_presentAssociationFailureAlertController:(id)arg1;
+- (void)_presentHotspotAssociationFailureAlertControllerForDevice:(id)arg1;
 - (void)_promptCredentialsForNetwork:(id)arg1 profile:(id)arg2;
 - (void)_promptForSecureWACDevice:(id)arg1;
 - (void)_promptHomeDownload;

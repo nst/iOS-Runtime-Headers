@@ -5,7 +5,7 @@
 @interface FLPreferencesFollowUpItemListViewController : PSListController <FLSpecifierTapHandlerDelegate> {
     FLSpecifierTapHandler * _actionHandler;
     UIViewController * _presentationContext;
-    <FLViewModel> * _topViewModel;
+    <FLViewModel> * _viewModel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)_dismissFlowWithError:(id)arg1;
 - (void)_showRadarPromptForItem:(id)arg1 action:(id)arg2;
-- (id)_topViewModel;
+- (id)_viewModel;
 - (void)actionTapped:(id)arg1;
 - (id)detailSpecifiersForFollowUpItem:(id)arg1;
 - (id)followUpItemSpecifiers;

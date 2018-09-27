@@ -12,7 +12,6 @@
 @property (readonly) Class superclass;
 
 + (id)sharedRequester;
-+ (void)useLocalProxy;
 + (void)useProxy:(Class)arg1;
 + (void)useRemoteProxy;
 

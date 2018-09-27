@@ -2,41 +2,54 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBGetCarPowerLevelStatusIntentResponse : PBCodable <NSCopying> {
+@interface _INPBGetCarPowerLevelStatusIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBGetCarPowerLevelStatusIntentResponse> {
     _INPBDouble * _chargePercentRemaining;
+    bool  _charging;
     _INPBDistance * _distanceRemaining;
     _INPBDouble * _fuelPercentRemaining;
-    PBUnknownFields * _unknownFields;
+    struct { 
+        unsigned int charging : 1; 
+    }  _has;
+    _INPBInteger * _minutesToFull;
 }
 
 @property (nonatomic, retain) _INPBDouble *chargePercentRemaining;
+@property (nonatomic) bool charging;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBDistance *distanceRemaining;
 @property (nonatomic, retain) _INPBDouble *fuelPercentRemaining;
 @property (nonatomic, readonly) bool hasChargePercentRemaining;
+@property (nonatomic) bool hasCharging;
 @property (nonatomic, readonly) bool hasDistanceRemaining;
 @property (nonatomic, readonly) bool hasFuelPercentRemaining;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (nonatomic, readonly) bool hasMinutesToFull;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _INPBInteger *minutesToFull;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)chargePercentRemaining;
+- (bool)charging;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)distanceRemaining;
 - (id)fuelPercentRemaining;
 - (bool)hasChargePercentRemaining;
+- (bool)hasCharging;
 - (bool)hasDistanceRemaining;
 - (bool)hasFuelPercentRemaining;
+- (bool)hasMinutesToFull;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
+- (id)minutesToFull;
 - (bool)readFrom:(id)arg1;
 - (void)setChargePercentRemaining:(id)arg1;
+- (void)setCharging:(bool)arg1;
 - (void)setDistanceRemaining:(id)arg1;
 - (void)setFuelPercentRemaining:(id)arg1;
-- (id)unknownFields;
+- (void)setHasCharging:(bool)arg1;
+- (void)setMinutesToFull:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

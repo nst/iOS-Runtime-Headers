@@ -4,12 +4,15 @@
 
 @interface _ATXAppLaunchHistogramManager : NSObject {
     long long  _SSIDPruningMethod;
+    long long  _actionConfirmsRejectsPruningMethod;
     long long  _aprConfirmsRejectsPruningMethod;
     long long  _aprIntentDonationPruningMethod;
+    NSObject<OS_dispatch_queue> * _backgroundSaverQueue;
     NSMutableDictionary * _categoricalHistograms;
     NSMutableDictionary * _histograms;
+    int  _maxActionConfirmsRejectsActionCount;
     int  _maxAprConfirmsRejectsIntentCount;
-    int  _maxIntentDonationIntentCount;
+    int  _maxAprIntentDonationIntentCount;
     int  _maxSSIDCount;
     NSDictionary * _parameters;
     bool  _persistentStore;
@@ -24,6 +27,8 @@
 
 - (void).cxx_destruct;
 - (id)categoricalHistogramForLaunchType:(long long)arg1;
+- (int)getHistogramMaxCategoryCountFromAsset:(id)arg1;
+- (unsigned long long)getHistogramPruningMethodFromAsset:(id)arg1;
 - (id)histogramForLaunchType:(long long)arg1;
 - (id)init;
 - (id)initAndPersist:(bool)arg1;

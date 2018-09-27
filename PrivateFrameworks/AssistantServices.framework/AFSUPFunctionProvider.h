@@ -28,6 +28,6 @@
 - (id)_tempInWeatherUnits:(id)arg1;
 - (id)init;
 - (id)initWithLocale:(id)arg1;
-- (id)stringForExpression:(id)arg1;
+- (id)stringForExpression:(id)arg1 containsPrivacySensitiveContents:(bool*)arg2;
 
 @end

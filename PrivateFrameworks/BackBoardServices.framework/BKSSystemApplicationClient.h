@@ -16,6 +16,7 @@
 @property (nonatomic) <BKSSystemApplicationClientDelegate> *delegate;
 @property (nonatomic) double systemIdleSleepInterval;
 
+- (void).cxx_destruct;
 - (void)_connect;
 - (void)_queue_handleWatchdogPing:(id)arg1;
 - (void)_sendMessageOfType:(long long)arg1 packer:(id /* block */)arg2;
@@ -23,7 +24,6 @@
 - (void)_sendMessageOfType:(long long)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 waitForReply:(bool)arg4 waitDuration:(unsigned long long)arg5;
 - (void)checkInAndWaitForDataMigration:(bool)arg1;
 - (void)connect;
-- (void)dealloc;
 - (id)delegate;
 - (void)finishBooting;
 - (id)initWithCalloutQueue:(id)arg1;

@@ -17,6 +17,7 @@
 + (int)pidFromEncodeIdentifier:(unsigned long long)arg1;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (unsigned long long)addHandle:(id)arg1;
 - (void)dealloc;
 - (id)description;

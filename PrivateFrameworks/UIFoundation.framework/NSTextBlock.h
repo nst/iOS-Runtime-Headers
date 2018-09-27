@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextBlock : NSObject <NSCoding, NSCopying> {
+@interface NSTextBlock : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     void * _blockPrimary;
     void * _blockSecondary;
     id  _otherParamVals;
@@ -13,6 +13,7 @@
 }
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (id)_attributeDescription;
 - (void)_createFloatStorage;

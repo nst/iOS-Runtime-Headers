@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVideoComponentVisibilityMonitor : SXVisibilityMonitor <SXScrollObserving>
+@interface SXVideoComponentVisibilityMonitor : SVVisibilityMonitor <SXScrollObserving>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

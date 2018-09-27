@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)action;
 - (id)copyWithContext:(id)arg1;
-- (id)initWithContext:(id)arg1 action:(id)arg2;
+- (id)initWithContext:(id)arg1 URL:(id)arg2 action:(id)arg3;
 
 @end

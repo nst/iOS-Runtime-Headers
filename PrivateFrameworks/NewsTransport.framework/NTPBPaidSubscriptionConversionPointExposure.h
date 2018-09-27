@@ -7,7 +7,9 @@
     NSString * _articleId;
     NSData * _articleViewingSessionId;
     NSData * _feedViewExposureId;
+    int  _groupType;
     struct { 
+        unsigned int groupType : 1; 
         unsigned int paidSubscriptionConversionPointExposureLocation : 1; 
         unsigned int paidSubscriptionConversionPointExposurePresentationReason : 1; 
         unsigned int paidSubscriptionConversionPointType : 1; 
@@ -32,10 +34,12 @@
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
 @property (nonatomic, retain) NSData *feedViewExposureId;
+@property (nonatomic) int groupType;
 @property (nonatomic) bool hasArrivedFromAd;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadQtoken;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointExposureLocation;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointExposurePresentationReason;
@@ -58,6 +62,7 @@
 @property (nonatomic) int userAction;
 
 - (void).cxx_destruct;
+- (int)StringAsGroupType:(id)arg1;
 - (int)StringAsPaidSubscriptionConversionPointExposureLocation:(id)arg1;
 - (int)StringAsPaidSubscriptionConversionPointType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
@@ -68,10 +73,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedViewExposureId;
+- (int)groupType;
+- (id)groupTypeAsString:(int)arg1;
 - (bool)hasArrivedFromAd;
 - (bool)hasArticleId;
 - (bool)hasArticleViewingSessionId;
 - (bool)hasFeedViewExposureId;
+- (bool)hasGroupType;
 - (bool)hasIadQtoken;
 - (bool)hasPaidSubscriptionConversionPointExposureLocation;
 - (bool)hasPaidSubscriptionConversionPointExposurePresentationReason;
@@ -99,7 +107,9 @@
 - (void)setArticleId:(id)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
+- (void)setGroupType:(int)arg1;
 - (void)setHasArrivedFromAd:(bool)arg1;
+- (void)setHasGroupType:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointExposureLocation:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointExposurePresentationReason:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointType:(bool)arg1;

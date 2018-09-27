@@ -9,7 +9,9 @@
     _SFCrashBanner * _crashBanner;
     double  _crashBannerOffset;
     WKWebView * _currentWebView;
+    <SFBrowserViewDelegate> * _delegate;
     bool  _hasReceivedTouchEvents;
+    double  _minimalUITopOffset;
     _SFNavigationBar * _navigationBar;
     unsigned long long  _navigationBarBehavior;
     _SFLinkPreviewHeader * _previewHeader;
@@ -25,7 +27,9 @@
 @property (nonatomic, retain) _SFCrashBanner *crashBanner;
 @property (nonatomic) double crashBannerOffset;
 @property (nonatomic, readonly) WKWebView *currentWebView;
+@property (nonatomic) <SFBrowserViewDelegate> *delegate;
 @property (nonatomic, readonly) bool hasReceivedTouchEvents;
+@property (nonatomic) double minimalUITopOffset;
 @property (nonatomic, retain) _SFNavigationBar *navigationBar;
 @property (nonatomic) unsigned long long navigationBarBehavior;
 @property (nonatomic, readonly) double navigationBarOffset;
@@ -43,10 +47,12 @@
 - (id)crashBanner;
 - (double)crashBannerOffset;
 - (id)currentWebView;
+- (id)delegate;
 - (bool)hasReceivedTouchEvents;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (double)minimalUITopOffset;
 - (id)navigationBar;
 - (unsigned long long)navigationBarBehavior;
 - (double)navigationBarOffset;
@@ -56,6 +62,8 @@
 - (void)setContentReadyForDisplay;
 - (void)setCrashBanner:(id)arg1;
 - (void)setCrashBannerOffset:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setMinimalUITopOffset:(double)arg1;
 - (void)setNavigationBar:(id)arg1;
 - (void)setNavigationBarBehavior:(unsigned long long)arg1;
 - (void)setPreviewHeader:(id)arg1;

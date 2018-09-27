@@ -7,7 +7,9 @@
 + (id)donatedBySiri;
 + (id)intentClass;
 + (id)intentHandlingStatus;
++ (id)intentType;
 + (id)intentVerb;
 + (id)serializedInteraction;
++ (id)serializedKeyImage;
 
 @end

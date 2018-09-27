@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTileDefinition : NSObject <NSCoding, NSCopying> {
+@interface SKTileDefinition : NSObject <NSCopying, NSSecureCoding> {
     unsigned short  _currentFrameIndex;
     float  _currentFrameTime;
     bool  _frameDidChange;
@@ -41,6 +41,7 @@
 @property (nonatomic, retain) NSString *uid;
 @property (nonatomic, retain) NSMutableDictionary *userData;
 
++ (bool)supportsSecureCoding;
 + (id)tileDefinitionWithTexture:(id)arg1;
 + (id)tileDefinitionWithTexture:(id)arg1 normalTexture:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
 + (id)tileDefinitionWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
@@ -63,6 +64,7 @@
 - (id)initWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithTextures:(id)arg1 normalTextures:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 timePerFrame:(double)arg4;
 - (id)initWithTextures:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 timePerFrame:(double)arg3;
+- (bool)isEqualToNode:(id)arg1;
 - (double)lastTargetTime;
 - (id)name;
 - (bool)nextFrameAffectsVertexBuffer;

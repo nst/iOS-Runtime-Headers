@@ -41,8 +41,9 @@
 + (id)offlineLearningHandleForInputMode:(id)arg1;
 + (Class)wordSearchClass;
 
+- (void).cxx_destruct;
 - (id)adaptationContextReadingForReanalysisString:(id)arg1 fromRecentlyCommittedCandidates:(id)arg2;
-- (void)addProactiveTriggers:(id)arg1;
+- (void)addProactiveTriggers:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })analysisStringRange;
 - (unsigned long long)autoquoteType;
 - (id)candidateResultSetFromWordSearchCandidateResultSet:(id)arg1;
@@ -61,7 +62,7 @@
 - (bool)hasBackspacedIntoInputString;
 - (bool)hasCommittedPartialCandidate;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
-- (id)initWithConfig:(id)arg1;
+- (id)initWithConfig:(id)arg1 keyboardState:(id)arg2;
 - (id)inputsToReject;
 - (void)insertDummyGeometryDataAtIndex:(unsigned long long)arg1;
 - (void)insertDummyTouchDataAtIndex:(unsigned long long)arg1;

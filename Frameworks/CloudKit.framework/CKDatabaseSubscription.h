@@ -6,6 +6,8 @@
 
 @property (nonatomic, copy) NSString *recordType;
 
++ (id)new;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)initWithSubscriptionID:(id)arg1;

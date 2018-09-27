@@ -22,22 +22,16 @@
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2;
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2 metadata:(id)arg3;
 + (id)activityTypeWithWorkout:(id)arg1;
++ (unsigned long long)mapWheelchairUserActivityType:(unsigned long long)arg1 isWheelchairUser:(bool)arg2;
 + (id)possibleActivityTypesForIdentifier:(unsigned long long)arg1 locationType:(long long)arg2 swimmingLocationType:(long long)arg3 wheelchairUser:(bool)arg4;
 + (id)supportedActivityTypesWithIsWheelchairUser:(bool)arg1;
 + (bool)supportsSecureCoding;
 + (id)wheelchairActivityTypes;
 
 - (void).cxx_destruct;
-- (id)_defaultEnabledMetricsForActivityType:(unsigned long long)arg1;
-- (id)_indoorDefaultEnabledMetricsForActivityType:(unsigned long long)arg1;
-- (id)_machineProvidedMetrics;
-- (id)_metricsForSwimmingWithLocationType:(long long)arg1;
 - (id)activityTypeByAddingLapLength:(double)arg1;
-- (id)allAvailableMetrics;
-- (id)allAvailableMetricsWithIsMachineWorkout:(bool)arg1;
-- (id)appendMachineMetricsIfPossibleToMetrics:(id)arg1 maxNumMetrics:(long long)arg2;
+- (id)activityTypePlistKey;
 - (unsigned long long)auxiliaryTypeIdentifier;
-- (id)defaultEnabledMetrics;
 - (id)description;
 - (unsigned long long)effectiveTypeIdentifier;
 - (void)encodeWithCoder:(id)arg1;
@@ -48,7 +42,6 @@
 - (id)initWithActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2 metadata:(id)arg3;
 - (id)initWithActivityTypeIdentifier:(unsigned long long)arg1 isIndoor:(bool)arg2 metadata:(id)arg3 auxiliaryTypeIdentifier:(unsigned long long)arg4;
 - (id)initWithCoder:(id)arg1;
-- (bool)isAvailableMetricType:(unsigned long long)arg1 withIsMachineWorkout:(bool)arg2;
 - (bool)isCategorizedOtherWorkout;
 - (bool)isEqual:(id)arg1;
 - (bool)isIndoor;

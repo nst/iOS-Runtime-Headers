@@ -18,6 +18,7 @@
 - (id)initWithRepresentedObject:(id)arg1 context:(id)arg2;
 - (id)model;
 - (void)reset;
+- (id)toObject;
 - (id)valueForProperty:(id)arg1 context:(id)arg2 error:(out id*)arg3;
 
 @end

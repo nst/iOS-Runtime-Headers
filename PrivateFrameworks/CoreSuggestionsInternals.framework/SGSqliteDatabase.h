@@ -11,18 +11,15 @@
     }  _isClosed;
     bool  _isInMemory;
     unsigned long long  _lastBusyWaitEnded;
-    NSOperationQueue * _operationQueue;
-    NSCache * _queryCache;
-    NSObject<OS_dispatch_queue> * _queue;
-    NSMutableDictionary * _sqlarrays;
-    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * _threadInQueue;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
         BOOL __opaque[56]; 
-    }  _threadInQueueLock;
+    }  _lock;
+    NSCache * _queryCache;
+    NSMutableDictionary * _sqlarrays;
+    NSMutableArray * _statementsToFinalizeAsync;
     int  _transactionDepth;
     bool  _transactionRolledback;
-    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSString *filename;
@@ -136,6 +133,7 @@
 - (bool)_handle_SQLITE_WARNING_AUTOINDEX:(id)arg1 onError:(id /* block */)arg2;
 - (bool)_handle_UNKNOWN_ERROR:(id)arg1 onError:(id /* block */)arg2;
 - (bool)_handle_sqlite_error_code:(int)arg1 error:(id)arg2 onError:(id /* block */)arg3;
+- (unsigned long long)_pagesToVacuum;
 - (void)_prepAndRunQuery:(id)arg1 columns:(id)arg2 dictionary:(id)arg3 onError:(id /* block */)arg4;
 - (bool)_transactionWithExclusivity:(bool)arg1 transaction:(id /* block */)arg2;
 - (void)_txnBegin;
@@ -153,6 +151,7 @@
 - (bool)frailReadTransaction:(id /* block */)arg1;
 - (bool)frailWriteTransaction:(id /* block */)arg1;
 - (id)freeSpace;
+- (unsigned long long)freelistCount;
 - (struct sqlite3 { }*)handle;
 - (bool)handleError:(long long)arg1 sqliteError:(int)arg2 forQuery:(id)arg3 onError:(id /* block */)arg4;
 - (bool)hasColumnOnTable:(id)arg1 named:(id)arg2;
@@ -165,6 +164,7 @@
 - (long long)lastInsertRowId;
 - (long long)maxIdForTable:(id)arg1;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
+- (unsigned long long)pageCount;
 - (void)performIntegrityCheck;
 - (void)placeCorruptionMarker;
 - (bool)prepAndRunNonDataQueries:(id)arg1 onError:(id /* block */)arg2;
@@ -180,7 +180,8 @@
 - (id)tablesWithColumnNamed:(id)arg1;
 - (void)updateTable:(id)arg1 dictionary:(id)arg2 whereClause:(id)arg3 onError:(id /* block */)arg4;
 - (unsigned long long)userVersion;
-- (void)withDbLockNonblocking:(id /* block */)arg1;
+- (void)vacuum;
+- (unsigned long long)vacuumMode;
 - (void)writeTransaction:(id /* block */)arg1;
 
 @end

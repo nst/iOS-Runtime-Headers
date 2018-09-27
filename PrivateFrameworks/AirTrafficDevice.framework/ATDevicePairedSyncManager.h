@@ -18,7 +18,6 @@
 + (id)sharedPairedSyncManager;
 
 - (void).cxx_destruct;
-- (void)_attemptNanoRadioPrelaunchIfAllowed;
 - (void)_cleanupSyncState;
 - (void)_triggerInitialSync;
 - (void)deviceBecameActive:(id)arg1;

@@ -3,8 +3,10 @@
  */
 
 @interface FCFeedRequestOperation : FCOperation {
+    <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     NSDictionary * _databaseLookupsByFeedID;
+    FCEdgeCacheHint * _edgeCacheHint;
     unsigned long long  _expectedNetworkEventCount;
     FCFeedDatabase * _feedDatabase;
     NSArray * _feedRequests;
@@ -20,8 +22,10 @@
     FCHeldRecords * _resultHeldTagRecords;
 }
 
+@property (nonatomic, retain) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, retain) NSDictionary *databaseLookupsByFeedID;
+@property (nonatomic, copy) FCEdgeCacheHint *edgeCacheHint;
 @property (nonatomic) unsigned long long expectedNetworkEventCount;
 @property (nonatomic, retain) FCFeedDatabase *feedDatabase;
 @property (nonatomic, copy) NSArray *feedRequests;
@@ -42,15 +46,22 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (id)_additionalHTTPHeadersForOrderFeedRequest;
 - (bool)_countOfDroppedFeeds;
 - (id)_failureResponseForRequest:(id)arg1 error:(id)arg2;
 - (void)_gatherAllFeedResponsesWithCompletionHandler:(id /* block */)arg1;
 - (void)_gatherAllOrderFeedResponsesWithCompletionHandler:(id /* block */)arg1;
+- (void)_gatherEdgeCachedFeedResponsesWithCompletionHandler:(id /* block */)arg1;
 - (unsigned long long)_networkEventCount;
+- (id)_normalizedFeedRange:(id)arg1;
 - (id)_orderFeedIDFromFeedID:(id)arg1;
 - (unsigned long long)_orderFeedTopKFromBin:(long long)arg1 timeInterval:(double)arg2;
+- (bool)_shouldReturnItemsFromDroppedFeedResponse:(id)arg1;
+- (bool)canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
+- (id)configuration;
 - (id)context;
 - (id)databaseLookupsByFeedID;
+- (id)edgeCacheHint;
 - (unsigned long long)expectedNetworkEventCount;
 - (id)feedDatabase;
 - (id)feedRequests;
@@ -58,6 +69,7 @@
 - (id)feedTransformations;
 - (id)init;
 - (unsigned long long)maxCount;
+- (unsigned long long)maxRetries;
 - (id)mutableNetworkEvents;
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -66,11 +78,14 @@
 - (void)prepareOperation;
 - (id /* block */)requestCompletionHandler;
 - (id /* block */)requestCompletionHandlerWithInterestToken;
+- (void)resetForRetry;
 - (id)resultFeedResponses;
 - (id)resultHeldArticleRecords;
 - (id)resultHeldTagRecords;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDatabaseLookupsByFeedID:(id)arg1;
+- (void)setEdgeCacheHint:(id)arg1;
 - (void)setExpectedNetworkEventCount:(unsigned long long)arg1;
 - (void)setFeedDatabase:(id)arg1;
 - (void)setFeedRequests:(id)arg1;

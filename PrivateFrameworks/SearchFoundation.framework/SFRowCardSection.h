@@ -78,6 +78,8 @@
 @property (nonatomic) bool valueNoWrap;
 @property (nonatomic, copy) NSNumber *valueWeight;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -145,5 +147,9 @@
 - (id)value;
 - (bool)valueNoWrap;
 - (id)valueWeight;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

@@ -8,6 +8,7 @@
     NSDictionary * _feedContextByFeedID;
     NSDictionary * _feedIDsByArticleID;
     NSArray * _feedItems;
+    long long  _feedPersonalizationConfigurationSet;
     id /* block */  _headlinesCompletionHandler;
     id /* block */  _headlinesMapCompletionHandler;
     <FCFeedPersonalizing> * _personalizer;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) NSDictionary *feedContextByFeedID;
 @property (nonatomic, copy) NSDictionary *feedIDsByArticleID;
 @property (nonatomic, copy) NSArray *feedItems;
+@property (nonatomic) long long feedPersonalizationConfigurationSet;
 @property (nonatomic, copy) id /* block */ headlinesCompletionHandler;
 @property (nonatomic, copy) id /* block */ headlinesMapCompletionHandler;
 @property (nonatomic, retain) <FCFeedPersonalizing> *personalizer;
@@ -37,8 +39,10 @@
 - (id)feedContextByFeedID;
 - (id)feedIDsByArticleID;
 - (id)feedItems;
+- (long long)feedPersonalizationConfigurationSet;
 - (id /* block */)headlinesCompletionHandler;
 - (id /* block */)headlinesMapCompletionHandler;
+- (id)init;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)personalizer;
@@ -50,6 +54,7 @@
 - (void)setFeedContextByFeedID:(id)arg1;
 - (void)setFeedIDsByArticleID:(id)arg1;
 - (void)setFeedItems:(id)arg1;
+- (void)setFeedPersonalizationConfigurationSet:(long long)arg1;
 - (void)setHeadlinesCompletionHandler:(id /* block */)arg1;
 - (void)setHeadlinesMapCompletionHandler:(id /* block */)arg1;
 - (void)setPersonalizer:(id)arg1;

@@ -31,7 +31,7 @@
 + (id)_hf_airQualityFormatter;
 + (id)_hf_configurationStateFormatter;
 + (id)_hf_contactStateStateFormatter;
-+ (id)_hf_controlDescriptionForDetectionCharacteristicOfType:(id)arg1 withValue:(id)arg2;
++ (id)_hf_controlDescriptionForDetectionCharacteristicOfType:(id)arg1 withValue:(id)arg2 valueDescription:(id)arg3;
 + (id)_hf_controlTitleForCharacteristicType:(id)arg1;
 + (id)_hf_currentAirPurifierStateFormatter;
 + (id)_hf_currentSecuritySystemStateFormatter;

@@ -7,7 +7,7 @@
     <PCInterfaceUsabilityMonitorProtocol> * _internal;
 }
 
-@property (nonatomic, readonly) struct __CFString { }*currentRAT;
+@property (nonatomic, readonly) int currentRAT;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) bool isRadioHot;
 @property (nonatomic, readonly) int linkQuality;
 @property (nonatomic, readonly, retain) NSString *linkQualityString;
+@property (nonatomic, readonly) NSString *networkCode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 
@@ -33,7 +34,7 @@
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (struct __CFString { }*)currentRAT;
+- (int)currentRAT;
 - (void)dealloc;
 - (id)initWithInterfaceIdentifier:(long long)arg1;
 - (long long)interfaceIdentifier;
@@ -50,6 +51,7 @@
 - (bool)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
+- (id)networkCode;
 - (void)removeDelegate:(id)arg1;
 - (struct __CFString { }*)wwanInterfaceName;
 

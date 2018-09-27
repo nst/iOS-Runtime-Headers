@@ -5,7 +5,7 @@
 @interface _WKUserStyleSheet : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::UserStyleSheet> { 
         struct type { 
-            unsigned char __lx[144]; 
+            unsigned char __lx[120]; 
         } data; 
     }  _userStyleSheet;
 }

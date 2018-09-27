@@ -68,8 +68,6 @@
 
 - (void).cxx_destruct;
 - (struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*)_audioBufferListFromData:(id)arg1;
-- (bool)_isScreenRecordingAllowed;
-- (bool)_isScreenRecordingSupportedOnDevice;
 - (struct opaqueCMSampleBuffer { }*)_sampleBufferFromIOSurface:(struct __IOSurface { }*)arg1 timingInfo:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; struct { long long x_3_1_1; int x_3_1_2; unsigned int x_3_1_3; long long x_3_1_4; } x3; })arg2;
 - (void)_startRecordingWithMicrophoneEnabled:(bool)arg1 cameraEnabled:(bool)arg2 streamingEnabled:(bool)arg3 captureEnabled:(bool)arg4 handler:(id /* block */)arg5;
 - (id)activeBroadcastController;
@@ -101,16 +99,19 @@
 - (bool)isPaused;
 - (bool)isRecording;
 - (void)notifyDelegateOfRecorderAvailability;
+- (void)notifyDelegateOfUpdatedState;
 - (void)pauseRecording;
 - (id)pipViewController;
 - (id)previousAudioCategory;
 - (unsigned long long)previousAudioSessionOptions;
 - (id)privateDelegate;
 - (int)processIDForAudioCapture;
-- (void)recordingLockInterrupted:(id)arg1;
+- (void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (void)recordingTimerDidUpdate:(id)arg1;
 - (void)resumeRecording;
 - (id /* block */)saveVideoToCameraRollCompletionBlock;
+- (bool)screenRecordingAllowed;
+- (bool)screenRecordingSupportedOnDevice;
 - (void)setActiveBroadcastController:(id)arg1;
 - (void)setAvailable:(bool)arg1;
 - (void)setBroadcastURL:(id)arg1;
@@ -149,7 +150,6 @@
 - (void)stopCaptureWithHandler:(id /* block */)arg1;
 - (void)stopRecordingAndSaveToCameraRoll:(id /* block */)arg1;
 - (void)stopRecordingWithAdditionalShareFileAttachment:(id)arg1 overrideShareMessage:(id)arg2 previewViewControllerOverrideTintColor:(id)arg3 handler:(id /* block */)arg4;
-- (void)stopRecordingWithError:(id)arg1 movieURL:(id)arg2;
 - (void)stopRecordingWithHandler:(id /* block */)arg1;
 - (void)stopRecordingWithVideoURLHandler:(id /* block */)arg1;
 - (void)stopSystemRecording:(id /* block */)arg1;
@@ -162,7 +162,7 @@
 - (void)updateCurrentState;
 - (void)updateProcessIDForAudioCapture:(int)arg1;
 - (void)updateRecordingAvailability;
-- (void)updateScreenRecordingState:(bool)arg1;
+- (void)updateScreenRecordingState;
 - (id)videoQueue;
 - (id)windowToRecord;
 

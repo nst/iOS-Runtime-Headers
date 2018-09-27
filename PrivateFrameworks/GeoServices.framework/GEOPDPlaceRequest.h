@@ -78,12 +78,13 @@
 - (id)initForAutocompleteWithTraits:(id)arg1 count:(unsigned int)arg2;
 - (id)initForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)initForCategoryListWithTraits:(id)arg1;
+- (id)initForDFRCategoryListWithTraits:(id)arg1;
 - (id)initForDatasetCheckWithTraits:(id)arg1;
 - (id)initForGeoIpLookupWithIpAddress:(id)arg1 traits:(id)arg2;
 - (id)initForNearestTransitStationWithLine:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 traits:(id)arg3;
 - (id)initForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)initForSpotlightCategoryListWithTraits:(id)arg1;
-- (id)initForWifiFingerprintLookupWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 traits:(id)arg4;
+- (id)initForWifiFingerprintLookupWithLocations:(id)arg1 wifiAccessPoints:(id)arg2 maxLabels:(unsigned int)arg3 entryTime:(unsigned long long)arg4 exitTime:(unsigned long long)arg5 traits:(id)arg6;
 - (id)initWithAutocompleteFragment:(id)arg1 type:(int)arg2 traits:(id)arg3 categoryFilter:(id)arg4 retainedSearch:(id)arg5;
 - (id)initWithBatchPopularNearbySearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)initWithBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
@@ -108,6 +109,8 @@
 - (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 retainedSearch:(id)arg5 maxResults:(unsigned int)arg6 suppressResultsRequiringAttribution:(bool)arg7 traits:(id)arg8;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)initWithSearchURLQuery:(id)arg1 identifier:(id)arg2 resultProviderId:(int)arg3 contentProvider:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)initWithSpatialEventLookupParameters:(id)arg1 traits:(id)arg2;
+- (id)initWithSpatialPlaceLookupParameters:(id)arg1 traits:(id)arg2;
 - (id)initWithTraits:(id)arg1 count:(unsigned int)arg2 includeEntryPoints:(bool)arg3;
 - (id)initWithVendorSpecificPlaceRefinementParameters:(id)arg1 traits:(id)arg2;
 - (bool)isAlwaysCacheable;
@@ -119,6 +122,10 @@
 - (bool)isPlaceRefinementRequest;
 - (void)mergeFrom:(id)arg1;
 - (bool)needLatency;
+- (id)pdSpatialEventLookupParametersArrayForParameters:(id)arg1;
+- (id)pdSpatialEventLookupParametersForParameters:(id)arg1;
+- (id)pdSpatialPlaceLookupParametersArrayForParameters:(id)arg1;
+- (id)pdSpatialPlaceLookupParametersForParameters:(id)arg1;
 - (id)placeRequestParameters;
 - (bool)readFrom:(id)arg1;
 - (int)requestType;

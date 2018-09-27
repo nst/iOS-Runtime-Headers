@@ -6,8 +6,8 @@
     NSMutableDictionary * _previousCharacterColors;
 }
 
-+ (id)_defaultSelectedComplicationSlot;
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_complicationSlotDescriptors;

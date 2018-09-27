@@ -5,8 +5,12 @@
 
 @required
 
-+ (NSString *)cardSectionViewProviderIdentifier;
+- (<CRCard> *)card;
+- (NSArray *)viewConfigurations;
 
-- (void)viewConfigurationsForCardSections:(void *)arg1 providerHelper:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, <CRKCardSectionViewProviderHelping> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSArray *, void*
+@optional
+
+- (unsigned long long)displayPriorityForCardSection:(id <CRCardSection>)arg1;
+- (bool)vetoDisplayOfCardSection:(id <CRCardSection>)arg1;
 
 @end

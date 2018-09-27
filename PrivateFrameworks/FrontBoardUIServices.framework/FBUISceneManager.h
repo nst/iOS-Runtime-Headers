@@ -13,7 +13,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)invalidateSceneWorkspace:(id)arg1;
 - (void)registerSceneWorkspace:(id)arg1;

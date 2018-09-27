@@ -5,11 +5,6 @@
 @interface _SFPBTableColumnAlignment : PBCodable <NSSecureCoding, _SFPBTableColumnAlignment> {
     int  _columnAlignment;
     int  _dataAlignment;
-    struct { 
-        unsigned int columnAlignment : 1; 
-        unsigned int dataAlignment : 1; 
-        unsigned int isEqualWidth : 1; 
-    }  _has;
     bool  _isEqualWidth;
 }
 
@@ -17,9 +12,6 @@
 @property (nonatomic) int dataAlignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasColumnAlignment;
-@property (nonatomic, readonly) bool hasDataAlignment;
-@property (nonatomic, readonly) bool hasIsEqualWidth;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isEqualWidth;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -28,9 +20,6 @@
 - (int)columnAlignment;
 - (int)dataAlignment;
 - (id)dictionaryRepresentation;
-- (bool)hasColumnAlignment;
-- (bool)hasDataAlignment;
-- (bool)hasIsEqualWidth;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

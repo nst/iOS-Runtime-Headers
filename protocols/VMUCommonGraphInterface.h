@@ -26,6 +26,7 @@
 - (VMUClassInfoMap *)realizedClasses;
 - (void)refineTypesWithOverlay:(VMUScanOverlay *)arg1;
 - (unsigned int)regionCount;
+- (NSString *)shortLabelForNode:(unsigned int)arg1;
 - (unsigned int)vmPageSize;
 - (VMUVMRegion *)vmuVMRegionForAddress:(unsigned long long)arg1;
 - (VMUVMRegion *)vmuVMRegionForNode:(unsigned int)arg1;

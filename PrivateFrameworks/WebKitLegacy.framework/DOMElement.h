@@ -110,6 +110,8 @@
 - (id)tagName;
 - (id)uiactions;
 - (bool)webkitMatchesSelector:(id)arg1;
+- (void)webkitRequestFullScreen:(unsigned short)arg1;
+- (void)webkitRequestFullscreen;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -125,10 +127,11 @@
 - (bool)mf_isContainedInQuoteBlock;
 - (bool)mf_isContainedInTable;
 - (int)mf_quoteLevelDelta;
+- (void)mf_setDirAttributeToComputedValue;
 - (void)mf_stripCSSStyle;
 - (void)recursivelyRemoveMailAttributes;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)exceedsStructuralComplexity:(int)arg1;
 - (void)getTextWritingDirection:(long long*)arg1 override:(bool*)arg2;

@@ -5,8 +5,8 @@
 @interface CNPropertySimpleTransportCell : CNPropertySimpleCell {
     UIColor * _actionsColor;
     bool  _allowsActions;
-    UIView * _recentCallout;
-    bool  _shouldShowRecentCallout;
+    UIView * _badgeView;
+    bool  _shouldShowBadge;
     bool  _shouldShowTransportButtons;
     UIImageView * _standardStarView;
     UIImageView * _starView;
@@ -17,10 +17,11 @@
 
 @property (nonatomic, retain) UIColor *actionsColor;
 @property (nonatomic) bool allowsActions;
-@property (nonatomic, retain) UIView *recentCallout;
-@property (nonatomic) bool shouldShowRecentCallout;
+@property (nonatomic, retain) UIView *badgeView;
+@property (nonatomic) bool shouldShowBadge;
 @property (nonatomic, readonly) bool shouldShowStar;
 @property (nonatomic) bool shouldShowTransportButtons;
+@property (nonatomic, readonly) UIView *standardBadgeView;
 @property (nonatomic, readonly) UIImageView *standardStarView;
 @property (nonatomic, readonly) CNTransportButton *standardTransportIcon;
 @property (nonatomic, readonly) CNTransportButton *transportIcon1;
@@ -28,29 +29,29 @@
 @property (nonatomic, readonly) CNTransportButton *transportIcon3;
 
 + (void)_updateStarImageForView:(id)arg1;
-+ (id)standardRecentCallout;
 + (id)standardStarView;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)actionsColor;
 - (bool)allowsActions;
+- (id)badgeView;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)prepareForReuse;
-- (id)recentCallout;
 - (id)rightMostView;
 - (void)setActionsColor:(id)arg1;
 - (void)setAllowsActions:(bool)arg1;
+- (void)setBadgeView:(id)arg1;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setRecentCallout:(id)arg1;
-- (void)setShouldShowRecentCallout:(bool)arg1;
+- (void)setShouldShowBadge:(bool)arg1;
 - (void)setShouldShowTransportButtons:(bool)arg1;
 - (bool)shouldPerformDefaultAction;
-- (bool)shouldShowRecentCallout;
+- (bool)shouldShowBadge;
 - (bool)shouldShowStar;
 - (bool)shouldShowTransportButtons;
+- (id)standardBadgeView;
 - (id)standardStarView;
 - (id)standardTransportIcon;
 - (void)transportButtonClicked:(id)arg1;

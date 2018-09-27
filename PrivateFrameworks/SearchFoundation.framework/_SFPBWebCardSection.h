@@ -5,12 +5,6 @@
 @interface _SFPBWebCardSection : PBCodable <NSSecureCoding, _SFPBWebCardSection> {
     _SFPBColor * _backgroundColor;
     bool  _canBeHidden;
-    struct { 
-        unsigned int canBeHidden : 1; 
-        unsigned int hasTopPadding : 1; 
-        unsigned int hasBottomPadding : 1; 
-        unsigned int separatorStyle : 1; 
-    }  _has;
     bool  _hasBottomPadding;
     bool  _hasTopPadding;
     NSString * _htmlString;
@@ -25,17 +19,8 @@
 @property (nonatomic) bool canBeHidden;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasBackgroundColor;
 @property (nonatomic) bool hasBottomPadding;
-@property (nonatomic, readonly) bool hasCanBeHidden;
-@property (nonatomic, readonly) bool hasHasBottomPadding;
-@property (nonatomic, readonly) bool hasHasTopPadding;
-@property (nonatomic, readonly) bool hasHtmlString;
-@property (nonatomic, readonly) bool hasPunchoutPickerDismissText;
-@property (nonatomic, readonly) bool hasPunchoutPickerTitle;
-@property (nonatomic, readonly) bool hasSeparatorStyle;
 @property (nonatomic) bool hasTopPadding;
-@property (nonatomic, readonly) bool hasType;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *htmlString;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -52,17 +37,8 @@
 - (bool)canBeHidden;
 - (void)clearPunchoutOptions;
 - (id)dictionaryRepresentation;
-- (bool)hasBackgroundColor;
 - (bool)hasBottomPadding;
-- (bool)hasCanBeHidden;
-- (bool)hasHasBottomPadding;
-- (bool)hasHasTopPadding;
-- (bool)hasHtmlString;
-- (bool)hasPunchoutPickerDismissText;
-- (bool)hasPunchoutPickerTitle;
-- (bool)hasSeparatorStyle;
 - (bool)hasTopPadding;
-- (bool)hasType;
 - (unsigned long long)hash;
 - (id)htmlString;
 - (id)initWithDictionary:(id)arg1;

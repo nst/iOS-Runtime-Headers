@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) id key;
 @property (nonatomic, retain) id object;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 object:(id)arg2;
 - (id)key;
 - (id)object;

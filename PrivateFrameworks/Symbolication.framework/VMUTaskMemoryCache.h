@@ -4,7 +4,6 @@
 
 @interface VMUTaskMemoryCache : NSObject {
     struct mapped_memory_t { } * _memoryRegions;
-    bool  _shouldTouchPages;
     bool  _stopped;
     unsigned int  _task;
     bool  _taskIs64Bit;
@@ -17,6 +16,7 @@
 - (void)dealloc;
 - (void)flushMemoryCache;
 - (id)initWithTask:(unsigned int)arg1;
+- (int)mapAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnedAddress:(unsigned long long*)arg3 returnedSize:(unsigned long long*)arg4;
 - (int)peekAtAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 returnsBuf:(void**)arg3;
 - (int)readPointerAt:(unsigned long long)arg1 value:(unsigned long long*)arg2;
 - (int)startPeeking;

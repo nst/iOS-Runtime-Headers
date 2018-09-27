@@ -3,13 +3,13 @@
  */
 
 @interface NUEmbedConfigurationOperation : FCOperation {
-    FCAppConfigurationManager * _appConfigurationManager;
+    <FCNewsAppConfigurationManager> * _appConfigurationManager;
     id /* block */  _completion;
     FCFlintResourceManager * _flintResourceManager;
     NUEmbedConfigurationOperationResult * _result;
 }
 
-@property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
+@property (nonatomic, retain) <FCNewsAppConfigurationManager> *appConfigurationManager;
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) FCFlintResourceManager *flintResourceManager;
 @property (nonatomic, retain) NUEmbedConfigurationOperationResult *result;

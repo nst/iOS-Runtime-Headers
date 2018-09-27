@@ -3,13 +3,11 @@
  */
 
 @interface AWDHomeKitAccessoryPairing : PBCodable <NSCopying> {
-    int  _authMethod;
     int  _certified;
     unsigned int  _duration;
     int  _errorCode;
     struct { 
         unsigned int timestamp : 1; 
-        unsigned int authMethod : 1; 
         unsigned int certified : 1; 
         unsigned int duration : 1; 
         unsigned int errorCode : 1; 
@@ -26,11 +24,9 @@
     AWDHomeKitVendorInformation * _vendorDetails;
 }
 
-@property (nonatomic) int authMethod;
 @property (nonatomic) int certified;
 @property (nonatomic) unsigned int duration;
 @property (nonatomic) int errorCode;
-@property (nonatomic) bool hasAuthMethod;
 @property (nonatomic) bool hasCertified;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasErrorCode;
@@ -48,11 +44,8 @@
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorDetails;
 
 - (void).cxx_destruct;
-- (int)StringAsAuthMethod:(id)arg1;
 - (int)StringAsCertified:(id)arg1;
 - (int)StringAsTransportType:(id)arg1;
-- (int)authMethod;
-- (id)authMethodAsString:(int)arg1;
 - (int)certified;
 - (id)certifiedAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
@@ -61,7 +54,6 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)duration;
 - (int)errorCode;
-- (bool)hasAuthMethod;
 - (bool)hasCertified;
 - (bool)hasDuration;
 - (bool)hasErrorCode;
@@ -78,11 +70,9 @@
 - (bool)isSecureWAC;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (void)setAuthMethod:(int)arg1;
 - (void)setCertified:(int)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setErrorCode:(int)arg1;
-- (void)setHasAuthMethod:(bool)arg1;
 - (void)setHasCertified:(bool)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;

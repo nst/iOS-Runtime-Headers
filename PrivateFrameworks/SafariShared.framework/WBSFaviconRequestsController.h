@@ -16,16 +16,15 @@
 @property (nonatomic) long long priority;
 @property (nonatomic) struct CGSize { double x1; double x2; } size;
 
-+ (id)new;
-
 - (void).cxx_destruct;
 - (void)_issueRequest:(id)arg1 isOneTime:(bool)arg2 withToken:(id)arg3 completion:(id /* block */)arg4;
 - (void)cancelAllRegistrations;
+- (void)cancelAllRegistrationsWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
-- (id)init;
 - (id)initWithSiteMetadataManager:(id)arg1;
 - (id)manager;
 - (long long)priority;
+- (void)registerOneTimeRequestForDomain:(id)arg1 withToken:(id)arg2 completion:(id /* block */)arg3;
 - (void)registerOneTimeRequestForURLString:(id)arg1 withToken:(id)arg2 completion:(id /* block */)arg3;
 - (void)registerOneTimeRequestForURLString:(id)arg1 withToken:(id)arg2 returnDefaultIconIfNoneAvailable:(bool)arg3 iconSize:(struct CGSize { double x1; double x2; })arg4 isURLTypedByUser:(bool)arg5 completion:(id /* block */)arg6;
 - (void)registerRequestForDomain:(id)arg1 withToken:(id)arg2 completion:(id /* block */)arg3;

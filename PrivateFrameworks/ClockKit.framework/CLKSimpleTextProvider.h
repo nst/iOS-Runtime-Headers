@@ -6,12 +6,14 @@
     NSString * _accessibilityLabel;
     NSString * _shortText;
     NSString * _text;
+    bool  _useAllSmallCaps;
     bool  _useNoContentDashFormatting;
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;
 @property (nonatomic, copy) NSString *shortText;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic) bool useAllSmallCaps;
 @property (nonatomic) bool useNoContentDashFormatting;
 
 + (id)finalizedTextProviderWithText:(id)arg1;
@@ -37,9 +39,11 @@
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setShortText:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setUseAllSmallCaps:(bool)arg1;
 - (void)setUseNoContentDashFormatting:(bool)arg1;
 - (id)shortText;
 - (id)text;
+- (bool)useAllSmallCaps;
 - (bool)useNoContentDashFormatting;
 
 @end

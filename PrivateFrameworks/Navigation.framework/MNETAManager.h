@@ -22,8 +22,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long maxAlternateRoutesCount;
 @property (nonatomic) double requestInterval;
-@property (nonatomic, retain) NSString *requestingAppIdentifier;
-@property (nonatomic, retain) NSArray *routes;
+@property (nonatomic, copy) NSString *requestingAppIdentifier;
+@property (nonatomic, copy) NSArray *routes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

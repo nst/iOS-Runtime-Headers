@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) long long lengthOfSelectedCandidates;
 @property (nonatomic, readonly) long long lengthOfSelectedPredictions;
 
+- (void).cxx_destruct;
 - (void)addLengthOfSelectedCandidate:(id)arg1;
 - (void)addLengthOfSelectedPrediction:(id)arg1;
 - (void)countSelectedAutocorrection:(id)arg1;
@@ -19,7 +20,6 @@
 - (void)countSelectedInputString;
 - (void)countSelectedInputStringToRejectAutocorrection;
 - (void)countSelectedPrediction:(id)arg1 withRank:(unsigned long long)arg2;
-- (void)dealloc;
 - (id)histogram;
 - (id)init;
 - (bool)isCandidatePrediction:(id)arg1;

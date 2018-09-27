@@ -11,7 +11,7 @@
     }  _captionLabelSize;
     MPMediaItem * _localMediaItem;
     NSString * _localMediaItemIdentifier;
-    SKUIPlayButton * _playButton;
+    SearchUIButton * _playButton;
     struct CGSize { 
         double width; 
         double height; 
@@ -27,12 +27,13 @@
 @property (readonly) unsigned long long hash;
 @property (retain) MPMediaItem *localMediaItem;
 @property (retain) NSString *localMediaItemIdentifier;
-@property (retain) SKUIPlayButton *playButton;
+@property (retain) SearchUIButton *playButton;
 @property struct CGSize { double x1; double x2; } playButtonSize;
 @property (retain) SFPunchout *punchout;
 @property (readonly) Class superclass;
 
 + (id)font;
++ (void)initialize;
 + (id)localMediaItemForStoreIdentifiers:(id)arg1;
 + (bool)supportsResult:(id)arg1;
 

@@ -18,7 +18,6 @@
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
 @property (readonly) unsigned long long hash;
 @property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
-@property (nonatomic, readonly) bool isUserModifiable;
 @property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
@@ -43,7 +42,6 @@
 - (bool)isInlineWithText;
 - (bool)isSelectable;
 - (bool)isThemeContent;
-- (bool)isUserModifiable;
 - (Class)layoutClass;
 - (struct CGSize { double x1; double x2; })minimumSize;
 - (id)originalPDFDataForCopy;

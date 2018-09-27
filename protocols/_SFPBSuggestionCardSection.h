@@ -9,18 +9,8 @@
 - (_SFPBColor *)backgroundColor;
 - (bool)canBeHidden;
 - (void)clearPunchoutOptions;
-- (bool)hasBackgroundColor;
 - (bool)hasBottomPadding;
-- (bool)hasCanBeHidden;
-- (bool)hasHasBottomPadding;
-- (bool)hasHasTopPadding;
-- (bool)hasIsContact;
-- (bool)hasPunchoutPickerDismissText;
-- (bool)hasPunchoutPickerTitle;
-- (bool)hasSeparatorStyle;
-- (bool)hasSuggestionText;
 - (bool)hasTopPadding;
-- (bool)hasType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (bool)isContact;
@@ -30,6 +20,7 @@
 - (unsigned long long)punchoutOptionsCount;
 - (NSString *)punchoutPickerDismissText;
 - (NSString *)punchoutPickerTitle;
+- (NSString *)scopedSearchSectionBundleIdentifier;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(_SFPBColor *)arg1;
 - (void)setCanBeHidden:(bool)arg1;
@@ -39,6 +30,7 @@
 - (void)setPunchoutOptions:(NSArray *)arg1;
 - (void)setPunchoutPickerDismissText:(NSString *)arg1;
 - (void)setPunchoutPickerTitle:(NSString *)arg1;
+- (void)setScopedSearchSectionBundleIdentifier:(NSString *)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setSuggestionText:(_SFPBRichText *)arg1;
 - (void)setType:(NSString *)arg1;

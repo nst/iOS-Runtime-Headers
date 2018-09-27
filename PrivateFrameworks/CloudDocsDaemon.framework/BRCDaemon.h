@@ -96,6 +96,7 @@
 - (bool)isInSyncBubble;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)loadAccount;
+- (void)loadAndResumeAccount;
 - (void)localeDidChange;
 - (id)loggedOutError;
 - (id)logsDirPath;

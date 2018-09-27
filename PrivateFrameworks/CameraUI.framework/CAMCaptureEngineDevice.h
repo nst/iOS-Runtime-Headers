@@ -27,13 +27,14 @@
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
+- (id)_keyForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
 - (id)_panoramaDeviceFormat;
 - (id)_videoDeviceFormatForVideoConfiguration;
 - (id)_videoSessionPresetForVideoConfiguration;
 - (id)captureDevice;
 - (id)captureDeviceInput;
-- (id)highestQualityDeviceFormatForVideoConfiguration:(long long)arg1;
-- (id)highestQualitySessionPresetForVideoConfiguration:(long long)arg1;
+- (id)highestQualityDeviceFormatForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
+- (id)highestQualitySessionPresetForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
 - (id)init;
 - (id)initWithEngine:(id)arg1 captureDevice:(id)arg2;
 - (id)panoramaDeviceFormatForConfiguration:(id)arg1;
@@ -44,7 +45,7 @@
 - (id)stillImageSessionPreset;
 - (id)timelapseDeviceFormat;
 - (id)timelapseSessionPreset;
-- (id)videoDeviceFormatForGraphConfiguration:(id)arg1;
-- (id)videoDevicePresetForGraphConfiguration:(id)arg1;
+- (id)videoDeviceFormatForGraphConfiguration:(id)arg1 videoEncodingBehavior:(long long)arg2;
+- (id)videoDevicePresetForGraphConfiguration:(id)arg1 videoEncodingBehavior:(long long)arg2;
 
 @end

@@ -13,6 +13,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isFrozen;
 - (bool)isPaused;
 - (void)setFrozen:(bool)arg1;

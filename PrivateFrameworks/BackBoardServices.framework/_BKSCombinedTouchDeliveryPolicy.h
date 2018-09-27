@@ -6,12 +6,12 @@
     NSArray * _policies;
 }
 
-@property (nonatomic, readonly, retain) NSArray *policies;
+@property (nonatomic, readonly) NSArray *policies;
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)assertionEndpoint;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

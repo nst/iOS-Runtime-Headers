@@ -23,11 +23,13 @@
 @property (nonatomic) ICTrackedParagraph *trackedParagraph;
 
 - (void).cxx_destruct;
+- (void)darkerSystemColorsStatusDidChange;
+- (void)dealloc;
 - (struct CGSize { double x1; double x2; })defaultImageSize;
 - (struct CGSize { double x1; double x2; })defaultSize;
 - (struct UIImage { Class x1; }*)imageForChecked:(bool)arg1 withHighlight:(bool)arg2;
 - (id)imageLayer;
-- (struct UIImage { Class x1; }*)imageNamed:(id)arg1 withTint:(struct UIColor { Class x1; }*)arg2;
+- (struct UIImage { Class x1; }*)imageNamed:(id)arg1 withTint:(struct UIColor { Class x1; }*)arg2 version:(unsigned long long)arg3;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isDone;

@@ -26,6 +26,7 @@
 + (bool)usingRemoteNetworkObserver;
 
 - (void).cxx_destruct;
+- (void)_commonInit;
 - (void)_setNetworkState:(unsigned long long)arg1;
 - (void)_unregisterReachability;
 - (void)_update;

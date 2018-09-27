@@ -13,7 +13,7 @@
 
 - (id)_childAnchors;
 - (long long)_directionAbstraction;
-- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=q@}' */ struct { long long x1; id x2; })arg1;
+- (id)_expressionInContext:(struct { long long x1; id x2; })arg1;
 - (double)_valueInEngine:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

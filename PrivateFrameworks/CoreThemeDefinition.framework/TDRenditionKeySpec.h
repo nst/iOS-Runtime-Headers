@@ -16,6 +16,7 @@
     unsigned int  _subtype;
 }
 
+@property (nonatomic, retain) TDAppearance *appearance;
 @property (nonatomic, retain) TDThemeDirection *direction;
 @property (nonatomic, retain) TDThemeElement *element;
 @property (nonatomic, retain) TDThemeDisplayGamut *gamut;

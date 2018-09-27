@@ -34,11 +34,11 @@
     VKPolylineOverlay * _overlay;
     VKPolylineOverlayRenderRegion * _renderRegion;
     NSSet * _retainedTiles;
-    struct vector<geo::fast_shared_ptr<md::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { 
-        struct fast_shared_ptr<md::RouteLineSection> {} *__begin_; 
-        struct fast_shared_ptr<md::RouteLineSection> {} *__end_; 
-        struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { 
-            struct fast_shared_ptr<md::RouteLineSection> {} *__value_; 
+    struct vector<geo::fast_shared_ptr<md::RouteLineSection, std::allocator>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> > > { 
+        struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *__begin_; 
+        struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *__end_; 
+        struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> > > { 
+            struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *__value_; 
         } __end_cap_; 
     }  _sections;
     double  _simplificationEpsilonPoints;
@@ -49,7 +49,7 @@
         unsigned int index; 
         float offset; 
     }  _userLocationIndex;
-    struct fast_shared_ptr<md::RouteLineSection> { 
+    struct fast_shared_ptr<md::RouteLineSection, std::allocator> { 
         struct _fast_shared_ptr_control {} *_control; 
     }  _userLocationSection;
     double  _viewUnitsPerPoint;
@@ -59,7 +59,8 @@
 @property bool hasNewRoadMatches;
 @property (nonatomic) <VKRouteLineObserverProtocol> *observer;
 @property (nonatomic, readonly) VKPolylineOverlay *overlay;
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<geo::fast_shared_ptr<md::RouteLineSection>' */ struct  sections; /* unknown property attribute:  std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > >=^{fast_shared_ptr<md::RouteLineSection>}}} */
+@property (nonatomic, readonly) VKPolylineOverlayRenderRegion *renderRegion;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<geo::fast_shared_ptr<md::RouteLineSection' */ struct  sections; /* unknown property attribute:  std::allocator>}}} */
 @property (nonatomic) double simplificationEpsilonPoints;
 
 - (id).cxx_construct;
@@ -83,7 +84,8 @@
 - (bool)needsUpdateForViewingScale:(double)arg1;
 - (id)observer;
 - (id)overlay;
-- (struct vector<geo::fast_shared_ptr<md::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x1; struct fast_shared_ptr<md::RouteLineSection> {} *x2; struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x_3_1_1; } x3; })sections;
+- (id)renderRegion;
+- (struct vector<geo::fast_shared_ptr<md::RouteLineSection, std::allocator>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> > > { struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *x1; struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *x2; struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection, std::allocator> > > { struct fast_shared_ptr<md::RouteLineSection, std::allocator> {} *x_3_1_1; } x3; })sections;
 - (void)setHasNewRoadMatches:(bool)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setSimplificationEpsilonPoints:(double)arg1;

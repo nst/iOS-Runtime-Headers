@@ -4,6 +4,7 @@
 
 @interface NFFieldDetectSession : NFSession <NFFieldDetectSessionCallbacks> {
     NFWeakReference * _delegate;
+    bool  _fieldNotificationSent;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +16,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)setDelegate:(id)arg1;
 

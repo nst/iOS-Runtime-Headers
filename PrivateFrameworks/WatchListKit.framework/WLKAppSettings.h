@@ -12,7 +12,7 @@
 
 @property (nonatomic) unsigned long long accessStatus;
 @property (nonatomic, readonly) NSString *channelID;
-@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) NSString *externalID;
 @property (nonatomic) bool obsolete;
 

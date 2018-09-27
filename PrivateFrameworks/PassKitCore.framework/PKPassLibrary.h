@@ -3,6 +3,7 @@
  */
 
 @interface PKPassLibrary : NSObject <PKPassLibraryExportedInterface, PKXPCServiceDelegate> {
+    NSObject<OS_dispatch_queue> * _asynchronousImageQueue;
     <PKPassLibraryDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSHashTable * _delegates;
@@ -10,6 +11,7 @@
     PKPassLibrary * _remoteLibrary;
     <NSObject> * _remoteLibraryObserver;
     PKXPCService * _remoteService;
+    bool  _shouldSendRemovingPassesOfTypeDidFinish;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +27,7 @@
 + (bool)isSuppressingAutomaticPassPresentation;
 + (unsigned long long)requestAutomaticPassPresentationSuppressionWithResponseHandler:(id /* block */)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceWithRemoteLibrary;
 
 - (void).cxx_destruct;
 - (void)_activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 activationData:(id)arg3 completion:(id /* block */)arg4;
@@ -34,6 +37,7 @@
 - (id)_extendedRemoteObjectProxy;
 - (id)_extendedRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_extendedRemoteObjectProxyWithFailureHandler:(id /* block */)arg1;
+- (void)_fetchContentForUniqueID:(id)arg1 usingSynchronousProxy:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)_fetchImageSetContainerForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 usingSynchronousProxy:(bool)arg4 withCompletion:(id /* block */)arg5;
 - (void)_fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 usingSynchronousProxy:(bool)arg4 withCompletion:(id /* block */)arg5;
 - (id)_filterPeerPaymentPass:(id)arg1;
@@ -43,6 +47,7 @@
 - (id)_inAppRemoteObjectProxy;
 - (id)_inAppRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_inAppRemoteObjectProxyWithFailureHandler:(id /* block */)arg1;
+- (id)_initWithRemote:(id)arg1;
 - (id)_passesOfType:(unsigned long long)arg1 withRetries:(unsigned long long)arg2;
 - (id)_passesWithRetries:(unsigned long long)arg1;
 - (void)_postLibraryChangeWithUserInfo:(id)arg1;
@@ -59,6 +64,7 @@
 - (void)activatePaymentPass:(id)arg1 withActivationData:(id)arg2 completion:(id /* block */)arg3;
 - (void)addDelegate:(id)arg1;
 - (void)addPasses:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)addPassesWithData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)archiveForObjectWithUniqueID:(id)arg1;
 - (bool)canAddFelicaPass;
 - (bool)canAddPassOfType:(unsigned long long)arg1;
@@ -68,10 +74,12 @@
 - (void)contactlessInterfaceDidDismissFromSource:(long long)arg1;
 - (void)contactlessInterfaceDidPresentFromSource:(long long)arg1;
 - (bool)containsPass:(id)arg1;
+- (id)contentForUniqueID:(id)arg1;
 - (unsigned long long)countPassesOfType:(unsigned long long)arg1;
 - (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2 objectUniqueIdentifier:(id)arg3;
+- (id)dataForBundleResources:(id)arg1 objectUniqueIdentifier:(id)arg2;
 - (void)dealloc;
-- (id)defaultPaymentPasses;
+- (id)defaultPaymentPassesWithRemotePasses:(bool)arg1;
 - (id)delegate;
 - (id)delegates;
 - (id)diffForPassUpdateUserNotificationWithIdentifier:(id)arg1;
@@ -142,11 +150,11 @@
 - (void)removePasses:(id)arg1;
 - (void)removePassesOfType:(unsigned long long)arg1;
 - (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2;
+- (void)removePassesOfType:(unsigned long long)arg1 withDiagnosticReason:(id)arg2 completion:(id /* block */)arg3;
 - (void)removePassesWithUniqueIDs:(id)arg1 diagnosticReason:(id)arg2;
 - (void)removingPassesOfType:(unsigned long long)arg1 didFinishWithSuccess:(bool)arg2;
 - (void)removingPassesOfType:(unsigned long long)arg1 didUpdateWithProgress:(double)arg2;
 - (bool)replacePassWithPass:(id)arg1;
-- (void)requestContactlessInterfaceSuppressionFromUserWithCompletion:(id /* block */)arg1;
 - (void)requestPersonalizationOfPassWithUniqueIdentifier:(id)arg1 contact:(id)arg2 personalizationToken:(id)arg3 requiredPersonalizationFields:(unsigned long long)arg4 personalizationSource:(unsigned long long)arg5 handler:(id /* block */)arg6;
 - (void)requestUpdateOfObjectWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)rescheduleCommutePlanRenewalReminderForPassWithUniqueID:(id)arg1;
@@ -157,8 +165,12 @@
 - (void)setDelegate:(id)arg1;
 - (bool)setNotificationServiceUpdatesEnabled:(bool)arg1 forPass:(id)arg2;
 - (bool)setShowInLockScreenEnabled:(bool)arg1 forPass:(id)arg2;
+- (bool)setSuppressNotificationsEnabled:(bool)arg1 forPass:(id)arg2;
 - (void)shuffleGroups:(int)arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(id)arg1 completion:(id /* block */)arg2;
+- (void)spotlightDeleteIndexEntriesForAllPassesWithCompletion:(id /* block */)arg1;
+- (void)spotlightReindexAllPassesWithCompletion:(id /* block */)arg1;
+- (void)spotlightReindexPassesWithUniqueIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)supportedPartnersForDigitalIssuance:(id /* block */)arg1;
 - (void)supportedTransitPartnersForDigitalIssuance:(id /* block */)arg1;
 - (void)updateSettings:(unsigned long long)arg1 forObjectWithUniqueID:(id)arg2;

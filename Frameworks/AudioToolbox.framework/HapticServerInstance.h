@@ -3,7 +3,10 @@
  */
 
 @interface HapticServerInstance : NSObject <ServerInterface> {
+    /* Warning: unhandled struct encoding: '{WatchdogTimer=*{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >={__compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}iiQI@}' */ struct WatchdogTimer { char *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int x3; int x4; unsigned long long x5; unsigned int x6; id x7; } * _PrewarmWatchDogTimer;
+    /* Warning: unhandled struct encoding: '{WatchdogTimer=*{basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >={__compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}iiQI@}' */ struct WatchdogTimer { char *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; int x3; int x4; unsigned long long x5; unsigned int x6; id x7; } * _RunWatchDogTimer;
     unsigned long long  _clientID;
+    bool  _clientInterrupted;
     struct shared_ptr<opaqueCMSession> { 
         struct opaqueCMSession {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -11,8 +14,8 @@
     bool  _clientSuspended;
     ServerWrapper * _listenerWrapper;
     HapticServer * _master;
-    NSTimer * _timer;
     bool  _wasPrewarmedAndSuspended;
+    bool  _wasRunningAndSuspended;
 }
 
 @property (readonly) unsigned long long clientID;
@@ -36,9 +39,13 @@
 - (void)prewarm:(id /* block */)arg1;
 - (void)releaseClientResources;
 - (void)requestChannels:(unsigned long long)arg1 reply:(id /* block */)arg2;
+- (void)resetPrewarmWatchdogTimer;
+- (void)resetRunWatchdogTimer;
 - (void)setChannelEventBehavior:(unsigned long long)arg1 behavior:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)setDoneReply:(id /* block */)arg1;
 - (void)setPlayerBehavior:(unsigned long long)arg1 reply:(id /* block */)arg2;
+- (void)setupPrewarmWatchdogTimer;
+- (void)setupRunWatchdogTimer;
 - (void)startRunning:(id /* block */)arg1;
 - (void)stopPrewarm;
 - (void)stopRunning;

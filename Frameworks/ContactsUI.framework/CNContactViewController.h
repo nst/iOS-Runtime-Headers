@@ -186,6 +186,7 @@
 - (id)viewController;
 - (void)viewDidAppear;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI

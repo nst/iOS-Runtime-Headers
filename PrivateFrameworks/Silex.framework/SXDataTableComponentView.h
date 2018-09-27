@@ -5,6 +5,7 @@
 @interface SXDataTableComponentView : SXComponentView <SXDataTableComponentControllerDataSource, SXDataTableViewDataSource, SXTangierControllerDelegate, SXViewportChangeListener, UIGestureRecognizerDelegate> {
     SXDataTableBlueprint * _blueprint;
     <SXComponentActionHandler> * _componentActionHandler;
+    SXComponentController * _componentController;
     SXDataTableComponentController * _dataTableComponentController;
     <SXImageViewFactory> * _imageViewFactory;
     SXDataTableDictionary * _imageViews;
@@ -19,6 +20,7 @@
 
 @property (nonatomic, retain) SXDataTableBlueprint *blueprint;
 @property (nonatomic, readonly) <SXComponentActionHandler> *componentActionHandler;
+@property (nonatomic, readonly) SXComponentController *componentController;
 @property (nonatomic, retain) SXDataTableComponentController *dataTableComponentController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -38,6 +40,7 @@
 - (void)addTextStorageForIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1 toCollectior:(id)arg2;
 - (id)blueprint;
 - (id)componentActionHandler;
+- (id)componentController;
 - (id)componentForDataTableComponentController:(id)arg1;
 - (id)contentSizeCategoryForDataTableComponentController:(id)arg1;
 - (id)contentViewForBehavior:(id)arg1;
@@ -51,7 +54,7 @@
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)imageViewFactory;
 - (id)imageViews;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 imageViewFactory:(id)arg6 componentActionHandler:(id)arg7 textComponentLayoutHosting:(id)arg8;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 imageViewFactory:(id)arg6 componentActionHandler:(id)arg7 textComponentLayoutHosting:(id)arg8 componentController:(id)arg9;
 - (id)leftShadow;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
@@ -75,6 +78,7 @@
 - (id)textViews;
 - (void)updateShadowOpacity;
 - (void)updateTangierController;
+- (bool)userInteractable;
 - (double)widthForDataTableComponentController:(id)arg1;
 
 @end

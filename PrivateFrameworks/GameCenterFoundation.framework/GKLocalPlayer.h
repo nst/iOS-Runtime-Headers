@@ -115,7 +115,7 @@
 - (void)loadRecentPlayersWithCompletionHandler:(id /* block */)arg1;
 - (id)loginAlertView;
 - (void)registerListener:(id)arg1;
-- (void)removeAllFriends:(id)arg1 block:(id /* block */)arg2;
+- (void)removeAllFriendsWithBlock:(id /* block */)arg1;
 - (void)removeFriend:(id)arg1 block:(id /* block */)arg2;
 - (void)reportAuthenticatingWithAuthKitInvocation;
 - (void)reportAuthenticatingWithGreenBuddyInvocation;

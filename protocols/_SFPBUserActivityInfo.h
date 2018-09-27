@@ -5,10 +5,6 @@
 
 @required
 
-- (bool)hasKey;
-- (bool)hasStringValue;
-- (bool)hasUrlValue;
-- (bool)hasValueType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

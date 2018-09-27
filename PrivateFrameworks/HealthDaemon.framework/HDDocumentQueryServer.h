@@ -15,15 +15,17 @@
 @property (nonatomic, readonly) unsigned long long maxResults;
 @property (nonatomic, readonly) NSArray *sortDescriptors;
 
++ (Class)queryClass;
++ (id)requiredEntitlements;
+
 - (void).cxx_destruct;
 - (bool)_deliverAuthorizedSamplesToClient:(id)arg1 errorOut:(id*)arg2;
 - (bool)_deliverOneSample:(id)arg1 client:(id)arg2 errorOut:(id*)arg3;
 - (void)_queue_start;
 - (void)authorizeSamples:(id)arg1 completion:(id /* block */)arg2;
 - (bool)includeDocumentData;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 - (unsigned long long)maxResults;
-- (id)requiredEntitlements;
 - (id)samplesBeforeAuthorizationWithSortDescriptors:(id)arg1 errorOut:(id*)arg2;
 - (id)sortDescriptors;
 

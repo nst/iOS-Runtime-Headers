@@ -18,16 +18,19 @@
 - (double)_delayUntilRepeatInsertText:(NSString *)arg1;
 - (void)_didHideCorrections;
 - (void)_insertAttributedTextWithoutClosingTyping:(NSAttributedString *)arg1;
+- (RTIInputSystemSourceSession *)_rtiSourceSession;
 - (SEL)_sendCurrentLocationAction;
 - (bool)_shouldRepeatInsertText:(NSString *)arg1;
 - (bool)_shouldSuppressSelectionCommands;
 - (long long)_textInputSource;
 - (void)_willShowCorrections;
 - (void)acceptedAutoFillWord:(NSString *)arg1;
+- (NSAttributedString *)attributedTextInRange:(UITextRange *)arg1;
 - (UIView *)automaticallySelectedOverlay;
 - (UIFont *)fontForCaretSelection;
 - (void)handleKeyWebEvent:(WebEvent *)arg1;
 - (void)handleKeyWebEvent:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: WebEvent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WebEvent *, bool, void*
+- (void)insertAttributedText:(NSAttributedString *)arg1;
 - (void)insertDictationResult:(UIDictationSerializableResults *)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)insertTextSuggestion:(UITextSuggestion *)arg1;
 - (bool)isAutoFillMode;
@@ -35,8 +38,10 @@
 - (UITextRange *)rangeWithTextAlternatives:(id*)arg1 atPosition:(UITextPosition *)arg2;
 - (void)replaceRangeWithTextWithoutClosingTyping:(UITextRange *)arg1 replacementText:(NSString *)arg2;
 - (bool)requiresKeyEvents;
+- (UIView *)selectionContainerView;
 - (long long)selectionGranularity;
 - (<UISelectionInteractionAssistant> *)selectionInteractionAssistant;
+- (void)setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setBottomBufferHeight:(double)arg1;
 - (void)setSelectionGranularity:(long long)arg1;
 - (void)set_textInputSource:(long long)arg1;

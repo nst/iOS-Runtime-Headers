@@ -39,7 +39,7 @@
 - (long long)currentReviewIndex;
 - (unsigned long long)currentStyle;
 - (id)currentStyleComplicationColor;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (void)invalidateCurrentListing;
 - (void)invalidatePreparedListing;
 - (id)nextListing;

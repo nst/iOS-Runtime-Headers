@@ -24,6 +24,7 @@
 + (id)sharedInstance;
 + (id)singletonInstance;
 
+- (void).cxx_destruct;
 - (id)addObserver:(id /* block */)arg1;
 - (void)dealloc;
 - (void)decrementRecentClientCountAfterDelay;

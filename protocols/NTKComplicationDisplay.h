@@ -5,7 +5,9 @@
 
 @required
 
+- (bool)canUseCurvedText;
 - (<NTKComplicationDisplayObserver> *)displayObserver;
+- (void)setCanUseCurvedText:(bool)arg1;
 - (void)setDisplayObserver:(id <NTKComplicationDisplayObserver>)arg1;
 
 @optional

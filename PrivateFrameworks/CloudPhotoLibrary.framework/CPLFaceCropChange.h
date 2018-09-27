@@ -17,12 +17,14 @@
 - (void).cxx_destruct;
 - (long long)faceCropType;
 - (id)personIdentifier;
+- (id)personScopedIdentifier;
 - (id)propertiesDescription;
 - (id)rejectedPersonIdentifier;
 - (id)relatedIdentifier;
 - (id)resourceData;
 - (void)setFaceCropType:(long long)arg1;
 - (void)setPersonIdentifier:(id)arg1;
+- (void)setPersonScopedIdentifier:(id)arg1;
 - (void)setRejectedPersonIdentifier:(id)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (void)setResourceData:(id)arg1;

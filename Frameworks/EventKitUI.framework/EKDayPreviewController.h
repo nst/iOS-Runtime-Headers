@@ -58,6 +58,7 @@
 - (void)loadView;
 - (long long)overriddenParticipantStatus;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (void)reload;
 - (void)renderPressHighlight:(bool)arg1;
 - (bool)respectsSelectedCalendarsFilter;
 - (void)setHidesAllDayEvents:(bool)arg1;

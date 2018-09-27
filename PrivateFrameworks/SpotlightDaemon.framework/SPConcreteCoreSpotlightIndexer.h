@@ -8,6 +8,7 @@
     unsigned long long  _createCount;
     NSString * _dataclass;
     NSObject<OS_dispatch_queue> * _firstUnlockQueue;
+    double  _idleStartTime;
     struct __SI { } * _index;
     NSObject<OS_dispatch_source> * _indexIdleTimer;
     NSObject<OS_dispatch_queue> * _indexQueue;
@@ -27,8 +28,9 @@
 @property (nonatomic, readonly) NSMapTable *checkedInClients;
 @property (nonatomic, retain) NSString *dataclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *firstUnlockQueue;
+@property (nonatomic, readonly) double idleStartTime;
 @property (nonatomic) struct __SI { }*index;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *indexIdleTimer;
+@property (nonatomic, readonly) NSObject<OS_dispatch_source> *indexIdleTimer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *indexQueue;
 @property (nonatomic, readonly) NSMutableSet *knownClients;
 @property (nonatomic, retain) NSMutableArray *outstandingMaintenance;
@@ -42,6 +44,7 @@
 - (void)_addNewClientWithBundleID:(id)arg1;
 - (void)_backgroundDeleteItems:(id)arg1 bundleID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_cancelIdleTimer;
+- (void)_deleteSearchableItemsMatchingQuery:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_expireCorruptIndexFilesWithPath:(id)arg1 keepLatest:(bool)arg2;
 - (void)_fetchAccumulatedStorageSizeForBundleId:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_indexMaintenanceActivityName;
@@ -51,7 +54,7 @@
 - (void)_scheduleStringsCleanupForBundleID:(id)arg1;
 - (void)_setClientState:(id)arg1 clientStateName:(id)arg2 forBundleID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)_startInternalQueryWithIndex:(struct __SI { }*)arg1 query:(id)arg2 fetchAttributes:(id)arg3 resultsHandler:(id /* block */)arg4;
-- (id)_startQueryWithQueryTask:(id)arg1 resultsHandler:(id /* block */)arg2;
+- (id)_startQueryWithQueryTask:(id)arg1 eventHandler:(id /* block */)arg2 resultsHandler:(id /* block */)arg3;
 - (void)addClients:(id)arg1;
 - (void)addCompletedBundleIDs:(id)arg1 forIndexerTask:(id)arg2;
 - (void)attributesForBundleId:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
@@ -66,7 +69,11 @@
 - (void)coolDown:(id)arg1;
 - (id)dataclass;
 - (void)dealloc;
+- (void)deleteActionsBeforeTime:(double)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteActionsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteAllInteractionsWithBundleID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteAllSearchableItemsForBundleID:(id)arg1 shouldGC:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)deleteAllUserActivities:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteItemsForEnumerator:(id)arg1 traceID:(long long)arg2 bundleID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)deleteItemsForQuery:(id)arg1 bundleID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 forBundleID:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -76,11 +83,12 @@
 - (void)ensureOpenIndexFiles;
 - (void)fetchAllCompletedBundleIDsForIndexerTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completion:(id /* block */)arg4;
+- (void)fetchAttributes:(id)arg1 bundleID:(id)arg2 identifiers:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)fetchLastClientStateForBundleID:(id)arg1 clientStateName:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)finishReindexAll;
 - (id)firstUnlockQueue;
 - (id)getPropertyForKey:(id)arg1;
-- (void)imageDataForBundleId:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
+- (double)idleStartTime;
 - (struct __SI { }*)index;
 - (void)indexFinishedDrainingJournal;
 - (void)indexFinishedDrainingJournal:(id)arg1;
@@ -115,20 +123,18 @@
 - (void)setDataclass:(id)arg1;
 - (void)setFirstUnlockQueue:(id)arg1;
 - (void)setIndex:(struct __SI { }*)arg1;
-- (void)setIndexIdleTimer:(id)arg1;
 - (void)setIndexQueue:(id)arg1;
 - (void)setOutstandingMaintenance:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2 sync:(bool)arg3;
 - (void)setResultQueue:(struct __SIResultQueue { }*)arg1;
 - (void)shrink:(unsigned long long)arg1;
-- (void)startQueryWithQueryTask:(id)arg1 startHandler:(id /* block */)arg2 resultsHandler:(id /* block */)arg3;
+- (void)startQueryWithQueryTask:(id)arg1 startHandler:(id /* block */)arg2 eventHandler:(id /* block */)arg3 resultsHandler:(id /* block */)arg4;
 - (void)startReindexAll;
 - (void)suspendIndexForDeviceLock;
 - (void)updateRankingDates;
-- (void)userPerformedAction:(id)arg1 withItem:(id)arg2 forBundleID:(id)arg3;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 forBundleID:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
+- (bool)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
 - (void)zombifyAllContactItems:(id)arg1;
 
 @end

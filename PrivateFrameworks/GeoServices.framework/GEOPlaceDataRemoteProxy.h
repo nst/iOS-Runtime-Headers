@@ -14,7 +14,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_logThrottledRequestOfType:(int)arg1;
 - (bool)_parseReply:(id)arg1 placeResponse:(id*)arg2 userInfo:(id*)arg3 error:(id*)arg4;
 - (void)calculateFreeableSpaceWithHandler:(id /* block */)arg1;
 - (void)cancelRequest:(id)arg1;

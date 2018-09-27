@@ -9,6 +9,7 @@
     NSMutableArray * _announcementsSupportedLanguages;
     NSString * _announcementsURL;
     NSMutableArray * _attributions;
+    NSString * _authProxyURL;
     NSString * _authToken;
     NSString * _backgroundDispatcherURL;
     NSString * _backgroundRevGeoURL;
@@ -54,6 +55,7 @@
     NSMutableArray * _tileGroups;
     NSMutableArray * _tileSets;
     PBUnknownFields * _unknownFields;
+    NSMutableArray * _urlInfoSets;
     GEOVersionManifest * _versionManifest;
     NSString * _wifiConnectionQualityProbeURL;
     NSMutableArray * _xmlChecksums;
@@ -66,6 +68,7 @@
 @property (nonatomic, retain) NSMutableArray *announcementsSupportedLanguages;
 @property (nonatomic, retain) NSString *announcementsURL;
 @property (nonatomic, retain) NSMutableArray *attributions;
+@property (nonatomic, retain) NSString *authProxyURL;
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, retain) NSString *backgroundDispatcherURL;
 @property (nonatomic, retain) NSString *backgroundRevGeoURL;
@@ -84,6 +87,7 @@
 @property (nonatomic, readonly) bool hasAddressCorrectionInitURL;
 @property (nonatomic, readonly) bool hasAddressCorrectionUpdateURL;
 @property (nonatomic, readonly) bool hasAnnouncementsURL;
+@property (nonatomic, readonly) bool hasAuthProxyURL;
 @property (nonatomic, readonly) bool hasAuthToken;
 @property (nonatomic, readonly) bool hasBackgroundDispatcherURL;
 @property (nonatomic, readonly) bool hasBackgroundRevGeoURL;
@@ -140,6 +144,7 @@
 @property (nonatomic, retain) NSMutableArray *tileGroups;
 @property (nonatomic, retain) NSMutableArray *tileSets;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, retain) NSMutableArray *urlInfoSets;
 @property (nonatomic, retain) GEOVersionManifest *versionManifest;
 @property (nonatomic, retain) NSString *wifiConnectionQualityProbeURL;
 @property (nonatomic, retain) NSMutableArray *xmlChecksums;
@@ -162,6 +167,7 @@
 + (Class)textureType;
 + (Class)tileGroupType;
 + (Class)tileSetType;
++ (Class)urlInfoSetType;
 + (Class)xmlChecksumType;
 + (Class)xmlType;
 
@@ -184,6 +190,7 @@
 - (void)addTextureChecksum:(id)arg1;
 - (void)addTileGroup:(id)arg1;
 - (void)addTileSet:(id)arg1;
+- (void)addUrlInfoSet:(id)arg1;
 - (void)addXml:(id)arg1;
 - (void)addXmlChecksum:(id)arg1;
 - (id)addressCorrectionInitURL;
@@ -195,6 +202,7 @@
 - (id)attributionAtIndex:(unsigned long long)arg1;
 - (id)attributions;
 - (unsigned long long)attributionsCount;
+- (id)authProxyURL;
 - (id)authToken;
 - (id)backgroundDispatcherURL;
 - (id)backgroundRevGeoURL;
@@ -219,6 +227,7 @@
 - (void)clearTextures;
 - (void)clearTileGroups;
 - (void)clearTileSets;
+- (void)clearUrlInfoSets;
 - (void)clearXmlChecksums;
 - (void)clearXmls;
 - (void)convertFromLegacyFormat;
@@ -245,6 +254,7 @@
 - (bool)hasAddressCorrectionInitURL;
 - (bool)hasAddressCorrectionUpdateURL;
 - (bool)hasAnnouncementsURL;
+- (bool)hasAuthProxyURL;
 - (bool)hasAuthToken;
 - (bool)hasBackgroundDispatcherURL;
 - (bool)hasBackgroundRevGeoURL;
@@ -289,6 +299,7 @@
 - (id)logMessageUsageV3URL;
 - (void)mergeFrom:(id)arg1;
 - (id)polyLocationShiftURL;
+- (id)preferedURLSetFor:(id)arg1;
 - (id)proactiveRoutingURL;
 - (id)problemCategoriesURL;
 - (id)problemOptInURL;
@@ -312,6 +323,7 @@
 - (void)setAnnouncementsSupportedLanguages:(id)arg1;
 - (void)setAnnouncementsURL:(id)arg1;
 - (void)setAttributions:(id)arg1;
+- (void)setAuthProxyURL:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setBackgroundDispatcherURL:(id)arg1;
 - (void)setBackgroundRevGeoURL:(id)arg1;
@@ -354,6 +366,7 @@
 - (void)setTextures:(id)arg1;
 - (void)setTileGroups:(id)arg1;
 - (void)setTileSets:(id)arg1;
+- (void)setUrlInfoSets:(id)arg1;
 - (void)setVersionManifest:(id)arg1;
 - (void)setWifiConnectionQualityProbeURL:(id)arg1;
 - (void)setXmlChecksums:(id)arg1;
@@ -379,6 +392,9 @@
 - (id)tileSets;
 - (unsigned long long)tileSetsCount;
 - (id)unknownFields;
+- (id)urlInfoSetAtIndex:(unsigned long long)arg1;
+- (id)urlInfoSets;
+- (unsigned long long)urlInfoSetsCount;
 - (id)versionManifest;
 - (id)wifiConnectionQualityProbeURL;
 - (void)workAround24919568IfNecessary;

@@ -3,10 +3,6 @@
  */
 
 @interface _CPSessionEndFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSessionEndFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int reason : 1; 
-    }  _has;
     int  _reason;
     unsigned long long  _timestamp;
 }
@@ -15,19 +11,14 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasReason;
-@property (nonatomic, readonly) bool hasTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) int reason;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (id)dictionaryRepresentation;
-- (bool)hasReason;
-- (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

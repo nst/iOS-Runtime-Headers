@@ -8,6 +8,7 @@
     UIView * _borrowedCircleView;
     UIView * _borrowedHandsView;
     UIView * _contentView;
+    UIView * _dialComplicationContainerView;
     double  _maxZoomingIconDiameter;
     UIView * _zoomingClippingView;
 }
@@ -17,11 +18,12 @@
 @property (nonatomic) UIView *borrowedCircleView;
 @property (nonatomic) UIView *borrowedHandsView;
 @property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic, readonly) UIView *dialComplicationContainerView;
 @property (nonatomic) double maxZoomingIconDiameter;
 @property (nonatomic, retain) NTKAnalogHandsView *timeView;
 @property (nonatomic, retain) UIView *zoomingClippingView;
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 + (Class)_timeViewClass;
 
 - (void).cxx_destruct;
@@ -32,6 +34,7 @@
 - (bool)_canStartTimeScrubbing;
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterZoom;
+- (id)_complicationContainerViewForSlot:(id)arg1;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureReusableTimeView:(id)arg1;
@@ -41,6 +44,7 @@
 - (struct CGPoint { double x1; double x2; })_dateComplicationRightAlignment;
 - (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_handleLocaleDidChange;
+- (bool)_isComplicationSlotInsideDial:(id)arg1;
 - (void)_loadContentToReplaceUnadornedSnapshot;
 - (void)_loadSnapshotContentViews;
 - (bool)_needsForegroundContainerView;
@@ -67,7 +71,8 @@
 - (id)borrowedHandsView;
 - (id)contentView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)dialComplicationContainerView;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (double)maxZoomingIconDiameter;
 - (void)setBorrowedCircleView:(id)arg1;

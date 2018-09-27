@@ -4,11 +4,12 @@
 
 @interface ICHTMLSearchIndexerDataSource : ICBaseSearchIndexerDataSource
 
-- (id)allIndexableObjectIDs;
+- (id)allIndexableObjectIdentifiersByObjectID;
 - (void)contextWillSave:(id)arg1;
 - (id)dataSourceIdentifier;
 - (id)indexableObjectIDsMatchingPredicate:(id)arg1;
 - (id)indexableObjectIDsWithIdentifiers:(id)arg1;
+- (id)indexableObjectsMatchingPredicate:(id)arg1 context:(id)arg2;
 - (id)newManagedObjectContext;
 - (id)objectForSearchableItemIdentifier:(id)arg1 context:(id)arg2;
 - (id)persistentStoreCoordinator;

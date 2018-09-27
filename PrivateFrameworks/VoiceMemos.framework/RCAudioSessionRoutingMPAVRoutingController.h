@@ -4,17 +4,21 @@
 
 @interface RCAudioSessionRoutingMPAVRoutingController : MPAVRoutingController {
     AVAudioSession * _audioSession;
+    RCAudioSessionRoutingAssertion * _audioSessionAssertion;
     NSString * _audioSessionCategory;
     unsigned long long  _audioSessionCategoryOptions;
+    AVAudioSessionRouteDescription * _cachedCurrentRoute;
     NSArray * _cachedPickableOutputRoutes;
     AVAudioSessionPortDescription * _cachedPickedInputRoutePortDescription;
     MPAVRoute * _cachedPickedOutputRoute;
+    AVAudioSessionPortDescription * _cachedPickedOutputRoutePortDescription;
     bool  _hasCategoryEverBeenActive;
 }
 
 @property (nonatomic, readonly) NSArray *cachedPickableOutputRoutes;
 @property (nonatomic, readonly) AVAudioSessionPortDescription *cachedPickedInputRoutePortDescription;
 @property (nonatomic, readonly) MPAVRoute *cachedPickedOutputRoute;
+@property (nonatomic, readonly) AVAudioSessionPortDescription *cachedPickedOutputRoutePortDescription;
 @property (nonatomic, readonly) bool hasCategoryEverBeenActive;
 @property (nonatomic, readonly) bool isAudioSessionAppropriateForQueryingRoutes;
 @property (nonatomic, readonly) bool isRoutingToAirPlayMirrorDestination;
@@ -29,6 +33,7 @@
 - (id)cachedPickableOutputRoutes;
 - (id)cachedPickedInputRoutePortDescription;
 - (id)cachedPickedOutputRoute;
+- (id)cachedPickedOutputRoutePortDescription;
 - (void)dealloc;
 - (void)disableDetailedDiscoveryMode;
 - (void)enableDetailedDiscoveryMode;
@@ -38,7 +43,7 @@
 - (bool)isAudioSessionAppropriateForQueryingRoutes;
 - (bool)isRoutingToAirPlayMirrorDestination;
 - (bool)isRoutingToPhoneCall;
-- (bool)makeAudioSessionCategoryActive:(bool)arg1;
+- (bool)makeAudioSessionCategoryActive:(id)arg1;
 - (long long)outputRouteTypeForNavigationIcon;
 - (bool)routeOtherThanHandsetAndSpeakerAvailable;
 - (void)setDelegate:(id)arg1;

@@ -50,8 +50,6 @@
 - (void)_updateTraitCollectionAndLayoutReferenceSize;
 - (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)aggregateSession;
-- (void)animateBecomingActiveTool;
-- (void)animateResigningActiveTool;
 - (void)baseLivePhotoInvalidated;
 - (void)basePhotoInvalidated;
 - (bool)canBecomeActiveTool;
@@ -63,6 +61,7 @@
 - (void)didResignActiveTool;
 - (id)editSource;
 - (id)filter;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
 - (bool)installTogglePreviewGestureRecognizer:(id)arg1;
@@ -71,6 +70,7 @@
 - (void)loadView;
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
+- (void)mediaViewIsReady;
 - (id)photoEditModel;
 - (void)photoEditModelDidChange;
 - (id /* block */)ppt_didBecomeActiveToolBlock;

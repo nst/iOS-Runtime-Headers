@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
  */
 
-@interface PKInternalDrawingView : PKInternalDrawingLightView <PKControllerDelegate, PKDrawingGestureTarget, UIGestureRecognizerDelegate> {
-    UIActivityIndicatorView * _activityView;
+@interface PKInternalDrawingView : UIView <PKControllerDelegate, PKDrawingGestureTarget, UIGestureRecognizerDelegate> {
     bool  _allowLiveInteraction;
-    bool  _claimedLiveDrawing;
+    long long  _cachedOrientation;
     <PKInternalDrawingViewDelegate> * _delegate;
     bool  _didCancelSelection;
     bool  _disableWideGamut;
     CADisplayLink * _displayLink;
+    PKDrawing * _drawing;
+    PKDrawing * _drawingAboutToBeSet;
     struct CGPoint { 
         double x; 
         double y; 
     }  _drawingBeganLocation;
     PKController * _drawingController;
     PKDrawingGestureRecognizer * _drawingGestureRecognizer;
-    struct CGPoint { 
-        double x; 
-        double y; 
-    }  _drawingStartPointInScreenSpace;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _drawingSize;
     double  _drawingStartTimestamp;
     bool  _editable;
     bool  _fullySetup;
@@ -39,8 +40,11 @@
     bool  _isErasingObjects;
     bool  _isSelecting;
     bool  _layerFixedPixelSize;
+    unsigned long long  _maxNumPredictionPoints;
     double  _maximumZoomScale;
+    PKMetalView * _metalView;
     double  _minimumZoomScale;
+    unsigned long long  _numSkippedDoubleBufferedFrames;
     struct CGPoint { 
         double x; 
         double y; 
@@ -56,9 +60,11 @@
     }  _pinchStartAffineTransform;
     bool  _pinchValid;
     bool  _pinchingFromSmallestState;
-    PKUndoSwipeGestureRecognizer * _redoGestureRecognizer;
+    id  _pkaxOpenGLView;
+    id /* block */  _purgeResourcesBlock;
     PKSelectionController * _selectionController;
     bool  _shouldPause;
+    bool  _shouldPresentInDidMoveToWindow;
     struct CGAffineTransform { 
         double a; 
         double b; 
@@ -67,27 +73,23 @@
         double tx; 
         double ty; 
     }  _strokeTransform;
-    UIView * _transitionBackgroundView;
-    UIView * _transitionImageView;
-    PKUndoSwipeGestureRecognizer * _undoGestureRecognizer;
-    long long  _undoGroupCount;
+    NSMutableOrderedSet * _strokesToErase;
     SEL  _undoSelector;
     id  _undoTarget;
     bool  _zooming;
 }
 
-@property (nonatomic) UIActivityIndicatorView *activityView;
 @property (nonatomic) bool allowLiveInteraction;
-@property (nonatomic) bool claimedLiveDrawing;
-@property (nonatomic) bool contentHidden;
+@property (nonatomic) long long cachedOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKInternalDrawingViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didCancelSelection;
 @property (nonatomic) bool disableWideGamut;
+@property (nonatomic, retain) PKDrawing *drawing;
 @property (nonatomic, readonly) PKController *drawingController;
 @property (nonatomic, retain) PKDrawingGestureRecognizer *drawingGestureRecognizer;
-@property (nonatomic) struct CGPoint { double x1; double x2; } drawingStartPointInScreenSpace;
+@property (nonatomic) struct CGSize { double x1; double x2; } drawingSize;
 @property double drawingStartTimestamp;
 @property (getter=isEditable, nonatomic) bool editable;
 @property (nonatomic) bool fullySetup;
@@ -101,18 +103,17 @@
 @property (nonatomic, readonly) bool isRendering;
 @property (nonatomic) bool layerFixedPixelSize;
 @property (nonatomic) double maximumZoomScale;
+@property (nonatomic, readonly) PKMetalView *metalView;
 @property (nonatomic) double minimumZoomScale;
 @property (nonatomic, retain) PKFreeTransformGestureRecognizer *pinchGestureRecognizer;
 @property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } pinchStartAffineTransform;
 @property (nonatomic) bool pinchValid;
 @property (nonatomic) bool pinchingFromSmallestState;
 @property (nonatomic, readonly) id pkaxOpenGLView;
-@property (nonatomic, retain) PKUndoSwipeGestureRecognizer *redoGestureRecognizer;
 @property (nonatomic, readonly) PKSelectionController *selectionController;
 @property (nonatomic) bool shouldPause;
 @property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } strokeTransform;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) PKUndoSwipeGestureRecognizer *undoGestureRecognizer;
 @property (nonatomic) SEL undoSelector;
 @property (nonatomic) id undoTarget;
 @property (nonatomic) bool zooming;
@@ -121,19 +122,22 @@
 + (void)setupDefaults;
 
 - (void).cxx_destruct;
+- (void)_addSpaceBelowDrawingForStroke:(id)arg1 touch:(id)arg2;
 - (void)_closeLassoForTouch:(id)arg1;
+- (void)_didFinishErasingStrokes;
 - (void)_drawingDisplay:(double)arg1;
 - (void)_gestureRecognizerFailed:(id)arg1;
-- (void)_rebuildOpenGLView;
-- (void)_setDrawing:(id)arg1 tiles:(id)arg2 setupComplete:(id /* block */)arg3 completionBlock:(id /* block */)arg4;
+- (void)_handleSelectionForTouch:(id)arg1 stroke:(id)arg2 drawing:(id)arg3;
+- (bool)_isLassoAddingSpace:(id)arg1;
+- (void)_rebuildMetalView;
 - (id)accessibilityElements;
 - (bool)accessibilityElementsHidden;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
-- (id)activityView;
 - (void)adjustedPixelSize:(struct CGSize { double x1; double x2; }*)arg1 drawingSize:(struct CGSize { double x1; double x2; }*)arg2;
 - (bool)allowLiveInteraction;
 - (struct CGPoint { double x1; double x2; })applyTransformToTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)cachedOrientation;
 - (bool)canBecomeFirstResponder;
 - (bool)canEraseAll;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -141,12 +145,9 @@
 - (bool)canRedo;
 - (bool)canUndo;
 - (void)cancelNonDrawingGestures;
-- (bool)claimedLiveDrawing;
-- (bool)contentHidden;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)dealloc;
-- (void)decrementUndoGroupCount;
 - (void)delayCompletionBlockUntilPresentation:(id /* block */)arg1;
 - (id)delegate;
 - (void)delete:(id)arg1;
@@ -155,7 +156,10 @@
 - (bool)disableWideGamut;
 - (void)dismissEditMenuIfNecessary;
 - (void)done;
+- (void)drawNowIfNeeded;
 - (void)drawStrokeWithPath:(struct CGPath { }*)arg1;
+- (void)drawStrokeWithPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
+- (id)drawing;
 - (void)drawingBegan:(id)arg1;
 - (void)drawingBeganForHIDPoint:(id)arg1;
 - (void)drawingCancelled;
@@ -169,7 +173,7 @@
 - (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; double x5; double x6; bool x7; long long x8; double x9; bool x10; })drawingInputPoint:(struct CGPoint { double x1; double x2; })arg1 forTouch:(id)arg2 predicted:(bool)arg3;
 - (void)drawingMoved:(id)arg1 withEvent:(id)arg2;
 - (void)drawingMovedForHIDPoint:(id)arg1;
-- (struct CGPoint { double x1; double x2; })drawingStartPointInScreenSpace;
+- (struct CGSize { double x1; double x2; })drawingSize;
 - (double)drawingStartTimestamp;
 - (void)duplicate:(id)arg1;
 - (bool)enableUserActionButton;
@@ -177,21 +181,18 @@
 - (void)eraseStrokesForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)eraseStrokesForPoint:(struct CGPoint { double x1; double x2; })arg1 prevPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })fitTransform;
-- (void)forceCancelDrawing;
-- (void)forceEndDrawing;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })fitTransformForOrientation:(long long)arg1;
 - (bool)fullySetup;
 - (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)glLayer;
 - (id)glView;
 - (void)handleDrawingShouldPause:(bool)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })imageTransform;
 - (id)imageTransformTimer;
-- (void)incrementUndoGroupCount;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 editable:(bool)arg2 pixelSize:(struct CGSize { double x1; double x2; })arg3 drawingScale:(double)arg4 layerFixedPixelSize:(bool)arg5 drawingController:(id)arg6 selectionController:(id)arg7;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 editable:(bool)arg2 pixelSize:(struct CGSize { double x1; double x2; })arg3 drawingScale:(double)arg4 layerFixedPixelSize:(bool)arg5 selectionController:(id)arg6;
 - (double)initialDrawingBoundsYOrigin;
 - (id)ink;
 - (bool)isAccessibilityElement;
@@ -201,6 +202,7 @@
 - (double)layerContentScale;
 - (bool)layerFixedPixelSize;
 - (double)maximumZoomScale;
+- (id)metalView;
 - (double)minimumZoomScale;
 - (double)offsetForCenteringRangeMin:(double)arg1 size:(double)arg2 inSize:(double)arg3;
 - (void)paste:(id)arg1;
@@ -213,22 +215,22 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pinchTransform:(id)arg1 elasticity:(double)arg2;
 - (bool)pinchValid;
 - (bool)pinchingFromSmallestState;
+- (id)pkaxMetalView;
 - (id)pkaxOpenGLView;
 - (void)postDrawingBeganAnnouncementFor:(id)arg1;
 - (void)postDrawingEndedAnnouncementFor:(id)arg1;
-- (id)redoGestureRecognizer;
 - (void)registerUndoForStroke:(id)arg1;
+- (void)replaceWithStrokesFromDrawing:(id)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)resizeBackingBuffersForPixelSize:(struct CGSize { double x1; double x2; })arg1 drawingScale:(double)arg2;
 - (void)rotate:(id)arg1;
 - (void)rotateIfNeeded;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })scaledStrokeTransform;
 - (void)selectionBegan:(id)arg1;
 - (id)selectionController;
-- (void)setActivityView:(id)arg1;
 - (void)setAllowLiveInteraction:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(struct CGImage { }*)arg1;
-- (void)setClaimedLiveDrawing:(bool)arg1;
-- (void)setContentHidden:(bool)arg1;
+- (void)setCachedOrientation:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidCancelSelection:(bool)arg1;
 - (void)setDisableWideGamut:(bool)arg1;
@@ -236,7 +238,7 @@
 - (void)setDrawing:(id)arg1;
 - (void)setDrawing:(id)arg1 image:(id)arg2 imageDrawing:(id)arg3 completion:(id /* block */)arg4 fullyRenderedCompletionBlock:(id /* block */)arg5;
 - (void)setDrawingGestureRecognizer:(id)arg1;
-- (void)setDrawingStartPointInScreenSpace:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDrawingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDrawingStartTimestamp:(double)arg1;
 - (void)setEditable:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -258,10 +260,8 @@
 - (void)setPinchStartAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setPinchValid:(bool)arg1;
 - (void)setPinchingFromSmallestState:(bool)arg1;
-- (void)setRedoGestureRecognizer:(id)arg1;
 - (void)setShouldPause:(bool)arg1;
 - (void)setStrokeTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (void)setUndoGestureRecognizer:(id)arg1;
 - (void)setUndoSelector:(SEL)arg1;
 - (void)setUndoTarget:(id)arg1;
 - (void)setZooming:(bool)arg1;
@@ -269,21 +269,20 @@
 - (void)setupFullScreenTransform;
 - (void)setupFullScreenTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 toViewOrientation:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 animated:(bool)arg3;
 - (void)setupGestures;
+- (void)setupMetalViewForWideGamut:(bool)arg1 withPixelSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setupOpenGLViewForWideGamut:(bool)arg1 withPixelSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)setupOpenGLWithPixelSize:(struct CGSize { double x1; double x2; })arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)setupViewWithPixelSize:(struct CGSize { double x1; double x2; })arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
 - (bool)shouldPause;
-- (bool)showEraseAllButton;
 - (void)simulateHIDPoints:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })strokeTransform;
 - (void)toggleEditMenuAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGPoint { double x1; double x2; })translationOffsetForTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-- (id)undoGestureRecognizer;
 - (SEL)undoSelector;
 - (id)undoTarget;
 - (void)updateImageTransform:(id)arg1;
-- (void)updatePanEdgesForTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)updateZoomScaleCaps;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleOnscreenBoundsForDrawing:(id)arg1;
 - (bool)zooming;
 
 @end

@@ -2,32 +2,42 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCSavedRecording : NSManagedObject <UIActivityItemSource> {
+@interface RCSavedRecording : NSManagedObject <RCMutableRecording, UIActivityItemSource> {
     AVAsset * _avAsset;
     bool  _hasPendingChangeAffectingEntityRevision;
     bool  _ignoreChangeForEntityRevision;
-    NSString * _path;
     bool  _pathWasInvalid;
+    long long  revisionID;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URIRepresentation;
 @property (nonatomic, readonly) AVAsset *avAsset;
-@property (nonatomic, copy) NSDate *date;
+@property (nonatomic, readonly, copy) NSString *customLabel;
+@property (nonatomic, readonly, copy) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double duration;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) bool editing;
+@property (nonatomic, readonly) bool evicted;
+@property (nonatomic, readonly, copy) NSDate *evictionDate;
 @property (nonatomic, readonly) bool hasPendingChangeAffectingEntityRevision;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) long long iTunesPersistentID;
+@property (nonatomic, readonly) long long iTunesPersistentID;
 @property (nonatomic, readonly) bool isContentBeingModified;
-@property (nonatomic, copy) NSString *path;
-@property (getter=isPendingRestore, nonatomic) bool pendingRestore;
+@property (nonatomic, readonly, copy) CLLocation *location;
+@property (nonatomic, readonly) bool manuallyRenamed;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *path;
+@property (nonatomic, readonly) bool pendingRestore;
+@property (nonatomic, readonly) bool playable;
 @property (nonatomic) long long recordingID;
+@property (nonatomic) long long revisionID;
 @property (nonatomic, readonly, copy) CSSearchableItem *searchableItem;
 @property (readonly) Class superclass;
-@property (getter=isSynced, nonatomic) bool synced;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *titleDisallowingEmptyString;
+@property (nonatomic, readonly) bool synced;
+@property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *titleDisallowingEmptyString;
+@property (nonatomic, readonly, copy) NSString *uniqueID;
 @property (nonatomic, readonly, copy) NSURL *url;
 
 + (id)localizedStringForRecordingLabel:(long long)arg1;
@@ -42,7 +52,6 @@
 - (void)_validatePath;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)avAsset;
 - (void)awakeFromFetch;
@@ -50,26 +59,35 @@
 - (id)customLabel;
 - (id)detailLabel;
 - (double)duration;
+- (bool)editing;
+- (bool)evicted;
+- (id)evictionDate;
 - (bool)hasPendingChangeAffectingEntityRevision;
 - (long long)iTunesPersistentID;
 - (bool)isContentBeingModified;
-- (bool)isPendingRestore;
-- (bool)isSynced;
 - (id)label;
 - (long long)labelPreset;
+- (id)location;
+- (bool)manuallyRenamed;
 - (id)name;
 - (id)path;
+- (bool)playable;
 - (long long)recordingID;
+- (long long)revisionID;
 - (id)searchableItem;
 - (void)setCustomLabel:(id)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setEvictionDate:(id)arg1;
 - (void)setITunesPersistentID:(long long)arg1;
 - (void)setLabelPreset:(long long)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setManuallyRenamed:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
-- (void)setPendingRestore:(bool)arg1;
+- (void)setPlayable:(bool)arg1;
 - (void)setRecordingID:(long long)arg1;
-- (void)setSynced:(bool)arg1;
+- (void)setRevisionID:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)titleDisallowingEmptyString;

@@ -19,6 +19,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_debugLog:(id)arg1;
 - (id)_handlerForSceneID:(id)arg1;
 - (id)_loggingProem;

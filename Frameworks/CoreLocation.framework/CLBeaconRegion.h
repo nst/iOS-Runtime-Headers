@@ -2,12 +2,22 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@interface CLBeaconRegion : CLRegion
+@interface CLBeaconRegion : CLRegion <HMFObject>
 
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *major;
 @property (nonatomic, readonly, copy) NSNumber *minor;
 @property (nonatomic) bool notifyEntryStateOnDisplay;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
 @property (nonatomic, readonly, copy) NSUUID *proximityUUID;
+@property (readonly, copy) NSString *shortDescription;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (id)any;
 + (bool)supportsSecureCoding;
@@ -28,5 +38,10 @@
 - (id)proximityUUID;
 - (void)setGutsWithProximityUUID:(id)arg1 major:(id)arg2 minor:(id)arg3 notifyOnDisplay:(bool)arg4;
 - (void)setNotifyEntryStateOnDisplay:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)attributeDescriptions;
+- (id)description;
 
 @end

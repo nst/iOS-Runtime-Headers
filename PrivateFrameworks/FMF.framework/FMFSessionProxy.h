@@ -24,6 +24,7 @@
 - (oneway void)didStopFollowingHandle:(id)arg1;
 - (oneway void)didUpdateActiveDeviceList:(id)arg1;
 - (oneway void)didUpdateFavorites:(id)arg1;
+- (oneway void)didUpdateFences:(id)arg1;
 - (oneway void)didUpdateFollowers:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
 - (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;

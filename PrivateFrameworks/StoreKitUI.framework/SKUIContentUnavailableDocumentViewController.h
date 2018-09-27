@@ -24,7 +24,6 @@
 - (id)initWithTemplateElement:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 

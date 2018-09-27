@@ -13,8 +13,8 @@
 + (id)entryWithDocumentText:(id)arg1 userInput:(id)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)documentText;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

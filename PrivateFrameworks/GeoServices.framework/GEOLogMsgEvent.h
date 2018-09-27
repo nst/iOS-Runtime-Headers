@@ -21,6 +21,7 @@
     GEOLogMsgEventMapLaunch * _mapLaunchEvent;
     GEOLogMsgEventMapsWidgetsInteractionSession * _mapsWidgetsInteractionSession;
     GEOLogMsgEventNetwork * _networkEvent;
+    GEOLogMsgEventParkedCar * _parkedCar;
     GEOLogMsgEventPlaceDataCache * _placeDataCacheEvent;
     GEOLogMsgEventProactiveSuggestionInteractionSession * _proactiveSuggestionInteractionSessionEvent;
     GEOLogMsgEventRealtimeTrafficProbe * _realtimeTrafficProbeCollection;
@@ -32,6 +33,7 @@
     LOGMSGEVENTLogMsgEventTableBookedSession * _tableBookedSession;
     LOGMSGEVENTLogMsgEventTableBookingSession * _tableBookingSession;
     GEOLogMsgEventTelemetric * _telemetric;
+    GEOLogMsgEventTileCacheAnalytic * _tileCacheAnalytic;
     GEOLogMsgEventTileSetState * _tileSetStateEvent;
     GEOLogMsgEventTimeToLeaveHypothesis * _timeToLeaveHypothesisEvent;
     GEOLogMsgEventTimeToLeaveInitialTravelTime * _timeToLeaveInitialTravelTimeEvent;
@@ -62,6 +64,7 @@
 @property (nonatomic, readonly) bool hasMapLaunchEvent;
 @property (nonatomic, readonly) bool hasMapsWidgetsInteractionSession;
 @property (nonatomic, readonly) bool hasNetworkEvent;
+@property (nonatomic, readonly) bool hasParkedCar;
 @property (nonatomic, readonly) bool hasPlaceDataCacheEvent;
 @property (nonatomic, readonly) bool hasProactiveSuggestionInteractionSessionEvent;
 @property (nonatomic, readonly) bool hasRealtimeTrafficProbeCollection;
@@ -73,6 +76,7 @@
 @property (nonatomic, readonly) bool hasTableBookedSession;
 @property (nonatomic, readonly) bool hasTableBookingSession;
 @property (nonatomic, readonly) bool hasTelemetric;
+@property (nonatomic, readonly) bool hasTileCacheAnalytic;
 @property (nonatomic, readonly) bool hasTileSetStateEvent;
 @property (nonatomic, readonly) bool hasTimeToLeaveHypothesisEvent;
 @property (nonatomic, readonly) bool hasTimeToLeaveInitialTravelTimeEvent;
@@ -86,6 +90,7 @@
 @property (nonatomic, retain) GEOLogMsgEventMapLaunch *mapLaunchEvent;
 @property (nonatomic, retain) GEOLogMsgEventMapsWidgetsInteractionSession *mapsWidgetsInteractionSession;
 @property (nonatomic, retain) GEOLogMsgEventNetwork *networkEvent;
+@property (nonatomic, retain) GEOLogMsgEventParkedCar *parkedCar;
 @property (nonatomic, retain) GEOLogMsgEventPlaceDataCache *placeDataCacheEvent;
 @property (nonatomic, retain) GEOLogMsgEventProactiveSuggestionInteractionSession *proactiveSuggestionInteractionSessionEvent;
 @property (nonatomic, retain) GEOLogMsgEventRealtimeTrafficProbe *realtimeTrafficProbeCollection;
@@ -97,6 +102,7 @@
 @property (nonatomic, retain) LOGMSGEVENTLogMsgEventTableBookedSession *tableBookedSession;
 @property (nonatomic, retain) LOGMSGEVENTLogMsgEventTableBookingSession *tableBookingSession;
 @property (nonatomic, retain) GEOLogMsgEventTelemetric *telemetric;
+@property (nonatomic, retain) GEOLogMsgEventTileCacheAnalytic *tileCacheAnalytic;
 @property (nonatomic, retain) GEOLogMsgEventTileSetState *tileSetStateEvent;
 @property (nonatomic, retain) GEOLogMsgEventTimeToLeaveHypothesis *timeToLeaveHypothesisEvent;
 @property (nonatomic, retain) GEOLogMsgEventTimeToLeaveInitialTravelTime *timeToLeaveInitialTravelTimeEvent;
@@ -142,6 +148,7 @@
 - (bool)hasMapLaunchEvent;
 - (bool)hasMapsWidgetsInteractionSession;
 - (bool)hasNetworkEvent;
+- (bool)hasParkedCar;
 - (bool)hasPlaceDataCacheEvent;
 - (bool)hasProactiveSuggestionInteractionSessionEvent;
 - (bool)hasRealtimeTrafficProbeCollection;
@@ -153,6 +160,7 @@
 - (bool)hasTableBookedSession;
 - (bool)hasTableBookingSession;
 - (bool)hasTelemetric;
+- (bool)hasTileCacheAnalytic;
 - (bool)hasTileSetStateEvent;
 - (bool)hasTimeToLeaveHypothesisEvent;
 - (bool)hasTimeToLeaveInitialTravelTimeEvent;
@@ -175,6 +183,7 @@
 - (id)networkEvent;
 - (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1;
 - (unsigned long long)numberOfLogMsgStatesOfType:(int)arg1 stateOrigin:(id)arg2;
+- (id)parkedCar;
 - (id)placeDataCacheEvent;
 - (id)proactiveSuggestionInteractionSessionEvent;
 - (bool)readFrom:(id)arg1;
@@ -198,6 +207,7 @@
 - (void)setMapLaunchEvent:(id)arg1;
 - (void)setMapsWidgetsInteractionSession:(id)arg1;
 - (void)setNetworkEvent:(id)arg1;
+- (void)setParkedCar:(id)arg1;
 - (void)setPlaceDataCacheEvent:(id)arg1;
 - (void)setProactiveSuggestionInteractionSessionEvent:(id)arg1;
 - (void)setRealtimeTrafficProbeCollection:(id)arg1;
@@ -209,6 +219,7 @@
 - (void)setTableBookedSession:(id)arg1;
 - (void)setTableBookingSession:(id)arg1;
 - (void)setTelemetric:(id)arg1;
+- (void)setTileCacheAnalytic:(id)arg1;
 - (void)setTileSetStateEvent:(id)arg1;
 - (void)setTimeToLeaveHypothesisEvent:(id)arg1;
 - (void)setTimeToLeaveInitialTravelTimeEvent:(id)arg1;
@@ -221,6 +232,7 @@
 - (id)tableBookedSession;
 - (id)tableBookingSession;
 - (id)telemetric;
+- (id)tileCacheAnalytic;
 - (id)tileSetStateEvent;
 - (id)timeToLeaveHypothesisEvent;
 - (id)timeToLeaveInitialTravelTimeEvent;

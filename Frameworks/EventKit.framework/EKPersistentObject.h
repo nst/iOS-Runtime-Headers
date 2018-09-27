@@ -7,7 +7,7 @@
     NSMutableSet * _dirtyProperties;
     EKEventStore * _eventStore;
     unsigned int  _flags;
-    NSMapTable * _loadedProperties;
+    NSMutableDictionary * _loadedProperties;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
         BOOL __opaque[56]; 
@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) bool isFrozen;
 @property (nonatomic, readonly) bool isPartialObject;
 @property (nonatomic, readonly) NSDictionary *preFrozenRelationshipObjects;
+@property (nonatomic, readonly) NSString *semanticIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
@@ -41,7 +42,6 @@
 - (void)_addObjectCore:(id)arg1 toValues:(id)arg2 relation:(id)arg3;
 - (bool)_areDefaultPropertiesLoaded;
 - (void)_createLoadedPropertiesIfNeeded;
-- (void)_fastpathSetProperty:(id)arg1 forKey:(id)arg2 isRelation:(bool)arg3;
 - (bool)_isNew;
 - (bool)_isPendingDelete;
 - (bool)_isPendingInsert;
@@ -63,6 +63,8 @@
 - (void)_setPendingInsert:(bool)arg1;
 - (void)_setPendingUpdate:(bool)arg1;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
+- (void)_setProperty:(id)arg1 forKey:(id)arg2 forRelation:(id)arg3;
+- (void)_setProperty:(id)arg1 forKey:(id)arg2 isRelation:(bool)arg3;
 - (void)_takeValues:(id)arg1 forKeys:(id)arg2;
 - (void)_takeValuesForDefaultPropertyKeys:(id)arg1 values:(id)arg2;
 - (bool)canBeConvertedToFullObject;
@@ -115,10 +117,11 @@
 - (id)primitiveURLValueForKey:(id)arg1;
 - (bool)pushDirtyProperties:(id*)arg1;
 - (bool)refresh;
-- (bool)refreshExcludingProperties:(id)arg1;
 - (void)reset;
 - (void)rollback;
 - (void)saved;
+- (id)semanticIdentifier;
+- (bool)setAttributes:(id)arg1 relations:(id)arg2 objectID:(id)arg3 eventStore:(id)arg4 error:(id*)arg5;
 - (void)setCommittedProperties:(id)arg1;
 - (void)takeValues:(id)arg1 forKeys:(id)arg2;
 - (void)takeValuesForDefaultPropertyKeys:(id)arg1 values:(id)arg2;

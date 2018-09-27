@@ -16,6 +16,7 @@
 - (id)init;
 - (id)initWithTextColor:(id)arg1;
 - (id)messageLargeFont;
+- (id)messageParagraphStyle;
 - (id)messageSmallFont;
 - (id)styleTextAsMessage:(id)arg1 boundingSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)styleTextAsTitle:(id)arg1 boundingSize:(struct CGSize { double x1; double x2; })arg2;

@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSAttributedString : NSObject <HFStringGenerator, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSMutableCopying, NSSecureCoding, UIItemProviderReading, UIItemProviderWriting>
+@interface NSAttributedString : NSObject <HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding, REContentEncodable, UIItemProviderReading, UIItemProviderWriting>
 
+@property (nonatomic, readonly) NSString *contentEncodedString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -56,44 +57,10 @@
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 startTokenDelimiter:(id)arg3 endTokenDelimiter:(id)arg4 error:(id*)arg5;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 error:(id*)arg2;
 
-// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
 
-+ (id)pu_localizedAttributedStringForCommentWithCommenterFullName:(id)arg1 text:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
-+ (id)pu_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
-+ (id)pu_localizedAttributedStringForLikesFromUser:(bool)arg1 orPersonFullName:(id)arg2 photoCount:(long long)arg3 videoCount:(long long)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7;
-+ (id)pu_localizedAttributedStringForLikesFromUser:(bool)arg1 otherPeopleFullNames:(id)arg2 isVideo:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
-+ (id)pu_localizedAttributedStringForLikesWithLikerCount:(long long)arg1 isVideo:(bool)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
-+ (id)pu_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(long long)arg2 videoCount:(long long)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
-+ (id)pu_localizedAttributedStringForUserCommentWithText:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
-+ (id)pu_localizedAttributedStringForUserCreatingStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
-+ (id)pu_localizedAttributedStringForUserJoiningStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
-+ (id)pu_localizedAttributedStringForUserPostWithPhotoCount:(long long)arg1 videoCount:(long long)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)_objectWithItemProviderFileURL:(id)arg1 typeIdentifier:(id)arg2 isInPlace:(bool)arg3 error:(id*)arg4;
-+ (id)_objectWithRTFDAtURL:(id)arg1 error:(id*)arg2;
-+ (long long)_preferredRepresentationForItemProviderReadableTypeIdentifier:(id)arg1;
-+ (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
-+ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
-+ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
-+ (id)readableTypeIdentifiersForItemProvider;
-+ (id)writableTypeIdentifiersForItemProvider;
-
-- (id)_loadFileRepresentationOfTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
-- (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
-- (id)_ui_attributedStringWithOriginalFontAttributes;
-- (id)_ui_fontsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultFont:(id)arg2;
-- (id)_ui_glyphImageViewsScale:(double)arg1 outImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outBaselineOffset:(double*)arg4;
-- (long long)_ui_resolvedTextAlignment;
-- (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
-- (long long)_ui_resolvedWritingDirection;
-- (long long)_ui_resolvedWritingDirectionForUserInterfaceLayoutDirection:(long long)arg1;
-- (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultAttributes:(id)arg2;
-- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
-- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
-- (void)registerLoadHandlersToItemProvider:(id)arg1;
-- (id)writableTypeIdentifiersForItemProvider;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -101,7 +68,8 @@
 
 // Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
 
-- (id)_attributedStringWithParagraphStyleFromStyle:(id)arg1;
+- (id)_attributedStringWithForegroundColor:(id)arg1;
+- (id)_attributedStringWithOtherAttributesFromStyle:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
@@ -122,6 +90,7 @@
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_attributedStringForSpacing:(double)arg1;
++ (id)hk_initWithString:(id)arg1 font:(id)arg2 hyphenationFactor:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
@@ -226,11 +195,39 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (id)px_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;
++ (id)px_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2 emphasizedAttributes:(id)arg3;
++ (id)px_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2 emphasizedAttributes:(id)arg3 italicizedAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForCommentWithCommenterFullName:(id)arg1 text:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForInboxCoalescedCommentsFromUser:(bool)arg1 otherPeopleFullNames:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForInboxCoalescedCommentsWithCommenterCount:(long long)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)px_localizedAttributedStringForInboxCoalescedLikesAndCommentsFromUser:(bool)arg1 otherPeopleFullNames:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForInboxCoalescedLikesAndCommentsWithCommenterCount:(long long)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)px_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 sharedAlbumName:(id)arg2 accepted:(bool)arg3 defaultTextAttributes:(id)arg4 posterTextAttributes:(id)arg5 albumTextAttributes:(id)arg6;
++ (id)px_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5 streamNameAttributes:(id)arg6;
++ (id)px_localizedAttributedStringForLikesFromUser:(bool)arg1 orPersonFullName:(id)arg2 photoCount:(long long)arg3 videoCount:(long long)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7 italicizedTextAttributes:(id)arg8;
++ (id)px_localizedAttributedStringForLikesFromUser:(bool)arg1 otherPeopleFullNames:(id)arg2 isVideo:(bool)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)px_localizedAttributedStringForLikesWithLikerCount:(long long)arg1 isVideo:(bool)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForPostAttributionOfAssetWithDisplayType:(long long)arg1 postedByUserOrSubjectWithFullName:(id)arg2 atDate:(id)arg3 nameAttributes:(id)arg4 dateAttributes:(id)arg5;
++ (id)px_localizedAttributedStringForPostWithSubjectFullName:(id)arg1 photoCount:(long long)arg2 videoCount:(long long)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
++ (id)px_localizedAttributedStringForUserCommentWithText:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)px_localizedAttributedStringForUserCreatingSharedAlbumWithName:(id)arg1 defaultTextAttributes:(id)arg2 posterTextAttributes:(id)arg3 albumTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForUserCreatingStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
++ (id)px_localizedAttributedStringForUserInvitedToStreamWithName:(id)arg1 inviterName:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForUserJoiningSharedAlbumWithName:(id)arg1 defaultTextAttributes:(id)arg2 posterTextAttributes:(id)arg3 albumTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForUserJoiningStreamWithName:(id)arg1 defaultTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 + (id)px_localizedAttributedStringForUserPostWithCountsSet:(id)arg1 defaultTextAttributes:(id)arg2 subjectName:(id)arg3;
++ (id)px_localizedAttributedStringForUserPostWithCountsSet:(id)arg1 subjectName:(id)arg2 defaultTextAttributes:(id)arg3 posterTextAttributes:(id)arg4;
++ (id)px_localizedAttributedStringForUserPostWithPhotoCount:(long long)arg1 videoCount:(long long)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
++ (id)px_stringWithFormat:(id)arg1 defaultAttributes:(id)arg2 arguments:(id)arg3;
 
 - (id)px_attributedStringByApplyingCapitalization:(long long)arg1;
 - (id)px_attributedStringByDeletingCharactersInSet:(id)arg1;
 - (id)px_attributedStringWithParagraphLineBreakMode:(long long)arg1;
+- (id)px_bulletPrefixAttributedStringWithBulletAttributes:(id)arg1 isLeftToRight:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (id)contentEncodedString;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -259,10 +256,24 @@
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
 - (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2;
 - (bool)getRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
+- (id)scrAttributedStringByTrimmingTrailingNewlines;
 
 // Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
 
 + (id)sxaxAttributedStringForSpeakingStringInLowerPitch:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
++ (id)tsu_carriageReturnAttributedString;
+
+- (id)tsu_RTFDFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (id)tsu_RTFFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2;
+- (id)tsu_nextTableStringFromIndex:(unsigned long long)arg1 tableRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (unsigned long long)tsu_numberOfTables;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_rangeofNextTableFromIndex:(unsigned long long)arg1;
+- (id)tsu_stringByFixingBrokenSurrogatePairs;
+- (id)tsu_stringWithoutAttachments;
+- (id)tsu_textTablesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
@@ -338,6 +349,32 @@
 - (id)rulerAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct CGSize { double x1; double x2; })size;
 - (id)stringByStrippingAttachmentCharactersAndConvertingWritingDirectionToBidiControlCharactersFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)_objectWithItemProviderFileURL:(id)arg1 typeIdentifier:(id)arg2 isInPlace:(bool)arg3 error:(id*)arg4;
++ (id)_objectWithRTFDAtURL:(id)arg1 error:(id*)arg2;
++ (long long)_preferredRepresentationForItemProviderReadableTypeIdentifier:(id)arg1;
++ (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
++ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)writableTypeIdentifiersForItemProvider;
+
+- (id)_loadFileRepresentationOfTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+- (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
+- (id)_ui_attributedStringWithOriginalFontAttributes;
+- (id)_ui_fontsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultFont:(id)arg2;
+- (id)_ui_glyphImageViewsScale:(double)arg1 outImageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 outLineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outBaselineOffset:(double*)arg4;
+- (long long)_ui_resolvedTextAlignment;
+- (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
+- (long long)_ui_resolvedWritingDirection;
+- (long long)_ui_resolvedWritingDirectionForUserInterfaceLayoutDirection:(long long)arg1;
+- (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingDefaultAttributes:(id)arg2;
+- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+- (void)registerLoadHandlersToItemProvider:(id)arg1;
+- (id)writableTypeIdentifiersForItemProvider;
 
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 

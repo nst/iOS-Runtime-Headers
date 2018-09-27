@@ -4,6 +4,7 @@
 
 @interface NTPBReadingHistoryItem : PBCodable <FCKeyValueStoreCoding, FCMutableReadingHistoryItem, NSCopying> {
     NSString * _articleID;
+    NSString * _deviceID;
     NTPBDate * _firstSeenDate;
     NTPBDate * _firstSeenDateOfMaxVersionSeen;
     unsigned int  _flags;
@@ -15,6 +16,7 @@
     NTPBDate * _lastVisitedDate;
     long long  _maxVersionRead;
     long long  _maxVersionSeen;
+    NSString * _sourceChannelTagID;
 }
 
 @property (nonatomic, readonly, copy) NSString *articleID;
@@ -23,6 +25,8 @@
 @property (nonatomic, readonly) CKRecord *asCKRecord;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *deviceID;
+@property (nonatomic, retain) NSString *deviceID;
 @property (nonatomic, readonly, copy) NSDate *firstSeenAt;
 @property (nonatomic, readonly, copy) NSDate *firstSeenAtOfMaxVersionSeen;
 @property (nonatomic, retain) NTPBDate *firstSeenDate;
@@ -34,12 +38,14 @@
 @property (nonatomic, readonly) bool hasArticleBeenRead;
 @property (nonatomic, readonly) bool hasArticleBeenSeen;
 @property (nonatomic, readonly) bool hasArticleID;
+@property (nonatomic, readonly) bool hasDeviceID;
 @property (nonatomic, readonly) bool hasFirstSeenDate;
 @property (nonatomic, readonly) bool hasFirstSeenDateOfMaxVersionSeen;
 @property (nonatomic) bool hasFlags;
 @property (nonatomic, readonly) bool hasLastVisitedDate;
 @property (nonatomic) bool hasMaxVersionRead;
 @property (nonatomic) bool hasMaxVersionSeen;
+@property (nonatomic, readonly) bool hasSourceChannelTagID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *lastVisitedAt;
@@ -48,6 +54,8 @@
 @property (nonatomic) long long maxVersionRead;
 @property (nonatomic, readonly) long long maxVersionSeen;
 @property (nonatomic) long long maxVersionSeen;
+@property (nonatomic, readonly, copy) NSString *sourceChannelTagID;
+@property (nonatomic, retain) NSString *sourceChannelTagID;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -56,17 +64,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)deviceID;
 - (id)dictionaryRepresentation;
 - (id)firstSeenDate;
 - (id)firstSeenDateOfMaxVersionSeen;
 - (unsigned int)flags;
 - (bool)hasArticleID;
+- (bool)hasDeviceID;
 - (bool)hasFirstSeenDate;
 - (bool)hasFirstSeenDateOfMaxVersionSeen;
 - (bool)hasFlags;
 - (bool)hasLastVisitedDate;
 - (bool)hasMaxVersionRead;
 - (bool)hasMaxVersionSeen;
+- (bool)hasSourceChannelTagID;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)lastVisitedDate;
@@ -75,6 +86,7 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
+- (void)setDeviceID:(id)arg1;
 - (void)setFirstSeenDate:(id)arg1;
 - (void)setFirstSeenDateOfMaxVersionSeen:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
@@ -84,6 +96,8 @@
 - (void)setLastVisitedDate:(id)arg1;
 - (void)setMaxVersionRead:(long long)arg1;
 - (void)setMaxVersionSeen:(long long)arg1;
+- (void)setSourceChannelTagID:(id)arg1;
+- (id)sourceChannelTagID;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

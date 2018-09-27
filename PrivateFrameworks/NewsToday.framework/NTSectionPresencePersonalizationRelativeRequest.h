@@ -3,20 +3,20 @@
  */
 
 @interface NTSectionPresencePersonalizationRelativeRequest : NSObject <NSCopying> {
-    FRPersonalizationFeature * _competingSectionFeature;
+    FCPersonalizationFeature * _competingSectionFeature;
     double  _competingSectionFeatureClickPrior;
     double  _competingSectionFeatureImpressionPrior;
     double  _scalar;
-    FRPersonalizationFeature * _targetSectionFeature;
+    FCPersonalizationFeature * _targetSectionFeature;
     double  _targetSectionFeatureClickPrior;
     double  _targetSectionFeatureImpressionPrior;
 }
 
-@property (nonatomic, copy) FRPersonalizationFeature *competingSectionFeature;
+@property (nonatomic, copy) FCPersonalizationFeature *competingSectionFeature;
 @property (nonatomic) double competingSectionFeatureClickPrior;
 @property (nonatomic) double competingSectionFeatureImpressionPrior;
 @property (nonatomic) double scalar;
-@property (nonatomic, copy) FRPersonalizationFeature *targetSectionFeature;
+@property (nonatomic, copy) FCPersonalizationFeature *targetSectionFeature;
 @property (nonatomic) double targetSectionFeatureClickPrior;
 @property (nonatomic) double targetSectionFeatureImpressionPrior;
 

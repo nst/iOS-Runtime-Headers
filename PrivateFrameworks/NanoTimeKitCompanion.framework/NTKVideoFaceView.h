@@ -3,32 +3,35 @@
  */
 
 @interface NTKVideoFaceView : NTKAVListingFaceBaseView {
-    NTKUtilityComplicationFactory * _complicationFactory;
+    NTKDigitialUtilitarianFaceViewComplicationFactory * _faceViewComplicationFactory;
     unsigned int  _isComplicationColorApplied;
-    unsigned int  _tapToPlayGestureEnabled;
+    unsigned int  _isComplicationColorGray;
+    unsigned int  _isUsingDefaultListing;
+    UITapGestureRecognizer * _tapToPlayGesture;
     unsigned long long  _theme;
-    NTKComplicationDisplayWrapperView * _touchWrapper;
-    unsigned int  _useDefaultListing;
 }
 
 - (void).cxx_destruct;
-- (void)_applyComplicationContentSpecificAttributesWithColor:(id)arg1 animated:(bool)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_cleanupAfterEditing;
-- (id)_complicationDisplayWrapperForTouch:(id)arg1;
-- (void)_configureComplicationFactory;
+- (id)_complicationForegroundColor;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_defaultListing;
-- (void)_handleTapToPlayVideoGesture;
+- (id)_detachedComplicationDisplays;
+- (bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
+- (void)_handleTapToPlayVideoGesture:(id)arg1;
+- (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_loadLayoutRules;
 - (void)_loadSnapshotContentViews;
+- (double)_minimumBreathingScaleForComplicationSlot:(id)arg1;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (id)_nextListing;
 - (id)_onDeckPosterImageView;
-- (id)_overlayColor;
 - (void)_performPreloadVideoTask;
 - (id)_posterImageView;
 - (id)_posterImageViewWithTheme:(unsigned long long)arg1;
@@ -40,15 +43,11 @@
 - (double)_timeTravelYAdjustment;
 - (void)_unloadSnapshotContentViews;
 - (void)_updatePaused;
-- (long long)_utilitySlotForSlot:(id)arg1;
 - (id)_viewForEditOption:(id)arg1;
 - (void)dealloc;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
+- (double)keylineStyleForComplicationSlot:(id)arg1;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 

@@ -20,9 +20,9 @@
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)applicationUsername;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (unsigned long long)hash;
 - (id)init;
 - (bool)isEqual:(id)arg1;

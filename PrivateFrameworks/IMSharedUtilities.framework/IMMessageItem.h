@@ -45,6 +45,7 @@
 @property (nonatomic) bool hasDataDetectorResults;
 @property (nonatomic, readonly) bool isAlert;
 @property (nonatomic, readonly) bool isAudioMessage;
+@property (nonatomic) bool isCorrupt;
 @property (nonatomic, readonly) bool isDelivered;
 @property (nonatomic, readonly) bool isEmote;
 @property (nonatomic, readonly) bool isEmpty;
@@ -118,6 +119,7 @@
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 timeRead:(id)arg3 timeDelivered:(id)arg4 timePlayed:(id)arg5 subject:(id)arg6 body:(id)arg7 bodyData:(id)arg8 attributes:(id)arg9 fileTransferGUIDs:(id)arg10 flags:(unsigned long long)arg11 guid:(id)arg12 messageID:(long long)arg13 account:(id)arg14 accountID:(id)arg15 service:(id)arg16 handle:(id)arg17 roomName:(id)arg18 unformattedID:(id)arg19 countryCode:(id)arg20 expireState:(long long)arg21 balloonBundleID:(id)arg22 payloadData:(id)arg23 expressiveSendStyleID:(id)arg24 timeExpressiveSendPlayed:(id)arg25 bizIntent:(id)arg26 locale:(id)arg27 errorType:(unsigned int)arg28 type:(long long)arg29;
 - (bool)isAlert;
 - (bool)isAudioMessage;
+- (bool)isCorrupt;
 - (bool)isDelivered;
 - (bool)isEmote;
 - (bool)isEmpty;
@@ -155,6 +157,7 @@
 - (void)setFileTransferGUIDs:(id)arg1;
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setHasDataDetectorResults:(bool)arg1;
+- (void)setIsCorrupt:(bool)arg1;
 - (void)setIsSOS:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMessageSummaryInfo:(id)arg1;
@@ -188,7 +191,7 @@
 - (bool)_hasMessageChatItem;
 - (bool)_isInvitation;
 - (id)_newChatItems;
-- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 hasKnownParticipants:(bool)arg3;
+- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 parentChatIsSpam:(bool)arg3 hasKnownParticipants:(bool)arg4;
 - (id)_service;
 - (void)_setInivtation:(bool)arg1;
 - (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(bool)arg2 messageDataSource:(id /* block */)arg3 attachmentDataSource:(id /* block */)arg4;

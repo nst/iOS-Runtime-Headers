@@ -28,6 +28,7 @@
 - (void)endObservingAudioRoutesForCategory:(id)arg1;
 - (void)endObservingVolumeForTarget:(id)arg1;
 - (void)hapticIntensity:(id /* block */)arg1;
+- (void)hapticState:(id /* block */)arg1;
 - (id)init;
 - (void)mutedStateForTarget:(id)arg1 result:(id /* block */)arg2;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
@@ -35,6 +36,7 @@
 - (void)playProminentHapticPreview;
 - (void)prominentHapticEnabled:(id /* block */)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1 target:(id)arg2;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

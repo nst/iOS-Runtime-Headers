@@ -2,28 +2,46 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIImageView : UIImageView {
+@interface SearchUIImageView : TLKImageView <CNAvatarViewDelegate> {
+    CNAvatarView * _avatarView;
     SFImage * _currentImage;
-    unsigned long long  _style;
+    SearchUIButton * _overlayPlayButton;
+    unsigned long long  _searchUIStyle;
+    UIView * _tintView;
 }
 
+@property (retain) CNAvatarView *avatarView;
 @property (retain) SFImage *currentImage;
-@property unsigned long long style;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (retain) SearchUIButton *overlayPlayButton;
+@property unsigned long long searchUIStyle;
+@property (readonly) Class superclass;
+@property (retain) UIView *tintView;
 
 + (id)imageViewWithImage:(id)arg1 style:(unsigned long long)arg2;
++ (id)thumbnailForResult:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)appIconDidChange:(id)arg1;
+- (id)avatarView;
 - (id)currentImage;
+- (id)init;
 - (id)initWithStyle:(unsigned long long)arg1;
-- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)layoutSubviews;
+- (id)overlayPlayButton;
+- (id)presentingViewControllerForAvatarView:(id)arg1;
+- (unsigned long long)searchUIStyle;
+- (void)setAvatarView:(id)arg1;
 - (void)setCurrentImage:(id)arg1;
-- (void)setStyle:(unsigned long long)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (unsigned long long)style;
+- (void)setOverlayPlayButton:(id)arg1;
+- (void)setSearchUIStyle:(unsigned long long)arg1;
+- (void)setTintView:(id)arg1;
+- (id)tintView;
 - (void)updateWithImage:(id)arg1;
 - (void)updateWithImage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)updateWithLoadedImage:(id)arg1 forImage:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)updateWithUIImage:(id)arg1 isTemplate:(bool)arg2;
+- (void)updateWithImage:(id)arg1 needsOverlayButton:(bool)arg2 preventImageScaling:(bool)arg3 useMinimumWidthIfPossible:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

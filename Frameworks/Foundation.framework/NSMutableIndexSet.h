@@ -68,8 +68,11 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
+- (void)px_adjustIndexesForDeletedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)px_adjustIndexesForDeletions:(id)arg1;
+- (void)px_adjustIndexesForInsertedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)px_adjustIndexesForInsertions:(id)arg1;
+- (void)px_adjustIndexesForMoveFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
 

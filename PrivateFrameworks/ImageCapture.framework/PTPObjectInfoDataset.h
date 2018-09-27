@@ -10,7 +10,7 @@
     unsigned int  _imageBitDepth;
     unsigned int  _imagePixHeight;
     unsigned int  _imagePixWidth;
-    NSString * _keywords;
+    NSMutableString * _keywords;
     NSString * _modificationDate;
     unsigned long long  _objectCompressedSize;
     unsigned short  _objectFormat;
@@ -27,6 +27,7 @@
     unsigned int  _thumbPixWidth;
 }
 
+- (void)addCustomKeyword:(id)arg1 withIdentifier:(id)arg2;
 - (unsigned int)associationDesc;
 - (unsigned short)associationType;
 - (id)captureDate;

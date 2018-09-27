@@ -28,9 +28,12 @@
 - (void)_getCookieStoragePartitionsCompletionHandler:(id /* block */)arg1;
 - (void)_getCookiesForPartition:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_getCookiesForURL:(id)arg1 mainDocumentURL:(id)arg2 partition:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_getCookiesForURL:(id)arg1 mainDocumentURL:(id)arg2 partition:(id)arg3 policyProperties:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
 - (void)_saveCookies;
+- (void)_saveCookies:(id /* block */)arg1;
+- (void)_setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3 policyProperties:(id)arg4;
 - (void)_setPrivateBrowsingEnabled:(bool)arg1;
 - (void)_testingOfStoringOfCookie:(id)arg1;
 - (unsigned long long)cookieAcceptPolicy;

@@ -4,12 +4,12 @@
 
 @interface NSBundle : NSObject {
     id  _cfBundle;
+    Class  _firstClass;
     unsigned long long  _flags;
     id  _initialPath;
     id  _lock;
     Class  _principalClass;
     unsigned long long  _reserved2;
-    id  _reserved3;
     id  _resolvedPath;
 }
 
@@ -20,8 +20,6 @@
 @property (readonly, copy) NSString *bundlePath;
 @property (readonly, copy) NSURL *bundleURL;
 @property (nonatomic, readonly) struct CCUILayoutSize { unsigned long long x1; unsigned long long x2; } ccui_prototypeModuleSize;
-@property (nonatomic, readonly, copy) NSString *cx_displayName;
-@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
 @property (readonly, copy) NSString *developmentLocalization;
 @property (readonly, copy) NSArray *executableArchitectures;
 @property (readonly, copy) NSString *executablePath;
@@ -30,6 +28,7 @@
 @property (getter=isLoaded, readonly) bool loaded;
 @property (readonly, copy) NSArray *localizations;
 @property (readonly, copy) NSDictionary *localizedInfoDictionary;
+@property (nonatomic, readonly) NSLocale *preferredLocale;
 @property (readonly, copy) NSArray *preferredLocalizations;
 @property (readonly) Class principalClass;
 @property (readonly, copy) NSString *privateFrameworksPath;
@@ -76,6 +75,7 @@
 - (id)_pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3 forRegion:(id)arg4;
 - (id)_pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forRegion:(id)arg3;
 - (id)_regionsArray;
+- (bool)_searchForLocalizedString:(id)arg1 foundKey:(id*)arg2 foundTable:(id*)arg3;
 - (id)appStoreReceiptURL;
 - (id)builtInPlugInsPath;
 - (id)builtInPlugInsURL;
@@ -136,11 +136,6 @@
 
 - (id)businessBundle;
 
-// Image: /System/Library/Frameworks/CallKit.framework/CallKit
-
-- (id)cx_displayName;
-- (bool)cx_hasVoIPBackgroundMode;
-
 // Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
 + (bool)cls_isDaemon;
@@ -180,22 +175,14 @@
 
 - (id)_rpLocalizedAppName;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
-+ (id)_typologyBundle;
-+ (id)currentNibLoadingBundle;
-+ (id)currentNibPath;
-+ (void)popNibLoadingBundle;
-+ (void)popNibPath;
-+ (void)pushNibLoadingBundle:(id)arg1;
-+ (void)pushNibPath:(id)arg1;
-
-- (id)dataForResourceName:(id)arg1;
-- (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
++ (id)_sf_safariServicesBundle;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
 + (id)un_safeBundleWithURL:(id)arg1;
++ (id)userNotificationsBundleWithIdentifier:(id)arg1;
 
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
@@ -218,6 +205,10 @@
 
 + (id)bs_baseBoardUIBundle;
 
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
++ (id)cfxBundle;
+
 // Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
 
 - (id)cat_localizedStringsForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
@@ -237,6 +228,14 @@
 
 + (id)_coreroutineBundle;
 + (id)_coreroutine_LocalizedStringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturb.framework/DoNotDisturb
+
++ (id)dnd_locationBundle;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbKit.framework/DoNotDisturbKit
+
++ (id)dndk_localizationBundle;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
@@ -287,6 +286,12 @@
 - (id)xct_bundleLinkageInfo;
 - (id)xct_frameworkBundleVersion;
 
+// Image: /System/Library/PrivateFrameworks/IconServices.framework/IconServices
+
++ (id)__IS__frameworkBundle;
++ (id)__IS__frameworkLocalizedString:(id)arg1;
++ (id)__IS__iconsetResourceBundle;
+
 // Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
 
 + (id)mediaControlsBundle;
@@ -322,9 +327,17 @@
 
 + (id)nanoMediaBridgeUIBundle;
 
+// Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
+
++ (id)nanoMediaRemoteBundle;
+
 // Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
 
 + (id)nanoMusicSyncBundle;
+
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
+
+- (id)preferredLocale;
 
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
@@ -359,6 +372,8 @@
 
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
++ (id)safari_safariCoreBundle;
+
 - (id)safari_normalizedVersion;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
@@ -388,6 +403,7 @@
 + (id)brailleTableBundleWithTableIdentifier:(id)arg1;
 + (id)brailleTableIdentifiers;
 + (long long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
++ (id)defaultBrailleTableForLanguageIdentifier:(id)arg1;
 + (bool)doesBrailleTableSupportContractions:(id)arg1;
 + (bool)doesBrailleTableSupportEightDot:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
@@ -420,9 +436,21 @@
 + (id)accessibilityInternalBundleWithLastPathComponent:(id)arg1;
 + (id)accessibilityLocalBundleWithLastPathComponent:(id)arg1;
 
-- (void)_accessibilityInitializeContainerLogic;
 - (void)_loadAXBundleForBundleOffMainThread;
 - (id)accessibilityBundlePath;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)_typologyBundle;
++ (id)currentNibLoadingBundle;
++ (id)currentNibPath;
++ (void)popNibLoadingBundle;
++ (void)popNibPath;
++ (void)pushNibLoadingBundle:(id)arg1;
++ (void)pushNibPath:(id)arg1;
+
+- (id)dataForResourceName:(id)arg1;
+- (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
@@ -435,6 +463,10 @@
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
 + (id)videosExtrasBundle;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
++ (id)vui_videosUIBundle;
 
 // Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
 

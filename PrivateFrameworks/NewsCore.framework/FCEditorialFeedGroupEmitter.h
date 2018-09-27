@@ -21,7 +21,7 @@
 + (id)editorialFeedTransformationWithContext:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)backingChannelTagIDWithCoreConfiguration:(id)arg1;
+- (id)backingChannelTagIDWithConfiguration:(id)arg1;
 - (id)emittableGroupTypes;
 - (id)groupEmitterIdentifier;
 - (id)init;

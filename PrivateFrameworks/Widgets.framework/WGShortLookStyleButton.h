@@ -6,7 +6,7 @@
     bool  _backgroundBlurred;
     MTMaterialView * _backgroundView;
     double  _dimension;
-    MTFontProvider * _fontProvider;
+    BSUIFontProvider * _fontProvider;
     UILabel * _titleLabel;
 }
 

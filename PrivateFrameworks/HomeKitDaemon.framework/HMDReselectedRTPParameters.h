@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDReselectedRTPParameters : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDReselectedRTPParameters : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSNumber * _maximumBitrate;
     NSNumber * _minimumBitrate;
     NSNumber * _rtcpInterval;

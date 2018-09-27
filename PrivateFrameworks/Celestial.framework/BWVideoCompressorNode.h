@@ -14,12 +14,14 @@
     bool  _didPrepareToEncode;
     NSObject<OS_dispatch_queue> * _emitterQueue;
     bool  _flushRequestReceived;
+    BWLimitedGMErrorLogger * _limitedGMErrorLogger;
     float  _maxVideoFrameRate;
     bool  _nextFrameEncodeAsKeyFrame;
     int  _nonBFrameAverageBitRate;
     int  _powerPressureLevel;
     int  _powerPressureNotificationToken;
     bool  _shouldAttachDebugSEI;
+    bool  _shouldPassSerializedDepthImageBuffers;
     bool  _sourceIsHDResolution;
     unsigned int  _sourcePixelFormatType;
     NSObject<OS_dispatch_queue> * _thermalAndPowerNotificationQueue;
@@ -31,7 +33,9 @@
 + (void)initialize;
 
 - (void)_cleanCompressor;
+- (struct OpaqueVTCompressionSession { }*)_createEncoderSessionWithWidth:(int)arg1 height:(int)arg2 inputPixelFormat:(unsigned int)arg3 isHDResolution:(unsigned char)arg4 videoCodec:(unsigned int)arg5 encoderSpecification:(id)arg6 compressionProperties:(id)arg7 compressorNodeRef:(void*)arg8;
 - (void)_registerForThermalAndPowerNotifications;
+- (int)_setEncoderCompressionPropertiesWithCompressionSession:(struct OpaqueVTCompressionSession { }*)arg1 compressionProperties:(id)arg2 sourcePixelType:(unsigned int)arg3 isHDResolution:(unsigned char)arg4;
 - (void)_signalBackPressureSemaphore;
 - (void)_updatePowerPressureLevel;
 - (void)_updateThermalPressureLevel;

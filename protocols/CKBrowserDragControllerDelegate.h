@@ -14,7 +14,6 @@
 
 @optional
 
-- (id /* block */)commitBlockForItem:(void *)arg1; // needs 1 arg types, found 8: id /* block */, struct CGPoint { double x1; double x2; }, double, double, void*, id, SEL, UIView<CKBrowserItem> *
 - (void)dragManager:(CKBrowserDragManager *)arg1 didBeginDraggingItem:(id)arg2;
 - (void)dragManager:(CKBrowserDragManager *)arg1 didEndDraggingItem:(id)arg2 toDragTarget:(CKBrowserDragControllerTarget *)arg3 dropArea:(int)arg4 wasCancelled:(bool*)arg5;
 

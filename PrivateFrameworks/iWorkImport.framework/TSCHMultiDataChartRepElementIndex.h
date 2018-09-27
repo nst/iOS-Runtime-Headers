@@ -15,7 +15,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)hash;
-- (id)init;
 - (id)initWithSeriesIndex:(unsigned long long)arg1 valueIndex:(unsigned long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)seriesIndex;

@@ -9,6 +9,7 @@
     <PLThumbPersistenceManager> * _lastUsedThumbManager;
     int  _lastUsedThumbManagerFormatID;
     id  _observerToken;
+    PLPhotoLibraryPathManager * _pathManager;
     NSMutableSet * _previouslyRequestedThumbnailFixOIDs;
     NSMutableSet * _requestedThumbnailFixAssets;
     NSMutableDictionary * _thumbManagersByFormat;
@@ -16,6 +17,7 @@
 }
 
 @property (nonatomic, retain) id observerToken;
+@property (nonatomic, readonly) PLPhotoLibraryPathManager *pathManager;
 @property (nonatomic, readonly, retain) NSMutableDictionary *thumbManagersByFormat;
 
 + (id)_allPossibleThumbnailFormatIDs;
@@ -46,14 +48,13 @@
 + (id)cameraPreviewWellImageQueue;
 + (bool)cameraPreviewWellSupportedOnCurrentDevice;
 + (id)defaultThumbnailManager;
-+ (id)defaultThumbnailsDirectory;
-+ (id)defaultThumbnailsDirectoryV2;
 + (void)handleRebuildThumbnailRequestPersistentFailure;
 + (bool)hasDeprecationsOnly;
 + (bool)hasExceededRebuildThumbnailRequestLimit;
 + (bool)hasMissingThumbnailsInLibrary:(id)arg1;
 + (bool)hasRebuildThumbnailsRequest;
 + (bool)hasThumbnailVersionMismatch;
++ (id)imageTableForFormat:(int)arg1;
 + (bool)isMissingThumbnailTables;
 + (bool)isRebuildingThumbnails;
 + (void)rebuildAllMissingThumbnails;
@@ -81,9 +82,10 @@
 - (void)deleteThumbnailsWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 uuid:(id)arg3;
 - (void)discardCachedThumbnailDownscalerContexts;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
-- (id)init;
+- (id)initWithPhotoLibraryPathManager:(id)arg1;
 - (struct CGImage { }*)newImageForAsset:(id)arg1 format:(id)arg2;
 - (id)observerToken;
+- (id)pathManager;
 - (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize { double x1; double x2; })arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (id)preheatItemSourceForFormatID:(int)arg1;
 - (void)setObserverToken:(id)arg1;

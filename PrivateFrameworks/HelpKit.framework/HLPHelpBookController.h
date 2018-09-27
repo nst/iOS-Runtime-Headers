@@ -51,6 +51,7 @@
 - (id)copyrightTopicItem;
 - (void)dealloc;
 - (id)dynamicServerSectionsForIdentifiers:(id)arg1 level:(long long)arg2 parent:(id)arg3 tocMap:(id)arg4;
+- (void)fetchDataWithDataType:(long long)arg1 identifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)fullBookView;
 - (bool)hasSectionIcon;
 - (id)helpBookURL;

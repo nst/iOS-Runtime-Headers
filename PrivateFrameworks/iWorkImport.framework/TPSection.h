@@ -3,6 +3,7 @@
  */
 
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection> {
+    TSDFill * _backgroundFill;
     bool  _inheritPreviousHeaderFooter;
     NSString * _name;
     bool  _pageMasterEvenOddPagesDifferent;
@@ -15,6 +16,7 @@
     unsigned int  _sectionStartKind;
 }
 
+@property (nonatomic, retain) TSDFill *backgroundFill;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -38,6 +40,7 @@
 - (void)acceptVisitor:(id)arg1;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)allDrawables;
+- (id)backgroundFill;
 - (id)childEnumerator;
 - (id)copyWithContext:(id)arg1;
 - (id)description;
@@ -54,8 +57,8 @@
 - (id)objectUUIDPath;
 - (void)p_addAllDrawablesFromInfo:(id)arg1 toMutableArray:(id)arg2;
 - (void)p_makeUserGuideStorage;
-- (void)p_unarchiveAndUpgrade:(id)arg1 archive:(const struct SectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; float x7; float x8; float x9; float x10; bool x11; bool x12; bool x13; bool x14; float x15; float x16; float x17; float x18; float x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; float x21; unsigned int x22; unsigned int x23; bool x24; bool x25; bool x26; struct Reference {} *x27; struct Reference {} *x28; struct Reference {} *x29; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x30; struct Reference {} *x31; unsigned int x32; }*)arg2;
-- (void)p_upgradePageSizeAndMarginsFromParsedArchive:(const struct SectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; float x7; float x8; float x9; float x10; bool x11; bool x12; bool x13; bool x14; float x15; float x16; float x17; float x18; float x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; float x21; unsigned int x22; unsigned int x23; bool x24; bool x25; bool x26; struct Reference {} *x27; struct Reference {} *x28; struct Reference {} *x29; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x30; struct Reference {} *x31; unsigned int x32; }*)arg1;
+- (void)p_unarchiveAndUpgrade:(id)arg1 archive:(const struct SectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; float x7; float x8; float x9; float x10; bool x11; bool x12; bool x13; bool x14; float x15; float x16; float x17; float x18; float x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; float x21; unsigned int x22; unsigned int x23; bool x24; bool x25; bool x26; struct Reference {} *x27; struct Reference {} *x28; struct Reference {} *x29; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x30; struct Reference {} *x31; struct FillArchive {} *x32; unsigned int x33; }*)arg2;
+- (void)p_upgradePageSizeAndMarginsFromParsedArchive:(const struct SectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; float x7; float x8; float x9; float x10; bool x11; bool x12; bool x13; bool x14; float x15; float x16; float x17; float x18; float x19; struct RepeatedPtrField<TSP::Reference> { void **x_20_1_1; int x_20_1_2; int x_20_1_3; int x_20_1_4; } x20; float x21; unsigned int x22; unsigned int x23; bool x24; bool x25; bool x26; struct Reference {} *x27; struct Reference {} *x28; struct Reference {} *x29; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x30; struct Reference {} *x31; struct FillArchive {} *x32; unsigned int x33; }*)arg1;
 - (id)pageInfosForPropagation;
 - (bool)pageMasterEvenOddPagesDifferent;
 - (bool)pageMasterFirstPageDifferent;
@@ -69,6 +72,7 @@
 - (unsigned int)sectionPageNumberKind;
 - (unsigned int)sectionPageNumberStart;
 - (unsigned int)sectionStartKind;
+- (void)setBackgroundFill:(id)arg1;
 - (void)setInheritPreviousHeaderFooter:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPageMasterEvenOddPagesDifferent:(bool)arg1;

@@ -4,14 +4,16 @@
 
 @interface AXUIMockElement : AXUIElement <NSCopying> {
     NSMutableDictionary * _attributes;
+    id /* block */  _cacheUpdatedCallback;
     NSMutableDictionary * _performActionLog;
     bool  _usesCarriageReturnAsLinesSeparator;
     NSMutableDictionary * _writableAttributes;
 }
 
+@property (nonatomic, copy) id /* block */ cacheUpdatedCallback;
 @property (nonatomic) bool usesCarriageReturnAsLinesSeparator;
 
-+ (void)applyElementAttributeCacheScheme:(int)arg1;
++ (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;
@@ -21,6 +23,7 @@
 - (id)arrayWithAXAttribute:(long long)arg1;
 - (struct __AXUIElement { }*)axElement;
 - (bool)boolWithAXAttribute:(long long)arg1;
+- (id /* block */)cacheUpdatedCallback;
 - (bool)canPerformAXAction:(int)arg1;
 - (bool)canSetAXAttribute:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,7 +36,6 @@
 - (unsigned long long)hash;
 - (id)init;
 - (bool)isEqual:(id)arg1;
-- (bool)isKindOfClass:(Class)arg1;
 - (bool)isMockElement;
 - (bool)isValid;
 - (bool)isValidForApplication:(id)arg1;
@@ -65,6 +67,7 @@
 - (void)setAXAttribute:(long long)arg1 withString:(id)arg2;
 - (void)setAXAttribute:(long long)arg1 withUIElement:(id)arg2;
 - (void)setAXAttribute:(long long)arg1 withUIElementArray:(id)arg2;
+- (void)setCacheUpdatedCallback:(id /* block */)arg1;
 - (void)setUsesCarriageReturnAsLinesSeparator:(bool)arg1;
 - (void)setValue:(id)arg1 forAXAttribute:(long long)arg2;
 - (void)setValue:(id)arg1 forAXParameterizedAttribute:(long long)arg2;

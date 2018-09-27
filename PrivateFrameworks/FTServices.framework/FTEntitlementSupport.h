@@ -19,7 +19,6 @@
 - (id)_rawEntitlementValue;
 - (bool)_reconnectCTServerConnectionIfNecessary;
 - (bool)_registerForCTEntitlementNotifications;
-- (void)_registrationStateChanged;
 - (bool)_setupCTServerConnection;
 - (void)_unregisterForCTEntitlementNotifications;
 - (void)_updateEntitlementStatusUsingCTEntitlementsInfo:(struct __CFDictionary { }*)arg1;

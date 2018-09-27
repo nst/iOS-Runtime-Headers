@@ -9,5 +9,6 @@
 + (NSString *)identifierForConversation:(CKConversation *)arg1;
 
 - (void)updateContentsForConversation:(CKConversation *)arg1;
+- (void)updateContentsForConversation:(CKConversation *)arg1 fastPreview:(bool)arg2;
 
 @end

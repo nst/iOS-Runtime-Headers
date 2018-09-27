@@ -6,6 +6,7 @@
     _MSMessageAppContext * _context;
     NSString * _conversationIdentifier;
     <MSConversationDelegate> * _delegate;
+    NSArray * _draftAssetArchives;
     NSData * _engramID;
     NSUUID * _identifier;
     NSUUID * _localParticipantIdentifier;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) _MSMessageAppContext *context;
 @property (nonatomic, readonly) NSString *conversationIdentifier;
 @property (nonatomic) <MSConversationDelegate> *delegate;
+@property (nonatomic, readonly, copy) NSArray *draftAssetArchives;
 @property (nonatomic, readonly) NSData *engramID;
 @property (nonatomic, readonly) NSUUID *identifier;
 @property (nonatomic, readonly) NSUUID *localParticipantIdentifier;
@@ -30,6 +32,8 @@
 
 - (void).cxx_destruct;
 - (id)_initWithState:(id)arg1 context:(id)arg2;
+- (void)_insertAssetArchive:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_insertAssetArchive:(id)arg1 skipShelf:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_insertAttachment:(id)arg1 adamID:(id)arg2 appName:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_insertAttachment:(id)arg1 withAlternateFilename:(id)arg2 skipShelf:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)_insertMessage:(id)arg1 localizedChangeDescription:(id)arg2 skipShelf:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -37,10 +41,13 @@
 - (void)_insertRichLink:(id)arg1 skipShelf:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_insertSticker:(id)arg1 skipShelf:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_insertText:(id)arg1 skipShelf:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)_removeAssetArchiveWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_sendAssetArchive:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateWithState:(id)arg1;
 - (id)context;
 - (id)conversationIdentifier;
 - (id)delegate;
+- (id)draftAssetArchives;
 - (id)engramID;
 - (id)identifier;
 - (id)inputMessagePayload;

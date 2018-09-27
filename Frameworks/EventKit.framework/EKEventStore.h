@@ -109,16 +109,20 @@
 - (id)_eventWithURI:(id)arg1 checkValid:(bool)arg2;
 - (id)_fetchConstraintsForSourceWithObjectID:(id)arg1;
 - (void)_forgetRegisteredObjects;
+- (id)_importICSData:(id)arg1 intoCalendarsWithIDs:(id)arg2 options:(unsigned long long)arg3;
 - (void)_insertObject:(id)arg1;
 - (bool)_isUnitTesting;
 - (void)_loadCalendarsIfNeeded;
 - (void)_loadSourcesIfNeeded;
 - (void)_logMainThreadFetchWarningIfNeeded;
 - (bool)_parseURI:(id)arg1 expectedScheme:(id)arg2 identifier:(id*)arg3 options:(id*)arg4;
+- (void)_postEventStoreChangedNotificationWithChangedObjectIDs:(id)arg1;
 - (id)_predicateForRemindersWithDate:(id)arg1 useAsCompletionDate:(bool)arg2 calendars:(id)arg3 limitToCompletedOrIncomplete:(bool)arg4 completed:(bool)arg5 includeDatesBefore:(bool)arg6 sortOrder:(int)arg7 preloadProperties:(id)arg8;
+- (id)_predicateForRemindersWithDate:(id)arg1 useAsCompletionDate:(bool)arg2 calendars:(id)arg3 limitToCompletedOrIncomplete:(bool)arg4 completed:(bool)arg5 includeDatesBefore:(bool)arg6 sortOrder:(int)arg7 preloadProperties:(id)arg8 maxResults:(unsigned long long)arg9;
 - (bool)_refreshDASource:(id)arg1 isUserRequested:(bool)arg2;
 - (void)_registerObject:(id)arg1;
 - (void)_registerObjectImmediate:(id)arg1;
+- (void)_removeCachedCalendarFromSource:(id)arg1;
 - (void)_removeCachedCalendarWithID:(id)arg1;
 - (void)_requestAccessForEntityType:(unsigned long long)arg1;
 - (void)_reregisterObject:(id)arg1 oldID:(id)arg2;
@@ -188,6 +192,7 @@
 - (id)eventForUID:(id)arg1 occurrenceDate:(id)arg2;
 - (id)eventForUID:(id)arg1 occurrenceDate:(id)arg2 checkValid:(bool)arg3;
 - (id)eventNotifications;
+- (id)eventObjectIDsMatchingPredicate:(id)arg1;
 - (id)eventStoreIdentifier;
 - (id)eventWithIdentifier:(id)arg1;
 - (id)eventWithUUID:(id)arg1;
@@ -205,12 +210,14 @@
 - (bool)hideCalendarsFromNotificationCenter:(id)arg1 error:(id*)arg2;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3;
-- (void)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (id)importICSData:(id)arg1 intoCalendars:(id)arg2 options:(unsigned long long)arg3;
 - (id)inboxRepliedSectionItems;
 - (id)init;
 - (id)initWithEKOptions:(unsigned long long)arg1;
+- (id)initWithEKOptions:(unsigned long long)arg1 path:(id)arg2 changeTrackingClientId:(id)arg3 enablePropertyModificationLogging:(bool)arg4;
 - (id)initWithEKOptions:(unsigned long long)arg1 path:(id)arg2 clientIDSuffix:(id)arg3 enablePropertyModificationLogging:(bool)arg4;
 - (id)initWithOptions:(int)arg1 path:(id)arg2;
+- (id)initWithOptions:(int)arg1 path:(id)arg2 changeTrackingClientId:(id)arg3 enablePropertyModificationLogging:(bool)arg4;
 - (id)initWithOptions:(int)arg1 path:(id)arg2 clientIDSuffix:(id)arg3 enablePropertyModificationLogging:(bool)arg4;
 - (void)insertSuggestedEventCalendar;
 - (id)insertedObjects;
@@ -270,8 +277,11 @@
 - (id)predicateForPotentialTravelEventsInCalendars:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)predicateForPreloadedCompletedRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4;
 - (id)predicateForPreloadedIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4;
+- (id)predicateForPreloadedIncompleteRemindersWithDueDate:(id)arg1 calendars:(id)arg2 sortOrder:(int)arg3 preloadProperties:(id)arg4 maxResults:(unsigned long long)arg5;
 - (id)predicateForRemindersInCalendars:(id)arg1;
+- (id)predicateForRemindersInCalendars:(id)arg1 preloadProperties:(id)arg2;
 - (id)predicateForRemindersWithSearchTerm:(id)arg1;
+- (id)predicateForRemindersWithSearchTerm:(id)arg1 preloadProperties:(id)arg2;
 - (id)predicateForRemindersWithTitle:(id)arg1 calendars:(id)arg2;
 - (id)predicateForRemindersWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(bool)arg3 completed:(bool)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 searchTerm:(id)arg7 sortOrder:(int)arg8;
 - (id)predicateForRemindersWithTitle:(id)arg1 listTitle:(id)arg2 limitToCompletedOrIncomplete:(bool)arg3 completed:(bool)arg4 dueAfter:(id)arg5 dueBefore:(id)arg6 searchTerm:(id)arg7 sortOrder:(int)arg8 maxResults:(unsigned long long)arg9;
@@ -296,6 +306,7 @@
 - (id)registeredObjects;
 - (id)registeredQueue;
 - (id)reminderNotifications;
+- (id)reminderObjectIDsMatchingPredicate:(id)arg1;
 - (id)reminderWithExternalURI:(id)arg1;
 - (id)remindersMatchingPredicate:(id)arg1;
 - (id)remindersWithContactIdentifier:(id)arg1;
@@ -327,6 +338,7 @@
 - (bool)saveSource:(id)arg1 commit:(bool)arg2 error:(id*)arg3;
 - (id)scheduledTaskCacheFetchDaysAndTaskCounts;
 - (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1;
+- (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1 maxResults:(unsigned long long)arg2;
 - (int)sequenceNumber;
 - (void)setDataProtectionObserver:(id)arg1;
 - (void)setDatabase:(id)arg1;
@@ -370,6 +382,10 @@
 - (id)stringForColor:(id)arg1;
 - (id)symbolicNameToUIColors;
 
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)sharedEventStore;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 + (id)defaultStore;
@@ -377,6 +393,7 @@
 
 - (void)bumpTimeToLiveForZeroKeywordNLEventOnInteraction:(id)arg1;
 - (id)confirmedEKEventForSGEvent:(id)arg1;
+- (id)eventWithExternalID:(id)arg1;
 - (double)eventsPerWeekAroundDate:(id)arg1;
 - (id)eventsWithSameAlternativeOpaqueKeyAsDuplicateKey:(id)arg1 harvestStore:(id)arg2;
 - (id)eventsWithSameAlternativeOpaqueKeyAsPseudoEvent:(id)arg1 harvestStore:(id)arg2;

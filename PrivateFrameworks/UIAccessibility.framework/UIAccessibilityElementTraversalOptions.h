@@ -7,7 +7,9 @@
     bool  _forSpeakScreen;
     bool  _ignoreObscuresScreen;
     bool  _includeAncestorsOfSelfInSiblingMatch;
+    bool  _includeDirectDescendantsOnly;
     bool  _includeHiddenViews;
+    bool  _includeWindowlessViews;
     id /* block */  _leafNodePredicate;
     bool  _shouldIncludeKeyboardObscuredElements;
     bool  _shouldIncludeStatusBarWindow;
@@ -21,7 +23,9 @@
 @property (nonatomic) bool forSpeakScreen;
 @property (nonatomic) bool ignoreObscuresScreen;
 @property (nonatomic) bool includeAncestorsOfSelfInSiblingMatch;
+@property (nonatomic) bool includeDirectDescendantsOnly;
 @property (nonatomic) bool includeHiddenViews;
+@property (nonatomic) bool includeWindowlessViews;
 @property (nonatomic, copy) id /* block */ leafNodePredicate;
 @property (nonatomic) bool shouldIncludeKeyboardObscuredElements;
 @property (nonatomic) bool shouldIncludeStatusBarWindow;
@@ -42,14 +46,18 @@
 - (bool)forSpeakScreen;
 - (bool)ignoreObscuresScreen;
 - (bool)includeAncestorsOfSelfInSiblingMatch;
+- (bool)includeDirectDescendantsOnly;
 - (bool)includeHiddenViews;
+- (bool)includeWindowlessViews;
 - (id)init;
 - (id /* block */)leafNodePredicate;
 - (void)setDirection:(long long)arg1;
 - (void)setForSpeakScreen:(bool)arg1;
 - (void)setIgnoreObscuresScreen:(bool)arg1;
 - (void)setIncludeAncestorsOfSelfInSiblingMatch:(bool)arg1;
+- (void)setIncludeDirectDescendantsOnly:(bool)arg1;
 - (void)setIncludeHiddenViews:(bool)arg1;
+- (void)setIncludeWindowlessViews:(bool)arg1;
 - (void)setLeafNodePredicate:(id /* block */)arg1;
 - (void)setShouldIncludeKeyboardObscuredElements:(bool)arg1;
 - (void)setShouldIncludeStatusBarWindow:(bool)arg1;

@@ -21,6 +21,7 @@
 - (void)handleUnpaired:(id)arg1;
 - (id)initWithParentManager:(id)arg1;
 - (bool)isPeerCloudPaired:(id)arg1;
+- (bool)isPeerMagicPaired:(id)arg1;
 - (bool)isPeerPaired:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pairPeer:(id)arg1;

@@ -17,9 +17,9 @@
 + (id)handleForInputMode:(id)arg1;
 + (id)handleForLanguageLikelihood;
 
+- (void).cxx_destruct;
 - (void)adaptToParagraph:(id)arg1 timeStamp:(double)arg2 adaptationType:(int)arg3;
 - (id)currentAdaptationContext;
-- (void)dealloc;
 - (void)didFinishLearning;
 - (id)initWithInputMode:(id)arg1;
 - (id)inputMode;

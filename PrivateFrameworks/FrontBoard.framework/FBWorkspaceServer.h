@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) <FBWorkspaceServerDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (id)_handlerForSceneID:(id)arg1;
 - (id)_queue;
 - (void)_queue_clientExited;

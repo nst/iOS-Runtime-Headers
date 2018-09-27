@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISReview : NSObject <NSCoding, NSCopying> {
+@interface ISReview : NSObject <NSCopying, NSSecureCoding> {
     long long  _assetType;
     NSString * _body;
     unsigned long long  _bodyMaxLength;
@@ -30,6 +30,8 @@
 @property (nonatomic, retain) NSURL *submitURL;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) unsigned long long titleMaxLength;
+
++ (bool)supportsSecureCoding;
 
 - (id)_draftFileName;
 - (id)_draftsDirectoryPath;

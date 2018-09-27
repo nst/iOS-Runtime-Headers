@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRideOption : PBCodable <NSCopying> {
-    NSMutableArray * _availablePartySizeOptions;
+@interface _INPBRideOption : PBCodable <NSCopying, NSSecureCoding, _INPBRideOption> {
+    NSArray * _availablePartySizeOptions;
     NSString * _availablePartySizeOptionsSelectionPrompt;
     NSString * _disclaimerMessage;
     _INPBTimestamp * _estimatedPickupDate;
-    NSMutableArray * _fareLineItems;
+    NSArray * _fareLineItems;
     struct { 
         unsigned int usesMeteredFare : 1; 
     }  _has;
@@ -16,16 +16,19 @@
     NSString * _specialPricing;
     _INPBImageValue * _specialPricingBadgeImage;
     NSString * _subtitle;
-    PBUnknownFields * _unknownFields;
     _INPBUserActivity * _userActivityForBookingInApplication;
     bool  _usesMeteredFare;
 }
 
-@property (nonatomic, retain) NSMutableArray *availablePartySizeOptions;
-@property (nonatomic, retain) NSString *availablePartySizeOptionsSelectionPrompt;
-@property (nonatomic, retain) NSString *disclaimerMessage;
+@property (nonatomic, copy) NSArray *availablePartySizeOptions;
+@property (nonatomic, readonly) unsigned long long availablePartySizeOptionsCount;
+@property (nonatomic, copy) NSString *availablePartySizeOptionsSelectionPrompt;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *disclaimerMessage;
 @property (nonatomic, retain) _INPBTimestamp *estimatedPickupDate;
-@property (nonatomic, retain) NSMutableArray *fareLineItems;
+@property (nonatomic, copy) NSArray *fareLineItems;
+@property (nonatomic, readonly) unsigned long long fareLineItemsCount;
 @property (nonatomic, readonly) bool hasAvailablePartySizeOptionsSelectionPrompt;
 @property (nonatomic, readonly) bool hasDisclaimerMessage;
 @property (nonatomic, readonly) bool hasEstimatedPickupDate;
@@ -36,18 +39,18 @@
 @property (nonatomic, readonly) bool hasSubtitle;
 @property (nonatomic, readonly) bool hasUserActivityForBookingInApplication;
 @property (nonatomic) bool hasUsesMeteredFare;
-@property (nonatomic, retain) NSString *name;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) _INPBPriceRangeValue *priceRange;
-@property (nonatomic, retain) NSString *specialPricing;
+@property (nonatomic, copy) NSString *specialPricing;
 @property (nonatomic, retain) _INPBImageValue *specialPricingBadgeImage;
-@property (nonatomic, retain) NSString *subtitle;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, copy) NSString *subtitle;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBUserActivity *userActivityForBookingInApplication;
 @property (nonatomic) bool usesMeteredFare;
 
 + (Class)availablePartySizeOptionsType;
 + (Class)fareLineItemsType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addAvailablePartySizeOptions:(id)arg1;
@@ -59,7 +62,6 @@
 - (void)clearAvailablePartySizeOptions;
 - (void)clearFareLineItems;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)disclaimerMessage;
 - (id)estimatedPickupDate;
@@ -78,7 +80,6 @@
 - (bool)hasUsesMeteredFare;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)name;
 - (id)priceRange;
 - (bool)readFrom:(id)arg1;
@@ -98,7 +99,6 @@
 - (id)specialPricing;
 - (id)specialPricingBadgeImage;
 - (id)subtitle;
-- (id)unknownFields;
 - (id)userActivityForBookingInApplication;
 - (bool)usesMeteredFare;
 - (void)writeTo:(id)arg1;

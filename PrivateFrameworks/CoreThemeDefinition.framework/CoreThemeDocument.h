@@ -4,6 +4,8 @@
 
 @interface CoreThemeDocument : TDPersistentDocument {
     <TDAssetManagementDelegate> * _assetManagementDelegate;
+    NSMutableArray * _cachedAppearances;
+    NSMutableSet * _cachedUnknownAppearanceIds;
     TDCatalogGlobals * _catalogGlobals;
     <TDCustomAssetProvider> * _customAssetProvider;
     NSMutableArray * _deviceTraits;
@@ -38,9 +40,11 @@
 @property (nonatomic, retain) TDDeviceTraits *optimizeForDeviceTraits;
 @property (nonatomic, readonly) int patchVersion;
 @property (copy) NSString *pathToRepresentedDocument;
+@property long long targetPlatform;
 @property (nonatomic, readonly) NSURL *themeBitSourceURL;
 @property (nonatomic, copy) NSUUID *uuid;
 
++ (bool)HEVCCompressionEnabled;
 + (void)_addThemeDocument:(id)arg1;
 + (id)_imageAssetURLsByCopyingFileURLs:(id)arg1 toManagedLocationAtURL:(id)arg2 error:(id*)arg3;
 + (id)_sharedDocumentList;
@@ -49,6 +53,7 @@
 + (id)dataModelNameForVersion:(long long)arg1;
 + (long long)dataModelVersion;
 + (long long)dataModelVersionFromMetadata:(id)arg1;
++ (bool)deepmapCompressionEnabled;
 + (bool)defaultAllowsExtendedRangePixelFormats;
 + (long long)defaultTargetPlatform;
 + (id)defaultThemeBitSourceURLForDocumentURL:(id)arg1;
@@ -74,11 +79,13 @@
 - (bool)_clampMetrics;
 - (long long)_compareFlattenedKeySpec1:(id)arg1 toKeySpec2:(id)arg2;
 - (void)_configureAfterFirstSave;
+- (void)_createForwardstopRenditions;
 - (id)_createNamedElementWithIdentifier:(long long)arg1;
 - (id)_createNamedElementWithNextAvailableIdentifier;
 - (id)_createPhotoshopElementProductionWithAsset:(id)arg1;
 - (id)_customizedSchemaDefinitionsForEntity:(id)arg1;
 - (void)_delete:(id)arg1 withRendition:(id)arg2;
+- (void)_generateWatchImages;
 - (id)_genericPartDefinition;
 - (void)_getFilename:(id*)arg1 scaleFactor:(unsigned int*)arg2 category:(id*)arg3 bitSource:(id*)arg4 forFileURL:(id)arg5;
 - (void)_groupPackableRenditions;
@@ -92,6 +99,7 @@
 - (void)_optimizeForDeviceTraits;
 - (id)_predicateForRenditionKeySpec:(id)arg1;
 - (void)_processModelProductions;
+- (bool)_production:(id)arg1 containsScale:(unsigned int)arg2 andIdiom:(unsigned int)arg3 andSubtype:(unsigned int)arg4;
 - (void)_removeRedundantPDFBasedRenditions:(id)arg1;
 - (void)_removeRedundantPDFBasedRenditionsForAssets:(id)arg1;
 - (id)_sizeIndexesByNameFromNamedAssetImportInfos:(id)arg1;
@@ -100,7 +108,7 @@
 - (id)_themeBitSourceForReferencedFilesAtURLs:(id)arg1 createIfNecessary:(bool)arg2;
 - (void)_tidyUpLayerStacks;
 - (void)_tidyUpRecognitionImages;
-- (void)_updateKeyFormat;
+- (void)_updateKeyFormatWithContext:(id)arg1;
 - (bool)_updateRenditionPackings:(id)arg1 error:(id*)arg2;
 - (id)addAssetsAtFileURLs:(id)arg1;
 - (id)addAssetsAtFileURLs:(id)arg1 createProductions:(bool)arg2;
@@ -112,6 +120,8 @@
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2 error:(id*)arg3;
 - (bool)allowMultipleInstancesOfElementID:(long long)arg1;
 - (bool)allowsExtendedRangePixelFormats;
+- (id)appearanceWithIdentifier:(long long)arg1;
+- (id)appearanceWithIdentifier:(long long)arg1 name:(id)arg2 createIfNeeded:(bool)arg3;
 - (id)artworkDraftTypeWithIdentifier:(long long)arg1;
 - (id)artworkFormat;
 - (id)assetAtFileURL:(id)arg1;
@@ -139,10 +149,12 @@
 - (id)createEffectStyleProductionForPartDefinition:(id)arg1;
 - (id)createEffectStyleProductionForPartDefinition:(id)arg1 withNameIdentifier:(id)arg2;
 - (id)createElementProductionWithAsset:(id)arg1;
+- (void)createForwardstop:(id)arg1 withDeploymentTarget:(long long)arg2;
 - (id)createNamedArtworkProductionsForAssets:(id)arg1 customInfos:(id)arg2 error:(id*)arg3;
 - (id)createNamedColorProductionsForImportInfos:(id)arg1 error:(id*)arg2;
 - (id)createNamedEffectProductionWithName:(id)arg1 isText:(bool)arg2;
 - (void)createNamedModelsForCustomInfos:(id)arg1 referenceFiles:(bool)arg2 bitSource:(id)arg3 error:(id*)arg4;
+- (void)createNamedRecognitionObjectsForAssets:(id)arg1 customInfos:(id)arg2 error:(id*)arg3;
 - (void)createNamedRenditionGroupProductionsForImportInfos:(id)arg1 error:(id*)arg2;
 - (void)createNamedTexturesForCustomInfos:(id)arg1 referenceFiles:(bool)arg2 bitSource:(id)arg3 error:(id*)arg4;
 - (bool)createPSDReferenceArtworkForRenditionGroup:(id)arg1 atDestination:(id)arg2 error:(id*)arg3;
@@ -195,6 +207,7 @@
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 - (id)initWithType:(id)arg1 error:(id*)arg2;
 - (id)initWithType:(id)arg1 targetPlatform:(long long)arg2 error:(id*)arg3;
+- (bool)isArtworkRenditionEligibleForForwardstop:(id)arg1;
 - (bool)isCustomLook;
 - (id)iterationTypeWithIdentifier:(int)arg1;
 - (id)lookWithIdentifier:(long long)arg1;
@@ -212,6 +225,8 @@
 - (id)namedEffectProductions;
 - (id)namedElementWithName:(id)arg1;
 - (id)namedElementsForElementDefinition:(id)arg1;
+- (bool)needToCreateForwardstopFor2018DeploymentVariant:(id)arg1;
+- (bool)needToCreateForwardstopForPlatform;
 - (id)newObjectForEntity:(id)arg1;
 - (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3;
 - (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3 error:(id*)arg4;
@@ -256,6 +271,15 @@
 - (void)setRelativePathToProductionData:(id)arg1;
 - (void)setTargetPlatform:(long long)arg1;
 - (void)setUuid:(id)arg1;
+- (bool)shouldAllowDeepmapCompression;
+- (bool)shouldAllowDeepmapCompressionForDeploymentTarget:(unsigned int)arg1;
+- (bool)shouldAllowHevcCompression;
+- (bool)shouldAllowHevcCompressionForDeploymentTarget:(unsigned int)arg1;
+- (bool)shouldAllowPaletteImageCompression;
+- (bool)shouldAllowPaletteImageCompressionForDeploymentTarget:(unsigned int)arg1;
+- (bool)shouldCreateForwardstopForLossless;
+- (bool)shouldCreateForwardstopForLossy;
+- (bool)shouldPerformHistogramBasedPacking;
 - (bool)shouldSupportCompactCompression;
 - (id)sizeClassWithIdentifier:(long long)arg1;
 - (id)sizeWithIdentifier:(long long)arg1;

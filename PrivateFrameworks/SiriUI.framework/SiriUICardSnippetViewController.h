@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUICardSnippetViewController : SiriUISnippetViewController <CRKCardViewControllerDelegate, SiriUICardLoadingObserver, SiriUICardSnippetViewDataSource, SiriUICardSnippetViewDelegate, SiriUIModalContainerViewControllerDelegate, _SiriUICardLoaderDelegate> {
+@interface SiriUICardSnippetViewController : SiriUISnippetViewController <CRKCardPresentationDelegate, CRKCardViewControllerDelegate, SiriUICardLoadingObserver, SiriUICardSnippetViewDataSource, SiriUICardSnippetViewDelegate, SiriUIModalContainerViewControllerDelegate, _SiriUICardLoaderDelegate> {
     _SiriUICardLoader * _cardLoader;
     NSObject<OS_dispatch_group> * _cardLoadingGroup;
-    CRKCardViewController * _cardViewController;
+    CRKCardPresentation * _cardPresentation;
+    UIViewController<CRKCardViewControlling> * _cardViewController;
     struct CGSize { 
         double width; 
         double height; 
@@ -17,7 +18,9 @@
     SACardSnippet * _snippet;
 }
 
-@property (setter=_setCardViewController:, nonatomic, retain) CRKCardViewController *_cardViewController;
+@property (getter=_cardPresentation, setter=_setCardPresentation:, nonatomic, retain) CRKCardPresentation *cardPresentation;
+@property (getter=_cardViewController, setter=_setCardViewController:, nonatomic, retain) UIViewController<CRKCardViewControlling> *cardViewController;
+@property (nonatomic, readonly) <CRKCardViewControllerDelegate> *cardViewControllerDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -29,10 +32,14 @@
 - (void).cxx_destruct;
 - (void)_addCardViewControllerAsChildViewController:(id)arg1;
 - (void)_beginMonitoringForNextCardWithBlock:(id /* block */)arg1;
+- (id)_cardPresentation;
 - (id)_cardViewController;
+- (void)_forwardProgressEvent:(unsigned long long)arg1 toCardViewController:(id)arg2 animated:(bool)arg3;
+- (void)_forwardProgressEventToCardViewController:(unsigned long long)arg1;
 - (id)_metricsContextOfEventsForCard:(id)arg1;
 - (id)_metricsContextOfEventsForCardSection:(id)arg1 inCard:(id)arg2;
 - (void)_removeCardViewControllerFromParentViewController:(id)arg1;
+- (void)_setCardPresentation:(id)arg1;
 - (void)_setCardViewController:(id)arg1;
 - (void)_updateContentSizeAndNotifyDelegateIfNecessary:(bool)arg1;
 - (void)_validateCardForParsecFeedbackDelivery:(id)arg1 validHandler:(id /* block */)arg2;
@@ -47,11 +54,13 @@
 - (struct CGSize { double x1; double x2; })cardViewController:(id)arg1 boundingSizeForCardSectionViewController:(id)arg2;
 - (void)cardViewController:(id)arg1 requestsHandlingOfIntent:(id)arg2;
 - (void)cardViewControllerBoundsDidChange:(id)arg1;
+- (id)cardViewControllerDelegate;
 - (void)cardViewControllerDidLoad:(id)arg1;
 - (void)cardViewDidAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)cardViewDidDisappearForCard:(id)arg1 withDisappearanceFeedback:(id)arg2;
 - (void)cardViewWillAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)configureReusableTransparentHeaderView:(id)arg1;
+- (double)contentHeightForWidth:(double)arg1;
 - (void)controllerForCard:(id)arg1 didReceiveAsyncCard:(id)arg2 withAsyncCardReceiptFeedback:(id)arg3;
 - (void)controllerForCard:(id)arg1 didRequestAsyncCard:(id)arg2 withAsyncCardRequestFeedback:(id)arg3;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })defaultViewInsets;
@@ -72,6 +81,8 @@
 - (id)requestContext;
 - (id)sashItemForCardSnippetView:(id)arg1;
 - (void)setSnippet:(id)arg1;
+- (void)siriDidDeactivate;
+- (void)siriDidReceiveViewsWithDialogPhase:(id)arg1;
 - (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(bool)arg2;
 - (id)snippet;
@@ -82,5 +93,6 @@
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)wasAddedToTranscript;
 - (void)willCancel;
+- (void)willConfirm;
 
 @end

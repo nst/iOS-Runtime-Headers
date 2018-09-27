@@ -9,7 +9,7 @@
     NSDictionary * _endTimeModifications;
     unsigned long long  _feederRevisionID;
     bool  _hasValidItems;
-    MPMutableBidirectionalDictionary * _indexToIdentifierCache;
+    MSVMutableBidirectionalDictionary * _indexToIdentifierCache;
     bool  _isPlaylistQueueFeeder;
     bool  _isSiriInitiated;
     struct vector<long long, std::__1::allocator<long long> > { 

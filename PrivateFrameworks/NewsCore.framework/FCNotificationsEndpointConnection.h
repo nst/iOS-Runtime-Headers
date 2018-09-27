@@ -19,12 +19,12 @@
 - (id)_pushNotifySubscriptionRequestWithChannelIDs:(id)arg1 paidChannelIDs:(id)arg2 userID:(id)arg3 deviceToken:(id)arg4 storefrontID:(id)arg5;
 - (void)_sendNotificationsSubscriptionRequest:(id)arg1 pathComponent:(id)arg2 callbackQueue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_updateNotificationDropboxDataWithBaseURL:(id)arg1 notificationUserID:(id)arg2 deviceToken:(id)arg3 storefrontID:(id)arg4;
-- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
+- (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (id)deviceOSVersion;
 - (id)deviceType;
 - (id)fileCoordinatedNotificationDropbox;
-- (id)initWithAppConfigurationManager:(id)arg1;
 - (id)initWithBaseURLString:(id)arg1;
+- (id)initWithConfigurationManager:(id)arg1;
 - (void)refreshNotificationsForChannelIDs:(id)arg1 paidChannelIDs:(id)arg2 userID:(id)arg3 deviceToken:(id)arg4 storefrontID:(id)arg5 callbackQueue:(id)arg6 completion:(id /* block */)arg7;
 - (void)registerDeviceWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3 callbackQueue:(id)arg4 completion:(id /* block */)arg5;
 - (void)setDeviceOSVersion:(id)arg1;

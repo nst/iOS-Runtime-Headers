@@ -19,6 +19,9 @@
     NSNumber * _dnsResolutionTime;
     NSNumber * _firstTxByteDelay;
     NSDictionary * _flowNetworkInterfaceType;
+    NSNumber * _idsLastMessageDelay;
+    NSNumber * _idsLastSocketDelay;
+    NSNumber * _idsLastSocketOpenError;
     NSNumber * _isCaptive;
     NSNumber * _meanPing;
     NSNumber * _metricsCount;
@@ -29,6 +32,7 @@
     SiriCoreConnectionMetrics * _remoteMetrics;
     NSNumber * _rssi;
     NSNumber * _signalStrengthBars;
+    NSNumber * _simSubscriptions;
     NSNumber * _snr;
     NSNumber * _subflowCount;
     NSDictionary * _subflowSwitchCounts;
@@ -59,6 +63,9 @@
 @property (nonatomic, copy) NSNumber *dnsResolutionTime;
 @property (nonatomic, copy) NSNumber *firstTxByteDelay;
 @property (nonatomic, copy) NSDictionary *flowNetworkInterfaceType;
+@property (nonatomic, copy) NSNumber *idsLastMessageDelay;
+@property (nonatomic, copy) NSNumber *idsLastSocketDelay;
+@property (nonatomic, copy) NSNumber *idsLastSocketOpenError;
 @property (nonatomic, copy) NSNumber *isCaptive;
 @property (nonatomic, copy) NSNumber *meanPing;
 @property (nonatomic, copy) NSNumber *metricsCount;
@@ -69,6 +76,7 @@
 @property (nonatomic, retain) SiriCoreConnectionMetrics *remoteMetrics;
 @property (nonatomic, copy) NSNumber *rssi;
 @property (nonatomic, copy) NSNumber *signalStrengthBars;
+@property (nonatomic, copy) NSNumber *simSubscriptions;
 @property (nonatomic, copy) NSNumber *snr;
 @property (nonatomic, copy) NSNumber *subflowCount;
 @property (nonatomic, copy) NSDictionary *subflowSwitchCounts;
@@ -102,6 +110,9 @@
 - (id)firstTxByteDelay;
 - (id)flowNetworkInterfaceType;
 - (id)getConnectionMetricsDescription;
+- (id)idsLastMessageDelay;
+- (id)idsLastSocketDelay;
+- (id)idsLastSocketOpenError;
 - (id)isCaptive;
 - (id)meanPing;
 - (id)metricsCount;
@@ -121,6 +132,7 @@
 - (void)setConnectionFallbackReason:(id)arg1;
 - (void)setConnectionMethod:(id)arg1;
 - (void)setConnectionMethodHistory:(id)arg1;
+- (void)setConnectionMetricsForIDS:(double)arg1 messageDelay:(double)arg2 openErrorCode:(unsigned long long)arg3;
 - (void)setConnectionMetricsFromConnection:(id)arg1 isPop:(bool)arg2 isMPTCP:(bool)arg3 attemptedEndpoints:(id)arg4 completion:(id /* block */)arg5;
 - (void)setConnectionMetricsFromNWConnectionForDirect:(id)arg1 isMPTCP:(bool)arg2 attemptedEndpoints:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)setConnectionMetricsFromNWConnectionForPOP:(id)arg1 withCompletion:(id /* block */)arg2;
@@ -133,6 +145,9 @@
 - (void)setDnsResolutionTime:(id)arg1;
 - (void)setFirstTxByteDelay:(id)arg1;
 - (void)setFlowNetworkInterfaceType:(id)arg1;
+- (void)setIdsLastMessageDelay:(id)arg1;
+- (void)setIdsLastSocketDelay:(id)arg1;
+- (void)setIdsLastSocketOpenError:(id)arg1;
 - (void)setIsCaptive:(id)arg1;
 - (void)setMeanPing:(id)arg1;
 - (void)setMetricsCount:(id)arg1;
@@ -143,6 +158,7 @@
 - (void)setRemoteMetrics:(id)arg1;
 - (void)setRssi:(id)arg1;
 - (void)setSignalStrengthBars:(id)arg1;
+- (void)setSimSubscriptions:(id)arg1;
 - (void)setSnr:(id)arg1;
 - (void)setSubflowCount:(id)arg1;
 - (void)setSubflowSwitchCounts:(id)arg1;
@@ -156,6 +172,7 @@
 - (void)setWifiChannelInfo:(id)arg1;
 - (void)setWifiPhyMode:(id)arg1;
 - (id)signalStrengthBars;
+- (id)simSubscriptions;
 - (id)snr;
 - (id)subflowCount;
 - (id)subflowSwitchCounts;

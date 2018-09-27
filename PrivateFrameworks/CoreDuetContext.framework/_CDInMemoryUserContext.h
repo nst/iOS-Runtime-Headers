@@ -18,6 +18,9 @@
 + (id)userContext;
 
 - (void).cxx_destruct;
+- (bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (id)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3 valueDidChange:(bool*)arg4;
+- (bool)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
 - (id)contextForKeyPath:(id)arg1;
 - (id)contexts;
 - (void)deregisterCallback:(id)arg1;
@@ -32,6 +35,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)propertiesForContextualKeyPath:(id)arg1;
 - (void)registerCallback:(id)arg1;
+- (bool)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
 - (void)setContextValue:(id)arg1 forContextualKeyPath:(id)arg2;
 - (void)setContexts:(id)arg1;
 - (void)setLocalDeviceID:(id)arg1;

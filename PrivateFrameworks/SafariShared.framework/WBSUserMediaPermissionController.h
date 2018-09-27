@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;
 @property (readonly) Class superclass;
 
-+ (id)perSitePreferenceValueForMediaCaptureSetting:(long long)arg1;
++ (id)localizedStringForPerSitePreferenceValue:(id)arg1;
 + (id)sharedController;
 
 - (void).cxx_destruct;
@@ -52,6 +52,7 @@
 - (bool)hasPolicyEntryForTopLevelOrigin:(id)arg1;
 - (id)init;
 - (id)initWithUserMediaPermissionsFileURL:(id)arg1 perSitePreferencesStore:(id)arg2;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)microphoneMediaCapturePreference;
 - (id)perSitePreferencesStore;
 - (void)performDelayedLaunchOperations;

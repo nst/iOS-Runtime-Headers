@@ -20,6 +20,8 @@
 
 - (void).cxx_destruct;
 - (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
+- (unsigned long long)_orderForOriginIdentifier:(id)arg1;
+- (id)_originFromTestOptions:(id)arg1;
 - (id)_originWithMROriginRef:(void*)arg1;
 - (void)_updateActiveOrigin;
 - (void)_updateAvailableOrigins;

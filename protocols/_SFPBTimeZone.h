@@ -5,7 +5,6 @@
 
 @required
 
-- (bool)hasIdentifier;
 - (NSString *)identifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

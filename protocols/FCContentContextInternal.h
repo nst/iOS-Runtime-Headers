@@ -12,9 +12,9 @@
 - (FCFeedDatabase *)feedDatabase;
 - (FCForYouConfigRecordSource *)forYouConfigRecordSource;
 - (FCPurchaseLookupRecordSource *)purchaseLookupRecordSource;
+- (NSArray *)recordSources;
 - (FCResourceRecordSource *)resourceRecordSource;
 - (FCTagRecordSource *)tagRecordSource;
-- (FCWebArchiveSource *)webArchiveSource;
 - (FCWidgetSectionConfigRecordSource *)widgetSectionConfigRecordSource;
 
 @end

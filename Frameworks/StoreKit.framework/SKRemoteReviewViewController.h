@@ -17,6 +17,7 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (id)delegate;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 - (id)reviewViewController;

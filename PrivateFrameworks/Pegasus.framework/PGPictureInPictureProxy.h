@@ -7,6 +7,7 @@
     long long  _controlsStyle;
     <PGPictureInPictureProxyDelegate> * _delegate;
     struct { 
+        unsigned int pictureInPictureProxyInterfaceOrientationForTransitionAnimation : 1; 
         unsigned int pictureInPictureProxyViewFrameForTransitionAnimation : 1; 
         unsigned int pictureInPictureProxy_willStartPictureInPictureWithAnimationType : 1; 
         unsigned int pictureInPictureProxy_didStartPictureInPictureWithAnimationType : 1; 
@@ -18,6 +19,16 @@
         unsigned int pictureInPictureProxyPictureInPictureInterruptionEnded : 1; 
     }  _delegateRespondsTo;
     PGHostedWindow * _hostedWindow;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _initialLayerFrame;
     bool  _isHostedWindowSizeChangeDuringPinchGesture;
     bool  _isPictureInPictureActive;
     bool  _isPictureInPicturePossible;
@@ -58,6 +69,7 @@
 + (id)pictureInPictureProxyWithControlsStyle:(long long)arg1 viewController:(id)arg2;
 
 - (void).cxx_destruct;
+- (long long)_interfaceOrientationForTransitionAnimationAssumeApplicationActive:(bool)arg1;
 - (void)_startPictureInPictureAnimated:(bool)arg1 enteringBackground:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_stopPictureInPictureAnimated:(bool)arg1 activateApplicationIfNeededAndRestoreUserInterface:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrameForTransitionAnimationAssumeApplicationActive:(bool)arg1;
@@ -97,5 +109,6 @@
 - (oneway void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1 animationType:(long long)arg2 initialSpringVelocity:(double)arg3 synchronizationFence:(id)arg4;
 - (oneway void)updatePictureInPicturePossible:(bool)arg1;
 - (id)viewController;
+- (void)viewFrameForInteractiveTransitionAnimationWhenEnteringBackgroundDidChangeForViewController;
 
 @end

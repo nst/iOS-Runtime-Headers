@@ -60,6 +60,7 @@
 - (bool)isDeclined;
 - (bool)isExpired;
 - (bool)isPending;
+- (void)notifyStateChangedForMessage:(id)arg1;
 - (id)operations;
 - (id)propertyQueue;
 - (bool)refreshDisplayName;

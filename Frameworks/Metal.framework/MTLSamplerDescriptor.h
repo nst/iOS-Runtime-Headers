@@ -8,6 +8,7 @@
 
 @property (nonatomic) unsigned long long borderColor;
 @property (nonatomic) unsigned long long compareFunction;
+@property (nonatomic) bool forceResourceIndex;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) bool lodAverage;
 @property (nonatomic) float lodMaxClamp;
@@ -18,6 +19,7 @@
 @property (nonatomic) unsigned long long mipFilter;
 @property (nonatomic) bool normalizedCoordinates;
 @property (nonatomic) unsigned long long rAddressMode;
+@property (nonatomic) unsigned long long resourceIndex;
 @property (nonatomic) unsigned long long sAddressMode;
 @property (nonatomic) bool supportArgumentBuffers;
 @property (nonatomic) unsigned long long tAddressMode;

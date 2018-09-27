@@ -15,10 +15,12 @@
     CKOperationGroup * _group;
     NSObject<OS_os_transaction> * _isExecuting;
     bool  _isFinished;
+    bool  _isFinishingOnCallbackQueue;
     bool  _isOutstandingOperation;
     id /* block */  _longLivedOperationWasPersistedBlock;
     CKOperationMetrics * _metrics;
     NSString * _operationID;
+    CKEventMetric * _operationMetric;
     NSObject<OS_os_activity> * _osActivity;
     NSString * _parentSectionID;
     CKPlaceholderOperation * _placeholderOperation;
@@ -31,7 +33,7 @@
     NSString * _sectionID;
     CKTimeLogger * _timeLogger;
     NSObject<OS_dispatch_source> * _timeoutSource;
-    long long  _usesBackgroundSessionOverride;
+    bool  _usesBackgroundSession;
 }
 
 @property (nonatomic, retain) CKOperationMMCSRequestOptions *MMCSRequestOptions;
@@ -47,15 +49,18 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *deviceIdentifier;
 @property (nonatomic, retain) NSError *error;
+@property (nonatomic, readonly) NSString *flowControlKey;
 @property (nonatomic, retain) CKOperationGroup *group;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isExecuting;
 @property (nonatomic) bool isFinished;
+@property (nonatomic, readonly) bool isFinishingOnCallbackQueue;
 @property (nonatomic) bool isOutstandingOperation;
 @property (nonatomic, copy) id /* block */ longLivedOperationWasPersistedBlock;
 @property (nonatomic, retain) CKOperationMetrics *metrics;
 @property (nonatomic, copy) NSString *operationID;
 @property (nonatomic, readonly) CKOperationInfo *operationInfo;
+@property (nonatomic, readonly) CKEventMetric *operationMetric;
 @property (nonatomic, retain) NSObject<OS_os_activity> *osActivity;
 @property (nonatomic, readonly) NSString *parentSectionID;
 @property (retain) CKPlaceholderOperation *placeholderOperation;
@@ -75,7 +80,6 @@
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timeoutSource;
 @property (nonatomic) bool usesBackgroundSession;
-@property (nonatomic) long long usesBackgroundSessionOverride;
 @property (nonatomic, readonly) NSDictionary *w3cNavigationTimingByRequestUUID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
@@ -119,12 +123,14 @@
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)finishWithError:(id)arg1;
+- (id)flowControlKey;
 - (id)group;
 - (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (bool)isConcurrent;
 - (bool)isExecuting;
 - (bool)isFinished;
+- (bool)isFinishingOnCallbackQueue;
 - (bool)isLongLived;
 - (bool)isOutstandingOperation;
 - (id /* block */)longLivedOperationWasPersistedBlock;
@@ -134,6 +140,7 @@
 - (id)operationID;
 - (id)operationInfo;
 - (Class)operationInfoClass;
+- (id)operationMetric;
 - (id)osActivity;
 - (id)parentSectionID;
 - (void)performCKOperation;
@@ -188,7 +195,6 @@
 - (void)setTimeoutIntervalForResource:(double)arg1;
 - (void)setTimeoutSource:(id)arg1;
 - (void)setUsesBackgroundSession:(bool)arg1;
-- (void)setUsesBackgroundSessionOverride:(long long)arg1;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)start;
@@ -197,7 +203,6 @@
 - (double)timeoutIntervalForResource;
 - (id)timeoutSource;
 - (bool)usesBackgroundSession;
-- (long long)usesBackgroundSessionOverride;
 - (id)w3cNavigationTimingByRequestUUID;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore

@@ -42,6 +42,7 @@
 @property (nonatomic, retain) NSData *groupData;
 @property (nonatomic) bool homeKitPayload;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) bool ignoreMaxRetryCount;
 @property (nonatomic, retain) NSArray *interestingRegistrationProperties;
 @property (nonatomic) bool isProxiedOutgoingMessage;
 @property (nonatomic) bool liveMessageDelivery;
@@ -72,6 +73,7 @@
 @property (nonatomic) bool useDictAsTopLevel;
 @property (nonatomic) bool wantsAppAck;
 @property (nonatomic) bool wantsDeliveryStatus;
+@property (nonatomic) bool wantsProgress;
 @property (nonatomic) bool wantsResponse;
 
 - (void).cxx_destruct;
@@ -113,6 +115,7 @@
 - (id)groupData;
 - (bool)homeKitPayload;
 - (id)identifier;
+- (bool)ignoreMaxRetryCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
@@ -174,6 +177,7 @@
 - (void)setGroupData:(id)arg1;
 - (void)setHomeKitPayload:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIgnoreMaxRetryCount:(bool)arg1;
 - (void)setInterestingRegistrationProperties:(id)arg1;
 - (void)setIsProxiedOutgoingMessage:(bool)arg1;
 - (void)setLiveMessageDelivery:(bool)arg1;
@@ -205,6 +209,7 @@
 - (void)setUseDictAsTopLevel:(bool)arg1;
 - (void)setWantsAppAck:(bool)arg1;
 - (void)setWantsDeliveryStatus:(bool)arg1;
+- (void)setWantsProgress:(bool)arg1;
 - (void)setWantsResponse:(bool)arg1;
 - (id)subService;
 - (id)subServiceAccountUUID;
@@ -212,6 +217,7 @@
 - (bool)useDictAsTopLevel;
 - (bool)wantsAppAck;
 - (bool)wantsDeliveryStatus;
+- (bool)wantsProgress;
 - (bool)wantsResponse;
 
 @end

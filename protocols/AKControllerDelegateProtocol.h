@@ -42,6 +42,8 @@
 - (void)positionSketchOverlay:(UIView *)arg1 forAnnotationController:(AKController *)arg2;
 - (NSArray *)quadPointsForCharacterIndexes:(NSIndexSet *)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (void)removeAuxiliaryView:(UIView *)arg1 forAnnotationController:(AKController *)arg2;
+- (void)rotateLeft:(AKController *)arg1;
+- (void)rotateRight:(AKController *)arg1;
 - (void)setAllowsNativeRenderingOfHighlightableSelection:(bool)arg1 forAnnotationController:(AKController *)arg2;
 - (bool)shouldPlaceFormElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (bool)shouldPlaceProposedFormElementAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onOverlayAtPageIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;

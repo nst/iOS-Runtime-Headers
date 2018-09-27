@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSString *labelTextString;
 @property (nonatomic) int labelType;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly) unsigned long long type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
@@ -49,7 +49,7 @@
 - (void)setLabelArtwork:(id)arg1;
 - (void)setLabelTextString:(id)arg1;
 - (void)setLabelType:(int)arg1;
-- (long long)type;
+- (unsigned long long)type;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

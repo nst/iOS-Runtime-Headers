@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSelectedStreamConfigurationWrite : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSelectedStreamConfigurationWrite : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     HMDSelectedAudioParameters * _audioParameters;
     HMDSessionControl * _sessionControl;
     HMDSelectedVideoParameters * _videoParameters;

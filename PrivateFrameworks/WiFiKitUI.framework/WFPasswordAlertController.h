@@ -7,6 +7,7 @@
     UIAlertAction * _joinAction;
     bool  _joinable;
     NSString * _password;
+    NSString * _sharedPassword;
     bool  _supportsWiFiPasswordSharing;
     id /* block */  _textHandler;
     id /* block */  _visibilityHandler;
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) UIAlertAction *joinAction;
 @property (nonatomic) bool joinable;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) NSString *sharedPassword;
 @property (nonatomic) bool supportsWiFiPasswordSharing;
 @property (nonatomic, copy) id /* block */ textHandler;
 @property (nonatomic, copy) id /* block */ visibilityHandler;
@@ -32,9 +34,11 @@
 - (void)setJoinAction:(id)arg1;
 - (void)setJoinable:(bool)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setSharedPassword:(id)arg1;
 - (void)setSupportsWiFiPasswordSharing:(bool)arg1;
 - (void)setTextHandler:(id /* block */)arg1;
 - (void)setVisibilityHandler:(id /* block */)arg1;
+- (id)sharedPassword;
 - (bool)supportsWiFiPasswordSharing;
 - (void)textDidChange:(id)arg1;
 - (id /* block */)textHandler;

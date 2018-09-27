@@ -35,7 +35,6 @@
 - (bool)_fetchNextLostItemID:(id*)arg1 parentID:(id*)arg2 appLibraryRowID:(id*)arg3 tooManyScans:(bool*)arg4 stamp:(long long*)arg5;
 - (void)_finishCurrentRelpathScan;
 - (void)_finishedScanWithError:(int)arg1;
-- (void)_fseventOnDocument:(id)arg1 flags:(unsigned int)arg2 options:(unsigned long long)arg3 item:(id)arg4 lookup:(id)arg5;
 - (void)_fseventOnDocument:(id)arg1 flags:(unsigned int)arg2 options:(unsigned long long)arg3 item:(id)arg4 lookup:(id)arg5 unresolvedLastPathComponent:(id)arg6;
 - (void)_lostScanSchedule;
 - (id)_nextLostItemIDWithBackoff:(long long*)arg1 appLibrary:(id*)arg2 now:(long long)arg3;

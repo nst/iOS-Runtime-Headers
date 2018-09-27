@@ -4,7 +4,6 @@
 
 @interface SiriUISiriStatusView : UIView <SUICFlamesViewDelegate, SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate> {
     <SiriUISiriStatusViewAnimationDelegate> * _animationDelegate;
-    UIButton * _button;
     SiriUIConfiguration * _configuration;
     int  _deferredFlamesViewState;
     <SiriUISiriStatusViewDelegate> * _delegate;
@@ -13,8 +12,8 @@
     SUICFlamesView * _flamesView;
     bool  _flamesViewDeferred;
     double  _flamesViewWidth;
-    AVAudioSession * _glyphAuxiliaryAudioSession;
-    NSObject<OS_dispatch_group> * _glyphConfigurationGroup;
+    AVAudioSession * _glyphAudioSession;
+    NSObject<OS_dispatch_queue> * _glyphConfigurationQueue;
     AVPlayerLayer * _glyphLayer;
     AVPlayerItem * _glyphPlayerItem;
     AVPlayerLooper * _glyphPlayerLooper;
@@ -26,6 +25,9 @@
     long long  _mode;
     bool  _paused;
     UIScreen * _screen;
+    bool  _siriGlyphHidden;
+    bool  _textInputEnabled;
+    UIView * _touchInputView;
 }
 
 @property (nonatomic) <SiriUISiriStatusViewAnimationDelegate> *animationDelegate;
@@ -43,13 +45,12 @@
 @property (nonatomic, readonly) double statusViewHeight;
 @property (readonly) Class superclass;
 
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrameForScreen:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedInsetRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_animateSiriGlyphHidden:(bool)arg1;
 - (void)_attachFlamesViewIfNeeded;
-- (void)_configureGlyph;
-- (void)_createLooperIfNeeded;
-- (void)_createQueuePlayerIfNeeded;
+- (bool)_deviceNeedsReducedFramerateForCarPlayThinkingState;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesFrame;
 - (id)_flamesView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesViewFrame;
@@ -59,10 +60,10 @@
 - (void)_micButtonHeld:(id)arg1;
 - (void)_micButtonTapped:(id)arg1;
 - (void)_setFlamesViewState:(int)arg1;
+- (void)_setupOrbIfNeeded:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_siriGlyphTappableRect;
 - (id)animationDelegate;
 - (float)audioLevelForFlamesView:(id)arg1;
-- (void)configureGlyphWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (double)disabledMicOpacity;
@@ -88,6 +89,7 @@
 - (void)setInUITrackingMode:(bool)arg1;
 - (void)setMode:(long long)arg1;
 - (void)setPaused:(bool)arg1;
+- (void)setupOrbIfNeeded;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)statusViewHeight;
 

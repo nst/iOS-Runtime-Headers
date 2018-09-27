@@ -35,11 +35,15 @@
 
 + (id)hk_dateIntervalForDayFromDate:(id)arg1 calendar:(id)arg2;
 + (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
-+ (id)hk_dateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 
 - (bool)hk_containsTime:(double)arg1;
 - (bool)hk_intersectsDateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)hk_midDate;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
+
++ (id)dnds_dateIntervalForScheduleSettings:(id)arg1 date:(id)arg2 calendar:(id)arg3;
++ (id)dnds_dateIntervalUntilEndOfScheduleForScheduleSettings:(id)arg1 startDate:(id)arg2 calendar:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -50,5 +54,6 @@
 + (id)_mt_dateIntervalFromPropertyList:(id)arg1;
 
 - (id)_mt_propertyList;
+- (bool)mtContainsDate:(id)arg1;
 
 @end

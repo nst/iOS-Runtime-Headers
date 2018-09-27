@@ -38,6 +38,7 @@
     unsigned long long  _dumpFrameAtSeconds;
     NSString * _dumpPath;
     bool  _enableSetNeedsDisplay;
+    long long  _forceOrientation;
     unsigned int  _frameNum;
     bool  _framebufferOnly;
     long long  _maxValidAttachmentIndex;
@@ -88,6 +89,7 @@
 + (Class)layerClass;
 
 - (void).cxx_destruct;
+- (void)__initCommon;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (long long)_calculateRefeshesPerSecond;
@@ -99,6 +101,7 @@
 - (struct CGSize { double x1; double x2; })_pixelSizeFromPointSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_resizeDrawable;
 - (void)_resizeMetalLayerDrawable;
+- (void)_updateToNativeScale;
 - (bool)autoResizeDrawable;
 - (struct { double x1; double x2; double x3; double x4; })clearColor;
 - (double)clearDepth;
@@ -124,7 +127,6 @@
 - (bool)exportToTargaAtLocation:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 size:(unsigned long long)arg4 bytes:(void*)arg5;
 - (bool)framebufferOnly;
 - (void)getEnvironmentSettings;
-- (void)initCommon;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 device:(id)arg2;

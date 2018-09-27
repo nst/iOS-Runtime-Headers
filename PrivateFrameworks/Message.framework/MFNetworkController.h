@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFNetworkController : NSObject <MFDiagnosticsGenerator, RadiosPreferencesDelegate> {
+@interface MFNetworkController : NSObject <CXCallObserverDelegate, MFDiagnosticsGenerator, RadiosPreferencesDelegate> {
+    unsigned long long  _activeCalls;
     bool  _alternateAdviceState;
     NSMutableSet * _backgroundWifiClients;
-    NSMutableSet * _calls;
-    bool  _data;
-    NSString * _dataIndicator;
+    CXCallObserver * _callObserver;
+    bool  _cellularDataAvailable;
+    CoreTelephonyClient * _ctc;
+    int  _dataIndicator;
+    NSObject<OS_dispatch_queue> * _dataStatusQueue;
     bool  _dns;
     unsigned int  _flags;
     bool  _hasCellDataCapability;
     bool  _hasWiFiCapability;
-    int  _interface;
     bool  _isRoamingAllowed;
     bool  _isWiFiEnabled;
-    NSConditionLock * _lock;
+    NSLock * _lock;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _prefsQueue;
     RadiosPreferences * _radiosPreferences;
@@ -24,8 +26,6 @@
     struct __SCDynamicStore { } * _store;
     struct __CFRunLoopSource { } * _store_source;
     int  _symptomsToken;
-    struct __CTServerConnection { } * _telephony;
-    NSThread * _thread;
     struct __SCPreferences { } * _wiFiPreferences;
     void * _wifiManager;
 }
@@ -42,27 +42,29 @@
 + (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
 
+- (void)_carrierBundleDidChange;
 - (void)_checkKeys:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
-- (void)_checkKeys_nts:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
-- (void)_handleNotification:(id)arg1 info:(id)arg2 forConnection:(struct __CTServerConnection { }*)arg3;
 - (void)_handleWiFiNotification:(unsigned int)arg1;
+- (void)_initializeDataStatus;
 - (void)_inititializeWifiManager;
 - (bool)_isNetworkUp_nts;
 - (id)_networkAssertionWithIdentifier:(id)arg1;
-- (struct { int x1; int x2; })_pollDataAndCallStatus_nts;
 - (void)_setDataStatus_nts:(id)arg1;
 - (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
-- (void)_setUpTelephony_nts;
 - (void)_setupSymptons;
 - (bool)_simulationOverrideForType:(unsigned long long)arg1 actualValue:(bool)arg2;
-- (void)_tearDownTelephony_nts;
+- (void)_updateActiveCalls;
 - (void)_updateWifiClientType;
 - (void)addBackgroundWifiClient:(id)arg1;
 - (id)addNetworkObserverBlock:(id /* block */)arg1 queue:(id)arg2;
 - (void)airplaneModeChanged;
 - (id)awdNetworkDiagnosticReport;
+- (void)callObserver:(id)arg1 callChanged:(id)arg2;
+- (void)connectionActivationError:(id)arg1 connection:(int)arg2 error:(int)arg3;
+- (id)copyCarrierBundleValue:(id)arg1;
 - (id)copyDiagnosticInformation;
 - (int)dataStatus;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (void)dealloc;
 - (bool)hasAlternateAdvice;
 - (bool)inAirplaneMode;
@@ -75,9 +77,11 @@
 - (bool)isNetworkUp;
 - (bool)isOnWWAN;
 - (id)networkObservable;
+- (void)preferredDataSimChanged:(id)arg1;
 - (void)removeBackgroundWifiClient:(id)arg1;
 - (void)removeNetworkObserver:(id)arg1;
 - (void)setWifiManager:(void*)arg1;
+- (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (void*)wifiManager;
 - (id)wifiObservable;
 

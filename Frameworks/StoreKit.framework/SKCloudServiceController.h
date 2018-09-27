@@ -11,6 +11,7 @@
 + (long long)authorizationStatus;
 + (void)requestAuthorization:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification;
 - (void)_handleInvalidation;
 - (void)_playbackCapabilitiesDidChangeNotification;

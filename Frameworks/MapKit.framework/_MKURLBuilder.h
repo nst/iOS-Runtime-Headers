@@ -3,7 +3,7 @@
  */
 
 @interface _MKURLBuilder : NSObject {
-    _GEOMapURLBuilder * _realBuilder;
+    GEOMapURLBuilder * _realBuilder;
 }
 
 + (id)URLForAddress:(id)arg1;
@@ -17,6 +17,7 @@
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2;
 + (id)URLForDirectionsFrom:(id)arg1 to:(id)arg2 transport:(unsigned long long)arg3;
 + (id)URLForDirectionsFromHereTo:(id)arg1;
++ (id)URLForDirectionsFromHereTo:(id)arg1 label:(id)arg2 muid:(unsigned long long)arg3 provider:(int)arg4 transport:(unsigned long long)arg5;
 + (id)URLForDirectionsFromHereTo:(id)arg1 transport:(unsigned long long)arg2;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
@@ -43,6 +44,8 @@
 - (void)setBusinessAddress:(id)arg1;
 - (void)setBusinessCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setContentProvider:(id)arg1;
+- (void)setDestinationLabel:(id)arg1;
+- (void)setDestinationMUID:(unsigned long long)arg1 provider:(int)arg2;
 - (void)setDisplayRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMapType:(unsigned long long)arg1;
 - (void)setNear:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;

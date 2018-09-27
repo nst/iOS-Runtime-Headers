@@ -27,5 +27,7 @@
 - (id)titleLabel;
 - (id)titleLabelString;
 - (void)updateResultWithTitle:(id)arg1 secondaryTitle:(id)arg2 image:(id)arg3 detached:(bool)arg4;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

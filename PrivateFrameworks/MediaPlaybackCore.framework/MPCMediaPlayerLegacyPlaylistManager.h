@@ -10,7 +10,7 @@
     NSMutableIndexSet * _failedSoftQueueIndexes;
     long long  _hardQueueInsertionIndex;
     NSMutableArray * _hardQueueSourceContexts;
-    MPMutableBidirectionalDictionary * _identifiersToIndexes;
+    MSVMutableBidirectionalDictionary * _identifiersToIndexes;
     bool  _ignoreHardQueueInvalidation;
     bool  _ignoreNextIndexChanges;
     bool  _ignoreSoftQueueInvalidation;

@@ -9,6 +9,7 @@
         id m_weakReference; 
     }  _externalDelegate;
     WKWebView<UIScrollViewDelegate> * _internalDelegate;
+    double  _keyboardBottomInsetAdjustment;
 }
 
 @property (nonatomic, readonly) bool _contentInsetAdjustmentBehaviorWasExternallyOverridden;
@@ -16,12 +17,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(bool)arg2 lastAdjustment:(double*)arg3;
 - (bool)_contentInsetAdjustmentBehaviorWasExternallyOverridden;
 - (struct CGSize { double x1; double x2; })_currentTopLeftRubberbandAmount;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { double x1; double x2; })arg1;
 - (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(bool*)arg5;
 - (void)_setContentInsetAdjustmentBehaviorInternal:(long long)arg1;
 - (void)_setContentSizePreservingContentOffsetDuringRubberband:(struct CGSize { double x1; double x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_systemContentInset;
 - (void)_updateDelegate;
 - (void)dealloc;
 - (id)delegate;

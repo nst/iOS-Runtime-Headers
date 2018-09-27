@@ -40,6 +40,7 @@
 - (void)setContentView:(id)arg1;
 - (void)setShouldFit:(bool)arg1;
 - (bool)shouldFit;
+- (bool)shouldLayoutContentBasedOnPeripheryInsets;
 - (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willBeginZooming;

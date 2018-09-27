@@ -58,12 +58,15 @@
 @property double pageHeaderInset;
 @property int pageOrder;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) bool preventsChangeTracking;
 @property (nonatomic, readonly) bool preventsComments;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } printMargins;
 @property (nonatomic) bool showPageNumbers;
 @property long long startPageNumber;
 @property (nonatomic, readonly) bool storageChangesInvalidateWrap;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsCollaborativeEditing;
+@property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
 @property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic) bool usesSingleHeaderFooter;
@@ -149,6 +152,7 @@
 - (double)pageHeaderInset;
 - (int)pageOrder;
 - (id)parentInfo;
+- (bool)preventsChangeTracking;
 - (bool)preventsComments;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })printMargins;
 - (id)remappedTableNames;
@@ -186,6 +190,7 @@
 - (bool)shouldBeDisplayed;
 - (bool)showPageNumbers;
 - (long long)startPageNumber;
+- (bool)supportsMultipleColumns;
 - (id)tableInfoForName:(id)arg1 caseSensitive:(bool)arg2;
 - (id)tableInfos;
 - (bool)textIsLinked;

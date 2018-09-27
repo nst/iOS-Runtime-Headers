@@ -5,9 +5,6 @@
 
 @required
 
-- (bool)hasImage;
-- (bool)hasIsSelected;
-- (bool)hasSelectedImage;
 - (_SFPBImage *)image;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

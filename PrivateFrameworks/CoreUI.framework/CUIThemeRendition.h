@@ -14,7 +14,8 @@
         double width; 
         double height; 
     }  _physicalSizeInMeters;
-    struct { 
+    NSDictionary * _properties;
+    struct cuithemerenditionrenditionflags { 
         unsigned int isHeaderFlaggedFPO : 1; 
         unsigned int isExcludedFromContrastFilter : 1; 
         unsigned int isVectorBased : 1; 
@@ -40,9 +41,16 @@
     long long  _validLookGradation;
 }
 
+@property (nonatomic) long long artworkStatus;
 @property (nonatomic) int blendMode;
 @property (nonatomic) int exifOrientation;
+@property (nonatomic) NSString *internalName;
+@property (nonatomic) unsigned int internalScale;
+@property (nonatomic) long long internalTemplateRenderingMode;
 @property (nonatomic) double opacity;
+@property (nonatomic, readonly) NSData *srcData;
+@property (nonatomic) unsigned int subtype;
+@property (nonatomic) long long type;
 
 + (id)displayNameForRenditionType:(long long)arg1;
 + (id)filteredCSIDataFromBaseCSIData:(id)arg1;
@@ -53,6 +61,7 @@
 - (id)_initWithCSIHeader:(const struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (void)_initalizeMetadataFromCSIData:(const struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (void)_initializeCompositingOptionsFromCSIData:(const struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
+- (void)_initializePropertiesFromCSIData:(const struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (void)_initializeRenditionKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (void)_initializeTypeIdentifiersWithLayout:(unsigned short)arg1;
 - (void)_setStructuredThemeStore:(id)arg1;
@@ -64,7 +73,7 @@
 - (unsigned long long)colorSpaceID;
 - (id)contentNames;
 - (struct CGImage { }*)createImageFromPDFRenditionWithScale:(double)arg1;
-- (const struct _csicolor { unsigned int x1; unsigned int x2; unsigned int x3 : 8; unsigned int x4 : 24; unsigned int x5; double x6[0]; }*)csiColor;
+- (const struct _csicolor { unsigned int x1; unsigned int x2; unsigned int x3 : 8; unsigned int x4 : 3; unsigned int x5 : 21; unsigned int x6; double x7[0]; }*)csiColor;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -78,6 +87,9 @@
 - (id)imageForSliceIndex:(long long)arg1;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(long long)arg3;
+- (id)internalName;
+- (unsigned int)internalScale;
+- (long long)internalTemplateRenderingMode;
 - (bool)isFlippable;
 - (bool)isHeaderFlaggedFPO;
 - (bool)isInternalLink;
@@ -94,6 +106,7 @@
 - (id)metrics;
 - (id)mipLevels;
 - (id)name;
+- (int)objectVersion;
 - (double)opacity;
 - (bool)optOutOfThinning;
 - (struct CGSize { double x1; double x2; })originalUncroppedSize;
@@ -101,17 +114,30 @@
 - (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (int)pixelFormat;
 - (bool)preservedVectorRepresentation;
+- (id)properties;
 - (id)provideTextureInfo;
+- (struct cuithemerenditionrenditionflags { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 4; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 20; }*)renditionFlags;
 - (double)scale;
+- (void)setArtworkStatus:(long long)arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setExifOrientation:(int)arg1;
+- (void)setInternalName:(id)arg1;
+- (void)setInternalScale:(unsigned int)arg1;
+- (void)setInternalTemplateRenderingMode:(long long)arg1;
+- (void)setName:(id)arg1;
 - (void)setOpacity:(double)arg1;
+- (void)setSubtype:(unsigned int)arg1;
+- (void)setType:(long long)arg1;
 - (id)sizeIndexes;
 - (id)sliceInformation;
 - (unsigned long long)sourceRowbytes;
+- (id)srcData;
+- (bool)substituteWithSystemColor;
 - (unsigned int)subtype;
+- (id)systemColorName;
 - (long long)templateRenderingMode;
 - (id)textureImages;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })transformation;
 - (long long)type;
 - (struct CGImage { }*)uncroppedImage;
 - (struct CGImage { }*)unslicedImage;

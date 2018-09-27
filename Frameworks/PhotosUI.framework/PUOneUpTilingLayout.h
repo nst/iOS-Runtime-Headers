@@ -33,6 +33,7 @@
         bool respondsToAssetExplorerReviewScreenBadgeSizeForItemAtIndexPath; 
         bool respondsToShouldShowPlayButtonForItemAtIndexPath; 
         bool respondsToShouldShowProgressIndicatorForItemAtIndexPath; 
+        bool respondsToShouldMoveProgressIndicatorForItemAtIndexPath; 
         bool respondsToShouldShowBufferingIndicatorForItemAtIndexPath; 
         bool respondsToLoadingIndicatorSizeForItemAtIndexPath; 
         bool respondsToModelTileTransformForItemAtIndexPath; 
@@ -42,6 +43,8 @@
         bool respondsToMinimumVisibleAccessoryHeightForItemAtIndexPath; 
         bool respondsToShouldShowVideoPlaceholderForItemAtIndexPath; 
         bool respondsToDisableInitialZoomToFillForItemAtIndexPath; 
+        bool respondsToShouldShowReviewScreenScrubberBar; 
+        bool respondsToAlphaForReviewScreenBarsInLayout; 
     }  _delegateFlags;
     struct CGSize { 
         double width; 
@@ -72,10 +75,14 @@
     UITraitCollection * _traitCollection;
     double  _transitionProgress;
     bool  _useAssetExplorerReviewScreenBadgeTiles;
-    bool  _useAssetExplorerReviewScreenSelectionIndicatorTiles;
     bool  _useBackgroundTile;
     bool  _useBadgeTiles;
+    bool  _useImportStatusIndicatorTiles;
+    bool  _useReviewScreenBars;
+    bool  _useSelectionIndicatorTiles;
     bool  _useUserTransformTiles;
+    bool  _useVerticalReviewScreenControlBarLayout;
+    long long  _windowInterfaceOrientation;
 }
 
 @property (nonatomic) struct CGSize { double x1; double x2; } assetExplorerReviewScreenProgressIndicatorSize;
@@ -95,10 +102,14 @@
 @property (nonatomic, retain) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) double transitionProgress;
 @property (nonatomic) bool useAssetExplorerReviewScreenBadgeTiles;
-@property (nonatomic) bool useAssetExplorerReviewScreenSelectionIndicatorTiles;
 @property (nonatomic) bool useBackgroundTile;
 @property (nonatomic) bool useBadgeTiles;
+@property (nonatomic) bool useImportStatusIndicatorTiles;
+@property (nonatomic) bool useReviewScreenBars;
+@property (nonatomic) bool useSelectionIndicatorTiles;
 @property (nonatomic) bool useUserTransformTiles;
+@property (nonatomic) bool useVerticalReviewScreenControlBarLayout;
+@property (nonatomic) long long windowInterfaceOrientation;
 
 + (id)centerTileKinds;
 + (void)initialize;
@@ -139,6 +150,7 @@
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (void)invalidateLoadingIndicatorForItemAtIndexPath:(id)arg1;
 - (void)invalidateModelTileTransformForItemAtIndexPath:(id)arg1;
+- (void)invalidateProgressIndicatorForItemAtIndexPath:(id)arg1;
 - (void)invalidateVideoPlaceholderForItemAtIndexPath:(id)arg1;
 - (id)layoutInfoForTileWithIndexPath:(id)arg1 kind:(id)arg2;
 - (id)parallaxComputer;
@@ -161,22 +173,30 @@
 - (void)setTileInitialContentMode:(long long)arg1;
 - (void)setTraitCollection:(id)arg1;
 - (void)setUseAssetExplorerReviewScreenBadgeTiles:(bool)arg1;
-- (void)setUseAssetExplorerReviewScreenSelectionIndicatorTiles:(bool)arg1;
 - (void)setUseBackgroundTile:(bool)arg1;
 - (void)setUseBadgeTiles:(bool)arg1;
+- (void)setUseImportStatusIndicatorTiles:(bool)arg1;
+- (void)setUseReviewScreenBars:(bool)arg1;
+- (void)setUseSelectionIndicatorTiles:(bool)arg1;
 - (void)setUseUserTransformTiles:(bool)arg1;
+- (void)setUseVerticalReviewScreenControlBarLayout:(bool)arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setWindowInterfaceOrientation:(long long)arg1;
 - (bool)shouldPinContentToTop;
 - (struct CGSize { double x1; double x2; })sizeForSection:(long long)arg1 numberOfItems:(long long)arg2;
 - (long long)tileInitialContentMode;
 - (id)traitCollection;
 - (double)transitionProgress;
 - (bool)useAssetExplorerReviewScreenBadgeTiles;
-- (bool)useAssetExplorerReviewScreenSelectionIndicatorTiles;
 - (bool)useBackgroundTile;
 - (bool)useBadgeTiles;
+- (bool)useImportStatusIndicatorTiles;
+- (bool)useReviewScreenBars;
+- (bool)useSelectionIndicatorTiles;
 - (bool)useUserTransformTiles;
+- (bool)useVerticalReviewScreenControlBarLayout;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectForItemAtIndexPath:(id)arg1 transitionProgress:(double)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(long long)arg2;
+- (long long)windowInterfaceOrientation;
 
 @end

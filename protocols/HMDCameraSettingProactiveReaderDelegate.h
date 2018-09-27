@@ -5,6 +5,6 @@
 
 @required
 
-- (void)cameraSettingProactiveReaderDidCompleteRead:(HMDCameraSettingProactiveReader *)arg1;
+- (void)cameraSettingProactiveReaderDidCompleteRead:(HMDCameraSettingProactiveReader *)arg1 negotiateStreamMessageWasHandled:(bool)arg2;
 
 @end

@@ -3,24 +3,24 @@
  */
 
 @interface Swift._RawNativeDictionaryStorage : Swift._SwiftNativeNSDictionary <Swift._NSDictionaryCore> {
-    void capacity;
+    void bucketCount;
     void count;
     void initializedEntries;
     void keys;
+    void seed;
     void values;
 }
 
 @property (nonatomic) long long count;
 
-- (id)copyWithZone:(void*)arg1;
+- (id)copyWithZone;
 - (long long)count;
-- (long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(long long)arg3;
+- (long long)countByEnumeratingWithStateobjectscount;
 - (id)enumerator;
-- (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
-- (id)init;
-- (id)initWithObjects:(const id*)arg1 forKeys:(void*)arg2 count:(long long)arg3;
+- (void)getObjectsandKeyscount;
+- (id)initWithObjectsforKeyscount;
 - (id)keyEnumerator;
-- (id)objectForKey:(id)arg1;
-- (void)setCount:(long long)arg1;
+- (id)objectForKey;
+- (void)setCount;
 
 @end

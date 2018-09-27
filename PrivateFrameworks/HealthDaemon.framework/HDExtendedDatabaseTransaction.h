@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_semaphore> * _completionSemaphore;
     double  _continuationTimeout;
     NSObject<OS_dispatch_queue> * _dataQueue;
-    <HDHealthDatabase> * _healthDatabase;
+    HDDatabase * _database;
     NSError * _lastError;
     id /* block */  _pendingWork;
     bool  _pendingWorkDidSucceed;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *completionSemaphore;
 @property (nonatomic, readonly) double continuationTimeout;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dataQueue;
-@property (nonatomic, readonly) <HDHealthDatabase> *healthDatabase;
+@property (nonatomic, readonly) HDDatabase *database;
 @property (nonatomic, retain) NSError *lastError;
 @property (nonatomic, copy) id /* block */ pendingWork;
 @property (nonatomic) bool pendingWorkDidSucceed;
@@ -40,9 +40,9 @@
 - (id)completionSemaphore;
 - (double)continuationTimeout;
 - (id)dataQueue;
+- (id)database;
 - (void)dealloc;
-- (id)healthDatabase;
-- (id)initInDatabase:(id)arg1 options:(unsigned long long)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id*)arg5;
+- (id)initWithDatabase:(id)arg1 options:(unsigned long long)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id*)arg5;
 - (id)lastError;
 - (id /* block */)pendingWork;
 - (bool)pendingWorkDidSucceed;

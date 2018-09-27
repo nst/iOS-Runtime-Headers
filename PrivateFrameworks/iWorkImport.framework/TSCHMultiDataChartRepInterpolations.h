@@ -12,7 +12,7 @@
 
 + (id)interpolationsWithOverallTimingFunction:(id)arg1 individualTimingFunction:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)individual;
 - (id)initWithOverallTimingFunction:(id)arg1 individualTimingFunction:(id)arg2;
 - (id)overall;

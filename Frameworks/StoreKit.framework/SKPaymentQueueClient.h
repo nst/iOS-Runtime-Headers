@@ -28,16 +28,17 @@
 @property (nonatomic, copy) NSNumber *storeItemIdentifier;
 @property (nonatomic, copy) NSString *vendorIdentifier;
 
+- (void).cxx_destruct;
 - (bool)allowsBootstrapCellularData;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (long long)environmentType;
 - (bool)hidesConfirmationDialogs;
 - (bool)ignoresInAppPurchaseRestriction;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)plist;
 - (id)receiptDirectoryPath;
 - (bool)requiresAuthenticationForPayment;
 - (void)setAllowsBootstrapCellularData:(bool)arg1;

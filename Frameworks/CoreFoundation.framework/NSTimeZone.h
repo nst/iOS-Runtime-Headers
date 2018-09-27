@@ -83,6 +83,17 @@
 - (id)JSONObjectRepresentation;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
++ (id)timeZoneForAddress:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
++ (id)gmtOffsetTimeZoneFromString:(id)arg1 forDate:(id)arg2;
++ (id)gmtOffsetTimeZoneWithHour:(long long)arg1 withMinute:(long long)arg2 forDate:(id)arg3;
++ (id)systemTimeZoneFromString:(id)arg1;
++ (id)systemTimeZoneWithWindowsName:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 
 + (id)gmt;

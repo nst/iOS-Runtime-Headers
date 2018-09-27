@@ -14,6 +14,7 @@
     NSMapTable * _mutableSharedViewModelChangesByAsset;
     NSMutableDictionary * _mutableViewModelChangesByAssetReference;
     bool  _presentingOverOneUpDidChange;
+    bool  _reviewScreenBarsModelDidChange;
     bool  _secondScreenSizeDidChange;
     bool  _transitionDriverIdentifierDidChange;
 }
@@ -31,6 +32,7 @@
 @property (setter=_setIsScrollingDidChange:, nonatomic) bool isScrollingDidChange;
 @property (setter=_setIsScrubbingDidChange:, nonatomic) bool isScrubbingDidChange;
 @property (setter=_setPresentingOverOneUpDidChange:, nonatomic) bool presentingOverOneUpDidChange;
+@property (setter=_setReviewScreenBarsModelDidChange:, nonatomic) bool reviewScreenBarsModelDidChange;
 @property (setter=_setSecondScreenSizeDidChange:, nonatomic) bool secondScreenSizeDidChange;
 @property (setter=_setTransitionDriverIdentifierDidChange:, nonatomic) bool transitionDriverIdentifierDidChange;
 
@@ -46,6 +48,7 @@
 - (void)_setIsScrollingDidChange:(bool)arg1;
 - (void)_setIsScrubbingDidChange:(bool)arg1;
 - (void)_setPresentingOverOneUpDidChange:(bool)arg1;
+- (void)_setReviewScreenBarsModelDidChange:(bool)arg1;
 - (void)_setSecondScreenSizeDidChange:(bool)arg1;
 - (void)_setTransitionDriverIdentifierDidChange:(bool)arg1;
 - (id)assetSharedViewModelChangesByAsset;
@@ -60,6 +63,7 @@
 - (bool)isScrollingDidChange;
 - (bool)isScrubbingDidChange;
 - (bool)presentingOverOneUpDidChange;
+- (bool)reviewScreenBarsModelDidChange;
 - (bool)secondScreenSizeDidChange;
 - (bool)transitionDriverIdentifierDidChange;
 

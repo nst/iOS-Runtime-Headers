@@ -99,7 +99,7 @@
 - (id)originalTemplate;
 - (bool)placeholderAuthoring;
 - (bool)quickLookPreview;
-- (void)resetForNewDocumentFromTemplate:(id)arg1;
+- (void)resetForNewDocumentFromTemplate:(id)arg1 locale:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (bool)sectionAuthoring;
 - (void)setAnnotationsVisible:(bool)arg1;

@@ -29,7 +29,6 @@
 - (void).cxx_destruct;
 - (void)_handleSelectionOfDownloadedAssets:(id)arg1;
 - (id)_imagePickerController;
-- (bool)_isPhotosPickerExtensionAvailable;
 - (id)_mediaTypes;
 - (void)_notifyImagePickerOfAssetAvailability:(id)arg1;
 - (id)_pickerProperties;

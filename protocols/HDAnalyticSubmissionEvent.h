@@ -3,4 +3,9 @@
 
 @protocol HDAnalyticSubmissionEvent <NSObject>
 
+@required
+
+- (unsigned int)AWDMetricID;
+- (PBCodable *)codableRepresentationForAWDSubmission;
+
 @end

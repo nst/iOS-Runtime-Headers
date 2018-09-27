@@ -6,6 +6,7 @@
     NSDictionary * _additionalRequestHTTPHeaders;
     NSString * _containerName;
     id /* block */  _criticalNodeFailureTest;
+    FCEdgeCacheHint * _edgeCacheHint;
     FCNetworkEvent * _networkEvent;
     long long  _networkEventType;
     bool  _operationFailsOnRequestFailure;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic, copy) NSString *containerName;
 @property (nonatomic, copy) id /* block */ criticalNodeFailureTest;
+@property (nonatomic, copy) FCEdgeCacheHint *edgeCacheHint;
 @property (nonatomic, retain) FCNetworkEvent *networkEvent;
 @property (nonatomic) long long networkEventType;
 @property (nonatomic) bool operationFailsOnRequestFailure;
@@ -51,6 +53,7 @@
 - (id)additionalRequestHTTPHeaders;
 - (id)containerName;
 - (id /* block */)criticalNodeFailureTest;
+- (id)edgeCacheHint;
 - (id)generateHTTPRequest;
 - (id)init;
 - (id)networkEvent;
@@ -70,6 +73,7 @@
 - (void)setAdditionalRequestHTTPHeaders:(id)arg1;
 - (void)setContainerName:(id)arg1;
 - (void)setCriticalNodeFailureTest:(id /* block */)arg1;
+- (void)setEdgeCacheHint:(id)arg1;
 - (void)setNetworkEvent:(id)arg1;
 - (void)setNetworkEventType:(long long)arg1;
 - (void)setOperationFailsOnRequestFailure:(bool)arg1;

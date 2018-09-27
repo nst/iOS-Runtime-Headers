@@ -10,6 +10,7 @@
     NSMutableDictionary * _gridImageMetaData;
     NSObject<OS_dispatch_queue> * _gridImageQueue;
     NSString * _imageCachePath;
+    NSDate * _lastPruneDate;
     NSMutableDictionary * _mapImageMetaData;
     NSObject<OS_dispatch_queue> * _mapImageQueue;
     double  _mapLocationDistanceThreshold;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSMutableDictionary *gridImageMetaData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *gridImageQueue;
 @property (nonatomic, retain) NSString *imageCachePath;
+@property (nonatomic, retain) NSDate *lastPruneDate;
 @property (nonatomic, retain) NSMutableDictionary *mapImageMetaData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *mapImageQueue;
 @property (nonatomic) double mapLocationDistanceThreshold;
@@ -35,6 +37,7 @@
 @property (nonatomic, retain) NSMutableDictionary *pendingMapImageMetaData;
 
 - (void).cxx_destruct;
+- (double)cacheExpiryInSeconds;
 - (void)cacheGridImage:(id)arg1 forWidth:(double)arg2 andHeight:(double)arg3;
 - (void)cacheMapImage:(id)arg1 forLocation:(id)arg2 altitude:(double)arg3 pitch:(double)arg4 width:(double)arg5 andHeight:(double)arg6;
 - (void)cacheMapImage:(id)arg1 forRequest:(id)arg2;
@@ -47,11 +50,13 @@
 - (id)cachedMapImageForRequest:(id)arg1;
 - (id)cachedNoLocationImageForWidth:(double)arg1 andHeight:(double)arg2;
 - (bool)fileProtectionDeactivated;
+- (void)flushCache;
 - (id)gridImageMetaData;
 - (id)gridImageQueue;
 - (id)gridKeyForWidth:(double)arg1 andHeight:(double)arg2;
 - (id)imageCachePath;
 - (id)init;
+- (id)lastPruneDate;
 - (id)mapImageKeyForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;
 - (id)mapImageMetaData;
 - (id)mapImageQueue;
@@ -63,6 +68,8 @@
 - (bool)pendingMapImageForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;
 - (bool)pendingMapImageForRequest:(id)arg1;
 - (id)pendingMapImageMetaData;
+- (void)pruneCacheIfNeeded;
+- (double)pruneIntervalInSeconds;
 - (void)readMetaData;
 - (void)saveMetaData;
 - (void)setCacheMetaData:(id)arg1;
@@ -72,6 +79,7 @@
 - (void)setGridImageMetaData:(id)arg1;
 - (void)setGridImageQueue:(id)arg1;
 - (void)setImageCachePath:(id)arg1;
+- (void)setLastPruneDate:(id)arg1;
 - (void)setMapImageMetaData:(id)arg1;
 - (void)setMapImageQueue:(id)arg1;
 - (void)setMapLocationDistanceThreshold:(double)arg1;

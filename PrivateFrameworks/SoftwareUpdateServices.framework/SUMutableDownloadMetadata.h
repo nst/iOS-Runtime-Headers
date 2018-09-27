@@ -4,6 +4,7 @@
 
 @interface SUMutableDownloadMetadata : SUDownloadMetadata
 
+@property (getter=isAutoDownload, nonatomic) bool autoDownload;
 @property (nonatomic) int downloadFeeAgreementStatus;
 @property (nonatomic) bool enforceWifiOnlyOverride;
 @property (nonatomic) int termsAndConditionsAgreementStatus;

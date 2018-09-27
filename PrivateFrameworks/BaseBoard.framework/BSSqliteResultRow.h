@@ -16,6 +16,7 @@
 
 + (id)resultRowWithStatement:(struct sqlite3_stmt { }*)arg1;
 
+- (void).cxx_destruct;
 - (id)_columnNames;
 - (unsigned long long)_indexForKey:(id)arg1;
 - (id)_initWithStatement:(struct sqlite3_stmt { }*)arg1;
@@ -23,7 +24,6 @@
 - (unsigned long long)count;
 - (id)dataAtIndex:(unsigned long long)arg1;
 - (id)dataForKey:(id)arg1;
-- (void)dealloc;
 - (double)doubleAtIndex:(unsigned long long)arg1;
 - (double)doubleForKey:(id)arg1;
 - (id)init;

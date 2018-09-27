@@ -23,7 +23,6 @@
 - (void)deleteItem:(id)arg1;
 - (id)description;
 - (id)files;
-- (void)finalize;
 - (id)folders;
 - (bool)hasThumbnail;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;

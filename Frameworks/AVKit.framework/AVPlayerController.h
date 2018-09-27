@@ -5,16 +5,17 @@
 @interface AVPlayerController : UIResponder {
     long long  _actionAtItemEnd;
     long long  _allowsIdleSleepPreventionCount;
+    AVAsset * _assetBeingPrepared;
+    NSObject<OS_dispatch_queue> * _assetInspectionQueue;
     bool  _atMaxTime;
     bool  _atMinTime;
     NSArray * _audioMediaSelectionOptions;
-    id  _audioSessionInterruptionObserver;
     NSArray * _availableMetadataFormats;
     long long  _canUseNetworkResourcesForLiveStreamingWhilePausedCount;
     bool  _compatibleWithAirPlayVideo;
     bool  _composable;
     NSArray * _contentChapters;
-    id  _currentLocaleDidChangeObserver;
+    AVAsset * _currentAssetIfReady;
     bool  _deviceBatteryChargingOrFull;
     bool  _deviceBatteryMonitoringWasEnabled;
     id  _deviceBatteryStateDidChangeObserver;
@@ -23,7 +24,7 @@
     bool  _forceScanning;
     bool  _hasProtectedContent;
     bool  _ignoreRateKeyValueChange;
-    bool  _isPictureInPictureSupported;
+    bool  _inspectionSuspended;
     bool  _isResumed;
     bool  _isScanningBackward;
     bool  _isScanningForward;
@@ -38,18 +39,21 @@
     AVValueTiming * _maxTiming;
     NSDictionary * _metadata;
     AVValueTiming * _minTiming;
+    AVObservationController * _observationController;
     void * _observationInfo;
     bool  _pendingSeek;
     bool  _pictureInPictureInterrupted;
+    bool  _pictureInPictureSupported;
     AVPlayer * _player;
-    id  _playerItemDidPlayToEndTimeObserver;
-    id  _playerItemTimeJumpedObserver;
     bool  _playingOnSecondScreen;
     double  _preScanningRate;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _presentationSize;
     bool  _preventingIdleDisplaySleep;
     bool  _preventingIdleSystemSleep;
     bool  _previousValueOfCanUseNetworkResourcesForLiveStreamingWhilePaused;
-    AVPlayerPropertyCache * _propertyCache;
     float  _rate;
     double  _rateBeforeForceScanning;
     double  _rateBeforeScrubBegan;
@@ -72,8 +76,6 @@
     bool  _shouldPlayImmediately;
     bool  _shouldPlayWhenLikelyToKeepUp;
     double  _timeOfLastUpdate;
-    id  _timebaseEffectiveRateObserver;
-    id  _timebaseTimeJumpedObserver;
     AVValueTiming * _timing;
     struct { 
         long long value; 
@@ -90,12 +92,15 @@
     id  _updateAtMinMaxTimePeriodicObserverToken;
 }
 
+@property (nonatomic, retain) AVAsset *assetBeingPrepared;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *assetInspectionQueue;
 @property (getter=isAtMaxTime, nonatomic) bool atMaxTime;
 @property (getter=isAtMinTime, nonatomic) bool atMinTime;
 @property (nonatomic, retain) NSArray *availableMetadataFormats;
 @property (getter=isCompatibleWithAirPlayVideo, nonatomic) bool compatibleWithAirPlayVideo;
 @property (getter=isComposable, nonatomic) bool composable;
 @property (nonatomic, retain) NSArray *contentChapters;
+@property (nonatomic, retain) AVAsset *currentAssetIfReady;
 @property (nonatomic, readonly) NSDate *currentDate;
 @property (getter=isDeviceBatteryChargingOrFull, nonatomic) bool deviceBatteryChargingOrFull;
 @property (getter=isDisablingAutomaticTermination, nonatomic) bool disablingAutomaticTermination;
@@ -104,12 +109,15 @@
 @property (nonatomic, retain) AVValueTiming *maxTiming;
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) AVValueTiming *minTiming;
+@property (nonatomic, readonly) AVObservationController *observationController;
+@property (getter=isPictureInPictureSupported, nonatomic) bool pictureInPictureSupported;
 @property (nonatomic, retain) AVPlayer *player;
 @property (getter=isPlayingOnSecondScreen, nonatomic) bool playingOnSecondScreen;
+@property (nonatomic) struct CGSize { double x1; double x2; } presentationSize;
 @property (getter=isPreventingIdleDisplaySleep, nonatomic) bool preventingIdleDisplaySleep;
 @property (getter=isPreventingIdleSystemSleep, nonatomic) bool preventingIdleSystemSleep;
-@property (nonatomic, readonly) AVPlayerPropertyCache *propertyCache;
 @property (nonatomic) double rateBeforeScrubBegan;
+@property (getter=isReadyToPlay, nonatomic, readonly) bool readyToPlay;
 @property (getter=isScrubbing, nonatomic) bool scrubbing;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *seekTimer;
 @property (nonatomic) double seekToTime;
@@ -119,6 +127,7 @@
 @property (nonatomic, readonly) bool shouldPreventIdleDisplaySleep;
 @property (nonatomic, readonly) long long status;
 @property (nonatomic, retain) AVValueTiming *timing;
+@property (nonatomic, readonly) bool usesExternalPlaybackWhileExternalScreenIsActive;
 
 + (void)initialize;
 + (id)keyPathsForValuesAffectingAllowsExternalPlayback;
@@ -138,7 +147,6 @@
 + (id)keyPathsForValuesAffectingContentDimensions;
 + (id)keyPathsForValuesAffectingContentDuration;
 + (id)keyPathsForValuesAffectingContentDurationWithinEndTimes;
-+ (id)keyPathsForValuesAffectingCurrentAssetIfReady;
 + (id)keyPathsForValuesAffectingCurrentTime;
 + (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingError;
@@ -165,12 +173,14 @@
 + (id)keyPathsForValuesAffectingPictureInPicturePossible;
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
++ (id)keyPathsForValuesAffectingReadyToPlay;
 + (id)keyPathsForValuesAffectingReversePlaybackEndTime;
 + (id)keyPathsForValuesAffectingSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingShouldPreventIdleDisplaySleep;
 + (id)keyPathsForValuesAffectingStatus;
 + (id)keyPathsForValuesAffectingStreaming;
 + (id)keyPathsForValuesAffectingTimeControlStatus;
++ (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
 
 - (void).cxx_destruct;
 - (void)_cancelPendingSeeksIfNeeded;
@@ -179,7 +189,9 @@
 - (void)_handleSeekTimerEvent;
 - (bool)_isMarkedNotSerializablePlayerItem:(id)arg1;
 - (bool)_isRestrictedFromSavingPlayerItem:(id)arg1;
+- (void)_observeValueForKeyPath:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3;
 - (id)_optionsForGroup:(id)arg1;
+- (void)_prepareAssetForInspectionIfNeeded;
 - (id)_queuePlayer;
 - (void)_retryPlayImmediatelyIfNeeded;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
@@ -190,6 +202,8 @@
 - (void)actuallySeekToTime;
 - (bool)allowsExternalPlayback;
 - (bool)allowsIdleSleepPrevention;
+- (id)assetBeingPrepared;
+- (id)assetInspectionQueue;
 - (id)audioMediaSelectionOptions;
 - (id)audioOptions;
 - (void)autoplay:(id)arg1;
@@ -264,11 +278,13 @@
 - (bool)isMuted;
 - (bool)isPictureInPictureInterrupted;
 - (bool)isPictureInPicturePossible;
+- (bool)isPictureInPictureSupported;
 - (bool)isPlaying;
 - (bool)isPlayingOnExternalScreen;
 - (bool)isPlayingOnSecondScreen;
 - (bool)isPreventingIdleDisplaySleep;
 - (bool)isPreventingIdleSystemSleep;
+- (bool)isReadyToPlay;
 - (bool)isScrubbing;
 - (bool)isSeeking;
 - (bool)isSeekingInternal;
@@ -285,12 +301,12 @@
 - (double)minTime;
 - (id)minTiming;
 - (float)nominalFrameRate;
+- (id)observationController;
 - (void*)observationInfo;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
 - (id)player;
-- (id)propertyCache;
+- (struct CGSize { double x1; double x2; })presentationSize;
 - (double)rate;
 - (double)rateBeforeScrubBegan;
 - (void)reloadAudioOptions;
@@ -319,6 +335,8 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })seekToTimeInternal;
 - (id)seekableTimeRanges;
 - (void)setAllowsExternalPlayback:(bool)arg1;
+- (void)setAssetBeingPrepared:(id)arg1;
+- (void)setAssetInspectionQueue:(id)arg1;
 - (void)setAtMaxTime:(bool)arg1;
 - (void)setAtMinTime:(bool)arg1;
 - (void)setAudioMediaSelectionOptions:(id)arg1;
@@ -327,6 +345,7 @@
 - (void)setCompatibleWithAirPlayVideo:(bool)arg1;
 - (void)setComposable:(bool)arg1;
 - (void)setContentChapters:(id)arg1;
+- (void)setCurrentAssetIfReady:(id)arg1;
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (void)setDeviceBatteryChargingOrFull:(bool)arg1;
@@ -344,9 +363,11 @@
 - (void)setMuted:(bool)arg1;
 - (void)setObservationInfo:(void*)arg1;
 - (void)setPictureInPictureInterrupted:(bool)arg1;
+- (void)setPictureInPictureSupported:(bool)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlaying:(bool)arg1;
 - (void)setPlayingOnSecondScreen:(bool)arg1;
+- (void)setPresentationSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreventingIdleDisplaySleep:(bool)arg1;
 - (void)setPreventingIdleSystemSleep:(bool)arg1;
 - (void)setRate:(double)arg1;
@@ -364,6 +385,7 @@
 - (bool)shouldPreventIdleDisplaySleep;
 - (void)skipBackwardThirtySeconds:(id)arg1;
 - (void)startAllowingIdleSleepPrevention;
+- (void)startKVO;
 - (void)startUsingNetworkResourcesForLiveStreamingWhilePaused;
 - (long long)status;
 - (void)stopAllowingIdleSleepPrevention;
@@ -378,6 +400,7 @@
 - (void)updateAtMinMaxTime;
 - (void)updateMinMaxTiming;
 - (void)updateTiming;
+- (bool)usesExternalPlaybackWhileExternalScreenIsActive;
 - (double)volume;
 
 @end

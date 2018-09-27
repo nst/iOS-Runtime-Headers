@@ -23,6 +23,7 @@
 - (void)_animateFailureAppearance;
 - (void)_animateInstructionAppearance;
 - (void)_correctRedEyeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_extractRedEyePointFromCorrectionDictionary:(id)arg1;
 - (void)_handleRedeyeButton:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (void)_loadCorrectionsFromModelAnimated:(bool)arg1;

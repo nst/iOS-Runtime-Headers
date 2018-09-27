@@ -11,6 +11,7 @@
 @optional
 
 - (FBSSceneTransitionContext *)sceneManager:(FBSceneManager *)arg1 createDefaultTransitionContextForScene:(FBScene *)arg2;
+- (long long)sceneManager:(FBSceneManager *)arg1 hostingPolicyForDisplay:(FBSDisplayIdentity *)arg2;
 - (long long)sceneManager:(FBSceneManager *)arg1 hostingPolicyForScene:(FBScene *)arg2;
 
 @end

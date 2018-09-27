@@ -6,16 +6,15 @@
     NSDictionary * _info;
     int  _notifyToken;
     unsigned long long  _target;
-    NSString * _targetIdentifier;
 }
 
 @property (nonatomic, retain) NSDictionary *info;
 @property (nonatomic, readonly) unsigned long long target;
-@property (nonatomic, readonly) NSString *targetIdentifier;
 
 + (id)_syncInfoDirectory;
 
 - (void).cxx_destruct;
+- (bool)_hasItemsForContainer:(id)arg1;
 - (id)_initWithTarget:(unsigned long long)arg1 readAndObserveChanges:(bool)arg2;
 - (bool)_isValid;
 - (id)_notificationName;
@@ -29,7 +28,6 @@
 - (void)dealloc;
 - (id)info;
 - (id)initWithTarget:(unsigned long long)arg1;
-- (unsigned long long)itemCountForContainer:(id)arg1;
 - (id)itemsForContainer:(id)arg1;
 - (unsigned long long)playabilityForContainer:(id)arg1;
 - (float)progressForContainer:(id)arg1;
@@ -38,7 +36,6 @@
 - (unsigned long long)statusForContainer:(id)arg1;
 - (unsigned long long)statusForItem:(id)arg1;
 - (unsigned long long)target;
-- (id)targetIdentifier;
 - (id)userInfoForContainer:(id)arg1;
 - (id)userInfoForItem:(id)arg1;
 

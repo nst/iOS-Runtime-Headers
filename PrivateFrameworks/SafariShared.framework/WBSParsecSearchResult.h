@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSParsecSearchResult : NSObject <WBSCompletionListItem, WBSParsecSearchGenericResult, WBSParsecSearchMapsResult, WBSParsecSearchResult, WBSParsecSearchSimpleResult> {
+@interface WBSParsecSearchResult : NSObject <WBSCompletionListItem, WBSParsecSearchGenericResult, WBSParsecSearchMapsResult, WBSParsecSearchResult, WBSParsecSearchSimpleResult, WBSParsecSearchSportsResult> {
     WBSParsecLegacySearchResult * _legacySearchResult;
 }
 
 @property (nonatomic, readonly) WBSParsecActionButton *actionButton;
-@property (nonatomic, readonly) NSArray *additionalMapItems;
 @property (nonatomic, readonly) NSURL *appPunchoutURL;
 @property (nonatomic, readonly) WBSParsecAuxiliaryInfo *auxiliaryInfo;
 @property (nonatomic, readonly) NSString *completion;
@@ -20,12 +19,15 @@
 @property (nonatomic, readonly) NSString *descriptionText;
 @property (nonatomic, readonly) bool descriptionTextCanWrap;
 @property (nonatomic, readonly) unsigned long long engagementDestination;
+@property (nonatomic, readonly) WBSParsecSearchSportsAttributionExtraCompletionItem *extraCompletionItem;
 @property (nonatomic, readonly) NSString *feedbackIdentifier;
 @property (nonatomic, readonly, copy) NSString *footnote;
 @property (nonatomic, readonly) bool hasSingleLineDescriptionAndTitle;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *icon;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly, copy) NSArray *images;
+@property (nonatomic, readonly, copy) NSArray *individualScores;
 @property (nonatomic, readonly) NSString *lastSearchQuery;
 @property (nonatomic, readonly) WBSParsecLegacySearchResult *legacySearchResult;
 @property (nonatomic, readonly) MKMapItem *mapItem;
@@ -42,6 +44,7 @@
 @property (nonatomic, readonly) NSString *sectionHeader;
 @property (nonatomic, readonly) SFSearchResult *sfSearchResultValue;
 @property (nonatomic, retain) WBSQuerySuggestion *siriSuggestion;
+@property (nonatomic, readonly, copy) NSString *subtitle;
 @property (nonatomic, readonly) long long subtype;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *thumbnail;
@@ -57,8 +60,8 @@
 - (id)_result;
 - (id)_resultPresentedInCard;
 - (id)_simpleResult;
+- (id)_sportsResult;
 - (id)actionButton;
-- (id)additionalMapItems;
 - (id)appPunchoutURL;
 - (id)auxiliaryInfo;
 - (bool)canBecomeTopHitForQuery:(id)arg1;
@@ -71,12 +74,15 @@
 - (id)descriptionText;
 - (bool)descriptionTextCanWrap;
 - (unsigned long long)engagementDestination;
+- (id)extraCompletionItem;
 - (id)feedbackIdentifier;
 - (id)footnote;
 - (bool)hasSingleLineDescriptionAndTitle;
 - (id)icon;
 - (id)iconWithSession:(id)arg1;
 - (id)identifier;
+- (id)images;
+- (id)individualScores;
 - (id)init;
 - (id)initWithLegacySearchResult:(id)arg1;
 - (id)legacySearchResult;
@@ -95,6 +101,7 @@
 - (void)setMapsFeedbackSender:(id)arg1;
 - (void)setParsecSearchSession:(id)arg1;
 - (id)sfSearchResultValue;
+- (id)subtitle;
 - (long long)subtype;
 - (id)thumbnail;
 - (id)thumbnailWithSession:(id)arg1;

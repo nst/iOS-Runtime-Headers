@@ -5,9 +5,6 @@
 
 @required
 
-- (NSString *)cpDeviceInfoAsXML;
-- (NSString *)cpDeviceName;
-- (NSString *)cpKDebugEventsAsXML;
 - (NSArray *)directoryListingForPath:(NSString *)arg1;
 - (NSString *)execnameForPid:(NSNumber *)arg1;
 - (NSDictionary *)hardwareInformation;
@@ -23,7 +20,6 @@
 - (NSSet *)netstatTCPAttributes;
 - (NSSet *)netstatUDPAttributes;
 - (NSDictionary *)networkInformation;
-- (NSNumber *)pidIs64Bit:(NSNumber *)arg1;
 - (NSArray *)runningProcesses;
 - (NSData *)symbolicatorSignatureForPid:(NSNumber *)arg1 trackingSelector:(NSString *)arg2;
 - (NSDictionary *)symbolicatorSignaturesForExpiredPids;

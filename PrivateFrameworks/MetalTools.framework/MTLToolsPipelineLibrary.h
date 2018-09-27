@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
+@property bool disableRunTimeCompilation;
 @property (nonatomic, readonly) <MTLPipelineCache> *functionCache;
 @property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
@@ -23,6 +24,7 @@
 - (id)computePipelineStates;
 - (void)dealloc;
 - (id)device;
+- (bool)disableRunTimeCompilation;
 - (id)functionCache;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)label;
@@ -33,6 +35,7 @@
 - (id)pipelineCache;
 - (id)pipelineNames;
 - (id)pipelineStates;
+- (void)setDisableRunTimeCompilation:(bool)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

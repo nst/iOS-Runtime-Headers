@@ -33,6 +33,7 @@
     bool  _useCourseForHeading;
 }
 
+@property (nonatomic) long long activityType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double desiredAccuracy;

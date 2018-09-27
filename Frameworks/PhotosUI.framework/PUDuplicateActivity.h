@@ -6,7 +6,7 @@
 
 + (long long)activityCategory;
 
-- (id)activityImage;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (bool)canPerformWithActivityItems:(id)arg1;

@@ -34,7 +34,7 @@
 
 + (id)commandForDeselectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 previousSelectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 + (id)commandForMovingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 previousSelectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 fromDrawingUUID:(id)arg5;
-+ (id)commandForSelectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
++ (id)commandForSelectingStrokes:(id)arg1 toDrawingUUID:(id)arg2 selectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 previousSelectionTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 
 - (void).cxx_destruct;
 - (void)applyToDrawing:(id)arg1;

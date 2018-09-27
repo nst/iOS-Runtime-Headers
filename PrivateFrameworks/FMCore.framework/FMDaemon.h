@@ -4,6 +4,7 @@
 
 @interface FMDaemon : NSObject
 
+- (void)initialize;
 - (void)registerXPCEventHandlers;
 - (void)run;
 - (void)startup;

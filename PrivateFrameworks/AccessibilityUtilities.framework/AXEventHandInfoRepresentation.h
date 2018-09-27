@@ -30,6 +30,7 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } handPosition;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned short initialFingerCount;
+@property (nonatomic, readonly) bool isStylus;
 @property (nonatomic, readonly) unsigned long long length;
 @property (nonatomic, retain) NSArray *paths;
 @property (readonly) Class superclass;
@@ -53,6 +54,7 @@
 - (struct CGPoint { double x1; double x2; })handPosition;
 - (id)initWithCoder:(id)arg1;
 - (unsigned short)initialFingerCount;
+- (bool)isStylus;
 - (unsigned long long)length;
 - (id)paths;
 - (void)setAdditionalHandEventFlagsForGeneratedEvents:(unsigned int)arg1;

@@ -7,6 +7,7 @@
     NSString * _containerScopedUserID;
     long long  _databaseScope;
     bool  _dontCreateValidatingParentReferences;
+    NSMutableDictionary * _downloadPreauthorizationMap;
     <CKDProtocolTranslatorIdentityDelegate> * _identityDelegate;
     NSString * _orgAdminUserID;
     NSString * _overriddenContainerScopedUserID;
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) NSString *containerScopedUserID;
 @property (nonatomic, readonly) long long databaseScope;
 @property (nonatomic) bool dontCreateValidatingParentReferences;
+@property (nonatomic, retain) NSMutableDictionary *downloadPreauthorizationMap;
 @property (nonatomic) <CKDProtocolTranslatorIdentityDelegate> *identityDelegate;
 @property (nonatomic, copy) NSString *orgAdminUserID;
 @property (nonatomic, copy) NSString *overriddenContainerScopedUserID;
@@ -33,11 +35,13 @@
 - (id)assetFromPAsset:(id)arg1 error:(id*)arg2;
 - (id)bundleIdentifier;
 - (unsigned long long)capabilitiesFromPZoneCapabilities:(id)arg1;
+- (void)consumeResponseHeader:(id)arg1;
 - (id)containerPrivacySettingsFromPContainerPrivacySettings:(id)arg1;
 - (id)containerScopedUserID;
 - (long long)databaseScope;
 - (id)deltaPRecordFromRecord:(id)arg1 withAllFields:(bool)arg2 outDeletedMergeFields:(id*)arg3 outKeysToSend:(id*)arg4;
 - (bool)dontCreateValidatingParentReferences;
+- (id)downloadPreauthorizationMap;
 - (id)encryptedFieldValueOfType:(int)arg1 withObject:(id)arg2;
 - (id)encryptedObjectRepresentationFromFieldValue:(id)arg1;
 - (id)fieldValueFromObject:(id)arg1;
@@ -47,6 +51,7 @@
 - (int)fieldValueTypeFromObject:(id)arg1;
 - (id)identityDelegate;
 - (id)identityFromPUser:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 databaseScope:(long long)arg2;
 - (id)initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(long long)arg4;
 - (id)locationFieldValueWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)notificationFromPPushMessage:(id)arg1;
@@ -90,6 +95,7 @@
 - (id)referenceFromPReference:(id)arg1 error:(id*)arg2;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setDontCreateValidatingParentReferences:(bool)arg1;
+- (void)setDownloadPreauthorizationMap:(id)arg1;
 - (void)setIdentityDelegate:(id)arg1;
 - (void)setOrgAdminUserID:(id)arg1;
 - (void)setOverriddenContainerScopedUserID:(id)arg1;

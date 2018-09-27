@@ -6,9 +6,6 @@
 @required
 
 - (_CPError *)error;
-- (bool)hasError;
-- (bool)hasTimestamp;
-- (bool)hasUnderlyingError;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

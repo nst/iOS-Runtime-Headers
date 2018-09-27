@@ -7,6 +7,7 @@
     double  _contentHeight;
     double  _contentHeightOffset;
     NTKContainerView * _contentView;
+    CLKDevice * _device;
     UIColor * _foregroundColor;
     double  _highlightAlpha;
     UIColor * _highlightBackgroundColor;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CLKDevice *device;
 @property (nonatomic, retain) UIColor *foregroundColor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double highlightAlpha;
@@ -31,7 +33,8 @@
 @property (nonatomic, retain) UIColor *secondaryForegroundColor;
 @property (readonly) Class superclass;
 
-+ (double)cornerRadius;
++ (double)_defaultCornerRadiusForDevice:(id)arg1;
++ (double)cornerRadiusForComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
@@ -45,6 +48,7 @@
 - (double)contentHeight;
 - (double)contentHeightOffset;
 - (id)contentView;
+- (id)device;
 - (id)foregroundColor;
 - (double)highlightAlpha;
 - (id)highlightBackgroundColor;
@@ -58,6 +62,7 @@
 - (void)setColorScheme:(id)arg1;
 - (void)setContentHeight:(double)arg1;
 - (void)setContentHeightOffset:(double)arg1;
+- (void)setDevice:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setHighlightAlpha:(double)arg1;
 - (void)setHighlightBackgroundColor:(id)arg1;

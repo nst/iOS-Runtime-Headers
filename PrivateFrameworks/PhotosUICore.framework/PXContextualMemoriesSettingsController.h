@@ -22,7 +22,7 @@
 - (bool)isRequestingUpdates;
 - (void)registerForLocationPrefetchingWithIdentifier:(id)arg1;
 - (id)registrationIdentifiers;
-- (void)requestUpdatedContextualMemoriesSettingsWithCompletionHandler:(id /* block */)arg1;
+- (void)requestUpdatedContextualMemoriesSettingsWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCompletionHandlers:(id)arg1;
 - (void)setRegistrationIdentifiers:(id)arg1;
 - (void)setRequestingUpdates:(bool)arg1;

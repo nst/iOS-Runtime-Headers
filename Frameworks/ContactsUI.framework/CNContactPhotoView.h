@@ -51,6 +51,7 @@
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) NSArray *variableConstraints;
 
++ (struct CGSize { double x1; double x2; })defaultSize;
 + (bool)requiresConstraintBasedLayout;
 + (id)supportedPasteboardTypes;
 

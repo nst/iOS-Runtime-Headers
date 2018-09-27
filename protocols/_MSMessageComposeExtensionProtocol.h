@@ -10,14 +10,17 @@
 - (void)_conversationDidChangeWithConversationState:(_MSConversationState *)arg1;
 - (void)_didCancelSendingMessage:(MSMessage *)arg1 conversationState:(_MSConversationState *)arg2;
 - (void)_didReceiveMessage:(MSMessage *)arg1 conversationState:(_MSConversationState *)arg2;
+- (void)_didRemoveAssetArchiveWithIdentifier:(NSString *)arg1;
 - (void)_didStartSendingMessage:(MSMessage *)arg1 conversationState:(_MSConversationState *)arg2;
 - (void)_handleTextInputPayload:(void *)arg1 withPayloadID:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSDictionary *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)_hostDidBeginDeferredTeardown;
+- (void)_prepareForPresentationWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)_presentationDidChangeToPresentationState:(_MSPresentationState *)arg1;
 - (void)_presentationWillChangeToPresentationState:(_MSPresentationState *)arg1;
 - (void)_requestContentSizeThatFits:(void *)arg1 presentationStyle:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSValue *, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { double x1; double x2; }, void*
 - (void)_requestSnapshotWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
 - (void)_resignActive;
+- (void)_volumeButtonPressed:(bool)arg1;
 - (void)beginDisablingUserInteraction;
 - (void)endDisablingUserInteraction;
 

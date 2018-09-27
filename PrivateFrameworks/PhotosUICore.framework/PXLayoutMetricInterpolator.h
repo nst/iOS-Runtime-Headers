@@ -17,12 +17,18 @@
 
 + (id)albumsGridEdgeInsetsInterpolator;
 + (id)albumsGridItemWidthInterpolator;
++ (id)allLayoutMetricConfigurationSizes;
++ (struct CGSize { double x1; double x2; })bestItemSizeForAvailableWidth:(double)arg1 screenScale:(double)arg2 columns:(unsigned long long)arg3 bestSpacing:(double*)arg4 bestInset:(double*)arg5;
 + (id)layoutMarginWidthInterpolator;
++ (id)legacyLayoutMarginWidthInterpolator;
 + (id)memoriesDetailsEdgeInsetsInterpolator;
 + (id)memoriesFeedInteritemSpacingInterpolator;
 + (id)memoriesFeedLandscapeEdgeInsetsInterpolator;
 + (id)memoriesFeedPortraitEdgeInsetsInterpolator;
 + (id)memoriesItemWidthInterpolator;
++ (unsigned long long)photosGridLayoutColumnsForWidth:(double)arg1;
++ (long long)photosGridSizeSubclassForScreenSize:(struct CGSize { double x1; double x2; })arg1;
++ (struct CGSize { double x1; double x2; })zoomableGridLayoutSmallItemSizeForWidth:(double)arg1;
 
 - (void).cxx_destruct;
 - (double)_cachedMetric;

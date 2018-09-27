@@ -11,11 +11,9 @@
 + (id)classesForSaveArchive;
 + (id)decodeSecureArchivedData:(id)arg1 usingDelegate:(id)arg2 classes:(id)arg3;
 + (id)encodableTokenForStore:(id)arg1 queryGenerationToken:(id)arg2;
-+ (id)encodeObjectValues:(id)arg1 options:(unsigned long long)arg2 store:(id)arg3;
 + (id)identifierForStore:(id)arg1;
 + (void)logMessage:(id)arg1 forComponent:(id)arg2;
 + (id)newSecureArchivedDataWithRootObject:(id)arg1;
 + (id)newUserInfoFromException:(id)arg1;
-+ (id)updateNotificationNameForStore:(id)arg1;
 
 @end

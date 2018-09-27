@@ -5,7 +5,6 @@
 
 @required
 
-- (void)configureGlyphWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (<SiriUISiriStatusViewDelegate> *)delegate;
 - (double)disabledMicOpacity;
 - (void)fadeOutCurrentAura;
@@ -23,6 +22,7 @@
 - (void)setInUITrackingMode:(bool)arg1;
 - (void)setMode:(long long)arg1;
 - (void)setPaused:(bool)arg1;
+- (void)setupOrbIfNeeded;
 - (double)statusViewHeight;
 
 @end

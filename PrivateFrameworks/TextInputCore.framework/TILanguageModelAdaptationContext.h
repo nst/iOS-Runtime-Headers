@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) NSDictionary *recipientContext;
 @property (nonatomic, readonly) NSString *recipientNameDigest;
 
+- (void).cxx_destruct;
 - (id)appContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)identifierForResponseKit;

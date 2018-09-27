@@ -9,6 +9,7 @@
     struct atomic_flag { 
         bool _Value; 
     }  _invalidationOnceFlag;
+    UIScrollViewDelayedTouchesBeganGestureRecognizer * _touchDelayGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,11 +42,14 @@
 - (void)addChildViewController:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)dealloc;
+- (void)delayed:(id)arg1;
 - (bool)didCheckActionResponseDelegate;
 - (id)extensionViewController;
 - (id)hostService;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)loadView;
 - (void)notificationContentExtension:(id)arg1 setDismissEnabled:(bool)arg2;
+- (void)notificationContentExtensionDefaultAction:(id)arg1;
 - (void)notificationContentExtensionDismiss:(id)arg1;
 - (id)notificationExtensionContext;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -56,6 +60,7 @@
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;

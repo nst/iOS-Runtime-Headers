@@ -4,10 +4,12 @@
 
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell {
     UIButton * _reportSpamButton;
+    bool  _showReportSMSSpam;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;
 @property (nonatomic, retain) UIButton *reportSpamButton;
+@property (nonatomic) bool showReportSMSSpam;
 
 + (id)reportSpamButton;
 
@@ -21,5 +23,7 @@
 - (id)reportSpamButton;
 - (void)setAttributedButtonText:(id)arg1;
 - (void)setReportSpamButton:(id)arg1;
+- (void)setShowReportSMSSpam:(bool)arg1;
+- (bool)showReportSMSSpam;
 
 @end

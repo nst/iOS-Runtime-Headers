@@ -20,6 +20,8 @@
 
 - (void).cxx_destruct;
 - (id)activeObserverBlocks;
+- (void)activityObservingApplicationDidFinishLaunchingNotification:(id)arg1;
+- (void)activityObservingApplicationWillEnterForegroundNotification:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)applicationDidBecomeActiveNotification:(id)arg1;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
@@ -30,5 +32,6 @@
 - (id)observers;
 - (void)performOnApplicationDidBecomeActive:(id /* block */)arg1;
 - (void)performOnApplicationDidEnterBackground:(id /* block */)arg1;
+- (void)removeObserver:(id)arg1;
 
 @end

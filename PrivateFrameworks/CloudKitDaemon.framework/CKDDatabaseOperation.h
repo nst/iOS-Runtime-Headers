@@ -11,6 +11,7 @@
 - (id)CKStatusReportProperties;
 - (id)activityCreate;
 - (long long)databaseScope;
+- (id)flowControlKey;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)setDatabaseScope:(long long)arg1;
 - (void)setPCSData:(id)arg1 forFetchedRecordID:(id)arg2;

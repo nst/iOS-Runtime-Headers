@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic) bool accessibilityObjectModelEnabled;
+@property (nonatomic) bool allowCrossOriginSubresourcesToAskForCredentials;
 @property (nonatomic) bool allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property (nonatomic) bool allowsAirPlayForMediaPlayback;
 @property (nonatomic) bool allowsAnimatedImageLooping;
@@ -16,6 +17,7 @@
 @property (nonatomic) bool attachmentElementEnabled;
 @property (nonatomic) bool autosaves;
 @property (nonatomic) unsigned long long cacheModel;
+@property (nonatomic) bool colorFilterEnabled;
 @property (nonatomic) bool constantPropertiesEnabled;
 @property (nonatomic, copy) NSString *cursiveFontFamily;
 @property (nonatomic) int defaultFixedFontSize;
@@ -46,6 +48,7 @@
 @property (nonatomic) int minimumLogicalFontSize;
 @property (getter=arePlugInsEnabled, nonatomic) bool plugInsEnabled;
 @property (nonatomic) bool privateBrowsingEnabled;
+@property (nonatomic) bool punchOutWhiteBackgroundsInDarkMode;
 @property (nonatomic) bool quickLookDocumentSavingEnabled;
 @property (nonatomic) bool resourceTimingEnabled;
 @property (nonatomic, copy) NSString *sansSerifFontFamily;
@@ -136,6 +139,7 @@
 - (bool)acceleratedCompositingEnabled;
 - (bool)acceleratedDrawingEnabled;
 - (bool)accessibilityObjectModelEnabled;
+- (bool)allowCrossOriginSubresourcesToAskForCredentials;
 - (bool)allowFileAccessFromFileURLs;
 - (bool)allowMediaContentTypesRequiringHardwareSupportAsFallback;
 - (bool)allowUniversalAccessFromFileURLs;
@@ -163,7 +167,9 @@
 - (bool)cacheAPIEnabled;
 - (unsigned long long)cacheModel;
 - (bool)canvasUsesAcceleratedDrawing;
+- (bool)colorFilterEnabled;
 - (bool)constantPropertiesEnabled;
+- (bool)crossOriginWindowPolicySupportEnabled;
 - (id)cursiveFontFamily;
 - (bool)customElementsEnabled;
 - (bool)customPasteboardDataEnabled;
@@ -213,7 +219,6 @@
 - (bool)invisibleAutoplayNotPermitted;
 - (bool)isAVFoundationEnabled;
 - (bool)isAVFoundationNSURLSessionEnabled;
-- (bool)isCSSGridLayoutEnabled;
 - (bool)isDNSPrefetchingEnabled;
 - (bool)isDOMPasteAllowed;
 - (bool)isFrameFlatteningEnabled;
@@ -221,7 +226,6 @@
 - (bool)isInheritURIQueryComponentEnabled;
 - (bool)isJavaEnabled;
 - (bool)isJavaScriptEnabled;
-- (bool)isQTKitEnabled;
 - (bool)isSecureContextAttributeEnabled;
 - (bool)isSpatialNavigationEnabled;
 - (bool)isVideoPluginProxyEnabled;
@@ -273,6 +277,7 @@
 - (id)pictographFontFamily;
 - (bool)plugInSnapshottingEnabled;
 - (bool)privateBrowsingEnabled;
+- (bool)punchOutWhiteBackgroundsInDarkMode;
 - (bool)quickLookDocumentSavingEnabled;
 - (bool)readableByteStreamAPIEnabled;
 - (bool)requestAnimationFrameEnabled;
@@ -280,6 +285,7 @@
 - (bool)resourceTimingEnabled;
 - (id)sansSerifFontFamily;
 - (id)serifFontFamily;
+- (bool)serverTimingEnabled;
 - (bool)serviceControlsEnabled;
 - (void)setAVFoundationEnabled:(bool)arg1;
 - (void)setAVFoundationNSURLSessionEnabled:(bool)arg1;
@@ -288,6 +294,7 @@
 - (void)setAcceleratedCompositingEnabled:(bool)arg1;
 - (void)setAcceleratedDrawingEnabled:(bool)arg1;
 - (void)setAccessibilityObjectModelEnabled:(bool)arg1;
+- (void)setAllowCrossOriginSubresourcesToAskForCredentials:(bool)arg1;
 - (void)setAllowFileAccessFromFileURLs:(bool)arg1;
 - (void)setAllowMediaContentTypesRequiringHardwareSupportAsFallback:(bool)arg1;
 - (void)setAllowUniversalAccessFromFileURLs:(bool)arg1;
@@ -310,11 +317,12 @@
 - (void)setAutomaticallyDetectsCacheModel:(bool)arg1;
 - (void)setAutosaves:(bool)arg1;
 - (void)setBackspaceKeyNavigationEnabled:(bool)arg1;
-- (void)setCSSGridLayoutEnabled:(bool)arg1;
 - (void)setCacheAPIEnabled:(bool)arg1;
 - (void)setCacheModel:(unsigned long long)arg1;
 - (void)setCanvasUsesAcceleratedDrawing:(bool)arg1;
+- (void)setColorFilterEnabled:(bool)arg1;
 - (void)setConstantPropertiesEnabled:(bool)arg1;
+- (void)setCrossOriginWindowPolicySupportEnabled:(bool)arg1;
 - (void)setCursiveFontFamily:(id)arg1;
 - (void)setCustomElementsEnabled:(bool)arg1;
 - (void)setCustomPasteboardDataEnabled:(bool)arg1;
@@ -410,7 +418,7 @@
 - (void)setPlugInSnapshottingEnabled:(bool)arg1;
 - (void)setPlugInsEnabled:(bool)arg1;
 - (void)setPrivateBrowsingEnabled:(bool)arg1;
-- (void)setQTKitEnabled:(bool)arg1;
+- (void)setPunchOutWhiteBackgroundsInDarkMode:(bool)arg1;
 - (void)setQuickLookDocumentSavingEnabled:(bool)arg1;
 - (void)setReadableByteStreamAPIEnabled:(bool)arg1;
 - (void)setRequestAnimationFrameEnabled:(bool)arg1;
@@ -418,6 +426,7 @@
 - (void)setResourceTimingEnabled:(bool)arg1;
 - (void)setSansSerifFontFamily:(id)arg1;
 - (void)setSerifFontFamily:(id)arg1;
+- (void)setServerTimingEnabled:(bool)arg1;
 - (void)setServiceControlsEnabled:(bool)arg1;
 - (void)setShadowDOMEnabled:(bool)arg1;
 - (void)setShouldConvertPositionStyleOnCopy:(bool)arg1;
@@ -451,6 +460,7 @@
 - (void)setVisualViewportAPIEnabled:(bool)arg1;
 - (void)setVisualViewportEnabled:(bool)arg1;
 - (void)setWantsBalancedSetDefersLoadingBehavior:(bool)arg1;
+- (void)setWebAnimationsCSSIntegrationEnabled:(bool)arg1;
 - (void)setWebAnimationsEnabled:(bool)arg1;
 - (void)setWebArchiveDebugModeEnabled:(bool)arg1;
 - (void)setWebAudioEnabled:(bool)arg1;
@@ -493,6 +503,7 @@
 - (bool)visualViewportAPIEnabled;
 - (bool)visualViewportEnabled;
 - (bool)wantsBalancedSetDefersLoadingBehavior;
+- (bool)webAnimationsCSSIntegrationEnabled;
 - (bool)webAnimationsEnabled;
 - (bool)webArchiveDebugModeEnabled;
 - (bool)webAudioEnabled;

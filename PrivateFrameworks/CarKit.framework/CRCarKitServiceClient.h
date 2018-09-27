@@ -16,6 +16,7 @@
 - (void)_blockOnServiceSemaphore:(id)arg1;
 - (void)_releaseAllServiceSemaphores;
 - (id)_serviceSemaphore;
+- (void)dealloc;
 - (id)init;
 - (id)outstandingSemaphores;
 - (void)performServiceCallBlock:(id /* block */)arg1;

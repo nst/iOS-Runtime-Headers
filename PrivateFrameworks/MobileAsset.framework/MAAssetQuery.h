@@ -3,6 +3,7 @@
  */
 
 @interface MAAssetQuery : NSObject {
+    NSSet * _assetIds;
     NSString * _assetType;
     bool  _augmentState;
     NSDate * _lastFetchDate;
@@ -12,6 +13,7 @@
     long long  _returnTypes;
 }
 
+@property (nonatomic, readonly) NSSet *assetIds;
 @property (nonatomic, readonly) NSString *assetType;
 @property (nonatomic, readonly) bool augmentState;
 @property (nonatomic, readonly) NSDate *lastFetchDate;
@@ -22,6 +24,7 @@
 
 - (long long)addKeyValueArray:(id)arg1 with:(id)arg2;
 - (long long)addKeyValuePair:(id)arg1 with:(id)arg2;
+- (id)assetIds;
 - (id)assetType;
 - (void)augmentResultsWithState:(bool)arg1;
 - (bool)augmentState;
@@ -30,6 +33,7 @@
 - (id)initWithType:(id)arg1;
 - (id)lastFetchDate;
 - (id)postedDate;
+- (long long)queryInstalledAssetIds;
 - (void)queryMetaData:(id /* block */)arg1;
 - (long long)queryMetaDataSync;
 - (id)queryParams;

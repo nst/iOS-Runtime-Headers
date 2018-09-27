@@ -5,23 +5,24 @@
 @interface FBApplicationProcess : FBProcess <BKSProcessDelegate> {
     NSMutableSet * _allowedLockedFilePaths;
     FBApplicationInfo * _applicationInfo;
+    bool  _attemptedBootstrap;
+    bool  _attemptedFinalizedLaunch;
     bool  _beingDebugged;
     BKSProcess * _bksProcess;
     bool  _bootstrapFailed;
-    bool  _bootstrapped;
     bool  _connectedToExternalAccessory;
     BKSProcessAssertion * _continuousProcessAssertion;
     FBProcessCPUStatistics * _cpuStatistics;
     double  _execTime;
     FBProcessExecutionContext * _executionContext;
     FBApplicationProcessExitContext * _exitContext;
-    bool  _finishedLaunching;
+    bool  _exitedBeforeAttemptingFinalizedLaunch;
     BSMachPortSendRight * _gsEventPort;
     unsigned long long  _htAppIdentifier;
     BKSProcessAssertion * _launchProcessAssertion;
     bool  _nowPlayingWithAudio;
     bool  _pendingExit;
-    bool  _performedLaunch;
+    bool  _queue_launchEventReceiptAcknowledged;
     NSMutableArray * _queue_terminateRequestCompletionBlocks;
     NSMutableArray * _queuedSceneBlocksToExecuteAfterLaunch;
     bool  _recordingAudio;
@@ -30,20 +31,22 @@
     FBSProcessTerminationRequest * _terminationRequest;
     FBProcessState * _terminationState;
     FBProcessWatchdogEventContext * _terminationWatchdogContext;
+    BKSProcessAssertion * _viewServiceProcessAssertion;
+    bool  _waitForDebugger;
     FBProcessWatchdog * _watchdog;
 }
 
-@property (nonatomic, readonly, retain) FBApplicationInfo *applicationInfo;
+@property (nonatomic, readonly) FBApplicationInfo *applicationInfo;
 @property (getter=isBeingDebugged, nonatomic) bool beingDebugged;
 @property (getter=isConnectedToExternalAccessory, nonatomic) bool connectedToExternalAccessory;
-@property (getter=_queue_cpuStatistics, nonatomic, readonly, retain) FBProcessCPUStatistics *cpuStatistics;
+@property (getter=_queue_cpuStatistics, nonatomic, readonly) FBProcessCPUStatistics *cpuStatistics;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBApplicationProcessDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double elapsedCPUTime;
 @property (getter=_queue_execTime, nonatomic, readonly) double execTime;
 @property (nonatomic, readonly, copy) FBProcessExecutionContext *executionContext;
-@property (nonatomic, readonly, retain) FBApplicationProcessExitContext *exitContext;
+@property (nonatomic, readonly) FBApplicationProcessExitContext *exitContext;
 @property (nonatomic, readonly) bool finishedLaunching;
 @property (readonly) unsigned long long hash;
 @property (getter=isNowPlayingWithAudio, nonatomic) bool nowPlayingWithAudio;
@@ -52,6 +55,7 @@
 @property (readonly) Class superclass;
 @property (getter=_queue_terminationReason, nonatomic, readonly) long long terminationReason;
 
+- (void).cxx_destruct;
 - (id)GSEventPort;
 - (id)_applicationWorkspace;
 - (id)_createWorkspace;
@@ -68,6 +72,7 @@
 - (void)_queue_doGracefulKillWithDeliveryConfirmation:(id /* block */)arg1;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
+- (void)_queue_dropViewServiceAssertion;
 - (void)_queue_enumerateApplicationObserversWithBlock:(id /* block */)arg1;
 - (double)_queue_execTime;
 - (void)_queue_executeBlockAfterLaunchCompletes:(id /* block */)arg1;
@@ -85,6 +90,7 @@
 - (id)_queue_name;
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)_queue_noteExitedForForceQuit:(bool)arg1;
+- (void)_queue_noteSceneCreationAcknowledged:(id)arg1;
 - (int)_queue_ourTaskStateForBKSTaskState:(long long)arg1;
 - (void)_queue_processDidExit;
 - (void)_queue_sceneNeedsGracefulExit:(id)arg1 withDeliveryConfirmation:(id /* block */)arg2;
@@ -131,7 +137,6 @@
 - (void)processWillExpire:(id)arg1;
 - (void)setBeingDebugged:(bool)arg1;
 - (void)setConnectedToExternalAccessory:(bool)arg1;
-- (void)setFinishedLaunching:(bool)arg1;
 - (void)setNowPlayingWithAudio:(bool)arg1;
 - (void)setPendingExit:(bool)arg1;
 - (void)setRecordingAudio:(bool)arg1;

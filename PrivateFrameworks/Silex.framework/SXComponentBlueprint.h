@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXComponentBlueprint : NSObject <NSCoding, NSCopying> {
+@interface SXComponentBlueprint : NSObject <NSCopying, NSSecureCoding> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -71,6 +71,8 @@
 @property (nonatomic) SXLayoutBlueprint *parentLayoutBlueprint;
 @property (nonatomic, readonly) SXLayoutBlueprint *rootLayoutBlueprint;
 @property (nonatomic) struct CGSize { double x1; double x2; } suggestedSizeAfterInvalidation;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })absoluteFrame;

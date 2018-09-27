@@ -75,9 +75,11 @@
 - (bool)javaScriptCoreUsingPoisoning;
 - (id)labelForNode:(unsigned int)arg1;
 - (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
+- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2 showLeakedVMregions:(bool)arg3;
 - (id)nodeDescription:(unsigned int)arg1;
 - (id)nodeDescription:(unsigned int)arg1 withDestinationNode:(unsigned int)arg2 referenceInfo:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg3;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
+- (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2 showLabel:(bool)arg3;
 - (id)nodeOffsetDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3;
 - (unsigned int)nodeReferencedFromDataRegion:(id)arg1 byGlobalSymbol:(id)arg2;
 - (unsigned long long)physicalFootprint;
@@ -109,7 +111,7 @@
 - (void)setStackLogReader:(id)arg1;
 - (void)setThreadName:(id)arg1 forRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setUserMarked:(void*)arg1;
-- (id)shortLabelForMallocNode:(unsigned int)arg1;
+- (id)shortLabelForNode:(unsigned int)arg1;
 - (id)shortNodeDescription:(unsigned int)arg1;
 - (bool)showRawClassNames;
 - (bool)showsPhysFootprint;

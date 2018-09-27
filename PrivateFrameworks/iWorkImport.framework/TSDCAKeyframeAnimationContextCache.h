@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSArray *timingFunctions;
 @property (nonatomic, readonly) NSArray *values;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithAnimation:(id)arg1;
 - (id)keyTimes;
 - (double)percentAtTime:(double)arg1;

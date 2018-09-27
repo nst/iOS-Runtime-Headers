@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic) bool didWriteSupportBundleSuccessfuly;
 @property (nonatomic, copy) NSUUID *documentUUID;
+@property (nonatomic, readonly) bool isSameDocumentUpdate;
 @property (nonatomic, readonly) NSUUID *originalDocumentUUID;
 @property (nonatomic, copy) NSURL *originalURL;
 @property (nonatomic, readonly) NSUUID *originalVersionUUID;
@@ -32,6 +33,7 @@
 - (id)documentUUID;
 - (id)init;
 - (id)initWithOriginalDocumentUUID:(id)arg1 originalVersionUUID:(id)arg2 originalURL:(id)arg3 updateType:(long long)arg4;
+- (bool)isSameDocumentUpdate;
 - (id)originalDocumentUUID;
 - (id)originalURL;
 - (id)originalVersionUUID;

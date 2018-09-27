@@ -11,7 +11,6 @@
     double  _nextInterstitialPresentationTime;
     double  _nextPrerollPlaybackTime;
     NSObject<OS_dispatch_queue> * _policyEngineQueue;
-    NSMutableArray * _queuedCommands;
     ADInterstitialAd * _sharedInterstitialAd;
     bool  _sharedInterstitialAdIsInUse;
     NSString * _sharedInterstitialAuthenticationUserName;
@@ -32,7 +31,6 @@
 @property (nonatomic) double nextInterstitialPresentationTime;
 @property (nonatomic) double nextPrerollPlaybackTime;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *policyEngineQueue;
-@property (nonatomic, readonly) NSMutableArray *queuedCommands;
 @property (nonatomic, retain) ADInterstitialAd *sharedInterstitialAd;
 @property (nonatomic) bool sharedInterstitialAdIsInUse;
 @property (nonatomic, copy) NSString *sharedInterstitialAuthenticationUserName;
@@ -44,10 +42,8 @@
 
 + (id)sharedEngine;
 
-- (void)_adSheetConnectionBootstrapped;
 - (void)_enablePolicyEngineWithReason:(id)arg1;
-- (void)_performWhenAdSheetConnectionEstablished:(id /* block */)arg1;
-- (void)adSheetDidIdleDisablePolicyEngine;
+- (void)adServingDaemonDidIdleDisablePolicyEngine;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(bool)arg2;
@@ -71,7 +67,6 @@
 - (double)nextInterstitialPresentationTime;
 - (double)nextPrerollPlaybackTime;
 - (id)policyEngineQueue;
-- (id)queuedCommands;
 - (void)relinquishSharedMediaPlayerVideoAd;
 - (void)setCanAutoEnable:(bool)arg1;
 - (void)setCurrentSongData:(id)arg1;

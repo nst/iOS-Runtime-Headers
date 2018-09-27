@@ -4,11 +4,13 @@
 
 @interface PKReplicaManager : NSObject {
     NSMutableDictionary * _replicaEntries;
+    NSMutableArray * _replicaManagerErrors;
     NSMutableOrderedSet * _replicaUUIDs;
     bool  _testMode;
     NSObject<OS_dispatch_queue> * _uuidAccessQueue;
 }
 
+@property (nonatomic, readonly) NSArray *replicaManagerErrors;
 @property (nonatomic) bool testMode;
 
 + (id)sharedReplicaManager;
@@ -20,6 +22,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (id)replicaManagerErrors;
 - (void)resetAllReplicaUUIDs;
 - (void)returnReplicaForDrawing:(id)arg1;
 - (void)setTestMode:(bool)arg1;

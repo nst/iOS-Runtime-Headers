@@ -5,6 +5,7 @@
 @interface WCSessionFile : NSObject <NSSecureCoding> {
     NSDate * _creationDate;
     NSString * _fileIdentifier;
+    NSNumber * _fileSize;
     NSURL * _fileURL;
     NSDictionary * _metadata;
     NSString * _relativePath;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, retain) NSDate *creationDate;
 @property (copy) NSString *fileIdentifier;
+@property (nonatomic, copy) NSNumber *fileSize;
 @property (nonatomic, retain) NSURL *fileURL;
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, copy) NSString *relativePath;
@@ -27,6 +29,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileIdentifier;
+- (id)fileSize;
 - (id)fileURL;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
@@ -38,6 +41,7 @@
 - (id)relativePath;
 - (void)setCreationDate:(id)arg1;
 - (void)setFileIdentifier:(id)arg1;
+- (void)setFileSize:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setRelativePath:(id)arg1;

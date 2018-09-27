@@ -56,6 +56,7 @@
 @property (nonatomic, copy) NSString *phoneticOrganizationName;
 @property (nonatomic, copy) NSArray *postalAddresses;
 @property (nonatomic, copy) NSString *preferredApplePersonaIdentifier;
+@property (nonatomic, copy) NSString *preferredChannel;
 @property (getter=isPreferredForImage, nonatomic) bool preferredForImage;
 @property (getter=isPreferredForName, nonatomic) bool preferredForName;
 @property (nonatomic, copy) NSString *preferredLikenessSource;
@@ -123,6 +124,7 @@
 - (id)phoneticOrganizationName;
 - (id)postalAddresses;
 - (id)preferredApplePersonaIdentifier;
+- (id)preferredChannel;
 - (bool)preferredForImage;
 - (bool)preferredForName;
 - (id)preferredLikenessSource;
@@ -183,6 +185,7 @@
 - (void)setPhoneticOrganizationName:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
 - (void)setPreferredApplePersonaIdentifier:(id)arg1;
+- (void)setPreferredChannel:(id)arg1;
 - (void)setPreferredForImage:(bool)arg1;
 - (void)setPreferredForName:(bool)arg1;
 - (void)setPreferredLikenessSource:(id)arg1;
@@ -215,7 +218,7 @@
 - (bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3;
 - (bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3 request:(id)arg4;
 - (void)setBirthdays:(id)arg1;
-- (void)updateContactType:(bool)arg1;
+- (void)updateContactTypeWithPolicy:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 

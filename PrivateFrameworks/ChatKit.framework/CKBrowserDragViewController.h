@@ -33,6 +33,7 @@
     double  _elasticScaleX;
     double  _elasticScaleY;
     UILongPressGestureRecognizer * _gestureRecognizer;
+    bool  _hasMovedToWindow;
     struct CGPoint { 
         double x; 
         double y; 
@@ -119,6 +120,7 @@
 @property (nonatomic) double elasticScaleX;
 @property (nonatomic) double elasticScaleY;
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
+@property (nonatomic) bool hasMovedToWindow;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct CGPoint { double x1; double x2; } initialDragStartPosition;
 @property (nonatomic) double initialScale;
@@ -191,6 +193,7 @@
 - (double)elasticScaleY;
 - (void)gestureRecognized:(id)arg1;
 - (id)gestureRecognizer;
+- (bool)hasMovedToWindow;
 - (id)initWithDragImage:(id)arg1 inSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withSourcePoint:(struct CGPoint { double x1; double x2; })arg3 withGestureRecognizer:(id)arg4;
 - (struct CGPoint { double x1; double x2; })initialDragStartPosition;
 - (double)initialScale;
@@ -239,6 +242,7 @@
 - (void)setElasticScaleX:(double)arg1;
 - (void)setElasticScaleY:(double)arg1;
 - (void)setGestureRecognizer:(id)arg1;
+- (void)setHasMovedToWindow:(bool)arg1;
 - (void)setInitialDragStartPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setInitialScale:(double)arg1;
 - (void)setInitialSize:(struct CGSize { double x1; double x2; })arg1;
@@ -271,6 +275,7 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

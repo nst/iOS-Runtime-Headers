@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactListViewController : UITableViewController <CNAvatarCardControllerDelegate, CNContactDataSourceDelegate, CNContactListBannerViewDelegate, CNContactViewControllerDelegate, CNUIObjectViewControllerDelegate, CNUIPeopleGroupsGridViewControllerDelegate, CNVCardImportControllerDelegate, CNVCardImportControllerPresentationDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDragDestinationDelegate, UITableViewDragSourceDelegate> {
+@interface CNContactListViewController : UITableViewController <CNAvatarCardControllerDelegate, CNAvatarViewControllerDelegate, CNContactDataSourceDelegate, CNContactListBannerViewDelegate, CNContactViewControllerDelegate, CNUIObjectViewControllerDelegate, CNUIPeopleGroupsGridViewControllerDelegate, CNVCardImportControllerDelegate, CNVCardImportControllerPresentationDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UITableViewDragDestinationDelegate, UITableViewDragSourceDelegate> {
     bool  _allowsSearching;
     CNAvatarCardController * _cardController;
     CNContactFormatter * _contactFormatter;
@@ -30,7 +30,6 @@
     bool  _shouldAutoHideMeContactBanner;
     bool  _shouldDisplayGroupsGrid;
     bool  _shouldDisplayMeContactBanner;
-    bool  _shouldRefreshMeContact;
     bool  _shouldUseLargeTitle;
     NSArray * _tableViewHeaderConstraints;
     CNVCardImportController * _vCardImportController;
@@ -69,7 +68,6 @@
 @property (nonatomic) bool shouldAutoHideMeContactBanner;
 @property (nonatomic) bool shouldDisplayGroupsGrid;
 @property (nonatomic) bool shouldDisplayMeContactBanner;
-@property (nonatomic) bool shouldRefreshMeContact;
 @property (nonatomic, readonly) bool shouldUseLargeTitle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *tableViewHeaderConstraints;
@@ -80,6 +78,7 @@
 - (void).cxx_destruct;
 - (void)_applicationEnteringForeground:(id)arg1;
 - (id)_contactAtIndexPath:(id)arg1;
+- (void)_contactCountTelemetry:(unsigned long long)arg1;
 - (void)_searchBarDidEndEditing:(id)arg1;
 - (id)_sections;
 - (bool)_tableView:(id)arg1 canHandleDropSession:(id)arg2;
@@ -101,6 +100,7 @@
 - (void)configureNavigationBarForLargeTitles;
 - (void)contactDataSourceDidChange:(id)arg1;
 - (void)contactDataSourceDidChangeDisplayName:(id)arg1;
+- (void)contactDataSourceMeContactDidChange:(id)arg1;
 - (id)contactFormatter;
 - (void)contactStoreDidChangeWithNotification:(id)arg1;
 - (double)contentOffsetDueToMeContactBanner;
@@ -111,6 +111,7 @@
 - (id)delegate;
 - (void)didDismissSearchController:(id)arg1;
 - (void)didPresentSearchController:(id)arg1;
+- (void)didUpdateContentForAvatarViewController:(id)arg1;
 - (id)dragItemsForIndexPath:(id)arg1;
 - (id)environment;
 - (id)groupsGridController;
@@ -175,7 +176,6 @@
 - (void)setShouldAutoHideMeContactBanner:(bool)arg1;
 - (void)setShouldDisplayGroupsGrid:(bool)arg1;
 - (void)setShouldDisplayMeContactBanner:(bool)arg1;
-- (void)setShouldRefreshMeContact:(bool)arg1;
 - (void)setTableViewHeaderConstraints:(id)arg1;
 - (void)setVCardImportController:(id)arg1;
 - (void)setupForMultiSelection;
@@ -184,7 +184,6 @@
 - (bool)shouldAutoHideMeContactBanner;
 - (bool)shouldDisplayGroupsGrid;
 - (bool)shouldDisplayMeContactBanner;
-- (bool)shouldRefreshMeContact;
 - (bool)shouldUseLargeTitle;
 - (void)startSearching;
 - (void)startSearchingForString:(id)arg1;
@@ -200,6 +199,7 @@
 - (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;

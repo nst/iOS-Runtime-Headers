@@ -16,7 +16,7 @@
 
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2;
-- (id)newArtworkWithScale:(double)arg1 style:(id)arg2 size:(long long)arg3 numberOfLines:(unsigned long long)arg4;
+- (id)newArtworkWithScale:(double)arg1 style:(id)arg2 size:(long long)arg3 numberOfLines:(unsigned long long)arg4 overlayColor:(struct { float x1; float x2; float x3; float x4; })arg5;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 

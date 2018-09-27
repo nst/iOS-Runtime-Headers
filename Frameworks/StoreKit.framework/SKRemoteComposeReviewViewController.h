@@ -15,6 +15,7 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)_keyboardVisibilityDidChangeNotification:(id)arg1;
 - (id)composeReviewViewController;
 - (void)dealloc;

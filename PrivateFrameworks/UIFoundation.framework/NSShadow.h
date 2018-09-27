@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSShadow : NSObject <NSCoding, NSCopying> {
+@interface NSShadow : NSObject <NSCopying, NSSecureCoding> {
     double  _shadowBlurRadius;
     NSColor * _shadowColor;
     unsigned long long  _shadowFlags;
@@ -19,7 +19,9 @@
 + (id)defaultShadowColor;
 + (void)initialize;
 + (id)shadow;
++ (bool)supportsSecureCoding;
 
+- (void)_applyToCGContext:(struct CGContext { }*)arg1 graphicsContext:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

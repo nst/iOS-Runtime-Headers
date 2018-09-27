@@ -5,7 +5,7 @@
 @interface _HKMobileAssetDownloadManager : NSObject {
     id /* block */  _downloadCompletionHandler;
     NSDictionary * _downloadOptions;
-    NSMutableSet * _downloadedPredicateFormats;
+    NSMutableSet * _downloadingPredicateFormats;
     id /* block */  _errorHandler;
     NSString * _mobileAssetTypeName;
     NSMutableArray * _pendingOperations;
@@ -23,12 +23,13 @@
 @property (nonatomic) bool shouldQueryLocalAssetsFirst;
 
 - (void).cxx_destruct;
-- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1;
+- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 predicate:(id)arg2;
 - (void)_callErrorHandlerWithError:(id)arg1;
-- (void)_queue_downloadAssets:(id)arg1 completionOverride:(id /* block */)arg2;
+- (void)_queue_downloadAssets:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_fetchAssetsWithLocalInformation:(bool)arg1 shouldRequery:(bool)arg2 predicate:(id)arg3;
 - (void)_queue_fetchAssetsWithPredicate:(id)arg1 onlyLocal:(bool)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
+- (id)description;
 - (void)downloadAssets:(id)arg1 completion:(id /* block */)arg2;
 - (void)downloadAssetsWithPredicate:(id)arg1;
 - (id /* block */)downloadCompletionHandler;

@@ -37,6 +37,7 @@
     double  _queueDuration;
     double  _queueStartTime;
     bool  _readyForStore;
+    NSData * _resumeData;
     ATStoreInfo * _storeInfo;
     long long  _storePID;
     NSString * _storePlist;
@@ -80,6 +81,7 @@
 @property (nonatomic) double queueDuration;
 @property (nonatomic) double queueStartTime;
 @property (nonatomic) bool readyForStore;
+@property (nonatomic, retain) NSData *resumeData;
 @property (nonatomic, retain) ATStoreInfo *storeInfo;
 @property (nonatomic) long long storePID;
 @property (nonatomic, retain) NSString *storePlist;
@@ -139,6 +141,7 @@
 - (double)queueDuration;
 - (double)queueStartTime;
 - (bool)readyForStore;
+- (id)resumeData;
 - (id)serializedAsset;
 - (void)setAssetState:(long long)arg1;
 - (void)setAssetType:(id)arg1;
@@ -174,6 +177,7 @@
 - (void)setQueueDuration:(double)arg1;
 - (void)setQueueStartTime:(double)arg1;
 - (void)setReadyForStore:(bool)arg1;
+- (void)setResumeData:(id)arg1;
 - (void)setStoreInfo:(id)arg1;
 - (void)setStorePID:(long long)arg1;
 - (void)setStorePlist:(id)arg1;

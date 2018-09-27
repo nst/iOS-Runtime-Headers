@@ -32,6 +32,7 @@
 - (void)insertArticleID:(id)arg1 atTopOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3;
 - (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3 subOrder:(unsigned long long)arg4;
+- (void)insertRecord:(id)arg1;
 - (id)insertTestArticle;
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;
@@ -43,6 +44,7 @@
 - (unsigned long long)orderForArticleID:(id)arg1 feedID:(id)arg2;
 - (void)populateWithBasicTestFeeds;
 - (id)records;
+- (id)records:(id)arg1 withDesiredKeys:(id)arg2;
 - (void)setDroppedFeeds:(id)arg1;
 - (void)setFeedQueryEndpoint:(id)arg1;
 - (void)setMultiFetchQueryEndpoint:(id)arg1;

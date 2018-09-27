@@ -69,7 +69,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setIntermediateBufferFormat;
 - (int)bufferFormat;
 - (bool)concatenationFlag;
 - (int)conformColorSpacesToDestinationBufferSpace;
@@ -104,6 +103,7 @@
 - (void)setGpuRenderAPI:(int)arg1;
 - (void)setInstructionGraphDotTreeLevel:(int)arg1;
 - (void)setInstructionGraphDumpLevel:(int)arg1;
+- (void)setIntermediateBufferFormatForWorkingColorSpace;
 - (void)setNumCPUThreads:(int)arg1;
 - (void)setOutputColorSpace:(id)arg1;
 - (void)setPageSize:(int)arg1;

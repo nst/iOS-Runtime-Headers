@@ -3,24 +3,28 @@
  */
 
 @interface PHAServiceCancelableOperation : NSObject {
-    int  _canceled;
+    bool  _cancelRequested;
     id /* block */  _cancellationBlock;
-    NSLock * _mutex;
-    id /* block */  _operationBlock;
+    NSObject<OS_dispatch_group> * _completionGroup;
+    NSInvocation * _invocation;
     long long  _operationId;
 }
 
++ (id)currentOperation;
 + (id)operationNotFoundError:(long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_startWork;
+- (void)addCompletionBlock:(id /* block */)arg1;
+- (void)beginAsyncWork;
 - (bool)cancel;
 - (id)description;
-- (id)initWithLock:(id)arg1 operationId:(long long)arg2;
+- (void)endAsyncWork;
+- (void)enqueueOnQueue:(id)arg1;
+- (id)initWithOperationId:(long long)arg1 invocation:(id)arg2;
 - (bool)isCancelled;
 - (id)operationCanceledError:(bool)arg1;
 - (long long)operationId;
 - (void)setCancellationBlock:(id /* block */)arg1;
-- (void)setOperationBlock:(id /* block */)arg1;
-- (void)start;
 
 @end

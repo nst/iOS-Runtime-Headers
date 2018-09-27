@@ -17,7 +17,6 @@
 @property (readonly) JSValue *globalObject;
 @property (copy) NSString *name;
 @property (readonly) JSVirtualMachine *virtualMachine;
-@property (readonly, retain) JSWrapperMap *wrapperMap;
 
 // Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
 

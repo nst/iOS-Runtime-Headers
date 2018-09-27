@@ -28,7 +28,7 @@
 - (void)_setAllowedModes:(id)arg1;
 - (void)_updateAllowedModes;
 - (void)_updateCurrentGlyphImage;
-- (void)_updateFromAllowedModesChangeWithCurrentMode:(long long)arg1;
+- (void)_updateFromAllowedModesChangeWithCurrentMode:(long long)arg1 needsReloadData:(bool)arg2;
 - (bool)allowsAutomaticHDR;
 - (bool)allowsHDROn;
 - (id)headerView;
@@ -42,6 +42,7 @@
 - (void)prepareHeaderViewForExpanding:(bool)arg1;
 - (void)reloadData;
 - (void)setAllowsAutomaticHDR:(bool)arg1;
+- (void)setAllowsAutomaticHDR:(bool)arg1 needsReloadData:(bool)arg2;
 - (void)setAllowsHDROn:(bool)arg1;
 - (void)setHDRMode:(long long)arg1;
 - (bool)shouldAllowExpansion;

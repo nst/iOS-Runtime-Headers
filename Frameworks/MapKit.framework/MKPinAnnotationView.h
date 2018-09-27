@@ -18,6 +18,7 @@
 + (id)_bounceAnimation;
 + (struct CGPoint { double x1; double x2; })_calloutOffset;
 + (id)_dropBounceAnimation;
++ (id)_imageCache;
 + (id)_imageForLayer:(long long)arg1 state:(long long)arg2 mapType:(unsigned long long)arg3 traits:(id)arg4;
 + (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4 traits:(id)arg5;
 + (struct CGPoint { double x1; double x2; })_leftCalloutOffset;
@@ -75,7 +76,6 @@
 - (id)pinTintColor;
 - (void)setAnimatesDrop:(bool)arg1;
 - (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
-- (void)setDragState:(unsigned long long)arg1;
 - (void)setDragState:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)setHighlighted:(bool)arg1;
 - (void)setPinColor:(unsigned long long)arg1;

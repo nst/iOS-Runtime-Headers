@@ -12,6 +12,7 @@
     long long  _fakeTrafficIncidentAlert;
     double  _initialRequestDelay;
     double  _initialTraceSpeedMultiplier;
+    bool  _isConnectedToCarplay;
     bool  _isTracePlaybackCameraTestMode;
     unsigned long long  _maxAlternateRoutesCount;
     bool  _muteSpeechOverride;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) long long fakeTrafficIncidentAlert;
 @property (nonatomic, readonly) double initialRequestDelay;
 @property (nonatomic, readonly) double initialTraceSpeedMultiplier;
+@property (nonatomic, readonly) bool isConnectedToCarplay;
 @property (nonatomic, readonly) bool isTracePlaybackCameraTestMode;
 @property (nonatomic, readonly) unsigned long long maxAlternateRoutesCount;
 @property (nonatomic, readonly) bool muteSpeechOverride;
@@ -64,6 +66,7 @@
 - (id)initWithCoder:(id)arg1;
 - (double)initialRequestDelay;
 - (double)initialTraceSpeedMultiplier;
+- (bool)isConnectedToCarplay;
 - (bool)isTracePlaybackCameraTestMode;
 - (unsigned long long)maxAlternateRoutesCount;
 - (bool)muteSpeechOverride;

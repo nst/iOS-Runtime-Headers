@@ -20,11 +20,6 @@
 
 - (void).cxx_destruct;
 - (void)_computeKaleidoscopeFaceCount;
-- (void)_performCleanup;
-- (void)_removePath:(id)arg1;
-- (void)_scheduleCleanup;
-- (void)_touchPath:(id)arg1;
-- (void)_writeBacking:(id)arg1 atPath:(id)arg2;
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollectionDidLoad:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUViewControllerContext : NSObject <NSCoding> {
+@interface SUViewControllerContext : NSObject <NSSecureCoding> {
     NSMutableDictionary * _metadata;
     NSString * _sectionIdentifier;
     long long  _type;
@@ -10,6 +10,8 @@
 
 @property (nonatomic, retain) NSString *sectionIdentifier;
 @property (nonatomic) long long type;
+
++ (bool)supportsSecureCoding;
 
 - (long long)_typeForTypeString:(id)arg1;
 - (id)_typeStringForType:(long long)arg1;

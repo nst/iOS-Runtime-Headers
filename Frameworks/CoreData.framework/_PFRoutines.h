@@ -15,9 +15,11 @@
 + (id)_getPFBundleVersionNumber;
 + (id)_getUUID;
 + (id)_groupObjectsByRootEntity:(id)arg1;
++ (bool)_isInMemoryStoreURL:(id)arg1;
 + (id)_newCollectionFromCollection:(id)arg1 forParentContext:(id)arg2 andClass:(Class)arg3;
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (bool)_objectsInOrderedCollection:(id)arg1 formSubstringInOrderedCollection:(id)arg2;
++ (id)_remoteChangeNotificationNameForStore:(id)arg1;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
 + (id)_rootEntityGroupsForObjects:(id)arg1 passingBlock:(id /* block */)arg2;
 + (id)anyObjectFromCollection:(id)arg1;

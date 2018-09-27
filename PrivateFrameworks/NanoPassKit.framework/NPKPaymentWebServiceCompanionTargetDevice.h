@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKPaymentWebServiceCompanionTargetDevice : NPKPaymentWebServiceTargetDevice <IDSServiceDelegate, PKPaymentWebServiceArchiver, PKPaymentWebServiceTargetDeviceProtocol> {
+@interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceArchiver, PKPaymentWebServiceTargetDeviceProtocol> {
     NPKCompanionAgentConnection * _companionAgentConnection;
     unsigned long long  _context;
     <NPKPaymentWebServiceCompanionTargetDeviceDelegate> * _delegate;
@@ -26,11 +26,11 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *responseQueue;
 @property (readonly) Class superclass;
 
++ (id)bridgedClientInfoHTTPHeader;
+
 - (void).cxx_destruct;
 - (bool)_deviceIsDaytonaOrLater;
 - (bool)_deviceIsFortuneOrLater;
-- (bool)_deviceSupportAccessExpressMode;
-- (bool)_deviceSupportExpressModeTypeAGeneric;
 - (void)_getPairingInfoAndSetAuthRandomIfNotPaired:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2 extraOptions:(id)arg3;
@@ -38,7 +38,7 @@
 - (void)_setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg1;
 - (void)_setNewAuthRandomReturningPairingState:(id /* block */)arg1;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
-- (bool)_shouldAllowSetExpressWithPassInformation:(id)arg1;
+- (id)_supportedRegionsForWebService:(id)arg1;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (id)bridgedClientInfo;
@@ -48,6 +48,7 @@
 - (void)checkTLKsMissingResponse:(id)arg1;
 - (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
 - (bool)claimSecureElementForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(id /* block */)arg1;
 - (void)cloudStoreStatusResponse:(id)arg1;
 - (void)cloudStoreStatusWithCompletion:(id /* block */)arg1;
 - (id)companionAgentConnection;
@@ -66,9 +67,11 @@
 - (void)enableServiceModeResponse:(id)arg1;
 - (bool)felicaSecureElementIsAvailable;
 - (void)getPairingInfoResponse:(id)arg1;
+- (void)handleBalanceChange:(id)arg1;
 - (void)handleCompanionMigrationResponse:(id)arg1;
 - (void)handleCompanionMigrationWithCompletion:(id /* block */)arg1;
 - (void)handleCompanionPeerPaymentRegistration;
+- (void)handleCompanioniCloudSignout;
 - (void)handleDeletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2;
 - (void)handlePaymentTransactions:(id)arg1;
 - (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
@@ -135,6 +138,10 @@
 - (void)queueTSMConnectionResponse:(id)arg1;
 - (void)registrationDataResponse:(id)arg1;
 - (void)removeAIDsFromSecureElement:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeExpressPassWithUniqueIdentifierResponse:(id)arg1;
+- (void)removeExpressPassesWithCardType:(long long)arg1 completion:(id /* block */)arg2;
+- (void)removeExpressPassesWithCardTypeResponse:(id)arg1;
 - (void)resetApplePayManateeViewResponse:(id)arg1;
 - (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
 - (id)responseQueue;
@@ -166,9 +173,11 @@
 - (void)signDataResponse:(id)arg1;
 - (bool)supportsAutomaticPassPresentation;
 - (bool)supportsCredentialType:(long long)arg1;
-- (bool)supportsExpressModeForExpressPassType:(long long)arg1;
+- (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (id)trustedDeviceEnrollmentInfoForWebService:(id)arg1;
 - (void)updatePaymentPass:(id)arg1;
+- (void)updatePeerPaymentAccountResponse:(id)arg1;
+- (void)updatePeerPaymentAccountWithCompletion:(id /* block */)arg1;
 - (void)updatePushToken:(id)arg1;
 
 @end

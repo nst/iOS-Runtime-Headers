@@ -4,7 +4,7 @@
 
 @interface CXCallControllerHostConnection : NSObject <CXCallControllerHostProtocol, CXCallControllerVendorProtocol> {
     NSString * _applicationIdentifier;
-    NSBundle * _bundle;
+    NSURL * _bundleURL;
     NSSet * _capabilities;
     NSXPCConnection * _connection;
     <CXCallControllerHostConnectionDelegate> * _delegate;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
-@property (nonatomic, copy) NSBundle *bundle;
+@property (nonatomic, copy) NSURL *bundleURL;
 @property (nonatomic, copy) NSSet *capabilities;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (oneway void)addOrUpdateCall:(id)arg1;
 - (id)applicationIdentifier;
-- (id)bundle;
+- (id)bundleURL;
 - (id)capabilities;
 - (id)connection;
 - (void)dealloc;
@@ -44,10 +44,10 @@
 - (id)remoteObjectProxy;
 - (oneway void)removeCall:(id)arg1;
 - (oneway void)requestCalls:(id /* block */)arg1;
-- (oneway void)requestTransaction:(id)arg1 forExtensionIdentifier:(id)arg2 reply:(id /* block */)arg3;
+- (oneway void)requestTransaction:(id)arg1 reply:(id /* block */)arg2;
 - (id)serialQueue;
 - (void)setApplicationIdentifier:(id)arg1;
-- (void)setBundle:(id)arg1;
+- (void)setBundleURL:(id)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;

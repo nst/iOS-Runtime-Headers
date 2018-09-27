@@ -8,6 +8,7 @@
 - (NSString *)effectID;
 - (NSString *)fontName;
 - (NSDictionary *)parametersDictionary;
+- (NSString *)titleAndAnimationStyleDescription;
 - (bool)titleRequestsColorAnalysis;
 
 @end

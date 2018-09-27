@@ -6,6 +6,7 @@
 @required
 
 - (double)sectionItemHeightFor:(double)arg1;
+- (double)sectionItemHeightFor:(double)arg1;
 - (UIViewController *)sectionItemViewController;
 
 @end

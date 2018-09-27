@@ -6,7 +6,6 @@
 @required
 
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(MNTrafficIncidentAlertDetails *)arg2;
-- (void)acquireDesiredResourcePolicy;
 - (void)changeSettings:(MNSettings *)arg1;
 - (void)interfaceHashesWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, unsigned long long, void*
 - (void)prepareNavigationWithRouteDetails:(MNRoutePlanningDetails *)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDNumberParser : HMDCameraTLVDescription {
+@interface HMDNumberParser : HMDTLVDescription {
     unsigned long long  _decodedNumber;
 }
 

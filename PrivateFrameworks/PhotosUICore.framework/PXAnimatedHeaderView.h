@@ -19,7 +19,6 @@
 - (void).cxx_destruct;
 - (void)_animateLabelSwitchFromLabel:(id)arg1 toLabel:(id)arg2 andAnimationStyle:(long long)arg3 completionBlock:(id /* block */)arg4;
 - (id)_labelWithText:(id)arg1;
-- (long long)_preferredAnimationStyleForText:(id)arg1;
 - (bool)_requiresDigitAnimationForNewText:(id)arg1;
 - (bool)_requiresLabelSwitchForNewText:(id)arg1;
 - (void)_updateSizingWithText:(id)arg1;
@@ -36,7 +35,6 @@
 - (void)setGradientLayer:(id)arg1;
 - (void)setSizingLabel:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setText:(id)arg1 animated:(bool)arg2;
 - (void)setText:(id)arg1 withAnimationStyle:(long long)arg2;
 - (void)setText:(id)arg1 withAnimationStyle:(long long)arg2 spinDigits:(bool)arg3;
 - (id)sizingLabel;

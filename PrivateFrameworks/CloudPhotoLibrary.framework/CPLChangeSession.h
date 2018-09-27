@@ -32,9 +32,7 @@
 - (id)init;
 - (id)initWithLibraryManager:(id)arg1;
 - (id)libraryManager;
-- (void)pause;
 - (id)platformObject;
-- (void)resume;
 - (id)sessionIdentifier;
 - (id)sessionProgress;
 - (void)setState:(unsigned long long)arg1;

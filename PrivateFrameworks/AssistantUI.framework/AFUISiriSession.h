@@ -5,7 +5,6 @@
 @interface AFUISiriSession : NSObject <AFAssistantUIService, AFSpeechDelegate, AFUISiriSession, AFUISpeechSynthesisLocalDelegate, AFUIStateMachineDelegate> {
     AFConnection * _connection;
     id /* block */  _continuePendingRequest;
-    AFUIAppIntentDeliverer * _currentAppIntentDeliverer;
     bool  _currentRequestDidPresent;
     NSObject<OS_dispatch_group> * _currentSpeechRequestGroup;
     <AFUISiriSessionDelegate> * _delegate;
@@ -73,9 +72,11 @@
 - (void)_startSpeechPronunciationRequestWithContext:(id)arg1 options:(id)arg2;
 - (void)_startSpeechRequestWithOptions:(id)arg1;
 - (void)_startSpeechRequestWithSpeechFileAtURL:(id)arg1;
+- (void)_startSpeechRequestWithSpeechRequestOptions:(id)arg1 isInitialBringUp:(bool)arg2;
 - (long long)_state;
 - (id)_stateMachine;
 - (void)_updateActiveAccount:(id)arg1;
+- (void)_updateActiveAccount:(id)arg1 withNumberOfActiveAccounts:(unsigned long long)arg2;
 - (void)_updateAssistantVersion:(id)arg1;
 - (void)_voiceOverStatusDidChange:(id)arg1;
 - (void)assistantConnection:(id)arg1 didChangeAudioSessionID:(unsigned int)arg2;
@@ -83,7 +84,6 @@
 - (void)assistantConnection:(id)arg1 didLoadAssistant:(id)arg2;
 - (void)assistantConnection:(id)arg1 extensionRequestFinishedForApplication:(id)arg2 error:(id)arg3;
 - (void)assistantConnection:(id)arg1 extensionRequestWillStartForApplication:(id)arg2;
-- (void)assistantConnection:(id)arg1 handleIntent:(id)arg2 inBackgroundAppWithBundleId:(id)arg3 reply:(id /* block */)arg4;
 - (void)assistantConnection:(id)arg1 openURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)assistantConnection:(id)arg1 receivedCommand:(id)arg2 completion:(id /* block */)arg3;
 - (void)assistantConnection:(id)arg1 recognitionUpdateWithPhrases:(id)arg2 utterances:(id)arg3 refId:(id)arg4;
@@ -136,6 +136,7 @@
 - (void)resetContextTypes:(long long)arg1;
 - (void)resultDidChangeForAceCommand:(id)arg1;
 - (void)resultDidChangeForAceCommand:(id)arg1 completion:(id /* block */)arg2;
+- (void)resumeInterruptedAudioPlaybackIfNeeded;
 - (void)rollbackClearContext;
 - (id /* block */)safeWrapResponseCompletion:(id /* block */)arg1;
 - (void)sendReplyCommand:(id)arg1;
@@ -143,8 +144,8 @@
 - (void)setApplicationContext;
 - (void)setCarDNDActive:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDeviceInStarkMode:(bool)arg1;
 - (void)setEyesFree:(bool)arg1;
-- (void)setIsStark:(bool)arg1;
 - (void)setLocalDataSource:(id)arg1;
 - (void)setLocalDelegate:(id)arg1;
 - (void)setLockState:(unsigned long long)arg1;
@@ -152,8 +153,8 @@
 - (void)settingsConnectionDidChangeActiveAccount:(id)arg1;
 - (id)siriSessionInfo;
 - (id)speechSynthesis;
+- (void)speechSynthesis:(id)arg1 prepareForSpeakingWithCompletion:(id /* block */)arg2;
 - (bool)speechSynthesisConnectionIsRecording:(id)arg1;
-- (void)speechSynthesisWillStartSpeaking:(id)arg1;
 - (void)startCorrectedRequestWithText:(id)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(id)arg3;
 - (void)startRequestWithOptions:(id)arg1;
 - (id)stateMachine:(id)arg1 descriptionForEvent:(long long)arg2;

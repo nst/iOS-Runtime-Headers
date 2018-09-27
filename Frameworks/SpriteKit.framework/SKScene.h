@@ -64,9 +64,12 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } visibleRectCenter;
 @property (nonatomic) struct CGSize { double x1; double x2; } visibleRectSize;
 
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 + (id)sceneWithContentsOfFile:(id)arg1;
 + (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)sceneWithSize:(struct CGSize { double x1; double x2; })arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_didMakeBackingNode;
@@ -78,7 +81,6 @@
 - (bool)_needsRender;
 - (bool)_needsUpdate;
 - (void)_notifyNextDirtyState;
-- (id)_parentFocusEnvironment;
 - (id)_pkPhysicsWorld;
 - (void)_registerConstraintsForNode:(id)arg1;
 - (void)_removeConstraintsForNode:(id)arg1;
@@ -102,8 +104,6 @@
 - (struct CGPoint { double x1; double x2; })convertPointToView:(struct CGPoint { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)didApplyConstraints;
@@ -119,7 +119,9 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)isEqualToNode:(id)arg1;
 - (id)listener;
+- (id)parentFocusEnvironment;
 - (id)physicsWorld;
 - (struct CGPoint { double x1; double x2; })position;
 - (long long)scaleMode;

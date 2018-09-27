@@ -20,7 +20,8 @@
 @property (readonly) NSString *itemID;
 @property (readonly) NSString *sourceID;
 @property (readonly) Class superclass;
-@property (readonly) NSNumber *userID;
+@property (readonly) NSString *syncDeviceID;
+@property (retain) NSNumber *userID;
 
 + (id)defaultSourceID;
 + (id)entityName;
@@ -42,7 +43,9 @@
 - (bool)isEqual:(id)arg1;
 - (id)itemID;
 - (void)setDeviceID:(id)arg1;
+- (void)setUserID:(id)arg1;
 - (id)sourceID;
+- (id)syncDeviceID;
 - (id)toPBCodable;
 - (id)userID;
 

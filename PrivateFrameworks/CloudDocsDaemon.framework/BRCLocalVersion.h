@@ -28,6 +28,7 @@
 - (id)isPackageObj;
 - (void)setUploadError:(id)arg1;
 - (void)setUploadedAssets:(id)arg1;
+- (bool)shouldRecreateUploadJobGivenDiffs:(unsigned long long)arg1;
 - (id)sizeObj;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (void)updateFromFSAtPath:(id)arg1 filenameOverride:(id)arg2;

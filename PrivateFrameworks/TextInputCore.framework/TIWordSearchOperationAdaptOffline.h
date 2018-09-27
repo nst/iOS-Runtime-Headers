@@ -14,9 +14,9 @@
 @property (nonatomic, copy) NSString *paragraph;
 @property (nonatomic) double timeStamp;
 
+- (void).cxx_destruct;
 - (id)adaptationContext;
 - (void)cancel;
-- (void)dealloc;
 - (id)initWithWordSearch:(id)arg1 paragraph:(id)arg2 adaptationContext:(id)arg3 timeStamp:(double)arg4;
 - (id)mecabraWrapper;
 - (id)paragraph;

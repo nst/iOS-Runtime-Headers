@@ -3,7 +3,7 @@
  */
 
 @interface MRTransportExternalDevice : MRExternalDevice <MRProtocolClientConnectionDelegate> {
-    unsigned int  _cachedServerDisconnectError;
+    long long  _cachedServerDisconnectError;
     MRExternalClientConnection * _clientConnection;
     unsigned int  _connectionOptions;
     long long  _connectionRecoveryBehavior;
@@ -37,6 +37,7 @@
     unsigned long long  _reconnectionAttemptCount;
     CURunLoopThread * _runLoopThread;
     NSObject<OS_dispatch_queue> * _serialQueue;
+    NSObject<OS_os_transaction> * _transaction;
     MRExternalDeviceTransport * _transport;
     bool  _usingSystemPairing;
     id /* block */  _volumeCallback;

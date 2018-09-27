@@ -22,6 +22,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long keyboardAppearance;
 @property (nonatomic) long long keyboardType;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
 @property (nonatomic) long long smartDashesType;

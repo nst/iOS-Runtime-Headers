@@ -7,13 +7,17 @@
     NSUserDefaults * _mediaPlaybackCoreDefaults;
     NSUserDefaults * _mobileIPodDefaults;
     NSUserDefaults * _nanoMusicSyncDefaults;
+    NSUserDefaults * _podcastsDefaults;
 }
 
 + (id)sharedSynchronizer;
 
 - (void).cxx_destruct;
 - (void)_createDefaultGreenTeaSettingsIfNecessary;
+- (id)_podcastsAppGroupPath;
+- (id)_podcastsUserDefaults;
 - (void)_reconcileGreenTeaSettingsIfNecessary;
+- (void)_syncPodcastDefaultsIfNecessary;
 - (void)beginObservingUpdates;
 - (void)dealloc;
 - (void)endObservingUpdates;

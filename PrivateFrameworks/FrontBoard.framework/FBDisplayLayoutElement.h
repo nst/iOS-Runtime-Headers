@@ -13,12 +13,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long displayType;
-@property (nonatomic, readonly, retain) FBSDisplayLayoutElement *element;
+@property (nonatomic, readonly) FBSDisplayLayoutElement *element;
 @property (nonatomic, readonly) Class elementClass;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)activate;
 - (void)activateWithBuilder:(id /* block */)arg1;
 - (void)deactivate;

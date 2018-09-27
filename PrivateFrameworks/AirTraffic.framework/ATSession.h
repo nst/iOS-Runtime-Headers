@@ -51,6 +51,7 @@
 + (id)allSessions;
 + (void)initialize;
 + (id)sessionsWithSessionTypeIdentifier:(id)arg1;
++ (id)sessionsWithSessionTypeIdentifier:(id)arg1 dataClass:(id)arg2;
 + (void)setSessionHost:(bool)arg1;
 + (bool)supportsSecureCoding;
 

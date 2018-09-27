@@ -6,7 +6,6 @@
     EKCalendarItem * _calendarItem;
     bool  _needsSave;
     bool  _onlyDisplayMapLocations;
-    _UINavigationControllerPalette * _palette;
     struct CGSize { 
         double width; 
         double height; 
@@ -82,6 +81,7 @@
 - (id)title;
 - (void)updateViewConstraints;
 - (void)useAsString:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 

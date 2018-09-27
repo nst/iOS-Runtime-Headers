@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) bool containsMultipleAssets;
 @property (nonatomic, readonly) NSIndexPath *firstItemIndexPath;
+@property (nonatomic, readonly) NSIndexPath *lastItemIndexPath;
 
 + (id)emptyDataSource;
 
@@ -22,6 +23,7 @@
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (bool)isEmpty;
+- (id)lastItemIndexPath;
 - (long long)numberOfAssetsWithMaximum:(long long)arg1;
 - (id)startingAssetReference;
 

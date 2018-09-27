@@ -6,8 +6,8 @@
     bool  _allowUntrustedConnections;
     <CRKGrowthFunction> * _backoffGrowthFunction;
     <CRKSessionDelegate> * _delegate;
+    CRKRemoteEndpoint * _endpoint;
     double  _failedConnectionRetryInterval;
-    NSString * _ipAddress;
     double  _lostBeaconTimeout;
     bool  _requiresBeacon;
     double  _willLoseBeaconWarningTimeout;
@@ -21,9 +21,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (readonly) CRKRemoteEndpoint *endpoint;
 @property (nonatomic) double failedConnectionRetryInterval;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, copy) NSString *ipAddress;
 @property (nonatomic) double lostBeaconTimeout;
 @property (nonatomic) bool requiresBeacon;
 @property (nonatomic, retain) CATStateMachine *stateMachine;
@@ -46,6 +46,7 @@
 - (void)delegateInvalidated;
 - (void)delegateWillLoseBeacon;
 - (void)didConnect;
+- (id)endpoint;
 - (void)enterBackoffCanConnect;
 - (void)enterNoNetwork;
 - (void)enterOutOfRange;
@@ -53,9 +54,8 @@
 - (double)failedConnectionRetryInterval;
 - (void)failedToConnect;
 - (void)foundBeacon;
-- (id)initWithIPAddress:(id)arg1;
+- (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
-- (id)ipAddress;
 - (void)localWiFiBecameAvailable;
 - (void)localWiFiBecameUnavailable;
 - (void)lostBeacon;

@@ -11,6 +11,7 @@
 @property (nonatomic, retain) TIMecabraEnvironment *mecabraEnvironment;
 @property (getter=isPartialCandidate, nonatomic) bool partialCandidate;
 
+- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithWordSearch:(id)arg1 mecabraCandidate:(void*)arg2 isPartial:(bool)arg3;

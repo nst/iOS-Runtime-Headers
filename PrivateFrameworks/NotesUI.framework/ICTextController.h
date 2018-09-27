@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *trackedToDoParagraphs;
 @property bool userChangedWritingDirection;
 
++ (id)attributedStringToPasteWithAdaptedParagraphStyles:(id)arg1 pasteRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 textStorage:(id)arg3;
 + (double)extraBulletWidthForNumberedListWithMaxItemNumber:(id)arg1 textFont:(struct UIFont { Class x1; }*)arg2;
 + (double)extraWidthNeededForStyle:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 attributedString:(id)arg3 textView:(struct UITextView { Class x1; }*)arg4;
 + (void)filterAttachmentsForPrintingInAttributedString:(id)arg1;

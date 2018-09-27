@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFInstallProfileRequest : CATTaskRequest {
+@interface DMFInstallProfileRequest : DMFTaskRequest {
     NSString * _managingProfileIdentifier;
     NSData * _profileData;
     unsigned long long  _style;
@@ -14,6 +14,9 @@
 @property (nonatomic) unsigned long long style;
 @property (nonatomic) unsigned long long type;
 
++ (bool)isPermittedOnSystemConnection;
++ (bool)isPermittedOnUserConnection;
++ (id)permittedPlatforms;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

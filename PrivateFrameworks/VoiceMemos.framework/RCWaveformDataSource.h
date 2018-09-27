@@ -4,10 +4,11 @@
 
 @interface RCWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
     RCMutableWaveform * _accumulatorWaveform;
+    double  _durationPerWaveformSlice;
     NSURL * _generatedWaveformOutputURL;
     bool  _hasSavedGeneratedWaveform;
     bool  _hasStartedLoading;
-    NSObject<OS_dispatch_queue> * _observerQueue;
+    RCMutableWaveform * _liveRecordingMergingWaveform;
     NSObject<OS_dispatch_queue> * _queue;
     RCWaveformGenerator * _waveformGenerator;
     NSHashTable * _weakObservers;
@@ -19,13 +20,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
+@property (nonatomic) double durationPerWaveformSlice;
 @property (nonatomic, readonly) bool finished;
 @property (nonatomic, readonly) NSURL *generatedWaveformOutputURL;
-@property (nonatomic, readonly) bool hasSavedGeneratedWaveform;
+@property bool hasSavedGeneratedWaveform;
 @property (nonatomic, readonly) bool hasStartedLoading;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) RCWaveform *liveRecordingMergingWaveform;
 @property (nonatomic, readonly) float loadingProgress;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerQueue;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct { double x1; double x2; } timeRangeToHighlight;
@@ -42,20 +44,25 @@
 - (bool)canceled;
 - (void)dealloc;
 - (double)duration;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
+- (double)durationPerWaveformSlice;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
 - (bool)finished;
 - (id)generatedWaveformOutputURL;
 - (bool)hasSavedGeneratedWaveform;
 - (bool)hasStartedLoading;
 - (id)initWithWaveformGenerator:(id)arg1 generatedWaveformOutputURL:(id)arg2;
+- (id)liveRecordingMergingWaveform;
 - (float)loadingProgress;
-- (id)observerQueue;
+- (void)mergeGeneratedWaveformIfNecessary;
 - (id)queue;
 - (void)removeObserver:(id)arg1;
 - (void)saveGeneratedWaveformIfNecessary;
 - (id)saveableWaveform;
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
+- (void)setDurationPerWaveformSlice:(double)arg1;
+- (void)setHasSavedGeneratedWaveform:(bool)arg1;
 - (bool)setPaused:(bool)arg1;
+- (bool)shouldMergeLiveWaveform;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })timeRangeToHighlight;
 - (void)updateAccumulatorWaveformSegmentsWithBlock:(id /* block */)arg1;

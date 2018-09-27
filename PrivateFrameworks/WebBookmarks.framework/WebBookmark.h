@@ -193,7 +193,7 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
-+ (bool)_sf_canCreateWebBookmarksFromDropSession:(id)arg1;
++ (unsigned long long)_sf_operationForDropSession:(id)arg1;
 + (void)_sf_webBookmarksFromDropSession:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (id)_sf_icon;

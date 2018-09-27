@@ -4,9 +4,9 @@
 
 @interface FLPreferencesController : NSObject <FLSpecifierTapHandlerDelegate> {
     bool  _activityIndicatorActive;
-    FLPreferencesFollowUpItemListViewController * _controller;
     id /* block */  _itemChangeObserver;
     PSListController * _listViewController;
+    FLPreferencesFollowUpItemListViewController * _spyglassController;
     NSSet * _spyglassWhitelist;
     <FLViewModel> * _topViewModel;
 }
@@ -19,7 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_extensionSupportingSpecifierWithName:(id)arg1;
+- (id)_deferredLoadSpecifierWithName:(id)arg1;
 - (void)_handleEmptyRefreshResult:(id)arg1;
 - (void)_presentSpecifier:(id)arg1;
 - (void)_refreshItemsAndPresentDetailForSpecifier:(id)arg1;

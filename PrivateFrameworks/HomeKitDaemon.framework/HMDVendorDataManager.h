@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDVendorDataManager : HMFObject <HMFTimerDelegate> {
+@interface HMDVendorDataManager : HMFObject <HMFLogging, HMFTimerDelegate> {
     long long  _dataVersion;
     NSObject<OS_dispatch_queue> * _databaseQueue;
     HMFTimer * _fetchTimer;
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSDictionary *vendorModelEntries;
 
 + (id)dbURL;
++ (id)logCategory;
 + (id)sharedVendorDataManager;
 
 - (void).cxx_destruct;

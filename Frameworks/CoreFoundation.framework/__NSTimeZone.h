@@ -16,6 +16,7 @@
 + (id)__new:(struct __CFString { }*)arg1 data:(struct __CFData { }*)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 
 - (id)abbreviationForDate:(id)arg1;
 - (id)data;

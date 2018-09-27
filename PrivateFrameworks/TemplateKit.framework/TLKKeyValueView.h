@@ -17,14 +17,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKImage *image;
+@property (nonatomic, retain) TLKImage *image;
 @property (retain) TLKImageView *imageView;
 @property bool isInMeasurementPass;
 @property (retain) TLKKeyValueGridView *leadingGrid;
-@property (retain) NSArray *leadingTuples;
+@property (nonatomic, retain) NSArray *leadingTuples;
 @property (readonly) Class superclass;
 @property (retain) TLKKeyValueGridView *trailingGrid;
-@property (retain) NSArray *trailingTuples;
+@property (nonatomic, retain) NSArray *trailingTuples;
 
 + (unsigned long long)visibleRowsInGrid:(id)arg1;
 
@@ -44,7 +44,6 @@
 - (id)leadingTuples;
 - (unsigned long long)numberOfVisibleRowsForLeadingGrid;
 - (unsigned long long)numberOfVisibleRowsForTrailingGrid;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setContainerView:(id)arg1;
 - (void)setImage:(id)arg1;

@@ -6,7 +6,7 @@
     NTKPrideController * _controller;
     UIView * _cornerView;
     UIColor * _currentComplicationColor;
-    NTKFaceLayoutContentProvider * _layoutContentProvider;
+    NTKDigitialUtilitarianFaceViewComplicationFactory * _faceViewComplicationFactory;
     long long  _previousDataMode;
     NSString * _previousWakeListing;
     bool  _tapPromptedVideoChange;
@@ -43,6 +43,7 @@
 - (id)_posterImageView;
 - (id)_posterImageViewForStyle:(unsigned long long)arg1;
 - (void)_prepareForEditing;
+- (void)_queueVideo:(id)arg1;
 - (double)_rightSideMarginForDigitalTimeHeroPosition;
 - (void)_selectDefaultListing;
 - (bool)_shouldFadeToTransitionView;
@@ -58,9 +59,10 @@
 - (bool)_wantsTimeTravelStatusModule;
 - (void)dealloc;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)setTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 customEditMode:(long long)arg4 slot:(id)arg5;
+- (bool)shouldChangeVariantForScreenWake;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

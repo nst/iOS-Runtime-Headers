@@ -4,6 +4,7 @@
 
 @interface PXUIScrollViewController : PXScrollViewController <PXUIScrollViewDelegate, UIScrollViewDelegate> {
     UIView * _contentView;
+    bool  _isScrollingToTop;
     bool  _isUpdatingContentBounds;
     _PXUIScrollView * _scrollView;
 }
@@ -11,6 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (setter=setScrollingToTop:, nonatomic) bool isScrollingToTop;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (readonly) Class superclass;
 
@@ -23,28 +25,36 @@
 - (void)applyScrollInfo:(id)arg1;
 - (id)contentCoordinateSpace;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isScrollingToTop;
 - (void)removeGestureRecognizer:(id)arg1;
 - (void)scrollRectToVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(bool)arg3;
 - (id)scrollView;
+- (void)scrollView:(id)arg1 willBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewActiveRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewConstrainedVisibleRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewContentBounds;
 - (struct CGSize { double x1; double x2; })scrollViewContentSize;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidLayoutSubviews:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewLayoutIfNeeded;
 - (struct CGSize { double x1; double x2; })scrollViewReferenceSize;
+- (bool)scrollViewShouldScrollToTop:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewVisibleRect;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)scrollViewWillLayoutSubviews:(id)arg1;
 - (void)setScrollViewContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScrollViewNeedsLayout;
+- (void)setScrollingToTop:(bool)arg1;
+- (void)setVisibleOrigin:(struct CGPoint { double x1; double x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssetExplorer.framework/AssetExplorer
 
+- (void)ae_ensureSubview:(id)arg1;
 - (void)ae_ensureSubview:(id)arg1;
 
 @end

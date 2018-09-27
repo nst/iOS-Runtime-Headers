@@ -3,30 +3,36 @@
  */
 
 @interface CKDAssetRequestPlanner : NSObject {
-    NSArray * _assetBatches;
     NSMutableDictionary * _assetBatchesByZoneID;
+    NSArray * _assetGetChunkKeysBatches;
+    NSArray * _assetRegisterAndPutBatches;
     unsigned int  _assetTokenRequestSizeLimit;
     NSArray * _assetTokenRequests;
-    NSMutableDictionary * _assetZonesByZoneID;
+    NSMutableDictionary * _assetZoneByKey;
     NSMutableOrderedSet * _items;
+    NSMutableDictionary * _rerefAssetBatchesByZoneID;
 }
 
-@property (nonatomic, retain) NSArray *assetBatches;
 @property (nonatomic, retain) NSMutableDictionary *assetBatchesByZoneID;
+@property (nonatomic, retain) NSArray *assetGetChunkKeysBatches;
+@property (nonatomic, retain) NSArray *assetRegisterAndPutBatches;
 @property (nonatomic, readonly) unsigned int assetTokenRequestSizeLimit;
 @property (nonatomic, retain) NSArray *assetTokenRequests;
-@property (nonatomic, retain) NSMutableDictionary *assetZonesByZoneID;
+@property (nonatomic, retain) NSMutableDictionary *assetZoneByKey;
 @property (nonatomic, retain) NSMutableOrderedSet *items;
+@property (nonatomic, retain) NSMutableDictionary *rerefAssetBatchesByZoneID;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)addMMCSItem:(id)arg1;
 - (void)addMMCSSectionItem:(id)arg1;
-- (id)assetBatches;
+- (void)addRereferencedMMCSItem:(id)arg1;
 - (id)assetBatchesByZoneID;
+- (id)assetGetChunkKeysBatches;
+- (id)assetRegisterAndPutBatches;
 - (unsigned int)assetTokenRequestSizeLimit;
 - (id)assetTokenRequests;
-- (id)assetZonesByZoneID;
+- (id)assetZoneByKey;
 - (id)description;
 - (void)failBatch:(id)arg1;
 - (bool)hasSuccessfulAssetTokenRequests;
@@ -34,11 +40,16 @@
 - (id)init;
 - (id)items;
 - (void)planAssetRequests;
+- (void)planGetChunkKeysBatches;
 - (void)planRegisterBatches;
-- (void)setAssetBatches:(id)arg1;
+- (id)rerefAssetBatchesByZoneID;
+- (void)resetAssetTokenRequests;
 - (void)setAssetBatchesByZoneID:(id)arg1;
+- (void)setAssetGetChunkKeysBatches:(id)arg1;
+- (void)setAssetRegisterAndPutBatches:(id)arg1;
 - (void)setAssetTokenRequests:(id)arg1;
-- (void)setAssetZonesByZoneID:(id)arg1;
+- (void)setAssetZoneByKey:(id)arg1;
 - (void)setItems:(id)arg1;
+- (void)setRerefAssetBatchesByZoneID:(id)arg1;
 
 @end

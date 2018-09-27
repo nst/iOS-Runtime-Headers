@@ -11,6 +11,7 @@
     UIControl<SBUIPasscodeNumberPadButton> * _downButton;
     SBUIButton * _emergencyCallButton;
     SBNumberPadWithDelegate * _numberPad;
+    UIColor * _reduceTransparencyButtonColor;
     bool  _showsBackspaceButton;
     bool  _showsCancelButton;
     bool  _showsEmergencyCallButton;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) UIControl<SBUIPasscodeNumberPadButton> *downButton;
 @property (nonatomic, readonly) SBUIButton *emergencyCallButton;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIColor *reduceTransparencyButtonColor;
 @property (nonatomic) bool showsBackspaceButton;
 @property (nonatomic) bool showsCancelButton;
 @property (nonatomic) bool showsEmergencyCallButton;
@@ -56,9 +58,11 @@
 - (id)downButton;
 - (id)emergencyCallButton;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (id)reduceTransparencyButtonColor;
 - (void)setAncillaryButtonOffset:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownButton:(id)arg1;
+- (void)setReduceTransparencyButtonColor:(id)arg1;
 - (void)setShowsBackspaceButton:(bool)arg1;
 - (void)setShowsCancelButton:(bool)arg1;
 - (void)setShowsEmergencyCallButton:(bool)arg1;

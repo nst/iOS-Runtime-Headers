@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) TIAssetAttributes *attributes;
 @property (nonatomic, readonly) NSURL *url;
 
+- (void).cxx_destruct;
 - (id)asset;
 - (id)attributes;
 - (void)dealloc;

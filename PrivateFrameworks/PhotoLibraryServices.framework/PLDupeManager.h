@@ -10,7 +10,6 @@
     bool  _isRebuilding;
     NSMutableArray * _normalAssetsObjectIDsToAnalyze;
     NSMutableSet * _normalInserts;
-    long long  _once;
     NSCountedSet * _pauseReasons;
     PLPhotoLibrary * _photoLibrary;
     double  _rebuildStartTime;

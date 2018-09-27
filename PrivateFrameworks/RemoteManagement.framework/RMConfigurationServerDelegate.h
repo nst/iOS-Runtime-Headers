@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (retain) <RMConfigurationXPCInterface> *target;
+@property (nonatomic, retain) <RMConfigurationXPCInterface> *target;
 
 - (void).cxx_destruct;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

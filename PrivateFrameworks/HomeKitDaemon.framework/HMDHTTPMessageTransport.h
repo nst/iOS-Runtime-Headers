@@ -57,7 +57,6 @@
 - (id)descriptionWithPointer:(bool)arg1;
 - (id)deviceForHTTPDevice:(id)arg1;
 - (void)handleServerEnabled:(bool)arg1;
-- (id)init;
 - (id)initWithAccountRegistry:(id)arg1;
 - (bool)isDeviceConnected:(id)arg1;
 - (bool)isServerEnabled;

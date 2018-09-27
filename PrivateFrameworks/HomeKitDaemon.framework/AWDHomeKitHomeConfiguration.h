@@ -12,8 +12,11 @@
         unsigned int numAppleMediaAccessories : 1; 
         unsigned int numAppleTVAccessories : 1; 
         unsigned int numBridgedAccessories : 1; 
+        unsigned int numBridgedTargetControllers : 1; 
         unsigned int numCameraAccessories : 1; 
         unsigned int numCertifiedAccessories : 1; 
+        unsigned int numCertifiedBridgedTargetControllers : 1; 
+        unsigned int numCertifiedTargetControllers : 1; 
         unsigned int numEventTriggers : 1; 
         unsigned int numHAPAccessories : 1; 
         unsigned int numMediaSystems : 1; 
@@ -21,6 +24,7 @@
         unsigned int numRooms : 1; 
         unsigned int numScenes : 1; 
         unsigned int numServices : 1; 
+        unsigned int numTargetControllers : 1; 
         unsigned int numTimerTriggers : 1; 
         unsigned int numTriggers : 1; 
         unsigned int numUsers : 1; 
@@ -38,8 +42,11 @@
     unsigned int  _numAppleMediaAccessories;
     unsigned int  _numAppleTVAccessories;
     unsigned int  _numBridgedAccessories;
+    unsigned int  _numBridgedTargetControllers;
     unsigned int  _numCameraAccessories;
     unsigned int  _numCertifiedAccessories;
+    unsigned int  _numCertifiedBridgedTargetControllers;
+    unsigned int  _numCertifiedTargetControllers;
     unsigned int  _numEventTriggers;
     unsigned int  _numHAPAccessories;
     unsigned int  _numMediaSystems;
@@ -47,6 +54,7 @@
     unsigned int  _numRooms;
     unsigned int  _numScenes;
     unsigned int  _numServices;
+    unsigned int  _numTargetControllers;
     unsigned int  _numTimerTriggers;
     unsigned int  _numTriggers;
     unsigned int  _numUsers;
@@ -64,8 +72,11 @@
 @property (nonatomic) bool hasNumAppleMediaAccessories;
 @property (nonatomic) bool hasNumAppleTVAccessories;
 @property (nonatomic) bool hasNumBridgedAccessories;
+@property (nonatomic) bool hasNumBridgedTargetControllers;
 @property (nonatomic) bool hasNumCameraAccessories;
 @property (nonatomic) bool hasNumCertifiedAccessories;
+@property (nonatomic) bool hasNumCertifiedBridgedTargetControllers;
+@property (nonatomic) bool hasNumCertifiedTargetControllers;
 @property (nonatomic) bool hasNumEventTriggers;
 @property (nonatomic) bool hasNumHAPAccessories;
 @property (nonatomic) bool hasNumMediaSystems;
@@ -73,6 +84,7 @@
 @property (nonatomic) bool hasNumRooms;
 @property (nonatomic) bool hasNumScenes;
 @property (nonatomic) bool hasNumServices;
+@property (nonatomic) bool hasNumTargetControllers;
 @property (nonatomic) bool hasNumTimerTriggers;
 @property (nonatomic) bool hasNumTriggers;
 @property (nonatomic) bool hasNumUsers;
@@ -87,8 +99,11 @@
 @property (nonatomic) unsigned int numAppleMediaAccessories;
 @property (nonatomic) unsigned int numAppleTVAccessories;
 @property (nonatomic) unsigned int numBridgedAccessories;
+@property (nonatomic) unsigned int numBridgedTargetControllers;
 @property (nonatomic) unsigned int numCameraAccessories;
 @property (nonatomic) unsigned int numCertifiedAccessories;
+@property (nonatomic) unsigned int numCertifiedBridgedTargetControllers;
+@property (nonatomic) unsigned int numCertifiedTargetControllers;
 @property (nonatomic) unsigned int numEventTriggers;
 @property (nonatomic) unsigned int numHAPAccessories;
 @property (nonatomic) unsigned int numMediaSystems;
@@ -96,6 +111,7 @@
 @property (nonatomic) unsigned int numRooms;
 @property (nonatomic) unsigned int numScenes;
 @property (nonatomic) unsigned int numServices;
+@property (nonatomic) unsigned int numTargetControllers;
 @property (nonatomic) unsigned int numTimerTriggers;
 @property (nonatomic) unsigned int numTriggers;
 @property (nonatomic) unsigned int numUsers;
@@ -123,8 +139,11 @@
 - (bool)hasNumAppleMediaAccessories;
 - (bool)hasNumAppleTVAccessories;
 - (bool)hasNumBridgedAccessories;
+- (bool)hasNumBridgedTargetControllers;
 - (bool)hasNumCameraAccessories;
 - (bool)hasNumCertifiedAccessories;
+- (bool)hasNumCertifiedBridgedTargetControllers;
+- (bool)hasNumCertifiedTargetControllers;
 - (bool)hasNumEventTriggers;
 - (bool)hasNumHAPAccessories;
 - (bool)hasNumMediaSystems;
@@ -132,6 +151,7 @@
 - (bool)hasNumRooms;
 - (bool)hasNumScenes;
 - (bool)hasNumServices;
+- (bool)hasNumTargetControllers;
 - (bool)hasNumTimerTriggers;
 - (bool)hasNumTriggers;
 - (bool)hasNumUsers;
@@ -149,8 +169,11 @@
 - (unsigned int)numAppleMediaAccessories;
 - (unsigned int)numAppleTVAccessories;
 - (unsigned int)numBridgedAccessories;
+- (unsigned int)numBridgedTargetControllers;
 - (unsigned int)numCameraAccessories;
 - (unsigned int)numCertifiedAccessories;
+- (unsigned int)numCertifiedBridgedTargetControllers;
+- (unsigned int)numCertifiedTargetControllers;
 - (unsigned int)numEventTriggers;
 - (unsigned int)numHAPAccessories;
 - (unsigned int)numMediaSystems;
@@ -158,6 +181,7 @@
 - (unsigned int)numRooms;
 - (unsigned int)numScenes;
 - (unsigned int)numServices;
+- (unsigned int)numTargetControllers;
 - (unsigned int)numTimerTriggers;
 - (unsigned int)numTriggers;
 - (unsigned int)numUsers;
@@ -174,8 +198,11 @@
 - (void)setHasNumAppleMediaAccessories:(bool)arg1;
 - (void)setHasNumAppleTVAccessories:(bool)arg1;
 - (void)setHasNumBridgedAccessories:(bool)arg1;
+- (void)setHasNumBridgedTargetControllers:(bool)arg1;
 - (void)setHasNumCameraAccessories:(bool)arg1;
 - (void)setHasNumCertifiedAccessories:(bool)arg1;
+- (void)setHasNumCertifiedBridgedTargetControllers:(bool)arg1;
+- (void)setHasNumCertifiedTargetControllers:(bool)arg1;
 - (void)setHasNumEventTriggers:(bool)arg1;
 - (void)setHasNumHAPAccessories:(bool)arg1;
 - (void)setHasNumMediaSystems:(bool)arg1;
@@ -183,6 +210,7 @@
 - (void)setHasNumRooms:(bool)arg1;
 - (void)setHasNumScenes:(bool)arg1;
 - (void)setHasNumServices:(bool)arg1;
+- (void)setHasNumTargetControllers:(bool)arg1;
 - (void)setHasNumTimerTriggers:(bool)arg1;
 - (void)setHasNumTriggers:(bool)arg1;
 - (void)setHasNumUsers:(bool)arg1;
@@ -197,8 +225,11 @@
 - (void)setNumAppleMediaAccessories:(unsigned int)arg1;
 - (void)setNumAppleTVAccessories:(unsigned int)arg1;
 - (void)setNumBridgedAccessories:(unsigned int)arg1;
+- (void)setNumBridgedTargetControllers:(unsigned int)arg1;
 - (void)setNumCameraAccessories:(unsigned int)arg1;
 - (void)setNumCertifiedAccessories:(unsigned int)arg1;
+- (void)setNumCertifiedBridgedTargetControllers:(unsigned int)arg1;
+- (void)setNumCertifiedTargetControllers:(unsigned int)arg1;
 - (void)setNumEventTriggers:(unsigned int)arg1;
 - (void)setNumHAPAccessories:(unsigned int)arg1;
 - (void)setNumMediaSystems:(unsigned int)arg1;
@@ -206,6 +237,7 @@
 - (void)setNumRooms:(unsigned int)arg1;
 - (void)setNumScenes:(unsigned int)arg1;
 - (void)setNumServices:(unsigned int)arg1;
+- (void)setNumTargetControllers:(unsigned int)arg1;
 - (void)setNumTimerTriggers:(unsigned int)arg1;
 - (void)setNumTriggers:(unsigned int)arg1;
 - (void)setNumUsers:(unsigned int)arg1;

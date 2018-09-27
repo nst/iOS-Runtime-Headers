@@ -61,7 +61,7 @@
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfTopImageInStackForStackFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (bool)isValidBurstWithAssets:(id)arg1;
 + (void)removeFavoriteStatus:(id)arg1;
-+ (void)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(bool)arg3 allowDissolve:(bool)arg4;
++ (id)revalidateAvalancheAssets:(id)arg1 inLibrary:(id)arg2 deleteNonPicks:(bool)arg3 allowDissolve:(bool)arg4;
 + (bool)shouldHideAvalanchesFromPhotoStream;
 + (bool)shouldOnlyShowAvalanchePicks;
 

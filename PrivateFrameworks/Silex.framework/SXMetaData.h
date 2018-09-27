@@ -7,6 +7,7 @@
 @property (nonatomic, readonly) SXJSONDictionary *campaignData;
 @property (nonatomic, readonly) NSString *canonicalURL;
 @property (nonatomic, readonly) NSString *documentVersion;
+@property (nonatomic, readonly) SXFeedNavigationAppearance *feedNavigationAppearance;
 @property (nonatomic, readonly) bool showNewsSubscribe;
 @property (nonatomic, readonly) bool suppressMoreFromPublisher;
 @property (nonatomic, readonly) bool suppressRelatedArticles;

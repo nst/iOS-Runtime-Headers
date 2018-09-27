@@ -7,7 +7,8 @@
     SKPaymentQueueClient * _client;
     bool  _isRefreshing;
     NSMutableArray * _localTransactions;
-    struct __CFArray { } * _observers;
+    NSMutableArray * _observerReferences;
+    NSObject<OS_dispatch_queue> * _observerReferencesAccessQueue;
     SKXPCConnection * _requestConnection;
     SKXPCConnection * _responseConnection;
     bool  _restoreFinishedDuringRefresh;
@@ -15,6 +16,7 @@
     NSMutableArray * _transactions;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

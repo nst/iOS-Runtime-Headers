@@ -40,6 +40,7 @@
 - (id)init;
 - (id)initWithApplicationWorkspace:(id)arg1 callProviderManager:(id)arg2 idsContactPropertyResolver:(id)arg3 profileConnection:(id)arg4 contactStore:(id)arg5 schedulerProvider:(id)arg6 highLatencySchedulerProvider:(id)arg7 capabilities:(id)arg8 defaultUserActionFetcher:(id)arg9;
 - (id)initWithIDSAvailablilityProvider:(id)arg1 schedulerProvider:(id)arg2 capabilities:(id)arg3 defaultUserActionFetcher:(id)arg4;
+- (id)nts_lazyContactStore;
 - (id)profileConnection;
 - (id)schedulerProvider;
 - (void)setApplicationWorkspace:(id)arg1;

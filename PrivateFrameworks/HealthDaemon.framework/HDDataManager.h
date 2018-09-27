@@ -4,12 +4,17 @@
 
 @interface HDDataManager : NSObject <HDDiagnosticObject> {
     NSNumber * _lastAnchor;
+    bool  _needsSynchronousNotification;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     NSMutableDictionary * _observersByDataType;
     unsigned long long  _openTransactions;
     NSMutableDictionary * _pendingObjectsBySampleType;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _synchronousObserverLock;
+    NSMutableDictionary * _synchronousObserversBySampleType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,14 +32,19 @@
 - (void)_notificationQueue_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)_notifyObserversWithAddedObjectsBySampleType:(id)arg1 lastAnchor:(id)arg2;
+- (void)_notifySynchronousObserversForDeletedObjectTypes:(id)arg1 anchor:(id)arg2;
+- (void)_notifySynchronousObserversIfPossible;
 - (id)_observersForAllTypes;
 - (id)_observersForDataType:(id)arg1;
 - (id)_queue_observersAllTypesCreateIfNil:(bool)arg1;
 - (id)_queue_observersForDataType:(id)arg1 createIfNil:(bool)arg2;
 - (id)_queue_observersForKey:(id)arg1 createIfNil:(bool)arg2;
 - (void)_shouldNotifyForDeletedSamplesOfTypes:(id)arg1 anchor:(id)arg2;
+- (bool)_synchronousObserverLock_hasSynchronousObserverForSampleType:(id)arg1;
+- (id)_synchronousObserverLock_synchronousObserverSetForSampleType:(id)arg1;
 - (void)addObserver:(id)arg1 forDataType:(id)arg2;
 - (void)addObserverForAllTypes:(id)arg1;
+- (void)addSynchronousObserver:(id)arg1 forSampleType:(id)arg2;
 - (void)closeObserverTransaction;
 - (bool)containsDataObject:(id)arg1;
 - (bool)deleteDataObjects:(id)arg1 restrictedSourceEntities:(id)arg2 failIfNotFound:(bool)arg3 recursiveDeleteAuthorizationBlock:(id /* block */)arg4 error:(id*)arg5;
@@ -56,6 +66,7 @@
 - (id)profile;
 - (void)removeObserver:(id)arg1 forDataType:(id)arg2;
 - (void)removeObserverForAllTypes:(id)arg1;
+- (void)removeSynchronousObserver:(id)arg1 forSampleType:(id)arg2;
 - (void)setBackgroundObserverFrequency:(id)arg1 forDataType:(id)arg2 frequency:(long long)arg3 completion:(id /* block */)arg4;
 - (void)setProfile:(id)arg1;
 - (void)shouldNotifyForDataObjects:(id)arg1 provenance:(id)arg2 database:(id)arg3 anchor:(id)arg4;

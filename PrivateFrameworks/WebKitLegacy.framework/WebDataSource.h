@@ -22,8 +22,6 @@
 @property (nonatomic, readonly) WebArchive *webArchive;
 @property (nonatomic, readonly) WebFrame *webFrame;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 + (id)_repTypesAllowImageTypeOmission:(bool)arg1;
 + (Class)_representationClassForMIMEType:(id)arg1 allowingPlugins:(bool)arg2;
 + (void)initialize;
@@ -32,7 +30,7 @@
 - (void)_addSubframeArchives:(id)arg1;
 - (id)_documentFragmentWithArchive:(id)arg1;
 - (id)_documentFragmentWithImageResource:(id)arg1;
-- (struct DocumentLoader { int (**x1)(); struct Frame {} *x2; unsigned int x3; int (**x4)(); bool x5; struct Ref<WebCore::CachedResourceLoader, WTF::DumbPtrTraits<WebCore::CachedResourceLoader> > { struct CachedResourceLoader {} *x_6_1_1; } x6; struct CachedResourceHandle<WebCore::CachedRawResource> { struct CachedResource {} *x_7_1_1; } x7; struct HashMap<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> >, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > > { struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > >, WTF::IntHash<unsigned long>, WTF::HashMap<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> >, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long> > { struct KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_8_1_1; } x8; }*)_documentLoader;
+- (struct DocumentLoader { int (**x1)(); struct Frame {} *x2; unsigned int x3; int (**x4)(); int (**x5)(); bool x6; struct Ref<WebCore::CachedResourceLoader, WTF::DumbPtrTraits<WebCore::CachedResourceLoader> > { struct CachedResourceLoader {} *x_7_1_1; } x7; struct CachedResourceHandle<WebCore::CachedRawResource> { struct CachedResource {} *x_8_1_1; } x8; struct HashMap<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> >, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > > { struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > >, WTF::IntHash<unsigned long>, WTF::HashMap<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> >, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long> > { struct KeyValuePair<unsigned long, WTF::RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_9_1_1; } x9; }*)_documentLoader;
 - (void)_finishedLoading;
 - (id)_imageElementWithImageResource:(id)arg1;
 - (id)_initWithDocumentLoader:(struct Ref<WebDocumentLoaderMac, WTF::DumbPtrTraits<WebDocumentLoaderMac> > { struct WebDocumentLoaderMac {} *x1; }*)arg1;
@@ -70,13 +68,5 @@
 - (id)unreachableURL;
 - (id)webArchive;
 - (id)webFrame;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

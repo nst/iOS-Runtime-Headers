@@ -12,6 +12,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)noDestinationStateFromStateManager:(id)arg1;
+
 - (void)addCommuteDestinationSuggestion:(id)arg1;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
 - (unsigned long long)desiredCommuteSessionState;

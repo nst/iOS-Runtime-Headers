@@ -7,8 +7,10 @@
     NSString * _actionString;
     bool  _allowCellularOverride;
     bool  _anyScanInProgress;
+    bool  _autoInstallArmedAndReady;
     SUAutoInstallOperation * _autoInstallOperation;
     bool  _bypassTermsAndConditions;
+    bool  _clientIsBuddy;
     bool  _connectedToPowerSource;
     <PSUISoftwareUpdateManagerDelegate> * _delegate;
     SUDownload * _download;
@@ -34,7 +36,9 @@
 @property (nonatomic, readonly) SUManagerClient *SUManager;
 @property (nonatomic, readonly) NSString *actionString;
 @property (nonatomic) bool allowCellularOverride;
+@property (nonatomic) bool autoInstallArmedAndReady;
 @property (nonatomic) bool bypassTermsAndConditions;
+@property (nonatomic) bool clientIsBuddy;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSUISoftwareUpdateManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -65,6 +69,8 @@
 - (void)_updateDownloadProgressWithDownload:(id)arg1 stateFromDownload:(int*)arg2;
 - (id)actionString;
 - (bool)allowCellularOverride;
+- (bool)autoInstallArmedAndReady;
+- (bool)automaticUpdateEnabled:(bool*)arg1;
 - (bool)bypassTermsAndConditions;
 - (bool)canCancelAutoInstall;
 - (void)cancelAutoInstall;
@@ -79,6 +85,7 @@
 - (void)client:(id)arg1 installDidStart:(id)arg2;
 - (void)client:(id)arg1 scanDidCompleteWithNewUpdateAvailable:(id)arg2 error:(id)arg3;
 - (void)client:(id)arg1 scanRequestDidStartForOptions:(id)arg2;
+- (bool)clientIsBuddy;
 - (void)dealloc;
 - (id)delegate;
 - (id)download;
@@ -108,7 +115,10 @@
 - (id)serverFlowStyle;
 - (void)setAllowCellularOverride:(bool)arg1;
 - (void)setAutoInstall:(id /* block */)arg1;
+- (void)setAutoInstallArmedAndReady:(bool)arg1;
+- (void)setAutomaticUpdateEnabled:(bool)arg1;
 - (void)setBypassTermsAndConditions:(bool)arg1;
+- (void)setClientIsBuddy:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownload:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;

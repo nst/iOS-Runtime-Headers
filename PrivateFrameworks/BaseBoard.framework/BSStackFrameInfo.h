@@ -11,14 +11,14 @@
 }
 
 @property (nonatomic, readonly) unsigned long long address;
-@property (nonatomic, readonly, retain) NSString *className;
-@property (nonatomic, readonly, retain) NSString *executableName;
-@property (nonatomic, readonly, retain) NSString *executablePath;
-@property (nonatomic, readonly, retain) NSString *functionName;
+@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, readonly) NSString *executableName;
+@property (nonatomic, readonly) NSString *executablePath;
+@property (nonatomic, readonly) NSString *functionName;
 
+- (void).cxx_destruct;
 - (unsigned long long)address;
 - (id)className;
-- (void)dealloc;
 - (id)description;
 - (id)executableName;
 - (id)executablePath;

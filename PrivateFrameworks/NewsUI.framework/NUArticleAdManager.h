@@ -7,6 +7,7 @@
     <NUAdProvider> * _adProvider;
     FCArticle * _article;
     <NUDevice> * _device;
+    <NUAdLayoutOptionsFactory> * _layoutOptionsFactory;
     <NUAdSettings> * _settings;
 }
 
@@ -17,6 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <NUDevice> *device;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <NUAdLayoutOptionsFactory> *layoutOptionsFactory;
 @property (nonatomic, readonly) <NUAdSettings> *settings;
 @property (readonly) Class superclass;
 
@@ -32,7 +34,8 @@
 - (id)article;
 - (id)contextProvidersForKeyPath:(id)arg1;
 - (id)device;
-- (id)initWithArticle:(id)arg1 adProvider:(id)arg2 adMetadataFactory:(id)arg3 settings:(id)arg4 device:(id)arg5;
+- (id)initWithArticle:(id)arg1 adProvider:(id)arg2 adMetadataFactory:(id)arg3 settings:(id)arg4 device:(id)arg5 layoutOptionsFactory:(id)arg6;
+- (id)layoutOptionsFactory;
 - (id)settings;
 
 @end

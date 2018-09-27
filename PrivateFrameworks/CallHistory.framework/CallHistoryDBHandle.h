@@ -56,8 +56,6 @@
 - (void)resetTimers;
 - (bool)save:(id*)arg1;
 - (bool)saveTimers:(id /* block */)arg1;
-- (void)setHandleTypeIn:(id)arg1 using:(id)arg2 havingVersion:(long long)arg3;
-- (void)setServiceProviderIn:(id)arg1 using:(id)arg2 havingVersion:(long long)arg3;
 - (id)timerIncoming;
 - (id)timerLastReset;
 - (id)timerLifetime;

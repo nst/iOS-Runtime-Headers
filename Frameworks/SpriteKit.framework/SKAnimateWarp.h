@@ -8,6 +8,7 @@
 
 + (id)animateWithWarps:(id)arg1 times:(id)arg2;
 + (id)animateWithWarps:(id)arg1 times:(id)arg2 restore:(bool)arg3;
++ (bool)supportsSecureCoding;
 + (id)warpTo:(id)arg1 duration:(double)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -8,6 +8,7 @@
     NSMutableArray * _classificationResults;
     NSMutableArray * _faceResults;
     NSMutableArray * _fineActionResults;
+    VCPFrameAnalysisStats * _frameStats;
     VCPCNNData * _input;
     NSMutableArray * _interestingnessResults;
     struct { 
@@ -36,12 +37,12 @@
 - (int)extractRequiredClassificationInfoFrom:(id)arg1 toArray:(id)arg2;
 - (int)extractRequiredFaceInfoFrom:(id)arg1 toArray:(id)arg2;
 - (int)extractRequiredInfoFrom:(id)arg1 toArray:(id)arg2;
-- (int)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (int)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 fpsRate:(float)arg2;
 - (void)generateActivityDescriptor;
-- (id)init;
+- (id)initWithFrameStats:(id)arg1;
 - (void)normalizeActivityDescriptor;
 - (int)preProcessQualityResults:(id)arg1 interestingnessResults:(id)arg2 obstructionResults:(id)arg3 classificationResults:(id)arg4 fineActionResults:(id)arg5 faceResults:(id)arg6 sceneSwitchFrequency:(float)arg7;
-- (int)prepareActivityStats:(id)arg1;
+- (int)prepareActivityStats;
 - (void)resetActivityStatsAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)results;
 - (float)scaleBasedOnFaceForTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;

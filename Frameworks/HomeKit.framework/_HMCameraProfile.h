@@ -20,9 +20,9 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 - (void)_createControls:(id)arg1;
 - (void)_registerNotificationHandlers;
-- (void)configureWithAccessory:(id)arg1 home:(id)arg2 context:(id)arg3;
 - (id)controls;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

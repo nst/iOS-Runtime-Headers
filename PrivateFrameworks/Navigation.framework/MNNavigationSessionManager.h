@@ -26,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)_routeManager;
+- (void)_setIsConnectedToCarplay:(bool)arg1;
 - (id)_traceManager;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
 - (void)audioOutputSettingsManager:(id)arg1 didUpdateCurrentSetting:(id)arg2;

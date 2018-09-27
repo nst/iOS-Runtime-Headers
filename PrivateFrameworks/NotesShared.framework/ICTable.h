@@ -36,11 +36,11 @@
 // Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
 
 - (id)attributedStringWithNSTextTablesForColumns:(id)arg1 rows:(id)arg2;
+- (id)attributedStringWithNSTextTablesForColumns:(id)arg1 rows:(id)arg2 forPrinting:(bool)arg3;
 - (id)documentForCellAtColumnIndex:(unsigned long long)arg1 rowIndex:(unsigned long long)arg2;
 - (void)enumerateTextStoragesForColumnIndexes:(id)arg1 rowIndexes:(id)arg2 undoTarget:(id)arg3 undoManager:(id)arg4 usingBlock:(id /* block */)arg5;
 - (id)mergeableStringForColumnID:(id)arg1 rowID:(id)arg2 createIfNeeded:(bool)arg3;
-- (id)p_attributedStringForCell:(id)arg1 inTable:(id)arg2 atColumn:(unsigned long long)arg3 row:(unsigned long long)arg4;
-- (void)restyleAllCells;
+- (id)p_attributedStringForCell:(id)arg1 inTable:(id)arg2 atColumn:(unsigned long long)arg3 row:(unsigned long long)arg4 shouldFilter:(bool)arg5;
 - (id)textStorageForCellAtColumnID:(id)arg1 rowID:(id)arg2 undoTarget:(id)arg3 undoManager:(id)arg4;
 - (id)textStorageForCellAtColumnIndex:(unsigned long long)arg1 rowIndex:(unsigned long long)arg2 undoTarget:(id)arg3 undoManager:(id)arg4;
 - (id)textStorageForColumn:(id)arg1;

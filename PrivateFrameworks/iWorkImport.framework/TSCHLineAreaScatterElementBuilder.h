@@ -7,13 +7,13 @@
     NSObject<OS_dispatch_queue> * mPathCacheQueue;
 }
 
-- (unsigned long long)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect {}**)arg4 outNewClipRects:(struct CGRect {}**)arg5 outNewElementPaths:(const struct CGPath {}***)arg6 outSelectionKnobLocations:(id*)arg7;
+- (void).cxx_destruct;
+- (unsigned long long)countOfElementsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementBounds:(struct CGRect {}**)arg4 outNewClipRects:(struct CGRect {}**)arg5 outNewElementPaths:(const struct CGPath {}***)arg6 outSelectionKnobLocations:(id*)arg7 forHighlightPath:(bool)arg8;
 - (unsigned long long)countOfErrorBarsInSeries:(id)arg1 forGroups:(id)arg2 forAxisID:(id)arg3 forBodyLayout:(id)arg4 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5 outNewErrorBarDescriptors:(struct { /* ? */ }**)arg6;
 - (unsigned long long)countOfHitCheckRegionsInSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewElementPaths:(const struct CGPath {}***)arg4 outSelectionKnobLocations:(id*)arg5;
 - (unsigned long long)countOfLabelsForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outNewTransforms:(struct CGAffineTransform {}**)arg4 outNewElementSizes:(struct CGSize {}**)arg5 outNewClipRect:(struct CGRect {}**)arg6 outNewStrings:(id*)arg7;
 - (unsigned long long)countOfPointsForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outElementSize:(struct CGSize { double x1; double x2; }*)arg4 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5 outUnitSymbolPath:(const struct CGPath {}**)arg6 outNewTransformArray:(struct CGAffineTransform {}**)arg7 outNewGroupIndexArray:(unsigned long long**)arg8;
 - (float)dataPointDimension:(id)arg1 symbolType:(int)arg2 stroke:(id)arg3;
-- (void)dealloc;
 - (long long)hitCheckPoint:(struct CGPoint { double x1; double x2; })arg1 inSeries:(id)arg2 withBodyLayout:(id)arg3;
 - (id)init;
 - (struct CGPoint { double x1; double x2; })labelPointForPosition:(unsigned int)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 stringSize:(struct CGSize { double x1; double x2; })arg3 symbolType:(int)arg4;
@@ -38,11 +38,11 @@
 - (struct CGPath { }*)p_newPlusPath:(struct CGPoint { double x1; double x2; })arg1 width:(double)arg2 pathLocation:(long long)arg3 stroke:(id)arg4 context:(struct CGContext { }*)arg5;
 - (struct CGPath { }*)p_newSquarePath:(struct CGPoint { double x1; double x2; })arg1 width:(double)arg2 pathLocation:(long long)arg3 stroke:(id)arg4 context:(struct CGContext { }*)arg5;
 - (struct CGPath { }*)p_newTrianglePath:(struct CGPoint { double x1; double x2; })arg1 width:(double)arg2 pathLocation:(long long)arg3 stroke:(id)arg4;
-- (struct CGPath { }*)p_newUncachedUnitPathForSymbol:(int)arg1 symbolSize:(double)arg2 stroke:(id)arg3 forHitCheck:(bool)arg4;
 - (struct CGPath { }*)p_newUnitPathForSymbol:(int)arg1 symbolSize:(double)arg2 stroke:(id)arg3 forHitCheck:(bool)arg4;
 - (struct CGPath { }*)p_newYieldPath:(struct CGPoint { double x1; double x2; })arg1 width:(double)arg2 pathLocation:(long long)arg3 stroke:(id)arg4;
 - (id)p_symbolKnobLocationsForSeries:(id)arg1 forGroups:(id)arg2 inBodyLayout:(id)arg3;
 - (void)p_trendlineInfoForSeries:(id)arg1 forBodyLayout:(id)arg2 outVertical:(bool*)arg3 outOffsetInBody:(double*)arg4;
+- (id)p_uncachedUnitPathForSymbol:(int)arg1 symbolSize:(double)arg2 stroke:(id)arg3 forHitCheck:(bool)arg4;
 - (bool)symbolTypeIsClosed:(int)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingLabelInBody:(id)arg1 forSeries:(unsigned long long)arg2 forGroup:(unsigned long long)arg3 outElementSize:(struct CGSize { double x1; double x2; }*)arg4 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingSeriesElementForSeries:(id)arg1 forGroups:(id)arg2 forBodyLayout:(id)arg3 outElementSize:(struct CGSize { double x1; double x2; }*)arg4 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5 outNewElementPath:(const struct CGPath {}**)arg6;

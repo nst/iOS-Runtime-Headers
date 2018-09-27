@@ -6,7 +6,6 @@
     struct __IOSurface { } * _IOSurfaceRef;
     NUPixelFormat * _format;
     NUPixelFormat * _internalFormat;
-    NSString * _name;
     struct { 
         long long width; 
         long long height; 

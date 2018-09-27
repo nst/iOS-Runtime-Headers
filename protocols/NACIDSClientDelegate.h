@@ -8,6 +8,7 @@
 - (void)client:(NACIDSClient *)arg1 EULimit:(float)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
 - (void)client:(NACIDSClient *)arg1 audioRoutes:(NSArray *)arg2 didChangeForCategory:(NSString *)arg3;
 - (void)client:(NACIDSClient *)arg1 hapticIntensityDidChange:(float)arg2;
+- (void)client:(NACIDSClient *)arg1 hapticStateDidChange:(long long)arg2;
 - (void)client:(NACIDSClient *)arg1 mutedState:(bool)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
 - (void)client:(NACIDSClient *)arg1 prominentHapticStateDidChange:(bool)arg2;
 - (void)client:(NACIDSClient *)arg1 routeObservationCancelledForCategory:(NSString *)arg2;

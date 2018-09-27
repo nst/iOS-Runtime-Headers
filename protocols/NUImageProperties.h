@@ -12,6 +12,7 @@
 - (NSString *)fileUTI;
 - (NSDictionary *)metadata;
 - (long long)orientation;
+- (<NUPortraitEffectsMatteProperties> *)portraitEffectsMatteProperties;
 - (<NURAWImageProperties> *)rawProperties;
 - (struct { long long x1; long long x2; })size;
 

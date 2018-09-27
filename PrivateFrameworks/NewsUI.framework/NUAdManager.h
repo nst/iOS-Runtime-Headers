@@ -18,12 +18,12 @@
 
 - (void).cxx_destruct;
 - (id)adContextValueForKeyPath:(id)arg1;
-- (id)adForIdentifier:(id)arg1 contextProviders:(id)arg2 constructor:(id)arg3;
+- (void)adForIdentifier:(id)arg1 contextProviders:(id)arg2 constructor:(id)arg3 layoutOptions:(id)arg4 completion:(id /* block */)arg5;
 - (id)adStore;
 - (id)adWithIdentifier:(id)arg1;
 - (void)bannerViewDidLoad:(id)arg1;
 - (void)bannerViewDidUnload:(id)arg1;
-- (void)bannerViewForIdentifier:(id)arg1 contextProviders:(id)arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)bannerViewForIdentifier:(id)arg1 contextProviders:(id)arg2 layoutOptions:(id)arg3 withCompletionBlock:(id /* block */)arg4;
 - (id)configurationProvider;
 - (id)contextForContextProviders:(id)arg1 keyedContextProviders:(id)arg2 constructor:(id)arg3;
 - (id)defaultArticleDefinition;
@@ -35,8 +35,8 @@
 - (id)inArticleContextConstructor;
 - (id)initWithConfigurationProvider:(id)arg1 device:(id)arg2;
 - (id)interstitialContextConstructor;
-- (void)interstitialViewForContextProviders:(id)arg1 contextProvidersWithKeys:(id)arg2 withCompletionBlock:(id /* block */)arg3;
-- (void)interstitialViewForContextProviders:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)interstitialViewForContextProviders:(id)arg1 contextProvidersWithKeys:(id)arg2 layoutOptions:(id)arg3 withCompletionBlock:(id /* block */)arg4;
+- (void)interstitialViewForContextProviders:(id)arg1 layoutOptions:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)prerollBodyDefinition;
 - (id)prerollContextConstructor;
 - (void)prerollForContextProviders:(id)arg1 withCompletionBlock:(id /* block */)arg2;

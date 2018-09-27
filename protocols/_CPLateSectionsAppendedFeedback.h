@@ -7,7 +7,6 @@
 
 - (void)addSections:(_CPResultSectionForFeedback *)arg1;
 - (void)clearSections;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

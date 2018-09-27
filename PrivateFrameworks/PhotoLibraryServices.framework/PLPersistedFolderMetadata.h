@@ -46,7 +46,6 @@
 - (id)init;
 - (id)initWithPLManagedFolder:(id)arg1;
 - (id)initWithPersistedDataAtURL:(id)arg1;
-- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 childUUIDs:(id)arg5;
 - (id)insertFolderFromDataInManagedObjectContext:(id)arg1;
 - (bool)isInTrash;
 - (bool)isPinned;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUTrivialVideoAdProviderFactory : NSObject <SXVideoAdProviderFactory>
+@interface NUTrivialVideoAdProviderFactory : NSObject <SVVideoAdProviderFactory>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

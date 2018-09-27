@@ -18,6 +18,8 @@
 @property (nonatomic) bool synchronizable;
 @property (nonatomic) long long version;
 
++ (id)new;
+
 - (void).cxx_destruct;
 - (void)_clearDirtyProperties;
 - (void)_markPropertyDirty:(id)arg1;
@@ -33,6 +35,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
+- (id)init;
 - (id)initWithPersistentRef:(const struct __CFData { }*)arg1;
 - (id)initWithPersistentRef:(const struct __CFData { }*)arg1 properties:(id)arg2;
 - (id)metadata;

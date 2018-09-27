@@ -2,18 +2,21 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPaymentMethodList : PBCodable <NSCopying> {
+@interface _INPBPaymentMethodList : PBCodable <NSCopying, NSSecureCoding, _INPBPaymentMethodList> {
     _INPBCondition * _condition;
-    NSMutableArray * _paymentMethods;
-    PBUnknownFields * _unknownFields;
+    struct { }  _has;
+    NSArray * _paymentMethods;
 }
 
 @property (nonatomic, retain) _INPBCondition *condition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasCondition;
-@property (nonatomic, retain) NSMutableArray *paymentMethods;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *paymentMethods;
+@property (nonatomic, readonly) unsigned long long paymentMethodsCount;
+@property (readonly) Class superclass;
 
-+ (id)options;
 + (Class)paymentMethodsType;
 
 - (void).cxx_destruct;
@@ -21,19 +24,16 @@
 - (void)clearPaymentMethods;
 - (id)condition;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCondition;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)paymentMethods;
 - (id)paymentMethodsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)paymentMethodsCount;
 - (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setPaymentMethods:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

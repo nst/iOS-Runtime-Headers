@@ -6,6 +6,7 @@
     int  _HDRMode;
     float * _ISOs;
     int  _SISMode;
+    bool  _autoRedEyeReductionEnabled;
     unsigned int  _bracketImageCount;
     int  _bracketType;
     bool  _bravoDualImageDeliveryEnabled;
@@ -16,6 +17,7 @@
     bool  _depthDataDeliveryEnabled;
     bool  _depthDataFiltered;
     bool  _embedsDepthDataInImage;
+    bool  _embedsPortraitEffectsMatteInImage;
     struct { long long x1; int x2; unsigned int x3; long long x4; } * _exposureDurations;
     float * _exposureTargetBiases;
     int  _flashMode;
@@ -31,6 +33,7 @@
     int  _outputOrientation;
     unsigned int  _outputWidth;
     int  _payloadType;
+    bool  _portraitEffectsMatteDeliveryEnabled;
     bool  _previewEnabled;
     unsigned int  _previewFormat;
     unsigned int  _previewHeight;
@@ -41,10 +44,15 @@
     bool  _providesOriginalImage;
     int  _rawOutputFileType;
     unsigned int  _rawOutputFormat;
+    bool  _rawThumbnailEnabled;
+    unsigned int  _rawThumbnailFormat;
+    unsigned int  _rawThumbnailHeight;
+    unsigned int  _rawThumbnailWidth;
     float  _scaleFactor;
     long long  _settingsID;
     int  _settingsProvider;
     unsigned int  _shutterSound;
+    float  _simulatedAperture;
     bool  _squareCropEnabled;
     double  _stillImageCaptureAbsoluteStartTime;
     long long  _stillImageCaptureStartTime;
@@ -68,6 +76,7 @@
 @property (nonatomic) int HDRMode;
 @property (nonatomic, readonly) float*ISOs;
 @property (nonatomic) int SISMode;
+@property (nonatomic) bool autoRedEyeReductionEnabled;
 @property (nonatomic, readonly) unsigned int bracketImageCount;
 @property (nonatomic, readonly) int bracketType;
 @property (nonatomic) bool bravoDualImageDeliveryEnabled;
@@ -78,6 +87,7 @@
 @property (nonatomic) bool depthDataDeliveryEnabled;
 @property (nonatomic) bool depthDataFiltered;
 @property (nonatomic) bool embedsDepthDataInImage;
+@property (nonatomic) bool embedsPortraitEffectsMatteInImage;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; }*exposureDurations;
 @property (nonatomic, readonly) float*exposureTargetBiases;
 @property (nonatomic) int flashMode;
@@ -88,12 +98,14 @@
 @property (nonatomic, copy) NSArray *originalImageFilters;
 @property (nonatomic) int outputFileType;
 @property (nonatomic) unsigned int outputFormat;
+@property (getter=isOutputFormatCompressed, nonatomic, readonly) bool outputFormatCompressed;
 @property (nonatomic) unsigned int outputHeight;
 @property (nonatomic) bool outputMirroring;
 @property (nonatomic) int outputOrientation;
 @property (nonatomic, readonly) NSDictionary *outputPixelBufferAttributes;
 @property (nonatomic) unsigned int outputWidth;
 @property (nonatomic) int payloadType;
+@property (nonatomic) bool portraitEffectsMatteDeliveryEnabled;
 @property (nonatomic) bool previewEnabled;
 @property (nonatomic) unsigned int previewFormat;
 @property (nonatomic) unsigned int previewHeight;
@@ -105,10 +117,15 @@
 @property (nonatomic) bool providesOriginalImage;
 @property (nonatomic) int rawOutputFileType;
 @property (nonatomic) unsigned int rawOutputFormat;
+@property (nonatomic) bool rawThumbnailEnabled;
+@property (nonatomic) unsigned int rawThumbnailFormat;
+@property (nonatomic) unsigned int rawThumbnailHeight;
+@property (nonatomic) unsigned int rawThumbnailWidth;
 @property (nonatomic) float scaleFactor;
 @property (nonatomic) long long settingsID;
 @property (nonatomic) int settingsProvider;
 @property (nonatomic) unsigned int shutterSound;
+@property (nonatomic) float simulatedAperture;
 @property (nonatomic) bool squareCropEnabled;
 @property (nonatomic) double stillImageCaptureAbsoluteStartTime;
 @property (nonatomic) long long stillImageCaptureStartTime;
@@ -129,6 +146,7 @@
 - (float*)ISOs;
 - (int)SISMode;
 - (void)_teardownBracketStorage;
+- (bool)autoRedEyeReductionEnabled;
 - (unsigned int)bracketImageCount;
 - (int)bracketType;
 - (bool)bravoDualImageDeliveryEnabled;
@@ -141,6 +159,7 @@
 - (bool)depthDataFiltered;
 - (id)description;
 - (bool)embedsDepthDataInImage;
+- (bool)embedsPortraitEffectsMatteInImage;
 - (void)encodeWithCoder:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; }*)exposureDurations;
 - (float*)exposureTargetBiases;
@@ -150,6 +169,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isClientInitiatedPrepareSettings;
+- (bool)isOutputFormatCompressed;
 - (bool)isUserInitiatedRequestSettings;
 - (bool)lensStabilizationDuringBracketEnabled;
 - (id)metadata;
@@ -163,6 +183,7 @@
 - (id)outputPixelBufferAttributes;
 - (unsigned int)outputWidth;
 - (int)payloadType;
+- (bool)portraitEffectsMatteDeliveryEnabled;
 - (bool)previewEnabled;
 - (unsigned int)previewFormat;
 - (unsigned int)previewHeight;
@@ -174,7 +195,12 @@
 - (bool)providesOriginalImage;
 - (int)rawOutputFileType;
 - (unsigned int)rawOutputFormat;
+- (bool)rawThumbnailEnabled;
+- (unsigned int)rawThumbnailFormat;
+- (unsigned int)rawThumbnailHeight;
+- (unsigned int)rawThumbnailWidth;
 - (float)scaleFactor;
+- (void)setAutoRedEyeReductionEnabled:(bool)arg1;
 - (void)setBracketType:(int)arg1 imageCount:(unsigned int)arg2;
 - (void)setBravoDualImageDeliveryEnabled:(bool)arg1;
 - (void)setBravoImageFusionMode:(int)arg1;
@@ -184,6 +210,7 @@
 - (void)setDepthDataDeliveryEnabled:(bool)arg1;
 - (void)setDepthDataFiltered:(bool)arg1;
 - (void)setEmbedsDepthDataInImage:(bool)arg1;
+- (void)setEmbedsPortraitEffectsMatteInImage:(bool)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setHDRMode:(int)arg1;
 - (void)setLensStabilizationDuringBracketEnabled:(bool)arg1;
@@ -197,6 +224,7 @@
 - (void)setOutputOrientation:(int)arg1;
 - (void)setOutputWidth:(unsigned int)arg1;
 - (void)setPayloadType:(int)arg1;
+- (void)setPortraitEffectsMatteDeliveryEnabled:(bool)arg1;
 - (void)setPreviewEnabled:(bool)arg1;
 - (void)setPreviewFormat:(unsigned int)arg1;
 - (void)setPreviewHeight:(unsigned int)arg1;
@@ -207,11 +235,16 @@
 - (void)setProvidesOriginalImage:(bool)arg1;
 - (void)setRawOutputFileType:(int)arg1;
 - (void)setRawOutputFormat:(unsigned int)arg1;
+- (void)setRawThumbnailEnabled:(bool)arg1;
+- (void)setRawThumbnailFormat:(unsigned int)arg1;
+- (void)setRawThumbnailHeight:(unsigned int)arg1;
+- (void)setRawThumbnailWidth:(unsigned int)arg1;
 - (void)setSISMode:(int)arg1;
 - (void)setScaleFactor:(float)arg1;
 - (void)setSettingsID:(long long)arg1;
 - (void)setSettingsProvider:(int)arg1;
 - (void)setShutterSound:(unsigned int)arg1;
+- (void)setSimulatedAperture:(float)arg1;
 - (void)setSquareCropEnabled:(bool)arg1;
 - (void)setStillImageCaptureAbsoluteStartTime:(double)arg1;
 - (void)setStillImageCaptureStartTime:(long long)arg1;
@@ -228,6 +261,7 @@
 - (long long)settingsID;
 - (int)settingsProvider;
 - (unsigned int)shutterSound;
+- (float)simulatedAperture;
 - (bool)squareCropEnabled;
 - (double)stillImageCaptureAbsoluteStartTime;
 - (long long)stillImageCaptureStartTime;

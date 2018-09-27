@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) long long lastAckTime;
 @property (nonatomic, readonly) unsigned long long lastAnchor;
 @property (nonatomic, readonly) long long launchTimeHysteresis;
+@property (nonatomic, readonly, copy) HKObjectType *objectType;
 @property (nonatomic, readonly) unsigned long long updateFrequency;
 
 - (void).cxx_destruct;
@@ -26,6 +27,7 @@
 - (long long)lastAckTime;
 - (unsigned long long)lastAnchor;
 - (long long)launchTimeHysteresis;
+- (id)objectType;
 - (void)setLastAckTime:(long long)arg1;
 - (void)setLastAnchor:(unsigned long long)arg1;
 - (void)setLaunchTimeHysteresis:(long long)arg1;

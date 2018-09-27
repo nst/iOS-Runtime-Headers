@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *details;
 @property (readonly) unsigned long long hash;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly, copy) NSString *key;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (readonly) Class superclass;
@@ -25,6 +26,7 @@
 - (bool)defaultValue;
 - (id)description;
 - (id)details;
+- (bool)isHidden;
 - (id)key;
 - (id)name;
 

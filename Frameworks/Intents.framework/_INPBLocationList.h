@@ -2,26 +2,28 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBLocationList : PBCodable <NSCopying> {
+@interface _INPBLocationList : PBCodable <NSCopying, NSSecureCoding, _INPBLocationList> {
     _INPBCondition * _condition;
-    NSMutableArray * _locations;
-    PBUnknownFields * _unknownFields;
+    struct { }  _has;
+    NSArray * _locations;
 }
 
 @property (nonatomic, retain) _INPBCondition *condition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasCondition;
-@property (nonatomic, retain) NSMutableArray *locations;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *locations;
+@property (nonatomic, readonly) unsigned long long locationsCount;
+@property (readonly) Class superclass;
 
 + (Class)locationType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addLocation:(id)arg1;
 - (void)clearLocations;
 - (id)condition;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCondition;
 - (unsigned long long)hash;
@@ -29,11 +31,9 @@
 - (id)locationAtIndex:(unsigned long long)arg1;
 - (id)locations;
 - (unsigned long long)locationsCount;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setLocations:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

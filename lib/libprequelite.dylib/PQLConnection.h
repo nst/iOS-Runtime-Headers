@@ -31,6 +31,7 @@
     NSMutableArray * _stmtCacheCleanupQueue;
     NSObject<OS_dispatch_source> * _stmtCacheSource;
     int  _suspendCaching;
+    NSObject<OS_dispatch_queue> * _targetQueue;
     bool  _traced;
     NSURL * _url;
     bool  _useBatching;
@@ -82,6 +83,7 @@
 - (void)_resetState;
 - (void)_vacuumIfNeeded;
 - (int)_vacuumMode;
+- (void)assertOnQueue;
 - (id /* block */)autoRollbackHandler;
 - (long long)autovacuumableSpaceInBytes;
 - (bool)backupToURL:(id)arg1 progress:(id /* block */)arg2;
@@ -149,9 +151,12 @@
 - (unsigned long long)statementCacheMaxCount;
 - (unsigned long long)synchronousMode;
 - (id)url;
+- (void)useBatchingOnTargetQueue:(id)arg1 delay:(double)arg2 changeCount:(int)arg3;
+- (void)useBatchingOnTargetQueue:(id)arg1 withPolicyHandler:(id /* block */)arg2;
 - (void)useBatchingWithDelay:(double)arg1 changeCount:(int)arg2;
 - (void)useBatchingWithPolicyHandler:(id /* block */)arg1;
 - (void)useSerialQueue;
+- (void)useSerialQueueWithTarget:(id)arg1;
 - (id)userVersion;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon

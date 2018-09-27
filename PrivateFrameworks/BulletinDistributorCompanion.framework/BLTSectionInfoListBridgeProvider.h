@@ -9,12 +9,14 @@
         long long __sig; 
         BOOL __opaque[56]; 
     }  _lock;
+    BLTSectionConfiguration * _sectionConfiguration;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTSectionInfoListProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) BLTSectionConfiguration *sectionConfiguration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,9 +25,11 @@
 - (void)_reloadUpdatedOverridesWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)enableNotifications:(bool)arg1 sectionID:(id)arg2 mirror:(bool)arg3;
-- (id)init;
+- (id)initWithSectionConfiguration:(id)arg1;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (id)sectionConfiguration;
 - (void)setDelegate:(id)arg1;
+- (void)setNotificationsLevel:(int)arg1 sectionID:(id)arg2 forceCustom:(bool)arg3;
+- (void)setSectionConfiguration:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSPointerArray : NSObject <NSCoding, NSCopying, NSFastEnumeration>
+@interface NSPointerArray : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding>
 
 @property unsigned long long count;
 @property (readonly, copy) NSPointerFunctions *pointerFunctions;
@@ -15,6 +15,7 @@
 + (id)pointerArrayWithStrongObjects;
 + (id)pointerArrayWithWeakObjects;
 + (id)strongObjectsPointerArray;
++ (bool)supportsSecureCoding;
 + (id)weakObjectsPointerArray;
 
 - (void)addPointer:(void*)arg1;
@@ -47,6 +48,12 @@
 // Image: /System/Library/PrivateFrameworks/BookDataStore.framework/BookDataStore
 
 - (void)bds_chainSuccessAndErrorCompletionSelectorCallsForSelector:(SEL)arg1 successSoFar:(bool)arg2 errorSoFar:(id)arg3 completion:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (void)hmf_addObject:(id)arg1;
+- (bool)hmf_removeObject:(id)arg1;
+- (bool)hmf_removePointer:(void*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 

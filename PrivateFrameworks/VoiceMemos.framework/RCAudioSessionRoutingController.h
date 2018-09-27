@@ -43,13 +43,8 @@
 - (unsigned long long)_RCAudioRouteMaskForRoutes:(id)arg1;
 - (id)_activeAudioRouteUsageStatisticName;
 - (id)_activeAudioSessionRoutingAssertion;
-- (void)_applyUserDefaultAudioRoute;
-- (void)_applyUserDefaultAudioRouteAllowingDefaultOverride:(bool)arg1;
 - (unsigned long long)_availableRoutesMask;
 - (bool)_isRoutingToAirPlayDestination;
-- (void)_pickAudioDeviceRouteType:(long long)arg1;
-- (void)_pickHandsetAudioDeviceRoute;
-- (void)_pickSpeakerAudioDeviceRoute;
 - (bool)_routeDefaultBoolForKey:(id)arg1 nonVoiceMemoAppValue:(bool)arg2;
 - (void)_setShouldRouteToSpeakerUserDefaultValue:(bool)arg1;
 - (void)_setWeakSessionRoutingAssertions:(struct __CFArray { }*)arg1;
@@ -78,6 +73,7 @@
 - (id)mpRoutingController;
 - (void)removeRouteAssertion:(id)arg1;
 - (void)routingController:(id)arg1 didChangeAirPlayMirrorDestinationToActive:(bool)arg2;
+- (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;
 - (void)routingController:(id)arg1 willChangeCategoryActiveStateToActive:(bool)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)selectedRouteName;
@@ -87,7 +83,6 @@
 - (void)setUseVoiceMemoSettings:(bool)arg1;
 - (bool)shouldInitializeRouteUsingUserDefaults;
 - (void)showAvailableRoutesInWindow:(id)arg1;
-- (void)toggleSpeaker;
 - (bool)useVoiceMemoSettings;
 - (struct __CFArray { }*)weakSessionRoutingAssertions;
 

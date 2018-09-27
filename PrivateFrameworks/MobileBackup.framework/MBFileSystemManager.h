@@ -30,7 +30,7 @@
 - (id)fileSystemType;
 - (id)init;
 - (id)listAllSnapshotsWithError:(id*)arg1;
-- (bool)mountSnapshot:(id)arg1 withError:(id*)arg2;
+- (bool)mountSnapshot:(id)arg1 atMountPoint:(id)arg2 withError:(id*)arg3;
 - (bool)removeAllMobileBackupInternalSnapshots:(id*)arg1;
 - (bool)removeAllMobileBackupSnapshots:(id*)arg1;
 - (unsigned long long)removeRestorePrefetchCache;
@@ -41,7 +41,7 @@
 - (bool)snapshotFilesystemWithSnapshotName:(id)arg1 withError:(id*)arg2;
 - (bool)supportsLocalSnapshots;
 - (bool)supportsSparseFiles;
-- (bool)unmountCurrentSnapshotAndRemove:(bool)arg1 withError:(id*)arg2;
 - (bool)unmountCurrentSnapshotAndRenameToInternalArchive:(id*)arg1;
+- (bool)unmountCurrentSnapshotFromMountPoint:(id)arg1 andRemoveIt:(bool)arg2 withError:(id*)arg3;
 
 @end

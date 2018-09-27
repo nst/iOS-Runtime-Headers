@@ -34,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (id)_activityNameForSubscription:(id)arg1 anchor:(id)arg2;
+- (id)_appSubscriptionsForDataTypeCode:(long long)arg1 lastAppLaunchTimes:(id)arg2 error:(id*)arg3;
 - (void)_applicationsInstalled:(id)arg1;
 - (void)_launchTimerFired:(id)arg1 code:(id)arg2 anchor:(id)arg3;
 - (void)_queue_ackForBundleID:(id)arg1 dataCode:(long long)arg2 anchor:(id)arg3 ackTime:(id)arg4;

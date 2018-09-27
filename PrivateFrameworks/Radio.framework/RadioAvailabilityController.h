@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (bool)_calculateRadioRestricted;
 - (id)_currentStoreFrontIdentifier;
+- (void)_currentStoreFrontIdentifierWithCompletion:(id /* block */)arg1;
 - (void)_reloadRadioBagAvailabilityWithCompletionHandler:(id /* block */)arg1;
 - (void)_reloadRadioRestriction;
 - (void)_updateRadioAvailabilityAllowingNotifications:(bool)arg1;

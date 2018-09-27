@@ -9,6 +9,9 @@
     int  _fd;
     struct gzFile_s { unsigned int x1; char *x2; long long x3; } * _file;
     _SYStreamGuts * _internal;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _internalLock;
     long long  _level;
     id /* block */  _onBytesAvailable;
     id /* block */  _onClose;

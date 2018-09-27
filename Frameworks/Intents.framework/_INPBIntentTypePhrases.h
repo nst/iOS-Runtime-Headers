@@ -2,24 +2,25 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBIntentTypePhrases : PBCodable <NSCopying> {
+@interface _INPBIntentTypePhrases : PBCodable <NSCopying, NSSecureCoding, _INPBIntentTypePhrases> {
+    struct { }  _has;
     _INPBIntentType * _intentType;
-    NSMutableArray * _intentVocabularyExamples;
-    PBUnknownFields * _unknownFields;
+    NSArray * _intentVocabularyExamples;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasIntentType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentType *intentType;
-@property (nonatomic, retain) NSMutableArray *intentVocabularyExamples;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (Class)intentVocabularyExamplesType;
+@property (nonatomic, copy) NSArray *intentVocabularyExamples;
+@property (nonatomic, readonly) unsigned long long intentVocabularyExamplesCount;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addIntentVocabularyExamples:(id)arg1;
 - (void)clearIntentVocabularyExamples;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasIntentType;
 - (unsigned long long)hash;
@@ -28,11 +29,9 @@
 - (id)intentVocabularyExamplesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)intentVocabularyExamplesCount;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setIntentType:(id)arg1;
 - (void)setIntentVocabularyExamples:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

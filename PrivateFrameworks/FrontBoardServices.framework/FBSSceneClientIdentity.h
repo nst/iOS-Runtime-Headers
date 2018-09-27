@@ -17,9 +17,9 @@
 + (id)identityForBundleID:(id)arg1;
 + (id)localIdentity;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

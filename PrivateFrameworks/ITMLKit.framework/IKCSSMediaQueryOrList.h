@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSMediaQueryOrList : IKCSSMediaQueryList {
-    NSMutableArray * _queryList;
+    IKMutableArray * _queryList;
 }
 
 - (void).cxx_destruct;

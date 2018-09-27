@@ -19,7 +19,7 @@
 }
 
 @property (nonatomic, copy) id /* block */ callEventHandler;
-@property CXCallObserver *callKitObserver;
+@property (retain) CXCallObserver *callKitObserver;
 @property (retain) NSSet *currentCalls;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

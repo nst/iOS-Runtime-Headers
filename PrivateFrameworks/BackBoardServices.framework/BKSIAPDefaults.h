@@ -4,9 +4,9 @@
 
 @interface BKSIAPDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic, readonly, retain) NSString *videoTVOutReservedForIPodOut;
-@property (nonatomic, readonly, retain) NSString *videoTVOutReservedForRemoteUI;
-@property (nonatomic, readonly, retain) NSString *videoTVOutSignal;
+@property (nonatomic, readonly) NSString *videoTVOutReservedForIPodOut;
+@property (nonatomic, readonly) NSString *videoTVOutReservedForRemoteUI;
+@property (nonatomic, readonly) NSString *videoTVOutSignal;
 @property (nonatomic, retain) NSString *videoTVOutSystem;
 
 - (void)_bindAndRegisterDefaults;

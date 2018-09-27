@@ -9,9 +9,9 @@
     CKTextBalloonView * _textBalloonView;
 }
 
-@property unsigned long long messageServiceType;
-@property unsigned long long messageStatus;
-@property (retain) NSString *messageText;
+@property (nonatomic) unsigned long long messageServiceType;
+@property (nonatomic) unsigned long long messageStatus;
+@property (nonatomic, retain) NSString *messageText;
 @property (retain) CKTextBalloonView *textBalloonView;
 
 - (void).cxx_destruct;
@@ -19,7 +19,6 @@
 - (unsigned long long)messageServiceType;
 - (unsigned long long)messageStatus;
 - (id)messageText;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setMessageServiceType:(unsigned long long)arg1;
 - (void)setMessageStatus:(unsigned long long)arg1;

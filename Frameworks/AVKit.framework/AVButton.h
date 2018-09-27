@@ -3,6 +3,7 @@
  */
 
 @interface AVButton : UIButton {
+    bool  _clampsHitRectInsetsWhenContainedInScrollableView;
     bool  _collapsed;
     bool  _disablesHighlightWhenLongPressed;
     struct CGSize { 
@@ -39,6 +40,7 @@
     bool  _wasLongPressed;
 }
 
+@property (nonatomic) bool clampsHitRectInsetsWhenContainedInScrollableView;
 @property (getter=isCollapsed, nonatomic) bool collapsed;
 @property (getter=isCollapsedOrExcluded, nonatomic, readonly) bool collapsedOrExcluded;
 @property (nonatomic) bool disablesHighlightWhenLongPressed;
@@ -75,8 +77,10 @@
 - (struct CGSize { double x1; double x2; })_preferredLayoutSize;
 - (void)_resetTrackedState;
 - (void)_updateImageIfNeeded;
+- (void)_updateIsHiddenAndAlpha;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
+- (bool)clampsHitRectInsetsWhenContainedInScrollableView;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)disablesHighlightWhenLongPressed;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -105,6 +109,7 @@
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)previousHorizontalPositionOfLongPress;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setClampsHitRectInsetsWhenContainedInScrollableView:(bool)arg1;
 - (void)setCollapsed:(bool)arg1;
 - (void)setDisablesHighlightWhenLongPressed:(bool)arg1;
 - (void)setEnabled:(bool)arg1;

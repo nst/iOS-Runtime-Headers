@@ -6,11 +6,6 @@
 @required
 
 - (_SFPBActionItem *)actionItem;
-- (bool)hasActionItem;
-- (bool)hasImage;
-- (bool)hasIsEnabled;
-- (bool)hasOfferIdentifier;
-- (bool)hasSublabel;
 - (_SFPBImage *)image;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

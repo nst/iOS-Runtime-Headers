@@ -5,6 +5,7 @@
 @interface PKPassSnapshotter : NSObject {
     NSMutableArray * _currentSnapshotKeys;
     PKPassLibrary * _passLibrary;
+    NSObject<OS_dispatch_queue> * _queue;
     double  _scale;
     NSObject<OS_dispatch_semaphore> * _snapshotSem;
     UIWindow * _snapshotWindow;

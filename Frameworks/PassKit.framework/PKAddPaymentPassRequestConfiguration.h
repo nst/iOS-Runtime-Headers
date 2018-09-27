@@ -11,6 +11,7 @@
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountSuffix;
     bool  _requiresFelicaSecureElement;
+    long long  _style;
 }
 
 @property (nonatomic, copy) NSArray *cardDetails;
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountSuffix;
 @property (nonatomic) bool requiresFelicaSecureElement;
+@property (nonatomic) long long style;
 
 + (bool)supportsSecureCoding;
 
@@ -45,5 +47,7 @@
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountSuffix:(id)arg1;
 - (void)setRequiresFelicaSecureElement:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

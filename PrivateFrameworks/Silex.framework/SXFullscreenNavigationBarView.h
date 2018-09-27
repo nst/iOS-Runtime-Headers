@@ -24,6 +24,7 @@
 - (void)doneButtonPressed:(id)arg1;
 - (bool)expanded;
 - (id)init;
+- (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
 - (void)setExpanded:(bool)arg1 animated:(bool)arg2;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

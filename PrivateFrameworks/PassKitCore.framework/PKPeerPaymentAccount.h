@@ -12,6 +12,7 @@
     bool  _identityVerificationRequired;
     NSDate * _lastUpdated;
     NSDecimalNumber * _maximumBalance;
+    long long  _pendingPaymentCount;
     double  _proactiveFetchPeriod;
     unsigned long long  _stage;
     unsigned long long  _state;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) NSDecimalNumber *maximumBalance;
 @property (nonatomic, readonly) NSDictionary *maximumTransferAmounts;
 @property (nonatomic, readonly) NSDictionary *minimumTransferAmounts;
+@property (nonatomic) long long pendingPaymentCount;
 @property (nonatomic) double proactiveFetchPeriod;
 @property (nonatomic) unsigned long long stage;
 @property (nonatomic) unsigned long long state;
@@ -49,6 +51,7 @@
 - (id)associatedPassTypeIdentifier;
 - (id)associatedPassURL;
 - (id)associatedPassUniqueID;
+- (id)cardBalancePromotionFeatureDescriptor;
 - (id)countryCode;
 - (id)currentBalance;
 - (id)defaultSuggestions;
@@ -67,6 +70,7 @@
 - (id)maximumBalance;
 - (id)maximumTransferAmounts;
 - (id)minimumTransferAmounts;
+- (long long)pendingPaymentCount;
 - (double)proactiveFetchPeriod;
 - (id)requestFromUserFeatureDescriptor;
 - (id)sendToUserFeatureDescriptor;
@@ -79,6 +83,7 @@
 - (void)setIdentityVerificationRequired:(bool)arg1;
 - (void)setLastUpdated:(id)arg1;
 - (void)setMaximumBalance:(id)arg1;
+- (void)setPendingPaymentCount:(long long)arg1;
 - (void)setProactiveFetchPeriod:(double)arg1;
 - (void)setStage:(unsigned long long)arg1;
 - (void)setState:(unsigned long long)arg1;
@@ -89,6 +94,7 @@
 - (unsigned long long)stage;
 - (unsigned long long)state;
 - (id)supportedFeatureDescriptors;
+- (bool)supportsCardBalancePromotion;
 - (bool)supportsLoadFromCard;
 - (bool)supportsRequestFromUser;
 - (bool)supportsSendToUser;

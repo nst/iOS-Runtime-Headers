@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMailComposeController : UIViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, MFComposeActivityContinuationOperationDelegate, MFComposeHeaderViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFComposeSubjectViewDelegate, MFComposeTypeFactoryDelegate, MFGroupDetailViewControllerDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate, MFSecureMIMECompositionManagerDelegate, NSUserActivityDelegate, QLPreviewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    MFLANContinuationAgent * _LANContinuationAgent;
+@interface MFMailComposeController : UIViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, MFComposeActivityHandoffOperationDelegate, MFComposeHeaderViewDelegate, MFComposeImageSizeViewDelegate, MFComposeRecipientTextViewDelegate, MFComposeSubjectViewDelegate, MFComposeTypeFactoryDelegate, MFGroupDetailViewControllerDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate, MFSecureMIMECompositionManagerDelegate, NSUserActivityDelegate, QLPreviewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
+    MFLANHandoffAgent * _LANHandoffAgent;
     MFMailAccountProxyGenerator * _accountProxyGenerator;
     NSString * _addressForMissingIdentity;
     MFAddressPickerReformatter * _addressPickerReformatter;
@@ -12,9 +12,11 @@
     MFModernComposeRecipientAtom * _atomPresentingCard;
     bool  _attachmentToMarkupIsLoaded;
     id  _autorotationDelegate;
-    id  _autosaveIdentifier;
+    unsigned int  _autosaveCount;
+    NSString * _autosaveIdentifier;
     bool  _autosaveIsValid;
     MFLock * _autosaveLock;
+    NSObject<OS_dispatch_queue> * _autosaveQueue;
     NSTimer * _autosaveTimer;
     NSDate * _autosavedDate;
     NSArray * _bccAddresses;
@@ -29,8 +31,6 @@
     CNContactViewController * _contactViewController;
     MFFuture * _content;
     bool  _contentVisible;
-    MFComposeActivityContinuationOperation * _continuationOperation;
-    UIProgressView * _continuationProgressView;
     bool  _delayToShowMarkupHasPassed;
     <MFMailComposeViewControllerDelegate> * _delegate;
     MFOutgoingMessageDelivery * _delivery;
@@ -43,6 +43,8 @@
     NSDictionary * _errorsByRecipient;
     UIKeyCommand * _escapeKeyCommand;
     unsigned int  _fromAddressPickerWasVisible;
+    MFComposeActivityHandoffOperation * _handoffOperation;
+    UIProgressView * _handoffProgressView;
     unsigned int  _hasViewAppeared;
     unsigned int  _hosted;
     NSObject<OS_dispatch_group> * _imageScalingGroup;
@@ -106,8 +108,9 @@
 @property (nonatomic, copy) NSString *addressForMissingIdentity;
 @property (nonatomic, retain) MFModernComposeRecipientAtom *atomPresentingCard;
 @property (nonatomic) bool attachmentToMarkupIsLoaded;
-@property (nonatomic, retain) <NSCoding> *autosaveIdentifier;
+@property (nonatomic, retain) NSString *autosaveIdentifier;
 @property (nonatomic) bool autosaveIsValid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *autosaveQueue;
 @property (nonatomic, readonly) NSDate *autosavedDate;
 @property (nonatomic, retain) NSDictionary *certificatesByRecipient;
 @property (nonatomic, retain) CNContactViewController *contactViewController;
@@ -167,8 +170,9 @@
 - (void)_close;
 - (void)_composeViewDidDraw:(id)arg1;
 - (id)_contactViewControllerForRecipient:(id)arg1;
-- (id)_copyMessageDataForActivityContinuation;
-- (void)_createAndAddContinuationProgressViewIfNecessary;
+- (id)_copyMessageDataForActivityHandoff;
+- (id)_copyMessagePlainTextForDonation;
+- (void)_createAndAddHandoffProgressViewIfNecessary;
 - (id)_createSignatureController;
 - (id)_defaultAccount;
 - (unsigned long long)_defaultAtomPresentationOptions;
@@ -193,7 +197,7 @@
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (bool)_hasEncryptionIdentityError;
 - (bool)_hasRecipients;
-- (void)_hideContinuationProgressViewAnimated:(bool)arg1;
+- (void)_hideHandoffProgressViewAnimated:(bool)arg1;
 - (bool)_isActiveComposeController;
 - (bool)_isPopoverOrActionSheetOrAlertVisible;
 - (bool)_isReplyOrForward;
@@ -208,6 +212,7 @@
 - (id)_messageForAutosave;
 - (id)_messageForDraft;
 - (id)_messageForRemoteDelivery;
+- (id)_messageToDonate;
 - (id)_messageWithCompositionSpecification:(id)arg1 useSuspendInfo:(bool)arg2 endingEditing:(bool)arg3;
 - (id)_missingIdentityErrorWithFormat:(id)arg1 title:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_optimalRectForPresentingPopoverInBodyField;
@@ -278,10 +283,10 @@
 - (bool)_wantsEncryption;
 - (void)_willPresentDocumentPicker;
 - (id)accountProxyGenerator;
-- (void)activityContinuationOperation:(id)arg1 didFailWithError:(id)arg2;
-- (void)activityContinuationOperation:(id)arg1 didFinishReceivingData:(id)arg2;
-- (void)activityContinuationOperation:(id)arg1 didFinishSendingDataWithResult:(unsigned long long)arg2;
-- (void)activityContinuationOperationReceivedBytes:(id)arg1;
+- (void)activityHandoffOperation:(id)arg1 didFailWithError:(id)arg2;
+- (void)activityHandoffOperation:(id)arg1 didFinishReceivingData:(id)arg2;
+- (void)activityHandoffOperation:(id)arg1 didFinishSendingDataWithResult:(long long)arg2;
+- (void)activityHandoffOperationReceivedBytes:(id)arg1;
 - (void)addAddress:(id)arg1 field:(int)arg2;
 - (void)addSignature:(bool)arg1;
 - (id)addressForMissingIdentity;
@@ -296,6 +301,7 @@
 - (void)attachmentsRemoved:(id)arg1;
 - (id)autosaveIdentifier;
 - (bool)autosaveIsValid;
+- (id)autosaveQueue;
 - (void)autosaveWithHandler:(id /* block */)arg1;
 - (id)autosavedDate;
 - (bool)bccAddressesDirtied;
@@ -376,7 +382,7 @@
 - (void)groupDetailViewController:(id)arg1 didAskToRemoveGroup:(id)arg2;
 - (void)groupDetailViewController:(id)arg1 didTapComposeRecipient:(id)arg2;
 - (void)groupDetailViewControllerDidCancel:(id)arg1;
-- (void)handleLargeMessageComposeContinuationWithInputStream:(id)arg1 outputStream:(id)arg2 error:(id)arg3;
+- (void)handleLargeMessageComposeHandoffWithInputStream:(id)arg1 outputStream:(id)arg2 error:(id)arg3;
 - (void)handleMarkupData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 attachment:(id)arg4;
 - (void)handleMarkupError:(id)arg1 attachment:(id)arg2;
 - (void)handleMarkupURL:(id)arg1 attachment:(id)arg2 completion:(id /* block */)arg3;
@@ -471,6 +477,7 @@
 - (void)setAttachmentToMarkupIsLoaded:(bool)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)setAutosaveIsValid:(bool)arg1;
+- (void)setAutosaveQueue:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
 - (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setCcRecipients:(id)arg1;

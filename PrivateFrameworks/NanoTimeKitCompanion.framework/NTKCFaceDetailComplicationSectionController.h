@@ -5,6 +5,8 @@
 @interface NTKCFaceDetailComplicationSectionController : NTKCFaceDetailSectionController <NTKCFaceDetailComplicationPickerCellDelegate> {
     <NTKCFaceDetailComplicationSectionDelegate> * _delegate;
     NTKCFaceDetailComplicationPickerCell * _dismissingPickerCell;
+    NTKFaceView * _faceView;
+    NTKCFaceDetailComplicationsHiddenCell * _hiddenCell;
     NTKCFaceDetailComplicationPickerCell * _pickerCell;
 }
 
@@ -12,7 +14,9 @@
 @property (nonatomic) <NTKCFaceDetailComplicationSectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NTKCFaceDetailComplicationPickerCell *dismissingPickerCell;
+@property (nonatomic, retain) NTKFaceView *faceView;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NTKCFaceDetailComplicationsHiddenCell *hiddenCell;
 @property (nonatomic, retain) NTKCFaceDetailComplicationPickerCell *pickerCell;
 @property (nonatomic, retain) NSMutableArray *rows;
 @property (readonly) Class superclass;
@@ -29,11 +33,17 @@
 - (void)didSelectRow:(long long)arg1;
 - (id)dismissingPickerCell;
 - (void)faceDidChange;
+- (id)faceView;
 - (double)heightForRow:(long long)arg1;
+- (id)hiddenCell;
+- (id)initWithTableView:(id)arg1 face:(id)arg2 faceView:(id)arg3 inGallery:(bool)arg4;
 - (id)pickerCell;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissingPickerCell:(id)arg1;
+- (void)setFaceView:(id)arg1;
+- (void)setHiddenCell:(id)arg1;
 - (void)setPickerCell:(id)arg1;
 - (id)titleForHeader;
+- (void)toggleRow:(long long)arg1 shouldScroll:(bool)arg2;
 
 @end

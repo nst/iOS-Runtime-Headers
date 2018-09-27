@@ -4,6 +4,7 @@
 
 @interface NTKPhotoImageView : UIView <CLKMediaAssetViewDelegate> {
     <NTKPhotoImageViewDelegate> * _delegate;
+    CLKDevice * _device;
     CLKMediaAssetView * _mediaAssetView;
     NTKPhoto * _photo;
 }
@@ -20,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (void)interruptPlayback;
 - (id)irisURL;
 - (bool)isIrisVideoHidden;

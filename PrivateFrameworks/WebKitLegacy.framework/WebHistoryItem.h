@@ -12,8 +12,6 @@
 @property (nonatomic, readonly, copy) NSString *originalURLString;
 @property (nonatomic, readonly, copy) NSString *title;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 + (id)entryWithURL:(id)arg1;
 + (void)initialize;
 
@@ -59,13 +57,5 @@
 - (void)setViewState:(id)arg1;
 - (id)target;
 - (id)title;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

@@ -40,9 +40,9 @@
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } rawShiftedCoordinate;
 @property (nonatomic) unsigned int roadLineType;
 @property (nonatomic, retain) GEORoadMatch *roadMatch;
-@property (nonatomic, retain) NSString *roadName;
+@property (nonatomic, copy) NSString *roadName;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
-@property (nonatomic, retain) NSString *shieldText;
+@property (nonatomic, copy) NSString *shieldText;
 @property (nonatomic) long long shieldType;
 @property (nonatomic) unsigned long long speedLimit;
 @property (nonatomic) bool speedLimitIsMPH;

@@ -4,9 +4,9 @@
 
 @interface NTKZeusAnalogFace : NTKFace
 
-+ (id)_defaultSelectedComplicationSlot;
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
-+ (id)fixedComplicationSlots;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
++ (id)fixedComplicationSlotsForDevice:(id)arg1;
 
 - (id)_complicationMigrationPaths;
 - (id)_complicationSlotDescriptors;

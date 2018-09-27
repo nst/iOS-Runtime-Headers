@@ -6,9 +6,9 @@
     NSURL * _URL;
     <SXAnalyticsReporting> * _analyticsReporter;
     NSString * _mediaIdentifier;
-    <SXVideoMetadataProviding> * _metadata;
+    <SVVideoMetadata> * _metadata;
     double  _pausedAtTime;
-    SXTimeline * _timeline;
+    SVTimeline * _timeline;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -17,10 +17,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *mediaIdentifier;
-@property (nonatomic) <SXVideoMetadataProviding> *metadata;
+@property (nonatomic) <SVVideoMetadata> *metadata;
 @property (nonatomic) double pausedAtTime;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) SXTimeline *timeline;
+@property (nonatomic, readonly) SVTimeline *timeline;
 
 - (void).cxx_destruct;
 - (id)URL;

@@ -23,6 +23,7 @@
 - (void)deleteBackward;
 - (id)description;
 - (void)disconnect;
+- (void)getCurrentRTISourceSession:(id /* block */)arg1;
 - (void)getTextEditingSession:(id /* block */)arg1;
 - (id)identifier;
 - (id)initWithTelevision:(void*)arg1;
@@ -41,6 +42,7 @@
 - (void)setGameControllerInputModeHandler:(id /* block */)arg1;
 - (void)setNameChangedHandler:(id /* block */)arg1;
 - (void)setPairingHandler:(id /* block */)arg1;
+- (void)setRTISessionHandler:(id /* block */)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextEditingHandler:(id /* block */)arg1;
 - (void)setVoiceRecordingStateHandler:(id /* block */)arg1;

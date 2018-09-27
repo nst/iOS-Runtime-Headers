@@ -2,33 +2,30 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBTimestamp : PBCodable <NSCopying> {
+@interface _INPBTimestamp : PBCodable <NSCopying, NSSecureCoding, _INPBTimestamp> {
     struct { 
-        unsigned int seconds : 1; 
         unsigned int nanos : 1; 
+        unsigned int seconds : 1; 
     }  _has;
     int  _nanos;
     long long  _seconds;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasNanos;
 @property (nonatomic) bool hasSeconds;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int nanos;
 @property (nonatomic) long long seconds;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
-+ (id)options;
-
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasNanos;
 - (bool)hasSeconds;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (int)nanos;
 - (bool)readFrom:(id)arg1;
 - (long long)seconds;
@@ -36,7 +33,6 @@
 - (void)setHasSeconds:(bool)arg1;
 - (void)setNanos:(int)arg1;
 - (void)setSeconds:(long long)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

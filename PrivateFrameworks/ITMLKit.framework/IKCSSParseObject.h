@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSParseObject : NSObject {
-    NSArray * _cssValue;
+    IKArray * _cssValue;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -11,7 +11,7 @@
     long long  _type;
 }
 
-@property (nonatomic, retain) NSArray *cssValue;
+@property (nonatomic, retain) IKArray *cssValue;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property (nonatomic) long long type;
 

@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, readonly) bool canAuthWithCloudKit;
+@property (nonatomic, readonly) NSString *displayedHostname;
 @property (nonatomic, readonly) NSString *dsid;
 @property (nonatomic, readonly) NSPersonNameComponents *fullName;
 @property (nonatomic, readonly) bool iCloudDriveAllowsCellularAccess;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) NSURL *privateMetricsServiceURL;
 @property (nonatomic, readonly) NSURL *privateShareServiceURL;
 @property (nonatomic, readonly) NSString *serverPreferredPushEnvironment;
+@property (nonatomic, readonly) NSString *sharingURLHostname;
 @property (nonatomic, readonly) NSString *username;
 
 + (bool)_lockedEnsureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
@@ -26,7 +28,7 @@
 + (id)accountQueue;
 + (id)accountWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (void)ensureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
-+ (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2;
++ (id)fakeAccountWithEmail:(id)arg1 password:(id)arg2 propertyOverrides:(id)arg3 overridesByDataclass:(id)arg4;
 + (id)primaryAccountInStore:(id)arg1;
 
 - (id)_init;
@@ -36,6 +38,7 @@
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (void)displayAuthenticationPromptWithReason:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)displayedHostname;
 - (id)dsid;
 - (id)fullName;
 - (id)iCloudAuthTokenWithError:(id*)arg1;
@@ -53,6 +56,7 @@
 - (id)privateShareServiceURL;
 - (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)serverPreferredPushEnvironment;
+- (id)sharingURLHostname;
 - (void)updateAccountPropertiesAndSaveAccountInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)urlForDataclass:(id)arg1;
 - (id)username;

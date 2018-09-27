@@ -15,6 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)anisetteFreeURLSessionWithCacheProvider:(id)arg1;
 + (id)sharedAnisetteFreeURLSession;
 + (id)sharedURLSession;
 
@@ -31,6 +32,7 @@
 - (id)beginAuthenticationDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)beginDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelDataTask:(id)arg1;
+- (id)defaultSessionObjectWithConfiguration:(id)arg1;
 - (id)init;
 - (void)set_usesAppleIDContext:(bool)arg1;
 

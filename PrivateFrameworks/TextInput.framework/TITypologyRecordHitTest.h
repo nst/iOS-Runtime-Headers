@@ -14,8 +14,10 @@
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
 @property (nonatomic, retain) TIKeyboardTouchEvent *touchEvent;
 
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (void)applyToStatistic:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)keyCode;

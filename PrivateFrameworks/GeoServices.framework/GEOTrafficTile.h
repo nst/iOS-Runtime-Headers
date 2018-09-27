@@ -23,7 +23,6 @@
 - (void)clearTrafficSegments;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct { long long x1; long long x2; }*)createUnpackedVerticesWithGutterSize:(long long)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasVertices;

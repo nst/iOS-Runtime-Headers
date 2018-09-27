@@ -7,14 +7,14 @@
     int  _pid;
 }
 
-@property (nonatomic, readonly, retain) BSAuditToken *auditToken;
+@property (nonatomic, readonly) BSAuditToken *auditToken;
 @property (nonatomic, readonly) int pid;
 
 + (bool)supportsSecureCoding;
 + (id)taskNameForPID:(int)arg1;
 
+- (void).cxx_destruct;
 - (id)auditToken;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;

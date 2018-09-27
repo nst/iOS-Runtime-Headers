@@ -29,8 +29,8 @@
 @property (readonly) double briskMinutesGoal;
 @property (readonly) double briskMinutesGoalPercentage;
 @property (setter=_setCacheIndex:) long long cacheIndex;
-@property (setter=_setDailyBriskMinutesStatistics:, retain) NSArray *dailyBriskMinutesStatistics;
-@property (setter=_setDailyEnergyBurnedStatistics:, retain) NSArray *dailyEnergyBurnedStatistics;
+@property (setter=_setDailyBriskMinutesStatistics:, copy) NSArray *dailyBriskMinutesStatistics;
+@property (setter=_setDailyEnergyBurnedStatistics:, copy) NSArray *dailyEnergyBurnedStatistics;
 @property (readonly) NSDateComponents *dateComponents;
 @property (readonly, copy) NSString *debugDescription;
 @property (setter=_setDeepBreathingDuration:) double deepBreathingDuration;

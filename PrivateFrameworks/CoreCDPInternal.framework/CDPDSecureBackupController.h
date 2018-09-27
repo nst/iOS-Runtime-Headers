@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSDictionary *cachedAccountInfo;
 @property (nonatomic, retain) CDPDSecureBackupConfiguration *configuration;
-@property (nonatomic, retain) CDPContext *context;
+@property (nonatomic, readonly) CDPContext *context;
 @property (nonatomic) <CDPDSecureBackupDelegate> *delegate;
 @property (nonatomic) bool fakeNearlyDepletedRecords;
 @property (nonatomic, retain) <CDPDSecureBackupProxy> *secureBackupProxy;
@@ -41,7 +41,6 @@
 - (bool)authenticatedEnableSecureBackupWithRecoveryKey:(id)arg1 error:(id*)arg2;
 - (void)backupRecordsArePresentWithCompletion:(id /* block */)arg1;
 - (id)cachedAccountInfo;
-- (void)cdpBackupRecordsArePresentWithCompletion:(id /* block */)arg1;
 - (void)checkAndRemoveExistingThenEnableSecureBackupRecordWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkForExistingRecord:(id /* block */)arg1;
 - (void)checkForExistingRecordMatchingPredicate:(id)arg1 completion:(id /* block */)arg2;
@@ -58,7 +57,6 @@
 - (void)enableSecureBackupWithRecoveryKey:(id)arg1 completion:(id /* block */)arg2;
 - (bool)fakeNearlyDepletedRecords;
 - (void)getBackupRecordDevicesWithCompletion:(id /* block */)arg1;
-- (id)init;
 - (id)initWithContext:(id)arg1 proxy:(id)arg2;
 - (id)initWithContext:(id)arg1 uiProvider:(id)arg2 delegate:(id)arg3;
 - (void)isEligibleForCDPWithCompletion:(id /* block */)arg1;
@@ -66,7 +64,6 @@
 - (id)secureBackupProxy;
 - (void)setCachedAccountInfo:(id)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFakeNearlyDepletedRecords:(bool)arg1;
 - (void)setSecureBackupProxy:(id)arg1;

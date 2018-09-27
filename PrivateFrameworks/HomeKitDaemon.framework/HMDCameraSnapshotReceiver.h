@@ -34,7 +34,8 @@
 
 - (void).cxx_destruct;
 - (void)_sendConfirmationToResident:(id /* block */)arg1;
-- (void)_sendRequestWithTierType:(unsigned long long)arg1 toResident:(id /* block */)arg2;
+- (id)_sendMessageWithName:(id)arg1 payload:(id)arg2 responseHandler:(id /* block */)arg3;
+- (id)_sendRequestWithTierType:(unsigned long long)arg1 toResident:(id /* block */)arg2;
 - (id)accessory;
 - (id)delegateQueue;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6 snapshotRequestHandler:(id)arg7 residentMessageHandler:(id)arg8;

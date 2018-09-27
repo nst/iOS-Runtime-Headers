@@ -19,7 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_subscribeToSectionID:(id)arg1 withPingHandler:(id)arg2 withAck:(bool)arg3 forFullBulletins:(bool)arg4;
+- (void)_subscribeToSectionID:(id)arg1 pingHandler:(id)arg2 ackType:(unsigned long long)arg3 forFullBulletins:(bool)arg4;
 - (void)dealloc;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
@@ -37,8 +37,10 @@
 - (id)service;
 - (void)setPingHandlers:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)subscribeToSectionID:(id)arg1 withBulletinAckForwardHandler:(id /* block */)arg2;
 - (void)subscribeToSectionID:(id)arg1 withBulletinAckHandler:(id /* block */)arg2;
 - (void)subscribeToSectionID:(id)arg1 withBulletinHandler:(id /* block */)arg2;
+- (void)subscribeToSectionID:(id)arg1 withPingAckForwardHandler:(id /* block */)arg2;
 - (void)subscribeToSectionID:(id)arg1 withPingAckHandler:(id /* block */)arg2;
 - (void)subscribeToSectionID:(id)arg1 withPingHandler:(id /* block */)arg2;
 - (void)subscribeWithMachServiceName:(id)arg1;

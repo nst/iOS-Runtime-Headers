@@ -34,6 +34,7 @@
     NSURL * _photoURL;
     bool  _shouldFetchAttributes;
     unsigned int  _uid;
+    NSString * _userAuxiliaryString;
     NSString * _username;
 }
 
@@ -69,6 +70,7 @@
 @property (nonatomic, copy) NSURL *photoURL;
 @property (nonatomic) bool shouldFetchAttributes;
 @property (nonatomic) unsigned int uid;
+@property (nonatomic, copy) NSString *userAuxiliaryString;
 @property (nonatomic, readonly) unsigned long long userType;
 @property (nonatomic, copy) NSString *username;
 
@@ -100,6 +102,7 @@
 - (bool)hasDataToSync;
 - (bool)hasManagedCredentials;
 - (id)homeDirectoryURL;
+- (bool)inFirstLoginSession;
 - (id)init;
 - (bool)isAuditor;
 - (bool)isDisabled;
@@ -149,10 +152,12 @@
 - (void)setPropertiesFromUser:(id)arg1;
 - (void)setShouldFetchAttributes:(bool)arg1;
 - (void)setUid:(unsigned int)arg1;
+- (void)setUserAuxiliaryString:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)set_photo:(id)arg1;
 - (bool)shouldFetchAttributes;
 - (unsigned int)uid;
+- (id)userAuxiliaryString;
 - (unsigned long long)userType;
 - (id)username;
 

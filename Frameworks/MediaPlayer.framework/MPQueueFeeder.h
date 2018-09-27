@@ -5,7 +5,7 @@
 @interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSSecureCoding> {
     long long  _activeShuffleType;
     <MPQueueFeederDelegate> * _delegate;
-    MPMutableBidirectionalDictionary * _exportableItemIDs;
+    MSVMutableBidirectionalDictionary * _exportableItemIDs;
     MPModelPlayEvent * _modelPlayEvent;
     NSMutableDictionary * _nextStartTimes;
     NSString * _playActivityFeatureName;

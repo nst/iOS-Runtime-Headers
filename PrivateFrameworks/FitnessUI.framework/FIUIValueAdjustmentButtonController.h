@@ -7,6 +7,7 @@
     UIButton * _decrementButton;
     bool  _didUserUpdatevalue;
     UIButton * _incrementButton;
+    FIUIWorkoutLapLengthIndexTranslator * _lapLengthIndexTranslator;
     double  _maxValue;
     double  _minValue;
     double  _minumumStepValueIncrement;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) UIButton *decrementButton;
 @property (nonatomic) bool didUserUpdatevalue;
 @property (nonatomic, readonly) UIButton *incrementButton;
+@property (nonatomic, retain) FIUIWorkoutLapLengthIndexTranslator *lapLengthIndexTranslator;
 @property (nonatomic) double maxValue;
 @property (nonatomic) double minValue;
 @property (nonatomic) double minumumStepValueIncrement;
@@ -32,6 +34,7 @@
 - (void)_incrementRepeatCount;
 - (void)_notifyValueChanged;
 - (void)_performPlusMinusActionWithButton:(id)arg1;
+- (void)_performPlusMinusActionWithIndexTranslationForButton:(id)arg1;
 - (void)_plusMinusActionTimerDidFire:(id)arg1;
 - (void)_plusMinusButtonTouchCancel:(id)arg1;
 - (void)_plusMinusButtonTouchDown:(id)arg1;
@@ -42,12 +45,14 @@
 - (id)decrementButton;
 - (bool)didUserUpdatevalue;
 - (id)incrementButton;
+- (id)lapLengthIndexTranslator;
 - (double)maxValue;
 - (double)minValue;
 - (double)minumumStepValueIncrement;
 - (void)setButtonStateUpdateHandler:(id /* block */)arg1;
 - (void)setDidUserUpdatevalue:(bool)arg1;
 - (void)setIncrementButton:(id)arg1 decrementButton:(id)arg2;
+- (void)setLapLengthIndexTranslator:(id)arg1;
 - (void)setMaxValue:(double)arg1;
 - (void)setMinValue:(double)arg1;
 - (void)setMinumumStepValueIncrement:(double)arg1;

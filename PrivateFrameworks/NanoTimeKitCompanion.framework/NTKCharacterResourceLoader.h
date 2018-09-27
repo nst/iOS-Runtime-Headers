@@ -8,23 +8,25 @@
     NSBundle * _bundle;
     unsigned long long  _clients;
     CLKUIMmapFile * _commonBankArab;
+    CLKUIMmapFile * _commonBankDeva;
     CLKUIMmapFile * _commonBankLatn;
     EAGLContext * _context;
+    CLKDevice * _device;
     NSMutableDictionary * _mapping;
     CLKUIMmapFile * _mickeyBank;
     CLKUIMmapFile * _minnieBank;
     struct NTKCharacterPrograms { 
         struct NUProgram { 
             unsigned int program; 
-            int uniforms[11]; 
+            int uniforms[12]; 
         } programs[6]; 
     }  _programs;
 }
 
 @property (nonatomic, readonly) EAGLContext *context;
 
-+ (void)_deallocInstance;
-+ (id)sharedInstance;
++ (void)_deallocInstanceForDevice:(id)arg1;
++ (id)sharedInstanceForDevice:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_asyncDeallocInstance;
@@ -36,7 +38,7 @@
 - (void)bindTexture:(id)arg1;
 - (id)context;
 - (void)dealloc;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (void)localeChanged;
 - (void)prime;
 - (unsigned int)programUniformLocation:(unsigned long long)arg1 uniform:(int)arg2;

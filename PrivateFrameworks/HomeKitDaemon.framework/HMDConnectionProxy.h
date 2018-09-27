@@ -50,6 +50,7 @@
 
 - (void).cxx_destruct;
 - (id)_displayName;
+- (id)_extractBundleIdentifier;
 - (void)_notifyOfNewIncomingClientMessage;
 - (void)activate;
 - (bool)activated;

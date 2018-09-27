@@ -10,7 +10,7 @@
 @property (readonly) Class superclass;
 
 + (bool)companionDidChangeForProfile:(id)arg1 error:(id*)arg2;
-+ (id)createCodableSourceAuthorizationWithSourceUUID:(id)arg1 syncSession:(id)arg2;
++ (id)createCodableSourceAuthorizationWithSource:(id)arg1 syncSession:(id)arg2;
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (void)didGenerateCodableSourceAuthorizationsForSyncSession:(id)arg1;
 + (bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 maxEncodedBytesPerMessage:(long long)arg4 profile:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;

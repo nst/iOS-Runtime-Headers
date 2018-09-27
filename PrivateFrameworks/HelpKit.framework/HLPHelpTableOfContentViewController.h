@@ -24,11 +24,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpTableOfContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *displayHelpItems;
 @property (nonatomic) bool fullBookView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HLPHelpBookController *helpBookController;
 @property (nonatomic, retain) HLPHelpSearchIndexController *helpSearchIndexController;
 @property (nonatomic, retain) HLPHelpLocale *locale;
+@property (nonatomic, retain) NSMutableArray *openSections;
 @property (nonatomic, retain) UISearchController *searchController;
 @property (nonatomic, retain) NSArray *searchTerms;
 @property (readonly) Class superclass;
@@ -40,8 +42,10 @@
 - (void)closeSectionItem:(id)arg1;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)copyrightButtonTapped;
+- (void)dealloc;
 - (id)delegate;
 - (void)deselectCurrentRow;
+- (id)displayHelpItems;
 - (bool)fullBookView;
 - (id)helpBookController;
 - (id)helpSearchIndexController;
@@ -51,14 +55,18 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)numberOfVisibleHelpItemForSectionItem:(id)arg1;
 - (void)openHelpItem:(id)arg1 animated:(bool)arg2;
+- (id)openSections;
 - (void)scrollToHelpItem:(id)arg1 deselectImmediately:(bool)arg2 animated:(bool)arg3;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)searchController;
 - (id)searchTerms;
 - (void)setDelegate:(id)arg1;
+- (void)setDisplayHelpItems:(id)arg1;
 - (void)setFullBookView:(bool)arg1;
 - (void)setHelpBookController:(id)arg1;
 - (void)setHelpSearchIndexController:(id)arg1;
 - (void)setLocale:(id)arg1;
+- (void)setOpenSections:(id)arg1;
 - (void)setSearchController:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setTableFooterView:(id)arg1;
@@ -78,7 +86,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
 - (void)willDismissSearchController:(id)arg1;
 - (void)willPresentSearchController:(id)arg1;
 

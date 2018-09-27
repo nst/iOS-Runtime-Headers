@@ -15,6 +15,7 @@
 @property (getter=_gkSAPSession, setter=_gkSetSAPSession:, nonatomic, retain) GKFairPlaySAPSession *_gkSAPSession;
 @property (readonly, copy) NSDictionary *allHTTPHeaderFields;
 @property (readonly) bool allowsCellularAccess;
+@property (nonatomic, readonly) bool ams_requestIsBagLoad;
 @property (readonly) unsigned long long cachePolicy;
 @property (readonly, copy) NSURL *mainDocumentURL;
 @property (readonly) unsigned long long networkServiceType;
@@ -49,6 +50,7 @@
 - (id)_copyReplacingURLWithURL:(id)arg1;
 - (bool)_ignoreHSTS;
 - (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
+- (bool)_isIdempotent;
 - (bool)_isSafeRequestForBackgroundDownload;
 - (double)_payloadTransmissionTimeout;
 - (bool)_preventHSTSStorage;
@@ -81,6 +83,15 @@
 - (unsigned long long)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (id)aa_HTTPBody;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (bool)ams_requestIsBagLoad;
+- (id)ams_valueForHTTPHeader:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 

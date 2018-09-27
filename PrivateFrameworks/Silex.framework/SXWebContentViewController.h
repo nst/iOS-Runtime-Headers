@@ -3,8 +3,10 @@
  */
 
 @interface SXWebContentViewController : UIViewController <WKNavigationDelegate, WKUIDelegate> {
+    <SXWebContentContentRuleManager> * _contentRuleManager;
     <SXWebContentDocumentStateReporting> * _documentStateReporter;
     <SXWebContentErrorReporting> * _errorReporter;
+    SXWebContentLoader * _loader;
     <SXWebContentLogger> * _logger;
     <SXWebContentMessageHandlerManager> * _messageHandlerManager;
     <SXWebContentNavigationManager> * _navigationManager;
@@ -15,11 +17,13 @@
     WKWebView * _webView;
 }
 
+@property (nonatomic, readonly) <SXWebContentContentRuleManager> *contentRuleManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <SXWebContentDocumentStateReporting> *documentStateReporter;
 @property (nonatomic, readonly) <SXWebContentErrorReporting> *errorReporter;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SXWebContentLoader *loader;
 @property (nonatomic, readonly) <SXWebContentLogger> *logger;
 @property (nonatomic, readonly) <SXWebContentMessageHandlerManager> *messageHandlerManager;
 @property (nonatomic, readonly) <SXWebContentNavigationManager> *navigationManager;
@@ -31,15 +35,20 @@
 @property (nonatomic, readonly) WKWebView *webView;
 
 - (void).cxx_destruct;
+- (id)contentRuleManager;
 - (id)documentStateReporter;
 - (id)errorReporter;
-- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 reachabilityProvider:(id)arg9 logger:(id)arg10;
+- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 contentRuleManager:(id)arg9 reachabilityProvider:(id)arg10 logger:(id)arg11;
+- (void)initiateLoadingWithLoader:(id)arg1;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;
+- (id)loader;
 - (id)logger;
 - (id)messageHandlerManager;
 - (id)navigationManager;
 - (id)reachabilityProvider;
 - (id)scriptsManager;
+- (void)setLoader:(id)arg1;
 - (id)terminationManager;
 - (id)timeoutManager;
 - (void)viewDidLayoutSubviews;

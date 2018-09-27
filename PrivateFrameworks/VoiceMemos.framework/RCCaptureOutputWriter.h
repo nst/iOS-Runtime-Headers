@@ -19,6 +19,7 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSDate * _recordingCreationDate;
     NSUUID * _recordingSessionID;
+    NSString * _recordingUniqueID;
     AVCaptureAudioDataOutput * _sampleBufferDataOutput;
     NSObject<OS_dispatch_queue> * _sampleBufferQueue;
     unsigned long long  _sampleBuffersWritten;
@@ -48,6 +49,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSDate *recordingCreationDate;
 @property (nonatomic, copy) NSUUID *recordingSessionID;
+@property (nonatomic, retain) NSString *recordingUniqueID;
 @property (nonatomic, retain) AVCaptureAudioDataOutput *sampleBufferDataOutput;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *sampleBufferQueue;
 @property (nonatomic) double storeDemoTimeLimit;
@@ -89,6 +91,7 @@
 - (id)queue;
 - (id)recordingCreationDate;
 - (id)recordingSessionID;
+- (id)recordingUniqueID;
 - (void)resumeWriting;
 - (id)sampleBufferDataOutput;
 - (id)sampleBufferQueue;
@@ -99,13 +102,14 @@
 - (void)setQueue:(id)arg1;
 - (void)setRecordingCreationDate:(id)arg1;
 - (void)setRecordingSessionID:(id)arg1;
+- (void)setRecordingUniqueID:(id)arg1;
 - (void)setSampleBufferDataOutput:(id)arg1;
 - (void)setSampleBufferQueue:(id)arg1;
 - (void)setStoreDemoTimeLimit:(double)arg1;
 - (void)setWriterState:(long long)arg1;
 - (bool)startCaptureSession;
 - (void)startMaximumRecordingDurationTimer;
-- (bool)startWritingToOutputFileURL:(id)arg1 creationDate:(id)arg2 beginPaused:(bool)arg3 captureOutputDelegate:(id)arg4;
+- (bool)startWritingToOutputFileURL:(id)arg1 creationDate:(id)arg2 uniqueID:(id)arg3 beginPaused:(bool)arg4 captureOutputDelegate:(id)arg5;
 - (void)stopCaptureSession;
 - (double)storeDemoTimeLimit;
 - (long long)writerState;

@@ -12,6 +12,8 @@
     bool  _enRoute;
     NSString * _endStation;
     NSData * _endStationCode;
+    double  _endStationLatitude;
+    double  _endStationLongitude;
     NSDate * _expirationDate;
     PKPaymentTransactionFees * _fees;
     PKPaymentTransactionForeignExchangeInformation * _foreignExchangeInformation;
@@ -27,6 +29,7 @@
     double  _locationLongitude;
     double  _locationVerticalAccuracy;
     PKMerchant * _merchant;
+    NSString * _merchantProvidedDescription;
     NSDictionary * _metadata;
     NSString * _paymentHash;
     NSString * _peerPaymentCounterpartHandle;
@@ -47,8 +50,11 @@
     long long  _secondaryFundingSourceNetwork;
     NSUUID * _sendDeviceScoreIdentifier;
     NSString * _serviceIdentifier;
+    bool  _shouldSuppressDate;
     NSString * _startStation;
     NSData * _startStationCode;
+    double  _startStationLatitude;
+    double  _startStationLongitude;
     NSString * _stationCodeProvider;
     NSDecimalNumber * _subtotalAmount;
     long long  _technologyType;
@@ -74,6 +80,9 @@
 @property (nonatomic) bool enRoute;
 @property (nonatomic, copy) NSString *endStation;
 @property (nonatomic, copy) NSData *endStationCode;
+@property (nonatomic) double endStationLatitude;
+@property (nonatomic, retain) CLLocation *endStationLocation;
+@property (nonatomic) double endStationLongitude;
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic, retain) PKPaymentTransactionFees *fees;
 @property (nonatomic, retain) PKPaymentTransactionForeignExchangeInformation *foreignExchangeInformation;
@@ -94,6 +103,7 @@
 @property (nonatomic) double locationLongitude;
 @property (nonatomic) double locationVerticalAccuracy;
 @property (nonatomic, retain) PKMerchant *merchant;
+@property (nonatomic, copy) NSString *merchantProvidedDescription;
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, copy) NSString *paymentHash;
 @property (nonatomic, copy) NSString *peerPaymentCounterpartHandle;
@@ -117,8 +127,12 @@
 @property (nonatomic) long long secondaryFundingSourceNetwork;
 @property (nonatomic, copy) NSUUID *sendDeviceScoreIdentifier;
 @property (nonatomic, copy) NSString *serviceIdentifier;
+@property (nonatomic) bool shouldSuppressDate;
 @property (nonatomic, copy) NSString *startStation;
 @property (nonatomic, copy) NSData *startStationCode;
+@property (nonatomic) double startStationLatitude;
+@property (nonatomic, retain) CLLocation *startStationLocation;
+@property (nonatomic) double startStationLongitude;
 @property (nonatomic, copy) NSString *stationCodeProvider;
 @property (nonatomic, copy) NSDecimalNumber *subtotalAmount;
 @property (nonatomic, readonly) PKCurrencyAmount *subtotalCurrencyAmount;
@@ -156,15 +170,20 @@
 - (id)dictionaryRepresentation;
 - (id)displayLocation;
 - (bool)enRoute;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endStation;
 - (id)endStationCode;
+- (double)endStationLatitude;
+- (id)endStationLocation;
+- (double)endStationLongitude;
 - (id)expirationDate;
 - (id)fees;
 - (id)foreignExchangeInformation;
 - (id)formattedBalanceAdjustmentAmount;
 - (id)formattedBalanceAdjustmentSubtotalAmount;
+- (id)formattedTransitTransactionMessage:(bool)arg1;
 - (bool)hasAssociatedPaymentApplication;
 - (bool)hasBackingData;
 - (bool)hasCloudArchivableDeviceData;
@@ -179,6 +198,7 @@
 - (bool)isCloudKitArchived;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToPaymentTransaction:(id)arg1;
+- (unsigned long long)itemType;
 - (id)locality;
 - (id)location;
 - (double)locationAltitude;
@@ -188,6 +208,7 @@
 - (double)locationLongitude;
 - (double)locationVerticalAccuracy;
 - (id)merchant;
+- (id)merchantProvidedDescription;
 - (id)metadata;
 - (id)paymentHash;
 - (id)peerPaymentCounterpartHandle;
@@ -221,6 +242,9 @@
 - (void)setEnRoute:(bool)arg1;
 - (void)setEndStation:(id)arg1;
 - (void)setEndStationCode:(id)arg1;
+- (void)setEndStationLatitude:(double)arg1;
+- (void)setEndStationLocation:(id)arg1;
+- (void)setEndStationLongitude:(double)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setFees:(id)arg1;
 - (void)setForeignExchangeInformation:(id)arg1;
@@ -237,6 +261,7 @@
 - (void)setLocationLongitude:(double)arg1;
 - (void)setLocationVerticalAccuracy:(double)arg1;
 - (void)setMerchant:(id)arg1;
+- (void)setMerchantProvidedDescription:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setPaymentHash:(id)arg1;
 - (void)setPeerPaymentCounterpartHandle:(id)arg1;
@@ -258,8 +283,12 @@
 - (void)setSecondaryFundingSourceNetwork:(long long)arg1;
 - (void)setSendDeviceScoreIdentifier:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
+- (void)setShouldSuppressDate:(bool)arg1;
 - (void)setStartStation:(id)arg1;
 - (void)setStartStationCode:(id)arg1;
+- (void)setStartStationLatitude:(double)arg1;
+- (void)setStartStationLocation:(id)arg1;
+- (void)setStartStationLongitude:(double)arg1;
 - (void)setStationCodeProvider:(id)arg1;
 - (void)setSubtotalAmount:(id)arg1;
 - (void)setTechnologyType:(long long)arg1;
@@ -271,8 +300,12 @@
 - (void)setTransactionType:(long long)arg1;
 - (void)setTransitModifiers:(unsigned long long)arg1;
 - (void)setTransitType:(long long)arg1;
+- (bool)shouldSuppressDate;
 - (id)startStation;
 - (id)startStationCode;
+- (double)startStationLatitude;
+- (id)startStationLocation;
+- (double)startStationLongitude;
 - (id)stationCodeProvider;
 - (id)subtotalAmount;
 - (id)subtotalCurrencyAmount;
@@ -287,6 +320,5 @@
 - (long long)transitType;
 - (unsigned long long)updateReasons;
 - (id)updateReasonsDescription;
-- (void)updateTransactionTypeFromDetailString:(id)arg1;
 
 @end

@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKBatteryCircularSmallComplicationView : NTKCircularSmallRingTextComplicationView <NTKBatteryComplicationDisplay> {
-    double  _level;
-    long long  _state;
+@interface NTKBatteryCircularSmallComplicationView : NTKCircularSmallRingTextComplicationView {
+    NTKColoringLabel * _label;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned long long hash;
-@property (getter=isHighlighted, nonatomic) bool highlighted;
-@property (nonatomic) bool shouldUseTemplateColors;
-@property (readonly) Class superclass;
++ (bool)handlesComplicationTemplate:(id)arg1;
++ (void)load;
 
-- (bool)_wantsPlatter;
-- (void)setLevel:(float)arg1;
-- (void)setState:(long long)arg1;
+- (void).cxx_destruct;
+- (void)_updateForTemplateChange;
 
 @end

@@ -8,13 +8,13 @@
     NSArray * _whitelistedNames;
 }
 
-@property (nonatomic, readonly, retain) NSString *requiredClassOrProtocolName;
+@property (nonatomic, readonly) NSString *requiredClassOrProtocolName;
 @property (nonatomic, readonly, copy) NSString *type;
 @property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)specificationsFromHostBundle:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

@@ -14,7 +14,6 @@
     PHAssetCollection * _sourceAlbum;
     long long  _status;
     struct NSObject { Class x1; } * _targetAlbum;
-    bool  _targetAlbumIsNewLocalAlbum;
     NSString * _targetAlbumName;
     NSOrderedSet * _transferredAssets;
 }
@@ -33,7 +32,6 @@
 @property (nonatomic) long long status;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *targetAlbum;
-@property (nonatomic) bool targetAlbumIsNewLocalAlbum;
 @property (nonatomic, retain) NSString *targetAlbumName;
 @property (nonatomic, copy) NSOrderedSet *transferredAssets;
 
@@ -41,6 +39,8 @@
 - (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)addSessionInfoObserver:(id)arg1;
 - (id /* block */)bannerGenerator;
+- (bool)hasLocalTargetAlbum;
+- (bool)hasTargetAlbum;
 - (id)init;
 - (bool)isSelectingAssets;
 - (bool)isSelectingTargetAlbum;
@@ -58,13 +58,11 @@
 - (void)setSourceAlbum:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setTargetAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setTargetAlbumIsNewLocalAlbum:(bool)arg1;
 - (void)setTargetAlbumName:(id)arg1;
 - (void)setTransferredAssets:(id)arg1;
 - (id)sourceAlbum;
 - (long long)status;
 - (struct NSObject { Class x1; }*)targetAlbum;
-- (bool)targetAlbumIsNewLocalAlbum;
 - (id)targetAlbumName;
 - (id)transferredAssets;
 

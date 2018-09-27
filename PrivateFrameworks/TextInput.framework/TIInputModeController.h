@@ -24,8 +24,8 @@
 + (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id /* block */)arg3;
 + (id)sharedInputModeController;
 
+- (void).cxx_destruct;
 - (id)currentLocale;
-- (void)dealloc;
 - (id)defaultDictationLanguagesForKeyboardLanguage:(id)arg1;
 - (id)defaultEnabledInputModesForCurrentLocale;
 - (id)defaultInputModes;
@@ -33,7 +33,6 @@
 - (id)enabledInputModes;
 - (bool)identifierIsValidSystemInputMode:(id)arg1;
 - (id)inputModesForTesting;
-- (id)keyboardLanguageForDictationLanguage:(id)arg1;
 - (id)preferredLanguages;
 - (void)setCurrentLocale:(id)arg1;
 - (void)setDefaultInputModes:(id)arg1;

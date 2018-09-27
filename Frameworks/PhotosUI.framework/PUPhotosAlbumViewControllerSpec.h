@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosAlbumViewControllerSpec : NSObject {
+@interface PUPhotosAlbumViewControllerSpec : PULegacyViewControllerSpec {
     long long  _fullMomentsSectionHeaderStyle;
 }
 
@@ -11,6 +11,9 @@
 @property (nonatomic, readonly) unsigned long long fullMomentsSectionHeaderBackgroundStyle;
 @property (nonatomic, readonly) long long fullMomentsSectionHeaderStyle;
 @property (nonatomic, readonly) bool shouldUseAspectItems;
+
++ (id)padSpec;
++ (id)phoneSpec;
 
 - (long long)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1;

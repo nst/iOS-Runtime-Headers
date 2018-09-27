@@ -4,6 +4,7 @@
 
 @interface UserRegistryDB : NSObject {
     struct sqlite3_stmt { } * _deleteEscrowKey;
+    struct sqlite3_stmt { } * _deleteMirrorKeys;
     struct sqlite3_stmt { } * _deleteStatment;
     NSString * _dsid;
     struct sqlite3_stmt { } * _insertEscrowKey;
@@ -26,6 +27,7 @@
 }
 
 @property struct sqlite3_stmt { }*deleteEscrowKey;
+@property struct sqlite3_stmt { }*deleteMirrorKeys;
 @property struct sqlite3_stmt { }*deleteStatment;
 @property (retain) NSString *dsid;
 @property struct sqlite3_stmt { }*insertEscrowKey;
@@ -51,6 +53,8 @@
 - (void)dealloc;
 - (struct sqlite3_stmt { }*)deleteEscrowKey;
 - (bool)deleteEscrowKey:(id)arg1;
+- (struct sqlite3_stmt { }*)deleteMirrorKeys;
+- (bool)deleteMirrorKeys:(int)arg1;
 - (bool)deleteRecordAll;
 - (bool)deleteRecordID:(id)arg1;
 - (struct sqlite3_stmt { }*)deleteStatment;
@@ -82,6 +86,7 @@
 - (struct sqlite3_stmt { }*)replaceStatment;
 - (struct sqlite3_stmt { }*)resetCurrentMirrorKey;
 - (void)setDeleteEscrowKey:(struct sqlite3_stmt { }*)arg1;
+- (void)setDeleteMirrorKeys:(struct sqlite3_stmt { }*)arg1;
 - (void)setDeleteStatment:(struct sqlite3_stmt { }*)arg1;
 - (void)setDsid:(id)arg1;
 - (bool)setEscrowKey:(id)arg1 escrowBlob:(id)arg2;

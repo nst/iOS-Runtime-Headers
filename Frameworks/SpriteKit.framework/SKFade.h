@@ -10,6 +10,7 @@
 + (id)fadeAlphaTo:(double)arg1 duration:(double)arg2;
 + (id)fadeInWithDuration:(double)arg1;
 + (id)fadeOutWithDuration:(double)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

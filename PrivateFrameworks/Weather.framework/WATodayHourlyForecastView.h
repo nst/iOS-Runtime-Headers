@@ -21,8 +21,6 @@
 @property (nonatomic, retain) UILabel *timeLabel;
 @property (nonatomic, retain) UIVisualEffectView *timeLabelVisualEffectView;
 
-+ (bool)requiresConstraintBasedLayout;
-
 - (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)applyVibrancyToTimeWithEffect:(id)arg1;

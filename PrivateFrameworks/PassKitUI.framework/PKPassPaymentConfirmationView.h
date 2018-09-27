@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (void)didBecomeHiddenAnimated:(bool)arg1;
 - (void)didBecomeVisibleAnimated:(bool)arg1;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2 context:(id)arg3;
+- (id)initWithPass:(id)arg1 context:(id)arg2;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (void)payStateView:(id)arg1 revealingCheckmark:(bool)arg2;

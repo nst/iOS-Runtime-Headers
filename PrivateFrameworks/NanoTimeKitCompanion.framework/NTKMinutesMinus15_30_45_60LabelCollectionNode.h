@@ -2,8 +2,16 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKMinutesMinus15_30_45_60LabelCollectionNode : NTKLabelCollectionNode
+@interface NTKMinutesMinus15_30_45_60LabelCollectionNode : NTKLabelCollectionNode {
+    NSArray * _visibleComplicationSlots;
+}
 
+@property (nonatomic, retain) NSArray *visibleComplicationSlots;
+
+- (void).cxx_destruct;
+- (void)_updateNodeVisibility;
 - (void)createSubNodes;
+- (void)setVisibleComplicationSlots:(id)arg1;
+- (id)visibleComplicationSlots;
 
 @end

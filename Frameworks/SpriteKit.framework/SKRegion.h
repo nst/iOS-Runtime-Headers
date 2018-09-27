@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKRegion : NSObject <NSCoding, NSCopying> {
+@interface SKRegion : NSObject <NSCopying, NSSecureCoding> {
     PKRegion * _region;
 }
 
 @property (nonatomic, readonly) const struct CGPath { }*path;
 
 + (id)infiniteRegion;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -21,6 +22,7 @@
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)inverseRegion;
 - (bool)isEmpty;
+- (bool)isEqualToRegion:(id)arg1;
 - (bool)isInfinite;
 - (const struct CGPath { }*)path;
 - (id)regionByDifferenceFromRegion:(id)arg1;

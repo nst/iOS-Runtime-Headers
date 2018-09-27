@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
  */
 
-@interface PRSQueryTask : NSObject {
+@interface PRSQueryTask : NSObject <NSSecureCoding> {
     bool  _canceled;
     NSDictionary * _category_stats;
     NSString * _fbq;
@@ -40,16 +40,19 @@
 
 + (void)initialize;
 + (void)resumeDecoding;
++ (bool)supportsSecureCoding;
 + (void)suspendDecoding;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (bool)canceled;
 - (id)category_stats;
+- (void)encodeWithCoder:(id)arg1;
 - (id)fbq;
 - (id)feedback;
 - (id)feedbackQueryIdentifier;
 - (id)handler;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 queue:(id)arg3 feedback:(id)arg4;
 - (void)invalidateHandler;
 - (id)keyboardLanguage;

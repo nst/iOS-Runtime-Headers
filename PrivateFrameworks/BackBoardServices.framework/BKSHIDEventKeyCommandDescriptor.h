@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSString *commandModifiedInput;
-@property (nonatomic, readonly, retain) NSString *input;
+@property (nonatomic, readonly) NSString *input;
 @property (nonatomic, readonly) bool isTextualDescriptor;
 @property (nonatomic, readonly) long long keyCode;
 @property (nonatomic, readonly) long long modifierFlags;
@@ -26,8 +26,8 @@
 + (id)keyCommandDescriptorForEvent:(struct __IOHIDEvent { }*)arg1 gsKeyboard:(struct __GSKeyboard { }*)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)commandModifiedInput;
-- (void)dealloc;
 - (long long)describes:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

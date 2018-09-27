@@ -14,6 +14,11 @@
 @property (nonatomic) bool disableCAScaling;
 @property (nonatomic) bool disableCAYUV;
 @property (nonatomic) bool disableCloneMirroring;
+@property (nonatomic) bool disableStudyLogBTKeyboardEventLogging;
+@property (nonatomic) bool disableStudyLogBTKeyboardEventRedirection;
+@property (nonatomic) bool disableStudyLogButtonLogging;
+@property (nonatomic) bool disableStudyLogHomeButtonLogging;
+@property (nonatomic) bool disableStudyLogVolumeKeyLogging;
 @property (getter=isDitheringEnabled, nonatomic) bool ditheringEnabled;
 @property (nonatomic) float fenceArbiterTimeoutInterval;
 @property (nonatomic) bool forceCloneMirroring;

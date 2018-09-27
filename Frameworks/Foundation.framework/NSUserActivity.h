@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUserActivity : NSObject <INCacheableObject, NSItemProviderReading, NSItemProviderWriting, UIItemProviderReading, UIItemProviderWriting> {
+@interface NSUserActivity : NSObject <CRContent, INCacheableObject, NSItemProviderReading, NSItemProviderWriting, REIndentedDescription, UIItemProviderReading, UIItemProviderWriting> {
     id  _delegate;
     id  _frameworkDelegate;
     id  _internal;
@@ -29,6 +29,7 @@
 @property (readonly) long long _suggestedActionType;
 @property (readonly, copy) NSString *_teamIdentifier;
 @property (readonly, retain) NSUUID *_uniqueIdentifier;
+@property (readonly) unsigned long long _userInfoChangeCount;
 @property (readonly, copy) NSString *activityType;
 @property (nonatomic, readonly, copy) NSString *cacheIdentifier;
 @property (copy) CSSearchableItemAttributeSet *contentAttributeSet;
@@ -38,6 +39,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) CIBarcodeDescriptor *detectedBarcodeDescriptor;
 @property (getter=isEligibleForHandoff) bool eligibleForHandoff;
+@property (getter=isEligibleForPrediction) bool eligibleForPrediction;
 @property (getter=isEligibleForPublicIndexing) bool eligibleForPublicIndexing;
 @property (getter=isEligibleForSearch) bool eligibleForSearch;
 @property (copy) NSDate *expirationDate;
@@ -47,12 +49,16 @@
 @property (nonatomic, readonly) bool isClassKitDeepLink;
 @property (copy) NSSet *keywords;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, readonly) NFCNDEFMessage *ndefMessagePayload;
 @property bool needsSave;
+@property (copy) NSString *persistentIdentifier;
 @property (copy) NSURL *referrerURL;
 @property (copy) NSSet *requiredUserInfoKeys;
+@property (nonatomic, copy) NSString *suggestedInvocationPhrase;
 @property (readonly) Class superclass;
 @property bool supportsContinuationStreams;
 @property (copy) NSString *title;
+@property (setter=ts_setIsEligibleForPrediction:, nonatomic) bool ts_isEligibleForPrediction;
 @property (copy) NSDictionary *userInfo;
 @property (copy) NSURL *webpageURL;
 @property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
@@ -67,6 +73,8 @@
 + (bool)_supportsUserActivityAppLinks;
 + (void)_unregisterUserActivityType:(id)arg1 dynamicActivityType:(id)arg2;
 + (id)_userFacingErrorForLaunchServicesError:(id)arg1 userInfo:(id)arg2;
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(id /* block */)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)_addKeywordsFromArray:(id)arg1;
@@ -142,11 +150,13 @@
 - (id)initWithTypeIdentifier:(id)arg1;
 - (void)invalidate;
 - (bool)isEligibleForHandoff;
+- (bool)isEligibleForPrediction;
 - (bool)isEligibleForPublicIndexing;
 - (bool)isEligibleForSearch;
 - (bool)isEqual:(id)arg1;
 - (id)keywords;
 - (bool)needsSave;
+- (id)persistentIdentifier;
 - (id)referrerURL;
 - (id)requiredUserInfoKeys;
 - (void)resignCurrent;
@@ -156,11 +166,13 @@
 - (void)setContentUserAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEligibleForHandoff:(bool)arg1;
+- (void)setEligibleForPrediction:(bool)arg1;
 - (void)setEligibleForPublicIndexing:(bool)arg1;
 - (void)setEligibleForSearch:(bool)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setNeedsSave:(bool)arg1;
+- (void)setPersistentIdentifier:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
 - (void)setSupportsContinuationStreams:(bool)arg1;
@@ -186,6 +198,11 @@
 - (id)detectedBarcodeDescriptor;
 - (void)setDetectedCode:(id)arg1;
 
+// Image: /System/Library/Frameworks/CoreNFC.framework/CoreNFC
+
+- (id)ndefMessagePayload;
+- (void)setNdefMessagePayload:(id)arg1;
+
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
@@ -193,7 +210,15 @@
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1;
 
+- (bool)_accessedInteraction;
+- (long long)_executionContext;
+- (bool)_hasInteraction;
+- (id)_initWithIntent:(id)arg1;
 - (id)_intentsIdentifier;
+- (bool)_isEligibleForPrediction;
+- (void)_setAccessedInteraction:(bool)arg1;
+- (void)_setEligibleForPrediction:(bool)arg1;
+- (void)_setExecutionContext:(long long)arg1;
 - (void)_setInteraction:(id)arg1 donate:(bool)arg2;
 - (id)cacheIdentifier;
 - (void)generateCachePayloadWithCompletion:(id /* block */)arg1;
@@ -201,6 +226,8 @@
 - (id)interaction;
 - (void)setInInteraction:(id)arg1;
 - (void)setInteraction:(id)arg1;
+- (void)setSuggestedInvocationPhrase:(id)arg1;
+- (id)suggestedInvocationPhrase;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -216,15 +243,15 @@
 - (id)externalMediaContentIdentifier;
 - (void)setExternalMediaContentIdentifier:(id)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
 
-+ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
-+ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
-+ (id)readableTypeIdentifiersForItemProvider;
-+ (id)writableTypeIdentifiersForItemProvider;
++ (bool)apui_isSupportedForCardRequests;
 
-- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
-- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+- (id)apui_intent;
+
+// Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
+
+- (id)underlyingInteraction;
 
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
@@ -234,9 +261,49 @@
 + (id)_cnui_startVideoCallIntentWithHandle:(id)arg1 contact:(id)arg2;
 + (id)_cnui_userActivityWithActivityType:(id)arg1 handle:(id)arg2 contact:(id)arg3 intentWithPerson:(id /* block */)arg4;
 
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
++ (id)mtUserActivityWithActivityType:(id)arg1;
++ (id)mtUserActivityWithActivityType:(id)arg1 title:(id)arg2;
++ (id)mtUserActivityWithActivityType:(id)arg1 title:(id)arg2 keywords:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/News/TeaActivities.framework/TeaActivities
+
+- (bool)ts_isEligibleForPrediction;
+- (void)ts_setIsEligibleForPrediction:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (bool)px_allowsDonationsForCurrentProcess;
+
+- (bool)px_isCurrent;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (id)descriptionWithIndent:(unsigned long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/TeaActivities.framework/TeaActivities
+
+- (bool)ts_isEligibleForPrediction;
+- (void)ts_setIsEligibleForPrediction:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
++ (id)writableTypeIdentifiersForItemProvider;
+
+- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
+
 // Image: /System/Library/PrivateFrameworks/UserActivity.framework/UserActivity
 
++ (bool)_registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
+
+- (unsigned long long)_beginUserInfoUpdate:(id)arg1;
 - (id)_copyWithNewUUID;
+- (bool)_finishUserInfoUpdate;
 - (id)_objectForIdentifier:(id)arg1;
 - (id)_originalUniqueIdentifier;
 - (id)_payloadForIdentifier:(id)arg1;
@@ -247,6 +314,7 @@
 - (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3 dirty:(bool)arg4;
 - (void)_setPayloadIdentifier:(id)arg1 object:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)_updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
+- (unsigned long long)_userInfoChangeCount;
 - (id)contentAttributeSet;
 - (void)setContentAttributeSet:(id)arg1;
 

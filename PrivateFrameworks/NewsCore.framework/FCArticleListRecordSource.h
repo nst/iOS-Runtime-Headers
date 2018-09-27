@@ -4,13 +4,14 @@
 
 @interface FCArticleListRecordSource : FCRecordSource
 
-+ (unsigned long long)highThresholdDataSizeLimit;
-+ (unsigned long long)lowThresholdDataSizeLimit;
-+ (id)recordType;
-+ (id)storeFilename;
-+ (unsigned long long)storeVersion;
-
-- (id)desiredKeys;
+- (unsigned long long)highThresholdDataSizeLimit;
+- (unsigned long long)lowThresholdDataSizeLimit;
+- (id)nonLocalizableKeys;
+- (int)pbRecordType;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
+- (id)recordIDPrefix;
+- (id)recordType;
+- (id)storeFilename;
+- (unsigned long long)storeVersion;
 
 @end

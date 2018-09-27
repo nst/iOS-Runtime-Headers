@@ -4,7 +4,7 @@
 
 @interface ICModernSearchIndexerDataSource : ICBaseSearchIndexerDataSource
 
-- (id)allIndexableObjectIDs;
+- (id)allIndexableObjectIdentifiersByObjectID;
 - (void)contextWillSave:(id)arg1;
 - (id)dataSourceIdentifier;
 - (id)indexableObjectIDsWithIdentifiers:(id)arg1;

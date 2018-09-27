@@ -13,10 +13,6 @@
 
 - (void).cxx_destruct;
 - (id)_mapkit_accessoryControlToExtendWithCallout;
-- (double)_mapkit_calloutCustomLeftMargin;
-- (double)_mapkit_calloutCustomRightMargin;
-- (double)_mapkit_minimumCalloutWidthMultiplier;
-- (void)_mapkit_setCalloutBackgroundColor:(id)arg1;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;
 - (id)initWithView:(id)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

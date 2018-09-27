@@ -21,6 +21,7 @@
 - (MKOverlayRenderer *)mapView:(MKMapView *)arg1 rendererForOverlay:(id <MKOverlay>)arg2;
 - (MKAnnotationView *)mapView:(MKMapView *)arg1 viewForAnnotation:(id <MKAnnotation>)arg2;
 - (MKOverlayView *)mapView:(MKMapView *)arg1 viewForOverlay:(id <MKOverlay>)arg2;
+- (void)mapViewDidChangeVisibleRegion:(MKMapView *)arg1;
 - (void)mapViewDidFailLoadingMap:(MKMapView *)arg1 withError:(NSError *)arg2;
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)arg1;
 - (void)mapViewDidFinishRenderingMap:(MKMapView *)arg1 fullyRendered:(bool)arg2;

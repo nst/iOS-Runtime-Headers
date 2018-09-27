@@ -3,7 +3,7 @@
 
 @protocol CRKFeedbackDelegate <CRFeedbackListener>
 
-@required
+@optional
 
 - (void)presentViewController:(UIViewController *)arg1;
 

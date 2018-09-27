@@ -27,6 +27,7 @@
     NSATSTypesetter * _typesetter;
 }
 
+@property (getter=isElasticOnly, readonly) bool elasticOnly;
 @property (getter=isStandaloneTextAttachment, readonly) bool standaloneTextAttachment;
 
 - (long long)_charIndexToBreakLineByWordWrappingAtIndex:(long long)arg1 lineFragmentWidth:(double)arg2 hyphenate:(bool*)arg3;
@@ -40,6 +41,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })glyphRange;
 - (bool)hasElasticRange;
 - (id)initWithTypesetter:(id)arg1;
+- (bool)isElasticOnly;
 - (bool)isStandaloneTextAttachment;
 - (void)justifyWithFactor:(double)arg1;
 - (void)layoutForStartingGlyphAtIndex:(unsigned long long)arg1 characterIndex:(unsigned long long)arg2 minPosition:(double)arg3 maxPosition:(double)arg4 lineFragmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;

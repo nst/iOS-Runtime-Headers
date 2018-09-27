@@ -12,7 +12,6 @@
 - (void)_applyMandatorySettingsToEffectiveUserSettings:(id)arg1;
 - (void)_applyServerSideChangesWithOldRestrictions:(id)arg1 newRestrictions:(id)arg2 oldEffectiveUserSettings:(id)arg3 newEffectiveUserSettings:(id)arg4;
 - (id)_deviceSpecificDefaultSettings;
-- (id)_permittedAutoLockNumbers;
 - (id)_permittedGracePeriodNumbers;
 - (id)_selectLargestNumberFromSortedArray:(id)arg1 equalToOrLessThanNumber:(id)arg2;
 - (void)_sendChangeNotificationsBasedOnDefaultsAdditionByDomain:(id)arg1;
@@ -20,9 +19,11 @@
 - (void)_setRequriesEncryptedBackupInLockdownWithEffectiveUserSettings:(id)arg1;
 - (bool)isGreenTea;
 - (bool)isSetupBuddyDone;
+- (id)permittedAutoLockNumbers;
 - (id)profileTrustEvaluators;
 - (id)quantizedAutoLockInSeconds:(id)arg1;
 - (id)quantizedGracePeriodInSeconds:(id)arg1;
+- (bool)sanitizedProfileSignerCertificateChainIsAllowedToInstallSupervisedRestrictionsOnUnsupervisedDevices:(id)arg1;
 - (bool)sanitizedProfileSignerCertificateChainIsAllowedToInstallUnsupportedPayload:(id)arg1;
 - (bool)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
 

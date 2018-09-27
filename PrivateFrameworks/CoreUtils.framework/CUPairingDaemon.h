@@ -26,6 +26,8 @@
 - (void)_connectionInvalidated:(id)arg1;
 - (id)_copyHomeKitExWithOptions:(unsigned long long)arg1 error:(int*)arg2;
 - (id)_copyHomeKitWithOptions:(unsigned long long)arg1 error:(int*)arg2;
+- (id)_copyHomeKitWithOptionsHAP:(unsigned long long)arg1 error:(int*)arg2;
+- (id)_copyHomeKitWithOptionsKeychain:(unsigned long long)arg1 error:(int*)arg2;
 - (id)_copyIdentityWithOptions:(unsigned long long)arg1 error:(int*)arg2;
 - (id)_copyOrCreateWithOptions:(unsigned long long)arg1 error:(int*)arg2;
 - (id)_copyPairedPeersWithOptions:(unsigned long long)arg1 error:(int*)arg2;

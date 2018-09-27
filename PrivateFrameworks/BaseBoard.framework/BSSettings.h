@@ -4,8 +4,8 @@
 
 @interface BSSettings : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     <BSSettingDescriptionProvider> * _descriptionProvider;
-    NSMapTable * _settingToFlagMap;
-    NSMapTable * _settingToObjectMap;
+    BSMutableIntegerMap * _settingToFlagMap;
+    BSMutableIntegerMap * _settingToObjectMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,7 +32,6 @@
 - (id)basicDescriptionWithPrefix:(id)arg1;
 - (bool)boolForSetting:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionProvider;

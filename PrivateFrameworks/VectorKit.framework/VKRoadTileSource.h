@@ -10,14 +10,15 @@
 }
 
 @property (nonatomic) bool trafficEnabled;
+@property (nonatomic, retain) VKTrafficTileSource *trafficTileSource;
 
-- (void)_fetchedTile:(id)arg1;
+- (void)_fetchedTile:(id)arg1 isPreliminary:(bool)arg2;
+- (id)_privateInflightTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)_trafficFailed:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (id)_trafficTileSourceForOrigin:(unsigned char)arg1;
 - (void)clearCaches;
 - (void)dealloc;
+- (id)detailedDescription;
 - (void)expireAllTraffic;
-- (void)forEachTrafficTileSource:(id /* block */)arg1;
 - (id)inflightTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4 taskContext:(struct shared_ptr<md::TaskContext> { struct TaskContext {} *x1; struct __shared_weak_count {} *x2; })arg5;
 - (unsigned char)mapLayerForZoomLevelRange;
@@ -26,9 +27,11 @@
 - (void)setClient:(id)arg1;
 - (void)setMapType:(long long)arg1;
 - (void)setTrafficEnabled:(bool)arg1;
-- (void)setTrafficTileSource:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setTrafficTileSource:(id)arg1;
 - (bool)shouldObeyHybridUnavailableRegions;
-- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
+- (id)stateDescriptionForRenderKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3 userInfo:(id)arg4;
 - (bool)trafficEnabled;
+- (id)trafficTileSource;
 
 @end

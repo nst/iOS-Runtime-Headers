@@ -17,6 +17,7 @@
     AXEventGameControllerInfoRepresentation * _gameControllerInfo;
     long long  _generationCount;
     AXEventHandInfoRepresentation * _handInfo;
+    AXEventIOSMACPointerInfoRepresentation * _iosmacPointerInfo;
     bool  _isBuiltIn;
     bool  _isDisplayIntegrated;
     bool  _isGeneratedEvent;
@@ -33,6 +34,7 @@
     unsigned long long  _senderID;
     bool  _setTouchFlagOnSubevents;
     int  _subtype;
+    bool  _systemDrag;
     unsigned int  _taskPort;
     unsigned long long  _time;
     unsigned int  _type;
@@ -63,6 +65,7 @@
 @property (nonatomic) long long generationCount;
 @property (nonatomic, retain) AXEventHandInfoRepresentation *handInfo;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) AXEventIOSMACPointerInfoRepresentation *iosmacPointerInfo;
 @property (nonatomic) bool isBuiltIn;
 @property (nonatomic, readonly) bool isCancel;
 @property (nonatomic, readonly) bool isChordChange;
@@ -85,6 +88,7 @@
 @property (nonatomic) bool setTouchFlagOnSubevents;
 @property (nonatomic) int subtype;
 @property (readonly) Class superclass;
+@property (getter=isSystemDrag, nonatomic) bool systemDrag;
 @property (nonatomic) unsigned int taskPort;
 @property (nonatomic) unsigned long long time;
 @property (nonatomic) unsigned int type;
@@ -103,6 +107,7 @@
 + (id)accelerometerRepresentation:(id)arg1;
 + (id)buttonRepresentationWithType:(unsigned int)arg1;
 + (id)cancelEventForPathIndexMask:(unsigned int)arg1;
++ (id)iosmacPointerRepresentationWithTypeWithPointerInfo:(id)arg1;
 + (id)keyRepresentationWithType:(unsigned int)arg1;
 + (id)representationWithData:(id)arg1;
 + (id)representationWithEventRecord:(struct { int x1; int x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)arg1;
@@ -121,9 +126,11 @@
 - (struct __IOHIDEvent { }*)_accessibilityEventFromRealEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_applyAccessibilityDataToRealEvent:(struct __IOHIDEvent { }*)arg1;
 - (unsigned int)_contextIDFromHIDEvent:(struct __IOHIDEvent { }*)arg1;
+- (unsigned long long)_machTimeForHIDEventRef;
 - (struct __IOHIDEvent { }*)_newAccelerometerHIDEventRef;
 - (struct __IOHIDEvent { }*)_newButtonHIDEventRefWithType:(unsigned int)arg1;
 - (struct __IOHIDEvent { }*)_newHandHIDEventRef;
+- (struct __IOHIDEvent { }*)_newIOSMACPointerRef;
 - (struct __IOHIDEvent { }*)_newKeyboardHIDEventRef;
 - (id)_senderNameForID;
 - (id)accelerometerInfo;
@@ -150,6 +157,7 @@
 - (long long)generationCount;
 - (id)handInfo;
 - (id)initWithCoder:(id)arg1;
+- (id)iosmacPointerInfo;
 - (bool)isBuiltIn;
 - (bool)isCancel;
 - (bool)isChordChange;
@@ -161,6 +169,7 @@
 - (bool)isLift;
 - (bool)isMove;
 - (bool)isRedirectEvent;
+- (bool)isSystemDrag;
 - (bool)isTouchDown;
 - (bool)isUpdate;
 - (id)keyInfo;
@@ -192,6 +201,7 @@
 - (void)setHIDAttributeData:(id)arg1;
 - (void)setHIDTime:(unsigned long long)arg1;
 - (void)setHandInfo:(id)arg1;
+- (void)setIosmacPointerInfo:(id)arg1;
 - (void)setIsBuiltIn:(bool)arg1;
 - (void)setIsDisplayIntegrated:(bool)arg1;
 - (void)setIsGeneratedEvent:(bool)arg1;
@@ -205,6 +215,7 @@
 - (void)setSenderID:(unsigned long long)arg1;
 - (void)setSetTouchFlagOnSubevents:(bool)arg1;
 - (void)setSubtype:(int)arg1;
+- (void)setSystemDrag:(bool)arg1;
 - (void)setTaskPort:(unsigned int)arg1;
 - (void)setTime:(unsigned long long)arg1;
 - (bool)setTouchFlagOnSubevents;

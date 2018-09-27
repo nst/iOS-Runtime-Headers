@@ -28,10 +28,14 @@
 - (void)drawPrimitives:(unsigned long long)arg1 vertexStart:(unsigned long long)arg2 vertexCount:(unsigned long long)arg3;
 - (void)drawPrimitives:(unsigned long long)arg1 vertexStart:(unsigned long long)arg2 vertexCount:(unsigned long long)arg3 instanceCount:(unsigned long long)arg4;
 - (void)drawPrimitives:(unsigned long long)arg1 vertexStart:(unsigned long long)arg2 vertexCount:(unsigned long long)arg3 instanceCount:(unsigned long long)arg4 baseInstance:(unsigned long long)arg5;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithRenderCommandEncoder:(id)arg1 parent:(id)arg2 descriptor:(id)arg3;
 - (bool)isMemorylessRender;
+- (void)memoryBarrierWithResources:(const id*)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)setAlphaTestReferenceValue:(float)arg1;
 - (void)setBlendColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)setClipPlane:(float)arg1 p2:(float)arg2 p3:(float)arg3 p4:(float)arg4 atIndex:(unsigned long long)arg5;
 - (void)setColorResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4 atIndex:(unsigned long long)arg5;
 - (void)setColorResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4 atIndex:(unsigned long long)arg5 yInvert:(bool)arg6;
 - (void)setColorStoreAction:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
@@ -53,6 +57,7 @@
 - (void)setFragmentBytes:(const void*)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setFragmentSamplerState:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned long long)arg4;
+- (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 lodBias:(float)arg4 atIndex:(unsigned long long)arg5;
 - (void)setFragmentSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)setFragmentSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setFragmentTexture:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -60,7 +65,9 @@
 - (void)setFragmentTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setFrontFacingWinding:(unsigned long long)arg1;
 - (void)setLineWidth:(float)arg1;
+- (void)setPointSize:(float)arg1;
 - (void)setPrimitiveRestartEnabled:(bool)arg1;
+- (void)setPrimitiveRestartEnabled:(bool)arg1 index:(unsigned long long)arg2;
 - (void)setProvokingVertexMode:(unsigned long long)arg1;
 - (void)setRenderPipelineState:(id)arg1;
 - (void)setScissorRect:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
@@ -68,6 +75,8 @@
 - (void)setStencilCleared;
 - (void)setStencilFrontReferenceValue:(unsigned int)arg1 backReferenceValue:(unsigned int)arg2;
 - (void)setStencilReferenceValue:(unsigned int)arg1;
+- (void)setStencilResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4;
+- (void)setStencilResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4 yInvert:(bool)arg5;
 - (void)setStencilStoreAction:(unsigned long long)arg1;
 - (void)setStencilStoreActionOptions:(unsigned long long)arg1;
 - (void)setTessellationFactorBuffer:(id)arg1 offset:(unsigned long long)arg2 instanceStride:(unsigned long long)arg3;
@@ -90,6 +99,7 @@
 - (void)setVertexBytes:(const void*)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setVertexSamplerState:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned long long)arg4;
+- (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 lodBias:(float)arg4 atIndex:(unsigned long long)arg5;
 - (void)setVertexSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)setVertexSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setVertexTexture:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -98,12 +108,13 @@
 - (void)setViewportTransformEnabled:(bool)arg1;
 - (void)setViewports:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg1 count:(unsigned long long)arg2;
 - (void)setVisibilityResultMode:(unsigned long long)arg1 offset:(unsigned long long)arg2;
-- (void)textureBarrier;
 - (unsigned long long)tileHeight;
 - (unsigned long long)tileWidth;
 - (void)updateFence:(id)arg1 afterStages:(unsigned long long)arg2;
 - (void)useHeap:(id)arg1;
 - (void)useHeaps:(const id*)arg1 count:(unsigned long long)arg2;
+- (void)useRenderPipelineState:(id)arg1;
+- (void)useRenderPipelineStates:(const id*)arg1 count:(unsigned long long)arg2;
 - (void)useResource:(id)arg1 usage:(unsigned long long)arg2;
 - (void)useResources:(const id*)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
 - (void)waitForFence:(id)arg1 beforeStages:(unsigned long long)arg2;

@@ -15,10 +15,15 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)interface;
++ (id)registerBadgeCountNotificationBlock:(id /* block */)arg1;
+
 - (void).cxx_destruct;
 - (void)_call:(id)arg1 run:(id /* block */)arg2 error:(id /* block */)arg3;
 - (void)_setupConnection;
+- (bool)autoUpdateEnabled;
 - (void)clearExpiredUpdateHistoryWithCompletionBlock:(id /* block */)arg1;
+- (bool)confirmAgentRequestedUpdateAll;
 - (void)dealloc;
 - (void)getManagedUpdatesWithCompletionBlock:(id /* block */)arg1;
 - (void)getMetricsWithCompletionBlock:(id /* block */)arg1;
@@ -28,12 +33,13 @@
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
 - (void)refreshUpdateCountWithCompletionBlock:(id /* block */)arg1;
-- (void)refreshUpdatesWithCompletionBlock:(id)arg1 userInitiated:(bool)arg2 completionBlock:(id /* block */)arg3;
+- (void)refreshUpdatesWithCompletionBlock:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)reloadForSettingsFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadFromServerInBackgroundWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadManagedUpdatesWithCompletionBlock:(id /* block */)arg1;
 - (void)removeUpdateBulletins;
+- (void)setAutoUpdateEnabled:(bool)arg1;
 - (void)showApplicationBadgeForPendingUpdates;
 - (void)showApplicationUpdateBulletin;
 - (void)updateAllWithCompletionBlock:(id /* block */)arg1;

@@ -3,13 +3,14 @@
  */
 
 @interface CLKComplicationTemplateModularLargeTallBody : CLKComplicationTemplate {
+    NSDictionary * _additionalContentAttributes;
     CLKTextProvider * _bodyTextProvider;
-    NSDate * _contentDate;
     CLKTextProvider * _headerTextProvider;
     CLKTextProvider * _headerTrailingTextProvider;
     bool  _shouldTruncateHeaderLeadingLabelFirst;
 }
 
+@property (nonatomic, copy) NSDictionary *additionalContentAttributes;
 @property (nonatomic, copy) CLKTextProvider *bodyTextProvider;
 @property (nonatomic, copy) NSDate *contentDate;
 @property (nonatomic, copy) CLKTextProvider *headerTextProvider;
@@ -20,11 +21,13 @@
 - (void)_enumerateBOOLKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateDateKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
+- (id)additionalContentAttributes;
 - (id)bodyTextProvider;
 - (id)contentDate;
 - (id)headerTextProvider;
 - (id)headerTrailingTextProvider;
 - (bool)isCompatibleWithFamily:(long long)arg1;
+- (void)setAdditionalContentAttributes:(id)arg1;
 - (void)setBodyTextProvider:(id)arg1;
 - (void)setContentDate:(id)arg1;
 - (void)setHeaderTextProvider:(id)arg1;

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) bool canContributeToCloudSharedAlbum;
 @property (nonatomic, readonly) bool canShowAvalancheStacks;
 @property (nonatomic, readonly) bool canShowComments;
+@property (nonatomic) short cloudDeleteState;
 @property (nonatomic, retain) NSString *cloudGUID;
 @property (nonatomic) short cloudLocalState;
 @property (readonly, copy) NSString *debugDescription;
@@ -45,7 +46,6 @@
 @property (nonatomic, readonly) bool isSmartAlbum;
 @property (nonatomic, readonly) bool isStandInAlbum;
 @property (nonatomic, readonly) bool isUserLibraryAlbum;
-@property (nonatomic, readonly) bool isWallpaperAlbum;
 @property (nonatomic, retain) PLManagedAsset *keyAsset;
 @property (nonatomic, readonly, retain) NSNumber *kind;
 @property (nonatomic) int kindValue;
@@ -138,14 +138,13 @@
 + (id)trashBinAlbumInLibrary:(id)arg1;
 + (id)userLibraryAlbumInLibrary:(id)arg1;
 + (id)uuidFromGroupURL:(id)arg1;
-+ (id)wallpaperAlbumInLibrary:(id)arg1;
 
 - (void)_applyTrashedState:(short)arg1 date:(bool)arg2 :(id)arg3 cascade:(bool)arg4;
 - (id)_compactDebugDescription;
-- (id)_itemIdentifier;
 - (id)_kindDescription;
 - (id)_prettyDescription;
 - (void)_repairTitleIfEmpty;
+- (id)_scopedIdentifier;
 - (void)applyPropertiesFromAlbumChange:(id)arg1;
 - (void)applyTrashedState:(short)arg1 cascade:(bool)arg2;
 - (unsigned long long)approximateCount;
@@ -194,11 +193,11 @@
 - (bool)isStandInAlbum;
 - (bool)isSyncableChange;
 - (bool)isUserLibraryAlbum;
-- (bool)isWallpaperAlbum;
 - (int)kindValue;
 - (id)localID;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
+- (id)momentShare;
 - (id)name;
 - (id)photoLibrary;
 - (unsigned long long)photosCount;

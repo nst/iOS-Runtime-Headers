@@ -66,6 +66,7 @@
 - (id)allItems;
 - (unsigned long long)cachedNumberOfDevicesInSyncCircle;
 - (bool)canRecordRedirectFromVisit:(id)arg1 to:(id)arg2;
+- (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)clearHistory;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;

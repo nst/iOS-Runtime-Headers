@@ -21,21 +21,21 @@
 
 - (void).cxx_destruct;
 - (bool)_shouldPromptUserToOpenTTR;
-- (void)addSections:(id)arg1;
+- (void)addSections:(id)arg1 delayedTopHit:(bool)arg2;
 - (void)cancel;
+- (void)clear;
 - (void)clearInternal:(int)arg1 invalidate:(bool)arg2;
 - (id)defaultSearchThroughSection;
 - (id)getTapToRadarPunchOutForRankingWithDebugLog:(id)arg1;
 - (void)handleHiddenResult:(id)arg1 shownResult:(id)arg2 inSection:(id)arg3;
 - (void)handleOptionsForNewSections:(id)arg1;
 - (id)initForSession:(id)arg1 withQuery:(id)arg2;
-- (bool)itemInLibrary:(id)arg1;
 - (void)mergeSections;
 - (id)query;
 - (id)resultWithIdentifier:(id)arg1 title:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4;
-- (void)searchDaemonLocalSuggestionsData:(id)arg1;
+- (void)searchDaemonLocalSuggestionsData:(id)arg1 lexicon:(struct _LXLexicon { }*)arg2 tokenizer:(struct __CFStringTokenizer { }*)arg3 currentLocaleRef:(struct __CFLocale { }*)arg4;
 - (void)searchDaemonQuery:(id)arg1 encounteredError:(id)arg2;
-- (void)searchDaemonQuery:(id)arg1 gotResultSet:(id)arg2 replace:(bool)arg3 complete:(bool)arg4 finished:(bool)arg5 blendingDuration:(double)arg6 geoEntityString:(id)arg7;
+- (void)searchDaemonQuery:(id)arg1 gotResultSet:(id)arg2 replace:(bool)arg3 complete:(bool)arg4 finished:(bool)arg5 delayed:(bool)arg6 delayedTopHit:(bool)arg7 blendingDuration:(double)arg8 geoEntityString:(id)arg9;
 - (void)searchDaemonRankingLog:(id)arg1;
 - (void)searchDaemonSuggestionsArray:(id)arg1;
 - (id)searchString;

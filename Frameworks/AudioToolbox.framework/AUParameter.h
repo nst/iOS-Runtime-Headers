@@ -28,6 +28,7 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)_clumpID;
 - (float)_internalValue;
 - (bool)_localValueStale;

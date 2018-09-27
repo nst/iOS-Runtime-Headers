@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (void)loadView;
 - (id)readerController;
+- (void)readerController:(id)arg1 contentDidBecomeReadyWithDetectedLanguage:(id)arg2;
 - (void)readerController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didClickLinkRequestingNewWindowInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didDetermineReaderAvailability:(bool)arg2 dueToSameDocumentNavigation:(bool)arg3;

@@ -29,7 +29,9 @@
 - (bool)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (id)peerWithInfo:(id)arg1;
 - (bool)sendDebugMsg:(unsigned short)arg1 args:(id)arg2;
+- (id)sendDebugSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (bool)sendMsg:(unsigned short)arg1 args:(id)arg2;
+- (bool)sendRawCommand:(unsigned short)arg1 data:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)setAdvertisingAddress:(id)arg1;
 - (void)setConnectionTargetQueue:(id)arg1;
@@ -37,6 +39,7 @@
 - (id)sharedPairingAgent;
 - (void)startWithQueue:(id)arg1 options:(id)arg2 sessionType:(int)arg3;
 - (long long)state;
+- (void)triggerBTErrorReport:(long long)arg1;
 - (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)xpcConnectionDidReset;
 - (void)xpcConnectionIsInvalid;

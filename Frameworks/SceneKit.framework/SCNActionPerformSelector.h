@@ -7,7 +7,7 @@
     id  _target;
 }
 
-+ (id)perfromSelector:(SEL)arg1 onTarget:(id)arg2;
++ (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

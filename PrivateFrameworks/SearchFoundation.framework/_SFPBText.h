@@ -3,17 +3,12 @@
  */
 
 @interface _SFPBText : PBCodable <NSSecureCoding, _SFPBText> {
-    struct { 
-        unsigned int maxLines : 1; 
-    }  _has;
     unsigned int  _maxLines;
     NSString * _text;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasMaxLines;
-@property (nonatomic, readonly) bool hasText;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) unsigned int maxLines;
@@ -24,8 +19,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasMaxLines;
-- (bool)hasText;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

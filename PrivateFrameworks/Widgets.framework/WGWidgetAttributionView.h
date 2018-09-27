@@ -9,7 +9,7 @@
 
 @property (nonatomic, retain) UIColor *legibilityTextColor;
 
-+ (id)attributedStringForIdentifier:(id)arg1;
++ (void)requestAttributedStringForIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 + (id)widgetAttributionIDsInOrder;
 
 - (void).cxx_destruct;

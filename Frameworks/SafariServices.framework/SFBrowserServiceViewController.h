@@ -11,6 +11,8 @@
     bool  _isExpectingClientRedirect;
     NSDate * _lastHostApplicationSuspendDate;
     WKProcessPool * _processPool;
+    NSTimer * _redirectNotificationTimer;
+    bool  _touchEventsShouldStopRedirectNotifications;
     _SFWebViewUsageMonitor * _usageMonitor;
     SFUserNotification * _userNotification;
 }
@@ -44,6 +46,7 @@
 - (void)_updateRemoteSwipeGestureState;
 - (id)_webDataStoreRootURL;
 - (void)_willAppearInRemoteViewController;
+- (void)browserViewDidReceiveTouchEvent:(id)arg1;
 - (id)bundleIdentifierForProfileInstallation;
 - (void)dealloc;
 - (void)decideCookieSharingForURL:(id)arg1 callbackURLScheme:(id)arg2;
@@ -66,11 +69,13 @@
 - (id)userNotification;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)webViewController:(id)arg1 didChangeFullScreen:(bool)arg2;
 - (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 willPerformClientRedirectToURL:(id)arg2 withDelay:(double)arg3;
 - (void)webViewControllerDidCancelClientRedirect:(id)arg1;
+- (void)webViewControllerWebProcessDidCrash:(id)arg1;
 - (id)websiteDataStoreConfiguration;
 
 @end

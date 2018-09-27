@@ -4,6 +4,9 @@
 
 @interface RKUtilities : NSObject
 
++ (id)getDeviceModel;
++ (bool)isDeviceSupportedForLSTMBasedLanguageIdentification:(id)arg1;
++ (bool)isDeviceSupportedForPhotoSharingIntentDetection:(id)arg1;
 + (bool)isLanguageSupportedByNSLinguisticTaggerForLanguageIdentification:(id)arg1;
 + (bool)isLanguageSupportedBySmartPunctuation:(id)arg1;
 + (bool)isLanguageSupportedForLemmatization:(id)arg1;

@@ -3,6 +3,9 @@
  */
 
 @interface NTKContainerView : UIView {
+    struct { 
+        unsigned int layoutContainerView : 1; 
+    }  _delegateRespondsTo;
     <NTKContainerViewLayoutDelegate> * _layoutDelegate;
 }
 

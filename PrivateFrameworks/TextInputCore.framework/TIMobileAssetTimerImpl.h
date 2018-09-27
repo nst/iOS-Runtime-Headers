@@ -9,6 +9,7 @@
 
 + (id)nextFireDateForDate:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)assetTimerFired;
 - (void)dealloc;
 - (id)initWithExpirationHandler:(id /* block */)arg1;

@@ -22,9 +22,9 @@
 + (id)dataSourceForTask;
 + (id)taskWithClientIdentifier:(id)arg1 oneTimeTask:(bool)arg2;
 
+- (void).cxx_destruct;
 - (id)clientIdentifier;
 - (id)dataSource;
-- (void)dealloc;
 - (void)didFinishLearning;
 - (void)enumerateHandlesForLanguage:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)forwardedMessageSeparators;

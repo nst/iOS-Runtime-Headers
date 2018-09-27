@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCNetworkReachability : NSObject {
+@interface FCNetworkReachability : NSObject <FCNetworkReachabilityType> {
     bool  _accessRestrictedBecauseOfAppVersion;
     bool  _accessRestrictedBecauseOfCountry;
     bool  _accessRestrictedBecauseOfDeviceAbandoned;
@@ -27,6 +27,9 @@
 @property (nonatomic, readonly) long long cellularRadioAccessTechnology;
 @property (nonatomic, retain) NSString *currentCellularCarrierName;
 @property (nonatomic) long long currentRadioAccessTechnology;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NFReachability *internetReachability;
 @property (nonatomic) bool isCloudKitAccessAllowed;
 @property (nonatomic, readonly) bool isCloudKitReachable;
@@ -38,6 +41,7 @@
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic) long long offlineReason;
 @property (nonatomic, readonly) long long reachabilityStatus;
+@property (readonly) Class superclass;
 
 + (id)sharedNetworkReachability;
 

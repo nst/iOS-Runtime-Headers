@@ -9,6 +9,8 @@
     id  _reactorID;
 }
 
+@property unsigned int effectiveUserIdentifier;
+
 + (void)_enumerateParentDirectoriesStartingAtURL:(id)arg1 usingBlock:(id /* block */)arg2;
 
 - (id)_clientProxy;
@@ -24,6 +26,7 @@
 - (void)invalidate;
 - (id)itemLocation;
 - (id)reactorID;
+- (void)setEffectiveUserIdentifier:(unsigned int)arg1;
 - (void)setItemLocation:(id)arg1;
 
 @end

@@ -48,6 +48,7 @@
 - (void)locationTracker:(id)arg1 didReroute:(id)arg2 newAlternateRoutes:(id)arg3 rerouteReason:(unsigned long long)arg4 request:(id)arg5 response:(id)arg6;
 - (void)locationTracker:(id)arg1 didUpdateETAForRoute:(id)arg2;
 - (void)locationTracker:(id)arg1 didUpdateMatchedLocation:(id)arg2;
+- (void)locationTracker:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
 - (void)locationTrackerDidArrive:(id)arg1;
 - (void)locationTrackerDidCancelReroute:(id)arg1;
 - (void)locationTrackerWillReroute:(id)arg1;

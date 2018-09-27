@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;
+- (bool)allowsAnonymousAccount;
 - (id)generateRequestOperations;
 - (id)initWithRecordZoneIDs:(id)arg1;
 - (bool)onlyFetchPCSInfo;

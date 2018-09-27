@@ -9,7 +9,7 @@
 
 @optional
 
-- (void)didDetectExternalReader:(NFTechnologyEvent *)arg1;
+- (void)didDetectExternalReaderWithNotification:(NFFieldNotification *)arg1;
 - (void)didDetectNDEFMessages:(NSArray *)arg1 fromTags:(NSArray *)arg2;
 - (void)didDetectTags:(NSArray *)arg1;
 

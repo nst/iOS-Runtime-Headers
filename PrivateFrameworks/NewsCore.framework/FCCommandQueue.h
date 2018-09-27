@@ -8,6 +8,7 @@
     <FCCommandQueueDelegate> * _delegate;
     bool  _executingCommand;
     NSObject<OS_dispatch_group> * _executingCommandsGroup;
+    NSString * _name;
     NSMutableArray * _pendingCommands;
     NSObject<OS_dispatch_group> * _pendingCommandsGroup;
     FCKeyValueStore * _persistentStore;
@@ -25,6 +26,7 @@
 @property (getter=isExecutingCommand, nonatomic) bool executingCommand;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *executingCommandsGroup;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSMutableArray *pendingCommands;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *pendingCommandsGroup;
 @property (nonatomic, retain) FCKeyValueStore *persistentStore;
@@ -65,6 +67,7 @@
 - (id)initWithContext:(id)arg1 urgency:(long long)arg2 suspended:(bool)arg3 delegate:(id)arg4;
 - (bool)isExecutingCommand;
 - (bool)isSuspended;
+- (id)name;
 - (void)networkReachabilityDidChange:(id)arg1;
 - (id)pendingCommands;
 - (id)pendingCommandsGroup;
@@ -76,6 +79,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setExecutingCommand:(bool)arg1;
 - (void)setExecutingCommandsGroup:(id)arg1;
+- (void)setName:(id)arg1;
 - (void)setPendingCommands:(id)arg1;
 - (void)setPendingCommandsGroup:(id)arg1;
 - (void)setPersistentStore:(id)arg1;

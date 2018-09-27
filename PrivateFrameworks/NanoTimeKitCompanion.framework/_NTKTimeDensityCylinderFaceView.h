@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface _NTKTimeDensityCylinderFaceView : UIView <NTKPolygonCylinderFaceView>
+@interface _NTKTimeDensityCylinderFaceView : UIView <NTKPolygonCylinderSideView>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

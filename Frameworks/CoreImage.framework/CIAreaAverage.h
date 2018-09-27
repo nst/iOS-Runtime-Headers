@@ -5,5 +5,7 @@
 @interface CIAreaAverage : CIReductionFilter
 
 - (id)outputImage;
+- (id)outputImageMPS;
+- (id)outputImageNonMPS;
 
 @end

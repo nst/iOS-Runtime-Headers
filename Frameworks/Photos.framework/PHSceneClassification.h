@@ -13,6 +13,7 @@
 + (id)fetchSceneClassificationsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 
 - (double)confidence;
+- (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;

@@ -23,18 +23,20 @@
 }
 
 @property (nonatomic) long long cachedPeopleCount;
-@property (getter=isCountAvailable, nonatomic, readonly) bool countAvailable;
 @property int currentRequestId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *imageCache;
 @property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic, readonly) bool isCountAvailable;
 @property (nonatomic, readonly) long long peopleCount;
 @property (nonatomic, readonly) PXPeopleSectionedDataSource *peopleDataSource;
 @property (nonatomic, retain) PXPeopleProgressManager *progressMgr;
 @property (nonatomic, copy) id /* block */ requestCompletion;
 @property (readonly) Class superclass;
+
++ (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_appWillEnterForeground;

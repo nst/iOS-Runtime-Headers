@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRequestPaymentIntent : INIntent <ATXSlotResolver, INRequestPaymentIntentExport>
+@interface INRequestPaymentIntent : INIntent <INRequestPaymentIntentExport>
 
 @property (nonatomic, readonly, copy) INCurrencyAmount *currencyAmount;
 @property (readonly, copy) NSString *debugDescription;
@@ -14,10 +14,15 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (id)_categoryVerb;
 - (id)_dictionaryRepresentation;
+- (long long)_intentCategory;
+- (bool)_isUserConfirmationRequired;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_typedBackingStore;
+- (bool)configureAttributeSet:(id)arg1 includingData:(bool)arg2;
 - (id)currencyAmount;
 - (id)domain;
 - (id)initWithPayer:(id)arg1 currencyAmount:(id)arg2 note:(id)arg3;
@@ -34,14 +39,11 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
-+ (bool)isRequired;
-+ (id)resolveIntentFromSlot:(id)arg1;
-+ (id)slotFromContext:(id)arg1;
-
 - (void)apr_getArgsInto:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 
-- (id)contextMetadata;
+- (void)requestCard:(id)arg1 reply:(id /* block */)arg2;
+- (unsigned long long)servicePriorityForCardRequest:(id)arg1;
 
 @end

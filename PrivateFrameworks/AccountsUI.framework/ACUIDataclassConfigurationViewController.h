@@ -12,7 +12,6 @@
     NSArray * _dataclassSpecifiers;
     PSSpecifier * _deleteButtonSpecifier;
     bool  _didShowDataclassActionPickerDuringRemoval;
-    NSMutableArray * _dirtyDataclassCells;
     bool  _firstTimeSetup;
     bool  _forceMailSetup;
     bool  _isMailSetupForced;
@@ -39,20 +38,18 @@
 
 - (void).cxx_destruct;
 - (id)_accountIdentifier;
-- (id)_activityInProgressTextForDataclass:(id)arg1 isBeingEnabled:(bool)arg2;
 - (bool)_confirmDeleteLocalDataForDataclasses:(id)arg1;
 - (bool)_confirmKeepLocalDataForDataclasses:(id)arg1;
 - (bool)_confirmSyncDelete;
 - (void)_enableAllProvisionedDataclassesWithoutRequringUserInteraction;
 - (bool)_isShowingDeleteAccountButton;
-- (void)_markDataclassSwitchCellAsDirty:(id)arg1;
 - (id)_navigationTitle;
 - (void)_notifyOfAccountSetupCompletion;
 - (id)_orderDataclassList:(id)arg1;
 - (bool)_promptUserToConfirmAccountDeletion;
 - (long long)_promptUserToConfirmAccountSyncDeletion;
 - (void)_setDataclass:(id)arg1 enabled:(bool)arg2;
-- (void)_showDelayedActivityInProgressUIWithMessage:(id)arg1;
+- (id)_setupSpinnerTimerForSpecifier:(id)arg1;
 - (id)_specifiersForDataclasses:(id)arg1;
 - (id)account;
 - (Class)accountInfoControllerClass;
@@ -70,7 +67,6 @@
 - (id)displayedShortAccountTypeString;
 - (void)doneButtonTapped:(id)arg1;
 - (void)forceMailSetup;
-- (void)hideActivityInProgressUIWithDelay:(double)arg1;
 - (id)init;
 - (bool)isAppleMailAccount:(id)arg1;
 - (bool)isFirstTimeSetup;
@@ -86,7 +82,6 @@
 - (id)otherSpecifiers;
 - (id)preEnabledDataclasses;
 - (void)reloadDynamicSpecifiersWithAnimation:(bool)arg1;
-- (void)resetDirtyDataclassSwitchCells;
 - (void)setAccount:(id)arg1;
 - (void)setConfigurationCompletion:(id /* block */)arg1;
 - (void)setDataclass:(id)arg1 enabled:(bool)arg2;

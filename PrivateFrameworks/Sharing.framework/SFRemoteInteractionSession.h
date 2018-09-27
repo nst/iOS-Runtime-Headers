@@ -12,6 +12,7 @@
     id /* block */  _invalidationHandler;
     SFDevice * _peerDevice;
     SFSession * _remoteSession;
+    id /* block */  _remoteTextEventHandler;
     id /* block */  _textSessionDidBegin;
     id /* block */  _textSessionDidChange;
     id /* block */  _textSessionDidEnd;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, retain) SFDevice *peerDevice;
+@property (nonatomic, copy) id /* block */ remoteTextEventHandler;
 @property (nonatomic, copy) id /* block */ textSessionDidBegin;
 @property (nonatomic, copy) id /* block */ textSessionDidChange;
 @property (nonatomic, copy) id /* block */ textSessionDidEnd;
@@ -40,6 +42,7 @@
 - (void)_sessionDeleteTextBackward;
 - (void)_sessionHandleEvent:(id)arg1;
 - (void)_sessionInsertText:(id)arg1;
+- (void)_sessionSendPayload:(struct NSDictionary { Class x1; }*)arg1;
 - (void)_sessionSetText:(id)arg1;
 - (void)_sessionStart;
 - (void)activateWithCompletion:(id /* block */)arg1;
@@ -57,14 +60,18 @@
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
 - (id)peerDevice;
+- (void)remoteInteractionSessionRemoteTextEvent:(id)arg1;
 - (void)remoteInteractionSessionTextSessionDidBegin:(id)arg1;
 - (void)remoteInteractionSessionTextSessionDidChange:(id)arg1;
 - (void)remoteInteractionSessionTextSessionDidEnd:(id)arg1;
+- (id /* block */)remoteTextEventHandler;
+- (void)sendPayload:(struct NSDictionary { Class x1; }*)arg1;
 - (void)setAgent:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setPeerDevice:(id)arg1;
+- (void)setRemoteTextEventHandler:(id /* block */)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextSessionDidBegin:(id /* block */)arg1;
 - (void)setTextSessionDidChange:(id /* block */)arg1;

@@ -5,7 +5,8 @@
 @interface CNUIContactsEnvironment : NSObject {
     CNUIAccountsFacade * _accountsFacade;
     <CNUIUserActionDiscoveringEnvironment> * _actionDiscoveringEnvironment;
-    <CNUILSApplicationWorkspaceFacade> * _applicationWorkspace;
+    CNUIUserActivityManager * _activityManager;
+    <CNLSApplicationWorkspace> * _applicationWorkspace;
     <CNUILikenessRendering> * _cachingLikenessRenderer;
     <CNUIPRLikenessResolver> * _cachingLikenessResolver;
     <CNCapabilities> * _capabilities;
@@ -17,7 +18,9 @@
     <CNUIDefaultUserActionFetcher> * _defaultUserActionFetcher;
     _DECConsumer * _duetConsumer;
     CNUIFMFFacade * _fmfFacade;
+    CNGeminiManager * _geminiManager;
     CNUIIDSAvailabilityProvider * _idsAvailabilityProvider;
+    id  _launchCheckinRegistrar;
     CNUIMeContactMonitor * _meMonitor;
     PRPersonaStore * _personaStore;
     <CNUIPlaceholderProviderFactory> * _placeholderProviderFactory;
@@ -26,7 +29,8 @@
 
 @property (nonatomic, retain) CNUIAccountsFacade *accountsFacade;
 @property (nonatomic, retain) <CNUIUserActionDiscoveringEnvironment> *actionDiscoveringEnvironment;
-@property (nonatomic, retain) <CNUILSApplicationWorkspaceFacade> *applicationWorkspace;
+@property (nonatomic, retain) CNUIUserActivityManager *activityManager;
+@property (nonatomic, retain) <CNLSApplicationWorkspace> *applicationWorkspace;
 @property (nonatomic, retain) <CNUILikenessRendering> *cachingLikenessRenderer;
 @property (nonatomic, retain) <CNUIPRLikenessResolver> *cachingLikenessResolver;
 @property (nonatomic, retain) <CNCapabilities> *capabilities;
@@ -38,7 +42,9 @@
 @property (nonatomic, retain) <CNUIDefaultUserActionFetcher> *defaultUserActionFetcher;
 @property (nonatomic, retain) _DECConsumer *duetConsumer;
 @property (nonatomic, retain) CNUIFMFFacade *fmfFacade;
+@property (nonatomic, retain) CNGeminiManager *geminiManager;
 @property (nonatomic, retain) CNUIIDSAvailabilityProvider *idsAvailabilityProvider;
+@property (nonatomic, retain) id launchCheckinRegistrar;
 @property (nonatomic, retain) CNUIMeContactMonitor *meMonitor;
 @property (nonatomic, retain) PRPersonaStore *personaStore;
 @property (nonatomic, retain) <CNUIPlaceholderProviderFactory> *placeholderProviderFactory;
@@ -50,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)accountsFacade;
 - (id)actionDiscoveringEnvironment;
+- (id)activityManager;
 - (id)applicationWorkspace;
 - (id)cachingLikenessRenderer;
 - (id)cachingLikenessResolver;
@@ -62,12 +69,16 @@
 - (id)defaultUserActionFetcher;
 - (id)duetConsumer;
 - (id)fmfFacade;
+- (id)geminiManager;
 - (id)idsAvailabilityProvider;
 - (id)init;
 - (id)initWithContactsEnvironment:(id)arg1;
+- (id)launchCheckinRegistrar;
 - (id)meMonitor;
+- (id)nts_launchCheckinRegistrar;
 - (id)nts_lazyAccountsFacade;
 - (id)nts_lazyActionDiscoveringEnvironment;
+- (id)nts_lazyActivityManager;
 - (id)nts_lazyApplicationWorkspace;
 - (id)nts_lazyCachingLikenessRenderer;
 - (id)nts_lazyCachingLikenessResolver;
@@ -79,6 +90,7 @@
 - (id)nts_lazyDefaultUserActionFetcher;
 - (id)nts_lazyDuetConsumer;
 - (id)nts_lazyFMFFacade;
+- (id)nts_lazyGeminiManager;
 - (id)nts_lazyIDSAvailabilityProvider;
 - (id)nts_lazyPersonaStore;
 - (id)nts_lazyPlaceholderProviderFactory;
@@ -92,6 +104,7 @@
 - (id)recentsManager;
 - (void)setAccountsFacade:(id)arg1;
 - (void)setActionDiscoveringEnvironment:(id)arg1;
+- (void)setActivityManager:(id)arg1;
 - (void)setApplicationWorkspace:(id)arg1;
 - (void)setCachingLikenessRenderer:(id)arg1;
 - (void)setCachingLikenessResolver:(id)arg1;
@@ -103,7 +116,9 @@
 - (void)setDefaultUserActionFetcher:(id)arg1;
 - (void)setDuetConsumer:(id)arg1;
 - (void)setFmfFacade:(id)arg1;
+- (void)setGeminiManager:(id)arg1;
 - (void)setIdsAvailabilityProvider:(id)arg1;
+- (void)setLaunchCheckinRegistrar:(id)arg1;
 - (void)setMeMonitor:(id)arg1;
 - (void)setPersonaStore:(id)arg1;
 - (void)setPlaceholderProviderFactory:(id)arg1;

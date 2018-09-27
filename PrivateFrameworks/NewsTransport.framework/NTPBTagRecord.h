@@ -15,6 +15,7 @@
     NSString * _coverArticleListID;
     NSString * _coverImageURL;
     NTPBFeedConfiguration * _feedConfiguration;
+    NSString * _feedNavImageURL;
     int  _groupingAvailability;
     struct { 
         unsigned int behaviorFlags : 1; 
@@ -92,6 +93,7 @@
 @property (nonatomic, retain) NSString *coverArticleListID;
 @property (nonatomic, retain) NSString *coverImageURL;
 @property (nonatomic, retain) NTPBFeedConfiguration *feedConfiguration;
+@property (nonatomic, retain) NSString *feedNavImageURL;
 @property (nonatomic) int groupingAvailability;
 @property (nonatomic, readonly) bool hasArticleRecirculationConfiguration;
 @property (nonatomic, readonly) bool hasBase;
@@ -101,6 +103,7 @@
 @property (nonatomic, readonly) bool hasCoverArticleListID;
 @property (nonatomic, readonly) bool hasCoverImageURL;
 @property (nonatomic, readonly) bool hasFeedConfiguration;
+@property (nonatomic, readonly) bool hasFeedNavImageURL;
 @property (nonatomic) bool hasGroupingAvailability;
 @property (nonatomic) bool hasHideAccessoryText;
 @property (nonatomic) bool hasIsDeprecated;
@@ -250,6 +253,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedConfiguration;
+- (id)feedNavImageURL;
 - (int)groupingAvailability;
 - (bool)hasArticleRecirculationConfiguration;
 - (bool)hasBase;
@@ -259,6 +263,7 @@
 - (bool)hasCoverArticleListID;
 - (bool)hasCoverImageURL;
 - (bool)hasFeedConfiguration;
+- (bool)hasFeedNavImageURL;
 - (bool)hasGroupingAvailability;
 - (bool)hasHideAccessoryText;
 - (bool)hasIsDeprecated;
@@ -371,6 +376,7 @@
 - (void)setCoverArticleListID:(id)arg1;
 - (void)setCoverImageURL:(id)arg1;
 - (void)setFeedConfiguration:(id)arg1;
+- (void)setFeedNavImageURL:(id)arg1;
 - (void)setGroupingAvailability:(int)arg1;
 - (void)setHasBehaviorFlags:(bool)arg1;
 - (void)setHasContentProvider:(bool)arg1;
@@ -441,6 +447,7 @@
 
 - (id)generateCoverImageAssetHandleForURLString:(id)arg1 withAssetManager:(id)arg2;
 - (id)generateCoverImageAssetHandleWithAssetManager:(id)arg1;
+- (id)generateFeedNavImageAssetHandleWithAssetManager:(id)arg1;
 - (id)generateLogoImageAssetHandleWithAssetManager:(id)arg1;
 - (id)generateNameImageAssetHandleWithAssetManager:(id)arg1;
 - (id)generateNameImageCompactAssetHandleWithAssetManager:(id)arg1;

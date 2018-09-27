@@ -13,7 +13,6 @@
     double  _modelMax;
     double  _modelMedian;
     double  _modelMin;
-    long long  _retainCount;
     NSArray * _totals;
 }
 
@@ -29,11 +28,9 @@
 @property (nonatomic) double modelMin;
 @property (nonatomic, copy) NSArray *totals;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-
+- (void).cxx_destruct;
 - (double)dataSetModelMax;
 - (double)dataSetModelMin;
-- (void)dealloc;
 - (id)majorGridLocations;
 - (double)max;
 - (double)min;
@@ -42,9 +39,6 @@
 - (double)modelMax;
 - (double)modelMedian;
 - (double)modelMin;
-- (oneway void)release;
-- (id)retain;
-- (unsigned long long)retainCount;
 - (void)setDataSetModelMax:(double)arg1;
 - (void)setDataSetModelMin:(double)arg1;
 - (void)setMajorGridLocations:(id)arg1;

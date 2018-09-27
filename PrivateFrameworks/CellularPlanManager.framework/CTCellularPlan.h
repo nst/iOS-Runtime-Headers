@@ -6,6 +6,7 @@
     bool  _isHomePlan;
     NSString * _phoneNumber;
     CTCellularPlanProfile * _profile;
+    bool  _requiresUserConsent;
     CTCellularPlanSubscription * _subscription;
     NSNumber * _subscriptionStatusOverride;
 }
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) int planType;
 @property (nonatomic, retain) CTCellularPlanProfile *profile;
 @property (nonatomic, readonly) NSData *profileId;
+@property (nonatomic) bool requiresUserConsent;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, retain) CTCellularPlanSubscription *subscription;
 @property (nonatomic, retain) NSNumber *subscriptionStatusOverride;
@@ -63,12 +65,15 @@
 - (int)planType;
 - (id)profile;
 - (id)profileId;
+- (bool)requiresUserConsent;
 - (void)setIsHomePlan:(bool)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProfile:(id)arg1;
+- (void)setRequiresUserConsent:(bool)arg1;
 - (void)setSubscription:(id)arg1;
 - (void)setSubscriptionStatusOverride:(id)arg1;
 - (int)status;
+- (id)statusAsString:(id)arg1;
 - (id)subscription;
 - (id)subscriptionStatusOverride;
 - (double)timestamp;

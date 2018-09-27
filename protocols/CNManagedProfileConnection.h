@@ -9,5 +9,6 @@
 - (NSArray *)filteredOpenInOriginatingAccounts:(NSArray *)arg1 targetAppBundleID:(NSString *)arg2 targetAccountManagement:(long long)arg3;
 - (bool)isOpenInRestrictionInEffect;
 - (bool)mayShowLocalAccountsForBundleID:(NSString *)arg1 sourceAccountManagement:(long long)arg2;
+- (bool)mayShowLocalAccountsForTargetBundleID:(NSString *)arg1 targetAccountManagement:(long long)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@interface BKSHIDEventDescriptor : NSObject <BSDescriptionProviding, NSSecureCoding> {
+@interface BKSHIDEventDescriptor : NSObject <BSDescriptionProviding, NSCopying, NSSecureCoding> {
     unsigned int  _hidEventType;
 }
 
@@ -18,6 +18,7 @@
 + (id)reusableVendorDefinedDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 + (bool)supportsSecureCoding;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)describes:(id)arg1;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

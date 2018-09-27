@@ -4,6 +4,7 @@
 
 @interface AVCapturePhotoOutputInternal : NSObject {
     int  HDRSceneObserverCount;
+    bool  autoRedEyeReductionSupported;
     NSArray * availableLivePhotoVideoCodecTypes;
     NSArray * availablePhotoCodecTypes;
     NSArray * availablePhotoFileTypes;
@@ -49,8 +50,14 @@
         long long epoch; 
     }  livePhotoMovieVideoFrameDuration;
     unsigned long long  maxBracketedCapturePhotoCount;
+    struct { 
+        int width; 
+        int height; 
+    }  optimizedImageDimensionsForOfflineStabilization;
     bool  optimizesImagesForOfflineVideoStabilization;
     AVCapturePhotoSettings * photoSettingsForSceneMonitoring;
+    bool  portraitEffectsMatteDeliveryEnabled;
+    bool  portraitEffectsMatteDeliverySupported;
     NSMutableArray * prepareRequests;
     NSMutableArray * requests;
     struct OpaqueFigSimpleMutex { } * requestsLock;

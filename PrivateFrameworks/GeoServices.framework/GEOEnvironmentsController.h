@@ -13,6 +13,7 @@
 @property (nonatomic) <GEOEnvironmentsControllerDelegate> *delegate;
 
 - (void).cxx_destruct;
+- (id)activeEnvironment;
 - (void)addCustomEnvironment:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

@@ -45,6 +45,7 @@
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (void)_addOrRemoveConstraints:(id)arg1 activate:(bool)arg2;
++ (double)_constraintConstantLimit;
 + (id)_findCommonAncestorOfItem:(id)arg1 andItem:(id)arg2;
 + (void)_setLegacyDecodingOnly:(bool)arg1;
 + (void)activateConstraints:(id)arg1;
@@ -60,12 +61,12 @@
 + (id)constraintsWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 views:(id)arg4;
 + (void)deactivateConstraints:(id)arg1;
 
-- (bool)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 integralizationAdjustment:(double)arg3 lastLoweredConstantWasRounded:(bool)arg4 mutuallyExclusiveConstraints:(id*)arg5;
+- (bool)_addLoweredExpression:(id)arg1 toEngine:(id)arg2 lastLoweredConstantWasRounded:(bool)arg3 mutuallyExclusiveConstraints:(id*)arg4;
 - (void)_addToEngine:(id)arg1;
 - (bool)_addToEngine:(id)arg1 integralizationAdjustment:(double)arg2 mutuallyExclusiveConstraints:(id*)arg3;
+- (bool)_addToEngine:(id)arg1 mutuallyExclusiveConstraints:(id*)arg2;
 - (id)_allocationDescription;
 - (double)_allowedMagnitudeForIntegralizationAdjustment;
-- (double)_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarkerScaling:(double*)arg1;
 - (id)_ancestorRuleNodes;
 - (id)_associatedRuleNode;
 - (void)_clearWeakContainerReference;
@@ -83,7 +84,6 @@
 - (id)_descriptionforSymbolicConstant;
 - (bool)_effectiveConstant:(double*)arg1 error:(id*)arg2;
 - (struct CGSize { double x1; double x2; })_engineToContainerScalingCoefficients;
-- (void)_ensureValueMaintainsArbitraryLimit:(double*)arg1;
 - (bool)_existsInEngine:(id)arg1;
 - (id)_explainUnsatisfaction;
 - (void)_forceSatisfactionMeasuringUnsatisfactionChanges:(id*)arg1 andMutuallyExclusiveConstraints:(id*)arg2;
@@ -147,9 +147,8 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isActive;
 - (double)multiplier;
-- (double)nsis_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarker:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
-- (bool)nsis_shouldIntegralizeVariable:(id)arg1;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (float)priority;
@@ -192,32 +191,17 @@
 
 + (void)_sf_setConstraints:(id)arg1 active:(bool)arg2;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (bool)_UIWantsMarginAttributeSupport;
-+ (id)constraintWithAnchor:(id)arg1 relatedBy:(long long)arg2 toAnchor:(id)arg3 withSystemSpacingMultipliedBy:(double)arg4;
-
-- (id)_baselineLoweringInfoForFirstItem:(bool)arg1;
-- (id)_debuggableEquationBaseDescription;
-- (id)_debuggableEquationDescriptionWithoutLegend;
-- (id)_debuggableEquationLegendDescription;
-- (id)_encodedConstant;
-- (id)_ola_dimensionItem;
-- (id)_ola_dimensionRefItem;
-- (void)_setBaselineLoweringInfo:(id)arg1 forFirstItem:(bool)arg2;
-- (void)_setEncodedConstant:(id)arg1;
-- (id)_uiFirstRefView;
-- (id)_uiSecondRefView;
-- (id)_ui_constraintWithPriority:(float)arg1;
-- (bool)defaultResolvedValue:(double*)arg1 forSymbolicConstant:(id)arg2 error:(id*)arg3;
-- (id)spacingMultiplier;
-
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIUtilities.framework/AccessibilityUIUtilities
 
 + (id)ax_constraintsToMakeView:(id)arg1 sameDimensionsAsView:(id)arg2;
 
 - (id)ax_copyWithPriority:(float)arg1;
 - (void)ax_removeFromContainer;
+
+// Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
+
++ (id)fa_constraintsForView:(id)arg1 equalToLayoutGuide:(id)arg2;
++ (id)fa_constraintsForView:(id)arg1 equalToView:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
@@ -283,9 +267,9 @@
 
 + (id)PG_constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 constant:(double)arg7 priority:(float)arg8;
 
-// Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
+// Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
 
-+ (id)constraintWithItem:(id)arg1 height:(double)arg2;
++ (id)st_constraintsForView:(id)arg1 equalToView:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
@@ -294,6 +278,27 @@
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
 - (void)tk_removeFromContainer;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (bool)_UIWantsMarginAttributeSupport;
++ (double)_constraintConstantLimit;
++ (id)constraintWithAnchor:(id)arg1 relatedBy:(long long)arg2 toAnchor:(id)arg3 withSystemSpacingMultipliedBy:(double)arg4;
+
+- (id)_baselineLoweringInfoForFirstItem:(bool)arg1;
+- (id)_debuggableEquationBaseDescription;
+- (id)_debuggableEquationDescriptionWithoutLegend;
+- (id)_debuggableEquationLegendDescription;
+- (id)_encodedConstant;
+- (id)_ola_dimensionItem;
+- (id)_ola_dimensionRefItem;
+- (void)_setBaselineLoweringInfo:(id)arg1 forFirstItem:(bool)arg2;
+- (void)_setEncodedConstant:(id)arg1;
+- (id)_uiFirstRefView;
+- (id)_uiSecondRefView;
+- (id)_ui_constraintWithPriority:(float)arg1;
+- (bool)defaultResolvedValue:(double*)arg1 forSymbolicConstant:(id)arg2 error:(id*)arg3;
+- (id)spacingMultiplier;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

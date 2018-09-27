@@ -2,12 +2,16 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSData : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, CKLParsedObject, CKRecordValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, SiriCoreSQLiteValue, TSPSplitableData>
+@interface NSData : NSObject <AFSecurityDigestibleChunksProviding, ASDNotificationType, ASParsingLeafNode, CKLParsedObject, CKRecordValue, CUByteCodable, FCKeyValueStoreCoding, HFPropertyListConvertible, HMFObject, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, SiriCoreSQLiteValue, TSPSplitableData>
 
 @property (nonatomic, readonly) NSData *NRSHA256;
 @property (nonatomic, readonly) NSData *SHA1Data;
 @property (nonatomic, readonly) NSString *SHA1HexString;
 @property (nonatomic, readonly) NSData *SHA256Data;
+@property (nonatomic, readonly) NSData *ams_compressedData;
+@property (nonatomic, readonly) NSData *ams_decompressedData;
+@property (nonatomic, readonly) NSString *ams_nvramDescription;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
 @property (nonatomic, readonly) unsigned int br_qtnFlags;
 @property (nonatomic, readonly) NSString *brc_hexadecimalString;
 @property (nonatomic, readonly) NSData *brc_signature;
@@ -22,11 +26,14 @@
 @property (nonatomic, readonly, copy) NSData *fm_sha256Hash;
 @property (nonatomic, readonly, copy) NSData *fm_sha512Hash;
 @property (readonly) unsigned long long hash;
-@property (readonly) NSString *hmf_hexidecimalRepresentation;
+@property (readonly) NSString *hmf_hexadecimalRepresentation;
 @property (getter=hmf_isZeroed, readonly) bool hmf_zeroed;
 @property (nonatomic, readonly) NSString *ic_md5;
 @property (readonly) unsigned long long length;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
 @property (nonatomic, readonly) NSString *px_md5Hash;
+@property (readonly, copy) NSString *shortDescription;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long tsp_length;
 
@@ -57,6 +64,10 @@
 - (id)CKSHA256;
 - (id)CKUppercaseHexStringWithoutSpaces;
 - (id)hashedDescription;
+
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
++ (id)__LS_dataMappedSharedReadOnlyWithContentsOfURL:(id)arg1;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -149,13 +160,18 @@
 
 - (id)hk_MD5;
 - (unsigned long long)hk_countOfUUIDs;
+- (void)hk_enumerateUUIDBytesUsingBlock:(id /* block */)arg1;
 - (void)hk_enumerateUUIDsUsingBlock:(id /* block */)arg1;
-- (id)hk_stripCorruptedUUIDs;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (id)generateSHA1;
 - (id)stringInHexFormat;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (void)_in_writeDataToPathForImage:(id)arg1 storeType:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -193,9 +209,15 @@
 - (id)gzipDeflate:(float)arg1;
 - (id)gzipInflate;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/Frameworks/iAd.framework/iAd
 
-- (id)_uiSaveContentsToTemporaryFile;
+- (void)_iAd_writeToTemporaryFileForMIMEType:(id)arg1 sourceURL:(id)arg2 completion:(id /* block */)arg3;
+- (void)_iAd_writeToTemporaryFileWithExtension:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
+
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AdCore.framework/AdCore
 
@@ -216,7 +238,14 @@
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
+- (id)aa_compressedData:(int)arg1;
 - (id)aa_hexString;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (id)ams_compressedData;
+- (id)ams_decompressedData;
+- (id)ams_nvramDescription;
 
 // Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit
 
@@ -233,6 +262,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
+- (id)ak_compressedData:(int)arg1;
 - (id)ak_hexString;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
@@ -298,6 +328,12 @@
 - (id)_CUTOptionallyDecompressData;
 - (id)_CUTStringFromBaseData;
 
+// Image: /System/Library/PrivateFrameworks/ConfigurationEngineModel.framework/ConfigurationEngineModel
+
+- (id)CEMHexString;
+- (id)CEMSHA1Hash;
+- (id)CEMSHA1HexString;
+
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
 + (id)_cn_dataFromHexString:(id)arg1;
@@ -334,8 +370,22 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
++ (id)decryptedDataUsingAESKey:(id)arg1 atFilepath:(id)arg2 error:(id*)arg3;
++ (id)errorMessageForCCErrorCode:(long long)arg1;
++ (id)randomBytesWithLength:(unsigned long long)arg1 error:(id*)arg2;
+
 - (id)_cs_initWithXPCObject:(id)arg1;
 - (id)_cs_xpcObject;
+- (id)decryptedDataWithAESGCMKey:(id)arg1 ivData:(id)arg2 tagData:(id)arg3 error:(id*)arg4;
+- (void)encryptedDataWithAESGCMKey:(id)arg1 completion:(id /* block */)arg2;
+- (id)saveEncryptedDataUsingAESKey:(id)arg1 atFilepath:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
++ (id)createWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 error:(id*)arg3;
+
+- (const char *)encodedBytesAndReturnLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (id)encodedDataAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CourseKit.framework/CourseKit
 
@@ -373,6 +423,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
+- (id)fm_MACAddressString;
 - (id)fm_hexString;
 - (id)fm_hmac_md5WithKey:(id)arg1;
 - (id)fm_hmac_sha1WithKey:(id)arg1;
@@ -441,21 +492,28 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
++ (id)shortDescription;
+
 - (id)decodeArrayOfDateComponents;
 - (id)decodeCalendar;
 - (id)decodeDateComponents;
 - (id)decodeTimeZone;
-- (id)hmf_hexidecimalRepresentation;
+- (id)hmf_hexadecimalRepresentation;
+- (id)hmf_hexadecimalStringWithOptions:(unsigned long long)arg1;
+- (id)hmf_initWithHexadecimalString:(id)arg1 options:(unsigned long long)arg2;
 - (bool)hmf_isZeroed;
+- (id)privateDescription;
 - (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
 + (id)dataWithSQLite3Column:(struct sqlite3_stmt { }*)arg1 column:(int)arg2;
 + (id)dataWithSQLite3ColumnNoCopy:(struct sqlite3_stmt { }*)arg1 column:(int)arg2;
++ (id)parsedFromData:(id)arg1 error:(id*)arg2;
 
 - (id)compress;
 - (id)generateSHA1;
+- (id)serializeWithError:(id*)arg1;
 - (id)stringInHexFormat;
 - (id)uncompress;
 
@@ -483,6 +541,13 @@
 
 - (id)__im_engramStringRepresentation;
 - (bool)isArchivable_im;
+
+// Image: /System/Library/PrivateFrameworks/IconServices.framework/IconServices
+
++ (id)__is__bookmarkDataWithContentsOfURL:(id)arg1;
++ (id)__is__dataWithContentsOfURL:(id)arg1;
+
+- (id)__is__bookmarkResourcePropertyForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
@@ -559,6 +624,10 @@
 
 - (id)compressedData;
 - (id)decompressedData;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)npkDescription;
 
 // Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
@@ -661,6 +730,11 @@
 - (id)hexaStringRepresentation;
 - (id)sha1Hash;
 
+// Image: /System/Library/PrivateFrameworks/PhotoFoundation.framework/PhotoFoundation
+
+- (id)canonicalUuidString;
+- (id)mercuryUuidString;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 + (id)pl_dataWithMappedContentsOfFileDescriptor:(int)arg1;
@@ -682,6 +756,19 @@
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
++ (id)rc_randomDataWithLength:(unsigned long long)arg1;
+
+- (id)rc_URLSafeBase64EncodedStringWithOptions:(unsigned long long)arg1;
+- (id)rc_decryptAESSIVWithKey:(id)arg1 additionalData:(id)arg2;
+- (id)rc_encryptAESSIVWithKey:(id)arg1 additionalData:(id)arg2;
+- (id)rc_gzipDeflate;
+- (id)rc_gzipInflate;
+- (id)rc_sha256;
+- (id)rc_zlibDeflate;
+- (id)rc_zlibInflate;
+
 // Image: /System/Library/PrivateFrameworks/RemoteManagement.framework/RemoteManagement
 
 - (id)RMHexString;
@@ -697,12 +784,19 @@
 - (id)safari_descriptionWithoutSpaces;
 - (unsigned long long)safari_hashMD5;
 
-// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
-+ (id)pu_dataFromHexString:(id)arg1;
++ (id)dataWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
++ (id)dataWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)dataWithCGSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)dataWithPSN:(struct ProcessSerialNumber { unsigned int x1; unsigned int x2; })arg1;
++ (id)dataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
-- (id)pu_hex;
-- (long long)sd_compare:(id)arg1;
+- (struct CGPoint { double x1; double x2; })CGPointValue;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CGRectValue;
+- (struct CGSize { double x1; double x2; })CGSizeValue;
+- (struct ProcessSerialNumber { unsigned int x1; unsigned int x2; })psn;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 
 // Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 
@@ -772,6 +866,10 @@
 
 - (id)TR_compressedGzipData;
 - (id)TR_decompressedGzipData;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (id)_uiSaveContentsToTemporaryFile;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 

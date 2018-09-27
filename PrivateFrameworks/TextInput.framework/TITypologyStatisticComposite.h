@@ -10,8 +10,8 @@
 
 + (id)statisticCompositeWithStatistics:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)aggregateReport;
-- (void)dealloc;
 - (void)finalizeComputation;
 - (id)initWithArray:(id)arg1;
 - (void)prepareForComputation;

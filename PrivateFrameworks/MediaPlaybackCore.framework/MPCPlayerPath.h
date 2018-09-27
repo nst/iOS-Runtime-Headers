@@ -7,6 +7,7 @@
     void * _mediaRemotePlayerPath;
     int  _pid;
     NSString * _playerID;
+    bool  _resolved;
     MPAVRoute * _route;
 }
 
@@ -16,12 +17,14 @@
 @property (nonatomic, readonly, copy) NSString *playerID;
 @property (nonatomic, readonly, copy) NSString *representedBundleDisplayName;
 @property (nonatomic, readonly, copy) NSString *representedBundleID;
+@property (getter=isResolved, nonatomic, readonly) bool resolved;
 @property (nonatomic, readonly) MPAVRoute *route;
 @property (getter=isSystemMusicPath, nonatomic, readonly) bool systemMusicPath;
 
 + (id)deviceActivePlayerPath;
++ (id)pathWithCustomOrigin:(void*)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)pathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
-+ (id)pathWithRoute:(id)arg1 mediaRemotePlayerPath:(void*)arg2;
++ (id)pathWithRoute:(id)arg1 mediaRemotePlayerPath:(void*)arg2 isResolved:(bool)arg3;
 + (bool)supportsSecureCoding;
 + (id)systemMusicPathWithRoute:(id)arg1 playerID:(id)arg2;
 + (id)unresolvablePathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
@@ -38,6 +41,7 @@
 - (id)initWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)isInProcess;
+- (bool)isResolved;
 - (bool)isSystemMusicPath;
 - (void*)mediaRemotePlayerPath;
 - (id)playerID;

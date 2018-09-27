@@ -6,6 +6,8 @@
     bool  _allowMoreThanMaxVideo;
     <MiroAutoEditDelegate> * _delegate;
     int  _duration;
+    int  _lastClipInPoint;
+    int  _lastClipOutPoint;
     bool  _useNonSpecialDurations;
 }
 
@@ -13,6 +15,8 @@
 @property (nonatomic, readonly) MiroBlueprint *blueprint;
 @property (nonatomic) <MiroAutoEditDelegate> *delegate;
 @property (nonatomic) int duration;
+@property (nonatomic) int lastClipInPoint;
+@property (nonatomic) int lastClipOutPoint;
 @property (nonatomic, readonly) MiroAutoEditLogger *logger;
 @property (nonatomic, readonly) MiroMemory *memory;
 @property (nonatomic, readonly) Project *project;
@@ -25,12 +29,14 @@
 - (void)_saveFreezeBits;
 - (bool)allowMoreThanMaxVideo;
 - (id)blueprint;
+- (void)calcLastClipInPointAndOutPoint;
 - (bool)clipIsTitleCard:(id)arg1;
 - (id)delegate;
 - (int)duration;
 - (int)durationOfUserTrimForClip:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (int)lastClipInPoint;
+- (int)lastClipOutPoint;
 - (void)layoutProject;
 - (id)logger;
 - (int)maximumBlueprintDurationForClip:(id)arg1;
@@ -41,7 +47,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(int)arg1;
 - (void)setDuration:(int)arg1 andStartTimeForClip:(id)arg2;
+- (void)setLastClipInPoint:(int)arg1;
+- (void)setLastClipOutPoint:(int)arg1;
 - (void)setUseNonSpecialDurations:(bool)arg1;
+- (void)setupSongDuration;
 - (int)shrinkAndStretchClips:(id)arg1;
 - (bool)useNonSpecialDurations;
 

@@ -10,6 +10,7 @@
     UIColor * _gradientLightColor;
     UIColor * _lightenedNonGradientColor;
     UIColor * _nonGradientTextColor;
+    UIColor * _platterBackgroundColor;
     UIColor * _valueDisplayColor;
     NSString * _workoutRingColorIdentifier;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) UIColor *gradientLightColor;
 @property (nonatomic, retain) UIColor *lightenedNonGradientColor;
 @property (nonatomic, retain) UIColor *nonGradientTextColor;
+@property (nonatomic, retain) UIColor *platterBackgroundColor;
 @property (nonatomic, retain) UIColor *valueDisplayColor;
 @property (nonatomic, retain) NSString *workoutRingColorIdentifier;
 
@@ -55,6 +57,7 @@
 - (id)gradientLightColor;
 - (id)lightenedNonGradientColor;
 - (id)nonGradientTextColor;
+- (id)platterBackgroundColor;
 - (void)setAdjustmentButtonBackgroundColor:(id)arg1;
 - (void)setButtonDisabledTextColor:(id)arg1;
 - (void)setButtonTextColor:(id)arg1;
@@ -62,6 +65,7 @@
 - (void)setGradientLightColor:(id)arg1;
 - (void)setLightenedNonGradientColor:(id)arg1;
 - (void)setNonGradientTextColor:(id)arg1;
+- (void)setPlatterBackgroundColor:(id)arg1;
 - (void)setValueDisplayColor:(id)arg1;
 - (void)setWorkoutRingColorIdentifier:(id)arg1;
 - (id)valueDisplayColor;

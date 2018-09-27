@@ -25,7 +25,7 @@
     NSArray * _featuredPeople;
     NSDictionary * _freezeRanges;
     bool  _hasBuildingPosterImageBegun;
-    PHAsset * _initalKeyAsset;
+    NSString * _initalKeyAssetIdentifier;
     bool  _isPregenerating;
     PHAsset * _keyAsset;
     NSString * _keyAssetID;
@@ -39,6 +39,7 @@
     double  _maximumPossibleMemoryDuration;
     MiroPickList * _pickList;
     long long  _pickedItemCount;
+    NSArray * _posters;
     NSArray * _requestedKeywords;
     NSString * _requestedMoodID;
     NSObject<OS_dispatch_queue> * _saveQueue;
@@ -66,7 +67,7 @@
 @property (nonatomic, retain) NSArray *featuredPeople;
 @property (nonatomic, retain) NSDictionary *freezeRanges;
 @property (nonatomic) bool hasBuildingPosterImageBegun;
-@property (nonatomic, retain) PHAsset *initalKeyAsset;
+@property (nonatomic, retain) NSString *initalKeyAssetIdentifier;
 @property (nonatomic) bool isPregenerating;
 @property (nonatomic, retain) PHAsset *keyAsset;
 @property (retain) NSString *keyAssetID;
@@ -85,6 +86,7 @@
 @property (nonatomic, readonly) bool needsTitleCard;
 @property (nonatomic, retain) MiroPickList *pickList;
 @property (nonatomic) long long pickedItemCount;
+@property (nonatomic, retain) NSArray *posters;
 @property (nonatomic, retain) NSArray *requestedKeywords;
 @property (nonatomic, retain) NSString *requestedMoodID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *saveQueue;
@@ -112,6 +114,7 @@
 - (void)_saveMetadata;
 - (void)_updateAddedRemovedLists;
 - (void)_writeMetadata:(id)arg1;
+- (void)adornIrisUsableToAssets:(id)arg1;
 - (long long)allAssetCount;
 - (id)allAssets;
 - (id)allAssetsAsArray;
@@ -144,7 +147,7 @@
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initalKeyAsset;
+- (id)initalKeyAssetIdentifier;
 - (void)invalidateCustomDuration;
 - (void)invalidateDuration;
 - (bool)isEqual:(id)arg1;
@@ -179,7 +182,9 @@
 - (id)pickedAssets;
 - (long long)pickedItemCount;
 - (id)pickedLocallyAvailableScenes;
+- (id)posters;
 - (id)rangesWithType:(unsigned long long)arg1 forAssetID:(id)arg2;
+- (void)reportCollectionTypeForAggD:(bool)arg1;
 - (id)requestedKeywords;
 - (id)requestedMoodID;
 - (id)saveQueue;
@@ -201,7 +206,7 @@
 - (void)setFeaturedPeople:(id)arg1;
 - (void)setFreezeRanges:(id)arg1;
 - (void)setHasBuildingPosterImageBegun:(bool)arg1;
-- (void)setInitalKeyAsset:(id)arg1;
+- (void)setInitalKeyAssetIdentifier:(id)arg1;
 - (void)setIsPregenerating:(bool)arg1;
 - (void)setKeyAsset:(id)arg1;
 - (void)setKeyAssetID:(id)arg1;
@@ -216,6 +221,7 @@
 - (void)setMoodID:(id)arg1;
 - (void)setPickList:(id)arg1;
 - (void)setPickedItemCount:(long long)arg1;
+- (void)setPosters:(id)arg1;
 - (void)setRanges:(id)arg1 replaceType:(unsigned long long)arg2 forAssetID:(id)arg3;
 - (void)setRequestedKeywords:(id)arg1;
 - (void)setRequestedMoodID:(id)arg1;

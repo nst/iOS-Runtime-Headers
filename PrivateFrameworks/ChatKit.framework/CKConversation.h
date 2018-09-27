@@ -3,11 +3,13 @@
  */
 
 @interface CKConversation : NSObject {
+    NSNumber * _businessConversation;
     IMChat * _chat;
     struct { 
         unsigned int ignoringTypingUpdates : 1; 
     }  _conversationFlags;
     NSAttributedString * _groupName;
+    bool  _hasLoadedAllMessages;
     bool  _isReportedAsSpam;
     unsigned int  _limitToLoad;
     NSString * _name;
@@ -16,9 +18,12 @@
     NSSet * _pendingRecipients;
     NSString * _previewText;
     NSArray * _recipients;
+    NSString * _selectedLastAddressedHandle;
+    NSString * _selectedLastAddressedSIMID;
     int  _wasDetectedAsSMSSpam;
 }
 
+@property (nonatomic, retain) NSNumber *businessConversation;
 @property (nonatomic, readonly) BOOL buttonColor;
 @property (nonatomic, readonly) bool canLeave;
 @property (nonatomic, retain) IMChat *chat;
@@ -32,11 +37,14 @@
 @property (nonatomic, readonly) NSAttributedString *groupName;
 @property (nonatomic, readonly) NSArray *handles;
 @property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic) bool hasLoadedAllMessages;
 @property (nonatomic, readonly) bool hasUnreadMessages;
 @property (getter=isIgnoringTypingUpdates, nonatomic) bool ignoringTypingUpdates;
 @property (nonatomic, readonly) bool isPreviewTextForAttachment;
 @property (nonatomic) bool isReportedAsSpam;
 @property (nonatomic, readonly) bool isToEmailAddress;
+@property (nonatomic, readonly) NSString *lastAddressedHandle;
+@property (nonatomic, readonly) NSString *lastAddressedSIMID;
 @property (getter=hasLeft, nonatomic, readonly) bool left;
 @property (getter=hasLeftGroupChat, nonatomic, readonly) bool leftGroupChat;
 @property (nonatomic) unsigned int limitToLoad;
@@ -56,6 +64,8 @@
 @property (nonatomic, readonly) unsigned long long recipientCount;
 @property (nonatomic, readonly, copy) NSArray *recipientStrings;
 @property (nonatomic, retain) NSArray *recipients;
+@property (nonatomic, retain) NSString *selectedLastAddressedHandle;
+@property (nonatomic, retain) NSString *selectedLastAddressedSIMID;
 @property (getter=shouldSendReadReceipts, nonatomic, readonly) bool sendReadReceipts;
 @property (nonatomic, readonly, copy) NSString *senderIdentifier;
 @property (nonatomic, readonly) IMService *sendingService;
@@ -67,19 +77,19 @@
 @property (nonatomic, readonly) int wasDetectedAsSMSSpam;
 
 + (bool)_iMessage_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
-+ (bool)_iMessage_canSendComposition:(id)arg1 error:(id*)arg2;
++ (bool)_iMessage_canSendComposition:(id)arg1 lastAddressedHandle:(id)arg2 lastAddressedSIMID:(id)arg3 currentService:(id)arg4 forceSMS:(bool)arg5 error:(id*)arg6;
 + (bool)_iMessage_canSendMessageWithMediaObjectTypes:(int*)arg1;
 + (bool)_iMessage_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(long long*)arg2;
 + (id)_iMessage_localizedErrorForReason:(long long)arg1;
 + (long long)_iMessage_maxAttachmentCount;
 + (unsigned long long)_iMessage_maxTransferFileSizeForWiFi:(bool)arg1;
 + (double)_iMessage_maxTrimDurationForMediaType:(int)arg1;
-+ (bool)_sms_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
-+ (bool)_sms_canSendComposition:(id)arg1 error:(id*)arg2;
-+ (bool)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1;
-+ (bool)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1 errorCode:(long long*)arg2;
++ (bool)_sms_canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2 phoneNumber:(id)arg3 simID:(id)arg4;
++ (bool)_sms_canSendComposition:(id)arg1 lastAddressedHandle:(id)arg2 lastAddressedSIMID:(id)arg3 error:(id*)arg4;
++ (bool)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1 phoneNumber:(id)arg2 simID:(id)arg3;
++ (bool)_sms_canSendMessageWithMediaObjectTypes:(int*)arg1 phoneNumber:(id)arg2 simID:(id)arg3 errorCode:(long long*)arg4;
 + (id)_sms_localizedErrorForReason:(long long)arg1;
-+ (long long)_sms_maxAttachmentCount;
++ (long long)_sms_maxAttachmentCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (double)_sms_maxTrimDurationForMediaType:(int)arg1;
 + (bool)_sms_mediaObjectPassesDurationCheck:(id)arg1;
 + (bool)_sms_mediaObjectPassesRestriction:(id)arg1;
@@ -110,6 +120,7 @@
 - (bool)_sms_willSendMMSByDefaultForAddresses:(id)arg1;
 - (void)acceptTransfer:(id)arg1;
 - (void)addRecipientHandles:(id)arg1;
+- (id)businessConversation;
 - (BOOL)buttonColor;
 - (bool)canAcceptMediaObjectType:(int)arg1 givenMediaObjects:(id)arg2;
 - (bool)canInsertMoreRecipients;
@@ -119,6 +130,7 @@
 - (id)chat;
 - (void)clearConversationLoadFromSpotlight;
 - (long long)compareBySequenceNumberAndDateDescending:(id)arg1;
+- (bool)containsHandleWithUID:(id)arg1;
 - (id)copyForPendingConversation;
 - (id)date;
 - (void)dealloc;
@@ -132,6 +144,8 @@
 - (id)displayNameForMediaObjects:(id)arg1 subject:(id)arg2;
 - (id)ensureMessageWithGUIDIsLoaded:(id)arg1;
 - (void)enumerateMessagesWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (id)fastPreviewTextIgnoringPluginContent;
+- (void)fetchSuggestedNameIfNecessary;
 - (bool)forceMMS;
 - (id)frequentReplies;
 - (id)groupID;
@@ -140,6 +154,7 @@
 - (bool)hasDisplayName;
 - (bool)hasLeft;
 - (bool)hasLeftGroupChat;
+- (bool)hasLoadedAllMessages;
 - (bool)hasLoadedFromSpotlight;
 - (bool)hasReplyEnabled;
 - (bool)hasUnreadMessages;
@@ -159,6 +174,8 @@
 - (bool)isPreviewTextForAttachment;
 - (bool)isReportedAsSpam;
 - (bool)isToEmailAddress;
+- (id)lastAddressedHandle;
+- (id)lastAddressedSIMID;
 - (unsigned int)limitToLoad;
 - (void)loadAllMessages;
 - (void)loadAllUnreadMessagesUpToMessageGUID:(id)arg1;
@@ -192,15 +209,19 @@
 - (void)removeRecipientHandles:(id)arg1;
 - (void)resetCaches;
 - (void)resetNameCaches;
+- (id)selectedLastAddressedHandle;
+- (id)selectedLastAddressedSIMID;
 - (BOOL)sendButtonColor;
 - (void)sendMessage:(id)arg1 newComposition:(bool)arg2;
 - (void)sendMessage:(id)arg1 onService:(id)arg2 newComposition:(bool)arg3;
 - (id)senderIdentifier;
 - (id)sendingService;
 - (id)serviceDisplayName;
+- (void)setBusinessConversation:(id)arg1;
 - (void)setChat:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setForceMMS:(bool)arg1;
+- (void)setHasLoadedAllMessages:(bool)arg1;
 - (void)setIgnoringTypingUpdates:(bool)arg1;
 - (void)setIsReportedAsSpam:(bool)arg1;
 - (void)setLimitToLoad:(unsigned int)arg1;
@@ -218,6 +239,8 @@
 - (void)setPinned:(bool)arg1;
 - (void)setPreviewText:(id)arg1;
 - (void)setRecipients:(id)arg1;
+- (void)setSelectedLastAddressedHandle:(id)arg1;
+- (void)setSelectedLastAddressedSIMID:(id)arg1;
 - (void)setSendReadReceipts:(bool)arg1;
 - (void)setUnsentComposition:(id)arg1;
 - (id)shortDescription;

@@ -31,6 +31,7 @@
     NSURL * _destinationURL;
     bool  _disablesRetry;
     bool  _discretionary;
+    long long  _discretionaryOverride;
     NSURL * _downloadFileURL;
     NSDate * _earliestBeginDate;
     NSError * _error;
@@ -46,6 +47,7 @@
     NSDictionary * _options;
     NSURLRequest * _originalRequest;
     NSString * _pathToDownloadTaskFile;
+    unsigned int  _qos;
     NSDictionary * _resolvedMediaSelectionPlist;
     bool  _respondedToWillBeginDelayedRequestCallback;
     NSURLResponse * _response;
@@ -91,6 +93,7 @@
 @property (copy) NSURL *destinationURL;
 @property bool disablesRetry;
 @property (getter=isDiscretionary) bool discretionary;
+@property long long discretionaryOverride;
 @property (copy) NSURL *downloadFileURL;
 @property (copy) NSDate *earliestBeginDate;
 @property (copy) NSError *error;
@@ -106,6 +109,7 @@
 @property (copy) NSDictionary *options;
 @property (copy) NSURLRequest *originalRequest;
 @property (copy) NSString *pathToDownloadTaskFile;
+@property unsigned int qos;
 @property (copy) NSDictionary *resolvedMediaSelectionPlist;
 @property bool respondedToWillBeginDelayedRequestCallback;
 @property (copy) NSURLResponse *response;
@@ -154,6 +158,7 @@
 - (void)dealloc;
 - (id)destinationURL;
 - (bool)disablesRetry;
+- (long long)discretionaryOverride;
 - (id)downloadFileURL;
 - (id)earliestBeginDate;
 - (void)encodeWithCoder:(id)arg1;
@@ -178,6 +183,7 @@
 - (id)options;
 - (id)originalRequest;
 - (id)pathToDownloadTaskFile;
+- (unsigned int)qos;
 - (id)resolvedMediaSelectionPlist;
 - (bool)respondedToWillBeginDelayedRequestCallback;
 - (id)response;
@@ -205,6 +211,7 @@
 - (void)setDestinationURL:(id)arg1;
 - (void)setDisablesRetry:(bool)arg1;
 - (void)setDiscretionary:(bool)arg1;
+- (void)setDiscretionaryOverride:(long long)arg1;
 - (void)setDownloadFileURL:(id)arg1;
 - (void)setEarliestBeginDate:(id)arg1;
 - (void)setError:(id)arg1;
@@ -220,6 +227,7 @@
 - (void)setOptions:(id)arg1;
 - (void)setOriginalRequest:(id)arg1;
 - (void)setPathToDownloadTaskFile:(id)arg1;
+- (void)setQos:(unsigned int)arg1;
 - (void)setResolvedMediaSelectionPlist:(id)arg1;
 - (void)setRespondedToWillBeginDelayedRequestCallback:(bool)arg1;
 - (void)setResponse:(id)arg1;

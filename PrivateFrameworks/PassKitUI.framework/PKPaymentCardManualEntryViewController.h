@@ -3,8 +3,6 @@
  */
 
 @interface PKPaymentCardManualEntryViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentCameraCaptureViewControllerDelegate, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupDisambiguationViewControllerDelegate> {
-    PKPaymentSetupBrowseProductsViewController * _findWithoutNumberBrowser;
-    PKPaymentSetupFindWithoutNumberFooterView * _findWithoutNumberFooterView;
     NSArray * _pendingCameraCaptureObjects;
 }
 
@@ -17,7 +15,6 @@
 - (void)_cameraCaptureCancelButtonPressed:(id)arg1;
 - (void)_captureFromCamera:(id)arg1;
 - (void)_dismissCameraCaptureViewController:(id)arg1;
-- (id)_findWithoutNumberFooterView;
 - (void)_performDisambiguationWithCompletion:(id /* block */)arg1;
 - (void)_performInlineSecondaryWithCompletion:(id /* block */)arg1;
 - (void)_performRequirementsWithCompletion:(id /* block */)arg1;
@@ -34,8 +31,6 @@
 - (void)disambiguationViewController:(id)arg1 didSelectProduct:(id)arg2;
 - (void)disambiguationViewControllerSetupLater:(id)arg1;
 - (void)fieldCellEditableTextFieldValueDidChange:(id)arg1;
-- (void)findCardWithoutNumber:(id)arg1;
-- (id)footerView;
 - (id)newPaymentEligibilityRequest;
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (id)readonlyFieldIdentifiers;

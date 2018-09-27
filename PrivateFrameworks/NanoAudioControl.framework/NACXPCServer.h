@@ -10,6 +10,7 @@
     NSMutableDictionary * _audioRoutesRecords;
     NPSDomainAccessor * _domainAccessor;
     float  _hapticIntensity;
+    long long  _hapticState;
     NACIDSClient * _idsClient;
     NSObject<OS_dispatch_queue> * _internalQueue;
     bool  _prominentHapticEnabled;
@@ -32,6 +33,7 @@
 - (id)_audioRoutesRecordForCategory:(id)arg1;
 - (void)_beginObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
 - (float)_cachedHapticIntensity;
+- (long long)_cachedHapticState;
 - (bool)_cachedProminentHapticState;
 - (bool)_cachedSystemMutedState;
 - (id)_cachedVolumeRecords;
@@ -40,6 +42,7 @@
 - (void)_endObservingAudioRoutesForCategory:(id)arg1 connection:(id)arg2;
 - (void)_endObservingVolumeForTarget:(id)arg1 connection:(id)arg2;
 - (void)_persistHapticIntensity;
+- (void)_persistHapticState;
 - (void)_persistProminentHapticState;
 - (void)_persistSystemMutedState;
 - (void)_persistVolumeRecords;
@@ -54,6 +57,7 @@
 - (void)client:(id)arg1 EULimit:(float)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 audioRoutes:(id)arg2 didChangeForCategory:(id)arg3;
 - (void)client:(id)arg1 hapticIntensityDidChange:(float)arg2;
+- (void)client:(id)arg1 hapticStateDidChange:(long long)arg2;
 - (void)client:(id)arg1 mutedState:(bool)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 prominentHapticStateDidChange:(bool)arg2;
 - (void)client:(id)arg1 routeObservationCancelledForCategory:(id)arg2;
@@ -65,6 +69,7 @@
 - (void)endObservingAudioRoutesForCategory:(id)arg1;
 - (void)endObservingVolumeForTarget:(id)arg1;
 - (void)hapticIntensity:(id /* block */)arg1;
+- (void)hapticState:(id /* block */)arg1;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)mutedStateForTarget:(id)arg1 result:(id /* block */)arg2;
@@ -73,6 +78,7 @@
 - (void)playProminentHapticPreview;
 - (void)prominentHapticEnabled:(id /* block */)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1 target:(id)arg2;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

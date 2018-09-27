@@ -5,7 +5,7 @@
 @interface CNUIUserActionListDataSource : NSObject <CNUIUserActionListDataSource> {
     CNContact * _contact;
     CNUIUserActionDisambiguationModeler * _modeler;
-    CNCache * _models;
+    CNUIUserActionListModelCache * _models;
     <CNSchedulerProvider> * _schedulerProvider;
     bool  _tracksChanges;
 }
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNUIUserActionDisambiguationModeler *modeler;
-@property (nonatomic, retain) CNCache *models;
+@property (nonatomic, retain) CNUIUserActionListModelCache *models;
 @property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
 @property (readonly) Class superclass;
 @property (nonatomic) bool tracksChanges;

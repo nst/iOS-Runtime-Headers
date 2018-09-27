@@ -13,6 +13,7 @@
 
 + (id)graphWithObstacles:(id)arg1 bufferRadius:(float)arg2;
 + (id)graphWithObstacles:(id)arg1 bufferRadius:(float)arg2 nodeClass:(Class)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addObstacles:(id)arg1;

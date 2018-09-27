@@ -55,6 +55,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelReferenceLocationTimer;
+- (void)_commonInit;
 - (void)_contentSizeCategoryDidChange;
 - (id)_defaultPrimaryLabel;
 - (id)_defaultSecondaryCategoryLabel;
@@ -73,7 +74,6 @@
 - (void)_updateSecondaryColors;
 - (void)addLabelIfNecessary:(id)arg1;
 - (bool)alwaysUsesBusinessLayout;
-- (void)commonInit;
 - (void)dealloc;
 - (id)delegate;
 - (double)fallbackDistance;

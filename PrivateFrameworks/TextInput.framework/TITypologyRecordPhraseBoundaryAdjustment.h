@@ -14,8 +14,10 @@
 @property (nonatomic, retain) TIKeyboardConfiguration *keyboardConfig;
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
 
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (void)applyToStatistic:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)forwardAdjustment;
 - (int)granularity;

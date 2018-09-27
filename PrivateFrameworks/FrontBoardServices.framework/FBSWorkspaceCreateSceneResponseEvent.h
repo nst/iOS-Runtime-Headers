@@ -6,7 +6,6 @@
 
 @property (nonatomic, retain) FBSWorkspaceCreateSceneResponse *response;
 
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 

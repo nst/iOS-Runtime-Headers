@@ -12,6 +12,7 @@
     CKDDecryptRecordsOperation * _decryptOperation;
     id /* block */  _deleteCompletionBlock;
     NSMapTable * _handlersByAsset;
+    NSMapTable * _handlersByAssetNeedingRecordFetch;
     NSDictionary * _handlersByRecordID;
     bool  _haveOutstandingHandlers;
     NSMutableDictionary * _modifyHandlersByZoneID;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
 @property (nonatomic, copy) id /* block */ deleteCompletionBlock;
 @property (nonatomic, retain) NSMapTable *handlersByAsset;
+@property (nonatomic, retain) NSMapTable *handlersByAssetNeedingRecordFetch;
 @property (nonatomic, retain) NSDictionary *handlersByRecordID;
 @property (nonatomic, readonly) bool hasDecryptOperation;
 @property (nonatomic) bool haveOutstandingHandlers;
@@ -77,7 +79,9 @@
 - (void)_continueRecordsModify;
 - (id)_createModifyRequestWithRecordsToSave:(id)arg1 recordsToDelete:(id)arg2 recordsToDeleteToEtags:(id)arg3 handlersByRecordID:(id)arg4;
 - (void)_determineEnvironment;
+- (void)_didCompleteRecordFetchOperation:(id)arg1 assetArrayByRecordID:(id)arg2;
 - (void)_enumerateHandlersInState:(unsigned long long)arg1 withBlock:(id /* block */)arg2;
+- (void)_fetchAssetRecordsForRereferencing;
 - (void)_fetchContainerScopedUserID;
 - (void)_fetchRecordPCSData;
 - (void)_fetchSharePCSData;
@@ -105,6 +109,7 @@
 - (void)_uploadAssets;
 - (void)_verifyRecordEncryption;
 - (id)activityCreate;
+- (void)assetArrayByRecordID:(id)arg1 didFetchRecord:(id)arg2 recordID:(id)arg3 error:(id)arg4;
 - (bool)atomic;
 - (id)cache;
 - (id)cachedUserBoundaryKeyData;
@@ -116,6 +121,7 @@
 - (id /* block */)deleteCompletionBlock;
 - (void)finishWithError:(id)arg1;
 - (id)handlersByAsset;
+- (id)handlersByAssetNeedingRecordFetch;
 - (id)handlersByRecordID;
 - (bool)hasDecryptOperation;
 - (bool)haveOutstandingHandlers;
@@ -147,6 +153,7 @@
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setDeleteCompletionBlock:(id /* block */)arg1;
 - (void)setHandlersByAsset:(id)arg1;
+- (void)setHandlersByAssetNeedingRecordFetch:(id)arg1;
 - (void)setHandlersByRecordID:(id)arg1;
 - (void)setHaveOutstandingHandlers:(bool)arg1;
 - (void)setModifyHandlersByZoneID:(id)arg1;

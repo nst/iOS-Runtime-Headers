@@ -24,6 +24,7 @@
 @property (copy) NSString *processName;
 @property (readonly) unsigned long long processorCount;
 @property (nonatomic, readonly, copy) NSString *safari_deviceUDID;
+@property (nonatomic, readonly) bool safari_systemSupportsBookmarkDAVMoves;
 @property (nonatomic, readonly) bool safari_systemSupportsCloudKitBookmarks;
 @property (readonly) double systemUptime;
 @property (readonly, copy) NSString *userName;
@@ -100,6 +101,7 @@
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (id)safari_deviceUDID;
+- (bool)safari_systemSupportsBookmarkDAVMoves;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

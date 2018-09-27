@@ -3,31 +3,28 @@
  */
 
 @interface HMDSecureRemoteMessageTransport : HMFMessageTransport <HMDRemoteDeviceMonitorDelegate, HMDSecureRemoteSessionDelegate, HMFDumpState, HMFLogging, HMFMessageTransportDelegate> {
-    HMDAccountRegistry * _accountRegistry;
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableDictionary * _currentHomeConfigurations;
     HMDRemoteDeviceMonitor * _deviceMonitor;
-    HMDRemoteIdentityRegistry * _identityRegistry;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableSet * _secureRemoteSessions;
     HMDRemoteMessageNotifications * _sessionNotifications;
     NSArray * _transports;
 }
 
-@property (nonatomic, readonly) HMDAccountRegistry *accountRegistry;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic, retain) NSMutableDictionary *currentHomeConfigurations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) HMDRemoteDeviceMonitor *deviceMonitor;
+@property (readonly) HMDRemoteDeviceMonitor *deviceMonitor;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) HMDRemoteIdentityRegistry *identityRegistry;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSMutableSet *secureRemoteSessions;
 @property (nonatomic, retain) HMDRemoteMessageNotifications *sessionNotifications;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) NSArray *transports;
+@property (readonly, copy) NSArray *transports;
 
++ (id)defaultTransport;
 + (id)logCategory;
 + (id)shortDescription;
 
@@ -58,8 +55,7 @@
 - (id)deviceMonitor;
 - (id)dumpState;
 - (void)electDeviceForUser:(id)arg1 destination:(id)arg2 deviceCapabilities:(id)arg3 responseTimeout:(double)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
-- (id)identityRegistry;
-- (id)initWithTransports:(id)arg1 identityRegistry:(id)arg2 accountRegistry:(id)arg3;
+- (id)initWithTransports:(id)arg1;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)openSecureSessionToDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)pingDevice:(id)arg1 completionHandler:(id /* block */)arg2;

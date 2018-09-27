@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)documentEnclosingURL;
 - (id)documentURL;
+- (id)initForReadingWithData:(id)arg1 secure:(bool)arg2;
 - (id)lookUpFoundInstance;
 - (id)lookUpKey;
 - (void)setAssetCatalog:(id)arg1;

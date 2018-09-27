@@ -27,8 +27,8 @@
 - (id)allObjects;
 - (void)dealloc;
 - (id)init;
-- (id)objectForPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)objectForPageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1;
 - (void)removeAllObjects;
-- (void)setObject:(id)arg1 forPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)setObject:(id)arg1 forPageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 
 @end

@@ -7,6 +7,8 @@
     int  _awakeNotifyToken;
 }
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (void)_cancelAwakeNotifyToken;
 - (void)_registerAwakeNotifyToken;

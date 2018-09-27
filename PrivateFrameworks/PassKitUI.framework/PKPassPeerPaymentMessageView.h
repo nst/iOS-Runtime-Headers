@@ -9,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2;
+- (id)initWithPass:(id)arg1;
 - (void)layoutSubviews;
 
 @end

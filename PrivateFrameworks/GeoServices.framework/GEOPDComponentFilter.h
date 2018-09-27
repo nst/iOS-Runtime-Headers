@@ -7,6 +7,7 @@
     GEOPDAddressFilter * _addressFilter;
     GEOPDAddressObjectFilter * _addressObjectFilter;
     GEOPDAmenitiesFilter * _amenitiesFilter;
+    GEOPDAnnotatedItemListFilter * _annotatedItemListFilter;
     GEOPDAssociatedAppFilter * _associatedAppFilter;
     GEOPDBoundsFilter * _boundsFilter;
     GEOPDBrowseCategoriesFilter * _browseCategoriesFilter;
@@ -24,7 +25,9 @@
     GEOPDMessageLinkFilter * _messageLinkFilter;
     GEOPDPhotoFilter * _photoFilter;
     GEOPDPlaceInfoFilter * _placeInfoFilter;
+    GEOPDPlacecardLayoutConfigurationFilter * _placecardLayoutConfigurationFilter;
     GEOPDPlacecardURLFilter * _placecardUrlFilter;
+    GEOPDPoiEventFilter * _poiEventFilter;
     GEOPDPriceDescriptionFilter * _priceDescriptionFilter;
     GEOPDQuickLinkFilter * _quickLinkFilter;
     GEOPDRapFilter * _rapFilter;
@@ -52,6 +55,7 @@
 @property (nonatomic, retain) GEOPDAddressFilter *addressFilter;
 @property (nonatomic, retain) GEOPDAddressObjectFilter *addressObjectFilter;
 @property (nonatomic, retain) GEOPDAmenitiesFilter *amenitiesFilter;
+@property (nonatomic, retain) GEOPDAnnotatedItemListFilter *annotatedItemListFilter;
 @property (nonatomic, retain) GEOPDAssociatedAppFilter *associatedAppFilter;
 @property (nonatomic, retain) GEOPDBoundsFilter *boundsFilter;
 @property (nonatomic, retain) GEOPDBrowseCategoriesFilter *browseCategoriesFilter;
@@ -67,6 +71,7 @@
 @property (nonatomic, readonly) bool hasAddressFilter;
 @property (nonatomic, readonly) bool hasAddressObjectFilter;
 @property (nonatomic, readonly) bool hasAmenitiesFilter;
+@property (nonatomic, readonly) bool hasAnnotatedItemListFilter;
 @property (nonatomic, readonly) bool hasAssociatedAppFilter;
 @property (nonatomic, readonly) bool hasBoundsFilter;
 @property (nonatomic, readonly) bool hasBrowseCategoriesFilter;
@@ -84,7 +89,9 @@
 @property (nonatomic, readonly) bool hasMessageLinkFilter;
 @property (nonatomic, readonly) bool hasPhotoFilter;
 @property (nonatomic, readonly) bool hasPlaceInfoFilter;
+@property (nonatomic, readonly) bool hasPlacecardLayoutConfigurationFilter;
 @property (nonatomic, readonly) bool hasPlacecardUrlFilter;
+@property (nonatomic, readonly) bool hasPoiEventFilter;
 @property (nonatomic, readonly) bool hasPriceDescriptionFilter;
 @property (nonatomic, readonly) bool hasQuickLinkFilter;
 @property (nonatomic, readonly) bool hasRapFilter;
@@ -111,7 +118,9 @@
 @property (nonatomic, retain) GEOPDMessageLinkFilter *messageLinkFilter;
 @property (nonatomic, retain) GEOPDPhotoFilter *photoFilter;
 @property (nonatomic, retain) GEOPDPlaceInfoFilter *placeInfoFilter;
+@property (nonatomic, retain) GEOPDPlacecardLayoutConfigurationFilter *placecardLayoutConfigurationFilter;
 @property (nonatomic, retain) GEOPDPlacecardURLFilter *placecardUrlFilter;
+@property (nonatomic, retain) GEOPDPoiEventFilter *poiEventFilter;
 @property (nonatomic, retain) GEOPDPriceDescriptionFilter *priceDescriptionFilter;
 @property (nonatomic, retain) GEOPDQuickLinkFilter *quickLinkFilter;
 @property (nonatomic, retain) GEOPDRapFilter *rapFilter;
@@ -139,6 +148,7 @@
 - (id)addressFilter;
 - (id)addressObjectFilter;
 - (id)amenitiesFilter;
+- (id)annotatedItemListFilter;
 - (id)associatedAppFilter;
 - (id)boundsFilter;
 - (id)browseCategoriesFilter;
@@ -158,6 +168,7 @@
 - (bool)hasAddressFilter;
 - (bool)hasAddressObjectFilter;
 - (bool)hasAmenitiesFilter;
+- (bool)hasAnnotatedItemListFilter;
 - (bool)hasAssociatedAppFilter;
 - (bool)hasBoundsFilter;
 - (bool)hasBrowseCategoriesFilter;
@@ -175,7 +186,9 @@
 - (bool)hasMessageLinkFilter;
 - (bool)hasPhotoFilter;
 - (bool)hasPlaceInfoFilter;
+- (bool)hasPlacecardLayoutConfigurationFilter;
 - (bool)hasPlacecardUrlFilter;
+- (bool)hasPoiEventFilter;
 - (bool)hasPriceDescriptionFilter;
 - (bool)hasQuickLinkFilter;
 - (bool)hasRapFilter;
@@ -200,6 +213,7 @@
 - (id)hoursFilter;
 - (id)iconFilter;
 - (id)initAddressObjectFilterWithLibraryVersion:(id)arg1;
+- (id)initAnnotatedItemListFilterWithTraits:(id)arg1;
 - (id)initCaptionedPhotoFilterWithTraits:(id)arg1;
 - (id)initEntityFilterWithSpokenNames;
 - (id)initPhotoFilterWithTraits:(id)arg1;
@@ -214,7 +228,9 @@
 - (id)messageLinkFilter;
 - (id)photoFilter;
 - (id)placeInfoFilter;
+- (id)placecardLayoutConfigurationFilter;
 - (id)placecardUrlFilter;
+- (id)poiEventFilter;
 - (id)priceDescriptionFilter;
 - (id)quickLinkFilter;
 - (id)rapFilter;
@@ -228,6 +244,7 @@
 - (void)setAddressFilter:(id)arg1;
 - (void)setAddressObjectFilter:(id)arg1;
 - (void)setAmenitiesFilter:(id)arg1;
+- (void)setAnnotatedItemListFilter:(id)arg1;
 - (void)setAssociatedAppFilter:(id)arg1;
 - (void)setBoundsFilter:(id)arg1;
 - (void)setBrowseCategoriesFilter:(id)arg1;
@@ -245,7 +262,9 @@
 - (void)setMessageLinkFilter:(id)arg1;
 - (void)setPhotoFilter:(id)arg1;
 - (void)setPlaceInfoFilter:(id)arg1;
+- (void)setPlacecardLayoutConfigurationFilter:(id)arg1;
 - (void)setPlacecardUrlFilter:(id)arg1;
+- (void)setPoiEventFilter:(id)arg1;
 - (void)setPriceDescriptionFilter:(id)arg1;
 - (void)setQuickLinkFilter:(id)arg1;
 - (void)setRapFilter:(id)arg1;

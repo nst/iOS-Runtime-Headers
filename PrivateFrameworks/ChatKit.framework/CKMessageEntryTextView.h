@@ -10,7 +10,6 @@
     UIColor * _placeholderColor;
     double  _placeholderExpandedWidth;
     UILabel * _placeholderLabel;
-    bool  _preventingResignFirstResponder;
     NSString * _responseContext;
     UIKeyboardInputMode * _savedKeyboardInputMode;
     bool  _sendCurrentLocationFromKeyboardEnabled;
@@ -27,7 +26,6 @@
 @property (nonatomic) double placeholderExpandedWidth;
 @property (nonatomic, retain) UILabel *placeholderLabel;
 @property (nonatomic, copy) NSString *placeholderText;
-@property (getter=isPreventingResignFirstResponder, nonatomic) bool preventingResignFirstResponder;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic, retain) UIKeyboardInputMode *savedKeyboardInputMode;
 @property (nonatomic) bool sendCurrentLocationFromKeyboardEnabled;
@@ -45,7 +43,6 @@
 - (bool)hideCaret;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
 - (id)insertDictationResultPlaceholder;
-- (bool)isPreventingResignFirstResponder;
 - (bool)isShowingDictationPlaceholder;
 - (bool)isSingleLine;
 - (void)layoutSubviews;
@@ -72,7 +69,6 @@
 - (void)setPlaceholderExpandedWidth:(double)arg1;
 - (void)setPlaceholderLabel:(id)arg1;
 - (void)setPlaceholderText:(id)arg1;
-- (void)setPreventingResignFirstResponder:(bool)arg1;
 - (void)setResponseContext:(id)arg1;
 - (void)setSavedKeyboardInputMode:(id)arg1;
 - (void)setSendCurrentLocationFromKeyboardEnabled:(bool)arg1;

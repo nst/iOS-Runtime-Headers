@@ -37,10 +37,8 @@
 - (void)finalize;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 brokenHashVersion:(unsigned long long)arg3;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 entityIDOffset:(unsigned int)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(bool)arg3;
 - (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(bool)arg3 brokenHashVersion:(unsigned long long)arg4;
-- (id)initWithManagedObjectModel:(id)arg1 configurationName:(id)arg2 retainHashHack:(bool)arg3 brokenHashVersion:(unsigned long long)arg4 entityIDOffset:(unsigned int)arg5;
 - (id)managedObjectModel;
 
 @end

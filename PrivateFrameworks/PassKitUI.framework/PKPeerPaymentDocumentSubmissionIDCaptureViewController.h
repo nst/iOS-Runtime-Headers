@@ -4,6 +4,7 @@
 
 @interface PKPeerPaymentDocumentSubmissionIDCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPeerPaymentDocumentSubmissionControllerDelegate, PKPeerPaymentDocumentSubmissionViewControllerResponder> {
     UIBarButtonItem * _buttonCancel;
+    UIView * _cameraInstructionContainerView;
     PKCameraCaptureInstructionView * _cameraInstructionView;
     UIView * _cameraView;
     PKPeerPaymentDocumentSubmissionController * _captureController;

@@ -31,7 +31,7 @@
 @property (retain) NSPredicate *filterPredicate;
 @property (readonly) NSArray *selectedObjects;
 @property (copy) NSIndexSet *selectionIndexes;
-@property (retain) NSArray *sortDescriptors;
+@property (copy) NSArray *sortDescriptors;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;

@@ -44,6 +44,7 @@
 
 - (void).cxx_destruct;
 - (bool)_getActivationData:(bool)arg1 forRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_recordThatWatchFinishedActivating;
 - (bool)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
 - (bool)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
 - (id /* block */)activationCompletion;
@@ -54,6 +55,7 @@
 - (bool)canBeginActivation;
 - (void)companionBecameAvailableWantsConfirmation:(id)arg1;
 - (void)companionDidSendLanguageAndLocale:(id)arg1;
+- (void)companionDidSendWirelessCredentials:(id)arg1;
 - (id)customDescriptionOfMessageType:(unsigned short)arg1;
 - (id)delegate;
 - (void)doInitialSyncPrep:(id)arg1;
@@ -74,6 +76,7 @@
 - (void)invalidateTimeoutTimer;
 - (id)languageIdentifer;
 - (void)popToControllerType:(id)arg1;
+- (void)prepareForForcedWatchSU:(id)arg1;
 - (void)pushControllerType:(id)arg1;
 - (bool)readyToCreatePasscode;
 - (void)refreshTimeoutTimer;
@@ -106,6 +109,7 @@
 - (bool)tellCompanionGizmoBeganActivating;
 - (bool)tellCompanionGizmoFailedActivating:(id)arg1;
 - (bool)tellCompanionGizmoFinishedActivating;
+- (bool)tellCompanionGizmoFinishedActivatingAsDeKOTA;
 - (void)tellCompanionThatGizmoFailedToCreatePasscode:(int)arg1;
 - (void)tellCompanionThatGizmoFinishedSettingPasscode:(bool)arg1 isLong:(bool)arg2;
 - (void)tellCompanionThatGizmoFinishedUnlockPairing:(bool)arg1;

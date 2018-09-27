@@ -4,9 +4,11 @@
 
 @interface NTKComplicationModuleView : NTKModuleView <NTKComplicationDisplay> {
     bool  _isXL;
+    bool  canUseCurvedText;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
+@property (nonatomic) bool canUseCurvedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
@@ -32,8 +34,10 @@
 - (id)_newLabelSubview;
 - (id)_newLabelSubviewWithFont:(id)arg1;
 - (void)_setTypographicTracking:(double)arg1 andFont:(id)arg2 onAttributedString:(id*)arg3 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
+- (bool)canUseCurvedText;
 - (id)displayObserver;
 - (bool)isXL;
+- (void)setCanUseCurvedText:(bool)arg1;
 - (void)setDisplayObserver:(id)arg1;
 - (void)setIsXL:(bool)arg1;
 

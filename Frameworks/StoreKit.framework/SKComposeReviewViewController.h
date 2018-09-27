@@ -13,6 +13,7 @@
 
 @property (nonatomic) <SKComposeReviewDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (void)_addRemoteView;
 - (void)_didFinishWithResult:(bool)arg1 error:(id)arg2;
 - (void)_didPrepareWithResult:(bool)arg1 error:(id)arg2;

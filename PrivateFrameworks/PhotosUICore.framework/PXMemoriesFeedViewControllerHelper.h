@@ -121,12 +121,14 @@
 - (id)dataSourceManager;
 - (id)delegate;
 - (void)didChangeTilingControllerLayout;
-- (void)feedViewControllerDidAppear;
+- (void)feedViewControllerDidAppear:(bool)arg1;
 - (void)feedViewControllerDidDisappear;
 - (void)feedViewControllerWillLayoutSubviews;
 - (id)highlightedMemoryReference;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForMemoryInScrollViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathForMemoryObjectReference:(id)arg1;
+- (id)initWithPhotoLibrary:(id)arg1;
+- (id)initWithScrollViewController:(id)arg1 photoLibrary:(id)arg2 traitCollection:(id)arg3 memoriesStyle:(unsigned long long)arg4 tilingControllerConfigurationBlock:(id /* block */)arg5;
 - (id)initWithScrollViewController:(id)arg1 photoLibrary:(id)arg2 traitCollection:(id)arg3 tilingControllerConfigurationBlock:(id /* block */)arg4;
 - (void)invalidateMetrics;
 - (id)lastActionPresentationMemoryReference;

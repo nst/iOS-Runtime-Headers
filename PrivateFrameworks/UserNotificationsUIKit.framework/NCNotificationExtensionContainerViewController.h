@@ -14,7 +14,7 @@
     NCNotificationRequest * _notificationRequest;
     bool  _overridesDefaultTitle;
     NSMutableArray * _queuedRequests;
-    <_UNNotificationExtensionRemoteInterface> * _remoteService;
+    NSMutableArray * _updatedActions;
     bool  _userInteractionEnabled;
 }
 
@@ -34,10 +34,10 @@
 @property (nonatomic) bool overridesDefaultTitle;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (nonatomic, retain) NSMutableArray *queuedRequests;
-@property (nonatomic, retain) <_UNNotificationExtensionRemoteInterface> *remoteService;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
-@property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
+@property (nonatomic, retain) NSMutableArray *updatedActions;
+@property (nonatomic) bool userInteractionEnabled;
 
 - (void).cxx_destruct;
 - (void)_addExtensionViewFromViewController:(id)arg1;
@@ -56,6 +56,7 @@
 - (id)blockingView;
 - (bool)canBecomeFirstResponder;
 - (bool)canResignFirstResponder;
+- (id)cancelTouches;
 - (id)contentExtensionIdentifier;
 - (double)contentSizeRatio;
 - (unsigned long long)customContentLocation;
@@ -66,17 +67,17 @@
 - (id)extensionIdentifier;
 - (id)extensionViewController;
 - (id)initWithExtension:(id)arg1 forNotificationRequest:(id)arg2;
-- (bool)isUserInteractionEnabled;
 - (void)loadAudioAccessoryView;
-- (void)loadExtension;
 - (id)mediaPlayPauseButton;
 - (void)notificationHost:(id)arg1 extensionDidCompleteResponse:(id)arg2 withOption:(unsigned long long)arg3;
 - (void)notificationHostExtension:(id)arg1 audioAccessoryViewLayerContextId:(unsigned int)arg2;
 - (void)notificationHostExtension:(id)arg1 setDismissEnabled:(bool)arg2;
 - (void)notificationHostExtension:(id)arg1 setTitle:(id)arg2;
+- (void)notificationHostExtension:(id)arg1 setUserNotificationActions:(id)arg2;
 - (void)notificationHostExtensionDidUpdateControls:(id)arg1;
 - (void)notificationHostExtensionMediaPlayingDidPause:(id)arg1;
 - (void)notificationHostExtensionMediaPlayingDidStart:(id)arg1;
+- (void)notificationHostExtensionRequestsDefaultAction:(id)arg1;
 - (void)notificationHostExtensionRequestsDismiss:(id)arg1;
 - (id)notificationRequest;
 - (bool)overridesDefaultTitle;
@@ -100,11 +101,12 @@
 - (void)setNotificationRequest:(id)arg1;
 - (void)setOverridesDefaultTitle:(bool)arg1;
 - (void)setQueuedRequests:(id)arg1;
-- (void)setRemoteService:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUpdatedActions:(id)arg1;
 - (void)setUserInteractionEnabled:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)viewDidDisappear:(bool)arg1;
+- (id)updatedActions;
+- (bool)userInteractionEnabled;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

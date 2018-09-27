@@ -18,7 +18,7 @@
 @property (nonatomic, retain) FCPurchaseController *purchaseController;
 @property (readonly) Class superclass;
 
-+ (id)transformationWithCoreConfiguration:(id)arg1 context:(id)arg2;
++ (id)transformationWithConfiguration:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
 - (unsigned long long)maxiumInaccessibleHeadlineCount;

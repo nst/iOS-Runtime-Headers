@@ -27,10 +27,9 @@
 @property (nonatomic, readonly) bool cls_isAppExtension;
 @property (nonatomic, readonly, copy) NSString *cls_signingIdentifier;
 @property (nonatomic, readonly, copy) NSString *cx_applicationIdentifier;
-@property (nonatomic, readonly) NSBundle *cx_bundle;
+@property (nonatomic, readonly, copy) NSString *cx_bundleIdentifier;
 @property (nonatomic, readonly, copy) NSSet *cx_capabilities;
 @property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
-@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
 @property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
@@ -41,9 +40,9 @@
 @property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
-@property (nonatomic, readonly) NSString *processBundleIdentifier;
+@property (nonatomic, readonly, copy) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
-@property (nonatomic, readonly) NSString *processName;
+@property (nonatomic, readonly, copy) NSString *processName;
 @property (retain) NSXPCInterface *remoteObjectInterface;
 @property (readonly, retain) id remoteObjectProxy;
 @property (readonly, copy) NSString *serviceName;
@@ -138,10 +137,9 @@
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
 - (id)cx_applicationIdentifier;
-- (id)cx_bundle;
+- (id)cx_bundleIdentifier;
 - (id)cx_capabilities;
 - (id)cx_developerTeamIdentifier;
-- (bool)cx_hasVoIPBackgroundMode;
 - (id)cx_processName;
 
 // Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
@@ -171,6 +169,10 @@
 - (bool)sl_clientHasEntitlement:(id)arg1;
 - (id)sl_localizedClientName;
 
+// Image: /System/Library/PrivateFrameworks/CarPlaySupport.framework/CarPlaySupport
+
+- (id)cp_bundleIdentifier;
+
 // Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
 
 - (id)initCellularPlanDatabaseClient;
@@ -180,9 +182,32 @@
 
 - (id)CKValueForEntitlements:(id)arg1 error:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/ControlCenterServices.framework/ControlCenterServices
+
+- (bool)ccs_hasEntitlementForModuleIdentifier:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 - (id)sgd_clientName;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
+
+- (id)_dnds_safeStringArrayEntitlementForKey:(id)arg1;
+- (bool)dnds_hasAnyValidEntitlement;
+- (bool)dnds_hasBehaviorResolutionEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasEntitlementsToRequestAssertionWithDetails:(id)arg1 clientIdentifier:(id)arg2;
+- (bool)dnds_hasModeAssertionEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasSettingsModificationEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasSettingsRequestEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasSettingsUpdatesEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasStateRequestEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasStateUpdatesEntitlementForClientIdentifier:(id)arg1;
+- (bool)dnds_hasUserRequestedModeAssertionEntitlementForClientIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)geo_createGEODaemonToMapsPushDaemonConnection;
++ (void)geo_withMapsPushDaemon:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
 
@@ -204,7 +229,6 @@
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 - (id)uns_clientBundleProxy;
-- (id)uns_clientRemoteNotificationEnvironment;
 - (bool)uns_isAllowedToRequestUserNotificationsForBundleIdentifier:(id)arg1;
 
 // Image: /usr/lib/libnfshared.dylib

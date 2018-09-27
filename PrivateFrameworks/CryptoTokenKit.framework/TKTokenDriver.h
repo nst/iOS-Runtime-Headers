@@ -29,7 +29,6 @@
 - (void)invalidateToken:(id)arg1;
 - (id)queue;
 - (void)releaseTokenWithTokenID:(id)arg1;
-- (void)removeTokenEndpoint:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtensionAttributes:(id)arg1;
 - (void)setTokens:(id)arg1;

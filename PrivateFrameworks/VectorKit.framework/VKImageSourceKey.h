@@ -47,7 +47,7 @@
 @property (nonatomic, readonly) NSString *imageName;
 @property (nonatomic, readonly) unsigned int keyType;
 @property (nonatomic, retain) NSString *relatedText;
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{?={Matrix<float' */ struct  shieldColor; /* unknown property attribute:  1>=[4f]}} */
+@property (nonatomic, readonly) struct { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; } shieldColor;
 @property (nonatomic, readonly) NSString *shieldColorString;
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *shieldDataSource;
 @property (nonatomic, readonly) NSString *shieldText;
@@ -84,7 +84,7 @@
 - (void)setImageCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRelatedText:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })shieldColor;
+- (struct { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; })shieldColor;
 - (id)shieldText;
 - (id)shieldTextLocale;
 - (unsigned int)shieldType;

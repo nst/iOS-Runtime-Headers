@@ -17,9 +17,9 @@
 
 + (bool)_isSecure;
 
+- (void).cxx_destruct;
 - (bool)_appearsInLoupe;
 - (bool)_canBecomeKeyWindow;
-- (void)_configureRootLayer:(id)arg1 transformLayer:(id)arg2;
 - (id)_focusResponder;
 - (bool)_shouldPrepareScreenForWindow;
 - (id)_systemGestureView;

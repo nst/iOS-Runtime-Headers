@@ -18,6 +18,7 @@
     bool  _automaticSoftwareUpdateEnabled;
     HMDBackingStore * _backingStore;
     long long  _configurationVersion;
+    NSHashTable * _connectionsDiscoveringSymptomsForNearbyDevices;
     bool  _currentRemoteReachabilityRegistration;
     HMDUser * _currentUser;
     NSMutableDictionary * _disableNotificationPayload;
@@ -33,6 +34,7 @@
     HMDHomeObjectChangeHandler * _homeObjectChangeHandler;
     HMDHomeReprovisionHandler * _homeReprovisionHandler;
     long long  _lastKnownReachableAccessoryCount;
+    long long  _lastSyncedConfigurationVersion;
     HMDHomeObjectLookup * _lookup;
     NSString * _mediaPassword;
     bool  _mediaPeerToPeerEnabled;
@@ -117,6 +119,7 @@
 @property (nonatomic) long long atHomeLevel;
 @property (nonatomic, retain) HMDBackingStore *backingStore;
 @property (nonatomic) long long configurationVersion;
+@property (nonatomic, readonly) NSHashTable *connectionsDiscoveringSymptomsForNearbyDevices;
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (nonatomic) bool currentRemoteReachabilityRegistration;
@@ -138,6 +141,7 @@
 @property (nonatomic, readonly) HMDHomeObjectChangeHandler *homeObjectChangeHandler;
 @property (nonatomic, retain) HMDHomeReprovisionHandler *homeReprovisionHandler;
 @property (nonatomic) long long lastKnownReachableAccessoryCount;
+@property (nonatomic) long long lastSyncedConfigurationVersion;
 @property (nonatomic, readonly) HMDHomeObjectLookup *lookup;
 @property (nonatomic, retain) NSArray *mediaSessionStates;
 @property (nonatomic, retain) NSArray *mediaSessions;
@@ -198,6 +202,7 @@
 @property (getter=isSharedAdmin, nonatomic) bool sharedAdmin;
 @property (nonatomic, retain) HMDHomeKitVersion *sharedHomeSourceVersion;
 @property (nonatomic, readonly) HMDSharedHomeUpdateHandler *sharedHomeUpdateHandler;
+@property (nonatomic, readonly) NSUUID *spiClientIdentifier;
 @property (nonatomic) unsigned long long stateHandle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *triggerOwnedActionSets;
@@ -212,7 +217,7 @@
 
 + (void)_initialize;
 + (void)appendCharacteristicsToAccessoryList:(id)arg1 responseTuples:(id)arg2 forMultipleCharacteristicsRemoteRead:(id)arg3;
-+ (void)appendCharacteristicsToAccessoryList:(id)arg1 responseTuples:(id)arg2 forMultipleCharacteristicsRemoteWrite:(id)arg3;
++ (void)appendCharacteristicsToAccessoryList:(id)arg1 responseTuples:(id)arg2 forMultipleCharacteristicsRemoteWrite:(id)arg3 message:(id)arg4;
 + (id)getBuiltinActionSets;
 + (bool)hasMessageReceiverChildren;
 + (bool)isObjectContainedInHome:(id)arg1;
@@ -230,20 +235,20 @@
 - (void)__handleAddMediaAccessoryModel:(id)arg1 message:(id)arg2;
 - (void)__handleCancelledOutgoingInvitation:(id)arg1;
 - (void)__handleCompletedOutgoingInvitation:(id)arg1;
+- (id)__residentDeviceForAccesory:(id)arg1 fromMap:(id)arg2;
+- (void)__saveConfigurationVersionTransaction;
 - (bool)_accessoryServerIsBlocked:(id)arg1;
 - (void)_addAllUsersToAccessory:(id)arg1;
 - (id)_addMediaSessionForCurrentAccessory:(id)arg1;
 - (void)_addNewTrigger:(id)arg1 message:(id)arg2 notification:(id)arg3 payloadAnnex:(id)arg4 triggerModel:(id)arg5;
 - (void)_addOutgoingInvitations:(id)arg1 message:(id)arg2;
-- (void)_addOwnerToPrimaryAccessory:(id)arg1 error:(id*)arg2;
+- (bool)_addOwnerToPrimaryAccessory:(id)arg1 error:(id*)arg2;
 - (void)_addResidentWithUsername:(id)arg1 publicKey:(id)arg2 destination:(id)arg3;
 - (void)_addResponseTuplesFromDictionary:(id)arg1 accessoryRequestMapTable:(id)arg2 responseTuples:(id)arg3 completedGroup:(id)arg4 logEvents:(id)arg5;
-- (void)_addUser:(id)arg1 userPrivilege:(unsigned long long)arg2 confirm:(bool)arg3 message:(id)arg4;
 - (void)_addUserToContainer:(id)arg1;
 - (void)_addUserToIdentityRegistry:(id)arg1;
 - (void)_addUsersWithIDs:(id)arg1 message:(id)arg2;
 - (id)_applyDeviceLockCheck:(id)arg1 forSource:(unsigned long long)arg2;
-- (void)_auditNotifications;
 - (id)_changedHMDCharacteristicsForHAPCharacteristics:(id)arg1 stateNumber:(id)arg2 broadcast:(bool)arg3 accessoryServer:(id)arg4;
 - (id)_characteristicNotificationPayloadsOnDirectTransports:(bool)arg1;
 - (void)_cleanAddAccessoryOperations;
@@ -269,10 +274,11 @@
 - (void)_encodeActionSets:(id)arg1 coder:(id)arg2;
 - (void)_encodeObjectsWithAcessoriesWithCoder:(id)arg1;
 - (void)_enqueueRetrievalCompletionTuple:(id)arg1 forAccessory:(id)arg2;
+- (bool)_ensureDevicesSymptomDiscoveryMessageCanBeHandled:(id)arg1;
 - (void)_evaluateShouldRelaunchAndSetRelaunch;
 - (id)_getContainerForAppData:(id)arg1 keyName:(id*)arg2;
 - (id)_getLogEventsForOperation:(bool)arg1 accessories:(id)arg2 readRequestMap:(id)arg3 identifier:(id)arg4;
-- (void)_getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 completion:(id /* block */)arg3;
+- (void)_getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
 - (id)_getTunnelAccessoryUpdate:(id)arg1;
 - (void)_handleAccessoryReachabilityChange:(id)arg1;
 - (void)_handleAccessoryReachabilityRegistration:(id)arg1 register:(bool)arg2;
@@ -298,11 +304,11 @@
 - (void)_handleAddTriggerOwnedActionSet:(id)arg1;
 - (void)_handleAddTriggerOwnedActionSetModel:(id)arg1 message:(id)arg2;
 - (void)_handleAddTriggers:(id)arg1;
-- (void)_handleAddUser:(id)arg1;
 - (void)_handleAddUserModel:(id)arg1 message:(id)arg2;
 - (void)_handleAddUserToRelayAccessories:(id)arg1;
 - (void)_handleAddZone:(id)arg1;
 - (void)_handleAddZoneModel:(id)arg1 message:(id)arg2;
+- (void)_handleAppTermination:(id)arg1;
 - (void)_handleAssistantAccessControlUpdate:(id)arg1;
 - (void)_handleCancelPairingAccessory:(id)arg1;
 - (void)_handleCharacterisiticsChangedNotification:(id)arg1;
@@ -317,6 +323,7 @@
 - (void)_handleExecuteConfirmationOfTrigger:(id)arg1;
 - (void)_handleFetchAccessories:(id)arg1;
 - (void)_handleHomeLocationUpdateFromSharedAdmin:(id)arg1;
+- (void)_handleInvalidatedXPCConnectionMessage:(id)arg1;
 - (void)_handleLegacyAddAccessory:(id)arg1;
 - (void)_handleMediaPropertiesRead:(id)arg1;
 - (void)_handleMediaPropertiesWrite:(id)arg1;
@@ -355,6 +362,8 @@
 - (void)_handleResponseForElectMessageToResident:(id)arg1 error:(id)arg2;
 - (void)_handleRetrievalForBlockedAccessory:(id)arg1 hapAccessory:(id)arg2 blockedBridgedAccessories:(id)arg3 unblockMessage:(id)arg4;
 - (void)_handleSetAppData:(id)arg1;
+- (void)_handleStartDiscoveringSymptomsForNearbyDevicesMessage:(id)arg1;
+- (void)_handleStopDiscoveringSymptomsForNearbyDevicesMessage:(id)arg1;
 - (void)_handleUnblock:(id)arg1;
 - (void)_handleUpdateAppDataModel:(id)arg1 message:(id)arg2;
 - (void)_handleUpdateAutomaticSoftwareUpdate:(id)arg1;
@@ -369,7 +378,7 @@
 - (void)_handleUserInvitations:(id)arg1;
 - (void)_handleWriteMediaProperties:(struct NSDictionary { Class x1; }*)arg1 source:(unsigned long long)arg2 requestMessage:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)_hasPairedReachableBTLEAccessories;
-- (id)_hmdCharacteristicsForUpdatedHAPCharacterstics:(id)arg1 accessoryServer:(id)arg2;
+- (id)_hmdCharacteristicsForUpdatedHAPcharacteristics:(id)arg1 accessoryServer:(id)arg2;
 - (bool)_isEventTriggerOnLocalDeviceForAccessory:(id)arg1;
 - (bool)_isEventTriggerOnRemoteGatewayForAccessory:(id)arg1;
 - (bool)_isRegisteredForNotificationsForClients:(id)arg1;
@@ -378,11 +387,11 @@
 - (bool)_isSecureClassTriggeredByCharactersitics:(id)arg1;
 - (bool)_isUserValid:(id)arg1 error:(id*)arg2;
 - (bool)_isValidEventIdentifier:(id)arg1;
+- (void)_loadBalancedRedispatchForAccessories:(id)arg1 source:(unsigned long long)arg2 dispatchGroup:(id)arg3 writeRequestMap:(id)arg4 requestMessage:(id)arg5 responseTuples:(id)arg6;
 - (void)_migrateHomeMediaSettingsCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_migrateHomeSettingsCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_migrateHomeUsersCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_migrateResidentDevicesCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(id /* block */)arg3;
-- (void)_modifyAllRegistrationsForNotificationsInNotificationRegistry:(bool)arg1;
 - (void)_modifyCharacteristicNotifications:(id)arg1 mediaNotifications:(id)arg2 enableNotification:(bool)arg3 withDevice:(id)arg4;
 - (void)_modifyCharacteristicNotificationsOnRemoteGateways:(id)arg1 mediaNotifications:(id)arg2 enableNotification:(bool)arg3;
 - (void)_modifyCharacteristicNotificationsOnResident:(id)arg1 mediaNotifications:(id)arg2 enableNotification:(bool)arg3;
@@ -403,11 +412,10 @@
 - (id)_populateCharacteristicsThatNeedNotificationsFromDictionary:(id)arg1 error:(id*)arg2;
 - (id)_populatePropertiesThatNeedNotificationsFromDictionary:(id)arg1;
 - (void)_postInternalNotificationForChangedCharacterisitics:(id)arg1 modifiedCharacteristics:(id)arg2 modifiedAccessories:(id)arg3 changedByThisDevice:(bool)arg4 residentShouldNotifyPeers:(bool)arg5 message:(id)arg6;
-- (void)_postOutgoingInvitationStateChangedNotification:(id)arg1 newInvitationState:(long long)arg2;
 - (id)_prepareMultipleCharacteristicRead:(id)arg1;
 - (void)_presentPairingPasswordDialogForAccessory:(id)arg1 setupCodeAvailable:(id /* block */)arg2;
 - (id)_primaryAccessoryForServer:(id)arg1;
-- (void)_processAccessoriesToAddForUnpairedAccessory:(id)arg1 certificationStatus:(long long)arg2 accessoryServer:(id)arg3 message:(id)arg4;
+- (void)_processAccessoriesToAddForUnpairedAccessory:(id)arg1 certificationStatus:(long long)arg2 accessoryServer:(id)arg3 message:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_processLegacyPairingRequestForMessage:(id)arg1 cancelPairing:(bool)arg2;
 - (void)_processPairingRequestForMessage:(id)arg1 cancelPairing:(bool)arg2;
 - (void)_processUpdatedAccessoryServer:(id)arg1 reAddServices:(bool)arg2;
@@ -435,9 +443,11 @@
 - (void)_removeAccessoriesFromContainers:(id)arg1;
 - (void)_removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeAccessoryWithUUID:(id)arg1 message:(id)arg2;
-- (void)_removeAllAccessoriesAndPairings:(bool)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_removeAllHomeContentsAndAccessoryPairings:(bool)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_removeAllUsersFromAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeCharacteristic:(id)arg1;
+- (void)_removeConnectionFromConnectionsDiscoveringSymptomsForNearbyDevices:(id)arg1;
+- (void)_removeCorruptAccessories;
 - (void)_removeMediaSessionWithIdentifier:(id)arg1;
 - (void)_removeOutgoingInvitationForUser:(id)arg1;
 - (void)_removeReachableAccessory:(id)arg1 hapAccessory:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -452,10 +462,11 @@
 - (id)_residentUsers;
 - (void)_resubscribeForNotificationsOnResident:(id)arg1;
 - (void)_retrieveHAPAccessoryForHMDAccessory:(id)arg1 linkType:(long long)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+- (void)_retrieveStateForTrackedAccessory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_saveSharedHomeToAccountWithReason:(id)arg1 postSyncNotification:(bool)arg2 options:(id)arg3;
 - (void)_sendAccessTokensToUser:(id)arg1 user:(id)arg2 error:(id)arg3;
-- (void)_sendClientCharacteristicsChangedNotification:(id)arg1 identifier:(id)arg2 isSecure:(bool)arg3 multiPartResponse:(bool)arg4 moreMessagesInMultipart:(bool)arg5 withCompletionHandler:(id /* block */)arg6;
-- (void)_sendInvitation:(id)arg1 confirm:(bool)arg2 message:(id)arg3;
+- (void)_sendClientCharacteristicsChangedNotification:(id)arg1 identifier:(id)arg2 entitledClientsOnly:(bool)arg3 multiPartResponse:(bool)arg4 moreMessagesInMultipart:(bool)arg5 withCompletionHandler:(id /* block */)arg6;
+- (void)_sendInvitation:(id)arg1 message:(id)arg2;
 - (void)_sendInvitationCancelationRequestToInvitee:(id)arg1;
 - (void)_sendRemoveCompletionStatusForHMDAccessories:(id)arg1 withCompletion:(id /* block */)arg2 error:(id)arg3;
 - (void)_sendResidentInviteWithDestination:(id)arg1;
@@ -463,7 +474,7 @@
 - (void)_sharedAdminDidFailToAddAccessories:(id)arg1;
 - (bool)_shouldRegisterForNotificationsWithDevice:(id)arg1;
 - (bool)_shouldWaitForAccessoriesToBeReachable;
-- (id)_splitSecureCharacteristicChanges:(id)arg1 changedAccessories:(id)arg2;
+- (id)_splitCharacteristicChanges:(id)arg1 changedAccessories:(id)arg2;
 - (void)_startHomeNotificationDeregistrationTimer;
 - (void)_subscribeForHomeNotificationsFromRemoteGateway:(bool)arg1;
 - (void)_subscribeForHomeNotificationsOnDirectTransports:(bool)arg1;
@@ -477,7 +488,6 @@
 - (void)_updateExpectConfigurationVersion;
 - (void)_updateHomeLocation;
 - (void)_updateOutgoingInviationsWithCompleteUserManagementOperation:(id)arg1;
-- (void)_updateOutgoingInvitationForUser:(id)arg1 invitationState:(long long)arg2 error:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)_updateOwnedTriggers;
 - (void)_updateReachabilityChangeToRegisteredDevices:(id)arg1;
 - (void)_updateRemoteReachability:(bool)arg1 accessories:(id)arg2;
@@ -514,6 +524,7 @@
 - (id)actionSetWithUUID:(id)arg1;
 - (id)actionSets;
 - (void)addAccessory:(id)arg1;
+- (id)addActionSetName:(id)arg1;
 - (void)addCompanionAsResidentUser:(id)arg1;
 - (void)addMediaSession:(id)arg1;
 - (void)addMediaSessionState:(id)arg1;
@@ -522,7 +533,7 @@
 - (id)addPendingAccessorySetupCodeHandlers;
 - (id)addPendingAccessorySetupCodes;
 - (void)addResidentCapableDevice:(id)arg1;
-- (void)addUnconfiguredResidentDeviceWithName:(id)arg1 userID:(id)arg2 deviceIdentifier:(id)arg3;
+- (void)addUnconfiguredResidentDevice:(id)arg1;
 - (void)addUser:(id)arg1;
 - (void)addUserToRelayAccessoriesWithConsentTokens:(id)arg1;
 - (bool)allowsRemoteAccess;
@@ -533,7 +544,6 @@
 - (id)assistantOperations;
 - (id)assistantUniqueIdentifier;
 - (long long)atHomeLevel;
-- (void)auditNotifications;
 - (void)auditUsersForNotifications:(id)arg1;
 - (id)backingStore;
 - (id)backingStoreObjects:(long long)arg1;
@@ -546,6 +556,7 @@
 - (bool)configure:(id)arg1 accessoriesPresent:(id)arg2 source:(unsigned long long)arg3;
 - (void)configureBulletinNotification;
 - (void)configureWithRelayManager:(id)arg1;
+- (id)connectionsDiscoveringSymptomsForNearbyDevices;
 - (id)contextID;
 - (id)contextSPIUniqueIdentifier;
 - (id)createActionSetWithName:(id)arg1 uuid:(id)arg2 type:(id)arg3;
@@ -586,7 +597,7 @@
 - (id)getHomeConfigurationForAWD;
 - (id)getReachabilityTupleForAccessoryUUID:(id)arg1;
 - (void)getReachableIPAccessories:(unsigned long long*)arg1 btleAccessories:(unsigned long long*)arg2 mediaAccessories:(unsigned long long*)arg3;
-- (void)getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 completion:(id /* block */)arg3;
+- (void)getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
 - (id)getServiceTransaction:(id)arg1 parentUUID:(id)arg2 changeType:(unsigned long long)arg3;
 - (id)getTransactionFromHAPAccessory:(id)arg1 hmdAccessory:(id)arg2 uuid:(id)arg3 bridgeUUID:(id)arg4 configurationAppIdentifier:(id)arg5 objectChangeType:(unsigned long long)arg6;
 - (bool)getUpdateTransactionForAccessory:(id)arg1 hapAccessory:(id)arg2 accessoryTransaction:(id*)arg3 addSvcTransactions:(id*)arg4 updateSvcTransactions:(id*)arg5 removeSvcTransactions:(id*)arg6;
@@ -597,6 +608,7 @@
 - (void)handleDidReceiveIDSMessageWithNoListener:(id)arg1;
 - (void)handleEvaluatePredicateMessage:(id)arg1;
 - (void)handleForegroundAppsNotification:(id)arg1;
+- (void)handleHomeUIServiceTermination:(id)arg1;
 - (void)handleRemoveAccessory:(id)arg1;
 - (void)handleRemovedAccessory:(id)arg1;
 - (void)handleRemovedMediaSessions:(id)arg1;
@@ -629,6 +641,7 @@
 - (bool)isResidentSupported;
 - (bool)isSharedAdmin;
 - (long long)lastKnownReachableAccessoryCount;
+- (long long)lastSyncedConfigurationVersion;
 - (id)logIdentifier;
 - (id)lookup;
 - (id)mediaPassword;
@@ -667,6 +680,7 @@
 - (void)notifyClientOfVendorInfoUpdatedForManufacturers:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)notifyClientsOfAccessoryInfoUpdatedForAccessories:(id)arg1;
 - (void)notifyNewRemotePeersFound:(bool)arg1 remoteUsersRemoved:(id)arg2 forceRemoteNotificationRegistration:(bool)arg3;
+- (void)notifyOfAddedAccessory:(id)arg1;
 - (void)notifyOfChangedCharacteristic:(id)arg1 changedByThisDevice:(bool)arg2 residentShouldNotifyPeers:(bool)arg3 message:(id)arg4;
 - (void)notifyOfNewlyAddedAccessoryByThisOwnerDevice:(id)arg1;
 - (void)notifyOfRemovedAccessory:(id)arg1;
@@ -726,7 +740,7 @@
 - (void)removeAccessory:(id)arg1;
 - (void)removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)removeAccessoryInProgressForHMDAccessories;
-- (void)removeAllAccessoriesAndPairings:(bool)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)removeAllHomeContentsAndAccessoryPairings:(bool)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)removeCharacteristic:(id)arg1;
 - (void)removeMediaSession:(id)arg1;
 - (void)removeMediaSessionState:(id)arg1;
@@ -740,6 +754,7 @@
 - (void)removeUserWithUserID:(id)arg1;
 - (void)removeWithMergeSecondaryAccessory:(id)arg1 removedFromBridgeAccessory:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)removedUsers;
+- (id)replaceActionSetName:(id)arg1 withNewName:(id)arg2;
 - (id)replaceName:(id)arg1 withNewName:(id)arg2;
 - (void)resetConfiguration;
 - (id)resident;
@@ -747,6 +762,7 @@
 - (id)residentDeviceManager;
 - (void)residentDeviceManager:(id)arg1 didUpdatePrimaryResident:(id)arg2;
 - (void)residentDeviceManager:(id)arg1 didUpdateResidentAvailable:(bool)arg2;
+- (id)residentDevicesIncludingRemoteGateways;
 - (id)residentEnabledDevices;
 - (void)resubscribeForNotificationsOnResident:(id)arg1;
 - (id)retrievalCompletionTuplesForAccessories;
@@ -792,6 +808,7 @@
 - (void)setHomeManager:(id)arg1;
 - (void)setHomeReprovisionHandler:(id)arg1;
 - (void)setLastKnownReachableAccessoryCount:(long long)arg1;
+- (void)setLastSyncedConfigurationVersion:(long long)arg1;
 - (void)setMediaPassword:(id)arg1;
 - (void)setMediaPeerToPeerEnabled:(bool)arg1;
 - (void)setMediaSessionStates:(id)arg1;
@@ -848,12 +865,12 @@
 - (id)sharedHomeUpdateHandler;
 - (id)shortDescription;
 - (bool)shouldRelayNotificationToRegisteredDevicesForSource:(id)arg1;
+- (id)spiClientIdentifier;
 - (unsigned long long)stateHandle;
 - (void)subscribeForNotificationsFromRemoteGateway;
 - (void)takeOwnershipOfAccessories:(id)arg1;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (bool)takeOwnershipOfBuiltinActionSets:(id)arg1;
-- (void)takeOwnershipOfNotificationRegistry:(id)arg1;
 - (void)timerDidFire:(id)arg1;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;

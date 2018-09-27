@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFeedViewController : UIViewController <PLCloudFeedNavigating, PLNavigableCloudFeedViewController, PUAlbumStreamActivityDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedPlayerCellDelegate, PUFeedSectionInfosManagerDelegate, PUFeedTextCellDelegate, PUOneUpPresentationHelperDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, PXSettingsKeyObserver, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDragSource, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, _UISettingsKeyObserver> {
+@interface PUFeedViewController : UIViewController <PUAlbumStreamActivityDelegate, PUFeedCaptionCellDelegate, PUFeedCollectionViewLayoutDelegate, PUFeedImageCellDelegate, PUFeedInvitationCellDelegate, PUFeedPlayerCellDelegate, PUFeedTextCellDelegate, PUOneUpPresentationHelperDelegate, PUPhotoBrowserZoomTransitionDelegate, PUScrollViewSpeedometerDelegate, PXCloudFeedNavigating, PXFeedSectionInfosManagerDelegate, PXNavigableCloudFeedViewController, PXSettingsKeyObserver, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDragSource, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, _UISettingsKeyObserver> {
     PUAlbumStreamActivity * __albumStreamActivity;
     bool  __appJustEnteredForeground;
     struct CGSize { 
@@ -14,13 +14,14 @@
     PLManagedAsset * __browsingSelectedAsset;
     PLCloudSharedComment * __browsingSelectedComment;
     PHCachingImageManager * __cachingImageManager;
+    bool  __checkedLibraryUpdatingExpiration;
     bool  __collectionViewScrolledToNewest;
     PUScrollViewSpeedometer * __collectionViewSpeedometer;
     UICollectionView * __currentCollectionView;
     long long  __currentCollectionViewType;
     PXFeedDateFormatter * __dateFormatter;
     _UIContentUnavailableView * __emptyPlaceholderView;
-    PUFeedSectionInfosManager * __feedSectionInfosManager;
+    PXFeedSectionInfosManager * __feedSectionInfosManager;
     bool  __flowDirectionReversed;
     bool  __hasAppeared;
     NSIndexPath * __indexPathForImageHiddenDuringZoomTransition;
@@ -72,6 +73,9 @@
     bool  __viewDidAppear;
     bool  __viewsInSyncWithModel;
     long long  _contentType;
+    NSMutableSet * _imageCellsPlayingVideo;
+    bool  _observingPopoverContentSizeChange;
+    id /* block */  _onNextViewLayout;
     PUFeedViewControllerSpec * _spec;
 }
 
@@ -83,13 +87,14 @@
 @property (setter=_setBrowsingSelectedAsset:, nonatomic, retain) PLManagedAsset *_browsingSelectedAsset;
 @property (setter=_setBrowsingSelectedComment:, nonatomic, retain) PLCloudSharedComment *_browsingSelectedComment;
 @property (nonatomic, readonly) PHCachingImageManager *_cachingImageManager;
+@property (getter=_hasCheckedLibraryUpdatingExpiration, setter=_setCheckedLibraryUpdatingExpiration:, nonatomic) bool _checkedLibraryUpdatingExpiration;
 @property (getter=_isCollectionViewScrolledToNewest, setter=_setCollectionViewScrolledToNewest:, nonatomic) bool _collectionViewScrolledToNewest;
 @property (setter=_setCollectionViewSpeedometer:, nonatomic, retain) PUScrollViewSpeedometer *_collectionViewSpeedometer;
 @property (setter=_setCurrentCollectionView:, nonatomic, retain) UICollectionView *_currentCollectionView;
 @property (setter=_setCurrentCollectionViewType:, nonatomic) long long _currentCollectionViewType;
 @property (nonatomic, readonly) PXFeedDateFormatter *_dateFormatter;
 @property (setter=_setEmptyPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_emptyPlaceholderView;
-@property (nonatomic, readonly) PUFeedSectionInfosManager *_feedSectionInfosManager;
+@property (nonatomic, readonly) PXFeedSectionInfosManager *_feedSectionInfosManager;
 @property (getter=_isFlowDirectionReversed, setter=_setFlowDirectionReversed:, nonatomic) bool _flowDirectionReversed;
 @property (setter=_setHasAppeared:, nonatomic) bool _hasAppeared;
 @property (setter=_setIndexPathForImageHiddenDuringZoomTransition:, nonatomic, copy) NSIndexPath *_indexPathForImageHiddenDuringZoomTransition;
@@ -133,6 +138,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSMutableSet *imageCellsPlayingVideo;
+@property (nonatomic) bool observingPopoverContentSizeChange;
+@property (nonatomic, copy) id /* block */ onNextViewLayout;
 @property (nonatomic, readonly) PUFeedViewControllerSpec *spec;
 @property (readonly) Class superclass;
 
@@ -152,6 +160,7 @@
 - (void)_autoHideBarsNow;
 - (long long)_barsState;
 - (bool)_beginInteractiveNavigationForItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
+- (bool)_beginPlayingVideoInCellIfNeeded:(id)arg1;
 - (id)_browsingAssetContainerList;
 - (id)_browsingSelectedAsset;
 - (id)_browsingSelectedComment;
@@ -167,6 +176,8 @@
 - (long long)_collectionViewTypeForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_collectionViews;
 - (bool)_confidentialityWarningRequiredForAsset:(id)arg1;
+- (void)_configureBadgedThumbnailCell:(id)arg1 forThumbnailsAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (void)_configureCaptionCell:(id)arg1 forCaptionAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureCollectionView:(id)arg1 isVertical:(bool)arg2;
 - (void)_configureImageCell:(id)arg1 forAssetAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureImageCell:(id)arg1 forThumbnailAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
@@ -174,13 +185,14 @@
 - (void)_configurePlayerCell:(id)arg1 forAssetAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureSpeedometer:(id)arg1;
 - (void)_configureStackCell:(id)arg1 forThumbnailsAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
-- (void)_configureTextCell:(id)arg1 forCaptionAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forCommentAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (bool)_configureTextCell:(id)arg1 forFooterOfSection:(long long)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forHeaderOfGroupID:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forHeaderOfSections:(id)arg2 inCollectionView:(id)arg3 animated:(bool)arg4;
 - (void)_configureTextCell:(id)arg1 forLikesAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureTextCell:(id)arg1 forTextAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (void)_configureTitleCell:(id)arg1 forHeaderOfSections:(id)arg2 inCollectionView:(id)arg3 animated:(bool)arg4;
+- (void)_configureTitleCell:(id)arg1 forTextAtIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_contextDidFinishRemoteMerge:(id)arg1;
 - (void)_createNewStream;
 - (id)_createOneUpPhotosDataSource;
@@ -199,6 +211,7 @@
 - (void)_dismissInvitationsPopoverIfNeeded;
 - (id)_dragItemsForIndexPath:(id)arg1;
 - (id)_emptyPlaceholderView;
+- (void)_endPlayingVideoInCellIfNeeded:(id)arg1;
 - (void)_ensureOneUpPresentationHelper;
 - (void)_ensureWindowOfLoadedSectionInfosIncludesSection:(long long)arg1;
 - (void)_enumerateCenterAssetsInRestorableState:(id)arg1 inCollectionView:(id)arg2 usingBlock:(id /* block */)arg3;
@@ -209,7 +222,10 @@
 - (void)_handlePinch:(id)arg1;
 - (void)_handlePlaceholderAction;
 - (void)_handleTap:(id)arg1;
+- (void)_handleVideoRequestID:(int)arg1 forCellAtIndexPath:(id)arg2 withTag:(long long)arg3;
+- (void)_handleVideoRequestResult:(id)arg1 forCellAtIndexPath:(id)arg2 withTag:(long long)arg3;
 - (bool)_hasAppeared;
+- (bool)_hasCheckedLibraryUpdatingExpiration;
 - (id)_indexPathForImageHiddenDuringZoomTransition;
 - (id)_indexPathForItemWithAsset:(id)arg1 inCollectionView:(id)arg2;
 - (id)_indexPathForPosition:(struct CGPoint { double x1; double x2; })arg1 inCollectionView:(id)arg2 outHitCell:(id*)arg3;
@@ -248,6 +264,7 @@
 - (id)_oneUpPresentationHelper;
 - (void)_openiCloudSettings;
 - (void)_performInterfaceBatchUpdateNow;
+- (void)_performOnNextViewLayout:(id /* block */)arg1;
 - (void)_performOneUpDataSourceUpdateNow;
 - (id)_photoBrowserOneUpPresentationAdaptor;
 - (id)_pinchGestureRecognizer;
@@ -281,6 +298,7 @@
 - (void)_setBrowsingAssetContainerList:(id)arg1;
 - (void)_setBrowsingSelectedAsset:(id)arg1;
 - (void)_setBrowsingSelectedComment:(id)arg1;
+- (void)_setCheckedLibraryUpdatingExpiration:(bool)arg1;
 - (void)_setCollectionViewScrolledToNewest:(bool)arg1;
 - (void)_setCollectionViewSpeedometer:(id)arg1;
 - (void)_setCurrentCollectionView:(id)arg1;
@@ -330,12 +348,15 @@
 - (bool)_shouldHideSectionInfo:(id)arg1 forCollectionView:(id)arg2;
 - (bool)_shouldHideSectionWithType:(long long)arg1 inCollectionViewType:(long long)arg2;
 - (bool)_shouldJoinSectionInfo:(id)arg1 withSectionInfo:(id)arg2 collectionViewType:(long long)arg3;
+- (bool)_shouldNavigateToNewestContent;
 - (bool)_shouldShowBarsForCollectionViewType:(long long)arg1;
 - (bool)_shouldShowTransitionUI;
 - (bool)_shouldSuspendQualityImageFormats;
 - (void)_showInvitationsPopoverAnimated:(bool)arg1;
 - (void)_showOutOfNetworkInvitationMessageForSharedAlbum:(id)arg1 completionHandler:(id /* block */)arg2;
 - (long long)_sizeTransitionState;
+- (void)_startObservingPopoverContentSizeIfNecessary;
+- (void)_stopObservingPopoverContentSizeIfNecessary;
 - (id)_suppressionContexts;
 - (id)_tapGestureRecognizer;
 - (id)_targetCollectionView;
@@ -346,6 +367,7 @@
 - (long long)_typeForCollectionView:(id)arg1;
 - (long long)_typeForSectionInfo:(id)arg1;
 - (void)_updateBrowsingAssetContainerList;
+- (void)_updateCellsVideoEnabledness;
 - (void)_updateCollectionViews;
 - (void)_updateEmptyPlaceholderAnimated:(bool)arg1;
 - (void)_updateInterfaceForDeletedSections:(id)arg1 insertedSections:(id)arg2 updatedSections:(id)arg3;
@@ -357,6 +379,7 @@
 - (void)_updatePeripheralInterfaceAnimated:(bool)arg1;
 - (void)_updatePreheatedAssetsForCollectionView:(id)arg1;
 - (void)_updateSectionsWithCaptionChangesFromUpdatedAssets:(id)arg1;
+- (void)_updateSectionsWithLikesAndCommentChangesFromUpdatedAssets:(id)arg1;
 - (bool)_updateSpec;
 - (void)_updateSubviewsOrdering;
 - (void)_updateWindowOfLoadedSectionInfos;
@@ -376,11 +399,14 @@
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 layout:(id)arg2 batchIDForTileAtIndexPath:(id)arg3;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 captionSizeForTileAtIndexPath:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (long long)collectionView:(id)arg1 layout:(id)arg2 commentCountForTileAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 commentSizeForTileAtIndexPath:(id)arg3 commentIndex:(long long)arg4 proposedSize:(struct CGSize { double x1; double x2; })arg5;
 - (long long)collectionView:(id)arg1 layout:(id)arg2 configurationForSectionHeaderType:(long long)arg3;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 contentInsetsForSection:(long long)arg3;
 - (id)collectionView:(id)arg1 layout:(id)arg2 groupIDForSection:(long long)arg3;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 imageSizeForTileAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 likesSizeForTileAtIndexPath:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
 - (struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenRowAtIndexPath:(id)arg3 andRowAtIndexPath:(id)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
 - (struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(id)arg1 layout:(id)arg2 metricsForSeparatorBetweenSection:(long long)arg3 andSection:(long long)arg4 proposedMetrics:(struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 mininumSizeForTileAtIndexPath:(id)arg3;
@@ -389,6 +415,7 @@
 - (bool)collectionView:(id)arg1 layout:(id)arg2 shouldHideSection:(long long)arg3;
 - (bool)collectionView:(id)arg1 layout:(id)arg2 shouldJoinSection:(long long)arg3 withSection:(long long)arg4;
 - (bool)collectionView:(id)arg1 layout:(id)arg2 shouldShowCaptionForTileAtIndexPath:(id)arg3;
+- (bool)collectionView:(id)arg1 layout:(id)arg2 shouldShowLikesForTileAtIndexPath:(id)arg3;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForFooterInSection:(long long)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForHeaderOfSections:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForRowAtIndexPath:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
@@ -398,7 +425,6 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
 - (long long)contentType;
 - (void)dealloc;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
@@ -406,6 +432,7 @@
 - (void)didTapCommentButtonInFeedImageCell:(id)arg1;
 - (void)didTapCommentButtonInFeedPlayerCell:(id)arg1;
 - (void)didTapFeedCell:(id)arg1;
+- (void)didTapLikeButtonInFeedCaptionCell:(id)arg1;
 - (void)didTapOverlayPlayButtonInFeedImageCell:(id)arg1;
 - (void)feedInvitationCell:(id)arg1 didAccept:(bool)arg2;
 - (void)feedInvitationCell:(id)arg1 presentViewController:(id)arg2;
@@ -413,6 +440,7 @@
 - (void)feedSectionInfosManager:(id)arg1 sectionInfosDidChange:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)imageCellsPlayingVideo;
 - (id)initWithSpec:(id)arg1 contentType:(long long)arg2;
 - (void)navigateToCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
@@ -421,13 +449,18 @@
 - (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (bool)observingPopoverContentSizeChange;
+- (id /* block */)onNextViewLayout;
 - (void)oneUpPresentationHelper:(id)arg1 didDismissOneUpViewController:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 willPresentOneUpViewController:(id)arg2;
 - (id)oneUpPresentationHelperScrollView:(id)arg1;
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
+- (void)performWhenReadyToNavigate:(id /* block */)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)ppt_currentCollectionView;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (long long)preferredStatusBarUpdateAnimation;
 - (bool)prefersStatusBarHidden;
 - (bool)prepareForDismissingForced:(bool)arg1;
@@ -435,7 +468,6 @@
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (bool)pu_handleSecondTabTap;
-- (bool)pu_shouldActAsTabRootViewController;
 - (bool)pu_wantsNavigationBarVisible;
 - (bool)pu_wantsTabBarVisible;
 - (bool)pu_wantsToolbarVisible;
@@ -446,6 +478,8 @@
 - (bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewSpeedometer:(id)arg1 regimeDidChange:(long long)arg2 from:(long long)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setObservingPopoverContentSizeChange:(bool)arg1;
+- (void)setOnNextViewLayout:(id /* block */)arg1;
 - (void)set_lastPreheatIndexPathInfoList:(id)arg1;
 - (void)set_lastPreheatIndexPathList:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

@@ -9,12 +9,13 @@
     NSMutableDictionary * _secureCandidateCache;
 }
 
-@property (nonatomic, readonly, retain) CAContext *context;
-@property (nonatomic, readonly, retain) NSString *localeIdentifier;
+@property (nonatomic, readonly) CAContext *context;
+@property (nonatomic, readonly) NSString *localeIdentifier;
 @property (nonatomic, retain) NSMutableDictionary *secureCandidateCache;
 
 + (id)allRenderers;
 
+- (void).cxx_destruct;
 - (id)_truncationSentinel;
 - (id)accessibilityLabelForSlotID:(unsigned int)arg1;
 - (id)accessibilityLabelsForSecureHeaders:(id)arg1 secureContents:(id)arg2 truncationSentinel:(id)arg3;

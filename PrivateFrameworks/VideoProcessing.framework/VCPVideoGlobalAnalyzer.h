@@ -12,7 +12,7 @@
 - (float)assetQualityScoreFromAnalysis:(id)arg1 withFpsRate:(float)arg2;
 - (float)assetVoiceScoreFromAnalysis:(id)arg1;
 - (float)cameraActivityfromQuality:(float)arg1;
-- (int)generateLivePhotoRecommendationForResults:(id)arg1 andPrivateResults:(id)arg2;
+- (int)generateLivePhotoRecommendationForResults:(id)arg1 andPrivateResults:(id)arg2 usingFaceAction:(bool)arg3;
 - (bool)hasMeaningfulSceneSegment:(id)arg1 withFpsRate:(float)arg2;
 - (bool)isJunkTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 basedOnResults:(id)arg2;
 - (float)scaleForTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 basedOnFace:(id)arg2;

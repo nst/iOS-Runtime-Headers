@@ -24,7 +24,6 @@
 - (bool)clientsMustRemap;
 - (void)dealloc;
 - (bool)forceMatchStyle;
-- (id)init;
 - (id)initWithMapper:(id)arg1;
 - (id)mappedStyleForStyle:(id)arg1;
 - (id)mappedStyleForStyle:(id)arg1 bakeComputable:(bool)arg2;

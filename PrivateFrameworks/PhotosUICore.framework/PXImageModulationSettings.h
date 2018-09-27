@@ -9,6 +9,7 @@
     long long  _HDRConsideration;
     double  _HDRModulationIntensity;
     double  _SDRModulationIntensity;
+    double  _deviceMaximumEDRHeadroomStops;
     bool  _enabled;
     long long  _filterType;
     double  _highEDRRequestedHeadroomStops;
@@ -23,6 +24,7 @@
 @property (nonatomic) long long HDRConsideration;
 @property (nonatomic) double HDRModulationIntensity;
 @property (nonatomic) double SDRModulationIntensity;
+@property (nonatomic) double deviceMaximumEDRHeadroomStops;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) long long filterType;
 @property (nonatomic) double highEDRRequestedHeadroomStops;
@@ -39,6 +41,7 @@
 - (long long)HDRConsideration;
 - (double)HDRModulationIntensity;
 - (double)SDRModulationIntensity;
+- (double)deviceMaximumEDRHeadroomStops;
 - (long long)filterType;
 - (double)highEDRRequestedHeadroomStops;
 - (bool)isEnabled;
@@ -46,6 +49,7 @@
 - (double)manualEDRHeadroomRequestStops;
 - (id)parentSettings;
 - (void)setDefaultValues;
+- (void)setDeviceMaximumEDRHeadroomStops:(double)arg1;
 - (void)setEDRHeadroomRequestHDRThreshold:(double)arg1;
 - (void)setEDRHeadroomRequestScheme:(long long)arg1;
 - (void)setEDRHeadroomRequestSustainDuration:(double)arg1;

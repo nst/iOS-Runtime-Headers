@@ -23,14 +23,21 @@
 }
 
 @property (nonatomic, readonly) double backgroundTimeRemaining;
+@property (nonatomic) bool bootstrapped;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callOutQueue;
+@property (nonatomic, retain) BKSProcessClient *client;
 @property (nonatomic) bool connectedToExternalAccessories;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BKSProcessDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) BSProcessHandle *handle;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) BKSProcessExitContext *lastExitContext;
+@property (nonatomic, retain) NSString *jobLabel;
+@property (nonatomic, retain) BKSLaunchdJobSpecification *jobSpec;
+@property (nonatomic, retain) BKSProcessExitContext *lastExitContext;
 @property (nonatomic) bool nowPlayingWithAudio;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) bool recordingAudio;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long taskState;
@@ -49,6 +56,10 @@
 - (double)backgroundTimeRemaining;
 - (bool)bootstrapWithProcessHandle:(id)arg1 error:(out id*)arg2;
 - (bool)bootstrapWithSpecification:(id)arg1 error:(out id*)arg2;
+- (bool)bootstrapped;
+- (id)bundleID;
+- (id)callOutQueue;
+- (id)client;
 - (void)client:(id)arg1 processDidChangeDebuggingState:(bool)arg2;
 - (void)client:(id)arg1 processDidChangeTaskState:(long long)arg2;
 - (void)client:(id)arg1 processDidExitWithContext:(id)arg2 completion:(id /* block */)arg3;
@@ -63,13 +74,24 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithPID:(int)arg1 bundlePath:(id)arg2 visibility:(long long)arg3 workspaceLocked:(bool)arg4 queue:(id)arg5;
 - (void)invalidate;
+- (id)jobLabel;
+- (id)jobSpec;
 - (id)lastExitContext;
 - (bool)nowPlayingWithAudio;
 - (void)processAssertionExpirationImminentForClient:(id)arg1;
+- (id)queue;
 - (bool)recordingAudio;
+- (void)setBootstrapped:(bool)arg1;
+- (void)setBundleID:(id)arg1;
+- (void)setCallOutQueue:(id)arg1;
+- (void)setClient:(id)arg1;
 - (void)setConnectedToExternalAccessories:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setJobLabel:(id)arg1;
+- (void)setJobSpec:(id)arg1;
+- (void)setLastExitContext:(id)arg1;
 - (void)setNowPlayingWithAudio:(bool)arg1;
+- (void)setQueue:(id)arg1;
 - (void)setRecordingAudio:(bool)arg1;
 - (void)setTerminationReason:(long long)arg1;
 - (void)setVisibility:(long long)arg1;

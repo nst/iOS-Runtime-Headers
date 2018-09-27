@@ -20,7 +20,10 @@
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
     bool  _usingFallbackImage;
+    NSLayoutConstraint * _videoContainerLeftConstraint;
+    NSLayoutConstraint * _videoContainerRightConstraint;
     UIView * _videoContainerView;
+    NSLayoutConstraint * _videoContainerWidthConstraint;
     NSURL * _videoURL;
     VTBFFOnBoardingVideoView * _videoView;
     NSMutableArray * _widthConstraints;

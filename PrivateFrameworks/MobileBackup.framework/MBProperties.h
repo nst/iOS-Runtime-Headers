@@ -46,11 +46,11 @@
 - (void)_setDictionary:(id)arg1 forKey:(id)arg2;
 - (id)_stringForLockdownKey:(id)arg1;
 - (id)activeAppleID;
+- (void)addAppleID:(id)arg1 DSID:(id)arg2 altDSID:(id)arg3 dataClass:(id)arg4;
 - (void)addAppleIDsFromSet:(id)arg1 dataClass:(id)arg2;
 - (void)addAssetDescriptionForAppleID:(id)arg1 assetDescription:(id)arg2;
 - (void)addContainer:(id)arg1;
 - (void)addContainersFromArray:(id)arg1;
-- (void)addUniqueIdentiferForAppleID:(id)arg1 dsid:(id)arg2 altDSID:(id)arg3;
 - (id)appleIDs;
 - (id)buddyStashData;
 - (id)buildVersion;

@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) double sceneLevel;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_initWithReason:(long long)arg1 sceneLevel:(double)arg2 forDisplayWithIdentity:(id)arg3;
 - (void)acquire;
 - (void)acquireWithPredicate:(id /* block */)arg1;

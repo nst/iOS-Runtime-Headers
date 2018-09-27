@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, retain) BKSPersistentConnectionDefaults *persistentConnectionDefaults;
 @property (nonatomic, readonly, retain) BKSSpringBoardDefaults *springBoardDefaults;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)iapDefaults;
 - (id)lockdownDefaults;
 - (id)persistentConnectionDefaults;

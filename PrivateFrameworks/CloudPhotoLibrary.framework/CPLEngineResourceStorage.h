@@ -5,8 +5,8 @@
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
     NSCountedSet * _failedPruneStatsPerResourceType;
     CPLEngineFileStorage * _fileStorage;
-    NSMutableSet * _identitiesToCommit;
-    NSMutableSet * _identitiesToDelete;
+    NSMutableDictionary * _identitiesToCommit;
+    NSMutableDictionary * _identitiesToDelete;
     NSDate * _lastPruneRequestDate;
     NSObject<OS_dispatch_queue> * _pruneStatsQueue;
     unsigned long long  _successfulPruneSize;
@@ -35,11 +35,13 @@
 - (bool)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
 - (bool)resetWithError:(id*)arg1;
 - (id)retainFileURLForResource:(id)arg1 error:(id*)arg2;
+- (unsigned long long)scopeType;
 - (unsigned long long)sizeOfOriginalResourcesToUpload;
 - (unsigned long long)sizeOfResourcesToUpload;
 - (id)status;
 - (id)statusDictionary;
 - (bool)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
+- (bool)storeResourceCopyForUpload:(id)arg1 error:(id*)arg2;
 - (bool)storeResourceForUpload:(id)arg1 error:(id*)arg2;
 - (void)writeTransactionDidFail;
 - (void)writeTransactionDidSucceed;

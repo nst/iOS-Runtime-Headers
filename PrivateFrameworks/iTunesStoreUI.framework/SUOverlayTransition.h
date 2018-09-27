@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUOverlayTransition : NSObject <NSCoding, NSCopying> {
+@interface SUOverlayTransition : NSObject <NSCopying, NSSecureCoding> {
     double  _duration;
     SUDOMElement * _sourceElement;
     long long  _type;
@@ -12,6 +12,7 @@
 @property (nonatomic, retain) SUDOMElement *sourceElement;
 @property (nonatomic) long long type;
 
++ (bool)supportsSecureCoding;
 + (long long)transitionTypeFromString:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

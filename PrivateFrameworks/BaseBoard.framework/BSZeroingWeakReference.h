@@ -14,7 +14,7 @@
 
 + (id)referenceWithObject:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (id)init;

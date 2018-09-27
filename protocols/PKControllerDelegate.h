@@ -6,8 +6,7 @@
 @required
 
 - (void)drawingChanged:(PKDrawing *)arg1;
-- (CAEAGLLayer *)glLayer;
 - (void)setAllowLiveInteraction:(bool)arg1;
-- (bool)setNeedsDrawingDisplay;
+- (void)setNeedsDrawingDisplay;
 
 @end

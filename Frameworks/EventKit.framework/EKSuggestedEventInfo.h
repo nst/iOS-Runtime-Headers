@@ -20,6 +20,7 @@
 - (id)initWithOpaqueKey:(id)arg1 uniqueKey:(id)arg2;
 - (id)opaqueKey;
 - (id)relatedEvent;
+- (id)semanticIdentifier;
 - (void)setChangedFields:(unsigned long long)arg1;
 - (void)setChangesAcknowledged:(bool)arg1;
 - (void)setOpaqueKey:(id)arg1;

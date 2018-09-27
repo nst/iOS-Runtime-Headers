@@ -14,6 +14,7 @@
     <WFOtherNetworkViewControllerDelegate> * _delegate;
     NSString * _details;
     long long  _firstResponder;
+    long long  _firstResponderCell;
     bool  _joinable;
     bool  _joining;
     WFTextFieldCell * _mostRecentFirstResponder;
@@ -26,6 +27,7 @@
     NSOrderedSet * _sections;
     long long  _securityMode;
     NSOrderedSet * _securityRows;
+    NSString * _sharedPassword;
     long long  _style;
     bool  _supportsWiFiPasswordSharing;
     NSString * _username;
@@ -44,9 +46,11 @@
 @property (nonatomic) <WFOtherNetworkViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *details;
+@property (nonatomic) long long firstResponderCell;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool joinable;
 @property (nonatomic) bool joining;
+@property (nonatomic) WFTextFieldCell *mostRecentFirstResponder;
 @property (nonatomic, retain) WFTextFieldCell *nameCell;
 @property (nonatomic, copy) NSString *networkName;
 @property (nonatomic, copy) NSString *password;
@@ -56,6 +60,7 @@
 @property (nonatomic, retain) NSOrderedSet *sections;
 @property (nonatomic) long long securityMode;
 @property (nonatomic, retain) NSOrderedSet *securityRows;
+@property (nonatomic, copy) NSString *sharedPassword;
 @property long long style;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsWiFiPasswordSharing;
@@ -103,11 +108,13 @@
 - (id)delegate;
 - (id)details;
 - (void)enterPassword:(id)arg1 joinAfterDelay:(double)arg2;
+- (long long)firstResponderCell;
 - (id)initWithOtherNetworkStyle:(long long)arg1;
 - (bool)joinable;
 - (bool)joining;
 - (void)keyboardShown:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
+- (id)mostRecentFirstResponder;
 - (id)nameCell;
 - (id)networkName;
 - (long long)numberOfSectionsInTableView:(id)arg1;
@@ -123,8 +130,10 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetails:(id)arg1;
+- (void)setFirstResponderCell:(long long)arg1;
 - (void)setJoinable:(bool)arg1;
 - (void)setJoining:(bool)arg1;
+- (void)setMostRecentFirstResponder:(id)arg1;
 - (void)setNameCell:(id)arg1;
 - (void)setNetworkName:(id)arg1;
 - (void)setPassword:(id)arg1;
@@ -134,6 +143,7 @@
 - (void)setSections:(id)arg1;
 - (void)setSecurityMode:(long long)arg1;
 - (void)setSecurityRows:(id)arg1;
+- (void)setSharedPassword:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setSupportsWiFiPasswordSharing:(bool)arg1;
 - (void)setTLSIdentities:(id)arg1;
@@ -145,6 +155,7 @@
 - (void)setWAPIIdentity:(id)arg1;
 - (void)setWAPIRootCertificate:(id)arg1;
 - (void)setWAPIRootCertificates:(id)arg1;
+- (id)sharedPassword;
 - (long long)style;
 - (bool)supportsWiFiPasswordSharing;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

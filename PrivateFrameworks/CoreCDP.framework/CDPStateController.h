@@ -6,7 +6,6 @@
 
 - (void)deleteRecoveryKey:(id /* block */)arg1;
 - (bool)deleteRecoveryKeyWithError:(id*)arg1;
-- (void)fetchManateeAvailabilityWithCompletion:(id /* block */)arg1;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
 - (void)generateNewRecoveryKey:(id /* block */)arg1;
 - (id)generateRandomRecoveryKey:(id*)arg1;

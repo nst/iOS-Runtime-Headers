@@ -67,6 +67,10 @@
 + (id)_mapkit_networkIOThread;
 + (void)_mapkit_runThread:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
++ (id)ams_symbolicatedCallStackSymbols;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 + (void)_im_runBlock:(id /* block */)arg1;
@@ -98,6 +102,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)tsp_currentReadCompletionInfo;
 + (bool)tsp_hasReadFileAccess;
 + (bool)tsp_isArchiverThread;
 + (bool)tsp_isRunningFinalizeHandlersForLegacyDocument;
@@ -107,7 +112,7 @@
 + (void)tsp_performSynchronousArchiverOperationUsingBlock:(id /* block */)arg1;
 + (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(id /* block */)arg1;
 + (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id /* block */)arg3;
-+ (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(id /* block */)arg2;
++ (void)tsp_runFinalizeHandlersForReadCompletionInfo:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)tsu_currentThreadName;
 
 @end

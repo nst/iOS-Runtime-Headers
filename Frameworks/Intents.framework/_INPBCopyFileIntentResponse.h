@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBCopyFileIntentResponse : PBCodable <NSCopying> {
+@interface _INPBCopyFileIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBCopyFileIntentResponse> {
     _INPBString * _destinationName;
     _INPBString * _entityName;
     int  _entityType;
@@ -13,9 +13,10 @@
     }  _has;
     bool  _overwrite;
     bool  _success;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBString *destinationName;
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
@@ -24,16 +25,14 @@
 @property (nonatomic) bool hasEntityType;
 @property (nonatomic) bool hasOverwrite;
 @property (nonatomic) bool hasSuccess;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool overwrite;
 @property (nonatomic) bool success;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)StringAsEntityType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)destinationName;
 - (id)dictionaryRepresentation;
 - (id)entityName;
@@ -46,7 +45,6 @@
 - (bool)hasSuccess;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)overwrite;
 - (bool)readFrom:(id)arg1;
 - (void)setDestinationName:(id)arg1;
@@ -58,7 +56,6 @@
 - (void)setOverwrite:(bool)arg1;
 - (void)setSuccess:(bool)arg1;
 - (bool)success;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

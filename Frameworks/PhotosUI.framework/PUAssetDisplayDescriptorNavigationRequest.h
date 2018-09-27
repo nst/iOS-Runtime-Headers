@@ -52,9 +52,9 @@
 - (void)_assertInsideChangeBlock;
 - (void)_assertInsideUpdate;
 - (void)_cleanUpWhenDone;
-- (id)_errorMessage;
 - (void)_finishRequest;
 - (id)_foundTargetAssetReference;
+- (id)_infoMessage;
 - (void)_invalidateArrived;
 - (void)_invalidateDone;
 - (void)_invalidateFoundTargetAssetReference;

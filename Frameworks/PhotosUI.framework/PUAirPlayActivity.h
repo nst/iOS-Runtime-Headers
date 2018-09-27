@@ -14,6 +14,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (id)_activityBundleImageConfiguration;
 - (bool)_isRouteAvailable;
 - (bool)_needsUpdateRouteAvailable;
 - (void)_registerForAirPlayNotifications;
@@ -21,7 +22,6 @@
 - (void)_setRouteAvailable:(bool)arg1;
 - (void)_unregisterForAirPlayNotifications;
 - (void)_updateRouteAvailabilityIfNeeded;
-- (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (void)airPlayControllerRouteAvailabilityChanged:(id)arg1;

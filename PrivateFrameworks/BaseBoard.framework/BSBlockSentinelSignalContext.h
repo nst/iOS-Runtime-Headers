@@ -19,6 +19,7 @@
 + (id)context;
 + (id)failureContext;
 
+- (void).cxx_destruct;
 - (id)context;
 - (bool)isComplete;
 - (bool)isFailed;

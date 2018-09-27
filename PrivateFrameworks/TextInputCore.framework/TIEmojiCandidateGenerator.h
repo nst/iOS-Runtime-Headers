@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSArray *activeInputModes;
 @property (nonatomic, readonly) TIInputMode *primaryInputMode;
 
+- (void).cxx_destruct;
 - (id)activeInputModes;
 - (id)createAndAddEmojiTokensFrom:(struct __CFArray { }*)arg1 inArray:(id)arg2 forInputString:(id)arg3;
 - (void)dealloc;

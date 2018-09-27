@@ -3,23 +3,27 @@
  */
 
 @interface TPDialPromptAlert : TPAlert {
+    NSString * _buttonTitle;
     id /* block */  _dialAction;
-    TUDialRequest * _dialRequest;
+    NSSet * _handles;
 }
 
+@property (nonatomic, readonly, copy) NSString *buttonTitle;
 @property (nonatomic, copy) id /* block */ dialAction;
-@property (nonatomic, retain) TUDialRequest *dialRequest;
+@property (nonatomic, readonly, copy) NSSet *handles;
 
 - (void).cxx_destruct;
+- (id)buttonTitle;
 - (id)defaultButtonTitle;
 - (void)defaultResponse;
 - (id /* block */)dialAction;
-- (id)dialRequest;
+- (id)handles;
+- (id)initWithButtonTitle:(id)arg1 handles:(id)arg2 dialAction:(id /* block */)arg3;
 - (id)initWithDialRequest:(id)arg1 dialAction:(id /* block */)arg2;
+- (id)initWithJoinRequest:(id)arg1 dialAction:(id /* block */)arg2;
 - (id)otherButtonTitle;
 - (void)otherResponse;
 - (void)setDialAction:(id /* block */)arg1;
-- (void)setDialRequest:(id)arg1;
 - (id)title;
 
 @end

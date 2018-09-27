@@ -12,15 +12,19 @@
     struct Weak<JSC::JSObject> { 
         struct WeakImpl {} *m_impl; 
     }  m_prototype;
+    struct Weak<JSC::Structure> { 
+        struct WeakImpl {} *m_impl; 
+    }  m_structure;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct pair<JSC::JSObject *, JSC::JSObject *> { struct JSObject {} *x1; struct JSObject {} *x2; })allocateConstructorAndPrototypeInContext:(id)arg1;
-- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)constructorInContext:(id)arg1;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)constructorInContext:(id)arg1;
 - (void)dealloc;
 - (id)initForClass:(Class)arg1;
-- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)prototypeInContext:(id)arg1;
-- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)wrapperForObject:(id)arg1 inContext:(id)arg2;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)prototypeInContext:(id)arg1;
+- (struct Structure { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct StructureIDBlob { union { struct { unsigned int x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; unsigned char x_1_3_4; unsigned char x_1_3_5; } x_1_2_1; struct { int x_2_3_1; int x_2_3_2; } x_1_2_2; long long x_1_2_3; } x_6_1_1; } x6; unsigned short x7; unsigned char x8; struct Lock { struct Atomic<unsigned char> { struct atomic<unsigned char> { unsigned char x_1_3_1; } x_1_2_1; } x_9_1_1; } x9; unsigned int x10; struct WriteBarrier<JSC::JSGlobalObject, WTF::DumbPtrTraits<JSC::JSGlobalObject> > { struct JSGlobalObject {} *x_11_1_1; } x11; struct WriteBarrier<JSC::Unknown, WTF::DumbValueTraits<JSC::Unknown> > { long long x_12_1_1; } x12; struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain> > { struct StructureChain {} *x_13_1_1; } x13; struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell> > { struct JSCell {} *x_14_1_1; } x14; struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl> > { struct UniquedStringImpl {} *x_15_1_1; } x15; }*)structureInContext:(id)arg1;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)wrapperForObject:(id)arg1 inContext:(id)arg2;
 
 @end

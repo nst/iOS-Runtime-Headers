@@ -19,16 +19,6 @@
     NSArray * _indexSections;
     unsigned long long  _lastRequestedIndex;
     CNManagedConfiguration * _managedConfiguration;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _screenFrame;
     NSArray * _sections;
     NSPointerArray * _summarizationFutures;
     CNContactDataSourceLIFOScheduler * _summarizationQueue;
@@ -43,7 +33,6 @@
 @property (nonatomic, readonly) NSMapTable *identifiersToIndexPath;
 @property (nonatomic, readonly) NSArray *indexSections;
 @property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenFrame;
 @property (nonatomic, readonly) NSArray *sections;
 @property (nonatomic, readonly) NSPointerArray *summarizationFutures;
 @property (nonatomic, readonly) CNContactDataSourceLIFOScheduler *summarizationQueue;
@@ -62,12 +51,11 @@
 - (id)filter;
 - (id)identifiersToIndexPath;
 - (id)indexSections;
-- (id)initWithScreenFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)init;
 - (id)managedConfiguration;
 - (id)objectIn_contactsAtIndex:(unsigned long long)arg1;
 - (void)prepareAllContacts;
 - (void)prepareEnoughContacts;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenFrame;
 - (id)sections;
 - (void)setDataSource:(id)arg1;
 - (void)setFilter:(id)arg1;

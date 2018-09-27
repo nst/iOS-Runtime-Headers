@@ -15,6 +15,7 @@
 
 - (void)_cacheTriggers:(id)arg1 forEntity:(id)arg2;
 - (id)_cachedTriggersForEntity:(id)arg1;
+- (id)_generateExternalDataRefStatementsForEntities:(id)arg1 inRequestContext:(id)arg2;
 - (void)_generateFragmentsForEntity:(id)arg1 inArray:(id)arg2;
 - (id)_statementForFetchRequestContext:(id)arg1 ignoreInheritance:(bool)arg2 countOnly:(bool)arg3 nestingLevel:(unsigned int)arg4;
 - (void)_useModel:(id)arg1;
@@ -22,6 +23,9 @@
 - (id)createSQLStatementsForRTreeTriggersForLocationAttribute:(id)arg1 withSQLEntity:(id)arg2 existingRtreeTables:(id)arg3;
 - (id)createSQLStatementsForTriggerAttribute:(id)arg1 withSQLEntity:(id)arg2;
 - (void)dealloc;
+- (id)generateBatchDeleteUpdateHistoryStatementEntity:(id)arg1 andRelationship:(id)arg2;
+- (id)generateBatchDeleteUpdateHistoryStatementEntity:(id)arg1 andRelationship:(id)arg2 useInverse:(bool)arg3;
+- (bool)generateBatchDeleteUpdateHistoryTriggerForEntity:(id)arg1 andRelationship:(id)arg2 batchHistory:(struct __CFDictionary { }*)arg3 error:(id*)arg4;
 - (bool)generateCorrelationTableTriggerStatementsForRelationship:(id)arg1 existing:(struct __CFDictionary { }*)arg2 correlationTableTriggers:(struct __CFDictionary { }*)arg3 error:(id*)arg4;
 - (id)generateDeleteHistoryTriggerForEntity:(id)arg1 error:(id*)arg2;
 - (id)generateDeleteStatementsForRequest:(id)arg1 error:(id*)arg2;
@@ -50,6 +54,7 @@
 - (id)newCreateRTreeIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
 - (id)newCreateTableStatementForEntity:(id)arg1;
 - (id)newCreateTableStatementForManyToMany:(id)arg1;
+- (id)newCreateTempTableStatementForEntity:(id)arg1 withAttributesToConstrain:(id)arg2;
 - (id)newCreateTriggersForEntity:(id)arg1 existingRtreeTables:(id)arg2;
 - (id)newDeleteStatementWithRow:(id)arg1;
 - (id)newDropTableStatementForTableNamed:(id)arg1;

@@ -2,29 +2,27 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRequestPaymentIntentResponse : PBCodable <NSCopying> {
+@interface _INPBRequestPaymentIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBRequestPaymentIntentResponse> {
+    struct { }  _has;
     _INPBPaymentRecord * _paymentRecord;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasPaymentRecord;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBPaymentRecord *paymentRecord;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasPaymentRecord;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)paymentRecord;
 - (bool)readFrom:(id)arg1;
 - (void)setPaymentRecord:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,7 +11,6 @@
         double bottomLeft; 
         double bottomRight; 
     }  _cornerRadii;
-    bool  _decoratedImageIsEquivalentToOriginal;
     double  _focusedSizeIncrease;
     struct UIEdgeInsets { 
         double top; 
@@ -42,7 +41,6 @@
 - (id)_imageFixedForRotation:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_paddingAdjustedForUpscaling;
 - (struct CGSize { double x1; double x2; })_scaleToSizeAdjustedForUpscaling;
-- (void)_setDecoratedImageIsEquivalentToOriginal:(bool)arg1;
 - (id)bgColor;
 - (bool)cornerContinuous;
 - (struct TVCornerRadii { double x1; double x2; double x3; double x4; })cornerRadii;

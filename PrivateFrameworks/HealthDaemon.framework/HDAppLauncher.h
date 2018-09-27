@@ -2,32 +2,36 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDAppLauncher : NSObject <HDProcessStateObserver> {
-    NSMutableDictionary * _clientByBundleIdentifier;
-    HDDaemon * _daemon;
+@interface HDAppLauncher : NSObject <HDAssertionObserver, HDProcessStateObserver> {
+    HDAssertionManager * _assertionManager;
+    double  _baseLaunchDelay;
+    double  _launchCountResetThreshold;
+    NSMutableSet * _launchingProcessBundleIdentifiers;
+    long long  _maxLaunchCount;
+    NSMutableSet * _monitoredProcessBundleIdentifiers;
+    HDProcessStateManager * _processStateManager;
     NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _registeredAssertionsByIdentifier;
+    FBSSystemService * _systemService;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *clientByBundleIdentifier;
-@property (nonatomic) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
++ (double)_launchCountResetThresholdForDelay:(double)arg1 maxLaunchCount:(long long)arg2 base:(double)arg3;
+
 - (void).cxx_destruct;
-- (void)_queue_attemptRelaunchClient:(id)arg1 forSeconds:(double)arg2 retries:(int)arg3;
-- (void)_queue_cleanUpClients;
-- (id)clientByBundleIdentifier;
-- (id)daemon;
-- (id)initWithDaemon:(id)arg1;
+- (id)_queue_assertionsForClientBundleIdentifier:(id)arg1;
+- (bool)_queue_clientRequiresLaunch:(id)arg1 assertions:(id)arg2;
+- (void)_queue_launchClientIfNeeded:(id)arg1;
+- (void)_queue_scheduleLaunchForClient:(id)arg1;
+- (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
+- (id)initWithProcessStateManager:(id)arg1 systemService:(id)arg2;
 - (void)processTerminated:(id)arg1;
-- (id)queue;
-- (void)registerIdentifier:(id)arg1 forClientBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
-- (void)setClientByBundleIdentifier:(id)arg1;
-- (void)setDaemon:(id)arg1;
-- (void)setQueue:(id)arg1;
-- (void)unregisterIdentifier:(id)arg1 forClientBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (id)takeKeepAliveAssertionForApplicationBundleIdentifier:(id)arg1 processBundleIdentifier:(id)arg2 payloadOptions:(id)arg3;
+- (bool)unitTest_hasAssertionForBundleIdentifier:(id)arg1;
+- (void)unitTest_setBaseLaunchDelay:(double)arg1 launchCountResetThreshold:(double)arg2 maxLaunchCount:(long long)arg3;
 
 @end

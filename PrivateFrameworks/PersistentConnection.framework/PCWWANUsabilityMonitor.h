@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@interface PCWWANUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorDelegate, PCInterfaceUsabilityMonitorProtocol> {
+@interface PCWWANUsabilityMonitor : NSObject <CoreTelephonyClientDataDelegate, PCInterfaceUsabilityMonitorDelegate, PCInterfaceUsabilityMonitorProtocol> {
+    CoreTelephonyClient * _ctClient;
+    struct __CTServerConnection { } * _ctServerConnection;
     NSObject<OS_dispatch_queue> * _ctServerQueue;
-    struct __CFString { } * _currentRAT;
+    int  _currentRAT;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     CUTWeakReference * _delegateReference;
     PCInterfaceUsabilityMonitor * _interfaceMonitor;
@@ -14,14 +16,13 @@
     NSObject<OS_dispatch_queue> * _ivarQueue;
     NSObject<OS_dispatch_queue> * _monitorDelegateQueue;
     int  _powerlogCDRXToken;
-    struct __CTServerConnection { } * _telephonyServer;
     unsigned long long  _thresholdOffTransitionCount;
     bool  _trackUsability;
     double  _trackedTimeInterval;
     int  _wwanContextID;
 }
 
-@property (nonatomic, readonly) struct __CFString { }*currentRAT;
+@property (nonatomic, readonly) int currentRAT;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PCInterfaceUsabilityMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -37,16 +38,22 @@
 @property (nonatomic, readonly) bool isRadioHot;
 @property (nonatomic, readonly) int linkQuality;
 @property (nonatomic, readonly, retain) NSString *linkQualityString;
+@property (nonatomic, readonly) NSString *networkCode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 
 - (void).cxx_destruct;
-- (void)_adjustInterfaceNameForWWANContextID:(int)arg1;
+- (void)_adjustInterfaceNameForWWANContextID:(int)arg1 interfaceName:(id)arg2;
 - (void)_callDelegateOnIvarQueueWithBlock:(id /* block */)arg1;
+- (id)_dataPreferredSubcriptionContext;
 - (void)_forwardConfigurationOnIvarQueue;
-- (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
+- (void)_processCallStatusChanged:(id)arg1;
+- (void)_processDataConnectionStatus:(id)arg1;
+- (void)_processDataStatus:(id)arg1;
 - (void)_setupWWANMonitor;
-- (struct __CFString { }*)currentRAT;
+- (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
+- (int)currentRAT;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegateQueue:(id)arg1;
@@ -63,6 +70,7 @@
 - (bool)isRadioHot;
 - (int)linkQuality;
 - (id)linkQualityString;
+- (id)networkCode;
 - (void)setDelegate:(id)arg1;
 - (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
 - (void)setTrackUsability:(bool)arg1;

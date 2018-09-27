@@ -11,7 +11,7 @@
     void _colorize;
     float  _distance;
     float  _distanceScale;
-    unsigned int  _facing;
+    bool  _facing;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
@@ -27,7 +27,7 @@
     NUScene * _scene;
     unsigned long long  _spriteType;
     unsigned long long  _type;
-    unsigned int  _visible;
+    bool  _visible;
 }
 
 @property (nonatomic) float angle;
@@ -37,7 +37,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float distance;
 @property (nonatomic) float distanceScale;
-@property (nonatomic) bool facing;
+@property (getter=isFacing, nonatomic) bool facing;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } homeCoordinate;
 @property (nonatomic, readonly) void light;
@@ -51,7 +51,7 @@
 @property (nonatomic) unsigned long long spriteType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long type;
-@property (nonatomic) bool visible;
+@property (getter=isVisible, nonatomic) bool visible;
 
 - (void).cxx_destruct;
 - (void)_updateCamera;
@@ -62,12 +62,13 @@
 - (void)centerOnCity:(id)arg1;
 - (void)colorize;
 - (void)date:(id)arg1 toCameraPosition:(/* Warning: Unrecognized filer type: '2' using 'void*' */ void**)arg2 toCameraTarget:(/* Warning: Unrecognized filer type: '3' using 'void*' */ void**)arg3;
-- (void)date:(id)arg1 toRotation:(float*)arg2 toAngle:(float*)arg3 toLight:(/* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4 toDistance:(float*)arg5;
+- (void)date:(id)arg1 toRotation:(float*)arg2 toAngle:(float*)arg3 toLight:(/* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4 toDistance:(float*)arg5 toRadius:(float*)arg6;
 - (float)distance;
 - (float)distanceScale;
-- (bool)facing;
 - (struct CLLocationCoordinate2D { double x1; double x2; })homeCoordinate;
 - (id)initWithScene:(id)arg1 parent:(id)arg2 type:(unsigned long long)arg3;
+- (bool)isFacing;
+- (bool)isVisible;
 - (void)light;
 - (float)opacity;
 - (id)parent;
@@ -94,6 +95,5 @@
 - (unsigned long long)spriteType;
 - (unsigned long long)type;
 - (void)updateSunLocationForDate:(id)arg1;
-- (bool)visible;
 
 @end

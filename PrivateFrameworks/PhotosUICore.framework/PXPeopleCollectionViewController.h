@@ -3,6 +3,7 @@
  */
 
 @interface PXPeopleCollectionViewController : UICollectionViewController <PXPeopleCollectionViewCellDelegate, PXPeopleDragAndDropCollectionViewDelegate, PXPeopleDragAndDropCollectionViewDelegateLayout, PXPeoplePreviewActionViewControllerDelegate, PXPeopleSectionedDataSourceChangeObserver, PXPeopleSwipeSelectionManagerDelegate, PXPeopleZoomOverlayTransitionEndPoint, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerTransitioningDelegate> {
+    NSDictionary * _contactByPersonLocalIdentifier;
     PXPeopleSectionedDataSource * _dataSource;
     UIBarButtonItem * _debugMenuItem;
     UILongPressGestureRecognizer * _dragRecognizer;
@@ -41,12 +42,14 @@
     bool  _shouldShowMeHeader;
     bool  _shouldShowProgressFooter;
     NSIndexPath * _sourceDragIndexPath;
+    UITapGestureRecognizer * _statusDebugRecognizer;
     PXPeopleSwipeSelectionManager * _swipeSelectionManager;
     NSIndexPath * _targetIndexPath;
     <UIViewControllerAnimatedTransitioning> * _transitionAnimator;
     NSArray * _transitionIndices;
 }
 
+@property (nonatomic, retain) NSDictionary *contactByPersonLocalIdentifier;
 @property (nonatomic, readonly) PXPeopleSectionedDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) UIBarButtonItem *debugMenuItem;
@@ -79,6 +82,7 @@
 @property (nonatomic) bool shouldShowMeHeader;
 @property (nonatomic) bool shouldShowProgressFooter;
 @property (nonatomic, retain) NSIndexPath *sourceDragIndexPath;
+@property (nonatomic, retain) UITapGestureRecognizer *statusDebugRecognizer;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PXPeopleSwipeSelectionManager *swipeSelectionManager;
 @property (nonatomic, retain) NSIndexPath *targetIndexPath;
@@ -146,6 +150,7 @@
 - (void)collectionViewDidEndInteractiveMode:(id)arg1;
 - (void)collectionViewDidLayout:(id)arg1;
 - (void)commonInit;
+- (id)contactByPersonLocalIdentifier;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
@@ -197,6 +202,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)selectItem;
 - (id)selectionModeTitle;
+- (void)setContactByPersonLocalIdentifier:(id)arg1;
 - (void)setDebugMenuItem:(id)arg1;
 - (void)setDragRecognizer:(id)arg1;
 - (void)setFavoriteToolbarItem:(id)arg1;
@@ -222,6 +228,7 @@
 - (void)setShouldShowMeHeader:(bool)arg1;
 - (void)setShouldShowProgressFooter:(bool)arg1;
 - (void)setSourceDragIndexPath:(id)arg1;
+- (void)setStatusDebugRecognizer:(id)arg1;
 - (void)setSwipeSelectionManager:(id)arg1;
 - (void)setTargetIndexPath:(id)arg1;
 - (void)setTransitionAnimator:(id)arg1;
@@ -233,6 +240,8 @@
 - (id)snapshotRectsInScreenCoordinatesWithAnimator:(id)arg1;
 - (id)snapshotViewsForZoomingTransitionWithAnimator:(id)arg1;
 - (id)sourceDragIndexPath;
+- (id)statusDebugRecognizer;
+- (void)statusDebugRecognizerTapped:(id)arg1;
 - (id)swipeSelectionManager;
 - (void)swipeSelectionManager:(id)arg1 didSelectIndexPaths:(id)arg2;
 - (id)swipeSelectionManager:(id)arg1 indexPathSetFromIndexPath:(id)arg2 toIndexPath:(id)arg3;

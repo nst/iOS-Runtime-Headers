@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) UIView *sceneView;
 @property (nonatomic) bool shouldRasterizeBackground;
 
-+ (void)_prewarm;
++ (void)_prewarmForDevice:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_applyDataMode;
@@ -39,6 +39,7 @@
 - (void)_prepareForSnapshotting;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(double)arg2 maxDiameter:(double)arg3;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(bool)arg1;
+- (struct CGSize { double x1; double x2; })_sceneSize;
 - (void)_setContentViewsOpaque:(bool)arg1;
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
 - (bool)_shouldFreezeSceneForEditMode:(long long)arg1;

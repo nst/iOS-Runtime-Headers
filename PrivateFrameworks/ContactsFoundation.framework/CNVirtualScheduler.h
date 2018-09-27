@@ -15,7 +15,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPerforming;
+@property (nonatomic, readonly) bool isStarted;
+@property (nonatomic, readonly) unsigned long long nextSchedulableTick;
+@property (nonatomic, readonly) CNQueue *queue;
+@property (nonatomic, readonly) unsigned long long stopTime;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 + (id)providerWithScheduler:(id)arg1;
 + (unsigned long long)timeWithDelay:(double)arg1 fromClock:(unsigned long long)arg2;
@@ -32,12 +38,17 @@
 - (id)description;
 - (bool)hasJobsScheduled;
 - (id)init;
+- (bool)isPerforming;
+- (bool)isStarted;
+- (unsigned long long)nextSchedulableTick;
 - (void)performBlock:(id /* block */)arg1;
 - (void)performBlock:(id /* block */)arg1 qualityOfService:(unsigned long long)arg2;
 - (id)performCancelableBlock:(id /* block */)arg1;
 - (id)performCancelableBlock:(id /* block */)arg1 qualityOfService:(unsigned long long)arg2;
+- (id)queue;
 - (void)start;
 - (void)stop;
+- (unsigned long long)stopTime;
 - (double)timestamp;
 
 @end

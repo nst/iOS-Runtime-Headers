@@ -3,12 +3,12 @@
  */
 
 @interface TSCERegexMatcher : NSObject {
-    NSRegularExpression * mRegex;
+    NSRegularExpression * _regex;
 }
 
 + (id)regexMatcherWithStringMatch:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithStringToMatch:(id)arg1;
 - (bool)matches:(id)arg1;
 

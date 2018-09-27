@@ -7,6 +7,8 @@
     bool  _caReady;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)_clearC3DCache;
 - (void)_convertToCA;
 - (bool)additive;

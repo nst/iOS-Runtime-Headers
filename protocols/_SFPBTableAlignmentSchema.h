@@ -7,7 +7,6 @@
 
 - (void)addTableColumnAlignment:(_SFPBTableColumnAlignment *)arg1;
 - (void)clearTableColumnAlignment;
-- (bool)hasMetadata;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

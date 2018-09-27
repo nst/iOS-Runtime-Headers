@@ -12,8 +12,6 @@
     id /* block */  _confirmationViewCompletion;
     UIBarButtonItem * _doneButton;
     UIProgressHUD * _hud;
-    NSTimer * _idleJiggleTimer;
-    void * _powerAssertion;
     bool  _validationInProgress;
 }
 
@@ -35,8 +33,6 @@
 - (id)_actionSheetWithButtons:(id)arg1 title:(id)arg2 destructive:(bool)arg3 cancelButtonIndex:(long long)arg4 context:(id)arg5;
 - (id)_alertViewWithButtons:(id)arg1 title:(id)arg2 message:(id)arg3 cancelButtonIndex:(long long)arg4 context:(id)arg5;
 - (id)_effectiveParentController;
-- (void)_jiggleIdleTimerFired;
-- (void)_preventSleepAndDimming:(bool)arg1;
 - (id)accountChangeObserver;
 - (id)accountOperationsHelper;
 - (id)accountStore;

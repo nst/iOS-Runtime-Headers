@@ -7,7 +7,7 @@
     UIFont * _detailFont;
     UILabel * _detailLabel;
     NSString * _detailString;
-    UIView * _lineView;
+    UIView * _dividerView;
     UILabel * _noDataLabel;
     UIView * _optionalButtonView;
     UILabel * _secondDetailLabel;

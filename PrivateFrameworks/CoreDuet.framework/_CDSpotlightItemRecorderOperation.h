@@ -15,7 +15,6 @@
 - (void).cxx_destruct;
 - (id)bundleID;
 - (id)items;
-- (id)operationByCombiningOperation:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setItems:(id)arg1;
 - (void)setType:(long long)arg1;

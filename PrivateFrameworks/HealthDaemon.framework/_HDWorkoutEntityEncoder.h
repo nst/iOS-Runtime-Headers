@@ -3,6 +3,7 @@
  */
 
 @interface _HDWorkoutEntityEncoder : HDEntityEncoder {
+    bool  _includeCondenserInfo;
     HDSQLiteStatement * _workoutEntryLookupStatement;
 }
 

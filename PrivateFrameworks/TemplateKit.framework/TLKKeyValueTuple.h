@@ -7,8 +7,8 @@
     NSString * _value;
 }
 
-@property (retain) NSString *key;
-@property (retain) NSString *value;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSString *value;
 
 + (id)tupleWithKey:(id)arg1 value:(id)arg2;
 + (id)tuplesForDictionary:(id)arg1;
@@ -16,7 +16,6 @@
 
 - (void).cxx_destruct;
 - (id)key;
-- (id)observableProperties;
 - (void)setKey:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

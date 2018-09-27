@@ -6,7 +6,7 @@
     BSAction * _action;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithHandler:(id /* block */)arg1;
 - (void)invalidate;

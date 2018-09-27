@@ -3,6 +3,7 @@
  */
 
 @interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider> {
+    long long  _applicationFrameworkContext;
     NSDictionary * _attributesForExtraLineFragment;
     double  _cacheBoundsMaxY;
     double  _cacheBoundsMinY;
@@ -27,12 +28,11 @@
         unsigned int oldAPI : 1; 
         unsigned int _reserved : 8; 
     }  _tcFlags;
-    id  _textView;
+    UIView<NSTextContainerView> * _textView;
 }
 
 @property (nonatomic, copy) NSArray *exclusionPaths;
 @property (nonatomic) bool heightTracksTextView;
-@property (readonly) bool isSimpleRectangularTextContainer;
 @property (nonatomic) NSLayoutManager *layoutManager;
 @property (nonatomic, readonly) long long layoutOrientation;
 @property (nonatomic) long long lineBreakMode;
@@ -47,9 +47,12 @@
 + (void)initialize;
 
 - (void)_commonInit;
+- (bool)_containerObservesTextViewFrameChanges;
+- (void)_containerTextViewFrameChanged:(id)arg1;
 - (void)_resizeAccordingToTextView:(id)arg1;
 - (id)attributesForExtraLineFragment;
 - (struct CGSize { double x1; double x2; })containerSize;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)coordinateAccess:(id /* block */)arg1;
 - (void)dealloc;
 - (id)description;
@@ -84,6 +87,8 @@
 - (void)setTextView:(id)arg1;
 - (void)setWidthTracksTextView:(bool)arg1;
 - (struct CGSize { double x1; double x2; })size;
+- (struct NSEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInsetsForView:(id)arg1;
+- (struct NSEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInsetsForView_iOS:(id)arg1;
 - (struct CGPoint { double x1; double x2; })textContainerOrigin;
 - (id)textView;
 - (bool)widthTracksTextView;

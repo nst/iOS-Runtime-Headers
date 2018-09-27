@@ -35,6 +35,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableDictionary *webAccessEntriesByTagID;
 
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
 - (void).cxx_destruct;
 - (id)_allPurchasedTagIDs;
 - (void)_applicationDidEnterBackground;
@@ -98,7 +100,7 @@
 - (void)notifyWebAccessOptedInListChanged;
 - (id)ongoingPurchaseEntriesByProductID;
 - (id)paymentQueueByProductID;
-- (void)performHTTPRequestForVerifyAccessTokenWithURL:(id)arg1 accessToken:(id)arg2 completion:(id /* block */)arg3;
+- (void)performHTTPRequestForVerifyAccessTokenWithURL:(id)arg1 accessToken:(id)arg2 consumedArticleCount:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (id)purchaseLookUpEntriesByTagID;
 - (id)purchaseLookUpEntryForTagID:(id)arg1;
 - (id)purchasesDiscoveredTagIDs;
@@ -125,8 +127,8 @@
 - (void)setReadWriteQueue:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setWebAccessEntriesByTagID:(id)arg1;
-- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithAccount:(id)arg1 completion:(id /* block */)arg2;
-- (void)shouldShowiTunesSignedOutAlertWithAccount:(id)arg1 completion:(id /* block */)arg2;
+- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(bool)arg3 completion:(id /* block */)arg4;
+- (void)shouldShowiTunesSignedOutAlertWithiTunesAccountName:(id)arg1 iTunesAccountDSID:(id)arg2 isUserSignedIntoiTunes:(bool)arg3 completion:(id /* block */)arg4;
 - (void)silentRemoveFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (void)simulatePurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 webAccessOptIn:(bool)arg6;
 - (void)startPurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 price:(id)arg6 webAccessOptIn:(bool)arg7 payment:(id)arg8 completion:(id /* block */)arg9;
@@ -139,9 +141,13 @@
 - (void)updatePurchaseEntryToValid:(id)arg1 purchaseType:(unsigned long long)arg2;
 - (void)userInfo:(id)arg1 didChangeAccessTokenForTagID:(id)arg2;
 - (void)userInfo:(id)arg1 didRemoveAccessTokenForTagID:(id)arg2 userInitiated:(bool)arg3;
-- (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 serialCompletion:(id /* block */)arg3 callbackQueue:(id)arg4 completion:(id /* block */)arg5;
+- (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 consumedArticleCount:(unsigned long long)arg3 serialCompletion:(id /* block */)arg4 callbackQueue:(id)arg5 completion:(id /* block */)arg6;
 - (id)webAccessEntriesByTagID;
 - (id)webAccessEntryForTagID:(id)arg1;
 - (id)webAccessOptedInTagIDs;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
+
+- (void)stocks_syncEntitlementWithCallbackQueue:(id)arg1 ignoreCache:(bool)arg2 completion:(id /* block */)arg3;
 
 @end

@@ -18,7 +18,7 @@
     SXVideoComponentAnalyticsReporting * _videoComponentAnalyticsReporter;
     SXVideoPlayerViewController * _videoPlayerViewController;
     SXVideoPlayerViewControllerManager * _videoPlayerViewControllerManager;
-    SXVolumeProvider * _volumeProvider;
+    SVVolumeProvider * _volumeProvider;
 }
 
 @property (nonatomic, readonly) SXAdController *adController;
@@ -40,7 +40,7 @@
 @property (nonatomic, retain) SXVideoComponentAnalyticsReporting *videoComponentAnalyticsReporter;
 @property (nonatomic, retain) SXVideoPlayerViewController *videoPlayerViewController;
 @property (nonatomic, readonly) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager;
-@property (nonatomic, readonly) SXVolumeProvider *volumeProvider;
+@property (nonatomic, readonly) SVVolumeProvider *volumeProvider;
 
 - (void).cxx_destruct;
 - (id)adController;

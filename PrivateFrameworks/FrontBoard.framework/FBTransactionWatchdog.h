@@ -6,11 +6,11 @@
     FBTransaction * _transaction;
 }
 
-@property (nonatomic, readonly, retain) FBTransaction *transaction;
+@property (nonatomic, readonly) FBTransaction *transaction;
 
+- (void).cxx_destruct;
 - (void)_dumpDebugInfo;
 - (void)_watchdogTimerFired;
-- (void)dealloc;
 - (id)initWithTransaction:(id)arg1;
 - (void)invalidate;
 - (id)transaction;

@@ -30,7 +30,7 @@
 - (id)delegate;
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidFindClassSession:(id)arg1 flags:(unsigned short)arg2;
-- (void)delegateDidFindInvitationSessionWithIPAddress:(id)arg1;
+- (void)delegateDidFindInvitationSessionWithEndpoint:(id)arg1;
 - (void)deviceScannerDidUpdateState:(id)arg1;
 - (void)increaseScanFrequencyForDuration:(double)arg1;
 - (void)increasedScanDurationElapsed;

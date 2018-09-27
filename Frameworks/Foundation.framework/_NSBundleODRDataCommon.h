@@ -10,8 +10,8 @@
 }
 
 - (id)URLForAssetPack:(id)arg1;
-- (void)assetPacksBecameAvailable:(id)arg1;
-- (void)assetPacksBecameUnavailable:(id)arg1;
+- (bool)assetPacksBecameAvailable:(id)arg1 error:(id*)arg2;
+- (bool)assetPacksBecameUnavailable:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithBundle:(id)arg1;
 

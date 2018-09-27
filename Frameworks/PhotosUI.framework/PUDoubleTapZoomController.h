@@ -11,7 +11,6 @@
         bool respondsToTilingView; 
         bool respondsToDelegateForGestureRecognizer; 
         bool respondsToCanDoubleTapBeginAtLocationFromProvider; 
-        bool respondsToDragController; 
     }  _delegateFlags;
 }
 

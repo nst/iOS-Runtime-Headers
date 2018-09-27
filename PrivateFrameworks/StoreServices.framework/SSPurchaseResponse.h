@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPurchaseResponse : NSObject <NSCoding, SSXPCCoding> {
+@interface SSPurchaseResponse : NSObject <NSSecureCoding, SSXPCCoding> {
     bool  _cancelsPurchaseBatch;
     NSArray * _downloadIdentifiers;
     NSError * _error;
@@ -11,6 +11,7 @@
     SSURLConnectionResponse * _response;
     double  _responseEndTime;
     double  _responseStartTime;
+    NSDictionary * _tidHeaders;
     NSMutableDictionary * _transactionIdentifiers;
 }
 
@@ -26,6 +27,9 @@
 @property (nonatomic) double responseEndTime;
 @property (nonatomic) double responseStartTime;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *tidHeaders;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URLResponse;
@@ -50,7 +54,9 @@
 - (void)setRequestStartTime:(double)arg1;
 - (void)setResponseEndTime:(double)arg1;
 - (void)setResponseStartTime:(double)arg1;
+- (void)setTidHeaders:(id)arg1;
 - (void)setURLResponse:(id)arg1;
+- (id)tidHeaders;
 - (id)transactionIdentifierForItemIdentifier:(long long)arg1;
 
 @end

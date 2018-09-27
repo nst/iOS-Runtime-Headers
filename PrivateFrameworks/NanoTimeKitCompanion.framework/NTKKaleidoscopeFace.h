@@ -4,8 +4,8 @@
 
 @interface NTKKaleidoscopeFace : NTKFace
 
-+ (bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2;
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
++ (bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 
 - (id)_complicationSlotDescriptors;
 - (id)_customEditModes;

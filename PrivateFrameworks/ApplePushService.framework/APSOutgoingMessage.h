@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
  */
 
-@interface APSOutgoingMessage : APSMessage
+@interface APSOutgoingMessage : APSMessage {
+    APSOutgoingMessageCheckpointTrace * _checkpointTrace;
+}
 
+@property (nonatomic, retain) APSOutgoingMessageCheckpointTrace *checkpointTrace;
 @property (getter=isCritical, nonatomic) bool critical;
 @property (nonatomic) unsigned long long payloadFormat;
 @property (nonatomic) unsigned long long payloadLength;
@@ -11,8 +14,12 @@
 @property (nonatomic) unsigned long long timeout;
 
 - (unsigned long long)_effectiveSendTimeout;
+- (id)checkpointTrace;
+- (void)dealloc;
 - (id)eagernessTimeoutTime;
+- (void)encodeWithCoder:(id)arg1;
 - (bool)hasTimedOut;
+- (id)initWithCoder:(id)arg1;
 - (bool)isCritical;
 - (bool)isEager;
 - (unsigned long long)messageID;
@@ -21,17 +28,20 @@
 - (unsigned long long)payloadLength;
 - (long long)priority;
 - (id)rawTimeoutTime;
+- (long long)retries;
 - (long long)sendInterface;
 - (id)sendTimeoutTime;
 - (id)senderTokenName;
 - (id)sentTimestamp;
 - (void)setCancelled:(bool)arg1;
+- (void)setCheckpointTrace:(id)arg1;
 - (void)setCritical:(bool)arg1;
 - (void)setMessageID:(unsigned long long)arg1;
 - (void)setOriginator:(id)arg1;
 - (void)setPayloadFormat:(unsigned long long)arg1;
 - (void)setPayloadLength:(unsigned long long)arg1;
 - (void)setPriority:(long long)arg1;
+- (void)setRetries:(long long)arg1;
 - (void)setSendInterface:(long long)arg1;
 - (void)setSenderTokenName:(id)arg1;
 - (void)setSent:(bool)arg1;

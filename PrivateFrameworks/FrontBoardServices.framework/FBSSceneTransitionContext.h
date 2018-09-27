@@ -26,6 +26,7 @@
 
 + (id)transitionContext;
 
+- (void).cxx_destruct;
 - (id)actions;
 - (id)animationFence;
 - (id)animationSettings;
@@ -53,7 +54,7 @@
 - (id)updateContext;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)isUISubclass;
 

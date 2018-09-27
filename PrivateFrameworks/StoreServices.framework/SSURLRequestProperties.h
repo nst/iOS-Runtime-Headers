@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSURLRequestProperties : NSObject <NSCoding, NSCopying, NSMutableCopying, SSXPCCoding> {
+@interface SSURLRequestProperties : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, SSXPCCoding> {
     NSDictionary * _additionalMetrics;
     long long  _allowedRetryCount;
     bool  _allowsBootstrapCellularData;
@@ -30,6 +30,7 @@
     bool  _shouldDisableCellular;
     bool  _shouldDisableCellularFallback;
     bool  _shouldDisableReversePush;
+    bool  _shouldDisableReversePushSampling;
     bool  _shouldProcessProtocol;
     bool  _shouldSendSecureToken;
     bool  _shouldSetCookies;
@@ -78,12 +79,15 @@
 @property (readonly) bool shouldDisableCellular;
 @property (readonly) bool shouldDisableCellularFallback;
 @property (readonly) bool shouldDisableReversePush;
+@property (readonly) bool shouldDisableReversePushSampling;
 @property (readonly) bool shouldProcessProtocol;
 @property (readonly) bool shouldSendSecureToken;
 @property (readonly) bool shouldSetCookies;
 @property (readonly) Class superclass;
 @property (readonly) double timeoutInterval;
 @property (readonly, copy) NSArray *userAgentComponents;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)HTTPBody;
@@ -133,6 +137,7 @@
 - (bool)shouldDisableCellular;
 - (bool)shouldDisableCellularFallback;
 - (bool)shouldDisableReversePush;
+- (bool)shouldDisableReversePushSampling;
 - (bool)shouldProcessProtocol;
 - (bool)shouldSendSecureToken;
 - (bool)shouldSetCookies;

@@ -39,6 +39,7 @@
 @property (copy) NSString *albumPersistentID;
 @property (copy) NSString *applicationName;
 @property (readonly) NSDictionary *attributes;
+@property (retain) NSNumber *backgroundRunnable;
 @property (copy) NSString *bundleID;
 @property (nonatomic, readonly) struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; } codedAttributes;
 @property (nonatomic, readonly) struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; } codedCustomAttributes;
@@ -68,6 +69,7 @@
 @property (nonatomic, copy) NSString *ic_dataSourceIdentifier;
 @property (nonatomic, copy) NSString *ic_managedObjectIDURI;
 @property (nonatomic) unsigned long long ic_searchResultType;
+@property (copy) NSData *intentData;
 @property (retain) NSNumber *isPlaceholder;
 @property (copy) NSDate *lastApplicationLaunchedDate;
 @property (copy) NSString *lastEditorIdentifier;
@@ -93,6 +95,7 @@
 @property (copy) NSString *parentFileItemID;
 @property (getter=isPartiallyDownloaded, retain) NSNumber *partiallyDownloaded;
 @property (copy) NSString *protectionClass;
+@property (copy) NSString *punchoutLabel;
 @property (readonly) NSArray *queryResultMatchedFields;
 @property (copy) NSString *queryResultRelevance;
 @property (getter=isReaderView, nonatomic, retain) NSNumber *readerView;
@@ -102,6 +105,7 @@
 @property (copy) NSString *sharedItemCurrentUserRole;
 @property (retain) NSNumber *subItemCount;
 @property (copy) NSString *subtitle;
+@property (copy) NSString *suggestedInvocationPhrase;
 @property (copy) NSString *textContentDataSource;
 @property (readonly) NSString *textContentNoCopy;
 @property (copy) NSString *textSelected;
@@ -192,6 +196,7 @@
 - (id)authorEmailAddresses;
 - (id)authorNames;
 - (id)authors;
+- (id)backgroundRunnable;
 - (id)bitsPerSample;
 - (id)bundleID;
 - (id)bundleIdentifier;
@@ -294,6 +299,7 @@
 - (id)initWithSerializedAttributes:(id)arg1;
 - (id)instantMessageAddresses;
 - (id)instructions;
+- (id)intentData;
 - (id)isApplicationManaged;
 - (id)isDownloading;
 - (bool)isEqual:(id)arg1;
@@ -390,6 +396,7 @@
 - (id)providerFileTypes;
 - (id)providerInPlaceFileTypeIdentifiers;
 - (id)publishers;
+- (id)punchoutLabel;
 - (id)queryResultMatchedFields;
 - (id)queryResultRelevance;
 - (id)rankingHint;
@@ -445,6 +452,7 @@
 - (void)setAuthorEmailAddresses:(id)arg1;
 - (void)setAuthorNames:(id)arg1;
 - (void)setAuthors:(id)arg1;
+- (void)setBackgroundRunnable:(id)arg1;
 - (void)setBitsPerSample:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
@@ -546,6 +554,7 @@
 - (void)setInformation:(id)arg1;
 - (void)setInstantMessageAddresses:(id)arg1;
 - (void)setInstructions:(id)arg1;
+- (void)setIntentData:(id)arg1;
 - (void)setIsPlaceholder:(id)arg1;
 - (void)setKeySignature:(id)arg1;
 - (void)setKeywords:(id)arg1;
@@ -617,6 +626,7 @@
 - (void)setProviderFileTypes:(id)arg1;
 - (void)setProviderInPlaceFileTypeIdentifiers:(id)arg1;
 - (void)setPublishers:(id)arg1;
+- (void)setPunchoutLabel:(id)arg1;
 - (void)setQueryResultMatchedFields:(id)arg1;
 - (void)setQueryResultRelevance:(id)arg1;
 - (void)setRankingHint:(id)arg1;
@@ -646,6 +656,7 @@
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setSuggestedInvocationPhrase:(id)arg1;
 - (void)setSupportFileType:(id)arg1;
 - (void)setSupportsNavigation:(id)arg1;
 - (void)setSupportsPhoneCall:(id)arg1;
@@ -687,6 +698,7 @@
 - (id)subThoroughfare;
 - (id)subject;
 - (id)subtitle;
+- (id)suggestedInvocationPhrase;
 - (id)supportFileType;
 - (id)supportsNavigation;
 - (id)supportsPhoneCall;

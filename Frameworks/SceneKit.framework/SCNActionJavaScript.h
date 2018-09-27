@@ -7,6 +7,7 @@
 }
 
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

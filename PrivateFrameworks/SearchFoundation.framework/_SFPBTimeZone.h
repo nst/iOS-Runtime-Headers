@@ -8,7 +8,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -16,7 +15,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasIdentifier;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;

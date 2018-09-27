@@ -13,6 +13,7 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_deserialize:(struct CADeserializer { struct __CFData {} *x1; char *x2; char *x3; char *x4; bool x5; }*)arg1;
 - (void)_indexChildren;
 - (void)_observersChanged:(bool)arg1 deltaCount:(int)arg2;

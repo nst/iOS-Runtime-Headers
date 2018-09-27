@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextAlternatives : NSObject {
+@interface NSTextAlternatives : NSObject <NSSecureCoding> {
     NSArray * _alternativeStrings;
     id  _internal;
     NSString * _primaryString;
@@ -10,6 +10,8 @@
 
 @property (readonly) NSArray *alternativeStrings;
 @property (readonly) NSString *primaryString;
+
++ (bool)supportsSecureCoding;
 
 - (id)alternativeAtIndex:(unsigned long long)arg1;
 - (id)alternativeStrings;

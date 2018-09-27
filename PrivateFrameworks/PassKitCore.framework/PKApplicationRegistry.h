@@ -21,6 +21,6 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;
 - (id)initWithArchiveFileURL:(id)arg1;
-- (bool)registerApplicationWithBundeIdentifier:(id)arg1;
+- (bool)registerApplicationWithBundleIdentifier:(id)arg1;
 
 @end

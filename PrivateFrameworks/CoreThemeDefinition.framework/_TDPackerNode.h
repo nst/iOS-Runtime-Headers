@@ -18,13 +18,13 @@
     bool  _used;
 }
 
-@property (retain) _TDPackerNode *down;
-@property bool fit;
-@property void*node;
-@property struct CGPoint { double x1; double x2; } origin;
-@property (retain) _TDPackerNode *right;
-@property struct CGSize { double x1; double x2; } size;
-@property bool used;
+@property (nonatomic, retain) _TDPackerNode *down;
+@property (nonatomic) bool fit;
+@property (nonatomic) void*node;
+@property (nonatomic) struct CGPoint { double x1; double x2; } origin;
+@property (nonatomic, retain) _TDPackerNode *right;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) bool used;
 
 - (void)dealloc;
 - (id)down;

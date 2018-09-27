@@ -15,6 +15,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)mutatingCommand;
 - (bool)requiresResponse;
 - (void)setTimer:(id)arg1;
 - (id)timer;

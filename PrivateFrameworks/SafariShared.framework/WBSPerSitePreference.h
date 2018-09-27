@@ -8,13 +8,12 @@
 
 @property (nonatomic, readonly, copy) NSString *identifier;
 
-+ (id)new;
++ (id)localizedStringForBinaryPreferenceValue:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)identifier;
-- (id)init;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

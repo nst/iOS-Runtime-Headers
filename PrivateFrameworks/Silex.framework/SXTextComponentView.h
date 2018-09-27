@@ -44,5 +44,6 @@
 - (id)textRulesForTextView:(id)arg1;
 - (id)textSource;
 - (id)textView;
+- (bool)userInteractable;
 
 @end

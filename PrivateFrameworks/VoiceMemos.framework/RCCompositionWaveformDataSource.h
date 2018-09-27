@@ -24,11 +24,13 @@
 @property (nonatomic) bool saveGeneratedWaveform;
 @property (readonly) Class superclass;
 
++ (id)fragmentLoadingOperationQueue;
+
 - (void).cxx_destruct;
 - (bool)_synchronouslyAppendSegmentsForAVContentURL:(id)arg1 isDecomposedFragment:(bool)arg2 sourceTimeRange:(struct { double x1; double x2; })arg3 destinationTime:(double)arg4;
 - (id)composition;
 - (double)duration;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
 - (id)fragmentLoadingOperationQueue;
 - (bool)highlightLastDecomposedFragment;
 - (id)initWithComposition:(id)arg1;

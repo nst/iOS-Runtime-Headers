@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKPhysicsWorld : NSObject <NSCoding> {
+@interface SKPhysicsWorld : NSObject <NSSecureCoding> {
     <SKPhysicsContactDelegate> * _contactDelegate;
     struct CGVector { 
         double dx; 
@@ -17,6 +17,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)addBody:(id)arg1;
 - (void)addJoint:(id)arg1;

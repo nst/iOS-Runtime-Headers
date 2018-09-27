@@ -21,6 +21,7 @@
 + (id)_cachedSceneSourceForURL:(id)arg1 options:(id)arg2;
 + (void)_removeCachedSceneSourceIfNeededForURL:(id)arg1;
 + (bool)_shouldCacheWithOptions:(id)arg1;
++ (void)patchColorSecureDecodingIfNeeded;
 + (id)sceneFileTypes;
 + (id)sceneSourceWithData:(id)arg1 options:(id)arg2;
 + (id)sceneSourceWithURL:(id)arg1 options:(id)arg2;
@@ -30,6 +31,7 @@
 - (bool)_appendToEntries:(id)arg1 entriesWithType:(unsigned long long)arg2 passingTest:(id /* block */)arg3 entryObjectConstructor:(id /* block */)arg4;
 - (struct __C3DScene { }*)_createSceneRefWithOptions:(id)arg1 statusHandler:(id /* block */)arg2;
 - (id)_sceneWithClass:(Class)arg1 options:(id)arg2 statusHandler:(id /* block */)arg3;
+- (id)c3dDataRepresentation;
 - (bool)canExportToColladaWithNoDataLoss;
 - (id)copyPropertiesAtIndex:(long long)arg1 options:(id)arg2;
 - (long long)countOfScenes;

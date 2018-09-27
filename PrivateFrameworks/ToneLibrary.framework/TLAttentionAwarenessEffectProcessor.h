@@ -28,6 +28,7 @@
 - (void)_assertRunningOnAccessQueue;
 - (float)_currentEffectMix;
 - (float)_sanitizeEffectMix:(float)arg1;
+- (void)dealloc;
 - (struct { bool x1; float x2; float x3; })effectParameters;
 - (id)initWithProcessingFormat:(id)arg1 framesPerRender:(unsigned int)arg2 effectParameters:(struct { bool x1; float x2; float x3; })arg3;
 - (struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*)render:(struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; }*)arg1 numberOfFrames:(unsigned int)arg2;

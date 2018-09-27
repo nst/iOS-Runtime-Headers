@@ -3,11 +3,11 @@
  */
 
 @interface _ATXAppLaunchSequenceManager : NSObject {
-    NSMapTable * _appIntentLaunchSequence;
+    NSMapTable * _appActionLaunchSequence;
     NSMapTable * _appLaunchSequence;
     _ATXDataStore * _datastore;
-    NSString * _lastAppIntentLaunch;
-    NSDate * _lastAppIntentLaunchDate;
+    NSString * _lastAppActionLaunch;
+    NSDate * _lastAppActionLaunchDate;
     NSObject<OS_dispatch_queue> * _syncQueue;
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
@@ -16,15 +16,15 @@
 
 - (void).cxx_destruct;
 - (void)addBundleIdToLaunchSequence:(id)arg1 date:(id)arg2;
-- (void)decayAllAppIntentLaunchSequencesWithHalfLife:(double)arg1;
+- (void)decayAllAppActionLaunchSequencesWithHalfLife:(double)arg1;
 - (void)decayAllLaunchSequencesWithHalfLife:(double)arg1;
-- (void)deleteAllLaunchesForAppIntents:(id)arg1;
+- (void)deleteAllLaunchesForAppActions:(id)arg1;
 - (void)deleteAllLaunchesForBundles:(id)arg1;
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithInMemoryStore;
 - (id)launchSequence;
-- (id)launchSequenceForAppIntent:(id)arg1;
+- (id)launchSequenceForAppAction:(id)arg1;
 - (id)launchSequenceForBundle:(id)arg1;
 - (id)syncQueue;
 

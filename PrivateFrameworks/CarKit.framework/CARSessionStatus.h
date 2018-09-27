@@ -35,6 +35,7 @@
 - (id)currentSession;
 - (void)dealloc;
 - (id)init;
+- (id)initAndWaitUntilSessionUpdated;
 - (id)notificationConverter;
 - (id)session;
 - (id)sessionObserver;

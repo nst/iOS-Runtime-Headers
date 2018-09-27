@@ -23,6 +23,7 @@
 - (id)_transactAndWait:(id /* block */)arg1;
 - (id)accessQueue;
 - (void)accountStoreDidChange:(id)arg1;
+- (void)accountStoreEmailDidChange:(id)arg1;
 - (id)allCredentialsCache;
 - (id)allCredentialsForEnvironment:(long long)arg1;
 - (id)credentialForPlayer:(id)arg1 environment:(long long)arg2;

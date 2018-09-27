@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSHashTable : NSObject <NSCoding, NSCopying, NSFastEnumeration>
+@interface NSHashTable : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding>
 
 @property (readonly, copy) NSArray *allObjects;
 @property (nonatomic, readonly) id anyObject;
@@ -16,6 +16,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)hashTableWithOptions:(unsigned long long)arg1;
 + (id)hashTableWithWeakObjects;
++ (bool)supportsSecureCoding;
 + (id)weakObjectsHashTable;
 
 - (void)addObject:(id)arg1;

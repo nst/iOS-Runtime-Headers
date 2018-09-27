@@ -8,15 +8,15 @@
     BKSEventFocusDeferralProperties * _properties;
 }
 
-@property (nonatomic, readonly, retain) BKSEventFocusDeferralProperties *deferredProperties;
+@property (nonatomic, readonly) BKSEventFocusDeferralProperties *deferredProperties;
 @property (nonatomic, readonly) bool isCycle;
 @property (nonatomic, readonly) int priority;
-@property (nonatomic, readonly, retain) BKSEventFocusDeferralProperties *properties;
+@property (nonatomic, readonly) BKSEventFocusDeferralProperties *properties;
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)conciseDescription;
-- (void)dealloc;
 - (id)deferredProperties;
 - (id)deferredPropertiesForProperties:(id)arg1;
 - (bool)defersProperties:(id)arg1;

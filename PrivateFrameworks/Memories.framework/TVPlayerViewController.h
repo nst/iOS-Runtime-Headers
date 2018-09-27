@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface TVPlayerViewController : UIViewController <DurationDelegate, MoodDelegate, UIGestureRecognizerDelegate> {
+@interface TVPlayerViewController : MiroPlayerViewController <DurationDelegate, MoodDelegate, UIGestureRecognizerDelegate> {
     bool  _aggFirstPlayback;
-    MiroAutoEditor * _autoEditor;
     MiroCloudDownloader * _cloudDownloader;
     int  _debugNum;
     DurationsInfoPanel * _durationControlVC;
@@ -23,6 +22,7 @@
     MiroPosterViewController * _posterViewController;
     int  _prefsNum;
     id  _proVideoPeriodicCaller;
+    UIView * _progressContainer;
     bool  _progressHasDownload;
     UILabel * _progressLabel;
     UIProgressView * _progressUIView;
@@ -38,7 +38,6 @@
 }
 
 @property bool aggFirstPlayback;
-@property (nonatomic, retain) MiroAutoEditor *autoEditor;
 @property (nonatomic, retain) MiroCloudDownloader *cloudDownloader;
 @property (readonly, copy) NSString *debugDescription;
 @property int debugNum;
@@ -60,6 +59,7 @@
 @property (nonatomic, retain) MiroPosterViewController *posterViewController;
 @property int prefsNum;
 @property (nonatomic, retain) id proVideoPeriodicCaller;
+@property (nonatomic, retain) UIView *progressContainer;
 @property bool progressHasDownload;
 @property (nonatomic, retain) UILabel *progressLabel;
 @property (nonatomic, retain) UIProgressView *progressUIView;
@@ -77,19 +77,16 @@
 - (void)_createPosterViewController;
 - (bool)_deviceIsRunningInternalOS;
 - (void)_displayHeroImageWithScrimView:(bool)arg1;
-- (void)_endAggDTimer;
 - (void)_launchAutoEditDebugView:(id)arg1;
 - (void)_mediaServicesReset:(id)arg1;
 - (id)_moodIDForIndexPath:(id)arg1;
 - (void)_prepareForPlayback;
 - (void)_setUIProgressView;
 - (void)_setUpProgressLabel;
-- (void)_startAggDTimer;
 - (void)_undimOverlayView;
 - (void)_updateDurationLabels;
 - (void)addDebuggingReadyForDisplayView;
 - (bool)aggFirstPlayback;
-- (id)autoEditor;
 - (void)calculateAndSetProgress:(float)arg1;
 - (id)cloudDownloader;
 - (void)configurePlaybackViewsAndControllersWithProject:(id)arg1;
@@ -130,6 +127,8 @@
 - (int)prefsNum;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)proVideoPeriodicCaller;
+- (float)progress;
+- (id)progressContainer;
 - (bool)progressHasDownload;
 - (id)progressLabel;
 - (id)progressUIView;
@@ -156,6 +155,8 @@
 - (void)setPosterViewController:(id)arg1;
 - (void)setPrefsNum:(int)arg1;
 - (void)setProVideoPeriodicCaller:(id)arg1;
+- (void)setProgress:(double)arg1;
+- (void)setProgressContainer:(id)arg1;
 - (void)setProgressHasDownload:(bool)arg1;
 - (void)setProgressLabel:(id)arg1;
 - (void)setProgressUIView:(id)arg1;
@@ -163,6 +164,7 @@
 - (void)setSpinnerView:(id)arg1;
 - (void)setStartTime:(unsigned long long)arg1;
 - (void)setTeardownTimeofPlayer:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setupAggDValues;
 - (id)setupDurationDisplayNames;
 - (bool)shouldPlay;
 - (void)signalCustomCompositorScheduler;
@@ -172,6 +174,7 @@
 - (unsigned long long)startTime;
 - (void)stopSpinner;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })teardownTimeofPlayer;
+- (id)theirSpinner;
 - (void)unRegisterAutoEditor;
 - (void)updatePosterImages;
 - (void)viewDidAppear:(bool)arg1;

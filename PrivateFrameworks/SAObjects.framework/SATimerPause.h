@@ -14,6 +14,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)mutatingCommand;
 - (bool)requiresResponse;
 
 @end

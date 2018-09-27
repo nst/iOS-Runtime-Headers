@@ -18,6 +18,7 @@
 - (id)componentOfType:(unsigned int)arg1;
 - (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (id)effectPreset;
+- (void)replaceComponentsWithComponentsFromEffectRendition:(id)arg1 withDocument:(id)arg2;
 - (void)setComponentsFromEffectPreset:(id)arg1 withDocument:(id)arg2;
 
 @end

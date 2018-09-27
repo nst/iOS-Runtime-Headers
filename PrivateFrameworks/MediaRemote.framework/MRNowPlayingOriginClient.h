@@ -4,6 +4,7 @@
 
 @interface MRNowPlayingOriginClient : NSObject <MRNowPlayingClientState> {
     _MRNowPlayingClientProtobuf * _activeNowPlayingClient;
+    MRApplicationActivity * _activity;
     NSMutableArray * _applicationPickedRoutes;
     id /* block */  _beginLyricsEventCallback;
     bool  _canBeNowPlayingApp;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic, retain) _MRNowPlayingClientProtobuf *activeNowPlayingClient;
+@property (nonatomic, retain) MRApplicationActivity *activity;
 @property (nonatomic, copy) NSArray *applicationPickedRoutes;
 @property (nonatomic, copy) id /* block */ beginLyricsEventCallback;
 @property (nonatomic) bool canBeNowPlayingApp;
@@ -46,6 +48,7 @@
 - (void)_registerMediaServerNotifications;
 - (void)_unregisterMediaServerNotifications;
 - (id)activeNowPlayingClient;
+- (id)activity;
 - (id)applicationPickedRoutes;
 - (id /* block */)beginLyricsEventCallback;
 - (bool)canBeNowPlayingApp;
@@ -69,6 +72,7 @@
 - (void)restoreNowPlayingClientState;
 - (unsigned int)routeDiscoveryMode;
 - (void)setActiveNowPlayingClient:(id)arg1;
+- (void)setActivity:(id)arg1;
 - (void)setApplicationPickedRoutes:(id)arg1;
 - (void)setBeginLyricsEventCallback:(id /* block */)arg1;
 - (void)setCanBeNowPlayingApp:(bool)arg1;

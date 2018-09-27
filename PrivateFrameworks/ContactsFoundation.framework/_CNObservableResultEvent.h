@@ -8,6 +8,7 @@
 
 - (void).cxx_destruct;
 - (void)dematerializeWithObserver:(id)arg1;
+- (id)description;
 - (id)error;
 - (unsigned long long)eventType;
 - (bool)hasValue;

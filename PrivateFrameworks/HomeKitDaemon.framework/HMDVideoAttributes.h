@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDVideoAttributes : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDVideoAttributes : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSNumber * _framerate;
     NSNumber * _imageHeight;
     NSNumber * _imageWidth;

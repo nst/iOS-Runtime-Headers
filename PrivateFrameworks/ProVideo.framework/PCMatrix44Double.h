@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ProVideo.framework/ProVideo
  */
 
-@interface PCMatrix44Double : NSObject <NSCoding, NSCopying> {
+@interface PCMatrix44Double : NSObject <NSCopying, NSSecureCoding> {
     double  _m;
     struct PCMatrix44Tmpl<double> { double x1[4][4]; } * _pcMatrix;
 }
+
++ (bool)supportsSecureCoding;
 
 - (id)array;
 - (id)compactDescription;
@@ -34,7 +36,6 @@
 - (void)leftShearX:(double)arg1 shearY:(double)arg2;
 - (void)leftTranslateX:(double)arg1 translateY:(double)arg2 translateZ:(double)arg3;
 - (void)makeIdentity;
-- (struct { unsigned char x1[16]; })md5;
 - (id)newPlanarTransformTo:(id)arg1;
 - (id)newTransformTo:(id)arg1;
 - (struct PCMatrix44Tmpl<double> { double x1[4][4]; }*)pcMatrix;

@@ -6,6 +6,7 @@
     bool  _allowsNewPlaybackErrorItem;
     MPAVItem * _firstPlaybackErrorItem;
     MPCPlaybackEngine * _playbackEngine;
+    NSObject<OS_dispatch_queue> * _unboostedAudioSessionQueue;
 }
 
 @property (nonatomic) bool allowsNewPlaybackErrorItem;

@@ -3,16 +3,16 @@
  */
 
 @interface ADWebViewActionViewController : SFSafariViewController {
-    UITapGestureRecognizer * _homeButtonGestureRecognizer;
+    ADHomeButtonHandler * _homeButtonHandler;
 }
 
 @property (nonatomic) <ADWebViewActionViewControllerDelegate> *delegate;
-@property (nonatomic, retain) UITapGestureRecognizer *homeButtonGestureRecognizer;
+@property (nonatomic, retain) ADHomeButtonHandler *homeButtonHandler;
 
-- (void)_homeButtonTapped:(id)arg1;
 - (void)dealloc;
-- (id)homeButtonGestureRecognizer;
-- (void)setHomeButtonGestureRecognizer:(id)arg1;
+- (void)dismissView;
+- (id)homeButtonHandler;
+- (void)setHomeButtonHandler:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 

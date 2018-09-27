@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBBillDetailsValue : PBCodable <NSCopying> {
+@interface _INPBBillDetailsValue : PBCodable <NSCopying, NSSecureCoding, _INPBBillDetailsValue> {
     _INPBCurrencyAmountValue * _amountDue;
     _INPBBillPayeeValue * _billPayee;
     int  _billType;
@@ -15,13 +15,14 @@
     _INPBCurrencyAmountValue * _minimumDue;
     _INPBDateTime * _paymentDate;
     int  _status;
-    PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
 @property (nonatomic, retain) _INPBCurrencyAmountValue *amountDue;
 @property (nonatomic, retain) _INPBBillPayeeValue *billPayee;
 @property (nonatomic) int billType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBDateTime *dueDate;
 @property (nonatomic, readonly) bool hasAmountDue;
 @property (nonatomic, readonly) bool hasBillPayee;
@@ -32,14 +33,13 @@
 @property (nonatomic, readonly) bool hasPaymentDate;
 @property (nonatomic) bool hasStatus;
 @property (nonatomic, readonly) bool hasValueMetadata;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *lateFee;
 @property (nonatomic, retain) _INPBCurrencyAmountValue *minimumDue;
 @property (nonatomic, retain) _INPBDateTime *paymentDate;
 @property (nonatomic) int status;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsBillType:(id)arg1;
@@ -49,7 +49,6 @@
 - (int)billType;
 - (id)billTypeAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)dueDate;
 - (bool)hasAmountDue;
@@ -64,7 +63,6 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)lateFee;
-- (void)mergeFrom:(id)arg1;
 - (id)minimumDue;
 - (id)paymentDate;
 - (bool)readFrom:(id)arg1;
@@ -81,7 +79,6 @@
 - (void)setValueMetadata:(id)arg1;
 - (int)status;
 - (id)statusAsString:(int)arg1;
-- (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

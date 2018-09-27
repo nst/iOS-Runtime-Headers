@@ -6,7 +6,7 @@
     long long  _frameStamp;
     NSMutableDictionary * _nameToRenderTarget;
     NSMutableArray * _purgeArray;
-    <SCNRenderContext> * _renderContext;
+    SCNMTLRenderContext * _renderContext;
     NSMutableDictionary * _renderTargets;
 }
 
@@ -24,7 +24,7 @@
 - (void)releaseRenderTarget:(id)arg1;
 - (void)releaseRenderTargetNamed:(id)arg1;
 - (void)releaseTextureWithName:(id)arg1 retainCount:(long long)arg2;
-- (id)renderTargetWithDescription:(void *)arg1 size:(void *)arg2 arrayLength:(void *)arg3 name:(void *)arg4 useCount:(void *)arg5; // needs 5 arg types, found 4: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned char x9[4]; }, long long, id, long long
+- (id)renderTargetWithDescription:(void *)arg1 size:(void *)arg2 arrayLength:(void *)arg3 name:(void *)arg4 useCount:(void *)arg5; // needs 5 arg types, found 4: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned char x10[4]; }, long long, id, long long
 - (id)renderTargetWithName:(id)arg1;
 - (void)retainTextureWithName:(id)arg1 retainCount:(long long)arg2;
 - (void)viewportDidResize;

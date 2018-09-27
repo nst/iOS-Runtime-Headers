@@ -20,13 +20,16 @@
 + (id)operationWithThumbnailRequest:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)__finishWithError:(id)arg1;
 - (void)_finish;
 - (bool)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
 - (void)_logOperationDuration;
+- (void)cancel;
 - (id)error;
 - (id)image;
 - (id)initWithThumbnailRequest:(id)arg1;
+- (bool)isAsynchronous;
 - (bool)isConcurrent;
 - (bool)isExecuting;
 - (bool)isFinished;

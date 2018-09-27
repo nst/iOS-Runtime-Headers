@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
  */
 
-@interface PHAJobCoordinator : NSObject <PHAActivityGovernorDelegate, PHAAnalysisStateObserverDelegate, PHADirtyChangeCoalescerDelegate, PHAJobCoalescerDelegate, PHAJobConstraintsObserverDelegate, PHAWorkerJobDelegate, PLPhotoAnalysisJobServiceProtocol> {
+@interface PHAJobCoordinator : NSObject <PHAActivityGovernorDelegate, PHADirtyChangeCoalescerDelegate, PHAGraphManagerClientMessagesReceiver, PHAJobCoalescerDelegate, PHAJobConstraintsObserverDelegate, PHAWorkerJobDelegate, PLPhotoAnalysisJobServiceProtocol> {
     PHAActivityGovernor * _activityGovernor;
     PHAJobConstraintsObserver * _constraintsObserver;
     PHAWorkerJob * _currentBackgroundJob;
@@ -10,6 +10,8 @@
     PHAWorkerJob * _currentForegroundJob;
     <PHAJobCoordinatorDelegate> * _delegate;
     PHADirtyChangeCoalescer * _dirtyCoalescer;
+    NSObject<OS_os_transaction> * _foregroundTransaction;
+    bool  _graphUpdateNeeded;
     PHAWorkerHealthMonitor * _healthMonitor;
     PHAJobCoalescer * _jobCoalescer;
     PHAJobGenerator * _jobGenerator;
@@ -21,9 +23,6 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_os_transaction> * _runningJobTransaction;
     bool  _shouldIgnoreConstraintChanges;
-    PHAAnalysisStateObserver * _stateObserver;
-    bool  _turboMode;
-    NSObject<OS_voucher> * _turboModeBoostVoucher;
     NSMutableArray * _waitingForegroundJobs;
     PHAWorkerWarmer * _warmer;
     NSMutableSet * _workerTypesServicedForUserFG;
@@ -40,6 +39,8 @@
 @property (nonatomic) <PHAJobCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PHADirtyChangeCoalescer *dirtyCoalescer;
+@property (nonatomic, retain) NSObject<OS_os_transaction> *foregroundTransaction;
+@property (readonly) bool graphUpdateNeeded;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHAWorkerHealthMonitor *healthMonitor;
 @property (nonatomic, readonly) PHAJobCoalescer *jobCoalescer;
@@ -52,9 +53,7 @@
 @property (getter=isQuiescent, nonatomic, readonly) bool quiescent;
 @property (nonatomic, retain) NSObject<OS_os_transaction> *runningJobTransaction;
 @property (nonatomic) bool shouldIgnoreConstraintChanges;
-@property (nonatomic, readonly) PHAAnalysisStateObserver *stateObserver;
 @property (readonly) Class superclass;
-@property (getter=isTurboMode, nonatomic) bool turboMode;
 @property (nonatomic, readonly) NSMutableArray *waitingForegroundJobs;
 @property (nonatomic, readonly) PHAWorkerWarmer *warmer;
 @property (nonatomic, retain) NSMutableSet *workerTypesServicedForUserFG;
@@ -82,7 +81,6 @@
 - (id)_workerForJob:(id)arg1;
 - (id)activityGovernor;
 - (bool)activityGovernorOverride;
-- (void)analysisStateObserver:(id)arg1 didChangeAnalysisStateTo:(int)arg2 from:(int)arg3 assetIdentifier:(id)arg4 workerFlags:(int)arg5 workerType:(short)arg6;
 - (void)coalescer:(id)arg1 didCoalesce:(id)arg2;
 - (id)constraintsObserver;
 - (id)currentBackgroundJob;
@@ -95,15 +93,19 @@
 - (id)dirtyCoalescer;
 - (void)enforceTimeouts;
 - (void)enqueueForegroundJob:(id)arg1;
+- (id)foregroundTransaction;
 - (void)governorDidGrantBackgroundAccess:(id)arg1;
 - (void)governorDidGrantForegroundAccess:(id)arg1;
 - (void)governorDidRevokeBackgroundAccess:(id)arg1;
 - (void)governorDidRevokeForegroundAccess:(id)arg1;
+- (void)graphManagerDidUnloadGraph:(id)arg1;
+- (void)graphManagerWillLoadGraph:(id)arg1;
+- (bool)graphUpdateNeeded;
+- (void)handleOperation:(id)arg1;
 - (id)healthMonitor;
 - (id)initWithManager:(id)arg1;
 - (id)initWithManager:(id)arg1 initialConstraints:(id)arg2 additionalWorkersByType:(id)arg3;
 - (bool)isQuiescent;
-- (bool)isTurboMode;
 - (id)jobCoalescer;
 - (void)jobCoalescer:(id)arg1 didProduceJob:(id)arg2;
 - (void)jobConstraintsObserver:(id)arg1 constraintsDidChange:(id)arg2 mask:(id)arg3 completion:(id /* block */)arg4;
@@ -112,7 +114,9 @@
 - (id)manager;
 - (double)maxIntervalSinceLastJobReport;
 - (bool)newConstraintsPending;
+- (void)operationDidFinish:(id)arg1;
 - (id)photoLibrary;
+- (void)processJobs;
 - (id)queue;
 - (id)runningJobTransaction;
 - (void)scheduleAssetForOnDemandAnalysisWithUUID:(id)arg1 workerType:(short)arg2 workerFlags:(int)arg3 context:(id)arg4 reply:(id /* block */)arg5;
@@ -121,6 +125,7 @@
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setCurrentForegroundJob:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setForegroundTransaction:(id)arg1;
 - (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)setManager:(id)arg1;
 - (void)setMaxIntervalSinceLastJobReport:(double)arg1;
@@ -128,11 +133,9 @@
 - (void)setQueue:(id)arg1;
 - (void)setRunningJobTransaction:(id)arg1;
 - (void)setShouldIgnoreConstraintChanges:(bool)arg1;
-- (void)setTurboMode:(bool)arg1;
 - (void)setWorkerTypesServicedForUserFG:(id)arg1;
 - (bool)shouldIgnoreConstraintChanges;
 - (void)shutdown;
-- (id)stateObserver;
 - (id)statusAsDictionary;
 - (id)waitingForegroundJobs;
 - (id)warmer;

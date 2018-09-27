@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@interface PCConnectionManager : NSObject <PCInterfaceMonitorDelegate> {
+@interface PCConnectionManager : NSObject <PCCarrierBundleHelperDelegate, PCInterfaceMonitorDelegate> {
     bool  _alwaysWantsInterfaceChangeCallbacks;
     int  _connectionClass;
+    int  _currentAddressFamily;
     int  _currentGrowthStage;
     double  _defaultPollingInterval;
     PCPersistentTimer * _delayTimer;
@@ -55,13 +56,13 @@
     NSString * _serviceIdentifier;
     double  _timerGuidance;
     int  _timerGuidanceToken;
-    CUTWeakReference * _weakConnectionManager;
     <PCGrowthAlgorithm> * _wifiGrowthAlgorithm;
     <PCGrowthAlgorithm> * _wwanGrowthAlgorithm;
 }
 
 @property (nonatomic) bool alwaysWantsInterfaceChangeCallbacks;
 @property (nonatomic, readonly) unsigned long long countOfGrowthActions;
+@property (nonatomic) int currentAddressFamily;
 @property (nonatomic, readonly) int currentGrowthStage;
 @property (nonatomic, readonly) double currentKeepAliveInterval;
 @property (readonly, copy) NSString *debugDescription;
@@ -98,7 +99,7 @@
 - (id)_currentGrowthAlgorithm;
 - (void)_delayTimerFired;
 - (void)_deregisterForDeviceConditionsNotifications;
-- (id)_getCachedWWANKeepAliveInterval;
+- (id)_getCachedWWANKeepAliveIntervalForAddressFamily:(int)arg1;
 - (id)_growthAlgorithmOnInterface:(long long)arg1;
 - (void)_handleDeviceConditionChangeCallback;
 - (bool)_hasBudgetRemaining;
@@ -119,13 +120,16 @@
 - (void)_setupTimerForPollForAdjustment:(bool)arg1;
 - (void)_setupTimerForPushWithKeepAliveInterval:(double)arg1;
 - (id)_stringForAction:(int)arg1;
+- (id)_stringForAddressFamily:(int)arg1;
 - (id)_stringForEvent:(int)arg1;
 - (id)_stringForStyle:(int)arg1;
 - (void)_takePowerAssertionWithTimeout:(double)arg1;
 - (void)_validateActionForCurrentStyle:(int)arg1;
 - (bool)alwaysWantsInterfaceChangeCallbacks;
 - (void)cancelPollingIntervalOverride;
+- (void)carrierBundleDidChange;
 - (unsigned long long)countOfGrowthActions;
+- (int)currentAddressFamily;
 - (int)currentGrowthStage;
 - (double)currentKeepAliveInterval;
 - (int)currentStyle;
@@ -155,6 +159,7 @@
 - (void)resumeManagerWithAction:(int)arg1;
 - (void)resumeManagerWithAction:(int)arg1 forceGrow:(bool)arg2;
 - (void)setAlwaysWantsInterfaceChangeCallbacks:(bool)arg1;
+- (void)setCurrentAddressFamily:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableEarlyFire:(bool)arg1;
 - (void)setDuetIdentifier:(id)arg1;

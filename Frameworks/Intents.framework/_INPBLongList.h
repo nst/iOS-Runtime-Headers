@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBLongList : PBCodable <NSCopying> {
+@interface _INPBLongList : PBCodable <NSCopying, NSSecureCoding, _INPBLongList> {
     _INPBCondition * _conditionType;
-    NSMutableArray * _dataStrings;
-    PBUnknownFields * _unknownFields;
+    NSArray * _dataStrings;
+    struct { }  _has;
 }
 
 @property (nonatomic, retain) _INPBCondition *conditionType;
-@property (nonatomic, retain) NSMutableArray *dataStrings;
+@property (nonatomic, copy) NSArray *dataStrings;
+@property (nonatomic, readonly) unsigned long long dataStringsCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasConditionType;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (Class)dataStringType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addDataString:(id)arg1;
@@ -24,16 +27,13 @@
 - (id)dataStringAtIndex:(unsigned long long)arg1;
 - (id)dataStrings;
 - (unsigned long long)dataStringsCount;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasConditionType;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setConditionType:(id)arg1;
 - (void)setDataStrings:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

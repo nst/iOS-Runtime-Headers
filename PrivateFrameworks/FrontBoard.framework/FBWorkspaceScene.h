@@ -56,7 +56,6 @@
 - (id)clientProcess;
 - (void)closeSession:(id)arg1;
 - (id)counterpartAgent;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

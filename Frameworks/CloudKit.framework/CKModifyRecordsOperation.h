@@ -112,6 +112,7 @@
 // Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
 
 - (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
+- (void)setNetworkBehaviorIsDiscretionary:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

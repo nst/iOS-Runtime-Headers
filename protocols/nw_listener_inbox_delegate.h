@@ -6,6 +6,7 @@
 @required
 
 - (void)handleInbound:(NSObject<OS_nw_connection> *)arg1 addProtocolInbox:(bool)arg2;
-- (void)handleInboxFailed:(nw_listener_inbox *)arg1 error:(struct __CFError { }*)arg2;
+- (void)handleInboxCancelComplete:(nw_listener_inbox *)arg1;
+- (void)handleInboxFailed:(nw_listener_inbox *)arg1 error:(NSObject<OS_nw_error> *)arg2;
 
 @end

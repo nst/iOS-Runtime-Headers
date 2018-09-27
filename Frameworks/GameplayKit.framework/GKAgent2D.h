@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKAgent2D : GKAgent <NSCoding>
+@interface GKAgent2D : GKAgent <NSSecureCoding>
 
 @property (nonatomic) void position;
 @property (nonatomic) float rotation;
 @property (nonatomic, readonly) void velocity;
+
++ (bool)supportsSecureCoding;
 
 - (void)applyBrakingForce:(float)arg1 deltaTime:(double)arg2;
 - (void)applySteeringForce:(void *)arg1 deltaTime:(void *)arg2; // needs 2 arg types, found 1: double

@@ -7,6 +7,7 @@
     bool  _blocked;
     NSString * _callerNameFromNetwork;
     NSString * _contactIdentifier;
+    bool  _conversation;
     bool  _emergency;
     NSArray * _handles;
     NSString * _isoCountryCode;
@@ -19,6 +20,7 @@
 @property (getter=isBlocked, nonatomic, readonly) bool blocked;
 @property (nonatomic, readonly, copy) NSString *callerNameFromNetwork;
 @property (nonatomic, copy) NSString *contactIdentifier;
+@property (getter=isConversation, nonatomic, readonly) bool conversation;
 @property (getter=isEmergency, nonatomic, readonly) bool emergency;
 @property (nonatomic, readonly, copy) NSArray *handles;
 @property (nonatomic, readonly, copy) NSString *isoCountryCode;
@@ -37,6 +39,7 @@
 - (id)initWithHandle:(id)arg1;
 - (id)initWithHandles:(id)arg1;
 - (bool)isBlocked;
+- (bool)isConversation;
 - (bool)isEmergency;
 - (bool)isVoicemail;
 - (id)isoCountryCode;

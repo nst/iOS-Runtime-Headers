@@ -4,7 +4,7 @@
 
 @interface NTSectionPresencePersonalizationOperation : FCOperation {
     NSArray * _absoluteRequests;
-    <FRReadonlyPersonalizationAggregateStore> * _aggregateStore;
+    <FCReadonlyPersonalizationAggregateStore> * _aggregateStore;
     id /* block */  _personalizationCompletion;
     FCPersonalizationTreatment * _personalizationTreatment;
     NSArray * _relativeRequests;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, copy) NSArray *absoluteRequests;
-@property (nonatomic, retain) <FRReadonlyPersonalizationAggregateStore> *aggregateStore;
+@property (nonatomic, retain) <FCReadonlyPersonalizationAggregateStore> *aggregateStore;
 @property (nonatomic, copy) id /* block */ personalizationCompletion;
 @property (nonatomic, copy) FCPersonalizationTreatment *personalizationTreatment;
 @property (nonatomic, copy) NSArray *relativeRequests;

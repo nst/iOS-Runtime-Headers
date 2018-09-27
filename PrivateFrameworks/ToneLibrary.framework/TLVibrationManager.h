@@ -20,6 +20,8 @@
 @property (nonatomic, readonly) bool shouldVibrateOnRing;
 @property (nonatomic, readonly) bool shouldVibrateOnSilent;
 
+// Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
+
 + (void)_handleVibrateOnRingOrSilentDidChangeNotification;
 + (void)_handleVibrationPreferencesDidChangeNotificationForPreferencesKinds:(unsigned long long)arg1 atInitiativeOfVibrationManager:(id)arg2;
 + (id)sharedVibrationManager;
@@ -36,6 +38,7 @@
 - (long long)_currentVibrationWatchAlertPolicyForAlertType:(long long)arg1 topic:(id)arg2;
 - (long long)_currentVibrationWatchAlertPolicyForAlertType:(long long)arg1 topic:(id)arg2 didFindPersistedWatchAlertPolicy:(bool*)arg3;
 - (id)_currentVibrationWatchAlertPolicyPreferenceKeyForAlertType:(long long)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)_defaultVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2 correspondingToneIdentifier:(id)arg3;
 - (void)_didChangeUserGeneratedVibrationPatterns;
 - (void)_didSetVibrationPreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned long long)arg3;
@@ -77,9 +80,11 @@
 - (id)currentVibrationPatternForAlertType:(long long)arg1;
 - (void)dealloc;
 - (id)defaultVibrationIdentifierForAlertType:(long long)arg1;
+- (id)defaultVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)defaultVibrationNameForAlertType:(long long)arg1;
 - (id)defaultVibrationPatternForAlertType:(long long)arg1;
 - (bool)deleteUserGeneratedVibrationPatternWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)hasSpecificDefaultVibrationIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)init;
 - (id)nameOfVibrationWithIdentifier:(id)arg1;
 - (bool)needsRefresh;
@@ -97,5 +102,10 @@
 - (bool)shouldVibrateOnRing;
 - (bool)shouldVibrateOnSilent;
 - (bool)vibrationWithIdentifierIsValid:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
+- (bool)_bb_isVibrationEnabledForAlertType:(long long)arg1 topic:(id)arg2;
+- (bool)bb_isVibrationEnabledForSectionInfo:(id)arg1;
 
 @end

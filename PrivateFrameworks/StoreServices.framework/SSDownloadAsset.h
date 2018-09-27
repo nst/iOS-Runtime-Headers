@@ -9,6 +9,7 @@
 
 @property (readonly, retain) NSURLRequest *URLRequest;
 @property (readonly) SSURLRequestProperties *URLRequestProperties;
+@property (readonly) SSURLRequestProperties *_localProperties;
 @property (readonly) NSString *downloadFileName;
 @property (readonly) NSString *downloadPath;
 @property (getter=isExternal, readonly) bool external;

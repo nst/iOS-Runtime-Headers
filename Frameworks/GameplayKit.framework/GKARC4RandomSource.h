@@ -9,6 +9,8 @@
 
 @property (nonatomic, copy) NSData *seed;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

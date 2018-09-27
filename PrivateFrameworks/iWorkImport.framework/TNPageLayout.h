@@ -8,9 +8,10 @@
     bool  mIsPlaceholder;
     TNPageController * mPageController;
     struct TSUCellCoord { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
+        unsigned int row; 
+        unsigned short column; 
+        bool _preserveRow; 
+        bool _preserveColumn; 
     }  mPageCoordinate;
     TNSheet * mSheet;
 }
@@ -26,7 +27,7 @@
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
 @property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } pageBounds;
 @property TNPageController *pageController;
-@property struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } pageCoordinate;
+@property struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; } pageCoordinate;
 @property (readonly) bool pageLayoutDirectionIsRTL;
 @property (getter=isPlaceholder) bool placeholder;
 @property (retain) TNSheet *sheet;
@@ -34,7 +35,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double textScaleFactor;
 
-+ (id)pageLayoutWithPageController:(id)arg1 pageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
++ (id)pageLayoutWithPageController:(id)arg1 pageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 
 - (void)addChild:(id)arg1;
 - (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
@@ -54,7 +55,7 @@
 - (id)description;
 - (double)gapForColumnIndex:(unsigned long long)arg1 bodyWidth:(double)arg2;
 - (id)headerFooterProvider;
-- (id)initWithPageController:(id)arg1 pageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (id)initWithPageController:(id)arg1 pageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (void)invalidateSize;
 - (bool)isPlaceholder;
@@ -63,7 +64,7 @@
 - (id)p_pageInfo;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pageBounds;
 - (id)pageController;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinate;
+- (struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })pageCoordinate;
 - (unsigned long long)pageCount;
 - (bool)pageLayoutDirectionIsRTL;
 - (unsigned long long)pageNumber;
@@ -75,7 +76,7 @@
 - (void)setChildren:(id)arg1;
 - (void)setContentLayout:(id)arg1;
 - (void)setPageController:(id)arg1;
-- (void)setPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)setPageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1;
 - (void)setPlaceholder:(bool)arg1;
 - (void)setSheet:(id)arg1;
 - (id)sheet;

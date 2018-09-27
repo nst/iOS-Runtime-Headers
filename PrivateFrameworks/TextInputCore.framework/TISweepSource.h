@@ -12,10 +12,10 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)addValue:(id)arg1 withMin:(float)arg2 withMax:(float)arg3;
 - (void)addValue:(id)arg1 withValue:(float)arg2;
 - (void)advanceSweep;
-- (void)dealloc;
 - (id)debugValues;
 - (bool)finished;
 - (void)setStepCount:(int)arg1;

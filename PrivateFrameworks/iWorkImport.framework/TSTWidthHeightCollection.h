@@ -21,8 +21,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addFittingHeight:(double)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (void)addResetHeightForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)addFittingHeight:(double)arg1 forCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
+- (void)addResetHeightForCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1;
 - (void)enumerateFittingHeightsUsingBlock:(id /* block */)arg1;
 - (void)enumerateResetHeightsUsingBlock:(id /* block */)arg1;
 

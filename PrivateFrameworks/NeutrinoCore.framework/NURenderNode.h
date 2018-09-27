@@ -10,6 +10,7 @@
     AVDepthData * _cached_outputDepthData;
     CIImage * _cached_outputImage;
     NUImageGeometry * _cached_outputImageGeometry;
+    AVPortraitEffectsMatte * _cached_outputPortraitEffectsMatte;
     AVComposition * _cached_outputVideo;
     AVVideoComposition * _cached_outputVideoComposition;
     <NUVideoProperties> * _cached_videoProperties;
@@ -29,6 +30,7 @@
 @property (retain) AVDepthData *cached_outputDepthData;
 @property (retain) CIImage *cached_outputImage;
 @property (retain) NUImageGeometry *cached_outputImageGeometry;
+@property (retain) AVPortraitEffectsMatte *cached_outputPortraitEffectsMatte;
 @property (retain) AVComposition *cached_outputVideo;
 @property (retain) AVVideoComposition *cached_outputVideoComposition;
 @property (retain) <NUVideoProperties> *cached_videoProperties;
@@ -55,6 +57,7 @@
 - (id)_evaluateImage:(out id*)arg1;
 - (id)_evaluateImageGeometry:(out id*)arg1;
 - (id)_evaluateImageProperties:(out id*)arg1;
+- (id)_evaluatePortraitEffectsMatte:(out id*)arg1;
 - (id)_evaluateVideo:(out id*)arg1;
 - (id)_evaluateVideoComposition:(out id*)arg1;
 - (id)_evaluateVideoProperties:(out id*)arg1;
@@ -66,6 +69,7 @@
 - (id)cached_outputDepthData;
 - (id)cached_outputImage;
 - (id)cached_outputImageGeometry;
+- (id)cached_outputPortraitEffectsMatte;
 - (id)cached_outputVideo;
 - (id)cached_outputVideoComposition;
 - (id)cached_videoProperties;
@@ -95,6 +99,7 @@
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id*)arg3;
 - (void)nu_updateDigest:(id)arg1;
 - (id)originalDepthData:(out id*)arg1;
+- (id)originalPortraitEffectsMatte:(out id*)arg1;
 - (id)outputAudioMix:(out id*)arg1;
 - (id)outputGeometrySpaceMap:(out id*)arg1;
 - (id)outputImage:(out id*)arg1;
@@ -112,6 +117,7 @@
 - (void)setCached_outputDepthData:(id)arg1;
 - (void)setCached_outputImage:(id)arg1;
 - (void)setCached_outputImageGeometry:(id)arg1;
+- (void)setCached_outputPortraitEffectsMatte:(id)arg1;
 - (void)setCached_outputVideo:(id)arg1;
 - (void)setCached_outputVideoComposition:(id)arg1;
 - (void)setCached_videoProperties:(id)arg1;

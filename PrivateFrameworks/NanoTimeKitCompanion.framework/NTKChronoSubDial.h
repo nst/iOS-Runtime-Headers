@@ -3,6 +3,7 @@
  */
 
 @interface NTKChronoSubDial : SKEffectNode {
+    CLKDevice * _device;
     long long  _labelsFont;
     double  _labelsFontSize;
     double  _labelsRadius;
@@ -17,6 +18,7 @@
     }  _smallOuter;
 }
 
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, readonly) long long labelsFont;
 @property (nonatomic, readonly) double labelsFontSize;
 @property (nonatomic, readonly) double labelsRadius;
@@ -24,14 +26,16 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallInner;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallOuter;
 
-+ (id)lower:(double)arg1;
-+ (id)upper:(double)arg1;
++ (id)lower:(double)arg1 forDevice:(id)arg2;
++ (id)upper:(double)arg1 forDevice:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)addNodes:(id)arg1;
 - (id)addNodes:(id)arg1 to:(id)arg2;
 - (void)applyTransitionFraction:(double)arg1 fromTimeScale:(unsigned long long)arg2 toTimeScale:(unsigned long long)arg3;
 - (void)colorize:(id)arg1;
-- (id)initWithRadius:(double)arg1;
+- (id)device;
+- (id)initWithRadius:(double)arg1 forDevice:(id)arg2;
 - (long long)labelsFont;
 - (double)labelsFontSize;
 - (double)labelsRadius;

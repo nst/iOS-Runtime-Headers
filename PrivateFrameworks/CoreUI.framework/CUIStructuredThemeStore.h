@@ -23,10 +23,11 @@
 - (void)_commonInit;
 - (bool)_formatStorageKeyArrayBytes:(void*)arg1 length:(unsigned long long)arg2 fromKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg3;
 - (void)_getKeyForAssetClosestToKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 foundAsset:(bool*)arg2;
-- (void)_getKeyForAssetInOtherLookGroupClosestToKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 foundAsset:(bool*)arg2;
 - (id)_newRenditionKeyDataFromKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (void)_updateKeyWithCompatibilityMapping:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)allImageNames;
+- (unsigned short)appearanceIdentifierForName:(id)arg1;
+- (id)appearances;
 - (bool)assetExistsForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (unsigned int)authoredWithSchemaVersion;
 - (id)baseGradationKeySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
@@ -56,6 +57,7 @@
 - (id)keySignatureForKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)lookupAssetForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (long long)maximumRenditionKeyTokenCount;
+- (id)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (id)prefilteredAssetDataForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1 cursorHotSpot:(struct CGPoint { double x1; double x2; }*)arg2;
@@ -64,6 +66,7 @@
 - (id)renditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)renditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1 usingKeySignature:(id)arg2;
 - (void)setThemeIndex:(unsigned long long)arg1;
+- (id)store;
 - (unsigned long long)themeIndex;
 - (id)themeStore;
 - (bool)usesCUISystemThemeRenditionKey;

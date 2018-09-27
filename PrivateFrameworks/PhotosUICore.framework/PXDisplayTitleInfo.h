@@ -18,6 +18,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 
++ (id)displayTitleInfoForDetailsOfAssetCollection:(id)arg1 withTitleCategory:(long long)arg2 defaultTitle:(id)arg3 defaultTitleCategory:(long long)arg4 titleKey:(id)arg5 titleCategoryKey:(id)arg6 subtitleKey:(id)arg7 simulatedLoadingDelay:(double)arg8 preferredAttributesPromise:(id /* block */)arg9;
+
 - (void).cxx_destruct;
 - (id)_assetCollection;
 - (void)_setAssetCollection:(id)arg1;

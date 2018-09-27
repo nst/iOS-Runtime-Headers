@@ -9,6 +9,10 @@
     unsigned int  _autoPausedScene;
     UIColor * _backgroundColor;
     CALayer * _backingLayer;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _boundsSize;
     NSArray * _controllerGestureRecognizers;
     double  _currentSystemTime;
     id  _delegate;
@@ -16,6 +20,7 @@
     bool  _didTriggerRedrawWhileRendering;
     unsigned int  _disableLinearRendering;
     SCNDisplayLink * _displayLink;
+    bool  _displayLinkCreationRequested;
     unsigned int  _drawOnMainThreadPending;
     unsigned int  _firstDrawDone;
     unsigned int  _ibNoMultisampling;
@@ -24,7 +29,7 @@
     unsigned int  _isOpaque;
     SCNJitterer * _jitterer;
     double  _lastUpdate;
-    NSRecursiveLock * _lock;
+    SCNRecursiveLock * _lock;
     <SCNEventHandler> * _navigationCameraController;
     long long  _preferredFramePerSeconds;
     SCNRenderer * _renderer;
@@ -93,6 +98,7 @@
 - (bool)_checkAndUpdateDisplayLinkStateIfNeeded;
 - (void)_commonInit:(id)arg1;
 - (bool)_controlsOwnScaleFactor;
+- (void)_createDisplayLinkIfNeeded;
 - (id)_defaultBackgroundColor;
 - (bool)_disableLinearRendering;
 - (void)_drawAtTime:(double)arg1;
@@ -107,10 +113,13 @@
 - (int)_ibPreferredRenderingAPI;
 - (id)_ibSceneName;
 - (bool)_ibWantsMultisampling;
+- (void)_initializeDisplayLink;
 - (bool)_isEditor;
 - (void)_jitterRedisplay;
 - (long long)_preferredFocusMovementStyle;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
+- (unsigned long long)_renderOptions;
+- (double)_renderThreadPriority;
 - (id)_renderingQueue;
 - (void)_resetContentsScaleFactor;
 - (double)_runFPSTestWithDuration:(double)arg1;
@@ -129,6 +138,7 @@
 - (void)_updateGestureRecognizers;
 - (void)_updateOpacity;
 - (void)_updateProbes:(id)arg1 withProgress:(id)arg2;
+- (struct SCNVector4 { float x1; float x2; float x3; float x4; })_viewport;
 - (bool)_wantsSceneRendererDelegationMessages;
 - (bool)allowsCameraControl;
 - (unsigned long long)antialiasingMode;
@@ -207,6 +217,7 @@
 - (void)setContentScaleFactor:(double)arg1;
 - (void)setDebugOptions:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisplayLink:(id)arg1;
 - (void)setEaglContext:(id)arg1;
 - (void)setEventHandler:(id)arg1;
 - (void)setIbPreferredRenderingAPI:(int)arg1;
@@ -231,6 +242,7 @@
 - (void)set_ibPreferredRenderingAPI:(int)arg1;
 - (void)set_ibSceneName:(id)arg1;
 - (void)set_ibWantsMultisampling:(bool)arg1;
+- (void)set_renderOptions:(unsigned long long)arg1;
 - (void)set_screenTransform:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 - (void)set_showsAuthoringEnvironment:(bool)arg1;
 - (void)set_superSamplingFactor:(double)arg1;
@@ -248,6 +260,7 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)unlock;
 - (struct SCNVector3 { float x1; float x2; float x3; })unprojectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (void)updateAtTime:(double)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 // Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib

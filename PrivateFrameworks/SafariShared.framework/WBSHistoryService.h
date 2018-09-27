@@ -3,7 +3,6 @@
  */
 
 @interface WBSHistoryService : NSObject <NSXPCListenerDelegate> {
-    NSMutableSet * _connectionsReceivingHistoryNotifications;
     WBSHistoryDatabaseAccessBroker * _databaseAccessBroker;
     NSObject<OS_dispatch_queue> * _historyServiceQueue;
     NSDate * _initDate;
@@ -27,9 +26,6 @@
 - (id)databaseURL;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)postHistoryNotificationToRegisteredConnections:(id)arg1;
-- (void)registerConnectionForHistoryNotifications:(id)arg1;
-- (void)unregisterConnectionForHistoryNotifications:(id)arg1;
 - (id)urlCompletionDataStore;
 
 @end

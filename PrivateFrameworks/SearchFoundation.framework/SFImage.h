@@ -43,6 +43,8 @@
 @property (nonatomic) int source;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (id)imageWithData:(id)arg1;
 + (bool)supportsSecureCoding;
 
@@ -81,5 +83,9 @@
 - (bool)shouldCropToCircle;
 - (struct CGSize { double x1; double x2; })size;
 - (int)source;
+
+// Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
+
+- (id)downcastToIntentsUIVariantIfApplicable;
 
 @end

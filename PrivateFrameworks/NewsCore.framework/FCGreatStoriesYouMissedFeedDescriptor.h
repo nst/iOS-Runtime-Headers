@@ -17,7 +17,7 @@
 
 - (id)editionAtDate:(id)arg1;
 - (id)editionFollowingEdition:(id)arg1;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)feedPaginator;
 - (unsigned long long)limit;
 - (id)name;

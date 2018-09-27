@@ -41,6 +41,7 @@
 - (void)handleInteraction:(id)arg1 withType:(unsigned long long)arg2;
 - (void)handleLongPressGesture:(id)arg1;
 - (void)handleTapGesture:(id)arg1;
+- (bool)hasInteractionForLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)initWithInteractionHandlerManager:(id)arg1 viewport:(id)arg2;
 - (id)interactionHandlerManager;
 - (id)longPressDelay;

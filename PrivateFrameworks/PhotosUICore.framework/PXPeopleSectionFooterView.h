@@ -20,6 +20,7 @@
 + (double)preferredHeightForStyle:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_updateColors;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)disclosureButton;
@@ -32,5 +33,6 @@
 - (void)setDividerLine:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (unsigned long long)style;
+- (void)tintColorDidChange;
 
 @end

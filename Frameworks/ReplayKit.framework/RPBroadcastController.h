@@ -4,12 +4,14 @@
 
 @interface RPBroadcastController : NSObject {
     NSString * _broadcastExtensionBundleID;
+    NSString * _broadcastExtensionBundleIdentifier;
     RPBroadcastViewController * _broadcastViewController;
     <RPBroadcastControllerDelegate> * _delegate;
     NSDictionary * _serviceInfo;
 }
 
 @property (nonatomic, readonly) NSString *broadcastExtensionBundleID;
+@property (nonatomic, retain) NSString *broadcastExtensionBundleIdentifier;
 @property (nonatomic, retain) NSURL *broadcastURL;
 @property (nonatomic, readonly) RPBroadcastViewController *broadcastViewController;
 @property (getter=isBroadcasting, nonatomic, readonly) bool broadcasting;
@@ -19,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)broadcastExtensionBundleID;
+- (id)broadcastExtensionBundleIdentifier;
 - (id)broadcastURL;
 - (id)broadcastViewController;
 - (void)dealloc;
@@ -32,6 +35,7 @@
 - (void)pauseBroadcast;
 - (void)resumeBroadcast;
 - (id)serviceInfo;
+- (void)setBroadcastExtensionBundleIdentifier:(id)arg1;
 - (void)setBroadcastURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setServiceInfo:(id)arg1;

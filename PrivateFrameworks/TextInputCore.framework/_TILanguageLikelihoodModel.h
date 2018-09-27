@@ -17,7 +17,6 @@
 + (id)singletonInstance;
 
 - (void)addEvidence:(id)arg1 timestamp:(double)arg2 adaptationType:(int)arg3 forRecipient:(id)arg4 app:(id)arg5 language:(id)arg6;
-- (void)dealloc;
 - (unsigned long long)emojiUsageCountForApp:(id)arg1 lastEmojiCountUpdateTime:(double*)arg2;
 - (id)init;
 - (void*)languageLikelihoodModelRef;

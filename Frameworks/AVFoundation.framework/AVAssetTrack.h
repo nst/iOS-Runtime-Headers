@@ -90,6 +90,10 @@
 - (long long)totalSampleDataLength;
 - (int)trackID;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)commonMetadataStringValueForKey:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_endTime;

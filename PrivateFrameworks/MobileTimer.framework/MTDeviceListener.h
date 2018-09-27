@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (bool)_hasBeenUnlockedSinceBoot;
+- (id)gatherDiagnostics;
 - (void)handleNotification:(id)arg1;
 - (bool)handlesNotification:(id)arg1;
 - (id)init;

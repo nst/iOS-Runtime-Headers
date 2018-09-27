@@ -10,11 +10,15 @@
 }
 
 @property (nonatomic, readonly) NSArray *allFolderUUIDs;
+@property (readonly) UIColor *backgroundColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <WBSSiteMetadataProviderDelegate> *providerDelegate;
+@property (nonatomic, readonly) bool providesFavicons;
 @property (readonly) Class superclass;
+
++ (bool)_appUsesLeftToRightLayout;
 
 - (void).cxx_destruct;
 - (void)_coalesceResponseDispatchForRequest:(id)arg1;
@@ -24,6 +28,7 @@
 - (void)_prepareResponseForRequest:(id)arg1 allowDelayedResponse:(bool)arg2;
 - (id /* block */)_responseHandlerForRequest:(id)arg1 thumbnailIndex:(unsigned long long)arg2;
 - (id)allFolderUUIDs;
+- (id)backgroundColor;
 - (id)bookmarkUUIDForRequest:(id)arg1;
 - (bool)canHandleRequest:(id)arg1;
 - (id)defaultFolderIconForRequest:(id)arg1;

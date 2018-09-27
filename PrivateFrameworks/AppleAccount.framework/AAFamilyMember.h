@@ -3,6 +3,7 @@
  */
 
 @interface AAFamilyMember : NSObject {
+    NSString * _altDSID;
     NSString * _appleID;
     bool  _areParentalControlsEnabled;
     NSString * _firstName;
@@ -21,6 +22,7 @@
     NSString * _title;
 }
 
+@property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) NSString *appleID;
 @property (nonatomic) bool areParentalControlsEnabled;
 @property (nonatomic, copy) NSString *firstName;
@@ -39,6 +41,7 @@
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
+- (id)altDSID;
 - (id)appleID;
 - (bool)areParentalControlsEnabled;
 - (id)firstName;
@@ -54,6 +57,7 @@
 - (id)linkediTunesDSID;
 - (id)personID;
 - (id)personIDHash;
+- (void)setAltDSID:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (void)setAreParentalControlsEnabled:(bool)arg1;
 - (void)setFirstName:(id)arg1;

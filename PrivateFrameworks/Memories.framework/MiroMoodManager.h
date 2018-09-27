@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroMoodManager : NSObject {
+@interface MiroMoodManager : VEiOSSharedObject {
     NSArray * _editStylesList;
     NSDictionary * _rawEditStylesList;
     NSDictionary * _rawSongList;

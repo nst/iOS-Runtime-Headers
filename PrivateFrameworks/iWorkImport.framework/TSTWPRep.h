@@ -4,6 +4,6 @@
 
 @interface TSTWPRep : TSWPRep
 
-- (void)recursivelyDrawInContext:(struct CGContext { }*)arg1;
+- (void)recursivelyDrawInContext:(struct CGContext { }*)arg1 keepingChildrenPassingTest:(id /* block */)arg2;
 
 @end

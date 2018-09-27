@@ -3,8 +3,9 @@
  */
 
 @interface PDAssertionManager : NSObject <NSXPCListenerDelegate, PDAssertionCoordinatorDelegate> {
+    BKSApplicationStateMonitor * _applicationStateMonitor;
     NSXPCListener * _coordinatorListener;
-    NSMutableArray * _coordinators;
+    NSMutableDictionary * _coordinators;
     NSObject<OS_dispatch_queue> * _managerSerialQueue;
     NSHashTable * _observers;
 }
@@ -15,10 +16,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addAssertionCoordinator:(id)arg1;
+- (void)_addAssertionCoordinator:(id)arg1 forProcessIdentifier:(id)arg2;
+- (void)_applicationStateChanged:(id)arg1;
 - (void)_removeAllAssertionCoordinators;
 - (void)_removeAssertionCoordinator:(id)arg1;
-- (bool)assertionCoordinator:(id)arg1 assertionExistsOfType:(unsigned long long)arg2;
 - (bool)assertionCoordinator:(id)arg1 canAcquireAssertion:(id)arg2;
 - (void)assertionCoordinator:(id)arg1 didAcquireAssertion:(id)arg2;
 - (void)assertionCoordinator:(id)arg1 didInvalidateAssertion:(id)arg2;

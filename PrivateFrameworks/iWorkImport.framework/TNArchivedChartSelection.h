@@ -3,7 +3,7 @@
  */
 
 @interface TNArchivedChartSelection : TSPObject <TSKArchivedSelection> {
-    TNChartSelection * mSelection;
+    TNChartSelection * _selection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (nonatomic, retain) TSKSelection *selection;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (id)selection;

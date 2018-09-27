@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAppSubscription : AceObject <SABackgroundContextObject>
+@interface SAAppSubscription : SADomainObject <SABackgroundContextObject>
 
 @property (nonatomic, copy) NSString *bundleId;
 @property (readonly, copy) NSString *debugDescription;

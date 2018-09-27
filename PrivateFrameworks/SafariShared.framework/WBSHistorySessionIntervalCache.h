@@ -4,11 +4,10 @@
 
 @interface WBSHistorySessionIntervalCache : NSObject {
     NSCalendar * _calendar;
-    struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
+    struct Vector<double, 0, WTF::CrashOnOverflow, 16> { 
         double *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
-        unsigned int m_mask; 
     }  _intervalCache;
     NSObject<OS_dispatch_queue> * _queue;
 }

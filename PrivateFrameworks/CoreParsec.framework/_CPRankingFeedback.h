@@ -4,10 +4,6 @@
 
 @interface _CPRankingFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPRankingFeedback> {
     double  _blendingDuration;
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int blendingDuration : 1; 
-    }  _has;
     NSArray * _sections;
     unsigned long long  _timestamp;
 }
@@ -17,14 +13,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasBlendingDuration;
-@property (nonatomic, readonly) bool hasTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, copy) NSArray *sections;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
@@ -32,8 +25,6 @@
 - (double)blendingDuration;
 - (void)clearSections;
 - (id)dictionaryRepresentation;
-- (bool)hasBlendingDuration;
-- (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

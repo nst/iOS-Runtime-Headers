@@ -88,12 +88,10 @@
 - (float)tighteningFactorForTruncation;
 - (bool)usesOpticalAlignment;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
 
-- (long long)_ui_resolvedTextAlignment;
-- (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
-- (long long)_ui_resolvedWritingDirection;
-- (long long)_ui_resolvedWritingDirectionForUserInterfaceLayoutDirection:(long long)arg1;
++ (bool)dc_isRTL;
++ (id)dc_mutableDefaultParagraphStyle;
 
 // Image: /System/Library/PrivateFrameworks/NewsFeedLayout.framework/NewsFeedLayout
 
@@ -104,5 +102,12 @@
 
 + (bool)ic_isRTL;
 + (id)ic_mutableDefaultParagraphStyle;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (long long)_ui_resolvedTextAlignment;
+- (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
+- (long long)_ui_resolvedWritingDirection;
+- (long long)_ui_resolvedWritingDirectionForUserInterfaceLayoutDirection:(long long)arg1;
 
 @end

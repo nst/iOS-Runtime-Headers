@@ -2,11 +2,19 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKWorkoutSession : NSObject <NSSecureCoding, _HKWorkoutSessionDelegate> {
+@interface HKWorkoutSession : NSObject <HKStateMachineDelegate, NSSecureCoding, _HKXPCExportable> {
+    HKLiveWorkoutBuilder * _associatedWorkoutBuilder;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HKWorkoutSessionTaskConfiguration * _configuration;
     <HKWorkoutSessionDelegate> * _delegate;
-    _HKWorkoutSession * _privateSession;
+    NSDate * _endDate;
+    HKHealthStore * _healthStore;
+    HKTaskServerProxyProvider * _proxyProvider;
     NSObject<OS_dispatch_queue> * _queue;
+    NSDate * _startDate;
+    long long  _state;
     <HKWorkoutSessionDelegate> * _strongDelegate;
+    HKStateMachine * _targetStateMachine;
 }
 
 @property (readonly) unsigned long long activityType;
@@ -15,33 +23,74 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSDate *endDate;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HKHealthStore *healthStore;
+@property (nonatomic, readonly, copy) NSUUID *identifier;
+@property (nonatomic, readonly) bool isGymKitSession;
 @property (readonly) long long locationType;
-@property (getter=_privateSession, nonatomic, readonly) _HKWorkoutSession *privateSession;
 @property (readonly) NSDate *startDate;
 @property (readonly) long long state;
 @property (readonly) Class superclass;
 @property (readonly, copy) HKWorkoutConfiguration *workoutConfiguration;
 
++ (bool)_applicationHasRunningWorkout;
++ (void)_unitTest_clearAllRunningWorkouts;
++ (id)clientInterface;
++ (id)serverInterface;
 + (bool)supportsSecureCoding;
++ (id)targetWorkoutSessionStateMachineForSessionUUID:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_init;
-- (id)_privateSession;
+- (id)_initWithHealthStore:(id)arg1 taskConfiguration:(id)arg2 error:(id*)arg3;
+- (void)_queue_markRecoveryRequired;
+- (bool)_queue_shouldAttemptRecovery;
+- (void)_recoverWithCompletion:(id /* block */)arg1;
+- (void)_setAssociatedWorkoutBuilder:(id)arg1;
+- (void)_setupWithHealthStore:(id)arg1;
+- (void)_unitTest_discardAssociatedWorkoutBuilder;
 - (unsigned long long)activityType;
+- (id)associatedWorkoutBuilder;
+- (id)associatedWorkoutBuilderWithDevice:(id)arg1 goalType:(unsigned long long)arg2 goal:(id)arg3;
+- (void)client_didChangeToState:(long long)arg1 date:(id)arg2;
+- (void)client_didFailWithError:(id)arg1;
+- (void)client_didGenerateEvents:(id)arg1;
+- (void)client_didUpdateStartDate:(id)arg1 endDate:(id)arg2;
+- (void)client_synchronizeWithCompletion:(id /* block */)arg1;
+- (void)connectionInterrupted;
+- (void)connectionInvalidated;
+- (void)dealloc;
 - (id)delegate;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (void)end;
 - (id)endDate;
+- (void)endWithCompletion:(id /* block */)arg1;
+- (id)exportedInterface;
+- (id)healthStore;
+- (id)identifier;
 - (id)initWithActivityType:(unsigned long long)arg1 locationType:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 error:(id*)arg2;
+- (id)initWithHealthStore:(id)arg1 configuration:(id)arg2 error:(id*)arg3;
+- (bool)isGymKitSession;
 - (long long)locationType;
+- (void)pause;
+- (void)pauseWithCompletion:(id /* block */)arg1;
+- (void)prepare;
+- (void)prepareWithCompletion:(id /* block */)arg1;
+- (id)remoteInterface;
+- (void)resume;
+- (void)resumeWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)startActivity;
+- (void)startActivityWithDate:(id)arg1;
+- (void)startActivityWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)startDate;
 - (long long)state;
+- (void)stateMachine:(id)arg1 didIgnoreEvent:(long long)arg2 state:(id)arg3;
+- (void)stateMachine:(id)arg1 didTransition:(id)arg2 fromState:(id)arg3 toState:(id)arg4 date:(id)arg5 error:(id)arg6;
+- (void)stopActivity;
+- (void)stopActivityWithDate:(id)arg1;
+- (void)stopActivityWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)workoutConfiguration;
-- (void)workoutSession:(id)arg1 didChangeToState:(long long)arg2 fromState:(long long)arg3 date:(id)arg4;
-- (void)workoutSession:(id)arg1 didFailWithError:(id)arg2;
-- (void)workoutSession:(id)arg1 didGenerateEvent:(id)arg2;
-- (void)workoutSession:(id)arg1 didUpdateMetrics:(id)arg2;
 
 @end

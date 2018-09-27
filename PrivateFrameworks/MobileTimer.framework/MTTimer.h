@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTTimer : NSObject <MTDictionarySerializable, MTDiffable, MTScheduleable, NAEquatable, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface MTTimer : NSObject <MTDictionarySerializable, MTDiffable, MTScheduleable, MTTimerIntentSupport, NAEquatable, NSCopying, NSMutableCopying, NSSecureCoding> {
     id /* block */  _currentDateProvider;
     NSDate * _dismissedDate;
     double  _duration;
@@ -21,26 +21,34 @@
 @property (nonatomic, copy) NSDate *dismissedDate;
 @property (nonatomic, readonly) NSString *displayTitle;
 @property (nonatomic) double duration;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) NSDate *fireDate;
 @property (nonatomic, copy) <MTTimerTime> *fireTime;
 @property (nonatomic, copy) NSDate *firedDate;
+@property (nonatomic, readonly) bool hasDefaultTitle;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSDate *lastModifiedDate;
 @property (nonatomic, copy) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) double remainingTime;
 @property (nonatomic, copy) MTSound *sound;
 @property (nonatomic) unsigned long long state;
+@property (nonatomic, readonly) unsigned long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *timerID;
 @property (nonatomic, readonly) NSString *timerIDString;
 @property (nonatomic, readonly) NSURL *timerURL;
+@property (nonatomic, readonly) NSString *title;
 @property (nonatomic, copy) NSString *title;
 
 + (id)_timerTimeForState:(unsigned long long)arg1 remainingTime:(double)arg2 currentDateProvider:(id /* block */)arg3;
++ (id)currentTimerFromTimers:(id)arg1;
 + (id)descriptionForState:(unsigned long long)arg1;
++ (bool)stateChangeIsAllowableFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_copyStateOntoTimer:(id)arg1;
-- (id)_initForCopy;
+- (id)_initCommon;
 - (bool)_isEqualToTimer:(id)arg1 checkLastModified:(bool)arg2;
 - (void)_setDuration:(double)arg1;
 - (long long)compare:(id)arg1;
@@ -51,14 +59,17 @@
 - (id)displayTitle;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fireDate;
 - (id)fireTime;
 - (id)firedDate;
+- (bool)hasDefaultTitle;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithState:(unsigned long long)arg1 duration:(double)arg2;
 - (id)initWithState:(unsigned long long)arg1 duration:(double)arg2 currentDateProvider:(id /* block */)arg3;
+- (bool)isCurrentTimer;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualIgnoringLastModifiedDate:(id)arg1;
 - (bool)isEqualToTimer:(id)arg1;

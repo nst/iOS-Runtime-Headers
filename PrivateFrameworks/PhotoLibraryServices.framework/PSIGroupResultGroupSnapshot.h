@@ -5,23 +5,34 @@
 @interface PSIGroupResultGroupSnapshot : NSObject {
     short  _category;
     NSString * _contentString;
+    PSIDateFilter * _dateFilter;
     unsigned long long  _groupId;
-    NSMutableArray * _matchRange;
+    NSString * _lookupIdentifier;
+    NSMutableArray * _matchRanges;
     unsigned long long  _owningGroupId;
+    NSMutableArray * _tokens;
 }
 
 @property (nonatomic, readonly) short category;
 @property (nonatomic, readonly, copy) NSString *contentString;
+@property (nonatomic, readonly, copy) PSIDateFilter *dateFilter;
 @property (nonatomic, readonly) unsigned long long groupId;
-@property (nonatomic, readonly, retain) NSMutableArray *matchRange;
+@property (nonatomic, readonly, copy) NSString *lookupIdentifier;
+@property (nonatomic, readonly, retain) NSArray *matchRanges;
 @property (nonatomic, readonly) unsigned long long owningGroupId;
+@property (nonatomic, readonly, retain) NSArray *tokens;
 
+- (void)addMatchRange:(id)arg1;
+- (void)addToken:(id)arg1;
 - (short)category;
 - (id)contentString;
+- (id)dateFilter;
 - (void)dealloc;
 - (unsigned long long)groupId;
-- (id)initWithContentString:(id)arg1 category:(short)arg2 groupId:(unsigned long long)arg3 owningGroupId:(unsigned long long)arg4;
-- (id)matchRange;
+- (id)initWithContentString:(id)arg1 token:(id)arg2 category:(short)arg3 lookupIdentifier:(id)arg4 dateFilter:(id)arg5 groupId:(unsigned long long)arg6 owningGroupId:(unsigned long long)arg7;
+- (id)lookupIdentifier;
+- (id)matchRanges;
 - (unsigned long long)owningGroupId;
+- (id)tokens;
 
 @end

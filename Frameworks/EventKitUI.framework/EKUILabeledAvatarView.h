@@ -6,6 +6,7 @@
     CNAvatarView * _avatar;
     UILabel * _label;
     unsigned long long  _labelPlacement;
+    bool  _loadContactsAsynchronously;
     unsigned long long  _options;
     UIViewController * _viewController;
 }
@@ -14,6 +15,7 @@
 @property (retain) CNContact *contact;
 @property (retain) UILabel *label;
 @property unsigned long long labelPlacement;
+@property (nonatomic) bool loadContactsAsynchronously;
 @property unsigned long long options;
 @property UIViewController *viewController;
 
@@ -34,15 +36,18 @@
 - (id)initWithPlacement:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)label;
 - (unsigned long long)labelPlacement;
+- (bool)loadContactsAsynchronously;
 - (unsigned long long)options;
 - (void)setAvatar:(id)arg1;
 - (void)setContact:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelPlacement:(unsigned long long)arg1;
+- (void)setLoadContactsAsynchronously:(bool)arg1;
 - (void)setOptions:(unsigned long long)arg1;
 - (void)setUpTap;
 - (void)setViewController:(id)arg1;
 - (void)setup;
+- (void)updateAvatarViewWithAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (void)updateLabel;
 - (void)updateWithAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (void)updateWithContacts:(id)arg1;

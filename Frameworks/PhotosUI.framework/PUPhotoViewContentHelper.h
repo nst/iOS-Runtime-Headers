@@ -26,6 +26,7 @@
     double  _contentAlpha;
     UIView * _contentView;
     double  _cornerRadius;
+    unsigned long long  _cornersToRound;
     <PUPhotoViewContentHelperDelegate> * _delegate;
     struct { 
         bool respondsToLivePhotoWillBeginPlaybackWithStyle; 
@@ -100,6 +101,7 @@
 @property (nonatomic) double contentAlpha;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic) double cornerRadius;
+@property (nonatomic, readonly) unsigned long long cornersToRound;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotoViewContentHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -110,6 +112,7 @@
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageContentFrame;
 @property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } imageTransform;
+@property (getter=isImageViewEdgeAntialiasingEnabled, nonatomic) bool imageViewEdgeAntialiasingEnabled;
 @property (nonatomic, retain) PHLivePhoto *livePhoto;
 @property (getter=isLivePhotoHidden, nonatomic) bool livePhotoHidden;
 @property (nonatomic, retain) PHLivePhotoView *livePhotoView;
@@ -187,6 +190,7 @@
 - (id)contentView;
 - (struct CGSize { double x1; double x2; })contentViewSizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)cornerRadius;
+- (unsigned long long)cornersToRound;
 - (id)delegate;
 - (id)featureSpec;
 - (long long)fillMode;
@@ -198,6 +202,7 @@
 - (id)initWithContentView:(id)arg1;
 - (bool)isAnimatingRoundedCorners;
 - (bool)isHighlighted;
+- (bool)isImageViewEdgeAntialiasingEnabled;
 - (bool)isLivePhotoHidden;
 - (bool)isTextBannerVisible;
 - (void)layoutSubviewsOfContentView;
@@ -228,13 +233,15 @@
 - (void)setCollectionTileLayoutTemplate:(id)arg1;
 - (void)setContentAlpha:(double)arg1;
 - (void)setCornerRadius:(double)arg1;
-- (void)setCornerRadius:(double)arg1 useOverlay:(bool)arg2 overlayColor:(id)arg3;
+- (void)setCornerRadius:(double)arg1 cornersToRound:(unsigned long long)arg2 useOverlay:(bool)arg3 overlayColor:(id)arg4;
+- (void)setCornersToRound:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFeatureSpec:(id)arg1;
 - (void)setFillMode:(long long)arg1;
 - (void)setFlattensBadgeView:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setImageTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setImageViewEdgeAntialiasingEnabled:(bool)arg1;
 - (void)setLivePhoto:(id)arg1;
 - (void)setLivePhotoHidden:(bool)arg1;
 - (void)setLivePhotoView:(id)arg1;

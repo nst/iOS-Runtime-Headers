@@ -100,6 +100,7 @@
 - (void)setLimitingEndDate:(id)arg1;
 - (void)setLimitingStartDate:(id)arg1;
 - (void)setNumberOfUnseenMissedCalls:(long long)arg1;
+- (void)setOutgoingLocalParticipantUUID:(id)arg1 forRecentCallsMatchingPredicate:(id)arg2;
 - (void)setPostFetchingPredicate:(id)arg1;
 - (void)setReCoalesce:(bool)arg1;
 - (void)setRecentCalls:(id)arg1;

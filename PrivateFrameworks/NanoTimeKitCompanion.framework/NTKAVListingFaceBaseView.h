@@ -37,7 +37,7 @@
 - (void)_cancelPauseLockout;
 - (bool)_changeCurrentListing;
 - (void)_cleanupAfterOrb:(bool)arg1;
-- (void)_complicationFlickerWorkaroundAnimationWithDuration:(double)arg1 applier:(id /* block */)arg2;
+- (void)_complicationFlickerWorkgroundAnimationWithDuration:(double)arg1 applier:(id /* block */)arg2;
 - (id)_curtainView;
 - (bool)_curtainViewVisible;
 - (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
@@ -65,7 +65,6 @@
 - (void)_reset;
 - (void)_resetVideoForListing;
 - (void)_selectDefaultListing;
-- (bool)_shouldPlayVideoOnScreenWake;
 - (void)_showCurtainView;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_timeLabelUsesLegibility;
@@ -78,7 +77,7 @@
 - (id)currentListing;
 - (void)dealloc;
 - (void)faultInFaceContentSkippedDuringSwiping;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (bool)paused;
 - (void)setContentUnloadedForFaceSwiping:(bool)arg1;
 - (void)setCurrentListing:(id)arg1;

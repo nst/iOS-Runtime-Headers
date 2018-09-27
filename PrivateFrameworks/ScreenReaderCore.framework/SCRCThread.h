@@ -4,14 +4,11 @@
 
 @interface SCRCThread : NSObject {
     id  __key;
-    NSString * _description;
-    bool  _descriptionChanged;
     bool  _isInvalid;
     bool  _isRegistered;
     bool  _isTimerSet;
     bool  _isWaitingForStoppingThread;
     double  _lastStartTime;
-    NSThread * _nsThread;
     SCRCStackQueue * _queue;
     id  _queueLock;
     struct __CFRunLoop { } * _runLoop;
@@ -28,6 +25,7 @@
 + (bool)_removeThreadFromRegisteredThreads:(id)arg1 withThreadKey:(id)arg2;
 + (long long)activeThreadCount;
 + (id)activity;
++ (id)currentThreadTaskCache;
 + (long long)defaultThreadPriority;
 + (void)initialize;
 + (void)invalidateForKey:(id)arg1;
@@ -37,6 +35,7 @@
 
 - (void).cxx_destruct;
 - (void)_assignThreadPriority;
+- (bool)_debug_currentlyRunningOnThisThread;
 - (void)_enqueueImmediateTask:(id)arg1 cancelMask:(unsigned int)arg2 lastStartTime:(double*)arg3;
 - (void)_enqueueTask:(id)arg1 cancelMask:(unsigned int)arg2 lastStartTime:(double*)arg3;
 - (void)_enqueueWaitingTask:(id)arg1 cancelMask:(unsigned int)arg2 lastStartTime:(double*)arg3;
@@ -50,7 +49,6 @@
 - (void)_setIsWaitingForStoppingThread:(bool)arg1;
 - (void)_setKey:(id)arg1;
 - (void)_setLastStartTime:(double)arg1;
-- (void)_setName:(id)arg1;
 - (bool)_shouldStop;
 - (void)_threadDidStop;
 - (void)dealloc;

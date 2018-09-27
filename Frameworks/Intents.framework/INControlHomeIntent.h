@@ -4,27 +4,35 @@
 
 @interface INControlHomeIntent : INIntent <INControlHomeIntentExport>
 
-@property (nonatomic, readonly, copy) INHomeAttribute *attribute;
+@property (nonatomic, readonly, copy) NSArray *contents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSArray *entities;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (id)_categoryVerb;
 - (id)_dictionaryRepresentation;
+- (bool)_hasTitle;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
+- (id)_subtitleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 - (id)_typedBackingStore;
-- (id)attribute;
+- (id)contents;
 - (id)domain;
-- (id)entities;
-- (id)initWithEntities:(id)arg1 attribute:(id)arg2;
+- (id)initWithContents:(id)arg1;
 - (id)parametersByName;
-- (void)setAttribute:(id)arg1;
+- (void)setContents:(id)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setEntities:(id)arg1;
 - (void)setParametersByName:(id)arg1;
 - (void)setVerb:(id)arg1;
 - (id)verb;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
+- (id)shortDescriptionWithOutcome:(id)arg1;
 
 @end

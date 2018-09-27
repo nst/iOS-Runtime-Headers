@@ -3,17 +3,19 @@
  */
 
 @interface RTCReporting : NSObject <RTCReportingDeallocNotifierDelegate> {
+    NSArray * _blacklistedEvents;
     NSXPCConnection * _connection;
     int  _counter;
     NSArray * _enabledBackendNames;
-    int  _intervalMultiplier;
     id /* block */  _loggingBlock;
     NSMutableDictionary * _periodicServiceDict;
+    NSObject<OS_dispatch_queue> * _reportingPeriodicTasksQueue;
     NSObject<OS_dispatch_queue> * _reportingQueue;
     RTCReportingDeallocNotifier * _strongDeallocNotifier;
     NSObject<OS_dispatch_source> * _timer;
     id  _weakDeallocNotifier;
     id  _weakMessageSentDelegate;
+    NSArray * _whitelistedEvents;
 }
 
 @property (nonatomic, copy) id /* block */ messageLoggingBlock;
@@ -24,7 +26,7 @@
 + (void)regeneratePersistentIdentifierForDNU:(bool)arg1;
 + (bool)sendOneMessageWithSessionInfo:(id)arg1 userInfo:(id)arg2 category:(unsigned short)arg3 type:(unsigned short)arg4 payload:(id)arg5 error:(id*)arg6;
 
-- (void)_myPeriodicTask:(unsigned short)arg1 type:(unsigned short)arg2;
+- (void)_myPeriodicTask:(unsigned short)arg1 type:(unsigned short)arg2 intervalMultiplier:(int)arg3 updateTimeout:(unsigned long long)arg4;
 - (void)aboutToDealloc;
 - (void)dealloc;
 - (void)fetchReportingStatesWithUserInfo:(id)arg1 fetchComplete:(id /* block */)arg2;
@@ -33,6 +35,8 @@
 - (void)flushMessagesWithCompletion:(id /* block */)arg1;
 - (id)initWithSessionInfo:(id)arg1 userInfo:(id)arg2 frameworksToCheck:(id)arg3;
 - (id)initWithSessionInfo:(id)arg1 userInfo:(id)arg2 frameworksToCheck:(id)arg3 aggregationBlock:(id /* block */)arg4;
+- (bool)isBlacklistedEvent:(unsigned short)arg1;
+- (bool)isWhitelistedEvent:(unsigned short)arg1;
 - (id /* block */)messageLoggingBlock;
 - (id)messageSentDelegate;
 - (void)notifyMessageWasSent:(id)arg1;

@@ -7,6 +7,7 @@
 
 - (NSString *)bridgedClientInfo;
 - (bool)claimSecureElementForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (NSString *)deviceDescriptionForPaymentWebService:(PKPaymentWebService *)arg1;
 - (NSString *)deviceName;
 - (NSString *)deviceRegion;
@@ -50,6 +51,7 @@
 - (void)setMaximumPaymentCards:(unsigned long long)arg1;
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
 - (bool)supportsCredentialType:(long long)arg1;
+- (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (bool)supportsExpressMode:(NSString *)arg1;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (PKTrustedDeviceEnrollmentInfo *)trustedDeviceEnrollmentInfoForWebService:(PKPaymentWebService *)arg1;

@@ -17,6 +17,9 @@
     NSString * _messageIdHeader;
     NSString * _notificationMessageId;
     NSString * _preview;
+    NSString * _publisherBulletinId;
+    bool  _replaceStandaloneNotification;
+    NSString * _serverId;
     unsigned long long  _source;
     unsigned long long  _status;
     unsigned long long  _statusVersion;
@@ -42,6 +45,9 @@
 @property (nonatomic, copy) NSString *messageIdHeader;
 @property (nonatomic, copy) NSString *notificationMessageId;
 @property (nonatomic, retain) NSString *preview;
+@property (nonatomic, copy) NSString *publisherBulletinId;
+@property (nonatomic) bool replaceStandaloneNotification;
+@property (nonatomic, copy) NSString *serverId;
 @property (nonatomic) unsigned long long source;
 @property (nonatomic) unsigned long long status;
 @property (nonatomic) unsigned long long statusVersion;
@@ -55,6 +61,9 @@
 + (unsigned long long)addState:(unsigned long long)arg1 toStatus:(unsigned long long)arg2;
 + (id)attachmentIdForURL:(id)arg1;
 + (bool)checkStatus:(unsigned long long)arg1 stateToCheck:(unsigned long long)arg2;
++ (id)generateConversationIdWithAccountId:(id)arg1 conversationId:(id)arg2;
++ (id)generateMessageHashForMessage:(id)arg1;
++ (id)generateNotificationIdWithFolderId:(id)arg1 remoteId:(id)arg2;
 + (bool)isMessageURL:(id)arg1;
 + (bool)messageHasMultipleRecipients:(id)arg1;
 + (id)messageIdForURL:(id)arg1;
@@ -84,7 +93,10 @@
 - (id)messageIdHeader;
 - (id)notificationMessageId;
 - (id)preview;
+- (id)publisherBulletinId;
 - (void)removeState:(unsigned long long)arg1;
+- (bool)replaceStandaloneNotification;
+- (id)serverId;
 - (void)setAccountId:(id)arg1;
 - (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
@@ -99,6 +111,9 @@
 - (void)setMessageIdHeader:(id)arg1;
 - (void)setNotificationMessageId:(id)arg1;
 - (void)setPreview:(id)arg1;
+- (void)setPublisherBulletinId:(id)arg1;
+- (void)setReplaceStandaloneNotification:(bool)arg1;
+- (void)setServerId:(id)arg1;
 - (void)setSource:(unsigned long long)arg1;
 - (void)setStatus:(unsigned long long)arg1;
 - (void)setStatusVersion:(unsigned long long)arg1;

@@ -23,6 +23,7 @@
     bool  _isPadding;
     bool  _isTechnical;
     NSString * _language;
+    NSAttributedString * _originalBraille;
     NSString * _originalText;
     NSString * _overrideText;
     NSMutableAttributedString * _pendingBraille;
@@ -47,6 +48,7 @@
 @property (nonatomic) bool isPadding;
 @property (nonatomic, readonly) NSString *language;
 @property (nonatomic, readonly) unsigned long long length;
+@property (nonatomic, copy) NSAttributedString *originalBraille;
 @property (nonatomic, copy) NSString *originalText;
 @property (nonatomic, retain) NSMutableAttributedString *pendingBraille;
 @property (nonatomic, readonly) bool shouldProvideReplacementRange;
@@ -54,6 +56,7 @@
 @property (nonatomic, readonly) bool showEightDot;
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic, readonly) unsigned long long textLength;
+@property (nonatomic, readonly) long long token;
 
 + (void)initialize;
 
@@ -91,7 +94,7 @@
 - (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 token:(long long)arg4 textFocus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg5 contractionMode:(int)arg6 showEightDot:(bool)arg7 showDotsSevenAndEight:(bool)arg8 isEditableText:(bool)arg9;
 - (id)initWithText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 token:(long long)arg4 textFocus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg5 contractionMode:(int)arg6 showEightDot:(bool)arg7 showDotsSevenAndEight:(bool)arg8 technical:(bool)arg9 isEditableText:(bool)arg10;
 - (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 textFocus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 contractionMode:(int)arg7 showEightDot:(bool)arg8 showDotsSevenAndEight:(bool)arg9 technical:(bool)arg10 isEditableText:(bool)arg11;
-- (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 textFocus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 contractionMode:(int)arg7 showEightDot:(bool)arg8 showDotsSevenAndEight:(bool)arg9 technical:(bool)arg10 isEditableText:(bool)arg11 isPadding:(bool)arg12;
+- (id)initWithText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 textFocus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 contractionMode:(int)arg7 showEightDot:(bool)arg8 showDotsSevenAndEight:(bool)arg9 technical:(bool)arg10 isEditableText:(bool)arg11 isPadding:(bool)arg12 editingString:(id)arg13;
 - (void)insertBrailleStringAtCursor:(id)arg1 modifiers:(id)arg2;
 - (bool)isEditableText;
 - (bool)isFocusedOrSelected;
@@ -102,6 +105,7 @@
 - (bool)moveCursorLeft;
 - (bool)moveCursorRight;
 - (bool)moveCursorTo:(unsigned long long)arg1;
+- (id)originalBraille;
 - (id)originalText;
 - (id)pendingBraille;
 - (void)removeCursor;
@@ -109,6 +113,7 @@
 - (void)setBrailleString:(id)arg1;
 - (void)setIsEditableText:(bool)arg1;
 - (void)setIsPadding:(bool)arg1;
+- (void)setOriginalBraille:(id)arg1;
 - (void)setOriginalText:(id)arg1;
 - (void)setPendingBraille:(id)arg1;
 - (void)setText:(id)arg1;
@@ -120,6 +125,7 @@
 - (unsigned long long)textLength;
 - (long long)token;
 - (void)translate;
+- (void)translate:(bool)arg1;
 - (id)translatedTextForBraille:(out id*)arg1 replacingTextInRange:(out struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 cursor:(out unsigned long long*)arg3;
 
 @end

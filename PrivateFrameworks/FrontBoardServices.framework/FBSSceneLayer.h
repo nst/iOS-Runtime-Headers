@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) bool shouldObserveUpdates;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_initWithLevel:(double)arg1 context:(id)arg2;
 - (void)_setLevel:(double)arg1 fromObserver:(bool)arg2;
 - (void)_synchronize:(id /* block */)arg1;

@@ -11,6 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *localizedDescription;
 @property (nonatomic, copy) NSString *localizedLabel;
+@property (nonatomic, readonly, copy) NSString *persistentIdentifier;
 @property (readonly) Class superclass;
 
 + (bool)supportsSecureCoding;

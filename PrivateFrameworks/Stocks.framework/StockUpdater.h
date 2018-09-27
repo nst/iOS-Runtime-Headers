@@ -20,9 +20,8 @@
 @property (nonatomic, copy) id /* block */ updateCompletionHandler;
 
 - (void).cxx_destruct;
-- (id)_parseDataSourceMapFromDataSourceDictionaries:(id)arg1;
 - (void)_parseExchangeDictionaries:(id)arg1;
-- (void)_parseQuoteDictionaries:(id)arg1 withDataSources:(id)arg2;
+- (void)_parseQuoteDictionaries:(id)arg1 withDataSourceDictionaries:(id)arg2;
 - (bool)_updateStocks:(id)arg1 comprehensive:(bool)arg2 forceUpdate:(bool)arg3;
 - (id)aggregateDictionaryDomain;
 - (id)delegate;

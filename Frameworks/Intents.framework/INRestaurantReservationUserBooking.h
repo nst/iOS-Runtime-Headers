@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, copy) NSString *advisementText;
-@property (nonatomic, retain) NSDate *dateStatusModified;
+@property (nonatomic, copy) NSDate *dateStatusModified;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;

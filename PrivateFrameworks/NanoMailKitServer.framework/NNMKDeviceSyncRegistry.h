@@ -14,6 +14,7 @@
     NSString * _path;
     bool  _protectedContentChannelSupported;
     bool  _recreatedFromScratch;
+    NSNumber * _supportsWebKit;
 }
 
 @property (nonatomic) unsigned long long currentDatabaseSchemaVersion;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic) bool protectedContentChannelSupported;
 @property (nonatomic, readonly) bool recreatedFromScratch;
+@property (nonatomic) NSNumber *supportsWebKit;
 
 - (void).cxx_destruct;
 - (void)_deleteAllObjectsFromTable:(id)arg1;
@@ -42,6 +44,10 @@
 - (id)_selectSyncedMessagesWhere:(id)arg1 blockForBinding:(id /* block */)arg2;
 - (void)_setControlValueForKey:(id)arg1 withBlockForBinding:(id /* block */)arg2;
 - (id)_ungroupGroupedValue:(id)arg1;
+- (id)accountIdForUsername:(id)arg1;
+- (unsigned long long)accountSourceTypeForAccountId:(id)arg1;
+- (unsigned long long)accountSourceTypeForMailboxId:(id)arg1;
+- (unsigned long long)accountSourceTypeForMessageId:(id)arg1;
 - (id)activeMailboxes;
 - (void)addObjectIds:(id)arg1 type:(id)arg2 resendInterval:(unsigned long long)arg3 forIDSIdentifierNotYetAckd:(id)arg4;
 - (void)addOrUpdateMailbox:(id)arg1;
@@ -103,6 +109,8 @@
 - (void)setOrganizeByThread:(bool)arg1;
 - (void)setProgress:(long long)arg1 forComposedMessageWithId:(id)arg2;
 - (void)setProtectedContentChannelSupported:(bool)arg1;
+- (void)setSupportsWebKit:(id)arg1;
+- (id)supportsWebKit;
 - (id)syncEnabledMailboxes;
 - (unsigned long long)syncVersionForMailboxId:(id)arg1;
 - (id)syncedAccountForAccountWithId:(id)arg1;
@@ -115,6 +123,7 @@
 - (id)syncedMessagesForConversationWithId:(id)arg1;
 - (id)syncedMessagesKeyedByMessageIdAfterDateReceived:(id)arg1 mailboxId:(id)arg2;
 - (id)typeForIDSIdentifierNotYetAckd:(id)arg1;
+- (void)updateSourceType:(unsigned long long)arg1 forAccountId:(id)arg2;
 - (void)updateSyncActiveForMailbox:(id)arg1;
 - (void)updateSyncEnabledForMailbox:(id)arg1;
 - (void)updateSyncRequestedForMailbox:(id)arg1;

@@ -20,6 +20,7 @@
 - (struct CGPoint { double x1; double x2; })_visibleBannerCenterPosition:(struct CGSize { double x1; double x2; })arg1;
 - (void)addBannerView:(id)arg1;
 - (void)addConstraintsForBannerView;
+- (void)addConstraintsForTVOSBannerView;
 - (bool)bannerAnimating;
 - (id)bannerView;
 - (bool)bannerVisible;
@@ -30,7 +31,6 @@
 - (void)handleWindowPan:(id)arg1;
 - (void)handleWindowSingleTap:(id)arg1;
 - (void)hideBannerQuickly:(bool)arg1;
-- (void)layoutBanner;
 - (void)setBannerAnimating:(bool)arg1;
 - (void)setBannerView:(id)arg1;
 - (void)setBannerVisible:(bool)arg1;

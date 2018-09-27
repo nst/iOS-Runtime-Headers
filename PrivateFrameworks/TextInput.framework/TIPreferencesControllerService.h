@@ -15,6 +15,7 @@
 
 + (id)sharedPreferencesController;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;

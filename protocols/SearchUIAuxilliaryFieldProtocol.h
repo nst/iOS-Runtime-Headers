@@ -11,6 +11,7 @@
 - (NSString *)auxiliaryMiddleText;
 - (NSString *)auxiliaryTopText;
 - (SFCard *)card;
+- (SFSearchResult *)identifyingResult;
 - (SFImage *)thumbnail;
 - (SFRichText *)title;
 

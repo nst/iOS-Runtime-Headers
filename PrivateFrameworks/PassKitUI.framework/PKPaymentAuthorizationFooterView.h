@@ -19,10 +19,13 @@
     <PKPaymentAuthorizationFooterViewDelegate> * _delegate;
     NSMutableArray * _dynamicRegularConstraints;
     PKGlyphView * _glyphView;
+    bool  _hasPearl;
     NSArray * _hiddenConstraints;
+    bool  _isPad;
     UILabel * _labelView;
     PKPaymentAuthorizationLayout * _layout;
     UIView * _lockupView;
+    double  _minimumHeight;
     UILabel * _passbookPaymentDetailsView;
     UIButton * _payWithPasscodeButton;
     long long  _queuedConstraintState;
@@ -58,7 +61,7 @@
 - (unsigned long long)confirmationStyle;
 - (id)confirmationTitle;
 - (void)dealloc;
-- (id)defaultHeightConstraint;
+- (id)defaultHeightConstraints;
 - (id)delegate;
 - (void)glyphView:(id)arg1 revealingCheckmark:(bool)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -36,6 +36,10 @@
 - (void)setAudioMix:(id)arg1;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
++ (id)assetReaderAudioMixOutputWithAudioMix:(id)arg1 appliedToAsset:(id)arg2 audioSettings:(id)arg3;
+
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 + (id)assetReaderAudioMixOutputWithAudioMix:(id)arg1 appliedToAsset:(id)arg2 audioSettings:(id)arg3;

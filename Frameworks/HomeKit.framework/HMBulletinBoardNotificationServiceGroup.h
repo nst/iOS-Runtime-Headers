@@ -8,11 +8,9 @@
     HMBulletinBoardNotification * _bulletinBoardNotification;
     NSSet * _cameraProfileUUIDs;
     NSArray * _cameraProfiles;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
+    _HMContext * _context;
+    HMFUnfairLock * _lock;
     NSString * _logID;
-    HMFMessageDispatcher * _msgDispatcher;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     NSUUID * _targetUUID;
     NSUUID * _uniqueIdentifier;
 }
@@ -22,16 +20,13 @@
 @property (nonatomic, readonly) HMBulletinBoardNotification *bulletinBoardNotification;
 @property (nonatomic, retain) NSSet *cameraProfileUUIDs;
 @property (nonatomic, retain) NSArray *cameraProfiles;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *targetUUID;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
@@ -40,8 +35,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1;
 - (void)_callServiceGroupUpdate;
-- (void)_configureClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3;
 - (void)_findObjects;
 - (void)_handleBulletinBoardNotificationServiceGroupUpdateNotification:(id)arg1;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
@@ -52,9 +47,8 @@
 - (id)bulletinBoardNotification;
 - (id)cameraProfileUUIDs;
 - (id)cameraProfiles;
-- (id)clientQueue;
+- (id)context;
 - (void)dealloc;
-- (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleConfigureNotification:(id)arg1;
 - (id)init;
@@ -63,16 +57,11 @@
 - (id)logIdentifier;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
-- (id)msgDispatcher;
-- (id)propertyQueue;
 - (void)setAssociatedServiceUUIDs:(id)arg1;
 - (void)setAssociatedServices:(id)arg1;
 - (void)setCameraProfileUUIDs:(id)arg1;
 - (void)setCameraProfiles:(id)arg1;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
-- (void)setMsgDispatcher:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
+- (void)setContext:(id)arg1;
 - (id)targetUUID;
 - (id)uniqueIdentifier;
 

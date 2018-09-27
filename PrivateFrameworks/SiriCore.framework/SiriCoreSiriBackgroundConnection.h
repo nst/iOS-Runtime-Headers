@@ -5,6 +5,7 @@
 @interface SiriCoreSiriBackgroundConnection : NSObject <SiriCoreConnectionProviderDelegate> {
     unsigned long long  _aceHeaderTimerFireCount;
     NSObject<OS_dispatch_source> * _aceHeaderTimerSource;
+    bool  _betterPathAvailable;
     NSObject<OS_dispatch_data> * _bufferedGeneralOutputData;
     NSObject<OS_dispatch_data> * _bufferedInputData;
     NSObject<OS_dispatch_data> * _bufferedProviderHeaderOutputData;
@@ -18,6 +19,7 @@
     double  _currentStartTime;
     <SiriCoreSiriBackgroundConnectionDelegate> * _delegate;
     bool  _deviceIsInWalkaboutExperimentGroup;
+    bool  _dispatchedSnapshotMetrics;
     NSMutableDictionary * _errorsForConnectionMethods;
     double  _firstByteReadTime;
     double  _firstStartTime;
@@ -42,9 +44,12 @@
     NSString * _peerVersion;
     SiriCorePingInfo * _pingInfo;
     NSObject<OS_dispatch_source> * _pingTimerSource;
+    bool  _primaryConnectionViable;
     NSString * _productTypePrefix;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_data> * _safetyNetBuffer;
+    long long  _secondaryConnectionOpenState;
+    <SiriCoreConnectionProvider> * _secondaryConnectionProvider;
     bool  _siriConnectionUsesPeerManagedSync;
     unsigned long long  _startCount;
     bool  _usesProxyConnection;
@@ -71,6 +76,7 @@
 - (bool)_canFallBackFromError:(id)arg1;
 - (void)_cancelForExtendedValidationFailureWithTrustInfo:(id)arg1;
 - (void)_cancelOutstandingBarriers;
+- (void)_cancelSecondaryConnection;
 - (long long)_checkForProgressOnReadingData;
 - (long long)_checkPings;
 - (void)_closeConnection;
@@ -84,6 +90,7 @@
 - (void)_didEncounterError:(id)arg1;
 - (void)_fallBackToNextConnectionMethod:(long long)arg1 fromError:(id)arg2 afterDelay:(double)arg3;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1 orElse:(id /* block */)arg2;
+- (void)_forceTriggerRetry;
 - (void)_getCellularMetrics:(id)arg1;
 - (id)_getInitialPayloadWithBufferedLength:(unsigned long long*)arg1 forceReconnect:(bool)arg2;
 - (void)_getWifiMetrics:(id)arg1;
@@ -111,9 +118,11 @@
 - (bool)_sendAcePingWithId:(unsigned int)arg1 error:(id*)arg2;
 - (bool)_sendAcePongWithId:(unsigned int)arg1 error:(id*)arg2;
 - (void)_sendGeneralData:(id)arg1;
+- (void)_setNetworkProvider:(id)arg1;
 - (void)_setupReadHandlerOnProvider;
 - (bool)_shouldTrySameConnectionMethodForMethod:(long long)arg1 error:(id)arg2;
 - (void)_startNetworkProviderWithInfo:(id)arg1;
+- (void)_startSecondaryConnection;
 - (void)_startWithConnectionInfo:(id)arg1 proposedFallbackMethod:(long long)arg2 allowFallbackToNewMethod:(bool)arg3;
 - (bool)_tcpInfoIndicatesPoorLinkQuality;
 - (bool)_tryParsingHTTPHeaderData:(id)arg1 partialMessage:(struct __CFHTTPMessage { }*)arg2 statusCode:(long long*)arg3 bytesRead:(unsigned long long*)arg4 error:(id*)arg5;
@@ -132,6 +141,8 @@
 - (void)barrier:(id /* block */)arg1;
 - (void)cancel;
 - (void)connectionProvider:(id)arg1 receivedError:(id)arg2;
+- (void)connectionProvider:(id)arg1 receivedViabilityChangeNotification:(bool)arg2;
+- (void)connectionProviderReceivedBetterRouteNotification:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
@@ -159,6 +170,7 @@
 - (void)startHeartBeat;
 - (void)startWithConnectionInfo:(id)arg1;
 - (void)stopHeartBeat;
+- (void)updateActiveBackgroundConnectionWithSecondary;
 - (bool)usesProxyConnection;
 
 @end

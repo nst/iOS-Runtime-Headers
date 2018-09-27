@@ -141,6 +141,13 @@
 - (id)title;
 - (id)visibilityState;
 - (id)webFrame;
+- (void)webkitCancelFullScreen;
+- (id)webkitCurrentFullScreenElement;
+- (void)webkitExitFullscreen;
+- (bool)webkitFullScreenKeyboardInputAllowed;
+- (id)webkitFullscreenElement;
+- (bool)webkitFullscreenEnabled;
+- (bool)webkitIsFullScreen;
 - (id)xmlEncoding;
 - (bool)xmlStandalone;
 - (id)xmlVersion;

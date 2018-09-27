@@ -15,6 +15,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (bool)_areEligibleSceneSettings:(id)arg1 forScene:(id)arg2;
 - (id)_bandForSceneLevel:(double)arg1 createIfNeeded:(bool)arg2;
 - (id)_deactivationBandsForLevel:(double)arg1;

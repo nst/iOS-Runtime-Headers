@@ -5,6 +5,8 @@
 @interface NTKUpNextCollectionViewFlowLayout : UICollectionViewFlowLayout {
     NSIndexPath * _bottomElementIndexPath;
     NTKUpNextCollectionViewFlowLayoutAttributes * _decorationLayoutInfo;
+    CLKDevice * _device;
+    NSSet * _dwellIndexPathes;
     double  _headerAlpha;
     NSDictionary * _headerLayoutInfo;
     double  _highTransitionBottomOffset;
@@ -13,10 +15,13 @@
     NSIndexPath * _indexPathToSnapTo;
     NSDictionary * _layoutInfo;
     double  _lowTransitionScale;
+    double  _lowTransitionShift;
+    double  _maximumDarkeningAmount;
     bool  _needsHeaderUpdate;
     bool  _needsInsetsUpdate;
     NSSet * _previousSectionsWithHeaders;
     NSSet * _sectionsWithHeaders;
+    bool  _showingAllAttributes;
     bool  _snappingEnabled;
     double  _snappingOffset;
     double  _statusBarDecorationHeight;
@@ -29,12 +34,16 @@
 }
 
 @property (nonatomic, retain) NSIndexPath *bottomElementIndexPath;
+@property (nonatomic, readonly) NSSet *dwellIndexPathes;
 @property (nonatomic) double headerAlpha;
 @property (nonatomic) double highTransitionBottomOffset;
 @property (nonatomic) double highTransitionScale;
 @property (nonatomic) double highTransitionShift;
 @property (nonatomic, retain) NSIndexPath *indexPathToSnapTo;
 @property (nonatomic) double lowTransitionScale;
+@property (nonatomic) double lowTransitionShift;
+@property (nonatomic) double maximumDarkeningAmount;
+@property (getter=isShowingAllAttributes, nonatomic) bool showingAllAttributes;
 @property (getter=isSnappingEnabled, nonatomic) bool snappingEnabled;
 @property (nonatomic) double snappingOffset;
 @property (nonatomic) double statusBarDecorationHeight;
@@ -51,7 +60,9 @@
 - (bool)_hasHeaderForSection:(long long)arg1;
 - (void)_updateContentInsetsIfNeeded;
 - (void)_updateSectionHeaderListIfNeeded;
+- (void)_updateVisibilityForLayoutAttributes:(id)arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)bottomElementIndexPath;
+- (id)dwellIndexPathes;
 - (void)finalizeCollectionViewUpdates;
 - (id)flowLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (double)headerAlpha;
@@ -63,12 +74,16 @@
 - (id)init;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isLastIndexPathWithContent:(id)arg1;
+- (bool)isShowingAllAttributes;
 - (bool)isSnappingEnabled;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (double)lowTransitionScale;
+- (double)lowTransitionShift;
+- (double)maximumDarkeningAmount;
 - (void)prepareLayout;
 - (void)setBottomElementIndexPath:(id)arg1;
 - (void)setHeaderAlpha:(double)arg1;
@@ -77,6 +92,9 @@
 - (void)setHighTransitionShift:(double)arg1;
 - (void)setIndexPathToSnapTo:(id)arg1;
 - (void)setLowTransitionScale:(double)arg1;
+- (void)setLowTransitionShift:(double)arg1;
+- (void)setMaximumDarkeningAmount:(double)arg1;
+- (void)setShowingAllAttributes:(bool)arg1;
 - (void)setSnappingEnabled:(bool)arg1;
 - (void)setSnappingOffset:(double)arg1;
 - (void)setStatusBarDecorationHeight:(double)arg1;

@@ -26,5 +26,6 @@
 - (void)removeKey:(id)arg1 value:(id)arg2;
 - (id)rowIdsOfEntriesBeforeTimeStamp:(double)arg1;
 - (void)saveValue:(id)arg1 forKey:(id)arg2;
+- (void)tearDown;
 
 @end

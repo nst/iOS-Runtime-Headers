@@ -3,10 +3,10 @@
  */
 
 @interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBUIProcessManagerInternal> {
-    FBApplicationLibrary * _appLibrary;
+    <FBApplicationInfoProvider> * _appInfoProvider;
     NSObject<OS_dispatch_queue> * _callOutQueue;
-    FBApplicationProcessWatchdogPolicy * _defaultWatchdogPolicy;
     FBApplicationProcess * _foregroundAppProcess;
+    FBApplicationProcessWatchdogPolicy * _noDirectAccess_defaultWatchdogPolicy;
     NSHashTable * _observers;
     FBApplicationProcess * _preferredForegroundAppProcess;
     NSMutableSet * _preventIdleSleepReasons;
@@ -20,18 +20,21 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (retain) FBApplicationProcessWatchdogPolicy *defaultWatchdogPolicy;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) FBApplicationProcess *systemApplicationProcess;
+@property (nonatomic, readonly) FBApplicationProcess *systemApplicationProcess;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_processesQueue_processForPID:(int)arg1;
 - (id)_processesQueue_processesForBundleIdentifier:(id)arg1;
 - (void)_queue_addProcess:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_evaluateForegroundEventRouting;
 - (void)_queue_notifyObserversUsingBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (id)_queue_reallyRegisterProcessForProcessHandle:(id)arg1;
 - (void)_queue_removeProcess:(id)arg1 withBundleID:(id)arg2 pid:(int)arg3;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1;
@@ -45,6 +48,7 @@
 - (id)createApplicationProcessForBundleID:(id)arg1 withExecutionContext:(id)arg2;
 - (id)currentProcess;
 - (void)dealloc;
+- (id)defaultWatchdogPolicy;
 - (id)description;
 - (id)init;
 - (void)invalidateClientWorkspace:(id)arg1;
@@ -53,7 +57,10 @@
 - (bool)ping;
 - (id)processForPID:(int)arg1;
 - (id)processesForBundleIdentifier:(id)arg1;
+- (id)registerProcessForAuditToken:(struct { unsigned int x1[8]; })arg1;
+- (id)registerProcessForHandle:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)setDefaultWatchdogPolicy:(id)arg1;
 - (id)systemApplicationProcess;
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (id)workspaceForSceneClientWithIdentity:(id)arg1;

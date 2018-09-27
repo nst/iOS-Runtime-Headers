@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)applyTransitionFraction:(double)arg1 fromTimeScale:(unsigned long long)arg2 toTimeScale:(unsigned long long)arg3;
 - (void)colorize:(id)arg1;
-- (id)initWithRadius:(double)arg1;
+- (id)initWithRadius:(double)arg1 forDevice:(id)arg2;
 - (id)labelsForTimeScale:(unsigned long long)arg1;
 - (id)ticksForTimeScale:(unsigned long long)arg1;
 - (void)updateTimeScale:(unsigned long long)arg1;

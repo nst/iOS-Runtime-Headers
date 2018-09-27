@@ -17,6 +17,7 @@
     bool  _isShowingLatestMessageAsBreadcrumb;
     NSString * _messageGUID;
     long long  _messageIDOfLastMessageInSession;
+    bool  _parentChatHasAllUnknownRecipients;
     bool  _payloadInShelf;
     NSArray * _pendingAttachmentData;
     IMPluginPayload * _pluginPayload;
@@ -45,10 +46,12 @@
 @property (nonatomic, retain) NSString *messageGUID;
 @property (nonatomic, readonly) long long messageIDOfLastMessageInSession;
 @property (nonatomic, readonly, retain) NSData *messagePayloadDataForSending;
+@property (nonatomic) bool parentChatHasAllUnknownRecipients;
 @property (nonatomic, retain) NSData *payload;
 @property (nonatomic) bool payloadInShelf;
 @property (nonatomic, retain) NSArray *pendingAttachmentData;
 @property (nonatomic, retain) IMPluginPayload *pluginPayload;
+@property (nonatomic, readonly) LPLinkMetadata *richLinkMetadata;
 @property (nonatomic, retain) NSString *sessionGUID;
 @property (getter=isShowingLatestMessageAsBreadcrumb, nonatomic, readonly) bool showingLatestMessageAsBreadcrumb;
 @property (nonatomic, readonly, retain) NSAttributedString *statusAttributedString;
@@ -110,6 +113,7 @@
 - (long long)messageIDOfLastMessageInSession;
 - (id)messagePayloadDataForSending;
 - (void)needsResize;
+- (bool)parentChatHasAllUnknownRecipients;
 - (id)payload;
 - (void)payloadDidChange;
 - (bool)payloadInShelf;
@@ -120,6 +124,7 @@
 - (void)playbackWithCompletionBlock:(id /* block */)arg1;
 - (id)pluginPayload;
 - (void)pluginPayloadDidChange:(unsigned long long)arg1;
+- (id)richLinkMetadata;
 - (void)sendPayload:(id)arg1;
 - (void)sendPayload:(id)arg1 attachments:(id)arg2;
 - (id)sessionGUID;
@@ -131,6 +136,7 @@
 - (void)setInitialMessageIsFromMe:(bool)arg1;
 - (void)setLast:(bool)arg1;
 - (void)setMessageGUID:(id)arg1;
+- (void)setParentChatHasAllUnknownRecipients:(bool)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPayload:(id)arg1 attachments:(id)arg2;
 - (void)setPayloadInShelf:(bool)arg1;

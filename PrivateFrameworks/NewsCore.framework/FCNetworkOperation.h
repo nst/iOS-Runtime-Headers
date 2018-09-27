@@ -6,8 +6,6 @@
 
 @property (nonatomic, readonly) double preferredTimeoutIntervalForRequest;
 
-+ (bool)isNetworkOperationThrottlingEnabled;
-
 - (bool)_canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
 - (bool)canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
 - (unsigned long long)maxRetries;

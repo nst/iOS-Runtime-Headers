@@ -2,17 +2,21 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBIntentSlotVocabularyPolicy : PBCodable <NSCopying> {
-    NSMutableArray * _intentSlotNames;
-    NSMutableArray * _intentSlotVocabularyConcepts;
-    PBUnknownFields * _unknownFields;
+@interface _INPBIntentSlotVocabularyPolicy : PBCodable <NSCopying, NSSecureCoding, _INPBIntentSlotVocabularyPolicy> {
+    struct { }  _has;
+    NSArray * _intentSlotNames;
+    NSArray * _intentSlotVocabularyConcepts;
 }
 
-@property (nonatomic, retain) NSMutableArray *intentSlotNames;
-@property (nonatomic, retain) NSMutableArray *intentSlotVocabularyConcepts;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *intentSlotNames;
+@property (nonatomic, readonly) unsigned long long intentSlotNamesCount;
+@property (nonatomic, copy) NSArray *intentSlotVocabularyConcepts;
+@property (nonatomic, readonly) unsigned long long intentSlotVocabularyConceptsCount;
+@property (readonly) Class superclass;
 
-+ (Class)intentSlotNamesType;
 + (Class)intentSlotVocabularyConceptsType;
 
 - (void).cxx_destruct;
@@ -21,7 +25,6 @@
 - (void)clearIntentSlotNames;
 - (void)clearIntentSlotVocabularyConcepts;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;
 - (id)intentSlotNames;
@@ -31,11 +34,9 @@
 - (id)intentSlotVocabularyConceptsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)intentSlotVocabularyConceptsCount;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setIntentSlotNames:(id)arg1;
 - (void)setIntentSlotVocabularyConcepts:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

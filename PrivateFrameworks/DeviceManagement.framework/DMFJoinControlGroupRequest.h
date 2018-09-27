@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFJoinControlGroupRequest : CATTaskRequest {
+@interface DMFJoinControlGroupRequest : DMFTaskRequest {
     NSDate * _expirationDate;
     DMFControlGroupIdentifier * _groupIdentifier;
     NSArray * _leaderIdentifiers;

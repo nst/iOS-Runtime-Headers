@@ -21,13 +21,19 @@
 
 - (void)__cancelAllRequestsAndReply:(id /* block */)arg1;
 - (void)__cancelRequestWithUUID:(id)arg1 reply:(id /* block */)arg2;
+- (id)__collectJetsamFallbackLogsAndCompress:(bool)arg1;
 - (void)__log:(id)arg1 timestamp:(bool)arg2 reply:(id /* block */)arg3;
+- (void)__logsCollectedWithTemporaryURL:(id)arg1 receipts:(id)arg2 error:(id)arg3 outputURL:(id)arg4 compress:(bool)arg5 reply:(id /* block */)arg6;
+- (id)__mostRecentInDirectories:(id)arg1 include:(id)arg2 exclude:(id)arg3 maxAge:(double)arg4;
 - (void)__queryLocalPeerAndReply:(id /* block */)arg1;
 - (void)__queryPeerCacheAndReply:(id /* block */)arg1;
 - (void)__startBrowsingAndReply:(id /* block */)arg1;
 - (void)__startMonitoringEvents:(id)arg1 reply:(id /* block */)arg2;
 - (void)__stopBrowsingAndReply:(id /* block */)arg1;
 - (void)__stopMonitoringEvents:(id)arg1 reply:(id /* block */)arg2;
+- (bool)__tarballUsingBOMWithSource:(id)arg1 destination:(id)arg2 error:(id*)arg3;
+- (bool)__tarballUsingToolWithSource:(id)arg1 destination:(id)arg2 error:(id*)arg3;
+- (bool)__tarballWithSource:(id)arg1 destination:(id)arg2 error:(id*)arg3;
 - (void)cancelAllRequests;
 - (void)cancelRequestWithUUID:(id)arg1;
 - (id)collectLogItems:(id)arg1 outputURL:(id)arg2 compress:(bool)arg3 peer:(id)arg4 update:(id /* block */)arg5 diagnostics:(id /* block */)arg6 receipts:(id*)arg7 error:(out id*)arg8;

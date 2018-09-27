@@ -2,15 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
  */
 
-@interface MTPreviewBackgroundMaterialSettings : NSObject <MTMaterialOverlaySettings, MTMaterialSettings, MTZooming, _MTMaterialVersioning>
+@interface MTPreviewBackgroundMaterialSettings : NSObject <MTMaterialOverlaySettings, MTMaterialSettings, MTZooming>
 
+@property (nonatomic, readonly, copy) UIColor *baseOverlayColor;
+@property (nonatomic) double baseOverlayTintAlpha;
 @property (nonatomic) double blurRadius;
 @property (nonatomic) double brightness;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double luminanceAlpha;
-@property (nonatomic, readonly) long long materialVersion;
 @property (nonatomic) double primaryOverlayTintAlpha;
 @property (nonatomic, readonly, copy) UIColor *primaryOverlayTintColor;
 @property (nonatomic) double saturation;
@@ -24,15 +25,17 @@
 
 + (id)sharedMaterialSettings;
 
+- (id)baseOverlayColor;
+- (double)baseOverlayTintAlpha;
 - (double)blurRadius;
 - (double)brightness;
 - (double)luminanceAlpha;
-- (long long)materialVersion;
 - (double)primaryOverlayTintAlpha;
 - (id)primaryOverlayTintColor;
 - (double)saturation;
 - (double)secondaryOverlayTintAlpha;
 - (id)secondaryOverlayTintColor;
+- (void)setBaseOverlayTintAlpha:(double)arg1;
 - (void)setBlurRadius:(double)arg1;
 - (void)setBrightness:(double)arg1;
 - (void)setLuminanceAlpha:(double)arg1;

@@ -18,6 +18,8 @@
 @property (readonly) Class superclass;
 @property (getter=isSystemReady, nonatomic, readonly) bool systemReady;
 
++ (bool)_notifyClientsForTriggerType:(unsigned long long)arg1;
+
 - (void).cxx_destruct;
 - (bool)_isSystemReady;
 - (id)_systemNotReadyError;
@@ -25,6 +27,7 @@
 - (void)checkIn;
 - (id)connectionListenerProvider;
 - (void)dismissAlarmWithIdentifier:(id)arg1 dismissAction:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
+- (id)gatherDiagnostics;
 - (void)getAlarmsWithCompletion:(id /* block */)arg1;
 - (void)handleSystemReady;
 - (id)initWithStorage:(id)arg1;
@@ -38,7 +41,7 @@
 - (void)source:(id)arg1 didAddAlarms:(id)arg2;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;
 - (void)source:(id)arg1 didDismissAlarm:(id)arg2 dismissAction:(unsigned long long)arg3;
-- (void)source:(id)arg1 didFireAlarm:(id)arg2;
+- (void)source:(id)arg1 didFireAlarm:(id)arg2 triggerType:(unsigned long long)arg3;
 - (void)source:(id)arg1 didRemoveAlarms:(id)arg2;
 - (void)source:(id)arg1 didSnoozeAlarm:(id)arg2 snoozeAction:(unsigned long long)arg3;
 - (void)source:(id)arg1 didUpdateAlarms:(id)arg2;

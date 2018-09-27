@@ -11,12 +11,12 @@
     long long  _verticalTextAlignment;
 }
 
-@property long long color;
-@property bool isBold;
-@property bool isEmphasized;
-@property unsigned long long maxLines;
-@property (retain) NSString *string;
-@property long long verticalTextAlignment;
+@property (nonatomic) long long color;
+@property (nonatomic) bool isBold;
+@property (nonatomic) bool isEmphasized;
+@property (nonatomic) unsigned long long maxLines;
+@property (nonatomic, retain) NSString *string;
+@property (nonatomic) long long verticalTextAlignment;
 
 + (id)formattedTextWithString:(id)arg1;
 
@@ -27,7 +27,6 @@
 - (bool)isBold;
 - (bool)isEmphasized;
 - (unsigned long long)maxLines;
-- (id)observableProperties;
 - (void)setColor:(long long)arg1;
 - (void)setIsBold:(bool)arg1;
 - (void)setIsEmphasized:(bool)arg1;

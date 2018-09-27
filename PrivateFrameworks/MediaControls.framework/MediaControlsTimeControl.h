@@ -115,6 +115,7 @@
 - (double)sliderValue;
 - (long long)style;
 - (id)trackLayoutGuide;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateLabelAvoidance;
 - (void)viewDidMoveToSuperview;
 

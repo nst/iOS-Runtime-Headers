@@ -24,10 +24,13 @@
 - (id)getActiveDeviceClass;
 - (const char *)getActiveDeviceClassCString;
 - (int)getOperationCodeFromName:(id)arg1;
+- (id)getPluginsList;
 - (void)handleInboundEvent:(id)arg1;
+- (id)initWithDelegate:(id)arg1 isInternalClient:(bool)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithGroupIdentifer:(id)arg1 delegate:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithPluginIdentifier:(id)arg1 delegate:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithPluginIdentifier:(id)arg1 isGroupIdentifier:(bool)arg2 delegate:(id)arg3 isInternalClient:(bool)arg4 options:(id)arg5 error:(id*)arg6;
+- (bool)loadPluginWithAccessoryInfo:(id)arg1 options:(id)arg2;
 - (void)performNextStepWithOptions:(id)arg1;
 - (void)performStep:(id)arg1 withOptions:(id)arg2;
 - (id)queryNextStep:(id*)arg1;

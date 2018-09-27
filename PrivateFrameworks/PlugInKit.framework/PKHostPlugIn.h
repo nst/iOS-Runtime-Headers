@@ -25,6 +25,7 @@
     unsigned long long  _state;
     <PKPlugIn> * _supersededBy;
     NSUUID * _supersedingUUID;
+    <PKCorePlugInProtocol> * _syncService;
     bool  _terminating;
     unsigned int  _useCount;
 }
@@ -70,6 +71,7 @@
 @property (readonly) Class superclass;
 @property (retain) <PKPlugIn> *supersededBy;
 @property (retain) NSUUID *supersedingUUID;
+@property (retain) <PKCorePlugInProtocol> *syncService;
 @property bool terminating;
 @property (readonly) NSDate *timestamp;
 @property (readonly) NSURL *url;
@@ -85,6 +87,7 @@
 - (bool)active;
 - (id)beganUsingAt;
 - (void)beginUsing:(id /* block */)arg1;
+- (bool)beginUsingWithError:(id*)arg1;
 - (void)changeState:(unsigned long long)arg1;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)createInstanceWithUUID:(id)arg1;
@@ -104,7 +107,7 @@
 - (id /* block */)notificationBlock;
 - (id)plugInPrincipal;
 - (id)pluginConnection;
-- (void)preparePlugin:(id /* block */)arg1;
+- (void)preparePlugInUsingService:(id)arg1 completion:(id /* block */)arg2;
 - (id)queuedHostPrincipal;
 - (id)queuedHostProtocol;
 - (void)resume;
@@ -133,6 +136,7 @@
 - (void)setState:(unsigned long long)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (void)setSupersedingUUID:(id)arg1;
+- (void)setSyncService:(id)arg1;
 - (void)setTerminating:(bool)arg1;
 - (void)setUseCount:(unsigned int)arg1;
 - (void)setUserElection:(long long)arg1;
@@ -141,11 +145,12 @@
 - (void)set_syncQueue:(id)arg1;
 - (id)sourceForm;
 - (bool)spent;
-- (void)startPlugIn:(id /* block */)arg1;
+- (void)startPlugInSynchronously:(bool)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)state;
 - (id)supersededBy;
 - (id)supersedingUUID;
 - (void)suspend;
+- (id)syncService;
 - (bool)terminating;
 - (void)unwind:(unsigned long long)arg1 force:(bool)arg2;
 - (bool)useBundle:(id)arg1 error:(id*)arg2;

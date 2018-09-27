@@ -9,6 +9,7 @@
     NSString * _lastQueryString;
     SPQueryResponse * _lastResponse;
     bool  _queryComplete;
+    bool  _queryDelayedFinished;
     bool  _queryDidFinish;
     SPQueryTask * _queryTask;
     SFResultSection * _searchThroughSection;
@@ -21,6 +22,7 @@
 @property bool infinitePatience;
 @property (retain) SPQueryResponse *lastResponse;
 @property bool queryComplete;
+@property bool queryDelayedFinished;
 @property bool queryDidFinish;
 @property (retain) SPQueryTask *queryTask;
 @property (readonly) SFResultSection *searchThroughSection;
@@ -50,6 +52,7 @@
 - (void)invalidateQuery:(id)arg1;
 - (id)lastResponse;
 - (bool)queryComplete;
+- (bool)queryDelayedFinished;
 - (bool)queryDidFinish;
 - (id)queryTask;
 - (void)resultsDidBecomeInvalid:(id)arg1;
@@ -60,12 +63,14 @@
 - (void)setInfinitePatience:(bool)arg1;
 - (void)setLastResponse:(id)arg1;
 - (void)setQueryComplete:(bool)arg1;
+- (void)setQueryDelayedFinished:(bool)arg1;
 - (void)setQueryDidFinish:(bool)arg1;
 - (void)setQueryTask:(id)arg1;
 - (void)setSpringBoardIsActive:(bool)arg1;
 - (bool)springBoardIsActive;
+- (void)updateWithQueryContext:(id)arg1;
 - (void)updateWithResponse:(id)arg1;
-- (void)updatesDispabled;
+- (void)updatesDisabled;
 - (void)updatesEnabled;
 - (bool)wantsCompletions;
 

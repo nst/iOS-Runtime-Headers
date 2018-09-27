@@ -3,14 +3,14 @@
  */
 
 @interface CKOperationFlowControlManager : NSObject {
-    NSMutableDictionary * _flowControlledOperationClasses;
+    NSMutableDictionary * _flowControlledOperationKeys;
 }
 
-@property (readonly) NSMutableDictionary *flowControlledOperationClasses;
+@property (readonly) NSMutableDictionary *flowControlledOperationKeys;
 
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
-- (id)flowControlledOperationClasses;
+- (id)flowControlledOperationKeys;
 - (id)init;
 - (bool)isOperationLimited:(id)arg1 outLimitError:(id*)arg2;
 - (void)limitOperation:(id)arg1 retryAfter:(id)arg2 error:(id)arg3;

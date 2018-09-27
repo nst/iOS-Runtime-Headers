@@ -25,9 +25,9 @@
 @property (nonatomic, readonly) MTVibrantStylingProvider *vibrantStylingProvider;
 
 + (id)_backdropRows;
-+ (id)_lightOverlayRows;
 + (id)_luminanceRow;
 + (id)_luminanceRows;
++ (id)_overlayRows;
 + (id)settingsControllerModule;
 + (id)sharedMaterialSettings;
 

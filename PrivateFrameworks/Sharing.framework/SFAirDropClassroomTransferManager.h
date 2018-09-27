@@ -23,7 +23,7 @@
 - (void)setDelegate:(id)arg1;
 - (bool)shouldEscapeXpcTryCatch;
 - (void)transferWithIdentifierWasAccepted:(id)arg1;
-- (void)transferWithIdentifierWasDeclined:(id)arg1;
+- (void)transferWithIdentifierWasDeclined:(id)arg1 withFailureReason:(unsigned long long)arg2;
 - (void)updateTransferWithIdentifier:(id)arg1 withState:(long long)arg2 information:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

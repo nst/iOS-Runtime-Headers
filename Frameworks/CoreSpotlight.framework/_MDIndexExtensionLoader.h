@@ -3,32 +3,26 @@
  */
 
 @interface _MDIndexExtensionLoader : NSObject {
-    NSDictionary * _extensionsByBundleId;
-    NSDictionary * _fileProviderBundleMap;
     id  _matchingContext;
+    long long  _notificationCount;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, retain) NSDictionary *extensionsByBundleId;
-@property (nonatomic, retain) NSDictionary *fileProviderBundleMap;
 @property (nonatomic, retain) id matchingContext;
+@property (nonatomic) long long notificationCount;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)_matchDictionary;
 
 - (void).cxx_destruct;
-- (id)_filterIndexExtensions:(id)arg1;
-- (id)_loadExtensionsSynchronously;
-- (id)extensionsByBundleId;
-- (id)fetchFileProviderBundleMap;
-- (id)fileProviderBundleMap;
+- (id)_filterIndexExtensions:(id)arg1 outFileProviderBundleMap:(id*)arg2;
 - (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
 - (id)matchingContext;
+- (long long)notificationCount;
 - (id)queue;
-- (void)setExtensionsByBundleId:(id)arg1;
-- (void)setFileProviderBundleMap:(id)arg1;
 - (void)setMatchingContext:(id)arg1;
+- (void)setNotificationCount:(long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(id /* block */)arg1;
 - (void)stopLookingForExtensions;

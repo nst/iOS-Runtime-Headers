@@ -15,6 +15,7 @@
 - (int)blendMode;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)effectType;
 - (id)init;
 - (id)initWithEffectFromPreset:(id)arg1 atIndex:(unsigned int)arg2;

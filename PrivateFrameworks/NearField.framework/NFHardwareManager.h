@@ -18,36 +18,49 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isBackgroundTagReadingAvailable;
 @property (readonly) Class superclass;
+@property (nonatomic) bool suspendBackgroundTagReading;
 
 + (id)sharedHardwareManager;
 
 - (void)_connectIfNeeded;
+- (void)actOnUserInitiatedSystemShutDown:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (bool)areFeaturesSupported:(unsigned long long)arg1 outError:(id*)arg2;
 - (bool)areSessionsAllowed;
 - (id)blessedUser;
 - (id)boosterInfo;
 - (unsigned int)checkUserBlessing:(id)arg1;
+- (id)configureHeadlessFactoryMode:(bool)arg1;
 - (id)controllerInfo;
+- (id)controllerInfoWithError:(id*)arg1;
 - (void)dealloc;
 - (void)didInterruptXPCConnection:(id)arg1;
 - (void)didInvalidateXPCConnection:(id)arg1;
+- (id)disableHeadless;
+- (id)enableHeadlessTestMode:(unsigned short)arg1;
 - (bool)expressModesEnabled;
 - (id)expressTransitIdentifier;
 - (id)getBoosterInfo;
 - (id)getControllerInfo;
 - (id)getDieID;
+- (id)getDieIDWithError:(id*)arg1;
+- (bool)getHeadlessFactoryMode:(id*)arg1;
+- (id)getHeadlessModeFlags:(unsigned int*)arg1;
 - (unsigned int)getHwSupport;
 - (id)getSecureElementInfo;
+- (id)getUniqueFDRKey:(id*)arg1;
 - (bool)hasCard;
 - (id)hostEmulationLog;
 - (id)init;
 - (void)invalidateConnection;
+- (bool)isBackgroundTagReadingAvailable;
 - (bool)isExpressAppletTypeSupported:(unsigned char)arg1;
 - (bool)isExpressModeSupported;
 - (bool)isInRestrictedMode;
 - (bool)preWarm;
 - (id)pushSignedRF:(id)arg1;
+- (unsigned int)queryHardwareSupport:(id*)arg1;
 - (void)refreshSecureElements;
 - (void)registerEventListener:(id)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
@@ -61,6 +74,7 @@
 - (unsigned int)setBlessedUser:(id)arg1 keybagUUID:(id)arg2 withAuthorization:(id)arg3;
 - (unsigned int)setBlessedUser:(id)arg1 withAuthorization:(id)arg2;
 - (bool)setFieldDetectEnabled:(bool)arg1;
+- (void)setSuspendBackgroundTagReading:(bool)arg1;
 - (id)startContactlessPaymentSession:(id /* block */)arg1;
 - (id)startContactlessSession:(id /* block */)arg1;
 - (id)startContactlessUICCSession:(id /* block */)arg1;
@@ -77,8 +91,11 @@
 - (id)startSesHatSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id)arg1 callback:(id /* block */)arg2;
+- (bool)suspendBackgroundTagReading;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)toggleGPIO:(unsigned short)arg1;
 - (bool)triggerDelayedWake:(unsigned char)arg1;
 - (void)unregisterEventListener:(id)arg1;
-- (void)updateHWSupport;
+- (id)updateHWSupport;
 
 @end

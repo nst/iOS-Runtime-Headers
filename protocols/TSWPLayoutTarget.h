@@ -65,6 +65,7 @@
 - (unsigned int)pageIndex;
 - (TSDLayout *)parentLayoutForInlineAttachments;
 - (bool)pushAscendersIntoColumn;
+- (double)reservedWidthWhenTruncating;
 - (void)setAnchoredDrawablesForRelayout:(NSMutableArray *)arg1;
 - (bool)shouldHyphenate;
 - (bool)siblingTargetIsManipulatingDrawable:(TSDDrawableInfo *)arg1;

@@ -4,6 +4,7 @@
 
 @interface PXScrollViewController : NSObject <PXTilingScrollController> {
     NSHashTable * __observers;
+    long long  _activeScrollAnimations;
     NSObject<UICoordinateSpace> * _contentCoordinateSpace;
     struct UIEdgeInsets { 
         double top; 
@@ -23,6 +24,7 @@
 
 @property (nonatomic, readonly) NSHashTable *_observers;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } activeRect;
+@property (nonatomic, readonly) long long activeScrollAnimations;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } constrainedVisibleRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentBounds;
 @property (nonatomic, readonly) NSObject<UICoordinateSpace> *contentCoordinateSpace;
@@ -30,6 +32,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isAnimatingScroll;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } referenceSize;
 @property (nonatomic, copy) PXTilingScrollInfo *scrollInfo;
 @property (nonatomic, readonly) NSObject<PXAnonymousScrollView> *scrollView;
@@ -41,11 +44,13 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } scrollViewVisibleRect;
 @property (readonly) Class superclass;
 @property (nonatomic) <PXTilingScrollControllerUpdateDelegate> *updateDelegate;
+@property (nonatomic) struct CGPoint { double x1; double x2; } visibleOrigin;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
 
 - (void).cxx_destruct;
 - (id)_observers;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeRect;
+- (long long)activeScrollAnimations;
 - (void)addSubview:(struct NSObject { Class x1; }*)arg1;
 - (void)addSubviewToScrollView:(struct NSObject { Class x1; }*)arg1;
 - (void)applyScrollInfo:(id)arg1;
@@ -55,6 +60,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAnimatingScroll;
 - (struct CGSize { double x1; double x2; })referenceSize;
 - (void)registerObserver:(id)arg1;
 - (id)scrollInfo;
@@ -67,13 +73,16 @@
 - (void)scrollViewContentBoundsDidChange;
 - (struct CGSize { double x1; double x2; })scrollViewContentSize;
 - (void)scrollViewDidEndScrolling;
+- (void)scrollViewDidEndScrollingAnimation;
 - (void)scrollViewDidLayout;
 - (void)scrollViewDidScroll;
 - (void)scrollViewLayoutIfNeeded;
 - (struct CGSize { double x1; double x2; })scrollViewReferenceSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })scrollViewVisibleRect;
 - (void)scrollViewWillBeginScrolling;
+- (void)scrollViewWillBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg1;
 - (void)scrollViewWillLayout;
+- (void)setActiveScrollAnimations:(long long)arg1;
 - (void)setContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNeedsUpdate;
@@ -81,9 +90,11 @@
 - (void)setScrollViewContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScrollViewNeedsLayout;
 - (void)setUpdateDelegate:(id)arg1;
+- (void)setVisibleOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (void)unregisterObserver:(id)arg1;
 - (id)updateDelegate;
 - (void)updateIfNeeded;
+- (struct CGPoint { double x1; double x2; })visibleOrigin;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (void)willEndScrollingWithVelocity:(struct CGPoint { double x1; double x2; })arg1 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg2;
 

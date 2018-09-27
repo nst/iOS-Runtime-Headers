@@ -15,6 +15,7 @@
     CLLocation * _location;
     unsigned long long  _mediaSubtypes;
     long long  _mediaType;
+    NSNumber * _originalResourceChoice;
     long long  _playbackStyle;
     NSMutableArray * _sandboxExtensionHandles;
     NSString * _uniformTypeIdentifier;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) CLLocation *location;
 @property (nonatomic) unsigned long long mediaSubtypes;
 @property (nonatomic) long long mediaType;
+@property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic) long long playbackStyle;
 @property (nonatomic, copy) NSString *uniformTypeIdentifier;
 @property (nonatomic, copy) NSURL *videoURL;
@@ -59,6 +61,7 @@
 - (id)location;
 - (unsigned long long)mediaSubtypes;
 - (long long)mediaType;
+- (id)originalResourceChoice;
 - (long long)playbackStyle;
 - (void)requestFullSizeImageURLWithCompletionHandler:(id /* block */)arg1;
 - (void)setAdjustmentData:(id)arg1;
@@ -71,6 +74,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setMediaSubtypes:(unsigned long long)arg1;
 - (void)setMediaType:(long long)arg1;
+- (void)setOriginalResourceChoice:(id)arg1;
 - (void)setPlaybackStyle:(long long)arg1;
 - (void)setUniformTypeIdentifier:(id)arg1;
 - (void)setVideoURL:(id)arg1;

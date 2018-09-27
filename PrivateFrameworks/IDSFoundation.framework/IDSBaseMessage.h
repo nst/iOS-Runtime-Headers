@@ -5,6 +5,7 @@
 @interface IDSBaseMessage : NSObject <NSCopying> {
     NSURL * _URLOverride;
     bool  _alwaysForceCellular;
+    APSOutgoingMessageCheckpointTrace * _apsdCheckpointTrace;
     NSDictionary * _cachedBody;
     NSDictionary * _clientInfo;
     id /* block */  _completionBlock;
@@ -19,6 +20,7 @@
     bool  _hasReceivedPushAck;
     bool  _highPriority;
     bool  _httpDoNotDecodeData;
+    bool  _ignoreMaxRetryCount;
     long long  _importanceLevel;
     unsigned long long  _receivedByteCount;
     NSDate * _requestEnd;
@@ -54,8 +56,10 @@
 @property (readonly) NSDictionary *additionalMessageHeadersForOutgoingPush;
 @property (readonly) NSDictionary *additionalQueryStringParameters;
 @property (readonly) bool allowDualDelivery;
+@property (readonly) bool allowsServerProvidedLenientAnisetteTimeout;
 @property bool alwaysForceCellular;
 @property (readonly) double anisetteHeadersTimeout;
+@property (retain) APSOutgoingMessageCheckpointTrace *apsdCheckpointTrace;
 @property (readonly) NSString *bagKey;
 @property (nonatomic, copy) NSMutableArray *certDataArray;
 @property (copy) NSDictionary *clientInfo;
@@ -75,6 +79,7 @@
 @property bool httpDoNotDecodeData;
 @property (nonatomic, readonly) struct __SecKey { }*identityPrivateKey;
 @property (nonatomic, readonly) struct __SecKey { }*identityPublicKey;
+@property bool ignoreMaxRetryCount;
 @property (readonly) bool ignoresNetworkConnectivity;
 @property long long importanceLevel;
 @property (readonly) bool isValidMessage;
@@ -117,7 +122,6 @@
 @property (nonatomic, copy) NSMutableArray *userIDArray;
 @property (copy) NSDictionary *userInfo;
 @property (readonly) bool wantsAPSRetries;
-@property (readonly) bool wantsAnisetteHeaders;
 @property (readonly) bool wantsBagKey;
 @property bool wantsBinaryPush;
 @property (readonly) bool wantsBodySignature;
@@ -151,8 +155,10 @@
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalQueryStringParameters;
 - (bool)allowDualDelivery;
+- (bool)allowsServerProvidedLenientAnisetteTimeout;
 - (bool)alwaysForceCellular;
 - (double)anisetteHeadersTimeout;
+- (id)apsdCheckpointTrace;
 - (id)bagKey;
 - (id)certDataArray;
 - (id)clientInfo;
@@ -178,6 +184,7 @@
 - (bool)httpDoNotDecodeData;
 - (struct __SecKey { }*)identityPrivateKey;
 - (struct __SecKey { }*)identityPublicKey;
+- (bool)ignoreMaxRetryCount;
 - (bool)ignoresNetworkConnectivity;
 - (long long)importanceLevel;
 - (id)init;
@@ -212,6 +219,7 @@
 - (id)service;
 - (id)serviceData;
 - (void)setAlwaysForceCellular:(bool)arg1;
+- (void)setApsdCheckpointTrace:(id)arg1;
 - (void)setCertDataArray:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
@@ -225,6 +233,7 @@
 - (void)setHasReceivedPushAck:(bool)arg1;
 - (void)setHighPriority:(bool)arg1;
 - (void)setHttpDoNotDecodeData:(bool)arg1;
+- (void)setIgnoreMaxRetryCount:(bool)arg1;
 - (void)setImportanceLevel:(long long)arg1;
 - (void)setPrivateKeyArray:(id)arg1;
 - (void)setPublicKeyArray:(id)arg1;
@@ -271,7 +280,6 @@
 - (id)userIDArray;
 - (id)userInfo;
 - (bool)wantsAPSRetries;
-- (bool)wantsAnisetteHeaders;
 - (bool)wantsBagKey;
 - (bool)wantsBinaryPush;
 - (bool)wantsBodySignature;

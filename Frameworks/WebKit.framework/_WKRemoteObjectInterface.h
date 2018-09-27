@@ -27,8 +27,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)_allowedArgumentClassesForReplyBlockOfSelector:(SEL)arg1;
-- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForReplyBlockOfSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
 - (id)_methodSignatureForReplyBlockOfSelector:(SEL)arg1;
 - (id)_methodSignatureForSelector:(SEL)arg1;
 - (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2;

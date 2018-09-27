@@ -33,6 +33,7 @@
 - (id)_createInteractionSummaryForEventKey:(id)arg1 expirationDate:(id)arg2 interactionKey:(id)arg3 interactionAttributes:(id)arg4;
 - (id)_createRTCReporting;
 - (id)_descriptionForActionType:(unsigned short)arg1;
+- (id)_descriptionForBundleId:(id)arg1;
 - (id)_descriptionForEntityType:(long long)arg1;
 - (id)_descriptionForExtractionStatus:(unsigned short)arg1;
 - (id)_descriptionForInterface:(unsigned short)arg1;

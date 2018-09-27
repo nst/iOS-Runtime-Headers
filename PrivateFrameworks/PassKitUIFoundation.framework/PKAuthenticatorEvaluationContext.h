@@ -9,7 +9,9 @@
     PKAuthenticator * _authenticator;
     unsigned long long  _completedMechanisms;
     id /* block */  _completionHandler;
+    NSObject<OS_dispatch_source> * _delayedBiometricMissFeedback;
     <PKAuthenticatorDelegate> * _delegate;
+    double  _evaluationMinimumTime;
     unsigned long long  _externalContextInvalidationPolicy;
     unsigned long long  _externalContextOptions;
     bool  _fingerPresent;
@@ -62,6 +64,7 @@
 - (bool)biometricMatch;
 - (void)dealloc;
 - (id)delegate;
+- (void)evaluateWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;
 - (void)fallbackToPasscode;
 - (bool)fingerPresent;

@@ -5,7 +5,6 @@
 @interface PKSuicaPassProperties : PKTransitPassProperties {
     bool  _balanceAllowedForCommute;
     bool  _greenCarTicketUsed;
-    bool  _inShinkansenStation;
     bool  _lowBalanceGateNotificationEnabled;
 }
 
@@ -24,6 +23,7 @@
 - (bool)isBalanceAllowedForCommute;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
+- (bool)isInStation;
 - (bool)isLowBalanceGateNotificationEnabled;
 
 @end

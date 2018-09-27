@@ -7,5 +7,6 @@
 - (id)_applicationServer;
 - (Class)_sceneClassForSpecification:(id)arg1;
 - (Class)_serverClass;
+- (void)serverDidInvalidateConnection:(id)arg1;
 
 @end

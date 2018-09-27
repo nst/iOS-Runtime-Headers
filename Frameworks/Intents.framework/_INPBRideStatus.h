@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRideStatus : PBCodable <NSCopying> {
-    NSMutableArray * _additionalActionItems;
+@interface _INPBRideStatus : PBCodable <NSCopying, NSSecureCoding, _INPBRideStatus> {
+    NSArray * _additionalActionItems;
     _INPBRideCompletionStatus * _completionStatus;
     _INPBRideDriver * _driver;
     _INPBLocationValue * _dropOffLocation;
@@ -18,14 +18,16 @@
     NSString * _rideIdentifier;
     _INPBRideOption * _rideOption;
     _INPBDateTimeRangeValue * _scheduledPickupTime;
-    PBUnknownFields * _unknownFields;
     _INPBUserActivity * _userActivityForCancelingInApplication;
     _INPBRideVehicle * _vehicle;
-    NSMutableArray * _waypoints;
+    NSArray * _waypoints;
 }
 
-@property (nonatomic, retain) NSMutableArray *additionalActionItems;
+@property (nonatomic, copy) NSArray *additionalActionItems;
+@property (nonatomic, readonly) unsigned long long additionalActionItemsCount;
 @property (nonatomic, retain) _INPBRideCompletionStatus *completionStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBRideDriver *driver;
 @property (nonatomic, retain) _INPBLocationValue *dropOffLocation;
 @property (nonatomic, retain) _INPBTimestamp *estimatedDropOffDate;
@@ -44,18 +46,19 @@
 @property (nonatomic, readonly) bool hasScheduledPickupTime;
 @property (nonatomic, readonly) bool hasUserActivityForCancelingInApplication;
 @property (nonatomic, readonly) bool hasVehicle;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int phase;
 @property (nonatomic, retain) _INPBLocationValue *pickupLocation;
-@property (nonatomic, retain) NSString *rideIdentifier;
+@property (nonatomic, copy) NSString *rideIdentifier;
 @property (nonatomic, retain) _INPBRideOption *rideOption;
 @property (nonatomic, retain) _INPBDateTimeRangeValue *scheduledPickupTime;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBUserActivity *userActivityForCancelingInApplication;
 @property (nonatomic, retain) _INPBRideVehicle *vehicle;
-@property (nonatomic, retain) NSMutableArray *waypoints;
+@property (nonatomic, copy) NSArray *waypoints;
+@property (nonatomic, readonly) unsigned long long waypointsCount;
 
 + (Class)additionalActionItemsType;
-+ (id)options;
 + (Class)waypointsType;
 
 - (void).cxx_destruct;
@@ -69,7 +72,6 @@
 - (void)clearWaypoints;
 - (id)completionStatus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)driver;
 - (id)dropOffLocation;
@@ -91,7 +93,6 @@
 - (bool)hasVehicle;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (int)phase;
 - (id)phaseAsString:(int)arg1;
 - (id)pickupLocation;
@@ -115,7 +116,6 @@
 - (void)setUserActivityForCancelingInApplication:(id)arg1;
 - (void)setVehicle:(id)arg1;
 - (void)setWaypoints:(id)arg1;
-- (id)unknownFields;
 - (id)userActivityForCancelingInApplication;
 - (id)vehicle;
 - (id)waypoints;

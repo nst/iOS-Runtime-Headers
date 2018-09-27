@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_abChanged:(id)arg1;
+- (void)_abPartialChanged:(id)arg1;
 - (id)_alreadyTrackedConversationForChat:(id)arg1;
 - (void)_beginTrackingAllExistingChatsIfNeeded;
 - (void)_beginTrackingAllExistingChatsIfNeededAsync;
@@ -37,13 +38,17 @@
 - (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
 - (bool)_isUnreadChat:(id)arg1 ignoringMessages:(id)arg2;
 - (void)_postConversationListChangedNotification;
+- (void)_postConversationListUpdateVisibleConversationsNotificationForUID:(id)arg1;
 - (bool)_shouldFilterForParticipants:(id)arg1;
 - (id)activeConversations;
 - (void)beginTrackingConversation:(id)arg1 forChat:(id)arg2;
 - (id)conversationForExistingChat:(id)arg1;
 - (id)conversationForExistingChatWithGUID:(id)arg1;
 - (id)conversationForExistingChatWithGroupID:(id)arg1;
+- (id)conversationForExistingChatWithIMChatGroupID:(id)arg1;
+- (id)conversationForExistingChatWithIMChatPersonCentricID:(id)arg1;
 - (id)conversationForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(bool)arg3 create:(bool)arg4;
+- (id)conversationForHandles:(id)arg1 displayName:(id)arg2 lastAddressedHandle:(id)arg3 lastAddressedSIMID:(id)arg4 joinedChatsOnly:(bool)arg5 create:(bool)arg6;
 - (id)conversations;
 - (void)dealloc;
 - (void)deleteConversation:(id)arg1;

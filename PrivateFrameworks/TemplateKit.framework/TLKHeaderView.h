@@ -21,37 +21,34 @@
     UILabel * _trailingTextLabel;
 }
 
-@property long long axis;
+@property (nonatomic) long long axis;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKImage *image;
+@property (nonatomic, retain) TLKImage *image;
 @property (retain) TLKImageView *imageView;
 @property (retain) TLKStackView *innerStackView;
 @property (retain) TLKStackView *outerStackView;
-@property (retain) NSString *roundedBorderText;
+@property (nonatomic, retain) NSString *roundedBorderText;
 @property (retain) TLKRoundedCornerLabel *roundedCornerLabel;
-@property (retain) TLKMultilineText *subtitle;
-@property (retain) TLKImage *subtitleImage;
+@property (nonatomic, retain) TLKMultilineText *subtitle;
+@property (nonatomic, retain) TLKImage *subtitleImage;
 @property (retain) TLKImageView *subtitleImageView;
 @property (retain) TLKVibrantLabel *subtitleLabel;
 @property (retain) TLKStackView *subtitleStackView;
 @property (readonly) Class superclass;
-@property (retain) TLKMultilineText *title;
+@property (nonatomic, retain) TLKMultilineText *title;
 @property (retain) UILabel *titleLabel;
-@property (retain) TLKMultilineText *trailingText;
+@property (nonatomic, retain) TLKMultilineText *trailingText;
 @property (retain) UILabel *trailingTextLabel;
 
 - (void).cxx_destruct;
 - (long long)axis;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
-- (struct CGSize { double x1; double x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg2 forArrangedSubview:(id)arg3;
 - (id)hasImage;
 - (id)image;
 - (id)imageView;
 - (id)init;
 - (id)innerStackView;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (id)outerStackView;
 - (id)roundedBorderText;

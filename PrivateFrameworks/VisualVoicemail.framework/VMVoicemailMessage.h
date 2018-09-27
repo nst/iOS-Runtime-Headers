@@ -19,6 +19,7 @@
     }  _has;
     unsigned int  _identifier;
     unsigned int  _protocolVersion;
+    NSString * _receiverDestinationID;
     unsigned int  _remoteUID;
     NSString * _senderDestinationID;
     VMTranscriptMessage * _transcript;
@@ -39,12 +40,14 @@
 @property (nonatomic) bool hasFlags;
 @property (nonatomic) bool hasIdentifier;
 @property (nonatomic) bool hasProtocolVersion;
+@property (nonatomic, readonly) bool hasReceiverDestinationID;
 @property (nonatomic) bool hasRemoteUID;
 @property (nonatomic, readonly) bool hasSenderDestinationID;
 @property (nonatomic, readonly) bool hasTranscript;
 @property (nonatomic, readonly) bool hasTranscriptionURL;
 @property (nonatomic) unsigned int identifier;
 @property (nonatomic) unsigned int protocolVersion;
+@property (nonatomic, retain) NSString *receiverDestinationID;
 @property (nonatomic) unsigned int remoteUID;
 @property (nonatomic, retain) NSString *senderDestinationID;
 @property (nonatomic, retain) VMTranscriptMessage *transcript;
@@ -69,6 +72,7 @@
 - (bool)hasFlags;
 - (bool)hasIdentifier;
 - (bool)hasProtocolVersion;
+- (bool)hasReceiverDestinationID;
 - (bool)hasRemoteUID;
 - (bool)hasSenderDestinationID;
 - (bool)hasTranscript;
@@ -79,6 +83,7 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)protocolVersion;
 - (bool)readFrom:(id)arg1;
+- (id)receiverDestinationID;
 - (unsigned int)remoteUID;
 - (id)senderDestinationID;
 - (void)setAudio:(id)arg1;
@@ -95,6 +100,7 @@
 - (void)setHasRemoteUID:(bool)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
+- (void)setReceiverDestinationID:(id)arg1;
 - (void)setRemoteUID:(unsigned int)arg1;
 - (void)setSenderDestinationID:(id)arg1;
 - (void)setTranscript:(id)arg1;

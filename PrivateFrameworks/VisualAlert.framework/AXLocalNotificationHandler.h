@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXLocalNotificationHandler : AXNotificationHandler {
+@interface AXLocalNotificationHandler : VISAXNotificationHandler {
     id  _opaqueObserver;
 }
 

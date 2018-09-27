@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXScrollPosition : NSObject <NSCoding>
+@interface SXScrollPosition : NSObject <NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

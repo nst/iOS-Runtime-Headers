@@ -12,10 +12,12 @@
 - (bool)isHighFramerateVideo;
 - (bool)isInPlaceVideoTrimAllowed;
 - (bool)isLivePhotoVisibilityAdjustmentAllowed;
+- (bool)isOriginalRaw;
 - (bool)isResourceDownloadPossible;
 - (unsigned long long)livePhotoVisibilityState;
 - (unsigned long long)mediaSubtypes;
 - (int)originalEXIFOrientation;
+- (unsigned long long)originalResourceChoice;
 - (NSString *)pathForOriginalImageFile;
 - (NSString *)pathForOriginalVideoFile;
 - (NSString *)pathForTrimmedVideoFile;

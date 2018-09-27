@@ -7,11 +7,15 @@
     NSMutableDictionary * _authenticationPluginsByType;
     ACDQueueDictionary * _discoveryHandlerQueues;
     NSLock * _discoveryHandlersLock;
+    NSMutableSet * _keysForRateExceededBugSent;
     ACDQueueDictionary * _renewalHandlerQueues;
     NSLock * _renewalHandlersLock;
+    ACRateLimiter * _renewalRateLimiter;
     ACDQueueDictionary * _verificationHandlerQueues;
     NSLock * _verificationHandlersLock;
 }
+
+@property (retain) ACRateLimiter *renewalRateLimiter;
 
 - (void).cxx_destruct;
 - (id)_authCapableParentAccountForAccount:(id)arg1;
@@ -28,6 +32,8 @@
 - (id)init;
 - (bool)isPushSupportedForAccount:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
+- (id)renewalRateLimiter;
+- (void)setRenewalRateLimiter:(id)arg1;
 - (void)verifyCredentialsForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 handler:(id /* block */)arg4;
 
 @end

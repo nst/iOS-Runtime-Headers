@@ -8,6 +8,7 @@
 - (void)chatInputControllerDidDismissCompactBrowserViewController:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidDismissModalBrowserViewController:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidPresentModalBrowserViewController:(CKChatInputController *)arg1;
+- (void)chatInputControllerDidSelectFunCamera:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidShowHandwriting:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidTransitionCollapsed:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidTransitionExpanded:(CKChatInputController *)arg1;
@@ -16,6 +17,7 @@
 - (void)chatInputControllerWillDismissModalBrowserViewController:(CKChatInputController *)arg1;
 - (void)chatInputControllerWillHideHandwriting:(CKChatInputController *)arg1;
 - (void)chatInputControllerWillPresentModalBrowserViewController:(CKChatInputController *)arg1;
+- (void)chatInputControllerWillSelectFunCamera:(CKChatInputController *)arg1;
 - (void)chatInputControllerWillTransitionCollapsed:(CKChatInputController *)arg1;
 - (void)chatInputControllerWillTransitionExpanded:(CKChatInputController *)arg1;
 - (void)chatInputDidChangeSize;

@@ -14,11 +14,11 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)addTransactionDidBeginBlock:(id /* block */)arg1;
 - (void)addTransactionDidCompleteBlock:(id /* block */)arg1;
 - (void)addTransactionDidFinishWorkBlock:(id /* block */)arg1;
 - (void)addTransactionWillBeginBlock:(id /* block */)arg1;
-- (void)dealloc;
 - (void)transactionDidBegin:(id)arg1;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transactionDidFinishWork:(id)arg1;

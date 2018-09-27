@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) unsigned long long skipThreshold;
 @property (nonatomic, readonly) NSURL *videoURL;
 
-- (id)initWithAdCreativeType:(int)arg1;
+- (id)initWithAdCreativeType:(int)arg1 layoutOptions:(id)arg2;
 - (unsigned long long)skipThreshold;
 - (id)videoURL;
 

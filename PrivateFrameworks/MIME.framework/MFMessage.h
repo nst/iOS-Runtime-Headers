@@ -74,6 +74,7 @@
 - (void)deleteBodyData;
 - (id)externalID;
 - (bool)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withConsumer:(id)arg3 isComplete:(bool*)arg4 downloadIfNecessary:(bool)arg5;
+- (unsigned long long)fileSize;
 - (id)firstSender;
 - (long long)generationCompare:(id)arg1;
 - (unsigned long long)generationNumber;

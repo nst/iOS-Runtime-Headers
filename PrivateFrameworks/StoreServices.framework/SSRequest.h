@@ -3,7 +3,6 @@
  */
 
 @interface SSRequest : NSObject <SSXPCCoding> {
-    unsigned int  _assertionID;
     NSObject<OS_dispatch_source> * _backgroundTaskExpirationTimer;
     long long  _backgroundTaskIdentifier;
     long long  _callState;
@@ -13,7 +12,9 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     SSXPCConnection * _requestConnection;
     SSXPCConnection * _responseConnection;
-    long long  _taskAssertionState;
+    BKSProcessAssertion * _taskAssertion;
+    bool  _taskAssertionTaken;
+    bool  _usesTaskCompletionAssertions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

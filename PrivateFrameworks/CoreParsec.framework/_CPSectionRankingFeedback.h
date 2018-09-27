@@ -3,11 +3,6 @@
  */
 
 @interface _CPSectionRankingFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSectionRankingFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int localSectionPosition : 1; 
-        unsigned int personalizationScore : 1; 
-    }  _has;
     unsigned int  _localSectionPosition;
     double  _personalizationScore;
     NSArray * _results;
@@ -19,10 +14,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasLocalSectionPosition;
-@property (nonatomic, readonly) bool hasPersonalizationScore;
-@property (nonatomic, readonly) bool hasSection;
-@property (nonatomic, readonly) bool hasTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) unsigned int localSectionPosition;
@@ -31,7 +22,6 @@
 @property (nonatomic, copy) NSArray *results;
 @property (nonatomic, retain) _CPResultSectionForFeedback *section;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
@@ -39,10 +29,6 @@
 - (void)clearResults;
 - (id)dictionaryRepresentation;
 - (id)feedbackJSON;
-- (bool)hasLocalSectionPosition;
-- (bool)hasPersonalizationScore;
-- (bool)hasSection;
-- (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

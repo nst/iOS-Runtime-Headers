@@ -53,6 +53,7 @@
 - (id)domainInfoForName:(id)arg1;
 - (id)domainInfoList;
 - (bool)extractItemFromBackupUDID:(id)arg1 snapshotID:(unsigned long long)arg2 domainName:(id)arg3 relativePath:(id)arg4 toPath:(id)arg5 error:(id*)arg6;
+- (void)fetchiCloudRestoreIsCompleteWithCompletion:(id /* block */)arg1;
 - (id)filesForSnapshotID:(unsigned long long)arg1 backupUDID:(id)arg2 error:(id*)arg3;
 - (void)finishRestore;
 - (id)getAppleIDsForBackupUDID:(id)arg1 snapshotID:(unsigned long long)arg2 activeAppleID:(id*)arg3 error:(id*)arg4;
@@ -61,6 +62,7 @@
 - (id)getBackupListWithError:(id*)arg1;
 - (id)getBackupListWithFiltering:(bool)arg1 error:(id*)arg2;
 - (id)getBuddyDataStashForBackupUDID:(id)arg1 snapshotID:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)inheritSnapshot:(id)arg1 fromDevice:(id)arg2 error:(id*)arg3;
 - (id)initWithDelegate:(id)arg1 eventQueue:(id)arg2;
 - (void)insufficientFreeSpaceToRestore;
 - (void)invalidate;

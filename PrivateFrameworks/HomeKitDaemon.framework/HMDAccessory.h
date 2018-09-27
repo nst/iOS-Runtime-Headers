@@ -70,6 +70,8 @@
 @property (nonatomic, retain) HMDRoom *room;
 @property (nonatomic, readonly, copy) NSString *serialNumber;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsTargetControl;
+@property (nonatomic, readonly) bool supportsTargetController;
 @property (readonly) bool supportsUserManagement;
 @property (nonatomic, retain) HMDAccessoryTransaction *transaction;
 @property (nonatomic) bool unblockPending;
@@ -86,6 +88,7 @@
 - (void)_handleGetAccessoryAdvertisingParams:(id)arg1;
 - (void)_handleIdentify:(id)arg1;
 - (void)_handleListPairings:(id)arg1;
+- (void)_handlePairingIdentityRequest:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_handleSetAppData:(id)arg1;
 - (void)_handleUpdateRoom:(id)arg1;
@@ -106,6 +109,7 @@
 - (id)appRegistry;
 - (id)assistantObject;
 - (id)assistantUniqueIdentifier;
+- (void)autoConfigureTargetControllers;
 - (id)backingStoreObjects:(long long)arg1;
 - (void)blockWithError:(id)arg1;
 - (id)category;
@@ -151,7 +155,6 @@
 - (id)msgDispatcher;
 - (id)name;
 - (void)notifyAccessoryNameChanged:(bool)arg1;
-- (void)pairingsWithCompletionHandler:(id /* block */)arg1;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
 - (id)propertyQueue;
 - (id)providedName;
@@ -163,6 +166,7 @@
 - (void)removeAdvertisement:(id)arg1;
 - (bool)requiresHomeAppForManagement;
 - (id)room;
+- (id)runtimeState;
 - (id)serialNumber;
 - (void)setAccessoryProfiles:(id)arg1;
 - (void)setAccessoryReprovisionState:(unsigned long long)arg1;
@@ -192,6 +196,8 @@
 - (void)setUuid:(id)arg1;
 - (bool)shouldEnableDaemonRelaunch;
 - (bool)supportsMinimumUserPrivilege;
+- (bool)supportsTargetControl;
+- (bool)supportsTargetController;
 - (bool)supportsUserManagement;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (id)transaction;

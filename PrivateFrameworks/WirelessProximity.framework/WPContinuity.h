@@ -26,12 +26,14 @@
 - (id)clientAsString;
 - (void)connectToPeer:(id)arg1;
 - (void)connectedDevice:(id)arg1 withError:(id)arg2 shouldDiscover:(bool)arg3;
+- (void)connectedDeviceOverLEPipe:(id)arg1;
 - (id)delegate;
 - (void)deviceDiscovered:(id)arg1;
 - (void)disconnectFromPeer:(id)arg1;
 - (void)disconnectedDevice:(id)arg1 withError:(id)arg2;
 - (void)discoveredCharacteristicsAndServices:(id)arg1 forPeripheral:(id)arg2;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;

@@ -13,6 +13,7 @@
     struct { 
         unsigned int isSpecialMailboxSpecific : 1; 
         unsigned int status : 1; 
+        unsigned int statusVersion : 1; 
         unsigned int isThreadSpecific : 1; 
     }  _has;
     unsigned int  _isSpecialMailboxSpecific;
@@ -21,8 +22,10 @@
     NSString * _messageId;
     NSString * _messageIdHeader;
     NSString * _notificationMessageId;
+    NSString * _publisherBulletinId;
     NSString * _remoteId;
     unsigned int  _status;
+    unsigned int  _statusVersion;
     NSString * _subject;
     NSMutableArray * _tos;
 }
@@ -45,8 +48,10 @@
 @property (nonatomic, readonly) bool hasMessageId;
 @property (nonatomic, readonly) bool hasMessageIdHeader;
 @property (nonatomic, readonly) bool hasNotificationMessageId;
+@property (nonatomic, readonly) bool hasPublisherBulletinId;
 @property (nonatomic, readonly) bool hasRemoteId;
 @property (nonatomic) bool hasStatus;
+@property (nonatomic) bool hasStatusVersion;
 @property (nonatomic, readonly) bool hasSubject;
 @property (nonatomic) unsigned int isSpecialMailboxSpecific;
 @property (nonatomic) bool isThreadSpecific;
@@ -54,14 +59,16 @@
 @property (nonatomic, retain) NSString *messageId;
 @property (nonatomic, retain) NSString *messageIdHeader;
 @property (nonatomic, retain) NSString *notificationMessageId;
+@property (nonatomic, retain) NSString *publisherBulletinId;
 @property (nonatomic, retain) NSString *remoteId;
 @property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned int statusVersion;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *tos;
 
 + (Class)bccType;
 + (Class)ccType;
-+ (id)protoMessageFromMessage:(id)arg1 organizedByThread:(bool)arg2 sanitizeMessageId:(bool)arg3;
++ (id)protoMessageFromMessage:(id)arg1 organizedByThread:(bool)arg2 sanitizeMessageId:(bool)arg3 supportsStandaloneMode:(bool)arg4;
 + (Class)toType;
 
 - (void).cxx_destruct;
@@ -97,8 +104,10 @@
 - (bool)hasMessageId;
 - (bool)hasMessageIdHeader;
 - (bool)hasNotificationMessageId;
+- (bool)hasPublisherBulletinId;
 - (bool)hasRemoteId;
 - (bool)hasStatus;
+- (bool)hasStatusVersion;
 - (bool)hasSubject;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
@@ -109,6 +118,7 @@
 - (id)messageId;
 - (id)messageIdHeader;
 - (id)notificationMessageId;
+- (id)publisherBulletinId;
 - (bool)readFrom:(id)arg1;
 - (id)remoteId;
 - (void)setAccountId:(id)arg1;
@@ -121,17 +131,21 @@
 - (void)setHasIsSpecialMailboxSpecific:(bool)arg1;
 - (void)setHasIsThreadSpecific:(bool)arg1;
 - (void)setHasStatus:(bool)arg1;
+- (void)setHasStatusVersion:(bool)arg1;
 - (void)setIsSpecialMailboxSpecific:(unsigned int)arg1;
 - (void)setIsThreadSpecific:(bool)arg1;
 - (void)setMailboxId:(id)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setMessageIdHeader:(id)arg1;
 - (void)setNotificationMessageId:(id)arg1;
+- (void)setPublisherBulletinId:(id)arg1;
 - (void)setRemoteId:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
+- (void)setStatusVersion:(unsigned int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTos:(id)arg1;
 - (unsigned int)status;
+- (unsigned int)statusVersion;
 - (id)subject;
 - (id)toAtIndex:(unsigned long long)arg1;
 - (id)tos;

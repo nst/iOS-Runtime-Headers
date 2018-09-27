@@ -9,6 +9,7 @@
 }
 
 + (id)perfromSelector:(SEL)arg1 onTarget:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

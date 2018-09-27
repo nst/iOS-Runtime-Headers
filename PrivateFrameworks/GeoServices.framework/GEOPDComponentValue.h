@@ -7,6 +7,7 @@
     GEOPDAddress * _address;
     GEOPDAddressObject * _addressObject;
     GEOPDAmenities * _amenities;
+    GEOPDAnnotatedItemList * _annotatedItemList;
     GEOPDAssociatedApp * _associatedApp;
     GEOPDBounds * _bounds;
     GEOPDBrowseCategories * _browseCategories;
@@ -25,7 +26,9 @@
     GEOPDMessageLink * _messageLink;
     GEOPDPhoto * _photo;
     GEOPDPlaceInfo * _placeInfo;
+    GEOPDPlacecardLayoutConfiguration * _placecardLayoutConfiguration;
     GEOPDPlacecardURL * _placecardUrl;
+    GEOPDPoiEvent * _poiEvent;
     GEOPDPriceDescription * _priceDescription;
     GEOPDQuickLink * _quickLink;
     GEOPDRap * _rap;
@@ -53,6 +56,7 @@
 @property (nonatomic, retain) GEOPDAddress *address;
 @property (nonatomic, retain) GEOPDAddressObject *addressObject;
 @property (nonatomic, retain) GEOPDAmenities *amenities;
+@property (nonatomic, retain) GEOPDAnnotatedItemList *annotatedItemList;
 @property (nonatomic, retain) GEOPDAssociatedApp *associatedApp;
 @property (nonatomic, retain) GEOPDBounds *bounds;
 @property (nonatomic, retain) GEOPDBrowseCategories *browseCategories;
@@ -69,6 +73,7 @@
 @property (nonatomic, readonly) bool hasAddress;
 @property (nonatomic, readonly) bool hasAddressObject;
 @property (nonatomic, readonly) bool hasAmenities;
+@property (nonatomic, readonly) bool hasAnnotatedItemList;
 @property (nonatomic, readonly) bool hasAssociatedApp;
 @property (nonatomic, readonly) bool hasBounds;
 @property (nonatomic, readonly) bool hasBrowseCategories;
@@ -87,7 +92,9 @@
 @property (nonatomic, readonly) bool hasMessageLink;
 @property (nonatomic, readonly) bool hasPhoto;
 @property (nonatomic, readonly) bool hasPlaceInfo;
+@property (nonatomic, readonly) bool hasPlacecardLayoutConfiguration;
 @property (nonatomic, readonly) bool hasPlacecardUrl;
+@property (nonatomic, readonly) bool hasPoiEvent;
 @property (nonatomic, readonly) bool hasPriceDescription;
 @property (nonatomic, readonly) bool hasQuickLink;
 @property (nonatomic, readonly) bool hasRap;
@@ -114,7 +121,9 @@
 @property (nonatomic, retain) GEOPDMessageLink *messageLink;
 @property (nonatomic, retain) GEOPDPhoto *photo;
 @property (nonatomic, retain) GEOPDPlaceInfo *placeInfo;
+@property (nonatomic, retain) GEOPDPlacecardLayoutConfiguration *placecardLayoutConfiguration;
 @property (nonatomic, retain) GEOPDPlacecardURL *placecardUrl;
+@property (nonatomic, retain) GEOPDPoiEvent *poiEvent;
 @property (nonatomic, retain) GEOPDPriceDescription *priceDescription;
 @property (nonatomic, retain) GEOPDQuickLink *quickLink;
 @property (nonatomic, retain) GEOPDRap *rap;
@@ -142,6 +151,7 @@
 - (id)address;
 - (id)addressObject;
 - (id)amenities;
+- (id)annotatedItemList;
 - (id)associatedApp;
 - (id)bounds;
 - (id)browseCategories;
@@ -162,6 +172,7 @@
 - (bool)hasAddress;
 - (bool)hasAddressObject;
 - (bool)hasAmenities;
+- (bool)hasAnnotatedItemList;
 - (bool)hasAssociatedApp;
 - (bool)hasBounds;
 - (bool)hasBrowseCategories;
@@ -180,7 +191,9 @@
 - (bool)hasMessageLink;
 - (bool)hasPhoto;
 - (bool)hasPlaceInfo;
+- (bool)hasPlacecardLayoutConfiguration;
 - (bool)hasPlacecardUrl;
+- (bool)hasPoiEvent;
 - (bool)hasPriceDescription;
 - (bool)hasQuickLink;
 - (bool)hasRap;
@@ -210,7 +223,9 @@
 - (id)messageLink;
 - (id)photo;
 - (id)placeInfo;
+- (id)placecardLayoutConfiguration;
 - (id)placecardUrl;
+- (id)poiEvent;
 - (id)priceDescription;
 - (id)quickLink;
 - (id)rap;
@@ -224,6 +239,7 @@
 - (void)setAddress:(id)arg1;
 - (void)setAddressObject:(id)arg1;
 - (void)setAmenities:(id)arg1;
+- (void)setAnnotatedItemList:(id)arg1;
 - (void)setAssociatedApp:(id)arg1;
 - (void)setBounds:(id)arg1;
 - (void)setBrowseCategories:(id)arg1;
@@ -242,7 +258,9 @@
 - (void)setMessageLink:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setPlaceInfo:(id)arg1;
+- (void)setPlacecardLayoutConfiguration:(id)arg1;
 - (void)setPlacecardUrl:(id)arg1;
+- (void)setPoiEvent:(id)arg1;
 - (void)setPriceDescription:(id)arg1;
 - (void)setQuickLink:(id)arg1;
 - (void)setRap:(id)arg1;

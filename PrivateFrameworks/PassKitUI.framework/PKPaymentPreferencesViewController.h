@@ -7,6 +7,7 @@
     NSIndexPath * _currentEditingIndexPath;
     PKPaymentPass * _currentlySelectedPaymentPass;
     id /* block */  _handler;
+    NSArray * _latestPreferences;
     PKPassSnapshotter * _passSnapshotter;
     PKPaymentPass * _paymentPassForBillingErrors;
     id /* block */  _pickedContactHandler;
@@ -70,7 +71,8 @@
 - (id)preferences;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setErrors:(id)arg1 animated:(bool)arg2;
-- (void)setErrors:(id)arg1 pass:(id)arg2 animated:(bool)arg3;
+- (void)setErrors:(id)arg1 otherPass:(id)arg2 animated:(bool)arg3;
+- (void)setErrors:(id)arg1 selectedPass:(id)arg2 animated:(bool)arg3;
 - (void)setHandler:(id /* block */)arg1;
 - (void)setPickedContactHandler:(id /* block */)arg1;
 - (void)setPickedContactPropertyHandler:(id /* block */)arg1;

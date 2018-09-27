@@ -7,14 +7,14 @@
     NSArray * _items;
 }
 
++ (id)cellValueFromCell:(id)arg1 locale:(id)arg2;
 + (bool)needsObjectUUID;
 + (id)p_PopUpMenuModelDefaultWithContext:(id)arg1 locale:(id)arg2;
 + (void)p_appendChoices:(id)arg1 uniquelyToChoices:(id)arg2;
-+ (id)p_cellValueFromCell:(id)arg1 locale:(id)arg2;
 + (id)p_cellValueFromCellWithCustomFormat:(id)arg1 locale:(id)arg2;
 + (id)popupMenuModelDeletingItemFromModel:(id)arg1 index:(unsigned long long)arg2;
 + (id)popupMenuModelEditingItemInModel:(id)arg1 index:(unsigned long long)arg2 newContent:(id)arg3;
-+ (id)popupMenuModelFromTable:(id)arg1 region:(id)arg2 initialValue:(int*)arg3 overflow:(bool*)arg4;
++ (id)popupMenuModelFromTable:(id)arg1 region:(id)arg2 initialValue:(bool*)arg3 overflow:(bool*)arg4;
 + (id)popupMenuModelReorderingModel:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 
 - (void).cxx_destruct;

@@ -16,9 +16,9 @@
 + (id)sharedTIContactManager;
 + (id)singletonInstance;
 
+- (void).cxx_destruct;
 - (id /* block */)addContactObserver:(id /* block */)arg1;
 - (id)contactCollectionUUID;
-- (void)dealloc;
 - (void)getOnce:(id /* block */)arg1;
 - (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)keyboardActivityDidTransition:(id)arg1;

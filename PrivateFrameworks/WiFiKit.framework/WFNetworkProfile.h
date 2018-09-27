@@ -21,6 +21,7 @@
     bool  _carrierBased;
     NSArray * _certificateChain;
     NSDictionary * _enterpriseProfile;
+    bool  _fetchedPassword;
     bool  _hidden;
     NSDate * _lastAutoJoinDate;
     bool  _managed;
@@ -28,6 +29,7 @@
     NSString * _password;
     NSString * _policyUUID;
     NSString * _previousPassword;
+    bool  _requiresPassword;
     NSDictionary * _scanAttributes;
     long long  _securityMode;
     NSString * _ssid;
@@ -52,6 +54,7 @@
 @property (getter=isCarrierBased, nonatomic) bool carrierBased;
 @property (nonatomic, readonly) NSArray *certificateChain;
 @property (nonatomic, retain) NSDictionary *enterpriseProfile;
+@property (nonatomic) bool fetchedPassword;
 @property (getter=isHidden, nonatomic) bool hidden;
 @property (nonatomic, readonly) NSDate *lastAutoJoinDate;
 @property (getter=isManaged, nonatomic, readonly) bool managed;
@@ -59,12 +62,15 @@
 @property (nonatomic, readonly) NSString *password;
 @property (nonatomic, copy) NSString *policyUUID;
 @property (nonatomic, readonly) NSString *previousPassword;
+@property (nonatomic) bool requiresPassword;
 @property (nonatomic, readonly) bool requiresUsernameAndPassword;
 @property (nonatomic, retain) NSDictionary *scanAttributes;
 @property (nonatomic) long long securityMode;
 @property (nonatomic, retain) NSString *ssid;
 @property (nonatomic, readonly) bool userProvidedPassword;
 @property (nonatomic, readonly) NSString *username;
+
++ (bool)networkProfileRepresentSameNetwork:(id)arg1 toNetworkProfile:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)HS20AccountName;
@@ -80,6 +86,7 @@
 - (id)certificateChain;
 - (id)description;
 - (id)enterpriseProfile;
+- (bool)fetchedPassword;
 - (unsigned long long)hash;
 - (id)initWithNetwork:(id)arg1;
 - (id)initWithNetworkRef:(struct __WiFiNetwork { }*)arg1;
@@ -106,6 +113,7 @@
 - (bool)profileContainsCarrierEAPType:(id)arg1;
 - (bool)profileContainsEAPAKA:(id)arg1;
 - (bool)profileContainsEAPSIM:(id)arg1;
+- (bool)requiresPassword;
 - (bool)requiresTLSIdentityOnly;
 - (bool)requiresUsernameAndPassword;
 - (id)scanAttributes;
@@ -120,6 +128,7 @@
 - (void)setCarPlayUUID:(id)arg1;
 - (void)setCarrierBased:(bool)arg1;
 - (void)setEnterpriseProfile:(id)arg1;
+- (void)setFetchedPassword:(bool)arg1;
 - (void)setHS20AccountName:(id)arg1;
 - (void)setHS20Badge:(id)arg1;
 - (void)setHS20Network:(bool)arg1;
@@ -127,6 +136,7 @@
 - (void)setHidden:(bool)arg1;
 - (void)setOriginatorBundleIdentifier:(id)arg1;
 - (void)setPolicyUUID:(id)arg1;
+- (void)setRequiresPassword:(bool)arg1;
 - (void)setScanAttributes:(id)arg1;
 - (void)setSecurityMode:(long long)arg1;
 - (void)setSsid:(id)arg1;

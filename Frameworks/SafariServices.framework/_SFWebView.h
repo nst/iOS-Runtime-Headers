@@ -21,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFWebViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIView *effectiveViewToLayOut;
 @property (nonatomic, readonly, copy) NSString *evOrganizationName;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitTestInsets;
@@ -38,6 +39,7 @@
 - (id)delegate;
 - (void)didEndFormControlInteraction;
 - (void)dismissDialogView:(id)arg1 withAdditionalAnimations:(id /* block */)arg2 forDialogController:(id)arg3;
+- (id)effectiveViewToLayOut;
 - (id)evOrganizationName;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitTestInsets;

@@ -4,6 +4,4 @@
 
 @interface Swift._SwiftNativeNSDictionary : _SwiftNativeNSDictionaryBase
 
-- (id)init;
-
 @end

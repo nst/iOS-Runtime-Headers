@@ -3,30 +3,27 @@
  */
 
 @interface NMSMediaContainerQuotaData : NSObject {
-    unsigned long long  _incrementalSize;
-    unsigned long long  _incrementalTracksCount;
-    unsigned long long  _incrementalTracksOmittedForQuota;
-    unsigned long long  _quotaBehavior;
+    unsigned long long  _numItemsAdded;
+    unsigned long long  _numItemsRemoved;
+    unsigned long long  _numItemsSkipped;
     id  _quotaRefObj;
 }
 
-@property (nonatomic) unsigned long long incrementalSize;
-@property (nonatomic) unsigned long long incrementalTracksCount;
-@property (nonatomic) unsigned long long incrementalTracksOmittedForQuota;
-@property (nonatomic) unsigned long long quotaBehavior;
+@property (nonatomic, readonly) unsigned long long numItemsAboveQuota;
+@property (nonatomic) unsigned long long numItemsAdded;
+@property (nonatomic) unsigned long long numItemsRemoved;
+@property (nonatomic) unsigned long long numItemsSkipped;
 @property (nonatomic) id quotaRefObj;
 
 - (void).cxx_destruct;
-- (id)description;
-- (unsigned long long)incrementalSize;
-- (unsigned long long)incrementalTracksCount;
-- (unsigned long long)incrementalTracksOmittedForQuota;
-- (unsigned long long)quotaBehavior;
+- (unsigned long long)numItemsAboveQuota;
+- (unsigned long long)numItemsAdded;
+- (unsigned long long)numItemsRemoved;
+- (unsigned long long)numItemsSkipped;
 - (id)quotaRefObj;
-- (void)setIncrementalSize:(unsigned long long)arg1;
-- (void)setIncrementalTracksCount:(unsigned long long)arg1;
-- (void)setIncrementalTracksOmittedForQuota:(unsigned long long)arg1;
-- (void)setQuotaBehavior:(unsigned long long)arg1;
+- (void)setNumItemsAdded:(unsigned long long)arg1;
+- (void)setNumItemsRemoved:(unsigned long long)arg1;
+- (void)setNumItemsSkipped:(unsigned long long)arg1;
 - (void)setQuotaRefObj:(id)arg1;
 
 @end

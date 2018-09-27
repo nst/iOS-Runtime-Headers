@@ -4,14 +4,8 @@
 
 @interface PUAlbumListViewControllerPadSpec : PUAlbumListViewControllerSpec
 
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
 - (long long)albumDeletionConfirmationStyle;
 - (id)albumViewControllerSpec;
-- (bool)canDisplaySearchActionInNavigationBar;
 - (bool)canShowVirtualCollections;
 - (long long)cellContentViewLayout;
 - (struct CGSize { double x1; double x2; })cellSizeForStackSize:(struct CGSize { double x1; double x2; })arg1;
@@ -20,15 +14,17 @@
 - (double)collageSpacing;
 - (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (void)configureStackViewWithGridStyle:(id)arg1;
-- (bool)displaysSearchInPopover;
-- (id)emptyAlbumPlaceholderImage;
 - (id)emptyStackPhotoDecoration;
 - (id)feedViewControllerSpec;
 - (unsigned long long)folderStackViewStyle;
 - (id)gridViewControllerSpec;
 - (struct CGSize { double x1; double x2; })imageSize;
 - (struct CGSize { double x1; double x2; })imageSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (double)maxSearchBarWidth;
+- (id)nameOfAddSharedAlbumPlaceholderImage;
+- (id)nameOfEmptyAlbumPlaceholderImage;
+- (id)nameOfEmptySharedAlbumPlaceholderImage;
+- (id)nameOfHiddenAlbumPlaceholderImage;
+- (id)nameOfRecentlyDeletedAlbumPlaceholderImage;
 - (id)panoramaViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
 - (double)posterSquareCornerRadius;

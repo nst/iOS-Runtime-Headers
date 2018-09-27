@@ -33,6 +33,7 @@
 - (bool)didReceiveNotificationRequest:(id)arg1;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
 - (id)notificationRequest;
+- (bool)overridesDefaultTitle;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
@@ -41,6 +42,7 @@
 - (void)setNotificationRequest:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)updatePreferredContentSize;
+- (bool)userInteractionEnabled;
 - (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, readonly) double distanceToStartOfManeuver;
-@property (nonatomic, retain) NSDictionary *eventData;
+@property (nonatomic, copy) NSDictionary *eventData;
 @property (nonatomic) unsigned long long eventType;
 @property (nonatomic, readonly) MNLocation *location;
 @property (nonatomic, readonly) NSString *primaryDescription;

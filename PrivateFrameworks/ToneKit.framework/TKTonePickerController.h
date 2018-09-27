@@ -118,6 +118,7 @@
 - (bool)_enableToneStoreDownloadItemIfAppropriate;
 - (id)_footerTextForToneStoreGroup;
 - (void)_goToStore;
+- (void)_handleAlertOverridePolicyDidChangeNotification:(id)arg1;
 - (id)_identifierAtIndexPath:(id)arg1 isMediaItem:(bool*)arg2;
 - (id)_identifierOfMediaItemAtIndex:(unsigned long long)arg1;
 - (id)_identifierOfSelectedClassicAlertTone;

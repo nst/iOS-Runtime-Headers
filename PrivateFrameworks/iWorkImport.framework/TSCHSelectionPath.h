@@ -18,14 +18,13 @@
 + (id)seriesSymbolsSelectionPathWithSeriesIndex:(unsigned long long)arg1;
 + (id)seriesValueLabelSelectionPathWithSeriesIndex:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (id)argumentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)argumentsCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)debuggingName;
 - (id)description;
 - (unsigned long long)hash;
-- (id)init;
 - (id)initWithArchive:(const struct ChartSelectionPathArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ChartSelectionPathTypeArchive {} *x5; struct ChartSelectionPathArchive {} *x6; struct RepeatedPtrField<TSCH::ChartSelectionPathArgumentArchive> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1;
 - (id)initWithPathType:(id)arg1 arguments:(id)arg2 subSelection:(id)arg3;
 - (id)initWithType:(id)arg1 name:(id)arg2 arguments:(id)arg3;

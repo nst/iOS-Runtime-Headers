@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
+@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, NSUserActivityDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
     CNUIUserActionListDataSource * _actionsDataSource;
     CNContactInlineActionsViewController * _actionsViewController;
     UIView * _actionsWrapperView;
     NSArray * _activatedConstraints;
+    CNUIUserActivityManager * _activityManager;
     CNContactAddFavoriteAction * _addFavoriteAction;
     CNContactAddLinkedCardAction * _addLinkedCardAction;
     CNContactAddNewFieldAction * _addNewFieldAction;
@@ -21,6 +22,7 @@
     bool  _allowsDeletion;
     bool  _allowsEditInApp;
     bool  _allowsEditing;
+    bool  _allowsPickerActions;
     bool  _allowsPropertyActions;
     bool  _allowsSendMessage;
     bool  _allowsSettingLinkedContactsAsPreferred;
@@ -51,8 +53,10 @@
     CNContactViewCache * _contactViewCache;
     CNContactCreateNewContactAction * _createNewContactAction;
     CNContactAction * _createReminderAction;
+    NSArray * _customActions;
     <CNContactViewHostProtocol> * _delegate;
     CNContactAction * _deleteContactAction;
+    bool  _didSetFirstResponder;
     bool  _disablingRotation;
     CNContactView * _displayContactView;
     NSMutableArray * _displayGroups;
@@ -131,6 +135,7 @@
 @property (nonatomic, retain) CNContactInlineActionsViewController *actionsViewController;
 @property (nonatomic, retain) UIView *actionsWrapperView;
 @property (nonatomic, retain) NSArray *activatedConstraints;
+@property (nonatomic, readonly) CNUIUserActivityManager *activityManager;
 @property (nonatomic, retain) CNContactAddFavoriteAction *addFavoriteAction;
 @property (nonatomic, retain) CNContactAddLinkedCardAction *addLinkedCardAction;
 @property (nonatomic, retain) CNContactAddNewFieldAction *addNewFieldAction;
@@ -145,6 +150,7 @@
 @property (nonatomic) bool allowsDeletion;
 @property (nonatomic) bool allowsEditInApp;
 @property (nonatomic) bool allowsEditing;
+@property (nonatomic) bool allowsPickerActions;
 @property (nonatomic) bool allowsPropertyActions;
 @property (nonatomic) bool allowsSendMessage;
 @property (nonatomic) bool allowsSettingLinkedContactsAsPreferred;
@@ -176,10 +182,12 @@
 @property (nonatomic, readonly) CNContactViewCache *contactViewCache;
 @property (nonatomic, retain) CNContactCreateNewContactAction *createNewContactAction;
 @property (nonatomic, retain) CNContactAction *createReminderAction;
+@property (nonatomic, retain) NSArray *customActions;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNContactViewHostProtocol> *delegate;
 @property (nonatomic, retain) CNContactAction *deleteContactAction;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didSetFirstResponder;
 @property (nonatomic, retain) CNContactView *displayContactView;
 @property (nonatomic, retain) NSMutableArray *displayGroups;
 @property (nonatomic, retain) NSLayoutConstraint *displayHeaderOverflowHeightConstraint;
@@ -248,6 +256,7 @@
 @property (nonatomic, retain) CNContactUpdateExistingContactAction *updateExistingContactAction;
 @property (nonatomic, retain) NSDictionary *userActivityUserInfo;
 
++ (void)_telemetryForContact:(id)arg1;
 + (bool)actionModelIncludesTTY:(id)arg1;
 + (id)boolStateRestorationProperties;
 + (id)createActionsControllerWithActionListDataSource:(id)arg1;
@@ -339,6 +348,7 @@
 - (id)actionsViewController;
 - (id)actionsWrapperView;
 - (id)activatedConstraints;
+- (id)activityManager;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 inGroup:(id)arg4 destructive:(bool)arg5;
@@ -362,6 +372,7 @@
 - (bool)allowsDeletion;
 - (bool)allowsEditInApp;
 - (bool)allowsEditing;
+- (bool)allowsPickerActions;
 - (bool)allowsPropertyActions;
 - (bool)allowsSendMessage;
 - (bool)allowsSettingLinkedContactsAsPreferred;
@@ -416,12 +427,14 @@
 - (id)createNewContactAction;
 - (id)createReminderAction;
 - (void)createdNewContact:(id)arg1;
+- (id)customActions;
 - (void)dealloc;
 - (id)defaultValueForPropertyCell:(id)arg1;
 - (id)delegate;
 - (id)deleteContactAction;
 - (double)desiredHeightForWidth:(double)arg1;
 - (void)didChangeToEditMode:(bool)arg1;
+- (bool)didSetFirstResponder;
 - (id)displayContactView;
 - (id)displayGroups;
 - (id)displayHeaderOverflowHeightConstraint;
@@ -468,10 +481,12 @@
 - (void)initializeTableViewsForHeaderHeight;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForDisplayTableView:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForEditingTableView:(id)arg1;
+- (bool)isGeminiAvailable;
 - (bool)isMailVIP;
 - (bool)isOutOfProcess;
 - (bool)isPresentingModalViewController;
 - (bool)isScrollViewControllingHeaderResizeAnimation:(id)arg1;
+- (bool)isStandardGroup:(id)arg1;
 - (bool)isTableViewHeaderFirstSectionIndexPath:(id)arg1;
 - (id)issuedSaveRequestIdentifiers;
 - (void)keyboardDidShowNotification:(id)arg1;
@@ -533,6 +548,7 @@
 - (long long)sectionOfGroupInTableView:(id)arg1;
 - (id)sendMessageAction;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (void)setActionsDataSource:(id)arg1;
 - (void)setActionsViewController:(id)arg1;
@@ -552,6 +568,7 @@
 - (void)setAllowsDeletion:(bool)arg1;
 - (void)setAllowsEditInApp:(bool)arg1;
 - (void)setAllowsEditing:(bool)arg1;
+- (void)setAllowsPickerActions:(bool)arg1;
 - (void)setAllowsPropertyActions:(bool)arg1;
 - (void)setAllowsSendMessage:(bool)arg1;
 - (void)setAllowsSettingLinkedContactsAsPreferred:(bool)arg1;
@@ -579,8 +596,10 @@
 - (void)setContactSupportsTTYCalls:(bool)arg1;
 - (void)setCreateNewContactAction:(id)arg1;
 - (void)setCreateReminderAction:(id)arg1;
+- (void)setCustomActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteContactAction:(id)arg1;
+- (void)setDidSetFirstResponder:(bool)arg1;
 - (void)setDisplayContactView:(id)arg1;
 - (void)setDisplayGroups:(id)arg1;
 - (void)setDisplayHeaderOverflowHeightConstraint:(id)arg1;
@@ -659,6 +678,7 @@
 - (void)sharingStatusDidChange;
 - (bool)shouldDisplayAvatarHeaderView;
 - (bool)shouldReallyShowLinkedContactsForEditingState:(bool)arg1;
+- (bool)shouldShowActionsForAvatarView:(id)arg1;
 - (bool)shouldShowFooterOverflowViewForEditingState:(bool)arg1;
 - (bool)shouldShowLinkedContacts;
 - (bool)showingMeContact;
@@ -687,6 +707,7 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)tableViewHeaderFirstSectionCellForTableView:(id)arg1;
 - (unsigned long long)tableViewSectionIndexFromGroupIndex:(unsigned long long)arg1;
 - (void)toggleEditing;

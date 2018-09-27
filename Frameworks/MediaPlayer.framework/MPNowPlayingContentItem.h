@@ -30,6 +30,7 @@
 @property (nonatomic) double elapsedTime;
 @property (nonatomic, readonly) double elapsedTimeTimestamp;
 @property (nonatomic) long long episodeNumber;
+@property (nonatomic) long long episodeType;
 @property (getter=isExplicitItem, nonatomic) bool explicitItem;
 @property (nonatomic, copy) NSString *externalContentIdentifier;
 @property (nonatomic, copy) NSString *genreName;
@@ -94,6 +95,7 @@
 - (double)elapsedTime;
 - (double)elapsedTimeTimestamp;
 - (long long)episodeNumber;
+- (long long)episodeType;
 - (id)externalContentIdentifier;
 - (id)genreName;
 - (bool)hasArtwork;
@@ -148,6 +150,7 @@
 - (void)setElapsedTime:(double)arg1;
 - (void)setElapsedTime:(double)arg1 playbackRate:(float)arg2;
 - (void)setEpisodeNumber:(long long)arg1;
+- (void)setEpisodeType:(long long)arg1;
 - (void)setExplicitItem:(bool)arg1;
 - (void)setExternalContentIdentifier:(id)arg1;
 - (void)setGenreName:(id)arg1;

@@ -6,10 +6,6 @@
 @required
 
 - (int)cbaType;
-- (bool)hasCbaType;
-- (bool)hasQueryId;
-- (bool)hasTimestamp;
-- (bool)hasUrl;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

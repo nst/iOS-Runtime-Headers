@@ -103,7 +103,7 @@
 - (bool)shouldAllowCppRuntime;
 - (bool)shouldAllowInternalProtocols;
 - (void)showBluetoothAccessoryPickerWithNameFilter:(id)arg1 completion:(id /* block */)arg2;
-- (void)startDestinationSharingForUUID:(id)arg1;
+- (void)startDestinationSharingForUUID:(id)arg1 options:(unsigned long long)arg2;
 - (void)startIPAccessoryDiscovery;
 - (void)startLocationForConnectedAccessories;
 - (void)stopDestinationSharingForUUID:(id)arg1;

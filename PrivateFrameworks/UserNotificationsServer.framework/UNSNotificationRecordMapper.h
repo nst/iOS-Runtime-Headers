@@ -8,6 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)_notificationContentForNotificationRecord:(id)arg1;
+- (id)_notificationIconForNotificationRecord:(id)arg1;
 - (id)_notificationSoundForNotificationRecord:(id)arg1;
 - (id)_notificationTriggerForNotificationRecord:(id)arg1;
 - (id)initWithBundle:(id)arg1;

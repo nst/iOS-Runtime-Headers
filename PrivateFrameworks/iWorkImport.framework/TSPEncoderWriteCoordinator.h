@@ -7,7 +7,7 @@
     TSPArchiverManager * _archiverManager;
     TSPObjectContext * _context;
     NSMutableArray * _dataFinalizeHandlers;
-    NSHashTable * _delayedObjects;
+    TSPReferenceOrderedSet * _delayedObjects;
     <TSPEncoderWriteCoordinatorDelegate> * _delegate;
     bool  _didStopCapturingSnapshots;
     <TSPEncoder> * _encoder;

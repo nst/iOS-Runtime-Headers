@@ -7,6 +7,7 @@
 }
 
 + (id)currentDesignator;
++ (id)currentDesignatorIfExists;
 + (void)destroyCurrentDesignator;
 
 - (int)priority;

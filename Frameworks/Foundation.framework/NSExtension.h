@@ -8,10 +8,11 @@
     NSMutableDictionary * __extensionContexts;
     NSMutableDictionary * __extensionExpirationIdentifiers;
     NSMutableDictionary * __extensionServiceConnections;
+    NSString * __localizedName;
+    NSString * __localizedShortName;
     <PKPlugIn> * __plugIn;
     id /* block */  __requestPostCompletionBlock;
     id /* block */  __requestPostCompletionBlockWithItems;
-    NSObject<OS_dispatch_queue> * __safePluginQueue;
     id  __stashedPlugInConnection;
     NSDictionary * _attributes;
     NSUUID * _connectionUUID;
@@ -22,6 +23,9 @@
     id /* block */  _requestCancellationBlock;
     id /* block */  _requestCompletionBlock;
     id /* block */  _requestInterruptionBlock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfairLock;
     NSString * _version;
 }
 
@@ -31,11 +35,12 @@
 @property (setter=_setExtensionExpirationsIdentifiers:, nonatomic, retain) NSMutableDictionary *_extensionExpirationIdentifiers;
 @property (setter=_setExtensionServiceConnections:, nonatomic, retain) NSMutableDictionary *_extensionServiceConnections;
 @property (getter=_extensionState, setter=_setExtensionState:, nonatomic, copy) NSDictionary *_extensionState;
+@property (nonatomic, copy) NSString *_localizedName;
+@property (nonatomic, copy) NSString *_localizedShortName;
 @property (getter=_isMarkedNew, nonatomic, readonly) bool _markedNew;
 @property (setter=_setPlugIn:, nonatomic, retain) <PKPlugIn> *_plugIn;
 @property (nonatomic, copy) id /* block */ _requestPostCompletionBlock;
 @property (nonatomic, copy) id /* block */ _requestPostCompletionBlockWithItems;
-@property (nonatomic) NSObject<OS_dispatch_queue> *_safePluginQueue;
 @property (retain) id _stashedPlugInConnection;
 @property (nonatomic, copy) NSDictionary *attributes;
 @property (nonatomic, copy) NSUUID *connectionUUID;
@@ -57,6 +62,7 @@
 @property (nonatomic, copy) id /* block */ requestCancellationBlock;
 @property (nonatomic, copy) id /* block */ requestCompletionBlock;
 @property (nonatomic, copy) id /* block */ requestInterruptionBlock;
+@property (nonatomic, readonly, copy) NSString *sf_bundleIdentifierForContainingApp;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *version;
 
@@ -72,6 +78,7 @@
 + (void)extensionWithUUID:(id)arg1 completion:(id /* block */)arg2;
 + (void)extensionsWithMatchingAttributes:(id)arg1 completion:(id /* block */)arg2;
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
++ (void)extensionsWithMatchingAttributes:(id)arg1 synchronously:(bool)arg2 completion:(id /* block */)arg3;
 + (void)initialize;
 + (void)initializeFiltering;
 + (id)predicateForActivationRule:(id)arg1;
@@ -103,17 +110,20 @@
 - (void)_kill:(int)arg1;
 - (void)_loadItemForPayload:(id)arg1 contextIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_loadPreviewImageForPayload:(id)arg1 contextIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)_localizedName;
+- (id)_localizedShortName;
+- (id)_newExtensionContextAndGetConnection:(id*)arg1 assertion:(id)arg2 inputItems:(id)arg3;
 - (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)_plugIn;
 - (int)_plugInProcessIdentifier;
+- (void)_reallyBeginExtensionRequestWithContext:(id)arg1 extensionServiceConnection:(id)arg2 listenerEndpoint:(id)arg3 synchronously:(bool)arg4 completion:(id /* block */)arg5;
 - (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 processAssertion:(id)arg2 listenerEndpoint:(id)arg3 completion:(id /* block */)arg4;
 - (id /* block */)_requestPostCompletionBlock;
 - (id /* block */)_requestPostCompletionBlockWithItems;
 - (void)_resetExtensionState;
-- (id)_safePluginQueue;
 - (void)_safelyBeginUsing:(id /* block */)arg1;
+- (void)_safelyBeginUsingSynchronously:(bool)arg1 withAssertion_onSafeQueue:(id /* block */)arg2;
 - (void)_safelyBeginUsing_withAssertion:(id /* block */)arg1;
-- (void)_safelyBeginUsing_withAssertion_onSafeQueue:(id /* block */)arg1;
 - (void)_safelyEndUsing:(id /* block */)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(id /* block */)arg2;
 - (void)_setAllowedErrorClasses:(id)arg1;
@@ -130,11 +140,14 @@
 - (bool)attemptOptOut:(id*)arg1;
 - (id)attributes;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(id /* block */)arg2;
+- (id)beginExtensionRequestWithInputItems:(id)arg1 error:(id*)arg2;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id /* block */)arg3;
+- (id)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 error:(id*)arg3;
 - (void)cancelExtensionRequestWithIdentifier:(id)arg1;
 - (id)connectionUUID;
 - (void)dealloc;
 - (id)description;
+- (id)extensionContexts;
 - (id)extensionPointIdentifier;
 - (unsigned long long)hash;
 - (id)icons;
@@ -142,6 +155,7 @@
 - (id)infoDictionary;
 - (id)init;
 - (bool)isEqual:(id)arg1;
+- (id)newAssertionToBeginUsingPluginWithError:(id*)arg1;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (bool)optedIn;
 - (int)pidForRequestIdentifier:(id)arg1;
@@ -157,9 +171,10 @@
 - (void)setRequestCompletionBlock:(id /* block */)arg1;
 - (void)setRequestInterruptionBlock:(id /* block */)arg1;
 - (void)setVersion:(id)arg1;
+- (void)set_localizedName:(id)arg1;
+- (void)set_localizedShortName:(id)arg1;
 - (void)set_requestPostCompletionBlock:(id /* block */)arg1;
 - (void)set_requestPostCompletionBlockWithItems:(id /* block */)arg1;
-- (void)set_safePluginQueue:(id)arg1;
 - (void)set_stashedPlugInConnection:(id)arg1;
 - (id)version;
 
@@ -170,6 +185,11 @@
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
+
+// Image: /System/Library/Frameworks/IdentityLookupUI.framework/IdentityLookupUI
+
+- (id)SMSReportDestination;
+- (id)networkReportDestination;
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
@@ -193,6 +213,7 @@
 + (bool)appAllowedToTalkToSiri:(id)arg1;
 
 - (bool)_intents_extensionSupportsAtLeastOneSiriIntent;
+- (id)_intents_intentsRestrictedWhileProtectedDataUnavailable;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -205,6 +226,11 @@
 - (id)_iconWithFormat:(int)arg1;
 - (unsigned long long)_mapExtensionType;
 
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (bool)ql_isPreviewExtensionThatHaveCustomPresentationView;
+- (id)ql_previewExtensionCustomLoadingTime;
+
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 + (void)extensionsWithMatchingPointName:(id)arg1 activationRule:(id)arg2 completion:(id /* block */)arg3;
@@ -215,12 +241,6 @@
 + (void)extensionsWithMatchingPointName:(id)arg1 unwantedActivationRule:(id)arg2 completion:(id /* block */)arg3;
 
 - (long long)processMode;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (id)__UIKit_upcall_icons;
-- (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(id /* block */)arg2;
-- (void)instantiateViewControllerWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 connectionHandler:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/ContactsDonation.framework/ContactsDonation
 
@@ -235,12 +255,22 @@
 - (id)pu_supportedMediaTypes;
 - (bool)pu_supportsMediaType:(unsigned long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SafariFoundation.framework/SafariFoundation
+
+- (id)sf_bundleIdentifierForContainingApp;
+
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 - (id)_siriui_extensionIconImage;
 - (id)_siriui_iconImageWithFormat:(int)arg1;
 - (id)siriui_displayName;
 - (id)siriui_iconImage;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (id)__UIKit_upcall_icons;
+- (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(id /* block */)arg2;
+- (void)instantiateViewControllerWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 connectionHandler:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 

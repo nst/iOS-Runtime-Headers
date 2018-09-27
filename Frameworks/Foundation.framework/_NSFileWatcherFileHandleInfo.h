@@ -15,6 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (bool)isDirectory;
-- (bool)verifyAccessByProcessIdentifier:(int)arg1;
+- (bool)verifyAccessByAuditToken:(struct { unsigned int x1[8]; })arg1;
 
 @end

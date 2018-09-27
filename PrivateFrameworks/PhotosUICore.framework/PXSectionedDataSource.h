@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) unsigned long long identifier;
 @property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; } lastItemIndexPath;
 @property (nonatomic, readonly) long long numberOfSections;
+@property (nonatomic, readonly) NSObject<OS_os_log> *sectionedDataSourceLog;
 @property (readonly) Class superclass;
 
 + (id)emptyDataSource;
@@ -45,6 +46,8 @@
 - (Class)objectReferenceClassForSection;
 - (Class)objectReferenceClassForSubItem;
 - (id)objectReferenceForObjectReference:(id)arg1;
+- (id)objectsInIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (void)prefetchIndexPaths:(id)arg1;
+- (id)sectionedDataSourceLog;
 
 @end

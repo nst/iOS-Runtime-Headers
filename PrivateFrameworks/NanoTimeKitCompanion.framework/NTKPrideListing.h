@@ -3,6 +3,7 @@
  */
 
 @interface NTKPrideListing : NSObject <NSCopying, NTKAVListing> {
+    CLKDevice * _device;
     NSString * _filename;
     UIImage * _image;
     NSString * _name;
@@ -20,7 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CLKVideo *video;
 
-+ (id)listingWithFilename:(id)arg1;
++ (id)listingForDevice:(id)arg1 withFilename:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,7 +30,7 @@
 - (void)discardAssets;
 - (bool)hasTag:(id)arg1;
 - (id)image;
-- (id)initWithFilename:(id)arg1;
+- (id)initForDevice:(id)arg1 withFilename:(id)arg2;
 - (id)name;
 - (id)randomNextListing;
 - (void)setName:(id)arg1;

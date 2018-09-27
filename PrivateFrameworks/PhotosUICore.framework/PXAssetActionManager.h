@@ -3,17 +3,18 @@
  */
 
 @interface PXAssetActionManager : PXActionManager {
-    PXSelectionSnapshot * _selectionSnapshot;
+    PXSectionedSelectionManager * _selectionManager;
 }
 
-@property (nonatomic, readonly) PXSelectionSnapshot *selectionSnapshot;
+@property (nonatomic, readonly) PXSectionedSelectionManager *selectionManager;
 
 - (void).cxx_destruct;
 - (id)actionPerformerForActionType:(id)arg1;
 - (bool)canPerformAssetVariationActions;
 - (id)init;
-- (id)initWithSelectionSnapshot:(id)arg1;
+- (id)initWithSelectionManager:(id)arg1;
 - (void)px_registerAdditionalPerformerClasses;
-- (id)selectionSnapshot;
+- (id)selectionManager;
+- (bool)shouldEnableActionType:(id)arg1 onAsset:(id)arg2;
 
 @end

@@ -56,7 +56,7 @@
 - (void)beginUpdatingLevelViewModel:(id)arg1;
 - (long long)captureOrientation;
 - (void)dealloc;
-- (void)debugValidateCaptureOrientation;
+- (void)debugValidateCaptureOrientationForMode:(long long)arg1;
 - (long long)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (void)endUpdatingActiveLevelViewModel;

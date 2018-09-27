@@ -10,6 +10,7 @@
 + (id)resizeToHeight:(double)arg1 duration:(double)arg2;
 + (id)resizeToWidth:(double)arg1 duration:(double)arg2;
 + (id)resizeToWidth:(double)arg1 height:(double)arg2 duration:(double)arg3;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

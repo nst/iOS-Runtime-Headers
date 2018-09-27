@@ -3,6 +3,7 @@
  */
 
 @interface SUWebViewController : SUViewController <SUWebViewDelegate, SUWebViewManagerDelegate> {
+    ACAccount * _account;
     SSMutableAuthenticationContext * _authenticationContext;
     SUDelayedNavigationItem * _delayedNavigationItem;
     NSURL * _displayedURL;
@@ -16,6 +17,7 @@
     bool  _shouldSignRequests;
     SUStorePageProtocol * _storePageProtocol;
     long long  _style;
+    NSDictionary * _tidHeaders;
     NSURL * _url;
     bool  _viewIsReady;
     SUWebView * _webView;
@@ -24,6 +26,7 @@
 
 @property (getter=_mescalSession, setter=_setMescalSession:, nonatomic, retain) SUMescalSession *_mescalSession;
 @property (getter=_performanceMetrics, setter=_setPerformanceMetrics:, nonatomic, retain) ISURLRequestPerformance *_performanceMetrics;
+@property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -31,6 +34,7 @@
 @property (nonatomic) bool shouldSignRequests;
 @property (nonatomic) long long style;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *tidHeaders;
 @property (nonatomic) bool viewIsReady;
 @property (nonatomic, readonly) SUWebView *webView;
 
@@ -57,6 +61,7 @@
 - (void)_setLastKnownOrientation:(long long)arg1;
 - (void)_setMescalSession:(id)arg1;
 - (void)_setPerformanceMetrics:(id)arg1;
+- (id)account;
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (id)authenticationContext;
@@ -78,17 +83,20 @@
 - (id)newScriptInterfaceForWebViewManager:(id)arg1;
 - (void)parentViewControllerHierarchyDidChange;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
+- (void)setAccount:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
 - (void)setShouldSignRequests:(bool)arg1;
 - (void)setStorePageProtocol:(id)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setTidHeaders:(id)arg1;
 - (void)setViewIsReady:(bool)arg1;
 - (bool)shouldSignRequests;
 - (void)storePageCleanupBeforeTearDown;
 - (id)storePageProtocol;
 - (void)storePageProtocolDidChange;
 - (long long)style;
+- (id)tidHeaders;
 - (id)viewControllerForWebViewManager:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

@@ -4,9 +4,6 @@
 
 @interface _SFPBAppLink : PBCodable <NSSecureCoding, _SFPBAppLink> {
     _SFPBPunchout * _appPunchout;
-    struct { 
-        unsigned int imageAlign : 1; 
-    }  _has;
     _SFPBImage * _image;
     int  _imageAlign;
     NSString * _title;
@@ -15,10 +12,6 @@
 @property (nonatomic, retain) _SFPBPunchout *appPunchout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasAppPunchout;
-@property (nonatomic, readonly) bool hasImage;
-@property (nonatomic, readonly) bool hasImageAlign;
-@property (nonatomic, readonly) bool hasTitle;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _SFPBImage *image;
 @property (nonatomic) int imageAlign;
@@ -29,10 +22,6 @@
 - (void).cxx_destruct;
 - (id)appPunchout;
 - (id)dictionaryRepresentation;
-- (bool)hasAppPunchout;
-- (bool)hasImage;
-- (bool)hasImageAlign;
-- (bool)hasTitle;
 - (unsigned long long)hash;
 - (id)image;
 - (int)imageAlign;

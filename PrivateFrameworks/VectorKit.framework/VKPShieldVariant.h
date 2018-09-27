@@ -138,7 +138,7 @@
 @property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
 @property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; } textStroke;
 
-- (struct Matrix<float, 4, 1> { float x1[4]; })_colorForMaskColor:(int)arg1 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg2;
+- (struct Matrix<float, 4, 1> { float x1[4]; })_colorForMaskColor:(int)arg1 colors:(struct { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; }*)arg2;
 - (void)addCenterPoint:(float)arg1;
 - (void)addLayer:(struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
 - (unsigned int)atlasIndex;
@@ -191,7 +191,7 @@
 - (unsigned int)maxDigits;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minDigits;
-- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(double)arg4 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg5;
+- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(double)arg4 colors:(struct { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; }*)arg5;
 - (struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; })nonDigitFontColor;
 - (id)nonDigitFontName;
 - (float)nonDigitFontSize;

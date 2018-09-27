@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMXpcClient : HMFMessageTransport <HMXPCMessageTransport> {
+@interface HMXPCClient : HMFMessageTransport <HMXPCMessageTransport> {
     NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _connectionValid;
     int  _notifyRegisterToken;

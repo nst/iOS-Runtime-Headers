@@ -16,9 +16,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSNumber *unseen;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_typedBackingStore;
 - (unsigned long long)callCapabilities;
 - (long long)callType;
@@ -42,5 +45,13 @@
 - (void)setVerb:(id)arg1;
 - (id)unseen;
 - (id)verb;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
+
+- (id)apui_keyPeople;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
+
+- (id)vcui_keyPeople;
 
 @end

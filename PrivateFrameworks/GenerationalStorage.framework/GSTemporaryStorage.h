@@ -7,6 +7,7 @@
     NSURL * _libraryURL;
     int  _lockFd;
     NSURL * _stagingURL;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (retain) NSURL *documentURL;

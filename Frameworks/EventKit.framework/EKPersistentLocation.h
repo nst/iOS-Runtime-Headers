@@ -21,6 +21,7 @@
 - (id)radius;
 - (id)referenceFrame;
 - (id)routing;
+- (id)semanticIdentifier;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setAlarmOwner:(id)arg1;

@@ -27,6 +27,7 @@
 @property (readonly) unsigned long long firstIndex;
 @property (readonly) unsigned long long lastIndex;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } px_coveringRange;
+@property (nonatomic, readonly) NSString *px_shortDescription;
 @property (nonatomic, readonly) bool tsu_isSingleContiguousRange;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -96,6 +97,10 @@
 
 - (unsigned long long)pu_indexAtIndex:(unsigned long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
+
+- (id)asArray;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (void)__ck_enumerateIndexesByProximityToIndex:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
@@ -107,6 +112,7 @@
 
 - (bool)_cn_all:(id /* block */)arg1;
 - (bool)_cn_any:(id /* block */)arg1;
+- (void)_cn_each:(id /* block */)arg1;
 - (id)_cn_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
@@ -166,6 +172,10 @@
 - (unsigned long long)tsu_positionOfIndex:(unsigned long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/PhotosGraph
+
+- (bool)pg_intersectsIndexSet:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 - (id)_pl_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(bool)arg2;
@@ -176,11 +186,16 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
-- (id)_px_indexSetByUpdatingWithChangedIndexes:(id)arg1 asInserts:(bool)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })px_coveringRange;
 - (id)px_indexSetAdjustedForDeletions:(id)arg1;
 - (id)px_indexSetAdjustedForInsertions:(id)arg1;
+- (id)px_indexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)px_intersectionWithIndexSet:(id)arg1;
 - (id)px_shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
+- (long long)firstIndexCommonWithIndexSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
 
@@ -207,9 +222,12 @@
 
 - (id)tsp_initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (void)tsp_saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_boundingRange;
+- (unsigned long long)tsu_firstCommonIndexWithIndexes:(id)arg1;
 - (unsigned long long)tsu_indexAtPosition:(unsigned long long)arg1;
 - (id)tsu_indexSetByAddingIndex:(unsigned long long)arg1;
 - (id)tsu_indexSetByAddingIndexes:(id)arg1;
+- (id)tsu_indexSetByExcludingIndex:(unsigned long long)arg1;
 - (id)tsu_indexSetByExcludingIndexes:(id)arg1;
 - (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)tsu_indexSetByIntersectingWithIndexes:(id)arg1;

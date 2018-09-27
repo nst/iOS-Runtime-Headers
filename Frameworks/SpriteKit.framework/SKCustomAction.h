@@ -7,6 +7,7 @@
 }
 
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id /* block */)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

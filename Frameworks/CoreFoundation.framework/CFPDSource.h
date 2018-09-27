@@ -12,8 +12,6 @@
     struct __CFString { } * _domain;
     short  _generationShmemIndex;
     bool  _handlingRequest;
-    bool  _hasDrainedPendingChangesSinceLastReplyToOwner;
-    bool  _hasPreviouslyBeenUnableToDetermineSandboxAccess;
     NSObject<OS_dispatch_group> * _inProgressWriteGroup;
     unsigned int  _lastEgid;
     unsigned int  _lastEuid;
@@ -37,12 +35,9 @@
     bool  _watchingParentDirectory;
 }
 
-+ (void)removeObservationConnectionsForIdentifier:(unsigned long long)arg1;
-
 - (void)_writeToDisk:(bool)arg1;
 - (id)acceptMessage:(id)arg1;
-- (void)addOwner:(id)arg1;
-- (void)asyncNotifyObserversOfWriteFromConnection:(id)arg1;
+- (void)asyncNotifyObserversOfWriteFromConnection:(id)arg1 message:(id)arg2;
 - (void)asyncWriteToDisk;
 - (void)attachSizeWarningsToReply:(id)arg1 forByteCount:(unsigned long long)arg2;
 - (void)beginHandlingRequest;
@@ -54,7 +49,6 @@
 - (void)clearCache;
 - (struct __CFString { }*)cloudConfigurationPath;
 - (struct __CFString { }*)container;
-- (id)copyCachedObservationConnectionForMessage:(id)arg1;
 - (id)copyPropertyListValidatingPlist:(bool)arg1;
 - (id)copyPropertyListWithoutDrainingPendingChangesValidatingPlist:(bool)arg1;
 - (struct __CFString { }*)copyUncanonicalizedPath;
@@ -73,7 +67,6 @@
 - (void)handleNoPlistFound;
 - (void)handleOpenForWritingFailureWithErrno:(int)arg1;
 - (void)handleSynchronous;
-- (bool)hasEverHadMultipleOwners;
 - (bool)hasObservers;
 - (unsigned long long)hash;
 - (id)initWithDomain:(struct __CFString { }*)arg1 userName:(struct __CFString { }*)arg2 byHost:(bool)arg3 managed:(bool)arg4 shmemIndex:(short)arg5 daemon:(id)arg6;
@@ -82,9 +75,8 @@
 - (void)lockedSync:(id /* block */)arg1;
 - (bool)managed;
 - (void)markNeedsToReloadFromDiskDueToFailedWrite;
+- (void)observingConnectionWasInvalidated:(id)arg1;
 - (void)observingConnectionsLockedSync:(id /* block */)arg1;
-- (int)owner;
-- (void)removeOwner;
 - (void)respondToFileWrittenToBehindOurBack;
 - (void)setDirty:(bool)arg1;
 - (void)setManagedPreferencesUseContainer:(bool)arg1;
@@ -95,7 +87,6 @@
 - (void)stopNotifyingObserver:(id)arg1;
 - (void)syncWriteToDisk;
 - (void)syncWriteToDiskAndFlushCache;
-- (void)transitionToMultiOwner;
 - (void)updateShmemEntry;
 - (struct __CFString { }*)user;
 - (bool)validateAccessToken:(int)arg1 accessType:(int)arg2;

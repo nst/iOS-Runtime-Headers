@@ -7,10 +7,17 @@
     id /* block */  _callback;
     void * _callbackContext;
     struct __CFDictionary { } * _clientDisplayMap;
+    unsigned int  _displayArrivalIterator;
+    unsigned int  _displayArrivalIteratorUser;
+    struct IONotificationPort { } * _displayMatchingNotificationPort;
+    unsigned int  _displayRemovalIterator;
+    unsigned int  _displayRemovalIteratorUser;
+    NSMutableDictionary * _disps;
     id /* block */  _ecoModeNotificationHandler;
     int  _ecoModeNotificationToken;
     id /* block */  _ecoModePreferencesUpdateNotificationHandler;
     int  _ecoModePreferencesUpdateNotificationToken;
+    NSObject<OS_os_log> * _logHandle;
     NightModeControl * _nightModeControl;
     NightShiftDisplayWrapper * _nightShiftWrapper;
     bool  _useMultiCurves;
@@ -38,13 +45,18 @@
 }
 
 - (void)callBlockWithProperty:(struct __CFString { }*)arg1 value:(void*)arg2;
+- (void)cancelHIDDisplayLookup;
 - (void*)copyBLControlPropertyWithkey:(struct __CFString { }*)arg1;
 - (id)copyPropertyWithKey:(id)arg1 client:(id)arg2;
 - (struct __CFDictionary { }*)createDictWithUsagePairPage:(unsigned int)arg1 usage:(unsigned int)arg2;
+- (void)dealloc;
 - (bool)findAlsNodes;
 - (bool)findBacklight;
 - (bool)findHIDClients;
+- (void)handleDisplayArrival:(unsigned int)arg1;
+- (void)handleDisplayRemoval:(unsigned int)arg1;
 - (id)init;
+- (bool)initialiseHIDDisplayLookup;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (int)rootQueuePthreadAttrInit:(struct _opaque_pthread_attr_t { long long x1; BOOL x2[56]; }*)arg1;
 - (bool)setBLControlPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2;

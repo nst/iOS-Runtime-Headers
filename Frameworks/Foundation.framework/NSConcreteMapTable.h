@@ -64,6 +64,8 @@
     }  values;
 }
 
++ (bool)supportsSecureCoding;
+
 - (unsigned long long)__capacity;
 - (void)_setBackingStore;
 - (id)allKeys;

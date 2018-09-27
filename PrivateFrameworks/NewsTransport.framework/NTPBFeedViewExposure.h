@@ -28,6 +28,7 @@
         unsigned int feedType : 1; 
         unsigned int groupType : 1; 
         unsigned int presentationReason : 1; 
+        unsigned int rankInToc : 1; 
         unsigned int adSupportedChannel : 1; 
         unsigned int cameFromGroup : 1; 
         unsigned int isNewUserToFeed : 1; 
@@ -44,6 +45,7 @@
     NSString * _previousArticleId;
     long long  _previousArticlePublisherArticleVersion;
     NSString * _previousArticleVersion;
+    int  _rankInToc;
     NSString * _referringSourceApplication;
     NSString * _referringUrl;
     NSString * _sourceChannelId;
@@ -90,6 +92,7 @@
 @property (nonatomic, readonly) bool hasPreviousArticleId;
 @property (nonatomic) bool hasPreviousArticlePublisherArticleVersion;
 @property (nonatomic, readonly) bool hasPreviousArticleVersion;
+@property (nonatomic) bool hasRankInToc;
 @property (nonatomic, readonly) bool hasReferringSourceApplication;
 @property (nonatomic, readonly) bool hasReferringUrl;
 @property (nonatomic, readonly) bool hasSourceChannelId;
@@ -104,6 +107,7 @@
 @property (nonatomic, retain) NSString *previousArticleId;
 @property (nonatomic) long long previousArticlePublisherArticleVersion;
 @property (nonatomic, retain) NSString *previousArticleVersion;
+@property (nonatomic) int rankInToc;
 @property (nonatomic, retain) NSString *referringSourceApplication;
 @property (nonatomic, retain) NSString *referringUrl;
 @property (nonatomic, retain) NSString *sourceChannelId;
@@ -164,6 +168,7 @@
 - (bool)hasPreviousArticleId;
 - (bool)hasPreviousArticlePublisherArticleVersion;
 - (bool)hasPreviousArticleVersion;
+- (bool)hasRankInToc;
 - (bool)hasReferringSourceApplication;
 - (bool)hasReferringUrl;
 - (bool)hasSourceChannelId;
@@ -182,6 +187,7 @@
 - (id)previousArticleId;
 - (long long)previousArticlePublisherArticleVersion;
 - (id)previousArticleVersion;
+- (int)rankInToc;
 - (bool)readFrom:(id)arg1;
 - (id)referringSourceApplication;
 - (id)referringUrl;
@@ -215,6 +221,7 @@
 - (void)setHasIsUserSubscribedToFeed:(bool)arg1;
 - (void)setHasPresentationReason:(bool)arg1;
 - (void)setHasPreviousArticlePublisherArticleVersion:(bool)arg1;
+- (void)setHasRankInToc:(bool)arg1;
 - (void)setIsNewUserToFeed:(bool)arg1;
 - (void)setIsPaidSubscriberToFeed:(bool)arg1;
 - (void)setIsSubscribedToGroupFeed:(bool)arg1;
@@ -224,6 +231,7 @@
 - (void)setPreviousArticleId:(id)arg1;
 - (void)setPreviousArticlePublisherArticleVersion:(long long)arg1;
 - (void)setPreviousArticleVersion:(id)arg1;
+- (void)setRankInToc:(int)arg1;
 - (void)setReferringSourceApplication:(id)arg1;
 - (void)setReferringUrl:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;

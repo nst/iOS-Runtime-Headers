@@ -15,6 +15,7 @@
 - (void)applyToView:(struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })arg1 withContext:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)episodeKind;
+- (id)humanDescription;
 - (id)initWithCoder:(id)arg1;
 
 @end

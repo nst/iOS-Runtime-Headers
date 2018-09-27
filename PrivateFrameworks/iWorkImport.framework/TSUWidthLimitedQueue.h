@@ -12,11 +12,11 @@
     }  mUnfairLock;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithLimit:(unsigned long long)arg1;
+- (id)initWithLimit:(unsigned long long)arg1 name:(id)arg2;
 - (void)performAsync:(id /* block */)arg1;
 - (void)performSync:(id /* block */)arg1;
-- (id)targetDispatchQueue;
 
 @end

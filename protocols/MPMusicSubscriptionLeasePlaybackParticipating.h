@@ -6,5 +6,6 @@
 @required
 
 - (long long)leasePlaybackPreventionState;
+- (ICMusicSubscriptionLeaseStatus *)leaseStatus;
 
 @end

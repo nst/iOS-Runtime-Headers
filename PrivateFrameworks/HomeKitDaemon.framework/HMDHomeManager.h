@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeManager : HMFObject <HAPFragmentationStreamDelegate, HMDAccessoryBrowserManagerDelegate, HMDAccountDelegate, HMDAccountRegistryDelegate, HMDBackingStoreObjectProtocol, HMDCompanionManagerDelegate, HMDDeviceSetupSessionDelegate, HMDPairedSyncDelegate, HMDUserManagementOperationDelegate, HMDWatchManagerDelegate, HMFMessageReceiver, HMFTimerDelegate, IDSServiceDelegate> {
+@interface HMDHomeManager : HMFObject <HAPFragmentationStreamDelegate, HMDAccessoryBrowserManagerDelegate, HMDBackingStoreObjectProtocol, HMDCompanionManagerDelegate, HMDDeviceSetupSessionDelegate, HMDPairedSyncDelegate, HMDUserManagementOperationDelegate, HMDWatchManagerDelegate, HMFMessageReceiver, HMFTimerDelegate> {
     bool  _accessAllowedWhenLocked;
     HMDAccessoryBrowser * _accessoryBrowserInternal;
     NSObject<OS_dispatch_source> * _accessoryFinderTimer;
@@ -32,7 +32,7 @@
     bool  _companionReachable;
     NSUUID * _currentHomeUUID;
     NSUUID * _dataTag;
-    HMFTimer * _debouceHomesUpdateTimer;
+    HMFTimer * _debounceHomesUpdateTimer;
     NSDictionary * _demoAccessories;
     bool  _demoFinalized;
     bool  _deviceLost;
@@ -44,12 +44,13 @@
     NSMutableSet * _fullSyncedWatchPeers;
     HMDAssistantGather * _gatherer;
     unsigned long long  _generationCounter;
+    int  _generationCounterToken;
     bool  _homeDataLoadedFromArchive;
     unsigned long long  _homeDatabaseSize;
     HMDHomeManagerObjectChangeHandler * _homeManagerObjectChangeHandler;
     NSMutableDictionary * _homeNames;
     NSMutableArray * _homes;
-    HMDRemoteIdentityRegistry * _identityRegistry;
+    HMDIdentityRegistry * _identityRegistry;
     bool  _ignoreFirstTimeReachabilityChanged;
     NSMutableArray * _incomingInvitations;
     HMDKeyTransferAgent * _keyTransferAgent;
@@ -77,10 +78,12 @@
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
     long long  _residentEnabledState;
     HMDResidentMesh * _residentMesh;
+    HMFTimer * _sharedHomesPushDelayTimer;
     NSMutableArray * _siriSyncNotificationReasons;
     unsigned long long  _siriSyncNotificationTime;
     HMDSoftwareUpdateManager * _softwareUpdateManager;
     bool  _speakersAreConfigured;
+    bool  _speakersAreConfiguredInOwnedHomes;
     unsigned long long  _stateHandle;
     unsigned long long  _status;
     HMDSyncOperationManager * _syncManager;
@@ -132,7 +135,7 @@
 @property (nonatomic) bool companionReachable;
 @property (nonatomic, retain) NSUUID *currentHomeUUID;
 @property (nonatomic, retain) NSUUID *dataTag;
-@property (nonatomic, retain) HMFTimer *debouceHomesUpdateTimer;
+@property (nonatomic, retain) HMFTimer *debounceHomesUpdateTimer;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSDictionary *demoAccessories;
 @property (nonatomic) bool demoFinalized;
@@ -146,13 +149,14 @@
 @property (nonatomic, retain) NSMutableSet *fullSyncedWatchPeers;
 @property (nonatomic, retain) HMDAssistantGather *gatherer;
 @property (nonatomic) unsigned long long generationCounter;
+@property (nonatomic) int generationCounterToken;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool homeDataLoadedFromArchive;
 @property (nonatomic) unsigned long long homeDatabaseSize;
 @property (nonatomic, readonly) HMDHomeManagerObjectChangeHandler *homeManagerObjectChangeHandler;
 @property (nonatomic, retain) NSMutableDictionary *homeNames;
 @property (nonatomic, retain) NSMutableArray *homes;
-@property (nonatomic, retain) HMDRemoteIdentityRegistry *identityRegistry;
+@property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
 @property (nonatomic) bool ignoreFirstTimeReachabilityChanged;
 @property (nonatomic, retain) NSMutableArray *incomingInvitations;
 @property (nonatomic, readonly) HMDKeyTransferAgent *keyTransferAgent;
@@ -183,10 +187,12 @@
 @property (getter=isResidentEnabled, nonatomic, readonly) bool residentEnabled;
 @property (nonatomic) long long residentEnabledState;
 @property (nonatomic, retain) HMDResidentMesh *residentMesh;
+@property (nonatomic, readonly) HMFTimer *sharedHomesPushDelayTimer;
 @property (nonatomic, retain) NSMutableArray *siriSyncNotificationReasons;
 @property (nonatomic) unsigned long long siriSyncNotificationTime;
 @property (nonatomic, readonly) HMDSoftwareUpdateManager *softwareUpdateManager;
 @property (nonatomic) bool speakersAreConfigured;
+@property (nonatomic) bool speakersAreConfiguredInOwnedHomes;
 @property (nonatomic) unsigned long long stateHandle;
 @property (readonly) unsigned long long status;
 @property (readonly) Class superclass;
@@ -208,14 +214,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic, readonly) bool zoneFetchFailed;
 
++ (id)_getIntentGroupClientIdentifierSalt;
 + (id)activeAccountIdentifier;
 + (id)createIdentifierSalt:(id)arg1 deviceSpecific:(bool)arg2;
++ (id)deriveIntentGroupIdentifierFromBaseUUID:(id)arg1;
 + (bool)doesSaveReasonAffectHomeManager:(id)arg1;
 + (bool)doesSaveReasonAffectOnlyLocalData:(id)arg1;
 + (bool)doesSaveReasonAffectWatchVersionCheck:(id)arg1;
 + (bool)doesSaveReasonNotAffectLocalData:(id)arg1;
 + (id)getCurrentAltDSID;
-+ (id)getCurrentUserID;
 + (id)getSPIClientIdentifierSalt;
 + (id)getUniqueDeviceIdSalt;
 + (id)idsDeviceForDevice:(id)arg1;
@@ -224,8 +231,15 @@
 + (id)saltForDeviceSpecificIdentifier;
 
 - (void).cxx_destruct;
+- (void)__accountAddedDevice:(id)arg1;
+- (void)__accountRegistryAddedAccount:(id)arg1;
+- (void)__accountRegistryRemovedAccount:(id)arg1;
+- (void)__accountRemovedDevice:(id)arg1;
+- (void)__handleAppleAccountUpdated:(id)arg1;
+- (void)__handleInitialFetch:(id)arg1;
+- (void)__handleUpdatedCurrentDevice:(id)arg1;
 - (void)__registerIncomingInvitations:(id)arg1;
-- (void)_acceptHomeInviteFromUser:(id)arg1 message:(id)arg2 trackInvite:(bool)arg3;
+- (void)_acceptHomeInviteFromAccount:(id)arg1 message:(id)arg2 trackInvite:(bool)arg3;
 - (void)_accessoriesAreLocallyReachableOnTransientDevice:(bool)arg1 forHome:(id)arg2;
 - (void)_accountAvailabilityChanged:(bool)arg1;
 - (void)_addCloudZone:(id)arg1 ownerName:(id)arg2;
@@ -238,12 +252,15 @@
 - (void)_auditKeychainEntries;
 - (void)_cancelAccessoryFinderTimer;
 - (void)_changePrimaryHome:(id)arg1;
+- (id)_checkActionSetNameConflict:(id)arg1 withNamespaceUUIDs:(id)arg2;
 - (void)_checkAndAddWatchDevices:(id)arg1 resend:(bool)arg2 requestFromWatch:(bool)arg3;
 - (void)_checkAndAddWatchDevicesWithResend:(bool)arg1;
 - (void)_checkAndInformCompanionDevice;
 - (void)_checkForAccountChanged;
 - (void)_checkForRemotePeers;
 - (void)_checkForRemotePeersAndRegisterForRemoteNotifications:(bool)arg1;
+- (id)_checkNameConflict:(id)arg1 withNamespaceUUIDs:(id)arg2;
+- (void)_cleanChangesIfNoAddChangeObjectID:(id)arg1 completion:(id /* block */)arg2;
 - (id)_compressHomeData:(id)arg1;
 - (bool)_configureHomes:(id)arg1;
 - (bool)_configureHomesImpl:(id)arg1;
@@ -262,9 +279,9 @@
 - (void)_electRemoteGatewayForHomesAfterReachabilityChanges;
 - (void)_eraseConfiguration:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_eraseLocalHomeConfiguration;
+- (void)_eraseLocalHomeConfigurationAfterSignout;
 - (void)_eraseLocalHomeConfigurationAndDeleteMetadata:(bool)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_eraseLocalHomeConfigurationCommon;
-- (void)_eraseLocalHomeConfigurationOnResident;
 - (void)_eraseLocalHomeData;
 - (void)_eraseLocalMetadata;
 - (void)_extractVendorIdentifierFor:(id)arg1 andRun:(id /* block */)arg2;
@@ -276,6 +293,7 @@
 - (id)_filterAccessories:(id)arg1 withIdentifiers:(id)arg2;
 - (bool)_findAnyAccessoryWithIdentities:(id)arg1 inAccessoryServers:(id)arg2;
 - (id)_findHomeConfigurationModelChange:(id)arg1;
+- (id)_findHomeModel:(id)arg1;
 - (id)_findHomeModelChange:(id)arg1;
 - (void)_findRemotePeerContainingAccessories:(id)arg1 forHome:(id)arg2;
 - (void)_fragmentationStream:(id)arg1 didCloseWithError:(id)arg2;
@@ -283,8 +301,8 @@
 - (id)_generateAssistantTeamIdentifier;
 - (id)_getAssistantTeamIdentifierForKey;
 - (id)_getHomeConfigurationLogEvent;
-- (id)_getRequestedState:(id)arg1;
-- (void)_getRuntimeStateUpdateForMediaAccessories:(bool)arg1 includeHAPAccessoryState:(bool)arg2 completion:(id /* block */)arg3;
+- (id)_getRequestedState:(id)arg1 activity:(id)arg2;
+- (void)_getRuntimeStateUpdateForHomeManager:(bool)arg1 includeMediaAccessoryState:(bool)arg2 includeHAPAccessoryState:(bool)arg3 includeResidentDeviceState:(bool)arg4 completion:(id /* block */)arg5;
 - (void)_handleAccessAllowedWhenLockedRequest:(id)arg1;
 - (void)_handleAccessHomeInvite:(id)arg1;
 - (void)_handleAccountAvailabilityChanged:(id /* block */)arg1;
@@ -310,18 +328,18 @@
 - (void)_handleHomeDataSync:(id)arg1;
 - (void)_handleHomeManagerTransactionsFetched:(id)arg1 stagedTransaction:(id)arg2 mustReplay:(id)arg3 cloudConflict:(bool)arg4 transactionError:(id)arg5 syncCompletion:(id /* block */)arg6;
 - (void)_handleHomesConfigSync:(id)arg1;
+- (void)_handleIdmsAccountUsernameModified:(id)arg1;
 - (void)_handleLogAppViewEvent:(id)arg1;
 - (void)_handleLogControl:(id)arg1;
 - (void)_handleMetadataAssetUpdated;
 - (void)_handleMetadataSync:(id)arg1;
 - (void)_handlePairingIdentityRequest:(id)arg1;
-- (void)_handlePrimaryAccountDeleted:(id)arg1;
-- (void)_handlePrimaryAccountModified:(id)arg1;
 - (void)_handleQueryHomeNamespace:(id)arg1;
 - (void)_handleQueryMetadata:(id)arg1;
 - (void)_handleQueryVersionInformation:(id)arg1;
 - (void)_handleQueryiCloudSwitchState:(id)arg1;
 - (void)_handleRemoteSessionTornDown:(id)arg1;
+- (void)_handleRemoveAccount:(id)arg1;
 - (void)_handleRequestAddHome:(id)arg1;
 - (void)_handleRequestFetchHomeConfiguration:(id)arg1;
 - (void)_handleRequestForCompanionKeysSync:(id)arg1;
@@ -334,6 +352,7 @@
 - (void)_handleRequestToUpdateHomeInvitationFromLocalUser:(id)arg1;
 - (void)_handleResetConfiguration:(id)arg1;
 - (void)_handleResetHome:(id)arg1;
+- (void)_handleResolveAccount:(id)arg1;
 - (void)_handleRetailModeConfigRequest:(id)arg1;
 - (void)_handleRetrieveVendorIdentifier:(id)arg1;
 - (void)_handleSaveRequest:(id)arg1;
@@ -355,6 +374,7 @@
 - (void)_loadHomeModelChanges:(id)arg1 mustReplay:(id)arg2 legacyPush:(bool)arg3 home:(id)arg4 completion:(id /* block */)arg5;
 - (void)_loadMessageDispatcher:(id)arg1 remoteMessageDispatcher:(id)arg2 accessoryBrowser:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 localDataDecryptionFailed:(bool)arg6 identityRegistry:(id)arg7 appRegistry:(id)arg8 accountRegistry:(id)arg9 reloadData:(bool)arg10;
 - (void)_logState:(id)arg1 key:(id)arg2 indent:(id)arg3;
+- (void)_migrateUniqueIdentifierPrefsIfNeeded;
 - (void)_monitorReachability;
 - (unsigned short)_nextTransactionIdentifier;
 - (void)_notifyClientsOfUpdatedStatus;
@@ -386,6 +406,7 @@
 - (void)_pushMetadataChangesToUsers;
 - (void)_pushMetadataToCloud;
 - (void)_pushUserRemovedForHome:(id)arg1;
+- (void)_pushZoneInfromationForHome:(id)arg1;
 - (void)_registerForLogging;
 - (void)_registerForMessages;
 - (void)_reloadHomeDataFromLocalStore:(bool)arg1;
@@ -409,18 +430,19 @@
 - (void)_runUploadHomeConfigToCloudForcePush:(bool)arg1 syncCompletion:(id /* block */)arg2;
 - (void)_runUploadHomeConfigToCloudRowIDs:(id)arg1 forcePush:(bool)arg2 syncCompletion:(id /* block */)arg3;
 - (void)_runUploadHomeToCloud:(id)arg1 objectChange:(id)arg2 syncCompletion:(id /* block */)arg3;
+- (id)_runtimeState;
 - (void)_saveAssistantTeamIdentifierKey:(id)arg1;
-- (void)_saveToPersistentStore:(bool)arg1;
+- (void)_saveToPersistentStore:(bool)arg1 reason:(id)arg2;
 - (void)_saveWithReason:(id)arg1 information:(id)arg2 postSyncNotification:(bool)arg3;
 - (void)_saveWithReason:(id)arg1 information:(id)arg2 saveOptions:(unsigned long long)arg3;
 - (void)_saveWithReason:(id)arg1 postSyncNotification:(bool)arg2;
 - (void)_saveWithRequest:(id)arg1;
+- (void)_schedulePushChangesToAllUsersOfAllHomes;
 - (void)_scheduleSendHomeDataToAllWatches;
 - (void)_sendCurrentHomeToWatch:(id)arg1;
 - (void)_sendFragmentedMessage:(id)arg1 messageIndex:(unsigned long long)arg2 messageIdentity:(id)arg3 userID:(id)arg4 destination:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_sendHomeDataToAllWatches;
 - (void)_sendHomeDataToWatch:(id)arg1 performVersionCheck:(bool)arg2 completionHandler:(id /* block */)arg3;
-- (void)_sendInviteRequestToUser:(id)arg1 inviteIdentifier:(id)arg2 forHome:(id)arg3 confirm:(bool)arg4 expiryDate:(id)arg5 queue:(id)arg6 completionHandler:(id /* block */)arg7;
 - (void)_sendKeysToWatch:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_sendUpdateRequestToAdminForInvitation:(id)arg1 homeUUID:(id)arg2 invitationState:(long long)arg3 authStatus:(id)arg4;
 - (void)_sendUserAdded:(id)arg1 destination:(id)arg2 toHome:(id)arg3;
@@ -429,6 +451,7 @@
 - (void)_setAssistantTeamIdentifierKey:(id)arg1;
 - (void)_setDataMigrationOptions:(id)arg1;
 - (void)_setHomeConfigurationKey:(id)arg1 value:(void*)arg2;
+- (void)_setHomeConfigurationKey:(id)arg1 value:(void*)arg2 applicationIdentifier:(struct __CFString { }*)arg3;
 - (void)_setHomekitAssistantConfigurationVersion:(unsigned long long)arg1;
 - (bool)_setPrimaryHome:(id)arg1 idsDataSync:(bool)arg2;
 - (void)_setSiriSyncRequest:(id)arg1;
@@ -445,7 +468,7 @@
 - (void)_teardownRemoteAccessForHome:(id)arg1;
 - (void)_teardownRemoteAccessForHomeCommon:(id)arg1 isCompanion:(bool)arg2;
 - (void)_teardownRemoteAccessForHomeThroughCompanion:(id)arg1;
-- (id)_trackIncomingInvitationFromUser:(id)arg1 message:(id)arg2 invitationState:(long long)arg3 error:(id*)arg4;
+- (id)_trackIncomingInvitationFromAccount:(id)arg1 message:(id)arg2 invitationState:(long long)arg3 error:(id*)arg4;
 - (void)_transactionalizeAndApplyCloudHomeData:(id)arg1 cachedHomeData:(id)arg2 version:(long long)arg3 migrationOptions:(unsigned long long)arg4 dataWasMerged:(bool*)arg5 syncCompletion:(id /* block */)arg6;
 - (void)_transactionalizeAndApplyHomeData:(id)arg1 cachedHomeData:(id)arg2 syncCompletion:(id /* block */)arg3;
 - (void)_updateAccessAllowedWhenLocked:(bool)arg1 message:(id)arg2;
@@ -453,10 +476,13 @@
 - (void)_updateAccountAvailabilityChanged:(id /* block */)arg1;
 - (void)_updateCloudDataSyncWithAccountState:(bool)arg1;
 - (void)_updateCloudDataSyncWithAccountState:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_updateGenerationCounterWithReason:(id)arg1 source:(id)arg2;
 - (void)_updateHomeKitInUsePreferences;
 - (void)_updateHomeManagerModelChangesAsPushed:(id)arg1 legacyPush:(bool)arg2;
 - (void)_updateHomeManagerModelChangesAsPushed:(id)arg1 pushMask:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_updateHomesAboutNetworkConnectivity:(bool)arg1;
+- (bool)_updateHomesConfigured;
+- (bool)_updateIncomingInvitesPresent;
 - (void)_updateModelChangesAsPushed:(id)arg1 home:(id)arg2 pushMask:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (id)_updatePrimaryHome:(id)arg1 message:(id*)arg2;
 - (void)_updateResidentEnabledOnThisDevice:(bool)arg1 forceNotify:(bool)arg2 message:(id)arg3;
@@ -476,15 +502,9 @@
 - (void)accessoryBrowserDidFindNewAccessory;
 - (id)accessoryBrowserInternal;
 - (id)accessoryFinderTimer;
-- (void)account:(id)arg1 didAddDevice:(id)arg2;
-- (void)account:(id)arg1 didRemoveDevice:(id)arg2;
-- (void)account:(id)arg1 didUpdateDevice:(id)arg2;
 - (bool)accountActive;
 - (void)accountAvailabilityChanged:(id)arg1;
 - (id)accountRegistry;
-- (void)accountRegistry:(id)arg1 didAddAccount:(id)arg2;
-- (void)accountRegistry:(id)arg1 didRemoveAccount:(id)arg2;
-- (void)accountRegistry:(id)arg1 didUpdateCurrentDevice:(id)arg2;
 - (bool)accountStatusFailedDueToNetworkFailure;
 - (bool)accountStatusIsAuthenticated;
 - (id)addName:(id)arg1 namespace:(id)arg2;
@@ -503,6 +523,7 @@
 - (id)backingStoreObjects:(long long)arg1;
 - (bool)cacheUseAllowed;
 - (void)checkAndPushMetadataToUser:(id)arg1 destination:(id)arg2 userInfo:(id)arg3;
+- (id)checkConflictInHomeNamespaceWithName:(id)arg1 options:(unsigned long long)arg2 namespaceUUID:(id)arg3;
 - (void)checkForRemotePeers;
 - (void)cleanupOperationsForAccessory:(id)arg1 user:(id)arg2 completion:(id /* block */)arg3;
 - (id)clientConnection;
@@ -524,7 +545,7 @@
 - (void)dataSyncInProgressUpdatedNotification:(id)arg1;
 - (id)dataTag;
 - (void)dealloc;
-- (id)debouceHomesUpdateTimer;
+- (id)debounceHomesUpdateTimer;
 - (id)demoAccessories;
 - (bool)demoFinalized;
 - (void)determineLocalChangesAndSchedulePush;
@@ -555,6 +576,7 @@
 - (id)generateDataForSharedHomeModel:(id)arg1;
 - (id)generatePayloadFromHome:(id)arg1 forAdmin:(bool)arg2 user:(id)arg3 supportedFeatures:(id)arg4;
 - (unsigned long long)generationCounter;
+- (int)generationCounterToken;
 - (id)getAccessoryCacheForIdentifer:(id)arg1;
 - (bool)getControllerKey:(id*)arg1 controllerUsername:(id*)arg2 error:(id*)arg3;
 - (unsigned long long)getDataMigrationOptions;
@@ -663,7 +685,7 @@
 - (void)saveWithReason:(id)arg1 information:(id)arg2 saveOptions:(unsigned long long)arg3;
 - (void)saveWithRequest:(id)arg1;
 - (void)sendFragmentedMessageForData:(id)arg1 objectUUID:(id)arg2 withMessageName:(id)arg3 toUser:(id)arg4 destination:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)sendInviteRequestToUser:(id)arg1 inviteIdentifier:(id)arg2 forHome:(id)arg3 confirm:(bool)arg4 expiryDate:(id)arg5 queue:(id)arg6 completionHandler:(id /* block */)arg7;
+- (void)sendPairingIdentity:(id)arg1 includePrivateKey:(bool)arg2 requestMessage:(id)arg3;
 - (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)sendUnsecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 responseQueue:(id)arg4 responseHandler:(id /* block */)arg5;
 - (void)sendUserAdded:(id)arg1 destination:(id)arg2 toHome:(id)arg3;
@@ -694,7 +716,7 @@
 - (void)setCompanionReachable:(bool)arg1;
 - (void)setCurrentHomeUUID:(id)arg1;
 - (void)setDataTag:(id)arg1;
-- (void)setDebouceHomesUpdateTimer:(id)arg1;
+- (void)setDebounceHomesUpdateTimer:(id)arg1;
 - (void)setDemoAccessories:(id)arg1;
 - (void)setDemoFinalized:(bool)arg1;
 - (void)setDeviceLost:(bool)arg1;
@@ -704,6 +726,7 @@
 - (void)setFullSyncedWatchPeers:(id)arg1;
 - (void)setGatherer:(id)arg1;
 - (void)setGenerationCounter:(unsigned long long)arg1;
+- (void)setGenerationCounterToken:(int)arg1;
 - (void)setHomeDataLoadedFromArchive:(bool)arg1;
 - (void)setHomeDatabaseSize:(unsigned long long)arg1;
 - (void)setHomeNames:(id)arg1;
@@ -739,6 +762,7 @@
 - (void)setSiriSyncNotificationTime:(unsigned long long)arg1;
 - (void)setSiriSyncRequest:(id)arg1;
 - (void)setSpeakersAreConfigured:(bool)arg1;
+- (void)setSpeakersAreConfiguredInOwnedHomes:(bool)arg1;
 - (void)setStateHandle:(unsigned long long)arg1;
 - (void)setSysdiagnoseQueue:(id)arg1;
 - (void)setTimeInformationMonitor:(id)arg1;
@@ -753,10 +777,12 @@
 - (void)setWatchSyncStateMap:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setupSession:(id)arg1 didCloseWithError:(id)arg2;
+- (id)sharedHomesPushDelayTimer;
 - (id)siriSyncNotificationReasons;
 - (unsigned long long)siriSyncNotificationTime;
 - (id)softwareUpdateManager;
 - (bool)speakersAreConfigured;
+- (bool)speakersAreConfiguredInOwnedHomes;
 - (void)startLocalTransport;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (unsigned long long)stateHandle;
@@ -773,9 +799,7 @@
 - (id)unassociatedRemotePeers;
 - (id)unprocessedOperationModelIdentifiers;
 - (void)updateAccountAvailabilityChanged;
-- (void)updateGenerationCounter;
-- (void)updateHomesConfigured;
-- (void)updateIncomingInvitesPresent;
+- (void)updateGenerationCounterWithReason:(id)arg1 source:(id)arg2;
 - (void)updateUserPushCachedForUser:(id)arg1 device:(id)arg2;
 - (bool)uploadHomeDataToCloud;
 - (void)uploadHomeManagerToCloudWithDelay:(double)arg1;

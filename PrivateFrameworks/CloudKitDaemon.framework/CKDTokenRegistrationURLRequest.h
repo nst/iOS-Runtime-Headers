@@ -26,5 +26,7 @@
 - (void)setApsEnvironmentString:(id)arg1;
 - (void)setApsToken:(id)arg1;
 - (void)setBundleID:(id)arg1;
+- (id)sourceApplicationBundleIdentifier;
+- (id)sourceApplicationSecondaryIdentifier;
 
 @end

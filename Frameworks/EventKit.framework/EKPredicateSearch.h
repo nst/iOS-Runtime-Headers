@@ -22,10 +22,14 @@
 
 - (void).cxx_destruct;
 - (id)_createOSActivity;
+- (void)_fetchObjectIDsActualWithCompletion:(id /* block */)arg1 synchronous:(bool)arg2;
 - (void)_startActivityWithCompletion:(id /* block */)arg1 synchronous:(bool)arg2;
 - (void)_startActualWithCompletion:(id /* block */)arg1 synchronous:(bool)arg2;
+- (void)_startFetchObjectIDsActivityWithCompletion:(id /* block */)arg1 synchronous:(bool)arg2;
+- (void)_startProcessingWithCompletion:(id /* block */)arg1 synchronous:(bool)arg2 processor:(id /* block */)arg3;
 - (void)cancel;
 - (void)disconnect;
+- (id)fetchObjectIDs;
 - (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 - (id)runSynchronously;
 - (id)startWithCompletion:(id /* block */)arg1;

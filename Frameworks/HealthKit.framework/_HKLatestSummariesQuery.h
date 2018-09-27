@@ -18,6 +18,7 @@
 @property (nonatomic, copy) id /* block */ updateHandler;
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
@@ -25,7 +26,6 @@
 - (void)client_deliverSummaries:(id)arg1 forQuery:(id)arg2;
 - (void)client_deliverUpdatedSummaries:(id)arg1 forQuery:(id)arg2;
 - (id)initWithDate:(id)arg1 calendar:(id)arg2 resultsHandler:(id /* block */)arg3;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;

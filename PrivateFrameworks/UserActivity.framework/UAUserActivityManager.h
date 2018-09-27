@@ -64,6 +64,7 @@
 - (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(bool)arg2;
 - (bool)needToSendInitialMessage;
 - (void)pinUserActivity:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)registerForApplicationDeactivateIfNecessary;
 - (bool)registeredForAppResignationMessages;
 - (void)removeDynamicUserActivity:(id)arg1 matching:(id)arg2;

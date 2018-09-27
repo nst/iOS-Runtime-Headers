@@ -6,9 +6,9 @@
     bool  _editing;
 }
 
-+ (bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2;
-+ (bool)_customEditModeIsRows:(long long)arg1;
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
++ (bool)_customEditMode:(long long)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
++ (bool)_customEditModeIsRows:(long long)arg1 forDevice:(id)arg2;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 
 - (void)_cleanupEditOptions;
 - (long long)_customEditModeForUniqueConfiguration;

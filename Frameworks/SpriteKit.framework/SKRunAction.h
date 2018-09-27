@@ -13,6 +13,7 @@
 
 + (id)runAction:(id)arg1 afterActionWithKey:(id)arg2;
 + (id)runAction:(id)arg1 onFirstChildWithName:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

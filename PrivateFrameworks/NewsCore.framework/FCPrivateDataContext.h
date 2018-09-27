@@ -4,12 +4,10 @@
 
 @interface FCPrivateDataContext : NSObject <FCPrivateDataContext> {
     FCABTestingAgent * _abTestingAgent;
-    bool  _abTestingEnabled;
     <FCContentContext> * _contentContext;
     <FCPrivateDataContextInternal> * _internalPrivateDataContext;
     FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
     FCPersonalizationData * _personalizationData;
-    bool  _personalizationEnabled;
     FCPrivateChannelMembershipController * _privateChannelMembershipController;
     NSString * _privateDataDirectory;
     bool  _privateDataSyncingEnabled;
@@ -22,7 +20,6 @@
 }
 
 @property (nonatomic, retain) FCABTestingAgent *abTestingAgent;
-@property (getter=isABTestingEnabled, nonatomic, readonly) bool abTestingEnabled;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -30,7 +27,6 @@
 @property (nonatomic, retain) <FCPrivateDataContextInternal> *internalPrivateDataContext;
 @property (nonatomic, readonly) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
 @property (nonatomic, readonly) FCPersonalizationData *personalizationData;
-@property (getter=isPersonalizationEnabled, nonatomic, readonly) bool personalizationEnabled;
 @property (nonatomic, readonly) FCPrivateChannelMembershipController *privateChannelMembershipController;
 @property (nonatomic, readonly, copy) NSString *privateDataDirectory;
 @property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) bool privateDataSyncingEnabled;
@@ -46,11 +42,9 @@
 - (id)abTestingAgent;
 - (id)contentContext;
 - (id)init;
-- (id)initWithContext:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 encryptionDelegate:(id)arg4 networkBehaviorMonitor:(id)arg5 privateDataSyncingEnabled:(bool)arg6 personalizationEnabled:(bool)arg7 abTestingEnabled:(bool)arg8 iCloudAccountChanged:(bool)arg9;
-- (id)initWithContext:(id)arg1 privateDatabase:(id)arg2 privateDataDirectory:(id)arg3 privateDataActionProvider:(id)arg4 encryptionDelegate:(id)arg5 networkBehaviorMonitor:(id)arg6 privateDataSyncingEnabled:(bool)arg7 personalizationEnabled:(bool)arg8 abTestingEnabled:(bool)arg9 iCloudAccountChanged:(bool)arg10;
+- (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDataHostDirectory:(id)arg3 privateDataActionProvider:(id)arg4 encryptionDelegate:(id)arg5 networkBehaviorMonitor:(id)arg6 privateDataSyncingEnabled:(bool)arg7 iCloudAccountChanged:(bool)arg8;
+- (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDatabase:(id)arg3 privateDataDirectory:(id)arg4 privateDataActionProvider:(id)arg5 encryptionDelegate:(id)arg6 networkBehaviorMonitor:(id)arg7 privateDataSyncingEnabled:(bool)arg8 iCloudAccountChanged:(bool)arg9;
 - (id)internalPrivateDataContext;
-- (bool)isABTestingEnabled;
-- (bool)isPersonalizationEnabled;
 - (bool)isPrivateDataSyncingEnabled;
 - (id)networkBehaviorMonitor;
 - (id)personalizationData;

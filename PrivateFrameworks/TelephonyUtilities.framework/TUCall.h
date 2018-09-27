@@ -7,6 +7,7 @@
     TUCallServicesInterface * _callServicesInterface;
     double  _clientMessageReceiveTime;
     TUProxyCall * _comparativeCall;
+    NSDate * _dateAnsweredOrDialed;
     NSDate * _dateConnected;
     NSDate * _dateCreated;
     NSDate * _dateEnded;
@@ -36,6 +37,7 @@
     NSString * _sourceIdentifier;
     int  _transitionStatus;
     NSString * _uniqueProxyIdentifier;
+    bool  _video;
     TUVideoCallAttributes * _videoCallAttributes;
     bool  _wantsHoldMusic;
     bool  _wasDialAssisted;
@@ -43,7 +45,6 @@
 }
 
 @property (nonatomic, readonly) int abUID;
-@property (nonatomic, readonly, copy) NSArray *activeRemoteParticipantHandles;
 @property (nonatomic, readonly, copy) NSString *audioCategory;
 @property (nonatomic, readonly, copy) NSString *audioMode;
 @property (nonatomic, readonly) TUCallProvider *backingProvider;
@@ -53,7 +54,6 @@
 @property (nonatomic, readonly, copy) NSString *callDurationString;
 @property (nonatomic, readonly, copy) NSUUID *callGroupUUID;
 @property (nonatomic, readonly, copy) NSString *callHistoryIdentifier;
-@property (nonatomic, readonly) int callIdentifier;
 @property (nonatomic, readonly) TUCallNotificationManager *callNotificationManager;
 @property (nonatomic, readonly) int callRelaySupport;
 @property (nonatomic) TUCallServicesInterface *callServicesInterface;
@@ -69,7 +69,8 @@
 @property (getter=isConnected, nonatomic, readonly) bool connected;
 @property (getter=isConnecting, nonatomic, readonly) bool connecting;
 @property (nonatomic, readonly, copy) NSString *contactIdentifier;
-@property (nonatomic, readonly, copy) NSUUID *conversationGroupUUID;
+@property (getter=isConversation, nonatomic, readonly) bool conversation;
+@property (nonatomic, retain) NSDate *dateAnsweredOrDialed;
 @property (nonatomic, retain) NSDate *dateConnected;
 @property (nonatomic, readonly) NSDate *dateCreated;
 @property (nonatomic, retain) NSDate *dateEnded;
@@ -102,18 +103,22 @@
 @property (nonatomic) double hostMessageSendTime;
 @property (getter=isHostedOnCurrentDevice, nonatomic, readonly) bool hostedOnCurrentDevice;
 @property (getter=isIncoming, nonatomic, readonly) bool incoming;
+@property (nonatomic, readonly) long long inputAudioPowerSpectrumToken;
 @property (nonatomic, readonly) bool isActive;
 @property (nonatomic, readonly) bool isOnHold;
 @property (nonatomic, readonly) bool isSendingAudio;
 @property (nonatomic) bool isSendingVideo;
-@property (nonatomic, readonly) bool isVideo;
 @property (nonatomic, copy) NSString *isoCountryCode;
 @property (nonatomic, readonly) NSData *localFrequency;
+@property (nonatomic, readonly) float localMeterLevel;
+@property (nonatomic, readonly, copy) TUSenderIdentity *localSenderIdentity;
+@property (nonatomic, readonly, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic, readonly, copy) NSString *localizedLabel;
 @property (getter=isMediaStalled, nonatomic, readonly) bool mediaStalled;
 @property (nonatomic, copy) TUCallModel *model;
 @property (nonatomic, readonly) bool needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic, readonly) bool outgoing;
+@property (nonatomic, readonly) long long outputAudioPowerSpectrumToken;
 @property (nonatomic, readonly) bool prefersExclusiveAccessToCellularNetwork;
 @property (nonatomic, readonly) TUCallProvider *provider;
 @property (nonatomic, readonly) NSDictionary *providerContext;
@@ -123,7 +128,8 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } remoteAspectRatio;
 @property (nonatomic, readonly) long long remoteCameraOrientation;
 @property (nonatomic, readonly) NSData *remoteFrequency;
-@property (nonatomic, readonly, copy) NSArray *remoteParticipantHandles;
+@property (nonatomic, readonly) float remoteMeterLevel;
+@property (nonatomic, readonly, copy) NSSet *remoteParticipantHandles;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } remoteScreenAspectRatio;
 @property (nonatomic, readonly) long long remoteScreenOrientation;
 @property (getter=isRemoteUplinkMuted, nonatomic, readonly) bool remoteUplinkMuted;
@@ -134,6 +140,7 @@
 @property (nonatomic, readonly) int service;
 @property (nonatomic, readonly) bool shouldDisplayLocationIfAvailable;
 @property (nonatomic, readonly) bool shouldPlayDTMFTone;
+@property (nonatomic, readonly) bool shouldSuppressInCallUI;
 @property (nonatomic) bool shouldSuppressRingtone;
 @property (getter=isSOS, nonatomic, readonly) bool sos;
 @property (nonatomic) long long soundRegion;
@@ -144,6 +151,7 @@
 @property (nonatomic, readonly, copy) NSString *suggestedDisplayName;
 @property (nonatomic, readonly) bool supportsDTMFTones;
 @property (nonatomic, readonly) bool supportsTTYWithVoice;
+@property (setter=tc_setUseUnderlyingRemoteUplinkMuted:, nonatomic) bool tc_useUnderlyingRemoteUplinkMuted;
 @property (getter=isThirdPartyVideo, nonatomic, readonly) bool thirdPartyVideo;
 @property (nonatomic) int transitionStatus;
 @property (getter=isTTY, nonatomic, readonly) bool tty;
@@ -152,17 +160,22 @@
 @property (nonatomic, readonly, copy) NSUUID *uniqueProxyIdentifierUUID;
 @property (getter=isUplinkMuted, nonatomic) bool uplinkMuted;
 @property (getter=isUsingBaseband, nonatomic, readonly) bool usingBaseband;
+@property (getter=isVideo, nonatomic) bool video;
 @property (nonatomic, retain) TUVideoCallAttributes *videoCallAttributes;
 @property (getter=isVideoDegraded, nonatomic, readonly) bool videoDegraded;
+@property (getter=isVideoMirrored, nonatomic, readonly) bool videoMirrored;
 @property (getter=isVideoPaused, nonatomic, readonly) bool videoPaused;
 @property (nonatomic, readonly) long long videoStreamToken;
 @property (getter=isVoicemail, nonatomic, readonly) bool voicemail;
 @property (getter=isVoIPCall, nonatomic, readonly) bool voipCall;
 @property (nonatomic) bool wantsHoldMusic;
+@property (nonatomic, readonly) bool wantsStagingArea;
 @property (nonatomic, readonly) bool wasDeclined;
 @property (nonatomic) bool wasDialAssisted;
 @property (nonatomic) bool wasPulledToCurrentDevice;
 @property (getter=isWiFiCall, nonatomic, readonly) bool wiFiCall;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
 + (id)_supplementalDialTelephonyCallStringForLocString:(id)arg1 destination:(id)arg2 isPhoneNumber:(bool)arg3 includeFaceTimeAudio:(bool)arg4;
 + (id)faceTimeSupplementalDialTelephonyCallStringIncludingFTA:(bool)arg1;
@@ -173,7 +186,6 @@
 - (void).cxx_destruct;
 - (void)_handleStatusChange;
 - (int)abUID;
-- (id)activeRemoteParticipantHandles;
 - (void)answerWithRequest:(id)arg1;
 - (id)audioCategory;
 - (id)audioMode;
@@ -183,7 +195,6 @@
 - (id)callDurationString;
 - (id)callGroupUUID;
 - (id)callHistoryIdentifier;
-- (int)callIdentifier;
 - (id)callNotificationManager;
 - (int)callRelaySupport;
 - (id)callServicesInterface;
@@ -196,7 +207,7 @@
 - (id)companyName;
 - (id)comparativeCall;
 - (id)contactIdentifier;
-- (id)conversationGroupUUID;
+- (id)dateAnsweredOrDialed;
 - (id)dateConnected;
 - (id)dateCreated;
 - (id)dateEnded;
@@ -237,11 +248,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1 endpointOnCurrentDevice:(bool)arg2;
+- (long long)inputAudioPowerSpectrumToken;
 - (bool)isActive;
 - (bool)isBlocked;
 - (bool)isConferenced;
 - (bool)isConnected;
 - (bool)isConnecting;
+- (bool)isConversation;
 - (bool)isDialRequestVideoUpgrade:(id)arg1;
 - (bool)isDownlinkMuted;
 - (bool)isEmergency;
@@ -267,6 +280,7 @@
 - (bool)isUsingBaseband;
 - (bool)isVideo;
 - (bool)isVideoDegraded;
+- (bool)isVideoMirrored;
 - (bool)isVideoPaused;
 - (bool)isVideoUpgradeFromCall:(id)arg1;
 - (bool)isVoIPCall;
@@ -275,9 +289,13 @@
 - (id)isoCountryCode;
 - (struct CGSize { double x1; double x2; })localAspectRatioForOrientation:(long long)arg1;
 - (id)localFrequency;
+- (float)localMeterLevel;
+- (id)localSenderIdentity;
+- (id)localSenderIdentityUUID;
 - (id)localizedLabel;
 - (id)model;
 - (bool)needsManualInCallSounds;
+- (long long)outputAudioPowerSpectrumToken;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
 - (bool)prefersExclusiveAccessToCellularNetwork;
 - (id)provider;
@@ -288,6 +306,7 @@
 - (struct CGSize { double x1; double x2; })remoteAspectRatio;
 - (long long)remoteCameraOrientation;
 - (id)remoteFrequency;
+- (float)remoteMeterLevel;
 - (id)remoteParticipantHandles;
 - (struct CGSize { double x1; double x2; })remoteScreenAspectRatio;
 - (long long)remoteScreenOrientation;
@@ -302,6 +321,7 @@
 - (void)setCallServicesInterface:(id)arg1;
 - (void)setClientMessageReceiveTime:(double)arg1;
 - (void)setComparativeCall:(id)arg1;
+- (void)setDateAnsweredOrDialed:(id)arg1;
 - (void)setDateConnected:(id)arg1;
 - (void)setDateEnded:(id)arg1;
 - (void)setDateSentInvitation:(id)arg1;
@@ -335,12 +355,14 @@
 - (void)setTransitionStatus:(int)arg1;
 - (void)setUniqueProxyIdentifier:(id)arg1;
 - (void)setUplinkMuted:(bool)arg1;
+- (void)setVideo:(bool)arg1;
 - (void)setVideoCallAttributes:(id)arg1;
 - (void)setWantsHoldMusic:(bool)arg1;
 - (void)setWasDialAssisted:(bool)arg1;
 - (void)setWasPulledToCurrentDevice:(bool)arg1;
 - (bool)shouldDisplayLocationIfAvailable;
 - (bool)shouldPlayDTMFTone;
+- (bool)shouldSuppressInCallUI;
 - (bool)shouldSuppressRingtone;
 - (long long)soundRegion;
 - (id)sourceIdentifier;
@@ -365,8 +387,14 @@
 - (id)videoCallAttributes;
 - (long long)videoStreamToken;
 - (bool)wantsHoldMusic;
+- (bool)wantsStagingArea;
 - (bool)wasDeclined;
 - (bool)wasDialAssisted;
 - (bool)wasPulledToCurrentDevice;
+
+// Image: /System/Library/PrivateFrameworks/TinCanShared.framework/TinCanShared
+
+- (void)tc_setUseUnderlyingRemoteUplinkMuted:(bool)arg1;
+- (bool)tc_useUnderlyingRemoteUplinkMuted;
 
 @end

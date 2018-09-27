@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)dataCollectionBundle;
-- (NSMutableDictionary *)dataCollectionRepresentation;
+- (bool)serializeToJSON:(void*)arg1 valuesOnly:(bool)arg2;
 
 @end

@@ -32,8 +32,9 @@
 - (bool)_isValidForScheduling;
 - (bool)_isValidTillDate:(id)arg1;
 - (void)_noteAutoInstallOperationDidConsent;
-- (void)_noteAutoInstallOperationDidExpire;
+- (void)_noteAutoInstallOperationDidExpireWithError:(id)arg1;
 - (void)_noteAutoInstallOperationIsReadyToInstall:(id /* block */)arg1;
+- (void)_noteAutoInstallOperationPasscodePolicyChanged:(unsigned long long)arg1;
 - (void)_noteAutoInstallOperationWasCancelled;
 - (int)agreementStatus;
 - (void)cancel;

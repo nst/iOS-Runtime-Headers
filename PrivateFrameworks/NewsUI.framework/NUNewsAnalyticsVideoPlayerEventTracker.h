@@ -8,11 +8,10 @@
     <NUVideoItem> * _currentVideo;
     int  _currentVideoPlayMethod;
     NSSNewsAnalyticsEventAnnotator * _eventAnnotator;
-    NSData * _leadingVideoItemSessionID;
     <NSSNewsAnalyticsPBEventStreamObserver> * _observer;
     bool  _playbackFinishedForLastVideo;
     <NSSNewsAnalyticsSessionManager> * _sessionManager;
-    NSArray * _videoItems;
+    NSOrderedSet * _videoItems;
     bool  _videoPlayerIsVisible;
 }
 
@@ -24,12 +23,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSSNewsAnalyticsEventAnnotator *eventAnnotator;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, copy) NSData *leadingVideoItemSessionID;
 @property (nonatomic, readonly) <NSSNewsAnalyticsPBEventStreamObserver> *observer;
 @property (nonatomic) bool playbackFinishedForLastVideo;
 @property (nonatomic, readonly) <NSSNewsAnalyticsSessionManager> *sessionManager;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) NSArray *videoItems;
+@property (nonatomic, readonly, copy) NSOrderedSet *videoItems;
 @property (getter=isVideoPlayerVisible, nonatomic) bool videoPlayerIsVisible;
 
 - (void).cxx_destruct;
@@ -39,7 +37,6 @@
 - (void)_createArticleHostViewExposureEventConfiguredForVideoItem:(id)arg1 withArticlePresentationReason:(int)arg2;
 - (id)_currentArticleID;
 - (id)_currentArticleViewingSessionID;
-- (unsigned long long)_displayRankOfVideoItem:(id)arg1;
 - (id)_eventForEventObject:(id)arg1;
 - (id)_eventObjectWithAdEngagementEvent:(id)arg1;
 - (id)_eventObjectWithAdImpressionEvent:(id)arg1;
@@ -49,6 +46,7 @@
 - (id)_linkTapEventWithLinkType:(int)arg1 forVideoItem:(id)arg2;
 - (id)_mediaEngageCompleteEventConfiguredForVideoItem:(id)arg1;
 - (id)_mediaEngageEventWithUserAction:(int)arg1 configuredForVideoItem:(id)arg2;
+- (int)_rankInVideoPlaylistOfVideoItem:(id)arg1;
 - (void)_submitEvent:(id)arg1;
 - (void)_submitEventForEventObject:(id)arg1;
 - (id)_widgetEngagementForVideoItem:(id)arg1;
@@ -59,9 +57,8 @@
 - (int)currentVideoPlayMethod;
 - (id)eventAnnotator;
 - (void)impressionThresholdReachedForVideoAdWithMetadata:(id)arg1;
-- (id)initWithConfiguration:(id)arg1 observer:(id)arg2 sessionManager:(id)arg3 userIDProvider:(id)arg4 videoItems:(id)arg5 leadingVideoItemSessionID:(id)arg6;
+- (id)initWithConfiguration:(id)arg1 observer:(id)arg2 sessionManager:(id)arg3 userIDProvider:(id)arg4 videoItems:(id)arg5;
 - (bool)isVideoPlayerVisible;
-- (id)leadingVideoItemSessionID;
 - (void)muteStateChanged:(bool)arg1 withVideoItem:(id)arg2 metadata:(id)arg3;
 - (id)observer;
 - (void)playbackFailedWithVideoItem:(id)arg1 metadata:(id)arg2;
@@ -86,6 +83,8 @@
 - (void)userEngagedWithNowPlayingButtonWithVideoItem:(id)arg1;
 - (void)userEngagedWithReplayButtonWithVideoItem:(id)arg1;
 - (void)userSkippedPlaybackOfVideoAdWithMetadata:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
 - (id)videoItems;
 - (void)videoPlayerDidBecomeInvisible;
 - (void)videoPlayerDidBecomeVisible;

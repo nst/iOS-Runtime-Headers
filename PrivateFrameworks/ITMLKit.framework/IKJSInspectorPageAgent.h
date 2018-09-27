@@ -38,6 +38,7 @@
 - (void)setCurrentFrameIdentifier:(id)arg1;
 - (void)setEmulatedMediaWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 media:(id)arg3;
 - (void)setShowPaintRectsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 result:(bool)arg3;
+- (void)setShowRulersWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 result:(bool)arg3;
 - (void)snapshotNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)snapshotRectWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 x:(int)arg3 y:(int)arg4 width:(int)arg5 height:(int)arg6 coordinateSystem:(long long)arg7;
 

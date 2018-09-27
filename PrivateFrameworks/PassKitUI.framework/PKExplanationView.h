@@ -2,15 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKExplanationView : UIView <UIScrollViewDelegate> {
+@interface PKExplanationView : UIView <UIScrollViewDelegate, UITextViewDelegate> {
     UIActivityIndicatorView * _activityIndicator;
+    NSAttributedString * _attributedBodyText;
     long long  _backdropStyle;
     _UIBackdropView * _backdropView;
     double  _backdropWeight;
     NSString * _bodyText;
     bool  _bodyTextIsLeftAlgined;
-    UILabel * _bodyTextLabel;
-    UIImageView * _checkmarkView;
+    UITextView * _bodyTextView;
+    UIView * _bodyView;
+    PKCheckGlyphLayer * _checkmarkLayer;
     long long  _context;
     <PKExplanationViewDelegate> * _delegate;
     PKPaymentSetupDockView * _dockView;
@@ -26,15 +28,38 @@
     bool  _showPrivacyView;
     UIFont * _titleFont;
     UILabel * _titleLabel;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _titleLabelFrame;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _titleLabelLastLineBounds;
+    double  _titleLabelLastLineDescent;
     NSString * _titleText;
     double  _topMargin;
     bool  _updatingBackdropSettings;
 }
 
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, copy) NSAttributedString *attributedBodyText;
 @property (nonatomic, copy) NSString *bodyText;
 @property (nonatomic) bool bodyTextIsLeftAlgined;
-@property (nonatomic, readonly) UIImageView *checkmarkView;
+@property (nonatomic, retain) UIView *bodyView;
+@property (nonatomic, readonly) PKCheckGlyphLayer *checkmarkLayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKExplanationViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -61,11 +86,14 @@
 - (bool)_isBuddyiPad;
 - (void)_setupLater;
 - (bool)_showApplePayLogo;
+- (void)_updateCachedTitleLabelLastLine;
 - (void)_updateTitleLabel;
 - (id)activityIndicator;
+- (id)attributedBodyText;
 - (id)bodyText;
 - (bool)bodyTextIsLeftAlgined;
-- (id)checkmarkView;
+- (id)bodyView;
+- (id)checkmarkLayer;
 - (void)dealloc;
 - (id)delegate;
 - (id)dockView;
@@ -83,8 +111,10 @@
 - (void)pk_applyAppearance:(id)arg1;
 - (id)privacyLink;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setAttributedBodyText:(id)arg1;
 - (void)setBodyText:(id)arg1;
 - (void)setBodyTextIsLeftAlgined:(bool)arg1;
+- (void)setBodyView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceShowSetupLaterButton:(bool)arg1;
 - (void)setHeroView:(id)arg1;
@@ -97,6 +127,7 @@
 - (void)setTitleText:(id)arg1;
 - (void)setTopMargin:(double)arg1;
 - (bool)showPrivacyView;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 - (id)titleFont;
 - (id)titleText;
 - (double)topMargin;

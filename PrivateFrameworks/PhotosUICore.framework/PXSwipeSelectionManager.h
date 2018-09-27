@@ -24,6 +24,7 @@
         bool respondsToItemIndexPathAtLocation; 
         bool respondsToItemIndexPathClosestLeadingLocation; 
         bool respondsToItemIndexPathClosestAboveLocation; 
+        bool respondsToShouldSelectItemAtIndexPath; 
     }  _delegateFlags;
     struct { 
         bool selectedIndexPaths; 

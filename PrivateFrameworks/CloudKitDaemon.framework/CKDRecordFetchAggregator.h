@@ -44,7 +44,8 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (void)_addRecordFetchInfo:(id)arg1;
+- (void)_addRecordFetchInfos:(id)arg1;
+- (id)_fetchRecord:(id)arg1 recordReadyHandle:(bool*)arg2 withRecordCompletion:(id /* block */)arg3;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishRecordFetchAggregator;
 - (void)_flushFetchedRecordsToConsumerLocked;
@@ -53,6 +54,7 @@
 - (void)_lockedSendFetchRequest;
 - (void)_performCallbackForFetchInfoLocked:(id)arg1;
 - (void)_recordFetchesAvailable;
+- (id)activityCreate;
 - (id)assetTransferOptionsByRecordTypeAndKey;
 - (unsigned long long)curFetchOrder;
 - (id)currentFetchOp;
@@ -64,7 +66,7 @@
 - (id)fetchGroup;
 - (id)fetchInfosByOrder;
 - (id)fetchQueue;
-- (void)fetchRecordFromResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)fetchRecords:(id)arg1 withPerRecordCompletion:(id /* block */)arg2;
 - (id)fetchSource;
 - (void)finishIfAppropriate;
 - (bool)forceDecryptionAttempt;

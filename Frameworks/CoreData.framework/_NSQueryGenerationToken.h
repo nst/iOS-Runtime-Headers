@@ -20,11 +20,13 @@
 - (id)_initWithValue:(id)arg1 singleton:(bool)arg2;
 - (void)_makeConcrete:(bool)arg1;
 - (bool)_moor:(id)arg1 error:(id*)arg2;
-- (id)_store;
+- (id)_retainedPersistentStore;
+- (void)_setFreeValue:(bool)arg1;
+- (void)_setIsUnmoored:(bool)arg1;
+- (void)_setPersistentStoreReference:(id)arg1;
 - (id)_storeIdentifier;
 - (id)_storesForRequestRoutingFrom:(id)arg1 error:(id*)arg2;
 - (id)_token;
-- (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

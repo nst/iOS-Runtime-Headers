@@ -17,7 +17,16 @@
 - (void)setProcessName:(NSString *)arg1;
 - (void)setProcessUniqueID:(unsigned long long)arg1;
 - (void)setThreadID:(unsigned long long)arg1;
+- (void)setTv_sec:(long long)arg1;
+- (void)setTv_usec:(int)arg1;
+- (void)setTz_dsttime:(int)arg1;
+- (void)setTz_minuteswest:(int)arg1;
 - (void)set_machContinuousTimestamp:(unsigned long long)arg1;
+- (NSString *)startWallTimeStringWithTimeZone:(NSString *)arg1;
 - (unsigned long long)threadID;
+- (long long)tv_sec;
+- (int)tv_usec;
+- (int)tz_dsttime;
+- (int)tz_minuteswest;
 
 @end

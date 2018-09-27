@@ -10,7 +10,7 @@
 
 + (id)sharedWordSearchController;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)inputModeToWordSearchMapping;
 - (void)setInputModeToWordSearchMapping:(id)arg1;

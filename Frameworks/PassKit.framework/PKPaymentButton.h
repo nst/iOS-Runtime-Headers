@@ -9,6 +9,7 @@
     }  _boundsSize;
     UILabel * _buyLabel;
     UIView * _container;
+    double  _cornerRadius;
     double  _fontRatio;
     CAFilter * _highlightFilter;
     bool  _highlighted;
@@ -18,6 +19,8 @@
     long long  _type;
 }
 
+@property (nonatomic) double cornerRadius;
+
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
 + (Class)layerClass;
 + (id)titleForType:(long long)arg1;
@@ -26,6 +29,7 @@
 - (void)_createHighlightFilterIfNecessary;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)applyAccessibilityValues;
+- (double)cornerRadius;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -33,6 +37,7 @@
 - (id)initWithPaymentButtonType:(long long)arg1 paymentButtonStyle:(long long)arg2;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
+- (void)setCornerRadius:(double)arg1;
 - (void)setHighlighted:(bool)arg1;
 
 @end

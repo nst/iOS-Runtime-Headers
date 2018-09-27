@@ -125,6 +125,7 @@
 - (void)addOrUpdateItemsOnDatabaseQueue:(id)arg1;
 - (id)allVisitsForItemsOnDatabaseQueue:(id)arg1;
 - (unsigned long long)cachedNumberOfDevicesInSyncCircle;
+- (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;
 - (void)closeWithCompletionHandler:(id /* block */)arg1;

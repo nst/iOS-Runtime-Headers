@@ -31,8 +31,10 @@
 - (bool)isDisplayingAsNativeAd;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (bool)isPaid;
+- (bool)isPressRelease;
 - (bool)isSponsored;
 - (bool)isTopStory;
 - (NSDate *)lastFetchedDate;
@@ -86,5 +88,9 @@
 
 - (NSData *)backingArticleRecordData;
 - (FCArticleContentManifest *)contentManifestWithContext:(id <FCContentContext>)arg1;
+- (FCHeadlineExperimentalTitleMetadata *)experimentalTitleMetadata;
+- (void)setExperimentalTitleMetadata:(FCHeadlineExperimentalTitleMetadata *)arg1;
+- (<FCHeadlineStocksFields> *)stocksFields;
+- (bool)webEmbedsEnabled;
 
 @end

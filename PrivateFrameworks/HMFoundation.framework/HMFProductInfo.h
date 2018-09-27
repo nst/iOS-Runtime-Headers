@@ -5,11 +5,13 @@
 @interface HMFProductInfo : HMFObject <NSCopying, NSSecureCoding> {
     long long  _productClass;
     long long  _productPlatform;
+    long long  _productVariant;
     HMFSoftwareVersion * _softwareVersion;
 }
 
-@property (nonatomic, readonly) long long productClass;
-@property (nonatomic, readonly) long long productPlatform;
+@property (readonly) long long productClass;
+@property (readonly) long long productPlatform;
+@property (readonly) long long productVariant;
 @property (nonatomic, readonly) HMFSoftwareVersion *softwareVersion;
 
 + (id)decodeSoftwareVersionWithCoder:(id)arg1;
@@ -28,9 +30,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPlatform:(long long)arg1 class:(long long)arg2 softwareVersion:(id)arg3;
+- (id)initWithPlatform:(long long)arg1 class:(long long)arg2 variant:(long long)arg3 softwareVersion:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (long long)productClass;
 - (long long)productPlatform;
+- (long long)productVariant;
 - (id)shortDescription;
 - (id)softwareVersion;
 

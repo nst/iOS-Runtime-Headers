@@ -8,7 +8,6 @@
     id /* block */  _invalidationHandler;
     NSLock * _invalidationLock;
     NSString * _reason;
-    long long  _state;
     unsigned long long  _type;
 }
 
@@ -16,11 +15,10 @@
 @property (nonatomic) bool invalidateWhenBackgrounded;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSString *reason;
-@property (nonatomic) long long state;
 @property (nonatomic, readonly) unsigned long long type;
 
 + (void)acquireAssertionOfType:(unsigned long long)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
-+ (bool)assertionExistsOfType:(unsigned long long)arg1;
++ (void)isAssertionValid:(id)arg1 completion:(id /* block */)arg2;
 + (void)preheatConnection;
 
 - (void).cxx_destruct;
@@ -31,12 +29,11 @@
 - (void)invalidate;
 - (bool)invalidateWhenBackgrounded;
 - (id /* block */)invalidationHandler;
+- (void)markAsInvalidatedAndNotify;
 - (id)reason;
 - (void)setIdentifier:(id)arg1;
 - (void)setInvalidateWhenBackgrounded:(bool)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setState:(long long)arg1;
-- (long long)state;
 - (unsigned long long)type;
 
 @end

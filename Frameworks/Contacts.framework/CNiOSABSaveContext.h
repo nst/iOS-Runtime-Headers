@@ -20,6 +20,9 @@
 @property (nonatomic, retain) NSMutableDictionary *abPersonsByIdentifier;
 @property (nonatomic, retain) NSMutableDictionary *abSourcesByIdentifier;
 @property (nonatomic, readonly) void*addressBook;
+@property (nonatomic, readonly) NSMapTable *contactIndicesByInstance;
+@property (nonatomic, readonly) NSMapTable *containerIndicesByInstance;
+@property (nonatomic, readonly) NSMapTable *groupIndicesByInstance;
 @property (nonatomic, readonly) CNSaveRequest *saveRequest;
 @property (nonatomic, readonly) CNMutableSaveResponse *saveResponse;
 
@@ -30,7 +33,10 @@
 - (id)abPersonsByIdentifier;
 - (id)abSourcesByIdentifier;
 - (void*)addressBook;
+- (id)contactIndicesByInstance;
+- (id)containerIndicesByInstance;
 - (void)dealloc;
+- (id)groupIndicesByInstance;
 - (id)indexPathForContactInstance:(id)arg1;
 - (id)indexPathForContainerInstance:(id)arg1;
 - (id)indexPathForGroupInstance:(id)arg1;

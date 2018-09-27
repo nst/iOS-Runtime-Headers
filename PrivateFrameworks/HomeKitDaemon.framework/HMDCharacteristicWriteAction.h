@@ -11,6 +11,10 @@
 
 @property (nonatomic, readonly) HMDActionSet *actionSet;
 @property (nonatomic, readonly) HMDCharacteristic *characteristic;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) id targetValue;
 @property (nonatomic, readonly, copy) NSUUID *uuid;
 

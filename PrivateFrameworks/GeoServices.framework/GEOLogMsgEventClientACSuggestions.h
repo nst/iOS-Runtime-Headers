@@ -5,24 +5,34 @@
 @interface GEOLogMsgEventClientACSuggestions : PBCodable <NSCopying> {
     NSMutableArray * _entries;
     struct { 
+        unsigned int keypressStatus : 1; 
         unsigned int selectedIndex : 1; 
+        unsigned int trigger : 1; 
     }  _has;
+    int  _keypressStatus;
     NSString * _query;
     NSMutableArray * _queryTokens;
     int  _selectedIndex;
+    int  _trigger;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic) bool hasKeypressStatus;
 @property (nonatomic, readonly) bool hasQuery;
 @property (nonatomic) bool hasSelectedIndex;
+@property (nonatomic) bool hasTrigger;
+@property (nonatomic) int keypressStatus;
 @property (nonatomic, retain) NSString *query;
 @property (nonatomic, retain) NSMutableArray *queryTokens;
 @property (nonatomic) int selectedIndex;
+@property (nonatomic) int trigger;
 
 + (Class)entriesType;
 + (Class)queryTokensType;
 
 - (void).cxx_destruct;
+- (int)StringAsKeypressStatus:(id)arg1;
+- (int)StringAsTrigger:(id)arg1;
 - (void)addEntries:(id)arg1;
 - (void)addQueryTokens:(id)arg1;
 - (void)clearEntries;
@@ -34,10 +44,14 @@
 - (id)entries;
 - (id)entriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)entriesCount;
+- (bool)hasKeypressStatus;
 - (bool)hasQuery;
 - (bool)hasSelectedIndex;
+- (bool)hasTrigger;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (int)keypressStatus;
+- (id)keypressStatusAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)query;
 - (id)queryTokens;
@@ -46,10 +60,16 @@
 - (bool)readFrom:(id)arg1;
 - (int)selectedIndex;
 - (void)setEntries:(id)arg1;
+- (void)setHasKeypressStatus:(bool)arg1;
 - (void)setHasSelectedIndex:(bool)arg1;
+- (void)setHasTrigger:(bool)arg1;
+- (void)setKeypressStatus:(int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryTokens:(id)arg1;
 - (void)setSelectedIndex:(int)arg1;
+- (void)setTrigger:(int)arg1;
+- (int)trigger;
+- (id)triggerAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

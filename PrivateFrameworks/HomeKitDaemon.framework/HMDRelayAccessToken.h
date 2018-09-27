@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayAccessToken : HMFObject <NSSecureCoding> {
+@interface HMDRelayAccessToken : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, NSSecureCoding> {
     NSData * _accessToken;
     HMDHAPAccessory * _accessory;
     NSUUID * _accessoryIdentifier;
@@ -14,7 +14,12 @@
 @property (nonatomic, readonly, copy) NSData *accessToken;
 @property (nonatomic) HMDHAPAccessory *accessory;
 @property (nonatomic, readonly) NSUUID *accessoryIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identifier;
+@property (readonly, copy) HMDRelayAccessTokenModel *model;
+@property (readonly) Class superclass;
 @property (nonatomic) HMDUser *user;
 @property (nonatomic, retain) NSUUID *userIdentifier;
 
@@ -25,7 +30,8 @@
 - (id)accessory;
 - (id)accessoryIdentifier;
 - (void)configureWithHome:(id)arg1;
-- (id)dictionaryEncoding;
+- (id)deleteTokenInAccessoryModel;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixupUserIdentifier;
 - (unsigned long long)hash;
@@ -33,11 +39,16 @@
 - (id)init;
 - (id)initWithAccessToken:(id)arg1 consentToken:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithUser:(id)arg1 model:(id)arg2;
 - (bool)isEqual:(id)arg1;
+- (void)migrateCloudZone:(id)arg1 migrationQueue:(id)arg2 completion:(id /* block */)arg3;
+- (id)model;
 - (void)setAccessory:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)setUserIdentifier:(id)arg1;
-- (void)updateWithDictionary:(id)arg1 home:(id)arg2;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (id)transactionWithObjectChangeType:(unsigned long long)arg1;
 - (id)user;
 - (id)userIdentifier;
 

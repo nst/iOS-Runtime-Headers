@@ -5,6 +5,7 @@
 @interface MPCRemotePlayerArtworkDataSource : MPAbstractNetworkArtworkDataSource
 
 + (id)bestArtworkSizes;
++ (id)sharedDataSource;
 
 - (id)_urlForCatalog:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (bool)areRepresentationsAvailableForCatalog:(id)arg1;

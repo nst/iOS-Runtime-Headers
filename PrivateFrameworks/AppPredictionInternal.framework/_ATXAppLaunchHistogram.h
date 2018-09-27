@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXAppLaunchHistogram : NSObject <NSSecureCoding> {
-    unsigned short  _bucketCount;
-    bool  _filter;
-    ATXHistogramData * _histogramData;
-    NSObject<OS_dispatch_queue> * _histogramQueue;
+@interface _ATXAppLaunchHistogram : NSObject <NSSecureCoding, _ATXAppLaunchHistogramProtocol> {
     double  _launchThreshold;
+    _PASLock * _lock;
     NSDate * _prevDate;
     unsigned short  _prevLocaltime;
     struct _opaque_pthread_mutex_t { 
@@ -20,12 +17,10 @@
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
-@property (nonatomic, readonly) unsigned short bucketCount;
-@property (nonatomic, retain) ATXHistogramData *histogramData;
-
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_addLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 arbitraryWeight:(float)arg4;
 - (unsigned short)_eventIdforBundleId:(id)arg1;
 - (unsigned short)_localTimeWithDate:(id)arg1;
 - (unsigned short)_localTimeWithDate:(id)arg1 timeZone:(id)arg2;
@@ -45,7 +40,6 @@
 - (double)entropyForBundleId:(id)arg1;
 - (double)entropyForDate:(id)arg1;
 - (void)executeBlockOnHistogramData:(id /* block */)arg1;
-- (id)histogramData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistogram:(id)arg1 bucketCount:(unsigned short)arg2 filter:(bool)arg3 timeBase:(int)arg4;
@@ -58,13 +52,16 @@
 - (double)relativeLaunchPopularityWithBundleId:(id)arg1 elapsedTime:(double)arg2 distanceScale:(float)arg3;
 - (bool)removeHistoryForBundleId:(id)arg1;
 - (int)removeHistoryForBundleIds:(id)arg1;
+- (void)removeLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 weight:(float)arg4;
 - (void)resetData;
 - (void)resetHistogram:(id)arg1;
-- (void)setHistogramData:(id)arg1;
 - (void)swapWithCoder:(id)arg1;
 - (double)totalLaunches;
 - (double)totalLaunchesForBundleIds:(id)arg1;
 - (double)totalTimeOfDayLaunchesForDate:(id)arg1;
+- (double)totalTimeOfDayLaunchesForDate:(id)arg1 distanceScale:(float)arg2;
+- (double)totalTimeOfDayLaunchesForElapsedTime:(double)arg1;
+- (double)totalTimeOfDayLaunchesForElapsedTime:(double)arg1 distanceScale:(float)arg2;
 - (void)verifyDataIntegrity;
 
 @end

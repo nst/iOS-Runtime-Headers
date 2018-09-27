@@ -25,7 +25,7 @@
 @property (nonatomic) unsigned int usageTrackingMask;
 @property (nonatomic, copy) NSString *userTyping;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (bool)isAccepted;
 - (unsigned long long)offset;

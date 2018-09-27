@@ -4,7 +4,7 @@
 
 @interface EKStructuredLocation : EKObject <NSCopying> {
     bool  _imprecise;
-    RTPredictedLocationOfInterest * _predictedLOI;
+    EKPredictedLocationOfInterest * _predictedLOI;
 }
 
 @property (nonatomic, retain) NSString *address;
@@ -15,7 +15,7 @@
 @property (getter=isImprecise, nonatomic) bool imprecise;
 @property (nonatomic, readonly) bool isStructured;
 @property (nonatomic, copy) NSData *mapKitHandle;
-@property (nonatomic, retain) RTPredictedLocationOfInterest *predictedLOI;
+@property (nonatomic, retain) EKPredictedLocationOfInterest *predictedLOI;
 @property (getter=isPrediction, nonatomic, readonly) bool prediction;
 @property (nonatomic) double radius;
 @property (nonatomic, retain) NSString *routing;
@@ -49,8 +49,10 @@
 - (id)mapKitHandle;
 - (id)predictedLOI;
 - (double)radius;
+- (id)radiusRaw;
 - (id)referenceFrame;
 - (id)routing;
+- (id)semanticIdentifier;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setDerivedFrom:(id)arg1;
@@ -61,6 +63,7 @@
 - (void)setMapKitHandle:(id)arg1;
 - (void)setPredictedLOI:(id)arg1;
 - (void)setRadius:(double)arg1;
+- (void)setRadiusRaw:(id)arg1;
 - (void)setReferenceFrame:(id)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;

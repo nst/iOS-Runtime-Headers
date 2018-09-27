@@ -6,6 +6,7 @@
 @required
 
 - (long long)airCirculationMode;
+- (INSpeakableString *)carName;
 - (long long)climateZone;
 - (NSNumber *)enableAirConditioner;
 - (NSNumber *)enableAutoMode;
@@ -17,6 +18,7 @@
 - (long long)relativeFanSpeedSetting;
 - (long long)relativeTemperatureSetting;
 - (void)setAirCirculationMode:(long long)arg1;
+- (void)setCarName:(INSpeakableString *)arg1;
 - (void)setClimateZone:(long long)arg1;
 - (void)setEnableAirConditioner:(NSNumber *)arg1;
 - (void)setEnableAutoMode:(NSNumber *)arg1;

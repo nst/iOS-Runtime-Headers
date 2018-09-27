@@ -3,13 +3,11 @@
  */
 
 @interface _NTKCGalleryCollectionCell : UICollectionViewCell {
-    bool  _active;
     UIImage * _calloutImage;
     NSString * _calloutName;
     NSLayoutConstraint * _centerConstraint;
     NTKCFaceContainerView * _faceContainerView;
     UIFontMetrics * _fontMetrics;
-    UIView * _highlightedView;
     NSLayoutConstraint * _leadingImageConstraint;
     NSLayoutConstraint * _nameBaselineConstraint;
     UIImageView * _nameImageView;
@@ -24,6 +22,8 @@
 @property (nonatomic, retain) UIFontMetrics *fontMetrics;
 
 + (struct CGSize { double x1; double x2; })itemSizeWithCalloutName:(bool)arg1 andCalloutImage:(bool)arg2;
++ (id)luxoReuseIdentifier;
++ (id)nonLuxoReuseIdentifier;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;

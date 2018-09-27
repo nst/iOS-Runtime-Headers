@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideStatus : NSObject <INCacheableContainer, INRideStatusExport, NSCopying, NSSecureCoding> {
+@interface INRideStatus : NSObject <INCacheableContainer, INImageProxyInjecting, INRideStatusExport, NSCopying, NSSecureCoding> {
     NSArray * _additionalActionActivities;
     INRideCompletionStatus * _completionStatus;
     INRideDriver * _driver;
@@ -44,6 +44,7 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_intents_cacheableObjects;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)additionalActionActivities;

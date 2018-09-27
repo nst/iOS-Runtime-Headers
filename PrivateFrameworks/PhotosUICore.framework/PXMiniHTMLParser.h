@@ -16,6 +16,9 @@
 @property (nonatomic, copy) id /* block */ parsedMarkupElementEndBlock;
 @property (nonatomic, copy) id /* block */ parsedMarkupElementStartBlock;
 
++ (id)charactersForEntityNames;
++ (id)stringByConvertingToHTML:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_string;
 - (id)init;

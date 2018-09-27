@@ -10,6 +10,7 @@
     bool  _customSortAscending;
     int  _customSortKey;
     PLGenericAlbum * _genericAlbum;
+    NSString * _importSessionID;
     bool  _inTrash;
     bool  _isFolder;
     NSNumber * _kind;
@@ -26,6 +27,7 @@
 @property (nonatomic) bool customSortAscending;
 @property (nonatomic) int customSortKey;
 @property (nonatomic, retain) PLGenericAlbum *genericAlbum;
+@property (nonatomic, retain) NSString *importSessionID;
 @property (getter=isInTrash, nonatomic) bool inTrash;
 @property (nonatomic, readonly) bool isFolder;
 @property (nonatomic, retain) NSNumber *kind;
@@ -47,10 +49,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)genericAlbum;
+- (id)importSessionID;
 - (id)init;
 - (id)initWithPLGenericAlbum:(id)arg1;
 - (id)initWithPersistedDataAtURL:(id)arg1;
-- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5;
+- (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5 persistedAlbumDataDirectory:(id)arg6;
 - (id)insertAlbumFromDataInManagedObjectContext:(id)arg1;
 - (bool)isFolder;
 - (bool)isInTrash;
@@ -66,6 +69,7 @@
 - (void)setCustomSortAscending:(bool)arg1;
 - (void)setCustomSortKey:(int)arg1;
 - (void)setGenericAlbum:(id)arg1;
+- (void)setImportSessionID:(id)arg1;
 - (void)setInTrash:(bool)arg1;
 - (void)setKind:(id)arg1;
 - (void)setMetadataURL:(id)arg1;

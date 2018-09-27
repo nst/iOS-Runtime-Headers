@@ -38,6 +38,8 @@
             double height; 
         } size; 
     }  _cropRect;
+    double  _depthEffectAperture;
+    double  _depthEffectApertureCaptured;
     bool  _depthEffectEnabled;
     NSDictionary * _depthEffectSettings;
     NSString * _effectFilterName;
@@ -45,6 +47,7 @@
     double  _exposureLevelOffset;
     bool  _fusionEnabled;
     NSDictionary * _fusionParameters;
+    bool  _hasPortraitEffectAdjustment;
     double  _highlightsLevelOffset;
     long long  _inputOrientation;
     struct CGSize { 
@@ -59,6 +62,13 @@
     NSString * _portraitEffectFilterName;
     long long  _portraitEffectFilterVersion;
     NSDictionary * _portraitEffectSettings;
+    NSString * _rawMethodVersion;
+    NSNumber * _rawNoiseReductionCNRAmount;
+    NSNumber * _rawNoiseReductionContrastAmount;
+    NSNumber * _rawNoiseReductionDetailAmount;
+    bool  _rawNoiseReductionEnabled;
+    NSNumber * _rawNoiseReductionLNRAmount;
+    NSNumber * _rawNoiseReductionSharpnessAmount;
     NSArray * _redEyeCorrections;
     double  _shadowsLevelOffset;
     bool  _smartBWEnabled;
@@ -91,11 +101,18 @@
         long long epoch; 
     }  _trimStartTime;
     long long  _userOrientation;
+    long long  _whiteBalanceColorType;
     bool  _whiteBalanceEnabled;
     double  _whiteBalanceFaceI;
     double  _whiteBalanceFaceQ;
     double  _whiteBalanceFaceStrength;
     double  _whiteBalanceFaceWarmth;
+    double  _whiteBalanceGrayI;
+    double  _whiteBalanceGrayQ;
+    double  _whiteBalanceGrayWarmth;
+    double  _whiteBalanceGrayY;
+    double  _whiteBalanceTemperature;
+    double  _whiteBalanceTint;
 }
 
 @property (getter=isAutoCropped, nonatomic, readonly) bool autoCropped;
@@ -126,6 +143,8 @@
 @property (nonatomic, readonly) long long cropConstraintHeight;
 @property (nonatomic, readonly) long long cropConstraintWidth;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) double depthEffectAperture;
+@property (nonatomic, readonly) double depthEffectApertureCaptured;
 @property (getter=isDepthEffectEnabled, nonatomic, readonly) bool depthEffectEnabled;
 @property (nonatomic, readonly) NSDictionary *depthEffectSettings;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
@@ -136,6 +155,7 @@
 @property (nonatomic, readonly) NSDictionary *fusionParameters;
 @property (nonatomic, readonly) bool hasAnyAutoEnhancement;
 @property (nonatomic, readonly) bool hasIdentityCrop;
+@property (nonatomic, readonly) bool hasPortraitEffectAdjustment;
 @property (nonatomic, readonly) bool hasRedEyeCorrections;
 @property (nonatomic, readonly) bool hasStillPhotoTime;
 @property (nonatomic, readonly) double highlightsLevelOffset;
@@ -150,6 +170,13 @@
 @property (nonatomic, readonly) long long portraitEffectFilterVersion;
 @property (nonatomic, readonly) NSDictionary *portraitEffectSettings;
 @property (nonatomic, readonly) unsigned int px_assetVariation;
+@property (nonatomic, readonly) NSString *rawMethodVersion;
+@property (nonatomic, readonly) NSNumber *rawNoiseReductionCNRAmount;
+@property (nonatomic, readonly) NSNumber *rawNoiseReductionContrastAmount;
+@property (nonatomic, readonly) NSNumber *rawNoiseReductionDetailAmount;
+@property (getter=isRawNoiseReductionEnabled, nonatomic, readonly) bool rawNoiseReductionEnabled;
+@property (nonatomic, readonly) NSNumber *rawNoiseReductionLNRAmount;
+@property (nonatomic, readonly) NSNumber *rawNoiseReductionSharpnessAmount;
 @property (nonatomic, readonly, copy) NSArray *redEyeCorrections;
 @property (nonatomic, readonly) double shadowsLevelOffset;
 @property (getter=isSmartBWEnabled, nonatomic, readonly) bool smartBWEnabled;
@@ -167,11 +194,18 @@
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } trimEndTime;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } trimStartTime;
 @property (nonatomic, readonly) long long userOrientation;
+@property (nonatomic, readonly) long long whiteBalanceColorType;
 @property (getter=isWhiteBalanceEnabled, nonatomic, readonly) bool whiteBalanceEnabled;
 @property (nonatomic, readonly) double whiteBalanceFaceI;
 @property (nonatomic, readonly) double whiteBalanceFaceQ;
 @property (nonatomic, readonly) double whiteBalanceFaceStrength;
 @property (nonatomic, readonly) double whiteBalanceFaceWarmth;
+@property (nonatomic, readonly) double whiteBalanceGrayI;
+@property (nonatomic, readonly) double whiteBalanceGrayQ;
+@property (nonatomic, readonly) double whiteBalanceGrayWarmth;
+@property (nonatomic, readonly) double whiteBalanceGrayY;
+@property (nonatomic, readonly) double whiteBalanceTemperature;
+@property (nonatomic, readonly) double whiteBalanceTint;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
@@ -234,6 +268,8 @@
 - (long long)cropConstraintHeight;
 - (long long)cropConstraintWidth;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (double)depthEffectAperture;
+- (double)depthEffectApertureCaptured;
 - (id)depthEffectSettings;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -243,6 +279,7 @@
 - (id)fusionParameters;
 - (bool)hasAnyAutoEnhancement;
 - (bool)hasIdentityCrop;
+- (bool)hasPortraitEffectAdjustment;
 - (bool)hasRedEyeCorrections;
 - (bool)hasStillPhotoTime;
 - (double)highlightsLevelOffset;
@@ -266,6 +303,7 @@
 - (bool)isIdentityModel;
 - (bool)isPortraitEffectEnabled;
 - (bool)isPortraitEffectEqualToPhotoEditModel:(id)arg1;
+- (bool)isRawNoiseReductionEnabled;
 - (bool)isRedEyeCorrectionEqualToPhotoEditModel:(id)arg1;
 - (bool)isSmartBWEnabled;
 - (bool)isSmartBWPrecisionEqualToPhotoEditModel:(id)arg1;
@@ -291,6 +329,12 @@
 - (id)portraitEffectFilterName;
 - (long long)portraitEffectFilterVersion;
 - (id)portraitEffectSettings;
+- (id)rawMethodVersion;
+- (id)rawNoiseReductionCNRAmount;
+- (id)rawNoiseReductionContrastAmount;
+- (id)rawNoiseReductionDetailAmount;
+- (id)rawNoiseReductionLNRAmount;
+- (id)rawNoiseReductionSharpnessAmount;
 - (id)redEyeCorrections;
 - (double)shadowsLevelOffset;
 - (double)smartBWLevel;
@@ -304,10 +348,17 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })trimEndTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })trimStartTime;
 - (long long)userOrientation;
+- (long long)whiteBalanceColorType;
 - (double)whiteBalanceFaceI;
 - (double)whiteBalanceFaceQ;
 - (double)whiteBalanceFaceStrength;
 - (double)whiteBalanceFaceWarmth;
+- (double)whiteBalanceGrayI;
+- (double)whiteBalanceGrayQ;
+- (double)whiteBalanceGrayWarmth;
+- (double)whiteBalanceGrayY;
+- (double)whiteBalanceTemperature;
+- (double)whiteBalanceTint;
 
 // Image: /System/Library/PrivateFrameworks/PhotosEditUI.framework/PhotosEditUI
 

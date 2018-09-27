@@ -19,9 +19,11 @@
 + (bool)isD2xDevice;
 + (bool)longPressTriggersEmergencySOS;
 + (bool)mustAllowThreeClickTrigger;
++ (bool)newtonTriggersEmergencySOS;
 + (void)setAllowedToMessageSOSContacts:(bool)arg1;
 + (void)setAutomaticCallCountdownEnabled:(bool)arg1;
 + (void)setLongPressTriggersEmergencySOS:(bool)arg1;
++ (void)setNewtonTriggersEmergencySOS:(bool)arg1;
 + (void)setPlayAudioDuringCountdown:(bool)arg1;
 + (bool)shouldPlayAudioDuringCountdown;
 

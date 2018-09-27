@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) id /* block */ geocodeCompletionHandler;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id /* block */)geocodeCompletionHandler;
 - (void)setGeocodeCompletionHandler:(id /* block */)arg1;
 

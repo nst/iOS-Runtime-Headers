@@ -13,13 +13,13 @@
     <AFUISiriViewControllerDataSource> * _dataSource;
     AFUIDelayedActionCommandCache * _delayedActionCommandCache;
     <AFUISiriViewControllerDelegate> * _delegate;
+    bool  _deviceIsInStarkMode;
     NSDictionary * _dismissalUserInfo;
     bool  _eyesFree;
     bool  _hasCalledBeginAppearanceTransition;
     bool  _hasCalledEndAppearanceTransition;
     bool  _inHoldToTalkMode;
     SiriUIKeyboardView * _inputAccessoryView;
-    bool  _isStark;
     struct { 
         bool enabled; 
         bool minimized; 
@@ -38,6 +38,9 @@
     }  _keyboardInfo;
     bool  _mapsGatekeeperEnabled;
     bool  _presentedConversationFromBreadcrumb;
+    bool  _punchingOut;
+    bool  _receivedIncomingPhoneCall;
+    bool  _recordingStartedOnRoute;
     NSNumber * _recordingStartedTimeValue;
     AFUISiriRemoteViewController * _remoteViewController;
     NSObject<OS_dispatch_queue> * _remoteViewControllerDispatchQueue;
@@ -50,6 +53,7 @@
     UIStatusBar * _statusBar;
     bool  _statusBarEnabled;
     id /* block */  _triggerUpdater;
+    bool  _turnsOnScreenOnAppearance;
     NSObject<OS_dispatch_queue> * _uiAppearanceCoreDuetQueue;
     NSString * _uiAppearanceUUIDString;
     bool  _unlockScreenVisible;
@@ -66,6 +70,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFUISiriViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDeviceInStarkMode, setter=setDeviceInStarkMode:, nonatomic) bool deviceIsInStarkMode;
 @property (getter=isEyesFree, nonatomic) bool eyesFree;
 @property (getter=_hasCalledBeginAppearanceTransition, setter=_setHasCalledBeginAppearanceTransition:, nonatomic) bool hasCalledBeginAppearanceTransition;
 @property (getter=_hasCalledEndAppearanceTransition, setter=_setHasCalledEndAppearanceTransition:, nonatomic) bool hasCalledEndAppearanceTransition;
@@ -74,8 +79,9 @@
 @property (getter=_isInHoldToTalkMode, setter=_setInHoldToTalkMode:, nonatomic) bool inHoldToTalkMode;
 @property (nonatomic, retain) UIView *inputAccessoryView;
 @property (nonatomic, readonly) bool isProcessingAcousticIdRequest;
-@property (nonatomic) bool isStark;
 @property (nonatomic) bool mapsGatekeeperEnabled;
+@property (getter=_isPunchingOut, setter=_setPunchingOut:, nonatomic) bool punchingOut;
+@property (nonatomic) bool receivedIncomingPhoneCall;
 @property (getter=_recordingStartedTimeValue, setter=_setRecordingStartedTimeValue:, nonatomic, retain) NSNumber *recordingStartedTimeValue;
 @property (getter=_remoteViewController, nonatomic, readonly) AFUISiriRemoteViewController *remoteViewController;
 @property (getter=_remoteViewControllerDispatchQueue, nonatomic, readonly) NSObject<OS_dispatch_queue> *remoteViewControllerDispatchQueue;
@@ -85,6 +91,7 @@
 @property (getter=_statusBar, setter=_setStatusBar:, nonatomic, retain) UIStatusBar *statusBar;
 @property (nonatomic) bool statusBarEnabled;
 @property (readonly) Class superclass;
+@property (nonatomic) bool turnsOnScreenOnAppearance;
 @property (getter=_isUserUtteranceTapToEditInProgress, setter=_setUserUtteranceTapToEditInProgress:, nonatomic) bool userUtteranceTapToEditInProgress;
 @property (nonatomic, retain) UIView<AFUISiriRemoteViewHosting> *view;
 @property (getter=_viewDidAppearTime, setter=_setViewDidAppearTime:, nonatomic) double viewDidAppearTime;
@@ -118,6 +125,7 @@
 - (void)_informRemoteViewControllerOfParentIfNecessary;
 - (bool)_isInHoldToTalkMode;
 - (bool)_isInitialSpeechRequest;
+- (bool)_isPunchingOut;
 - (bool)_isTextInputEnabled;
 - (bool)_isUserUtteranceTapToEditInProgress;
 - (void)_keyboardDidHideNotification:(id)arg1;
@@ -128,6 +136,7 @@
 - (void)_presentRemoteViewController;
 - (void)_recordUIAppearance;
 - (void)_recordUIDismissal;
+- (bool)_recordingStartedOnRoute;
 - (id)_recordingStartedTimeValue;
 - (id)_remoteViewController;
 - (id)_remoteViewControllerDispatchQueue;
@@ -142,6 +151,8 @@
 - (void)_setHasCalledBeginAppearanceTransition:(bool)arg1;
 - (void)_setHasCalledEndAppearanceTransition:(bool)arg1;
 - (void)_setInHoldToTalkMode:(bool)arg1;
+- (void)_setPunchingOut:(bool)arg1;
+- (void)_setRecordingStartedOnRoute:(bool)arg1;
 - (void)_setRecordingStartedTimeValue:(id)arg1;
 - (void)_setShowAudioRoutePicker:(bool)arg1;
 - (void)_setShowKeyboardIfTextInputEnabled:(bool)arg1;
@@ -156,6 +167,7 @@
 - (id)_statusBar;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_statusBarFrame;
 - (void)_statusBarFrameDidChange:(id)arg1;
+- (void)_stopRequestWithOptions:(id)arg1 afterDelay:(double)arg2;
 - (void)_suspendRemoteViewControllerDispatchQueue;
 - (void)_transitionToAutomaticEndpointMode;
 - (void)_updateAudioRoutePicker;
@@ -190,12 +202,12 @@
 - (id)init;
 - (id)initWithConnection:(id)arg1 configuration:(id)arg2;
 - (id)inputAccessoryView;
+- (bool)isDeviceInStarkMode;
 - (bool)isEyesFree;
 - (bool)isInitialBringUp;
 - (bool)isListening;
 - (bool)isPreventingActivationGesture;
 - (bool)isProcessingAcousticIdRequest;
-- (bool)isStark;
 - (bool)isViewDisappearing;
 - (bool)isVisible;
 - (void)keyboardView:(id)arg1 didReceiveText:(id)arg2;
@@ -209,9 +221,11 @@
 - (bool)mapsGatekeeperEnabled;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(id)arg1;
 - (void)preheat;
+- (void)preloadPluginBundles;
 - (void)preloadPresentationBundleWithIdentifier:(id)arg1;
 - (void)presentRemoteViewControllerIfNecessary;
 - (void)proximityStatusChanged:(bool)arg1;
+- (bool)receivedIncomingPhoneCall;
 - (void)resetContextTypes:(long long)arg1;
 - (id)routePickerController;
 - (void)routePickerController:(id)arg1 hasRoutesToPick:(bool)arg2;
@@ -223,17 +237,20 @@
 - (void)setCurrentCarPlaySupportedOEMAppIdList:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDeviceInStarkMode:(bool)arg1;
 - (void)setEyesFree:(bool)arg1;
 - (void)setInputAccessoryView:(id)arg1;
-- (void)setIsStark:(bool)arg1;
 - (void)setLockState:(unsigned long long)arg1;
 - (void)setMapsGatekeeperEnabled:(bool)arg1;
+- (void)setReceivedIncomingPhoneCall:(bool)arg1;
 - (void)setRoutePickerController:(id)arg1;
 - (void)setShowsStatusBar:(bool)arg1;
 - (void)setShowsStatusBar:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setStatusBarEnabled:(bool)arg1;
+- (void)setTurnsOnScreenOnAppearance:(bool)arg1;
 - (void)setViewDisappearing:(bool)arg1;
 - (void)setVisible:(bool)arg1;
+- (void)setWaitingForTelephonyToStart:(bool)arg1;
 - (void)shortTapAction;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (bool)shouldAutorotate;
@@ -251,10 +268,11 @@
 - (void)siriRemoteViewController:(id)arg1 didRequestCurrentTextInputWithReplyHandler:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(bool)arg2 minimized:(bool)arg3;
+- (void)siriRemoteViewController:(id)arg1 failTest:(id)arg2 withReason:(id)arg3;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOptions:(long long)arg4 replyHandler:(id /* block */)arg5;
 - (bool)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(bool)arg4;
-- (bool)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(bool)arg3;
+- (void)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(bool)arg3 completion:(id /* block */)arg4;
 - (void)siriRemoteViewController:(id)arg1 setBugReportingAvailable:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplayGatekeeperVisible:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplaySnippetVisible:(bool)arg2;
@@ -313,12 +331,12 @@
 - (void)stopRequestWithOptions:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)telephonyRequestCompleted;
+- (bool)turnsOnScreenOnAppearance;
 - (id)underlyingConnection;
 - (void)updateContexts:(long long)arg1;
 - (void)updateRequestOptions:(id)arg1;
 - (void)updateViewForPercentageRevealed:(double)arg1;
 - (long long)userAccountCountForSiriView:(id)arg1;
-- (void)userInteractionDidOccur;
 - (void)userRelevantEventDidOccurInSiriRemoteViewController:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

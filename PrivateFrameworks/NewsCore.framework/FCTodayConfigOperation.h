@@ -6,18 +6,18 @@
     <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     NSArray * _networkEvents;
-    NSObject * _resultInterestToken;
+    NSDictionary * _resultHeldRecordsByType;
     NTPBTodayConfig * _resultTodayConfig;
-    id /* block */  _todayConfigCompletionHandlerWithInterest;
+    id /* block */  _todayConfigCompletionHandler;
     NSString * _widgetConfigID;
 }
 
 @property (copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) NSArray *networkEvents;
-@property (nonatomic, copy) NSObject *resultInterestToken;
+@property (nonatomic, retain) NSDictionary *resultHeldRecordsByType;
 @property (nonatomic, copy) NTPBTodayConfig *resultTodayConfig;
-@property (nonatomic, copy) id /* block */ todayConfigCompletionHandlerWithInterest;
+@property (nonatomic, copy) id /* block */ todayConfigCompletionHandler;
 @property (nonatomic, copy) NSString *widgetConfigID;
 
 - (void).cxx_destruct;
@@ -28,16 +28,16 @@
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (id)resultInterestToken;
+- (id)resultHeldRecordsByType;
 - (id)resultTodayConfig;
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setNetworkEvents:(id)arg1;
-- (void)setResultInterestToken:(id)arg1;
+- (void)setResultHeldRecordsByType:(id)arg1;
 - (void)setResultTodayConfig:(id)arg1;
-- (void)setTodayConfigCompletionHandlerWithInterest:(id /* block */)arg1;
+- (void)setTodayConfigCompletionHandler:(id /* block */)arg1;
 - (void)setWidgetConfigID:(id)arg1;
-- (id /* block */)todayConfigCompletionHandlerWithInterest;
+- (id /* block */)todayConfigCompletionHandler;
 - (bool)validateOperation;
 - (id)widgetConfigID;
 

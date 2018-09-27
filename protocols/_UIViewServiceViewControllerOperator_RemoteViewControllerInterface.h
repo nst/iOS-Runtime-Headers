@@ -29,7 +29,7 @@
 - (void)__hostViewDidMoveToScreenWithFBSDisplayIdentity:(void *)arg1 newHostingHandleReplyHandler:(void *)arg2; // needs 2 arg types, found 7: FBSDisplayIdentity *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, void*
 - (void)__hostViewWillAppear:(void *)arg1 inInterfaceOrientation:(void *)arg2 traitCollection:(void *)arg3 statusBarHeight:(void *)arg4 underlapsStatusBar:(void *)arg5 completionHandler:(void *)arg6; // needs 6 arg types, found 11: bool, long long, UITraitCollection *, double, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { double x1; double x2; }, void*
 - (void)__hostViewWillDisappear:(bool)arg1;
-- (void)__hostViewWillTransitionToSize:(void *)arg1 withContextDescription:(void *)arg2 statusBarHeight:(void *)arg3 underlapsStatusBar:(void *)arg4 whenDone:(void *)arg5; // needs 5 arg types, found 11: struct CGSize { double x1; double x2; }, _UIViewControllerTransitionCoordinatorContextDescription *, double, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { double x1; double x2; }, double, void*
+- (void)__hostViewWillTransitionToSize:(void *)arg1 withContextDescription:(void *)arg2 boundingPath:(void *)arg3 statusBarHeight:(void *)arg4 underlapsStatusBar:(void *)arg5 whenDone:(void *)arg6; // needs 6 arg types, found 12: struct CGSize { double x1; double x2; }, _UIViewControllerTransitionCoordinatorContextDescription *, _UIBoundingPath *, double, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { double x1; double x2; }, double, void*
 - (void)__hostWillAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2 skipSelf:(bool)arg3;
 - (void)__hostWillEnterForeground;
 - (void)__hostWillResignActive;
@@ -39,8 +39,9 @@
 - (void)__restoreStateForSession:(NSString *)arg1 restorationAnchor:(NSString *)arg2;
 - (void)__saveStateForSession:(void *)arg1 restorationAnchor:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)__scrollToTopFromTouchAtViewLocation:(void *)arg1 resultHandler:(void *)arg2; // needs 2 arg types, found 8: struct CGPoint { double x1; double x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
-- (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1 withFence:(BKSAnimationFenceHandle *)arg2;
+- (void)__setBoundingPath:(_UIBoundingPath *)arg1;
+- (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1 boundingPath:(_UIBoundingPath *)arg2;
+- (void)__setContentSize:(struct CGSize { double x1; double x2; })arg1 boundingPath:(_UIBoundingPath *)arg2 withFence:(BKSAnimationFenceHandle *)arg3;
 - (void)__setHostTintColor:(UIColor *)arg1 tintAdjustmentMode:(long long)arg2;
 - (void)__setHostTraitCollection:(UITraitCollection *)arg1 deferIfAnimated:(bool)arg2;
 - (void)__setHostViewUnderlapsStatusBar:(bool)arg1;

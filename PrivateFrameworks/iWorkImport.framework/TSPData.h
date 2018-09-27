@@ -33,7 +33,6 @@
 + (void)addCullingListener:(id)arg1;
 + (id)cullingListeners;
 + (id)cullingListenersQueue;
-+ (void)dataForAssetsLibraryURL:(id)arg1 context:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 + (id)dataFromDataRep:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromNSData:(id)arg1 filename:(id)arg2 context:(id)arg3;
 + (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 context:(id)arg3;
@@ -53,7 +52,6 @@
 - (id)AVAsset;
 - (id)AVAssetWithOptions:(id)arg1;
 - (id)NSData;
-- (id)UIImage;
 - (void)addDownloadObserver:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)bookmarkData;
 - (id)context;

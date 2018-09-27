@@ -72,7 +72,6 @@
 - (id)_contentProvidingViewController;
 - (id)_contentView;
 - (bool)_disableAutomaticKeyboardBehavior;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (double)_effectiveHeightForRequestedHeight:(double)arg1;
 - (void)_encodeLayerTreeToURL:(id)arg1 withCodingImageFormat:(id)arg2 withReplyHandler:(id /* block */)arg3;
 - (void)_enqueueProxyRequest:(id /* block */)arg1;

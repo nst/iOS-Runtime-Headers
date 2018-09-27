@@ -16,6 +16,7 @@
 @property (readonly) PLPhotoLibrary *photoLibrary;
 @property (readonly) PLCloudRecordOrganizer *recordOrganizer;
 @property (nonatomic, readonly) bool serverSupportsGraphHome;
+@property (nonatomic, readonly) bool serverSupportsSuggestion;
 @property (nonatomic, readonly) bool serverSupportsVision;
 @property (readonly) Class superclass;
 
@@ -30,6 +31,7 @@
 - (id)photoLibrary;
 - (id)recordOrganizer;
 - (bool)serverSupportsGraphHome;
+- (bool)serverSupportsSuggestion;
 - (bool)serverSupportsVision;
 - (void)setAssetAdjustmentState:(id)arg1 forCloudIdentifer:(id)arg2;
 - (void)setPersonUUIDsToDedupe:(id)arg1;

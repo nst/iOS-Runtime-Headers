@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKBalloonCalloutView : UIView {
+@interface _MKBalloonCalloutView : MKCalloutView {
     UIImageView * _balloonBodyImageView;
     CALayer * _balloonInnerStrokeLayer;
     CAShapeLayer * _balloonShape;
@@ -42,18 +42,19 @@
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centerFrame;
+- (void)_commonInit;
 - (id)_generateInnerStrokeImage;
+- (void)_handleTapOnCallout:(id)arg1;
 - (double)_innerDiameter;
 - (void)_updateCroppedImage;
 - (id)balloonTintColor;
 - (bool)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)contentView;
 - (void)didMoveToWindow;
+- (void)dismissAnimated:(bool)arg1 completionBlock:(id /* block */)arg2;
 - (void)hideCalloutAnimated:(bool)arg1 completionHandler:(id /* block */)arg2;
-- (void)hideCalloutAnimated:(bool)arg1 endVerticalOffset:(double)arg2 completionHandler:(id /* block */)arg3;
 - (id)image;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithAnnotationView:(id)arg1;
 - (id)initWithStyle:(long long)arg1;
 - (id)innerStrokeColor;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
@@ -66,8 +67,8 @@
 - (void)setOriginatesAsSmallBalloon:(bool)arg1;
 - (void)setSmallBalloonScale:(double)arg1;
 - (void)setStrokeColor:(id)arg1;
+- (void)showAnimated:(bool)arg1 completionBlock:(id /* block */)arg2;
 - (void)showCalloutAnimated:(bool)arg1;
-- (void)showCalloutAnimated:(bool)arg1 startVerticalOffset:(double)arg2;
 - (double)smallBalloonScale;
 - (id)strokeColor;
 - (long long)style;

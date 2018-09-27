@@ -18,10 +18,10 @@
 
 + (id)animatedLayers;
 
+- (void).cxx_destruct;
 - (id)allBackgroundFadingLayers;
 - (id)backgroundLayer;
 - (id)dataSetNameLayer;
-- (void)dealloc;
 - (id)elementFadingLayers;
 - (id)elementLayers;
 - (id)layersAlreadyHaveProperTransforms;

@@ -12,6 +12,7 @@
     bool  _isAirplaneModeActive;
     bool  _isAutoDownloadOnCellularAllowed;
     bool  _isCellularDataActive;
+    bool  _isCellularDataRestrictedForMusic;
     bool  _isNetworkReachable;
     bool  _isShowingAllMusic;
     bool  _isShowingAllVideo;
@@ -41,6 +42,7 @@
 - (void)_onQueue_endObservingReachabilityChanges;
 - (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(bool)arg1;
 - (void)_onQueue_updateCanShowCloudTracksWithNotification:(bool)arg1;
+- (void)_onQueue_updateIsCellularDataRestrictedForMusic;
 - (void)_setNewIsNetworkReachable:(bool)arg1 networkType:(long long)arg2;
 - (bool)_uncachedIsAutoDownloadOnCellularAllowed;
 - (bool)_uncachedIsShowingAllMusic;

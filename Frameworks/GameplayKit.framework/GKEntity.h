@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKEntity : NSObject <NSCoding, NSCopying> {
+@interface GKEntity : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * _components;
 }
 
 @property (nonatomic, readonly, retain) NSArray *components;
 
 + (id)entity;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addComponent:(id)arg1;

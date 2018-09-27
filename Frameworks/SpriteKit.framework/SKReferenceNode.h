@@ -15,6 +15,7 @@
 + (id)nodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithFileNamed:(id)arg1;
 + (id)referenceNodeWithURL:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_resolveReferenceNode;

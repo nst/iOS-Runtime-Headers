@@ -4,14 +4,14 @@
 
 @interface HDAppSubscriptionEntity : HDHealthEntity
 
-+ (bool)_getSubscriptionsWithArray:(id)arg1 predicate:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (id)_predicateForBundleID:(id)arg1 dataCode:(long long)arg2;
 + (id)_predicateForBundleIdentifier:(id)arg1;
 + (id)_predicateForDataCode:(long long)arg1;
++ (id)_subscriptionsWithPredicate:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 + (bool)addSubscriptionWithBundleID:(id)arg1 dataCode:(long long)arg2 updateFrequency:(unsigned long long)arg3 profile:(id)arg4 error:(id*)arg5;
 + (id)allSubscriptionsForBundleID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 + (id)allSubscriptionsForType:(long long)arg1 profile:(id)arg2 error:(id*)arg3;
-+ (id)columnsDefinition;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)databaseTable;
 + (long long)protectionClass;
 + (bool)removeSubscriptionsWithBundleID:(id)arg1 dataCode:(long long)arg2 profile:(id)arg3 error:(id*)arg4;

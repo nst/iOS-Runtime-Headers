@@ -6,6 +6,7 @@
     id /* block */  _completionBlock;
     id /* block */  _completionDataBlock;
     NSData * _data;
+    CSDataWrapper * _dataWrapper;
     bool  _finished;
     CSSearchableIndex * _index;
     NSString * _label;
@@ -20,7 +21,8 @@
 
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, copy) id /* block */ completionDataBlock;
-@property (nonatomic, retain) NSData *data;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, retain) CSDataWrapper *dataWrapper;
 @property (nonatomic) bool finished;
 @property (nonatomic, retain) CSSearchableIndex *index;
 @property (nonatomic, retain) NSString *label;
@@ -42,6 +44,7 @@
 - (id /* block */)completionBlock;
 - (id /* block */)completionDataBlock;
 - (id)data;
+- (id)dataWrapper;
 - (void)dealloc;
 - (id)description;
 - (void)finishWithError:(id)arg1;
@@ -54,10 +57,10 @@
 - (unsigned int)requestID;
 - (unsigned long long)retryCount;
 - (void)retryIfNecessaryWithError:(id)arg1;
-- (void)retryIfNecessaryWithError:(id)arg1 data:(id)arg2;
+- (void)retryIfNecessaryWithError:(id)arg1 dataWrapper:(id)arg2;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCompletionDataBlock:(id /* block */)arg1;
-- (void)setData:(id)arg1;
+- (void)setDataWrapper:(id)arg1;
 - (void)setFinished:(bool)arg1;
 - (void)setIndex:(id)arg1;
 - (void)setLabel:(id)arg1;

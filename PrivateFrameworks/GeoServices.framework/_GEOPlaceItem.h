@@ -12,6 +12,7 @@
 @property (getter=_additionalPlaceInfos, nonatomic, readonly) NSArray *additionalPlaceInfos;
 @property (nonatomic, readonly) NSDictionary *addressDictionary;
 @property (getter=_addressGeocodeAccuracy, nonatomic, readonly) int addressGeocodeAccuracy;
+@property (getter=_annotatedItemList, nonatomic, readonly) <GEOAnnotatedItemList> *annotatedItemList;
 @property (getter=_areaInMeters, nonatomic, readonly) double areaInMeters;
 @property (nonatomic, readonly) NSArray *areasOfInterest;
 @property (getter=_associatedApp, nonatomic, readonly) GEOAssociatedApp *associatedApp;
@@ -75,6 +76,7 @@
 @property (getter=_hasTelephone, nonatomic, readonly) bool hasTelephone;
 @property (getter=_hasTransit, nonatomic, readonly) bool hasTransit;
 @property (getter=_hasUserRatingScore, nonatomic, readonly) bool hasUserRatingScore;
+@property (nonatomic, readonly) bool hasVenueCapacity;
 @property (getter=_hasVenueFeatureType, nonatomic, readonly) bool hasVenueFeatureType;
 @property (getter=_hasWifiFingerprintConfidence, nonatomic, readonly) bool hasWifiFingerprintConfidence;
 @property (getter=_hasWifiFingerprintLabelStatusCode, nonatomic, readonly) bool hasWifiFingerprintLabelStatusCode;
@@ -102,6 +104,7 @@
 @property (getter=_placeDisplayStyle, nonatomic, readonly) int placeDisplayStyle;
 @property (getter=_placeDisplayType, nonatomic, readonly) int placeDisplayType;
 @property (getter=_placeType, nonatomic, readonly) int placeType;
+@property (getter=_placecardLayoutConfiguration, nonatomic, readonly) GEOPlacecardLayoutConfiguration *placecardLayoutConfiguration;
 @property (getter=_poiPinpointURLString, nonatomic, readonly) NSString *poiPinpointURLString;
 @property (getter=_poiSurveyURLString, nonatomic, readonly) NSString *poiSurveyURLString;
 @property (getter=_priceDescription, nonatomic, readonly) GEOPriceDescription *priceDescription;
@@ -118,6 +121,7 @@
 @property (getter=_roadAccessPoints, nonatomic, readonly) NSArray *roadAccessPoints;
 @property (getter=_sampleSizeForUserRatingScore, nonatomic, readonly) unsigned int sampleSizeForUserRatingScore;
 @property (nonatomic, readonly) NSArray *spatialMappedCategories;
+@property (nonatomic, readonly) NSArray *spatialMappedPlaceCategories;
 @property (getter=_styleAttributes, nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
 @property (readonly) Class superclass;
 @property (getter=_takesReservations, nonatomic, readonly) bool takesReservations;
@@ -128,6 +132,7 @@
 @property (getter=_transitInfo, nonatomic, readonly) <GEOMapItemTransitInfo> *transitInfo;
 @property (getter=isValid, nonatomic, readonly) bool valid;
 @property (getter=_vendorID, nonatomic, readonly, copy) NSString *vendorID;
+@property (nonatomic, readonly) long long venueCapacity;
 @property (getter=_venueFeatureType, nonatomic, readonly) int venueFeatureType;
 @property (getter=_venueInfo, nonatomic, readonly) <GEOMapItemVenueInfo> *venueInfo;
 @property (getter=_webURL, nonatomic, readonly, copy) NSURL *webURL;
@@ -195,6 +200,7 @@
 - (id)_placeData;
 - (id)_placeDataAsData;
 - (int)_placeType;
+- (id)_placecardLayoutConfiguration;
 - (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
 - (id)_priceDescription;

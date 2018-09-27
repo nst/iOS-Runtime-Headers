@@ -12,6 +12,7 @@
 
 + (id)customAttributes;
 
+- (id)_reduceCrop;
 - (id)inputExtent;
 - (id)inputImage;
 - (id)offsetAndCrop;

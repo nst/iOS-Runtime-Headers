@@ -4,12 +4,12 @@
 
 @interface CNVCard30PHOTOHelper : NSObject {
     unsigned long long  _maxBytes;
-    CNVCardOptions * _options;
+    CNVCardWritingOptions * _options;
     <CNVCardPerson> * _person;
 }
 
 @property (nonatomic, readonly) unsigned long long maxBytes;
-@property (nonatomic, readonly) CNVCardOptions *options;
+@property (nonatomic, readonly) CNVCardWritingOptions *options;
 @property (nonatomic, readonly) <CNVCardPerson> *person;
 
 - (void).cxx_destruct;

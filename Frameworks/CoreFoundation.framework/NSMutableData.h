@@ -4,7 +4,6 @@
 
 @interface NSMutableData : NSData
 
-@property (nonatomic, readonly) NSData *NRSHA256;
 @property unsigned long long length;
 @property (readonly) void*mutableBytes;
 
@@ -60,13 +59,6 @@
 + (id)dataWithHexString:(id)arg1;
 
 - (id)initDataWithHexString:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
-
-+ (id)dataWithRandomBytesOfSize:(unsigned long long)arg1;
-
-- (id)NRSHA256;
-- (void)NRSHA256:(unsigned char)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy
 

@@ -30,6 +30,7 @@
 
 + (id)_chineseContextualVariantMapping;
 
+- (void).cxx_destruct;
 - (id)_alternatingStringForInputString:(id)arg1 isLockedInput:(bool)arg2 hasMarkedText:(bool)arg3;
 - (id)_checkInput:(id)arg1 forContextualChinesePunctuationInDocumentState:(id)arg2;
 - (id)_checkInput:(id)arg1 forContextualDashesInDocumentState:(id)arg2;
@@ -37,7 +38,6 @@
 - (void)_initializeDashCharacterSetsIfNecessary;
 - (void)_initializeQuoteCharacterSetsIfNecessary;
 - (unsigned long long)autoQuoteType;
-- (void)dealloc;
 - (id)init;
 - (void)reset;
 - (void)setAutoQuoteType:(unsigned long long)arg1;
@@ -48,6 +48,7 @@
 - (id)smartPunctuationOptions;
 - (id)smartPunctuationOutputForInput:(id)arg1 isLockedInput:(bool)arg2 documentState:(id)arg3;
 - (id)smartPunctuationResultsForString:(id)arg1;
+- (id)smartPunctuationedStringForString:(id)arg1;
 - (bool)smartQuotesEnabled;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface PIRedEyeAutoCalculator : NUAutoCalculator
 
+- (void)_configureRequest:(id)arg1;
 - (id)_options;
 - (void)calculate:(id /* block */)arg1;
 

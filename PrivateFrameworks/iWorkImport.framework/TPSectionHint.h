@@ -21,6 +21,7 @@
 - (id)copyForArchiving;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })documentPageRange;
 - (unsigned long long)documentStartPageIndex;
+- (bool)hasEndOfTextLayoutBeforePageIndex:(unsigned long long)arg1;
 - (bool)hasPageHintOfKind:(long long)arg1 atPageIndex:(unsigned long long)arg2;
 - (bool)hasPageHintOfKind:(long long)arg1 beforePageIndex:(unsigned long long)arg2;
 - (id)init;

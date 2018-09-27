@@ -3,7 +3,7 @@
  */
 
 @interface CUITextEffectStack : CUIShapeEffectStack {
-    bool  renderHighQuality;
+    bool  _renderHighQuality;
 }
 
 - (void)_drawShadow:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; struct CGPoint { double x_9_1_1; double x_9_1_2; } x9; })arg1 forGlyphs:(const unsigned short*)arg2 inContext:(struct CGContext { }*)arg3 usingFont:(struct __CTFont { }*)arg4 atPositions:(const struct CGPoint { double x1; double x2; }*)arg5 count:(unsigned long long)arg6;

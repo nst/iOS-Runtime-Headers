@@ -136,7 +136,6 @@
 - (void)_clearOffscreenPresentationSnapshot;
 - (unsigned long long)_countForDurationOptions;
 - (bool)_deviceIsRunningInternalOS;
-- (void)_endAggDTimer;
 - (void)_exportDidEnd:(id)arg1;
 - (void)_exportWillBegin:(id)arg1;
 - (void)_launchAutoEditDebugView:(id)arg1;
@@ -151,11 +150,11 @@
 - (void)_setupProgressScreen;
 - (id)_snapshotPlayer;
 - (id)_snapshotPlayerWithAspect:(double)arg1;
-- (void)_startAggDTimer;
 - (void)_takeAndDisplayEditorPresentationSnapshot;
 - (void)_takeAndDisplayOffscreenPresentationSnapshot;
 - (void)_updateControls;
 - (void)_updateDurationSlider;
+- (void)_updateInitialAggdValues;
 - (void)_updateMoodSlider;
 - (void)_updateTitleButton:(id)arg1;
 - (id)activityBBItem;
@@ -273,6 +272,7 @@
 - (void)setAirPlayIsAvailable:(bool)arg1;
 - (void)setAskedToCreateMemory:(bool)arg1;
 - (void)setAutoEditController:(id)arg1;
+- (void)setAutoEditor:(id)arg1;
 - (void)setBottomBar:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setCancelButtonLeadingConstraint:(id)arg1;
@@ -346,6 +346,7 @@
 - (bool)startMiroScrollEditorTitleTest;
 - (bool)startMiroScrollMoodTest;
 - (bool)startMiroScrollScrubberTest;
+- (bool)startMiroT2PTest;
 - (unsigned long long)startTime;
 - (void)swipeBack:(id)arg1;
 - (void)takeOwnershipOfMovieContainerViewController;
@@ -373,7 +374,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
-- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)zoomDoubleTap;

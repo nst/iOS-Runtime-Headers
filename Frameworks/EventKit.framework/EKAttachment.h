@@ -28,6 +28,7 @@
 - (id)fileSizeRaw;
 - (bool)isBinary;
 - (id)localURL;
+- (id)semanticIdentifier;
 - (void)setExternalId:(id)arg1;
 - (void)setFileFormat:(id)arg1;
 - (void)setFileNameRaw:(id)arg1;

@@ -24,9 +24,9 @@
 
 + (id)layerWithFBSSceneLayer:(id)arg1;
 
+- (void).cxx_destruct;
 - (long long)alignment;
 - (unsigned int)contextID;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

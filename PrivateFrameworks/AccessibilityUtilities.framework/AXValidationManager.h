@@ -4,9 +4,11 @@
 
 @interface AXValidationManager : NSObject {
     NSMutableArray * _consoleErrorMessages;
+    NSMutableArray * _consoleWarningMessages;
     bool  _debugBuild;
     bool  _forceDoNotReport;
     unsigned long long  _numberOfValidationErrors;
+    unsigned long long  _numberOfValidationWarnings;
     NSString * _overrideProcessName;
     bool  _shouldCrashOnError;
     bool  _shouldLogToConsole;
@@ -16,9 +18,11 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *consoleErrorMessages;
+@property (nonatomic, retain) NSMutableArray *consoleWarningMessages;
 @property (getter=isDebugBuild, nonatomic) bool debugBuild;
 @property (nonatomic) bool forceDoNotReport;
 @property (nonatomic) unsigned long long numberOfValidationErrors;
+@property (nonatomic) unsigned long long numberOfValidationWarnings;
 @property (nonatomic, copy) NSString *overrideProcessName;
 @property (nonatomic) bool shouldCrashOnError;
 @property (nonatomic) bool shouldLogToConsole;
@@ -32,6 +36,11 @@
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasClassMethod:(id)arg3 withFullSignature:(const char *)arg4 argList:(char *)arg5;
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasMethod:(id)arg3 methodType:(int)arg4;
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasMethod:(id)arg3 methodType:(int)arg4 returnType:(id)arg5 arguments:(id)arg6;
+- (void)_generateWarningsForMethodType:(int)arg1 onClass:(Class)arg2 superclassMethods:(struct objc_method {}**)arg3 numberOfSuperclassMethods:(unsigned int)arg4;
+- (void)_generateWarningsForPrefixedMethodNames:(id)arg1 client:(id)arg2 methodType:(int)arg3 methodName:(id)arg4 className:(id)arg5;
+- (void)_generateWarningsOnSafeCategoryClass:(Class)arg1;
+- (void)_iterateMethodsOfType:(int)arg1 onClass:(Class)arg2 block:(id /* block */)arg3;
+- (id)_nameForMethod:(struct objc_method { }*)arg1;
 - (void)_printConsoleReport:(bool)arg1 isDelayed:(bool)arg2;
 - (bool)client:(id)arg1 validateClass:(id)arg2;
 - (bool)client:(id)arg1 validateClass:(id)arg2 conformsToProtocol:(id)arg3;
@@ -49,6 +58,7 @@
 - (bool)client:(id)arg1 validateProtocol:(id)arg2 hasRequiredClassMethod:(id)arg3;
 - (bool)client:(id)arg1 validateProtocol:(id)arg2 hasRequiredInstanceMethod:(id)arg3;
 - (id)consoleErrorMessages;
+- (id)consoleWarningMessages;
 - (bool)forceDoNotReport;
 - (id)init;
 - (void)installSafeCategories:(id /* block */)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
@@ -57,6 +67,7 @@
 - (bool)installSafeCategory:(id)arg1 canInteractWithTargetClass:(bool)arg2;
 - (bool)isDebugBuild;
 - (unsigned long long)numberOfValidationErrors;
+- (unsigned long long)numberOfValidationWarnings;
 - (id)overrideProcessName;
 - (void)performValidations:(id /* block */)arg1 withPreValidationHandler:(id /* block */)arg2 postValidationHandler:(id /* block */)arg3;
 - (void)performValidations:(id /* block */)arg1 withPreValidationHandler:(id /* block */)arg2 postValidationHandler:(id /* block */)arg3 safeCategoryInstallationHandler:(id /* block */)arg4;
@@ -79,9 +90,11 @@
 - (void)sendValidateExceptionForProtocol:(id)arg1 hasProperty:(id)arg2 errorMessage:(id)arg3 overrideProcessName:(id)arg4;
 - (void)sendValidationSuccessForProcessName:(id)arg1;
 - (void)setConsoleErrorMessages:(id)arg1;
+- (void)setConsoleWarningMessages:(id)arg1;
 - (void)setDebugBuild:(bool)arg1;
 - (void)setForceDoNotReport:(bool)arg1;
 - (void)setNumberOfValidationErrors:(unsigned long long)arg1;
+- (void)setNumberOfValidationWarnings:(unsigned long long)arg1;
 - (void)setOverrideProcessName:(id)arg1;
 - (void)setShouldCrashOnError:(bool)arg1;
 - (void)setShouldLogToConsole:(bool)arg1;

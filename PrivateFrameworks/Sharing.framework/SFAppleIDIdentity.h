@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) bool certificateExpired;
 @property (nonatomic, retain) NSData *certificatePersistentReference;
 @property (nonatomic, retain) NSData *intermediateCertificatePersistentReference;
+@property (nonatomic, readonly) bool isInvalid;
 @property (nonatomic, retain) NSDate *lastValidationAttemptDate;
 @property (nonatomic, retain) NSDate *lastValidationDate;
 @property (nonatomic) bool linkedToCurrentUser;
@@ -56,6 +57,7 @@
 - (id)intermediateCertificatePersistentReference;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToIdentity:(id)arg1;
+- (bool)isInvalid;
 - (id)lastValidationAttemptDate;
 - (id)lastValidationDate;
 - (bool)linkedToCurrentUser;
@@ -74,5 +76,6 @@
 - (void)setModificationDate:(id)arg1;
 - (void)setPrivateKeyPersistentReference:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (int)verifyKeys;
 
 @end

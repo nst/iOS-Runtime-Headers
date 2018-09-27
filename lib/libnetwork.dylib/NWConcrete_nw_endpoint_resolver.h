@@ -24,7 +24,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
+- (bool)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
 - (void)cancelWithHandler:(id)arg1 forced:(bool)arg2;
 - (void)dealloc;
 - (id)init;

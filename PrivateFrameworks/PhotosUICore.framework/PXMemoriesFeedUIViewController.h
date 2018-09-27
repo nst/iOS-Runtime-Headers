@@ -7,11 +7,11 @@
     PXPhotoAnalysisStatusController * __graphStatusController;
     PXMemoriesFeedViewControllerHelper * __helper;
     UILongPressGestureRecognizer * __longPressRecognizer;
+    unsigned long long  __memoriesStyle;
     PXMemoriesOnboardingUIViewController * __onboardingViewController;
     <UIViewControllerPreviewing> * __previewingContext;
     UIBarButtonItem * __refreshBarButtonItem;
     PXUIScrollViewController * __scrollViewController;
-    UIBarButtonItem * __searchBarButtonItem;
     PXUITapGestureRecognizer * __tapRecognizer;
     PXBasicUIViewTileAnimator * __tileAnimator;
     PXMemoriesUITileSource * __tileSource;
@@ -29,15 +29,16 @@
 @property (nonatomic, readonly) PXPhotoAnalysisStatusController *_graphStatusController;
 @property (nonatomic, readonly) PXMemoriesFeedViewControllerHelper *_helper;
 @property (setter=_setLongPressRecognizer:, nonatomic, retain) UILongPressGestureRecognizer *_longPressRecognizer;
+@property (nonatomic, readonly) unsigned long long _memoriesStyle;
 @property (setter=_setOnboardingViewController:, nonatomic, retain) PXMemoriesOnboardingUIViewController *_onboardingViewController;
 @property (setter=_setPreviewingContext:, nonatomic, retain) <UIViewControllerPreviewing> *_previewingContext;
 @property (nonatomic, readonly) UIBarButtonItem *_refreshBarButtonItem;
 @property (nonatomic, readonly) PXUIScrollViewController *_scrollViewController;
-@property (nonatomic, readonly) UIBarButtonItem *_searchBarButtonItem;
 @property (nonatomic, readonly) PXUITapGestureRecognizer *_tapRecognizer;
 @property (nonatomic, readonly) PXBasicUIViewTileAnimator *_tileAnimator;
 @property (nonatomic, readonly) PXMemoriesUITileSource *_tileSource;
 @property (nonatomic, readonly) PXTouchingUIGestureRecognizer *_touchRecognizer;
+@property (nonatomic, readonly) PXMemoriesFeedDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -47,8 +48,6 @@
 @property (setter=setScrollTargetMemoryUUID:, nonatomic, retain) NSString *scrollTargetMemoryUUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long userInterfaceFeature;
-
-// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (void)_setCurrentFeedViewController:(id)arg1;
 
@@ -66,6 +65,7 @@
 - (void)_invalidateContentUnavailablePlaceholder;
 - (void)_invalidateNavigationItem;
 - (id)_longPressRecognizer;
+- (unsigned long long)_memoriesStyle;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })_memoryIndexPathForViewController:(id)arg1;
 - (id)_memoryObjectReferenceForPhotosDetailsContext:(id)arg1;
 - (void)_navigateToMemoryAtSectionObjectReference:(id)arg1;
@@ -78,8 +78,6 @@
 - (id)_refreshBarButtonItem;
 - (void)_refreshBarButtonItemAction:(id)arg1;
 - (id)_scrollViewController;
-- (id)_searchBarButtonItem;
-- (void)_searchBarButtonItemAction:(id)arg1;
 - (void)_setContentUnavailableView:(id)arg1;
 - (void)_setLongPressRecognizer:(id)arg1;
 - (void)_setNeedsUpdate;
@@ -102,9 +100,12 @@
 - (void)_updateScrollViewControllerContentInset;
 - (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
+- (id)dataSourceManager;
 - (void)dealloc;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)init;
+- (id)initWithMemoriesStyle:(unsigned long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)memoriesFeedViewControllerHelperFeedIsVisible:(id)arg1;
 - (id)memoriesFeedViewControllerHelperReloadedTileKindsOnObjectChanged:(id)arg1;
@@ -143,9 +144,5 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;
-
-// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
-
-- (id)px_searchPresentation;
 
 @end

@@ -3,9 +3,16 @@
  */
 
 @interface BWFileCoordinatorNode : BWNode {
+    <BWAudioSourceRecordingReadinessDelegate> * _audioSourceDelegate;
     long long  _currSettingsID;
     struct OpaqueCMBlockBuffer { } * _emptyMetadataSampleData;
     bool  _firstAudioHasBeenProcessed;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _firstAudioPTSReadyForRecording;
     bool  _flagsLastFrameForVideoCompressor;
     const struct opaqueCMFormatDescription {} ** _formatDescriptionsForInputs;
     bool  _haveSeenAudioWhenStarting;
@@ -97,6 +104,7 @@
 - (void)_prepareToStartRecordingWithSettings:(id)arg1;
 - (void)_printStagingEvent:(struct opaqueCMSampleBuffer { }*)arg1 forNodeInputIndex:(unsigned long long)arg2;
 - (void)_stopRecordingWithErrorCode:(int)arg1;
+- (id)audioSourceDelegate;
 - (void)cancelStartRecordingWithSettings:(id)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
@@ -113,6 +121,7 @@
 - (void)recordingTerminated:(long long)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)resumeRecording;
+- (void)setAudioSourceDelegate:(id)arg1;
 - (void)setFlagsLastFrameForVideoCompressor:(bool)arg1;
 - (int)startRecordingWithSettings:(id)arg1 stopAtPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)stopRecordingWithErrorCode:(int)arg1;

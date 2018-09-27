@@ -15,14 +15,10 @@
 @property (nonatomic) double timeoutInterval;
 @property (nonatomic, readonly, copy) NSURLRequest *urlRequest;
 
-+ (id)shortDescription;
-
 - (void).cxx_destruct;
 - (id)URL;
+- (id)attributeDescriptions;
 - (id)body;
-- (id)debugDescription;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (id)headerFields;
 - (id)init;
 - (id)initWithInternalRequest:(id)arg1;
@@ -30,7 +26,6 @@
 - (id)method;
 - (id)responseWithStatusCode:(long long)arg1;
 - (void)setTimeoutInterval:(double)arg1;
-- (id)shortDescription;
 - (double)timeoutInterval;
 - (id)urlRequest;
 

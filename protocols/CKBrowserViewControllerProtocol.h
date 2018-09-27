@@ -11,15 +11,18 @@
 - (NSString *)conversationID;
 - (void)dismiss;
 - (bool)inExpandedPresentation;
+- (bool)inFullScreenModalPresentation;
 - (id)initWithBalloonPlugin:(IMBalloonPlugin *)arg1;
 - (id)initWithBalloonPlugin:(IMBalloonPlugin *)arg1 dataSource:(IMBalloonPluginDataSource *)arg2;
 - (bool)isLoaded;
+- (bool)isPrimaryViewController;
 - (bool)isiMessage;
 - (bool)mayBeKeptInViewHierarchy;
 - (UIViewController *)presentationViewController;
 - (NSObject<CKBrowserViewControllerSendDelegate> *)sendDelegate;
 - (void)setBalloonPluginDataSource:(IMBalloonPluginDataSource *)arg1;
 - (void)setConversationID:(NSString *)arg1;
+- (void)setIsPrimaryViewController:(bool)arg1;
 - (void)setIsiMessage:(bool)arg1;
 - (void)setPresentationViewController:(UIViewController *)arg1;
 - (void)setSendDelegate:(NSObject<CKBrowserViewControllerSendDelegate> *)arg1;
@@ -45,6 +48,7 @@
 - (long long)currentBrowserConsumer;
 - (void)deferredForceTearDownRemoteView;
 - (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
+- (void)dropAssertion;
 - (void)endDisablingUserInteraction;
 - (void)endSuppressingAppearanceMethods;
 - (void)forceTearDownRemoteView;
@@ -71,6 +75,7 @@
 - (void)viewDidTransitionToExpandedPresentation;
 - (void)viewWillTransitionToCompactPresentation;
 - (void)viewWillTransitionToExpandedPresentation;
+- (void)volumeButtonPressed:(bool)arg1;
 - (bool)wasExpandedPresentation;
 
 @end

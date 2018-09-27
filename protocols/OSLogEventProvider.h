@@ -6,6 +6,7 @@
 @required
 
 - (unsigned long long)activityIdentifier;
+- (OSLogEventBacktrace *)backtrace;
 - (NSUUID *)bootUUID;
 - (NSString *)category;
 - (NSString *)composedMessage;
@@ -16,6 +17,13 @@
 - (OSLogEventDecomposedMessage *)decomposedMessage;
 - (NSString *)formatString;
 - (unsigned long long)logType;
+- (struct { unsigned int x1; bool x2; })lossCount;
+- (unsigned long long)lossEndMachContinuousTimestamp;
+- (struct timeval { long long x1; int x2; }*)lossEndUnixDate;
+- (struct timezone { int x1; int x2; }*)lossEndUnixTimeZone;
+- (unsigned long long)lossStartMachContinuousTimestamp;
+- (struct timeval { long long x1; int x2; }*)lossStartUnixDate;
+- (struct timezone { int x1; int x2; }*)lossStartUnixTimeZone;
 - (unsigned long long)machContinuousTimestamp;
 - (unsigned long long)parentActivityIdentifier;
 - (NSString *)process;
@@ -29,6 +37,7 @@
 - (NSUUID *)senderImageUUID;
 - (const char *)senderImageUUIDBytes;
 - (unsigned long long)signpostIdentifier;
+- (NSString *)signpostName;
 - (unsigned long long)signpostScope;
 - (unsigned long long)signpostType;
 - (unsigned long long)size;

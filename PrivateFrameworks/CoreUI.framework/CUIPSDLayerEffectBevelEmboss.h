@@ -32,6 +32,7 @@
 - (short)angle;
 - (unsigned long long)blurSize;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)direction;
 - (unsigned int)effectType;
 - (int)highlightBlendMode;

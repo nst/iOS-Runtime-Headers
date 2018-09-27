@@ -10,7 +10,7 @@
     FCKeyValueStore * _globalScoreRangesValueStore;
     <FRRingBufferContainer> * _globalScoresRingBufferContainer;
     FCPersonalizationTreatment * _personalizationTreatment;
-    <FRReadonlyPersonalizationAggregateStore> * _readonlyPersonalizationAggregateStore;
+    <FCReadonlyPersonalizationAggregateStore> * _readonlyPersonalizationAggregateStore;
     <FCTodayPrivateData> * _todayData;
 }
 
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) <FRRingBufferContainer> *globalScoresRingBufferContainer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) FCPersonalizationTreatment *personalizationTreatment;
-@property (nonatomic, retain) <FRReadonlyPersonalizationAggregateStore> *readonlyPersonalizationAggregateStore;
+@property (nonatomic, retain) <FCReadonlyPersonalizationAggregateStore> *readonlyPersonalizationAggregateStore;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) <FCTodayPrivateData> *todayData;
 
@@ -58,7 +58,9 @@
 - (void)setReadonlyPersonalizationAggregateStore:(id)arg1;
 - (void)setTodayData:(id)arg1;
 - (id)sortArticles:(id)arg1;
+- (id)sortArticles:(id)arg1 configurationSet:(long long)arg2;
 - (id)sortArticles:(id)arg1 options:(long long)arg2;
+- (id)sortArticles:(id)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
 - (id)todayData;
 - (unsigned long long)whitelistLevelForTagID:(id)arg1;
 

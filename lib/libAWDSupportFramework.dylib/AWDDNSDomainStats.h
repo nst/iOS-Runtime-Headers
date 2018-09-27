@@ -10,6 +10,11 @@
     }  _answeredQuerySendCounts;
     NSString * _domain;
     struct { 
+        unsigned int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _expiredAnswerStates;
+    struct { 
         unsigned int networkType : 1; 
         unsigned int recordType : 1; 
     }  _has;
@@ -45,6 +50,8 @@
 @property (nonatomic, readonly) unsigned int*answeredQuerySendCounts;
 @property (nonatomic, readonly) unsigned long long answeredQuerySendCountsCount;
 @property (nonatomic, retain) NSString *domain;
+@property (nonatomic, readonly) unsigned int*expiredAnswerStates;
+@property (nonatomic, readonly) unsigned long long expiredAnswerStatesCount;
 @property (nonatomic, readonly) bool hasDomain;
 @property (nonatomic) bool hasNetworkType;
 @property (nonatomic) bool hasRecordType;
@@ -64,6 +71,7 @@
 - (int)StringAsNetworkType:(id)arg1;
 - (int)StringAsRecordType:(id)arg1;
 - (void)addAnsweredQuerySendCount:(unsigned int)arg1;
+- (void)addExpiredAnswerState:(unsigned int)arg1;
 - (void)addNegAnsweredQuerySendCount:(unsigned int)arg1;
 - (void)addNegResponseLatencyMs:(unsigned int)arg1;
 - (void)addResponseLatencyMs:(unsigned int)arg1;
@@ -73,6 +81,7 @@
 - (unsigned int*)answeredQuerySendCounts;
 - (unsigned long long)answeredQuerySendCountsCount;
 - (void)clearAnsweredQuerySendCounts;
+- (void)clearExpiredAnswerStates;
 - (void)clearNegAnsweredQuerySendCounts;
 - (void)clearNegResponseLatencyMs;
 - (void)clearResponseLatencyMs;
@@ -84,6 +93,9 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
+- (unsigned int)expiredAnswerStateAtIndex:(unsigned long long)arg1;
+- (unsigned int*)expiredAnswerStates;
+- (unsigned long long)expiredAnswerStatesCount;
 - (bool)hasDomain;
 - (bool)hasNetworkType;
 - (bool)hasRecordType;
@@ -106,6 +118,7 @@
 - (unsigned long long)responseLatencyMsCount;
 - (void)setAnsweredQuerySendCounts:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setDomain:(id)arg1;
+- (void)setExpiredAnswerStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setHasNetworkType:(bool)arg1;
 - (void)setHasRecordType:(bool)arg1;
 - (void)setNegAnsweredQuerySendCounts:(unsigned int*)arg1 count:(unsigned long long)arg2;

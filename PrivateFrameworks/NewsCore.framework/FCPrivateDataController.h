@@ -79,6 +79,7 @@
 - (void)disableSyncing;
 - (void)enableSyncing;
 - (void)forceSyncWithCompletion:(id /* block */)arg1;
+- (void)handleSyncCompletion;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (bool)hasBeenPreparedForUse;
 - (id)init;

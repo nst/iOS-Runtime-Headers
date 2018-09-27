@@ -5,14 +5,40 @@
 @interface RMLog : NSObject
 
 + (id)apns;
++ (id)appInfo;
++ (id)appMonitor;
++ (id)ask;
++ (id)blueprint;
 + (id)capabilities;
++ (id)cloudkit;
++ (id)conduit;
 + (id)configuration;
 + (id)daemon;
-+ (id)dmf;
++ (id)deviceState;
++ (id)family;
++ (id)familyMonitor;
++ (id)familyScreenTimeManager;
++ (id)familySettingsManager;
 + (id)http;
++ (id)idsTransport;
 + (id)logCategories;
 + (id)metadata;
++ (id)mirroring;
++ (id)payload;
++ (id)payloadManager;
++ (id)payloadQueue;
++ (id)persistence;
++ (id)personal;
++ (id)requestManager;
++ (id)restrictionsMigrator;
++ (id)screenTimeOrganizationController;
++ (id)screentime;
 + (id)test;
 + (id)tool;
++ (id)transaction;
++ (id)usage;
++ (id)userNotifications;
++ (id)utility;
++ (id)versionVector;
 
 @end

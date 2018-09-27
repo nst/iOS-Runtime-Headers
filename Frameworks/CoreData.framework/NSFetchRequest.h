@@ -61,7 +61,7 @@
 - (id)_copyForDirtyContext;
 - (bool)_disablePersistentStoreResultCaching;
 - (void)_incrementInUseCounter;
-- (bool)_isCachingFetchRequest__;
+- (bool)_isCachingFetchRequest;
 - (bool)_isEditable;
 - (id)_newNormalizedFetchProperties:(id)arg1;
 - (id)_newValidatedProperties:(id)arg1 groupBy:(bool)arg2 error:(id*)arg3;

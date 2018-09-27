@@ -8,24 +8,23 @@
     unsigned long long  _countToRequest;
     CLLocation * _currentLocation;
     int  _defaultTansportType;
+    MapsSuggestionsCanKicker * _deferredSourcesUpdater;
     bool  _dirtyFlag;
     NSDate * _etaValidUntil;
+    MapsSuggestionsCanKicker * _expiredEntryInvalidator;
     MapsSuggestionsFakeSource * _fakeSource;
     NSObject<OS_dispatch_queue> * _gatheringQueue;
-    NSObject<OS_dispatch_source> * _invalidateSinksOnExpiredTimer;
     struct NSArray { Class x1; } * _latestResults;
     <MapsSuggestionsLocationUpdater> * _locationUpdater;
     int  _mapType;
-    struct NSMutableSet { Class x1; } * _sinks;
+    NSHashTable * _sinks;
     struct NSMutableSet { Class x1; } * _sources;
     struct NSMutableDictionary { Class x1; } * _storage;
     NSObject<OS_dispatch_queue> * _storageQueue;
     <MapsSuggestionsStrategy> * _strategy;
     long long  _style;
     MapsSuggestionsTracker * _tracker;
-    double  _updateAllSourcesDeferTime;
-    NSObject<OS_dispatch_source> * _updateAllSourcesDeferTimer;
-    NSObject<OS_dispatch_source> * _wipeStaleETATimer;
+    MapsSuggestionsCanKicker * _wipeStaleETAWiper;
 }
 
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
@@ -45,8 +44,10 @@
 - (unsigned long long)_addOrUpdateSuggestionEntries:(struct NSArray { Class x1; }*)arg1 source:(struct NSString { Class x1; }*)arg2;
 - (unsigned long long)_deleteEntries:(struct NSArray { Class x1; }*)arg1 source:(struct NSString { Class x1; }*)arg2;
 - (struct NSArray { Class x1; }*)_filteredEntries:(struct NSArray { Class x1; }*)arg1 forSink:(struct NSString { Class x1; }*)arg2 limit:(unsigned long long)arg3;
+- (bool)_loadStorageFromFile:(id)arg1;
 - (struct NSArray { Class x1; }*)_pruneExpiredFromEntries:(struct NSArray { Class x1; }*)arg1;
 - (void)_pruneExpiredSourceEntries;
+- (bool)_removeEntry:(id)arg1;
 - (bool)_removeEntry:(id)arg1 sourceName:(struct NSString { Class x1; }*)arg2;
 - (void)_restartLocationUpdaterIfNeeded;
 - (void)_scheduleInvalidateSinksOnFirstExpiredOfEntries:(struct NSArray { Class x1; }*)arg1;
@@ -60,6 +61,7 @@
 - (void)_updateAllSourcesOnce;
 - (void)_updateCurrentLocation:(id)arg1;
 - (bool)_updateResult;
+- (void)_updateSource:(id)arg1 forType:(long long)arg2 repeat:(bool)arg3;
 - (void)_updateSource:(id)arg1 repeat:(bool)arg2;
 - (void)_wipeStaleETAs;
 - (void)addAdditionalFilter:(id)arg1 forSink:(struct NSString { Class x1; }*)arg2;
@@ -80,12 +82,14 @@
 - (bool)detachSource:(id)arg1;
 - (id)dumpStorage;
 - (id)fakeSource;
-- (void)hintRefreshOfType:(unsigned long long)arg1;
-- (id)initWithStrategy:(id)arg1 locationUpdater:(id)arg2 fetchETA:(bool)arg3;
+- (void)hintRefreshOfType:(long long)arg1;
+- (id)initWithStrategy:(id)arg1 locationUpdater:(id)arg2 ETARequirements:(id)arg3;
 - (bool)loadStorageFromFile:(id)arg1;
+- (bool)loadStorageFromFile:(id)arg1 callback:(id /* block */)arg2 callbackQueue:(id)arg3;
 - (id)locationUpdater;
 - (int)mapType;
 - (void)removeAdditionalFilter:(id)arg1 forSink:(struct NSString { Class x1; }*)arg2;
+- (bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(id /* block */)arg3;
 - (bool)saveStorageToFile:(id)arg1;
 - (void)scheduleUpdateAllSourcesOnce;
 - (void)sendInvalidateToAllSinks;
@@ -96,7 +100,7 @@
 - (void)setMapType:(int)arg1;
 - (void)setStrategy:(id)arg1;
 - (void)setStyle:(long long)arg1;
-- (void)setTitleFormatter:(id)arg1 forType:(unsigned long long)arg2;
+- (void)setTitleFormatter:(id)arg1 forType:(long long)arg2;
 - (struct NSSet { Class x1; }*)sinks;
 - (struct NSSet { Class x1; }*)sources;
 - (struct NSDictionary { Class x1; }*)storage;

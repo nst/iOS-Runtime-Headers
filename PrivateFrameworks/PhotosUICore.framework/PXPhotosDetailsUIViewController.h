@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXPurgeableController, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, PXWidgetUnlockDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+@interface PXPhotosDetailsUIViewController : UIViewController <PLDismissableViewController, PXActionPerformerDelegate, PXChangeObserver, PXPurgeableController, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, PXWidgetUnlockDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     Class  __barsControllerClass;
     PXWidgetComposition * __composition;
     bool  __hasAppeared;
@@ -43,6 +43,7 @@
     bool  _empty;
     unsigned long long  _occludedContentEdges;
     unsigned long long  _options;
+    NSUserActivity * _siriActionActivity;
 }
 
 @property (nonatomic, readonly) Class _barsControllerClass;
@@ -84,6 +85,7 @@
 @property (nonatomic, readonly) UIScrollView *ppt_scrollView;
 @property (nonatomic, readonly) PXScrollViewController *scrollViewController;
 @property (nonatomic, readonly) bool shouldUpdateStatusBarTitle;
+@property (nonatomic, retain) NSUserActivity *siriActionActivity;
 @property (readonly) Class superclass;
 
 + (void)preloadResources;
@@ -181,6 +183,7 @@
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)preferredFocusEnvironments;
 - (void)preloadWithSourceRegionOfInterest:(id)arg1 forTransition:(id)arg2;
+- (bool)prepareForDismissingForced:(bool)arg1;
 - (void)prepareForInteractiveTransition:(id)arg1;
 - (id)previewActionItems;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
@@ -206,7 +209,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEmpty:(bool)arg1;
 - (void)setOccludedContentEdges:(unsigned long long)arg1;
+- (void)setSiriActionActivity:(id)arg1;
 - (bool)shouldUpdateStatusBarTitle;
+- (id)siriActionActivity;
 - (id)standaloneMapViewController;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;

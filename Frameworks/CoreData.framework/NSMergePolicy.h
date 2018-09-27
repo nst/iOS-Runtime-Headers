@@ -12,7 +12,7 @@
 
 + (bool)accessInstanceVariablesDirectly;
 + (id)errorMergePolicy;
-+ (void)load;
++ (void)initialize;
 + (id)mergeByPropertyObjectTrumpMergePolicy;
 + (id)mergeByPropertyStoreTrumpMergePolicy;
 + (id)overwriteMergePolicy;

@@ -9,18 +9,17 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)_executeCTConnectionDependentBlock:(id /* block */)arg1;
 + (bool)isOnCallOfSubType:(struct __CFString { }*)arg1;
-+ (bool)isProvisioning;
-+ (bool)isVoiceEnabled;
-+ (void)setVoiceEnabled:(bool)arg1;
-+ (bool)shouldShowVoiceOptions;
-+ (unsigned long long)voiceAvailability;
++ (bool)isProvisioning:(id)arg1;
++ (bool)isVoiceEnabled:(id)arg1;
++ (void)setVoice:(id)arg1 enabled:(bool)arg2;
++ (bool)shouldShowVoiceOptions:(id)arg1;
++ (unsigned long long)voiceAvailability:(id)arg1;
 
 - (void)dealloc;
 - (id)init;
 - (void)listItemSelected:(id)arg1;
-- (void)presentCallCarrierAlert;
+- (void)presentCallCarrierAlert:(id)arg1;
 - (bool)presentOnCallAlertIfNeededForService:(unsigned long long)arg1 okayCompletion:(id /* block */)arg2;
 - (id)specifiers;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

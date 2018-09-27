@@ -35,6 +35,7 @@
 - (void)addData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)addItems:(id)arg1;
 - (void)addItems:(id)arg1 isSmartCopy:(bool)arg2;
+- (bool)canLoadItemsOfClass:(Class)arg1;
 - (long long)changeCount;
 - (long long)clearContents;
 - (bool)containsAnyPasteboardTypeInArray:(id)arg1;

@@ -26,11 +26,13 @@
 @property (getter=isLoadingLastWorkout, nonatomic) bool loadingLastWorkout;
 @property (nonatomic, retain) HKObserverQuery *workoutObservationQuery;
 
++ (id)_signatureTemplateWithHasActiveWorkout:(bool)arg1 hasPausedActiveWorkout:(bool)arg2;
 + (id)_templateForWorkout:(id)arg1 family:(long long)arg2;
 + (id)_unknownTemplateForFamily:(long long)arg1;
 + (id)_workoutTintColor;
-+ (bool)acceptsComplicationFamily:(long long)arg1;
-+ (bool)acceptsComplicationType:(unsigned long long)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
++ (Class)richComplicationDisplayViewClassForType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_animationImages;
@@ -57,7 +59,7 @@
 - (void)getSupportedTimeTravelDirectionsWithHandler:(id /* block */)arg1;
 - (bool)hasKnownLastWorkoutState;
 - (id)healthStore;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 - (bool)isLoadingLastWorkout;
 - (id)lastWorkout;
 - (id)lastWorkoutQuery;

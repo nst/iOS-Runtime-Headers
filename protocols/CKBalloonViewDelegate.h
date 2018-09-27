@@ -12,4 +12,8 @@
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(CKBalloonView *)arg1;
 - (void)liveBalloonTouched:(CKBalloonView *)arg1;
 
+@optional
+
+- (void)tuConversationBalloonJoinButtonTapped:(CKBalloonView *)arg1;
+
 @end

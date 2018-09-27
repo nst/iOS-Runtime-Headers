@@ -12,7 +12,7 @@
 @property (nonatomic, retain) <TILinguisticDataSourceMessage> *lastMessage;
 @property (nonatomic, retain) RKMessageResponseManager *trainer;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)handleMessages:(id)arg1;
 - (id)identifier;
 - (id)initWithCompositeName:(id)arg1 andTrainer:(id)arg2;

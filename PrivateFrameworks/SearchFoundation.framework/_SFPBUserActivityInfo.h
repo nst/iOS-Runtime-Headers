@@ -3,9 +3,6 @@
  */
 
 @interface _SFPBUserActivityInfo : PBCodable <NSSecureCoding, _SFPBUserActivityInfo> {
-    struct { 
-        unsigned int valueType : 1; 
-    }  _has;
     NSString * _key;
     NSString * _stringValue;
     _SFPBURL * _urlValue;
@@ -14,10 +11,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasKey;
-@property (nonatomic, readonly) bool hasStringValue;
-@property (nonatomic, readonly) bool hasUrlValue;
-@property (nonatomic, readonly) bool hasValueType;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSString *key;
@@ -28,10 +21,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasKey;
-- (bool)hasStringValue;
-- (bool)hasUrlValue;
-- (bool)hasValueType;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

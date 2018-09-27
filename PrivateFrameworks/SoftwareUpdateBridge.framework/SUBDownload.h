@@ -13,7 +13,8 @@
 + (id)downloadWithDescriptor:(id)arg1 andProgress:(id)arg2;
 + (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)copy;
 - (id)description;
 - (id)descriptor;
 - (void)encodeWithCoder:(id)arg1;

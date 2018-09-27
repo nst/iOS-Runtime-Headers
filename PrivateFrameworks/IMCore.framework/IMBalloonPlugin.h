@@ -41,6 +41,7 @@
 @property (nonatomic, retain) <PKPlugIn> *plugin;
 @property (nonatomic, readonly, retain) NSBundle *pluginBundle;
 @property (nonatomic) bool pluginLoaded;
+@property (nonatomic, readonly) unsigned long long presentationContexts;
 @property (nonatomic, readonly) bool shouldHideAppSwitcher;
 @property (nonatomic, readonly) bool showInBrowser;
 @property (nonatomic, readonly) NSString *version;
@@ -81,6 +82,7 @@
 - (id)plugin;
 - (id)pluginBundle;
 - (bool)pluginLoaded;
+- (unsigned long long)presentationContexts;
 - (void)removeController:(id)arg1 forChatItem:(id)arg2;
 - (void)setApp:(id)arg1;
 - (void)setBalloonControllerPool:(id)arg1;
@@ -110,17 +112,17 @@
 - (id)__ck_badgeImage;
 - (id)__ck_breadcrumbImage;
 - (id)__ck_browserImage;
+- (id)__ck_browserImageGenerateSynchronously:(bool)arg1;
+- (id)__ck_browserImageName:(bool*)arg1;
+- (void)__ck_prefetchBrowserImage;
 - (id)__ck_statusImage;
 - (id)__ck_statusImageForTransport;
 - (id)__ck_statusJPEGImageDataForTransportWithCompressionFactor:(double)arg1;
 - (id)_adamID;
 - (id)_scaledImage:(id)arg1 xscale:(double)arg2 yscale:(double)arg3;
 - (id)appStoreBadgeIcon;
-- (id)appStoreBrowserIcon;
 - (id)description;
 - (id)iconCache;
-- (id)moreBrowserIcon;
 - (id)recentsBadgeIcon;
-- (id)recentsBrowserIcon;
 
 @end

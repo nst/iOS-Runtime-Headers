@@ -11,6 +11,7 @@
     long long  _mode;
     bool  _photoBooth;
     long long  _photoModeEffectFilterType;
+    double  _portraitModeApertureValue;
     long long  _portraitModeEffectFilterType;
     long long  _portraitModeLightingEffectType;
     long long  _squareModeEffectFilterType;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) long long mode;
 @property (getter=isPhotoBooth, nonatomic, readonly) bool photoBooth;
 @property (nonatomic, readonly) long long photoModeEffectFilterType;
+@property (nonatomic, readonly) double portraitModeApertureValue;
 @property (nonatomic, readonly) long long portraitModeEffectFilterType;
 @property (nonatomic, readonly) long long portraitModeLightingEffectType;
 @property (nonatomic, readonly) long long squareModeEffectFilterType;
@@ -35,7 +37,7 @@
 @property (nonatomic, readonly) long long videoConfiguration;
 
 + (long long)_fallbackVideoConfigurationForUnsupportedConfiguration:(long long)arg1;
-+ (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(bool)arg4;
++ (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(bool)arg4 forceMonoAudioRecording:(bool)arg5;
 + (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
 + (id)configuration:(id)arg1 withDevice:(long long)arg2;
 + (long long)sanitizeVideoConfigurationForDesiredConfiguration:(long long)arg1 mode:(long long)arg2 device:(long long)arg3;
@@ -47,12 +49,13 @@
 - (long long)device;
 - (long long)flashMode;
 - (id)initForPhotoBoothWithCaptureDevice:(long long)arg1;
-- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11 portraitModeEffectFilterType:(long long)arg12 portraitModeLightingEffectType:(long long)arg13;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 flashMode:(long long)arg5 torchMode:(long long)arg6 HDRMode:(long long)arg7 irisMode:(long long)arg8 timerDuration:(long long)arg9 photoModeEffectFilterType:(long long)arg10 squareModeEffectFilterType:(long long)arg11 portraitModeEffectFilterType:(long long)arg12 portraitModeLightingEffectType:(long long)arg13 portraitModeApertureValue:(double)arg14;
 - (id)initWithConfiguration:(id)arg1;
 - (long long)irisMode;
 - (bool)isPhotoBooth;
 - (long long)mode;
 - (long long)photoModeEffectFilterType;
+- (double)portraitModeApertureValue;
 - (long long)portraitModeEffectFilterType;
 - (long long)portraitModeLightingEffectType;
 - (long long)squareModeEffectFilterType;

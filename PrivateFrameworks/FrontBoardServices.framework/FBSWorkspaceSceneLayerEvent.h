@@ -10,7 +10,7 @@
 @property (nonatomic, retain) FBSSceneLayer *layer;
 @property (nonatomic) bool orderOut;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

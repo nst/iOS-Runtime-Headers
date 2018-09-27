@@ -2,28 +2,38 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCCaptureSession : NSObject <RCCaptureOutputWriterDelegate, RCWaveformDataSourceObserver> {
-    SBSSecureAppAssertion * _assertion;
+@interface RCCaptureSession : NSObject <RCWaveformDataSourceObserver> {
     unsigned long long  _backgroundTaskIdentifier;
+    unsigned long long  _beginCapturedHostTime;
+    unsigned long long  _beginCapturedSampleCount;
     bool  _captureBeginSoundEffectDisabled;
     bool  _captureEndSoundEffectDisabled;
-    RCCaptureOutputWriter * _captureOutputWriter;
+    AVAudioEngine * _captureEngine;
+    NSError * _captureError;
+    <RCSAudioFile> * _captureFile;
     RCAudioSessionRoutingAssertion * _captureRouteAssertion;
     NSDate * _captureStartDate;
     RCCaptureInputWaveformDataSource * _captureWaveformDataSource;
+    AVURLAsset * _capturedAsset;
+    double  _capturedClockDelta;
+    double  _capturedDisplayTime;
     bool  _deleteCapturedOutWhenFinished;
     bool  _destinationShouldBeDeleted;
     NSObject<OS_dispatch_group> * _endCaptureTaskGroup;
     bool  _handledFinishedCapturingAfterCompletionSound;
     bool  _handlingDidFinishCapturing;
     RCCaptureInputDevice * _inputDevice;
+    SBSLockScreenContentAssertion * _lockScreenAssertion;
     long long  _sessionCaptureState;
     NSString * _sessionRouteName;
-    NSHashTable * _weakObservers;
+    RCSSavedRecordingService * _sharedService;
+    double  _storeDemoTimeLimit;
+    NSMutableOrderedSet * _weakObservers;
+    long long  _writerState;
 }
 
 @property (nonatomic, readonly) RCAVState *AVState;
-@property (nonatomic, retain) SBSSecureAppAssertion *assertion;
+@property (nonatomic, readonly) long long _writerState;
 @property (nonatomic, readonly) double captureDestinationComposedDuration;
 @property (nonatomic, readonly) RCCaptureInputWaveformDataSource *captureWaveformDataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +41,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) RCCaptureInputDevice *inputDevice;
 @property (nonatomic, readonly) bool isCaptureSessionFinished;
-@property (readonly) double storeDemoTimeLimit;
+@property (nonatomic, retain) SBSLockScreenContentAssertion *lockScreenAssertion;
+@property (nonatomic) double storeDemoTimeLimit;
 @property (readonly) Class superclass;
 
 + (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id /* block */)arg1;
@@ -40,22 +51,29 @@
 - (void).cxx_destruct;
 - (id)AVState;
 - (void)_applicationWillTerminateNotification:(id)arg1;
-- (bool)_attachInputToCaptureSession:(id)arg1;
+- (bool)_attachInputToCaptureSession:(id)arg1 withAudioDevice:(id)arg2;
+- (id)_audioSettingsForCaptureFormat:(id)arg1;
 - (void)_beginAVCapturingToDestinationInitiallyPaused:(bool)arg1;
 - (void)_captureInputDeviceAvailabilityDidChangeNotification:(id)arg1;
 - (void)_captureInputDeviceRouteDidChangeNotification:(id)arg1;
 - (void)_closeCaptureSession;
 - (void)_deleteCaptureDestinationAndPostDidEndNotification:(id)arg1;
+- (void)_didFinishWritingToOutputFileAtURL:(id)arg1 error:(id)arg2;
+- (void)_endWritingWithError:(id)arg1;
 - (void)_enumerateCaptureSessionObserversWithBlock:(id /* block */)arg1;
 - (void)_handleCaptureSessionDidError:(id)arg1;
+- (void)_handleCaptureSessionDidStartWritingToURL:(id)arg1;
 - (bool)_handleFinishWritingByRestartingCaptureForError:(id)arg1 testOnly:(bool)arg2;
+- (void)_installTapIntoCurrentNode;
 - (void)_onMainQueueHandleCaptureDidFinishCapturingAfterCompletionSound;
 - (bool)_openAVCaptureSessionAndWaitUntilRunning;
+- (void)_pauseWriting;
 - (void)_postToObserversWithBlock:(id /* block */)arg1;
+- (void)_resumeWriting;
 - (void)_setPostPrepareRequestedState:(long long)arg1;
 - (void)_takeSBSecureAppAssertion:(bool)arg1;
+- (long long)_writerState;
 - (void)addCaptureSessionObserver:(id)arg1;
-- (id)assertion;
 - (bool)canResumeCapturingAtCompositionDestinationTime:(double)arg1;
 - (double)captureDestinationComposedDuration;
 - (void)captureOutputWriter:(id)arg1 captureSessionDidTerminateWithError:(id)arg2;
@@ -66,12 +84,18 @@
 - (void)captureOutputWriter:(id)arg1 didStartWritingToOutputFileAtURL:(id)arg2;
 - (void)captureOutputWriter:(id)arg1 willFinishWritingToOutputFileAtURL:(id)arg2 error:(id)arg3;
 - (id)captureWaveformDataSource;
+- (double)capturedDeltaFromDisplayTime:(double)arg1;
+- (double)capturedEndTime;
+- (double)capturedTimeFromDisplayTime:(double)arg1;
 - (void)dealloc;
 - (void)deleteCapturedOutWhenFinished;
 - (id)description;
 - (void)disableCaptureBeginSoundEffect;
 - (void)disableCaptureEndSoundEffect;
+- (double)finalizedFragmentDuration;
 - (void)finishCapturing;
+- (void)finishCapturingWithError:(id)arg1;
+- (void)handleInterruption:(id)arg1;
 - (id)init;
 - (id)initWithInputDevice:(id)arg1 captureWaveformDataSource:(id)arg2;
 - (id)inputDevice;
@@ -79,12 +103,17 @@
 - (bool)isCapturePaused;
 - (bool)isCaptureSessionFinished;
 - (bool)isPreparing;
+- (id)lockScreenAssertion;
 - (void)pauseCapturing;
 - (void)prepareToCaptureWithPreparedHandler:(id /* block */)arg1;
 - (void)removeCaptureSessionObserver:(id)arg1;
 - (void)resumeCapturing;
-- (void)setAssertion:(id)arg1;
+- (void)setLockScreenAssertion:(id)arg1;
+- (void)setStoreDemoTimeLimit:(double)arg1;
 - (double)storeDemoTimeLimit;
+- (bool)unsaveableRecordingError;
+- (bool)updateFromDisplayLink;
+- (void)updateObserversFromDisplayLink:(id)arg1;
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;
 

@@ -11,6 +11,7 @@
         unsigned int mainAlternativeValid : 1; 
         unsigned int partiallyLoaded : 1; 
     }  _has;
+    NSData * _htmlContentData;
     bool  _mainAlternativeValid;
     NSString * _messageId;
     NNMKProtoMessage * _notificationMessage;
@@ -24,12 +25,14 @@
 @property (nonatomic) unsigned int fullSyncVersion;
 @property (nonatomic, readonly) bool hasDateSynced;
 @property (nonatomic) bool hasFullSyncVersion;
+@property (nonatomic, readonly) bool hasHtmlContentData;
 @property (nonatomic) bool hasMainAlternativeValid;
 @property (nonatomic, readonly) bool hasMessageId;
 @property (nonatomic, readonly) bool hasNotificationMessage;
 @property (nonatomic) bool hasPartiallyLoaded;
 @property (nonatomic, readonly) bool hasPreview;
 @property (nonatomic, readonly) bool hasText;
+@property (nonatomic, retain) NSData *htmlContentData;
 @property (nonatomic) bool mainAlternativeValid;
 @property (nonatomic, retain) NSString *messageId;
 @property (nonatomic, retain) NNMKProtoMessage *notificationMessage;
@@ -53,6 +56,7 @@
 - (unsigned int)fullSyncVersion;
 - (bool)hasDateSynced;
 - (bool)hasFullSyncVersion;
+- (bool)hasHtmlContentData;
 - (bool)hasMainAlternativeValid;
 - (bool)hasMessageId;
 - (bool)hasNotificationMessage;
@@ -60,6 +64,7 @@
 - (bool)hasPreview;
 - (bool)hasText;
 - (unsigned long long)hash;
+- (id)htmlContentData;
 - (bool)isEqual:(id)arg1;
 - (bool)mainAlternativeValid;
 - (void)mergeFrom:(id)arg1;
@@ -74,6 +79,7 @@
 - (void)setHasFullSyncVersion:(bool)arg1;
 - (void)setHasMainAlternativeValid:(bool)arg1;
 - (void)setHasPartiallyLoaded:(bool)arg1;
+- (void)setHtmlContentData:(id)arg1;
 - (void)setMainAlternativeValid:(bool)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setNotificationMessage:(id)arg1;

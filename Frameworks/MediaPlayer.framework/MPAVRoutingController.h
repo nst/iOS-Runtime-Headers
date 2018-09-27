@@ -18,10 +18,10 @@
     bool  _hasExternalScreenType;
     MPAVRoute * _legacyCachedRoute;
     NSString * _name;
-    NSMutableSet * _pendingPickedRoutes;
+    <MPAVOutputDevicePlaybackDataSource> * _playbackDataSource;
     long long  _routeTypes;
+    MPAVRoutingControllerSelectionQueue * _routingControllerSelectionQueue;
     bool  _scheduledSendDelegateRoutesChanged;
-    NSObject<OS_dispatch_queue> * _serialQueue;
     long long  _volumeControlStateForPickedRoute;
 }
 
@@ -33,11 +33,13 @@
 @property (nonatomic, readonly) long long externalScreenType;
 @property (nonatomic) bool fetchAvailableRoutesSynchronously;
 @property (nonatomic, readonly) bool hasPendingPickedRoutes;
+@property (nonatomic, retain) MPAVRoute *legacyCachedRoute;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) MPAVRoute *pendingPickedRoute;
 @property (nonatomic, readonly) NSSet *pendingPickedRoutes;
 @property (nonatomic, readonly) MPAVRoute *pickedRoute;
 @property (nonatomic, readonly) NSArray *pickedRoutes;
+@property (nonatomic) <MPAVOutputDevicePlaybackDataSource> *playbackDataSource;
 @property (nonatomic) long long routeTypes;
 @property (nonatomic, readonly) bool supportsMultipleSelection;
 @property (nonatomic, readonly) bool volumeControlIsAvailable;
@@ -46,6 +48,7 @@
 + (id)_currentDeviceRoutingIconImageName;
 + (void)_getActiveRouteWithTimeout:(double)arg1 discoveredRoutes:(id)arg2 completion:(id /* block */)arg3;
 + (id)_iconImageForRoute:(id)arg1;
++ (id)_sharedSerialQueue;
 + (void)getActiveRouteWithCompletion:(id /* block */)arg1;
 + (void)getActiveRouteWithTimeout:(double)arg1 completion:(id /* block */)arg2;
 + (void)setActiveRoute:(id)arg1 completion:(id /* block */)arg2;
@@ -54,19 +57,19 @@
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChangeNotification:(id)arg1;
-- (id)_addPendingRoute:(id)arg1;
+- (void)_clearLegacyCachedRoute;
 - (bool)_deviceAvailabilityOverrideState;
 - (long long)_externalScreenType:(bool*)arg1;
 - (void)_externalScreenTypeDidChangeNotification:(id)arg1;
 - (void)_mediaServerDiedNotification:(id)arg1;
-- (void)_onQueueClearCachedRoutes;
 - (void)_onQueueSetExternalScreenType:(long long)arg1;
+- (void)_onQueue_clearCachedRoutes;
+- (bool)_pickRoute:(id)arg1 completion:(id /* block */)arg2;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
 - (id)_pickedRouteInArray:(id)arg1;
 - (id)_pickedRoutesInArray:(id)arg1;
-- (void)_refreshPendingRoutes;
+- (void)_promptForHijackIfNeeded:(id)arg1 handler:(id /* block */)arg2;
 - (void)_registerNotifications;
-- (void)_removePendingRoute:(id)arg1;
 - (void)_routeStatusDidChangeNotification:(id)arg1;
 - (void)_scheduleSendDelegateRoutesChanged;
 - (void)_sendDelegateFailedToPickRouteWithError:(id)arg1;
@@ -75,7 +78,6 @@
 - (void)_setVolumeControlStateForPickedRoute:(long long)arg1;
 - (void)_unregisterNotifications;
 - (void)_updateCachedRoutes;
-- (bool)_updateGroupMembership:(long long)arg1 forRoute:(id)arg2 completion:(id /* block */)arg3;
 - (void)_volumeControlAvailabilityDidChangeNotification:(id)arg1;
 - (long long)_volumeControlStateForPickedRoute;
 - (bool)addPickedRoute:(id)arg1;
@@ -99,7 +101,7 @@
 - (id)init;
 - (id)initWithDataSource:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1;
-- (void)logCurrentRoutes;
+- (id)legacyCachedRoute;
 - (id)name;
 - (id)pendingPickedRoute;
 - (id)pendingPickedRoutes;
@@ -111,6 +113,7 @@
 - (bool)pickSpeakerRoute;
 - (id)pickedRoute;
 - (id)pickedRoutes;
+- (id)playbackDataSource;
 - (bool)receiverRouteIsPicked;
 - (bool)removePickedRoute:(id)arg1;
 - (bool)removePickedRoute:(id)arg1 completion:(id /* block */)arg2;
@@ -119,11 +122,14 @@
 - (bool)routeOtherThanHandsetAndSpeakerAvailable;
 - (bool)routeOtherThanHandsetAvailable;
 - (long long)routeTypes;
+- (void)selectRoute:(id)arg1 operation:(long long)arg2 completion:(id /* block */)arg3;
 - (void)setCategory:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryMode:(long long)arg1;
 - (void)setFetchAvailableRoutesSynchronously:(bool)arg1;
+- (void)setLegacyCachedRoute:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPlaybackDataSource:(id)arg1;
 - (void)setRouteTypes:(long long)arg1;
 - (bool)speakerRouteIsPicked;
 - (bool)supportsMultipleSelection;

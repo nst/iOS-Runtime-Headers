@@ -24,7 +24,9 @@
 }
 
 @property float minimumShadowSpread;
+@property (nonatomic) double scaleFactor;
 
++ (int)cgBlendModeFromCUIEffectBlendMode:(unsigned int)arg1;
 + (unsigned int)cuiEffectBlendModeFromCGBlendMode:(int)arg1;
 + (id)requiredEffectParametersForEffectType:(unsigned int)arg1;
 
@@ -61,11 +63,13 @@
 - (unsigned int)effectTypeAtIndex:(unsigned long long)arg1;
 - (void)getEffectTuples:(struct { /* ? */ }**)arg1 count:(unsigned long long*)arg2 atEffectIndex:(unsigned long long)arg3;
 - (id)init;
-- (id)initWithConstantPreset:(const struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; struct { unsigned int x_5_1_1; unsigned int x_5_1_2; union { double x_3_2_1; unsigned long long x_3_2_2; struct _rgbcolor { unsigned char x_3_3_1; unsigned char x_3_3_2; unsigned char x_3_3_3; } x_3_2_3; short x_3_2_4; unsigned int x_3_2_5; } x_5_1_3; } x5[125]; }*)arg1;
+- (id)initWithConstantPreset:(const struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; struct { unsigned int x_6_1_1; unsigned int x_6_1_2; union { double x_3_2_1; unsigned long long x_3_2_2; struct _rgbcolor { unsigned char x_3_3_1; unsigned char x_3_3_2; unsigned char x_3_3_3; } x_3_2_3; short x_3_2_4; unsigned int x_3_2_5; } x_6_1_3; } x6[125]; }*)arg1;
 - (id)initWithEffectScale:(double)arg1;
 - (id)layerEffectsRepresentation;
 - (float)minimumShadowSpread;
+- (double)scaleFactor;
 - (void)setMinimumShadowSpread:(float)arg1;
+- (void)setScaleFactor:(double)arg1;
 - (union { double x1; unsigned long long x2; struct _rgbcolor { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; short x4; unsigned int x5; })valueForParameter:(unsigned int)arg1 inEffectAtIndex:(unsigned long long)arg2;
 
 @end

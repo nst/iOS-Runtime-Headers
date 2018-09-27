@@ -22,6 +22,7 @@
 + (Class)classForEntity:(id)arg1;
 + (void)initialize;
 + (unsigned int)newBatchAllocation:(id*)arg1 count:(unsigned int)arg2 withOwnedObjectIDs:(id*)arg3;
++ (void)resetGeneratedClasses;
 
 - (id)_descriptionValues;
 - (bool)_isDeallocating;

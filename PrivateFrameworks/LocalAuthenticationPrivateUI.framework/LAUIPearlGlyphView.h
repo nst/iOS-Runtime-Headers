@@ -20,6 +20,7 @@
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _cameraTransform;
     bool  _changingState;
+    LAUICheckmarkLayer * _checkmarkLayer;
     struct CGColorSpace { } * _colorSpace;
     struct vector<void (^)(bool), std::__1::allocator<void (^)(bool)> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(bool), std::__1::allocator<void (^)(bool)> >="__value_"^@? {}  _completionHandlers;
     UIView * _containerView;
@@ -121,6 +122,7 @@
     }  _normalRenderState;
     unsigned long long  _noseID;
     void _oscillatingColor;
+    double  _overdrawRatio;
     bool  _panning;
     bool  _paused;
     long long  _priorState;
@@ -143,6 +145,7 @@
     bool  _rendererPaused;
     void _ringPoint;
     double  _scale;
+    LAUIPearlGlyphViewStaticResources * _sharedResources;
     long long  _state;
     bool  _stateChangeAnimated;
     unsigned long long  _stateChangeCounter;
@@ -165,9 +168,12 @@
 @property (readonly) Class superclass;
 @property (getter=isWireframeEnabled, nonatomic) bool wireframeEnabled;
 
++ (id)sharedStaticResources;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_applyBlurRadius;
+- (void)_applyCheckmarkColor;
 - (void)_applyStateAnimated:(bool)arg1;
 - (void)_applyStyle;
 - (void)_createStates;

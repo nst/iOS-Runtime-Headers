@@ -23,7 +23,7 @@
 
 @property (getter=isActivated, nonatomic, readonly) bool activated;
 @property (nonatomic, copy) FBSSceneClientSettings *clientSettings;
-@property (nonatomic, readonly, retain) <FBUISceneContentManager> *contentManager;
+@property (nonatomic, readonly) <FBUISceneContentManager> *contentManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBUISceneDelegate> *delegate;
 @property (readonly, copy) NSString *description;

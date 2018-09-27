@@ -22,8 +22,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)acquireFaceDetectionWantedAssertionForReason:(id)arg1;
 - (id)acquireFingerDetectionWantedAssertionForReason:(id)arg1;
 - (id)acquireMatchingAssertionWithMode:(unsigned long long)arg1 reason:(id)arg2;
+- (id)acquireSimulatedLockoutAssertionWithLockoutState:(unsigned long long)arg1 forReason:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (unsigned long long)biometricLockoutState;
 - (bool)hasBiometricAuthenticationCapabilityEnabled;

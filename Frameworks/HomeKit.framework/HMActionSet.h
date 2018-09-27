@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMActionSet : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMActionSet : NSObject <HFFavoritable, HFReorderableHomeKitObject, HFStateDumpBuildable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     NSString * _actionSetType;
     HMApplicationData * _applicationData;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMThreadSafeMutableArrayCollection * _currentActions;
-    HMDelegateCaller * _delegateCaller;
+    _HMContext * _context;
+    HMMutableArray * _currentActions;
     bool  _executionInProgress;
     HMHome * _home;
     NSDate * _lastExecutionDate;
-    HMFMessageDispatcher * _msgDispatcher;
+    HMFUnfairLock * _lock;
     NSString * _name;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     NSUUID * _uniqueIdentifier;
     NSUUID * _uuid;
 }
@@ -21,10 +19,9 @@
 @property (nonatomic, readonly, copy) NSString *actionSetType;
 @property (nonatomic, readonly, copy) NSSet *actions;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
-@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentActions;
+@property (nonatomic, retain) _HMContext *context;
+@property (nonatomic, retain) HMMutableArray *currentActions;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (getter=isExecuting, nonatomic, readonly) bool executing;
 @property (nonatomic) bool executionInProgress;
@@ -40,9 +37,7 @@
 @property (nonatomic, readonly, copy) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
@@ -52,8 +47,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (void)_addAction:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
 - (void)_handleActionAddedNotification:(id)arg1;
 - (void)_handleActionRemovedNotification:(id)arg1;
 - (void)_handleActionSetExecutedNotification:(id)arg1;
@@ -72,10 +67,9 @@
 - (id)actions;
 - (void)addAction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)applicationData;
-- (id)clientQueue;
+- (id)context;
 - (id)currentActions;
 - (void)dealloc;
-- (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)executionInProgress;
 - (id)home;
@@ -86,20 +80,15 @@
 - (id)lastExecutionDate;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
-- (id)msgDispatcher;
 - (id)name;
-- (id)propertyQueue;
 - (void)removeAction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setApplicationData:(id)arg1;
-- (void)setClientQueue:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
 - (void)setExecutionInProgress:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setLastExecutionDate:(id)arg1;
-- (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -118,10 +107,9 @@
 - (id)hf_iconDescriptor;
 - (bool)hf_isAnonymous;
 - (bool)hf_isFavorite;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (bool)hf_requiresDeviceUnlock;
-- (id)hf_serializedStateDumpRepresentation;
 - (bool)hf_shouldShowInFavorites;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIconDescriptor:(id)arg1;
 - (id)hf_updateIsFavorite:(bool)arg1;

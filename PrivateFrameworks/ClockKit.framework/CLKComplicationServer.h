@@ -21,6 +21,7 @@
         bool supportsGetPlaceholderTemplate; 
         bool supportsGetLocalizableDescriptionProvider; 
         bool supportsGetLocalizableSampleTemplate; 
+        bool exceptionOnSkippedHandler; 
     }  _dataSourceFlags;
     NSXPCConnection * _serverConnection;
 }

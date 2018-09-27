@@ -44,6 +44,7 @@
 - (id)managedPayloads;
 - (id)payloadWithUUID:(id)arg1;
 - (id)payloads;
+- (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 - (void)setIsCloudLocked:(bool)arg1;
 - (void)setIsCloudLockedNum:(id)arg1;
 - (void)setIsCloudProfile:(bool)arg1;

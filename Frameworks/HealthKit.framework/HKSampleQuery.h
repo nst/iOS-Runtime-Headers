@@ -20,6 +20,7 @@
 @property (readonly) Class superclass;
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
@@ -28,7 +29,6 @@
 - (bool)includeTimeZones;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
 - (unsigned long long)limit;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;

@@ -17,16 +17,20 @@
     HDMetadataManager * _metadataManager;
     HDMigrationManager * _migrationManager;
     NSDictionary * _profileExtensionsByIdentifier;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _profileLock;
     long long  _profileType;
-    NSObject<OS_dispatch_queue> * _queue;
-    HDSessionAssertionManager * _sessionAssertionManager;
+    HDAssertionManager * _sessionAssertionManager;
     HDSourceManager * _sourceManager;
     HDSourceOrderManager * _sourceOrderManager;
     HDDaemonSyncEngine * _syncEngine;
     HDUnitPreferencesManager * _unitPreferencesManager;
     HDUserCharacteristicsManager * _userCharacteristicsManager;
+    HDWorkoutCondenser * _workoutCondenser;
 }
 
+@property (nonatomic, readonly) HDActivityCacheManager *activityCacheManager;
 @property (nonatomic, readonly) HDAppSubscriptionManager *appSubscriptionManager;
 @property (nonatomic, readonly) HDAuthorizationManager *authorizationManager;
 @property (nonatomic, readonly) HDAWDSubmissionManager *awdSubmissionManager;
@@ -46,7 +50,6 @@
 @property (nonatomic, readonly) HDFitnessMachineManager *fitnessMachineManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
-@property (nonatomic, readonly) <HDHealthDatabase> *healthDatabase;
 @property (nonatomic, readonly) HDMedicalIDDataManager *medicalIDDataManager;
 @property (nonatomic, readonly, copy) NSString *medicalIDDirectoryPath;
 @property (nonatomic, readonly) HDMetadataManager *metadataManager;
@@ -56,19 +59,21 @@
 @property (nonatomic, readonly) long long profileType;
 @property (nonatomic, readonly) HDServiceConnectionManager *serviceConnectionManager;
 @property (nonatomic, readonly) HDHealthServiceManager *serviceManager;
-@property (nonatomic, readonly) HDSessionAssertionManager *sessionAssertionManager;
+@property (nonatomic, readonly) HDAssertionManager *sessionAssertionManager;
 @property (nonatomic, readonly) HDSourceManager *sourceManager;
 @property (nonatomic, readonly) HDSourceOrderManager *sourceOrderManager;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HDSyncEngine> *syncEngine;
 @property (nonatomic, readonly) HDUnitPreferencesManager *unitPreferencesManager;
 @property (nonatomic, readonly) HDUserCharacteristicsManager *userCharacteristicsManager;
+@property (nonatomic, readonly) HDWorkoutCondenser *workoutCondenser;
 @property (nonatomic, readonly) HDWorkoutManager *workoutManager;
 
 - (void).cxx_destruct;
+- (void)_createExtensionsIfNeeded;
 - (id)_newAWDSubmissionManager;
 - (id)_newUserCharacteristicsManager;
-- (void)_queue_createExtensionsIfNeeded;
+- (id)activityCacheManager;
 - (id)appSubscriptionManager;
 - (id)authorizationManager;
 - (id)awdSubmissionManager;
@@ -88,7 +93,6 @@
 - (id)displayNameWithError:(id*)arg1;
 - (id)fitnessMachineManager;
 - (id)healthDaemon;
-- (id)healthDatabase;
 - (id)healthDeviceManager;
 - (id)healthSourceManager;
 - (id)initWithDirectoryPath:(id)arg1 medicalIDDirectoryPath:(id)arg2 daemon:(id)arg3 profileType:(long long)arg4;
@@ -114,6 +118,7 @@
 - (void)terminationCleanup;
 - (id)unitPreferencesManager;
 - (id)userCharacteristicsManager;
+- (id)workoutCondenser;
 - (id)workoutManager;
 
 @end

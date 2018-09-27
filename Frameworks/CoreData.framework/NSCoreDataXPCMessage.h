@@ -11,12 +11,12 @@
     NSString * _token;
 }
 
-@property (retain) NSString *contextName;
-@property (retain) NSString *contextTransactionAuthor;
-@property (retain) NSData *messageBody;
+@property (nonatomic, retain) NSString *contextName;
+@property (nonatomic, retain) NSString *contextTransactionAuthor;
+@property (nonatomic, retain) NSData *messageBody;
 @property unsigned long long messageCode;
-@property (retain) NSString *processName;
-@property (retain) NSString *token;
+@property (nonatomic, retain) NSString *processName;
+@property (nonatomic, retain) NSString *token;
 
 + (bool)supportsSecureCoding;
 

@@ -13,6 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fees;
@@ -23,6 +24,7 @@
 - (id)initWithJsonString:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToFees:(id)arg1;
+- (unsigned long long)itemType;
 - (id)jsonArrayRepresentation;
 - (id)jsonString;
 - (id)recordTypesAndNames;

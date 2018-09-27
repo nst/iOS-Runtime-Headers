@@ -2,16 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AADeviceInfo : NSObject {
-    APSConnection * _apsConnection;
-    NSData * _token;
-    bool  _tokenDone;
-    NSObject<OS_dispatch_semaphore> * _tokenSema;
-}
+@interface AADeviceInfo : NSObject
 
 + (id)apnsToken;
 + (id)appleIDClientIdentifier;
 + (id)clientInfoHeader;
++ (id)currentInfo;
 + (id)infoDictionary;
 + (bool)isInternalBuild;
 + (bool)isMultiUserMode;
@@ -21,10 +17,11 @@
 + (id)udid;
 + (id)userAgentHeader;
 
-- (void).cxx_destruct;
 - (id)apnsToken;
 - (id)appleIDClientIdentifier;
+- (id)bluetoothMacAddress;
 - (id)buildVersion;
+- (id)chipIdentifier;
 - (id)clientInfoHeader;
 - (id)deviceBackingColor;
 - (id)deviceClass;
@@ -46,6 +43,7 @@
 - (id)serialNumber;
 - (id)storageCapacity;
 - (id)udid;
+- (id)uniqueChipIdentifier;
 - (id)userAgentHeader;
 - (id)wifiMacAddress;
 

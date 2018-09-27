@@ -6,7 +6,7 @@
     struct __CFArray { } * items;
     unsigned int  ordinalPrefixLength;
     unsigned int  ordinalSuffixLength;
-    CPListItem * parentItem;
+    CPParagraphListItem * parentItem;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -22,7 +22,7 @@
 
 @property (nonatomic) unsigned int ordinalPrefixLength;
 @property (nonatomic) unsigned int ordinalSuffixLength;
-@property (nonatomic, retain) CPListItem *parentItem;
+@property (nonatomic, retain) CPParagraphListItem *parentItem;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } spacer;
 @property (nonatomic) int type;
 

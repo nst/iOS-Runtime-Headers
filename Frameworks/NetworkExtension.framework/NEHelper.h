@@ -19,6 +19,7 @@
 - (id /* block */)incomingMessageHandler;
 - (id)initMessage;
 - (id)initWithDelegateClassID:(int)arg1 queue:(id)arg2;
+- (id)initWithDelegateClassID:(int)arg1 queue:(id)arg2 initialMessage:(id)arg3;
 - (id)queue;
 - (void)sendRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)setIncomingMessageHandler:(id /* block */)arg1;

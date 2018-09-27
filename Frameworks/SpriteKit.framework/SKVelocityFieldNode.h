@@ -9,6 +9,8 @@
 @property (nonatomic) void velocity;
 @property (nonatomic, retain) SKTexture *velocityTexture;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_descriptionClassName;
 - (void)_initialize;

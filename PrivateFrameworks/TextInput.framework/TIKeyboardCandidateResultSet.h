@@ -29,6 +29,7 @@
 @property (nonatomic) unsigned long long generatedCandidateCount;
 @property (nonatomic, readonly) bool hasCandidates;
 @property (nonatomic, readonly) bool hasMetadata;
+@property (nonatomic, readonly) bool hasOnlyCompletionCandidates;
 @property (nonatomic, readonly) bool hasOnlyProactiveCandidates;
 @property (nonatomic, readonly) bool hasOnlySlottedCandidates;
 @property (nonatomic, retain) NSDictionary *indexTitles;
@@ -52,11 +53,11 @@
 + (id)setWithCandidates:(id)arg1 proactiveTriggers:(id)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)acceptedCandidate;
 - (unsigned long long)batchCandidateLocation;
 - (id)candidates;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)defaultCandidate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -97,10 +98,11 @@
 - (id)sortMethods;
 - (id)uncommittedText;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)candidateGroupsForSortIndex:(long long)arg1;
 - (bool)candidatesForSortIndexShowAlternativeText:(long long)arg1;
+- (bool)hasOnlyCompletionCandidates;
 - (bool)hasOnlySlottedCandidates;
 - (unsigned long long)slottedCandidatesCount;
 

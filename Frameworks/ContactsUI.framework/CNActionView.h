@@ -43,6 +43,7 @@
 @property (nonatomic, retain) NSString *type;
 
 + (id)borderColorForDisabledBoldState;
++ (id)colorByIncreasingBrightnessComponentByPercentage:(double)arg1 ofColor:(id)arg2;
 + (id)contentColorForDisabledBoldState;
 + (id)contentColorForDisabledVibrantDarkState;
 + (id)defaultTitleFont;
@@ -52,6 +53,7 @@
 - (void).cxx_destruct;
 - (id)actionDelegate;
 - (id)activatedContstrants;
+- (id)colorByAdjustingColorToHighlightState:(id)arg1;
 - (void)didMoveToWindow;
 - (bool)disabled;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

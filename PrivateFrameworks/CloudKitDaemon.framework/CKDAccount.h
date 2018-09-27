@@ -64,7 +64,6 @@
 - (id)accountStore;
 - (bool)accountWantsFlowControl;
 - (bool)accountWantsPushRegistration;
-- (id)applicationBundle;
 - (id)authTokenCallbackQueue;
 - (id)authTokenQueue;
 - (id)backingAccount;
@@ -80,6 +79,7 @@
 - (id)description;
 - (id)deviceName;
 - (void)displayAuthenticationPromptWithReason:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)displayedHostname;
 - (id)dsid;
 - (id)fakeAccountInfo;
 - (void)fetchConfigurationForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -129,6 +129,7 @@
 - (void)setIsUnitTestingAccount:(bool)arg1;
 - (void)setLastFailedCloudKitAuthToken:(id)arg1;
 - (void)setLastFailediCloudAuthToken:(id)arg1;
+- (id)sharingURLHostname;
 - (bool)shouldFailAllTasks;
 - (id)trafficContainerIdentifier;
 - (id)username;

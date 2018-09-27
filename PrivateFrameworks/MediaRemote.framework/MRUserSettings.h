@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) double airPlayOutputContextInitTimeoutDuration;
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
+@property (nonatomic, readonly) bool computeNowPlayingApplication;
 @property (nonatomic, retain) NSArray *connectedClientPIDs;
 @property (nonatomic, readonly) double externalDeviceDisconnectSleepDuration;
 @property (nonatomic, readonly) double externalDeviceDisconnectWaitDuration;
@@ -21,10 +22,13 @@
 @property (nonatomic, readonly) double externalDeviceTimeoutDuration;
 @property (nonatomic, readonly) bool hasExternalDeviceSocketQOSLevelSet;
 @property (nonatomic, readonly) long long maxTransactionMemorySize;
+@property (nonatomic, readonly) double nowPlayingApplicationTimeout;
+@property (nonatomic, readonly) double pauseWhileOnLockScreenTimeout;
 @property (nonatomic, readonly) bool shouldInitializeGenericBonjourService;
 @property (nonatomic, readonly) bool shouldInitializeTelevisionBonjourService;
 @property (nonatomic, readonly) bool shouldLogArtwork;
 @property (nonatomic, readonly) bool shouldLogPairingSetupCode;
+@property (nonatomic, readonly) bool takelockScreenAssertion;
 @property (nonatomic, readonly) double transactionWaitDurationOnNetworkSend;
 @property (nonatomic, readonly) double transactionWaitDurationOnOutOfMemory;
 @property (nonatomic, readonly) double transactionWaitDurationOnXpcSend;
@@ -45,6 +49,7 @@
 - (double)airPlayOutputContextInitTimeoutDuration;
 - (double)bluetoothDeviceResumeDuration;
 - (double)broadcastCommandWaitDuration;
+- (bool)computeNowPlayingApplication;
 - (id)connectedClientPIDs;
 - (double)externalDeviceDisconnectSleepDuration;
 - (double)externalDeviceDisconnectWaitDuration;
@@ -57,12 +62,15 @@
 - (id)init;
 - (bool)isExternalDevicePairingAllowed;
 - (long long)maxTransactionMemorySize;
+- (double)nowPlayingApplicationTimeout;
+- (double)pauseWhileOnLockScreenTimeout;
 - (void)setConnectedClientPIDs:(id)arg1;
 - (void)setExternalDevicePairingAllowed:(bool)arg1;
 - (bool)shouldInitializeGenericBonjourService;
 - (bool)shouldInitializeTelevisionBonjourService;
 - (bool)shouldLogArtwork;
 - (bool)shouldLogPairingSetupCode;
+- (bool)takelockScreenAssertion;
 - (double)transactionWaitDurationOnNetworkSend;
 - (double)transactionWaitDurationOnOutOfMemory;
 - (double)transactionWaitDurationOnXpcSend;

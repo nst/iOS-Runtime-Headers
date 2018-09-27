@@ -3,10 +3,12 @@
  */
 
 @interface FlexAudioClip : AudioClip {
+    bool  _lockedRendition;
     FMSong * _song;
     FMSongRendition * _songRendition;
 }
 
+@property (nonatomic) bool lockedRendition;
 @property (nonatomic, readonly) int sampleRate;
 @property (nonatomic, retain) FMSong *song;
 @property (nonatomic, retain) FMSongRendition *songRendition;
@@ -20,6 +22,7 @@
 - (int)duration;
 - (void)generateEdits;
 - (id)init;
+- (bool)lockedRendition;
 - (void)outroStingerTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 earlyFadeStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 endTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg3;
 - (id)plistRepresentationFromProject:(id)arg1;
 - (int)rawSourceDuration;
@@ -27,6 +30,7 @@
 - (int)sampleRate;
 - (void)setContentsFromPlist:(id)arg1 inProject:(id)arg2;
 - (void)setDuration:(int)arg1;
+- (void)setLockedRendition:(bool)arg1;
 - (void)setSong:(id)arg1;
 - (void)setSongRendition:(id)arg1;
 - (void)setSongUID:(id)arg1;

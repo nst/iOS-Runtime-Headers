@@ -19,6 +19,9 @@
 - (void)_prunePersistentCache;
 - (void)dealloc;
 - (id)init;
+- (bool)isLocationShiftEnabled;
+- (bool)isLocationShiftRequiredForCoordinate:(struct { double x1; double x2; })arg1;
+- (unsigned int)locationShiftFunctionVersion;
 - (id)persistentCache;
 - (void)shiftLatLng:(id)arg1 auditToken:(id)arg2 completionHandler:(id /* block */)arg3;
 

@@ -11,7 +11,6 @@
 
 @property (nonatomic, copy) NSString *colorSpace;
 @property (nonatomic) unsigned long long lightType;
-@property (nonatomic, readonly) struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; }*rtLight;
 
 // Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
 

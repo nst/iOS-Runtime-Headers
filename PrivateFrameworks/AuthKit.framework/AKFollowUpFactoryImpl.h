@@ -15,6 +15,7 @@
 - (id)_clearAction;
 - (id)_itemFromPayload:(id)arg1 withAltDSID:(id)arg2;
 - (id)_notificationFromPayload:(id)arg1;
+- (id)actionWithTitle:(id)arg1 andActionKey:(id)arg2;
 - (id)itemIdentifiersRequiringNotificationClearFromPayload:(id)arg1;
 - (id)itemsForAltDSID:(id)arg1 fromIDMSPayload:(id)arg2;
 

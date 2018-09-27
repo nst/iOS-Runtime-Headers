@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBFinancialAccountValue : PBCodable <NSCopying> {
+@interface _INPBFinancialAccountValue : PBCodable <NSCopying, NSSecureCoding, _INPBFinancialAccountValue> {
     _INPBDataString * _accountNickname;
     NSString * _accountNumber;
     int  _accountType;
@@ -12,14 +12,15 @@
     }  _has;
     _INPBDataString * _organizationName;
     _INPBBalanceAmountValue * _secondaryBalance;
-    PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
 @property (nonatomic, retain) _INPBDataString *accountNickname;
-@property (nonatomic, retain) NSString *accountNumber;
+@property (nonatomic, copy) NSString *accountNumber;
 @property (nonatomic) int accountType;
 @property (nonatomic, retain) _INPBBalanceAmountValue *balance;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasAccountNickname;
 @property (nonatomic, readonly) bool hasAccountNumber;
 @property (nonatomic) bool hasAccountType;
@@ -27,12 +28,11 @@
 @property (nonatomic, readonly) bool hasOrganizationName;
 @property (nonatomic, readonly) bool hasSecondaryBalance;
 @property (nonatomic, readonly) bool hasValueMetadata;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBDataString *organizationName;
 @property (nonatomic, retain) _INPBBalanceAmountValue *secondaryBalance;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsAccountType:(id)arg1;
@@ -42,7 +42,6 @@
 - (id)accountTypeAsString:(int)arg1;
 - (id)balance;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAccountNickname;
 - (bool)hasAccountNumber;
@@ -53,7 +52,6 @@
 - (bool)hasValueMetadata;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)organizationName;
 - (bool)readFrom:(id)arg1;
 - (id)secondaryBalance;
@@ -65,7 +63,6 @@
 - (void)setOrganizationName:(id)arg1;
 - (void)setSecondaryBalance:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
-- (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

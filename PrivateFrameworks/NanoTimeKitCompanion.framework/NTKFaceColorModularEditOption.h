@@ -4,7 +4,7 @@
 
 @interface NTKFaceColorModularEditOption : NTKFaceColorEditOption
 
-+ (id)__orderedValues;
-+ (id)_orderedValues;
++ (id)__orderedValuesForDevice:(id)arg1;
++ (id)_orderedValuesForDevice:(id)arg1;
 
 @end

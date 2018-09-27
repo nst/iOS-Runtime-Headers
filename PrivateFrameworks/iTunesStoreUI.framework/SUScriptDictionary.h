@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSMutableDictionary * _cachedNestedScriptDictionaries;
     NSDictionary * _dictionary;
+    NSArray * _stringKeys;
 }
 
 @property (readonly) NSDictionary *dictionary;
@@ -23,5 +24,6 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)stringRepresentation;
 - (id)valueForKey:(id)arg1;
+- (id)valueForNotNativelySupportedKey:(id)arg1;
 
 @end

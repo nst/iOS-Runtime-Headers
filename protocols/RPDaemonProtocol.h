@@ -24,6 +24,7 @@
 - (oneway void)stopRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
 - (oneway void)stopRecordingWithStartClipDuration:(void *)arg1 endClipDuration:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
 - (oneway void)synchronousGetCurrentState:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (oneway void)synchronousIsBroadcastingWithPreferredExtension:(void *)arg1 handler:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 
 @end

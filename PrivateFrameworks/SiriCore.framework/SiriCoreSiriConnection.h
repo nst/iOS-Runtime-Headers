@@ -32,11 +32,11 @@
     NSMutableSet * _scheduledRoutes;
     bool  _sendPings;
     bool  _siriConnectionUsesPeerManagedSync;
-    bool  _skipEdge;
     bool  _skipPeer;
     NSError * _skipPeerError;
     double  _timeout;
     NSURL * _url;
+    bool  _useWiFiHint;
     bool  _usesProxyConnection;
 }
 
@@ -59,12 +59,12 @@
 @property (nonatomic) bool prefersWWAN;
 @property (nonatomic, copy) NSString *productTypePrefix;
 @property (nonatomic) bool siriConnectionUsesPeerManagedSync;
-@property (nonatomic) bool skipEdge;
 @property (nonatomic) bool skipPeer;
 @property (nonatomic, copy) NSError *skipPeerError;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
 @property (nonatomic, copy) NSURL *url;
+@property (nonatomic) bool useWiFiHint;
 @property (nonatomic) bool usesProxyConnection;
 
 - (void).cxx_destruct;
@@ -121,24 +121,25 @@
 - (void)setProductTypePrefix:(id)arg1;
 - (void)setSendPings:(bool)arg1;
 - (void)setSiriConnectionUsesPeerManagedSync:(bool)arg1;
-- (void)setSkipEdge:(bool)arg1;
 - (void)setSkipPeer:(bool)arg1;
 - (void)setSkipPeerError:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
+- (void)setUseWiFiHint:(bool)arg1;
 - (void)setUsesProxyConnection:(bool)arg1;
 - (void)siriBackgroundConnection:(id)arg1 didEncounterError:(id)arg2 analysisInfo:(id)arg3;
+- (void)siriBackgroundConnection:(id)arg1 didEncounterIntermediateError:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 didOpenWithConnectionType:(id)arg2 routeId:(id)arg3 delay:(double)arg4;
 - (void)siriBackgroundConnection:(id)arg1 didReceiveAceObject:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 willStartWithConnectionType:(id)arg2;
 - (void)siriBackgroundConnectionDidClose:(id)arg1;
 - (bool)siriConnectionUsesPeerManagedSync;
-- (bool)skipEdge;
 - (bool)skipPeer;
 - (id)skipPeerError;
 - (void)start;
 - (double)timeout;
 - (id)url;
+- (bool)useWiFiHint;
 - (bool)usesProxyConnection;
 
 @end

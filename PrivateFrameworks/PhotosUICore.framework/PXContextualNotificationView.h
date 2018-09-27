@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXContextualNotificationView : UIView {
+@interface PXContextualNotificationView : UIView <PXChangeObserver> {
     AVPlayerItem * __loopingPlayerItem;
     double  __mediaAspectRatio;
+    PXCapsuleButton * _actionButton;
+    PXContextualNotificationChevronView * _chevronView;
+    NSArray * _constraints;
     UIView * _contentView;
     PXContextualNotification * _contextualNotification;
     UIImageView * _dismissIconView;
-    UIImage * _image;
+    PXImageRequester * _imageRequester;
     AVAsset * _loopingVideoAsset;
     AVVideoComposition * _loopingVideoComposition;
     PXVideoPlayerView * _mediaView;
     NSLayoutConstraint * _mediaViewHeightConstraint;
     NSString * _message;
     UILabel * _messageLabel;
+    UIImage * _placeholderImage;
     long long  _style;
     NSString * _title;
     UIImage * _titleIcon;
@@ -25,17 +29,25 @@
 
 @property (setter=_setLoopingPlayerItem:, nonatomic, retain) AVPlayerItem *_loopingPlayerItem;
 @property (setter=_setMediaAspectRatio:, nonatomic) double _mediaAspectRatio;
+@property (nonatomic, retain) PXCapsuleButton *actionButton;
+@property (nonatomic, retain) PXContextualNotificationChevronView *chevronView;
+@property (nonatomic, copy) NSArray *constraints;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic) PXContextualNotification *contextualNotification;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIImageView *dismissIconView;
-@property (nonatomic, retain) UIImage *image;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) PXImageRequester *imageRequester;
 @property (nonatomic, copy) AVAsset *loopingVideoAsset;
 @property (nonatomic, copy) AVVideoComposition *loopingVideoComposition;
 @property (nonatomic, readonly) PXVideoPlayerView *mediaView;
 @property (nonatomic, readonly) NSLayoutConstraint *mediaViewHeightConstraint;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, readonly) UILabel *messageLabel;
+@property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic, readonly) long long style;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *titleIcon;
 @property (nonatomic, readonly) UIImageView *titleIconView;
@@ -43,16 +55,23 @@
 @property (nonatomic) bool useRegularHitTesting;
 
 - (void).cxx_destruct;
+- (void)_handleActionButton:(id)arg1;
 - (void)_handleDidSetVideoAudioSession;
 - (id)_loopingPlayerItem;
 - (double)_mediaAspectRatio;
+- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_setLoopingPlayerItem:(id)arg1;
 - (void)_setMediaAspectRatio:(double)arg1;
+- (void)_startLoopingWithItem:(id)arg1;
 - (void)_updateLoopingPlayerItem;
+- (void)_updateMessageLabelForCMMCard;
+- (id)actionButton;
+- (id)chevronView;
+- (id)constraints;
 - (id)contentView;
 - (id)contextualNotification;
 - (id)dismissIconView;
-- (id)image;
+- (id)imageRequester;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
@@ -64,12 +83,19 @@
 - (id)mediaViewHeightConstraint;
 - (id)message;
 - (id)messageLabel;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (id)placeholderImage;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setActionButton:(id)arg1;
+- (void)setChevronView:(id)arg1;
+- (void)setConstraints:(id)arg1;
 - (void)setContextualNotification:(id)arg1;
-- (void)setImage:(id)arg1;
+- (void)setImageRequester:(id)arg1;
 - (void)setLoopingVideoAsset:(id)arg1;
 - (void)setLoopingVideoComposition:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1 imageRequester:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (void)setTitleIcon:(id)arg1;
 - (void)setUseRegularHitTesting:(bool)arg1;
@@ -78,6 +104,7 @@
 - (id)titleIcon;
 - (id)titleIconView;
 - (id)titleLabel;
+- (void)updateConstraints;
 - (bool)useRegularHitTesting;
 
 @end

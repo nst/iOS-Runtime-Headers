@@ -59,7 +59,6 @@
 + (bool)restoreAlbumListFromPersistedDataAtPath:(id)arg1 library:(id)arg2;
 + (id)scenesAlbumListInManagedObjectContext:(id)arg1;
 + (id)scenesAlbumListInPhotoLibrary:(id)arg1;
-+ (id)wallpaperAlbumListInPhotoLibrary:(id)arg1;
 
 - (id)_albumsCountFetchRequest;
 - (id)_prettyDescription;

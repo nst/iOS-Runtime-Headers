@@ -16,10 +16,12 @@
 
 - (void).cxx_destruct;
 - (id)cachedContactForIdentifier:(id)arg1;
+- (id)cachedContactsForIdentifiers:(id)arg1;
 - (id)contactCache;
 - (id)contactForIdentifier:(id)arg1;
 - (id)contactStore;
 - (void)fetchContactForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchContactsForIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)setContactCache:(id)arg1;
 - (void)setContactStore:(id)arg1;

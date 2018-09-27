@@ -47,6 +47,7 @@
 - (void)_updateProgressViewsWithAnimation:(long long)arg1 completion:(id /* block */)arg2;
 - (void)_updateSubviewsOrdering;
 - (void)beginShowingProgressImmediately:(bool)arg1 animated:(bool)arg2;
+- (void)beginShowingProgressWithDelay:(double)arg1 animated:(bool)arg2;
 - (double)currentProgress;
 - (void)endShowingProgressImmediately:(bool)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;

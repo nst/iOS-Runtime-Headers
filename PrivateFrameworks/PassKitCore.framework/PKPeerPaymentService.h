@@ -34,8 +34,9 @@
 - (void)noteAccountDeleted;
 - (void)presentIdentityVerificationFlowWithResponse:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentPeerPaymentTermsAndConditionsWithAccount:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
-- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 orientation:(id)arg4 completion:(id /* block */)arg5;
+- (void)presentRegistrationFlowWithAccount:(id)arg1 amount:(id)arg2 state:(unsigned long long)arg3 senderAddress:(id)arg4 orientation:(id)arg5 completion:(id /* block */)arg6;
 - (void)presentRegistrationFlowWithAccount:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
+- (void)receivedPeerPaymentMessageData:(id)arg1;
 - (void)registerDeviceWithCompletion:(id /* block */)arg1;
 - (void)registrationStatusWithCompletion:(id /* block */)arg1;
 - (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
@@ -47,7 +48,6 @@
 - (void)suspendAccountChangedNotifications;
 - (void)unregisterDeviceWithCompletion:(id /* block */)arg1;
 - (void)updateAccountWithCompletion:(id /* block */)arg1;
-- (void)updateMemo:(id)arg1 forTransactionWithIdentifier:(id)arg2;
 - (void)updateMessageReceivedDate:(id)arg1 forTransactionWithIdentifier:(id)arg2;
 - (void)updateMockAccountBalanceByAddingAmount:(id)arg1 completion:(id /* block */)arg2;
 

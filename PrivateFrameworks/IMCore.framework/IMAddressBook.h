@@ -8,7 +8,6 @@
 + (id)_threadedABAddressBookLock;
 + (void*)_threadedABAddressBookRef;
 + (void)_watchLocaleChanges;
-+ (id*)abAddressBook;
 + (void*)abAddressBookRef;
 + (bool)addressBookEnabled;
 + (void)performBlock:(id /* block */)arg1;

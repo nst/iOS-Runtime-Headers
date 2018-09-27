@@ -30,7 +30,6 @@
     NSObject<OS_dispatch_queue> * _statusQueue;
     NSOperationQueue * _tccAuthOpQueue;
     NSObject<OS_dispatch_queue> * _tccAuthQueue;
-    CKWatchdog * _watchdog;
 }
 
 @property (nonatomic, retain) <NSObject> *TCCDatabaseChangedNotificationObserver;
@@ -64,8 +63,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSOperationQueue *tccAuthOpQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *tccAuthQueue;
-@property (nonatomic, retain) CKWatchdog *watchdog;
 
++ (id)operationStatusReport:(id)arg1;
 + (id)sharedClientThrottlingOperationQueue;
 
 - (void).cxx_destruct;
@@ -91,7 +90,6 @@
 - (bool)_lockedHasTCCAuthorization;
 - (void)_lockedSetHasTCCAuthorizationTernary:(long long)arg1;
 - (id)_locked_eligiblePendingContextForSetupInfo:(id)arg1;
-- (id)_operationStatusReport:(id)arg1;
 - (void)_performFetchCurrentUserRecordOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_reallyPerformFetchRecordsOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_setApplicationPermission:(unsigned long long)arg1 enabled:(bool)arg2 setupInfo:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -124,6 +122,7 @@
 - (void)clearCachesForZoneWithSetupInfo:(id)arg1 zoneID:(id)arg2 databaseScope:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)clearCachesWithSetupInfo:(id)arg1 options:(unsigned long long)arg2 databaseScope:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)clearContextFromMetadataCache;
+- (void)clearPCSCachesForKnownContextsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)clearPILSCacheForLookupInfos:(id)arg1;
 - (void)clearRecordCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (id)connection;
@@ -161,6 +160,7 @@
 - (bool)hasFakeEntitlements;
 - (bool)hasLightweightPCSEntitlement;
 - (bool)hasMasqueradingEntitlement;
+- (bool)hasNonLegacyShareURLEntitlement;
 - (bool)hasOutOfProcessUIEntitlement;
 - (bool)hasParticipantPIIEntitlement;
 - (bool)hasProtectionDataEntitlement;
@@ -246,13 +246,13 @@
 - (void)setTCCDatabaseChangedNotificationObserver:(id)arg1;
 - (void)setTccAuthOpQueue:(id)arg1;
 - (void)setTccAuthQueue:(id)arg1;
-- (void)setWatchdog:(id)arg1;
 - (id)setupQueue;
 - (void)showAssetCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (id)sourceApplicationBundleIdentifier;
 - (void)statusForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)statusQueue;
+- (void)submitClientEventMetric:(id)arg1 withSetupInfo:(id)arg2;
 - (void)systemAvailabilityChanged:(unsigned long long)arg1;
 - (id)tccAuthOpQueue;
 - (id)tccAuthQueue;
@@ -261,7 +261,6 @@
 - (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;
 - (id)valueForEntitlement:(id)arg1;
-- (id)watchdog;
 - (void)wipeAllCachedLongLivedProxiesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)wipeAllCachesAndDie;
 

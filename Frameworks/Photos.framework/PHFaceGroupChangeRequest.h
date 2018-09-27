@@ -66,6 +66,7 @@
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (long long)personBuilderState;
 - (id)placeholderForCreatedFaceGroup;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)removeFaces:(id)arg1;
 - (void)setKeyFace:(id)arg1;

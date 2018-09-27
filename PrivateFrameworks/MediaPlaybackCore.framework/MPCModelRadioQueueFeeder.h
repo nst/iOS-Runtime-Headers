@@ -40,11 +40,11 @@
 - (void)_endBackgroundTaskAssertion;
 - (void)_endObservingIdentityStoreForSignOut;
 - (void)_failAfterRequest:(id)arg1 withError:(id)arg2;
-- (void)_handleGetTracksResponse:(id)arg1 getTracksError:(id)arg2 fromRequest:(id)arg3;
-- (void)_handlePersonalizationResponse:(id)arg1 personalizationError:(id)arg2 fromRequest:(id)arg3;
+- (void)_handleGetTracksResponse:(id)arg1 getTracksError:(id)arg2 fromRequest:(id)arg3 completion:(id /* block */)arg4;
+- (void)_handlePersonalizationResponse:(id)arg1 personalizationError:(id)arg2 fromRequest:(id)arg3 completion:(id /* block */)arg4;
 - (long long)_indexOfAVItem:(id)arg1;
 - (void)_loadAdditionalItemsIfNeeded;
-- (void)_loadTracksWithRequest:(id)arg1;
+- (void)_loadTracksWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)_observePersonalizationResponse:(id)arg1;
 - (void)_removeRestrictedTracks;
 - (void)_repersonalizeCurrentTracks;

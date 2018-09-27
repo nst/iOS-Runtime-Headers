@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVPlayActivityEvent : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface SSVPlayActivityEvent : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     bool  _SBEnabled;
     NSString * _buildVersion;
     NSString * _containerID;

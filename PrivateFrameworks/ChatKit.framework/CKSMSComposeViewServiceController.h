@@ -55,6 +55,7 @@
 - (void)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
 - (void)insertRemoteItemForSending:(id)arg1;
 - (id)modalTranscriptController;
+- (void)prewarmCameraIfNecessaryForChatController:(id)arg1;
 - (void)setCanEditRecipients:(bool)arg1;
 - (void)setComposeDelegate:(id)arg1;
 - (void)setGameCenterModeWithPickerBlock:(id /* block */)arg1;
@@ -69,6 +70,7 @@
 - (bool)supportsAttachments;
 - (bool)supportsMessageInspection;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 
 @end

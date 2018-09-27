@@ -34,6 +34,7 @@
 @property (nonatomic, copy) NSArray *interstitialStrings;
 @property (nonatomic) bool isComplexFormat;
 @property (nonatomic) bool isConditional;
+@property (nonatomic, readonly) bool isCurrency;
 @property (nonatomic) unsigned char minimumIntegerWidth;
 @property (nonatomic) unsigned char numberOfHashDecimalPlaceholders;
 @property (nonatomic) unsigned char numberOfNonSpaceDecimalPlaceholderDigits;
@@ -61,6 +62,7 @@
 - (id)interstitialStrings;
 - (bool)isComplexFormat;
 - (bool)isConditional;
+- (bool)isCurrency;
 - (bool)isEqual:(id)arg1;
 - (unsigned char)minimumIntegerWidth;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

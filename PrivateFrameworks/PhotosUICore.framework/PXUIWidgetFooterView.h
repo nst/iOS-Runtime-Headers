@@ -80,6 +80,7 @@
 - (void)setDisclosureTitle:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setLayoutStyle:(long long)arg1;
+- (void)tintColorDidChange;
 - (void)updateConstraints;
 
 @end

@@ -20,6 +20,8 @@
     bool  _hasCustomOccurrencePadding;
     NSMutableArray * _itemsByDay;
     NSMutableArray * _itemsByDayByEndDate;
+    NSMutableArray * _itemsForPreloadByDay;
+    NSMutableArray * _itemsForPreloadByDayByEndDate;
     NSMutableArray * _lastLayoutWidthForDay;
     struct CGRect { 
         struct CGPoint { 
@@ -99,24 +101,23 @@
 - (void)_configureOccurrenceViewMarginAndPadding:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_dayRangeForEvent:(id)arg1 useProposedTime:(bool)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_dayRangeForEventWithStartDate:(id)arg1 endDate:(id)arg2;
-- (id)_dayStarts;
 - (double)_dayWidth;
 - (bool)_doOffscreenOccurrences;
 - (bool)_getBottomPinRegion:(double*)arg1 dayIndex:(unsigned long long*)arg2 forPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)_layoutDay:(unsigned long long)arg1 isLoadingAsync:(bool)arg2;
 - (void)_layoutDaysIfVisible;
 - (void)_tapRecognized:(id)arg1;
-- (id)allItems;
+- (id)allVisibleItems;
 - (bool)allowsOccurrenceSelection;
 - (void)applyContentItem:(id)arg1 toView:(id)arg2;
 - (void)applyLoadedOccurrenceBatchStartingAtIndex:(long long)arg1 batchSize:(long long)arg2 fromArray:(id)arg3 animated:(bool)arg4 reverse:(bool)arg5 completion:(id /* block */)arg6;
 - (void)applyLoadedOccurrencesWithBatching:(bool)arg1 animated:(bool)arg2 reverse:(bool)arg3 completion:(id /* block */)arg4;
 - (id)calendar;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
-- (bool)containsEvent:(id)arg1;
 - (bool)darkensWeekends;
 - (double)dateForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 wasTapped:(bool)arg3;
+- (id)dayStarts;
 - (void)dealloc;
 - (id)delegate;
 - (id)dimmedOccurrence;
@@ -130,11 +131,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orientation:(long long)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orientation:(long long)arg2 backgroundColor:(id)arg3 opaque:(bool)arg4 numberOfDaysToDisplay:(unsigned long long)arg5;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForInterfaceLayout:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (id)itemsByDay;
+- (id)itemsForPreloadByDay;
 - (id)lastDisplayedSecond;
 - (void)layoutSubviews;
 - (void)loadAndLayoutOccurrences:(id)arg1;
 - (void)loadOccurrences:(id)arg1;
+- (void)movePreloadedItemsToVisible;
 - (int)occurrenceBackgroundStyle;
 - (id)occurrenceLocationColor;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })occurrenceMargin;
@@ -183,5 +185,6 @@
 - (id)startDate;
 - (id)timeZone;
 - (bool)usesSmallText;
+- (id)visibleItemsByDay;
 
 @end

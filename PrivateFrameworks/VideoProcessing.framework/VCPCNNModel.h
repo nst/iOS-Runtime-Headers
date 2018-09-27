@@ -5,7 +5,6 @@
 @interface VCPCNNModel : NSObject {
     VCPCNNBlock * _blocks;
     VCPCNNMetalContext * _context;
-    bool  _executed;
     VCPCNNData * _output;
     short  _quantFactor;
     bool  _useGPU;
@@ -22,7 +21,6 @@
 - (id)initWithParameters:(short)arg1 useGPU:(bool)arg2;
 - (int)initializeNetwork:(id)arg1 paramFileUrl:(id)arg2;
 - (id)output;
-- (int)reinitGPUTemporalMemory:(id)arg1;
 - (int)size;
 
 @end

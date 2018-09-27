@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKContainer : NSObject <CKXPCClient> {
+@interface CKContainer : NSObject <CKXPCClient, SCKContainerProxying> {
     int  _accountChangeToken;
     ACAccountStore * _accountStore;
     NSMapTable * _assetsByUUID;
@@ -32,6 +32,7 @@
     unsigned long long  _stateHandle;
     int  _statusReportToken;
     NSOperationQueue * _throttlingOperationQueue;
+    NSObject<OS_dispatch_queue> * _underlyingDispatchQueue;
     NSXPCConnection * _xpcConnection;
 }
 
@@ -67,8 +68,11 @@
 @property (nonatomic) int statusReportToken;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSOperationQueue *throttlingOperationQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *underlyingDispatchQueue;
 @property (nonatomic) bool wantsSiloedContext;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (void)_checkSelfCloudServicesEntitlement;
 + (id)_checkSelfContainerIdentifier;
@@ -120,6 +124,7 @@
 - (id)callbackManager;
 - (bool)captureResponseHTTPHeaders;
 - (void)clearContextFromMetadataCache;
+- (void)clearPCSCachesForKnownContextsWithCompletionHandler:(id /* block */)arg1;
 - (void)clearPILSCacheForLookupInfos:(id)arg1;
 - (id)connectionWithError:(id*)arg1;
 - (void)consumeSandboxExtensions:(id)arg1 reply:(id /* block */)arg2;
@@ -224,6 +229,7 @@
 - (void)setStateHandle:(unsigned long long)arg1;
 - (void)setStatusReportToken:(int)arg1;
 - (void)setThrottlingOperationQueue:(id)arg1;
+- (void)setUnderlyingDispatchQueue:(id)arg1;
 - (void)setWantsSiloedContext:(bool)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (id)setupInfo;
@@ -234,14 +240,20 @@
 - (void)statusForApplicationPermission:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (int)statusReportToken;
+- (void)submitEventMetric:(id)arg1;
 - (id)throttlingOperationQueue;
 - (void)tossConfigWithCompletionHandler:(id /* block */)arg1;
 - (void)trackAssets:(id)arg1;
 - (void)triggerAutoBugCaptureSnapshot;
+- (id)underlyingDispatchQueue;
 - (void)updatePushTokens;
 - (bool)wantsSiloedContext;
 - (void)wipeAllCachedLongLivedProxiesWithCompletionHandler:(id /* block */)arg1;
 - (void)wipeAllCachesAndDie;
 - (id)xpcConnection;
+
+// Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
+
+- (void)addDatabaseOperation:(id)arg1;
 
 @end

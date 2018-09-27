@@ -29,8 +29,6 @@
 - (id)description;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)launch;
-- (void)pause;
-- (void)resume;
 - (void)taskDidFinishWithError:(id)arg1;
 - (id)taskIdentifier;
 

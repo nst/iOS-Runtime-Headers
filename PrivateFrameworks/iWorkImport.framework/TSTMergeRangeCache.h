@@ -3,29 +3,30 @@
  */
 
 @interface TSTMergeRangeCache : NSObject {
+    unsigned long long  _count;
     NSMutableIndexSet * _mergeIndexes;
     TSTMergeOwner * _mergeOwner;
-    struct unordered_map<unsigned long, TSUCellRect, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSUCellRect> > > { 
-        struct __hash_table<std::__1::__hash_value_type<unsigned long, TSUCellRect>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSUCellRect>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSUCellRect>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, TSUCellRect> > > { 
-            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> {} **__value_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> *> > { 
+    struct unordered_map<unsigned long, TSUModelCellRect, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, TSUModelCellRect> > > { 
+        struct __hash_table<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, TSUModelCellRect> > > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> {} **__value_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> *> > { 
                             unsigned long long __value_; 
                         } __data_; 
                     } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUCellRect>, void *> *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, void *> *> {} *__next_; 
                 } __value_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSUCellRect>, std::__1::hash<unsigned long>, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::hash<unsigned long>, true> > { 
                 unsigned long long __value_; 
             } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSUCellRect>, std::__1::equal_to<unsigned long>, true> > { 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, TSUModelCellRect>, std::__1::equal_to<unsigned long>, true> > { 
                 float __value_; 
             } __p3_; 
         } __table_; 
@@ -40,40 +41,71 @@
         } _tiles; 
         unsigned long long _count; 
         unsigned long long _lastTileFoundAtIndex; 
+        struct unordered_map<unsigned int, TSUIndexSet *, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSUIndexSet *> > > { 
+            struct __hash_table<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, TSUIndexSet *> > > { 
+                struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> *> > > { 
+                    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> *> > > { 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> {} **__value_; 
+                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> *> > { 
+                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> *> > { 
+                                unsigned long long __value_; 
+                            } __data_; 
+                        } __value_; 
+                    } __ptr_; 
+                } __bucket_list_; 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> { 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, void *> *> {} *__next_; 
+                    } __value_; 
+                } __p1_; 
+                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, std::__1::hash<unsigned int>, true> > { 
+                    unsigned long long __value_; 
+                } __p2_; 
+                struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, TSUIndexSet *>, std::__1::equal_to<unsigned int>, true> > { 
+                    float __value_; 
+                } __p3_; 
+            } __table_; 
+        } _bitsInColumn; 
     }  _mergedAtCellIds;
     struct TSCEBitGridTransaction { struct TSCEBitGrid {} *x1; struct vector<std::__1::pair<_NSRange, _NSRange>, std::__1::allocator<std::__1::pair<_NSRange, _NSRange> > > { struct pair<_NSRange, _NSRange> {} *x_2_1_1; struct pair<_NSRange, _NSRange> {} *x_2_1_2; struct __compressed_pair<std::__1::pair<_NSRange, _NSRange> *, std::__1::allocator<std::__1::pair<_NSRange, _NSRange> > > { struct pair<_NSRange, _NSRange> {} *x_3_2_1; } x_2_1_3; } x2; struct vector<std::__1::pair<_NSRange, _NSRange>, std::__1::allocator<std::__1::pair<_NSRange, _NSRange> > > { struct pair<_NSRange, _NSRange> {} *x_3_1_1; struct pair<_NSRange, _NSRange> {} *x_3_1_2; struct __compressed_pair<std::__1::pair<_NSRange, _NSRange> *, std::__1::allocator<std::__1::pair<_NSRange, _NSRange> > > { struct pair<_NSRange, _NSRange> {} *x_3_2_1; } x_3_1_3; } x3; } * _transaction;
 }
 
-@property (nonatomic, readonly) unsigned long long count;
-@property (nonatomic, readonly) NSIndexSet *mergeIndexes;
-@property (nonatomic, readonly) TSTMergeOwner *mergeOwner;
+@property (nonatomic) unsigned long long count;
+@property (nonatomic, retain) NSMutableIndexSet *mergeIndexes;
+@property (nonatomic) TSTMergeOwner *mergeOwner;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)clear;
 - (void)commitRewritingTransaction;
 - (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateCacheItemsIntersectingCellRegion:(id)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateCacheItemsIntersectingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateCacheItemsIntersectingBaseCellRect:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateCacheItemsIntersectingBaseCellRegion:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateCacheItemsUsingBlock:(id /* block */)arg1;
-- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandCellRangeToCoverMergedCells:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (id)expandCellRegionToCoverMergedCells:(id)arg1;
-- (bool)hasRangeSpanningRowsForCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })expandBaseCellRectToCoverMergedCells:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
+- (id)expandBaseCellRegionToCoverMergedCells:(id)arg1;
+- (bool)hasRangeSpanningRowsForCellRange:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
+- (bool)hasRangeSpanningRowsForCellRect:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
+- (bool)hasRangeSpanningRowsForCellRegion:(id)arg1;
 - (id)initWithMergeOwner:(id)arg1;
 - (id)mergeIndexes;
 - (id)mergeOwner;
-- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergeRangeAtIndex:(unsigned long long)arg1;
-- (struct vector<TSUCellRect, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x1; struct TSUCellRect {} *x2; struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x_3_1_1; } x3; })mergeRanges;
-- (struct vector<TSUCellRect, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x1; struct TSUCellRect {} *x2; struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x_3_1_1; } x3; })mergeRangesIntersectingCellRegion:(id)arg1;
-- (struct vector<TSUCellRect, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x1; struct TSUCellRect {} *x2; struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x_3_1_1; } x3; })mergeRangesIntersectingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })mergeRangeAtIndex:(unsigned long long)arg1;
+- (struct vector<TSUModelCellRect, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x1; struct TSUModelCellRect {} *x2; struct __compressed_pair<TSUModelCellRect *, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x_3_1_1; } x3; })mergeRanges;
+- (struct vector<TSUModelCellRect, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x1; struct TSUModelCellRect {} *x2; struct __compressed_pair<TSUModelCellRect *, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x_3_1_1; } x3; })mergeRangesIntersectingBaseCellRect:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
+- (struct vector<TSUModelCellRect, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x1; struct TSUModelCellRect {} *x2; struct __compressed_pair<TSUModelCellRect *, std::__1::allocator<TSUModelCellRect> > { struct TSUModelCellRect {} *x_3_1_1; } x3; })mergeRangesIntersectingBaseCellRegion:(id)arg1;
 - (id)mergedGridIndicesForDimension:(long long)arg1;
-- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergedRangeForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })mergedRangeForBaseCellCoord:(struct TSUModelCellCoord { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; })arg1;
 - (void)openRewritingTransaction;
-- (void)p_updateGridForReplacingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
-- (bool)partiallyIntersectsCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (bool)partiallyIntersectsCellRegion:(id)arg1;
+- (void)p_updateGridForReplacingRange:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1 withRange:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg2;
+- (bool)partiallyIntersectsBaseCellRect:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
+- (bool)partiallyIntersectsBaseCellRegion:(id)arg1;
 - (void)removeMergeRangeAtIndex:(unsigned long long)arg1;
-- (void)setMerge:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 atIndex:(unsigned long long)arg2;
+- (void)setCount:(unsigned long long)arg1;
+- (void)setMerge:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1 atIndex:(unsigned long long)arg2;
+- (void)setMergeIndexes:(id)arg1;
+- (void)setMergeOwner:(id)arg1;
 
 @end

@@ -61,12 +61,11 @@
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
 @property (nonatomic, readonly) NSString *transition;
 @property (nonatomic, readonly) NSNumber *transitionInterval;
+@property (setter=tv_setStyleMetrics:, nonatomic, retain) TVAppStyle *tv_styleMetrics;
 @property (nonatomic, readonly) NSString *visibility;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
-+ (id)_clonedCSSDeclarationEdgeInsetsFromDeclaration:(id)arg1;
-+ (id)_updatedEdgeInsetsDeclaration:(id)arg1 withValue:(double)arg2 forIndex:(unsigned long long)arg3;
 + (void)addBlockedStyle:(id)arg1;
 + (unsigned long long)alignmentFromString:(id)arg1;
 + (void)clearBlockedStyles;
@@ -207,7 +206,9 @@
 - (id)tv_ratingStyle;
 - (unsigned long long)tv_rowCount;
 - (id)tv_searchStyle;
+- (void)tv_setStyleMetrics:(id)arg1;
 - (id)tv_shadow;
+- (id)tv_styleMetrics;
 - (long long)tv_textAlignment;
 - (id)tv_textHighlightStyle;
 - (double)tv_textHyphenationFactor;
@@ -219,6 +220,7 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })tv_transform;
 - (id)tv_transition;
 - (double)tv_transitionInterval;
+- (id)tv_valueForStyle:(id)arg1;
 - (id)tv_visualEffect;
 - (double)tv_width;
 

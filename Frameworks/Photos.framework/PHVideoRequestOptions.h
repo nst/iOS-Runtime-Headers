@@ -9,6 +9,7 @@
     bool  _networkAccessAllowed;
     id /* block */  _progressHandler;
     bool  _restrictToPlayableOnCurrentDevice;
+    bool  _routeToNewImageManager;
     bool  _streamingAllowed;
     struct CGSize { 
         double width; 
@@ -24,6 +25,7 @@
 @property (getter=isNetworkAccessAllowed, nonatomic) bool networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic) bool restrictToPlayableOnCurrentDevice;
+@property (nonatomic) bool routeToNewImageManager;
 @property (getter=isStreamingAllowed, nonatomic) bool streamingAllowed;
 @property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
 @property (nonatomic) long long version;
@@ -41,12 +43,14 @@
 - (bool)isVideoComplementAllowed;
 - (id /* block */)progressHandler;
 - (bool)restrictToPlayableOnCurrentDevice;
+- (bool)routeToNewImageManager;
 - (void)setAllowMediumHighQuality:(bool)arg1;
 - (void)setContentMode:(long long)arg1;
 - (void)setDeliveryMode:(long long)arg1;
 - (void)setNetworkAccessAllowed:(bool)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setRestrictToPlayableOnCurrentDevice:(bool)arg1;
+- (void)setRouteToNewImageManager:(bool)arg1;
 - (void)setStreamingAllowed:(bool)arg1;
 - (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setVersion:(long long)arg1;

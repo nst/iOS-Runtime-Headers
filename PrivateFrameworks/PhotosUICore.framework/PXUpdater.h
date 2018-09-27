@@ -23,10 +23,12 @@
 - (void).cxx_destruct;
 - (void)_scheduleUpdatePassIfNeeded;
 - (void)addUpdateSelector:(SEL)arg1;
+- (void)addUpdateSelector:(SEL)arg1 needsUpdate:(bool)arg2;
 - (void)dealloc;
 - (bool)extraChecksEnabled;
 - (id)init;
 - (id)initWithTarget:(id)arg1;
+- (id)initWithTarget:(id)arg1 needsUpdateSelector:(SEL)arg2;
 - (bool)isUpdatePassScheduled;
 - (SEL)needsUpdateSelector;
 - (void)setExtraChecksEnabled:(bool)arg1;

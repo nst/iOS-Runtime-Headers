@@ -3,14 +3,14 @@
  */
 
 @interface CAMCameraRollTestHarness : CAMPerformanceTestHarness {
-    bool  _performPreload;
+    bool  _awaitPreload;
     double  _settlingDelay;
     bool  _testingAnimation;
     bool  _testingWarmPresentation;
     CAMViewfinderViewController * _viewfinderViewController;
 }
 
-@property (nonatomic, readonly) bool performPreload;
+@property (nonatomic, readonly) bool awaitPreload;
 @property (nonatomic, readonly) double settlingDelay;
 @property (getter=isTestingAnimation, nonatomic, readonly) bool testingAnimation;
 @property (nonatomic, readonly) bool testingWarmPresentation;
@@ -19,11 +19,10 @@
 - (void).cxx_destruct;
 - (void)_dismissCameraRollImmediately;
 - (void)_handlePUDisplayLinkStarted:(id)arg1;
-- (void)_performPreload;
 - (void)_presentCameraRollAnimated;
-- (id)initWithTestName:(id)arg1 viewfinderViewController:(id)arg2 testingAnimation:(bool)arg3 testingWarmPresentation:(bool)arg4 performPreload:(bool)arg5 settlingDelay:(double)arg6;
+- (bool)awaitPreload;
+- (id)initWithTestName:(id)arg1 viewfinderViewController:(id)arg2 testingAnimation:(bool)arg3 testingWarmPresentation:(bool)arg4 awaitPreload:(bool)arg5 settlingDelay:(double)arg6;
 - (bool)isTestingAnimation;
-- (bool)performPreload;
 - (double)settlingDelay;
 - (void)startTesting;
 - (void)stopTesting;

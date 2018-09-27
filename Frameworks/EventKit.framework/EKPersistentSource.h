@@ -22,6 +22,9 @@
 
 - (id)UUID;
 - (id)constraints;
+- (id)constraintsDescriptionPath;
+- (id)creatorBundleID;
+- (id)creatorCodeSigningIdentity;
 - (id)defaultAlarmOffset;
 - (id)description;
 - (bool)disabled;
@@ -34,6 +37,9 @@
 - (id)lastSyncStartDate;
 - (bool)onlyCreatorCanModify;
 - (int)preferredEventPrivateValue;
+- (void)setConstraintsDescriptionPath:(id)arg1;
+- (void)setCreatorBundleID:(id)arg1;
+- (void)setCreatorCodeSigningIdentity:(id)arg1;
 - (void)setDefaultAlarmOffset:(id)arg1;
 - (void)setDisabled:(bool)arg1;
 - (void)setExternalID:(id)arg1;

@@ -20,6 +20,7 @@
 - (id)_newPeerForConnection:(id)arg1;
 - (void)_peerDidDisconnect:(id)arg1;
 - (void)_remoteObjectForProxy:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)_resetDetails;
 - (void)dealloc;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

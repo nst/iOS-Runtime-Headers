@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSupportedRTPConfiguration : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSupportedRTPConfiguration : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSArray * _srtpCryptoSuites;
 }
 

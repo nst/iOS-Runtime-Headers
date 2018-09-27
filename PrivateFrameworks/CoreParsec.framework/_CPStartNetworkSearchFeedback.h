@@ -4,12 +4,6 @@
 
 @interface _CPStartNetworkSearchFeedback : PBCodable <NSSecureCoding, _CPFeedbackUUID, _CPProcessableFeedback, _CPStartNetworkSearchFeedback> {
     int  _endpoint;
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int queryId : 1; 
-        unsigned int endpoint : 1; 
-        unsigned int tuscanyStatus : 1; 
-    }  _has;
     NSDictionary * _headers;
     NSString * _input;
     int  _lookupSelectionType;
@@ -27,15 +21,6 @@
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic) int endpoint;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasEndpoint;
-@property (nonatomic, readonly) bool hasInput;
-@property (nonatomic, readonly) bool hasLookupSelectionType;
-@property (nonatomic, readonly) bool hasQueryId;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasTriggerEvent;
-@property (nonatomic, readonly) bool hasTuscanyStatus;
-@property (nonatomic, readonly) bool hasUrl;
-@property (nonatomic, readonly) bool hasUuid;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *headers;
 @property (nonatomic, copy) NSString *input;
@@ -44,7 +29,6 @@
 @property (nonatomic) unsigned long long queryId;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int triggerEvent;
 @property (nonatomic) int tuscanyStatus;
@@ -60,15 +44,6 @@
 - (int)endpoint;
 - (id)feedbackJSON;
 - (bool)getHeaders:(id*)arg1 forKey:(id)arg2;
-- (bool)hasEndpoint;
-- (bool)hasInput;
-- (bool)hasLookupSelectionType;
-- (bool)hasQueryId;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
-- (bool)hasTuscanyStatus;
-- (bool)hasUrl;
-- (bool)hasUuid;
 - (unsigned long long)hash;
 - (id)headers;
 - (id)init;

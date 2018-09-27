@@ -5,7 +5,7 @@
 
 @required
 
-- (PLPTPConversionResult *)conversionResultForAsset:(PLPTPAsset *)arg1 isVideo:(bool)arg2 isRender:(bool)arg3;
+- (PLPTPConversionResult *)conversionResultForAsset:(PLPTPAsset *)arg1 isVideo:(bool)arg2 isRender:(bool)arg3 forceLegacyConversion:(bool)arg4;
 - (bool)supportsTranscodeChoice;
 
 @end

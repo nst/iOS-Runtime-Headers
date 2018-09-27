@@ -5,6 +5,7 @@
 @interface _SFPBPunchout : PBCodable <NSSecureCoding, _SFPBPunchout> {
     NSString * _actionTarget;
     NSString * _bundleIdentifier;
+    bool  _isRunnableInBackground;
     NSString * _label;
     NSString * _name;
     NSArray * _urls;
@@ -15,12 +16,8 @@
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasActionTarget;
-@property (nonatomic, readonly) bool hasBundleIdentifier;
-@property (nonatomic, readonly) bool hasLabel;
-@property (nonatomic, readonly) bool hasName;
-@property (nonatomic, readonly) bool hasUserActivityData;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRunnableInBackground;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *name;
@@ -36,22 +33,19 @@
 - (id)bundleIdentifier;
 - (void)clearUrls;
 - (id)dictionaryRepresentation;
-- (bool)hasActionTarget;
-- (bool)hasBundleIdentifier;
-- (bool)hasLabel;
-- (bool)hasName;
-- (bool)hasUserActivityData;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)isRunnableInBackground;
 - (id)jsonData;
 - (id)label;
 - (id)name;
 - (bool)readFrom:(id)arg1;
 - (void)setActionTarget:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setIsRunnableInBackground:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setUrls:(id)arg1;

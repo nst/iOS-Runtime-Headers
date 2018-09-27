@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUICarrierSpaceManager : NSObject <CTCarrierSpaceClientDelegate> {
+@interface PSUICarrierSpaceManager : NSObject <CTCarrierSpaceClientDelegate, CoreTelephonyClientSubscriberDelegate> {
     CTCarrierSpaceAppsInfo * _appsInfo;
     CTCarrierSpaceCapabilities * _capabilities;
     PSUIAppInstallController * _carrierAppInstallController;
     CTCarrierSpaceClient * _carrierSpaceClient;
     NSObject<OS_dispatch_queue> * _carrierSpaceQueue;
+    CoreTelephonyClient * _coreTelephonyClient;
     NSNumber * _hasUserConsent;
     CTCarrierSpacePlansInfo * _plansInfo;
     struct __CTServerConnection { } * _serverConnection;
@@ -48,6 +49,7 @@
 - (void)setCarrierSpaceClient:(id)arg1;
 - (void)setUserConsent:(bool)arg1;
 - (bool)shouldShowPlanMetrics:(id)arg1;
+- (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (id)subscribedDomesticPlanOptions;
 - (id)subscribedPlanOptions;
 - (bool)supportsSweetgum;

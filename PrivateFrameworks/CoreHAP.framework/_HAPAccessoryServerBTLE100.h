@@ -177,6 +177,7 @@
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (double)idleConnectionTimeoutInSec;
 - (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(bool)arg6 connectReason:(unsigned char)arg7 configNumber:(id)arg8 category:(id)arg9 setupHash:(id)arg10 connectionIdleTime:(unsigned char)arg11 browser:(id)arg12 keyStore:(id)arg13;
+- (bool)isBLELinkConnected;
 - (bool)isDisconnecting;
 - (bool)isSecuritySessionOpening;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;

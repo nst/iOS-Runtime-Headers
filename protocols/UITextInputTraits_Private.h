@@ -29,6 +29,7 @@
 - (bool)forceDisableDictation;
 - (bool)forceEnableDictation;
 - (bool)hasDefaultContents;
+- (bool)hidePrediction;
 - (UIInputContextHistory *)inputContextHistory;
 - (UIColor *)insertionPointColor;
 - (unsigned long long)insertionPointWidth;
@@ -63,6 +64,7 @@
 - (void)setForceDisableDictation:(bool)arg1;
 - (void)setForceEnableDictation:(bool)arg1;
 - (void)setHasDefaultContents:(bool)arg1;
+- (void)setHidePrediction:(bool)arg1;
 - (void)setInputContextHistory:(UIInputContextHistory *)arg1;
 - (void)setInsertionPointColor:(UIColor *)arg1;
 - (void)setInsertionPointWidth:(unsigned long long)arg1;

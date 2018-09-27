@@ -12,12 +12,14 @@
 
 @optional
 
+- (void)addPurgedHeap:(id <MTLHeap>)arg1;
+- (void)addPurgedResource:(id <MTLResource>)arg1;
 - (void)commitAndHold;
-- (<MTLComputeCommandEncoder> *)computeCommandEncoderWithParallelExecution;
+- (bool)commitAndWaitUntilSubmitted;
 - (<MTLDebugCommandEncoder> *)debugCommandEncoder;
 - (<MTLFragmentRenderCommandEncoder> *)fragmentRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
 - (unsigned long long)getListIndex;
-- (<MTLComputeCommandEncoder> *)sampledComputeCommandEncoderWithParallelExecutionWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
+- (<MTLComputeCommandEncoder> *)sampledComputeCommandEncoderWithDispatchType:(unsigned long long)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
 - (<MTLComputeCommandEncoder> *)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
 - (<MTLFragmentRenderCommandEncoder> *)sampledFragmentRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
 - (<MTLRenderCommandEncoder> *)sampledRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;

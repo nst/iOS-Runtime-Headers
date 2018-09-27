@@ -10,11 +10,11 @@
 
 @property (nonatomic, readonly) NSString *inputModeLevel;
 
+- (void).cxx_destruct;
 - (void)addAssertion;
 - (void)addAsset:(id)arg1;
 - (id)assetContentItemsMatching:(id)arg1;
 - (id)assetVersionsForAttributes:(id)arg1;
-- (void)dealloc;
 - (void)gatherStatistics:(id)arg1;
 - (bool)hasAssertions;
 - (id)initWithInputModeLevel:(id)arg1;

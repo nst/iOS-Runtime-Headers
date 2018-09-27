@@ -45,10 +45,6 @@
 - (double)timestamp;
 - (id)userInfo;
 
-// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
-
-+ (id)naui_displayLinkWithWeakTarget:(id)arg1 selector:(SEL)arg2;
-
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (id)px_displayLinkWithWeakTarget:(id)arg1 selector:(SEL)arg2;
@@ -56,6 +52,6 @@
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 + (id)rc_displayLinkWithWeakTarget:(id)arg1 selector:(SEL)arg2;
-+ (id)rc_displayWithFrameInterval:(long long)arg1 handlerBlock:(id /* block */)arg2;
++ (id)rc_displayWithFramesPerSecond:(long long)arg1 handlerBlock:(id /* block */)arg2;
 
 @end

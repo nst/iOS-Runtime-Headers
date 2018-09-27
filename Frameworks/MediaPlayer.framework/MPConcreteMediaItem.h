@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPConcreteMediaItem : MPMediaItem <MPCacheableConcreteMediaEntity, NSCoding, NSCopying> {
+@interface MPConcreteMediaItem : MPMediaItem <MPCacheableConcreteMediaEntity, NSCopying> {
     MPMediaLibrary * _library;
     unsigned long long  _persistentID;
     MPConcreteMediaEntityPropertiesCache * _propertiesCache;

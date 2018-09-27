@@ -77,10 +77,10 @@
 - (void)configureFeedCollectionViewLayout:(id)arg1 forCollectionViewType:(long long)arg2 collectionViewSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)configureGradientCell:(id)arg1 forSectionHeaderBackgroundInCollectionViewType:(long long)arg2;
 - (void)configureSeparatorMetrics:(inout struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; }*)arg1 betweenSectionWithInfo:(id)arg2 andSectionWithInfo:(id)arg3 joined:(bool)arg4 collectionViewType:(long long)arg5;
-- (void)configureTextCell:(id)arg1 forCaption:(id)arg2;
-- (void)configureTextCell:(id)arg1 forCommentWithDescriptionPhrase:(id)arg2;
+- (void)configureTextCell:(id)arg1 forCaption:(id)arg2 date:(id)arg3;
+- (void)configureTextCell:(id)arg1 forCommentWithDescriptionPhrase:(id)arg2 date:(id)arg3;
 - (void)configureTextCell:(id)arg1 forEventWithDescriptionPhrase:(id)arg2;
-- (void)configureTextCell:(id)arg1 forLikesWithDescriptionPhrase:(id)arg2;
+- (void)configureTextCell:(id)arg1 forLikesWithDescriptionPhrase:(id)arg2 date:(id)arg3;
 - (void)configureTextCell:(id)arg1 forSectionFooterWithActionText:(id)arg2 collectionViewType:(long long)arg3;
 - (void)configureTextCell:(id)arg1 forSectionFooterWithDateText:(id)arg2 collectionViewType:(long long)arg3;
 - (void)configureTextCell:(id)arg1 forSectionGroupHeaderWithText:(id)arg2 collectionViewType:(long long)arg3;
@@ -99,6 +99,7 @@
 - (id)popoverFeedViewControllerSpec;
 - (long long)promptStyle;
 - (id)qualityImageFormats;
+- (void)setLayoutReferenceWidth:(double)arg1;
 - (bool)shouldHideBarsInLandscape;
 - (bool)shouldShowCommentBadgesInCollectionViewType:(long long)arg1;
 - (bool)shouldShowInvitationsInPopover;
@@ -106,6 +107,8 @@
 - (bool)shouldUseFullscreenLayout;
 - (double)spacingBetweenSectionWithInfo:(id)arg1 andHeaderWithGroupID:(id)arg2;
 - (double)standardSideMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsetsForHeadersAndFootersInSectionType:(long long)arg1 collectionViewType:(long long)arg2;
+- (double)textSpacingBetweenText:(id)arg1 detailText:(id)arg2;
 - (struct CGSize { double x1; double x2; })thumbnailSize;
 - (struct CGSize { double x1; double x2; })thumbnailSizeForImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateFormats;

@@ -8,6 +8,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)init;
 - (void)noteInterfaceOrientationChanged:(long long)arg1;
 - (void)noteInterfaceOrientationChanged:(long long)arg1 animationSettings:(id)arg2 direction:(long long)arg3;

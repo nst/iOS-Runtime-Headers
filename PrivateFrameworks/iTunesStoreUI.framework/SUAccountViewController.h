@@ -9,6 +9,7 @@
     long long  _mescalState;
     NSString * _primingSignature;
     long long  _style;
+    NSDictionary * _tidHeaders;
 }
 
 @property (getter=_mescalSession, nonatomic, readonly) SUMescalSession *_mescalSession;
@@ -20,6 +21,7 @@
 - (id)_authenticationQueryParametersForStyle:(long long)arg1;
 - (id)_bagKeyForStyle:(long long)arg1;
 - (void)_closeMescalSession;
+- (void)_didEnterBackground:(id)arg1;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (id)_mescalSession;

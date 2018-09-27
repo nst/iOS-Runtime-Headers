@@ -8,6 +8,7 @@
     WBSCoalescedAsynchronousWriter * _cacheSettingsWriter;
     <WBSSiteMetadataImageCacheDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
+    unsigned long long  _fileProtectionOptions;
     NSURL * _imageDirectoryURL;
     long long  _imageType;
     NSMutableDictionary * _imagesForKeyStrings;
@@ -57,6 +58,7 @@
 - (long long)imageType;
 - (id)init;
 - (id)initWithImageDirectoryURL:(id)arg1 imageType:(long long)arg2;
+- (id)initWithImageDirectoryURL:(id)arg1 imageType:(long long)arg2 fileProtectionOptions:(unsigned long long)arg3;
 - (bool)isImageRetainedForKeyString:(id)arg1;
 - (bool)isTerminating;
 - (void)purgeUnneededImages;

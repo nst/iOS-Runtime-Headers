@@ -22,6 +22,7 @@
 - (<MFMailComposeViewDelegate> *)mailComposeViewDelegate;
 - (NSString *)nextAttachmentName;
 - (MFFuture *)plainTextContent;
+- (MFFuture *)plainTextContentFromDOMDocument:(DOMDocument *)arg1;
 - (void)prependMarkupString:(NSString *)arg1 quote:(bool)arg2;
 - (void)prependPreamble:(NSString *)arg1;
 - (void)prependString:(NSString *)arg1;

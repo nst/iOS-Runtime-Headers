@@ -11,6 +11,7 @@
     unsigned long long  _appearanceActions;
     UIColor * _backgroundColor;
     bool  _canChangeCurrentPage;
+    bool  _canShowNavBar;
     bool  _canShowToolbar;
     bool  _changingCurrentPreview;
     QLTransitionController * _currentAnimator;
@@ -55,6 +56,8 @@
     <QLPrintingProtocol> * _printer;
     unsigned long long  _quickLookVisibility;
     UIRotationGestureRecognizer * _rotationGesture;
+    id /* block */  _shareSheetDismissCompletion;
+    <QLRemotePopoverTracker> * _shareSheetPopoverTracker;
     UIDocumentInteractionController * _sharingInteractionController;
     bool  _showActionAsDefaultButton;
     UIPanGestureRecognizer * _slideGesture;
@@ -77,6 +80,7 @@
 @property (nonatomic) unsigned long long appearanceActions;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic) bool canChangeCurrentPage;
+@property bool canShowNavBar;
 @property bool canShowToolbar;
 @property (retain) QLTransitionController *currentAnimator;
 @property (retain) QLActivityItemProvider *currentItemProvider;
@@ -112,6 +116,8 @@
 @property (readonly) <QLPrintingProtocol> *printer;
 @property (nonatomic) unsigned long long quickLookVisibility;
 @property (retain) UIRotationGestureRecognizer *rotationGesture;
+@property (nonatomic, copy) id /* block */ shareSheetDismissCompletion;
+@property (nonatomic, retain) <QLRemotePopoverTracker> *shareSheetPopoverTracker;
 @property (retain) UIDocumentInteractionController *sharingInteractionController;
 @property (nonatomic) bool showActionAsDefaultButton;
 @property (retain) UIPanGestureRecognizer *slideGesture;
@@ -142,6 +148,7 @@
 - (void)_actionButtonTapped:(id)arg1;
 - (id)_additionalLeftButtonItems;
 - (id)_additionalRightButtonItems;
+- (bool)_basePreviewControllerIsBeingFullyDismissed;
 - (id)_buttonWithAccessibilityIdentifierPointer:(id)arg1 inButtons:(id)arg2;
 - (bool)_canPerformBarButtonAction;
 - (id)_childViewControllerForWhitePointAdaptivityStyle;
@@ -151,6 +158,9 @@
 - (id)_doneButton;
 - (void)_doneButtonTapped:(id)arg1;
 - (id)_editedItemsForDoneActionControllerWithItems:(id)arg1;
+- (void)_invalidatePreviewCollectionIfNeeded;
+- (void)_invalidatePreviewCollectionIfNeededNow;
+- (bool)_isBeingFullyDismissed;
 - (bool)_isQuickLookVisible;
 - (bool)_isToolbarVisibleForTraitCollection:(id)arg1;
 - (void)_keyCommandWasPerformed:(id)arg1;
@@ -165,17 +175,20 @@
 - (id)_preferredBackgroundColor;
 - (long long)_preferredWhitePointAdaptivityStyle;
 - (void)_prepareDelayedAppearance;
+- (void)_presentLoadedPreviewCollection:(id)arg1;
 - (void)_presentPreviewCollection;
 - (void)_previousPreview;
 - (bool)_quickLookWillBecomeVisible;
 - (void)_refreshCurrentPreviewItemAnimated:(bool)arg1;
 - (void)_registerForApplicationStateChangesNotifications;
 - (void)_reloadDataIfNeeded;
+- (void)_removePreviewCollectionFromViewHierarchy;
 - (void)_savePreviousNavigationVCState;
 - (void)_setCurrentPreviewItemIndex:(long long)arg1 updatePreview:(bool)arg2 animated:(bool)arg3;
 - (void)_setFullScreen:(bool)arg1 animated:(bool)arg2 force:(bool)arg3;
 - (void)_setPreferredWhitePointAdaptivityStyle:(long long)arg1;
 - (void)_setPresentationMode:(unsigned long long)arg1;
+- (void)_setupDocumentInteractionControllerForPresentation:(id /* block */)arg1;
 - (bool)_shouldAllowInteractiveTransitions;
 - (void)_showPreviewCollection;
 - (void)_stopAccessingUrlForDocumentInteractionController;
@@ -207,6 +220,7 @@
 - (id)backgroundColor;
 - (void)beginInteractiveTransition;
 - (bool)canChangeCurrentPage;
+- (bool)canShowNavBar;
 - (bool)canShowToolbar;
 - (id)currentAnimator;
 - (id)currentItem;
@@ -223,13 +237,13 @@
 - (id)delegate;
 - (void)didSelectPreviewItem:(id)arg1;
 - (bool)didTransitionFromInternalView;
-- (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
+- (void)dismissQuickLook;
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
 - (id)doneButtonAlertController;
 - (id)editedItems;
 - (id)excludedActivityTypesForDocumentInteractionController:(id)arg1;
 - (id)excludedToolbarButtonIdentifiers;
-- (void)expandContentOfURL:(id)arg1;
+- (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(id)arg2;
 - (id)flexibleSpace;
 - (bool)fullScreen;
 - (id)fullscreenBackgroundColor;
@@ -288,6 +302,7 @@
 - (void)setAppearanceActions:(unsigned long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCanChangeCurrentPage:(bool)arg1;
+- (void)setCanShowNavBar:(bool)arg1;
 - (void)setCanShowToolbar:(bool)arg1;
 - (void)setCurrentAnimator:(id)arg1;
 - (void)setCurrentItemProvider:(id)arg1;
@@ -303,6 +318,7 @@
 - (void)setFullscreenBackgroundColor:(id)arg1;
 - (void)setInternalNavigationController:(id)arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
+- (void)setNavBarCanBeVisible:(bool)arg1;
 - (void)setNavigationBarTintColor:(id)arg1;
 - (void)setOriginalLeftBarButtonItems:(id)arg1;
 - (void)setOriginalRightBarButtonItems:(id)arg1;
@@ -315,6 +331,8 @@
 - (void)setQuickLookVisibility:(unsigned long long)arg1;
 - (void)setQuickLookVisibility:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)setRotationGesture:(id)arg1;
+- (void)setShareSheetDismissCompletion:(id /* block */)arg1;
+- (void)setShareSheetPopoverTracker:(id)arg1;
 - (void)setSharingInteractionController:(id)arg1;
 - (void)setShowActionAsDefaultButton:(bool)arg1;
 - (void)setSlideGesture:(id)arg1;
@@ -326,11 +344,15 @@
 - (void)setToolbarTintColor:(id)arg1;
 - (void)setUseCustomActionButton:(bool)arg1;
 - (void)setWillTransitionToInternalView:(bool)arg1;
+- (id /* block */)shareSheetDismissCompletion;
+- (id)shareSheetPopoverTracker;
 - (id)sharingInteractionController;
 - (bool)showActionAsDefaultButton;
 - (void)showNoDataViewIfNeeded;
 - (void)showShareSheet;
 - (void)showShareSheetFromBarButton:(id)arg1;
+- (void)showShareSheetFromRemoteViewWithPopoverTracker:(id)arg1 dismissCompletion:(id /* block */)arg2;
+- (void)showShareSheetWithPopoverTracker:(id)arg1 dismissCompletion:(id /* block */)arg2;
 - (id)slideGesture;
 - (bool)sourceIsManaged;
 - (id)stateManager;
@@ -338,6 +360,7 @@
 - (id)swipeDownTracker;
 - (id)toolbarController;
 - (id)toolbarTintColor;
+- (void)triggerQuickLookDismissal;
 - (void)updateKeyCommands;
 - (void)updateNavigationTitle;
 - (void)updateOverlayAnimated:(bool)arg1 animatedButtons:(bool)arg2 forceRefresh:(bool)arg3 withTraitCollection:(id)arg4;
@@ -346,6 +369,7 @@
 - (void)updateOverlayButtons:(bool)arg1;
 - (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updatePreviewItemAtIndex:(unsigned long long)arg1 updatedContentsURL:(id)arg2 sandboxExtension:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)updateRemoteOverlayIfNeeded;
 - (void)updateStatusBarAnimated:(bool)arg1;
 - (void)updateTitle:(id)arg1;
 - (bool)useCustomActionButton;

@@ -26,6 +26,7 @@
 @property (nonatomic) unsigned long long passcodeType;
 @property (nonatomic, copy) NSURL *photoURL;
 @property (nonatomic) unsigned int uid;
+@property (nonatomic, copy) NSString *userAuxiliaryString;
 @property (nonatomic, copy) NSString *username;
 
 - (bool)commitChanges;

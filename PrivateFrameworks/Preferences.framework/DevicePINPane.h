@@ -32,6 +32,7 @@
 @property (nonatomic) long long keyboardAppearance;
 @property (nonatomic) long long keyboardType;
 @property (nonatomic, copy) id /* block */ passcodeOptionsHandler;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic, retain) UIView<PINEntryView> *pinView;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;

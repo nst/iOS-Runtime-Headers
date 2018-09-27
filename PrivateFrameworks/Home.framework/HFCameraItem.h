@@ -16,6 +16,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
 
++ (id)cameraDemoURLWithName:(id)arg1 extension:(id)arg2;
 + (void)getErrorDescription:(out id*)arg1 detailedErrorDescription:(out id*)arg2 forCameraStreamError:(id)arg3;
 
 - (void).cxx_destruct;
@@ -25,6 +26,8 @@
 - (id)cameraProfile;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)demoMovieURL;
+- (id)demoSnapshotURL;
 - (id)description;
 - (id)homeKitObject;
 - (id)init;

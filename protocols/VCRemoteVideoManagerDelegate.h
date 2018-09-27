@@ -13,6 +13,7 @@
 - (void)remoteVideoAttributesDidChange:(VideoAttributes *)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidDegrade:(bool)arg1 streamToken:(long long)arg2;
 - (void)remoteVideoDidPause:(bool)arg1 streamToken:(long long)arg2;
+- (void)remoteVideoDidSuspend:(bool)arg1 streamToken:(long long)arg2;
 
 @optional
 

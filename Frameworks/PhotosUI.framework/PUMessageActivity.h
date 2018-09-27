@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMessageActivity : UIMessageActivity <PUActivity> {
+@interface PUMessageActivity : UIMessageActivity <PUMomentShareActivity> {
     PUActivityItemSourceController * _itemSourceController;
 }
 
@@ -12,9 +12,15 @@
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
 
++ (bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
+
 - (void).cxx_destruct;
+- (void)_prepareWithMomentShareLink:(id)arg1;
+- (id)activityViewController;
 - (bool)canPerformWithActivityItems:(id)arg1;
 - (id)itemSourceController;
+- (void)performActivity;
+- (void)prepareWithActivityItems:(id)arg1;
 - (void)setItemSourceController:(id)arg1;
 
 @end

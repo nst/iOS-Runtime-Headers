@@ -20,7 +20,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)didDisplayMapsResultForQuery:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)mapsFeedbackSender;
 - (id)parsecSearchSession;

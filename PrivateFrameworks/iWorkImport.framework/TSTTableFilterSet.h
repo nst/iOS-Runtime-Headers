@@ -9,40 +9,41 @@
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
             unsigned long long *__value_; 
         } __end_cap_; 
-    }  mFilterOffsets;
-    bool  mIsEnabled;
-    bool  mNeedsFormulaRewriteForImport;
-    NSArray * mRules;
-    int  mType;
+    }  _filterOffsets;
+    bool  _isEnabled;
+    bool  _needsFormulaRewriteForImport;
+    NSArray * _rules;
+    int  _type;
 }
 
 @property (nonatomic, readonly) bool canAddRules;
 @property (nonatomic, readonly) unsigned long long filterCount;
 @property (nonatomic) int filterSetType;
 @property (nonatomic) bool isEnabled;
+@property (nonatomic) bool needsFormulaRewriteForImport;
 @property (nonatomic, readonly) unsigned long long newFilterIndex;
 @property (nonatomic, readonly) unsigned long long ruleCount;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)absoluteRuleIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
+- (id)absoluteRuleIndicesForColumn:(struct TSUModelColumnIndex { unsigned short x1; })arg1 inTable:(id)arg2;
 - (void)addRules:(id)arg1 inFilter:(unsigned long long)arg2;
+- (id)baseColumnIndicesForRulesInTable:(id)arg1;
 - (bool)canAddRules;
-- (id)columnIndicesForRulesInTable:(id)arg1;
 - (bool)containsFilterRulesInUIDForm;
 - (id)copyByRewritingFilterRulesToGeometricFormWithContext:(id)arg1 withTableInfo:(id)arg2;
 - (id)copyByRewritingFilterRulesToUidFormWithContext:(id)arg1 withTableInfo:(id)arg2;
 - (id)copyWithContext:(id)arg1;
-- (void)dealloc;
 - (void)enumerateFilterIndicesInTable:(id)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateFiltersForColumn:(unsigned char)arg1 withTable:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateFiltersForColumn:(struct TSUModelColumnIndex { unsigned short x1; })arg1 withTable:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateFiltersInTable:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateRulesInFilterIndex:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)filterAtIndex:(unsigned long long)arg1 inTable:(id)arg2;
 - (unsigned long long)filterCount;
-- (id)filterIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
+- (id)filterIndicesForBaseColumn:(struct TSUModelColumnIndex { unsigned short x1; })arg1 inTable:(id)arg2;
 - (int)filterSetType;
-- (unsigned long long)firstFilterIndexForColumn:(unsigned char)arg1 inTable:(id)arg2;
+- (unsigned long long)firstFilterIndexForBaseColumn:(struct TSUModelColumnIndex { unsigned short x1; })arg1 inTable:(id)arg2;
+- (unsigned long long)hash;
 - (id)initWithFilterRules:(id)arg1 type:(int)arg2 context:(id)arg3;
 - (bool)isEnabled;
 - (bool)isEqual:(id)arg1;
@@ -53,11 +54,11 @@
 - (unsigned long long)numberOfRulesInFilter:(unsigned long long)arg1;
 - (void)p_addRules:(id)arg1 atRuleIndices:(id)arg2 inFilter:(unsigned long long)arg3 isNew:(bool)arg4;
 - (bool)p_thresholdComparisonMatchesFilter:(long long)arg1 withPredicateType:(int)arg2;
-- (void)removeRulesForColumnIndices:(id)arg1 withTableInfo:(id)arg2;
+- (void)removeRulesForBaseColumnIndices:(id)arg1 withTableInfo:(id)arg2;
 - (id)removeRulesWithAbsoluteIndices:(id)arg1;
 - (void)removeRulesWithIndices:(id)arg1 inFilter:(unsigned long long)arg2;
 - (void)replaceRule:(id)arg1 atRuleIndex:(unsigned long long)arg2 inFilter:(unsigned long long)arg3;
-- (bool)rowIsShown:(unsigned short)arg1 withHiddenStateFormulaOwner:(id)arg2 withCalculationEngine:(id)arg3;
+- (bool)rowIsShown:(unsigned int)arg1 withHiddenStateExtent:(id)arg2 withCalcEngine:(id)arg3;
 - (id)ruleAtAbsoluteIndex:(unsigned long long)arg1;
 - (unsigned long long)ruleCount;
 - (id)ruleInFilter:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
@@ -67,5 +68,6 @@
 - (void)setFilterSetType:(int)arg1;
 - (void)setIsEnabled:(bool)arg1;
 - (void)setNeedsFormulaRewriteForImport:(bool)arg1;
+- (id)viewColumnIndicesForRulesInTable:(id)arg1;
 
 @end

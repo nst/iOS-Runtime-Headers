@@ -4,22 +4,16 @@
 
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader {
     NSURL * _URL;
-    bool  _URLSessionDataDelegateAvailable;
-    bool  _URLSessionOperationQueueAvailable;
     AVAssetInspector * _assetInspector;
     long long  _assetInspectorOnce;
     NSObject<OS_dispatch_queue> * _completionHandlerQueue;
-    bool  _didPostDidCompleteURLSessionSetUpNotification;
-    bool  _didPostDidFailToCompleteURLSessionSetUpNotification;
     struct OpaqueFigAsset { } * _figAsset;
     int  _figAssetCreationStatus;
     long long  _fragmentMinderAssociationCount;
-    bool  _isRespondingToFigAssetPropertyLoading;
     NSMutableArray * _loadingBatches;
     bool  _loadingCanceled;
     struct OpaqueFigSimpleMutex { } * _loadingMutex;
     bool  _registeredForFigAssetNotifications;
-    bool  _shouldRespondToFigAssetURLSessionPropertyLoading;
     AVWeakReference * _weakReferenceToAsset;
 }
 
@@ -28,8 +22,6 @@
 + (void)_mapAssetKeys:(id)arg1 toFigAssetPropertySet:(id)arg2 figAssetTrackPropertySet:(id)arg3 callerName:(id)arg4;
 
 - (id)URL;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
 - (void)_addFigAssetNotifications;
 - (Class)_classForTrackInspectors;
 - (id)_completionHandlerQueue;
@@ -42,12 +34,9 @@
 - (long long)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 error:(id*)arg3;
 - (id)_loadingBatches;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
-- (void)_postDidFailToCompleteURLSessionSetUpNotificationIfAppropriate;
 - (void)_removeFigAssetNotifications;
 - (void)_setFragmentMindingInterval:(double)arg1;
 - (void)_setIsAssociatedWithFragmentMinder:(bool)arg1;
-- (void)_setURLSessionDataDelegateAvailable:(bool)arg1;
-- (void)_setURLSessionOperationQueueAvailable:(bool)arg1;
 - (id)asset;
 - (id)assetInspector;
 - (void)cancelLoading;
@@ -70,7 +59,6 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
 - (id)originalNetworkContentURL;
-- (void)postURLSessionSetUpDidCompleteNotificationIfAppropriate;
 - (id)resolvedURL;
 - (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 

@@ -44,6 +44,12 @@
 - (id)replacementStringForResult:(id)arg1 inString:(id)arg2 offset:(long long)arg3 template:(id)arg4;
 - (id)stringByReplacingMatchesInString:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 withTemplate:(id)arg4;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (id)_intents_sharedFormatRegularExpression;
++ (id)_intents_sharedOldFormatRegularExpression;
++ (id)_intents_sharedStringsDictFormatRegularExpression;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_attributionExpression;

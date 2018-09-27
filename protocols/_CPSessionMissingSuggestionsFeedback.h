@@ -7,7 +7,6 @@
 
 - (void)addSuggestions:(_CPSearchSuggestionForFeedback *)arg1;
 - (void)clearSuggestions;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

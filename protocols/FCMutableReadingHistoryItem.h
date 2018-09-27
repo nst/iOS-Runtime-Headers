@@ -7,6 +7,7 @@
 
 - (NSString *)articleID;
 - (unsigned long long)articleLikingStatus;
+- (NSString *)deviceID;
 - (NSDate *)firstSeenAt;
 - (NSDate *)firstSeenAtOfMaxVersionSeen;
 - (bool)hasArticleBeenConsumed;
@@ -19,6 +20,7 @@
 - (long long)maxVersionSeen;
 - (void)setArticleID:(NSString *)arg1;
 - (void)setArticleLikingStatus:(unsigned long long)arg1;
+- (void)setDeviceID:(NSString *)arg1;
 - (void)setFirstSeenAt:(NSDate *)arg1;
 - (void)setFirstSeenAtOfMaxVersionSeen:(NSDate *)arg1;
 - (void)setHasArticleBeenConsumed:(bool)arg1;
@@ -28,5 +30,7 @@
 - (void)setLastVisitedAt:(NSDate *)arg1;
 - (void)setMaxVersionRead:(long long)arg1;
 - (void)setMaxVersionSeen:(long long)arg1;
+- (void)setSourceChannelTagID:(NSString *)arg1;
+- (NSString *)sourceChannelTagID;
 
 @end

@@ -23,6 +23,7 @@
 - (id)addMessagesToResend:(id)arg1 mailbox:(id)arg2 isProtectedData:(bool)arg3;
 - (id)addMoreConversationSpecificMessages:(id)arg1 conversationId:(id)arg2 mailbox:(id)arg3 isProtectedData:(bool)arg4;
 - (id)addMoreMessages:(id)arg1 mailbox:(id)arg2 isProtectedData:(bool)arg3;
+- (id)addStandaloneAccountIdentity:(id)arg1;
 - (id)batchRequestHandler;
 - (id)currentDeviceRegistry;
 - (id)delegate;

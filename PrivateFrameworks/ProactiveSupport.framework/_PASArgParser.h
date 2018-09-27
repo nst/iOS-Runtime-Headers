@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) NSMutableArray *registeredSubcommands;
 
 + (id)boolValueForArgument:(id)arg1 error:(id*)arg2;
++ (id)enumValueForArgument:(id)arg1 withMapping:(id)arg2 error:(id*)arg3;
 + (id)numberValueForArgument:(id)arg1 error:(id*)arg2;
 + (id)parserWithHandler:(id /* block */)arg1;
 + (id)simpleParserWithHelpGenerator:(id /* block */)arg1 version:(id)arg2 handler:(id /* block */)arg3;

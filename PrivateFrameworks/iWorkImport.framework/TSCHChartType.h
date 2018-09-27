@@ -122,7 +122,7 @@
 - (float)rotation3DMinX;
 - (float)rotation3DMinY;
 - (Class)sageGeometeryHelperClass;
-- (bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 seriesList:(id)arg2;
+- (bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 chartInfo:(id)arg2 seriesList:(id)arg3;
 - (int)stackingSignRule;
 - (unsigned long long)styleIndexForAxisID:(id)arg1;
 - (bool)suppliesFinalTextures;

@@ -11,7 +11,9 @@
     NSString * _creativeId;
     NSString * _errorCode;
     NSString * _errorMessage;
+    int  _groupType;
     struct { 
+        unsigned int groupType : 1; 
         unsigned int paidSubscriptionConversionPointType : 1; 
         unsigned int parentFeedType : 1; 
         unsigned int arrivedFromAd : 1; 
@@ -36,6 +38,7 @@
 @property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic, retain) NSString *errorCode;
 @property (nonatomic, retain) NSString *errorMessage;
+@property (nonatomic) int groupType;
 @property (nonatomic) bool hasArrivedFromAd;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
@@ -44,6 +47,7 @@
 @property (nonatomic, readonly) bool hasCreativeId;
 @property (nonatomic, readonly) bool hasErrorCode;
 @property (nonatomic, readonly) bool hasErrorMessage;
+@property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadQtoken;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointType;
 @property (nonatomic) bool hasParentFeedType;
@@ -62,6 +66,7 @@
 @property (nonatomic) bool successfulNewsTokenVerification;
 
 - (void).cxx_destruct;
+- (int)StringAsGroupType:(id)arg1;
 - (int)StringAsPaidSubscriptionConversionPointType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
 - (bool)arrivedFromAd;
@@ -75,6 +80,8 @@
 - (id)dictionaryRepresentation;
 - (id)errorCode;
 - (id)errorMessage;
+- (int)groupType;
+- (id)groupTypeAsString:(int)arg1;
 - (bool)hasArrivedFromAd;
 - (bool)hasArticleId;
 - (bool)hasArticleViewingSessionId;
@@ -83,6 +90,7 @@
 - (bool)hasCreativeId;
 - (bool)hasErrorCode;
 - (bool)hasErrorMessage;
+- (bool)hasGroupType;
 - (bool)hasIadQtoken;
 - (bool)hasPaidSubscriptionConversionPointType;
 - (bool)hasParentFeedType;
@@ -109,7 +117,9 @@
 - (void)setCreativeId:(id)arg1;
 - (void)setErrorCode:(id)arg1;
 - (void)setErrorMessage:(id)arg1;
+- (void)setGroupType:(int)arg1;
 - (void)setHasArrivedFromAd:(bool)arg1;
+- (void)setHasGroupType:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointType:(bool)arg1;
 - (void)setHasParentFeedType:(bool)arg1;
 - (void)setHasSubscriptionOnlyArticlePreview:(bool)arg1;

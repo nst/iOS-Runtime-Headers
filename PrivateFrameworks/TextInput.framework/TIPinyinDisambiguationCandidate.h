@@ -10,8 +10,8 @@
 + (bool)supportsSecureCoding;
 + (int)type;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
@@ -20,5 +20,6 @@
 - (id)initWithPinyinSyllable:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)label;
+- (void)setLabel:(id)arg1;
 
 @end

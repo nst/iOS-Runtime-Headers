@@ -9,6 +9,8 @@
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } rotation;
 @property (nonatomic, readonly) void velocity;
 
++ (bool)supportsSecureCoding;
+
 - (void)applyBrakingForce:(float)arg1 deltaTime:(double)arg2;
 - (void)applySteeringForce:(void *)arg1 deltaTime:(void *)arg2; // needs 2 arg types, found 1: double
 - (void)encodeWithCoder:(id)arg1;

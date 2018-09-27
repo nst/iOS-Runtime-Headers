@@ -3,21 +3,25 @@
  */
 
 @interface _PKEmbossedInkToolButton : UIButton <PKInkToolButton> {
+    unsigned long long  _attributeSet;
     UIColor * _color;
     NSString * _identifier;
     bool  _isUsedOnDarkBackground;
     UIImageView * _nibEmbossImageView;
     UIImageView * _nibImageView;
+    _PKInkToolOpacityLabel * _opacityLabel;
     unsigned long long  _sizeState;
     UIImageView * _toolBaseImageView;
     UIImageView * _toolDockMaskImageView;
 }
 
+@property (nonatomic) unsigned long long attributeSet;
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) bool isUsedOnDarkBackground;
 @property (nonatomic, retain) UIImageView *nibEmbossImageView;
 @property (nonatomic, retain) UIImageView *nibImageView;
+@property (nonatomic, retain) _PKInkToolOpacityLabel *opacityLabel;
 @property (nonatomic) unsigned long long sizeState;
 @property (nonatomic, retain) UIImageView *toolBaseImageView;
 @property (nonatomic, retain) UIImageView *toolDockMaskImageView;
@@ -29,7 +33,9 @@
 + (id)imageNameForIdentifier:(id)arg1 sizeState:(unsigned long long)arg2 imageType:(id)arg3;
 
 - (void).cxx_destruct;
+- (unsigned long long)attributeSet;
 - (id)color;
+- (double)embossAlphaForColor:(id)arg1;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 color:(id)arg2 sizeState:(unsigned long long)arg3;
 - (bool)isUsedOnDarkBackground;
@@ -38,11 +44,14 @@
 - (id)nibEmbossImageView;
 - (id)nibImageName;
 - (id)nibImageView;
+- (id)opacityLabel;
+- (void)setAttributeSet:(unsigned long long)arg1;
 - (void)setColor:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIsUsedOnDarkBackground:(bool)arg1;
 - (void)setNibEmbossImageView:(id)arg1;
 - (void)setNibImageView:(id)arg1;
+- (void)setOpacityLabel:(id)arg1;
 - (void)setSizeState:(unsigned long long)arg1;
 - (void)setToolBaseImageView:(id)arg1;
 - (void)setToolDockMaskImageView:(id)arg1;

@@ -3,9 +3,8 @@
  */
 
 @interface PARBag : NSObject <NSSecureCoding> {
+    NSData * _bagData;
     NSString * _clientName;
-    NSDictionary * _maximumCustomFeedbackSizes;
-    NSDictionary * _rawBag;
     NSString * _userAgent;
 }
 
@@ -17,9 +16,12 @@
 @property (nonatomic, readonly, copy) NSString *customFlight;
 @property (nonatomic, readonly) bool disableAsTypedSuggestion;
 @property (nonatomic, readonly) NSArray *downloadResourcesList;
+@property (nonatomic, readonly) NSNumber *duetExpertCustomFeedbackSamplingPercentage;
+@property (nonatomic, readonly) NSNumber *eagerFeedbackSamplingPercentage;
 @property (getter=isEnabled, nonatomic, readonly) bool enabled;
 @property (nonatomic, readonly, copy) NSArray *enabledDomains;
 @property (nonatomic, readonly) bool feedbackEnabled;
+@property (nonatomic, readonly) NSNumber *feedbackMaxAgeInDays;
 @property (nonatomic, readonly) NSURL *feedbackURL;
 @property (nonatomic, readonly, copy) NSString *firstUseContinueText;
 @property (nonatomic, readonly, copy) NSString *firstUseDescriptionText;
@@ -29,7 +31,9 @@
 @property (nonatomic, readonly) unsigned long long maximumCachedQueriesToSend;
 @property (nonatomic, readonly) unsigned long long maximumCachedResultsToSend;
 @property (nonatomic, readonly) NSDictionary *maximumCustomFeedbackSizes;
+@property (nonatomic, readonly) long long maximumNumberOfFeedbackFiles;
 @property (nonatomic, readonly) NSNumber *minSearchRenderTimeout;
+@property (nonatomic, readonly) NSNumber *minSuggestionRenderTimeout;
 @property (nonatomic, readonly) double minThresholdToSend;
 @property (nonatomic, readonly) double minimumIntervalBetweenQueriesFromBag;
 @property (nonatomic, readonly) unsigned long long minimumQueryLength;
@@ -44,10 +48,12 @@
 @property (nonatomic, readonly) double safariLast1month;
 @property (nonatomic, readonly) double safariLast1week;
 @property (nonatomic, readonly) double safariMostRecent;
+@property (nonatomic, readonly) bool sampleClientTiming;
 @property (nonatomic, readonly) bool sampleFeatures;
 @property (nonatomic, readonly) NSNumber *searchRenderTimeout;
 @property (nonatomic, readonly) NSURL *searchURL;
 @property (nonatomic, readonly) bool sendGeoEnvironmentHeader;
+@property (nonatomic, readonly) bool sendProtobuf;
 @property (nonatomic, readonly) unsigned long long smartHistoryCompletionReturnCount;
 @property (nonatomic, readonly) bool smartHistoryEnabled;
 @property (nonatomic, readonly) bool smartHistoryFeatureFeedbackEnabled;
@@ -73,6 +79,7 @@
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2 override:(bool)arg3;
 - (id)anonymousMetadataPreference;
+- (id)bagURL;
 - (id)bag_URLForKey:(id)arg1;
 - (id)bag_arrayForKey:(id)arg1;
 - (bool)bag_boolForKey:(id)arg1;
@@ -87,23 +94,33 @@
 - (id)description;
 - (bool)disableAsTypedSuggestion;
 - (id)downloadResourcesList;
+- (id)duetExpertCustomFeedbackSamplingPercentage;
+- (id)eagerFeedbackSamplingPercentage;
 - (id)enabledDomains;
 - (void)encodeWithCoder:(id)arg1;
+- (double)expirationDate;
 - (bool)feedbackEnabled;
+- (id)feedbackMaxAgeInDays;
 - (id)feedbackURL;
 - (id)firstUseContinueText;
 - (id)firstUseDescriptionText;
 - (id)firstUseLearnMoreText;
 - (id)firstUseLearnMoreURL;
 - (id)flightURL;
+- (id)initWithBag:(id)arg1 userAgent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 userAgent:(id)arg2;
+- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 userAgent:(id)arg2;
+- (id)initWithURL:(id)arg1 userAgent:(id)arg2;
 - (bool)isEnabled;
+- (bool)isRefreshDisabled;
 - (unsigned long long)maximumCachedQueriesToSend;
 - (unsigned long long)maximumCachedResultsToSend;
 - (id)maximumCustomFeedbackSizes;
+- (long long)maximumNumberOfFeedbackFiles;
 - (unsigned long long)maximumSizeForFeedbackType:(id)arg1;
 - (id)minSearchRenderTimeout;
+- (id)minSuggestionRenderTimeout;
 - (double)minThresholdToSend;
 - (double)minimumIntervalBetweenQueriesFromBag;
 - (unsigned long long)minimumQueryLength;
@@ -119,10 +136,12 @@
 - (double)safariLast1month;
 - (double)safariLast1week;
 - (double)safariMostRecent;
+- (bool)sampleClientTiming;
 - (bool)sampleFeatures;
 - (id)searchRenderTimeout;
 - (id)searchURL;
 - (bool)sendGeoEnvironmentHeader;
+- (bool)sendProtobuf;
 - (unsigned long long)smartHistoryCompletionReturnCount;
 - (bool)smartHistoryEnabled;
 - (bool)smartHistoryFeatureFeedbackEnabled;
@@ -140,6 +159,8 @@
 - (id)urlForIdentifier:(id)arg1;
 - (bool)use2LayerRanking;
 - (id)userAgent;
+- (id)valueForKey:(id)arg1;
+- (id)valueForKey:(id)arg1 override:(bool)arg2;
 - (id)version;
 - (id)warmURL;
 

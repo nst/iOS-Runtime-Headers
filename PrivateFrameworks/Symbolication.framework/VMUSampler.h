@@ -13,7 +13,6 @@
     NSMapTable * _lastThreadBacktraceMap;
     unsigned int  _mainThread;
     unsigned int  _maxPreviousThreadCount;
-    VMUTaskMemoryCache * _memCache;
     bool  _needTaskPortDealloc;
     unsigned int  _numberOfCopiedBacktraces;
     unsigned int  _numberOfSamples;
@@ -30,12 +29,12 @@
     struct sampling_context_t { } * _samplingContext;
     bool  _stacksFixed;
     NSConditionLock * _stateLock;
+    unsigned int  _suspensionToken;
     struct _CSTypeRef { 
         unsigned long long _opaque_1; 
         unsigned long long _opaque_2; 
     }  _symbolicator;
     unsigned int  _task;
-    bool  _taskIs64Bit;
     double  _tbInterval;
     double  _tbRate;
     NSMutableDictionary * _threadPortToNameMap;
@@ -54,7 +53,6 @@
 - (void)_makeHighPriority;
 - (void)_makeTimeshare;
 - (void)_runSamplingThread;
-- (id)createOutput;
 - (void)dealloc;
 - (id)delegate;
 - (id)dispatchQueueNameForSerialNumber:(unsigned long long)arg1;
@@ -72,7 +70,7 @@
 - (id)outputString;
 - (int)pid;
 - (void)preloadSymbols;
-- (unsigned long long)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3 thread:(unsigned int)arg4 recordFramePointers:(bool)arg5;
+- (unsigned long long)recordSampleTo:(id)arg1 beginTime:(double)arg2 endTime:(double)arg3 thread:(unsigned int)arg4 recordFramePointers:(bool)arg5 clearMemoryCache:(bool)arg6;
 - (id)sampleAllThreadsOnce;
 - (id)sampleAllThreadsOnceWithFramePointers:(bool)arg1;
 - (unsigned int)sampleCount;

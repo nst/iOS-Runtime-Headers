@@ -26,8 +26,6 @@
 @property (nonatomic, readonly) bool hasNewsNotificationsBaseUrl;
 @property (nonatomic, retain) NSString *newsNotificationsBaseUrl;
 
-// Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
-
 - (void).cxx_destruct;
 - (id)analyticsEndpointUrlsJson;
 - (id)analyticsEnvelopeContentTypePropJson;
@@ -57,9 +55,5 @@
 - (void)setEventRelayBatchBaseUrl:(id)arg1;
 - (void)setNewsNotificationsBaseUrl:(id)arg1;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
-
-- (id)analyticsEnvelopeContentTypeConfigsByContentType;
 
 @end

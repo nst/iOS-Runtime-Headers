@@ -2,12 +2,15 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDateComponents : NSObject <NSCopying, NSSecureCoding>
+@interface NSDateComponents : NSObject <NSCopying, NSSecureCoding, REDonatedActionIdentifierProviding>
 
 @property (copy) NSCalendar *calendar;
 @property (readonly, copy) NSDate *date;
 @property long long day;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property long long era;
+@property (readonly) unsigned long long hash;
 @property long long hour;
 @property (getter=isLeapMonth) bool leapMonth;
 @property long long minute;
@@ -15,6 +18,7 @@
 @property long long nanosecond;
 @property long long quarter;
 @property long long second;
+@property (readonly) Class superclass;
 @property (copy) NSTimeZone *timeZone;
 @property (getter=isValidDate, readonly) bool validDate;
 @property long long weekOfMonth;
@@ -114,17 +118,15 @@
 - (id)hk_populatedCalendarGregorianCalendarDefault;
 - (id)hk_translateDateComponentsToCalendar:(id)arg1 calendarUnits:(unsigned long long)arg2;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
-+ (unsigned long long)_ui_largerComponentsRelativeToComponent:(unsigned long long)arg1;
-+ (id)_ui_namesForComponents:(unsigned long long)arg1;
-+ (unsigned long long)_ui_smallerComponentsRelativeToComponent:(unsigned long long)arg1;
-+ (unsigned long long)smaller:(bool)arg1 componentsRelativeToComponent:(unsigned long long)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 
-- (id)_ui_conciseDescription;
-- (void)_ui_setComponents:(id)arg1;
-- (void)_ui_setValue:(long long)arg1 forComponent:(unsigned long long)arg2;
-- (long long)_ui_valueForComponent:(unsigned long long)arg1;
+// Image: /System/Library/PrivateFrameworks/ActivitySharing.framework/ActivitySharing
+
++ (id)as_dateComponentsWithCodable:(id)arg1;
+
+- (id)as_codableDateComponents;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -176,9 +178,30 @@
 - (double)hf_timeInterval;
 - (unsigned long long)hf_validComponents;
 
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
+- (double)mtTimeIntervalSinceComponents:(id)arg1;
+- (double)mtTimeIntervalSinceComponents:(id)arg1 now:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
 - (id)description;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (unsigned long long)_ui_largerComponentsRelativeToComponent:(unsigned long long)arg1;
++ (id)_ui_namesForComponents:(unsigned long long)arg1;
++ (unsigned long long)_ui_smallerComponentsRelativeToComponent:(unsigned long long)arg1;
++ (unsigned long long)smaller:(bool)arg1 componentsRelativeToComponent:(unsigned long long)arg2;
+
+- (id)_ui_conciseDescription;
+- (void)_ui_setComponents:(id)arg1;
+- (void)_ui_setValue:(long long)arg1 forComponent:(unsigned long long)arg2;
+- (long long)_ui_valueForComponent:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 

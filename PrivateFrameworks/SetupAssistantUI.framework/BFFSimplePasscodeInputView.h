@@ -19,6 +19,7 @@
 - (id)passcodeDisplayView;
 - (id)passcodeField;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
+- (id)passcodeField:(id)arg1 shouldInsertText:(id)arg2;
 - (void)setPasscode:(id)arg1;
 - (void)setPasscodeField:(id)arg1;
 

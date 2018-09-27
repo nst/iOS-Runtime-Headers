@@ -53,6 +53,6 @@
 - (id)__ck_displayName;
 - (bool)__ck_isSMS;
 - (bool)__ck_isiMessage;
-- (long long)__ck_maxRecipientCount;
+- (long long)__ck_maxRecipientCountForHandle:(id)arg1 simID:(id)arg2;
 
 @end

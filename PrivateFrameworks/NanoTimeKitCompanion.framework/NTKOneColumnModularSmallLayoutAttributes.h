@@ -22,7 +22,7 @@
 @property (nonatomic) double titleBaselineOffset;
 @property (nonatomic, retain) CLKFont *titleFont;
 
-+ (id)attributesForTemplate:(id)arg1;
++ (id)attributesForTemplate:(id)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (double)imageHeight;

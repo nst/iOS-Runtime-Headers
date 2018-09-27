@@ -3,9 +3,9 @@
  */
 
 @interface FIUIWorkoutFootnoteTableViewCell : UITableViewCell {
+    UIView * _dividerView;
     UILabel * _footnoteLabel;
     NSString * _footnoteText;
-    UIView * _lineView;
     UILabel * _titleLabel;
     NSString * _titleText;
 }

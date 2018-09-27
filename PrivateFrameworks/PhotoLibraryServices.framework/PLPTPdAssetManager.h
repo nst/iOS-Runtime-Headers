@@ -19,7 +19,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSFileManager *fileManager;
 @property (readonly) unsigned long long hash;
-@property (readonly, retain) PLManagedObjectContext *managedObjectContext;
 @property (retain) PFMediaCapabilities *peerMediaCapabilities;
 @property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 @property (readonly) Class superclass;
@@ -61,6 +60,7 @@
 - (id)managedObjectContext;
 - (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4 adjustedAssetIDs:(id)arg5;
 - (void)markSignpostForAsset:(id)arg1 endMarker:(bool)arg2 adjusted:(bool)arg3 arg4:(unsigned long long)arg4;
+- (struct CGSize { double x1; double x2; })masterThumbSize;
 - (id)peerMediaCapabilities;
 - (id)photoLibrary;
 - (id)ptpAssetReaderForAssetHandle:(id)arg1;
@@ -77,6 +77,7 @@
 - (id)ptpThumbnailForAssetHandle:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
 - (id)ptpThumbnailForPhotoWithKey:(id)arg1;
 - (id)ptpThumbnailForPhotoWithKey:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 compressionQuality:(float)arg3;
+- (bool)requestedSize:(struct CGSize { double x1; double x2; })arg1 fitsInSourceSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFileManager:(id)arg1;
 - (void)setPeerMediaCapabilities:(id)arg1;

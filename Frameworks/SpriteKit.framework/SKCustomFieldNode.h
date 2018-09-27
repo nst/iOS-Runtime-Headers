@@ -6,6 +6,8 @@
 
 @property (nonatomic, copy) id /* block */ block;
 
++ (bool)supportsSecureCoding;
+
 - (id)_descriptionClassName;
 - (void)_initialize;
 - (id /* block */)batchBlock;

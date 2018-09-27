@@ -5,8 +5,8 @@
 
 @required
 
+- (void)speechSynthesis:(void *)arg1 prepareForSpeakingWithCompletion:(void *)arg2; // needs 2 arg types, found 8: AFUISpeechSynthesis *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, NSError *, void*
 - (bool)speechSynthesisConnectionIsRecording:(AFUISpeechSynthesis *)arg1;
-- (void)speechSynthesisWillStartSpeaking:(AFUISpeechSynthesis *)arg1;
 - (void)stopCurrentRecordingForSpeechSynthesis:(AFUISpeechSynthesis *)arg1;
 
 @end

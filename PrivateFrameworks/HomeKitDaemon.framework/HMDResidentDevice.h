@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, HMFMerging, NSSecureCoding> {
+@interface HMDResidentDevice : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, NSSecureCoding> {
+    HMFUnfairLock * __lock;
     long long  _batteryState;
     bool  _confirmed;
     HMDDevice * _device;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic) long long batteryState;
+@property (getter=isBlocked, readonly) bool blocked;
 @property (nonatomic, readonly) unsigned long long capabilities;
 @property (getter=isConfirmed, nonatomic) bool confirmed;
 @property (readonly, copy) NSString *debugDescription;
@@ -38,13 +40,16 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__accountAdded:(id)arg1;
+- (void)__deviceAdded:(id)arg1;
+- (void)__deviceUpdated:(id)arg1;
 - (void)_handleResidentDeviceUpdateConfirmed:(bool)arg1;
-- (bool)_handleResidentDeviceUpdateDeviceWithUUID:(id)arg1;
 - (void)_handleResidentDeviceUpdateEnabled:(bool)arg1;
 - (void)_residentDeviceModelUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
-- (bool)_updateDevice:(id)arg1;
 - (long long)batteryState;
 - (unsigned long long)capabilities;
+- (void)configureWithHome:(id)arg1;
+- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;
@@ -56,16 +61,18 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDevice:(id)arg1 home:(id)arg2;
-- (id)initWithModel:(id)arg1 residentDeviceManager:(id)arg2;
+- (id)initWithDevice:(id)arg1;
+- (id)initWithModel:(id)arg1;
+- (bool)isBlocked;
 - (bool)isConfirmed;
 - (bool)isEnabled;
 - (bool)isEqual:(id)arg1;
 - (bool)isLowBattery;
 - (bool)isReachable;
-- (bool)mergeObject:(id)arg1;
+- (id)logIdentifier;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)residentDeviceManager;
+- (id)runtimeState;
 - (void)setBatteryState:(long long)arg1;
 - (void)setConfirmed:(bool)arg1;
 - (void)setDevice:(id)arg1;

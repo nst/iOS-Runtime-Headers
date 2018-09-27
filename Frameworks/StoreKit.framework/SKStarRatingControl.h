@@ -26,6 +26,7 @@
 @property (nonatomic) double starWidth;
 @property (nonatomic) float value;
 
+- (void).cxx_destruct;
 - (bool)_alwaysHandleScrollerMouseEvent;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_foregroundImageClipBounds;
 - (id)_newExplanationLabel;
@@ -33,7 +34,6 @@
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)canHandleSwipes;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)explanationText;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;

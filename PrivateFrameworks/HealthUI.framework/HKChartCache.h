@@ -27,7 +27,6 @@
 - (id)_operationForIdentifier:(id)arg1;
 - (void)_removeFetchOperationsForIdentifiers:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (bool)cacheIsDirtyForIdentifier:(id)arg1;
 - (id)cachedResultsForIdentifier:(id)arg1;
 - (id)dataSource;
 - (id)dataSourceRespectingType;
@@ -43,5 +42,6 @@
 - (void)setOperationManager:(id)arg1;
 - (void)setShouldBufferFetchOperations:(bool)arg1;
 - (bool)shouldBufferFetchOperations;
+- (unsigned long long)stateForIdentifier:(id)arg1;
 
 @end

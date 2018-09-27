@@ -6,13 +6,16 @@
     float  _EUVolumeLimit;
     <NACVolumeControllerDelegate> * _delegate;
     NSNumber * _hapticIntensity;
+    long long  _hapticState;
     NACEventThrottler * _hapticThrottler;
     bool  _isObserving;
+    long long  _lastReceivedHapticState;
     bool  _lastReceivedProminentHapticEnabled;
     float  _lastReceivedVolumeValue;
     float  _lastRecievedHapticIntensity;
     bool  _muted;
     bool  _prominentHapticEnabled;
+    NSObject<OS_dispatch_source> * _setHapticStateTimer;
     NSObject<OS_dispatch_source> * _setHapticTimer;
     NSObject<OS_dispatch_source> * _setProminentHapticTimer;
     NSObject<OS_dispatch_source> * _setVolumeTimer;
@@ -30,6 +33,7 @@
 @property (nonatomic) <NACVolumeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float hapticIntensity;
+@property (nonatomic) long long hapticState;
 @property (readonly) unsigned long long hash;
 @property (getter=isMuted, nonatomic, readonly) bool muted;
 @property (getter=isProminentHapticEnabled, nonatomic) bool prominentHapticEnabled;
@@ -44,13 +48,17 @@
 - (void)_EUVolumeLimitDidChange;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
+- (void)_cancelSetHapticStateTimer;
 - (void)_cancelSetHapticTimer;
 - (void)_cancelSetProminentHapticTimer;
 - (void)_cancelSetVolumeTimer;
 - (void)_hapticIntensityDidChange;
+- (void)_hapticStateDidChange;
+- (void)_hapticStateTimeout;
 - (void)_hapticTimeout;
 - (void)_mutedStateDidChange;
 - (void)_notifyDelegateHapticChanged;
+- (void)_notifyDelegateHapticStateChanged;
 - (void)_notifyDelegateProminentHapticStateChanged;
 - (void)_notifyDelegateSystemMutedStateChanged;
 - (void)_notifyDelegateVolumeChanged;
@@ -71,6 +79,7 @@
 - (void)endObservingHaptics;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
+- (long long)hapticState;
 - (id)initWithVolumeControlTarget:(id)arg1;
 - (bool)isMuted;
 - (bool)isProminentHapticEnabled;
@@ -79,6 +88,7 @@
 - (bool)isVolumeWarningEnabled;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

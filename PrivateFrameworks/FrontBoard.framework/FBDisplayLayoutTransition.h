@@ -22,6 +22,7 @@
 + (bool)isTransitioningForDisplayType:(long long)arg1;
 + (id)layoutForDisplayType:(long long)arg1;
 
+- (void).cxx_destruct;
 - (long long)backlightLevel;
 - (void)beginTransition;
 - (void)dealloc;

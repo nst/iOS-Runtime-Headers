@@ -6,6 +6,7 @@
 @required
 
 - (NSString *)DSID;
+- (void)checkAllDevicesRunningMinimumiOSVersion:(void *)arg1 macOSVersion:(void *)arg2 orInactiveForTimeInterval:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: struct { long long x1; long long x2; }, struct { long long x1; long long x2; }, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)checkAlliOSDevicesRunningMinimumOSVersion:(void *)arg1 orInactiveForTimeInterval:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: struct { long long x1; long long x2; }, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (NSString *)contentStoreFrontID;
 - (NSString *)currentStoreFrontID;

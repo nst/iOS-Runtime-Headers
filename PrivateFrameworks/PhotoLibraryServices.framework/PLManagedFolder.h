@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer> {
+@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer, PLCloudDeletable> {
     bool  _needsFixedOrderKeysComplianceUpdate;
     bool  _needsPersistenceUpdate;
 }
@@ -12,6 +12,9 @@
 @property (nonatomic, readonly) unsigned long long albumsCount;
 @property (nonatomic, readonly, copy) id /* block */ albumsSortingComparator;
 @property (nonatomic, retain) NSOrderedSet *childCollections;
+@property (nonatomic) short cloudDeleteState;
+@property (readonly) long long cloudDeletionType;
+@property (readonly, copy) NSString *cloudUUIDForDeletion;
 @property (nonatomic, readonly) unsigned long long containersCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -24,6 +27,8 @@
 @property (nonatomic, readonly) unsigned long long unreadAlbumsCount;
 
 + (id)childKeyForOrdering;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
@@ -46,6 +51,8 @@
 - (bool)canEditContainers;
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
 - (id)childKeyForOrdering;
+- (long long)cloudDeletionType;
+- (id)cloudUUIDForDeletion;
 - (id)containers;
 - (unsigned long long)containersCount;
 - (id)containersRelationshipName;

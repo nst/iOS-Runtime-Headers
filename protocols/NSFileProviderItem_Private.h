@@ -16,7 +16,10 @@
 - (NSNumber *)hasUnresolvedConflicts;
 - (NSNumber *)isDownloadRequested;
 - (bool)isHidden;
+- (NSString *)preformattedMostRecentEditorName;
+- (NSString *)preformattedOwnerName;
 - (NSString *)providerIdentifier;
 - (NSString *)sharingPermissions;
+- (NSArray *)tags;
 
 @end

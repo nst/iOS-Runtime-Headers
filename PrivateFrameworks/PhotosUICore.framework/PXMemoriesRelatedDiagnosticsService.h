@@ -9,6 +9,7 @@
 - (bool)canProvideContextualViewController;
 - (bool)canProvideSettingsViewController;
 - (id)contextualViewController;
+- (id)saliencyStringForAsset:(id)arg1;
 - (id)settingsViewController;
 - (id)title;
 

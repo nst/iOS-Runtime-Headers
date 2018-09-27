@@ -21,10 +21,10 @@
 + (id)smartPunctuationOptionsForLocale:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_generateDataFromLocale;
 - (id)apostrophe;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

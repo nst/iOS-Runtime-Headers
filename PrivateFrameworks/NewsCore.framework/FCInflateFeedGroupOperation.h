@@ -7,6 +7,7 @@
     <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     FCDeflatedFeedGroup * _deflatedGroup;
+    FCFeedDescriptor * _feedDescriptor;
     FCFeedGroup * _inflatedGroup;
     id /* block */  _inflationCompletionHandler;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) FCDeflatedFeedGroup *deflatedGroup;
+@property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, retain) FCFeedGroup *inflatedGroup;
 @property (nonatomic, copy) id /* block */ inflationCompletionHandler;
 
@@ -26,6 +28,7 @@
 - (id)configuration;
 - (id)context;
 - (id)deflatedGroup;
+- (id)feedDescriptor;
 - (id)inflatedGroup;
 - (id /* block */)inflationCompletionHandler;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -34,6 +37,7 @@
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDeflatedGroup:(id)arg1;
+- (void)setFeedDescriptor:(id)arg1;
 - (void)setInflatedGroup:(id)arg1;
 - (void)setInflationCompletionHandler:(id /* block */)arg1;
 - (bool)validateOperation;

@@ -7,12 +7,14 @@
     bool  _adSupportedChannel;
     double  _agedPersonalizationScore;
     double  _agedUserFeedbackScore;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSAlternateHeadline * _alternateHeadline;
     NSString * _anfComponentId;
     int  _articleDisplayRankInGroup;
     int  _articleHostViewType;
     NSString * _articleId;
     bool  _articleLoaded;
     NSData * _articleSessionId;
+    int  _articleSuggestionOrigin;
     int  _articleType;
     int  _articleViewPresentationReason;
     NSData * _articleViewingSessionId;
@@ -31,9 +33,12 @@
     NSString * _creativeId;
     int  _curatedContentType;
     bool  _didBounce;
+    bool  _didExpandDuringView;
     bool  _didOpenInSafari;
     int  _displayRank;
     double  _diversifiedPersonalizationScore;
+    NSString * _exposedGroupSourceChannelId;
+    NSString * _exposedInLocationId;
     double  _featureCtr;
     int  _feedAutoSubscribeType;
     int  _feedCellHostType;
@@ -47,8 +52,10 @@
     int  _groupDisplayRankInForYou;
     NSString * _groupFeedId;
     int  _groupFormationReason;
+    int  _groupLocation;
     int  _groupPresentationReason;
     int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int agedPersonalizationScore : 1; 
         unsigned int agedUserFeedbackScore : 1; 
@@ -63,10 +70,12 @@
         unsigned int personalizationTreatmentId : 1; 
         unsigned int previousArticlePublisherArticleVersion : 1; 
         unsigned int publisherArticleVersionInt64 : 1; 
+        unsigned int subscribedChannelCtr : 1; 
         unsigned int userFeedbackScore : 1; 
         unsigned int activeTimeSpent : 1; 
         unsigned int articleDisplayRankInGroup : 1; 
         unsigned int articleHostViewType : 1; 
+        unsigned int articleSuggestionOrigin : 1; 
         unsigned int articleType : 1; 
         unsigned int articleViewPresentationReason : 1; 
         unsigned int backendArticleVersion : 1; 
@@ -84,6 +93,7 @@
         unsigned int groupArticleCountInForYou : 1; 
         unsigned int groupDisplayRankInForYou : 1; 
         unsigned int groupFormationReason : 1; 
+        unsigned int groupLocation : 1; 
         unsigned int groupPresentationReason : 1; 
         unsigned int groupType : 1; 
         unsigned int loadFailureReason : 1; 
@@ -99,6 +109,7 @@
         unsigned int previousArticleHostViewTypeIfSwipe : 1; 
         unsigned int previousWebEmbedLocation : 1; 
         unsigned int publisherArticleVersion : 1; 
+        unsigned int rankInVideoPlaylist : 1; 
         unsigned int topStoryMandatoryArticleCount : 1; 
         unsigned int topStoryOptionalArticleCount : 1; 
         unsigned int topStoryType : 1; 
@@ -109,6 +120,7 @@
         unsigned int articleLoaded : 1; 
         unsigned int badgeExposure : 1; 
         unsigned int didBounce : 1; 
+        unsigned int didExpandDuringView : 1; 
         unsigned int didOpenInSafari : 1; 
         unsigned int isBreakingNewsArticle : 1; 
         unsigned int isCoverArticle : 1; 
@@ -177,6 +189,7 @@
     int  _previousWebEmbedLocation;
     int  _publisherArticleVersion;
     long long  _publisherArticleVersionInt64;
+    int  _rankInVideoPlaylist;
     NSString * _referencedArticleId;
     NSString * _referringSourceApplication;
     NSString * _referringUrl;
@@ -184,6 +197,7 @@
     NSString * _sourceBinId;
     NSString * _sourceChannelId;
     NSString * _storyType;
+    double  _subscribedChannelCtr;
     bool  _subscriptionOnlyArticle;
     NSString * _surfacedByChannelId;
     NSString * _surfacedBySectionId;
@@ -206,12 +220,14 @@
 @property (nonatomic) bool adSupportedChannel;
 @property (nonatomic) double agedPersonalizationScore;
 @property (nonatomic) double agedUserFeedbackScore;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSAlternateHeadline *alternateHeadline;
 @property (nonatomic, retain) NSString *anfComponentId;
 @property (nonatomic) int articleDisplayRankInGroup;
 @property (nonatomic) int articleHostViewType;
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic) bool articleLoaded;
 @property (nonatomic, retain) NSData *articleSessionId;
+@property (nonatomic) int articleSuggestionOrigin;
 @property (nonatomic) int articleType;
 @property (nonatomic) int articleViewPresentationReason;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
@@ -230,9 +246,12 @@
 @property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic) int curatedContentType;
 @property (nonatomic) bool didBounce;
+@property (nonatomic) bool didExpandDuringView;
 @property (nonatomic) bool didOpenInSafari;
 @property (nonatomic) int displayRank;
 @property (nonatomic) double diversifiedPersonalizationScore;
+@property (nonatomic, retain) NSString *exposedGroupSourceChannelId;
+@property (nonatomic, retain) NSString *exposedInLocationId;
 @property (nonatomic) double featureCtr;
 @property (nonatomic) int feedAutoSubscribeType;
 @property (nonatomic) int feedCellHostType;
@@ -246,18 +265,22 @@
 @property (nonatomic) int groupDisplayRankInForYou;
 @property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupFormationReason;
+@property (nonatomic) int groupLocation;
 @property (nonatomic) int groupPresentationReason;
 @property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasActiveTimeSpent;
 @property (nonatomic) bool hasAdSupportedChannel;
 @property (nonatomic) bool hasAgedPersonalizationScore;
 @property (nonatomic) bool hasAgedUserFeedbackScore;
+@property (nonatomic, readonly) bool hasAlternateHeadline;
 @property (nonatomic, readonly) bool hasAnfComponentId;
 @property (nonatomic) bool hasArticleDisplayRankInGroup;
 @property (nonatomic) bool hasArticleHostViewType;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic) bool hasArticleLoaded;
 @property (nonatomic, readonly) bool hasArticleSessionId;
+@property (nonatomic) bool hasArticleSuggestionOrigin;
 @property (nonatomic) bool hasArticleType;
 @property (nonatomic) bool hasArticleViewPresentationReason;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
@@ -276,9 +299,12 @@
 @property (nonatomic, readonly) bool hasCreativeId;
 @property (nonatomic) bool hasCuratedContentType;
 @property (nonatomic) bool hasDidBounce;
+@property (nonatomic) bool hasDidExpandDuringView;
 @property (nonatomic) bool hasDidOpenInSafari;
 @property (nonatomic) bool hasDisplayRank;
 @property (nonatomic) bool hasDiversifiedPersonalizationScore;
+@property (nonatomic, readonly) bool hasExposedGroupSourceChannelId;
+@property (nonatomic, readonly) bool hasExposedInLocationId;
 @property (nonatomic) bool hasFeatureCtr;
 @property (nonatomic) bool hasFeedAutoSubscribeType;
 @property (nonatomic) bool hasFeedCellHostType;
@@ -291,8 +317,10 @@
 @property (nonatomic) bool hasGroupDisplayRankInForYou;
 @property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupFormationReason;
+@property (nonatomic) bool hasGroupLocation;
 @property (nonatomic) bool hasGroupPresentationReason;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic, readonly) bool hasIadNativeAd;
 @property (nonatomic, readonly) bool hasIadNativeCampaign;
 @property (nonatomic, readonly) bool hasIadNativeCampaignAd;
@@ -340,6 +368,7 @@
 @property (nonatomic) bool hasPreviousWebEmbedLocation;
 @property (nonatomic) bool hasPublisherArticleVersion;
 @property (nonatomic) bool hasPublisherArticleVersionInt64;
+@property (nonatomic) bool hasRankInVideoPlaylist;
 @property (nonatomic, readonly) bool hasReferencedArticleId;
 @property (nonatomic, readonly) bool hasReferringSourceApplication;
 @property (nonatomic, readonly) bool hasReferringUrl;
@@ -347,6 +376,7 @@
 @property (nonatomic, readonly) bool hasSourceBinId;
 @property (nonatomic, readonly) bool hasSourceChannelId;
 @property (nonatomic, readonly) bool hasStoryType;
+@property (nonatomic) bool hasSubscribedChannelCtr;
 @property (nonatomic) bool hasSubscriptionOnlyArticle;
 @property (nonatomic, readonly) bool hasSurfacedByChannelId;
 @property (nonatomic, readonly) bool hasSurfacedBySectionId;
@@ -410,6 +440,7 @@
 @property (nonatomic) int previousWebEmbedLocation;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic) long long publisherArticleVersionInt64;
+@property (nonatomic) int rankInVideoPlaylist;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic, retain) NSString *referringSourceApplication;
 @property (nonatomic, retain) NSString *referringUrl;
@@ -417,6 +448,7 @@
 @property (nonatomic, retain) NSString *sourceBinId;
 @property (nonatomic, retain) NSString *sourceChannelId;
 @property (nonatomic, retain) NSString *storyType;
+@property (nonatomic) double subscribedChannelCtr;
 @property (nonatomic) bool subscriptionOnlyArticle;
 @property (nonatomic, retain) NSString *surfacedByChannelId;
 @property (nonatomic, retain) NSString *surfacedBySectionId;
@@ -440,6 +472,7 @@
 
 - (void).cxx_destruct;
 - (int)StringAsArticleHostViewType:(id)arg1;
+- (int)StringAsArticleSuggestionOrigin:(id)arg1;
 - (int)StringAsArticleType:(id)arg1;
 - (int)StringAsArticleViewPresentationReason:(id)arg1;
 - (int)StringAsCoverArticleFeatureType:(id)arg1;
@@ -449,6 +482,7 @@
 - (int)StringAsFeedPresentationReason:(id)arg1;
 - (int)StringAsFeedSubscriptionOrigin:(id)arg1;
 - (int)StringAsGroupFormationReason:(id)arg1;
+- (int)StringAsGroupLocation:(id)arg1;
 - (int)StringAsGroupPresentationReason:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
 - (int)StringAsLoadFailureReason:(id)arg1;
@@ -468,6 +502,7 @@
 - (void)addSurfacedByTagIds:(id)arg1;
 - (double)agedPersonalizationScore;
 - (double)agedUserFeedbackScore;
+- (id)alternateHeadline;
 - (id)anfComponentId;
 - (int)articleDisplayRankInGroup;
 - (int)articleHostViewType;
@@ -475,6 +510,8 @@
 - (id)articleId;
 - (bool)articleLoaded;
 - (id)articleSessionId;
+- (int)articleSuggestionOrigin;
+- (id)articleSuggestionOriginAsString:(int)arg1;
 - (int)articleType;
 - (id)articleTypeAsString:(int)arg1;
 - (int)articleViewPresentationReason;
@@ -504,9 +541,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)didBounce;
+- (bool)didExpandDuringView;
 - (bool)didOpenInSafari;
 - (int)displayRank;
 - (double)diversifiedPersonalizationScore;
+- (id)exposedGroupSourceChannelId;
+- (id)exposedInLocationId;
 - (double)featureCtr;
 - (int)feedAutoSubscribeType;
 - (id)feedAutoSubscribeTypeAsString:(int)arg1;
@@ -527,20 +567,25 @@
 - (id)groupFeedId;
 - (int)groupFormationReason;
 - (id)groupFormationReasonAsString:(int)arg1;
+- (int)groupLocation;
+- (id)groupLocationAsString:(int)arg1;
 - (int)groupPresentationReason;
 - (id)groupPresentationReasonAsString:(int)arg1;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasActiveTimeSpent;
 - (bool)hasAdSupportedChannel;
 - (bool)hasAgedPersonalizationScore;
 - (bool)hasAgedUserFeedbackScore;
+- (bool)hasAlternateHeadline;
 - (bool)hasAnfComponentId;
 - (bool)hasArticleDisplayRankInGroup;
 - (bool)hasArticleHostViewType;
 - (bool)hasArticleId;
 - (bool)hasArticleLoaded;
 - (bool)hasArticleSessionId;
+- (bool)hasArticleSuggestionOrigin;
 - (bool)hasArticleType;
 - (bool)hasArticleViewPresentationReason;
 - (bool)hasArticleViewingSessionId;
@@ -559,9 +604,12 @@
 - (bool)hasCreativeId;
 - (bool)hasCuratedContentType;
 - (bool)hasDidBounce;
+- (bool)hasDidExpandDuringView;
 - (bool)hasDidOpenInSafari;
 - (bool)hasDisplayRank;
 - (bool)hasDiversifiedPersonalizationScore;
+- (bool)hasExposedGroupSourceChannelId;
+- (bool)hasExposedInLocationId;
 - (bool)hasFeatureCtr;
 - (bool)hasFeedAutoSubscribeType;
 - (bool)hasFeedCellHostType;
@@ -574,8 +622,10 @@
 - (bool)hasGroupDisplayRankInForYou;
 - (bool)hasGroupFeedId;
 - (bool)hasGroupFormationReason;
+- (bool)hasGroupLocation;
 - (bool)hasGroupPresentationReason;
 - (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIadNativeAd;
 - (bool)hasIadNativeCampaign;
 - (bool)hasIadNativeCampaignAd;
@@ -623,6 +673,7 @@
 - (bool)hasPreviousWebEmbedLocation;
 - (bool)hasPublisherArticleVersion;
 - (bool)hasPublisherArticleVersionInt64;
+- (bool)hasRankInVideoPlaylist;
 - (bool)hasReferencedArticleId;
 - (bool)hasReferringSourceApplication;
 - (bool)hasReferringUrl;
@@ -630,6 +681,7 @@
 - (bool)hasSourceBinId;
 - (bool)hasSourceChannelId;
 - (bool)hasStoryType;
+- (bool)hasSubscribedChannelCtr;
 - (bool)hasSubscriptionOnlyArticle;
 - (bool)hasSurfacedByChannelId;
 - (bool)hasSurfacedBySectionId;
@@ -706,6 +758,7 @@
 - (id)previousWebEmbedLocationAsString:(int)arg1;
 - (int)publisherArticleVersion;
 - (long long)publisherArticleVersionInt64;
+- (int)rankInVideoPlaylist;
 - (bool)readFrom:(id)arg1;
 - (id)referencedArticleId;
 - (id)referringSourceApplication;
@@ -715,12 +768,14 @@
 - (void)setAdSupportedChannel:(bool)arg1;
 - (void)setAgedPersonalizationScore:(double)arg1;
 - (void)setAgedUserFeedbackScore:(double)arg1;
+- (void)setAlternateHeadline:(id)arg1;
 - (void)setAnfComponentId:(id)arg1;
 - (void)setArticleDisplayRankInGroup:(int)arg1;
 - (void)setArticleHostViewType:(int)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleLoaded:(bool)arg1;
 - (void)setArticleSessionId:(id)arg1;
+- (void)setArticleSuggestionOrigin:(int)arg1;
 - (void)setArticleType:(int)arg1;
 - (void)setArticleViewPresentationReason:(int)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;
@@ -739,9 +794,12 @@
 - (void)setCreativeId:(id)arg1;
 - (void)setCuratedContentType:(int)arg1;
 - (void)setDidBounce:(bool)arg1;
+- (void)setDidExpandDuringView:(bool)arg1;
 - (void)setDidOpenInSafari:(bool)arg1;
 - (void)setDisplayRank:(int)arg1;
 - (void)setDiversifiedPersonalizationScore:(double)arg1;
+- (void)setExposedGroupSourceChannelId:(id)arg1;
+- (void)setExposedInLocationId:(id)arg1;
 - (void)setFeatureCtr:(double)arg1;
 - (void)setFeedAutoSubscribeType:(int)arg1;
 - (void)setFeedCellHostType:(int)arg1;
@@ -755,8 +813,10 @@
 - (void)setGroupDisplayRankInForYou:(int)arg1;
 - (void)setGroupFeedId:(id)arg1;
 - (void)setGroupFormationReason:(int)arg1;
+- (void)setGroupLocation:(int)arg1;
 - (void)setGroupPresentationReason:(int)arg1;
 - (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasActiveTimeSpent:(bool)arg1;
 - (void)setHasAdSupportedChannel:(bool)arg1;
 - (void)setHasAgedPersonalizationScore:(bool)arg1;
@@ -764,6 +824,7 @@
 - (void)setHasArticleDisplayRankInGroup:(bool)arg1;
 - (void)setHasArticleHostViewType:(bool)arg1;
 - (void)setHasArticleLoaded:(bool)arg1;
+- (void)setHasArticleSuggestionOrigin:(bool)arg1;
 - (void)setHasArticleType:(bool)arg1;
 - (void)setHasArticleViewPresentationReason:(bool)arg1;
 - (void)setHasAutoSubscribeCtr:(bool)arg1;
@@ -778,6 +839,7 @@
 - (void)setHasCoverArticleFeatureType:(bool)arg1;
 - (void)setHasCuratedContentType:(bool)arg1;
 - (void)setHasDidBounce:(bool)arg1;
+- (void)setHasDidExpandDuringView:(bool)arg1;
 - (void)setHasDidOpenInSafari:(bool)arg1;
 - (void)setHasDisplayRank:(bool)arg1;
 - (void)setHasDiversifiedPersonalizationScore:(bool)arg1;
@@ -790,6 +852,7 @@
 - (void)setHasGroupArticleCountInForYou:(bool)arg1;
 - (void)setHasGroupDisplayRankInForYou:(bool)arg1;
 - (void)setHasGroupFormationReason:(bool)arg1;
+- (void)setHasGroupLocation:(bool)arg1;
 - (void)setHasGroupPresentationReason:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
 - (void)setHasIsBreakingNewsArticle:(bool)arg1;
@@ -826,6 +889,8 @@
 - (void)setHasPreviousWebEmbedLocation:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersionInt64:(bool)arg1;
+- (void)setHasRankInVideoPlaylist:(bool)arg1;
+- (void)setHasSubscribedChannelCtr:(bool)arg1;
 - (void)setHasSubscriptionOnlyArticle:(bool)arg1;
 - (void)setHasTopStoryMandatoryArticleCount:(bool)arg1;
 - (void)setHasTopStoryOptionalArticleCount:(bool)arg1;
@@ -883,6 +948,7 @@
 - (void)setPreviousWebEmbedLocation:(int)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setPublisherArticleVersionInt64:(long long)arg1;
+- (void)setRankInVideoPlaylist:(int)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setReferringSourceApplication:(id)arg1;
 - (void)setReferringUrl:(id)arg1;
@@ -890,6 +956,7 @@
 - (void)setSourceBinId:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;
 - (void)setStoryType:(id)arg1;
+- (void)setSubscribedChannelCtr:(double)arg1;
 - (void)setSubscriptionOnlyArticle:(bool)arg1;
 - (void)setSurfacedByChannelId:(id)arg1;
 - (void)setSurfacedBySectionId:(id)arg1;
@@ -909,6 +976,7 @@
 - (id)sourceBinId;
 - (id)sourceChannelId;
 - (id)storyType;
+- (double)subscribedChannelCtr;
 - (bool)subscriptionOnlyArticle;
 - (id)surfacedByChannelId;
 - (id)surfacedBySectionId;

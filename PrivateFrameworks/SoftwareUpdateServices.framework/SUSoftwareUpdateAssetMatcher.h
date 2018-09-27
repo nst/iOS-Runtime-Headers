@@ -4,33 +4,30 @@
 
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher {
     bool  _checkTatsu;
-    NSNumber * _delayPeriod;
     NSString * _fromBuild;
     NSString * _fromProductType;
     NSString * _fromReleaseType;
     NSString * _fromVersion;
+    NSDictionary * _matcherInfo;
     SUPreferences * _preferences;
-    NSString * _requestedPMV;
 }
 
 @property (nonatomic) bool compareWithTatsuForEligibility;
-@property (nonatomic, readonly) NSNumber *delayPeriod;
 @property (nonatomic, readonly) NSString *fromBuild;
 @property (nonatomic, readonly) NSString *fromProductType;
 @property (nonatomic, readonly) NSString *fromReleaseType;
 @property (nonatomic, readonly) NSString *fromVersion;
+@property (nonatomic, readonly) NSDictionary *matcherInfo;
 @property (nonatomic, retain) SUPreferences *preferences;
-@property (nonatomic, readonly) NSString *requestedPMV;
 
 + (id)matcherForCurrentDevice;
++ (id)matcherForCurrentDeviceWithInfo:(id)arg1;
 + (id)matcherForCurrentDeviceWithInterestedStates:(int)arg1;
-+ (id)matcherForCurrentDeviceWithRequestedPMV:(id)arg1;
-+ (id)matcherForCurrentDeviceWithRequestedPMV:(id)arg1 andDelayPeriod:(id)arg2;
 
 - (id)_copyMatchingAssetsAfterSortingAndFiltering:(id)arg1;
 - (id)_createCleanOSVersionString:(id)arg1;
 - (id)_createSortedAndFilteredAssetResults:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
-- (id)_fileterPatchesIfNecessary:(id)arg1;
+- (id)_filterPatchesIfNecessary:(id)arg1;
 - (id)_findMatchFromCandidates:(id)arg1 error:(id*)arg2;
 - (unsigned long long)_getIndexOfHighestVersionedAsset:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
 - (bool)_isDeviceEligibleForUpdate:(id)arg1;
@@ -38,14 +35,13 @@
 - (void)_modifyMADownloadOptions:(id)arg1;
 - (bool)compareWithTatsuForEligibility;
 - (void)dealloc;
-- (id)delayPeriod;
 - (id)fromBuild;
 - (id)fromProductType;
 - (id)fromReleaseType;
 - (id)fromVersion;
-- (id)initWithVersion:(id)arg1 build:(id)arg2 productType:(id)arg3 releaseType:(id)arg4 interestedStates:(int)arg5 requestedPMV:(id)arg6 delayPeriod:(id)arg7;
+- (id)initWithVersion:(id)arg1 build:(id)arg2 productType:(id)arg3 releaseType:(id)arg4 interestedStates:(int)arg5 matcherInfo:(id)arg6;
+- (id)matcherInfo;
 - (id)preferences;
-- (id)requestedPMV;
 - (void)setCompareWithTatsuForEligibility:(bool)arg1;
 - (void)setPreferences:(id)arg1;
 

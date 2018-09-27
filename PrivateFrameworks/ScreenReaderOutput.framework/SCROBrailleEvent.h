@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic) bool shouldDisplay;
+@property (nonatomic, readonly) int type;
 
 + (id)eventWithType:(int)arg1 data:(id)arg2;
 + (id)eventWithType:(int)arg1 data:(id)arg2 data2:(id)arg3 data3:(id)arg4;

@@ -14,6 +14,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_displayLayoutForDisplayType:(long long)arg1;
 - (void)addLayoutElementAssertion:(id)arg1;
 - (void)beginLayoutTransition:(id)arg1;

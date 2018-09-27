@@ -7,6 +7,7 @@
 
 - (NSNumber *)contentValue;
 - (<HACCContentModuleDelegate> *)delegate;
+- (bool)enabled;
 - (unsigned long long)module;
 - (void)setDelegate:(id <HACCContentModuleDelegate>)arg1;
 - (void)setModule:(unsigned long long)arg1;

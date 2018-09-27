@@ -9,7 +9,9 @@
     NSString * _campaignId;
     NSString * _campaignType;
     NSString * _creativeId;
+    int  _groupType;
     struct { 
+        unsigned int groupType : 1; 
         unsigned int paidSubscriptionConversionPointType : 1; 
         unsigned int parentFeedType : 1; 
         unsigned int resultType : 1; 
@@ -34,12 +36,14 @@
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic) int groupType;
 @property (nonatomic) bool hasArrivedFromAd;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
 @property (nonatomic, readonly) bool hasCampaignId;
 @property (nonatomic, readonly) bool hasCampaignType;
 @property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadQtoken;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointType;
 @property (nonatomic) bool hasParentFeedType;
@@ -60,6 +64,7 @@
 @property (nonatomic, retain) NSData *subscriptionPurchaseSessionId;
 
 - (void).cxx_destruct;
+- (int)StringAsGroupType:(id)arg1;
 - (int)StringAsPaidSubscriptionConversionPointType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
 - (bool)arrivedFromAd;
@@ -71,12 +76,15 @@
 - (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (int)groupType;
+- (id)groupTypeAsString:(int)arg1;
 - (bool)hasArrivedFromAd;
 - (bool)hasArticleId;
 - (bool)hasArticleViewingSessionId;
 - (bool)hasCampaignId;
 - (bool)hasCampaignType;
 - (bool)hasCreativeId;
+- (bool)hasGroupType;
 - (bool)hasIadQtoken;
 - (bool)hasPaidSubscriptionConversionPointType;
 - (bool)hasParentFeedType;
@@ -104,7 +112,9 @@
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
 - (void)setCreativeId:(id)arg1;
+- (void)setGroupType:(int)arg1;
 - (void)setHasArrivedFromAd:(bool)arg1;
+- (void)setHasGroupType:(bool)arg1;
 - (void)setHasPaidSubscriptionConversionPointType:(bool)arg1;
 - (void)setHasParentFeedType:(bool)arg1;
 - (void)setHasResultType:(bool)arg1;

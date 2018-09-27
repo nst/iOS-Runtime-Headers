@@ -33,10 +33,12 @@
 - (unsigned long long)engagementType;
 - (unsigned long long)experience;
 - (unsigned long long)feedbackSource;
+- (unsigned long long)hash;
 - (id)initWithAtxResponse:(id)arg1 abGroup:(id)arg2 experience:(unsigned long long)arg3 intentType:(id)arg4;
 - (id)initWithCoder:(id)arg1;
 - (id)intentType;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqualToAppPreferenceResponse:(id)arg1;
 - (id)json;
 - (id)jsonData;
 - (id)jsonDescription;

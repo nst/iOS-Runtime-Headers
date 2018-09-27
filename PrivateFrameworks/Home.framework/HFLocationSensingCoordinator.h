@@ -4,12 +4,14 @@
 
 @interface HFLocationSensingCoordinator : NSObject <HFLocationManagerObserver> {
     NSUserDefaults * _defaults;
+    int  _defaultsChangedNotifyToken;
     <HFLocationSensingCoordinatorDelegate> * _delegate;
     HFLocationManagerDispatcher * _locationDispatcher;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSUserDefaults *defaults;
+@property (nonatomic) int defaultsChangedNotifyToken;
 @property (nonatomic) <HFLocationSensingCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -19,8 +21,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_defaultsDidChange;
 - (void)dealloc;
 - (id)defaults;
+- (int)defaultsChangedNotifyToken;
 - (id)delegate;
 - (bool)homeSensingEnabled;
 - (id)init;
@@ -28,8 +32,8 @@
 - (id)locationDispatcher;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (id)locationSensingAvailableFuture;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setDefaults:(id)arg1;
+- (void)setDefaultsChangedNotifyToken:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHomeSensingEnabled:(bool)arg1;
 - (void)setLocationDispatcher:(id)arg1;

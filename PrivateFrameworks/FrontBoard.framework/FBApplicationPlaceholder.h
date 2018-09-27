@@ -16,7 +16,7 @@
 @property (getter=isPausable, nonatomic, readonly) bool pausable;
 @property (nonatomic, readonly) double percentComplete;
 @property (getter=isPrioritizable, nonatomic, readonly) bool prioritizable;
-@property (nonatomic, readonly, retain) <FBApplicationPlaceholderProgress> *progress;
+@property (nonatomic, readonly) <FBApplicationPlaceholderProgress> *progress;
 @property (getter=_proxy, setter=_setProxy:, nonatomic, retain) LSApplicationProxy *proxy;
 @property (getter=isRestricted, nonatomic, readonly) bool restricted;
 @property (getter=isResumable, nonatomic, readonly) bool resumable;

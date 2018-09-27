@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INBookRestaurantReservationIntentResponse : INIntentResponse <INBookRestaurantReservationIntentResponseExport> {
+@interface INBookRestaurantReservationIntentResponse : INIntentResponse <INBookRestaurantReservationIntentResponseExport, INImageProxyInjecting> {
     INRestaurantReservationUserBooking * _userBooking;
 }
 
@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (long long)code;
-- (id)description;
-- (id)descriptionAtIndent:(unsigned long long)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;

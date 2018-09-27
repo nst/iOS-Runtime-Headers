@@ -6,6 +6,7 @@
     bool  _attachPanoramaMetadata;
     struct opaqueCMFormatDescription { } * _cachedVideoFormatDescription;
     bool  _cameraSupportsFlash;
+    bool  _clientIsRunningInMediaserverd;
     int  _clientVideoRetainedBufferCount;
     <BWRemoteQueueSinkNodeDelegate> * _delegate;
     bool  _disableFlatDictionaryVDOMetadata;
@@ -16,8 +17,12 @@
         unsigned int flags; 
         long long epoch; 
     }  _lastPTS;
+    struct localQueueOpaque { } * _localQueue;
     struct OpaqueFigFlatDictionaryKeySpec { } * _makerNoteKeySpec;
     bool  _mediaTypeIsVideo;
+    unsigned int  _numberOfMediaBuffersLocallyDequeued;
+    unsigned int  _numberOfMediaBuffersLocallyEnqueued;
+    bool  _panoramaRequiresLTMLocking;
     struct OpaqueFigSimpleMutex { } * _peerTerminationMutex;
     bool  _pixelBufferAttachmentModificationAllowed;
     int  _receiverPID;
@@ -33,7 +38,9 @@
 
 + (void)initialize;
 
-- (void)_attachDiagnosticMetadataIfDevicePropertiesLockedForPanorama:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_attachDiagnosticMetadataIfDevicePropertiesLockedForPanorama:(struct opaqueCMSampleBuffer { }*)arg1 panoramaRequiresLTMLocking:(bool)arg2;
+- (int)_finishRenderingSampleBufferUsingTheLocalQueue:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)_finishRenderingSampleBufferUsingTheRemoteCaptureStack:(struct opaqueCMSampleBuffer { }*)arg1 isDroppedSample:(bool)arg2;
 - (void)_handlePeerTerminated;
 - (bool)attachPanoramaMetadata;
 - (bool)cameraSupportsFlash;
@@ -46,6 +53,7 @@
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (id)initWithMediaType:(unsigned int)arg1 receiverPID:(int)arg2;
 - (id)nodeSubType;
+- (bool)panoramaRequiresLTMLocking;
 - (bool)pixelBufferAttachmentModificationAllowed;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)registerSurfacesFromSourcePool:(id)arg1;
@@ -56,6 +64,7 @@
 - (void)setClientVideoRetainedBufferCount:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscardsLateSampleBuffers:(bool)arg1;
+- (void)setPanoramaRequiresLTMLocking:(bool)arg1;
 - (void)setPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (void)setRemoveCameraIntrinsicMatrixAttachment:(bool)arg1;
 - (void)setVideoColorInfoOverride:(id)arg1;

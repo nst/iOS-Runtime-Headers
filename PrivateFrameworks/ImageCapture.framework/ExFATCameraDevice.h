@@ -9,7 +9,7 @@
 - (void)dealloc;
 - (bool)eject;
 - (void)enumerateContent;
-- (void)finalize;
+- (bool)iCloudPhotosEnabled;
 - (id)initWithVolumePath:(id)arg1 mediaPaths:(id)arg2;
 - (unsigned long long)itemsInFolder:(id)arg1;
 

@@ -3,16 +3,16 @@
  */
 
 @interface UNSLocalNotificationClient : NSObject <UNSLocationMonitorObserver> {
+    bool  _allowsUnlimitedLocalNotifications;
     NSString * _bundleIdentifier;
-    bool  _isSystemApplication;
+    NSMutableArray * _lazy_pendingNotificationsAwaitingDelivery;
     PCPersistentTimer * _localNotificationTimer;
     UNSLocationMonitor * _locationMonitor;
     bool  _monitoringLocaleAndTimeChanges;
     UNSNotificationRepository * _notificationRepository;
+    UNSNotificationScheduleRepository * _notificationScheduleRepository;
     UNSPendingNotificationRepository * _pendingNotificationRepository;
-    NSMutableArray * _pendingNotificationsAwaitingDelivery;
     NSObject<OS_dispatch_queue> * _queue;
-    bool  _requiresLocalNotifications;
     bool  _userNotificationsEnabled;
 }
 
@@ -28,8 +28,8 @@
 - (void)_invalidateNotificationRecordTimersAndRegionMonitors;
 - (void)_invalidatePendingNotificationRecordRegionMonitors;
 - (void)_invalidatePendingNotificationRecordTimers;
+- (id)_lastLocalNotificationFireDate;
 - (id)_pendingNotificationRecords;
-- (void)_postDarwinSnoozeNotifications:(id)arg1;
 - (void)_queue_triggerDidFireForDate:(id)arg1;
 - (void)_queue_triggerDidFireForRegion:(id)arg1;
 - (void)_queue_triggerDidFireForTimer:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)handleApplicationStateRestore;
 - (void)handleLocaleChange;
 - (void)handleSignificantTimeChange;
-- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 locationMonitor:(id)arg3 bundleIdentifier:(id)arg4 isSystemApplication:(bool)arg5 requiresLocalNotifications:(bool)arg6 userNotificationsEnabled:(bool)arg7 queue:(id)arg8;
+- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 notificationScheduleRepository:(id)arg3 locationMonitor:(id)arg4 bundleIdentifier:(id)arg5 allowsUnlimitedLocalNotifications:(bool)arg6 userNotificationsEnabled:(bool)arg7 queue:(id)arg8;
 - (void)invalidate;
 - (void)locationMonitor:(id)arg1 triggerDidFireForRegion:(id)arg2 forBundleIdentifier:(id)arg3;
 - (id)pendingNotificationRecords;

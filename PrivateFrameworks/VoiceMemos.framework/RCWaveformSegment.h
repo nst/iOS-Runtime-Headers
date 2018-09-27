@@ -4,6 +4,7 @@
 
 @interface RCWaveformSegment : NSObject <NSSecureCoding> {
     NSData * _averagePowerLevelData;
+    bool  _isRendered;
     struct { 
         double beginTime; 
         double endTime; 
@@ -12,6 +13,7 @@
 
 @property (nonatomic, readonly) const float*averagePowerLevels;
 @property (nonatomic, readonly) long long averagePowerLevelsCount;
+@property (nonatomic) bool isRendered;
 @property (nonatomic, readonly) struct { double x1; double x2; } timeRange;
 
 + (id)_discontinuityRepairedSegmentsByGrowingToFillGapsInSegments:(id)arg1;
@@ -22,6 +24,7 @@
 + (id)emptySegmentWithTimeRange:(struct { double x1; double x2; })arg1;
 + (void)initialize;
 + (id)segmentsByMergingSegments:(id)arg1 preferredSegmentDuration:(double)arg2;
++ (id)segmentsByMergingSegments:(id)arg1 preferredSegmentDuration:(double)arg2 beforeTime:(double)arg3 andThenUsePreferredSegmentDuration:(double)arg4;
 + (id)segmentsByReparingDiscontinuitiesInSegments:(id)arg1;
 + (id)segmentsByShiftingSegments:(id)arg1 byTimeOffset:(double)arg2;
 + (bool)supportsSecureCoding;
@@ -40,10 +43,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
+- (bool)isRendered;
 - (bool)isWaveformDataEqualToDataInSegment:(id)arg1;
 - (id)segmentByClippingToTimeRange:(struct { double x1; double x2; })arg1;
 - (id)segmentsByJoiningIfSmallSegment:(id)arg1;
 - (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned long long)arg2;
+- (void)setIsRendered:(bool)arg1;
 - (id)simpleDescription;
 - (struct { double x1; double x2; })timeRange;
 - (id)verboseDescription;

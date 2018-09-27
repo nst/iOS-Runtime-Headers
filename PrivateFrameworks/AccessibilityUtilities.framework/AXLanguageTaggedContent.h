@@ -3,14 +3,14 @@
  */
 
 @interface AXLanguageTaggedContent : NSObject {
+    NSString * _contentString;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
     }  _currentChunk;
     NSArray * _currentDialects;
-    NSLinguisticTagger * _linguisticTagger;
     bool  _predictedByTagger;
-    bool  _splitContentOnNewlines;
+    NSMutableOrderedSet * _predictedSecondaryLangMaps;
     bool  _tagged;
     NSMutableArray * _tags;
     NSMutableOrderedSet * _unpredictedAmbiguousLangMaps;
@@ -18,20 +18,24 @@
 }
 
 @property (nonatomic, readonly) NSString *content;
+@property (nonatomic, copy) NSString *contentString;
 @property (nonatomic, retain) NSArray *currentDialects;
-@property (nonatomic, retain) NSLinguisticTagger *linguisticTagger;
-@property (nonatomic) bool splitContentOnNewlines;
+@property (nonatomic, retain) NSMutableOrderedSet *predictedSecondaryLangMaps;
 @property (getter=isTagged, nonatomic) bool tagged;
 @property (nonatomic, retain) NSMutableArray *tags;
 @property (nonatomic, retain) NSMutableOrderedSet *unpredictedAmbiguousLangMaps;
 @property (nonatomic, copy) NSString *userPreferredLangID;
 
 - (void).cxx_destruct;
+- (bool)_addLanguageTagForCurrentChunk;
 - (void)_addTag;
+- (id)_allLangIDs;
 - (bool)_isStringCombinationOfCommonAndEmoji:(id)arg1;
+- (struct { int x1; float x2; }*)_languageHintsEvenlyDistributedWithProbability:(float)arg1 excludingHints:(id)arg2;
 - (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)ambiguousLangMaps;
 - (id)content;
+- (id)contentString;
 - (id)currentDialects;
 - (id)description;
 - (void)enumeratePredictedTags:(id /* block */)arg1;
@@ -40,20 +44,21 @@
 - (bool)hasOnlyWesternLangMaps;
 - (id)initWithContent:(id)arg1;
 - (bool)isTagged;
+- (id)langCodeForlangId:(int)arg1;
+- (int)langIDforLangCode:(id)arg1;
 - (bool)langMapIsSignificant:(id)arg1;
-- (id)linguisticTagger;
+- (id)predictedSecondaryLangMaps;
 - (id)primaryAmbiguousDialect;
 - (id)primaryUnambiguousDialect;
+- (void)setContentString:(id)arg1;
 - (void)setCurrentDialects:(id)arg1;
-- (void)setLinguisticTagger:(id)arg1;
-- (void)setSplitContentOnNewlines:(bool)arg1;
+- (void)setPredictedSecondaryLangMaps:(id)arg1;
 - (void)setTagged:(bool)arg1;
 - (void)setTags:(id)arg1;
 - (void)setUnpredictedAmbiguousLangMaps:(id)arg1;
 - (void)setUserPreferredLangID:(id)arg1;
 - (id)significantAmbiguousLangMaps;
 - (id)significantAmbiguousLangMapsForUserKeyboards;
-- (bool)splitContentOnNewlines;
 - (void)tagContent;
 - (id)tags;
 - (id)unambiguousLangMaps;

@@ -29,8 +29,9 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (unsigned long long)_getLinkQuality:(id)arg1;
 - (id)_getTrackedPeripheralWithIdentifier:(id)arg1;
-- (id)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2;
+- (id)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 RSSI:(id)arg3;
 - (void)_probeReachabilityForTrackedAccessories;
 - (void)_removeTrackedPeripheral:(id)arg1;
 - (void)_reportHAPPeripheral:(id)arg1;

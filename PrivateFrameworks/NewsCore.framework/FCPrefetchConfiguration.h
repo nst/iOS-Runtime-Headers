@@ -4,6 +4,7 @@
 
 @interface FCPrefetchConfiguration : NSObject {
     bool  _backgroundFetchEnabled;
+    NSDictionary * _configDict;
     unsigned long long  _maximumFavoritesFeedsToPrefetch;
     double  _minimumBackgroundFetchInterval;
     NTPBPrefetchConfig * _pbConfig;
@@ -19,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)hash;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithDefaults;
 - (id)initWithPBPrefetchConfig:(id)arg1;
 - (bool)isBackgroundFetchEnabled;

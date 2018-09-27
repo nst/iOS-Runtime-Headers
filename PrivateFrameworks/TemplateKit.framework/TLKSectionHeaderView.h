@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKMultilineText *headerText;
+@property (nonatomic, retain) TLKMultilineText *headerText;
 @property (retain) UILabel *headerTextLabel;
 @property (readonly) Class superclass;
 
@@ -24,7 +24,6 @@
 - (id)headerText;
 - (id)headerTextLabel;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setBackgroundView:(id)arg1;
 - (void)setHeaderText:(id)arg1;

@@ -5,11 +5,9 @@
 @interface MKPlacePhotosView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     UIActivityIndicatorView * _activityIndicator;
     int  _actualPage;
-    UILabel * _authorLabel;
     UIVisualEffectView * _bottomEffectView;
     UIView * _bottomView;
     <MKPlacePhotosViewDelegate> * _delegate;
-    UILabel * _descriptionLabel;
     NSArray * _fontConstraints;
     UIImageView * _gradientView;
     UILabel * _licenseLabel;
@@ -21,7 +19,9 @@
     UIScrollView * _scrollView;
     NSMutableArray * _singlePhotoArray;
     NSLayoutConstraint * _statusBarHeightConstraint;
+    UILabel * _subtitleLabel;
     unsigned long long  _textDisplayedForPage;
+    UILabel * _titleLabel;
     UIVisualEffectView * _topView;
 }
 
@@ -37,6 +37,7 @@
 - (void)contentSizeDidChange;
 - (unsigned long long)currentPage;
 - (id)delegate;
+- (void)dismiss;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)headerTitleForPage:(unsigned long long)arg1;
 - (void)hideToView:(id)arg1;

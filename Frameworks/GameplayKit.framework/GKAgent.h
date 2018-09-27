@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKAgent : GKComponent <NSCoding> {
+@interface GKAgent : GKComponent <NSSecureCoding> {
     GKBehavior * _behavior;
     <GKAgentDelegate> * _delegate;
     struct GKSimpleVehicle { 
@@ -79,6 +79,8 @@
 @property (nonatomic) float maxSpeed;
 @property (nonatomic) float radius;
 @property (nonatomic) float speed;
+
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

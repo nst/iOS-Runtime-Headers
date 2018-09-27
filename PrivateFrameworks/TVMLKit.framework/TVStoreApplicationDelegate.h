@@ -27,6 +27,7 @@
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
+- (id)_bagBootURL;
 - (void)_controllerDidDisplay:(id)arg1;
 - (void)_launchApp;
 - (void)_loadWithBootURL:(id)arg1;
@@ -38,12 +39,14 @@
 - (bool)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (unsigned long long)application:(id)arg1 supportedInterfaceOrientationsForWindow:(id)arg2;
 - (void)applicationDidEnterBackground:(id)arg1;
+- (id)bagBootURLKey;
 - (id)bagCache;
 - (id)bootURL;
 - (id)cachedBagPath;
 - (void)dealloc;
 - (void)didShowViewController;
 - (id)init;
+- (id)offlineJSURL;
 - (bool)overrideOrientation;
 - (void)reload;
 - (void)setOverrideOrientation:(bool)arg1;

@@ -5,7 +5,8 @@
 
 @required
 
-- (void)registerNameDelegate:(PEXNameDelegate *)arg1;
-- (void)unregisterNameDelegate:(PEXNameDelegate *)arg1;
+- (void)hibernate;
+- (void)startLoadingWithManager:(_ICLexiconManager *)arg1;
+- (void)warmUp;
 
 @end

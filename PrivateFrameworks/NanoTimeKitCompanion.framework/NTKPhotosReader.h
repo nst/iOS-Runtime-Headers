@@ -15,6 +15,7 @@
 @property (nonatomic) unsigned long long mutationCount;
 @property (nonatomic, readonly) NSString *resourceDirectory;
 
++ (id)readerForMemoriesWithResourceDirectory:(id)arg1;
 + (id)readerForResourceDirectory:(id)arg1;
 + (id)readerForSyncedAlbumWithResourceDirectory:(id)arg1;
 

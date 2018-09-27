@@ -8,6 +8,7 @@
     BLActivityAlert * _iPhotoMigrationActivityAlert;
     bool  _isOnWifi;
     bool  _isReachable;
+    NSSet * _notificationSuppressionContexts;
     int  _observeForRechabilityChanges;
     int  _photoStreamActivityToken;
     bool  _photoStreamIsBusy;
@@ -15,7 +16,6 @@
     int  _sharedPhotoStreamActivityToken;
     int  _sharedPhotoStreamInvitationFailureToken;
     bool  _sharedPhotoStreamIsBusy;
-    bool  _urlNeedsHandling;
     UIWindow * _window;
 }
 
@@ -27,6 +27,7 @@
 @property (nonatomic, retain) BLActivityAlert *iPhotoMigrationActivityAlert;
 @property (nonatomic, readonly) bool isOnWifi;
 @property (nonatomic, readonly) bool isReachable;
+@property (nonatomic, copy) NSSet *notificationSuppressionContexts;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWindow *window;
 
@@ -35,7 +36,6 @@
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
 - (void)_cleanUpOutboundSharingAssets;
-- (void)_finishExtendedTest;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
 - (void)_setImageOptions;
@@ -61,11 +61,13 @@
 - (bool)isOnWifi;
 - (bool)isReachable;
 - (id)mainWindow;
+- (id)notificationSuppressionContexts;
 - (void)photosPreferencesChanged;
 - (id)rootViewController;
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;
 - (void)setIPhotoMigrationActivityAlert:(id)arg1;
+- (void)setNotificationSuppressionContexts:(id)arg1;
 - (void)setReceivingRemoteControlEvents:(bool)arg1;
 - (void)sharedFinishedLaunching:(bool)arg1;
 - (bool)shouldAllowSBAlertSupression;

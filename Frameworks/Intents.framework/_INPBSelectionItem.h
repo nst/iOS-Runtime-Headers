@@ -2,38 +2,36 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBSelectionItem : PBCodable <NSCopying> {
-    PBUnknownFields * _unknownFields;
+@interface _INPBSelectionItem : PBCodable <NSCopying, NSSecureCoding, _INPBSelectionItem> {
+    struct { }  _has;
     NSString * _uuid;
     _INPBIntentSlotValue * _value;
     NSString * _vocabularyValue;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasUuid;
 @property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, readonly) bool hasVocabularyValue;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-@property (nonatomic, retain) NSString *uuid;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, retain) _INPBIntentSlotValue *value;
-@property (nonatomic, retain) NSString *vocabularyValue;
-
-+ (id)options;
+@property (nonatomic, copy) NSString *vocabularyValue;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasUuid;
 - (bool)hasValue;
 - (bool)hasVocabularyValue;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setVocabularyValue:(id)arg1;
-- (id)unknownFields;
 - (id)uuid;
 - (id)value;
 - (id)vocabularyValue;

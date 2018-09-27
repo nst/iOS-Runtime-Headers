@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NTKWorldClockComplication *complication;
 @property (nonatomic, readonly) <NTKWorldClockComplicationDisplay> *legacyDisplay;
 
-+ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_activate;

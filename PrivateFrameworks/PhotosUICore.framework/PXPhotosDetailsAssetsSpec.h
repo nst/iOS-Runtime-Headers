@@ -44,7 +44,6 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } gridItemSize;
 @property (nonatomic, readonly) bool shouldShowTitle;
 
-+ (struct CGSize { double x1; double x2; })bestItemSizeForAvailableWidth:(double)arg1 screenScale:(double)arg2 bestSpacing:(double*)arg3 bestInset:(double*)arg4;
 + (bool)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;

@@ -36,13 +36,13 @@
 @property (nonatomic, readonly) long long rejectedCandidateCount;
 @property (nonatomic, readonly) long long touchCount;
 
+- (void).cxx_destruct;
 - (id)aggregateReport;
 - (long long)autocorrectionCount;
 - (long long)backspaceCount;
 - (long long)backspaceIntoAutocorrectionCount;
 - (bool)backspacedIntoAutocorrection;
 - (long long)characterCount;
-- (void)dealloc;
 - (long long)falseBackspaceCount;
 - (long long)falseBackspaceIntoAutocorrectionCount;
 - (void)handleTouch:(id)arg1;

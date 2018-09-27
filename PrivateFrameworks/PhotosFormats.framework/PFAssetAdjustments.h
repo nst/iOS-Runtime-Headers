@@ -3,6 +3,7 @@
  */
 
 @interface PFAssetAdjustments : NSObject <NSCopying> {
+    NSDate * _adjustmentTimestamp;
     NSDictionary * _propertyListDictionary;
 }
 
@@ -11,6 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *adjustmentFormatIdentifier;
 @property (nonatomic, readonly, copy) NSString *adjustmentFormatVersion;
 @property (nonatomic, readonly) unsigned int adjustmentRenderTypes;
+@property (nonatomic) NSDate *adjustmentTimestamp;
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
 @property (nonatomic, retain) NSDictionary *propertyListDictionary;
 
@@ -25,6 +27,7 @@
 - (id)adjustmentFormatIdentifier;
 - (id)adjustmentFormatVersion;
 - (unsigned int)adjustmentRenderTypes;
+- (id)adjustmentTimestamp;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)editorBundleID;
@@ -34,6 +37,7 @@
 - (id)initWithPropertyListDictionary:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)propertyListDictionary;
+- (void)setAdjustmentTimestamp:(id)arg1;
 - (void)setPropertyListDictionary:(id)arg1;
 - (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
 

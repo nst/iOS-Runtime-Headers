@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
-@property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *payload;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *payload;
 
 + (id)message:(long long)arg1 withPacker:(id /* block */)arg2;
 + (id)message:(long long)arg1 withPacker:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
@@ -23,8 +23,8 @@
 + (void)sendMessageWithPacker:(id /* block */)arg1 toConnection:(id)arg2;
 + (void)sendMessageWithPacker:(id /* block */)arg1 toConnection:(id)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;
 
+- (void).cxx_destruct;
 - (id)_errorForXPCMessageReply:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)forcefullyInvokeReplyHandler:(id)arg1;
 - (id)initWithMessage:(long long)arg1 packer:(id /* block */)arg2 replyHandler:(id /* block */)arg3 replyQueue:(id)arg4;

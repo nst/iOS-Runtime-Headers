@@ -3,16 +3,16 @@
  */
 
 @interface SXVASTAnalyticsEventInfoFactory : NSObject <SXVASTAnalyticsEventInfoFactory> {
-    <SXVisibilityMonitoring> * _visibilityMonitor;
-    <SXVolumeProviding> * _volumeProvider;
+    <SVVisibilityMonitoring> * _visibilityMonitor;
+    <SVVolumeProviding> * _volumeProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <SXVisibilityMonitoring> *visibilityMonitor;
-@property (nonatomic, readonly) <SXVolumeProviding> *volumeProvider;
+@property (nonatomic, readonly) <SVVisibilityMonitoring> *visibilityMonitor;
+@property (nonatomic, readonly) <SVVolumeProviding> *volumeProvider;
 
 - (void).cxx_destruct;
 - (id)createAnalyticsEventInfo;

@@ -47,6 +47,7 @@
 - (void)hideCancelButton;
 - (bool)isBiometricEditingAllowed;
 - (bool)isEnrollmentAvailable;
+- (bool)isSafariAutofillRestricted;
 - (id)isTouchIDForPurchasesEnabled:(id)arg1;
 - (bool)isTouchIDForPurchasesRestricted;
 - (id)isTouchIDForStockholmEnabled:(id)arg1;
@@ -59,13 +60,16 @@
 - (bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (void)presentPasscodePaneFromSpecifier:(id)arg1;
 - (void)presentPopoverForContentViewController:(id)arg1;
+- (void)presentPopoverForContentViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)pushPasscodePane;
+- (id)safariAutoFillEnabled:(id)arg1;
 - (void)setBiometricUnlockEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setCurrentlyEnablingTouchIDForPurchases:(bool)arg1;
 - (void)setEnrollController:(id)arg1;
 - (void)setEnrollmentPopoverController:(id)arg1;
 - (void)setModalFlowCancelCompletion:(id /* block */)arg1;
 - (void)setModalFlowSuccessCompletion:(id /* block */)arg1;
+- (void)setSafariAutoFillEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setStoreState:(long long)arg1;
 - (void)setTouchIDForPurchasesEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setTouchIDForStockholmEnabled:(id)arg1 specifier:(id)arg2;

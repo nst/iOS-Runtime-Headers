@@ -24,7 +24,7 @@
 @property (readonly) bool hasMoves;
 @property (readonly) NSIndexSet *insertedIndexes;
 @property (readonly) NSArray *insertedObjects;
-@property (nonatomic, readonly) struct __CFArray { }*movedFromIndexes;
+@property (nonatomic, readonly) const struct __CFArray { }*movedFromIndexes;
 @property (nonatomic, readonly) NSIndexSet *movedIndexes;
 @property (readonly) NSIndexSet *removedIndexes;
 @property (readonly) NSArray *removedObjects;
@@ -49,7 +49,7 @@
 - (id)initWithManualFetchResultAfterChanges:(id)arg1;
 - (id)insertedIndexes;
 - (id)insertedObjects;
-- (struct __CFArray { }*)movedFromIndexes;
+- (const struct __CFArray { }*)movedFromIndexes;
 - (id)movedIndexes;
 - (id)removedIndexes;
 - (id)removedObjects;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTileGroupRule : NSObject <NSCoding, NSCopying> {
+@interface SKTileGroupRule : NSObject <NSCopying, NSSecureCoding> {
     unsigned char  _adjacency;
     NSString * _name;
     SKTileGroup * _parentGroup;
@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSArray *tileDefinitionIDs;
 @property (nonatomic, copy) NSArray *tileDefinitions;
 
++ (bool)supportsSecureCoding;
 + (id)tileGroupRuleWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
 
 - (void).cxx_destruct;
@@ -26,6 +27,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAdjacency:(unsigned long long)arg1 tileDefinitions:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqualToNode:(id)arg1;
 - (id)name;
 - (id)parentGroup;
 - (void)setAdjacency:(unsigned long long)arg1;

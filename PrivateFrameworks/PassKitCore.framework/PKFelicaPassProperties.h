@@ -82,6 +82,7 @@
 - (bool)isBalanceAllowedForCommute;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
+- (bool)isInStation;
 - (bool)isLowBalanceGateNotificationEnabled;
 - (bool)isShinkansenTicketActive;
 - (void)setBalanceAllowedForCommute:(bool)arg1;

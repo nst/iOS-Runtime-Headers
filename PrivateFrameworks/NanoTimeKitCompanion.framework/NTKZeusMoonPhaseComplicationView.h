@@ -4,8 +4,11 @@
 
 @interface NTKZeusMoonPhaseComplicationView : NTKZeusComplicationView <NTKMoonPhaseComplicationDisplay> {
     UIImageView * _imageView;
+    long long  _moonPhaseHemisphere;
+    unsigned long long  _phaseNumber;
 }
 
+@property (nonatomic) bool canUseCurvedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
@@ -15,6 +18,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_updateImages;
+- (void)applyPalette:(id)arg1;
+- (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (id)init;
 - (void)layoutSubviews;
 - (void)setPhaseNumber:(unsigned long long)arg1 hemisphere:(long long)arg2;

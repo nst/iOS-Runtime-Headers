@@ -2,7 +2,17 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAsset : PHObject <CLSInvestigationItem, CLSSnapshotSupportProtocol, MiroMetadata, PUEditableAsset, PVAssetProtocol, PXDisplayAsset, PXLayoutItemInput, PXPlacesGeotaggable, PXShareable, _PLImageLoadingAsset> {
+@interface PHAsset : PHObject <CLSInvestigationItem, CLSPHAssetSupportProtocol, MiroMetadata, PLAssetID, PUEditableAsset, PVAssetProtocol, PXLayoutItemInput, PXMetadataAsset, PXPhotoKitAdjustedDisplayAsset, PXPlacesGeotaggable, PXShareable, _PLImageLoadingAsset> {
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _acceptableCropRect;
     NSDate * _adjustmentTimestamp;
     bool  _assetDescriptionWasSet;
     int  _avalanchePickType;
@@ -29,7 +39,9 @@
     unsigned long long  _groupingState;
     NSString * _groupingUUID;
     bool  _hasAdjustments;
+    float  _hdrGain;
     bool  _hidden;
+    NSData * _imageRequestHints;
     bool  _isPhotoIris;
     unsigned long long  _localResourcesState;
     struct CLLocationCoordinate2D { 
@@ -41,11 +53,22 @@
     long long  _mediaType;
     NSDate * _modificationDate;
     NSString * _originalColorSpace;
+    float  _overallAestheticScore;
     unsigned long long  _persistenceState;
     unsigned long long  _pixelHeight;
     unsigned long long  _pixelWidth;
     long long  _playbackStyle;
     unsigned short  _playbackVariation;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _preferredCropRect;
     short  _savedAssetType;
     NSSet * _sceneClassifications;
     unsigned long long  _thumbnailIndex;
@@ -56,7 +79,9 @@
 }
 
 @property (nonatomic, readonly) NSURL *ALAssetURL;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } acceptableCropRect;
 @property (getter=isAdjusted, nonatomic, readonly) bool adjusted;
+@property (nonatomic, readonly) NSString *adjustedContentIdentifier;
 @property (nonatomic, readonly) PHAdjustmentData *adjustmentData;
 @property (nonatomic, readonly) NSDate *adjustmentTimestamp;
 @property (nonatomic, readonly) double aspectRatio;
@@ -76,20 +101,28 @@
 @property (nonatomic, readonly, copy) NSString *cloudIdentifier;
 @property (nonatomic, readonly) bool cloudIsDeletable;
 @property (nonatomic, readonly) long long cloudPlaceholderKind;
+@property (nonatomic, readonly) double clsAestheticScore;
+@property (nonatomic, readonly) long long clsBlinkCount;
 @property (nonatomic, readonly) double clsContentScore;
 @property (nonatomic, readonly) NSDate *clsDate;
 @property (nonatomic, readonly) NSDate *clsDistanceIdentity;
 @property (nonatomic, readonly) NSData *clsDistanceIdentity;
-@property (nonatomic, readonly) float clsExposureScore;
-@property (nonatomic, readonly) bool clsIsHDR;
-@property (nonatomic, readonly) bool clsIsSDOF;
+@property (nonatomic, readonly) double clsExposureScore;
+@property (nonatomic, readonly) NSString *clsIdentifier;
+@property (nonatomic, readonly) bool clsIsAestheticallyPrettyGood;
+@property (nonatomic, readonly) bool clsIsInterestingHDR;
+@property (nonatomic, readonly) bool clsIsInterestingLivePhoto;
+@property (nonatomic, readonly) bool clsIsInterestingPanorama;
+@property (nonatomic, readonly) bool clsIsInterestingSDOF;
+@property (nonatomic, readonly) bool clsIsInterestingVideo;
 @property (nonatomic, readonly) CLLocation *clsLocation;
 @property (nonatomic, readonly) unsigned long long clsPeopleCount;
 @property (nonatomic, readonly) NSArray *clsPeopleNames;
 @property (nonatomic, readonly) long long clsPlayCount;
 @property (nonatomic, readonly, copy) NSSet *clsSceneClassifications;
 @property (nonatomic, readonly) long long clsShareCount;
-@property (nonatomic, readonly) float clsSharpnessScore;
+@property (nonatomic, readonly) double clsSharpnessScore;
+@property (nonatomic, readonly) long long clsSmileCount;
 @property (nonatomic, readonly) NSArray *clsUnprefetchedPeopleNames;
 @property (nonatomic, readonly) long long clsViewCount;
 @property (nonatomic, readonly) bool complete;
@@ -118,10 +151,12 @@
 @property (nonatomic, readonly) bool hasLocallyAvailableUsefulResource;
 @property (nonatomic, readonly) bool hasPhotoColorAdjustments;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) float hdrGain;
 @property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (getter=isHighFramerateVideo, nonatomic, readonly) bool highFramerateVideo;
 @property (nonatomic, readonly) long long imageOrientation;
 @property (nonatomic, readonly) NSDictionary *imageProperties;
+@property (nonatomic, readonly) NSData *imageRequestHints;
 @property (getter=isInPlaceVideoTrimAllowed, nonatomic, readonly) bool inPlaceVideoTrimAllowed;
 @property (nonatomic, readonly) bool irisVideoMeetsActionRequirements;
 @property (nonatomic, readonly) bool irisVideoMeetsQualityRequirements;
@@ -135,10 +170,12 @@
 @property (nonatomic, readonly) bool isFavorite;
 @property (nonatomic, readonly) bool isHDVideo;
 @property (nonatomic, readonly) bool isHighFrameRateVideo;
+@property (nonatomic, readonly) bool isInCloud;
 @property (nonatomic, readonly) bool isIncludedInCloudFeeds;
 @property (nonatomic, readonly) bool isIncludedInMoments;
 @property (nonatomic, readonly) bool isJPEG;
 @property (nonatomic, readonly) bool isLoopingVideo;
+@property (nonatomic, readonly) bool isMomentSharedAsset;
 @property (nonatomic, readonly) bool isPartOfBurst;
 @property (nonatomic, readonly) bool isPartOfGroup;
 @property (nonatomic, readonly) bool isPhoto;
@@ -173,6 +210,7 @@
 @property (nonatomic, readonly) bool miro_IrisVideoUsable;
 @property (nonatomic, readonly) double miro_IrisVideoUsableDuration;
 @property (nonatomic, readonly) long long miro_analysisVersion;
+@property (nonatomic, retain) PHAssetResource *miro_cachedLocalMostUsefulIrisResource;
 @property (nonatomic, retain) PHAssetResource *miro_cachedLocalMostUsefulResource;
 @property (nonatomic, retain) NSArray *miro_desirableRanges;
 @property (nonatomic, readonly) unsigned long long miro_faceCount;
@@ -187,6 +225,8 @@
 @property (nonatomic, readonly) NSString *originalColorSpace;
 @property (nonatomic, readonly) int originalEXIFOrientation;
 @property (nonatomic, readonly) unsigned long long originalFilesize;
+@property (nonatomic, readonly) unsigned long long originalResourceChoice;
+@property (nonatomic, readonly) float overallAestheticScore;
 @property (nonatomic, readonly, copy) NSString *pathForOriginalImageFile;
 @property (nonatomic, readonly, copy) NSString *pathForOriginalVideoFile;
 @property (nonatomic, readonly, copy) NSString *pathForTrimmedVideoFile;
@@ -194,16 +234,21 @@
 @property (nonatomic, readonly) unsigned long long persistenceState;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) PHAsset *photoKitAsset;
 @property (nonatomic, readonly) NSArray *pickListRanges;
 @property (nonatomic, readonly) unsigned long long pixelHeight;
 @property (nonatomic, readonly) unsigned long long pixelWidth;
+@property (nonatomic, readonly) NSDate *pl_date;
+@property (nonatomic, readonly) CLLocation *pl_location;
 @property (nonatomic, readonly) long long playbackStyle;
 @property (nonatomic, readonly) long long playbackVariation;
 @property (nonatomic, readonly) unsigned short playbackVariation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } preferredCropRect;
 @property (nonatomic, readonly) long long px_currentVariationType;
 @property (nonatomic, readonly) bool representsBurst;
 @property (nonatomic, readonly) bool requiresConfidentiality;
 @property (getter=isResourceDownloadPossible, nonatomic, readonly) bool resourceDownloadPossible;
+@property (nonatomic, readonly) NSString *resourcesDebugDescription;
 @property (nonatomic, readonly) short savedAssetType;
 @property (nonatomic, readonly) NSSet *sceneClassifications;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
@@ -221,6 +266,7 @@
 @property (nonatomic, readonly) long long videoCpDurationValue;
 @property (nonatomic, readonly) unsigned short videoCpVisibilityState;
 @property (nonatomic, readonly) PFVideoAVObjectBuilder *videoObjectBuilder;
+@property (nonatomic, readonly) bool wantsAdjustments;
 @property (nonatomic, readonly) double weight;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
@@ -234,7 +280,7 @@
 + (unsigned long long)_extendedPropertyFetchHintsForPropertySets:(id)arg1;
 + (id)_fetchAssetsMatchingAdjustedFingerPrint:(id)arg1;
 + (id)_fetchAssetsMatchingMasterFingerPrint:(id)arg1;
-+ (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 onlyKey:(bool)arg4;
++ (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 fetchOptions:(id)arg4 onlyKey:(bool)arg5;
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (id)_imageManagerRequestLoggingQueue;
 + (id)_inq_highestImageManagerRequestIDsObserved;
@@ -248,7 +294,7 @@
 + (id)_unfetchedPropertySetsForAssets:(id)arg1 fromPropertySets:(id)arg2;
 + (id)corePropertiesToFetch;
 + (long long)countOfAssetsWithLocationFromUUIDs:(id)arg1;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)faceWorkerPropertiesToFetch;
 + (id)fetchAssetsForFaceGroups:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForFaces:(id)arg1 options:(id)arg2;
@@ -257,6 +303,7 @@
 + (id)fetchAssetsGroupedByFaceUUIDForFaces:(id)arg1;
 + (id)fetchAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsInBoundingBoxWithTopLeftLocation:(id)arg1 bottomRightLocation:(id)arg2 options:(id)arg3;
++ (id)fetchAssetsInImportSessions:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithALAssetURLs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithBurstIdentifier:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
@@ -265,13 +312,16 @@
 + (id)fetchAssetsWithOptions:(id)arg1;
 + (id)fetchAssetsWithoutOriginalsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1;
++ (id)fetchCuratedAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchExtendedCuratedAssetsInAssetCollection:(id)arg1;
++ (id)fetchKeyAssetForSceneIdentifier:(unsigned int)arg1 withConfidenceThreshold:(double)arg2;
 + (id)fetchKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchMovieCuratedAssetsInMemory:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchQuarantinedAsssetsWithOptions:(id)arg1;
 + (id)fetchReducedCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)fetchRepresentativeAssetsInAssetCollection:(id)arg1;
 + (id)fetchType;
@@ -313,10 +363,12 @@
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(bool)arg3 resultHandler:(id /* block */)arg4;
 - (id)_unfetchedPropertySetsFromPropertySets:(id)arg1;
 - (id)_videoRequestOptionsForBaseVersion:(long long)arg1 options:(id)arg2 progressEstimateForVideoProgress:(id /* block */)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })acceptableCropRect;
 - (id)adjustmentProperties;
 - (id)adjustmentTimestamp;
 - (id)adjustmentVersion;
 - (id)adjustmentsDebugMetadata;
+- (id)aestheticProperties;
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id*)arg2 outIgnoreUntilDate:(id*)arg3;
 - (double)aspectRatio;
 - (id)assetAnalysisStateProperties;
@@ -349,6 +401,7 @@
 - (id)debugFilename;
 - (id)description;
 - (id)descriptionProperties;
+- (id)destinationAssetCopyProperties;
 - (id)detailedDebugDescriptionInLibrary:(id)arg1;
 - (id)directory;
 - (id)distanceIdentity;
@@ -389,8 +442,11 @@
 - (bool)hasAdjustments;
 - (bool)hasLegacyAdjustments;
 - (bool)hasPhotoColorAdjustments;
+- (float)hdrGain;
 - (long long)imageOrientation;
+- (id)imageRequestHints;
 - (struct CGSize { double x1; double x2; })imageSize;
+- (id)importProperties;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (bool)isAnimatedGIF;
 - (bool)isAudio;
@@ -408,6 +464,8 @@
 - (bool)isLocatedAtCoordinates:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (bool)isLoopingVideo;
 - (bool)isMediaSubtype:(unsigned long long)arg1;
+- (bool)isMomentSharedAsset;
+- (bool)isOriginalRaw;
 - (bool)isOriginalSRGB;
 - (bool)isPartOfBurst;
 - (bool)isPartOfGroup;
@@ -431,17 +489,22 @@
 - (id)locationData;
 - (id)mainFileURL;
 - (id)managedAssetForPhotoLibrary:(id)arg1;
+- (id)mediaAnalysisProperties;
 - (unsigned long long)mediaSubtypes;
 - (long long)mediaType;
 - (id)messagesForRecentImageManagerRequests;
 - (id)metadataDebugDescription;
 - (id)modificationDate;
 - (int)orientation;
+- (unsigned long long)originalChoiceToFallbackForUnsupportRAW;
 - (id)originalColorSpace;
 - (id)originalFileName;
 - (long long)originalImageOrientation;
 - (struct CGSize { double x1; double x2; })originalImageSize;
 - (id)originalMetadataProperties;
+- (unsigned long long)originalResourceChoice;
+- (id)originalUTI;
+- (float)overallAestheticScore;
 - (id)pathForAdjustedSRGBLargeThumbnailFile;
 - (id)pathForAdjustmentDataFile;
 - (id)pathForAdjustmentDirectory;
@@ -467,14 +530,18 @@
 - (id)pl_photoLibrary;
 - (long long)playbackStyle;
 - (unsigned short)playbackVariation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })preferredCropRect;
 - (void)recordImageManagerMessageForRequestID:(int)arg1 message:(id)arg2;
 - (bool)representsBurst;
 - (unsigned long long)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)resourcesDebugDescription;
 - (short)savedAssetType;
 - (id)sceneAnalysisProperties;
 - (id)sceneClassifications;
+- (id)sceneprintProperties;
 - (void)setAssetDescriptionWasSet:(bool)arg1;
 - (void)setCanUseLocationCoordinateForLocation:(bool)arg1;
+- (bool)shouldUseRAWResourceAsUnadjustedEditBase;
 - (unsigned long long)sourceType;
 - (id)thumbnailIdentifier;
 - (unsigned long long)thumbnailIndex;
@@ -515,6 +582,10 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
 - (id)videoObjectBuilder;
 
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
+- (void)isAssetLocalWithCompletion:(id /* block */)arg1 requiresDerivative:(bool)arg2;
+
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 + (id)_coalescedRangesFromRanges:(id)arg1;
@@ -535,12 +606,14 @@
 + (id)fetchAssetsWithURLs:(id)arg1 options:(id)arg2;
 + (int)maxEndTimeRespectingTrimmingForClip:(id)arg1 projectFrameRate:(int)arg2;
 + (long long)miroMegaPixelLimit;
++ (id)miro_cachedLocalMostUsefulResourceMap;
 + (bool)miro_isOkayAssetResource:(id)arg1;
++ (void)miro_purgeAssetResourceCache;
 + (bool)mirobackend_isCloudPhotosEnabled;
 + (id)newRangeFromRange:(id)arg1 excludingRange:(id)arg2;
 + (id)printDerivativeSizes;
 + (bool)range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 containsRange2:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-+ (id)rangeConformingToVoiceRangesSurroundingTime:(int)arg1 forDuration:(int)arg2 inRanges:(id)arg3;
++ (id)rangeConformingToVoiceRangesSurroundingTime:(int)arg1 forDuration:(int)arg2 durationTolerance:(int)arg3 inRanges:(id)arg4;
 + (id)rangeIn:(id)arg1 correspondingToRange:(id)arg2;
 + (id)rangeModels:(id)arg1 deletingFastMotionRangesFrom:(id)arg2 blueprint:(id)arg3 frameRate:(int)arg4;
 + (id)rangeModels:(id)arg1 deletingLowQualityRangesFrom:(id)arg2 blueprint:(id)arg3 frameRate:(int)arg4;
@@ -595,6 +668,7 @@
 - (double)miro_IrisVideoUsableDuration;
 - (id)miro_allRanges;
 - (long long)miro_analysisVersion;
+- (id)miro_cachedLocalMostUsefulIrisResource;
 - (id)miro_cachedLocalMostUsefulResource;
 - (double)miro_computeStaticScoreWithScoreReasonString:(id*)arg1;
 - (double)miro_computeStaticScoreWithScoreReasonString:(id*)arg1 scoreLog:(id*)arg2 writeToFile:(bool)arg3 ignoreSetting:(bool)arg4;
@@ -608,6 +682,7 @@
 - (bool)miro_isBlacklisted;
 - (bool)miro_isJunk;
 - (double)miro_junkValue;
+- (id)miro_originalFilename;
 - (bool)miro_originalVideoKnownToBeBad;
 - (unsigned long long)miro_performedAnalysisTypes;
 - (id)miro_rangesWithType:(unsigned long long)arg1;
@@ -642,6 +717,7 @@
 - (float)scoreForAutoEditRange:(id)arg1 resultChildVoiceRange:(id*)arg2;
 - (void)scoreInterestingSubranges:(id)arg1;
 - (void)scoreRanges:(id)arg1 scoreForDuration:(bool)arg2;
+- (void)setMiro_cachedLocalMostUsefulIrisResource:(id)arg1;
 - (void)setMiro_cachedLocalMostUsefulResource:(id)arg1;
 - (void)setMiro_desirableRanges:(id)arg1;
 - (id)simplerSceneRangesRemovingLowQualityRanges;
@@ -650,51 +726,47 @@
 // Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
 
 + (void)_nptoArchiveLivePhotoWithDictionary:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (void)_nptoSetUsesLegacyExportFormat:(bool)arg1;
 
-- (void)_nptoExportLivePhotoToURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_nptoExportPairedVideoToURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_nptoExportPhotoDataWithCompletionHandler:(id /* block */)arg1;
-- (void)_nptoExportPhotoToURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_nptoExportLivePhotoForDevice:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_nptoExportPairedVideoForDevice:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_nptoExportPhotoDataForDevice:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_nptoExportPhotoForDevice:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchIrisForWatchToPath:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchJPEGForWatchWithCompletion:(id /* block */)arg1;
-- (void)nptoExportWithCompletionHandler:(id /* block */)arg1;
+- (void)nptoExportForDevice:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
 + (id)_personsByUUIDsForFetchedAssets:(id)arg1 orFetchResult:(id)arg2;
 + (void)_populateAsset:(id)arg1 withPersonsByUUIDs:(id)arg2;
 + (id)clsAllAssetsFromFetchResult:(id)arg1 prefetchOptions:(unsigned long long)arg2;
-+ (float)clsSharpnessScoreThresholdToNotBeBlurry;
++ (unsigned long long)clsPrefetchOptionsForIsUtility;
++ (double)clsSharpnessScoreThresholdToNotBeBlurry;
 + (id)contextForItems:(id)arg1;
 + (bool)isUtilityForAsset:(id)arg1;
 + (double)scoreForAsset:(id)arg1 withContext:(id)arg2;
 
 - (id)_256SpecificAssetResource;
 - (long long)_clsBlinkCount:(bool)arg1;
-- (void)_clsSetActivityLevel:(float)arg1;
-- (void)_clsSetSharpnessScore:(float)arg1;
-- (void)_clsSetVideoFaceCount:(unsigned long long)arg1;
-- (void)_clsSetVideoScore:(float)arg1;
-- (float)_clsSharpnessScore:(bool)arg1;
 - (long long)_clsSmileCount:(bool)arg1;
-- (float)_clsUnprefetchedActivityLevel;
-- (float)_clsUnprefetchedSharpnessScore:(bool)arg1;
-- (unsigned long long)_clsUnprefetchedVideoFaceCount;
-- (float)_clsUnprefetchedVideoScore;
-- (void)_fetchMediaAnalysisType:(unsigned long long)arg1 forceProcessing:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (id)_fetchMediaAnalysisType:(unsigned long long)arg1 forceProcessing:(bool)arg2;
 - (id)_imageDataForAssetResource:(id)arg1 networkAccessAllowed:(bool)arg2 error:(id*)arg3;
-- (float)clsActivityLevel;
+- (double)clsActivityScore;
+- (double)clsAestheticScore;
 - (long long)clsBlinkCount;
 - (double)clsContentScore;
 - (id)clsDate;
 - (id)clsDistanceIdentity;
-- (float)clsExposureScore;
+- (double)clsExposureScore;
 - (bool)clsFaceInformationArePrefetched;
-- (bool)clsIsHDR;
-- (bool)clsIsSDOF;
+- (id)clsIdentifier;
+- (bool)clsIsAestheticallyPrettyGood;
+- (bool)clsIsInterestingHDR;
+- (bool)clsIsInterestingLivePhoto;
+- (bool)clsIsInterestingPanorama;
+- (bool)clsIsInterestingSDOF;
+- (bool)clsIsInterestingVideo;
 - (id)clsLocation;
-- (bool)clsMediaAnalysisIsPrefetched;
 - (unsigned long long)clsPeopleCount;
 - (bool)clsPeopleCountIsPrefetched;
 - (id)clsPeopleNames;
@@ -703,32 +775,32 @@
 - (id)clsSceneClassifications;
 - (bool)clsSceneClassificationsArePrefetched;
 - (void)clsSetBlinkCount:(id)arg1;
-- (void)clsSetExposureScore:(float)arg1;
 - (void)clsSetPeopleCount:(id)arg1;
 - (void)clsSetPeopleNames:(id)arg1;
 - (void)clsSetSceneClassifications:(id)arg1;
 - (void)clsSetSmileCount:(id)arg1;
 - (long long)clsShareCount;
-- (float)clsSharpnessScore;
+- (double)clsSharpnessScore;
 - (long long)clsSmileCount;
 - (id)clsUnprefetchedPeopleNames;
 - (id)clsUnprefetchedSceneClassifications;
 - (unsigned long long)clsVideoFaceCount;
-- (float)clsVideoScore;
+- (double)clsVideoScore;
 - (long long)clsViewCount;
 - (struct CGImage { }*)createThumbnailWithResolution:(unsigned long long)arg1 fillMode:(bool)arg2 networkAllowed:(bool)arg3;
 - (id)date;
 - (id)dateComponents;
 - (unsigned long long)facesCount;
-- (bool)hasSharpnessScore;
 - (bool)isBlurry;
-- (bool)isBlurryForcingAnalysisIfNeeded;
 - (bool)isScreenshot;
 - (bool)isSubtype:(unsigned long long)arg1;
 - (bool)isUtility;
 - (id)localDate;
 - (id)peopleNames;
+- (id)pl_date;
+- (id)pl_location;
 - (double)scoreWithContext:(id)arg1;
+- (void)setCacheCurationScore:(double)arg1;
 - (id)universalDate;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
@@ -743,11 +815,17 @@
 + (id)px_fetchPlacesAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)px_orderedAssetsFromAssets:(id)arg1 sortDescriptors:(id)arg2;
 
-- (void)_px_adjustRectWithFaces:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forAssetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 verticalContentMode:(long long)arg3;
+- (void)_adjustRectWithFaces:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forAssetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 verticalContentMode:(long long)arg3;
+- (id)adjustedContentIdentifier;
+- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bestCropRectForAspectRatio:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2 cropMode:(long long)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceAreaRect;
 - (long long)isContentEqualTo:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_bestCropRectForAspectRatio:(double)arg1 verticalContentMode:(long long)arg2 shouldUseFacesRect:(bool)arg3;
+- (bool)isInCloud;
+- (id)localizedGeoDescription;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })originalFaceAreaRect;
+- (id)photoKitAsset;
 - (long long)px_currentVariationType;
 - (bool)px_isConfidentialAdjustmentsVersion:(id)arg1;
 - (bool)px_isRecommendationSeenForVariationType:(long long)arg1;
@@ -758,6 +836,7 @@
 - (id)px_singleLineMailingAddressIncludeZipCode:(bool)arg1;
 - (bool)requiresConfidentiality;
 - (struct CGSize { double x1; double x2; })size;
+- (bool)wantsAdjustments;
 - (double)weight;
 
 // Image: /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
@@ -767,8 +846,8 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-+ (id)vcp_defaultFetchOptions;
 + (id)vcp_fetchAssetsMatchingFingerprint:(id)arg1;
++ (id)vcp_fetchOptionsForLibrary:(id)arg1;
 + (bool)vcp_usePHFace;
 + (bool)vcp_usePHFaceExpression;
 

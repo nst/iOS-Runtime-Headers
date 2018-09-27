@@ -12,11 +12,14 @@
 @property (nonatomic, retain) id archiveCursor;
 @property (nonatomic, readonly) bool forDisplay;
 
++ (id)_displayableArrayForArray:(id)arg1;
++ (id)_displayableObjectForObject:(id)arg1;
 + (void)_initializeSmallKeyMapping;
 + (id)archivedDataWithRootObject:(id)arg1;
 + (id)archivedDataWithRootObject:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)archivedPropertyListWithRootObject:(id)arg1;
 + (id)archivedPropertyListWithRootObject:(id)arg1 usingBlock:(id /* block */)arg2;
++ (id)displayableDictionaryForDictionary:(id)arg1;
 + (id)displayablePropertyListWithRootObject:(id)arg1;
 + (id)fullDescriptionForObject:(id)arg1;
 + (id)unarchiveObjectWithData:(id)arg1 ofClass:(Class)arg2;
@@ -75,9 +78,7 @@
 - (id)initWithArchive:(id)arg1 rootClass:(Class)arg2;
 - (id)initWithRootObject:(id)arg1 forDisplay:(bool)arg2;
 - (id)initWithRootObject:(id)arg1 forDisplay:(bool)arg2 block:(id /* block */)arg3;
-- (struct _NSZone { }*)objectZone;
 - (id)rootObject;
 - (void)setArchiveCursor:(id)arg1;
-- (void)setObjectZone:(struct _NSZone { }*)arg1;
 
 @end

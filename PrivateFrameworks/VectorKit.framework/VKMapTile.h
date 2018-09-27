@@ -42,6 +42,7 @@
 - (struct shared_ptr<md::LabelMapTile> { struct LabelMapTile {} *x1; struct __shared_weak_count {} *x2; })labelMapTile;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })localBoundsForLayer:(unsigned char)arg1;
 - (float)maximumStyleZ;
+- (id)metaDataForLayer:(unsigned char)arg1;
 - (bool)needsRasterization;
 - (void)populateDebugNode:(struct shared_ptr<md::DebugTreeNode> { struct DebugTreeNode {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (id)rasterized;
@@ -49,7 +50,6 @@
 - (void)setNeedsRasterization:(bool)arg1;
 - (void)setRasterized:(id)arg1;
 - (void)setTile:(id)arg1 state:(unsigned long long)arg2 metadata:(id)arg3 forLayer:(unsigned char)arg4;
-- (void)tileCountForOnline:(unsigned int*)arg1 offline:(unsigned int*)arg2;
 - (id)tileForLayer:(unsigned char)arg1;
 - (unsigned long long)tileStateForLayer:(unsigned char)arg1;
 - (double)timeTileEnteredStateForLayer:(unsigned char)arg1;

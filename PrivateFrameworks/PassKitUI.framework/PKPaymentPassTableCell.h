@@ -4,6 +4,7 @@
 
 @interface PKPaymentPassTableCell : PSTableCell {
     UIControl * _actionButton;
+    CALayer * _cardSnapshotMask;
     UIView * _cardSnapshotView;
     <PKPaymentPassTableCellDelegate> * _delegate;
     UILabel * _mainLabel;
@@ -13,6 +14,7 @@
     bool  _showAddButton;
     bool  _showState;
     bool  _showSubTitle;
+    bool  _snapshotLoaded;
     UIActivityIndicatorView * _spinner;
     UILabel * _subTextLabel;
 }

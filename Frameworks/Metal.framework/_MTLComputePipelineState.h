@@ -6,6 +6,8 @@
     <MTLDevice> * _device;
     MTLIndirectArgumentBufferEmulationData * _iabEmulationData;
     NSString * _label;
+    bool  _supportIndirectCommandBuffers;
+    unsigned long long  _uniqueIdentifier;
 }
 
 @property (nonatomic, retain) MTLIndirectArgumentBufferEmulationData *IABEmulationData;
@@ -18,6 +20,7 @@
 @property (readonly) unsigned long long staticThreadgroupMemoryLength;
 @property (readonly) Class superclass;
 @property (readonly) unsigned long long threadExecutionWidth;
+@property (readonly) unsigned long long uniqueIdentifier;
 
 - (id)IABEmulationData;
 - (void)dealloc;
@@ -28,5 +31,6 @@
 - (id)initWithDevice:(id)arg1 pipelineStateDescriptor:(id)arg2;
 - (id)label;
 - (void)setIABEmulationData:(id)arg1;
+- (unsigned long long)uniqueIdentifier;
 
 @end

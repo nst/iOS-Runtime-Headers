@@ -5,6 +5,7 @@
 @interface GEOMapServiceTraits : PBCodable <NSCopying> {
     int  _action;
     NSString * _analyticsAppIdentifier;
+    bool  _appDarkMode;
     NSString * _appIdentifier;
     NSString * _appMajorVersion;
     NSString * _appMinorVersion;
@@ -16,6 +17,7 @@
     double  _carHeadunitPixelHeight;
     double  _carHeadunitPixelWidth;
     int  _deviceBatteryState;
+    bool  _deviceDarkMode;
     NSMutableArray * _deviceDisplayLanguages;
     bool  _deviceInVehicle;
     int  _deviceInterfaceOrientation;
@@ -48,6 +50,8 @@
         unsigned int source : 1; 
         unsigned int timeSinceMapEnteredForeground : 1; 
         unsigned int timeSinceMapViewportChanged : 1; 
+        unsigned int appDarkMode : 1; 
+        unsigned int deviceDarkMode : 1; 
         unsigned int deviceInVehicle : 1; 
         unsigned int isAPICall : 1; 
         unsigned int isRedoSearch : 1; 
@@ -107,6 +111,7 @@
 
 @property (nonatomic) int action;
 @property (nonatomic, retain) NSString *analyticsAppIdentifier;
+@property (nonatomic) bool appDarkMode;
 @property (nonatomic, retain) NSString *appIdentifier;
 @property (nonatomic, retain) NSString *appMajorVersion;
 @property (nonatomic, retain) NSString *appMinorVersion;
@@ -118,6 +123,7 @@
 @property (nonatomic) double carHeadunitPixelHeight;
 @property (nonatomic) double carHeadunitPixelWidth;
 @property (nonatomic) int deviceBatteryState;
+@property (nonatomic) bool deviceDarkMode;
 @property (nonatomic, retain) NSMutableArray *deviceDisplayLanguages;
 @property (nonatomic) bool deviceInVehicle;
 @property (nonatomic) int deviceInterfaceOrientation;
@@ -129,6 +135,7 @@
 @property (nonatomic, readonly) unsigned long long engineTypesCount;
 @property (nonatomic) bool hasAction;
 @property (nonatomic, readonly) bool hasAnalyticsAppIdentifier;
+@property (nonatomic) bool hasAppDarkMode;
 @property (nonatomic, readonly) bool hasAppIdentifier;
 @property (nonatomic, readonly) bool hasAppMajorVersion;
 @property (nonatomic, readonly) bool hasAppMinorVersion;
@@ -140,6 +147,7 @@
 @property (nonatomic) bool hasCarHeadunitPixelHeight;
 @property (nonatomic) bool hasCarHeadunitPixelWidth;
 @property (nonatomic) bool hasDeviceBatteryState;
+@property (nonatomic) bool hasDeviceDarkMode;
 @property (nonatomic) bool hasDeviceInVehicle;
 @property (nonatomic) bool hasDeviceInterfaceOrientation;
 @property (nonatomic, readonly) bool hasDeviceKeyboardLocale;
@@ -236,6 +244,7 @@
 - (void)addReviewUserPhotoSizes:(id)arg1;
 - (void)addTransportType:(int)arg1;
 - (id)analyticsAppIdentifier;
+- (bool)appDarkMode;
 - (id)appIdentifier;
 - (id)appMajorVersion;
 - (id)appMinorVersion;
@@ -263,6 +272,7 @@
 - (id)description;
 - (int)deviceBatteryState;
 - (id)deviceBatteryStateAsString:(int)arg1;
+- (bool)deviceDarkMode;
 - (id)deviceDisplayLanguageAtIndex:(unsigned long long)arg1;
 - (id)deviceDisplayLanguages;
 - (unsigned long long)deviceDisplayLanguagesCount;
@@ -280,6 +290,7 @@
 - (unsigned long long)engineTypesCount;
 - (bool)hasAction;
 - (bool)hasAnalyticsAppIdentifier;
+- (bool)hasAppDarkMode;
 - (bool)hasAppIdentifier;
 - (bool)hasAppMajorVersion;
 - (bool)hasAppMinorVersion;
@@ -291,6 +302,7 @@
 - (bool)hasCarHeadunitPixelHeight;
 - (bool)hasCarHeadunitPixelWidth;
 - (bool)hasDeviceBatteryState;
+- (bool)hasDeviceDarkMode;
 - (bool)hasDeviceInVehicle;
 - (bool)hasDeviceInterfaceOrientation;
 - (bool)hasDeviceKeyboardLocale;
@@ -359,6 +371,7 @@
 - (double)sessionRelativeTimestamp;
 - (void)setAction:(int)arg1;
 - (void)setAnalyticsAppIdentifier:(id)arg1;
+- (void)setAppDarkMode:(bool)arg1;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
@@ -370,6 +383,7 @@
 - (void)setCarHeadunitPixelHeight:(double)arg1;
 - (void)setCarHeadunitPixelWidth:(double)arg1;
 - (void)setDeviceBatteryState:(int)arg1;
+- (void)setDeviceDarkMode:(bool)arg1;
 - (void)setDeviceDisplayLanguages:(id)arg1;
 - (void)setDeviceInVehicle:(bool)arg1;
 - (void)setDeviceInterfaceOrientation:(int)arg1;
@@ -379,11 +393,13 @@
 - (void)setDisplayRegion:(id)arg1;
 - (void)setEngineTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setHasAction:(bool)arg1;
+- (void)setHasAppDarkMode:(bool)arg1;
 - (void)setHasCarHeadunitConnectionType:(bool)arg1;
 - (void)setHasCarHeadunitInteractionModel:(bool)arg1;
 - (void)setHasCarHeadunitPixelHeight:(bool)arg1;
 - (void)setHasCarHeadunitPixelWidth:(bool)arg1;
 - (void)setHasDeviceBatteryState:(bool)arg1;
+- (void)setHasDeviceDarkMode:(bool)arg1;
 - (void)setHasDeviceInVehicle:(bool)arg1;
 - (void)setHasDeviceInterfaceOrientation:(bool)arg1;
 - (void)setHasHttpRequestPriority:(bool)arg1;
@@ -455,6 +471,7 @@
 - (unsigned long long)transportTypesCount;
 - (int)uiActionType;
 - (id)unknownFields;
+- (void)updateAnalyticsShortSession;
 - (bool)useBackgroundUrl;
 - (id)venueIdentifier;
 - (id)walkingOptions;

@@ -7,6 +7,7 @@
 }
 
 + (id)removeFromParent;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

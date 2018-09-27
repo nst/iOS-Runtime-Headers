@@ -5,7 +5,7 @@
 
 @required
 
-- (void)addClient:(void *)arg1 clientConfig:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: <AWFrameworkClient> *, AWAttentionAwarenessConfiguration *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AWRemoteClient> *, void*
+- (void)addClient:(void *)arg1 clientConfig:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: <AWFrameworkClient> *, AWAttentionAwarenessConfiguration *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AWRemoteClient> *, NSError *, void*
 - (void)getDebugPreferences:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (void)getSupportedEventsWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
 - (void)getUnitTestSamplerWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AWUnitTestSampler> *, void*

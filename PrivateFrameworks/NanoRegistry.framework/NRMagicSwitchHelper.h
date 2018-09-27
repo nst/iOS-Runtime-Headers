@@ -6,6 +6,5 @@
 
 + (void)clearCompanionSeed;
 + (id)companionSeed;
-+ (id)companionSeedQueue;
 
 @end

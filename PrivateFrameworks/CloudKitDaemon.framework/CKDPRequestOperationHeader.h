@@ -8,6 +8,7 @@
     NSString * _applicationContainer;
     int  _applicationContainerEnvironment;
     NSString * _applicationVersion;
+    CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions * _assetAuthorizeGetRequestOptions;
     NSData * _clientChangeToken;
     NSString * _deviceAssignedName;
     unsigned long long  _deviceFlowControlBudget;
@@ -52,6 +53,7 @@
 @property (nonatomic, retain) NSString *applicationContainer;
 @property (nonatomic) int applicationContainerEnvironment;
 @property (nonatomic, retain) NSString *applicationVersion;
+@property (nonatomic, retain) CKDPRequestOperationHeaderAssetAuthorizeGetRequestOptions *assetAuthorizeGetRequestOptions;
 @property (nonatomic, retain) NSData *clientChangeToken;
 @property (nonatomic, retain) NSString *deviceAssignedName;
 @property (nonatomic) unsigned long long deviceFlowControlBudget;
@@ -72,6 +74,7 @@
 @property (nonatomic, readonly) bool hasApplicationContainer;
 @property (nonatomic) bool hasApplicationContainerEnvironment;
 @property (nonatomic, readonly) bool hasApplicationVersion;
+@property (nonatomic, readonly) bool hasAssetAuthorizeGetRequestOptions;
 @property (nonatomic, readonly) bool hasClientChangeToken;
 @property (nonatomic, readonly) bool hasDeviceAssignedName;
 @property (nonatomic) bool hasDeviceFlowControlBudget;
@@ -121,6 +124,7 @@
 - (int)applicationContainerEnvironment;
 - (id)applicationContainerEnvironmentAsString:(int)arg1;
 - (id)applicationVersion;
+- (id)assetAuthorizeGetRequestOptions;
 - (void)clearServiceIdentityKeyIDs;
 - (id)clientChangeToken;
 - (void)copyTo:(id)arg1;
@@ -146,6 +150,7 @@
 - (bool)hasApplicationContainer;
 - (bool)hasApplicationContainerEnvironment;
 - (bool)hasApplicationVersion;
+- (bool)hasAssetAuthorizeGetRequestOptions;
 - (bool)hasClientChangeToken;
 - (bool)hasDeviceAssignedName;
 - (bool)hasDeviceFlowControlBudget;
@@ -187,6 +192,7 @@
 - (void)setApplicationContainer:(id)arg1;
 - (void)setApplicationContainerEnvironment:(int)arg1;
 - (void)setApplicationVersion:(id)arg1;
+- (void)setAssetAuthorizeGetRequestOptions:(id)arg1;
 - (void)setClientChangeToken:(id)arg1;
 - (void)setDeviceAssignedName:(id)arg1;
 - (void)setDeviceFlowControlBudget:(unsigned long long)arg1;

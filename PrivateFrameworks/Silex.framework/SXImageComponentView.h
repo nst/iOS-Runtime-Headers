@@ -7,6 +7,7 @@
     SXDragManager * _dragManager;
     SXImageView * _imageView;
     <SXImageViewFactory> * _imageViewFactory;
+    <SXMediaSharingPolicyProvider> * _mediaSharingPolicyProvider;
 }
 
 @property (nonatomic, retain) SXAnimatedImageController *animatedImageController;
@@ -16,6 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SXImageView *imageView;
 @property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
+@property (nonatomic, readonly) <SXMediaSharingPolicyProvider> *mediaSharingPolicyProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,9 +35,10 @@
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2;
 - (id)imageViewFactory;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
+- (id)mediaSharingPolicyProvider;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })originalFrameForContentView:(id)arg1 behavior:(id)arg2;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)renderContents;

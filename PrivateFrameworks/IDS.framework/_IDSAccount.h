@@ -9,6 +9,7 @@
     NSMutableArray * _devices;
     bool  _devicesLoaded;
     bool  _isEnabled;
+    NSString * _loginID;
     NSMapTable * _registrationDelegateToInfo;
     NSString * _service;
     NSString * _serviceToken;

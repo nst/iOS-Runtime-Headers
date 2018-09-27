@@ -7,5 +7,6 @@
 
 - (NNMKDeviceSyncRegistry *)currentDeviceRegistry;
 - (bool)pairedDeviceSupportsMultipleMailboxes;
+- (bool)pairedDeviceSupportsStandaloneMode;
 
 @end

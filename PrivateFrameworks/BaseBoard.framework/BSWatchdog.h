@@ -17,11 +17,12 @@
 
 @property (nonatomic, retain) <BSWatchdogDelegate> *delegate;
 @property (getter=hasFired, nonatomic, readonly) bool fired;
-@property (nonatomic, readonly, retain) <BSWatchdogProviding> *provider;
-@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, readonly, retain) NSDate *startDate;
+@property (nonatomic, readonly) <BSWatchdogProviding> *provider;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) double timeout;
 
+- (void).cxx_destruct;
 - (void)_completeWatchdogAfterFiring:(bool)arg1;
 - (void)_invalidateTimer;
 - (void)_setupTimerWithInterval:(double)arg1 handler:(id /* block */)arg2;

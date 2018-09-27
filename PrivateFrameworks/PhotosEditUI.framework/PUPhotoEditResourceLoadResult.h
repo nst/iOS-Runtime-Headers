@@ -4,6 +4,7 @@
 
 @interface PUPhotoEditResourceLoadResult : NSObject {
     <PUEditableAsset> * _asset;
+    bool  _assetLoadingAsRaw;
     PLPhotoEditMutableModel * _editModel;
     UIImage * _image;
     NSURL * _imageURL;
@@ -27,6 +28,7 @@
 }
 
 @property (setter=_setAsset:, nonatomic, retain) <PUEditableAsset> *asset;
+@property (setter=_setAssetLoadingAsRaw:, nonatomic) bool assetLoadingAsRaw;
 @property (setter=_setEditModel:, nonatomic, retain) PLPhotoEditMutableModel *editModel;
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setImageURL:, nonatomic, retain) NSURL *imageURL;
@@ -43,6 +45,7 @@
 
 - (void).cxx_destruct;
 - (void)_setAsset:(id)arg1;
+- (void)_setAssetLoadingAsRaw:(bool)arg1;
 - (void)_setEditModel:(id)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setImageURL:(id)arg1;
@@ -54,6 +57,7 @@
 - (void)_setVideoComplementStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setVideoComplementURL:(id)arg1;
 - (id)asset;
+- (bool)assetLoadingAsRaw;
 - (id)editModel;
 - (id)editSource;
 - (id)image;

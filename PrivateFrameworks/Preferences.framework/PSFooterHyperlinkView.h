@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
+@interface PSFooterHyperlinkView : UITableViewHeaderFooterView <PSHeaderFooterView, UITextViewDelegate> {
     NSURL * _URL;
     SEL  _action;
-    UIImageView * _iconView;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -13,39 +12,48 @@
     id  _target;
     NSString * _text;
     UITextView * _textView;
+    NSLayoutConstraint * _textViewLeadingConstraint;
+    NSLayoutConstraint * _textViewTrailingConstraint;
 }
 
-@property (retain) NSURL *URL;
-@property SEL action;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic) SEL action;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) UIImageView *iconView;
-@property struct _NSRange { unsigned long long x1; unsigned long long x2; } linkRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } linkRange;
 @property (readonly) Class superclass;
-@property id target;
-@property (retain) NSString *text;
+@property (nonatomic) id target;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) UITextView *textView;
+@property (nonatomic, retain) NSLayoutConstraint *textViewLeadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *textViewTrailingConstraint;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (void)_accessibilitySetInterfaceStyleIntent:(unsigned long long)arg1;
 - (void)_linkify;
 - (SEL)action;
-- (id)iconView;
 - (id)initWithSpecifier:(id)arg1;
 - (bool)isValidLinkRange;
-- (void)layoutSubviews;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })linkRange;
-- (double)preferredHeightForWidth:(double)arg1;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (void)setAction:(SEL)arg1;
-- (void)setIconView:(id)arg1;
 - (void)setLinkRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTableView:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setTextView:(id)arg1;
+- (void)setTextViewLeadingConstraint:(id)arg1;
+- (void)setTextViewTrailingConstraint:(id)arg1;
 - (void)setURL:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)setupSubviewsAndContstraints;
 - (id)target;
 - (id)text;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
+- (id)textView;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (id)textViewLeadingConstraint;
+- (id)textViewTrailingConstraint;
+- (void)updateConstraints;
 
 @end

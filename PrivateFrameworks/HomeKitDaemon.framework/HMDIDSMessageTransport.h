@@ -4,11 +4,12 @@
 
 @interface HMDIDSMessageTransport : HMDRemoteMessageTransport <IDSServiceDelegate> {
     NSMutableDictionary * _destinationAddress;
+    NSMutableArray * _messageContexts;
     NSMutableDictionary * _pendingResponseTimers;
     NSMutableDictionary * _pendingResponses;
-    NSMutableDictionary * _pendingSentMessages;
     NSMutableDictionary * _receivedResponses;
     NSMutableDictionary * _requestedCapabilities;
+    HMFOperationBudget * _sendMessageBudget;
     IDSService * _service;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -18,16 +19,20 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableDictionary *destinationAddress;
 @property (readonly) unsigned long long hash;
+@property (readonly) NSMutableArray *messageContexts;
 @property (nonatomic, readonly) NSMutableDictionary *pendingResponseTimers;
 @property (nonatomic, readonly) NSMutableDictionary *pendingResponses;
-@property (nonatomic, readonly) NSMutableDictionary *pendingSentMessages;
 @property (nonatomic, readonly) NSMutableDictionary *receivedResponses;
 @property (nonatomic, readonly) NSMutableDictionary *requestedCapabilities;
+@property (readonly) HMFOperationBudget *sendMessageBudget;
 @property (nonatomic, readonly) IDSService *service;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (long long)priorityForMessage:(id)arg1;
 + (unsigned long long)restriction;
++ (unsigned long long)sendMessageLimit;
++ (struct _HMFRate { unsigned long long x1; double x2; })sendMessageRate;
 
 - (void).cxx_destruct;
 - (void)_pendingResponseTimeoutFor:(id)arg1;
@@ -38,16 +43,17 @@
 - (int)awdTransportType;
 - (bool)canSendMessage:(id)arg1;
 - (id)destinationAddress;
-- (id)deviceForDestination:(id)arg1;
+- (id)deviceForSenderContext:(id)arg1;
 - (id)initWithAccountRegistry:(id)arg1;
+- (id)messageContexts;
 - (id)pendingResponseTimers;
 - (id)pendingResponses;
-- (id)pendingSentMessages;
 - (long long)qualityOfService;
 - (id)receivedResponses;
 - (id)requestedCapabilities;
 - (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)sendMessage:(id)arg1 destination:(id)arg2 timeout:(double)arg3 options:(unsigned long long)arg4 error:(id*)arg5;
+- (id)sendMessage:(id)arg1 fromHandle:(id)arg2 destination:(id)arg3 priority:(long long)arg4 timeout:(double)arg5 options:(unsigned long long)arg6 error:(id*)arg7;
+- (id)sendMessageBudget;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;

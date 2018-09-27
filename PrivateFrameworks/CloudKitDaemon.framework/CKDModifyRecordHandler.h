@@ -15,6 +15,7 @@
     CKRecord * _record;
     CKRecordID * _recordID;
     CKDRecordPCSData * _recordPCSData;
+    NSMutableDictionary * _rereferencedAssetArrayByFieldname;
     int  _saveAttempts;
     bool  _saveCompletionBlockCalled;
     CKRecord * _serverRecord;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) CKRecord *record;
 @property (nonatomic, retain) CKRecordID *recordID;
 @property (nonatomic, retain) CKDRecordPCSData *recordPCSData;
+@property (nonatomic, retain) NSMutableDictionary *rereferencedAssetArrayByFieldname;
 @property (nonatomic) int saveAttempts;
 @property (nonatomic) bool saveCompletionBlockCalled;
 @property (nonatomic, retain) CKRecord *serverRecord;
@@ -74,6 +76,7 @@
 - (bool)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3 recordID:(id)arg4;
 - (bool)_wrapEncryptedDataForRecordValueStore:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2;
 - (bool)_wrapEncryptedDataOnRecord:(id)arg1;
+- (id)assetsWhichNeedRecordFetch;
 - (long long)batchRank;
 - (void)clearProtectionDataForRecord;
 - (id)description;
@@ -98,6 +101,7 @@
 - (id)record;
 - (id)recordID;
 - (id)recordPCSData;
+- (id)rereferencedAssetArrayByFieldname;
 - (int)saveAttempts;
 - (bool)saveCompletionBlockCalled;
 - (void)savePCSDataToCache;
@@ -114,6 +118,7 @@
 - (void)setRecord:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setRecordPCSData:(id)arg1;
+- (void)setRereferencedAssetArrayByFieldname:(id)arg1;
 - (void)setSaveAttempts:(int)arg1;
 - (void)setSaveCompletionBlockCalled:(bool)arg1;
 - (void)setServerRecord:(id)arg1;

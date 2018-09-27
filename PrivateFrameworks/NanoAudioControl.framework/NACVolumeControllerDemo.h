@@ -7,6 +7,7 @@
     NACEventThrottler * _defaultsThrottler;
     <NACVolumeControllerDelegate> * _delegate;
     float  _hapticIntensity;
+    long long  _hapticState;
     bool  _prominentHapticEnabled;
     bool  _systemMuted;
     NSNumber * _volumeValue;
@@ -17,6 +18,7 @@
 @property (nonatomic) <NACVolumeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float hapticIntensity;
+@property (nonatomic) long long hapticState;
 @property (readonly) unsigned long long hash;
 @property (getter=isMuted, nonatomic, readonly) bool muted;
 @property (getter=isProminentHapticEnabled, nonatomic) bool prominentHapticEnabled;
@@ -37,6 +39,7 @@
 - (id)delegate;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
+- (long long)hapticState;
 - (id)init;
 - (id)initWithAudioCategory:(id)arg1;
 - (bool)isMuted;
@@ -46,6 +49,7 @@
 - (bool)isVolumeWarningEnabled;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

@@ -17,8 +17,8 @@
 @property unsigned long long indexOfFirstCenteredColumnForForcedCentering;
 @property unsigned long long indexOfFirstTrailingColumn;
 @property (retain) NSMutableArray *labels;
-@property (retain) TLKGridLayoutManager *manager;
-@property (retain) TLKTableRow *tableRow;
+@property (nonatomic, retain) TLKGridLayoutManager *manager;
+@property (nonatomic, retain) TLKTableRow *tableRow;
 
 + (void)updateLabel:(id)arg1 withFormattedText:(id)arg2 alignment:(long long)arg3;
 
@@ -35,7 +35,6 @@
 - (id)labels;
 - (void)layoutSubviews;
 - (id)manager;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)resetStateOfAllViews;
 - (void)setCurrentListOfViews:(id)arg1;

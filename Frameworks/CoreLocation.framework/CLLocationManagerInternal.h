@@ -6,6 +6,8 @@
     struct __CLClient { } * fClient;
     <CLLocationManagerDelegate> * fDelegate;
     int  fHeadingOrientation;
+    unsigned long long  fLastRangingRequestMachTime;
+    double  fLastRangingRequestTimeout;
     struct { 
         int suitability; 
         struct { 
@@ -37,7 +39,6 @@
     double  fLocationRequestTimeout;
     struct __CFRunLoopTimer { } * fLocationRequestTimer;
     NSMutableSet * fRangedRegions;
-    double  fRangingRequestTimeout;
     struct __CFRunLoopTimer { } * fRangingRequestTimer;
     CLLocationManagerStateTracker * fState;
 }
@@ -46,9 +47,11 @@
 
 - (int)PausesLocationUpdatesAutomatically;
 - (bool)allowsBackgroundLocationUpdates;
+- (void)cancelLingeringRangingRequest;
 - (void)cancelLocationRequest;
 - (void)cancelRangingRequest;
 - (void)dealloc;
+- (bool)hasLingeringRangingRequest;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 - (void)performCourtesyPromptIfNeeded;
 - (id)rangedRegions;

@@ -17,6 +17,7 @@
 + (id)currentRegistrar;
 
 - (void).cxx_destruct;
+- (bool)allowsRemoteNotifications;
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (id)delegate;

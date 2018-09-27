@@ -7,6 +7,7 @@
     unsigned long long  _clientID;
     bool  _connected;
     NSXPCConnection * _connection;
+    id /* block */  _connectionCallback;
     bool  _prewarmed;
     bool  _running;
     <ServerInterface> * _serverDelegate;
@@ -34,6 +35,7 @@
 @property (readonly) NSArray *channelKeys;
 @property (readonly) unsigned long long clientID;
 @property bool connected;
+@property (copy) id /* block */ connectionCallback;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double hapticLatency;
@@ -51,6 +53,7 @@
 - (bool)clearEventsFromTime:(double)arg1 channel:(unsigned long long)arg2;
 - (unsigned long long)clientID;
 - (bool)connected;
+- (id /* block */)connectionCallback;
 - (void)dealloc;
 - (void)destroySharedMemory;
 - (bool)detachHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
@@ -58,8 +61,9 @@
 - (void)doInit;
 - (bool)enableSequenceLooping:(unsigned long long)arg1 enable:(bool)arg2 error:(id*)arg3;
 - (bool)finish:(id /* block */)arg1;
-- (void)handleConnectionError;
-- (void)handleHapticServerCrash;
+- (id)getAsyncDelegateForMethod:(SEL)arg1 errorHandler:(id /* block */)arg2;
+- (void)handleServerConnectionInterruption;
+- (void)handleServerConnectionInvalidation;
 - (double)hapticLatency;
 - (id)initAndReturnError:(id*)arg1;
 - (bool)loadHapticEvent:(id)arg1 reply:(id /* block */)arg2;
@@ -76,6 +80,7 @@
 - (bool)setChannelEventBehavior:(unsigned long long)arg1 channel:(unsigned long long)arg2;
 - (void)setChannelKeys:(id)arg1;
 - (void)setConnected:(bool)arg1;
+- (void)setConnectionCallback:(id /* block */)arg1;
 - (bool)setNumberOfChannels:(unsigned long long)arg1 error:(id*)arg2;
 - (bool)setParameter:(unsigned long long)arg1 atTime:(double)arg2 value:(float)arg3 channel:(unsigned long long)arg4;
 - (bool)setPlayerBehavior:(unsigned long long)arg1 error:(id*)arg2;

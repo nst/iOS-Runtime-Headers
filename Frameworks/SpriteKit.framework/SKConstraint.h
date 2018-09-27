@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKConstraint : NSObject <NSCoding, NSCopying> {
+@interface SKConstraint : NSObject <NSCopying, NSSecureCoding> {
     bool  _enabled;
     SKNode * _referenceNode;
 }
@@ -24,6 +24,7 @@
 + (id)scaleX:(id)arg1;
 + (id)scaleX:(id)arg1 scaleY:(id)arg2;
 + (id)scaleY:(id)arg1;
++ (bool)supportsSecureCoding;
 + (id)width:(id)arg1;
 + (id)width:(id)arg1 height:(id)arg2;
 + (id)zRotation:(id)arg1;
@@ -35,6 +36,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqualToConstraint:(id)arg1;
 - (id)referenceNode;
 - (void)setEnabled:(bool)arg1;
 - (void)setReferenceNode:(id)arg1;

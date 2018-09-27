@@ -13,7 +13,7 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)handleIncomingConnection:(id)arg1 forService:(id)arg2;
 - (id)init;
 

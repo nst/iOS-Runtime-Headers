@@ -57,6 +57,13 @@
 - (id)description;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })nu_CGAffineTransform;
 
+// Image: /System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/PhotosImagingFoundation
+
++ (id)pa_transformWithCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+
+- (id)description;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })pa_CGAffineTransform;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)gqu_transformRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 upperLeft:(struct CGPoint { double x1; double x2; }*)arg2 lowerLeft:(struct CGPoint { double x1; double x2; }*)arg3 lowerRight:(struct CGPoint { double x1; double x2; }*)arg4 upperRight:(struct CGPoint { double x1; double x2; }*)arg5;

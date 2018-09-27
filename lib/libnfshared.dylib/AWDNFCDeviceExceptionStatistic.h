@@ -3,9 +3,14 @@
  */
 
 @interface AWDNFCDeviceExceptionStatistic : PBCodable <NSCopying> {
+    unsigned int  _failForwardRestoreAttemptFailureCount;
+    unsigned int  _failForwardState;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int failForwardRestoreAttemptFailureCount : 1; 
+        unsigned int failForwardState : 1; 
         unsigned int hwCount : 1; 
+        unsigned int loadStackFirmwareRestoreRetryCount : 1; 
         unsigned int mwCount : 1; 
         unsigned int pllUnlock : 1; 
         unsigned int pllUnlockDuringPMICPowerCycle : 1; 
@@ -23,6 +28,7 @@
         unsigned int seosRestrictedModeCount : 1; 
     }  _has;
     unsigned int  _hwCount;
+    unsigned int  _loadStackFirmwareRestoreRetryCount;
     unsigned int  _mwCount;
     unsigned int  _pllUnlock;
     unsigned int  _pllUnlockDuringPMICPowerCycle;
@@ -42,7 +48,12 @@
     NSData * _uuidReference;
 }
 
+@property (nonatomic) unsigned int failForwardRestoreAttemptFailureCount;
+@property (nonatomic) unsigned int failForwardState;
+@property (nonatomic) bool hasFailForwardRestoreAttemptFailureCount;
+@property (nonatomic) bool hasFailForwardState;
 @property (nonatomic) bool hasHwCount;
+@property (nonatomic) bool hasLoadStackFirmwareRestoreRetryCount;
 @property (nonatomic) bool hasMwCount;
 @property (nonatomic) bool hasPllUnlock;
 @property (nonatomic) bool hasPllUnlockDuringPMICPowerCycle;
@@ -61,6 +72,7 @@
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic) unsigned int hwCount;
+@property (nonatomic) unsigned int loadStackFirmwareRestoreRetryCount;
 @property (nonatomic) unsigned int mwCount;
 @property (nonatomic) unsigned int pllUnlock;
 @property (nonatomic) unsigned int pllUnlockDuringPMICPowerCycle;
@@ -84,7 +96,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)failForwardRestoreAttemptFailureCount;
+- (unsigned int)failForwardState;
+- (bool)hasFailForwardRestoreAttemptFailureCount;
+- (bool)hasFailForwardState;
 - (bool)hasHwCount;
+- (bool)hasLoadStackFirmwareRestoreRetryCount;
 - (bool)hasMwCount;
 - (bool)hasPllUnlock;
 - (bool)hasPllUnlockDuringPMICPowerCycle;
@@ -105,6 +122,7 @@
 - (unsigned long long)hash;
 - (unsigned int)hwCount;
 - (bool)isEqual:(id)arg1;
+- (unsigned int)loadStackFirmwareRestoreRetryCount;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)mwCount;
 - (unsigned int)pllUnlock;
@@ -122,7 +140,12 @@
 - (unsigned int)seRemovedEvt5Count;
 - (unsigned int)seosRemovedCount;
 - (unsigned int)seosRestrictedModeCount;
+- (void)setFailForwardRestoreAttemptFailureCount:(unsigned int)arg1;
+- (void)setFailForwardState:(unsigned int)arg1;
+- (void)setHasFailForwardRestoreAttemptFailureCount:(bool)arg1;
+- (void)setHasFailForwardState:(bool)arg1;
 - (void)setHasHwCount:(bool)arg1;
+- (void)setHasLoadStackFirmwareRestoreRetryCount:(bool)arg1;
 - (void)setHasMwCount:(bool)arg1;
 - (void)setHasPllUnlock:(bool)arg1;
 - (void)setHasPllUnlockDuringPMICPowerCycle:(bool)arg1;
@@ -140,6 +163,7 @@
 - (void)setHasSeosRestrictedModeCount:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHwCount:(unsigned int)arg1;
+- (void)setLoadStackFirmwareRestoreRetryCount:(unsigned int)arg1;
 - (void)setMwCount:(unsigned int)arg1;
 - (void)setPllUnlock:(unsigned int)arg1;
 - (void)setPllUnlockDuringPMICPowerCycle:(unsigned int)arg1;

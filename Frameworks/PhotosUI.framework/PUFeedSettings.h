@@ -12,6 +12,7 @@
     bool  _ignoresCaptions;
     long long  _infiniteScrollingWindowSizeIncrement;
     long long  _initialWindowSize;
+    bool  _loopsEnabled;
     long long  _maximumScrollRegimeForQualityImageFormats;
     double  _mediumScrollPreheatingWindowSize;
     bool  _parallaxEnabled;
@@ -23,6 +24,7 @@
     bool  _shouldPreheatCoreData;
     bool  _shouldUseJPEGFastFormatForLargeTiles;
     bool  _shouldUseJPEGFastFormatForMediumTiles;
+    bool  _showGroupIDHeaders;
     bool  _simulateSharedStreamsEnabled;
     double  _slowScrollPreheatingWindowSize;
     double  _smallTileSizeTolerance;
@@ -46,6 +48,7 @@
 @property (nonatomic) bool ignoresCaptions;
 @property (nonatomic) long long infiniteScrollingWindowSizeIncrement;
 @property (nonatomic) long long initialWindowSize;
+@property (nonatomic) bool loopsEnabled;
 @property (nonatomic) long long maximumScrollRegimeForQualityImageFormats;
 @property (nonatomic) double mediumScrollPreheatingWindowSize;
 @property (nonatomic) bool parallaxEnabled;
@@ -57,6 +60,7 @@
 @property (nonatomic) bool shouldPreheatCoreData;
 @property (nonatomic) bool shouldUseJPEGFastFormatForLargeTiles;
 @property (nonatomic) bool shouldUseJPEGFastFormatForMediumTiles;
+@property (nonatomic) bool showGroupIDHeaders;
 @property (nonatomic) bool simulateSharedStreamsEnabled;
 @property (nonatomic) double slowScrollPreheatingWindowSize;
 @property (nonatomic) double smallTileSizeTolerance;
@@ -83,6 +87,7 @@
 - (bool)ignoresCaptions;
 - (long long)infiniteScrollingWindowSizeIncrement;
 - (long long)initialWindowSize;
+- (bool)loopsEnabled;
 - (long long)maximumScrollRegimeForQualityImageFormats;
 - (double)mediumScrollPreheatingWindowSize;
 - (bool)parallaxEnabled;
@@ -100,6 +105,7 @@
 - (void)setIgnoresCaptions:(bool)arg1;
 - (void)setInfiniteScrollingWindowSizeIncrement:(long long)arg1;
 - (void)setInitialWindowSize:(long long)arg1;
+- (void)setLoopsEnabled:(bool)arg1;
 - (void)setMaximumScrollRegimeForQualityImageFormats:(long long)arg1;
 - (void)setMediumScrollPreheatingWindowSize:(double)arg1;
 - (void)setParallaxEnabled:(bool)arg1;
@@ -111,6 +117,7 @@
 - (void)setShouldPreheatCoreData:(bool)arg1;
 - (void)setShouldUseJPEGFastFormatForLargeTiles:(bool)arg1;
 - (void)setShouldUseJPEGFastFormatForMediumTiles:(bool)arg1;
+- (void)setShowGroupIDHeaders:(bool)arg1;
 - (void)setSimulateSharedStreamsEnabled:(bool)arg1;
 - (void)setSlowScrollPreheatingWindowSize:(double)arg1;
 - (void)setSmallTileSizeTolerance:(double)arg1;
@@ -128,6 +135,7 @@
 - (bool)shouldPreheatCoreData;
 - (bool)shouldUseJPEGFastFormatForLargeTiles;
 - (bool)shouldUseJPEGFastFormatForMediumTiles;
+- (bool)showGroupIDHeaders;
 - (bool)simulateSharedStreamsEnabled;
 - (double)slowScrollPreheatingWindowSize;
 - (double)smallTileSizeTolerance;

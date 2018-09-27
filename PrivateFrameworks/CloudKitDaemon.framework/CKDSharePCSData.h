@@ -6,7 +6,7 @@
     struct _OpaquePCSShareProtection { } * _myParticipantPCS;
     NSData * _myParticipantPCSData;
     long long  _myParticipantPermission;
-    long long  _myParticipantType;
+    long long  _myParticipantRole;
     struct _OpaquePCSShareProtection { } * _publicPCS;
     NSData * _publicPCSData;
     NSString * _publicPCSEtag;
@@ -20,7 +20,7 @@
 @property (nonatomic) struct _OpaquePCSShareProtection { }*myParticipantPCS;
 @property (nonatomic, copy) NSData *myParticipantPCSData;
 @property (nonatomic) long long myParticipantPermission;
-@property (nonatomic) long long myParticipantType;
+@property (nonatomic) long long myParticipantRole;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*publicPCS;
 @property (nonatomic, copy) NSData *publicPCSData;
 @property (nonatomic, copy) NSString *publicPCSEtag;
@@ -42,7 +42,7 @@
 - (struct _OpaquePCSShareProtection { }*)myParticipantPCS;
 - (id)myParticipantPCSData;
 - (long long)myParticipantPermission;
-- (long long)myParticipantType;
+- (long long)myParticipantRole;
 - (struct _OpaquePCSShareProtection { }*)publicPCS;
 - (id)publicPCSData;
 - (id)publicPCSEtag;
@@ -52,7 +52,7 @@
 - (void)setMyParticipantPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setMyParticipantPCSData:(id)arg1;
 - (void)setMyParticipantPermission:(long long)arg1;
-- (void)setMyParticipantType:(long long)arg1;
+- (void)setMyParticipantRole:(long long)arg1;
 - (void)setPublicPCS:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPublicPCSData:(id)arg1;
 - (void)setPublicPCSEtag:(id)arg1;

@@ -22,11 +22,11 @@
 
 + (id)changesetWithDownloadID:(id)arg1 state:(long long)arg2;
 
+- (void).cxx_destruct;
 - (id)contentLength;
 - (id)contentURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)downloadID;
 - (id)downloadState;
 - (id)error;

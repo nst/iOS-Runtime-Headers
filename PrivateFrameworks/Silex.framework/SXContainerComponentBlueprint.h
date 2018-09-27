@@ -11,8 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)layoutBlueprint;
 - (id)parentLayoutBlueprint;
 - (void)setLayoutBlueprint:(id)arg1;

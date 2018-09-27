@@ -17,10 +17,6 @@
     }  _debugTree;
     bool  _isActive;
     VKMapView * _mapView;
-    struct shared_ptr<MITManager> { 
-        struct MITManager {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    }  _mitManager;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -37,13 +33,10 @@
 - (void)activateController:(id)arg1;
 - (void)deactivateController;
 - (void)decodeDebugTreeData:(id)arg1;
-- (void)decodeMITreeData:(id)arg1;
 - (void)handleXPCEvent:(id)arg1;
 - (id)init;
 - (bool)isActive;
-- (void)mapLayer:(id)arg1 didChangeRegionAnimated:(bool)arg2;
 - (void)recievedData:(id)arg1;
 - (void)sendData:(id)arg1;
-- (bool)takeMITSnapshot:(out id*)arg1;
 
 @end

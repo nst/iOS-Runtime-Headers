@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKVibrationPickerViewController : UIViewController <TKVibrationPickerCollectionViewCellDelegate, TKVibrationRecorderViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateTableLayout, UINavigationControllerDelegate> {
+@interface TKVibrationPickerViewController : UIViewController <PSStateRestoration, TKVibrationPickerCollectionViewCellDelegate, TKVibrationRecorderViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateTableLayout, UINavigationControllerDelegate> {
     <TKVibrationPickerViewControllerDelegate> * __additionalDelegate;
     <TKVibrationPickerViewControllerDismissalDelegate> * __dismissalDelegate;
     long long  _alertType;
@@ -114,6 +114,7 @@
 - (long long)alertType;
 - (bool)allowsDeletingDefaultVibration;
 - (void)applicationWillSuspend;
+- (bool)canBeShownFromSuspendedState;
 - (bool)canEnterEditingMode;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

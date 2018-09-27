@@ -12,7 +12,7 @@
     BSMachPortTaskNameRight * _taskNameRight;
 }
 
-@property (nonatomic, readonly, retain) BSAuditToken *auditToken;
+@property (nonatomic, readonly) BSAuditToken *auditToken;
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundlePath;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) int pid;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BSMachPortTaskNameRight *taskNameRight;
 @property (nonatomic, readonly, retain) BSMachPortTaskNameRight *taskNameRight;
 @property (nonatomic, readonly) long long type;
 @property (getter=isValid, nonatomic, readonly) bool valid;
@@ -39,6 +40,7 @@
 + (id)processHandleForXPCConnection:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
 - (bool)_isRunningWithCertainty:(out bool*)arg1;
 - (id)auditToken;
@@ -72,6 +74,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
+- (bool)_fbs_isApplication;
 - (id)handle;
 - (long long)type;
 

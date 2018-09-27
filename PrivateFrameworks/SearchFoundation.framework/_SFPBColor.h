@@ -14,10 +14,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _SFPBGraphicalFloat *greenComponent;
-@property (nonatomic, readonly) bool hasAlphaComponent;
-@property (nonatomic, readonly) bool hasBlueComponent;
-@property (nonatomic, readonly) bool hasGreenComponent;
-@property (nonatomic, readonly) bool hasRedComponent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) _SFPBGraphicalFloat *redComponent;
@@ -28,10 +24,6 @@
 - (id)blueComponent;
 - (id)dictionaryRepresentation;
 - (id)greenComponent;
-- (bool)hasAlphaComponent;
-- (bool)hasBlueComponent;
-- (bool)hasGreenComponent;
-- (bool)hasRedComponent;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

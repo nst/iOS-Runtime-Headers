@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACAccount : NSObject <ACProtobufCoding, NSCoding, NSCopying, NSSecureCoding> {
+@interface ACAccount : NSObject <ACProtobufCoding, AMSHashable, NSCoding, NSCopying, NSSecureCoding> {
     bool  _accountAccessAvailable;
     NSString * _accountDescription;
     id /* block */  _accountPropertiesTransformer;
@@ -15,13 +15,12 @@
     bool  _creatingFromManagedObject;
     ACAccountCredential * _credential;
     NSString * _credentialType;
-    id  _credentialsDidChangeObserver;
+    <NSObject> * _credentialsDidChangeObserver;
     NSMutableDictionary * _dataclassProperties;
     NSDate * _date;
     NSMutableSet * _dirtyAccountProperties;
     NSMutableSet * _dirtyDataclassProperties;
     NSMutableSet * _dirtyProperties;
-    NSMutableSet * _enabledDataclasses;
     bool  _haveCheckedForChildAccounts;
     bool  _haveCheckedForClientToken;
     bool  _haveCheckedForParentAccount;
@@ -32,11 +31,14 @@
     ACAccount * _parentAccount;
     NSString * _parentAccountIdentifier;
     NSMutableDictionary * _properties;
-    NSMutableSet * _provisionedDataclasses;
     ACAccountStore * _store;
     bool  _supportsAuthentication;
+    ACMutableTrackedSet * _trackedEnabledDataclasses;
+    ACMutableTrackedSet * _trackedProvisionedDataclasses;
     NSString * _username;
     bool  _visible;
+    bool  _wasEnabledDataclassesReset;
+    bool  _wasProvisionedDataclassesReset;
 }
 
 @property (setter=_aa_setRawPassword:, nonatomic, copy) NSString *_aa_rawPassword;
@@ -73,6 +75,7 @@
 @property (setter=aa_setPrimaryAccount:, nonatomic) bool aa_isPrimaryAccount;
 @property (setter=aa_setPrimaryEmailVerified:, nonatomic) bool aa_isPrimaryEmailVerified;
 @property (nonatomic, readonly) bool aa_isSandboxAccount;
+@property (nonatomic, readonly) bool aa_isSuspended;
 @property (setter=aa_setSyncedAccount:, nonatomic) bool aa_isSyncedAccount;
 @property (setter=aa_setUndergoingRepair:, nonatomic) bool aa_isUndergoingRepair;
 @property (setter=aa_setUsesCloudDocs:, nonatomic) bool aa_isUsingCloudDocs;
@@ -90,9 +93,11 @@
 @property (nonatomic, readonly) NSString *aa_primaryEmail;
 @property (nonatomic, readonly) NSString *aa_protocolVersion;
 @property (nonatomic, readonly, copy) AARegionInfo *aa_regionInfo;
+@property (setter=aa_setRepairState:, nonatomic) NSNumber *aa_repairState;
 @property (nonatomic, readonly) int aa_repairerPID;
 @property (nonatomic, readonly) bool aa_serviceUnavailable;
 @property (nonatomic, readonly) NSDictionary *aa_serviceUnavailableInfo;
+@property (nonatomic, readonly, copy) AASuspensionInfo *aa_suspensionInfo;
 @property (nonatomic, readonly) NSString *aa_syncStoreIdentifier;
 @property (nonatomic, copy) NSString *accountDescription;
 @property (nonatomic, readonly) NSDictionary *accountProperties;
@@ -100,6 +105,21 @@
 @property (nonatomic, readonly) ACAccountStore *accountStore;
 @property (nonatomic, retain) ACAccountType *accountType;
 @property (getter=isActive, nonatomic) bool active;
+@property (nonatomic, readonly) NSNumber *ams_DSID;
+@property (getter=ams_isIDMSAccount, nonatomic, readonly) bool ams_IDMSAccount;
+@property (nonatomic, readonly) NSString *ams_altDSID;
+@property (nonatomic, readonly) NSArray *ams_cookies;
+@property (nonatomic, readonly) NSString *ams_creditsString;
+@property (getter=ams_isDemoAccount, nonatomic, readonly) bool ams_demoAccount;
+@property (nonatomic, readonly) NSString *ams_firstName;
+@property (nonatomic, readonly) NSString *ams_fullName;
+@property (getter=ams_isiCloudAccount, nonatomic, readonly) bool ams_iCloudAccount;
+@property (getter=ams_isiTunesAccount, nonatomic, readonly) bool ams_iTunesAccount;
+@property (nonatomic, readonly) NSString *ams_lastName;
+@property (getter=ams_isLocalAccount, nonatomic, readonly) bool ams_localAccount;
+@property (getter=ams_isManagedAppleID, nonatomic, readonly) bool ams_managedAppleID;
+@property (getter=ams_isSandboxAccount, nonatomic, readonly) bool ams_sandboxAccount;
+@property (nonatomic, readonly) NSString *ams_storefront;
 @property (getter=isAuthenticated, nonatomic) bool authenticated;
 @property (nonatomic, readonly) NSString *authenticationType;
 @property bool calAttachmentDownloadHasTakenPlace;
@@ -155,6 +175,7 @@
 @property (nonatomic, readonly) ACAccount *displayAccount;
 @property (nonatomic, retain) NSMutableSet *enabledDataclasses;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *hashedDescription;
 @property (setter=ic_setDSID:, nonatomic, copy) NSNumber *ic_DSID;
 @property (getter=ic_isActiveLockerAccount, setter=ic_setActiveLockerAccount:, nonatomic) bool ic_activeLockerAccount;
 @property (setter=ic_setAltDSID:, nonatomic, copy) NSString *ic_altDSID;
@@ -180,9 +201,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsAuthentication;
 @property (nonatomic, readonly) bool supportsPush;
+@property (nonatomic, copy) ACTrackedSet *trackedEnabledDataclasses;
+@property (nonatomic, copy) ACTrackedSet *trackedProvisionedDataclasses;
 @property (nonatomic, readonly) NSString *userFullName;
 @property (nonatomic, copy) NSString *username;
 @property (getter=isVisible, nonatomic) bool visible;
+@property (nonatomic, readonly) bool wasEnabledDataclassesReset;
+@property (nonatomic, readonly) bool wasProvisionedDataclassesReset;
 
 // Image: /System/Library/Frameworks/Accounts.framework/Accounts
 
@@ -207,6 +232,8 @@
 - (void)_markPropertyDirty:(id)arg1;
 - (void)_setAccountStore:(id)arg1;
 - (void)_setObjectID:(id)arg1;
+- (void)_unsafe_markAccountPropertyDirty:(id)arg1;
+- (void)_unsafe_markDataclassPropertyDirty:(id)arg1;
 - (void)_unsafe_markPropertyDirty:(id)arg1;
 - (bool)_useParentForCredentials;
 - (id)accountByCleaningThirdPartyTransformations;
@@ -238,7 +265,6 @@
 - (id)dirtyDataclassProperties;
 - (id)dirtyProperties;
 - (id)displayAccount;
-- (id)enabledAndSyncableDataclasses;
 - (id)enabledDataclasses;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fullDescription;
@@ -294,18 +320,25 @@
 - (void)setParentAccount:(id)arg1;
 - (void)setProperties:(id)arg1 forDataclass:(id)arg2;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)setProvisioned:(bool)arg1 forDataclass:(id)arg2;
 - (void)setProvisionedDataclasses:(id)arg1;
 - (void)setSecCertificates:(id)arg1;
 - (void)setSecIdentity:(struct __SecIdentity { }*)arg1;
 - (void)setSupportsAuthentication:(bool)arg1;
+- (void)setTrackedEnabledDataclasses:(id)arg1;
+- (void)setTrackedProvisionedDataclasses:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (void)setVisible:(bool)arg1;
 - (id)shortDebugName;
 - (bool)supportsAuthentication;
 - (bool)supportsPush;
 - (void)takeValuesFromModifiedAccount:(id)arg1;
+- (id)trackedEnabledDataclasses;
+- (id)trackedProvisionedDataclasses;
 - (id)userFullName;
 - (id)username;
+- (bool)wasEnabledDataclassesReset;
+- (bool)wasProvisionedDataclassesReset;
 
 // Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
@@ -354,6 +387,7 @@
 - (bool)aa_isPrimaryAccount;
 - (bool)aa_isPrimaryEmailVerified;
 - (bool)aa_isSandboxAccount;
+- (bool)aa_isSuspended;
 - (bool)aa_isSyncedAccount;
 - (bool)aa_isUndergoingRepair;
 - (bool)aa_isUsingCloudDocs;
@@ -372,6 +406,7 @@
 - (id)aa_protocolVersion;
 - (id)aa_regionInfo;
 - (void)aa_removeCerts;
+- (id)aa_repairState;
 - (int)aa_repairerPID;
 - (bool)aa_serviceUnavailable;
 - (id)aa_serviceUnavailableInfo;
@@ -388,10 +423,12 @@
 - (void)aa_setPassword:(id)arg1;
 - (void)aa_setPrimaryAccount:(bool)arg1;
 - (void)aa_setPrimaryEmailVerified:(bool)arg1;
+- (void)aa_setRepairState:(id)arg1;
 - (void)aa_setSyncedAccount:(bool)arg1;
 - (void)aa_setUndergoingRepair:(bool)arg1;
 - (void)aa_setUseCellular:(bool)arg1 forDataclass:(id)arg2;
 - (void)aa_setUsesCloudDocs:(bool)arg1;
+- (id)aa_suspensionInfo;
 - (id)aa_syncStoreIdentifier;
 - (void)aa_updateWithProvisioningResponse:(id)arg1;
 - (bool)aa_useCellularForDataclass:(id)arg1;
@@ -399,7 +436,6 @@
 - (bool)canRemoveAccount;
 - (id)dsid;
 - (id)initWithAppleID:(id)arg1 password:(id)arg2;
-- (int)mobileMeAccountStatus;
 - (id)normalizedDSID;
 - (void)setDSID:(id)arg1;
 - (void)storeOriginalUsername;
@@ -418,6 +454,64 @@
 - (id)aida_tokenForService:(id)arg1;
 - (id)aida_tokenWithExpirationCheck;
 - (id)aida_tokenWithExpiryCheckForService:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
++ (bool)_defaultValueForAccountFlag:(id)arg1;
++ (bool)_isAccountFlagWritable:(id)arg1;
+
+- (id)_accountPropertyForKey:(id)arg1 expectedClass:(Class)arg2;
+- (id)_cookiesMatchingProperties:(id)arg1;
+- (id)_createCookieStorage;
+- (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
+- (void)_setCookies:(id)arg1;
+- (id)ams_DSID;
+- (id)ams_accountFlags;
+- (void)ams_addCookies:(id)arg1;
+- (id)ams_altDSID;
+- (id)ams_cookies;
+- (id)ams_cookiesForURL:(id)arg1;
+- (id)ams_creditsString;
+- (bool)ams_didAgreeToTerms;
+- (id)ams_firstName;
+- (id)ams_fullName;
+- (bool)ams_isDemoAccount;
+- (bool)ams_isDuplicate:(id)arg1;
+- (bool)ams_isIDMSAccount;
+- (bool)ams_isInGoodStanding;
+- (bool)ams_isLocalAccount;
+- (bool)ams_isManagedAppleID;
+- (bool)ams_isSandboxAccount;
+- (bool)ams_isValidPayment;
+- (bool)ams_isiCloudAccount;
+- (bool)ams_isiCloudFamily;
+- (bool)ams_isiTunesAccount;
+- (id)ams_lastName;
+- (id)ams_password;
+- (bool)ams_postAccountFlagsWithBagContract:(id)arg1;
+- (id)ams_rawPassword;
+- (void)ams_removeAllCookies;
+- (void)ams_removeCookies:(id)arg1;
+- (void)ams_removeCookiesMatchingProperties:(id)arg1;
+- (bool)ams_requiresAuthKitUpdate;
+- (id)ams_secureToken;
+- (void)ams_setAccountFlags:(id)arg1;
+- (void)ams_setAgreedToTerms:(bool)arg1;
+- (void)ams_setAltDSID:(id)arg1;
+- (void)ams_setCreditsString:(id)arg1;
+- (void)ams_setDSID:(id)arg1;
+- (void)ams_setFirstName:(id)arg1;
+- (void)ams_setInGoodStanding:(bool)arg1;
+- (void)ams_setLastName:(id)arg1;
+- (void)ams_setPassword:(id)arg1;
+- (void)ams_setRawPassword:(id)arg1;
+- (void)ams_setStorefront:(id)arg1;
+- (void)ams_setValidPayment:(bool)arg1;
+- (void)ams_setValue:(bool)arg1 forAccountFlag:(id)arg2;
+- (void)ams_setiCloudFamily:(bool)arg1;
+- (id)ams_storefront;
+- (bool)ams_valueForAccountFlag:(id)arg1;
+- (id)hashedDescription;
 
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 

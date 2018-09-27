@@ -33,6 +33,7 @@
     NSArray * _people;
     CPLPlaceAnnotation * _placeAnnotation;
     long long  _playCount;
+    NSDictionary * _resourcePerResourceType;
     NSArray * _resources;
     long long  _shareCount;
     NSString * _timeZoneName;
@@ -98,11 +99,10 @@
 - (bool)_canLowerQuota;
 - (id)addedDate;
 - (id)adjustments;
-- (id)allRelatedIdentifiers;
+- (id)allRelatedScopedIdentifiers;
 - (id)assetDate;
 - (unsigned long long)assetHDRType;
 - (unsigned long long)assetSubtype;
-- (void)awakeFromStorage;
 - (unsigned long long)burstFlags;
 - (id)burstIdentifier;
 - (id)caption;
@@ -110,6 +110,7 @@
 - (id)collectionIdentifier;
 - (id)collectionName;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
 - (long long)customRenderedValue;
 - (long long)dequeueOrder;
 - (long long)duration;
@@ -119,8 +120,6 @@
 - (id)facesData;
 - (long long)facesVersion;
 - (unsigned long long)fullChangeTypeForFullRecord;
-- (id)identifiersForMapping;
-- (id)identifiersForQuarantine;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isFavorite;
@@ -129,6 +128,7 @@
 - (id)lastSharedDate;
 - (id)location;
 - (id)masterIdentifier;
+- (id)masterScopedIdentifier;
 - (id)mediaGroupIdentifier;
 - (id)momentIdentifier;
 - (id)momentName;
@@ -137,12 +137,13 @@
 - (id)people;
 - (id)placeAnnotation;
 - (long long)playCount;
-- (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
-- (id)proposedCloudIdentifierWithError:(id*)arg1;
 - (id)relatedIdentifier;
+- (id)resourceForType:(unsigned long long)arg1;
 - (id)resources;
+- (id)scopeIdentifiersForQuarantine;
+- (id)scopedIdentifiersForMapping;
 - (void)setAddedDate:(id)arg1;
 - (void)setAdjustments:(id)arg1;
 - (void)setAssetDate:(id)arg1;
@@ -166,6 +167,7 @@
 - (void)setLastSharedDate:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMasterIdentifier:(id)arg1;
+- (void)setMasterScopedIdentifier:(id)arg1;
 - (void)setMediaGroupIdentifier:(id)arg1;
 - (void)setMomentIdentifier:(id)arg1;
 - (void)setMomentName:(id)arg1;

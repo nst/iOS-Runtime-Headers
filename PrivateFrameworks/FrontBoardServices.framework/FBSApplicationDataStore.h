@@ -8,7 +8,7 @@
     bool  _clientNeedsCheckin;
 }
 
-@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, readonly) NSString *bundleID;
 
 + (void)_doWithClassClient:(id /* block */)arg1;
 + (void)_setClassClient:(id)arg1;
@@ -18,6 +18,7 @@
 + (void)synchronize;
 + (void)synchronizeWithCompletion:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (id)_initWithBundleId:(id)arg1 client:(id)arg2;
 - (id)_makeSafe:(id)arg1 forType:(Class)arg2;
 - (id)archivedObjectForKey:(id)arg1;

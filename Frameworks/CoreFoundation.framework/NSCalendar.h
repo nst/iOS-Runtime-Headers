@@ -230,6 +230,20 @@
 - (id)hk_startOfTomorrowForDate:(id)arg1;
 - (id)hk_yesterdayAtNoonForDate:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
++ (id)_dateForInitial:(id)arg1 repeated:(id)arg2 backwards:(bool)arg3;
++ (unsigned long long)_optionsForBackwards:(bool)arg1;
++ (id)mtGregorianCalendar;
+
+- (id)_mtNextDateAfterDate:(id)arg1 matchingComponents:(id)arg2 backwards:(bool)arg3;
+- (id)_mtNextDateAfterDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3 backwards:(bool)arg4;
+- (bool)mtDateRequiresSingularTimeString:(id)arg1;
+- (id)mtNextDateAfterDate:(id)arg1 matchingComponents:(id)arg2;
+- (id)mtNextDateAfterDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3;
+- (id)mtPreviousDateBeforeDate:(id)arg1 matchingComponents:(id)arg2;
+- (id)mtPreviousDateBeforeDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3;
+
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (id)_navigation_dateStringForDate:(id)arg1 withStyle:(unsigned long long)arg2 useRelativeFormatting:(bool)arg3 inTimeZone:(id)arg4;

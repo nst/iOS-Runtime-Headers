@@ -3,8 +3,7 @@
  */
 
 @interface NUImageExportRequest : NUExportRequest {
-    NSDictionary * _auxiliaryData;
-    NSString * _auxiliaryDataType;
+    NSDictionary * _auxiliaryDataByType;
     NUColorSpace * _colorSpace;
     NUImageExportFormat * _format;
     NSDictionary * _imageProperties;
@@ -17,8 +16,7 @@
     }  _time;
 }
 
-@property (copy) NSDictionary *auxiliaryData;
-@property (copy) NSString *auxiliaryDataType;
+@property (copy) NSDictionary *auxiliaryDataByType;
 @property (nonatomic, retain) NUColorSpace *colorSpace;
 @property (nonatomic, copy) NUImageExportFormat *format;
 @property (copy) NSDictionary *imageProperties;
@@ -26,8 +24,7 @@
 @property struct { long long x1; int x2; unsigned int x3; long long x4; } time;
 
 - (void).cxx_destruct;
-- (id)auxiliaryData;
-- (id)auxiliaryDataType;
+- (id)auxiliaryDataByType;
 - (id)colorSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)format;
@@ -38,8 +35,7 @@
 - (long long)mediaComponentType;
 - (id)newRenderJob;
 - (bool)renderToData;
-- (void)setAuxiliaryData:(id)arg1;
-- (void)setAuxiliaryDataType:(id)arg1;
+- (void)setAuxiliaryDataByType:(id)arg1;
 - (void)setColorSpace:(id)arg1;
 - (void)setFormat:(id)arg1;
 - (void)setImageProperties:(id)arg1;

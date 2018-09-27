@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFLeaveControlGroupRequest : CATTaskRequest {
+@interface DMFLeaveControlGroupRequest : DMFTaskRequest {
     DMFControlGroupIdentifier * _groupIdentifier;
     NSArray * _leaderIdentifiers;
 }

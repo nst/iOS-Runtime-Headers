@@ -3,16 +3,29 @@
  */
 
 @interface AVCaptureDevice : NSObject {
+    AVCaptureDeviceInputSource * _activeInputSource;
+    NSArray * _inputSources;
     AVCaptureDeviceInternal * _internal;
+    NSArray * _linkedDevices;
+    NSString * _manufacturer;
+    bool  _suspended;
+    int  _transportType;
 }
 
 @property (nonatomic, retain) AVCaptureDeviceFormat *activeFormat;
+@property (nonatomic, retain) AVCaptureDeviceInputSource *activeInputSource;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMaxFrameDuration;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } activeVideoMinFrameDuration;
 @property (getter=isConnected, nonatomic, readonly) bool connected;
 @property (nonatomic, readonly) NSArray *formats;
+@property (getter=isInUseByAnotherApplication, nonatomic, readonly) bool inUseByAnotherApplication;
+@property (nonatomic, readonly) NSArray *inputSources;
+@property (nonatomic, readonly) NSArray *linkedDevices;
 @property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) NSString *manufacturer;
 @property (nonatomic, readonly) NSString *modelID;
+@property (getter=isSuspended, nonatomic, readonly) bool suspended;
+@property (nonatomic, readonly) int transportType;
 @property (nonatomic, readonly) NSString *uniqueID;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
@@ -50,9 +63,14 @@
 - (void)_stopUsingDevice;
 - (long long)activeColorSpace;
 - (id)activeDepthDataFormat;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeDepthDataMinFrameDuration;
 - (id)activeFormat;
+- (id)activeInputSource;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeMaxExposureDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })activeMaxExposureDurationClientOverride;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMaxFrameDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })activeVideoMinFrameDuration;
+- (bool)appliesSessionPresetMaxIntegrationTimeOverrideToActiveFormat;
 - (long long)autoFocusRangeRestriction;
 - (bool)automaticallyAdjustsImageControlMode;
 - (bool)automaticallyAdjustsVideoHDREnabled;
@@ -82,6 +100,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRectangle;
 - (int)faceRectangleAngle;
 - (long long)flashMode;
+- (float)focalLength;
 - (long long)focusMode;
 - (struct CGPoint { double x1; double x2; })focusPointOfInterest;
 - (id)formats;
@@ -89,14 +108,18 @@
 - (bool)hasFlash;
 - (bool)hasMediaType:(id)arg1;
 - (bool)hasTorch;
+- (int)hevcTurboModeVersion;
 - (long long)imageControlMode;
 - (id)initSubclass;
+- (id)inputSources;
 - (bool)isActiveVideoMaxFrameDurationSet;
 - (bool)isActiveVideoMinFrameDurationSet;
 - (bool)isAdjustingExposure;
 - (bool)isAdjustingFocus;
 - (bool)isAdjustingWhiteBalance;
 - (bool)isAutoFocusRangeRestrictionSupported;
+- (bool)isAutoRedEyeReductionSupported;
+- (bool)isBuiltInStereoAudioCaptureSupported;
 - (bool)isCameraIntrinsicMatrixDeliverySupported;
 - (bool)isConnected;
 - (bool)isExposureModeSupported:(long long)arg1;
@@ -115,6 +138,7 @@
 - (bool)isHDRSupported;
 - (bool)isHEIFSupported;
 - (bool)isHEVCPreferred;
+- (bool)isHEVCRelaxedAverageBitRateTargetSupported;
 - (bool)isHEVCSupported;
 - (bool)isHighDynamicRangeScene;
 - (bool)isHighDynamicRangeSceneDetectionEnabled;
@@ -127,6 +151,7 @@
 - (bool)isLockingWhiteBalanceWithCustomDeviceGainsSupported;
 - (bool)isLowLightBoostEnabled;
 - (bool)isLowLightBoostSupported;
+- (bool)isLowLightVideoCaptureEnabled;
 - (bool)isMachineReadableCodeDetectionSupported;
 - (bool)isOpen;
 - (bool)isRampingVideoZoom;
@@ -135,17 +160,21 @@
 - (bool)isSmoothAutoFocusEnabled;
 - (bool)isSmoothAutoFocusSupported;
 - (bool)isSubjectAreaChangeMonitoringEnabled;
+- (bool)isSuspended;
 - (bool)isTorchActive;
 - (bool)isTorchAvailable;
 - (bool)isTorchModeSupported:(long long)arg1;
 - (bool)isVideoHDREnabled;
+- (bool)isVideoHDRSuspended;
 - (bool)isVideoStabilizationSupported;
 - (bool)isWhiteBalanceModeSupported:(long long)arg1;
 - (bool)isWideColorSupported;
 - (float)lensAperture;
 - (float)lensPosition;
+- (id)linkedDevices;
 - (id)localizedName;
 - (bool)lockForConfiguration:(id*)arg1;
+- (id)manufacturer;
 - (double)maxAvailableVideoZoomFactor;
 - (float)maxExposureTargetBias;
 - (struct { int x1; int x2; })maxH264PhotoDimensions;
@@ -163,7 +192,10 @@
 - (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
 - (void)setActiveColorSpace:(long long)arg1;
 - (void)setActiveDepthDataFormat:(id)arg1;
+- (void)setActiveDepthDataMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveFormat:(id)arg1;
+- (void)setActiveInputSource:(id)arg1;
+- (void)setActiveMaxExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setActiveVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setAutoFocusRangeRestriction:(long long)arg1;
@@ -185,6 +217,7 @@
 - (void)setFocusPointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setHighDynamicRangeSceneDetectionEnabled:(bool)arg1;
 - (void)setImageControlMode:(long long)arg1;
+- (void)setLowLightVideoCaptureEnabled:(bool)arg1;
 - (void)setProvidesStortorgetMetadata:(bool)arg1;
 - (void)setSmileDetectionEnabled:(bool)arg1;
 - (void)setSmoothAutoFocusEnabled:(bool)arg1;
@@ -192,6 +225,7 @@
 - (void)setTorchMode:(long long)arg1;
 - (bool)setTorchModeOnWithLevel:(float)arg1 error:(id*)arg2;
 - (void)setVideoHDREnabled:(bool)arg1;
+- (void)setVideoHDRSuspended:(bool)arg1;
 - (void)setVideoZoomFactor:(double)arg1;
 - (void)setWhiteBalanceMode:(long long)arg1;
 - (void)setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1 completionHandler:(id /* block */)arg2;
@@ -205,6 +239,7 @@
 - (struct { float x1; float x2; })temperatureAndTintValuesForDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1;
 - (float)torchLevel;
 - (long long)torchMode;
+- (int)transportType;
 - (id)uniqueID;
 - (void)unlockForConfiguration;
 - (bool)usesQuantizationScalingMatrix_H264_Steep_16_48;
@@ -216,9 +251,10 @@
 - (void)cam_debugExposureState;
 - (void)cam_debugFocusAndExposureState;
 - (void)cam_debugFocusState;
+- (id)cam_highestQualityFormatForConfiguration:(long long)arg1 colorSpace:(long long)arg2;
 - (id)cameraPanoramaFormatForConfiguration:(id)arg1;
 - (id)cameraStillImageFormat;
-- (id)cameraVideoFormatForVideoConfiguration:(long long)arg1;
-- (id)cameraVideoPresetForVideoConfiguration:(long long)arg1;
+- (id)cameraVideoFormatForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
+- (id)cameraVideoPresetForVideoConfiguration:(long long)arg1 videoEncodingBehavior:(long long)arg2;
 
 @end

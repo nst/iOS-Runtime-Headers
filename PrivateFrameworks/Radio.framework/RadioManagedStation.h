@@ -44,7 +44,6 @@
 @property (nonatomic, retain) NSURL *streamURL;
 @property (getter=isSubscribed, nonatomic) bool subscribed;
 @property (nonatomic) int subscriberCount;
-@property (nonatomic, copy) NSArray *trackPlaybackDescriptorQueue;
 @property (nonatomic) bool virtualPlayEnabled;
 
 + (id)defaultPropertiesToFetch;
@@ -117,7 +116,6 @@
 - (void)setStreamURL:(id)arg1;
 - (void)setSubscribed:(bool)arg1;
 - (void)setSubscriberCount:(int)arg1;
-- (void)setTrackPlaybackDescriptorQueue:(id)arg1;
 - (void)setVirtualPlayEnabled:(bool)arg1;
 - (id)shareToken;
 - (bool)skipEnabled;
@@ -135,7 +133,6 @@
 - (id)streamKeyURL;
 - (id)streamURL;
 - (int)subscriberCount;
-- (id)trackPlaybackDescriptorQueue;
 - (bool)virtualPlayEnabled;
 
 @end

@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) NSString *sessionID;
 @property (nonatomic, readonly) int socket;
 
+// Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
+
 - (void).cxx_destruct;
 - (unsigned long long)MTUForAddressFamily:(unsigned long long)arg1;
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4;
@@ -56,5 +58,9 @@
 - (bool)shouldUseSocketForTransport;
 - (int)socket;
 - (unsigned int)state;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (id)hmd_sessionWithAccount:(id)arg1 device:(id)arg2 options:(id)arg3;
 
 @end

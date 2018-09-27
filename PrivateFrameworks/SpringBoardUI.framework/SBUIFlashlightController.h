@@ -37,8 +37,8 @@
 - (void)removeAllObservers;
 - (void)removeObserver:(id)arg1;
 - (void)setLevel:(unsigned long long)arg1;
-- (void)turnFlashlightOff;
-- (void)turnFlashlightOn;
+- (void)turnFlashlightOffForReason:(id)arg1;
+- (void)turnFlashlightOnForReason:(id)arg1;
 - (void)warmUp;
 
 @end

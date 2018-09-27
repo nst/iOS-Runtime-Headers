@@ -16,6 +16,8 @@
 - (bool)canAccessAppleMusic;
 - (bool)canAccessRemoteAssets;
 - (bool)canAccessiCloudMusicLibrary;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (bool)canRelayCommunicationChannel;
 - (id)descriptor;
 - (unsigned int)deviceSubtype;
@@ -40,6 +42,9 @@
 - (id)modelID;
 - (id)modelSpecificInfo;
 - (id)name;
+- (bool)parentGroupContainsDiscoverableLeader;
+- (id)parentGroupIdentifier;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (bool)requiresAuthorization;
 - (id)sourceInfo;
 - (bool)supportsBufferedAirPlay;

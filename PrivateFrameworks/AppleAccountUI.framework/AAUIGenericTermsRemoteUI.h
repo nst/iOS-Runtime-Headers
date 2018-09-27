@@ -25,6 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
+- (void)_agreeToTermsWithURLString:(id)arg1 preferPassword:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_cancelButtonTapped:(id)arg1;
 - (void)_cleanUpAndDismissWithSuccess:(bool)arg1 agreeURL:(id)arg2;
 - (void)_cleanupRUILoader;

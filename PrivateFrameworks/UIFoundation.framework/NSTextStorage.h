@@ -30,6 +30,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (bool)_attributeFixingInProgress;
 - (bool)_forceFixAttributes;
@@ -75,7 +76,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEditedMask:(unsigned long long)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)_undoRedoAttributedSubstringFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_undoRedoTextOperation:(id)arg1;

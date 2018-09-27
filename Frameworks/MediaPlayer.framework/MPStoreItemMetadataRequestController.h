@@ -4,9 +4,12 @@
 
 @interface MPStoreItemMetadataRequestController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
+    long long  _cacheSize;
     NSMutableDictionary * _itemCaches;
     unsigned long long  _lastExpiredMetadataPurgeMachTime;
 }
+
+@property (nonatomic) long long cacheSize;
 
 + (unsigned long long)optimalBatchSize;
 + (id)sharedStoreItemMetadataRequestController;
@@ -14,8 +17,10 @@
 - (void).cxx_destruct;
 - (void)_removeExpiredItemsPeriodically;
 - (void)addStoreItemMetadata:(id)arg1;
+- (long long)cacheSize;
 - (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (id)init;
 - (void)requestStoreItemMetadataForReason:(unsigned long long)arg1 withItemIdentifiers:(id)arg2 responseHandler:(id /* block */)arg3;
+- (void)setCacheSize:(long long)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface PKFieldDetector : NSObject <NFFieldDetectSessionDelegate, NFLoyaltyAndPaymentSessionDelegate> {
     <PKFieldDetectorDelegate> * _delegate;
     NFFieldDetectSession * _fieldDetectSession;
+    bool  _fieldDetectSessionRequested;
     unsigned long long  _fieldDetectSessionRetryCount;
     NSObject<OS_dispatch_queue> * _fieldDetectorSerialQueue;
     bool  _fieldPresent;
@@ -14,8 +15,10 @@
     NSObject<OS_dispatch_source> * _fieldPropertiesLookupTimer;
     PKFieldProperties * _fieldPropertiesToLookup;
     unsigned long long  _fieldPropertieslookupSynchronizer;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     NSHashTable * _observers;
-    NSLock * _observersLock;
     NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
@@ -34,9 +37,9 @@
 - (void)_startLookupForFieldProperties:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)fieldDetectSession:(id)arg1 didDetectField:(bool)arg2;
-- (void)fieldDetectSession:(id)arg1 didDetectTechnology:(id)arg2;
+- (void)fieldDetectSession:(id)arg1 didEnterFieldWithNotification:(id)arg2;
 - (void)fieldDetectSessionDidEndUnexpectedly:(id)arg1;
+- (void)fieldDetectSessionDidExitField:(id)arg1;
 - (id)fieldProperties;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;

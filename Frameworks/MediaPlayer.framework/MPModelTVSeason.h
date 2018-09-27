@@ -38,6 +38,7 @@
 + (bool)supportsLibraryAddStatusObservation;
 
 - (id)artworkCatalog;
+- (id)humanDescription;
 - (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore

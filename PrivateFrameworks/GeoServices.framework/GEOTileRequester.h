@@ -8,7 +8,6 @@
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _deviceCountry;
     NSString * _deviceRegion;
-    bool  _requireWiFi;
     NSThread * _thread;
     GEOTileRequest * _tileRequest;
 }

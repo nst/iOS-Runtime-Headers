@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSRemoteAlertClient : FBSSystemServiceFacilityClient {
+@interface SBSRemoteAlertClient : FBSServiceFacilityClient {
     NSObject<OS_dispatch_queue> * _handleObserverQueue;
     NSMutableDictionary * _portToDeathSentinelMap;
     NSMutableDictionary * _portToHandleMap;

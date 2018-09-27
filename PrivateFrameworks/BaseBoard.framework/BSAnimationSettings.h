@@ -18,7 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) float speed;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) CAMediaTimingFunction *timingFunction;
+@property (nonatomic, readonly) CAMediaTimingFunction *timingFunction;
 
 + (id)settingsWithDuration:(double)arg1;
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;
@@ -26,6 +26,7 @@
 + (id)settingsWithDuration:(double)arg1 timingFunction:(id)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_initWithDuration:(double)arg1 delay:(double)arg2 frameInterval:(double)arg3 timingFunction:(id)arg4 speed:(float)arg5;
 - (void)_setDelay:(double)arg1;
 - (void)_setDuration:(double)arg1;
@@ -34,7 +35,6 @@
 - (void)_setTimingFunction:(id)arg1;
 - (void)applyToCAAnimation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (double)delay;
 - (id)description;
 - (double)duration;

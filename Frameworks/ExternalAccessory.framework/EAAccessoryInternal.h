@@ -16,6 +16,7 @@
     NSString * _coreAccessoryPrimaryUUID;
     bool  _createdByCoreAccessories;
     <EAAccessoryDelegate> * _delegate;
+    unsigned long long  _destinationSharingOptions;
     NSString * _dockType;
     NSMutableArray * _enqueuedNMEASentences;
     unsigned int  _eqIndex;
@@ -55,6 +56,7 @@
 @property (nonatomic, copy) NSString *coreAccessoryPrimaryUUID;
 @property bool createdByCoreAccessories;
 @property (nonatomic) <EAAccessoryDelegate> *delegate;
+@property unsigned long long destinationSharingOptions;
 @property (nonatomic, copy) NSString *dockType;
 @property (nonatomic, retain) NSMutableArray *enqueuedNMEASentences;
 @property (nonatomic) unsigned int eqIndex;
@@ -94,6 +96,7 @@
 - (bool)createdByCoreAccessories;
 - (void)dealloc;
 - (id)delegate;
+- (unsigned long long)destinationSharingOptions;
 - (id)dockType;
 - (id)enqueuedNMEASentences;
 - (unsigned int)eqIndex;
@@ -129,6 +132,7 @@
 - (void)setCoreAccessoryPrimaryUUID:(id)arg1;
 - (void)setCreatedByCoreAccessories:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDestinationSharingOptions:(unsigned long long)arg1;
 - (void)setDockType:(id)arg1;
 - (void)setEnqueuedNMEASentences:(id)arg1;
 - (void)setEqIndex:(unsigned int)arg1;

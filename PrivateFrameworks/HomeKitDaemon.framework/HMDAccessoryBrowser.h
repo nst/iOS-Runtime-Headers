@@ -8,8 +8,7 @@
     bool  _activeSiriCommand;
     bool  _appIsInForeground;
     HMDAuthServer * _authServer;
-    bool  _browseForMediaAccessories;
-    NSMutableSet * _browsingXPCConnections;
+    NSMutableSet * _browsingConnections;
     HAPAccessoryServerBrowserBTLE * _btleAccessoryServerBrowser;
     NSMutableArray * _currentlyPairingAccessories;
     NSMutableArray * _currentlyPairingProgressHandlers;
@@ -48,8 +47,6 @@
 @property (nonatomic) bool activeSiriCommand;
 @property (nonatomic) bool appIsInForeground;
 @property (nonatomic, retain) HMDAuthServer *authServer;
-@property (nonatomic) bool browseForMediaAccessories;
-@property (nonatomic, retain) NSMutableSet *browsingXPCConnections;
 @property (nonatomic, retain) HAPAccessoryServerBrowserBTLE *btleAccessoryServerBrowser;
 @property (nonatomic, retain) NSMutableArray *currentlyPairingAccessories;
 @property (nonatomic, retain) NSMutableArray *currentlyPairingProgressHandlers;
@@ -90,12 +87,14 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (void)__addBrowsingConnection:(id)arg1;
 - (void)__addMediaAccessoryControlObserver:(id)arg1;
-- (bool)__isConnectionBeingObserved:(id)arg1;
+- (bool)__isAccessoryBrowsingRequested;
 - (bool)__isCurrentDevicePrimaryResident;
-- (bool)__isMediaAccessoryControlRequested;
-- (id)__observerMatchingConnection:(id)arg1;
+- (bool)__isMediaAccessoryBrowsingRequested;
+- (void)__removeBrowsingObserver:(id)arg1;
 - (void)__removeMediaAccessoryControlObserver:(id)arg1;
+- (void)__resetBrowsingConnections;
 - (void)_addReconfirmTimer:(id)arg1 accessoryServer:(id)arg2;
 - (void)_addUnpairedAccessoryForServer:(id)arg1;
 - (void)_btleAccessoryReachabilityProbeTimer:(bool)arg1;
@@ -138,11 +137,12 @@
 - (void)_notifyDelegatesOfTombstonedAccessoryServer:(id)arg1;
 - (void)_notifyDelegatesOfWACCompletionForAccessoryServerWithIdentifier:(id)arg1 error:(id)arg2;
 - (void)_pairAccessory:(id)arg1 homeName:(id)arg2 setupCode:(id)arg3 setupCodeProvider:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (void)_pairAccessoryWithDescription:(id)arg1 homeName:(id)arg2 neeedsUserConfirmation:(bool)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (void)_pairAccessoryWithDescription:(id)arg1 homeName:(id)arg2 needsUserConfirmation:(bool)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_pairingInformationForUnpairedAccessory:(id)arg1;
 - (id)_progressHandlerForUnpairedAccessory:(id)arg1;
 - (void)_promptForPairingPasswordForServer:(id)arg1 reason:(id)arg2;
 - (void)_registerForMessages;
+- (void)_removeBrowsingConnection:(id)arg1;
 - (void)_removeMediaAccessoryControlObserverMatchingConnection:(id)arg1;
 - (void)_removePairingInformation:(id)arg1 errorCode:(long long)arg2;
 - (void)_removePairingInformationForUnpairedAccessory:(id)arg1;
@@ -154,14 +154,15 @@
 - (bool)_shouldAccessoryServerBeTombstoned:(id)arg1;
 - (void)_startDiscoveringAccessories;
 - (void)_startDiscoveringAccessoriesNeedingReprovisioning;
+- (void)_startDiscoveringMediaAccessories;
 - (void)_startDiscoveringPairedAccessories;
 - (void)_startOrStopAccessoryDiscovery;
 - (void)_startPairingInterruptionTimer:(id)arg1;
 - (void)_stopBtleAccessoryReachabilityProbeTimer;
 - (void)_stopDiscoveringAccessoriesWithForce:(bool)arg1;
+- (void)_stopDiscoveringMediaAccessories;
 - (void)_stopReconfirmTimer:(id)arg1;
 - (void)_stopReprovisioningTimerHandler;
-- (void)_stopSearchingWithXPCConnection:(id)arg1;
 - (void)_tombstoneAccessoryServer:(id)arg1;
 - (id)_tombstonedAccessoryServerWithServerIdentifier:(id)arg1;
 - (id)_unassociatedMediaAccessoryWithIdentifier:(id)arg1;
@@ -210,12 +211,11 @@
 - (void)addUnpairedHAPAccessory:(id)arg1;
 - (bool)appIsInForeground;
 - (id)authServer;
-- (bool)browseForMediaAccessories;
 - (void)browser:(id)arg1 didAddAdvertisements:(id)arg2;
 - (void)browser:(id)arg1 didRemoveAdvertisements:(id)arg2;
 - (void)browser:(id)arg1 didRemoveSessions:(id)arg2;
 - (void)browser:(id)arg1 didUpdateEndpoints:(id)arg2;
-- (id)browsingXPCConnections;
+- (id)browsingConnections;
 - (void)btleAccessoryReachabilityProbeTimer:(bool)arg1;
 - (id)btleAccessoryServerBrowser;
 - (void)cancelPairingWithAccessory:(id)arg1 error:(id)arg2;
@@ -247,8 +247,9 @@
 - (void)handleActivationResponse:(id)arg1 context:(id)arg2;
 - (void)handleActiveSiriCommand:(id)arg1;
 - (void)handleAddedAccessory:(id)arg1;
-- (void)handleAppTermination:(id)arg1;
+- (void)handleConnectionDeactivation:(id)arg1;
 - (void)handleHomeKitAppInForeground:(id)arg1;
+- (void)handleHomeUIServiceTermination:(id)arg1;
 - (void)handleNewlyPairedAccessory:(id)arg1 linkType:(long long)arg2;
 - (void)handleNoActiveHomeKitApp:(id)arg1;
 - (void)handleNoActiveSiriCommand:(id)arg1;
@@ -269,6 +270,7 @@
 - (bool)isBrowsingAllowed;
 - (bool)isDemoAccessoryIdentifier:(id)arg1;
 - (id)managerDelegate;
+- (id)mediaAccessoryControlConnections;
 - (id)mediaBrowser;
 - (id)messageDestination;
 - (id)messageDispatcher;
@@ -277,7 +279,7 @@
 - (void)notifyDelegatesOfReachability:(bool)arg1 forAccessoryWithIdentifier:(id)arg2;
 - (unsigned long long)numPairedIPAccessories;
 - (void)pairAccessory:(id)arg1 homeName:(id)arg2 setupCode:(id)arg3 setupCodeProvider:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (void)pairAccessoryWithDescription:(id)arg1 homeName:(id)arg2 neeedsUserConfirmation:(bool)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (void)pairAccessoryWithDescription:(id)arg1 homeName:(id)arg2 needsUserConfirmation:(bool)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)probeReachabilityForBTLEAccessoryServersWithIdentifiers:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)propertyQueue;
 - (id)reachabilityTimerForBTLE;
@@ -293,6 +295,7 @@
 - (void)reprovisionAccessoryWithIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)requestPermissionToAssociateWACAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetConfiguration;
+- (void)resetMediaAccessoryControlConnections;
 - (void)resurrectAccessoryServer:(id)arg1;
 - (void)retrieveCurrentStateForIdentifer:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setAccessoryServerBrowsers:(id)arg1;
@@ -300,8 +303,6 @@
 - (void)setActiveWACSession:(id)arg1;
 - (void)setAppIsInForeground:(bool)arg1;
 - (void)setAuthServer:(id)arg1;
-- (void)setBrowseForMediaAccessories:(bool)arg1;
-- (void)setBrowsingXPCConnections:(id)arg1;
 - (void)setBtleAccessoryServerBrowser:(id)arg1;
 - (void)setCurrentlyPairingAccessories:(id)arg1;
 - (void)setCurrentlyPairingProgressHandlers:(id)arg1;
@@ -327,9 +328,11 @@
 - (void)setWorkQueue:(id)arg1;
 - (void)startDiscoveringAccessories;
 - (void)startDiscoveringAccessoriesNeedingReprovisioning;
+- (void)startDiscoveringMediaAccessories;
 - (void)startDiscoveringPairedAccessories;
 - (id)stopBrowsingAccessoriesNeedingReprovisioningTimer;
 - (void)stopDiscoveringAccessories;
+- (void)stopDiscoveringMediaAccessories;
 - (id)stopReprovisioningTimer;
 - (void)stopTrackingBTLEAccessoriesWithIdentifiers:(id)arg1;
 - (void)timerDidFire:(id)arg1;

@@ -22,18 +22,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKImage *leadingImage;
+@property (nonatomic, retain) TLKImage *leadingImage;
 @property (retain) TLKImageView *leadingImageView;
-@property (retain) TLKRichText *leadingSubtitle;
+@property (nonatomic, retain) TLKRichText *leadingSubtitle;
 @property (retain) TLKVibrantLabel *leadingSubtitleLabel;
-@property (retain) TLKRichText *leadingTitle;
+@property (nonatomic, retain) TLKRichText *leadingTitle;
 @property (retain) TLKVibrantLabel *leadingTitleLabel;
 @property (readonly) Class superclass;
-@property (retain) TLKImage *trailingImage;
+@property (nonatomic, retain) TLKImage *trailingImage;
 @property (retain) TLKImageView *trailingImageView;
-@property (retain) TLKRichText *trailingSubtitle;
+@property (nonatomic, retain) TLKRichText *trailingSubtitle;
 @property (retain) TLKVibrantLabel *trailingSubtitleLabel;
-@property (retain) TLKRichText *trailingTitle;
+@property (nonatomic, retain) TLKRichText *trailingTitle;
 @property (retain) TLKVibrantLabel *trailingTitleLabel;
 
 + (void)applyText:(id)arg1 toLabel:(id)arg2;
@@ -55,7 +55,6 @@
 - (id)leadingTitleLabel;
 - (id)leadingTitleLabelFont;
 - (id)leadingTitleLabelString;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setContainerView:(id)arg1;
 - (void)setLeadingImage:(id)arg1;

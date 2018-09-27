@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadManifestResponse : NSObject <NSCoding, SSXPCCoding> {
+@interface SSDownloadManifestResponse : NSObject <NSSecureCoding, SSXPCCoding> {
     NSArray * _validDownloads;
 }
 
@@ -11,6 +11,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (copy) NSArray *validDownloads;
+
++ (bool)supportsSecureCoding;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;

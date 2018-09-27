@@ -41,8 +41,8 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)acceptedCandidate;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

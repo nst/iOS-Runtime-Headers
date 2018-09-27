@@ -10,13 +10,13 @@
 - (double)articleDiversificationSimilarityExpectationStart;
 - (double)articleDiversificationUniquePublisherExpectationSlope;
 - (double)articleDiversificationUniquePublisherExpectationYIntercept;
+- (NSString *)articleRecirculationComponentPlacementConfigJSON;
 - (NSString *)articleRecirculationConfigJSON;
 - (long long)autoRefreshMinimumInterval;
 - (long long)autoScrollToTopFeedTimeout;
 - (bool)corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 - (long long)corryBarMaxArticleCountForArticleList;
 - (long long)corryBarMaxArticleCountForSingleArticle;
-- (FCCoverArticlesConfiguration *)coverArticlesConfig;
 - (NSString *)embedConfigurationAssetID;
 - (NSString *)exploreArticleID;
 - (NSArray *)externalAnalyticsConfigurations;
@@ -36,7 +36,6 @@
 - (NSString *)personalizationWhitelistResourceId;
 - (FCPrefetchConfiguration *)prefetchConfig;
 - (double)prerollLoadingTimeout;
-- (NSArray *)recommendedCategories;
 - (NTPBDiscoverMoreVideosInfo *)shareDiscoverMoreVideosInfo;
 - (long long)stateRestorationAllowedTimeWindow;
 - (long long)subscriptionsGracePeriodForTokenVerificationSeconds;
@@ -50,9 +49,19 @@
 - (NSArray *)topStoriesPublishDates;
 - (unsigned long long)trendingStyle;
 - (bool)universalLinksEnabled;
-- (bool)usAndUKUseAUWhatsNewFeatures;
 - (NSString *)widgetConfigID;
 - (long long)widgetMinimumArticleExposureDurationToBePreseenInMilliseconds;
 - (unsigned int)widgetMinimumNumberOfTimesPreseenToBeSeen;
+
+@optional
+
+- (long long)articleRecirculationPopularFeedQueryTimeRange;
+- (NSString *)description;
+- (bool)disableThumbnailsForArticleRecirculation;
+- (bool)enableBadgeInSpotlightTabBar;
+- (NSString *)feedNavigationConfigJSON;
+- (bool)isExpired;
+- (long long)showCardNavHintMaxCount;
+- (NSString *)webEmbedContentBlockers;
 
 @end

@@ -16,6 +16,7 @@
     bool  _isUserApp;
     NSArray * _mediaTypes;
     long long  _purgeableSize;
+    long long  _sharedDataSize;
     long long  _specialSize;
     PSUsageBundleApp * _usageBundleApp;
 }
@@ -44,7 +45,8 @@
 @property (nonatomic, retain) NSArray *mediaTypes;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) long long purgeableSize;
-@property (nonatomic, readonly) long long specialSize;
+@property long long sharedDataSize;
+@property long long specialSize;
 @property (nonatomic, readonly) long long staticSize;
 @property (nonatomic, readonly) long long totalSize;
 @property (retain) PSUsageBundleApp *usageBundleApp;
@@ -86,7 +88,10 @@
 - (void)setIsUsageApp:(bool)arg1;
 - (void)setIsUserApp:(bool)arg1;
 - (void)setMediaTypes:(id)arg1;
+- (void)setSharedDataSize:(long long)arg1;
+- (void)setSpecialSize:(long long)arg1;
 - (void)setUsageBundleApp:(id)arg1;
+- (long long)sharedDataSize;
 - (long long)specialSize;
 - (long long)staticSize;
 - (long long)totalSize;

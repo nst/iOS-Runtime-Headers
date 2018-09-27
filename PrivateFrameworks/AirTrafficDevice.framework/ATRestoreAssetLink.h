@@ -9,6 +9,7 @@
     bool  _batchingIsSupported;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     <ATAssetLinkDelegate> * _delegate;
+    bool  _isRestoring;
     MBManager * _mbManager;
     bool  _open;
     NSObject<OS_dispatch_queue> * _queue;
@@ -53,7 +54,7 @@
 - (unsigned long long)priority;
 - (void)processRestoreFailureForAsset:(id)arg1;
 - (id)restoreDelegate;
-- (bool)restoreSessionActive;
+- (void)restoreSessionActiveWithCompletion:(id /* block */)arg1;
 - (void)setAllowedDataClasses:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRestoreDelegate:(id)arg1;

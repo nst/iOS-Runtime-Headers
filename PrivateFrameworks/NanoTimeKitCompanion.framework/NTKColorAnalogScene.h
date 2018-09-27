@@ -14,7 +14,7 @@
 - (void)cleanupAfterZoom;
 - (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)hideTicks;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 forDevice:(id)arg2;
 - (void)performWristRaiseAnimation;
 - (void)prepareWristRaiseAnimation;
 - (id)scrubbingObscuredCollectionNodes;

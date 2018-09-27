@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBMoveFileIntent : PBCodable <NSCopying> {
+@interface _INPBMoveFileIntent : PBCodable <NSCopying, NSSecureCoding, _INPBMoveFileIntent> {
     _INPBString * _destinationName;
     int  _destinationType;
-    NSMutableArray * _entityNames;
+    NSArray * _entityNames;
     struct { 
         int *list; 
         unsigned long long count; 
@@ -16,15 +16,17 @@
         unsigned int sourceType : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
-    NSMutableArray * _properties;
+    NSArray * _properties;
     _INPBString * _sourceName;
     int  _sourceType;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBString *destinationName;
 @property (nonatomic) int destinationType;
-@property (nonatomic, retain) NSMutableArray *entityNames;
+@property (nonatomic, copy) NSArray *entityNames;
+@property (nonatomic, readonly) unsigned long long entityNamesCount;
 @property (nonatomic, readonly) int*entityTypes;
 @property (nonatomic, readonly) unsigned long long entityTypesCount;
 @property (nonatomic, readonly) bool hasDestinationName;
@@ -32,14 +34,15 @@
 @property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, readonly) bool hasSourceName;
 @property (nonatomic) bool hasSourceType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic, retain) NSMutableArray *properties;
+@property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, readonly) unsigned long long propertiesCount;
 @property (nonatomic, retain) _INPBString *sourceName;
 @property (nonatomic) int sourceType;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
 + (Class)entityNameType;
-+ (id)options;
 + (Class)propertiesType;
 
 - (void).cxx_destruct;
@@ -53,8 +56,6 @@
 - (void)clearEntityTypes;
 - (void)clearProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)destinationName;
 - (int)destinationType;
 - (id)destinationTypeAsString:(int)arg1;
@@ -74,7 +75,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)properties;
 - (id)propertiesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)propertiesCount;
@@ -92,7 +92,6 @@
 - (id)sourceName;
 - (int)sourceType;
 - (id)sourceTypeAsString:(int)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

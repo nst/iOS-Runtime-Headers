@@ -14,6 +14,7 @@
 
 - (bool)_canTransformSourceAttributeType:(unsigned long long)arg1 toDestinationAttributeType:(unsigned long long)arg2;
 - (void)_resetCaches;
+- (bool)checkForSchemaMatchBetween:(id)arg1 andDestination:(id)arg2;
 - (void)dealloc;
 - (bool)inferPropertyMappingsForEntityMapping:(id)arg1;
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2;

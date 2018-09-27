@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) UIViewController<PXPeopleFlowViewController> *nextViewController;
 @property (nonatomic, readonly) UIViewController<PXPeopleFlowViewController> *previousViewController;
 @property (nonatomic, readonly) bool shouldPresentNaming;
+@property (nonatomic, readonly) bool shouldPresentPostNaming;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long viewControllerIndex;
 @property (nonatomic, copy) NSArray *viewControllers;
@@ -52,6 +53,7 @@
 - (void)setViewControllerIndex:(unsigned long long)arg1;
 - (void)setViewControllers:(id)arg1;
 - (bool)shouldPresentNaming;
+- (bool)shouldPresentPostNaming;
 - (unsigned long long)viewControllerIndex;
 - (id)viewControllers;
 

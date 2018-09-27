@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSWallpaperClient : FBSSystemServiceFacilityClient
+@interface SBSWallpaperClient : FBSServiceFacilityClient
 
 - (void)fetchThumbnailForVariant:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithCalloutQueue:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
+- (bool)setWallpaperWithVideo:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 @end

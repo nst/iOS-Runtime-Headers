@@ -5,11 +5,11 @@
 @interface MRRegisterVoiceInputDeviceResponseMessage : MRProtocolMessage
 
 @property (nonatomic, readonly) unsigned int deviceID;
-@property (nonatomic, readonly) unsigned int errorCode;
+@property (nonatomic, readonly) long long errorCode;
 
 - (unsigned int)deviceID;
-- (unsigned int)errorCode;
-- (id)initWithDeviceID:(unsigned int)arg1 errorCode:(unsigned int)arg2;
+- (long long)errorCode;
+- (id)initWithDeviceID:(unsigned int)arg1 errorCode:(long long)arg2;
 - (unsigned long long)type;
 
 @end

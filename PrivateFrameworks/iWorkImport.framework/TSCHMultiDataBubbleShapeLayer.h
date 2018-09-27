@@ -14,10 +14,10 @@
 @property (nonatomic, retain) TSDFill *fill;
 @property (nonatomic) double viewScale;
 
+- (void).cxx_destruct;
 - (bool)aboveIntercept;
 - (id)chartRep;
 - (id)currentValueLayer;
-- (void)dealloc;
 - (id)fill;
 - (id)init;
 - (void)p_addAnimationsForUpdatingPath:(struct CGPath { }*)arg1 position:(struct CGPoint { double x1; double x2; })arg2 toAnimationInfo:(id)arg3 onLayer:(id)arg4;

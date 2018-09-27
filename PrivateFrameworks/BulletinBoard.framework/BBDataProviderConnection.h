@@ -25,11 +25,12 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_addDataProvider:(id)arg1 withAdditionHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (id)_addDataProvider:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_invalidate;
 - (void)_queue_setServerProxy:(id)arg1;
 - (id)addDataProvider:(id)arg1;
 - (void)addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)addDataProvider:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 universalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 unversalSectionID:(id)arg4;

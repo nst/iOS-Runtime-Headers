@@ -28,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)dateOfExpiration;
+- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasShownRenewalNotice;
 - (id)identifier;

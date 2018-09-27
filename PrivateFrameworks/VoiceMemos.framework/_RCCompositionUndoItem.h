@@ -4,16 +4,20 @@
 
 @interface _RCCompositionUndoItem : NSObject {
     RCComposition * _composition;
+    long long  _indexInUndoStack;
     NSString * _reasonAccessTokenName;
 }
 
 @property (nonatomic, copy) RCComposition *composition;
+@property (nonatomic) long long indexInUndoStack;
 @property (nonatomic) NSString *reasonAccessTokenName;
 
 - (void).cxx_destruct;
 - (id)composition;
+- (long long)indexInUndoStack;
 - (id)reasonAccessTokenName;
 - (void)setComposition:(id)arg1;
+- (void)setIndexInUndoStack:(long long)arg1;
 - (void)setReasonAccessTokenName:(id)arg1;
 
 @end

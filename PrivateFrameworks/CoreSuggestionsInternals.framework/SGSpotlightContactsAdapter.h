@@ -24,6 +24,7 @@
 - (id)coreSpotlightAttributeSetForContact:(id)arg1;
 - (id)init;
 - (id)initWithSGSqlEntityStore:(id)arg1;
+- (id)pseudoContactVcardDirectory;
 - (void)rejectContact:(id)arg1;
 - (void)removeAllPseudoContactsInIdSet:(id)arg1;
 - (void)removeAllStoredPseudoContacts;
@@ -32,5 +33,7 @@
 - (void)setStore:(id)arg1;
 - (id)store;
 - (void)storeClosing;
+- (id)urlForRecordIdVCard:(id)arg1;
+- (id)urlForStorageContactVCard:(id)arg1;
 
 @end

@@ -8,8 +8,8 @@
 
 + (id)dataSourceForTask;
 
+- (void).cxx_destruct;
 - (id)dataSource;
-- (void)dealloc;
 - (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(bool)arg2;
 
 @end

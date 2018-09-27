@@ -15,6 +15,7 @@
 - (id)_currentAppModuleName;
 - (id)_findValidClassName:(id)arg1;
 - (id)_mangledSwiftClassName:(id)arg1 moduleName:(id)arg2;
+- (id)init;
 - (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 
 @end

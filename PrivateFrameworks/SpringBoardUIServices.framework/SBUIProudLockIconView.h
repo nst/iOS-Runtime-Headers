@@ -3,25 +3,47 @@
  */
 
 @interface SBUIProudLockIconView : UIView {
+    SBUIFaceIDCameraGlyphView * _cameraCoveredView;
+    UIColor * _contentColor;
+    double  _durationOnCameraCoveredGlyphBeforeCoaching;
     NSSet * _imageLayers;
     LAUIPearlGlyphView * _lazy_pearlGlyphView;
     _UILegibilitySettings * _legibilitySettings;
     SBUICAPackageView * _lockView;
+    id  _pearlGlyphViewSharedResources;
+    NSSet * _shadowFilterLayers;
+    NSSet * _shadowImageLayers;
     long long  _state;
 }
 
+@property (nonatomic, readonly) SBUIFaceIDCameraGlyphView *cameraCoveredView;
+@property (nonatomic, retain) UIColor *contentColor;
+@property (nonatomic) double durationOnCameraCoveredGlyphBeforeCoaching;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) long long state;
 
 - (void).cxx_destruct;
-- (id)_activeViewForState:(long long)arg1;
+- (id)_activeViewsForState:(long long)arg1;
+- (id)_alphaAnimationSettingsForTransitionFromViews:(id)arg1 andState:(long long)arg2 toViews:(id)arg3 andState:(long long)arg4 forIncomingViews:(bool)arg5;
+- (double)_alphaForActiveViewForState:(long long)arg1;
+- (void)_configureShadowFromLegibilitySettings:(id)arg1;
+- (id)_defaultAnimationSettingsForTransitionFromViews:(id)arg1 andState:(long long)arg2 toViews:(id)arg3 andState:(long long)arg4;
 - (void)_forEachLayerInHierarchy:(id)arg1 perform:(id /* block */)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_incomingTransformForActiveView:(id)arg1 forState:(long long)arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_outgoingTransformForView:(id)arg1 fromState:(long long)arg2;
 - (id)_pearlGlyphView;
+- (id)_transformAnimationSettingsForTransitionFromViews:(id)arg1 andState:(long long)arg2 toViews:(id)arg3 andState:(long long)arg4 forIncomingViews:(bool)arg5;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForActiveViewForState:(long long)arg1;
 - (void)_transitionToState:(long long)arg1 animated:(bool)arg2 options:(long long)arg3 completion:(id /* block */)arg4;
-- (id)init;
+- (id)cameraCoveredView;
+- (id)contentColor;
+- (double)durationOnCameraCoveredGlyphBeforeCoaching;
+- (id)fileNameForCurrentDevice;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
+- (void)setContentColor:(id)arg1;
+- (void)setDurationOnCameraCoveredGlyphBeforeCoaching:(double)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setState:(long long)arg1 animated:(bool)arg2;

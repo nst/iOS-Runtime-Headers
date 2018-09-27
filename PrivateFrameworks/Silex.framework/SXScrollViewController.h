@@ -20,7 +20,6 @@
     <SXDocumentStyleRenderer> * _documentStyleRenderer;
     SXComponentView * _focussedComponentView;
     <SXDocumentSectionBlueprint> * _footerBlueprint;
-    UIView * _fullscreenCanvasView;
     SXFullscreenCanvasViewController * _fullscreenCanvasViewController;
     SXFullscreenVideoPlaybackManager * _fullscreenVideoPlaybackManager;
     <SXDocumentSectionBlueprint> * _headerBlueprint;
@@ -29,6 +28,7 @@
     SXLayoutDataProvider * _layoutDataProvider;
     <SXLayoutManager> * _layoutManager;
     SXMediaPlaybackController * _mediaPlaybackController;
+    <SXMediaSharingPolicyProvider> * _mediaSharingPolicyProvider;
     SXPresentationAttributes * _presentationAttributes;
     <SXPresentationAttributesManager> * _presentationAttributesManager;
     <SXPresentationDelegateContainer> * _presentationDelegateContainer;
@@ -71,7 +71,6 @@
 @property (nonatomic, readonly) <SXDocumentStyleRenderer> *documentStyleRenderer;
 @property (nonatomic, retain) SXComponentView *focussedComponentView;
 @property (nonatomic, readonly) <SXDocumentSectionBlueprint> *footerBlueprint;
-@property (nonatomic, retain) UIView *fullscreenCanvasView;
 @property (nonatomic, retain) SXFullscreenCanvasViewController *fullscreenCanvasViewController;
 @property (nonatomic, readonly) SXFullscreenVideoPlaybackManager *fullscreenVideoPlaybackManager;
 @property (readonly) unsigned long long hash;
@@ -82,6 +81,7 @@
 @property (nonatomic, readonly) SXLayoutDataProvider *layoutDataProvider;
 @property (nonatomic, retain) <SXLayoutManager> *layoutManager;
 @property (nonatomic, readonly) SXMediaPlaybackController *mediaPlaybackController;
+@property (nonatomic, readonly) <SXMediaSharingPolicyProvider> *mediaSharingPolicyProvider;
 @property (nonatomic, readonly) SXPresentationAttributes *presentationAttributes;
 @property (nonatomic, readonly) <SXPresentationAttributesManager> *presentationAttributesManager;
 @property (nonatomic, readonly) <SXPresentationDelegateContainer> *presentationDelegateContainer;
@@ -140,13 +140,12 @@
 - (id)focussedComponentView;
 - (id)footerBlueprint;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfComponentWithVideoPlayerViewController:(id)arg1;
-- (id)fullscreenCanvasView;
 - (id)fullscreenCanvasViewController;
 - (id)fullscreenVideoPlaybackManager;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)headerBlueprint;
 - (id)headlineAccessibilityElement;
-- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 layoutManager:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 previewViewControllerManager:(id)arg16 scrollReporter:(id)arg17 videoPlayerViewControllerManager:(id)arg18;
+- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 layoutManager:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 previewViewControllerManager:(id)arg16 scrollReporter:(id)arg17 videoPlayerViewControllerManager:(id)arg18 mediaSharingPolicyProvider:(id)arg19;
 - (id)interactiveCanvasController;
 - (bool)isPresentingFullscreenCanvas;
 - (bool)isPreviewing;
@@ -162,6 +161,8 @@
 - (void)loadContext:(id)arg1 analyticsReporting:(id)arg2 adControllerFactory:(id)arg3;
 - (void)maintainPositionOfViewWhileScrolling:(id)arg1;
 - (id)mediaPlaybackController;
+- (id)mediaSharingPolicyProvider;
+- (void)presentFullscreenGalleryWithComponentIdentifier:(id)arg1;
 - (id)presentationAttributes;
 - (id)presentationAttributesManager;
 - (id)presentationDelegateContainer;
@@ -172,8 +173,7 @@
 - (void)releasePositionOfView:(id)arg1;
 - (void)removeComponentView:(id)arg1;
 - (void)removeInteractivityFocusForComponent:(id)arg1;
-- (id)requestFullScreenCanvasForComponent:(id)arg1 canvasController:(id)arg2;
-- (id)requestFullScreenCanvasViewControllerForComponent:(id)arg1;
+- (id)requestFullScreenCanvasViewControllerForComponent:(id)arg1 canvasController:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)requestFullScreenCanvasViewControllerForComponent:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)resourceDataSourceContainer;
 - (bool)restoreScrollPositionOnNextLayout;
@@ -193,7 +193,6 @@
 - (void)setCurrentCanvasController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFocussedComponentView:(id)arg1;
-- (void)setFullscreenCanvasView:(id)arg1;
 - (void)setFullscreenCanvasViewController:(id)arg1;
 - (void)setIsPreviewing:(bool)arg1;
 - (void)setLastScrollOffset:(double)arg1;
@@ -239,6 +238,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)viewport;
 - (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;

@@ -13,7 +13,9 @@
 + (id)__previewArtworkCatalogBlock_KEY;
 + (id)__staticAssets_KEY;
 + (id)__title_KEY;
++ (id)kind;
 
+- (id)humanDescription;
 - (id)previewArtworkCatalog;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore

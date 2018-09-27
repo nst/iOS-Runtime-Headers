@@ -7,6 +7,7 @@
     NSMutableDictionary * _pendingMessages;
     IDSService * _service;
     bool  _shouldSuppressTransportReachabilityTimeout;
+    BKSProcessAssertion * _suspendAssertion;
     NSTimer * _transportReachabilityTimer;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) IDSService *service;
 @property (nonatomic) bool shouldSuppressTransportReachabilityTimeout;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) BKSProcessAssertion *suspendAssertion;
 @property (nonatomic, retain) NSTimer *transportReachabilityTimer;
 
 - (void).cxx_destruct;
@@ -44,10 +46,12 @@
 - (void)setPendingMessages:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setShouldSuppressTransportReachabilityTimeout:(bool)arg1;
+- (void)setSuspendAssertion:(id)arg1;
 - (void)setTransportReachabilityTimer:(id)arg1;
 - (void)setupServiceMessageSelectorMappings;
 - (bool)shouldSuppressTransportReachabilityTimeout;
 - (void)startReachabilityTimer;
+- (id)suspendAssertion;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;
 - (id)transportReachabilityTimer;

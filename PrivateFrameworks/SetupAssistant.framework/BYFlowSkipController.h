@@ -10,10 +10,13 @@
 
 + (id)_actionForFlowSkipIdentifiers:(id)arg1;
 + (id)_actionIdentifierForFlowSkipIdentifier:(id)arg1;
++ (void)_clearShouldObserveChangeFromNetworkSSID;
 + (id)_flowSkipIdentifierFromActionIdentifier:(id)arg1;
 + (id)_localizedStringListOfStrings:(id)arg1;
 + (id)_localizedStringListingFlowSkipIdentifiers:(id)arg1;
 + (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;
++ (void)_setShouldObserveChangeFromNetworkSSID:(id)arg1;
++ (bool)_shouldObserveChangeFromNetworkSSID:(id*)arg1;
 + (id)_supportedIdentifiers;
 + (id)flowSkipIdentifiersFromFollowUpAction:(id)arg1;
 + (id)sharedInstance;
@@ -22,12 +25,14 @@
 - (id)_followUpController;
 - (bool)_isBasicFunctionalityEnabled;
 - (bool)_isPasscodeSet;
-- (void)_observeWiFiNetworkChanges;
 - (id)_pendingFollowUpItem;
+- (void)_persistInitialNetworkSSID;
 - (void)_postFollowUpItemForFlowSkipIdentifiers:(id)arg1 previousFollowUpItem:(id)arg2 forceNotification:(bool)arg3;
-- (void)_repostExistingFollowUpItemForcingNotification;
+- (void)_regsiterWiFiObserverActivityWithNeedsActivity:(bool)arg1 handlerQueue:(id)arg2;
+- (void)_repostExistingFollowUpItemForcingNotification:(id)arg1;
 - (long long)_timeIntervalForFrequentNotifications;
 - (long long)_timeIntervalForNotifications;
+- (long long)_timeIntervalForWifiObserver;
 - (long long)_timeoutForWifiObserver;
 - (void)cancelPendingFlows;
 - (void)didCompleteFlow:(id)arg1;

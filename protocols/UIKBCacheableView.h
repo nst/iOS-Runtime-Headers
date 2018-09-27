@@ -13,6 +13,7 @@
 
 @optional
 
+- (long long)cacheDeferPriority;
 - (void)drawContentsOfRenderers:(NSArray *)arg1;
 
 @end

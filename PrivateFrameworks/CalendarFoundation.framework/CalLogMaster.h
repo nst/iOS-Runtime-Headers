@@ -60,6 +60,7 @@
 - (void)setStandardOutNode:(id)arg1;
 - (void)setTopLevelNodes:(id)arg1;
 - (void)setUserNotificationNode:(id)arg1;
+- (bool)shouldProcessNamespace:(id)arg1;
 - (id)standardOutNode;
 - (id)topLevelNodes;
 - (id)userNotificationNode;

@@ -17,16 +17,26 @@
 @property (nonatomic, retain) NSMutableDictionary *values;
 
 - (void).cxx_destruct;
+- (bool)allowExpiredDNSBehavior:(id)arg1;
 - (id)allowedAppVersionsCache;
 - (bool)applicationWithBundleID:(id)arg1 canSyncUsingVersion:(id)arg2 forContainer:(id)arg3;
-- (unsigned long long)c2MetricsReportFrequency:(id)arg1;
-- (unsigned long long)c2MetricsReportFrequencyBase:(id)arg1;
+- (unsigned long long)c2AllOperationGroupMetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2AllOperationGroupMetricsReportFrequencyBase:(id)arg1;
+- (unsigned long long)c2AllOperationMetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2AllOperationMetricsReportFrequencyBase:(id)arg1;
+- (unsigned long long)c2ClientApplicationMetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2ClientApplicationMetricsReportFrequencyBase:(id)arg1;
+- (unsigned long long)c2ClientOperationMetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2ClientOperationMetricsReportFrequencyBase:(id)arg1;
+- (unsigned long long)c2NetworkMetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2NetworkMetricsReportFrequencyBase:(id)arg1;
 - (id)description;
 - (id)dictionaryPropertyEncoding;
 - (id)expiry;
 - (id)flowControlBudgetForContainer:(id)arg1;
 - (id)flowControlMaximumThrottleTime:(id)arg1;
 - (id)flowControlRegenerationForContainer:(id)arg1;
+- (id)iCloudHostnames;
 - (id)initWithPropertyDictionary:(id)arg1;
 - (id)initWithValues:(id)arg1;
 - (bool)isExpired;

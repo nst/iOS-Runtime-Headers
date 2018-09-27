@@ -37,12 +37,19 @@
 + (id)specifiersForBlockedApps:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_adjustCell:(id)arg1 forAppSigner:(id)arg2;
 - (void)_appSignerApplicationsChanged:(id)arg1;
 - (void)_blockedAppsChanged:(id)arg1;
+- (void)_effectiveSettingsChanged:(id)arg1;
 - (void)_hideProgressIndicatorAndShowBackButton:(bool)arg1;
 - (void)_installedApplicationsChanged:(id)arg1;
+- (id)_isUIProfileInstallationEnabled:(id)arg1;
+- (bool)_isUIProfileInstallationRestricted;
 - (void)_profileListChanged:(id)arg1;
+- (long long)_resolveIndexPathForProfileIndex:(id)arg1;
+- (int)_resolveIndexPathForTableSection:(id)arg1;
 - (void)_showProgressIndicator;
+- (void)_toggleUIProfileInstallationStatus:(id)arg1;
 - (id)blockedApplications;
 - (id)configurationProfilesInfoList;
 - (void)dealloc;

@@ -42,7 +42,6 @@
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchFaceGroups;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;
-- (id)pv_fetchFaces;
 - (id)pv_fetchFacesForFaceGroup:(id)arg1;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
@@ -61,6 +60,7 @@
 - (id)pv_fetchPersonsWithType:(unsigned long long)arg1;
 - (bool)pv_isLibraryBeingSynchronized;
 - (id)pv_lastAssetDate;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (bool)pv_performChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (id)pv_persistentStorageDirectoryURL;
 - (bool)saveFacesDataSnapshotAtPath:(id)arg1 error:(id*)arg2;

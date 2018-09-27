@@ -5,7 +5,7 @@
 @interface HMDCameraIDSSessionInitiator : HMDCameraIDSSessionHandler <HMDCameraPowerAssertionProtocol, HMDCameraRemoteStreamSenderProtocol, IDSServiceDelegate, IDSSessionDelegate> {
     <HMDCameraIDSSessionInitiatorDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    NSString * _destinationID;
+    HMDDevice * _device;
     HMDCameraNetworkConfig * _localNetworkConfig;
     AVCPacketRelay * _packetRelay;
     HMFOSTransaction * _packetRelayTransaction;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) <HMDCameraIDSSessionInitiatorDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *destinationID;
+@property (nonatomic, readonly) HMDDevice *device;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraNetworkConfig *localNetworkConfig;
 @property (nonatomic, readonly) NSNumber *mtu;
@@ -34,8 +34,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (id)destinationID;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 localNetworkConfig:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;
+- (id)device;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 device:(id)arg3 localNetworkConfig:(id)arg4 delegate:(id)arg5 delegateQueue:(id)arg6;
 - (id)localNetworkConfig;
 - (id)logIdentifier;
 - (id)mtu;

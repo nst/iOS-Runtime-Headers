@@ -44,6 +44,7 @@
 - (void)_private_errorCompletion;
 - (void)_private_fileCompletion;
 - (void)_private_posixError:(int)arg1;
+- (void)_supplyExtractorWithData:(id)arg1 completion:(id /* block */)arg2;
 - (void)_task_onqueue_didFinish;
 - (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelByProducingResumeData:(id /* block */)arg1;
@@ -69,7 +70,7 @@
 - (void)set_afterDidReportProgressOnQueue:(id /* block */)arg1;
 - (bool)setupForNewDownload:(id)arg1;
 - (void)suspendExtractor;
-- (void)terminateExtractorWithError:(id)arg1;
+- (void)terminateExtractorWithError:(id)arg1 completion:(id /* block */)arg2;
 - (void)writeAndResume;
 
 @end

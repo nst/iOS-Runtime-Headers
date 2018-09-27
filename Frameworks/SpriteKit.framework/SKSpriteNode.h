@@ -30,12 +30,15 @@
 @property (nonatomic, retain) SKTexture *texture;
 @property (nonatomic, retain) SKWarpGeometry *warpGeometry;
 
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 + (id)spriteNodeWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)spriteNodeWithImageNamed:(id)arg1;
 + (id)spriteNodeWithImageNamed:(id)arg1 normalMapped:(bool)arg2;
 + (id)spriteNodeWithTexture:(id)arg1;
 + (id)spriteNodeWithTexture:(id)arg1 normalMap:(id)arg2;
 + (id)spriteNodeWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_didMakeBackingNode;
@@ -48,8 +51,6 @@
 - (double)colorBlendFactor;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

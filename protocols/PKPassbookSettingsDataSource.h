@@ -21,7 +21,6 @@
 
 - (NSString *)deviceName;
 - (bool)hasFelicaSecureElement;
-- (void)setDefaultExpressTransitPassIdentifier:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, UIViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSString *, void*
 - (NSArray *)setupBrowsableProductTypesForDevice;
 - (NSArray *)setupFeaturedNetworksForDevice;
 - (bool)supportsCredentialType:(long long)arg1;

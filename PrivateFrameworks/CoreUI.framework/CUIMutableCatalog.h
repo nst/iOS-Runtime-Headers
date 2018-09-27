@@ -7,6 +7,7 @@
     unsigned int  _respondsToCheck;
 }
 
+- (id)_baseImageKeyForName:(id)arg1;
 - (id)_baseKeyForName:(id)arg1;
 - (unsigned long long)_storageRefForRendition:(id)arg1 representsODRContent:(bool*)arg2;
 - (void)dealloc;

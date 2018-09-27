@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSSet *alertSuppressionAppIDs_deprecated;
 @property (nonatomic, copy) NSSet *alertSuppressionContexts;
 @property (nonatomic, copy) BBAction *alternateAction;
+@property (nonatomic) long long backgroundStyle;
 @property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSArray *buttons;
 @property (nonatomic, copy) NSString *categoryID;
@@ -31,16 +32,21 @@
 @property (nonatomic) unsigned long long expirationEvents;
 @property (nonatomic, copy) BBAction *expireAction;
 @property (nonatomic) bool expiresOnPublisherDeath;
+@property (nonatomic) bool hasCriticalIcon;
 @property (nonatomic) bool hasEventDate;
+@property (nonatomic, copy) NSString *header;
 @property (nonatomic, retain) BBSectionIcon *icon;
+@property (nonatomic) bool ignoresDowntime;
 @property (nonatomic) bool ignoresQuietMode;
 @property (nonatomic, copy) NSArray *intentIDs;
 @property (nonatomic, retain) NSDate *lastInterruptDate;
 @property (getter=isLoading, nonatomic) bool loading;
+@property (nonatomic) long long lockScreenPriority;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, retain) BBContent *modalAlertContent;
 @property (nonatomic, copy) NSString *parentSectionID;
 @property (nonatomic, copy) NSArray *peopleIDs;
+@property (nonatomic) bool preventAutomaticRemovalFromLockScreen;
 @property (nonatomic, copy) BBAttachmentMetadata *primaryAttachment;
 @property (nonatomic) long long primaryAttachmentType;
 @property (nonatomic, retain) NSDate *publicationDate;
@@ -60,6 +66,8 @@
 @property (nonatomic, retain) BBContent *starkBannerContent;
 @property (nonatomic, copy) NSSet *subsectionIDs;
 @property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *summaryArgument;
+@property (nonatomic) unsigned long long summaryArgumentCount;
 @property (nonatomic, copy) NSArray *supplementaryActions;
 @property (nonatomic) bool tentative;
 @property (nonatomic, copy) NSString *threadID;
@@ -70,8 +78,6 @@
 @property (nonatomic, copy) NSString *unlockActionLabelOverride;
 @property (nonatomic) bool usesExternalSync;
 @property (nonatomic) bool wantsFullscreenPresentation;
-
-// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 - (void)_updateSupplementaryAction:(id)arg1;
 - (void)addAlertSuppressionAppID:(id)arg1;
@@ -99,9 +105,5 @@
 - (bool)showsUnreadIndicator;
 - (bool)tentative;
 - (void)withdraw;
-
-// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
-
-- (id)description;
 
 @end

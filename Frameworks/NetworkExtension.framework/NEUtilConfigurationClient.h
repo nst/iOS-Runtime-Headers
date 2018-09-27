@@ -18,6 +18,7 @@
 @property (retain) NSMutableArray *currentConfigurations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool disconnectOnDemandEnabled;
 @property bool enabled;
 @property (readonly) unsigned long long hash;
 @property (retain) NSMutableArray *identities;
@@ -43,6 +44,7 @@
 - (id)currentConfigurations;
 - (void)dealloc;
 - (id)decodeConfigurationWithIdentifier:(id)arg1 andDecoder:(id)arg2;
+- (bool)disconnectOnDemandEnabled;
 - (bool)enabled;
 - (void)handleCommand:(int)arg1 forConfigWithName:(id)arg2 withParameters:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)identities;
@@ -67,6 +69,7 @@
 - (void)setCreatedConfigurations:(id)arg1;
 - (void)setCurrentConfiguration:(id)arg1;
 - (void)setCurrentConfigurations:(id)arg1;
+- (void)setDisconnectOnDemandEnabled:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (bool)setFilterPluginWithParameters:(id)arg1 errorStr:(id*)arg2;
 - (bool)setIPSecParameters:(id)arg1 errorStr:(id*)arg2;

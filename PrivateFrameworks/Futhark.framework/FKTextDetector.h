@@ -15,7 +15,21 @@
     int  _minimumCharacterHeight;
     NSString * _recognitionLanguage;
     bool  _returnSubFeatures;
-    struct { /* ? */ } * _sessions;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _roi;
+    struct FKSession {} * _sessions;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _size;
     long long  _thresholdingAlgorithm;
     unsigned int  _timeBinarizer;
     unsigned int  _timeConcomps;

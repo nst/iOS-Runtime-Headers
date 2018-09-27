@@ -4,11 +4,9 @@
 
 @interface RMMetadataStore : NSObject {
     NSMutableDictionary * __kvStore;
-    NSString * _metadataFilePath;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_kvStore;
-@property (nonatomic, copy) NSString *metadataFilePath;
 
 + (void)clear;
 + (id)dataValueForKey:(id)arg1;
@@ -24,7 +22,6 @@
 - (id)_kvStore;
 - (id)metadataFilePath;
 - (bool)readMetadataWithError:(id*)arg1;
-- (void)setMetadataFilePath:(id)arg1;
 - (void)set_kvStore:(id)arg1;
 - (bool)writeMetadataWithError:(id*)arg1;
 

@@ -7,6 +7,7 @@
     UIImageView * _alertView;
     UIImageView * _arrowView;
     NSMutableArray * _constraints;
+    bool  _constraintsDirty;
     NSAttributedString * _label;
     UIImage * _labelImage;
     UIImageView * _labelImageView;
@@ -31,7 +32,8 @@
 - (void)_createSubviews;
 - (id)_createValueView;
 - (id)accessibilityLabel;
-- (id)addValue:(id)arg1 isPlaceholder:(bool)arg2;
+- (id)addValue:(id)arg1 type:(unsigned long long)arg2;
+- (id)colorForValueType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
@@ -43,7 +45,7 @@
 - (void)setShowsDisclosure:(bool)arg1;
 - (void)setShowsSeperator:(bool)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValue:(id)arg1 isPlaceholder:(bool)arg2;
+- (void)setValue:(id)arg1 type:(unsigned long long)arg2;
 - (bool)showsDisclosure;
 - (bool)showsSeperator;
 - (void)updateConstraints;

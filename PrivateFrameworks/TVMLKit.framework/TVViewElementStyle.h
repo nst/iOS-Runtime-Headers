@@ -27,11 +27,14 @@
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic, readonly) long long position;
 @property (nonatomic, readonly) NSString *ratingStyle;
+@property (nonatomic, readonly) NSShadow *shadow;
 @property (nonatomic, readonly) IKViewElementStyle *style;
+@property (nonatomic, retain) TVAppStyle *styleMetrics;
 @property (nonatomic, readonly) long long textAlignment;
 @property (nonatomic, readonly) NSString *textHighlightStyle;
 @property (nonatomic, readonly) double textMinimumScaleFactor;
 @property (nonatomic, readonly) NSString *textStyle;
+@property (nonatomic, readonly) NSString *textTransform;
 @property (nonatomic, readonly) TVColor *tintColor;
 @property (nonatomic, readonly) double width;
 
@@ -41,6 +44,7 @@
 - (id)color;
 - (long long)contentAlignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)cssValueForStyleProperty:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })focusMargin;
 - (double)fontSize;
 - (id)fontWeight;
@@ -58,8 +62,10 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (long long)position;
 - (id)ratingStyle;
+- (void)setStyleMetrics:(id)arg1;
 - (id)shadow;
 - (id)style;
+- (id)styleMetrics;
 - (long long)textAlignment;
 - (id)textHighlightStyle;
 - (double)textMinimumScaleFactor;

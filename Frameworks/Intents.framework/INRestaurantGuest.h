@@ -24,7 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNameComponents:(id)arg1 phoneNumber:(id)arg2 emailAddress:(id)arg3;
-- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6;
+- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 isMe:(bool)arg7;
 - (bool)isEqual:(id)arg1;
 - (id)phoneNumber;
 - (void)setEmailAddress:(id)arg1;

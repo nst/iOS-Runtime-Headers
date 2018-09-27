@@ -3,6 +3,7 @@
  */
 
 @interface _IDSDataChannelLinkContext : NSObject {
+    NSUUID * _QRSessionID;
     unsigned long long  _RATType;
     long long  _connectionType;
     unsigned char  _flags;
@@ -17,6 +18,7 @@
     long long  _remoteConnectionType;
     unsigned char  _remoteNetworkType;
     unsigned long long  _remoteRATType;
+    bool  _serverIsDegraded;
 }
 
 - (void).cxx_destruct;

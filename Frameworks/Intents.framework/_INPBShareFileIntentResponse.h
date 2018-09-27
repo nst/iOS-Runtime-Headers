@@ -2,29 +2,31 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBShareFileIntentResponse : PBCodable <NSCopying> {
+@interface _INPBShareFileIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBShareFileIntentResponse> {
     bool  _confirm;
     struct { 
-        unsigned int shareMode : 1; 
         unsigned int confirm : 1; 
+        unsigned int shareMode : 1; 
         unsigned int success : 1; 
     }  _has;
-    NSMutableArray * _recipients;
+    NSArray * _recipients;
     int  _shareMode;
     bool  _success;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) bool confirm;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasConfirm;
 @property (nonatomic) bool hasShareMode;
 @property (nonatomic) bool hasSuccess;
-@property (nonatomic, retain) NSMutableArray *recipients;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, readonly) unsigned long long recipientsCount;
 @property (nonatomic) int shareMode;
 @property (nonatomic) bool success;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
-+ (id)options;
 + (Class)recipientsType;
 
 - (void).cxx_destruct;
@@ -33,14 +35,12 @@
 - (void)clearRecipients;
 - (bool)confirm;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasConfirm;
 - (bool)hasShareMode;
 - (bool)hasSuccess;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)recipients;
 - (id)recipientsAtIndex:(unsigned long long)arg1;
@@ -55,7 +55,6 @@
 - (int)shareMode;
 - (id)shareModeAsString:(int)arg1;
 - (bool)success;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

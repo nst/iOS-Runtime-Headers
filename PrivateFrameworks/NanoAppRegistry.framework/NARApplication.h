@@ -11,6 +11,7 @@
     NSDictionary * _localizedStrings;
     NSString * _parentApplicationBundleIdentifier;
     unsigned long long  _sequenceNumber;
+    bool  _supportsForegroundApplication;
 }
 
 @property (nonatomic, retain) NARApplicationState *appState;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly, copy) NSString *parentApplicationBundleIdentifier;
 @property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, readonly) NSArray *supportedSchemes;
+@property (nonatomic) bool supportsForegroundApplication;
 @property (nonatomic, readonly) NSString *vendorName;
 
 + (bool)supportsSecureCoding;
@@ -67,7 +69,9 @@
 - (void)setLaunchServicesBundleType:(id)arg1;
 - (void)setLocalizedStrings:(id)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
+- (void)setSupportsForegroundApplication:(bool)arg1;
 - (id)supportedSchemes;
+- (bool)supportsForegroundApplication;
 - (id)vendorName;
 
 @end

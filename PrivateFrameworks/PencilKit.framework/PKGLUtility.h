@@ -5,7 +5,10 @@
 @interface PKGLUtility : NSObject
 
 + (bool)canUseOpenGL;
++ (id)defaultDevice;
 + (void)initialize;
++ (bool)isInBackground;
++ (double)layerContentsScale;
 + (void)postGLActiveNotification;
 + (void)postGLInactiveNotification;
 

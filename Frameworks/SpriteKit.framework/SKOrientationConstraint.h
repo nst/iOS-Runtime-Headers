@@ -18,12 +18,14 @@
 + (id)constraintOrientingToNode:(id)arg1 offset:(id)arg2;
 + (id)constraintOrientingToPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 offset:(id)arg3;
 + (id)constraintOrientingToPoint:(struct CGPoint { double x1; double x2; })arg1 offset:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNode:(id)arg1 point:(struct CGPoint { double x1; double x2; })arg2 offset:(id)arg3;
+- (bool)isEqualToOrientationConstraint:(id)arg1;
 - (id)node;
 - (id)offset;
 - (struct CGPoint { double x1; double x2; })point;

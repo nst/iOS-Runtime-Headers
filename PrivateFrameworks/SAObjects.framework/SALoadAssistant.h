@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *linkedAssistantId;
 @property (nonatomic, copy) NSData *linkedSessionValidationData;
 @property (nonatomic, copy) NSString *linkedSpeechId;
+@property (nonatomic, copy) NSString *loggableAssistantId;
+@property (nonatomic, copy) NSString *loggableSharedUserId;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSData *sessionValidationData;
 @property (nonatomic, copy) NSString *sharedUserId;
@@ -35,6 +37,8 @@
 - (id)linkedAssistantId;
 - (id)linkedSessionValidationData;
 - (id)linkedSpeechId;
+- (id)loggableAssistantId;
+- (id)loggableSharedUserId;
 - (bool)requiresResponse;
 - (id)sessionValidationData;
 - (void)setActivationToken:(id)arg1;
@@ -45,6 +49,8 @@
 - (void)setLinkedAssistantId:(id)arg1;
 - (void)setLinkedSessionValidationData:(id)arg1;
 - (void)setLinkedSpeechId:(id)arg1;
+- (void)setLoggableAssistantId:(id)arg1;
+- (void)setLoggableSharedUserId:(id)arg1;
 - (void)setSessionValidationData:(id)arg1;
 - (void)setSharedUserId:(id)arg1;
 - (void)setSpeechId:(id)arg1;

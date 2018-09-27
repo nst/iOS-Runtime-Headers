@@ -18,6 +18,7 @@
 - (id)legalChartLabelPositions;
 - (id)supportedValueLabelsAxisCombinations;
 - (bool)supportsBarGap;
+- (bool)supportsRoundedCorners;
 - (bool)supportsSetGap;
 - (bool)useInBarGapCalculations;
 - (id)userInterfaceNameForLabelPosition:(id)arg1;

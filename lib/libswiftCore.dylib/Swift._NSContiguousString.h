@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Swift/libswiftCore.dylib
  */
 
-@interface Swift._NSContiguousString : Swift._SwiftNativeNSString {
-    void _core;
+@interface Swift._NSContiguousString : Swift._SwiftNativeNSString <Swift._NSStringCore> {
+    void _guts;
 }
 
-- (unsigned short*)_fastCharacterContents;
-- (unsigned short)characterAtIndex:(long long)arg1;
-- (id)copy;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct { long long x1; long long x2; })arg2;
+@property (nonatomic, readonly) long long length;
+
+- (const unsigned short*)_fastCharacterContents;
+- (unsigned short)characterAtIndex;
+- (id)copyWithZone;
+- (void)getCharactersrange;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithCoder;
 - (long long)length;
-- (id)substringFromIndex:(long long)arg1;
-- (id)substringToIndex:(long long)arg1;
-- (id)substringWithRange:(struct { long long x1; long long x2; })arg1;
 
 @end

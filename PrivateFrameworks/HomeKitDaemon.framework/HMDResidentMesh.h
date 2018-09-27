@@ -3,10 +3,10 @@
  */
 
 @interface HMDResidentMesh : HMFObject <HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
-    HMDAccountRegistry * _accountRegistry;
     unsigned long long  _broadcastRate;
     HMFTimer * _devicesChangedTimer;
     HMDHomeManager * _homeManager;
+    HMFTimer * _linkQualityMonitorTimer;
     NSSet * _primaryResidentForHomes;
     NSMutableArray * _reachableAccessories;
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
@@ -18,13 +18,13 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic) HMDAccountRegistry *accountRegistry;
 @property unsigned long long broadcastRate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *devicesChangedTimer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
+@property (nonatomic, readonly) HMFTimer *linkQualityMonitorTimer;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) NSSet *primaryResidentForHomes;
@@ -51,6 +51,7 @@
 - (void)_addConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(bool)arg2;
 - (id)_addDeviceInMesh:(id)arg1;
 - (id)_addDeviceInResidents:(id)arg1;
+- (id)_availableResidentsForHome:(id)arg1;
 - (void)_buildResidentsWithElection:(id)arg1 device:(id)arg2;
 - (bool)_checkReachabilityWithTimerActivation:(bool)arg1;
 - (void)_deviceIsNotReachable:(id)arg1;
@@ -64,16 +65,20 @@
 - (void)_handleMeshUpdateMessage:(id)arg1;
 - (void)_handleMeshUpdateRequestMessage:(id)arg1;
 - (void)_removeConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(bool)arg2;
+- (id)_residentMapForAccessories:(id)arg1;
 - (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 responseHandler:(id /* block */)arg4;
-- (id)accountRegistry;
+- (void)_updateAccessoryLinkQuality;
+- (id)balancedResidentMapForAccessories:(id)arg1;
+- (id)bestResidentForAccessory:(id)arg1;
 - (unsigned long long)broadcastRate;
 - (void)dealloc;
-- (id)deviceForAccessory:(id)arg1;
+- (id)deviceForAccessory:(id)arg1 residentOrder:(unsigned long long)arg2 reachableResidents:(unsigned long long*)arg3;
 - (id)devicesChangedTimer;
 - (void)dumpDebug;
 - (id)dumpState;
 - (id)homeManager;
 - (id)initWithHomeManager:(id)arg1 residentEnabled:(bool)arg2;
+- (id)linkQualityMonitorTimer;
 - (id)logIdentifier;
 - (id)messageDestination;
 - (id)messageReceiveQueue;
@@ -83,7 +88,6 @@
 - (id)remoteMessageDispatcher;
 - (id)resident;
 - (id)residents;
-- (void)setAccountRegistry:(id)arg1;
 - (void)setBroadcastRate:(unsigned long long)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setPrimaryResidentForHomes:(id)arg1;

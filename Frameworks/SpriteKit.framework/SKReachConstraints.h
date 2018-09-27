@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKReachConstraints : NSObject <NSCoding> {
+@interface SKReachConstraints : NSObject <NSSecureCoding> {
     double  _lowerAngleLimit;
     double  _upperAngleLimit;
 }
 
 @property (nonatomic) double lowerAngleLimit;
 @property (nonatomic) double upperAngleLimit;
+
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

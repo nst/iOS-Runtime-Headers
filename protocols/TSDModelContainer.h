@@ -10,4 +10,8 @@
 - (void)moveModel:(TSPObject *)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeContainedModel:(TSPObject *)arg1;
 
+@optional
+
+- (bool)supportsCollaborativeEditing;
+
 @end

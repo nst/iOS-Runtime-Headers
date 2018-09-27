@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_backingSnippetViewController;
+- (id)_legacyCardSectionViewController;
 - (void)_setVirgin:(bool)arg1;
 - (id)attributedSubtitle;
 - (void)endEditingAndCorrect:(bool)arg1;

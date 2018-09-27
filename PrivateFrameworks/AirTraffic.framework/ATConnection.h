@@ -36,6 +36,7 @@
 - (void)keepATCAlive:(bool)arg1;
 - (void)lowBatteryNotification;
 - (void)openDeviceMessageLink;
+- (void)openDeviceMessageLinkWithPriority:(int)arg1;
 - (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2;
 - (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2;
 - (void)registerForAssetProgressForDataclass:(id)arg1;

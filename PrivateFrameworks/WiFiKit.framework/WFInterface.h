@@ -72,6 +72,7 @@
 - (void)asyncScanRequest:(id)arg1 reply:(id /* block */)arg2;
 - (id)callbackRunLoop;
 - (id)callbackThread;
+- (void)cancelAllScans;
 - (id)currentNetwork;
 - (bool)currentNetworkIsDirected;
 - (id)currentNetworkIssues;

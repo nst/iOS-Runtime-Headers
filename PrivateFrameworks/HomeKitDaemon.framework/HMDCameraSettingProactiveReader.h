@@ -27,6 +27,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (void)_callDidCompleteReadDelegateCallbackWithMessageHandled:(bool)arg1;
 - (void)_handleStreamStatusMultireadResponse:(id)arg1;
 - (id)accessory;
 - (id)delegate;

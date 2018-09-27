@@ -4,8 +4,8 @@
 
 @interface SwiftObject <NSObject> {
     Class  isa;
-    struct RefCounts<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
-        struct atomic<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+    struct RefCounts<swift::RefCountBitsT<swift::RefCountIsInline> > { 
+        struct atomic<swift::RefCountBitsT<swift::RefCountIsInline> > { 
             /* Warning: Unrecognized filer type: '{' using 'void*' */ void*__a_; 
         } refCounts; 
     }  refCounts;
@@ -19,21 +19,21 @@
 + (bool)_isDeallocating;
 + (bool)_tryRetain;
 + (id)alloc;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)allocWithZone;
 + (bool)allowsWeakReference;
 + (id)autorelease;
 + (Class)class;
-+ (bool)conformsToProtocol:(id)arg1;
++ (bool)conformsToProtocol;
 + (id)debugDescription;
 + (id)description;
 + (void)initialize;
-+ (int (*)instanceMethodForSelector:(SEL)arg1;
-+ (bool)instancesRespondToSelector:(SEL)arg1;
-+ (bool)isMemberOfClass:(Class)arg1;
-+ (bool)isSubclassOfClass:(Class)arg1;
-+ (int (*)methodForSelector:(SEL)arg1;
++ (int (*)instanceMethodForSelector;
++ (bool)instancesRespondToSelector;
++ (bool)isMemberOfClass;
++ (bool)isSubclassOfClass;
++ (int (*)methodForSelector;
 + (void)release;
-+ (bool)respondsToSelector:(SEL)arg1;
++ (bool)respondsToSelector;
 + (id)retain;
 + (unsigned long long)retainCount;
 + (bool)retainWeakReference;
@@ -46,15 +46,15 @@
 - (bool)allowsWeakReference;
 - (id)autorelease;
 - (Class)class;
-- (bool)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (void)doesNotRecognizeSelector;
 - (unsigned long long)hash;
-- (bool)isEqual:(id)arg1;
-- (bool)isKindOfClass:(Class)arg1;
-- (bool)isMemberOfClass:(Class)arg1;
+- (bool)isEqual;
+- (bool)isKindOfClass;
+- (bool)isMemberOfClass;
 - (bool)isNSArray__;
 - (bool)isNSCFConstantString__;
 - (bool)isNSData__;
@@ -68,12 +68,12 @@
 - (bool)isNSTimeZone__;
 - (bool)isNSValue__;
 - (bool)isProxy;
-- (int (*)methodForSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (int (*)methodForSelector;
+- (id)performSelector;
+- (id)performSelectorwithObject;
+- (id)performSelectorwithObjectwithObject;
 - (void)release;
-- (bool)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector;
 - (id)retain;
 - (unsigned long long)retainCount;
 - (bool)retainWeakReference;

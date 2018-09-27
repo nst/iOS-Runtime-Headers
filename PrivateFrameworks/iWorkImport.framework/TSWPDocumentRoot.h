@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) EQKitEnvironment *equationEnvironment;
 @property (nonatomic, readonly) double stickyCommentScaleMultiplier;
 @property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
+@property (nonatomic, readonly) TSULocale *typesettingLocale;
 
 - (void).cxx_destruct;
 - (double)bodyWidth;
@@ -36,8 +37,10 @@
 - (bool)shouldHyphenate;
 - (double)stickyCommentScaleMultiplier;
 - (bool)supportHeaderFooterParagraphAlignmentInInspectors;
+- (id)typesettingLocale;
 - (id)unavailableDocumentFonts;
 - (bool)useLigatures;
+- (bool)validatedLoadFromUnarchiver:(id)arg1;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
 - (void)willClose;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIRestrictionsController : PSListController {
+@interface PSUIRestrictionsController : PSListController <DevicePINControllerDelegate> {
     UISwitch * _delayedSwitch;
     bool  _delayedValue;
     PSSpecifier * _iBooksExplicitSpecifier;
@@ -11,7 +11,11 @@
     NSMutableArray * _mcRestrictionFeatures;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *mcRestrictionFeatures;
+@property (readonly) Class superclass;
 
 + (void)formatSearchEntries:(id)arg1 parent:(id)arg2;
 + (bool)requiresPIN;
@@ -39,6 +43,8 @@
 - (id)currentCountryCode;
 - (id)currentCountryString:(id)arg1;
 - (void)dealloc;
+- (void)didAcceptRemovePIN;
+- (void)didAcceptSetPIN;
 - (id)explicitEnabled;
 - (id)explicitEnabledString;
 - (bool)featureRestricted:(id)arg1;
@@ -66,7 +72,6 @@
 - (void)updateToggleStateAndReload;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
-- (id)webContentRestrictionState:(id)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;
 

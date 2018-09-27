@@ -28,8 +28,8 @@
 @property (nonatomic) BOOL type;
 @property (nonatomic, copy) NSString *typeString;
 
+- (void).cxx_destruct;
 - (Class)classType;
-- (void)dealloc;
 - (id)defaultKey;
 - (id)defaultValue;
 - (id)description;

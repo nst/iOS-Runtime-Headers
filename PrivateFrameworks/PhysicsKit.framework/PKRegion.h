@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKRegion : NSObject <NSCoding, NSCopying> {
+@interface PKRegion : NSObject <NSCopying, NSSecureCoding> {
     struct vec4 { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
     }  _halfExtent;
@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) struct CGPath { }*path;
 
 + (id)infiniteRegion;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -39,6 +40,7 @@
 - (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)inverseRegion;
 - (bool)isEmpty;
+- (bool)isEqualToRegion:(id)arg1;
 - (bool)isInfinite;
 - (struct CGPath { }*)path;
 - (id)regionByDifferenceFromRegion:(id)arg1;

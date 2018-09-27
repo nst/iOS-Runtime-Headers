@@ -36,6 +36,7 @@
     int  _outlineStyle;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
     bool  _pinching;
+    NSObject<OS_dispatch_queue> * _reloadQueue;
     double  _scrollAnimationDurationOverride;
     bool  _scrollEventsInToViewIgnoresVisibility;
     bool  _scrollToOccurrencesOnNextReload;
@@ -95,6 +96,7 @@
 @property (nonatomic, retain) UIColor *occurrenceTimeColor;
 @property (nonatomic, retain) UIColor *occurrenceTitleColor;
 @property (nonatomic, readonly) NSArray *occurrenceViews;
+@property (nonatomic) long long orientation;
 @property (nonatomic) int outlineStyle;
 @property (nonatomic) double scrollAnimationDurationOverride;
 @property (nonatomic, readonly) double scrollBarOffset;
@@ -207,11 +209,14 @@
 - (id)occurrenceViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)occurrenceViewForEvent:(id)arg1;
 - (id)occurrenceViews;
+- (long long)orientation;
 - (int)outlineStyle;
 - (struct CGPoint { double x1; double x2; })pointAtDate:(double)arg1 isAllDay:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForEvent:(id)arg1;
 - (void)relayoutExistingTimedOccurrences;
 - (void)reloadData;
+- (void)reloadDataSynchronously;
+- (void)reloadDataWithCompletion:(id /* block */)arg1;
 - (void)removeFromSuperview;
 - (void)resetLastSelectedOccurrencePoint;
 - (double)scaledHourHeight;
@@ -295,6 +300,7 @@
 - (double)topYBoundaryForOccurrenceText;
 - (void)updateMarkerPosition;
 - (bool)usesVibrantGridDrawing;
+- (id)verticalScrollView;
 - (void)willMoveToSuperview:(id)arg1;
 - (double)yPositionPerhapsMatchingAllDayOccurrence:(id)arg1;
 

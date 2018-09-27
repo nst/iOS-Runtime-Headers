@@ -55,12 +55,15 @@
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
 @property (nonatomic) bool reducedRowHeight;
 @property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic, copy) NSArray *richData;
 @property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *tabGroupIdentifier;
 @property (nonatomic, copy) NSString *tableIdentifier;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic) int verticalAlign;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (bool)supportsSecureCoding;
 
@@ -113,5 +116,9 @@
 - (id)tableIdentifier;
 - (id)type;
 - (int)verticalAlign;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

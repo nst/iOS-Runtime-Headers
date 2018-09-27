@@ -9,8 +9,9 @@
     NSURL * _fileURL;
     bool  _locallyAvailable;
     NSString * _originalFilename;
-    unsigned long long  _pixelHeight;
-    unsigned long long  _pixelWidth;
+    PHPhotoLibrary * _photoLibrary;
+    long long  _pixelHeight;
+    long long  _pixelWidth;
     id /* block */  _privateFileLoader;
     NSURL * _privateFileURL;
     long long  _resourceType;
@@ -25,8 +26,9 @@
 @property (getter=isLocallyAvailable, setter=_setIsLocallyAvailable:, nonatomic) bool locallyAvailable;
 @property (nonatomic, readonly) bool miro_isReallyLocallyAvailable;
 @property (setter=_setOriginalFilename:, nonatomic, copy) NSString *originalFilename;
-@property (setter=_setPixelHeight:, nonatomic) unsigned long long pixelHeight;
-@property (setter=_setPixelWidth:, nonatomic) unsigned long long pixelWidth;
+@property (setter=_setPhotoLibrary:, nonatomic, retain) PHPhotoLibrary *photoLibrary;
+@property (setter=_setPixelHeight:, nonatomic) long long pixelHeight;
+@property (setter=_setPixelWidth:, nonatomic) long long pixelWidth;
 @property (setter=_setPrivateFileLoader:, nonatomic, copy) id /* block */ privateFileLoader;
 @property (setter=_setPrivateFileURL:, nonatomic, retain) NSURL *privateFileURL;
 @property (nonatomic, readonly) long long type;
@@ -45,8 +47,9 @@
 - (void)_setFileURL:(id)arg1;
 - (void)_setIsLocallyAvailable:(bool)arg1;
 - (void)_setOriginalFilename:(id)arg1;
-- (void)_setPixelHeight:(unsigned long long)arg1;
-- (void)_setPixelWidth:(unsigned long long)arg1;
+- (void)_setPhotoLibrary:(id)arg1;
+- (void)_setPixelHeight:(long long)arg1;
+- (void)_setPixelWidth:(long long)arg1;
 - (void)_setPrivateFileLoader:(id /* block */)arg1;
 - (void)_setPrivateFileURL:(id)arg1;
 - (void)_setUniformTypeIdentifier:(id)arg1;
@@ -60,8 +63,9 @@
 - (bool)isLibraryAssetResource;
 - (bool)isLocallyAvailable;
 - (id)originalFilename;
-- (unsigned long long)pixelHeight;
-- (unsigned long long)pixelWidth;
+- (id)photoLibrary;
+- (long long)pixelHeight;
+- (long long)pixelWidth;
 - (id /* block */)privateFileLoader;
 - (id)privateFileURL;
 - (long long)type;

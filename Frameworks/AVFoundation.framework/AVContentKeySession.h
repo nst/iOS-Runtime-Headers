@@ -13,20 +13,26 @@
 @property (readonly) NSString *keySystem;
 @property (readonly) NSURL *storageURL;
 
-+ (id)_uniqueIDForCyptorUUID:(id)arg1 cryptorRequestID:(unsigned long long)arg2;
++ (id)_uniqueIDForCyptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
 + (id)contentKeySessionWithKeySystem:(id)arg1;
 + (id)contentKeySessionWithKeySystem:(id)arg1 storageDirectoryAtURL:(id)arg2;
++ (struct OpaqueFigSecureStopManager { }*)copyDefaultSecureStopManagerForAppIdentifier:(id)arg1 storageDirectoryAtURL:(id)arg2;
++ (void)initialize;
 + (id)pendingExpiredSessionReportsWithAppIdentifier:(id)arg1 storageDirectoryAtURL:(id)arg2;
 + (void)removePendingExpiredSessionReports:(id)arg1 withAppIdentifier:(id)arg2 storageDirectoryAtURL:(id)arg3;
 
-- (id)_contentKeyRequestForCryptorUUID:(id)arg1 cryptorRequestID:(unsigned long long)arg2;
+- (id)_contentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
 - (const struct OpaqueFigContentKeySession { }*)_figContentKeySession;
-- (void)_handleKeyResponseError:(id)arg1 forCryptorUUID:(id)arg2 andCryptorRequestID:(unsigned long long)arg3;
-- (void)_handleKeyResponseSuccessfullyProcessedForCryptorUUID:(id)arg1 andCryptorRequestID:(unsigned long long)arg2;
+- (void)_handleKeyResponseError:(id)arg1 forCryptorUUID:(id)arg2 andCryptorKeyRequestID:(unsigned long long)arg3;
+- (void)_handleKeyResponseSuccessfullyProcessedForCryptorUUID:(id)arg1 andCryptorKeyRequestID:(unsigned long long)arg2;
 - (void)_handleRequest:(struct __CFDictionary { }*)arg1 withRequestID:(unsigned long long)arg2 fromHandler:(struct OpaqueFigCustomURLHandler { }*)arg3 willHandleRequest:(bool*)arg4;
+- (void)_handleSecureStopDidFinalizeRecordCallback;
 - (void)_handleUpdateToPersistentKey:(id)arg1 forKeyIdentifier:(id)arg2;
-- (void)_removeContentKeyRequestForCryptorUUID:(id)arg1 cryptorRequestID:(unsigned long long)arg2;
-- (void)_setContentKeyRequest:(id)arg1 forCryptorUUID:(id)arg2 cryptorRequestID:(unsigned long long)arg3;
+- (id)_internalQueue;
+- (void)_invokeDelegateCallbackWithBlock:(id /* block */)arg1 synchronouslyWhenDelegateQueueIsNULL:(bool)arg2;
+- (void)_removeContentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
+- (void)_sendFinishLoadingForPreloadedKeyRequest:(struct __CFDictionary { }*)arg1 withRequestID:(unsigned long long)arg2 fromHandler:(struct OpaqueFigCustomURLHandler { }*)arg3;
+- (void)_setContentKeyRequest:(id)arg1 forCryptorUUID:(id)arg2 cryptorKeyRequestID:(unsigned long long)arg3;
 - (id)_weakReference;
 - (void)_willDeallocOrFinalize;
 - (void)addContentKeyRecipient:(id)arg1;
@@ -39,10 +45,8 @@
 - (const struct OpaqueFigCPECryptor { }*)createDecryptorIfNecessaryForIdentifier:(id)arg1 initializationData:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 hlsMethod:(id)arg4 error:(id*)arg5;
 - (void)createProtectorSessionIdentifierIfNecessary;
 - (void)dealloc;
-- (int)decodeKeyRequestInitializationData:(id)arg1 IntoSinfs:(id*)arg2 CodecType:(id*)arg3 MediaType:(id*)arg4 ContainerType:(id*)arg5;
 - (id)delegate;
 - (id)delegateQueue;
-- (id)delegateStorage;
 - (void)expire;
 - (void)finalize;
 - (bool)hasProtector;

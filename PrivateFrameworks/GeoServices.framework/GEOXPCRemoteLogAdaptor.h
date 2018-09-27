@@ -20,6 +20,7 @@
     long long  _logMessagesOverflowPurgeSize;
     long long  _maxMessageChunkCount;
     long long  _maxMessageChunkSize;
+    NSNumber * _needsProxy;
     NSObject<OS_dispatch_queue> * _networkChangeObserverQueue;
     bool  _observingNetworkChange;
     NSString * _policyIdentifier;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) NSString *debugRequestName;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSNumber *needsProxy;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
 @property (readonly) int supportedLogMessageType;
@@ -56,7 +58,6 @@
 - (void)_deviceLocking;
 - (void)_deviceUnlocked;
 - (void)_initializeAdaptor;
-- (bool)_isLogMessageCollectionRequesterPending;
 - (void)_networkReachabilityChanged;
 - (void)_purgeAndSendLogMessages;
 - (void)_purgeExpiredLogMessagesFromCache;
@@ -80,16 +81,19 @@
 - (void)forceFlushLogs;
 - (void)incrementXpcActivityTriggerCount;
 - (id)initWithAdaptorPolicy:(id)arg1;
-- (id)initWithRemoteURL:(id)arg1 debugRequestName:(id)arg2 supportedTypes:(id)arg3;
+- (id)initWithRemoteURL:(id)arg1 needsProxy:(id)arg2 debugRequestName:(id)arg3 supportedTypes:(id)arg4;
 - (bool)isLogFrameworkAdaptor;
 - (int)logMsgEventNetworkServiceForSupportedLogMsgType;
+- (id)needsProxy;
 - (void)protobufSession:(id)arg1 didCompleteTask:(id)arg2;
 - (void)queueLogMessage:(id)arg1;
 - (id)remoteURL;
 - (void)setDebugRequestName:(id)arg1;
+- (void)setNeedsProxy:(id)arg1;
 - (void)setRemoteURL:(id)arg1;
 - (void)setXpcActivityTriggerCount:(long long)arg1;
 - (int)supportedLogMessageType;
+- (void)tearDown;
 - (void)updateAdaptorPolicyConfiguration:(id)arg1;
 - (long long)xpcActivityTriggerCount;
 

@@ -4,12 +4,6 @@
 
 @interface _SFPBMapRegion : PBCodable <NSSecureCoding, _SFPBMapRegion> {
     double  _eastLng;
-    struct { 
-        unsigned int southLat : 1; 
-        unsigned int westLng : 1; 
-        unsigned int northLat : 1; 
-        unsigned int eastLng : 1; 
-    }  _has;
     double  _northLat;
     double  _southLat;
     double  _westLng;
@@ -18,10 +12,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double eastLng;
-@property (nonatomic, readonly) bool hasEastLng;
-@property (nonatomic, readonly) bool hasNorthLat;
-@property (nonatomic, readonly) bool hasSouthLat;
-@property (nonatomic, readonly) bool hasWestLng;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) double northLat;
@@ -31,10 +21,6 @@
 
 - (id)dictionaryRepresentation;
 - (double)eastLng;
-- (bool)hasEastLng;
-- (bool)hasNorthLat;
-- (bool)hasSouthLat;
-- (bool)hasWestLng;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

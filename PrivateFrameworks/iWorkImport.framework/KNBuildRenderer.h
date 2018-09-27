@@ -9,7 +9,7 @@
     NSMapTable * _animatedLayers;
     KNAnimationInfo * _animationInfo;
     bool  _animationWillBeginPerformed;
-    bool  _areAnimationsPrepared;
+    bool  _areAnimationsReadyToStart;
     SEL  _buildEndCallbackSelector;
     id  _buildEndCallbackTarget;
     KNBuildChunk * _buildStage;
@@ -26,6 +26,7 @@
     bool  _shouldUseMagicMoveTextures;
     TSDTextureDescription * _textureDescription;
     TSDTextureSet * _textureSet;
+    NSMutableSet * _texturesToTeardown;
     bool  _usingFinalTexture;
 }
 
@@ -46,10 +47,12 @@
 
 - (bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)addBuildToStartAtEnd:(id)arg1;
-- (void)animateAfterDelay:(double)arg1;
+- (void)animate;
 - (id)animatedBuild;
 - (id)animatedBuildsToStartAtEnd;
+- (void)animationDidEnd;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)animationWillBegin;
 - (id)buildStage;
 - (void)dealloc;
 - (id)description;
@@ -57,7 +60,7 @@
 - (void)forceRemoveAnimations;
 - (void)generateTextures;
 - (id)info;
-- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
+- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 animatedSlideView:(id)arg4;
 - (id)initializeTextureSetForEndOfBuild:(bool)arg1 endOfSlide:(bool)arg2 description:(id)arg3 isRenderingToContext:(bool)arg4;
 - (id)loadPluginIfNeeded;
 - (id)p_filterForTextDelivery:(long long)arg1;
@@ -72,7 +75,6 @@
 - (void)p_updateTextureDescription:(id)arg1 forStage:(long long)arg2 isAtEndOfBuild:(bool)arg3;
 - (id)parentLayer;
 - (void)pauseAnimationsAtTime:(double)arg1;
-- (id)prepareAnimations;
 - (void)registerForBuildEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeAnimationsAndFinish:(bool)arg1;
 - (void)removeBuildToStartAtEnd:(id)arg1;

@@ -6,6 +6,7 @@
 @required
 
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didFailSendingProtobufWithIDSIdentifier:(NSString *)arg2 errorCode:(long long)arg3;
+- (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didNotifyAboutWebKitStatus:(NNMKProtoWebKitStatusNotification *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didNotifyInitialSyncFinished:(NNMKProtoInitialSyncFinishedNotification *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didRequestContent:(NNMKProtoContentRequest *)arg2;
 - (void)fetchesSyncServiceServer:(NNMKFetchesSyncServiceServer *)arg1 didRequestFetch:(NNMKProtoFetchRequest *)arg2;

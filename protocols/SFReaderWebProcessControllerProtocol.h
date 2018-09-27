@@ -9,6 +9,7 @@
 - (void)collectReadingListItemInfoWithBookmarkID:(NSNumber *)arg1;
 - (void)decreaseReaderTextSize;
 - (void)didCreateReaderPageContextHandle:(WKBrowsingContextHandle *)arg1;
+- (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)increaseReaderTextSize;
 - (void)loadNewReaderArticle;
 - (void)prepareReaderContentForPrinting;
@@ -17,5 +18,6 @@
 - (void)setReaderFont:(NSString *)arg1;
 - (void)setReaderInitialTopScrollOffset:(long long)arg1 configuration:(NSDictionary *)arg2 isViewingArchive:(bool)arg3;
 - (void)setReaderTheme:(NSString *)arg1;
+- (void)willHideReader;
 
 @end

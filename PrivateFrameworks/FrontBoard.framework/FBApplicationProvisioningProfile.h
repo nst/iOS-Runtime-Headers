@@ -17,15 +17,15 @@
 @property (nonatomic, readonly, copy) NSString *UUID;
 @property (getter=isAppleInternalProfile, nonatomic, readonly) bool appleInternalProfile;
 @property (getter=isBeta, nonatomic, readonly) bool beta;
-@property (nonatomic, readonly, retain) NSDate *expirationDate;
+@property (nonatomic, readonly) NSDate *expirationDate;
 @property (getter=isFreeDeveloperProfile, nonatomic, readonly) bool freeDeveloperProfile;
 @property (nonatomic, readonly) bool provisionsAllDevices;
 @property (nonatomic, readonly) bool provisionsThisDevice;
 @property (nonatomic, readonly, copy) NSString *signerIdentity;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (bool)allowsApplicationIdentifierEntitlement:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

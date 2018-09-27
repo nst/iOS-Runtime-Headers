@@ -40,7 +40,7 @@
             double height; 
         } targetSize; 
         unsigned long long cropFactor; 
-        bool round; 
+        unsigned long long style; 
         bool cropBounded; 
         bool acceptsVeryLowQuality; 
         bool wantsNonVisibleFaceCompletion; 
@@ -59,7 +59,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedActualFaceRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } normalizedFaceCropRect;
 @property (nonatomic, retain) PHObject *originalRequestObject;
-@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; } params;
+@property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; } params;
 @property (setter=ppt_setRequestStartDate:, nonatomic, copy) NSDate *ppt_requestStartDate;
 @property (nonatomic, readonly) int requestID;
 
@@ -69,14 +69,14 @@
 - (void)cancel;
 - (id)face;
 - (int)imageManagerRequestID;
-- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; })arg3;
+- (id)initWithFace:(id)arg1 cacheKey:(id)arg2 params:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; })arg3;
 - (bool)isCanceled;
 - (bool)isFullResMissing;
 - (struct CGSize { double x1; double x2; })lastDeliveredSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedActualFaceRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedFaceCropRect;
 - (id)originalRequestObject;
-- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; })params;
+- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; })params;
 - (void)ppt_reportMeasurementsForImageQuality:(long long)arg1;
 - (id)ppt_requestStartDate;
 - (void)ppt_setRequestStartDate:(id)arg1;

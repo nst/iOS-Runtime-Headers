@@ -7,8 +7,10 @@
     NSArray * _bbSections;
     NSDateComponents * _dndFromComponents;
     NSDateComponents * _dndToComponents;
+    unsigned long long  _doNotDisturbPrivilegedSenderType;
+    NSString * _doNotDisturbPrivilegedSenderTypeGroupIdentifier;
     bool  _isScheduled;
-    unsigned long long  _privilegedSenderType;
+    unsigned long long  _repeatedCallsEnabled;
     BBSettingsGateway * _settingsGateway;
 }
 
@@ -16,10 +18,13 @@
 @property (nonatomic, retain) NSArray *bbSections;
 @property (nonatomic, readonly) NSDateComponents *dndFromComponents;
 @property (nonatomic, readonly) NSDateComponents *dndToComponents;
+@property (nonatomic, readonly) unsigned long long doNotDisturbPrivilegedSenderType;
+@property (nonatomic, readonly) NSString *doNotDisturbPrivilegedSenderTypeGroupIdentifier;
 @property (nonatomic, readonly) bool isScheduled;
-@property (nonatomic, readonly) unsigned long long privilegedSenderType;
+@property (nonatomic) unsigned long long repeatedCallsEnabled;
 @property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 
++ (id)dateComponentsFromDNDScheduleTime:(id)arg1;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
@@ -28,13 +33,16 @@
 - (void)dealloc;
 - (id)dndFromComponents;
 - (id)dndToComponents;
+- (unsigned long long)doNotDisturbPrivilegedSenderType;
+- (id)doNotDisturbPrivilegedSenderTypeGroupIdentifier;
 - (id)init;
 - (bool)isScheduled;
 - (void)loadBBSections;
 - (void)loadDNDState;
-- (unsigned long long)privilegedSenderType;
 - (bool)repeatedCalls;
+- (unsigned long long)repeatedCallsEnabled;
 - (void)setBbSections:(id)arg1;
+- (void)setRepeatedCallsEnabled:(unsigned long long)arg1;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
 

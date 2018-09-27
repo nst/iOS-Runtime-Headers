@@ -5,6 +5,7 @@
 @interface NTKCharacterTimeView : UIView <NTKTimeView> {
     unsigned long long  _character;
     EAGLContext * _context;
+    CLKDevice * _device;
     NTKCharacterDisplayLink * _displayLink;
     NTKCharacterFrameBuffer * _framebuffer;
     bool  _frozen;
@@ -42,7 +43,7 @@
 - (void)dealloc;
 - (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)enumarateRenderers:(id /* block */)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (bool)isFrozen;
 - (void)layoutSubviews;
 - (void)prepareToZoom;

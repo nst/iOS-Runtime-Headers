@@ -19,12 +19,12 @@
 + (id)decodeWithData:(id)arg1;
 + (id)encodeWithCandidateResultSet:(id)arg1;
 
+- (void).cxx_destruct;
 - (const char *)bytes;
 - (id)candidateResultSet;
 - (const char *)currentPosition;
 - (id)data;
 - (id)dataFromCandidateResultSet:(id)arg1;
-- (void)dealloc;
 - (bool)decodeBool;
 - (unsigned char)decodeByte;
 - (id)decodeCandidate;

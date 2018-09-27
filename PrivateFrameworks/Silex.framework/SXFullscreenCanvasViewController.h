@@ -3,22 +3,21 @@
  */
 
 @interface SXFullscreenCanvasViewController : UIViewController {
-    SXKeyValueObserver * _navigationBarObserver;
-    bool  _visible;
+    bool  _isTransitioning;
+    id /* block */  _onTransition;
 }
 
-@property (nonatomic, retain) SXKeyValueObserver *navigationBarObserver;
-@property (nonatomic) bool visible;
+@property (nonatomic) bool isTransitioning;
+@property (nonatomic, copy) id /* block */ onTransition;
 
 - (void).cxx_destruct;
-- (id)navigationBarObserver;
-- (long long)preferredStatusBarStyle;
+- (bool)isTransitioning;
+- (id /* block */)onTransition;
 - (long long)preferredStatusBarUpdateAnimation;
 - (bool)prefersStatusBarHidden;
-- (void)setNavigationBarObserver:(id)arg1;
-- (void)setVisible:(bool)arg1;
+- (void)setIsTransitioning:(bool)arg1;
+- (void)setOnTransition:(id /* block */)arg1;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
-- (bool)visible;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

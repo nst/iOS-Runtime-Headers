@@ -14,9 +14,11 @@
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
 @property (nonatomic, copy) NSString *textToCommit;
 
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (void)applyToStatistic:(id)arg1;
 - (id)candidate;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyboardConfig;

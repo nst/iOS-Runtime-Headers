@@ -143,9 +143,11 @@
 - (void)clearCachedImages;
 - (id)croppingQuad;
 - (id)dataForTypeIdentifier:(id)arg1;
+- (void)dealloc;
 - (id)defaultTitle;
 - (void)deleteAttachmentPreviewImages;
 - (void)deleteFromLocalDatabase;
+- (id)description;
 - (void)didRefresh:(bool)arg1;
 - (void)didTurnIntoFault;
 - (id)drawingModel;
@@ -164,6 +166,7 @@
 - (bool)hasAllMandatoryFields;
 - (bool)hasAnyPNGPreviewImageFiles;
 - (bool)hasFallbackImage;
+- (bool)hasMetadata;
 - (id)ic_loggingValues;
 - (bool)ignoreInSearchIndexer;
 - (id)imageCacheKey;
@@ -215,6 +218,7 @@
 - (id)recordType;
 - (id)recordZoneName;
 - (id)remoteFileURL;
+- (void)requireMinimumVersionIncludingChildObjects:(long long)arg1;
 - (void)resetUniqueIdentifier;
 - (void)saveAndClearDecryptedData;
 - (void)saveMergeableDataIfNeeded;

@@ -62,9 +62,8 @@
 - (id)fieldProperties;
 - (id)initWithInternalSession:(id)arg1 targetQueue:(id)arg2;
 - (void)invalidateSessionWithCompletion:(id /* block */)arg1;
-- (void)loyaltyAndPaymentSession:(id)arg1 didDetectField:(bool)arg2;
-- (void)loyaltyAndPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didEndTransaction:(id)arg2;
+- (void)loyaltyAndPaymentSession:(id)arg1 didEnterFieldWithNotification:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didExpireTransactionForApplet:(id)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didExpressModeStateChange:(unsigned int)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didFailDeferredAuthorization:(bool)arg2;
@@ -74,6 +73,7 @@
 - (void)loyaltyAndPaymentSession:(id)arg1 didSelectValueAddedService:(bool)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didStartTransaction:(id)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
+- (void)loyaltyAndPaymentSessionDidExitField:(id)arg1;
 - (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(id)arg1;
 - (void)loyaltyAndPaymentSessionHasPendingServerRequest:(id)arg1;
 - (bool)paymentApplicationSupportsAutomaticAuthorization:(id)arg1;

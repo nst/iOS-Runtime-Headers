@@ -15,8 +15,8 @@
 - (<SBUIPasscodeLockViewDelegate> *)delegate;
 - (bool)isBiometricAuthenticationAllowed;
 - (bool)isScreenOn;
-- (SBUIProudLockIconView *)overrideProudLockView;
 - (NSString *)passcode;
+- (long long)passcodeLockViewState;
 - (bool)playsKeypadSounds;
 - (bool)proudLockShowsBiometricStates;
 - (void)reset;
@@ -33,7 +33,8 @@
 - (void)setCustomBackgroundColor:(UIColor *)arg1;
 - (void)setDelegate:(id <SBUIPasscodeLockViewDelegate>)arg1;
 - (void)setKeypadVisible:(bool)arg1 animated:(bool)arg2;
-- (void)setOverrideProudLockView:(SBUIProudLockIconView *)arg1;
+- (void)setPasscodeLockViewState:(long long)arg1;
+- (void)setPasscodeLockViewState:(long long)arg1 animated:(bool)arg2;
 - (void)setPlaysKeypadSounds:(bool)arg1;
 - (void)setProudLockShowsBiometricStates:(bool)arg1;
 - (void)setScreenOn:(bool)arg1;

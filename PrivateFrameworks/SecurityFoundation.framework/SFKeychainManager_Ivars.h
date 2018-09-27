@@ -3,7 +3,7 @@
  */
 
 @interface SFKeychainManager_Ivars : NSObject {
-    SFCredentialStore * credentialStore;
+    _SFCredentialStore * credentialStore;
 }
 
 - (void).cxx_destruct;

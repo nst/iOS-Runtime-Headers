@@ -41,6 +41,8 @@
 + (id)cupImperialUnit;
 + (id)cupUSUnit;
 + (id)dayUnit;
++ (id)decibelHearingLevelUnit;
++ (id)decibelSPLUnit;
 + (id)degreeCelsiusUnit;
 + (id)degreeFahrenheitUnit;
 + (long long)energyFormatterUnitFromUnit:(id)arg1;
@@ -51,6 +53,8 @@
 + (id)footUnit;
 + (id)gramUnit;
 + (id)gramUnitWithMetricPrefix:(long long)arg1;
++ (id)hertzUnit;
++ (id)hertzUnitWithMetricPrefix:(long long)arg1;
 + (id)hourUnit;
 + (id)inchUnit;
 + (id)internationalUnit;
@@ -100,6 +104,8 @@
 - (id)_baseUnitReductionAndProportionalSize:(out double*)arg1 withCycleSet:(id)arg2;
 - (id)_baseUnits;
 - (id)_computeBaseUnitReductionAndProportionalSize:(out double*)arg1 withCycleSet:(id)arg2;
+- (double)_convertFromBaseUnit:(double)arg1;
+- (double)_convertToBaseUnit:(double)arg1;
 - (id)_dimensionReduction;
 - (id)_foundationUnit;
 - (id)_init;

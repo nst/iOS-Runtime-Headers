@@ -26,6 +26,7 @@
         double width; 
         double height; 
     }  _renderedVideoSize;
+    bool  _useEmbeddedPreview;
     PUVideoExportNode * _videoRenderNode;
     NSURL * _videoURL;
     PUEditableMediaProviderVideoURLNode * _videoURLNode;
@@ -55,6 +56,7 @@
 @property (getter=isRunning, readonly) bool running;
 @property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool useEmbeddedPreview;
 @property (nonatomic, readonly) PUVideoExportNode *videoRenderNode;
 @property (nonatomic, readonly) NSURL *videoURL;
 @property (nonatomic, readonly) PUEditableMediaProviderVideoURLNode *videoURLNode;
@@ -81,6 +83,7 @@
 - (struct CGSize { double x1; double x2; })renderedImageSize;
 - (struct CGSize { double x1; double x2; })renderedVideoSize;
 - (void)run;
+- (bool)useEmbeddedPreview;
 - (id)videoRenderNode;
 - (id)videoURL;
 - (id)videoURLNode;

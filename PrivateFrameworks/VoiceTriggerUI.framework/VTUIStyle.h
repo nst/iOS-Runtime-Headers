@@ -13,6 +13,7 @@
     bool  _isHeySiriAlwaysOn;
     bool  _isIpad;
     bool  _isLargeIpad;
+    MGWrapper * _mgWrapper;
     bool  _needMoreLineSpacing;
     bool  _supportSideButtonActivation;
 }
@@ -25,6 +26,7 @@
 + (id)sharedStyle;
 
 - (void).cxx_destruct;
+- (id)VTUIDeviceSpecificAudioHintFileName:(id)arg1;
 - (id)VTUIDeviceSpecificString:(id)arg1;
 - (void)_createImageSuffixesForDevice;
 - (void)_createStringSuffixesForDevice;
@@ -36,7 +38,7 @@
 - (void)dealloc;
 - (id)deviceDoneImage;
 - (id)deviceSetupImage;
-- (id)educationVideoTopGradientColor;
+- (id)educationVideoGradientColor;
 - (double)educationalVideoFrameHeight;
 - (bool)educationalVideosSupported;
 - (long long)enrollmentMode;
@@ -50,6 +52,7 @@
 - (id)footerLabelFont;
 - (double)footerSkipButtonBaselineFromBottom;
 - (double)footerTextBaselineFromTop;
+- (double)footerTextBottomPadding;
 - (id)footerTextColor;
 - (id)headerTitleFont;
 - (double)headerTitleLinespacing;
@@ -70,6 +73,28 @@
 - (id)primaryButtonFont;
 - (double)primaryButtonHeight;
 - (double)primaryButtonHorizontalInset;
+- (double)proxFlamesViewCenterYOffset;
+- (double)proxFlamesViewHeight;
+- (id)proxHeaderColor;
+- (id)proxHeaderFont;
+- (double)proxLeading;
+- (double)proxPaddingFromBottom;
+- (double)proxPaddingFromTop;
+- (double)proxPaddingImageSubtitle;
+- (double)proxPaddingSubtitleButton;
+- (double)proxPaddingTitleImage;
+- (double)proxPageFirstBaselineBottom;
+- (id)proxPageFont;
+- (id)proxPageLabelColor;
+- (id)proxPrimaryButtonColor;
+- (id)proxPrimaryButtonFont;
+- (double)proxPrimaryButtonHeight;
+- (double)proxSiriLogoHeightWidth;
+- (double)proxStatusLabelMaxHeight;
+- (id)proxSubtitleFont;
+- (double)proxTrailing;
+- (double)proxViewHeight;
+- (double)proxViewMaxWidth;
 - (double)radarBtnHorizontalPadding;
 - (double)radarBtnVerticalPadding;
 - (id)secondaryButtonFont;
@@ -97,6 +122,7 @@
 - (double)turnOnSiriHorizontalPaddingPortrait;
 - (double)turnOnSiriImageOffsetFromTopLandscape;
 - (double)turnOnSiriImageOffsetFromTopPortrait;
+- (double)turnOnSiriImageViewTopOffset;
 - (double)turnOnSiriSubtitle1BaselineOffset;
 - (double)turnOnSiriSubtitle2BaselineOffset;
 

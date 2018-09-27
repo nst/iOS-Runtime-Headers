@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TransparencyDetailsView.framework/TransparencyDetailsView
  */
 
-@interface UserTransparencyViewController : UIViewController <UIWebViewDelegate> {
+@interface UserTransparencyViewController : UIViewController <WKNavigationDelegate> {
     <UserTransparencyViewControllerDelegate> * _delegate;
     UILabel * _errorLabel;
     bool  _isiPad;
-    UIWebView * _myUserPrivacyWebView;
+    WKWebView * _myUserPrivacyWebView;
     double  _statusBarOffset;
     UINavigationBar * _transparencyNavBar;
     NSString * _userTransparencyDetails;
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) UILabel *errorLabel;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isiPad;
-@property (nonatomic, retain) UIWebView *myUserPrivacyWebView;
+@property (nonatomic, retain) WKWebView *myUserPrivacyWebView;
 @property (nonatomic) double statusBarOffset;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UINavigationBar *transparencyNavBar;
@@ -70,8 +70,9 @@
 - (id)userTransparencyRendererURL;
 - (id)userTransparencyResponseData;
 - (void)viewDidLayoutSubviews;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
-- (void)webViewDidFinishLoad:(id)arg1;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 
 @end

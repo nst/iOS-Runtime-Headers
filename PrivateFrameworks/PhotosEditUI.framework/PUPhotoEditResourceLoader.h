@@ -5,8 +5,10 @@
 @interface PUPhotoEditResourceLoader : NSObject {
     PUPhotoEditResourceLoadRequest * __currentRequest;
     PHResourceDownloadRequest * __downloadRequest;
+    unsigned long long  __downloadSignpostId;
     NSMutableArray * __enqueuedRequests;
     <PUEditableAsset> * _asset;
+    long long  _assetRawPropertyCheckState;
     bool  _loadingMedia;
     PUEditableMediaProvider * _mediaProvider;
     long long  _resourcesAvailability;
@@ -14,8 +16,10 @@
 
 @property (setter=_setCurrentRequest:, nonatomic, retain) PUPhotoEditResourceLoadRequest *_currentRequest;
 @property (setter=_setDownloadRequest:, nonatomic, retain) PHResourceDownloadRequest *_downloadRequest;
+@property (nonatomic) unsigned long long _downloadSignpostId;
 @property (setter=_setEnqueuedRequests:, nonatomic, retain) NSMutableArray *_enqueuedRequests;
 @property (nonatomic, readonly) <PUEditableAsset> *asset;
+@property (nonatomic, readonly) long long assetRawPropertyCheckState;
 @property (getter=isDownloadingResources, nonatomic, readonly) bool downloadingResources;
 @property (getter=isLoadingMedia, setter=_setLoadingMedia:, nonatomic) bool loadingMedia;
 @property (nonatomic, readonly) PUEditableMediaProvider *mediaProvider;
@@ -26,9 +30,14 @@
 - (bool)_assetNeedsImageURLLoaded;
 - (bool)_assetNeedsVideoLoaded;
 - (void)_checkIfDownloadRequiredWithRequest:(id)arg1;
+- (void)_checkIfShouldUseRawWithRequest:(id)arg1;
 - (id)_currentRequest;
 - (void)_dequeueRequestIfNeeded;
 - (id)_downloadRequest;
+- (void)_downloadSignpostBegin;
+- (void)_downloadSignpostEnd;
+- (void)_downloadSignpostEvent:(const char *)arg1;
+- (unsigned long long)_downloadSignpostId;
 - (id)_enqueuedRequests;
 - (void)_fetchMediaForRequest:(id)arg1 result:(id)arg2;
 - (void)_fetchResourcesWithRequest:(id)arg1;
@@ -49,6 +58,7 @@
 - (void)_updateEditModel:(id)arg1 withAsset:(id)arg2;
 - (bool)areResourcesAvailable;
 - (id)asset;
+- (long long)assetRawPropertyCheckState;
 - (void)cancelAllRequests;
 - (void)enqueueRequest:(id)arg1;
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2;
@@ -56,5 +66,6 @@
 - (bool)isLoadingMedia;
 - (id)mediaProvider;
 - (long long)resourcesAvailability;
+- (void)set_downloadSignpostId:(unsigned long long)arg1;
 
 @end

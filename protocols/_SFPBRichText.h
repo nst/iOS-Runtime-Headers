@@ -13,9 +13,6 @@
 - (NSArray *)formattedTextPieces;
 - (_SFPBFormattedText *)formattedTextPiecesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)formattedTextPiecesCount;
-- (bool)hasContentAdvisory;
-- (bool)hasStarRating;
-- (bool)hasText;
 - (NSArray *)icons;
 - (_SFPBImage *)iconsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)iconsCount;

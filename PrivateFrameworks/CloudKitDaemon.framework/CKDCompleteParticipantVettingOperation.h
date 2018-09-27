@@ -4,6 +4,7 @@
 
 @interface CKDCompleteParticipantVettingOperation : CKDOperation {
     NSString * _baseToken;
+    NSString * _displayedHostname;
     NSData * _encryptedKey;
     struct _OpaquePCSShareProtection { } * _protectionInfo;
     NSString * _routingKey;
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic, readonly) NSString *baseToken;
+@property (nonatomic, readonly) NSString *displayedHostname;
 @property (nonatomic, readonly) NSData *encryptedKey;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*protectionInfo;
 @property (nonatomic, readonly) NSString *routingKey;
@@ -39,6 +41,7 @@
 - (void)_verifyOONParticipant;
 - (id)activityCreate;
 - (id)baseToken;
+- (id)displayedHostname;
 - (id)encryptedKey;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

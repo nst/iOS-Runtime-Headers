@@ -23,13 +23,17 @@
 - (bool)_doesAccount:(id)arg1 matchAccount:(id)arg2;
 - (bool)_doesAccount:(id)arg1 matchAccountDict:(id)arg2;
 - (bool)_doesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3 matchAccountWithAltDSID:(id)arg4 DSID:(id)arg5 username:(id)arg6;
+- (void)_handleAccountStoreDidChangeNotification:(id)arg1;
 - (id)_idmsAccountForCurrentAccount;
 - (id)_itunesAccountNoAuth;
 - (void)_sendITunesAccountToGizmoIfNecessary;
 - (void)_signGizmoIntoITunesAccount;
 - (id)_signInOptions;
 - (id)accountStore;
+- (void)dealloc;
+- (bool)hasITunesAccount;
 - (id)idmsAccount;
+- (id)init;
 - (id)itunesAccount;
 - (id)nssManager;
 - (void)sendITunesAccountToGizmoIfNecessary;

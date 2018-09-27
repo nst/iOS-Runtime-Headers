@@ -15,6 +15,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (long long)activeInterfaceOrientation;
 - (void)activeInterfaceOrientationWithCompletion:(id /* block */)arg1;
 - (void)client:(id)arg1 handleOrientationUpdate:(id)arg2;
 - (void)dealloc;

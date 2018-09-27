@@ -5,10 +5,6 @@
 @interface PXDragAndDropSettings : PXSettings {
     bool  _alwaysAllowDragsWithinUserAlbums;
     bool  _dragOutEnabled;
-    double  _longPressDuration;
-    double  _longPressRadius;
-    bool  _oneUpDragOutEnabled;
-    long long  _oneUpStyle;
     long long  _reorderCadence;
     bool  _springLoadingEnabled;
     bool  _useData;
@@ -17,10 +13,6 @@
 
 @property (nonatomic) bool alwaysAllowDragsWithinUserAlbums;
 @property (nonatomic) bool dragOutEnabled;
-@property (nonatomic) double longPressDuration;
-@property (nonatomic) double longPressRadius;
-@property (nonatomic) bool oneUpDragOutEnabled;
-@property (nonatomic) long long oneUpStyle;
 @property (nonatomic) long long reorderCadence;
 @property (nonatomic) bool springLoadingEnabled;
 @property (nonatomic) bool useData;
@@ -31,19 +23,11 @@
 
 - (bool)alwaysAllowDragsWithinUserAlbums;
 - (bool)dragOutEnabled;
-- (double)longPressDuration;
-- (double)longPressRadius;
-- (bool)oneUpDragOutEnabled;
-- (long long)oneUpStyle;
 - (id)parentSettings;
 - (long long)reorderCadence;
 - (void)setAlwaysAllowDragsWithinUserAlbums:(bool)arg1;
 - (void)setDefaultValues;
 - (void)setDragOutEnabled:(bool)arg1;
-- (void)setLongPressDuration:(double)arg1;
-- (void)setLongPressRadius:(double)arg1;
-- (void)setOneUpDragOutEnabled:(bool)arg1;
-- (void)setOneUpStyle:(long long)arg1;
 - (void)setReorderCadence:(long long)arg1;
 - (void)setSpringLoadingEnabled:(bool)arg1;
 - (void)setUseData:(bool)arg1;

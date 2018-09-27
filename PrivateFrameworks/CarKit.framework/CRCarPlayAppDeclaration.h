@@ -8,6 +8,7 @@
     bool  _launchUsingSiri;
     bool  _requiresGeoSupport;
     bool  _supportsCalling;
+    bool  _supportsMaps;
     bool  _supportsMessaging;
     bool  _supportsPlayableContent;
     bool  _systemApp;
@@ -18,6 +19,7 @@
 @property (nonatomic) bool launchUsingSiri;
 @property (nonatomic) bool requiresGeoSupport;
 @property (nonatomic) bool supportsCalling;
+@property (nonatomic) bool supportsMaps;
 @property (nonatomic) bool supportsMessaging;
 @property (nonatomic) bool supportsPlayableContent;
 @property (getter=isSystemApp, nonatomic) bool systemApp;
@@ -39,10 +41,12 @@
 - (void)setLaunchUsingSiri:(bool)arg1;
 - (void)setRequiresGeoSupport:(bool)arg1;
 - (void)setSupportsCalling:(bool)arg1;
+- (void)setSupportsMaps:(bool)arg1;
 - (void)setSupportsMessaging:(bool)arg1;
 - (void)setSupportsPlayableContent:(bool)arg1;
 - (void)setSystemApp:(bool)arg1;
 - (bool)supportsCalling;
+- (bool)supportsMaps;
 - (bool)supportsMessaging;
 - (bool)supportsPlayableContent;
 

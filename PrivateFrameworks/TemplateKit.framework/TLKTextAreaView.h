@@ -3,7 +3,6 @@
  */
 
 @interface TLKTextAreaView : TLKStackView <NUIContainerStackViewDelegate, TLKTextAreaViewTesting> {
-    NSObject<OS_dispatch_queue> * _concurrentQueue;
     NSMutableArray * _detailsFields;
     bool  _disableAllObservers;
     TLKRichTextField * _footnoteLabel;
@@ -11,7 +10,6 @@
     TLKTitleContainerView * _titleContainer;
 }
 
-@property (retain) NSObject<OS_dispatch_queue> *concurrentQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSMutableArray *detailsFields;
@@ -25,18 +23,17 @@
 + (id)footNoteLabelFont;
 
 - (void).cxx_destruct;
-- (id)concurrentQueue;
 - (id)detailsFields;
+- (id)detailsViews;
 - (bool)disableAllObservers;
-- (void)disableObserversOnLabels:(bool)arg1;
-- (void)disableUnbatchedUpdates;
 - (id)footnoteLabel;
 - (id)footnoteLabelString;
 - (id)init;
+- (void)internalTextFieldsInBatchUpdate:(bool)arg1;
 - (bool)noFootNote;
 - (bool)noRichTextFields;
+- (void)performBatchUpdates:(id /* block */)arg1;
 - (id)secondaryTitleLabelString;
-- (void)setConcurrentQueue:(id)arg1;
 - (void)setDetailsFields:(id)arg1;
 - (void)setDisableAllObservers:(bool)arg1;
 - (void)setFootnoteLabel:(id)arg1;
@@ -47,10 +44,11 @@
 - (id)textAreaLabelStrings;
 - (id)titleContainer;
 - (id)titleLabelString;
-- (void)updateDetails:(id)arg1 withDisabledObservers:(bool)arg2;
-- (void)updateExistingDetailText:(id)arg1;
+- (id)titleView;
+- (void)updateDetails:(id)arg1;
 - (void)updateFootnote:(id)arg1;
 - (void)updateResultWithTitle:(id)arg1 secondaryTitle:(id)arg2 image:(id)arg3 detached:(bool)arg4;
 - (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

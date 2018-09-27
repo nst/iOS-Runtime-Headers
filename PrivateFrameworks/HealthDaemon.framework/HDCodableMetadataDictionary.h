@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) NSMutableArray *keyValuePairs;
 
++ (id)decodeMetadataFromData:(id)arg1;
 + (Class)keyValuePairsType;
 
 - (void).cxx_destruct;

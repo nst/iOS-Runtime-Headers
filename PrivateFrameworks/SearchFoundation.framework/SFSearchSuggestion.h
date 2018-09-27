@@ -14,6 +14,7 @@
     NSString * _identifier;
     bool  _previouslyEngaged;
     NSString * _query;
+    NSString * _scopedSearchApplicationBundleIdentifier;
     double  _score;
     NSString * _suggestion;
     NSString * _topicIdentifier;
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) bool previouslyEngaged;
 @property (nonatomic, copy) NSString *query;
+@property (nonatomic, copy) NSString *scopedSearchApplicationBundleIdentifier;
 @property (nonatomic) double score;
 @property (nonatomic, readonly) NSArray *searchEntities;
 @property (nonatomic, copy) NSString *suggestion;
@@ -60,6 +62,7 @@
 - (id)jsonData;
 - (bool)previouslyEngaged;
 - (id)query;
+- (id)scopedSearchApplicationBundleIdentifier;
 - (double)score;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setDuplicateSuggestions:(id)arg1;
@@ -67,6 +70,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setPreviouslyEngaged:(bool)arg1;
 - (void)setQuery:(id)arg1;
+- (void)setScopedSearchApplicationBundleIdentifier:(id)arg1;
 - (void)setScore:(double)arg1;
 - (void)setSuggestion:(id)arg1;
 - (void)setTopicIdentifier:(id)arg1;

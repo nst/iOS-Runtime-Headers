@@ -83,6 +83,7 @@
 - (id)availableLanguageCodes;
 - (id)availableVoicesForLanguageCode:(id)arg1;
 - (void)beginAudioPowerUpdateWithReply:(id /* block */)arg1;
+- (id)cachePresynthesizedAudioRequest:(id)arg1;
 - (void)cleanUnusedAssets:(id /* block */)arg1;
 - (void)connection:(id)arg1 presynthesizedAudioRequest:(id)arg2 didStopAtEnd:(bool)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 presynthesizedAudioRequest:(id)arg2 successWithInstrumentMetrics:(id)arg3 error:(id)arg4;

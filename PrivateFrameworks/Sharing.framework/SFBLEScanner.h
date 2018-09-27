@@ -23,6 +23,7 @@
     NSData * _payloadFilterData;
     NSData * _payloadFilterMask;
     long long  _payloadType;
+    bool  _poweredOffSleep;
     double  _rescanInterval;
     NSObject<OS_dispatch_source> * _rescanTimer;
     struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; } * _rssiEventLogFile;
@@ -41,6 +42,8 @@
     bool  _timeoutFired;
     id /* block */  _timeoutHandler;
     NSObject<OS_dispatch_source> * _timeoutTimer;
+    NSSet * _trackedPeers;
+    NSSet * _trackedPeersApplied;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
     bool  _updating;
     WPAWDL * _wpAirDrop;
@@ -75,6 +78,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
 @property (nonatomic, copy) id /* block */ timeoutHandler;
+@property (nonatomic, copy) NSSet *trackedPeers;
 
 - (void).cxx_destruct;
 - (void)_activateWithCompletion:(id /* block */)arg1;
@@ -89,6 +93,8 @@
 - (bool)_needActiveScan;
 - (bool)_needDups;
 - (void)_poweredOff;
+- (void)_poweredOn;
+- (void)_removeAllDevicesWithReason:(id)arg1;
 - (void)_rescanTimerFired;
 - (void)_restartIfNeeded;
 - (void)_rssiLogClose;
@@ -97,6 +103,7 @@
 - (void)_timeoutTimerFired;
 - (bool)_updateCounterpart:(id)arg1;
 - (void)_updateRescanTimer;
+- (void)_updateTrackedPeers;
 - (void)_watchSetupParseName:(id)arg1 fields:(id)arg2;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (void)awdl:(id)arg1 failedToStartScanningWithError:(id)arg2;
@@ -163,8 +170,10 @@
 - (void)setScanWindow:(long long)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTimeoutHandler:(id /* block */)arg1;
+- (void)setTrackedPeers:(id)arg1;
 - (unsigned int)statusToHeadsetStatus:(unsigned char)arg1;
 - (double)timeout;
 - (id /* block */)timeoutHandler;
+- (id)trackedPeers;
 
 @end

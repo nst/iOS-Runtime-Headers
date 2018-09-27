@@ -13,9 +13,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_allFactors;
+- (void)_enumerateFactorsWithHandler:(id /* block */)arg1;
 - (long long)_exponentForFactor:(id)arg1;
-- (bool)_hasSameFactorsAndExponentsAs:(id)arg1;
 - (void)_multiplyByFactor:(id)arg1 exponent:(long long)arg2;
 - (void)_multiplyByFactorization:(id)arg1;
 - (void)_raiseToExponent:(long long)arg1;

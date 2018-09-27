@@ -33,6 +33,7 @@
 - (bool)_processFailureTypeFromDictionary:(id)arg1 error:(id*)arg2;
 - (void)_refreshSubscriptionStatus;
 - (void)_selectFooterSection:(id)arg1;
+- (bool)_shouldAttemptPasswordPaymentSheetForError:(id)arg1;
 - (bool)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
 - (id)_touchIDDialogForResponse:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

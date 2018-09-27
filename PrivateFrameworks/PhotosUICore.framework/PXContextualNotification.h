@@ -32,6 +32,7 @@
         bool didDisappear; 
     }  _delegateRespondsTo;
     UIImage * _image;
+    PXImageRequester * _imageRequester;
     AVAsset * _loopingVideoAsset;
     AVVideoComposition * _loopingVideoComposition;
     NSString * _message;
@@ -66,6 +67,7 @@
 @property (nonatomic) PXContextualNotificationCenter *contextualNotificationCenter;
 @property (nonatomic) <PXContextualNotificationDelegate> *delegate;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) PXImageRequester *imageRequester;
 @property (nonatomic, copy) AVAsset *loopingVideoAsset;
 @property (nonatomic, copy) AVVideoComposition *loopingVideoComposition;
 @property (nonatomic, copy) NSString *message;
@@ -93,6 +95,7 @@
 - (void)handleDiscard;
 - (void)handleTap:(id)arg1;
 - (id)image;
+- (id)imageRequester;
 - (id)init;
 - (void)invalidateLayout;
 - (id)loopingVideoAsset;
@@ -110,6 +113,7 @@
 - (void)setContextualNotificationCenter:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImageRequester:(id)arg1;
 - (void)setLoopingVideoAsset:(id)arg1;
 - (void)setLoopingVideoComposition:(id)arg1;
 - (void)setMessage:(id)arg1;

@@ -16,6 +16,7 @@
     NSMutableDictionary * _idsToOutgoingMessages;
     NSArray * _ignoredTopics;
     bool  _isConnected;
+    bool  _isShutdown;
     NSObject<OS_dispatch_queue> * _ivarQueue;
     unsigned long long  _largeMessageSize;
     NSObject<OS_dispatch_queue> * _machQueue;
@@ -24,6 +25,7 @@
     unsigned long long  _nextOutgoingMessageID;
     NSArray * _opportunisticTopics;
     bool  _portNameIsBundleId;
+    NSString * _processName;
     NSData * _publicToken;
     NSMutableArray * _queuedDelegateBlocks;
     bool  _usesAppLaunchStats;
@@ -31,6 +33,7 @@
 
 @property (nonatomic) <APSConnectionDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (nonatomic, readonly) bool isShutdown;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *ivarQueue;
 @property (nonatomic) unsigned long long largeMessageSize;
 @property (nonatomic) unsigned long long messageSize;
@@ -64,9 +67,10 @@
 - (void)_deliverConnectionStatusFromDealloc:(bool)arg1;
 - (void)_deliverDidReconnectOnIvarQueue;
 - (void)_deliverMessage:(id)arg1;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3;
 - (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2;
-- (void)_deliverPublicToken:(id)arg1;
-- (void)_deliverPublicTokenOnIvarQueue:(id)arg1;
+- (void)_deliverPublicToken:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)_deliverPublicTokenOnIvarQueue:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_deliverToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
 - (void)_disconnect;
 - (void)_disconnectFromDealloc;
@@ -84,6 +88,7 @@
 - (void)_shutdownFromDealloc;
 - (void)_shutdownOnIvarQueue;
 - (void)cancelOutgoingMessage:(id)arg1;
+- (void)confirmReceiptForMessage:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
@@ -97,6 +102,7 @@
 - (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
 - (bool)isConnected;
+- (bool)isShutdown;
 - (id)ivarQueue;
 - (unsigned long long)largeMessageSize;
 - (unsigned long long)messageSize;
@@ -115,8 +121,10 @@
 - (void)setEnabledTopics:(id)arg1;
 - (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2;
 - (void)setEnabledTopics:(id)arg1 ignoredTopics:(id)arg2 opportunisticTopics:(id)arg3;
+- (void)setIgnoredTopics:(id)arg1;
 - (void)setLargeMessageSize:(unsigned long long)arg1;
 - (void)setMessageSize:(unsigned long long)arg1;
+- (void)setOpportunisticTopics:(id)arg1;
 - (void)setUsesAppLaunchStats:(bool)arg1;
 - (void)shutdown;
 - (bool)usesAppLaunchStats;

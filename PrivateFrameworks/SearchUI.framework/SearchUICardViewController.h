@@ -33,6 +33,7 @@
 - (void)setLoadingView:(id)arg1;
 - (void)setShouldUseInsetRoundedSections:(bool)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)testingTableViewController;
 - (void)updateWithCardSections:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

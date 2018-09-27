@@ -22,6 +22,7 @@
     NSMutableDictionary * _storeIDToIndexPathReference;
     long long  _storePersonalizationStyle;
     long long  _unknownEndpointLibraryPersonalizationStyle;
+    NSMutableArray * _unprocessedItemIdentifiers;
 }
 
 @property (nonatomic, readonly) bool allowsExplicitContent;

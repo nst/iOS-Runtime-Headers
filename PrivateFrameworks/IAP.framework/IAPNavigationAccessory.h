@@ -20,6 +20,8 @@
 - (unsigned long long)identifier;
 - (id)initWithDict:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)requestedSourceNameForAnyComponent;
+- (bool)requestedSourceSupportsRouteGuidanceForAnyComponent;
 - (void)setComponents:(id)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
 - (void)set_wasFoundInLastUpdate:(bool)arg1;

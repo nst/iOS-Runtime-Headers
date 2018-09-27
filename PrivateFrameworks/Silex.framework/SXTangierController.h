@@ -5,6 +5,8 @@
 @interface SXTangierController : NSObject <STTextTangierInteractiveCanvasControllerDataSource, STTextTangierInteractiveCanvasControllerDelegate, SXTextComponentLayoutHosting, SXTextSelecting, SXViewportChangeListener> {
     UIView * _aboveRepsHost;
     <SXComponentActionHandler> * _componentActionHandler;
+    SXComponentController * _componentController;
+    <SXComponentInteractionManager> * _componentInteractionManager;
     STTextTangierCanvasViewController * _cvc;
     <SXTangierControllerDelegate> * _delegate;
     STTangierRepDirectLayerHostProvider * _directLayerHostProvider;
@@ -31,6 +33,8 @@
 @property (nonatomic, readonly) bool allowEditMenuToAppear;
 @property (nonatomic, readonly) bool allowTextEditingToBegin;
 @property (nonatomic, readonly) <SXComponentActionHandler> *componentActionHandler;
+@property (nonatomic, readonly) SXComponentController *componentController;
+@property (nonatomic, readonly) <SXComponentInteractionManager> *componentInteractionManager;
 @property (nonatomic, readonly) STTextTangierCanvasViewController *cvc;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SXTangierControllerDelegate> *delegate;
@@ -72,6 +76,8 @@
 - (id)aboveRepsHost;
 - (void)clearSelection;
 - (id)componentActionHandler;
+- (id)componentController;
+- (id)componentInteractionManager;
 - (id)cvc;
 - (void)dealloc;
 - (id)delegate;
@@ -84,7 +90,7 @@
 - (id)dragItemProvider;
 - (void)endSelection;
 - (id)icc;
-- (id)initWithViewport:(id)arg1 scrollView:(id)arg2 componentActionHandler:(id)arg3 dragItemProvider:(id)arg4;
+- (id)initWithViewport:(id)arg1 scrollView:(id)arg2 componentActionHandler:(id)arg3 dragItemProvider:(id)arg4 componentController:(id)arg5 componentInteractionManager:(id)arg6;
 - (unsigned long long)initialSubviewCount;
 - (bool)interactiveCanvasController:(id)arg1 configureHardPressGesture:(id)arg2;
 - (id)interactiveCanvasController:(id)arg1 delegateConformingToProtocol:(id)arg2 forRep:(id)arg3;
@@ -96,6 +102,7 @@
 - (void)interactiveCanvasController:(id)arg1 scrollViewDidEndDragging:(id)arg2 willDecelerate:(bool)arg3;
 - (void)interactiveCanvasController:(id)arg1 scrollViewWillBeginDragging:(id)arg2;
 - (void)interactiveCanvasController:(id)arg1 scrollViewWillEndDragging:(id)arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg4;
+- (bool)interactiveCanvasController:(id)arg1 shouldBeginInteraction:(id)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)interactiveCanvasControllerDidLayoutAndRenderOnBackgroundThread:(id)arg1;
 - (void)interactiveCanvasControllerDidScroll:(id)arg1;
 - (void)interactiveCanvasControllerDidStopScrolling:(id)arg1;

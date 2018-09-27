@@ -29,6 +29,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_setLaunchInterfaces:(id)arg1;
 - (bool)allowsSavingLaunchImages;
 - (id)bundleContainerPath;
 - (id)bundleIdentifier;
@@ -50,6 +51,5 @@
 - (void)setBundlePath:(id)arg1;
 - (void)setLaunchesOpaque:(bool)arg1;
 - (void)setSandboxPath:(id)arg1;
-- (void)set_launchInterfaces:(id)arg1;
 
 @end

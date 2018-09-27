@@ -14,9 +14,8 @@
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_updateForTemplateChange;
-- (void)_updateImageViewMulticolorAlphaIfNeeded;
-- (bool)_wantsPlatter;
 - (id)imageView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setImageView:(id)arg1;
 - (void)setUsesMediumLayout:(bool)arg1;

@@ -17,7 +17,7 @@
 - (id)delegate;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 - (id)intialPaymentSetupViewControllerForMode:(long long)arg1 allowsManualEntry:(bool)arg2;
-- (id)manualEntryPaymentSetupViewControllerForProduct:(id)arg1;
+- (id)manualEntryPaymentSetupViewControllerForProduct:(id)arg1 allowsSelectingBank:(bool)arg2;
 - (id)nextQueuedCredentialViewControllerWithSetupProduct:(id)arg1 allowsManualEntry:(bool)arg2;
 - (id)paymentSetupViewControllerForAssociatedCredentials:(id)arg1 product:(id)arg2 allowsManualEntry:(bool)arg3;
 - (id)provisioningController;

@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSArray *allConstraints;
 @property (nonatomic, retain) HUCameraView *cameraView;
+@property (nonatomic) double cameraViewAlpha;
 @property (nonatomic, retain) UILabel *descriptionLabel;
 @property (nonatomic, retain) NADecayingTimer *descriptionLabelUpdateTimer;
 @property (nonatomic, retain) NSArray *labelsConstraints;
@@ -34,6 +35,7 @@
 - (void)_updateLabelsAppearance;
 - (id)allConstraints;
 - (id)cameraView;
+- (double)cameraViewAlpha;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraViewFrame;
 - (void)dealloc;
 - (id)descriptionLabel;
@@ -46,6 +48,7 @@
 - (void)prepareForReuse;
 - (void)setAllConstraints:(id)arg1;
 - (void)setCameraView:(id)arg1;
+- (void)setCameraViewAlpha:(double)arg1;
 - (void)setDescriptionLabel:(id)arg1;
 - (void)setDescriptionLabelUpdateTimer:(id)arg1;
 - (void)setItem:(id)arg1;

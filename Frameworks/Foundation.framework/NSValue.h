@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSValue : NSObject <DebugHierarchyValue_Fallback, NSCopying, NSSecureCoding, TSDMixing>
+@interface NSValue : NSObject <DebugHierarchyValue_Fallback, NSCopying, NSSecureCoding, REDonatedActionIdentifierProviding, TSDMixing>
 
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } AXMAffineTransformValue;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } AXMPointValue;
@@ -18,6 +18,7 @@
 @property (readonly) struct { double x1; double x2; } MKCoordinateSpanValue;
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } MKCoordinateValue;
 @property (readonly) struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; } PXAssetBadgeInfoValue;
+@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } PXEdgeInsetsValue;
 @property (nonatomic, readonly) struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; } PXTileIdentifierValue;
 @property (readonly) struct { double x1[4]; } RGBResultValue;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } UIEdgeInsetsValue;
@@ -39,6 +40,7 @@
 @property (readonly) struct AKQuadrilateral { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; } quadrilateralValue;
 @property (readonly) struct _MSVSignedRange { long long x1; long long x2; } signedRangeValue;
 @property (readonly) Class superclass;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } xct_CGRectValue;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -57,6 +59,7 @@
 + (id)valueWithWeakObject:(id)arg1;
 
 - (bool)_matchType:(const char *)arg1 size:(unsigned long long)arg2;
+- (bool)_matchType:(const char *)arg1 size:(unsigned long long)arg2 strict:(bool)arg3;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -113,6 +116,12 @@
 - (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })CMTimeMappingValue;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })CMTimeRangeValue;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)hk_valueWithNSOperatingSystemVersion:(struct { long long x1; long long x2; long long x3; })arg1;
+
+- (struct { long long x1; long long x2; long long x3; })hk_NSOperatingSystemVersionValue;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -183,29 +192,6 @@
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })SCNVector4Value;
 - (struct CGPoint { double x1; double x2; })SCN_CGPointValue;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })SCN_simdMatrix4Value;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)valueWithCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
-+ (id)valueWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
-+ (id)valueWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-+ (id)valueWithCGSize:(struct CGSize { double x1; double x2; })arg1;
-+ (id)valueWithCGVector:(struct CGVector { double x1; double x2; })arg1;
-+ (id)valueWithDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-+ (id)valueWithNSDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-+ (id)valueWithUIEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-+ (id)valueWithUIKBHandwritingPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
-+ (id)valueWithUIOffset:(struct UIOffset { double x1; double x2; })arg1;
-
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })CGAffineTransformValue;
-- (struct CGPoint { double x1; double x2; })CGPointValue;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CGRectValue;
-- (struct CGSize { double x1; double x2; })CGSizeValue;
-- (struct CGVector { double x1; double x2; })CGVectorValue;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })UIEdgeInsetsValue;
-- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })UIKBHandwritingPointValue;
-- (struct UIOffset { double x1; double x2; })UIOffsetValue;
-- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })directionalEdgeInsetsValue;
 
 // Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
 
@@ -308,6 +294,9 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
++ (id)xct_valueWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })xct_CGRectValue;
 - (id)xct_contentDescription;
 
 // Image: /System/Library/PrivateFrameworks/IOAccessoryManager.framework/IOAccessoryManager
@@ -339,6 +328,12 @@
 
 - (void)nu_updateDigest:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
++ (id)cls_valueWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+
+- (struct CLLocationCoordinate2D { double x1; double x2; })cls_coordinateValue;
+
 // Image: /System/Library/PrivateFrameworks/PhotoImaging.framework/PhotoImaging
 
 + (id)gu_valueWithGrayColorResult:(struct { struct { double x_1_1_1[4]; } x1; struct { double x_2_1_1[4]; } x2; double x3; })arg1;
@@ -352,10 +347,12 @@
 + (id)px_valueWithMemoryFontsSpecIdentifier:(struct PXMemoryFontsSpecIdentifier { long long x1; long long x2; long long x3; double x4; })arg1;
 + (id)px_valueWithViewSpecDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
 + (id)valueWithPXAssetBadgeInfo:(struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })arg1;
++ (id)valueWithPXEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 + (id)valueWithPXTileGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1;
 + (id)valueWithPXTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1;
 
 - (struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })PXAssetBadgeInfoValue;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })PXEdgeInsetsValue;
 - (struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })PXTileGeometryValue;
 - (struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })PXTileIdentifierValue;
 - (struct PXMemoryFontsSpecIdentifier { long long x1; long long x2; long long x3; double x4; })px_memoryFontsSpecIdentifierValue;
@@ -366,6 +363,13 @@
 + (id)valueWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 - (struct CGPoint { double x1; double x2; })CGPointValue;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
++ (id)re_valueWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })re_CGRectValue;
+- (unsigned long long)re_actionIdentifierHashValue;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
@@ -391,6 +395,29 @@
 - (struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })tv_cellMetricsValue;
 - (struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; })tv_rowMetricsValue;
 
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)valueWithCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
++ (id)valueWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
++ (id)valueWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
++ (id)valueWithCGSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)valueWithCGVector:(struct CGVector { double x1; double x2; })arg1;
++ (id)valueWithDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
++ (id)valueWithNSDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
++ (id)valueWithUIEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
++ (id)valueWithUIKBHandwritingPoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })arg1;
++ (id)valueWithUIOffset:(struct UIOffset { double x1; double x2; })arg1;
+
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })CGAffineTransformValue;
+- (struct CGPoint { double x1; double x2; })CGPointValue;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CGRectValue;
+- (struct CGSize { double x1; double x2; })CGSizeValue;
+- (struct CGVector { double x1; double x2; })CGVectorValue;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })UIEdgeInsetsValue;
+- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; })UIKBHandwritingPointValue;
+- (struct UIOffset { double x1; double x2; })UIOffsetValue;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })directionalEdgeInsetsValue;
+
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 + (id)_web_valueWithCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -399,6 +426,9 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)valueWithContentBlend:(struct _TSDContentBlend { id x1; double x2; })arg1;
+
+- (struct _TSDContentBlend { id x1; double x2; })TSDContentBlendValue;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 

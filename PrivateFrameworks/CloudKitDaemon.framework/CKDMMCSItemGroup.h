@@ -14,13 +14,13 @@
 @property (nonatomic, retain) NSData *authPutRequest;
 @property (nonatomic) bool complete;
 @property (nonatomic, readonly) NSURL *contentBaseURL;
+@property (nonatomic, readonly) CKAssetDownloadPreauthorization *downloadPreauthorization;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) <MMCSOperationMetric> *metrics;
 @property (nonatomic, readonly) NSString *owner;
 @property (nonatomic, readonly) NSString *requestor;
 @property (nonatomic, retain) NSArray *tuple;
-@property (nonatomic, readonly) bool usePerItemAuthRequests;
 
 + (id)tupleForItem:(id)arg1;
 
@@ -31,6 +31,7 @@
 - (bool)complete;
 - (id)contentBaseURL;
 - (id)description;
+- (id)downloadPreauthorization;
 - (id)error;
 - (id)initWithTuple:(id)arg1;
 - (id)items;
@@ -43,6 +44,5 @@
 - (void)setMetrics:(id)arg1;
 - (void)setTuple:(id)arg1;
 - (id)tuple;
-- (bool)usePerItemAuthRequests;
 
 @end

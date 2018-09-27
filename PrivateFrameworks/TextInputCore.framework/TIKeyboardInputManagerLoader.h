@@ -16,12 +16,13 @@
 
 + (id)sharedLoader;
 
+- (void).cxx_destruct;
 - (id)activeInputModeIdentifiers;
 - (void)cacheInputManager:(id)arg1;
 - (void)dealloc;
 - (bool)hasActiveInputManagers;
 - (id)init;
-- (id)inputManagerForInputMode:(id)arg1 withClass:(Class)arg2;
+- (id)inputManagerForInputMode:(id)arg1 withKeyboardState:(id)arg2 class:(Class)arg3;
 - (id)interactingConnection;
 - (id)mostRecentlyRequested;
 - (void)reduceCacheToSize:(unsigned long long)arg1;

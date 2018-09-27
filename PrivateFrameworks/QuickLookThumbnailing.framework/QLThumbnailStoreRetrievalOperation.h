@@ -50,7 +50,6 @@
 - (bool)isConcurrent;
 - (bool)isExecuting;
 - (bool)isFinished;
-- (id)issueSandboxExtension;
 - (void)main;
 - (id)serializedQuickLookMetadataDictionary;
 - (void)setAllowsThumbnailGeneration:(bool)arg1;

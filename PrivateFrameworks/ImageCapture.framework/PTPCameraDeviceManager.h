@@ -20,9 +20,10 @@
 - (void)deleteFileImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
 - (void)ejectImp:(id)arg1;
+- (void)getDataOfFileImp:(id)arg1;
 - (void)getMetadataOfFileImp:(id)arg1;
 - (void)getThumbnailOfFileImp:(id)arg1;
-- (int)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
+- (long long)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)handleEventImp:(id)arg1;
 - (id)init;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;

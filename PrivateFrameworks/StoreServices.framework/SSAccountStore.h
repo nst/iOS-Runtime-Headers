@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) SSPromise *accountsPromise;
 @property (readonly) SSAccount *activeAccount;
 @property (readonly) SSAccount *activeLockerAccount;
+@property (readonly) SSAccount *activeSandboxAccount;
 @property (getter=isAuthenticationActive, readonly) bool authenticationActive;
 @property (nonatomic, readonly) ACAccountStore *backingAccountStore;
 @property (readonly, copy) NSString *debugDescription;
@@ -65,6 +66,7 @@
 + (bool)isExpired;
 + (bool)isExpiredForTokenType:(long long)arg1;
 + (bool)migrateToAccountsFramework;
++ (void)performCookieStorageMigration;
 + (void)resetExpiration;
 + (void)resetExpirationForTokenType:(long long)arg1;
 + (void)setAuthenticationStartedDate:(id)arg1;
@@ -107,6 +109,7 @@
 - (id)accountsPromise;
 - (id)activeAccount;
 - (id)activeLockerAccount;
+- (id)activeSandboxAccount;
 - (id)addAccount:(id)arg1;
 - (bool)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)backingAccountStore;

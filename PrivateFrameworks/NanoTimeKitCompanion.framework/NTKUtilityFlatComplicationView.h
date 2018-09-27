@@ -3,14 +3,19 @@
  */
 
 @interface NTKUtilityFlatComplicationView : NTKUtilityComplicationView {
+    NTKColoringLabel * _activeLabel;
+    UIImageView * _curvedHighlightView;
+    NTKCurvedColoringLabel * _curvedLabel;
     UIView<NTKComplicationImageView> * _imageView;
     NTKColoringLabel * _label;
 }
 
++ (void)circleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 interior:(bool*)arg4 forPlacement:(unsigned long long)arg5 forDevice:(id)arg6;
 + (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 
 - (void).cxx_destruct;
+- (id)_backgroundPlatterImage;
 - (void)_enumerateColoringStackedImagesViewsWithBlock:(id /* block */)arg1;
 - (void)_enumerateColoringViewsWithBlock:(id /* block */)arg1;
 - (bool)_shouldLayoutWithImageView;
@@ -20,5 +25,11 @@
 - (double)_widthThatFits;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setCanUseCurvedText:(bool)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setPlacement:(unsigned long long)arg1;
+- (void)setShouldUseBackgroundPlatter:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -6,7 +6,6 @@
 @required
 
 - (WBSParsecActionButton *)actionButton;
-- (NSArray *)additionalMapItems;
 - (NSURL *)appPunchoutURL;
 - (bool)canBecomeTopHitForQuery:(WBSCompletionQuery *)arg1;
 - (NSString *)completion;

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, copy) NSSet *scenes;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_initWithIdentifier:(id)arg1;
 - (void)activateScene:(id)arg1 withTransitionContext:(id)arg2;
 - (id)callOutQueue;

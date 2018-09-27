@@ -3,26 +3,31 @@
  */
 
 @interface TNChartFormulaHelper : NSObject {
-    TNChartMediator * mChartMediator;
-    bool  mCreateSpanningReferences;
+    TNChartMediator * _chartMediator;
+    bool  _createSpanningReferences;
 }
 
 @property (nonatomic, readonly) TNChartMediator *chartMediator;
 @property (nonatomic) bool createSpanningReferences;
 
-- (id)chartFormulaByAppendingRangeReference:(struct TSCERangeRef { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })arg1 toFormula:(id)arg2 andLocale:(id)arg3;
++ (id)cellRegionCullingToFirstFoundLevelFrom:(id)arg1 inTable:(id)arg2 byRows:(bool)arg3;
++ (id)chartFormulasForSummaryRegion:(id)arg1 inTable:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)chartFormulaByAppendingCategoryReferences:(struct vector<TSCECategoryRef, std::__1::allocator<TSCECategoryRef> > { struct TSCECategoryRef {} *x1; struct TSCECategoryRef {} *x2; struct __compressed_pair<TSCECategoryRef *, std::__1::allocator<TSCECategoryRef> > { struct TSCECategoryRef {} *x_3_1_1; } x3; })arg1 toFormula:(id)arg2 andLocale:(id)arg3;
+- (id)chartFormulaByAppendingRangeReference:(struct TSCERangeRef { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct TSUCellCoord { unsigned int x_2_2_1; unsigned short x_2_2_2; bool x_2_2_3; bool x_2_2_4; } x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })arg1 toFormula:(id)arg2 andLocale:(id)arg3;
 - (id)chartMediator;
 - (bool)createSpanningReferences;
-- (void)dealloc;
 - (id)formulaStorageForChartGridDirection:(int)arg1;
+- (id)formulaStorageTransformTable:(struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })arg1 toLevel:(unsigned char)arg2;
 - (id)initWithMediator:(id)arg1;
 - (id)initWithMediator:(id)arg1 createSpanningReferences:(bool)arg2;
-- (void)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(bool)arg3 toFormulaMap:(id)arg4;
+- (unsigned char)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(bool)arg3 toFormulaMap:(id)arg4;
+- (unsigned char)p_addFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(bool)arg3 toFormulaMap:(id)arg4 ofLevel:(unsigned char)arg5;
 - (void)p_addSeriesForRangeList:(id)arg1 rowLabelRangeList:(id)arg2 columnLabelRangeList:(id)arg3 rowLabels:(id)arg4 columnLabels:(id)arg5 toFormulaMap:(id)arg6;
-- (void)p_addSeriesForRangeList:(id)arg1 rowLabelRangeList:(id)arg2 columnLabelRangeList:(id)arg3 toFormulaMap:(id)arg4;
-- (void)p_addSeriesForTableModel:(id)arg1 seriesRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2 rowLabelRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg3 columnLabelRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg4 toFormulaMap:(id)arg5;
 - (void)p_addStringFormulasOfType:(unsigned long long)arg1 rangeList:(id)arg2 byRow:(bool)arg3 labels:(id)arg4 toFormulaMap:(id)arg5;
 - (bool)p_extendExistingSeriesWithSeriesRangeList:(id*)arg1 rowLabelRangeList:(id*)arg2 columnLabelRangeList:(id*)arg3 toFormulaMap:(id)arg4 withLocale:(id)arg5;
+- (unsigned char)p_firstDataCategoryLevelInFormulaMap:(id)arg1 forTable:(struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })arg2;
 - (bool)p_hasOneValuePerSeries;
 - (id)p_labelsOfType:(unsigned long long)arg1 formulaMap:(id)arg2;
 - (id)p_rangeListsForFormula:(id)arg1 argumentIndexes:(id)arg2 byRow:(bool)arg3 resolveSpanning:(bool)arg4;

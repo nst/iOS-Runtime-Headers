@@ -10,9 +10,11 @@
     double  _computedGlobalScoreCoefficient;
     double  _diversifiedPersonalizationScore;
     double  _featureCtr;
+    double  _firstPassPersonalizationScore;
     double  _globalScore;
     double  _paidNonpaidSubscriptionCtr;
     double  _personalizationScore;
+    double  _subscribedChannelCtr;
     double  _userFeedbackScore;
 }
 
@@ -23,9 +25,11 @@
 @property (nonatomic) double computedGlobalScoreCoefficient;
 @property (nonatomic) double diversifiedPersonalizationScore;
 @property (nonatomic) double featureCtr;
+@property (nonatomic) double firstPassPersonalizationScore;
 @property (nonatomic) double globalScore;
 @property (nonatomic) double paidNonpaidSubscriptionCtr;
 @property (nonatomic) double personalizationScore;
+@property (nonatomic) double subscribedChannelCtr;
 @property (nonatomic) double userFeedbackScore;
 
 - (void).cxx_destruct;
@@ -37,6 +41,7 @@
 - (id)description;
 - (double)diversifiedPersonalizationScore;
 - (double)featureCtr;
+- (double)firstPassPersonalizationScore;
 - (double)globalScore;
 - (double)paidNonpaidSubscriptionCtr;
 - (double)personalizationScore;
@@ -47,10 +52,13 @@
 - (void)setComputedGlobalScoreCoefficient:(double)arg1;
 - (void)setDiversifiedPersonalizationScore:(double)arg1;
 - (void)setFeatureCtr:(double)arg1;
+- (void)setFirstPassPersonalizationScore:(double)arg1;
 - (void)setGlobalScore:(double)arg1;
 - (void)setPaidNonpaidSubscriptionCtr:(double)arg1;
 - (void)setPersonalizationScore:(double)arg1;
+- (void)setSubscribedChannelCtr:(double)arg1;
 - (void)setUserFeedbackScore:(double)arg1;
+- (double)subscribedChannelCtr;
 - (double)userFeedbackScore;
 
 @end

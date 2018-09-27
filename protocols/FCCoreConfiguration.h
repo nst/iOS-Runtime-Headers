@@ -23,7 +23,7 @@
 - (NSString *)featuredStoriesTagID;
 - (FCForYouGroupsConfiguration *)forYouGroupsConfiguration;
 - (NSString *)forYouRecordConfigID;
-- (NTPBVideoGroupsConfig *)forYouVideoGroupsConfig;
+- (FCVideoGroupsConfig *)forYouVideoGroupsConfig;
 - (NSArray *)hiddenFeedIDs;
 - (bool)isOrderFeedEndpointEnabled;
 - (bool)isPrivateDataEncryptionAllowed;
@@ -58,5 +58,14 @@
 - (NSString *)trendingTagID;
 - (long long)trendingTopicsRefreshRate;
 - (bool)useSecureConnectionForAssets;
+
+@optional
+
+- (double)delayBeforeRetryingDroppedFeeds;
+- (bool)isSpecialEventsMicaAnimationDisabled;
+- (long long)maxRetriesForDroppedFeeds;
+- (bool)shouldShowAlternateHeadlines;
+- (long long)singleChannelFeedMinFeedItemsPerRequest;
+- (long long)singleTopicFeedMinFeedItemsPerRequest;
 
 @end

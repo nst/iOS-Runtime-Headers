@@ -6,6 +6,7 @@
     WebUIAlert * _alert;
     id /* block */  _completionHandler;
     int  _finalAction;
+    bool  _shouldIgnoreGlobalModalUIDisplayPolicy;
 }
 
 @property (nonatomic, readonly) WebUIAlert *alert;
@@ -16,5 +17,6 @@
 - (id)initWithAlert:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)newViewControllerRepresentationWithCompletionHandler:(id /* block */)arg1;
 - (long long)presentationStyle;
+- (bool)shouldIgnoreGlobalModalUIDisplayPolicy;
 
 @end

@@ -3,7 +3,9 @@
  */
 
 @interface CKEffectPickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegate> {
-    _UIBackdropView * _accessibilityBackdropView;
+    UIView * _accessibilityBackdropView;
+    UIView * _accessibilityCloseBackgroundView;
+    UIView * _accessibilitySendBackgroundView;
     NSMutableDictionary * _animatedCells;
     NSMutableDictionary * _animationTimers;
     CABackdropLayer * _backdrop;
@@ -52,7 +54,9 @@
     bool  _usesDarkVibrancyForLayers;
 }
 
-@property (nonatomic, retain) _UIBackdropView *accessibilityBackdropView;
+@property (nonatomic, retain) UIView *accessibilityBackdropView;
+@property (nonatomic, retain) UIView *accessibilityCloseBackgroundView;
+@property (nonatomic, retain) UIView *accessibilitySendBackgroundView;
 @property (nonatomic, retain) NSMutableDictionary *animatedCells;
 @property (nonatomic, retain) NSMutableDictionary *animationTimers;
 @property (nonatomic, retain) CABackdropLayer *backdrop;
@@ -104,7 +108,7 @@
 + (bool)shouldUseLargeScreenDimension;
 
 - (void).cxx_destruct;
-- (void)_accessibilityReduceTransparencyStatusDidChange;
+- (void)_accessibilityContrastStatusDidChange;
 - (void)_adjustMainLabelAndTypeSegmentedControlIfNecessary;
 - (void)_animateIn;
 - (void)_animateInSendButton:(id)arg1;
@@ -132,6 +136,8 @@
 - (void)_updateMomentsBackgroundColor;
 - (void)_updateRoundedContainerView;
 - (id)accessibilityBackdropView;
+- (id)accessibilityCloseBackgroundView;
+- (id)accessibilitySendBackgroundView;
 - (void)activateTextSizeDependentConstraintsForSendButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)addAnimationTimerForCell:(id)arg1;
 - (void)addEffect:(id)arg1 withDescriptiveText:(id)arg2 withIdentifier:(id)arg3;
@@ -143,6 +149,7 @@
 - (struct CGPoint { double x1; double x2; })balloonViewOrigin;
 - (id)blueContrastLayer;
 - (void)cancelImpactSelection;
+- (void)checkAndUpdateForSpotlightEffect:(id)arg1;
 - (id)closeButton;
 - (id)closeButtonBottomConstraint;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -199,6 +206,8 @@
 - (long long)selectedMomentIndex;
 - (id)sendMomentButton;
 - (void)setAccessibilityBackdropView:(id)arg1;
+- (void)setAccessibilityCloseBackgroundView:(id)arg1;
+- (void)setAccessibilitySendBackgroundView:(id)arg1;
 - (void)setAnimatedCells:(id)arg1;
 - (void)setAnimationTimers:(id)arg1;
 - (void)setBackdrop:(id)arg1;
@@ -251,6 +260,8 @@
 - (void)updateColor:(BOOL)arg1;
 - (void)updateHintTransition:(double)arg1;
 - (void)updateMomentTitle:(bool)arg1;
+- (void)updateViewColors;
+- (void)updateViewColors:(bool)arg1;
 - (bool)usesDarkVibrancyForLayers;
 
 @end

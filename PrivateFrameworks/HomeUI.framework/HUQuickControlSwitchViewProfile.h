@@ -6,13 +6,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) bool hasSecondaryValue;
+@property (nonatomic, readonly) bool hasSecondaryValue;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFNumberValueConstraints *primaryValueConstraints;
+@property (nonatomic, readonly) HFNumberValueConstraints *secondaryValueConstraints;
 @property (readonly) Class superclass;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)gestureDragCoefficient;
-- (double)percentageValueForViewValue:(id)arg1;
-- (id)viewValueForPercentageValue:(double)arg1 round:(bool)arg2;
+- (bool)hasSecondaryValue;
+- (id)primaryValueConstraints;
+- (id)secondaryValueConstraints;
 
 @end

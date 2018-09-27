@@ -5,6 +5,7 @@
 @interface TVViewElement : NSObject <NSCopying> {
     bool  _disabled;
     IKViewElement * _element;
+    bool  _parsedOnce;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) NSString *elementIdentifier;
 @property (nonatomic, readonly) NSString *elementName;
 @property (nonatomic, readonly) TVViewElement *parentViewElement;
+@property (getter=isParsedOnce, nonatomic) bool parsedOnce;
 @property (nonatomic, readonly) long long semanticContentAttribute;
 @property (nonatomic, readonly) TVViewElementStyle *style;
 @property (nonatomic, readonly) long long updateType;
@@ -31,10 +33,12 @@
 - (id)elementName;
 - (id)initWithViewElement:(id)arg1;
 - (bool)isDisabled;
+- (bool)isParsedOnce;
 - (id)parentViewElement;
 - (void)resetProperty:(long long)arg1;
 - (long long)semanticContentAttribute;
 - (void)setDisabled:(bool)arg1;
+- (void)setParsedOnce:(bool)arg1;
 - (id)style;
 - (long long)updateType;
 

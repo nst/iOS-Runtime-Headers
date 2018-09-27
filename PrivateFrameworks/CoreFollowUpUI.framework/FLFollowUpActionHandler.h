@@ -17,6 +17,8 @@
 
 - (void).cxx_destruct;
 - (id)_extensionLoader;
+- (void)dealloc;
+- (id)description;
 - (void)extensionDidFinish;
 - (void)extensionDidFinishWithError:(id)arg1;
 - (id /* block */)extensionRequestedViewControllerPresentation;

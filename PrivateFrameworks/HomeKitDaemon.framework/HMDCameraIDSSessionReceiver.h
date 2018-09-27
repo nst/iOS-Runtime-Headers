@@ -5,6 +5,7 @@
 @interface HMDCameraIDSSessionReceiver : HMDCameraIDSSessionHandler <HMDCameraRemoteStreamReceiverDestinationProtocol, IDSSessionDelegate> {
     <HMDCameraIDSSessionReceiverDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
+    HMDCameraIDSSessionInviterDeviceVerifier * _sessionInviterDeviceVerifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *remoteDestination;
 @property (nonatomic, readonly) IDSSession *session;
+@property (nonatomic, readonly) HMDCameraIDSSessionInviterDeviceVerifier *sessionInviterDeviceVerifier;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
@@ -25,12 +27,13 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 delegate:(id)arg3 delegateQueue:(id)arg4;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 sessionInviterDeviceVerifier:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 - (id)logIdentifier;
 - (id)remoteDestination;
 - (void)service:(id)arg1 account:(id)arg2 inviteReceivedForSession:(id)arg3 fromID:(id)arg4 withContext:(id)arg5;
 - (id)session;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
+- (id)sessionInviterDeviceVerifier;
 - (void)sessionStarted:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;

@@ -7,6 +7,8 @@
     NSDictionary * _avRouteDescription;
     MPAVBatteryLevel * _batteryLevel;
     bool  _canAccessRemoteAssets;
+    bool  _canFetchMediaDataFromSender;
+    bool  _canPlayEncryptedProgressiveDownloadAssets;
     bool  _carplayRoute;
     MPAVRouteConnection * _connection;
     long long  _displayRouteType;
@@ -18,6 +20,7 @@
     bool  _pickedOnPairedDevice;
     bool  _playingOnPairedDevice;
     NSString * _playingPairedDeviceName;
+    bool  _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     NSString * _productIdentifier;
     bool  _requiresPassword;
     NSString * _routeName;
@@ -38,6 +41,8 @@
 @property (getter=isBeatsStudioRoute, nonatomic, readonly) bool beatsStudioRoute;
 @property (getter=isBeatsXRoute, nonatomic, readonly) bool beatsXRoute;
 @property (nonatomic, readonly) bool canAccessRemoteAssets;
+@property (nonatomic, readonly) bool canFetchMediaDataFromSender;
+@property (nonatomic, readonly) bool canPlayEncryptedProgressiveDownloadAssets;
 @property (getter=isCarplayRoute, nonatomic, readonly) bool carplayRoute;
 @property (nonatomic, readonly) MPAVRouteConnection *connection;
 @property (nonatomic, readonly) NSString *designatedGroupLeaderName;
@@ -55,6 +60,7 @@
 @property (getter=isPlayingOnPairedDevice, nonatomic, readonly) bool playingOnPairedDevice;
 @property (nonatomic, readonly) NSString *playingPairedDeviceName;
 @property (getter=isPowerbeatsRoute, nonatomic, readonly) bool powerbeatsRoute;
+@property (nonatomic, readonly) bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property (nonatomic, readonly) NSString *productIdentifier;
 @property (getter=isProxyGroupPlayer, nonatomic, readonly) bool proxyGroupPlayer;
 @property (nonatomic, readonly) bool requiresPassword;
@@ -83,6 +89,8 @@
 - (id)avRouteDescription;
 - (id)batteryLevel;
 - (bool)canAccessRemoteAssets;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (id)connection;
 - (id)debugDescription;
 - (id)description;
@@ -118,6 +126,7 @@
 - (long long)passwordType;
 - (long long)pickableRouteType;
 - (id)playingPairedDeviceName;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (id)productIdentifier;
 - (bool)requiresPassword;
 - (id)routeName;

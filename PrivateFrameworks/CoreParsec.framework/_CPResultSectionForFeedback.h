@@ -5,28 +5,25 @@
 @interface _CPResultSectionForFeedback : PBCodable <NSSecureCoding, _CPResultSectionForFeedback> {
     NSString * _bundleIdentifier;
     NSData * _fallbackResultSection;
-    struct { 
-        unsigned int rankingScore : 1; 
-    }  _has;
     NSString * _identifier;
+    int  _knownBundleIdentifier;
     double  _rankingScore;
     NSArray * _results;
+    unsigned long long  _whichBundleid;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSData *fallbackResultSection;
-@property (nonatomic, readonly) bool hasBundleIdentifier;
-@property (nonatomic, readonly) bool hasFallbackResultSection;
-@property (nonatomic, readonly) bool hasIdentifier;
-@property (nonatomic, readonly) bool hasRankingScore;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic) int knownBundleIdentifier;
 @property (nonatomic) double rankingScore;
 @property (nonatomic, copy) NSArray *results;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long whichBundleid;
 
 - (void).cxx_destruct;
 - (void)addResults:(id)arg1;
@@ -34,10 +31,7 @@
 - (void)clearResults;
 - (id)dictionaryRepresentation;
 - (id)fallbackResultSection;
-- (bool)hasBundleIdentifier;
-- (bool)hasFallbackResultSection;
-- (bool)hasIdentifier;
-- (bool)hasRankingScore;
+- (id)feedbackJSON;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
@@ -45,6 +39,7 @@
 - (id)initWithJSON:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)jsonData;
+- (int)knownBundleIdentifier;
 - (double)rankingScore;
 - (bool)readFrom:(id)arg1;
 - (id)results;
@@ -53,8 +48,10 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setFallbackResultSection:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setKnownBundleIdentifier:(int)arg1;
 - (void)setRankingScore:(double)arg1;
 - (void)setResults:(id)arg1;
+- (unsigned long long)whichBundleid;
 - (void)writeTo:(id)arg1;
 
 @end

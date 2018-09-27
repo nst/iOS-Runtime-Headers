@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPPageInfo : NSObject <TSDContainerInfo> {
+@interface TPPageInfo : NSObject <TSDContainerInfo, TSKModelRootIndexProvider> {
     TPBodyInfo * _bodyInfo;
     TPDocumentRoot * _documentRoot;
     <TPPageLayoutInfoProvider> * _layoutInfoProvider;
@@ -28,8 +28,15 @@
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (readonly) Class superclass;
 
++ (unsigned long long)documentSetupLeftSidePageIndex;
++ (unsigned long long)documentSetupPageIndex;
++ (unsigned long long)documentSetupRightSidePageIndex;
 + (bool)hasBodyInfo;
++ (bool)isAlternativePageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
 + (bool)isDocSetupPageIndex:(unsigned long long)arg1;
++ (bool)isPageTemplatePageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
++ (unsigned long long)pageIndexFromPageTemplateIndex:(unsigned long long)arg1;
++ (unsigned long long)pageTemplateIndexFromPageIndex:(unsigned long long)arg1 documentRoot:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)bodyInfo;
@@ -51,6 +58,7 @@
 - (bool)isThemeContent;
 - (Class)layoutClass;
 - (id)layoutInfoProvider;
+- (long long)modelRootIndex;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (unsigned long long)pageIndex;

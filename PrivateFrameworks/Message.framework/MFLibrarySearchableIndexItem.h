@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic, retain) NSData *bodyData;
+@property (nonatomic, readonly) unsigned long long bodySizeInBytes;
 @property (nonatomic, readonly, copy) NSString *domainIdentifier;
 @property (nonatomic) bool hasCompleteBodyData;
 @property (nonatomic, readonly, copy) NSString *identifier;
@@ -26,6 +27,7 @@
 - (void)_updateAllAttributesInAttributeSet:(id)arg1 clientState:(id)arg2;
 - (void)_updateFlagsAttributesInAttributeSet:(id)arg1;
 - (id)bodyData;
+- (unsigned long long)bodySizeInBytes;
 - (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)domainIdentifier;

@@ -15,6 +15,7 @@
 @property (readonly) Class superclass;
 
 + (id)componentWithNode:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)agentDidUpdate:(id)arg1;

@@ -7,8 +7,6 @@
 
 - (void)addResults:(_CPSearchResultForFeedback *)arg1;
 - (void)clearResults;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

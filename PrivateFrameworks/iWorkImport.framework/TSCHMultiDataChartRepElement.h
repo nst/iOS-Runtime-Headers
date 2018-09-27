@@ -14,14 +14,12 @@
 
 + (id)elementWithElementLayer:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addAnimationForKey:(id)arg1 values:(id)arg2 keyTimes:(id)arg3 toAnimationInfo:(id)arg4;
-- (void)dealloc;
 - (id)delegate;
 - (id)elementLayer;
 - (bool)elementUndefined;
-- (id)init;
 - (id)initWithElementLayer:(id)arg1;
-- (id)initWithLayer:(id)arg1;
 - (id)labelLayer;
 - (void)setContentsScale:(double)arg1;
 - (void)setDelegate:(id)arg1;

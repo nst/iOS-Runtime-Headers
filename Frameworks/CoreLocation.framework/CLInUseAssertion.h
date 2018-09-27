@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@interface CLInUseAssertion : CLAssertion
+@interface CLInUseAssertion : CLAssertion <INUIIntentBackgroundHandlingAssertion>
 
 + (id)newAssertionForBundle:(id)arg1 withReason:(id)arg2;
 + (id)newAssertionForBundle:(id)arg1 withReason:(id)arg2 level:(int)arg3;

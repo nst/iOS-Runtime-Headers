@@ -4,7 +4,7 @@
 
 @interface GEONetworkObserver : NSObject {
     bool  _initialized;
-    NSLock * _lock;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
     bool  _networkNotified;
     struct __SCNetworkReachability { } * _networkReach;
     unsigned int  _networkReachability;
@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (void)_networkObserversInitialize;
 - (void)_networkReachableCallBack:(unsigned int)arg1;
-- (void)_networkReachableFirstCallBack:(id)arg1;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
 - (void)dealloc;
 - (id)init;

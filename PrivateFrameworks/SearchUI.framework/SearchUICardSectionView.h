@@ -32,7 +32,6 @@
 
 - (void).cxx_destruct;
 - (id)chevronView;
-- (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize { double x1; double x2; })arg2 forReason:(long long)arg3;
 - (id)contentView;
 - (void)didInvalidateSizeAnimate:(bool)arg1;
 - (id)feedbackDelegate;

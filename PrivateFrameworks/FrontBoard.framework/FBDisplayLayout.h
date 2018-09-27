@@ -16,8 +16,8 @@
     NSMutableSet * _transitions;
 }
 
-@property (nonatomic, readonly, retain) FBSDisplayLayout *currentLayout;
-@property (nonatomic, readonly, retain) FBSDisplayLayoutTransitionContext *currentTransitionContext;
+@property (nonatomic, readonly) FBSDisplayLayout *currentLayout;
+@property (nonatomic, readonly) FBSDisplayLayoutTransitionContext *currentTransitionContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <FBDisplayLayoutDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 @property (getter=isTransitioning, nonatomic, readonly) bool transitioning;
 
+- (void).cxx_destruct;
 - (void)_bgQueue_updateBacklightLevelAndNotify:(bool)arg1;
 - (void)_buildAndSendLayout:(bool)arg1;
 - (bool)_isReallyTransitioning;

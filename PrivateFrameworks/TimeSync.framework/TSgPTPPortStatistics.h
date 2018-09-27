@@ -15,8 +15,8 @@
     unsigned int  _attemptedSignalCounter;
     unsigned int  _attemptedSyncCounter;
     NSString * _portIdentifier;
-    long long  _portRole;
-    long long  _portType;
+    int  _portRole;
+    int  _portType;
     unsigned int  _rawDelayExceededCounter;
     unsigned int  _rawDelayMeasurementCounter;
     unsigned int  _receivedAnnounceCounter;
@@ -54,8 +54,8 @@
 @property (nonatomic, readonly) unsigned int attemptedSignalCounter;
 @property (nonatomic, readonly) unsigned int attemptedSyncCounter;
 @property (nonatomic, readonly, copy) NSString *portIdentifier;
-@property (nonatomic, readonly) long long portRole;
-@property (nonatomic, readonly) long long portType;
+@property (nonatomic, readonly) int portRole;
+@property (nonatomic, readonly) int portType;
 @property (nonatomic, readonly) unsigned int rawDelayExceededCounter;
 @property (nonatomic, readonly) unsigned int rawDelayMeasurementCounter;
 @property (nonatomic, readonly) unsigned int receivedAnnounceCounter;
@@ -95,8 +95,8 @@
 - (id)init;
 - (id)initWithPort:(id)arg1;
 - (id)portIdentifier;
-- (long long)portRole;
-- (long long)portType;
+- (int)portRole;
+- (int)portType;
 - (unsigned int)rawDelayExceededCounter;
 - (unsigned int)rawDelayMeasurementCounter;
 - (unsigned int)receivedAnnounceCounter;

@@ -22,6 +22,7 @@
 + (void)_serialize:(id /* block */)arg1;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_initWithPort:(unsigned int)arg1 owner:(int)arg2 trace:(id)arg3;
 - (void)_queue_invalidate;
 - (void)_queue_invalidateForOwner:(int)arg1;

@@ -14,11 +14,11 @@
     NSString * _peerAssistantIdentifier;
     bool  _prefersWWAN;
     bool  _requiresURLSession;
-    bool  _skipEdge;
     bool  _skipPeer;
     NSError * _skipPeerErrorReason;
     double  _timeout;
     NSURL * _url;
+    bool  _useWiFiHint;
 }
 
 @property (nonatomic, copy) NSString *aceHost;
@@ -32,11 +32,11 @@
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
 @property (nonatomic) bool prefersWWAN;
 @property (nonatomic) bool requiresURLSession;
-@property (nonatomic) bool skipEdge;
 @property (nonatomic) bool skipPeer;
 @property (nonatomic, copy) NSError *skipPeerErrorReason;
 @property (nonatomic) double timeout;
 @property (nonatomic, copy) NSURL *url;
+@property (nonatomic) bool useWiFiHint;
 
 - (void).cxx_destruct;
 - (void)_appendPotentiallyNilString:(id)arg1 toMutableString:(id)arg2;
@@ -63,15 +63,15 @@
 - (void)setPeerAssistantIdentifier:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
 - (void)setRequiresURLSession:(bool)arg1;
-- (void)setSkipEdge:(bool)arg1;
 - (void)setSkipPeer:(bool)arg1;
 - (void)setSkipPeerErrorReason:(id)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
-- (bool)skipEdge;
+- (void)setUseWiFiHint:(bool)arg1;
 - (bool)skipPeer;
 - (id)skipPeerErrorReason;
 - (double)timeout;
 - (id)url;
+- (bool)useWiFiHint;
 
 @end

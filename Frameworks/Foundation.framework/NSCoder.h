@@ -6,6 +6,7 @@
 
 @property (readonly) unsigned long long hmd_homeManagerOptions;
 @property (readonly) HMFMessage *hmd_message;
+@property (getter=isSharedUser, readonly) bool sharedUser;
 @property (getter=isXPCTransport, readonly) bool xpcTransport;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -19,6 +20,7 @@
 - (id)__tryDecodeObjectForKey:(id)arg1 error:(id*)arg2 decodeBlock:(id /* block */)arg3;
 - (bool)_allowsValueCoding;
 - (bool)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(bool)arg3;
+- (bool)_validateAllowedClassesContainsClass:(Class)arg1 forKey:(id)arg2;
 - (id)allowedClasses;
 - (bool)allowsKeyedCoding;
 - (bool)containsValueForKey:(id)arg1;
@@ -116,19 +118,19 @@
 - (void)encodeCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (void)encodeCMTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 forKey:(id)arg2;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
+- (id)ls_decodeArrayWithValuesOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)ls_decodeDictionaryWithKeysOfClass:(Class)arg1 valuesOfClass:(Class)arg2 forKey:(id)arg3;
+- (id)ls_decodeDictionaryWithKeysOfClass:(Class)arg1 valuesOfClasses:(id)arg2 forKey:(id)arg3;
+- (id)ls_decodeSetWithValuesOfClass:(Class)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (id)decodeArrayOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
 - (id)decodeSetOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
 - (void)encodeArrayOfConditionalObjects:(id)arg1 forKey:(id)arg2;
 - (void)encodeSetOfConditionalObjects:(id)arg1 forKey:(id)arg2;
-
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-- (id)ls_decodeArrayWithValuesOfClass:(Class)arg1 forKey:(id)arg2;
-- (id)ls_decodeDictionaryWithKeysOfClass:(Class)arg1 valuesOfClass:(Class)arg2 forKey:(id)arg3;
-- (id)ls_decodeDictionaryWithKeysOfClass:(Class)arg1 valuesOfClasses:(id)arg2 forKey:(id)arg3;
-- (id)ls_decodeSetWithValuesOfClass:(Class)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
@@ -144,26 +146,6 @@
 - (id)CA_decodeObjectForKey:(id)arg1;
 - (void)CA_encodeCGFloatArray:(const double*)arg1 count:(unsigned long long)arg2 forKey:(id)arg3;
 - (void)CA_encodeObject:(id)arg1 forKey:(id)arg2 conditional:(bool)arg3;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (bool)_ui_isInterprocess;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })decodeCGAffineTransformForKey:(id)arg1;
-- (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
-- (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
-- (struct CGVector { double x1; double x2; })decodeCGVectorForKey:(id)arg1;
-- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })decodeDirectionalEdgeInsetsForKey:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })decodeUIEdgeInsetsForKey:(id)arg1;
-- (struct UIOffset { double x1; double x2; })decodeUIOffsetForKey:(id)arg1;
-- (void)encodeCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forKey:(id)arg2;
-- (void)encodeCGPoint:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeCGVector:(struct CGVector { double x1; double x2; })arg1 forKey:(id)arg2;
-- (void)encodeDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2;
-- (void)encodeUIEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2;
-- (void)encodeUIOffset:(struct UIOffset { double x1; double x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
@@ -232,6 +214,7 @@
 - (bool)isRemoteTransport;
 - (bool)isRemoteTransportOnSameAccount;
 - (bool)isRemoteUserAdministrator;
+- (bool)isSharedUser;
 - (bool)isXPCTransport;
 - (id)supportedFeatures;
 - (id)user;
@@ -280,6 +263,26 @@
 - (id)prs_numberForKey:(id)arg1;
 - (id)prs_stringForKey:(id)arg1;
 - (double)prs_timestampForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (bool)_ui_isInterprocess;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })decodeCGAffineTransformForKey:(id)arg1;
+- (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
+- (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGVector { double x1; double x2; })decodeCGVectorForKey:(id)arg1;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })decodeDirectionalEdgeInsetsForKey:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })decodeUIEdgeInsetsForKey:(id)arg1;
+- (struct UIOffset { double x1; double x2; })decodeUIOffsetForKey:(id)arg1;
+- (void)encodeCGAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forKey:(id)arg2;
+- (void)encodeCGPoint:(struct CGPoint { double x1; double x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGSize:(struct CGSize { double x1; double x2; })arg1 forKey:(id)arg2;
+- (void)encodeCGVector:(struct CGVector { double x1; double x2; })arg1 forKey:(id)arg2;
+- (void)encodeDirectionalEdgeInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2;
+- (void)encodeUIEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2;
+- (void)encodeUIOffset:(struct UIOffset { double x1; double x2; })arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

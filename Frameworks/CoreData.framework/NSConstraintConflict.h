@@ -11,10 +11,10 @@
     NSDictionary * _databaseSnapshot;
 }
 
-@property (readonly, retain) NSArray *conflictingObjects;
-@property (readonly, retain) NSArray *conflictingSnapshots;
-@property (readonly, retain) NSArray *constraint;
-@property (readonly, retain) NSDictionary *constraintValues;
+@property (readonly, copy) NSArray *conflictingObjects;
+@property (readonly, copy) NSArray *conflictingSnapshots;
+@property (readonly, copy) NSArray *constraint;
+@property (readonly, copy) NSDictionary *constraintValues;
 @property (readonly, retain) NSManagedObject *databaseObject;
 @property (readonly, retain) NSDictionary *databaseSnapshot;
 

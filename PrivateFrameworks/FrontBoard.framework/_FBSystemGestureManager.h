@@ -30,6 +30,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) BKSTouchStream *touchStream;
 
+- (void).cxx_destruct;
 - (void)_addInternalGesturesToView:(id)arg1;
 - (void)_catchSwipeFailureGestureChanged:(id)arg1;
 - (unsigned char)_dispatchModeForExternalGestureCompletion;

@@ -8,6 +8,7 @@
 - (void)addOrUpdateItemsOnDatabaseQueue:(NSSet *)arg1;
 - (NSSet *)allVisitsForItemsOnDatabaseQueue:(NSSet *)arg1;
 - (unsigned long long)cachedNumberOfDevicesInSyncCircle;
+- (void)checkIfLocalVisitExistsInAnyOfItems:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: NSSet *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)clearHistoryVisitsAddedAfterDate:(void *)arg1 beforeDate:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 7: NSDate *, NSDate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)clearHistoryWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)closeWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*

@@ -16,9 +16,9 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)immediateUpdateWithCompletion:(id /* block */)arg1;
 - (id)initWithProfile:(id)arg1 delegate:(id)arg2;
 - (id)profile;
+- (void)requestPendingEventsThroughDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)sessionId;
 - (void)startWithSessionId:(id)arg1;
 - (void)stop;

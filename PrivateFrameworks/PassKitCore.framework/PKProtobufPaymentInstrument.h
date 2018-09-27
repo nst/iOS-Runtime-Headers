@@ -16,6 +16,7 @@
     double  _ingestedDate;
     NSString * _issuerCountryCode;
     NSData * _manifestHash;
+    NSString * _organizationName;
     NSString * _passID;
     NSMutableArray * _paymentApplications;
     long long  _peerPaymentAccountBalance;
@@ -34,6 +35,7 @@
 @property (nonatomic) bool hasIngestedDate;
 @property (nonatomic, readonly) bool hasIssuerCountryCode;
 @property (nonatomic, readonly) bool hasManifestHash;
+@property (nonatomic, readonly) bool hasOrganizationName;
 @property (nonatomic, readonly) bool hasPassID;
 @property (nonatomic) bool hasPeerPaymentAccountBalance;
 @property (nonatomic, readonly) bool hasPeerPaymentAccountCurrency;
@@ -44,6 +46,7 @@
 @property (nonatomic) double ingestedDate;
 @property (nonatomic, retain) NSString *issuerCountryCode;
 @property (nonatomic, retain) NSData *manifestHash;
+@property (nonatomic, retain) NSString *organizationName;
 @property (nonatomic, retain) NSString *passID;
 @property (nonatomic, retain) NSMutableArray *paymentApplications;
 @property (nonatomic) long long peerPaymentAccountBalance;
@@ -75,6 +78,7 @@
 - (bool)hasIngestedDate;
 - (bool)hasIssuerCountryCode;
 - (bool)hasManifestHash;
+- (bool)hasOrganizationName;
 - (bool)hasPassID;
 - (bool)hasPeerPaymentAccountBalance;
 - (bool)hasPeerPaymentAccountCurrency;
@@ -88,6 +92,7 @@
 - (id)issuerCountryCode;
 - (id)manifestHash;
 - (void)mergeFrom:(id)arg1;
+- (id)organizationName;
 - (id)passID;
 - (id)paymentApplications;
 - (id)paymentApplicationsAtIndex:(unsigned long long)arg1;
@@ -109,6 +114,7 @@
 - (void)setIngestedDate:(double)arg1;
 - (void)setIssuerCountryCode:(id)arg1;
 - (void)setManifestHash:(id)arg1;
+- (void)setOrganizationName:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPeerPaymentAccountBalance:(long long)arg1;

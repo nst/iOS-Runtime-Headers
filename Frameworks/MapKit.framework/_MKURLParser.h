@@ -3,7 +3,7 @@
  */
 
 @interface _MKURLParser : NSObject {
-    _GEOMapURLParser * parser;
+    GEOMapURLParser * parser;
 }
 
 @property (readonly) NSString *abAddressID;
@@ -20,6 +20,7 @@
 @property (readonly) bool exactPositionSpecified;
 @property (readonly) GEOURLExtraStorage *extraStorage;
 @property (readonly) long long favoritesType;
+@property (readonly) NSString *label;
 @property (readonly) unsigned long long lineMUID;
 @property (readonly, copy) NSString *lineName;
 @property (readonly) unsigned long long mapType;
@@ -34,6 +35,7 @@
 @property (readonly) bool tester;
 @property (readonly) double tilt;
 @property (readonly) long long trackingMode;
+@property (readonly) bool trackingModeSpecified;
 @property (readonly) unsigned long long transportType;
 @property (readonly) GEOUserSessionEntity *userSessionEntity;
 @property (readonly) float zoomLevel;
@@ -56,6 +58,7 @@
 - (id)extraStorage;
 - (long long)favoritesType;
 - (id)initWithURL:(id)arg1;
+- (id)label;
 - (unsigned long long)lineMUID;
 - (id)lineName;
 - (unsigned long long)mapType;
@@ -71,6 +74,7 @@
 - (bool)tester;
 - (double)tilt;
 - (long long)trackingMode;
+- (bool)trackingModeSpecified;
 - (unsigned long long)transportType;
 - (id)userSessionEntity;
 - (float)zoomLevel;

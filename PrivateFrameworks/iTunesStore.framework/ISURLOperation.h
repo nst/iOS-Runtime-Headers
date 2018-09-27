@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) NSURLCache *URLCache;
 @property (nonatomic, readonly) NSString *URLCacheID;
 @property (setter=_setAccountDSIDOverride:, nonatomic, retain) NSNumber *_accountDSIDOverride;
+@property (setter=_setActiveURLRequest:, retain) NSURLRequest *_activeURLRequest;
 @property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) bool _loadsHTTPFailures;
 @property (getter=_shouldSetCookies, setter=_setShouldSetCookies:) bool _shouldSetCookies;
 @property (getter=_usesPrivateCookieStore, setter=_setUsesPrivateCookieStore:) bool _usesPrivateCookieStore;

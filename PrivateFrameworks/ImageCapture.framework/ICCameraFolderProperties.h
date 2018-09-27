@@ -12,7 +12,6 @@
 
 - (void)dealloc;
 - (id)files;
-- (void)finalize;
 - (id)folders;
 - (void)setFiles:(id)arg1;
 - (void)setFolders:(id)arg1;

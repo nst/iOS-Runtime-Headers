@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) bool hasClient;
 @property (nonatomic, readonly) bool hasOrigin;
 @property (nonatomic, readonly) bool hasPlayer;
+@property (nonatomic, readonly) bool isLocal;
 @property (nonatomic, retain) _MROriginProtobuf *origin;
 @property (nonatomic, retain) _MRNowPlayingPlayerProtobuf *player;
 
@@ -30,6 +31,7 @@
 - (bool)hasPlayer;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (bool)isLocal;
 - (void)mergeFrom:(id)arg1;
 - (id)origin;
 - (id)player;

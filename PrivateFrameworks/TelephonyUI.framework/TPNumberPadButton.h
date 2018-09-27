@@ -39,7 +39,9 @@
 + (void)resetLocaleIfNeeded;
 + (id)scriptKey;
 + (double)unhighlightedCircleViewAlpha;
++ (bool)useLargeFont;
 + (bool)usesBoldAssets;
++ (bool)usesButtonSaturationFilters;
 + (bool)usesTelephonyGlyphsWhereAvailable;
 + (double)verticalPadding;
 

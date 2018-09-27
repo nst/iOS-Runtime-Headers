@@ -14,6 +14,5 @@
 - (void)handleInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (id)interestingContactIdentifiersFromIntent:(id)arg1;
 - (void)setContactStore:(id)arg1;
-- (bool)shouldHandleInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 
 @end

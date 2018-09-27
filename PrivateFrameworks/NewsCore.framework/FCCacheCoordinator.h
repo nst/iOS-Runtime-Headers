@@ -33,6 +33,7 @@
 - (void)addInterestInKeys:(id)arg1;
 - (bool)cacheContainsKey:(id)arg1;
 - (id)cacheHintsByKey;
+- (void)dealloc;
 - (id)delegate;
 - (void)didAccessKeys:(id)arg1;
 - (void)didInsertKeyIntoCache:(id)arg1 withLifetimeHint:(long long)arg2;

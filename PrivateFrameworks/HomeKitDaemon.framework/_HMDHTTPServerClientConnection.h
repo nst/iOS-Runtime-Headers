@@ -5,6 +5,7 @@
 @interface _HMDHTTPServerClientConnection : HMFObject {
     HMFHTTPClientConnection * _connection;
     HMDHTTPDevice * _device;
+    HMFUnfairLock * _lock;
     HMFTimer * _lostConnectionTimer;
     NSMutableDictionary * _pendingTransactionCompletionHandlers;
     NSMutableArray * _receiveMessageRequests;
@@ -16,7 +17,6 @@
 @property (nonatomic, retain) HMFHTTPClientConnection *connection;
 @property (nonatomic, readonly) HMDHTTPDevice *device;
 @property (nonatomic, readonly) HMFTimer *lostConnectionTimer;
-@property (nonatomic, readonly) NSMutableDictionary *pendingTransactionCompletionHandlers;
 @property (nonatomic, readonly) NSMutableArray *receiveMessageRequests;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, readonly) NSOperationQueue *transactionOperationQueue;
@@ -25,8 +25,8 @@
 
 - (void).cxx_destruct;
 - (void)_reallySendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)addCompletionHandler:(id /* block */)arg1 forTransactionIdentifier:(id)arg2;
 - (id)connection;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)dequeueRequest;
 - (id)description;
@@ -34,11 +34,12 @@
 - (id)device;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
+- (void)invalidate;
 - (bool)isConnected;
 - (id)lostConnectionTimer;
-- (id)pendingTransactionCompletionHandlers;
 - (void)queueRequest:(id)arg1;
 - (id)receiveMessageRequests;
+- (id /* block */)removeCompletionHandlerForTransactionIdentifier:(id)arg1;
 - (id)requestOperationQueue;
 - (void)sendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)setConnection:(id)arg1;

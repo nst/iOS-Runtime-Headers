@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSPearlAttentionGroupController : NSObject <PSSpecifierGroupController> {
+@interface PSPearlAttentionGroupController : NSObject <PSSpecifierGroup> {
     PSSpecifier * _groupSpecifier;
     PSListController * _listController;
     BKDevicePearl * _pearlDevice;

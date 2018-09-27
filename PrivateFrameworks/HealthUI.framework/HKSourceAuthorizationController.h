@@ -16,6 +16,7 @@
     NSMutableSet * _typesEnabledForSharing;
 }
 
+@property (nonatomic, readonly) bool anyTypeRequested;
 @property (nonatomic) <HKSourceAuthorizationControllerDelegate> *delegate;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
 @property (nonatomic) bool isUpdatingAllTypes;
@@ -40,6 +41,7 @@
 - (void)_updateAuthorizationStatusWithTypes:(id)arg1;
 - (bool)allTypesEnabled;
 - (bool)anyTypeEnabled;
+- (bool)anyTypeRequested;
 - (void)commitAuthorizationStatuses;
 - (void)commitObjectAuthorizationStatuses:(id)arg1;
 - (unsigned long long)countOfTypesInSection:(long long)arg1;

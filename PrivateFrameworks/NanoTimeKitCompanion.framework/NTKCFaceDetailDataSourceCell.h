@@ -3,19 +3,19 @@
  */
 
 @interface NTKCFaceDetailDataSourceCell : NTKCFaceDetailToggleCell {
-    NSString * _bundleIdentifier;
+    NSArray * _bundleIdentifiers;
     UIImageView * _iconImageView;
 }
 
-@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) NSArray *bundleIdentifiers;
 @property (nonatomic, retain) UIImageView *iconImageView;
 
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
-- (id)bundleIdentifier;
+- (id)bundleIdentifiers;
 - (id)iconImageView;
-- (id)initWithIdentifier:(id)arg1 andLabel:(id)arg2;
+- (id)initWithIdentifiers:(id)arg1 andLabel:(id)arg2 showIcon:(bool)arg3 isDonation:(bool)arg4;
 - (void)layoutSubviews;
 - (void)setIconImageView:(id)arg1;
 

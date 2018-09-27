@@ -3,22 +3,24 @@
  */
 
 @interface TSCEDateCellValue : TSCECellValue {
-    struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; int x12; bool x13; void *x14; } * _dateValue;
+    struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; struct TSCEFormatStruct { int x_12_1_1; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_2_2_1; struct { unsigned int x_2_3_1 : 8; } x_2_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_2_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_2_2_4; } x_12_1_2; id x_12_1_3; id x_12_1_4; unsigned char x_12_1_5; } x12; } * _dateValue;
 }
 
+- (id)canonicalKeyString;
 - (long long)compareToCellValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; int x12; bool x13; void *x14; }*)dateValue;
+- (struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; struct TSCEFormatStruct { int x_12_1_1; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_2_2_1; struct { unsigned int x_2_3_1 : 8; } x_2_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_2_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_2_2_4; } x_12_1_2; id x_12_1_3; id x_12_1_4; unsigned char x_12_1_5; } x12; }*)dateValue;
 - (void)dealloc;
 - (id)displayString;
-- (void)encodeToArchive:(struct DateCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct FormatStructArchive {} *x6; bool x7; }*)arg1;
+- (void)encodeToArchive:(struct DateCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct FormatStructArchive {} *x6; bool x7; bool x8; }*)arg1;
 - (id)format;
 - (unsigned long long)hash;
-- (id)initWithArchive:(const struct DateCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct FormatStructArchive {} *x6; bool x7; }*)arg1 locale:(id)arg2;
+- (id)initWithArchive:(const struct DateCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct FormatStructArchive {} *x6; bool x7; bool x8; }*)arg1 locale:(id)arg2;
 - (id)initWithDate:(id)arg1 locale:(id)arg2;
-- (id)initWithDateValue:(struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; int x12; bool x13; void *x14; }*)arg1 locale:(id)arg2;
+- (id)initWithDateValue:(struct TSCEDateValue { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*x3; unsigned short x4; unsigned char x5; void*x6; void*x7; out const void*x8; void*x9; void*x10; void*x11; struct TSCEFormatStruct { int x_12_1_1; union { struct { unsigned int x_1_3_1 : 16; unsigned int x_1_3_2 : 8; unsigned int x_1_3_3 : 3; unsigned int x_1_3_4 : 1; unsigned int x_1_3_5 : 1; } x_2_2_1; struct { unsigned int x_2_3_1 : 8; } x_2_2_2; struct { unsigned int x_3_3_1 : 8; unsigned int x_3_3_2 : 8; unsigned int x_3_3_3 : 1; } x_2_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_2_2_4; } x_12_1_2; id x_12_1_3; id x_12_1_4; unsigned char x_12_1_5; } x12; }*)arg1 locale:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToCellValue:(id)arg1;
-- (struct TSCEValue { unsigned long long x1[10]; int x2; })tsceValue;
+- (void)setPopulatedCustomFormat:(id)arg1;
+- (struct TSCEValue { unsigned long long x1[18]; int x2; })tsceValue;
 
 @end

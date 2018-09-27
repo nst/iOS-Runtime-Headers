@@ -13,6 +13,7 @@
 
 + (id)starRatingAlertController;
 
+- (void).cxx_destruct;
 - (void)_ratingControlChanged:(id)arg1;
 - (void)_updateButtonState;
 - (id /* block */)completion;

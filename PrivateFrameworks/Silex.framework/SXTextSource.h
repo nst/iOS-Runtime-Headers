@@ -3,17 +3,16 @@
  */
 
 @interface SXTextSource : NSObject {
-    <SXActionProvider> * _actionProvider;
     <SXTextSourceDataSource> * _dataSource;
     <SXTextStyleFontDescribing> * _defaultFontDescribing;
     NSMutableIndexSet * _deletedRangeOffsets;
     SXFontAttributesConstructor * _fontAttributeConstructor;
     NSMutableIndexSet * _insertedRangeOffsets;
     NSMutableIndexSet * _rangesExcludedOfParagraphSpacing;
+    <SXSmartFieldFactory> * _smartFieldFactory;
     NSString * _string;
 }
 
-@property (nonatomic, readonly) <SXActionProvider> *actionProvider;
 @property (nonatomic, readonly) <SXTextSourceDataSource> *dataSource;
 @property (nonatomic, readonly) <SXTextStyleFontDescribing> *defaultFontDescribing;
 @property (nonatomic, retain) NSMutableIndexSet *deletedRangeOffsets;
@@ -21,10 +20,10 @@
 @property (nonatomic, retain) NSMutableIndexSet *insertedRangeOffsets;
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, retain) NSMutableIndexSet *rangesExcludedOfParagraphSpacing;
+@property (nonatomic, readonly) <SXSmartFieldFactory> *smartFieldFactory;
 @property (nonatomic, readonly) NSString *string;
 
 - (void).cxx_destruct;
-- (id)actionProvider;
 - (void)applyAdditionsOnTextTangierStorage:(id)arg1;
 - (void)applyListStylingOnTextTangierStorage:(id)arg1 usingAttributesMap:(id)arg2;
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
@@ -37,7 +36,7 @@
 - (id)description;
 - (id)fontAttributeConstructor;
 - (id)fontFaceForTextDescribing:(id)arg1 inheritingFromTextStyle:(id)arg2;
-- (id)initWithString:(id)arg1 actionProvider:(id)arg2 dataSource:(id)arg3;
+- (id)initWithString:(id)arg1 smartFieldFactory:(id)arg2 dataSource:(id)arg3;
 - (id)insertedRangeOffsets;
 - (int)listLabelTypeForListType:(unsigned long long)arg1;
 - (int)listNumberTypeForListType:(unsigned long long)arg1;
@@ -50,6 +49,7 @@
 - (void)setDeletedRangeOffsets:(id)arg1;
 - (void)setInsertedRangeOffsets:(id)arg1;
 - (void)setRangesExcludedOfParagraphSpacing:(id)arg1;
+- (id)smartFieldFactory;
 - (id)string;
 
 @end

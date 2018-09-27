@@ -7,8 +7,8 @@
     NSXPCListener * _listener;
 }
 
-@property (retain) RMToolServerDelegate *delegate;
-@property (retain) NSXPCListener *listener;
+@property (nonatomic, retain) RMToolServerDelegate *delegate;
+@property (nonatomic, retain) NSXPCListener *listener;
 
 - (void).cxx_destruct;
 - (id)delegate;

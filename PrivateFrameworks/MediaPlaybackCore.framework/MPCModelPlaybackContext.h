@@ -25,6 +25,7 @@
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;
+- (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endTimeModifications;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;

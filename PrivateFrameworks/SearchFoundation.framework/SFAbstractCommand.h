@@ -10,6 +10,7 @@
     SFCommandValue * _value;
 }
 
+@property (nonatomic) unsigned long long commandDirection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
@@ -38,14 +39,14 @@
 - (int)type;
 - (id)value;
 
-// Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
-
-- (unsigned long long)crk_intrinsicInteractiveBehavior;
-
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
 - (id)referenceIdentifier;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/IntentsUICardKitProviderSupport.framework/IntentsUICardKitProviderSupport
+
+- (unsigned long long)inuickp_intrinsicInteractiveBehavior;
 
 @end

@@ -35,14 +35,14 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)locationManagerForLeeching;
 - (id)locationManagerForUpdating;
-- (void)restartLocationUpdatesForDelegate:(id)arg1;
+- (id)restartLocationUpdatesForDelegate:(id)arg1;
 - (bool)running;
 - (void)setDelegate:(id)arg1;
 - (void)setLastBestLocation:(id)arg1;
 - (void)setLocationManagerForLeeching:(id)arg1;
 - (void)setLocationManagerForUpdating:(id)arg1;
 - (void)setRunning:(bool)arg1;
-- (void)startLocationUpdatesForDelegate:(id)arg1;
+- (id)startLocationUpdatesForDelegate:(id)arg1;
 - (void)stopLocationUpdatesForDelegate:(id)arg1;
 - (struct NSString { Class x1; }*)uniqueName;
 

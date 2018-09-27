@@ -4,6 +4,7 @@
 
 @interface PLDescriptionBuilder : NSObject {
     NSMutableString * _description;
+    long long  _indent;
     NSString * _indentString;
     NSObject * _object;
     NSString * _separator;

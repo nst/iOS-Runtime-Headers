@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)auxilliaryTextView;
+- (bool)isPrimarilyTextView;
 - (void)setAuxilliaryTextView:(id)arg1;
 - (void)setShouldCenter:(bool)arg1;
 - (id)setupViewWithStyle:(unsigned long long)arg1;

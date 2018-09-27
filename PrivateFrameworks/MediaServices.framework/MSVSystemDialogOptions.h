@@ -4,6 +4,7 @@
 
 @interface MSVSystemDialogOptions : NSObject {
     NSString * _alertHeader;
+    NSURL * _alertIconURL;
     NSString * _alertMessage;
     NSArray * _allowedApplicationBundleIDs;
     NSString * _alternateButtonTitle;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, copy) NSString *alertHeader;
+@property (nonatomic, copy) NSURL *alertIconURL;
 @property (nonatomic, copy) NSString *alertMessage;
 @property (nonatomic, copy) NSArray *allowedApplicationBundleIDs;
 @property (nonatomic, copy) NSString *alternateButtonTitle;
@@ -26,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)alertHeader;
+- (id)alertIconURL;
 - (id)alertMessage;
 - (id)allowedApplicationBundleIDs;
 - (id)alternateButtonTitle;
@@ -33,6 +36,7 @@
 - (bool)dismissOverlaysOnLockscreen;
 - (bool)forceModalAlertAppearance;
 - (void)setAlertHeader:(id)arg1;
+- (void)setAlertIconURL:(id)arg1;
 - (void)setAlertMessage:(id)arg1;
 - (void)setAllowedApplicationBundleIDs:(id)arg1;
 - (void)setAlternateButtonTitle:(id)arg1;

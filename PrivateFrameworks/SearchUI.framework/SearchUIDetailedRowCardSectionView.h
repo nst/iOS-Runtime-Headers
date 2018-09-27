@@ -8,7 +8,7 @@
     UIButton * _buttonView;
     TLKDetailsView * _detailsView;
     TLKStackView * _innerStackView;
-    SearchUIThumbnailView * _thumbnailView;
+    SearchUIImageView * _thumbnailView;
 }
 
 @property (retain) SearchUIAccessoryViewController *accessoryViewControllerForSection;
@@ -21,7 +21,7 @@
 @property (readonly) unsigned long long hash;
 @property (retain) TLKStackView *innerStackView;
 @property (readonly) Class superclass;
-@property (retain) SearchUIThumbnailView *thumbnailView;
+@property (retain) SearchUIImageView *thumbnailView;
 
 + (void)addViewIfNecessary:(id)arg1 toStackView:(id)arg2 removeFromStackView:(id)arg3;
 + (id)dragSubtitleForCardSection:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface NTKUserPhotoFace : NTKBasePhotoFace
 
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 
 - (id)_customEditModes;
 - (id)_defaultOptionForCustomEditMode:(long long)arg1 slot:(id)arg2;

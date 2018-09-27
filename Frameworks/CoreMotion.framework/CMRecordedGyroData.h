@@ -16,6 +16,7 @@
 
 @property (readonly) unsigned long long identifier;
 @property (readonly) NSDate *startDate;
+@property (readonly) double startTime;
 @property (readonly) float temperature;
 
 + (bool)supportsSecureCoding;
@@ -29,6 +30,7 @@
 - (void)resetWithData:(struct CMGyro50 { float x1; float x2; float x3; float x4; unsigned long long x5; }*)arg1 timestamp:(unsigned long long)arg2 walltime:(double)arg3 identifier:(unsigned long long)arg4;
 - (struct { double x1; double x2; double x3; })rotationRate;
 - (id)startDate;
+- (double)startTime;
 - (float)temperature;
 - (double)timestamp;
 

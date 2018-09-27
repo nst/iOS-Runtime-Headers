@@ -10,6 +10,7 @@
 @optional
 
 - (void)_highlightDidEndForInteraction:(id <UIInteraction>)arg1;
+- (bool)_highlightsAlongsideDefaultEffect;
 - (long long)_preferredHighlightAnimationStyleForInteraction:(id <UIInteraction>)arg1;
 - (void)_prepareHighlightForInteraction:(id <UIInteraction>)arg1;
 

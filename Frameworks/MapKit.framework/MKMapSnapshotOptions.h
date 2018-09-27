@@ -33,6 +33,7 @@
     unsigned char  _searchResultsType;
     bool  _showsBuildings;
     bool  _showsNightMode;
+    bool  _showsPointLabels;
     bool  _showsPointsOfInterest;
     bool  _showsVenues;
     struct CGSize { 
@@ -54,6 +55,7 @@
 @property (getter=_searchResultsType, setter=_setSearchResultsType:, nonatomic) unsigned char searchResultsType;
 @property (nonatomic) bool showsBuildings;
 @property (getter=_showsNightMode, setter=_setShowsNightMode:, nonatomic) bool showsNightMode;
+@property (getter=_showsPointLabels, setter=_setShowsPointLabels:, nonatomic) bool showsPointLabels;
 @property (nonatomic) bool showsPointsOfInterest;
 @property (getter=_showsVenues, setter=_setShowsVenues:, nonatomic) bool showsVenues;
 @property (nonatomic) struct CGSize { double x1; double x2; } size;
@@ -70,9 +72,11 @@
 - (void)_setRendersInBackground:(bool)arg1;
 - (void)_setSearchResultsType:(unsigned char)arg1;
 - (void)_setShowsNightMode:(bool)arg1;
+- (void)_setShowsPointLabels:(bool)arg1;
 - (void)_setShowsVenues:(bool)arg1;
 - (void)_setUseSnapshotService:(bool)arg1;
 - (bool)_showsNightMode;
+- (bool)_showsPointLabels;
 - (bool)_showsVenues;
 - (bool)_useSnapshotService;
 - (id)annotationViews;
@@ -81,6 +85,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;
 - (unsigned long long)mapType;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;

@@ -46,8 +46,8 @@
 - (id)p_textCacheForParagraphStyle:(id)arg1;
 - (id)p_wpColumnForText:(id)arg1 paragraphStyle:(id)arg2 textBlack:(bool)arg3 wrapWidth:(double)arg4 textCache:(id)arg5 layoutProperties:(id)arg6;
 - (id)p_wpStorageForAttributedString:(const struct __CFAttributedString { }*)arg1 paragraphStyle:(id)arg2;
-- (id)p_wpTextForParagraphStyle:(id)arg1 textBlack:(bool)arg2 textCache:(id)arg3;
-- (id)p_wpTextForParagraphStyle:(id)arg1 textBlack:(bool)arg2 textCache:(id)arg3 cacheKey:(id)arg4;
+- (id)p_wpTextForParagraphStyle:(id)arg1 text:(id)arg2 textBlack:(bool)arg3 textCache:(id)arg4;
+- (id)p_wpTextForParagraphStyle:(id)arg1 text:(id)arg2 textBlack:(bool)arg3 textCache:(id)arg4 cacheKey:(id)arg5;
 - (const struct __CTFont { }*)retainedCTFontForParagraphStyle:(id)arg1;
 - (void)setTextColorShouldBeBlack:(bool)arg1;
 - (bool)textColorShouldBeBlack;

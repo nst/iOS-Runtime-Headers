@@ -6,9 +6,9 @@
     NSMutableArray * _bands;
 }
 
+- (void).cxx_destruct;
 - (void)addRequester:(id)arg1 toBand:(int)arg2;
 - (bool)containsRequester:(id)arg1 inBand:(int)arg2;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

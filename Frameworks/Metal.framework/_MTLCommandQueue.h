@@ -13,6 +13,7 @@
     NSObject<OS_dispatch_queue> * _completionQueueDispatch;
     _MTLDevice * _dev;
     bool  _executionEnabled;
+    bool  _forceImmediateSubmissionOnCommitThread;
     unsigned long long  _globalTraceObjectID;
     NSString * _label;
     unsigned long long  _labelTraceID;
@@ -55,7 +56,7 @@
 @property (readonly) long long qosRelativePriority;
 @property bool skipRender;
 
-- (void)_submitAvailableCommandBuffers;
+- (bool)_submitAvailableCommandBuffers;
 - (void)addPerfSampleHandler:(id /* block */)arg1;
 - (void)availableCounters;
 - (int)backgroundTrackingPID;
@@ -99,6 +100,7 @@
 - (void)setStatOptions:(unsigned long long)arg1;
 - (void)setSubmissionQueue:(id)arg1;
 - (bool)skipRender;
+- (bool)submitCommandBuffer:(id)arg1;
 - (void)submitCommandBuffers:(const id*)arg1 count:(unsigned long long)arg2;
 
 @end

@@ -7,6 +7,7 @@
     NSMutableSet * _existingUUIDs;
     NSMutableDictionary * _existingUUIDsByUppercasePath;
     bool  _hasProcessedAnyAssets;
+    NSString * _mediaDirectoryPath;
     PLPhotoLibrary * _photoLibrary;
     NSString * _photoLibraryStoreUUID;
     NSMutableIndexSet * _thumbIndexes;
@@ -17,8 +18,6 @@
 @property (nonatomic, retain) NSMutableSet *existingUUIDs;
 @property (nonatomic, retain) NSMutableDictionary *existingUUIDsByUppercasePath;
 @property (nonatomic) unsigned long long thumbnailBatchFetchSize;
-
-+ (id)_mediaDirectoryPath;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
 - (bool)_setupAdjustmentsFromAdjustmentFileForAsset:(id)arg1;
@@ -35,6 +34,7 @@
 - (id)existingUUIDs;
 - (id)existingUUIDsByUppercasePath;
 - (id)initWithPhotoLibrary:(id)arg1;
+- (id)mediaDirectoryPathWithPhotoLibrary:(id)arg1;
 - (unsigned long long)nextThumbnailIndex;
 - (void)setExistingOIDsByUUID:(id)arg1;
 - (void)setExistingUUIDs:(id)arg1;

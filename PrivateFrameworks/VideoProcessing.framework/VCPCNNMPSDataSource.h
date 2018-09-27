@@ -16,6 +16,8 @@
 
 - (void).cxx_destruct;
 - (float*)biasTerms;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (unsigned int)dataType;
 - (id)descriptor;
 - (id)initWith:(unsigned int)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(void*)arg3 biasTerm:(float*)arg4;

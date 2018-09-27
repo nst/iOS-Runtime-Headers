@@ -13,6 +13,7 @@
 - (id)backgroundColorForMagnifier;
 - (void)dealloc;
 - (id)installedGestureRecognizers;
+- (bool)interactionShouldBegin:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)setUpGestureDependenciesWithScrollView:(id)arg1;
 - (void)setUpGestureRecognizers;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;

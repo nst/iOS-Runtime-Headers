@@ -18,6 +18,7 @@
 @property (getter=isSkLoading, nonatomic) bool skLoading;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (long long)ITunesStoreUIBarStyle;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;

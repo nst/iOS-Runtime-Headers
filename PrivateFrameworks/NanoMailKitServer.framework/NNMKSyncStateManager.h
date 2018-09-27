@@ -31,6 +31,7 @@
 - (id)pairedDeviceScreenSize;
 - (bool)pairedDeviceSupportsMailContentProtectedChannel;
 - (bool)pairedDeviceSupportsMultipleMailboxes;
+- (bool)pairedDeviceSupportsStandaloneMode;
 - (id)pairingStorePath;
 - (void)reportInitialSyncDidComplete;
 - (void)reportInitialSyncDidCompleteSending;

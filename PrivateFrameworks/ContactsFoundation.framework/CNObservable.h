@@ -14,6 +14,7 @@
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
++ (id)amb:(id)arg1;
 + (id)binderTypeForResultType:(unsigned long long)arg1;
 + (id)combineLatest:(id)arg1;
 + (id)combineLatest:(id)arg1 schedulerProvider:(id)arg2;
@@ -55,6 +56,7 @@
 
 - (void).cxx_destruct;
 - (id)allObjects:(id*)arg1;
+- (id)ambWith:(id)arg1;
 - (id)any:(id /* block */)arg1;
 - (id)buffer:(unsigned long long)arg1;
 - (id)buffer:(unsigned long long)arg1 interval:(double)arg2;
@@ -96,6 +98,7 @@
 - (id)scan:(id /* block */)arg1 seed:(id)arg2;
 - (id)skip:(unsigned long long)arg1;
 - (id)skipLast:(unsigned long long)arg1;
+- (id)skipUntil:(id)arg1;
 - (id)startWith:(id)arg1;
 - (id)startWith:(id)arg1 scheduler:(id)arg2;
 - (id)subscribe:(id)arg1;
@@ -106,6 +109,7 @@
 - (id)switchWithSchedulerProvider:(id)arg1;
 - (id)take:(unsigned long long)arg1;
 - (id)takeLast:(unsigned long long)arg1;
+- (id)takeUntil:(id)arg1;
 - (id)throttle:(double)arg1 options:(unsigned long long)arg2 schedulerProvider:(id)arg3;
 - (id)throttle:(double)arg1 schedulerProvider:(id)arg2;
 - (id)throttleFirst:(double)arg1 scheduler:(id)arg2;

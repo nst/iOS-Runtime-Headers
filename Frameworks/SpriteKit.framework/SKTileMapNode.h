@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTileMapNode : SKNode <NSCoding, NSCopying> {
+@interface SKTileMapNode : SKNode <NSCopying, NSSecureCoding> {
     bool  _enableAutomapping;
     float  _hexRadius;
     void _isoColumnVector;
@@ -37,6 +37,9 @@
 
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
++ (bool)supportsSecureCoding;
 + (id)tileMapNodeWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4;
 + (id)tileMapNodeWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4 fillWithTileGroup:(id)arg5;
 + (id)tileMapNodeWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4 tileGroupLayout:(id)arg5;
@@ -58,8 +61,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createTileStampFromColumn:(unsigned long long)arg1 row:(unsigned long long)arg2 withWidth:(unsigned long long)arg3 height:(unsigned long long)arg4 addToTileSet:(bool)arg5;
 - (void)dealloc;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 - (bool)enableAutomapping;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fillArray:(unsigned int*)arg1 withTilesFromColumn:(unsigned long long)arg2 row:(unsigned long long)arg3 forWidth:(unsigned long long)arg4 height:(unsigned long long)arg5;
@@ -74,6 +75,7 @@
 - (id)initWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4;
 - (id)initWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4 fillWithTileGroup:(id)arg5;
 - (id)initWithTileSet:(id)arg1 columns:(unsigned long long)arg2 rows:(unsigned long long)arg3 tileSize:(struct CGSize { double x1; double x2; })arg4 tileGroupLayout:(id)arg5;
+- (bool)isEqualToNode:(id)arg1;
 - (unsigned int)lightingBitMask;
 - (struct CGSize { double x1; double x2; })mapSize;
 - (unsigned long long)numberOfColumns;

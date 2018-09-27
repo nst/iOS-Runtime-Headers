@@ -16,7 +16,7 @@
     NSMutableArray * _pendingSnapshotRequestDuringStreamSetup;
     HMDCameraResidentMessageHandler * _residentMessageHandler;
     HMDSnapshotCacheRequestHandler * _snapshotCacheRequestHandler;
-    <HMDSnapshotRequestHandlerProtocol> * _snapshotRequestHandler;
+    HMDSnapshotRequestHandler * _snapshotRequestHandler;
     HMDSnapshotSlotManager * _snapshotSlotManager;
     HMDCameraStreamSnapshotHandler * _streamSnapshotHandler;
     NSUUID * _uniqueIdentifier;
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) NSMutableArray *pendingSnapshotRequestDuringStreamSetup;
 @property (nonatomic, readonly) HMDCameraResidentMessageHandler *residentMessageHandler;
 @property (nonatomic, readonly) HMDSnapshotCacheRequestHandler *snapshotCacheRequestHandler;
-@property (nonatomic, readonly) <HMDSnapshotRequestHandlerProtocol> *snapshotRequestHandler;
+@property (nonatomic, readonly) HMDSnapshotRequestHandler *snapshotRequestHandler;
 @property (nonatomic, readonly) HMDSnapshotSlotManager *snapshotSlotManager;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
 @property (readonly) Class superclass;

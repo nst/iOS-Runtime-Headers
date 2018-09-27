@@ -6,12 +6,6 @@
 @required
 
 - (NSString *)duration;
-- (bool)hasDuration;
-- (bool)hasHighlighted;
-- (bool)hasNumber;
-- (bool)hasPlayAction;
-- (bool)hasPreview;
-- (bool)hasTitle;
 - (bool)highlighted;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

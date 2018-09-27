@@ -5,6 +5,7 @@
 
 @required
 
-- (void)handleEncryptionInfoChange:(NSDictionary *)arg1;
+- (bool)handleEncryptionInfoChange:(NSDictionary *)arg1;
+- (void)resetDecryptionTimeout;
 
 @end

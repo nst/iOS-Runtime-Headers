@@ -10,6 +10,7 @@
 
 @optional
 
+- (void)switcherViewController:(CKBrowserSwitcherViewController *)arg1 didSelectPluginAtIndexPath:(NSIndexPath *)arg2;
 - (void)switcherViewController:(CKBrowserSwitcherViewController *)arg1 hasUpdatedLastTouchDate:(NSDate *)arg2;
 - (void)switcherViewController:(CKBrowserSwitcherViewController *)arg1 willHideSelectionViewWithAnimations:(id /* block */*)arg2 completion:(id /* block */*)arg3;
 - (void)switcherViewController:(CKBrowserSwitcherViewController *)arg1 willShowSelectionViewWithAnimations:(id /* block */*)arg2 completion:(id /* block */*)arg3;

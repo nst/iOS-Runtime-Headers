@@ -18,8 +18,9 @@
     bool  _darkMode;
     NSString * _detailText;
     bool  _disableIconTint;
+    bool  _displayPrivacyLinkCaptionText;
     bool  _fullWidthContent;
-    BFFPaneHeaderView * _headerView;
+    OBBuddyPaneHeaderView * _headerView;
     _UIBackdropView * _lightTrayBackdrop;
     NSArray * _onBoardingBundleIdentifiers;
     OBPrivacyLinkController * _privacyLink;
@@ -42,9 +43,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *detailText;
 @property (nonatomic) bool disableIconTint;
+@property (nonatomic) bool displayPrivacyLinkCaptionText;
 @property (nonatomic) bool fullWidthContent;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) BFFPaneHeaderView *headerView;
+@property (nonatomic, readonly) OBBuddyPaneHeaderView *headerView;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, retain) NSString *iconAccessibilityLabel;
 @property (nonatomic) struct CGSize { double x1; double x2; } iconSize;
@@ -71,6 +73,7 @@
 - (long long)contentViewPosition;
 - (id)detailText;
 - (bool)disableIconTint;
+- (bool)displayPrivacyLinkCaptionText;
 - (bool)fullWidthContent;
 - (id)headerView;
 - (id)icon;
@@ -94,6 +97,7 @@
 - (void)setDarkMode:(bool)arg1;
 - (void)setDetailText:(id)arg1;
 - (void)setDisableIconTint:(bool)arg1;
+- (void)setDisplayPrivacyLinkCaptionText:(bool)arg1;
 - (void)setFullWidthContent:(bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIconAccessibilityLabel:(id)arg1;

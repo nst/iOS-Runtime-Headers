@@ -10,9 +10,9 @@
 @property (nonatomic, copy) NSString *applicationBundleID;
 @property (nonatomic, copy) NSString *identifier;
 
+- (void).cxx_destruct;
 - (id)applicationBundleID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

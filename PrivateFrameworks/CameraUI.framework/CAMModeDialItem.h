@@ -14,7 +14,7 @@
     NSString * _title;
 }
 
-@property (nonatomic, readonly) NSAttributedString *_attributedTitle;
+@property (nonatomic, readonly) struct __CFAttributedString { }*_attributedTitle;
 @property (nonatomic, readonly) CAShapeLayer *_scalableTextLayer;
 @property (setter=_setTextFrameSize:, nonatomic) struct CGSize { double x1; double x2; } _textFrameSize;
 @property (nonatomic, retain) UIFont *font;
@@ -23,9 +23,9 @@
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (id)_attributedTitle;
+- (struct __CFAttributedString { }*)_attributedTitle;
 - (void)_commonCAMModeDialItemInitialization;
-- (struct CGPath { }*)_pathForAttributedString:(id)arg1;
+- (struct CGPath { }*)_pathForAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)_scalableTextLayer;
 - (void)_setTextFrameSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGColor { }*)_textColor;

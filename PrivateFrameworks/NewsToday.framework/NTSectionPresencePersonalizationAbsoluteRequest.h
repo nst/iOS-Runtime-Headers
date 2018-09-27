@@ -4,13 +4,13 @@
 
 @interface NTSectionPresencePersonalizationAbsoluteRequest : NSObject <NSCopying> {
     NSObject<NTAbsolutePersonalizedSectionPresenceConfig> * _absolutePresenceConfig;
-    FRPersonalizationFeature * _feature;
+    FCPersonalizationFeature * _feature;
     double  _featureClickPrior;
     double  _featureImpressionPrior;
 }
 
 @property (nonatomic, copy) NSObject<NTAbsolutePersonalizedSectionPresenceConfig> *absolutePresenceConfig;
-@property (nonatomic, copy) FRPersonalizationFeature *feature;
+@property (nonatomic, copy) FCPersonalizationFeature *feature;
 @property (nonatomic) double featureClickPrior;
 @property (nonatomic) double featureImpressionPrior;
 

@@ -18,6 +18,7 @@
         double width; 
         double height; 
     }  _evaluatedItemSize;
+    <SFCollectionViewDelegateLayout> * _fallbackDelegate;
     NSArray * _preparedLayoutAttributes;
     NSArray * _preparedUpdateItems;
 }
@@ -26,6 +27,7 @@
 @property (nonatomic) double evaluatedHorizontalItemOffset;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } evaluatedInset;
 @property (nonatomic) struct CGSize { double x1; double x2; } evaluatedItemSize;
+@property (nonatomic) <SFCollectionViewDelegateLayout> *fallbackDelegate;
 @property (nonatomic, copy) NSArray *preparedLayoutAttributes;
 @property (nonatomic, copy) NSArray *preparedUpdateItems;
 
@@ -42,6 +44,7 @@
 - (double)evaluatedHorizontalItemOffset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })evaluatedInset;
 - (struct CGSize { double x1; double x2; })evaluatedItemSize;
+- (id)fallbackDelegate;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
 - (struct CGPoint { double x1; double x2; })firstItemCenterForContainerWidth:(double)arg1;
@@ -58,6 +61,7 @@
 - (void)setEvaluatedHorizontalItemOffset:(double)arg1;
 - (void)setEvaluatedInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setEvaluatedItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setFallbackDelegate:(id)arg1;
 - (void)setPreparedLayoutAttributes:(id)arg1;
 - (void)setPreparedUpdateItems:(id)arg1;
 - (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

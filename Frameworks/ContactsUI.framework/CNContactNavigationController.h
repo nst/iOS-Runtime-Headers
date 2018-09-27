@@ -4,6 +4,7 @@
 
 @interface CNContactNavigationController : UINavigationController <CNAccountsAndGroupsViewControllerDelegate, CNContactContentViewControllerDelegate, CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerAddContactPresenter, CNContactViewControllerDelegate> {
     CNAccountsAndGroupsDataSource * _accountsAndGroupsDataSource;
+    CNUIUserActivityManager * _activityManager;
     UIKeyCommand * _addKeyCommand;
     bool  _allowsCanceling;
     bool  _allowsCardDeletion;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic, retain) CNAccountsAndGroupsDataSource *accountsAndGroupsDataSource;
+@property (nonatomic, retain) CNUIUserActivityManager *activityManager;
 @property (nonatomic, retain) UIKeyCommand *addKeyCommand;
 @property (nonatomic) bool allowsCanceling;
 @property (nonatomic) bool allowsCardDeletion;
@@ -56,6 +58,7 @@
 - (void)_cnui_presentViewController:(id)arg1 animated:(bool)arg2;
 - (id)accountsAndGroupsDataSource;
 - (void)accountsAndGroupsViewControllerDidFinish:(id)arg1;
+- (id)activityManager;
 - (void)addContact:(id)arg1;
 - (void)addContact:(id)arg1 animated:(bool)arg2;
 - (id)addContactPresenter;
@@ -111,6 +114,7 @@
 - (void)selectNextContact:(id)arg1;
 - (void)selectPreviousContact:(id)arg1;
 - (void)setAccountsAndGroupsDataSource:(id)arg1;
+- (void)setActivityManager:(id)arg1;
 - (void)setAddKeyCommand:(id)arg1;
 - (void)setAllowsCanceling:(bool)arg1;
 - (void)setAllowsCardDeletion:(bool)arg1;

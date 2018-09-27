@@ -22,7 +22,7 @@
 - (id)contentSizeCategoryForTextSource:(id)arg1;
 - (id)documentControllerForTextSource:(id)arg1;
 - (id)existingExclusionPathForComponentWithIdentifier:(id)arg1;
-- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5 textComponentLayoutHosting:(id)arg6 actionProvider:(id)arg7;
+- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5 textComponentLayoutHosting:(id)arg6 smartFieldFactory:(id)arg7;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (void)removeAllExclusionPaths;
 - (void)setTextLayouter:(id)arg1;

@@ -36,6 +36,7 @@
 + (void)requestForcedSecondChance;
 + (void)requestForcedTriggerEvent;
 + (void)requestPhraseSpotterBypassing:(bool)arg1 timeout:(double)arg2;
++ (void)requestRaiseToSpeakBypassing:(bool)arg1 timeout:(double)arg2;
 + (void)requestVoiceTriggerEnabled:(bool)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;

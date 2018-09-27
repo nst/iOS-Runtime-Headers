@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDStreamingStatus : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDStreamingStatus : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     unsigned long long  _streamingStatus;
 }
 

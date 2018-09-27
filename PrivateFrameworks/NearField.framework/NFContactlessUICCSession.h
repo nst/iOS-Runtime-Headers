@@ -4,6 +4,7 @@
 
 @interface NFContactlessUICCSession : NFSession <NFContactlessSessionCallbacks> {
     <NFContactlessUICCSessionDelegate> * _delegate;
+    bool  _fieldNotificationSent;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +15,7 @@
 
 - (id)delegate;
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didSelectApplet:(id)arg1;
 - (void)setDelegate:(id)arg1;

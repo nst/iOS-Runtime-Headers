@@ -6,13 +6,14 @@
     FBSApplicationDataStore * _fbsApplicationDataStore;
 }
 
-@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, readonly) NSString *bundleID;
 
 + (id)applicationsWithAvailableStores;
 + (void)setPrefetchedKeys:(id)arg1;
 + (id)storeForApplication:(id)arg1;
 + (void)synchronize;
 
+- (void).cxx_destruct;
 - (id)_initWithFBSApplicationDataStore:(id)arg1;
 - (id)archivedObjectForKey:(id)arg1;
 - (void)archivedObjectForKey:(id)arg1 withResult:(id /* block */)arg2;

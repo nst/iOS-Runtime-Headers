@@ -3,15 +3,17 @@
  */
 
 @interface MSUUpdateBrainAssetLoader : MSUUpdateBrainLoader {
-    ASAsset * _updateAsset;
+    MAAsset * _updateAsset;
 }
 
-@property (nonatomic, retain) ASAsset *updateAsset;
+@property (nonatomic, retain) MAAsset *updateAsset;
 
+- (void)adjustMAOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)adjustOptions:(id)arg1 completion:(id /* block */)arg2;
 - (bool)cancel:(id*)arg1;
 - (void)dealloc;
 - (id)initWithUpdateAsset:(id)arg1;
+- (void)loadUpdateBrainWithMAOptions:(id)arg1 progressHandler:(id /* block */)arg2;
 - (void)loadUpdateBrainWithOptions:(id)arg1 progressHandler:(id /* block */)arg2;
 - (bool)purgeUpdateBrains:(id*)arg1;
 - (long long)requiredDiskSpace:(id*)arg1;

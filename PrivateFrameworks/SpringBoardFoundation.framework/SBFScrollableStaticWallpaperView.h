@@ -3,20 +3,18 @@
  */
 
 @interface SBFScrollableStaticWallpaperView : SBFStaticWallpaperView <UIScrollViewDelegate> {
-    UIColor * _averageColor;
+    bool  _automaticallyEnablesParallax;
     <SBFCancelable> * _colorBoxCancelToken;
-    UIImageView * _gradientView;
     UIImageView * _imageView;
     double  _minimumZoomScale;
     double  _minimumZoomScaleForParallax;
-    bool  _parallaxCanBeEnabledAutomatically;
     <SBFCancelable> * _parallaxCancelToken;
     SBFLockScreenWallpaperParallaxSettings * _parallaxSettings;
     UIScrollView * _scrollView;
     SBFSubject * _scrollViewObserver;
 }
 
-@property (readonly) UIColor *averageColor;
+@property (nonatomic) bool automaticallyEnablesParallax;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -37,7 +35,7 @@
 - (id)_scrollView;
 - (double)_scrollViewParallaxFactor;
 - (void)_setupColorBoxObserver;
-- (void)_setupContentView;
+- (void)_setupContentViewWithOptions:(unsigned long long)arg1;
 - (void)_setupParallaxObserver;
 - (void)_setupScrollView;
 - (void)_setupScrollViewObserver;
@@ -45,18 +43,18 @@
 - (void)_updateParallaxForScroll;
 - (void)_updateScrollViewZoomScales;
 - (id)_wallpaperImageForAnalysis;
-- (id)averageColor;
+- (bool)automaticallyEnablesParallax;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (double)cropZoomScale;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaperImage:(id)arg2 variant:(long long)arg3 wallpaperSettingsProvider:(id)arg4;
 - (void)layoutSubviews;
-- (void)legibilitySettingsDidChange;
 - (double)parallaxFactor;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
+- (void)setAutomaticallyEnablesParallax:(bool)arg1;
 - (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
 - (void)setParallaxEnabled:(bool)arg1;
 - (bool)supportsCropping;

@@ -10,7 +10,6 @@
     NSString * _message;
     ICQLink * _noteActivateLink;
     ICQLink * _noteClearLink;
-    ICQLink * _noteDismissLink;
     NSString * _noteMessage;
     NSString * _noteTitle;
     NSDictionary * _serverDict;
@@ -25,7 +24,6 @@
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) ICQLink *noteActivateLink;
 @property (nonatomic, retain) ICQLink *noteClearLink;
-@property (nonatomic, retain) ICQLink *noteDismissLink;
 @property (nonatomic, retain) NSString *noteMessage;
 @property (nonatomic, retain) NSString *noteTitle;
 @property (nonatomic, retain) NSDictionary *serverDict;
@@ -47,7 +45,6 @@
 - (id)message;
 - (id)noteActivateLink;
 - (id)noteClearLink;
-- (id)noteDismissLink;
 - (id)noteMessage;
 - (id)noteTitle;
 - (void)postFollowupWithController:(id)arg1;
@@ -60,7 +57,6 @@
 - (void)setMessage:(id)arg1;
 - (void)setNoteActivateLink:(id)arg1;
 - (void)setNoteClearLink:(id)arg1;
-- (void)setNoteDismissLink:(id)arg1;
 - (void)setNoteMessage:(id)arg1;
 - (void)setNoteTitle:(id)arg1;
 - (void)setServerDict:(id)arg1;

@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 
 + (id)directionsButtonImage;
++ (bool)regionIsBlocked;
 + (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
@@ -51,6 +52,7 @@
 - (void)setMessageURL:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)setupViewWithStyle:(unsigned long long)arg1;
+- (void)updateWithContact:(id)arg1;
 - (void)updateWithResult:(id)arg1;
 
 @end

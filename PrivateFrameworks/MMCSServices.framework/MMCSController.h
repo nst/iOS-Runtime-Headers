@@ -12,13 +12,19 @@
     NSMutableDictionary * _requestIDToBlockMap;
     NSMutableDictionary * _requestIDToRemainingTransfersMap;
     NSMutableDictionary * _requestIDToTransfersMap;
+    NSRecursiveLock * _transferIDContextMapLock;
+    NSMutableDictionary * _transferIDToContextMap;
     NSMutableDictionary * _transferToRequestIDsMap;
     NSMutableDictionary * _transfers;
 }
 
 @property long long connectionBehavior;
 @property (readonly) bool isActive;
+@property (retain) NSRecursiveLock *transferIDContextMapLock;
+@property (readonly) NSMutableDictionary *transferIDToContextMap;
 @property (readonly) NSMutableDictionary *transfers;
+
++ (void)preMMCSWarm:(id)arg1;
 
 - (id)_MMCSICloudRequestHeadersCopy:(struct __CFString { }*)arg1;
 - (void)_MMCSRegisterItems:(struct _mmcs_engine { }*)arg1 requestorContext:(void*)arg2 requestOptions:(id)arg3 completionCallback:(int (*)arg4;
@@ -28,12 +34,13 @@
 - (void)_getItemUpdated:(id)arg1 progress:(double)arg2 state:(int)arg3 error:(id)arg4;
 - (bool)_getTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id*)arg5;
 - (void)_handleRegistrationForMMCSPutFile:(id)arg1 preauthenticate:(bool)arg2 completionBlock:(id /* block */)arg3;
+- (void)_invalidatePowerAssertionTimer;
 - (void)_itemCompleted:(id)arg1;
 - (id)_optionsForFiles:(id)arg1;
 - (void)_processCompletedItem:(id)arg1 error:(id)arg2;
 - (void)_putItemCompleted:(id)arg1 error:(id)arg2;
 - (void)_putItemUpdated:(id)arg1 progress:(double)arg2 state:(int)arg3 error:(id)arg4;
-- (bool)_putTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 token:(id)arg4 error:(id*)arg5;
+- (bool)_putTransfers:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 token:(id)arg5 error:(id*)arg6;
 - (void)_registerFiles:(id)arg1 preauthenticate:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (void)_registerPowerAssertionIfNeeded;
 - (void)_registerTransfers:(id)arg1 preauthenticate:(bool)arg2 completionBlock:(id /* block */)arg3;
@@ -41,9 +48,12 @@
 - (id)_registeredTransferForItemID:(unsigned long long)arg1;
 - (void)_releasePowerAssertion;
 - (void)_releasePowerAssertionAndSimulateCrash;
+- (void)_schedulePowerAssertionTimer;
 - (void)_setScheduledTransfers:(id)arg1 block:(id /* block */)arg2;
 - (void)_unregisterPowerAssertion;
 - (bool)_unregisterTransfers:(id)arg1;
+- (void)addRequestorContext:(id)arg1 transferID:(id)arg2;
+- (void)cancelPutRequestID:(id)arg1;
 - (long long)connectionBehavior;
 - (void)dealloc;
 - (id)getContentHeadersAsString;
@@ -51,10 +61,14 @@
 - (id)init;
 - (bool)isActive;
 - (id)parseContentHeaderAsDictionary:(id)arg1 treatValuesAsArrays:(bool)arg2;
-- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 authToken:(id)arg4 preauthenticate:(bool)arg5 completionBlock:(id /* block */)arg6;
+- (void)putFiles:(id)arg1 requestURL:(id)arg2 requestorID:(id)arg3 transferID:(id)arg4 authToken:(id)arg5 preauthenticate:(bool)arg6 completionBlock:(id /* block */)arg7;
 - (void)registerFilesForDownload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)registerFilesForUpload:(id)arg1 withPreauthentication:(bool)arg2 completionBlock:(id /* block */)arg3;
+- (void)removeRequestorContext:(id)arg1 transferID:(id)arg2;
 - (void)setConnectionBehavior:(long long)arg1;
+- (void)setTransferIDContextMapLock:(id)arg1;
+- (id)transferIDContextMapLock;
+- (id)transferIDToContextMap;
 - (id)transfers;
 - (bool)unregisterFiles:(id)arg1;
 

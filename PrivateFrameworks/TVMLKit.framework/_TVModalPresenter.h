@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)_configureModalController:(id)arg1 withFromController:(id)arg2 andConfiguration:(id)arg3;
 - (void)_dismissAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_forceOrientationBackToSupportedOrientation;
 - (id)_hidden;
 - (bool)_isDismissing;
 - (void)_willRotateNotification:(id)arg1;

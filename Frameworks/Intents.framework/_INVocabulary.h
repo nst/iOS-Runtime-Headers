@@ -3,6 +3,7 @@
  */
 
 @interface _INVocabulary : NSObject {
+    NSObject<OS_dispatch_queue> * _queue;
     _INVocabularyValidator * _validator;
     INVocabularyUpdater * _vocabularyUpdater;
 }

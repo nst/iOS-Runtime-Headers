@@ -30,6 +30,7 @@
 - (id)createPreventLockAssertionWithDuration:(double)arg1;
 - (void)dealloc;
 - (bool)disableKeybagStash;
+- (bool)hadFirstUnlock;
 - (bool)hasPasscodeSet;
 - (id)init;
 - (int)installationKeybagStateForDescriptor:(id)arg1;

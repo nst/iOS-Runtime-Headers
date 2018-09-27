@@ -25,11 +25,20 @@
     struct { 
         int width; 
         int height; 
+    }  portraitEffectsMatteDimensions;
+    struct { 
+        int width; 
+        int height; 
     }  previewDimensions;
     struct { 
         int width; 
         int height; 
+    }  rawEmbeddedThumbnailDimensions;
+    struct { 
+        int width; 
+        int height; 
     }  rawPhotoDimensions;
+    bool  redEyeReductionEnabled;
     bool  squareCropEnabled;
     bool  stillImageStabilizationEnabled;
     bool  turboModeEnabled;

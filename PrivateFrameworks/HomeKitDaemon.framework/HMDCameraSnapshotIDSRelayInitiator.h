@@ -5,7 +5,7 @@
 @interface HMDCameraSnapshotIDSRelayInitiator : HMDCameraSnapshotIDSRelay <HMFLogging, IDSSessionDelegate> {
     <HMDCameraSnapshotIDSRelayInitiatorDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    NSString * _destinationID;
+    HMDDevice * _device;
     NSMutableData * _fileLengthAndData;
     IDSSession * _idsSession;
     bool  _idsSessionStarted;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) <HMDCameraSnapshotIDSRelayInitiatorDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *destinationID;
+@property (nonatomic, readonly) HMDDevice *device;
 @property (nonatomic, retain) NSMutableData *fileLengthAndData;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSSession *idsSession;
@@ -37,11 +37,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (id)destinationID;
+- (id)device;
 - (id)fileLengthAndData;
 - (id)idsSession;
 - (bool)idsSessionStarted;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 device:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 - (id)logIdentifier;
 - (void)sendFile:(id)arg1;
 - (void)sendInvitation;

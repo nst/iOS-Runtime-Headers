@@ -36,6 +36,7 @@
 + (bool)isCellularDataCapable;
 + (bool)isDaemon;
 + (bool)isWiFiCapable;
++ (void)postAutoUpdateInformationalNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4 withCompletion:(id /* block */)arg5;
 + (void)postFailureNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4;
 + (id)prettyPrintDate:(id)arg1;
 + (void)purgeV1SUAssets;

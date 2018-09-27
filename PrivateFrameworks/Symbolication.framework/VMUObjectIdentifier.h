@@ -14,11 +14,16 @@
     id /* block */  _isaTranslator;
     NSMapTable * _itemCountToLabelStringUniquingMap;
     id * _labelStringUniquingMaps;
+    VMUClassInfo * _lastCPlusPlusClassInfo;
+    unsigned long long  _lastCPlusPlusIsa;
     void * _libSwiftRemoteMirrorHandle;
+    void * _libSwiftRemoteMirrorLegacyHandle;
+    NSString * _libSwiftRemoteMirrorLegacyPath;
     NSString * _libSwiftRemoteMirrorPath;
     id /* block */  _memoryReader;
+    bool  _needToValidateAddressRange;
+    NSHashTable * _nonObjectIsaHash;
     NSMutableDictionary * _nonobjectClassInfosDict;
-    NSHashTable * _objcRuntimeMallocBlocksHash;
     VMUClassInfoMap * _realizedIsaToClassInfo;
     VMUTaskMemoryScanner * _scanner;
     id * _stringTypeDescriptions;
@@ -28,8 +33,7 @@
         unsigned long long _opaque_1; 
         unsigned long long _opaque_2; 
     }  _swiftCoreSymbolOwner;
-    struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; } * _swiftMirror;
-    NSArray * _swiftMirrorMachOSections;
+    struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionInteropContext {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned char x9; unsigned char x10; } * _swiftMirror;
     struct _CSTypeRef { 
         unsigned long long _opaque_1; 
         unsigned long long _opaque_2; 
@@ -42,9 +46,10 @@
 }
 
 @property (nonatomic, readonly) id /* block */ memoryReader;
+@property (readonly) bool needToValidateAddressRange;
 @property (nonatomic, readonly) VMUClassInfoMap *realizedClasses;
 @property (nonatomic, readonly) NSString *swiftCoreSymbolOwnerPath;
-@property (nonatomic, readonly) struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*swiftMirror;
+@property (nonatomic, readonly) struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionInteropContext {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned char x9; unsigned char x10; }*swiftMirror;
 
 - (void).cxx_destruct;
 - (unsigned long long)CFTypeCount;
@@ -52,13 +57,13 @@
 - (unsigned long long)SwiftClassCount;
 - (id)_classInfoWithNonobjectType:(id)arg1 binaryPath:(id)arg2;
 - (id)_classInfoWithPthreadType:(id)arg1;
-- (void*)_dlopenLibSwiftRemoteMirrorFromDir:(id)arg1;
-- (void*)_dlopenLibSwiftRemoteMirrorNearLibSwiftCoreWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 avoidSystem:(bool)arg2;
-- (void*)_dlopenLibSwiftRemoteMirrorWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)_dlopenLibSwiftRemoteMirrorFromDir:(id)arg1;
+- (bool)_dlopenLibSwiftRemoteMirrorNearLibSwiftCoreWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 avoidSystem:(bool)arg2;
+- (bool)_dlopenLibSwiftRemoteMirrorWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_faultClass:(unsigned long long)arg1 ofType:(int)arg2;
 - (bool)_isValidInstanceLength:(unsigned long long)arg1 expectedLength:(unsigned long long)arg2;
-- (void)_populateSwiftDebugVariables:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*)arg1;
-- (int)_populateSwiftReflectionInfo:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*)arg1;
+- (void)_populateSwiftDebugVariables:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionInteropContext {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned char x9; unsigned char x10; }*)arg1;
+- (int)_populateSwiftReflectionInfo:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionInteropContext {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned char x9; unsigned char x10; }*)arg1;
 - (id)_returnFaultedClass:(unsigned long long)arg1 ofType:(int)arg2;
 - (id)_scanner;
 - (struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })_symbolicator;
@@ -108,6 +113,7 @@
 - (id)labelForNSXPCInterface:(void*)arg1;
 - (id)labelForOSDispatchMach:(void*)arg1;
 - (id)labelForOSDispatchQueue:(void*)arg1;
+- (id)labelForOSLog:(void*)arg1;
 - (id)labelForOSTransaction:(void*)arg1;
 - (id)labelForOSXPCConnection:(void*)arg1;
 - (id)labelForObjectOfClass:(id)arg1 atOffset:(unsigned int)arg2 ofObject:(void*)arg3;
@@ -116,12 +122,12 @@
 - (id)labelFor__NSMallocBlock__:(void*)arg1;
 - (void)loadSwiftReflectionLibrary;
 - (id /* block */)memoryReader;
-- (id)objcRuntimeMallocBlocksHash;
+- (bool)needToValidateAddressRange;
 - (id)objectLabelHandlerForRemoteIsa:(unsigned long long)arg1;
 - (id)osMajorMinorVersionString;
 - (id)realizedClasses;
 - (id)swiftCoreSymbolOwnerPath;
-- (struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*)swiftMirror;
+- (struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionInteropContext {} *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned char x9; unsigned char x10; }*)swiftMirror;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(bool)arg3;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 

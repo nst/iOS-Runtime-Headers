@@ -48,20 +48,28 @@
 - (double)GPUStartTime;
 - (void)acceptVisitor:(id)arg1;
 - (void)addCompletedHandler:(id /* block */)arg1;
+- (void)addPurgedHeap:(id)arg1;
+- (void)addPurgedResource:(id)arg1;
 - (void)addRetainedObject:(id)arg1;
 - (void)addScheduledHandler:(id /* block */)arg1;
+- (void)addSynchronizationNotification:(id /* block */)arg1;
 - (id)blitCommandEncoder;
 - (id)blitCommandEncoders;
 - (void)clearRetainedObjects;
 - (id)commandQueue;
 - (void)commit;
+- (bool)commitAndWaitUntilSubmitted;
 - (id)computeCommandEncoder;
-- (id)computeCommandEncoderWithParallelExecution;
+- (id)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
 - (id)computeCommandEncoders;
 - (void)dealloc;
 - (id)debugCommandEncoder;
+- (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;
+- (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)enqueue;
 - (id)error;
+- (void)executeSynchronizationNotifications:(int)arg1;
+- (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id*)arg3 count:(unsigned long long)arg4;
 - (id)fragmentRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)fragmentRenderCommandEncoders;
 - (unsigned long long)getListIndex;
@@ -83,7 +91,7 @@
 - (id)retainedObjects;
 - (struct ILayerLockingPolicy { int (**x1)(); }*)retainedObjectsLock;
 - (bool)retainedReferences;
-- (id)sampledComputeCommandEncoderWithParallelExecutionWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
+- (id)sampledComputeCommandEncoderWithDispatchType:(unsigned long long)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
 - (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned long long)arg2;
 - (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
 - (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned long long)arg3;
@@ -95,5 +103,6 @@
 - (id)userDictionary;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
+- (void)willEncodeSignalEvent:(id)arg1 value:(unsigned long long)arg2 writeableResources:(id)arg3;
 
 @end

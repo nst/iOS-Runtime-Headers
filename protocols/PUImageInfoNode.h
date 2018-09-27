@@ -8,5 +8,6 @@
 - (NSURL *)imageDataURL;
 - (NSString *)imageDataUTI;
 - (long long)imageExifOrientation;
+- (bool)useEmbeddedPreview;
 
 @end

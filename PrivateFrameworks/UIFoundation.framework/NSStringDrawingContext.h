@@ -27,6 +27,7 @@
         unsigned int _cachesLayout : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
         unsigned int _activeRenderers : 4; 
+        unsigned int _applicationPlatformContext : 3; 
     }  _sdcFlags;
     struct CGRect { 
         struct CGPoint { 
@@ -68,6 +69,7 @@
 - (unsigned long long)activeRenderers;
 - (double)actualScaleFactor;
 - (double)actualTrackingAdjustment;
+- (long long)applicationFrameworkContext;
 - (double)baselineOffset;
 - (bool)cachesLayout;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -77,6 +79,7 @@
 - (id)description;
 - (bool)drawsDebugBaselines;
 - (double)firstBaselineOffset;
+- (id)init;
 - (id)layout;
 - (unsigned long long)maximumNumberOfLines;
 - (double)minimumScaleFactor;
@@ -87,6 +90,7 @@
 - (void)setActiveRenderers:(unsigned long long)arg1;
 - (void)setActualScaleFactor:(double)arg1;
 - (void)setActualTrackingAdjustment:(double)arg1;
+- (void)setApplicationFrameworkContext:(long long)arg1;
 - (void)setBaselineOffset:(double)arg1;
 - (void)setCachesLayout:(bool)arg1;
 - (void)setCuiCatalog:(id)arg1;

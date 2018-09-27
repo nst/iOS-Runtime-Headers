@@ -13,15 +13,18 @@
 @property (readonly) long long status;
 
 + (id)_mergePreloadingRequestOptions:(id)arg1 withCreateKeyRequestOptions:(id)arg2;
++ (int)_prepareCryptor:(struct OpaqueFigCPECryptor { }*)arg1 forRenewal:(bool)arg2 andReturnKeyRequestID:(unsigned long long*)arg3;
 + (void)_validateHLSEncryptionMethod:(id)arg1;
 + (void)_validateProtocolVersionList:(id)arg1;
 
 - (bool)_canRespondByRequestingPersistableContentKeyRequest;
 - (void)_clearContext;
-- (void)_copyAndStoreCryptorProperties;
+- (void)_copyAndStoreCryptorUUID;
 - (void)_ensureResponseInfoSentToCustomURLHandler;
+- (int)_extractAndStoreDefualtKeyIDFromInitializationData:(id)arg1;
 - (id)_getRetryReasonForError:(int)arg1;
 - (void)_handleKeyResponseError:(id)arg1;
+- (void)_handleKeyResponseSuccess;
 - (id)_keySystem;
 - (int)_prepareForKeyRenewal;
 - (void)_sendDataToCustomURLHandler:(id)arg1;

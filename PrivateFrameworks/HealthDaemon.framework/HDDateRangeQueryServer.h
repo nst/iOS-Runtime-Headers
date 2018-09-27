@@ -13,6 +13,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (Class)queryClass;
+
 - (void).cxx_destruct;
 - (void)_deliverErrorToClient:(id)arg1;
 - (void)_queue_protectedDataBecameAvailable;
@@ -27,7 +29,7 @@
 - (bool)_shouldObserveAllSampleTypes;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (id)dateRangeClientProxy;
-- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 

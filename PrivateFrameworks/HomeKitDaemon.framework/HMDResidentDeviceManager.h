@@ -55,6 +55,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__currentDeviceUpdated:(id)arg1 completion:(id /* block */)arg2;
+- (void)__handleAppleAccountResolved:(id)arg1;
 - (void)_addResidentDevice:(id)arg1;
 - (void)_addResidentDeviceWithModel:(id)arg1 message:(id)arg2;
 - (void)_confirmResidentDevice:(id)arg1 electionParameters:(id)arg2 againstDevices:(id)arg3 completionBlock:(id /* block */)arg4;

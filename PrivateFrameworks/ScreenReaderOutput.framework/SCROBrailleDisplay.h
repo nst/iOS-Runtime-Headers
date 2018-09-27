@@ -16,6 +16,7 @@
     NSString * _driverIdentifier;
     NSString * _driverModelIdentifier;
     SCROBrailleEventDispatcher * _eventDispatcher;
+    id /* block */  _eventHandled;
     SCROBrailleDisplayInput * _input;
     bool  _inputAllowed;
     int  _inputContractionMode;
@@ -45,6 +46,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) bool delegateWantsDisplayCallback;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSAttributedString *editingString;
+@property (nonatomic, copy) id /* block */ eventHandled;
+@property (nonatomic, readonly) bool hasEdits;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool inputAllowed;
 @property (nonatomic) int inputContractionMode;
@@ -54,6 +58,7 @@
 @property (nonatomic) bool outputShowEightDot;
 @property (nonatomic) unsigned int persistentKeyModifiers;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) SCROBrailleLine *testingBrailleLine;
 @property (nonatomic) bool wordWrapEnabled;
 
 + (bool)brailleDriverClassIsValid:(Class)arg1;
@@ -61,6 +66,7 @@
 
 - (void).cxx_destruct;
 - (void)_aggregatedStatusHandler:(id)arg1;
+- (bool)_attemptLoad;
 - (void)_blinkerEventHandler;
 - (void)_bulkStatusAttributesHandler:(id)arg1;
 - (void)_configurationChangeHandler;
@@ -115,7 +121,9 @@
 - (bool)delegateWantsDisplayCallback;
 - (id)driverIdentifier;
 - (id)driverModelIdentifier;
+- (id)editingString;
 - (void)endUpdates;
+- (id /* block */)eventHandled;
 - (void)handleCommandDeleteKeyEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandEscapeForDispatcher:(id)arg1;
 - (void)handleCommandForwardDeleteKeyEvent:(id)arg1 forDispatcher:(id)arg2;
@@ -130,9 +138,11 @@
 - (void)handleCommandTranslateForDispatcher:(id)arg1;
 - (void)handleEvent:(id)arg1;
 - (void)handleUnsupportedKeyEvent:(id)arg1 forDispatcher:(id)arg2;
+- (bool)hasEdits;
 - (bool)inputAllowed;
 - (int)inputContractionMode;
 - (bool)inputShowEightDot;
+- (void)insertTypingString:(id)arg1;
 - (void)invalidate;
 - (id)ioElement;
 - (bool)isLoaded;
@@ -148,10 +158,12 @@
 - (void)panRight;
 - (unsigned int)persistentKeyModifiers;
 - (id)realStatus;
+- (void)requestFlushLine;
 - (void)setAggregatedStatus:(id)arg1;
 - (void)setAutomaticBrailleTranslationEnabled:(bool)arg1;
 - (void)setBrailleFormatter:(id)arg1;
 - (void)setDelegateWantsDisplayCallback:(bool)arg1;
+- (void)setEventHandled:(id /* block */)arg1;
 - (void)setInputAllowed:(bool)arg1;
 - (void)setInputContractionMode:(int)arg1;
 - (void)setInputShowEightDot:(bool)arg1;
@@ -167,6 +179,7 @@
 - (void)simulateKeypress:(id)arg1;
 - (void)sleep;
 - (long long)statusSize;
+- (id)testingBrailleLine;
 - (int)token;
 - (long long)tokenForRouterIndex:(long long)arg1 location:(long long*)arg2 appToken:(id*)arg3;
 - (void)unpauseInputOnBrailleFormatterChange;

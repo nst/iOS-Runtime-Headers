@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKSmallCalloutView : UIView <CalloutViewControllerProtocol> {
-    MKCalloutBackgroundView * _calloutBackgroundView;
+@interface MKSmallCalloutView : UIView {
     UILayoutGuide * _centerContentLeadingGuide;
     UILayoutGuide * _centerContentTrailingGuide;
     UIView<_MKCalloutAccessoryView> * _detailView;
     NSLayoutConstraint * _detailViewBottomConstraint;
     NSLayoutConstraint * _detailViewMinTopConstraint;
     NSLayoutConstraint * _detailViewTrailingConstraint;
+    UIView<_MKCalloutAccessoryView> * _externalDetailView;
     UIView<_MKCalloutAccessoryView> * _externalLeftView;
     UIView<_MKCalloutAccessoryView> * _externalRightView;
     UIView<_MKCalloutAccessoryView> * _leftView;
@@ -30,6 +30,7 @@
     NSLayoutConstraint * _maxWidthConstraint;
     NSLayoutConstraint * _minWidthConstraint;
     bool  _needsPreferredContentSizeUpdate;
+    bool  _parallaxEnabled;
     struct CGSize { 
         double width; 
         double height; 
@@ -48,25 +49,23 @@
     _MKUILabel * _titleLabel;
     NSArray * _titleLabelConstraints;
     NSLayoutConstraint * _titleMinimumBaselineToBottomConstraint;
+    UIView * _titlesContainerView;
     NSLayoutConstraint * _unmaskedContainerLeadingConstraint;
     NSLayoutConstraint * _unmaskedContainerTrailingConstraint;
     UIView * _unmaskedContainerView;
 }
 
-@property (nonatomic, retain) MKCalloutBackgroundView *calloutBackgroundView;
 @property (nonatomic, copy) NSString *calloutSubtitle;
 @property (nonatomic, copy) NSString *calloutTitle;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *detailView;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *leftView;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; } mapDisplayStyle;
 @property (nonatomic) double maximumWidth;
 @property (nonatomic) double minimumWidth;
+@property (nonatomic) bool parallaxEnabled;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (nonatomic, retain) UIView *rightView;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *titlesContainerView;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
@@ -76,7 +75,6 @@
 - (void)_updatePreferredContentSize;
 - (void)_updatePreferredContentSizeIfNeeded;
 - (void)beginMapsTransitionMovingSideways;
-- (id)calloutBackgroundView;
 - (id)calloutSubtitle;
 - (id)calloutTitle;
 - (bool)canDisplayCompleteTitleWhenExpanded;
@@ -87,10 +85,10 @@
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; })mapDisplayStyle;
 - (double)maximumWidth;
 - (double)minimumWidth;
+- (bool)parallaxEnabled;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
-- (void)setCalloutBackgroundView:(id)arg1;
 - (void)setCalloutSubtitle:(id)arg1;
 - (void)setCalloutSubtitle:(id)arg1 animated:(bool)arg2;
 - (void)setCalloutTitle:(id)arg1;
@@ -101,8 +99,10 @@
 - (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; })arg1;
 - (void)setMaximumWidth:(double)arg1;
 - (void)setMinimumWidth:(double)arg1;
+- (void)setParallaxEnabled:(bool)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(bool)arg2;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)titlesContainerView;
 
 @end

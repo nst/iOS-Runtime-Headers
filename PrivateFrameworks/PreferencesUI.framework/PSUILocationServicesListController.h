@@ -68,6 +68,7 @@
 - (void)setAuthLevel:(unsigned long long)arg1 forCell:(id)arg2;
 - (void)setEntityAuthorized:(id)arg1 specifier:(id)arg2;
 - (void)setLocationServicesEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setSOSEntityAuthorized:(id)arg1 specifier:(id)arg2;
 - (void)setUsage:(int)arg1 forCell:(id)arg2;
 - (void)showLocationPrivacyPage;
 - (id)specifiers;

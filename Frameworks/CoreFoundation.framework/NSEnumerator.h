@@ -27,4 +27,8 @@
 
 - (id)fc_firstObjectPassingTest:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
+- (id)rc_firstObjectPassingTest:(id /* block */)arg1;
+
 @end

@@ -9,7 +9,6 @@
 
 - (id)checkInURLs;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;
-- (id)urlsForDealWithIdentifier:(id)arg1;
 - (id)webURL;
 
 @end

@@ -92,6 +92,7 @@
 - (bool)_isElementBody:(id)arg1;
 - (bool)_isElementDisplayedInBlock:(id)arg1;
 - (bool)_isElementHead:(id)arg1;
+- (bool)_isElementHyperlink:(id)arg1;
 - (bool)_isElementIgnorable:(id)arg1;
 - (bool)_isElementImage:(id)arg1;
 - (bool)_isElementLineBreak:(id)arg1;
@@ -103,6 +104,7 @@
 - (void)_pushStringAttributes:(id)arg1;
 - (void)_requireNewLine;
 - (void)_stringAttributeForElement:(id)arg1 attributes:(const char **)arg2 stringAttributeKey:(id*)arg3 stringAttributeValue:(id*)arg4;
+- (void)_stringAttributeForHyperlink:(id)arg1 attributes:(const char **)arg2 stringAttributeKey:(id*)arg3 stringAttributeValue:(id*)arg4;
 - (id)_stringAttributeValueForCSSStyleName:(id)arg1 inStyleAttribute:(id)arg2;
 - (id)_stringAttributesForStyleAttribute:(id)arg1;
 - (unsigned long long)_textAlignmentFromString:(id)arg1;

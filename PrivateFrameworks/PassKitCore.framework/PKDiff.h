@@ -4,9 +4,11 @@
 
 @interface PKDiff : NSObject <NSSecureCoding> {
     NSMutableArray * _hunks;
+    NSData * _passManifestHash;
     NSString * _passUniqueID;
 }
 
+@property (nonatomic, copy) NSData *passManifestHash;
 @property (nonatomic, copy) NSString *passUniqueID;
 
 + (bool)supportsSecureCoding;
@@ -28,8 +30,10 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToDiff:(id)arg1;
 - (void)key:(id*)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4 forHunkAtIndex:(long long)arg5;
+- (id)passManifestHash;
 - (id)passUniqueID;
 - (void)removeHunkForKey:(id)arg1;
+- (void)setPassManifestHash:(id)arg1;
 - (void)setPassUniqueID:(id)arg1;
 
 @end

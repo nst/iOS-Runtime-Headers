@@ -5,6 +5,7 @@
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
     double  _brightnessMultiplier;
     unsigned long long  _colorTemperature;
+    unsigned long long  _dimension1;
     double  _effectScale;
     bool  _foregroundColorShouldTintEffects;
     long long  _presentationState;
@@ -15,6 +16,7 @@
 
 @property (nonatomic) double brightnessMultiplier;
 @property (nonatomic) unsigned long long colorTemperature;
+@property (nonatomic) unsigned long long dimension1;
 @property (nonatomic) double effectScale;
 @property (nonatomic) bool foregroundColorShouldTintEffects;
 @property (nonatomic) long long presentationState;
@@ -26,12 +28,14 @@
 - (unsigned long long)colorTemperature;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (unsigned long long)dimension1;
 - (double)effectScale;
 - (bool)foregroundColorShouldTintEffects;
 - (id)init;
 - (long long)presentationState;
 - (void)setBrightnessMultiplier:(double)arg1;
 - (void)setColorTemperature:(unsigned long long)arg1;
+- (void)setDimension1:(unsigned long long)arg1;
 - (void)setEffectScale:(double)arg1;
 - (void)setForegroundColorShouldTintEffects:(bool)arg1;
 - (void)setPresentationState:(long long)arg1;

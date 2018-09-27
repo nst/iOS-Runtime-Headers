@@ -3,6 +3,7 @@
  */
 
 @interface FIUIWorkoutSettingsManager : NSObject {
+    FIUIWorkoutDefaultMetricsProvider * _defaultMetricsProvider;
     NPSDomainAccessor * _domainAccessor;
     NSMutableArray * _enabledMetrics;
     NSMutableDictionary * _settingOverridesByMetric;
@@ -15,6 +16,8 @@
 @property (nonatomic, retain) NPSManager *syncManager;
 
 - (void).cxx_destruct;
+- (bool)_enabledMetricsAreDefaultAfterPaceMigration:(id)arg1 workoutActivityType:(id)arg2;
+- (bool)_hasUserMadeMetricChangesToWorkoutType:(id)arg1 enabledMetrics:(id)arg2 settingOverridesByMetric:(id)arg3 metricFormatVersion:(id)arg4;
 - (void)_migratePaceViewSettingIfNeeded;
 - (void)_readFromDomain;
 - (void)_writeToDomain;

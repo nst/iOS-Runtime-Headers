@@ -13,6 +13,7 @@
 @property DeviceManager *deviceManager;
 @property bool hasOpenSession;
 @property (readonly) struct CGImage { }*icon;
+@property (readonly) bool isAppleDevice;
 @property (copy) NSString *name;
 @property bool openSessionPending;
 @property (copy) NSString *productKind;
@@ -28,12 +29,12 @@
 - (id)delegate;
 - (id)description;
 - (id)deviceManager;
-- (void)finalize;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (bool)hasOpenSession;
 - (struct CGImage { }*)icon;
 - (id)init;
+- (bool)isAppleDevice;
 - (id)name;
 - (bool)openSessionPending;
 - (id)productKind;

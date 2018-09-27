@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_handleDaemonRequest:(id)arg1;
 - (void)_handleSiriCommand:(id)arg1;
+- (void)_handleSiriIntentRequest:(id)arg1;
 - (void)_handleSiriSyncDataRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)commandsBeingExecuted;

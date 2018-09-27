@@ -3,6 +3,8 @@
  */
 
 @interface FCIAdConfiguration : NSObject {
+    NSDictionary * _configDict;
+    NSArray * _iAdSegmentIDs;
     NTPBIAdConfig * _pbConfig;
     bool  _segmentsEnabled;
     long long  _segmentsHistoryWindowInterval;
@@ -11,6 +13,7 @@
     double  _segmentsThreshold;
 }
 
+@property (nonatomic, readonly) NSArray *iAdSegmentIDs;
 @property (getter=areSegmentsEnabled, nonatomic, readonly) bool segmentsEnabled;
 @property (nonatomic, readonly) long long segmentsHistoryWindowInterval;
 @property (nonatomic, readonly) long long segmentsMinimumArticleCount;
@@ -20,6 +23,8 @@
 - (void).cxx_destruct;
 - (bool)areSegmentsEnabled;
 - (unsigned long long)hash;
+- (id)iAdSegmentIDs;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBIAdConfig:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (long long)segmentsHistoryWindowInterval;

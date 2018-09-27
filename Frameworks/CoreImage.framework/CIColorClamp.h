@@ -15,6 +15,7 @@
 + (id)customAttributes;
 
 - (id)_kernel;
+- (id)_kernelAlphaPreserving;
 - (id)inputImage;
 - (id)inputMaxComponents;
 - (id)inputMinComponents;

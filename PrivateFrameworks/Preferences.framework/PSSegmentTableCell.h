@@ -15,7 +15,6 @@
 - (id)newControl;
 - (void)prepareForReuse;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setBackgroundView:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setValues:(id)arg1 titleDictionary:(id)arg2;
 - (id)titleLabel;

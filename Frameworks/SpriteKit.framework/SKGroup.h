@@ -8,6 +8,7 @@
 }
 
 + (id)groupWithActions:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

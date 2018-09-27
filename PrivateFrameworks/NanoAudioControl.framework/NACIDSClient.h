@@ -19,6 +19,7 @@
 - (void)_handleAudioRoutesDidChange:(id)arg1;
 - (void)_handleEUVolumeLimitDidChange:(id)arg1;
 - (void)_handleHapticIntensityDidChange:(id)arg1;
+- (void)_handleHapticStateDidChange:(id)arg1;
 - (void)_handleMutedStateDidChange:(id)arg1;
 - (void)_handleProminentHapticStateDidChange:(id)arg1;
 - (void)_handleRouteObservationCancelled:(id)arg1;
@@ -38,6 +39,7 @@
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1 target:(id)arg2;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

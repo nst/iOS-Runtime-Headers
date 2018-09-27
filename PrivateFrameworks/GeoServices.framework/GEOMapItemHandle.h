@@ -3,7 +3,7 @@
  */
 
 @interface GEOMapItemHandle : PBCodable <NSCopying> {
-    NSData * _compressedMapItemStorage;
+    GEOMapItemClientAttributes * _clientAttributes;
     int  _handleType;
     struct { 
         unsigned int handleType : 1; 
@@ -12,9 +12,9 @@
     GEOMapItemInitialRequestData * _placeRequestData;
 }
 
-@property (nonatomic, retain) NSData *compressedMapItemStorage;
+@property (nonatomic, retain) GEOMapItemClientAttributes *clientAttributes;
 @property (nonatomic) int handleType;
-@property (nonatomic, readonly) bool hasCompressedMapItemStorage;
+@property (nonatomic, readonly) bool hasClientAttributes;
 @property (nonatomic) bool hasHandleType;
 @property (nonatomic, readonly) bool hasPlaceRefinementParameters;
 @property (nonatomic, readonly) bool hasPlaceRequestData;
@@ -23,14 +23,14 @@
 
 - (void).cxx_destruct;
 - (int)StringAsHandleType:(id)arg1;
-- (id)compressedMapItemStorage;
+- (id)clientAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)handleType;
 - (id)handleTypeAsString:(int)arg1;
-- (bool)hasCompressedMapItemStorage;
+- (bool)hasClientAttributes;
 - (bool)hasHandleType;
 - (bool)hasPlaceRefinementParameters;
 - (bool)hasPlaceRequestData;
@@ -40,7 +40,7 @@
 - (id)placeRefinementParameters;
 - (id)placeRequestData;
 - (bool)readFrom:(id)arg1;
-- (void)setCompressedMapItemStorage:(id)arg1;
+- (void)setClientAttributes:(id)arg1;
 - (void)setHandleType:(int)arg1;
 - (void)setHasHandleType:(bool)arg1;
 - (void)setPlaceRefinementParameters:(id)arg1;

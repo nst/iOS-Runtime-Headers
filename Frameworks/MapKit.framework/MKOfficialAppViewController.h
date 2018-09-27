@@ -21,7 +21,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_beginFindingOfficialApp;
+- (void)_loadAppArtwork:(id)arg1 adamID:(id)arg2;
+- (void)_loadOfficialApp;
+- (void)_updateAppImage:(id)arg1 error:(id)arg2;
+- (void)_updateView:(id)arg1;
 - (id)infoCardChildPossibleActions;
 - (id)initWithMKMapItem:(id)arg1;
 - (bool)isShowing;

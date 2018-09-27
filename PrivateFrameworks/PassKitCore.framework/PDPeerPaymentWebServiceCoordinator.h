@@ -18,6 +18,7 @@
     PKPeerPaymentWebService * _sharedPeerPaymentWebService;
     NSObject<OS_dispatch_queue> * _sharedPeerPaymentWebServiceQueue;
     NSObject<OS_dispatch_queue> * _updateAccountQueue;
+    PDUserNotificationManager * _userNotificationManager;
 }
 
 @property (nonatomic, retain) PDCloudStoreNotificationCoordinator *cloudStoreNotificationCoordinator;
@@ -32,6 +33,7 @@
 - (void)_archiveSharedPeerPaymentWebServiceContext;
 - (void)_completeUpdatingAccount;
 - (void)_downloadAssociatedPeerPaymentPassWithCompletion:(id /* block */)arg1;
+- (void)_handleUpdatedAccount:(id)arg1 withOldAccount:(id)arg2;
 - (bool)_hasAssociatedPeerPaymentPass;
 - (void)_initalizeCloudStore;
 - (void)_initalizeCloudStoreIfNecessary;
@@ -59,15 +61,18 @@
 - (void)deleteSharedWebServiceWithDiagnosticReason:(id)arg1;
 - (void)downloadPassIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)handleCompanionSerialNumberChanged;
+- (void)handleMigratedAccount:(id)arg1;
 - (void)handlePassLibraryChangedWithPassUniqueIdentifier:(id)arg1;
 - (void)handlePushNotificationForTopic:(id)arg1 userInfo:(id)arg2;
 - (id)initWithPushNotificationManager:(id)arg1 paymentWebService:(id)arg2 assertionManager:(id)arg3 dataSource:(id)arg4;
 - (id)initWithPushNotificationManager:(id)arg1 paymentWebService:(id)arg2 assertionManager:(id)arg3 dataSource:(id)arg4 passStore:(id)arg5;
+- (id)initWithPushNotificationManager:(id)arg1 paymentWebService:(id)arg2 assertionManager:(id)arg3 userNotificationManager:(id)arg4 dataSource:(id)arg5 passStore:(id)arg6;
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
 - (id)paymentWebService;
 - (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (id)pushNotificationTopics;
+- (void)receivedPeerPaymentMessage:(id)arg1;
 - (void)registerDeviceWithCompletion:(id /* block */)arg1;
 - (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 completion:(id /* block */)arg3;
 - (void)registrationStatusWithCompletion:(id /* block */)arg1;

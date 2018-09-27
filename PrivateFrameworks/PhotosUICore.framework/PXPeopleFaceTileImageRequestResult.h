@@ -28,7 +28,7 @@
             double height; 
         } targetSize; 
         unsigned long long cropFactor; 
-        bool round; 
+        unsigned long long style; 
         bool cropBounded; 
         bool acceptsVeryLowQuality; 
         bool wantsNonVisibleFaceCompletion; 
@@ -42,7 +42,7 @@
 @property (nonatomic) bool isVeryLowQuality;
 @property (nonatomic) struct CGSize { double x1; double x2; } originalImageSize;
 @property (nonatomic, retain) id originalObjectID;
-@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; } params;
+@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; } params;
 
 - (void).cxx_destruct;
 - (id)assetObjectID;
@@ -54,11 +54,11 @@
 - (bool)isVeryLowQuality;
 - (struct CGSize { double x1; double x2; })originalImageSize;
 - (id)originalObjectID;
-- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; })params;
+- (struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; })params;
 - (void)setAssetObjectID:(id)arg1;
 - (void)setIsVeryLowQuality:(bool)arg1;
 - (void)setOriginalImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setOriginalObjectID:(id)arg1;
-- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; bool x3; bool x4; bool x5; bool x6; })arg1;
+- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; })arg1;
 
 @end

@@ -23,6 +23,8 @@
 + (id)conductance;
 + (id)energy;
 + (id)equivalents;
++ (id)frequency;
++ (id)hearingSensitivity;
 + (id)length;
 + (id)mass;
 + (id)nonConvertibleIU;

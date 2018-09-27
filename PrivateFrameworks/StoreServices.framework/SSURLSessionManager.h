@@ -66,6 +66,7 @@
 + (id)_tidStateForTask:(id)arg1 delegate:(id)arg2;
 + (double)_timingDataMetricToServerTimeInterval:(id)arg1;
 + (id)bagValueForKey:(id)arg1 delegate:(id)arg2 type:(unsigned long long)arg3;
++ (id)eventFromTimingData:(id)arg1 delegate:(id)arg2 session:(id)arg3 task:(id)arg4 error:(id)arg5;
 + (id)eventFromTimingData:(id)arg1 delegate:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 requestProperties:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 task:(id)arg2;
@@ -97,8 +98,8 @@
 - (id)_responseDataForSessionTask:(id)arg1;
 - (id)_saveHTTPArchiveBufferToDiskDecompressed:(bool)arg1;
 - (bool)_sendTimingDataForSessionTask:(id)arg1;
-- (id)_sessionConfigurationWithDelegate:(id)arg1 collectTimingData:(bool)arg2;
-- (id)_sessionIDWithDelegate:(id)arg1 collectTimingData:(bool)arg2;
+- (id)_sessionConfigurationWithDelegate:(id)arg1 collectTimingData:(bool)arg2 allowsTLSSessionTickets:(bool)arg3;
+- (id)_sessionIDWithDelegate:(id)arg1 collectTimingData:(bool)arg2 allowsTLSSessionTickets:(bool)arg3;
 - (id)_sessionWithDelegate:(id)arg1 collectTimingData:(bool*)arg2;
 - (void)_setAPSTopicWithTask:(id)arg1;
 - (void)_setDelegate:(id)arg1 forTask:(id)arg2;
@@ -107,6 +108,7 @@
 - (void)_setTaskMetrics:(id)arg1 forSessionTask:(id)arg2;
 - (bool)_shouldDisableCellularForDelegate:(id)arg1;
 - (bool)_shouldEnableAPSRWithTask:(id)arg1;
+- (bool)_shouldEnableTLSSessionForDelegate:(id)arg1;
 - (bool)_shouldRecordResponseBodyForDataTask:(id)arg1;
 - (bool)_shouldRequireCelluarForDelegate:(id)arg1;
 - (bool)_shouldSetCookiesForDelegate:(id)arg1;

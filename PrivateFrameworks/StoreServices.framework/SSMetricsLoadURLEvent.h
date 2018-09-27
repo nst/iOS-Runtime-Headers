@@ -5,15 +5,18 @@
 @interface SSMetricsLoadURLEvent : SSMetricsMutableEvent
 
 @property (nonatomic, retain) NSString *DNSServers;
-@property (nonatomic, retain) NSString *TIDState;
+@property (nonatomic) NSString *TIDState;
+@property (nonatomic) bool TLSSessionTickets;
 @property (nonatomic, retain) NSString *appleTimingApp;
 @property (nonatomic) bool apsRelayAttempted;
 @property (nonatomic) bool apsRelayDidFallback;
+@property (nonatomic) bool apsRelayRequested;
 @property (nonatomic) bool apsRelaySucceeded;
 @property (nonatomic) bool cachedResponse;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
 @property (nonatomic, retain) NSString *clientError;
 @property (nonatomic) double connectionEndTime;
+@property (nonatomic, retain) NSString *connectionInterface;
 @property (nonatomic) bool connectionReused;
 @property (nonatomic) unsigned long long connectionStartNStatRXBytes;
 @property (nonatomic) unsigned long long connectionStartNStatTXBytes;
@@ -57,14 +60,17 @@
 
 - (id)DNSServers;
 - (id)TIDState;
+- (bool)TLSSessionTickets;
 - (id)appleTimingApp;
 - (bool)apsRelayAttempted;
 - (bool)apsRelayDidFallback;
+- (bool)apsRelayRequested;
 - (bool)apsRelaySucceeded;
 - (bool)cachedResponse;
 - (id)clientCorrelationKey;
 - (id)clientError;
 - (double)connectionEndTime;
+- (id)connectionInterface;
 - (bool)connectionReused;
 - (unsigned long long)connectionStartNStatRXBytes;
 - (unsigned long long)connectionStartNStatTXBytes;
@@ -95,11 +101,13 @@
 - (void)setAppleTimingApp:(id)arg1;
 - (void)setApsRelayAttempted:(bool)arg1;
 - (void)setApsRelayDidFallback:(bool)arg1;
+- (void)setApsRelayRequested:(bool)arg1;
 - (void)setApsRelaySucceeded:(bool)arg1;
 - (void)setCachedResponse:(bool)arg1;
 - (void)setClientCorrelationKey:(id)arg1;
 - (void)setClientError:(id)arg1;
 - (void)setConnectionEndTime:(double)arg1;
+- (void)setConnectionInterface:(id)arg1;
 - (void)setConnectionReused:(bool)arg1;
 - (void)setConnectionStartNStatRXBytes:(unsigned long long)arg1;
 - (void)setConnectionStartNStatTXBytes:(unsigned long long)arg1;
@@ -128,6 +136,7 @@
 - (void)setSecureConnectionStartTime:(double)arg1;
 - (void)setStatusCode:(long long)arg1;
 - (void)setTIDState:(id)arg1;
+- (void)setTLSSessionTickets:(bool)arg1;
 - (void)setXPSamplingForced:(bool)arg1;
 - (void)setXPSamplingPercentageCachedResponses:(double)arg1;
 - (void)setXPSamplingPercentageUsers:(double)arg1;

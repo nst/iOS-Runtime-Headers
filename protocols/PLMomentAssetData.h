@@ -5,8 +5,11 @@
 
 @required
 
+- (NSArray *)assetComparisonSortDescriptors;
 - (long long)compareToAsset:(id <PLMomentAssetData>)arg1;
+- (double)curationScore;
 - (NSDate *)dateCreated;
+- (bool)favorite;
 - (NSString *)globalUUID;
 - (bool)isDeleted;
 - (CLLocation *)location;
@@ -14,7 +17,9 @@
 - (NSData *)placeAnnotationData;
 - (NSData *)reverseLocationData;
 - (bool)reverseLocationDataIsValid;
+- (void)setCurationScore:(double)arg1;
 - (void)setDateCreated:(NSDate *)arg1;
+- (void)setFavorite:(bool)arg1;
 - (void)setLocation:(CLLocation *)arg1;
 - (void)setMoment:(id <PLMomentData>)arg1;
 - (void)setReverseLocationData:(NSData *)arg1;
@@ -34,7 +39,6 @@
 - (NSString *)customMomentName;
 - (NSString *)customMomentUUID;
 - (double)duration;
-- (bool)favorite;
 - (long long)height;
 - (short)kind;
 - (short)kindSubtype;
@@ -44,7 +48,6 @@
 - (void)setCustomMomentName:(NSString *)arg1;
 - (void)setCustomMomentUUID:(NSString *)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setFavorite:(bool)arg1;
 - (void)setHeight:(long long)arg1;
 - (void)setKind:(short)arg1;
 - (void)setKindSubtype:(short)arg1;

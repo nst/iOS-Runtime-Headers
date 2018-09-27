@@ -8,15 +8,14 @@
     bool  _isEqualWidth;
 }
 
-@property unsigned long long columnAlignment;
-@property long long dataAlignment;
-@property bool isEqualWidth;
+@property (nonatomic) unsigned long long columnAlignment;
+@property (nonatomic) long long dataAlignment;
+@property (nonatomic) bool isEqualWidth;
 
 - (unsigned long long)columnAlignment;
 - (long long)dataAlignment;
 - (id)description;
 - (bool)isEqualWidth;
-- (id)observableProperties;
 - (void)setColumnAlignment:(unsigned long long)arg1;
 - (void)setDataAlignment:(long long)arg1;
 - (void)setIsEqualWidth:(bool)arg1;

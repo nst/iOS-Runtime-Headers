@@ -50,7 +50,7 @@
 
 + (double)HDRValueForAsset:(id)arg1;
 + (long long)_contentTypeForAsset:(id)arg1;
-+ (long long)optionsForAsset:(id)arg1;
++ (struct { long long x1; float x2; })optionsForAsset:(id)arg1;
 
 - (void).cxx_destruct;
 - (double)HDRFocus;
@@ -81,7 +81,7 @@
 - (void)_updateLowPowerModeEnabledIfNeeded;
 - (void)_updateRequestedEDRHeadroomFactorIfNeeded;
 - (void)checkInImageLayerModulator:(id)arg1;
-- (id)checkoutImageLayerModulatorWithOptions:(long long)arg1;
+- (id)checkoutImageLayerModulatorWithOptions:(struct { long long x1; float x2; })arg1;
 - (id)coreAnimationContext;
 - (void)dealloc;
 - (void)didPerformChanges;

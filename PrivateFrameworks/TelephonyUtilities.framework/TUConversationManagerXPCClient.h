@@ -6,8 +6,10 @@
     NSDictionary * _conversationsByGroupUUID;
     <TUConversationManagerDataSourceDelegate> * _delegate;
     bool  _hasRequestedInitialState;
+    <TUConversationMediaControllerDataSourceDelegate> * _mediaDelegate;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _token;
+    bool  _shouldConnectToHost;
+    int  _shouldConnectToken;
     NSXPCConnection * _xpcConnection;
 }
 
@@ -17,9 +19,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasRequestedInitialState;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) <TUConversationMediaControllerDataSourceDelegate> *mediaDelegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) bool shouldConnectToHost;
+@property (nonatomic) int shouldConnectToken;
 @property (readonly) Class superclass;
-@property (nonatomic) int token;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 + (id)asynchronousServer;
@@ -34,22 +38,31 @@
 - (void)_invokeCompletionHandler:(id /* block */)arg1;
 - (void)_requestInitialStateIfNecessary;
 - (void)_requestInitialStateWithCompletionHandler:(id /* block */)arg1;
+- (void)addRemoteMembers:(id)arg1 toConversation:(id)arg2;
+- (void)buzzMember:(id)arg1 conversation:(id)arg2;
 - (id)conversationsByGroupUUID;
 - (void)dealloc;
 - (id)delegate;
+- (void)handleServerDisconnect;
 - (bool)hasRequestedInitialState;
 - (id)init;
 - (void)invalidate;
+- (id)mediaDelegate;
+- (oneway void)mediaPrioritiesChangedForConversation:(id)arg1;
 - (id)queue;
 - (void)registerWithCompletionHandler:(id /* block */)arg1;
 - (id)serverWithErrorHandler:(id /* block */)arg1;
 - (void)setConversationsByGroupUUID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasRequestedInitialState:(bool)arg1;
-- (void)setToken:(int)arg1;
+- (void)setMediaDelegate:(id)arg1;
+- (void)setShouldConnectToHost:(bool)arg1;
+- (void)setShouldConnectToken:(int)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (bool)shouldConnectToHost;
+- (int)shouldConnectToken;
 - (id)synchronousServerWithErrorHandler:(id /* block */)arg1;
-- (int)token;
+- (void)updateConversationWithUUID:(id)arg1 participantPresentationContexts:(id)arg2;
 - (oneway void)updateConversationsByGroupUUID:(id)arg1;
 - (id)xpcConnection;
 

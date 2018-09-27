@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver, PUVideoPlayerViewDelegate> {
+@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver> {
     PUBrowsingVideoPlayer * __browsingVideoPlayer;
     int  __currentImageRequestID;
     bool  __isDisplayingFullQualityImage;
     ISWrappedAVPlayer * __player;
-    PUVideoPlayerView * __playerView;
+    PXVideoPlayerView * __playerView;
     id /* block */  __readyForDisplayCompletionHandler;
     struct CGSize { 
         double width; 
@@ -19,6 +19,7 @@
     bool  _canPlayVideo;
     PUMediaProvider * _mediaProvider;
     id  _playerObserver;
+    UIImage * _preloadedImage;
 }
 
 @property (setter=_setBrowsingVideoPlayer:, nonatomic, retain) PUBrowsingVideoPlayer *_browsingVideoPlayer;
@@ -26,7 +27,7 @@
 @property (setter=_setDisplayingFullQualityImage:, nonatomic) bool _isDisplayingFullQualityImage;
 @property (nonatomic, readonly) bool _isDisplayingVideo;
 @property (setter=_setPlayer:, nonatomic, retain) ISWrappedAVPlayer *_player;
-@property (setter=_setPlayerView:, nonatomic, retain) PUVideoPlayerView *_playerView;
+@property (setter=_setPlayerView:, nonatomic, retain) PXVideoPlayerView *_playerView;
 @property (setter=_setReadyForDisplayCompletionHandler:, nonatomic, copy) id /* block */ _readyForDisplayCompletionHandler;
 @property (setter=_setTargetSize:, nonatomic) struct CGSize { double x1; double x2; } _targetSize;
 @property (setter=_setThumbnailRequestNumber:, nonatomic) long long _thumbnailRequestNumber;
@@ -81,7 +82,7 @@
 - (void)setEdgeAntialiasingEnabled:(bool)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setPreloadedImage:(id)arg1;
-- (void)videoPlayerView:(id)arg1 isReadyForDisplayDidChange:(bool)arg2;
+- (void)videoPlayerView:(id)arg1 isDisplayingPlaceholerDidChange:(bool)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

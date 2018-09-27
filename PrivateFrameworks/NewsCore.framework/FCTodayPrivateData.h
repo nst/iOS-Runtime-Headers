@@ -11,7 +11,6 @@
 @property (nonatomic, readonly, copy) <FCDerivedPersonalizationData><NSCoding> *derivedPersonalizationData;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionary;
-@property (nonatomic, readonly, copy) NSString *feldsparID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
 @property (nonatomic, readonly, copy) NSNumber *onboardingVersion;
@@ -26,7 +25,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)derivedPersonalizationData;
 - (id)dictionary;
-- (id)feldsparID;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

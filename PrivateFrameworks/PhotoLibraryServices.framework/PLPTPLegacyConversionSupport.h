@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) bool supportsTranscodeChoice;
 
 - (void).cxx_destruct;
-- (id)conversionResultForAsset:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3;
+- (id)conversionResultForAsset:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3 forceLegacyConversion:(bool)arg4;
 - (id)init;
 - (bool)supportsTranscodeChoice;
 

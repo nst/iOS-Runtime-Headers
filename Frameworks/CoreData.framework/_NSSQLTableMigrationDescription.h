@@ -18,8 +18,8 @@
     NSMutableArray * _transformedManyToManys;
 }
 
-@property (readonly) int migrationType;
-@property (readonly) NSSQLEntity *rootEntity;
+@property (nonatomic, readonly) int migrationType;
+@property (nonatomic, readonly) NSSQLEntity *rootEntity;
 
 - (id)_addedManyToManys;
 - (bool)_hasTransformedTableSchema;

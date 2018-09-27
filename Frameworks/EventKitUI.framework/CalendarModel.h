@@ -3,6 +3,7 @@
  */
 
 @interface CalendarModel : NSObject <CalendarEventLoaderDelegate> {
+    bool  _autoStartNotificationMonitor;
     long long  _cachedFakeTodayIndex;
     NSCalendar * _calendar;
     long long  _displayableAccountErrorsCount;
@@ -22,6 +23,8 @@
     NSArray * _visibleCalendars;
 }
 
+@property (nonatomic) bool allowEventLocationPrediction;
+@property (nonatomic) bool autoStartNotificationMonitor;
 @property (nonatomic, copy) NSCalendar *calendar;
 @property (nonatomic, readonly) long long displayableAccountErrorsCount;
 @property (nonatomic, readonly) EKEventStore *eventStore;
@@ -40,6 +43,7 @@
 - (void)_createOccurrenceCacheDataSources;
 - (id)_dataSourceUsingFilter:(bool)arg1;
 - (void)_eventStoreChanged:(id)arg1;
+- (void)_finishedFirstLoad;
 - (void)_invalidateCachedOccurrences;
 - (void)_invalidateOccurrenceCacheDataSources;
 - (void)_localeChanged:(id)arg1;
@@ -58,13 +62,15 @@
 - (void)_tzSupportTodayRolledOver;
 - (void)addOccurrenceAwaitingDeletion:(id)arg1;
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
+- (bool)allowEventLocationPrediction;
+- (bool)autoStartNotificationMonitor;
 - (long long)cachedFakeTodayIndex;
 - (id)cachedOccurrenceAtIndexPath:(id)arg1;
 - (id)cachedOccurrenceAtIndexPath:(id)arg1 usingFilter:(bool)arg2;
 - (bool)cachedOccurrencesAreBeingGenerated;
 - (bool)cachedOccurrencesAreLoaded;
 - (id)calendar;
-- (void)calendarEventLoader:(id)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3;
+- (void)calendarEventLoader:(id)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3 wasEmptyLoad:(bool)arg4;
 - (id)closestOccurrenceToTomorrowForEventUID:(int)arg1;
 - (long long)countSourcesWithErrors;
 - (id)dateForCachedOccurrencesInSection:(long long)arg1;
@@ -107,6 +113,8 @@
 - (id)selectedDay;
 - (id)selectedOccurrence;
 - (bool)selectedOccurrenceIsSearchMatch;
+- (void)setAllowEventLocationPrediction:(bool)arg1;
+- (void)setAutoStartNotificationMonitor:(bool)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setComponentForExpandingPadding:(unsigned long long)arg1;
 - (void)setComponentForExpandingRequests:(unsigned long long)arg1;
@@ -118,8 +126,10 @@
 - (void)setSelectedCalendars:(id)arg1;
 - (void)setSelectedDate:(id)arg1;
 - (void)setSelectedOccurrence:(id)arg1;
+- (void)simulateFirstLoadFinished;
 - (void)startNotificationMonitor;
 - (void)updateAfterAppResume;
+- (void)updateSelectedDateTimeZone;
 - (long long)visibleCalendarCount;
 
 @end

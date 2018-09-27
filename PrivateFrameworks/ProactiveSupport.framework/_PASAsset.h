@@ -28,6 +28,7 @@
 - (void)_issueUpdateNotificationsWithCallback:(id /* block */)arg1;
 - (void)_loadDefaultBundleVersionWithGuardedData:(id)arg1;
 - (void)_updateAssetMetadata;
+- (bool)_updateAssetMetadataUsingQueryResults:(id)arg1;
 - (void)addOverridePath:(id)arg1 forResource:(id)arg2 ofType:(id)arg3;
 - (id)assetType;
 - (unsigned long long)assetVersion;

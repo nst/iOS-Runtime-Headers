@@ -17,6 +17,7 @@
 - (bool)displayed;
 - (int)internalAdType;
 - (long long)lastErrorCode;
+- (ADLayoutOptions *)layoutOptions;
 - (long long)options;
 - (void)pauseBannerMedia;
 - (UIViewController *)presentingViewController;
@@ -31,6 +32,7 @@
 - (void)setAdResponseId:(NSString *)arg1;
 - (void)setDisplayed:(bool)arg1;
 - (void)setLastErrorCode:(long long)arg1;
+- (void)setLayoutOptions:(ADLayoutOptions *)arg1;
 - (void)setReUsed:(bool)arg1;
 - (void)setScreenfuls:(int)arg1;
 - (void)setSlotPosition:(int)arg1;

@@ -153,7 +153,6 @@
 - (void)setShowAlternateControlButton:(bool)arg1;
 - (void)setSummaryView:(id)arg1;
 - (void)setTopToSummarySpacingLayoutGuide:(id)arg1;
-- (void)setshouldShowActiveControl:(bool)arg1;
 - (bool)shouldShowActiveControl;
 - (bool)shouldShowAlternateControlButton;
 - (bool)shouldShowDetailsButton;

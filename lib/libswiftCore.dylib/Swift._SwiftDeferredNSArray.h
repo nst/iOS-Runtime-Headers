@@ -10,6 +10,5 @@
 @property (nonatomic, readonly) long long count;
 
 - (long long)count;
-- (id)init;
 
 @end

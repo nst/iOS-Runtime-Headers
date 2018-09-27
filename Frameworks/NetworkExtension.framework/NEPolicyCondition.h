@@ -4,6 +4,8 @@
 
 @interface NEPolicyCondition : NSObject <NEPrettyDescription> {
     NSString * _accountIdentifier;
+    NSString * _agentDomain;
+    NSString * _agentType;
     NSUUID * _applicationUUID;
     long long  _conditionType;
     NSString * _customEntitlement;
@@ -21,17 +23,19 @@
 }
 
 @property (copy) NSString *accountIdentifier;
+@property (copy) NSString *agentDomain;
+@property (copy) NSString *agentType;
 @property (copy) NSUUID *applicationUUID;
 @property long long conditionType;
-@property (retain) NSString *customEntitlement;
+@property (copy) NSString *customEntitlement;
 @property (copy) NSString *domain;
-@property (retain) NWAddressEndpoint *endAddress;
+@property (copy) NWAddressEndpoint *endAddress;
 @property (copy) NSString *interfaceName;
 @property unsigned short ipProtocol;
 @property (getter=isNegative) bool negative;
 @property int pid;
 @property unsigned char prefix;
-@property (retain) NWAddressEndpoint *startAddress;
+@property (copy) NWAddressEndpoint *startAddress;
 @property unsigned int trafficClassEnd;
 @property unsigned int trafficClassStart;
 @property unsigned int uid;
@@ -49,6 +53,7 @@
 + (id)realApplication:(id)arg1;
 + (id)remoteAddress:(id)arg1 prefix:(unsigned char)arg2;
 + (id)remoteAddressStart:(id)arg1 end:(id)arg2;
++ (id)requiredAgentDomain:(id)arg1 agentType:(id)arg2;
 + (id)scopedInterface:(id)arg1;
 + (id)trafficClassStart:(unsigned int)arg1 end:(unsigned int)arg2;
 + (id)uid:(unsigned int)arg1;
@@ -56,6 +61,8 @@
 - (void).cxx_destruct;
 - (id)accountIdentifier;
 - (bool)addTLVsToMessage:(id)arg1;
+- (id)agentDomain;
+- (id)agentType;
 - (id)applicationUUID;
 - (long long)conditionType;
 - (id)conditionTypeString;
@@ -73,6 +80,8 @@
 - (int)pid;
 - (unsigned char)prefix;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setAgentDomain:(id)arg1;
+- (void)setAgentType:(id)arg1;
 - (void)setApplicationUUID:(id)arg1;
 - (void)setConditionType:(long long)arg1;
 - (void)setCustomEntitlement:(id)arg1;

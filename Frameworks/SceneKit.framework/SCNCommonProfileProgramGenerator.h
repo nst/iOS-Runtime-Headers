@@ -19,7 +19,7 @@
 - (void)emptyShaderCache;
 - (id)init;
 - (int)profile;
-- (struct __C3DFXProgram { }*)programWithHashCode:(struct __C3DRendererElementProgramHashCode { }*)arg1 engineContext:(struct __C3DEngineContext { }*)arg2 trackedResource:(id)arg3 introspectionDataPtr:(void*)arg4;
+- (struct __C3DFXProgram { }*)programWithHashCode:(struct __C3DProgramHashCode { }*)arg1 engineContext:(struct __C3DEngineContext { }*)arg2 trackedResource:(id)arg3 introspectionDataPtr:(void*)arg4;
 - (void)releaseProgramForResource:(id)arg1;
 
 @end

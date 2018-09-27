@@ -49,7 +49,7 @@
 - (void)setHeaderInset:(double)arg1;
 - (void)setPrintMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setUnscaledPageSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledPageRectForDisplayForPortraitOrientation:(bool)arg1 userViewScale:(double)arg2 atPageCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 layoutLeftToRight:(bool)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledPageRectForDisplayForPortraitOrientation:(bool)arg1 userViewScale:(double)arg2 atPageCoordinate:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg3 layoutLeftToRight:(bool)arg4;
 - (struct CGSize { double x1; double x2; })unscaledPageSize;
 
 @end

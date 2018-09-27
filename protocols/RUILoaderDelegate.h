@@ -12,6 +12,7 @@
 - (void)loader:(RUILoader *)arg1 receivedObjectModel:(RUIObjectModel *)arg2 actionSignal:(unsigned long long)arg3;
 - (void)loader:(RUILoader *)arg1 receivedObjectModel:(RUIObjectModel *)arg2 topActionSignal:(RUIActionSignal *)arg3;
 - (NSURLRequest *)loader:(RUILoader *)arg1 willLoadRequest:(NSURLRequest *)arg2 redirectResponse:(NSURLResponse *)arg3;
+- (void)loader:(void *)arg1 willLoadRequest:(void *)arg2 redirectResponse:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: RUILoader *, NSURLRequest *, NSURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURLRequest *, NSError *, void*
 - (NSURLSessionConfiguration *)sessionConfigurationForLoader:(RUILoader *)arg1;
 
 @end

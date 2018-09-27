@@ -13,7 +13,7 @@
     MNObserverHashTable<MNCommuteSessionObserver> * _observers;
     NSArray * _rankedDestinations;
     id  _rankedDestinationsSync;
-    NSTimer * _stateChangeTimer;
+    unsigned long long  _requestedCommuteSessionState;
     NSMutableDictionary * _suggestions;
     MNSuggestionsManager * _suggestionsManager;
     MNNavigationTraceManager * _traceManager;
@@ -26,6 +26,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isMapsActive;
 @property (nonatomic, readonly) NSArray *rankedDestinations;
+@property (nonatomic) unsigned long long requestedCommuteSessionState;
 @property (readonly) NSString *suggestionsDescription;
 @property (nonatomic) MNSuggestionsManager *suggestionsManager;
 @property (readonly) Class superclass;
@@ -48,8 +49,10 @@
 - (bool)isMapsActive;
 - (id)rankedDestinations;
 - (void)removeObserver:(id)arg1;
+- (unsigned long long)requestedCommuteSessionState;
 - (void)setCommuteSessionState:(unsigned long long)arg1;
 - (void)setComparisonDestinationStartTime:(id)arg1;
+- (void)setRequestedCommuteSessionState:(unsigned long long)arg1;
 - (void)setSuggestionsManager:(id)arg1;
 - (void)startETAUpdatesWithInterval:(double)arg1;
 - (void)stop;

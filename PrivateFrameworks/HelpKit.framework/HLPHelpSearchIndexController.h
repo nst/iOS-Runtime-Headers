@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSDictionary *searchIndex;
 
 - (void).cxx_destruct;
+- (void)fetchDataWithDataType:(long long)arg1 identifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)getAllIdentifiersFromTree:(id)arg1 withMaxDepth:(int)arg2;
 - (id)helpBookController;
 - (id)mergeDictionary:(id)arg1 withDictionary:(id)arg2;

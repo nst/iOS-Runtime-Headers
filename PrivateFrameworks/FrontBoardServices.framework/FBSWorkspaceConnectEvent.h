@@ -6,9 +6,9 @@
     FBSProcessHandle * _processHandle;
 }
 
-@property (nonatomic, readonly, retain) FBSProcessHandle *processHandle;
+@property (nonatomic, readonly) FBSProcessHandle *processHandle;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;
 - (id)initWithXPCDictionary:(id)arg1;

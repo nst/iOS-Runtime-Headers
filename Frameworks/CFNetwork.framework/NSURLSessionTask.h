@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionTask : NSObject <FCOperationIdentifying, FCOperationPrioritizing, NSCopying, NSProgressReporting> {
+@interface NSURLSessionTask : NSObject <FCOperationIdentifying, FCOperationPrioritizing, NSCopying, NSProgressReporting, RCOperationIdentifying, RCOperationPrioritizing> {
     bool  __extractorFinishedDecoding;
     bool  __extractorPreparedForExtraction;
     double  __loadingPriority;
@@ -38,6 +38,7 @@
 @property unsigned int _darkWakePowerAssertion;
 @property (nonatomic, retain) NSDictionary *_dependencyInfo;
 @property bool _disallowCellular;
+@property (nonatomic) long long _discretionaryOverride;
 @property (nonatomic) bool _doesSZExtractorConsumeExtractedData;
 @property long long _expectedWorkload;
 @property (setter=set_extractor:, nonatomic, retain) <SZExtractor> *_extractor;
@@ -46,12 +47,15 @@
 @property (nonatomic) bool _hasSZExtractor;
 @property (nonatomic, retain) NSURLSessionTaskMetrics *_incompleteTaskMetrics;
 @property (nonatomic, readonly) bool _isAVAssetTask;
+@property bool _isTopLevelNavigation;
 @property (copy) NSURL *_ledBellyFallbackURL;
 @property (copy) NSString *_ledBellyServiceIdentifier;
 @property (copy) NSDictionary *_legacySocketStreamProperties;
 @property double _loadingPriority;
 @property double _loadingPriorityValue;
+@property (nonatomic, readonly) NSString *_loggableDescription;
 @property int _networkServiceType;
+@property (retain) NSObject<OS_nw_activity> *_nw_activity;
 @property (copy) NSString *_pathToDownloadTaskFile;
 @property (nonatomic, retain) struct __PerformanceTiming { }*_performanceTiming;
 @property unsigned int _powerAssertion;
@@ -64,17 +68,21 @@
 @property (nonatomic) id _protocolForTask;
 @property (copy) NSDictionary *_proxySettings;
 @property (nonatomic, retain) NSURL *_publishingURL;
+@property (nonatomic) unsigned int _qos;
 @property long long _requestPriority;
+@property bool _requiresSecureHTTPSProxyConnection;
 @property bool _shouldHandleCookies;
 @property bool _shouldPipelineHTTP;
 @property (nonatomic) bool _shouldReportTimingDataToAWD;
 @property bool _shouldSkipPipelineProbe;
 @property bool _shouldSkipPreferredClientCertificateLookup;
 @property bool _shouldUsePipelineHeuristics;
+@property (retain) NSURL *_siteForCookies;
 @property (copy) NSDictionary *_sslSettings;
 @property (copy) NSString *_storagePartitionIdentifier;
 @property bool _strictContentLength;
 @property long long _suspensionThreshhold;
+@property (copy) __NSCFTaskPerformanceTiming *_taskPerformanceTiming;
 @property double _timeWindowDelay;
 @property double _timeWindowDuration;
 @property double _timeoutInterval;
@@ -109,6 +117,7 @@
 @property (nonatomic, retain) NSURLSessionTaskDependency *taskDependency;
 @property (copy) NSString *taskDescription;
 @property unsigned long long taskIdentifier;
+@property (nonatomic, readonly) NSURLSessionTaskMetrics *ts_taskMetrics;
 @property (readonly, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
@@ -124,7 +133,6 @@
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
 - (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
-- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (bool)_extractorFinishedDecoding;
 - (bool)_extractorPreparedForExtraction;
 - (void)_finishProgressReporting;
@@ -143,6 +151,7 @@
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
 - (double)_timeoutIntervalForResource;
 - (id)_transactionMetrics;
+- (void)_withXURLCache:(id /* block */)arg1;
 - (void)cancel;
 - (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -161,11 +170,26 @@
 - (void)suspend;
 - (void)updateCurrentRequest:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/News/TeaFoundation.framework/TeaFoundation
+
+- (id)ts_taskMetrics;
+
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (id)longOperationDescription;
 - (long long)relativePriority;
 - (void)setRelativePriority:(long long)arg1;
 - (id)shortOperationDescription;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
+- (id)longOperationDescription;
+- (long long)relativePriority;
+- (void)setRelativePriority:(long long)arg1;
+- (id)shortOperationDescription;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/TeaFoundation.framework/TeaFoundation
+
+- (id)ts_taskMetrics;
 
 @end

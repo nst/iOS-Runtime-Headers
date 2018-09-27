@@ -4,6 +4,7 @@
 
 @interface NTPBMediaEngage : PBCodable <NSCopying> {
     bool  _adSupportedChannel;
+    NTPBAlternateHeadline * _alternateHeadline;
     NSString * _articleId;
     NSData * _articleSessionId;
     int  _articleType;
@@ -43,6 +44,7 @@
         unsigned int muteButtonState : 1; 
         unsigned int osVolumeLevel : 1; 
         unsigned int publisherArticleVersion : 1; 
+        unsigned int rankInVideoPlaylist : 1; 
         unsigned int topStoryType : 1; 
         unsigned int userAction : 1; 
         unsigned int videoType : 1; 
@@ -88,6 +90,7 @@
     NSString * _previousArticleVersion;
     int  _publisherArticleVersion;
     long long  _publisherArticleVersionInt64;
+    int  _rankInVideoPlaylist;
     NSString * _referencedArticleId;
     NSString * _sectionHeadlineId;
     NSString * _sourceChannelId;
@@ -101,6 +104,7 @@
 }
 
 @property (nonatomic) bool adSupportedChannel;
+@property (nonatomic, retain) NTPBAlternateHeadline *alternateHeadline;
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSData *articleSessionId;
 @property (nonatomic) int articleType;
@@ -116,6 +120,7 @@
 @property (nonatomic) int groupType;
 @property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasAdSupportedChannel;
+@property (nonatomic, readonly) bool hasAlternateHeadline;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleSessionId;
 @property (nonatomic) bool hasArticleType;
@@ -162,6 +167,7 @@
 @property (nonatomic, readonly) bool hasPreviousArticleVersion;
 @property (nonatomic) bool hasPublisherArticleVersion;
 @property (nonatomic) bool hasPublisherArticleVersionInt64;
+@property (nonatomic) bool hasRankInVideoPlaylist;
 @property (nonatomic, readonly) bool hasReferencedArticleId;
 @property (nonatomic, readonly) bool hasSectionHeadlineId;
 @property (nonatomic, readonly) bool hasSourceChannelId;
@@ -206,6 +212,7 @@
 @property (nonatomic, retain) NSString *previousArticleVersion;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic) long long publisherArticleVersionInt64;
+@property (nonatomic) int rankInVideoPlaylist;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic, retain) NSString *sectionHeadlineId;
 @property (nonatomic, retain) NSString *sourceChannelId;
@@ -231,6 +238,7 @@
 - (bool)adSupportedChannel;
 - (void)addFractionalCohortMembership:(id)arg1;
 - (void)addNamedEntities:(id)arg1;
+- (id)alternateHeadline;
 - (id)articleId;
 - (id)articleSessionId;
 - (int)articleType;
@@ -257,6 +265,7 @@
 - (id)groupTypeAsString:(int)arg1;
 - (id)groupViewExposureId;
 - (bool)hasAdSupportedChannel;
+- (bool)hasAlternateHeadline;
 - (bool)hasArticleId;
 - (bool)hasArticleSessionId;
 - (bool)hasArticleType;
@@ -303,6 +312,7 @@
 - (bool)hasPreviousArticleVersion;
 - (bool)hasPublisherArticleVersion;
 - (bool)hasPublisherArticleVersionInt64;
+- (bool)hasRankInVideoPlaylist;
 - (bool)hasReferencedArticleId;
 - (bool)hasSectionHeadlineId;
 - (bool)hasSourceChannelId;
@@ -353,10 +363,12 @@
 - (id)previousArticleVersion;
 - (int)publisherArticleVersion;
 - (long long)publisherArticleVersionInt64;
+- (int)rankInVideoPlaylist;
 - (bool)readFrom:(id)arg1;
 - (id)referencedArticleId;
 - (id)sectionHeadlineId;
 - (void)setAdSupportedChannel:(bool)arg1;
+- (void)setAlternateHeadline:(id)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleSessionId:(id)arg1;
 - (void)setArticleType:(int)arg1;
@@ -402,6 +414,7 @@
 - (void)setHasPreviousArticlePublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersionInt64:(bool)arg1;
+- (void)setHasRankInVideoPlaylist:(bool)arg1;
 - (void)setHasTopStoryType:(bool)arg1;
 - (void)setHasUserAction:(bool)arg1;
 - (void)setHasVideoType:(bool)arg1;
@@ -439,6 +452,7 @@
 - (void)setPreviousArticleVersion:(id)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setPublisherArticleVersionInt64:(long long)arg1;
+- (void)setRankInVideoPlaylist:(int)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setSectionHeadlineId:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;

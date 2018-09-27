@@ -80,6 +80,7 @@
 @property (nonatomic, readonly) NSString *authPromptReason;
 @property (nonatomic) <CKDURLRequestAuthRetryDelegate> *authRetryDelegate;
 @property (nonatomic, retain) NSString *automatedDeviceGroup;
+@property (nonatomic, readonly) bool automaticallyRetryNetworkFailures;
 @property (retain) C2RequestOptions *c2RequestOptions;
 @property (nonatomic) long long cachedPartitionType;
 @property (nonatomic) long long cachedServerType;
@@ -96,6 +97,7 @@
 @property (nonatomic, copy) NSString *deviceID;
 @property (nonatomic) bool didReceiveResponseBodyData;
 @property (nonatomic) bool didRetryAuth;
+@property (nonatomic, readonly) unsigned long long discretionaryNetworkBehavior;
 @property (retain) NSError *error;
 @property (nonatomic, readonly) bool expectsResponseBody;
 @property (nonatomic, retain) NSDictionary *fakeResponseOperationResultByItemID;
@@ -134,6 +136,7 @@
 @property (retain) NSURLRequest *request;
 @property (nonatomic, readonly) NSInputStream *requestBodyStream;
 @property (nonatomic, readonly) NSString *requestContentType;
+@property (nonatomic, readonly) bool requestGETPreAuth;
 @property (nonatomic, readonly) NSArray *requestOperationClasses;
 @property (nonatomic, readonly) NSArray *requestOperations;
 @property (nonatomic, copy) id /* block */ requestProgressBlock;
@@ -146,6 +149,7 @@
 @property (nonatomic, copy) id /* block */ responseProgressBlock;
 @property (nonatomic, readonly) long long responseStatusCode;
 @property (nonatomic, readonly) NSString *sectionID;
+@property (nonatomic, readonly) bool sendRequestAnonymously;
 @property (nonatomic, copy) NSString *serverProvidedAutoBugCaptureReason;
 @property (nonatomic, retain) NSString *serverProvidedAutoSysdiagnoseCollectionReason;
 @property (nonatomic, retain) CKDTapToRadarRequest *serverProvidedTapToRadarRequest;
@@ -181,6 +185,7 @@
 - (id)_CFNetworkTaskIdentifierString;
 - (void)_acquireZoneGates;
 - (void)_addRequestHeadersToTransmittedSignature:(id)arg1;
+- (void)_authTokenWithCompletionHandler:(id /* block */)arg1;
 - (id)_errorFromHTTPResponse:(id)arg1;
 - (void)_fetchContainerScopedUserID;
 - (void)_fetchDeviceID;
@@ -220,6 +225,7 @@
 - (id)authPromptReason;
 - (id)authRetryDelegate;
 - (id)automatedDeviceGroup;
+- (bool)automaticallyRetryNetworkFailures;
 - (id)c2RequestOptions;
 - (long long)cachedPartitionType;
 - (long long)cachedServerType;
@@ -230,6 +236,7 @@
 - (id /* block */)completionBlock;
 - (id)context;
 - (id)countsByRequestOperationType;
+- (id)createAssetAuthorizeGetRequestOptionsHeaderInfoWithKey:(id)arg1 value:(id)arg2;
 - (long long)databaseScope;
 - (id)dateRequestWentOut;
 - (void)dealloc;
@@ -239,6 +246,7 @@
 - (id)deviceIdentifier;
 - (bool)didReceiveResponseBodyData;
 - (bool)didRetryAuth;
+- (unsigned long long)discretionaryNetworkBehavior;
 - (id)error;
 - (Class)expectedResponseClass;
 - (bool)expectsResponseBody;
@@ -292,12 +300,14 @@
 - (id)request;
 - (id)requestBodyStream;
 - (id)requestContentType;
+- (void)requestDidComplete;
 - (void)requestDidParse509CertObject:(id)arg1;
 - (void)requestDidParseJSONObject:(id)arg1;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (void)requestDidParsePlaintextObject:(id)arg1;
 - (void)requestDidParsePlistObject:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
+- (bool)requestGETPreAuth;
 - (id)requestOperationClasses;
 - (id)requestOperationCountsByOperationType;
 - (id)requestOperations;

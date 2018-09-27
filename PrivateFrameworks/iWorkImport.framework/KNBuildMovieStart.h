@@ -13,6 +13,7 @@
 + (id)animationFilter;
 + (id)animationName;
 + (id)localizedMenuString:(long long)arg1;
++ (long long)rendererTypeForAnimationContext:(id)arg1;
 + (bool)startsAmbientAnimation;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(long long)arg1;

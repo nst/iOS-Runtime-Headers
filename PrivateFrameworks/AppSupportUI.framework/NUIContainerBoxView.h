@@ -49,7 +49,7 @@
 - (long long)horizontalAlignment;
 - (id)initWithArrangedSubviews:(id)arg1;
 - (bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(bool)arg1;
-- (bool)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)populateBoxArrangementCells:(struct vector<_NUIBoxArrangementCell, std::__1::allocator<_NUIBoxArrangementCell> > { struct _NUIBoxArrangementCell {} *x1; struct _NUIBoxArrangementCell {} *x2; struct __compressed_pair<_NUIBoxArrangementCell *, std::__1::allocator<_NUIBoxArrangementCell> > { struct _NUIBoxArrangementCell {} *x_3_1_1; } x3; }*)arg1;
 - (void)setBaselineRelativeArrangement:(bool)arg1;
 - (void)setDelegate:(id)arg1;

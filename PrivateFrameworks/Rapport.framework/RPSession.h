@@ -18,7 +18,6 @@
     bool  _messagingReady;
     int  _pairVerifyState;
     RPDevice * _peerDevice;
-    UIViewController * _presentingViewController;
     id /* block */  _promptForPINHandler;
     bool  _secureReady;
     unsigned int  _securityFlags;
@@ -31,7 +30,6 @@
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) RPDevice *peerDevice;
-@property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) id /* block */ promptForPINHandler;
 @property (nonatomic) unsigned int securityFlags;
 @property (nonatomic, copy) NSString *serviceType;
@@ -63,7 +61,6 @@
 - (void)pairSetupWithFlags:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)pairVerifyWithFlags:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)peerDevice;
-- (id)presentingViewController;
 - (id /* block */)promptForPINHandler;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (void)requestSystemInfoWithCompletion:(id /* block */)arg1;
@@ -76,7 +73,6 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
-- (void)setPresentingViewController:(id)arg1;
 - (void)setPromptForPINHandler:(id /* block */)arg1;
 - (void)setSecurityFlags:(unsigned int)arg1;
 - (void)setServiceType:(id)arg1;

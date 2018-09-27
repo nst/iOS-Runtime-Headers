@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NTKColoringLabel *label;
 @property (nonatomic) double maxDynamicFontSize;
 
-+ (double)_imageScaleForTemplate:(id)arg1;
++ (double)_imageScaleForTemplate:(id)arg1 forDevice:(id)arg2;
 + (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 + (bool)supportsComplicationFamily:(long long)arg1;

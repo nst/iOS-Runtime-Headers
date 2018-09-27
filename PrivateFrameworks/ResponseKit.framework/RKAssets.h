@@ -16,4 +16,7 @@
 + (id)sensitiveSubjectRegularExpressionPatterns;
 + (id)synonyms;
 
+- (id)init;
+- (id)initWithPlistURL:(id)arg1;
+
 @end

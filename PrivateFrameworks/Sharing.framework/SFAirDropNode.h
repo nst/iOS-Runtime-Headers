@@ -7,6 +7,7 @@
     bool  _classroomCourse;
     bool  _classroomGroup;
     NSString * _contactIdentifier;
+    NSDate * _discoveryDate;
     UIImage * _displayIcon;
     NSString * _displayName;
     bool  _me;
@@ -15,6 +16,7 @@
     NSString * _realName;
     NSString * _secondaryName;
     struct __SFOperation { } * _sender;
+    bool  _supportsCredentials;
     bool  _supportsFMF;
     bool  _supportsMixedTypes;
     bool  _supportsPasses;
@@ -25,13 +27,16 @@
 @property (getter=isClassroomCourse) bool classroomCourse;
 @property (getter=isclassroomGroup) bool classroomGroup;
 @property (retain) NSString *contactIdentifier;
+@property (readonly) NSDate *discoveryDate;
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
+@property (getter=isKnown, readonly) bool known;
 @property (getter=isMe) bool me;
 @property (getter=isMonogram) bool monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
 @property (retain) NSString *secondaryName;
+@property (readonly) bool supportsCredentials;
 @property (readonly) bool supportsFMF;
 @property (readonly) bool supportsMixedTypes;
 @property (readonly) bool supportsPasses;
@@ -43,6 +48,7 @@
 - (void)cancelSend;
 - (id)contactIdentifier;
 - (id)description;
+- (id)discoveryDate;
 - (id)displayIcon;
 - (id)displayName;
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
@@ -51,6 +57,7 @@
 - (bool)isClassroom;
 - (bool)isClassroomCourse;
 - (bool)isEqual:(id)arg1;
+- (bool)isKnown;
 - (bool)isMe;
 - (bool)isMonogram;
 - (bool)isUnknown;
@@ -72,6 +79,7 @@
 - (void)setUnknown:(bool)arg1;
 - (void)simulateFakeTransferWithSessionID:(id)arg1;
 - (void)startSendForBundleID:(id)arg1 sessionID:(id)arg2 items:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
+- (bool)supportsCredentials;
 - (bool)supportsFMF;
 - (bool)supportsMixedTypes;
 - (bool)supportsPasses;

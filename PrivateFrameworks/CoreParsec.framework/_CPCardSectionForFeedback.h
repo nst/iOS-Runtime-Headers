@@ -14,10 +14,6 @@
 @property (nonatomic, copy) NSString *cardSectionId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasActionDestination;
-@property (nonatomic, readonly) bool hasActionTarget;
-@property (nonatomic, readonly) bool hasCardSectionId;
-@property (nonatomic, readonly) bool hasResultId;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSString *resultId;
@@ -28,10 +24,6 @@
 - (id)actionTarget;
 - (id)cardSectionId;
 - (id)dictionaryRepresentation;
-- (bool)hasActionDestination;
-- (bool)hasActionTarget;
-- (bool)hasCardSectionId;
-- (bool)hasResultId;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

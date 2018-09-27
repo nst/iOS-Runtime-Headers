@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSOpenApplicationOptions : NSObject <NSCopying> {
+@interface FBSOpenApplicationOptions : NSObject <BSXPCCoding, NSCopying> {
     NSMutableDictionary * _payload;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *dictionary;
-@property (nonatomic, readonly, retain) NSURL *url;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *url;
 
 + (id)optionsWithDictionary:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_sanitizeAndValidatePayload;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

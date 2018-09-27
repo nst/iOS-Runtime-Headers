@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSSet *packedRenditions;
 @property (nonatomic, retain) TDRenditionSpec *parentRendition;
 @property (nonatomic, retain) TDElementProduction *production;
+@property (nonatomic, retain) NSSet *properties;
 @property (nonatomic, retain) TDRenditionType *renditionType;
 @property (nonatomic) int width;
 
@@ -24,6 +25,7 @@
 - (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (void)drawPackableRenditionInContext:(struct CGContext { }*)arg1 withDocument:(id)arg2;
 - (struct CGPoint { double x1; double x2; })packedPoint;
+- (id)propertiesAsDictionary;
 - (id)renditionType;
 - (void)resetToBaseKeySpec;
 - (void)setPackedPoint:(struct CGPoint { double x1; double x2; })arg1;

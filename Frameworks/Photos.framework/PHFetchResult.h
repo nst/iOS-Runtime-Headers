@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration, PHObjectIDBackedFetchResult, PVFetchResultProtocol> {
+@interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration, PVFetchResultProtocol, PXDisplayAssetFetchResult, PXPeopleFetchResult> {
     unsigned long long  _audiosCount;
     long long  _chunkSizeForFetch;
     NSSet * _fetchPropertySets;
@@ -20,19 +20,25 @@
 }
 
 @property long long chunkSizeForFetch;
+@property (nonatomic, readonly) long long count;
 @property (nonatomic, readonly) unsigned long long count;
 @property (readonly) unsigned long long count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (readonly) NSSet *fetchPropertySets;
 @property (readonly) NSFetchRequest *fetchRequest;
 @property (readonly) NSString *fetchType;
 @property (readonly) NSArray *fetchedObjectIDs;
 @property (readonly) NSSet *fetchedObjectIDsSet;
-@property (readonly) NSArray *fetchedObjects;
 @property (nonatomic, readonly) NSArray *fetchedObjects;
+@property (readonly) NSArray *fetchedObjects;
+@property (nonatomic, readonly) <PXDisplayAsset> *firstObject;
 @property (nonatomic, readonly) id firstObject;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id lastObject;
 @property (nonatomic) bool preventsClearingOIDCache;
 @property (readonly) PHQuery *query;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
@@ -41,6 +47,7 @@
 + (id)fetchObjectCount:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchObjectIDsForCombinableFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)filteredOIDsFrom:(id)arg1 usingEntityName:(id)arg2 withPhotoLibrary:(id)arg3;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1;
 + (id)pl_fetchResultContainingAssetContainer:(id)arg1 includeTrash:(bool)arg2;
 + (id)pl_fetchResultForAssetContainerList:(id)arg1;
@@ -48,6 +55,7 @@
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
 
 - (void).cxx_destruct;
+- (unsigned long long)cachedCountOfAssetsWithMediaType:(long long)arg1;
 - (id)changeHandlingKey;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (long long)chunkSizeForFetch;
@@ -79,12 +87,14 @@
 - (id)init;
 - (id)initWithQuery:(id)arg1;
 - (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(bool)arg3 usingManagedObjectContext:(id)arg4;
+- (bool)isFullyBackedByObjectIDs;
 - (bool)isRegisteredForChangeNotificationDeltas;
 - (id)lastObject;
 - (id)localIdentifiers;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectIDAtIndex:(unsigned long long)arg1;
+- (id)objectIDs;
 - (id)objectsAtIndexes:(id)arg1;
 - (id)photoLibrary;
 - (id)pl_photoLibraryObject;

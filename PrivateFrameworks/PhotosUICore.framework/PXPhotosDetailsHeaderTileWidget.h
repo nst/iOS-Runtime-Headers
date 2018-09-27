@@ -108,6 +108,9 @@
 @property (nonatomic) <PXWidgetDelegate> *widgetDelegate;
 @property (nonatomic) <PXWidgetUnlockDelegate> *widgetUnlockDelegate;
 
++ (bool)canShowMiroMovieHeaderForDataSource:(id)arg1;
++ (double)preferredHeaderContentHeightForWidth:(double)arg1 screen:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)_assetCollection;
 - (bool)_canLoadContentData;

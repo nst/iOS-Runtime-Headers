@@ -2,77 +2,66 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTSleepMonitor : NSObject <MTAgentDiagnosticDelegate, MTAgentNotificationListener, MTAlarmObserver> {
-    MTAlarmScheduler * _alarmScheduler;
-    MTAlarmStorage * _alarmStorage;
+@interface MTSleepMonitor : NSObject <MTAgentDiagnosticDelegate, MTAlarmObserver, MTSource> {
+    <MTAlarmStorage> * _alarmStorage;
+    MTAlarm * _cachedSleepAlarm;
     id /* block */  _currentDateProvider;
-    CMSleepData * _lastRecord;
-    bool  _monitoring;
+    NSHashTable * _observers;
     <NAScheduler> * _serializer;
-    MTSleepMetrics * _sleepMetrics;
-    CMSleepTracker * _sleepTracker;
 }
 
-@property (nonatomic, retain) MTAlarmScheduler *alarmScheduler;
-@property (nonatomic, retain) MTAlarmStorage *alarmStorage;
+@property (nonatomic, retain) <MTAlarmStorage> *alarmStorage;
+@property (nonatomic, retain) MTAlarm *cachedSleepAlarm;
 @property (nonatomic, copy) id /* block */ currentDateProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) CMSleepData *lastRecord;
-@property (nonatomic) bool monitoring;
+@property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) <NAScheduler> *serializer;
-@property (nonatomic, retain) MTSleepMetrics *sleepMetrics;
-@property (nonatomic, retain) CMSleepTracker *sleepTracker;
 @property (readonly) Class superclass;
 
-+ (long long)_sleepMonitorWindowInMinutes;
-
 - (void).cxx_destruct;
-- (void)_beginMonitoring;
-- (void)_checkMonitoring;
-- (id)_lookupCurrentSleepMonitorWindow;
-- (id)_lookupSleepMonitorWindowForDate:(id)arg1;
-- (id)_nextScheduledWakeUpAlarmForDate:(id)arg1;
-- (void)_queue_checkForOutOfBedEventInData:(id)arg1;
-- (void)_queue_handleEarlyWakeUp;
-- (void)_queue_handleSleepTrackingEvent;
-- (void)_queue_handleTestWakeup;
-- (void)_scheduleWakeUpForMonitorOnDate:(id)arg1;
-- (void)_stopMonitoring;
-- (id)alarmScheduler;
+- (void)_notifyObserversForSleepAlarmChange:(id)arg1;
+- (void)_notifyObserversWithBlock:(id /* block */)arg1;
 - (id)alarmStorage;
-- (void)beginMonitoring;
-- (void)checkMonitoring;
+- (id)cachedSleepAlarm;
 - (id /* block */)currentDateProvider;
-- (void)handleNotification:(id)arg1;
-- (bool)handlesNotification:(id)arg1;
-- (id)initWithAlarmStorage:(id)arg1 alarmScheduler:(id)arg2 sleepMetrics:(id)arg3;
-- (id)initWithAlarmStorage:(id)arg1 alarmScheduler:(id)arg2 sleepMetrics:(id)arg3 sleepTracker:(id)arg4 currentDateProvider:(id /* block */)arg5;
-- (id)lastRecord;
-- (bool)monitoring;
+- (bool)dontNotify;
+- (id)gatherDiagnostics;
+- (void)handleBedtimeForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleBedtimeReminderForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleConfirmationOfGoToBedNotificationForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleDismissForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleSnoozeForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleSnoozeOfGoToBedNotificationForAlarm:(id)arg1 date:(id)arg2;
+- (void)handleWakeUpTimeForAlarm:(id)arg1 date:(id)arg2;
+- (bool)inUserDefinedSleepWindow;
+- (bool)inUserDefinedSleepWindowForAlarm:(id)arg1;
+- (id)initWithAlarmStorage:(id)arg1;
+- (id)initWithAlarmStorage:(id)arg1 currentDateProvider:(id /* block */)arg2;
+- (void)notifyObserversForSleepAlarmChange:(id)arg1;
+- (void)notifyObserversForSleepAlarmChangeIfNecessary:(id)arg1;
+- (void)notifyObserversWithBlock:(id /* block */)arg1;
+- (id)observers;
+- (void)prepare;
 - (void)printDiagnostics;
+- (void)registerObserver:(id)arg1;
 - (id)serializer;
-- (void)setAlarmScheduler:(id)arg1;
 - (void)setAlarmStorage:(id)arg1;
+- (void)setCachedSleepAlarm:(id)arg1;
 - (void)setCurrentDateProvider:(id /* block */)arg1;
-- (void)setLastRecord:(id)arg1;
-- (void)setMonitoring:(bool)arg1;
+- (void)setObservers:(id)arg1;
 - (void)setSerializer:(id)arg1;
-- (void)setSleepMetrics:(id)arg1;
-- (void)setSleepTracker:(id)arg1;
-- (id)sleepMetrics;
-- (id)sleepTracker;
 - (void)source:(id)arg1 didAddAlarms:(id)arg2;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;
 - (void)source:(id)arg1 didDismissAlarm:(id)arg2 dismissAction:(unsigned long long)arg3;
-- (void)source:(id)arg1 didFireAlarm:(id)arg2;
+- (void)source:(id)arg1 didFireAlarm:(id)arg2 triggerType:(unsigned long long)arg3;
 - (void)source:(id)arg1 didRemoveAlarms:(id)arg2;
 - (void)source:(id)arg1 didSnoozeAlarm:(id)arg2 snoozeAction:(unsigned long long)arg3;
 - (void)source:(id)arg1 didUpdateAlarms:(id)arg2;
-- (void)stopMonitoring;
-- (void)userWentToSleep:(id)arg1;
-- (void)userWokeUp:(id)arg1;
-- (void)userWokeUpEarly:(id)arg1;
+- (id)sourceIdentifier;
+- (id)userDefinedSleepWindow;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1 now:(id)arg2;
 
 @end

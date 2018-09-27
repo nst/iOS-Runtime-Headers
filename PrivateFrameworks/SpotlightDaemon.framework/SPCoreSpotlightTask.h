@@ -15,6 +15,7 @@
     id /* block */  _scheduleBlock;
     struct __SIQuery { } * _siQuery;
     double  _startTime;
+    bool  _willAsyncStart;
 }
 
 @property bool canceled;
@@ -30,9 +31,12 @@
 @property (nonatomic, copy) id /* block */ scheduleBlock;
 @property (nonatomic) struct __SIQuery { }*siQuery;
 @property (nonatomic) double startTime;
+@property (nonatomic) bool willAsyncStart;
 
-+ (id)_makeBundleQueryStringWithBundleIDs:(id)arg1;
-+ (id)_makeQueryStringWithQueryString:(id)arg1 queryContext:(id)arg2;
++ (id)_makeBundleQueryStringForField:(id)arg1 withBundleIDs:(id)arg2;
++ (id)_makeBundleQueryStringForQueryContext:(id)arg1;
++ (id)_makeDisabledBundlesQueryStringForQueryContext:(id)arg1;
++ (id)_makeFilterQueryStringForQueryContext:(id)arg1;
 + (struct __SIQuery { }*)_makeSIQueryWithQueryString:(id)arg1 queryContext:(id)arg2;
 
 - (void).cxx_destruct;
@@ -68,8 +72,10 @@
 - (void)setScheduleBlock:(id /* block */)arg1;
 - (void)setSiQuery:(struct __SIQuery { }*)arg1;
 - (void)setStartTime:(double)arg1;
+- (void)setWillAsyncStart:(bool)arg1;
 - (struct __SIQuery { }*)siQuery;
 - (void)start;
 - (double)startTime;
+- (bool)willAsyncStart;
 
 @end

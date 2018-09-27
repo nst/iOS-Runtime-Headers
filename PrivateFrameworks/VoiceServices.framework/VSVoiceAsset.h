@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
+- (id)descriptiveKey;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)footprint;

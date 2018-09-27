@@ -17,6 +17,7 @@
     bool  _fromNextArticleAffordanceTap;
     NSString * _groupFeedId;
     int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int backendArticleVersionInt64 : 1; 
         unsigned int personalizationTreatmentId : 1; 
@@ -96,6 +97,7 @@
 @property (nonatomic) bool fromNextArticleAffordanceTap;
 @property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasAddRemoveReadingListLocation;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic) bool hasArticleType;
@@ -109,6 +111,7 @@
 @property (nonatomic) bool hasFromNextArticleAffordanceTap;
 @property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic, readonly) bool hasIadNativeAd;
 @property (nonatomic, readonly) bool hasIadNativeCampaign;
 @property (nonatomic, readonly) bool hasIadNativeCampaignAd;
@@ -214,6 +217,7 @@
 - (id)groupFeedId;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasAddRemoveReadingListLocation;
 - (bool)hasArticleId;
 - (bool)hasArticleType;
@@ -227,6 +231,7 @@
 - (bool)hasFromNextArticleAffordanceTap;
 - (bool)hasGroupFeedId;
 - (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIadNativeAd;
 - (bool)hasIadNativeCampaign;
 - (bool)hasIadNativeCampaignAd;
@@ -311,6 +316,7 @@
 - (void)setFromNextArticleAffordanceTap:(bool)arg1;
 - (void)setGroupFeedId:(id)arg1;
 - (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasAddRemoveReadingListLocation:(bool)arg1;
 - (void)setHasArticleType:(bool)arg1;
 - (void)setHasBackendArticleVersion:(bool)arg1;

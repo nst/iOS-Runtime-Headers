@@ -34,7 +34,7 @@
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
-+ (struct { int x1; void *x2; id x3; unsigned char x4; unsigned long long x5; void *x6; id x7; struct _moFactoryClassFlags { unsigned int x_8_1_1 : 1; unsigned int x_8_1_2 : 1; unsigned int x_8_1_3 : 1; unsigned int x_8_1_4 : 1; unsigned int x_8_1_5 : 1; unsigned int x_8_1_6 : 1; unsigned int x_8_1_7 : 26; } x8; }*)_PFMOClassFactoryData;
++ (struct { int x1; void *x2; id x3; unsigned char x4; unsigned long long x5; void *x6; unsigned char x7[32]; char *x8; struct _moFactoryClassFlags { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 26; } x9; }*)_PFMOClassFactoryData;
 + (id)_PFPlaceHolderSingleton;
 + (id)_PFPlaceHolderSingleton_core;
 + (void)_entityDeallocated;
@@ -162,6 +162,7 @@
 - (id)committedValuesForKeys:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)dictionaryWithPropertyValues;
 - (id)dictionaryWithValuesForKeys:(id)arg1;
 - (void)didAccessValueForKey:(id)arg1;
 - (void)didChange:(unsigned long long)arg1 valuesAtIndexes:(id)arg2 forKey:(id)arg3;
@@ -275,9 +276,15 @@
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 - (id)pl_shortDescription;
+- (id)pointerDescription;
+- (id)truncatedDescriptionWithPropertyKeys:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 - (id)uri;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (id)rc_valueForAttributeKey:(id)arg1;
 
 @end

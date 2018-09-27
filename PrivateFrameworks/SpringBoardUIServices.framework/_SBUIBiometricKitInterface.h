@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface _SBUIBiometricKitInterface : NSObject <BKMatchOperationDelegate, BKOperationDelegate> {
+@interface _SBUIBiometricKitInterface : NSObject <BKMatchOperationDelegate, BKMatchPearlOperationDelegate, BKOperationDelegate> {
     NSSet * _biometricDevices;
     <_SBUIBiometricKitInterfaceDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
@@ -27,6 +27,7 @@
 - (void)_sendDelegateEvent:(unsigned long long)arg1;
 - (void)_setTracker:(id)arg1 forOperation:(id)arg2;
 - (id)_trackerForOperation:(id)arg1;
+- (id)createFaceDetectOperationsWithError:(id*)arg1;
 - (id)createFingerDetectOperationsWithError:(id*)arg1;
 - (id)createMatchOperationsWithMode:(unsigned long long)arg1 andCredentialSet:(id)arg2 error:(id*)arg3;
 - (id)createPearlDevice;

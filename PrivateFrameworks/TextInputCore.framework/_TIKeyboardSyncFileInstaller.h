@@ -6,6 +6,7 @@
     _KSFileEntry * _entry;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)execute;
 - (id)initWithEntry:(id)arg1;

@@ -9,6 +9,7 @@
     NSMutableDictionary * _storage;
 }
 
+@property (nonatomic, readonly) NSString *humanDescription;
 @property (nonatomic, readonly, copy) MPIdentifierSet *identifiers;
 @property (nonatomic, readonly) struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; } libraryAddStatusObserverConfiguration;
 @property (nonatomic, readonly) long long libraryRemovalSupportedOptions;
@@ -42,6 +43,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasLoadedValueForKey:(id)arg1;
 - (bool)hasLoadedValuesForPropertySet:(id)arg1;
+- (id)humanDescription;
 - (id)identifiers;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifiers:(id)arg1 block:(id /* block */)arg2;

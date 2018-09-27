@@ -4,6 +4,6 @@
 
 @interface NTKVictoryDigitalColorEditOption : NTKVictoryColorEditOption
 
-+ (id)_orderedValues;
++ (id)_orderedValuesForDevice:(id)arg1;
 
 @end

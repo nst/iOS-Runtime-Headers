@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKBitmapFont : NSObject <NSCoding> {
+@interface SKBitmapFont : NSObject <NSSecureCoding> {
     double  _baseLine;
     struct map<unsigned short, double, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, double> > > { 
         struct __tree<std::__1::__value_type<unsigned short, double>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, double>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, double> > > { 
@@ -54,6 +54,7 @@
 + (id)_fontForFileNamed:(id)arg1;
 + (id)fontForFileNamed:(id)arg1;
 + (id)fontWithTexture:(id)arg1 fontDataString:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

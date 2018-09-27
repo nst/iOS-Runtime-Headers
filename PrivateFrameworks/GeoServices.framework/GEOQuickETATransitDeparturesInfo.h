@@ -5,7 +5,6 @@
 @interface GEOQuickETATransitDeparturesInfo : NSObject {
     double  _departureFrequency;
     NSDate * _departureFrequencyValidUntil;
-    NSArray * _departures;
     bool  _departuresHaveFrequency;
     NSString * _direction;
     NSString * _headsign;

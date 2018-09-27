@@ -39,6 +39,7 @@
 - (id)metadata;
 - (void)openAppleFeedbackAssistantWithTempDirectoryURL:(id)arg1;
 - (void)openTapToRadarWithTempDirectoryURL:(id)arg1;
+- (void)openURL:(id)arg1;
 - (id)saveDataForDrawings:(id)arg1 baseURL:(id)arg2 shouldSaveRecognitionData:(bool)arg3;
 - (id)scrollView;
 - (void)sendRadarButtonTapped:(id)arg1;

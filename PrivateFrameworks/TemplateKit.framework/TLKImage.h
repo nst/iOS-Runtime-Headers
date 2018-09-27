@@ -4,10 +4,6 @@
 
 @interface TLKImage : TLKObject {
     double  _cornerRadius;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _forcedSize;
     bool  _isTemplate;
     bool  _shouldCropToCircle;
     struct CGSize { 
@@ -15,30 +11,30 @@
         double height; 
     }  _size;
     UIImage * _uiImage;
+    bool  _useFastPathShadow;
 }
 
-@property double cornerRadius;
-@property struct CGSize { double x1; double x2; } forcedSize;
-@property bool isTemplate;
-@property bool shouldCropToCircle;
-@property struct CGSize { double x1; double x2; } size;
-@property (retain) UIImage *uiImage;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) bool isTemplate;
+@property (nonatomic) bool shouldCropToCircle;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, retain) UIImage *uiImage;
+@property bool useFastPathShadow;
 
 - (void).cxx_destruct;
 - (double)cornerRadius;
-- (struct CGSize { double x1; double x2; })forcedSize;
 - (id)init;
 - (id)initWithImage:(id)arg1;
 - (bool)isTemplate;
-- (id)observableProperties;
 - (void)setCornerRadius:(double)arg1;
-- (void)setForcedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIsTemplate:(bool)arg1;
 - (void)setShouldCropToCircle:(bool)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setUiImage:(id)arg1;
+- (void)setUseFastPathShadow:(bool)arg1;
 - (bool)shouldCropToCircle;
 - (struct CGSize { double x1; double x2; })size;
 - (id)uiImage;
+- (bool)useFastPathShadow;
 
 @end

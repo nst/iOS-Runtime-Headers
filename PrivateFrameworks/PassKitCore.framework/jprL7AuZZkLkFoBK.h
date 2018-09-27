@@ -5,6 +5,7 @@
 @interface jprL7AuZZkLkFoBK : NSObject {
     NSString * _FPANSuffix;
     NSData * _challengeResponse;
+    NSString * _emailAddress;
     unsigned long long  _eventFrequency;
     NSData * _hostChallenge;
     NSSet * _identities;
@@ -15,6 +16,7 @@
 
 @property (nonatomic, retain) NSString *FPANSuffix;
 @property (nonatomic, retain) NSData *challengeResponse;
+@property (nonatomic, retain) NSString *emailAddress;
 @property (nonatomic) unsigned long long eventFrequency;
 @property (nonatomic, retain) NSData *hostChallenge;
 @property (nonatomic, retain) NSSet *identities;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)FPANSuffix;
 - (id)challengeResponse;
+- (id)emailAddress;
 - (unsigned long long)eventFrequency;
 - (id)hostChallenge;
 - (id)identities;
@@ -33,6 +36,7 @@
 - (id)seid;
 - (id)serverEndpointIdentifier;
 - (void)setChallengeResponse:(id)arg1;
+- (void)setEmailAddress:(id)arg1;
 - (void)setEventFrequency:(unsigned long long)arg1;
 - (void)setFPANSuffix:(id)arg1;
 - (void)setHostChallenge:(id)arg1;

@@ -31,6 +31,7 @@
 + (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)radialGravityField;
 + (id)springField;
++ (bool)supportsSecureCoding;
 + (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)velocityFieldWithTexture:(id)arg1;
 + (id)velocityFieldWithVector;

@@ -16,6 +16,7 @@
         unsigned int timestamp : 1; 
         unsigned int uniqueIdentifier : 1; 
         unsigned int playbackRate : 1; 
+        unsigned int preferredPlaybackRate : 1; 
         unsigned int repeatMode : 1; 
         unsigned int shuffleMode : 1; 
         unsigned int isAdvertisement : 1; 
@@ -28,6 +29,7 @@
     bool  _isExplicitTrack;
     bool  _isMusicApp;
     float  _playbackRate;
+    float  _preferredPlaybackRate;
     NSString * _radioStationHash;
     long long  _radioStationIdentifier;
     NSString * _radioStationName;
@@ -54,6 +56,7 @@
 @property (nonatomic) bool hasIsExplicitTrack;
 @property (nonatomic) bool hasIsMusicApp;
 @property (nonatomic) bool hasPlaybackRate;
+@property (nonatomic) bool hasPreferredPlaybackRate;
 @property (nonatomic, readonly) bool hasRadioStationHash;
 @property (nonatomic) bool hasRadioStationIdentifier;
 @property (nonatomic, readonly) bool hasRadioStationName;
@@ -68,6 +71,7 @@
 @property (nonatomic) bool isExplicitTrack;
 @property (nonatomic) bool isMusicApp;
 @property (nonatomic) float playbackRate;
+@property (nonatomic) float preferredPlaybackRate;
 @property (nonatomic, retain) NSString *radioStationHash;
 @property (nonatomic) long long radioStationIdentifier;
 @property (nonatomic, retain) NSString *radioStationName;
@@ -100,6 +104,7 @@
 - (bool)hasIsExplicitTrack;
 - (bool)hasIsMusicApp;
 - (bool)hasPlaybackRate;
+- (bool)hasPreferredPlaybackRate;
 - (bool)hasRadioStationHash;
 - (bool)hasRadioStationIdentifier;
 - (bool)hasRadioStationName;
@@ -117,6 +122,7 @@
 - (bool)isMusicApp;
 - (void)mergeFrom:(id)arg1;
 - (float)playbackRate;
+- (float)preferredPlaybackRate;
 - (id)radioStationHash;
 - (long long)radioStationIdentifier;
 - (id)radioStationName;
@@ -135,6 +141,7 @@
 - (void)setHasIsExplicitTrack:(bool)arg1;
 - (void)setHasIsMusicApp:(bool)arg1;
 - (void)setHasPlaybackRate:(bool)arg1;
+- (void)setHasPreferredPlaybackRate:(bool)arg1;
 - (void)setHasRadioStationIdentifier:(bool)arg1;
 - (void)setHasRepeatMode:(bool)arg1;
 - (void)setHasShuffleMode:(bool)arg1;
@@ -146,6 +153,7 @@
 - (void)setIsExplicitTrack:(bool)arg1;
 - (void)setIsMusicApp:(bool)arg1;
 - (void)setPlaybackRate:(float)arg1;
+- (void)setPreferredPlaybackRate:(float)arg1;
 - (void)setRadioStationHash:(id)arg1;
 - (void)setRadioStationIdentifier:(long long)arg1;
 - (void)setRadioStationName:(id)arg1;

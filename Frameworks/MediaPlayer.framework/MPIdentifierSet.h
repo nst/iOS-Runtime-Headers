@@ -6,6 +6,7 @@
     NSString * _cloudUniversalLibraryID;
     NSString * _contentItemID;
     long long  _deviceLibraryPersistentID;
+    NSArray * _formerStoreAdamIDs;
     NSString * _globalPlaylistID;
     long long  _homeSharingLibraryID;
     NSString * _informalMediaClipID;
@@ -28,8 +29,10 @@
 @property (nonatomic, copy) NSString *cloudUniversalLibraryID;
 @property (nonatomic, copy) NSString *contentItemID;
 @property (nonatomic) long long deviceLibraryPersistentID;
+@property (nonatomic, copy) NSArray *formerStoreAdamIDs;
 @property (nonatomic, copy) NSString *globalPlaylistID;
 @property (nonatomic) long long homeSharingLibraryID;
+@property (nonatomic, readonly) NSString *humanDescription;
 @property (nonatomic, copy) NSString *informalMediaClipID;
 @property (nonatomic, copy) NSString *informalStaticAssetID;
 @property (nonatomic, copy) NSString *lyricsID;
@@ -50,7 +53,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)appendIdentifiersToDescription:(id)arg1 withIdentifiersPrefix:(id)arg2;
 - (id)cloudUniversalLibraryID;
 - (id)contentItemID;
 - (id)copyWithBlock:(id /* block */)arg1;
@@ -58,10 +60,13 @@
 - (id)description;
 - (long long)deviceLibraryPersistentID;
 - (void)encodeWithCoder:(id)arg1;
+- (id)formerStoreAdamIDs;
 - (id)globalPlaylistID;
 - (bool)hasCommonIdentifierWithIdentifierSet:(id)arg1;
 - (unsigned long long)hash;
 - (long long)homeSharingLibraryID;
+- (id)humanDescription;
+- (id)identifierDescriptions;
 - (id)informalMediaClipID;
 - (id)informalStaticAssetID;
 - (id)initWithBlock:(id /* block */)arg1;
@@ -74,6 +79,7 @@
 - (void)setCloudUniversalLibraryID:(id)arg1;
 - (void)setContentItemID:(id)arg1;
 - (void)setDeviceLibraryPersistentID:(long long)arg1;
+- (void)setFormerStoreAdamIDs:(id)arg1;
 - (void)setGlobalPlaylistID:(id)arg1;
 - (void)setHomeSharingLibraryID:(long long)arg1;
 - (void)setInformalMediaClipID:(id)arg1;

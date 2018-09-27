@@ -6,6 +6,7 @@
     bool  _activateCalled;
     long long  _defaultDuration;
     bool  _invalidateCalled;
+    bool  _runningAsCarry;
     NSDate * _syncMaxDate;
     NSDate * _syncRequestDate;
     NSObject<OS_dispatch_source> * _syncTimer;
@@ -17,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)_activate;
 - (void)_invalidate;
+- (void)_logDashboardWatchSyncRequestWithIntervalFromStart:(double)arg1 remainingIntervalToWait:(double)arg2 intervalToMaxWait:(double)arg3;
 - (void)_requestToDismissUIHandler:(id /* block */)arg1;
 - (void)_requestToShowUIWithHandler:(id /* block */)arg1;
 - (void)_sendUISyncDate:(id)arg1;
@@ -28,6 +30,7 @@
 - (id)exportedInterface;
 - (void)invalidate;
 - (id)machServiceName;
+- (id)millisecondsFromTimeInterval:(double)arg1;
 - (void)onqueue_connectionEstablished;
 - (void)onqueue_connectionInterrupted;
 - (void)onqueue_connectionInvalidated;

@@ -16,8 +16,10 @@
 - (void)_setApplets:(id)arg1;
 - (bool)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3;
 - (bool)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3 error:(id*)arg4;
+- (bool)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3 expressInfo:(id)arg4 error:(id*)arg5;
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
+- (id)checkExpressAppletCompatibility:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (bool)deleteAllApplets:(bool)arg1;
 - (bool)deleteAllApplets:(bool)arg1 error:(id*)arg2;
@@ -39,6 +41,7 @@
 - (id)getAttackCounterLogForSEID:(id)arg1 error:(id*)arg2;
 - (bool)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2;
 - (bool)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2 error:(id*)arg3;
+- (id)getOSUpdateLog;
 - (id)getSignedPlatformDataForSeid:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)performPeerPaymentEnrollment:(id)arg1 error:(id*)arg2;

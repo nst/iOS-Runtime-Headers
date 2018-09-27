@@ -10,6 +10,7 @@
     NSMutableDictionary * _bulletins;
     BLTClientReplyTimeoutManager * _clientReplyTimeoutManager;
     BLTRemoteGizmoClient * _gizmoConnection;
+    BLTGizmoLegacyMap * _gizmoLegacyMap;
     NSMutableSet * _lockScreenFeed;
     NSMutableSet * _noticesFeed;
     NSMutableDictionary * _pendingBulletinUpdates;
@@ -31,6 +32,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BLTRemoteGizmoClient *gizmoConnection;
+@property (nonatomic, retain) BLTGizmoLegacyMap *gizmoLegacyMap;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isStandaloneTestModeEnabled;
 @property (nonatomic, retain) NSMutableSet *lockScreenFeed;
@@ -53,6 +55,7 @@
 - (id)_bulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (bool)_enqueuBulletinUpdate:(unsigned long long)arg1 bulletin:(id)arg2 feed:(unsigned long long)arg3;
 - (void)_handleAddBulletin:(id)arg1 feed:(unsigned long long)arg2 shouldPlayLightsAndSirens:(bool)arg3 performedWithSuccess:(bool)arg4 sendAttemptTime:(id)arg5 connectionStatus:(unsigned long long)arg6 isGizmoReady:(bool)arg7 shouldSendReplyIfNeeded:(bool)arg8 replyToken:(id)arg9;
+- (void)_handleAllSyncComplete;
 - (void)_handleDidPlayLightsAndSirens:(bool)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 finalReply:(bool)arg4 replyToken:(id)arg5;
 - (void)_handleDidPlayLightsAndSirens:(bool)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 fromGizmo:(bool)arg6 finalReply:(bool)arg7 replyToken:(id)arg8;
 - (void)_handleInitialSyncStateCompleteChanged:(id)arg1;
@@ -62,20 +65,21 @@
 - (void)_notifyGizmoOfCancelBulletin:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned long long)arg3 withBulletinDate:(id)arg4;
 - (id)_obsoletionDateRelativeToNow;
 - (void)_performModifyBulletin:(id)arg1 forFeed:(unsigned long long)arg2;
-- (void)_performPendingBulletinUpdatesForBulletinID:(id)arg1;
+- (void)_performNextPendingBulletinUpdateForBulletinID:(id)arg1;
 - (void)_performRemoveBulletin:(id)arg1 forFeed:(unsigned long long)arg2;
 - (void)_performSync;
 - (void)_pingSubscriberWithBulletin:(id)arg1 ack:(id /* block */)arg2;
 - (void)_postWillSendBulletinToGizmoNotificationForBulletin:(id)arg1;
+- (void)_registerForPairedDeviceBuildChanges;
 - (void)_reloadBulletinsWithCompletion:(id /* block */)arg1;
 - (void)_rememberBulletin:(id)arg1 forFeed:(unsigned long long)arg2;
 - (void)_removeTranscodedAttachmentIfNeededForBulletin:(id)arg1;
 - (id)_replyTokenForSectionID:(id)arg1 publisherMatchID:(id)arg2;
 - (void)_sendCurrentBulletinIdentifiers;
-- (void)_sendCurrentBulletinList;
-- (void)_sendPBBulletin:(id)arg1 forBulletin:(id)arg2 feed:(unsigned long long)arg3 updateType:(unsigned long long)arg4 playLightsAndSirens:(bool)arg5 shouldSendReplyIfNeeded:(bool)arg6 completion:(id /* block */)arg7;
+- (void)_sendPBBulletin:(id)arg1 forBulletin:(id)arg2 feed:(unsigned long long)arg3 updateType:(unsigned long long)arg4 playLightsAndSirens:(bool)arg5 shouldSendReplyIfNeeded:(bool)arg6;
 - (void)_setupBBObserver;
 - (void)_startBulletinListening;
+- (void)_subscriberWillAllowBulletin:(id)arg1 completion:(id /* block */)arg2;
 - (bool)_willNanoPresent:(unsigned long long)arg1;
 - (bool)_willNanoPresent:(unsigned long long)arg1 forBulletin:(id)arg2 feed:(unsigned long long)arg3;
 - (id)attachmentHashCache;
@@ -92,6 +96,7 @@
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3 completion:(id /* block */)arg4;
 - (id)gizmoConnection;
+- (id)gizmoLegacyMap;
 - (void)handleAction:(id)arg1;
 - (void)handleDidPlayLightsAndSirens:(bool)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 replyToken:(id)arg6;
 - (id)init;
@@ -125,6 +130,7 @@
 - (void)setBulletins:(id)arg1;
 - (void)setClientReplyTimeoutManager:(id)arg1;
 - (void)setGizmoConnection:(id)arg1;
+- (void)setGizmoLegacyMap:(id)arg1;
 - (void)setLockScreenFeed:(id)arg1;
 - (void)setNoticesFeed:(id)arg1;
 - (void)setPendingBulletinUpdates:(id)arg1;

@@ -20,7 +20,7 @@
 - (void)_loadData:(id)arg1 options:(id)arg2 uploader:(id)arg3 label:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_loadMDLTexture:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_newAsyncTextureWithNames:(id)arg1 scaleFactor:(double)arg2 displayGamut:(long long)arg3 bundle:(id)arg4 options:(id)arg5 completionHandler:(id /* block */)arg6;
-- (id)_newAsyncTexturesFromTXRTextures:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)_newSyncTexturesFromTXRTextures:(id)arg1 labels:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)dealloc;
 - (id)device;
 - (id)initWithDevice:(id)arg1;

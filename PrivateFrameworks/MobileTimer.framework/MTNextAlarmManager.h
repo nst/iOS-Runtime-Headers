@@ -2,29 +2,28 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTNextAlarmManager : NSObject <UNSNotificationSchedulerDelegate> {
+@interface MTNextAlarmManager : NSObject {
+    MTAlarmManager * _alarmManager;
     NSSet * _nextAlarms;
-    UNSNotificationScheduler * _scheduler;
+    <NAScheduler> * _serializer;
     id /* block */  _updateHandler;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MTAlarmManager *alarmManager;
 @property (nonatomic, retain) NSSet *nextAlarms;
-@property (nonatomic, retain) UNSNotificationScheduler *scheduler;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) <NAScheduler> *serializer;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void).cxx_destruct;
-- (void)calculateNextAlarmsFromNotifications:(id)arg1;
+- (void)_handleAlarmsDidChange;
+- (id)alarmManager;
+- (void)calculateNextAlarms;
 - (id)init;
-- (id)initWithNotificationScheduler:(id)arg1;
 - (id)nextAlarms;
-- (void)notificationScheduler:(id)arg1 didChangeScheduledLocalNotifications:(id)arg2;
-- (id)scheduler;
+- (id)serializer;
+- (void)setAlarmManager:(id)arg1;
 - (void)setNextAlarms:(id)arg1;
-- (void)setScheduler:(id)arg1;
+- (void)setSerializer:(id)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id /* block */)updateHandler;
 

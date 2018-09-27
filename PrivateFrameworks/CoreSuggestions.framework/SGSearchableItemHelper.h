@@ -8,7 +8,7 @@
 + (id)deserializeAttributes:(id)arg1 andBody:(id)arg2;
 + (id)deserializeAttributesAndBody:(id)arg1;
 + (id)messageIdHeaderValues:(id)arg1;
-+ (bool)searchableItemIsEligibleForHarvesting:(id)arg1 isReimported:(bool)arg2;
++ (bool)searchableItemIsEligibleForHarvesting:(id)arg1 eligibleExceptForAge:(bool*)arg2;
 + (bool)searchableItemIsEmpty:(id)arg1;
 + (bool)searchableItemIsFromSupportedAccount:(id)arg1;
 + (bool)searchableItemIsInDrafts:(id)arg1;

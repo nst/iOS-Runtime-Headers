@@ -4,6 +4,7 @@
 
 @interface ASDSoftwareUpdate : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _blockedBy;
+    bool  _downloaded;
     NSDate * _installDate;
     NSDictionary * _metrics;
     bool  _perDevice;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSArray *blockedBy;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSString *buyParams;
+@property (getter=isDownloaded, nonatomic) bool downloaded;
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, copy) NSDate *installDate;
 @property (nonatomic, copy) NSDictionary *metrics;
@@ -42,6 +44,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUpdateDictionary:(id)arg1;
 - (id)installDate;
+- (bool)isDownloaded;
 - (bool)isPerDevice;
 - (bool)isProfileValidated;
 - (id)metrics;
@@ -50,6 +53,7 @@
 - (long long)rawUpdateState;
 - (id)releaseDate;
 - (void)setBlockedBy:(id)arg1;
+- (void)setDownloaded:(bool)arg1;
 - (void)setInstallDate:(id)arg1;
 - (void)setMetrics:(id)arg1;
 - (void)setPerDevice:(bool)arg1;

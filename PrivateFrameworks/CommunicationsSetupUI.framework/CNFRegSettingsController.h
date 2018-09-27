@@ -68,6 +68,7 @@
 - (void)_showAliasValidationError:(id)arg1;
 - (void)_showAuthKitSignInIfNecessary;
 - (void)_showLocaleChooserWithAccount:(id)arg1;
+- (void)_showPrivacySheet:(id)arg1;
 - (void)_showSignInController;
 - (void)_showViewAccountControllerForAccount:(id)arg1;
 - (id)_specifierIdentifierForAccount:(id)arg1;
@@ -85,8 +86,11 @@
 - (id)aliasWithIdentifier:(id)arg1;
 - (bool)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)bundle;
+- (id)callerIDFooterText;
+- (id)callerIDWithURLFooterText;
 - (id)callerIdAliasSpecifiers;
 - (void)clearAccountCache;
+- (void)configureCallerIDGroupSpecifier:(id)arg1;
 - (id)createSpecifierForAccount:(id)arg1;
 - (id)createSpecifierForAlias:(id)arg1;
 - (id)createSpecifierForCallerIdAlias:(id)arg1;
@@ -105,6 +109,7 @@
 - (void)handleCallStatusChanged;
 - (long long)indexOfLastSpecifierInGroup:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (bool)isiMessageCallerIDNonDefault;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (id)logName;
 - (bool)popToFirstRunControllerAnimated:(bool)arg1;
@@ -122,6 +127,7 @@
 - (void)refreshFaceTimeSettingsAnimated:(bool)arg1;
 - (void)refreshFaceTimeSettingsWithDelayAnimated:(bool)arg1;
 - (void)refreshReceiveRelayCallsSettingsAnimated:(bool)arg1;
+- (void)refreshiMessageCallerIDExtraText:(bool)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setCallerId:(id)arg1;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;
@@ -132,6 +138,7 @@
 - (bool)shouldReloadSpecifiersOnResume;
 - (bool)shouldShowBlacklistSettings;
 - (bool)shouldShowCallDirectorySettingsBundleSpecifiers;
+- (bool)shouldShowExtraTextForiMessageCallerID;
 - (bool)shouldShowFaceTimePhotosSpecifiers;
 - (bool)shouldShowICSSettingsBundleSpecifiers;
 - (bool)shouldShowReceiveRelayCalls;

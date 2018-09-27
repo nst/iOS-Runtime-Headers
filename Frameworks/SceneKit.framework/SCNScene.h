@@ -3,6 +3,7 @@
  */
 
 @interface SCNScene : NSObject <DebugHierarchyObject_Fallback, NSSecureCoding> {
+    bool  _allowsDefaultLightingEnvironmentFallback;
     SCNAuthoringEnvironment * _authoringEnvironment;
     SCNMaterialProperty * _background;
     SCNMaterialProperty * _environment;
@@ -58,13 +59,17 @@
 + (bool)supportsSecureCoding;
 
 - (const void*)__CFObject;
+- (bool)_allowsDefaultLightingEnvironmentFallback;
+- (void)_clearSceneRef;
 - (void)_customDecodingOfSCNScene:(id)arg1;
 - (void)_customEncodingOfSCNScene:(id)arg1;
 - (void)_didDecodeSCNScene:(id)arg1;
 - (void)_didEncodeSCNScene:(id)arg1;
+- (void)_dumpToDisk;
 - (id)_exportAsMovieOperationWithDestinationURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 attributes:(id)arg3 delegate:(id)arg4 didEndSelector:(SEL)arg5 userInfo:(void*)arg6;
 - (id)_nodeWithIndexPath:(id)arg1;
 - (id)_physicsWorldCreateIfNeeded:(bool)arg1;
+- (void)_prettifyForPreview;
 - (void)_resetSceneTimeRange;
 - (void)_scaleSceneBy:(double)arg1;
 - (id)_scenes;
@@ -125,6 +130,7 @@
 - (void)setStartTime:(double)arg1;
 - (void)setUpAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)set_allowsDefaultLightingEnvironmentFallback:(bool)arg1;
 - (double)startTime;
 - (void)unlock;
 - (struct SCNVector3 { float x1; float x2; float x3; })upAxis;

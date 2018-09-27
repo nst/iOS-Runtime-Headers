@@ -3,32 +3,48 @@
  */
 
 @interface PXDiagnosticsSettings : PXSettings {
+    bool  _enableCompleteMyMomentService;
     bool  _enableContextualGesture;
     bool  _enableGenericService;
     bool  _enableMemoriesRelatedService;
+    bool  _enableScrollService;
     bool  _enableTitleFontService;
+    long long  _scrollIterations;
+    double  _scrollSpeed;
     bool  _simulateLaunchedToTest;
 }
 
+@property (nonatomic) bool enableCompleteMyMomentService;
 @property (nonatomic) bool enableContextualGesture;
 @property (nonatomic) bool enableGenericService;
 @property (nonatomic) bool enableMemoriesRelatedService;
+@property (nonatomic) bool enableScrollService;
 @property (nonatomic) bool enableTitleFontService;
+@property (nonatomic) long long scrollIterations;
+@property (nonatomic) double scrollSpeed;
 @property (nonatomic) bool simulateLaunchedToTest;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
+- (bool)enableCompleteMyMomentService;
 - (bool)enableContextualGesture;
 - (bool)enableGenericService;
 - (bool)enableMemoriesRelatedService;
+- (bool)enableScrollService;
 - (bool)enableTitleFontService;
 - (id)parentSettings;
+- (long long)scrollIterations;
+- (double)scrollSpeed;
 - (void)setDefaultValues;
+- (void)setEnableCompleteMyMomentService:(bool)arg1;
 - (void)setEnableContextualGesture:(bool)arg1;
 - (void)setEnableGenericService:(bool)arg1;
 - (void)setEnableMemoriesRelatedService:(bool)arg1;
+- (void)setEnableScrollService:(bool)arg1;
 - (void)setEnableTitleFontService:(bool)arg1;
+- (void)setScrollIterations:(long long)arg1;
+- (void)setScrollSpeed:(double)arg1;
 - (void)setSimulateLaunchedToTest:(bool)arg1;
 - (bool)simulateLaunchedToTest;
 

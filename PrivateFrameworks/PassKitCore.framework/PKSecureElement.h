@@ -11,6 +11,7 @@
     NSLock * _observersLock;
     id /* block */  _pairingChangeHandler;
     NSMutableArray * _prioritySessionAccessHandlers;
+    bool  _registeredForHardwareUpdates;
     NSObject<OS_dispatch_queue> * _replyQueue;
     NFSecureElement * _secureElement;
     NSArray * _secureElementArray;
@@ -42,9 +43,14 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (bool)hardwareSupportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 + (bool)hardwareSupportsExpressMode:(id)arg1;
++ (bool)isInFailForward;
 + (id)primarySecureElementIdentifier;
 + (id)secureElementIdentifiers;
++ (id)sharedSecureElement;
++ (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
++ (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1 byHardware:(bool*)arg2;
 + (bool)supportsExpressMode:(id)arg1;
 + (bool)supportsExpressMode:(id)arg1 byHardware:(bool*)arg2;
 
@@ -53,11 +59,13 @@
 - (void)_accessSecureElementManagerSessionWithPriority:(bool)arg1 handler:(id /* block */)arg2;
 - (void)_executeSecureElementSessionHandlersWithPriority:(bool)arg1 session:(id)arg2;
 - (void)_registerPairingChangeHandler;
+- (void)_updateHardwareManagerListener;
 - (void)accessPrioritySecureElementManagerSessionWithHandler:(id /* block */)arg1;
 - (void)accessSecureElementManagerSessionWithHandler:(id /* block */)arg1;
 - (void)allAppletsWithCompletion:(id /* block */)arg1;
 - (void)appletWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)connectToServerWithPushTopic:(id)arg1 completion:(id /* block */)arg2;
+- (void)contactlessPaymentPassesAvailableDidChange;
 - (void)dealloc;
 - (unsigned long long)hardwareVersion;
 - (bool)hasRegistrationInformation;

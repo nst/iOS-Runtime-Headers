@@ -16,6 +16,7 @@
 
 + (id)_queue;
 
+- (void).cxx_destruct;
 - (long long)assertionState;
 - (id)bundleID;
 - (void)dealloc;

@@ -6,7 +6,10 @@
 
 @property (readonly) MTLPipelineBufferDescriptorArray *buffers;
 @property (nonatomic, retain) <MTLFunction> *computeFunction;
+@property (nonatomic) bool forceResourceIndex;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned long long maxTotalThreadsPerThreadgroup;
+@property (nonatomic) unsigned long long resourceIndex;
 @property (nonatomic, copy) MTLStageInputOutputDescriptor *stageInputDescriptor;
 @property (nonatomic) bool threadGroupSizeIsMultipleOfThreadExecutionWidth;
 

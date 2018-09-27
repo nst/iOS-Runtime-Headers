@@ -18,10 +18,10 @@
 
 + (id)parametersForSpecification:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_configureCopy:(id)arg1;
 - (id)clientSettings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

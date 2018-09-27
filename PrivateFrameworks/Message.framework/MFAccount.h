@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFAccount : NSObject <MFPubliclyDescribable> {
+@interface MFAccount : NSObject <EMAccount, MFPubliclyDescribable> {
     ACAccount * _persistentAccount;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
@@ -16,12 +16,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *displayName;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSString *hostname;
-@property (readonly) NSString *identifier;
+@property (nonatomic, copy) NSString *hostname;
+@property (readonly, copy) NSString *identifier;
 @property (readonly) NSString *managedTag;
 @property (nonatomic, readonly, copy) NSString *mf_publicDescription;
 @property (readonly) ACAccount *parentAccount;
 @property (readonly) NSString *parentAccountIdentifier;
+@property (nonatomic, copy) NSString *password;
 @property (readonly) ACAccount *persistentAccount;
 @property (readonly) NSDictionary *properties;
 @property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
@@ -29,7 +30,7 @@
 @property (readonly) NSString *syncStoreIdentifier;
 @property (readonly) NSString *type;
 @property (readonly) NSString *uniqueId;
-@property (nonatomic, retain) NSString *username;
+@property (retain) NSString *username;
 
 + (id)_accountClass;
 + (id)_basicPropertyForKey:(id)arg1 persistentAccount:(id)arg2;
@@ -83,6 +84,7 @@
 - (id)alternateConnectionSettings;
 - (void)applySettingsAsDefault:(id)arg1;
 - (id)authenticatedConnection;
+- (bool)canAuthenticateWithCurrentCredentials;
 - (bool)canGoOffline;
 - (id)certUIService;
 - (id)clientCertificates;
@@ -104,6 +106,7 @@
 - (bool)enableAccount;
 - (id)enabledDataclasses;
 - (bool)fetchTokensIfNecessary:(id*)arg1;
+- (bool)hasPasswordCredential;
 - (unsigned long long)hash;
 - (id)hostname;
 - (id)identifier;
@@ -122,6 +125,7 @@
 - (id)mf_publicDescription;
 - (id)missingPasswordErrorWithTitle:(id)arg1;
 - (id)nameForMailboxUid:(id)arg1;
+- (id)networkAccountIdentifier;
 - (id)oauth2Token;
 - (id)parentAccount;
 - (id)parentAccountIdentifier;
@@ -169,6 +173,7 @@
 - (id)sourceApplicationBundleIdentifier;
 - (bool)supportsMailDrop;
 - (id)syncStoreIdentifier;
+- (id)systemAccount;
 - (id)type;
 - (id)uniqueId;
 - (id)username;

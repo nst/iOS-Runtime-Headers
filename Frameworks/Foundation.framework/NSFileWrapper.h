@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFileWrapper : NSObject <NSCoding> {
+@interface NSFileWrapper : NSObject <NSSecureCoding> {
     id  _contents;
     NSDictionary * _fileAttributes;
     NSString * _fileName;
@@ -34,6 +34,7 @@
 + (id)_temporaryDirectoryURLForWritingToURL:(id)arg1 error:(id*)arg2;
 + (void)_writeAttributes:(id)arg1 toURL:(id)arg2;
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (id)_addChild:(id)arg1 forUniqueFileName:(id)arg2;
 - (void)_addParent:(id)arg1;

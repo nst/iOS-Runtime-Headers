@@ -71,11 +71,6 @@
 - (id)systemAppServerUrl;
 - (bool)userInitiatedDownload;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (long long)_contentVersion;
-- (long long)_formatVersion;
-
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
 - (id)_compatibilityVersion;
@@ -96,6 +91,11 @@
 // Image: /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
 
 - (id)laterAsset:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (long long)_contentVersion;
+- (long long)_formatVersion;
 
 // Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
 

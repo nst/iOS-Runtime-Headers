@@ -5,7 +5,7 @@
 @interface HMDCameraSnapshotSender : HMFObject <HMDCameraPowerAssertionProtocol, HMFLogging> {
     HMDAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    NSString * _destinationID;
+    HMDDevice * _device;
     HMDCameraSessionID * _sessionID;
     NSUUID * _uniqueIdentifier;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *destinationID;
+@property (nonatomic, readonly) HMDDevice *device;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
@@ -28,8 +28,8 @@
 - (void)_sendImageSendFailure:(id)arg1;
 - (id)accessory;
 - (id)delegateQueue;
-- (id)destinationID;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6;
+- (id)device;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 device:(id)arg3 accessory:(id)arg4 delegateQueue:(id)arg5 uniqueIdentifier:(id)arg6;
 - (id)logIdentifier;
 - (id)sessionID;
 - (id)uniqueIdentifier;

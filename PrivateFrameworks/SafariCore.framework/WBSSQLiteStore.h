@@ -10,6 +10,7 @@
     NSURL * _databaseURL;
     <WBSSQLiteStoreDelegate> * _delegate;
     bool  _fallBackToMemoryStoreIfError;
+    long long  _protectionType;
 }
 
 @property (nonatomic, readonly) WBSSQLiteDatabase *database;
@@ -25,6 +26,7 @@
 - (int)_createFreshDatabaseSchema;
 - (int)_currentSchemaVersion;
 - (id)_databaseCoordinationLockURLForDatabaseURL:(id)arg1;
+- (void)_databaseWillClose;
 - (void)_handleOpenFailureWithStatus:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (bool)_isDatabaseLocked;
 - (int)_migrateToCurrentSchemaVersionIfNecessary;
@@ -40,6 +42,7 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 protectionType:(long long)arg2;
 - (bool)isOpen;
 - (void)openAndCheckIntegrity:(bool)arg1 createIfNeeded:(bool)arg2 fallBackToMemoryStoreIfError:(bool)arg3 lockingPolicy:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (void)savePendingChangesBeforeTermination;

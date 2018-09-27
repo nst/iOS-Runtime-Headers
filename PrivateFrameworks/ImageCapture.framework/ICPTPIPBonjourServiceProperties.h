@@ -39,7 +39,6 @@
 - (struct os_unfair_lock_s { unsigned int x1; })clientsUnfairLock;
 - (void)dealloc;
 - (id)delegate;
-- (void)finalize;
 - (id)hostGUID;
 - (unsigned int)hostMaxConnections;
 - (id)hostName;

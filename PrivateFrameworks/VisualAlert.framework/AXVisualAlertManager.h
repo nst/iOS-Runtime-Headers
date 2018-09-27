@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXVisualAlertManager : NSObject {
+@interface AXVisualAlertManager : NSObject <DNDStateUpdateListener> {
     NSDictionary * _activePattern;
     unsigned long long  _activePatternCursor;
     unsigned long long  _alertTypes;
     AXCameraTorchManagerBackgroundAdapter * _asyncManagerAdapter;
     NSMutableArray * _bulletins;
     bool  _captureSessionRunning;
-    AXNotificationHandler * _deviceLockStateChangedNotificationHandler;
+    VISAXNotificationHandler * _deviceLockStateChangedNotificationHandler;
     bool  _isDeviceLocked;
     bool  _isQuietModeEnabled;
     bool  _isRingerSwitchSilent;
@@ -24,9 +24,10 @@
     bool  _torchDeviceOn;
     bool  _torchDeviceOpen;
     AXDispatchTimer * _torchForceShutdownTimer;
-    AXNotificationHandler * _torchInControlCenterWasEnabledNotificationHandler;
+    VISAXNotificationHandler * _torchInControlCenterWasEnabledNotificationHandler;
     unsigned long long  _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
     bool  _videoConferenceCallRinging;
+    DNDStateService * disturbanceService;
 }
 
 @property (setter=_setActivePattern:, nonatomic, retain) NSDictionary *_activePattern;
@@ -35,7 +36,12 @@
 @property (getter=_isTorchDeviceOn, nonatomic, readonly) bool _torchDeviceOn;
 @property (getter=_isTorchDeviceOpen, nonatomic, readonly) bool _torchDeviceOpen;
 @property (setter=_setTypeToUseForVisualAlertAfterCaptureSessionStopsRunning:, nonatomic) unsigned long long _typeToUseForVisualAlertAfterCaptureSessionStopsRunning;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) DNDStateService *disturbanceService;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int ringerStateNotifyToken;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 + (id)sharedVisualAlertManager;
@@ -91,12 +97,15 @@
 - (void)addBulletin:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)disturbanceService;
 - (id)existingBulletinForBulletin:(id)arg1;
 - (id)init;
 - (void)removeBulletin:(id)arg1;
 - (int)ringerStateNotifyToken;
+- (void)setDisturbanceService:(id)arg1;
 - (void)setRingerStateNotifyToken:(int)arg1;
 - (void)startForAlertTypes:(unsigned long long)arg1 cameraTorchManager:(id)arg2;
+- (void)stateService:(id)arg1 didReceiveDoNotDisturbStateUpdate:(id)arg2;
 - (void)stop;
 
 @end

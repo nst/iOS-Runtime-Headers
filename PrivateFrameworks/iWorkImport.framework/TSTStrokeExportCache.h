@@ -23,6 +23,6 @@
 - (void)setRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (void)setStroke:(id)arg1;
 - (id)stroke;
-- (id)strokeAtIndex:(unsigned short)arg1;
+- (id)strokeAtIndex:(unsigned int)arg1;
 
 @end

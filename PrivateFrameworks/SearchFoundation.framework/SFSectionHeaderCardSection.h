@@ -44,6 +44,8 @@
 @property (nonatomic, retain) SFRichText *text;
 @property (nonatomic, copy) NSString *type;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -77,5 +79,9 @@
 - (void)setType:(id)arg1;
 - (id)text;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

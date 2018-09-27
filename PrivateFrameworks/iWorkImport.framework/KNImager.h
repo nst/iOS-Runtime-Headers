@@ -38,6 +38,8 @@
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
 - (bool)isInfoAKeynoteMasterObject:(id)arg1;
+- (void)p_prepareShapeInfoStroke:(id)arg1 atScaleFactor:(double)arg2 finalRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (void)p_prepareStyledInfoStyle:(id)arg1;
 - (bool)p_requiresModifiedStrokeForDrawable:(id)arg1 atScaleFactor:(double)arg2;
 - (double)p_sizeMultiplierForDrawable:(id)arg1;
 - (id)p_strokeForShapeInfo:(id)arg1;

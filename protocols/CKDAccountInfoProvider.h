@@ -6,7 +6,6 @@
 @required
 
 - (bool)accountWantsPushRegistration;
-- (NSBundle *)applicationBundle;
 - (NSURL *)baseURLForServerType:(long long)arg1 partitionType:(long long)arg2;
 - (NSString *)bundleID;
 - (bool)canAccessAccount;
@@ -16,6 +15,7 @@
 - (CKContainerID *)containerID;
 - (NSString *)containerScopedUserID;
 - (NSString *)deviceName;
+- (NSString *)displayedHostname;
 - (NSString *)dsid;
 - (CKAccountOverrideInfo *)fakeAccountInfo;
 - (void)fetchConfigurationForOperation:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: CKDOperation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CKDServerConfiguration *, NSError *, void*
@@ -38,6 +38,7 @@
 - (void)renewiCloudAuthTokenWithReason:(void *)arg1 shouldForce:(void *)arg2 failedToken:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: NSString *, bool, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)resetMescalSession;
 - (NSString *)serverPreferredPushEnvironment;
+- (NSString *)sharingURLHostname;
 - (bool)shouldFailAllTasks;
 - (NSString *)trafficContainerIdentifier;
 

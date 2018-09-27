@@ -14,6 +14,7 @@
     NSString * _path;
 }
 
++ (bool)hasEntries;
 + (void)initialize;
 + (id)journalForMailbox:(id)arg1;
 + (id)legacyJournal;

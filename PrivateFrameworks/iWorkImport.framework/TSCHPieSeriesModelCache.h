@@ -66,7 +66,6 @@
 - (float)effectiveWedgeExplosion;
 - (double)endAngle;
 - (bool)groupedShadow;
-- (id)init;
 - (id)initWithPrior:(id)arg1 orChartModel:(id)arg2 forSeries:(unsigned long long)arg3;
 - (float)labelExplosion;
 - (id)labelString;

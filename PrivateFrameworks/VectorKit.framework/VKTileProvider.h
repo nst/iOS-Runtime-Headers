@@ -7,6 +7,7 @@
     double  _contentScale;
     <VKMapLayer> * _debugLayer;
     GEOTileKeyList * _debugLayerKeys;
+    bool  _enableIntegrityCheck;
     _VKTileProviderTimerTarget * _evaluationTarget;
     VKTimer * _evaluationTimer;
     bool  _exclusionAreaVisible;
@@ -23,6 +24,7 @@
     bool  _finishedLoadingOptionalLayers;
     bool  _hasFailedTile;
     NSArray * _holes;
+    double  _integrityInternval;
     VKTileKeyList * _keysInView;
     struct VKCameraState { 
         struct RigidTransform<double> { 
@@ -46,12 +48,15 @@
     }  _lastCanvasSize;
     double  _lastFetchTime;
     double  _lastHoleLogTime;
+    double  _lastIntegrityCheckLog;
     float  _lastMidDisplayZoomLevel;
     double  _lastSelectTime;
     float  _loadingProgress;
     NSLocale * _locale;
     NSMutableSet * _lostTiles;
     GEOResourceManifestConfiguration * _manifestConfiguration;
+    double  _maxTimeInLoadingState;
+    double  _minTimeInLoadingState;
     int  _mode;
     VKTileKeyList * _neighborKeys;
     unsigned long long  _neighborMode;
@@ -77,6 +82,7 @@
         struct __shared_weak_count {} *__cntrl_; 
     }  _taskContext;
     VKTileCache * _tilePool;
+    bool  _tileProviderHasBadTiles;
     unsigned long long  _tileReserveLimit;
     struct unique_ptr<md::TileSelector, std::__1::default_delete<md::TileSelector> > { 
         struct __compressed_pair<md::TileSelector *, std::__1::default_delete<md::TileSelector> > { 
@@ -123,6 +129,7 @@
 - (void)_fillHoles:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (void)_prefetchTiles;
 - (void)_resizeCache;
+- (unsigned long long)_tileStateForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 forLayer:(unsigned char)arg2;
 - (void)_updateTimers:(int)arg1;
 - (void)bestAccuracyFallbackForHoles:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 previousTiles:(id)arg3;
 - (bool)cache:(id)arg1 willEvictObject:(id)arg2 forKey:(const struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg3;
@@ -130,6 +137,7 @@
 - (void)cancelLoadForMapTile:(id)arg1;
 - (void)cancelLoadingTiles;
 - (void)changeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 toState:(unsigned long long)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
+- (bool)checkMapTileIntegrity:(id)arg1 errors:(id)arg2;
 - (void)clearScene;
 - (id)client;
 - (void)configureTileSelection;
@@ -145,6 +153,7 @@
 - (void)didStopLoadingTilesWithError:(id)arg1;
 - (void)dirtyTile:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 source:(id)arg2;
 - (void)dirtyTilesFromTileSource:(id)arg1;
+- (void)dirtyTilesFromTileSource:(id)arg1 withState:(unsigned long long)arg2;
 - (bool)evaluateNeighborTileForRendering:(id)arg1;
 - (bool)evaluateSelectedTileForRendering:(id)arg1;
 - (unsigned char)fallbackFunction;
@@ -165,6 +174,7 @@
 - (unsigned char)layerForSource:(id)arg1;
 - (float)loadingProgress;
 - (double)lodBias;
+- (void)logIntegrityCheck;
 - (void)logPersistentHoles;
 - (int)mode;
 - (id)neighborKeys;
@@ -210,9 +220,8 @@
 - (void)tileSource:(id)arg1 didFailToLoadTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2 error:(id)arg3;
 - (void)tileSource:(id)arg1 didFetchTile:(id)arg2 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 - (void)tileSource:(id)arg1 dirtyTilesWithinRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg2 level:(long long)arg3;
-- (void)tileSource:(id)arg1 invalidateKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)tileSource:(id)arg1 invalidateKeys:(id)arg2;
-- (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned long long)arg2;
+- (void)tileSource:(id)arg1 invalidateTilesWithStatePredicate:(id /* block */)arg2;
 - (bool)tileSource:(id)arg1 keyIsNeeded:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (long long)tileSource:(id)arg1 overrideForMaximumZoomLevel:(long long)arg2;
 - (void)tileSourcesDidChange;

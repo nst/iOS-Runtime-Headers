@@ -3,6 +3,7 @@
  */
 
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
+    id /* block */  _alertDisappeared;
     int  _alertPriority;
     double  _alertTimeout;
     struct __CFRunLoopTimer { } * _alertTimer;
@@ -16,6 +17,7 @@
     struct __CFDictionary { } * _displayConfigurationDict;
     NSMutableArray * _displayModeStack;
     SCROBrailleEventDispatcher * _eventDispatcher;
+    id /* block */  _eventHandled;
     SCROBrailleDisplayHistory * _history;
     int  _inputAccessMode;
     int  _inputContractionMode;
@@ -35,16 +37,20 @@
     SCROBrailleDisplayManagerStatus * _status;
     NSAttributedString * _statusString;
     SCROBrailleDisplay * _stealthBrailleDisplay;
+    NSAttributedString * _uiEditingCachedString;
     long long  _uiStringCachedLineOffset;
     bool  _wordWrapEnabled;
 }
 
+@property (nonatomic, copy) id /* block */ alertDisappeared;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SCROSBrailleDisplayManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ eventHandled;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) int inputContractionMode;
 @property (nonatomic) bool inputEightDotBraille;
+@property (nonatomic, readonly) SCROBrailleDisplayManagedQueue *managedDisplayQueue;
 @property (nonatomic) unsigned int persistentKeyModifiers;
 @property (readonly) Class superclass;
 @property (nonatomic) bool wordWrapEnabled;
@@ -92,8 +98,8 @@
 - (void)_simulateKeypressHandler:(id)arg1;
 - (void)_stopAlertTimer;
 - (void)_unloadStealthDisplay;
-- (void)_wordWrapEnabledHandler:(id)arg1;
 - (id)aggregatedStatus;
+- (id /* block */)alertDisappeared;
 - (bool)alwaysUsesNemethCodeForTechnicalText;
 - (bool)automaticBrailleTranslation;
 - (void)automaticBrailleTranslationHandler:(id)arg1;
@@ -122,6 +128,7 @@
 - (int)displayMode;
 - (id)driverConfiguration;
 - (void)endUpdates;
+- (id /* block */)eventHandled;
 - (void)exitCurrentDisplayMode;
 - (void)handleEvent:(id)arg1;
 - (bool)hasActiveDisplays;
@@ -135,6 +142,7 @@
 - (bool)lineDescriptorDisplayCallbackEnabled;
 - (void)loadBluetoothDriverWithAddress:(id)arg1;
 - (id)mainAttributedString;
+- (id)managedDisplayQueue;
 - (long long)masterStatusCellIndex;
 - (id)newBrailleDisplayCommandDispatcher;
 - (void)panDisplayLeft:(int)arg1;
@@ -145,12 +153,14 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfBrailleCellRepresentingCharacterAtIndex:(unsigned long long)arg1;
 - (void)removeBluetoothDriverWithAddress:(id)arg1;
 - (void)setAggregatedStatus:(id)arg1;
+- (void)setAlertDisappeared:(id /* block */)arg1;
 - (void)setAlwaysUsesNemethCodeForTechnicalText:(bool)arg1;
 - (void)setAnnouncementsDisplayMode;
 - (void)setAutomaticBrailleTranslationEnabled:(bool)arg1;
 - (void)setContractionMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayInputAccessMode:(int)arg1;
+- (void)setEventHandled:(id /* block */)arg1;
 - (void)setInputContractionMode:(int)arg1;
 - (void)setInputEightDotBraille:(bool)arg1;
 - (void)setKeyboardHelpIsOn:(bool)arg1;
@@ -176,5 +186,6 @@
 - (void)tokenizeString:(id)arg1 intoFormatter:(id)arg2 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
 - (int)virtualStatusAlignment;
 - (bool)wordWrapEnabled;
+- (void)wordWrapEnabledHandler:(id)arg1;
 
 @end

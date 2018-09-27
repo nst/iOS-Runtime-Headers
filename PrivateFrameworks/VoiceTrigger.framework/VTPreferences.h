@@ -11,12 +11,14 @@
 - (id)_VTSATBasePath;
 - (id)_VTSATCachePath;
 - (id)_getSATEnrollmentAudioPathForLanguageCode:(id)arg1;
+- (bool)_isLocalVoiceTriggerAvailable;
 - (bool)_isSATMarkedForMarker:(id)arg1 languageCode:(id)arg2;
 - (id)_languageCode;
 - (id)_localeIdentifier;
 - (void)_setVoiceTriggerEnabled:(bool)arg1;
 - (bool)_storeModeEnabled;
 - (bool)_voiceTriggerEnabled;
+- (id)audioInjectionFilePath;
 - (id)devicesWithVoiceProfileIniCloudForLanguage:(id)arg1;
 - (void)discardAllSATEnrollment;
 - (void)discardSATEnrollmentForLanguageCode:(id)arg1;
@@ -29,7 +31,6 @@
 - (bool)hasExplicitlySetVoiceTriggerEnabled;
 - (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
 - (id)init;
-- (bool)isLocalVoiceTriggerAvailable;
 - (bool)isRemoteVoiceTriggerAvailable;
 - (bool)isSATAvailable;
 - (bool)isSATEnrolledForLanguageCode:(id)arg1;
@@ -50,6 +51,8 @@
 - (void)setVoiceTriggerEnabledWhenChargerConnected:(bool)arg1;
 - (void)setVoiceTriggerEnabledWhenChargerDisconnected:(bool)arg1;
 - (void)synchronize;
+- (bool)useSiriActivationSPIForiOS;
+- (bool)useSiriActivationSPIForwatchOS;
 - (bool)voiceTriggerEnabled;
 - (bool)voiceTriggerEnabledWhenChargerConnected;
 - (bool)voiceTriggerEnabledWhenChargerDisconnected;

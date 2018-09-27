@@ -22,7 +22,7 @@
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) NSString *token;
 
-+ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_activate;

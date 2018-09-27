@@ -48,7 +48,7 @@
 - (void)boostFilePresenterAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)capabilityWhenTryingToReparentItemAtURL:(id)arg1 toNewParent:(id)arg2 reply:(id /* block */)arg3;
 - (oneway void)checkinAskClientIfUsingUbiquity:(bool)arg1;
-- (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id /* block */)arg2;
+- (void)computePurgeableSpaceForAllUrgenciesWithReply:(id /* block */)arg1;
 - (void)copyBulkShareIDsAtURLs:(id)arg1 reply:(id /* block */)arg2;
 - (void)copyCurrentUserIdentifierWithReply:(id /* block */)arg1;
 - (void)copyCurrentUserNameAndDisplayHandleWithReply:(id /* block */)arg1;

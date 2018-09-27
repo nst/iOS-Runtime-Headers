@@ -22,6 +22,8 @@
 - (void)userEngagedWithDiscoverMoreButtonWithVideoItem:(id)arg1;
 - (void)userEngagedWithNowPlayingButtonWithVideoItem:(id)arg1;
 - (void)userEngagedWithReplayButtonWithVideoItem:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedFirstQuartileWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedSecondQuartileWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedThirdQuartileWithVideoItem:(id)arg1;

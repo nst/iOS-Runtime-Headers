@@ -8,14 +8,13 @@
 + (void)initAppleKeyStore;
 + (void)initAssertionServices;
 + (void)initCoreGraphics;
++ (void)initCoreServices;
 + (void)initCoreText;
 + (void)initDAEAS;
 + (void)initDataAccess;
 + (void)initImageIO;
 + (void)initLoggingSupport;
-+ (void)initMobileCoreServices;
 + (void)initPowerlog;
-+ (void)initServerAccounts;
 + (void)initSetupAssistant;
 + (void)initSpringBoardServices;
 + (void)initSpringBoardUIServices;

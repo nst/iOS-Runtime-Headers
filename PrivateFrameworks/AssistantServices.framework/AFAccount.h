@@ -16,9 +16,11 @@
     NSString * _label;
     NSDictionary * _lastSyncDates;
     NSString * _localeIdentifier;
+    NSString * _loggingAssistantIdentifier;
     NSString * _peerAssistantIdentifier;
     NSString * _peerHostname;
     NSString * _peerLanguageCode;
+    NSString * _peerLoggingAssistantIdentifier;
     bool  _peerSiriEnabled;
     NSString * _peerSpeechIdentifier;
     NSString * _peerUserAgentString;
@@ -39,9 +41,11 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSDictionary *lastSyncDates;
 @property (nonatomic, copy) NSString *localeIdentifier;
+@property (nonatomic, copy) NSString *loggingAssistantIdentifier;
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
 @property (nonatomic, copy) NSString *peerHostname;
 @property (nonatomic, copy) NSString *peerLanguageCode;
+@property (nonatomic, copy) NSString *peerLoggingAssistantIdentifier;
 @property (nonatomic) bool peerSiriEnabled;
 @property (nonatomic, copy) NSString *peerSpeechIdentifier;
 @property (nonatomic, copy) NSString *peerUserAgentString;
@@ -70,10 +74,12 @@
 - (id)label;
 - (id)lastSyncDates;
 - (id)localeIdentifier;
+- (id)loggingAssistantIdentifier;
 - (id)messageDictionary;
 - (id)peerAssistantIdentifier;
 - (id)peerHostname;
 - (id)peerLanguageCode;
+- (id)peerLoggingAssistantIdentifier;
 - (bool)peerSiriEnabled;
 - (id)peerSpeechIdentifier;
 - (id)peerUserAgentString;
@@ -91,9 +97,11 @@
 - (void)setLabel:(id)arg1;
 - (void)setLastSyncDates:(id)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
+- (void)setLoggingAssistantIdentifier:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;
 - (void)setPeerHostname:(id)arg1;
 - (void)setPeerLanguageCode:(id)arg1;
+- (void)setPeerLoggingAssistantIdentifier:(id)arg1;
 - (void)setPeerSiriEnabled:(bool)arg1;
 - (void)setPeerSpeechIdentifier:(id)arg1;
 - (void)setPeerUserAgentString:(id)arg1;

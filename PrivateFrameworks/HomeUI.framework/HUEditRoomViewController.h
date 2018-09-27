@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUEditRoomViewController : HUItemTableViewController <HUWallpaperEditingViewControllerDelegate, HUWallpaperPickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate> {
+@interface HUEditRoomViewController : HUItemTableViewController <HUWallpaperEditingViewControllerDelegate, HUWallpaperPickerInlineViewControllerDelegate, HUWallpaperPickerViewControllerDelegate, HUWallpaperThumbnailCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate> {
     <HUEditRoomViewControllerAddRoomDelegate> * _addRoomDelegate;
     HUEditableTextCell * _nameCell;
     <HUEditRoomViewControllerPresentationDelegate> * _presentationDelegate;
     HFRoomBuilder * _roomBuilder;
     HUEditRoomItemManager * _roomItemManager;
     UIBarButtonItem * _savedButtonBarItem;
+    HUWallpaperPickerInlineViewController * _wallpaperPickerController;
     HUZoneModuleController * _zoneModuleController;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic) HUEditRoomItemManager *roomItemManager;
 @property (nonatomic, retain) UIBarButtonItem *savedButtonBarItem;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) HUWallpaperPickerInlineViewController *wallpaperPickerController;
 @property (nonatomic, retain) HUZoneModuleController *zoneModuleController;
 
 - (void).cxx_destruct;
@@ -38,6 +40,7 @@
 - (id)itemModuleControllers;
 - (id)nameCell;
 - (void)nameFieldTextChanged:(id)arg1;
+- (void)presentWallpaperEditingViewControllerWithImage:(id)arg1 wallpaper:(id)arg2;
 - (id)presentationDelegate;
 - (id)roomBuilder;
 - (id)roomItemManager;
@@ -45,6 +48,7 @@
 - (void)setNameCell:(id)arg1;
 - (void)setRoomItemManager:(id)arg1;
 - (void)setSavedButtonBarItem:(id)arg1;
+- (void)setWallpaperPickerController:(id)arg1;
 - (void)setZoneModuleController:(id)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
@@ -60,7 +64,12 @@
 - (void)viewDidLoad;
 - (void)wallpaperEditing:(id)arg1 didFinishWithWallpaper:(id)arg2 image:(id)arg3;
 - (void)wallpaperEditingDidCancel:(id)arg1;
+- (void)wallpaperPicker:(id)arg1 didReceiveDroppedImage:(id)arg2;
+- (void)wallpaperPicker:(id)arg1 didSelectWallpaper:(id)arg2 withImage:(id)arg3;
+- (id)wallpaperPickerController;
 - (void)wallpaperPickerDidFinish:(id)arg1 wallpaper:(id)arg2 image:(id)arg3;
+- (void)wallpaperPickerRequestOpenWallpaperEditor:(id)arg1;
+- (void)wallpaperThumbnailCell:(id)arg1 didReceiveDroppedImage:(id)arg2;
 - (id)zoneModuleController;
 
 @end

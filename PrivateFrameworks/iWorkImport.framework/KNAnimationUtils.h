@@ -5,6 +5,7 @@
 @interface KNAnimationUtils : NSObject
 
 + (id)CAAccelerationFromSFXActionAcceleration:(unsigned long long)arg1;
++ (bool)areGLActionBuildsEnabled;
 + (id)customAttributesArrayWithDeliveryOptions:(id)arg1;
 + (id)customAttributesArrayWithJiggleIntensityOptions:(id)arg1;
 + (id)customAttributesArrayWithTextDeliveryOptions:(id)arg1;
@@ -18,19 +19,20 @@
 + (bool)isFPSGraphEnabled;
 + (bool)isFPSLoggingEnabled;
 + (bool)isFPSLoggingTimerDisabled;
-+ (bool)isGLEverywhereEnabled;
 + (bool)isGLStateValidationEnabled;
 + (bool)isMaxConcurrentTexturePrecachingEnabled;
 + (bool)isMetalDisabled;
 + (bool)isMotionBlurBlacklistedWithCapabilities:(id)arg1;
 + (bool)isMotionBlurCapableWithAnimationContext:(id)arg1;
 + (bool)isRandomNumberSeedInspectionEnabled;
++ (bool)isRenderingLocal;
 + (bool)isResponsivenessLoggingEnabled;
 + (bool)isSOATSImageExportTestEnabled;
 + (bool)isTexturePrecachingDisabled;
 + (unsigned long long)randomBasicDirection;
 + (unsigned long long)randomDirection;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })recommendedLayerBoundsForNaturalPlaybackSize:(struct CGSize { double x1; double x2; })arg1 inContainerWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 contentsScale:(double)arg3 isExternalDisplay:(bool)arg4;
++ (bool)shouldBadgeMetalRendering;
 + (bool)shouldForceDisplayPreferredMode;
 + (id)timingsArrayWithDirection:(unsigned long long)arg1 duration:(double)arg2 count:(unsigned long long)arg3 chunkDuration:(double)arg4 randomness:(double)arg5 randomGenerator:(id)arg6;
 + (void)updateDefaultsValues;

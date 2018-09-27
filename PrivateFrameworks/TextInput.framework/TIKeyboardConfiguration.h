@@ -20,9 +20,9 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)accentKeyString;
 - (bool)assertDefaultKeyPlane;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)inputManagerState;

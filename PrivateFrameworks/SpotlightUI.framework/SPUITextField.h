@@ -3,6 +3,7 @@
  */
 
 @interface SPUITextField : SearchUISearchField {
+    long long  _activeInterfaceOrientation;
     SPUIHeaderBlurView * _blurView;
     UIImage * _clearButtonImage;
     bool  _ignoreRepresentedObjectUpdate;
@@ -15,6 +16,7 @@
     UIView * _tintView;
 }
 
+@property long long activeInterfaceOrientation;
 @property (retain) SPUIHeaderBlurView *blurView;
 @property (retain) UIImage *clearButtonImage;
 @property bool ignoreRepresentedObjectUpdate;
@@ -28,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)_textWithRepresentedObjects:(id)arg1;
+- (long long)activeInterfaceOrientation;
 - (id)blurView;
 - (id)clearButtonImage;
 - (bool)ignoreRepresentedObjectUpdate;
@@ -35,7 +38,9 @@
 - (id)init;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)microphoneButton;
+- (bool)needsLandscapeHeight;
 - (id)searchEntity;
+- (void)setActiveInterfaceOrientation:(long long)arg1;
 - (void)setBlurView:(id)arg1;
 - (void)setClearButtonImage:(id)arg1;
 - (void)setIgnoreRepresentedObjectUpdate:(bool)arg1;

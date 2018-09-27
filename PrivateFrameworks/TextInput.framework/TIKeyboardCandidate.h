@@ -8,6 +8,7 @@
     unsigned long long  _customInfoType;
     unsigned long long  _indexForMetrics;
     bool  _isSendCurrentLocation;
+    bool  _responseCandidate;
     unsigned int  _slotID;
 }
 
@@ -31,14 +32,17 @@
 @property (nonatomic, readonly) NSString *input;
 @property (nonatomic, readonly) bool isAddress;
 @property (nonatomic, readonly) bool isAutocorrection;
+@property (nonatomic, readonly) bool isAutofillCandidate;
 @property (nonatomic, readonly) bool isForShortcutConversion;
 @property (nonatomic) bool isSendCurrentLocation;
 @property (nonatomic, readonly) bool isSlottedCandidate;
-@property (nonatomic, readonly) NSString *label;
-@property (nonatomic, readonly, retain) TIProactiveTrigger *proactiveTrigger;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly) TIProactiveTrigger *proactiveTrigger;
 @property (getter=isPunctuationCompletionCandidate, nonatomic, readonly) bool punctuationCompletionCandidate;
 @property (getter=isPunctuationKeyCandidate, nonatomic, readonly) bool punctuationKeyCandidate;
 @property (getter=isRegionalCandidate, nonatomic, readonly) bool regionalCandidate;
+@property (getter=isResponseCandidate, nonatomic, readonly) bool responseCandidate;
+@property (nonatomic, readonly) NSString *responseKitCategory;
 @property (getter=isSecureContentCandidate, nonatomic, readonly) bool secureContentCandidate;
 @property (nonatomic) unsigned int slotID;
 @property (readonly) Class superclass;
@@ -50,13 +54,13 @@
 + (bool)supportsSecureCoding;
 + (int)type;
 
+- (void).cxx_destruct;
 - (id)alternativeText;
 - (id)annotationText;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)cursorMovement;
 - (unsigned long long)customInfoType;
-- (void)dealloc;
 - (unsigned long long)deleteCount;
 - (id)description;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
@@ -81,22 +85,26 @@
 - (bool)isPunctuationCompletionCandidate;
 - (bool)isPunctuationKeyCandidate;
 - (bool)isRegionalCandidate;
+- (bool)isResponseCandidate;
 - (bool)isSecureContentCandidate;
 - (bool)isSendCurrentLocation;
 - (id)label;
 - (id)proactiveTrigger;
+- (id)responseKitCategory;
 - (void)setAlternativeText:(id)arg1;
 - (void)setAnnotationText:(id)arg1;
 - (void)setCustomInfoType:(unsigned long long)arg1;
 - (void)setIndexForMetrics:(unsigned long long)arg1;
 - (void)setIsSendCurrentLocation:(bool)arg1;
+- (void)setLabel:(id)arg1;
 - (void)setSlotID:(unsigned int)arg1;
 - (unsigned int)slotID;
 - (unsigned int)usageTrackingMask;
 - (unsigned long long)wordOriginFeedbackID;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
+- (bool)isAutofillCandidate;
 - (bool)isSlottedCandidate;
 
 @end

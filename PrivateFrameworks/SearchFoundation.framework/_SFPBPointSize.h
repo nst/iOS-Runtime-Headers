@@ -9,8 +9,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasHeight;
-@property (nonatomic, readonly) bool hasWidth;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _SFPBGraphicalFloat *height;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -19,8 +17,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasHeight;
-- (bool)hasWidth;
 - (unsigned long long)hash;
 - (id)height;
 - (id)initWithCGSize:(struct CGSize { double x1; double x2; })arg1;

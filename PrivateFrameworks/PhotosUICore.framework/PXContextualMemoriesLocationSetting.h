@@ -38,7 +38,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleLocationAcquisitionUpdate:(id)arg1;
-- (void)_initiateLocationAcquisition;
+- (void)_initiateLocationAcquisitionWithAccuracy:(double)arg1;
 - (id)_locationForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)_setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)_updatePlacemarkForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
@@ -53,7 +53,7 @@
 - (id)locationStream;
 - (bool)monitorsCurrentLocation;
 - (id)placemark;
-- (void)requestLocationUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)requestLocationUpdateWithAccuracy:(double)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetToDefault;
 - (void)setCompletionHandlerManager:(id)arg1;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;

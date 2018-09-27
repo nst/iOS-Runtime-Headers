@@ -9,9 +9,9 @@
         } vendor; 
         struct IOAccelResourceInfo { 
             struct __IOSurface {} *iosurface; 
+            unsigned int resourceSize : 56; 
+            unsigned int iosurfaceField : 8; 
             unsigned int resourceID; 
-            unsigned int resourceSize; 
-            unsigned int iosurfaceField; 
         } info; 
         unsigned long long sharedAllocationUniqueId; 
         unsigned long long cachedAllocationUniqueId; 
@@ -34,8 +34,8 @@
         MTLResourceAllocationInfo *cachedAllocationInfo; 
         MTLIOAccelHeap *heap; 
         MTLIOAccelResource *resource; 
-        unsigned int offset; 
-        unsigned int length; 
+        unsigned long long offset; 
+        unsigned long long length; 
         bool pinned; 
     }  _res;
     MTLIOAccelResource * next;
@@ -55,7 +55,7 @@
 @property (copy) NSString *label;
 @property (nonatomic, readonly) unsigned int resourceID;
 @property (readonly) struct __IOAccelResource { }*resourceRef;
-@property (nonatomic, readonly) unsigned int resourceSize;
+@property (nonatomic, readonly) unsigned long long resourceSize;
 @property int responsibleProcess;
 @property (readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 @property (readonly) unsigned long long storageMode;
@@ -77,7 +77,7 @@
 - (id)heap;
 - (id)initMemoryless:(id)arg1 descriptor:(id)arg2;
 - (id)initStandinWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 options:(unsigned long long)arg2 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg3 argsSize:(unsigned int)arg4;
+- (id)initWithDevice:(id)arg1 options:(unsigned long long)arg2 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned long long x_1_1_7; unsigned long long x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned long long x_1_3_3; unsigned long long x_1_3_4; unsigned int x_1_3_5; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg3 argsSize:(unsigned int)arg4;
 - (id)initWithResource:(id)arg1;
 - (bool)isAliasable;
 - (bool)isComplete;
@@ -86,7 +86,7 @@
 - (void)makeAliasable;
 - (unsigned int)resourceID;
 - (struct __IOAccelResource { }*)resourceRef;
-- (unsigned int)resourceSize;
+- (unsigned long long)resourceSize;
 - (int)responsibleProcess;
 - (void)setAllocationInfoShared:(id)arg1 andCached:(id)arg2;
 - (void)setLabel:(id)arg1;

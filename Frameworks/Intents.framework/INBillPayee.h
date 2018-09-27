@@ -12,10 +12,13 @@
 @property (nonatomic, readonly, copy) INSpeakableString *nickname;
 @property (nonatomic, readonly, copy) INSpeakableString *organizationName;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (id)accountNumber;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -27,5 +30,9 @@
 - (bool)isEqual:(id)arg1;
 - (id)nickname;
 - (id)organizationName;
+
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
+
+- (id)acs_formattedPayeeName;
 
 @end

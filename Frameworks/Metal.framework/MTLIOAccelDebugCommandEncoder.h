@@ -12,7 +12,7 @@
 - (void)IOLogBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)IOLogResource:(unsigned int)arg1 length:(unsigned int)arg2;
 - (void)addAPIResource:(id)arg1;
-- (unsigned int)addDebugResourceListInfo:(struct IOAccelResourceInfo { struct __IOSurface {} *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 flag:(unsigned int)arg2;
+- (unsigned int)addDebugResourceListInfo:(struct IOAccelResourceInfo { struct __IOSurface {} *x1; unsigned int x2 : 56; unsigned int x3 : 8; unsigned int x4; }*)arg1 flag:(unsigned int)arg2;
 - (void)dealloc;
 - (void)debugBytes:(const char *)arg1 length:(unsigned long long)arg2 output_type:(unsigned int)arg3;
 - (void)debugResourceBytes:(unsigned int)arg1 length:(unsigned long long)arg2 output_type:(unsigned int)arg3;

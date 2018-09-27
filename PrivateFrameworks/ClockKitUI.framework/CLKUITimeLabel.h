@@ -3,6 +3,7 @@
  */
 
 @interface CLKUITimeLabel : UIView <CLKTimeFormatterDelegate, CLKTimeFormatterObserver, CLKUILabel> {
+    CLKDevice * _device;
     id /* block */  _didResizeHandler;
     double  _fadeEnd;
     double  _fadeStart;
@@ -35,6 +36,7 @@
 @property (nonatomic, copy) NSAttributedString *attributedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, copy) id /* block */ didResizeHandler;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned long long hash;
@@ -53,6 +55,7 @@
 @property (nonatomic, readonly) CLKTimeFormatter *timeFormatter;
 
 + (id)labelWithOptions:(unsigned long long)arg1;
++ (id)labelWithOptions:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_cancelAnimation;
@@ -65,12 +68,15 @@
 - (void)_scaleTransitionLabels;
 - (id)attributedText;
 - (void)cleanupAfterStyleTransition;
+- (id)device;
 - (void)didMoveToWindow;
 - (id /* block */)didResizeHandler;
 - (id)font;
 - (id)identifyingInfoForTimeFormatter:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (id)initWithTimeLabelOptions:(unsigned long long)arg1;
+- (id)initWithTimeLabelOptions:(unsigned long long)arg1 forDevice:(id)arg2;
 - (struct CGSize { double x1; double x2; })intrinsicSize;
 - (void)layoutSubviews;
 - (double)maxWidth;
@@ -108,5 +114,7 @@
 - (id)textColor;
 - (id)timeFormatter;
 - (void)timeFormatterTextDidChange:(id)arg1;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

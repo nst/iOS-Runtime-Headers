@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDaemon : NSObject <HDDiagnosticObject, HDHealthDaemon, HDXPCListenerDelegate> {
-    HDAchievementAssetManager * _achievementAssetManager;
-    HDAchievementDefinitionAlertManager * _achievementDefinitionAlertManager;
-    <HDAchievementDefinitionAlertNotifier> * _achievementDefinitionAlertNotifier;
-    <HDAchievementDefinitionAlertSuppressor> * _achievementDefinitionAlertSuppressor;
-    <HDAchievementEvaluationDelegate> * _achievementEvaluationDelegate;
+@interface HDDaemon : NSObject <HDDiagnosticObject, HDHealthDaemon, HDTaskServerClassProvider, HDXPCListenerDelegate> {
     <HDNanoAlertSuppressionService> * _alertSuppressionService;
     HDAnalyticsSubmissionCoordinator * _analyticsSubmissionCoordinator;
-    HDAppLauncher * _appLauncher;
     HDBackgroundTaskScheduler * _backgroundTaskScheduler;
     _HKBehavior * _behavior;
     HDCloudSyncCoordinator * _cloudSyncCoordinator;
     HDCoachingDiagnosticManager * _coachingDiagnosticManager;
-    HDCompanionAchievementManager * _companionAchievementManager;
     HDCompanionWorkoutCreditManager * _companionWorkoutCreditManager;
     HDContentProtectionManager * _contentProtectionManager;
     NSDictionary * _daemonExtensionsByIdentifier;
@@ -24,14 +17,15 @@
     <HDDaemonTester> * _daemonTester;
     HDDemoDataGenerator * _demoDataFactory;
     struct MGNotificationTokenStruct { } * _deviceNameChangesToken;
+    HDDevicePowerMonitor * _devicePowerMonitor;
     int  _didStart;
-    HDDynamicAchievementDefinitionDataStore * _dynamicAchievementDefinitionDataStore;
-    HDDynamicAchievementDefinitionDataStore * _dynamicAchievementDefinitionStore;
     NSMutableSet * _endpoints;
+    HDFeatureAvailabilityAssetManager * _featureAvailabilityAssetManager;
     HDFitnessAppBadgeManager * _fitnessAppBadgeManager;
     NSString * _healthDirectoryPath;
     int  _languageChangeNotifyToken;
     NSObject<OS_dispatch_queue> * _mainQueue;
+    HDMaintenanceWorkCoordinator * _maintenanceWorkCoordinator;
     NSString * _medicalIDDirectoryPath;
     HDPluginManager * _pluginManager;
     HDPrimaryProfile * _primaryProfile;
@@ -39,29 +33,27 @@
     HDProfileManager * _profileManager;
     HDQueryManager * _queryManager;
     HDXPCListener * _serviceListener;
+    HDTaskServerRegistry * _taskServerRegistry;
 }
 
-@property (nonatomic, retain) HDAchievementAssetManager *achievementAssetManager;
-@property (nonatomic, retain) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
-@property (nonatomic) <HDAchievementEvaluationDelegate> *achievementEvaluationDelegate;
 @property (nonatomic, retain) <HDNanoAlertSuppressionService> *alertSuppressionService;
 @property (nonatomic, retain) HDAnalyticsSubmissionCoordinator *analyticsSubmissionCoordinator;
-@property (nonatomic, readonly) HDAppLauncher *appLauncher;
 @property (readonly) HDBackgroundTaskScheduler *backgroundTaskScheduler;
 @property (readonly) _HKBehavior *behavior;
 @property (nonatomic, readonly) HDCloudSyncCoordinator *cloudSyncCoordinator;
 @property (nonatomic, readonly) HDCoachingDiagnosticManager *coachingDiagnosticManager;
-@property (nonatomic, retain) HDCompanionAchievementManager *companionAchievementManager;
 @property (nonatomic, readonly) HDCompanionWorkoutCreditManager *companionWorkoutCreditManager;
 @property (nonatomic, readonly) HDContentProtectionManager *contentProtectionManager;
 @property (nonatomic) <HDDaemonTester> *daemonTester;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) HDDynamicAchievementDefinitionDataStore *dynamicAchievementDefinitionDataStore;
+@property (nonatomic, readonly) HDDevicePowerMonitor *devicePowerMonitor;
+@property (nonatomic, readonly) HDFeatureAvailabilityAssetManager *featureAvailabilityAssetManager;
 @property (nonatomic, readonly) HDFitnessAppBadgeManager *fitnessAppBadgeManager;
 @property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *healthDirectoryPath;
 @property (readonly, copy) NSURL *healthDirectoryURL;
+@property (nonatomic, readonly) HDMaintenanceWorkCoordinator *maintenanceWorkCoordinator;
 @property (readonly, copy) NSString *medicalIDDirectoryPath;
 @property (readonly) HDPluginManager *pluginManager;
 @property (nonatomic, readonly) HDPrimaryProfile *primaryProfile;
@@ -70,10 +62,13 @@
 @property (nonatomic, readonly) HDQueryManager *queryManager;
 @property (nonatomic, readonly) HDXPCListener *serviceListener;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) HDTaskServerRegistry *taskServerRegistry;
+@property (nonatomic, readonly) HDWorkoutPluginDaemonExtension *workoutPluginExtension;
 
 - (void).cxx_destruct;
 - (id)IDSServiceWithIdentifier:(id)arg1;
 - (id)_bundleIdentifiersToTerminateAfterObliteration;
+- (void)_handleLaunchServicesEvent:(id)arg1 name:(id)arg2;
 - (void)_handleSigterm;
 - (void)_localeOrLanguageChanged:(id)arg1;
 - (bool)_motionTrackingAvailable;
@@ -104,17 +99,12 @@
 - (void)_terminationCleanup;
 - (void)_unregisterLaunchEventDynamicallyForNotification:(const char *)arg1;
 - (void)_updateCurrentDeviceName;
-- (id)achievementAssetManager;
-- (id)achievementDefinitionAlertManager;
-- (id)achievementEvaluationDelegate;
 - (id)alertSuppressionService;
 - (id)analyticsSubmissionCoordinator;
-- (id)appLauncher;
 - (id)backgroundTaskScheduler;
 - (id)behavior;
 - (id)cloudSyncCoordinator;
 - (id)coachingDiagnosticManager;
-- (id)companionAchievementManager;
 - (id)companionWorkoutCreditManager;
 - (id)contentProtectionManager;
 - (id)createXPCListenerWithMachServiceName:(id)arg1;
@@ -122,10 +112,11 @@
 - (id)daemonExtensionsConformingToProtocol:(id)arg1;
 - (id)daemonTester;
 - (void)dealloc;
+- (id)devicePowerMonitor;
 - (id)diagnosticDescription;
-- (id)dynamicAchievementDefinitionDataStore;
 - (void)exitClean:(bool)arg1 reason:(id)arg2;
 - (id)exportObjectForListener:(id)arg1 client:(id)arg2 error:(id*)arg3;
+- (id)featureAvailabilityAssetManager;
 - (id)fitnessAppBadgeManager;
 - (id)healthDirectoryPath;
 - (id)healthDirectorySizeInBytes;
@@ -138,6 +129,7 @@
 - (void)invalidateAllServersForProfile:(id)arg1;
 - (void)invalidateAndWait;
 - (id)mainQueue;
+- (id)maintenanceWorkCoordinator;
 - (id)medicalIDDirectoryPath;
 - (id)nanoPairedDeviceRegistry;
 - (void)obliterateAndTerminateWithOptions:(unsigned long long)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
@@ -151,18 +143,17 @@
 - (void)registerForDaemonReady:(id)arg1;
 - (void)registerForLaunchNotification:(const char *)arg1;
 - (id)serviceListener;
-- (void)setAchievementAssetManager:(id)arg1;
-- (void)setAchievementDefinitionAlertManager:(id)arg1;
-- (void)setAchievementEvaluationDelegate:(id)arg1;
 - (void)setAlertSuppressionService:(id)arg1;
 - (void)setAnalyticsSubmissionCoordinator:(id)arg1;
-- (void)setCompanionAchievementManager:(id)arg1;
 - (void)setDaemonTester:(id)arg1;
-- (void)setDynamicAchievementDefinitionDataStore:(id)arg1;
 - (void)start;
+- (id)taskServerClasses;
+- (id)taskServerRegistry;
 - (void)terminateClean:(bool)arg1 reason:(id)arg2;
 - (void)unitTest_didCreateProfile:(id)arg1;
 - (void)unitTest_queryServerDidInit:(id)arg1;
+- (void)unitTest_taskServerDidInit:(id)arg1;
 - (void)unregisterForLaunchNotification:(const char *)arg1;
+- (id)workoutPluginExtension;
 
 @end

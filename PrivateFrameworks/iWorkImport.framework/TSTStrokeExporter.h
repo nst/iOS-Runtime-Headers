@@ -10,7 +10,7 @@
     NSPointerArray * _leftColumnStrokes;
     NSPointerArray * _rightColumnStrokes;
     TSUIntegerKeyDictionary * _rowStrokeExportCache;
-    <TSTTableInternalGeometryProviding><TSTTableHiddenRowColumnProviding> * _tableProvider;
+    <TSTCategoryProviding><TSTTableInternalGeometryProviding><TSTTableHiddenRowColumnProviding> * _tableProvider;
     NSPointerArray * _topRowStrokes;
 }
 
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly, retain) NSPointerArray *leftColumnStrokes;
 @property (nonatomic, readonly, retain) NSPointerArray *rightColumnStrokes;
 @property (nonatomic, retain) TSUIntegerKeyDictionary *rowStrokeExportCache;
-@property (nonatomic, readonly, retain) <TSTTableInternalGeometryProviding><TSTTableHiddenRowColumnProviding> *tableProvider;
+@property (nonatomic, readonly, retain) <TSTCategoryProviding><TSTTableInternalGeometryProviding><TSTTableHiddenRowColumnProviding> *tableProvider;
 @property (nonatomic, readonly, retain) NSPointerArray *topRowStrokes;
 
 - (id)bottomRowStrokes;
@@ -36,7 +36,7 @@
 - (id)rowStrokeExportCache;
 - (void)setColumnStrokeExportCache:(id)arg1;
 - (void)setRowStrokeExportCache:(id)arg1;
-- (void)strokesForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 top:(id*)arg2 left:(id*)arg3 bottom:(id*)arg4 right:(id*)arg5;
+- (void)strokesForCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1 top:(id*)arg2 left:(id*)arg3 bottom:(id*)arg4 right:(id*)arg5;
 - (id)tableProvider;
 - (id)topRowStrokes;
 

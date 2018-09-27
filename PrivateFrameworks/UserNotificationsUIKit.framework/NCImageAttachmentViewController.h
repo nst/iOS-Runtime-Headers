@@ -3,6 +3,7 @@
  */
 
 @interface NCImageAttachmentViewController : NCAttachmentViewController {
+    ISAnimatedImagePlayer * _animatedImagePlayer;
     struct CGSize { 
         double width; 
         double height; 
@@ -11,21 +12,24 @@
         double width; 
         double height; 
     }  _imageSize;
-    ISAnimatedImageView * _imageView;
+    UIView * _imageView;
 }
 
+@property (nonatomic, retain) ISAnimatedImagePlayer *animatedImagePlayer;
 @property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
-@property (nonatomic, retain) ISAnimatedImageView *imageView;
+@property (nonatomic, retain) UIView *imageView;
 
 - (void).cxx_destruct;
+- (id)animatedImagePlayer;
 - (struct CGSize { double x1; double x2; })contentSize;
 - (void)dealloc;
 - (struct CGSize { double x1; double x2; })imageSize;
 - (id)imageView;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
+- (void)loadView;
+- (void)setAnimatedImagePlayer:(id)arg1;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setImageView:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillLayoutSubviews;
 
 @end

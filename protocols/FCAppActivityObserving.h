@@ -7,5 +7,7 @@
 
 - (void)activityObservingApplicationDidBecomeActive;
 - (void)activityObservingApplicationDidEnterBackground;
+- (void)activityObservingApplicationDidFinishLaunching;
+- (void)activityObservingApplicationWillEnterForeground;
 
 @end

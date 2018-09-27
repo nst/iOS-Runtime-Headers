@@ -17,22 +17,27 @@
     bool  _isChangeProcessingPending;
     double  _lastChangeProcessingStarted;
     PLPhotoLibrary * _mainQueuePhotoLibrary;
+    PLPhotoAnalysisServiceClient * _photoAnalysisClient;
     PLPhotoLibrary * _photoLibrary;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _saveTokensToKnownUUIDs;
     PLPhotoLibrary * _transactionPhotoLibrary;
     NSObject<OS_dispatch_queue> * _transactionQueue;
+    unsigned short  _type;
     bool  _unknownMergeEvent;
     NSMutableOrderedSet * _updateRequests;
+    PLPhotoLibrary * _userInitiatedQueuePhotoLibrary;
     PHVariationCacheManager * _variationCacheManager;
 }
 
 @property (nonatomic, retain) PLPhotoLibrary *backgroundQueueObjectFetchingPhotoLibrary;
 @property (nonatomic, retain) PLPhotoLibrary *backgroundQueuePhotoLibrary;
+@property (nonatomic, readonly) bool canUpdatePersonState;
 @property (nonatomic, retain) PLPhotoLibrary *changeHandlingPhotoLibrary;
 @property (nonatomic, retain) NSMutableDictionary *changeNotificationInfo;
 @property (nonatomic, retain) NSMutableDictionary *changeRequests;
 @property (nonatomic) bool clearsOIDCacheAfterFetchResultDealloc;
+@property (nonatomic, readonly) PHPersistentChangeToken *currentToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableOrderedSet *deleteRequests;
 @property (readonly, copy) NSString *description;
@@ -44,6 +49,7 @@
 @property (nonatomic) bool isChangeProcessingPending;
 @property (nonatomic) double lastChangeProcessingStarted;
 @property (nonatomic, retain) PLPhotoLibrary *mainQueuePhotoLibrary;
+@property (nonatomic, readonly) PLPhotoAnalysisServiceClient *photoAnalysisClient;
 @property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSMutableDictionary *saveTokensToKnownUUIDs;
@@ -51,8 +57,11 @@
 @property (nonatomic, retain) <PLPhotoAnalysisServiceTaxonomyResolver> *taxonomyResolver;
 @property (nonatomic, retain) PLPhotoLibrary *transactionPhotoLibrary;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *transactionQueue;
+@property (nonatomic, readonly) unsigned short type;
 @property (nonatomic) bool unknownMergeEvent;
 @property (nonatomic, retain) NSMutableOrderedSet *updateRequests;
+@property (nonatomic, retain) PLPhotoLibrary *userInitiatedQueuePhotoLibrary;
+@property (nonatomic, readonly) NSString *uuid;
 @property (nonatomic, readonly) PHVariationCacheManager *variationCacheManager;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
@@ -67,9 +76,12 @@
 + (Class)classForFetchType:(id)arg1;
 + (long long)collectionListTypeForIdentifierCode:(id)arg1;
 + (id)fetchTypeForLocalIdentifierCode:(id)arg1;
++ (void)reconfigureSandboxExtensionsForMedia;
 + (void)removeAllUniquedOIDs;
 + (void)requestAuthorization:(id /* block */)arg1;
 + (void)setNeedsToRepairKeyCuratedAssetForMemories:(id)arg1;
++ (id)sharedContactStore;
++ (id)sharedMomentSharePhotoLibrary;
 + (id)sharedPhotoLibrary;
 + (bool)shouldDisplayMergeCandidates:(id)arg1 forPerson:(id)arg2;
 + (id)uniquedOID:(id)arg1;
@@ -83,28 +95,37 @@
 - (void)_checkForPeopleUIFeatureWithFetchRequest:(id)arg1 comparator:(id /* block */)arg2;
 - (void)_commitTransaction:(id /* block */)arg1;
 - (id)_descriptionOfChanges;
+- (id)_errorForAuthorizationStatus:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (id)_fetchPersistentChangesSinceToken:(id)arg1 maximumChangeThreshold:(unsigned long long)arg2 error:(id*)arg3;
+- (void)_notifiyPersistentChangeObservers;
 - (bool)_preflightRequestedPhotoKitInserts:(id)arg1 updates:(id)arg2 deletes:(id)arg3 error:(id*)arg4;
 - (void)_processPendingChanges;
 - (void)_removeObserver:(id)arg1;
 - (void)_requestAnalysisProgressWithCompletion:(id /* block */)arg1;
-- (void)_unauthorized:(id /* block */)arg1 error:(id*)arg2;
 - (id)allSocialGroupsForPersonIdentifier:(id)arg1 error:(id*)arg2;
+- (id)allowedEntities;
 - (id)analysisProgressCountsForWorkerType:(short)arg1;
 - (void)assertTransaction;
 - (id)assetIdentifiersForPersonIdentifiers:(id)arg1 error:(id*)arg2;
+- (id)assetUUIDsAllowedForCurationFromAssets:(id)arg1;
 - (id)backgroundQueueObjectFetchingPhotoLibrary;
 - (id)backgroundQueuePhotoLibrary;
 - (id)bfa_fetchObjectsForOIDs:(id)arg1 propertyHint:(unsigned long long)arg2;
 - (id)bfa_photoLibrary;
 - (id)bfa_tombstoneObjectForOID:(id)arg1 uuid:(id)arg2 propertyHint:(unsigned long long)arg3;
+- (bool)canUpdatePersonState;
 - (void)cancelOperationsWithIdentifiers:(id)arg1 reply:(id /* block */)arg2;
 - (id)changeHandlingPhotoLibrary;
 - (id)changeNotificationInfo;
 - (id)changeRequestForUUID:(id)arg1;
 - (id)changeRequests;
-- (bool)cleanupInvalidIgnoreUntilDatesWithError:(id*)arg1;
 - (bool)clearsOIDCacheAfterFetchResultDealloc;
+- (unsigned long long)countOfDirtyFaceGroups;
+- (unsigned long long)countOfUnclusteredFaces;
+- (unsigned long long)countOfUnprocessedFaceCrops;
+- (id)curationDebugInformationForAssetCollectionWithLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 error:(id*)arg3;
 - (id)curationDebugInformationForAssetLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 error:(id*)arg3;
+- (id)currentToken;
 - (id)deleteRequests;
 - (id)deletedAssetUUIDsForAnalysisByWorkerType:(short)arg1 fetchLimit:(unsigned long long)arg2 error:(id*)arg3;
 - (void)enableNamingFlow;
@@ -119,14 +140,20 @@
 - (id)fetchPHObjectsForOIDs:(id)arg1;
 - (id)fetchPHObjectsForOIDs:(id)arg1 propertyHint:(unsigned long long)arg2 includeTrash:(bool)arg3;
 - (id)fetchPHObjectsForUUIDs:(id)arg1 entityName:(id)arg2;
+- (id)fetchPersistentChangesSinceToken:(id)arg1 error:(id*)arg2;
+- (id)fetchPersistentChangesWithRequest:(id)arg1 error:(id*)arg2;
 - (id)fetchResults;
 - (id)fetchUpdatedObject:(id)arg1;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithReply:(id /* block */)arg1;
 - (id)graphStatisticsDescription:(id*)arg1;
 - (id)graphStatusDescription:(id*)arg1;
 - (void)handleMergeNotification:(id)arg1;
+- (id)inferredContactByPersonLocalIdentifierForPersonLocalIdentifiers:(id)arg1;
+- (id)inferredContactForPersonLocalIdentifier:(id)arg1;
 - (id)init;
+- (id)initMomentShareLibrary;
 - (id)initSharedLibrary;
+- (id)initWithType:(unsigned short)arg1;
 - (id)insertRequests;
 - (id)internalObservers;
 - (bool)invalidatePersistentGraphCachesAndReturnError:(id*)arg1;
@@ -134,14 +161,17 @@
 - (bool)isApplyingRequestedChanges;
 - (bool)isChangeProcessingPending;
 - (bool)isFaceProcessingFinished;
+- (bool)isMainPhotoLibrary;
 - (bool)isNamingFlowEnabled:(id /* block */)arg1;
 - (double)lastChangeProcessingStarted;
+- (void)loadGraph;
 - (id)mainQueueManagedObjectContext;
 - (id)mainQueuePhotoLibrary;
 - (id)managedObjectContext;
 - (id)managedObjectContextForCurrentQueueQoS;
 - (bool)markAnalysisStatesProcessedForWorkerType:(short)arg1 error:(id*)arg2;
-- (id)memoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 error:(id*)arg3;
+- (id)memoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 error:(id*)arg2;
+- (id)momentDebugInformationForHighlightWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)objectFetchingContextForCurrentQueueQoS;
 - (id)objectFetchingManagedObjectContextForObject:(id)arg1 propertySet:(id)arg2;
 - (void)performCancellableChanges:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
@@ -149,8 +179,10 @@
 - (void)performChanges:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (bool)performChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (void)personPromotionProcessingStatusForUserInterface:(id /* block */)arg1;
+- (id)photoAnalysisClient;
 - (id)photoLibrary;
 - (id)photoLibraryForCurrentQueueQoS;
+- (id)photoLibraryForCurrentTransaction;
 - (id)pl_syncProgressAlbums;
 - (id)queryForType:(id)arg1 withIdentifiers:(id)arg2 local:(bool)arg3;
 - (id)queue;
@@ -166,14 +198,22 @@
 - (void)removeAnalysisRecordsForDeletedAssetUUIDs:(id)arg1 forWorkerType:(short)arg2;
 - (id)removeUuidForSaveToken:(id)arg1;
 - (void)requestAnalysisProgressCountsWithCompletion:(id /* block */)arg1;
+- (id)requestAssetSearchKeywordsForAssetCollectionUUIDs:(id)arg1 ofType:(unsigned long long)arg2 withOptions:(id)arg3 error:(id*)arg4;
 - (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(id /* block */)arg1;
 - (void)requestGraphReadyNotificationWithCoalescingIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestGraphRebuildProgressWithCompletion:(id /* block */)arg1;
 - (void)requestGraphRebuildWithProgress:(id)arg1 completion:(id /* block */)arg2;
+- (id)requestGraphSearchMetadataWithOptions:(id)arg1 error:(id*)arg2;
 - (void)requestHighlightEstimatesWithCompletion:(id /* block */)arg1;
 - (void)requestPermissionToDownloadFaceResourcesOfCount:(unsigned long long)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)requestSearchIndexGraphUpdates:(id)arg1 supportingData:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)requestSearchIndexKeywordsForAssetCollectionUUIDs:(id)arg1 ofType:(unsigned long long)arg2 withOptions:(id)arg3 error:(id*)arg4;
+- (void)requestSearchIndexUpdates:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)requestSearchInformationForTripUUIDs:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
+- (id)requestSynonymsDictionariesWithError:(id*)arg1;
 - (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestTotalProgressCountsWithCompletion:(id /* block */)arg1;
+- (id)requestZeroKeywordsWithOptions:(id)arg1 error:(id*)arg2;
 - (bool)resetPendingAnalysisStatesWithError:(id*)arg1;
 - (id)saveTokensToKnownUUIDs;
 - (void)setBackgroundQueueObjectFetchingPhotoLibrary:(id)arg1;
@@ -199,22 +239,30 @@
 - (void)setTransactionQueue:(id)arg1;
 - (void)setUnknownMergeEvent:(bool)arg1;
 - (void)setUpdateRequests:(id)arg1;
+- (void)setUserInitiatedQueuePhotoLibrary:(id)arg1;
+- (id)sharingMessageSuggestionDebugInformationForAssetCollectionLocalIdentifier:(id)arg1 error:(id*)arg2;
+- (id)sharingSuggestionDebugInformationForAssetCollectionLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 reply:(id /* block */)arg2;
 - (id)socialGroupsForPersonIdentifiers:(id)arg1 error:(id*)arg2;
 - (id)sortedArrayOfPersonIdentifiers:(id)arg1 error:(id*)arg2;
+- (id)suggestedContactsForPersonLocalIdentifier:(id)arg1;
 - (id)suggestedMePersonIdentifierWithError:(id*)arg1;
 - (id)suggestionsForPersonLocalIdentifier:(id)arg1 clusterSequenceNumbers:(id)arg2 excludePersonLocalIdentifiers:(id)arg3 minimumSuggestionFaceCount:(unsigned long long)arg4;
 - (id)taxonomyResolver;
 - (id)transactionPLPhotoLibrary;
 - (id)transactionPhotoLibrary;
 - (id)transactionQueue;
+- (unsigned short)type;
 - (bool)unknownMergeEvent;
+- (void)unloadGraph;
 - (void)unregisterAvailabilityObserver:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)unregisterFetchResult:(id)arg1;
 - (void)updateClusterUsabilityCriteria;
 - (id)updateRequests;
 - (id)urlForApplicationDataFolderIdentifier:(long long)arg1;
+- (id)userInitiatedQueuePhotoLibrary;
+- (id)uuid;
 - (id)variationCacheManager;
 - (id)workInfoForAnalysisWithWorkerType:(short)arg1 additionalStatesToExclude:(id)arg2 fetchLimit:(unsigned long long)arg3 error:(id*)arg4;
 
@@ -241,7 +289,6 @@
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchFaceGroups;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;
-- (id)pv_fetchFaces;
 - (id)pv_fetchFacesForFaceGroup:(id)arg1;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
@@ -260,6 +307,7 @@
 - (id)pv_fetchPersonsWithType:(unsigned long long)arg1;
 - (bool)pv_isLibraryBeingSynchronized;
 - (id)pv_lastAssetDate;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (bool)pv_performChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (id)pv_persistentStorageDirectoryURL;
 
@@ -275,7 +323,15 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-+ (unsigned long long)vcp_assetCount;
++ (id)vcp_defaultMediaAnalysisDatabaseFilepath;
 + (id)vcp_photoLibrary;
+
+- (unsigned long long)vcp_assetCount;
+- (long long)vcp_isCPLDownloadComplete;
+- (long long)vcp_isCPLEnabled;
+- (long long)vcp_isCPLSyncComplete;
+- (id)vcp_mediaAnalysisDatabaseFilepath;
+- (id)vcp_mediaAnalysisDirectory;
+- (id)vcp_url;
 
 @end

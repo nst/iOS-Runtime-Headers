@@ -4,7 +4,8 @@
 
 @interface _ATXObjectLogger : NSObject
 
-+ (bool)logJSONObjectforIntentSessionLogDictionary:(id)arg1;
++ (bool)logJSONObjectforActionSessionLogDictionary:(id)arg1;
++ (bool)logJSONObjectforNotificationLogDictionary:(id)arg1;
 + (bool)logJSONObjectforSASSessionLogDictionary:(id)arg1;
 + (bool)logJSONObjectforSessionLogDictionary:(id)arg1;
 + (bool)logJSONObjectforSessionLogDictionary:(id)arg1 BugID:(id)arg2 Prefix:(id)arg3;

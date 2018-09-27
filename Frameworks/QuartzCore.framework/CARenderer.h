@@ -31,6 +31,7 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDestination:(id)arg1;
 - (void)setLayer:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })updateBounds;
 

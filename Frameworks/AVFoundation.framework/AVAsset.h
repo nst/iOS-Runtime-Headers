@@ -8,10 +8,20 @@
 
 @property (readonly) NSArray *availableChapterLocales;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (nonatomic, readonly) bool isDecodableMovie;
 @property (nonatomic, readonly) bool isProxy;
+@property (readonly) NSString *localizedDisplayName;
+@property (nonatomic, readonly, retain) <AVLoggingIdentifier> *loggingIdentifier;
+@property (readonly) AVAssetTrack *mainAudioTrack;
+@property (readonly) AVAssetTrack *mainVideoTrack;
+@property (readonly) struct CGSize { double x1; double x2; } mainVideoTrackNaturalSize;
+@property (readonly) float mainVideoTrackNominalFrameRate;
+@property (readonly) struct CGSize { double x1; double x2; } mainVideoTrackPreferredSize;
+@property (readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } mainVideoTrackPreferredTransform;
 @property (nonatomic, readonly) long long moovAtomSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSizeWithPreferredTransforms;
+@property (nonatomic, readonly) AVDisplayCriteria *preferredDisplayCriteria;
 @property (nonatomic, readonly) float preferredRate;
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
 @property (nonatomic, readonly) float preferredVolume;
@@ -19,6 +29,9 @@
 @property (nonatomic, readonly) NSValue *pu_cachedDuration;
 @property (getter=isQTAutoloopVideo, readonly) bool qtAutoloopVideo;
 @property (setter=rc_setComposedAVURL:, nonatomic, retain) NSURL *rc_composedAVURL;
+@property (readonly) struct CGSize { double x1; double x2; } scaleFactors;
+@property (nonatomic, readonly) bool tsu_isPlayable;
+@property (nonatomic, readonly) unsigned int videoOrientation;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -27,11 +40,10 @@
 + (id)assetWithURL:(id)arg1;
 + (id)assetWithURL:(id)arg1 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2 trackIDs:(id)arg3 dynamicBehavior:(bool)arg4;
 + (bool)expectsPropertyRevisedNotifications;
++ (id)makeAssetLoggingIdentifier;
 + (bool)supportsPlayerItems;
 
 - (id)_ID3Metadata;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
 - (id)_absoluteURL;
 - (unsigned long long)_addChapterMetadataItem:(id)arg1 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 toChapters:(id)arg3 fromIndex:(unsigned long long)arg4;
 - (id)_assetAnalysisMessages;
@@ -60,12 +72,13 @@
 - (id)_mediaSelectionGroupDictionaries;
 - (bool)_mindsFragments;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
+- (id)_nameForLogging;
 - (bool)_needsLegacyChangeNotifications;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (id)_resourceLoaderURLSession;
 - (void)_serverHasDied;
 - (void)_setFragmentMindingInterval:(double)arg1;
 - (void)_setIsAssociatedWithFragmentMinder:(bool)arg1;
+- (void)_setLoggingIdentifier:(id)arg1;
 - (void)_tracksDidChange;
 - (id)_tracksWithClass:(Class)arg1;
 - (id)_weakReference;
@@ -103,6 +116,7 @@
 - (bool)isReadable;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)loggingIdentifier;
 - (id)lyrics;
 - (id)makePropertyListForProxyWithOptions:(id)arg1;
 - (struct CGSize { double x1; double x2; })maximumVideoResolution;
@@ -114,6 +128,7 @@
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
+- (id)preferredDisplayCriteria;
 - (id)preferredMediaSelection;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
@@ -141,6 +156,22 @@
 - (id)createLanguageOptionGroups;
 - (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (bool)canPassthroughExport;
+- (id)commonMetadataStringValueForKey:(id)arg1;
+- (bool)isDecodableMovie;
+- (bool)isMarkedNotSerializable;
+- (id)localizedDisplayName;
+- (id)mainAudioTrack;
+- (id)mainVideoTrack;
+- (struct CGSize { double x1; double x2; })mainVideoTrackNaturalSize;
+- (float)mainVideoTrackNominalFrameRate;
+- (struct CGSize { double x1; double x2; })mainVideoTrackPreferredSize;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })mainVideoTrackPreferredTransform;
+- (struct CGSize { double x1; double x2; })scaleFactors;
+- (bool)valuesForKeysAreFinishedLoading:(id)arg1;
+
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (void)_pu_setCachedDuration:(id)arg1;
@@ -155,6 +186,10 @@
 // Image: /System/Library/PrivateFrameworks/IMSharedUI.framework/IMSharedUI
 
 - (bool)isQTAutoloopVideo;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
+
+- (unsigned int)videoOrientation;
 
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
@@ -175,7 +210,12 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
+- (id)plVideoCodecFourCharCodeString;
 - (id)plVideoCodecName;
+
+// Image: /System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/PhotosImagingFoundation
+
+- (id)ipaVideoCodecName;
 
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
@@ -208,7 +248,11 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)keyPathsForValuesAffectingNaturalSizeWithPreferredTransforms;
++ (id)keyPathsForValuesAffectingTsu_isPlayable;
++ (id)tsu_playableKeysWithKeys:(id)arg1;
 
 - (struct CGSize { double x1; double x2; })naturalSizeWithPreferredTransforms;
+- (bool)p_doesTrack:(id)arg1 matchCodecTypes:(id)arg2;
+- (bool)tsu_isPlayable;
 
 @end

@@ -5,6 +5,7 @@
 @interface HAPAccessoryServer : HMFObject {
     NSArray * _accessories;
     unsigned long long  _authMethod;
+    bool  _bleLinkConnected;
     NSNumber * _category;
     NSObject<OS_dispatch_queue> * _clientQueue;
     unsigned long long  _configNumber;
@@ -30,6 +31,7 @@
 
 @property (nonatomic, copy) NSArray *accessories;
 @property (nonatomic) unsigned long long authMethod;
+@property (getter=isBLELinkConnected, nonatomic, readonly) bool bleLinkConnected;
 @property (nonatomic, copy) NSNumber *category;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic) unsigned long long configNumber;
@@ -80,6 +82,7 @@
 - (id)initWithKeystore:(id)arg1;
 - (id)internalDelegateQueue;
 - (id)internalDelegates;
+- (bool)isBLELinkConnected;
 - (bool)isIncompatibleUpdate;
 - (bool)isPaired;
 - (bool)isReachable;

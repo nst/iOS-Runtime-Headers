@@ -22,7 +22,6 @@
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } alignmentEdgeInsets;
 @property (nonatomic, readonly) int blendMode;
 @property (nonatomic, readonly) struct CGImage { }*croppedImage;
-@property (nonatomic, readonly) long long displayGamut;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic, readonly) int exifOrientation;
 @property (nonatomic, readonly) bool hasAlignmentInformation;
@@ -34,7 +33,6 @@
 @property (nonatomic, readonly) bool isStructured;
 @property (nonatomic, readonly) bool isTemplate;
 @property (nonatomic, readonly) bool isVectorBased;
-@property (nonatomic, readonly) long long layoutDirection;
 @property (nonatomic, readonly) double opacity;
 @property (nonatomic, readonly) bool preservedVectorRepresentation;
 @property (nonatomic, readonly) long long resizingMode;
@@ -52,22 +50,18 @@
 - (struct CGImage { }*)createImageFromPDFRenditionWithScale:(double)arg1;
 - (struct CGImage { }*)croppedImage;
 - (id)description;
-- (long long)displayGamut;
 - (struct { double x1; double x2; double x3; double x4; })edgeInsets;
 - (int)exifOrientation;
-- (long long)graphicsClass;
 - (bool)hasAlignmentInformation;
 - (bool)hasSliceInformation;
-- (long long)idiom;
 - (struct CGImage { }*)image;
 - (long long)imageType;
+- (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned long long)arg3;
 - (bool)isAlphaCropped;
 - (bool)isFlippable;
 - (bool)isStructured;
 - (bool)isTemplate;
 - (bool)isVectorBased;
-- (long long)layoutDirection;
-- (long long)memoryClass;
 - (double)opacity;
 - (struct CGSize { double x1; double x2; })originalUncroppedSize;
 - (double)positionOfSliceBoundary:(unsigned int)arg1;
@@ -76,12 +70,9 @@
 - (long long)resizingModeWithSubtype:(long long)arg1;
 - (double)scale;
 - (struct CGSize { double x1; double x2; })size;
-- (long long)sizeClassHorizontal;
-- (long long)sizeClassVertical;
-- (unsigned long long)subtype;
 - (long long)templateRenderingMode;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)UIImageWithVectorImage:(id)arg1;
 - (id)imageObj;

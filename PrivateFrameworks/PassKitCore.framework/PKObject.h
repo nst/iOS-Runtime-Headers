@@ -7,9 +7,11 @@
     PKContent * _content;
     PKDataAccessor * _dataAccessor;
     PKDisplayProfile * _displayProfile;
-    NSLock * _imageSetLock;
     PKImageSet * _imageSets;
     bool  _initializedViaInitWithCoder;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     NSData * _manifestHash;
     double  _preferredImageScale;
     NSString * _preferredImageSuffix;
@@ -20,7 +22,6 @@
 }
 
 @property (nonatomic, copy) NSString *authenticationToken;
-@property (nonatomic, retain) PKContent *content;
 @property (nonatomic, retain) PKDataAccessor *dataAccessor;
 @property (nonatomic, retain) PKDisplayProfile *displayProfile;
 @property (nonatomic, readonly) bool initializedViaInitWithCoder;
@@ -45,20 +46,24 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataAccessor;
 - (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
+- (id)dataForBundleResources:(id)arg1;
 - (void)dealloc;
 - (id)displayProfile;
+- (void)downloadRemoteAssetsWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(id /* block */)arg2;
 - (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (void)flushLoadedContent;
 - (void)flushLoadedImageSets;
 - (id)imageSetLoadedIfNeeded:(long long)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (id)initWithFileDataAccessor:(id)arg1;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
+- (id)initWithFileURL:(id)arg1 validate:(bool)arg2 warnings:(id*)arg3 orError:(id*)arg4;
 - (id)initWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 - (bool)initializedViaInitWithCoder;
 - (bool)isContentLoaded;
@@ -83,6 +88,7 @@
 - (void)setContent:(id)arg1;
 - (void)setDataAccessor:(id)arg1;
 - (void)setDisplayProfile:(id)arg1;
+- (void)setImageSet:(id)arg1 forImageSetType:(long long)arg2;
 - (void)setManifestHash:(id)arg1;
 - (void)setMissingImageSetsFromObject:(id)arg1;
 - (void)setPreferredImageScale:(double)arg1;

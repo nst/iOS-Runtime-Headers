@@ -3,6 +3,7 @@
  */
 
 @interface PUPhotosGlobalHeaderView : UICollectionReusableView {
+    UIView * _separatorView;
     NSString * _title;
     UILabel * _titleLabel;
 }
@@ -14,9 +15,11 @@
 + (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forTitle:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_updateColors;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setTitle:(id)arg1;
+- (void)tintColorDidChange;
 - (id)title;
 
 @end

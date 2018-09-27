@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFVersion : HMFObject <NSCopying, NSSecureCoding> {
+@interface HMFVersion : HMFObject <HMFLocalizable, NSCopying, NSSecureCoding> {
     unsigned long long  _majorVersion;
     unsigned long long  _minorVersion;
     unsigned long long  _updateVersion;
 }
 
+@property (readonly, copy) NSString *localizedDescription;
 @property (readonly) unsigned long long majorVersion;
 @property (readonly) unsigned long long minorVersion;
 @property (readonly) unsigned long long updateVersion;
@@ -30,6 +31,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToVersion:(id)arg1;
 - (bool)isGreaterThanVersion:(id)arg1;
+- (id)localizedDescription;
 - (unsigned long long)majorVersion;
 - (unsigned long long)minorVersion;
 - (unsigned long long)updateVersion;

@@ -4,8 +4,6 @@
 
 @interface WBSContentBlockersPreferenceManager : WBSPerSitePreferenceManager <WBSPerSitePreferenceBinaryToggleItemManager, WBSPerSitePreferenceManagerDefaultsDelegate, WBSPerSitePreferenceManagerStorageDelegate> {
     WBSPerSitePreference * _contentBlockersPreference;
-    WBSPerSitePreferenceValue * _disabledPreferenceValue;
-    WBSPerSitePreferenceValue * _enabledPreferenceValue;
     WBSPerSitePreferencesSQLiteStore * _perSitePreferencesStore;
 }
 
@@ -23,6 +21,7 @@
 - (void)getContentBlockersEnabledStateForDomain:(id)arg1 withTimeout:(double)arg2 fallbackEnabledState:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)initWithPerSitePreferencesStore:(id)arg1;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)offValueForPreference:(id)arg1;
 - (id)onValueForPreference:(id)arg1;
 - (id)perSitePreferencesStore;

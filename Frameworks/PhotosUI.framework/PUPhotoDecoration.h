@@ -12,6 +12,8 @@
 @property (nonatomic) double borderWidth;
 @property (nonatomic, copy) UIColor *foregroundColor;
 
++ (id)defaultDecoration;
+
 - (void).cxx_destruct;
 - (id)borderColor;
 - (double)borderWidth;

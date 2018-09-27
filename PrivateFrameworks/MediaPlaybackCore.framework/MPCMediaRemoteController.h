@@ -17,7 +17,7 @@
     struct _MSVSignedRange { 
         long long location; 
         long long length; 
-    }  _maximumLoadedRange;
+    }  _loadedContentItemsRange;
     <MPArtworkDataSource> * _mediaRemoteArtworkDataSource;
     NSMutableDictionary * _optimisticStateContentItems;
     long long  _playbackStateCacheState;
@@ -28,8 +28,12 @@
     NSString * _queueIdentifier;
     long long  _queueIdentifierCacheState;
     MPCFuture * _queueIdentifierFuture;
-    <MPArtworkDataSource> * _remotePlayerArtworkDataSource;
+    struct _MSVSignedRange { 
+        long long location; 
+        long long length; 
+    }  _requestedContentItemsRange;
     MPCPlayerPath * _resolvedPlayerPath;
+    <MPCSupportedCommands> * _supportedCommands;
     long long  _supportedCommandsCacheState;
     MPCFuture * _supportedCommandsFuture;
 }
@@ -66,14 +70,14 @@
 - (id)_legacyCommands;
 - (id)_onQueue_identifiersForRange:(struct _MSVSignedRange { long long x1; long long x2; })arg1;
 - (void)_onQueue_invalidateArtworkFuturesForContentItemID:(id)arg1;
-- (void)_onQueue_mergeContentItems:(id)arg1 queueRange:(struct _MSVSignedRange { long long x1; long long x2; })arg2;
+- (void)_onQueue_mergeContentItems:(id)arg1 queueRange:(struct _MSVSignedRange { long long x1; long long x2; })arg2 requestRange:(struct _MSVSignedRange { long long x1; long long x2; })arg3;
 - (void)_onQueue_purgeArtworkForContentItemIdentifier:(id)arg1;
 - (void)_onQueue_purgeArtworkForContentItemIdentifier:(id)arg1 artworkIdentifier:(id)arg2;
-- (void)_onQueue_setOptimisticPlaybackPositionWithOptions:(id)arg1;
-- (void)_onQueue_setOptimisticPlaybackState:(unsigned int)arg1 withOptions:(id)arg2;
-- (void)_onQueue_updateOptimisticElapsedTimeForContentItem:(id)arg1 elapsedTime:(double)arg2 rate:(float)arg3;
-- (void)_onQueue_updateOptimisticReorderedPlaybackQueueWithMovingContentItemIdentifier:(id)arg1 afterContentItemIdentifier:(id)arg2;
-- (void)_onQueue_updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
+- (id /* block */)_onQueue_setOptimisticElapsedTimeForContentItem:(id)arg1 elapsedTime:(double)arg2 rate:(float)arg3;
+- (id /* block */)_onQueue_setOptimisticPlaybackState:(unsigned int)arg1 withOptions:(id)arg2;
+- (id /* block */)_onQueue_setOptimisticPlayingItemIdentifier:(id)arg1;
+- (void)_onQueue_setOptimisticReorderedPlaybackQueueWithMovingContentItemIdentifier:(id)arg1 afterContentItemIdentifier:(id)arg2;
+- (id /* block */)_onQueue_updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)_playbackQueueChangedNotification:(id)arg1;
 - (void)_playbackQueueContentItemsChangedNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
@@ -107,6 +111,5 @@
 - (void)setResolvedPlayerPath:(id)arg1;
 - (id)supportedCommands;
 - (long long)supportedCommandsCacheState;
-- (void)updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 
 @end

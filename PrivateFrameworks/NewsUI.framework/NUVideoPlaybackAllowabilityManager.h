@@ -3,18 +3,18 @@
  */
 
 @interface NUVideoPlaybackAllowabilityManager : NSObject <NUVideoPlayerEventTracker> {
-    <SXVideoPlaybackController> * _playbackController;
-    <SXVideoPlaybackPolicy> * _playbackPolicy;
-    <SXVisibilityMonitoring> * _visibilityMonitor;
+    <SVVideoPlaybackController> * _playbackController;
+    <SVVideoPlaybackPolicy> * _playbackPolicy;
+    <SVVisibilityMonitoring> * _visibilityMonitor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) <SXVideoPlaybackController> *playbackController;
-@property (nonatomic, readonly) <SXVideoPlaybackPolicy> *playbackPolicy;
+@property (nonatomic, readonly) <SVVideoPlaybackController> *playbackController;
+@property (nonatomic, readonly) <SVVideoPlaybackPolicy> *playbackPolicy;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <SXVisibilityMonitoring> *visibilityMonitor;
+@property (nonatomic, readonly) <SVVisibilityMonitoring> *visibilityMonitor;
 
 - (void).cxx_destruct;
 - (id)init;

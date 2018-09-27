@@ -13,6 +13,7 @@
     bool  _serviceDebugging;
 }
 
+@property (nonatomic, readonly) NSString *UUID;
 @property (retain) NSString *acceptLanguageCode;
 @property (getter=isNetworkReachable, nonatomic) bool networkReachable;
 @property (retain) NSString *requestCountryCode;

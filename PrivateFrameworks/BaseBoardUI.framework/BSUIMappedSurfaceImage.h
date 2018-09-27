@@ -11,8 +11,8 @@
 + (id)mappedSurfaceImageFromPath:(id)arg1 loadEagerly:(bool)arg2;
 + (bool)writeSurfaceImage:(id)arg1 toFileDescriptor:(int)arg2;
 
+- (void).cxx_destruct;
 - (id)_mappedSurfaceData;
 - (void)_setMappedSurfaceData:(id)arg1;
-- (void)dealloc;
 
 @end

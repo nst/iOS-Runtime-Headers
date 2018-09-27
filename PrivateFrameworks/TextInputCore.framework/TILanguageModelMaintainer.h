@@ -16,6 +16,7 @@
 
 + (id)sharedLanguageModelMaintainer;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)dynamicLearningCacheTimer;
 - (void)dynamicLearningCacheTimerFired:(id)arg1;

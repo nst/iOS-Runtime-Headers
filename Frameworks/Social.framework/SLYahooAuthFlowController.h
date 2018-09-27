@@ -5,6 +5,7 @@
 @interface SLYahooAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate> {
     id /* block */  _completion;
     NSURLRequest * _requestWithAuthorizationCode;
+    SLWebClient * _webClient;
     NSString * _yahooJapanUserName;
 }
 
@@ -18,6 +19,7 @@
 - (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id /* block */)arg2;
 - (void)_fetchNamesForToken:(id)arg1 completion:(id /* block */)arg2;
 - (id)authURLForUsername:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1;
 - (id)initialRedirectURL;
 - (id)requestForAuthURL:(id)arg1;
 - (void)setAuthFlowCompletion:(id /* block */)arg1;

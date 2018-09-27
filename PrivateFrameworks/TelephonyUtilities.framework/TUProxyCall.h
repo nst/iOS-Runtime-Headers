@@ -3,7 +3,6 @@
  */
 
 @interface TUProxyCall : TUCall <AVCRemoteVideoClientDelegate, NSSecureCoding> {
-    NSArray * _activeRemoteParticipantHandles;
     NSString * _audioCategory;
     NSString * _audioMode;
     TUCallProvider * _backingProvider;
@@ -14,7 +13,6 @@
     NSString * _callUUID;
     NSString * _callerNameFromNetwork;
     long long  _cameraType;
-    NSUUID * _conversationGroupUUID;
     TUCallDisplayContext * _displayContext;
     TUCallProvider * _displayProvider;
     bool  _downlinkMuted;
@@ -24,15 +22,19 @@
     NSDictionary * _endedReasonUserInfo;
     TUHandle * _handle;
     bool  _hostedOnCurrentDevice;
+    long long  _inputAudioPowerSpectrumToken;
     bool  _isSendingAudio;
     bool  _isSendingVideo;
     bool  _isVideo;
     NSData * _localFrequency;
+    float  _localMeterLevel;
+    NSUUID * _localSenderIdentityUUID;
     <TURemoteVideoClient> * _localVideo;
     NSMutableDictionary * _localVideoModeToLayer;
     bool  _mediaStalled;
     bool  _needsManualInCallSounds;
     bool  _outgoing;
+    long long  _outputAudioPowerSpectrumToken;
     bool  _prefersExclusiveAccessToCellularNetwork;
     NSDictionary * _providerContext;
     <TUCallServicesProxyCallActions> * _proxyCallActionsDelegate;
@@ -42,7 +44,8 @@
     }  _remoteAspectRatio;
     long long  _remoteCameraOrientation;
     NSData * _remoteFrequency;
-    NSArray * _remoteParticipantHandles;
+    float  _remoteMeterLevel;
+    NSSet * _remoteParticipantHandles;
     struct CGSize { 
         double width; 
         double height; 
@@ -66,6 +69,7 @@
     }  _remoteVideoContentRect;
     NSMutableDictionary * _remoteVideoModeToLayer;
     bool  _requiresRemoteVideo;
+    bool  _shouldSuppressInCallUI;
     bool  _sos;
     bool  _supportsTTYWithVoice;
     bool  _thirdPartyVideo;
@@ -73,12 +77,13 @@
     bool  _uplinkMuted;
     bool  _usingBaseband;
     bool  _videoDegraded;
+    bool  _videoMirrored;
     bool  _videoPaused;
     long long  _videoStreamToken;
     bool  _voicemail;
+    bool  _wantsStagingArea;
 }
 
-@property (nonatomic, copy) NSArray *activeRemoteParticipantHandles;
 @property (nonatomic, copy) NSString *audioCategory;
 @property (nonatomic, copy) NSString *audioMode;
 @property (nonatomic, retain) TUCallProvider *backingProvider;
@@ -89,7 +94,6 @@
 @property (nonatomic, copy) NSString *callUUID;
 @property (nonatomic, copy) NSString *callerNameFromNetwork;
 @property (nonatomic) long long cameraType;
-@property (nonatomic, copy) NSUUID *conversationGroupUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TUCallDisplayContext *displayContext;
@@ -101,21 +105,26 @@
 @property (nonatomic, retain) TUHandle *handle;
 @property (readonly) unsigned long long hash;
 @property (getter=isHostedOnCurrentDevice, nonatomic) bool hostedOnCurrentDevice;
+@property (nonatomic) long long inputAudioPowerSpectrumToken;
 @property (nonatomic) bool isSendingAudio;
 @property (nonatomic) bool isVideo;
 @property (nonatomic, retain) NSData *localFrequency;
+@property (nonatomic) float localMeterLevel;
+@property (nonatomic, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic, retain) <TURemoteVideoClient> *localVideo;
 @property (nonatomic, retain) NSMutableDictionary *localVideoModeToLayer;
 @property (getter=isMediaStalled, nonatomic) bool mediaStalled;
 @property (nonatomic) bool needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic) bool outgoing;
+@property (nonatomic) long long outputAudioPowerSpectrumToken;
 @property (nonatomic) bool prefersExclusiveAccessToCellularNetwork;
 @property (nonatomic, retain) NSDictionary *providerContext;
 @property (nonatomic) <TUCallServicesProxyCallActions> *proxyCallActionsDelegate;
 @property (nonatomic) struct CGSize { double x1; double x2; } remoteAspectRatio;
 @property (nonatomic) long long remoteCameraOrientation;
 @property (nonatomic, retain) NSData *remoteFrequency;
-@property (nonatomic, copy) NSArray *remoteParticipantHandles;
+@property (nonatomic) float remoteMeterLevel;
+@property (nonatomic, copy) NSSet *remoteParticipantHandles;
 @property (nonatomic) struct CGSize { double x1; double x2; } remoteScreenLandscapeAspectRatio;
 @property (nonatomic) long long remoteScreenOrientation;
 @property (nonatomic) struct CGSize { double x1; double x2; } remoteScreenPortraitAspectRatio;
@@ -123,6 +132,7 @@
 @property (nonatomic, retain) <TURemoteVideoClient> *remoteVideo;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } remoteVideoContentRect;
 @property (nonatomic, retain) NSMutableDictionary *remoteVideoModeToLayer;
+@property (nonatomic) bool shouldSuppressInCallUI;
 @property (getter=isSOS, setter=setSOS:, nonatomic) bool sos;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsTTYWithVoice;
@@ -130,9 +140,11 @@
 @property (nonatomic) int ttyType;
 @property (getter=isUsingBaseband, nonatomic) bool usingBaseband;
 @property (getter=isVideoDegraded, nonatomic) bool videoDegraded;
+@property (getter=isVideoMirrored, nonatomic) bool videoMirrored;
 @property (getter=isVideoPaused, nonatomic) bool videoPaused;
 @property (nonatomic) long long videoStreamToken;
 @property (getter=isVoicemail, nonatomic) bool voicemail;
+@property (nonatomic) bool wantsStagingArea;
 
 + (id)proxyCallWithCall:(id)arg1;
 + (bool)supportsSecureCoding;
@@ -146,7 +158,6 @@
 - (void)_synchronizeRemoteVideo;
 - (void)_updateVideoCallAttributes:(id)arg1;
 - (void)_updateVideoStreamToken:(long long)arg1;
-- (id)activeRemoteParticipantHandles;
 - (void)answerWithRequest:(id)arg1;
 - (id)audioCategory;
 - (id)audioMode;
@@ -158,7 +169,6 @@
 - (id)callUUID;
 - (id)callerNameFromNetwork;
 - (long long)cameraType;
-- (id)conversationGroupUUID;
 - (void)disconnectWithReason:(int)arg1;
 - (id)displayContext;
 - (id)displayProvider;
@@ -169,6 +179,7 @@
 - (id)handle;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1 endpointOnCurrentDevice:(bool)arg2;
+- (long long)inputAudioPowerSpectrumToken;
 - (bool)isBlocked;
 - (bool)isDownlinkMuted;
 - (bool)isEmergency;
@@ -184,13 +195,17 @@
 - (bool)isUsingBaseband;
 - (bool)isVideo;
 - (bool)isVideoDegraded;
+- (bool)isVideoMirrored;
 - (bool)isVideoPaused;
 - (bool)isVoicemail;
 - (struct CGSize { double x1; double x2; })localAspectRatioForOrientation:(long long)arg1;
 - (id)localFrequency;
+- (float)localMeterLevel;
+- (id)localSenderIdentityUUID;
 - (id)localVideo;
 - (id)localVideoModeToLayer;
 - (bool)needsManualInCallSounds;
+- (long long)outputAudioPowerSpectrumToken;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
 - (bool)prefersExclusiveAccessToCellularNetwork;
 - (id)providerContext;
@@ -198,6 +213,7 @@
 - (struct CGSize { double x1; double x2; })remoteAspectRatio;
 - (long long)remoteCameraOrientation;
 - (id)remoteFrequency;
+- (float)remoteMeterLevel;
 - (id)remoteParticipantHandles;
 - (struct CGSize { double x1; double x2; })remoteScreenAspectRatio;
 - (struct CGSize { double x1; double x2; })remoteScreenLandscapeAspectRatio;
@@ -213,7 +229,6 @@
 - (id)remoteVideoModeToLayer;
 - (bool)requiresRemoteVideo;
 - (void)sendHardPauseDigits;
-- (void)setActiveRemoteParticipantHandles:(id)arg1;
 - (void)setAudioCategory:(id)arg1;
 - (void)setAudioMode:(id)arg1;
 - (void)setBackingProvider:(id)arg1;
@@ -225,7 +240,6 @@
 - (void)setCallUUID:(id)arg1;
 - (void)setCallerNameFromNetwork:(id)arg1;
 - (void)setCameraType:(long long)arg1;
-- (void)setConversationGroupUUID:(id)arg1;
 - (void)setDisconnectedReason:(int)arg1;
 - (void)setDisplayContext:(id)arg1;
 - (void)setDisplayProvider:(id)arg1;
@@ -237,22 +251,27 @@
 - (void)setEndpointOnCurrentDevice:(bool)arg1;
 - (void)setHandle:(id)arg1;
 - (void)setHostedOnCurrentDevice:(bool)arg1;
+- (void)setInputAudioPowerSpectrumToken:(long long)arg1;
 - (void)setIsSendingAudio:(bool)arg1;
 - (void)setIsSendingVideo:(bool)arg1;
 - (void)setIsVideo:(bool)arg1;
 - (void)setLocalFrequency:(id)arg1;
+- (void)setLocalMeterLevel:(float)arg1;
+- (void)setLocalSenderIdentityUUID:(id)arg1;
 - (void)setLocalVideo:(id)arg1;
 - (void)setLocalVideoLayer:(id)arg1 forMode:(long long)arg2;
 - (void)setLocalVideoModeToLayer:(id)arg1;
 - (void)setMediaStalled:(bool)arg1;
 - (void)setNeedsManualInCallSounds:(bool)arg1;
 - (void)setOutgoing:(bool)arg1;
+- (void)setOutputAudioPowerSpectrumToken:(long long)arg1;
 - (void)setPrefersExclusiveAccessToCellularNetwork:(bool)arg1;
 - (void)setProviderContext:(id)arg1;
 - (void)setProxyCallActionsDelegate:(id)arg1;
 - (void)setRemoteAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRemoteCameraOrientation:(long long)arg1;
 - (void)setRemoteFrequency:(id)arg1;
+- (void)setRemoteMeterLevel:(float)arg1;
 - (void)setRemoteParticipantHandles:(id)arg1;
 - (void)setRemoteScreenLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRemoteScreenOrientation:(long long)arg1;
@@ -266,6 +285,7 @@
 - (void)setRemoteVideoPresentationState:(int)arg1;
 - (void)setRequiresRemoteVideo:(bool)arg1;
 - (void)setSOS:(bool)arg1;
+- (void)setShouldSuppressInCallUI:(bool)arg1;
 - (void)setShouldSuppressRingtone:(bool)arg1;
 - (void)setSupportsTTYWithVoice:(bool)arg1;
 - (void)setThirdPartyVideo:(bool)arg1;
@@ -274,14 +294,18 @@
 - (void)setUplinkMuted:(bool)arg1;
 - (void)setUsingBaseband:(bool)arg1;
 - (void)setVideoDegraded:(bool)arg1;
+- (void)setVideoMirrored:(bool)arg1;
 - (void)setVideoPaused:(bool)arg1;
 - (void)setVideoStreamToken:(long long)arg1;
 - (void)setVoicemail:(bool)arg1;
 - (void)setWantsHoldMusic:(bool)arg1;
+- (void)setWantsStagingArea:(bool)arg1;
+- (bool)shouldSuppressInCallUI;
 - (bool)supportsTTYWithVoice;
 - (int)ttyType;
 - (void)updateProxyCallWithDaemon;
 - (void)updateWithCall:(id)arg1;
 - (long long)videoStreamToken;
+- (bool)wantsStagingArea;
 
 @end

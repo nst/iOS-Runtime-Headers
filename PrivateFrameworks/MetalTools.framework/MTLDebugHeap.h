@@ -30,5 +30,6 @@
 - (void)setOldestEvent:(struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*)arg1;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (void)validateHeapResourceOptions:(unsigned long long)arg1 isTexture:(bool)arg2 isIOSurface:(bool)arg3;
+- (void)validateHeapTextureUsage:(unsigned long long)arg1 options:(unsigned long long)arg2;
 
 @end

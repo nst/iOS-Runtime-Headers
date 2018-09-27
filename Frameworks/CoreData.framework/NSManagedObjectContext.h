@@ -40,7 +40,8 @@
         unsigned int _isXPCServerContext : 1; 
         unsigned int _pushSecureDelete : 1; 
         unsigned int _refreshAfterSave : 1; 
-        unsigned int _reservedFlags : 3; 
+        unsigned int _allowAncillary : 1; 
+        unsigned int _reservedFlags : 2; 
     }  _flags;
     int  _ignoreChangeNotification;
     id  _infoByGID;
@@ -80,8 +81,6 @@
 @property (nonatomic, readonly) NSSet *registeredObjects;
 @property (nonatomic) bool retainsRegisteredObjects;
 @property bool shouldDeleteInaccessibleFaults;
-@property (nonatomic) bool shouldPerformSecureOperation;
-@property (nonatomic) bool shouldRefreshAfterSave;
 @property double stalenessInterval;
 @property (copy) NSString *transactionAuthor;
 @property (nonatomic, retain) NSUndoManager *undoManager;
@@ -96,12 +95,14 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)createFutureForFileAtURL:(id)arg1;
 + (void)initialize;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
 + (id)new;
 
 - (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
+- (bool)_allowAncillaryEntities;
 - (bool)_attemptCoalesceChangesForFetch;
 - (void)_automaticallyMergeChangesFromContextDidSaveNotification:(id)arg1;
 - (unsigned int)_batchRetainedObjects:(id*)arg1 forCount:(unsigned int)arg2 withIDs:(id*)arg3 optionalHandler:(id)arg4 withInlineStorage:(bool)arg5;
@@ -223,6 +224,7 @@
 - (id)_retainedRegisteredObjects;
 - (void)_sendCommitEditingSelectorToTarget:(id)arg1 sender:(id)arg2 selector:(SEL)arg3 flag:(bool)arg4 contextInfo:(void*)arg5 delayed:(bool)arg6;
 - (void)_sendOrEnqueueNotification:(id)arg1 selector:(SEL)arg2;
+- (void)_setAllowAncillaryEntities:(bool)arg1;
 - (void)_setAutomaticallyMergesChangesFromParent:(bool)arg1;
 - (bool)_setChangeTrackingTokenFromToken:(id)arg1 error:(id*)arg2;
 - (void)_setDelegate:(id)arg1;
@@ -393,8 +395,11 @@
 - (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 shouldRefreshAfterSave:(bool)arg2 withBlock:(id /* block */)arg3;
 - (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 withBlock:(id /* block */)arg2;
 - (bool)isUserInterfaceContext;
+- (id)pathManager;
 - (id)photoLibrary;
+- (bool)pl_executeBatchUpdateRequest:(id)arg1 withBatchSize:(unsigned long long)arg2 error:(id*)arg3;
 - (void)pl_refresh;
+- (id)pl_resultWithError:(id*)arg1 block:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

@@ -36,6 +36,7 @@
 - (void)remoteAdminCleanupProgress:(double)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (bool)setRegistrationInfo:(id)arg1 primaryRegionTopic:(id)arg2;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)unregisterEventListener:(id)arg1;
 
 @end

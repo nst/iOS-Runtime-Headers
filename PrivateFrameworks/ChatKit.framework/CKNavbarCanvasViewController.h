@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKNavbarCanvasViewController : UIViewController <CKAvatarPickerViewControllerDelegate> {
+@interface CKNavbarCanvasViewController : UIViewController <CKDetailsContactsManagerDelegate, UIGestureRecognizerDelegate> {
     CKAvatarPickerViewController * _avatarPickerViewController;
     CKCanvasBackButtonView * _backButtonView;
+    UIButton * _callButton;
     bool  _canShowBackButtonView;
     CKNavigationBarCanvasView * _canvasView;
     UIButton * _clearAllButtonView;
+    CKDetailsContactsManager * _contactsManager;
     CKConversation * _conversation;
     CKLabel * _defaultLabel;
     <CKNavbarCanvasViewControllerDelegate> * _delegate;
     UIButton * _detailsButton;
     UIButton * _editCancelButtonView;
     bool  _editing;
+    long long  _indicatorType;
     NSString * _navbarTitle;
     UINavigationController * _proxyNavigationController;
     CNContactStore * _suggestionsEnabledContactStore;
@@ -21,9 +24,11 @@
 
 @property (nonatomic, retain) CKAvatarPickerViewController *avatarPickerViewController;
 @property (nonatomic, retain) CKCanvasBackButtonView *backButtonView;
+@property (nonatomic, retain) UIButton *callButton;
 @property (nonatomic) bool canShowBackButtonView;
 @property (nonatomic, retain) CKNavigationBarCanvasView *canvasView;
 @property (nonatomic, retain) UIButton *clearAllButtonView;
+@property (nonatomic, retain) CKDetailsContactsManager *contactsManager;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) CKLabel *defaultLabel;
@@ -33,6 +38,7 @@
 @property (nonatomic, retain) UIButton *editCancelButtonView;
 @property (nonatomic) bool editing;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) long long indicatorType;
 @property (nonatomic, retain) NSString *navbarTitle;
 @property (nonatomic) UINavigationController *proxyNavigationController;
 @property (nonatomic, retain) CNContactStore *suggestionsEnabledContactStore;
@@ -45,24 +51,31 @@
 - (void)_configureForDefaultMode;
 - (void)_configureForEditMode;
 - (void)_contactPhotosEnabledChangedNotification:(id)arg1;
+- (void)_handleTranscriptScroll:(id)arg1;
 - (void)_initializeForTraitCollection:(id)arg1;
 - (id)_leftItemViewForTraitCollection:(id)arg1;
 - (void)_notifyDelegateThatViewControllerWantsResize;
 - (double)_preferredHeightForTraitCollection:(id)arg1;
 - (id)_rightItemViewForTraitCollection:(id)arg1;
+- (id)_secondaryRightItemViewForTraitCollection:(id)arg1;
 - (void)_showContactCardForEntity:(id)arg1;
 - (id)_titleItemViewForTraitCollection:(id)arg1;
 - (long long)_unreadCount;
+- (void)_updateMultiwayButtonStateWithConversation:(id)arg1;
 - (void)_updateUnreadCountForBackbuttonView:(long long)arg1;
+- (void)_userDidTapNavigationBar:(id)arg1;
 - (id)_windowTraitCollection;
 - (void)accessibilitySizeCategoryDidChange:(id)arg1;
 - (id)avatarPickerViewController;
-- (void)avatarPickerViewControllerDidSelectEntity:(id)arg1;
 - (id)backButtonView;
+- (id)callButton;
 - (bool)canShowBackButtonView;
 - (id)canvasView;
 - (id)clearAllButtonView;
 - (void)configureForEditing:(bool)arg1;
+- (id)contactsManager;
+- (void)contactsManager:(id)arg1 didRequestCallTypeForEntity:(id)arg2 addresses:(id)arg3 abLabels:(id)arg4 faceTimeAudioEnabled:(bool)arg5;
+- (void)contactsManagerViewModelsDidChange:(id)arg1;
 - (id)conversation;
 - (void)dealloc;
 - (id)defaultLabel;
@@ -71,29 +84,39 @@
 - (void)dismissModal;
 - (id)editCancelButtonView;
 - (bool)editing;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)handleCloseNavBarAnimationCompleteNotification:(id)arg1;
+- (long long)indicatorType;
 - (id)initWithConversation:(id)arg1;
 - (id)initWithConversation:(id)arg1 navigationController:(id)arg2;
+- (bool)isMultiwayFaceTimeAudioSupported;
 - (void)loadView;
+- (void)multiwayStateChanged:(id)arg1;
 - (id)navbarTitle;
 - (id)navigationItem;
 - (id)proxyNavigationController;
 - (void)setAvatarPickerViewController:(id)arg1;
 - (void)setBackButtonView:(id)arg1;
+- (void)setCallButton:(id)arg1;
 - (void)setCanShowBackButtonView:(bool)arg1;
 - (void)setCanvasView:(id)arg1;
 - (void)setClearAllButtonView:(id)arg1;
+- (void)setContactsManager:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDefaultLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailsButton:(id)arg1;
 - (void)setEditCancelButtonView:(id)arg1;
 - (void)setEditing:(bool)arg1;
+- (void)setIndicatorType:(long long)arg1;
 - (void)setNavbarTitle:(id)arg1;
 - (void)setProxyNavigationController:(id)arg1;
 - (void)setSuggestionsEnabledContactStore:(id)arg1;
 - (void)setUnreadCountTitleColor;
 - (void)showMapkitBusinessData;
+- (void)startAudioCommunicationUsingPreferredRouteIfAvailable:(bool)arg1;
 - (id)suggestionsEnabledContactStore;
+- (void)toggleExpansionState;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateTitle:(id)arg1 animated:(bool)arg2;
 - (void)viewDidLayoutSubviews;

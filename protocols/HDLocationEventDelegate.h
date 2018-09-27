@@ -6,7 +6,6 @@
 @required
 
 - (void)elevationUpdated:(unsigned long long)arg1;
-- (void)locationSeriesSampleUpdated:(HKLocationSeriesSample *)arg1;
 - (void)workoutRouteUpdated:(HKWorkoutRoute *)arg1;
 
 @end

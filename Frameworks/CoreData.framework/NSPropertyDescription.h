@@ -21,8 +21,9 @@
         unsigned int _hasMinValueInExtraIvars : 1; 
         unsigned int _storeBinaryDataExternally : 1; 
         unsigned int _preserveValueOnDelete : 1; 
-        unsigned int _reservedAttributeFlagOne : 1; 
-        unsigned int _reservedPropertyDescription : 2; 
+        unsigned int _isTriggerBacked : 1; 
+        unsigned int _isFileBackedFuture : 1; 
+        unsigned int _reservedPropertyDescription : 1; 
     }  _propertyDescriptionFlags;
     NSMutableDictionary * _userInfo;
     NSArray * _validationPredicates;
@@ -69,8 +70,10 @@
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (bool)_isEditable;
+- (bool)_isFileBackedFuture;
 - (bool)_isOrdered;
 - (bool)_isRelationship;
+- (bool)_isSchemaEqual:(id)arg1;
 - (bool)_isToManyRelationship;
 - (bool)_isTriggerBacked;
 - (bool)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;

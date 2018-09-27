@@ -2,19 +2,32 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFRemoteRequestWatcher : NSObject {
+@interface AFRemoteRequestWatcher : NSObject <AFSiriActivationListenerDelegate> {
+    id /* block */  _intentHandler;
+    id /* block */  _prewarmHandler;
     NSObject<OS_dispatch_queue> * _queue;
     id /* block */  _requestHandler;
+    AFSiriActivationListener * _siriActivationListener;
     id /* block */  _speechRequestHandler;
     int  _speechRequestToken;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setupRequestListener;
 - (void)_setupSpeechRequestListener;
 - (void)dealloc;
 - (id)init;
+- (void)setIntentHandler:(id /* block */)arg1;
 - (void)setNewRequestHandler:(id /* block */)arg1;
 - (void)setNewSpeechRequestHandler:(id /* block */)arg1;
+- (void)setPrewarmHandler:(id /* block */)arg1;
+- (void)siriActivationListener:(id)arg1 handleActivationWithRequestInfo:(id)arg2;
+- (void)siriActivationListener:(id)arg1 handleIntent:(id)arg2 inBackgroundAppWithBundleId:(id)arg3 reply:(id /* block */)arg4;
+- (void)siriActivationListener:(id)arg1 handlePrewarmForRequestInfo:(id)arg2;
 
 @end

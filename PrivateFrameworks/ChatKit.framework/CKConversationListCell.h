@@ -33,11 +33,14 @@
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_increaseContrastDidChange:(id)arg1;
+- (id)_makeSummaryAttributedStringWithText:(id)arg1;
 - (id)avatarView;
 - (void)contentSizeCategoryDidChange;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
+- (void)increaseContrastDidChange;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (id)searchMessageDate;
@@ -53,8 +56,10 @@
 - (bool)showingEditControl;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateContentsForConversation:(id)arg1;
+- (void)updateContentsForConversation:(id)arg1 fastPreview:(bool)arg2;
 - (void)updateForEditing:(bool)arg1;
 - (void)updateFromLabelWithText:(id)arg1;
+- (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(bool)arg2;
 - (void)updateUnreadIndicatorWithImage:(id)arg1;
 - (void)updateWithSearchResult:(id)arg1;
 - (bool)verified;

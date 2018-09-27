@@ -26,6 +26,7 @@
     double  _latency;
     unsigned int  _maximumFramesToRender;
     id /* block */  _musicalContextBlock;
+    id /* block */  _profileChangedBlock;
     struct RealtimeState { 
         struct CAMutex { 
             int (**_vptr$CAMutex)(); 
@@ -96,6 +97,7 @@
 @property (nonatomic, copy) id /* block */ musicalContextBlock;
 @property (nonatomic, readonly) AUAudioUnitBusArray *outputBusses;
 @property (nonatomic, readonly) AUParameterTree *parameterTree;
+@property (nonatomic, copy) id /* block */ profileChangedBlock;
 @property (nonatomic, readonly) bool providesUserInterface;
 @property (nonatomic, readonly) id /* block */ renderBlock;
 @property (nonatomic) long long renderQuality;
@@ -136,6 +138,8 @@
 - (id)currentPreset;
 - (void)dealloc;
 - (void)deallocateRenderResources;
+- (bool)disableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id*)arg4;
+- (bool)enableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id*)arg4;
 - (struct AUEventSchedule { struct AURenderEventAllocator {} *x1; struct TAtomicStack<AURenderEventStruct> { struct AURenderEventStruct {} *x_2_1_1; } x2; union { /* Warning: Unrecognized filer type: 'U' using 'void*' */ void*x_3_1_1; void*x_3_1_2; void*x_3_1_3; in double x_3_1_4; void*x_3_1_5; const void*x_3_1_6; void x_3_1_7; void*x_3_1_8; in void*x_3_1_9; } *x3; id x4; }*)eventSchedule;
 - (id)factoryPresets;
 - (id)fullState;
@@ -155,6 +159,8 @@
 - (id)outputBusses;
 - (id)parameterTree;
 - (id)parametersForOverviewWithCount:(long long)arg1;
+- (id /* block */)profileChangedBlock;
+- (id)profileStateForCable:(unsigned char)arg1 channel:(unsigned char)arg2;
 - (bool)providesUserInterface;
 - (void)removeRenderObserver:(long long)arg1;
 - (void)removeRenderObserver:(int (*)arg1 userData:(void*)arg2;
@@ -176,6 +182,7 @@
 - (void)setMIDIOutputEventBlock:(id /* block */)arg1;
 - (void)setMaximumFramesToRender:(unsigned int)arg1;
 - (void)setMusicalContextBlock:(id /* block */)arg1;
+- (void)setProfileChangedBlock:(id /* block */)arg1;
 - (void)setRenderQuality:(long long)arg1;
 - (void)setRenderResourcesAllocated:(bool)arg1;
 - (void)setRenderingOffline:(bool)arg1;

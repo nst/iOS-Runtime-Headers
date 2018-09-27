@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMEventTrigger : HMTrigger <HFPrettyDescription, HFStateDumpSerializable, HFTriggerProtocol, NSSecureCoding> {
+@interface HMEventTrigger : HMTrigger <HFTriggerProtocol, NSSecureCoding> {
     unsigned long long  _activationState;
-    HMThreadSafeMutableArrayCollection * _currentEvents;
+    HMMutableArray * _currentEvents;
     bool  _executeOnce;
     NSPredicate * _internalPredicate;
     NSArray * _recurrences;
@@ -12,7 +12,7 @@
 
 @property (nonatomic) unsigned long long activationState;
 @property (nonatomic, readonly, copy) NSArray *allEvents;
-@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentEvents;
+@property (nonatomic, retain) HMMutableArray *currentEvents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *endEvents;
@@ -49,8 +49,8 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (void)_addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
 - (void)_handleEventTriggerConditionNotification:(id)arg1;
 - (void)_handleEventTriggerExecuteOnceNotification:(id)arg1;
 - (void)_handleEventTriggerRecurrencesNotification:(id)arg1;
@@ -71,7 +71,6 @@
 - (bool)compatibleWithApp;
 - (bool)containsSharedTriggerActivationBits;
 - (id)currentEvents;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endEvents;
 - (id)events;
@@ -120,9 +119,8 @@
 - (bool)hf_isHomeAppCreatedTrigger;
 - (id)hf_markTriggerAsHomeAppCreated;
 - (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned long long)arg2;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (bool)hf_requiresConfirmationToRun;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (unsigned long long)hf_triggerType;
 - (id)hf_unmarkTriggerAsHomeAppCreated;
 

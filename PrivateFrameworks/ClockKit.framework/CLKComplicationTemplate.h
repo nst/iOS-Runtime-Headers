@@ -5,11 +5,19 @@
 @interface CLKComplicationTemplate : NSObject <NSCopying, NSSecureCoding> {
     NSMutableSet * _activeClients;
     bool  _finalized;
+    NSDictionary * _metadata;
     UIColor * _tintColor;
 }
 
+@property (nonatomic, retain) NSArray *cal_eventColors;
+@property (nonatomic, retain) CLKTextProvider *cal_firstText;
+@property (nonatomic) bool cal_hasConflicts;
+@property (nonatomic, retain) CLKTextProvider *cal_secondText;
+@property (nonatomic, retain) CLKTextProvider *cal_thirdText;
 @property (nonatomic, readonly) long long timeTravelUpdateFrequency;
 @property (nonatomic, copy) UIColor *tintColor;
+
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
 
 + (id)complicationTemplateWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 + (bool)supportsSecureCoding;
@@ -19,7 +27,10 @@
 - (void)_enumerateAllKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateBOOLKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateDateKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateEmbeddedTemplateKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateFloatKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateFullColorImageProviderKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateGaugeProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateProgressProviderKeysWithBlock:(id /* block */)arg1;
@@ -41,9 +52,25 @@
 - (bool)isCompatibleWithFamily:(long long)arg1;
 - (bool)isEqual:(id)arg1;
 - (struct CGSize { double x1; double x2; })maxSizeForImageProviderKey:(id)arg1;
+- (id)metadata;
+- (void)setMetadata:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (long long)timeTravelUpdateFrequency;
 - (id)tintColor;
 - (void)validate;
+
+// Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
+
+- (id)cal_eventColors;
+- (id)cal_firstText;
+- (bool)cal_hasConflicts;
+- (id)cal_secondText;
+- (void)cal_setKey:(id)arg1 value:(id)arg2;
+- (id)cal_thirdText;
+- (void)setCal_eventColors:(id)arg1;
+- (void)setCal_firstText:(id)arg1;
+- (void)setCal_hasConflicts:(bool)arg1;
+- (void)setCal_secondText:(id)arg1;
+- (void)setCal_thirdText:(id)arg1;
 
 @end

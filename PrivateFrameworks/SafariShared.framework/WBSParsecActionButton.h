@@ -16,7 +16,6 @@
     NSString * _offerType;
     bool  _overlay;
     NSString * _punchoutAppBundleIdentifier;
-    NSURL * _punchoutAppInstallURL;
     NSString * _punchoutAppName;
     NSURL * _punchoutURL;
     NSString * _type;
@@ -36,7 +35,6 @@
 @property (nonatomic, readonly, copy) NSString *offerType;
 @property (getter=isOverlay, nonatomic, readonly) bool overlay;
 @property (nonatomic, readonly, copy) NSString *punchoutAppBundleIdentifier;
-@property (nonatomic, readonly) NSURL *punchoutAppInstallURL;
 @property (nonatomic, readonly, copy) NSString *punchoutAppName;
 @property (nonatomic, readonly) NSURL *punchoutURL;
 @property (nonatomic, readonly, copy) NSString *type;
@@ -59,7 +57,6 @@
 - (id)mediaKind;
 - (id)offerType;
 - (id)punchoutAppBundleIdentifier;
-- (id)punchoutAppInstallURL;
 - (id)punchoutAppName;
 - (id)punchoutURL;
 - (id)type;

@@ -25,10 +25,9 @@
     bool  _showSeconds;
     UILabel * _standHoursLabel;
     long long  _standStringMetricWidth;
-    NTKActivityFaceControl * _tapToLaunchButton;
+    NTKFaceViewTapControl * _tapToLaunchButton;
     NSDate * _timeDensityEditingOverrideDate;
     UIView * _timeLabelBackgroundView;
-    bool  _useTimeTravelStyleForTimeLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,11 +37,10 @@
 @property (nonatomic) bool showSeconds;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NTKDigitalTimeLabel *timeView;
-@property (nonatomic) bool useTimeTravelStyleForTimeLabel;
 
 + (id)_newRingsView;
-+ (void)_prewarm;
-+ (id)_swatchColorForColorOption:(id)arg1;
++ (void)_prewarmForDevice:(id)arg1;
++ (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_additionalPrelaunchApplicationIdentifiers;
@@ -59,22 +57,22 @@
 - (void)_cleanUpAfterDetailEditing;
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterZoom;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForDetailEditing;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
-- (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_enumerateActivityLabels:(id /* block */)arg1;
 - (bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_keylineLabelActiveAreaInsetsForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_launchButtonPressed:(id)arg1;
 - (void)_layoutForegroundContainerView;
-- (void)_layoutTimeTravelCaptionView:(id)arg1;
-- (void)_layoutTimeTravelStatusModule:(id)arg1;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_loadLayoutRules;
 - (void)_loadSnapshotContentViews;
@@ -90,29 +88,24 @@
 - (double)_ringAlphaForEditMode:(long long)arg1;
 - (struct CGPoint { double x1; double x2; })_ringCenterForLayout:(struct RingLayout { double x1; double x2; double x3; double x4; double x5; })arg1;
 - (id)_ringGroupController;
-- (void)_scrubToDate:(id)arg1 animated:(bool)arg2;
 - (void)_setActivityViewsAlpha:(double)arg1 animated:(bool)arg2;
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
-- (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
-- (bool)_supportsTimeScrubbing;
 - (double)_timeAlphaForEditMode:(long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeViewBackgroundRect;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateCurrentRingLayoutIfNecessary;
 - (void)_updateTimeViewSecondsDisplayState;
-- (bool)_wantsTimeTravelStatusModule;
 - (void)applyEntryModel:(id)arg1 animated:(bool)arg2;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (double)rightTimeViewInset;
 - (void)setDataMode:(long long)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setRightTimeViewInset:(double)arg1;
 - (void)setShowSeconds:(bool)arg1;
-- (void)setUseTimeTravelStyleForTimeLabel:(bool)arg1;
 - (bool)showSeconds;
+- (bool)slotUsesCurvedText:(id)arg1;
 - (void)timeTravelDateEnteredOrExitedTimelineBounds:(bool)arg1;
-- (bool)useTimeTravelStyleForTimeLabel;
 
 @end

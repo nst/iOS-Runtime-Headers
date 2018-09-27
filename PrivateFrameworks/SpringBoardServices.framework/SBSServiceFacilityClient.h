@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSServiceFacilityClient : FBSSystemServiceFacilityClient {
+@interface SBSServiceFacilityClient : FBSServiceFacilityClient {
     long long  _numberOfCheckOuts;
 }
 

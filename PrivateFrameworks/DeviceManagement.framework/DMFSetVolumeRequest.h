@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFSetVolumeRequest : CATTaskRequest {
+@interface DMFSetVolumeRequest : DMFTaskRequest {
     float  _volume;
 }
 

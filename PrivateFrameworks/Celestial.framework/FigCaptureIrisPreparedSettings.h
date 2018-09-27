@@ -6,6 +6,7 @@
     int  _HDRMode;
     int  _SISMode;
     unsigned int  _bracketedImageCount;
+    bool  _bravoDualImageDeliveryEnabled;
     unsigned int  _outputHeight;
     unsigned int  _outputWidth;
     unsigned int  _processedOutputFormat;
@@ -16,6 +17,7 @@
 @property (nonatomic) int HDRMode;
 @property (nonatomic) int SISMode;
 @property (nonatomic) unsigned int bracketedImageCount;
+@property (nonatomic) bool bravoDualImageDeliveryEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -29,6 +31,7 @@
 - (int)HDRMode;
 - (int)SISMode;
 - (unsigned int)bracketedImageCount;
+- (bool)bravoDualImageDeliveryEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -42,6 +45,7 @@
 - (unsigned int)processedOutputFormat;
 - (unsigned int)rawOutputFormat;
 - (void)setBracketedImageCount:(unsigned int)arg1;
+- (void)setBravoDualImageDeliveryEnabled:(bool)arg1;
 - (void)setHDRMode:(int)arg1;
 - (void)setOutputHeight:(unsigned int)arg1;
 - (void)setOutputWidth:(unsigned int)arg1;

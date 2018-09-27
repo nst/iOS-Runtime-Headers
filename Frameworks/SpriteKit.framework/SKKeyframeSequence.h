@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKKeyframeSequence : NSObject <NSCoding, NSCopying> {
+@interface SKKeyframeSequence : NSObject <NSCopying, NSSecureCoding> {
     struct SKCKeyframeSequence { int x1; int x2; long long x3; long long x4; float *x5; float *x6; } * _cKeyframeSequence;
     unsigned long long  _count;
     long long  _interpolationMode;
@@ -13,6 +13,8 @@
 
 @property (nonatomic) long long interpolationMode;
 @property (nonatomic) long long repeatMode;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (struct SKCKeyframeSequence { int x1; int x2; long long x3; long long x4; float *x5; float *x6; }*)_createSKCKeyframeSequence;
@@ -31,6 +33,7 @@
 - (id)initWithCount:(unsigned long long)arg1;
 - (id)initWithKeyframeValues:(id)arg1 times:(id)arg2;
 - (long long)interpolationMode;
+- (bool)isEqualToSequence:(id)arg1;
 - (void)removeAllKeyframes;
 - (void)removeKeyframeAtIndex:(unsigned long long)arg1;
 - (void)removeLastKeyframe;

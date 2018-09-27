@@ -17,8 +17,9 @@
 
 - (void).cxx_destruct;
 - (id)headerTitle;
+- (id)init;
 - (id)peopleNames;
-- (void)requestPeopleNamesUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)requestPeopleNamesUpdateSinceDate:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)resetToDefault;
 - (void)setPeopleNames:(id)arg1;
 - (id)title;

@@ -37,7 +37,9 @@
 - (void)_peerPaymentAccountChanged:(id)arg1;
 - (id)_peerPaymentPass;
 - (void)_presentActivationFlowWithCompletion:(id /* block */)arg1;
+- (void)_presentActivationFlowWithUserInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentContactAppleSupportAlertWithCompletion:(id /* block */)arg1;
+- (void)_presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(bool)arg2 userInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)_presentIdentityVerificationWithManualTrigger:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_presentPeerPaymentAction:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)_presentReOpenFlowWithCompletion:(id /* block */)arg1;
@@ -54,6 +56,8 @@
 - (void)peerPaymentPerformActionViewControllerDidPerformAction:(id)arg1;
 - (void)presentFlowForAccountResolution:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(bool)arg2 completion:(id /* block */)arg3;
+- (void)presentFlowForAccountResolution:(unsigned long long)arg1 manuallyTriggered:(bool)arg2 userInfo:(id)arg3 completion:(id /* block */)arg4;
+- (void)presentFlowForAccountResolution:(unsigned long long)arg1 userInfo:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentResolutionForCurrentAccountStateWithCompletion:(id /* block */)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setSetupDelegate:(id)arg1;

@@ -21,7 +21,6 @@
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
 - (unsigned long long)dateRangeFormatterPreset;
 - (id)diagnosticsProviderForVisualSection:(long long)arg1;
-- (id)displayTitle;
 - (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(long long)arg3;
 - (long long)imageDeliveryMode;
 - (struct CGSize { double x1; double x2; })imageRequestItemSize;

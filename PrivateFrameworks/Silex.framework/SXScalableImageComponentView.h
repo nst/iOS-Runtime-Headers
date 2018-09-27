@@ -13,6 +13,7 @@
     <SXImageViewFactory> * _imageViewFactory;
     double  _lastKnownPinchVelocity;
     double  _lastKnownRotationVelocity;
+    <SXMediaSharingPolicyProvider> * _mediaSharingPolicyProvider;
     bool  _presentingOnFullScreenCanvas;
     struct CGRect { 
         struct CGPoint { 
@@ -39,6 +40,7 @@
 @property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
 @property (nonatomic) double lastKnownPinchVelocity;
 @property (nonatomic) double lastKnownRotationVelocity;
+@property (nonatomic, readonly) <SXMediaSharingPolicyProvider> *mediaSharingPolicyProvider;
 @property (getter=isPresentingOnFullScreenCanvas, nonatomic) bool presentingOnFullScreenCanvas;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousContentFrame;
 @property (readonly) Class superclass;
@@ -59,7 +61,7 @@
 - (void)finishMediaViewEvent;
 - (void)forceFullScreen;
 - (id)fullScreenCanvasController;
-- (id)fullScreenCanvasController:(id)arg1 canvasViewForShowable:(id)arg2;
+- (id)fullScreenCanvasController:(id)arg1 canvasViewControllerForShowable:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)fullScreenCanvasController:(id)arg1 captionForShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (void)fullScreenCanvasController:(id)arg1 didHideShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (void)fullScreenCanvasController:(id)arg1 didShowShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
@@ -79,13 +81,14 @@
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
 - (id)imageViewFactory;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (bool)isPresentingOnFullScreenCanvas;
 - (double)lastKnownPinchVelocity;
 - (double)lastKnownRotationVelocity;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
+- (id)mediaSharingPolicyProvider;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;

@@ -243,6 +243,18 @@
 
 - (id)stringFromInteger:(long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
++ (id)dcaxLocalizedDouble:(double)arg1;
++ (id)dcaxLocalizedDouble:(double)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)dcaxLocalizedNumber:(id)arg1;
++ (id)dcaxLocalizedNumber:(id)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)dcaxLocalizedNumber:(id)arg1 numberStyle:(unsigned long long)arg2;
++ (id)dcaxLocalizedNumber:(id)arg1 numberStyle:(unsigned long long)arg2 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg3;
++ (id)dcaxLocalizedPercentage:(double)arg1;
++ (id)dcaxLocalizedPercentage:(double)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)dcaxLocalizedUnsignedInteger:(unsigned long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)gkRankFormatter;

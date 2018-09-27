@@ -3,6 +3,7 @@
  */
 
 @interface NTKExtraLargeTimeView : UIView <NTKTimeView> {
+    CLKDevice * _device;
     bool  _frozen;
     bool  _statusBarVisible;
     NTKDigitalTimeLabel * _timeHourView;
@@ -20,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)cancelWristRaiseAnimation;
 - (void)cleanupAfterZoom;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (bool)isFrozen;
 - (void)layoutSubviews;
 - (void)performWristRaiseAnimation;

@@ -61,7 +61,6 @@
 @property (nonatomic, readonly) bool isPersistent;
 @property (nonatomic, readonly) bool isPlugInService;
 @property (nonatomic, readonly) long long maxAttachmentSize;
-@property (nonatomic, readonly) long long maxChatParticipants;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, retain) NSDictionary *serviceDefaults;
 @property (nonatomic, readonly) NSData *serviceImageData;
@@ -86,8 +85,12 @@
 + (id)allServicesNonBlocking;
 + (id)connectedServices;
 + (id)connectedServicesWithCapability:(unsigned long long)arg1;
++ (bool)hasAlias:(id)arg1 onAccountForService:(id)arg2;
 + (bool)iMessageEnabled;
++ (bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2;
++ (bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;
 + (bool)mmsEnabled;
++ (bool)mmsEnabledforPhoneNumber:(id)arg1 simID:(id)arg2;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
@@ -152,7 +155,7 @@
 - (id)localizedName;
 - (id)localizedShortName;
 - (long long)maxAttachmentSize;
-- (long long)maxChatParticipants;
+- (long long)maxChatParticipantsForHandle:(id)arg1 simID:(id)arg2;
 - (id)myScreenNames;
 - (id)name;
 - (id)normalizedFormOfID:(id)arg1;

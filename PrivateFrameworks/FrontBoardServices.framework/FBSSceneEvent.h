@@ -15,9 +15,9 @@
 @property (nonatomic) long long source;
 @property (nonatomic, retain) FBSSceneTransitionContext *transitionContext;
 
+- (void).cxx_destruct;
 - (id)actions;
 - (id)clientSettingsDiff;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

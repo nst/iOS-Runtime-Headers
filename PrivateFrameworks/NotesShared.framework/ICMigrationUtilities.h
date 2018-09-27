@@ -4,6 +4,8 @@
 
 @interface ICMigrationUtilities : NSObject
 
++ (void)deleteMigratedHTMLAccountIfNecessaryForModernAccount:(id)arg1;
++ (void)deleteMigratedHTMLAccounts;
 + (void)fetchAndSetMigrationStateWithCompletionHandler:(id /* block */)arg1;
 + (void)fetchMigrationStateAndUserRecordWithCompletionHandler:(id /* block */)arg1;
 + (void)fetchMigrationStateWithCompletionHandler:(id /* block */)arg1;

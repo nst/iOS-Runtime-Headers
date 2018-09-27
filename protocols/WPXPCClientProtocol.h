@@ -28,6 +28,7 @@
 - (void)failedToRegisterZones:(NSMutableSet *)arg1 withError:(NSError *)arg2;
 - (void)failedToStartTrackingPeer:(WPPeerTrackingRequest *)arg1 error:(NSError *)arg2;
 - (void)fetchedCurrentlyTrackedZones:(NSDictionary *)arg1;
+- (void)foundPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)lostPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)peerTrackingAvailable;
 - (void)peerTrackingFull;

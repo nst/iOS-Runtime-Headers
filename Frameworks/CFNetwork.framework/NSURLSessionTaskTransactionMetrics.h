@@ -19,6 +19,8 @@
 @property long long _responseHeaderBytesReceived;
 @property bool _secureConnection;
 @property bool _serverPush;
+@property long long _totalBytesReceived;
+@property long long _totalBytesSent;
 @property (copy) NSDate *connectEndDate;
 @property (copy) NSDate *connectStartDate;
 @property (copy) NSDate *domainLookupEndDate;

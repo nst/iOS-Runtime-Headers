@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FIUIModel : NSObject <FIUIAchievementsModelDelegate> {
-    FIUIAchievementsModel * _achievementsModel;
+@interface FIUIModel : NSObject {
     NSObject<OS_dispatch_queue> * _activityQueryClientQueue;
     NSMutableDictionary * _currentActivityCacheQueryClients;
     NSMutableDictionary * _currentActivitySummaryQueryClients;
@@ -24,14 +23,9 @@
     FIUIWeeklyGoalModel * _weeklyGoalModel;
 }
 
-@property (nonatomic, readonly) FIUIAchievementsModel *achievementsModel;
 @property (nonatomic, retain) NSDictionary *currentActivitySummaryQueryCollectionIntervalOverrides;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
 @property (nonatomic, readonly) NSPredicate *sourcesPredicate;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) FIUIWeeklyGoalModel *weeklyGoalModel;
 
 + (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(bool)arg5 handler:(id /* block */)arg6;
@@ -47,8 +41,6 @@
 - (void)_queue_restartCurrentActivityCacheQueryAfterError;
 - (void)_queue_restartCurrentActivitySummaryQueryAfterError;
 - (void)_setKnownSources:(id)arg1;
-- (void)achievementsDidChangeInModel:(id)arg1;
-- (id)achievementsModel;
 - (void)addObserver:(id)arg1;
 - (void)basalEnergyBurnTotalForDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)basalMetabolicRateForDate:(id)arg1 completion:(id /* block */)arg2;

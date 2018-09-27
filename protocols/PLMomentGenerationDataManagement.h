@@ -37,12 +37,17 @@
 - (<PLMomentListData> *)momentListWithUniqueID:(NSObject<NSCopying> *)arg1 forLevel:(short)arg2 error:(id*)arg3;
 - (<PLMomentData> *)momentWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id*)arg2;
 - (NSArray *)momentsBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 sorted:(bool)arg3;
-- (NSArray *)momentsBetweenDateRanges:(NSArray *)arg1;
+- (NSArray *)momentsForAssetsWithUniqueIDs:(NSArray *)arg1 error:(id*)arg2;
 - (NSArray *)momentsSinceDate:(NSDate *)arg1;
+- (NSArray *)momentsWithinDateInterval:(NSDateInterval *)arg1;
 - (bool)needsLocationsOfInterestProcessing;
+- (NSArray *)orphanedAssetIDsWithError:(id*)arg1;
 - (void)performBlock:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, id /* block */, void*, void, id /* block */, void*
+- (void)performBlock:(void *)arg1 synchronously:(void *)arg2 priority:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, long long, id /* block */, void*, void, id /* block */, void*
 - (void)performDataTransaction:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, id /* block */, void*, void, id /* block */, void*
+- (void)performDataTransaction:(void *)arg1 synchronously:(void *)arg2 priority:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, long long, id /* block */, void*, void, id /* block */, void*
 - (void)resetOnFailure;
+- (void)runPeriodicMaintenanceTasks:(unsigned long long)arg1 withTransaction:(PLXPCTransaction *)arg2;
 - (bool)save:(id*)arg1;
 - (bool)saveAnalysisMetadata:(NSDictionary *)arg1;
 - (bool)saveServerVersionInfo:(NSDictionary *)arg1;
@@ -60,6 +65,8 @@
 - (<PLMomentAnalysisTransaction> *)momentAnalysisTransactionWithName:(const char *)arg1;
 - (void)pendingChangesUpdated:(unsigned long long)arg1;
 - (NSString *)replayLogPath;
+- (void)setSimulatesTimeout:(bool)arg1;
+- (bool)simulatesTimeout;
 - (NSSet *)updatedObjects;
 - (bool)wantsMomentReplayLogging;
 

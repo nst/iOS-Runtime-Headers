@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSNumber *storeItemID;
 @property (nonatomic, retain) NSNumber *storeOriginalPurchaserAccountID;
 @property (nonatomic, copy) NSString *storeSoftwareVersionID;
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *videoDimensions;
 
 - (id)_initSSRestoreContentItem;
@@ -55,6 +56,7 @@
 - (void)setStoreItemID:(id)arg1;
 - (void)setStoreOriginalPurchaserAccountID:(id)arg1;
 - (void)setStoreSoftwareVersionID:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1 forAssetProperty:(id)arg2;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
 - (void)setVideoDimensions:(id)arg1;
@@ -65,6 +67,7 @@
 - (id)storeItemID;
 - (id)storeOriginalPurchaserAccountID;
 - (id)storeSoftwareVersionID;
+- (id)title;
 - (id)videoDimensions;
 
 @end

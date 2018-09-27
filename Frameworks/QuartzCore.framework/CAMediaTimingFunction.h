@@ -16,6 +16,8 @@
 + (bool)supportsSecureCoding;
 
 - (id)CAMLType;
+- (unsigned long long)CA_copyNumericValue:(double)arg1;
+- (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (void)_getPoints:(double*)arg1;
 - (float)_solveForInput:(float)arg1;
 - (void)dealloc;
@@ -30,24 +32,20 @@
 
 + (id)sigmoidFunction;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)_kbTimingFunction;
-+ (id)uiFunctionWithControlPoints:(const struct CGPoint { double x1; double x2; }*)arg1;
-
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
 + (id)hu_functionWithAnimationCurve:(long long)arg1;
-
-// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
-
-+ (id)is_timingFunctionWithISPlaybackTimingFunction:(int)arg1 controlPoint1:(struct CGPoint { double x1; double x2; })arg2 controlPoint2:(struct CGPoint { double x1; double x2; })arg3;
 
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 
 - (double)TSD_valueAtPercent:(double)arg1;
 - (id)bezierPath;
 - (double)solveForTime:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)_kbTimingFunction;
++ (id)uiFunctionWithControlPoints:(const struct CGPoint { double x1; double x2; }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

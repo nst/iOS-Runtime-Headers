@@ -13,7 +13,7 @@
 + (id)layoutsFileName;
 + (id)sharedKeyboardFactory;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)internalCache;
 - (id)keyboardPrefixForWidth:(double)arg1 andEdge:(bool)arg2;

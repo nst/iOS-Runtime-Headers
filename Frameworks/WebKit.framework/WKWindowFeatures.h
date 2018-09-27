@@ -5,7 +5,7 @@
 @interface WKWindowFeatures : NSObject <WKObject> {
     struct ObjectStorage<API::WindowFeatures> { 
         struct type { 
-            unsigned char __lx[88]; 
+            unsigned char __lx[80]; 
         } data; 
     }  _windowFeatures;
 }

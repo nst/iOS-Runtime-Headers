@@ -6,6 +6,7 @@
     PUBrowsingVideoPlayer * __browsingVideoPlayer;
     UIView<PXVideoOverlayButton> * __playButton;
     bool  __shouldShowPlayButton;
+    bool  __shouldSuppressButtonUpdates;
     PUAssetViewModel * _assetViewModel;
     PUBrowsingViewModel * _browsingViewModel;
     <PUPlayButtonTileViewControllerDelegate> * _delegate;
@@ -18,6 +19,7 @@
 @property (setter=_setBrowsingVideoPlayer:, nonatomic, retain) PUBrowsingVideoPlayer *_browsingVideoPlayer;
 @property (setter=_setPlayButton:, nonatomic, retain) UIView<PXVideoOverlayButton> *_playButton;
 @property (setter=_setShouldShowPlayButton:, nonatomic) bool _shouldShowPlayButton;
+@property (setter=_setShouldSuppressButtonUpdates:, nonatomic) bool _shouldSuppressButtonUpdates;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
 @property (nonatomic, retain) PUBrowsingViewModel *browsingViewModel;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,14 +32,17 @@
 
 - (void).cxx_destruct;
 - (id)_browsingVideoPlayer;
+- (bool)_canPause;
 - (id)_playButton;
 - (void)_playButtonTapped:(id)arg1;
 - (void)_setBrowsingVideoPlayer:(id)arg1;
 - (void)_setPlayButton:(id)arg1;
 - (void)_setShouldShowPlayButton:(bool)arg1;
 - (void)_setShouldShowPlayButton:(bool)arg1 animated:(bool)arg2;
+- (void)_setShouldSuppressButtonUpdates:(bool)arg1;
 - (bool)_shouldShowPlayButton;
-- (void)_updateButtonVisibilityAnimated:(bool)arg1;
+- (bool)_shouldSuppressButtonUpdates;
+- (void)_updateButtonAnimated:(bool)arg1;
 - (id)assetViewModel;
 - (void)becomeReusable;
 - (id)browsingViewModel;

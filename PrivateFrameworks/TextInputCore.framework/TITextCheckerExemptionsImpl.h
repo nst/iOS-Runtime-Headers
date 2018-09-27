@@ -17,6 +17,7 @@
 
 + (id)sharedTextCheckerExemptionsImpl;
 
+- (void).cxx_destruct;
 - (void)addObserverAssertion;
 - (id)addressBookTokens;
 - (void)dealloc;

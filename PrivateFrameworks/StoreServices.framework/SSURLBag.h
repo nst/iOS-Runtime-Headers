@@ -14,6 +14,8 @@
 }
 
 @property (readonly) SSURLBagContext *URLBagContext;
+@property (readonly) NSDictionary *existingBagDictionary;
+@property (readonly) NSString *storeFrontIdentifier;
 
 + (id)URLBagForContext:(id)arg1;
 + (void)setURLBag:(id)arg1 forContext:(id)arg2;
@@ -33,6 +35,7 @@
 - (void)invalidate;
 - (void)loadValueForKey:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)loadWithCompletionBlock:(id /* block */)arg1;
+- (id)storeFrontIdentifier;
 - (id)valueForKey:(id)arg1 error:(id*)arg2;
 
 @end

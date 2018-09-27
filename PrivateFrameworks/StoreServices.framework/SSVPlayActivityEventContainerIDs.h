@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVPlayActivityEventContainerIDs : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface SSVPlayActivityEventContainerIDs : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     long long  _adamID;
     NSString * _cloudAlbumID;
     unsigned long long  _cloudPlaylistID;

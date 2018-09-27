@@ -5,6 +5,10 @@
 @interface FigCaptureSourceFormat : NSObject <FigXPCCoding, NSSecureCoding> {
     struct opaqueCMFormatDescription { } * _formatDescription;
     NSDictionary * _formatDictionary;
+    struct { 
+        int width; 
+        int height; 
+    }  _previewDimensions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

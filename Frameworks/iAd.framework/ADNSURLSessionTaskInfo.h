@@ -19,7 +19,9 @@
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 modes:(id)arg3;
 - (void)invalidate;
 - (id)modes;
+- (void)perform:(id /* block */)arg1 waitUntilDone:(bool)arg2;
 - (void)performBlock:(id /* block */)arg1;
+- (void)performBlockAndWait:(id /* block */)arg1;
 - (void)performBlockOnClientThread:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setModes:(id)arg1;

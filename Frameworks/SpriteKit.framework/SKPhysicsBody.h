@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKPhysicsBody : NSObject <NSCoding, NSCopying> {
+@interface SKPhysicsBody : NSObject <NSCopying, NSSecureCoding> {
     bool  _affectedByGravity;
     bool  _allowsRotation;
     double  _angularDamping;
@@ -68,6 +68,7 @@
 + (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { double x1; double x2; })arg3 accuracy:(float)arg4;
 + (id)bodyWithTexture:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)affectedByGravity;

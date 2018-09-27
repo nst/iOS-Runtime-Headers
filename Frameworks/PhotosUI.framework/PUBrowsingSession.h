@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate, PXAssetEditOperationManagerObserver, PXAutoloopSchedulerDelegate> {
+@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate, PXAssetEditOperationManagerObserver> {
     PUAssetActionManager * _actionManager;
-    bool  _active;
     PUContentTileProvider * _contentTileProvider;
     PUAssetsDataSourceManager * _dataSourceManager;
     PXAssetEditOperationManager * _editOperationManager;
+    PXGestureProvider * _gestureProvider;
+    <PXImportStatusManager> * _importStatusManager;
     PULoadingStatusManager * _loadingStatusManager;
     PUMediaProvider * _mediaProvider;
     PXPhotosDetailsContext * _photosDetailsContext;
@@ -16,13 +17,14 @@
 }
 
 @property (nonatomic, readonly) PUAssetActionManager *actionManager;
-@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, retain) PUContentTileProvider *contentTileProvider;
 @property (nonatomic, readonly) PUAssetsDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXAssetEditOperationManager *editOperationManager;
+@property (nonatomic, readonly) PXGestureProvider *gestureProvider;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <PXImportStatusManager> *importStatusManager;
 @property (nonatomic, readonly) PULoadingStatusManager *loadingStatusManager;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (nonatomic, readonly) PXPhotosDetailsContext *photosDetailsContext;
@@ -35,22 +37,22 @@
 - (id)assetActionManagerCurrentAssetsDataSource:(id)arg1;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationStatusForAsset:(id)arg2 context:(void*)arg3;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationsPerformedOnAsset:(id)arg2 context:(void*)arg3;
-- (id)assetUUIDToFavorizeForAutoloopScheduler:(id)arg1;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;
 - (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;
 - (void)configureTilingView:(id)arg1;
 - (id)contentTileProvider;
 - (id)dataSourceManager;
 - (id)editOperationManager;
+- (id)gestureProvider;
+- (id)importStatusManager;
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3 photosDetailsContext:(id)arg4;
-- (bool)isActive;
+- (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3 photosDetailsContext:(id)arg4 gestureProvider:(id)arg5 importStatusManager:(id)arg6;
 - (id)loadingStatusManager;
 - (void)loadingStatusManager:(id)arg1 didUpdateLoadingStatus:(id)arg2 forItem:(id)arg3;
 - (id)mediaProvider;
 - (id)photosDetailsContext;
-- (void)setActive:(bool)arg1;
 - (void)setContentTileProvider:(id)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setTileAnimator:(id)arg1;

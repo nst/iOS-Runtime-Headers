@@ -15,13 +15,12 @@
 @property (readonly) Class superclass;
 
 + (id)_errorForCode:(long long)arg1 process:(id)arg2 failedEntitlement:(id)arg3;
-+ (bool)authenticateAuditToken:(id)arg1 forEntitlement:(id)arg2 error:(out id*)arg3;
++ (bool)authenticateAuditToken:(struct { unsigned int x1[8]; })arg1 forEntitlement:(id)arg2 error:(out id*)arg3;
 + (id)sharedForegroundUIAppClientAuthenticator;
 + (id)sharedSystemClientAuthenticator;
 + (id)sharedUIAppClientAuthenticator;
-+ (bool)validateAuditToken:(id)arg1 error:(out id*)arg2;
 
-- (int)_authenticateConnection:(id)arg1 forEntitlement:(id)arg2 error:(out id*)arg3 withResult:(id /* block */)arg4;
+- (void).cxx_destruct;
 - (int)_authenticateProcessHandle:(id)arg1 entitlement:(id)arg2 error:(out id*)arg3 withResult:(id /* block */)arg4;
 - (bool)authenticateAuditToken:(id)arg1;
 - (bool)authenticateAuditToken:(id)arg1 error:(out id*)arg2;
@@ -30,14 +29,7 @@
 - (bool)authenticateClient:(id)arg1;
 - (bool)authenticateClient:(id)arg1 error:(out id*)arg2;
 - (int)authenticateClient:(id)arg1 withResult:(id /* block */)arg2;
-- (bool)authenticateConnection:(id)arg1;
-- (bool)authenticateConnection:(id)arg1 error:(out id*)arg2;
-- (int)authenticateConnection:(id)arg1 forEntitlement:(id)arg2 withResult:(id /* block */)arg3;
-- (int)authenticateConnection:(id)arg1 withResult:(id /* block */)arg2;
-- (bool)authenticateProcess:(id)arg1;
-- (bool)authenticateProcess:(id)arg1 error:(out id*)arg2;
 - (unsigned long long)credentials;
-- (void)dealloc;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)entitlement;

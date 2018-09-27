@@ -13,9 +13,11 @@
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
 - (id)_typedBackingStore;
 - (id)domain;
 - (id)initWithWorkoutName:(id)arg1;
+- (id)localizeValueOfSlotDescription:(id)arg1 forLanguage:(id)arg2;
 - (id)parametersByName;
 - (void)setDomain:(id)arg1;
 - (void)setParametersByName:(id)arg1;

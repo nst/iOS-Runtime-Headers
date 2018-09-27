@@ -11,17 +11,14 @@
         bool _Value; 
     }  _isClosed;
     bool  _isInMemory;
-    NSOperationQueue * _operationQueue;
-    NSCache * _queryCache;
-    NSObject<OS_dispatch_queue> * _queue;
-    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * _threadInQueue;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
         BOOL __opaque[56]; 
-    }  _threadInQueueLock;
+    }  _lock;
+    NSCache * _queryCache;
+    NSMutableArray * _statementsToFinalizeAsync;
     int  _transactionDepth;
     bool  _transactionRolledback;
-    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSString *filename;
@@ -64,6 +61,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)filename;
+- (void)finalizeLater:(struct sqlite3_stmt { }*)arg1;
 - (bool)frailReadTransaction:(id /* block */)arg1;
 - (bool)frailWriteTransaction:(id /* block */)arg1;
 - (id)freeSpace;
@@ -94,7 +92,6 @@
 - (id)tablesWithColumnNamed:(id)arg1;
 - (void)updateTable:(id)arg1 dictionary:(id)arg2 whereClause:(id)arg3 onError:(id /* block */)arg4;
 - (unsigned long long)userVersion;
-- (void)withDbLockExecuteAsyncBlock:(id /* block */)arg1;
 - (void)withDbLockExecuteBlock:(id /* block */)arg1;
 - (void)writeTransaction:(id /* block */)arg1;
 

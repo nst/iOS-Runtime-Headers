@@ -17,13 +17,13 @@
 - (void).cxx_destruct;
 - (void)_callVideoStartedDelegate;
 - (void)_callVideoStoppedDelegate:(id)arg1;
-- (void)_handleNegotiateStreamResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
+- (void)_handleNegotiateStreamResponse:(id)arg1 streamPreferences:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
 - (void)_handleVideoStopResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
-- (void)_handleVideoStreamStartResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
+- (void)_handleVideoStreamStartResponse:(id)arg1 streamPreferences:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
 - (void)_handleVideoStreamStopped:(id)arg1;
 - (void)_registerNotificationHandlers;
 - (void)_resetState:(id)arg1;
-- (void)_startStreamWithPraeferences:(id)arg1;
+- (void)_startStreamWithPreferences:(id)arg1;
 - (void)_stopStream;
 - (id)cameraStream;
 - (void)dealloc;

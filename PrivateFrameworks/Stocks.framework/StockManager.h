@@ -26,7 +26,6 @@
 - (void)_checkForDeletedStocks;
 - (void)_checkForMovedStocks;
 - (id)_defaultStockDictionaries;
-- (id)_localeStocks;
 - (void)_removeStock:(id)arg1 withRemoteNotification:(bool)arg2;
 - (void)_saveDataChangesWithStockDictionaries:(id)arg1;
 - (void)addStock:(id)arg1;

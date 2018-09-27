@@ -3,6 +3,7 @@
  */
 
 @interface QLTThumbnailRequest : NSObject <NSCopying, NSSecureCoding> {
+    unsigned long long  _badgeType;
     bool  _cancelled;
     QLCacheVersionedFileIdentifier * _fileIdentifier;
     bool  _iconMode;
@@ -15,6 +16,7 @@
     }  _size;
 }
 
+@property (nonatomic) unsigned long long badgeType;
 @property bool cancelled;
 @property (readonly) QLCacheVersionedFileIdentifier *fileIdentifier;
 @property (readonly) bool iconMode;
@@ -28,9 +30,12 @@
 + (id)thumbnailRequestForFPItem:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 minimumSize:(double)arg3 scale:(double)arg4 iconMode:(bool)arg5;
 + (id)thumbnailRequestForFPItem:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 iconMode:(bool)arg4;
 + (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 minimumSize:(double)arg3 scale:(double)arg4 iconMode:(bool)arg5;
++ (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 minimumSize:(double)arg3 scale:(double)arg4 iconMode:(bool)arg5 error:(id*)arg6;
 + (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 iconMode:(bool)arg4;
++ (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 iconMode:(bool)arg4 error:(id*)arg5;
 
 - (void).cxx_destruct;
+- (unsigned long long)badgeType;
 - (bool)cancelled;
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -45,6 +50,7 @@
 - (double)minimumSize;
 - (double)scale;
 - (long long)sequenceNumber;
+- (void)setBadgeType:(unsigned long long)arg1;
 - (void)setCancelled:(bool)arg1;
 - (void)setSequenceNumber:(long long)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;

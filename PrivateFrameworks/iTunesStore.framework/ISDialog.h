@@ -64,6 +64,9 @@
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
++ (void)_initializeStaticButtonTitleKeyAndTagMapping;
++ (unsigned long long)buttonTagForCFUserNotificationButtonTitleKey:(struct __CFString { }*)arg1;
++ (struct __CFString { }*)buttonTitleKeyForCFUserNotificationButtonTag:(unsigned long long)arg1;
 + (long long)displayCountForKey:(id)arg1;
 
 - (void).cxx_destruct;
@@ -99,6 +102,7 @@
 - (id)message;
 - (bool)noDefaultButton;
 - (bool)oneButtonPerLine;
+- (id)orderedButtonTitleKeysForCFUserNotification;
 - (id)paymentSheet;
 - (void)setAllowDuplicates:(bool)arg1;
 - (void)setAuthenticationContext:(id)arg1;

@@ -9,7 +9,6 @@
 
 @property (readonly) NSString *name;
 
-+ (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
 + (void)CAMLParserStartElement:(id)arg1;
 + (id)functionWithName:(id)arg1;
 + (bool)supportsSecureCoding;

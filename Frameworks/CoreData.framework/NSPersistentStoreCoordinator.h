@@ -18,12 +18,14 @@
 }
 
 @property (readonly) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, readonly) _PFModelMap *modelMap;
 @property (copy) NSString *name;
 @property (readonly) NSArray *persistentStores;
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)__Multithreading_Violation_AllThatIsLeftToUsIsHonor__;
++ (unsigned long long)__platformOptions;
 + (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
 + (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
@@ -41,6 +43,7 @@
 + (id)metadataForPersistentStoreOfType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (void)registerStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (id)registeredStoreTypes;
++ (bool)removePersistentHistoryFromPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (bool)removeUbiquitousContentAndPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (bool)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 error:(id*)arg4;
 + (bool)setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
@@ -85,11 +88,13 @@
 - (id)_newObjectGraphStyleRecordForRow:(id)arg1 andObject:(id)arg2 withContext:(id)arg3;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_persistentStoreForIdentifier:(id)arg1;
+- (void)_postStoreRemoteChangeNotificationsForStore:(id)arg1 andState:(unsigned long long)arg2;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
 - (id)_processStoreResults:(id)arg1 forRequest:(id)arg2;
 - (id)_qosClassOptions;
 - (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (bool)_refreshTriggerValuesInStore:(id)arg1 error:(id*)arg2;
+- (void)_removeAllPersistentStores;
 - (bool)_removePersistentStore:(id)arg1;
 - (bool)_removePersistentStore:(id)arg1 error:(id*)arg2;
 - (id)_reopenQueryGenerationWithIdentifier:(id)arg1 inStoreWithIdentifier:(id)arg2 error:(id*)arg3;
@@ -114,6 +119,7 @@
 - (id)_xpcProcessName;
 - (void)addPersistentStoreWithDescription:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
+- (id)currentPersistentHistoryTokenFromStores:(id)arg1;
 - (void)dealloc;
 - (bool)destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -129,6 +135,7 @@
 - (id)managedObjectModel;
 - (id)metadataForPersistentStore:(id)arg1;
 - (id)migratePersistentStore:(id)arg1 toURL:(id)arg2 options:(id)arg3 withType:(id)arg4 error:(id*)arg5;
+- (id)modelMap;
 - (id)name;
 - (id)newValueForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id*)arg3;

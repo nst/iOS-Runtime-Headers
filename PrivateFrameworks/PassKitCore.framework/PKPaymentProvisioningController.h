@@ -29,6 +29,7 @@
     PKPaymentWebService * _webService;
 }
 
+@property (nonatomic, readonly, copy) NSArray *allCredentials;
 @property (nonatomic, retain) NSArray *allowedPaymentNetworks;
 @property (nonatomic, readonly, copy) NSArray *associatedCredentials;
 @property (nonatomic, readonly) NSSet *automaticExpressModes;
@@ -67,6 +68,7 @@
 - (void)_handleProvisioningError:(id)arg1 forRequest:(id)arg2;
 - (bool)_hasSetupConfiguration;
 - (void)_informDelegatesOfPaymentPassUpdateOnCredential:(id)arg1;
+- (id)_mockBrowseBanksResponse;
 - (void)_passAlreadyProvisioned;
 - (id)_paymentPassWithPaymentMethodType:(unsigned long long)arg1;
 - (void)_provisioningNonceWithCompletion:(id /* block */)arg1;
@@ -82,11 +84,13 @@
 - (void)_validatePreconditionsWhileRetrievingRemoteCredentials:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)acceptTerms;
 - (void)addDelegate:(id)arg1;
+- (id)allCredentials;
 - (id)allowedPaymentNetworks;
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)associatedCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (id)automaticExpressModes;
+- (void)browsableBankAppsWithCompletionHandler:(id /* block */)arg1;
 - (id)credentialProvisioningQueue;
 - (void)dealloc;
 - (id)displayableErrorForError:(id)arg1;
@@ -123,12 +127,15 @@
 - (void)reset;
 - (void)resetForNewProvisioning;
 - (void)resolveAmbiguousRequirementsWithProductIdentifier:(id)arg1;
+- (void)resolveProvisioningForCredential:(id)arg1;
+- (void)resolveRequirementsUsingAlreadyProvisionedRemoteCredential:(id)arg1;
 - (void)resolveRequirementsUsingProduct:(id)arg1;
 - (void)resolveRequirementsUsingProvisioningMethodMetadata:(id)arg1;
 - (void)retrieveRemoteCredentials:(id /* block */)arg1;
 - (void)setAllowedPaymentNetworks:(id)arg1;
 - (void)setReferrerIdentifier:(id)arg1;
 - (void)setState:(long long)arg1;
+- (void)setupProductForProvisioning:(id)arg1 includePurchases:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (long long)state;
 - (bool)suppressDefaultCardholderNameField;
 - (void)updatePaymentSetupProductModelWithCompletionHandler:(id /* block */)arg1;

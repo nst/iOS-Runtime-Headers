@@ -12,10 +12,12 @@
 
 - (id)_fireCloudDownloadOfImageForAsset:(id)arg1 format:(int)arg2 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg3 completionHandler:(id /* block */)arg4;
 - (id)_highPriorityRequestWaitGroup;
+- (id)_modernCachingImageManager;
 - (bool)allowsCachingHighQualityImages;
 - (bool)canAvoidTouchingAssetsWithTargetSize:(struct CGSize { double x1; double x2; })arg1 contentMode:(long long)arg2 options:(id)arg3 outBestFormat:(int*)arg4 outBestFormatIsTable:(bool*)arg5 outDegradedFormat:(int*)arg6 outDegradedFormatIsTable:(bool*)arg7;
 - (id)description;
 - (id)init;
+- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
 - (void)setAllowsCachingHighQualityImages:(bool)arg1;
 - (void)startCachingImagesForAssets:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4;
 - (void)startCachingImagesForImageLoadingAssets:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4;

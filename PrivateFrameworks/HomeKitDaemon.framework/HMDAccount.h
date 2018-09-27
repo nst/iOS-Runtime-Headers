@@ -2,66 +2,85 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccount : HMFObject <HMFLogging, HMFMerging, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    <HMDAccountDelegate> * _delegate;
-    NSString * _destination;
+@interface HMDAccount : HMFObject <HMDBackingStoreModelBackedObjectProtocol, HMDBackingStoreObjectProtocol, HMFLogging, HMFMerging, NSFastEnumeration, NSSecureCoding> {
     NSMutableSet * _devices;
-    NSUUID * _identifier;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSSet * _handles;
+    HMDAccountIdentifier * _identifier;
+    HMFUnfairLock * _lock;
+    <HMDAccountManager> * _manager;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (getter=isCurrentAccount, nonatomic, readonly) bool currentAccount;
+@property (getter=isAuthenticated, readonly) bool authenticated;
+@property (readonly, copy) CNContact *contact;
+@property (getter=isCurrentAccount, readonly) bool currentAccount;
 @property (readonly, copy) NSString *debugDescription;
-@property <HMDAccountDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *destination;
-@property (nonatomic, readonly) NSArray *devices;
+@property (readonly, copy) NSString *destination;
+@property (readonly, copy) NSArray *devices;
+@property (readonly, copy) NSArray *handles;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, copy) NSUUID *identifier;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (readonly, copy) HMDAccountIdentifier *identifier;
+@property (readonly, copy) NSArray *identities;
+@property <HMDAccountManager> *manager;
+@property (nonatomic, readonly) NSUUID *modelIdentifier;
+@property (nonatomic, readonly) NSUUID *modelParentIdentifier;
+@property (readonly, copy) NSString *name;
+@property (readonly, copy) HMDAccountHandle *primaryHandle;
+@property (readonly) bool shouldCache;
 @property (readonly) Class superclass;
 
-+ (id)accountDestinationForDestination:(id)arg1;
 + (id)accountWithDestination:(id)arg1;
-+ (id)destinationForAccount:(id)arg1;
-+ (id)iCloudAccountDestination;
-+ (id)identifierFromAccount:(id)arg1 error:(id*)arg2;
-+ (id)identifierFromAddressDestination:(id)arg1 error:(id*)arg2;
-+ (void)initialize;
-+ (bool)isValidAccountDestination:(id)arg1;
++ (id)accountWithHandle:(id)arg1;
 + (id)logCategory;
-+ (id)namespace;
-+ (id)shortDescription;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__notifyDelegateUpdatedDevice:(id)arg1;
+- (id)accountHandleWithModelIdentifier:(id)arg1;
 - (void)addDevice:(id)arg1;
-- (id)clientQueue;
-- (id)debugDescription;
-- (id)delegate;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
+- (void)addHandle:(id)arg1;
+- (id)attributeDescriptions;
+- (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)contact;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (id)currentDevice;
 - (id)destination;
+- (id)deviceForHandle:(id)arg1;
+- (id)deviceForIdentifier:(id)arg1;
+- (id)deviceWithModelIdentifier:(id)arg1;
 - (id)devices;
 - (void)encodeWithCoder:(id)arg1;
+- (id)handles;
 - (unsigned long long)hash;
 - (id)identifier;
+- (id)identities;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIDSService:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 destination:(id)arg2 devices:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 handles:(id)arg2 devices:(id)arg3;
+- (id)initWithObjectModel:(id)arg1;
+- (bool)isAuthenticated;
 - (bool)isCurrentAccount;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqualToAccount:(id)arg1;
+- (bool)isRelatedToAccount:(id)arg1;
 - (id)logIdentifier;
+- (id)manager;
 - (bool)mergeObject:(id)arg1;
-- (void)notifyDelegateAddedDevice:(id)arg1;
-- (void)notifyDelegateOfUpdatedDevice:(id)arg1;
-- (void)notifyDelegateRemovedDevice:(id)arg1;
-- (id)propertyQueue;
+- (id)modelBackedObjects;
+- (id)modelIdentifier;
+- (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)modelParentIdentifier;
+- (id)name;
+- (id)primaryHandle;
 - (void)removeDevice:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)removeHandle:(id)arg1;
+- (void)setHandles:(id)arg1;
+- (void)setManager:(id)arg1;
 - (id)shortDescription;
+- (bool)shouldCache;
+- (bool)shouldMergeObject:(id)arg1;
+- (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
+- (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 
 @end

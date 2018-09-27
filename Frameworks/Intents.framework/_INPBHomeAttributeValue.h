@@ -2,53 +2,60 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBHomeAttributeValue : PBCodable <NSCopying> {
+@interface _INPBHomeAttributeValue : PBCodable <NSCopying, NSSecureCoding, _INPBHomeAttributeValue> {
     bool  _booleanValue;
-    _INPBDouble * _doubleValue;
+    double  _doubleValue;
     struct { 
-        unsigned int valueType : 1; 
         unsigned int booleanValue : 1; 
+        unsigned int doubleValue : 1; 
+        unsigned int integerValue : 1; 
+        unsigned int valueType : 1; 
     }  _has;
-    _INPBString * _stringValue;
-    PBUnknownFields * _unknownFields;
+    long long  _integerValue;
+    NSString * _stringValue;
     int  _valueType;
 }
 
 @property (nonatomic) bool booleanValue;
-@property (nonatomic, retain) _INPBDouble *doubleValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double doubleValue;
 @property (nonatomic) bool hasBooleanValue;
-@property (nonatomic, readonly) bool hasDoubleValue;
+@property (nonatomic) bool hasDoubleValue;
+@property (nonatomic) bool hasIntegerValue;
 @property (nonatomic, readonly) bool hasStringValue;
 @property (nonatomic) bool hasValueType;
-@property (nonatomic, retain) _INPBString *stringValue;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long integerValue;
+@property (nonatomic, copy) NSString *stringValue;
+@property (readonly) Class superclass;
 @property (nonatomic) int valueType;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsValueType:(id)arg1;
 - (bool)booleanValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (id)doubleValue;
+- (double)doubleValue;
 - (bool)hasBooleanValue;
 - (bool)hasDoubleValue;
+- (bool)hasIntegerValue;
 - (bool)hasStringValue;
 - (bool)hasValueType;
 - (unsigned long long)hash;
+- (long long)integerValue;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setBooleanValue:(bool)arg1;
-- (void)setDoubleValue:(id)arg1;
+- (void)setDoubleValue:(double)arg1;
 - (void)setHasBooleanValue:(bool)arg1;
+- (void)setHasDoubleValue:(bool)arg1;
+- (void)setHasIntegerValue:(bool)arg1;
 - (void)setHasValueType:(bool)arg1;
+- (void)setIntegerValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setValueType:(int)arg1;
 - (id)stringValue;
-- (id)unknownFields;
 - (int)valueType;
 - (id)valueTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;

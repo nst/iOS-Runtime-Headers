@@ -82,5 +82,6 @@
 - (bool)streamStarted;
 - (id)syncSource;
 - (void)updateAudioSetting:(unsigned long long)arg1;
+- (void)updateAudioVolume:(id)arg1 callback:(id /* block */)arg2;
 
 @end

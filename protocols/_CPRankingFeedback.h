@@ -8,8 +8,6 @@
 - (void)addSections:(_CPSectionRankingFeedback *)arg1;
 - (double)blendingDuration;
 - (void)clearSections;
-- (bool)hasBlendingDuration;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

@@ -13,4 +13,8 @@
 - (void)setQuickControlHost:(id <HUQuickControlContentHosting>)arg1;
 - (void)setUserInteractionEnabled:(bool)arg1;
 
+@optional
+
+- (bool)shouldShowContentForReachabilityState:(bool)arg1;
+
 @end

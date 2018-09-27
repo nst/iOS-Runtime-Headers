@@ -23,7 +23,14 @@
     bool  blendsVideoFrames;
     bool  blendsVideoFramesWasSet;
     NSArray * cachedTracks;
-    bool  canUseExtraNetworking;
+    bool  canPlayFastForward;
+    bool  canPlayFastReverse;
+    bool  canPlayReverse;
+    bool  canPlaySlowForward;
+    bool  canPlaySlowReverse;
+    bool  canStepBackward;
+    bool  canStepForward;
+    bool  canUseNetworkResourcesForLiveStreamingWhilePaused;
     AVWeakReference * clientsOriginalVideoComposition;
     AVCustomVideoCompositorSession * customVideoCompositorSession;
     bool  decodesAllFramesDuringOrdinaryPlayback;
@@ -37,6 +44,12 @@
     bool  didFireKVOForAssetForNonStreamingItem;
     bool  didInformObserversAboutAvailabilityOfTracks;
     bool  didSetAssetToAssetWithFigPlaybackItem;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  duration;
     int  eqPreset;
     NSError * error;
     bool  externalProtectionRequested;
@@ -54,6 +67,10 @@
     }  forwardPlaybackEndTime;
     NSDictionary * gaplessInfo;
     NSMutableArray * handlersToCallWhenReadyForEnqueueing;
+    bool  hasEnabledAudio;
+    bool  hasEnabledVideo;
+    bool  hasEnqueuedVideoFrame;
+    bool  hasVideo;
     bool  haveCPEProtector;
     bool  haveInitialSamples;
     NSArray * imageQueueInterpolationCurve;
@@ -94,6 +111,23 @@
     NSArray * itemOutputs;
     NSMutableArray * itemVideoOutputs;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
+    NSArray * loadedTimeRanges;
+    <AVLoggingIdentifier> * loggingIdentifier;
+    struct { 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } start; 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } duration; 
+    }  loopTimeRange;
+    struct OpaqueCMTimebase { } * loopingTimebase;
     struct { 
         long long value; 
         int timescale; 
@@ -125,6 +159,9 @@
     int  pendingSeekID;
     struct OpaqueVTPixelBufferAttributesMediator { } * pixelBufferAttributeMediator;
     bool  playHapticTracks;
+    bool  playbackBufferEmpty;
+    bool  playbackBufferFull;
+    bool  playbackLikelyToKeepUp;
     AVPlayerConnection * playerConnection;
     AVWeakReference * playerReference;
     struct CGSize { 
@@ -132,6 +169,10 @@
         double height; 
     }  preferredMaximumResolution;
     double  preferredPeakBitRate;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  presentationSize;
     AVPlayerItem * previousItem;
     AVPropertyStorage * propertyStorage;
     struct OpaqueCMTimebase { } * proxyTimebase;
@@ -150,6 +191,8 @@
     id /* block */  seekCompletionHandler;
     struct OpaqueFigSimpleMutex { } * seekIDMutex;
     NSObject<OS_dispatch_queue> * seekQueue;
+    NSArray * seekableTimeRanges;
+    double  seekableTimeRangesLastModifiedTime;
     bool  seekingWaitsForVideoCompositionRendering;
     NSString * serviceIdentifier;
     float  soundCheckVolumeNormalization;
@@ -163,11 +206,13 @@
     NSArray * textStyleRules;
     NSArray * timedMetadata;
     NSArray * trackIDsForAssetWithFigPlaybackItem;
+    NSArray * tracks;
     bool  usesIFrameOnlyPlaybackForHighRateScaledEdits;
     bool  usesIFrameOnlyPlaybackForHighRateScaledEditsWasSet;
     bool  usesMinimalLatencyForVideoCompositionRendering;
     NSString * videoApertureMode;
     AVVideoComposition * videoComposition;
+    NSString * videoEnhancementMode;
     float  volumeAdjustment;
     bool  wasInitializedWithURL;
     AVWeakReference * weakReference;

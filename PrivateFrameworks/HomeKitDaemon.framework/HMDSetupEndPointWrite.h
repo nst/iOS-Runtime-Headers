@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSetupEndPointWrite : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSetupEndPointWrite : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     HMDEndPointAddress * _address;
     HMDSRTPParameters * _audioSrtpParameters;
     NSUUID * _sessionID;

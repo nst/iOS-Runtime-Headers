@@ -5,11 +5,6 @@
 
 @required
 
-- (bool)hasIsOnLockScreen;
-- (bool)hasIsOverApp;
-- (bool)hasReaderTextAvailable;
-- (bool)hasTimestamp;
-- (bool)hasViewAppearEvent;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (bool)isOnLockScreen;

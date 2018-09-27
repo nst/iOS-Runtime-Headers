@@ -6,6 +6,7 @@
     NFApplet * _activeApplet;
     NSDictionary * _appletsById;
     NFWeakReference * _delegate;
+    bool  _fieldNotificationSent;
 }
 
 @property (readonly) NFApplet *activeApplet;
@@ -21,7 +22,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didSelectApplet:(id)arg1;

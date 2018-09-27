@@ -20,7 +20,7 @@
 - (bool)connectTag:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)didDetectExternalReader:(id)arg1;
+- (void)didDetectExternalReaderWithNotification:(id)arg1;
 - (void)didDetectTags:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didTerminate:(id)arg1;

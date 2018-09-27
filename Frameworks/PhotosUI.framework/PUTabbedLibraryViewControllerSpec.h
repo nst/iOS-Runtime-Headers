@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUTabbedLibraryViewControllerSpec : NSObject
+@interface PUTabbedLibraryViewControllerSpec : PULegacyViewControllerSpec
+
++ (id)padSpec;
++ (id)phoneSpec;
 
 - (id)albumListViewControllerSpec;
 - (id)createAlbumListViewController;
-- (id)createMemoriesViewController;
 - (id)createSharedAlbumListViewController;
 - (id)feedViewControllerSpec;
 - (id)zoomableGridViewControllerSpec;

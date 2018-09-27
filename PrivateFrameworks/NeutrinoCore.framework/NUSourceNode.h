@@ -24,6 +24,7 @@
 - (bool)isGeometryNode;
 - (bool)isValid:(out id*)arg1;
 - (bool)load:(out id*)arg1;
+- (long long)normalizeSubsampleFactor:(long long)arg1;
 - (id)originalNode;
 - (id)pipelineOptionsForPipelineState:(id)arg1 error:(out id*)arg2;
 - (struct { long long x1; long long x2; })pixelSize;

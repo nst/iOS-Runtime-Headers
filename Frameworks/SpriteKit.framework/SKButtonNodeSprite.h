@@ -17,6 +17,7 @@
 @property (nonatomic, retain) SKAction *upAction;
 
 + (id)buttonWithFontNamed:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

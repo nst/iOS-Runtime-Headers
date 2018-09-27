@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TITypologyRecord : NSObject <NSCoding> {
+@interface TITypologyRecord : NSObject <NSSecureCoding> {
     double  _timestamp;
 }
 
 @property (nonatomic) double timestamp;
+
++ (id)recordClasses;
++ (bool)supportsSecureCoding;
 
 - (void)applyToStatistic:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

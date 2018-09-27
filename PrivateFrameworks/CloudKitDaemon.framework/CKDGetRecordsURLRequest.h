@@ -47,6 +47,7 @@
 - (id)recordIDsToVersionETags;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
+- (bool)requestGETPreAuth;
 - (id)requestOperationClasses;
 - (unsigned long long)requestedTTL;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;

@@ -12,5 +12,6 @@
 - (void)removeFromComposedSuperview;
 - (void)setCardSectionViewIdentifier:(NSString *)arg1;
 - (void)setComposedSuperview:(UIView<CRKComposableView> *)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

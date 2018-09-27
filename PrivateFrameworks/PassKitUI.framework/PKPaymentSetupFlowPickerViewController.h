@@ -4,7 +4,7 @@
 
 @interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
     bool  _allowsManualEntry;
-    NSArray * _betaTransitNetworks;
+    NSSet * _betaNetworks;
     PKPaymentSetupFooterView * _footerView;
     PKTableHeaderView * _headerView;
     bool  _hideSetupLaterButton;
@@ -35,6 +35,7 @@
 - (void)_setupLater:(id)arg1;
 - (void)_terminateSetupFlow;
 - (void)addPickerItem:(id)arg1 toSection:(id)arg2;
+- (void)addPickerItems:(id)arg1 toSection:(id)arg2;
 - (void)addPickerSection:(id)arg1;
 - (bool)allowsManualEntry;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;

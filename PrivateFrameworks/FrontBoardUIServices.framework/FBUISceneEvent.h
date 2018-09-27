@@ -8,8 +8,9 @@
     FBSSceneTransitionContext * _transitionContext;
 }
 
-@property (nonatomic, readonly, retain) FBSSceneTransitionContext *transitionContext;
+@property (nonatomic, readonly) FBSSceneTransitionContext *transitionContext;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTransitionContext:(id)arg1 sender:(id /* block */)arg2;
 - (void)send;

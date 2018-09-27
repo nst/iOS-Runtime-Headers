@@ -49,6 +49,7 @@
 - (id)interactiveTransition;
 - (bool)isInteractive;
 - (void)setStartedInteractively:(bool)arg1;
+- (void)setTransitionContext:(id)arg1;
 - (void)setVisibleInteractiveProgress:(double)arg1;
 - (bool)startedInteractively;
 - (id)toViewController;

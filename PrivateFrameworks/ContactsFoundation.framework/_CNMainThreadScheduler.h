@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2 qualityOfService:(unsigned long long)arg3;

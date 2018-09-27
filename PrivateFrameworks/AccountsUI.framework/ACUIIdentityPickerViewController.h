@@ -3,11 +3,13 @@
  */
 
 @interface ACUIIdentityPickerViewController : PSListController {
-    bool  _allowEditing;
+    bool  _allowIdentitySelectionForDisabledSwitch;
     <ACUIIdentityPickerViewControllerDelegate> * _delegate;
     NSArray * _emailAddresses;
     NSArray * _identities;
     NSString * _property;
+    bool  _userInteractiveIdentityList;
+    bool  _userInteractiveSwitch;
 }
 
 @property (nonatomic, readonly) NSString *property;

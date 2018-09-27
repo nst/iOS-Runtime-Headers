@@ -24,7 +24,7 @@
 - (id)markedConstraint;
 - (id)name;
 - (id)nsis_descriptionOfVariable:(id)arg1;
-- (bool)nsis_shouldIntegralizeVariable:(id)arg1;
+- (int)nsis_orientationHintForVariable:(id)arg1;
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (bool)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (void)setName:(id)arg1;

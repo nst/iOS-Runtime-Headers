@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUUUIDSelectionManager : PXObservable <PUMutableUUIDSelectionManager> {
+@interface PUUUIDSelectionManager : PXObservable <PUMutableUUIDSelectionManager, _PUOneUpSelectionIndicatorCompatibleManager> {
     NSMutableSet * __mutableSelectedUUIDs;
 }
 
@@ -22,6 +22,9 @@
 - (bool)isSelectedUUID:(id)arg1;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
+- (bool)pu_isAssetReferenceSelected:(id)arg1;
+- (void)pu_registerSelectionIndicatorObserver:(id)arg1;
+- (void)pu_unregisterSelectionIndicatorObserver:(id)arg1;
 - (void)removeSelectedUUID:(id)arg1;
 - (id)selectedUUIDs;
 - (void)setSelectedUUIDs:(id)arg1;

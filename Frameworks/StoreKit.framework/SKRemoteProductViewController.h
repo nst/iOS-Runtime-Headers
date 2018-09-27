@@ -15,6 +15,7 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)didFinish;
 - (void)didFinishWithResult:(id)arg1;
 - (void)didReceiveTitle:(id)arg1;

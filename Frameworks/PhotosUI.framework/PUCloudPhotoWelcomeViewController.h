@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeNavigationControllerDismissDelegate, PUCloudPhotoWelcomeViewDelegate> {
+@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PXCloudPhotoWelcomeNavigationControllerDismissDelegate, PXCloudPhotoWelcomeViewDelegate> {
     id /* block */  __completionHandler;
     bool  _enableOnAppear;
     PSCloudStorageOffersManager * _offersManager;
     bool  _requireStorageUpgrade;
     AAUIGenericTermsRemoteUI * _termsManager;
-    PUCloudPhotoWelcomeView * _welcomeView;
+    PXCloudPhotoWelcomeView * _welcomeView;
 }
 
 @property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
+@property (nonatomic, retain) PXCloudPhotoWelcomeView *welcomeView;
 
 + (bool)_isPhotoStreamEnabled;
 + (void)_showWithPresentingViewController:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -47,11 +47,13 @@
 - (void)navigationControllerDidDismissViewController:(id)arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (long long)preferredInterfaceOrientationForPresentation;
+- (id)presentingViewControllerTraitCollection;
 - (void)setWelcomeView:(id)arg1;
 - (bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (id)welcomeView;
 
 @end

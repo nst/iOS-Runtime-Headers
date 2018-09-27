@@ -3,26 +3,29 @@
  */
 
 @interface TSTEphemeralFilter : NSObject {
-    unsigned char  mColumnIndex;
-    unsigned long long  mFilterIndex;
-    NSArray * mRules;
+    struct TSUModelColumnIndex { 
+        unsigned short _column; 
+    }  _baseColumnIndex;
+    unsigned long long  _filterIndex;
+    NSArray * _rules;
 }
 
-@property (nonatomic, readonly) unsigned char columnIndex;
+@property (nonatomic, readonly) struct TSUModelColumnIndex { unsigned short x1; } baseColumnIndex;
 @property (nonatomic, readonly) unsigned long long filterIndex;
 @property (nonatomic, readonly) unsigned long long ruleCount;
 
-+ (id)filterWithIndex:(unsigned long long)arg1 columnIndex:(unsigned char)arg2 rules:(id)arg3;
++ (id)filterWithIndex:(unsigned long long)arg1 baseColumnIndex:(struct TSUModelColumnIndex { unsigned short x1; })arg2 rules:(id)arg3;
 
-- (unsigned char)columnIndex;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (struct TSUModelColumnIndex { unsigned short x1; })baseColumnIndex;
 - (id)description;
+- (void)enumerateRulesUsingBlock:(id /* block */)arg1;
 - (id)filterByAddingRule:(id)arg1;
 - (id)filterByClearingRules;
 - (id)filterByRemovingRuleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)filterIndex;
 - (id)filterWithRule:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)initWithIndex:(unsigned long long)arg1 columnIndex:(unsigned char)arg2 rules:(id)arg3;
+- (id)initWithIndex:(unsigned long long)arg1 baseColumnIndex:(struct TSUModelColumnIndex { unsigned short x1; })arg2 rules:(id)arg3;
 - (id)ruleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)ruleCount;
 

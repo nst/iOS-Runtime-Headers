@@ -4,7 +4,7 @@
 
 @interface OBPrivacyCombinedController_iOS : OBPrivacyCombinedController <UIScrollViewDelegate> {
     bool  _didFirstLayout;
-    BFFPaneHeaderView * _headerView;
+    OBBuddyPaneHeaderView * _headerView;
     NSArray * _identifiers;
     OBPrivacySplashController * _initialSplashController;
     OBPrivacyCombinedTableViewController * _tableViewController;

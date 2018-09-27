@@ -3,9 +3,11 @@
  */
 
 @interface MPStoreModelObjectBuilder : NSObject {
+    bool  _preventStoreItemMetadataCaching;
     MPPropertySet * _requestedPropertySet;
 }
 
+@property (nonatomic) bool preventStoreItemMetadataCaching;
 @property (nonatomic, readonly) MPPropertySet *requestedPropertySet;
 
 + (id)allSupportedProperties;
@@ -15,6 +17,8 @@
 - (id)modelObjectWithStoreItemMetadata:(id)arg1;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
 - (id)modelObjectWithStorePlatformDictionary:(id)arg1;
+- (bool)preventStoreItemMetadataCaching;
 - (id)requestedPropertySet;
+- (void)setPreventStoreItemMetadataCaching:(bool)arg1;
 
 @end

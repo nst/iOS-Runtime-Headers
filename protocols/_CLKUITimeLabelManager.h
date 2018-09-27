@@ -10,7 +10,7 @@
 - (NSAttributedString *)effectiveAttributedText;
 - (CLKFont *)effectiveFont;
 - (void)enumerateUnderlyingLabelsWithBlock:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UILabel *, bool, void*
-- (id)initWithTimeFormatter:(void *)arg1 options:(void *)arg2 labelFactory:(void *)arg3; // needs 3 arg types, found 8: CLKTimeFormatter *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UILabel *, id /* block */, bool, void*
+- (id)initWithForDevice:(void *)arg1 timeFormatter:(void *)arg2 options:(void *)arg3 labelFactory:(void *)arg4; // needs 4 arg types, found 9: CLKDevice *, CLKTimeFormatter *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UILabel *, id /* block */, bool, void*
 - (struct CGSize { double x1; double x2; })intrinsicSize;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
 - (void)setAnimationsPaused:(bool)arg1;
@@ -25,5 +25,6 @@
 - (UIColor *)textColor;
 - (void)updateTimeText;
 - (UIView *)view;
+- (UIView *)viewForLastBaselineLayout;
 
 @end

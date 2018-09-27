@@ -15,12 +15,13 @@
 @property (nonatomic) bool useCompactDateFormat;
 
 + (id)dateTimeLunarDateFont;
++ (struct { double x1; double x2; double x3; double x4; })dateTimeLunarDateFontMetrics;
 + (double)scaledFontSize:(double)arg1 withMaximumFontSizeCategory:(id)arg2;
 + (double)subtitleLabelToLunarDateLabelBaselineDifferenceY;
 
 - (void).cxx_destruct;
-- (id)_createReplicateView;
 - (double)_lunarDateLabelYOffsetFromDateLabel;
+- (void)_overlayCalendarDidChange;
 - (void)_setupAlternateDateLabel;
 - (void)_updateDateLabelForCompact;
 - (double)alignmentPercent;
@@ -30,7 +31,6 @@
 - (void)dealloc;
 - (id)initWithDate:(id)arg1;
 - (void)layoutSubviews;
-- (id)replicate;
 - (void)setAlignmentPercent:(double)arg1;
 - (void)setAlternateDateLabel:(id)arg1;
 - (void)setDate:(id)arg1;

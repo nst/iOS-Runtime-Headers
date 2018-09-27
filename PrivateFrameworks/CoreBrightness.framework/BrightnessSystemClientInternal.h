@@ -6,6 +6,8 @@
     NSMutableArray * _clientProperties;
     NSXPCConnection * _connection;
     id  _remote;
+    bool  copyPropertyForKeyCompleted;
+    NSCondition * copyPropertyForKeyWaitCondition;
     BrightnessSystemClientExportedObj * exportedObj;
 }
 
@@ -21,6 +23,6 @@
 - (void)removePropertiesFromNotification:(id)arg1;
 - (void)removePropertyFromNotification:(id)arg1;
 - (bool)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)timerFire:(id)arg1;
+- (void)stopXpcService;
 
 @end

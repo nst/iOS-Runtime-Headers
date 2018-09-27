@@ -35,6 +35,7 @@
 - (void)propertyCellDidChangeLayout:(id)arg1;
 - (void)registerContactCellClass:(Class)arg1;
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

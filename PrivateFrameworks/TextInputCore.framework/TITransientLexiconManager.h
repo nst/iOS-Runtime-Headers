@@ -4,9 +4,7 @@
 
 @interface TITransientLexiconManager : NSObject <TITransientLexiconManaging> {
     bool  _lexiconsLoaded;
-    _ICTransientLexicon * _namedEntityLexicon;
     struct _LXLexicon { } * _namedEntityLexiconRef;
-    _ICTransientLexicon * _namedEntityPhraseLexicon;
     struct _LXLexicon { } * _namedEntityPhraseLexiconRef;
 }
 

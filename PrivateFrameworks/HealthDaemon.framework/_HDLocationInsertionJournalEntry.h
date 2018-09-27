@@ -14,7 +14,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_locationsFromDatums:(id)arg1;
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

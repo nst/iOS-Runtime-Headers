@@ -11,6 +11,7 @@
         } fields; 
     }  _autocorrectionListUIState;
     NSDictionary * _autofillContext;
+    unsigned long long  _autofillMode;
     NSString * _clientIdentifier;
     TIKeyboardCandidate * _currentCandidate;
     NSUUID * _documentIdentifier;
@@ -39,6 +40,7 @@
             unsigned int isScreenLocked : 1; 
             unsigned int longPredictionListEnabled : 1; 
             unsigned int needAutofill : 1; 
+            unsigned int needOneTimeCodeAutofill : 1; 
         } fields; 
     }  _mask;
     NSString * _recipientIdentifier;
@@ -56,6 +58,7 @@
 @property (nonatomic) bool autocorrectionListUIAutoDisplayMode;
 @property (nonatomic) bool autocorrectionListUIDisplayed;
 @property (nonatomic, retain) NSDictionary *autofillContext;
+@property (nonatomic) unsigned long long autofillMode;
 @property (nonatomic) bool canSendCurrentLocation;
 @property (nonatomic) bool candidateSelectionPredictionEnabled;
 @property (nonatomic, copy) NSString *clientIdentifier;
@@ -73,6 +76,7 @@
 @property (nonatomic, copy) TIKeyboardLayoutState *layoutState;
 @property (nonatomic) bool longPredictionListEnabled;
 @property (nonatomic) bool needAutofill;
+@property (nonatomic) bool needOneTimeCodeAutofill;
 @property (nonatomic) bool needsCandidateMetadata;
 @property (nonatomic, copy) NSString *recipientIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
@@ -91,6 +95,7 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_createTextInputTraitsIfNecessary;
 - (bool)autocapitalizationEnabled;
 - (unsigned long long)autocapitalizationType;
@@ -98,12 +103,12 @@
 - (bool)autocorrectionListUIAutoDisplayMode;
 - (bool)autocorrectionListUIDisplayed;
 - (id)autofillContext;
+- (unsigned long long)autofillMode;
 - (bool)canSendCurrentLocation;
 - (bool)candidateSelectionPredictionEnabled;
 - (id)clientIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentCandidate;
-- (void)dealloc;
 - (id)description;
 - (id)documentIdentifier;
 - (id)documentState;
@@ -121,6 +126,7 @@
 - (id)layoutState;
 - (bool)longPredictionListEnabled;
 - (bool)needAutofill;
+- (bool)needOneTimeCodeAutofill;
 - (bool)needsCandidateMetadata;
 - (id)recipientIdentifier;
 - (id)responseContext;
@@ -133,6 +139,7 @@
 - (void)setAutocorrectionListUIAutoDisplayMode:(bool)arg1;
 - (void)setAutocorrectionListUIDisplayed:(bool)arg1;
 - (void)setAutofillContext:(id)arg1;
+- (void)setAutofillMode:(unsigned long long)arg1;
 - (void)setCanSendCurrentLocation:(bool)arg1;
 - (void)setCandidateSelectionPredictionEnabled:(bool)arg1;
 - (void)setClientIdentifier:(id)arg1;
@@ -150,6 +157,7 @@
 - (void)setLayoutState:(id)arg1;
 - (void)setLongPredictionListEnabled:(bool)arg1;
 - (void)setNeedAutofill:(bool)arg1;
+- (void)setNeedOneTimeCodeAutofill:(bool)arg1;
 - (void)setNeedsCandidateMetadata:(bool)arg1;
 - (void)setRecipientIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;

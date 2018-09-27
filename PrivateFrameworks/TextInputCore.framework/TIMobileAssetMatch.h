@@ -15,7 +15,7 @@
 + (id)knownAssetRegionAttributes;
 + (id)mobileAssetMatchWithTypes:(id)arg1 inputModeLevels:(id)arg2 regions:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (id)initWithTypes:(id)arg1 inputModeLevels:(id)arg2 regions:(id)arg3;

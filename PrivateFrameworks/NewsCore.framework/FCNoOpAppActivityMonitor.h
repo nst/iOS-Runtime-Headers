@@ -10,5 +10,6 @@
 @property (readonly) Class superclass;
 
 - (void)addObserver:(id)arg1;
+- (void)removeObserver:(id)arg1;
 
 @end

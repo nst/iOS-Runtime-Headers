@@ -5,6 +5,7 @@
 @interface __NSCFURLSession : NSURLSession {
     NSMutableDictionary * _altSvc;
     NSDictionary * _atsState;
+    NSMutableDictionary * _coalescing;
     id /* block */  _connBlock;
     <NSURLSessionDelegate> * _delegate;
     NSOperationQueue * _delegateQueue;
@@ -21,6 +22,7 @@
 
 - (id)_altSvc;
 - (id)_atsState;
+- (id)_coalescing;
 - (id /* block */)_connBlock;
 - (id)_h2BlacklistedHosts;
 - (bool)_isSharedSession;
@@ -39,6 +41,7 @@
 - (void)setSessionDescription:(id)arg1;
 - (void)set_altSvc:(id)arg1;
 - (void)set_atsState:(id)arg1;
+- (void)set_coalescing:(id)arg1;
 - (void)set_connBlock:(id /* block */)arg1;
 - (void)set_h2BlacklistedHosts:(id)arg1;
 - (void)set_isSharedSession:(bool)arg1;

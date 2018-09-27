@@ -4,8 +4,8 @@
 
 @interface PUYouTubeActivity : PUPublishingActivity
 
-- (id)_activityImage;
-- (id)_activitySettingsImage;
+- (id)_activityBundleImageConfiguration;
+- (id)_activitySettingsBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (bool)canPerformWithActivityItems:(id)arg1;

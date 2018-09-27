@@ -3,10 +3,11 @@
  */
 
 @interface HLPHelpViewController : UIViewController <HLPHelpLoadingViewDelegate, HLPHelpTableOfContentViewControllerDelegate, HLPHelpTopicViewControllerDelegate, HLPReachabilityManagerDelegate> {
-    bool  __fullBookView;
+    NSDictionary * _context;
     <HLPHelpViewControllerDelegate> * _delegate;
     bool  _displayHelpTopicsOnly;
     UIBarButtonItem * _doneBarButtonItem;
+    bool  _fullBookView;
     UIView * _fullBookViewSeparator;
     NSString * _helpBookBasePath;
     HLPHelpBookController * _helpBookController;
@@ -23,6 +24,7 @@
     HLPReachabilityManager * _reachabilityManager;
     NSString * _selectedHelpTopicID;
     NSString * _selectedHelpTopicName;
+    bool  _shouldDismissWelcomeTopic;
     bool  _showTopicNameAsTitle;
     bool  _showTopicViewOnLoad;
     bool  _showingHelpTopic;
@@ -33,16 +35,19 @@
     NSString * _version;
 }
 
-@property (getter=_fullBookView, setter=_setFullBookView:, nonatomic) bool _fullBookView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool displayHelpTopicsOnly;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) HLPHelpBookController *helpBookController;
+@property (nonatomic, retain) NSURL *helpBookURL;
 @property (nonatomic) bool hideDoneButton;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) HLPHelpLoadingView *loadingView;
 @property (nonatomic, copy) NSURL *localHelpBookFileURL;
+@property (nonatomic, retain) NSMutableDictionary *localHelpBookNameIDMap;
+@property (nonatomic, retain) HLPHelpLocaleController *localeListController;
 @property (nonatomic, copy) NSArray *preferredLanguagesOverride;
 @property (nonatomic, retain) HLPReachabilityManager *reachabilityManager;
 @property (nonatomic, copy) NSString *selectedHelpTopicID;
@@ -54,6 +59,7 @@
 @property (nonatomic, retain) HLPHelpTableOfContentViewController *tableOfContentViewController;
 @property (nonatomic, copy) NSString *version;
 
++ (void)clearCacheControllers;
 + (id)helpViewController;
 + (id)helpViewControllerWithIdentifier:(id)arg1 version:(id)arg2;
 + (id)helpViewControllerWithLocalHelpBookFileURL:(id)arg1;
@@ -61,7 +67,7 @@
 + (id)helpViewControllerWithTitle:(id)arg1 identifier:(id)arg2 version:(id)arg3 subpath:(id)arg4;
 
 - (void).cxx_destruct;
-- (bool)_fullBookView;
+- (void)_setContext:(id)arg1;
 - (void)_setFullBookView:(bool)arg1;
 - (id)currentHelpTopicItemForTableOfContentViewController:(id)arg1;
 - (void)dealloc;
@@ -69,8 +75,11 @@
 - (void)dismiss;
 - (void)displayHelpBookWithLocale:(id)arg1;
 - (bool)displayHelpTopicsOnly;
+- (id)helpBookController;
+- (id)helpBookURL;
 - (void)helpTopicViewController:(id)arg1 failToLoadWithError:(id)arg2;
 - (void)helpTopicViewController:(id)arg1 selectedHelpTopicItem:(id)arg2;
+- (void)helpTopicViewController:(id)arg1 topicLoaded:(id)arg2;
 - (void)helpTopicViewControllerCurrentTopicIsPassionPoint:(id)arg1;
 - (void)helpTopicViewControllerDoneButtonTapped:(id)arg1;
 - (void)helpTopicViewControllerShowHelpBookInfo:(id)arg1;
@@ -83,18 +92,25 @@
 - (void)loadHelpTopicID:(id)arg1;
 - (id)loadingView;
 - (id)localHelpBookFileURL;
+- (id)localHelpBookNameIDMap;
+- (id)localeListController;
 - (void)popWelcomeTopicView;
 - (id)preferredLanguagesOverride;
 - (id)reachabilityManager;
 - (void)reachabilityManagerConnectionStatusChanged:(id)arg1 connected:(bool)arg2;
+- (void)removeDDMLoadFailVersion;
 - (id)selectedHelpTopicID;
 - (id)selectedHelpTopicName;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayHelpTopicsOnly:(bool)arg1;
+- (void)setHelpBookController:(id)arg1;
+- (void)setHelpBookURL:(id)arg1;
 - (void)setHideDoneButton:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLoadingView:(id)arg1;
 - (void)setLocalHelpBookFileURL:(id)arg1;
+- (void)setLocalHelpBookNameIDMap:(id)arg1;
+- (void)setLocaleListController:(id)arg1;
 - (void)setPreferredLanguagesOverride:(id)arg1;
 - (void)setReachabilityManager:(id)arg1;
 - (void)setSelectedHelpTopicID:(id)arg1;
@@ -118,8 +134,10 @@
 - (void)tableOfContentViewController:(id)arg1 showHelpTopicItem:(id)arg2;
 - (void)tableOfContentViewControllerShowHelpBookInfo:(id)arg1;
 - (id)topicIDForTopicName:(id)arg1 locale:(id)arg2;
+- (void)updateCacheControllerToLanguageCode:(id)arg1;
 - (void)updateChildViewConstraints;
 - (void)updateDoneButton;
+- (void)updateLastLoadVersion;
 - (void)updateTOCButton;
 - (id)version;
 - (void)viewDidAppear:(bool)arg1;

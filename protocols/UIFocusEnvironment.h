@@ -6,6 +6,8 @@
 @required
 
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
+- (<UIFocusItemContainer> *)focusItemContainer;
+- (<UIFocusEnvironment> *)parentFocusEnvironment;
 - (NSArray *)preferredFocusEnvironments;
 - (void)setNeedsFocusUpdate;
 - (bool)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;

@@ -70,6 +70,7 @@
 - (void)mediaControlsCollectionViewController:(id)arg1 willDisplayViewController:(id)arg2 forItemAtIndex:(long long)arg3;
 - (void)mediaControlsCollectionViewController:(id)arg1 willSelectItemAtIndex:(long long)arg2 withReason:(long long)arg3;
 - (void)mediaControlsPanelViewController:(id)arg1 didToggleRoutingPicker:(bool)arg2;
+- (void)mediaControlsPanelViewController:(id)arg1 willToggleRoutingPicker:(bool)arg2;
 - (long long)numberOfItemsInCollectionViewController:(id)arg1;
 - (double)preferredExpandedContentHeight;
 - (double)preferredExpandedContentWidth;

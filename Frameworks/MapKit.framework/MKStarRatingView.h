@@ -33,9 +33,9 @@
 + (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3 theme:(id)arg4;
 
 - (void).cxx_destruct;
+- (void)_commonInit;
 - (void)_layoutStarViewsCreatingIfNeeded:(bool)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
-- (void)commonInit;
 - (void)didMoveToWindow;
 - (id)emptyStarHighlightedImage;
 - (id)emptyStarImage;

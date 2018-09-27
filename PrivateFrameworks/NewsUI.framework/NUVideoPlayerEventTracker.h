@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUVideoPlayerEventTracker : NSObject <NSSNewsAnalyticsSessionManagerObserving, NUAggregateVideoPlayerEventTracker, NUViewAppearanceEventTracker> {
+@interface NUVideoPlayerEventTracker : NSObject <NSSNewsAnalyticsSessionManagerObserving, NUAggregateVideoPlayerEventTracker, SVVideoViewControllerAppearanceObserver> {
     NSMutableArray * _eventTrackers;
     bool  _hostProcessIsForeground;
     bool  _videoPlayerIsVisible;
@@ -50,12 +50,14 @@
 - (void)userEngagedWithCallToActionOfVideoAdWithMetadata:(id)arg1;
 - (void)userEngagedWithDiscoverMoreButtonWithVideoItem:(id)arg1;
 - (void)userSkippedPlaybackOfVideoAdWithMetadata:(id)arg1;
+- (void)videoDidAppearWithVideoItem:(id)arg1;
+- (void)videoDidDisappearWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedFirstQuartileWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedSecondQuartileWithVideoItem:(id)arg1;
 - (void)videoPlaybackPassedThirdQuartileWithVideoItem:(id)arg1;
 - (void)videoPlayerDidBecomeInvisible;
 - (void)videoPlayerDidBecomeVisible;
-- (void)viewDidAppear;
-- (void)viewDidDisappear;
+- (void)videoViewControllerDidAppear:(id)arg1;
+- (void)videoViewControllerDidDisappear:(id)arg1;
 
 @end

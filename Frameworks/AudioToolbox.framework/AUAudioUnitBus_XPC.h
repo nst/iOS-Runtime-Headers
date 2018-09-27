@@ -6,7 +6,7 @@
     AUAudioUnit_XH * _audioUnit;
     unsigned int  _element;
     AVAudioFormat * _format;
-    <AUAudioUnitXPCProtocol> * _remoteAU;
+    NSXPCConnection * _remoteAUXPCConnection;
     bool  _removingObserverWithContext;
     unsigned int  _scope;
     NSArray * _supportedChannelLayoutTags;

@@ -4,8 +4,6 @@
 
 @interface _CDContextQueries : NSObject
 
-// Image: /System/Library/PrivateFrameworks/CoreDuetContext.framework/CoreDuetContext
-
 + (id)accessoryClientName;
 + (id)accessoryHomeUUID;
 + (id)accessoryName;
@@ -15,6 +13,14 @@
 + (id)actionSetUUID;
 + (id)appBundleIdKey;
 + (id)appLaunchReasonKey;
++ (id)appUsageBundleID;
++ (id)appUsageStartDate;
++ (id)appUsageType;
++ (id)appWebUsageBundleID;
++ (id)appWebUsageStartDate;
++ (id)appWebUsageType;
++ (id)appWebUsageWebDomain;
++ (id)appWebUsageWepageURL;
 + (id)audioIdentifierKey;
 + (id)audioOutputStatusKey;
 + (id)audioPortNameKey;
@@ -30,41 +36,44 @@
 + (id)bluetoothAddressKey;
 + (id)bluetoothConnectionStatusKey;
 + (id)bluetoothDeviceTypeKey;
++ (id)bluetoothIsAppleAudioDeviceKey;
 + (id)bluetoothNameKey;
++ (id)bluetoothProductIDKey;
 + (id)characteristicType;
 + (id)currentSunriseKey;
 + (id)currentSunsetKey;
 + (id)eligibility;
-+ (id)intentAmountKey;
 + (id)intentClassKey;
 + (id)intentDKObjUUIDKey;
 + (id)intentDonatedBySiriKey;
-+ (id)intentDropOffLocationKey;
-+ (id)intentGoalKey;
 + (id)intentHandlingStatusKey;
-+ (id)intentPayeeKey;
-+ (id)intentPayerKey;
-+ (id)intentPickupLocationKey;
-+ (id)intentRecipientsKey;
-+ (id)intentServiceNameKey;
 + (id)intentSourceBundleIDKey;
 + (id)intentSourceItemIDKey;
 + (id)intentTypeKey;
 + (id)intentVerbKey;
-+ (id)intentWorkoutNameKey;
 + (id)isDaylightKey;
 + (id)itemIdentifier;
++ (id)keyPathForActiveComplications;
 + (id)keyPathForAirplaneModeStatus;
 + (id)keyPathForAppDataDictionary;
++ (id)keyPathForAppUsageDataDictionaries;
++ (id)keyPathForAppWebUsageDataDictionaries;
 + (id)keyPathForAudioOutputDataDictionary;
 + (id)keyPathForBacklightOnStatus;
 + (id)keyPathForBatteryLevel;
 + (id)keyPathForBatteryStateDataDictionary;
 + (id)keyPathForBluetoothDataDictionary;
++ (id)keyPathForCPUUsageLevel;
 + (id)keyPathForCallInProgressStatus;
 + (id)keyPathForCarConnectedStatus;
 + (id)keyPathForCarplayConnectedStatus;
 + (id)keyPathForCellConnectionQuality;
++ (id)keyPathForDefaultPairedDeviceBatteryLevel;
++ (id)keyPathForDefaultPairedDeviceForegroundApp;
++ (id)keyPathForDefaultPairedDeviceNearbyStatus;
++ (id)keyPathForDefaultPairedDevicePluginStatus;
++ (id)keyPathForDefaultPairedDeviceThermalPressureLevel;
++ (id)keyPathForDefaultPairedServicesAppearingForeground;
 + (id)keyPathForDeviceAssertionsHeldStatus;
 + (id)keyPathForDeviceLockStatus;
 + (id)keyPathForDeviceName;
@@ -89,12 +98,14 @@
 + (id)keyPathForNextUserVisibleWakeDate;
 + (id)keyPathForNowPlayingDataDictionary;
 + (id)keyPathForPluginStatus;
++ (id)keyPathForServicesAppearingForeground;
 + (id)keyPathForSiriActiveStatus;
 + (id)keyPathForSunriseSunsetDataDictionary;
 + (id)keyPathForThermalPressureLevel;
 + (id)keyPathForUserActivityDataDictionary;
 + (id)keyPathForWatchActiveStatus;
 + (id)keyPathForWatchBatteryLevel;
++ (id)keyPathForWatchForegroundApp;
 + (id)keyPathForWatchNearbyStatus;
 + (id)keyPathForWatchPluginStatus;
 + (id)keyPathForWatchThermalPressureLevel;
@@ -131,15 +142,5 @@
 + (id)viewInformation;
 + (id)viewName;
 + (id)viewUUID;
-
-// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
-
-+ (id)intentAmountKey;
-+ (id)intentCurrencyKey;
-+ (id)intentDropOffLocationKey;
-+ (id)intentPayeeKey;
-+ (id)intentPayerKey;
-+ (id)intentRecipientsKey;
-+ (id)intentWorkoutNameKey;
 
 @end

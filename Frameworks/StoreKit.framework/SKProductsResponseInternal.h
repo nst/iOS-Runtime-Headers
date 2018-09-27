@@ -7,6 +7,6 @@
     NSArray * _products;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

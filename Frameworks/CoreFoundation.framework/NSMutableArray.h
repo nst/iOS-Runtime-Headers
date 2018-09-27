@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSMutableArray : NSArray <FCOrderedMutableCollectionAdditions>
+@interface NSMutableArray : NSArray <FCOrderedMutableCollectionAdditions, TSTStrokeLayerEnumerating>
+
+@property (readonly) unsigned long long strokeLayerCount;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
@@ -85,6 +87,7 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
+- (void)hk_addObjectsFromArray:(id)arg1 passingTest:(id /* block */)arg2;
 - (id)hk_dequeue;
 - (void)hk_removeObjectsPassingTest:(id /* block */)arg1;
 
@@ -111,27 +114,14 @@
 - (id)nc_pop;
 - (void)nc_push:(id)arg1;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (void)insertObject:(id)arg1 sortedBy:(id /* block */)arg2;
+
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
 - (void)removeExactObject:(id)arg1;
 - (void)removeExactObjectsInArray:(id)arg1;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (void)_addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (void)_kb_reverse;
-- (bool)_listContainsOrderedItems;
-- (void)_set_listContainsOrderedItems:(bool)arg1;
-- (void)_set_syncQueue:(id)arg1;
-- (id)_syncQueue;
-- (id)_ui_dequeue;
-- (void)_ui_enqueue:(id)arg1;
-- (id)_ui_peek;
-- (void)_uikbrtInsert:(id)arg1 after:(id)arg2;
-- (void)_uikbrtInsert:(id)arg1 before:(id)arg2;
-- (void)_uikbrtInsert:(id)arg1 beforeItemPassingTest:(id /* block */)arg2;
-- (void)_uikbrtRemove:(id)arg1;
-- (void)removeViewsFromSuperview;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
@@ -146,6 +136,15 @@
 - (void)ax_enqueueObject:(id)arg1;
 - (id)ax_lastEnqueuedObject;
 - (id)ax_nextDequeuedObject;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (id)aa_removeFirstObject;
+- (id)aa_removeLastObject;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (void)ams_addNullableObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -182,18 +181,6 @@
 - (void)_cn_rotateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 by:(long long)arg2;
 - (void)_cn_sortUsingAuxiliarySortOrder:(id)arg1 transform:(id /* block */)arg2;
 
-// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
-
-+ (id)cd_arrayWithDoubleValue:(double)arg1 repeated:(unsigned long long)arg2;
-+ (id)cd_arrayWithDoubleValuesStarting:(double)arg1 ending:(double)arg2 count:(unsigned long long)arg3;
-
-- (void)cd_divideElementsByDouble:(double)arg1;
-- (void)cd_elementwiseAddArray:(id)arg1;
-- (void)cd_elementwiseAddArray:(id)arg1 weightedBy:(double)arg2;
-- (void)cd_elementwiseAddSquaredArray:(id)arg1;
-- (void)cd_elementwiseMultiplyArray:(id)arg1;
-- (void)cd_inplaceCummulativeSum;
-
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
 - (void)MSRemoveOneObject:(id)arg1;
@@ -206,10 +193,19 @@
 - (void)cr_insertObject:(id)arg1 usingComparator:(id /* block */)arg2;
 - (void)cr_removeObjectsStartingAtIndex:(unsigned long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
+- (id)popFirstObject;
+
 // Image: /System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport
 
 - (id)section_pop;
 - (void)section_push:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
+- (void)dc_addNonNilObject:(id)arg1;
+- (void)dc_insertNonNilObject:(id)arg1 atIndex:(long long)arg2;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
@@ -221,6 +217,10 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
+- (id)hmf_dequeue;
+- (void)hmf_enqueue:(id)arg1;
+- (void)hmf_enqueueMultiple:(id)arg1;
+- (id)hmf_maybeDequeue;
 - (void)hmf_removeFirstObject;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
@@ -231,10 +231,18 @@
 - (void)__imRandomizeArray;
 - (void)removeFirstObject;
 
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
+
+- (void)xct_shuffle;
+
 // Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
 - (void)addItemsMatchingExtensions:(id)arg1 orTypes:(id)arg2 fromFolder:(id)arg3;
 - (void)addItemsMatchingType:(id)arg1 fromFolder:(id)arg2;
+- (void)addTruth:(bool)arg1 code:(long long)arg2;
+- (void)insertObject:(id)arg1 sortDescriptor:(id)arg2;
+- (void)insertObject:(id)arg1 sortFunction:(int (*)arg2 context:(void*)arg3;
+- (void)insertObject:(id)arg1 sortSelector:(SEL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -344,7 +352,10 @@
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (void)performSpecifierUpdatesUsingBlock:(id /* block */)arg1;
+- (void)ps_addGroup:(id)arg1 afterGroup:(id)arg2;
 - (void)ps_addPossibleObject:(id)arg1;
+- (void)ps_addSpecifier:(id)arg1 toGroup:(id)arg2;
+- (void)ps_addSpecifiers:(id)arg1 toGroup:(id)arg2;
 - (void)ps_insertObject:(id)arg1 afterObject:(id)arg2;
 - (void)ps_insertObjectsFromArray:(id)arg1 afterObject:(id)arg2;
 
@@ -383,6 +394,11 @@
 - (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)tsu_removeObjectsIdenticalToObjectsInSet:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/TinCanShared.framework/TinCanShared
+
+- (id)dequeue;
+- (void)enqueue:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
 - (id)tk_dequeueObject;
@@ -391,9 +407,41 @@
 - (id)tk_lastEnqueuedObject;
 - (id)tk_nextDequeuedObject;
 
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (void)_addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)_kb_reverse;
+- (bool)_listContainsOrderedItems;
+- (void)_set_listContainsOrderedItems:(bool)arg1;
+- (void)_set_syncQueue:(id)arg1;
+- (id)_syncQueue;
+- (id)_ui_dequeue;
+- (void)_ui_enqueue:(id)arg1;
+- (id)_ui_peek;
+- (void)_uikbrtInsert:(id)arg1 after:(id)arg2;
+- (void)_uikbrtInsert:(id)arg1 before:(id)arg2;
+- (void)_uikbrtInsert:(id)arg1 beforeItemPassingTest:(id /* block */)arg2;
+- (void)_uikbrtRemove:(id)arg1;
+- (void)removeViewsFromSuperview;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+
+- (void)_insertOrderedNotificationRequest:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
 - (void)vcp_sortBySize;
+
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
+- (void)_vui_applyUpdateChanges:(id)arg1 destinationObjectsBlock:(id /* block */)arg2 updateObjectBlock:(id /* block */)arg3;
+- (void)vui_addObjectIfNotNil:(id)arg1;
+- (void)vui_addObjectsFromArrayIfNotNil:(id)arg1;
+- (bool)vui_applyChangeSet:(id)arg1 destinationObjects:(id)arg2;
+- (bool)vui_applyChangeSet:(id)arg1 destinationObjects:(id)arg2 updateObjectBlock:(id /* block */)arg3;
+- (bool)vui_applyChangeSet:(id)arg1 destinationObjectsBlock:(id /* block */)arg2;
+- (bool)vui_applyChangeSet:(id)arg1 destinationObjectsBlock:(id /* block */)arg2 updateObjectBlock:(id /* block */)arg3;
+- (bool)vui_applyChangeSetIfAvailable:(id)arg1 destinationObjects:(id)arg2 replaceContentsOnNilChanges:(bool)arg3;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
 
@@ -404,6 +452,9 @@
 
 + (id)tsch_instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
 
+- (void)replaceStrokeLayerAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (id)strokeLayerAtIndex:(unsigned long long)arg1;
+- (unsigned long long)strokeLayerCount;
 - (void)tsce_addObjectNonNil:(id)arg1;
 - (id)tsch_initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
 - (void)tsch_saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 archiver:(id)arg2;

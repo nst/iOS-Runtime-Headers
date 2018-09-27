@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) bool activeHomeKitApps;
 @property (nonatomic) HMDApplicationRegistry *appRegistry;
 @property (nonatomic, readonly) NSSet *backgroundApps;
-@property (nonatomic, readonly) BKSApplicationStateMonitor *bksMonitor;
+@property (nonatomic, retain) BKSApplicationStateMonitor *bksMonitor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMDApplicationMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -36,6 +36,11 @@
 - (bool)_delegateConformsAndRespondsToSelector:(SEL)arg1;
 - (void)_handleAppStateChangedInfo:(id)arg1;
 - (void)_postAppTerminatedNotification:(id)arg1;
+- (void)_postHomeUIServiceTerminatedNotification;
+- (void)_processAppStateChange:(id)arg1;
+- (void)_removeProcess:(id)arg1;
+- (void)_startMonitoringApplicationStateChangesForBundleIdentifier:(id)arg1;
+- (void)_stopMonitoringApplicationStateChangesForBundleIdentifier:(id)arg1;
 - (unsigned long long)_translateApplicationState:(unsigned int)arg1;
 - (void)_updateProcessInfo:(id)arg1 info:(id)arg2;
 - (bool)activeHomeKitApps;
@@ -60,10 +65,12 @@
 - (void)removeFromPendingTerminated:(id)arg1;
 - (void)removeProcess:(id)arg1;
 - (void)setAppRegistry:(id)arg1;
+- (void)setBksMonitor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSpiClientTerminationDelayTimer:(id)arg1;
+- (void)setUpForMonitoring;
 - (id)spiClientTerminationDelayTimer;
-- (void)start;
+- (void)tearDownMonitoringIfNotInUse;
 - (void)timerDidFire:(id)arg1;
 - (unsigned long long)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
 - (id)xpcQueue;

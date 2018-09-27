@@ -69,6 +69,7 @@
 @property (nonatomic) bool filterPastedAttributes;
 @property (nonatomic) bool filterSubstringAttributes;
 @property (nonatomic) bool filterSubstringAttributesForPlainText;
+@property (nonatomic, readonly) bool hasAnyTextViewWithDarkAppearance;
 @property (nonatomic) bool hasEditedCharactersAfterTextSelection;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isApplyingUndoCommand;
@@ -102,8 +103,8 @@
 @property (nonatomic) bool wantsUndoCommands;
 
 + (id)bulletTextAttributesWithTextFont:(struct UIFont { Class x1; }*)arg1 paragraphStyle:(id)arg2 letterpress:(bool)arg3 withStyler:(id)arg4;
-+ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3 fixAttachments:(bool)arg4;
-+ (void)fixAttachmentsForRenderingInAttributedString:(id)arg1 forPlainText:(bool)arg2;
++ (id)filteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3 forStandardizedText:(bool)arg4 fixAttachments:(bool)arg5;
++ (void)fixAttachmentsForRenderingInAttributedString:(id)arg1 forPlainText:(bool)arg2 forStandardizedText:(bool)arg3;
 + (double)listItemGlyphPointSizeForUnorderedListStyle:(unsigned int)arg1 withStyler:(id)arg2;
 + (id)removeDataDetectorLinksForAttributedString:(id)arg1;
 + (id)removeTextAttachmentsForAttributedString:(id)arg1 translateTTFont:(bool)arg2;
@@ -157,6 +158,7 @@
 - (void)fixupAfterEditing;
 - (void)fixupAfterEditingDelayedToEndOfRunLoop;
 - (void)forceFixupAfterEditingIfDelayed;
+- (bool)hasAnyTextViewWithDarkAppearance;
 - (bool)hasEditedCharactersAfterTextSelection;
 - (bool)ic_containsAttribute:(id)arg1 InRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2;

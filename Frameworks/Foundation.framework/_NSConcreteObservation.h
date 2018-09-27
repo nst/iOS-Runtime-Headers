@@ -5,10 +5,10 @@
 @interface _NSConcreteObservation : NSObservation {
     NSObject<NSObservable> * _LHSobservable;
     NSObject<NSObserver> * _RHSobserver;
-    id  _observers;
+    /* Warning: unhandled array encoding: '[4@]' */ id  _observers;
 }
 
-- (id*)_observerStorage;
+- (void*)_observerStorageOfSize:(unsigned long long)arg1;
 - (void)_receiveBox:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;

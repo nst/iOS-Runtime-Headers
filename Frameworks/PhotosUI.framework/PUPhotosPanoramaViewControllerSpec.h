@@ -2,7 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPanoramaViewControllerSpec : NSObject
+@interface PUPhotosPanoramaViewControllerSpec : PULegacyViewControllerSpec
+
++ (id)padSpec;
++ (id)phoneSpec;
 
 - (struct CGSize { double x1; double x2; })_itemSizeForWidth:(double)arg1;
 - (long long)cellFillMode;

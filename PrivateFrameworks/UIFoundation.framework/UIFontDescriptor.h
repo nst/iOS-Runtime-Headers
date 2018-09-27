@@ -73,10 +73,6 @@
 - (id)_mapkit_fontDescriptorByAddingFeaturesForTimeDisplay;
 - (id)_mapkit_fontDescriptorByAddingFeaturesForTimeDisplayUseMonospace:(bool)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
-
-- (id)hu_fontDescriptorWithMonospacedDigits;
-
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
 + (id)telephonyUIBodyShortEmphasizedFontDescriptor;

@@ -14,8 +14,8 @@
 @property (nonatomic, readonly) long long state;
 @property (nonatomic, readonly) NSArray *workoutEvents;
 
++ (id)firstPartyWorkoutSnapshotWithCurrentWorkoutSnapshot:(id)arg1;
 + (bool)supportsSecureCoding;
-+ (id)workoutSnapshotWithState:(long long)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)_initWithState:(long long)arg1 activityType:(unsigned long long)arg2 startDate:(id)arg3 workoutEvents:(id)arg4;

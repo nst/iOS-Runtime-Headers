@@ -81,6 +81,7 @@
 - (void)_applyConfigurationWithDuration:(double)arg1;
 - (void)_clearFaceLaunchRect;
 - (void)_clearLastTappedComplication;
+- (void)_configureBackgroundFillAlpha:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureLisaForSelectedSlot:(id)arg1 editMode:(long long)arg2 animated:(bool)arg3;
@@ -105,6 +106,7 @@
 - (void)_insertDetachedComplicationDisplay:(id)arg1 controller:(id)arg2 forSlot:(id)arg3;
 - (void)_insertNormalComplicationDisplay:(id)arg1 controller:(id)arg2 forSlot:(id)arg3;
 - (id)_keylineLabelTextForOption:(id)arg1 customEditMode:(long long)arg2;
+- (void)_loadInitialComplicationVisibilityFromFace;
 - (id)_newNormalDisplayForComplicationController:(id)arg1 slot:(id)arg2;
 - (void)_populateFaceViewEditOptionsFromFace;
 - (void)_removeComplicationForSlot:(id)arg1;
@@ -114,6 +116,7 @@
 - (void)_setFaceViewResourceDirectoryFromFace;
 - (void)_setupEditViewForComplications;
 - (void)_setupEditViewForCustomEditMode:(long long)arg1;
+- (void)_setupEditViewForHiddenComplications;
 - (void)_setupEditing;
 - (bool)_shouldHideUI;
 - (bool)_shouldShowComplicationPickerForSlot:(id)arg1;
@@ -136,6 +139,7 @@
 - (id)complicationPickerView:(id)arg1 layoutRuleForComplicationDisplay:(id)arg2;
 - (void)configureWithDuration:(double)arg1 block:(id /* block */)arg2;
 - (id)currentOrderedComplicationApplicationIdentifiers;
+- (id)customEditOptionContainerViewForComplicationPickerView:(id)arg1;
 - (bool)dailySnapshotShowsComplication:(id)arg1 forSlot:(id)arg2;
 - (long long)dataMode;
 - (void)dealloc;
@@ -157,6 +161,7 @@
 - (id)faceView;
 - (bool)faceView:(id)arg1 wantsToDismissPresentedViewControllerAnimated:(bool)arg2;
 - (id)faceViewComplicationAppIdentifierForSlot:(id)arg1;
+- (id)faceViewComplicationForSlot:(id)arg1;
 - (bool)faceViewComplicationIsEmptyForSlot:(id)arg1;
 - (void)faceViewDidHideOrShowComplicationSlot;
 - (void)faceViewDidLayoutSubviews;
@@ -172,12 +177,14 @@
 - (void)faceViewWillEnterTimeTravel;
 - (void)faceViewWillExitTimeTravel;
 - (void)faceViewWillUnloadSnapshotContentViews;
+- (void)finalizeForSnapshotting:(id /* block */)arg1;
 - (void)freeze;
 - (void)freezeAfterDelay:(double)arg1;
 - (void)getComplicationController:(id*)arg1 andDisplay:(id*)arg2 forSlot:(id)arg3;
 - (void)handleOrdinaryScreenWake;
 - (void)handleWristRaiseScreenWake;
 - (void)hideFaceEditingUIAnimated:(bool)arg1;
+- (void)hideFaceEditingUIAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)initWithFace:(id)arg1 configuration:(id /* block */)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })launchRectForComplicationApplicationIdentifier:(id)arg1;
 - (void)loadView;

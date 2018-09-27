@@ -12,7 +12,6 @@
 - (int)embeddedThumbnailOffset;
 - (NSString *)filename;
 - (long long)height;
-- (NSString *)importSessionID;
 - (bool)isAudio;
 - (bool)isAvalanchePhoto;
 - (bool)isInFlight;

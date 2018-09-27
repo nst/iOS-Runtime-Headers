@@ -23,7 +23,7 @@
 - (bool)requestToJoinCircle:(id*)arg1;
 - (bool)requestToJoinCircleAfterRestore:(id*)arg1;
 - (bool)requestToResetCircle:(id*)arg1;
-- (bool)requestToResetCloudKitData:(id*)arg1;
+- (bool)requestToResetCloudKitDataForReason:(NSString *)arg1 error:(id*)arg2;
 - (void)setCdpContext:(CDPContext *)arg1;
 - (bool)setViewsWithEnableSet:(NSSet *)arg1 disableSet:(NSSet *)arg2;
 - (bool)synchronizeCircleViews;

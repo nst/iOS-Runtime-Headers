@@ -23,8 +23,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *token;
 
-+ (bool)acceptsComplicationFamily:(long long)arg1;
-+ (bool)acceptsComplicationType:(unsigned long long)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_animationGroupForDate:(id)arg1 showingSunrise:(bool)arg2 constantSun:(long long)arg3;
@@ -53,7 +53,7 @@
 - (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)getTimelineStartDateWithHandler:(id /* block */)arg1;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 - (bool)isWaitingForGeocodeRequest;
 - (id)loadEntryModelsForDay:(id)arg1;
 - (id)locationName;

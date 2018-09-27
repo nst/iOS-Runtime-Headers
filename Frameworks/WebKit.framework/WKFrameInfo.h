@@ -5,7 +5,7 @@
 @interface WKFrameInfo : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::FrameInfo> { 
         struct type { 
-            unsigned char __lx[288]; 
+            unsigned char __lx[256]; 
         } data; 
     }  _frameInfo;
 }

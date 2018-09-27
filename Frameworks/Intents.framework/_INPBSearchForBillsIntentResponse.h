@@ -2,16 +2,19 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBSearchForBillsIntentResponse : PBCodable <NSCopying> {
-    NSMutableArray * _bills;
-    PBUnknownFields * _unknownFields;
+@interface _INPBSearchForBillsIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBSearchForBillsIntentResponse> {
+    NSArray * _bills;
+    struct { }  _has;
 }
 
-@property (nonatomic, retain) NSMutableArray *bills;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, copy) NSArray *bills;
+@property (nonatomic, readonly) unsigned long long billsCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (Class)billsType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addBills:(id)arg1;
@@ -20,14 +23,11 @@
 - (unsigned long long)billsCount;
 - (void)clearBills;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setBills:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

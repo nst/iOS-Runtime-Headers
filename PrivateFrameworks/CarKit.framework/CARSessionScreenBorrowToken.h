@@ -18,5 +18,6 @@
 - (id)initWithSession:(id)arg1 client:(id)arg2 reason:(id)arg3;
 - (id)reason;
 - (id)session;
+- (void)unborrowToken;
 
 @end

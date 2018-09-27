@@ -11,6 +11,7 @@
     NSString * _name;
     bool  _opaque;
     NSMutableDictionary * _semanticInfos;
+    NSString * _sourceFile;
     NSString * _vertexFunctionName;
     NSString * _vertexShader;
 }
@@ -55,9 +56,11 @@
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 - (void)setSemanticInfos:(id)arg1;
+- (void)setSourceFile:(id)arg1;
 - (void)setVertexFunctionName:(id)arg1;
 - (void)setVertexShader:(id)arg1;
 - (int)shadingLanguage;
+- (id)sourceFile;
 - (id)vertexFunctionName;
 - (id)vertexShader;
 

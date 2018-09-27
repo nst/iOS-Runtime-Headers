@@ -15,6 +15,8 @@
 
 - (void)accessSandboxExtension:(id)arg1;
 - (void)dealloc;
+- (void)hostApplicationAssetPacksBecameAvailable:(id)arg1;
+- (void)hostApplicationAssetPacksBecameUnavailable:(id)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

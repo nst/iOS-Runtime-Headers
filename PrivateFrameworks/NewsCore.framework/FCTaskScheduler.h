@@ -9,6 +9,7 @@
 + (void)popHighPriorityTaskInFlight;
 + (void)pushHighPriorityTaskInFlight;
 + (void)scheduleLowPriorityBlock:(id /* block */)arg1;
++ (void)scheduleLowPriorityBlockForMainThread:(id /* block */)arg1;
 + (void)scheduleLowPriorityOperation:(id)arg1;
 
 @end

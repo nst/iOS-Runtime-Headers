@@ -6,13 +6,13 @@
     NSObject<OS_xpc_object> * _payload;
 }
 
-@property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *payload;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *payload;
 
 + (id)message;
 + (id)messageWithPacker:(id /* block */)arg1;
 + (id)messageWithPayload:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)initWithMessagePacker:(id /* block */)arg1;
 - (id)initWithMessagePayload:(id)arg1;

@@ -13,12 +13,15 @@
     NSMutableArray * _pendingChangeBlocks;
 }
 
+@property (nonatomic, readonly) unsigned long long currentChanges;
+
 - (void).cxx_destruct;
 - (void)_applyPendingChanges;
 - (void)_didChange;
 - (void)_observersQueue_copyChangeObserversForWriteIfNeeded;
 - (void)_publishChanges;
 - (void)_willChange;
+- (unsigned long long)currentChanges;
 - (void)didPerformChanges;
 - (void)didPublishChanges;
 - (void)enumerateObserversUsingBlock:(id /* block */)arg1;

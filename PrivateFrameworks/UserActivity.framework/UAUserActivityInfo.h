@@ -9,6 +9,7 @@
     bool  _dirty;
     NSString * _dynamicActivityType;
     bool  _eligibleForHandoff;
+    bool  _eligibleForPrediction;
     bool  _eligibleForPublicIndexing;
     bool  _eligibleForReminders;
     bool  _eligibleForSearch;
@@ -25,6 +26,7 @@
     bool  _payloadRequested;
     NSMutableDictionary * _payloads;
     SFPeerDevice * _peerDevice;
+    NSString * _persistentIdentifier;
     NSURL * _referrerURL;
     NSSet * _requiredUserInfoKeys;
     NSString * _teamIdentifier;
@@ -42,6 +44,7 @@
 @property (getter=isDirty, readonly) bool dirty;
 @property (copy) NSString *dynamicActivityType;
 @property bool eligibleForHandoff;
+@property bool eligibleForPrediction;
 @property bool eligibleForPublicIndexing;
 @property bool eligibleForReminders;
 @property bool eligibleForSearch;
@@ -58,6 +61,7 @@
 @property (getter=isPayloadRequested) bool payloadRequested;
 @property (copy) NSDictionary *payloads;
 @property (retain) SFPeerDevice *peerDevice;
+@property (copy) NSString *persistentIdentifier;
 @property (copy) NSURL *referrerURL;
 @property (copy) NSSet *requiredUserInfoKeys;
 @property (copy) NSString *teamIdentifier;
@@ -83,6 +87,7 @@
 - (id)description;
 - (id)dynamicActivityType;
 - (bool)eligibleForHandoff;
+- (bool)eligibleForPrediction;
 - (bool)eligibleForPublicIndexing;
 - (bool)eligibleForReminders;
 - (bool)eligibleForSearch;
@@ -109,6 +114,7 @@
 - (id)payloadIdentifiers;
 - (id)payloads;
 - (id)peerDevice;
+- (id)persistentIdentifier;
 - (id)referrerURL;
 - (bool)requestPayloadWithCompletionHandler:(id /* block */)arg1;
 - (bool)requestPayloadWithCompletionHandlerEvenIfClean:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -119,6 +125,7 @@
 - (void)setContentUserAction:(id)arg1;
 - (void)setDynamicActivityType:(id)arg1;
 - (void)setEligibleForHandoff:(bool)arg1;
+- (void)setEligibleForPrediction:(bool)arg1;
 - (void)setEligibleForPublicIndexing:(bool)arg1;
 - (void)setEligibleForReminders:(bool)arg1;
 - (void)setEligibleForSearch:(bool)arg1;
@@ -134,6 +141,7 @@
 - (void)setPayloadRequested:(bool)arg1;
 - (void)setPayloads:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
+- (void)setPersistentIdentifier:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
 - (void)setTeamIdentifier:(id)arg1;

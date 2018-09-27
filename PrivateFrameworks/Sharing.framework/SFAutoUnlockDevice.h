@@ -13,8 +13,10 @@
     bool  _placeholder;
     NSUUID * _proxyBluetoothID;
     NSDictionary * _results;
+    bool  _supportsAdvertisingUnlocked;
     bool  _supportsAlwaysDirect;
     bool  _supportsAuthPrompts;
+    bool  _supportsConnectionCache;
     bool  _supportsEncryption;
     bool  _unlockEnabled;
 }
@@ -29,8 +31,10 @@
 @property (nonatomic) bool placeholder;
 @property (nonatomic, copy) NSUUID *proxyBluetoothID;
 @property (nonatomic, retain) NSDictionary *results;
+@property (nonatomic) bool supportsAdvertisingUnlocked;
 @property (nonatomic) bool supportsAlwaysDirect;
 @property (nonatomic) bool supportsAuthPrompts;
+@property (nonatomic) bool supportsConnectionCache;
 @property (nonatomic) bool supportsEncryption;
 @property (nonatomic, readonly) long long type;
 @property (nonatomic) bool unlockEnabled;
@@ -63,12 +67,16 @@
 - (void)setPlaceholder:(bool)arg1;
 - (void)setProxyBluetoothID:(id)arg1;
 - (void)setResults:(id)arg1;
+- (void)setSupportsAdvertisingUnlocked:(bool)arg1;
 - (void)setSupportsAlwaysDirect:(bool)arg1;
 - (void)setSupportsAuthPrompts:(bool)arg1;
+- (void)setSupportsConnectionCache:(bool)arg1;
 - (void)setSupportsEncryption:(bool)arg1;
 - (void)setUnlockEnabled:(bool)arg1;
+- (bool)supportsAdvertisingUnlocked;
 - (bool)supportsAlwaysDirect;
 - (bool)supportsAuthPrompts;
+- (bool)supportsConnectionCache;
 - (bool)supportsEncryption;
 - (long long)type;
 - (bool)unlockEnabled;

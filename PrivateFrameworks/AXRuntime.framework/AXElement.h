@@ -50,6 +50,7 @@
 @property (nonatomic, readonly) bool canPerformZoom;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } centerPoint;
 @property (nonatomic, readonly) NSArray *children;
+@property (nonatomic, readonly) unsigned long long containerType;
 @property (nonatomic, readonly) AXElement *currentApplication;
 @property (nonatomic, readonly) NSArray *currentApplications;
 @property (nonatomic, readonly) NSArray *currentApplicationsIgnoringSiri;
@@ -58,6 +59,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *drags;
 @property (nonatomic, readonly) NSArray *drops;
+@property (nonatomic, readonly) AXElement *elementParent;
 @property (nonatomic, readonly) struct __AXUIElement { }*elementRef;
 @property (nonatomic, readonly) NSArray *elementsWithSemanticContext;
 @property (nonatomic, readonly) NSArray *explorerElements;
@@ -101,8 +103,10 @@
 @property (getter=isPassivelyListeningForEvents, nonatomic) bool passivelyListeningForEvents;
 @property (nonatomic, readonly) struct CGPath { }*path;
 @property (nonatomic, readonly) int pid;
+@property (nonatomic, readonly) NSString *processName;
 @property (nonatomic, readonly) AXElement *remoteParent;
 @property (nonatomic, readonly) bool representsScannerGroup;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rowRange;
 @property (nonatomic, readonly) long long scannerActivateBehavior;
 @property (nonatomic, readonly) unsigned long long scanningBehaviorTraits;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } selectedTextRange;
@@ -126,6 +130,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleFrame;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } visiblePoint;
 @property (nonatomic, readonly) unsigned int windowContextId;
+@property (nonatomic, readonly) unsigned int windowDisplayId;
 
 + (id)elementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 withVisualPadding:(bool)arg2;
 + (id)elementWithAXUIElement:(struct __AXUIElement { }*)arg1;
@@ -169,7 +174,9 @@
 - (struct CGPoint { double x1; double x2; })centerPoint;
 - (id)children;
 - (void)clearCachedFrame:(bool)arg1 cachedVisibleFrame:(bool)arg2;
+- (unsigned long long)containerType;
 - (id)containerTypes;
+- (unsigned int)contextIdForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPath { }*)convertPath:(struct CGPath { }*)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromContextId:(unsigned int)arg2;
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toContextId:(unsigned int)arg2;
@@ -181,12 +188,14 @@
 - (void)dealloc;
 - (void)decreaseAutoscrollSpeed;
 - (id)description;
+- (unsigned int)displayIdForContextId:(unsigned int)arg1;
 - (double)distanceToElement:(id)arg1;
 - (double)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)drags;
 - (id)drops;
 - (id)elementForAttribute:(long long)arg1;
 - (id)elementForAttribute:(long long)arg1 parameter:(id)arg2;
+- (id)elementParent;
 - (struct __AXUIElement { }*)elementRef;
 - (id)elementsForAttribute:(long long)arg1;
 - (id)elementsMatchingText:(id)arg1;
@@ -272,15 +281,17 @@
 - (bool)pressTVStopButton;
 - (bool)pressTVUpButton;
 - (id)previousElementsWithCount:(unsigned long long)arg1;
+- (id)processName;
 - (id)remoteApplication;
 - (id)remoteParent;
 - (bool)representsScannerGroup;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rowRange;
 - (long long)scannerActivateBehavior;
 - (unsigned long long)scanningBehaviorTraits;
 - (struct __AXUIElement { }*)scrollAncestorForScrollAction:(int)arg1;
 - (void)scrollToBottom;
 - (void)scrollToTop;
-- (void)scrollToVisible;
+- (bool)scrollToVisible;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })selectedTextRange;
 - (id)semanticContext;
 - (void)sendUserEventOccurred;
@@ -297,6 +308,7 @@
 - (void)setSelectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setUiElement:(id)arg1;
 - (void)setValue:(id)arg1;
+- (bool)showContextMenu;
 - (id)siriContentElementsWithSemanticContext;
 - (id)siriContentNativeFocusableElements;
 - (id)springBoardApplication;
@@ -328,6 +340,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrame;
 - (struct CGPoint { double x1; double x2; })visiblePoint;
 - (unsigned int)windowContextId;
+- (unsigned int)windowDisplayId;
 - (bool)zoomIn;
 - (bool)zoomOut;
 

@@ -48,6 +48,7 @@
 - (id)attachment;
 - (void)attachmentAwakeFromFetch;
 - (void)attachmentDidRefresh:(bool)arg1;
+- (void)attachmentIsDeallocating:(id)arg1;
 - (id)attachmentModelType;
 - (void)attachmentWillRefresh:(bool)arg1;
 - (void)attachmentWillTurnIntoFault;
@@ -64,6 +65,7 @@
 - (id)fileURLForTypeIdentifier:(id)arg1;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1 withFileName:(id)arg2;
+- (id)generateTemporaryURLWithExtension:(id)arg1;
 - (id)hardLinkFolderPath;
 - (id)hardLinkVersion;
 - (bool)hasPreviews;

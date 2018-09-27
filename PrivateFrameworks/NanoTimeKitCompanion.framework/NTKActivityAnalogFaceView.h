@@ -20,7 +20,7 @@
     HKRingsView * _ringsView;
     bool  _snapshotContentViewsLoaded;
     UILabel * _standHoursLabel;
-    NTKActivityFaceControl * _tapToLaunchButton;
+    NTKFaceViewTapControl * _tapToLaunchButton;
     bool  _wristRaiseAnimationPending;
 }
 
@@ -29,8 +29,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)_prewarm;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (void)_prewarmForDevice:(id)arg1;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_accentColorForFaceColor:(unsigned long long)arg1;
@@ -48,13 +48,15 @@
 - (id)_cachedSchemeForFaceColor:(unsigned long long)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterZoom;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (struct CGPoint { double x1; double x2; })_contentCenterOffset;
+- (void)_curvedComplicationCircleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 circleCenter:(struct CGPoint { double x1; double x2; }*)arg4 interior:(bool*)arg5 forSlot:(id)arg6;
+- (id)_curvedPickerMaskForSlot:(id)arg1;
 - (void)_dateComplicationPressed:(id)arg1;
 - (double)_dialAlphaForEditMode:(long long)arg1;
 - (double)_dialScaleForEditMode:(long long)arg1;
-- (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_enumerateActivityLabels:(id /* block */)arg1;
 - (void)_enumerateChronoViews:(id /* block */)arg1;
 - (void)_enumerateRingGroups:(id /* block */)arg1;
@@ -66,6 +68,8 @@
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_launchButtonPressed:(id)arg1;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
@@ -78,11 +82,10 @@
 - (void)_prepareWristRaiseAnimation;
 - (void)_renderSynchronouslyWithImageQueueDiscard:(bool)arg1;
 - (double)_ringAlphaForEditMode:(long long)arg1;
-- (void)_scrubToDate:(id)arg1 animated:(bool)arg2;
 - (void)_setActivityViewsAlpha:(double)arg1 includeDateComplication:(bool)arg2 animated:(bool)arg3;
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
 - (void)_showChronoDetailByFraction:(double)arg1 fillRings:(bool)arg2;
-- (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (bool)_slotSupportsCurvedText:(id)arg1;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (struct CGPoint { double x1; double x2; })_timeTravelStatusModuleCenter;
 - (void)_unloadSnapshotContentViews;
@@ -90,9 +93,9 @@
 - (void)applyEntryModel:(id)arg1 animated:(bool)arg2;
 - (void)applyEntryModelWithUnfilledRings:(id)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)setDataMode:(long long)arg1;
-- (void)timeTravelDateEnteredOrExitedTimelineBounds:(bool)arg1;
+- (bool)slotUsesCurvedText:(id)arg1;
 
 @end

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMTopBar : UIView <CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider, CAMExpandableMenuButtonDelegate> {
+@interface CAMTopBar : UIView <CAMApertureButtonDelegate, CAMExpandableMenuButtonDelegate> {
     CAMHDRButton * _HDRButton;
-    NSMutableArray * __allowedControls;
+    NSArray * __allowedControls;
     UIView * __backgroundView;
+    NSSet * __controlsNeedingNonAnimatedLayout;
     CAMExpandableMenuButton * __expandedMenuButton;
     struct UIEdgeInsets { 
         double top; 
@@ -13,44 +14,52 @@
         double bottom; 
         double right; 
     }  __expandedMenuButtonTappableInsets;
+    long long  __mode;
+    CAMApertureButton * _apertureButton;
     long long  _backgroundStyle;
+    PUReviewScreenDoneButton * _doneButton;
     CAMElapsedTimeView * _elapsedTimeView;
     CAMFilterButton * _filterButton;
     CAMFlashButton * _flashButton;
     CAMFlipButton * _flipButton;
     CAMFramerateIndicatorView * _framerateIndicatorView;
-    CAMIrisButton * _irisButton;
+    CAMLivePhotoButton * _livePhotoButton;
     long long  _orientation;
+    CAMMessagesPhotosButton * _photosButton;
     long long  _style;
     CAMTimerButton * _timerButton;
     <CAMControlVisibilityUpdateDelegate> * _visibilityUpdateDelegate;
 }
 
 @property (nonatomic, retain) CAMHDRButton *HDRButton;
-@property (nonatomic, readonly) NSMutableArray *_allowedControls;
+@property (nonatomic, readonly) NSArray *_allowedControls;
 @property (nonatomic, readonly) UIView *_backgroundView;
+@property (setter=_setControlsNeedingNonAnimatedLayout:, nonatomic, retain) NSSet *_controlsNeedingNonAnimatedLayout;
 @property (setter=_setExpandedMenuButton:, nonatomic, retain) CAMExpandableMenuButton *_expandedMenuButton;
 @property (setter=_setExpandedMenuButtonTappableInsets:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _expandedMenuButtonTappableInsets;
+@property (nonatomic, readonly) long long _mode;
+@property (nonatomic, retain) CAMApertureButton *apertureButton;
 @property (nonatomic) long long backgroundStyle;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PUReviewScreenDoneButton *doneButton;
 @property (nonatomic, retain) CAMElapsedTimeView *elapsedTimeView;
 @property (nonatomic, retain) CAMFilterButton *filterButton;
 @property (nonatomic, retain) CAMFlashButton *flashButton;
 @property (nonatomic, retain) CAMFlipButton *flipButton;
 @property (getter=isFloating, nonatomic, readonly) bool floating;
 @property (nonatomic, retain) CAMFramerateIndicatorView *framerateIndicatorView;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, retain) CAMIrisButton *irisButton;
+@property (nonatomic, retain) CAMLivePhotoButton *livePhotoButton;
 @property (nonatomic) long long orientation;
+@property (nonatomic, retain) CAMMessagesPhotosButton *photosButton;
 @property (nonatomic) long long style;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) CAMTimerButton *timerButton;
 @property (nonatomic) <CAMControlVisibilityUpdateDelegate> *visibilityUpdateDelegate;
+
++ (bool)isFloatingStyle:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)HDRButton;
 - (id)_allowedControls;
+- (id)_allowedControlsForMode:(long long)arg1 style:(long long)arg2;
 - (id)_allowedControlsForPanoramaMode;
 - (id)_allowedControlsForPortraitMode;
 - (id)_allowedControlsForSquareMode;
@@ -62,6 +71,7 @@
 - (id)_backgroundView;
 - (void)_commonCAMTopBarInitialization;
 - (void)_computeHorizontalLayoutForViewsBetweenLeftView:(id)arg1 rightView:(id)arg2 views:(id)arg3 alignmentRects:(id)arg4;
+- (id)_controlsNeedingNonAnimatedLayout;
 - (id)_expandedMenuButton;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_expandedMenuButtonTappableInsets;
 - (double)_interpolatedFloatingBarHeight;
@@ -70,16 +80,23 @@
 - (void)_layoutDefaultStyle;
 - (void)_layoutFloatingRecordingStyle;
 - (void)_layoutFloatingStyle;
+- (long long)_mode;
 - (double)_opacityForBackgroundStyle:(long long)arg1;
+- (void)_setControlsNeedingNonAnimatedLayout:(id)arg1;
 - (void)_setExpandedMenuButton:(id)arg1;
 - (void)_setExpandedMenuButtonTappableInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)_setMode:(long long)arg1 style:(long long)arg2 animationDuration:(double)arg3 animationOptions:(unsigned long long)arg4;
 - (bool)_shouldExpandButtonsHorizontally;
+- (bool)_shouldHideSubview:(id)arg1;
 - (void)_updateControlVisibilityAnimated:(bool)arg1;
+- (id)apertureButton;
+- (void)apertureButtonNeedsLayout:(id)arg1;
 - (long long)backgroundStyle;
 - (void)collapseMenuButton:(id)arg1 animated:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })collapsedFrameForMenuButton:(id)arg1;
 - (void)configureForMode:(long long)arg1;
 - (void)configureForMode:(long long)arg1 animated:(bool)arg2;
+- (id)doneButton;
 - (id)elapsedTimeView;
 - (void)expandMenuButton:(id)arg1 animated:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })expandedFrameForMenuButton:(id)arg1;
@@ -91,33 +108,40 @@
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)irisButton;
 - (bool)isFloating;
 - (void)layoutSubviews;
+- (id)livePhotoButton;
 - (long long)orientation;
+- (id)photosButton;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (void)setApertureButton:(id)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1 animated:(bool)arg2;
+- (void)setDoneButton:(id)arg1;
 - (void)setElapsedTimeView:(id)arg1;
 - (void)setFilterButton:(id)arg1;
 - (void)setFlashButton:(id)arg1;
 - (void)setFlipButton:(id)arg1;
 - (void)setFramerateIndicatorView:(id)arg1;
 - (void)setHDRButton:(id)arg1;
-- (void)setIrisButton:(id)arg1;
+- (void)setLivePhotoButton:(id)arg1;
 - (void)setOrientation:(long long)arg1;
+- (void)setPhotosButton:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setStyle:(long long)arg1 animated:(bool)arg2;
 - (void)setTimerButton:(id)arg1;
 - (void)setVisibilityUpdateDelegate:(id)arg1;
+- (bool)shouldHideApertureButtonForGraphConfiguration:(id)arg1;
+- (bool)shouldHideDoneButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideElapsedTimeViewForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFilterButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFlashButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFlipButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideFramerateIndicatorForGraphConfiguration:(id)arg1;
 - (bool)shouldHideHDRButtonForGraphConfiguration:(id)arg1;
-- (bool)shouldHideIrisButtonForGraphConfiguration:(id)arg1;
+- (bool)shouldHideLivePhotoButtonForGraphConfiguration:(id)arg1;
+- (bool)shouldHidePhotosButtonForGraphConfiguration:(id)arg1;
 - (bool)shouldHideTimerButtonForGraphConfiguration:(id)arg1;
 - (long long)style;
 - (id)timerButton;

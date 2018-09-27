@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) CPLEngineStore *store;
 
-+ (id)_mergerWithConflictsForStore:(id)arg1;
++ (id)_mergerWithConflictsForStore:(id)arg1 conflictingScopeIdentifiers:(id)arg2;
 + (id)_mergerWithNoConflictsForStore:(id)arg1;
 
 - (void).cxx_destruct;

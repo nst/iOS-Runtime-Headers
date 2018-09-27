@@ -3,6 +3,7 @@
  */
 
 @interface HMDResidentMeshMeshStorage : HMFObject {
+    NSMutableDictionary * _accessoryListWithLinkQuality;
     NSMutableSet * _accessoryUUIDs;
     HMDDevice * _device;
     bool  _enabled;
@@ -10,6 +11,7 @@
     HMDResidentMesh * _owner;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *accessoryListWithLinkQuality;
 @property (nonatomic, retain) NSMutableSet *accessoryUUIDs;
 @property (nonatomic, retain) HMDDevice *device;
 @property (nonatomic) bool enabled;
@@ -18,12 +20,14 @@
 
 - (void).cxx_destruct;
 - (void)_requestStatus;
+- (id)accessoryListWithLinkQuality;
 - (id)accessoryUUIDs;
 - (id)device;
 - (bool)enabled;
 - (unsigned long long)generationCount;
 - (id)initWithDevice:(id)arg1 owner:(id)arg2;
 - (id)owner;
+- (void)setAccessoryListWithLinkQuality:(id)arg1;
 - (void)setAccessoryUUIDs:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setEnabled:(bool)arg1;

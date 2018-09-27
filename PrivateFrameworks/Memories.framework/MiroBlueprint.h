@@ -70,6 +70,7 @@
 @property (nonatomic, readonly) bool sweepingPansAllowed;
 @property (nonatomic, readonly) double timelapseIdealDuration;
 @property (nonatomic, readonly) double timelapseMinDuration;
+@property (nonatomic, readonly) NSString *titleAndAnimationStyleDescription;
 @property (nonatomic, readonly) NSString *titleID;
 @property (nonatomic, readonly) double titleIdealDuration;
 @property (nonatomic) bool titleIsLocked;
@@ -178,6 +179,7 @@
 - (bool)sweepingPansAllowed;
 - (double)timelapseIdealDuration;
 - (double)timelapseMinDuration;
+- (id)titleAndAnimationStyleDescription;
 - (id)titleID;
 - (double)titleIdealDuration;
 - (bool)titleIsLocked;

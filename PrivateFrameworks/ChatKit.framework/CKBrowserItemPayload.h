@@ -47,6 +47,7 @@
 - (bool)shouldSendAsMediaObject;
 - (bool)shouldSendAsRichLink;
 - (bool)shouldSendAsText;
+- (id)transcoderUserInfo;
 - (bool)useDirectSend;
 - (id)videoComplementFileURL;
 

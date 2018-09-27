@@ -32,6 +32,7 @@
 - (void)deleteResponseForRequestWithKey:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)deleteResponsesSinceDate:(id)arg1;
 - (bool)ensureNetworkStorageDaemonConnection;
+- (void)flushWithCompletionHandler:(id /* block */)arg1;
 - (id)getPath;
 - (id)initWithCache:(struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (bool)networkStorageConnectionInterrupted;

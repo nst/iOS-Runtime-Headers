@@ -4,6 +4,7 @@
 
 @interface PKPaymentTransactionTableCell : PKTableViewCell {
     CNAvatarView * _avatarView;
+    bool  _isTemplateLayout;
     UIColor * _primaryColor;
     UIFont * _primaryFont;
     UILabel * _primaryLabel;
@@ -13,7 +14,6 @@
     UILabel * _secondaryLabel;
     NSString * _secondaryString;
     bool  _showsAvatarView;
-    bool  _sizeLabels;
     UIColor * _tertiaryColor;
     UILabel * _tertiaryLabel;
     NSString * _tertiaryString;
@@ -40,6 +40,7 @@
 + (id)tertiaryLabelFont;
 
 - (void).cxx_destruct;
+- (struct CGSize { double x1; double x2; })_layoutWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateAvatarView;
 - (id)avatarView;
 - (id)defaultPrimaryColor;
@@ -67,6 +68,7 @@
 - (void)setTransactionValueAttributedText:(id)arg1;
 - (bool)shouldShowTransactionPreviewForTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (bool)showsAvatarView;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)tertiaryColor;
 - (id)tertiaryString;
 - (id)transactionIdentifier;

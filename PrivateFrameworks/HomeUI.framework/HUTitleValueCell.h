@@ -39,6 +39,7 @@
 - (void).cxx_destruct;
 - (void)_addTitleLabel;
 - (void)_addValueLabel;
+- (void)_ensureCorrectHeaderViewOrientation;
 - (void)_updateCompressionResistance;
 - (void)_updateTitle;
 - (void)_updateValue;
@@ -47,7 +48,6 @@
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (long long)compressionResistancePolicy;
 - (void)copy:(id)arg1;
-- (void)ensureCorrectHeaderViewOrientation;
 - (bool)hideTitle;
 - (bool)hideValue;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
@@ -72,6 +72,7 @@
 - (id)titleFont;
 - (id)titleLabel;
 - (id)titleText;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(bool)arg1;
 - (bool)valueColorFollowsTintColor;

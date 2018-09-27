@@ -8,8 +8,6 @@
 
 @property (nonatomic) int affinity;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 + (id)_wrapVisiblePosition:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 + (id)_wrapVisiblePositionIfValid:(struct VisiblePosition { struct Position { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 3; unsigned int x_1_1_4 : 1; } x1; int x2; })arg1;
 
@@ -35,13 +33,5 @@
 - (void)setAffinity:(int)arg1;
 - (int)textDirection;
 - (bool)withinTextUnitOfGranularity:(int)arg1 inDirectionIfAtBoundary:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

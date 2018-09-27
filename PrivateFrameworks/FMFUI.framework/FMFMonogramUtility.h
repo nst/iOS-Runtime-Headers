@@ -12,6 +12,5 @@
 + (id)monogramImageOfDiameter:(double)arg1 forContact:(id)arg2 useTintColor:(id)arg3 useCustomFont:(bool)arg4 isPersonImage:(bool*)arg5;
 + (id)monogrammerWithDiameter:(double)arg1 style:(long long)arg2 useTintColor:(id)arg3 customFont:(id)arg4;
 + (id)placeholderContactImageOfDiameter:(double)arg1 monogramStyle:(long long)arg2 useTintColor:(id)arg3;
-+ (void)setAddressBook:(void*)arg1;
 
 @end

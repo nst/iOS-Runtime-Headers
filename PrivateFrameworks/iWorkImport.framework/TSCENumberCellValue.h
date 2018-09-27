@@ -3,22 +3,24 @@
  */
 
 @interface TSCENumberCellValue : TSCECellValue {
-    struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { int x_4_1_1; bool x_4_1_2; void *x_4_1_3; } x4; bool x5; } * _numberValue;
+    /* Warning: unhandled struct encoding: '{TSCENumberValue=^^?d[1i]{TSCEFormat={TSCEFormatStruct=i(?={?=b16b8b3b1b1}{?=b8}{?=b8b8b1}{?=b1iii})@@@}C}B}' */ struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { struct TSCEFormatStruct { int x_1_2_1; union { struct { unsigned int x_1_4_1 : 16; unsigned int x_1_4_2 : 8; unsigned int x_1_4_3 : 3; unsigned int x_1_4_4 : 1; unsigned int x_1_4_5 : 1; } x_2_3_1; struct { unsigned int x_2_4_1 : 8; } x_2_3_2; struct { unsigned int x_3_4_1 : 8; unsigned int x_3_4_2 : 8; unsigned int x_3_4_3 : 1; } x_2_3_3; struct { unsigned int x_4_4_1 : 1; int x_4_4_2; int x_4_4_3; int x_4_4_4; } x_2_3_4; } x_1_2_2; id x_1_2_3; id x_1_2_4; unsigned char x_1_2_5; } x_4_1_1; bool x_4_1_2; } x4; } * _numberValue;
 }
 
+- (id)canonicalKeyString;
 - (long long)compareToCellValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)displayString;
-- (void)encodeToArchive:(struct NumberCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; int x7; bool x8; struct FormatStructArchive {} *x9; }*)arg1;
+- (void)encodeToArchive:(struct NumberCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct FormatStructArchive {} *x7; int x8; bool x9; bool x10; }*)arg1;
 - (id)format;
 - (unsigned long long)hash;
-- (id)initWithArchive:(const struct NumberCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; int x7; bool x8; struct FormatStructArchive {} *x9; }*)arg1 locale:(id)arg2;
+- (id)initWithArchive:(const struct NumberCellValueArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct FormatStructArchive {} *x7; int x8; bool x9; bool x10; }*)arg1 locale:(id)arg2;
 - (id)initWithDouble:(double)arg1 locale:(id)arg2;
-- (id)initWithNumberValue:(struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { int x_4_1_1; bool x_4_1_2; void *x_4_1_3; } x4; bool x5; }*)arg1 locale:(id)arg2;
+- (id)initWithNumberValue:(/* Warning: unhandled struct encoding: '{TSCENumberValue=^^?d[1i]{TSCEFormat={TSCEFormatStruct=i(?={?=b16b8b3b1b1}{?=b8}{?=b8b8b1}{?=b1iii})@@@}C}B}' */ struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { struct TSCEFormatStruct { int x_1_2_1; union { struct { unsigned int x_1_4_1 : 16; unsigned int x_1_4_2 : 8; unsigned int x_1_4_3 : 3; unsigned int x_1_4_4 : 1; unsigned int x_1_4_5 : 1; } x_2_3_1; struct { unsigned int x_2_4_1 : 8; } x_2_3_2; struct { unsigned int x_3_4_1 : 8; unsigned int x_3_4_2 : 8; unsigned int x_3_4_3 : 1; } x_2_3_3; struct { unsigned int x_4_4_1 : 1; int x_4_4_2; int x_4_4_3; int x_4_4_4; } x_2_3_4; } x_1_2_2; id x_1_2_3; id x_1_2_4; unsigned char x_1_2_5; } x_4_1_1; bool x_4_1_2; } x4; }*)arg1 locale:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToCellValue:(id)arg1;
-- (struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { int x_4_1_1; bool x_4_1_2; void *x_4_1_3; } x4; bool x5; }*)numberValue;
-- (struct TSCEValue { unsigned long long x1[10]; int x2; })tsceValue;
+- (/* Warning: unhandled struct encoding: '{TSCENumberValue=^^?d[1i]{TSCEFormat={TSCEFormatStruct=i(?={?=b16b8b3b1b1}{?=b8}{?=b8b8b1}{?=b1iii})@@@}C}B}' */ struct TSCENumberValue { int (**x1)(); double x2; int x3[1]; struct TSCEFormat { struct TSCEFormatStruct { int x_1_2_1; union { struct { unsigned int x_1_4_1 : 16; unsigned int x_1_4_2 : 8; unsigned int x_1_4_3 : 3; unsigned int x_1_4_4 : 1; unsigned int x_1_4_5 : 1; } x_2_3_1; struct { unsigned int x_2_4_1 : 8; } x_2_3_2; struct { unsigned int x_3_4_1 : 8; unsigned int x_3_4_2 : 8; unsigned int x_3_4_3 : 1; } x_2_3_3; struct { unsigned int x_4_4_1 : 1; int x_4_4_2; int x_4_4_3; int x_4_4_4; } x_2_3_4; } x_1_2_2; id x_1_2_3; id x_1_2_4; unsigned char x_1_2_5; } x_4_1_1; bool x_4_1_2; } x4; }*)numberValue;
+- (void)setPopulatedCustomFormat:(id)arg1;
+- (struct TSCEValue { unsigned long long x1[18]; int x2; })tsceValue;
 
 @end

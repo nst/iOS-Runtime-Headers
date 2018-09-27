@@ -63,7 +63,7 @@
 - (id)text;
 - (id)type;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)alwaysAttemptToShowTapHighlight;
 

@@ -34,7 +34,7 @@
 - (id /* block */)sectionParametersProvider;
 - (id /* block */)sectionRemoveSender;
 - (void)sendEffectiveSectionInfosUsingProvider:(id /* block */)arg1 count:(unsigned long long)arg2 sectionInfoSendCompleted:(id /* block */)arg3 completion:(id /* block */)arg4 progress:(id /* block */)arg5 spoolToFile:(bool)arg6;
-- (void)sendRemoveSectionWithSectionID:(id)arg1;
+- (void)sendRemoveSectionWithSectionID:(id)arg1 sent:(id /* block */)arg2;
 - (void)sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(bool)arg3 spoolToFile:(bool)arg4 completion:(id /* block */)arg5;
 - (void)sendSpooledRequestsNowWithSender:(id /* block */)arg1 completion:(id /* block */)arg2 progress:(id /* block */)arg3;
 - (void)setIconWhitelist:(id)arg1;

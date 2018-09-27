@@ -8,6 +8,7 @@
 
 @property (nonatomic) bool lunar;
 
+- (id)_newBezelTemplate;
 - (id)_newCircularTemplateMedium:(bool)arg1;
 - (id)_newExtraLargeLunarTemplate;
 - (id)_newExtraLargeTemplate;
@@ -16,6 +17,7 @@
 - (id)_newModularLargeTemplate;
 - (id)_newModularSmallLunarTemplate;
 - (id)_newModularSmallTemplate;
+- (id)_newSignatureCircularTemplate;
 - (id)_newSmallFlatUtilitarianTemplate;
 - (bool)lunar;
 - (void)setLunar:(bool)arg1;

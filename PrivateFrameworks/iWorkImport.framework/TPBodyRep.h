@@ -11,8 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)bodyLayout;
-- (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (bool)p_doesRep:(id)arg1 containCharIndex:(unsigned long long)arg2 isStart:(bool)arg3;
 - (id)storage;
 
 @end

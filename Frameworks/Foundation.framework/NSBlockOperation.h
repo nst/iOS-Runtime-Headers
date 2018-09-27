@@ -28,6 +28,7 @@
 // Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
 
 - (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
+- (void)setNetworkBehaviorIsDiscretionary:(bool)arg1;
 - (bool)shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
 
 @end

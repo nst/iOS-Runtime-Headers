@@ -30,12 +30,12 @@
 @property (nonatomic, retain) <FBProcessWatchdogProviding> *watchdogProvider;
 @property (nonatomic) double watchdogScaleFactor;
 
+- (void).cxx_destruct;
 - (id)_initWithExecutionContext:(id)arg1;
 - (unsigned int)_launchAssertionFlags;
 - (id)arguments;
 - (bool)checkForLeaks;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (bool)disableASLR;
 - (id)environment;
 - (id)init;

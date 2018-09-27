@@ -41,6 +41,7 @@
     unsigned long long  _imageSequenceRowCount;
     bool  _isLocal;
     unsigned int  _isPresentationInstance;
+    double  _lightEmissionRadiusFactor;
     bool  _lightingEnabled;
     bool  _loops;
     NSString * _name;
@@ -236,6 +237,7 @@
 - (bool)isLightingEnabled;
 - (bool)isLocal;
 - (bool)isPausedOrPausedByInheritance;
+- (double)lightEmissionRadiusFactor;
 - (bool)lightingEnabled;
 - (bool)loops;
 - (id)name;
@@ -273,6 +275,7 @@
 - (id)propertyControllers;
 - (id)referenceName;
 - (void)removeAllAnimations;
+- (void)removeAllBindings;
 - (void)removeAllModifiers;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAnimationForKey:(id)arg1 blendOutDuration:(double)arg2;
@@ -312,6 +315,7 @@
 - (void)setImageSequenceInitialFrameVariation:(double)arg1;
 - (void)setImageSequenceRowCount:(unsigned long long)arg1;
 - (void)setIsLocal:(bool)arg1;
+- (void)setLightEmissionRadiusFactor:(double)arg1;
 - (void)setLightingEnabled:(bool)arg1;
 - (void)setLocal:(bool)arg1;
 - (void)setLoops:(bool)arg1;

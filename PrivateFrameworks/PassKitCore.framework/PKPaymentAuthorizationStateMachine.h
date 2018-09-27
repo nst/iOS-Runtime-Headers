@@ -132,6 +132,7 @@
 - (id)delegate;
 - (id)description;
 - (bool)detectedBluetoothOn;
+- (void)didAuthenticateWithAuthenticatorEvaluationResponse:(id)arg1;
 - (void)didAuthenticateWithCredential:(id)arg1;
 - (void)didBecomeActive:(bool)arg1;
 - (void)didCancel;

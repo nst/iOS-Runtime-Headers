@@ -14,6 +14,7 @@
 + (id)defaultCenter;
 
 - (unsigned long long)_addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4 options:(unsigned long long)arg5;
+- (id)_initWithCFNotificationCenter:(struct __CFNotificationCenter { }*)arg1;
 - (void)_removeObserver:(unsigned long long)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;

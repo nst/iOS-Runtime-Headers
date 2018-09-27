@@ -11,10 +11,12 @@
 @property (nonatomic, readonly) PXIndexPathSet *selectedIndexPaths;
 
 - (void).cxx_destruct;
+- (bool)areAllItemsSelected;
 - (id)dataSource;
 - (id)description;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 selectedIndexPaths:(id)arg2;
+- (bool)isAnyItemSelected;
 - (bool)isIndexPathSelected:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)selectedIndexPaths;
 

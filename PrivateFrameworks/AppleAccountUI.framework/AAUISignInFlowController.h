@@ -30,7 +30,6 @@
 
 - (void).cxx_destruct;
 - (id)_appleAccountType;
-- (bool)_carrierBundleSaysHideFindMyiPhone;
 - (void)_hasActivationLockSupportedWatchWithCompletion:(id /* block */)arg1;
 - (void)_loadAccountRepairRemoteUIWithAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentExistingAccountAlert:(id)arg1;
@@ -51,6 +50,7 @@
 - (id)init;
 - (id)messageSession;
 - (id)presentingViewController;
+- (void)prewarmOperationsWithCompletion:(id /* block */)arg1;
 - (void)setActivationAction:(unsigned long long)arg1;
 - (void)setMessageSession:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;

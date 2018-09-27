@@ -4,6 +4,7 @@
 
 @interface PLDaemonJob : NSObject {
     NSObject<OS_xpc_object> * _connection;
+    unsigned long long  _signpostId;
     PLXPCTransaction * _transaction;
     NSObject<OS_xpc_object> * _xpcReply;
 }
@@ -32,6 +33,7 @@
 - (void)sendToAssetsdWithReply;
 - (void)setXpcReply:(id)arg1;
 - (bool)shouldArchiveXPCToDisk;
+- (bool)shouldRunOnDaemonSerialQueue;
 - (id)xpcReply;
 
 @end

@@ -33,6 +33,7 @@
 - (id)identifier;
 - (id)initWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
 - (bool)isEqual:(id)arg1;
+- (bool)isFullyBackedByObjectIDs;
 - (id)objectIDAtIndex:(unsigned long long)arg1;
 - (id)objectIDs;
 - (id)objects;

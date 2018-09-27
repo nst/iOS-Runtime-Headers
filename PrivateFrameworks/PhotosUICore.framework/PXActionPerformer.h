@@ -10,6 +10,8 @@
     UIViewController * _presentedViewController;
     unsigned long long  _state;
     bool  _success;
+    id /* block */  _viewControllerDismisser;
+    id /* block */  _viewControllerPresenter;
 }
 
 @property (nonatomic, readonly) NSString *actionType;
@@ -18,6 +20,8 @@
 @property (nonatomic, readonly) UIViewController *presentedViewController;
 @property (nonatomic, readonly) unsigned long long state;
 @property (nonatomic, readonly) bool success;
+@property (nonatomic, copy) id /* block */ viewControllerDismisser;
+@property (nonatomic, copy) id /* block */ viewControllerPresenter;
 
 + (bool)canPerformBlacklistingOnAssetCollection:(id)arg1;
 
@@ -43,7 +47,11 @@
 - (id)presentedViewController;
 - (bool)requiresUnlockedDevice;
 - (void)setDelegate:(id)arg1;
+- (void)setViewControllerDismisser:(id /* block */)arg1;
+- (void)setViewControllerPresenter:(id /* block */)arg1;
 - (unsigned long long)state;
 - (bool)success;
+- (id /* block */)viewControllerDismisser;
+- (id /* block */)viewControllerPresenter;
 
 @end

@@ -7,10 +7,6 @@
 
 - (_CPCardSectionForFeedback *)cardSection;
 - (NSString *)cardSectionId;
-- (bool)hasCardSection;
-- (bool)hasCardSectionId;
-- (bool)hasResultId;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

@@ -3,8 +3,7 @@
  */
 
 @interface NSCachingFetchRequest : NSFetchRequest {
-    struct __CFDictionary { } * _cachedInfo;
-    bool  _hasCachedInfo;
+    id  _cachedInfo;
     id  _identifier;
     int  _lock;
     NSDictionary * _substitutionVariables;
@@ -18,8 +17,9 @@
 - (void)_cacheInfo:(id)arg1 forRequestor:(id)arg2;
 - (id)_cachedInfoForRequestor:(id)arg1;
 - (id)_copyForDirtyContext;
+- (void)_disableSQLStatementCaching;
 - (id)_identifier;
-- (bool)_isCachingFetchRequest__;
+- (bool)_isCachingFetchRequest;
 - (void)_sanityCheckVariables:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -3,13 +3,6 @@
  */
 
 @interface _CPSearchViewAppearFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSearchViewAppearFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int viewAppearEvent : 1; 
-        unsigned int isOnLockScreen : 1; 
-        unsigned int isOverApp : 1; 
-        unsigned int readerTextAvailable : 1; 
-    }  _has;
     bool  _isOnLockScreen;
     bool  _isOverApp;
     bool  _readerTextAvailable;
@@ -21,11 +14,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasIsOnLockScreen;
-@property (nonatomic, readonly) bool hasIsOverApp;
-@property (nonatomic, readonly) bool hasReaderTextAvailable;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasViewAppearEvent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isOnLockScreen;
 @property (nonatomic) bool isOverApp;
@@ -33,16 +21,10 @@
 @property (nonatomic) bool readerTextAvailable;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int viewAppearEvent;
 
 - (id)dictionaryRepresentation;
-- (bool)hasIsOnLockScreen;
-- (bool)hasIsOverApp;
-- (bool)hasReaderTextAvailable;
-- (bool)hasTimestamp;
-- (bool)hasViewAppearEvent;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

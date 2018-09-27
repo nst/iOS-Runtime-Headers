@@ -32,4 +32,8 @@
 
 - (id)pu_screen;
 
+// Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
+
+- (id)_avtui_changedRecordIdentifiers;
+
 @end

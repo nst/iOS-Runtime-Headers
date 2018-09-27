@@ -142,6 +142,7 @@
 - (bool)isAutoUpdating;
 - (bool)isEqual:(id)arg1;
 - (id)languageCode;
+- (id)languageIdentifierWithLanguageAndRegionOnly;
 - (id)listSeparator;
 - (void)loadLocalizedStrings;
 - (id)locale;
@@ -158,6 +159,7 @@
 - (id)localizedFalseStrings;
 - (id)localizedFunctionCategoryDictionary;
 - (id)localizedFunctionNameForMenuTag:(int)arg1;
+- (id)localizedLabelForAggType:(unsigned char)arg1;
 - (id)localizedModeNameForArgument:(short)arg1 modeIndex:(short)arg2 ofFunction:(id)arg3;
 - (id)localizedModeToolTipForArgument:(short)arg1 modeIndex:(short)arg2 ofFunction:(id)arg3;
 - (id)localizedNameForArgument:(short)arg1 ofFunction:(id)arg2;

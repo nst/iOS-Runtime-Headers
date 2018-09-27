@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, readonly, copy) NSString *bundleType;
-@property (nonatomic, readonly, retain) NSURL *bundleURL;
+@property (nonatomic, readonly) NSURL *bundleURL;
 @property (nonatomic, readonly, copy) NSString *bundleVersion;
 @property (nonatomic, readonly, copy) NSUUID *cacheGUID;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) unsigned long long sequenceNumber;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_initWithBundleIdentifier:(id)arg1 url:(id)arg2;
 - (id)_initWithBundleProxy:(id)arg1 bundleIdentifier:(id)arg2 url:(id)arg3;
 - (id)_initWithBundleProxy:(id)arg1 overrideURL:(id)arg2;
@@ -32,7 +33,6 @@
 - (id)bundleURL;
 - (id)bundleVersion;
 - (id)cacheGUID;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

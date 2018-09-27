@@ -7,6 +7,8 @@
 @property (nonatomic) float animationSpeed;
 @property (nonatomic) float smoothness;
 
++ (bool)supportsSecureCoding;
+
 - (id)_descriptionClassName;
 - (void)_initialize;
 - (float)animationSpeed;

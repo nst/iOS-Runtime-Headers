@@ -107,6 +107,7 @@
 - (unsigned int)myIdleTime;
 - (unsigned long long)myStatus;
 - (id)myStatusMessage;
+- (void)oneTimeCodesDidChange:(id)arg1;
 - (id)persistentProperties;
 - (void)persistentProperty:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
 - (void)pinCodeAlertCompleted:(id)arg1 deviceName:(id)arg2 deviceType:(id)arg3 phoneNumber:(id)arg4 responseFromDevice:(bool)arg5 wasCancelled:(bool)arg6;

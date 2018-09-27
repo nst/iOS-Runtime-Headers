@@ -8,6 +8,7 @@
     _OSLogEventStoreTimeRef * _oldestHighVolume;
     _OSLogEventStoreTimeRef * _oldestLive;
     _OSLogEventStoreTimeRef * _oldestPersist;
+    _OSLogEventStoreTimeRef * _oldestSignpost;
     _OSLogEventStoreTimeRef * _oldestSpecial;
     NSUUID * _sourceUUID;
     _OSLogEventStoreTimeRef * _ttls;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) _OSLogEventStoreTimeRef *oldestHighVolume;
 @property (nonatomic, readonly) _OSLogEventStoreTimeRef *oldestLive;
 @property (nonatomic, readonly) _OSLogEventStoreTimeRef *oldestPersist;
+@property (nonatomic, readonly) _OSLogEventStoreTimeRef *oldestSignpost;
 @property (nonatomic, readonly) _OSLogEventStoreTimeRef *oldestSpecial;
 @property (nonatomic, readonly) NSUUID *sourceUUID;
 
@@ -29,6 +31,7 @@
 - (id)oldestHighVolume;
 - (id)oldestLive;
 - (id)oldestPersist;
+- (id)oldestSignpost;
 - (id)oldestSpecial;
 - (id)sourceUUID;
 - (id)timeRefForTTLClass:(unsigned char)arg1;

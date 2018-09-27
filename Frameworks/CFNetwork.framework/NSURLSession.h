@@ -6,6 +6,7 @@
 
 @property (retain) NSMutableDictionary *_altSvc;
 @property (copy) NSDictionary *_atsState;
+@property (retain) NSMutableDictionary *_coalescing;
 @property (copy) id /* block */ _connBlock;
 @property (retain) NSMutableSet *_h2BlacklistedHosts;
 @property bool _isSharedSession;
@@ -20,6 +21,7 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
++ (id)_errorFromError:(id)arg1 forTask:(id)arg2;
 + (void)_getActiveSessionIdentifiersWithCompletionHandler:(id /* block */)arg1;
 + (void)_obliterateAllBackgroundSessionsWithCompletionHandler:(id /* block */)arg1;
 + (void)_releaseProcessAssertionForSessionIdentifier:(id)arg1;
@@ -33,6 +35,7 @@
 - (struct __CFDictionary { }*)_copyATSState;
 - (id)_copyConfiguration;
 - (id)_downloadTaskWithRequest:(id)arg1 downloadFilePath:(id)arg2;
+- (void)_useTLSSessionCacheFromSession:(id)arg1;
 - (void)addDelegateBlock:(id /* block */)arg1;
 - (id)aggregateAssetDownloadTaskWithURLAsset:(id)arg1 mediaSelections:(id)arg2 assetTitle:(id)arg3 assetArtworkData:(id)arg4 options:(id)arg5;
 - (id)assetDownloadTaskWithURLAsset:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4;
@@ -166,6 +169,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
++ (id)safari_sharedNonCellularSession;
 + (id)safari_sharedSession;
 
 - (void)_safari_downloadFirstValidImageWithURLs:(id)arg1 failedURLDownloadsToErrorsDictionary:(id)arg2 completionHandler:(id /* block */)arg3;

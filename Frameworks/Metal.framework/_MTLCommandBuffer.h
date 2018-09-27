@@ -39,6 +39,7 @@
     bool  _profilingEnabled;
     NSDictionary * _profilingResults;
     _MTLCommandQueue<MTLCommandQueue> * _queue;
+    NSMutableArray * _retainedObjects;
     bool  _retainedReferences;
     bool  _scheduledCallbacksDone;
     struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } * _scheduledDispatchList;
@@ -48,8 +49,11 @@
     bool  _strongObjectReferences;
     unsigned long long  _submitToHardwareTime;
     unsigned long long  _submitToKernelTime;
+    struct MTLSyncDispatch { struct MTLSyncDispatch {} *x1; id /* block */ x2; } * _syncDispatchList;
+    struct MTLSyncDispatch { struct MTLSyncDispatch {} *x1; id /* block */ x2; } * _syncDispatchListTail;
     bool  _synchronousDebugMode;
     NSMutableDictionary * _userDictionary;
+    bool  _wakeOnCommit;
 }
 
 @property (nonatomic, readonly) double GPUEndTime;
@@ -76,12 +80,16 @@
 
 - (double)GPUEndTime;
 - (double)GPUStartTime;
+- (void)_addRetainedObject:(id)arg1;
 - (void)addCompletedHandler:(id /* block */)arg1;
 - (void)addScheduledHandler:(id /* block */)arg1;
+- (void)addSynchronizationNotification:(id /* block */)arg1;
 - (id)commandQueue;
 - (void)commit;
 - (void)commitAndHold;
 - (void)commitAndReset;
+- (bool)commitAndWaitUntilSubmitted;
+- (id)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didCompleteWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
@@ -89,6 +97,8 @@
 - (void)didScheduleWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
 - (void)enqueue;
 - (id)error;
+- (void)executeSynchronizationNotifications:(int)arg1;
+- (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id*)arg3 count:(unsigned long long)arg4;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (unsigned long long)getAndIncrementNumEncoders;
 - (unsigned long long)getListIndex;

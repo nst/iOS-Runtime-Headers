@@ -57,5 +57,6 @@
 
 - (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
 - (unsigned long long)maximumRetries;
+- (void)setNetworkBehaviorIsDiscretionary:(bool)arg1;
 
 @end

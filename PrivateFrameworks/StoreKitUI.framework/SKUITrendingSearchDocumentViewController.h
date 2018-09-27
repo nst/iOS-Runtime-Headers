@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUITrendingSearchDocumentViewController : SKUIViewController <ADPrivacyViewControllerDelegate, SKUIDocumentViewController> {
+@interface SKUITrendingSearchDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
     UIViewController * _privacyViewController;
     SKUITrendingSearchView * _resultsView;
     SKUITrendingSearchTemplateElement * _template;
@@ -19,9 +19,6 @@
 - (void).cxx_destruct;
 - (void)_reloadResultsView;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_resultsViewContentInset;
-- (void)adPrivacyViewController:(id)arg1 didFailWithError:(id)arg2;
-- (void)adPrivacyViewControllerDidDismiss:(id)arg1;
-- (void)adPrivacyViewControllerDidLoad:(id)arg1;
 - (void)documentDidUpdate:(id)arg1;
 - (id)impressionableViewElements;
 - (id)initWithTemplateElement:(id)arg1;

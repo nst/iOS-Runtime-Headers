@@ -11,14 +11,15 @@
     bool  _waitsForSceneCommits;
 }
 
-@property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, readonly) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) FBApplicationProcess *process;
+@property (nonatomic, readonly) FBApplicationProcess *process;
 @property (readonly) Class superclass;
 @property (nonatomic) bool waitsForSceneCommits;
 
+- (void).cxx_destruct;
 - (bool)_canBeInterrupted;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
@@ -34,7 +35,6 @@
 - (void)_willInterruptWithReason:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)bundleID;
-- (void)dealloc;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id /* block */)arg2;
 - (id)process;
 - (void)removeObserver:(id)arg1;

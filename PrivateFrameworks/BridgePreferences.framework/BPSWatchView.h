@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) UIImageView *watchScreenImageView;
 
 - (void).cxx_destruct;
+- (void)_cleanedImageName:(id*)arg1 withFallbackImage:(id*)arg2;
 - (void)applyScreenStyle;
 - (unsigned long long)deviceSize;
 - (id)image;

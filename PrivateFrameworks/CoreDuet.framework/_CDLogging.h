@@ -6,6 +6,7 @@
 
 + (id)admissionCheckChannel;
 + (id)autoSUChannel;
++ (id)communicatorChannel;
 + (id)contextChannel;
 + (id)instrumentationChannel;
 + (id)interactionChannel;

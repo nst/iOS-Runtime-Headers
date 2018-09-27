@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKAuthorizationSettingsViewController : HKTableViewController <HKDocumentPickerViewControllerDelegate, HKSourceAuthorizationControllerDelegate, HKSwitchTableViewCellDelegate> {
+@interface HKAuthorizationSettingsViewController : HKTableViewController <HKDocumentPickerViewControllerDelegate, HKHealthPrivacyServicePromptController, HKSourceAuthorizationControllerDelegate, HKSwitchTableViewCellDelegate> {
     NSArray * _actualSections;
     UIBarButtonItem * _cancelButtonItem;
-    <HKAuthorizationSettingsViewControllerDelegate> * _delegate;
+    <HKHealthPrivacyServicePromptControllerDelegate> * _delegate;
     HKDisplayCategoryController * _displayCategoryController;
     NSArray * _documents;
     UIBarButtonItem * _doneButtonItem;
@@ -24,7 +24,7 @@
 @property (retain) NSArray *actualSections;
 @property (nonatomic, retain) UIBarButtonItem *cancelButtonItem;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <HKAuthorizationSettingsViewControllerDelegate> *delegate;
+@property (nonatomic) <HKHealthPrivacyServicePromptControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HKDisplayCategoryController *displayCategoryController;
 @property (nonatomic, retain) UIBarButtonItem *doneButtonItem;
@@ -87,6 +87,7 @@
 - (void)setTypesToShare:(id)arg1;
 - (void)setUpdateDescription:(id)arg1;
 - (id)shareDescription;
+- (bool)shouldPresent;
 - (id)source;
 - (id)sourceAuthorizationController;
 - (long long)style;

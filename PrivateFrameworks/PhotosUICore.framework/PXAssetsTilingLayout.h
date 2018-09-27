@@ -8,6 +8,7 @@
     PXBasicTileUserData * __selectedDimmingUserData;
     PXSelectionBadgeTileUserData * __selectedUserData;
     PXSelectionBadgeTileUserData * __unselectedUserData;
+    NSIndexSet * _additionalAccessoryTileKinds;
     unsigned long long  _badgeOptions;
     PXAssetsDataSource * _dataSource;
     PXIndexPathSet * _draggingIndexPaths;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) PXBasicTileUserData *_selectedDimmingUserData;
 @property (nonatomic, readonly) PXSelectionBadgeTileUserData *_selectedUserData;
 @property (nonatomic, readonly) PXSelectionBadgeTileUserData *_unselectedUserData;
+@property (nonatomic, retain) NSIndexSet *additionalAccessoryTileKinds;
 @property (nonatomic) unsigned long long badgeOptions;
 @property (nonatomic, readonly) PXAssetsDataSource *dataSource;
 @property (nonatomic, retain) PXIndexPathSet *draggingIndexPaths;
@@ -58,6 +60,7 @@
 - (id)_selectedUserData;
 - (void)_setContentTileUserData:(id)arg1;
 - (id)_unselectedUserData;
+- (id)additionalAccessoryTileKinds;
 - (void)adjustGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg1 forContentTileWithIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 - (unsigned long long)badgeOptions;
 - (id)dataSource;
@@ -65,6 +68,7 @@
 - (id)draggingIndexPaths;
 - (void)enumerateAccessoryTilesForContentTileWithIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 geometry:(const struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg2 withOptions:(id)arg3 usingBlock:(id /* block */)arg4;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })focusedIndexPath;
+- (bool)getAdditionalAccessoryTileIdentifier:(out struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; }*)arg1 outGeometry:(out struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg2 group:(out unsigned long long*)arg3 userData:(out id*)arg4 forTileKind:(unsigned long long)arg5 contentTileGeometry:(const struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg6 indexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg7;
 - (bool)getGeometry:(out struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; }*)arg1 group:(out unsigned long long*)arg2 userData:(out id*)arg3 forTileWithIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg4;
 - (id)hiddenIndexPaths;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })highlightedIndexPath;
@@ -73,6 +77,7 @@
 - (struct CGSize { double x1; double x2; })playButtonSizeForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 contentTileSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)selectedIndexPaths;
 - (unsigned long long)selectionBadgeOptions;
+- (void)setAdditionalAccessoryTileKinds:(id)arg1;
 - (void)setBadgeOptions:(unsigned long long)arg1;
 - (void)setDraggingIndexPaths:(id)arg1;
 - (void)setFocusedIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;

@@ -2,28 +2,39 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKCFaceDetailDataSourcesSectionController : NTKCFaceDetailSectionController <NTKCFaceDetailToggleCellDelegate> {
+@interface NTKCFaceDetailDataSourcesSectionController : NTKCFaceDetailSectionController <NTKCFaceDetailToggleCellDelegate, NTKCUpNextDataSourcesManagerIdentifiersDelegate> {
     <NTKCFaceDetailDataSourcesSectionDelegate> * _delegate;
+    NSString * _headerTitle;
+    NTKCUpNextDataSourcesManager * _manager;
+    bool  _showsTitleWhenEmpty;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NTKCFaceDetailDataSourcesSectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSMutableArray *rows;
+@property (nonatomic, copy) NSString *headerTitle;
+@property (nonatomic, retain) NTKCUpNextDataSourcesManager *manager;
+@property (nonatomic, retain) NSArray *rows;
+@property (nonatomic) bool showsTitleWhenEmpty;
 @property (readonly) Class superclass;
 
 + (bool)hasDataSourcesSectionForFace:(id)arg1 inGallery:(bool)arg2;
 
 - (void).cxx_destruct;
-- (void)_buildRows;
-- (void)_commonInit;
-- (bool)_dataSourceAvailableOnGizmo:(id)arg1;
+- (void)_buildRowsWithDataSourceIdentifiers:(id)arg1 donatedAppIdentifiers:(id)arg2;
 - (id)_getDisabledDataSources;
-- (void)dealloc;
+- (void)_updatedDisabledDataSources:(id)arg1;
 - (id)delegate;
 - (void)faceDidChange;
+- (id)headerTitle;
+- (id)manager;
+- (void)manager:(id)arg1 didUpdateDataSourceIdentifiers:(id)arg2 donatedIdentifiers:(id)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setHeaderTitle:(id)arg1;
+- (void)setManager:(id)arg1;
+- (void)setShowsTitleWhenEmpty:(bool)arg1;
+- (bool)showsTitleWhenEmpty;
 - (id)titleForHeader;
 - (void)toggleCell:(id)arg1 didToggle:(bool)arg2;
 

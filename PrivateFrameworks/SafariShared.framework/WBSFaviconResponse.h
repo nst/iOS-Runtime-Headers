@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSFaviconResponse : WBSSiteMetadataResponse {
-    bool  _defaultIcon;
+@interface WBSFaviconResponse : WBSSiteMetadataResponse <WBSIconResponse> {
     UIImage * _favicon;
+    unsigned long long  _faviconType;
 }
 
-@property (getter=isDefaultIcon, nonatomic, readonly) bool defaultIcon;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIColor *extractedBackgroundColor;
 @property (nonatomic, readonly) UIImage *favicon;
-
-+ (id)responseWithURL:(id)arg1 favicon:(id)arg2 isDefaultIcon:(bool)arg3;
+@property (nonatomic, readonly) unsigned long long faviconType;
+@property (getter=isGenerated, nonatomic, readonly) bool generated;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIImage *icon;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)favicon;
+- (unsigned long long)faviconType;
+- (id)icon;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 favicon:(id)arg2 isDefaultIcon:(bool)arg3;
-- (bool)isDefaultIcon;
+- (id)initWithURL:(id)arg1 favicon:(id)arg2 faviconType:(unsigned long long)arg3;
 
 @end

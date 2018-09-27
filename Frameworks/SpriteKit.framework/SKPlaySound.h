@@ -15,6 +15,7 @@
 
 + (id)_audioURLWithName:(id)arg1 bundle:(id)arg2;
 + (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 waitForCompletion:(bool)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

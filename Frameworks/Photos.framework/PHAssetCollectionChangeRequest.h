@@ -68,6 +68,7 @@
 - (id)originalAssetCollection;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedAssetCollection;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)removeAsset:(id)arg1;
 - (void)removeAssetFromAssetsAtIndex:(unsigned long long)arg1;

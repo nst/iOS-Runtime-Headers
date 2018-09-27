@@ -4,12 +4,13 @@
 
 @interface NTKTimelapseListingFactory : NSObject {
     NSMutableSet * _assetListings;
+    CLKDevice * _device;
 }
 
-+ (id)sharedInstance;
++ (id)sharedInstanceForDevice:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_initLibrary;
+- (id)_initLibraryForDevice:(id)arg1;
 - (void)discardAssets;
 - (id)heroImageWithTheme:(unsigned long long)arg1 date:(id)arg2 location:(struct CLLocationCoordinate2D { double x1; double x2; })arg3;
 - (id)listingWithTheme:(unsigned long long)arg1 date:(id)arg2 location:(struct CLLocationCoordinate2D { double x1; double x2; })arg3;

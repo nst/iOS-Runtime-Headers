@@ -44,6 +44,8 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, retain) SFWatchListItem *watchListItem;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -77,5 +79,9 @@
 - (void)setWatchListItem:(id)arg1;
 - (id)type;
 - (id)watchListItem;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

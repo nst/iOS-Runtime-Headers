@@ -9,9 +9,9 @@
 
 + (id)entry;
 
+- (void).cxx_destruct;
 - (void)addAnimation:(id)arg1 animationInfo:(id)arg2;
 - (id)animation;
-- (void)dealloc;
 - (id)init;
 
 @end

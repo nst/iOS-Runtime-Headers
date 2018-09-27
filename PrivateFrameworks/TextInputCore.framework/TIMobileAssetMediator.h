@@ -38,6 +38,7 @@
 + (id)uniqueIdentifierForAsset:(id)arg1;
 + (id)uniqueIdentifierWithVersionForAsset:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (oneway void)downloadAssets:(id)arg1 continuation:(id /* block */)arg2;

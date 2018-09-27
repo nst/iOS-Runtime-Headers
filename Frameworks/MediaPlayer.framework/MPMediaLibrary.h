@@ -79,6 +79,8 @@
 @property (nonatomic, readonly) ML3MusicLibrary *ml3Library;
 @property (nonatomic, readonly) NSURL *protectedContentSupportStorageURL;
 @property (nonatomic) long long removalReason;
+@property (nonatomic, readonly) bool vui_isDeviceMediaLibrary;
+@property (nonatomic, readonly) bool vui_isHomeShareMediaLibrary;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -292,5 +294,10 @@
 
 - (id)MPC_entityWithContentItemIdentifierCollection:(id)arg1 options:(unsigned long long)arg2;
 - (id)_MPC_ML3QueryWithEntityClass:(Class)arg1 predicate:(id)arg2 options:(unsigned long long)arg3;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (bool)vui_isDeviceMediaLibrary;
+- (bool)vui_isHomeShareMediaLibrary;
 
 @end

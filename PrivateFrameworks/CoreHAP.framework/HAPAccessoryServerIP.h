@@ -22,7 +22,6 @@
     NSString * _model;
     id /* block */  _netServiceResolveCompletionBlock;
     HMFNetMonitor * _networkMonitor;
-    bool  _networkReachable;
     HMFBlockOperation * _pairOperation;
     HAPWACClient * _pairUsingWAC;
     id /* block */  _pairVerifyCompletionBlock;
@@ -31,6 +30,7 @@
     bool  _preSoftAuthWacStarted;
     HAPAccessory * _primaryAccessoryForServer;
     NSMutableArray * _queuedOperations;
+    NSMutableSet * _resolvers;
     NSString * _sourceVersion;
     unsigned long long  _statusFlags;
     NSData * _token;
@@ -64,7 +64,6 @@
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) id /* block */ netServiceResolveCompletionBlock;
 @property (nonatomic, readonly) HMFNetMonitor *networkMonitor;
-@property (getter=isNetworkReachable, nonatomic) bool networkReachable;
 @property (nonatomic, retain) HMFBlockOperation *pairOperation;
 @property (nonatomic, retain) HAPWACClient *pairUsingWAC;
 @property (nonatomic, copy) id /* block */ pairVerifyCompletionBlock;
@@ -72,6 +71,7 @@
 @property (getter=isPreSoftAuthWacStarted, nonatomic) bool preSoftAuthWacStarted;
 @property (nonatomic, retain) HAPAccessory *primaryAccessoryForServer;
 @property (nonatomic, retain) NSMutableArray *queuedOperations;
+@property (nonatomic, retain) NSMutableSet *resolvers;
 @property (nonatomic, copy) NSString *sourceVersion;
 @property (nonatomic) unsigned long long statusFlags;
 @property (readonly) Class superclass;
@@ -111,8 +111,10 @@
 - (int)_handlePairVerifyCompletionWithData:(id)arg1;
 - (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(bool)arg5 completionQueue:(id)arg6 completionBlock:(id /* block */)arg7;
 - (void)_handlePrepareWriteResponseObject:(id)arg1 type:(unsigned long long)arg2 prepareIdentifier:(id)arg3 httpStatus:(int)arg4 error:(id)arg5 requestTuples:(id)arg6 timeout:(double)arg7 queue:(id)arg8 completion:(id /* block */)arg9;
+- (void)_handleReadECONNRESETError:(id)arg1 readCharacteristics:(id)arg2 responses:(id)arg3 timeout:(double)arg4 queue:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_handleReadResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 - (void)_handleUpdatesForCharacteristics:(id)arg1 stateNumber:(id)arg2;
+- (void)_handleWriteECONNResetError:(id)arg1 writeRequests:(id)arg2 responses:(id)arg3 timeout:(double)arg4 queue:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_handleWriteResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 error:(id)arg4 requestTuples:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 - (bool)_hasBonjourDeviceInfo;
 - (void)_insertReadCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -178,6 +180,7 @@
 - (void)continuePairingAfterAuthPrompt;
 - (void)continuePairingUsingWAC;
 - (id)controllerUsername;
+- (void)createKeysForDataStreamWithKeySalt:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)description;
 - (void)discoverAccessories;
@@ -202,7 +205,6 @@
 - (void)invokePairVerifyCompletionBlock:(id)arg1;
 - (id)ipServices;
 - (bool)isContinuingLegacyWACpairing;
-- (bool)isNetworkReachable;
 - (bool)isPostSoftAuthWacStarted;
 - (bool)isPreSoftAuthWacStarted;
 - (bool)isSessionEstablised;
@@ -233,6 +235,8 @@
 - (void)removePairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)resolveLocalHostnameWithCompletionHandler:(id /* block */)arg1;
+- (id)resolvers;
 - (id)services;
 - (void)setAuthenticated:(bool)arg1;
 - (void)setAuthenticatedProtocolInfo:(id)arg1;
@@ -249,7 +253,6 @@
 - (void)setIpServices:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setNetServiceResolveCompletionBlock:(id /* block */)arg1;
-- (void)setNetworkReachable:(bool)arg1;
 - (void)setPairOperation:(id)arg1;
 - (void)setPairUsingWAC:(id)arg1;
 - (void)setPairVerifyCompletionBlock:(id /* block */)arg1;
@@ -257,6 +260,7 @@
 - (void)setPreSoftAuthWacStarted:(bool)arg1;
 - (void)setPrimaryAccessoryForServer:(id)arg1;
 - (void)setQueuedOperations:(id)arg1;
+- (void)setResolvers:(id)arg1;
 - (void)setSourceVersion:(id)arg1;
 - (void)setStatusFlags:(unsigned long long)arg1;
 - (void)setToken:(id)arg1;

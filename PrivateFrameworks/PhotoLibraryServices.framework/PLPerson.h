@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLPerson : PLManagedObject <PLSyncablePerson>
+@interface PLPerson : PLManagedObject <PLCloudDeletable, PLSyncablePerson>
 
 @property (nonatomic, retain) PLDetectedFaceGroup *associatedFaceGroup;
+@property (nonatomic) short cloudDeleteState;
+@property (readonly) long long cloudDeletionType;
 @property (nonatomic) short cloudLocalState;
+@property (readonly, copy) NSString *cloudUUIDForDeletion;
 @property (nonatomic) int cloudVerifiedType;
 @property (nonatomic, retain) NSSet *clusterRejectedFaces;
 @property (nonatomic, retain) NSDictionary *contactMatchingDictionary;
@@ -45,14 +48,17 @@
 + (id)_stringFromContact:(id)arg1 preferGivenName:(bool)arg2;
 + (id)allPersonsInManagedObjectContext:(id)arg1;
 + (void)batchFetchAssociatedPersonByFaceGroupUUIDWithFaceGroupUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
-+ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
++ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 inManagedObjectContext:(id)arg3 completion:(id /* block */)arg4;
 + (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)displayNameFromContact:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithPersonUUID:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
++ (id)fetchFinalMergeTargetPersonForPersonWithUUID:(id)arg1 context:(id)arg2;
 + (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 error:(id*)arg3;
 + (id)fullNameFromContact:(id)arg1;
 + (id)insertIntoManagedObjectContext:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verifiedType:(int)arg4;
@@ -75,6 +81,8 @@
 - (id)_nameRelatedMetadataKeys;
 - (void)_refreshRelationshipForKey:(id)arg1;
 - (void)basicMergePersons:(id)arg1;
+- (long long)cloudDeletionType;
+- (id)cloudUUIDForDeletion;
 - (id)cplFullRecord;
 - (id)cplPersonChange;
 - (id)debugLogDescription;
@@ -89,6 +97,7 @@
 - (bool)keyFaceIsPicked;
 - (id)localID;
 - (void)mergePersons:(id)arg1 withOptimalState:(id)arg2;
+- (id)momentShare;
 - (id)mutableFaceCrops;
 - (id)mutableFaces;
 - (id)mutableInvalidMergeCandidates;

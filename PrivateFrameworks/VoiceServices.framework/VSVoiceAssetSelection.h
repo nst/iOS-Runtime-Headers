@@ -17,11 +17,15 @@
 - (void).cxx_destruct;
 - (id)asset;
 - (id)builtInVoicePath;
+- (id)descriptiveKey;
+- (bool)isDownloading;
+- (bool)isInstalled;
 - (id)key;
 - (void)setAsset:(id)arg1;
 - (void)setBuiltInVoicePath:(id)arg1;
 - (void)setVoiceData:(id)arg1;
 - (void)setVoicePath:(id)arg1;
+- (unsigned long long)size;
 - (id)voiceData;
 - (id)voicePath;
 

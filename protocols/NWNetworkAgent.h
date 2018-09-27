@@ -31,8 +31,10 @@
 - (bool)isNexusProvider;
 - (bool)isSpecificUseOnly;
 - (bool)requestNexusWithOptions:(NSDictionary *)arg1;
+- (bool)requiresAssert;
 - (void)setNetworkProvider:(bool)arg1;
 - (void)setNexusProvider:(bool)arg1;
+- (void)setRequiresAssert:(bool)arg1;
 - (void)setSpecificUseOnly:(bool)arg1;
 - (void)setSupportsBrowseRequests:(bool)arg1;
 - (bool)startAgentWithOptions:(NSDictionary *)arg1;

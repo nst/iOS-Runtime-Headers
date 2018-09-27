@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *vendorId;
 
++ (id)attributionForAnnotatedItemList:(id)arg1 placeData:(id)arg2;
 + (id)attributionForPlaceDataEncyclopedia:(id)arg1;
 + (id)attributionForPlaceDataEntity:(id)arg1;
 + (id)attributionForPlaceDataPhotos:(id)arg1;

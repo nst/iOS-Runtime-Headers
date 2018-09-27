@@ -6,18 +6,18 @@
 @required
 
 - (void)connect;
-- (TVRCDeviceDescriptor *)descriptor;
+- (_TVRXDeviceDescriptor *)descriptor;
 - (void)disconnect;
 - (NSString *)identifier;
-- (TVRCKeyboardController *)keyboardController;
+- (_TVRXKeyboardController *)keyboardController;
 - (NSString *)name;
 - (unsigned long long)pairingCapability;
 - (void)sendButtonEvent:(TVRCButtonEvent *)arg1;
 - (void)sendGameControllerEvent:(TVRCGameControllerEvent *)arg1;
 - (void)sendTouchEvent:(TVRCTouchEvent *)arg1;
 - (void)setAuthenticationSupported:(bool)arg1;
-- (void)setDevice:(TVRCDevice *)arg1;
+- (void)setDevice:(_TVRXDevice *)arg1;
 - (NSSet *)supportedButtons;
-- (TVRCVoiceRecorder *)voiceRecorder;
+- (_TVRXVoiceRecorder *)voiceRecorder;
 
 @end

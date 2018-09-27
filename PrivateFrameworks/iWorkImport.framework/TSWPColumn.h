@@ -78,6 +78,7 @@
 + (unsigned long long)charIndexForTopicDragAtPoint:(struct CGPoint { double x1; double x2; })arg1 inColumnsArray:(id)arg2;
 + (id)closestColumnInColumnsArray:(id)arg1 forPoint:(struct CGPoint { double x1; double x2; })arg2 ignoreEmptyColumns:(bool)arg3 ignoreDrawableOnlyColumns:(bool)arg4;
 + (id)columnForCharIndex:(unsigned long long)arg1 eol:(bool)arg2 withColumns:(id)arg3;
++ (struct CGColor { }*)computeSingleColorWithColumns:(id)arg1;
 + (id)footnoteMarkAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 + (id)footnoteReferenceAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 + (id)pathForHighlightWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 columnArray:(id)arg2 pathStyle:(int)arg3;
@@ -114,9 +115,12 @@
 - (unsigned long long)glyphCountForRubyFieldAtCharIndex:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })glyphRectForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 includingLabel:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })glyphRectForRubyFieldAtCharIndex:(unsigned long long)arg1 glyphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; })heightInfoOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (double)horizontalOffsetForCharIndex:(unsigned long long)arg1 lineFragmentIndex:(unsigned long long)arg2 bumpPastHyphen:(bool)arg3 allowPastLineBounds:(bool)arg4;
 - (void)incrementRanges:(long long)arg1;
 - (id)initWithStorage:(id)arg1 frameBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (bool)isEmptyLineFragmentAtIndex:(unsigned long long)arg1;
+- (bool)isTruncatedLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })labelBoundsOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (int)layoutResultFlags;
 - (const struct shared_ptr<TSWPLineFragmentArray> { struct TSWPLineFragmentArray {} *x1; struct __shared_weak_count {} *x2; }*)lineFragmentArray;
@@ -190,6 +194,8 @@
 - (void)trimToCharIndex:(unsigned long long)arg1 inTarget:(id)arg2 removeAutoNumberFootnoteCount:(unsigned long long)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })typographicBounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })typographicBoundsForCell;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })typographicBoundsOfLineFragmentAtIndex:(unsigned long long)arg1;
+- (double)typographicGlyphExtentOfLineFragmentAtIndex:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })wpBounds;
 
 @end

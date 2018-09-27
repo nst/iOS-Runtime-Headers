@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } labelSize;
 @property (getter=isLabelSizeLoaded, nonatomic) bool labelSizeLoaded;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } labelTextAlignmentInsets;
+@property (nonatomic, readonly) BOOL statusAlignment;
 @property (nonatomic, copy) NSAttributedString *transcriptButtonText;
 
 + (id)createImageAsTextAttachment;
@@ -68,6 +69,7 @@
 - (void)setLabelSizeLoaded:(bool)arg1;
 - (void)setTranscriptButtonText:(id)arg1;
 - (struct CGSize { double x1; double x2; })size;
+- (BOOL)statusAlignment;
 - (long long)statusType;
 - (id)time;
 - (id)transcriptButtonText;

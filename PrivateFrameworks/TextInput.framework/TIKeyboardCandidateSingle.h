@@ -21,10 +21,10 @@
 + (bool)supportsSecureCoding;
 + (int)type;
 
+- (void).cxx_destruct;
 - (id)candidate;
 - (id)candidateByReplacingWithCandidate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCandidate:(id)arg1;
@@ -32,6 +32,7 @@
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 extensionCandidate:(bool)arg3;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithResponseCandidate:(id)arg1;
 - (id)initWithUnchangedInput:(id)arg1;
 - (id)input;
 - (bool)isExtensionCandidate;

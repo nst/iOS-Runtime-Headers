@@ -9,7 +9,6 @@
     CKDAppContainerIntersectionMetadata * _appContainerIntersectionMetadata;
     CKDAppContainerTuple * _appContainerTuple;
     NSString * _applicationAssetDbDirectory;
-    NSBundle * _applicationBundle;
     NSString * _applicationBundleID;
     NSString * _applicationCachesDirectory;
     NSString * _applicationContainerCloudKitDirectory;
@@ -80,7 +79,6 @@
 @property (nonatomic, retain) CKDAppContainerIntersectionMetadata *appContainerIntersectionMetadata;
 @property (nonatomic, retain) CKDAppContainerTuple *appContainerTuple;
 @property (nonatomic, retain) NSString *applicationAssetDbDirectory;
-@property (nonatomic, readonly) NSBundle *applicationBundle;
 @property (nonatomic, readonly) NSString *applicationBundleID;
 @property (nonatomic, retain) NSString *applicationCachesDirectory;
 @property (nonatomic, retain) NSString *applicationContainerCloudKitDirectory;
@@ -99,8 +97,6 @@
 @property (nonatomic, retain) CKDPublicIdentityLookupService *backgroundPublicIdentityLookupService;
 @property (nonatomic, retain) CKDZoneGatekeeper *backgroundZoneGatekeeper;
 @property (nonatomic) bool bypassPCSEncryption;
-@property (nonatomic, readonly) unsigned long long c2MetricsReportFrequency;
-@property (nonatomic, readonly) unsigned long long c2MetricsReportFrequencyBase;
 @property (nonatomic, retain) CKDCachePurger *cachePurger;
 @property long long cachedEnvironment;
 @property (nonatomic, readonly) bool canAccessAccount;
@@ -135,6 +131,7 @@
 @property (nonatomic) bool hasDisplaysSystemAcceptPromptEntitlement;
 @property (nonatomic) bool hasLightweightPCSEntitlement;
 @property (nonatomic) bool hasMasqueradingEntitlement;
+@property (nonatomic) bool hasNonLegacyShareURLEntitlement;
 @property (nonatomic) bool hasOutOfProcessUIEntitlement;
 @property (nonatomic) bool hasParticipantPIIEntitlement;
 @property (setter=setHasSystemServiceEntitlement:, nonatomic) bool hasSystemServiceEntitlement;
@@ -192,7 +189,6 @@
 - (id)appContainerIntersectionMetadata;
 - (id)appContainerTuple;
 - (id)applicationAssetDbDirectory;
-- (id)applicationBundle;
 - (id)applicationBundleID;
 - (id)applicationCachesDirectory;
 - (id)applicationContainerCloudKitDirectory;
@@ -212,8 +208,6 @@
 - (id)backgroundPublicIdentityLookupService;
 - (id)backgroundZoneGatekeeper;
 - (bool)bypassPCSEncryption;
-- (unsigned long long)c2MetricsReportFrequency;
-- (unsigned long long)c2MetricsReportFrequencyBase;
 - (id)cachePurger;
 - (long long)cachedEnvironment;
 - (bool)canAccessAccount;
@@ -260,6 +254,7 @@
 - (bool)hasDisplaysSystemAcceptPromptEntitlement;
 - (bool)hasLightweightPCSEntitlement;
 - (bool)hasMasqueradingEntitlement;
+- (bool)hasNonLegacyShareURLEntitlement;
 - (bool)hasOutOfProcessUIEntitlement;
 - (bool)hasParticipantPIIEntitlement;
 - (bool)hasSystemServiceEntitlement;
@@ -334,6 +329,7 @@
 - (void)setHasDisplaysSystemAcceptPromptEntitlement:(bool)arg1;
 - (void)setHasLightweightPCSEntitlement:(bool)arg1;
 - (void)setHasMasqueradingEntitlement:(bool)arg1;
+- (void)setHasNonLegacyShareURLEntitlement:(bool)arg1;
 - (void)setHasOutOfProcessUIEntitlement:(bool)arg1;
 - (void)setHasParticipantPIIEntitlement:(bool)arg1;
 - (void)setHasSystemServiceEntitlement:(bool)arg1;

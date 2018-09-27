@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate> {
-    ADAdSheetConnection * _connection;
+@interface ADOptInManager : NSObject <ADAdServingDaemonConnectionDelegate> {
+    ADAdServingDaemonConnection * _connection;
 }
 
-@property (nonatomic, retain) ADAdSheetConnection *connection;
+@property (nonatomic, retain) ADAdServingDaemonConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -14,19 +14,13 @@
 
 + (id)sharedManager;
 
-- (void)adSheetConnectionInterrupted;
-- (id)adSheetMachServiceName;
+- (void)adServingDaemonConnectionInterrupted;
+- (id)adServingDaemonMachServiceName;
 - (void)configureConnection:(id)arg1;
 - (id)connection;
 - (void)dealloc;
 - (void)getiAdIDsWithCompletionHandler:(id /* block */)arg1;
-- (void)handleAccountChange;
-- (void)handlePushNotification:(id)arg1;
 - (id)init;
-- (void)primeAdSheetDataStore;
-- (void)refreshOptInStatus;
-- (void)refreshOptInStatusRefreshingWeakToken:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setConnection:(id)arg1;
-- (void)setOptInStatus:(bool)arg1 completionHandler:(id /* block */)arg2;
 
 @end

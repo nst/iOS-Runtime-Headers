@@ -9,4 +9,8 @@
 - (void)webViewController:(SFWebViewController *)arg1 didClickLinkInReaderWithRequest:(NSURLRequest *)arg2;
 - (void)webViewControllerDidDetermineReaderAvailability:(SFWebViewController *)arg1 dueToSameDocumentNavigation:(bool)arg2;
 
+@optional
+
+- (void)webViewControllerReaderDidBecomeReady:(SFWebViewController *)arg1;
+
 @end

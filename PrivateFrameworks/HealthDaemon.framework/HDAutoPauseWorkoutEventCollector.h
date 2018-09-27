@@ -3,6 +3,7 @@
  */
 
 @interface HDAutoPauseWorkoutEventCollector : HDWorkoutEventCollector <CMWorkoutManagerDelegate> {
+    int  _catFlexingNotifyToken;
     CMWorkoutManager * _cmWorkoutManager;
 }
 
@@ -13,7 +14,12 @@
 
 - (void).cxx_destruct;
 - (void)_deliverWorkoutEvent:(long long)arg1 sessionId:(id)arg2 eventDate:(id)arg3;
+- (void)_listenForCatFlexingFakingNotifications;
+- (void)_triggerCatFlexingEvent;
+- (void)_triggerCatFlexingEventWithTimeout:(double)arg1;
+- (void)_unregisterForCatFlexingNotifications;
 - (id)initWithProfile:(id)arg1 delegate:(id)arg2;
+- (void)stop;
 - (void)workoutManagerDidFail:(id)arg1 workout:(id)arg2 error:(id)arg3;
 - (void)workoutManagerDidStartWorkout:(id)arg1 workout:(id)arg2 startDate:(id)arg3;
 - (void)workoutManagerDidStopWorkout:(id)arg1 workout:(id)arg2 stopDate:(id)arg3;

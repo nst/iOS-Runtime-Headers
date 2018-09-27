@@ -3,10 +3,6 @@
  */
 
 @interface _SFPBTextColumnSection : PBCodable <NSSecureCoding, _SFPBTextColumnSection> {
-    struct { 
-        unsigned int textNoWrap : 1; 
-        unsigned int textWeight : 1; 
-    }  _has;
     NSArray * _textLines;
     bool  _textNoWrap;
     unsigned int  _textWeight;
@@ -14,8 +10,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasTextNoWrap;
-@property (nonatomic, readonly) bool hasTextWeight;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (readonly) Class superclass;
@@ -27,8 +21,6 @@
 - (void)addTextLines:(id)arg1;
 - (void)clearTextLines;
 - (id)dictionaryRepresentation;
-- (bool)hasTextNoWrap;
-- (bool)hasTextWeight;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

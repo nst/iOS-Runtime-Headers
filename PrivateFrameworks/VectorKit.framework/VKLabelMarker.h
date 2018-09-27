@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLabelMarker : VKFeatureMarker <GEOTransitArtworkDataSource, MKCalloutSource> {
+@interface VKLabelMarker : VKFeatureMarker <GEOTransitArtworkDataSource> {
     struct shared_ptr<md::LabelMarker> { 
         struct LabelMarker {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -33,6 +33,7 @@
 @property (nonatomic, readonly) NSArray *shields;
 @property (nonatomic, copy) NSString *subtitle;
 @property (readonly) Class superclass;
+@property (nonatomic) bool suppressCallout;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSArray *transitSystems;
 
@@ -130,8 +131,10 @@
 - (void)setLeftCalloutAccessoryView:(id)arg1;
 - (void)setRightCalloutAccessoryView:(id)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setSuppressCallout:(bool)arg1;
 - (id)shieldDataSource;
 - (id)subtitle;
+- (bool)suppressCallout;
 - (id)title;
 
 @end

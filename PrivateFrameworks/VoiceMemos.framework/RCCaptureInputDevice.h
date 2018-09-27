@@ -11,7 +11,6 @@
     _RCCaptureInputDeviceSession * _preparingInputSession;
 }
 
-@property (nonatomic, readonly) RCCaptureSession *activeCaptureSession;
 @property (nonatomic, readonly) NSString *activeInputRouteName;
 @property (nonatomic, retain) _RCCaptureInputDeviceSession *activeInputSession;
 @property (nonatomic, readonly) RCAudioSessionRoutingController *audioRouteController;
@@ -25,6 +24,7 @@
 @property (nonatomic, retain) _RCCaptureInputDeviceSession *preparingInputSession;
 @property (readonly) Class superclass;
 
++ (id)activeCaptureSession;
 + (id)sharedCaptureDevice;
 
 - (void).cxx_destruct;
@@ -41,15 +41,15 @@
 - (void)_setPendingCaptureSession:(id)arg1 useStartSoundEffect:(bool)arg2 sessionPreparedBlock:(id /* block */)arg3;
 - (void)_updateInputAvailabilityAndPostNotification:(bool)arg1;
 - (void)_updateSelectedRouteAndPostNotification:(bool)arg1;
-- (id)activeCaptureSession;
 - (id)activeInputRouteName;
 - (id)activeInputSession;
 - (id)audioRouteController;
 - (void)beginRecordingWithCaptureWaveformDataSource:(id)arg1 useStartSoundEffect:(bool)arg2 sessionPreparedBlock:(id /* block */)arg3 sessionFinishedBlock:(id /* block */)arg4;
 - (bool)canExitApplication;
-- (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2;
+- (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2 captureTime:(double)arg3 usingDisplayLinkSmoothing:(bool)arg4;
 - (void)captureSession:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (void)captureSession:(id)arg1 rateDidChangeToRate:(float)arg2;
+- (void)dealloc;
 - (void)fetchActiveInputRouteWithCompletionHandler:(id /* block */)arg1;
 - (void)finishRecordingWithSession:(id)arg1 sessionFinishedBlock:(id /* block */)arg2;
 - (id)init;

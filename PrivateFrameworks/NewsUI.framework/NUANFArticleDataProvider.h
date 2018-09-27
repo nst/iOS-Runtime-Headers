@@ -14,7 +14,7 @@
     <SXHost> * _host;
 }
 
-@property (nonatomic, readonly) FCArticle *article;
+@property (nonatomic, retain) FCArticle *article;
 @property (nonatomic, copy) NSString *articleID;
 @property (nonatomic, retain) NUANFAssetLoader *assetLoader;
 @property (nonatomic, readonly) <FCContentContext> *contentContext;
@@ -42,6 +42,8 @@
 - (id)initWithArticle:(id)arg1 contentContext:(id)arg2 fontRegistration:(id)arg3 host:(id)arg4 embedDataManager:(id)arg5;
 - (void)loadArticleWithCompletionBlock:(id /* block */)arg1;
 - (void)loadContextWithCompletionBlock:(id /* block */)arg1;
+- (void)reloadArticleIfNeeded;
+- (void)setArticle:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setAssetLoader:(id)arg1;
 - (void)setContextLoader:(id)arg1;

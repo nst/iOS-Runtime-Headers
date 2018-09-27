@@ -7,7 +7,7 @@
 
 - (NSArray *)consentedBrands;
 - (NSArray *)deniedBrands;
-- (void)forceUpdate;
+- (void)forceUpdateWithCallback:(JSValue *)arg1;
 - (unsigned long long)privacyFlowContentVersion;
 - (bool)privateModeEnabled;
 - (NSDictionary *)settings;

@@ -21,6 +21,5 @@
 - (id)initWithImage:(id)arg1 wallpaperData:(id)arg2;
 - (id)initWithWallpaperData:(id)arg1;
 - (bool)isEqual:(id)arg1;
-- (void)preheatWallpaperData;
 
 @end

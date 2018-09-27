@@ -29,6 +29,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool visibleToScrollViews;
 
++ (struct CGSize { double x1; double x2; })defaultPhotoSize;
 + (id)descriptorForRequiredKeys;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(bool)arg1;
 + (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(bool)arg2 shouldAllowImageDrops:(bool)arg3;

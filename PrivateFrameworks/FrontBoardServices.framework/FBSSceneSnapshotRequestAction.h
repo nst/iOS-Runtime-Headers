@@ -4,7 +4,7 @@
 
 @interface FBSSceneSnapshotRequestAction : BSAction
 
-@property (nonatomic, readonly, retain) FBSSceneSnapshotContext *context;
+@property (nonatomic, readonly) FBSSceneSnapshotContext *context;
 @property (nonatomic, readonly) unsigned long long type;
 
 - (id)context;

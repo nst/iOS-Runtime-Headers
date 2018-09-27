@@ -5,12 +5,16 @@
 @interface MTLIOAccelRenderCommandEncoder : MTLIOAccelCommandEncoder
 
 - (void)bindEmulationArguments;
+- (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void*)getFragmentBufferContentsAtIndex:(unsigned long long)arg1;
 - (id)getRenderPipelineState;
 - (unsigned long long)getType;
 - (void*)getVertexBufferContentsAtIndex:(unsigned long long)arg1;
 - (id)initWithCommandBuffer:(id)arg1 descriptor:(id)arg2;
 - (bool)isMemorylessRender;
+- (void)memoryBarrierWithResources:(const id*)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)setColorStoreAction:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)setColorStoreActionOptions:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)setDepthCleared;

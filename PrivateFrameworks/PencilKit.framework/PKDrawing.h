@@ -48,7 +48,6 @@
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic) struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; } boundsVersion;
-@property (nonatomic, readonly) bool canChangeTransientOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -66,6 +65,7 @@
 @property (nonatomic, readonly) NSMutableArray *visibleStrokes;
 @property (nonatomic, retain) PKVisualizationManager *visualizationManager;
 
++ (id)_drawingWithUnzippedData:(id)arg1;
 + (id)_enabledLocales;
 + (struct CGSize { double x1; double x2; })defaultPixelSize;
 + (struct CGSize { double x1; double x2; })defaultSize;
@@ -75,6 +75,8 @@
 
 - (void).cxx_destruct;
 - (id)CHDrawing;
+- (id)_ascii;
+- (bool*)_newAsciiBitfield;
 - (void)_setUUID:(id)arg1;
 - (void)_teardownRecognitionObjects;
 - (void)_updateRecognitionSession;
@@ -83,7 +85,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })boundsVersion;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateStrokeBounds;
-- (bool)canChangeTransientOrientation;
 - (void)cancelOngoingRecognitionRequests;
 - (id)copyAndAddStroke:(id)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -133,12 +134,12 @@
 - (void)setOrientationVersion:(struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })arg1;
 - (void)setRecognitionEnabled:(bool)arg1;
 - (void)setRecognitionSession:(id)arg1;
+- (id)setStroke:(id)arg1 applyTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (id)setStroke:(id)arg1 hidden:(bool)arg2;
 - (id)setStroke:(id)arg1 hidden:(bool)arg2 ink:(id)arg3;
 - (id)setStroke:(id)arg1 hidden:(bool)arg2 ink:(id)arg3 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 - (id)setStroke:(id)arg1 hidden:(bool)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
 - (void)setStrokeIDForInsertion:(id)arg1;
-- (bool)setTransientOrientation:(long long)arg1;
 - (void)setVersion:(id)arg1;
 - (void)setVisualizationManager:(id)arg1;
 - (void)sortStrokes;
@@ -150,8 +151,8 @@
 - (id)strokeProviderVersionFromData:(id)arg1;
 - (struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })strokeVersionForUpdatedStroke:(id)arg1;
 - (id)strokes;
-- (id)strokesIntersectedByPoint:(struct CGPoint { double x1; double x2; })arg1 prevPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (id)strokesIntersectedByPoint:(struct CGPoint { double x1; double x2; })arg1 prevPoint:(struct CGPoint { double x1; double x2; })arg2 minThreshold:(double)arg3 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
+- (id)strokesIntersectedByPoint:(struct CGPoint { double x1; double x2; })arg1 prevPoint:(struct CGPoint { double x1; double x2; })arg2 minThreshold:(double)arg3 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 onscreenVisibleStrokes:(id)arg5;
+- (id)strokesIntersectedByPoint:(struct CGPoint { double x1; double x2; })arg1 prevPoint:(struct CGPoint { double x1; double x2; })arg2 onscreenVisibleStrokes:(id)arg3;
 - (void)takeOrientationFrom:(id)arg1;
 - (id)uuid;
 - (id)version;

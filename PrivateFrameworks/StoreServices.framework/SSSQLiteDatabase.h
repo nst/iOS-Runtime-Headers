@@ -26,6 +26,7 @@
 
 - (void)_accessDatabaseUsingBlock:(id /* block */)arg1;
 - (void)_beginTaskCompletionAssertion;
+- (int)_closeDatabase;
 - (void)_endTaskCompletionAssertion;
 - (void)_expireBackgroundTask;
 - (int)_openDatabase;

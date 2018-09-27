@@ -3,7 +3,7 @@
  */
 
 @interface PKEditPassesTableViewCell : UITableViewCell {
-    UIActivityIndicatorView * _activityView;
+    bool  _isRTL;
     PKPass * _pass;
     bool  _showImage;
 }

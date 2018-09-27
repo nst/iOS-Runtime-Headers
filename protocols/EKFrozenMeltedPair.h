@@ -18,6 +18,7 @@
 - (bool)isPartialObject;
 - (bool)isPropertyUnavailable:(NSString *)arg1;
 - (EKObject *)meltedObjectInStore:(EKEventStore *)arg1;
+- (NSString *)semanticIdentifier;
 - (void)setValue:(id)arg1 forKey:(NSString *)arg2;
 - (NSString *)uniqueIdentifier;
 - (id)valueForKey:(NSString *)arg1;

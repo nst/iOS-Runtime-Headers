@@ -49,7 +49,6 @@
 @property (getter=isPausable) bool pausable;
 @property (getter=isPaused, readonly) bool paused;
 @property (copy) id /* block */ pausingHandler;
-@property (getter=px_isComplete, nonatomic, readonly) bool px_complete;
 @property (copy) id /* block */ resumingHandler;
 @property (nonatomic, readonly) NSString *sf_bundleID;
 @property (nonatomic, readonly) NSString *sf_error;
@@ -182,13 +181,7 @@
 - (void)unpublish;
 - (id)userInfo;
 
-// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
-
-- (id)fp_fileOperationKind;
-- (bool)fp_isOfFileOperationKind:(id)arg1;
-- (void)fp_setFileOperationKind:(id)arg1;
-
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
 
 + (id)childProgressForBundleID:(id)arg1 andPhase:(unsigned long long)arg2;
 + (id)keyPathsForValuesAffectingInstallPhase;
@@ -203,6 +196,12 @@
 - (unsigned long long)installState;
 - (void)setInstallPhase:(unsigned long long)arg1;
 - (void)setInstallState:(unsigned long long)arg1;
+
+// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
+
+- (id)fp_fileOperationKind;
+- (bool)fp_isOfFileOperationKind:(id)arg1;
+- (void)fp_setFileOperationKind:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
@@ -233,7 +232,6 @@
 - (void)_px_performSimulatedWorkStep:(long long)arg1;
 - (void)px_appendChild:(id)arg1 withPendingUnitCount:(long long)arg2;
 - (void)px_appendSimulatedProgressWithDuration:(double)arg1 pendingUnitCount:(short)arg2;
-- (bool)px_isComplete;
 
 // Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
 

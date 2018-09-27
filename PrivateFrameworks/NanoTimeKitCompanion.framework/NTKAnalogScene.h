@@ -10,6 +10,7 @@
     unsigned long long  _currentDensity;
     NTKVariantNode * _currentVariantNode;
     long long  _dataMode;
+    CLKDevice * _device;
     NTKFaceEditView * _editView;
     SKNode * _faceChild;
     SKSpriteNode * _faceCircleSprite;
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) unsigned long long currentDensity;
 @property (nonatomic, retain) NTKVariantNode *currentVariantNode;
 @property (nonatomic, readonly) long long dataMode;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, retain) NTKFaceEditView *editView;
 @property (nonatomic, readonly) SKNode *face;
 @property (retain) UIColor *faceColor;
@@ -37,6 +39,8 @@
 @property (nonatomic) bool showContentForUnadornedSnapshot;
 @property (nonatomic, retain) UIColor *tickColor;
 @property (nonatomic, readonly) NSMutableArray *variantNodes;
+
++ (id)sceneWithSize:(struct CGSize { double x1; double x2; })arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_applyDataMode:(long long)arg1;
@@ -57,8 +61,8 @@
 - (id)addVariantNodeWithElements:(id)arg1;
 - (id)addVariantNodeWithElements:(id)arg1 parent:(id)arg2 hidden:(bool)arg3;
 - (id)alternativeTickColor;
-- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNodes:(id)arg2;
-- (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3;
+- (void)applyLabelPositions:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNodes:(id)arg2;
+- (void)applyLabelPositions:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (id)background;
 - (id)circle;
@@ -66,6 +70,7 @@
 - (unsigned long long)currentDensity;
 - (id)currentVariantNode;
 - (long long)dataMode;
+- (id)device;
 - (void)didMoveToView:(id)arg1;
 - (id)displayTime;
 - (id)editView;
@@ -76,7 +81,7 @@
 - (id)faceColor;
 - (void)forEachActiveVariant:(id /* block */)arg1;
 - (id)handColor;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 forDevice:(id)arg2;
 - (void)invalidateRasterization;
 - (void)performWristRaiseAnimation;
 - (void)preRender;

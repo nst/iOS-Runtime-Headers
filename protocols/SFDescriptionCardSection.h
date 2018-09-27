@@ -24,6 +24,7 @@
 - (NSArray *)punchoutOptions;
 - (NSString *)punchoutPickerDismissText;
 - (NSString *)punchoutPickerTitle;
+- (NSArray *)richDescriptions;
 - (int)separatorStyle;
 - (void)setAttributionGlyph:(SFImage *)arg1;
 - (void)setAttributionText:(NSString *)arg1;
@@ -42,6 +43,7 @@
 - (void)setPunchoutOptions:(NSArray *)arg1;
 - (void)setPunchoutPickerDismissText:(NSString *)arg1;
 - (void)setPunchoutPickerTitle:(NSString *)arg1;
+- (void)setRichDescriptions:(NSArray *)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setSubtitle:(NSString *)arg1;
 - (void)setTextAlign:(int)arg1;

@@ -29,6 +29,8 @@
 + (bool)wantsStandardConstraints;
 
 - (void).cxx_destruct;
+- (void)addChevron;
+- (bool)allowsCellSelection;
 - (id)chevron;
 - (double)chevronWidth;
 - (id)constantConstraints;
@@ -41,6 +43,7 @@
 - (id)labelView;
 - (bool)labelViewNeedsHuggingContent;
 - (double)minCellHeight;
+- (void)removeChevron;
 - (id)rightMostView;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setLabelViewNeedsHuggingContent:(bool)arg1;

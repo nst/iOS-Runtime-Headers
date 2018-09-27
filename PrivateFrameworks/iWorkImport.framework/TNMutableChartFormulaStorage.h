@@ -4,7 +4,7 @@
 
 @interface TNMutableChartFormulaStorage : TNChartFormulaStorage
 
-- (void)addFormula:(id)arg1 withFormulaID:(struct { unsigned int x1 : 24; })arg2;
+- (void)addFormula:(id)arg1 withFormulaID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 - (void)clearFormulaListForKey:(unsigned long long)arg1;
 - (id)initWithChartFormulaStorage:(id)arg1;
 - (id)mutableFormulaListForType:(unsigned long long)arg1;

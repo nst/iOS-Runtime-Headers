@@ -46,6 +46,7 @@
 - (void)setEnabled:(bool)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setOn:(bool)arg1;
+- (void)setOn:(bool)arg1 animated:(bool)arg2;
 - (void)setShouldHideSwitch:(bool)arg1;
 - (bool)shouldHideSwitch;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

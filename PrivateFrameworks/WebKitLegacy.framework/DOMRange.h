@@ -80,7 +80,7 @@
 - (void)mf_hoistRange;
 - (id)mf_lastNode;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)asDomNode;
 - (id)asDomRange;

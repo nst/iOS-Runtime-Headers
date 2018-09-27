@@ -39,8 +39,8 @@
 
 + (id)contextWithFBSContext:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)clientExtendedData;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

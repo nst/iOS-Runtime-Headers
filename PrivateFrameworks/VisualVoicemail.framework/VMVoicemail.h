@@ -10,6 +10,8 @@
     double  _duration;
     unsigned long long  _flags;
     unsigned long long  _identifier;
+    NSString * _receiverDestinationID;
+    NSString * _receiverISOCountryCode;
     unsigned long long  _remoteUID;
     NSString * _senderDestinationID;
     NSString * _senderISOCountryCode;
@@ -33,6 +35,8 @@
 @property (nonatomic, readonly) bool hasCallbackNumber;
 @property (nonatomic) unsigned long long identifier;
 @property (getter=isRead, nonatomic) bool read;
+@property (nonatomic, readonly, copy) NSString *receiverDestinationID;
+@property (nonatomic, copy) NSString *receiverISOCountryCode;
 @property (nonatomic) unsigned long long remoteUID;
 @property (nonatomic, readonly) NSString *sender;
 @property (nonatomic, copy) NSString *senderDestinationID;
@@ -94,6 +98,8 @@
 - (bool)isTrashed;
 - (bool)isUnread;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)receiverDestinationID;
+- (id)receiverISOCountryCode;
 - (unsigned long long)remoteUID;
 - (id)sender;
 - (id)senderDestinationID;
@@ -112,6 +118,7 @@
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setIdentifier:(unsigned long long)arg1;
 - (void)setRead:(bool)arg1;
+- (void)setReceiverISOCountryCode:(id)arg1;
 - (void)setRemoteUID:(unsigned long long)arg1;
 - (void)setSenderDestinationID:(id)arg1;
 - (void)setSenderISOCountryCode:(id)arg1;

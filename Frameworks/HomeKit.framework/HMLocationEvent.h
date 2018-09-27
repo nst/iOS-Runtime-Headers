@@ -21,7 +21,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3 msgDispatcher:(id)arg4;
+- (void)__configureWithContext:(id)arg1 eventTrigger:(id)arg2;
 - (void)_handleEventUpdatedNotification:(id)arg1;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_retrieveLocationEvent;
@@ -47,5 +47,6 @@
 
 - (unsigned long long)hf_eventType;
 - (bool)hf_isRegionAtHome:(id)arg1;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

@@ -11,6 +11,7 @@
     CKContainerID * _containerID;
     NSDate * _creationDate;
     CKRecordID * _creatorUserRecordID;
+    NSString * _displayedHostname;
     CKEncryptedRecordValueStore * _encryptedValueStore;
     NSString * _etag;
     bool  _hasUpdatedParent;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *displayedHostname;
 @property (nonatomic, readonly) NSData *encryptedFullTokenData;
 @property (nonatomic, readonly) NSData *encryptedPublicSharingKey;
 @property (nonatomic, retain) CKEncryptedRecordValueStore *encryptedValueStore;
@@ -123,6 +125,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *tombstonedPublicKeyIDs;
 @property (nonatomic) bool trackChanges;
+@property (nonatomic, readonly) NSURL *uncachedURL;
 @property (nonatomic) bool useLightweightPCS;
 @property (nonatomic, retain) CKRecordValueStore *valueStore;
 @property (nonatomic, readonly) NSDictionary *values;
@@ -141,7 +144,7 @@
 + (id)encryptFullToken:(id)arg1 shortSharingTokenData:(id)arg2;
 + (id)fullTokenFromBaseToken:(id)arg1 privateToken:(id)arg2;
 + (id)recordWithDuplicatedPackagesOfRecord:(id)arg1 error:(id*)arg2;
-+ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4;
++ (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4 displayedHostname:(id)arg5;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -158,6 +161,7 @@
 - (bool)_valueIsUsingCKEncryptedData:(id)arg1;
 - (id)allKeys;
 - (id)allTokens;
+- (id)allValues;
 - (unsigned long long)assetCount;
 - (unsigned long long)assetDiskSize;
 - (id)baseToken;
@@ -178,6 +182,7 @@
 - (id)debugDescription;
 - (id)decryptFullToken:(id)arg1;
 - (id)description;
+- (id)displayedHostname;
 - (void)encodeSystemFieldsWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encryptedFullTokenData;
@@ -237,6 +242,7 @@
 - (void)setContainerID:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setCreatorUserRecordID:(id)arg1;
+- (void)setDisplayedHostname:(id)arg1;
 - (void)setEncryptedValueStore:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setHasUpdatedParent:(bool)arg1;
@@ -290,6 +296,7 @@
 - (unsigned long long)size;
 - (id)tombstonedPublicKeyIDs;
 - (bool)trackChanges;
+- (id)uncachedURL;
 - (bool)useLightweightPCS;
 - (id)valueForKey:(id)arg1;
 - (id)valueStore;
@@ -411,11 +418,13 @@
 
 - (id)description;
 - (bool)pk_boolForKey:(id)arg1;
+- (id)pk_dataForKey:(id)arg1;
 - (id)pk_dateForKey:(id)arg1;
 - (id)pk_decimalNumberForKey:(id)arg1;
 - (id)pk_description;
 - (id)pk_dictionaryForKey:(id)arg1;
 - (bool)pk_encryptedBoolForKey:(id)arg1;
+- (id)pk_encryptedDataForKey:(id)arg1;
 - (id)pk_encryptedDateForKey:(id)arg1;
 - (id)pk_encryptedDecimalNumberForKey:(id)arg1;
 - (id)pk_encryptedDictionaryForKey:(id)arg1;
@@ -449,5 +458,14 @@
 - (id)safari_numberForKey:(id)arg1;
 - (id)safari_referenceForKey:(id)arg1;
 - (id)safari_stringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcuts.framework/VoiceShortcuts
+
+- (id)dictionaryRepresentation;
+- (id)initWithDictionary:(id)arg1 zoneID:(id)arg2 systemFieldsData:(id)arg3;
+- (id)initWithVoiceShortcut:(id)arg1 zoneID:(id)arg2 systemFieldsData:(id)arg3;
+- (id)keysOfEncryptedProperties;
+- (id)systemFieldsData;
+- (id)voiceShortcutIdentifier;
 
 @end

@@ -111,7 +111,6 @@
 - (bool)combinesPhotoDecorations;
 - (id)cornersBackgroundColor;
 - (id)emptyPlaceholderImage;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfFrontStackItemRelativeToView:(id)arg1;
 - (id)gridBackgroundColor;
 - (double)gridItemSpacing;
 - (double)gridMargin;
@@ -129,6 +128,7 @@
 - (double)posterSquareCornerRadius;
 - (double)posterSubitemCornerRadius;
 - (void)prepareForReuse;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfStackItemAtIndex:(long long)arg1 inCoordinateSpace:(id)arg2;
 - (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })arg1 forItemAtIndex:(long long)arg2;
 - (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })arg1 style:(long long)arg2 forItemAtIndex:(long long)arg3;
 - (void)setCollectionTileLayoutTemplate:(id)arg1 forItemAtIndex:(long long)arg2;

@@ -7,12 +7,11 @@
     TLKMultilineText * _title;
 }
 
-@property (retain) NSArray *details;
-@property (retain) TLKMultilineText *title;
+@property (nonatomic, retain) NSArray *details;
+@property (nonatomic, retain) TLKMultilineText *title;
 
 - (void).cxx_destruct;
 - (id)details;
-- (id)observableProperties;
 - (void)setDetails:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

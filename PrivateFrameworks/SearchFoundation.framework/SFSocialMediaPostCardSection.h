@@ -63,6 +63,8 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, retain) SFImage *verifiedGlyph;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -115,5 +117,9 @@
 - (id)timestamp;
 - (id)type;
 - (id)verifiedGlyph;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

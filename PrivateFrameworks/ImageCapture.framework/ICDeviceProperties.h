@@ -40,7 +40,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceManager;
-- (void)finalize;
 - (bool)hasOpenSession;
 - (struct CGImage { }*)icon;
 - (id)name;

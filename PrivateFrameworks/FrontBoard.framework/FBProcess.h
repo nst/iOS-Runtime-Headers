@@ -48,7 +48,7 @@
 @property (getter=_queue_supportsSuspendOnLock, setter=_queue_setSupportsSuspendOnLock:, nonatomic) bool supportsSuspendOnLock;
 @property (nonatomic, readonly, retain) BSMachPortTaskNameRight *taskNameRight;
 @property (nonatomic, readonly) long long type;
-@property (nonatomic, readonly, retain) FBWorkspace *workspace;
+@property (nonatomic, readonly) FBWorkspace *workspace;
 
 - (void).cxx_destruct;
 - (id)_createWorkspace;
@@ -68,6 +68,7 @@
 - (id)_queue_jobLabel;
 - (id)_queue_name;
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_noteSceneCreationAcknowledged:(id)arg1;
 - (int)_queue_pid;
 - (void)_queue_processDidExit;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;

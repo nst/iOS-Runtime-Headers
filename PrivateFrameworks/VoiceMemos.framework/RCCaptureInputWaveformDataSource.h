@@ -15,6 +15,7 @@
     double  _finalCapturedFragmentDuration;
     bool  _overdub;
     double  _updatedCapturedFragmentDuration;
+    double  captureDelta;
 }
 
 @property (nonatomic, readonly) RCWaveform *baseWaveform;
@@ -43,6 +44,7 @@
 - (void)_modifyAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;
 - (void)_truncateAccumulatedWaveformSegmentsToEndTime:(double)arg1;
 - (void)_updateCapturedComposition:(bool)arg1;
+- (bool)appendAveragePowerLevelsByDigestingAudioPCMBuffer:(id)arg1;
 - (bool)appendAveragePowerLevelsByDigestingCapturedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)appendAveragePowerLevelsByDigestingWaveformSegment:(id)arg1;
 - (id)baseWaveform;
@@ -56,16 +58,18 @@
 - (id)destinationFragment;
 - (double)duration;
 - (double)finalCapturedFragmentDuration;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)finishLoadingWithCompletionTimeoutDate:(id)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id /* block */)arg3;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 completionBlock:(id /* block */)arg2;
+- (void)finishLoadingWithCompletionTimeout:(unsigned long long)arg1 finalizedFragmentDuration:(double)arg2 completionBlock:(id /* block */)arg3;
 - (void)flushPendingCapturedSampleBuffers;
 - (id)initWithDestinationComposition:(id)arg1 destinationFragment:(id)arg2 isOverdub:(bool)arg3;
 - (bool)isOverdub;
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
 - (bool)setPaused:(bool)arg1;
+- (bool)shouldMergeLiveWaveform;
 - (void)startLoading;
 - (struct { double x1; double x2; })timeRangeToHighlight;
 - (void)undoCapture;
+- (void)updateCapturedDelta:(double)arg1;
 - (double)updatedCapturedFragmentDuration;
 - (bool)waitUntilFinished;
 - (bool)waitUntilFinishedWithFinalizedDestinationFragmentDuration:(double)arg1;

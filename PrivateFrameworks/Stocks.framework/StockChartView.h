@@ -77,6 +77,7 @@
 - (void)createYLabelsForMode:(id)arg1;
 - (id)currentDisplayMode;
 - (id)currentGraphView;
+- (void)dealloc;
 - (id)description;
 - (void)didTransitionToDisplayMode:(id)arg1;
 - (bool)drawsBottomLine;

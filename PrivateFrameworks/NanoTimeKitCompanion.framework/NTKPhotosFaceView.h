@@ -5,6 +5,7 @@
 @interface NTKPhotosFaceView : NTKBasePhotosFaceView <NTKPhotosReaderDelegate> {
     unsigned long long  _currentAnalysisOperationID;
     unsigned long long  _currentContent;
+    unsigned long long  _deviceSizeClass;
     id /* block */  _enqueuePreloadedPhotoCompletion;
     _NTKPhotoIndexGenerator * _generator;
     unsigned int  _inPhotoTransition;
@@ -48,6 +49,7 @@
 - (void)_displayCachedPhoto:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_enqueuePreloadedPhoto:(id)arg1 ifMatchingGeneration:(unsigned long long)arg2;
+- (void)_finalizeForSnapshotting:(id /* block */)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_loadSnapshotContentViews;
 - (void)_nextPhotoAnimated:(bool)arg1 method:(unsigned long long)arg2 completion:(id /* block */)arg3;
@@ -59,15 +61,13 @@
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (double)_timeLabelAlphaForEditMode:(long long)arg1;
 - (void)_unloadSnapshotContentViews;
-- (void)_updateContents;
+- (void)_updateContents:(bool)arg1;
 - (void)_updateDateAttributesAnimated:(bool)arg1;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (void)_updateImageToBlur;
-- (void)_updateReader;
+- (void)_updateReader:(bool)arg1;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
-- (id)init;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (id)presentedPhoto;
 - (void)readerDidChange:(id)arg1;
 - (void)setPresentedPhoto:(id)arg1;

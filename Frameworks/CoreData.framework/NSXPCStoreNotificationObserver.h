@@ -9,9 +9,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)_store;
 - (void)dealloc;
 - (id)initForObservationWithName:(id)arg1 store:(id)arg2;
 - (void)setStore:(id)arg1;
-- (id)store;
 
 @end

@@ -14,6 +14,7 @@
     _MRGameControllerPropertiesMessageProtobuf * _gameControllerProperties;
     _MRGenericMessageProtobuf * _genericMessage;
     _MRGetKeyboardSessionProtobuf * _getKeyboardMessage;
+    _MRGetRemoteTextInputSessionProtobuf * _getRemoteTextInputSessionMessage;
     _MRGetStateMessageProtobuf * _getStateMessage;
     _MRGetVoiceInputDevicesMessageProtobuf * _getVoiceInputDevicesMessage;
     _MRGetVoiceInputDevicesResponseMessageProtobuf * _getVoiceInputDevicesResponseMessage;
@@ -43,6 +44,7 @@
     _MRRegisterHIDDeviceResultMessageProtobuf * _registerHIDDeviceResultMessage;
     _MRRegisterVoiceInputDeviceMessageProtobuf * _registerVoiceInputDeviceMessage;
     _MRRegisterVoiceInputDeviceResponseMessageProtobuf * _registerVoiceInputDeviceResponseMessage;
+    _MRRemoteTextInputMessageProtobuf * _remoteTextInputMessage;
     _MRRemoveClientMessageProtobuf * _removeClientMessage;
     _MRRemoveOutputDevicesMessageProtobuf * _removeOutputDevicesMessage;
     _MRRemovePlayerMessageProtobuf * _removePlayerMessage;
@@ -88,6 +90,7 @@
 @property (nonatomic, retain) _MRGameControllerPropertiesMessageProtobuf *gameControllerProperties;
 @property (nonatomic, retain) _MRGenericMessageProtobuf *genericMessage;
 @property (nonatomic, retain) _MRGetKeyboardSessionProtobuf *getKeyboardMessage;
+@property (nonatomic, retain) _MRGetRemoteTextInputSessionProtobuf *getRemoteTextInputSessionMessage;
 @property (nonatomic, retain) _MRGetStateMessageProtobuf *getStateMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesMessageProtobuf *getVoiceInputDevicesMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesResponseMessageProtobuf *getVoiceInputDevicesResponseMessage;
@@ -106,6 +109,7 @@
 @property (nonatomic, readonly) bool hasGameControllerProperties;
 @property (nonatomic, readonly) bool hasGenericMessage;
 @property (nonatomic, readonly) bool hasGetKeyboardMessage;
+@property (nonatomic, readonly) bool hasGetRemoteTextInputSessionMessage;
 @property (nonatomic, readonly) bool hasGetStateMessage;
 @property (nonatomic, readonly) bool hasGetVoiceInputDevicesMessage;
 @property (nonatomic, readonly) bool hasGetVoiceInputDevicesResponseMessage;
@@ -130,6 +134,7 @@
 @property (nonatomic, readonly) bool hasRegisterHIDDeviceResultMessage;
 @property (nonatomic, readonly) bool hasRegisterVoiceInputDeviceMessage;
 @property (nonatomic, readonly) bool hasRegisterVoiceInputDeviceResponseMessage;
+@property (nonatomic, readonly) bool hasRemoteTextInputMessage;
 @property (nonatomic, readonly) bool hasRemoveClientMessage;
 @property (nonatomic, readonly) bool hasRemoveOutputDevicesMessage;
 @property (nonatomic, readonly) bool hasRemovePlayerMessage;
@@ -179,6 +184,7 @@
 @property (nonatomic, retain) _MRRegisterHIDDeviceResultMessageProtobuf *registerHIDDeviceResultMessage;
 @property (nonatomic, retain) _MRRegisterVoiceInputDeviceMessageProtobuf *registerVoiceInputDeviceMessage;
 @property (nonatomic, retain) _MRRegisterVoiceInputDeviceResponseMessageProtobuf *registerVoiceInputDeviceResponseMessage;
+@property (nonatomic, retain) _MRRemoteTextInputMessageProtobuf *remoteTextInputMessage;
 @property (nonatomic, retain) _MRRemoveClientMessageProtobuf *removeClientMessage;
 @property (nonatomic, retain) _MRRemoveOutputDevicesMessageProtobuf *removeOutputDevicesMessage;
 @property (nonatomic, retain) _MRRemovePlayerMessageProtobuf *removePlayerMessage;
@@ -229,6 +235,7 @@
 - (id)gameControllerProperties;
 - (id)genericMessage;
 - (id)getKeyboardMessage;
+- (id)getRemoteTextInputSessionMessage;
 - (id)getStateMessage;
 - (id)getVoiceInputDevicesMessage;
 - (id)getVoiceInputDevicesResponseMessage;
@@ -247,6 +254,7 @@
 - (bool)hasGameControllerProperties;
 - (bool)hasGenericMessage;
 - (bool)hasGetKeyboardMessage;
+- (bool)hasGetRemoteTextInputSessionMessage;
 - (bool)hasGetStateMessage;
 - (bool)hasGetVoiceInputDevicesMessage;
 - (bool)hasGetVoiceInputDevicesResponseMessage;
@@ -271,6 +279,7 @@
 - (bool)hasRegisterHIDDeviceResultMessage;
 - (bool)hasRegisterVoiceInputDeviceMessage;
 - (bool)hasRegisterVoiceInputDeviceResponseMessage;
+- (bool)hasRemoteTextInputMessage;
 - (bool)hasRemoveClientMessage;
 - (bool)hasRemoveOutputDevicesMessage;
 - (bool)hasRemovePlayerMessage;
@@ -324,6 +333,7 @@
 - (id)registerHIDDeviceResultMessage;
 - (id)registerVoiceInputDeviceMessage;
 - (id)registerVoiceInputDeviceResponseMessage;
+- (id)remoteTextInputMessage;
 - (id)removeClientMessage;
 - (id)removeOutputDevicesMessage;
 - (id)removePlayerMessage;
@@ -348,6 +358,7 @@
 - (void)setGameControllerProperties:(id)arg1;
 - (void)setGenericMessage:(id)arg1;
 - (void)setGetKeyboardMessage:(id)arg1;
+- (void)setGetRemoteTextInputSessionMessage:(id)arg1;
 - (void)setGetStateMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesResponseMessage:(id)arg1;
@@ -379,6 +390,7 @@
 - (void)setRegisterHIDDeviceResultMessage:(id)arg1;
 - (void)setRegisterVoiceInputDeviceMessage:(id)arg1;
 - (void)setRegisterVoiceInputDeviceResponseMessage:(id)arg1;
+- (void)setRemoteTextInputMessage:(id)arg1;
 - (void)setRemoveClientMessage:(id)arg1;
 - (void)setRemoveOutputDevicesMessage:(id)arg1;
 - (void)setRemovePlayerMessage:(id)arg1;

@@ -33,7 +33,9 @@
     int  _fidelity;
     NSMutableArray * _flameGroups;
     int  _flameProgramHandle;
+    double  _frameRateScalingFactor;
     unsigned int  _framebufferHandle;
+    bool  _freezesAura;
     bool  _hasCustomActiveFrame;
     double  _horizontalScaleFactor;
     bool  _isInitialized;
@@ -51,6 +53,7 @@
     EAGLContext * _previousContext;
     bool  _reduceFrameRate;
     bool  _reduceMotionEnabled;
+    bool  _reduceThinkingFramerate;
     bool  _renderInBackground;
     unsigned int  _renderbufferHandle;
     NSMutableSet * _renderingDisabledReasons;
@@ -59,6 +62,7 @@
     bool  _showAura;
     double  _startTime;
     int  _state;
+    bool  _transitionFinished;
     int  _vShadID;
     unsigned int  _vertexArrayObjectHandle;
     unsigned int  _vertexBufferHandle;
@@ -70,20 +74,27 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } activeFrame;
 @property (nonatomic) <SUICFlamesViewDelegate> *delegate;
 @property (nonatomic, retain) UIColor *dictationColor;
+@property (nonatomic) bool freezesAura;
 @property (nonatomic) double horizontalScaleFactor;
 @property (nonatomic, readonly) bool isRenderingEnabled;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) UIImage *overlayImage;
 @property (nonatomic) bool paused;
 @property (nonatomic) bool reduceFrameRate;
+@property (nonatomic) bool reduceThinkingFramerate;
 @property (nonatomic) bool renderInBackground;
 @property (nonatomic) bool showAura;
 @property (nonatomic) int state;
 
++ (id)_indexCache;
++ (bool)_supportsAdaptiveFramerate;
 + (Class)layerClass;
++ (void)prewarmShadersForScreen:(id)arg1 activeFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 fidelity:(int)arg3;
++ (void)prewarmShadersForScreen:(id)arg1 initialFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 activeFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 fidelity:(int)arg4 prewarmInBackground:(bool)arg5;
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 fidelity:(int)arg3;
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 fidelity:(int)arg3 prewarmInBackground:(bool)arg4;
++ (void)setIndexCacheSize:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActive:(id)arg1;
@@ -92,6 +103,8 @@
 - (void)_cleanupGL;
 - (double)_currentDisplayScale;
 - (float)_currentMicPowerLevel;
+- (bool)_deviceNeeds2xFlamesWithCurrentScale:(double)arg1;
+- (void)_didFinishTransition;
 - (int)_generateIndicesForNumCircleShapes:(int)arg1 withMaxSubdivisionLevel:(float)arg2 startingWithNumSubdivisionLevel:(float)arg3 forIndices:(unsigned int**)arg4 atStartIndex:(int)arg5 withFill:(bool)arg6 withCullingForAura:(bool)arg7 forVertices:(struct { }*)arg8;
 - (bool)_initGLAndSetupDisplayLink:(bool)arg1;
 - (bool)_isOriginatingProcessInBackground;
@@ -111,7 +124,6 @@
 - (void)_tearDownDisplayLink;
 - (void)_updateCurveLayer:(id)arg1;
 - (void)_updateDisplayLinkPausedState;
-- (void)_updateDisplayLinkPausedStateFromSuccess:(bool)arg1;
 - (void)_updateOrthoProjection;
 - (bool)accelerateTransitions;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrame;
@@ -120,6 +132,7 @@
 - (id)dictationColor;
 - (void)didMoveToSuperview;
 - (void)fadeOutCurrentAura;
+- (bool)freezesAura;
 - (double)horizontalScaleFactor;
 - (bool)inDictationMode;
 - (bool)inSiriMode;
@@ -132,6 +145,7 @@
 - (bool)paused;
 - (void)prewarmShadersForCurrentMode;
 - (bool)reduceFrameRate;
+- (bool)reduceThinkingFramerate;
 - (bool)renderInBackground;
 - (void)resetAndReinitializeGL:(bool)arg1;
 - (void)setAccelerateTransitions:(bool)arg1;
@@ -140,12 +154,14 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDictationColor:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setFreezesAura:(bool)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setHorizontalScaleFactor:(double)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOverlayImage:(id)arg1;
 - (void)setPaused:(bool)arg1;
 - (void)setReduceFrameRate:(bool)arg1;
+- (void)setReduceThinkingFramerate:(bool)arg1;
 - (void)setRenderInBackground:(bool)arg1;
 - (void)setRenderingEnabled:(bool)arg1 forReason:(id)arg2;
 - (void)setShowAura:(bool)arg1;

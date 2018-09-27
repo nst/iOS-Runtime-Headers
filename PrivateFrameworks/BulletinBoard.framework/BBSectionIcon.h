@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) NSSet *variants;
 
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -21,5 +23,9 @@
 - (bool)isEqual:(id)arg1;
 - (void)setVariants:(id)arg1;
 - (id)variants;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
+
+- (id)nc_imageForFormat:(int)arg1 scale:(double)arg2;
 
 @end

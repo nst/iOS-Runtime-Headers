@@ -7,11 +7,10 @@
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     }  _itemProviders;
-    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
+    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16> { 
         struct RetainPtr<WebItemProviderLoadResult> {} *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
-        unsigned int m_mask; 
     }  _loadResults;
     long long  _numberOfItems;
     long long  _pendingOperationCount;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextAttachment : NSObject <NSCoding, NSTextAttachmentContainer, UIAccessibilityContentSizeCategoryImageAdjusting> {
+@interface NSTextAttachment : NSObject <NSCoding, NSSecureCoding, NSTextAttachmentContainer, UIAccessibilityContentSizeCategoryImageAdjusting> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -24,7 +24,7 @@
         unsigned int _standaloneAlignment : 3; 
     }  _taFlags;
     NSString * _uti;
-    UITextAttachmentView * _wrapperView;
+    NSTextAttachmentView * _wrapperView;
 }
 
 @property (nonatomic) bool adjustsImageSizeForAccessibilityContentSizeCategory;
@@ -45,6 +45,7 @@
 + (void)initialize;
 + (void)registerTextAttachmentClass:(Class)arg1 forFileType:(id)arg2;
 + (void)registerTextAttachmentViewProviderClass:(Class)arg1 forFileType:(id)arg2;
++ (bool)supportsSecureCoding;
 + (Class)textAttachmentClassForFileType:(id)arg1;
 + (Class)textAttachmentViewProviderClassForFileType:(id)arg1;
 
@@ -89,7 +90,7 @@
 - (bool)usesTextAttachmentView;
 - (id)viewProviderForParentView:(id)arg1 characterIndex:(unsigned long long)arg2 layoutManager:(id)arg3;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (bool)_attachmentHasImage:(id)arg1;
 + (id)_imageFromAttachment:(id)arg1;

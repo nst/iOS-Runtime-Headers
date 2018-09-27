@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) _SFReloadOptionsController *reloadOptionsController;
 
 - (void).cxx_destruct;
-- (id)activityImage;
+- (id)_activityBundleImageConfiguration;
 - (id)activityTitle;
 - (id)activityType;
 - (bool)canPerformWithActivityItems:(id)arg1;

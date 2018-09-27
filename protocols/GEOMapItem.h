@@ -8,6 +8,7 @@
 - (bool)_acceptsApplePay;
 - (NSArray *)_additionalPlaceInfos;
 - (int)_addressGeocodeAccuracy;
+- (<GEOAnnotatedItemList> *)_annotatedItemList;
 - (double)_areaInMeters;
 - (GEOMapRegion *)_arrivalMapRegionForTransportType:(int)arg1;
 - (GEOMapItemAdditionalPlaceInfo *)_asPlaceInfo;
@@ -78,6 +79,7 @@
 - (int)_placeDisplayStyle;
 - (int)_placeDisplayType;
 - (int)_placeType;
+- (GEOPlacecardLayoutConfiguration *)_placecardLayoutConfiguration;
 - (NSString *)_poiPinpointURLString;
 - (NSString *)_poiSurveyURLString;
 - (GEOPriceDescription *)_priceDescription;
@@ -129,6 +131,7 @@
 - (bool)hasDisplayMaxZoom;
 - (bool)hasDisplayMinZoom;
 - (bool)hasExpiredComponents;
+- (bool)hasVenueCapacity;
 - (bool)isDisputed;
 - (bool)isEqualToMapItem:(id <GEOMapItem>)arg1;
 - (bool)isEventAllDay;
@@ -137,8 +140,10 @@
 - (int)referenceFrame;
 - (NSString *)shortAddress;
 - (NSArray *)spatialMappedCategories;
+- (NSArray *)spatialMappedPlaceCategories;
 - (NSString *)spokenNameForLocale:(NSString *)arg1;
 - (NSTimeZone *)timezone;
+- (long long)venueCapacity;
 - (NSString *)weatherDisplayName;
 
 @optional

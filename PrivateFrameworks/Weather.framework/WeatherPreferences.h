@@ -20,6 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=isLocalWeatherEnabled, setter=setLocalWeatherEnabled:, nonatomic) bool isLocalWeatherEnabled;
+@property (nonatomic, readonly) NSDate *lastUpdated;
 @property (nonatomic, readonly) City *localWeatherCity;
 @property (readonly) Class superclass;
 @property (nonatomic) <SynchronizedDefaultsDelegate> *syncDelegate;
@@ -52,6 +53,7 @@
 - (id)initWithPersistence:(id)arg1;
 - (bool)isCelsius;
 - (bool)isLocalWeatherEnabled;
+- (id)lastUpdated;
 - (int)loadActiveCity;
 - (int)loadDefaultSelectedCity;
 - (id)loadDefaultSelectedCityID;

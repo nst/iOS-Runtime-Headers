@@ -14,6 +14,7 @@
 
 + (bool)isLocalReadable;
 
+- (void)_loadDatabaseIfNecessary;
 - (id)accountDictionaries;
 - (id)copyAccounts;
 - (void)dealloc;

@@ -3,30 +3,28 @@
  */
 
 @interface HMDLaunchHandler : HMFObject {
-    int  _beingConfigured;
     NSObject<OS_dispatch_queue> * _handlerQueue;
-    NSMutableSet * _relaunchTriggeringClients;
+    NSMutableSet * _registeredRelaunchClients;
 }
 
-@property (nonatomic) int beingConfigured;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *handlerQueue;
-@property (nonatomic, retain) NSMutableSet *relaunchTriggeringClients;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *handlerQueue;
+@property (nonatomic, readonly) NSMutableSet *registeredRelaunchClients;
 
++ (bool)_fileExistsAtPath:(id)arg1;
++ (bool)_removeFileAtPath:(id)arg1 error:(id*)arg2;
++ (int)_setJetsamPriorityUsingCommand:(int)arg1;
++ (bool)_writeDictionary:(id)arg1 toFileURL:(id)arg2 error:(id*)arg3;
++ (id)relaunchPlistPath;
 + (id)sharedHandler;
 
 - (void).cxx_destruct;
-- (void)_reevaluate;
-- (void)_removeAssertionPlist;
-- (void)_saveAssertionPlist;
-- (int)beingConfigured;
-- (void)beingConfigured:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)_setJetsamPriorityElevated:(bool)arg1;
+- (void)_updateOrRemoveRelaunchPlist;
 - (void)deregisterForRelaunch:(id)arg1;
 - (id)handlerQueue;
 - (id)init;
 - (void)registerForRelaunch:(id)arg1;
-- (id)relaunchTriggeringClients;
-- (void)setBeingConfigured:(int)arg1;
-- (void)setHandlerQueue:(id)arg1;
-- (void)setRelaunchTriggeringClients:(id)arg1;
+- (id)registeredRelaunchClients;
+- (void)removePersistentRelaunchRegistrationsIfNecessary;
 
 @end

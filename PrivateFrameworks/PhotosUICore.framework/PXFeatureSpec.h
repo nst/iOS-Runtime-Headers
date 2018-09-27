@@ -3,7 +3,6 @@
  */
 
 @interface PXFeatureSpec : NSObject {
-    double  __displayScale;
     PXExtendedTraitCollection * __extendedTraitCollection;
     PXLayoutMetricInterpolator * __horizontalContentGuideInsetsInterpolator;
     struct CGSize { 
@@ -14,6 +13,7 @@
     NSCache * __viewSpecCache;
     NSArray * _collectionTileImageOverlaySpecs;
     NSArray * _collectionTileImageOverlaySpecsHighlighted;
+    double  _displayScale;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -32,7 +32,6 @@
     long long  _userInterfaceIdiom;
 }
 
-@property (nonatomic, readonly) double _displayScale;
 @property (nonatomic, readonly) PXExtendedTraitCollection *_extendedTraitCollection;
 @property (nonatomic, readonly) PXLayoutMetricInterpolator *_horizontalContentGuideInsetsInterpolator;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } _layoutReferenceSize;
@@ -43,8 +42,11 @@
 @property (nonatomic, readonly) NSArray *collectionTileImageOverlaySpecsHighlighted;
 @property (nonatomic, readonly) UIColor *defaultBackgroundColor;
 @property (nonatomic, readonly) double defaultCornerRadius;
+@property (nonatomic, readonly) double defaultDarkenSourceOverAmount;
+@property (nonatomic, readonly) NSString *defaultListChevronImageName;
 @property (nonatomic, readonly) UIColor *defaultPlaceholderColor;
 @property (nonatomic, readonly) UIColor *defaultPlacesPlaceholderColor;
+@property (nonatomic, readonly) double displayScale;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
 @property (nonatomic, readonly) long long localizedLeadingTextAlignment;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } safeAreaInsets;
@@ -55,7 +57,6 @@
 
 - (void).cxx_destruct;
 - (long long)_capitalizationStyleFromTextAttributes:(id)arg1 defaultCapitalizationStyle:(long long)arg2;
-- (double)_displayScale;
 - (id)_extendedTraitCollection;
 - (id)_horizontalContentGuideInsetsInterpolator;
 - (struct CGSize { double x1; double x2; })_layoutReferenceSize;
@@ -72,8 +73,11 @@
 - (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
 - (struct UIColor { Class x1; }*)defaultBackgroundColor;
 - (double)defaultCornerRadius;
+- (double)defaultDarkenSourceOverAmount;
+- (id)defaultListChevronImageName;
 - (struct UIColor { Class x1; }*)defaultPlaceholderColor;
 - (struct UIColor { Class x1; }*)defaultPlacesPlaceholderColor;
+- (double)displayScale;
 - (id)init;
 - (id)initWithExtendedTraitCollection:(id)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;

@@ -7,7 +7,7 @@
 
 + (<TSDMTLDataBuffer> *)newDataBufferWithVertexAttributes:(NSArray *)arg1 meshSize:(struct CGSize { double x1; double x2; })arg2 device:(id <MTLDevice>)arg3;
 + (<TSDGLDataBuffer> *)newDataBufferWithVertexAttributes:(NSArray *)arg1 quadParticleCount:(unsigned long long)arg2 device:(id <MTLDevice>)arg3;
-+ (<TSDMTLDataBuffer> *)newDataBufferWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(bool)arg4 device:(id <MTLDevice>)arg5;
++ (<TSDMTLDataBuffer> *)newDataBufferWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 device:(id <MTLDevice>)arg4;
 + (<TSDMTLDataBuffer> *)newDataBufferWithVertexRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 device:(id <MTLDevice>)arg3;
 + (<TSDMTLDataBuffer> *)newDataBufferWithVertexRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 meshSize:(struct CGSize { double x1; double x2; })arg3 device:(id <MTLDevice>)arg4;
 + (<TSDMTLDataBuffer> *)newDataBufferWithVertexRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 meshSize:(struct CGSize { double x1; double x2; })arg3 textureFlipped:(bool)arg4 device:(id <MTLDevice>)arg5;
@@ -17,10 +17,12 @@
 - (unsigned long long)centerAttributeIndex;
 - (void)disableWithDevice:(id <MTLDevice>)arg1;
 - (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2;
+- (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 advanceDynamicBuffer:(bool)arg3;
 - (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (void)drawWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 advanceDynamicBuffer:(bool)arg4;
 - (void)enableDataBuffer;
 - (void)encodeWithEncoder:(id <MTLRenderCommandEncoder>)arg1 atIndex:(unsigned long long)arg2;
-- (id)initWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 doubleBuffered:(bool)arg4;
+- (id)initWithVertexAttributes:(NSArray *)arg1 vertexCount:(unsigned long long)arg2 indexElementCount:(unsigned long long)arg3 bufferCount:(unsigned long long)arg4;
 - (id)initWithVertexRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textureRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 meshSize:(struct CGSize { double x1; double x2; })arg3 textureFlipped:(bool)arg4 includeCenterAttribute:(bool)arg5;
 - (unsigned long long)metalDrawMode;
 - (unsigned long long)positionAttributeIndex;

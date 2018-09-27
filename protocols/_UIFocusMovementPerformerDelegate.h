@@ -5,6 +5,6 @@
 
 @required
 
-- (void)_focusMovementPerformer:(_UIFocusMovementPerformer *)arg1 didFailToPerformFocusMovement:(_UIFocusMovementRequest *)arg2;
+- (bool)_handleFailedFocusMovementRequest:(_UIFocusMovementRequest *)arg1 withPerformer:(_UIFocusMovementPerformer *)arg2;
 
 @end

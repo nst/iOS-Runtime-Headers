@@ -6,7 +6,6 @@
     bool  _isRequestingShiftFunction;
     NSMutableArray * _locationsToShift;
     NSLock * _lock;
-    <_GEOLocationShifterProxy> * _proxy;
     NSObject<OS_dispatch_queue> * _queue;
     int  _resetPrivacyToken;
     NSCache * _shiftFunctionCache;
@@ -18,9 +17,9 @@
 @property (nonatomic, readonly) bool locationShiftEnabled;
 @property (readonly) Class superclass;
 
++ (id)_proxy;
 + (bool)isLocationShiftEnabled;
 + (bool)isLocationShiftRequiredForCoordinate:(struct { double x1; double x2; })arg1;
-+ (bool)isLocationShiftRequiredForRegion:(id)arg1;
 + (unsigned int)locationShiftFunctionVersion;
 + (void)useLocalProxy;
 

@@ -32,7 +32,6 @@
 - (id)bulletinRequestWithCalendarNotification:(id)arg1;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
-- (id)closeActionForAlertInfo:(id)arg1;
 - (id)customActionWithAlertInfo:(id)arg1 forBulletin:(id)arg2;
 - (void)dataProviderDidLoad;
 - (void)dealloc;

@@ -12,6 +12,7 @@
 @property (getter=isFromMe, nonatomic, readonly) bool fromMe;
 @property (nonatomic, readonly) Class impactBalloonViewClass;
 @property (nonatomic, readonly) IMHandle *sender;
+@property (nonatomic, readonly) bool shouldCacheSize;
 @property (nonatomic, readonly) BOOL tailShape;
 @property (nonatomic, readonly) NSDate *time;
 
@@ -36,6 +37,7 @@
 - (bool)needsAdjustedTextAlignmentInsets;
 - (bool)needsPreservedAspectRatio;
 - (id)sender;
+- (bool)shouldCacheSize;
 - (BOOL)tailShape;
 - (id)time;
 - (BOOL)transcriptOrientation;

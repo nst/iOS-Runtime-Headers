@@ -25,11 +25,12 @@
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationDidEnterBackground:(bool)arg1;
 - (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
 - (void)keyCommandWasPerformed:(id)arg1;
 - (void)keyCommandsWithCompletionHandler:(id /* block */)arg1;
 - (void)notifyFirstTimeAppearanceWithActions:(unsigned long long)arg1;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(id /* block */)arg1;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(id /* block */)arg1;
 - (void)setAllowInteractiveTransitions:(bool)arg1;
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;

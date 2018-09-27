@@ -3,10 +3,6 @@
  */
 
 @interface _CPSearchViewDisappearFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSearchViewDisappearFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int viewDisappearEvent : 1; 
-    }  _has;
     unsigned long long  _timestamp;
     int  _viewDisappearEvent;
 }
@@ -15,19 +11,14 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasViewDisappearEvent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int viewDisappearEvent;
 
 - (id)dictionaryRepresentation;
-- (bool)hasTimestamp;
-- (bool)hasViewDisappearEvent;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

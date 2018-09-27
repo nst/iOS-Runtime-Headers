@@ -3,6 +3,7 @@
  */
 
 @interface NTKTimelapseListing : NSObject <NSCopying, NTKAVListing> {
+    CLKDevice * _device;
     UIImage * _image;
     NSString * _imageName;
     NTKPhotoAnalysis * _photoAnalysis;
@@ -27,7 +28,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)discardAssets;
 - (id)image;
-- (id)initWithTheme:(unsigned long long)arg1 videoIndex:(long long)arg2 photoAnalysis:(id)arg3;
+- (id)initForDevice:(id)arg1 withTheme:(unsigned long long)arg2 videoIndex:(long long)arg3 photoAnalysis:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (bool)isSimilarTo:(id)arg1;
 - (id)photoAnalysis;

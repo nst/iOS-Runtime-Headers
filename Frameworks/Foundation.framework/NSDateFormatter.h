@@ -7,7 +7,9 @@
     long long  _cacheGeneration;
     unsigned long long  _counter;
     struct __CFDateFormatter { } * _formatter;
-    NSObject<OS_dispatch_semaphore> * _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
 }
 
 @property (copy) NSString *AMSymbol;
@@ -184,6 +186,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
++ (id)mtTimeOnlyFormatter;
+
 - (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
@@ -203,8 +207,28 @@
 
 - (id)initWithFormat:(id)arg1 localeIdentifier:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
++ (id)dateFormatterWithFormat:(id)arg1 forReuse:(bool)arg2;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 forReuse:(bool)arg3;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 timezone:(id)arg3 forReuse:(bool)arg4;
++ (id)dateFormatterWithFormat:(id)arg1 timezone:(id)arg2 forReuse:(bool)arg3;
+
+- (id)initWithFormat:(id)arg1 localeIdentifier:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
+
++ (id)st_sharedShortTimeDateFormatter;
++ (id)st_sharedStandaloneAbbreviatedMonthDateFormatter;
++ (id)st_sharedStandaloneRelativeDateFormatter;
++ (id)st_sharedStandaloneWeekdayFormatter;
+
 // Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
 
 + (id)dateFormatterWithFormat:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksUI.framework/StocksUI
+
++ (id)su_localizedYearFormat;
 
 @end

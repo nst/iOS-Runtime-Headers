@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) CNContactStore *contactStore;
 @property (nonatomic, copy) NSArray *contacts;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CNAvatarViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNUIPRLikenessResolver> *likenessResolver;

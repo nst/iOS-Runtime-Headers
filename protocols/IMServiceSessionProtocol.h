@@ -16,13 +16,15 @@
 - (void)changeGroups:(NSDictionary *)arg1;
 - (void)closeSessionChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
 - (void)declineInvitationToChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)eagerUploadCancel:(NSURL *)arg1;
+- (void)eagerUploadTransfer:(NSDictionary *)arg1;
 - (void)enrollDeviceInSMSRelay:(NSString *)arg1;
 - (void)enrollSelfDeviceInSMSRelay;
 - (void)holdBuddyUpdates;
 - (void)importMessage:(NSDictionary *)arg1 isRead:(bool)arg2;
 - (void)invitePersonInfo:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
 - (void)invitePersonInfoToiMessageChat:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
-- (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 groupID:(NSString *)arg5 joinProperties:(NSDictionary *)arg6;
+- (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 groupID:(NSString *)arg5 lastAddressedHandle:(NSString *)arg6 lastAddressedSIMID:(NSString *)arg7 joinProperties:(NSDictionary *)arg8;
 - (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 joinProperties:(NSDictionary *)arg5;
 - (void)leaveChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
 - (void)leaveiMessageChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;

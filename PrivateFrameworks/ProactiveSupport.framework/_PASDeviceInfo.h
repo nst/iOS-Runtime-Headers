@@ -9,6 +9,7 @@
 + (bool)isAudioAccessory;
 + (bool)isBatterySaverEnabled;
 + (bool)isBetaBuild;
++ (bool)isDNUEnabled;
 + (bool)isDemoModeEnabled;
 + (bool)isInternalBuild;
 + (bool)isLowEndHardware;

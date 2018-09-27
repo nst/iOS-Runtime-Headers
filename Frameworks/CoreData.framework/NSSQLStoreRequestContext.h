@@ -11,6 +11,8 @@
     NSPersistentStoreRequest * _persistentStoreRequest;
     id  _result;
     NSSQLCore * _sqlCore;
+    bool  _storeIsInMemory;
+    NSNumber * _transactionID;
     bool  _useColoredLogging;
     bool  _useConcurrentFetching;
 }
@@ -28,6 +30,8 @@
 @property (nonatomic, readonly) NSSQLRowCache *rowCache;
 @property (nonatomic, readonly) bool shouldRegisterQueryGeneration;
 @property (nonatomic, readonly) NSSQLCore *sqlCore;
+@property (nonatomic, readonly) bool storeIsInMemory;
+@property (nonatomic, readonly) NSNumber *transactionID;
 @property (nonatomic, readonly) bool useColoredLogging;
 @property (nonatomic, readonly) bool useConcurrentFetching;
 
@@ -58,8 +62,11 @@
 - (void)setException:(id)arg1;
 - (void)setLocalError:(id)arg1;
 - (void)setResult:(id)arg1;
+- (void)setTransactionID:(id)arg1;
 - (bool)shouldRegisterQueryGeneration;
 - (id)sqlCore;
+- (bool)storeIsInMemory;
+- (id)transactionID;
 - (bool)useColoredLogging;
 - (bool)useConcurrentFetching;
 

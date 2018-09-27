@@ -11,6 +11,7 @@
     NSSQLModel * _dstModel;
     NSArray * _existingTableNames;
     bool  _hasPKTableChanges;
+    NSMutableDictionary * _historyMigrationPropertyDataForEntityCache;
     NSMutableArray * _indexesToCreate;
     NSMutableArray * _indexesToDrop;
     NSMappingModel * _mappingModel;
@@ -21,13 +22,15 @@
     NSMutableDictionary * _sourceToDestinationEntityMap;
     NSSQLModel * _srcModel;
     NSSQLCore * _store;
+    NSArray * _tableGenerationSQL;
     NSMutableDictionary * _tableMigrationDescriptionsByEntity;
     NSMutableDictionary * _transformedEntityMigrations;
 }
 
-@property (readonly) NSSQLiteAdapter *adapter;
-@property (readonly) NSSQLModel *dstModel;
-@property (readonly) NSSQLModel *srcModel;
+@property (nonatomic, readonly) NSSQLiteAdapter *adapter;
+@property (nonatomic, readonly) NSSQLModel *dstModel;
+@property (nonatomic, retain) NSMutableDictionary *historyMigrationCache;
+@property (nonatomic, readonly) NSSQLModel *srcModel;
 
 + (bool)_annotatesMigrationMetadata;
 + (void)_setAnnotatesMigrationMetadata:(bool)arg1;
@@ -42,10 +45,13 @@
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (void)_determineRTreeExtensionsToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineReindexedEntitiesAndAffectedProperties;
+- (void)_determineUniquenessConstraintsToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_disconnect;
+- (id /* block */)_indexMigrationBlockForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (id)_originalRootsForAddedEntity:(id)arg1;
 - (void)_populateEntityMigrationDescriptionsAndEntityMap;
 - (void)_populateTableMigrationDescriptions;
+- (bool)_sourceTableIsClean:(id)arg1;
 - (id)adapter;
 - (bool)clearTombstoneColumnsForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)createEntityMigrationStatements;
@@ -55,8 +61,10 @@
 - (id)dstModel;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
 - (void)generatePKTableUpdateStatements;
+- (id)historyMigrationCache;
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (bool)performMigration:(id*)arg1;
+- (void)setHistoryMigrationCache:(id)arg1;
 - (bool)shiftTombstones;
 - (id)srcModel;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;

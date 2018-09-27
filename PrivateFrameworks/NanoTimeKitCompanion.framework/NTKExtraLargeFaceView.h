@@ -24,7 +24,7 @@
     UIView * _zoomingIconTimeView;
 }
 
-+ (id)_swatchImageForColorOption:(id)arg1;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_applyBreathingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
@@ -45,6 +45,7 @@
 - (void)_initLargeTimeLabelIfNecessary;
 - (void)_initSmallTimeLabelIfNecessary;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_keylineLabelActiveAreaInsetsForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
@@ -73,7 +74,7 @@
 - (double)_verticalPaddingForStatusBar;
 - (bool)_wantsTimeTravelStatusModule;
 - (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 

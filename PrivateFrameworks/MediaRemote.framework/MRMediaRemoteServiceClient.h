@@ -35,6 +35,7 @@
 - (void)dealloc;
 - (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
+- (bool)isOriginRegistered:(id)arg1;
 - (id)notificationClient;
 - (id)playbackQueueDispatchQueue;
 - (void)processPlayerPathInvalidationHandlersWithBlock:(id /* block */)arg1;

@@ -19,7 +19,7 @@
 - (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)icon;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(bool)arg2 suppressPreview:(bool)arg3;
 - (int)mediaType;
 - (id)pass;
 - (id)passView;

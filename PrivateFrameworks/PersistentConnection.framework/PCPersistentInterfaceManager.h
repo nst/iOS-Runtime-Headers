@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@interface PCPersistentInterfaceManager : NSObject <PCInterfaceMonitorDelegate> {
+@interface PCPersistentInterfaceManager : NSObject <CoreTelephonyClientDataDelegate, PCInterfaceMonitorDelegate> {
     int  _WWANContextIdentifier;
     NSString * _WWANInterfaceName;
     struct __CFSet { } * _WiFiAutoAssociationDelegates;
     PCSimpleTimer * _WiFiAutoAssociationDisableTimer;
+    CoreTelephonyClient * _ctClient;
     bool  _ctIsWWANInHomeCountry;
     void * _ctServerConnection;
     NSMapTable * _delegatesAndQueues;
@@ -62,13 +63,16 @@
 - (void)_createCTConnection;
 - (void)_ctConnectionAttempt;
 - (void)_inCallWWANOverrideTimerFired;
+- (bool)_isCellularCall:(struct __CTCall { }*)arg1;
 - (bool)_isInternetReachableLocked;
 - (bool)_isWWANInHomeCountryLocked;
 - (bool)_isWiFiUsable;
 - (void)_mainThreadCTConnectionAttempt;
+- (id)_nonCellularMonitor;
+- (void)_processCallStatusChanged:(id)arg1;
+- (void)_processConnectionStatusLocked:(id)arg1;
+- (void)_processDataStatusLocked:(id)arg1;
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
-- (void)_serverCallback:(id)arg1 info:(id)arg2;
-- (void)_serverCallbackLocked:(id)arg1 info:(id)arg2;
 - (void)_updateCTIsWWANInHomeCountry:(bool)arg1 isWWANInterfaceDataActive:(bool)arg2;
 - (void)_updateWWANInterfaceAssertions;
 - (void)_updateWWANInterfaceAssertionsLocked;
@@ -82,8 +86,11 @@
 - (bool)areAllNetworkInterfacesDisabled;
 - (void)bindCFStream:(struct __CFReadStream { }*)arg1 toWWANInterface:(bool)arg2;
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
+- (void)connectionActivationError:(id)arg1 connection:(int)arg2 error:(int)arg3;
+- (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
 - (id)currentLinkQualityString;
 - (void)cutWiFiManagerDeviceAttached:(id)arg1;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (void)dealloc;
 - (bool)doesWWANInterfaceExist;
 - (void)enableWakeOnWiFi:(bool)arg1 forDelegate:(id)arg2;

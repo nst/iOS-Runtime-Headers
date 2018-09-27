@@ -5,8 +5,10 @@
 
 @required
 
+- (void)focusScanDidComplete;
 - (bool)portraitSceneMonitoringRequiresStageThresholds;
-- (bool)resolveSDOFStatusWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; float x17; unsigned char x18; double x19; int x20; int x21; int x22; float x23; float x24; int x25; int x26; unsigned char x27; int x28; int x29; float x30; float x31; int x32; int x33; int x34; int x35; long long x36; }*)arg2 flashModeForSceneMonitoring:(int)arg3 hdrModeForSceneMonitoring:(int)arg4 sisModeForSceneMonitoring:(int)arg5 effectStatus:(int*)arg6;
+- (bool)resolveSDOFStatusWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 frameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg2 sceneFlags:(unsigned long long)arg3 flashWillFire:(bool)arg4 effectStatus:(int*)arg5 stagePreviewStatus:(int*)arg6;
+- (void)setAutoFocusInProgress:(bool)arg1 focusLocked:(bool)arg2 oneShotFocusScanInProgress:(bool)arg3;
 - (void)setPortraitSceneMonitoringRequiresStageThresholds:(bool)arg1;
 - (void)setSDOFBackgroundShiftSum:(float)arg1 invalidShiftRatio:(float)arg2 closeCanonicalDisparityAverage:(float)arg3 faceCanonicalDisparityAverages:(NSArray *)arg4 erodedForegroundRatio:(float)arg5 foregroundRatio:(float)arg6 occluded:(bool)arg7 faces:(NSArray *)arg8;
 

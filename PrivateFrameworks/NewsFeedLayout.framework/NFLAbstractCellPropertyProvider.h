@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) double scaleValue;
 @property (nonatomic, readonly) NSSet *supportedColumnSpans;
 
++ (id)plistProvider;
 + (id)publisherTitleFontLarge;
 + (id)publisherTitleFontSmall;
 

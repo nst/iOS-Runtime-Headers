@@ -50,17 +50,43 @@
     unsigned long long  _fileSizeAtPreviousCheck;
     bool * _finalDurationNeedsToBeWrittenForTrack;
     BWIrisMovieInfo * _firstIrisMovieInfo;
+    NSMutableArray * _flushingIrisMovieGenerators;
     struct OpaqueFigFormatWriter { } * _formatWriter;
     bool  _haveDebugASBD;
     bool * _haveSeenSamplesForTrack;
     bool  _ignoreFileSizeLimit;
+    NSObject<OS_dispatch_queue> * _irisMovieGenerationQueue;
     BWIrisMovieGenerator * _irisMovieGenerator;
     bool  _irisMovieProcessingSuspended;
     bool  _irisSampleReferenceMoviesEnabled;
     int  _irisStillImageTimeTrackID;
     int  _irisStillImageTimeTrackTimeScale;
     unsigned int  _irisTerminationStatus;
-    BWIrisMovieGenerator * _lastRecordingIrisMovieGenerator;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _largestWrittenAudioPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _largestWrittenVideoPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _lastKnownAudioDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _lastKnownVideoDuration;
+    BWLimitedGMErrorLogger * _limitedGMErrorLogger;
     unsigned long long  _masterInputIndex;
     int  _masterInputTimeScale;
     struct { 
@@ -89,6 +115,18 @@
     bool  _recordingIsForFrontCamera;
     int  _recordingState;
     FigCaptureMovieFileRecordingSettings * _settings;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _smallestWrittenAudioPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _smallestWrittenVideoPTS;
     NSArray * _stagingQueues;
     struct { 
         long long value; 
@@ -128,7 +166,7 @@
 - (bool)_driveStateMachineWithStopMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned long long)arg2 sampleBufferAlreadyAtHeadOfQueue:(bool)arg3;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_findMarkers:(struct __CFString { }*)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_findStartMarkersWithMatchedStagedSetting:(id*)arg1 thumbnailSourcePixelBuffer:(struct __CVBuffer {}**)arg2 sensorVideoPort:(const struct __CFString {}**)arg3;
-- (void)_finishIrisMovieGenerationForLastRecordingIfNeeded;
+- (void)_finishIrisMovieGeneration;
 - (void)_forceEarlyTerminationWithErrorCode:(int)arg1;
 - (unsigned long long)_getCurrentFileSize:(bool)arg1;
 - (void)_handleFormatWriterDidWriteFragmentNotification;

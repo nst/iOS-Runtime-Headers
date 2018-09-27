@@ -72,7 +72,9 @@
 - (id)ownerUUID;
 - (long long)proximity;
 - (double)relativeOffset;
+- (id)relativeOffsetRaw;
 - (void)removeSnoozedAlarm:(id)arg1;
+- (id)semanticIdentifier;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
 - (void)setAlarmType:(long long)arg1;
@@ -83,6 +85,7 @@
 - (void)setOriginalAlarm:(id)arg1;
 - (void)setProximity:(long long)arg1;
 - (void)setRelativeOffset:(double)arg1;
+- (void)setRelativeOffsetRaw:(id)arg1;
 - (void)setSnoozedAlarms:(id)arg1;
 - (void)setSoundName:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;

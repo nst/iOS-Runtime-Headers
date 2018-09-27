@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMImagePickerCameraViewController : CAMCameraViewController <CAMCameraCaptureDelegate, CAMCameraConfigurationDelegate, PLVideoViewDelegate, UIImagePickerCameraViewController> {
+@interface CAMImagePickerCameraViewController : CAMCameraViewController <CAMCameraCaptureDelegate, CAMCameraConfigurationDelegate, PLCropOverlayDelegate, PLVideoViewDelegate, UIImagePickerCameraViewController> {
     PLCropOverlay * __cropOverlay;
     PLPhotoTileViewController * __photoTileViewController;
     PLVideoView * __videoView;

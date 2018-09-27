@@ -62,6 +62,8 @@
 @property (getter=isSlideNumberVisible, nonatomic, readonly) bool slideNumberVisible;
 @property (nonatomic, retain) KNSlideStyle *style;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsBuilds;
+@property (nonatomic, readonly) bool supportsCollaborativeEditing;
 @property (nonatomic, retain) KNTitlePlaceholderInfo *titlePlaceholder;
 @property (getter=isTitleVisible, nonatomic, readonly) bool titleVisible;
 @property (nonatomic, retain) KNTransition *transition;
@@ -247,6 +249,7 @@
 - (id)slideNode;
 - (id)slideNumberPlaceholder;
 - (id)style;
+- (bool)supportsBuilds;
 - (id)tagForInfo:(id)arg1;
 - (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)titlePlaceholder;

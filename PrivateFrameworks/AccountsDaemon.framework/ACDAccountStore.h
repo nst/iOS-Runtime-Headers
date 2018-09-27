@@ -51,6 +51,7 @@
 - (void)_completeSave:(id)arg1 dataclassActions:(id)arg2 completion:(id /* block */)arg3;
 - (id)_credentialItemWithAccountIdentifier:(id)arg1 serviceName:(id)arg2;
 - (id)_dataclassWithName:(id)arg1 createIfNecessary:(bool)arg2;
+- (void)_delegate_accountStoreDidSaveAccount:(id)arg1;
 - (void)_deleteAccountNoSave:(id)arg1 withDataclassActions:(id)arg2 error:(id*)arg3;
 - (id)_displayAccountForAccount:(id)arg1;
 - (bool)_handleAccountAdd:(id)arg1 withDataclassActions:(id)arg2 error:(id*)arg3;
@@ -58,7 +59,6 @@
 - (bool)_isManagedAccount:(id)arg1 enabledForManagedDataclass:(id)arg2;
 - (id)_legacyCredentialForAccount:(id)arg1 client:(id)arg2 error:(id*)arg3;
 - (id)_lockForAccountType:(id)arg1;
-- (void)_noteAccountStoreDidSaveAccountsWithAccountTypeIdentifiers:(id)arg1 accountIdentifiers:(id)arg2;
 - (bool)_performDataclassActions:(id)arg1 forAccount:(id)arg2 error:(id*)arg3;
 - (id)_predicateForFetchingAccountsWithManagedAccountTypeID:(id)arg1 options:(unsigned long long)arg2;
 - (bool)_removeAccountNoSave:(id)arg1 withDataclassActions:(id)arg2 withError:(id*)arg3;

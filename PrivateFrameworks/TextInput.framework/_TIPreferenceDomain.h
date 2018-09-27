@@ -18,7 +18,7 @@
 
 + (id)domainWithName:(id)arg1 notification:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)domain;
 - (double)lastSynchronizedTime;
 - (bool)needsGetSync;

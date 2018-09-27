@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)createActivityBundleImageConfigurationForBundle:(id)arg1 imageNamed:(id)arg2 activityCategory:(long long)arg3;
 - (id)dataSource;
 - (id)itemSourceController;
 - (id)pu_activityImageNamed:(id)arg1;

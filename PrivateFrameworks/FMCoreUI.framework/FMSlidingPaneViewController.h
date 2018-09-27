@@ -3,6 +3,7 @@
  */
 
 @interface FMSlidingPaneViewController : FMViewController {
+    NSMutableArray * _actionFutures;
     double  _animationDuration;
     double  _animationInitialVelocity;
     unsigned long long  _animationOptions;
@@ -25,10 +26,12 @@
     UIVisualEffect * _paneVisualEffect;
 }
 
+@property (nonatomic, retain) NSMutableArray *actionFutures;
 @property (nonatomic) double animationDuration;
 @property (nonatomic) double animationInitialVelocity;
 @property (nonatomic) unsigned long long animationOptions;
 @property (nonatomic) double animationSpringDamping;
+@property (nonatomic, readonly) FMFuture *currentFuture;
 @property (nonatomic) <FMSlidingPaneViewControllerDelegate> *delegate;
 @property (nonatomic) bool didHideToolbar;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } paneContentInsets;
@@ -51,12 +54,15 @@
 - (struct CGSize { double x1; double x2; })_preferredSizeForPaneState:(id)arg1;
 - (void)_presentPaneState:(id)arg1 animated:(bool)arg2 interactive:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_removeChildViewControllerForState:(id)arg1;
+- (id)actionFutures;
 - (double)animationDuration;
 - (double)animationInitialVelocity;
 - (unsigned long long)animationOptions;
 - (double)animationSpringDamping;
 - (void)awakeFromNib;
 - (void)commonConfiguration;
+- (void)completeFuture:(id)arg1;
+- (id)currentFuture;
 - (id)delegate;
 - (void)didDismissPane:(id)arg1 animated:(bool)arg2;
 - (bool)didHideToolbar;
@@ -67,6 +73,7 @@
 - (void)dismissSegue:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)isPaneShowing;
+- (id)newActionFuture;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paneContentInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paneInsets;
 - (void)paneSizeChanged:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forViewController:(id)arg2;
@@ -76,6 +83,7 @@
 - (id)paneVisualEffect;
 - (void)presentPaneViewController:(id)arg1 fromEdge:(unsigned long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)presentPaneViewController:(id)arg1 fromEdge:(unsigned long long)arg2 withPercent:(double)arg3 completion:(id /* block */)arg4;
+- (void)setActionFutures:(id)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationInitialVelocity:(double)arg1;
 - (void)setAnimationOptions:(unsigned long long)arg1;

@@ -6,8 +6,10 @@
 
 @property (nonatomic, copy) NSDate *adjustmentVersion;
 @property (nonatomic, retain) NSDate *adjustmentVersion;
+@property (nonatomic) unsigned short ageType;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, readonly) bool assetVisible;
+@property (nonatomic) unsigned short baldType;
 @property (nonatomic) double blurScore;
 @property (nonatomic) double centerX;
 @property (nonatomic) double centerY;
@@ -19,18 +21,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int effectiveNameSource;
-@property (nonatomic) double expressionConfidence;
-@property (nonatomic) double expressionScore1;
-@property (nonatomic) double expressionScore2;
-@property (nonatomic) double expressionScore3;
-@property (nonatomic) int expressionType1;
-@property (nonatomic) int expressionType2;
-@property (nonatomic) int expressionType3;
+@property (nonatomic) unsigned short eyeMakeupType;
+@property (nonatomic) unsigned short eyesState;
 @property (nonatomic) int faceAlgorithmVersion;
 @property (nonatomic, retain) PLFaceCrop *faceCrop;
 @property (nonatomic, retain) PLDetectedFaceGroup *faceGroup;
 @property (nonatomic, retain) PLDetectedFaceGroup *faceGroupBeingKeyFace;
 @property (nonatomic, retain) PLDetectedFaceprint *faceprint;
+@property (nonatomic) unsigned short facialHairType;
+@property (nonatomic) unsigned short genderType;
+@property (nonatomic) unsigned short glassesType;
+@property (nonatomic, retain) NSString *groupingIdentifier;
+@property (nonatomic) unsigned short hairColorType;
 @property (nonatomic) bool hasSmile;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidden;
@@ -40,6 +42,7 @@
 @property (nonatomic, readonly) bool isTrainingFace;
 @property (nonatomic) double leftEyeX;
 @property (nonatomic) double leftEyeY;
+@property (nonatomic) unsigned short lipMakeupType;
 @property (nonatomic, readonly, retain) id localID;
 @property (nonatomic) bool manual;
 @property (nonatomic, retain) NSString *masterIdentifier;
@@ -50,8 +53,6 @@
 @property (nonatomic, retain) PLPerson *person;
 @property (nonatomic, retain) <PLSyncablePerson> *personBeingKeyFace;
 @property (nonatomic, retain) PLPerson *personBeingKeyFace;
-@property (nonatomic) double posePitch;
-@property (nonatomic) double poseRoll;
 @property (nonatomic) double poseYaw;
 @property (nonatomic) int qualityMeasure;
 @property (nonatomic, retain) NSSet *rejectedPersons;
@@ -59,6 +60,7 @@
 @property (nonatomic) double rightEyeX;
 @property (nonatomic) double rightEyeY;
 @property (nonatomic) double size;
+@property (nonatomic) unsigned short smileType;
 @property (nonatomic) long long sourceHeight;
 @property (nonatomic) long long sourceWidth;
 @property (readonly) Class superclass;
@@ -99,6 +101,7 @@
 - (bool)isSyncableChange;
 - (bool)isTrainingFace;
 - (id)localID;
+- (id)momentShare;
 - (id)namingDescription;
 - (double)photosFaceRepresentationBlurScore;
 - (double)photosFaceRepresentationCenterX;

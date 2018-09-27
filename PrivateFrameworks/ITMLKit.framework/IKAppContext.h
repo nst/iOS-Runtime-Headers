@@ -17,6 +17,7 @@
         bool respondsToCancelHighlightForAppContext; 
         bool respondsToDidInspectElementModeChanged; 
     }  _delegateFlags;
+    bool  _isAirplaneModeEnabled;
     bool  _isValid;
     JSContext * _jsContext;
     IKJSFoundation * _jsFoundation;
@@ -32,10 +33,13 @@
     bool  _privileged;
     id  _reloadData;
     bool  _remoteInspectionEnabled;
+    NSURL * _resolvedBootURL;
     bool  _respondsToTraitCollection;
     NSError * _responseError;
     NSString * _responseScript;
+    bool  _running;
     bool  _trusted;
+    NSThread * _validThread;
     IKViewElementRegistry * _viewElementRegistry;
     IKJSInspectorController * _webInspectorController;
 }
@@ -66,8 +70,10 @@
 @property (getter=isPrivileged, nonatomic) bool privileged;
 @property (nonatomic, retain) id reloadData;
 @property (nonatomic) bool remoteInspectionEnabled;
+@property (nonatomic, readonly, copy) NSURL *resolvedBootURL;
 @property (nonatomic, retain) NSError *responseError;
 @property (nonatomic, copy) NSString *responseScript;
+@property (getter=isRunning) bool running;
 @property (readonly) Class superclass;
 @property (getter=isTrusted, nonatomic) bool trusted;
 @property (nonatomic, readonly) IKViewElementRegistry *viewElementRegistry;
@@ -75,7 +81,6 @@
 
 + (id)currentAppContext;
 + (bool)isInFactoryMode;
-+ (void)load;
 + (void)registerPrivateProtocols:(id)arg1 forClass:(Class)arg2;
 
 - (void).cxx_destruct;
@@ -90,7 +95,9 @@
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1 addPrivateInterfaces:(bool)arg2;
 - (void)_invalidateJSThread;
 - (void)_jsThreadMain;
+- (void)_networkPropertiesChanged:(id)arg1;
 - (id)_preferredLaunchURL;
+- (bool)_prepareStartWithURL:(id)arg1;
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourcePerform;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
@@ -111,6 +118,7 @@
 - (void)contextDidFailWithError:(id)arg1;
 - (void)contextDidStartWithJS:(id)arg1 options:(id)arg2;
 - (void)contextDidStopWithOptions:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)evaluate:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
 - (void)evaluateDelegateBlockSync:(id /* block */)arg1;
@@ -126,6 +134,7 @@
 - (void)inspectElementModeChanged:(bool)arg1;
 - (bool)isInspectElementModeEnabled;
 - (bool)isPrivileged;
+- (bool)isRunning;
 - (bool)isTrusted;
 - (bool)isValid;
 - (id)jsContext;
@@ -144,6 +153,7 @@
 - (void)reload;
 - (id)reloadData;
 - (bool)remoteInspectionEnabled;
+- (id)resolvedBootURL;
 - (id)responseError;
 - (id)responseScript;
 - (void)resumeWithOptions:(id)arg1;
@@ -163,6 +173,7 @@
 - (void)setRemoteInspectionEnabled:(bool)arg1;
 - (void)setResponseError:(id)arg1;
 - (void)setResponseScript:(id)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setTrusted:(bool)arg1;
 - (void)setWebInspectorController:(id)arg1;
 - (void)start;

@@ -20,6 +20,7 @@
 - (void)_ensureCurrentImageValuesAreComputed;
 - (void)_ensureInitialImageValuesAreComputed;
 - (bool)_imageCurrentValuesCacheIsValid;
+- (id)apertureValuesWithAccuracy:(long long)arg1;
 - (id)autoCropValuesWithAccuracy:(long long)arg1;
 - (void)computeAutoEnhanceWithCompletionHandler:(id /* block */)arg1;
 - (id)editSource;

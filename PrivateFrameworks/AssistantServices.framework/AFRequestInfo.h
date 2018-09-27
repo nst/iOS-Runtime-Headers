@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFRequestInfo : NSObject <NSSecureCoding> {
+@interface AFRequestInfo : NSObject <NSCopying, NSSecureCoding> {
     long long  _activationEvent;
     NSNumber * _combinedRank;
     NSNumber * _combinedScore;
@@ -17,14 +17,16 @@
     NSString * _interactionId;
     NSNumber * _notifyState;
     NSNumber * _onDeviceUtterancesPresent;
+    unsigned long long  _options;
     NSNumber * _originalRank;
     NSNumber * _originalScore;
     NSString * _previousUtterance;
     NSString * _sessionId;
+    AFSpeechRequestOptions * _speechRequestOptions;
     SAStartLocalRequest * _startLocalRequest;
     SAStartRequest * _startRequest;
-    bool  _suppressAlert;
     NSString * _text;
+    unsigned long long  _timestamp;
     NSString * _utteranceSource;
 }
 
@@ -42,14 +44,16 @@
 @property (nonatomic, copy) NSString *interactionId;
 @property (nonatomic, copy) NSNumber *notifyState;
 @property (nonatomic, copy) NSNumber *onDeviceUtterancesPresent;
+@property (nonatomic) unsigned long long options;
 @property (nonatomic, copy) NSNumber *originalRank;
 @property (nonatomic, copy) NSNumber *originalScore;
 @property (nonatomic, copy) NSString *previousUtterance;
 @property (nonatomic, copy) NSString *sessionId;
+@property (nonatomic, copy) AFSpeechRequestOptions *speechRequestOptions;
 @property (nonatomic, copy) SAStartLocalRequest *startLocalRequest;
 @property (nonatomic, copy) SAStartRequest *startRequest;
-@property (nonatomic) bool suppressAlert;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic, copy) NSString *utteranceSource;
 
 + (bool)supportsSecureCoding;
@@ -58,6 +62,7 @@
 - (long long)activationEvent;
 - (id)combinedRank;
 - (id)combinedScore;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correctedSpeech;
 - (id)correctedSpeechContext;
 - (id)description;
@@ -68,10 +73,14 @@
 - (id)handoffRequestData;
 - (bool)handoffRequiresUserInteraction;
 - (id)handoffURLString;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTimestamp:(unsigned long long)arg1;
 - (id)interactionId;
+- (bool)isSpeechRequest;
 - (id)notifyState;
 - (id)onDeviceUtterancesPresent;
+- (unsigned long long)options;
 - (id)originalRank;
 - (id)originalScore;
 - (id)previousUtterance;
@@ -91,19 +100,21 @@
 - (void)setInteractionId:(id)arg1;
 - (void)setNotifyState:(id)arg1;
 - (void)setOnDeviceUtterancesPresent:(id)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setOriginalRank:(id)arg1;
 - (void)setOriginalScore:(id)arg1;
 - (void)setPreviousUtterance:(id)arg1;
 - (void)setSessionId:(id)arg1;
+- (void)setSpeechRequestOptions:(id)arg1;
 - (void)setStartLocalRequest:(id)arg1;
 - (void)setStartRequest:(id)arg1;
-- (void)setSuppressAlert:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setUtteranceSource:(id)arg1;
+- (id)speechRequestOptions;
 - (id)startLocalRequest;
 - (id)startRequest;
-- (bool)suppressAlert;
 - (id)text;
+- (unsigned long long)timestamp;
 - (id)utteranceSource;
 
 @end

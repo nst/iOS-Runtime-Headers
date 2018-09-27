@@ -61,6 +61,7 @@
 - (bool)_showsAuthoringEnvironment;
 - (bool)_supportsJitteringSyncRedraw;
 - (void)_systemTimeAnimationStarted:(id)arg1;
+- (struct SCNVector4 { float x1; float x2; float x3; float x4; })_viewport;
 - (unsigned long long)antialiasingMode;
 - (id)audioEngine;
 - (id)audioEnvironmentNode;

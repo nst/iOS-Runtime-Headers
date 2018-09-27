@@ -15,9 +15,9 @@
 + (bool)supportsSecureCoding;
 + (int)type;
 
+- (void).cxx_destruct;
 - (id)autoconvertedCandidatePointerValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;

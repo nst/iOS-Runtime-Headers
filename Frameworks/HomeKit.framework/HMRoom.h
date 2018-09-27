@@ -2,23 +2,20 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMRoom : NSObject <HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMRoom : NSObject <HFReorderableHomeKitObject, HFStateDumpBuildable, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMApplicationData * _applicationData;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
+    _HMContext * _context;
     HMHome * _home;
-    HMFMessageDispatcher * _msgDispatcher;
+    HMFUnfairLock * _lock;
     NSString * _name;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     NSUUID * _uniqueIdentifier;
     NSUUID * _uuid;
 }
 
 @property (nonatomic, readonly, copy) NSArray *accessories;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *hf_allCameraProfiles;
@@ -33,9 +30,7 @@
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -45,7 +40,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (void)_handleRoomRenamedNotification:(id)arg1;
 - (void)_invalidate;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
@@ -55,9 +50,8 @@
 - (void)_updateRoomName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)accessories;
 - (id)applicationData;
-- (id)clientQueue;
+- (id)context;
 - (void)dealloc;
-- (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)init;
@@ -65,16 +59,11 @@
 - (id)initWithName:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
-- (id)msgDispatcher;
 - (id)name;
-- (id)propertyQueue;
 - (void)setApplicationData:(id)arg1;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setHome:(id)arg1;
-- (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -89,8 +78,7 @@
 - (id)hf_allZones;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_unpairedHomePods;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateWallpaperImage:(id)arg1;

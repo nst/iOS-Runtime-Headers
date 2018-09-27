@@ -13,6 +13,7 @@
 @property (nonatomic) long long fakeTrafficIncidentAlert;
 @property (nonatomic) double initialRequestDelay;
 @property (nonatomic) double initialTraceSpeedMultiplier;
+@property (nonatomic) bool isConnectedToCarplay;
 @property (nonatomic) bool isTracePlaybackCameraTestMode;
 @property (nonatomic) unsigned long long maxAlternateRoutesCount;
 @property (nonatomic) bool muteSpeechOverride;
@@ -22,7 +23,7 @@
 @property (nonatomic) bool shouldLoadReroutesFromTrace;
 @property (nonatomic) bool shouldUseGuidanceEventManager;
 @property (nonatomic) bool speechEnabled;
-@property (nonatomic, retain) NSString *voiceLanguage;
+@property (nonatomic, copy) NSString *voiceLanguage;
 @property (nonatomic) unsigned long long voiceVolume;
 @property (nonatomic) bool walkingVoiceGuidance;
 
@@ -37,6 +38,7 @@
 - (void)setFakeTrafficIncidentAlert:(long long)arg1;
 - (void)setInitialRequestDelay:(double)arg1;
 - (void)setInitialTraceSpeedMultiplier:(double)arg1;
+- (void)setIsConnectedToCarplay:(bool)arg1;
 - (void)setIsTracePlaybackCameraTestMode:(bool)arg1;
 - (void)setMaxAlternateRoutesCount:(unsigned long long)arg1;
 - (void)setMuteSpeechOverride:(bool)arg1;

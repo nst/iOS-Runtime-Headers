@@ -23,6 +23,7 @@
     NSString * _longAddress;
     double  _maxLocatingInterval;
     FMAccuracyOverlay * _overlay;
+    FMFPlacemark * _placemark;
     NSString * _shortAddressString;
     UIImage * _smallAnnotationIcon;
     UIImage * _smallOverlayIcon;
@@ -50,6 +51,7 @@
 @property (nonatomic, copy) NSString *longAddress;
 @property (nonatomic) double maxLocatingInterval;
 @property (nonatomic, retain) FMAccuracyOverlay *overlay;
+@property (nonatomic, retain) FMFPlacemark *placemark;
 @property (nonatomic, readonly, copy) NSString *shortAddress;
 @property (nonatomic, copy) NSString *shortAddressString;
 @property (nonatomic, retain) UIImage *smallAnnotationIcon;
@@ -98,6 +100,7 @@
 - (id)longAddress;
 - (double)maxLocatingInterval;
 - (id)overlay;
+- (id)placemark;
 - (void)resetLocateInProgress:(id)arg1;
 - (void)resetLocateInProgressTimer;
 - (void)setAge:(id)arg1;
@@ -116,6 +119,7 @@
 - (void)setLongAddress:(id)arg1;
 - (void)setMaxLocatingInterval:(double)arg1;
 - (void)setOverlay:(id)arg1;
+- (void)setPlacemark:(id)arg1;
 - (void)setShortAddressString:(id)arg1;
 - (void)setSmallAnnotationIcon:(id)arg1;
 - (void)setSmallOverlayIcon:(id)arg1;

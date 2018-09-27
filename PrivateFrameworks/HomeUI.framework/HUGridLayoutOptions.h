@@ -5,6 +5,7 @@
 @interface HUGridLayoutOptions : NSObject <HUGridDisplayOptions, NSCopying> {
     HUGridCameraCellLayoutOptions * _cameraCellOptions;
     double  _columnSpacing;
+    unsigned long long  _columnStyle;
     unsigned long long  _contentColorStyle;
     bool  _editing;
     double  _headlineBaselineToFirstStatusItemBaselineDistance;
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) double cameraCellWidth;
 @property (nonatomic, readonly) long long cellSizeSubclass;
 @property (nonatomic) double columnSpacing;
+@property (nonatomic) unsigned long long columnStyle;
 @property (nonatomic) unsigned long long contentColorStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -64,6 +66,7 @@
 @property (nonatomic, copy) HUGridHeadlineCellLayoutOptions *headlineCellOptions;
 @property (nonatomic, retain) UIFont *headlineFont;
 @property (nonatomic) bool headlineHidden;
+@property (nonatomic, readonly) double largeTitleCellTopMargin;
 @property (nonatomic) double lastStatusItemBaselineToStatusDetailsBaselineDistance;
 @property (nonatomic) unsigned long long maxStatusItemCount;
 @property (nonatomic) unsigned long long maxStatusItemNumberOfLines;
@@ -99,25 +102,24 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewSize;
 @property (nonatomic, readonly) long long viewSizeSubclass;
 
-+ (struct { unsigned long long x1; unsigned long long x2; })_controlCenterModuleGridLayoutForItemType:(unsigned long long)arg1 sizeSubclass:(unsigned long long)arg2;
-+ (unsigned long long)_controlCenterModuleHCFNumberOfColumnsForSizeSubclass:(unsigned long long)arg1;
-+ (id)_controlCenterModuleLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 itemType:(unsigned long long)arg2;
-+ (id)_defaultOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 overrideSizeSubclass:(id)arg2;
-+ (id)_legacyControlCenterLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 layoutStyle:(long long)arg2 itemType:(unsigned long long)arg3;
-+ (struct { unsigned long long x1; unsigned long long x2; })controlCenterGridLayoutForDesignType:(unsigned long long)arg1 itemType:(unsigned long long)arg2 sizeSubclass:(unsigned long long)arg3;
-+ (id)controlCenterLayoutOptionsForDesignType:(unsigned long long)arg1 viewSize:(struct CGSize { double x1; double x2; })arg2 layoutStyle:(long long)arg3 itemType:(unsigned long long)arg4;
++ (unsigned long long)_numberOfColumnsForFlexibleWidthStyleWithSizeSubclass:(long long)arg1;
 + (id)defaultOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)defaultOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 columnStyle:(unsigned long long)arg2;
++ (id)defaultOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 columnStyle:(unsigned long long)arg2 overrideSizeSubclass:(id)arg3;
 + (id)defaultOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1 overrideSizeSubclass:(long long)arg2;
-+ (double)preferredControlCenterModuleHeightForViewWidth:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)_childDisplayOptions;
+- (double)_pointWidthForFixedColumnStyleWithFractionalNumberOfColumns:(double)arg1;
+- (double)_pointWidthForFlexibleColumnStyleWithFractionalNumberOfColumns:(double)arg1 totalNumberOfColumns:(long long)arg2 totalWidth:(double)arg3;
+- (double)_pointWidthForFractionalNumberOfColumns:(double)arg1;
 - (double)_preferredSectionHeightForNumberOfRows:(unsigned long long)arg1 withCellHeight:(double)arg2;
 - (double)cameraCellHeight;
 - (id)cameraCellOptions;
 - (double)cameraCellWidth;
 - (long long)cellSizeSubclass;
 - (double)columnSpacing;
+- (unsigned long long)columnStyle;
 - (unsigned long long)contentColorStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)headlineBaselineToFirstStatusItemBaselineDistance;
@@ -126,15 +128,15 @@
 - (id)headlineCellOptions;
 - (id)headlineFont;
 - (bool)headlineHidden;
-- (id)initWithViewSize:(struct CGSize { double x1; double x2; })arg1 overrideSizeSubclass:(id)arg2;
+- (id)initWithViewSize:(struct CGSize { double x1; double x2; })arg1 columnStyle:(unsigned long long)arg2 overrideSizeSubclass:(id)arg3;
 - (bool)isEditing;
+- (double)largeTitleCellTopMargin;
 - (double)lastStatusItemBaselineToStatusDetailsBaselineDistance;
 - (unsigned long long)maxStatusItemCount;
 - (unsigned long long)maxStatusItemNumberOfLines;
 - (double)minimumMarginBelowHeadline;
 - (double)minimumMarginBelowStatus;
 - (id)navigationBarOptions;
-- (long long)numberOfCameraCellsPerRow;
 - (long long)numberOfColumns;
 - (id)overrideNumberOfColumns;
 - (id)overrideViewSizeSubclass;
@@ -156,6 +158,7 @@
 - (id)serviceCellOptions;
 - (void)setCameraCellOptions:(id)arg1;
 - (void)setColumnSpacing:(double)arg1;
+- (void)setColumnStyle:(unsigned long long)arg1;
 - (void)setContentColorStyle:(unsigned long long)arg1;
 - (void)setEditing:(bool)arg1;
 - (void)setHeadlineBaselineToFirstStatusItemBaselineDistance:(double)arg1;

@@ -142,6 +142,7 @@
 - (void)setOptionTransitionStyle:(id)arg1;
 - (void)setOptionUserCancel:(id)arg1;
 - (void)setOptionUserFallback:(id)arg1;
+- (void)setShowingCoachingHint:(bool)arg1 event:(long long)arg2 reply:(id /* block */)arg3;
 - (void)setTouchIDAuthenticationAllowableReuseDuration:(double)arg1;
 - (void)setTouchIDAuthenticationRetryLimit:(id)arg1;
 - (void)setUiDelegate:(id)arg1;

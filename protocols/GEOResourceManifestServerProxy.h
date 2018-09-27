@@ -17,7 +17,8 @@
 - (<GEOResourceManifestServerProxyDelegate> *)delegate;
 - (void)forceUpdate:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)getResourceManifestWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOResourceManifestDownload *, NSError *, void*
-- (id)initWithDelegate:(id <GEOResourceManifestServerProxyDelegate>)arg1 configuration:(GEOResourceManifestConfiguration *)arg2 additionalMigrationTaskClasses:(NSArray *)arg3;
+- (id)initWithDelegate:(id <GEOResourceManifestServerProxyDelegate>)arg1 configuration:(GEOResourceManifestConfiguration *)arg2;
+- (unsigned long long)maximumZoomLevelForStyle:(int)arg1 scale:(int)arg2;
 - (void)openConnection;
 - (void)performOpportunisticResourceLoading;
 - (oneway void)resetActiveTileGroup;

@@ -4,9 +4,11 @@
 
 @interface SPUISearchModelGeneral : SPUISearchModel {
     SPClientSession * _session;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (retain) SPClientSession *session;
+@property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)activate;
@@ -18,9 +20,11 @@
 - (id)session;
 - (void)setForceStableResults:(bool)arg1;
 - (void)setInfinitePatience:(bool)arg1;
-- (void)setQueryContext:(id)arg1 allowInternet:(bool)arg2;
 - (void)setSession:(id)arg1;
-- (void)updatesDispabled;
+- (void)setWorkQueue:(id)arg1;
+- (void)updateWithQueryContext:(id)arg1;
+- (void)updatesDisabled;
 - (void)updatesEnabled;
+- (id)workQueue;
 
 @end

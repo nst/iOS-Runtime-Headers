@@ -6,6 +6,7 @@
     bool  _footerButtonIsSkip;
     NSObject<BFFPasscodeViewControllerDelegate> * _passcodeCreationDelegate;
     BFFPasscodeCreationManager * _passcodeManager;
+    bool  _showingSpinner;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -42,8 +43,8 @@
 - (void)passcodeInput:(id)arg1 tappedFooterButton:(id)arg2;
 - (void)passcodeInput:(id)arg1 willChangeContents:(id)arg2;
 - (id)passcodeManager;
+- (void)passcodeManager:(id)arg1 didSetPasscodeWithSuccess:(bool)arg2 error:(id)arg3;
 - (void)passcodeManager:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-- (void)passcodeManagerDidSetPasscode:(id)arg1;
 - (void)passcodeManagerWillSetPasscode:(id)arg1;
 - (id)passcodeOptionAlertController;
 - (void)setPasscodeCreationDelegate:(id)arg1;

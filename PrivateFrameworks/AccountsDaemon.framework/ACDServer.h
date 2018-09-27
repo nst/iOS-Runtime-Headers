@@ -14,7 +14,6 @@
     ACDDataclassOwnersManager * _dataclassOwnersManager;
     NSObject<OS_dispatch_queue> * _deferredConnectionResumeQueue;
     NSObject<OS_dispatch_semaphore> * _deferredConnectionResumeQueueSemaphore;
-    NSMutableDictionary * _entitlementsByConnection;
     NSMutableArray * _oauthSignerClients;
     NSXPCListener * _oauthSignerListener;
     NSObject<OS_dispatch_queue> * _performMigrationQueue;
@@ -37,14 +36,16 @@
 - (void)_beginObservingIDSProxyNotifications;
 - (void)_beginObservingLanguageChangeNotfication;
 - (void)_beginObservingLaunchNotifications;
-- (id)_enumerateAllEntitlementForConnection:(id)arg1;
+- (void)_beginObservingMigrationDidFinishDarwinNotifications;
+- (void)_endObservingLanguageChangeNotification;
+- (void)_endObservingMigrationDidFinishDarwinNotifications;
+- (void)_handleLanguageChangedDarwinNotification;
 - (id)_keyForConnection:(id)arg1;
 - (id)_newDaemonAccountStoreFilterForClient:(id)arg1;
 - (id)_newOAuthSignerForClient:(id)arg1;
 - (void)_signalDeferredConnectionResumeQueueSemaphore;
-- (void)_stopObservingLanguageChangeNotification;
 - (id)accessPluginManager;
-- (void)accountStoreDidSaveAccounts:(id)arg1;
+- (void)accountStore:(id)arg1 didSaveAccount:(id)arg2;
 - (id)authenticationDialogManager;
 - (id)authenticationPluginManager;
 - (id)clientForConnection:(id)arg1;
@@ -52,7 +53,6 @@
 - (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;
 - (id)dataclassOwnersManager;
 - (void)dealloc;
-- (id)entitlementsForConnection:(id)arg1;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)remoteDeviceProxy;

@@ -106,6 +106,7 @@
 - (void)loadView;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
+- (id)navigationController;
 - (id)navigationItem;
 - (id)newRotationController;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;

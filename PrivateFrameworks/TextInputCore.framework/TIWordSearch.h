@@ -29,10 +29,10 @@
 
 + (id)configureUserDictionaryObserver:(id)arg1 previousObserver:(id)arg2;
 + (id)mecabraLearningDictionaryDirectory;
-+ (id)newMecabraWrapperWithType:(int)arg1 creationOptions:(unsigned long long)arg2;
 + (id)recipientRecords;
 + (id)sharedOperationQueue;
 
+- (void).cxx_destruct;
 - (void)_addFacemarkCandidatesToResultSet:(id)arg1 forInput:(id)arg2;
 - (void)adaptOfflineToParagraph:(id)arg1 adaptationContext:(id)arg2 timeStamp:(double)arg3;
 - (bool)addFacemarkCandidatesToResultSet:(id)arg1 forInput:(id)arg2;

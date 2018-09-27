@@ -21,24 +21,32 @@
 
 - (id)assetId;
 - (id)assetProperty:(id)arg1;
+- (id)assetServerUrl;
 - (id)assetType;
 - (void)attachProgressCallBack:(id /* block */)arg1;
 - (id)attributes;
 - (long long)calculateTimeout;
 - (void)cancelDownload:(id /* block */)arg1;
+- (long long)cancelDownloadSync;
 - (void)commonAssetDownload:(id)arg1 options:(id)arg2 then:(id /* block */)arg3;
+- (void)configDownload:(id)arg1 completion:(id /* block */)arg2;
+- (long long)configDownloadSync:(id)arg1;
 - (id)createExtractor;
 - (void)dealloc;
 - (id)getLocalFileUrl;
 - (id)getLocalUrl;
 - (id)hashToString:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)logAsset;
 - (void)purge:(id /* block */)arg1;
+- (long long)purgeSync;
 - (bool)refreshState;
+- (bool)spaceCheck:(long long*)arg1;
 - (void)startDownload:(id /* block */)arg1;
 - (void)startDownload:(id)arg1 then:(id /* block */)arg2;
 - (void)startDownloadWithExtractor:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)startDownloadWithExtractor:(id /* block */)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (long long)state;
 
 // Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices

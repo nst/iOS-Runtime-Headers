@@ -6,11 +6,6 @@
 @required
 
 - (NSString *)eventName;
-- (bool)hasEventName;
-- (bool)hasInput;
-- (bool)hasNanosecondInterval;
-- (bool)hasQueryId;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSString *)input;

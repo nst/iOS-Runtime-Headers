@@ -28,11 +28,11 @@
 + (bool)hasSwapTuplesRequiringConversion:(id)arg1;
 + (id)migratedSwapTuplesForSwapTuples:(id)arg1 documentRoot:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)afterValue;
 - (id)beforeValue;
 - (bool)canApplyTupleToStyleSwapSupporting:(id)arg1;
 - (id)convertedSwapTupleForChartInfo:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)forwardDelta;
 - (unsigned long long)hash;

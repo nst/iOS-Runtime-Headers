@@ -6,7 +6,7 @@
 @required
 
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(NFTechnologyEvent *)arg1;
+- (void)didDetectFieldNotification:(NFFieldNotification *)arg1;
 - (void)didSelectApplet:(NSString *)arg1;
 
 @optional

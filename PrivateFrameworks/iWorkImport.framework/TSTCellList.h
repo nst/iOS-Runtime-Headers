@@ -21,5 +21,6 @@
 - (void)popLastCell;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCells:(id)arg1;
+- (id)shallowAddCell:(id)arg1;
 
 @end

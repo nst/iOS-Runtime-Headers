@@ -3,7 +3,7 @@
  */
 
 @interface AVContentKeyRequestInternal : NSObject {
-    NSNumber * cryptorRequestID;
+    unsigned long long  cryptorKeyRequestID;
     NSString * cryptorUUID;
     struct OpaqueFigCustomURLHandler { } * customURLHandler;
     id  customURLProviderContext;
@@ -17,6 +17,7 @@
     struct __CFDictionary { } * requestInfo;
     int  responseInfoSent;
     AVContentKeySession * session;
+    NSData * sinfDefaultKeyIdentifier;
     long long  status;
 }
 

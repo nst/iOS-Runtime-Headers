@@ -13,6 +13,7 @@
     PUPhotoEditIrisModel * _irisModel;
     PUPhotoKitAdjustmentSaveNode * _outputNode;
     PHAsset * _photo;
+    bool  _useRawIfAvailable;
     PUVideoExportNode * _videoExportNode;
     long long  _workImageVersion;
 }
@@ -51,9 +52,9 @@
 - (id)editModel;
 - (int)identifier;
 - (id)init;
-- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4 irisEditModel:(id)arg5;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4;
+- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4 useRawIfAvailable:(bool)arg5;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(long long)arg4 irisEditModel:(id)arg5 useRawIfAvailable:(bool)arg6;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(long long)arg3 irisEditModel:(id)arg4 useRawIfAvailable:(bool)arg5;
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
 - (id)irisModel;
 - (id)photo;

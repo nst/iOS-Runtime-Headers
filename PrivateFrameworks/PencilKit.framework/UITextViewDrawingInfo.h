@@ -25,6 +25,7 @@
 - (id)delegate;
 - (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initForTextView:(id)arg1;
 - (id)insertLongPressGestureRecognizer;
 - (void)setAddBottomPadding:(bool)arg1;

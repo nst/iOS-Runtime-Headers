@@ -3,6 +3,7 @@
  */
 
 @interface _CDPeriodicSchedulerJob : NSObject {
+    NSObject<OS_xpc_object> * _activity;
     NSObject<OS_xpc_object> * _executionCriteria;
     id /* block */  _handler;
     double  _interval;
@@ -11,6 +12,7 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
+@property (retain) NSObject<OS_xpc_object> *activity;
 @property (readonly) NSObject<OS_xpc_object> *executionCriteria;
 @property (readonly) id /* block */ handler;
 @property (readonly) double interval;
@@ -22,6 +24,7 @@
 + (id)jobWithPeriod:(long long)arg1 schedulerJobName:(id)arg2 handler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
+- (id)activity;
 - (id)executionCriteria;
 - (id /* block */)handler;
 - (id)init;
@@ -30,5 +33,7 @@
 - (id)jobName;
 - (long long)period;
 - (id)queue;
+- (void)setActivity:(id)arg1;
+- (void)setExecutionCriteria:(id)arg1;
 
 @end

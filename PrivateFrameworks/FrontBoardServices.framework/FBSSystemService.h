@@ -9,6 +9,7 @@
 + (id)clientCallbackQueue;
 + (id)sharedService;
 
+- (void).cxx_destruct;
 - (void)_openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(id /* block */)arg4;
 - (id)badgeValueForBundleID:(id)arg1;
 - (bool)canOpenApplication:(id)arg1 reason:(long long*)arg2;

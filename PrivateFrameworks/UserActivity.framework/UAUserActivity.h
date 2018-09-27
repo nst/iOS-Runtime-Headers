@@ -5,6 +5,7 @@
 @interface UAUserActivity : NSObject <SFCompanionAdvertiserDelegate> {
     bool  _activityHasBeenSentToServer;
     SFCompanionAdvertiser * _advertiser;
+    NSObject<OS_dispatch_group> * _advertiserCompletedGroup;
     NSData * _cachedEncodedUserInfo;
     bool  _canCreateStreams;
     NSString * _contentUserAction;
@@ -15,6 +16,7 @@
     NSMutableSet * _dirtyPayloadIdentifiers;
     NSString * _dynamicIdentifier;
     bool  _eligibleForHandoff;
+    bool  _eligibleForPrediction;
     bool  _eligibleForPublicIndexing;
     bool  _eligibleForReminders;
     bool  _eligibleForSearch;
@@ -38,10 +40,12 @@
     NSMutableDictionary * _payloadDataCache;
     NSMutableDictionary * _payloadObjects;
     NSMutableDictionary * _payloadUpdateBlocks;
+    NSString * _persistentIdentifier;
     NSURL * _referrerURL;
     NSSet * _requiredUserInfoKeys;
     SFCompanionAdvertiser * _resumerAdvertiser;
     bool  _saveScheduled;
+    NSDictionary * _savedUserInfo;
     bool  _sendToServerPending;
     unsigned long long  _suggestedActionType;
     bool  _supportsContinuationStreams;
@@ -51,6 +55,7 @@
     NSUUID * _uniqueIdentifier;
     bool  _userActivityWasCreatedSent;
     NSDictionary * _userInfo;
+    unsigned int  _userInfoChangeCount;
     bool  _userInfoContainsFileURLs;
     NSURL * _webpageURL;
     NSObject<OS_dispatch_queue> * _willCallSaveSerializationQueue;
@@ -71,6 +76,7 @@
 @property (retain) NSMutableSet *dirtyPayloadIdentifiers;
 @property (copy) NSString *dynamicIdentifier;
 @property (getter=isEligibleForHandoff) bool eligibleForHandoff;
+@property (getter=isEligibleForPrediction) bool eligibleForPrediction;
 @property (getter=isEligibleForPublicIndexing) bool eligibleForPublicIndexing;
 @property (getter=isEligibleForReminders) bool eligibleForReminders;
 @property (getter=isEligibleForSearch) bool eligibleForSearch;
@@ -91,6 +97,7 @@
 @property (retain) NSMutableDictionary *payloadDataCache;
 @property (retain) NSMutableDictionary *payloadObjects;
 @property (retain) NSMutableDictionary *payloadUpdateBlocks;
+@property (copy) NSString *persistentIdentifier;
 @property (copy) NSURL *referrerURL;
 @property (copy) NSSet *requiredUserInfoKeys;
 @property bool sendToServerPending;
@@ -104,10 +111,12 @@
 @property (copy) NSString *typeIdentifier;
 @property (readonly, copy) NSUUID *uniqueIdentifier;
 @property (copy) NSDictionary *userInfo;
+@property (readonly) unsigned long long userInfoChangeCount;
 @property bool userInfoContainsFileURLs;
 @property (copy) NSURL *webpageURL;
 @property (readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue;
 
++ (id)_decodeFromEntireString:(id)arg1;
 + (id)_decodeFromScanner:(id)arg1;
 + (id)_decodeFromString:(id)arg1;
 + (id)_encodeKeyAndValueIntoString:(id)arg1 value:(id)arg2;
@@ -118,11 +127,15 @@
 + (bool)checkWebpageURL:(id)arg1 actionType:(unsigned long long)arg2 throwIfFailed:(bool)arg3;
 + (id)currentUserActivityUUID;
 + (bool)currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)deleteAllSavedUserActivitiesWithCompletionHandler:(id /* block */)arg1;
++ (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 + (bool)determineIfUserActivityIsCurrent:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)fetchUserActivityWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)fetchUserActivityWithUUID:(id)arg1 intervalToWaitForDocumentSynchronizationToComplete:(double)arg2 completionHandler:(id /* block */)arg3;
 + (bool)isIndexPendingForUUID:(id)arg1;
++ (id)mainBundleIdentifier;
 + (id)observers;
++ (bool)registerAsProxyForApplication:(int)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
 + (id)registerForSuggestedActionNudgeOfType:(unsigned long long)arg1 withOptions:(id)arg2 block:(id /* block */)arg3;
 + (void)removeDynamicUserActivity:(id)arg1 matching:(id)arg2;
 + (void)removeUserActivityObserver:(id)arg1;
@@ -137,6 +150,7 @@
 - (bool)_encodeIntoUserActivityDataWithSave:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (bool)_encodeIntoUserActivityStringWithSave:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_resignCurrent;
+- (void)_setWebpageURL:(id)arg1 throwOnFailure:(bool)arg2;
 - (bool)activityHasBeenSentToServer;
 - (void)addContentAttribute:(id)arg1 forKey:(id)arg2;
 - (void)addKeywordsFromArray:(id)arg1;
@@ -145,6 +159,7 @@
 - (bool)archiveURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 - (void)becomeCurrent;
+- (unsigned long long)beginUserInfoUpdate:(id)arg1;
 - (id)cachedEncodedUserInfo;
 - (id)callWillSaveDelegateIfDirtyAndPackageUpData:(bool)arg1 clearDirty:(bool)arg2;
 - (bool)canCreateStreams;
@@ -176,6 +191,7 @@
 - (bool)encodedContainsUnsynchronizedCloudDocument;
 - (bool)encodedFileProviderURL;
 - (id)expirationDate;
+- (bool)finishUserInfoUpdate;
 - (bool)forceImmediateSendToServer;
 - (bool)forwardToCoreSpotlightIndexer;
 - (void)getContinuationStreamsWithCompletionHandler:(id /* block */)arg1;
@@ -192,6 +208,7 @@
 - (id)initWithUserActivityStrings:(id)arg1 optionalString:(id)arg2 tertiaryData:(id)arg3 options:(id)arg4;
 - (void)invalidate;
 - (bool)isEligibleForHandoff;
+- (bool)isEligibleForPrediction;
 - (bool)isEligibleForPublicIndexing;
 - (bool)isEligibleForReminders;
 - (bool)isEligibleForSearch;
@@ -213,6 +230,7 @@
 - (id)payloadObjects;
 - (id /* block */)payloadUpdateBlockForIdentifier:(id)arg1;
 - (id)payloadUpdateBlocks;
+- (id)persistentIdentifier;
 - (void)pinUserActivityWithCompletionHandler:(id /* block */)arg1;
 - (void)prepareUserActivityForLaunchingWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (long long)priority;
@@ -240,6 +258,7 @@
 - (void)setDirtyPayloadIdentifiers:(id)arg1;
 - (void)setDynamicIdentifier:(id)arg1;
 - (void)setEligibleForHandoff:(bool)arg1;
+- (void)setEligibleForPrediction:(bool)arg1;
 - (void)setEligibleForPublicIndexing:(bool)arg1;
 - (void)setEligibleForReminders:(bool)arg1;
 - (void)setEligibleForSearch:(bool)arg1;
@@ -258,6 +277,7 @@
 - (void)setPayloadIdentifier:(id)arg1 object:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)setPayloadObjects:(id)arg1;
 - (void)setPayloadUpdateBlocks:(id)arg1;
+- (void)setPersistentIdentifier:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
@@ -288,6 +308,7 @@
 - (id)userActivityInfoForSelf;
 - (id)userActivityInfoForSelfWithPayload:(bool)arg1;
 - (id)userInfo;
+- (unsigned long long)userInfoChangeCount;
 - (bool)userInfoContainsFileURLs;
 - (id)webpageURL;
 - (id)willCallSaveSerializationQueue;

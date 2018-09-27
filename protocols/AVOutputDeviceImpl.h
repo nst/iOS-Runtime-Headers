@@ -15,6 +15,8 @@
 - (bool)canBeGroupLeader;
 - (bool)canBeGrouped;
 - (bool)canCommunicateWithAllLogicalDeviceMembers;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (bool)canRelayCommunicationChannel;
 - (bool)canSetVolume;
 - (NSNumber *)caseBatteryLevel;
@@ -38,6 +40,7 @@
 - (bool)onlyAllowsConnectionsFromPeersInHomeGroup;
 - (AVOutputDevice *)parentOutputDevice;
 - (bool)participatesInGroupPlayback;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (bool)requiresAuthorization;
 - (NSNumber *)rightBatteryLevel;
 - (NSString *)serialNumber;

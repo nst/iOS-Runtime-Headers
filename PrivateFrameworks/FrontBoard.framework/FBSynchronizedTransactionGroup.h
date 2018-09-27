@@ -27,7 +27,6 @@
 - (void)_performSynchronizedCommitIfReady;
 - (bool)_shouldFailForChildTransaction:(id)arg1;
 - (void)addSynchronizedTransaction:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (bool)isReadyForSynchronizedCommit;
 - (void)performSynchronizedCommit;

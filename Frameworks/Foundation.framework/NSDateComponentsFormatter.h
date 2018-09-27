@@ -93,4 +93,16 @@
 
 + (id)__ck_durationFormatter;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)hk_fullStyleDateComponentsFormatter;
+
+// Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
+
++ (id)st_sharedAbbreviatedHourAndMinuteDateFormatter;
++ (id)st_sharedAbbreviatedSecondsDateFormatter;
++ (id)st_sharedFullDynamicDateFormatter;
++ (id)st_sharedShortDayHourAndMinuteDateFormatter;
++ (id)st_sharedShortDynamicDateFormatter;
+
 @end

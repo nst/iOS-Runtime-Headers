@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (void)discoveryControllerSettingsDidChange:(id)arg1;
 - (void)discoveryControllerVisibilityDidChange:(id)arg1;
-- (id)init;
+- (void)loadView;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

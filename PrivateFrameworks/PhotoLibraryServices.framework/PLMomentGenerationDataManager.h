@@ -14,6 +14,7 @@
     PLPhotoLibrary * _momentGenerationLibrary;
     bool  _observingReachability;
     id /* block */  _reachabilityBlock;
+    bool  _simulatesTimeout;
 }
 
 @property (nonatomic, readonly) void*_addressBook;
@@ -22,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) PLPhotoLibrary *momentGenerationLibrary;
+@property (nonatomic) bool simulatesTimeout;
 @property (readonly) Class superclass;
 
 + (void)_setManagedObjectContextMomentarilyBlessed:(id)arg1;
@@ -67,6 +69,7 @@
 - (id)insertNewMomentListForGranularityLevel:(short)arg1;
 - (id)insertedObjects;
 - (void)invalidateLocationDataForAssetsInMoment:(id)arg1;
+- (void)invalidateLocationDataForAssetsWithOIDs:(id)arg1;
 - (void)invalidateLocationsOfInterest;
 - (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (bool)isMomentAnalysisNeeded;
@@ -84,18 +87,22 @@
 - (id)momentListWithUniqueID:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
 - (id)momentWithUniqueID:(id)arg1 error:(id*)arg2;
 - (id)momentsBetweenDate:(id)arg1 andDate:(id)arg2 sorted:(bool)arg3;
-- (id)momentsBetweenDateRanges:(id)arg1;
+- (id)momentsForAssetsWithUniqueIDs:(id)arg1 error:(id*)arg2;
 - (id)momentsSinceDate:(id)arg1;
+- (id)momentsWithinDateInterval:(id)arg1;
 - (bool)needsLocationsOfInterestProcessing;
 - (id)orphanedAssetIDsWithError:(id*)arg1;
 - (void)pendingChangesUpdated:(unsigned long long)arg1;
 - (void)performBlock:(id /* block */)arg1 synchronously:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)performBlock:(id /* block */)arg1 synchronously:(bool)arg2 priority:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)performDataTransaction:(id /* block */)arg1 synchronously:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)performDataTransaction:(id /* block */)arg1 synchronously:(bool)arg2 priority:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(bool)arg2;
 - (void)reloadGenerationOptions;
 - (id)replayLogPath;
 - (void)resetOnFailure;
+- (void)runPeriodicMaintenanceTasks:(unsigned long long)arg1 withTransaction:(id)arg2;
 - (bool)save:(id*)arg1;
 - (bool)saveAnalysisMetadata:(id)arg1;
 - (bool)saveServerVersionInfo:(id)arg1;
@@ -103,7 +110,9 @@
 - (void)setManagedObjectContext:(id)arg1;
 - (void)setMomentAnalysisNeeded:(bool)arg1;
 - (void)setMomentGenerationLibrary:(id)arg1;
+- (void)setSimulatesTimeout:(bool)arg1;
 - (void)setupPhotoLibrary;
+- (bool)simulatesTimeout;
 - (void)stopObservingNetworkReachabilityChanges;
 - (id)updatedObjects;
 - (void)verifyAndRepairOrphanedAssets:(id)arg1;

@@ -33,17 +33,20 @@
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
+- (bool)__shouldRemoteViewControllerFenceOperations;
 - (void)_extensionAudioAccessoryViewContextId:(unsigned int)arg1;
 - (void)_extensionDidCompleteNotificationResponse:(id)arg1 withOption:(unsigned long long)arg2;
 - (void)_extensionDidUpdateControls;
 - (void)_extensionMediaPlayingPaused;
 - (void)_extensionMediaPlayingStarted;
+- (void)_extensionRequestsDefaultAction;
 - (void)_extensionRequestsDismiss;
 - (void)_extensionRequestsToSetDismissEnabled:(bool)arg1;
 - (void)_extensionSetPlayPauseMediaButtonColor:(id)arg1;
 - (void)_extensionSetPlayPauseMediaButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_extensionSetPlayPauseMediaButtonType:(unsigned long long)arg1;
 - (void)_extensionSetTitle:(id)arg1;
+- (void)_extensionSetUserNotificationActions:(id)arg1;
 - (void)_extensionWantsToBecomeFirstResponder:(bool)arg1;
 - (void)_extensionWantsToReceiveActionResponses:(bool)arg1;
 - (id)delegate;
@@ -60,6 +63,7 @@
 - (void)setWantsToReceiveActionResponses:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (bool)wantsToBecomeFirstResponder;

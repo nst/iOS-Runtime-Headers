@@ -3,10 +3,11 @@
  */
 
 @interface AAURLConfiguration : NSObject {
-    NSDictionary * _urlDictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSString *aboutURL;
+@property (nonatomic, readonly, copy) NSNumber *absintheEnable;
 @property (nonatomic, readonly) NSString *acceptChildTransferURL;
 @property (nonatomic, readonly) NSString *acceptFamilyInviteURL;
 @property (nonatomic, readonly) NSString *acceptFamilyInviteV2URL;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) NSString *addFamilyMemberUIURL;
 @property (nonatomic, readonly) NSString *apsEnvironment;
 @property (nonatomic, readonly) NSString *authenticateURL;
+@property (nonatomic, readonly, copy) NSNumber *baaInterval;
 @property (nonatomic, readonly) NSString *checkiCloudMembershipURL;
 @property (nonatomic, readonly) NSString *childAccountCreationUIURL;
 @property (nonatomic, readonly) NSString *cloudKitDevicesListURL;
@@ -83,11 +85,17 @@
 
 + (id)_urlConfigurationWithError:(id*)arg1;
 + (id)itemForKey:(id)arg1 error:(id*)arg2;
++ (id)remoteServer;
 + (void)reset;
++ (void)setRemoteServer:(id)arg1;
 + (id)urlConfiguration;
 
 - (void).cxx_destruct;
+- (id)_envStringForKey:(id)arg1;
+- (id)_initWithDictionary:(id)arg1;
+- (id)_urlStringForKey:(id)arg1;
 - (id)aboutURL;
+- (id)absintheEnable;
 - (id)acceptChildTransferURL;
 - (id)acceptFamilyInviteURL;
 - (id)acceptFamilyInviteV2URL;
@@ -98,6 +106,7 @@
 - (id)addFamilyMemberUIURL;
 - (id)apsEnvironment;
 - (id)authenticateURL;
+- (id)baaInterval;
 - (id)checkiCloudMembershipURL;
 - (id)childAccountCreationUIURL;
 - (id)cloudKitDevicesListURL;
@@ -106,6 +115,7 @@
 - (id)completeValidateEmailURL;
 - (id)createDelegatesURL;
 - (id)declineFamilyInviteURL;
+- (id)description;
 - (id)deviceListURL;
 - (id)devicesUIURL;
 - (id)dismissAlertURL;
@@ -132,7 +142,7 @@
 - (id)getMyPhotoURL;
 - (id)grandslamURL;
 - (id)iForgotUIURL;
-- (id)initWithDictionary:(id)arg1;
+- (id)init;
 - (id)initiateFamilyV2URL;
 - (id)initiateValidateEmailURL;
 - (id)loginDelegatesURL;
@@ -159,6 +169,7 @@
 - (id)updateAccountURL;
 - (id)updateMyPhotoURL;
 - (id)updateNameURL;
+- (id)urlForEndpoint:(id)arg1;
 - (id)urlsStoringCookies;
 - (id)validateURL;
 - (id)verifyCodeURL;

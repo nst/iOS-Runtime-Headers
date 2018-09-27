@@ -18,8 +18,8 @@
     double  _impulse;
 }
 
-@property (nonatomic, readonly, retain) PKPhysicsBody *bodyA;
-@property (nonatomic, readonly, retain) PKPhysicsBody *bodyB;
+@property (nonatomic, readonly) PKPhysicsBody *bodyA;
+@property (nonatomic, readonly) PKPhysicsBody *bodyB;
 @property (nonatomic, readonly) double collisionImpulse;
 @property (nonatomic, readonly) struct CGVector { double x1; double x2; } contactNormal;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contactPoint;

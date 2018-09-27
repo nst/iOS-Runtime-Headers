@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsBody : NSObject <NSCoding, NSCopying> {
+@interface PKPhysicsBody : NSObject <NSCopying, NSSecureCoding> {
     bool  _allowsRotation;
     struct b2Body { bool x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; int x6; unsigned short x7; int x8; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; struct b2Transform { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_10_1_1; struct b2Rot { float x_2_2_1; float x_2_2_2; } x_10_1_2; } x10; struct b2Sweep { struct b2Vec2 { float x_1_2_1; float x_1_2_2; } x_11_1_1; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; } x_11_1_2; union b2Position { struct { struct b2Vec2 { float x_1_4_1; float x_1_4_2; } x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; } x_11_1_3; float x_11_1_4; } x11; struct b2Vec2 { float x_12_1_1; float x_12_1_2; } x12; float x13; struct b2Vec2 { float x_14_1_1; float x_14_1_2; } x14; float x15; struct b2World {} *x16; struct b2Body {} *x17; struct b2Body {} *x18; struct b2Fixture {} *x19; int x20; struct b2JointEdge {} *x21; } * _body;
     struct b2BodyDef { 
@@ -126,6 +126,7 @@
 + (id)bodyWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 edgeRadius:(double)arg2;
 + (id)initWithMarchingCubes:(struct PKCGrid { int x1; int x2; int x3; struct Range { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; struct vector<unsigned char, std::__1::allocator<unsigned char> > { char *x_5_1_1; char *x_5_1_2; struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { char *x_3_2_1; } x_5_1_3; } x5; struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {} x6; }*)arg1 pixelFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (id)initWithQuadTree:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -161,6 +162,7 @@
 - (void)clearBox2DData;
 - (unsigned int)collisionBitMask;
 - (unsigned int)contactTestBitMask;
+- (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)density;
@@ -181,6 +183,7 @@
 - (id)initWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 center:(struct CGPoint { double x1; double x2; })arg2;
 - (id)initWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 center:(struct CGPoint { double x1; double x2; })arg2 edgeRadius:(float)arg3;
 - (bool)isDynamic;
+- (bool)isEqualToBody:(id)arg1;
 - (bool)isResting;
 - (id)joints;
 - (double)linearDamping;

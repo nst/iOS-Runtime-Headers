@@ -3,10 +3,10 @@
  */
 
 @interface SXPosterFrameView : UIImageView {
-    SXVideoPlayButton * _playButton;
+    SVVideoPlayButton * _playButton;
 }
 
-@property (nonatomic, retain) SXVideoPlayButton *playButton;
+@property (nonatomic, retain) SVVideoPlayButton *playButton;
 
 - (void).cxx_destruct;
 - (bool)accessibilityIgnoresInvertColors;

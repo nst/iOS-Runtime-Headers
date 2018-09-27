@@ -11,6 +11,7 @@
     id /* block */  _parameterizedAttributeCallback;
     id /* block */  _performActionCallback;
     id /* block */  _setAttributeCallback;
+    bool  _started;
     bool  _systemWideServer;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) id /* block */ parameterizedAttributeCallback;
 @property (nonatomic, copy) id /* block */ performActionCallback;
 @property (nonatomic, copy) id /* block */ setAttributeCallback;
+@property (nonatomic) bool started;
 @property (nonatomic) bool systemWideServer;
 
 + (id)sharedManager;
@@ -43,8 +45,10 @@
 - (void)setParameterizedAttributeCallback:(id /* block */)arg1;
 - (void)setPerformActionCallback:(id /* block */)arg1;
 - (void)setSetAttributeCallback:(id /* block */)arg1;
+- (void)setStarted:(bool)arg1;
 - (void)setSystemWideServer:(bool)arg1;
 - (void)start;
+- (bool)started;
 - (bool)systemWideServer;
 
 @end

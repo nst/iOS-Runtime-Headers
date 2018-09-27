@@ -12,7 +12,7 @@
     NSMutableDictionary * _videoAnalyticsRouters;
     NSMutableDictionary * _videoPlayerViewControllers;
     NSMutableDictionary * _visibilityMonitors;
-    SXVolumeProvider * _volumeProvider;
+    SVVolumeProvider * _volumeProvider;
 }
 
 @property (nonatomic, copy) NSURL *autoplayURL;
@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *videoAnalyticsRouters;
 @property (nonatomic, readonly) NSMutableDictionary *videoPlayerViewControllers;
 @property (nonatomic, readonly) NSMutableDictionary *visibilityMonitors;
-@property (nonatomic, readonly) SXVolumeProvider *volumeProvider;
+@property (nonatomic, readonly) SVVolumeProvider *volumeProvider;
 
 - (void).cxx_destruct;
 - (id)autoplayURL;

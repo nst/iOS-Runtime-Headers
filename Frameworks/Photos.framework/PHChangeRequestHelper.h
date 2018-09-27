@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) NSString *uuidSaveToken;
 
 + (id)changeRequestForObject:(id)arg1;
-+ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
++ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5 clientSender:(id)arg6;
 
 - (void).cxx_destruct;
 - (bool)_generateUUIDIfNecessary:(id*)arg1;
@@ -49,6 +49,7 @@
 - (id)objectID;
 - (id)placeholderForCreatedObjectWithClass:(Class)arg1 changeRequest:(id)arg2;
 - (id)placeholderRequestError;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)setChangeRequest:(id)arg1;
 - (void)setMutated:(bool)arg1;

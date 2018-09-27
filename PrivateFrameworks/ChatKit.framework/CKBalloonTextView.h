@@ -14,6 +14,8 @@
 @property (nonatomic) <CKBalloonTextViewInteractionDelegate> *interactionDelegate;
 @property (readonly) Class superclass;
 
++ (id)textView;
+
 - (void).cxx_destruct;
 - (void)_interactionStartedFromPreviewItemController:(id)arg1;
 - (void)_interactionStoppedFromPreviewItemController:(id)arg1;

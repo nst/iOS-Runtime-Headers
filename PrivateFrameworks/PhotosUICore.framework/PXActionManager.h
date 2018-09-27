@@ -13,6 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)actionPerformerForActionType:(id)arg1;
+- (id)alertActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
 - (bool)canPerformActionType:(id)arg1;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;

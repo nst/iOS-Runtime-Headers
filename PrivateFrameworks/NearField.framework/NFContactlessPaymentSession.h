@@ -7,6 +7,7 @@
     NSDictionary * _appletsById;
     NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
+    bool  _fieldNotificationSent;
     unsigned long long  _numActiveSEs;
 }
 
@@ -26,7 +27,7 @@
 - (id)defaultApplet;
 - (id)delegate;
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;

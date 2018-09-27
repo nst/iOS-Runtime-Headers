@@ -54,7 +54,6 @@
 @property (nonatomic) bool useSmallFont;
 
 + (id)_currentTheme:(unsigned long long)arg1;
-+ (bool)_shouldAutoSwitchTheme;
 + (void)addThemeChangedListener:(id)arg1;
 + (id)currentTheme;
 + (void)setTheme:(unsigned long long)arg1;
@@ -66,6 +65,7 @@
 - (void)_addThemeChangedListener:(id)arg1;
 - (unsigned long long)_currentSystemTheme;
 - (id)_initWithThemeType:(unsigned long long)arg1;
+- (bool)_isInSpotlightContext;
 - (void)_notifyAllListenersOfThemeChange:(id)arg1 visitedSet:(id)arg2 subListenerMethod:(int (*)arg3 subListenerSelector:(SEL)arg4;
 - (void)_notifyAllListenersOfTintChange:(id)arg1 visitedSet:(id)arg2;
 - (void)_setTheme:(unsigned long long)arg1;

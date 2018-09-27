@@ -40,6 +40,7 @@
         double minimumNavigationHeight; 
         bool isRoot; 
     }  _topVCInfo;
+    unsigned long long  _updateChildViewControllerSizeCounter;
 }
 
 @property (nonatomic, readonly) PKCompactNavigationContainedNavigationController *containedNavigationController;

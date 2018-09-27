@@ -5,7 +5,6 @@
 
 @required
 
-- (bool)hasSecondsSince1970;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

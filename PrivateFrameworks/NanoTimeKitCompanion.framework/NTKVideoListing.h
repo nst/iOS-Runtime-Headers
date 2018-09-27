@@ -4,6 +4,7 @@
 
 @interface NTKVideoListing : NSObject <NSCopying, NTKAVListing> {
     long long  _clip;
+    CLKDevice * _device;
     UIImage * _image;
     NSString * _name;
     UIColor * _overlayColor;
@@ -33,7 +34,7 @@
 - (void)discardAssets;
 - (bool)hasTag:(unsigned long long)arg1;
 - (id)image;
-- (id)initWithName:(id)arg1 videoName:(id)arg2 transitionImageName:(id)arg3 overlayColor:(id)arg4 theme:(unsigned long long)arg5 variant:(long long)arg6 clip:(long long)arg7 tags:(unsigned long long)arg8;
+- (id)initForDevice:(id)arg1 withName:(id)arg2 videoName:(id)arg3 transitionImageName:(id)arg4 overlayColor:(id)arg5 theme:(unsigned long long)arg6 variant:(long long)arg7 clip:(long long)arg8 tags:(unsigned long long)arg9;
 - (id)overlayColor;
 - (bool)snapshotDiffers:(id)arg1;
 - (unsigned long long)theme;

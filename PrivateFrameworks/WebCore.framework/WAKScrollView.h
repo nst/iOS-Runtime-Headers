@@ -4,14 +4,17 @@
 
 @interface WAKScrollView : WAKView <WebCoreFrameScrollView> {
     WAKClipView * _contentView;
-    id  _delegate;
     WAKView * _documentView;
     struct CGPoint { 
         double x; 
         double y; 
     }  _scrollOrigin;
+    id  delegate;
 }
 
+@property (nonatomic) id delegate;
+
+- (void).cxx_destruct;
 - (void)_adjustScrollers;
 - (bool)_selfHandleEvent:(id)arg1;
 - (id)contentView;

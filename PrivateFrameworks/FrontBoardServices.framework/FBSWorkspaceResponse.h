@@ -14,8 +14,8 @@
 @property (nonatomic, copy) FBSSceneMessage *message;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)animationFence;
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)message;

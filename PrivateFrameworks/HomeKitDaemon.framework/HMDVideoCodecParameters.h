@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDVideoCodecParameters : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDVideoCodecParameters : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSArray * _h264Profiles;
     NSArray * _levels;
     NSArray * _packetizationModes;

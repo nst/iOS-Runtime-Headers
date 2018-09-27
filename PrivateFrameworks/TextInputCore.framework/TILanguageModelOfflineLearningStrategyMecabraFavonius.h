@@ -12,7 +12,7 @@
 @property (readonly) TILanguageModelOfflineLearningTask *learningTask;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (id)filterMessages:(id)arg1;
 - (id)identifyLanguagesForMessages:(id)arg1;

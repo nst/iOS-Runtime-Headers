@@ -5,6 +5,7 @@
 @interface NTKExplorerDialView : UIView {
     unsigned long long  _currentDensityTransition;
     unsigned long long  _density;
+    CLKDevice * _device;
     bool  _editing;
     NSArray * _hourNumerals;
     CAReplicatorLayer * _hourReplicatorLayer;
@@ -38,7 +39,7 @@
 - (void)cleanupAfterEditing;
 - (void)cleanupAfterZoom;
 - (unsigned long long)density;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (void)prepareForEditing;
 - (void)prepareForZoom;
 - (void)setDensity:(unsigned long long)arg1;

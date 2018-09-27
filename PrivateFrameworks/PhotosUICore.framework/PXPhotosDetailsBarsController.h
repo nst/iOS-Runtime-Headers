@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPhotosDetailsBarsController : PXBarsController <PXActionPerformerDelegate, PXChangeObserver, PXPhotosDataSourceChangeObserver, UIPopoverPresentationControllerDelegate> {
+@interface PXPhotosDetailsBarsController : PXBarsController <PXActionMenuDelegate, PXActionPerformerDelegate, PXChangeObserver, PXPhotosDataSourceChangeObserver, UIPopoverPresentationControllerDelegate> {
+    PXActionMenuController * __activeMenuController;
     PXActionPerformer * __activePerformer;
     PXAssetActionManager * __assetActionManager;
     PXAssetCollectionActionManager * __assetCollectionActionManager;
@@ -21,8 +22,10 @@
         bool assetActionManager; 
         bool assetCollectionActionManager; 
     }  _needsUpdateFlags;
+    bool  _shouldAddActionButton;
 }
 
+@property (nonatomic, retain) PXActionMenuController *_activeMenuController;
 @property (setter=_setActivePerformer:, nonatomic, retain) PXActionPerformer *_activePerformer;
 @property (nonatomic, readonly) PXAssetActionManager *_assetActionManager;
 @property (nonatomic, readonly) PXAssetCollectionActionManager *_assetCollectionActionManager;
@@ -41,9 +44,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldAddActionButton;
 @property (readonly) Class superclass;
+@property (nonatomic) PXPhotosDetailsUIViewController *viewController;
 
 - (void).cxx_destruct;
+- (id)_activeMenuController;
 - (id)_activePerformer;
 - (id)_assetActionManager;
 - (id)_assetCollection;
@@ -55,6 +61,7 @@
 - (id)_barButtonItemsForBarItems:(id)arg1 placement:(unsigned long long)arg2;
 - (id)_context;
 - (id)_dataSource;
+- (bool)_dismissViewControllerIfSafeAnimated:(bool)arg1;
 - (id)_extendedTraitCollection;
 - (id)_flexibleSpaceBarButtonItem;
 - (void)_invalidateAssetActionManager;
@@ -75,6 +82,10 @@
 - (long long)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
 - (void)_updateTitleViewAlpha;
 - (id)_viewModel;
+- (void)actionMenu:(id)arg1 actionPerformer:(id)arg2 didChangeState:(unsigned long long)arg3;
+- (bool)actionMenu:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
+- (bool)actionMenu:(id)arg1 presentViewController:(id)arg2;
+- (void)actionMenuButtonItemTapped:(id)arg1;
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
@@ -89,7 +100,11 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)prepareForPopoverPresentation:(id)arg1;
+- (void)removeActionButton;
 - (void)selectBarButtonItemTapped:(id)arg1;
+- (void)setShouldAddActionButton:(bool)arg1;
+- (void)set_activeMenuController:(id)arg1;
+- (bool)shouldAddActionButton;
 - (void)shouldShowTitleView:(bool)arg1 animated:(bool)arg2;
 - (void)updateBars;
 

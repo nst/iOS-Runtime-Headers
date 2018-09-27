@@ -12,6 +12,7 @@
     float  _preferredFrameRate;
     NSObject<OS_dispatch_queue> * _queue;
     int  _queuedFrameCount;
+    SCNRecursiveLock * _runningLock;
     bool  _supportTargetTimestamp;
 }
 

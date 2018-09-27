@@ -3,6 +3,7 @@
  */
 
 @interface TVImageProxy : NSObject <NSCopying> {
+    bool  _allowsSubstitutionForOriginal;
     bool  _cacheOnLoad;
     id /* block */  _completionHandler;
     TVImageDecorator * _decorator;
@@ -21,6 +22,7 @@
     bool  _writeToAssetLibrary;
 }
 
+@property (nonatomic) bool allowsSubstitutionForOriginal;
 @property (nonatomic) bool cacheOnLoad;
 @property (copy) id /* block */ completionHandler;
 @property (nonatomic, retain) TVImageDecorator *decorator;
@@ -45,8 +47,8 @@
 - (id)_assetKeyWithImageLoaderKey:(id)arg1 decoratorIdentifier:(id)arg2;
 - (void)_callCompletionHandlerWithImage:(id)arg1 error:(id)arg2 finished:(bool)arg3;
 - (void)_callWriteCompletionHandlerWithPath:(id)arg1 error:(id)arg2 finished:(bool)arg3;
-- (void)_completeImageLoadWithImage:(id)arg1 imagePath:(id)arg2 error:(id)arg3 assetKey:(id)arg4 expiryDate:(id)arg5 requestRecord:(id)arg6;
-- (void)_decorateAndWriteImage:(id)arg1 imagePath:(id)arg2 scaleToSize:(struct CGSize { double x1; double x2; })arg3 cropToFit:(bool)arg4 scalingResult:(unsigned long long)arg5 assetKey:(id)arg6 expiryDate:(id)arg7 requestRecord:(id)arg8;
+- (void)_completeImageLoadWithImage:(id)arg1 imagePath:(id)arg2 error:(id)arg3 assetKey:(id)arg4 expiryDate:(id)arg5 tags:(id)arg6 requestRecord:(id)arg7;
+- (void)_decorateAndWriteImage:(id)arg1 imagePath:(id)arg2 scaleToSize:(struct CGSize { double x1; double x2; })arg3 cropToFit:(bool)arg4 scalingResult:(unsigned long long)arg5 assetKey:(id)arg6 expiryDate:(id)arg7 tags:(id)arg8 requestRecord:(id)arg9;
 - (id)_decoratedImageAssetKey;
 - (id)_decoratedImageAssetPath;
 - (id)_decoratorIdentifier;
@@ -55,6 +57,7 @@
 - (id)_imageLoaderKey;
 - (id)_originalImageAssetKey;
 - (id)_originalImageAssetPath;
+- (bool)allowsSubstitutionForOriginal;
 - (bool)cacheOnLoad;
 - (void)cancel;
 - (id /* block */)completionHandler;
@@ -73,12 +76,14 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isImageAvailable;
 - (bool)isLoading;
+- (bool)isOfSameOriginAs:(id)arg1;
 - (void)load;
 - (bool)loadSynchronouslyIfCached;
 - (void)loadWithWeakObject:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)object;
 - (id)requestLoader;
 - (id)requestToken;
+- (void)setAllowsSubstitutionForOriginal:(bool)arg1;
 - (void)setCacheOnLoad:(bool)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDecorator:(id)arg1;

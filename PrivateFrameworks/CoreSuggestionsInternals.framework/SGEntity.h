@@ -36,7 +36,7 @@
 }
 
 @property (nonatomic, retain) CSPerson *author;
-@property (nonatomic, retain) NSString *content;
+@property (nonatomic, copy) NSString *content;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } contentRangeOfInterest;
 @property (nonatomic) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
 @property (nonatomic, retain) SGDuplicateKey *duplicateKey;
@@ -47,11 +47,11 @@
 @property (nonatomic) long long masterEntityId;
 @property (nonatomic) double quality;
 @property (nonatomic, retain) SGRecordId *recordId;
-@property (nonatomic, retain) NSString *sourceKey;
+@property (nonatomic, copy) NSString *sourceKey;
 @property (nonatomic) unsigned int state;
-@property (nonatomic, retain) NSData *structuredData;
+@property (nonatomic, copy) NSData *structuredData;
 @property (nonatomic, retain) SGSimpleTimeRange *timeRange;
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)addTag:(id)arg1;

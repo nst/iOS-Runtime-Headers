@@ -26,6 +26,7 @@
 - (id)_operationsForPruningActivitySharingDataWithCalendar:(id)arg1 nowDate:(id)arg2;
 - (id)_operationsForPruningWithCalendar:(id)arg1 nowDate:(id)arg2;
 - (void)_performPruneDatabaseActivity:(id)arg1;
+- (void)_queue_pruneDatabaseWithOptions:(unsigned long long)arg1 nowDate:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_pruneExpiredDeletedObjectsWithNowDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_pruneExpiredSamplesWithOptions:(unsigned long long)arg1 fromNowDate:(id)arg2 completion:(id /* block */)arg3;
 - (void)_registerActivity;
@@ -35,8 +36,8 @@
 - (id)diagnosticDescription;
 - (id)initWithProfile:(id)arg1;
 - (id)profile;
-- (void)pruneDatabaseWithCompletion:(id /* block */)arg1;
-- (void)pruneDatabaseWithOptions:(unsigned long long)arg1 nowDate:(id)arg2 completion:(id /* block */)arg3;
+- (void)pruneDatabaseWithAccessibilityAssertion:(id)arg1 completion:(id /* block */)arg2;
+- (void)pruneDatabaseWithOptions:(unsigned long long)arg1 nowDate:(id)arg2 accessibilityAssertion:(id)arg3 completion:(id /* block */)arg4;
 - (id)queue;
 - (void)setProfile:(id)arg1;
 - (void)setQueue:(id)arg1;

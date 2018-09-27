@@ -6,8 +6,11 @@
     AVWeakReferencingDelegateStorage * delegateOverrideStorage;
     AVWeakReferencingDelegateStorage * delegateStorage;
     bool  faceTrackingMetadataObjectTypesAvailable;
+    struct localQueueOpaque { } * localQueue;
     NSArray * metadataObjectTypes;
     NSObject<OS_dispatch_queue> * objectQueue;
+    bool  offlineVideoStabilizationMotionMetadataObjectTypesAvailable;
+    struct OpaqueFigSimpleMutex { } * queueMutex;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -18,8 +21,7 @@
             double height; 
         } size; 
     }  rectOfInterest;
-    struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    struct remoteQueueReceiverOpaque { } * remoteQueueReceiver;
     AVWeakReference * weakReference;
 }
 

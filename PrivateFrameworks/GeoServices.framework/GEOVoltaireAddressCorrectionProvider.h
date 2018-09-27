@@ -24,7 +24,9 @@
 @property (nonatomic, copy) id /* block */ updateFinishedHandler;
 @property (nonatomic, retain) GEOProtobufSessionTask *updateTask;
 
++ (bool)acInitNeedsProxy;
 + (id)acInitURL;
++ (bool)acUpdateNeedsProxy;
 + (id)acUpdateURL;
 
 - (void).cxx_destruct;

@@ -19,7 +19,11 @@
 - (void)_updatePreferredUnits;
 - (void)_userPreferencesDidChange:(id)arg1;
 - (void)dealloc;
+- (double)distanceInDistanceUnit:(unsigned long long)arg1 forDistanceInMeters:(double)arg2;
+- (double)distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(unsigned long long)arg2;
+- (double)distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(unsigned long long)arg2;
 - (id)initWithHealthStore:(id)arg1;
+- (double)paceWithDistance:(id)arg1 overDuration:(double)arg2 paceFormat:(long long)arg3;
 - (void)setPreferredUnitsForTesting:(id)arg1;
 - (void)setUserActiveEnergyBurnedUnit:(id)arg1;
 - (void)setUserBasalEnergyBurnedUnit:(id)arg1;
@@ -32,6 +36,7 @@
 - (unsigned long long)userDistanceCyclingUnit;
 - (id)userDistanceElevationHKUnit;
 - (unsigned long long)userDistanceElevationUnit;
+- (id)userDistanceHKUnitForActivityType:(id)arg1;
 - (id)userDistanceHKUnitForDistanceType:(unsigned long long)arg1;
 - (unsigned long long)userDistanceUnitForDistanceType:(unsigned long long)arg1;
 - (id)userDistanceWalkingRunningHKUnit;

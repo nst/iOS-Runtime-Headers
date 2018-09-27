@@ -29,7 +29,8 @@
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)_updateCollectionsFetchResultIfNeeded;
 - (id)assetsFilterPredicate;
-- (long long)filteringAssetTypes;
+- (bool)canShowAvatarViews;
+- (unsigned long long)filteringAssetTypes;
 - (id)init;
 - (void)loadView;
 - (id)newGridViewControllerForAllPhotos;

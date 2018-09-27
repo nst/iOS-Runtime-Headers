@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPaymentSheet : NSObject <NSCopying, SSXPCCoding> {
+@interface SSPaymentSheet : NSObject <NSCopying> {
     NSString * _accountHeader;
     NSString * _buyParams;
     long long  _confirmationTitleType;
@@ -38,14 +38,11 @@
 @property long long confirmationTitleType;
 @property (copy) NSString *countryCode;
 @property (copy) NSString *currencyCode;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (copy) NSString *dialogId;
 @property (copy) NSString *displayPrice;
 @property (readonly, copy) NSAttributedString *displayPriceLabel;
 @property (copy) NSString *explanation;
 @property (readonly) NSArray *flexList;
-@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSArray *inlineImages;
 @property (copy) NSString *message;
 @property long long payeeType;
@@ -61,7 +58,6 @@
 @property (readonly, copy) NSAttributedString *salableInfoLabel;
 @property bool shouldUppercaseText;
 @property (copy) NSString *storeName;
-@property (readonly) Class superclass;
 @property (copy) NSString *title;
 @property long long titleType;
 

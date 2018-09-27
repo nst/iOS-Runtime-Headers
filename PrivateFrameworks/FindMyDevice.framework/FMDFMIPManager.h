@@ -6,6 +6,7 @@
 
 + (id)sharedInstance;
 
+- (bool)_checkLostModeInSharedContainer;
 - (void)_disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_forceFMWUpgradeAlertWithCompletion:(id /* block */)arg1;
 - (void)_initiateLostModeExitAuthForIDSDeviceID:(id)arg1 withCompletion:(id /* block */)arg2;
@@ -14,7 +15,6 @@
 - (unsigned long long)_needsAckLostModeType;
 - (id)_postWipePrefPath;
 - (bool)_quickFetchFMIPEnabledstate;
-- (void)_stopAlarm;
 - (void)_updateManagedLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateNeedsLocateAckLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)activationLockVersionWithCompletion:(id /* block */)arg1;
@@ -44,6 +44,7 @@
 - (void)isActivationLockAllowedWithCompletion:(id /* block */)arg1;
 - (void)isActivationLockEnabledWithCompletion:(id /* block */)arg1;
 - (void)isActivationLockedWithCompletion:(id /* block */)arg1;
+- (bool)isLostModeActive;
 - (bool)isManagedLostModeActive;
 - (bool)lockdownShouldDisableDevicePairing;
 - (bool)lockdownShouldDisableDeviceRestore;
@@ -55,6 +56,7 @@
 - (bool)needsLostModeExitAuth;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (id)pathsToPreserveAcrossWipe;
+- (void)playSoundWithMessage:(id)arg1 completion:(id /* block */)arg2;
 - (void)playSoundWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDailyLocateReportEnabled:(bool)arg1;
 - (void)setLowBatteryLocateEnabled:(bool)arg1 withCompletion:(id /* block */)arg2;
@@ -63,6 +65,7 @@
 - (void)soundStoppedForAccessoryIdentifier:(id)arg1;
 - (void)startPlayingSoundForAccessory:(id)arg1 duration:(double)arg2 rampUpDuration:(double)arg3 channels:(id)arg4 completion:(id /* block */)arg5;
 - (void)stopPlayingSoundForAccessory:(id)arg1 rampDownDuration:(double)arg2 completion:(id /* block */)arg3;
+- (void)stopSoundMessageWithCompletion:(id /* block */)arg1;
 - (void)userDidAckManagedLostModeLocateWithCompletion:(id /* block */)arg1;
 - (void)userNotifiedOfActivationLockForAllPairedDevices;
 - (void)userNotifiedOfActivationLockForPairedDevices:(id)arg1;

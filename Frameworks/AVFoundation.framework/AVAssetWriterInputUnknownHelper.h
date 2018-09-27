@@ -20,6 +20,7 @@
 - (void)setLanguageCode:(id)arg1;
 - (void)setLayer:(long long)arg1;
 - (void)setMarksOutputTrackAsEnabled:(bool)arg1;
+- (void)setMaximizePowerEfficiency:(bool)arg1;
 - (void)setMediaDataLocation:(id)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMetadata:(id)arg1;

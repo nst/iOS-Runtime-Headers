@@ -7,6 +7,7 @@
 @property (nonatomic) unsigned long long active;
 @property (getter=isActiveForThisDevice, nonatomic) bool activeForThisDevice;
 @property (nonatomic) bool allowsSnooze;
+@property (nonatomic) bool bedtimeDoNotDisturb;
 @property (nonatomic) unsigned long long bedtimeHour;
 @property (nonatomic) unsigned long long bedtimeMinute;
 @property (nonatomic) unsigned long long bedtimeReminderMinutes;

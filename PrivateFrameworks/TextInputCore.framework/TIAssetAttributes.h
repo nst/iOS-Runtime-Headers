@@ -18,6 +18,7 @@
 + (bool)_string:(id)arg1 matches:(id)arg2 acceptUnspecifiedValue:(bool)arg3;
 + (id)assetAttributesWithType:(id)arg1 inputModeLevel:(id)arg2 region:(id)arg3;
 
+- (void).cxx_destruct;
 - (bool)containMatchingAttributes:(id)arg1;
 - (bool)containMatchingInputModeLevel:(id)arg1;
 - (bool)containMatchingInputModeLevelIn:(id)arg1;
@@ -25,7 +26,6 @@
 - (bool)containMatchingType:(id)arg1;
 - (bool)containMatchingTypeIn:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned long long)hash;
 - (id)initWithType:(id)arg1 inputModeLevel:(id)arg2 region:(id)arg3;

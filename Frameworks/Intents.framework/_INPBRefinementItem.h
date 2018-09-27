@@ -2,35 +2,33 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRefinementItem : PBCodable <NSCopying> {
+@interface _INPBRefinementItem : PBCodable <NSCopying, NSSecureCoding, _INPBRefinementItem> {
+    struct { }  _has;
     _INPBSelectionItem * _item;
     NSString * _subKeyPath;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasItem;
 @property (nonatomic, readonly) bool hasSubKeyPath;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBSelectionItem *item;
-@property (nonatomic, retain) NSString *subKeyPath;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (nonatomic, copy) NSString *subKeyPath;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasItem;
 - (bool)hasSubKeyPath;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)item;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setSubKeyPath:(id)arg1;
 - (id)subKeyPath;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

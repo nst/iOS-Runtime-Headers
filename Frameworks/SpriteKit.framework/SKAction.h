@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKAction : NSObject <NSCoding, NSCopying> {
+@interface SKAction : NSObject <NSCopying, NSSecureCoding> {
     struct SKCAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; long long x14; float x15; float x16; float x17; float x18; } * _caction;
 }
 
@@ -111,6 +111,7 @@
 + (id)stop;
 + (id)strengthBy:(float)arg1 duration:(double)arg2;
 + (id)strengthTo:(float)arg1 duration:(double)arg2;
++ (bool)supportsSecureCoding;
 + (Class)unarchiver:(id)arg1 cannotDecodeObjectOfClassName:(id)arg2 originalClasses:(id)arg3;
 + (id)unhide;
 + (id)waitForDuration:(double)arg1;
@@ -127,6 +128,7 @@
 - (bool)finished;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqualToAction:(id)arg1;
 - (double)ratioForTime:(double)arg1;
 - (id)reversedAction;
 - (void)setCppAction:(void*)arg1;

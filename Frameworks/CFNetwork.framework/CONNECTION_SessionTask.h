@@ -52,17 +52,19 @@
 - (id)_countOfPendingBytesReceivedEncoded;
 - (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
 - (const struct XCredentialStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCredentialStorage;
-- (const struct XURLCache { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXURLCache;
 - (struct _CFURLRequest { }*)_currentCFURLRequest;
 - (struct __CFDictionary { }*)_dependencyInfo;
 - (id)_disallowCellular;
+- (long long)_discretionaryOverrride;
 - (id)_expectedWorkload;
 - (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id /* block */)arg2;
 - (struct __CFSet { }*)_getAuthenticatorStatusCodes;
 - (id)_incompleteTaskMetrics;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
+- (bool)_isTopLevelNavigation;
 - (id)_loggableDescription;
 - (id)_networkServiceType;
+- (id)_nw_activity;
 - (struct __PerformanceTiming { }*)_performanceTiming;
 - (bool)_preconnect;
 - (void)_prepareNewTimingDataContainer;
@@ -75,6 +77,7 @@
 - (struct __CFDictionary { }*)_proxySettings;
 - (void)_releasePreventIdleSleepAssertionIfAppropriate;
 - (long long)_requestPriority;
+- (bool)_requiresSecureHTTPSProxyConnection;
 - (void)_setAppleIDContext:(id)arg1;
 - (void)_setConnectionIsCellular:(bool)arg1;
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
@@ -83,6 +86,7 @@
 - (unsigned char)_shouldSkipPipelineProbe;
 - (bool)_shouldSkipPreferredClientCertificateLookup;
 - (unsigned char)_shouldUsePipelineHeuristics;
+- (id)_siteForCookies;
 - (struct __CFDictionary { }*)_sslSettings;
 - (id)_storagePartitionIdentifier;
 - (unsigned char)_strictContentLength;
@@ -93,6 +97,7 @@
 - (double)_timeoutInterval;
 - (id)_trailers;
 - (id)_transactionMetrics;
+- (void)_withXURLCache:(id /* block */)arg1;
 - (id)countOfBytesExpectedToReceive;
 - (id)countOfBytesExpectedToSend;
 - (id)countOfBytesReceived;
@@ -110,6 +115,7 @@
 - (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
 - (void)set_allowsQUIC:(bool)arg1;
+- (void)set_discretionaryOverride:(long long)arg1;
 - (void)set_incompleteTaskMetrics:(id)arg1;
 - (void)set_preconnect:(bool)arg1;
 - (void)set_protocolForTask:(id)arg1;

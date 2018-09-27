@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) BKSDisplayRenderOverlayDescriptor *overlayDescriptor;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)dismiss;

@@ -26,6 +26,7 @@
         } m_value; 
     }  _applicationNameForUserAgent;
     bool  _attachmentElementEnabled;
+    bool  _colorFilterEnabled;
     struct LazyInitialized<WTF::RetainPtr<WKWebViewContentProviderRegistry> > { 
         bool m_isInitialized; 
         struct RetainPtr<WKWebViewContentProviderRegistry> { 
@@ -36,15 +37,18 @@
     bool  _convertsPositionStyleOnCopy;
     unsigned long long  _dataDetectorTypes;
     unsigned long long  _dragLiftDelay;
+    bool  _drawsBackground;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _groupIdentifier;
     bool  _ignoresViewportScaleLimits;
+    bool  _incompleteImageBorderEnabled;
     double  _incrementalRenderingSuppressionTimeout;
     bool  _initialCapitalizationEnabled;
     bool  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
     bool  _invisibleAutoplayNotPermitted;
     bool  _legacyEncryptedMediaAPIEnabled;
+    bool  _longPressActionsEnabled;
     bool  _mainContentUserGestureOverrideEnabled;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
@@ -73,7 +77,10 @@
     }  _relatedWebView;
     bool  _respectsImageOrientation;
     long long  _selectionGranularity;
+    bool  _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
     bool  _suppressesIncrementalRendering;
+    bool  _systemPreviewEnabled;
+    bool  _textInteractionGesturesEnabled;
     bool  _treatsSHA1SignedCertificatesAsInsecure;
     struct LazyInitialized<WTF::RetainPtr<NSMutableDictionary<NSString *,id<WKURLSchemeHandler>> > > { 
         bool m_isInitialized; 
@@ -112,16 +119,20 @@
 @property (setter=_setApplePayEnabled:, nonatomic) bool _applePayEnabled;
 @property (setter=_setApplicationManifest:, nonatomic) _WKApplicationManifest *_applicationManifest;
 @property (setter=_setAttachmentElementEnabled:, nonatomic) bool _attachmentElementEnabled;
+@property (setter=_setColorFilterEnabled:, nonatomic) bool _colorFilterEnabled;
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (getter=_isControlledByAutomation, setter=_setControlledByAutomation:, nonatomic) bool _controlledByAutomation;
 @property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) bool _convertsPositionStyleOnCopy;
 @property (setter=_setDragLiftDelay:, nonatomic) unsigned long long _dragLiftDelay;
+@property (setter=_setDrawsBackground:, nonatomic) bool _drawsBackground;
 @property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
+@property (setter=_setIncompleteImageBorderEnabled:, nonatomic) bool _incompleteImageBorderEnabled;
 @property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) double _incrementalRenderingSuppressionTimeout;
 @property (setter=_setInitialCapitalizationEnabled:, nonatomic) bool _initialCapitalizationEnabled;
 @property (setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:, nonatomic) bool _inlineMediaPlaybackRequiresPlaysInlineAttribute;
 @property (setter=_setInvisibleAutoplayNotPermitted:, nonatomic) bool _invisibleAutoplayNotPermitted;
 @property (setter=_setLegacyEncryptedMediaAPIEnabled:, nonatomic) bool _legacyEncryptedMediaAPIEnabled;
+@property (setter=_setLongPressActionsEnabled:, nonatomic) bool _longPressActionsEnabled;
 @property (setter=_setMainContentUserGestureOverrideEnabled:, nonatomic) bool _mainContentUserGestureOverrideEnabled;
 @property (setter=_setMediaContentTypesRequiringHardwareSupport:, nonatomic) NSString *_mediaContentTypesRequiringHardwareSupport;
 @property (setter=_setMediaDataLoadsAutomatically:, nonatomic) bool _mediaDataLoadsAutomatically;
@@ -132,6 +143,9 @@
 @property (setter=_setRequiresUserActionForAudioPlayback:, nonatomic) bool _requiresUserActionForAudioPlayback;
 @property (setter=_setRequiresUserActionForVideoPlayback:, nonatomic) bool _requiresUserActionForVideoPlayback;
 @property (setter=_setRespectsImageOrientation:, nonatomic) bool _respectsImageOrientation;
+@property (setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:, nonatomic) bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+@property (setter=_setSystemPreviewEnabled:, nonatomic) bool _systemPreviewEnabled;
+@property (setter=_setTextInteractionGesturesEnabled:, nonatomic) bool _textInteractionGesturesEnabled;
 @property (setter=_setTreatsSHA1SignedCertificatesAsInsecure:, nonatomic) bool _treatsSHA1SignedCertificatesAsInsecure;
 @property (nonatomic, readonly) NSMutableDictionary *_urlSchemeHandlers;
 @property (setter=_setVisitedLinkStore:, nonatomic, retain) _WKVisitedLinkStore *_visitedLinkStore;
@@ -170,16 +184,20 @@
 - (bool)_applePayEnabled;
 - (id)_applicationManifest;
 - (bool)_attachmentElementEnabled;
+- (bool)_colorFilterEnabled;
 - (id)_contentProviderRegistry;
 - (bool)_convertsPositionStyleOnCopy;
 - (unsigned long long)_dragLiftDelay;
+- (bool)_drawsBackground;
 - (id)_groupIdentifier;
+- (bool)_incompleteImageBorderEnabled;
 - (double)_incrementalRenderingSuppressionTimeout;
 - (bool)_initialCapitalizationEnabled;
 - (bool)_inlineMediaPlaybackRequiresPlaysInlineAttribute;
 - (bool)_invisibleAutoplayNotPermitted;
 - (bool)_isControlledByAutomation;
 - (bool)_legacyEncryptedMediaAPIEnabled;
+- (bool)_longPressActionsEnabled;
 - (bool)_mainContentUserGestureOverrideEnabled;
 - (id)_mediaContentTypesRequiringHardwareSupport;
 - (bool)_mediaDataLoadsAutomatically;
@@ -200,16 +218,20 @@
 - (void)_setApplePayEnabled:(bool)arg1;
 - (void)_setApplicationManifest:(id)arg1;
 - (void)_setAttachmentElementEnabled:(bool)arg1;
+- (void)_setColorFilterEnabled:(bool)arg1;
 - (void)_setContentProviderRegistry:(id)arg1;
 - (void)_setControlledByAutomation:(bool)arg1;
 - (void)_setConvertsPositionStyleOnCopy:(bool)arg1;
 - (void)_setDragLiftDelay:(unsigned long long)arg1;
+- (void)_setDrawsBackground:(bool)arg1;
 - (void)_setGroupIdentifier:(id)arg1;
+- (void)_setIncompleteImageBorderEnabled:(bool)arg1;
 - (void)_setIncrementalRenderingSuppressionTimeout:(double)arg1;
 - (void)_setInitialCapitalizationEnabled:(bool)arg1;
 - (void)_setInlineMediaPlaybackRequiresPlaysInlineAttribute:(bool)arg1;
 - (void)_setInvisibleAutoplayNotPermitted:(bool)arg1;
 - (void)_setLegacyEncryptedMediaAPIEnabled:(bool)arg1;
+- (void)_setLongPressActionsEnabled:(bool)arg1;
 - (void)_setMainContentUserGestureOverrideEnabled:(bool)arg1;
 - (void)_setMediaContentTypesRequiringHardwareSupport:(id)arg1;
 - (void)_setMediaDataLoadsAutomatically:(bool)arg1;
@@ -220,11 +242,17 @@
 - (void)_setRequiresUserActionForAudioPlayback:(bool)arg1;
 - (void)_setRequiresUserActionForVideoPlayback:(bool)arg1;
 - (void)_setRespectsImageOrientation:(bool)arg1;
+- (void)_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:(bool)arg1;
+- (void)_setSystemPreviewEnabled:(bool)arg1;
+- (void)_setTextInteractionGesturesEnabled:(bool)arg1;
 - (void)_setTreatsSHA1SignedCertificatesAsInsecure:(bool)arg1;
 - (void)_setVisitedLinkProvider:(id)arg1;
 - (void)_setVisitedLinkStore:(id)arg1;
 - (void)_setWaitsForPaintAfterViewDidMoveToWindow:(bool)arg1;
 - (void)_setWebsiteDataStore:(id)arg1;
+- (bool)_shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
+- (bool)_systemPreviewEnabled;
+- (bool)_textInteractionGesturesEnabled;
 - (bool)_treatsSHA1SignedCertificatesAsInsecure;
 - (id)_urlSchemeHandlers;
 - (id)_visitedLinkProvider;

@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)articleListID;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)feedName;
 - (long long)feedType;
 - (void)fetchArticleIDsWithContext:(id)arg1 completionBlock:(id /* block */)arg2;

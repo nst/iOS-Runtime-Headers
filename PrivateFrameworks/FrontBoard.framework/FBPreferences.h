@@ -8,8 +8,8 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_queue_reload;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (void)reload;

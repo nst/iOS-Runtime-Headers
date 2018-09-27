@@ -9,6 +9,7 @@
     NSString * _conversationID;
     long long  _currentBrowserConsumer;
     UIView * _dragTargetView;
+    bool  _isPrimaryViewController;
     bool  _isTransitioningToExpandedPresentation;
     bool  _isiMessage;
     UIViewController * _presentationViewController;
@@ -32,6 +33,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } horizontalSwipeExclusionRect;
 @property (nonatomic, readonly) bool inExpandedPresentation;
+@property (nonatomic, readonly) bool inFullScreenModalPresentation;
+@property (nonatomic) bool isPrimaryViewController;
 @property (nonatomic) bool isTransitioningToExpandedPresentation;
 @property (nonatomic) bool isiMessage;
 @property (nonatomic, readonly) bool mayBeKeptInViewHierarchy;
@@ -70,11 +73,14 @@
 - (void)endDisablingUserInteraction;
 - (void)finishedPPTTestNamed:(id)arg1;
 - (void)finishedPPTTestNamed:(id)arg1 isCKLaunchTest:(bool)arg2;
+- (bool)inCompactPresentation;
 - (bool)inExpandedPresentation;
+- (bool)inFullScreenModalPresentation;
 - (id)initWithBalloonPlugin:(id)arg1;
 - (id)initWithBalloonPlugin:(id)arg1 dataSource:(id)arg2;
 - (id)initWithBalloonPlugin:(id)arg1 pluginPayloads:(id)arg2;
 - (bool)isLoaded;
+- (bool)isPrimaryViewController;
 - (bool)isTransitioningToExpandedPresentation;
 - (bool)isiMessage;
 - (void)loadView;
@@ -87,6 +93,7 @@
 - (void)setConversationID:(id)arg1;
 - (void)setCurrentBrowserConsumer:(long long)arg1;
 - (void)setDragTargetView:(id)arg1;
+- (void)setIsPrimaryViewController:(bool)arg1;
 - (void)setIsTransitioningToExpandedPresentation:(bool)arg1;
 - (void)setIsiMessage:(bool)arg1;
 - (void)setPresentationViewController:(id)arg1;

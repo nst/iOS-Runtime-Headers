@@ -14,8 +14,8 @@
     bool  _simulatesAskToBuyInSandbox;
 }
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

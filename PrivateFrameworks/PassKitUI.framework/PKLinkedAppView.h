@@ -6,6 +6,8 @@
     UIActivityIndicatorView * _activityIndicator;
     UILabel * _appName;
     UILabel * _appPublisher;
+    UIColor * _buttonBackgroundColor;
+    UIColor * _buttonTintColor;
     UIImageView * _iconView;
     PKLinkedApplication * _linkedApplication;
     UILabel * _loadingLabel;
@@ -13,17 +15,19 @@
     UILabel * _price;
     UIColor * _subTextLabelColor;
     PKLinkedAppUserRatingView * _userRatingView;
-    UIButton * _viewButton;
+    PKContinuousButton * _viewButton;
 }
 
 @property (nonatomic, copy) NSURL *appLaunchURL;
+@property (nonatomic, retain) UIColor *buttonBackgroundColor;
+@property (nonatomic, retain) UIColor *buttonTintColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKLinkedApplication *linkedApplication;
-@property (nonatomic) UIColor *mainLabelColor;
+@property (nonatomic, retain) UIColor *mainLabelColor;
 @property (nonatomic, copy) NSArray *storeIDs;
-@property (nonatomic) UIColor *subTextLabelColor;
+@property (nonatomic, retain) UIColor *subTextLabelColor;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,6 +37,8 @@
 - (void)_layoutLockupView;
 - (void)_layoutNotAvailableView;
 - (id)appLaunchURL;
+- (id)buttonBackgroundColor;
+- (id)buttonTintColor;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)initWithCoder:(id)arg1;
@@ -47,6 +53,8 @@
 - (void)setAppLaunchURL:(id)arg1;
 - (void)setApplicationIcon:(id)arg1;
 - (void)setApplicationName:(id)arg1;
+- (void)setButtonBackgroundColor:(id)arg1;
+- (void)setButtonTintColor:(id)arg1;
 - (void)setLoadingText:(id)arg1;
 - (void)setMainLabelColor:(id)arg1;
 - (void)setPrice:(id)arg1;

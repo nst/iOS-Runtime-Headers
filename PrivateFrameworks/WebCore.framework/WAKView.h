@@ -72,7 +72,6 @@
 - (id)nextValidKeyView;
 - (id)previousKeyView;
 - (id)previousValidKeyView;
-- (oneway void)release;
 - (void)releaseGState;
 - (void)removeFromSuperview;
 - (float)scale;
@@ -107,9 +106,5 @@
 - (bool)_web_firstResponderIsSelfOrDescendantView;
 - (id)_web_parentWebFrameView;
 - (id)_web_superviewOfClass:(Class)arg1;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseWithWebThreadLock;
 
 @end

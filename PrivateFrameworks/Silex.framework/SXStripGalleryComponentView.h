@@ -60,7 +60,7 @@
 - (void)finishMediaViewEvent;
 - (void)forceImageViewFullscreen:(id)arg1;
 - (id)fullScreenCanvasController;
-- (id)fullScreenCanvasController:(id)arg1 canvasViewForShowable:(id)arg2;
+- (id)fullScreenCanvasController:(id)arg1 canvasViewControllerForShowable:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)fullScreenCanvasController:(id)arg1 captionForShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (id)fullScreenCanvasController:(id)arg1 copyViewForShowable:(id)arg2 viewIndex:(unsigned long long)arg3;
 - (void)fullScreenCanvasController:(id)arg1 didHideShowable:(id)arg2 viewIndex:(unsigned long long)arg3;

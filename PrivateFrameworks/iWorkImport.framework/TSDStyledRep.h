@@ -53,7 +53,6 @@
 - (void)drawShadowInContext:(struct CGContext { }*)arg1 withChildren:(bool)arg2 withDrawableOpacity:(bool)arg3;
 - (void)invalidateShadowLayer;
 - (bool)isInvisible;
-- (id)magicMoveAttributesWithShapeAttributes:(bool)arg1;
 - (struct CGImage { }*)newShadowImageWithSize:(struct CGSize { double x1; double x2; })arg1 shadow:(id)arg2 drawSelector:(SEL)arg3 unflipped:(bool)arg4;
 - (struct CGImage { }*)newShadowImageWithSize:(struct CGSize { double x1; double x2; })arg1 unflipped:(bool)arg2 withChildren:(bool)arg3;
 - (double)opacity;
@@ -70,7 +69,6 @@
 - (id)reflectionLayer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })reflectionLayerFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })reflectionLayerFrameInRoot;
-- (void)setMagicMoveTextureAttributes:(id)arg1;
 - (void)setNeedsDisplay;
 - (id)shadow;
 - (id)shadowLayer;

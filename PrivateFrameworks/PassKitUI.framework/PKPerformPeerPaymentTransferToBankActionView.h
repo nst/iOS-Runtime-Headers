@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPerformPeerPaymentTransferToBankActionView : UIView <PKEnterCurrencyAmountViewDelegate, PKPeerPaymentAddBankAcountInformationViewControllerDelegate, PKPeerPaymentPerformActionView, UITableViewDataSource, UITableViewDelegate> {
+@interface PKPerformPeerPaymentTransferToBankActionView : UIView <PKEnterCurrencyAmountViewDelegate, PKEnterValueNewBalanceViewDelegate, PKPeerPaymentAddBankAcountInformationViewControllerDelegate, PKPeerPaymentPerformActionView, UITableViewDataSource, UITableViewDelegate> {
     PKPeerPaymentAccount * _account;
     PKContinuousButton * _addAccountButton;
     UILabel * _addAccountDetailLabel;
@@ -48,9 +48,9 @@
 - (void)_currentAmountDidChangeTo:(id)arg1 shouldGenerateNewSuggestions:(bool)arg2;
 - (void)_handleEditAccountInformationButtonPressed;
 - (bool)_isCurrentAmountValid;
-- (void)_presentAddBankAccountViewController;
 - (void)_presentViewController:(id)arg1;
 - (void)_setRightBarButtonEnabledState;
+- (bool)_shouldEnableMaxBalanceTransferButton;
 - (bool)_shouldShakeWithNewAmount:(id)arg1;
 - (id)_tableView;
 - (unsigned long long)_topPadding;
@@ -63,6 +63,7 @@
 - (void)bankAccountInformationViewControllerChangedBankAccountInformation:(id)arg1;
 - (id)cardBalance;
 - (id)delegate;
+- (void)didTapNewBalanceView;
 - (bool)enterCurrencyAmountView:(id)arg1 shouldChangeAmountFrom:(id)arg2 to:(id)arg3;
 - (void)enterCurrencyAmountViewDidChangeAmount:(id)arg1;
 - (id)initWithAccount:(id)arg1 bankInformation:(id)arg2;
@@ -74,6 +75,7 @@
 - (id)minLoadAmount;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pass;
+- (void)presentAddBankAccountViewController;
 - (void)saveLastInputValues;
 - (id)serviceProviderData;
 - (void)setAccount:(id)arg1;

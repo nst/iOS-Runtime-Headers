@@ -9,6 +9,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (id)stringForExpression:(id)arg1;
+- (id)stringForExpression:(id)arg1 containsPrivacySensitiveContents:(bool*)arg2;
 
 @end

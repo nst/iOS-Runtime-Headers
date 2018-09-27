@@ -73,6 +73,7 @@
 - (id)bleDeviceAddress;
 - (unsigned int)blePairState;
 - (id)description;
+- (id)descriptionWithLevel:(int)arg1;
 - (unsigned char)deviceActionType;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)flags;

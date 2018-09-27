@@ -4,6 +4,7 @@
 
 @interface NACVolumeControllerLocal : NSObject <MPAVRoutingControllerDelegate, MPVolumeControllerDelegate, NACVolumeController> {
     NSString * _audioCategory;
+    long long  _cachedHapticState;
     <NACVolumeControllerDelegate> * _delegate;
     NACEventThrottler * _hapticThrottler;
     bool  _monitoringHaptics;
@@ -23,6 +24,7 @@
 @property (nonatomic) <NACVolumeControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float hapticIntensity;
+@property (nonatomic) long long hapticState;
 @property (readonly) unsigned long long hash;
 @property (getter=isMuted, nonatomic, readonly) bool muted;
 @property (getter=isProminentHapticEnabled, nonatomic) bool prominentHapticEnabled;
@@ -34,24 +36,21 @@
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
-- (void)_hapticIntensityDidChange:(id)arg1;
 - (void)_ignoreHapticObservation;
 - (void)_setHapticIntensity:(id)arg1;
 - (void)_setVolumeValue:(id)arg1;
 - (void)_updateMutedStateFromVolumeController:(id)arg1;
-- (void)_updateProminentHapticState;
 - (void)_updateVolumeState;
 - (id)_volumeController;
-- (void)beginObservingHapticIntensity;
+- (void)beginObservingHapticState;
 - (void)beginObservingHaptics;
-- (void)beginObservingProminentHapticState;
 - (void)beginObservingVolume;
 - (id)delegate;
-- (void)endObservingHapticIntensity;
+- (void)endObservingHapticState;
 - (void)endObservingHaptics;
-- (void)endObservingProminentHapticState;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
+- (long long)hapticState;
 - (id)init;
 - (id)initWithAudioCategory:(id)arg1;
 - (bool)isMuted;
@@ -64,11 +63,13 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;
 - (void)setVolumeValue:(float)arg1;
 - (void)setVolumeValue:(float)arg1 muted:(bool)arg2 overrideEULimit:(bool)arg3;
+- (void)updateCachedHapticState;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 mutedStateDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;

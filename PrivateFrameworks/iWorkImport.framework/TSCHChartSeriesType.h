@@ -82,6 +82,7 @@
 - (bool)supportsFillSetFill;
 - (bool)supportsLineConnectionStyle;
 - (bool)supportsLineTypeNone;
+- (bool)supportsRoundedCorners;
 - (bool)supportsSeries3DFill;
 - (bool)supportsSeriesFill;
 - (bool)supportsSeriesGradientFill;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVideoAdSkipButton : SXMaterialButton {
+@interface SXVideoAdSkipButton : SVMaterialButton {
     unsigned long long  _skipDuration;
 }
 

@@ -31,6 +31,7 @@
 @property (nonatomic, readonly) NSURL *notificationAckURL;
 @property (getter=isPhoneNumberSupportedConfig, nonatomic, readonly) bool phoneNumberSupportedConfig;
 @property (nonatomic, readonly) NSURL *renewRecoveryTokenURL;
+@property (nonatomic, readonly) NSURL *repairURL;
 @property (nonatomic, readonly) NSURL *startProvisioningURL;
 @property (nonatomic, readonly) NSURL *storeModernRecoveryURL;
 @property (nonatomic, readonly) NSURL *syncAnisetteURL;
@@ -82,6 +83,7 @@
 - (unsigned long long)lastKnownIDMSEnvironment;
 - (id)notificationAckURL;
 - (id)renewRecoveryTokenURL;
+- (id)repairURL;
 - (void)requestNewURLBagIfNecessaryWithCompletion:(id /* block */)arg1;
 - (bool)requestNewURLBagIfNecessaryWithError:(id*)arg1;
 - (void)setBagProvider:(id)arg1;

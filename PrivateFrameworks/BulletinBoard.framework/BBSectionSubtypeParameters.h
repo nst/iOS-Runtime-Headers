@@ -21,6 +21,7 @@
     NSNumber * _boxedPrivacySettings;
     NSNumber * _boxedRealertCount;
     NSNumber * _boxedRevealsAdditionalContentOnPresentation;
+    NSNumber * _boxedShouldDismissBulletinWhenClosed;
     NSNumber * _boxedShowsContactPhoto;
     NSNumber * _boxedShowsUnreadIndicatorForNoticesFeed;
     NSNumber * _boxedSubtypePriority;
@@ -35,6 +36,7 @@
     NSString * _secondaryContentRemoteServiceBundleIdentifier;
     NSString * _secondaryContentRemoteViewControllerClassName;
     BBSectionIcon * _sectionIconOverride;
+    NSString * _subtypeSummaryFormat;
     BBColor * _tintColor;
     NSString * _topic;
     NSString * _unlockActionLabel;
@@ -61,6 +63,7 @@
 @property (nonatomic, retain) NSNumber *boxedPrivacySettings;
 @property (nonatomic, retain) NSNumber *boxedRealertCount;
 @property (nonatomic, retain) NSNumber *boxedRevealsAdditionalContentOnPresentation;
+@property (nonatomic, retain) NSNumber *boxedShouldDismissBulletinWhenClosed;
 @property (nonatomic, retain) NSNumber *boxedShowsContactPhoto;
 @property (nonatomic, retain) NSNumber *boxedShowsUnreadIndicatorForNoticesFeed;
 @property (nonatomic, retain) NSNumber *boxedSubtypePriority;
@@ -88,9 +91,11 @@
 @property (nonatomic, copy) NSString *secondaryContentRemoteServiceBundleIdentifier;
 @property (nonatomic, copy) NSString *secondaryContentRemoteViewControllerClassName;
 @property (nonatomic, copy) BBSectionIcon *sectionIconOverride;
+@property (nonatomic) bool shouldDismissBulletinWhenClosed;
 @property (nonatomic) bool showsContactPhoto;
 @property (nonatomic) bool showsUnreadIndicatorForNoticesFeed;
 @property (nonatomic) unsigned long long subtypePriority;
+@property (nonatomic, copy) NSString *subtypeSummaryFormat;
 @property (nonatomic) bool suppressesAlertsWhenAppIsActive;
 @property (nonatomic) bool suppressesTitle;
 @property (nonatomic, retain) BBColor *tintColor;
@@ -122,6 +127,7 @@
 - (id)boxedPrivacySettings;
 - (id)boxedRealertCount;
 - (id)boxedRevealsAdditionalContentOnPresentation;
+- (id)boxedShouldDismissBulletinWhenClosed;
 - (id)boxedShowsContactPhoto;
 - (id)boxedShowsUnreadIndicatorForNoticesFeed;
 - (id)boxedSubtypePriority;
@@ -175,6 +181,7 @@
 - (void)setBoxedPrivacySettings:(id)arg1;
 - (void)setBoxedRealertCount:(id)arg1;
 - (void)setBoxedRevealsAdditionalContentOnPresentation:(id)arg1;
+- (void)setBoxedShouldDismissBulletinWhenClosed:(id)arg1;
 - (void)setBoxedShowsContactPhoto:(id)arg1;
 - (void)setBoxedShowsUnreadIndicatorForNoticesFeed:(id)arg1;
 - (void)setBoxedSubtypePriority:(id)arg1;
@@ -202,18 +209,22 @@
 - (void)setSecondaryContentRemoteServiceBundleIdentifier:(id)arg1;
 - (void)setSecondaryContentRemoteViewControllerClassName:(id)arg1;
 - (void)setSectionIconOverride:(id)arg1;
+- (void)setShouldDismissBulletinWhenClosed:(bool)arg1;
 - (void)setShowsContactPhoto:(bool)arg1;
 - (void)setShowsUnreadIndicatorForNoticesFeed:(bool)arg1;
 - (void)setSubtypePriority:(unsigned long long)arg1;
+- (void)setSubtypeSummaryFormat:(id)arg1;
 - (void)setSuppressesAlertsWhenAppIsActive:(bool)arg1;
 - (void)setSuppressesTitle:(bool)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTopic:(id)arg1;
 - (void)setUnlockActionLabel:(id)arg1;
 - (void)setVisuallyIndicatesWhenDateIsInFuture:(bool)arg1;
+- (bool)shouldDismissBulletinWhenClosed;
 - (bool)showsContactPhoto;
 - (bool)showsUnreadIndicatorForNoticesFeed;
 - (unsigned long long)subtypePriority;
+- (id)subtypeSummaryFormat;
 - (bool)suppressesAlertsWhenAppIsActive;
 - (bool)suppressesTitle;
 - (id)tintColor;

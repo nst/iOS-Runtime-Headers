@@ -3,6 +3,7 @@
  */
 
 @interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, UIGestureRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver> {
+    MKCompassView * _compassView;
     <MKMapGestureControllerDelegate> * _delegate;
     bool  _didStartLongPress;
     MKVariableDelayTapRecognizer * _doubleTapGestureRecognizer;
@@ -17,7 +18,10 @@
     VKDynamicAnimation * _pinchDecelerationAnimation;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
     VKDynamicAnimation * _rotationDecelerationAnimation;
+    MKRotationFilter * _rotationFilter;
     UIRotationGestureRecognizer * _rotationGestureRecognizer;
+    bool  _rotationSnappingEnabled;
+    MKScaleView * _scaleView;
     VKDynamicAnimation * _tiltDecelerationAnimation;
     MKTiltGestureRecognizer * _tiltGestureRecognizer;
     _MKUserInteractionGestureRecognizer * _touchGestureRecognizer;
@@ -27,6 +31,7 @@
     UIPanGestureRecognizer * _verticalPanGestureRecognizer;
 }
 
+@property (nonatomic, retain) MKCompassView *compassView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKMapGestureControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -37,7 +42,9 @@
 @property (nonatomic) bool panWithMomentum;
 @property (nonatomic, readonly) UIPinchGestureRecognizer *pinchGestureRecognizer;
 @property (getter=isRotationEnabled, nonatomic) bool rotationEnabled;
+@property (nonatomic, retain) MKRotationFilter *rotationFilter;
 @property (nonatomic, readonly) UIRotationGestureRecognizer *rotationGestureRecognizer;
+@property (nonatomic, retain) MKScaleView *scaleView;
 @property (getter=isScrollEnabled, nonatomic) bool scrollEnabled;
 @property (readonly) Class superclass;
 @property (getter=isTiltEnabled, nonatomic) bool tiltEnabled;
@@ -52,8 +59,10 @@
 - (void)_handleStandardPan:(id)arg1;
 - (void)_handleStandardTilt:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_snapPointToDevicePixels:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateRotationGestureForState:(long long)arg1 focusPoint:(struct CGPoint { double x1; double x2; })arg2 rotation:(double)arg3 velocity:(double)arg4;
 - (void)beginGesturing;
 - (void)clearGestureRecognizersInFlight;
+- (id)compassView;
 - (void)dealloc;
 - (id)delegate;
 - (id)doubleTapGestureRecognizer;
@@ -83,10 +92,15 @@
 - (id)panGestureRecognizer;
 - (bool)panWithMomentum;
 - (id)pinchGestureRecognizer;
+- (id)rotationFilter;
 - (id)rotationGestureRecognizer;
+- (id)scaleView;
+- (void)setCompassView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPanWithMomentum:(bool)arg1;
 - (void)setRotationEnabled:(bool)arg1;
+- (void)setRotationFilter:(id)arg1;
+- (void)setScaleView:(id)arg1;
 - (void)setScrollEnabled:(bool)arg1;
 - (void)setTiltEnabled:(bool)arg1;
 - (void)setZoomEnabled:(bool)arg1;

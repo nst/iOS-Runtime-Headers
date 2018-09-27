@@ -12,10 +12,10 @@
 @property (copy) id /* block */ disconnectBlock;
 @property (copy) id /* block */ messageBlock;
 
+- (void).cxx_destruct;
 - (id)_initSKXPCConnection;
 - (void)_reloadEventHandler;
 - (id)createXPCEndpoint;
-- (void)dealloc;
 - (id /* block */)disconnectBlock;
 - (id)init;
 - (id)initWithServiceName:(id)arg1;

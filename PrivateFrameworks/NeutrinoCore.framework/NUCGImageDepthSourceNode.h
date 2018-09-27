@@ -15,7 +15,7 @@
         double tx; 
         double ty; 
     }  _aspectTransform;
-    NUCGAuxiliaryImageProperties * _depthImageProperties;
+    NUCGAuxiliaryImageProperties * _auxiliaryImageProperties;
     bool  _needsAspectRatioCorrection;
     NUCGImageSourceNode * _sourceNode;
 }
@@ -28,7 +28,7 @@
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long*)arg2 error:(out id*)arg3;
 - (bool)canPropagateOriginalDepthData;
 - (id)initWithSettings:(id)arg1;
-- (id)initWithSourceNode:(id)arg1 depthImageProperties:(id)arg2;
+- (id)initWithSourceNode:(id)arg1 auxiliaryImageProperties:(id)arg2;
 - (id)pipelineOptionsForPipelineState:(id)arg1 error:(out id*)arg2;
 - (struct { long long x1; long long x2; })pixelSize;
 - (void)setSourceNode:(id)arg1;

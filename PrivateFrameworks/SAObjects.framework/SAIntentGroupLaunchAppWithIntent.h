@@ -5,6 +5,7 @@
 @interface SAIntentGroupLaunchAppWithIntent : SABaseClientBoundCommand
 
 @property (nonatomic, retain) SAIntentGroupProtobufMessage *handledIntent;
+@property (nonatomic, retain) SAIntentGroupProtobufMessage *handledIntentResponse;
 
 + (id)launchAppWithIntent;
 + (id)launchAppWithIntentWithDictionary:(id)arg1 context:(id)arg2;
@@ -12,7 +13,9 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)handledIntent;
+- (id)handledIntentResponse;
 - (bool)requiresResponse;
 - (void)setHandledIntent:(id)arg1;
+- (void)setHandledIntentResponse:(id)arg1;
 
 @end

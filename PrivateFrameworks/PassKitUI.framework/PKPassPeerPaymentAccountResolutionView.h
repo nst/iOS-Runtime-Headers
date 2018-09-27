@@ -7,6 +7,7 @@
     UILabel * _bodyLabel;
     UIView * _bottomRule;
     PKContinuousButton * _button;
+    PKPeerPaymentContactResolver * _contactResolver;
     unsigned long long  _peerPaymentAccountResolution;
     PKPeerPaymentAccountResolutionController * _peerPaymentAccountResolutionController;
     bool  _showSpinner;
@@ -20,6 +21,7 @@
 - (id)_bottomRule;
 - (id)_button;
 - (id)_buttonText;
+- (id)_contactResolver;
 - (bool)_displaysTitleLabel;
 - (void)_handleButtonPressed:(id)arg1;
 - (void)_showSpinner:(bool)arg1;

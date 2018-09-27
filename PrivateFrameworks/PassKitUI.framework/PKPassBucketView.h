@@ -7,7 +7,8 @@
     NSArray * _bucket;
     PKPassBucketTemplate * _bucketTemplate;
     PKPassColorProfile * _colorProfile;
-    NSMutableArray * _fieldViews;
+    NSMutableArray * _currentFieldViews;
+    NSArray * _fieldViews;
     PKPass * _pass;
 }
 

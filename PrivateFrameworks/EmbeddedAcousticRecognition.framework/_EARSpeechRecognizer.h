@@ -12,6 +12,7 @@
     _EARFormatter * _formatter;
     NSObject<OS_dispatch_queue> * _formatterQueue;
     NSString * _inputOrigin;
+    NSData * _jitProfileData;
     NSArray * _leftContext;
     double  _maximumRecognitionDuration;
     NSDictionary * _recognitionConfidenceSubtraction;
@@ -31,6 +32,7 @@
 @property (nonatomic) double endpointStart;
 @property (nonatomic) bool farField;
 @property (nonatomic, copy) NSString *inputOrigin;
+@property (nonatomic, copy) NSData *jitProfileData;
 @property (nonatomic, copy) NSArray *leftContext;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, readonly) _EARSpeechModelInfo *modelInfo;
@@ -59,6 +61,7 @@
 - (id)initWithConfiguration:(id)arg1 withGeneralVoc:(id)arg2 withLexiconEnh:(id)arg3 withItnEnh:(id)arg4;
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiConfig:(id)arg3;
 - (id)inputOrigin;
+- (id)jitProfileData;
 - (id)leftContext;
 - (double)maximumRecognitionDuration;
 - (id)modelInfo;
@@ -78,6 +81,7 @@
 - (void)setEndpointStart:(double)arg1;
 - (void)setFarField:(bool)arg1;
 - (void)setInputOrigin:(id)arg1;
+- (void)setJitProfileData:(id)arg1;
 - (void)setLeftContext:(id)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
 - (void)setRecognitionConfidenceSubtraction:(id)arg1;

@@ -33,6 +33,7 @@
 - (void)callSource:(id)arg1 registeredWithConfiguration:(id)arg2;
 - (void)callSource:(id)arg1 reportedAudioFinishedForCallWithUUID:(id)arg2;
 - (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 changedFrequencyData:(id)arg3 forDirection:(long long)arg4;
+- (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 changedMeterLevel:(float)arg3 forDirection:(long long)arg4;
 - (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 crossDeviceIdentifier:(id)arg3 changedBytesOfDataUsed:(long long)arg4;
 - (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 endedAtDate:(id)arg3 privateReason:(long long)arg4 failureContext:(id)arg5;
 - (void)callSource:(id)arg1 reportedCallWithUUID:(id)arg2 updated:(id)arg3;

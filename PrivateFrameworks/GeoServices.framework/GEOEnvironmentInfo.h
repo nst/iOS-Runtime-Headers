@@ -35,5 +35,6 @@
 - (long long)state;
 - (void)updateWithURLs:(id)arg1;
 - (id)urlDictionary;
+- (id)useProxyAuth;
 
 @end

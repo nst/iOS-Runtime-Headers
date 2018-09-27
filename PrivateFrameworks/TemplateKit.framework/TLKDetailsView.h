@@ -4,7 +4,6 @@
 
 @interface TLKDetailsView : TLKView <TLKTextAreaViewTesting> {
     NSArray * _details;
-    TLKObserver * _detailsObserver;
     TLKRichText * _footnote;
     TLKMultilineText * _secondaryTitle;
     TLKImage * _secondaryTitleImage;
@@ -15,35 +14,27 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (retain) NSArray *details;
-@property (retain) TLKObserver *detailsObserver;
-@property (retain) TLKRichText *footnote;
+@property (nonatomic, retain) NSArray *details;
+@property (nonatomic, retain) TLKRichText *footnote;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKMultilineText *secondaryTitle;
-@property (retain) TLKImage *secondaryTitleImage;
-@property bool secondaryTitleIsDetached;
+@property (nonatomic, retain) TLKMultilineText *secondaryTitle;
+@property (nonatomic, retain) TLKImage *secondaryTitleImage;
+@property (nonatomic) bool secondaryTitleIsDetached;
 @property (readonly) Class superclass;
 @property (retain) TLKTextAreaView *textAreaView;
-@property (retain) TLKRichText *title;
+@property (nonatomic, retain) TLKRichText *title;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)details;
-- (id)detailsObserver;
-- (void)disableUnbatchedUpdates;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })effectiveAlignmentRectInsets;
 - (id)footnote;
 - (id)footnoteLabelString;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
-- (void)performBatchUpdates:(id /* block */)arg1;
 - (id)secondaryTitle;
 - (id)secondaryTitleImage;
 - (bool)secondaryTitleIsDetached;
 - (id)secondaryTitleLabelString;
 - (void)setDetails:(id)arg1;
-- (void)setDetailsObserver:(id)arg1;
 - (void)setFootnote:(id)arg1;
 - (void)setSecondaryTitle:(id)arg1;
 - (void)setSecondaryTitleImage:(id)arg1;
@@ -55,6 +46,5 @@
 - (id)textAreaView;
 - (id)title;
 - (id)titleLabelString;
-- (void)updateExistingDetailText:(id)arg1;
 
 @end

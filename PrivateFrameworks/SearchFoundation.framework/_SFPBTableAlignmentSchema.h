@@ -9,7 +9,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasMetadata;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) _SFPBStringDictionary *metadata;
@@ -20,7 +19,6 @@
 - (void)addTableColumnAlignment:(id)arg1;
 - (void)clearTableColumnAlignment;
 - (id)dictionaryRepresentation;
-- (bool)hasMetadata;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

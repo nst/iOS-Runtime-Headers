@@ -9,7 +9,6 @@
 @property (nonatomic, copy) NSString *address;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasAddress;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (readonly) Class superclass;
@@ -19,7 +18,6 @@
 - (void).cxx_destruct;
 - (id)address;
 - (id)dictionaryRepresentation;
-- (bool)hasAddress;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;

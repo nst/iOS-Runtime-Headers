@@ -16,8 +16,8 @@
 
 + (id)preferenceWithKey:(id)arg1 domain:(id)arg2 defaultValue:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)currentValue;
-- (void)dealloc;
 - (id)defaultValue;
 - (id)domain;
 - (id)key;

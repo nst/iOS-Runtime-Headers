@@ -243,7 +243,7 @@
 - (bool)isVisiblePlugin:(id)arg1;
 - (id)lastMessagePartChatItem;
 - (void)liveBalloonTouched:(id)arg1;
-- (void)liveViewController:(id)arg1 requestPresentationStyleExpanded:(bool)arg2;
+- (void)liveViewController:(id)arg1 requestPresentationStyle:(unsigned long long)arg2;
 - (void)liveViewController:(id)arg1 stagePayload:(id)arg2 skipShelf:(bool)arg3 allowAllCommits:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)liveViewController:(id)arg1 stageSticker:(id)arg2 skipShelf:(bool)arg3 allowAllCommits:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadEarlierMessages;
@@ -258,6 +258,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (id)messagePartForBalloonView:(id)arg1;
 - (id)mostRecentlyTouchedPlugin;
+- (void)multiwayCallStateChanged:(id)arg1;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)parentControllerDidBecomeActive;
 - (struct CGPoint { double x1; double x2; })peekSampleTranslation;
@@ -353,9 +354,11 @@
 - (void)transferRestored:(id)arg1;
 - (void)transferUpdated:(id)arg1;
 - (bool)transitionedFromComposing;
+- (void)tuConversationBalloonJoinButtonTapped:(id)arg1;
 - (id)updateAnimationGroup;
 - (void)updateAnimationPaused;
 - (void)updateEffectViewMessageRects;
+- (void)updateLastAddressedHandleID:(id)arg1 lastAddressedSIMID:(id)arg2;
 - (void)updateTranscript:(id /* block */)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(bool)arg6 checkFiltered:(bool)arg7 completion:(id /* block */)arg8;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(bool)arg6 completion:(id /* block */)arg7;

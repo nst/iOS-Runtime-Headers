@@ -16,9 +16,8 @@
     unsigned long long  _options;
     NSMutableSet * _pids;
     NSCompoundPredicate * _predicate;
-    NSMutableSet * _proc_names;
     struct os_activity_stream_s { } * _stream;
-    NSString * _waitforProcessName;
+    _OSLogStreamFilter * _streamFilter;
 }
 
 @property (nonatomic) NSMutableDictionary *activityFilters;
@@ -34,7 +33,6 @@
 - (id)activityFilters;
 - (void)addFilterForActivity:(id)arg1 andBinary:(id)arg2;
 - (void)addProcessID:(int)arg1;
-- (void)addProcessName:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)device;
@@ -45,7 +43,6 @@
 - (id)getInfoForDevice:(id)arg1 andKey:(id)arg2;
 - (id)init;
 - (id)initWithDevice:(void*)arg1;
-- (int)maxProcs;
 - (unsigned long long)options;
 - (id)predicate;
 - (void)setActivityFilters:(id)arg1;
@@ -63,6 +60,5 @@
 - (void)stopLocal;
 - (void)stopRemote;
 - (bool)streamEvent:(id)arg1 error:(id)arg2;
-- (void)waitForProcessName:(id)arg1;
 
 @end

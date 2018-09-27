@@ -21,9 +21,9 @@
 + (bool)supportsSecureCoding;
 + (id)traitsWithFontName:(id)arg1 maxFontSize:(double)arg2 minFontSize:(double)arg3 textColor:(id)arg4 yCoordinate:(double)arg5 baselineOffset:(double)arg6;
 
+- (void).cxx_destruct;
 - (double)baselineOffset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fontName;

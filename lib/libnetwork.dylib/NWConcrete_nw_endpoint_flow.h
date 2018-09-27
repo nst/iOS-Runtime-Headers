@@ -12,16 +12,19 @@
     unsigned int  configured_keepalive_count;
     unsigned int  configured_keepalive_interval;
     NSObject<OS_nw_fd_wrapper> * connected_fd_wrapper;
+    NSObject<OS_nw_array> * connected_metadata;
     NSObject<OS_nw_path> * connected_path;
     unsigned int  custom_protocols_only;
     NSObject<OS_dispatch_data> * final_data;
-    int  final_error;
+    NSObject<OS_nw_error> * final_error;
     unsigned long long  first_keepalive_time;
     NSObject<OS_nw_endpoint> * flow_divert_endpoint;
     NSObject<OS_xpc_object> * flow_divert_token;
+    NSObject<OS_nw_path_flow_registration> * flow_registration;
     unsigned int  has_connected;
     unsigned int  initial_payload_sent;
     unsigned int  initialized_protocol;
+    NSObject<OS_nw_dictionary> * input_contexts;
     unsigned int  input_finished;
     void * internally_retained_object;
     struct nw_protocol_identifier { BOOL x1[32]; int x2; int x3; } * ip_protocol_identifier;
@@ -32,11 +35,17 @@
     unsigned int  keepalive_count;
     unsigned int  keepalive_event_enabled;
     id /* block */  keepalive_event_handler;
-    struct __CFError { } * last_error;
+    NSObject<OS_nw_error> * last_error;
+    NSObject<OS_nw_content_context> * last_output_context;
+    unsigned int  last_output_context_pending;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  lock;
     unsigned int  multipath_nat64_query_outstanding;
+    struct nw_frame_array_s { 
+        struct nw_frame {} *tqh_first; 
+        struct nw_frame {} **tqh_last; 
+    }  pending_input_frames;
     unsigned int  pending_write_bytes;
     int  pre_connected_fd;
     struct nw_protocol_callbacks { 
@@ -71,7 +80,7 @@
         int (*copy_info)(); 
         int (*add_listen_handler)(); 
         int (*remove_listen_handler)(); 
-        int (*supports_message_frames)(); 
+        int (*get_message_properties)(); 
         int (*reset)(); 
         int (*input_flush)(); 
     }  protocol_callbacks;
@@ -89,12 +98,14 @@
         int level; 
         int mapping; 
     }  protocol_identifier;
+    unsigned short  protocol_log_id_num;
     id /* block */  read_close_handler;
     NSObject<OS_nw_read_request> * read_requests;
     unsigned int  servicing_reads;
     unsigned int  setup_protocols;
     struct _DNSServiceRef_t { } * sleep_proxy_ref;
     struct nw_protocol { unsigned char x1[16]; struct nw_protocol_identifier {} *x2; struct nw_protocol_callbacks {} *x3; struct nw_protocol {} *x4; void *x5; struct nw_protocol {} *x6; void *x7; } * socket_protocol;
+    unsigned int  started;
     unsigned int  started_protocols;
     struct tcp_connection_info { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 17; unsigned long long x33; unsigned long long x34; unsigned long long x35; unsigned long long x36; unsigned long long x37; unsigned long long x38; unsigned long long x39; } * tcp_connection_info;
     struct tcp_info { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25; unsigned long long x26; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned char x30; unsigned char x31; unsigned short x32; unsigned long long x33; unsigned long long x34; unsigned long long x35; unsigned long long x36; unsigned long long x37; unsigned long long x38; unsigned long long x39; unsigned long long x40; unsigned long long x41; unsigned long long x42; unsigned long long x43; unsigned long long x44; struct tcp_conn_status { unsigned int x_45_1_1 : 1; unsigned int x_45_1_2 : 1; unsigned int x_45_1_3 : 1; unsigned int x_45_1_4 : 1; } x45; } * tcp_info;

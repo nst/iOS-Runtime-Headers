@@ -23,6 +23,7 @@
 + (double)_scaleForGestaltKey:(struct __CFString { }*)arg1;
 + (id)defaultPolicy;
 
+- (void).cxx_destruct;
 - (void)_queue_reloadDefaultSettings;
 - (double)_queue_watchdogScalingFactorForAppInfo:(id)arg1 isResume:(bool)arg2;
 - (void)dealloc;

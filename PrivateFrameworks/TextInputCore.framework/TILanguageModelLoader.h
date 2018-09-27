@@ -51,7 +51,6 @@
 - (void)clearDynamicLearningCaches;
 - (id)clientIdentifier;
 - (id)contactFetchingDelegate;
-- (void)dealloc;
 - (id)dynamicResourcePath;
 - (void)findRecordsMatchingRecipient:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)flushDynamicLearningCaches;

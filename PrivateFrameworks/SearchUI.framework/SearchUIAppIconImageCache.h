@@ -2,13 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIAppIconImageCache : NSObject
+@interface SearchUIAppIconImageCache : NSObject {
+    NSCache * _imageCache;
+}
 
-+ (id)appIconForBundleID:(id)arg1 variant:(unsigned long long)arg2;
-+ (id)appIconForBundleID:(id)arg1 webClipID:(id)arg2 variant:(unsigned long long)arg3;
-+ (id)appIconForResult:(id)arg1 variant:(unsigned long long)arg2;
-+ (void)appIconImageDidChange:(id)arg1;
-+ (bool)appIconIsCachedForBundleID:(id)arg1 variant:(unsigned long long)arg2;
-+ (id)keyStringWithBundleID:(id)arg1 variant:(unsigned long long)arg2;
+@property (retain) NSCache *imageCache;
+
++ (id)sharedCache;
+
+- (void).cxx_destruct;
+- (void)appIconImageDidChange:(id)arg1;
+- (id)cacheKeyForVariant:(unsigned long long)arg1;
+- (id)cachedImageForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;
+- (void)clearCacheAndPostNotificationForChangedIconForBundleIdentifier:(id)arg1;
+- (void)dateDidChange;
+- (id)imageCache;
+- (id)init;
+- (void)setImageCache:(id)arg1;
+- (void)updateImage:(id)arg1 forBundleIdentifier:(id)arg2 variant:(unsigned long long)arg3;
 
 @end

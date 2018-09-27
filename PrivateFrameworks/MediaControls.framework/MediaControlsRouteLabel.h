@@ -4,6 +4,6 @@
 
 @interface MediaControlsRouteLabel : MPRouteLabel
 
-- (void)mt_applyVibrantStyling:(id)arg1;
+- (void)mc_applyVibrantStyling:(id)arg1;
 
 @end

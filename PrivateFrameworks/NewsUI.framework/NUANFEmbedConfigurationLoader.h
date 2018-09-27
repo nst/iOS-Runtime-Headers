@@ -3,13 +3,13 @@
  */
 
 @interface NUANFEmbedConfigurationLoader : NSObject <NUEmbedConfigurationLoader> {
-    FCAppConfigurationManager * _appConfigurationManager;
+    <FCNewsAppConfigurationManager> * _appConfigurationManager;
     FCAsyncOnceOperation * _asyncOnceOperation;
     SXJSONDictionary * _embedConfiguration;
     FCFlintResourceManager * _flintResourceManager;
 }
 
-@property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
+@property (nonatomic, retain) <FCNewsAppConfigurationManager> *appConfigurationManager;
 @property (nonatomic, retain) FCAsyncOnceOperation *asyncOnceOperation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

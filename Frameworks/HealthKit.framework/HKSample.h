@@ -14,13 +14,14 @@
 @property (getter=_endTimestamp, setter=_setEndTimestamp:, nonatomic) double endTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *metadata;
-@property (readonly) HKSampleType *sampleType;
+@property (readonly, copy) HKSampleType *sampleType;
 @property (readonly) NSDate *startDate;
 @property (getter=_startTimestamp, setter=_setStartTimestamp:, nonatomic) double startTimestamp;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)_newSampleFromDatesWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 device:(id)arg4 metadata:(id)arg5 config:(id /* block */)arg6;
 + (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(id /* block */)arg6;
 + (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 sampleType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7;
 + (bool)supportsEquivalence;
@@ -32,9 +33,12 @@
 - (long long)_externalSyncObjectCode;
 - (id)_init;
 - (bool)_requiresPrivateEntitlementForQueries;
+- (void)_setEndDate:(id)arg1;
 - (void)_setEndTimestamp:(double)arg1;
 - (void)_setSampleType:(id)arg1;
+- (void)_setStartDate:(id)arg1;
 - (void)_setStartTimestamp:(double)arg1;
+- (void)_setType:(id)arg1;
 - (double)_startTimestamp;
 - (id)_validateConfiguration;
 - (id)description;
@@ -44,6 +48,13 @@
 - (bool)isEquivalent:(id)arg1;
 - (id)sampleType;
 - (id)startDate;
+
+// Image: /System/Library/PrivateFrameworks/Fitness.framework/Fitness
+
+- (bool)fi_isAfterDate:(id)arg1;
+- (bool)fi_isBeforeDate:(id)arg1;
+- (bool)fi_overlapsStartDate:(id)arg1 endDate:(id)arg2;
+- (bool)fi_spansDate:(id)arg1 useStrictDateLimits:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
@@ -64,6 +75,7 @@
 
 - (void)addDetailValuesToSection:(id)arg1;
 - (id)dataForSharingWithHealthStore:(id)arg1;
+- (id)dataProviderValue;
 - (id)detailedReportName;
 - (void)fetchSubSampleTypesWithHealthStore:(id)arg1 completion:(id /* block */)arg2;
 - (id)fixedAggregateValuesWithDisplayTypeController:(id)arg1 unitController:(id)arg2;

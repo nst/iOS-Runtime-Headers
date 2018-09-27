@@ -4,7 +4,11 @@
 
 @interface ATRestoreManager : NSObject <ATEnvironmentMonitorObserver, ATRestoreAssetLinkDelegate, ATSessionObserver> {
     ATRestoreAssetLink * _applicationDataRestoreLink;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _cancelled;
+    NSObject<OS_dispatch_queue> * _checkRestoreStatusQueue;
+    bool  _iCloudRestoreActive;
+    bool  _iTunesRestoreActive;
     NSObject<OS_dispatch_queue> * _queue;
     ATRestoreAssetLink * _restoreLink;
     ATSession * _restoreSession;
@@ -20,13 +24,15 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_checkActiveRestoreStateWithCompletion:(id /* block */)arg1;
 - (id)_dataClasses;
 - (bool)_iCloudPhotoLibraryEnabled;
 - (void)_start;
+- (void)_updateSettingsForiTunesRestoreState:(bool)arg1 iCloudRestoreState:(bool)arg2;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (id)init;
 - (void)restoreAssetLinkDidCancelRestore:(id)arg1;
-- (bool)restoreSessionActive;
+- (void)restoreSessionActiveWithCompletion:(id /* block */)arg1;
 - (void)resume;
 - (void)sessionDidFinish:(id)arg1;
 - (void)setRestoreInProgress:(bool)arg1;

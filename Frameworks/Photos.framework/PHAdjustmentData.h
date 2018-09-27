@@ -29,7 +29,10 @@
 + (long long)videoRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
 
 - (void).cxx_destruct;
+- (bool)_canBeHandledByClientUsingVerificationBlock:(id /* block */)arg1;
+- (bool)_contentEditingHasAdjustments;
 - (bool)_hasAdjustments;
+- (long long)_requiredBaseVersionWithCanHandleAdjustmentData:(bool)arg1 assetIsVideo:(bool)arg2;
 - (long long)baseVersion;
 - (id)data;
 - (id)description;
@@ -48,7 +51,7 @@
 - (long long)_pu_baseOrientationForAsset:(id)arg1;
 - (long long)pu_adjustmentWorkVersion;
 - (bool)pu_isPenultimateAvailable;
-- (bool)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2;
+- (bool)pu_loadPhotoEditModel:(id)arg1 forAsset:(id)arg2 rawEditingAllowed:(bool)arg3;
 - (long long)pu_penultimateState;
 
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories

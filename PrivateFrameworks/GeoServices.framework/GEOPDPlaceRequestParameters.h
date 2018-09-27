@@ -6,6 +6,7 @@
     GEOPDAddressObjectGeocodingParameters * _addressObjectGeocodingParameters;
     GEOPDAutocompleteParameters * _autocompleteParameters;
     GEOPDBatchPopularNearbySearchParameters * _batchPopularNearbySearchParameters;
+    GEOPDBatchSpatialLookupParameters * _batchSpatialLookupParameters;
     GEOPDBrandLookupParameters * _brandLookupParameters;
     GEOPDSearchBrowseCategorySuggestionParameters * _browseCategorySuggestionParameters;
     GEOPDCanonicalLocationSearchParameters * _canonicalLocationSearchParameters;
@@ -36,6 +37,7 @@
 @property (nonatomic, retain) GEOPDAddressObjectGeocodingParameters *addressObjectGeocodingParameters;
 @property (nonatomic, retain) GEOPDAutocompleteParameters *autocompleteParameters;
 @property (nonatomic, retain) GEOPDBatchPopularNearbySearchParameters *batchPopularNearbySearchParameters;
+@property (nonatomic, retain) GEOPDBatchSpatialLookupParameters *batchSpatialLookupParameters;
 @property (nonatomic, retain) GEOPDBrandLookupParameters *brandLookupParameters;
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionParameters *browseCategorySuggestionParameters;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchParameters *canonicalLocationSearchParameters;
@@ -47,6 +49,7 @@
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingParameters;
 @property (nonatomic, readonly) bool hasAutocompleteParameters;
 @property (nonatomic, readonly) bool hasBatchPopularNearbySearchParameters;
+@property (nonatomic, readonly) bool hasBatchSpatialLookupParameters;
 @property (nonatomic, readonly) bool hasBrandLookupParameters;
 @property (nonatomic, readonly) bool hasBrowseCategorySuggestionParameters;
 @property (nonatomic, readonly) bool hasCanonicalLocationSearchParameters;
@@ -93,6 +96,7 @@
 - (id)addressObjectGeocodingParameters;
 - (id)autocompleteParameters;
 - (id)batchPopularNearbySearchParameters;
+- (id)batchSpatialLookupParameters;
 - (id)brandLookupParameters;
 - (id)browseCategorySuggestionParameters;
 - (id)canonicalLocationSearchParameters;
@@ -109,6 +113,7 @@
 - (bool)hasAddressObjectGeocodingParameters;
 - (bool)hasAutocompleteParameters;
 - (bool)hasBatchPopularNearbySearchParameters;
+- (bool)hasBatchSpatialLookupParameters;
 - (bool)hasBrandLookupParameters;
 - (bool)hasBrowseCategorySuggestionParameters;
 - (bool)hasCanonicalLocationSearchParameters;
@@ -172,6 +177,7 @@
 - (void)setAddressObjectGeocodingParameters:(id)arg1;
 - (void)setAutocompleteParameters:(id)arg1;
 - (void)setBatchPopularNearbySearchParameters:(id)arg1;
+- (void)setBatchSpatialLookupParameters:(id)arg1;
 - (void)setBrandLookupParameters:(id)arg1;
 - (void)setBrowseCategorySuggestionParameters:(id)arg1;
 - (void)setCanonicalLocationSearchParameters:(id)arg1;

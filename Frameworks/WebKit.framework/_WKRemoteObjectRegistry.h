@@ -31,19 +31,20 @@
     }  _remoteObjectRegistry;
 }
 
-@property (nonatomic, readonly) struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} x3; }*remoteObjectRegistry;
+@property (nonatomic, readonly) struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} x3; /* Warning: unhandled struct encoding: '{Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count' */ struct x4; }*remoteObjectRegistry; /* unknown property attribute:  WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > >}IIII}}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_callReplyWithID:(unsigned long long)arg1 blockInvocation:(const struct UserData { struct RefPtr<API::Object, WTF::DumbPtrTraits<API::Object> > { struct Object {} *x_1_1_1; } x1; }*)arg2;
-- (id)_initWithMessageSender:(struct MessageSender { }*)arg1;
+- (id)_initWithWebPage:(struct WebPage { }*)arg1;
+- (id)_initWithWebPageProxy:(struct WebPageProxy { }*)arg1;
 - (void)_invalidate;
 - (void)_invokeMethod:(const struct RemoteObjectInvocation { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct RefPtr<API::Dictionary, WTF::DumbPtrTraits<API::Dictionary> > { struct Dictionary {} *x_2_1_1; } x2; struct unique_ptr<WebKit::RemoteObjectInvocation::ReplyInfo, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct __compressed_pair<WebKit::RemoteObjectInvocation::ReplyInfo *, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct ReplyInfo {} *x_1_2_1; } x_3_1_1; } x3; }*)arg1;
 - (void)_releaseReplyWithID:(unsigned long long)arg1;
 - (void)_sendInvocation:(id)arg1 interface:(id)arg2;
 - (void)registerExportedObject:(id)arg1 interface:(id)arg2;
 - (id)remoteObjectProxyWithInterface:(id)arg1;
-- (struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} x3; }*)remoteObjectRegistry;
+- (struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} x3; struct Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > ()>={unique_ptr<WTF::Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > ()>::CallableWrapperBase> >={__compressed_pair<WTF::Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<WTF::RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> > ()>::CallableWrapperBase> >=^{CallableWrapperBase {} x4; }*)remoteObjectRegistry;
 - (void)unregisterExportedObject:(id)arg1 interface:(id)arg2;
 
 @end

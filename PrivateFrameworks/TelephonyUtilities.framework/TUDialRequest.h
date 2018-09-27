@@ -5,6 +5,7 @@
 @interface TUDialRequest : NSObject <NSCopying, NSSecureCoding, TUCallRequest, TUVideoRequest> {
     NSString * _audioSourceIdentifier;
     NSString * _contactIdentifier;
+    NSDate * _dateDialed;
     bool  _dialAssisted;
     long long  _dialType;
     NSString * _endpointIDSDestinationURI;
@@ -21,6 +22,7 @@
         double width; 
         double height; 
     }  _localPortraitAspectRatio;
+    NSUUID * _localSenderIdentityUUID;
     long long  _originatingUIType;
     bool  _performDialAssist;
     bool  _performLocalDialAssist;
@@ -28,6 +30,8 @@
     NSString * _providerCustomIdentifier;
     TUCallProviderManager * _providerManager;
     bool  _redial;
+    TUSenderIdentityClient * _senderIdentityClient;
+    bool  _shouldSuppressInCallUI;
     bool  _showUIPrompt;
     bool  _sos;
     long long  _ttyType;
@@ -37,9 +41,9 @@
 
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, copy) NSString *audioSourceIdentifier;
-@property (nonatomic) int callIdentifier;
 @property (nonatomic, copy) NSString *contactIdentifier;
 @property (nonatomic, readonly) CNContactStore *contactStore;
+@property (nonatomic, retain) NSDate *dateDialed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *destinationID;
@@ -55,6 +59,7 @@
 @property (nonatomic, copy) id /* block */ isEmergencyNumberOrIsWhitelistedBlock;
 @property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
 @property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic) long long originatingUIType;
 @property (nonatomic) bool performDialAssist;
 @property (nonatomic) bool performLocalDialAssist;
@@ -62,7 +67,9 @@
 @property (nonatomic, copy) NSString *providerCustomIdentifier;
 @property (nonatomic, readonly) TUCallProviderManager *providerManager;
 @property (getter=isRedial, nonatomic) bool redial;
+@property (nonatomic, readonly) TUSenderIdentityClient *senderIdentityClient;
 @property (nonatomic, readonly) int service;
+@property (nonatomic) bool shouldSuppressInCallUI;
 @property (nonatomic) bool showUIPrompt;
 @property (getter=isSOS, setter=setSOS:, nonatomic) bool sos;
 @property (readonly) Class superclass;
@@ -74,17 +81,15 @@
 @property (nonatomic, readonly, copy) NSArray *validityErrors;
 @property (getter=isVideo, nonatomic) bool video;
 
-+ (id /* block */)callIdentifierToContactIdentifierTransformBlock;
 + (id /* block */)callProviderManagerGeneratorBlock;
-+ (id /* block */)contactIdentifierToCallIdentifierTransformBlock;
 + (long long)dialRequestTypeForIntentDestinationType:(long long)arg1;
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (long long)intentTTYTypeForTTYType:(long long)arg1;
++ (id /* block */)legacyAddressBookIdentifierToContactIdentifierTransformBlock;
 + (long long)originatingUITypeForString:(id)arg1;
 + (id)providerForIntentPreferredCallProvider:(long long)arg1 providerManager:(id)arg2;
-+ (void)setCallIdentifierToContactIdentifierTransformBlock:(id /* block */)arg1;
 + (void)setCallProviderManagerGeneratorBlock:(id /* block */)arg1;
-+ (void)setContactIdentifierToCallIdentifierTransformBlock:(id /* block */)arg1;
++ (void)setLegacyAddressBookIdentifierToContactIdentifierTransformBlock:(id /* block */)arg1;
 + (id)stringForDialType:(long long)arg1;
 + (id)stringForOriginatingUIType:(long long)arg1;
 + (id)stringForTTYType:(long long)arg1;
@@ -101,15 +106,13 @@
 - (id)audioSourceIdentifier;
 - (id)audioSourceIdentifierURLQueryItem;
 - (bool)boolValueForQueryItemWithName:(id)arg1 inURLComponents:(id)arg2;
-- (int)callIdentifier;
-- (int)callIdentifierFromURLComponents:(id)arg1;
-- (id)callIdentifierQueryItemName;
 - (id)callProviderFromURLComponents:(id)arg1 video:(bool*)arg2;
 - (id)contactIdentifier;
 - (id)contactIdentifierFromURLComponents:(id)arg1;
 - (id)contactIdentifierURLQueryItem;
 - (id)contactStore;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateDialed;
 - (id)description;
 - (id)destinationID;
 - (id)destinationIDFromURL:(id)arg1;
@@ -145,8 +148,12 @@
 - (bool)isValid;
 - (bool)isVideo;
 - (id)isVoicemailURLQueryItem;
+- (int)legacyAddressBookIdentifierFromURLComponents:(id)arg1;
+- (id)legacyAddressBookIdentifierQueryItemName;
 - (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
 - (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (id)localSenderIdentityUUID;
+- (id)localSenderIdentityUUIDURLQueryItem;
 - (id)noPromptURLQueryItem;
 - (long long)originatingUIType;
 - (id)originatingUIURLQueryItem;
@@ -156,10 +163,12 @@
 - (id)providerCustomIdentifier;
 - (id)providerCustomIdentifierURLQueryItem;
 - (id)providerManager;
+- (id)redialURLQueryItem;
+- (id)senderIdentityClient;
 - (int)service;
 - (void)setAudioSourceIdentifier:(id)arg1;
-- (void)setCallIdentifier:(int)arg1;
 - (void)setContactIdentifier:(id)arg1;
+- (void)setDateDialed:(id)arg1;
 - (void)setDestinationID:(id)arg1;
 - (void)setDialAssisted:(bool)arg1;
 - (void)setDialType:(long long)arg1;
@@ -171,6 +180,7 @@
 - (void)setIsEmergencyNumberOrIsWhitelistedBlock:(id /* block */)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalSenderIdentityUUID:(id)arg1;
 - (void)setOriginatingUIType:(long long)arg1;
 - (void)setPerformDialAssist:(bool)arg1;
 - (void)setPerformLocalDialAssist:(bool)arg1;
@@ -178,10 +188,13 @@
 - (void)setProviderCustomIdentifier:(id)arg1;
 - (void)setRedial:(bool)arg1;
 - (void)setSOS:(bool)arg1;
+- (void)setShouldSuppressInCallUI:(bool)arg1;
 - (void)setShowUIPrompt:(bool)arg1;
 - (void)setTtyType:(long long)arg1;
 - (void)setUniqueProxyIdentifier:(id)arg1;
 - (void)setVideo:(bool)arg1;
+- (bool)shouldSuppressInCallUI;
+- (id)shouldSuppressInCallUIQueryItem;
 - (bool)showUIPrompt;
 - (id)sosURLQueryItem;
 - (id)suppressAssistURLQueryItem;

@@ -14,6 +14,5 @@
 
 - (void)acknowledgeChangeBatch:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getChangeBatchWithCompletionHandler:(id /* block */)arg1;
-- (id)init;
 
 @end

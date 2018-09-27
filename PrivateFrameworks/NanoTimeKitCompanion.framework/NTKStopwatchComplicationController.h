@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) <NTKStopwatchComplicationDisplay> *legacyDisplay;
 
-+ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void)_activate;
 - (void)_configureForLegacyDisplay:(id)arg1;

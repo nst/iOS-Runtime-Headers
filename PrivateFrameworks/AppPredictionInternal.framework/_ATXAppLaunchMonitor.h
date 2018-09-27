@@ -3,17 +3,10 @@
  */
 
 @interface _ATXAppLaunchMonitor : NSObject {
-    _ATXAppDailyDose * _appDailyDose;
-    _ATXAppInfoManager * _appInfoManager;
-    _ATXAppLaunchHistogramManager * _appLaunchHistogramManager;
     NSObject<OS_dispatch_queue> * _appLaunchHistoryQueue;
-    _ATXAppLaunchSequenceManager * _appLaunchSequenceManager;
-    <_CDLocalContext> * _context;
-    NSMutableArray * _deltaLog;
-    _ATXDuetHelper * _duetHelper;
-    NSMutableDictionary * _launchedBundleIds;
+    _PASLock * _cdContext;
+    _PASQueueLock * _history;
     NSObject<OS_dispatch_queue> * _logQueue;
-    NSMutableSet * _registrations;
     PETScalarEventTracker * _updateLaunchHistoryTracker;
 }
 
@@ -21,9 +14,9 @@
 + (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
-- (void)_addLaunchWithBundleIdNoLock:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4 isExtension:(bool)arg5;
-- (void)_addSURFLaunchesDuringLastLaunch;
-- (void)_addSurfLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (void)_addLaunchWithLockWitness:(id)arg1 bundleId:(id)arg2 date:(id)arg3 timeZone:(id)arg4 reason:(id)arg5 isExtension:(bool)arg6;
+- (void)_addSURFLaunchesDuringLastLaunchWithLockWitness:(id)arg1;
+- (void)_addSurfLaunchesWithLockWitness:(id)arg1 betweenStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_syncForTests;
 - (void)addLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
 - (id)appInfoManager;
@@ -34,7 +27,7 @@
 - (id)dailyDose;
 - (void)dealloc;
 - (id)getLastAppsFromDuetWithStartDate:(id)arg1 endDate:(id)arg2;
-- (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2;
+- (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2 date:(id)arg3;
 - (void)handleBacklightChangeNotificationWithValue:(int)arg1;
 - (id)init;
 - (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 appDailyDose:(id)arg4 duetHelper:(id)arg5;

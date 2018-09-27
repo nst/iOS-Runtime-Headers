@@ -122,7 +122,7 @@
 - (id)editorDelegate;
 - (unsigned long long)entityType;
 - (long long)firstTableRowForEditItem:(id)arg1;
-- (void)focusAndSelectTitle;
+- (void)focus:(unsigned long long)arg1 select:(bool)arg2;
 - (void)handleTapOutside;
 - (bool)hasUnsavedChanges;
 - (id)init;

@@ -28,6 +28,7 @@
 + (id)duplicateKeyForWebPageFromSource:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)bundleId;
 - (id)compositeHash;
 - (id)contactDetailKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

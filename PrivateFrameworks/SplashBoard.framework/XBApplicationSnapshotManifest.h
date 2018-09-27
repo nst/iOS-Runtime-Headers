@@ -47,8 +47,9 @@
 - (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(bool)arg3 didGenerateImage:(id /* block */)arg4 didSaveImage:(id /* block */)arg5;
 - (id)initWithApplicationInfo:(id)arg1;
 - (id)initWithContainerIdentity:(id)arg1 store:(id)arg2;
-- (void)manifestDidUpdateUnderMemoryPressure:(id)arg1;
+- (void)manifestDidPurgeSnapshotsWithProtectedContent:(id)arg1;
 - (id)manifestImpl;
+- (void)purgeSnapshotsWithProtectedContent;
 - (void)saveSnapshot:(id)arg1 atPath:(id)arg2 withContext:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (id)snapshotsForGroupID:(id)arg1;

@@ -15,7 +15,8 @@
 
 - (id)_croppedImageFromWallpaper:(id)arg1 image:(id)arg2;
 - (id)_darkContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
-- (id)_imageByApplyingEffect:(id)arg1 toImage:(id)arg2;
+- (id)_imageByApplyingLayerEffects:(id)arg1 toImage:(id)arg2;
+- (id)_layerWithCompositingFilterType:(id)arg1 color:(id)arg2;
 - (id)_lightContentBlurredImageForWallpaper:(id)arg1 image:(id)arg2;
 - (id)_processedImageForWallpaper:(id)arg1 image:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledCropRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wallpaper:(id)arg2 image:(id)arg3;

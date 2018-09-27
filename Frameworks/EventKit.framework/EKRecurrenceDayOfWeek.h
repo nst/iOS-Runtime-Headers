@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKRecurrenceDayOfWeek : NSObject <NSCopying> {
+@interface EKRecurrenceDayOfWeek : NSObject <NSCopying, NSSecureCoding> {
     long long  _dayOfTheWeek;
     long long  _weekNumber;
 }
@@ -12,6 +12,7 @@
 
 + (id)dayOfWeek:(long long)arg1;
 + (id)dayOfWeek:(long long)arg1 weekNumber:(long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)dayOfTheWeek;

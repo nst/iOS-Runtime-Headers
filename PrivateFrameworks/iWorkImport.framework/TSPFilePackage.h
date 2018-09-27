@@ -6,9 +6,11 @@
     TSUZipArchive * _componentZipArchive;
 }
 
-+ (bool)isValidOrEmptyPackageAtURL:(id)arg1 hasNativeUTI:(bool)arg2;
++ (bool)isValidOrEmptyPackageOrTangierEditingFormatAtURL:(id)arg1 hasNativeUTI:(bool)arg2;
 + (bool)isValidPackageAtURL:(id)arg1;
 + (bool)isValidPackageAtZipArchive:(id)arg1;
++ (bool)isValidTangierEditingFormatAtURL:(id)arg1;
++ (bool)isValidTangierEditingFormatAtZipArchive:(id)arg1;
 + (unsigned long long)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
 

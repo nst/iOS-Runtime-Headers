@@ -19,6 +19,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (bool)_isEligibleForSaving:(id)arg1;
 - (void)_load;
 - (void)_notifyDelegateOfChangeForKeys:(id)arg1 application:(id)arg2;
@@ -30,6 +31,7 @@
 - (void)_stateQueue_removeStoreForIdentifier:(id)arg1;
 - (id)_stateQueue_storeForIdentifier:(id)arg1;
 - (void)_writeQueue_flushSynchronously;
+- (id)allObjectsForKeys:(id)arg1;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
 - (void)close;
@@ -43,8 +45,6 @@
 - (id)keysForApplication:(id)arg1;
 - (id)location;
 - (id)objectForKey:(id)arg1 forApplication:(id)arg2;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;
-- (void)objectForKeys:(id)arg1 forAllApplicationsWithResult:(id /* block */)arg2;
 - (void)removeAllObjectsForApplication:(id)arg1;
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2;
 - (void)removeObjectsForKeys:(id)arg1 forApplication:(id)arg2;

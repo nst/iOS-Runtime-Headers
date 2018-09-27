@@ -7,7 +7,7 @@
 + (id)_servicePredicate:(id)arg1;
 + (id)_servicesInDatabase:(id)arg1 profile:(id)arg2 removals:(id*)arg3;
 + (id)allServicesWithProfile:(id)arg1 error:(id*)arg2;
-+ (id)columnsDefinition;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)databaseTable;
 + (bool)deleteService:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;

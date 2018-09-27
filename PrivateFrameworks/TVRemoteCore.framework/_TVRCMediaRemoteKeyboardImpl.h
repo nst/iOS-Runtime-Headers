@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
  */
 
-@interface _TVRCMediaRemoteKeyboardImpl : NSObject <_TVRCKeyboardImpl, _TVRCMediaRemoteKeyboardAdapterDelegate> {
+@interface _TVRCMediaRemoteKeyboardImpl : NSObject <_TVRCMediaRemoteKeyboardAdapterDelegate, _TVRXKeyboardImpl> {
     _TVRCMediaRemoteKeyboardAdapter * _adapter;
     TVRCKeyboardAttributes * _currentAttributes;
     bool  _editing;
-    TVRCKeyboardController * _keyboardController;
+    _TVRXKeyboardController * _keyboardController;
     _TVRCMRTelevisionWrapper * _television;
 }
 
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool editing;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) TVRCKeyboardController *keyboardController;
+@property (nonatomic) _TVRXKeyboardController *keyboardController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _TVRCMRTelevisionWrapper *television;
 

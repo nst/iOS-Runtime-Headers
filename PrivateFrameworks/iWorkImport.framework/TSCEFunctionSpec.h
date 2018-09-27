@@ -3,20 +3,32 @@
  */
 
 @interface TSCEFunctionSpec : NSObject {
-    NSArray * mArguments;
-    int  mFunctionIndex;
-    NSString * mFunctionName;
-    bool  mIsOperator;
-    short  mMaxArguments;
-    short  mMinArguments;
-    NSArray * mRepeatingArguments;
-    short  mRepeatingGroupSize;
-    int  mShipVersion;
+    struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { 
+        struct TSCEFunctionArgSpec {} *__begin_; 
+        struct TSCEFunctionArgSpec {} *__end_; 
+        struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { 
+            struct TSCEFunctionArgSpec {} *__value_; 
+        } __end_cap_; 
+    }  _arguments;
+    int  _functionIndex;
+    NSString * _functionName;
+    bool  _isOperator;
+    short  _maxArguments;
+    short  _minArguments;
+    struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { 
+        struct TSCEFunctionArgSpec {} *__begin_; 
+        struct TSCEFunctionArgSpec {} *__end_; 
+        struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { 
+            struct TSCEFunctionArgSpec {} *__value_; 
+        } __end_cap_; 
+    }  _repeatingArguments;
+    short  _repeatingGroupSize;
+    int  _shipVersion;
 }
 
-@property (nonatomic, readonly) NSArray *arguments;
+@property (readonly) const /* Warning: unhandled struct encoding: '{vector<TSCEFunctionArgSpec' */ struct *arguments; /* unknown property attribute:  std::__1::allocator<TSCEFunctionArgSpec> >=^{TSCEFunctionArgSpec}}} */
 @property (readonly) int functionIndex;
-@property (nonatomic, readonly) NSString *functionName;
+@property (readonly) NSString *functionName;
 @property (nonatomic, readonly) bool isOperator;
 @property (nonatomic, readonly) short maxArguments;
 @property (nonatomic, readonly) short minArguments;
@@ -29,25 +41,29 @@
 + (bool)hasAnyDateArgumentsToFunction:(int)arg1;
 + (bool)isModeEnabled:(short)arg1 functionIndex:(short)arg2;
 + (id)specDictionary;
-+ (id)specWithFunctionName:(id)arg1 minArgs:(id)arg2 maxArgs:(id)arg3 repeatingGroupSize:(id)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(id)arg7 functionIndex:(int)arg8;
++ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
 + (id)unsupportedFunctionNameForLocale:(id)arg1;
 
-- (id)argumentSpecForIndex:(unsigned long long)arg1;
-- (id)arguments;
-- (void)dealloc;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (int)accessorModeForArgumentIndex:(unsigned long long)arg1;
+- (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; }*)argumentSpecForIndex:(unsigned long long)arg1;
+- (const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arguments;
 - (id)description;
 - (id)displayStringForLocale:(id)arg1;
 - (int)functionIndex;
 - (id)functionName;
-- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(bool)arg5 shipVersion:(int)arg6 arguments:(id)arg7 functionIndex:(int)arg8;
+- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(bool)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
 - (bool)isOperator;
 - (id)localizedFunctionNameForLocale:(id)arg1;
 - (id)localizedToolTipStringForLocale:(id)arg1;
 - (short)maxArguments;
 - (short)minArguments;
+- (long long)modeNumberForLocalizedString:(id)arg1 argumentSpecIndex:(unsigned long long)arg2 attributeMax:(long long)arg3 locale:(id)arg4;
 - (id)nativeSyntaxStringForArgument:(int)arg1;
 - (unsigned long long)numArguments;
 - (void)p_ValidateArguments;
+- (int)preferredTypeForArgumentIndex:(unsigned long long)arg1;
 - (short)repeatingGroupSize;
 - (int)versionShippedIn;
 

@@ -16,6 +16,7 @@
 + (unsigned long long)directionType;
 + (void)fillLocalizedDirectionMenu:(id)arg1 forType:(long long)arg2;
 + (id)localizedMenuString:(long long)arg1;
++ (long long)rendererTypeForAnimationContext:(id)arg1;
 + (id)supportedTypes;
 + (id)thumbnailImageNameForType:(long long)arg1;
 

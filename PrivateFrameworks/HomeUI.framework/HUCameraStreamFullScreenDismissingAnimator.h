@@ -18,7 +18,7 @@
 - (void)animateTransition:(id)arg1;
 - (id)cameraOverlaySnapshot;
 - (id)cameraViewSnapshot;
-- (id)initWithSourceFrameInPresentingView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 cameraViewSnapshot:(id)arg2 cameraOverlaySnapshot:(id)arg3;
+- (id)initWithSourceCameraCell:(id)arg1 cameraViewSnapshot:(id)arg2 cameraOverlaySnapshot:(id)arg3;
 - (double)transitionDuration:(id)arg1;
 
 @end

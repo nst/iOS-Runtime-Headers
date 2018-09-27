@@ -3,14 +3,17 @@
  */
 
 @interface CDMonitorManager : NSObject {
+    id /* block */  _generalHistoricalDeletingHandler;
     id /* block */  _generalHistoricalHandler;
     id /* block */  _generalInstantHandler;
+    id /* block */  _generalShutdownHandler;
     NSMutableDictionary * _historicalHandlerMap;
     NSMutableDictionary * _instantHandlerMap;
     NSMutableSet * _lazyMonitorNames;
     NSArray * _monitorManagers;
     NSObject<OS_dispatch_queue> * _monitorWorkQueue;
     NSMutableDictionary * _monitors;
+    NSMutableSet * _shutdownHandlingMonitors;
 }
 
 + (id)monitorManagerForEventStreams:(id)arg1;
@@ -34,6 +37,7 @@
 - (id)currentEvent;
 - (id)currentEventForStream:(id)arg1;
 - (void)deliverNotificationEvent:(id)arg1;
+- (void)handleShutdownNotification;
 - (bool)hasMonitor:(id)arg1;
 - (id)init;
 - (id)initWithEventStreams:(id)arg1;
@@ -41,10 +45,12 @@
 - (id)lastUpdateForStream:(id)arg1;
 - (void)populateCurrentValueForStreamName:(id)arg1;
 - (void)removeMonitor:(id)arg1;
+- (void)setHistoricalDeletingHandler:(id /* block */)arg1;
 - (void)setHistoricalHandler:(id /* block */)arg1;
 - (void)setHistoricalHandler:(id /* block */)arg1 forStream:(id)arg2;
 - (void)setInstantHandler:(id /* block */)arg1;
 - (void)setInstantHandler:(id /* block */)arg1 forStream:(id)arg2;
+- (void)setShutdownHandler:(id /* block */)arg1;
 - (void)start;
 - (void)startMonitorForStream:(id)arg1;
 - (void)stop;

@@ -12,7 +12,11 @@
 + (id)appInstallStream;
 + (id)appIntentsStream;
 + (id)appLocationActivityStream;
++ (id)appRelevantActionsStream;
++ (id)appRelevantShortcutsStream;
++ (id)appUsageStream;
 + (id)appViewedInDockStream;
++ (id)appWebUsageStream;
 + (id)audioInputRouteStream;
 + (id)audioOutputRoutStream;
 + (id)bluetoothIsConnectedStream;
@@ -21,6 +25,7 @@
 + (id)carPlayIsConnectedStream;
 + (id)contextStorePersistentRuleStream;
 + (id)dayOfWeekEventStream;
++ (id)defaultPairedDeviceNearbyStream;
 + (id)detectedSleepEventStream;
 + (id)deviceActivityLevelStream;
 + (id)deviceBatteryPercentageStream;
@@ -44,12 +49,16 @@
 + (id)motionStream;
 + (id)nextCalendarEventStream;
 + (id)nextSleepEventStream;
++ (id)notificationUsageStream;
 + (id)nowPlayingStream;
++ (id)pairedDeviceForecastStream;
 + (id)periodOfDayEventStream;
++ (id)remoteDeviceInBedTimesStream;
 + (id)safariHistoryStream;
 + (id)searchFeedbackStream;
 + (id)spotlightActivityStream;
 + (id)sunriseSunsetStream;
++ (id)tombstoneStream;
 + (id)userActivityDetectedStream;
 + (id)userIsCurrentlyAsleepStream;
 + (id)userIsFirstBacklightOnAfterWakeup;

@@ -3,17 +3,19 @@
  */
 
 @interface NTKCompanionResourceDirectoryEditor : NSObject {
+    CLKDevice * _device;
     NSString * _galleryPreviewResourceDirectory;
     NSString * _resourceDirectory;
     bool  _resourceDirectoryIsHardLink;
     long long  _state;
 }
 
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, retain) NSString *galleryPreviewResourceDirectory;
 @property (nonatomic, retain) NSString *resourceDirectory;
 @property (nonatomic) long long state;
 
-+ (id)_createResourceDirectoryWithAsset:(id)arg1 previewOnly:(bool)arg2;
++ (id)_createResourceDirectoryWithAsset:(id)arg1 forDevice:(id)arg2 previewOnly:(bool)arg3;
 + (id)_cropAndScaleUIImage:(id)arg1 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 outputSize:(struct CGSize { double x1; double x2; })arg3;
 + (void)_imageDataForAsset:(id)arg1 completion:(id /* block */)arg2;
 + (id)_linkPhoto:(id)arg1 to:(id)arg2 previewOnly:(bool)arg3;
@@ -31,10 +33,11 @@
 - (void).cxx_destruct;
 - (void)_deleteResourceDirectoryHardLinkIfNecessary;
 - (void)dealloc;
+- (id)device;
 - (void)finalizeWithCompletion:(id /* block */)arg1;
 - (id)galleryPreviewResourceDirectory;
 - (void)generateGalleryPreviewResourceDirectoryWithCompletion:(id /* block */)arg1;
-- (id)initWithResourceDirectory:(id)arg1;
+- (id)initWithResourceDirectory:(id)arg1 forDevice:(id)arg2;
 - (id)resourceDirectory;
 - (void)setGalleryPreviewResourceDirectory:(id)arg1;
 - (void)setResourceDirectory:(id)arg1;

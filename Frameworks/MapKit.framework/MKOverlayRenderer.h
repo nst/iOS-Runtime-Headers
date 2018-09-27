@@ -15,6 +15,8 @@
         } size; 
     }  _boundingMapRect;
     double  _contentScaleFactor;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    MKMapView * _mapView;
     <MKOverlay> * _overlay;
     id  _renderer;
 }
@@ -25,10 +27,13 @@
 
 - (void).cxx_destruct;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_boundingMapRect;
+- (id)_mapView;
+- (bool)_mayExtendOutsideBounds;
 - (id)_mk_overlayLayer;
 - (id)_mk_overlayView;
 - (struct { double x1; double x2; })_originMapPoint;
 - (id)_renderer;
+- (void)_setMapView:(id)arg1;
 - (double)alpha;
 - (bool)canDrawMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 zoomScale:(double)arg2;
 - (double)contentScaleFactor;

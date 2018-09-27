@@ -14,6 +14,7 @@
 + (void)CAMLParserStartElement:(id)arg1;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)apply:(id)arg1;

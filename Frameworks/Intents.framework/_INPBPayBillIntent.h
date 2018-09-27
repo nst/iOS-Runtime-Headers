@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPayBillIntent : PBCodable <NSCopying> {
+@interface _INPBPayBillIntent : PBCodable <NSCopying, NSSecureCoding, _INPBPayBillIntent> {
     _INPBBillPayeeValue * _billPayee;
     int  _billType;
     _INPBDateTimeRange * _dueDate;
@@ -14,11 +14,12 @@
     _INPBPaymentAmountValue * _transactionAmount;
     _INPBString * _transactionNote;
     _INPBDateTimeRange * _transactionScheduledDate;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBBillPayeeValue *billPayee;
 @property (nonatomic) int billType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBDateTimeRange *dueDate;
 @property (nonatomic, retain) _INPBFinancialAccountValue *fromAccount;
 @property (nonatomic, readonly) bool hasBillPayee;
@@ -29,13 +30,12 @@
 @property (nonatomic, readonly) bool hasTransactionAmount;
 @property (nonatomic, readonly) bool hasTransactionNote;
 @property (nonatomic, readonly) bool hasTransactionScheduledDate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBPaymentAmountValue *transactionAmount;
 @property (nonatomic, retain) _INPBString *transactionNote;
 @property (nonatomic, retain) _INPBDateTimeRange *transactionScheduledDate;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsBillType:(id)arg1;
@@ -43,7 +43,6 @@
 - (int)billType;
 - (id)billTypeAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)dueDate;
 - (id)fromAccount;
@@ -58,7 +57,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setBillPayee:(id)arg1;
 - (void)setBillType:(int)arg1;
@@ -72,7 +70,6 @@
 - (id)transactionAmount;
 - (id)transactionNote;
 - (id)transactionScheduledDate;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

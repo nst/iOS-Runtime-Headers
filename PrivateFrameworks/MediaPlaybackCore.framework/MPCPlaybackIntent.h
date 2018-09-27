@@ -39,6 +39,8 @@
 - (id)description;
 - (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
+- (void)getRepresentativeMetadataWithCompletion:(id /* block */)arg1;
+- (id)init;
 - (id)localizedTitle;
 - (id)playActivityFeatureName;
 - (id)playActivityRecommendationData;

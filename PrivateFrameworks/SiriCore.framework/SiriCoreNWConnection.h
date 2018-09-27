@@ -16,6 +16,11 @@
     bool  _isEstablishing;
     bool  _isMPTCP;
     bool  _isReady;
+    bool  _isViable;
+    double  _keepaliveIdleTime;
+    double  _keepaliveIntervalTime;
+    unsigned long long  _keepaliveUnackedCount;
+    SiriCoreConnectionMetrics * _metrics;
     id /* block */  _openCompletion;
     NSObject<OS_dispatch_source> * _openTimer;
     SAConnectionPolicy * _policy;
@@ -23,7 +28,10 @@
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _readWriteCounter;
     NSString * _resolvedHost;
+    double  _retransmissionBasedConnectionDropTime;
     SAConnectionPolicyRoute * _route;
+    bool  _scopeToWiFiOnly;
+    double  _staleConnectionInterval;
     NSObject<OS_dispatch_source> * _staleConnectionTimer;
     NSURL * _url;
     bool  _usingTLS;
@@ -47,6 +55,8 @@
 - (void)_getNWConnectionWithInitialData:(id)arg1 completion:(id /* block */)arg2;
 - (void)_invokeOpenCompletionWithError:(id)arg1;
 - (id)_queue;
+- (void)_receivedBetterRouteNotification:(bool)arg1;
+- (void)_receivedViabilityChangeNotification:(bool)arg1;
 - (id)_sendBufferBytesRemaining:(id)arg1;
 - (id)_setParametersForHost:(const char *)arg1 useTLS:(bool)arg2 initialPayload:(id)arg3;
 - (void)_setupOpenTimer;
@@ -63,7 +73,6 @@
 - (bool)isCanceled;
 - (bool)isEstablishing;
 - (bool)isMultipath;
-- (bool)isNetworkDownError:(id)arg1;
 - (bool)isPeerConnectionError:(id)arg1;
 - (bool)isPeerNotNearbyError:(id)arg1;
 - (bool)isReady;
@@ -74,9 +83,13 @@
 - (void)setConnectByPOPMethod:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnforceExtendedValidation:(bool)arg1;
+- (void)setKeepAlive:(double)arg1 withInterval:(double)arg2 withCount:(unsigned long long)arg3;
 - (void)setPolicyRoute:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
 - (void)setProviderConnectionPolicy:(id)arg1;
+- (void)setRetransmitConnectionDropTime:(double)arg1;
+- (void)setScopeIsWiFiOnly;
+- (void)setStaleInterval:(double)arg1;
 - (bool)shouldFallbackFromError:(id)arg1;
 - (bool)shouldFallbackQuickly;
 - (bool)supportsInitialPayload;

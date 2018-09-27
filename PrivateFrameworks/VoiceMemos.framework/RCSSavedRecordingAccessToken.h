@@ -8,6 +8,7 @@
     NSURL * _compositionAVURL;
     bool  _exclusive;
     NSUUID * _identifier;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly) long long accessIntent;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) NSURL *compositionAVURL;
 @property (getter=isExclusive, nonatomic, readonly) bool exclusive;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
+@property (nonatomic, readonly, copy) NSDictionary *userInfo;
 
 + (bool)supportsSecureCoding;
 + (id)tokenWithName:(id)arg1 accessIntent:(long long)arg2 compositionAVURL:(id)arg3;
@@ -32,5 +34,7 @@
 - (id)initWithName:(id)arg1 accessIntent:(long long)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (bool)isExclusive;
+- (void)setUserInfo:(id)arg1;
+- (id)userInfo;
 
 @end

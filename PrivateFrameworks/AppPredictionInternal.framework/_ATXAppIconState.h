@@ -6,6 +6,7 @@
     NSDictionary * _appLocation;
     NSSet * _dockedApps;
     NSSet * _folderApps;
+    unsigned char  _latestHash;
     NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
@@ -19,7 +20,7 @@
 - (bool)appOnDockWithBundleId:(id)arg1;
 - (long long)folderPageNumberForBundleId:(id)arg1;
 - (id)init;
-- (id)loadIconState;
+- (id)loadIconStateData;
 - (void)parseIconState:(id)arg1;
 - (void)reload;
 - (long long)springboardPageLocationForBundleId:(id)arg1;

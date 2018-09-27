@@ -86,6 +86,7 @@
 - (id)tint;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateBleedColor;
+- (void)updateBleedViewLayout;
 - (bool)usesTwoButtonLayout;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

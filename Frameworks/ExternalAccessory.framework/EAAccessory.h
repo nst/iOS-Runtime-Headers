@@ -51,6 +51,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (unsigned long long)destinationSharingOptions;
 - (id)dictionaryWithLowercaseKeys:(id)arg1;
 - (id)dockType;
 - (unsigned int)eqIndex;
@@ -90,6 +91,7 @@
 - (void)setCameraComponents:(id)arg1;
 - (int)setCameraProperties:(unsigned int)arg1 forCameraId:(unsigned short)arg2 withProperties:(id)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setDestinationSharingOptions:(unsigned long long)arg1;
 - (void)setEqIndex:(unsigned int)arg1;
 - (void)setEqNames:(id)arg1;
 - (void)setIAPTimeSyncParams:(id)arg1;

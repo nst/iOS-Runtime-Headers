@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUGradientColorStop : NSObject <NSCoding> {
+@interface SUGradientColorStop : NSObject <NSSecureCoding> {
     double  _a;
     double  _b;
     double  _g;
@@ -12,6 +12,8 @@
 }
 
 @property (nonatomic, readonly) double offset;
+
++ (bool)supportsSecureCoding;
 
 - (long long)compare:(id)arg1;
 - (struct CGColor { }*)copyCGColor;

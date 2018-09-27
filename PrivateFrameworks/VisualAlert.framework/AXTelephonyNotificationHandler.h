@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXTelephonyNotificationHandler : AXNotificationHandler
+@interface AXTelephonyNotificationHandler : VISAXNotificationHandler
 
 - (id)_notificationTypeDescription;
 - (void)_startObserving;

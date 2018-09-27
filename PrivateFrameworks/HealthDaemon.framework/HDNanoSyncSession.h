@@ -5,11 +5,11 @@
 @interface HDNanoSyncSession : HDSyncSession {
     id /* block */  _completion;
     unsigned long long  _messageCount;
-    bool  _pullRequest;
-    bool  _requestedByRemote;
+    unsigned long long  _options;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completion;
+@property (getter=isLastChance, nonatomic, readonly) bool lastChance;
 @property (nonatomic, readonly) unsigned long long messageCount;
 @property (nonatomic, readonly) HDNanoSyncStore *nanoSyncStore;
 @property (getter=isPullRequest, nonatomic, readonly) bool pullRequest;
@@ -19,8 +19,9 @@
 - (id)changeSetWithChanges:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 - (id /* block */)completion;
 - (void)incrementMessageCount;
-- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(bool)arg2 pullRequest:(bool)arg3 requestedByRemote:(bool)arg4 reason:(id)arg5 delegate:(id)arg6 completion:(id /* block */)arg7;
+- (id)initWithSyncStore:(id)arg1 options:(unsigned long long)arg2 reason:(id)arg3 delegate:(id)arg4 completion:(id /* block */)arg5;
 - (void)invokeCompletionWithSuccess:(bool)arg1 error:(id)arg2;
+- (bool)isLastChance;
 - (bool)isPullRequest;
 - (bool)isRequestedByRemote;
 - (long long)maxEncodedBytesPerMessageForSyncEntityClass:(Class)arg1;

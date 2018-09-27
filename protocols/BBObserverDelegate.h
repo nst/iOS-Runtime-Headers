@@ -13,8 +13,6 @@
 - (struct CGSize { double x1; double x2; })observer:(BBObserver *)arg1 composedImageSizeForAttachment:(BBAttachmentMetadata *)arg2 bulletin:(BBBulletin *)arg3 thumbnailSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)observer:(BBObserver *)arg1 modifyBulletin:(BBBulletin *)arg2;
 - (void)observer:(BBObserver *)arg1 modifyBulletin:(BBBulletin *)arg2 forFeed:(unsigned long long)arg3;
-- (void)observer:(BBObserver *)arg1 noteAlertBehaviorOverrideStateChanged:(unsigned long long)arg2;
-- (void)observer:(BBObserver *)arg1 noteAlertBehaviorOverridesChanged:(unsigned long long)arg2;
 - (void)observer:(BBObserver *)arg1 noteInvalidatedBulletinIDs:(NSSet *)arg2;
 - (void)observer:(BBObserver *)arg1 noteSectionParametersChanged:(BBSectionParameters *)arg2 forSectionID:(NSString *)arg3;
 - (void)observer:(BBObserver *)arg1 noteServerConnectionStateChanged:(bool)arg2;
@@ -28,8 +26,6 @@
 - (BBThumbnailSizeConstraints *)observer:(BBObserver *)arg1 thumbnailSizeConstraintsForAttachment:(BBAttachmentMetadata *)arg2 bulletin:(BBBulletin *)arg3;
 - (BBThumbnailSizeConstraints *)observer:(BBObserver *)arg1 thumbnailSizeConstraintsForAttachmentType:(long long)arg2;
 - (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionOrder:(NSArray *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionOrderRule:(long long)arg2;
 - (bool)observerShouldFetchAttachmentImageBeforeBulletinDelivery:(BBObserver *)arg1;
 - (bool)observerShouldFetchAttachmentSizeBeforeBulletinDelivery:(BBObserver *)arg1;
 

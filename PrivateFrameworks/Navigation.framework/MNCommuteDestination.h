@@ -30,7 +30,7 @@
 @property (nonatomic) bool invalid;
 @property (nonatomic, retain) MNLocation *lastLocation;
 @property (nonatomic, retain) MNLocation *lastMatchedLocation;
-@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, retain) GEOComposedRoute *nonRecommendedRoute;
 @property (retain) MNObserverHashTable *observers;
 @property (nonatomic) double remainingDistance;
@@ -39,10 +39,10 @@
 @property (nonatomic, retain) GEOComposedRoute *route;
 @property (nonatomic, retain) GEORouteSet *routeSet;
 @property (nonatomic) long long score;
-@property (nonatomic, retain) NSDictionary *scores;
-@property (readonly) NSString *shortDescription;
+@property (nonatomic, copy) NSDictionary *scores;
+@property (nonatomic, readonly) NSString *shortDescription;
 @property (nonatomic, retain) MNCommuteDestinationSuggestion *suggestion;
-@property (nonatomic, readonly) NSString *uniqueIdentifier;
+@property (nonatomic, readonly, copy) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) GEOComposedWaypoint *waypoint;
 
 + (bool)supportsSecureCoding;

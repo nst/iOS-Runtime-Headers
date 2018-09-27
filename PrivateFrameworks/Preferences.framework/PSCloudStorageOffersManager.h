@@ -6,6 +6,7 @@
     CommerceRemoteUIDelegate * _commerceDelegate;
     <PSCloudStorageOffersManagerDelegate> * _delegate;
     unsigned long long  _requiredStorageThreshold;
+    bool  _shouldOfferDeviceOffers;
     bool  _shouldOfferFamilySharePlansOnly;
     bool  _skipCompletionAlert;
     bool  _skipRetryWithoutToken;
@@ -17,6 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long requiredStorageThreshold;
+@property (nonatomic) bool shouldOfferDeviceOffers;
 @property (nonatomic) bool shouldOfferFamilySharePlansOnly;
 @property (nonatomic) bool skipCompletionAlert;
 @property (nonatomic) bool skipRetryWithoutToken;
@@ -37,10 +39,12 @@
 - (unsigned long long)requiredStorageThreshold;
 - (void)setDelegate:(id)arg1;
 - (void)setRequiredStorageThreshold:(unsigned long long)arg1;
+- (void)setShouldOfferDeviceOffers:(bool)arg1;
 - (void)setShouldOfferFamilySharePlansOnly:(bool)arg1;
 - (void)setSkipCompletionAlert:(bool)arg1;
 - (void)setSkipRetryWithoutToken:(bool)arg1;
 - (void)setSupportsModernAlerts:(bool)arg1;
+- (bool)shouldOfferDeviceOffers;
 - (bool)shouldOfferFamilySharePlansOnly;
 - (bool)skipCompletionAlert;
 - (bool)skipRetryWithoutToken;

@@ -12,7 +12,7 @@
 
 @optional
 
-- (NSString *)backingChannelTagIDWithCoreConfiguration:(id <FCCoreConfiguration>)arg1;
+- (NSString *)backingChannelTagIDWithConfiguration:(id <FCCoreConfiguration>)arg1;
 - (bool)canMergeGroupsUnconditionally;
 - (bool)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
 - (bool)emitsSingleRefreshSessionGroups;

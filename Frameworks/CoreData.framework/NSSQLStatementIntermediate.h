@@ -11,6 +11,7 @@
     NSSQLWhereIntermediate * _whereClause;
 }
 
+- (id)correlationToken;
 - (void)dealloc;
 - (id)governingAlias;
 - (id)governingAliasForKeypathExpression:(id)arg1;

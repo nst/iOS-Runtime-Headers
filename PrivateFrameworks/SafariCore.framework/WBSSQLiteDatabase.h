@@ -47,6 +47,7 @@
 - (id)lastErrorMessage;
 - (long long)lastInsertRowID;
 - (bool)openWithAccessType:(long long)arg1 error:(id*)arg2;
+- (bool)openWithAccessType:(long long)arg1 protectionType:(long long)arg2 vfs:(id)arg3 error:(id*)arg4;
 - (bool)openWithAccessType:(long long)arg1 vfs:(id)arg2 error:(id*)arg3;
 - (id)queue;
 - (bool)reportErrorWithCode:(int)arg1 query:(id)arg2 error:(id*)arg3;

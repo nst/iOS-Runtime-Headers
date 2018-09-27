@@ -9,6 +9,7 @@
     NSArray * _clientCertificates;
     struct __CFString { } * _connectionServiceType;
     NSString * _hostname;
+    NSString * _networkAccountIdentifier;
     unsigned int  _portNumber;
     NSString * _serviceName;
     NSString * _sourceApplicationBundleIdentifier;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) NSString *certUIService;
 @property (nonatomic, copy) NSArray *clientCertificates;
 @property (nonatomic, copy) NSString *hostname;
+@property (nonatomic, copy) NSString *networkAccountIdentifier;
 @property (nonatomic) unsigned int portNumber;
 @property (nonatomic, copy) NSString *serviceName;
 @property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
@@ -38,6 +40,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)hostname;
+- (id)networkAccountIdentifier;
 - (unsigned int)portNumber;
 - (id)serviceName;
 - (void)setAccountIdentifier:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setHostname:(id)arg1;
+- (void)setNetworkAccountIdentifier:(id)arg1;
 - (void)setPortNumber:(unsigned int)arg1;
 - (void)setServiceName:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;

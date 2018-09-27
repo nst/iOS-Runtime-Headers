@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) double timeOffset;
 @property (nonatomic, readonly) CAMediaTimingFunction *timingFunction;
 
+- (void).cxx_destruct;
 - (double)animationPercentFromAnimationTime:(double)arg1;
 - (double)beginTime;
 - (double)duration;

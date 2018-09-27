@@ -15,7 +15,7 @@
 
 @property (nonatomic) unsigned char deviceClass;
 @property (nonatomic) unsigned char deviceGroup;
-@property (nonatomic, retain) NSUUID *deviceID;
+@property (nonatomic, copy) NSUUID *deviceID;
 @property (nonatomic) unsigned char goodness;
 @property (nonatomic) bool isMe;
 @property (nonatomic) unsigned short pHash;
@@ -41,6 +41,7 @@
 - (bool)isAnEmergencyHandled;
 - (bool)isMe;
 - (bool)isSane;
+- (bool)isSlowdown;
 - (unsigned short)pHash;
 - (void)setDeviceClass:(unsigned char)arg1;
 - (void)setDeviceGroup:(unsigned char)arg1;
@@ -50,6 +51,7 @@
 - (void)setPHash:(unsigned short)arg1;
 - (void)setTieBreaker:(unsigned char)arg1;
 - (void)setUserConfidence:(unsigned char)arg1;
+- (int)slowdownDelay;
 - (unsigned char)tieBreaker;
 - (unsigned char)userConfidence;
 

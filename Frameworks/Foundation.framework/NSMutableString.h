@@ -34,16 +34,18 @@
 - (unsigned long long)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned long long)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)setString:(id)arg1;
 
+// Image: /System/Library/Frameworks/Network.framework/Network
+
+- (void)appendPrettyBOOL:(bool)arg1 withName:(id)arg2 indent:(int)arg3;
+- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 indent:(int)arg3;
+- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 indent:(int)arg3 showFullContent:(bool)arg4;
+
 // Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
 
 - (void)appendPrettyBOOL:(bool)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 - (void)appendPrettyInt:(int)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 - (void)appendPrettyObject:(id)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 - (void)appendToStringAtColumnWithContent:(int*)arg1 column:(unsigned char)arg2 content:(const char *)arg3 appendAsNewLine:(bool)arg4 addNewLine:(bool)arg5;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (void)standardizeWhitespace;
 
 // Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
 
@@ -83,12 +85,6 @@
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)replaceNewlinesWithSpaces;
-
-// Image: /System/Library/PrivateFrameworks/Network.framework/Network
-
-- (void)appendPrettyBOOL:(bool)arg1 withName:(id)arg2 indent:(int)arg3;
-- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 indent:(int)arg3;
-- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 indent:(int)arg3 showFullContent:(bool)arg4;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
@@ -131,6 +127,10 @@
 - (void)_removeCharactersFromSet:(struct __CFCharacterSet { }*)arg1;
 - (void)_removeOccurrencesOfCharacter:(unsigned int)arg1;
 - (void)_replaceOccurrencesOfCharacter:(unsigned int)arg1 withCharacter:(unsigned int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (void)standardizeWhitespace;
 
 // Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
 

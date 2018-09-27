@@ -7,9 +7,13 @@
     bool  _altTelephoneAdsOptOut;
     NSMutableArray * _altTelephones;
     NSMutableArray * _altUrls;
+    unsigned long long  _brandMuid;
+    int  _capacity;
     int  _displayStyle;
     NSString * _fax;
     struct { 
+        unsigned int brandMuid : 1; 
+        unsigned int capacity : 1; 
         unsigned int displayStyle : 1; 
         unsigned int placeDisplayType : 1; 
         unsigned int searchSection : 1; 
@@ -26,6 +30,11 @@
     NSMutableArray * _localizedCategorys;
     NSMutableArray * _names;
     int  _placeDisplayType;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _placeLookupCategorys;
     int  _searchSection;
     NSMutableArray * _spokenNames;
     NSString * _telephone;
@@ -39,9 +48,13 @@
 @property (nonatomic) bool altTelephoneAdsOptOut;
 @property (nonatomic, retain) NSMutableArray *altTelephones;
 @property (nonatomic, retain) NSMutableArray *altUrls;
+@property (nonatomic) unsigned long long brandMuid;
+@property (nonatomic) int capacity;
 @property (nonatomic) int displayStyle;
 @property (nonatomic, retain) NSString *fax;
 @property (nonatomic) bool hasAltTelephoneAdsOptOut;
+@property (nonatomic) bool hasBrandMuid;
+@property (nonatomic) bool hasCapacity;
 @property (nonatomic) bool hasDisplayStyle;
 @property (nonatomic, readonly) bool hasFax;
 @property (nonatomic) bool hasIsDisputed;
@@ -59,6 +72,8 @@
 @property (nonatomic, retain) NSMutableArray *localizedCategorys;
 @property (nonatomic, retain) NSMutableArray *names;
 @property (nonatomic) int placeDisplayType;
+@property (nonatomic, readonly) int*placeLookupCategorys;
+@property (nonatomic, readonly) unsigned long long placeLookupCategorysCount;
 @property (nonatomic) int searchSection;
 @property (nonatomic, retain) NSMutableArray *spokenNames;
 @property (nonatomic, retain) NSString *telephone;
@@ -78,6 +93,7 @@
 - (void).cxx_destruct;
 - (int)StringAsDisplayStyle:(id)arg1;
 - (int)StringAsPlaceDisplayType:(id)arg1;
+- (int)StringAsPlaceLookupCategorys:(id)arg1;
 - (int)StringAsSearchSection:(id)arg1;
 - (int)StringAsType:(id)arg1;
 - (void)addAltFax:(id)arg1;
@@ -85,6 +101,7 @@
 - (void)addAltUrl:(id)arg1;
 - (void)addLocalizedCategory:(id)arg1;
 - (void)addName:(id)arg1;
+- (void)addPlaceLookupCategory:(int)arg1;
 - (void)addSpokenName:(id)arg1;
 - (id)altFaxAtIndex:(unsigned long long)arg1;
 - (id)altFaxs;
@@ -97,20 +114,26 @@
 - (id)altUrls;
 - (unsigned long long)altUrlsCount;
 - (id)bestLocalizedName;
+- (unsigned long long)brandMuid;
+- (int)capacity;
 - (void)clearAltFaxs;
 - (void)clearAltTelephones;
 - (void)clearAltUrls;
 - (void)clearLocalizedCategorys;
 - (void)clearNames;
+- (void)clearPlaceLookupCategorys;
 - (void)clearSpokenNames;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)displayStyle;
 - (id)displayStyleAsString:(int)arg1;
 - (id)fax;
 - (bool)hasAltTelephoneAdsOptOut;
+- (bool)hasBrandMuid;
+- (bool)hasCapacity;
 - (bool)hasDisplayStyle;
 - (bool)hasFax;
 - (bool)hasIsDisputed;
@@ -136,6 +159,10 @@
 - (unsigned long long)namesCount;
 - (int)placeDisplayType;
 - (id)placeDisplayTypeAsString:(int)arg1;
+- (int)placeLookupCategoryAtIndex:(unsigned long long)arg1;
+- (int*)placeLookupCategorys;
+- (id)placeLookupCategorysAsString:(int)arg1;
+- (unsigned long long)placeLookupCategorysCount;
 - (bool)readFrom:(id)arg1;
 - (int)searchSection;
 - (id)searchSectionAsString:(int)arg1;
@@ -143,9 +170,13 @@
 - (void)setAltTelephoneAdsOptOut:(bool)arg1;
 - (void)setAltTelephones:(id)arg1;
 - (void)setAltUrls:(id)arg1;
+- (void)setBrandMuid:(unsigned long long)arg1;
+- (void)setCapacity:(int)arg1;
 - (void)setDisplayStyle:(int)arg1;
 - (void)setFax:(id)arg1;
 - (void)setHasAltTelephoneAdsOptOut:(bool)arg1;
+- (void)setHasBrandMuid:(bool)arg1;
+- (void)setHasCapacity:(bool)arg1;
 - (void)setHasDisplayStyle:(bool)arg1;
 - (void)setHasIsDisputed:(bool)arg1;
 - (void)setHasIsPermanentlyClosed:(bool)arg1;
@@ -160,6 +191,7 @@
 - (void)setLocalizedCategorys:(id)arg1;
 - (void)setNames:(id)arg1;
 - (void)setPlaceDisplayType:(int)arg1;
+- (void)setPlaceLookupCategorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setSearchSection:(int)arg1;
 - (void)setSpokenNames:(id)arg1;
 - (void)setTelephone:(id)arg1;

@@ -9,6 +9,7 @@
 @property (nonatomic) <_MKURLHandlerDelegate> *delegate;
 
 + (unsigned char)_MKGetURLSchemeTypeFor:(id)arg1;
++ (bool)canHandleURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (bool)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(bool)arg3;

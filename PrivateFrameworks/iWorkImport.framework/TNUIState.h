@@ -99,6 +99,7 @@
 - (struct CGPoint { double x1; double x2; })previousScrollPosition;
 - (float)previousViewScale;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousVisibleRect;
+- (void)removeAllUIStatesForSheet:(id)arg1;
 - (void)removeUIStateForSheet:(id)arg1;
 - (bool)removedAllQuickCalcFunctions;
 - (void)saveToArchive:(struct UIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; unsigned int x8; struct SelectionArchive {} *x9; struct RepeatedPtrField<TN::SheetUIStateDictionaryEntryArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; int x11; int x12; unsigned int x13; unsigned int x14; struct ChartSelectionArchive {} *x15; struct Reference {} *x16; int x17; bool x18; bool x19; bool x20; bool x21; struct RepeatedField<unsigned int> { unsigned int *x_22_1_1; int x_22_1_2; int x_22_1_3; } x22; struct Point {} *x23; struct Size {} *x24; struct Size {} *x25; struct RepeatedPtrField<TSCH::ChartUIState> { void **x_26_1_1; int x_26_1_2; int x_26_1_3; int x_26_1_4; } x26; }*)arg1 archiver:(id)arg2 context:(id)arg3;

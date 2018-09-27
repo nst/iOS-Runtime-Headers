@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) unsigned long long qualityOfService;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 - (void).cxx_destruct;
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;

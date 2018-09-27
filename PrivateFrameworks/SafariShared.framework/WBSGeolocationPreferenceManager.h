@@ -23,6 +23,7 @@
 - (void)getGeolocationSettingForDomain:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(id /* block */)arg4;
 - (id)initWithPerSitePreferencesStore:(id)arg1;
+- (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)perSitePreferenceValueForGeolocationSetting:(long long)arg1;
 - (id)perSitePreferencesStore;
 - (id)preferences;

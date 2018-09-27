@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBConflictingParameter : PBCodable <NSCopying> {
-    NSMutableArray * _alternateItems;
+@interface _INPBConflictingParameter : PBCodable <NSCopying, NSSecureCoding, _INPBConflictingParameter> {
+    NSArray * _alternateItems;
+    struct { }  _has;
     NSString * _keyPath;
-    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, retain) NSMutableArray *alternateItems;
+@property (nonatomic, copy) NSArray *alternateItems;
+@property (nonatomic, readonly) unsigned long long alternateItemsCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasKeyPath;
-@property (nonatomic, retain) NSString *keyPath;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *keyPath;
+@property (readonly) Class superclass;
 
 + (Class)alternateItemsType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addAlternateItems:(id)arg1;
@@ -23,17 +26,14 @@
 - (unsigned long long)alternateItemsCount;
 - (void)clearAlternateItems;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasKeyPath;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)keyPath;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setAlternateItems:(id)arg1;
 - (void)setKeyPath:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

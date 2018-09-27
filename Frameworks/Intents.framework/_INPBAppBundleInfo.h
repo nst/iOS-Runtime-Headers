@@ -2,23 +2,29 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBAppBundleInfo : PBCodable <NSCopying> {
+@interface _INPBAppBundleInfo : PBCodable <NSCopying, NSSecureCoding, _INPBAppBundleInfo> {
     _INPBAppId * _appId;
     _INPBBuildId * _buildId;
-    NSMutableArray * _intentSupports;
-    NSMutableArray * _localizedProjects;
-    NSMutableArray * _supportedPlatforms;
-    PBUnknownFields * _unknownFields;
+    struct { }  _has;
+    NSArray * _intentSupports;
+    NSArray * _localizedProjects;
+    NSArray * _supportedPlatforms;
 }
 
 @property (nonatomic, retain) _INPBAppId *appId;
 @property (nonatomic, retain) _INPBBuildId *buildId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasAppId;
 @property (nonatomic, readonly) bool hasBuildId;
-@property (nonatomic, retain) NSMutableArray *intentSupports;
-@property (nonatomic, retain) NSMutableArray *localizedProjects;
-@property (nonatomic, retain) NSMutableArray *supportedPlatforms;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *intentSupports;
+@property (nonatomic, readonly) unsigned long long intentSupportsCount;
+@property (nonatomic, copy) NSArray *localizedProjects;
+@property (nonatomic, readonly) unsigned long long localizedProjectsCount;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *supportedPlatforms;
+@property (nonatomic, readonly) unsigned long long supportedPlatformsCount;
 
 + (Class)intentSupportType;
 + (Class)localizedProjectsType;
@@ -34,7 +40,6 @@
 - (void)clearLocalizedProjects;
 - (void)clearSupportedPlatforms;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAppId;
 - (bool)hasBuildId;
@@ -46,7 +51,6 @@
 - (id)localizedProjects;
 - (id)localizedProjectsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)localizedProjectsCount;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setAppId:(id)arg1;
 - (void)setBuildId:(id)arg1;
@@ -56,7 +60,6 @@
 - (id)supportedPlatforms;
 - (id)supportedPlatformsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)supportedPlatformsCount;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -18,7 +18,7 @@
 - (bool)disableFiltering;
 - (bool)disableGroupMerging;
 - (bool)enableSingletonGroups;
-- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (void)setDisableFiltering:(bool)arg1;
 - (void)setDisableGroupMerging:(bool)arg1;
 - (void)setEnableSingletonGroups:(bool)arg1;

@@ -4,9 +4,6 @@
 
 @interface _SFPBMediaOffer : PBCodable <NSSecureCoding, _SFPBMediaOffer> {
     _SFPBActionItem * _actionItem;
-    struct { 
-        unsigned int isEnabled : 1; 
-    }  _has;
     _SFPBImage * _image;
     bool  _isEnabled;
     NSString * _offerIdentifier;
@@ -16,11 +13,6 @@
 @property (nonatomic, retain) _SFPBActionItem *actionItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasActionItem;
-@property (nonatomic, readonly) bool hasImage;
-@property (nonatomic, readonly) bool hasIsEnabled;
-@property (nonatomic, readonly) bool hasOfferIdentifier;
-@property (nonatomic, readonly) bool hasSublabel;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _SFPBImage *image;
 @property (nonatomic) bool isEnabled;
@@ -32,11 +24,6 @@
 - (void).cxx_destruct;
 - (id)actionItem;
 - (id)dictionaryRepresentation;
-- (bool)hasActionItem;
-- (bool)hasImage;
-- (bool)hasIsEnabled;
-- (bool)hasOfferIdentifier;
-- (bool)hasSublabel;
 - (unsigned long long)hash;
 - (id)image;
 - (id)initWithDictionary:(id)arg1;

@@ -14,6 +14,7 @@
     NSArray * _lastProcessedOutputDevices;
     NSMutableSet * _localMatchingDevicesFound;
     NSMutableSet * _matchingDevicesFound;
+    NSMutableArray * _matchingEndpointsFound;
     NSArray * _matchingLogicalDeviceIDs;
     NSString * _matchingOutputDeviceGroupID;
     NSSet * _matchingOutputDeviceUIDsSet;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) NSArray *lastProcessedEndpoints;
 @property (nonatomic, retain) NSArray *lastProcessedOutputDevices;
 @property (nonatomic, retain) NSMutableSet *matchingDevicesFound;
+@property (nonatomic, retain) NSMutableArray *matchingEndpointsFound;
 @property (nonatomic, copy) NSArray *matchingLogicalDeviceIDs;
 @property (nonatomic, retain) NSString *matchingOutputDeviceGroupID;
 @property (nonatomic, readonly) NSArray *matchingOutputDeviceUIDs;
@@ -62,6 +64,7 @@
 - (id)availableEndpoints;
 - (id)availableOutputDevices;
 - (void)beginSearchWithTimeout:(double)arg1 completion:(id /* block */)arg2;
+- (void)beginSearchWithTimeout:(double)arg1 endpointsCompletion:(id /* block */)arg2;
 - (id /* block */)callback;
 - (id)callbackSyncQueue;
 - (void)cancelSearch;
@@ -73,6 +76,7 @@
 - (id)lastProcessedEndpoints;
 - (id)lastProcessedOutputDevices;
 - (id)matchingDevicesFound;
+- (id)matchingEndpointsFound;
 - (id)matchingLogicalDeviceIDs;
 - (id)matchingOutputDeviceGroupID;
 - (id)matchingOutputDeviceUIDs;
@@ -88,6 +92,7 @@
 - (void)setLastProcessedEndpoints:(id)arg1;
 - (void)setLastProcessedOutputDevices:(id)arg1;
 - (void)setMatchingDevicesFound:(id)arg1;
+- (void)setMatchingEndpointsFound:(id)arg1;
 - (void)setMatchingLogicalDeviceIDs:(id)arg1;
 - (void)setMatchingOutputDeviceGroupID:(id)arg1;
 - (void)setMatchingOutputDeviceUIDsSet:(id)arg1;

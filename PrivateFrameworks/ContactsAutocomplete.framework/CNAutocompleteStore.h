@@ -7,6 +7,7 @@
     double  _fetchCoalescingInterval;
     <CNAutocompleteProbeProvider> * _probeProvider;
     CNAutocompleteStoreQueryHelper * _queryHelper;
+    CNAutocompleteStoreReproStringRecorder * _reproStringRecorder;
     <CNScheduler> * _scheduler;
     CNAutocompleteUserSession * _userSession;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic) double fetchCoalescingInterval;
 @property (nonatomic, readonly) <CNAutocompleteProbeProvider> *probeProvider;
 @property (nonatomic, readonly) CNAutocompleteStoreQueryHelper *queryHelper;
+@property (nonatomic, retain) CNAutocompleteStoreReproStringRecorder *reproStringRecorder;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (nonatomic, readonly) <CNAutocompleteSearchProvider> *searchProvider;
 @property (nonatomic, retain) CNAutocompleteUserSession *userSession;
@@ -33,12 +35,14 @@
 - (id)initWithDelegate:(id)arg1 searchProvider:(id)arg2 probeProvider:(id)arg3 scheduler:(id)arg4;
 - (id)probeProvider;
 - (id)queryHelper;
+- (id)reproStringRecorder;
 - (id)scheduleFetchRequest:(id)arg1;
 - (id)scheduleFetchRequest:(id)arg1 delegate:(id)arg2;
 - (id)scheduler;
 - (id)searchProvider;
 - (void)setCurrentFetchToken:(id)arg1;
 - (void)setFetchCoalescingInterval:(double)arg1;
+- (void)setReproStringRecorder:(id)arg1;
 - (void)setUserSession:(id)arg1;
 - (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned long long)arg2;
 - (id)userSession;

@@ -9,6 +9,7 @@
 }
 
 @property (readonly) unsigned long long allocatedSize;
+@property (readonly) bool allowGPUOptimizedContents;
 @property (readonly) unsigned long long arrayLength;
 @property (readonly) <MTLBuffer> *buffer;
 @property (readonly) unsigned long long bufferBytesPerRow;
@@ -34,6 +35,7 @@
 @property (readonly) unsigned long long parentRelativeSlice;
 @property (readonly) <MTLTexture> *parentTexture;
 @property (readonly) unsigned long long pixelFormat;
+@property (readonly) unsigned long long resourceIndex;
 @property int responsibleProcess;
 @property (readonly) <MTLResource> *rootResource;
 @property (readonly) unsigned long long rotation;
@@ -49,6 +51,7 @@
 @property (readonly) unsigned long long width;
 
 - (void)acceptVisitor:(id)arg1;
+- (bool)allowGPUOptimizedContents;
 - (unsigned long long)arrayLength;
 - (id)buffer;
 - (unsigned long long)bufferBytesPerRow;
@@ -82,15 +85,18 @@
 - (unsigned long long)parentRelativeSlice;
 - (id)parentTexture;
 - (unsigned long long)pixelFormat;
+- (id)realRootResource;
 - (void)replaceRegion:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
 - (void)replaceRegion:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6 options:(unsigned long long)arg7;
 - (void)replaceRegion:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned long long)arg2 withBytes:(const void*)arg3 bytesPerRow:(unsigned long long)arg4;
+- (unsigned long long)resourceIndex;
 - (id)rootResource;
 - (unsigned long long)rotation;
 - (unsigned long long)sampleCount;
 - (void)setSwizzle:(unsigned long long)arg1;
 - (unsigned long long)swizzle;
 - (unsigned long long)textureType;
+- (unsigned long long)uniqueIdentifier;
 - (unsigned long long)usage;
 - (id)views;
 - (unsigned long long)width;

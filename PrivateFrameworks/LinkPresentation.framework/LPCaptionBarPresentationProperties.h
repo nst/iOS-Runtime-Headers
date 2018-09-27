@@ -11,11 +11,19 @@
     long long  _leadingAccessoryType;
     LPImage * _leadingIcon;
     UIColor * _leadingIconMaskColor;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _leadingIconSize;
     NSNumber * _minimumHeight;
     LPCaptionRowPresentationProperties * _top;
     long long  _trailingAccessoryType;
     LPImage * _trailingIcon;
     UIColor * _trailingIconMaskColor;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _trailingIconSize;
 }
 
 @property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *aboveTop;
@@ -27,11 +35,13 @@
 @property (nonatomic) long long leadingAccessoryType;
 @property (nonatomic, retain) LPImage *leadingIcon;
 @property (nonatomic, retain) UIColor *leadingIconMaskColor;
+@property (nonatomic) struct CGSize { double x1; double x2; } leadingIconSize;
 @property (nonatomic, retain) NSNumber *minimumHeight;
 @property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *top;
 @property (nonatomic) long long trailingAccessoryType;
 @property (nonatomic, retain) LPImage *trailingIcon;
 @property (nonatomic, retain) UIColor *trailingIconMaskColor;
+@property (nonatomic) struct CGSize { double x1; double x2; } trailingIconSize;
 
 - (void).cxx_destruct;
 - (id)aboveTop;
@@ -48,6 +58,7 @@
 - (long long)leadingAccessoryType;
 - (id)leadingIcon;
 - (id)leadingIconMaskColor;
+- (struct CGSize { double x1; double x2; })leadingIconSize;
 - (long long)leftAccessoryType;
 - (id)leftIcon;
 - (id)leftIconMaskColor;
@@ -60,13 +71,16 @@
 - (void)setLeadingAccessoryType:(long long)arg1;
 - (void)setLeadingIcon:(id)arg1;
 - (void)setLeadingIconMaskColor:(id)arg1;
+- (void)setLeadingIconSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMinimumHeight:(id)arg1;
 - (void)setTrailingAccessoryType:(long long)arg1;
 - (void)setTrailingIcon:(id)arg1;
 - (void)setTrailingIconMaskColor:(id)arg1;
+- (void)setTrailingIconSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)top;
 - (long long)trailingAccessoryType;
 - (id)trailingIcon;
 - (id)trailingIconMaskColor;
+- (struct CGSize { double x1; double x2; })trailingIconSize;
 
 @end

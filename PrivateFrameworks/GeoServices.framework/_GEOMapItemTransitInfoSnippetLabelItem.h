@@ -5,7 +5,7 @@
 @interface _GEOMapItemTransitInfoSnippetLabelItem : NSObject <GEOTransitLabelItem> {
     <GEOTransitArtworkDataSource> * _labelArtwork;
     NSString * _labelString;
-    long long  _type;
+    unsigned long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,12 +14,12 @@
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *labelArtwork;
 @property (nonatomic, readonly) NSString *labelString;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
-- (id)initWithType:(long long)arg1 labelString:(id)arg2 labelArtwork:(id)arg3;
+- (id)initWithType:(unsigned long long)arg1 labelString:(id)arg2 labelArtwork:(id)arg3;
 - (id)labelArtwork;
 - (id)labelString;
-- (long long)type;
+- (unsigned long long)type;
 
 @end

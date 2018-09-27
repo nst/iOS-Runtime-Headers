@@ -77,7 +77,7 @@
 - (id)statusSubtitleView;
 - (id)statusTitleView;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateForTransitionToPasscodeView:(bool)arg1;
+- (void)updateForTransitionToPasscodeView:(bool)arg1 animated:(bool)arg2;
 - (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(bool)arg3;
 - (void)willTransitionToPasscodeView;
 

@@ -4,6 +4,7 @@
 
 @interface HDNanoSyncManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDForegroundClientProcessObserver, HDHealthDaemonReadyObserver, HDIDSMessageCenterDelegate, HDNanoSyncStoreDelegate, HDSyncSessionDelegate> {
     HDNanoSyncStore * _activeSyncStore;
+    <_CDLocalContext> * _context;
     bool  _enablePeriodicSyncTimer;
     bool  _invalidated;
     bool  _isMaster;
@@ -48,7 +49,6 @@
 @property (nonatomic) bool waitingForFirstUnlock;
 
 - (void).cxx_destruct;
-- (void)_achievementsWereAdded:(id)arg1;
 - (long long)_actionForRestoreRequest:(id)arg1 syncStore:(id)arg2 error:(id*)arg3;
 - (void)_addDaytonaVersionMessageHandlersToMessageCenter:(id)arg1;
 - (id)_allObservers;
@@ -71,6 +71,7 @@
 - (void)_queue_cancelPeriodicSyncTimer;
 - (void)_queue_changeRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_changeResponseDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_companionUserNotificationRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (id)_queue_eligibleInactiveSyncStores;
 - (bool)_queue_finishInitializationAfterFirstUnlockIfNecessaryWithError:(id*)arg1;
 - (void)_queue_generateWatchActivationSamples;
@@ -88,11 +89,14 @@
 - (void)_queue_receiveChangeRequest:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_receiveChangeResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_receiveRoutineRequest:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_recieveCompanionUserNotificationRequest:(id)arg1 syncStore:(id)arg2;
+- (void)_queue_recieveCompanionUserNotificationResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_recieveStartWorkoutAppRequest:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_recieveStartWorkoutAppResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_requestAuthorizationForRequestRecord:(id)arg1 syncStore:(id)arg2 requestSentHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_queue_resetSyncWithCompletion:(id /* block */)arg1;
 - (void)_queue_sendChangeSet:(id)arg1 status:(id)arg2 session:(id)arg3 completion:(id /* block */)arg4;
+- (void)_queue_sendCompanionUserNotificationRequest:(id)arg1 syncStore:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_sendRequest:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_sendResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_sendRestoreMessageWithStore:(id)arg1 restoreUUID:(id)arg2 sequenceNumber:(long long)arg3 statusCode:(int)arg4;
@@ -134,7 +138,7 @@
 - (void)dealloc;
 - (id)diagnosticDescription;
 - (bool)enablePeriodicSyncTimer;
-- (void)foregroundClientProcessesDidChange:(id)arg1;
+- (void)foregroundClientProcessesDidChange:(id)arg1 previouslyForegroundBundleIdentifiers:(id)arg2;
 - (id)initWithProfile:(id)arg1 isMaster:(bool)arg2;
 - (void)invalidateAndWait;
 - (bool)isMaster;
@@ -150,6 +154,9 @@
 - (void)messageCenterDidReceiveAuthorizationResponse:(id)arg1;
 - (void)messageCenterDidReceiveChangesRequest:(id)arg1;
 - (void)messageCenterDidReceiveChangesResponse:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationError:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationRequest:(id)arg1;
+- (void)messageCenterDidReceiveCompanionUserNotificationResponse:(id)arg1;
 - (void)messageCenterDidReceiveRestoreRequest:(id)arg1;
 - (void)messageCenterDidReceiveRestoreResponse:(id)arg1;
 - (void)messageCenterDidReceiveRoutineRequest:(id)arg1;
@@ -177,6 +184,7 @@
 - (void)restoreTimedOutWithSyncStore:(id)arg1;
 - (double)restoreTimeout;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
+- (void)sendCompanionUserNotificationRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendStartWorkoutAppRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)setActiveSyncStore:(id)arg1;
 - (void)setEnablePeriodicSyncTimer:(bool)arg1;
@@ -201,6 +209,7 @@
 - (void)syncSession:(id)arg1 sendChanges:(id)arg2 completion:(id /* block */)arg3;
 - (void)syncSessionWillBegin:(id)arg1;
 - (id)syncStoresByDeviceIdentifier;
+- (void)unitTest_performWithActiveSyncStore:(id /* block */)arg1;
 - (void)updatePairedDevicesWithCompletion:(id /* block */)arg1;
 - (void)waitForLastChanceSyncWithDevicePairingID:(id)arg1 timeout:(double)arg2 completion:(id /* block */)arg3;
 - (bool)waitingForFirstUnlock;

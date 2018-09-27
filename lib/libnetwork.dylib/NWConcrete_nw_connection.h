@@ -3,28 +3,36 @@
  */
 
 @interface NWConcrete_nw_connection : NSObject <OS_nw_connection> {
+    NSObject<OS_nw_array> * activities;
     unsigned int  adaptive_read_timeout_count;
     id /* block */  adaptive_read_timeout_handler;
     unsigned int  adaptive_write_timeout_count;
     id /* block */  adaptive_write_timeout_handler;
+    int  alternate_path_state;
+    id /* block */  alternate_path_state_handler;
     NSObject<OS_nw_array> * attempted_endpoints;
-    unsigned int  better_path_available;
+    unsigned int  batching;
     id /* block */  better_path_available_handler;
     id /* block */  cancel_handler;
     unsigned int  cancelled;
     NSObject<OS_nw_array> * candidate_endpoint_handlers;
     id /* block */  client_handler;
+    unsigned int  client_qos_class;
     NSObject<OS_dispatch_queue> * client_queue;
     NSObject<OS_nw_endpoint_handler> * connected_endpoint_handler;
     NSObject<OS_nw_endpoint_handler> * dry_run_endpoint_handler;
     NSObject<OS_nw_endpoint> * endpoint;
-    struct __CFArray { } * errors;
+    NSObject<OS_nw_array> * errors;
     unsigned int  excessive_keepalive_count;
     id /* block */  excessive_keepalive_handler;
     unsigned int  excessive_keepalive_interval;
     unsigned int  generic_stats_reported;
+    unsigned int  has_batched_receives;
+    unsigned int  has_batched_sends;
     unsigned int  hit_max_timestamps;
+    NSObject<OS_nw_read_request> * initial_read_requests;
     NSObject<OS_nw_write_request> * initial_write_requests;
+    unsigned int  initial_writes_are_non_idempotent;
     unsigned int  interface_time_delta;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
@@ -34,8 +42,10 @@
     NSObject<OS_nw_parameters> * parameters;
     NSObject<OS_nw_endpoint_handler> * parent_endpoint_handler;
     id /* block */  path_changed_handler;
+    unsigned int  prohibit_set_queue;
     id /* block */  read_close_handler;
     NSObject<OS_nw_endpoint_handler> * ready_dry_run_endpoint_handler;
+    unsigned int  should_report_activities;
     unsigned int  should_report_generic_stats;
     unsigned int  should_report_stats;
     unsigned long long  start_time;
@@ -52,7 +62,9 @@
         unsigned int minimum; 
         unsigned char __pad[4]; 
     }  throughput_monitor;
-    struct nw_connection_timestamp_s { unsigned long long x1; unsigned long long x2; struct nw_endpoint_handler_event_s { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; long long x4; unsigned char x5[0]; } * timestamps;
+    struct nw_connection_timestamp_s { unsigned long long x1; unsigned long long x2; struct nw_endpoint_handler_event_s { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[0]; } * timestamps;
+    unsigned int  top_id;
+    unsigned char  top_uuid;
     NSObject<OS_nw_endpoint_handler> * transport_endpoint_handler;
     unsigned short  used_timestamps;
     id /* block */  viability_changed_handler;
@@ -67,6 +79,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 identifier:(unsigned int)arg3;
+- (id)redactedDescription;
 
 @end

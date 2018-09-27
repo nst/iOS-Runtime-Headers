@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
  */
 
-@interface MediaControlsPanelViewController : UIViewController <MPAVRoutingViewControllerThemeDelegate, MPMediaControlsViewControllerDelegate, MediaControlsCollectionItemViewController, MediaControlsEndpointControllerDelegate, MediaControlsRatingActionSheet> {
+@interface MediaControlsPanelViewController : UIViewController <MPAVRoutingViewControllerThemeDelegate, MPMediaControlsViewControllerDelegate, MediaControlsCollectionItemViewController, MediaControlsEndpointControllerDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsRatingActionSheet> {
     MPArtworkCatalog * _artworkCatalog;
     UIView * _backgroundView;
     UIView * _bottomDividerView;
@@ -31,6 +31,7 @@
     unsigned long long  _supportedModes;
     UIView * _topDividerView;
     bool  _transitioning;
+    MTVibrantStylingProvider * _vibrantStylingProvider;
     MediaControlsVolumeContainerView * _volumeContainerView;
 }
 
@@ -62,6 +63,7 @@
 @property (nonatomic) unsigned long long supportedModes;
 @property (nonatomic, retain) UIView *topDividerView;
 @property (getter=isTransitioning, nonatomic) bool transitioning;
+@property (nonatomic, retain) MTVibrantStylingProvider *vibrantStylingProvider;
 @property (nonatomic, retain) MediaControlsVolumeContainerView *volumeContainerView;
 
 + (id)panelViewControllerForCoverSheet;
@@ -139,11 +141,16 @@
 - (void)setSupportedModes:(unsigned long long)arg1;
 - (void)setTopDividerView:(id)arg1;
 - (void)setTransitioning:(bool)arg1;
+- (void)setVibrantStylingProvider:(id)arg1;
 - (void)setVolumeContainerView:(id)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldEnableSyncingForSlider:(id)arg1;
+- (bool)slider:(id)arg1 shouldCancelSnapWithTouch:(id)arg2;
+- (bool)slider:(id)arg1 syncStateWillChangeFromState:(long long)arg2 toState:(long long)arg3;
 - (long long)style;
 - (unsigned long long)supportedModes;
 - (id)topDividerView;
+- (id)vibrantStylingProvider;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

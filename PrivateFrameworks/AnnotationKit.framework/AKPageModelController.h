@@ -3,6 +3,16 @@
  */
 
 @interface AKPageModelController : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _appliedCropRect;
     AKCropAnnotation * _cropAnnotation;
     AKInkAnnotation * _inkCanvasAnnotation;
     NSMutableOrderedSet * _mutableAnnotations;
@@ -12,6 +22,7 @@
 }
 
 @property (readonly) NSArray *annotations;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } appliedCropRect;
 @property (retain) AKCropAnnotation *cropAnnotation;
 @property (retain) AKInkAnnotation *inkCanvasAnnotation;
 @property id representedObject;
@@ -30,6 +41,7 @@
 - (void)addSelectedAnnotations:(id)arg1;
 - (void)addSelectedAnnotationsObject:(id)arg1;
 - (id)annotations;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })appliedCropRect;
 - (id)archivableRepresentation;
 - (void)bringSelectedAnnotationsForward;
 - (void)bringSelectedAnnotationsToFront;
@@ -59,6 +71,7 @@
 - (id)selectionStateForUndo;
 - (void)sendSelectedAnnotationsBackward;
 - (void)sendSelectedAnnotationsToBack;
+- (void)setAppliedCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCropAnnotation:(id)arg1;
 - (void)setInkCanvasAnnotation:(id)arg1;
 - (void)setInkCanvasAnnotationOneTime:(id)arg1;

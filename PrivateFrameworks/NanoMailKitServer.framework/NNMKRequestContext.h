@@ -9,6 +9,7 @@
     bool  _hasProtectedMessages;
     NSArray * _mailboxes;
     unsigned long long  _messagesForSpecialMailbox;
+    unsigned long long  _resendInterval;
 }
 
 @property (nonatomic, retain) NSDate *beforeDate;
@@ -17,6 +18,7 @@
 @property (nonatomic) bool hasProtectedMessages;
 @property (nonatomic, retain) NSArray *mailboxes;
 @property (nonatomic) unsigned long long messagesForSpecialMailbox;
+@property (nonatomic) unsigned long long resendInterval;
 
 - (void).cxx_destruct;
 - (id)beforeDate;
@@ -25,11 +27,13 @@
 - (bool)hasProtectedMessages;
 - (id)mailboxes;
 - (unsigned long long)messagesForSpecialMailbox;
+- (unsigned long long)resendInterval;
 - (void)setBeforeDate:(id)arg1;
 - (void)setConversationId:(id)arg1;
 - (void)setCount:(unsigned long long)arg1;
 - (void)setHasProtectedMessages:(bool)arg1;
 - (void)setMailboxes:(id)arg1;
 - (void)setMessagesForSpecialMailbox:(unsigned long long)arg1;
+- (void)setResendInterval:(unsigned long long)arg1;
 
 @end

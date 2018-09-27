@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKShader : NSObject <NSCoding, NSCopying> {
+@interface SKShader : NSObject <NSCopying, NSSecureCoding> {
     struct map<std::__1::basic_string<char>, std::__1::shared_ptr<jet_buffer_pool>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<jet_buffer_pool> > > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<jet_buffer_pool> >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<jet_buffer_pool> >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<jet_buffer_pool> > > > { 
             struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
@@ -53,6 +53,7 @@
 + (id)shaderWithFileNamed:(id)arg1;
 + (id)shaderWithSource:(id)arg1;
 + (id)shaderWithSource:(id)arg1 uniforms:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -94,6 +95,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1;
 - (id)initWithSource:(id)arg1 uniforms:(id)arg2;
+- (bool)isEqualToShader:(id)arg1;
 - (bool)isValid;
 - (bool)performFullCapture;
 - (void)removeUniformNamed:(id)arg1;

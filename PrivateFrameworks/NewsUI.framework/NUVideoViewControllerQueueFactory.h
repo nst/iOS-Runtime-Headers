@@ -4,13 +4,11 @@
 
 @interface NUVideoViewControllerQueueFactory : NSObject <NUVideoViewControllerQueueFactory> {
     NUVideoViewControllerAdConfiguration * _adConfiguration;
-    <NUVideoAdProviderDataSource> * _videoAdProviderDataSource;
     <NUVideoAdProviderFactory> * _videoAdProviderFactory;
     <NUVideoProviderFactory> * _videoProviderFactory;
 }
 
 @property (nonatomic, readonly) NUVideoViewControllerAdConfiguration *adConfiguration;
-@property (nonatomic, readonly) <NUVideoAdProviderDataSource> *videoAdProviderDataSource;
 @property (nonatomic, readonly) <NUVideoAdProviderFactory> *videoAdProviderFactory;
 @property (nonatomic, readonly) <NUVideoProviderFactory> *videoProviderFactory;
 
@@ -18,8 +16,7 @@
 - (id)adConfiguration;
 - (id)createQueueWithVideoItems:(id)arg1;
 - (id)init;
-- (id)initWithAdConfiguration:(id)arg1 videoProviderFactory:(id)arg2 videoAdProviderFactory:(id)arg3 videoAdProviderDataSource:(id)arg4;
-- (id)videoAdProviderDataSource;
+- (id)initWithAdConfiguration:(id)arg1 videoProviderFactory:(id)arg2 videoAdProviderFactory:(id)arg3;
 - (id)videoAdProviderFactory;
 - (id)videoProviderFactory;
 

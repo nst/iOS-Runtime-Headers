@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSSet *occlusions;
 @property (nonatomic, readonly, copy) NSOrderedSet *orderedOcclusions;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

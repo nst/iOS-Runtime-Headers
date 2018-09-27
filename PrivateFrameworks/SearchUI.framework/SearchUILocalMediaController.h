@@ -4,6 +4,7 @@
 
 @interface SearchUILocalMediaController : NSObject
 
++ (void)initializeMediaLibrary;
 + (id)localMediaItemForPossibleAdamIDs:(id)arg1;
 + (id)videoURLForMediaItem:(id)arg1;
 

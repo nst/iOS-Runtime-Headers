@@ -3,10 +3,10 @@
  */
 
 @interface NUAppConfigurationAdManagerConfigurationProvider : NSObject <NUAdManagerConfigurationProvider> {
-    FCAppConfigurationManager * _appConfigurationManager;
+    <FCNewsAppConfigurationManager> * _appConfigurationManager;
 }
 
-@property (nonatomic, readonly) FCAppConfigurationManager *appConfigurationManager;
+@property (nonatomic, readonly) <FCNewsAppConfigurationManager> *appConfigurationManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;

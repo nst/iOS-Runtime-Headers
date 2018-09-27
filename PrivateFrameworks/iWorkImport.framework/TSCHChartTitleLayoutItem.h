@@ -23,10 +23,11 @@
 - (double)minHitSize;
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
 - (id)p_titleParagraphStyle;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 forSubselection:(bool)arg4;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })p_transformForRenderingRangePtr:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 forSubselection:(bool)arg4 forSearchSelection:(bool)arg5;
 - (bool)pointHitsTitleRect:(struct CGPoint { double x1; double x2; })arg1;
 - (void)protected_iterateHitChartElements:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;
 - (id)renderersWithRep:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })searchSelectionTransformForRenderingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 - (void)setChartBodyWidth:(double)arg1;
 - (void)setEditedString:(id)arg1;
 - (void)setMinHitSize:(double)arg1;

@@ -24,7 +24,6 @@
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2 ack:(id /* block */)arg3;
 - (id)sectionIDs;
 - (id)sectionIDsForBulletins;
-- (id)sectionIDsForPings;
 - (void)setConnection:(id)arg1;
 - (id)subscriptionInfos;
 

@@ -52,6 +52,19 @@
                 } __pair3_; 
             } __tree_; 
         } tasks; 
+        struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > { 
+            struct __tree<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
+                struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::basic_string<char>, void *> > > { 
+                    struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                        struct __tree_node_base<void *> {} *__left_; 
+                    } __value_; 
+                } __pair1_; 
+                struct __compressed_pair<unsigned long, std::__1::less<std::__1::basic_string<char> > > { 
+                    unsigned long long __value_; 
+                } __pair3_; 
+            } __tree_; 
+        } osTypes; 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
             struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
                 struct __rep { 

@@ -25,6 +25,7 @@
     BOOL  __prio;
     unsigned char  __propertyQoS;
     NSOperationQueue * __queue;
+    id /* block */  __schedule;
     unsigned char  __state;
     double  __thread_prio;
     long long  __unfinished_deps;
@@ -36,6 +37,7 @@
         long long __sig; 
         BOOL __opaque[56]; 
     }  __wait_mutex;
+    bool  _shouldRemoveDependenciesAfterFinish;
 }
 
 + (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;
@@ -53,6 +55,7 @@
 - (bool)_isReady;
 - (id)_name;
 - (long long)_queuePriority;
+- (void)_removeAllDependencies:(id)arg1;
 - (void)_removeDependency:(id)arg1 outer:(id)arg2;
 - (void)_setCompletionBlock:(id /* block */)arg1 outer:(id)arg2;
 - (void)_setName:(id)arg1 outer:(id)arg2;

@@ -16,10 +16,14 @@
 @property (retain) MPSImage *mpsImg;
 @property (retain) NSMutableArray *size;
 
++ (id)cnnData;
++ (Class)cnnDataClass;
++ (id)cnnDataWithGPUContext:(id)arg1;
++ (id)cnnDataWithPlane:(int)arg1 height:(int)arg2 width:(int)arg3 context:(id)arg4;
+
 - (void).cxx_destruct;
 - (int)allocBuffers:(bool)arg1;
 - (int)bufferAllocCPU;
-- (int)bufferAllocGPU;
 - (id)context;
 - (int)convertCPUData2GPU;
 - (int)convertGPUData2CPU;

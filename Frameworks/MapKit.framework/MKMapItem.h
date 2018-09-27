@@ -18,6 +18,7 @@
     NSNumberFormatter * _numberFormatterForAdamId;
     _MKMapItemPhotosAttribution * _photosAttribution;
     GEOPlace * _place;
+    <MKTransitInfoPreload> * _preloadedTransitInfo;
     _MKPlaceReservationInfo * _reservationInfo;
     _MKMapItemReviewsAttribution * _reviewsAttribution;
     NSString * _shortAddress;
@@ -28,6 +29,7 @@
 
 @property (getter=_acceptsApplePay, nonatomic, readonly) bool acceptsApplePay;
 @property (getter=_alternativeAppAdamIds, nonatomic, readonly) NSArray *alternativeAppAdamIds;
+@property (getter=_annotatedItemList, nonatomic, readonly) <GEOAnnotatedItemList> *annotatedItemList;
 @property (getter=_attribution, nonatomic, readonly) _MKMapItemPlaceAttribution *attribution;
 @property (getter=_browseCategories, nonatomic, readonly) NSArray *browseCategories;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
@@ -36,7 +38,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_detourInfo, nonatomic, readonly) GEOMapItemDetourInfo *detourInfo;
-@property (getter=_disambiguationName, nonatomic, readonly) NSString *disambiguationName;
 @property (getter=_displayMapRegion, nonatomic, readonly) GEOMapRegion *displayMapRegion;
 @property (getter=_displayMaxZoom, nonatomic, readonly) float displayMaxZoom;
 @property (getter=_displayMinZoom, nonatomic, readonly) float displayMinZoom;
@@ -115,10 +116,12 @@
 @property (nonatomic, readonly) GEOPlace *place;
 @property (getter=_placeDataAsData, nonatomic, readonly) NSData *placeDataAsData;
 @property (getter=_placeDisplayStyle, nonatomic, readonly) int placeDisplayStyle;
+@property (getter=_placecardLayout, nonatomic, readonly) GEOModuleLayoutEntry *placecardLayout;
 @property (nonatomic, readonly) MKPlacemark *placemark;
 @property (getter=_poiPinpointURLString, nonatomic, readonly) NSString *poiPinpointURLString;
 @property (getter=_poiSurveyURLString, nonatomic, readonly) NSString *poiSurveyURLString;
 @property (getter=_preferedAppAdamID, nonatomic, readonly) NSNumber *preferedAppAdamID;
+@property (getter=_preloadedTransitInfo, nonatomic, readonly) <MKTransitInfoPreload> *preloadedTransitInfo;
 @property (getter=_priceDescription, nonatomic, readonly) NSString *priceDescription;
 @property (getter=_priceRangeString, nonatomic, readonly) NSString *priceRangeString;
 @property (getter=_providerURL, nonatomic, readonly, copy) NSURL *providerURL;
@@ -148,8 +151,6 @@
 @property (getter=_webURL, nonatomic, readonly, copy) NSURL *webURL;
 @property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
 @property (nonatomic, readonly) NSString *yelpID;
-
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)_deserializeResourceOptionsFromURL:(id)arg1 error:(out id*)arg2;
 + (void)_fillOutRequest:(id)arg1 withMapsDataString:(id)arg2;
@@ -185,11 +186,15 @@
 + (void)openMapsWithItems:(id)arg1 launchOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)plistCompatibleDictionaryFromStandardOptions:(id)arg1;
 + (id)readableTypeIdentifiersForItemProvider;
++ (id)sanitizeArray:(id)arg1 forKey:(id)arg2;
++ (id)sanitizeDictionary:(id)arg1;
++ (id)sanitizeObject:(id)arg1 forKey:(id)arg2;
 + (id)standardOptionsFromPlistCompatibleDictionary:(id)arg1;
 + (bool)supportsSecureCoding;
 + (id)ticketForMapsDataString:(id)arg1 name:(id)arg2;
 + (id)urlForMapItem:(id)arg1 options:(id)arg2;
 + (id)urlForMapItems:(id)arg1 options:(id)arg2;
++ (bool)valueIsValid:(id)arg1 forKey:(id)arg2;
 + (id)writableTypeIdentifiersForItemProvider;
 
 - (void).cxx_destruct;
@@ -205,6 +210,7 @@
 - (id)_addressFormattedAsWeatherDisplayName;
 - (id)_addressOrNil:(id)arg1;
 - (id)_alternativeAppAdamIds;
+- (id)_annotatedItemList;
 - (id)_attribution;
 - (id)_attributionFor:(id)arg1 sourceStringFormat:(id)arg2 moreSourceStringFormat:(id)arg3 imageTintColor:(id)arg4;
 - (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3 isSnippetLogo:(bool)arg4;
@@ -217,7 +223,6 @@
 - (struct CLLocationCoordinate2D { double x1; double x2; })_coordinate;
 - (unsigned long long)_customIconID;
 - (id)_detourInfo;
-- (id)_disambiguationName;
 - (id)_displayMapRegion;
 - (float)_displayMaxZoom;
 - (float)_displayMinZoom;
@@ -300,10 +305,12 @@
 - (id)_placeCardContact;
 - (id)_placeDataAsData;
 - (int)_placeDisplayStyle;
+- (id)_placecardLayout;
 - (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
 - (id)_postalAddressFromMeCardUsingAddressIdentifier:(id)arg1;
 - (id)_preferedAppAdamID;
+- (id)_preloadedTransitInfo;
 - (id)_priceDescription;
 - (id)_priceRangeString;
 - (id)_providerURL;
@@ -368,6 +375,7 @@
 - (id)phoneNumber;
 - (id)place;
 - (id)placemark;
+- (void)preloadTransitInfoWithCompletion:(id /* block */)arg1;
 - (id)reservationInfo;
 - (id)reviewsProviderDisplayName;
 - (void)setIsCurrentLocation:(bool)arg1;
@@ -386,9 +394,5 @@
 - (id)userValues;
 - (id)venueLabelWithContext:(unsigned long long)arg1;
 - (id)yelpID;
-
-// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
-
-- (id)businessCategories;
 
 @end

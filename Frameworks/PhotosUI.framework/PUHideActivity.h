@@ -9,8 +9,9 @@
 + (long long)activityCategory;
 
 - (void).cxx_destruct;
+- (id)_activityBundleImageConfiguration;
+- (id)_activityImageName;
 - (id)_assetHidingHelper;
-- (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (bool)canPerformWithActivityItems:(id)arg1;

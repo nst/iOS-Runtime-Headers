@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *value;
 
+// Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -27,5 +29,9 @@
 - (void)setValue:(id)arg1;
 - (id)value;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)externalAnalyticsQueryParameterConfigWithDictionary:(id)arg1;
 
 @end

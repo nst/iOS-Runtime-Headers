@@ -21,6 +21,8 @@
 - (void)_forwardInstallationCanProceed:(id)arg1;
 - (void)_forwardInstallationWillProceed:(id)arg1;
 - (void)_forwardScanResult:(id)arg1;
+- (void)_forwardUserDidAcceptTermsAndConditionsChanged:(id)arg1;
+- (void)_forwardUserInstallRequestTypeChanged:(id)arg1;
 - (id)_serverConnection;
 - (void)dealloc;
 - (id)delegate;
@@ -36,8 +38,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setServerConnection:(id)arg1;
+- (void)setUserInstallRequestTypeForUpdate:(id)arg1 userInstallRequestType:(long long)arg2 completion:(id /* block */)arg3;
 - (void)startDownload:(id)arg1;
 - (void)startDownload:(id)arg1 passcode:(id)arg2;
+- (void)supportsInstallTonightWithCompletion:(id /* block */)arg1;
 - (void)userDidAcceptTermsAndConditionsForUpdate:(id)arg1;
+- (void)userDidAcceptTermsAndConditionsForUpdate:(id)arg1 completion:(id /* block */)arg2;
 
 @end

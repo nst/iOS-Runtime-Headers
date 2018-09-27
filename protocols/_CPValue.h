@@ -7,13 +7,6 @@
 
 - (bool)bool_value;
 - (NSData *)bytes_value;
-- (bool)hasBool_value;
-- (bool)hasBytes_value;
-- (bool)hasList_value;
-- (bool)hasNull_value;
-- (bool)hasNumber_value;
-- (bool)hasString_value;
-- (bool)hasStruct_value;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

@@ -6,5 +6,17 @@
 
 + (bool)isICDPEnabledForDSID:(id)arg1;
 + (bool)isICDPEnabledForDSID:(id)arg1 checkWithServer:(bool)arg2;
++ (id)sharedInstance;
+
+- (id)authToken;
+- (id)contextForPrimaryAccount;
+- (id)escrowURL;
+- (id)iCloudEnv;
+- (id)primaryAccountAltDSID;
+- (id)primaryAccountDSID;
+- (unsigned long long)primaryAccountSecurityLevel;
+- (id)primaryAccountUsername;
+- (id)primaryAppleAccount;
+- (id)sharedAccountStore;
 
 @end

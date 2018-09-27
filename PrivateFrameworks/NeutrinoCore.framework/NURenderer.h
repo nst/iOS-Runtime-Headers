@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSString *name;
 @property (readonly) Class superclass;
 
-+ (id)_renderContextOptionsWithOptions:(id)arg1;
++ (id)_renderContextOptionsWithOptions:(id)arg1 nameSuffix:(id)arg2;
 + (bool)allowClampToAlpha;
 + (id)defaultRenderContextOptions;
 + (bool)defaultUseHalfFloat;

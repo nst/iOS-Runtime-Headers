@@ -8,6 +8,7 @@
     bool  _canonicalDigitStatesByStyle;
     unsigned long long  _color;
     <NTKVictoryAnalogBackgroundViewDelegate> * _delegate;
+    CLKDevice * _device;
     UIImage * _dotImage;
     NSMutableDictionary * _largeNumberImages;
     NTKVictoryAnalogFakeComplicationButton * _logoButton;
@@ -43,13 +44,13 @@
 + (id)_disabledLayerActions;
 
 - (void).cxx_destruct;
-- (void)_applyColorForStyle:(unsigned long long)arg1;
+- (void)_applyColor:(unsigned long long)arg1 forStyle:(unsigned long long)arg2;
+- (void)_applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned long long)arg4;
 - (id)_bigNumberInitialTransforms;
 - (void)_clearTransitionStateForStyle:(unsigned long long)arg1;
 - (id)_createAndAddLayersWithCount:(unsigned long long)arg1;
 - (void)_createBigNumberLayersIfNeeded;
 - (void)_createRingLayersIfNeeded;
-- (double)_dotAlphaForColor:(unsigned long long)arg1 style:(unsigned long long)arg2;
 - (id)_dotImage;
 - (double)_elementScaleForTransitionProgress:(double)arg1 initialScale:(double)arg2 middleScale:(double)arg3 finalScale:(double)arg4;
 - (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_intermediateTransformForBigNumberAtIndex:(unsigned long long)arg1 fraction:(double)arg2;
@@ -65,7 +66,7 @@
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (unsigned long long)color;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (void)layoutSubviews;
 - (void)setColor:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;

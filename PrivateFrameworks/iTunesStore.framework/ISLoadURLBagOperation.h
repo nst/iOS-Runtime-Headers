@@ -20,6 +20,11 @@
 @property (readonly) Class superclass;
 
 + (void)_addStoreFrontHeaderSuffix:(id)arg1 forBundleIdentifier:(id)arg2;
++ (id)_executedNetworkRequests;
++ (id)_networkCounters;
++ (id)_networkSynchronyQueue;
++ (void)decrementNetworkCounterForBagContext:(id)arg1;
++ (void)incrementNetworkCounterForBagContext:(id)arg1;
 + (id)storeFrontHeaderSuffix;
 + (id)storeFrontHeaderSuffixForBundleIdentifier:(id)arg1;
 

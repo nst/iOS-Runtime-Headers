@@ -70,6 +70,7 @@
 - (void)setError:(int)arg1;
 - (void)setFileProvider:(id)arg1;
 - (void)setFinishCompletion:(id /* block */)arg1;
+- (void)setFinished;
 - (void)setPath:(id)arg1;
 - (void)setSkipUnlink:(bool)arg1;
 - (void)setTruncateFile:(bool)arg1;

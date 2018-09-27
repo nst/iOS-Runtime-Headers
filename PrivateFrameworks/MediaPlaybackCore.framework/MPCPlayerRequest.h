@@ -3,6 +3,7 @@
  */
 
 @interface MPCPlayerRequest : MPRequest {
+    bool  _disablePlaybackRateValidation;
     bool  _disablePlaybackStateValidation;
     MPCPlayerPath * _playerPath;
     MPPropertySet * _playingItemProperties;
@@ -14,6 +15,7 @@
     }  _tracklistRange;
 }
 
+@property (nonatomic) bool disablePlaybackRateValidation;
 @property (nonatomic) bool disablePlaybackStateValidation;
 @property (nonatomic, retain) MPCPlayerPath *playerPath;
 @property (nonatomic, copy) MPPropertySet *playingItemProperties;
@@ -26,14 +28,15 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (bool)disablePlaybackRateValidation;
 - (bool)disablePlaybackStateValidation;
 - (id)init;
 - (id)middlewareClasses;
-- (id)performWithCompletion:(id /* block */)arg1;
 - (id)playerPath;
 - (id)playingItemProperties;
 - (id)queueItemProperties;
 - (id)queueSectionProperties;
+- (void)setDisablePlaybackRateValidation:(bool)arg1;
 - (void)setDisablePlaybackStateValidation:(bool)arg1;
 - (void)setPlayerPath:(id)arg1;
 - (void)setPlayingItemProperties:(id)arg1;

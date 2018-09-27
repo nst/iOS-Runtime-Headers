@@ -37,10 +37,12 @@
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) bool preventsChangeTracking;
 @property (nonatomic, readonly) bool preventsComments;
 @property (nonatomic) bool shrinkTextForPrinting;
 @property (nonatomic, readonly) bool storageChangesInvalidateWrap;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
 @property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, readonly) int verticalAlignment;
@@ -76,6 +78,7 @@
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;
+- (bool)preventsChangeTracking;
 - (bool)preventsComments;
 - (Class)repClass;
 - (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
@@ -89,6 +92,7 @@
 - (void)setShrinkTextForPrinting:(bool)arg1;
 - (bool)shouldHideEmptyBullets;
 - (bool)shrinkTextForPrinting;
+- (bool)supportsMultipleColumns;
 - (bool)textIsLinked;
 - (bool)textIsVertical;
 - (int)verticalAlignment;

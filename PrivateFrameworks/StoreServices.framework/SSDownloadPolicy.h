@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadPolicy : NSObject <NSCoding, NSCopying, NSSecureCoding, SSXPCCoding> {
+@interface SSDownloadPolicy : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     long long  _bagType;
     NSString * _downloadKind;
     NSMutableArray * _policyRules;

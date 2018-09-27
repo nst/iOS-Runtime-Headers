@@ -8,6 +8,7 @@
     HFStaticItem * _nameItem;
     HFStaticItem * _removeItem;
     HFRoomBuilder * _roomBuilder;
+    HFStaticItem * _wallpaperPickerItem;
     HFStaticItem * _wallpaperThumbnailItem;
     HFZoneModule * _zoneModule;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) HFStaticItem *nameItem;
 @property (nonatomic, retain) HFStaticItem *removeItem;
 @property (nonatomic, retain) HFRoomBuilder *roomBuilder;
+@property (nonatomic, retain) HFStaticItem *wallpaperPickerItem;
 @property (nonatomic, retain) HFStaticItem *wallpaperThumbnailItem;
 @property (nonatomic, retain) HFZoneModule *zoneModule;
 
@@ -36,8 +38,10 @@
 - (void)setNameItem:(id)arg1;
 - (void)setRemoveItem:(id)arg1;
 - (void)setRoomBuilder:(id)arg1;
+- (void)setWallpaperPickerItem:(id)arg1;
 - (void)setWallpaperThumbnailItem:(id)arg1;
 - (void)setZoneModule:(id)arg1;
+- (id)wallpaperPickerItem;
 - (id)wallpaperThumbnailItem;
 - (id)zoneModule;
 

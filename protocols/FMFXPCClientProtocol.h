@@ -16,6 +16,7 @@
 - (oneway void)didStopFollowingHandle:(FMFHandle *)arg1;
 - (oneway void)didUpdateActiveDeviceList:(NSSet *)arg1;
 - (oneway void)didUpdateFavorites:(NSArray *)arg1;
+- (oneway void)didUpdateFences:(NSSet *)arg1;
 - (oneway void)didUpdateFollowers:(NSSet *)arg1;
 - (oneway void)didUpdateFollowing:(NSSet *)arg1;
 - (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;

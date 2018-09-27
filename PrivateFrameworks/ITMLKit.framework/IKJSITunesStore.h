@@ -34,9 +34,9 @@
 - (void).cxx_destruct;
 - (id)DSID;
 - (void)_accountStoreChanged;
+- (void)_bagCacheUpdated;
 - (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(bool)arg2;
 - (void)_subscriptionStatusDidChanged:(id)arg1;
-- (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
 - (id)asPrivateIKJSITunesStore;
 - (void)authenticate:(id)arg1 :(id)arg2;

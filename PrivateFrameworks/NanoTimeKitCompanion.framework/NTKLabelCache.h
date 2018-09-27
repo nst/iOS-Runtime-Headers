@@ -8,32 +8,31 @@
 }
 
 + (void)_purgeCache;
-+ (id)labelForFaceStyle:(long long)arg1 number:(unsigned long long)arg2 fontSize:(double)arg3 paddedWithZeros:(bool)arg4;
-+ (id)labelForText:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4 filter:(bool)arg5;
++ (id)labelForDevice:(id)arg1 faceStyle:(long long)arg2 number:(unsigned long long)arg3 fontSize:(double)arg4 paddedWithZeros:(bool)arg5;
++ (id)labelForDevice:(id)arg1 text:(id)arg2 font:(long long)arg3 modifier:(id)arg4 padWithZeroes:(bool)arg5 filter:(bool)arg6;
 + (bool)localeChanged;
 + (id)numeralsSetFromCurrentLocale;
-+ (void)prime;
++ (void)primeForDevice:(id)arg1;
 + (bool)setNumeralsSet:(id)arg1;
 + (id)versionFilePath;
 + (void)wipe;
 
 - (void).cxx_destruct;
+- (id)_currentImageSuffixesForDevice:(id)arg1;
+- (void)_exportTextureAtlasForDevice:(id)arg1 forFont:(long long)arg2 modifier:(id)arg3 values:(id)arg4 padWithZeroes:(bool)arg5 preload:(bool)arg6;
+- (void)_exportTextureAtlasForFaceStyle:(long long)arg1 forDevice:(id)arg2;
+- (id)_keyForLabelWithFont:(long long)arg1 fontSize:(double)arg2 padWithZeroes:(bool)arg3;
+- (id)_keyForLabelWithFont:(long long)arg1 modifier:(id)arg2 padWithZeroes:(bool)arg3;
+- (id)_labelForDevice:(id)arg1 faceStyle:(long long)arg2 number:(unsigned long long)arg3 fontSize:(double)arg4 paddedWithZeros:(bool)arg5;
+- (id)_labelForDevice:(id)arg1 text:(id)arg2 font:(long long)arg3 modifier:(id)arg4 padWithZeroes:(bool)arg5 filter:(bool)arg6;
+- (void)_loadAtlases;
 - (bool)_localeChanged;
+- (id)_nameForFaceStyle:(long long)arg1;
+- (void)_primeForDevice:(id)arg1 font:(long long)arg2 modifier:(id)arg3 values:(id)arg4 padWithZeroes:(bool)arg5 preload:(bool)arg6;
+- (id)_supportedImageSuffixesForDevice:(id)arg1;
+- (id)_textureForDevice:(id)arg1 text:(id)arg2 font:(long long)arg3 modifier:(id)arg4 padWithZeroes:(bool)arg5;
 - (void)checkVersion;
 - (void)dealloc;
-- (void)exportTextureAtlas:(long long)arg1;
-- (void)exportTextureAtlas:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4 preload:(bool)arg5;
 - (id)init;
-- (id)keyForLabelWithFont:(long long)arg1 fontSize:(double)arg2 padWithZeroes:(bool)arg3;
-- (id)labelForFaceStyle:(long long)arg1 number:(unsigned long long)arg2 fontSize:(double)arg3 paddedWithZeros:(bool)arg4;
-- (id)labelForText:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4 filter:(bool)arg5;
-- (void)loadAtlases;
-- (id)nameForFaceStyle:(long long)arg1;
-- (void)primeFontSize:(double)arg1 font:(long long)arg2 from:(unsigned long long)arg3 to:(unsigned long long)arg4 step:(unsigned long long)arg5;
-- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3;
-- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4;
-- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4 preload:(bool)arg5;
-- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 preload:(bool)arg4;
-- (id)textureFor:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4;
 
 @end

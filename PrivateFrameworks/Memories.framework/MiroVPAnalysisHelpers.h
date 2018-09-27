@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroVPAnalysisHelpers : NSObject {
+@interface MiroVPAnalysisHelpers : VEiOSSharedObject {
     NSCache * _analysisInfos;
 }
 

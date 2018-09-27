@@ -24,6 +24,7 @@
 + (id)defaultDuration;
 + (id)domain:(id)arg1;
 + (id)eventHash:(id)arg1;
++ (id)eventMetadata:(id)arg1;
 + (id)extraKey:(id)arg1;
 + (id)extractedBus;
 + (id)extractedCarRental;
@@ -76,6 +77,8 @@
 + (id)tagForPrefix:(id)arg1 value:(id)arg2;
 + (id)templateException;
 + (id)testTag:(int)arg1;
++ (id)textCalendarAttachment:(id)arg1;
++ (id)timezoneIdentifier:(id)arg1;
 + (id)titleGeneratedFromSubject;
 + (id)titleGeneratedFromTemplate;
 + (void)tombstonePrefix:(id)arg1;
@@ -85,6 +88,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)eventMetadata;
 - (unsigned long long)hash;
 - (bool)indexed;
 - (id)initWithName:(id)arg1 stored:(bool)arg2 indexed:(bool)arg3 tracked:(bool)arg4;
@@ -95,6 +99,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToEntityTag:(id)arg1;
 - (bool)isEventHash;
+- (bool)isEventMetadata;
 - (bool)isExtraKey;
 - (bool)isExtractedEventCategory;
 - (bool)isInteractionContactIdentifier;

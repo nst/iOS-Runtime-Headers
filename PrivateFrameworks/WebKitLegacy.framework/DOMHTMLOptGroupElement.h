@@ -14,7 +14,7 @@
 - (void)setDisabled:(bool)arg1;
 - (void)setLabel:(id)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)createPickerCell;
 - (id)createSelectedItem;

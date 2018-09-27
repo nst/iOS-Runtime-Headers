@@ -32,8 +32,8 @@
 @property (nonatomic, retain) NSArray *relations;
 @property (nonatomic) float relevancyScore;
 
+- (void).cxx_destruct;
 - (id)cities;
-- (void)dealloc;
 - (id)familyName;
 - (id)flatten;
 - (id)givenName;

@@ -3,7 +3,7 @@
  */
 
 @interface VMUGraphStackLogReader : VMUStackLogReaderBase <NSSecureCoding, VMUStackLogReader> {
-    struct { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned int x6; int x7; unsigned int x8; unsigned int x9; unsigned int x10; struct _opaque_pthread_rwlock_t { long long x_11_1_1; BOOL x_11_1_2[192]; } x11; } * _backtraceUniquingTable;
+    struct vmu_backtrace_uniquing_table_t { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned int x6; int x7; unsigned int x8; unsigned int x9; unsigned int x10; struct _opaque_pthread_rwlock_t { long long x_11_1_1; BOOL x_11_1_2[192]; } x11; } * _backtraceUniquingTable;
     VMUDebugTimer * _debugTimer;
     VMURangeToStringMap * _functionNameRanges;
     VMUProcessObjectGraph * _graph;
@@ -59,7 +59,6 @@
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })sourceLineRangeContainingPCaddress:(unsigned long long)arg1;
 - (id)sourcePathForPCaddress:(unsigned long long)arg1;
 - (void)symbolicateBacktraceUniquingTable;
-- (bool)usesLiteMode;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;
 
 @end

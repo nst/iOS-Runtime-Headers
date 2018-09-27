@@ -8,6 +8,7 @@
     NSArray * _cities;
     NSObject<OS_dispatch_source> * _crossfadeEffectTimer;
     WUIDynamicWeatherBackgroundInteractiveTransaction * _crossfadeTransaction;
+    bool  _hasViewAppeared;
     bool  _hidesConditions;
     UIImageView * _introductionImageView;
     WUIWeatherCondition * _leftCondition;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) NSArray *conditions;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *crossfadeEffectTimer;
 @property (nonatomic, retain) WUIDynamicWeatherBackgroundInteractiveTransaction *crossfadeTransaction;
+@property (nonatomic) bool hasViewAppeared;
 @property (nonatomic) bool hidesConditions;
 @property (nonatomic, retain) UIImageView *introductionImageView;
 @property (nonatomic, retain) WUIWeatherCondition *leftCondition;
@@ -41,6 +43,7 @@
 - (id)crossfadeTransaction;
 - (void)dealloc;
 - (void)didTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)hasViewAppeared;
 - (bool)hidesConditions;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)introductionImageView;
@@ -58,12 +61,14 @@
 - (void)setCities:(id)arg1 activeCityIndex:(long long)arg2 animationDuration:(double)arg3;
 - (void)setCrossfadeEffectTimer:(id)arg1;
 - (void)setCrossfadeTransaction:(id)arg1;
+- (void)setHasViewAppeared:(bool)arg1;
 - (void)setHidesConditions:(bool)arg1;
 - (void)setIntroductionImageView:(id)arg1;
 - (void)setLeftCondition:(id)arg1;
 - (void)setRightCondition:(id)arg1;
 - (void)setScrollEnded;
 - (void)setScrollOffset:(double)arg1;
+- (void)updateConditionIfNeededWithCities:(id)arg1 activeCityIndex:(long long)arg2;
 - (void)updateConditionsAboutCityIndex:(long long)arg1;
 - (void)useConditionView:(id)arg1 activeCityIndex:(unsigned long long)arg2;
 

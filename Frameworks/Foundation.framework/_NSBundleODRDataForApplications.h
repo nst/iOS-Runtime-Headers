@@ -11,10 +11,10 @@
 
 + (id)dataForBundle:(id)arg1 createIfRequired:(bool)arg2;
 
-- (void)_waitForDaemon;
+- (bool)_waitForDaemon;
 - (void)addExtensionEndpoint:(id)arg1;
-- (void)assetPacksBecameAvailable:(id)arg1;
-- (void)assetPacksBecameUnavailable:(id)arg1;
+- (bool)assetPacksBecameAvailable:(id)arg1 error:(id*)arg2;
+- (bool)assetPacksBecameUnavailable:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)initWithBundle:(id)arg1;

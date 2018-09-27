@@ -79,6 +79,7 @@
 - (bool)isDiscoverable;
 - (bool)isServiceSupported:(unsigned int)arg1;
 - (id)localAddress;
+- (int)maskLocalDeviceEvents:(unsigned int)arg1;
 - (id)pairedDevices;
 - (void)postNotification:(id)arg1;
 - (void)postNotificationName:(id)arg1 object:(id)arg2;

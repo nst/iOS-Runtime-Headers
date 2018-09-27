@@ -27,6 +27,7 @@
     unsigned long long  _readWriteCounter;
     NSString * _resolvedHost;
     SAConnectionPolicyRoute * _route;
+    double  _staleConnectionInterval;
     NSObject<OS_dispatch_source> * _staleConnectionTimer;
     NSURLSessionStreamTask * _streamTask;
     NSURL * _url;
@@ -63,7 +64,6 @@
 - (bool)isCanceled;
 - (bool)isEstablishing;
 - (bool)isMultipath;
-- (bool)isNetworkDownError:(id)arg1;
 - (bool)isPeerConnectionError:(id)arg1;
 - (bool)isPeerNotNearbyError:(id)arg1;
 - (bool)isReady;
@@ -74,9 +74,13 @@
 - (void)setConnectByPOPMethod:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnforceExtendedValidation:(bool)arg1;
+- (void)setKeepAlive:(double)arg1 withInterval:(double)arg2 withCount:(unsigned long long)arg3;
 - (void)setPolicyRoute:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
 - (void)setProviderConnectionPolicy:(id)arg1;
+- (void)setRetransmitConnectionDropTime:(double)arg1;
+- (void)setScopeIsWiFiOnly;
+- (void)setStaleInterval:(double)arg1;
 - (bool)shouldFallbackFromError:(id)arg1;
 - (bool)shouldFallbackQuickly;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;

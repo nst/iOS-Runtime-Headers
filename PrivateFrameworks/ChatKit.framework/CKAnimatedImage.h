@@ -19,6 +19,7 @@
 + (id)animatedImageWithContentsOfASTCURL:(id)arg1;
 + (id)animatedImageWithContentsOfCPBitmapURL:(id)arg1;
 + (id)filenameExtension;
++ (id)imageWithContentsOfCPBitmapURL:(id)arg1;
 + (bool)writeImagesWithDurations:(id)arg1 toASTCURL:(id)arg2 imageProvider:(id /* block */)arg3;
 + (bool)writeImagesWithDurations:(id)arg1 toASTCURL:(id)arg2 imageProvider:(id /* block */)arg3 frameProcessor:(id /* block */)arg4;
 + (bool)writeImagesWithDurations:(id)arg1 toCPBitmapURL:(id)arg2 imageProvider:(id /* block */)arg3;

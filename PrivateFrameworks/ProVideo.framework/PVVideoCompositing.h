@@ -93,6 +93,7 @@
 - (bool)inPlayback;
 - (id)init;
 - (unsigned int)minimumRequestCompletionTimeMS;
+- (double)numFrames;
 - (void)printAndClearStats;
 - (id /* block */)refreshCompletionBlock;
 - (void)removeRenderJobInFlight:(struct HGRef<PVRenderJob> { struct PVRenderJob {} *x1; })arg1;

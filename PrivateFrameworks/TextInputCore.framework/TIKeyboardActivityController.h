@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
  */
 
-@interface TIKeyboardActivityController : NSObject <TIKeyboardActivityControlling, TIKeyboardAssertionManagerDelegate> {
+@interface TIKeyboardActivityController : NSObject <TIKeyboardActivityControlling, TIKeyboardApplicationStateResponses, TIKeyboardAssertionManagerDelegate> {
     unsigned long long  _activityState;
+    TIKeyboardApplicationStateMonitor * _appMonitor;
     bool  _hadRecentActivity;
     bool  _hasBackgroundActivity;
     long long  _inactiveMemoryPressureCount;
@@ -14,10 +15,12 @@
 }
 
 @property (nonatomic, readonly) unsigned long long activityState;
+@property (nonatomic, retain) TIKeyboardApplicationStateMonitor *appMonitor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSTimer *inactivityTimer;
+@property (nonatomic) bool isDirty;
 @property (nonatomic, readonly) NSHashTable *observers;
 @property (readonly) Class superclass;
 
@@ -28,9 +31,12 @@
 + (id)sharedController;
 + (id)singletonInstance;
 
+- (void).cxx_destruct;
 - (unsigned long long)activityState;
 - (void)addActivityObserver:(id)arg1;
+- (id)appMonitor;
 - (void)backgroundActivityAssertionsDidChange;
+- (bool)canGoEarlyClean;
 - (id)createMemoryPressureSource;
 - (void)dealloc;
 - (unsigned long long)getExcessMemoryInBytes;
@@ -38,14 +44,16 @@
 - (id)inactivityTimer;
 - (void)inactivityTimerFired:(id)arg1;
 - (id)init;
+- (bool)isDirty;
 - (void)keyboardAssertionsDidChange;
-- (void)keyboardAssertionsDidChange:(id)arg1;
-- (void)keyboardBackgroundActivityAssertionsDidChange:(id)arg1;
 - (void)notifyMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)notifyTransitionWithContext:(id)arg1;
 - (id)observers;
+- (void)releaseInputManagers;
 - (void)removeActivityObserver:(id)arg1;
+- (void)setAppMonitor:(id)arg1;
 - (void)setInactivityTimer:(id)arg1;
+- (void)setIsDirty:(bool)arg1;
 - (void)setKeyboardCleanIfNecessary;
 - (void)setKeyboardDirtyIfNecessary;
 - (bool)shouldBecomeClean;

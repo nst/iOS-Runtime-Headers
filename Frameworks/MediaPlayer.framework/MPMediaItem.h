@@ -59,6 +59,28 @@
 @property (nonatomic, readonly) double stopTime;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *userGrouping;
+@property (nonatomic, readonly) NSNumber *vui_HLSAudioCapability;
+@property (nonatomic, readonly) NSNumber *vui_HLSColorCapability;
+@property (nonatomic, readonly) NSNumber *vui_HLSResolution;
+@property (nonatomic, readonly) NSNumber *vui_assetType;
+@property (nonatomic, readonly) NSNumber *vui_audioCapability;
+@property (nonatomic, readonly) NSNumber *vui_colorCapability;
+@property (nonatomic, readonly) VUIContentRating *vui_contentRating;
+@property (nonatomic, readonly) NSString *vui_coverArtImageIdentifier;
+@property (nonatomic, readonly) VUIMediaItemCredits *vui_credits;
+@property (nonatomic, readonly) NSURL *vui_extrasURL;
+@property (nonatomic, readonly) NSNumber *vui_isLocal;
+@property (nonatomic, readonly) NSNumber *vui_isPlayable;
+@property (nonatomic, readonly) VUIMediaEntityType *vui_mediaEntityType;
+@property (nonatomic, readonly) NSNumber *vui_playedState;
+@property (nonatomic, readonly) NSString *vui_previewFrameImageIdentifier;
+@property (nonatomic, readonly) NSDate *vui_rentalEndDate;
+@property (nonatomic, readonly) NSDate *vui_rentalExpirationDate;
+@property (nonatomic, readonly) NSDate *vui_rentalPlaybackEndDate;
+@property (nonatomic, readonly) NSNumber *vui_resolution;
+@property (nonatomic, readonly) NSObject<VUIMediaEntityIdentifier> *vui_seasonIdentifier;
+@property (nonatomic, readonly) NSObject<VUIMediaEntityIdentifier> *vui_showIdentifier;
+@property (nonatomic, readonly) NSString *vui_studio;
 @property (nonatomic, readonly) unsigned long long year;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -207,6 +229,45 @@
 // Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
 
 - (id)albumImageWithFallbackForSize:(struct CGSize { double x1; double x2; })arg1 doubleLineRow:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
++ (bool)_vui_isLocalWithPropertyValues:(id)arg1;
++ (bool)_vui_isNetworkPlayableWithPropertyValues:(id)arg1;
++ (long long)vui_MPMediaItemAudioCapabilityFromVUIMediaEntityAudioCapability:(unsigned long long)arg1;
++ (long long)vui_MPMediaItemColorCapabilityFromVUIMediaEntityColorCapability:(unsigned long long)arg1;
++ (long long)vui_MPMediaItemVideoQualityFromVUIMediaEntityResolution:(unsigned long long)arg1;
++ (unsigned long long)vui_VUIMediaEntityAudioCapabilityFromMPMediaItemAudioCapability:(long long)arg1;
++ (unsigned long long)vui_VUIMediaEntityColorCapabilityFromMPMediaItemColorCapability:(long long)arg1;
++ (unsigned long long)vui_VUIMediaEntityResolutionFromMPMediaItemVideoQuality:(long long)arg1;
+
+- (id)_vui_imageIdentifierWithImageType:(unsigned long long)arg1;
+- (id)vui_HLSAudioCapability;
+- (id)vui_HLSColorCapability;
+- (id)vui_HLSResolution;
+- (id)vui_artworkCatalogWithImageType:(unsigned long long)arg1;
+- (id)vui_assetType;
+- (id)vui_assetTypeIgnoringLocalAsset:(bool)arg1;
+- (id)vui_audioCapability;
+- (id)vui_colorCapability;
+- (id)vui_contentRating;
+- (id)vui_coverArtImageIdentifier;
+- (id)vui_credits;
+- (id)vui_extrasURL;
+- (id)vui_imageIdentifierWithImageType:(unsigned long long)arg1;
+- (id)vui_imageLoadParamsWithImageType:(unsigned long long)arg1;
+- (id)vui_isLocal;
+- (id)vui_isPlayable;
+- (id)vui_mediaEntityType;
+- (id)vui_playedState;
+- (id)vui_previewFrameImageIdentifier;
+- (id)vui_rentalEndDate;
+- (id)vui_rentalExpirationDate;
+- (id)vui_rentalPlaybackEndDate;
+- (id)vui_resolution;
+- (id)vui_seasonIdentifier;
+- (id)vui_showIdentifier;
+- (id)vui_studio;
 
 // Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
 

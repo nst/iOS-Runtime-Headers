@@ -10,6 +10,7 @@
 
 @property (nonatomic, copy) id /* block */ languageUpdated;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)languagePulled:(id)arg1;

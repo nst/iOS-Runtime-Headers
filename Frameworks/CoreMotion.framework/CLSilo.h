@@ -8,7 +8,9 @@
 
 @property (nonatomic, readonly) NSString *identifier;
 
++ (id)globalConfiguration;
 + (id)main;
++ (void)setGlobalConfiguration:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)afterInterval:(double)arg1 async:(id /* block */)arg2;

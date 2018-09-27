@@ -12,6 +12,7 @@
 @property (nonatomic, copy) HFCroppedWallpaperInfo *cropInfo;
 @property (nonatomic, readonly) long long type;
 
++ (id)customWallpaperWithAssetIdentifier:(id)arg1;
 + (struct CGSize { double x1; double x2; })size;
 
 - (void).cxx_destruct;

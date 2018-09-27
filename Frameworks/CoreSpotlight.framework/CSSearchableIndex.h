@@ -35,6 +35,7 @@
 + (void)_setLastUpdateTime;
 + (bool)activityShouldBeIndexed:(id)arg1 bundleID:(id)arg2;
 + (id)codedIdentifiers:(id)arg1;
++ (id)codedNSUAPersistentIdentifiers:(id)arg1;
 + (id)codedUniqueIdentifiers:(id)arg1;
 + (id)defaultSearchableIndex;
 + (void)initialize;
@@ -49,6 +50,8 @@
 - (void)_changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2 forUser:(unsigned int)arg3 forBundleID:(id)arg4 forUTIType:(id)arg5;
 - (void)_checkInWithIndexDelegate:(id)arg1 reason:(id)arg2;
 - (void)_commonInit;
+- (void)_deleleActionsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_deleteActionsBeforeTime:(double)arg1 completionHandler:(id /* block */)arg2;
 - (void)_indexActivities:(id)arg1 flush:(bool)arg2;
 - (id)_initWithName:(id)arg1 protectionClass:(id)arg2 bundleIdentifier:(id)arg3 options:(long long)arg4;
 - (void)_issueCommand:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -57,6 +60,7 @@
 - (void)_performIndexJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 - (void)_registerAwakeNotifyToken;
 - (void)_setMailMessageAttributes:(id)arg1;
+- (void)_slowFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_standardizeItems:(id)arg1;
 - (bool)_supportsBatching;
 - (id)_validateClientState:(id)arg1;
@@ -82,6 +86,7 @@
 - (void)deleteAllSearchableItemsForBundleID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteAllSearchableItemsWithCompletionHandler:(id /* block */)arg1;
 - (void)deleteAllSearchableItemsWithProtectionClass:(id)arg1 forBundleID:(id)arg2 options:(long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)deleteAllUserActivities:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -91,7 +96,10 @@
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (void)deleteSearchableItemsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)description;
+- (void)donateRelevantActions:(id)arg1 bundleID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)donateRelevantShortcuts:(id)arg1 bundleID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)endIndexBatchWithClientState:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchLastClientStateWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchLastClientStateWithProtectionClass:(id)arg1 forBundleID:(id)arg2 clientStateName:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
@@ -129,6 +137,7 @@
 - (void)setName:(id)arg1;
 - (void)setOptions:(long long)arg1;
 - (void)setProtectionClass:(id)arg1;
+- (void)slowFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)throttle;
 - (id)throttleQueue;
 - (void)unthrottle;

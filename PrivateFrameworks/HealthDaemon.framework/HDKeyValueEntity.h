@@ -32,18 +32,11 @@
 + (long long)_validateModificationDatePolicyWithKey:(id)arg1 domain:(id)arg2 category:(long long)arg3 modificationDate:(double)arg4 database:(id)arg5 error:(id*)arg6;
 + (id)_valuesForKeys:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 error:(id*)arg5 handler:(id /* block */)arg6;
 + (id)allValuesForDomain:(id)arg1 category:(long long)arg2 profile:(id)arg3 error:(id*)arg4;
-+ (id)columnsDefinition;
-+ (id)companionAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)companionAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)companionAvailabilityStateKeySuffix;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)dataForKey:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)databaseTable;
 + (id)dateComponentsForKey:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)dateForKey:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
-+ (id)definitionIdentifierFromCompanionAlertedStateKey:(id)arg1;
-+ (id)definitionIdentifierFromCompanionAvailabilityStateKey:(id)arg1;
-+ (id)definitionIdentifierFromWatchAlertedStateKey:(id)arg1;
-+ (id)definitionIdentifierFromWatchAvailabilityStateKey:(id)arg1;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;
 + (bool)enumerateValuesForDomain:(id)arg1 category:(long long)arg2 keys:(id)arg3 profile:(id)arg4 error:(id*)arg5 usingBlock:(id /* block */)arg6;
 + (id)generateNewDatabaseIdentifier;
@@ -69,8 +62,5 @@
 + (id)stringForKey:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)uniquedColumns;
 + (id)valuesForKeys:(id)arg1 domain:(id)arg2 category:(long long)arg3 profile:(id)arg4 error:(id*)arg5;
-+ (id)watchAlertedStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)watchAvailabilityStateKeyFromDefinitionIdentifier:(id)arg1;
-+ (id)watchAvailabilityStateKeySuffix;
 
 @end

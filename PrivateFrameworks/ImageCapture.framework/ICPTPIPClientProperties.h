@@ -21,7 +21,6 @@
 - (void)dealloc;
 - (bool)didRegister;
 - (struct __CFFileDescriptor { }*)fdref;
-- (void)finalize;
 - (int)pid;
 - (int)remoteAddress;
 - (struct __CFMessagePort { }*)remotePort;

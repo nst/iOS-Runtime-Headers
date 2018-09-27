@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProVideo.framework/ProVideo
  */
 
-@interface PVMultiBlendLayerParams : NSObject {
+@interface PVMultiBlendLayerParams : NSObject <NSCopying, NSSecureCoding> {
     int  _mode;
     float  _opacity;
 }
@@ -11,9 +11,14 @@
 @property (nonatomic) int mode;
 @property (nonatomic) float opacity;
 
++ (bool)supportsSecureCoding;
+
 - (void)_sharedInitWithOpacity:(float)arg1 mode:(int)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (int)hgBlendMode;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithOpacity:(float)arg1 mode:(int)arg2;
 - (int)mode;
 - (float)opacity;

@@ -3,10 +3,10 @@
 
 @protocol CAMZoomControlDelegate <NSObject>
 
-@required
+@optional
 
-- (void)zoomControl:(CAMZoomControl *)arg1 didChangeZoomFactor:(double)arg2;
-- (void)zoomControl:(CAMZoomControl *)arg1 didTapEmptySpaceAtPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (void)zoomControlDidTapButton:(CAMZoomControl *)arg1;
+- (bool)canToggleBetweenWideAndTelephotoForZoomControl:(CAMZoomControl *)arg1;
+- (void)toggleBetweenWideAndTelephotoForZoomControl:(CAMZoomControl *)arg1;
+- (void)zoomControl:(CAMZoomControl *)arg1 didChangeZoomFactor:(double)arg2 interactionType:(long long)arg3;
 
 @end

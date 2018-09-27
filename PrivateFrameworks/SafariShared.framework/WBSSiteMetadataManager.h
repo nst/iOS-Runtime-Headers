@@ -42,7 +42,9 @@
 - (bool)_updateOperationForRequestIfPossible:(id)arg1;
 - (void)cancelRequestWithToken:(id)arg1;
 - (void)cancelRequestsWithTokens:(id)arg1;
+- (void)cancelRequestsWithTokens:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)emptyProviderCaches;
+- (void)emptyProviderCachesIncludingFavicons:(bool)arg1;
 - (id)init;
 - (id)initWithInjectedBundleURL:(id)arg1;
 - (id)injectedBundleURL;

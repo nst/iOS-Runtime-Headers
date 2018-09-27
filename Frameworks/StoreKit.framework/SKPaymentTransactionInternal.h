@@ -12,8 +12,10 @@
     NSString * _transactionIdentifier;
     NSData * _transactionReceipt;
     long long  _transactionState;
+    NSString * _uuid;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)init;
 
 @end

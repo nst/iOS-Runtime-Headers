@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) NSFileHandle *fileHandle;
 
 - (void).cxx_destruct;
+- (void)_addDataOfSize:(long long)arg1 toPathInArchive:(id)arg2 fromByteProvider:(id /* block */)arg3;
 - (void)addDataToArchive:(id)arg1 pathInArchive:(id)arg2;
 - (void)addFileToArchive:(id)arg1 pathInArchive:(id)arg2;
 - (bool)archiveIsValid;
@@ -22,5 +23,6 @@
 - (id)initWithFileHandle:(id)arg1 archiveType:(long long)arg2;
 - (id)initWithURL:(id)arg1 archiveType:(long long)arg2;
 - (id)initWithURL:(id)arg1 fileHandle:(id)arg2 archiveType:(long long)arg3;
+- (long long)writeData:(const void*)arg1 ofLength:(unsigned long long)arg2;
 
 @end

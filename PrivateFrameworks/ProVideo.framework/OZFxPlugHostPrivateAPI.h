@@ -11,6 +11,9 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (id)URLForHostResource:(id)arg1 withExtension:(id)arg2 subDirectory:(id)arg3 inBundle:(id)arg4;
+- (id)URLForHostResource:(id)arg1 withExtension:(id)arg2 subDirectory:(id)arg3 inBundleWithIdentifier:(id)arg4;
+- (id)URLForHostResource:(id)arg1 withExtension:(id)arg2 subDirectory:(id)arg3 inBundleWithURL:(id)arg4;
 - (float)blendingGamma;
 - (bool)conformsToProtocol:(id)arg1 version:(unsigned int)arg2;
 - (bool)giveEffectUIFocus;

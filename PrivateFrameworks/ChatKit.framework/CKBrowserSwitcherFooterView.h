@@ -3,13 +3,14 @@
  */
 
 @interface CKBrowserSwitcherFooterView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
+    <CKAppStripPredictiveTypeTransition> * _animator;
     CKAppStripLayout * _appStripLayout;
-    UIView * _bottomGrayLine;
     UICollectionView * _collectionView;
     <CKBrowserSwitcherFooterViewDataSource> * _dataSource;
     <CKBrowserSwitcherFooterViewDelegate> * _delegate;
     UIView * _grayLine;
     bool  _hasTouches;
+    bool  _hideShinyStatus;
     bool  _ignoreDataSourceChanges;
     bool  _isDoingMagnificationAnimation;
     bool  _isMagnificationEnabled;
@@ -23,28 +24,35 @@
         double right; 
     }  _minifiedContentInsets;
     bool  _minifiesOnSelection;
+    UIView * _predictiveTypeSnapshotView;
     bool  _scrollsLastUsedAppIconIntoView;
+    double  _snapshotVerticalOffset;
     UILongPressGestureRecognizer * _touchTracker;
+    UIView * _visibleView;
 }
 
 @property (nonatomic, retain) CKAppStripLayout *appStripLayout;
-@property (nonatomic, retain) UIView *bottomGrayLine;
 @property (nonatomic) <CKBrowserSwitcherFooterViewDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKBrowserSwitcherFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *grayLine;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideShinyStatus;
 @property (nonatomic) bool isMagnified;
 @property (nonatomic) bool minifiesOnSelection;
 @property (nonatomic) bool scrollsLastUsedAppIconIntoView;
+@property (nonatomic) bool showBorders;
+@property (nonatomic) double snapshotVerticalOffset;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_updateVisibilityState;
 - (void)adjustMagnificationAtPoint:(struct CGPoint { double x1; double x2; })arg1 minifyImmediately:(bool)arg2;
+- (void)animateAppStripVisible:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)appStripLayout;
 - (void)appsLongPressed:(id)arg1;
-- (id)bottomGrayLine;
+- (void)clearSelection;
 - (id)collectionView;
 - (bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -54,12 +62,15 @@
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 targetIndexPathForMoveFromItemAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (double)contentHeight;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)grayLine;
+- (bool)hideShinyStatus;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForAppStrip;
 - (void)installedAppsChanged:(id)arg1;
 - (bool)isMagnified;
 - (void)layoutSubviews;
@@ -73,17 +84,22 @@
 - (bool)scrollsLastUsedAppIconIntoView;
 - (void)selectPluginAtIndexPath:(id)arg1;
 - (void)setAppStripLayout:(id)arg1;
-- (void)setBottomGrayLine:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGrayLine:(id)arg1;
+- (void)setHideShinyStatus:(bool)arg1;
 - (void)setInitiallySelectedPluginIfNeeded;
 - (void)setIsMagnified:(bool)arg1;
 - (void)setMinifiesOnSelection:(bool)arg1;
 - (void)setScrollsLastUsedAppIconIntoView:(bool)arg1;
+- (void)setShowBorders:(bool)arg1;
+- (void)setSnapshotVerticalOffset:(double)arg1;
+- (bool)showBorders;
+- (double)snapshotVerticalOffset;
 - (struct CGPoint { double x1; double x2; })targetContentOffsetForFocusPoint:(struct CGPoint { double x1; double x2; })arg1 initialLayoutMode:(unsigned long long)arg2 finalLayoutMode:(unsigned long long)arg3;
 - (void)touchTrackerTrackedTouches:(id)arg1;
 - (void)updateCollectionView:(id)arg1;
+- (void)updatePredictiveTypeSnapshot:(id)arg1;
 - (void)visibleAppsChanges:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

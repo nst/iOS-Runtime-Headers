@@ -28,30 +28,31 @@
 + (bool)isPreviewable;
 
 - (void).cxx_destruct;
+- (id)_getIrisBundleLocation;
 - (id)_getIrisBundleURL;
-- (id)_getTempIrisBundleLocation;
-- (id)_getTempIrisFolder;
-- (void)_removeAppendedBundle;
+- (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })bbSize;
 - (id)calculateIrisVideoPath;
 - (bool)canExport;
 - (bool)canShareItem;
-- (void)dealloc;
 - (void)export:(id)arg1;
+- (bool)generatePreviewOutOfProcess;
 - (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)getIrisVideoPath;
 - (id)imageData;
-- (id)initWithTransfer:(id)arg1;
+- (id)initWithTransfer:(id)arg1 isFromMe:(bool)arg2 suppressPreview:(bool)arg3;
 - (bool)isIrisAsset;
 - (bool)isSticker;
 - (id)location;
 - (int)mediaType;
 - (struct CGSize { double x1; double x2; })originalSize;
 - (id)pasteboardItem;
+- (id)previewFilenameExtension;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
+- (bool)validatePreviewFormat;
 
 @end

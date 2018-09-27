@@ -4,6 +4,7 @@
 
 @interface _BRCOperation : NSOperation {
     NSObject<OS_os_activity> * _Activity;
+    NSMutableArray * _associatedEventMetrics;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     NSObject<OS_os_transaction> * _executionTransaction;
     id /* block */  _finishBlock;
@@ -16,6 +17,7 @@
     unsigned long long  _logSections;
     id /* block */  _mainBlock;
     NSDate * _nextTryDate;
+    bool  _nonDiscretionary;
     BRCThrottle * _operationFailureThrottle;
     CKOperationGroup * _operationGroup;
     BRCThrottle * _operationThrottle;
@@ -34,6 +36,7 @@
 @property (nonatomic, retain) CKOperationGroup *group;
 @property (nonatomic, readonly) unsigned long long logSections;
 @property (nonatomic, copy) id /* block */ mainBlock;
+@property (nonatomic) bool nonDiscretionary;
 @property (nonatomic) BRCThrottle *operationFailureThrottle;
 @property (nonatomic, readonly) NSUUID *operationID;
 @property (nonatomic) BRCThrottle *operationThrottle;
@@ -49,6 +52,7 @@
 - (void)_scheduleExecutionWithPreviousError:(id)arg1;
 - (void)addSubOperation:(id)arg1;
 - (void)addSubOperation:(id)arg1 overrideContext:(id)arg2 allowsCellularAccess:(id)arg3;
+- (void)associateCKOperationsToEventMetric:(id)arg1;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
@@ -71,6 +75,7 @@
 - (unsigned long long)logSections;
 - (void)main;
 - (id /* block */)mainBlock;
+- (bool)nonDiscretionary;
 - (id)operationFailureThrottle;
 - (id)operationID;
 - (id)operationThrottle;
@@ -80,6 +85,7 @@
 - (void)setFinished:(bool)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setMainBlock:(id /* block */)arg1;
+- (void)setNonDiscretionary:(bool)arg1;
 - (void)setOperationFailureThrottle:(id)arg1;
 - (void)setOperationThrottle:(id)arg1;
 - (bool)shouldRetryForError:(id)arg1;

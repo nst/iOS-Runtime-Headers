@@ -6,6 +6,7 @@
 @optional
 
 - (void)cameraDidBecomeAvailableForUniqueID:(NSString *)arg1;
+- (void)cameraDidBecomeInterruptedForForUniqueID:(NSString *)arg1 reason:(long long)arg2;
 - (void)didChangeLocalScreenAttributes:(VideoAttributes *)arg1;
 - (void)didChangeLocalVideoAttributes:(VideoAttributes *)arg1;
 - (void)didGetSnapshot:(NSData *)arg1;

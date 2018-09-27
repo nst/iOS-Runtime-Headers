@@ -37,6 +37,7 @@
 @property (readonly) NSString *note;
 @property (readonly) NSString *organization;
 @property (readonly) NSArray *otherDateComponents;
+@property (nonatomic, readonly) <CNVCardPerson> *person;
 @property (readonly) NSArray *phoneNumbers;
 @property (readonly) NSString *phonemeData;
 @property (readonly) NSString *phoneticFirstName;
@@ -49,6 +50,7 @@
 @property (readonly) NSString *pronunciationFirstName;
 @property (readonly) NSString *pronunciationLastName;
 @property (readonly) NSArray *relatedNames;
+@property (nonatomic, readonly) CNVCardFilteredPersonScope *scope;
 @property (readonly) NSArray *socialProfiles;
 @property (readonly) NSString *suffix;
 @property (readonly) Class superclass;
@@ -90,6 +92,7 @@
 - (id)note;
 - (id)organization;
 - (id)otherDateComponents;
+- (id)person;
 - (id)phoneNumbers;
 - (id)phonemeData;
 - (id)phoneticFirstName;
@@ -102,6 +105,7 @@
 - (id)pronunciationFirstName;
 - (id)pronunciationLastName;
 - (id)relatedNames;
+- (id)scope;
 - (id)socialProfiles;
 - (id)suffix;
 - (id)title;

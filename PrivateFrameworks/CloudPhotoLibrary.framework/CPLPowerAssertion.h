@@ -9,6 +9,7 @@
 + (void)_retainAssertion;
 + (void)disableSleep;
 + (void)enableSleep;
++ (bool)hasEnoughPower;
 + (id)powerAssertionStatus;
 + (void)setHasEnoughPower:(bool)arg1;
 

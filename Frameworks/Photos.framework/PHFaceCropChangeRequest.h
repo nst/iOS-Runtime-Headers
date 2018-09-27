@@ -65,6 +65,7 @@
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)personHelper;
 - (id)placeholderForCreatedFaceCrop;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (id)resourceData;
 - (void)setFace:(id)arg1;

@@ -11,6 +11,7 @@
     NSString * _groupingID;
     bool  _hasStoredValue;
     NSDate * _ingestedDate;
+    bool  _isCloudKitArchived;
     bool  _liveRenderedBackground;
     PKLiveRenderedShaderSet * _liveRenderedShaderSet;
     NSURL * _localLocationsURL;
@@ -36,6 +37,7 @@
     NSURL * _webLocationsURL;
 }
 
+@property (nonatomic, readonly) NSString *airlineCode;
 @property (nonatomic, readonly) NSURL *appLaunchURL;
 @property (nonatomic, copy) NSSet *associatedPassTypeIdentifiers;
 @property (nonatomic, copy) NSString *authenticationToken;
@@ -46,16 +48,22 @@
 @property (nonatomic, copy) PKPassDisplayProfile *displayProfile;
 @property (nonatomic, copy) NSSet *embeddedBeacons;
 @property (nonatomic, copy) NSSet *embeddedLocations;
+@property (nonatomic, readonly) long long eventType;
 @property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic, readonly) NSString *flightCode;
+@property (nonatomic, readonly) unsigned long long flightNumber;
 @property (nonatomic, readonly) PKImage *footerImage;
 @property (nonatomic, readonly) PKImage *frontFaceImage;
+@property (nonatomic, readonly) PKImage *frontFaceShadowImage;
 @property (nonatomic, readonly) NSArray *frontFieldBuckets;
 @property (nonatomic, copy) NSString *groupingID;
+@property (nonatomic, readonly) bool hasFlightDetails;
 @property (readonly) bool hasLogoImageSet;
 @property (nonatomic) bool hasStoredValue;
 @property (nonatomic, readonly, copy) UIImage *icon;
 @property (nonatomic, readonly) PKImage *iconImage;
 @property (nonatomic, retain) NSDate *ingestedDate;
+@property (nonatomic) bool isCloudKitArchived;
 @property (nonatomic, readonly) bool isPersonalizable;
 @property (nonatomic) bool liveRenderedBackground;
 @property (nonatomic, readonly) PKPassLiveRenderedImageSet *liveRenderedImageSet;
@@ -72,8 +80,8 @@
 @property (nonatomic, readonly) PKImage *notificationIconImage;
 @property (readonly) NSData *npkCompleteHash;
 @property (readonly) bool npkExpired;
-@property (readonly) bool npkHasBarcode;
-@property (readonly) bool npkSupportsHidingBarcode;
+@property (readonly) bool npkHasValidNFCPayload;
+@property (readonly) bool npkSupportsHidingAccessory;
 @property (readonly) PKBarcode *npkWatchBarcode;
 @property (nonatomic, copy) NSString *organizationName;
 @property (nonatomic, readonly) PKImage *partialFrontFaceImage;
@@ -94,6 +102,7 @@
 @property (nonatomic) long long sharingMethod;
 @property (nonatomic, copy) NSString *sharingText;
 @property (nonatomic, copy) NSURL *sharingURL;
+@property (nonatomic, readonly) bool silenceRequested;
 @property (nonatomic, readonly) NSArray *storeIdentifiers;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } stripRect;
 @property (nonatomic, readonly) long long style;
@@ -109,6 +118,7 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (Class)classForPassType:(unsigned long long)arg1;
++ (id)cloudStorePassRecordNamePrefix;
 + (unsigned long long)defaultSettings;
 + (bool)isValidObjectWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 + (bool)supportsSecureCoding;
@@ -116,6 +126,8 @@
 - (void).cxx_destruct;
 - (id)_changeMessageForFieldKey:(id)arg1;
 - (id)_localizationKeyForMultipleDiff;
+- (id)airlineCode;
+- (id)allSemantics;
 - (id)appLaunchURL;
 - (id)associatedPassTypeIdentifiers;
 - (bool)availableForAutomaticPresentationUsingBeaconContext;
@@ -125,27 +137,38 @@
 - (id)barcode;
 - (id)cardHolderPicture;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currencyAmountForSemanticKey:(id)arg1;
+- (id)dateForSemanticKey:(id)arg1;
 - (id)deviceName;
+- (id)dictionariesForSemanticKey:(id)arg1;
 - (id)diff:(id)arg1;
 - (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
 - (id)embeddedBeacons;
 - (id)embeddedLocations;
+- (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (long long)eventType;
 - (id)expirationDate;
 - (id)fieldForKey:(id)arg1;
+- (id)flightCode;
+- (unsigned long long)flightNumber;
 - (id)footerImage;
 - (id)frontFaceImage;
+- (id)frontFaceShadowImage;
 - (id)frontFieldBuckets;
 - (id)groupingID;
+- (bool)hasFlightDetails;
 - (bool)hasLocationRelevancyInfo;
 - (bool)hasStoredValue;
 - (bool)hasTimeOrLocationRelevancyInfo;
 - (bool)hasValidNFCPayload;
 - (id)iconImage;
 - (id)ingestedDate;
+- (id)initWithCloudStoreCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (bool)isCloudKitArchived;
 - (bool)isEqualToPassIncludingMetadata:(id)arg1;
 - (bool)isExpired;
 - (bool)isPersonalizable;
@@ -154,14 +177,17 @@
 - (bool)isRevoked;
 - (bool)isUpdatable;
 - (bool)isVoided;
+- (unsigned long long)itemType;
 - (bool)liveRenderedBackground;
 - (id)liveRenderedImageSet;
 - (id)liveRenderedShaderSet;
+- (void)loadFlightsWithCompletionHandler:(id /* block */)arg1;
 - (id)localLocationsURL;
 - (id)localizedDescription;
 - (id)localizedDescriptionForDiff:(id)arg1;
 - (id)localizedName;
 - (id)localizedValueForFieldKey:(id)arg1;
+- (id)locationForSemanticKey:(id)arg1;
 - (id)logoImage;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })logoRect;
 - (id)logoText;
@@ -170,6 +196,7 @@
 - (id)nfcPayload;
 - (id)notificationCenterTitle;
 - (id)notificationIconImage;
+- (id)numberForSemanticKey:(id)arg1;
 - (id)organizationName;
 - (id)partialFrontFaceImage;
 - (id)partialFrontFaceImagePlaceholder;
@@ -178,10 +205,14 @@
 - (id)passTypeIdentifier;
 - (id)passURL;
 - (id)paymentPass;
+- (id)personNameComponentsForSemanticKey:(id)arg1;
 - (id)personalization;
 - (id)personalizationLogoImage;
 - (id)pluralLocalizedName;
+- (id)primaryFields;
+- (id)recordTypesAndNames;
 - (id)relevantDate;
+- (id)semantics;
 - (id)sequenceCounter;
 - (id)serialNumber;
 - (void)setAssociatedPassTypeIdentifiers:(id)arg1;
@@ -192,6 +223,7 @@
 - (void)setGroupingID:(id)arg1;
 - (void)setHasStoredValue:(bool)arg1;
 - (void)setIngestedDate:(id)arg1;
+- (void)setIsCloudKitArchived:(bool)arg1;
 - (void)setLiveRenderedBackground:(bool)arg1;
 - (void)setLocalLocationsURL:(id)arg1;
 - (void)setModifiedDate:(id)arg1;
@@ -216,8 +248,10 @@
 - (long long)sharingMethod;
 - (id)sharingText;
 - (id)sharingURL;
-- (bool)shouldSuppressNoChargeAmount;
+- (bool)silenceRequested;
 - (id)storeIdentifiers;
+- (id)stringForSemanticKey:(id)arg1;
+- (id)stringsForSemanticKey:(id)arg1;
 - (id)stripImage;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stripRect;
 - (long long)style;
@@ -231,13 +265,19 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
++ (void)npkClearTransitValuePendingStateIfNecessaryForPassWithID:(id)arg1 withBalance:(id)arg2;
++ (void)npkHandleTransitValuePendingAmount:(id)arg1 withBalance:(id)arg2 forPassWithID:(id)arg3;
+
 - (bool)hasLogoImageSet;
+- (long long)npkAccessoryType;
 - (id)npkArchiveData;
 - (id)npkCompleteHash;
 - (id)npkCompleteHashForWatchOSVersion:(unsigned long long)arg1;
 - (bool)npkExpired;
-- (bool)npkHasBarcode;
-- (bool)npkSupportsHidingBarcode;
+- (bool)npkHasValidNFCPayload;
+- (bool)npkIsAddValuePending;
+- (id)npkLastAddValueAmount;
+- (bool)npkSupportsHidingAccessory;
 - (id)npkWatchBarcode;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI

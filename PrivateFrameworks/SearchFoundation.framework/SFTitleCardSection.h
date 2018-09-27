@@ -49,6 +49,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *type;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -87,5 +89,9 @@
 - (id)subtitle;
 - (id)title;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

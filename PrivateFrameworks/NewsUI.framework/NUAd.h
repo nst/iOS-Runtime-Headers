@@ -12,7 +12,7 @@
     NSDate * _unloadDate;
 }
 
-@property (nonatomic, retain) NUAdBannerView *bannerView;
+@property (nonatomic) NUAdBannerView *bannerView;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

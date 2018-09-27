@@ -7,6 +7,8 @@
     struct __CFDictionary { } * _deletedFOKRowsInCurrentSave;
     NSMutableSet * _externalDataReferencesToDelete;
     NSMutableArray * _externalDataReferencesToSave;
+    NSMutableSet * _fileBackedFuturesToCopy;
+    NSMutableSet * _fileBackedFuturesToDelete;
     struct _sqlSaveFlags { 
         unsigned int notifyFOKChanges : 1; 
         unsigned int hasChanges : 1; 
@@ -23,14 +25,18 @@
     struct __CFDictionary { } * _updatedFOKRowsInCurrentSave;
 }
 
-@property (readonly) <_NSCoreDataCollectionWithoutKeys> *externalDataReferencesToDelete;
-@property (readonly) <_NSCoreDataCollectionWithoutKeys> *externalDataReferencesToSave;
-@property (readonly) NSSaveChangesRequest *saveRequest;
-@property (readonly) NSManagedObjectContext *savingContext;
+@property (nonatomic, readonly) <_NSCoreDataCollectionWithoutKeys> *externalDataReferencesToDelete;
+@property (nonatomic, readonly) <_NSCoreDataCollectionWithoutKeys> *externalDataReferencesToSave;
+@property (nonatomic, readonly) <_NSCoreDataCollectionWithoutKeys> *fileBackedFuturesToCopy;
+@property (nonatomic, readonly) <_NSCoreDataCollectionWithoutKeys> *fileBackedFuturesToDelete;
+@property (nonatomic, readonly) NSSaveChangesRequest *saveRequest;
+@property (nonatomic, readonly) NSManagedObjectContext *savingContext;
 @property (nonatomic) int transactionInMemorySequence;
 
 - (void)_addExternalReferenceDataToDelete:(id)arg1;
 - (void)_addExternalReferenceDataToSave:(id)arg1;
+- (void)_addFileBackedFutureToCopy:(id)arg1;
+- (void)_addFileBackedFutureToDelete:(id)arg1;
 - (void)_computeUpdatedRowSplit;
 - (id)_correlationTableUpdateTrackerForRelationship:(id)arg1;
 - (void)_createCorrelationTrackerUpdatesForDeletedObject:(id)arg1;
@@ -46,13 +52,17 @@
 - (unsigned int)_orderKeyForObject:(id)arg1 fromSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 inOrderedSet:(id)arg4;
 - (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned long long**)arg4 reorderedIndexes:(char **)arg5;
 - (void)_populateRow:(id)arg1 fromObject:(id)arg2 timestamp:(double)arg3 inserted:(bool)arg4;
+- (void)_prepareForDeletionOfDatabaseExternalPropertiesForObject:(id)arg1;
 - (void)_prepareForDeletionOfExternalDataReferencesForObject:(id)arg1;
+- (void)_prepareForDeletionOfFileBackedFuturesForObject:(id)arg1;
 - (void)_recordToManyChangesForObject:(id)arg1 inRow:(id)arg2 usingTimestamp:(double)arg3 inserted:(bool)arg4;
 - (void)_registerChangedFOKs:(id)arg1 deletions:(id)arg2 forSourceObject:(id)arg3 andRelationship:(id)arg4;
 - (void)dealloc;
 - (id)entityForEntityDescription:(id)arg1;
 - (id)externalDataReferencesToDelete;
 - (id)externalDataReferencesToSave;
+- (id)fileBackedFuturesToCopy;
+- (id)fileBackedFuturesToDelete;
 - (id)foreignOrderKeysBeingDeleted;
 - (id)foreignOrderKeysBeingUpdated;
 - (bool)hasChangesForWriting;

@@ -19,10 +19,12 @@
     HMDeviceSetupOperationHandler * _homeKitSetupHandler;
     int  _iTunesCloudCompleteToken;
     bool  _iTunesCloudCompleted;
+    double  _iTunesCloudWaitSeconds;
     bool  _invalidateCalled;
     NSString * _languageCode;
     NSString * _localeIdentifier;
     bool  _mediaSystemReady;
+    double  _mediaSystemWaitSeconds;
     unsigned long long  _peerFeatureFlags;
     id /* block */  _progressHandler;
     SFClient * _sfClient;

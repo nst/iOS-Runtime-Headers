@@ -64,8 +64,6 @@
 @property (nonatomic) struct CGImage { }*contentReplacementImage;
 @property (nonatomic) bool useOrientationDependentFontAntialiasing;
 
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
 + (id)currentEvent;
 + (bool)hasLandscapeOrientation;
 + (void)setOrientationProvider:(id)arg1;
@@ -107,7 +105,6 @@
 - (bool)makeFirstResponder:(id)arg1;
 - (void)makeKeyWindow;
 - (id)recursiveDescription;
-- (oneway void)release;
 - (void)removeAllNonVisibleTiles;
 - (void)removeAllTiles;
 - (void)removeForegroundTiles;
@@ -151,9 +148,5 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (void)willRotate;
 - (float)zoomedOutTileScale;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

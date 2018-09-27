@@ -36,6 +36,7 @@
 - (id)appLaunchParams;
 - (id)appLocalJSURL;
 - (id)appTraitCollection;
+- (id)bagBootURLKey;
 - (bool)headless;
 - (id)initWithLaunchContext:(id)arg1;
 - (id)javaScriptLaunchOptions;
@@ -46,6 +47,7 @@
 - (id)localStorage;
 - (id)menuBarController;
 - (id)navigationController;
+- (id)offlineJSURL;
 - (void)setHeadless:(bool)arg1;
 - (void)setJavaScriptLaunchOptions:(id)arg1;
 - (void)setKeyTraitEnvironment:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKUpNextNewsDataSource : NTKUpNextElementDataSource {
+@interface NTKUpNextNewsDataSource : REElementDataSource {
     NTKUpNextElementDataSource * _newsDataSourceProxy;
 }
 
@@ -10,11 +10,11 @@
 
 + (id)bundleIdentifier;
 + (Class)nanoNewsDataSourceClass;
-+ (id)sampleContentElements;
 + (bool)wantsReloadForSignificantTimeChange;
 
 - (void).cxx_destruct;
 - (void)getElementsDuringDateInterval:(id)arg1 inSection:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
+- (void)getElementsInSection:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)init;
 - (id)newsDataSourceProxy;
 - (void)pause;
@@ -24,5 +24,6 @@
 - (void)setNewsDataSourceProxy:(id)arg1;
 - (void)setRunning:(bool)arg1;
 - (void)setState:(unsigned long long)arg1;
+- (id)supportedSections;
 
 @end

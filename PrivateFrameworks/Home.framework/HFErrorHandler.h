@@ -4,6 +4,8 @@
 
 @interface HFErrorHandler : NSObject
 
++ (id)_descriptionForHFErrorCode:(long long)arg1;
++ (id)_descriptionForHMErrorCode:(long long)arg1;
 + (id)descriptionLocalizationKeyForError:(id)arg1;
 + (id)sharedHandler;
 

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface HLPHelpTopicViewController : UIViewController <HLPHelpLoadingViewDelegate, HLPHelpTopicViewControllerDelegate, UIGestureRecognizerDelegate, UIWebViewDelegate> {
+@interface HLPHelpTopicViewController : UIViewController <HLPHelpLoadingViewDelegate, HLPHelpTopicViewControllerDelegate, UIGestureRecognizerDelegate, WKNavigationDelegate> {
     bool  _RTL;
-    HLPURLSession * _URLSession;
+    TPSURLSessionItem * _URLSessionItem;
+    NSString * _assetHostOverride;
     UIBarButtonItem * _backBarButtonItem;
     bool  _canShowTOC;
     HLPHelpTopicHistoryItem * _currentTopicHistoryItem;
@@ -20,15 +21,16 @@
     HLPHelpLocale * _locale;
     NSArray * _searchTerms;
     bool  _showTopicNameAsTitle;
-    UITapGestureRecognizer * _tapGestureRecognizer;
     UIBarButtonItem * _tocBarButtonItem;
     NSCache * _topicCache;
     NSMutableArray * _topicHistory;
     HLPHelpUsageController * _usageController;
-    UIWebView * _webView;
+    WKWebView * _webView;
     bool  _webViewLoaded;
+    NSMutableDictionary * _webViewRequestsMap;
 }
 
+@property (nonatomic, retain) TPSURLSessionItem *URLSessionItem;
 @property (nonatomic, retain) HLPHelpTopicHistoryItem *currentTopicHistoryItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpTopicViewControllerDelegate> *delegate;
@@ -43,21 +45,25 @@
 @property (nonatomic, retain) NSArray *searchTerms;
 @property (nonatomic) bool showTopicNameAsTitle;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSCache *topicCache;
 @property (nonatomic, retain) HLPHelpUsageController *usageController;
-@property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, retain) WKWebView *webView;
+@property (nonatomic, retain) NSMutableDictionary *webViewRequestsMap;
 
 - (void).cxx_destruct;
+- (id)URLSessionItem;
 - (void)backButtonTapped;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)currentTopicHistoryItem;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismiss;
-- (void)dismissWelcomeHelpTopic;
 - (bool)displayHelpTopicsOnly;
 - (void)forwardButtonTapped;
 - (id)helpBookController;
 - (id)helpBookURL;
 - (void)helpTopicViewController:(id)arg1 failToLoadWithError:(id)arg2;
+- (void)helpTopicViewController:(id)arg1 topicLoaded:(id)arg2;
 - (void)helpTopicViewControllerCurrentTopicIsPassionPoint:(id)arg1;
 - (void)helpTopicViewControllerDoneButtonTapped:(id)arg1;
 - (void)helpTopicViewControllerShowHelpBookInfo:(id)arg1;
@@ -81,12 +87,16 @@
 - (void)setLocale:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setShowTopicNameAsTitle:(bool)arg1;
+- (void)setTopicCache:(id)arg1;
+- (void)setURLSessionItem:(id)arg1;
 - (void)setUsageController:(id)arg1;
 - (void)setWebView:(id)arg1;
+- (void)setWebViewRequestsMap:(id)arg1;
 - (void)showHelpBookInfo:(id)arg1;
 - (void)showTableOfContent;
 - (bool)showTopicNameAsTitle;
 - (void)showWebViewDelay;
+- (id)topicCache;
 - (void)updateDoneButton;
 - (void)updateHTMLStringPath:(id)arg1 tag:(id)arg2 attribute:(id)arg3;
 - (void)updateNavigationButtons;
@@ -98,9 +108,13 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (id)webView;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
-- (void)webViewDidFinishLoad:(id)arg1;
-- (void)webViewDidStartLoad:(id)arg1;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
+- (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
+- (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
+- (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
+- (id)webViewRequestsMap;
 
 @end

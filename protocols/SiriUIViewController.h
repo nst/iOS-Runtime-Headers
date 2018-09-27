@@ -25,6 +25,7 @@
 - (void)handleAceCommand:(AceObject *)arg1;
 - (NSString *)navigationTitle;
 - (bool)shouldHidePriorViews;
+- (void)siriDidReceiveViewsWithDialogPhase:(AFDialogPhase *)arg1;
 - (void)siriDidScrollVisible:(bool)arg1;
 - (void)siriDidStartSpeakingWithIdentifier:(NSString *)arg1;
 - (void)siriDidStopSpeakingWithIdentifier:(NSString *)arg1 speechQueueIsEmpty:(bool)arg2;

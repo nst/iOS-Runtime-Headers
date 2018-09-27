@@ -20,6 +20,7 @@
     MSVLRUDictionary * _contentItems;
     NSDictionary * _convertedNowPlayingInfo;
     NSObject<OS_dispatch_queue> * _dataSourceQueue;
+    void * _fallbackActivity;
     struct _MSVSignedRange { 
         long long location; 
         long long length; 
@@ -37,6 +38,7 @@
     MPNowPlayingInfoCenterArtworkContext * _publishedContext;
     NSDate * _pushDate;
     NSDictionary * _queuedNowPlayingInfo;
+    NSString * _representedApplicationBundleIdentifier;
     struct _MSVSignedRange { 
         long long location; 
         long long length; 
@@ -54,6 +56,7 @@
 @property (nonatomic) unsigned long long playbackState;
 @property (nonatomic, readonly) NSString *playerID;
 @property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, copy) NSString *representedApplicationBundleIdentifier;
 @property (nonatomic, readonly) bool supportsArtworkCatalogLoading;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -84,6 +87,7 @@
 - (void)_onQueue_registerPlaybackQueueDataSourceCallbacks:(id)arg1;
 - (void)_updatePlayerAudioSessionProperties;
 - (void)becomeActive;
+- (void)becomeActiveSystemFallback;
 - (id)dataSourceQueue;
 - (void)dealloc;
 - (id)init;
@@ -97,6 +101,8 @@
 - (unsigned long long)playbackState;
 - (id)playerID;
 - (void*)playerPath;
+- (id)representedApplicationBundleIdentifier;
+- (void)resignActiveSystemFallback;
 - (void)setDataSourceQueue:(id)arg1;
 - (void)setLyricsDelegate:(id)arg1;
 - (void)setNowPlayingContentItem:(id)arg1;
@@ -104,6 +110,7 @@
 - (void)setPlaybackQueueDataSource:(id)arg1;
 - (void)setPlaybackQueueDelegate:(id)arg1;
 - (void)setPlaybackState:(unsigned long long)arg1;
+- (void)setRepresentedApplicationBundleIdentifier:(id)arg1;
 - (bool)supportsArtworkCatalogLoading;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore

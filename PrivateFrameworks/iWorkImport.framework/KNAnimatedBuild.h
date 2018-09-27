@@ -61,6 +61,7 @@
 @property (nonatomic, readonly) bool isEmphasisBuild;
 @property (nonatomic, readonly) bool isImplicitlyVisibleAtBeginning;
 @property (nonatomic) bool isInitialAmbientBuild;
+@property (nonatomic, readonly) bool isLineDrawBuild;
 @property (nonatomic, readonly) bool isMagicChartBuild;
 @property (nonatomic, readonly) bool isParentBuild;
 @property (nonatomic) bool isVisibleAtBeginning;
@@ -113,6 +114,7 @@
 - (bool)isEmphasisBuild;
 - (bool)isImplicitlyVisibleAtBeginning;
 - (bool)isInitialAmbientBuild;
+- (bool)isLineDrawBuild;
 - (bool)isMagicChartBuild;
 - (bool)isParentBuild;
 - (bool)isVisibleAtBeginning;

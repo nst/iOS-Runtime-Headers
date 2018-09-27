@@ -5,31 +5,34 @@
 @interface NUVideoAdProviderFactory : NSObject <NUVideoAdProviderFactory> {
     <NUAdProvider> * _adProvider;
     <SXVASTAnalyticsEventInfoFactory> * _analyticsEventInfoFactory;
+    NSArray * _contextProviders;
     <NUVideoAdEventTracker> * _eventTracker;
-    NSString * _placement;
-    <SXVisibilityMonitoring> * _videoPlayerVisibilityMonitor;
-    <SXVideoVisibilityMonitorProviding> * _visibilityMonitorProviding;
+    <SVModalPresentationViewControllerProviding> * _modalPresentationViewControllerProvider;
+    <NUVideoPlaybackCounter> * _playbackCounter;
+    <SVVisibilityMonitoring> * _videoPlayerVisibilityMonitor;
 }
 
 @property (nonatomic, readonly) <NUAdProvider> *adProvider;
 @property (nonatomic, readonly) <SXVASTAnalyticsEventInfoFactory> *analyticsEventInfoFactory;
+@property (nonatomic, readonly, copy) NSArray *contextProviders;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <NUVideoAdEventTracker> *eventTracker;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, copy) NSString *placement;
+@property (nonatomic, readonly) <SVModalPresentationViewControllerProviding> *modalPresentationViewControllerProvider;
+@property (nonatomic, readonly) <NUVideoPlaybackCounter> *playbackCounter;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <SXVisibilityMonitoring> *videoPlayerVisibilityMonitor;
-@property (nonatomic, readonly) <SXVideoVisibilityMonitorProviding> *visibilityMonitorProviding;
+@property (nonatomic, readonly) <SVVisibilityMonitoring> *videoPlayerVisibilityMonitor;
 
 - (void).cxx_destruct;
 - (id)adProvider;
 - (id)analyticsEventInfoFactory;
+- (id)contextProviders;
 - (id)createVideoAdProviderWithContextProviderForVideoBefore:(id)arg1 contextProviderForVideoAfter:(id)arg2;
 - (id)eventTracker;
-- (id)initWithAdProvider:(id)arg1 placement:(id)arg2 eventTracker:(id)arg3 videoPlayerVisibilityMonitor:(id)arg4 videoVisibilityMonitorProvider:(id)arg5 analyticsEventInfoFactory:(id)arg6;
-- (id)placement;
+- (id)initWithAdProvider:(id)arg1 contextProviders:(id)arg2 eventTracker:(id)arg3 videoPlayerVisibilityMonitor:(id)arg4 analyticsEventInfoFactory:(id)arg5 playbackCounter:(id)arg6 modalPresentationViewControllerProvider:(id)arg7;
+- (id)modalPresentationViewControllerProvider;
+- (id)playbackCounter;
 - (id)videoPlayerVisibilityMonitor;
-- (id)visibilityMonitorProviding;
 
 @end

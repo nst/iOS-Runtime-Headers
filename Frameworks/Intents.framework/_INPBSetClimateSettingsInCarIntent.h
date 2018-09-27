@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBSetClimateSettingsInCarIntent : PBCodable <NSCopying> {
+@interface _INPBSetClimateSettingsInCarIntent : PBCodable <NSCopying, NSSecureCoding, _INPBSetClimateSettingsInCarIntent> {
     int  _airCirculationMode;
+    _INPBDataString * _carName;
     int  _climateZone;
     bool  _enableAirConditioner;
     bool  _enableAutoMode;
@@ -14,22 +15,24 @@
     struct { 
         unsigned int airCirculationMode : 1; 
         unsigned int climateZone : 1; 
-        unsigned int relativeFanSpeedSetting : 1; 
-        unsigned int relativeTemperatureSetting : 1; 
         unsigned int enableAirConditioner : 1; 
         unsigned int enableAutoMode : 1; 
         unsigned int enableClimateControl : 1; 
         unsigned int enableFan : 1; 
+        unsigned int relativeFanSpeedSetting : 1; 
+        unsigned int relativeTemperatureSetting : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
     int  _relativeFanSpeedSetting;
     int  _relativeTemperatureSetting;
     _INPBTemperature * _temperature;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int airCirculationMode;
+@property (nonatomic, retain) _INPBDataString *carName;
 @property (nonatomic) int climateZone;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool enableAirConditioner;
 @property (nonatomic) bool enableAutoMode;
 @property (nonatomic) bool enableClimateControl;
@@ -37,6 +40,7 @@
 @property (nonatomic, retain) _INPBInteger *fanSpeedIndex;
 @property (nonatomic, retain) _INPBDouble *fanSpeedPercentage;
 @property (nonatomic) bool hasAirCirculationMode;
+@property (nonatomic, readonly) bool hasCarName;
 @property (nonatomic) bool hasClimateZone;
 @property (nonatomic) bool hasEnableAirConditioner;
 @property (nonatomic) bool hasEnableAutoMode;
@@ -48,13 +52,12 @@
 @property (nonatomic) bool hasRelativeFanSpeedSetting;
 @property (nonatomic) bool hasRelativeTemperatureSetting;
 @property (nonatomic, readonly) bool hasTemperature;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic) int relativeFanSpeedSetting;
 @property (nonatomic) int relativeTemperatureSetting;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBTemperature *temperature;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsAirCirculationMode:(id)arg1;
@@ -63,10 +66,10 @@
 - (int)StringAsRelativeTemperatureSetting:(id)arg1;
 - (int)airCirculationMode;
 - (id)airCirculationModeAsString:(int)arg1;
+- (id)carName;
 - (int)climateZone;
 - (id)climateZoneAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)enableAirConditioner;
 - (bool)enableAutoMode;
@@ -75,6 +78,7 @@
 - (id)fanSpeedIndex;
 - (id)fanSpeedPercentage;
 - (bool)hasAirCirculationMode;
+- (bool)hasCarName;
 - (bool)hasClimateZone;
 - (bool)hasEnableAirConditioner;
 - (bool)hasEnableAutoMode;
@@ -89,13 +93,13 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (int)relativeFanSpeedSetting;
 - (id)relativeFanSpeedSettingAsString:(int)arg1;
 - (int)relativeTemperatureSetting;
 - (id)relativeTemperatureSettingAsString:(int)arg1;
 - (void)setAirCirculationMode:(int)arg1;
+- (void)setCarName:(id)arg1;
 - (void)setClimateZone:(int)arg1;
 - (void)setEnableAirConditioner:(bool)arg1;
 - (void)setEnableAutoMode:(bool)arg1;
@@ -116,7 +120,6 @@
 - (void)setRelativeTemperatureSetting:(int)arg1;
 - (void)setTemperature:(id)arg1;
 - (id)temperature;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

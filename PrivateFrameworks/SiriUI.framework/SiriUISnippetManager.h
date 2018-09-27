@@ -22,6 +22,7 @@
 - (id)filteredDisambiguationListItems:(id)arg1;
 - (id)init;
 - (id)listItemToPickInAutodisambiguationForListItems:(id)arg1;
+- (void)preloadPluginBundles;
 - (void)prewarmSnippetExtensionsCache;
 - (id)snippetViewControllerForSnippet:(id)arg1;
 - (id)speakableProviderForObject:(id)arg1;

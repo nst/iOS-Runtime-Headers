@@ -58,6 +58,10 @@
 
 - (void)_mapkit_removeObjectsFromArray:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
+
+- (void)ax_replaceWithMatchingObject:(id)arg1 updatingWithBlock:(id /* block */)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
 - (void)axSafelyAddObject:(id)arg1;
@@ -74,6 +78,11 @@
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 - (void)CDVAddItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
+
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
+- (void)dc_addNonNilObject:(id)arg1;
+- (void)dc_removeNonNilObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
 
@@ -131,10 +140,6 @@
 
 - (void)pl_addObjectIfNotNil:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/ProactiveML.framework/ProactiveML
-
-- (void)pml_addStringIfNotEmpty:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
 
 - (void)tsu_addNonNilObject:(id)arg1;
@@ -143,6 +148,12 @@
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 + (id)_vk_newWeakSet;
+
+// Image: /System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit
+
+- (id)_equivalentExistingNetworkProfile:(id)arg1;
+- (bool)removeNetworkProfile:(id)arg1;
+- (bool)replaceNetworkProfile:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

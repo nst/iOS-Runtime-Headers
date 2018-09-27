@@ -22,6 +22,7 @@
 + (id)_objectForResultRow:(id)arg1 index:(unsigned long long)arg2;
 + (bool)_objectRequiresSerialization:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_dbQueue_applicationIdentifiersWithState;
 - (bool)_dbQueue_containsKey:(id)arg1 forApplication:(id)arg2;
 - (void)_dbQueue_createTables;
@@ -44,6 +45,7 @@
 - (bool)_inAlternateSystemApp;
 - (bool)_isEligibleForSaving:(id)arg1;
 - (bool)_preserveFileAtURL:(id)arg1;
+- (id)allObjectsForKeys:(id)arg1;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
 - (void)close;
@@ -55,8 +57,6 @@
 - (id)initWithStorePath:(id)arg1;
 - (id)keysForApplication:(id)arg1;
 - (id)objectForKey:(id)arg1 forApplication:(id)arg2;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;
-- (void)objectForKeys:(id)arg1 forAllApplicationsWithResult:(id /* block */)arg2;
 - (void)removeAllObjectsForApplication:(id)arg1;
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2;
 - (void)removeObjectsForKeys:(id)arg1 forApplication:(id)arg2;

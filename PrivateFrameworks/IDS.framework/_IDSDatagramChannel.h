@@ -3,11 +3,13 @@
  */
 
 @interface _IDSDatagramChannel : NSObject {
+    NSMutableDictionary * _MKIArrivalTime;
     IDSDataChannelLinkContext * _cellularLink;
     bool  _connected;
     NSObject<OS_nw_connection> * _connection;
     BOOL  _defaultLinkID;
     id /* block */  _eventHandler;
+    NSMutableDictionary * _firstPacketArrivalTimeForMKI;
     bool  _hasMetadata;
     unsigned long long  _incomingBytes;
     double  _lastIncomingStatReport;

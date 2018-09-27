@@ -30,7 +30,7 @@
 @property (getter=isSidebandSensorFusionAvailable, nonatomic, readonly) bool sidebandSensorFusionAvailable;
 
 + (unsigned long long)availableAttitudeReferenceFrames;
-+ (bool)configureM7Activity:(bool)arg1 stepCounting:(bool)arg2 activityForceCodeTransition:(bool)arg3 stepCountingForceCodeTransition:(bool)arg4 threshold:(bool)arg5 impulse:(bool)arg6 onBodyDetection:(bool)arg7 ispMode:(unsigned char)arg8 predictionInterval:(float)arg9 logLevel:(BOOL)arg10 proactiveRevisitTime:(unsigned short)arg11;
++ (bool)configureM7Activity:(bool)arg1 stepCounting:(bool)arg2 activityForceCodeTransition:(bool)arg3 stepCountingForceCodeTransition:(bool)arg4 threshold:(bool)arg5 onBodyDetection:(bool)arg6 ispMode:(unsigned char)arg7 predictionInterval:(float)arg8 logLevel:(BOOL)arg9 proactiveRevisitTime:(unsigned short)arg10;
 + (void)dummySelector:(id)arg1;
 + (void)dumpDb:(long long)arg1 toURL:(id)arg2 onCompletion:(id /* block */)arg3;
 + (struct { int x1; double x2; union { struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_3_1_1; struct { bool x_2_2_1; BOOL x_2_2_2[246]; } x_3_1_2; } x3; })gyroCalibrationDatabaseGetBiasFit;
@@ -42,6 +42,8 @@
 + (bool)startGyroMiniCalibration;
 + (bool)supportsGyroMiniCalibration;
 
+- (void)_startDeviceMotionErrorUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)_stopDeviceMotionErrorUpdates;
 - (id)accelerometerData;
 - (double)accelerometerUpdateInterval;
 - (id)ambientPressureData;
@@ -91,6 +93,7 @@
 - (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 - (bool)readRawAmbientPressureSamplesFromDB:(id)arg1 toQueue:(id)arg2 where:(id)arg3 withHandler:(id /* block */)arg4;
 - (void)rebuildGytt;
+- (bool)sendDeviceMotionError:(int)arg1;
 - (void)setAccelerometerDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;

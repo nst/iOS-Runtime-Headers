@@ -40,5 +40,6 @@
 - (void)conference:(AVConference *)arg1 updateOutputMeterLevel:(float)arg2;
 - (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 didPauseAudio:(bool)arg3 error:(NSError *)arg4;
 - (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 didPauseVideo:(bool)arg3 error:(NSError *)arg4;
+- (void)conference:(AVConference *)arg1 withCallID:(long long)arg2 isSendingAudio:(bool)arg3 error:(NSError *)arg4;
 
 @end

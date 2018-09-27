@@ -206,13 +206,20 @@
 @property (nonatomic) bool showsPhysics;
 @property (nonatomic) bool showsQuadCount;
 
++ (void)_setCurrentTime:(double)arg1;
++ (id)debugHierarchyAdditionalGroupingIDs;
++ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 + (Class)layerClass;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)CBApplicationDidBecomeActive;
 - (void)CBApplicationWillResignActive;
 - (void)_commonInit;
+- (void)_dispatchRenderToIOSurfaceID:(unsigned int)arg1 async:(bool)arg2 onQueue:(id)arg3 waitOnFence:(bool)arg4 preRender:(id /* block */)arg5 postRender:(id /* block */)arg6;
 - (void)_endFrameStats;
 - (void)_ensureRenderer;
 - (id)_focusedItemRegionContainer;
@@ -220,7 +227,6 @@
 - (unsigned long long)_getEffectivePreferredFramesPerSecond;
 - (id)_getPerformanceStats;
 - (float)_getViewContentsScale;
-- (void)_ibSetSceneName:(id)arg1;
 - (id)_info;
 - (struct SKCRenderer { id x1; struct shared_ptr<SKCRenderPass> { struct SKCRenderPass {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; unsigned int x3; struct shared_ptr<jet_command_buffer> { struct jet_command_buffer {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; struct list<std::__1::shared_ptr<SKCRenderPass>, std::__1::allocator<std::__1::shared_ptr<SKCRenderPass> > > { struct __list_node_base<std::__1::shared_ptr<SKCRenderPass>, void *> { struct __list_node_base<std::__1::shared_ptr<SKCRenderPass>, void *> {} *x_1_2_1; struct __list_node_base<std::__1::shared_ptr<SKCRenderPass>, void *> {} *x_1_2_2; } x_5_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<SKCRenderPass>, void *> > > { unsigned long long x_2_2_1; } x_5_1_2; } x5; struct { unsigned int x_6_1_1; unsigned int x_6_1_2; struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_3_2_1[4]; } ***x_6_1_3; } x6; }*)_layerBackedRenderer;
 - (long long)_preferredFocusMovementStyle;
@@ -228,6 +234,7 @@
 - (void)_renderContent;
 - (void)_renderSynchronouslyForTime:(double)arg1 preRender:(id /* block */)arg2 postRender:(id /* block */)arg3;
 - (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(bool)arg3 preRender:(id /* block */)arg4 postRender:(id /* block */)arg5;
+- (void)_renderToIOSurfaceID:(unsigned int)arg1 scaleFactor:(float)arg2 asynchronous:(bool)arg3 waitOnFence:(bool)arg4 preRender:(id /* block */)arg5 postRender:(id /* block */)arg6;
 - (bool)_renderUpdateEnabled;
 - (void)_reshape;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
@@ -251,9 +258,6 @@
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 fromScene:(id)arg2;
 - (struct CGPoint { double x1; double x2; })convertPoint:(struct CGPoint { double x1; double x2; })arg1 toScene:(id)arg2;
 - (void)dealloc;
-- (id)debugHierarchyAdditionalGroupingIDs;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
 - (void)debugPrint;
 - (id)delegate;
 - (void)didMoveToWindow;
@@ -271,6 +275,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 updateQueue:(id)arg2;
 - (bool)isAsynchronous;
+- (bool)isEqualToView:(id)arg1;
 - (bool)isOpaque;
 - (bool)isPaused;
 - (void)layoutSubviews;

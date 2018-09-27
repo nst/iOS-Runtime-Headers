@@ -28,6 +28,7 @@
 @property (getter=isDisplayingAsNativeAd, nonatomic, readonly) bool displayAsNativeAd;
 @property (nonatomic, readonly, copy) NSDate *displayDate;
 @property (nonatomic, readonly, copy) NSArray *endOfArticleTopicIDs;
+@property (nonatomic, copy) FCHeadlineExperimentalTitleMetadata *experimentalTitleMetadata;
 @property (getter=isExplicitContent, nonatomic, readonly) bool explicitContent;
 @property (getter=isFeatureCandidate, nonatomic, readonly) bool featureCandidate;
 @property (nonatomic, readonly) long long feedElementType;
@@ -42,6 +43,7 @@
 @property (nonatomic, readonly) bool hasThumbnail;
 @property (nonatomic, readonly) bool hasVideo;
 @property (readonly) unsigned long long hash;
+@property (getter=isHiddenFromAutoFavorites, nonatomic, readonly) bool hiddenFromAutoFavorites;
 @property (getter=isHiddenFromFeeds, nonatomic, readonly) bool hiddenFromFeeds;
 @property (nonatomic, readonly, copy) NSArray *iAdCategories;
 @property (nonatomic, readonly, copy) NSArray *iAdKeywords;
@@ -59,6 +61,7 @@
 @property (nonatomic, readonly) unsigned long long order;
 @property (getter=isPaid, nonatomic, readonly) bool paid;
 @property (nonatomic, readonly) NTPBFeedViewportHeadline *pbHeadline;
+@property (getter=isPressRelease, nonatomic, readonly) bool pressRelease;
 @property (nonatomic, readonly, copy) NSString *primaryAudience;
 @property (nonatomic, readonly, copy) NSDate *publishDate;
 @property (nonatomic, readonly) unsigned long long publishDateMilliseconds;
@@ -79,6 +82,7 @@
 @property (nonatomic, readonly, copy) NSString *sourceName;
 @property (getter=isSponsored, nonatomic, readonly) bool sponsored;
 @property (nonatomic, readonly, copy) NSString *sponsoredBy;
+@property (nonatomic, readonly) <FCHeadlineStocksFields> *stocksFields;
 @property (nonatomic, readonly) FCTopStoriesStyleConfiguration *storyStyle;
 @property (nonatomic, readonly) unsigned long long storyType;
 @property (readonly) Class superclass;
@@ -108,6 +112,7 @@
 @property (nonatomic, readonly, copy) NSURL *videoCallToActionURL;
 @property (nonatomic, readonly) double videoDuration;
 @property (nonatomic, readonly) NSURL *videoURL;
+@property (nonatomic, readonly) bool webEmbedsEnabled;
 
 - (void).cxx_destruct;
 - (id)accessoryText;
@@ -128,6 +133,7 @@
 - (id)displayDate;
 - (id)endOfArticleTopicIDs;
 - (void)enumerateTopicCohortsWithBlock:(id /* block */)arg1;
+- (id)experimentalTitleMetadata;
 - (long long)feedElementType;
 - (unsigned long long)feedHalfLifeMilliseconds;
 - (id)feedID;
@@ -153,8 +159,10 @@
 - (bool)isFeatureCandidate;
 - (bool)isFromBlockedStorefront;
 - (bool)isGap;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (bool)isPaid;
+- (bool)isPressRelease;
 - (bool)isSponsored;
 - (bool)isTopStory;
 - (id)lastFetchedDate;

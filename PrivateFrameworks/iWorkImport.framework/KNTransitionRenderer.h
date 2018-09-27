@@ -23,7 +23,7 @@
 @property (readonly) Class superclass;
 
 - (bool)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(bool)arg2;
-- (void)animateWithDelay:(double)arg1;
+- (void)animate;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)dealloc;
 - (id)description;

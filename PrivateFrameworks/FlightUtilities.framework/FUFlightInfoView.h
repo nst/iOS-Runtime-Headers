@@ -115,7 +115,6 @@
 - (id)departureDelayConstraint;
 - (id)departureGateConstraint;
 - (id)departureTerminalConstraint;
-- (bool)deviceSupportsRotation;
 - (id)flight;
 - (id)flightButton;
 - (void)flightButtonTapped:(id)arg1;

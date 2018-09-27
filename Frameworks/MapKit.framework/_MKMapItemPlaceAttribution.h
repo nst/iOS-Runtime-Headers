@@ -11,6 +11,5 @@
 - (void).cxx_destruct;
 - (id)checkInURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
-- (id)urlsForDealWithIdentifier:(id)arg1;
 
 @end

@@ -2,20 +2,29 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBListRideOptionsIntentResponse : PBCodable <NSCopying> {
+@interface _INPBListRideOptionsIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBListRideOptionsIntentResponse> {
     _INPBTimestamp * _expirationDate;
-    NSMutableArray * _paymentMethods;
-    NSMutableArray * _rideOptions;
-    PBUnknownFields * _unknownFields;
+    struct { 
+        unsigned int supportsApplePayForPayment : 1; 
+    }  _has;
+    NSArray * _paymentMethods;
+    NSArray * _rideOptions;
+    bool  _supportsApplePayForPayment;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBTimestamp *expirationDate;
 @property (nonatomic, readonly) bool hasExpirationDate;
-@property (nonatomic, retain) NSMutableArray *paymentMethods;
-@property (nonatomic, retain) NSMutableArray *rideOptions;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic) bool hasSupportsApplePayForPayment;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *paymentMethods;
+@property (nonatomic, readonly) unsigned long long paymentMethodsCount;
+@property (nonatomic, copy) NSArray *rideOptions;
+@property (nonatomic, readonly) unsigned long long rideOptionsCount;
+@property (readonly) Class superclass;
+@property (nonatomic) bool supportsApplePayForPayment;
 
-+ (id)options;
 + (Class)paymentMethodsType;
 + (Class)rideOptionsType;
 
@@ -25,13 +34,12 @@
 - (void)clearPaymentMethods;
 - (void)clearRideOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)expirationDate;
 - (bool)hasExpirationDate;
+- (bool)hasSupportsApplePayForPayment;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)paymentMethods;
 - (id)paymentMethodsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)paymentMethodsCount;
@@ -40,9 +48,11 @@
 - (id)rideOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)rideOptionsCount;
 - (void)setExpirationDate:(id)arg1;
+- (void)setHasSupportsApplePayForPayment:(bool)arg1;
 - (void)setPaymentMethods:(id)arg1;
 - (void)setRideOptions:(id)arg1;
-- (id)unknownFields;
+- (void)setSupportsApplePayForPayment:(bool)arg1;
+- (bool)supportsApplePayForPayment;
 - (void)writeTo:(id)arg1;
 
 @end

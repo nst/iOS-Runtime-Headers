@@ -79,4 +79,8 @@
 
 - (id)FCCKPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
+- (id)vui_predicateWithSubpredicateFilterBlock:(id /* block */)arg1;
+
 @end

@@ -9,7 +9,6 @@
     <DATask> * _activeQueuedTask;
     DAActivity * _daActivity;
     bool  _didLogSyncStart;
-    DADuetReporter * _duetReporter;
     NSMutableSet * _heldIndependentTasks;
     NSMutableSet * _independentTasks;
     NSMutableArray * _mQueuedTasks;
@@ -31,7 +30,6 @@
 @property (nonatomic, retain) <DATask> *activeQueuedTask;
 @property (nonatomic, readonly) NSArray *allTasks;
 @property (nonatomic) bool didLogSyncStart;
-@property (nonatomic, retain) DADuetReporter *duetReporter;
 @property (nonatomic, retain) NSMutableSet *heldIndependentTasks;
 @property (nonatomic, retain) NSMutableSet *independentTasks;
 @property (nonatomic, retain) NSMutableArray *mQueuedTasks;
@@ -85,7 +83,6 @@
 - (void)dealloc;
 - (id)deviceType;
 - (bool)didLogSyncStart;
-- (id)duetReporter;
 - (id)heldIndependentTasks;
 - (id)identityPersist;
 - (id)independentTasks;
@@ -108,7 +105,6 @@
 - (void)setActiveModalTask:(id)arg1;
 - (void)setActiveQueuedTask:(id)arg1;
 - (void)setDidLogSyncStart:(bool)arg1;
-- (void)setDuetReporter:(id)arg1;
 - (void)setHeldIndependentTasks:(id)arg1;
 - (void)setIndependentTasks:(id)arg1;
 - (void)setMQueuedTasks:(id)arg1;

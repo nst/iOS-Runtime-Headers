@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (void)beginAssertOnRead;
 - (void)endAssertOnRead;
+- (bool)hasObjectUUID:(id)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (void)object:(id)arg1 didChangeUUIDToValue:(id)arg2 fromValue:(id)arg3;

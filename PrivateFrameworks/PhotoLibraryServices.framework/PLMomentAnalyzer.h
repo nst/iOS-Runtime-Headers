@@ -43,6 +43,7 @@
     bool  _passSuccess;
     NSMutableOrderedSet * _pendingGEORequests;
     bool  _pendingServerVersionInfoFetch;
+    <PLMomentGenerationDataManagement_Private> * _privateMomentDataManager;
     NSMutableSet * _processingMomentUuids;
     double  _revGeoServerVersionInfoFetchNewVersionInterval;
     NSString * _revGeoServerVersionInfoURL;
@@ -89,13 +90,14 @@
 - (id)_geoLocationForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 date:(id)arg2;
 - (unsigned long long)_geoOrderInPrioritySet:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_homeLocation;
+- (void)_incrementalSaveAndRefresh;
 - (unsigned long long)_indexForGeoOrder:(unsigned long long)arg1 inPrioritySet:(id)arg2;
 - (bool)_isNetworkReachable;
 - (bool)_loadServerVersionInfo;
 - (id)_localizedNamesForNameInfoArray:(id)arg1 namesUsed:(id)arg2 includeHome:(bool)arg3 outAddedHome:(bool*)arg4;
 - (id)_locationFromDictionary:(id)arg1;
-- (bool)_markInvalidLowQualityAssetsInMoment:(id)arg1 withCurrentProviderId:(id)arg2;
-- (bool)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2 withCurrentProviderId:(id)arg3;
+- (id)_markInvalidLowQualityAssetsInMoment:(id)arg1 withCurrentProviderId:(id)arg2;
+- (id)_markInvalidOutOfDateAssetsInMoment:(id)arg1 forCurrentCountryVersionMap:(id)arg2 withCurrentProviderId:(id)arg3;
 - (id)_momentDataManager;
 - (void)_networkReachabilityDidChange:(bool)arg1;
 - (void)_processGEORequestWithRequestInfo:(id)arg1;

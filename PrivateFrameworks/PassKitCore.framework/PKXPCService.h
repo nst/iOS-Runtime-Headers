@@ -15,6 +15,7 @@
     <PKForegroundActiveArbiter> * _foregroundActiveArbiter;
     <NSObject> * _foregroundListener;
     NSString * _machServiceName;
+    unsigned long long  _options;
     NSXPCInterface * _remoteObjectInterface;
     NSString * _serviceResumedNotificationName;
     int  _serviceResumedToken;
@@ -28,6 +29,7 @@
 @property (nonatomic) bool forceConnectionOnResume;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *machServiceName;
+@property (nonatomic, readonly) unsigned long long options;
 @property (readonly) Class superclass;
 @property (getter=isSuspended, nonatomic, readonly) bool suspended;
 
@@ -57,8 +59,10 @@
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 serviceResumedNotificationName:(id)arg5;
+- (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 serviceResumedNotificationName:(id)arg5 options:(unsigned long long)arg6;
 - (bool)isSuspended;
 - (id)machServiceName;
+- (unsigned long long)options;
 - (id)remoteObjectProxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)remoteObjectProxyWithFailureHandler:(id /* block */)arg1;

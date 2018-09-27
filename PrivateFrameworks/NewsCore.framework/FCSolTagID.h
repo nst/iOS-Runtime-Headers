@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCSolTagID : NSObject <NSCoding, NSCopying> {
+@interface FCSolTagID : NSObject <NSCopying, NSSecureCoding> {
     NSString * _identifier;
     bool  _isAutoFavorited;
     bool  _isFavorited;
@@ -20,6 +20,7 @@
 
 + (id)discardedOrphanID;
 + (id)orphanID;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -10,6 +10,7 @@
     _UIBackdropView * _backdropView;
     bool  _canMoveToOverlay;
     <SUStorePageViewControllerDelegate> * _delegate;
+    bool  _didPageViewLoad;
     double  _expirationTime;
     bool  _externalRequest;
     bool  _isInBackground;
@@ -46,6 +47,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUStorePageViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didPageViewLoad;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } documentBounds;
 @property (getter=isExternalRequest, nonatomic) bool externalRequest;
 @property (readonly) unsigned long long hash;
@@ -86,7 +88,6 @@
 - (id)_newSegmentedControlWithItems:(id)arg1;
 - (void)_performActionForProtocolButton:(id)arg1;
 - (void)_reloadBackgroundViewProperties;
-- (void)_reloadContentInsets;
 - (void)_reloadForAppearance:(bool)arg1;
 - (void)_reloadForNetworkTypeChange:(id)arg1;
 - (void)_reloadNavigationBar;
@@ -118,6 +119,7 @@
 - (bool)_shouldDisplaySegmentedControlInNavigationBar:(id)arg1;
 - (bool)_shouldFetchAutomatically;
 - (bool)_shouldReloadForAppearance;
+- (bool)_shouldShowPlaceholderForEmptyPage;
 - (void)_showPlaceholderViewControllerWithTearDown:(bool)arg1;
 - (void)_tabConfigurationChanged:(id)arg1;
 - (void)_tearDownNavigationMenu;
@@ -138,11 +140,13 @@
 - (double)defaultPNGExpirationTime;
 - (id)delegate;
 - (void)didMoveToParentViewController:(id)arg1;
+- (bool)didPageViewLoad;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)displayedURL;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
 - (void)enqueueFetchOperation;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
+- (void)forceLoadingForNeverAppearedPage;
 - (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
 - (void)handleFailureWithError:(id)arg1;
 - (void)handleStoreFailureWithError:(id)arg1;
@@ -188,6 +192,7 @@
 - (void)setCanMoveToOverlay:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDidPageViewLoad:(bool)arg1;
 - (id)setDisplayedSectionGroup:(id)arg1;
 - (void)setExternalRequest:(bool)arg1;
 - (void)setLoadsWhenHidden:(bool)arg1;
@@ -216,7 +221,6 @@
 - (bool)viewIsReady;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
-- (void)viewWillLayoutSubviews;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 

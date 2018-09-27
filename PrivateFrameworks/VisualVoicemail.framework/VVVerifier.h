@@ -5,9 +5,12 @@
 @interface VVVerifier : NSObject {
     NSMutableDictionary * _checkpointDictionary;
     NSArray * _keyDescriptions;
+    NSString * _serviceIdentifier;
 }
 
-+ (id)sharedVerifier;
+@property (nonatomic, readonly, copy) NSString *serviceIdentifier;
+
++ (id)homeDirectory;
 
 - (void).cxx_destruct;
 - (id)_checkpointDictionary;
@@ -17,8 +20,10 @@
 - (void)_saveCheckpointDictionary;
 - (id)configurationDictionary;
 - (id)humanReadableConfigurationDictionary:(id*)arg1;
+- (id)initWithServiceIdentifier:(id)arg1;
 - (id)keyDescriptions;
 - (id)readableError;
+- (id)serviceIdentifier;
 - (void)storeValue:(bool)arg1 forCheckpointKey:(id)arg2;
 - (bool)valueForCheckpointKey:(id)arg1 exists:(bool*)arg2;
 

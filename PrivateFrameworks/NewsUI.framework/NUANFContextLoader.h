@@ -9,6 +9,7 @@
     FCFlintManifest * _flintManifest;
     FCFlintResourceManager * _flintResourceManager;
     <SXHost> * _host;
+    <NUArticleResourceURLTranslator> * _resourceURLTranslator;
 }
 
 @property (nonatomic, retain) NUANFAssetLoader *assetLoader;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <SXHost> *host;
+@property (nonatomic, readonly) <NUArticleResourceURLTranslator> *resourceURLTranslator;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,14 +29,17 @@
 - (id)asyncLoadContextOnceWithCompletion:(id /* block */)arg1;
 - (id)asyncOnceOperation;
 - (id)context;
+- (void)fileURLForURL:(id)arg1 onCompletion:(id /* block */)arg2 onError:(id /* block */)arg3;
 - (id)flintManifest;
 - (id)flintResourceManager;
 - (id)host;
-- (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 andHost:(id)arg3;
+- (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 host:(id)arg3 resourceURLTranslator:(id)arg4;
 - (id)loadContextWithCompletion:(id /* block */)arg1;
 - (id /* block */)loadImagesForImageRequest:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)resourceURLTranslator;
 - (void)setAssetLoader:(id)arg1;
 - (void)setAsyncOnceOperation:(id)arg1;
 - (void)setContext:(id)arg1;
+- (id)translateURL:(id)arg1;
 
 @end

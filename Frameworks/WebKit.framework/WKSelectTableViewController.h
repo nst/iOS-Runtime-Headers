@@ -23,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long keyboardAppearance;
 @property (nonatomic) long long keyboardType;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) WKSelectPopover *popover;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;

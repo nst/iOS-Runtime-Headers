@@ -15,6 +15,7 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 - (void)setStorePageViewController:(id)arg1;
 - (void)showProductPageWithItemIdentifier:(id)arg1;

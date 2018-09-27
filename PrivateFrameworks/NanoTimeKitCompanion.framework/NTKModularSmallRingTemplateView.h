@@ -11,6 +11,9 @@
     NTKColoringImageView * _stateRing;
 }
 
+@property (nonatomic, retain) NTKColoringLabel *label;
+@property (nonatomic, retain) NTKColoringImageView *stateRing;
+
 + (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 + (id)supportedTemplateClasses;
@@ -20,10 +23,16 @@
 - (void)_configureContentSubviews;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_layoutContentView;
+- (void)_refreshRingImage;
+- (void)_refreshRingImageWithRing:(id)arg1;
 - (void)_update;
+- (void)_updateRingWithRingDescription:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)label;
 - (void)setIsXL:(bool)arg1;
+- (void)setLabel:(id)arg1;
+- (void)setStateRing:(id)arg1;
+- (id)stateRing;
 - (void)updateRingWithProgressProvider:(id)arg1;
-- (void)updateRingWithRingDescription:(id)arg1;
 
 @end

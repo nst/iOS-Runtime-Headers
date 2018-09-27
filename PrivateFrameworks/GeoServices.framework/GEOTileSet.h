@@ -13,6 +13,7 @@
         unsigned int requestStyle : 1; 
         unsigned int updateBehavior : 1; 
         unsigned int multiTileURLUsesStatusCodes : 1; 
+        unsigned int useAuthProxy : 1; 
     }  _has;
     NSString * _localizationURL;
     NSString * _multiTileURL;
@@ -24,6 +25,7 @@
     NSMutableArray * _supportedLanguages;
     PBUnknownFields * _unknownFields;
     int  _updateBehavior;
+    bool  _useAuthProxy;
     NSMutableArray * _validVersions;
 }
 
@@ -39,6 +41,7 @@
 @property (nonatomic) bool hasMultiTileURLUsesStatusCodes;
 @property (nonatomic) bool hasRequestStyle;
 @property (nonatomic) bool hasUpdateBehavior;
+@property (nonatomic) bool hasUseAuthProxy;
 @property (nonatomic, retain) NSString *localizationURL;
 @property (nonatomic, retain) NSString *multiTileURL;
 @property (nonatomic) bool multiTileURLUsesStatusCodes;
@@ -49,6 +52,7 @@
 @property (nonatomic, retain) NSMutableArray *supportedLanguages;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int updateBehavior;
+@property (nonatomic) bool useAuthProxy;
 @property (nonatomic, retain) NSMutableArray *validVersions;
 
 + (Class)countryRegionWhitelistType;
@@ -87,6 +91,7 @@
 - (bool)hasMultiTileURLUsesStatusCodes;
 - (bool)hasRequestStyle;
 - (bool)hasUpdateBehavior;
+- (bool)hasUseAuthProxy;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)localizationURL;
@@ -107,6 +112,7 @@
 - (void)setHasMultiTileURLUsesStatusCodes:(bool)arg1;
 - (void)setHasRequestStyle:(bool)arg1;
 - (void)setHasUpdateBehavior:(bool)arg1;
+- (void)setHasUseAuthProxy:(bool)arg1;
 - (void)setLocalizationURL:(id)arg1;
 - (void)setMultiTileURL:(id)arg1;
 - (void)setMultiTileURLUsesStatusCodes:(bool)arg1;
@@ -116,6 +122,7 @@
 - (void)setStyle:(int)arg1;
 - (void)setSupportedLanguages:(id)arg1;
 - (void)setUpdateBehavior:(int)arg1;
+- (void)setUseAuthProxy:(bool)arg1;
 - (void)setValidVersions:(id)arg1;
 - (int)size;
 - (id)sizeAsString:(int)arg1;
@@ -127,6 +134,7 @@
 - (id)unknownFields;
 - (int)updateBehavior;
 - (id)updateBehaviorAsString:(int)arg1;
+- (bool)useAuthProxy;
 - (id)validVersionAtIndex:(unsigned long long)arg1;
 - (id)validVersions;
 - (unsigned long long)validVersionsCount;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFDetailedRowCardSection : SFCardSection <NSCopying, NSSecureCoding, SFDetailedRowCardSection, SearchUIAuxilliaryFieldProtocol> {
+@interface SFDetailedRowCardSection : SFCardSection <NSCopying, NSSecureCoding, SFDetailedRowCardSection> {
     SFActionItem * _action;
     SFColor * _backgroundColor;
     SFButton * _button;
@@ -35,16 +35,10 @@
     NSString * _type;
 }
 
-@property (readonly) SFActionItem *action;
 @property (nonatomic, retain) SFActionItem *action;
-@property (readonly) NSString *auxiliaryBottomText;
-@property (readonly) int auxiliaryBottomTextColor;
-@property (readonly) NSString *auxiliaryMiddleText;
-@property (readonly) NSString *auxiliaryTopText;
 @property (nonatomic, retain) SFColor *backgroundColor;
 @property (nonatomic, retain) SFButton *button;
 @property (nonatomic) bool canBeHidden;
-@property (readonly) SFCard *card;
 @property (nonatomic, copy) NSString *cardSectionId;
 @property (nonatomic, copy) NSArray *commands;
 @property (readonly, copy) NSString *debugDescription;
@@ -69,9 +63,7 @@
 @property (nonatomic, retain) SFImage *secondaryTitleImage;
 @property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
-@property (readonly) SFImage *thumbnail;
 @property (nonatomic, retain) SFImage *thumbnail;
-@property (readonly) SFRichText *title;
 @property (nonatomic, retain) SFRichText *title;
 @property (nonatomic, retain) SFFormattedText *trailingBottomText;
 @property (nonatomic, retain) SFFormattedText *trailingMiddleText;
@@ -142,10 +134,6 @@
 
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
-- (id)auxiliaryBottomText;
-- (int)auxiliaryBottomTextColor;
-- (id)auxiliaryMiddleText;
-- (id)auxiliaryTopText;
-- (id)card;
+- (Class)_searchUIViewClass;
 
 @end

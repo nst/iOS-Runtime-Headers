@@ -10,6 +10,7 @@
     <NUPurgeableImage> * _renderedImage;
     NURegion * _renderedRegion;
     NUPurgeableStoragePool * _storagePool;
+    <NUMutablePurgeableImage> * _targetImage;
 }
 
 @property (nonatomic, readonly) NUImageAccumulationNode *imageAccumulationNode;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) CIRenderTask *renderTask;
 @property (nonatomic, readonly) <NUPurgeableImage> *renderedImage;
 @property (nonatomic, readonly) NURegion *renderedRegion;
+@property (nonatomic, readonly) <NUMutablePurgeableImage> *targetImage;
 
 - (void).cxx_destruct;
 - (void)cleanUp;
@@ -24,7 +26,7 @@
 - (bool)copyStorage:(id)arg1 fromRect:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; struct { long long x_2_1_1; long long x_2_1_2; } x2; })arg2 toImage:(id)arg3 atPoint:(struct { long long x1; long long x2; })arg4;
 - (id)extentPolicy;
 - (id)imageAccumulationNode;
-- (id)imageAccumulationNodeWithSize:(struct { long long x1; long long x2; })arg1 format:(id)arg2 colorSpace:(id)arg3;
+- (id)imageAccumulationNodeWithImageSize:(struct { long long x1; long long x2; })arg1 tileSize:(struct { long long x1; long long x2; })arg2 format:(id)arg3 colorSpace:(id)arg4;
 - (id)imageRequest;
 - (id)initWithImageRequest:(id)arg1;
 - (id)initWithRequest:(id)arg1;
@@ -37,6 +39,7 @@
 - (id)renderedRegion;
 - (id)scalePolicy;
 - (void)setRenderTask:(id)arg1;
+- (id)targetImage;
 - (bool)wantsOutputGeometry;
 - (bool)wantsOutputImage;
 

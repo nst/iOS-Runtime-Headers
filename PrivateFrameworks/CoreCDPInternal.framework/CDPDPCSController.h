@@ -4,11 +4,11 @@
 
 @interface CDPDPCSController : NSObject {
     CDPContext * _context;
-    <CDPDProtectedCloudStorageProxy> * _pcsProxy;
+    <CDPProtectedCloudStorageProxy> * _pcsProxy;
 }
 
 @property (nonatomic, retain) CDPContext *context;
-@property (nonatomic, retain) <CDPDProtectedCloudStorageProxy> *pcsProxy;
+@property (nonatomic, retain) <CDPProtectedCloudStorageProxy> *pcsProxy;
 
 - (void).cxx_destruct;
 - (void)_checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id /* block */)arg2;
@@ -16,7 +16,6 @@
 - (void)_disableCDPWithCompletion:(id /* block */)arg1;
 - (void)_enableCDPWithCompletion:(id /* block */)arg1;
 - (struct _PCSIdentitySetData { }*)_getOrSetupIdentitySetRef:(id*)arg1;
-- (id)_pcsConfigForPrimaryAccount;
 - (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(bool)arg1 completion:(id /* block */)arg2;
 - (void)checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)context;

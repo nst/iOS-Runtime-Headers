@@ -3,6 +3,7 @@
  */
 
 @interface AVPictureInPictureController : NSObject <AVPictureInPictureViewControllerDelegate, PGPictureInPictureProxyDelegate> {
+    bool  _allowsPictureInPictureFromInlineWhenEnteringBackground;
     bool  _allowsPictureInPicturePlayback;
     <AVPictureInPictureControllerDelegate> * _delegate;
     struct { 
@@ -16,13 +17,25 @@
     NSObject<OS_dispatch_source> * _fullScreenCheckTimer;
     bool  _isFullScreen;
     bool  _isPlaying;
+    AVObservationController * _keyValueObservationController;
     PGPictureInPictureProxy * _pictureInPictureProxy;
     AVPictureInPictureViewController * _pictureInPictureViewController;
     AVPlayerController * _playerController;
     AVPlayerLayer * _playerLayer;
     __AVPlayerLayerView * _playerLayerView;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _viewFrameForInteractiveTransitionAnimationWhenEnteringBackground;
 }
 
+@property (nonatomic) bool allowsPictureInPictureFromInlineWhenEnteringBackground;
 @property (nonatomic) bool allowsPictureInPicturePlayback;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AVPictureInPictureControllerDelegate> *delegate;
@@ -34,6 +47,7 @@
 @property (nonatomic, readonly) bool pictureInPictureWasStartedWhenEnteringBackground;
 @property (nonatomic, retain) AVPlayerController *playerController;
 @property (nonatomic, readonly) AVPlayerLayer *playerLayer;
+@property (nonatomic, readonly) __AVPlayerLayerView *playerLayerView;
 @property (readonly) Class superclass;
 
 + (bool)isPictureInPictureSupported;
@@ -50,6 +64,7 @@
 - (void)_updatePictureInPictureShouldStartWhenEnteringBackground;
 - (void)_updatePlaybackProgress;
 - (id)_window;
+- (bool)allowsPictureInPictureFromInlineWhenEnteringBackground;
 - (bool)allowsPictureInPicturePlayback;
 - (void)dealloc;
 - (id)delegate;
@@ -66,6 +81,7 @@
 - (void)pictureInPictureProxy:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(id /* block */)arg2;
 - (void)pictureInPictureProxy:(id)arg1 willStartPictureInPictureWithAnimationType:(long long)arg2;
 - (void)pictureInPictureProxy:(id)arg1 willStopPictureInPictureWithAnimationType:(long long)arg2 reason:(long long)arg3;
+- (long long)pictureInPictureProxyInterfaceOrientationForTransitionAnimation:(id)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionBegan:(id)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionEnded:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pictureInPictureProxyViewFrameForTransitionAnimation:(id)arg1;
@@ -75,6 +91,8 @@
 - (id)playerController;
 - (id)playerLayer;
 - (void)playerLayerLayoutDidChange;
+- (id)playerLayerView;
+- (void)setAllowsPictureInPictureFromInlineWhenEnteringBackground:(bool)arg1;
 - (void)setAllowsPictureInPicturePlayback:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPlayerController:(id)arg1;

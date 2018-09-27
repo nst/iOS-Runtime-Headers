@@ -4,9 +4,11 @@
 
 @interface QLItemPresenterViewController : QLItemAggregatedViewController <QLDownloadingItemViewControllerDelegate, QLItemViewControllerPresentingDelegate> {
     id /* block */  _completionHandler;
+    id  _contents;
+    QLPreviewContext * _context;
     QLDownloadingItemViewController * _downloadingController;
     QLErrorItemViewController * _errorViewController;
-    bool  _failedToShowPreview;
+    bool  _failureOccurred;
     bool  _isPeekingSession;
     bool  _isReadyForDisplay;
     QLLoadingItemViewController * _loadingViewController;
@@ -14,9 +16,12 @@
     QLItemViewController * _previewProvider;
     id /* block */  _readyBlock;
     bool  _shouldDeferAppearanceUpdates;
+    bool  _shouldHandleLoadingView;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
+@property (retain) id contents;
+@property (retain) QLPreviewContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) QLDownloadingItemViewController *downloadingController;
@@ -24,22 +29,26 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) QLItemPresenterViewController *itemPresenterViewController;
 @property (nonatomic, retain) QLLoadingItemViewController *loadingViewController;
+@property (nonatomic, retain) QLItem *previewItem;
 @property (nonatomic, retain) QLItemViewController *previewProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAllDeferredApperanceUpdates;
 - (void)_performReadyBlockIfNedded;
-- (void)_showLoadingViewControllerDeferred;
+- (void)_showLoadingViewControllerDeferredIfNeeded;
+- (void)_showReadyToDisplayPreviewViewControllerDeferredIfNeeded:(id)arg1;
 - (void)_startLoadingPreviewWithContents:(id)arg1;
+- (id)additionalItemViewControllerDescription;
 - (id /* block */)completionHandler;
+- (id)contents;
+- (id)context;
 - (id)downloadingController;
 - (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(id)arg1 withContents:(id)arg2;
 - (id)errorViewController;
 - (id)init;
 - (bool)isLoaded;
 - (bool)isLoading;
-- (bool)isPresentingPreviewItemViewController:(id)arg1;
 - (void)isReadyForDisplayWithCompletionHandler:(id /* block */)arg1;
 - (id)itemPresenterViewController;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -54,12 +63,17 @@
 - (void)previewWillDisappear:(bool)arg1;
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setContents:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setDownloadingController:(id)arg1;
 - (void)setErrorViewController:(id)arg1;
 - (void)setLoadingViewController:(id)arg1;
+- (void)setPreviewItem:(id)arg1;
 - (void)setPreviewProvider:(id)arg1;
 - (void)showErrorViewController;
 - (void)showPreviewViewController:(id)arg1;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(bool)arg2;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(bool)arg2 updatingIsReadyForDisplay:(bool)arg3;
 - (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
 - (void)transitionDidStart:(bool)arg1;
 - (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;

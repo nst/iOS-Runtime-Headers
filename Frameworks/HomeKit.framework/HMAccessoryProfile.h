@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessoryProfile : NSObject <HFFavoritable, HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge> {
+@interface HMAccessoryProfile : NSObject <HFFavoritable, HFStateDumpBuildable, HMObjectMerge> {
     _HMAccessoryProfile * _accessoryProfile;
 }
 
@@ -37,9 +37,8 @@
 - (bool)hf_isFavorite;
 - (bool)hf_isValidObject;
 - (id)hf_parentRoom;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
 - (bool)hf_shouldShowInFavorites;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateIsFavorite:(bool)arg1;
 
 @end

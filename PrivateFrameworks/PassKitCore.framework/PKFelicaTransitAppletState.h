@@ -12,7 +12,6 @@
     NSNumber * _greenCarValidityStartDate;
     bool  _hasGreenCarTicket;
     bool  _hasShinkansenTicket;
-    bool  _inShinkansenStation;
     bool  _lowBalanceNotificationEnabled;
     NSNumber * _shinkansenArrivalTime;
     NSNumber * _shinkansenCarNumber;
@@ -48,7 +47,7 @@
 @property (nonatomic, copy) NSNumber *greenCarValidityStartDate;
 @property (nonatomic) bool hasGreenCarTicket;
 @property (nonatomic) bool hasShinkansenTicket;
-@property (getter=isInShinkansenStation, nonatomic) bool inShinkansenStation;
+@property (getter=isInShinkansenStation, nonatomic, readonly) bool inShinkansenStation;
 @property (getter=isLowBalanceNotificationEnabled, nonatomic) bool lowBalanceNotificationEnabled;
 @property (nonatomic, copy) NSNumber *shinkansenArrivalTime;
 @property (nonatomic, copy) NSNumber *shinkansenCarNumber;
@@ -96,9 +95,10 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
+- (bool)isInStation;
 - (bool)isLowBalanceNotificationEnabled;
 - (bool)isShinkansenTicketActive;
-- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id*)arg2 ephemeralTransactions:(id*)arg3;
+- (id)processUpdateWithAppletHistory:(id)arg1 concreteTransactions:(id*)arg2 ephemeralTransaction:(id*)arg3;
 - (void)setBalanceAllowedForCommute:(bool)arg1;
 - (void)setGreenCarDestinationStationCode:(id)arg1;
 - (void)setGreenCarDestinationStationString:(id)arg1;
@@ -108,7 +108,6 @@
 - (void)setGreenCarValidityStartDate:(id)arg1;
 - (void)setHasGreenCarTicket:(bool)arg1;
 - (void)setHasShinkansenTicket:(bool)arg1;
-- (void)setInShinkansenStation:(bool)arg1;
 - (void)setLowBalanceNotificationEnabled:(bool)arg1;
 - (void)setShinkansenArrivalTime:(id)arg1;
 - (void)setShinkansenCarNumber:(id)arg1;

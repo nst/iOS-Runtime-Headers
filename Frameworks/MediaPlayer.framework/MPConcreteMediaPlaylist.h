@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPConcreteMediaPlaylist : MPMediaPlaylist <NSCoding, NSCopying> {
+@interface MPConcreteMediaPlaylist : MPMediaPlaylist <NSCopying> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     void * _clusterPlaylist;
     MPMediaQuery * _itemsQuery;

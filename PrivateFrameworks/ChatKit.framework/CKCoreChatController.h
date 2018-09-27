@@ -46,6 +46,7 @@
 @property (nonatomic) bool viewIsVisible;
 
 - (void).cxx_destruct;
+- (void)_chatRegistryDidReloadNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_deregisterSendProgressDelegate;
 - (void)_didSendCompositionInConversation:(id)arg1;
@@ -55,6 +56,7 @@
 - (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(bool)arg2;
 - (void)_handleAddressBookChangedNotification:(id)arg1;
 - (void)_handleTapEventForBalloonView:(id)arg1 atIndexPath:(id)arg2 showActionMenu:(bool)arg3;
+- (void)_increaseContrastDidChangeNotification:(id)arg1;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (void)_markAsReadIfNecessary;
 - (void)_performResume;
@@ -143,7 +145,7 @@
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (bool)transcriptCollectionViewController:(id)arg1 balloonViewDidRequestCommitPayload:(id)arg2 forPlugin:(id)arg3 allowAllCommits:(bool)arg4 error:(id*)arg5;
 - (bool)transcriptCollectionViewController:(id)arg1 balloonViewDidRequestCommitSticker:(id)arg2 forPlugin:(id)arg3 allowAllCommits:(bool)arg4 error:(id*)arg5;
-- (void)transcriptCollectionViewController:(id)arg1 balloonViewDidRequestPresentationStyleExpanded:(bool)arg2 forChatItem:(id)arg3;
+- (void)transcriptCollectionViewController:(id)arg1 balloonViewDidRequestPresentationStyle:(unsigned long long)arg2 forChatItem:(id)arg3 allowAllStyles:(bool)arg4;
 - (void)transcriptCollectionViewController:(id)arg1 balloonViewDidRequestStartEditingPayload:(id)arg2 forPlugin:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)transcriptCollectionViewController:(id)arg1 balloonViewTitleTappedForItemWithIndexPath:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { double x1; double x2; })arg2;

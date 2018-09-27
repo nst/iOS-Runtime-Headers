@@ -8,6 +8,9 @@
 
 @property (readonly, copy) NSString *MIMEType;
 @property (readonly, copy) NSURL *URL;
+@property (nonatomic, readonly) double ams_expirationInterval;
+@property (nonatomic, readonly) NSDictionary *ams_headers;
+@property (nonatomic, readonly) unsigned long long ams_statusCode;
 @property (readonly) long long expectedContentLength;
 @property (nonatomic, readonly) bool ssv_isExpiredResponse;
 @property (readonly, copy) NSString *suggestedFilename;
@@ -46,9 +49,18 @@
 
 - (bool)sf_hasXMLAttachment;
 
-// Image: /System/Library/PrivateFrameworks/DistributedEvaluation.framework/DistributedEvaluation
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
-- (bool)_fides_statusIsHTTPOK;
+- (bool)aa_isJSON;
+- (bool)aa_isPlist;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (bool)_getCacheControlMaxAge:(double*)arg1;
+- (double)ams_expirationInterval;
+- (id)ams_headers;
+- (unsigned long long)ams_statusCode;
+- (id)ams_valueForHTTPHeader:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
@@ -61,6 +73,7 @@
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (bool)safari_hasAttachment;
+- (long long)safari_statusCodeGroup;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

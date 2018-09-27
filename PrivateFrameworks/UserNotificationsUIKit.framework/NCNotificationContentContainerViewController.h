@@ -31,14 +31,17 @@
 - (bool)allowManualDismiss;
 - (bool)becomeFirstResponder;
 - (bool)canBecomeFirstResponder;
+- (id)cancelTouches;
 - (id)contentExtensionIdentifier;
 - (id)contentViewController;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
+- (void)customContent:(id)arg1 didUpdateUserNotificationActions:(id)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
 - (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (void)customContentDidUpdateTitle:(id)arg1;
 - (unsigned long long)customContentLocation;
+- (void)customContentRequestsDefaultAction:(id)arg1;
 - (void)customContentRequestsDismiss:(id)arg1;
 - (bool)defaultContentHidden;
 - (id)delegate;
@@ -46,9 +49,9 @@
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)inputAccessoryView;
 - (void)loadAudioAccessoryView;
-- (void)loadExtension;
 - (id)notificationRequest;
 - (void)notificationTextInputView:(id)arg1 didConfirmText:(id)arg2 forAction:(id)arg3;
+- (bool)overridesDefaultTitle;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2;
 - (bool)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
 - (void)playAudioMessage;
@@ -60,6 +63,7 @@
 - (void)setInputAccessoryView:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)title;
+- (bool)userInteractionEnabled;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

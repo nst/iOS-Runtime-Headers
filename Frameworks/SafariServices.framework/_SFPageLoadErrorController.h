@@ -8,6 +8,7 @@
     id /* block */  _certificateRecoveryAttempter;
     struct __SecTrust { } * _certificateTrust;
     _WKRemoteObjectInterface * _certificateWarningPageHandlerInterface;
+    bool  _certificateWarningPageHandlerInterfaceInvalidated;
     <WBSCertificateWarningPagePresenter> * _certificateWarningPagePresenterProxy;
     NSTimer * _crashCountResetTimer;
     unsigned long long  _crashesSinceLastSuccessfulLoad;
@@ -68,6 +69,7 @@
 - (void)handleFrameLoadError:(id)arg1;
 - (void)handleSubframeCertificateError:(id)arg1;
 - (id)initWithWebView:(id)arg1;
+- (void)invalidate;
 - (void)openClockSettings;
 - (void)performAction:(int)arg1 forAlert:(id)arg2;
 - (void)reloadAfterError;

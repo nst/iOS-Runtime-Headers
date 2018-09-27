@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUActivityItemSource : NSObject <UIActivityItemApplicationExtensionSource, UIActivityItemDeferredSource, UIActivityItemSource> {
+@interface PUActivityItemSource : NSObject <UIActivityItemApplicationExtensionSource, UIActivityItemDeferredSource, UIActivityItemImageDataProvider, UIActivityItemSource> {
     PHAssetExportRequest * __assetExportRequest;
     NSURL * __assetsLibraryURL;
     NSProgress * __exportProgress;
     id /* block */  __exportProgressHandler;
     NSDictionary * __pasteboardRepresentation;
     long long  __remakerWasCancelled;
+    PUActivityItemSourceAnchorOperation * _anchorOperation;
     PHAsset * _asset;
     NSString * _assetOriginalFilename;
     NSDictionary * _cachedSharingVariants;
+    NSObject<OS_dispatch_group> * _cachedSharingVariantsDisptachGroup;
     id /* block */  _completionHandler;
     _PUActivityItemSourceOperation * _currentOperation;
     bool  _hasRecognizedVideoAdjustments;
@@ -24,6 +26,8 @@
     id /* block */  _remakerCompletionHandler;
     NSMutableDictionary * _sharingURLs;
     NSString * _sharingUUID;
+    bool  _shouldAnchorPreparation;
+    bool  _shouldSkipPreparation;
     id  _strongSelf;
     bool  _useStillImage;
 }
@@ -41,11 +45,15 @@
 @property (readonly) unsigned long long hash;
 @property (copy) id /* block */ postCompletionHandler;
 @property (copy) id /* block */ progressHandler;
+@property (nonatomic) bool shouldAnchorPreparation;
+@property (nonatomic) bool shouldSkipPreparation;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool useStillImage;
 
 + (id)_photosInternalActivities;
 + (id)_sharingErrorWithCode:(long long)arg1 underlyingError:(id)arg2 localizedDescription:(id)arg3 additionalInfo:(id)arg4;
++ (id)activityItemSourceLog;
++ (void)initialize;
 + (bool)supportsAssetLocalIdentifierForActivityType:(id)arg1;
 + (bool)supportsPhotoIrisBundleForActivityType:(id)arg1;
 
@@ -67,6 +75,7 @@
 - (void)_fetchAlternateForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchImageForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchPhotoIrisForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (void)_fetchSharingVariants;
 - (void)_fetchVideoForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (id)_generateURLForType:(long long)arg1 desiredPathExtension:(id)arg2;
 - (bool)_isColorOptimizationNeededForAsset:(id)arg1 imageURL:(id)arg2;
@@ -106,7 +115,7 @@
 - (bool)_wantsVideoRemakerForActivityType:(id)arg1;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
+- (id)activityViewController:(id)arg1 thumbnailImageDataForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerApplicationExtensionItem:(id)arg1;
 - (id)activityViewControllerOperation:(id)arg1;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
@@ -125,6 +134,11 @@
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setPostCompletionHandler:(id /* block */)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setShouldAnchorPreparation:(bool)arg1;
+- (void)setShouldSkipPreparation:(bool)arg1;
+- (bool)shouldAnchorPreparation;
+- (bool)shouldSkipPreparation;
+- (void)signalAnchorCompletion;
 - (bool)useStillImage;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;

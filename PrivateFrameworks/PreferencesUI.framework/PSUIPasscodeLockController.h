@@ -36,6 +36,7 @@
 - (void)didAcceptRemovePIN;
 - (void)disablePasscodeRequiredSpecifiers:(id)arg1;
 - (id)enabledInLockScreen:(id)arg1;
+- (id)enabledInLockScreenForUSB:(id)arg1;
 - (long long)fingerprintCount;
 - (id)graceValue:(id)arg1;
 - (id)homeControlAccessAllowedWhenLocked:(id)arg1;
@@ -47,10 +48,12 @@
 - (bool)isPasscodeSet;
 - (bool)isVoiceDialRestricted;
 - (bool)isWalletRestricted;
+- (void)presentAppleIDAuthenticationController;
 - (void)profileNotification:(id)arg1;
 - (void)setAssistantUnderLockEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setCanUnlockWatch:(bool)arg1;
 - (void)setEnabledInLockScreen:(id)arg1 specifier:(id)arg2;
+- (void)setEnabledInLockScreenForUSB:(id)arg1 specifier:(id)arg2;
 - (void)setGraceValue:(id)arg1 specifier:(id)arg2;
 - (void)setHomeControlAccessAllowedWhenLocked:(id)arg1 specifier:(id)arg2;
 - (void)setHomeManager:(id)arg1;

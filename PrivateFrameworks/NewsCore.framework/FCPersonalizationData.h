@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationData : FCPrivateDataController <FCAppActivityObserving, FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
+@interface FCPersonalizationData : FCPrivateDataController <FCAppActivityObserving, FCCoreConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
     NSMutableDictionary * _aggregates;
     bool  _attemptingUpload;
     NSMutableArray * _closedChangeGroups;
@@ -28,8 +28,6 @@
 @property (readonly) Class superclass;
 @property (retain) FCPersonalizationTreatment *treatment;
 @property (nonatomic, retain) FCUserInfo *userInfo;
-
-// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)backingRecordIDs;
 + (id)backingRecordZoneIDs;
@@ -58,12 +56,15 @@
 - (id)aggregateForFeatureKey:(id)arg1;
 - (id)aggregates;
 - (id)aggregatesForFeatureKeys:(id)arg1;
-- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
+- (id)aggregatesForFeatures:(id)arg1;
 - (bool)attemptingUpload;
+- (id)baselineAggregateWithConfigurableValues:(id)arg1;
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (void)clearPersonalizationData;
 - (id)closedChangeGroups;
+- (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
 - (id)d_allGlobalAggregates;
+- (void)d_allResults:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)enumerateAggregatesUsingBlock:(id /* block */)arg1;
 - (id)featureKeysWithNoAggregates:(id)arg1;
 - (void)generateDerivedDataWithQualityOfService:(long long)arg1 completion:(id /* block */)arg2;
@@ -75,6 +76,7 @@
 - (id)openChangeGroupDeltas;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)personalizationTreatment;
+- (void)prepareAggregatesForUseWithCompletionHandler:(id /* block */)arg1;
 - (id)readWriteQueue;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (id)remoteRecord;
@@ -91,15 +93,8 @@
 - (void)setUserInfo:(id)arg1;
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (id)treatment;
+- (void)updateFeatures:(id)arg1 withAction:(unsigned long long)arg2 displayRank:(long long)arg3 groupRank:(long long)arg4 individually:(bool)arg5 configurableValues:(id)arg6 featuresUpdatedBlock:(id /* block */)arg7;
 - (id)userInfo;
 - (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(bool)arg2;
-
-// Image: /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
-
-- (id)aggregatesForFeatures:(id)arg1;
-- (id)baselineAggregateWithConfigurableValues:(id)arg1;
-- (void)d_allResults:(id /* block */)arg1 completion:(id /* block */)arg2;
-- (void)prepareAggregatesForUseWithCompletionHandler:(id /* block */)arg1;
-- (void)updateFeatures:(id)arg1 withAction:(unsigned long long)arg2 displayRank:(long long)arg3 groupRank:(long long)arg4 individually:(bool)arg5 configurableValues:(id)arg6 featuresUpdatedBlock:(id /* block */)arg7;
 
 @end

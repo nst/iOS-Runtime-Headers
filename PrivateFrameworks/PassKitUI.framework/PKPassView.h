@@ -31,6 +31,7 @@
 @property (nonatomic, readonly, retain) PKPass *pass;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long suppressedContent;
+@property (nonatomic, readonly) bool suppressesPile;
 @property (nonatomic, readonly) NSString *uniqueID;
 
 - (void).cxx_destruct;
@@ -39,10 +40,11 @@
 - (unsigned long long)_regionsForCurrentModes;
 - (void)_resizePassAnimated:(bool)arg1 notify:(bool)arg2;
 - (void)_updateFrontFaceSuppressedContent;
+- (void)_updateHighEndLayerShadowAnimated:(bool)arg1 withDelay:(double)arg2;
 - (void)_updateLayerShadowAnimated:(bool)arg1 withDelay:(double)arg2;
-- (void)_updateResizeIfNecessary;
+- (void)_updateLowEndLayerShadowAnimated:(bool)arg1 withDelay:(double)arg2;
 - (bool)_visibleFaceShouldClipForCurrentViewMode:(double*)arg1;
-- (bool)canResize;
+- (bool)canShowBarcode;
 - (long long)contentMode;
 - (void)dealloc;
 - (id)delegate;
@@ -52,6 +54,7 @@
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPass:(id)arg1;
 - (id)initWithPass:(id)arg1 content:(long long)arg2;
+- (id)initWithPass:(id)arg1 content:(long long)arg2 suppressedContent:(unsigned long long)arg3;
 - (bool)isForcedFrontFaceResized;
 - (bool)isFrontFaceResized;
 - (bool)isModallyPresented;
@@ -59,8 +62,6 @@
 - (void)layoutSubviews;
 - (double)modalShadowVisibility;
 - (id)pass;
-- (bool)passFaceBarcodeButtonEnabled;
-- (void)passFaceBarcodeButtonPressed:(id)arg1;
 - (bool)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)passFaceInfoButtonPressed:(id)arg1;
@@ -85,6 +86,7 @@
 - (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(bool)arg1;
 - (unsigned long long)suppressedContent;
+- (bool)suppressesPile;
 - (void)tapRecognized:(id)arg1;
 - (id)uniqueID;
 - (void)updateValidityDisplay;

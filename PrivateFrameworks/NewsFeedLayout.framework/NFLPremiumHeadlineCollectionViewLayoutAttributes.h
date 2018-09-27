@@ -16,8 +16,8 @@
 @property (nonatomic) double shadowRadius;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)populateWithProtobuf:(id)arg1;
-- (id)protobufRepresentation;
+- (void)populateWithProtobuf:(id)arg1 normalizedWithFeedGutter:(double)arg2;
+- (id)protobufRepresentationnormalizedWithFeedGutter:(double)arg1;
 - (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setShadowOpacity:(double)arg1;
 - (void)setShadowRadius:(double)arg1;

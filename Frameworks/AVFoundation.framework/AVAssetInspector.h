@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) int naturalTimeScale;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } overallDurationHint;
 @property (getter=isPlayable, nonatomic, readonly) bool playable;
+@property (nonatomic, readonly) AVDisplayCriteria *preferredDisplayCriteria;
 @property (nonatomic, readonly) float preferredRate;
 @property (nonatomic, readonly) float preferredSoundCheckVolumeNormalization;
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
@@ -69,6 +70,7 @@
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
+- (id)preferredDisplayCriteria;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;

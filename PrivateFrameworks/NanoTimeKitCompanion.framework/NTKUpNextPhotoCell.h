@@ -23,6 +23,6 @@
 
 - (void)configureWithContent:(id)arg1;
 - (void)layoutSubviews;
-- (id)transitionContext;
+- (id)transitionContextInView:(id)arg1;
 
 @end

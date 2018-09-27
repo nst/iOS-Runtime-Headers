@@ -69,6 +69,8 @@
 + (id)deviceSpecificLocalizedStringWithKey:(id)arg1;
 + (id)deviceWithSerializedData:(id)arg1;
 + (bool)supportsSecureCoding;
++ (id)systemContainerCacheURL;
++ (id)systemContainerURL;
 
 - (void).cxx_destruct;
 - (id)MLBSerialNumber;

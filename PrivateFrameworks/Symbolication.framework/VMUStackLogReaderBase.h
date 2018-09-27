@@ -4,9 +4,11 @@
 
 @interface VMUStackLogReaderBase : NSObject <VMUStackLogReader> {
     NSMapTable * _addressToSymbolicationMap;
+    NSMutableDictionary * _binaryImagePathToIdentifierMap;
     NSSet * _excludedFrames;
     VMUVMRegionTracker * _regionTracker;
     unsigned int  _task;
+    bool  _usesLiteMode;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,6 +32,7 @@
 - (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(bool)arg3 stackFramesBuffer:(unsigned long long*)arg4;
 - (long long)getFramesForNode:(unsigned int)arg1 inLiteZone:(bool)arg2 stackFramesBuffer:(unsigned long long*)arg3;
 - (long long)getFramesForStackID:(unsigned long long)arg1 stackFramesBuffer:(unsigned long long*)arg2;
+- (id)identifierForBinaryImagePath:(id)arg1;
 - (bool)inspectingLiveProcess;
 - (bool)is64bit;
 - (id)regionTracker;

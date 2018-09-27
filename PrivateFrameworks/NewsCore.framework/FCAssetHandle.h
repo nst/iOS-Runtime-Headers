@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCAssetHandle : NSObject {
+@interface FCAssetHandle : NSObject <TSAssetHandleType> {
     NSString * _assetKey;
     unsigned long long  _countOfPenalizedDownloadAttempts;
     NSDate * _dateOfLastDownloadAttempt;
@@ -24,6 +24,7 @@
 @property (nonatomic) <FCAssetHandleDelegate> *delegate;
 @property (retain) NSError *downloadError;
 @property (nonatomic, retain) NSHashTable *downloadRequests;
+@property (nonatomic, readonly) UIImage *fallbackImage;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchGroup;
 @property (nonatomic, retain) FCOperation *fetchOperation;
 @property (copy) NSString *filePath;
@@ -33,6 +34,8 @@
 @property (nonatomic, retain) NFMutexLock *stateMutex;
 @property (readonly) NSURL *streamingURL;
 @property (readonly, copy) NSString *uniqueKey;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (void).cxx_destruct;
 - (bool)_canRetryDownload;
@@ -72,5 +75,15 @@
 - (id)stateMutex;
 - (id)streamingURL;
 - (id)uniqueKey;
+
+// Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
+
+- (void)downloadWithGroup:(id)arg1;
+- (id)fallbackImage;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/TeaUI.framework/TeaUI
+
+- (void)downloadWithGroup:(id)arg1;
+- (id)fallbackImage;
 
 @end

@@ -22,9 +22,9 @@
 + (id)sharedCryptographer;
 + (id)singletonInstance;
 
+- (void).cxx_destruct;
 - (id)cachedRecipientDigest;
 - (id)cachedRecipientName;
-- (void)dealloc;
 - (id)deviceSalt;
 - (id)dispatchQueue;
 - (id)init;

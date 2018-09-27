@@ -5,6 +5,8 @@
 
 @required
 
+- (bool)isPassFooterViewInGroup:(PKPassFooterView *)arg1;
 - (void)passFooterViewDidChangeUserIntentRequirement:(PKPassFooterView *)arg1;
+- (unsigned long long)suppressedContentForPassFooter:(PKPassFooterView *)arg1;
 
 @end

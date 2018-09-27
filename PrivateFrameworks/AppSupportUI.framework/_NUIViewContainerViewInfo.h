@@ -8,32 +8,38 @@
         double left; 
         double bottom; 
         double right; 
-    }  _customAlignmentInsets;
-    double  _customBottomBaseline;
-    double  _customTopBaseline;
+    }  _alignmentInsets;
+    double  _bottomBaseline;
+    double  _customScreenScale;
     struct { 
-        unsigned int baselineRelativeInsets : 1; 
-        unsigned int allowFastBaselines : 1; 
+        unsigned int neverCache : 1; 
         unsigned int alsoInvalidateSuperview : 1; 
-        unsigned int neverCacheSize : 1; 
+        unsigned int alignmentInsetsAreCustom : 1; 
+        unsigned int baselineRelativeInsets : 1; 
+        unsigned int topBaselineIsCustom : 1; 
+        unsigned int bottomBaselineIsCustom : 1; 
     }  _flags;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxSize;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _minSize;
     struct nui_size_cache { 
-        struct __tree<std::__1::__value_type<CGSize, CGSize>, std::__1::__map_value_compare<CGSize, std::__1::__value_type<CGSize, CGSize>, std::__1::less<CGSize>, true>, std::__1::allocator<std::__1::__value_type<CGSize, CGSize> > > { 
-            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CGSize, CGSize>, void *> > > { 
-                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
-                    struct __tree_node_base<void *> {} *__left_; 
-                } __value_; 
-            } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CGSize, std::__1::__value_type<CGSize, CGSize>, std::__1::less<CGSize>, true> > { 
-                unsigned long long __value_; 
-            } __pair3_; 
-        } __tree_; 
+        struct pair<CGSize, CGSize> {} *__begin_; 
+        struct pair<CGSize, CGSize> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<CGSize, CGSize> *, std::__1::allocator<std::__1::pair<CGSize, CGSize> > > { 
+            struct pair<CGSize, CGSize> {} *__value_; 
+        } __end_cap_; 
     }  _sizeCache;
+    double  _topBaseline;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)init;
+- (void)resetCaches;
 
 @end

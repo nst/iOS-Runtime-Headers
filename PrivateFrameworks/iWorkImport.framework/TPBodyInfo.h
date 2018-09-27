@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPBodyInfo : NSObject <TSDContainerInfo> {
+@interface TPBodyInfo : NSObject <TSDContainerInfo, TSKModelRootIndexProvider> {
     TPPageInfo * _pageInfo;
 }
 
@@ -45,6 +45,7 @@
 - (bool)isThemeContent;
 - (Class)layoutClass;
 - (bool)layoutVertically;
+- (long long)modelRootIndex;
 - (id)nextTargetFirstChildHint;
 - (id)nextTargetFirstColumn;
 - (id)nextTargetTopicNumbers;

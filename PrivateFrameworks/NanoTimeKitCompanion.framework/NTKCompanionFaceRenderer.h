@@ -7,7 +7,7 @@
     id /* block */  _faceBatchCompletionHandler;
     NSMutableArray * _pendingTaskList;
     bool  _queueActive;
-    _NTKCompanionFaceSnapshottingWindow * _window;
+    NTKFaceSnapshottingWindow * _window;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 

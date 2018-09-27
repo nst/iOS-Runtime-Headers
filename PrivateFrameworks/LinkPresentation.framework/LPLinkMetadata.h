@@ -5,6 +5,7 @@
 @interface LPLinkMetadata : NSObject <NSCopying, NSSecureCoding> {
     NSURL * _URL;
     NSString * _appleContentID;
+    NSString * _appleSummary;
     NSArray * _audios;
     NSString * _creator;
     NSString * _creatorFacebookProfile;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, readonly) unsigned long long _encodedSize;
 @property (nonatomic, copy) NSString *appleContentID;
+@property (nonatomic, copy) NSString *appleSummary;
 @property (nonatomic, copy) NSArray *audios;
 @property (nonatomic, copy) NSString *creator;
 @property (nonatomic, copy) NSString *creatorFacebookProfile;
@@ -66,6 +68,7 @@
 - (id)_initWithDictionary:(id)arg1;
 - (void)_reduceSizeByDroppingResourcesIfNeeded;
 - (id)appleContentID;
+- (id)appleSummary;
 - (id)audios;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creator;
@@ -86,6 +89,7 @@
 - (id)relatedURL;
 - (id)selectedText;
 - (void)setAppleContentID:(id)arg1;
+- (void)setAppleSummary:(id)arg1;
 - (void)setAudios:(id)arg1;
 - (void)setCreator:(id)arg1;
 - (void)setCreatorFacebookProfile:(id)arg1;

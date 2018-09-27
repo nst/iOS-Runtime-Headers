@@ -135,6 +135,8 @@
 + (id)previewForDragItem:(id)arg1;
 + (id)retargetedDragItem:(id)arg1 withDefault:(id)arg2 canvasView:(id)arg3 icc:(id)arg4;
 
+- (id)_addSelectionRectsForLayout:(id)arg1 selection:(id)arg2;
+- (id)_repsForStorage:(id)arg1 selection:(id)arg2;
 - (id)_repsForStorage:(id)arg1 selection:(id)arg2;
 - (void)abandonMarkedText;
 - (void)addAllDictationInterpretationRangesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toRanges:(struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg2;

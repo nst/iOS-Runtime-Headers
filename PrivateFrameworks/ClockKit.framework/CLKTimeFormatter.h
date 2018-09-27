@@ -12,6 +12,7 @@
     _CLKTimeFormatterSubstringRange * _designatorRangeInTimeAndDesignatorText;
     _CLKTimeFormatterSubstringRange * _designatorRangeInTimeAndDesignatorTextWithoutMinutesIfZero;
     NSString * _designatorText;
+    bool  _forcesLatinNumbers;
     _CLKTimeFormatterSubstringRange * _lastBlinkerRangeInTimeText;
     struct NSNumber { Class x1; } * _minutesUpdateToken;
     NSHashTable * _observers;
@@ -43,6 +44,7 @@
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } designatorRangeInTimeAndDesignatorText;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } designatorRangeInTimeAndDesignatorTextWithoutMinutesIfZero;
 @property (nonatomic, readonly) NSString *designatorText;
+@property (nonatomic, readonly) bool forcesLatinNumbers;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } lastBlinkerRangeInTimeText;
 @property (nonatomic, retain) NSDate *overrideDate;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeInTimeSubstringFromSecondsSeparatorText;
@@ -94,7 +96,9 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })designatorRangeInTimeAndDesignatorText;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })designatorRangeInTimeAndDesignatorTextWithoutMinutesIfZero;
 - (id)designatorText;
+- (bool)forcesLatinNumbers;
 - (id)init;
+- (id)initWithForcesLatinNumbers:(bool)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })lastBlinkerRangeInTimeText;
 - (id)overrideDate;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeInTimeSubstringFromSecondsSeparatorText;

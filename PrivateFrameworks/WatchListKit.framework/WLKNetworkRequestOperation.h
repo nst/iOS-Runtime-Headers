@@ -25,7 +25,7 @@
     double  _timeout;
 }
 
-@property (nonatomic, retain) NSDictionary *additionalHeaderFields;
+@property (nonatomic, copy) NSDictionary *additionalHeaderFields;
 @property (nonatomic) bool allowAuthentication;
 @property (nonatomic, copy) NSURL *baseURL;
 @property (nonatomic, retain) NSString *callerOverride;
@@ -47,6 +47,7 @@
 
 + (id)_defaultBaseURL;
 + (void)_networkRequest:(id)arg1 completion:(id /* block */)arg2;
++ (id)_runSSVNetworkOperationWithProperties:(id)arg1 requiresMescal:(bool)arg2 outError:(id*)arg3;
 + (void)logNetworkHeaders:(id)arg1 identifier:(id)arg2;
 + (unsigned long long)preferredCachePolicy;
 

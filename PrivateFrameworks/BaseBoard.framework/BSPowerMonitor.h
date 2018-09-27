@@ -11,11 +11,12 @@
     }  _observersLock;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned int  _rootDomainConnect;
-    BSZeroingWeakReference * _weakSelf;
+    BSZeroingWeakReference * _weakSelfWrapper;
 }
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

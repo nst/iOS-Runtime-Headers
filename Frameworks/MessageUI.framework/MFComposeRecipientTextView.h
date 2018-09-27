@@ -39,8 +39,10 @@
     NSArray * _properties;
     NSMutableArray * _recipientsBeingRemoved;
     bool  _separatorHidden;
+    bool  _showsAddButtonWhenExpanded;
     _MFAtomTextView * _textView;
     bool  _textViewExclusionPathsAreValid;
+    UIColor * _typingTextColor;
     NSUndoManager * _undoManager;
 }
 
@@ -64,9 +66,11 @@
 @property (nonatomic, retain) _MFAtomTextAttachment *placeholderAttachment;
 @property (nonatomic, copy) NSArray *recipients;
 @property (getter=isSeparatorHidden, nonatomic) bool separatorHidden;
+@property (nonatomic) bool showsAddButtonWhenExpanded;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) UITextView *textView;
+@property (nonatomic, retain) UIColor *typingTextColor;
 @property (nonatomic, readonly, copy) NSArray *uncommentedAddresses;
 
 + (id)defaultFont;
@@ -78,6 +82,7 @@
 - (id)_atomAttachmentForRecipient:(id)arg1;
 - (unsigned long long)_atomPresentationOptionsForRecipient:(id)arg1;
 - (id)_atomViewAtCharacterIndex:(unsigned long long)arg1;
+- (id)_baseAttributes;
 - (void)_beginAtomViewAnimations;
 - (bool)_canAddAdditionalAtoms;
 - (bool)_delegateRespondsToSizeChange;
@@ -109,6 +114,7 @@
 - (void)_tapGestureRecognized:(id)arg1;
 - (id)_textContainerExclusionPathsWithAddButton:(bool)arg1;
 - (bool)_textViewContainsAtomizedRecipients;
+- (void)_updateAddButtonVisibility;
 - (void)_updateInactiveTextView;
 - (bool)_useRightToLeftLayout;
 - (id)_userEnteredTextWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1;
@@ -187,6 +193,9 @@
 - (void)setProperty:(int)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSeparatorHidden:(bool)arg1;
+- (void)setShowsAddButtonWhenExpanded:(bool)arg1;
+- (void)setTypingTextColor:(id)arg1;
+- (bool)showsAddButtonWhenExpanded;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (double)textFieldOffsetForNumberOfRowsToScroll:(unsigned long long)arg1 numberOfRowsAboveField:(long long)arg2;
@@ -194,6 +203,7 @@
 - (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
+- (id)typingTextColor;
 - (id)uncommentedAddresses;
 - (id)undoManager;
 

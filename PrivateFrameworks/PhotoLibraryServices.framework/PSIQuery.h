@@ -3,30 +3,94 @@
  */
 
 @interface PSIQuery : NSObject {
+    PSIParse * _baseParse;
+    bool  _baseParseCouldHaveResults;
+    bool  _calculateTokenCounts;
+    NSArray * _datedParses;
+    NSArray * _dedupedGroupResults;
+    <PSIQueryDelegate> * _delegate;
     bool  _didStart;
-    id /* block */  _earlyNotificationHandler;
-    PSIDatabase * _idx;
+    NSMutableDictionary * _groupIdsByTokenKey;
+    NSArray * _identifierTokens;
     bool  _isCanceled;
-    bool  _isWildcardQuery;
-    int  _queryId;
+    NSArray * _nextKeywordSuggestions;
+    unsigned long long  _numberOfNextKeywordSuggestionToProcess;
+    NSArray * _queryTokens;
     NSString * _searchText;
-    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSMutableSet * _socialGroupExtendedAssetIds;
+    NSMutableSet * _socialGroupExtendedCollectionIds;
+    NSMutableSet * _socialGroupExtendedTripIds;
+    NSDictionary * _substitutions;
+    NSDictionary * _substitutionsByStringToken;
+    bool  _useWildcardText;
+    bool  _usesPrefixBasedWordEmbedding;
+    unsigned long long  _wordEmbeddingMode;
+    NSArray * _wordEmbeddingParses;
 }
 
+@property (nonatomic) bool calculateTokenCounts;
 @property (getter=isCanceled, readonly) bool canceled;
-@property (nonatomic, readonly) bool isWildcardQuery;
-@property (nonatomic, readonly) int queryId;
+@property (nonatomic, copy) NSArray *dedupedGroupResults;
+@property (nonatomic, retain) NSArray *nextKeywordSuggestions;
+@property (nonatomic) unsigned long long numberOfNextKeywordSuggestionToProcess;
+@property (nonatomic, readonly, copy) NSArray *queryTokens;
 @property (nonatomic, readonly, copy) NSString *searchText;
+@property (nonatomic, copy) NSSet *socialGroupExtendedAssetIds;
+@property (nonatomic, copy) NSSet *socialGroupExtendedCollectionIds;
+@property (nonatomic, copy) NSSet *socialGroupExtendedTripIds;
+@property (nonatomic, retain) NSDictionary *substitutions;
+@property (nonatomic, readonly) bool useWildcardText;
+@property (nonatomic) bool usesPrefixBasedWordEmbedding;
+@property (nonatomic) unsigned long long wordEmbeddingMode;
+
++ (void)bootstrap;
++ (id)dateAttributesFromToken:(id)arg1;
++ (id)dateFilterByCombiningDateFilter:(id)arg1 withDateFilter:(id)arg2;
++ (id)dateFilterWithAttributes:(id)arg1;
++ (id)dateFilterWithAttributes:(id)arg1 andAttributes:(id)arg2;
++ (id)datedParsesWithBaseParse:(id)arg1;
++ (bool)enumerateDatedParsesWithParse:(id)arg1 currentTokenIndex:(unsigned long long)arg2 potentialComboAttributes:(id)arg3 usingBlock:(id /* block */)arg4;
++ (bool)tokenIsEligibleForDateParsing:(id)arg1;
 
 - (void).cxx_destruct;
+- (struct __CFSet { }*)_idsOfGroupsMatchingString:(id)arg1 categories:(id)arg2 textIsSearchable:(bool)arg3;
+- (struct __CFSet { }*)_idsOfGroupsMatchingToken:(id)arg1;
+- (void)_postProcessPersonGroupsInGroupArrays:(id)arg1;
+- (void)bootstrap;
+- (bool)calculateTokenCounts;
 - (void)cancel;
-- (void)dealloc;
-- (id)initWithQueryId:(int)arg1 index:(id)arg2 searchText:(id)arg3 isWildcardQuery:(bool)arg4;
+- (void)computeSuggestions;
+- (id)dedupedGroupResults;
+- (id)description;
+- (void)enumerateParsesWithMode:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (id)initWithQueryTokens:(id)arg1 searchText:(id)arg2 useWildcardText:(bool)arg3 delegate:(id)arg4;
 - (bool)isCanceled;
-- (bool)isWildcardQuery;
-- (int)queryId;
+- (id)nextKeywordSuggestions;
+- (unsigned long long)numberOfNextKeywordSuggestionToProcess;
+- (void)processDates;
+- (id)processParse:(id)arg1;
+- (void)processWordEmbeddings;
+- (id)queryTokens;
+- (bool)recursiveAddToGroupResults:(id)arg1 aggregate:(id)arg2 atIndex:(unsigned long long)arg3 outOf:(unsigned long long)arg4 inGroupArrays:(id)arg5 dateFilter:(id)arg6;
 - (void)runWithResultsHandler:(id /* block */)arg1;
 - (id)searchText;
-- (void)setEarlyResultsNotificationHandler:(id /* block */)arg1;
+- (void)setCalculateTokenCounts:(bool)arg1;
+- (void)setDedupedGroupResults:(id)arg1;
+- (void)setNextKeywordSuggestions:(id)arg1;
+- (void)setNumberOfNextKeywordSuggestionToProcess:(unsigned long long)arg1;
+- (void)setSocialGroupExtendedAssetIds:(id)arg1;
+- (void)setSocialGroupExtendedCollectionIds:(id)arg1;
+- (void)setSocialGroupExtendedTripIds:(id)arg1;
+- (void)setSubstitutions:(id)arg1;
+- (void)setUsesPrefixBasedWordEmbedding:(bool)arg1;
+- (void)setWordEmbeddingMode:(unsigned long long)arg1;
+- (id)socialGroupExtendedAssetIds;
+- (id)socialGroupExtendedCollectionIds;
+- (id)socialGroupExtendedTripIds;
+- (id)substitutions;
+- (id)suggestionWhitelistedScenes;
+- (bool)useWildcardText;
+- (bool)usesPrefixBasedWordEmbedding;
+- (unsigned long long)wordEmbeddingMode;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface NPHNanoRespondWithTextStore : NSObject {
-    NPSDomainAccessor * _domainAccessor;
+    NSUserDefaults * _userDefaults;
 }
 
 - (void).cxx_destruct;

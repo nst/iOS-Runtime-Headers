@@ -8,6 +8,7 @@
     UIBarButtonItem * _deleteButton;
     bool  _deleteConfirmed;
     NTKCompanionCustomPhotosEditor * _editor;
+    NTKFace * _face;
     unsigned long long  _index;
     CAShapeLayer * _mask;
     double  _photoScale;
@@ -21,6 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NTKCompanionCustomPhotosEditor *editor;
+@property (nonatomic, retain) NTKFace *face;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long index;
 @property (readonly) Class superclass;
@@ -32,9 +34,11 @@
 - (void)_donePressed;
 - (void)dismissWithSaving:(bool)arg1;
 - (id)editor;
+- (id)face;
 - (unsigned long long)index;
-- (id)initWithIndex:(unsigned long long)arg1 inPhotosEditor:(id)arg2 timeStyle:(id)arg3;
+- (id)initWithIndex:(unsigned long long)arg1 inPhotosEditor:(id)arg2 forFace:(id)arg3 timeStyle:(id)arg4;
 - (void)setEditor:(id)arg1;
+- (void)setFace:(id)arg1;
 - (void)setIndex:(unsigned long long)arg1;
 - (void)setTimeStyle:(id)arg1;
 - (id)timeStyle;

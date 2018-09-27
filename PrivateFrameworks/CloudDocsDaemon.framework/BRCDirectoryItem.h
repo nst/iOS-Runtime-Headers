@@ -39,6 +39,7 @@
 - (void)markRemovedFromFilesystemForServerEdit:(bool)arg1;
 - (long long)mtime;
 - (bool)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (void)transformIntoFSRoot;
 - (bool)updateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1 appliedSharingPermission:(bool)arg2;
 - (bool)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;

@@ -12,9 +12,11 @@
 @property (readonly) NSString *label;
 @property (readonly) unsigned long long maxTotalThreadsPerThreadgroup;
 @property (readonly) Class superclass;
+@property (readonly) bool supportIndirectCommandBuffers;
 @property (readonly) bool threadgroupSizeMatchesTileSize;
 
 - (void)acceptVisitor:(id)arg1;
+- (void)dealloc;
 - (id)device;
 - (unsigned int)getFragmentShaderTelemetryID;
 - (unsigned int)getVertexShaderTelemetryID;
@@ -24,6 +26,9 @@
 - (unsigned long long)maxTotalThreadsPerThreadgroup;
 - (id)newFragmentShaderDebugInfo;
 - (id)newVertexShaderDebugInfo;
+- (unsigned long long)resourceIndex;
+- (bool)supportIndirectCommandBuffers;
 - (bool)threadgroupSizeMatchesTileSize;
+- (unsigned long long)uniqueIdentifier;
 
 @end

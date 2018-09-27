@@ -6,6 +6,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
++ (id)confidentialFeatureWarningMessage;
 + (bool)confidentialWarningRequiredForAsset:(id)arg1;
 + (bool)confidentialWarningRequiredForAssets:(id)arg1;
 + (bool)confidentialityCheckRequired;

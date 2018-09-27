@@ -105,7 +105,6 @@
 - (void)mediaProductHeaderContentViewController:(id)arg1 didSelectShareButton:(id)arg2;
 - (void)mediaProductHeaderContentViewControllerDidTapEdit:(id)arg1;
 - (void)mediaProductHeaderContentViewControllerDidUpdateEditableText:(id)arg1;
-- (bool)music_allowsMetricsEvents;
 - (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (long long)presentationSource;
 - (id)previewMenuItems;

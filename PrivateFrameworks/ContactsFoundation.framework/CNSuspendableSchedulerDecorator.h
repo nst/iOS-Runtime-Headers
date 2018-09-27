@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) CNQueue *queue;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 + (id)resumedSchedulerWithScheduler:(id)arg1;
 + (id)suspendedSchedulerWithScheduler:(id)arg1;

@@ -31,7 +31,7 @@
 - (void)awdlStartedAdvertising:(id)arg1;
 - (void)awdlStartedScanning:(id)arg1;
 - (id)init;
-- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 error:(id)arg3;
+- (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didDeferAdvertisingType:(long long)arg2;
 - (void)nearby:(id)arg1 didDisconnectFromPeer:(id)arg2 error:(id)arg3;
 - (void)nearby:(id)arg1 didDiscoverType:(long long)arg2 withData:(id)arg3 fromPeer:(id)arg4 peerInfo:(id)arg5;

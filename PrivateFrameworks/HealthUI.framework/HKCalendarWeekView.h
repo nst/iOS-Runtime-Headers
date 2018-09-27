@@ -37,6 +37,7 @@
 @property (nonatomic) long long pressedDayOfWeek;
 
 - (void).cxx_destruct;
+- (id)_getDayCellWithTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_getDayCellWithTouches:(id)arg1;
 - (double)additionalSpacingPerRow;
 - (Class)cellClass;

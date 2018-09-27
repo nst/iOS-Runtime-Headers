@@ -18,6 +18,7 @@
 - (void)clearCachesForZoneWithSetupInfo:(void *)arg1 zoneID:(void *)arg2 databaseScope:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: CKContainerSetupInfo *, CKRecordZoneID *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)clearCachesWithSetupInfo:(void *)arg1 options:(void *)arg2 databaseScope:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: CKContainerSetupInfo *, unsigned long long, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)clearContextFromMetadataCache;
+- (void)clearPCSCachesForKnownContextsWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)clearPILSCacheForLookupInfos:(NSArray *)arg1;
 - (void)clearRecordCacheWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2;
 - (void)currentDeviceIDWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
@@ -80,6 +81,7 @@
 - (void)showAssetCacheWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2;
 - (void)statusForApplicationPermission:(void *)arg1 setupInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned long long, CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSError *, void*
 - (void)statusGroupsForApplicationPermission:(void *)arg1 setupInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned long long, CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)submitClientEventMetric:(CKEventMetricInfo *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2;
 - (void)tossConfigWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;

@@ -24,6 +24,7 @@
 - (id)mediaObject;
 - (id)pasteboardItems;
 - (void)setMediaObject:(id)arg1;
+- (bool)shouldCacheSize;
 - (bool)stickersSnapToPoint;
 - (id)transferGUID;
 

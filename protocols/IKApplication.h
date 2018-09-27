@@ -20,9 +20,12 @@
 - (bool)appIsTrusted;
 - (NSURL *)appJSCachePath;
 - (NSDictionary *)appLaunchParams;
+- (NSString *)appLaunchParamsResolvedBootURLKey;
 - (NSURL *)appLocalJSURL;
 - (NSDictionary *)appTraitCollection;
 - (bool)appUsesDefaultStyleSheets;
+- (NSString *)bagBootURLKey;
+- (NSURL *)offlineJSURL;
 - (bool)shouldAllowRemoteInspection;
 - (IKViewElementRegistry *)viewElementRegistry;
 

@@ -21,6 +21,7 @@
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)_dataSize;
+- (id)_originsStrings;
 - (id)dataTypes;
 - (void)dealloc;
 - (id)description;

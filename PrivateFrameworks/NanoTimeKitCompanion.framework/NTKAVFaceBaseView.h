@@ -27,7 +27,7 @@
 - (void)_transitionToPosterView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)pauseVideoPlayerViewIfItExists;
 - (id)posterImageView;
@@ -35,7 +35,7 @@
 - (void)setVideoPlayerView:(id)arg1;
 - (id)videoPlayerView;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 
 @end

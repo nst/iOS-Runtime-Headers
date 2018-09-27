@@ -7,6 +7,7 @@
     NSSet * _associatedApplicationIdentifiers;
     NSSet * _associatedWebDomains;
     NSArray * _availableActions;
+    long long  _cardType;
     NSString * _cobrandName;
     bool  _cobranded;
     NSSet * _deviceInAppPaymentApplications;
@@ -39,6 +40,7 @@
 @property (nonatomic, copy) NSSet *associatedApplicationIdentifiers;
 @property (nonatomic, copy) NSSet *associatedWebDomains;
 @property (nonatomic, copy) NSArray *availableActions;
+@property (nonatomic) long long cardType;
 @property (nonatomic, copy) NSString *cobrandName;
 @property (getter=isCobranded, nonatomic) bool cobranded;
 @property (readonly) NSString *deviceAccountIdentifier;
@@ -92,11 +94,13 @@
 - (bool)availableForAutomaticPresentationUsingBeaconContext;
 - (bool)availableForAutomaticPresentationUsingVASContext;
 - (bool)canPerformAction:(id)arg1 unableReason:(unsigned long long*)arg2 displayableError:(id*)arg3;
+- (long long)cardType;
 - (id)cobrandName;
 - (unsigned long long)contactlessActivationState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)deviceAccountIdentifier;
 - (id)deviceAccountNumberSuffix;
+- (id)deviceContactlessPaymentApplications;
 - (id)deviceInAppPaymentApplications;
 - (id)devicePaymentApplications;
 - (id)devicePrimaryContactlessPaymentApplication;
@@ -136,6 +140,7 @@
 - (void)setAssociatedApplicationIdentifiers:(id)arg1;
 - (void)setAssociatedWebDomains:(id)arg1;
 - (void)setAvailableActions:(id)arg1;
+- (void)setCardType:(long long)arg1;
 - (void)setCobrandName:(id)arg1;
 - (void)setCobranded:(bool)arg1;
 - (void)setDeviceInAppPaymentApplications:(id)arg1;
@@ -162,6 +167,7 @@
 - (void)setSupportsSerialNumberBasedProvisioning:(bool)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
+- (bool)shouldSuppressNoChargeAmount;
 - (id)sortedPaymentApplications:(id)arg1 ascending:(bool)arg2;
 - (bool)supportsDPANNotifications;
 - (bool)supportsDefaultCardSelection;
@@ -180,6 +186,7 @@
 
 - (id)npkDeviceContactlessPaymentApplications;
 - (id)npkDeviceInAppPaymentApplications;
+- (id)npkDevicePaymentApplicationForAID:(id)arg1;
 - (bool)npkHasUserSelectableContactlessPaymentApplications;
 - (bool)npkHasUserSelectableInAppPaymentApplications;
 - (id)npkPreferredContactlessPaymentApplication;

@@ -3,6 +3,7 @@
  */
 
 @interface CUPowerSource : NSObject <NSSecureCoding> {
+    NSArray * _LEDs;
     NSString * _accessoryCategory;
     NSString * _accessoryID;
     long long  _adapterErrorFlags;
@@ -40,6 +41,7 @@
     long long  _vendorID;
 }
 
+@property (nonatomic, copy) NSArray *LEDs;
 @property (nonatomic, copy) NSString *accessoryCategory;
 @property (nonatomic, copy) NSString *accessoryID;
 @property (nonatomic) long long adapterErrorFlags;
@@ -55,7 +57,6 @@
 @property (nonatomic, copy) NSString *groupID;
 @property (nonatomic, copy) NSDictionary *ioKitAdapterDescription;
 @property (nonatomic, copy) NSDictionary *ioKitDescription;
-@property (readonly) bool isMe;
 @property (nonatomic) double maxCapacity;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *partID;
@@ -76,11 +77,11 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic) long long vendorID;
 
-// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
-
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)LEDs;
+- (void)_updateWithCoder:(id)arg1;
 - (id)accessoryCategory;
 - (id)accessoryID;
 - (long long)adapterErrorFlags;
@@ -132,6 +133,7 @@
 - (void)setGroupID:(id)arg1;
 - (void)setIoKitAdapterDescription:(id)arg1;
 - (void)setIoKitDescription:(id)arg1;
+- (void)setLEDs:(id)arg1;
 - (void)setMaxCapacity:(double)arg1;
 - (void)setName:(id)arg1;
 - (void)setPartID:(id)arg1;
@@ -162,11 +164,8 @@
 - (id)transportType;
 - (id)type;
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;
+- (void)updateWithPowerSource:(id)arg1;
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
 - (long long)vendorID;
-
-// Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
-
-- (bool)isMe;
 
 @end

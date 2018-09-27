@@ -6,6 +6,7 @@
     bool  _bypassSupportedMessageModesCheck;
     NSString * _contentType;
     NSMutableDictionary * _contentTypeParams;
+    CTXPCServiceSubscriptionContext * _context;
     NSString * _countryCode;
     NSDate * _date;
     NSMutableArray * _items;
@@ -22,6 +23,7 @@
 
 @property (nonatomic) bool bypassSupportedMessageModesCheck;
 @property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, copy) CTXPCServiceSubscriptionContext *context;
 @property (nonatomic, readonly, copy) NSString *countryCode;
 @property (readonly) NSDate *date;
 @property (readonly) NSArray *items;
@@ -46,6 +48,7 @@
 - (bool)bypassSupportedMessageModesCheck;
 - (id)contentType;
 - (id)contentTypeParameterWithName:(id)arg1;
+- (id)context;
 - (id)countryCode;
 - (id)date;
 - (void)dealloc;
@@ -65,6 +68,7 @@
 - (id)serviceCenter;
 - (void)setBypassSupportedMessageModesCheck:(bool)arg1;
 - (void)setContentType:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setMessageId:(unsigned int)arg1;
 - (void)setMessageType:(int)arg1;

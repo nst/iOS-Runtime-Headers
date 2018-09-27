@@ -14,10 +14,22 @@
 - (bool)_isCompact;
 - (bool)_providesConcreteBacking;
 - (void*)bytes;
-- (id)copyWithZone:(void*)arg1;
+- (id)copyWithZone;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithBase64EncodedDataoptions;
+- (id)initWithBase64EncodedStringoptions;
+- (id)initWithByteslength;
+- (id)initWithBytesNoCopylength;
+- (id)initWithBytesNoCopylengthdeallocator;
+- (id)initWithBytesNoCopylengthfreeWhenDone;
+- (id)initWithCoder;
+- (id)initWithContentsOfFile;
+- (id)initWithContentsOfFileoptionserror;
+- (id)initWithContentsOfMappedFile;
+- (id)initWithContentsOfURL;
+- (id)initWithContentsOfURLoptionserror;
+- (id)initWithData;
 - (long long)length;
-- (id)mutableCopyWithZone:(void*)arg1;
+- (id)mutableCopyWithZone;
 
 @end

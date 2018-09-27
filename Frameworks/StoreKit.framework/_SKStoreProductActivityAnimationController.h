@@ -11,6 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (void)endDelayingAnimation;
 - (double)transitionDuration:(id)arg1;

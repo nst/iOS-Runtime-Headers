@@ -16,7 +16,7 @@
 
 + (id)loaderWithSentenceDelimiters:(id)arg1 trailingChars:(id)arg2 prefixChars:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSentenceDelimiters:(id)arg1 trailingChars:(id)arg2 prefixChars:(id)arg3;
 - (id)nextSentencePrefixCharacters;
 - (id)regex;

@@ -14,5 +14,6 @@
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (void*)model;
+- (void)reset;
 
 @end

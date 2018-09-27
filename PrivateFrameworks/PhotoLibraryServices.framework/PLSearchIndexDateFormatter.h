@@ -4,6 +4,7 @@
 
 @interface PLSearchIndexDateFormatter : NSObject {
     NSDateFormatter * _dateFormatter;
+    PLDateRangeFormatter * _dateRangeFormatter;
     NSString * _displayFormat;
     bool  _localeDidChange;
     NSString * _monthFormat;
@@ -19,8 +20,10 @@
 - (void)_inqUpdateDateFormat:(id)arg1;
 - (void)_localeDidChange:(id)arg1;
 - (void)dealloc;
+- (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)init;
 - (id)localizedMonthStringsFromDate:(id)arg1;
+- (id)localizedSeasonNameFromDate:(id)arg1;
 - (id)newLocalizedComponentsFromDate:(id)arg1 includeMonth:(bool)arg2;
 - (id)newLocalizedStringFromDate:(id)arg1;
 - (id)newLocalizedStringFromYear:(id)arg1 month:(id)arg2;

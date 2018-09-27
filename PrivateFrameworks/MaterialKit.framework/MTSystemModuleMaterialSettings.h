@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
  */
 
-@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, MTZooming, _MTMaterialVersioning> {
+@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, MTZooming> {
     double  _auxiliaryOverlayBlurRadius;
+    double  _baseOverlayBlurRadius;
     double  _baseOverlayBrightness;
     double  _baseOverlaySaturation;
     double  _baseOverlayTintAlpha;
@@ -12,9 +13,11 @@
     double  _primaryOverlayTintAlpha;
     double  _secondaryOverlayBrightness;
     double  _secondaryOverlaySaturation;
+    double  _secondaryOverlayTintAlpha;
 }
 
 @property (nonatomic) double auxiliaryOverlayBlurRadius;
+@property (nonatomic) double baseOverlayBlurRadius;
 @property (nonatomic) double baseOverlayBrightness;
 @property (nonatomic, readonly, copy) UIColor *baseOverlayColor;
 @property (nonatomic) double baseOverlaySaturation;
@@ -22,7 +25,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) long long materialVersion;
 @property (nonatomic) double primaryOverlayBrightness;
 @property (nonatomic) double primaryOverlaySaturation;
 @property (nonatomic) double primaryOverlayTintAlpha;
@@ -37,11 +39,11 @@
 + (id)sharedMaterialSettings;
 
 - (double)auxiliaryOverlayBlurRadius;
+- (double)baseOverlayBlurRadius;
 - (double)baseOverlayBrightness;
 - (id)baseOverlayColor;
 - (double)baseOverlaySaturation;
 - (double)baseOverlayTintAlpha;
-- (long long)materialVersion;
 - (double)primaryOverlayBrightness;
 - (double)primaryOverlaySaturation;
 - (double)primaryOverlayTintAlpha;
@@ -51,9 +53,11 @@
 - (double)secondaryOverlayTintAlpha;
 - (id)secondaryOverlayTintColor;
 - (void)setAuxiliaryOverlayBlurRadius:(double)arg1;
+- (void)setBaseOverlayBlurRadius:(double)arg1;
 - (void)setBaseOverlayBrightness:(double)arg1;
 - (void)setBaseOverlaySaturation:(double)arg1;
 - (void)setBaseOverlayTintAlpha:(double)arg1;
+- (void)setDefaultValues;
 - (void)setPrimaryOverlayBrightness:(double)arg1;
 - (void)setPrimaryOverlaySaturation:(double)arg1;
 - (void)setPrimaryOverlayTintAlpha:(double)arg1;

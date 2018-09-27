@@ -5,7 +5,6 @@
 @interface AVAssetResourceLoaderInternal : NSObject {
     AVAssetClientURLRequestHelper * URLRequestHelper;
     NSURLSession * URLSession;
-    <NSURLSessionDataDelegate> * URLSessionDataDelegate;
     NSOperationQueue * URLSessionOperationQueue;
     struct OpaqueFigCustomURLHandler { } * authHandler;
     AVAssetCustomURLBridgeForNSURLSession * bridgeBetweenHandlerAndSession;
@@ -19,9 +18,7 @@
     long long  makeResourceLoaderURLSessionSupportStuffOnlyOnce;
     NSMutableDictionary * pendingRequests;
     bool  preloadsEligibleContentKeys;
-    <NSURLSessionDataDelegate> * shimURLSessionDataDelegate;
     NSObject<OS_dispatch_queue> * stateQueue;
-    NSOperation * waitForAssetURLSessionStuffOperation;
     AVWeakReference * weakReferenceToAsset;
     AVWeakReference * weakReferenceToDelegate;
 }

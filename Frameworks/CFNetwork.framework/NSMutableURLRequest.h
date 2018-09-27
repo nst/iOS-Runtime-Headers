@@ -80,6 +80,31 @@
 - (void)aa_setXMLBodyWithParameters:(id)arg1 signingSession:(id)arg2;
 - (void)aa_signBodyData:(id)arg1 withSigningSession:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (void)_ams_addCookies:(id)arg1;
+- (void)ams_addAcceptLanguageHeader;
+- (void)ams_addAnisetteHeadersForAccount:(id)arg1 type:(long long)arg2;
+- (void)ams_addAuthKitHeaders;
+- (void)ams_addCacheBusterParameter;
+- (void)ams_addCachePolicyHeader;
+- (void)ams_addClientIdentifierHeaderForClient:(id)arg1;
+- (void)ams_addClientVersions;
+- (void)ams_addConnectionTypeHeader;
+- (void)ams_addContentLengthHeaderForData:(id)arg1;
+- (void)ams_addContentTypeHeaderForEncoding:(long long)arg1;
+- (void)ams_addCookiesForAccounts:(id)arg1;
+- (void)ams_addGUIDParameterUsingContract:(id)arg1;
+- (void)ams_addIdentifierHeadersForAccount:(id)arg1;
+- (void)ams_addIssuingProcessHeader;
+- (void)ams_addMescalHeaderWithType:(long long)arg1 bagContract:(id)arg2 logKey:(id)arg3;
+- (void)ams_addParameters:(id)arg1 encoding:(long long)arg2 compressBody:(bool)arg3 error:(id*)arg4;
+- (void)ams_addPrimaryiCloudIdentifierHeader;
+- (void)ams_addRequestingProcessWithClient:(id)arg1;
+- (void)ams_addStoreFrontHeaderFromAccount:(id)arg1 bagContract:(id)arg2;
+- (void)ams_addTimezoneOffsetHeader;
+- (void)ams_addUserAgentHeaderFromClient:(id)arg1 additionalComponents:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
 + (id)ak_anisetteHeadersWithCompanionData:(id)arg1;
@@ -92,7 +117,7 @@
 + (id)ak_timeZoneHeader;
 
 - (void)_setAuthorizationHeaderWithToken:(id)arg1 altDSID:(id)arg2 key:(id)arg3;
-- (void)ak_addAbsintheHeader;
+- (void)ak_addAbsintheHeaderWithValue:(id)arg1;
 - (void)ak_addAcceptedSLAHeaderWithVersion:(unsigned long long)arg1;
 - (void)ak_addAnisetteHeaders;
 - (void)ak_addAppleIDHeaderWithValue:(id)arg1;
@@ -100,6 +125,7 @@
 - (void)ak_addAuthorizationHeaderWithHeartbeatToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithServiceToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addCFUHeader:(id)arg1;
 - (void)ak_addCircleStatusHeader;
 - (void)ak_addClientApp:(id)arg1;
 - (void)ak_addClientInfoHeader;
@@ -123,6 +149,7 @@
 - (void)ak_addLoggedInServicesHeaderForServices:(id)arg1;
 - (void)ak_addPRKRequestHeader;
 - (void)ak_addPasswordResetKeyHeader:(id)arg1;
+- (void)ak_addPhoneInformationHeaderWithValue:(id)arg1;
 - (void)ak_addPhoneNumberCertificateHeaderWithValue:(id)arg1;
 - (void)ak_addPhoneNumberHeader;
 - (void)ak_addProxiedAnisetteHeaders:(id)arg1;
@@ -132,7 +159,7 @@
 - (void)ak_addRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addShortLivedTokenHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addShowWarranty;
-- (void)ak_addTimeZoneHeader;
+- (void)ak_addTimeZoneHeaders;
 - (void)ak_setBodyWithParameters:(id)arg1;
 - (void)ak_setJSONBodyWithParameters:(id)arg1;
 

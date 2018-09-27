@@ -14,6 +14,7 @@
     bool  _generateEmailCompatibleMarkup;
     LPImage * _image;
     bool  _includeClassNamesWhenUsingInlineStyles;
+    bool  _includeDarkInterfaceInlineStyles;
     bool  _isPreliminary;
     LPHTMLComponent * _linkComponent;
     bool  _mayReceiveAdditionalMetadata;
@@ -38,6 +39,7 @@
 @property (setter=_setAllowsTapToLoad:, nonatomic) bool _allowsTapToLoad;
 @property (nonatomic, readonly) bool _canTapToLoad;
 @property (setter=_setIncludeClassNamesWhenUsingInlineStyles:, nonatomic) bool _includeClassNamesWhenUsingInlineStyles;
+@property (setter=_setIncludeDarkInterfaceInlineStyles:, nonatomic) bool _includeDarkInterfaceInlineStyles;
 @property (setter=_setUseVariablesWhenUsingInlineStyles:, nonatomic) bool _useVariablesWhenUsingInlineStyles;
 @property (nonatomic) bool applyCornerRadiusToLink;
 @property (nonatomic, readonly) UIColor *backgroundColor;
@@ -75,9 +77,11 @@
 - (void)_didFollowLink;
 - (void)_fetchMetadata;
 - (bool)_includeClassNamesWhenUsingInlineStyles;
+- (bool)_includeDarkInterfaceInlineStyles;
 - (void)_rebuildView;
 - (void)_setAllowsTapToLoad:(bool)arg1;
 - (void)_setIncludeClassNamesWhenUsingInlineStyles:(bool)arg1;
+- (void)_setIncludeDarkInterfaceInlineStyles:(bool)arg1;
 - (void)_setMetadata:(id)arg1 isFinal:(bool)arg2;
 - (void)_setPresentationProperties:(id)arg1;
 - (void)_setUseVariablesWhenUsingInlineStyles:(bool)arg1;

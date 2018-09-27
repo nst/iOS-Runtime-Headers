@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRideVehicle : NSObject <INCacheableContainer, INRideVehicleExport, NSCopying, NSSecureCoding> {
+@interface INRideVehicle : NSObject <INCacheableContainer, INImageProxyInjecting, INRideVehicleExport, NSCopying, NSSecureCoding> {
     CLLocation * _location;
     NSString * _manufacturer;
     INImage * _mapAnnotationImage;
@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_intents_cacheableObjects;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

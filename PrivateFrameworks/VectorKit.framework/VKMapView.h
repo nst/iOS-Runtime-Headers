@@ -99,10 +99,11 @@
 @property (nonatomic, readonly) NSArray *labelMarkers;
 @property (nonatomic) long long labelScaleFactor;
 @property (nonatomic) bool localizeLabels;
+@property (nonatomic, readonly) GEOResourceManifestConfiguration *manifestConfiguration;
 @property (nonatomic, readonly) VKMapCanvas *mapCanvas;
 @property (nonatomic) <VKMapViewDelegate> *mapDelegate;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; bool x5; } mapDisplayStyle;
-@property (nonatomic, readonly) const struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; /* Warning: unhandled struct encoding: '{_retain_ptr<GEOResourceManifestConfiguration *' */ struct x3; }*mapEngine; /* unknown property attribute:  std::__1::default_delete<md::LogicManager> >=^{LogicManager}}}BBB{atomic<bool>=AB}{atomic<bool>=AB}B} */
+@property (nonatomic, readonly) const struct MapEngine { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; /* Warning: unhandled struct encoding: '{_retain_ptr<GEOResourceManifestConfiguration *' */ struct x3; }*mapEngine; /* unknown property attribute:  std::__1::default_delete<md::Statistics> >=^{Statistics}}}BBB{atomic<bool>=AB}{atomic<bool>=AB}B} */
 @property (nonatomic, readonly) GEOMapRegion *mapRegion;
 @property (nonatomic) long long mapType;
 @property (nonatomic) long long navigationDisplayRate;
@@ -191,7 +192,6 @@
 - (void)clearScene;
 - (id)clearVenueBuildingFloorSelections;
 - (void)closeLoaderConnection;
-- (id)closestRoadMarkerForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)consoleString:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toCameraModelPointToLayer:(id)arg2;
 - (struct CGPoint { double x1; double x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToLayer:(id)arg2;
@@ -218,7 +218,7 @@
 - (void)didFinishSnapshotting;
 - (void)didPresent;
 - (void)didReceiveMemoryWarning:(id)arg1;
-- (void)disableFlyoverStatistics;
+- (void)disableTestStatistics;
 - (long long)displayRate;
 - (bool)displayedFloorIsDefaultForVenueBuilding:(id)arg1;
 - (short)displayedFloorOrdinalForVenueBuilding:(id)arg1;
@@ -228,7 +228,7 @@
 - (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (unsigned char)emphasis;
 - (bool)enableDebugLabelHighlighting;
-- (void)enableFlyoverStatistics;
+- (void)enableTestStatistics;
 - (void)enter3DMode;
 - (void)enterARModeAtCoordinate:(struct { double x1; double x2; })arg1;
 - (void)exit3DMode;
@@ -236,7 +236,6 @@
 - (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })featureMarkerAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)flushTileLoads;
 - (int)flyoverMode;
-- (id)flyoverStatistics;
 - (id)focusedLabelsPolyline;
 - (void)forceFrame;
 - (void)forceLayout;
@@ -270,6 +269,7 @@
 - (long long)labelScaleFactor;
 - (bool)labelsDisabled;
 - (bool)localizeLabels;
+- (id)manifestConfiguration;
 - (void)map:(id)arg1 canEnter3DModeDidChange:(bool)arg2;
 - (void)map:(id)arg1 canShowFlyoverDidChange:(bool)arg2;
 - (void)map:(id)arg1 canZoomInDidChange:(bool)arg2;
@@ -340,12 +340,11 @@
 - (void)removeRasterOverlay:(id)arg1;
 - (void)renderInContext:(struct CGContext { }*)arg1;
 - (bool)rendersInBackground;
-- (void)resetFlyoverStatistics;
+- (void)resetTestStatistics;
 - (bool)restoreViewportFromInfo:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
 - (bool)roadClassDisabled:(int)arg1;
 - (id)roadLabelTilesInScene;
-- (id)roadMarkersForSelectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)roadsDisabled;
 - (id)routePreloadSession;
 - (void)runAnimation:(id)arg1;
@@ -471,6 +470,8 @@
 - (bool)supportsMapType:(long long)arg1;
 - (bool)supportsNightMode;
 - (long long)targetDisplay;
+- (id)testStatistics;
+- (id)tileStatistics;
 - (double)topDownMinimumZoomLevelForTileSize:(long long)arg1;
 - (bool)trackingCameraShouldHandleGestures;
 - (double)trackingZoomScale;

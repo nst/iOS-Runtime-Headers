@@ -4,6 +4,7 @@
 
 @interface FBSystemApp : UIApplication <BKSSystemApplicationDelegate, FBSSceneUpdater, FBSceneClient, FBSceneClientProvider> {
     struct __CFBoolean { } * _darkboot;
+    id  _didFinishLaunchingObserver;
     NSMapTable * _hostsByIdentifier;
     FBDisplayLayoutTransition * _interfaceOrientationTransition;
     FBSceneClientProviderInvalidationAction * _invalidationAction;
@@ -18,12 +19,14 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
++ (void)_instantiateAppInfoProvider;
 + (id)_newApplicationLibrary;
 + (void)initializeSystemServices;
 + (void)postFrontBoardInitializationHook;
 + (void)preFrontBoardInitializationHook;
 + (bool)registerAsSystemApp;
 + (bool)rendersLocally;
++ (id)sharedApplicationInfoProvider;
 + (id)sharedApplicationLibrary;
 + (bool)shouldCheckInWithBackboard;
 + (bool)shouldFixMainThreadPriority;
@@ -31,6 +34,7 @@
 + (bool)systemApplicationIsAliveForWatchdog:(id)arg1;
 + (double)systemIdleSleepInterval;
 
+- (void).cxx_destruct;
 - (long long)_interfaceOrientationRotationDirectionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
 - (bool)_openURL:(id)arg1;

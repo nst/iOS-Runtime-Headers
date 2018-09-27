@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVPlayActivityEnqueuerProperties : NSObject <NSCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface SSVPlayActivityEnqueuerProperties : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     bool  _SBEnabled;
     NSString * _buildVersion;
     NSString * _deviceGUID;

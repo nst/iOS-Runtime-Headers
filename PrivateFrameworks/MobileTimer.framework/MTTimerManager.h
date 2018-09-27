@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTTimerManager : NSObject {
+@interface MTTimerManager : NSObject <MTTimerManagerIntentSupport, MTTimerManagerProviding, MTUserDefaultNotificationObserver> {
     MTTimerCache * _cache;
     struct MTXPCConnectionProvider { Class x1; } * _connectionProvider;
     MTTimerManagerExportedObject * _exportedObject;
@@ -12,10 +12,19 @@
 
 @property (nonatomic, retain) MTTimerCache *cache;
 @property (nonatomic, readonly) MTXPCConnectionProvider *connectionProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MTTimerManagerExportedObject *exportedObject;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MTMetrics *metrics;
 @property (nonatomic, retain) NSNotificationCenter *notificationCenter;
+@property (nonatomic, readonly) id notificationObject;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <MTTimerManagerIntentSupport> *timerManager;
 
++ (double)defaultDuration;
++ (void)setDefaultDuration:(double)arg1;
++ (void)updateTimerShortcutItem;
 + (void)warmUp;
 
 - (void).cxx_destruct;
@@ -41,6 +50,7 @@
 - (id)nextTimer;
 - (id)nextTimersForDate:(id)arg1 maxCount:(unsigned long long)arg2;
 - (id)notificationCenter;
+- (id)notificationObject;
 - (id)pauseCurrentTimer;
 - (bool)pauseCurrentTimerSync;
 - (void)reconnect;
@@ -56,6 +66,7 @@
 - (bool)startCurrentTimerWithDurationSync:(double)arg1;
 - (id)stopCurrentTimer;
 - (bool)stopCurrentTimerSync;
+- (id)timerManager;
 - (id)timers;
 - (id)timersSync;
 - (id)updateTimer:(id)arg1;

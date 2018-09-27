@@ -15,7 +15,7 @@
     double  _trackedTimeInterval;
 }
 
-@property (nonatomic, readonly) struct __CFString { }*currentRAT;
+@property (nonatomic, readonly) int currentRAT;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PCInterfaceUsabilityMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,6 +31,7 @@
 @property (nonatomic, readonly) bool isRadioHot;
 @property (nonatomic, readonly) int linkQuality;
 @property (nonatomic, readonly, retain) NSString *linkQualityString;
+@property (nonatomic, readonly) NSString *networkCode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 

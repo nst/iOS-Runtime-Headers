@@ -6,6 +6,7 @@
     bool  _deduplicateValues;
     NSObject<OS_dispatch_queue> * _defaultQueue;
     NSArray * _eventStreams;
+    NSArray * _groupByProperties;
     unsigned long long  _limit;
     unsigned long long  _offset;
     NSPredicate * _predicate;
@@ -17,6 +18,7 @@
 
 @property bool deduplicateValues;
 @property (retain) NSArray *eventStreams;
+@property (retain) NSArray *groupByProperties;
 @property unsigned long long limit;
 @property unsigned long long offset;
 @property (retain) NSPredicate *predicate;
@@ -39,6 +41,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventStreams;
 - (id)executeUsingCoreDataStorage:(id)arg1 error:(id*)arg2;
+- (id)groupByProperties;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -51,6 +54,7 @@
 - (id /* block */)resultsHandler;
 - (void)setDeduplicateValues:(bool)arg1;
 - (void)setEventStreams:(id)arg1;
+- (void)setGroupByProperties:(id)arg1;
 - (void)setLimit:(unsigned long long)arg1;
 - (void)setOffset:(unsigned long long)arg1;
 - (void)setPredicate:(id)arg1;

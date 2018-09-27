@@ -8,7 +8,6 @@
 - (NSString *)activityType;
 - (void)addUserInfo:(_SFPBUserActivityInfo *)arg1;
 - (void)clearUserInfo;
-- (bool)hasActivityType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

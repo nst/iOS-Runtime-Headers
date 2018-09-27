@@ -21,7 +21,7 @@
 + (id)defaultHost;
 
 - (void).cxx_destruct;
-- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 extensions:(id /* block */)arg3;
+- (void)accessPlugIns:(id)arg1 synchronously:(bool)arg2 flags:(unsigned long long)arg3 extensions:(id /* block */)arg4;
 - (id)activatePlugIn:(id)arg1;
 - (id)activeOneShots;
 - (id)activePlugInForIdentifier:(id)arg1;
@@ -37,7 +37,7 @@
 - (id)hostInfoPlist;
 - (id)hostQueue;
 - (id)init;
-- (void)readyPlugIns:(id)arg1 environment:(id)arg2 ready:(id /* block */)arg3;
+- (void)readyPlugIns:(id)arg1 synchronously:(bool)arg2 environment:(id)arg3 ready:(id /* block */)arg4;
 - (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned long long)arg2;
 - (void)setActiveOneShots:(id)arg1;
 - (void)setActivePlugIns:(id)arg1;

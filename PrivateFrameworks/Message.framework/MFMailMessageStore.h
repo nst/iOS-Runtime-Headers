@@ -93,8 +93,6 @@
 - (bool)isDrafts;
 - (bool)isOpened;
 - (bool)isReadOnly;
-- (id)lastViewedMessageDate;
-- (id)lastViewedMessageWithOptions:(unsigned int)arg1;
 - (id)loadMeetingDataForMessage:(id)arg1;
 - (id)loadMeetingExternalIDForMessage:(id)arg1;
 - (id)loadMeetingMetadataForMessage:(id)arg1;

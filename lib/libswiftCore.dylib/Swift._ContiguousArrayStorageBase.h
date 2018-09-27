@@ -6,6 +6,4 @@
     void countAndCapacity;
 }
 
-- (id)init;
-
 @end

@@ -5,6 +5,7 @@
 @interface SARemoteDevice : AceObject <SAAceSerializable>
 
 @property (nonatomic, copy) NSString *assistantId;
+@property (nonatomic, copy) NSString *brandName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceName;
@@ -20,6 +21,7 @@
 + (id)remoteDeviceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)assistantId;
+- (id)brandName;
 - (id)deviceName;
 - (id)encodedClassName;
 - (id)groupIdentifier;
@@ -27,6 +29,7 @@
 - (id)personalDomainsAuthenticationMode;
 - (id)personalDomainsEnabled;
 - (void)setAssistantId:(id)arg1;
+- (void)setBrandName:(id)arg1;
 - (void)setDeviceName:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setPersonalDomainsAuthenticationMode:(id)arg1;

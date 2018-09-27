@@ -14,8 +14,8 @@
     NTKUtilityComplicationFactory * _utilityComplicationFactory;
 }
 
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
-+ (id)_swatchImageForColorOption:(id)arg1;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_additionalPrelaunchApplicationIdentifiers;
@@ -36,6 +36,7 @@
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (double)_keylinePaddingForState:(long long)arg1;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
 - (void)_layoutTimeTravelStatusModule:(id)arg1;
@@ -54,10 +55,11 @@
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (double)_timeAlphaForEditMode:(long long)arg1;
 - (double)_timeTravelStatusModuleCaptionConstraintPadding;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_timeViewFrame;
 - (void)_unloadSnapshotContentViews;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (double)_verticalPaddingForStatusBar;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 
 @end

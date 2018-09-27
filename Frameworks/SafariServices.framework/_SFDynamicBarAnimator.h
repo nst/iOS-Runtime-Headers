@@ -14,6 +14,7 @@
     double  _lastOffset;
     double  _lastUnroundedTopBarHeight;
     double  _minimumTopBarHeight;
+    bool  _performingBatchUpdates;
     long long  _state;
     double  _targetTopBarHeight;
     double  _topBarHeight;
@@ -50,6 +51,7 @@
 - (void)endScrolling;
 - (id)init;
 - (double)minimumTopBarHeight;
+- (void)performBatchUpdates:(id /* block */)arg1;
 - (void)setBottomBarOffset:(double)arg1 forState:(long long)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setMinimumTopBarHeight:(double)arg1;

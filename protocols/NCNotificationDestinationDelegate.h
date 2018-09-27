@@ -12,4 +12,10 @@
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequestsFromDate:(NSDate *)arg2 toDate:(NSDate *)arg3 inSections:(NSSet *)arg4;
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequestsInSections:(NSSet *)arg2;
 
+@optional
+
+- (void)destination:(id <NCNotificationDestination>)arg1 setAllowsCriticalAlerts:(bool)arg2 forSectionIdentifier:(NSString *)arg3;
+- (void)destination:(id <NCNotificationDestination>)arg1 setAllowsNotifications:(bool)arg2 forSectionIdentifier:(NSString *)arg3;
+- (void)destination:(id <NCNotificationDestination>)arg1 setDeliverQuietly:(bool)arg2 forSectionIdentifier:(NSString *)arg3;
+
 @end

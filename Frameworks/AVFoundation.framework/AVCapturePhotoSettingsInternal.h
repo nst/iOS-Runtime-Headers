@@ -7,6 +7,7 @@
     long long  HDRMode;
     NSArray * adjustedPhotoFilters;
     bool  autoDualCameraFusionEnabled;
+    bool  autoRedEyeReductionEnabled;
     bool  autoStillImageStabilizationEnabled;
     bool  burstQualityCaptureEnabled;
     bool  cameraCalibrationDataDeliveryEnabled;
@@ -15,6 +16,7 @@
     bool  dualCameraDualPhotoDeliveryEnabled;
     NSDictionary * embeddedThumbnailPhotoFormat;
     bool  embedsDepthDataInPhoto;
+    bool  embedsPortraitEffectsMatteInPhoto;
     long long  flashMode;
     NSDictionary * format;
     bool  highResolutionPhotoEnabled;
@@ -27,8 +29,10 @@
     NSString * livePhotoVideoCodecType;
     NSDictionary * metadata;
     NSArray * photoFilters;
+    bool  portraitEffectsMatteDeliveryEnabled;
     NSDictionary * previewPhotoFormat;
     NSString * processedFileType;
+    NSDictionary * rawEmbeddedThumbnailPhotoFormat;
     NSString * rawFileType;
     unsigned int  rawPhotoPixelFormatType;
     unsigned int  shutterSound;

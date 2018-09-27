@@ -4,9 +4,9 @@
 
 @interface CKFetchRecordZoneChangesOperation : CKDatabaseOperation <MSPCloudRequest> {
     NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
+    NSDictionary * _configurationsByRecordZoneID;
     bool  _fetchAllChanges;
     id /* block */  _fetchRecordZoneChangesCompletionBlock;
-    NSDictionary * _optionsByRecordZoneID;
     NSMutableDictionary * _perItemErrors;
     id /* block */  _recordChangedBlock;
     id /* block */  _recordWithIDWasDeletedBlock;
@@ -19,6 +19,7 @@
 }
 
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
+@property (nonatomic, copy) NSDictionary *configurationsByRecordZoneID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool fetchAllChanges;
@@ -46,12 +47,14 @@
 - (id)activityCreate;
 - (id)assetTransferOptionsByRecordTypeAndKey;
 - (long long)changeTypesFromSetCallbacks;
+- (id)configurationsByRecordZoneID;
 - (bool)fetchAllChanges;
 - (id /* block */)fetchRecordZoneChangesCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (bool)hasCKOperationCallbacksSet;
 - (id)init;
+- (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;
 - (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
 - (id)optionsByRecordZoneID;
 - (id)perItemErrors;
@@ -64,6 +67,7 @@
 - (id)recordZoneIDs;
 - (id)recordZoneIDsWithPendingArchivedRecords;
 - (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
+- (void)setConfigurationsByRecordZoneID:(id)arg1;
 - (void)setFetchAllChanges:(bool)arg1;
 - (void)setFetchRecordZoneChangesCompletionBlock:(id /* block */)arg1;
 - (void)setOptionsByRecordZoneID:(id)arg1;
@@ -84,6 +88,7 @@
 
 - (void)addCloudAccessCompletionBlock:(id /* block */)arg1;
 - (unsigned long long)maximumRetries;
+- (void)setNetworkBehaviorIsDiscretionary:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

@@ -13,5 +13,6 @@
 
 - (void)registerJob:(id)arg1;
 - (void)unregisterJob:(id)arg1;
+- (void)updateExecutionCriteriaOnJob:(id)arg1;
 
 @end

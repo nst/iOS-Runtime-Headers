@@ -28,6 +28,5 @@
 - (id)initWithCacheDeleteID:(id)arg1;
 - (unsigned long long)purgableDiskSpaceForUrgency:(int)arg1;
 - (void)reportSignificantPurgableDiskSpaceUpdate;
-- (bool)shouldIncreaseCacheSizeBy:(unsigned long long)arg1 urgency:(int)arg2;
 
 @end

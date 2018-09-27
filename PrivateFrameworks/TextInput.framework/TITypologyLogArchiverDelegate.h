@@ -12,8 +12,8 @@
 @property (nonatomic, readonly) NSMutableSet *objects;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
-- (void)dealloc;
 - (id)init;
 - (id)objects;
 

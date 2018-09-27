@@ -5,8 +5,7 @@
 @interface MPVolumeController : NSObject <MPVolumeControllerDataSourceDelegate> {
     <MPVolumeControllerDataSource> * _dataSource;
     <MPVolumeControllerDelegate> * _delegate;
-    MPAVController * _player;
-    int  _userRecentlyChangedVolumeCount;
+    int  _volumeChangeCoalescingCount;
 }
 
 @property (nonatomic, readonly) float EUVolumeLimit;
@@ -16,7 +15,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=isMuted, nonatomic) bool muted;
-@property (nonatomic, retain) MPAVController *player;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *volumeAudioCategory;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
@@ -28,7 +26,6 @@
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
 - (void)_updateVolumeControlAvailability;
-- (void)_userChangedVolume;
 - (void)adjustVolumeValue:(float)arg1;
 - (id)dataSource;
 - (id)delegate;
@@ -38,11 +35,10 @@
 - (bool)isMuted;
 - (bool)isVolumeControlAvailable;
 - (bool)muted;
-- (id)player;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMuted:(bool)arg1;
-- (void)setPlayer:(id)arg1;
+- (void)setVolume:(float)arg1 withNoticationDelay:(float)arg2;
 - (void)setVolumeAudioCategory:(id)arg1;
 - (void)setVolumeValue:(float)arg1;
 - (void)updateVolumeValue;

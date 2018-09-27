@@ -9,6 +9,7 @@
 
 @property (nonatomic, copy) NSString *reason;
 @property (nonatomic, readonly) bool requiresSessionModification;
+@property (nonatomic, readonly, copy) NSString *sessionModificationLogReason;
 @property (nonatomic, copy) NSArray *subcommands;
 @property (nonatomic, readonly) NSDictionary *userInfo;
 
@@ -23,6 +24,7 @@
 - (id)reason;
 - (void)removeSubcommand:(id)arg1;
 - (bool)requiresSessionModification;
+- (id)sessionModificationLogReason;
 - (void)setReason:(id)arg1;
 - (void)setSubcommands:(id)arg1;
 - (id)subcommands;

@@ -44,6 +44,7 @@
 - (id)CKStatusReportArray;
 - (id)MMCSEngineContext;
 - (id)_contextToGetItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 command:(id /* block */)arg5 completionHandler:(id /* block */)arg6;
+- (id)_contextToGetOrPutChunkKeysItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_contextToGetSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_contextToPutItemGroup:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)_contextToPutSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
@@ -58,6 +59,7 @@
 - (void)dealloc;
 - (bool)didDrop;
 - (void)drop;
+- (id)getChunkKeysItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)getItemGroupSet:(id)arg1 operation:(id)arg2 shouldFetchAssetContentInMemory:(bool)arg3 options:(id)arg4 progress:(id /* block */)arg5 command:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (struct _mmcs_engine { }*)getMMCSEngine;
 - (unsigned int)getMaxChunkCountForSection;
@@ -65,6 +67,7 @@
 - (id)initWithMMCSEngineContext:(id)arg1 path:(id)arg2;
 - (id)path;
 - (void)performOnRunLoop:(id /* block */)arg1;
+- (id)putChunkKeysItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)putItemGroupSet:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)putSectionItem:(id)arg1 operation:(id)arg2 options:(id)arg3 progress:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)registerItemGroupSet:(id)arg1 operation:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;

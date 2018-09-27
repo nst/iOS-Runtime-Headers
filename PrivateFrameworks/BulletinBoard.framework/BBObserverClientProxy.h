@@ -32,28 +32,22 @@
 - (void)dealloc;
 - (id)description;
 - (void)finishedWithBulletinID:(id)arg1 transactionID:(unsigned long long)arg2;
-- (void)getActiveAlertBehaviorOverridesWithHandler:(id /* block */)arg1;
 - (void)getAspectRatioForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(bool)arg3 withHandler:(id /* block */)arg4;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)getBulletinsWithHandler:(id /* block */)arg1;
 - (void)getDataForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(bool)arg3 withHandler:(id /* block */)arg4;
 - (void)getObserverDebugInfo:(id /* block */)arg1;
 - (void)getPNGDataForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(bool)arg3 sizeConstraints:(id)arg4 withHandler:(id /* block */)arg5;
-- (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
 - (void)getPublisherMatchIDsOfBulletinsPublishedAfterDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSectionInfoForActiveSectionsWithHandler:(id /* block */)arg1;
 - (void)getSectionInfoForSectionIDs:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSectionInfoWithHandler:(id /* block */)arg1;
-- (void)getSectionOrderRuleWithHandler:(id /* block */)arg1;
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)handleResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (unsigned long long)incrementedTransactionIDForBulletinID:(id)arg1;
 - (id)initWithServer:(id)arg1 connection:(id)arg2 calloutQueue:(id)arg3;
 - (id)initWithServer:(id)arg1 connection:(id)arg2 queue:(id)arg3 calloutQueue:(id)arg4;
-- (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
-- (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (id)queue;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned long long)arg3;
@@ -73,8 +67,6 @@
 - (id)transactionBulletinIDs;
 - (void)updateBulletin:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)updateSectionInfo:(id)arg1;
-- (void)updateSectionOrder:(id)arg1;
-- (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 
 @end

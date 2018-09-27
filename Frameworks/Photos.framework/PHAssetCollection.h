@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetCollection : PHCollection <PUDisplayAssetCollection, PVMomentProtocol, PXDisplayAssetCollection> {
+@interface PHAssetCollection : PHCollection <PUDisplayAssetCollection, PVMomentProtocol, PXDisplayAssetCollection, PXMediaTypeAggregating> {
     unsigned long long  _approximateCount;
     CLLocation * _approximateLocation;
     unsigned long long  _approximatePhotosCount;
@@ -28,7 +28,6 @@
     bool  _isPhotoStreamCollection;
     bool  _isSmartCollection;
     bool  _isStandInCollection;
-    bool  _isWallpaperCollection;
     NSArray * _localizedLocationNames;
     NSString * _localizedTitle;
     int  _pendingItemsCount;
@@ -45,6 +44,7 @@
 }
 
 @property (getter=_canShowCloudComments, setter=_setCanShowCloudComments:, nonatomic) bool _canShowCloudComments;
+@property (nonatomic, readonly) long long aggregateMediaType;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } approximateCoordinate;
 @property (nonatomic, readonly) unsigned long long approximateCount;
 @property (nonatomic, readonly) CLLocation *approximateLocation;
@@ -77,10 +77,10 @@
 @property (nonatomic, readonly) bool isPanoramasCollection;
 @property (nonatomic, readonly) bool isPendingPhotoStreamAlbum;
 @property (nonatomic, readonly) bool isPhotoStreamCollection;
+@property (nonatomic, readonly) bool isPlacesAlbum;
 @property (nonatomic, readonly) bool isSmartCollection;
 @property (nonatomic, readonly) bool isStandInCollection;
 @property (nonatomic, readonly) bool isTrashBin;
-@property (nonatomic, readonly) bool isWallpaperCollection;
 @property (nonatomic, readonly) bool keyAssetsAtEnd;
 @property (nonatomic, readonly) NSDate *localEndDate;
 @property (nonatomic, readonly) NSString *localIdentifier;
@@ -91,6 +91,29 @@
 @property (nonatomic, readonly) int pendingItemsCount;
 @property (nonatomic, readonly) int pendingItemsType;
 @property (nonatomic, readonly) int plAlbumKind;
+@property (nonatomic, readonly, copy) NSString *px_estimatedAssetsCountLocalizedString;
+@property (nonatomic, readonly) bool px_isAllPhotosSmartAlbum;
+@property (nonatomic, readonly) bool px_isFavoriteMemoriesSmartFolder;
+@property (nonatomic, readonly) bool px_isFavoritesSmartAlbum;
+@property (nonatomic, readonly) bool px_isFolder;
+@property (nonatomic, readonly) bool px_isHiddenSmartAlbum;
+@property (nonatomic, readonly) bool px_isImportedAlbum;
+@property (nonatomic, readonly) bool px_isMacSyncedAlbum;
+@property (nonatomic, readonly) bool px_isMacSyncedEventsFolder;
+@property (nonatomic, readonly) bool px_isMacSyncedFacesFolder;
+@property (nonatomic, readonly) bool px_isMediaTypeSmartAlbum;
+@property (nonatomic, readonly) bool px_isMemoriesVirtualCollection;
+@property (nonatomic, readonly) bool px_isMyPhotoStreamAlbum;
+@property (nonatomic, readonly) bool px_isOwnedSharedAlbum;
+@property (nonatomic, readonly) bool px_isPeopleVirtualCollection;
+@property (nonatomic, readonly) bool px_isPlacesVirtualCollection;
+@property (nonatomic, readonly) bool px_isRecentlyAddedSmartAlbum;
+@property (nonatomic, readonly) bool px_isRecentlyDeletedSmartAlbum;
+@property (nonatomic, readonly) bool px_isSharedAlbum;
+@property (nonatomic, readonly) bool px_isSmartAlbum;
+@property (nonatomic, readonly) bool px_isSmartFolder;
+@property (nonatomic, readonly) bool px_isStandInAlbum;
+@property (nonatomic, readonly) bool px_isVirtualCollection;
 @property (nonatomic, readonly) bool px_supportsFastCuration;
 @property (nonatomic, readonly) PHQuery *query;
 @property (nonatomic, readonly) bool shouldDeleteWhenEmpty;
@@ -113,7 +136,7 @@
 + (id)corePropertiesToFetch;
 + (id)defaultTitleFontNames;
 + (id)descriptionOfTitleCategory:(long long)arg1;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)fetchAssetCollectionsContainingAsset:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsContainingAssets:(id)arg1 withType:(long long)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsWithALAssetGroupURLs:(id)arg1 options:(id)arg2;
@@ -123,11 +146,17 @@
 + (id)fetchAssetCollectionsWithType:(long long)arg1 localIdentifiers:(id)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
 + (id)fetchMomentsBackingMemory:(id)arg1 options:(id)arg2;
++ (id)fetchMomentsBackingSuggestion:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
++ (id)fetchSharingSuggestionsWithOptions:(id)arg1;
++ (id)fetchSuggestedContributionsForAssetsFetchResult:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForAssetsMetadata:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForCMMPhotoLibrary:(id)arg1 options:(id)arg2;
++ (id)fetchSuggestedContributionsForFileURLs:(id)arg1 options:(id)arg2;
 + (id)fetchType;
 + (id)fetchUserLibraryAlbumWithOptions:(id)arg1;
-+ (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(bool)arg2;
++ (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(bool)arg2 options:(id)arg3;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (bool)managedObjectSupportsTrashedState;
@@ -135,6 +164,7 @@
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 includeTrash:(bool)arg2;
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
++ (id)sharingSuggestionWithRandomPick:(bool)arg1 fallbackToRecentMoments:(bool)arg2 needsNotification:(bool)arg3;
 + (long long)titleCategoryForTitleFontName:(id)arg1;
 + (id)titleFontNameForTitleCategory:(long long)arg1;
 + (unsigned long long)titleFontNameHashFromDate:(id)arg1;
@@ -192,10 +222,10 @@
 - (bool)isPanoramasCollection;
 - (bool)isPendingPhotoStreamAlbum;
 - (bool)isPhotoStreamCollection;
+- (bool)isPlacesAlbum;
 - (bool)isSmartCollection;
 - (bool)isStandInCollection;
 - (bool)isTrashBin;
-- (bool)isWallpaperCollection;
 - (bool)keyAssetsAtEnd;
 - (id)localizedLocationNames;
 - (id)localizedSharedByLabelAllowsEmail:(bool)arg1;
@@ -205,7 +235,6 @@
 - (int)pendingItemsType;
 - (int)plAlbumKind;
 - (id)pl_assetContainer;
-- (bool)pl_isWallpaperAlbum;
 - (id)query;
 - (bool)shouldDeleteWhenEmpty;
 - (id /* block */)sortingComparator;
@@ -233,6 +262,29 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
++ (id)px_importHistoryAssetCollection;
++ (id)px_mediaTypeSmartAlbumSubtypes;
++ (id)px_otherAlbumsSubtypes;
++ (id)px_smartAlbumWithSubtype:(long long)arg1;
+
+- (long long)aggregateMediaType;
+- (bool)px_allowsAssetsDrop;
+- (id)px_estimatedAssetsCountLocalizedString;
+- (bool)px_isAllPhotosSmartAlbum;
+- (bool)px_isFavoritesSmartAlbum;
+- (bool)px_isHiddenSmartAlbum;
+- (bool)px_isImportedAlbum;
+- (bool)px_isMacSyncedAlbum;
+- (bool)px_isMediaTypeSmartAlbum;
+- (bool)px_isMyPhotoStreamAlbum;
+- (bool)px_isOwnedSharedAlbum;
+- (bool)px_isPlacesVirtualCollection;
+- (bool)px_isRecentlyAddedSmartAlbum;
+- (bool)px_isRecentlyDeletedSmartAlbum;
+- (bool)px_isSharedAlbum;
+- (bool)px_isSmartAlbum;
+- (bool)px_isStandInAlbum;
+- (bool)px_isUserCreated;
 - (bool)px_shouldUseFacesRectForSmartCropping;
 - (bool)px_supportsFastCuration;
 

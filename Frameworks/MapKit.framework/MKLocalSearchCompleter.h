@@ -3,6 +3,7 @@
  */
 
 @interface MKLocalSearchCompleter : NSObject {
+    <MKAutocompleteAnalyticsProvider> * _analyticsProvider;
     GEOSearchCategory * _categoryFilter;
     id  _context;
     <MKLocalSearchCompleterDelegate> * _delegate;
@@ -27,6 +28,7 @@
     NSArray * _results;
     GEORetainedSearchMetadata * _retainedSearchMetadata;
     bool  _shouldDisplayNoResults;
+    bool  _shouldPreloadTransitInfo;
     <MKLocationManagerOperation> * _singleLocationUpdate;
     int  _source;
     <GEOMapServiceCompletionTicket> * _ticket;
@@ -35,6 +37,7 @@
     GEOMapServiceTraits * _traits;
 }
 
+@property (nonatomic, retain) <MKAutocompleteAnalyticsProvider> *analyticsProvider;
 @property (nonatomic) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingRegion;
 @property (nonatomic, retain) GEOSearchCategory *categoryFilter;
 @property (nonatomic) id context;
@@ -52,6 +55,7 @@
 @property (nonatomic, retain) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property (getter=isSearching, nonatomic, readonly) bool searching;
 @property (getter=_shouldDisplayNoResults, nonatomic, readonly) bool shouldDisplayNoResults;
+@property (getter=_shouldPreloadTransitInfo, setter=_setShouldPreloadTransitInfo:, nonatomic) bool shouldPreloadTransitInfo;
 @property (nonatomic) double timeSinceLastInBoundingRegion;
 @property (nonatomic, retain) GEOMapServiceTraits *traits;
 
@@ -61,9 +65,14 @@
 - (void)_handleCompletion:(id)arg1 shouldDisplayNoResults:(bool)arg2 forTicket:(id)arg3;
 - (void)_handleError:(id)arg1 forTicket:(id)arg2;
 - (void)_markDirty;
+- (void)_markDirtyAndScheduleRequestWithTimeToNextRequest:(double)arg1;
+- (void)_notifyDelegatesWithResults:(id)arg1 shouldDisplayNoResults:(bool)arg2 ticket:(id)arg3;
 - (void)_schedulePendingRequest;
-- (void)_scheduleRequest;
+- (void)_scheduleRequestWithTimeToNextRequest:(double)arg1;
+- (void)_setShouldPreloadTransitInfo:(bool)arg1;
 - (bool)_shouldDisplayNoResults;
+- (bool)_shouldPreloadTransitInfo;
+- (id)analyticsProvider;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRegion;
 - (void)cancel;
 - (id)categoryFilter;
@@ -85,6 +94,7 @@
 - (bool)resultsAreCurrent;
 - (id)retainedSearchMetadata;
 - (void)retry;
+- (void)setAnalyticsProvider:(id)arg1;
 - (void)setBoundingRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCategoryFilter:(id)arg1;
 - (void)setContext:(id)arg1;
@@ -104,6 +114,7 @@
 - (void)setTraits:(id)arg1;
 - (int)source;
 - (double)timeSinceLastInBoundingRegion;
+- (double)timeToNextRequest;
 - (id)traits;
 
 @end

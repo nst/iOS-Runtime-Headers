@@ -13,8 +13,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (retain) NSMutableArray *imageViews;
-@property (retain) NSArray *images;
-@property (getter=isPaddingDisabled) bool paddingDisabled;
+@property (nonatomic, retain) NSArray *images;
+@property (getter=isPaddingDisabled, nonatomic) bool paddingDisabled;
 @property (retain) NUIContainerStackView *stackView;
 @property (readonly) Class superclass;
 
@@ -26,7 +26,6 @@
 - (id)images;
 - (id)init;
 - (bool)isPaddingDisabled;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setImageViews:(id)arg1;
 - (void)setImages:(id)arg1;

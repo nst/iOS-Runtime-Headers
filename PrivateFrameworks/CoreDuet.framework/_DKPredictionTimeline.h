@@ -29,6 +29,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isUnavailable;
 - (id)largestDateRangeWithValuesBetween:(double)arg1 and:(double)arg2 ofMinimumDuration:(double)arg3;
+- (id)nextDateRangeWithValuesBetween:(double)arg1 and:(double)arg2 ofMinimumDuration:(double)arg3;
 - (void)setStartDate:(id)arg1;
 - (void)setTransitionDates:(id)arg1;
 - (void)setValues:(id)arg1;

@@ -30,6 +30,7 @@
 @property (nonatomic) long long keyboardAppearance;
 @property (nonatomic) long long keyboardType;
 @property (nonatomic) unsigned long long numberOfFindMatches;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
 @property (nonatomic) bool shouldFocusTextField;
@@ -62,7 +63,6 @@
 - (void)done;
 - (id)findString;
 - (id)findTextField;
-- (void)getShortMatchLabelText:(id*)arg1 longMatchLabelText:(id*)arg2;
 - (bool)hasMatches;
 - (bool)hasText;
 - (void)hideFindOnPage;
@@ -73,6 +73,7 @@
 - (bool)isFocused;
 - (bool)isShowing;
 - (id)keyCommands;
+- (id)longMatchLabelText;
 - (id)matchLabelText;
 - (void)next;
 - (unsigned long long)numberOfFindMatches;

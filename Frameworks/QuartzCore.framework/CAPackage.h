@@ -37,4 +37,8 @@
 
 + (id)ccuiPackageFromDescription:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
+
++ (id)fa_packageFromDescription:(id)arg1;
+
 @end

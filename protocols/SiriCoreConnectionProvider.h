@@ -16,7 +16,6 @@
 - (bool)isCanceled;
 - (bool)isEstablishing;
 - (bool)isMultipath;
-- (bool)isNetworkDownError:(NSError *)arg1;
 - (bool)isPeerConnectionError:(NSError *)arg1;
 - (bool)isPeerNotNearbyError:(NSError *)arg1;
 - (bool)isReady;
@@ -27,9 +26,13 @@
 - (void)setConnectByPOPMethod:(bool)arg1;
 - (void)setDelegate:(id <SiriCoreConnectionProviderDelegate>)arg1;
 - (void)setEnforceExtendedValidation:(bool)arg1;
+- (void)setKeepAlive:(double)arg1 withInterval:(double)arg2 withCount:(unsigned long long)arg3;
 - (void)setPolicyRoute:(SAConnectionPolicyRoute *)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
 - (void)setProviderConnectionPolicy:(SAConnectionPolicy *)arg1;
+- (void)setRetransmitConnectionDropTime:(double)arg1;
+- (void)setScopeIsWiFiOnly;
+- (void)setStaleInterval:(double)arg1;
 - (bool)shouldFallbackFromError:(NSError *)arg1;
 - (bool)shouldFallbackQuickly;
 - (bool)supportsInitialPayload;

@@ -10,9 +10,10 @@
     bool  _closed;
     HLPHelpItem * _helpItem;
     bool  _ignoreLevels;
+    NSLayoutConstraint * _labelToArrowViewLeadingConstraint;
     UILabel * _nameLabel;
     NSLayoutConstraint * _sectionImageLeadingConstraint;
-    HLPURLSession * _sectionImageURLSession;
+    TPSURLSessionItem * _sectionImageURLSessionItem;
     UIImageView * _sectionImageView;
     NSLayoutConstraint * _sectionImageWidthConstraint;
     bool  _showFirstLevelIcon;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) HLPHelpItem *helpItem;
 @property (nonatomic) bool ignoreLevels;
 @property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) TPSURLSessionItem *sectionImageURLSessionItem;
 @property (nonatomic, retain) UIImageView *sectionImageView;
 @property (nonatomic) bool showFirstLevelIcon;
 
@@ -31,7 +33,10 @@
 - (bool)RTL;
 - (id)accessibilityLabel;
 - (id)arrowImageView;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arrowTransform;
+- (void)cancelIconRequest;
 - (bool)closed;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (id)helpItem;
 - (bool)ignoreLevels;
@@ -40,6 +45,7 @@
 - (void)layoutSubviews;
 - (id)nameLabel;
 - (void)prepareForReuse;
+- (id)sectionImageURLSessionItem;
 - (id)sectionImageView;
 - (void)setArrowImageView:(id)arg1;
 - (void)setClosed:(bool)arg1;
@@ -47,6 +53,7 @@
 - (void)setIgnoreLevels:(bool)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setRTL:(bool)arg1;
+- (void)setSectionImageURLSessionItem:(id)arg1;
 - (void)setSectionImageView:(id)arg1;
 - (void)setShowFirstLevelIcon:(bool)arg1;
 - (bool)showFirstLevelIcon;

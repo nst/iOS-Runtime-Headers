@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKPhysicsJoint : NSObject <NSCoding> {
+@interface SKPhysicsJoint : NSObject <NSSecureCoding> {
     bool  __implicit;
     SKPhysicsBody * bodyA;
     SKPhysicsBody * bodyB;
@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) double reactionTorque;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)_implicit;

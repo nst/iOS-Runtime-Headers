@@ -10,6 +10,7 @@
 
 @optional
 
+- (void)airPlaySolo:(WPAirPlaySolo *)arg1 didFindPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didLosePeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didStartTrackingPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3 error:(NSError *)arg4;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didStopTrackingPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;

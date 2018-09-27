@@ -10,11 +10,12 @@
 
 @property (nonatomic, readonly) struct CGImage { }*CGImage;
 @property (nonatomic, readonly) struct __IOSurface { }*IOSurface;
-@property (nonatomic, readonly, retain) UIImage *UIImage;
-@property (nonatomic, readonly, retain) FBSceneSnapshotContext *context;
+@property (nonatomic, readonly) UIImage *UIImage;
+@property (nonatomic, readonly) FBSceneSnapshotContext *context;
 @property (getter=isDataLoaded, nonatomic, readonly) bool dataLoaded;
 @property (nonatomic, readonly) struct __IOSurface { }*fallbackIOSurface;
 
+- (void).cxx_destruct;
 - (struct CGImage { }*)CGImage;
 - (struct __IOSurface { }*)IOSurface;
 - (id)UIImage;
@@ -22,7 +23,6 @@
 - (id)_collectLayersToSnapshotFromScene:(id)arg1 withSnapshotContext:(id)arg2 rootContext:(id)arg3;
 - (bool)capture;
 - (id)context;
-- (void)dealloc;
 - (struct __IOSurface { }*)fallbackIOSurface;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;
 - (bool)isDataLoaded;

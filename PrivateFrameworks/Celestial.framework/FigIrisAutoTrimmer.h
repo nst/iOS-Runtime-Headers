@@ -37,7 +37,6 @@
     bool  _motionAvailable;
     double  _motionSampleRate;
     NSMutableArray * _motionSamples;
-    struct OpaqueFigSimpleMutex { } * _motionSamplesLock;
     unsigned long long  _nominalHistorySize;
     int  _svmKernelType;
     NSArray * _svmKeys;
@@ -53,13 +52,15 @@
 
 + (void)initialize;
 
+- (bool)_checkSamplesContainHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (double)_directionalWeightForSample:(id)arg1;
+- (long long)_findClosestIndexToHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 fromIndex:(long long)arg2 limitIndex:(long long)arg3;
 - (long long)_findClosestIndexToOffset:(double)arg1 atLeastOneFromIndex:(long long)arg2 limitIndex:(long long)arg3;
 - (long long)_findClosestIndexToTimestamp:(double)arg1 fromIndex:(long long)arg2 limitIndex:(long long)arg3;
 - (double)_getHostTime;
-- (void)_initWithSVM:(id)arg1 fromFile:(id)arg2;
+- (void)_initSVM:(id)arg1 fromFile:(id)arg2;
 - (bool)_isUnstable:(id)arg1 withLookback:(id)arg2;
-- (void)_processMotionSample:(const struct { double x1; double x2; double x3; double x4; }*)arg1 gravity:(const struct { float x1; float x2; float x3; }*)arg2 timestamp:(double)arg3 metadata:(id)arg4;
+- (void)_processMotionSample:(const struct { double x1; double x2; double x3; double x4; }*)arg1 gravity:(const struct { float x1; float x2; float x3; }*)arg2 motionTimestamp:(double)arg3 frameTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 metadata:(id)arg5;
 - (bool)_shouldCut:(id)arg1 withLookahead:(id)arg2 withLookback:(id)arg3;
 - (bool)_shouldCutSVM:(id)arg1;
 - (bool)_shouldCutUnstable:(id)arg1 withLookahead:(id)arg2;
@@ -71,7 +72,9 @@
 - (int)emissionStatusForHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)init;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxHoldDuration;
+- (void)processDetectedFaces:(id)arg1 forHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)processISPMotionData:(id)arg1 forHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)processInferences:(id)arg1 forHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)setBufferHistorySeconds:(double)arg1;
 - (void)setMaxHoldDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoFrameRate:(double)arg1;

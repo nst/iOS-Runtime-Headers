@@ -5,7 +5,7 @@
 @interface PHMemory : PHAssetCollection {
     NSData * _assetListPredicate;
     PHMemoryFeature * _blacklistedFeature;
-    long long  _category;
+    unsigned long long  _category;
     NSDate * _creationDate;
     bool  _didLoadTitleCategory;
     bool  _favorite;
@@ -24,7 +24,7 @@
     long long  _photosGraphVersion;
     bool  _rejected;
     double  _score;
-    long long  _subcategory;
+    unsigned long long  _subcategory;
     long long  _syncedPlayCount;
     long long  _syncedShareCount;
     long long  _syncedViewCount;
@@ -38,7 +38,7 @@
 @property (nonatomic, readonly) NSData *assetListPredicate;
 @property (nonatomic, readonly) NSArray *blacklistableFeatures;
 @property (nonatomic, readonly) PHMemoryFeature *blacklistedFeature;
-@property (nonatomic, readonly) long long category;
+@property (nonatomic, readonly) unsigned long long category;
 @property (getter=isFavorite, nonatomic, readonly) bool favorite;
 @property (nonatomic, readonly) NSSet *featuredPeopleIdentifiers;
 @property (nonatomic, readonly) bool isContiguous;
@@ -56,18 +56,19 @@
 @property (getter=isRejected, nonatomic, readonly) bool rejected;
 @property (nonatomic, readonly) double score;
 @property (nonatomic, readonly) long long shareCount;
-@property (nonatomic, readonly) long long subcategory;
+@property (nonatomic, readonly) unsigned long long subcategory;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (getter=isUserCreated, nonatomic, readonly) bool userCreated;
 @property (nonatomic, readonly) long long viewCount;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
++ (unsigned long long)_contextualScoreForMemory:(id)arg1;
 + (id)_fetchOptionsForTransientMemoryAssetsWithOptions:(id)arg1;
 + (id)assetListPredicateFromQueryHintObjects:(id)arg1;
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)fetchBestRecentMemoryWithOptions:(id)arg1;
-+ (id)fetchTransientMemoriesWithOptions:(id)arg1;
++ (id)fetchTransientMemoriesWithOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)fetchType;
 + (void)generateMemoriesWithOptions:(id)arg1 completion:(id /* block */)arg2;
 + (id)identifierCode;
@@ -75,11 +76,11 @@
 + (bool)managedObjectSupportsPendingState;
 + (bool)managedObjectSupportsRejectedState;
 + (bool)managedObjectSupportsTrashedState;
-+ (id)memoryTreeLevelWithOptions:(id)arg1;
++ (id)memoryTreeLevelWithOptions:(id)arg1 photoLibrary:(id)arg2;
 + (id)movieDataWithTitleFontName:(id)arg1;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
-+ (id)stringForCategory:(long long)arg1;
-+ (id)stringForSubcategory:(long long)arg1;
++ (id)stringForCategory:(unsigned long long)arg1;
++ (id)stringForSubcategory:(unsigned long long)arg1;
 + (id)titleFontNameFromMovieData:(id)arg1;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)transientMemoryWithDictionary:(id)arg1;
@@ -94,7 +95,7 @@
 - (bool)canContainAssets;
 - (bool)canPerformEditOperation:(long long)arg1;
 - (bool)canShowAvalancheStacks;
-- (long long)category;
+- (unsigned long long)category;
 - (Class)changeRequestClass;
 - (bool)collectionHasFixedOrder;
 - (id)creationDate;
@@ -131,7 +132,7 @@
 - (double)score;
 - (void)setupTransientMemory;
 - (long long)shareCount;
-- (long long)subcategory;
+- (unsigned long long)subcategory;
 - (id)subtitle;
 - (unsigned long long)suggestedMood;
 - (long long)titleCategory;

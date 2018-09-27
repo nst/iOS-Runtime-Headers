@@ -22,7 +22,7 @@
 - (id)attachmentUTI;
 - (bool)canDragWithoutSelecting;
 - (void)detachView:(id)arg1 fromParentView:(id)arg2;
-- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3;
+- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3 forStandardizedText:(bool)arg4;
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
 - (bool)isEqualToModelComparable:(id)arg1;

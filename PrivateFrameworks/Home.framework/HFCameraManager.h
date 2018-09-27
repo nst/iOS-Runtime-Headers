@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFCameraManager : NSObject <HFAccessoryObserver, HFCameraObserver> {
+@interface HFCameraManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFExecutionEnvironmentObserver> {
     NSError * _cachedStreamError;
     HMCameraProfile * _cameraProfile;
+    HFExecutionEnvironment * _executionEnvironment;
     bool  _isRegisteredForEvents;
     <NACancelable> * _nextSnapshotEvent;
     unsigned long long  _snapshotErrorCount;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) HMCameraProfile *cameraProfile;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) HFExecutionEnvironment *executionEnvironment;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isRegisteredForEvents;
 @property (nonatomic, retain) <NACancelable> *nextSnapshotEvent;
@@ -33,7 +35,6 @@
 - (void)_dispatchStreamStateUpdate;
 - (void)_endContinuousStreaming;
 - (void)_endPeriodicSnapshots;
-- (void)_handleApplicationDidBecomeActiveNotificationNotification;
 - (bool)_hasSnapshotRequesters;
 - (bool)_hasStreamRequesters;
 - (id)_nextSnapshotDate;
@@ -54,10 +55,16 @@
 - (void)dealloc;
 - (void)endContinuousStreamingWithRequester:(id)arg1;
 - (void)endPeriodicSnapshotsWithRequester:(id)arg1;
+- (id)executionEnvironment;
+- (void)executionEnvironmentDidBecomeActive:(id)arg1;
+- (void)executionEnvironmentDidBecomeOccluded:(id)arg1;
+- (void)executionEnvironmentDidBecomeVisible:(id)arg1;
+- (void)executionEnvironmentWillResignActive:(id)arg1;
 - (id)initWithCameraProfile:(id)arg1;
 - (bool)isRegisteredForEvents;
 - (id)nextSnapshotEvent;
 - (void)setCachedStreamError:(id)arg1;
+- (void)setExecutionEnvironment:(id)arg1;
 - (void)setIsRegisteredForEvents:(bool)arg1;
 - (void)setNextSnapshotEvent:(id)arg1;
 - (void)setSnapshotErrorCount:(unsigned long long)arg1;

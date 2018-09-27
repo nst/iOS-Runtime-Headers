@@ -3,7 +3,9 @@
  */
 
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _assetID;
     bool  _autoDownloadAllowableForCellular;
+    bool  _autoUpdateEnabled;
     NSString * _criticalDownloadPolicy;
     bool  _criticalOutOfBoxOnly;
     bool  _disableAppDemotion;
@@ -36,7 +38,9 @@
     int  _updateType;
 }
 
+@property (nonatomic, retain) NSString *assetID;
 @property (nonatomic) bool autoDownloadAllowableForCellular;
+@property (nonatomic) bool autoUpdateEnabled;
 @property (nonatomic, retain) NSString *criticalDownloadPolicy;
 @property (nonatomic) bool criticalOutOfBoxOnly;
 @property (getter=appDemotionDisabled, setter=_setDisableAppDemotion:, nonatomic) bool disableAppDemotion;
@@ -81,7 +85,9 @@
 - (void)_setUnarchiveSize:(unsigned long long)arg1;
 - (unsigned long long)_unarchiveSize;
 - (bool)appDemotionDisabled;
+- (id)assetID;
 - (bool)autoDownloadAllowableForCellular;
+- (bool)autoUpdateEnabled;
 - (bool)cdLevel4Disabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)criticalDownloadPolicy;
@@ -114,7 +120,9 @@
 - (id)releaseType;
 - (id)rsepDigest;
 - (id)sepDigest;
+- (void)setAssetID:(id)arg1;
 - (void)setAutoDownloadAllowableForCellular:(bool)arg1;
+- (void)setAutoUpdateEnabled:(bool)arg1;
 - (void)setCriticalDownloadPolicy:(id)arg1;
 - (void)setCriticalOutOfBoxOnly:(bool)arg1;
 - (void)setDocumentation:(id)arg1;
@@ -141,5 +149,6 @@
 - (id)systemPartitionPadding;
 - (unsigned long long)totalRequiredFreeSpace;
 - (int)updateType;
+- (id)updateTypeName;
 
 @end

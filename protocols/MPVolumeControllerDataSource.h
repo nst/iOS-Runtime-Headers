@@ -14,7 +14,6 @@
 - (bool)isMuted;
 - (bool)isVolumeControlAvailable;
 - (void)reload;
-- (void)reloadWarning;
 - (void)setDelegate:(id <MPVolumeControllerDataSourceDelegate>)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setVolume:(float)arg1;
@@ -22,5 +21,9 @@
 - (NSString *)volumeControlLabel;
 - (bool)volumeWarningEnabled;
 - (long long)volumeWarningState;
+
+@optional
+
+- (void)reloadWarning;
 
 @end

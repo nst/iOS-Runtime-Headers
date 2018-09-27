@@ -28,15 +28,18 @@
 + (id)metadataWithItemIdentifier:(id)arg1 keyValueStorePayload:(id)arg2 failuresOkay:(bool)arg3;
 + (id)metadataWithValuesFromDataSourceItem:(id)arg1;
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)bookmarkTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (bool)hasBeenPlayed;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initAsTestableItem;
+- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)itemIdentifier;
 - (id)keyValueStorePayload;

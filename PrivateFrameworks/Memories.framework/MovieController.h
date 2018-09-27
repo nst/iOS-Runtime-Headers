@@ -39,6 +39,7 @@
 @property struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportArbitraryAspectRatio;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } temporarySize;
 @property (nonatomic, readonly) AVMutableVideoComposition *videoComposition;
 
 + (id)controllerWithProject:(id)arg1 forExport:(bool)arg2 supportsArbitraryAspectRatio:(bool)arg3;
@@ -46,7 +47,6 @@
 
 - (void).cxx_destruct;
 - (id)AVComposition;
-- (void)adjustFadeToBlackTime;
 - (void)applyPlayerItemProperties;
 - (id)audioMix;
 - (void)cancelAllUIImageGeneration;
@@ -66,10 +66,10 @@
 - (id /* block */)playerReadyCompletionBlock;
 - (id /* block */)progressUpdateBlock;
 - (id)project;
+- (void)renderBothOrientationsOfFirstFrameAtSize:(struct CGSize { double x1; double x2; })arg1 withCompletion:(id /* block */)arg2;
 - (void)setComposition:(id)arg1;
 - (void)setCustomImageGen:(id)arg1;
 - (void)setCustomImageGenCount:(long long)arg1;
-- (void)setFadeToBlackStartTime:(double)arg1 duration:(double)arg2;
 - (void)setForExport:(bool)arg1;
 - (void)setPlayAltClips:(bool)arg1;
 - (void)setPlayerLayer:(id)arg1;
@@ -82,6 +82,7 @@
 - (struct CGSize { double x1; double x2; })size;
 - (bool)supportArbitraryAspectRatio;
 - (void)tearDownProjectDisplay;
+- (struct CGSize { double x1; double x2; })temporarySize;
 - (void)updateComposition;
 - (void)updateForProjectTimeInSeconds:(double)arg1 asynchronous:(bool)arg2 allowUnloading:(bool)arg3;
 - (id)videoComposition;

@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_addEventQueueLock:(id)arg1;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;
 - (void)_noteQueueDidDrain;
@@ -35,7 +36,6 @@
 - (bool)_shouldProcessEvent:(id)arg1 enqueuedDuringExecutionOfEvent:(id)arg2;
 - (id)acquireLockForReason:(id)arg1;
 - (void)cancelEventsWithName:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

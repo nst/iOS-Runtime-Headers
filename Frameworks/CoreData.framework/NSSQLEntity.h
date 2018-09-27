@@ -27,9 +27,8 @@
     NSMutableDictionary * _rtreeIndices;
     struct __sqlentityFlags { 
         unsigned int _hasAttributesWithExternalDataReferences : 1; 
-        unsigned int _hasAttributesMonitoredByTriggers : 1; 
-        unsigned int _hasAttributesBackedByTriggers : 1; 
-        unsigned int _reserved : 29; 
+        unsigned int _hasAttributesWithFileBackedFutures : 1; 
+        unsigned int _reserved : 30; 
     }  _sqlentityFlags;
     NSMutableArray * _subentities;
     unsigned int  _subentityMaxID;
@@ -43,7 +42,7 @@
     NSMutableArray * _virtualFKs;
 }
 
-@property (readonly) NSDictionary *rtreeIndexes;
+@property (nonatomic, readonly) NSDictionary *rtreeIndexes;
 
 - (void)_addColumnToFetch:(id)arg1;
 - (void)_addForeignOrderKeyForToOne:(id)arg1 entity:(id)arg2;
@@ -58,13 +57,9 @@
 - (void)_generateInverseRelationshipsAndMore;
 - (void)_generateMulticolumnUniquenessConstraints;
 - (void)_generateProperties;
-- (bool)_hasAttributesBackedByTriggers;
-- (bool)_hasAttributesMonitoredByTriggers;
 - (void*)_odiousHashHack;
 - (void)_organizeConstraints;
 - (id)_propertySearchMapping;
-- (void)_setHasAttributesBackedByTriggers:(bool)arg1;
-- (void)_setHasAttributesMonitoredByTriggers:(bool)arg1;
 - (id)_sqlPropertyWithRenamingIdentifier:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_toOneRange;
 - (bool)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
@@ -87,6 +82,7 @@
 - (id)foreignKeyColumns;
 - (id)foreignOrderKeyColumns;
 - (bool)hasAttributesWithExternalDataReferences;
+- (bool)hasAttributesWithFileBackedFutures;
 - (bool)hasInheritance;
 - (bool)hasSubentities;
 - (id)indexForIndexDescription:(id)arg1;
@@ -117,6 +113,7 @@
 - (unsigned int)subentityMaxID;
 - (id)superentity;
 - (id)tableName;
+- (id)tempTableName;
 - (id)toManyRelationships;
 - (id)uniqueAttributes;
 - (id)virtualForeignKeyColumns;

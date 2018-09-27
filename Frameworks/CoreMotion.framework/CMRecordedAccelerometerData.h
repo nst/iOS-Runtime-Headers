@@ -15,6 +15,7 @@
 
 @property (readonly) unsigned long long identifier;
 @property (readonly) NSDate *startDate;
+@property (readonly) double startTime;
 
 + (bool)supportsSecureCoding;
 
@@ -27,6 +28,7 @@
 - (id)initWithData:(struct CMAccel100 { float x1; float x2; float x3; unsigned long long x4; }*)arg1 timestamp:(unsigned long long)arg2 walltime:(double)arg3 identifier:(unsigned long long)arg4;
 - (void)resetWithData:(struct CMAccel100 { float x1; float x2; float x3; unsigned long long x4; }*)arg1 timestamp:(unsigned long long)arg2 walltime:(double)arg3 identifier:(unsigned long long)arg4;
 - (id)startDate;
+- (double)startTime;
 - (double)timestamp;
 
 @end

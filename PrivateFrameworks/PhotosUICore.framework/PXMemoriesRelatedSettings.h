@@ -9,7 +9,7 @@
     bool  _enableManualRefreshUI;
     bool  _enableMemoriesLivingOnFeedback;
     bool  _enableMemoryBlurryHeader;
-    bool  _enableUI;
+    bool  _fakePeopleProximity;
     long long  _minimumNumberOfCuratedAssetsForInterestingMoments;
     long long  _minimumNumberOfCuratedAssetsForMemories;
     long long  _minimumNumberOfCuratedAssetsForMovieHeader;
@@ -23,7 +23,7 @@
 @property (nonatomic) bool enableManualRefreshUI;
 @property (nonatomic) bool enableMemoriesLivingOnFeedback;
 @property (nonatomic) bool enableMemoryBlurryHeader;
-@property (nonatomic) bool enableUI;
+@property (nonatomic) bool fakePeopleProximity;
 @property (nonatomic) long long minimumNumberOfCuratedAssetsForInterestingMoments;
 @property (nonatomic) long long minimumNumberOfCuratedAssetsForMemories;
 @property (nonatomic) long long minimumNumberOfCuratedAssetsForMovieHeader;
@@ -41,7 +41,7 @@
 - (bool)enableManualRefreshUI;
 - (bool)enableMemoriesLivingOnFeedback;
 - (bool)enableMemoryBlurryHeader;
-- (bool)enableUI;
+- (bool)fakePeopleProximity;
 - (long long)minimumNumberOfCuratedAssetsForInterestingMoments;
 - (long long)minimumNumberOfCuratedAssetsForMemories;
 - (long long)minimumNumberOfCuratedAssetsForMovieHeader;
@@ -55,7 +55,7 @@
 - (void)setEnableManualRefreshUI:(bool)arg1;
 - (void)setEnableMemoriesLivingOnFeedback:(bool)arg1;
 - (void)setEnableMemoryBlurryHeader:(bool)arg1;
-- (void)setEnableUI:(bool)arg1;
+- (void)setFakePeopleProximity:(bool)arg1;
 - (void)setMinimumNumberOfCuratedAssetsForInterestingMoments:(long long)arg1;
 - (void)setMinimumNumberOfCuratedAssetsForMemories:(long long)arg1;
 - (void)setMinimumNumberOfCuratedAssetsForMovieHeader:(long long)arg1;

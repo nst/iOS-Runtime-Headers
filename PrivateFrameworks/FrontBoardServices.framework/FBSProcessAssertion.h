@@ -13,18 +13,17 @@
 
 @property (getter=isActivated, nonatomic, readonly) bool activated;
 @property (nonatomic, readonly) unsigned long long activationCount;
-@property (nonatomic, readonly, retain) BKSProcessAssertion *assertion;
+@property (nonatomic, readonly) BKSProcessAssertion *assertion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=isInvalidated, nonatomic, readonly) bool invalidated;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly, retain) FBSProcessExecutionPolicy *policy;
+@property (nonatomic, readonly) FBSProcessExecutionPolicy *policy;
 @property (nonatomic, readonly) <FBSProcess> *process;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_invalidateAssertion:(id)arg1;
 - (void)activate;
 - (unsigned long long)activationCount;
 - (id)assertion;

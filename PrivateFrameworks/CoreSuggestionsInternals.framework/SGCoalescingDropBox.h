@@ -13,6 +13,10 @@
         BOOL __opaque[40]; 
     }  _cond;
     id /* block */  _handler;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _handlerLock;
     id /* block */  _makeEmptyBox;
     int  _outstanding;
     NSObject<OS_dispatch_queue> * _queue;

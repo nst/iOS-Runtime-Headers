@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSupportedAudioStreamConfiguration : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSupportedAudioStreamConfiguration : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSDictionary * _codecConfigurations;
     NSNumber * _supportsComfortNoise;
 }

@@ -26,6 +26,7 @@
 - (id)_performerClassesByType;
 - (void)_setActivePerformer:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
+- (id)alertActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
 - (bool)canPerformActionType:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1 displayTitleInfo:(id)arg2;

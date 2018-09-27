@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ProactiveMagicalMoments.framework/ProactiveMagicalMoments
  */
 
-@interface PMMPredictor : NSObject <PMMDataProtectionMonitorDelegate> {
+@interface PMMPredictor : NSObject <CXCallObserverDelegate, PMMDataProtectionMonitorDelegate> {
+    bool  _callInProgress;
+    CXCallObserver * _callObserver;
     PMMTelephonyConnection * _ctConnection;
     PMMDataProtectionMonitor * _dataProtectionMonitor;
     long long  _dataProtectionStatus;
@@ -12,6 +14,7 @@
     PETScalarEventTracker * _heroAppSuggestion;
     PETScalarEventTracker * _mmAppSuggestion;
     NSString * _mostRecentNowPlayingApp;
+    RTPredictedApplication * _mostRecentNowPlayingPrediction;
     RTPredictedApplication * _mostRecentPrediction;
     PMMMusicStateProcessor * _musicStateProcessor;
     PMMAppsSettingsMonitor * _myAppsSettingsMonitor;
@@ -33,6 +36,7 @@
 @property (nonatomic, retain) PETScalarEventTracker *heroAppSuggestion;
 @property (nonatomic, retain) PETScalarEventTracker *mmAppSuggestion;
 @property (nonatomic, retain) NSString *mostRecentNowPlayingApp;
+@property (nonatomic, retain) RTPredictedApplication *mostRecentNowPlayingPrediction;
 @property (nonatomic, retain) RTPredictedApplication *mostRecentPrediction;
 @property (nonatomic, retain) PMMMusicStateProcessor *musicStateProcessor;
 @property (nonatomic, retain) PMMAppsSettingsMonitor *myAppsSettingsMonitor;
@@ -44,19 +48,21 @@
 
 + (bool)_predictionIsAudio:(id)arg1;
 + (bool)_predictionPopulatesContinuity:(id)arg1;
-+ (bool)_predictionPopulatesNowPlaying:(id)arg1;
++ (bool)_predictionPopulatesNowPlaying:(id)arg1 fromUnitTest:(bool)arg2;
 + (bool)_predictionPopulatesSpringboard:(id)arg1;
 + (bool)_predictionPopulatesStark:(id)arg1;
-+ (bool)facetimeActive;
++ (bool)bundleSupportsINPlayMediaIntentForBundleId:(id)arg1 fromUnitTest:(bool)arg2;
++ (id)getHighestConfidencePredictionForNowPlayingConsumerFromPredictions:(id)arg1 fromUnitTest:(bool)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_clearAllRecommendations;
 - (void)_handleNowPlayingInfoDidChange;
 - (void)_notifyAppPredictionAboutMMUpdate:(id)arg1;
-- (void)_publishPredictionWithPredictedApplication:(id)arg1;
+- (id)_publishPredictionWithPredictedApplication:(id)arg1 fromUnitTest:(bool)arg2;
 - (bool)_recommendingAudioWhileAlreadyPlaying:(id)arg1;
 - (void)_updatePredictionBasedOnPreviousDataProtectionStatus:(long long)arg1 previousEncryptedDataAvailability:(long long)arg2;
+- (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (id)ctConnection;
 - (id)dataProtectionMonitor;
 - (void)dataProtectionMonitor:(id)arg1 dataProtectionStatusDidChange:(long long)arg2;
@@ -70,15 +76,21 @@
 - (void)fetchMediaRemoteNowPlayingApplicationBundleId:(id /* block */)arg1;
 - (void)fetchMediaRemoteNowPlayingApplicationPlaybackState:(id /* block */)arg1;
 - (void)handleNowPlayingInfoDidChange;
+- (void)handlePredictedApplications:(id)arg1 error:(id)arg2;
 - (id)heroAppSuggestion;
 - (id)init;
+- (void)logPrediction:(id)arg1 predictionSource:(unsigned long long)arg2 mmReason:(long long)arg3 decReason:(long long)arg4 reasonSingle:(long long)arg5 reasonMetadata:(id)arg6;
 - (id)metadataForPredictionApplication:(id)arg1;
 - (id)mmAppSuggestion;
 - (id)mostRecentNowPlayingApp;
+- (id)mostRecentNowPlayingPrediction;
 - (id)mostRecentPrediction;
 - (id)musicStateProcessor;
 - (id)myAppsSettingsMonitor;
+- (id)notifyNonNowPlayingConsumersOfPredictionItem:(id)arg1 withPredictedApplication:(id)arg2;
+- (void)notifyNowPlayingConsumerOfPredictionItem:(id)arg1 withPredictedApplication:(id)arg2;
 - (id)nowPlayingStatusQueue;
+- (id)preprocessPrediction:(id)arg1 predictionSource:(unsigned long long)arg2 mmReason:(long long)arg3 decReason:(long long)arg4 reasonSingle:(long long)arg5 reasonMetadata:(id)arg6;
 - (id)queue;
 - (id)routineManager;
 - (long long)rtReasonToDECReason:(long long)arg1;
@@ -92,6 +104,7 @@
 - (void)setHeroAppSuggestion:(id)arg1;
 - (void)setMmAppSuggestion:(id)arg1;
 - (void)setMostRecentNowPlayingApp:(id)arg1;
+- (void)setMostRecentNowPlayingPrediction:(id)arg1;
 - (void)setMostRecentPrediction:(id)arg1;
 - (void)setMusicStateProcessor:(id)arg1;
 - (void)setMyAppsSettingsMonitor:(id)arg1;

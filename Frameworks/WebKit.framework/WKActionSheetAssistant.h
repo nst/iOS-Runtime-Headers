@@ -52,12 +52,12 @@
                     unsigned int m_isValid : 1; 
                     unsigned int m_protocolIsInHTTPFamily : 1; 
                     unsigned int m_cannotBeABaseURL : 1; 
-                    unsigned int m_schemeEnd; 
+                    unsigned int m_portLength : 3; 
+                    unsigned int m_schemeEnd : 26; 
                     unsigned int m_userStart; 
                     unsigned int m_userEnd; 
                     unsigned int m_passwordEnd; 
                     unsigned int m_hostEnd; 
-                    unsigned int m_portEnd; 
                     unsigned int m_pathAfterLastSlash; 
                     unsigned int m_pathEnd; 
                     unsigned int m_queryEnd; 
@@ -71,12 +71,12 @@
                     unsigned int m_isValid : 1; 
                     unsigned int m_protocolIsInHTTPFamily : 1; 
                     unsigned int m_cannotBeABaseURL : 1; 
-                    unsigned int m_schemeEnd; 
+                    unsigned int m_portLength : 3; 
+                    unsigned int m_schemeEnd : 26; 
                     unsigned int m_userStart; 
                     unsigned int m_userEnd; 
                     unsigned int m_passwordEnd; 
                     unsigned int m_hostEnd; 
-                    unsigned int m_portEnd; 
                     unsigned int m_pathAfterLastSlash; 
                     unsigned int m_pathEnd; 
                     unsigned int m_queryEnd; 
@@ -145,11 +145,10 @@
                             float m_height; 
                         } m_size; 
                     } contentImageWithoutSelectionRectInRootViewCoordinates; 
-                    struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
+                    struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { 
                         struct FloatRect {} *m_buffer; 
                         unsigned int m_capacity; 
                         unsigned int m_size; 
-                        unsigned int m_mask; 
                     } textRectsInBoundingRectCoordinates; 
                     float contentImageScaleFactor; 
                     struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 

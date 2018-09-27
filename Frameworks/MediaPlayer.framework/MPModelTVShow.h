@@ -27,5 +27,6 @@
 
 - (id)artworkCatalog;
 - (id)editorialArtworkCatalog;
+- (id)humanDescription;
 
 @end

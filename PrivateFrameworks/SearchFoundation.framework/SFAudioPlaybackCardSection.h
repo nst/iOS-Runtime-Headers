@@ -4,10 +4,6 @@
 
 @interface SFAudioPlaybackCardSection : SFCardSection <NSCopying, NSSecureCoding, SFAudioPlaybackCardSection> {
     SFColor * _backgroundColor;
-    SFImage * _bottomImage;
-    NSString * _bottomImageEmoji;
-    SFText * _bottomSubtitle;
-    SFText * _bottomText;
     bool  _canBeHidden;
     SFRichText * _detailText;
     struct { 
@@ -29,18 +25,10 @@
     SFRichText * _subtitle;
     SFImage * _thumbnail;
     SFRichText * _title;
-    SFImage * _topImage;
-    NSString * _topImageEmoji;
-    NSString * _topSecondaryText;
-    SFText * _topText;
     NSString * _type;
 }
 
 @property (nonatomic, retain) SFColor *backgroundColor;
-@property (nonatomic, retain) SFImage *bottomImage;
-@property (nonatomic, copy) NSString *bottomImageEmoji;
-@property (nonatomic, retain) SFText *bottomSubtitle;
-@property (nonatomic, retain) SFText *bottomText;
 @property (nonatomic) bool canBeHidden;
 @property (nonatomic, copy) NSString *cardSectionId;
 @property (nonatomic, copy) NSArray *commands;
@@ -67,20 +55,14 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SFImage *thumbnail;
 @property (nonatomic, retain) SFRichText *title;
-@property (nonatomic, retain) SFImage *topImage;
-@property (nonatomic, copy) NSString *topImageEmoji;
-@property (nonatomic, copy) NSString *topSecondaryText;
-@property (nonatomic, retain) SFText *topText;
 @property (nonatomic, copy) NSString *type;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
-- (id)bottomImage;
-- (id)bottomImageEmoji;
-- (id)bottomSubtitle;
-- (id)bottomText;
 - (bool)canBeHidden;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)detailText;
@@ -102,10 +84,6 @@
 - (id)punchoutPickerTitle;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBottomImage:(id)arg1;
-- (void)setBottomImageEmoji:(id)arg1;
-- (void)setBottomSubtitle:(id)arg1;
-- (void)setBottomText:(id)arg1;
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setDetailText:(id)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
@@ -120,20 +98,16 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setThumbnail:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTopImage:(id)arg1;
-- (void)setTopImageEmoji:(id)arg1;
-- (void)setTopSecondaryText:(id)arg1;
-- (void)setTopText:(id)arg1;
 - (void)setType:(id)arg1;
 - (int)state;
 - (id)stopCommands;
 - (id)subtitle;
 - (id)thumbnail;
 - (id)title;
-- (id)topImage;
-- (id)topImageEmoji;
-- (id)topSecondaryText;
-- (id)topText;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

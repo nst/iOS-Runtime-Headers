@@ -6,6 +6,8 @@
     unsigned int  fallback_based_on_interface_type;
     unsigned long long  fallback_cap_interval;
     NWConcrete_nw_endpoint_handler * fallback_child;
+    unsigned int  fallback_child_in_progress;
+    unsigned int  fallback_child_indefinite_failed;
     unsigned int  fallback_disposition;
     NSObject<OS_nw_interface> * fallback_interface;
     void * fallback_timer;
@@ -13,6 +15,8 @@
     unsigned int  no_fallback_timer;
     void * post_transport_timer;
     NWConcrete_nw_endpoint_handler * primary_child;
+    unsigned int  primary_child_in_progress;
+    unsigned int  primary_child_indefinite_failed;
     NSObject<OS_nw_interface> * primary_interface;
     int  result;
     unsigned int  started_fallback;
@@ -26,7 +30,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
+- (bool)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
 - (void)cancelWithHandler:(id)arg1 forced:(bool)arg2;
 - (void)dealloc;
 - (id)init;

@@ -6,6 +6,7 @@
     GEOPDAddressObjectGeocodingResult * _addressObjectGeocodingResult;
     GEOPDAutocompleteResult * _autocompleteResult;
     GEOPDBatchPopularNearbySearchResult * _batchPopularNearbySearchResult;
+    GEOPDBatchSpatialLookupResult * _batchSpatialLookupResult;
     GEOPDBrandLookupResult * _brandLookupResult;
     GEOPDSearchBrowseCategorySuggestionResult * _browseCategorySuggestionResult;
     GEOPDCanonicalLocationSearchResult * _canonicalSearchResult;
@@ -36,6 +37,7 @@
 @property (nonatomic, retain) GEOPDAddressObjectGeocodingResult *addressObjectGeocodingResult;
 @property (nonatomic, retain) GEOPDAutocompleteResult *autocompleteResult;
 @property (nonatomic, retain) GEOPDBatchPopularNearbySearchResult *batchPopularNearbySearchResult;
+@property (nonatomic, retain) GEOPDBatchSpatialLookupResult *batchSpatialLookupResult;
 @property (nonatomic, retain) GEOPDBrandLookupResult *brandLookupResult;
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionResult *browseCategorySuggestionResult;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchResult *canonicalSearchResult;
@@ -47,6 +49,7 @@
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingResult;
 @property (nonatomic, readonly) bool hasAutocompleteResult;
 @property (nonatomic, readonly) bool hasBatchPopularNearbySearchResult;
+@property (nonatomic, readonly) bool hasBatchSpatialLookupResult;
 @property (nonatomic, readonly) bool hasBrandLookupResult;
 @property (nonatomic, readonly) bool hasBrowseCategorySuggestionResult;
 @property (nonatomic, readonly) bool hasCanonicalSearchResult;
@@ -93,6 +96,7 @@
 - (id)addressObjectGeocodingResult;
 - (id)autocompleteResult;
 - (id)batchPopularNearbySearchResult;
+- (id)batchSpatialLookupResult;
 - (id)brandLookupResult;
 - (id)browseCategorySuggestionResult;
 - (id)canonicalSearchResult;
@@ -108,6 +112,7 @@
 - (bool)hasAddressObjectGeocodingResult;
 - (bool)hasAutocompleteResult;
 - (bool)hasBatchPopularNearbySearchResult;
+- (bool)hasBatchSpatialLookupResult;
 - (bool)hasBrandLookupResult;
 - (bool)hasBrowseCategorySuggestionResult;
 - (bool)hasCanonicalSearchResult;
@@ -152,6 +157,7 @@
 - (void)setAddressObjectGeocodingResult:(id)arg1;
 - (void)setAutocompleteResult:(id)arg1;
 - (void)setBatchPopularNearbySearchResult:(id)arg1;
+- (void)setBatchSpatialLookupResult:(id)arg1;
 - (void)setBrandLookupResult:(id)arg1;
 - (void)setBrowseCategorySuggestionResult:(id)arg1;
 - (void)setCanonicalSearchResult:(id)arg1;

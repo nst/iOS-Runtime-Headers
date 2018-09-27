@@ -7,9 +7,13 @@
     NSString * _applicationID;
     int  _applicationState;
     id  _applicationStateChangeNotificationToken;
+    NSArray * _avconferenceClientApplicationIDs;
     unsigned int  _bksApplicationState;
     bool  _bksApplicationStateInitialized;
     NSString * _cachedApplicationIDToInheritAppStateFrom;
+    struct { 
+        unsigned int val[8]; 
+    }  _clientAuditToken;
     bool  _clientCanInheritApplicationState;
     int  _clientType;
     FigCaptureDisplayLayoutMonitor * _displayLayoutMonitor;
@@ -19,6 +23,7 @@
     id /* block */  _interruptionHandler;
     id  _interruptionStateChangeNotificationToken;
     bool  _invalid;
+    bool  _isForThirdPartyTorch;
     int  _layoutState;
     bool  _layoutStateInitialized;
     int  _pid;
@@ -30,6 +35,8 @@
 }
 
 @property (readonly) NSString *applicationID;
+@property (readonly) int applicationState;
+@property (readonly) int clientType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -44,7 +51,7 @@
 + (id)_stringForClientLayoutState:(int)arg1;
 + (id)_stringForClientType:(int)arg1;
 + (void)initialize;
-+ (void)startPrewarmingMonitor;
++ (void)startPrewarmingMonitorWithHandler:(id /* block */)arg1;
 + (void)stopPrewarmingMonitor;
 
 - (int)_createAndObserveCMSession;
@@ -52,7 +59,9 @@
 - (void)_handleApplicationStateChange:(unsigned int)arg1;
 - (void)_handleAudioInterruptionChange:(int)arg1;
 - (void)_handleCMSessionManagerNofification:(id)arg1;
+- (id)_initWithClientAuditToken:(id)arg1 forThirdPartyTorch:(bool)arg2 avconferenceClientApplicationIDs:(id)arg3 applicationAndLayoutStateHandler:(id /* block */)arg4 interruptionHandler:(id /* block */)arg5;
 - (bool)_isApplicationStateMonitoringRequiredForClient;
+- (bool)_isCMSessionInterruptionObservingRequiredForClient;
 - (bool)_isDisplayLayoutMonitoringRequiredForClient;
 - (id)_logString;
 - (void)_notifyIfResolvedSupportedExtensionApplicationStateOrLayoutStateDidChangeUsingLayoutStateChanged:(bool)arg1;
@@ -63,10 +72,13 @@
 - (void)_updateApplicationState;
 - (void)_updateClientStateCondition:(void*)arg1 newValue:(id)arg2;
 - (id)applicationID;
+- (int)applicationState;
+- (int)clientType;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithPID:(int)arg1 applicationAndLayoutStateHandler:(id /* block */)arg2 interruptionHandler:(id /* block */)arg3;
+- (id)initWithAVConferenceClientApplicationIDs:(id)arg1 applicationAndLayoutStateHandler:(id /* block */)arg2 interruptionHandler:(id /* block */)arg3;
+- (id)initWithClientAuditToken:(id)arg1 forThirdPartyTorch:(bool)arg2 applicationAndLayoutStateHandler:(id /* block */)arg3 interruptionHandler:(id /* block */)arg4;
 - (void)invalidate;
 - (void)layoutMonitor:(id)arg1 didUpdateLayoutWithForegroundApps:(id)arg2 layoutState:(int)arg3;
 - (int)observeSession:(struct opaqueCMSession { }*)arg1;

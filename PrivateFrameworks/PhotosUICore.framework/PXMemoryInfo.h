@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
-@property (nonatomic, readonly) long long category;
+@property (nonatomic, readonly) unsigned long long category;
 @property (nonatomic, readonly) PHFetchResult *keyAssetFetchResult;
 @property (nonatomic, readonly) NSString *localizedDateText;
 @property (nonatomic, readonly) NSString *localizedTitle;
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)assetCollection;
-- (long long)category;
+- (unsigned long long)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)keyAssetFetchResult;

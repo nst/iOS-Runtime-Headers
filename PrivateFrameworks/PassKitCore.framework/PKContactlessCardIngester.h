@@ -5,11 +5,12 @@
 @interface PKContactlessCardIngester : NSObject <NFRemoteAdminEventListener> {
     id /* block */  _cardSessionTokenCompletionHandler;
     NSObject<OS_dispatch_queue> * _contactlessCardIngesterQueue;
+    NSNumberFormatter * _currencyNumberFormatter;
     <PKContactlessCardIngesterDelegate> * _delegate;
     id /* block */  _disableCardCompletionHandler;
     bool  _listening;
     NSString * _pushTopic;
-    NSDictionary * _readerModeMetadata;
+    PKPaymentProvisioningMethodMetadata * _readerModeProvisioningMetadata;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,12 +18,12 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
 + (id)debugDescriptionForStatus:(unsigned long long)arg1;
 + (bool)isSupported;
 
 - (void).cxx_destruct;
 - (void)_cancelCardIngestion;
+- (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
 - (void)_ingestCardWithCardSessionToken:(id)arg1 completion:(id /* block */)arg2;
 - (void)_ingestCardWithCompletion:(id /* block */)arg1;
 - (void)_startListeningToRemoteAdminEventsIfRequired;

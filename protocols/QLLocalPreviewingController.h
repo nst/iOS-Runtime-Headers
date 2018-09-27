@@ -13,6 +13,7 @@
 
 - (bool)canEnterFullScreen;
 - (bool)canPinchToDismiss;
+- (bool)canShowNavBar;
 - (bool)canShowToolBar;
 - (bool)canSwipeToDismiss;
 - (bool)canToggleFullScreen;

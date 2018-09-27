@@ -7,8 +7,6 @@
 
 - (void)addTextLines:(NSString *)arg1;
 - (void)clearTextLines;
-- (bool)hasTextNoWrap;
-- (bool)hasTextWeight;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

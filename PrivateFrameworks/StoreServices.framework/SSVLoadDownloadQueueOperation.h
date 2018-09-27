@@ -25,7 +25,7 @@
 @property (copy) NSString *requestIdentifier;
 @property (readonly) SSURLRequestProperties *requestProperties;
 @property (nonatomic, copy) NSURL *requestURL;
-@property (nonatomic, retain) NSString *storeCorrelationID;
+@property (nonatomic, copy) NSString *storeCorrelationID;
 
 + (id)newLoadAutomaticDownloadQueueOperation;
 

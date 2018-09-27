@@ -10,7 +10,7 @@
 @property (nonatomic, copy) FBSSceneSettings *settings;
 @property (nonatomic, retain) FBSSceneSettingsDiff *settingsDiff;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setSettings:(id)arg1;
 - (void)setSettingsDiff:(id)arg1;
 - (id)settings;

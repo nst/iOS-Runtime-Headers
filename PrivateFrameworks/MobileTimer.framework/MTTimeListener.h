@@ -3,24 +3,29 @@
  */
 
 @interface MTTimeListener : NSObject <MTAgentNotificationListener> {
-    MTAlarmScheduler * _alarmScheduler;
-    MTTimerScheduler * _timerScheduler;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
+    <NAScheduler> * _serializer;
 }
 
-@property (nonatomic, retain) MTAlarmScheduler *alarmScheduler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSHashTable *observers;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) <NAScheduler> *serializer;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) MTTimerScheduler *timerScheduler;
 
 - (void).cxx_destruct;
-- (id)alarmScheduler;
 - (void)handleNotification:(id)arg1;
 - (bool)handlesNotification:(id)arg1;
-- (id)initWithAlarmScheduler:(id)arg1 timerScheduler:(id)arg2;
-- (void)setAlarmScheduler:(id)arg1;
-- (void)setTimerScheduler:(id)arg1;
-- (id)timerScheduler;
+- (id)init;
+- (id)observers;
+- (id)queue;
+- (void)registerObserver:(id)arg1;
+- (id)serializer;
+- (void)setObservers:(id)arg1;
+- (void)setQueue:(id)arg1;
+- (void)setSerializer:(id)arg1;
 
 @end

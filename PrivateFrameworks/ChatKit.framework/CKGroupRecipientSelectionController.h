@@ -24,6 +24,7 @@
 - (void)recipientAvailibilitiesDidUpdate;
 - (void)recipientSelectionController:(id)arg1 didFinishAvailaiblityLookupForRecipient:(id)arg2;
 - (void)recipientSelectionController:(id)arg1 textDidChange:(id)arg2;
+- (void)recipientSelectionControllerDidBecomeFirstResponder:(id)arg1;
 - (void)recipientSelectionControllerDidChange;
 - (void)recipientSelectionControllerDidChangeSize:(id)arg1;
 - (void)recipientSelectionControllerDidPushABViewController:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUShadow : NSObject <NSCoding, NSCopying> {
+@interface SUShadow : NSObject <NSCopying, NSSecureCoding> {
     UIColor * _color;
     struct CGSize { 
         double width; 
@@ -16,6 +16,8 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } offset;
 @property (nonatomic) double opacity;
 @property (nonatomic) double radius;
+
++ (bool)supportsSecureCoding;
 
 - (void)applyToLayer:(id)arg1;
 - (id)color;

@@ -2,20 +2,23 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFConnection : NSObject <AFAudioPowerUpdaterDelegate, NSXPCListenerDelegate> {
+@interface AFConnection : NSObject <AFAccessibilityListening, AFAudioPowerUpdaterDelegate, AFDeviceRingerSwitchListening, NSXPCListenerDelegate> {
     long long  _activeRequestType;
     NSUUID * _activeRequestUUID;
     long long  _activeRequestUsefulUserResultType;
     unsigned int  _audioSessionID;
     NSArray * _cachedBulletins;
+    AFClockAlarmSnapshot * _cachedClockAlarmSnapshot;
+    AFClockTimerSnapshot * _cachedClockTimerSnapshot;
     AFClientConfiguration * _clientConfiguration;
-    unsigned int  _clientStateIsInSync;
+    unsigned int  _clientConfigurationIsInSync;
     NSXPCConnection * _connection;
     <AFAssistantUIService> * _delegate;
     unsigned int  _hasOutstandingRequest;
     AFAudioPowerUpdater * _inputAudioPowerUpdater;
     unsigned int  _isCapturingSpeech;
     NSError * _lastRetryError;
+    AFConnectionLocationManager * _locationManager;
     NSString * _outstandingRequestClass;
     unsigned long long  _pendingSpeechRequestCounter;
     NSMutableDictionary * _replyHandlerForAceId;
@@ -55,10 +58,13 @@
 - (void)_aceConnectionWillRetryOnError:(id)arg1;
 - (void)_barrier;
 - (id)_cachedBulletins;
+- (id)_cachedClockAlarmSnapshot;
+- (id)_cachedClockTimerSnapshot;
 - (void)_cancelRequestTimeout;
 - (void)_checkAndSetIsCapturingSpeech:(bool)arg1;
 - (void)_clearAssistantInfoForAccountWithIdentifier:(id)arg1;
 - (void)_clearConnection;
+- (id)_clientConfiguration;
 - (id)_clientService;
 - (id)_clientServiceWithErrorHandler:(id /* block */)arg1;
 - (void)_completeRequestWithUUID:(id)arg1 error:(id)arg2;
@@ -95,7 +101,6 @@
 - (void)_tellDelegateDidFinishAcousticIDRequestWithSuccess:(bool)arg1;
 - (void)_tellDelegateExtensionRequestFinishedForApplication:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateExtensionRequestWillStartForApplication:(id)arg1;
-- (void)_tellDelegateHandleIntent:(id)arg1 inBackgroundAppWithBundleId:(id)arg2 reply:(id /* block */)arg3;
 - (void)_tellDelegateInvalidateCurrentUserActivity;
 - (void)_tellDelegateRequestWillStart;
 - (void)_tellDelegateSetUserActivityInfo:(id)arg1 webpageURL:(id)arg2;
@@ -119,14 +124,17 @@
 - (void)_tellSpeechDelegateSpeechRecognized:(id)arg1;
 - (void)_tellSpeechDelegateSpeechRecognizedPartialResult:(id)arg1;
 - (void)_tellSpeechDelegateToPerformTwoShotPromptWithType:(long long)arg1 reply:(id /* block */)arg2;
-- (void)_updateClientState;
+- (void)_updateClientConfiguration;
 - (void)_updateState;
+- (void)_updateStateIfNotInSync;
 - (void)_willCancelRequest;
 - (void)_willCompleteRequest;
 - (void)_willEndSession;
 - (void)_willFailRequestWithError:(id)arg1;
 - (void)_willPresentUsefulUserResultWithType:(long long)arg1;
 - (void)_willStartRequestWithSpeech:(bool)arg1 analyticsEventProvider:(id /* block */)arg2;
+- (void)accessibilityObserver:(id)arg1 didChangeVibrationDisabledPreference:(bool)arg2;
+- (void)accessibilityObserver:(id)arg1 didChangeVoiceOverTouchEnabledPreference:(bool)arg2;
 - (id)acquireUserInteractionAssertion;
 - (void)adviseSessionArbiterToContinueWithPreviousWinner:(bool)arg1;
 - (void)audioPowerUpdaterDidUpdate:(id)arg1 averagePower:(float)arg2 peakPower:(float)arg3;
@@ -140,6 +148,7 @@
 - (void)clearContext;
 - (void)dealloc;
 - (id)delegate;
+- (void)deviceRingerObserver:(id)arg1 didChangeState:(long long)arg2;
 - (void)didDismissUI;
 - (void)endSession;
 - (void)endUpdateOutputAudioPower;
@@ -150,6 +159,7 @@
 - (void)forceAudioSessionInactiveWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)getCachedObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (void)getRemoteClockTimerSnapshotWithCompletion:(id /* block */)arg1;
 - (bool)hasActiveRequest;
 - (id)init;
 - (id)initWithTargetQueue:(id)arg1;
@@ -161,7 +171,9 @@
 - (void)prepareForPhoneCall;
 - (void)recordRequestMetric:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(id)arg1;
+- (void)reportIssueForError:(id)arg1 type:(long long)arg2 context:(id)arg3;
 - (void)requestBarrier:(id /* block */)arg1;
+- (void)resumeInterruptedAudioPlaybackIfNeeded;
 - (void)rollbackClearContext;
 - (void)rollbackRequest;
 - (void)sendFeedbackToAppPreferencesPredictorForMetricsContext:(id)arg1 selectedBundleId:(id)arg2;
@@ -169,13 +181,18 @@
 - (void)sendGenericAceCommand:(id)arg1 conflictHandler:(id /* block */)arg2;
 - (void)sendReplyCommand:(id)arg1;
 - (void)setAlertContextWithBulletins:(id)arg1;
+- (void)setAlertContextWithClockAlarmSnapshot:(id)arg1;
+- (void)setAlertContextWithClockTimerSnapshot:(id)arg1;
 - (void)setApplicationContext:(id)arg1;
 - (void)setApplicationContextForApplicationInfos:(id)arg1;
 - (void)setApplicationContextForApplicationInfos:(id)arg1 withRefId:(id)arg2;
 - (void)setCarDNDActive:(bool)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsStark:(bool)arg1;
+- (void)setDeviceRingerSwitchState:(long long)arg1;
+- (void)setIsAccessibilityVibrationDisabled:(bool)arg1;
+- (void)setIsAccessibilityVoiceOverTouchEnabled:(bool)arg1;
+- (void)setIsDeviceInStarkMode:(bool)arg1;
 - (void)setLockState:(bool)arg1 screenLocked:(bool)arg2;
 - (void)setMyriadDecisionResult:(bool)arg1;
 - (void)setOverriddenApplicationContext:(id)arg1 withContext:(id)arg2;

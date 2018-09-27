@@ -37,7 +37,7 @@
 @property (nonatomic) bool shouldFetchEditorialSectionTags;
 
 - (void).cxx_destruct;
-- (long long)_requestTypeOverride;
+- (id)_edgeCacheHint;
 - (id)additionalArticleListIDs;
 - (id)additionalTagIDs;
 - (id)articleListCachePolicy;

@@ -46,5 +46,6 @@
 - (id)tocEntries;
 - (id)tocSettings;
 - (id)visibleTOCEntries;
+- (bool)wantsPositionFixedWhenCopying;
 
 @end

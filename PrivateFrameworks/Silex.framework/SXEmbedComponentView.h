@@ -24,6 +24,7 @@
     UILabel * _errorLabel;
     NSMutableSet * _expectedMessages;
     bool  _failedLoading;
+    bool  _hasRegisteredScriptMessageHandlers;
     WKNavigation * _initialNavigation;
     bool  _isCurrentlyLoadingEmbedData;
     struct CGPoint { 
@@ -51,6 +52,7 @@
 @property (nonatomic, retain) UILabel *errorLabel;
 @property (nonatomic, retain) NSMutableSet *expectedMessages;
 @property (nonatomic) bool failedLoading;
+@property (nonatomic) bool hasRegisteredScriptMessageHandlers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WKNavigation *initialNavigation;
 @property (nonatomic) bool isCurrentlyLoadingEmbedData;
@@ -70,6 +72,7 @@
 - (void)_webViewWebProcessDidCrash:(id)arg1;
 - (id)actionHandler;
 - (id)activityIndicator;
+- (void)addScriptMessageHandlers;
 - (bool)allowHierarchyRemoval;
 - (struct CGSize { double x1; double x2; })currentLayoutSize;
 - (struct CGSize { double x1; double x2; })currentViewportSize;
@@ -88,6 +91,7 @@
 - (void)handleError:(id)arg1;
 - (void)handleLongPress:(id)arg1;
 - (bool)hasLoadedEmbedData;
+- (bool)hasRegisteredScriptMessageHandlers;
 - (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8;
 - (id)initialNavigation;
 - (double)initialScale;
@@ -100,6 +104,7 @@
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (id)reachabilityProvider;
 - (void)reloadEmbed;
+- (void)removeScriptMessageHandlers;
 - (void)renderContents;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setActivityIndicator:(id)arg1;
@@ -112,6 +117,7 @@
 - (void)setExpectedMessages:(id)arg1;
 - (void)setFailedLoading:(bool)arg1;
 - (void)setHTML:(id)arg1;
+- (void)setHasRegisteredScriptMessageHandlers:(bool)arg1;
 - (void)setInitialNavigation:(id)arg1;
 - (void)setIsCurrentlyLoadingEmbedData:(bool)arg1;
 - (void)setLastKnownTouchPoint:(struct CGPoint { double x1; double x2; })arg1;

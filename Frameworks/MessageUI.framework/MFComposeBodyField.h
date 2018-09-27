@@ -168,6 +168,7 @@
 - (void)paste:(id)arg1;
 - (id)plainTextAlternative;
 - (id)plainTextContent;
+- (id)plainTextContentFromDOMDocument:(id)arg1;
 - (void)prependMarkupString:(id)arg1 quote:(bool)arg2;
 - (void)prependMarkupString:(id)arg1 quote:(bool)arg2 emptyFirst:(bool)arg3;
 - (void)prependPreamble:(id)arg1;

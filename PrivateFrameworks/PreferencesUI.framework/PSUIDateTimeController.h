@@ -3,6 +3,7 @@
  */
 
 @interface PSUIDateTimeController : PSListController <PSUIDateTimePickerCellDelegate> {
+    PSSpecifier * _ampmToggleSpecifier;
     PSSpecifier * _currentTimeSpecifier;
     struct __CFDateFormatter { } * _dateFormatter;
     bool  _localeForces24HourTime;
@@ -14,6 +15,7 @@
     NSTimer * _timer;
 }
 
+@property (nonatomic, retain) PSSpecifier *ampmToggleSpecifier;
 @property (retain) PSSpecifier *currentTimeSpecifier;
 @property (nonatomic, retain) PSWallClockMinuteTimer *minuteTimer;
 @property (retain) PSSpecifier *timePickerSpecifier;
@@ -23,13 +25,18 @@
 - (void)_createDateTimeFormatters;
 - (void)_setSpecifier:(id)arg1 valueEnabled:(bool)arg2;
 - (void)_updateCurrentTime;
+- (id)ampmToggleSpecifier;
 - (id)currentDateString;
 - (id)currentTimeSpecifier;
 - (id)currentTimeString;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
+- (void)effectiveSettingsChanged:(id)arg1;
 - (id)init;
 - (id)is24HourTime:(id)arg1;
+- (id)isShowingAMPMInStatusBar:(id)arg1;
+- (id)isShowingDateInStatusBar:(id)arg1;
+- (void)loadTimeZoneController:(id)arg1;
 - (void)localeChanged:(id)arg1;
 - (id)makeCurrentTimeSpecifier;
 - (id)makeTimePickerSpecifier;
@@ -37,9 +44,12 @@
 - (void)newCarrierNotification;
 - (void)reloadTimezone;
 - (void)set24HourTime:(id)arg1 specifier:(id)arg2;
+- (void)setAmpmToggleSpecifier:(id)arg1;
 - (void)setAutomaticTimeFooter;
 - (void)setCurrentTimeSpecifier:(id)arg1;
 - (void)setMinuteTimer:(id)arg1;
+- (void)setShowAMPMInStatusBar:(id)arg1 specifier:(id)arg2;
+- (void)setShowDateInStatusBar:(id)arg1 specifier:(id)arg2;
 - (void)setTimePickerSpecifier:(id)arg1;
 - (void)setTimeZoneSpecifier:(id)arg1;
 - (void)setTimeZoneValue:(id)arg1 specifier:(id)arg2;

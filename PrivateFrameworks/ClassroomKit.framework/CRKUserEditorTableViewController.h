@@ -4,8 +4,8 @@
 
 @interface CRKUserEditorTableViewController : UITableViewController <CRKSwitchTableViewCellDelegate> {
     <CRKUserEditorTableViewControllerDelegate> * _delegate;
-    bool  _showsFamilyNameName;
-    bool  _showsPhoneticName;
+    bool  _showFamilyNameFirst;
+    bool  _showPhoneticName;
     CRKUser * _user;
     long long  mMeCardSwitchCellSection;
     CRKUser * mMeCardUser;
@@ -18,8 +18,8 @@
 @property (nonatomic) <CRKUserEditorTableViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool showsFamilyNameName;
-@property (nonatomic) bool showsPhoneticName;
+@property (getter=shouldShowFamilyNameFirst, nonatomic) bool showFamilyNameFirst;
+@property (getter=shouldShowPhoneticName, nonatomic) bool showPhoneticName;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CRKUser *user;
 
@@ -30,11 +30,11 @@
 - (void)loadView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsFamilyNameName:(bool)arg1;
-- (void)setShowsPhoneticName:(bool)arg1;
+- (void)setShowFamilyNameFirst:(bool)arg1;
+- (void)setShowPhoneticName:(bool)arg1;
 - (void)setUser:(id)arg1;
-- (bool)showsFamilyNameName;
-- (bool)showsPhoneticName;
+- (bool)shouldShowFamilyNameFirst;
+- (bool)shouldShowPhoneticName;
 - (void)switchCellValueDidChange:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

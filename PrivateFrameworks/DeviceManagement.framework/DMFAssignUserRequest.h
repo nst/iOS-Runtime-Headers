@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFAssignUserRequest : CATTaskRequest {
+@interface DMFAssignUserRequest : DMFTaskRequest {
     NSString * _appleID;
     NSString * _displayName;
     NSArray * _enrolledGroupIdentifiers;

@@ -10,6 +10,7 @@
     NSString * _eventId;
     EKEventStore * _store;
     EKEventEditViewController * _strongSelf;
+    NSString * _suggestionKey;
     int  _transitionForModalViewPresentation;
 }
 
@@ -24,6 +25,7 @@
 @property (nonatomic) bool scrollToNotes;
 @property (nonatomic) bool showAttachments;
 @property (nonatomic, retain) EKEventEditViewController *strongSelf;
+@property (nonatomic, retain) NSString *suggestionKey;
 @property (nonatomic) bool timeImplicitlySet;
 @property (nonatomic) int transitionForModalViewPresentation;
 
@@ -46,7 +48,9 @@
 - (double)editorNavBarRightContentInset;
 - (id)event;
 - (id)eventStore;
+- (void)focusAndSelectStartDate;
 - (void)focusAndSelectTitle;
+- (void)focusTitle;
 - (void)handleTapOutside;
 - (bool)hasUnsavedChanges;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -65,11 +69,13 @@
 - (void)setScrollToNotes:(bool)arg1;
 - (void)setShowAttachments:(bool)arg1;
 - (void)setStrongSelf:(id)arg1;
+- (void)setSuggestionKey:(id)arg1;
 - (void)setTimeImplicitlySet:(bool)arg1;
 - (void)setTransitionForModalViewPresentation:(int)arg1;
 - (bool)shouldAutorotate;
 - (bool)showAttachments;
 - (id)strongSelf;
+- (id)suggestionKey;
 - (unsigned long long)supportedInterfaceOrientations;
 - (bool)timeImplicitlySet;
 - (int)transitionForModalViewPresentation;

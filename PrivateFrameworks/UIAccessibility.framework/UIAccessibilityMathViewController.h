@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UIAccessibilityMathViewController : UIViewController {
+@interface UIAccessibilityMathViewController : UIViewController <WKNavigationDelegate> {
     NSDictionary * _mathDictionary;
     SCRCMathExpression * _mathExpression;
+    UIAccessibilityMathWebView * _webView;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *mathDictionary;
+@property (readonly) Class superclass;
 
 + (id)_uiaxBundle;
 

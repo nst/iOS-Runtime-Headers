@@ -43,6 +43,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)peekObjectForKey:(id)arg1;
 - (void)performTransaction:(id /* block */)arg1;
+- (void)pokeKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setDelegate:(id)arg1;

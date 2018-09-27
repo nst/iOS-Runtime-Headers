@@ -45,6 +45,6 @@
 - (void)unlockDatabaseWithCompletion:(id /* block */)arg1;
 - (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)validateDatabaseAtPath:(id)arg1 error:(id*)arg2;
 
 @end

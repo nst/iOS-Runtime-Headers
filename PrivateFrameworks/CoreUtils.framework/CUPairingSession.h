@@ -24,11 +24,14 @@
     NSDictionary * _peerInfo;
     unsigned int  _pinType;
     id /* block */  _promptForPINHandler;
+    unsigned long long  _selfAppFlags;
     id /* block */  _sendDataHandler;
     unsigned int  _sessionType;
     id /* block */  _showPINHandler;
     id /* block */  _showPINHandlerEx;
+    id /* block */  _signDataHandler;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
+    id /* block */  _verifySignatureHandler;
 }
 
 @property (nonatomic, copy) NSDictionary *acl;
@@ -47,14 +50,18 @@
 @property (nonatomic, copy) NSString *myAppleID;
 @property (nonatomic, retain) CUAppleIDClient *myAppleIDInfoClient;
 @property (nonatomic, readonly) CUPairedPeer *pairedPeer;
+@property (nonatomic, readonly) unsigned long long peerAppFlags;
 @property (nonatomic, copy) NSString *peerAppleID;
 @property (nonatomic, readonly, copy) NSDictionary *peerInfo;
 @property (nonatomic) unsigned int pinType;
 @property (nonatomic, copy) id /* block */ promptForPINHandler;
+@property (nonatomic) unsigned long long selfAppFlags;
 @property (nonatomic, copy) id /* block */ sendDataHandler;
 @property (nonatomic) unsigned int sessionType;
 @property (nonatomic, copy) id /* block */ showPINHandler;
 @property (nonatomic, copy) id /* block */ showPINHandlerEx;
+@property (nonatomic, copy) id /* block */ signDataHandler;
+@property (nonatomic, copy) id /* block */ verifySignatureHandler;
 
 - (void).cxx_destruct;
 - (void)_activate;
@@ -85,11 +92,13 @@
 - (id)myAppleIDInfoClient;
 - (id)openStreamWithName:(id)arg1 error:(id*)arg2;
 - (id)pairedPeer;
+- (unsigned long long)peerAppFlags;
 - (id)peerAppleID;
 - (id)peerInfo;
 - (unsigned int)pinType;
 - (id /* block */)promptForPINHandler;
 - (void)receivedData:(id)arg1;
+- (unsigned long long)selfAppFlags;
 - (id /* block */)sendDataHandler;
 - (unsigned int)sessionType;
 - (void)setAcl:(id)arg1;
@@ -110,12 +119,17 @@
 - (void)setPeerAppleID:(id)arg1;
 - (void)setPinType:(unsigned int)arg1;
 - (void)setPromptForPINHandler:(id /* block */)arg1;
+- (void)setSelfAppFlags:(unsigned long long)arg1;
 - (void)setSendDataHandler:(id /* block */)arg1;
 - (void)setSessionType:(unsigned int)arg1;
 - (void)setShowPINHandler:(id /* block */)arg1;
 - (void)setShowPINHandlerEx:(id /* block */)arg1;
+- (void)setSignDataHandler:(id /* block */)arg1;
+- (void)setVerifySignatureHandler:(id /* block */)arg1;
 - (id /* block */)showPINHandler;
 - (id /* block */)showPINHandlerEx;
+- (id /* block */)signDataHandler;
 - (void)tryPIN:(id)arg1;
+- (id /* block */)verifySignatureHandler;
 
 @end

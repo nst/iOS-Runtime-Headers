@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
-- (id)backingChannelTagIDWithCoreConfiguration:(id)arg1;
+- (id)backingChannelTagIDWithConfiguration:(id)arg1;
 - (bool)emitsSingletonGroups;
 - (id)emittableGroupTypes;
 - (id)groupEmitterIdentifier;

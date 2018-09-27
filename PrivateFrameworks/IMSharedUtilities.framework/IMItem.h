@@ -18,6 +18,7 @@
     NSString * _handle;
     long long  _messageID;
     NSString * _parentChatID;
+    NSString * _personCentric;
     NSString * _roomName;
     NSDictionary * _senderInfo;
     NSString * _service;
@@ -48,6 +49,8 @@
 @property (nonatomic, readonly) bool isLastMessageCandidate;
 @property (setter=_setMessageID:, nonatomic) long long messageID;
 @property (nonatomic, copy) NSString *parentChatID;
+@property (nonatomic, retain) NSString *personCentric;
+@property (nonatomic, retain) NSString *personCentricID;
 @property (nonatomic, retain) NSString *roomName;
 @property (nonatomic, retain) NSString *sender;
 @property (nonatomic, retain) NSDictionary *senderInfo;
@@ -109,6 +112,8 @@
 - (bool)isSticker;
 - (long long)messageID;
 - (id)parentChatID;
+- (id)personCentric;
+- (id)personCentricID;
 - (id)pluginSessionGUID;
 - (id)roomName;
 - (id)sender;
@@ -128,6 +133,8 @@
 - (void)setGuid:(id)arg1;
 - (void)setHandle:(id)arg1;
 - (void)setParentChatID:(id)arg1;
+- (void)setPersonCentric:(id)arg1;
+- (void)setPersonCentricID:(id)arg1;
 - (void)setRoomName:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSenderInfo:(id)arg1;
@@ -192,8 +199,6 @@
 - (void)_populateCKRecordWithIMMessageItemFields:(id)arg1;
 - (void)_populateCKRecordWithIMParticipantChangeItemFields:(id)arg1;
 - (id)_recordFromServerChangeToken;
-- (id)_recordIDUsingName:(id)arg1 zoneID:(id)arg2;
-- (id)_recordNameUsingSalt:(id)arg1;
 - (id)_recordType;
 - (bool)_shouldDownloadIfPhoneNumberAndNoSIM:(id)arg1;
 - (bool)_usingStingRay;

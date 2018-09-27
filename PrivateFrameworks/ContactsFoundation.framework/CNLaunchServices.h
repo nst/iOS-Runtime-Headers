@@ -18,6 +18,7 @@
 - (id)init;
 - (id)initWithAdapter:(id)arg1;
 - (id)log;
+- (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)openUserActivityData:(id)arg1 inApplication:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAdapter:(id)arg1;
 - (void)setLog:(id)arg1;

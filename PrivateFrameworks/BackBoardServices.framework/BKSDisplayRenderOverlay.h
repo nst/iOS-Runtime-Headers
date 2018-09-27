@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=_descriptor, nonatomic, readonly, retain) BKSDisplayRenderOverlayDescriptor *descriptor;
+@property (getter=_descriptor, nonatomic, readonly) BKSDisplayRenderOverlayDescriptor *descriptor;
 @property (nonatomic, readonly, retain) CADisplay *display;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long interfaceOrientation;
@@ -22,8 +22,8 @@
 + (id)dismissActions;
 + (id)existingOverlayForDisplay:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_descriptor;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

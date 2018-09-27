@@ -61,6 +61,7 @@
 - (void)nextAction:(id)arg1;
 - (id)nextBarButtonItem;
 - (bool)playAltClips;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)prepareContentSizeForiPad;
 - (void)prepareWithActivityViewController:(id)arg1 itemProvider:(id)arg2;
 - (void)setActivityDisplayHeightConstraint:(id)arg1;
@@ -80,7 +81,6 @@
 - (void)setShareOrientationView:(id)arg1;
 - (void)setupConstraints;
 - (id)shareOrientationView;
-- (double)theRealDisplayHeight;
 - (void)updatePresenceOfCancelButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

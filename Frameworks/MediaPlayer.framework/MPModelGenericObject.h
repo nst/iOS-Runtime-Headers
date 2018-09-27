@@ -39,6 +39,7 @@
 
 - (id)anyObject;
 - (id)flattenedGenericObject;
+- (id)humanDescription;
 - (id)identifiers;
 - (id)mediaItemPropertyValues;
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;

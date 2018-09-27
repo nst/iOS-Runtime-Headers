@@ -12,6 +12,7 @@
     unsigned long long  _requestType;
     PLRevGeoLocationInfo * _revGeoLocationInfo;
     <GEOMapServiceTicket> * _reverseGeocodeRequest;
+    unsigned long long  _signpostId;
 }
 
 @property (nonatomic, copy) NSArray *assetIds;
@@ -24,6 +25,7 @@
 @property (nonatomic) unsigned long long requestType;
 @property (nonatomic, retain) PLRevGeoLocationInfo *revGeoLocationInfo;
 @property (nonatomic, retain) <GEOMapServiceTicket> *reverseGeocodeRequest;
+@property (nonatomic) unsigned long long signpostId;
 
 - (id)assetIds;
 - (void)dealloc;
@@ -49,5 +51,7 @@
 - (void)setRequestType:(unsigned long long)arg1;
 - (void)setRevGeoLocationInfo:(id)arg1;
 - (void)setReverseGeocodeRequest:(id)arg1;
+- (void)setSignpostId:(unsigned long long)arg1;
+- (unsigned long long)signpostId;
 
 @end

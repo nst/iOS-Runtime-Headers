@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLQuickActionManager : NSObject <PLCameraPreviewWellImageChangeObserver> {
+@interface PLQuickActionManager : NSObject {
     Class  __SBSApplicationShortcutCustomImageIconClass;
     Class  __SBSApplicationShortcutItemClass;
     Class  __SBSApplicationShortcutServiceClass;
     SBSApplicationShortcutService * __appShortcutService;
     NSData * __cachedMostRecentPhotoData;
     bool  __mostRecentPhotoIsInvalid;
+    id  _cameraWellObserver;
+    id  _localeObserver;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (setter=_setSBSApplicationShortcutCustomImageIconClass:, nonatomic, retain) Class _SBSApplicationShortcutCustomImageIconClass;
@@ -26,7 +29,7 @@
 - (id)_appShortcutService;
 - (id)_buildFavoritesQuickAction;
 - (id)_buildMostRecentPhotoQuickAction;
-- (id)_buildOneYearAgoQuickAction;
+- (id)_buildOneYearAgoQuickAction:(id)arg1;
 - (id)_buildSearchQuickAction;
 - (id)_cachedMostRecentPhotoData;
 - (bool)_mostRecentPhotoIsInvalid;
@@ -37,12 +40,12 @@
 - (void)_setSBSApplicationShortcutItemClass:(Class)arg1;
 - (void)_setSBSApplicationShortcutServiceClass:(Class)arg1;
 - (id)_shortcutImageNamed:(id)arg1;
-- (bool)_userHasPhotos;
-- (bool)_userHasPhotosFromLastYear;
+- (bool)_userHasPhotos:(id)arg1;
+- (bool)_userHasPhotosFromLastYear:(id)arg1;
 - (void)buildQuickActionItems;
-- (void)cameraPreviewWellImageDidChange:(id)arg1;
+- (void)cameraPreviewWellImageDidChange;
 - (void)dealloc;
 - (id)init;
-- (void)rebuildQuickActionForLocaleChanges:(id)arg1;
+- (void)rebuildQuickActionForLocaleChanges;
 
 @end

@@ -12,6 +12,7 @@
 - (bool)personUUIDIsDeleted:(NSString *)arg1;
 - (NSArray *)personUUIDsToDedupe;
 - (bool)serverSupportsGraphHome;
+- (bool)serverSupportsSuggestion;
 - (bool)serverSupportsVision;
 - (void)setPersonUUIDsToDedupe:(NSArray *)arg1;
 

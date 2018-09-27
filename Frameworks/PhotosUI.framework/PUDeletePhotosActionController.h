@@ -3,11 +3,12 @@
  */
 
 @interface PUDeletePhotosActionController : NSObject {
-    NSArray * __additionalAssetsToDelete;
     NSArray * __assets;
     UIAlertController * __mainAlertController;
     UIAlertController * __oneTimeConfirmationAlertController;
     UIAlertController * __overQuotaConfirmationAlertController;
+    NSArray * __plAdditionalAssetsToDelete;
+    NSArray * __plAssets;
     long long  _action;
     id /* block */  _completionHandler;
     <PUDeletePhotosActionControllerDelegate> * _delegate;
@@ -15,17 +16,17 @@
     id /* block */  _willDeleteHandler;
 }
 
-@property (nonatomic, readonly, copy) NSArray *_additionalAssetsToDelete;
 @property (nonatomic, readonly, copy) NSArray *_assets;
 @property (setter=_setMainAlertController:, nonatomic, retain) UIAlertController *_mainAlertController;
 @property (setter=_setOneTimeConfirmationAlertController:, nonatomic, retain) UIAlertController *_oneTimeConfirmationAlertController;
 @property (setter=_setOverQuotaConfirmationAlertController:, nonatomic, retain) UIAlertController *_overQuotaConfirmationAlertController;
+@property (nonatomic, readonly, copy) NSArray *_plAdditionalAssetsToDelete;
+@property (nonatomic, readonly, copy) NSArray *_plAssets;
 @property (nonatomic, readonly) long long action;
 @property (nonatomic, readonly) <PUDeletePhotosActionControllerDelegate> *delegate;
 @property (nonatomic) bool shouldSkipDeleteConfirmation;
 
 - (void).cxx_destruct;
-- (id)_additionalAssetsToDelete;
 - (id)_assets;
 - (void)_ensureMainAlertController;
 - (void)_ensureOneTimeConfirmationAlertController;
@@ -38,6 +39,8 @@
 - (id)_mainAlertController;
 - (id)_oneTimeConfirmationAlertController;
 - (id)_overQuotaConfirmationAlertController;
+- (id)_plAdditionalAssetsToDelete;
+- (id)_plAssets;
 - (void)_runDestructiveActionWithCompletion:(id /* block */)arg1;
 - (void)_setMainAlertController:(id)arg1;
 - (void)_setOneTimeConfirmationAlertController:(id)arg1;

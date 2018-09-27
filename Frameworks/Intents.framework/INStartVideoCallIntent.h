@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INStartVideoCallIntent : INIntent <ATXSlotResolver, INStartVideoCallIntentExport>
+@interface INStartVideoCallIntent : INIntent <INStartVideoCallIntentExport>
 
 @property (nonatomic) long long audioRoute;
 @property (nonatomic, readonly, copy) NSArray *contacts;
@@ -13,11 +13,17 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (id)_categoryVerb;
 - (id)_dictionaryRepresentation;
+- (long long)_intentCategory;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
+- (void)_setMetadata:(id)arg1;
+- (id)_spotlightContentType;
+- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 - (id)_typedBackingStore;
 - (long long)audioRoute;
+- (bool)configureAttributeSet:(id)arg1 includingData:(bool)arg2;
 - (id)contacts;
 - (id)domain;
 - (id)initWithContacts:(id)arg1;
@@ -31,17 +37,20 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
-+ (bool)isRequired;
-+ (id)resolveIntentFromSlot:(id)arg1;
-+ (id)slotFromContext:(id)arg1;
-
 - (void)apr_getArgsInto:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionUI.framework/AppPredictionUI
+
+- (id)apui_keyPeople;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
 - (long long)cd_interactionMechanism;
 - (id)cd_recipients;
 - (bool)cd_saveToPeopleStore;
-- (id)contextMetadata;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
+
+- (id)vcui_keyPeople;
 
 @end

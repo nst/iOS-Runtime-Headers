@@ -22,6 +22,7 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)clumpID;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

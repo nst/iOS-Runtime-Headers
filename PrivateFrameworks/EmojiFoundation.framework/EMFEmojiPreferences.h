@@ -36,8 +36,8 @@
 
 - (void).cxx_destruct;
 - (void)_checkForDingbatDuplicates;
-- (void)_checkForMalformationEmoji;
 - (void)_cleanUpOldFlagsCaches;
+- (void)_pruneInvalidEmojiFromHistory;
 - (void)_readPreferencesFromDefaults;
 - (void)_setRecentStrings:(id)arg1;
 - (id)allRecents;
@@ -49,7 +49,6 @@
 - (bool)hasDisplayedSkinToneHelp;
 - (bool)hasLastUsedVariantForEmoji:(id)arg1;
 - (id)init;
-- (bool)isMalformationEmoji:(id)arg1;
 - (id)lastUsedVariantEmojiForEmoji:(id)arg1;
 - (void)loadDefaultsIfNecessary;
 - (unsigned long long)maximumRecentsCount;
@@ -69,6 +68,7 @@
 - (double)scoreForEmojiString:(id)arg1;
 - (double)scoreForSequence:(long long)arg1;
 - (void)setMaximumRecentsCount:(unsigned long long)arg1;
+- (bool)shouldCountEmojiStringForUsageHistory:(id)arg1;
 - (id)typingNameForEmoji:(id)arg1;
 - (void)writeEmojiDefaults;
 - (void)writeEmojiDefaultsAndNotify:(bool)arg1;

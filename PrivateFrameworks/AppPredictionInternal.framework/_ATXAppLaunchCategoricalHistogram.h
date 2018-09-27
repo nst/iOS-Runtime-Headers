@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXAppLaunchCategoricalHistogram : NSObject <NSSecureCoding> {
+@interface _ATXAppLaunchCategoricalHistogram : NSObject <NSSecureCoding, _ATXAppLaunchHistogramProtocol> {
     NSMutableDictionary * _categoryToCategoryId;
     ATXHistogramData * _histogramData;
     NSMutableDictionary * _lastDates;
@@ -18,7 +18,6 @@
 }
 
 @property (nonatomic, readonly) unsigned short categoryCount;
-@property (nonatomic, retain) ATXHistogramData *histogramData;
 @property (nonatomic, readonly) unsigned short maxCategoryCount;
 @property (nonatomic, readonly) long long pruningMethod;
 
@@ -45,7 +44,6 @@
 - (double)entropyForBundleId:(id)arg1;
 - (double)entropyForCategory:(id)arg1;
 - (void)executeBlockOnHistogramData:(id /* block */)arg1;
-- (id)histogramData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistogram:(id)arg1 categoryToCategoryId:(id)arg2 maxCategoryId:(unsigned short)arg3 maxCategoryCount:(unsigned short)arg4 lastDates:(id)arg5 pruningMethod:(long long)arg6;
@@ -60,15 +58,16 @@
 - (long long)pruningMethod;
 - (double)ratio:(double)arg1 over:(double)arg2;
 - (double)relativeLaunchPopularityWithBundleId:(id)arg1 category:(id)arg2;
-- (int)removeHistoryForAllBundleIds:(id)arg1;
 - (bool)removeHistoryForBundleId:(id)arg1;
+- (int)removeHistoryForBundleIds:(id)arg1;
 - (bool)removeHistoryForCategory:(id)arg1;
 - (void)removeMappingForCategory:(id)arg1;
 - (void)resetData;
 - (void)resetHistogram:(id)arg1;
-- (void)setHistogramData:(id)arg1;
 - (void)swapWithCoder:(id)arg1;
 - (double)totalLaunches;
+- (double)totalLaunchesForBundleId:(id)arg1;
+- (double)totalLaunchesForBundleId:(id)arg1 category:(id)arg2;
 - (double)totalLaunchesForCategory:(id)arg1;
 - (void)verifyDataIntegrity;
 

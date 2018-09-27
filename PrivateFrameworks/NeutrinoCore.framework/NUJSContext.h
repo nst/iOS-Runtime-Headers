@@ -10,7 +10,7 @@
     NSMutableArray * _stateStack;
 }
 
-@property (readonly) bool didTimeOut;
+@property bool didTimeOut;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) double executionTimeLimit;
 
@@ -31,7 +31,6 @@
 - (void)resetAllProxies;
 - (void)setDidTimeOut:(bool)arg1;
 - (void)setError:(id)arg1;
-- (void)setException:(id)arg1;
 - (void)setExecutionTimeLimit:(double)arg1;
 - (void)setFunction:(id)arg1 forKey:(id)arg2;
 - (void)setupBuiltInFunctions;

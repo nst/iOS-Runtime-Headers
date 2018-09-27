@@ -6,7 +6,8 @@
     NSString * _additionalDirectoryToConsider;
     bool  _allowResumingPartialDownloads;
     GEOApplicationAuditToken * _auditToken;
-    NSString * _baseURLString;
+    NSURL * _authProxyURL;
+    NSURL * _baseURL;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _canceled;
     id /* block */  _completionHandler;
@@ -18,6 +19,7 @@
     long long  _numberOfDownloadsInProgress;
     GEOPowerAssertion * _powerAssertion;
     GEOReportedProgress * _progress;
+    NSURL * _proxyURL;
     bool  _requiresWiFi;
     NSArray * _resourceInfos;
     NSMutableArray * _resourcesToLoad;
@@ -43,7 +45,7 @@
 - (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 checksum:(id)arg3 completionHandler:(id /* block */)arg4 callbackQueue:(id)arg5;
 - (id)auditToken;
 - (void)cancel;
-- (id)initWithTargetDirectory:(id)arg1 baseURLString:(id)arg2 resources:(id)arg3 maximumConcurrentLoads:(unsigned long long)arg4 additionalDirectoryToConsider:(id)arg5;
+- (id)initWithTargetDirectory:(id)arg1 baseURL:(id)arg2 proxyURL:(id)arg3 resources:(id)arg4 maximumConcurrentLoads:(unsigned long long)arg5 additionalDirectoryToConsider:(id)arg6;
 - (id)progress;
 - (bool)requiresWiFi;
 - (void)setAuditToken:(id)arg1;

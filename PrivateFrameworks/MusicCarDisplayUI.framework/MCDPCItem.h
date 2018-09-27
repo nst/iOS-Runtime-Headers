@@ -3,13 +3,14 @@
  */
 
 @interface MCDPCItem : NSObject {
+    UIImage * _artworkImage;
     void * _contentItem;
     bool  _currentlyPlaying;
     MCDPCModel * _model;
 }
 
 @property (nonatomic, readonly) NSData *artworkData;
-@property (nonatomic, readonly) UIImage *artworkImage;
+@property (nonatomic, retain) UIImage *artworkImage;
 @property (nonatomic) void*contentItem;
 @property (nonatomic) bool currentlyPlaying;
 @property (nonatomic, readonly) NSString *identifier;
@@ -37,6 +38,7 @@
 - (bool)isPlayable;
 - (id)model;
 - (float)playbackProgress;
+- (void)setArtworkImage:(id)arg1;
 - (void)setContentItem:(void*)arg1;
 - (void)setCurrentlyPlaying:(bool)arg1;
 - (id)subtitle;

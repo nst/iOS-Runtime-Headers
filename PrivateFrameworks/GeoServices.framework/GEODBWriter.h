@@ -5,6 +5,7 @@
 @interface GEODBWriter : NSObject {
     bool  _canCreateDebugTable;
     bool  _closed;
+    GEOCountryConfiguration * _countryConfiguration;
     unsigned long long  _databaseSize;
     struct sqlite3 { } * _db;
     bool  _defunct;
@@ -21,6 +22,7 @@
     struct { unsigned int x1; double x2; } * _expirationRecords;
     double  _lastCheckedGeneralExpiration;
     long long  _lastRowID;
+    GEOResourceManifestManager * _manifestManager;
     unsigned long long  _maxDatabaseSize;
     NSString * _path;
     unsigned long long  _pendingWriteBytes;
@@ -58,8 +60,8 @@
 - (void)_deleteKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (void)_deviceLocked;
 - (void)_dropWritesOnFloor:(id)arg1;
-- (void)_editionUpdate:(id)arg1;
 - (void)_evict;
+- (void)_finalizeStatements;
 - (unsigned long long)_freeableDiskSpace;
 - (void)_localeChanged:(id)arg1;
 - (void)_openDBAndPurgeContents;
@@ -87,10 +89,11 @@
 - (id)devicePostureCountry;
 - (id)devicePostureRegion;
 - (void)endPreloadSession;
-- (void)evaluateDevicePostureAgainstCurrentManifest;
+- (void)evaluateDevicePostureAgainstCurrentManifest:(id)arg1;
 - (void)flushPendingWrites;
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 pragmaOverrides:(id)arg2;
+- (id)initWithPath:(id)arg1 pragmaOverrides:(id)arg2 manifestManager:(id)arg3 countryConfiguration:(id)arg4;
 - (unsigned long long)maxDatabaseSize;
 - (id)path;
 - (id)pendingWriteForKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;

@@ -2,43 +2,65 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFSystemInfo : HMFObject {
-    NSString * _model;
-    NSString * _name;
-    struct MGNotificationTokenStruct { } * _notificationToken;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
-    NSString * _regionInfo;
-    NSString * _serialNumber;
-    NSObject<OS_dispatch_queue> * _workQueue;
+@interface HMFSystemInfo : HMFObject <HMFSystemInfoMigrationDataSourceDelegate, HMFSystemInfoNameDataSourceDelegate> {
+    <HMFSystemInfoWiFiDataSource> * _WiFiDataSource;
+    <HMFSystemInfoBluetoothLEDataSource> * _bluetoothLEDataSource;
+    <HMFSystemInfoMarketingInformationDataSource> * _marketingDataSource;
+    <HMFSystemInfoMigrationDataSource> * _migrationDataSource;
+    <HMFSystemInfoNameDataSource> * _nameDataSource;
+    <HMFSystemInfoProductInfoDataSource> * _productInfoDataSource;
+    <HMFSystemInfoSerialNumberDataSource> * _serialNumberDataSource;
+    <HMFSystemInfoSoftwareVersionDataSource> * _softwareVersionDataSource;
 }
 
+@property (nonatomic, readonly) <HMFSystemInfoWiFiDataSource> *WiFiDataSource;
+@property (readonly, copy) HMFMACAddress *WiFiInterfaceMACAddress;
+@property (nonatomic, readonly) <HMFSystemInfoBluetoothLEDataSource> *bluetoothLEDataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <HMFSystemInfoMarketingInformationDataSource> *marketingDataSource;
+@property (getter=isMigrating, readonly) bool migrating;
+@property (nonatomic, readonly) <HMFSystemInfoMigrationDataSource> *migrationDataSource;
 @property (readonly, copy) NSString *model;
-@property (copy) NSString *name;
-@property (readonly) struct MGNotificationTokenStruct { }*notificationToken;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (readonly, copy) NSString *name;
+@property (nonatomic, readonly) <HMFSystemInfoNameDataSource> *nameDataSource;
+@property (readonly) long long productClass;
+@property (nonatomic, readonly) <HMFSystemInfoProductInfoDataSource> *productInfoDataSource;
+@property (readonly) long long productPlatform;
+@property (readonly) long long productVariant;
 @property (readonly, copy) NSString *regionInfo;
 @property (readonly, copy) NSString *serialNumber;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
+@property (nonatomic, readonly) <HMFSystemInfoSerialNumberDataSource> *serialNumberDataSource;
+@property (readonly, copy) HMFSoftwareVersion *softwareVersion;
+@property (nonatomic, readonly) <HMFSystemInfoSoftwareVersionDataSource> *softwareVersionDataSource;
+@property (readonly) Class superclass;
+@property (readonly) bool supportsBLE;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)systemInfo;
 
 - (void).cxx_destruct;
-- (void)__initialize;
-- (void)dealloc;
-- (id)init;
+- (id)WiFiDataSource;
+- (id)WiFiInterfaceMACAddress;
+- (id)bluetoothLEDataSource;
+- (void)dataSource:(id)arg1 didUpdateMigrating:(bool)arg2;
+- (void)dataSource:(id)arg1 didUpdateName:(id)arg2;
+- (bool)isMigrating;
+- (id)marketingDataSource;
+- (id)migrationDataSource;
 - (id)model;
 - (id)name;
-- (struct MGNotificationTokenStruct { }*)notificationToken;
-- (void)notifyNameUpdated:(id)arg1;
-- (id)propertyQueue;
+- (id)nameDataSource;
+- (long long)productClass;
+- (id)productInfoDataSource;
+- (long long)productPlatform;
+- (long long)productVariant;
 - (id)regionInfo;
 - (id)serialNumber;
-- (void)setModel:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setRegionInfo:(id)arg1;
-- (void)setSerialNumber:(id)arg1;
-- (void)startMonitoringSystemChanges;
-- (void)updateName;
-- (id)workQueue;
+- (id)serialNumberDataSource;
+- (id)softwareVersion;
+- (id)softwareVersionDataSource;
+- (bool)supportsBLE;
 
 @end

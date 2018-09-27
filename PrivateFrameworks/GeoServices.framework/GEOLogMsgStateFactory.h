@@ -7,8 +7,6 @@
     bool  _cellularDataUsageAllowedForMaps;
     NSObject<OS_dispatch_queue> * _coreTelephonyIsolationQueue;
     bool  _hasCellularDataUsageAllowedForMaps;
-    unsigned long long  _numberOfSubscriptions;
-    NSObject<OS_dispatch_queue> * _subscriptionIsolation;
     struct __CTServerConnection { } * _telephonyServerConnection;
 }
 

@@ -16,7 +16,8 @@
 
 + (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)copy;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)estimatedTimeRemaining;

@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristic : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
+@interface HMCharacteristic : NSObject <HFStateDumpBuildable, HMObjectMerge, NSSecureCoding> {
     NSString * _characteristicType;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
+    _HMContext * _context;
     bool  _hasAuthorizationData;
     NSNumber * _instanceID;
+    HMFUnfairLock * _lock;
     HMCharacteristicMetadata * _metadata;
     bool  _notificationEnabled;
     bool  _notificationEnabledByThisClient;
     NSDate * _notificationEnabledTime;
     NSArray * _properties;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     bool  _requiresDeviceUnlock;
     HMService * _service;
     NSUUID * _uniqueIdentifier;
@@ -22,9 +21,8 @@
 }
 
 @property (nonatomic, copy) NSString *characteristicType;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property bool hasAuthorizationData;
 @property (readonly) unsigned long long hash;
@@ -35,7 +33,6 @@
 @property (nonatomic) bool notificationEnabledByThisClient;
 @property (nonatomic, copy) NSDate *notificationEnabledTime;
 @property (nonatomic, copy) NSArray *properties;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic) bool requiresDeviceUnlock;
 @property (nonatomic) HMService *service;
 @property (readonly) Class superclass;
@@ -48,11 +45,12 @@
 + (id)__localizedDescriptionForCharacteristicType:(id)arg1;
 + (id)_characteristicTypeAsString:(id)arg1;
 + (id)localizedDescriptionForCharacteristicType:(id)arg1;
++ (id)logCategory;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)__configureWithContext:(id)arg1 service:(id)arg2;
 - (id)_characteristicTypeDescription;
-- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (void)_enableNotification:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_readValueWithCompletionHandler:(id /* block */)arg1;
@@ -60,8 +58,7 @@
 - (void)_updateValue:(id)arg1 updateTime:(id)arg2;
 - (void)_writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)characteristicType;
-- (id)clientQueue;
-- (id)delegateCaller;
+- (id)context;
 - (void)enableNotification:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasAuthorizationData;
@@ -72,24 +69,22 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isNotificationEnabled;
 - (id)localizedDescription;
+- (id)logIdentifier;
 - (id)mapHAPProperties:(long long)arg1;
 - (id)metadata;
 - (bool)notificationEnabledByThisClient;
 - (id)notificationEnabledTime;
 - (id)properties;
-- (id)propertyQueue;
 - (void)readValueWithCompletionHandler:(id /* block */)arg1;
 - (bool)requiresDeviceUnlock;
 - (id)service;
 - (void)setCharacteristicType:(id)arg1;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setHasAuthorizationData:(bool)arg1;
 - (void)setNotificationEnabled:(bool)arg1;
 - (void)setNotificationEnabledByThisClient:(bool)arg1;
 - (void)setNotificationEnabledTime:(id)arg1;
 - (void)setProperties:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
 - (void)setRequiresDeviceUnlock:(bool)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
@@ -110,6 +105,7 @@
 + (id /* block */)hf_characteristicSortComparator;
 + (id)hf_currentStateCharacteristicTypeForTargetStateCharacteristicType:(id)arg1;
 + (id)hf_descriptionForCharacteristicType:(id)arg1;
++ (id)hf_descriptionForProperties:(id)arg1;
 + (id)hf_powerStateCharacteristicTypes;
 + (bool)hf_shouldCaptureCharacteristicTypeInActionSets:(id)arg1;
 + (long long)hf_sortPriorityForCharacteristicType:(id)arg1;
@@ -124,11 +120,10 @@
 - (id)hf_home;
 - (bool)hf_isReadable;
 - (bool)hf_isWritable;
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_programmableSwitchTriggerValueToEventTriggersMap;
 - (id)hf_programmableSwitchValidValueSet;
-- (id)hf_serializedStateDumpRepresentation;
 - (bool)hf_shouldCaptureInActionSets;
 - (long long)hf_sortPriority;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

@@ -11,6 +11,7 @@
 @property (nonatomic, retain) BSEventQueue *eventQueue;
 @property (nonatomic, copy) NSString *reason;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)eventQueue;

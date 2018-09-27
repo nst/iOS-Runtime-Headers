@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MailAccount : MFAccount {
+@interface MailAccount : MFAccount <EMReceivingAccount> {
     MFMailboxUid * _archiveMailboxUid;
     long long  _cachedLibraryID;
     MFLock * _cachedLibraryIDLock;
@@ -32,11 +32,17 @@
     MFMailboxUid * _trashMailboxUid;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSString *defaultPath;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *hostname;
 @property (nonatomic, readonly, copy) NSString *mailboxPathExtension;
 @property (nonatomic, readonly) bool needsRemoteSearchResultsVerification;
+@property (nonatomic, copy) NSString *password;
 @property (readonly) bool shouldArchiveByDefault;
 @property (readonly) bool sourceIsManaged;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsFastRemoteBodySearch;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
@@ -175,6 +181,7 @@
 - (int)cachePolicy;
 - (bool)canAppendMessages;
 - (bool)canArchiveForMailbox:(id)arg1;
+- (bool)canAuthenticateWithCurrentCredentials;
 - (bool)canCreateNewMailboxes;
 - (bool)canFetch;
 - (bool)canForwardWithoutDownload;
@@ -322,6 +329,7 @@
 - (bool)shouldFetchBodiesWhenMovingToTrash;
 - (bool)shouldRestoreMessagesAfterFailedDelete;
 - (id)signingIdentityPersistentReferenceForAddress:(id)arg1;
+- (id)smtpIdentifier;
 - (bool)sourceIsManaged;
 - (id)specialMailboxNameForType:(int)arg1;
 - (void)startListeningForNotifications;
@@ -332,8 +340,8 @@
 - (id)storeForMailboxUid:(id)arg1;
 - (bool)supportsAppend;
 - (bool)supportsArchiving;
-- (bool)supportsContinuationType:(id)arg1;
 - (bool)supportsFastRemoteBodySearch;
+- (bool)supportsHandoffType:(id)arg1;
 - (bool)supportsMailDrop;
 - (bool)supportsMailboxEditing;
 - (bool)supportsMessageFlagging;
@@ -350,7 +358,7 @@
 - (id)unactionableInvitationICSRepresentationInMessage:(id)arg1 summary:(id*)arg2;
 - (id)uniqueIdForPersistentConnection;
 - (id)uniqueServerIdForMessage:(id)arg1;
-- (id)unsupportedContinuationTypes;
+- (id)unsupportedHandoffTypes;
 - (bool)updateEmailAliases;
 - (id)valueInAccountLookAsidePropertiesForKey:(id)arg1;
 - (bool)willPerformActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 result:(id*)arg3;

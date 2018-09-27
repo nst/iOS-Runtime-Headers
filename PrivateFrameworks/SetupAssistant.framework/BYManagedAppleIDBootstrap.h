@@ -2,8 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SetupAssistant.framework/SetupAssistant
  */
 
-@interface BYManagedAppleIDBootstrap : NSObject <AKAppleIDAuthenticationDelegate> {
+@interface BYManagedAppleIDBootstrap : NSObject <AKAppleIDAuthenticationDelegate, SUNetworkObserver> {
     AKAppleIDAuthenticationContext * _authContext;
+    bool  _shouldRetrySilentLoginUpgrade;
+    long long  _silentLoginUpgradeRetryCount;
     UMUserSwitchContext * _userSwitchContext;
 }
 
@@ -12,6 +14,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool passwordChangeFlowNeedsToRun;
 @property (nonatomic, readonly, copy) NSString *shortLivedToken;
+@property (nonatomic) bool shouldRetrySilentLoginUpgrade;
+@property (nonatomic) long long silentLoginUpgradeRetryCount;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UMUserSwitchContext *userSwitchContext;
 
@@ -30,11 +34,16 @@
 - (id)init;
 - (bool)isLoginUser;
 - (bool)needsToUpgradeShortLivedToken;
+- (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (bool)passwordChangeFlowNeedsToRun;
 - (void)postUserSwitchContextHasBeenUsed;
 - (void)recoverEMCSWithCompletion:(id /* block */)arg1;
 - (void)runSilentLoginUpgradeIfNeededWithCompletion:(id /* block */)arg1;
+- (void)setShouldRetrySilentLoginUpgrade:(bool)arg1;
+- (void)setSilentLoginUpgradeRetryCount:(long long)arg1;
 - (id)shortLivedToken;
+- (bool)shouldRetrySilentLoginUpgrade;
+- (long long)silentLoginUpgradeRetryCount;
 - (void)switchToLoginWindowDueToError:(id)arg1 completion:(id /* block */)arg2;
 - (id)userSwitchContext;
 - (void)userSwitchContextHasBeenUsed;

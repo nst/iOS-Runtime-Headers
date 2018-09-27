@@ -20,7 +20,7 @@
 - (unsigned long long)defaultTextAlignment;
 - (id)formattedText;
 - (struct { unsigned long long x1; unsigned long long x2; })indexPath;
-- (id)initWithFormattedText:(id)arg1 indexPath:(struct { unsigned long long x1; unsigned long long x2; })arg2 actionProvider:(id)arg3 dataSource:(id)arg4;
+- (id)initWithFormattedText:(id)arg1 indexPath:(struct { unsigned long long x1; unsigned long long x2; })arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4;
 - (void)setDefaultTextAlignment:(unsigned long long)arg1;
 
 @end

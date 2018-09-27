@@ -3,36 +3,55 @@
  */
 
 @interface PUWhatsNewWelcomeViewController : PUWelcomeViewController {
+    NSLayoutConstraint * __bottomConstraint;
     UIView * __bottomContentView;
+    NSLayoutConstraint * __buttonContainerVisualEffectHeightConstraint;
+    NSLayoutConstraint * __buttonWidthConstraint;
     id /* block */  __completionHandler;
+    NSLayoutConstraint * __containerWidthConstraint;
     bool  __didAdjustScrollPosition;
     UIScrollView * __scrollView;
     NSLayoutConstraint * __topConstraint;
     UIView * __topContentView;
+    UIFont * _buttonFont;
 }
 
+@property (nonatomic, readonly, copy) NSLayoutConstraint *_bottomConstraint;
 @property (nonatomic, readonly, copy) UIView *_bottomContentView;
+@property (nonatomic, readonly, copy) NSLayoutConstraint *_buttonContainerVisualEffectHeightConstraint;
+@property (nonatomic, readonly, copy) NSLayoutConstraint *_buttonWidthConstraint;
 @property (nonatomic, readonly, copy) id /* block */ _completionHandler;
+@property (nonatomic, readonly, copy) NSLayoutConstraint *_containerWidthConstraint;
 @property (setter=_setDidAdjustScrollPosition:, nonatomic) bool _didAdjustScrollPosition;
 @property (nonatomic, readonly, copy) UIScrollView *_scrollView;
 @property (nonatomic, readonly, copy) NSLayoutConstraint *_topConstraint;
 @property (nonatomic, readonly, copy) UIView *_topContentView;
+@property (nonatomic, readonly, copy) UIFont *buttonFont;
 
 + (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)resetLastPresentationInfo;
 
 - (void).cxx_destruct;
 - (void)_addSection:(id)arg1 containerView:(id)arg2 iconName:(id)arg3 lastLabel:(id*)arg4 lastSectionView:(id*)arg5 subheadlineFontScale:(double)arg6 text:(id)arg7 title:(id)arg8 titleLabel:(id)arg9;
+- (id)_bottomConstraint;
 - (id)_bottomContentView;
+- (id)_buttonContainerVisualEffectHeightConstraint;
+- (id)_buttonWidthConstraint;
 - (id /* block */)_completionHandler;
+- (id)_containerWidthConstraint;
 - (bool)_didAdjustScrollPosition;
 - (void)_handleContinueButton:(id)arg1;
 - (id)_initWithCompletionHandler:(id /* block */)arg1;
+- (void)_initializeConstants;
 - (id)_scrollView;
 - (void)_setDidAdjustScrollPosition:(bool)arg1;
 - (id)_topConstraint;
 - (id)_topContentView;
+- (id)buttonFont;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

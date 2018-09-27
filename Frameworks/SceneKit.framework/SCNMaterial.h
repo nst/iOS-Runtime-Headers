@@ -90,6 +90,7 @@
 
 - (const void*)__CFObject;
 - (bool)__removeAnimation:(id)arg1 forKey:(id)arg2;
+- (id)__shadableHelper;
 - (void)_copyAnimationsFrom:(id)arg1;
 - (void)_copyAttributes:(id)arg1;
 - (void)_customDecodingOfSCNMaterial:(id)arg1;
@@ -128,6 +129,7 @@
 - (id)copy;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 property:(id)arg2;
+- (void)copyShaderModifiersFrom:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)cullMode;
 - (id)customMaterialAttributeNames;
@@ -174,6 +176,7 @@
 - (bool)readsFromDepthBuffer;
 - (id)reflective;
 - (void)removeAllAnimations;
+- (void)removeAllBindings;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAnimationForKey:(id)arg1 blendOutDuration:(double)arg2;
 - (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;

@@ -68,6 +68,9 @@
 @property (nonatomic, copy) HKAxis *yAxis;
 @property (nonatomic) <HKAxisAccessoryViewDelegate> *yAxisAccessoryViewDelegate;
 
++ (void)drawFilledMarkerInContext:(struct CGContext { }*)arg1 color:(struct CGColor { }*)arg2 x:(double)arg3 y:(double)arg4 radius:(double)arg5;
++ (void)drawInnerDotMarkerInContext:(struct CGContext { }*)arg1 outColor:(struct CGColor { }*)arg2 inColor:(struct CGColor { }*)arg3 x:(double)arg4 y:(double)arg5 radius:(double)arg6;
+
 - (void).cxx_destruct;
 - (id)UUID;
 - (void)_cacheCoordinates:(id)arg1 forBlockPath:(struct { long long x1; long long x2; })arg2;
@@ -85,14 +88,15 @@
 - (double)alpha;
 - (bool)animatingDuringAutoscale;
 - (void)autoscaleYAxisIfNecessaryWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
-- (void)autoscaleYAxisWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 animated:(bool)arg6;
-- (void)autoscaleYAxisWithYAxisRange:(id)arg1 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animated:(bool)arg3;
+- (void)autoscaleYAxisWithValueRange:(id)arg1 yAxisRange:(id)arg2 xAxis:(id)arg3 dateZoom:(long long)arg4 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 animated:(bool)arg6 completion:(id /* block */)arg7;
+- (void)autoscaleYAxisWithYAxisRange:(id)arg1 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (id)axisAnnotationDelegate;
 - (id)axisScalingRule;
 - (bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 blockCoordinate:(id)arg2;
 - (id)cachedYAxisAccessoryView;
+- (void)cancelInFlightAutoscale;
 - (id)closestXCoordinateRange;
 - (bool)configureYAxisAccessoryViewForDateRange:(id)arg1 timeScope:(long long)arg2;
 - (bool)containsCoordinatesInChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
@@ -109,9 +113,7 @@
 - (double)distanceFromTouchPoint:(struct CGPoint { double x1; double x2; })arg1 inChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 xAxis:(id)arg3 zoomScale:(double)arg4 contentOffset:(struct CGPoint { double x1; double x2; })arg5 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg6;
 - (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6;
 - (void)drawWithChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 zoomLevelConfiguration:(id)arg5 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg6 inContext:(struct CGContext { }*)arg7 secondaryRenderContext:(id)arg8;
-- (void)enumerateCoordinatesInChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 roundToViewScale:(bool)arg6 block:(id /* block */)arg7;
 - (void)enumerateCoordinatesInChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 roundToViewScale:(bool)arg6 exclusionOptions:(long long)arg7 block:(id /* block */)arg8;
-- (void)enumerateCoordinatesInChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 roundToViewScale:(bool)arg6 rejectPointsOutOfChartRect:(bool)arg7 block:(id /* block */)arg8;
 - (id)findVisibleBlockCoordinatesForChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 xAxisTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
 - (id)init;
 - (bool)isHighlighted;
@@ -140,7 +142,10 @@
 - (bool)shouldInvertAxis;
 - (bool)supportsMultiTouchSelection;
 - (id)titleLegendEntries;
+- (bool)untransformedChartPointsForTimeScope:(long long)arg1 range:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateLegendsForTimeScope:(long long)arg1 range:(id)arg2;
 - (id)valueRangeForYAxisWithXAxisRange:(id)arg1 dateZoom:(long long)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })virtualMarginInsets;
 - (id)visibleValueRange;
 - (double)xAxisDistanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (double)xAxisSelectedCoordinate:(double)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;

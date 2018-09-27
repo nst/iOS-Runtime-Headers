@@ -18,6 +18,7 @@
 + (bool)__useDynamicMethodResolution;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_addObserver:(id)arg1;
 - (void)_bindAndRegisterDefaults;
 - (void)_bindDefaultsIfNecessary;

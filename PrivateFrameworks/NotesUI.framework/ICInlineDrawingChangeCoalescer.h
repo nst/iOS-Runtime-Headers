@@ -5,12 +5,14 @@
 @interface ICInlineDrawingChangeCoalescer : NSObject {
     ICAttachment * _attachment;
     PKDrawing * _latestDrawing;
+    NSObject<OS_dispatch_queue> * _mergeQueue;
     unsigned long long  _numberOfChanges;
     ICSelectorDelayer * _processChangesSelectorDelayer;
 }
 
 @property (nonatomic, retain) ICAttachment *attachment;
 @property (nonatomic, retain) PKDrawing *latestDrawing;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *mergeQueue;
 @property (nonatomic) unsigned long long numberOfChanges;
 @property (nonatomic, retain) ICSelectorDelayer *processChangesSelectorDelayer;
 
@@ -22,11 +24,15 @@
 - (id)initWithAttachment:(id)arg1;
 - (id)latestDrawing;
 - (void)mergeDrawingChanges;
+- (void)mergeDrawingWithDrawing:(id)arg1;
+- (id)mergeQueue;
 - (unsigned long long)numberOfChanges;
 - (id)processChangesSelectorDelayer;
 - (void)processIndexableContent;
+- (id)retrieveAndClearLatestDrawingToMerge;
 - (void)setAttachment:(id)arg1;
 - (void)setLatestDrawing:(id)arg1;
+- (void)setMergeQueue:(id)arg1;
 - (void)setNumberOfChanges:(unsigned long long)arg1;
 - (void)setProcessChangesSelectorDelayer:(id)arg1;
 - (void)updateNowIfNecessary;

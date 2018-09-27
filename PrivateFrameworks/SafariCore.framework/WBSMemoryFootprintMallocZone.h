@@ -23,7 +23,7 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMallocZone:(struct _malloc_zone_t { void *x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); char *x10; int (*x11)(); int (*x12)(); struct malloc_introspection_t {} *x13; unsigned int x14; int (*x15)(); int (*x16)(); int (*x17)(); }*)arg1;
+- (id)initWithMallocZone:(struct _malloc_zone_t { void *x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); char *x10; int (*x11)(); int (*x12)(); struct malloc_introspection_t {} *x13; unsigned int x14; int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); }*)arg1;
 - (id)name;
 - (unsigned long long)sizeAllocated;
 - (unsigned long long)sizeInUse;

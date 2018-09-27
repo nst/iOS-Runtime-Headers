@@ -18,7 +18,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)_swatchImageForColorOption:(id)arg1;
++ (void)_performIfNonRichModuleView:(id)arg1 actions:(id /* block */)arg2;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_applyBreathingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
@@ -36,9 +37,11 @@
 - (bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_keylineLabelActiveAreaInsetsForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_layoutForegroundContainerView;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
@@ -58,6 +61,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_updateLocale;
 - (bool)_wantsTimeTravelStatusModule;
+- (long long)complicationFamilyForSlot:(id)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)performTapAction;

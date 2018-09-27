@@ -12,11 +12,11 @@
     NSString * _type;
 }
 
-@property (nonatomic, readonly, retain) NSBundle *bundle;
+@property (nonatomic, readonly) NSBundle *bundle;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (getter=isLoaded, nonatomic, readonly) bool loaded;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly, retain) Class principalClass;
+@property (nonatomic, readonly) Class principalClass;
 @property (nonatomic, copy) NSString *requiredClassOrProtocolName;
 @property (nonatomic, copy) NSString *specifiedClassName;
 @property (nonatomic, readonly, copy) NSString *type;
@@ -24,8 +24,8 @@
 
 + (id)bundleWithPath:(id)arg1 availableSpecifications:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)bundle;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

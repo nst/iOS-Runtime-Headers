@@ -6,6 +6,8 @@
     NSString * _birthdayPersonUniqueID;
     EKStructuredLocation * _cachedLocationPrediction;
     NSDate * _cachedLocationPredictionExpirationDate;
+    int  _clearModifiedFlags;
+    bool  _locationPredictionAllowed;
     bool  _locationPredictionFrozen;
     EKReadWriteLock * _locationPredictionLock;
     EKCalendarDate * _occurrenceEndDate;
@@ -25,6 +27,8 @@
 @property (nonatomic, readonly) bool allowsProposedTimeModifications;
 @property (nonatomic, readonly) bool allowsTravelTimeModifications;
 @property (nonatomic) bool attendeeComment;
+@property (nonatomic) bool attendeeDeclinedStartDate;
+@property (nonatomic) bool attendeeProposedStartDate;
 @property (nonatomic) bool attendeeReplyChanged;
 @property (nonatomic) bool attendeeStatus;
 @property (nonatomic, readonly) bool automaticLocationGeocodingAllowed;
@@ -35,6 +39,7 @@
 @property (nonatomic) unsigned long long cachedJunkStatus;
 @property (nonatomic, readonly) bool canBeRespondedTo;
 @property (nonatomic, readonly) bool canDetachSingleOccurrence;
+@property (nonatomic) int clearModifiedFlags;
 @property (nonatomic, retain) NSURL *conferenceURL;
 @property (nonatomic) bool dateChanged;
 @property (readonly, copy) NSString *debugDescription;
@@ -79,6 +84,8 @@
 @property (nonatomic, readonly) bool isEndDateDirty;
 @property (nonatomic, readonly) bool isMaster;
 @property (nonatomic) bool isPhantom;
+@property (nonatomic, readonly) bool isSignificantlyDetached;
+@property (nonatomic, readonly) bool isSignificantlyDetachedIgnoringParticipation;
 @property (nonatomic, readonly) bool isStartDateDirty;
 @property (nonatomic, readonly) bool isStatusDirty;
 @property (nonatomic) unsigned long long junkStatus;
@@ -113,7 +120,7 @@
 @property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic, readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } startDateGr;
 @property (nonatomic, readonly) NSDate *startDateIncludingTravel;
-@property (nonatomic, readonly) long long status;
+@property (nonatomic) long long status;
 @property (nonatomic, copy) EKStructuredLocation *structuredLocation;
 @property (nonatomic, retain) EKSuggestedEventInfo *suggestionInfo;
 @property (readonly) Class superclass;
@@ -133,6 +140,8 @@
 + (id)eventWithEventStore:(id)arg1;
 + (Class)frozenClass;
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
++ (id)knownKeysToSkipForFutureChanges;
++ (id)knownKeysToUseForFutureChanges;
 + (id)knownRelationshipMultiValueKeys;
 + (id)knownRelationshipSingleValueKeys;
 
@@ -146,6 +155,7 @@
 - (void)_cancelDetachedEventsWithSpan:(long long)arg1;
 - (bool)_cancelWithSpan:(long long)arg1 error:(id*)arg2;
 - (bool)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2 error:(id*)arg3;
+- (void)_clearAttendeeChangedFlags;
 - (void)_clearExceptionDatesAndUpdateDetachedOriginalDates;
 - (void)_clearLocationPredictionCacheIfNotFrozen;
 - (void)_clearLocationPredictionCacheIfNotFrozenHoldingLock;
@@ -169,12 +179,14 @@
 - (bool)_isAllDay;
 - (bool)_isInitialOccurrenceDate:(id)arg1;
 - (bool)_isParticipationStatusDirty;
+- (bool)_isSignificantlyDetachedComparedToMaster:(id)arg1 shouldIgnorePartStat:(bool)arg2;
 - (bool)_isSimpleRepeatingEvent;
 - (bool)_needsPredictedLocationCacheUpdateHoldingLock;
 - (bool)_noRemainingEarlierOccurrences;
 - (bool)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (long long)_parentParticipationStatus;
 - (id)_prioritizedConferencesSources;
+- (void)_propagateChangesToDetachedEvents:(id)arg1 significantlyDetachedEvents:(id)arg2 startDateOffset:(id)arg3 duration:(id)arg4 calendar:(id)arg5;
 - (id)_refreshDateForKey:(id)arg1;
 - (bool)_reset;
 - (void)_sendModifiedNote;
@@ -185,6 +197,8 @@
 - (id)_travelTimeInternalDescription;
 - (void)_updateConferenceURL;
 - (id)_updateMasterDate:(id)arg1 forChangeToOccurrenceDate:(id)arg2 fromOriginalOccurrenceDate:(id)arg3;
+- (void)_updateModifiedProperties;
+- (void)_updateModifiedPropertiesForThisEventAndAllDetachments;
 - (id)_updatePredictedLocationCacheIfNeeded;
 - (id)_updatePredictedLocationCacheIfNeededHoldingLock;
 - (void)_updateSelfFromDetachedEventIfNeededForDelete;
@@ -204,6 +218,8 @@
 - (bool)allowsSpansOtherThanThisEvent;
 - (bool)allowsTravelTimeModifications;
 - (bool)attendeeComment;
+- (bool)attendeeDeclinedStartDate;
+- (bool)attendeeProposedStartDate;
 - (bool)attendeeReplyChanged;
 - (bool)attendeeStatus;
 - (bool)automaticLocationGeocodingAllowed;
@@ -219,6 +235,7 @@
 - (bool)changingAllDayPropertyIsAllowed;
 - (void)clearDetectedConferenceURL;
 - (void)clearInvitationStatus;
+- (int)clearModifiedFlags;
 - (bool)commitWithSpan:(long long)arg1 error:(id*)arg2;
 - (id)committedCopy;
 - (id)committedValueForKey:(id)arg1;
@@ -232,6 +249,7 @@
 - (bool)couldBeJunk;
 - (bool)dateChanged;
 - (id)description;
+- (void)dismissAcceptedProposeNewTimeNotification;
 - (double)duration;
 - (double)durationIncludingTravel;
 - (bool)eligibleForTravelAdvisories;
@@ -268,6 +286,8 @@
 - (bool)isMaster;
 - (bool)isPhantom;
 - (bool)isProposedTimeEvent;
+- (bool)isSignificantlyDetached;
+- (bool)isSignificantlyDetachedIgnoringParticipation;
 - (bool)isStartDateDirty;
 - (bool)isStatusDirty;
 - (bool)isTentative;
@@ -279,6 +299,7 @@
 - (id)locationWithoutPrediction;
 - (id)locations;
 - (id)locationsWithoutPrediction;
+- (void)markAsCommitted;
 - (void)markAsSaved;
 - (void)markEventAsAttendeeForward;
 - (bool)needsOccurrenceCacheUpdate;
@@ -296,6 +317,7 @@
 - (long long)pendingParticipationStatus;
 - (id)potentialConflictOccurrenceDatesInTimePeriod:(double*)arg1;
 - (id)preferredLocationWithoutPrediction;
+- (id)privacyDescription;
 - (long long)privacyLevel;
 - (id)privacyLevelString;
 - (id)proposedStartDate;
@@ -317,9 +339,12 @@
 - (bool)serverSupportedProposeNewTime;
 - (void)setAllDay:(bool)arg1;
 - (void)setAttendeeComment:(bool)arg1;
+- (void)setAttendeeDeclinedStartDate:(bool)arg1;
+- (void)setAttendeeProposedStartDate:(bool)arg1;
 - (void)setAttendeeStatus:(bool)arg1;
 - (void)setAvailability:(long long)arg1;
 - (void)setCachedJunkStatus:(unsigned long long)arg1;
+- (void)setClearModifiedFlags:(int)arg1;
 - (void)setConferenceURL:(id)arg1;
 - (void)setDateChanged:(bool)arg1;
 - (void)setEndDate:(id)arg1;
@@ -331,6 +356,7 @@
 - (void)setIsPhantom:(bool)arg1;
 - (void)setJunkStatus:(unsigned long long)arg1;
 - (void)setLocationChanged:(bool)arg1;
+- (void)setLocationPredictionAllowed:(bool)arg1;
 - (void)setLocationPredictionState:(long long)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(bool)arg1;

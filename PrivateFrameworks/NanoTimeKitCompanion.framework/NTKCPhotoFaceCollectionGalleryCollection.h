@@ -4,10 +4,11 @@
 
 @interface NTKCPhotoFaceCollectionGalleryCollection : NTKCFaceCollectionGalleryCollection <NTKPhotoAlbumObserverDelegate> {
     NSString * _albumName;
+    CLKDevice * _device;
 }
 
 - (void).cxx_destruct;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (id)newFace;
 - (void)photoAlbumChanged:(id)arg1;
 

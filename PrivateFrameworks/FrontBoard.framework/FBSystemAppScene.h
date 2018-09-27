@@ -18,7 +18,6 @@
 - (void)attachLayer:(id)arg1;
 - (void)attachSceneContext:(id)arg1;
 - (id)clientSettings;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)detachContext:(id)arg1;

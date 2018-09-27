@@ -3,29 +3,53 @@
  */
 
 @interface IOAccessoryUserLdcmParamClass : NSObject {
+    unsigned long long  _disableHalogenPolling;
+    unsigned long long  _dryPollingIntervalSec;
     int  _fdpBehaviorMask;
     unsigned long long  _maxUpFluctuationMv;
     unsigned long long  _maxVhiDurationSec;
+    unsigned long long  _minDryReadings;
+    unsigned long long  _minDryTimeSec;
     unsigned long long  _minVhiDurationSec;
+    unsigned long long  _numEisHalogenSamples;
     int  _userBehaviorMask;
+    unsigned long long  _wetPollingIntervalSec;
 }
 
+@property unsigned long long disableHalogenPolling;
+@property unsigned long long dryPollingIntervalSec;
 @property int fdpBehaviorMask;
 @property unsigned long long maxUpFluctuationMv;
 @property unsigned long long maxVhiDurationSec;
+@property unsigned long long minDryReadings;
+@property unsigned long long minDryTimeSec;
 @property unsigned long long minVhiDurationSec;
+@property unsigned long long numEisHalogenSamples;
 @property int userBehaviorMask;
+@property unsigned long long wetPollingIntervalSec;
 
+- (unsigned long long)disableHalogenPolling;
+- (unsigned long long)dryPollingIntervalSec;
 - (int)fdpBehaviorMask;
 - (id)init;
 - (unsigned long long)maxUpFluctuationMv;
 - (unsigned long long)maxVhiDurationSec;
+- (unsigned long long)minDryReadings;
+- (unsigned long long)minDryTimeSec;
 - (unsigned long long)minVhiDurationSec;
+- (unsigned long long)numEisHalogenSamples;
+- (void)setDisableHalogenPolling:(unsigned long long)arg1;
+- (void)setDryPollingIntervalSec:(unsigned long long)arg1;
 - (void)setFdpBehaviorMask:(int)arg1;
 - (void)setMaxUpFluctuationMv:(unsigned long long)arg1;
 - (void)setMaxVhiDurationSec:(unsigned long long)arg1;
+- (void)setMinDryReadings:(unsigned long long)arg1;
+- (void)setMinDryTimeSec:(unsigned long long)arg1;
 - (void)setMinVhiDurationSec:(unsigned long long)arg1;
+- (void)setNumEisHalogenSamples:(unsigned long long)arg1;
 - (void)setUserBehaviorMask:(int)arg1;
+- (void)setWetPollingIntervalSec:(unsigned long long)arg1;
 - (int)userBehaviorMask;
+- (unsigned long long)wetPollingIntervalSec;
 
 @end

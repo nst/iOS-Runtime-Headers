@@ -7,7 +7,7 @@
     NSDictionary * _properties;
 }
 
-@property (nonatomic, retain) NSString *preferredAssetFlavor;
+@property (nonatomic, copy) NSString *preferredAssetFlavor;
 @property (nonatomic, readonly) NSDictionary *properties;
 
 - (void).cxx_destruct;

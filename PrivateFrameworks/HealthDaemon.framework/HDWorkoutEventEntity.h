@@ -4,15 +4,19 @@
 
 @interface HDWorkoutEventEntity : HDHealthEntity
 
-+ (id)_decodeMetadataFromData:(id)arg1;
-+ (id)columnsDefinition;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)databaseTable;
 + (id)deleteStatementForWorkoutEventsWithDatabase:(id)arg1;
-+ (bool)enumerateEventsForWorkout:(long long)arg1 withStatement:(id)arg2 error:(id*)arg3 eventHandler:(id /* block */)arg4;
-+ (id)insertWorkoutEventWithWorkoutID:(id)arg1 dateInterval:(id)arg2 eventType:(long long)arg3 metadata:(id)arg4 database:(id)arg5 error:(id*)arg6;
-+ (bool)insertWorkoutEventsFromWorkout:(id)arg1 workoutPersistentID:(id)arg2 database:(id)arg3 error:(id*)arg4;
++ (bool)enumerateEventsForOwner:(long long)arg1 withStatement:(id)arg2 error:(id*)arg3 eventHandler:(id /* block */)arg4;
++ (id)foreignKeys;
++ (id)insertPersistableWorkoutEvent:(id)arg1 ownerID:(id)arg2 database:(id)arg3 error:(id*)arg4;
++ (bool)insertWorkoutEventsFromWorkout:(id)arg1 ownerID:(id)arg2 database:(id)arg3 error:(id*)arg4;
++ (Class)ownerEntityClass;
++ (id)ownerEntityReferenceColumn;
 + (long long)protectionClass;
-+ (id)statementForEnumeratingEventsForWorkoutInDatabase:(id)arg1 error:(id*)arg2;
-+ (id)workoutEventsWithWorkoutID:(id)arg1 database:(id)arg2 error:(id*)arg3;
++ (id)statementForEnumeratingEventsForOwnerInDatabase:(id)arg1 error:(id*)arg2;
++ (Class)workoutEventClass;
++ (id)workoutEventsForOwner:(id)arg1 transaction:(id)arg2 error:(id*)arg3;
++ (id)workoutEventsWithOwnerID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 
 @end

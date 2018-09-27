@@ -42,13 +42,16 @@
 - (id)_tapToRadarMemory;
 - (id)_tapToRadarPicklist;
 - (id)_tapToRadarRanges;
+- (void)_teardownInternals;
 - (void)_testPregenerateWithCompletion:(id /* block */)arg1;
 - (bool)allowNonPHMemoryForUnitTesting;
 - (id)associatedPlayerViewController;
 - (id)autoEditor;
 - (void)cancelPregenerateMovie;
+- (void)cancelPrepareForPlayback;
 - (id)collection;
 - (id)createPHMemory;
+- (void)dealloc;
 - (id)defaultAssets;
 - (id)delegate;
 - (id)diagnosticItemProvider;
@@ -64,6 +67,7 @@
 - (id)playerItem;
 - (id)playerViewController;
 - (void)pregenerateMovieWithCompletionHandler:(id /* block */)arg1;
+- (void)prepareForPlayback;
 - (void)setAllowNonPHMemoryForUnitTesting:(bool)arg1;
 - (void)setAssociatedPlayerViewController:(id)arg1;
 - (void)setAutoEditor:(id)arg1;

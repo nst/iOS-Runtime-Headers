@@ -55,7 +55,6 @@
 - (id)creationDate;
 - (id)graphData;
 - (long long)graphVersion;
-- (id)identifiersForMapping;
 - (bool)isFavorite;
 - (bool)isRejected;
 - (bool)isUserCreated;
@@ -63,6 +62,7 @@
 - (long long)notificationState;
 - (long long)playCount;
 - (id)propertiesDescription;
+- (id)scopedIdentifiersForMapping;
 - (double)score;
 - (void)setAssetList:(id)arg1;
 - (void)setAssetListPredicate:(id)arg1;

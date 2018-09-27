@@ -14,7 +14,6 @@
 
 - (void)dealloc;
 - (id)delegate;
-- (void)finalize;
 - (id)internalDevices;
 - (bool)isBrowsing;
 - (void)setBrowsing:(bool)arg1;

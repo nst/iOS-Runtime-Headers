@@ -78,6 +78,7 @@
 + (int)evaluateTrust:(struct __SecTrust { }*)arg1;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToInstallUnsupportedPayloads:(bool*)arg3 outIsAllowedToWriteDefaults:(bool*)arg4;
++ (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToInstallUnsupportedPayloads:(bool*)arg3 outIsAllowedToWriteDefaults:(bool*)arg4 outIsAllowedToInstallSupervisedRestrictionsOnUnsupervisedDevices:(bool*)arg5;
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToWriteDefaults:(bool*)arg3;
 + (id)missingFieldErrorWithField:(id)arg1;
 + (id)newProfileSignatureVersion;
@@ -141,6 +142,7 @@
 - (id)profileIDHashFileName;
 - (id)removalDate;
 - (id)removalPasscode;
+- (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 - (id)restrictionsWithHeuristicsAppliedOutError:(id*)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEncrypted:(bool)arg1;

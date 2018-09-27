@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)addPresentScheduledHandler:(id /* block */)arg1;
 - (void)addPresentedHandler:(id /* block */)arg1;
+- (id)cachedTexture;
 - (void)dealloc;
 - (void)didPresentAtTime:(double)arg1;
 - (void)didScheduledPresent;

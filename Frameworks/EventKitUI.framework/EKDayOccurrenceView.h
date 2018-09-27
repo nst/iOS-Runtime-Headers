@@ -20,6 +20,7 @@
     bool  _hideText;
     bool  _isProposedTime;
     bool  _isSelectedCopyView;
+    bool  _isVibrant;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -32,6 +33,8 @@
     EKEvent * _occurrence;
     int  _occurrenceBackgroundStyle;
     unsigned int  _offsetContentForLandscape;
+    NSString * _originalEventLocation;
+    bool  _originalEventLocationIsPrediction;
     double  _originalXBeforeOffset;
     struct UIEdgeInsets { 
         double top; 
@@ -96,11 +99,14 @@
 @property (nonatomic, readonly) bool isPinned;
 @property (nonatomic) bool isProposedTime;
 @property (nonatomic) bool isSelectedCopyView;
+@property (nonatomic) bool isVibrant;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margin;
 @property (nonatomic) bool needsReply;
 @property (nonatomic, retain) EKEvent *occurrence;
 @property (nonatomic) int occurrenceBackgroundStyle;
+@property (nonatomic, copy) NSString *originalEventLocation;
+@property (nonatomic) bool originalEventLocationIsPrediction;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic) bool reduceLayoutProcessingForAnimation;
 @property (nonatomic) long long routingMode;
@@ -124,6 +130,7 @@
 + (void)_cacheLocation:(id)arg1 forEventID:(id)arg2;
 + (id)_cachedImageForCalendarColor:(id)arg1 selected:(bool)arg2 declined:(bool)arg3 cancelled:(bool)arg4 tentative:(bool)arg5 needsReply:(bool)arg6 colorBarStyle:(long long)arg7 dayViewBackgroundStyle:(int)arg8 usesLargeTextLayout:(bool)arg9;
 + (id)_cachedLocationForEventID:(id)arg1;
++ (void)_clearCacheForEventID:(id)arg1;
 + (void)_clearViewCache;
 + (id)_color:(id)arg1 lightenedToPercentage:(double)arg2 withFinalAlpha:(double)arg3;
 + (id)_imageForBarColor:(id)arg1 backgroundColor:(id)arg2 colorBarStyle:(long long)arg3;
@@ -203,12 +210,15 @@
 - (bool)isProposedTime;
 - (bool)isSelectedCopyView;
 - (bool)isTentative;
+- (bool)isVibrant;
 - (void)layoutSubviews;
 - (id)location;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margin;
 - (bool)needsReply;
 - (id)occurrence;
 - (int)occurrenceBackgroundStyle;
+- (id)originalEventLocation;
+- (bool)originalEventLocationIsPrediction;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)prepareForReuse;
@@ -238,11 +248,14 @@
 - (void)setHideText:(bool)arg1 animate:(bool)arg2;
 - (void)setIsProposedTime:(bool)arg1;
 - (void)setIsSelectedCopyView:(bool)arg1;
+- (void)setIsVibrant:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNeedsReply:(bool)arg1;
 - (void)setOccurrence:(id)arg1;
 - (void)setOccurrenceBackgroundStyle:(int)arg1;
+- (void)setOriginalEventLocation:(id)arg1;
+- (void)setOriginalEventLocationIsPrediction:(bool)arg1;
 - (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setReduceLayoutProcessingForAnimation:(bool)arg1;
 - (void)setRoutingMode:(long long)arg1;

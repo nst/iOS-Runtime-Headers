@@ -3,8 +3,9 @@
  */
 
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal> {
-    void * _addressBook;
     NSArray * _allFollowersHandles;
+    bool  _areSpecifiersLoaded;
+    NSArray * _deviceSpecifiers;
     NSMutableDictionary * _dsidToFamilyPhoto;
     NSArray * _familyMembers;
     NSArray * _familySpecifiers;
@@ -14,14 +15,16 @@
     NSArray * _hashedFamilyDsids;
     bool  _isMyLocationEnabled;
     FMFHandle * _lastSelectedHandle;
+    NSObject<OS_dispatch_queue> * _specifiersQueue;
     bool  _useFamilyCirclePhotos;
     bool  _useFamilyCirclePhotosLoaded;
 }
 
-@property (nonatomic) void*addressBook;
 @property (nonatomic, retain) NSArray *allFollowersHandles;
+@property (nonatomic) bool areSpecifiersLoaded;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *deviceSpecifiers;
 @property (nonatomic, retain) NSMutableDictionary *dsidToFamilyPhoto;
 @property (nonatomic, retain) NSArray *familyMembers;
 @property (nonatomic, retain) NSArray *familySpecifiers;
@@ -32,16 +35,19 @@
 @property (nonatomic, retain) NSArray *hashedFamilyDsids;
 @property (nonatomic) bool isMyLocationEnabled;
 @property (nonatomic, retain) FMFHandle *lastSelectedHandle;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *specifiersQueue;
 @property (readonly) Class superclass;
 @property (nonatomic) bool useFamilyCirclePhotos;
 @property (nonatomic) bool useFamilyCirclePhotosLoaded;
 
 - (void).cxx_destruct;
+- (id)_defaultSpecifiers;
 - (id)_followerHandleWithHashedDSID:(id)arg1;
 - (bool)_isFamilyMemberAFollower:(id)arg1;
 - (bool)_isHandleAFollower:(id)arg1;
 - (void)_loadFamilyMemberPhotos;
 - (void)_loadFamilyMembers:(bool)arg1;
+- (void)_loadSpecifiers;
 - (void)_meDeviceSpecifierWasTapped:(id)arg1;
 - (void)_pushAddressBookUIForHandle:(id)arg1;
 - (void)_setShareSwitchEnabled:(id)arg1 forSpecifier:(id)arg2;
@@ -50,13 +56,14 @@
 - (void)_showHandleDetails:(id)arg1;
 - (id)_specifierForFamilyMember:(id)arg1;
 - (id)_specifierForHandle:(id)arg1;
-- (void)abChanged:(id)arg1;
 - (void)addRemoveActionToContactViewController:(id)arg1;
 - (void)addShareActionToContactViewController:(id)arg1;
-- (void*)addressBook;
 - (id)allFollowersHandles;
 - (id)allHandlesMatchingABCardForSelectedHandle:(id)arg1;
+- (bool)areSpecifiersLoaded;
+- (void)contactStoreDidChange:(id)arg1;
 - (void)dealloc;
+- (id)deviceSpecifiers;
 - (void)didChangeActiveLocationSharingDevice:(id)arg1;
 - (void)didReceiveServerError:(id)arg1;
 - (void)didStartSharingMyLocationWithHandle:(id)arg1;
@@ -73,6 +80,8 @@
 - (id)genericAlertController;
 - (id)genericErrorAlert;
 - (id)hashedFamilyDsids;
+- (id)identifierForHandle:(id)arg1;
+- (id)init;
 - (bool)isMyLocationEnabled;
 - (id)lastSelectedHandle;
 - (id)monogramForHandle:(id)arg1;
@@ -80,12 +89,12 @@
 - (bool)noMeDeviceSelected:(id)arg1;
 - (id)offerTimeRemaining:(double)arg1;
 - (bool)phoneNumberMatches:(id)arg1 phone2:(id)arg2;
-- (void*)recordForHandle:(id)arg1;
 - (void)reloadSpecifiersOnMainQueue;
 - (void)removeFollower:(id)arg1;
 - (id)reverseString:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 - (void)setAllFollowersHandles:(id)arg1;
+- (void)setAreSpecifiersLoaded:(bool)arg1;
+- (void)setDeviceSpecifiers:(id)arg1;
 - (void)setDsidToFamilyPhoto:(id)arg1;
 - (void)setFamilyMembers:(id)arg1;
 - (void)setFamilySpecifiers:(id)arg1;
@@ -95,11 +104,13 @@
 - (void)setHashedFamilyDsids:(id)arg1;
 - (void)setIsMyLocationEnabled:(bool)arg1;
 - (void)setLastSelectedHandle:(id)arg1;
+- (void)setSpecifiersQueue:(id)arg1;
 - (void)setUseFamilyCirclePhotos:(bool)arg1;
 - (void)setUseFamilyCirclePhotosLoaded:(bool)arg1;
 - (void)shareMyLocation:(id)arg1;
 - (id)sortedFollowersWithCombinedRecords:(id)arg1;
 - (id)specifiers;
+- (id)specifiersQueue;
 - (id)stringByKeepingCharacterSet:(id)arg1 inString:(id)arg2;
 - (bool)useFamilyCirclePhotos;
 - (bool)useFamilyCirclePhotosLoaded;

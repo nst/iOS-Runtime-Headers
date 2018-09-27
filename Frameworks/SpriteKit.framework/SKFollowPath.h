@@ -11,6 +11,7 @@
 + (id)followPath:(struct CGPath { }*)arg1 asOffset:(bool)arg2 orientToPath:(bool)arg3 speed:(double)arg4;
 + (id)followPath:(struct CGPath { }*)arg1 duration:(double)arg2;
 + (id)followPath:(struct CGPath { }*)arg1 speed:(double)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

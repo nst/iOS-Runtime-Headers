@@ -196,6 +196,7 @@
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(id /* block */)arg2;
 - (void)oneUpAssetTransitionDidEnd:(id)arg1;
 - (void)oneUpAssetTransitionWillBegin:(id)arg1;
+- (id)photoEditToolbar:(id)arg1 accessibilityHUDItemForButton:(id)arg2;
 - (void)photoEditToolbar:(id)arg1 showAccessibilityHUDForItem:(id)arg2;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;

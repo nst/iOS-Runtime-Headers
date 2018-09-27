@@ -30,6 +30,7 @@
     CNVCardLexer * _lexer;
     CNVCardMutableNameComponents * _nameComponents;
     NSMutableString * _notes;
+    CNVCardReadingOptions * _options;
     CNVCardSelectorMap * _parameterSelectorMap;
     CNVCardSelectorMap * _parsingSelectorMap;
     NSMutableArray * _phones;
@@ -42,9 +43,15 @@
     NSMutableArray * _urls;
 }
 
+@property (nonatomic, copy) NSData *imageData;
+@property (nonatomic, readonly) CNVCardReadingOptions *options;
+@property (nonatomic, readonly) <CNVCardParsedResultBuilder> *resultBuilder;
+
++ (unsigned long long)countOfCardsInData:(id)arg1;
 + (unsigned long long)inferredStringEncodingFromData:(id)arg1;
 + (id)newParameterSelectorMap;
 + (id)newParsingSelectorMap;
++ (id)parseData:(id)arg1 options:(id)arg2 resultFactory:(id)arg3;
 + (id)parseData:(id)arg1 resultFactory:(id)arg2;
 + (bool)parseFirstResultInData:(id)arg1 resultBuilder:(id)arg2;
 
@@ -62,12 +69,15 @@
 - (id)genericLabelForProperty:(id)arg1;
 - (SEL)handlerSelectorForParameterName:(id)arg1;
 - (bool)hasImportErrors;
+- (id)imageData;
 - (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 options:(id)arg2;
 - (id)makeLineWithLabel:(id)arg1 value:(id)arg2;
 - (id)makeLineWithValue:(id)arg1 forProperty:(id)arg2;
 - (id)nextBase64Data;
 - (id)nextParameterInCurrentLine;
 - (id)nextResultWithFactory:(id)arg1 progressLength:(long long*)arg2;
+- (id)options;
 - (id)parameterValuesForName:(id)arg1;
 - (void)parameter_BASE64:(id)arg1;
 - (void)parameter_CHARSET:(id)arg1;
@@ -153,7 +163,9 @@
 - (void)reportMultiValueLines:(id)arg1 forProperty:(id)arg2;
 - (void)reportValue:(id)arg1 forProperty:(id)arg2;
 - (void)reportValues;
+- (id)resultBuilder;
 - (id)resultsWithFactory:(id)arg1;
+- (void)setImageData:(id)arg1;
 - (id)typeParameters;
 - (id)validCountryCodes;
 - (bool)valueIsEmpty:(id)arg1;

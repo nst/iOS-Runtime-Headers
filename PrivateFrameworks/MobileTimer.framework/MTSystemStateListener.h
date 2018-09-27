@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTSystemStateListener : NSObject <MTAgentDiagnosticDelegate, MTAgentNotificationListener> {
+@interface MTSystemStateListener : NSObject <MTAgentDiagnosticDelegate, MTAgentNotificationListener, MTSpringboardStartMonitorDelegate> {
     <MTSystemStateDelegate> * _delegate;
     bool  _restoreDoneHandled;
 }
@@ -22,6 +22,7 @@
 - (void)_handleF5Reset;
 - (void)_handleRestoreDone;
 - (id)delegate;
+- (id)gatherDiagnostics;
 - (void)handleNotification:(id)arg1;
 - (id)handledLiveDarwinNotifications;
 - (bool)handlesNotification:(id)arg1;
@@ -30,5 +31,6 @@
 - (bool)restoreDoneHandled;
 - (void)setDelegate:(id)arg1;
 - (void)setRestoreDoneHandled:(bool)arg1;
+- (void)springboardStartMonitor:(id)arg1 didReceiveStarted:(bool)arg2;
 
 @end

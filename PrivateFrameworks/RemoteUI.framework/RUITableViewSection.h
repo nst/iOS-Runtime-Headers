@@ -4,8 +4,8 @@
 
 @interface RUITableViewSection : RUIElement <RUIHeaderDelegate, RUITableFooterDelegate> {
     bool  _configured;
-    RUIReadableContentContainer * _containerizedFooterView;
-    RUIReadableContentContainer * _containerizedHeaderView;
+    RUITableViewHeaderFooterView * _containerizedFooterView;
+    RUITableViewHeaderFooterView * _containerizedHeaderView;
     RUIDetailHeaderElement * _detailHeader;
     long long  _disclosureLimit;
     NSNumber * _drawsTopSeparator;
@@ -22,8 +22,8 @@
 }
 
 @property (nonatomic) bool configured;
-@property (nonatomic, retain) UIView *containerizedFooterView;
-@property (nonatomic, retain) UIView *containerizedHeaderView;
+@property (nonatomic, retain) RUITableViewHeaderFooterView *containerizedFooterView;
+@property (nonatomic, retain) RUITableViewHeaderFooterView *containerizedHeaderView;
 @property (nonatomic, retain) RUIDetailHeaderElement *detailHeader;
 @property (nonatomic) bool drawTopSeparator;
 @property (nonatomic, retain) RUIElement *footer;

@@ -16,6 +16,10 @@
     double  _vignetteEnd;
     double  _vignetteStart;
     int  modeUniform;
+    float  numLevels;
+    int  numLevelsUniform;
+    float  recipNumLevels;
+    int  recipNumLevelsUniform;
     int  vignetteCenterUniform;
     int  vignetteColorUniform;
     int  vignetteEndUniform;
@@ -31,6 +35,7 @@
 - (id)init;
 - (int)mode;
 - (void)setMode:(int)arg1;
+- (void)setNumLevels:(unsigned int)arg1;
 - (void)setUniforms;
 - (void)setVignetteCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setVignetteColor:(struct TDColor3 { float x1; float x2; float x3; })arg1;

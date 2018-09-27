@@ -4,17 +4,19 @@
 
 @interface ADLocationManager : NSObject <CLLocationManagerDelegate> {
     CLLocation * _actualLocation;
+    int  _callerStatus;
     CLPlacemark * _currentPlacemark;
     bool  _isLocationInitialized;
     bool  _isLocationUpdating;
     CLLocation * _lastPlacemarkLocation;
     NSMutableArray * _listeners;
     CLLocationManager * _locationManager;
-    NSThread * _myThread;
+    NSObject<OS_dispatch_queue> * _locationQueue;
     bool  _updatingPlacemark;
 }
 
 @property (nonatomic, retain) CLLocation *actualLocation;
+@property (nonatomic) int callerStatus;
 @property (retain) CLPlacemark *currentPlacemark;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -24,16 +26,15 @@
 @property (nonatomic, retain) CLLocation *lastPlacemarkLocation;
 @property (nonatomic, retain) NSMutableArray *listeners;
 @property (nonatomic, retain) CLLocationManager *locationManager;
-@property (nonatomic, retain) NSThread *myThread;
 @property (readonly) Class superclass;
-@property (nonatomic) bool updatingPlacemark;
+@property bool updatingPlacemark;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)actualLocation;
 - (void)addListener:(id)arg1;
-- (void)createLocationManager;
+- (int)callerStatus;
 - (id)currentLocation;
 - (id)currentPlacemark;
 - (id)init;
@@ -42,20 +43,20 @@
 - (bool)isLocationUpdating;
 - (id)lastPlacemarkLocation;
 - (id)listeners;
+- (bool)locationEnabledFor:(int)arg1;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (id)myThread;
 - (id)obfuscatedLocation;
 - (void)setActualLocation:(id)arg1;
+- (void)setCallerStatus:(int)arg1;
 - (void)setCurrentPlacemark:(id)arg1;
 - (void)setIsLocationInitialized:(bool)arg1;
 - (void)setIsLocationUpdating:(bool)arg1;
 - (void)setLastPlacemarkLocation:(id)arg1;
 - (void)setListeners:(id)arg1;
 - (void)setLocationManager:(id)arg1;
-- (void)setMyThread:(id)arg1;
 - (void)setUpdatingPlacemark:(bool)arg1;
 - (void)start;
 - (void)stop;

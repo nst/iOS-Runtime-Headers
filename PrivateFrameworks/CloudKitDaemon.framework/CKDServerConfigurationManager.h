@@ -38,6 +38,7 @@
 - (void)_fetchGlobalConfigForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_reallyDropAllConfigurations;
 - (id)_uniqueStringForContainerAndAccount:(id)arg1;
+- (void)_writeOutiCloudHostnames:(id)arg1;
 - (void)configurationForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)configurationQueue;
 - (void)containerInfoForOperation:(id)arg1 requireUserIDs:(bool)arg2 completionHandler:(id /* block */)arg3;

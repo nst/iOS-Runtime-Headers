@@ -9,6 +9,7 @@
 @property (setter=_setCachedShiftedLocation:, nonatomic, retain) CLLocation *_cachedShiftedLocation;
 @property (nonatomic, copy) NSString *adjustedFingerPrint;
 @property (nonatomic) bool allowedForAnalysis;
+@property (nonatomic, retain) NSDate *alternateImportImageDate;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) PLAssetDescription *assetDescription;
 @property (nonatomic) short cameraCaptureDevice;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSString *customMomentUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) short destinationAssetCopyState;
 @property (nonatomic, retain) NSData *distanceIdentity;
 @property (nonatomic, retain) NSString *editorBundleID;
 @property (nonatomic, readonly, retain) NSNumber *embeddedThumbnailHeight;
@@ -39,7 +41,6 @@
 @property (nonatomic, retain) NSNumber *externalUsageIntent;
 @property (nonatomic, retain) NSData *faceRegions;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) id importSessionID;
 @property (nonatomic) short importedBy;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSDate *lastUploadAttemptDate;
@@ -71,7 +72,10 @@
 @property (nonatomic, retain) NSDate *sceneAnalysisTimestamp;
 @property (nonatomic) short sceneAnalysisVersion;
 @property (nonatomic, retain) NSSet *sceneClassifications;
+@property (nonatomic, retain) PLSceneprint *sceneprint;
 @property (nonatomic) long long shareCount;
+@property (nonatomic, copy) NSString *shareOriginator;
+@property (nonatomic) short shareType;
 @property (nonatomic, retain) CLLocation *shiftedLocation;
 @property (nonatomic, retain) NSData *shiftedLocationData;
 @property (nonatomic) bool shiftedLocationIsValid;
@@ -87,6 +91,7 @@
 @property (nonatomic) int videoCpDurationTimescale;
 @property (nonatomic) long long viewCount;
 
++ (id)descriptionForDestinationAssetCopyState:(short)arg1;
 + (id)entityName;
 + (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg3;
 + (id)listOfSyncedProperties;
@@ -105,10 +110,12 @@
 - (void)resetCloudRecoveryState;
 - (void)setCloudRecoveryStateFlag:(long long)arg1;
 - (void)setLongDescription:(id)arg1;
+- (void)setSceneprintWithData:(id)arg1;
 - (void)setShiftedLocation:(id)arg1;
 - (void)setShiftedLocationIsValid:(bool)arg1;
 - (id)shiftedLocation;
 - (bool)supportsCloudUpload;
+- (void)truncatedOriginalCheckChangedValues:(id)arg1;
 - (bool)validateForInsert:(id*)arg1;
 - (bool)validateForUpdate:(id*)arg1;
 - (void)willSave;

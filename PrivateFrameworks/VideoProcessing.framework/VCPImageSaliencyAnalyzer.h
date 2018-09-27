@@ -17,7 +17,6 @@
         } size; 
     }  _region;
     float  _score;
-    bool  _useGPU;
 }
 
 + (id)analyzerWith:(int)arg1 prune:(bool)arg2;
@@ -25,12 +24,13 @@
 - (int)aggregateTileResults:(id)arg1 tileRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 landscape:(bool)arg4 results:(id)arg5;
 - (int)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 flags:(unsigned long long*)arg2 results:(id*)arg3 cancel:(id /* block */)arg4;
 - (float)computeScore:(float*)arg1 width:(int)arg2 height:(int)arg3 posX:(int)arg4 posY:(int)arg5;
-- (int)generateSalientRegion:(id)arg1;
+- (int)generateSalientRegion:(float*)arg1 outHeight:(int)arg2 outWidth:(int)arg3;
+- (float*)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int*)arg3 cnnInputWidth:(int*)arg4;
+- (int)getSalientRegions:(id /* block */)arg1;
+- (int)initWithImage:(float*)arg1 image:(struct __CVBuffer { }*)arg2 forChunk:(int)arg3;
 - (id)initWithMaxNumRegions:(int)arg1 prune:(bool)arg2;
-- (int)initializeInput:(id)arg1 withBuffer:(struct __CVBuffer { }*)arg2 width:(int)arg3 height:(int)arg4;
-- (int)initializeModel:(id)arg1;
-- (id)modelFileName;
-- (short)modelQuantFactor;
+- (int)initializeInput:(float*)arg1 withBuffer:(struct __CVBuffer { }*)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4;
+- (int)initializeModel:(int)arg1 srcWidth:(int)arg2;
 - (float)outputScaling;
 - (int)processTile:(struct __CVBuffer { }*)arg1 results:(id)arg2 cancel:(id /* block */)arg3;
 - (id)pruneRegions:(id)arg1;

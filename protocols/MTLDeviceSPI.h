@@ -5,9 +5,9 @@
 
 @required
 
-+ (bool)metalBufferSanitizerEnabled;
 + (void)registerDevices;
 
+- (<MTLDevice> *)_deviceWrapper;
 - (void)_setDeviceWrapper:(id <MTLDeviceSPI>)arg1;
 - (unsigned int)acceleratorPort;
 - (void)compilerPropagatesThreadPriority:(bool)arg1;
@@ -17,15 +17,17 @@
 - (bool)deviceOrFeatureProfileSupportsFeatureSet:(unsigned long long)arg1;
 - (bool)deviceSupportsFeatureSet:(unsigned long long)arg1;
 - (unsigned long long)doubleFPConfig;
+- (NSString *)familyName;
 - (unsigned long long)featureProfile;
 - (unsigned long long)halfFPConfig;
 - (struct IndirectArgumentBufferCapabilities { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 29; })indirectArgumentBufferCapabilities;
 - (unsigned long long)iosurfaceReadOnlyTextureAlignmentBytes;
 - (unsigned long long)iosurfaceTextureAlignmentBytes;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
-- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; }*)limits;
+- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; unsigned int x55; unsigned int x56; unsigned long long x57; }*)limits;
 - (unsigned long long)linearTextureAlignmentBytes;
-- (unsigned long long)maxBufferLength;
+- (unsigned long long)linearTextureArrayAlignmentBytes;
+- (unsigned long long)linearTextureArrayAlignmentSlice;
 - (unsigned long long)maxColorAttachments;
 - (unsigned long long)maxComputeBuffers;
 - (unsigned long long)maxComputeInlineDataSize;
@@ -41,11 +43,16 @@
 - (unsigned long long)maxFragmentTextures;
 - (unsigned long long)maxFramebufferStorageBits;
 - (unsigned long long)maxFunctionConstantIndices;
+- (unsigned long long)maxIndirectBuffers;
+- (unsigned long long)maxIndirectSamplers;
+- (unsigned long long)maxIndirectSamplersPerDevice;
+- (unsigned long long)maxIndirectTextures;
 - (unsigned long long)maxInterpolants;
 - (unsigned long long)maxInterpolatedComponents;
 - (float)maxLineWidth;
 - (float)maxPointSize;
 - (unsigned long long)maxTessellationFactor;
+- (unsigned long long)maxTextureBufferWidth;
 - (unsigned long long)maxTextureDepth3D;
 - (unsigned long long)maxTextureDimensionCube;
 - (unsigned long long)maxTextureHeight2D;
@@ -64,6 +71,7 @@
 - (unsigned long long)maxVertexInlineDataSize;
 - (unsigned long long)maxVertexSamplers;
 - (unsigned long long)maxVertexTextures;
+- (unsigned long long)maxViewportCount;
 - (unsigned long long)maxVisibilityQueryOffset;
 - (bool)metalAssertionsEnabled;
 - (unsigned long long)minBufferNoCopyAlignmentBytes;
@@ -75,19 +83,23 @@
 - (<MTLCommandQueue> *)newCommandQueueWithDescriptor:(MTLCommandQueueDescriptor *)arg1;
 - (_MTLIndirectArgumentBufferLayout *)newIndirectArgumentBufferLayoutWithStructType:(MTLStructType *)arg1;
 - (<MTLIndirectArgumentEncoder> *)newIndirectArgumentEncoderWithLayout:(_MTLIndirectArgumentBufferLayout *)arg1;
+- (<MTLBuffer> *)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (<MTLIndirectRenderCommandEncoder> *)newIndirectRenderCommandEncoderWithBuffer:(id <MTLBuffer>)arg1;
+- (<MTLSharedEvent> *)newSharedEventWithMachPort:(unsigned int)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned long long)arg3;
 - (struct { unsigned int x1; unsigned int x2; })pipelineCacheStats;
+- (NSString *)productName;
 - (void)setMetalAssertionsEnabled:(bool)arg1;
 - (unsigned long long)sharedMemorySize;
 - (unsigned long long)singleFPConfig;
 - (bool)supportPriorityBand;
 - (bool)supportsSampleCount:(unsigned long long)arg1;
 - (void)unloadShaderCaches;
+- (NSString *)vendorName;
 
 @optional
 
 - (NSData *)endCollectingPipelineDescriptors;
-- (NSString *)familyName;
 - (void*)getShaderCacheKeys;
 - (NSObject<OS_dispatch_data> *)indirectArgumentBufferDecodingData;
 - (unsigned long long)indirectArgumentBuffersSupport;
@@ -106,7 +118,8 @@
 - (<MTLRenderPipelineState> *)newRenderPipelineStateWithTileDescriptor:(MTLTileRenderPipelineDescriptor *)arg1 error:(id*)arg2;
 - (<MTLTextureLayout> *)newTextureLayoutWithDescriptor:(MTLTextureDescriptor *)arg1 isHeapOrBufferBacked:(bool)arg2;
 - (<MTLTexture> *)newTextureWithBytesNoCopy:(void *)arg1 length:(void *)arg2 descriptor:(void *)arg3 deallocator:(void *)arg4; // needs 4 arg types, found 10: void*, unsigned long long, MTLTextureDescriptor *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, unsigned long long, void*
-- (NSString *)productName;
+- (void)reserveResourceIndicesForResourceType:(unsigned long long)arg1 indices:(unsigned long long*)arg2 indexCount:(unsigned long long)arg3;
+- (unsigned long long)resourcePatchingTypeForResourceType:(unsigned long long)arg1;
 - (void)setIndirectArgumentBufferDecodingData:(NSObject<OS_dispatch_data> *)arg1;
 - (void)setShaderDebugInfoCaching:(bool)arg1;
 - (void)setupMPSFunctionTable:(struct MPSFunctionTable { }*)arg1;
@@ -114,6 +127,5 @@
 - (void)startCollectingPipelineDescriptors;
 - (const struct MTLTargetDeviceArch { unsigned int x1; unsigned int x2; char *x3; }*)targetDeviceInfo;
 - (void)unmapShaderSampleBuffer;
-- (NSString *)vendorName;
 
 @end

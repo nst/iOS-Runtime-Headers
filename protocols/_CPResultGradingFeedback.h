@@ -6,10 +6,6 @@
 @required
 
 - (int)grade;
-- (bool)hasGrade;
-- (bool)hasResult;
-- (bool)hasTextFeedback;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

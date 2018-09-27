@@ -6,6 +6,7 @@
     PKPeerPaymentBubbleView * _bubbleView;
     PKPeerPaymentContactResolver * _contactResolver;
     PKPaymentTransactionDetailHeaderView * _headerView;
+    bool  _inBridge;
     bool  _issuerAppDeepLinkingEnabled;
     NSArray * _lineItems;
     UIImage * _mapTilePlaceholderImage;
@@ -24,6 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKPaymentTransactionDetailHeaderView *headerView;
+@property (nonatomic) bool inBridge;
 @property (nonatomic) bool issuerAppDeepLinkingEnabled;
 @property (nonatomic, retain) NSArray *lineItems;
 @property (nonatomic, retain) UIImage *mapTilePlaceholderImage;
@@ -82,6 +84,7 @@
 - (id)contactResolver;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 - (id)headerView;
+- (bool)inBridge;
 - (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2 contactResolver:(id)arg3 peerPaymentController:(id)arg4 paymentServiceDataProvider:(id)arg5;
 - (bool)issuerAppDeepLinkingEnabled;
 - (id)lineItems;
@@ -99,6 +102,7 @@
 - (void)setBubbleView:(id)arg1;
 - (void)setContactResolver:(id)arg1;
 - (void)setHeaderView:(id)arg1;
+- (void)setInBridge:(bool)arg1;
 - (void)setIssuerAppDeepLinkingEnabled:(bool)arg1;
 - (void)setLineItems:(id)arg1;
 - (void)setMapTilePlaceholderImage:(id)arg1;

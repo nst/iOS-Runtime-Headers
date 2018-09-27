@@ -34,6 +34,7 @@
 @property (nonatomic) long long temporaryPersistenceOptions;
 @property (getter=isTimelapse, nonatomic) bool timelapse;
 @property (nonatomic) long long torchMode;
+@property (nonatomic) double userInitationTimestamp;
 @property (nonatomic) long long videoEncodingBehavior;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -63,6 +64,7 @@
 - (void)setTemporaryPersistenceOptions:(long long)arg1;
 - (void)setTimelapse:(bool)arg1;
 - (void)setTorchMode:(long long)arg1;
+- (void)setUserInitationTimestamp:(double)arg1;
 - (void)setVideoEncodingBehavior:(long long)arg1;
 
 @end

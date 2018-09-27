@@ -11,12 +11,14 @@
 - (bool)isSecureTextEntry;
 - (long long)keyboardAppearance;
 - (long long)keyboardType;
+- (UITextInputPasswordRules *)passwordRules;
 - (long long)returnKeyType;
 - (void)setAutocapitalizationType:(long long)arg1;
 - (void)setAutocorrectionType:(long long)arg1;
 - (void)setEnablesReturnKeyAutomatically:(bool)arg1;
 - (void)setKeyboardAppearance:(long long)arg1;
 - (void)setKeyboardType:(long long)arg1;
+- (void)setPasswordRules:(UITextInputPasswordRules *)arg1;
 - (void)setReturnKeyType:(long long)arg1;
 - (void)setSecureTextEntry:(bool)arg1;
 - (void)setSmartDashesType:(long long)arg1;

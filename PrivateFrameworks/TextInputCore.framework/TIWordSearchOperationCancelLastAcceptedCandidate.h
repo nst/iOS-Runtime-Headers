@@ -8,8 +8,8 @@
 
 @property (nonatomic, retain) TIMecabraWrapper *mecabraWrapper;
 
+- (void).cxx_destruct;
 - (void)cancel;
-- (void)dealloc;
 - (id)initWithWordSearch:(id)arg1;
 - (id)mecabraWrapper;
 - (void)perform;

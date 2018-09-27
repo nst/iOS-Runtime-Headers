@@ -18,6 +18,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;
 
+- (void).cxx_destruct;
 - (double)bottomMargin;
 - (double)headerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (double)height;

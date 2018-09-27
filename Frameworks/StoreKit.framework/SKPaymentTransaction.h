@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) NSData *transactionReceipt;
 @property (nonatomic, readonly) long long transactionState;
 
+- (void).cxx_destruct;
+- (id)UUID;
 - (void)_setDownloads:(id)arg1;
 - (void)_setError:(id)arg1;
 - (void)_setOriginalTransaction:(id)arg1;
@@ -28,13 +30,14 @@
 - (id)_transactionIdentifier;
 - (bool)canMergeWithTransaction:(id)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)downloads;
 - (id)error;
 - (id)init;
 - (id)initWithPayment:(id)arg1;
+- (id)initWithServerTransaction:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)matchingIdentifier;
+- (bool)mergeWithServerTransaction:(id)arg1;
 - (bool)mergeWithTransaction:(id)arg1;
 - (id)originalTransaction;
 - (id)payment;

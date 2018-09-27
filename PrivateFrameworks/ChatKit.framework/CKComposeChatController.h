@@ -8,6 +8,7 @@
     UIBarButtonItem * _composeCancelItem;
     CKComposeRecipientSelectionController * _composeRecipientSelectionController;
     id /* block */  _deferredSendAnimationBlock;
+    bool  _ignoreKeyboardNotifications;
     CKComposeNavbarManager * _navbarManager;
     bool  _newComposeCancelled;
     CKComposition * _prepopulatedComposition;
@@ -23,6 +24,7 @@
 @property (nonatomic) <CKComposeChatControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreKeyboardNotifications;
 @property (nonatomic, retain) CKComposeNavbarManager *navbarManager;
 @property (nonatomic) bool newComposeCancelled;
 @property (nonatomic, retain) CKComposition *prepopulatedComposition;
@@ -57,10 +59,12 @@
 - (void)handleAddressBookChange:(id)arg1;
 - (bool)hasFailedRecipients;
 - (bool)hasUnreachableEmergencyRecipient;
+- (bool)ignoreKeyboardNotifications;
 - (id)initWithRecipientAddresses:(id)arg1 composition:(id)arg2 bizIntent:(id)arg3;
 - (id)inputAccessoryView;
 - (bool)isComposingRecipient;
 - (bool)isSafeToMarkAsRead;
+- (void)keyboardWillShowOrHide:(id)arg1;
 - (void)layoutBusinessInfoViewIfNecessary;
 - (void)messageEntryViewDidChange:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
@@ -77,6 +81,7 @@
 - (void)recipientSelectionController:(id)arg1 didFinishAvailaiblityLookupForRecipient:(id)arg2;
 - (void)recipientSelectionController:(id)arg1 didSelectConversation:(id)arg2;
 - (void)recipientSelectionController:(id)arg1 textDidChange:(id)arg2;
+- (void)recipientSelectionControllerDidBecomeFirstResponder:(id)arg1;
 - (void)recipientSelectionControllerDidChangeSize:(id)arg1;
 - (void)recipientSelectionControllerDidPushABViewController:(id)arg1;
 - (void)recipientSelectionControllerRequestDismissKeyboard:(id)arg1;
@@ -91,6 +96,7 @@
 - (void)setComposeCancelItem:(id)arg1;
 - (void)setComposeRecipientSelectionController:(id)arg1;
 - (void)setDeferredSendAnimationBlock:(id /* block */)arg1;
+- (void)setIgnoreKeyboardNotifications:(bool)arg1;
 - (void)setNavbarManager:(id)arg1;
 - (void)setNewComposeCancelled:(bool)arg1;
 - (void)setPrepopulatedComposition:(id)arg1;

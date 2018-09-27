@@ -16,6 +16,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
 - (void)dealloc;
+- (double)density;
 - (id)description;
 - (void)enumerateRects:(id /* block */)arg1;
 - (unsigned long long)hash;
@@ -47,5 +48,6 @@
 - (id)regionByShrinkingBy:(struct { long long x1; long long x2; })arg1;
 - (id)regionByShrinkingBy:(struct { long long x1; long long x2; })arg1 inRect:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; struct { long long x_2_1_1; long long x_2_1_2; } x2; })arg2;
 - (id)regionByTranslatingBy:(struct { long long x1; long long x2; })arg1;
+- (id)regionWithSubregionsOfMinimumDensity:(double)arg1;
 
 @end

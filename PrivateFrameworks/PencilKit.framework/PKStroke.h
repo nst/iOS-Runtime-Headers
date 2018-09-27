@@ -2,7 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
  */
 
-@interface PKStroke : NSObject {
+@interface PKStroke : NSObject <NSCopying> {
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  __untransformedBounds;
     struct _PKStrokePoint { 
         double timestamp; 
         struct CGPoint { 
@@ -48,6 +58,16 @@
         unsigned int subclock; 
     }  _strokeID;
     _PKStrokeIDWrapper * _strokeIDWrapper;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _tightBounds;
     double  _timestamp;
     struct CGAffineTransform { 
         double a; 
@@ -69,19 +89,25 @@
 @property (nonatomic) bool _inflight;
 @property (setter=_setInputType:, nonatomic) long long _inputType;
 @property (setter=_setStrokeID:, nonatomic) struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; } _strokeID;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _tightBounds;
 @property (setter=_setTransform:, nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } _transform;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _untransformedBounds;
 @property (nonatomic) struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; } _version;
 @property (retain) PKInk *ink;
 @property (readonly) NSMutableArray *points;
 @property double timestamp;
 
++ (long long)_asciiBitfieldIndexForX:(long long)arg1 y:(long long)arg2 width:(long long)arg3;
++ (long long)_asciiDimensionForBoundsDimension:(double)arg1;
 + (long long)compareStrokeWithIDWrapper:(id)arg1 toStrokeIDWrapper:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addStrokePoint:(void*)arg1;
 - (void)_applyTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (id)_ascii;
 - (struct _PKStrokePoint { double x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })_baseValues;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calculateBounds:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })_clipNormal;
 - (struct CGPoint { double x1; double x2; })_clipOrigin;
 - (struct PKCompressedStrokePoint { float x1; struct _PKPoint { float x_2_1_1; float x_2_1_2; } x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; unsigned char x8; unsigned char x9; }*)_completedPoints;
@@ -95,12 +121,13 @@
 - (bool)_isClipped;
 - (bool)_isHidden;
 - (double)_lengthOfSplineSegment:(unsigned long long)arg1;
+- (bool*)_newAsciiBitfield;
+- (bool*)_newAsciiBitfieldWithWidth:(long long)arg1 height:(long long)arg2;
 - (void*)_points;
 - (unsigned long long)_pointsCount;
 - (unsigned int)_randomSeed;
 - (void)_removeLastStrokePoint;
 - (void)_removeStrokePointAtIndex:(unsigned long long)arg1;
-- (double)_renderCost;
 - (void)_replaceStrokePointAtIndex:(unsigned long long)arg1 withStrokePoint:(void*)arg2;
 - (void)_setBaseValues:(struct _PKStrokePoint { double x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
 - (void)_setClipNormal:(struct CGPoint { double x1; double x2; })arg1;
@@ -116,13 +143,16 @@
 - (struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })_strokeID;
 - (double)_strokeLength;
 - (void*)_strokePointAtIndex:(unsigned long long)arg1;
+- (id)_substrokeWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_tightBounds;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transform;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_untransformedBounds;
 - (struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })_version;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (struct CGPoint { double x1; double x2; })clipNormal;
 - (struct CGPoint { double x1; double x2; })clipOrigin;
 - (long long)compareToStroke:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionExtended;
 - (double)endTimestamp;
@@ -133,6 +163,7 @@
 - (id)initWithArchive:(const struct Stroke { int (**x1)(); struct unique_ptr<drawing::Rectangle, std::__1::default_delete<drawing::Rectangle> > { struct __compressed_pair<drawing::Rectangle *, std::__1::default_delete<drawing::Rectangle> > { struct Rectangle {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<drawing::Point, std::__1::default_delete<drawing::Point> > { struct __compressed_pair<drawing::Point *, std::__1::default_delete<drawing::Point> > { struct Point {} *x_1_2_1; } x_3_1_1; } x3; struct unique_ptr<drawing::Point, std::__1::default_delete<drawing::Point> > { struct __compressed_pair<drawing::Point *, std::__1::default_delete<drawing::Point> > { struct Point {} *x_1_2_1; } x_4_1_1; } x4; unsigned long long x5; struct unique_ptr<PB::Data, std::__1::default_delete<PB::Data> > { struct __compressed_pair<PB::Data *, std::__1::default_delete<PB::Data> > { struct Data {} *x_1_2_1; } x_6_1_1; } x6; unsigned long long x7; struct unique_ptr<drawing::StrokeID, std::__1::default_delete<drawing::StrokeID> > { struct __compressed_pair<drawing::StrokeID *, std::__1::default_delete<drawing::StrokeID> > { struct StrokeID {} *x_1_2_1; } x_8_1_1; } x8; }*)arg1 version:(unsigned int)arg2 sortedUUIDs:(id)arg3 inks:(id)arg4;
 - (id)initWithLegacyArchive:(const struct Command { int (**x1)(); struct unique_ptr<legacy_drawing::Point, std::__1::default_delete<legacy_drawing::Point> > { struct __compressed_pair<legacy_drawing::Point *, std::__1::default_delete<legacy_drawing::Point> > { struct Point {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<legacy_drawing::Rectangle, std::__1::default_delete<legacy_drawing::Rectangle> > { struct __compressed_pair<legacy_drawing::Rectangle *, std::__1::default_delete<legacy_drawing::Rectangle> > { struct Rectangle {} *x_1_2_1; } x_3_1_1; } x3; struct unique_ptr<legacy_drawing::Point, std::__1::default_delete<legacy_drawing::Point> > { struct __compressed_pair<legacy_drawing::Point *, std::__1::default_delete<legacy_drawing::Point> > { struct Point {} *x_1_2_1; } x_4_1_1; } x4; struct unique_ptr<legacy_drawing::Point, std::__1::default_delete<legacy_drawing::Point> > { struct __compressed_pair<legacy_drawing::Point *, std::__1::default_delete<legacy_drawing::Point> > { struct Point {} *x_1_2_1; } x_5_1_1; } x5; struct unique_ptr<legacy_drawing::Color, std::__1::default_delete<legacy_drawing::Color> > { struct __compressed_pair<legacy_drawing::Color *, std::__1::default_delete<legacy_drawing::Color> > { struct Color {} *x_1_2_1; } x_6_1_1; } x6; }*)arg1 version:(unsigned int)arg2 sortedUUIDs:(id)arg3;
 - (id)initWithPath:(struct CGPath { }*)arg1 ink:(id)arg2 inputScale:(double)arg3;
+- (id)initWithPath:(struct CGPath { }*)arg1 ink:(id)arg2 inputScale:(double)arg3 velocityForDistanceFunction:(id /* block */)arg4;
 - (id)initWithStroke:(id)arg1 hidden:(bool)arg2 version:(struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })arg3;
 - (id)initWithStroke:(id)arg1 hidden:(bool)arg2 version:(struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })arg3 ink:(id)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
 - (id)initWithStroke:(id)arg1 hidden:(bool)arg2 version:(struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })arg3 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
@@ -141,6 +172,7 @@
 - (bool)isClipped;
 - (bool)isEqual:(id)arg1;
 - (struct CGPath { }*)newPathRepresentation;
+- (unsigned long long)oldHashForRandomSeedSoonToBeObsoleted;
 - (id)points;
 - (struct CGPoint { double x1; double x2; })readPointFromArchive:(const struct Point { int (**x1)(); float x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; } x4; }*)arg1;
 - (struct _PKStrokePoint { double x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })readPointFromLegacyArchive:(const struct Point { int (**x1)(); float x2; float x3; float x4; float x5; float x6; float x7; float x8; struct { unsigned int x_9_1_1 : 1; unsigned int x_9_1_2 : 1; unsigned int x_9_1_3 : 1; unsigned int x_9_1_4 : 1; unsigned int x_9_1_5 : 1; unsigned int x_9_1_6 : 1; unsigned int x_9_1_7 : 1; } x9; }*)arg1 deltaFrom:(const struct _PKStrokePoint { double x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; }*)arg2;
@@ -155,6 +187,8 @@
 - (void)set_bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_hidden:(bool)arg1;
 - (void)set_inflight:(bool)arg1;
+- (void)set_tightBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)set_untransformedBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_version:(struct _PKStrokeID { unsigned int x1; unsigned char x2[16]; unsigned int x3; })arg1;
 - (double)startTimestamp;
 - (id)strokeIdentifier;

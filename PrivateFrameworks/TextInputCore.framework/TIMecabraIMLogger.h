@@ -10,8 +10,8 @@
 
 + (bool)isLoggingEnabled;
 
+- (void).cxx_destruct;
 - (void)beginLogging;
-- (void)dealloc;
 - (void)endLoggingForInput:(id)arg1 atFinalTimeMark:(unsigned long long)arg2;
 - (id)logFilePath;
 - (id)loggedMessage;

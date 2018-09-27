@@ -4,6 +4,7 @@
 
 @interface TLKFormattedTextItem : TLKObject
 
+- (unsigned long long)_itemType;
 - (bool)hasContent;
 
 @end

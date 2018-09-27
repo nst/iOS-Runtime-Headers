@@ -8,6 +8,7 @@
     NSDictionary * _annotations;
     bool  _bestForCredentialPreFill;
     bool  _bestForPageLevelAutoFill;
+    bool  _bestForStreamlinedLogin;
     NSString * _confirmPasswordElementUniqueID;
     bool  _containsActiveElement;
     NSNumber * _containsAtLeastOneSecureTextField;
@@ -16,6 +17,7 @@
     bool  _isSearchForm;
     NSString * _oldPasswordElementUniqueID;
     NSString * _passwordElementUniqueID;
+    NSDictionary * _passwordRequirements;
     unsigned long long  _requestType;
     NSString * _textSample;
     unsigned long long  _type;
@@ -31,6 +33,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *annotations;
 @property (getter=isBestForCredentialPreFill, nonatomic, readonly) bool bestForCredentialPreFill;
 @property (getter=isBestForPageLevelAutoFill, nonatomic, readonly) bool bestForPageLevelAutoFill;
+@property (getter=isBestForStreamlinedLogin, nonatomic, readonly) bool bestForStreamlinedLogin;
 @property (nonatomic, readonly, copy) NSString *confirmPasswordElementUniqueID;
 @property (nonatomic, readonly) bool containsActiveElement;
 @property (nonatomic, readonly) bool containsAtLeastOneSecureTextField;
@@ -40,6 +43,7 @@
 @property (nonatomic, readonly) bool isSearchForm;
 @property (nonatomic, readonly, copy) NSString *oldPasswordElementUniqueID;
 @property (nonatomic, readonly, copy) NSString *passwordElementUniqueID;
+@property (nonatomic, copy) NSDictionary *passwordRequirements;
 @property (nonatomic, readonly) unsigned long long requestType;
 @property (nonatomic, readonly, copy) NSString *textSample;
 @property (nonatomic, readonly) unsigned long long type;
@@ -69,12 +73,15 @@
 - (id)initWithJSValue:(id)arg1;
 - (bool)isBestForCredentialPreFill;
 - (bool)isBestForPageLevelAutoFill;
+- (bool)isBestForStreamlinedLogin;
 - (bool)isEqual:(id)arg1;
 - (bool)isSearchForm;
 - (bool)isVisible;
 - (id)oldPasswordElementUniqueID;
 - (id)passwordElementUniqueID;
+- (id)passwordRequirements;
 - (unsigned long long)requestType;
+- (void)setPasswordRequirements:(id)arg1;
 - (id)textSample;
 - (unsigned long long)type;
 - (long long)uniqueID;

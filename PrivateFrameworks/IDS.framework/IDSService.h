@@ -10,7 +10,9 @@
 @property (nonatomic, readonly, copy) NSSet *accounts;
 @property (nonatomic, readonly, copy) NSArray *devices;
 @property (getter=hmd_isActive, nonatomic, readonly) bool hmd_active;
-@property (readonly, copy) NSString *hmd_preferredInternetRoutableDestinationForSelf;
+@property (readonly, copy) NSArray *hmd_handles;
+@property (readonly, copy) HMDDeviceHandle *hmd_localDeviceHandle;
+@property (readonly, copy) HMDAccountHandle *hmd_preferredHandle;
 @property (nonatomic, readonly, copy) NSSet *internalAccounts;
 
 // Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
@@ -46,6 +48,7 @@
 - (void)enablePhoneUser;
 - (void)enableiCloudUser;
 - (id)firstRoutableInternetDestinationForSelf;
+- (bool)getProgressUpdateForIdentifier:(id)arg1 error:(id*)arg2;
 - (id)iCloudAccount;
 - (id)initWithService:(id)arg1;
 - (id)initWithService:(id)arg1 commands:(id)arg2;
@@ -89,7 +92,9 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
+- (id)hmd_handles;
 - (bool)hmd_isActive;
-- (id)hmd_preferredInternetRoutableDestinationForSelf;
+- (id)hmd_localDeviceHandle;
+- (id)hmd_preferredHandle;
 
 @end

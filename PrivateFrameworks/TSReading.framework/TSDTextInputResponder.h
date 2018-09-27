@@ -40,6 +40,7 @@
 @property (nonatomic) long long keyboardType;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) float preferredEndPosition;
 @property (nonatomic) float preferredStartPosition;
 @property (getter=isResigning, nonatomic, readonly) bool resigning;

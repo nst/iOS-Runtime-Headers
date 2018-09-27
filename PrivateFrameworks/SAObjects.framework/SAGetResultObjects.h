@@ -25,7 +25,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (bool)siriCore_canBeRemapped;
+- (bool)siriCore_isProvisional;
 - (bool)siriCore_isRetryable;
 
 @end

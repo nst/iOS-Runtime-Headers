@@ -15,7 +15,7 @@
     bool  _sharedInstance;
 }
 
-@property (nonatomic, readonly, retain) FBSDisplayLayout *currentLayout;
+@property (nonatomic, readonly) FBSDisplayLayout *currentLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long displayType;
@@ -26,6 +26,7 @@
 
 + (id)sharedMonitorForDisplayType:(long long)arg1;
 
+- (void).cxx_destruct;
 - (void)_calloutQueue_postLayout:(id)arg1 withContext:(id)arg2 toObserver:(id)arg3;
 - (id)_observers;
 - (void)_queue_updateClient;

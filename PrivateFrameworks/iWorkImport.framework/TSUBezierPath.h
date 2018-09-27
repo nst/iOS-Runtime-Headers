@@ -3,6 +3,16 @@
  */
 
 @interface TSUBezierPath : NSObject <NSCopying> {
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  sfr_bounds;
     struct { 
         unsigned int sfr_flags : 8; 
         unsigned int sfr_pathState : 2; 
@@ -39,16 +49,16 @@
 
 @property (nonatomic, readonly) bool containsClosePathElement;
 @property (nonatomic, readonly) bool containsElementsOtherThanMoveAndClose;
+@property (nonatomic, readonly) double flattenedArea;
 @property (nonatomic, readonly) bool hasAtLeastTwoVisuallyDistinctSubregions;
 @property (nonatomic, readonly) bool isCompound;
 @property (nonatomic, readonly) bool isEffectivelyClosed;
 @property (nonatomic, readonly) bool isLineSegment;
 @property (nonatomic, readonly) bool isOpen;
-@property (nonatomic, readonly) bool isSelfIntersecting;
+@property (nonatomic, readonly) unsigned long long totalSubpathCountIncludingEffectivelyEmptySubpaths;
 @property (nonatomic, readonly) NSArray *visuallyDistinctSubregions;
 
 + (id)appendBezierPaths:(id)arg1;
-+ (id)arrayOfFillablePathsFromPaths:(id)arg1 withConnectionThreshold:(double)arg2;
 + (id)bezierPath;
 + (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)bezierPathWithConvexHullOfPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
@@ -78,10 +88,10 @@
 + (double)miterLimit;
 + (id)outlineBezierPath:(id)arg1;
 + (id)outlineBezierPath:(id)arg1 withThreshold:(double)arg2;
++ (id)outlineBezierPathSimplifyingIfNeeded:(id)arg1;
 + (id)outsideEdgeOfBezierPath:(id)arg1;
 + (struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)p_bezierToPath:(id)arg1;
 + (id)p_booleanWithBezierPaths:(id)arg1 operation:(int)arg2;
-+ (id)p_connectionPathsForFillableAreas:(id)arg1 withConnectionThreshold:(double)arg2;
 + (struct CGPoint { double x1; double x2; })p_findPointWithGreatestSlopeFromStartPoint:(struct CGPoint { double x1; double x2; })arg1 toPointA:(struct CGPoint { double x1; double x2; })arg2 orPointB:(struct CGPoint { double x1; double x2; })arg3;
 + (id)p_mergeIntersectingSubpaths:(id)arg1 stopAfterFoundTwo:(bool)arg2;
 + (id)p_normalizeSubpaths:(id)arg1;
@@ -165,27 +175,30 @@
 - (bool)containsElementsOtherThanMoveAndClose;
 - (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })controlPointBounds;
+- (void)convertCloseElementsToLineElements;
 - (id)copyFromSegment:(int)arg1 t:(double)arg2 toSegment:(int)arg3 t:(double)arg4;
 - (void)copyPathAttributesTo:(id)arg1;
 - (id)copyWithPointsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGPoint { double x1; double x2; })currentPoint;
 - (double)curvatureAt:(double)arg1;
-- (double)curvatureAt:(double)arg1 fromElement:(int)arg2;
+- (double)curvatureAt:(double)arg1 fromElement:(long long)arg2;
 - (void)curveToPoint:(struct CGPoint { double x1; double x2; })arg1 controlPoint1:(struct CGPoint { double x1; double x2; })arg2 controlPoint2:(struct CGPoint { double x1; double x2; })arg3;
 - (void)dealloc;
 - (id)description;
-- (double)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1 elementIndex:(unsigned long long*)arg2 tValue:(double*)arg3 threshold:(double)arg4;
+- (double)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1 elementIndex:(unsigned long long*)arg2 tValue:(double*)arg3 threshold:(double)arg4 findClosestMatch:(bool)arg5;
 - (long long)elementAtIndex:(long long)arg1;
 - (long long)elementAtIndex:(long long)arg1 allPoints:(struct CGPoint { double x1; double x2; }*)arg2;
 - (long long)elementAtIndex:(long long)arg1 associatedPoints:(struct CGPoint { double x1; double x2; }*)arg2;
 - (long long)elementCount;
 - (long long)elementPercentage:(double*)arg1 forOverallPercentage:(double)arg2;
+- (long long)elementPercentage:(double*)arg1 forOverallPercentage:(double)arg2 startingElementIndex:(long long)arg3 lengthToStartingElement:(double)arg4;
 - (double)elementPercentageFromElement:(long long)arg1 forOverallPercentage:(double)arg2;
 - (void)fill;
 - (double)flatness;
 - (void)flattenIntoPath:(id)arg1;
 - (void)flattenIntoPath:(id)arg1 flatness:(double)arg2;
+- (double)flattenedArea;
 - (void)getLineDash:(double*)arg1 count:(long long*)arg2 phase:(double*)arg3;
 - (void)getStartPoint:(struct CGPoint { double x1; double x2; }*)arg1 andEndPoint:(struct CGPoint { double x1; double x2; }*)arg2;
 - (struct CGPoint { double x1; double x2; })gradientAt:(double)arg1;
@@ -208,7 +221,6 @@
 - (bool)isLineSegment;
 - (bool)isOpen;
 - (bool)isRectangular;
-- (bool)isSelfIntersecting;
 - (bool)isTriangular;
 - (void)iterateOverPathWithPointDistancePerIteration:(double)arg1 usingBlock:(id /* block */)arg2;
 - (double)length;
@@ -229,15 +241,14 @@
 - (id)p_bezierPathByRemovingRedundantElementAndSubregionsSmallerThanThreshold:(double)arg1;
 - (id)p_copyWithPointsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 countingSubpaths:(unsigned long long*)arg2;
 - (id)p_pathBySplittingAtPointGuaranteedToBeOnPath:(struct CGPoint { double x1; double x2; })arg1 controlPointDistanceEqual:(bool)arg2 elementIndex:(long long)arg3 parametricValue:(double)arg4;
-- (id)pathByCreatingHoleInPathAtPoint:(struct CGPoint { double x1; double x2; })arg1 withDiameter:(double)arg2 andThreshold:(double)arg3 updatingPatternOffsetsBySubpath:(id)arg4;
+- (id)pathByCreatingHoleInPathAtPoint:(struct CGPoint { double x1; double x2; })arg1 withDiameter:(id /* block */)arg2 andThreshold:(double)arg3 updatingPatternOffsetsBySubpath:(id)arg4;
+- (id)pathByNormalizingClosedPathToRemoveSelfIntersections;
 - (id)pathBySplittingAtPointOnPath:(struct CGPoint { double x1; double x2; })arg1 controlPointDistanceEqual:(bool)arg2;
 - (id)pathByWobblingByUpTo:(double)arg1 subdivisions:(unsigned long long)arg2;
 - (struct CGPoint { double x1; double x2; })pointAlongPathAtPercentage:(double)arg1;
 - (struct CGPoint { double x1; double x2; })pointAlongPathAtPercentage:(double)arg1 withFlattenedPath:(id)arg2 andLength:(double*)arg3 atStartIndex:(unsigned long long*)arg4;
 - (struct CGPoint { double x1; double x2; })pointAt:(double)arg1;
 - (struct CGPoint { double x1; double x2; })pointAt:(double)arg1 fromElement:(long long)arg2;
-- (bool)pointOnPath:(struct CGPoint { double x1; double x2; })arg1 tolerance:(double)arg2;
-- (id)pressure;
 - (struct CGPoint { double x1; double x2; })rawGradientAt:(double)arg1 fromElement:(long long)arg2;
 - (void)recursiveSubdivideOntoPath:(id)arg1 into:(id)arg2;
 - (void)recursiveSubdivideOntoPath:(id)arg1 withScaling:(struct { double x1; double x2; })arg2 inElementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 into:(id)arg4;
@@ -260,6 +271,7 @@
 - (void)subdivideBezierWithFlatness:(double)arg1 startPoint:(struct CGPoint { double x1; double x2; })arg2 controlPoint1:(struct CGPoint { double x1; double x2; })arg3 controlPoint2:(struct CGPoint { double x1; double x2; })arg4 endPoint:(struct CGPoint { double x1; double x2; })arg5;
 - (id)subtractBezierPath:(id)arg1;
 - (void)takeAttributesFromStroke:(id)arg1;
+- (unsigned long long)totalSubpathCountIncludingEffectivelyEmptySubpaths;
 - (void)transformUsingAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (struct CGPoint { double x1; double x2; })transformedCoordinate:(struct CGPoint { double x1; double x2; })arg1 withPressure:(id)arg2;
 - (struct CGPoint { double x1; double x2; })transformedTotalCoordinate:(struct CGPoint { double x1; double x2; })arg1 betweenElement:(long long)arg2 andElement:(long long)arg3 withPressure:(id)arg4 getElement:(long long*)arg5 getPercentage:(double*)arg6;

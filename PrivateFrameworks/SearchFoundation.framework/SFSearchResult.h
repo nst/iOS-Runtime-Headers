@@ -4,11 +4,13 @@
 
 @interface SFSearchResult : NSObject <NSCopying, NSSecureCoding, SFJSONSerializable, SFSearchResult, SearchUIAuxilliaryFieldProtocol, WBSCompletionListItem> {
     SFActionItem * _action;
+    NSString * _appleReferrer;
     NSString * _applicationBundleIdentifier;
     NSString * _auxiliaryBottomText;
     int  _auxiliaryBottomTextColor;
     NSString * _auxiliaryMiddleText;
     NSString * _auxiliaryTopText;
+    unsigned long long  _blockId;
     NSString * _calendarIdentifier;
     SFCard * _card;
     NSString * _completedQuery;
@@ -21,6 +23,7 @@
     SFCustom * _customProperties;
     long long  _dataOwnerType;
     NSArray * _descriptions;
+    bool  _doNotFold;
     NSNumber * _engagementScore;
     NSString * _fbr;
     NSDictionary * _featureScaling;
@@ -90,6 +93,7 @@
 
 @property (readonly) SFActionItem *action;
 @property (nonatomic, retain) SFActionItem *action;
+@property (nonatomic, copy) NSString *appleReferrer;
 @property (nonatomic, copy) NSString *applicationBundleIdentifier;
 @property (readonly) NSString *auxiliaryBottomText;
 @property (nonatomic, copy) NSString *auxiliaryBottomText;
@@ -99,6 +103,7 @@
 @property (nonatomic, copy) NSString *auxiliaryMiddleText;
 @property (readonly) NSString *auxiliaryTopText;
 @property (nonatomic, copy) NSString *auxiliaryTopText;
+@property (nonatomic) unsigned long long blockId;
 @property (nonatomic, copy) NSString *calendarIdentifier;
 @property (readonly) SFCard *card;
 @property (nonatomic, retain) SFCard *card;
@@ -115,6 +120,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *descriptions;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic) bool doNotFold;
 @property (nonatomic, readonly) unsigned long long engagementDestination;
 @property (nonatomic, retain) NSNumber *engagementScore;
 @property (nonatomic, copy) NSString *fbr;
@@ -125,6 +131,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SFImage *icon;
 @property (nonatomic, copy) NSString *identifier;
+@property (readonly) SFSearchResult *identifyingResult;
 @property (nonatomic, retain) SFCard *inlineCard;
 @property (nonatomic, copy) NSString *intendedQuery;
 @property (nonatomic) bool isCentered;
@@ -198,11 +205,13 @@
 
 - (void).cxx_destruct;
 - (id)action;
+- (id)appleReferrer;
 - (id)applicationBundleIdentifier;
 - (id)auxiliaryBottomText;
 - (int)auxiliaryBottomTextColor;
 - (id)auxiliaryMiddleText;
 - (id)auxiliaryTopText;
+- (unsigned long long)blockId;
 - (id)calendarIdentifier;
 - (id)card;
 - (id)completedQuery;
@@ -217,6 +226,7 @@
 - (long long)dataOwnerType;
 - (id)descriptions;
 - (id)dictionaryRepresentation;
+- (bool)doNotFold;
 - (void)encodeWithCoder:(id)arg1;
 - (id)engagementScore;
 - (id)fbr;
@@ -273,11 +283,13 @@
 - (id)sectionHeaderMoreURL;
 - (double)serverScore;
 - (void)setAction:(id)arg1;
+- (void)setAppleReferrer:(id)arg1;
 - (void)setApplicationBundleIdentifier:(id)arg1;
 - (void)setAuxiliaryBottomText:(id)arg1;
 - (void)setAuxiliaryBottomTextColor:(int)arg1;
 - (void)setAuxiliaryMiddleText:(id)arg1;
 - (void)setAuxiliaryTopText:(id)arg1;
+- (void)setBlockId:(unsigned long long)arg1;
 - (void)setCalendarIdentifier:(id)arg1;
 - (void)setCard:(id)arg1;
 - (void)setCompletedQuery:(id)arg1;
@@ -290,6 +302,7 @@
 - (void)setCustomProperties:(id)arg1;
 - (void)setDataOwnerType:(long long)arg1;
 - (void)setDescriptions:(id)arg1;
+- (void)setDoNotFold:(bool)arg1;
 - (void)setEngagementScore:(id)arg1;
 - (void)setFbr:(id)arg1;
 - (void)setFeatureScaling:(id)arg1;
@@ -388,6 +401,10 @@
 - (bool)collectAnonymousFeatures;
 - (id)objectForFeedback;
 - (void)setPropertiesOnResultCopy:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (id)identifyingResult;
 
 // Image: /System/Library/PrivateFrameworks/Spotlight.framework/Spotlight
 

@@ -3,6 +3,7 @@
  */
 
 @interface MKAnnotationManager : NSObject {
+    NSHashTable * _allClusterAnnotations;
     NSMutableSet * _annotationRepresentations;
     bool  _annotationRepresentationsAreAddedImmediately;
     MKQuadTrie * _annotations;
@@ -15,15 +16,14 @@
     NSMutableSet * _invalidCoordinateAnnotations;
     bool  _isChangingCoordinate;
     bool  _isDeferringContainerSelection;
-    NSMutableSet * _managedAnnotations;
-    NSMutableSet * _managedAnnotationsObservingCoordinate;
     NSMutableSet * _pendingAnnotations;
     NSMutableSet * _pendingRemovalAnnotationRepresentations;
     NSMutableDictionary * _registeredIdentifierToRepresentationClasses;
     NSMapTable * _reusableAnnotationRepresentations;
     <MKAnnotation> * _selectedAnnotation;
     NSTimer * _updateVisibleTimer;
-    NSMutableSet * _visibleAnnotations;
+    MKAnnotationView * _userLocationView;
+    NSHashTable * _visibleAnnotations;
 }
 
 @property (nonatomic, readonly) NSArray *annotationRepresentations;
@@ -37,17 +37,14 @@
 - (void).cxx_destruct;
 - (void)_addAnnotation:(id)arg1 updateVisible:(bool)arg2;
 - (id)_addRepresentationForAnnotation:(id)arg1;
-- (void)_annotationDidChangeState:(id)arg1 animated:(bool)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)_annotationDidChangeState:(id)arg1 animated:(bool)arg2;
 - (void)_removeAnnotation:(id)arg1 updateVisible:(bool)arg2 removeFromContainer:(bool)arg3;
 - (void)_removeRepresentationForAnnotation:(id)arg1 fromCull:(bool)arg2;
 - (void)_setupUpdateVisibleAnnotationsTimer;
 - (void)addAnnotation:(id)arg1;
 - (void)addAnnotation:(id)arg1 allowAnimation:(bool)arg2;
 - (void)addAnnotations:(id)arg1;
-- (void)addManagedAnnotation:(id)arg1;
-- (void)addManagedAnnotation:(id)arg1 observeCoordinateChanges:(bool)arg2;
 - (id)addRepresentationForAnnotation:(id)arg1;
-- (id)addRepresentationForManagedAnnotation:(id)arg1 notifyDelegate:(bool)arg2;
 - (void)addRepresentationsForAnnotations:(id)arg1;
 - (bool)annotationIsInternal:(id)arg1;
 - (id)annotationRepresentations;
@@ -65,17 +62,15 @@
 - (void)deselectAnnotation:(id)arg1 animated:(bool)arg2;
 - (id)draggedAnnotation;
 - (id)init;
-- (bool)internalAnnotationAllowsCustomRepresentation:(id)arg1;
 - (id)newInternalAnnotationRepresentationForInternalAnnotation:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)registerClass:(Class)arg1 forRepresentationReuseIdentifier:(id)arg2;
 - (void)removeAnnotation:(id)arg1;
+- (void)removeAnnotation:(id)arg1 updateVisible:(bool)arg2;
 - (void)removeAnnotations:(id)arg1;
-- (void)removeRepresentationForManagedAnnotation:(id)arg1;
 - (void)replaceAnnotation:(id)arg1 withAnnotation:(id)arg2;
 - (id)representationForAnnotation:(id)arg1;
 - (void)selectAnnotation:(id)arg1 animated:(bool)arg2;
-- (void)selectAnnotation:(id)arg1 animated:(bool)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)selectedAnnotationRepresentation;
 - (void)setAnnotationRepresentationsAreAddedImmediately:(bool)arg1;
 - (void)setContainer:(id)arg1;

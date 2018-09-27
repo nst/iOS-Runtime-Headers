@@ -5,10 +5,8 @@
 
 @required
 
-- (INHomeAttribute *)attribute;
-- (NSArray *)entities;
+- (NSArray *)contents;
 - (id)init;
-- (void)setAttribute:(INHomeAttribute *)arg1;
-- (void)setEntities:(NSArray *)arg1;
+- (void)setContents:(NSArray *)arg1;
 
 @end

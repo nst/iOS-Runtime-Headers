@@ -7,7 +7,7 @@
     WBSConfigurationDownloader * _configurationDownloader;
     <WBSRemotePlistSnapshot> * _currentSnapshot;
     <WBSRemotePlistControllerDelegate> * _delegate;
-    NSObject<OS_dispatch_queue> * _diskAccessQueue;
+    NSObject<OS_dispatch_queue> * _diskWriteQueue;
     NSURL * _downloadsDirectoryURL;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSString * _resourceName;

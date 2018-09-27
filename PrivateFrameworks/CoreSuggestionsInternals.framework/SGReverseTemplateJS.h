@@ -9,19 +9,25 @@
     JSContext * _jsContext;
     JSVirtualMachine * _jsVM;
     NSString * _localeIdentifier;
+    NSMutableArray * _memoryMappedFileNames;
     NSMutableArray * _memoryMappedFiles;
+    NSObject<OS_dispatch_queue> * _memoryPressureQueue;
+    NSObject<OS_dispatch_source> * _memoryPressureSource;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)fakeFlightInformationWithAirlineCode:(id)arg1 flightNumber:(id)arg2 flightDate:(id)arg3;
 
 - (void).cxx_destruct;
+- (void)_handleMemoryPressureStatus:(unsigned long long)arg1;
 - (id)_prepareArguments:(id)arg1;
 - (id)_prepareEntity:(id)arg1;
+- (id)_stringFromMemoryPressureStatus:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)dictionaryFromTimezone:(id)arg1;
 - (void)emailToJsonLd:(id)arg1 reply:(id /* block */)arg2;
 - (void)emailToOutput:(id)arg1 reply:(id /* block */)arg2;
+- (id)flightInformationWithAirlineCode:(id)arg1 flightNumber:(id)arg2 flightDate:(id)arg3;
 - (id)formattedDate:(id)arg1 withTimezone:(id)arg2;
 - (void)freeJSContext;
 - (id)getJSContext;
@@ -31,6 +37,7 @@
 - (id)loadJSFromASCIIFile:(id)arg1;
 - (id)loadTrieWithFileName:(id)arg1;
 - (id)mappedArrayBufferForFileName:(id)arg1;
+- (id)md5Hash:(id)arg1;
 - (id)outputExceptionsFromOutput:(id)arg1;
 - (id)payloadToOutputWithEntryPoint:(id)arg1 arguments:(id)arg2;
 - (void)payloadToOutputWithEntryPoint:(id)arg1 arguments:(id)arg2 reply:(id /* block */)arg3;

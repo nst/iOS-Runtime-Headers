@@ -5,10 +5,7 @@
 
 @required
 
-- (void)playbackControlsVisibilityController:(AVPlaybackControlsVisibilityController *)arg1 animateAlongsideVisibilityAnimations:(id <UIViewImplicitlyAnimating>)arg2;
+- (void)playbackControlsVisibilityController:(AVPlaybackControlsVisibilityController *)arg1 animateAlongsideVisibilityAnimationsWithAnimationCoordinator:(id <AVPlayerViewControllerAnimationCoordinator>)arg2 appearingViews:(NSArray *)arg3 disappearingViews:(NSArray *)arg4;
 - (void)playbackControlsVisibilityController:(AVPlaybackControlsVisibilityController *)arg1 updateStatusBarAppearanceUsingAnimator:(id <UIViewImplicitlyAnimating>)arg2;
-- (void)playbackControlsVisibilityController:(AVPlaybackControlsVisibilityController *)arg1 willShowView:(UIView *)arg2;
-- (void)playbackControlsVisibilityControllerDidChangeViewVisibility:(AVPlaybackControlsVisibilityController *)arg1;
-- (void)playbackControlsVisibilityControllerWillExitAutoplayPhase:(AVPlaybackControlsVisibilityController *)arg1;
 
 @end

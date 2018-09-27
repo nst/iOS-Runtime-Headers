@@ -31,7 +31,6 @@
 - (void)setFont:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setText:(id)arg1 animated:(bool)arg2 completionBlock:(id /* block */)arg3;
 - (void)setText:(id)arg1 withAnimationStyle:(long long)arg2 completionBlock:(id /* block */)arg3;
 - (id)text;
 

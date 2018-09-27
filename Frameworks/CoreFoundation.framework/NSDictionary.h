@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDictionary : NSObject <AFSecurityDigestibleChunksProviding, ATXScoreLogSerializable, CKLParsedObject, CSCoderEncoder, HFPropertyListConvertible, MPCSupportedCommands, NNSyncableHeadline, NNSyncableResult, NNSyncableSection, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable, TSPResourceLocalStrategyProvider>
+@interface NSDictionary : NSObject <AADataType, AFSecurityDigestibleChunksProviding, ASDNotificationType, ATXScoreLogSerializable, CKLParsedObject, CSCoderEncoder, CUByteCodable, HFPropertyListConvertible, HMFObject, MPCSupportedCommands, NNSyncableHeadline, NNSyncableResult, NNSyncableSection, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable, REDonatedActionIdentifierProviding, TSPResourceLocalStrategyProvider>
 
 @property (nonatomic, readonly) NSNumber *__im_associatedMessageContentType;
 @property (nonatomic, readonly) NSString *__im_associatedMessagePluginBundleID;
 @property (nonatomic, readonly) NSString *__im_associatedMessagePluginDisplayName;
 @property (nonatomic, readonly) NSString *__im_associatedMessageSummary;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
 @property (nonatomic, readonly) float averageRating;
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSArray *categories;
@@ -34,7 +35,10 @@
 @property (readonly) NSString *npkRelevancyRelevantText;
 @property (readonly) NSString *npkRelevancyUniqueID;
 @property (nonatomic, readonly) NSString *priceFormatted;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
 @property (nonatomic, readonly) unsigned long long ratingCount;
+@property (readonly, copy) NSString *shortDescription;
 @property (nonatomic, readonly) NSNumber *storeID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *sync_NewsURLString;
@@ -60,6 +64,7 @@
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
++ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)dictionary;
 + (id)dictionaryWithDictionary:(id)arg1;
@@ -149,6 +154,17 @@
 
 - (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
+- (bool)_LS_BoolForKey:(id)arg1;
+- (bool)_LS_containsKey:(id)arg1;
+- (unsigned long long)_LS_integerForKey:(id)arg1;
+- (id)_LS_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+- (unsigned long long)_hashQuery;
+- (id)_parseQueryForIdentifiers:(id)arg1;
+- (id)ls_insertExtensionPointVersion:(id)arg1;
+- (id)ls_resolvePlugInKitInfoPlistWithDictionary:(id)arg1;
+
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 - (void)encodeKeysAndValuesWithCSCoder:(id)arg1 filterBlock:(id /* block */)arg2;
@@ -214,10 +230,11 @@
 
 - (bool)_hk_validateMetadataValueContent:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)hk_allValuesBySortedKeys;
-- (bool)hk_containsKeys:(id)arg1;
 - (id)hk_copyWithoutPrivateMetadataKeys;
 - (id)hk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)hk_filter:(id /* block */)arg1;
 - (id)hk_filterKeysWithBlock:(id /* block */)arg1;
+- (id)hk_filteredDictionaryForKeys:(id)arg1;
 - (id)hk_sortedKeys;
 - (bool)hk_validateMetadataKeysAndValuesAllowingPrivateMetadataKeys:(bool)arg1 error:(id*)arg2;
 
@@ -259,17 +276,6 @@
 
 - (id)mf_filterUsingMap:(id)arg1 inverse:(bool)arg2;
 
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-- (bool)_LS_BoolForKey:(id)arg1;
-- (bool)_LS_containsKey:(id)arg1;
-- (unsigned long long)_LS_integerForKey:(id)arg1;
-- (id)_LS_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
-- (unsigned long long)_hashQuery;
-- (id)_parseQueryForIdentifiers:(id)arg1;
-- (id)ls_insertExtensionPointVersion:(id)arg1;
-- (id)ls_resolvePlugInKitInfoPlistWithDictionary:(id)arg1;
-
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
@@ -289,16 +295,6 @@
 + (id)SLDictionaryWithOAuthAccessTokenResponseData:(id)arg1;
 + (id)dictionaryWithParametersInURLString:(id)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (bool)_boolForKey:(id)arg1;
-- (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
-- (bool)_ui_dictionaryContainsUIStringDrawingKeys;
-- (int)_web_messageLineNumber;
-- (id)_web_messageSourceURL;
-- (id)_web_messageText;
-- (int)_web_messageType;
-
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
 - (id)un_nonEmptyCopy;
@@ -316,10 +312,19 @@
 - (id)vs_objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)vs_stringForKey:(id)arg1;
 
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
+- (id)_iAd_stringValueForKey:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
 
 - (id)copyGKSDeep;
 - (id)copyGKSDeepMutable;
+
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
+
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
 
@@ -365,13 +370,29 @@
 - (void)setVersionToken:(id)arg1;
 - (id)versionToken;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
+
+- (bool)atx_isFuzzyMatch:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
 - (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (id)aa_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
 - (id)aaui_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (id)ams_arrayUsingTransform:(id /* block */)arg1;
+- (id)ams_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)ams_filterUsingTest:(id /* block */)arg1;
+- (id)ams_objectForCaseInsensitiveKey:(id)arg1;
+- (id)ams_objectForKey:(id)arg1 defaultValue:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
@@ -387,9 +408,14 @@
 + (id)ak_jsonDictionaryWithResponseData:(id)arg1;
 
 - (id)_ak_truncatedTokensCopy;
-- (id)ak_map:(id /* block */)arg1;
+- (id)ak_mapObjects:(id /* block */)arg1;
+- (id)ak_mapObjectsNullable:(id /* block */)arg1;
 - (id)ak_redactedCopy;
 - (id)ak_urlQueryString;
+
+// Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
+
+- (id)_avtui_deepCopy;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -426,6 +452,26 @@
 - (id)CalMutableRecursiveCopy;
 - (id)filteredDictionaryPassingTest:(id /* block */)arg1;
 - (id)mutableCopyWithElementsCopy;
+
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
+- (bool)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1 defaultValue:(bool)arg2;
+- (double)doubleForKey:(id)arg1;
+- (double)doubleForKey:(id)arg1 defaultValue:(double)arg2;
+- (float)floatForKey:(id)arg1;
+- (float)floatForKey:(id)arg1 defaultValue:(float)arg2;
+- (int)intForKey:(id)arg1;
+- (int)intForKey:(id)arg1 defaultValue:(int)arg2;
+- (long long)integerForKey:(id)arg1;
+- (long long)integerForKey:(id)arg1 defaultValue:(long long)arg2;
+- (id)mutableDeepCopy;
+- (id)objectForIndex:(int)arg1;
+- (id)objectForKey:(id)arg1 defaultValue:(id)arg2;
+- (id)objectOrNullForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (unsigned long long)unsignedIntegerForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
@@ -567,10 +613,18 @@
 
 - (id)_cs_initWithXPCObject:(id)arg1;
 - (id)_cs_xpcObject;
+- (void)logSpeakerIdMetadataAtFilepath:(id)arg1 additionalMetadata:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (bool)hasCaseIgnoringKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
++ (id)createWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 error:(id*)arg3;
+
+- (const char *)encodedBytesAndReturnLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (id)encodedDataAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
@@ -694,6 +748,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
++ (id)shortDescription;
+
 - (id)arrayForKey:(id)arg1;
 - (id)arrayOfDateComponentsFromDataForKey:(id)arg1;
 - (id)base64EncodedDataForKey:(id)arg1;
@@ -715,9 +771,11 @@
 - (id)nullForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
 - (id)predicateFromDataForKey:(id)arg1;
+- (id)privateDescription;
 - (id)secureDescriptionWithBlacklistKeys:(id)arg1;
 - (id)secureDescriptionWithIndent:(id)arg1 newLine:(bool)arg2 blacklistedKeys:(id)arg3;
 - (id)setForKey:(id)arg1;
+- (id)shortDescription;
 - (id)shortDescription;
 - (id)stringForKey:(id)arg1;
 - (id)timeZoneForKey:(id)arg1;
@@ -755,17 +813,10 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
-+ (id)_hucc_sizeSubclassSearchOrderForBaseSizeSubclass:(unsigned long long)arg1;
-
 - (id)hu_objectForViewSizeSubclass:(long long)arg1;
-- (double)hucc_constantForSizeSubclass:(unsigned long long)arg1;
-- (id)hucc_objectForSizeSubclass:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
-+ (id)_dictionaryWithData:(id)arg1 allowedClasses:(id)arg2;
-+ (id)dictionaryWithArchiveData:(id)arg1;
-+ (id)dictionaryWithArchiveData:(id)arg1 allowedClasses:(id)arg2;
 + (id)dictionaryWithKeyArray:(id)arg1 defaultValue:(id)arg2;
 + (id)dictionaryWithPlistData:(id)arg1;
 
@@ -776,7 +827,6 @@
 - (id)_dictionaryForKey:(id)arg1;
 - (id)_numberForKey:(id)arg1;
 - (id)_stringForKey:(id)arg1;
-- (id)archiveData;
 - (id)dictionaryFromChanges:(id)arg1;
 - (unsigned short)fileHFSFlags;
 - (unsigned long long)fileHFSResourceForkSize;
@@ -823,6 +873,15 @@
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(long long)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(long long)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(long long)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(long long)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 - (id)MCShortenedPlistDescription;
+- (bool)writeToBinaryFile:(id)arg1 atomically:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MapsSuggestions.framework/MapsSuggestions
+
+- (id)MSg_mutableCopyIf:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
+
+- (id)muDeepMutableCopy;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
@@ -1011,6 +1070,16 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
+// Image: /System/Library/PrivateFrameworks/PhotoFoundation.framework/PhotoFoundation
+
+- (id)_uniquedDictionary:(Class)arg1;
+- (id)mutableUniquedDictionary;
+- (id)uniquedDictionary;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
 
 - (id)dictionaryChanging:(id)arg1 to:(id)arg2;
@@ -1022,6 +1091,20 @@
 // Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
 
 - (long long)_compareBundleDictionary:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
++ (id)rc_dictionaryFromData:(id)arg1 error:(id*)arg2;
++ (id)rc_dictionaryFromJSON:(id)arg1;
++ (id)rc_dictionaryFromJSON:(id)arg1 error:(id*)arg2;
+
+- (id)rc_dictionaryByTransformingKeysWithKeyAndValueBlock:(id /* block */)arg1;
+- (id)rc_dictionaryByTransformingValuesWithKeyAndValueBlock:(id /* block */)arg1;
+- (id)rc_subdictionaryForKeys:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -1059,12 +1142,6 @@
 
 - (id)scrc_deepMutableCopyWithZone:(struct _NSZone { }*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
-
-+ (id)sd_dictionaryFromDictionary:(id)arg1 forKeys:(id)arg2;
-
-- (id)sd_dictionaryForKeys:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 - (id)postFormData;
@@ -1093,7 +1170,12 @@
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 
+- (id)sck_objectsForKeys:(id)arg1;
 - (id)yql_objectForKey:(id)arg1 ofClass:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
@@ -1101,8 +1183,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-- (id)_swiftInitWithDictionary_NSDictionary:(id)arg1;
-/* MISSING HEADER DESCRIPTION FOR METHOD _swift_objectForKeyedSubscript: */
+- (id)_swiftInitWithDictionary_NSDictionary;
+- (void)_swift_objectForKeyedSubscript;
 
 // Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
 
@@ -1130,6 +1212,16 @@
 - (id)_accessibilityLeafDescendantsWithCount:(unsigned long long)arg1 shouldStopAtRemoteElement:(bool)arg2 options:(id)arg3 treeLogger:(id)arg4;
 - (id)_rearrangeKeyboardIfNecessaryWithOriginalArray:(id)arg1 processedArray:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (bool)_boolForKey:(id)arg1;
+- (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
+- (bool)_ui_dictionaryContainsUIStringDrawingKeys;
+- (int)_web_messageLineNumber;
+- (id)_web_messageSourceURL;
+- (id)_web_messageText;
+- (int)_web_messageType;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uns_CGRectForKey:(id)arg1;
@@ -1137,6 +1229,7 @@
 - (id)uns_nonEmptyCopy;
 - (id)uns_nonNilArrayForKey:(id)arg1;
 - (id)uns_nonNilDictionaryForKey:(id)arg1;
+- (id)uns_nonNilSetForKey:(id)arg1;
 - (id)uns_notificationIdentifier;
 - (id)uns_safeCastNonNilStringForKey:(id)arg1;
 - (id)uns_safeCastObjectForKey:(id)arg1 class:(Class)arg2;
@@ -1155,10 +1248,24 @@
 - (double)vcp_quality;
 - (id)vcp_results;
 - (float)vcp_scaledExposureTime;
+- (unsigned long long)vcp_statsFlags;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_syncPoint;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })vcp_time;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })vcp_timerange;
 - (unsigned long long)vcp_types;
 - (int)vcp_version;
+
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
+- (id)_vui_lookupValueForKey:(id)arg1 expectedClass:(Class)arg2;
+- (id)vui_URLForKey:(id)arg1;
+- (id)vui_arrayForKey:(id)arg1;
+- (bool)vui_boolForKey:(id)arg1 defaultValue:(bool)arg2;
+- (id)vui_dataForKey:(id)arg1;
+- (id)vui_dateForKey:(id)arg1;
+- (id)vui_dictionaryForKey:(id)arg1;
+- (id)vui_numberForKey:(id)arg1;
+- (id)vui_stringForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
 
@@ -1170,6 +1277,7 @@
 - (id)wlk_arrayForKey:(id)arg1;
 - (id)wlk_artworkVariantListingForKey:(id)arg1;
 - (bool)wlk_boolForKey:(id)arg1 defaultValue:(bool)arg2;
+- (id)wlk_caseInsensitiveValueForKey:(id)arg1;
 - (id)wlk_dataForKey:(id)arg1;
 - (id)wlk_dateForKey:(id)arg1;
 - (id)wlk_dateFromMillisecondsSince1970ForKey:(id)arg1;

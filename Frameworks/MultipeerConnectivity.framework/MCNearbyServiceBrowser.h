@@ -81,6 +81,7 @@
 - (void)stopBrowsingForPeers;
 - (void)syncAttachConnection:(id)arg1 toPeer:(id)arg2;
 - (void)syncCloseConnectionForPeer:(id)arg1;
+- (void)syncHandleDeclinedInviteWithInfo:(id)arg1;
 - (void)syncHandleInviteResponse:(id)arg1 fromPeer:(id)arg2;
 - (void)syncHandleInviteTimeout:(id)arg1 forPeer:(id)arg2;
 - (void)syncInitiateConnectionToPeer:(id)arg1;

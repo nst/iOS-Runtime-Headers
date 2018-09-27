@@ -4,6 +4,7 @@
 
 @interface NTKCompanionFaceCollectionsManager : NSObject
 
-+ (id)sharedFaceCollectionForActivePairedDeviceForCollectionIdentifier:(id)arg1;
++ (id)sharedFaceCollectionForDevice:(id)arg1 forCollectionIdentifier:(id)arg2;
++ (id)sharedLibraryFaceCollectionsForAllDevices;
 
 @end

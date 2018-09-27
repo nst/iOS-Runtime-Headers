@@ -21,9 +21,10 @@
 
 - (void).cxx_destruct;
 - (void)_processFileAtPath:(id)arg1;
-- (bool)canProduceEntriesOfType:(unsigned long long)arg1;
+- (bool)canProduceEntriesOfType:(long long)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)path;
+- (bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(id /* block */)arg3;
 - (void)setPath:(id)arg1;
 - (void)start;
 - (void)stop;

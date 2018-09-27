@@ -40,7 +40,6 @@
 - (bool)_hasAccurateCounts;
 - (void)_invalideSectionHeaders;
 - (bool)_isCountingAssetTypes;
-- (bool)_navigateToBottomIfNeededAnimated:(bool)arg1;
 - (void)_performAddDropWithSession:(id)arg1;
 - (void)_performMoveDropWithCoordinator:(id)arg1;
 - (void)_setAlbumSpec:(id)arg1;
@@ -48,6 +47,7 @@
 - (void)_setHasAccurateCounts:(bool)arg1;
 - (void)_setNeedsUpdate;
 - (void)_updateSectionHeadersIfNeeded;
+- (unsigned long long)additionalOneUpViewControllerOptions;
 - (struct NSObject { Class x1; }*)album;
 - (bool)allowSelectAllButton;
 - (id)assetCollection;
@@ -80,7 +80,6 @@
 - (id)newGridLayout;
 - (void)photosDataSource:(id)arg1 didReceivePhotoLibraryChange:(id)arg2;
 - (bool)prepareForDismissingForced:(bool)arg1;
-- (bool)pu_handleSecondTabTap;
 - (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
 - (double)sectionedGridLayout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
 - (double)sectionedGridLayout:(id)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;

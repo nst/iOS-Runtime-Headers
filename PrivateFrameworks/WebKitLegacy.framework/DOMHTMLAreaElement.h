@@ -55,7 +55,7 @@
 - (id)shape;
 - (id)target;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)absoluteQuadsAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 

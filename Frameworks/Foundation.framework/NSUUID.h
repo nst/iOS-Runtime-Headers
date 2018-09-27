@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUUID : NSObject <AFSecurityDigestibleChunksProviding, CRCoding, CRDataType, CREquatable, NSCopying, NSSecureCoding, PASerializable, PQLValuable>
+@interface NSUUID : NSObject <AFSecurityDigestibleChunksProviding, ASDNotificationType, CRCoding, CRDataType, CREquatable, NSCopying, NSSecureCoding, PASerializable, PQLValuable, SASerializable>
 
 @property (readonly, copy) NSString *UUIDString;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,16 +30,25 @@
 
 // Image: /System/Library/Frameworks/ARKit.framework/ARKit
 
++ (id)ar_UUIDWithData:(id)arg1;
 + (id)ar_UUIDWithIntegerValue:(unsigned long long)arg1;
 + (id)ar_zeroUUID;
 
 - (unsigned long long)ar_integerValue;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
++ (id)_LS_UUIDWithData:(id)arg1;
++ (id)_LS_UUIDWithData:(id)arg1 SHA1:(bool)arg2;
++ (id)_LS_nullUUID;
+
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)hk_UUIDWithData:(id)arg1;
 
+- (long long)hk_compare:(id)arg1;
 - (id)hk_dataForUUIDBytes;
+- (id)hk_shortRepresentation;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -54,11 +63,9 @@
 
 - (id)convertToData;
 
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
 
-+ (id)_LS_UUIDWithData:(id)arg1;
-+ (id)_LS_UUIDWithData:(id)arg1 SHA1:(bool)arg2;
-+ (id)_LS_nullUUID;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
@@ -98,6 +105,12 @@
 + (id)uuid:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
 
 - (id)convertToData;
+
+// Image: /System/Library/PrivateFrameworks/IconServices.framework/IconServices
+
++ (id)_IS_UUIDWithData:(id)arg1;
+
+- (void)_IS_getUUIDBytes:(char *)arg1 hash64:(unsigned long long*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
 
@@ -157,6 +170,16 @@
 
 - (long long)PK_compare:(id)arg1;
 - (id)PK_shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/SampleAnalysis.framework/SampleAnalysis
+
++ (id)classDictionaryKey;
++ (id)newInstanceWithoutReferencesFromSerializedBuffer:(const void*)arg1 bufferLength:(unsigned long long)arg2;
+
+- (bool)addSelfToBuffer:(void*)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (void)populateReferencesUsingBuffer:(const void*)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

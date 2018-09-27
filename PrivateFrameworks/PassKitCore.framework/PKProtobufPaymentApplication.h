@@ -10,6 +10,7 @@
     NSString * _dpanSuffix;
     struct { 
         unsigned int inAppPINRequiredAmount : 1; 
+        unsigned int inAppPriority : 1; 
         unsigned int paymentNetworkIdentifier : 1; 
         unsigned int paymentType : 1; 
         unsigned int state : 1; 
@@ -21,6 +22,7 @@
     bool  _inAppPINRequired;
     long long  _inAppPINRequiredAmount;
     NSString * _inAppPINRequiredCurrency;
+    long long  _inAppPriority;
     unsigned int  _paymentNetworkIdentifier;
     unsigned int  _paymentType;
     NSString * _sanitizedDpan;
@@ -44,6 +46,7 @@
 @property (nonatomic) bool hasInAppPINRequired;
 @property (nonatomic) bool hasInAppPINRequiredAmount;
 @property (nonatomic, readonly) bool hasInAppPINRequiredCurrency;
+@property (nonatomic) bool hasInAppPriority;
 @property (nonatomic) bool hasPaymentNetworkIdentifier;
 @property (nonatomic) bool hasPaymentType;
 @property (nonatomic, readonly) bool hasSanitizedDpan;
@@ -55,6 +58,7 @@
 @property (nonatomic) bool inAppPINRequired;
 @property (nonatomic) long long inAppPINRequiredAmount;
 @property (nonatomic, retain) NSString *inAppPINRequiredCurrency;
+@property (nonatomic) long long inAppPriority;
 @property (nonatomic) unsigned int paymentNetworkIdentifier;
 @property (nonatomic) unsigned int paymentType;
 @property (nonatomic, retain) NSString *sanitizedDpan;
@@ -82,6 +86,7 @@
 - (bool)hasInAppPINRequired;
 - (bool)hasInAppPINRequiredAmount;
 - (bool)hasInAppPINRequiredCurrency;
+- (bool)hasInAppPriority;
 - (bool)hasPaymentNetworkIdentifier;
 - (bool)hasPaymentType;
 - (bool)hasSanitizedDpan;
@@ -94,6 +99,7 @@
 - (bool)inAppPINRequired;
 - (long long)inAppPINRequiredAmount;
 - (id)inAppPINRequiredCurrency;
+- (long long)inAppPriority;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)paymentNetworkIdentifier;
@@ -109,6 +115,7 @@
 - (void)setHasAuxiliary:(bool)arg1;
 - (void)setHasInAppPINRequired:(bool)arg1;
 - (void)setHasInAppPINRequiredAmount:(bool)arg1;
+- (void)setHasInAppPriority:(bool)arg1;
 - (void)setHasPaymentNetworkIdentifier:(bool)arg1;
 - (void)setHasPaymentType:(bool)arg1;
 - (void)setHasState:(bool)arg1;
@@ -117,6 +124,7 @@
 - (void)setInAppPINRequired:(bool)arg1;
 - (void)setInAppPINRequiredAmount:(long long)arg1;
 - (void)setInAppPINRequiredCurrency:(id)arg1;
+- (void)setInAppPriority:(long long)arg1;
 - (void)setPaymentNetworkIdentifier:(unsigned int)arg1;
 - (void)setPaymentType:(unsigned int)arg1;
 - (void)setSanitizedDpan:(id)arg1;

@@ -5,6 +5,5 @@
 @interface PHVisionAnalysisUtilities : NSObject
 
 + (id)lastCompletePrefetchDate;
-+ (void)registerSceneTaxonomySHA:(id)arg1;
 
 @end

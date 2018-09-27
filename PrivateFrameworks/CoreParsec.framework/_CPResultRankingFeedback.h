@@ -4,11 +4,6 @@
 
 @interface _CPResultRankingFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPResultRankingFeedback> {
     NSArray * _duplicateResults;
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int localResultPosition : 1; 
-        unsigned int personalizationScore : 1; 
-    }  _has;
     NSArray * _hiddenResults;
     unsigned int  _localResultPosition;
     double  _personalizationScore;
@@ -21,10 +16,6 @@
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, copy) NSArray *duplicateResults;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasLocalResultPosition;
-@property (nonatomic, readonly) bool hasPersonalizationScore;
-@property (nonatomic, readonly) bool hasResult;
-@property (nonatomic, readonly) bool hasTimestamp;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *hiddenResults;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -33,7 +24,6 @@
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, retain) _CPSearchResultForFeedback *result;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
@@ -46,10 +36,6 @@
 - (id)duplicateResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)duplicateResultsCount;
 - (id)feedbackJSON;
-- (bool)hasLocalResultPosition;
-- (bool)hasPersonalizationScore;
-- (bool)hasResult;
-- (bool)hasTimestamp;
 - (unsigned long long)hash;
 - (id)hiddenResults;
 - (id)hiddenResultsAtIndex:(unsigned long long)arg1;

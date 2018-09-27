@@ -30,8 +30,8 @@
 - (void)cancelImageLoadingForItem:(id)arg1;
 - (id)generateFetchResult;
 - (id)imageManager;
+- (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2;
 - (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2 fetchLimit:(unsigned long long)arg3;
-- (id)initWithName:(id)arg1 personFetchType:(unsigned long long)arg2 objects:(id)arg3;
 - (void)loadObjectsAndUpdateMembersWithCompletion:(id /* block */)arg1;
 - (unsigned long long)personFetchType;
 - (void)photoLibraryDidChange:(id)arg1;

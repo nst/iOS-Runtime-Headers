@@ -7,14 +7,14 @@
 
 - (void)didStopLoadingTilesWithError:(NSError *)arg1;
 - (void)dirtyTilesFromTileSource:(VKTileSource *)arg1;
+- (void)dirtyTilesFromTileSource:(VKTileSource *)arg1 withState:(unsigned long long)arg2;
 - (void)invalidateTilesFromTileSource:(VKTileSource *)arg1;
 - (void)tileSource:(VKTileSource *)arg1 didFailToDecodeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)tileSource:(VKTileSource *)arg1 didFailToLoadTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2 error:(NSError *)arg3;
 - (void)tileSource:(VKTileSource *)arg1 didFetchTile:(VKTile *)arg2 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 - (void)tileSource:(VKTileSource *)arg1 dirtyTilesWithinRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg2 level:(long long)arg3;
-- (void)tileSource:(VKTileSource *)arg1 invalidateKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)tileSource:(VKTileSource *)arg1 invalidateKeys:(VKTileKeyList *)arg2;
-- (void)tileSource:(VKTileSource *)arg1 invalidateTilesWithState:(unsigned long long)arg2;
+- (void)tileSource:(void *)arg1 invalidateTilesWithStatePredicate:(void *)arg2; // needs 2 arg types, found 7: VKTileSource *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, bool, id /* block */, unsigned long long, void*
 - (bool)tileSource:(VKTileSource *)arg1 keyIsNeeded:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (long long)tileSource:(VKTileSource *)arg1 overrideForMaximumZoomLevel:(long long)arg2;
 - (void)willStartLoadingTiles;

@@ -15,6 +15,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (void)requestAnalysis:(unsigned long long)arg1 ofPixelBuffer:(struct __CVBuffer { }*)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)requestAnalysis:(unsigned long long)arg1 ofPixelBuffer:(struct __CVBuffer { }*)arg2 withProperties:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTextureAtlas : NSObject <NSCoding> {
+@interface SKTextureAtlas : NSObject <NSSecureCoding> {
     NSString * _atlasName;
     bool  _isCUIImageAtlas;
     NSDictionary * _textureDict;
@@ -47,6 +47,7 @@
 + (id)lookupCachedTextureNamed:(id)arg1;
 + (void)preloadTextureAtlases:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)preloadTextureAtlasesNamed:(id)arg1 withCompletionHandler:(id /* block */)arg2;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -59,6 +60,7 @@
 - (id)findTextureNamedFromAtlas:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqualToTextureAtlas:(id)arg1;
 - (void)loadTextures;
 - (void)loadTexturesFromCUIImageAtlas:(id)arg1;
 - (void)parseAtlasPropertyList:(id)arg1 withPath:(id)arg2;

@@ -12,6 +12,9 @@
     NSString * _buildVersion;
     unsigned long long  _chargingState;
     unsigned long long  _deviceOrientation;
+    float  _displayBackingScaleFactor;
+    float  _displayHeight;
+    float  _displayWidth;
     bool  _ephemeralMultiUser;
     NSString * _identifier;
     NSArray * _installedApplications;
@@ -58,6 +61,9 @@
 @property (nonatomic, copy) NSString *buildVersion;
 @property (nonatomic) unsigned long long chargingState;
 @property (nonatomic) unsigned long long deviceOrientation;
+@property (nonatomic) float displayBackingScaleFactor;
+@property (nonatomic) float displayHeight;
+@property (nonatomic) float displayWidth;
 @property (getter=isEphemeralMultiUser, nonatomic) bool ephemeralMultiUser;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, copy) NSArray *installedApplications;
@@ -111,6 +117,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)deviceOrientation;
+- (float)displayBackingScaleFactor;
+- (float)displayHeight;
+- (float)displayWidth;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)identifier;
@@ -150,6 +159,9 @@
 - (void)setBuildVersion:(id)arg1;
 - (void)setChargingState:(unsigned long long)arg1;
 - (void)setDeviceOrientation:(unsigned long long)arg1;
+- (void)setDisplayBackingScaleFactor:(float)arg1;
+- (void)setDisplayHeight:(float)arg1;
+- (void)setDisplayWidth:(float)arg1;
 - (void)setEphemeralMultiUser:(bool)arg1;
 - (void)setInstalledApplications:(id)arg1;
 - (void)setInstructorImageIdentifier:(id)arg1;

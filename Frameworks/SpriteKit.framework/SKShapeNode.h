@@ -24,6 +24,8 @@
 @property (nonatomic, retain) SKShader *strokeShader;
 @property (nonatomic, retain) SKTexture *strokeTexture;
 
++ (id)debugHierarchyPropertyDescriptions;
++ (id)debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 + (id)shapeNodeWithCircleOfRadius:(double)arg1;
 + (id)shapeNodeWithEllipseInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)shapeNodeWithEllipseOfSize:(struct CGSize { double x1; double x2; })arg1;
@@ -36,6 +38,7 @@
 + (id)shapeNodeWithRectOfSize:(struct CGSize { double x1; double x2; })arg1 cornerRadius:(double)arg2;
 + (id)shapeNodeWithSplinePoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
 + (id)shapeNodeWithTriangleA:(struct CGPoint { double x1; double x2; })arg1 B:(struct CGPoint { double x1; double x2; })arg2 C:(struct CGPoint { double x1; double x2; })arg3;
++ (bool)supportsSecureCoding;
 
 - (void)_didMakeBackingNode;
 - (void)_initialize;
@@ -43,8 +46,6 @@
 - (long long)blendMode;
 - (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fillColor;

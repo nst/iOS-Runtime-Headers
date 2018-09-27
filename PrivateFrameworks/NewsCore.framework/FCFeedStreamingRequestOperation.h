@@ -6,6 +6,7 @@
     NSMutableArray * _aggregateFeedItems;
     NSMutableDictionary * _aggregateFeedResponsesByFeedID;
     NSObject<OS_dispatch_queue> * _callbackQueue;
+    <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     unsigned long long  _cutoffAtCount;
     FCFeedDatabase * _feedDatabase;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *aggregateFeedItems;
 @property (nonatomic, retain) NSMutableDictionary *aggregateFeedResponsesByFeedID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, retain) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic) unsigned long long cutoffAtCount;
 @property (nonatomic, retain) FCFeedDatabase *feedDatabase;
@@ -42,6 +44,7 @@
 - (id)aggregateFeedItems;
 - (id)aggregateFeedResponsesByFeedID;
 - (id)callbackQueue;
+- (id)configuration;
 - (id)context;
 - (unsigned long long)cutoffAtCount;
 - (id)feedDatabase;
@@ -55,6 +58,7 @@
 - (void)setAggregateFeedItems:(id)arg1;
 - (void)setAggregateFeedResponsesByFeedID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCutoffAtCount:(unsigned long long)arg1;
 - (void)setFeedDatabase:(id)arg1;
@@ -69,5 +73,6 @@
 - (id /* block */)streamingResultsHandler;
 - (long long)streamingType;
 - (bool)throttled;
+- (bool)validateOperation;
 
 @end

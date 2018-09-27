@@ -9,13 +9,12 @@
 }
 
 @property (retain) UIActivityIndicatorView *activityIndicator;
-@property (retain) TLKMultilineText *subtitle;
+@property (nonatomic, retain) TLKMultilineText *subtitle;
 @property (retain) TLKVibrantLabel *subtitleLabel;
 
 - (void).cxx_destruct;
 - (id)activityIndicator;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setSubtitle:(id)arg1;

@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
+@interface CPLEngineLibrary : NSObject <CPLAbstractObject, CPLStatusDelegate> {
     NSHashTable * _attachedObjects;
     NSDate * _cachedLastQuarantineCountReportDate;
     NSURL * _clientLibraryBaseURL;
     bool  _closed;
+    NSObject<OS_dispatch_queue> * _closingQueue;
     NSURL * _cloudLibraryResourceStorageURL;
     NSURL * _cloudLibraryStateStorageURL;
     NSArray * _components;
     CPLConfiguration * _configuration;
+    NSString * _currentClosingComponentName;
     CPLEngineFeedbackManager * _feedback;
     NSString * _libraryIdentifier;
     bool  _libraryIsCorrupted;
+    unsigned long long  _libraryOptions;
     NSError * _openingError;
     <CPLEngineLibraryOwner> * _owner;
     CPLPlatformObject * _platformObject;
@@ -32,6 +35,7 @@
 @property (nonatomic, readonly, copy) NSURL *cloudLibraryResourceStorageURL;
 @property (nonatomic, readonly, copy) NSURL *cloudLibraryStateStorageURL;
 @property (nonatomic, readonly) CPLConfiguration *configuration;
+@property (readonly) NSString *currentClosingComponentName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *exitDeleteTime;
@@ -41,9 +45,11 @@
 @property (nonatomic) bool iCloudLibraryClientVersionTooOld;
 @property (nonatomic) bool iCloudLibraryExists;
 @property (nonatomic) bool iCloudLibraryHasBeenWiped;
+@property (nonatomic, readonly) NSDate *initialSyncDate;
 @property (nonatomic) bool isExceedingQuota;
 @property (nonatomic, readonly, copy) NSString *libraryIdentifier;
 @property (nonatomic, readonly) bool libraryIsCorrupted;
+@property (nonatomic, readonly) unsigned long long libraryOptions;
 @property (nonatomic) <CPLEngineLibraryOwner> *owner;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (nonatomic, readonly) CPLEngineScheduler *scheduler;
@@ -62,6 +68,7 @@
 - (void)_openNextComponent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_performBlockWithLibrary:(bool)arg1 enumerateAttachedObjects:(id /* block */)arg2;
 - (void)_reportQuarantineCountIfNecessaryWithLastReportDate:(id)arg1;
+- (void)_setCurrentClosingComponentName:(id)arg1;
 - (void)_updateTotalAssetCountWithAssetCounts:(id)arg1;
 - (void)attachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)clientLibraryBaseURL;
@@ -71,6 +78,7 @@
 - (id)componentName;
 - (id)configuration;
 - (id)corruptionInfo;
+- (id)currentClosingComponentName;
 - (id)description;
 - (void)detachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)exitDeleteTime;
@@ -85,10 +93,12 @@
 - (bool)iCloudLibraryClientVersionTooOld;
 - (bool)iCloudLibraryExists;
 - (bool)iCloudLibraryHasBeenWiped;
-- (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4;
+- (id)initWithClientLibraryBaseURL:(id)arg1 cloudLibraryStateStorageURL:(id)arg2 cloudLibraryResourceStorageURL:(id)arg3 libraryIdentifier:(id)arg4 options:(unsigned long long)arg5;
+- (id)initialSyncDate;
 - (bool)isExceedingQuota;
 - (id)libraryIdentifier;
 - (bool)libraryIsCorrupted;
+- (unsigned long long)libraryOptions;
 - (void)notifyAttachedObjectsHasStatusChanges;
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
@@ -116,6 +126,7 @@
 - (void)setIsExceedingQuota:(bool)arg1;
 - (void)setOwner:(id)arg1;
 - (void)startSyncSession;
+- (void)statusDidChange:(id)arg1;
 - (id)store;
 - (id)syncManager;
 - (id)systemMonitor;
@@ -123,6 +134,7 @@
 - (id)transport;
 - (void)updateAccountFlagsData:(id)arg1;
 - (void)updateAssetCountsFromServer:(id)arg1;
+- (void)updateDisabledFeatures:(id)arg1;
 - (void)updateInitialSyncDate:(id)arg1;
 - (void)updateLastSuccessfullSyncDate:(id)arg1;
 

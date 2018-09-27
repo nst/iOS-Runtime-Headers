@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
  */
 
-@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityBackgroundLaunchScheduler, _DASActivityGroupScheduler, _DASActivitySchedulerIntrospecting> {
+@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityBackgroundLaunchScheduler, _DASActivityGroupScheduler, _DASActivityMetering, _DASActivitySchedulerIntrospecting> {
+    NSMutableDictionary * _activityToDataMap;
     NSObject<OS_dispatch_queue> * _connectionCreationQueue;
     NSObject<OS_os_log> * _dasFrameworkLog;
     NSXPCListenerEndpoint * _endpoint;
@@ -16,6 +17,7 @@
     NSXPCConnection * _xpcConnection;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *activityToDataMap;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectionCreationQueue;
 @property (nonatomic, retain) NSObject<OS_os_log> *dasFrameworkLog;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +32,7 @@
 @property (nonatomic, retain) NSMutableDictionary *startedActivities;
 @property (nonatomic, retain) NSMutableDictionary *submittedActivities;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSXPCConnection *xpcConnection;
+@property (retain) NSXPCConnection *xpcConnection;
 
 + (id)scheduler;
 + (id)schedulerWithEndpoint:(id)arg1;
@@ -41,14 +43,17 @@
 - (void)activityCompleted:(id)arg1;
 - (id)activityRunStatistics;
 - (void)activityStarted:(id)arg1;
+- (void)activityStartedWithParameters:(id)arg1;
+- (void)activityStoppedWithParameters:(id)arg1;
+- (id)activityToDataMap;
 - (void)cancelActivities:(id)arg1;
 - (id)connectionCreationQueue;
 - (void)createActivityGroup:(id)arg1;
+- (id)currentConnection;
 - (id)currentPredictions;
 - (id)dasFrameworkLog;
 - (void)dealloc;
 - (id)endpoint;
-- (void)establishDaemonConnectionIfInterrupted;
 - (void)forceRunActivities:(id)arg1;
 - (void)handleEligibleActivities:(id /* block */)arg1;
 - (void)handleNoLongerRunningActivities:(id)arg1;
@@ -58,6 +63,7 @@
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (id)rateLimiter;
+- (double)remainingBalanceForBudgetWithName:(id)arg1;
 - (void)resubmitPendingActivities;
 - (void)resubmitRunningActivities;
 - (int)resubmitToken;
@@ -66,6 +72,8 @@
 - (id)runningActivities;
 - (id)runningGroupActivities;
 - (id)scoresForActivityWithName:(id)arg1;
+- (void)setActivityToDataMap:(id)arg1;
+- (void)setBalance:(double)arg1 forBudgetWithName:(id)arg2;
 - (void)setConnectionCreationQueue:(id)arg1;
 - (void)setDasFrameworkLog:(id)arg1;
 - (void)setEndpoint:(id)arg1;
@@ -90,8 +98,8 @@
 - (id)submittedTaskState;
 - (void)suspendActivities:(id)arg1;
 - (void)unprotectedEstablishDaemonConnectionIfInterrupted;
-- (void)updateActivity:(id)arg1 withPriority:(unsigned long long)arg2 startAfter:(id)arg3 startBefore:(id)arg4 options:(id)arg5;
-- (void)updateKBDownloadedOnWifi:(unsigned long long)arg1 downloadedOnCell:(unsigned long long)arg2 uploadedOnWifi:(unsigned long long)arg3 uploadedOnCell:(unsigned long long)arg4 forActivity:(id)arg5;
+- (void)updateActivity:(id)arg1 withParameters:(id)arg2;
+- (void)updateBytesConsumedForActivity:(id)arg1 downloadedOnWifi:(unsigned long long)arg2 downloadedOnCell:(unsigned long long)arg3 uploadedOnWifi:(unsigned long long)arg4 uploadedOnCell:(unsigned long long)arg5;
 - (id)xpcConnection;
 
 @end

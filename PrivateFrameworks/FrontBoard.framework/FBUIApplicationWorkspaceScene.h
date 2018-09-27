@@ -13,6 +13,7 @@
     NSMutableArray * _watchdogStack;
 }
 
+- (void).cxx_destruct;
 - (void)_dispatchBlockAfterProcessLaunch:(id /* block */)arg1;
 - (void)_handleDidUpdateSettings:(id)arg1 withDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
 - (void)_handleInvalidationWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;

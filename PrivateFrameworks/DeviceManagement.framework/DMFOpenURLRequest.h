@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFOpenURLRequest : CATTaskRequest {
+@interface DMFOpenURLRequest : DMFTaskRequest {
     NSString * _URLDisplayName;
     NSArray * _handlingBundleIdentifiers;
     bool  _lockInApp;
@@ -14,6 +14,9 @@
 @property (nonatomic) bool lockInApp;
 @property (nonatomic, copy) NSURL *url;
 
++ (bool)isPermittedOnSystemConnection;
++ (bool)isPermittedOnUserConnection;
++ (id)permittedPlatforms;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

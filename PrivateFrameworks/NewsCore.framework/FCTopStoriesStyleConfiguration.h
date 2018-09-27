@@ -4,6 +4,7 @@
 
 @interface FCTopStoriesStyleConfiguration : NSObject {
     FCColor * _background_color;
+    NSDictionary * _configDict;
     FCColor * _foreground_color;
     NSString * _label;
     NTPBTopStoriesStyleConfig * _pbConfig;
@@ -21,8 +22,8 @@
 - (id)background_color;
 - (id)foreground_color;
 - (unsigned long long)hash;
+- (id)initWithConfigDictionary:(id)arg1;
 - (id)initWithPBTopStoriesStyleConfig:(id)arg1;
-- (id)initWithStoryType:(unsigned long long)arg1 label:(id)arg2 foregroundColor:(id)arg3 backgroundColor:(id)arg4 stringType:(id)arg5;
 - (bool)isEqual:(id)arg1;
 - (id)label;
 - (unsigned long long)storyType;

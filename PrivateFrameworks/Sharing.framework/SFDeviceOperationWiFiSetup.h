@@ -8,6 +8,7 @@
     bool  _invalidateCalled;
     double  _metricSeconds;
     CUReachabilityMonitor * _reachabilityMonitor;
+    unsigned int  _repairFlags;
     SFSession * _sfSession;
     unsigned long long  _startTicks;
     NSObject<OS_dispatch_source> * _timeoutTimer;
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, readonly) double metricSeconds;
+@property (nonatomic) unsigned int repairFlags;
 @property (nonatomic, retain) SFSession *sfSession;
 
 - (void).cxx_destruct;
@@ -28,8 +30,10 @@
 - (id)init;
 - (void)invalidate;
 - (double)metricSeconds;
+- (unsigned int)repairFlags;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setRepairFlags:(unsigned int)arg1;
 - (void)setSfSession:(id)arg1;
 - (id)sfSession;
 

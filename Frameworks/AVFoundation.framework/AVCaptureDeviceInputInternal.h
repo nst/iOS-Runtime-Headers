@@ -3,11 +3,14 @@
  */
 
 @interface AVCaptureDeviceInputInternal : NSObject {
-    bool  authorizedForCamera;
+    bool  builtInMicrophoneStereoAudioCaptureEnabled;
     AVCaptureDevice * device;
     <AVCallbackCancellation> * deviceOpenCallbackInvoker;
     NSArray * ports;
     bool  ready;
+    float  simulatedAperture;
+    bool  unifiedAutoExposureDefaultsEnabled;
+    bool  visionDataDeliveryEnabled;
     AVWeakReference * weakReference;
 }
 

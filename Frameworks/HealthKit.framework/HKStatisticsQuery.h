@@ -19,6 +19,7 @@
 @property (readonly) Class superclass;
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
@@ -31,7 +32,6 @@
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (unsigned long long)mergeStrategy;
 - (unsigned long long)options;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;

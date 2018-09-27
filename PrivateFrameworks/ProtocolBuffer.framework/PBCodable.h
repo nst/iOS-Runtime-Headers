@@ -18,7 +18,7 @@
 - (id)data;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (id)formattedText;
+- (id)hack_formattedText;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
@@ -62,5 +62,11 @@
 // Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
 
 - (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
++ (void)load;
+
+- (id)formattedText;
 
 @end

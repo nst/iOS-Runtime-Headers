@@ -13,11 +13,6 @@
 @property (nonatomic, copy) NSString *accessibilityDescription;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasAccessibilityDescription;
-@property (nonatomic, readonly) bool hasLogo;
-@property (nonatomic, readonly) bool hasName;
-@property (nonatomic, readonly) bool hasRecord;
-@property (nonatomic, readonly) bool hasScore;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) _SFPBImage *logo;
@@ -29,11 +24,6 @@
 - (void).cxx_destruct;
 - (id)accessibilityDescription;
 - (id)dictionaryRepresentation;
-- (bool)hasAccessibilityDescription;
-- (bool)hasLogo;
-- (bool)hasName;
-- (bool)hasRecord;
-- (bool)hasScore;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

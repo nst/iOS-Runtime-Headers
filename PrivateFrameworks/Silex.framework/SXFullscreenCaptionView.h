@@ -4,7 +4,6 @@
 
 @interface SXFullscreenCaptionView : UIView <STStandaloneTextLayoutDelegate, SXAutoSizedCanvasControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     <SXComponentActionHandler> * _actionHandler;
-    <SXActionProvider> * _actionProvider;
     SXAutoSizedCanvasController * _autoSizeCanvasController;
     UIVisualEffectView * _backgroundView;
     SXFullscreenCaption * _caption;
@@ -24,6 +23,7 @@
         double height; 
     }  _fullSize;
     UIScrollView * _scrollView;
+    <SXSmartFieldFactory> * _smartFieldFactory;
     UISwipeGestureRecognizer * _swipeGestureRecognizer;
     UITapGestureRecognizer * _tapGestureRecognizer;
     struct CGRect { 
@@ -42,7 +42,6 @@
 }
 
 @property (nonatomic, readonly) <SXComponentActionHandler> *actionHandler;
-@property (nonatomic, readonly) <SXActionProvider> *actionProvider;
 @property (nonatomic, retain) SXAutoSizedCanvasController *autoSizeCanvasController;
 @property (nonatomic, retain) UIVisualEffectView *backgroundView;
 @property (nonatomic, readonly) SXFullscreenCaption *caption;
@@ -58,6 +57,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } fullSize;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, readonly) <SXSmartFieldFactory> *smartFieldFactory;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
@@ -71,7 +71,6 @@
 
 - (void).cxx_destruct;
 - (id)actionHandler;
-- (id)actionProvider;
 - (id)autoSizeCanvasController;
 - (id)backgroundView;
 - (id)caption;
@@ -94,7 +93,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleSwipeGestureRecognizer:(id)arg1;
 - (void)handleTapGestureRecognizer:(id)arg1;
-- (id)initWithActionProvider:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
 - (void)initializeTangier;
 - (void)layoutSubviews;
 - (double)marginForTextLayout:(id)arg1;
@@ -121,6 +120,7 @@
 - (void)setTextStorage:(id)arg1;
 - (void)setupGestureRecognizers;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)smartFieldFactory;
 - (id)swipeGestureRecognizer;
 - (id)tapGestureRecognizer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })temporaryLayoutRect;

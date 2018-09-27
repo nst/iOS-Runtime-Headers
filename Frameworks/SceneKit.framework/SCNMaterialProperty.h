@@ -16,12 +16,14 @@
     unsigned int  _isCommonProfileProperty;
     unsigned int  _isPresentationInstance;
     unsigned char  _magnificationFilter;
-    unsigned char  _mappingChannel;
+    long long  _mappingChannel;
     float  _maxAnisotropy;
     unsigned char  _minificationFilter;
     unsigned char  _mipFilter;
     id  _parent;
+    unsigned int  _preventWarmup;
     BOOL  _propertyType;
+    id  _runtimeResolvedPath;
     unsigned int  _sRGB;
     unsigned char  _textureComponents;
     unsigned char  _wrapS;
@@ -51,6 +53,7 @@
 + (id)captureDeviceOutputConsumer;
 + (struct __C3DImage { }*)copyC3DImageFromImage:(id)arg1;
 + (struct __C3DImage { }*)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2;
++ (struct __C3DImage { }*)copyC3DImageFromImage:(id)arg1 textureOptions:(int)arg2 wasCached:(bool*)arg3;
 + (id)copyImageFromC3DImage:(struct __C3DImage { }*)arg1;
 + (id)dvt_supportedTypesForPropertyContents;
 + (id)materialPropertyWithContents:(id)arg1;
@@ -156,6 +159,7 @@
 - (BOOL)propertyType;
 - (id)pvrtcData;
 - (void)removeAllAnimations;
+- (void)removeAllBindings;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAnimationForKey:(id)arg1 blendOutDuration:(double)arg2;
 - (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;

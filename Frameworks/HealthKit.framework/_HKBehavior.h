@@ -3,10 +3,12 @@
  */
 
 @interface _HKBehavior : NSObject {
+    bool  _collectsCalorimetry;
     bool  _collectsData;
     bool  _deviceSupportsHeartRateMotionContexts;
     bool  _futureMigrationsEnabled;
     bool  _hasTelephonyCapability;
+    NSString * _hostClinicalReadAuthorizationUsageDescription;
     NSString * _hostReadAuthorizationUsageDescription;
     NSString * _hostWriteAuthorizationUsageDescription;
     bool  _isAppleInternalInstall;
@@ -15,19 +17,23 @@
     bool  _isDeviceSupported;
     bool  _isRunningStoreDemoMode;
     bool  _isTestingDevice;
+    NSNumber * _overridenEnableManateeForHSA2Accounts;
     NSNumber * _overridenSupportsSwimmingWorkoutSessions;
+    bool  _performsWorkoutCondensation;
     bool  _runningInStoreDemoModeF201;
     bool  _supportsAWDMetricSubmission;
-    bool  _supportsAchievementAssets;
     bool  _supportsActivitySharing;
     bool  _supportsAppSubscriptions;
     bool  _supportsCloudSync;
+    bool  _supportsFeatureAvailabilityAssets;
     bool  _supportsHeartRateDataCollection;
     bool  _supportsNanoSync;
     bool  _supportsRemoteAuthorization;
     bool  _supportsSampleExpiration;
+    bool  _supportsWorkouts;
 }
 
+@property (nonatomic) bool collectsCalorimetry;
 @property (nonatomic) bool collectsData;
 @property (nonatomic, readonly, copy) NSString *currentDeviceClass;
 @property (nonatomic, readonly, copy) NSString *currentDeviceDisplayName;
@@ -44,6 +50,7 @@
 @property (nonatomic) bool deviceSupportsHeartRateMotionContexts;
 @property (nonatomic) bool futureMigrationsEnabled;
 @property (nonatomic) bool hasTelephonyCapability;
+@property (nonatomic, copy) NSString *hostClinicalReadAuthorizationUsageDescription;
 @property (nonatomic, copy) NSString *hostReadAuthorizationUsageDescription;
 @property (nonatomic, copy) NSString *hostWriteAuthorizationUsageDescription;
 @property (nonatomic) bool isAppleInternalInstall;
@@ -54,17 +61,20 @@
 @property (nonatomic, readonly) bool isRunningStoreDemoMode;
 @property (nonatomic) bool isTestingDevice;
 @property (nonatomic, readonly, copy) NSTimeZone *localTimeZone;
+@property (getter=isManateeEnabledForHSA2Accounts, nonatomic, readonly) bool manateeEnabledForHSA2Accounts;
+@property (nonatomic) bool performsWorkoutCondensation;
 @property (nonatomic, readonly) bool runningInStoreDemoModeF201;
 @property (nonatomic) bool supportsAWDMetricSubmission;
-@property (nonatomic) bool supportsAchievementAssets;
 @property (nonatomic) bool supportsActivitySharing;
 @property (nonatomic) bool supportsAppSubscriptions;
 @property (nonatomic) bool supportsCloudSync;
+@property (nonatomic, readonly) bool supportsFeatureAvailabilityAssets;
 @property (nonatomic) bool supportsHeartRateDataCollection;
 @property (nonatomic) bool supportsNanoSync;
 @property (nonatomic) bool supportsRemoteAuthorization;
 @property (nonatomic) bool supportsSampleExpiration;
 @property (nonatomic) bool supportsSwimmingWorkoutSessions;
+@property (nonatomic) bool supportsWorkouts;
 @property (nonatomic, readonly) unsigned long long totalDiskCapacity;
 
 + (bool)_deviceSupportsHeartRateMotionContexts;
@@ -75,13 +85,18 @@
 + (bool)_isDeviceSupported;
 + (bool)_isForceBuddyEnabled;
 + (bool)_isRunningStoreDemoMode;
++ (bool)_performsWorkoutCondensation;
++ (bool)_readEnableManateeForHSA2AccountsFromHealthdDefaults;
 + (bool)_runningInStoreDemoModeF201;
 + (long long)_runningInStoreDemoModeFProgramNumber;
 + (bool)_shouldShowBuddy;
 + (bool)activePairedWatchHasSmartFitnessCoaching;
++ (bool)activePairedWatchSupportsBradycardiaDetection;
 + (bool)activePairedWatchSupportsHeartRateMotionContexts;
 + (id)activePairedWatchWithoutSOSMedicalIDContactsSupport;
 + (bool)allPairedWatchesMeetMinimumVersion:(int)arg1;
++ (bool)allPairedWatchesSupportBradycardiaDetection;
++ (bool)allPairedWatchesSupportHeartRateMotionContexts;
 + (bool)anyPairedWatchHasFlightsClimbedCapability;
 + (bool)anyPairedWatchHasSOSModeCapability;
 + (id)behaviorQueue;
@@ -100,6 +115,7 @@
 + (bool)hasTelephonyCapability;
 + (bool)isAppleInternalInstall;
 + (bool)isDeviceSupported;
++ (bool)isManateeEnabledByDefault;
 + (bool)isRunningStoreDemoMode;
 + (bool)isTestingDevice;
 + (void)resetSharedBehavior;
@@ -112,6 +128,7 @@
 + (int)syncProtocolVersionForSystemBuildVersion:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)collectsCalorimetry;
 - (bool)collectsData;
 - (id)currentDeviceClass;
 - (id)currentDeviceDisplayName;
@@ -128,6 +145,7 @@
 - (bool)deviceSupportsHeartRateMotionContexts;
 - (bool)futureMigrationsEnabled;
 - (bool)hasTelephonyCapability;
+- (id)hostClinicalReadAuthorizationUsageDescription;
 - (id)hostReadAuthorizationUsageDescription;
 - (id)hostWriteAuthorizationUsageDescription;
 - (id)init;
@@ -136,14 +154,18 @@
 - (bool)isCompanionCapable;
 - (bool)isCurrentDeviceN2XA;
 - (bool)isDeviceSupported;
+- (bool)isManateeEnabledForHSA2Accounts;
 - (bool)isRunningStoreDemoMode;
 - (bool)isTestingDevice;
 - (id)localTimeZone;
+- (bool)performsWorkoutCondensation;
 - (bool)runningInStoreDemoModeF201;
+- (void)setCollectsCalorimetry:(bool)arg1;
 - (void)setCollectsData:(bool)arg1;
 - (void)setDeviceSupportsHeartRateMotionContexts:(bool)arg1;
 - (void)setFutureMigrationsEnabled:(bool)arg1;
 - (void)setHasTelephonyCapability:(bool)arg1;
+- (void)setHostClinicalReadAuthorizationUsageDescription:(id)arg1;
 - (void)setHostReadAuthorizationUsageDescription:(id)arg1;
 - (void)setHostWriteAuthorizationUsageDescription:(id)arg1;
 - (void)setIsAppleInternalInstall:(bool)arg1;
@@ -151,8 +173,9 @@
 - (void)setIsCompanionCapable:(bool)arg1;
 - (void)setIsDeviceSupported:(bool)arg1;
 - (void)setIsTestingDevice:(bool)arg1;
+- (void)setManateeEnabledForHSA2AccountsOverride:(bool)arg1;
+- (void)setPerformsWorkoutCondensation:(bool)arg1;
 - (void)setSupportsAWDMetricSubmission:(bool)arg1;
-- (void)setSupportsAchievementAssets:(bool)arg1;
 - (void)setSupportsActivitySharing:(bool)arg1;
 - (void)setSupportsAppSubscriptions:(bool)arg1;
 - (void)setSupportsCloudSync:(bool)arg1;
@@ -161,16 +184,18 @@
 - (void)setSupportsRemoteAuthorization:(bool)arg1;
 - (void)setSupportsSampleExpiration:(bool)arg1;
 - (void)setSupportsSwimmingWorkoutSessions:(bool)arg1;
+- (void)setSupportsWorkouts:(bool)arg1;
 - (bool)supportsAWDMetricSubmission;
-- (bool)supportsAchievementAssets;
 - (bool)supportsActivitySharing;
 - (bool)supportsAppSubscriptions;
 - (bool)supportsCloudSync;
+- (bool)supportsFeatureAvailabilityAssets;
 - (bool)supportsHeartRateDataCollection;
 - (bool)supportsNanoSync;
 - (bool)supportsRemoteAuthorization;
 - (bool)supportsSampleExpiration;
 - (bool)supportsSwimmingWorkoutSessions;
+- (bool)supportsWorkouts;
 - (unsigned long long)totalDiskCapacity;
 
 @end

@@ -13,6 +13,7 @@
     bool  _canMasquerade;
     bool  _canSetDeviceIdentifier;
     bool  _canSetEnvironment;
+    bool  _canUseNonLegacyShareURL;
     NSString * _clientPrefix;
     bool  _displaysSystemAcceptPrompt;
     NSString * _entitlementSpecifiedPCSServiceName;
@@ -34,6 +35,7 @@
 @property (nonatomic) bool canMasquerade;
 @property (nonatomic) bool canSetDeviceIdentifier;
 @property (nonatomic) bool canSetEnvironment;
+@property (nonatomic) bool canUseNonLegacyShareURL;
 @property (nonatomic, retain) NSString *clientPrefix;
 @property (nonatomic) bool displaysSystemAcceptPrompt;
 @property (nonatomic, retain) NSString *entitlementSpecifiedPCSServiceName;
@@ -55,6 +57,7 @@
 - (bool)canMasquerade;
 - (bool)canSetDeviceIdentifier;
 - (bool)canSetEnvironment;
+- (bool)canUseNonLegacyShareURL;
 - (id)clientPrefix;
 - (bool)displaysSystemAcceptPrompt;
 - (id)entitlementSpecifiedPCSServiceName;
@@ -75,6 +78,7 @@
 - (void)setCanMasquerade:(bool)arg1;
 - (void)setCanSetDeviceIdentifier:(bool)arg1;
 - (void)setCanSetEnvironment:(bool)arg1;
+- (void)setCanUseNonLegacyShareURL:(bool)arg1;
 - (void)setClientPrefix:(id)arg1;
 - (void)setDisplaysSystemAcceptPrompt:(bool)arg1;
 - (void)setEntitlementSpecifiedPCSServiceName:(id)arg1;

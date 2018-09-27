@@ -4,6 +4,7 @@
 
 @interface PLFileUtilities : NSObject
 
++ (bool)_isFileExistsError:(id)arg1;
 + (id)_mobileOwnerAttributes;
 + (bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2;
 + (bool)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;

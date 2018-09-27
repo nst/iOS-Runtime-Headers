@@ -17,6 +17,7 @@
     NSString * _feedViewExposureIdDeprecated;
     int  _feedViewPresentationReason;
     int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int previousArticlePublisherArticleVersion : 1; 
         unsigned int feedType : 1; 
@@ -52,6 +53,7 @@
 @property (nonatomic, retain) NSString *feedViewExposureIdDeprecated;
 @property (nonatomic) int feedViewPresentationReason;
 @property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleSessionId;
 @property (nonatomic, readonly) bool hasArticleSessionIdDeprecated;
@@ -66,6 +68,7 @@
 @property (nonatomic, readonly) bool hasFeedViewExposureIdDeprecated;
 @property (nonatomic) bool hasFeedViewPresentationReason;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic) bool hasIsSearchResultArticle;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
 @property (nonatomic) bool hasMuteUnmuteLocation;
@@ -109,6 +112,7 @@
 - (id)feedViewPresentationReasonAsString:(int)arg1;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasArticleId;
 - (bool)hasArticleSessionId;
 - (bool)hasArticleSessionIdDeprecated;
@@ -123,6 +127,7 @@
 - (bool)hasFeedViewExposureIdDeprecated;
 - (bool)hasFeedViewPresentationReason;
 - (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIsSearchResultArticle;
 - (bool)hasIsUserSubscribedToFeed;
 - (bool)hasMuteUnmuteLocation;
@@ -157,6 +162,7 @@
 - (void)setFeedViewExposureIdDeprecated:(id)arg1;
 - (void)setFeedViewPresentationReason:(int)arg1;
 - (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasFeedType:(bool)arg1;
 - (void)setHasFeedViewPresentationReason:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;

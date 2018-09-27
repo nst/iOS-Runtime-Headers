@@ -20,6 +20,9 @@
     NSSet * _regions;
     NSMutableDictionary * _requestedProvisioningMethods;
     NSArray * _requiredFields;
+    NSArray * _searchTerms;
+    NSArray * _supportedCameraCaptureTypes;
+    NSArray * _supportedInAppTypes;
     NSArray * _supportedProtocols;
     long long  _supportedProvisioningMethods;
     NSURL * _termsURL;
@@ -44,6 +47,9 @@
 @property (nonatomic, copy) NSSet *regions;
 @property (nonatomic, retain) NSMutableDictionary *requestedProvisioningMethods;
 @property (nonatomic, copy) NSArray *requiredFields;
+@property (nonatomic, readonly, copy) NSArray *searchTerms;
+@property (nonatomic, readonly, copy) NSArray *supportedCameraCaptureTypes;
+@property (nonatomic, readonly, copy) NSArray *supportedInAppTypes;
 @property (nonatomic, copy) NSArray *supportedProtocols;
 @property (nonatomic) long long supportedProvisioningMethods;
 @property (nonatomic, copy) NSURL *termsURL;
@@ -52,7 +58,10 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (id)_displayNameForCardType:(id)arg1;
++ (id)_inAppProvisioningURLWthScheme:(id)arg1 path:(id)arg2;
 + (id)partnerProductsFromArrayOfPartners:(id)arg1 andProducts:(id)arg2;
++ (id)productsFromBrowseableBankApps:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 paymentOptions:(id)arg4 termsURL:(id)arg5 provisioningMethods:(id)arg6 readerModeMetadata:(id)arg7 requiredFields:(id)arg8 imageAssets:(id)arg9 minimumOSVersion:(id)arg10 region:(id)arg11 hsa2Requirement:(id)arg12;
@@ -79,6 +88,7 @@
 - (id)regions;
 - (id)requestedProvisioningMethods;
 - (id)requiredFields;
+- (id)searchTerms;
 - (void)setAppLaunchURL:(id)arg1;
 - (void)setAssociatedStoreIdentifiers:(id)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -95,6 +105,8 @@
 - (void)setSupportedProvisioningMethods:(long long)arg1;
 - (void)setTermsURL:(id)arg1;
 - (void)setType:(unsigned long long)arg1;
+- (id)supportedCameraCaptureTypes;
+- (id)supportedInAppTypes;
 - (id)supportedProtocols;
 - (long long)supportedProvisioningMethods;
 - (bool)supportsOSVersion:(id)arg1 deviceClass:(id)arg2;

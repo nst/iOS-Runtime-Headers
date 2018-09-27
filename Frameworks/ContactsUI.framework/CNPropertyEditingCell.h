@@ -29,6 +29,7 @@
 - (double)minCellHeight;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;
+- (void)regainFocus;
 - (void)setValueTextAttributes:(id)arg1;
 - (void)setVseparator:(id)arg1;
 - (void)setVseparatorHidden:(bool)arg1;

@@ -7,6 +7,7 @@
     NSMutableDictionary * _completionHandlers;
     <PKIDSManagerDataSource> * _dataSource;
     NSHashTable * _delegates;
+    NSLock * _delegatesLock;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableArray * _paymentRequests;
     NSMutableArray * _pendingCancellations;

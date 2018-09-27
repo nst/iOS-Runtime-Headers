@@ -5,7 +5,7 @@
 @interface HMDCentralMessageDispatcher : HMFMessageDispatcher {
     HMDAdminEnforcementMessageFilter * _adminMsgFilter;
     HMDHomeManager * _homeManager;
-    HMDMessageFilterChain * _msgFilterChain;
+    HMDMessageFilterChain * _messageFilterChain;
     HMFMessageDispatcher * _notificationDispatcher;
     HMFMessageDispatcher * _recvDispatcher;
     NSMutableArray * _relayedMessages;
@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) HMDAdminEnforcementMessageFilter *adminMsgFilter;
 @property (nonatomic) HMDHomeManager *homeManager;
-@property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
+@property (nonatomic, readonly) HMDMessageFilterChain *messageFilterChain;
 @property (nonatomic, retain) HMFMessageDispatcher *notificationDispatcher;
 @property (nonatomic, retain) HMFMessageDispatcher *recvDispatcher;
 @property (nonatomic, readonly) NSMutableArray *relayedMessages;
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) HMDSecureRemoteMessageFilter *secureRemoteMessageFilter;
 @property (nonatomic, readonly) HMDSecureRemoteMessageTransport *secureRemoteTransport;
 
++ (id)defaultDispatcher;
 + (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(bool)arg4;
 + (bool)isWhitelistedLocalMessage:(id)arg1;
 
@@ -46,7 +47,7 @@
 - (id)homeManager;
 - (id)httpMessageTransport;
 - (id)initWithSecureRemoteTransport:(id)arg1 messageFilterChain:(id)arg2;
-- (id)msgFilterChain;
+- (id)messageFilterChain;
 - (id)notificationDispatcher;
 - (id)prepareAnswerForRequestedCapabilities:(id)arg1;
 - (id)recvDispatcher;
@@ -65,7 +66,6 @@
 - (void)setAdminMsgFilter:(id)arg1;
 - (void)setCompanionDevice:(id)arg1 forHome:(id)arg2;
 - (void)setHomeManager:(id)arg1;
-- (void)setMsgFilterChain:(id)arg1;
 - (void)setNotificationDispatcher:(id)arg1;
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setRemoteAccessDevice:(id)arg1 forHome:(id)arg2;

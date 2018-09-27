@@ -7,6 +7,7 @@
 
 - (bool)allowsEditingTextAttributes;
 - (void)becomeDropResponder;
+- (bool)canBecomeDropResponder;
 - (void)droppingFinished;
 - (void)droppingStarted;
 - (void)resignDropResponderWithDropPerformed:(bool)arg1;

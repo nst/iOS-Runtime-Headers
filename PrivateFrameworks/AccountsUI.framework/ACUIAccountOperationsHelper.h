@@ -23,6 +23,7 @@
 - (void)removeAccount:(id)arg1;
 - (void)saveAccount:(id)arg1;
 - (void)saveAccount:(id)arg1 requireVerification:(bool)arg2;
+- (void)saveAccount:(id)arg1 requireVerification:(bool)arg2 completion:(id /* block */)arg3;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 requireVerification:(bool)arg3;
 - (void)setDelegate:(id)arg1;

@@ -25,6 +25,7 @@
         unsigned long long count; 
         unsigned long long size; 
     }  _stepIndexs;
+    NSMutableArray * _ticketingSegments;
 }
 
 @property (nonatomic, readonly) unsigned int*actionSheetArtworkIndexs;
@@ -39,6 +40,9 @@
 @property (nonatomic, readonly) unsigned long long routeDetailsArtworkIndexsCount;
 @property (nonatomic, readonly) unsigned int*stepIndexs;
 @property (nonatomic, readonly) unsigned long long stepIndexsCount;
+@property (nonatomic, retain) NSMutableArray *ticketingSegments;
+
++ (Class)ticketingSegmentType;
 
 - (void).cxx_destruct;
 - (unsigned int)actionSheetArtworkIndexAtIndex:(unsigned long long)arg1;
@@ -48,9 +52,11 @@
 - (void)addActionSheetArtworkIndex:(unsigned int)arg1;
 - (void)addRouteDetailsArtworkIndex:(unsigned int)arg1;
 - (void)addStepIndex:(unsigned int)arg1;
+- (void)addTicketingSegment:(id)arg1;
 - (void)clearActionSheetArtworkIndexs;
 - (void)clearRouteDetailsArtworkIndexs;
 - (void)clearStepIndexs;
+- (void)clearTicketingSegments;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -76,9 +82,13 @@
 - (void)setNextOptionsIndex:(int)arg1;
 - (void)setRouteDetailsArtworkIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setStepIndexs:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setTicketingSegments:(id)arg1;
 - (unsigned int)stepIndexAtIndex:(unsigned long long)arg1;
 - (unsigned int*)stepIndexs;
 - (unsigned long long)stepIndexsCount;
+- (id)ticketingSegmentAtIndex:(unsigned long long)arg1;
+- (id)ticketingSegments;
+- (unsigned long long)ticketingSegmentsCount;
 - (void)writeTo:(id)arg1;
 
 @end

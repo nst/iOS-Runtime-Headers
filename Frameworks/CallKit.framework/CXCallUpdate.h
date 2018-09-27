@@ -39,15 +39,18 @@
         unsigned int supportsSendingToVoicemail : 1; 
         unsigned int videoStreamToken : 1; 
         unsigned int crossDeviceIdentifier : 1; 
+        unsigned int localSenderIdentityUUID : 1; 
         unsigned int remoteParticipantHandles : 1; 
         unsigned int activeRemoteParticipantHandles : 1; 
         unsigned int handoffContext : 1; 
         unsigned int context : 1; 
         unsigned int prefersExclusiveAccessToCellularNetwork : 1; 
         unsigned int remoteUplinkMuted : 1; 
+        unsigned int shouldSuppressInCallUI : 1; 
     }  _hasSet;
     bool  _hasVideo;
     long long  _inCallSoundRegion;
+    NSUUID * _localSenderIdentityUUID;
     NSString * _localizedCallerName;
     bool  _mayRequireBreakBeforeMake;
     bool  _prefersExclusiveAccessToCellularNetwork;
@@ -55,6 +58,7 @@
     NSSet * _remoteParticipantHandles;
     bool  _remoteUplinkMuted;
     bool  _requiresInCallSounds;
+    bool  _shouldSuppressInCallUI;
     bool  _supportsAddCall;
     bool  _supportsDTMF;
     bool  _supportsGrouping;
@@ -81,10 +85,11 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEmergency, nonatomic) bool emergency;
 @property (nonatomic, retain) CXHandoffContext *handoffContext;
-@property (nonatomic) struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; } hasSet;
+@property (nonatomic) struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; } hasSet;
 @property (nonatomic) bool hasVideo;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long inCallSoundRegion;
+@property (nonatomic, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic, copy) NSString *localizedCallerName;
 @property (nonatomic) bool mayRequireBreakBeforeMake;
 @property (nonatomic) bool prefersExclusiveAccessToCellularNetwork;
@@ -92,6 +97,7 @@
 @property (nonatomic, copy) NSSet *remoteParticipantHandles;
 @property (getter=isRemoteUplinkMuted, nonatomic) bool remoteUplinkMuted;
 @property (nonatomic) bool requiresInCallSounds;
+@property (nonatomic) bool shouldSuppressInCallUI;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsAddCall;
 @property (nonatomic) bool supportsDTMF;
@@ -121,7 +127,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handoffContext;
-- (struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; })hasSet;
+- (struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; })hasSet;
 - (bool)hasVideo;
 - (long long)inCallSoundRegion;
 - (id)init;
@@ -130,6 +136,7 @@
 - (bool)isEmergency;
 - (bool)isRemoteUplinkMuted;
 - (bool)isUsingBaseband;
+- (id)localSenderIdentityUUID;
 - (id)localizedCallerName;
 - (bool)mayRequireBreakBeforeMake;
 - (bool)prefersExclusiveAccessToCellularNetwork;
@@ -148,9 +155,10 @@
 - (void)setCrossDeviceIdentifier:(id)arg1;
 - (void)setEmergency:(bool)arg1;
 - (void)setHandoffContext:(id)arg1;
-- (void)setHasSet:(struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; })arg1;
+- (void)setHasSet:(struct CXCallUpdateHasSet { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; })arg1;
 - (void)setHasVideo:(bool)arg1;
 - (void)setInCallSoundRegion:(long long)arg1;
+- (void)setLocalSenderIdentityUUID:(id)arg1;
 - (void)setLocalizedCallerName:(id)arg1;
 - (void)setMayRequireBreakBeforeMake:(bool)arg1;
 - (void)setPrefersExclusiveAccessToCellularNetwork:(bool)arg1;
@@ -158,6 +166,7 @@
 - (void)setRemoteParticipantHandles:(id)arg1;
 - (void)setRemoteUplinkMuted:(bool)arg1;
 - (void)setRequiresInCallSounds:(bool)arg1;
+- (void)setShouldSuppressInCallUI:(bool)arg1;
 - (void)setSupportsAddCall:(bool)arg1;
 - (void)setSupportsDTMF:(bool)arg1;
 - (void)setSupportsGrouping:(bool)arg1;
@@ -170,6 +179,7 @@
 - (void)setUUID:(id)arg1;
 - (void)setUsingBaseband:(bool)arg1;
 - (void)setVideoStreamToken:(long long)arg1;
+- (bool)shouldSuppressInCallUI;
 - (bool)supportsAddCall;
 - (bool)supportsDTMF;
 - (bool)supportsGrouping;

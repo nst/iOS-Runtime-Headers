@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)automaticUpdateV2EnabledDidChange:(SUManagerClient *)arg1;
 - (void)client:(SUManagerClient *)arg1 automaticDownloadDidFailToStartForNewUpdateAvailable:(SUDescriptor *)arg2 withError:(NSError *)arg3;
 - (void)client:(SUManagerClient *)arg1 downloadDidFail:(SUDownload *)arg2 withError:(NSError *)arg3;
 - (void)client:(SUManagerClient *)arg1 downloadDidFinish:(SUDownload *)arg2;

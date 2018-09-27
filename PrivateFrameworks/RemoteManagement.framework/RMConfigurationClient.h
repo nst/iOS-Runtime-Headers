@@ -6,7 +6,7 @@
     NSXPCConnection * _connection;
 }
 
-@property (retain) NSXPCConnection *connection;
+@property (nonatomic, readonly) NSXPCConnection *connection;
 
 + (id)v2MDMServiceClient;
 
@@ -16,7 +16,6 @@
 - (id)initWithServiceName:(id)arg1;
 - (void)notifyConfigurationChanged:(id /* block */)arg1;
 - (void)processProfileService:(id)arg1 completion:(id /* block */)arg2;
-- (void)setConnection:(id)arg1;
 - (void)uprootMDMConfiguration:(id /* block */)arg1;
 
 @end

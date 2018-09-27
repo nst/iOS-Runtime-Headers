@@ -4,6 +4,7 @@
 
 @interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView> {
     unsigned long long  _color;
+    CLKDevice * _device;
     NTKVictoryDigitsView * _flipDigitsView;
     bool  _flipViewIsLower;
     bool  _frozen;
@@ -32,7 +33,7 @@
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (void)clearEditingTransitions;
 - (unsigned long long)color;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (bool)isFrozen;
 - (void)layoutSubviews;
 - (void)setColor:(unsigned long long)arg1;

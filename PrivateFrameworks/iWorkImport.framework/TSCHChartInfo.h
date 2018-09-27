@@ -168,6 +168,7 @@
 - (void)clearViewStyleProxyForLayouts:(id)arg1;
 - (id)commandToApplyFillSet:(id)arg1;
 - (bool)containsCalloutLines;
+- (bool)containsCalloutLinesWithoutModelSync;
 - (id)context;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -195,10 +196,13 @@
 - (id)geometry;
 - (int)gridDirection;
 - (bool)gridEqualToDefaultGrid;
+- (bool)hasCategoryReferences;
 - (bool)hasFloatValueForProperty:(int)arg1 value:(float*)arg2;
 - (bool)hasIntValueForProperty:(int)arg1 value:(int*)arg2;
 - (bool)hasObjectValueForProperty:(int)arg1 value:(id*)arg2;
+- (bool)hasRoundedCorners;
 - (bool)hasSetDefaultLayoutSettings;
+- (bool)hasTractReference;
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1;
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1 omitLabelPlacement:(bool)arg2;
 - (id)infoGeometryForDesiredPureLayoutGeometry:(id)arg1;
@@ -206,7 +210,6 @@
 - (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (double)informationalMessageDuration;
 - (id)informationalMessageString;
-- (id)init;
 - (id)initWithChartType:(id)arg1 legendShowing:(id)arg2 chartBodyFrame:(id)arg3 chartAreaFrame:(id)arg4 circumscribingFrame:(id)arg5 legendFrame:(id)arg6 stylePreset:(id)arg7 privateSeriesStyles:(id)arg8 chartNonStyle:(id)arg9 legendNonStyle:(id)arg10 valueAxisNonStyles:(id)arg11 categoryAxisNonStyles:(id)arg12 seriesNonStyles:(id)arg13 refLineNonStylesMap:(id)arg14 refLineStylesMap:(id)arg15 forDocumentLocale:(id)arg16;
 - (int)intValueForProperty:(int)arg1 defaultValue:(int)arg2;
 - (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
@@ -242,6 +245,7 @@
 - (unsigned long long)numberOfThemeSeriesStyles;
 - (id)objectValueForProperty:(int)arg1;
 - (id)operationPropertyNameFromGenericProperty:(int)arg1;
+- (bool)p_containsCalloutLinesWithModelSync:(bool)arg1;
 - (id)p_copyNonStyleArray:(id)arg1 inContext:(id)arg2;
 - (id)p_copyStyleAndNonStyleArray:(id)arg1 withZone:(struct _NSZone { }*)arg2 context:(id)arg3;
 - (id)p_copyStyleAndNonStyleMap:(id)arg1 withZone:(struct _NSZone { }*)arg2 context:(id)arg3;
@@ -259,6 +263,7 @@
 - (bool)p_refLineNonStyleMapIsValid;
 - (void)p_saveToUnityArchive:(struct ChartArchive { int (**x1)(); struct ExtensionSet { struct map<int, google::protobuf::internal::ExtensionSet::Extension, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, google::protobuf::internal::ExtensionSet::Extension>, std::__1::less<int>, true> > { unsigned long long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; }*)arg1 persistentChartInfo:(id)arg2 archiver:(id)arg3;
 - (void)p_setDrawableInfo:(id)arg1;
+- (bool)p_supportsRoundedCornersWithModelSync:(bool)arg1;
 - (id)p_swapTuplesForApplyingPreset:(id)arg1 preservingAppearance:(bool)arg2;
 - (id)p_swapTuplesForApplyingPresetRemovingOverrides:(id)arg1;
 - (id)p_swapTuplesForMutations:(id)arg1;
@@ -335,6 +340,9 @@
 - (id)styleOwnerRefForStyleOwner:(id)arg1;
 - (id)styleOwnerRefForStyleOwnerPath:(id)arg1;
 - (id)styleSwapCommandToApplyFillSetSeriesPropertyMaps:(id)arg1;
+- (bool)supportsAndHasRoundedCorners;
+- (bool)supportsRoundedCorners;
+- (bool)supportsRoundedCornersWithoutModelSync;
 - (id)swapTuplesForApplyingPreset:(id)arg1 withBehavior:(unsigned long long)arg2;
 - (id)swapTuplesForMutations:(id)arg1 forImport:(bool)arg2;
 - (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2;
@@ -344,6 +352,7 @@
 - (void)updateAfterPaste;
 - (void)updateTitlesForExportingModel:(id)arg1;
 - (void)upgradeAxisLabelFormatWithValuePrefix:(id)arg1 valueSuffix:(id)arg2 valueUseSeparator:(bool)arg3 horizontalPrefix:(id)arg4 horizontalSuffix:(id)arg5 horizontalUseSeparator:(bool)arg6;
+- (void)upgradeChartRoundedCornerRadiusWithValue:(double)arg1;
 - (void)upgradeWithHorizontalMin:(id)arg1 horizontalMax:(id)arg2 valueMin:(id)arg3 valueMax:(id)arg4;
 - (id)valueAxisNonstyleAtIndex:(unsigned long long)arg1;
 - (id)valueAxisStyleAtIndex:(unsigned long long)arg1;

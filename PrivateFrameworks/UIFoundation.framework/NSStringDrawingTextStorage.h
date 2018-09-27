@@ -7,6 +7,7 @@
     CUICatalog * _catalog;
     NSConcreteNotifyingMutableAttributedString * _contents;
     double  _defaultTighteningFactor;
+    NSGraphicsContext * _graphicsContext;
     NSLayoutManager * _layoutManager;
     struct { 
         unsigned int _typesetterBehavior : 4; 
@@ -14,7 +15,8 @@
         unsigned int _baselineMode : 1; 
         unsigned int _forceWordWrapping : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
-        unsigned int _reserved : 24; 
+        unsigned int _applicationFrameworkContext : 3; 
+        unsigned int _reserved : 21; 
     }  _sdflags;
     CUIStyleEffectConfiguration * _styleEffects;
     NSTextContainer * _textContainer;
@@ -25,6 +27,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property double defaultTighteningFactor;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSGraphicsContext *graphicsContext;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:, nonatomic) bool usesSimpleTextEffects;
@@ -35,11 +38,13 @@
 + (void)initialize;
 + (id)stringDrawingTextStorage;
 
+- (long long)_applicationFrameworkContext;
 - (double)_baselineDelta;
 - (bool)_baselineMode;
 - (bool)_forceWordWrapping;
 - (bool)_isDeallocating;
 - (bool)_isStringDrawingTextStorage;
+- (void)_setApplicationFrameworkContext:(long long)arg1;
 - (void)_setBaselineDelta:(double)arg1;
 - (void)_setBaselineMode:(bool)arg1;
 - (void)_setForceWordWrapping:(bool)arg1;
@@ -59,6 +64,7 @@
 - (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(bool)arg5 scrollable:(bool)arg6 padding:(double)arg7;
 - (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(bool)arg4 scrollable:(bool)arg5 padding:(double)arg6;
 - (void)fontSetChanged;
+- (id)graphicsContext;
 - (id)init;
 - (id)layoutManager;
 - (unsigned long long)length;
@@ -70,6 +76,7 @@
 - (void)setCuiCatalog:(id)arg1;
 - (void)setCuiStyleEffects:(id)arg1;
 - (void)setDefaultTighteningFactor:(double)arg1;
+- (void)setGraphicsContext:(id)arg1;
 - (id)string;
 - (id)textContainer;
 - (id)textContainerForAttributedString:(id)arg1;

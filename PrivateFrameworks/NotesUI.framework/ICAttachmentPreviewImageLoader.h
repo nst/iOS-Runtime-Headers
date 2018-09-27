@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSArray *previewImageURLs;
 @property (nonatomic) double scale;
 
++ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withBackground:(int)arg2;
 + (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 
 - (void).cxx_destruct;

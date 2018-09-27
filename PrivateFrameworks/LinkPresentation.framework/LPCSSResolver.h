@@ -5,6 +5,7 @@
 @interface LPCSSResolver : NSObject {
     bool  _generateEmailCompatibleMarkup;
     bool  _includeClassNamesWhenUsingInlineStyles;
+    bool  _includeDarkInterfaceInlineStyles;
     NSMutableDictionary * _localVariables;
     NSMutableSet * _pendingVariables;
     LPTheme * _theme;
@@ -14,6 +15,7 @@
 
 @property (nonatomic) bool generateEmailCompatibleMarkup;
 @property (nonatomic) bool includeClassNamesWhenUsingInlineStyles;
+@property (nonatomic) bool includeDarkInterfaceInlineStyles;
 @property (nonatomic, readonly) NSMutableDictionary *localVariables;
 @property (nonatomic, readonly) NSMutableSet *pendingVariables;
 @property (nonatomic, readonly) LPTheme *theme;
@@ -31,15 +33,17 @@
 - (void)enumerateResolvedRulesFromRuleDictionary:(id)arg1 withBlock:(id /* block */)arg2;
 - (bool)generateEmailCompatibleMarkup;
 - (bool)includeClassNamesWhenUsingInlineStyles;
+- (bool)includeDarkInterfaceInlineStyles;
 - (id)initWithTheme:(id)arg1;
 - (id)localVariables;
 - (id)localVariablesAsCSSVariables;
 - (id)pendingVariables;
 - (void)registerAlternateStyle:(id)arg1 inComponent:(id)arg2;
 - (id)resolveCSSValue:(id)arg1;
-- (id)ruleDictionaryForStyle:(id)arg1 forComponentClass:(Class)arg2;
+- (id)ruleDictionaryForStyle:(id)arg1 forComponentClass:(Class)arg2 withDarkInterface:(bool)arg3;
 - (void)setGenerateEmailCompatibleMarkup:(bool)arg1;
 - (void)setIncludeClassNamesWhenUsingInlineStyles:(bool)arg1;
+- (void)setIncludeDarkInterfaceInlineStyles:(bool)arg1;
 - (void)setStyle:(id)arg1 toElement:(id)arg2 inComponent:(id)arg3;
 - (void)setUseInlineStyles:(bool)arg1;
 - (void)setUseVariablesWhenUsingInlineStyles:(bool)arg1;

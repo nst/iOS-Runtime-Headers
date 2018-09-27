@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface _MTLSamplerState : NSObject <MTLSamplerState> {
+@interface _MTLSamplerState : NSObject <MTLSamplerStateSPI> {
     <MTLDevice> * _device;
     NSString * _label;
 }

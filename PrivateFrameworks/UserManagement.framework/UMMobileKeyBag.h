@@ -24,10 +24,12 @@
 + (bool)fetchAttributesForUser:(id)arg1 outError:(id*)arg2;
 + (bool)inSyncBubble;
 + (void)initialize;
++ (bool)isLoginSession;
 + (bool)isMultiUser;
 + (unsigned int)lastLoggedInUID;
 + (id)lastLoggedInUser;
 + (id)loadUser:(id)arg1 withPasscodeData:(id)arg2;
++ (id)loginUser;
 + (unsigned long long)maxNumberOfUsers;
 + (double)passcodeBackOffIntervalForUser:(id)arg1;
 + (id)personaSpecForUser:(id)arg1;
@@ -36,6 +38,7 @@
 + (bool)stopSyncBubbleForUser:(id)arg1 outError:(id*)arg2;
 + (id)syncBubbleMachServiceNamesForUser:(id)arg1;
 + (id)taskFromDictionaryRepresentation:(id)arg1;
++ (void)updateLoginSessionType;
 + (id)userFromAttributes:(id)arg1;
 + (unsigned long long)userType;
 + (bool)writeAttributesToDiskForUser:(id)arg1 outError:(id*)arg2;

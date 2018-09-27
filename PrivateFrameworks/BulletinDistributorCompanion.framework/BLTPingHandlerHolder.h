@@ -3,13 +3,14 @@
  */
 
 @interface BLTPingHandlerHolder : NSObject <BLTPingSubscriptionInfo> {
-    bool  _canAck;
+    unsigned long long  _ackType;
     bool  _forBulletin;
     id  _pingHandler;
     NSString * _sectionID;
 }
 
-@property (nonatomic) bool canAck;
+@property (nonatomic) unsigned long long ackType;
+@property (nonatomic, readonly) bool canAck;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool forBulletin;
@@ -18,6 +19,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_performPingWithAckableForwardBlock:(id /* block */)arg1 ackableNoParametersBlock:(id /* block */)arg2 noAckBlock:(id /* block */)arg3 clientAck:(id /* block */)arg4;
+- (unsigned long long)ackType;
 - (bool)canAck;
 - (bool)forBulletin;
 - (id)init;
@@ -25,7 +28,7 @@
 - (void)pingWithBulletin:(id)arg1 ack:(id /* block */)arg2;
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2 ack:(id /* block */)arg3;
 - (id)sectionID;
-- (void)setCanAck:(bool)arg1;
+- (void)setAckType:(unsigned long long)arg1;
 - (void)setForBulletin:(bool)arg1;
 - (void)setSectionID:(id)arg1;
 

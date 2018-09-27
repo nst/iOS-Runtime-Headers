@@ -3,6 +3,7 @@
  */
 
 @interface SFMutableResultSection : SFResultSection <NSCopying> {
+    bool  _doNotFold;
     unsigned int  _domain;
     NSArray * _hiddenExtResults;
     bool  _isGlanceCategory;
@@ -13,6 +14,7 @@
     NSString * _sourceDomain;
 }
 
+@property bool doNotFold;
 @property (nonatomic) unsigned int domain;
 @property (nonatomic, retain) NSArray *hiddenExtResults;
 @property (nonatomic) bool isGlanceCategory;
@@ -33,6 +35,7 @@
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (bool)doNotFold;
 - (unsigned int)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hiddenExtResults;
@@ -52,6 +55,7 @@
 - (id)resultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultsCount;
 - (bool)serialized;
+- (void)setDoNotFold:(bool)arg1;
 - (void)setDomain:(unsigned int)arg1;
 - (void)setHiddenExtResults:(id)arg1;
 - (void)setIsGlanceCategory:(bool)arg1;

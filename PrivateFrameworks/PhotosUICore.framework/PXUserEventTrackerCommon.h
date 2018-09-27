@@ -36,8 +36,10 @@
 - (void)eventSourceDidDisappear:(unsigned long long)arg1 sender:(id)arg2;
 - (void)eventSourceWillAppear:(unsigned long long)arg1 sender:(id)arg2;
 - (id)init;
+- (bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
 - (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logViewCountForLogState:(unsigned long long)arg1;
 - (void)setCurrentLogState:(unsigned long long)arg1;
 - (void)setCurrentLogState:(unsigned long long)arg1 logSubState:(unsigned long long)arg2 forceLogging:(bool)arg3;
 - (void)setCurrentLogSubState:(unsigned long long)arg1;

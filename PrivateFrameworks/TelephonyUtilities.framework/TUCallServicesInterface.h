@@ -73,6 +73,7 @@
 - (oneway void)groupCallWithUniqueProxyIdentifier:(id)arg1 withOtherCallWithUniqueProxyIdentifier:(id)arg2;
 - (oneway void)handleCurrentCallsChanged:(id)arg1 callDisconnected:(id)arg2;
 - (oneway void)handleFrequencyChangedTo:(id)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(id)arg3;
+- (oneway void)handleMeterLevelChangedTo:(float)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(id)arg3;
 - (oneway void)handleNotificationName:(id)arg1 forCallWithUniqueProxyIdentifier:(id)arg2 userInfo:(id)arg3;
 - (oneway void)handleRoutesByUniqueIdentifierUpdated:(id)arg1;
 - (void)handleServerDisconnect;
@@ -83,7 +84,7 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1 callCenter:(id)arg2;
 - (id)initialStateSemaphore;
-- (oneway void)joinConversationWithRequest:(id)arg1;
+- (id)joinConversationWithRequest:(id)arg1;
 - (id)localProxyCalls;
 - (void)performBlockOnQueue:(id /* block */)arg1;
 - (void)performBlockOnQueue:(id /* block */)arg1 andWait:(bool)arg2;

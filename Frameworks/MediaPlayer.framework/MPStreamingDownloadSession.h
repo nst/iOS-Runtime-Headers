@@ -3,6 +3,9 @@
  */
 
 @interface MPStreamingDownloadSession : NSObject <NSCopying> {
+    NSURL * _alternateHLSKeyCertificateURL;
+    NSURL * _alternateHLSKeyServerURL;
+    NSURL * _alternateHLSPlaylistURL;
     NSURL * _alternateSourceURL;
     NSString * _assetFlavor;
     unsigned long long  _assetQuality;
@@ -18,6 +21,9 @@
     NSURL * _streamingKeyServerURL;
 }
 
+@property (nonatomic, copy) NSURL *alternateHLSKeyCertificateURL;
+@property (nonatomic, copy) NSURL *alternateHLSKeyServerURL;
+@property (nonatomic, copy) NSURL *alternateHLSPlaylistURL;
 @property (nonatomic, copy) NSURL *alternateSourceURL;
 @property (nonatomic, copy) NSString *assetFlavor;
 @property (nonatomic) unsigned long long assetQuality;
@@ -33,6 +39,9 @@
 @property (nonatomic, copy) NSURL *streamingKeyServerURL;
 
 - (void).cxx_destruct;
+- (id)alternateHLSKeyCertificateURL;
+- (id)alternateHLSKeyServerURL;
+- (id)alternateHLSPlaylistURL;
 - (id)alternateSourceURL;
 - (id)assetFlavor;
 - (unsigned long long)assetQuality;
@@ -45,6 +54,9 @@
 - (unsigned long long)protectionType;
 - (id)purchaseBundle;
 - (id)responseAssetDictionary;
+- (void)setAlternateHLSKeyCertificateURL:(id)arg1;
+- (void)setAlternateHLSKeyServerURL:(id)arg1;
+- (void)setAlternateHLSPlaylistURL:(id)arg1;
 - (void)setAlternateSourceURL:(id)arg1;
 - (void)setAssetFlavor:(id)arg1;
 - (void)setAssetQuality:(unsigned long long)arg1;

@@ -25,6 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyPasscode;
+- (id)_mainQueue;
 - (void)acceptWeakPasscode:(bool)arg1;
 - (bool)acceptedWeakPasscode;
 - (id)constraintFailedInstructions;

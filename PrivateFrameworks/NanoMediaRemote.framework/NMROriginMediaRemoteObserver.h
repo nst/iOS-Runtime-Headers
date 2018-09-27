@@ -9,10 +9,10 @@
     unsigned long long  _filteringOptions;
     bool  _isEnforcingApplicationFilter;
     bool  _isRegisteredForMediaRemoteNotifications;
+    NMRMediaRemoteNowPlayingState * _mutableNowPlayingState;
     NMRNowPlayingClient * _nowPlayingClient;
     void * _nowPlayingContentItemRef;
     NMRMediaRemoteUpdater * _nowPlayingInfoUpdater;
-    NMRNowPlayingState * _nowPlayingState;
     NMROrigin * _origin;
     NMRPlaybackQueue * _playbackQueue;
     NMRMediaRemoteUpdater * _playbackStateUpdater;
@@ -35,6 +35,7 @@
 
 - (void).cxx_destruct;
 - (void)_configureMediaRemoteUpdaters;
+- (id)_filteredSupportedCommands:(id)arg1;
 - (void)_handleContentItemArtworkDidChangeNotification:(id)arg1;
 - (void)_handleContentItemsDidChangeNotification:(id)arg1;
 - (void)_handleNowPlayingApplicationDidChangeNotification:(id)arg1;

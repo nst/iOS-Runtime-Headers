@@ -22,6 +22,7 @@
 + (id)nameObjectSeparator;
 + (id)succinctDescriptionForObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_activeComponentString;
 - (int)activeComponent;
 - (id)activeMultilinePrefix;
@@ -67,7 +68,6 @@
 - (id)appendUnsignedInt:(unsigned int)arg1 withName:(id)arg2;
 - (id)appendUnsignedInteger:(unsigned long long)arg1 withName:(id)arg2;
 - (id)build;
-- (void)dealloc;
 - (id)initWithObject:(id)arg1;
 - (id)modifyBody:(id /* block */)arg1;
 - (id)modifyProem:(id /* block */)arg1;

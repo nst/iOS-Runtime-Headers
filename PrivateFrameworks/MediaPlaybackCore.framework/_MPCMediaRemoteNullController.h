@@ -27,6 +27,5 @@
 - (void)sendCommand:(unsigned int)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)supportedCommands;
 - (long long)supportedCommandsCacheState;
-- (void)updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 
 @end

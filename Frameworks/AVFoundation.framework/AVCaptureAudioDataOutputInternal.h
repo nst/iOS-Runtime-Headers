@@ -7,7 +7,7 @@
     AVWeakReferencingDelegateStorage * delegateOverrideStorage;
     AVWeakReferencingDelegateStorage * delegateStorage;
     struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    struct remoteQueueReceiverOpaque { } * remoteQueueReceiver;
     AVWeakReference * weakReference;
 }
 

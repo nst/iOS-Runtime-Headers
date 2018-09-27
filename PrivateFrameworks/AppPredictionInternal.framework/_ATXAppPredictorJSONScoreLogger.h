@@ -19,8 +19,10 @@
 
 - (void).cxx_destruct;
 - (void)flush;
+- (void)flushWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (void)logInputs:(id)arg1 subscores:(id)arg2 forBundleId:(id)arg3;
+- (void)logStageScores:(id)arg1 secondStageScores:(id)arg2 thirdStageScores:(id)arg3;
 - (void)setAssetVersion:(unsigned long long)arg1;
 - (void)setCacheAge:(double)arg1;
 - (void)setConsumerSubType:(unsigned char)arg1;

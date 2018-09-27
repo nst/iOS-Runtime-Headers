@@ -15,6 +15,8 @@
     NSMutableArray * _memoryRecords;
     NSMutableArray * _personRecords;
     PLPhotoLibrary * _photoLibrary;
+    NSMutableArray * _scopeRecords;
+    NSMutableArray * _suggestionRecords;
 }
 
 @property (readonly) NSMutableArray *albumRecords;
@@ -28,14 +30,16 @@
 @property (readonly) NSMutableArray *masterRecords;
 @property (readonly) NSMutableArray *memoryRecords;
 @property (readonly) NSMutableArray *personRecords;
+@property (readonly) NSMutableArray *scopeRecords;
+@property (readonly) NSMutableArray *suggestionRecords;
 
-+ (bool)records:(id)arg1 containsIdentifier:(id)arg2;
++ (bool)records:(id)arg1 containsScopedIdentifier:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)albumRecords;
 - (id)albumRecordsWithContainerChange;
 - (id)assetRecords;
 - (id)assetRecordsWithContainerChange;
-- (void)dealloc;
 - (id)deletePersonRecords;
 - (id)deleteRecords;
 - (id)expungedRecords;
@@ -45,5 +49,7 @@
 - (id)memoryRecords;
 - (void)organizeRecords:(id)arg1;
 - (id)personRecords;
+- (id)scopeRecords;
+- (id)suggestionRecords;
 
 @end

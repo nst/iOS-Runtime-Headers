@@ -57,9 +57,11 @@
 - (id)firstName;
 - (id)font;
 - (bool)hasPlaceholder;
+- (unsigned long long)hash;
 - (id)imageURL;
 - (id)init;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 imageURL:(id)arg3 font:(id)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (unsigned long long)preferedMonogramType;

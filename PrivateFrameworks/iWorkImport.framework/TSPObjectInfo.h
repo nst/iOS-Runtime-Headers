@@ -7,7 +7,7 @@
     NSHashTable * _referencedDataHashTable;
     NSMutableSet * _referencedObjectUUIDs;
     NSArray * _referencedObjects;
-    NSHashTable * _referencedObjectsHashTable;
+    TSPReferenceOrderedSet * _referencedObjectsSet;
 }
 
 @property (nonatomic, readonly) NSArray *referencedData;

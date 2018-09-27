@@ -6,15 +6,14 @@
     int  _activeTileGroupChangedNotificationToken;
     NSString * _authToken;
     NSLock * _authTokenLock;
-    NSHashTable * _cancellingConnections;
-    NSLock * _cancellingConnectionsLock;
     GEOResourceManifestConfiguration * _configuration;
     NSObject<OS_xpc_object> * _conn;
-    NSLock * _connLock;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
     <GEOResourceManifestServerProxyDelegate> * _delegate;
+    bool  _hasOpenConnection;
     bool  _isLoadingResources;
     bool  _isUpdatingManifest;
-    unsigned long long  _retryCount;
+    bool  _sentConfigurationMessage;
     NSObject<OS_dispatch_queue> * _serverQueue;
 }
 
@@ -27,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
-- (void)_setupConnection;
+- (id)_xpcConnection;
 - (void)activateResourceScale:(int)arg1;
 - (void)activateResourceScenario:(int)arg1;
 - (id)activeTileGroup;
@@ -41,7 +40,8 @@
 - (id)delegate;
 - (void)forceUpdate:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)getResourceManifestWithHandler:(id /* block */)arg1;
-- (id)initWithDelegate:(id)arg1 configuration:(id)arg2 additionalMigrationTaskClasses:(id)arg3;
+- (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
+- (unsigned long long)maximumZoomLevelForStyle:(int)arg1 scale:(int)arg2;
 - (void)openConnection;
 - (void)performOpportunisticResourceLoading;
 - (oneway void)resetActiveTileGroup;

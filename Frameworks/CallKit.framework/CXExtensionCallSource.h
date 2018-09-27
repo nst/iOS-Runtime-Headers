@@ -15,7 +15,6 @@
 - (void).cxx_destruct;
 - (void)beginWithCompletionHandler:(id /* block */)arg1;
 - (id)bundle;
-- (id)displayName;
 - (id)extension;
 - (id)extensionContext;
 - (id)identifier;

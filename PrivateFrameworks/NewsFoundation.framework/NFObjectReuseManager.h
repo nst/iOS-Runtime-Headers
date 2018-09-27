@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)dequeueObjectForIdentifier:(id)arg1;
+- (id)inUseObjectForIdentifier:(id)arg1;
 - (id)initWithObjectConstructor:(id /* block */)arg1;
 - (id)inuseObjects;
 - (bool)isInUse:(id)arg1;

@@ -26,8 +26,8 @@
 
 + (id)descriptionForExitReason:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (bool)consideredJetsam;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

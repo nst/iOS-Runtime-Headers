@@ -4,6 +4,7 @@
 
 @interface SignpostSupportObjectSerializer : NSObject {
     SignpostSupportObjectExtractor * _extractor;
+    SignpostSerializationFilterConfiguration * _filterConfiguration;
     unsigned long long  _maxBatchSize;
     unsigned long long  _maxBytesSize;
     NSMutableArray * _outstandingLogMessage;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, retain) SignpostSupportObjectExtractor *extractor;
+@property (nonatomic, retain) SignpostSerializationFilterConfiguration *filterConfiguration;
 @property (nonatomic) unsigned long long maxBatchSize;
 @property (nonatomic) unsigned long long maxBytesSize;
 @property (nonatomic, retain) NSMutableArray *outstandingLogMessage;
@@ -20,13 +22,12 @@
 @property (nonatomic, copy) id /* block */ serializedLogMessageBlock;
 @property (nonatomic, copy) id /* block */ serializedSignpostEventBlock;
 
-+ (bool)serializeSignpostDataToPath:(id)arg1 LogArchivePath:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 errorOut:(id*)arg5;
-
 - (void).cxx_destruct;
 - (id)_dataArrayForSignpostSupportObjectArray:(id)arg1 errorOut:(id*)arg2;
 - (bool)_hasProcessingBlocks;
 - (id)_sanityCheckParameters;
 - (id)extractor;
+- (id)filterConfiguration;
 - (id)init;
 - (unsigned long long)maxBatchSize;
 - (unsigned long long)maxBytesSize;
@@ -37,6 +38,7 @@
 - (id /* block */)serializedLogMessageBlock;
 - (id /* block */)serializedSignpostEventBlock;
 - (void)setExtractor:(id)arg1;
+- (void)setFilterConfiguration:(id)arg1;
 - (void)setMaxBatchSize:(unsigned long long)arg1;
 - (void)setMaxBytesSize:(unsigned long long)arg1;
 - (void)setOutstandingLogMessage:(id)arg1;

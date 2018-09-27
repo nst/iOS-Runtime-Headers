@@ -3,7 +3,7 @@
  */
 
 @interface NTKUpNextStatusBarUnderlay : UICollectionReusableView {
-    CAGradientLayer * _gradientLayer;
+    UIView * _overlayView;
 }
 
 - (void).cxx_destruct;

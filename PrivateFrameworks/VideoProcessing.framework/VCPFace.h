@@ -15,7 +15,7 @@
     }  _bounds;
     float  _confidence;
     bool  _leftEyeClosed;
-    CVMLFaceObservation * _observation;
+    VNFaceObservation * _observation;
     bool  _rightEyeClosed;
     bool  _smile;
     int  _trackID;
@@ -25,7 +25,7 @@
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property float confidence;
 @property bool leftEyeClosed;
-@property (retain) CVMLFaceObservation *observation;
+@property (retain) VNFaceObservation *observation;
 @property bool rightEyeClosed;
 @property bool smile;
 @property int trackID;

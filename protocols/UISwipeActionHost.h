@@ -20,6 +20,7 @@
 - (void)swipeActionController:(UISwipeActionController *)arg1 didEndSwipeForItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)swipeActionController:(UISwipeActionController *)arg1 didPerformAction:(UIContextualAction *)arg2 canceled:(bool)arg3 atIndexPath:(NSIndexPath *)arg4;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })swipeActionController:(UISwipeActionController *)arg1 extraInsetsForItemAtIndexPath:(NSIndexPath *)arg2;
+- (void)swipeActionController:(UISwipeActionController *)arg1 insertActionsView:(UIView *)arg2 forItemAtIndexPath:(NSIndexPath *)arg3;
 - (bool)swipeActionController:(UISwipeActionController *)arg1 mayBeginSwipeForItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)swipeActionController:(UISwipeActionController *)arg1 willBeginSwipeForItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)swipeActionController:(UISwipeActionController *)arg1 willPerformAction:(UIContextualAction *)arg2 atIndexPath:(NSIndexPath *)arg3;

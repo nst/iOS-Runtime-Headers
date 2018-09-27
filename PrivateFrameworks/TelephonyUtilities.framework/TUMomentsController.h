@@ -20,10 +20,12 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
++ (id /* block */)faceTimePhotosEnabledGenerator;
 + (bool)isFaceTimePhotosEnabled;
 + (bool)isFaceTimePhotosEnabledByDefault;
 + (bool)isFaceTimePhotosRestricted;
 + (void)setFaceTimePhotosEnabled:(bool)arg1;
++ (void)setFaceTimePhotosEnabledGenerator:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)callByVideoStreamToken;

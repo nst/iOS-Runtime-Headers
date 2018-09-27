@@ -15,6 +15,7 @@
     bool  _shouldPersistWhenDismissed;
     bool  _showInSettings;
     unsigned long long  _sqlID;
+    NSString * _targetBundleIdentifier;
     NSString * _title;
     NSString * _uniqueIdentifier;
     NSDictionary * _userInfo;
@@ -33,6 +34,7 @@
 @property bool shouldPersistWhenDismissed;
 @property (nonatomic) bool showInSettings;
 @property (nonatomic) unsigned long long sqlID;
+@property (nonatomic, copy) NSString *targetBundleIdentifier;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 @property (copy) NSDictionary *userInfo;
@@ -52,10 +54,10 @@
 - (id)informativeText;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithoutDefaults;
 - (bool)isHSA2LoginItem;
 - (bool)isHSA2PasswordResetItem;
 - (id)notification;
-- (id)redirectURLWithAction:(id)arg1;
 - (void)setActions:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegateMachServiceName:(id)arg1;
@@ -68,6 +70,7 @@
 - (void)setShouldPersistWhenDismissed:(bool)arg1;
 - (void)setShowInSettings:(bool)arg1;
 - (void)setSqlID:(unsigned long long)arg1;
+- (void)setTargetBundleIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setUserInfo:(id)arg1;
@@ -76,6 +79,7 @@
 - (bool)shouldPersistWhenDismissed;
 - (bool)showInSettings;
 - (unsigned long long)sqlID;
+- (id)targetBundleIdentifier;
 - (id)title;
 - (id)uniqueIdentifier;
 - (id)userInfo;

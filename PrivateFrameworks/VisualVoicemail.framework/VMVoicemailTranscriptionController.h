@@ -12,6 +12,7 @@
     bool  _transcribing;
     NSOperationQueue * _transcriptionOperationQueue;
     NSProgress * _transcriptionProgress;
+    <VMTranscriptionService> * _transcriptionService;
 }
 
 @property (nonatomic) VMTranscriptionAssetModelOperation *assetModelOperation;
@@ -23,6 +24,7 @@
 @property (getter=isTranscribing, nonatomic, readonly) bool transcribing;
 @property (nonatomic, readonly) NSOperationQueue *transcriptionOperationQueue;
 @property (nonatomic, readonly) NSProgress *transcriptionProgress;
+@property (nonatomic, retain) <VMTranscriptionService> *transcriptionService;
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
@@ -51,8 +53,10 @@
 - (id)serialDispatchQueue;
 - (void)setAssetModelOperation:(id)arg1;
 - (void)setNetworkObserver:(id)arg1;
+- (void)setTranscriptionService:(id)arg1;
 - (id)speechRecognizer;
 - (id)transcriptionOperationQueue;
 - (id)transcriptionProgress;
+- (id)transcriptionService;
 
 @end

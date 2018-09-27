@@ -3,6 +3,7 @@
  */
 
 @interface CalendarEventLoader : NSObject {
+    bool  _allowEventLocationPrediction;
     int  _cancelSeed;
     unsigned long long  _componentForExpandingPadding;
     unsigned long long  _componentForExpandingRequests;
@@ -26,9 +27,11 @@
     double  _preferredReloadEnd;
     double  _preferredReloadStart;
     NSSet * _selectedCalendars;
+    bool  _selectedCalendarsWereSet;
     EKEventStore * _store;
 }
 
+@property (nonatomic) bool allowEventLocationPrediction;
 @property (nonatomic) <CalendarEventLoaderDelegate> *delegate;
 
 - (void).cxx_destruct;
@@ -43,13 +46,16 @@
 - (id)_uniqueEventsFromArray:(id)arg1;
 - (void)addOccurrenceAwaitingDeletion:(id)arg1;
 - (void)addOccurrenceAwaitingRefresh:(id)arg1;
+- (bool)allowEventLocationPrediction;
 - (void)cancelAllLoads;
 - (void)dealloc;
 - (id)delegate;
+- (bool)firstLoadBegan;
 - (id)initWithEventStore:(id)arg1;
 - (void)loadIfNeeded;
 - (bool)loadIsComplete;
 - (id)occurrencesForStartDate:(id)arg1 endDate:(id)arg2 preSorted:(bool)arg3 waitForLoad:(bool)arg4;
+- (void)setAllowEventLocationPrediction:(bool)arg1;
 - (void)setCacheLimit:(unsigned int)arg1;
 - (void)setComponentForExpandingPadding:(unsigned long long)arg1;
 - (void)setComponentForExpandingRequests:(unsigned long long)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKRecurrenceEnd : NSObject <NSCopying> {
+@interface EKRecurrenceEnd : NSObject <NSCopying, NSSecureCoding> {
     NSDate * _endDate;
     unsigned long long  _occurrenceCount;
 }
@@ -13,6 +13,7 @@
 
 + (id)recurrenceEndWithEndDate:(id)arg1;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

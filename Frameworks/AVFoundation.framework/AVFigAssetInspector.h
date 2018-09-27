@@ -4,10 +4,12 @@
 
 @interface AVFigAssetInspector : AVAssetInspector {
     long long  _checkIsStreamingOnce;
+    AVDisplayCriteria * _displayCriteria;
     struct OpaqueFigAsset { } * _figAsset;
     struct OpaqueFigFormatReader { } * _formatReader;
     long long  _formatReaderOnce;
     bool  _isStreaming;
+    long long  _makeDisplayCriteriaOnce;
     bool  didCheckForSaveRestriction;
     bool  hasSaveRestriction;
 }
@@ -66,6 +68,7 @@
 - (int)naturalTimeScale;
 - (id)originalNetworkContentURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
+- (id)preferredDisplayCriteria;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;

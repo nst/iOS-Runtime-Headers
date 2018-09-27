@@ -14,5 +14,6 @@
 + (id)kindWithAlbumKind:(id)arg1;
 
 - (id)artworkCatalog;
+- (id)humanDescription;
 
 @end

@@ -5,8 +5,10 @@
 @interface HUQuickControlSliderViewProfile : HUQuickControlViewProfile <HUQuickControlIncrementalConvertibleProfile> {
     bool  _hasOffState;
     bool  _hasSecondaryValue;
+    unsigned long long  _interactionFidelity;
     unsigned long long  _preferredFillSection;
-    double  _stepValue;
+    HFNumberValueConstraints * _primaryValueConstraints;
+    HFNumberValueConstraints * _secondaryValueConstraints;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,21 +16,27 @@
 @property (nonatomic) bool hasOffState;
 @property (nonatomic) bool hasSecondaryValue;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long interactionFidelity;
 @property (nonatomic) unsigned long long preferredFillSection;
-@property (nonatomic) double stepValue;
+@property (nonatomic, retain) HFNumberValueConstraints *primaryValueConstraints;
+@property (nonatomic, retain) HFNumberValueConstraints *secondaryValueConstraints;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (double)gestureDragCoefficient;
 - (bool)hasOffState;
 - (bool)hasSecondaryValue;
 - (id)init;
-- (double)percentageValueForViewValue:(id)arg1;
+- (unsigned long long)interactionFidelity;
 - (unsigned long long)preferredFillSection;
+- (id)primaryValueConstraints;
+- (id)secondaryValueConstraints;
 - (void)setHasOffState:(bool)arg1;
 - (void)setHasSecondaryValue:(bool)arg1;
+- (void)setInteractionFidelity:(unsigned long long)arg1;
 - (void)setPreferredFillSection:(unsigned long long)arg1;
-- (void)setStepValue:(double)arg1;
-- (double)stepValue;
-- (id)viewValueForPercentageValue:(double)arg1 round:(bool)arg2;
+- (void)setPrimaryValueConstraints:(id)arg1;
+- (void)setSecondaryValueConstraints:(id)arg1;
 
 @end

@@ -56,10 +56,12 @@
     SSAccount * _iTunesAccount;
     bool  _iTunesSignInSkip;
     NSString * _iTunesUserID;
+    double  _iTunesWaitSecs;
     bool  _invalidateCalled;
     bool  _liveOn;
     bool  _locationDecided;
     bool  _locationEnabled;
+    double  _mediaSystemWaitSecs;
     unsigned int  _pairSetupFlags;
     double  _pairSetupSecs;
     int  _pairSetupState;

@@ -55,6 +55,7 @@
 - (bool)_addVideoAsset:(id)arg1 preview:(id)arg2;
 - (bool)_addVideoData:(id)arg1 preview:(id)arg2;
 - (void)_handleRemoteViewFailure;
+- (void)_instantiateAndBeginExtensionIfNeeded;
 - (id)_urlForUntypedAsset:(id)arg1;
 - (bool)_useCustomDimmingView;
 - (bool)addAttachment:(id)arg1;

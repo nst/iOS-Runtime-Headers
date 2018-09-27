@@ -14,7 +14,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ dismissalBlock;
+@property (nonatomic, readonly) <UIFocusItemContainer> *focusItemContainer;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (nonatomic, retain) NSArray *previousViewControllers;

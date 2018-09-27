@@ -3,12 +3,16 @@
  */
 
 @interface PKMicaLayer : CALayer <PKMicaResizableView> {
+    NSArray * _publishedColorLayers;
+    NSArray * _publishedColorShapeLayers;
     CALayer * _rootLayer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *publishedColorLayers;
+@property (nonatomic, readonly) NSArray *publishedColorShapeLayers;
 @property (nonatomic, readonly) CALayer *rootLayer;
 @property (readonly) Class superclass;
 
@@ -20,6 +24,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 package:(id)arg2;
 - (void)layoutSublayers;
 - (double)pointScaleToMatchBoundsSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)publishedColorLayers;
+- (id)publishedColorShapeLayers;
 - (id)rootLayer;
 
 @end

@@ -10,12 +10,15 @@
 + (double)duetDiscretionaryBudget;
 + (bool)internalBuild;
 + (bool)isHeySiriAlwaysOn;
-+ (bool)isIPod;
 + (bool)isLowPowerModeSupported;
++ (bool)isMac;
 + (bool)isNarrowScreen;
 + (bool)isPercentageSupported;
++ (bool)isWatch;
 + (bool)isiPad;
 + (bool)isiPhone;
++ (bool)isiPod;
++ (double)networkingEnergyWithBytes:(int)arg1 withDuration:(double)arg2;
 + (id)valueForMobileGestaltCapability:(id)arg1;
 
 @end

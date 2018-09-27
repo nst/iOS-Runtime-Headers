@@ -20,6 +20,7 @@
 - (int)entityType;
 - (id)opaqueKey;
 - (id)owner;
+- (id)semanticIdentifier;
 - (void)setChangedFields:(unsigned long long)arg1;
 - (void)setChangesAcknowledged:(bool)arg1;
 - (void)setOpaqueKey:(id)arg1;

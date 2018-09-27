@@ -4,6 +4,6 @@
 
 @interface NTKCompanionComplicationCollectionManager : NSObject
 
-+ (id)sharedComplicationCollectionForActivePairedDevice;
++ (id)sharedComplicationCollectionForDevice:(id)arg1;
 
 @end

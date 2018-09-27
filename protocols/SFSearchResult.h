@@ -6,11 +6,13 @@
 @required
 
 - (SFActionItem *)action;
+- (NSString *)appleReferrer;
 - (NSString *)applicationBundleIdentifier;
 - (NSString *)auxiliaryBottomText;
 - (int)auxiliaryBottomTextColor;
 - (NSString *)auxiliaryMiddleText;
 - (NSString *)auxiliaryTopText;
+- (unsigned long long)blockId;
 - (NSString *)calendarIdentifier;
 - (SFCard *)card;
 - (NSString *)completedQuery;
@@ -23,6 +25,7 @@
 - (SFCustom *)customProperties;
 - (long long)dataOwnerType;
 - (NSArray *)descriptions;
+- (bool)doNotFold;
 - (NSNumber *)engagementScore;
 - (NSString *)fbr;
 - (NSDictionary *)featureScaling;
@@ -75,11 +78,13 @@
 - (NSURL *)sectionHeaderMoreURL;
 - (double)serverScore;
 - (void)setAction:(SFActionItem *)arg1;
+- (void)setAppleReferrer:(NSString *)arg1;
 - (void)setApplicationBundleIdentifier:(NSString *)arg1;
 - (void)setAuxiliaryBottomText:(NSString *)arg1;
 - (void)setAuxiliaryBottomTextColor:(int)arg1;
 - (void)setAuxiliaryMiddleText:(NSString *)arg1;
 - (void)setAuxiliaryTopText:(NSString *)arg1;
+- (void)setBlockId:(unsigned long long)arg1;
 - (void)setCalendarIdentifier:(NSString *)arg1;
 - (void)setCard:(SFCard *)arg1;
 - (void)setCompletedQuery:(NSString *)arg1;
@@ -92,6 +97,7 @@
 - (void)setCustomProperties:(SFCustom *)arg1;
 - (void)setDataOwnerType:(long long)arg1;
 - (void)setDescriptions:(NSArray *)arg1;
+- (void)setDoNotFold:(bool)arg1;
 - (void)setEngagementScore:(NSNumber *)arg1;
 - (void)setFbr:(NSString *)arg1;
 - (void)setFeatureScaling:(NSDictionary *)arg1;

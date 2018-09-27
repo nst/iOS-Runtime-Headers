@@ -25,8 +25,10 @@
 @property (nonatomic, readonly) bool allowsBackgroundNetworking;
 @property (nonatomic, readonly) bool allowsCellularAccess;
 @property (nonatomic, readonly) NSString *authPromptReason;
+@property (nonatomic, readonly) bool automaticallyRetryNetworkFailures;
 @property (nonatomic) unsigned int clientSDKVersion;
 @property (nonatomic, retain) NSString *deviceIdentifier;
+@property (nonatomic, readonly) unsigned long long discretionaryNetworkBehavior;
 @property (nonatomic, retain) CKOperationGroup *group;
 @property (nonatomic) bool isLongLived;
 @property (nonatomic) bool isOutstandingOperation;
@@ -55,9 +57,11 @@
 - (bool)allowsBackgroundNetworking;
 - (bool)allowsCellularAccess;
 - (id)authPromptReason;
+- (bool)automaticallyRetryNetworkFailures;
 - (unsigned int)clientSDKVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)deviceIdentifier;
+- (unsigned long long)discretionaryNetworkBehavior;
 - (void)encodeWithCoder:(id)arg1;
 - (id)group;
 - (id)init;

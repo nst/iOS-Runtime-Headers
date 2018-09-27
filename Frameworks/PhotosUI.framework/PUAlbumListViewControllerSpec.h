@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAlbumListViewControllerSpec : NSObject {
+@interface PUAlbumListViewControllerSpec : PULegacyViewControllerSpec {
     PUFontManager * __fontManager;
     UIImage * _addSharedAlbumPlaceholderImage;
     long long  _albumDeletionConfirmationStyle;
     PUPhotosAlbumViewControllerSpec * _albumViewControllerSpec;
+    bool  _canShowVirtualCollections;
     long long  _cellContentViewLayout;
     long long  _collageImageContentMode;
     struct CGSize { 
@@ -25,7 +26,6 @@
         double width; 
         double height; 
     }  _imageSize;
-    double  _maxSearchBarWidth;
     PUPhotosPanoramaViewControllerSpec * _panoramaViewControllerSpec;
     PUPhotosPickerViewControllerSpec * _photosPickerViewControllerSpec;
     double  _posterSquareCornerRadius;
@@ -66,14 +66,12 @@
 @property (nonatomic, readonly) UIImage *addSharedAlbumPlaceholderImage;
 @property (nonatomic, readonly) long long albumDeletionConfirmationStyle;
 @property (nonatomic, readonly) PUPhotosAlbumViewControllerSpec *albumViewControllerSpec;
-@property (nonatomic, readonly) bool canDisplaySearchActionInNavigationBar;
 @property (nonatomic, readonly) bool canShowVirtualCollections;
 @property (nonatomic, readonly) long long cellContentViewLayout;
 @property (readonly) long long collageImageContentMode;
 @property (readonly) struct CGSize { double x1; double x2; } collageImageSize;
 @property (nonatomic, readonly) double collageSpacing;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSizeForViewInPopover;
-@property (nonatomic, readonly) bool displaysSearchInPopover;
 @property (nonatomic, readonly) UIImage *emptyAlbumPlaceholderImage;
 @property (nonatomic, readonly) UIImage *emptySharedAlbumPlaceholderImage;
 @property (nonatomic, readonly) PUPhotoDecoration *emptyStackPhotoDecoration;
@@ -83,7 +81,11 @@
 @property (nonatomic, readonly) UIImage *hiddenAlbumPlaceholderImage;
 @property (readonly) long long imageContentMode;
 @property (readonly) struct CGSize { double x1; double x2; } imageSize;
-@property (nonatomic, readonly) double maxSearchBarWidth;
+@property (nonatomic, readonly) NSString *nameOfAddSharedAlbumPlaceholderImage;
+@property (nonatomic, readonly) NSString *nameOfEmptyAlbumPlaceholderImage;
+@property (nonatomic, readonly) NSString *nameOfEmptySharedAlbumPlaceholderImage;
+@property (nonatomic, readonly) NSString *nameOfHiddenAlbumPlaceholderImage;
+@property (nonatomic, readonly) NSString *nameOfRecentlyDeletedAlbumPlaceholderImage;
 @property (nonatomic, readonly) PUPhotosPanoramaViewControllerSpec *panoramaViewControllerSpec;
 @property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec;
 @property (nonatomic, readonly) double posterSquareCornerRadius;
@@ -105,26 +107,24 @@
 @property (nonatomic, readonly) PUAlbumListViewControllerSpec *standInAlbumListViewControllerSpec;
 @property (nonatomic, readonly) bool usesStackTransitionToGrid;
 
++ (id)padSpec;
++ (id)phoneSpec;
+
 - (void).cxx_destruct;
 - (id)_centeredGlyphImage:(id)arg1 withBackgroundColor:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 imageAlpha:(double)arg4;
 - (id)_centeredTintedGlyphImage:(id)arg1 withBackgroundColor:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3;
 - (id)_fontManager;
 - (void)_getStackSize:(struct CGSize { double x1; double x2; }*)arg1 outEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg3 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4;
 - (id)_insetsInterpolator;
-- (id)_nameOfAddSharedAlbumPlaceholderImage;
-- (id)_nameOfEmptyAlbumPlaceholderImage;
-- (id)_nameOfEmptySharedAlbumPlaceholderImage;
-- (id)_nameOfHiddenAlbumPlaceholderImage;
-- (id)_nameOfRecentlyDeletedAlbumPlaceholderImage;
 - (struct CGPoint { double x1; double x2; })_pixelRoundedOriginForCenteredImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)_stackWidthInterpolator;
 - (id)addSharedAlbumPlaceholderImage;
 - (long long)albumDeletionConfirmationStyle;
 - (id)albumViewControllerSpec;
-- (bool)canDisplaySearchActionInNavigationBar;
 - (bool)canShowVirtualCollections;
 - (long long)cellContentViewLayout;
 - (struct CGSize { double x1; double x2; })cellSizeForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForStackSize:(struct CGSize { double x1; double x2; })arg1;
 - (long long)collageImageContentMode;
 - (struct CGSize { double x1; double x2; })collageImageSize;
 - (double)collageSpacing;
@@ -132,7 +132,6 @@
 - (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (void)configureStackViewWithGridStyle:(id)arg1;
 - (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
-- (bool)displaysSearchInPopover;
 - (id)emptyAlbumPlaceholderImage;
 - (id)emptySharedAlbumPlaceholderImage;
 - (id)emptyStackPhotoDecoration;
@@ -143,7 +142,11 @@
 - (long long)imageContentMode;
 - (struct CGSize { double x1; double x2; })imageSize;
 - (struct CGSize { double x1; double x2; })imageSizeForLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
-- (double)maxSearchBarWidth;
+- (id)nameOfAddSharedAlbumPlaceholderImage;
+- (id)nameOfEmptyAlbumPlaceholderImage;
+- (id)nameOfEmptySharedAlbumPlaceholderImage;
+- (id)nameOfHiddenAlbumPlaceholderImage;
+- (id)nameOfRecentlyDeletedAlbumPlaceholderImage;
 - (id)panoramaViewControllerSpec;
 - (id)photosPickerViewControllerSpec;
 - (double)posterSquareCornerRadius;

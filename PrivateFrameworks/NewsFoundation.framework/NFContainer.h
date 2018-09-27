@@ -7,7 +7,6 @@
     NSMutableDictionary * _definitions;
     NFContainerPool * _pool;
     NSMutableDictionary * _privateContainers;
-    <NFResolver> * _resolver;
 }
 
 @property (nonatomic, retain) NFCallbackStore *callbackStore;
@@ -17,7 +16,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NFContainerPool *pool;
 @property (nonatomic, retain) NSMutableDictionary *privateContainers;
-@property (nonatomic, retain) <NFResolver> *resolver;
+@property (nonatomic, readonly) NFProxyResolver *proxyResolver;
+@property (nonatomic, readonly) <NFResolver> *resolver;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,6 +32,7 @@
 - (id)initWithFrameworkAssemblies:(id)arg1 assemblies:(id)arg2;
 - (id)pool;
 - (id)privateContainers;
+- (id)proxyResolver;
 - (id)register:(id)arg1 name:(id)arg2 createDefinitionBlock:(id /* block */)arg3;
 - (id)registerClass:(Class)arg1 factory:(id /* block */)arg2;
 - (id)registerClass:(Class)arg1 name:(id)arg2 factory:(id /* block */)arg3;
@@ -42,7 +43,6 @@
 - (void)setDefinitions:(id)arg1;
 - (void)setPool:(id)arg1;
 - (void)setPrivateContainers:(id)arg1;
-- (void)setResolver:(id)arg1;
 - (id)unsafeRegisterForKey:(id)arg1 name:(id)arg2 factory:(id /* block */)arg3;
 - (void)validateDefinitionsWithProxyResolver:(id)arg1;
 

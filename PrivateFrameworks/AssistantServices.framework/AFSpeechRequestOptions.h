@@ -12,6 +12,7 @@
     long long  _audioFileType;
     NSURL * _audioFileURL;
     unsigned long long  _bargeInOptions;
+    NSDictionary * _clientAnalyticsContext;
     double  _expectedActivationEventTime;
     bool  _fetchSmartSiriVolume;
     unsigned long long  _homeButtonDownEventMachAbsoluteTime;
@@ -19,6 +20,9 @@
     NSNumber * _homeButtonUpFromBeep;
     bool  _isEyesFree;
     bool  _isInitialBringUp;
+    bool  _isOnPhoneCall;
+    CLLocation * _location;
+    NSString * _locationStatus;
     NSNumber * _notifyState;
     bool  _pendCallbacksUntilAfterContinuation;
     NSString * _recordDeviceIdentifier;
@@ -46,6 +50,7 @@
 @property (nonatomic, copy) NSURL *audioFileURL;
 @property (nonatomic) unsigned long long bargeInOptions;
 @property (nonatomic, copy) NSString *btDeviceAddress;
+@property (nonatomic, copy) NSDictionary *clientAnalyticsContext;
 @property (nonatomic) double expectedActivationEventTime;
 @property (nonatomic) bool fetchSmartSiriVolume;
 @property (nonatomic) unsigned long long homeButtonDownEventMachAbsoluteTime;
@@ -53,6 +58,9 @@
 @property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
 @property (nonatomic) bool isEyesFree;
 @property (nonatomic) bool isInitialBringUp;
+@property (nonatomic) bool isOnPhoneCall;
+@property (nonatomic, copy) CLLocation *location;
+@property (nonatomic, copy) NSString *locationStatus;
 @property (nonatomic, copy) NSNumber *notifyState;
 @property (nonatomic) bool pendCallbacksUntilAfterContinuation;
 @property (nonatomic, copy) NSString *recordDeviceIdentifier;
@@ -82,6 +90,7 @@
 - (id)audioFileURL;
 - (unsigned long long)bargeInOptions;
 - (id)btDeviceAddress;
+- (id)clientAnalyticsContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -94,6 +103,11 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEyesFree;
 - (bool)isInitialBringUp;
+- (bool)isOnPhoneCall;
+- (bool)isRaiseToSpeak;
+- (bool)isVoiceTrigger;
+- (id)location;
+- (id)locationStatus;
 - (id)notifyState;
 - (bool)pendCallbacksUntilAfterContinuation;
 - (id)recordDeviceIdentifier;
@@ -109,6 +123,7 @@
 - (void)setAudioFileURL:(id)arg1;
 - (void)setBargeInOptions:(unsigned long long)arg1;
 - (void)setBtDeviceAddress:(id)arg1;
+- (void)setClientAnalyticsContext:(id)arg1;
 - (void)setExpectedActivationEventTime:(double)arg1;
 - (void)setFetchSmartSiriVolume:(bool)arg1;
 - (void)setHomeButtonDownEventMachAbsoluteTime:(unsigned long long)arg1;
@@ -116,6 +131,9 @@
 - (void)setHomeButtonUpFromBeep:(id)arg1;
 - (void)setIsEyesFree:(bool)arg1;
 - (void)setIsInitialBringUp:(bool)arg1;
+- (void)setIsOnPhoneCall:(bool)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setLocationStatus:(id)arg1;
 - (void)setNotifyState:(id)arg1;
 - (void)setPendCallbacksUntilAfterContinuation:(bool)arg1;
 - (void)setRecordDeviceIdentifier:(id)arg1;

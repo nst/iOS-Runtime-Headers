@@ -27,7 +27,7 @@
 @property (nonatomic, retain) FCCKPrivateDatabaseServerChangeToken *resultServerChangeToken;
 
 - (void).cxx_destruct;
-- (id)_optionsForDestination:(long long)arg1;
+- (id)_configurationForDestination:(long long)arg1;
 - (id)desiredKeys;
 - (bool)fetchAllChanges;
 - (bool)fetchNewestChangesFirst;

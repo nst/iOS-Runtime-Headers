@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@interface ATAssetLinkController : NSObject <ATAssetLinkDelegate> {
+@interface ATAssetLinkController : NSObject <ATAssetLinkDelegate, ATEnvironmentMonitorObserver> {
+    MSVXPCTransaction * _activeDownLoadsKeepAliveTransaction;
     NSMutableOrderedSet * _assetLinks;
     NSMutableOrderedSet * _assetQueue;
     NSMapTable * _assetsToFailedLinks;
@@ -11,7 +12,6 @@
     unsigned long long  _lastThermalPressureLevel;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _thermalNotificationToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 - (void)_handleEnqueue:(id)arg1 onLink:(id)arg2 withPriority:(bool)arg3;
 - (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2 object:(id)arg3;
 - (void)_prioritizeAsset:(id)arg1 onLinkClass:(Class)arg2;
+- (bool)_shouldReleaseKeepAliveTransaction;
 - (void)addAssetLink:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)allAssetLinks;
@@ -39,6 +40,7 @@
 - (void)assetLink:(id)arg1 didCloseWithOutstandingAssets:(id)arg2;
 - (void)assetLink:(id)arg1 didFinishAsset:(id)arg2 error:(id)arg3 retryable:(bool)arg4;
 - (void)assetLink:(id)arg1 didOpenWithPendingAssets:(id)arg2;
+- (void)assetLink:(id)arg1 didPauseAsseDownload:(id)arg2 error:(id)arg3;
 - (void)assetLink:(id)arg1 didTransitionAssetStates:(id)arg2;
 - (void)assetLink:(id)arg1 didUpdateAsset:(id)arg2 progress:(double)arg3;
 - (void)assetLinkDidChange:(id)arg1;
@@ -50,6 +52,7 @@
 - (void)enqueueAssetForStoreDownload:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)enqueueAssets:(id)arg1;
 - (void)enqueueAssets:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)environmentMonitorDidChangeThermalPressure:(id)arg1;
 - (id)getNonEnqueuedAssets:(id)arg1;
 - (id)init;
 - (void)prioritizeAsset:(id)arg1;

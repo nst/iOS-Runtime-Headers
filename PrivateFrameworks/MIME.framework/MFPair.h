@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@interface MFPair : NSObject {
+@interface MFPair : NSObject <NSCopying> {
     <NSObject> * _first;
     <NSObject> * _second;
 }
@@ -12,6 +12,7 @@
 
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)first;

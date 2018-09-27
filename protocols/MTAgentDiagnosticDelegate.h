@@ -7,4 +7,8 @@
 
 - (void)printDiagnostics;
 
+@optional
+
+- (NSDictionary *)gatherDiagnostics;
+
 @end

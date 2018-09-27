@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumber : NSValue <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CRCoding, CRDataType, CREquatable, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
+@interface NSNumber : NSValue <AADataType, AFSecurityDigestibleChunksProviding, ASDNotificationType, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CRCoding, CRDataType, CREquatable, CUByteCodable, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, REDonatedActionIdentifierProviding, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing, _DKDeduping>
 
 @property (nonatomic, readonly) double CGFloatValue;
 @property (nonatomic, readonly) long long PHAssetExportRequestVariantValue;
 @property (nonatomic, readonly) unsigned long long PXDataSourceIdentifierValue;
 @property (readonly) long long _cn_reputationScoreValue;
+@property (nonatomic, readonly) double _cn_timeIntervalValue;
 @property (readonly) bool boolValue;
 @property (readonly) BOOL charValue;
 @property (nonatomic, readonly) int chartGridValueType;
@@ -18,6 +19,8 @@
 @property (readonly) float floatValue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *hf_absoluteValue;
+@property (nonatomic, readonly) bool hf_isFloatValue;
+@property (nonatomic, readonly) bool hf_isSignedValue;
 @property (readonly) int intValue;
 @property (readonly) long long integerValue;
 @property (readonly) long long longLongValue;
@@ -95,6 +98,7 @@
 - (bool)isNSNumber__;
 - (long long)longLongValue;
 - (long long)longValue;
+- (id)redactedDescription;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;
@@ -121,6 +125,11 @@
 
 - (id)cl_json_serializeKey;
 - (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (bool)_intents_isDouble;
+- (bool)_intents_isInteger;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -149,6 +158,13 @@
 - (id)CA_interpolateValues:(id)arg1 :(id)arg2 :(id)arg3 interpolator:(const struct ValueInterpolator { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; bool x10; }*)arg4;
 - (id)CA_roundToIntegerFromValue:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
+
+- (id)_axDictionaryKeyReplacementRepresentation;
+- (id)_axReconstitutedRepresentationForDictionaryKeyReplacement;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
@@ -190,7 +206,12 @@
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
+- (double)_cn_timeIntervalValue;
 - (void)_cn_times:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
+- (id)dedup;
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
@@ -211,6 +232,13 @@
 
 - (id)_cs_initWithXPCObject:(id)arg1;
 - (id)_cs_xpcObject;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
++ (id)createWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 error:(id*)arg3;
+
+- (const char *)encodedBytesAndReturnLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (id)encodedDataAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 
@@ -245,8 +273,11 @@
 
 - (id)hf_absoluteValue;
 - (long long)hf_compareAbsoluteValue:(id)arg1;
+- (bool)hf_isFloatValue;
+- (bool)hf_isSignedValue;
 - (id)hf_largerNumber:(id)arg1;
 - (id)hf_smallerNumber:(id)arg1;
+- (id)hf_valueRoundedToNearestStepValue:(id)arg1 relativeToBaseValue:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -319,13 +350,13 @@
 
 - (unsigned long long)PXDataSourceIdentifierValue;
 
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
+
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (id)safari_percentageFromSamplingRate;
-
-// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
-
-- (bool)sd_isEqualToNumber:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
@@ -336,6 +367,10 @@
 - (id)siriCoreSQLiteValue_toNumber;
 - (id)siriCoreSQLiteValue_toString;
 - (long long)siriCoreSQLiteValue_type;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

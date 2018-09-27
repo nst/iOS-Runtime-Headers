@@ -61,6 +61,7 @@
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)masterDrawables;
 - (id)masterDrawablesSortedByZOrder:(id)arg1;
+- (id)objectUUIDPath;
 - (double)pHeightOfHeaderFooter:(long long)arg1;
 - (void)p_filterParagraphStylesOnHeaderFooterStorage:(id)arg1 stylesheet:(id)arg2;
 - (id)p_headerAndFooterStorages;

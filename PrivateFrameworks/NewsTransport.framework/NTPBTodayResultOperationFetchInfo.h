@@ -19,6 +19,16 @@
     long long  _reachabilityStatus;
     NSString * _todaySourceIdentifier;
     NSString * _userID;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _userSegmentationSegmentSetIds;
+    struct { 
+        long long *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _userSegmentationTreatmentIds;
     NTPBTodayWidgetConfig * _widgetConfig;
     bool  _wifiReachable;
 }
@@ -43,17 +53,26 @@
 @property (nonatomic) long long reachabilityStatus;
 @property (nonatomic, retain) NSString *todaySourceIdentifier;
 @property (nonatomic, retain) NSString *userID;
+@property (nonatomic, readonly) int*userSegmentationSegmentSetIds;
+@property (nonatomic, readonly) unsigned long long userSegmentationSegmentSetIdsCount;
+@property (nonatomic, readonly) long long*userSegmentationTreatmentIds;
+@property (nonatomic, readonly) unsigned long long userSegmentationTreatmentIdsCount;
 @property (nonatomic, retain) NTPBTodayWidgetConfig *widgetConfig;
 @property (nonatomic) bool wifiReachable;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
 - (void).cxx_destruct;
+- (void)addUserSegmentationSegmentSetIds:(int)arg1;
+- (void)addUserSegmentationTreatmentIds:(long long)arg1;
 - (long long)appConfigTreatmentIDInteger;
 - (long long)cellularRadioAccessTechnology;
+- (void)clearUserSegmentationSegmentSetIds;
+- (void)clearUserSegmentationTreatmentIds;
 - (id)clickThroughRateByPersonalizationFeatureIDData;
 - (id)contentStoreFrontID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAppConfigTreatmentIDInteger;
@@ -88,10 +107,18 @@
 - (void)setReachabilityStatus:(long long)arg1;
 - (void)setTodaySourceIdentifier:(id)arg1;
 - (void)setUserID:(id)arg1;
+- (void)setUserSegmentationSegmentSetIds:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setUserSegmentationTreatmentIds:(long long*)arg1 count:(unsigned long long)arg2;
 - (void)setWidgetConfig:(id)arg1;
 - (void)setWifiReachable:(bool)arg1;
 - (id)todaySourceIdentifier;
 - (id)userID;
+- (int*)userSegmentationSegmentSetIds;
+- (int)userSegmentationSegmentSetIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)userSegmentationSegmentSetIdsCount;
+- (long long*)userSegmentationTreatmentIds;
+- (long long)userSegmentationTreatmentIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)userSegmentationTreatmentIdsCount;
 - (id)widgetConfig;
 - (bool)wifiReachable;
 - (void)writeTo:(id)arg1;
@@ -104,5 +131,7 @@
 - (void)setAppConfigTreatmentID:(id)arg1;
 - (void)setCTRByPersonalizationFeatureID:(id)arg1;
 - (void)setLocale:(id)arg1;
+- (void)setUserSegmentationSegmentSetIDs:(id)arg1;
+- (void)setUserSegmentationTreatmentIDs:(id)arg1;
 
 @end

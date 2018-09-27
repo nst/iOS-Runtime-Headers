@@ -45,10 +45,10 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (long long)cellRenderingStyle;
 - (id)cellWidthOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (double)dividerLineWidth;
 - (void)encodeWithCoder:(id)arg1;

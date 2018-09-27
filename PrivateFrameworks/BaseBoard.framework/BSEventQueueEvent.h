@@ -12,8 +12,8 @@
 
 + (id)eventWithName:(id)arg1 handler:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (void)_execute;
-- (void)dealloc;
 - (id)description;
 - (void)execute;
 - (void)executeFromEventQueue;

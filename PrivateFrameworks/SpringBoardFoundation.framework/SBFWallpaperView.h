@@ -35,7 +35,6 @@
 @property (nonatomic, readonly, copy) NSString *cacheGroup;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic) bool continuousColorSamplingEnabled;
-@property (nonatomic, readonly) bool contrastRequiresGradient;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (nonatomic, readonly) double cropZoomScale;
 @property (readonly, copy) NSString *debugDescription;
@@ -74,7 +73,7 @@
 - (void)_beginDisallowRasterizationBlock;
 - (id)_blurReplacementImage;
 - (id)_blurredImage;
-- (id)_cacheKeyForParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includingTint:(bool)arg2;
+- (id)_cacheKeyForParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includingTint:(bool)arg2 downsampleFactor:(double)arg3;
 - (id)_computeAverageColor;
 - (double)_contrastInContentViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(double*)arg2 contrastBetweenBoxes:(double*)arg3;
 - (id)_displayedImage;
@@ -107,8 +106,6 @@
 - (double)contrast;
 - (double)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)contrastInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(double*)arg2 contrastBetweenBoxes:(double*)arg3;
-- (bool)contrastRequiresGradient;
-- (bool)contrastRequiresTreatments;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (double)cropZoomScale;
 - (void)dealloc;
@@ -125,12 +122,13 @@
 - (id)legibilitySettings;
 - (void)legibilitySettingsDidChange;
 - (long long)logicalContentOrientation;
-- (bool)luminanceInRectRequiresTreatments:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)needsImmediateLayoutBeforeRotation;
 - (bool)parallaxEnabled;
 - (double)parallaxFactor;
+- (void)preheatImageData;
 - (void)prepareToAppear;
 - (void)prepareToDisappear;
+- (void)resetLegibilitySettingsForAverageColor:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContinuousColorSamplingEnabled:(bool)arg1;

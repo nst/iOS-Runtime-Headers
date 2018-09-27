@@ -38,7 +38,6 @@
 - (bool)_isAvailableForForcedOfflineRecognition;
 - (bool)_isInternalTaskHint:(long long)arg1;
 - (void)_requestOfflineDictationSupportWithCompletion:(id /* block */)arg1;
-- (void)_sendEngagementFeedback:(long long)arg1 requestIdentifier:(id)arg2;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (void)dealloc;
 - (long long)defaultTaskHint;

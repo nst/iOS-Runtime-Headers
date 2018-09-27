@@ -11,8 +11,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
 + (id)supportedMediaMIMETypes;
@@ -46,7 +44,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_16_1_1; } x16; struct EventPath {} *x17; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_18_1_1; } x18; struct MonotonicTime { double x_19_1_1; } x19; struct RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event> > { struct Event {} *x_20_1_1; } x20; struct RefPtr<WebCore::DOMWindow, WTF::DumbPtrTraits<WebCore::DOMWindow> > { struct DOMWindow {} *x_21_1_1; } x21; int x22; bool x23; bool x24; bool x25; bool x26; bool x27; bool x28; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_29_1_1; } x29; }*)arg1;
+- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_16_1_1; } x16; struct EventPath {} *x17; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_18_1_1; } x18; struct MonotonicTime { double x_19_1_1; } x19; struct RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event> > { struct Event {} *x_20_1_1; } x20; struct RefPtr<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> > { struct WindowProxy {} *x_21_1_1; } x21; int x22; bool x23; bool x24; bool x25; bool x26; bool x27; bool x28; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_29_1_1; } x29; }*)arg1;
 - (bool)_hasInsertionPoint;
 - (bool)_hasSelection;
 - (bool)_hasSelectionOrInsertionPoint;
@@ -260,13 +258,5 @@
 - (void)willRemoveSubview:(id)arg1;
 - (void)yank:(id)arg1;
 - (void)yankAndSelect:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

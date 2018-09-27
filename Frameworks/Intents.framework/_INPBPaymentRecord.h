@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPaymentRecord : PBCodable <NSCopying> {
+@interface _INPBPaymentRecord : PBCodable <NSCopying, NSSecureCoding, _INPBPaymentRecord> {
     _INPBCurrencyAmount * _currencyAmount;
     _INPBCurrencyAmount * _feeAmount;
     struct { 
@@ -13,10 +13,11 @@
     _INPBContact * _payer;
     _INPBPaymentMethodValue * _paymentMethod;
     int  _status;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBCurrencyAmount *currencyAmount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBCurrencyAmount *feeAmount;
 @property (nonatomic, readonly) bool hasCurrencyAmount;
 @property (nonatomic, readonly) bool hasFeeAmount;
@@ -25,20 +26,18 @@
 @property (nonatomic, readonly) bool hasPayer;
 @property (nonatomic, readonly) bool hasPaymentMethod;
 @property (nonatomic) bool hasStatus;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBString *note;
 @property (nonatomic, retain) _INPBContact *payee;
 @property (nonatomic, retain) _INPBContact *payer;
 @property (nonatomic, retain) _INPBPaymentMethodValue *paymentMethod;
 @property (nonatomic) int status;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)StringAsStatus:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyAmount;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)feeAmount;
 - (bool)hasCurrencyAmount;
@@ -50,7 +49,6 @@
 - (bool)hasStatus;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)note;
 - (id)payee;
 - (id)payer;
@@ -66,7 +64,6 @@
 - (void)setStatus:(int)arg1;
 - (int)status;
 - (id)statusAsString:(int)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

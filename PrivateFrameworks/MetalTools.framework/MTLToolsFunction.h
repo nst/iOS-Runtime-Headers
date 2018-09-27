@@ -23,15 +23,18 @@
 @property (readonly) NSString *name;
 @property (readonly) long long patchControlPointCount;
 @property (readonly) unsigned long long patchType;
+@property (readonly) unsigned long long renderTargetArrayIndexType;
 @property (readonly) MTLType *returnType;
 @property (readonly) NSArray *stageInputAttributes;
 @property (readonly) Class superclass;
+@property (readonly, copy) NSString *unpackedFilePath;
 @property (readonly) NSArray *vertexAttributes;
 
 - (void)acceptVisitor:(id)arg1;
 - (id)argumentEncoders;
 - (id)arguments;
 - (const struct { unsigned char x1[32]; }*)bitCodeHash;
+- (id)bitcodeData;
 - (void)dealloc;
 - (id)filePath;
 - (id)formattedDescription:(unsigned long long)arg1;
@@ -50,9 +53,11 @@
 - (unsigned long long)patchType;
 - (id)reflectionWithOptions:(unsigned long long)arg1;
 - (void)reflectionWithOptions:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (unsigned long long)renderTargetArrayIndexType;
 - (id)returnType;
 - (void)setLabel:(id)arg1;
 - (id)stageInputAttributes;
+- (id)unpackedFilePath;
 - (id)vertexAttributes;
 
 @end

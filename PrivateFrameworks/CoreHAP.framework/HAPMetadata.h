@@ -106,7 +106,6 @@
 - (void)setParsedUUIDs:(id)arg1;
 - (void)setSchemaVersion:(id)arg1;
 - (void)setVersion:(id)arg1;
-- (id)shouldFilterServiceOfType:(id)arg1;
 - (bool)supportsAdditionalAuthorizationData:(id)arg1 forService:(id)arg2;
 - (bool)updateRawPlist;
 - (bool)validateMandatoryCharacteristics:(id)arg1 forService:(id)arg2;

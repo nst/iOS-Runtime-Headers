@@ -11,6 +11,7 @@
     bool  _isSubstandardRender;
     bool  _loopingLivePhoto;
     long long  _mediaType;
+    NSNumber * _originalResourceChoice;
     NSData * _penultimateRenderedJPEGData;
     NSURL * _penultimateRenderedVideoComplementContentURL;
     NSURL * _renderedContentURL;
@@ -25,6 +26,7 @@
 @property (nonatomic) bool isSubstandardRender;
 @property (getter=isLoopingLivePhoto, readonly) bool loopingLivePhoto;
 @property (readonly) long long mediaType;
+@property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (retain) NSData *penultimateRenderedJPEGData;
 @property (copy) NSURL *penultimateRenderedVideoComplementContentURL;
 @property (copy) NSURL *renderedContentURL;
@@ -52,6 +54,7 @@
 - (bool)isLoopingLivePhoto;
 - (bool)isSubstandardRender;
 - (long long)mediaType;
+- (id)originalResourceChoice;
 - (id)penultimateRenderedJPEGData;
 - (id)penultimateRenderedVideoComplementContentURL;
 - (id)renderURLWithExtensionForMediaType:(long long)arg1;
@@ -63,6 +66,7 @@
 - (void)setFullSizeRenderHeight:(long long)arg1;
 - (void)setFullSizeRenderWidth:(long long)arg1;
 - (void)setIsSubstandardRender:(bool)arg1;
+- (void)setOriginalResourceChoice:(id)arg1;
 - (void)setPenultimateRenderedJPEGData:(id)arg1;
 - (void)setPenultimateRenderedVideoComplementContentURL:(id)arg1;
 - (void)setRenderedContentURL:(id)arg1;

@@ -50,9 +50,9 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -83,6 +83,12 @@
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
+
+// Image: /System/Library/PrivateFrameworks/IntentsCore.framework/IntentsCore
+
+- (id)_intents_SpringBoardElement;
+- (bool)_intents_isExpectedElement;
+- (bool)_intents_isSiri;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 

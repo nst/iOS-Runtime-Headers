@@ -68,6 +68,7 @@
 - (void)startStreamWithVideoConfig:(id)arg1 audioConfig:(id)arg2;
 - (id)streamSnapshotHandler;
 - (void)updateAudioSetting:(unsigned long long)arg1;
+- (void)updateAudioVolume:(id)arg1 callback:(id /* block */)arg2;
 - (void)updateReconfigurationMode:(bool)arg1;
 - (void)updateStreamConfiguration:(id)arg1;
 - (void)videoStream:(id)arg1 didStart:(id)arg2;

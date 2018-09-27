@@ -2,36 +2,38 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSISObjectiveLinearExpression : NSObject <NSISRowBody> {
+@interface NSISObjectiveLinearExpression : NSObject {
     struct __CFData { } * _constant;
+    NSISEngine * _engine;
     struct __CFDictionary { } * _priorityMap;
-    NSMutableArray * _variablesSortedByPriorityVectors;
+    struct __CFArray { } * _variablesSortedByPriorityVectors;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
-
-- (void)addExpression:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(id /* block */)arg4 processVariableDroppedFromReceiver:(id /* block */)arg5;
+- (void)addExpression:(struct { unsigned short x1; unsigned int x2; double x3; union { struct { id x_1_2_1; struct { /* ? */ } x_1_2_2; unsigned long long x_1_2_3; } x_4_1_1; struct { unsigned long long x_2_2_1; } x_4_1_2; unsigned char x_4_1_3[48]; } x4; }*)arg1 priority:(double)arg2 times:(double)arg3 processVarNewToReceiver:(id /* block */)arg4 processVarDroppedFromReceiver:(id /* block */)arg5;
+- (void)addVar:(struct { unsigned int x1; })arg1 priority:(double)arg2 times:(double)arg3;
+- (void)addVar:(struct { unsigned int x1; })arg1 priority:(double)arg2 times:(double)arg3 processVarNewToReceiver:(id /* block */)arg4 processVarDroppedFromReceiver:(id /* block */)arg5;
 - (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3;
-- (void)addVariable:(id)arg1 priority:(double)arg2 times:(double)arg3 processVariableNewToReceiver:(id /* block */)arg4 processVariableDroppedFromReceiver:(id /* block */)arg5;
 - (bool)constantTermIsZero;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateVariables:(id /* block */)arg1;
+- (void)enumerateVars:(id /* block */)arg1;
 - (void)incrementConstantWithPriority:(double)arg1 value:(double)arg2;
 - (void)incrementConstantWithPriorityVector:(struct __CFData { }*)arg1 timesScalarCoefficient:(double)arg2;
 - (id)init;
-- (id)initWithLinearExpression:(id)arg1 priority:(double)arg2;
-- (void)leadingPriority:(double*)arg1 andValue:(double*)arg2 forVariable:(id)arg3;
-- (struct __CFData { }*)priorityVectorForVariable:(id)arg1;
+- (id)initWithEngine:(id)arg1;
+- (id)initWithLinearExpression:(struct { unsigned short x1; unsigned int x2; double x3; union { struct { id x_1_2_1; struct { /* ? */ } x_1_2_2; unsigned long long x_1_2_3; } x_4_1_1; struct { unsigned long long x_2_2_1; } x_4_1_2; unsigned char x_4_1_3[48]; } x4; }*)arg1 priority:(double)arg2 engine:(id)arg3;
+- (void)leadingPriority:(double*)arg1 andValue:(double*)arg2 forVar:(struct { unsigned int x1; })arg3;
+- (struct __CFData { }*)priorityVectorForVar:(struct { unsigned int x1; })arg1;
+- (void)removeVar:(struct { unsigned int x1; })arg1;
 - (void)removeVariable:(id)arg1;
+- (void)replaceVar:(struct { unsigned int x1; })arg1 withExpression:(struct { unsigned short x1; unsigned int x2; double x3; union { struct { id x_1_2_1; struct { /* ? */ } x_1_2_2; unsigned long long x_1_2_3; } x_4_1_1; struct { unsigned long long x_2_2_1; } x_4_1_2; unsigned char x_4_1_3[48]; } x4; }*)arg2 processVarNewToReceiver:(id /* block */)arg3 processVarDroppedFromReceiver:(id /* block */)arg4;
+- (void)replaceVar:(struct { unsigned int x1; })arg1 withVarPlusDelta:(double)arg2;
+- (void)replaceVar:(struct { unsigned int x1; })arg1 withVarPlusDelta:(double)arg2 timesVar:(struct { unsigned int x1; })arg3 processVarNewToReceiver:(id /* block */)arg4 processVarDroppedFromReceiver:(id /* block */)arg5;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id /* block */)arg3 processVariableDroppedFromReceiver:(id /* block */)arg4;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2;
-- (void)replaceVariable:(id)arg1 withVariablePlusDelta:(double)arg2 timesVariable:(id)arg3 processVariableNewToReceiver:(id /* block */)arg4 processVariableDroppedFromReceiver:(id /* block */)arg5;
+- (bool)restrictedVarWithCoefficientOfLargestNegativeMagnitudeOutVar:(struct { unsigned int x1; }*)arg1;
 - (id)restrictedVariableWithCoefficientOfLargestNegativeMagnitude;
-- (void)setPriorityVector:(struct __CFData { }*)arg1 forKnownAbsentVariable:(id)arg2;
+- (void)setPriorityVector:(struct __CFData { }*)arg1 forKnownAbsentVar:(struct { unsigned int x1; })arg2;
+- (int)valueRestrictionForVar:(struct { unsigned int x1; })arg1;
 - (unsigned long long)variableCount;
 - (void)verifyInternalIntegrity;
 

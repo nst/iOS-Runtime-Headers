@@ -3,50 +3,45 @@
  */
 
 @interface HDSQLiteDatabasePool : NSObject <HDDiagnosticObject> {
-    int  _backgroundReadersWaiting;
     NSMutableSet * _cache;
+    NSCondition * _cacheCondition;
     unsigned long long  _cacheGeneration;
-    NSObject<OS_dispatch_queue> * _cacheQueue;
-    unsigned long long  _cacheSize;
+    long long  _cacheSize;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _checkoutLock;
     NSMapTable * _checkoutMap;
-    NSObject<OS_dispatch_queue> * _checkoutQueue;
+    long long  _concurrentReaderLimit;
+    int  _count;
     <HDSQLiteDatabasePoolDelegate> * _delegate;
-    unsigned long long  _maxConcurrentBackgroundReaders;
-    unsigned long long  _maxConcurrentWriters;
     NSObject<OS_dispatch_semaphore> * _readerSemaphore;
     NSObject<OS_dispatch_semaphore> * _writerSemaphore;
-    int  _writersWaiting;
 }
 
-@property (readonly) unsigned long long backgroundReadersWaiting;
-@property unsigned long long cacheSize;
+@property (readonly) long long cacheSize;
+@property (readonly) long long concurrentReaderLimit;
+@property (readonly) long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property <HDSQLiteDatabasePoolDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (readonly) unsigned long long maxConcurrentBackgroundReaders;
-@property (readonly) unsigned long long maxConcurrentWriters;
 @property (readonly) Class superclass;
-@property (readonly) unsigned long long writersWaiting;
 
 - (void).cxx_destruct;
-- (id)_databaseWithType:(long long)arg1 error:(id*)arg2;
+- (void)_addDatabaseWrapperToCheckoutMap:(id)arg1;
 - (void)_didFlushDatabases:(id)arg1;
-- (id)_semaphoreForDatabaseType:(long long)arg1 waitCounter:(int**)arg2;
-- (unsigned long long)backgroundReadersWaiting;
-- (unsigned long long)cacheSize;
+- (id)_removeDatabaseFromCheckoutMap:(id)arg1;
+- (id)_semaphoreForCheckOutOptions:(unsigned long long)arg1;
+- (long long)cacheSize;
 - (void)checkInDatabase:(id)arg1 flushImmediately:(bool)arg2;
+- (id)checkOutDatabaseWithOptions:(unsigned long long)arg1 error:(id*)arg2;
+- (long long)concurrentReaderLimit;
+- (long long)count;
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;
 - (void)flush;
-- (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned long long)arg2;
-- (unsigned long long)maxConcurrentBackgroundReaders;
-- (unsigned long long)maxConcurrentWriters;
-- (id)readerDatabaseWithPriority:(long long)arg1 error:(id*)arg2;
-- (void)setCacheSize:(unsigned long long)arg1;
+- (id)initWithConcurrentReaderLimit:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (id)writerDatabaseWithError:(id*)arg1;
-- (unsigned long long)writersWaiting;
 
 @end

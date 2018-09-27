@@ -17,7 +17,6 @@
     NSArray * _workoutEvents;
 }
 
-@property (nonatomic) long long anchor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double duration;
@@ -42,6 +41,7 @@
 + (bool)_isConcreteObjectClass;
 + (id)_stringFromWorkoutActivityType:(unsigned long long)arg1;
 + (unsigned long long)_workoutActivityTypeFromString:(id)arg1;
++ (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 statistics:(id)arg6 goalType:(unsigned long long)arg7 goal:(id)arg8 device:(id)arg9 metadata:(id)arg10;
 + (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned long long)arg9 goal:(id)arg10 device:(id)arg11 metadata:(id)arg12;
 + (id)_workoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 totalSwimmingStrokeCount:(id)arg9 totalFlightsClimbed:(id)arg10 goalType:(unsigned long long)arg11 goal:(id)arg12 device:(id)arg13 metadata:(id)arg14 config:(id /* block */)arg15;
 + (bool)supportsSecureCoding;
@@ -111,18 +111,23 @@
 - (double)fiui_averageTimePerLap;
 - (double)fiui_completionFactor;
 - (id)fiui_connectedGymBrandName;
+- (double)fiui_duration;
 - (id)fiui_elevation;
 - (id)fiui_eventsOfType:(long long)arg1;
+- (id)fiui_finalWorkoutUUID;
 - (bool)fiui_hasAveragePace;
 - (bool)fiui_hasElevation;
 - (bool)fiui_hasWeatherData;
 - (bool)fiui_isConnectedGymWorkout;
+- (id)fiui_keyValueSummary;
 - (id)fiui_lapLength;
 - (long long)fiui_numberOfEventsOfType:(long long)arg1;
-- (id)fiui_splitsFromDistanceSamples:(id)arg1 distanceInMetersPerSplit:(double)arg2;
+- (id)fiui_splitsFromDistanceSamples:(id)arg1 distanceInMetersPerSplit:(double)arg2 workoutStartDate:(id)arg3;
 - (long long)fiui_strokeStyle;
 - (long long)fiui_swimmingLocationType;
+- (id)fiui_totalDistance;
 - (double)fiui_totalStepCount;
+- (id)fiui_workoutSplitsForUserPreferredDistanceUnit:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
@@ -130,11 +135,9 @@
 + (Class)hd_dataEntityClass;
 
 - (bool)addCodableRepresentationToCollection:(id)arg1;
-- (long long)anchor;
 - (id)codableRepresentationForSync;
 - (id)codableWorkoutEvents;
 - (bool)hd_insertRelatedDataWithPersistentID:(id)arg1 insertionContext:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id*)arg5;
-- (void)setAnchor:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 

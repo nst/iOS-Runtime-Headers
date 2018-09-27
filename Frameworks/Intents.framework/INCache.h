@@ -3,10 +3,10 @@
  */
 
 @interface INCache : NSObject {
-    NSMutableDictionary * _cacheDictionary;
+    NSCache * _underlyingCache;
 }
 
-@property (nonatomic, readonly) NSDictionary *_cacheDictionary;
+@property (nonatomic, readonly) NSCache *_cacheDictionary;
 
 + (id)sharedCache;
 

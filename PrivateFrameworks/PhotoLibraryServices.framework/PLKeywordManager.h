@@ -4,19 +4,17 @@
 
 @interface PLKeywordManager : NSObject {
     PLGatekeeperClient * _assetsdClient;
-    NSMutableDictionary * _keywordCache;
     PLManagedObjectContext * _libraryContext;
     PLPhotoLibrary * _photoLibrary;
 }
 
-+ (id)writeQueue;
++ (void)_inq_loadKeywordsUsingContextIfNecessary:(id)arg1;
++ (void)_invalidateKeywordCache;
++ (id)_writeQueue;
 
 - (bool)_assetsdSetKeywords:(id)arg1 forAssetUUID:(id)arg2;
-- (id)_keywordObjectsForKeywords:(id)arg1;
+- (id)_inq_keywordObjectsForKeywords:(id)arg1;
 - (id)_keywordsForAsset:(id)arg1;
-- (void)_loadKeywords;
-- (id)allKeywordObjectIDs;
-- (id)allKeywords;
 - (void)dealloc;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (id)keywordsForAsset:(id)arg1;

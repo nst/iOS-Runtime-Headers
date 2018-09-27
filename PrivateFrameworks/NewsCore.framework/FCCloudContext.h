@@ -3,7 +3,6 @@
  */
 
 @interface FCCloudContext : NSObject <FCCKDatabaseEncryptionDelegate, FCCacheFlushing, FCContentContext, FCPrivateDataContext, FCTestingContext> {
-    bool  _abTestingEnabled;
     <FCAppActivityMonitor> * _appActivityMonitor;
     <FCBackgroundTaskable> * _backgroundTaskable;
     <FCContentContext> * _contentContext;
@@ -16,20 +15,19 @@
     FCNotificationController * _notificationController;
     FCCommandQueue * _notificationsEndpointCommandQueue;
     FCNotificationsEndpointConnection * _notificationsEndpointConnection;
-    bool  _personalizationEnabled;
     <FCPPTContext> * _pptContext;
     <FCPrivateDataContext> * _privateDataContext;
     FCPurchaseController * _purchaseController;
     FCSubscriptionController * _subscriptionController;
 }
 
-@property (getter=isABTestingEnabled, nonatomic, readonly) bool abTestingEnabled;
 @property (nonatomic, retain) <FCAppActivityMonitor> *appActivityMonitor;
-@property (nonatomic, readonly) FCAppConfigurationManager *appConfigurationManager;
+@property (nonatomic, readonly) <FCNewsAppConfigurationManager> *appConfigurationManager;
 @property (nonatomic, readonly) FCArticleController *articleController;
 @property (nonatomic, readonly) NSURL *assetCacheDirectoryURL;
 @property (nonatomic, readonly) FCAssetManager *assetManager;
 @property (nonatomic) <FCBackgroundTaskable> *backgroundTaskable;
+@property (nonatomic, readonly) <FCCoreConfigurationManager> *configurationManager;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (nonatomic, readonly, copy) NSString *contentDirectory;
 @property (nonatomic, readonly, copy) NSString *contentEnvironmentToken;
@@ -55,7 +53,6 @@
 @property (nonatomic, readonly) FCCommandQueue *notificationsEndpointCommandQueue;
 @property (nonatomic, readonly) FCNotificationsEndpointConnection *notificationsEndpointConnection;
 @property (nonatomic, readonly) FCPersonalizationData *personalizationData;
-@property (getter=isPersonalizationEnabled, nonatomic, readonly) bool personalizationEnabled;
 @property (nonatomic, readonly) <FCPPTContext> *pptContext;
 @property (nonatomic, readonly) FCPrivateChannelMembershipController *privateChannelMembershipController;
 @property (nonatomic, retain) <FCPrivateDataContext> *privateDataContext;
@@ -73,9 +70,11 @@
 @property (nonatomic, readonly) FCTagSettings *tagSettings;
 @property (nonatomic, readonly) FCUserInfo *userInfo;
 @property (nonatomic, readonly) NSURL *webArchiveCacheDirectoryURL;
+@property (nonatomic, retain) <FCWebArchiveSource> *webArchiveSource;
 
 + (void)initialize;
 + (id)testingContext;
++ (id)testingContextWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)appActivityMonitor;
@@ -84,6 +83,7 @@
 - (id)assetCacheDirectoryURL;
 - (id)assetManager;
 - (id)backgroundTaskable;
+- (id)configurationManager;
 - (id)contentContext;
 - (id)contentDirectory;
 - (id)contentEnvironmentToken;
@@ -102,20 +102,20 @@
 - (id)flintResourceManager;
 - (id)init;
 - (id)initForTesting;
+- (id)initForTestingWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 privateDataHostDirectory:(id)arg4 privateDataActionProvider:(id)arg5 networkBehaviorMonitor:(id)arg6 appActivityMonitor:(id)arg7 desiredHeadlineFieldOptions:(unsigned long long)arg8 feedUsage:(long long)arg9 lockStoreFrontIfNeeded:(bool)arg10 deviceIsiPad:(bool)arg11 backgroundTaskable:(id)arg12 privateDataSyncAvailability:(id)arg13 pptContext:(id)arg14;
 - (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3;
-- (id)initWithContentHostDirectory:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 networkBehaviorMonitor:(id)arg4 appActivityMonitor:(id)arg5 desiredHeadlineFieldOptions:(unsigned long long)arg6 feedUsage:(long long)arg7 lockStoreFrontIfNeeded:(bool)arg8 deviceIsiPad:(bool)arg9 backgroundTaskable:(id)arg10 personalizationEnabled:(bool)arg11 abTestingEnabled:(bool)arg12 pptContext:(id)arg13;
 - (id)insertTestArticle;
 - (id)insertTestArticlesWithCount:(unsigned long long)arg1;
 - (id)internalContentContext;
 - (id)internalPrivateDataContext;
-- (bool)isABTestingEnabled;
-- (bool)isPersonalizationEnabled;
 - (bool)isPrivateDataEncryptionEnabled;
 - (bool)isPrivateDataSyncingEnabled;
 - (bool)isPrivateDatabaseOnline;
 - (bool)isPrivateDatabaseStartingUp;
 - (bool)isPrivateDatabaseTemporarilySuspended;
 - (id)networkBehaviorMonitor;
+- (id)news_core_ConfigurationManager;
 - (id)notificationController;
 - (id)notificationsController;
 - (id)notificationsEndpointCommandQueue;
@@ -131,11 +131,14 @@
 - (id)purchaseController;
 - (id)readingHistory;
 - (id)readingList;
+- (id)recordSourceWithSchema:(id)arg1;
+- (id)recordTreeSourceWithRecordSources:(id)arg1;
 - (void)setAppActivityMonitor:(id)arg1;
 - (void)setBackgroundTaskable:(id)arg1;
 - (void)setContentContext:(id)arg1;
 - (void)setFlintHelper:(id)arg1;
 - (void)setPrivateDataContext:(id)arg1;
+- (void)setWebArchiveSource:(id)arg1;
 - (id)subscriptionController;
 - (id)subscriptionList;
 - (id)supportedContentStoreFrontID;
@@ -143,5 +146,6 @@
 - (id)tagSettings;
 - (id)userInfo;
 - (id)webArchiveCacheDirectoryURL;
+- (id)webArchiveSource;
 
 @end

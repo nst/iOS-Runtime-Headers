@@ -4,6 +4,7 @@
 
 @interface TPPageLayout : TSWPPageLayout <TPAttachmentLayoutParent, TSDWrapInvalidationParent, TSWPColumnMetrics, TSWPLayoutParent> {
     NSMutableSet * _anchoredDrawableLayouts;
+    TSDFill * _backgroundFill;
     bool  _childLayoutsValid;
     bool  _childTextLayoutsNeedInvalidationForExteriorWrap;
     unsigned long long  _contentFlags;
@@ -15,6 +16,7 @@
     TSURetainedPointerKeyDictionary * _oldChildLayouts;
     unsigned long long  _pageCount;
     unsigned long long  _pageNumber;
+    bool  _shouldHeaderFooterBeVisible;
     bool  _validating;
 }
 
@@ -22,6 +24,7 @@
 @property (nonatomic, readonly) bool allowsFootnotes;
 @property (nonatomic, readonly) bool alwaysStartsNewTarget;
 @property (nonatomic, readonly) NSSet *anchoredDrawableLayouts;
+@property (nonatomic, readonly) TSDFill *backgroundFill;
 @property (nonatomic, readonly) TPBodyLayout *bodyLayout;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bodyRect;
 @property (nonatomic, readonly) <NSFastEnumeration> *childTextLayoutsForExteriorWrap;
@@ -52,6 +55,8 @@
 - (id)anchoredDrawableLayouts;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)backgroundFill;
+- (Class)backgroundFillOwningInfoClass;
 - (void)beginResizeWrapInvalidationCluster;
 - (id)bodyLayout;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bodyRect;
@@ -105,12 +110,12 @@
 - (void)p_addLayoutsForInfos:(id)arg1 toArray:(id)arg2;
 - (id)p_childLayoutInParentLayout:(id)arg1 forChildInfo:(id)arg2;
 - (id)p_existingChildLayoutForInfo:(id)arg1;
-- (void)p_insertBodyLayout;
+- (id)p_insertBodyLayout;
 - (id)p_insertChildLayoutForInfo:(id)arg1;
-- (void)p_insertFootnoteContainerLayout;
+- (id)p_insertFootnoteContainerLayout;
 - (id)p_insertValidatedChildLayoutForInfo:(id)arg1;
-- (void)p_insertValidatedFloatingLayouts;
-- (void)p_insertValidatedMasterLayouts;
+- (id)p_insertValidatedFloatingLayouts;
+- (id)p_insertValidatedMasterLayouts;
 - (bool)p_isHeaderFooterLayout:(id)arg1;
 - (id)p_orderedChildInfos;
 - (void)p_populateOldChildLayoutsWithLayouts:(id)arg1;
@@ -138,7 +143,6 @@
 - (void)setNeedsInflation;
 - (void)setValidating:(bool)arg1;
 - (bool)shouldHeaderFooterBeVisible:(long long)arg1;
-- (bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;
 - (bool)shouldProvideGuidesDuringExclusiveAlignmentOperation;
 - (bool)shrinkTextToFit;
 - (bool)textIsVertical;

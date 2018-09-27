@@ -27,6 +27,7 @@
 + (id)sharedInstance;
 + (void)synchronizeChanges:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (void)_appendCommonDescriptionItemsToBuilder:(id)arg1;
 - (void)_applyMutableSettings:(id)arg1 toScene:(id)arg2 withTransitionContext:(id)arg3 completion:(id /* block */)arg4;
 - (void)_beginSynchronizationBlock;

@@ -28,6 +28,7 @@
 @property int lastStatus;
 @property (getter=isNetworkProvider, nonatomic) bool networkProvider;
 @property (getter=isNexusProvider, nonatomic) bool nexusProvider;
+@property (nonatomic) bool requiresAssert;
 @property (readonly) int sessionType;
 @property (getter=isSpecificUseOnly, nonatomic) bool specificUseOnly;
 @property (nonatomic) bool supportsBrowseRequests;

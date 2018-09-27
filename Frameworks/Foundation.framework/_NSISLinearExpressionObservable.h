@@ -13,7 +13,10 @@
 
 + (id)observableForExpression:(id)arg1 inEngine:(id)arg2;
 
+- (void)_lazilyObserveVariablesIfNeeded;
+- (bool)_overrideUseFastBlockObservers;
 - (id)addObserver:(id)arg1;
+- (id)addObserverBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (void)emitValueIfNeeded;
 - (id)initWithExpression:(id)arg1 inEngine:(id)arg2;

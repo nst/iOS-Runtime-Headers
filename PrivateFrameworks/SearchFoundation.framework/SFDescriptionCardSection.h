@@ -30,6 +30,7 @@
     NSArray * _punchoutOptions;
     NSString * _punchoutPickerDismissText;
     NSString * _punchoutPickerTitle;
+    NSArray * _richDescriptions;
     int  _separatorStyle;
     NSString * _subtitle;
     int  _textAlign;
@@ -68,6 +69,7 @@
 @property (nonatomic, copy) NSString *punchoutPickerDismissText;
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
 @property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic, copy) NSArray *richDescriptions;
 @property (nonatomic) int separatorStyle;
 @property (nonatomic, copy) NSString *subtitle;
 @property (readonly) Class superclass;
@@ -113,6 +115,7 @@
 - (id)punchoutOptions;
 - (id)punchoutPickerDismissText;
 - (id)punchoutPickerTitle;
+- (id)richDescriptions;
 - (int)separatorStyle;
 - (void)setAttributionGlyph:(id)arg1;
 - (void)setAttributionText:(id)arg1;
@@ -131,6 +134,7 @@
 - (void)setPunchoutOptions:(id)arg1;
 - (void)setPunchoutPickerDismissText:(id)arg1;
 - (void)setPunchoutPickerTitle:(id)arg1;
+- (void)setRichDescriptions:(id)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTextAlign:(int)arg1;
@@ -145,8 +149,12 @@
 - (id)titleWeight;
 - (id)type;
 
-// Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
-- (bool)_crkinteractivecardsectionviewcontroller_shouldRenderButtonOverlay;
+- (Class)_searchUIViewClass;
+
+// Image: /System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/SearchUICardKitProviderSupport
+
+- (bool)_SUICKPInteractiveCardSectionViewController_shouldRenderButtonOverlay;
 
 @end

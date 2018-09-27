@@ -4,7 +4,6 @@
 
 @interface SKRemoteProductActivityViewController : _UIRemoteViewController <SKUIClientProductActivityViewController> {
     SKStoreProductActivityViewController * _productActivityViewController;
-    SKStoreProductActivityViewController * _productActivityViewontroller;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +15,7 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)didFinishWithResult:(id)arg1 error:(id)arg2;
 - (id)productActivityViewController;
 - (void)setProductActivityViewController:(id)arg1;

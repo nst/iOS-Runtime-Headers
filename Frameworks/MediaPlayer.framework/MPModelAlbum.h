@@ -74,6 +74,7 @@
 
 - (id)artworkCatalog;
 - (id)contentItemCollectionInfo;
+- (id)humanDescription;
 - (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;
 - (id)newKeepLocalStatusObserverConfiguration;

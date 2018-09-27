@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUVideoQueueModifier : NSObject <SXVideoQueueModifying>
+@interface NUVideoQueueModifier : NSObject <SVVideoQueueModifying>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

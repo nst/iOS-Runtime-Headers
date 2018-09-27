@@ -33,9 +33,9 @@
 
 + (id)configurationForInputMode:(id)arg1;
 
+- (void).cxx_destruct;
 - (bool)allowsSpaceCorrections;
 - (bool)completionsShouldSharePrefix;
-- (void)dealloc;
 - (id)dynamicResourcePath;
 - (id)inputMode;
 - (bool)isTesting;

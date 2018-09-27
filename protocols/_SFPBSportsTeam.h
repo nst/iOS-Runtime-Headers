@@ -6,11 +6,6 @@
 @required
 
 - (NSString *)accessibilityDescription;
-- (bool)hasAccessibilityDescription;
-- (bool)hasLogo;
-- (bool)hasName;
-- (bool)hasRecord;
-- (bool)hasScore;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

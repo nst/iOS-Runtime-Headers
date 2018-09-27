@@ -10,6 +10,9 @@
         struct __C3DFXPass {} *pass; 
     }  _current;
     NSMutableDictionary * _frameBindings;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _generateLock;
     NSMutableDictionary * _lightBindings;
     NSMutableDictionary * _nodeBindings;
     NSMutableDictionary * _passBindings;
@@ -30,7 +33,7 @@
 
 - (void)_checkForAssociatedSamplerOnBinding:(id)arg1 argument:(id)arg2;
 - (id)_dictionaryForFrequency:(int)arg1;
-- (void)_parseArguments:(id)arg1 stage:(int)arg2;
+- (void)_parseArguments:(id)arg1 function:(id)arg2 renderPipeline:(id)arg3;
 - (long long)_searchArguments:(id)arg1 forArgumentNamed:(id)arg2 type:(unsigned long long)arg3;
 - (bool)addPassResourceBindingsForArgument:(id)arg1;
 - (void)addResourceBindingsForArgument:(id)arg1 frequency:(int)arg2 needsRenderResource:(bool)arg3 block:(id /* block */)arg4;

@@ -18,7 +18,7 @@
 - (id)offsetTo:(id)arg1;
 - (bool)validateOtherAttribute:(long long)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)_constraintBelowAnchor:(id)arg1 relation:(long long)arg2 multiplier:(double)arg3;
 - (id)constraintEqualToSystemSpacingBelowAnchor:(id)arg1;

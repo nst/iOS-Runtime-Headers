@@ -11,6 +11,8 @@
 - (<_WKFocusedElementInfo> *)focusedElementInfo;
 - (bool)forceSecureTextEntry;
 - (bool)isValid;
+- (void)reloadFocusedElementContextView;
+- (bool)requiresStrongPasswordAssistance;
 - (void)setAccessoryViewCustomButtonTitle:(NSString *)arg1;
 - (void)setAccessoryViewShouldNotShow:(bool)arg1;
 - (void)setCustomInputView:(UIView *)arg1;

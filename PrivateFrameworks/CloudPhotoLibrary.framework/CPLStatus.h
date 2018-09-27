@@ -4,6 +4,7 @@
 
 @interface CPLStatus : NSObject {
     <CPLStatusDelegate> * _delegate;
+    bool  _forCPL;
     NSObject<OS_dispatch_queue> * _lock;
     NSMutableDictionary * _status;
     NSURL * _statusFileURL;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) NSDate *cloudAssetCountPerTypeLastCheckDate;
 @property (getter=isConnectedToNetwork, nonatomic) bool connectedToNetwork;
 @property (nonatomic) <CPLStatusDelegate> *delegate;
+@property (nonatomic, copy) NSArray *disabledFeatures;
 @property (nonatomic, copy) NSDate *exitDeleteTime;
 @property (nonatomic, readonly) bool hasBatteryBudget;
 @property (nonatomic, readonly) bool hasCellularBudget;
@@ -32,14 +34,18 @@
 + (id)statusForSharedLibrary;
 
 - (void).cxx_destruct;
+- (bool)_deleteInitialSyncMarkerWithError:(id*)arg1;
 - (void)_loadIfNecessary;
 - (void)_save;
 - (void)_statusDidChange;
+- (bool)_writeInitialSyncMarkerForDate:(id)arg1 error:(id*)arg2;
 - (id)accountFlags;
 - (id)accountFlagsData;
+- (void)checkInitialSyncMarker;
 - (id)cloudAssetCountPerType;
 - (id)cloudAssetCountPerTypeLastCheckDate;
 - (id)delegate;
+- (id)disabledFeatures;
 - (id)exitDeleteTime;
 - (bool)hasBatteryBudget;
 - (bool)hasCellularBudget;
@@ -49,6 +55,7 @@
 - (bool)iCloudLibraryExists;
 - (bool)iCloudLibraryHasBeenWiped;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
+- (id)initWithClientLibraryBaseURLForCPLEngine:(id)arg1;
 - (id)initialSyncDate;
 - (bool)isConnectedToNetwork;
 - (bool)isExceedingQuota;
@@ -60,6 +67,7 @@
 - (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(bool)arg2;
 - (void)setConnectedToNetwork:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisabledFeatures:(id)arg1;
 - (void)setExitDeleteTime:(id)arg1;
 - (void)setHasCellularBudget:(bool)arg1 hasBatteryBudget:(bool)arg2 isBudgetValid:(bool)arg3;
 - (void)setHasChangesToProcess:(bool)arg1;

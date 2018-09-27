@@ -3,7 +3,7 @@
  */
 
 @interface CLDeviceMotionProperties : NSObject {
-    int  fMode;
+    int  _mode;
 }
 
 @property (nonatomic) int mode;

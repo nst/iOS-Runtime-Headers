@@ -6,7 +6,7 @@
     NSArray * UTITypes;
     MFAttachmentCompositionContext * _attachmentContext;
     NSString * _attachmentToMarkupContentID;
-    id  _autosaveIdentifier;
+    NSString * _autosaveIdentifier;
     NSArray * _bccRecipients;
     UIView<MFComposeBodyField> * _bodyField;
     unsigned long long  _caretPosition;
@@ -34,7 +34,7 @@
 @property (nonatomic, copy) NSArray *UTITypes;
 @property (nonatomic, readonly) MFAttachmentCompositionContext *attachmentContext;
 @property (nonatomic, retain) NSString *attachmentToMarkupContentID;
-@property (nonatomic, readonly) id autosaveIdentifier;
+@property (nonatomic, readonly) NSString *autosaveIdentifier;
 @property (nonatomic, copy) NSArray *bccRecipients;
 @property UIView<MFComposeBodyField> *bodyField;
 @property (nonatomic) unsigned long long caretPosition;
@@ -85,6 +85,7 @@
 - (id)initWithComposeType:(int)arg1;
 - (id)initWithComposeType:(int)arg1 RFC822Data:(id)arg2;
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
+- (id)initWithHandoffActivityPayload:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
 - (void)insertAttachmentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;

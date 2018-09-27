@@ -6,7 +6,7 @@
     MPCMediaRemoteController * _controller;
 }
 
-@property (nonatomic) MPCMediaRemoteController *controller;
+@property (nonatomic, readonly) MPCMediaRemoteController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -17,9 +17,9 @@
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (id)controller;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
+- (id)initWithController:(id)arg1;
 - (bool)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setController:(id)arg1;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 
 @end

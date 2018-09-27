@@ -11,4 +11,8 @@
 - (NSArray *)conditions;
 - (bool)validateMarker:(id <SXBlueprintMarker>)arg1 remainingMarkerCount:(unsigned long long)arg2 layoutProvider:(id <SXComponentInsertionLayoutProvider>)arg3;
 
+@optional
+
+- (void)componentInsertionCompleted;
+
 @end

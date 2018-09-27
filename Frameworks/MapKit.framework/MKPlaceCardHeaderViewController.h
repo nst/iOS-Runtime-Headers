@@ -25,7 +25,7 @@
     _MKTokenAttributedString * _priceToken;
     _MKTokenAttributedString * _ratingsToken;
     _MKUILabel * _secondLabel;
-    _MKUILabel * _thirdDisplayedLabel;
+    UIView * _thirdDisplayedLabel;
     _MKUILabel * _thirdLabel;
     _MKUILabel * _titleOnlyLabel;
     MKPlaceSectionRowView * _titleOnlySectionView;
@@ -54,6 +54,7 @@
 - (void)_contentSizeDidChange;
 - (void)_createViews;
 - (id)_currentTitle;
+- (bool)_isLikelyToShowDistance;
 - (void)_loadLogo;
 - (id)_localizedHours;
 - (bool)_mapItemShouldDisplayDistance:(id)arg1;
@@ -61,7 +62,6 @@
 - (id)_reviewLabelText;
 - (void)_setupDatas;
 - (id)_verifiedText;
-- (bool)_willShowDistance;
 - (double)contentAlpha;
 - (id)delegate;
 - (void)hideTitle:(bool)arg1;

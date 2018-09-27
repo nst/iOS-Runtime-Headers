@@ -19,7 +19,6 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (bool)displayingVideo;
-- (id)grayColor;
 - (id)imageView;
 - (id)initWithPlaceholderImage:(id)arg1;
 - (void)layoutSubviews;

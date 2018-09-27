@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFSetInterfaceOrientationRequest : CATTaskRequest {
+@interface DMFSetInterfaceOrientationRequest : DMFTaskRequest {
     unsigned long long  _interfaceOrientation;
     bool  _lockOrientation;
 }

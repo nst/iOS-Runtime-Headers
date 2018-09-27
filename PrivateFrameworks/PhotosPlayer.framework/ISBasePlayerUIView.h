@@ -12,6 +12,16 @@
         bool didChangeWithAnimationDuration; 
     }  _changeObserverRespondsTo;
     ISPlayerOutputContent * _content;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _contentsRect;
     UIView * _customPhotoView;
     UIImage * _overrideImage;
     ISBasePlayer * _player;
@@ -26,6 +36,7 @@
 @property (nonatomic, readonly) UIView *_containerView;
 @property (nonatomic, readonly) UIImageView *_photoView;
 @property (nonatomic, readonly) ISVideoPlayerUIView *_videoView;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentsRect;
 @property (nonatomic, retain) UIView *customPhotoView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -54,6 +65,7 @@
 - (void)applyScale:(double)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)audioSessionDidChange;
 - (void)contentDidChange;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsRect;
 - (id)customPhotoView;
 - (id)generateSnapshotImage;
 - (id)initWithCoder:(id)arg1;
@@ -68,6 +80,7 @@
 - (struct CGPoint { double x1; double x2; })scaleAnchorOffset;
 - (void)setContent:(id)arg1;
 - (void)setContentMode:(long long)arg1;
+- (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCustomPhotoView:(id)arg1;
 - (void)setOverrideImage:(id)arg1;
 - (void)setPlayer:(id)arg1;

@@ -6,11 +6,13 @@
     int  _drivingDirection;
     struct { 
         unsigned int drivingDirection : 1; 
+        unsigned int significance : 1; 
         unsigned int walkingDirection : 1; 
         unsigned int isApproximate : 1; 
     }  _has;
     bool  _isApproximate;
     GEOLatLng * _location;
+    unsigned int  _significance;
     PBUnknownFields * _unknownFields;
     int  _walkingDirection;
 }
@@ -19,9 +21,11 @@
 @property (nonatomic) bool hasDrivingDirection;
 @property (nonatomic) bool hasIsApproximate;
 @property (nonatomic, readonly) bool hasLocation;
+@property (nonatomic) bool hasSignificance;
 @property (nonatomic) bool hasWalkingDirection;
 @property (nonatomic) bool isApproximate;
 @property (nonatomic, retain) GEOLatLng *location;
+@property (nonatomic) unsigned int significance;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int walkingDirection;
 
@@ -37,6 +41,7 @@
 - (bool)hasDrivingDirection;
 - (bool)hasIsApproximate;
 - (bool)hasLocation;
+- (bool)hasSignificance;
 - (bool)hasWalkingDirection;
 - (unsigned long long)hash;
 - (bool)isApproximate;
@@ -47,10 +52,13 @@
 - (void)setDrivingDirection:(int)arg1;
 - (void)setHasDrivingDirection:(bool)arg1;
 - (void)setHasIsApproximate:(bool)arg1;
+- (void)setHasSignificance:(bool)arg1;
 - (void)setHasWalkingDirection:(bool)arg1;
 - (void)setIsApproximate:(bool)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setSignificance:(unsigned int)arg1;
 - (void)setWalkingDirection:(int)arg1;
+- (unsigned int)significance;
 - (id)unknownFields;
 - (int)walkingDirection;
 - (id)walkingDirectionAsString:(int)arg1;

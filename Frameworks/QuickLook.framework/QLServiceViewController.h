@@ -18,8 +18,9 @@
 - (void)_registerServiceViewController;
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
 - (id)init;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
 - (id)mainViewController;
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(id /* block */)arg1;
 - (id)uuid;
 
 @end

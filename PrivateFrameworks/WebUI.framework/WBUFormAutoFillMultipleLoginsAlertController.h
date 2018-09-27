@@ -10,7 +10,7 @@
 
 @property (nonatomic) bool cancelsWhenAppEntersBackground;
 
-+ (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 preferredStyle:(long long)arg3 completionHandler:(id /* block */)arg4;
++ (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 externalCredentials:(id)arg3 preferredStyle:(long long)arg4 formURL:(id)arg5 completionHandler:(id /* block */)arg6;
 
 - (void).cxx_destruct;
 - (bool)cancelsWhenAppEntersBackground;

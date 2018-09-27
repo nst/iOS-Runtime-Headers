@@ -43,9 +43,11 @@
 - (void)finalize;
 - (id)init;
 - (void)markConfigurationAsFinal;
+- (bool)maximizePowerEfficiency;
 - (id)mediaType;
 - (void)resetForReadingTimeRanges:(id)arg1;
 - (void)setAlwaysCopiesSampleData:(bool)arg1;
+- (void)setMaximizePowerEfficiency:(bool)arg1;
 - (void)setSupportsRandomAccess:(bool)arg1;
 - (bool)supportsRandomAccess;
 

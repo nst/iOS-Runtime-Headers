@@ -47,6 +47,7 @@
     }  _fragmentTextures;
     unsigned long long  _frontFacingWinding;
     unsigned int  _frontStencilRef;
+    bool  _hasValidViewportsAndScissorRects;
     unsigned long long  _height;
     struct { 
         unsigned int maxColorAttachments; 
@@ -70,7 +71,7 @@
         float maxLineWidth; 
         float maxPointSize; 
         unsigned int maxVisibilityQueryOffset; 
-        unsigned int maxBufferLength; 
+        unsigned int padmaxBufferLength; 
         unsigned int minConstantBufferAlignmentBytes; 
         unsigned int minBufferNoCopyAlignmentBytes; 
         unsigned int maxTextureWidth1D; 
@@ -90,19 +91,29 @@
         unsigned int maxComputeThreadgroupMemoryAlignmentBytes; 
         unsigned int maxInterpolatedComponents; 
         unsigned int maxTessellationFactor; 
+        unsigned int maxIndirectBuffers; 
+        unsigned int maxIndirectTextures; 
+        unsigned int maxIndirectSamplers; 
+        unsigned int maxIndirectSamplersPerDevice; 
+        unsigned int maxViewportCount; 
         unsigned int maxCustomSamplePositions; 
+        unsigned int maxTextureBufferWidth; 
         unsigned int maxFramebufferStorageBits; 
+        unsigned int linearTextureArrayAlignmentBytes; 
+        unsigned int linearTextureArrayAlignmentSlice; 
         unsigned int maxTileBuffers; 
         unsigned int maxTileTextures; 
         unsigned int maxTileSamplers; 
         unsigned int maxTileInlineDataSize; 
         unsigned int minTilePixels; 
+        unsigned long long maxBufferLength; 
     }  _limits;
     float  _lineWidth;
     bool  _openGLModeEnabled;
     unsigned long long  _peakPerSampleStorage;
     <MTLRenderPipelineState> * _previousRenderPipelineStateWithWritesToImageBlock;
     <MTLRenderPipelineState> * _renderPipelineState;
+    unsigned long long  _resolvedRasterSampleCount;
     unsigned long long  _resolvedSampleCount;
     struct vector<MTLScissorRect, std::__1::allocator<MTLScissorRect> > { 
         struct { /* ? */ } *__begin_; 
@@ -145,6 +156,11 @@
     }  _tileTextures;
     unsigned long long  _triangleFillMode;
     unsigned int  _unknownStoreActions;
+    struct deque<id, std::__1::allocator<id> > { 
+        /* Warning: unhandled struct encoding: '{__split_buffer<id *, std::__1::allocator<id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<id **, std::__1::allocator<id *> >="__value_"^^@}}"__start_"Q"__size_"{__compressed_pair<unsigned long, std::__1::allocator<id> >="__value_"Q}}' */ struct __split_buffer<id *, std::__1::allocator<id *> > { 
+            __begin_ ***__first_; 
+        } __map_; 
+    }  _updatedFences;
     /* Warning: unhandled struct encoding: '{?="isValid"B"hasBeenUsed"B"type"Q"object"@"baseLevel"Q"bufferLength"Q"bufferOffset"Q"threadgroupMemoryLength"Q"threadgroupMemoryOffset"Q"hasLodClamp"B"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         bool isValid; 
         bool hasBeenUsed; 
@@ -175,11 +191,6 @@
     unsigned long long  _visibilityResultMode;
     unsigned long long  _visibilityResultOffset;
     unsigned long long  _width;
-    struct deque<id, std::__1::allocator<id> > { 
-        /* Warning: unhandled struct encoding: '{__split_buffer<id *, std::__1::allocator<id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<id **, std::__1::allocator<id *> >="__value_"^^@}}"__start_"Q"__size_"{__compressed_pair<unsigned long, std::__1::allocator<id> >="__value_"Q}}' */ struct __split_buffer<id *, std::__1::allocator<id *> > { 
-            __begin_ ***__first_; 
-        } __map_; 
-    }  updatedFences;
 }
 
 @property (nonatomic, readonly) unsigned int backStencilRef;
@@ -203,11 +214,13 @@
 @property (nonatomic, readonly) <MTLRenderPipelineState> *renderPipelineState;
 @property (nonatomic, readonly) unsigned long long resolvedSampleCount;
 @property (nonatomic, readonly) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; } scissorRect;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<MTLScissorRect' */ struct *scissorRects; /* unknown property attribute:  std::__1::allocator<MTLScissorRect> >=^{?}}} */
 @property (nonatomic, readonly) struct { bool x1; bool x2; unsigned long long x3; id x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; bool x9; float x10; float x11; } tessellationFactorBufferArgument;
 @property (nonatomic, readonly) unsigned long long tessellationFactorBufferInstanceStride;
 @property (nonatomic, readonly) float tessellationFactorScale;
 @property (nonatomic, readonly) unsigned long long triangleFillMode;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; } viewport;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<MTLViewport' */ struct *viewports; /* unknown property attribute:  std::__1::allocator<MTLViewport> >=^{?}}} */
 @property (nonatomic, readonly) unsigned long long visibilityResultMode;
 @property (nonatomic, readonly) unsigned long long visibilityResultOffset;
 @property (readonly) unsigned long long width;
@@ -236,11 +249,13 @@
 - (id)description;
 - (id)descriptor;
 - (void)dispatchThreadsPerTile:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (void)drawIndexedPatches:(unsigned long long)arg1 patchIndexBuffer:(id)arg2 patchIndexBufferOffset:(unsigned long long)arg3 controlPointIndexBuffer:(id)arg4 controlPointIndexBufferOffset:(unsigned long long)arg5 indirectBuffer:(id)arg6 indirectBufferOffset:(unsigned long long)arg7;
 - (void)drawIndexedPatches:(unsigned long long)arg1 patchStart:(unsigned long long)arg2 patchCount:(unsigned long long)arg3 patchIndexBuffer:(id)arg4 patchIndexBufferOffset:(unsigned long long)arg5 controlPointIndexBuffer:(id)arg6 controlPointIndexBufferOffset:(unsigned long long)arg7 instanceCount:(unsigned long long)arg8 baseInstance:(unsigned long long)arg9;
 - (void)drawIndexedPrimitives:(unsigned long long)arg1 indexCount:(unsigned long long)arg2 indexType:(unsigned long long)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned long long)arg5;
 - (void)drawIndexedPrimitives:(unsigned long long)arg1 indexCount:(unsigned long long)arg2 indexType:(unsigned long long)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned long long)arg5 instanceCount:(unsigned long long)arg6;
 - (void)drawIndexedPrimitives:(unsigned long long)arg1 indexCount:(unsigned long long)arg2 indexType:(unsigned long long)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned long long)arg5 instanceCount:(unsigned long long)arg6 baseVertex:(long long)arg7 baseInstance:(unsigned long long)arg8;
 - (void)drawIndexedPrimitives:(unsigned long long)arg1 indexType:(unsigned long long)arg2 indexBuffer:(id)arg3 indexBufferOffset:(unsigned long long)arg4 indirectBuffer:(id)arg5 indirectBufferOffset:(unsigned long long)arg6;
+- (void)drawPatches:(unsigned long long)arg1 patchIndexBuffer:(id)arg2 patchIndexBufferOffset:(unsigned long long)arg3 indirectBuffer:(id)arg4 indirectBufferOffset:(unsigned long long)arg5;
 - (void)drawPatches:(unsigned long long)arg1 patchStart:(unsigned long long)arg2 patchCount:(unsigned long long)arg3 patchIndexBuffer:(id)arg4 patchIndexBufferOffset:(unsigned long long)arg5 instanceCount:(unsigned long long)arg6 baseInstance:(unsigned long long)arg7;
 - (void)drawPrimitives:(unsigned long long)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
 - (void)drawPrimitives:(unsigned long long)arg1 vertexStart:(unsigned long long)arg2 vertexCount:(unsigned long long)arg3;
@@ -257,6 +272,7 @@
 - (void)enumerateVertexBuffersUsingBlock:(id /* block */)arg1;
 - (void)enumerateVertexSamplersUsingBlock:(id /* block */)arg1;
 - (void)enumerateVertexTexturesUsingBlock:(id /* block */)arg1;
+- (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)filterCounterRangeWithFirstBatch:(unsigned int)arg1 lastBatch:(unsigned int)arg2 filterIndex:(unsigned int)arg3;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (unsigned long long)frontFacingWinding;
@@ -264,6 +280,8 @@
 - (unsigned long long)height;
 - (id)initWithRenderCommandEncoder:(id)arg1 parent:(id)arg2 descriptor:(id)arg3;
 - (float)lineWidth;
+- (void)memoryBarrierWithResources:(const id*)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
+- (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (unsigned long long)peakPerSampleStorage;
 - (id)renderPipelineState;
 - (unsigned long long)resolvedSampleCount;
@@ -288,6 +306,7 @@
 - (void)setFragmentBytes:(const void*)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setFragmentSamplerState:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned long long)arg4;
+- (void)setFragmentSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 lodBias:(float)arg4 atIndex:(unsigned long long)arg5;
 - (void)setFragmentSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)setFragmentSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setFragmentTexture:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -297,8 +316,11 @@
 - (void)setLineWidth:(float)arg1;
 - (void)setRenderPipelineState:(id)arg1;
 - (void)setScissorRect:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
+- (void)setScissorRects:(const struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; }*)arg1 count:(unsigned long long)arg2;
 - (void)setStencilFrontReferenceValue:(unsigned int)arg1 backReferenceValue:(unsigned int)arg2;
 - (void)setStencilReferenceValue:(unsigned int)arg1;
+- (void)setStencilResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4;
+- (void)setStencilResolveTexture:(id)arg1 slice:(unsigned long long)arg2 depthPlane:(unsigned long long)arg3 level:(unsigned long long)arg4 yInvert:(bool)arg5;
 - (void)setStencilStoreAction:(unsigned long long)arg1;
 - (void)setStencilStoreActionOptions:(unsigned long long)arg1;
 - (void)setTessellationFactorBuffer:(id)arg1 offset:(unsigned long long)arg2 instanceStride:(unsigned long long)arg3;
@@ -321,11 +343,13 @@
 - (void)setVertexBytes:(const void*)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setVertexSamplerState:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 atIndex:(unsigned long long)arg4;
+- (void)setVertexSamplerState:(id)arg1 lodMinClamp:(float)arg2 lodMaxClamp:(float)arg3 lodBias:(float)arg4 atIndex:(unsigned long long)arg5;
 - (void)setVertexSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (void)setVertexSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setVertexTexture:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setVertexTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setViewport:(struct { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setViewports:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg1 count:(unsigned long long)arg2;
 - (void)setVisibilityResultMode:(unsigned long long)arg1 offset:(unsigned long long)arg2;
 - (struct { bool x1; bool x2; unsigned long long x3; id x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; bool x9; float x10; float x11; })tessellationFactorBufferArgument;
 - (unsigned long long)tessellationFactorBufferInstanceStride;

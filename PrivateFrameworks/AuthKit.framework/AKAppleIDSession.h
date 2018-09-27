@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 getAppleIDHeadersForResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_generateAppleIDHeadersForRequest:(id)arg1 error:(id*)arg2;
-- (void)_generateAppleIDHeadersForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_generateAppleIDHeadersForSessionTask:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_genericAppleIDHeadersDictionaryForRequest:(id)arg1;
 - (void)_handleURLResponse:(id)arg1 forRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)_nativeAnisetteController;

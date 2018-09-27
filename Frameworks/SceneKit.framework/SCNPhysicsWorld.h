@@ -72,6 +72,7 @@
 - (void)_removeFieldFromWorld:(id)arg1;
 - (void)_reset;
 - (void)_step:(double)arg1;
+- (void)_updatePhysicsFieldsTrasforms;
 - (void)addBehavior:(id)arg1;
 - (void)addPhysicsBody:(id)arg1 nodeRef:(struct __C3DNode { }*)arg2 colGroup:(unsigned long long)arg3 colMask:(unsigned long long)arg4 colTest:(unsigned long long)arg5;
 - (id)allBehaviors;

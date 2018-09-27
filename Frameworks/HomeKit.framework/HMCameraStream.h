@@ -11,10 +11,12 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)audioStreamSetting;
+- (id)audioVolume;
 - (id)initWithStream:(id)arg1;
 - (void)setAudioStreamSetting:(unsigned long long)arg1;
 - (void)setStream:(id)arg1;
 - (id)stream;
 - (void)updateAudioStreamSetting:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateAudioVolume:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

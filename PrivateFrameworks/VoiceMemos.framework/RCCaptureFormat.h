@@ -4,7 +4,7 @@
 
 @interface RCCaptureFormat : NSObject
 
-+ (id)AVAssetAuthoringMetadataWithCreationDate:(id)arg1;
++ (id)AVAssetAuthoringMetadataWithCreationDate:(id)arg1 uniqueID:(id)arg2;
 + (void)AVAssetExportDetermineSettingsForExportingAsset:(id)arg1 preferredOutputExtension:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)AVAssetExportPresetForExportingToExtension:(id)arg1;
 + (id)AVFileTypeUTIForFileExtension:(id)arg1;

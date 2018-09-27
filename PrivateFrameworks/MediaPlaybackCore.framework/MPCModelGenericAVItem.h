@@ -28,6 +28,7 @@
     NSData * _jingleTimedMetadata;
     bool  _lastPreparedForNonZeroRate;
     long long  _leasePlaybackPreventionState;
+    ICMusicSubscriptionLeaseStatus * _leaseStatus;
     NSNumber * _maximumSizeAllowedForCellularAccess;
     MPMediaLibrary * _mediaLibrary;
     MPModelGenericObject * _metadataGenericObject;
@@ -51,7 +52,6 @@
     NSOperationQueue * _timedMetadataOperationQueue;
     MPCModelGenericAVItemTimedMetadataRequest * _timedMetadataRequest;
     MPCModelGenericAVItemTimedMetadataResponse * _timedMetadataResponse;
-    NSOperationQueue * _utilitySerialQueue;
     bool  supportsRadioTrackActions;
 }
 
@@ -64,6 +64,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSData *jingleTimedMetadata;
 @property (nonatomic, readonly) long long leasePlaybackPreventionState;
+@property (nonatomic, readonly, copy) ICMusicSubscriptionLeaseStatus *leaseStatus;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, readonly, copy) MPCPlaybackRequestEnvironment *playbackRequestEnvironment;
 @property (getter=isRadioPlayback, nonatomic) bool radioPlayback;
@@ -79,6 +80,7 @@
 
 + (bool)_prefersHighQualityAudioContentForNetworkType:(long long)arg1;
 + (bool)_prefersHighQualityVideoContentForNetworkType:(long long)arg1;
++ (id)_utilitySerialQueue;
 
 - (void).cxx_destruct;
 - (bool)_allowsAssetCaching;
@@ -114,7 +116,6 @@
 - (void)_updateHasBeenPlayedWithElapsedTime:(double)arg1 completion:(id /* block */)arg2;
 - (void)_updateJingleTimedMetadata;
 - (void)_updatePreventionStatusWithLeaseSession:(id)arg1;
-- (id)_utilitySerialQueue;
 - (void)_willBecomeActivePlayerItem;
 - (void)_willResignActivePlayerItem;
 - (id)album;
@@ -122,6 +123,8 @@
 - (unsigned long long)albumArtistPersistentID;
 - (unsigned long long)albumPersistentID;
 - (long long)albumStoreID;
+- (unsigned long long)albumTrackCount;
+- (unsigned long long)albumTrackNumber;
 - (bool)allowsAirPlayFromCloud;
 - (bool)allowsEQ;
 - (bool)allowsExternalPlayback;
@@ -164,6 +167,7 @@
 - (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)jingleTimedMetadata;
 - (long long)leasePlaybackPreventionState;
+- (id)leaseStatus;
 - (id)libraryLyrics;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;

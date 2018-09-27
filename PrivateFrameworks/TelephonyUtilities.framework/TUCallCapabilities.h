@@ -4,14 +4,14 @@
 
 @interface TUCallCapabilities : NSObject
 
-+ (void)_sendNotificationsAfterRunningBlock:(id /* block */)arg1;
++ (void)_sendNotificationsAndCallbacksAfterRunningBlock:(id /* block */)arg1;
++ (id)_senderIdentityCapabilitiesByUUID;
 + (bool)accountsMatchForSecondaryCalling;
 + (bool)accountsSupportSecondaryCalling;
++ (void)addDelegate:(id)arg1 queue:(id)arg2;
 + (bool)areCTCapabilitiesValid;
 + (bool)areRelayCallingFeaturesEnabled;
-+ (bool)canAttemptEmergencyCallsInAirplaneMode;
 + (bool)canAttemptEmergencyCallsWithoutCellularConnection;
-+ (bool)canAttemptTelephonyCallsInAirplaneMode;
 + (bool)canAttemptTelephonyCallsWithoutCellularConnection;
 + (void)cancelPinRequestFromPrimaryDevice;
 + (id)client;
@@ -45,7 +45,10 @@
 + (bool)isWiFiCallingRoamingEnabled;
 + (id)outgoingRelayCallerID;
 + (int)relayCallingAvailability;
++ (void)removeDelegate:(id)arg1;
 + (void)requestPinFromPrimaryDevice;
++ (id)senderIdentityCapabilities;
++ (id)senderIdentityCapabilitiesWithUUID:(id)arg1;
 + (void)setRelayCallingEnabled:(bool)arg1;
 + (void)setRelayCallingEnabled:(bool)arg1 forDeviceWithID:(id)arg2;
 + (void)setThumperCallingAllowed:(bool)arg1 onSecondaryDeviceWithID:(id)arg2;

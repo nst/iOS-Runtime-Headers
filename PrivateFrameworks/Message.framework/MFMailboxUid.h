@@ -96,8 +96,6 @@
 - (bool)isStore;
 - (bool)isValid;
 - (bool)isVisible;
-- (id)lastViewedMessageDate;
-- (id)lastViewedMessageID;
 - (unsigned int)mailboxID;
 - (bool)mergeWithUserInfo:(id)arg1;
 - (id)mf_publicDescription;
@@ -122,7 +120,6 @@
 - (bool)setChildren:(id)arg1;
 - (void)setCriterion:(id)arg1;
 - (void)setExtraAttributes:(id)arg1;
-- (void)setLastViewedMessageID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setRepresentedAccount:(id)arg1;

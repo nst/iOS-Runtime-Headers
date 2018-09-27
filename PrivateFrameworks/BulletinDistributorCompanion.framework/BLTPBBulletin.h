@@ -24,17 +24,20 @@
         unsigned int date : 1; 
         unsigned int publicationDate : 1; 
         unsigned int requiredExpirationDate : 1; 
+        unsigned int soundAudioVolume : 1; 
         unsigned int soundMaximumDuration : 1; 
         unsigned int attachmentType : 1; 
         unsigned int sectionSubtype : 1; 
         unsigned int soundAlertType : 1; 
         unsigned int containsUpdatedAttachment : 1; 
+        unsigned int hasCriticalIcon : 1; 
         unsigned int ignoresQuietMode : 1; 
         unsigned int loading : 1; 
         unsigned int soundShouldIgnoreRingerSwitch : 1; 
         unsigned int soundShouldRepeat : 1; 
         unsigned int turnsOnDisplay : 1; 
     }  _has;
+    bool  _hasCriticalIcon;
     bool  _ignoresQuietMode;
     bool  _includesSound;
     bool  _loading;
@@ -52,6 +55,7 @@
     NSString * _sockPuppetAppBundleID;
     NSString * _soundAccountIdentifier;
     int  _soundAlertType;
+    double  _soundAudioVolume;
     double  _soundMaximumDuration;
     bool  _soundShouldIgnoreRingerSwitch;
     bool  _soundShouldRepeat;
@@ -95,9 +99,11 @@
 @property (nonatomic) bool hasContainsUpdatedAttachment;
 @property (nonatomic, readonly) bool hasContext;
 @property (nonatomic, readonly) bool hasContextNulls;
+@property (nonatomic) bool hasCriticalIcon;
 @property (nonatomic) bool hasDate;
 @property (nonatomic, readonly) bool hasDismissAction;
 @property (nonatomic, readonly) bool hasDismissalID;
+@property (nonatomic) bool hasHasCriticalIcon;
 @property (nonatomic) bool hasIgnoresQuietMode;
 @property (nonatomic) bool hasLoading;
 @property (nonatomic, readonly) bool hasMessageTitle;
@@ -113,6 +119,7 @@
 @property (nonatomic, readonly) bool hasSockPuppetAppBundleID;
 @property (nonatomic, readonly) bool hasSoundAccountIdentifier;
 @property (nonatomic) bool hasSoundAlertType;
+@property (nonatomic) bool hasSoundAudioVolume;
 @property (nonatomic) bool hasSoundMaximumDuration;
 @property (nonatomic) bool hasSoundShouldIgnoreRingerSwitch;
 @property (nonatomic) bool hasSoundShouldRepeat;
@@ -140,6 +147,7 @@
 @property (nonatomic, retain) NSString *sockPuppetAppBundleID;
 @property (nonatomic, retain) NSString *soundAccountIdentifier;
 @property (nonatomic) int soundAlertType;
+@property (nonatomic) double soundAudioVolume;
 @property (nonatomic) double soundMaximumDuration;
 @property (nonatomic) bool soundShouldIgnoreRingerSwitch;
 @property (nonatomic) bool soundShouldRepeat;
@@ -156,7 +164,7 @@
 + (void)_addAttachmentsFromBBBulletin:(id)arg1 toBLTPBBulletin:(id)arg2 observer:(id)arg3 completion:(id /* block */)arg4;
 + (void)_attachmentFromBBAttachmentMetadata:(id)arg1 bulletin:(id)arg2 observer:(id)arg3 fileOption:(unsigned long long)arg4 completion:(id /* block */)arg5;
 + (Class)additionalAttachmentsType;
-+ (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 isSockPuppetAppInstalled:(bool)arg3 observer:(id)arg4 feed:(unsigned long long)arg5 teamID:(id)arg6 universalSectionID:(id)arg7 isCriticalBulletin:(bool)arg8 replyToken:(id)arg9 completion:(id /* block */)arg10;
++ (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 observer:(id)arg3 feed:(unsigned long long)arg4 teamID:(id)arg5 universalSectionID:(id)arg6 isCriticalBulletin:(bool)arg7 replyToken:(id)arg8 gizmoLegacyCategoryID:(id)arg9 useUserInfoForContext:(bool)arg10 removeSubtitleForOlderWatches:(bool)arg11 completion:(id /* block */)arg12;
 + (Class)peopleIDsType;
 + (Class)subsectionIDsType;
 + (Class)supplementaryActionsType;
@@ -208,9 +216,11 @@
 - (bool)hasContainsUpdatedAttachment;
 - (bool)hasContext;
 - (bool)hasContextNulls;
+- (bool)hasCriticalIcon;
 - (bool)hasDate;
 - (bool)hasDismissAction;
 - (bool)hasDismissalID;
+- (bool)hasHasCriticalIcon;
 - (bool)hasIgnoresQuietMode;
 - (bool)hasLoading;
 - (bool)hasMessageTitle;
@@ -226,6 +236,7 @@
 - (bool)hasSockPuppetAppBundleID;
 - (bool)hasSoundAccountIdentifier;
 - (bool)hasSoundAlertType;
+- (bool)hasSoundAudioVolume;
 - (bool)hasSoundMaximumDuration;
 - (bool)hasSoundShouldIgnoreRingerSwitch;
 - (bool)hasSoundShouldRepeat;
@@ -275,13 +286,16 @@
 - (void)setFeed:(unsigned int)arg1;
 - (void)setHasAttachmentType:(bool)arg1;
 - (void)setHasContainsUpdatedAttachment:(bool)arg1;
+- (void)setHasCriticalIcon:(bool)arg1;
 - (void)setHasDate:(bool)arg1;
+- (void)setHasHasCriticalIcon:(bool)arg1;
 - (void)setHasIgnoresQuietMode:(bool)arg1;
 - (void)setHasLoading:(bool)arg1;
 - (void)setHasPublicationDate:(bool)arg1;
 - (void)setHasRequiredExpirationDate:(bool)arg1;
 - (void)setHasSectionSubtype:(bool)arg1;
 - (void)setHasSoundAlertType:(bool)arg1;
+- (void)setHasSoundAudioVolume:(bool)arg1;
 - (void)setHasSoundMaximumDuration:(bool)arg1;
 - (void)setHasSoundShouldIgnoreRingerSwitch:(bool)arg1;
 - (void)setHasSoundShouldRepeat:(bool)arg1;
@@ -303,6 +317,7 @@
 - (void)setSockPuppetAppBundleID:(id)arg1;
 - (void)setSoundAccountIdentifier:(id)arg1;
 - (void)setSoundAlertType:(int)arg1;
+- (void)setSoundAudioVolume:(double)arg1;
 - (void)setSoundMaximumDuration:(double)arg1;
 - (void)setSoundShouldIgnoreRingerSwitch:(bool)arg1;
 - (void)setSoundShouldRepeat:(bool)arg1;
@@ -319,6 +334,7 @@
 - (id)sockPuppetAppBundleID;
 - (id)soundAccountIdentifier;
 - (int)soundAlertType;
+- (double)soundAudioVolume;
 - (double)soundMaximumDuration;
 - (bool)soundShouldIgnoreRingerSwitch;
 - (bool)soundShouldRepeat;

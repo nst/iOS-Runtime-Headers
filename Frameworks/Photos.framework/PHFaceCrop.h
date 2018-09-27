@@ -12,7 +12,8 @@
 @property (nonatomic, readonly) short state;
 @property (nonatomic, readonly) short type;
 
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
++ (id)fetchFaceCropsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsNeedingFaceDetectionWithOptions:(id)arg1;
 + (id)fetchFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsWithOptions:(id)arg1;

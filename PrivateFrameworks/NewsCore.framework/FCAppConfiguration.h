@@ -5,7 +5,6 @@
 @interface FCAppConfiguration : NSObject <FCCoreConfiguration, FCNewsAppConfiguration> {
     NSDictionary * _analyticsContentTypeConfigsByContentTypeByEnvironment;
     NTPBConfig * _config;
-    FCCoverArticlesConfiguration * _coverArticlesConfig;
     NSDictionary * _endpointConfigsByEnvironment;
     FCForYouGroupsConfiguration * _forYouGroupsConfiguration;
     NSArray * _hiddenFeedIDs;
@@ -24,7 +23,7 @@
     FCRecommendedCategory * _topLevelCategory;
     FCTopStoriesConfiguration * _topStoriesConfig;
     NSArray * _topStoriesPublishDates;
-    NTPBWidgetConfig * _widgetConfig;
+    FCWidgetConfig * _widgetConfig;
 }
 
 @property (nonatomic, readonly) NSDictionary *analyticsContentTypeConfigsByContentTypeByEnvironment;
@@ -35,7 +34,9 @@
 @property (nonatomic, readonly) double articleDiversificationUniquePublisherExpectationSlope;
 @property (nonatomic, readonly) double articleDiversificationUniquePublisherExpectationYIntercept;
 @property (nonatomic, readonly) long long articleRapidUpdatesTimeout;
+@property (nonatomic, readonly) NSString *articleRecirculationComponentPlacementConfigJSON;
 @property (nonatomic, readonly) NSString *articleRecirculationConfigJSON;
+@property (nonatomic, readonly) long long articleRecirculationPopularFeedQueryTimeRange;
 @property (nonatomic, readonly) long long autoRefreshMinimumInterval;
 @property (nonatomic, readonly) long long autoScrollToTopFeedTimeout;
 @property (nonatomic, readonly) NSString *breakingNewsChannelID;
@@ -44,12 +45,15 @@
 @property (nonatomic, readonly) bool corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 @property (nonatomic, readonly) long long corryBarMaxArticleCountForArticleList;
 @property (nonatomic, readonly) long long corryBarMaxArticleCountForSingleArticle;
-@property (nonatomic, readonly) FCCoverArticlesConfiguration *coverArticlesConfig;
 @property (nonatomic, readonly) NSNumber *currentTreatment;
+@property (nonatomic, readonly) double delayBeforeRetryingDroppedFeeds;
+@property (nonatomic, readonly) NSString *description;
+@property (nonatomic, readonly) bool disableThumbnailsForArticleRecirculation;
 @property (nonatomic, readonly) bool diversifyOptionalTopStories;
 @property (nonatomic, readonly) NSString *editorialChannelID;
 @property (nonatomic, readonly) NSString *editorialGemsSectionID;
 @property (nonatomic, readonly) NSString *embedConfigurationAssetID;
+@property (nonatomic, readonly) bool enableBadgeInSpotlightTabBar;
 @property (nonatomic, readonly) long long endOfArticleMaxInaccessiblePaidArticleCount;
 @property (nonatomic, readonly) double endOfArticleMinPaidHeadlineRatio;
 @property (nonatomic, readonly) NSDictionary *endpointConfigsByEnvironment;
@@ -59,13 +63,17 @@
 @property (nonatomic, readonly) NSString *exploreArticleID;
 @property (nonatomic, readonly) NSArray *externalAnalyticsConfigurations;
 @property (nonatomic, readonly) NSString *featuredStoriesTagID;
+@property (nonatomic, readonly) NSString *feedNavigationConfigJSON;
 @property (nonatomic, readonly) FCForYouGroupsConfiguration *forYouGroupsConfiguration;
 @property (nonatomic, readonly) NSString *forYouRecordConfigID;
-@property (nonatomic, readonly, copy) NTPBVideoGroupsConfig *forYouVideoGroupsConfig;
+@property (nonatomic, readonly, copy) FCVideoGroupsConfig *forYouVideoGroupsConfig;
 @property (nonatomic, readonly) NSArray *hiddenFeedIDs;
 @property (nonatomic, readonly) FCIAdConfiguration *iAdConfig;
 @property (nonatomic, readonly) double interstitialAdLoadDelay;
+@property (nonatomic, readonly) bool isExpired;
+@property (nonatomic, readonly) bool isSpecialEventsMicaAnimationDisabled;
 @property (nonatomic, readonly, copy) NTPBLanguageConfig *languageConfig;
+@property (nonatomic, readonly) long long maxRetriesForDroppedFeeds;
 @property (nonatomic, readonly) long long maximumNumberOfExpiredPaidSubscriptionGroups;
 @property (nonatomic, readonly) long long maximumPaidSubscriptionGroupSizeiPad;
 @property (nonatomic, readonly) long long maximumPaidSubscriptionGroupSizeiPhone;
@@ -101,13 +109,16 @@
 @property (getter=isPrivateDataEncryptionMigrationDesired, nonatomic, readonly) bool privateDataEncryptionMigrationDesired;
 @property (nonatomic, readonly) bool privateDataEncryptionMigrationRequiresAllDevicesRunningTigris;
 @property (getter=isPrivateDataMigrationCleanupEnabled, nonatomic, readonly) bool privateDataMigrationCleanupEnabled;
-@property (nonatomic, readonly) NSArray *recommendedCategories;
 @property (nonatomic, readonly) long long savedArticlesCutoffTime;
 @property (nonatomic, readonly) long long savedArticlesMaximumCountCellular;
 @property (nonatomic, readonly) long long savedArticlesMaximumCountWiFi;
 @property (nonatomic, readonly) long long savedArticlesOpenedCutoffTime;
 @property (nonatomic, readonly) NSString *savedStoriesTagID;
 @property (nonatomic, readonly) NTPBDiscoverMoreVideosInfo *shareDiscoverMoreVideosInfo;
+@property (nonatomic, readonly) bool shouldShowAlternateHeadlines;
+@property (nonatomic, readonly) long long showCardNavHintMaxCount;
+@property (nonatomic, readonly) long long singleChannelFeedMinFeedItemsPerRequest;
+@property (nonatomic, readonly) long long singleTopicFeedMinFeedItemsPerRequest;
 @property (nonatomic, readonly) long long stateRestorationAllowedTimeWindow;
 @property (nonatomic, readonly) long long subscriptionsGlobalMeteredCount;
 @property (nonatomic, readonly) long long subscriptionsGracePeriodForTokenVerificationSeconds;
@@ -126,9 +137,9 @@
 @property (nonatomic, readonly) NSString *trendingTagID;
 @property (nonatomic, readonly) long long trendingTopicsRefreshRate;
 @property (nonatomic, readonly) bool universalLinksEnabled;
-@property (nonatomic, readonly) bool usAndUKUseAUWhatsNewFeatures;
 @property (nonatomic, readonly) bool useSecureConnectionForAssets;
-@property (nonatomic, readonly, copy) NTPBWidgetConfig *widgetConfig;
+@property (nonatomic, readonly) NSString *webEmbedContentBlockers;
+@property (nonatomic, readonly, copy) FCWidgetConfig *widgetConfig;
 @property (nonatomic, readonly) NSString *widgetConfigID;
 @property (nonatomic, readonly) long long widgetMinimumArticleExposureDurationToBePreseenInMilliseconds;
 @property (nonatomic, readonly) unsigned int widgetMinimumNumberOfTimesPreseenToBeSeen;
@@ -145,7 +156,9 @@
 - (double)articleDiversificationUniquePublisherExpectationSlope;
 - (double)articleDiversificationUniquePublisherExpectationYIntercept;
 - (long long)articleRapidUpdatesTimeout;
+- (id)articleRecirculationComponentPlacementConfigJSON;
 - (id)articleRecirculationConfigJSON;
+- (long long)articleRecirculationPopularFeedQueryTimeRange;
 - (long long)autoRefreshMinimumInterval;
 - (long long)autoScrollToTopFeedTimeout;
 - (id)breakingNewsChannelID;
@@ -155,12 +168,15 @@
 - (bool)corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 - (long long)corryBarMaxArticleCountForArticleList;
 - (long long)corryBarMaxArticleCountForSingleArticle;
-- (id)coverArticlesConfig;
 - (id)currentTreatment;
+- (double)delayBeforeRetryingDroppedFeeds;
+- (id)description;
+- (bool)disableThumbnailsForArticleRecirculation;
 - (bool)diversifyOptionalTopStories;
 - (id)editorialChannelID;
 - (id)editorialGemsSectionID;
 - (id)embedConfigurationAssetID;
+- (bool)enableBadgeInSpotlightTabBar;
 - (long long)endOfArticleMaxInaccessiblePaidArticleCount;
 - (double)endOfArticleMinPaidHeadlineRatio;
 - (id)endpointConfigsByEnvironment;
@@ -170,6 +186,7 @@
 - (id)exploreArticleID;
 - (id)externalAnalyticsConfigurations;
 - (id)featuredStoriesTagID;
+- (id)feedNavigationConfigJSON;
 - (id)forYouGroupsConfiguration;
 - (id)forYouRecordConfigID;
 - (id)forYouVideoGroupsConfig;
@@ -182,7 +199,9 @@
 - (bool)isPrivateDataEncryptionAllowed;
 - (bool)isPrivateDataEncryptionMigrationDesired;
 - (bool)isPrivateDataMigrationCleanupEnabled;
+- (bool)isSpecialEventsMicaAnimationDisabled;
 - (id)languageConfig;
+- (long long)maxRetriesForDroppedFeeds;
 - (long long)maximumNumberOfExpiredPaidSubscriptionGroups;
 - (long long)maximumPaidSubscriptionGroupSizeiPad;
 - (long long)maximumPaidSubscriptionGroupSizeiPhone;
@@ -215,13 +234,15 @@
 - (double)prerollLoadingTimeout;
 - (id)presubscribedFeedIDs;
 - (bool)privateDataEncryptionMigrationRequiresAllDevicesRunningTigris;
-- (id)recommendedCategories;
 - (long long)savedArticlesCutoffTime;
 - (long long)savedArticlesMaximumCountCellular;
 - (long long)savedArticlesMaximumCountWiFi;
 - (long long)savedArticlesOpenedCutoffTime;
 - (id)savedStoriesTagID;
 - (id)shareDiscoverMoreVideosInfo;
+- (bool)shouldShowAlternateHeadlines;
+- (long long)singleChannelFeedMinFeedItemsPerRequest;
+- (long long)singleTopicFeedMinFeedItemsPerRequest;
 - (long long)stateRestorationAllowedTimeWindow;
 - (long long)subscriptionsGlobalMeteredCount;
 - (long long)subscriptionsGracePeriodForTokenVerificationSeconds;
@@ -241,7 +262,6 @@
 - (id)trendingTagID;
 - (long long)trendingTopicsRefreshRate;
 - (bool)universalLinksEnabled;
-- (bool)usAndUKUseAUWhatsNewFeatures;
 - (bool)useSecureConnectionForAssets;
 - (id)widgetConfig;
 - (id)widgetConfigID;

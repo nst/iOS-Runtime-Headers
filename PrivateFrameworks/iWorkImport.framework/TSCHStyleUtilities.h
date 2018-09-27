@@ -11,6 +11,7 @@
 + (float)centeredDonutLabelExplosionPercentageWithInnerRadius:(double)arg1;
 + (id)chartsNullShadowToDefaultDisabledShadow:(id)arg1;
 + (void)convertToSimpleTSDFillsInProperties:(id)arg1 inMap:(id)arg2 context:(id)arg3;
++ (float)defaultCalloutLineThickness;
 + (float)defaultDonutLabelExplosionPercentage;
 + (float)defaultInnerRadiusPercentage;
 + (float)defaultInnerRadiusPercentageForIconRendering;
@@ -20,6 +21,7 @@
 + (bool)hasNoFill:(id)arg1;
 + (bool)hasShadow:(id)arg1;
 + (bool)isNullFill:(id)arg1;
++ (bool)labelExplosionIsCenteredInWedgeWithInnerRadius:(double)arg1 labelExplosion:(double)arg2;
 + (id)nullFill;
 + (id)nullShadow;
 + (void)p_adjustTrendlineSaturation:(double*)arg1 brightness:(double*)arg2;
@@ -31,6 +33,7 @@
 + (double)pre2_4BendedCalloutLineLabelExplosionValueFromExplosionValue:(double)arg1 chartModel:(id)arg2 bodySize:(struct CGSize { double x1; double x2; })arg3;
 + (float)pre2_4DefaultPieLabelExplosionPercentageForCalloutLineCalculation;
 + (id)shadowToChartsNullShadow:(id)arg1;
++ (bool)shouldAnchorLabelsForSeries:(id)arg1 innerRadius:(double)arg2 calloutLineType:(int)arg3 defaultLabelExplosion:(double)arg4;
 + (id)stylesheetOfStyles:(id)arg1 nilAllowed:(bool)arg2;
 + (id)trendlineColorFromCGColor:(struct CGColor { }*)arg1;
 + (id)tupleToUpdate2_3ExplosionFromValue:(id)arg1 chartInfo:(id)arg2 forStyleOwner:(id)arg3;

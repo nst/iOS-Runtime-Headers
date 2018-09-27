@@ -3,19 +3,19 @@
  */
 
 @interface TPArchivedUIState : TSPObject {
-    TPArchivedLayoutState * _layoutState;
-    TPArchivedViewState * _viewState;
+    TPUIState * _uiState;
 }
 
-@property (nonatomic, retain) TPArchivedLayoutState *layoutState;
-@property (nonatomic, readonly) TPArchivedViewState *viewState;
+@property (nonatomic, copy) TPUIState *uiState;
 
 - (void).cxx_destruct;
-- (id)initWithContext:(id)arg1;
-- (id)layoutState;
+- (unsigned long long)hash;
+- (id)initWithContext:(id)arg1 uiState:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToArchivedUIState:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)setLayoutState:(id)arg1;
-- (id)viewState;
+- (void)setUiState:(id)arg1;
+- (id)uiState;
 
 @end

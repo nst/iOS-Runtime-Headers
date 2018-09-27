@@ -16,11 +16,12 @@
     NSMutableArray * _transformedManyToManys;
 }
 
-@property (readonly) NSSQLEntity *destinationEntity;
-@property (readonly) NSEntityMapping *entityMapping;
-@property (readonly) int migrationType;
-@property (readonly) NSSQLEntity *sourceEntity;
+@property (nonatomic, readonly) NSSQLEntity *destinationEntity;
+@property (nonatomic, readonly) NSEntityMapping *entityMapping;
+@property (nonatomic, readonly) int migrationType;
+@property (nonatomic, readonly) NSSQLEntity *sourceEntity;
 
+- (void)_changeToCopyMigrationType;
 - (void)_generateSQLValueMappingsWithMigrationContext:(/* Warning: unhandled struct encoding: '{_NSSQLMigrationContext=@}' */ struct _NSSQLMigrationContext { id x1; })arg1;
 - (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(/* Warning: unhandled struct encoding: '{_NSSQLMigrationContext=@}' */ struct _NSSQLMigrationContext { id x1; })arg2;
 - (void)_populateSQLValuesForDestinationToOne:(id)arg1 fromSourceToOne:(id)arg2;

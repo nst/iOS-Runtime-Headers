@@ -26,7 +26,6 @@
 
 - (void).cxx_destruct;
 - (id)clientContext;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -5,6 +5,7 @@
 
 @optional
 
+- (<UIFocusItemContainer> *)_focusItemContainerForFocusSystem:(UIFocusSystem *)arg1;
 - (<_UIFocusRegionContainer> *)_focusMapContainerForFocusSystem:(UIFocusSystem *)arg1;
 - (void)_focusSystem:(UIFocusSystem *)arg1 didFinishUpdatingFocusInContext:(UIFocusUpdateContext *)arg2;
 - (bool)_focusSystem:(UIFocusSystem *)arg1 prefersDeferralForFocusUpdateInContext:(UIFocusUpdateContext *)arg2;

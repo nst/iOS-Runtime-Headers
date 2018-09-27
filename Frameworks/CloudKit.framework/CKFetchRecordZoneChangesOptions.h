@@ -19,15 +19,14 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)desiredKeys;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)fetchChangesMadeByThisDevice;
 - (bool)fetchNewestChangesFirst;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithZoneConfiguration:(id)arg1;
 - (id)previousServerChangeToken;
 - (unsigned long long)resultsLimit;
 - (void)setDesiredKeys:(id)arg1;
@@ -35,5 +34,6 @@
 - (void)setFetchNewestChangesFirst:(bool)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
+- (id)zoneConfiguration;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface KNSlideTree : TSPContainedObject <KNSlideCollection> {
     NSMutableArray * _displayedSlideNodeCache;
+    NSNumberFormatter * _formatter;
     TSUPointerKeyDictionary * _formulaReferenceNamesForSlideNodesCache;
     NSMutableOrderedSet * _slideNodes;
     NSMutableDictionary * _slideNodesForFormulaReferenceNamesCache;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) KNSlideNode *defaultSlideNodeForNewSelection;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *displayedSlideNodes;
+@property (retain) NSNumberFormatter *formatter;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *slideNodes;
 @property (readonly) Class superclass;
@@ -36,6 +38,7 @@
 - (id)defaultSlideNodeForNewSelectionNearestToIndex:(unsigned long long)arg1;
 - (id)descendantsOfSlideNode:(id)arg1 omitSkippedSlideNodes:(bool)arg2 omitCollapsedSlideNodes:(bool)arg3;
 - (id)displayedSlideNodes;
+- (id)formatter;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
 - (unsigned long long)indexOfSlideNode:(id)arg1;
 - (id)initWithArchive:(const struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 unarchiver:(id)arg2 owner:(id)arg3;
@@ -55,6 +58,7 @@
 - (void)removeSlideNodes:(id)arg1 atIndexes:(id)arg2 slideNodesChangingDepths:(id)arg3 depthsOfSlideNodesChangingDepths:(id)arg4;
 - (void)saveToArchive:(struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)setDisplayedSlideNodes:(id)arg1;
+- (void)setFormatter:(id)arg1;
 - (void)slideIndex:(unsigned long long*)arg1 andEventIndex:(unsigned long long*)arg2 forByBuildPageIndex:(unsigned long long)arg3;
 - (id)slideNamesMatchingPrefix:(id)arg1;
 - (id)slideNodeAfterSlideNode:(id)arg1 omitSkippedSlideNodes:(bool)arg2 omitCollapsedSlideNodes:(bool)arg3;

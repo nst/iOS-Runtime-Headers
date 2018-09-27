@@ -3,6 +3,7 @@
  */
 
 @interface HMDAWDRemoteSessionMetric : HMDLogEvent <HMDAWDLogEvent> {
+    bool  _authenticated;
     int  _closeReason;
     NSDate * _creation;
     int  _role;
@@ -10,6 +11,7 @@
     bool  _submitted;
 }
 
+@property (getter=isAuthenticated) bool authenticated;
 @property (nonatomic, readonly) int closeReason;
 @property (nonatomic, retain) NSDate *creation;
 @property (readonly, copy) NSString *debugDescription;
@@ -29,10 +31,12 @@
 - (int)closeReason;
 - (id)creation;
 - (id)initWithClientMode:(bool)arg1 sessionID:(id)arg2;
+- (bool)isAuthenticated;
 - (id)metricForAWD;
 - (void)open;
 - (int)role;
 - (id)sessionID;
+- (void)setAuthenticated:(bool)arg1;
 - (void)setCreation:(id)arg1;
 - (void)setSubmitted:(bool)arg1;
 - (bool)submitted;

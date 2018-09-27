@@ -7,11 +7,12 @@
 
 - (NSISVariable *)_boundsHeightVariable;
 - (NSISVariable *)_boundsWidthVariable;
+- (void)_faultInGuidesForConstraint:(NSLayoutConstraint *)arg1;
 - (NSISVariable *)_minXVariable;
 - (NSISVariable *)_minYVariable;
 - (void*)_referenceView;
-- (NSMutableSet *)_uili_existingBaseFrameVariables;
-- (NSMutableSet *)_uili_existingLayoutVariables;
+- (NSMutableArray *)_uili_existingBaseFrameVariables;
+- (NSMutableArray *)_uili_existingObservationEligibleLayoutVariables;
 - (bool)_uili_isFocusGuide;
 - (NSISEngine *)_uili_observableLayoutEngineForBaseFrameVariables:(bool)arg1;
 - (void)_uili_removeLayoutVariableObservationsOnlyToSupportTAMICChange:(bool)arg1;

@@ -54,6 +54,10 @@
 
 + (id)adSessionSharedDelegateQueue;
 
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
++ (id)aa_operationQueueWithUnderlyingQueue:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 - (void)cancelAllOperationsWithError:(id)arg1;
@@ -81,6 +85,14 @@
 
 - (bool)tsu_isCurrentQueue;
 - (void)tsu_performBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
++ (id)re_sharedSerialOperationQueue;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
+- (void)rc_addAsyncOperationWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
 

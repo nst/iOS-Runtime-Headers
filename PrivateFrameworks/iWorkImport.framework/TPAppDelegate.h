@@ -27,7 +27,7 @@
 - (Class)documentRootClass;
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
-- (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
+- (id)equationEditorAPDID;
 - (bool)imageGalleryCaptionsUsePlaceholderText;
 - (id)importableDocumentTypes;
 - (id)init;
@@ -64,6 +64,9 @@
 - (id)stringForDocumentViewOnly;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
@@ -79,8 +82,9 @@
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
+- (id)strokeWidthsForFreehandDrawingToolType:(unsigned long long)arg1;
 - (bool)supportsAutosizingTextboxes;
-- (bool)supportsCanvasNativeEquationObjects;
 - (bool)supportsInlineNativeEquationObjects;
 - (bool)supportsLinkedTextBoxes;
 - (bool)supportsRTL;

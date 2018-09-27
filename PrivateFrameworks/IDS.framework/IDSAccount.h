@@ -4,6 +4,7 @@
 
 @interface IDSAccount : NSObject {
     _IDSAccount * _internal;
+    NSString * _loginID;
 }
 
 @property (nonatomic, readonly, retain) _IDSAccount *_internal;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) NSArray *devices;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSArray *handles;
+@property (readonly, copy) NSArray *hmd_handles;
 @property (nonatomic, readonly) bool isActive;
 @property (nonatomic, readonly) bool isUsableForOuterMessaging;
 @property (nonatomic, readonly) bool isUserDisabled;
@@ -37,6 +39,8 @@
 @property (nonatomic, readonly) NSString *serviceName;
 @property (nonatomic, readonly) NSString *uniqueID;
 @property (nonatomic, readonly) NSArray *vettedAliases;
+
+// Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
 
 - (void).cxx_destruct;
 - (void)_callNearbyDevicesChanged;
@@ -101,5 +105,9 @@
 - (void)validateAliases:(id)arg1;
 - (void)validateProfile;
 - (id)vettedAliases;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)hmd_handles;
 
 @end

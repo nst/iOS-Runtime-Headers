@@ -5,6 +5,7 @@
 
 @required
 
+- (TSDFill *)backgroundFillForPageIndex:(unsigned long long)arg1;
 - (bool)canProvideInfoForPageIndex:(unsigned long long)arg1;
 - (bool)canProvideNumberingInfoForPageIndex:(unsigned long long)arg1;
 - (unsigned long long)contentFlagsForPageIndex:(unsigned long long)arg1;

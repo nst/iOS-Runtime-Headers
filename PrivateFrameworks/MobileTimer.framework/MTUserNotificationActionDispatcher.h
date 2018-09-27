@@ -2,37 +2,33 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTUserNotificationActionDispatcher : NSObject <UNUserNotificationCenterDelegate> {
-    MTAlarmManager * _alarmManager;
-    UNUserNotificationCenter * _notificationCenter;
-    MTTimerManager * _timerManager;
+@interface MTUserNotificationActionDispatcher : NSObject <MTNotificationResponseDelegate, UNUserNotificationCenterDelegate> {
+    MTAlarmStorage * _alarmStorage;
+    MTMetrics * _metrics;
+    MTTimerStorage * _timerStorage;
 }
 
-@property (nonatomic) MTAlarmManager *alarmManager;
+@property (nonatomic, retain) MTAlarmStorage *alarmStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) UNUserNotificationCenter *notificationCenter;
+@property (nonatomic, retain) MTMetrics *metrics;
 @property (readonly) Class superclass;
-@property (nonatomic) MTTimerManager *timerManager;
+@property (nonatomic, retain) MTTimerStorage *timerStorage;
 
-+ (unsigned long long)_alarmNotificationActionForUserNotificationAction:(id)arg1;
++ (unsigned long long)_alarmNotificationActionForUserNotificationAction:(id)arg1 nonSnoozableNotification:(bool)arg2;
 + (unsigned long long)_timerNotificationActionForUserNotificationAction:(id)arg1;
-+ (void)warmUp;
 
 - (void).cxx_destruct;
 - (void)_handleAlarmNotificationResponse:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleTimerNotificationResponse:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id)alarmManager;
-- (id)initWithAlarmManager:(id)arg1;
-- (id)initWithAlarmManager:(id)arg1 timerManager:(id)arg2;
-- (id)initWithTimerManager:(id)arg1;
-- (id)notificationCenter;
-- (void)setAlarmManager:(id)arg1;
-- (void)setNotificationCenter:(id)arg1;
-- (void)setTimerManager:(id)arg1;
-- (id)timerManager;
+- (id)alarmStorage;
+- (id)initWithAlarmStorage:(id)arg1 timerStorage:(id)arg2;
+- (id)metrics;
+- (void)setAlarmStorage:(id)arg1;
+- (void)setMetrics:(id)arg1;
+- (void)setTimerStorage:(id)arg1;
+- (id)timerStorage;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 
 @end

@@ -10,12 +10,12 @@
 }
 
 @property (getter=isXPCBundle, nonatomic, readonly) bool XPCBundle;
-@property (nonatomic, readonly, retain) FBExtensionInfo *extensionInfo;
+@property (nonatomic, readonly) FBExtensionInfo *extensionInfo;
 @property (nonatomic, readonly, copy) NSString *hostBundleID;
 @property (nonatomic, readonly) int hostPID;
 @property (nonatomic, readonly) FBProcess *hostProcess;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)extensionInfo;
 - (id)hostBundleID;
 - (int)hostPID;

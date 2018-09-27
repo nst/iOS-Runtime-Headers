@@ -41,6 +41,7 @@
 - (void)activate;
 - (void)dealloc;
 - (id)delegate;
+- (bool)disabledViaConfig;
 - (id)dispatchQueue;
 - (id)init;
 - (void)invalidate;

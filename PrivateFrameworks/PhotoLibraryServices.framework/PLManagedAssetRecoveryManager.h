@@ -16,10 +16,16 @@
 @property (nonatomic) long long state;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)_imagesWithZeroWidthHeightPredicate;
++ (id)_irisesWithZeroVideoCpDuration;
++ (id)_jpegImagesPredicate;
++ (id)_predicateForAdjustedAssetsWithMissingResources;
++ (id)_predicateForSupportedAssetTypesForUpload;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
 - (id)_assetKindsAllowedForDownloading;
+- (bool)_canUnderstandAdjustmentForAsset:(id)arg1;
 - (void)_downloadResources:(id)arg1 forAsset:(id)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fixAdjustedAssetWithMissingDerivatives:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_fixDimensionsForAsset:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(id /* block */)arg3;

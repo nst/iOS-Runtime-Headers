@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXComponentVisiblePercentageProvider : NSObject <SXVisiblePercentageProviding> {
+@interface SXComponentVisiblePercentageProvider : NSObject <SVVisiblePercentageProviding> {
     SXViewport * _viewport;
 }
 

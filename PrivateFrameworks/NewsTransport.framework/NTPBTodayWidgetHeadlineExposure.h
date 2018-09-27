@@ -3,6 +3,7 @@
  */
 
 @interface NTPBTodayWidgetHeadlineExposure : PBCodable <NSCopying> {
+    NTPBAlternateHeadline * _alternateHeadline;
     NSString * _articleId;
     struct { 
         unsigned int widgetArticleCount : 1; 
@@ -23,7 +24,9 @@
     NSString * _widgetSectionId;
 }
 
+@property (nonatomic, retain) NTPBAlternateHeadline *alternateHeadline;
 @property (nonatomic, retain) NSString *articleId;
+@property (nonatomic, readonly) bool hasAlternateHeadline;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasSourceChannelId;
 @property (nonatomic, readonly) bool hasWebEmbedId;
@@ -46,10 +49,12 @@
 
 - (void).cxx_destruct;
 - (int)StringAsWidgetContentType:(id)arg1;
+- (id)alternateHeadline;
 - (id)articleId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasAlternateHeadline;
 - (bool)hasArticleId;
 - (bool)hasSourceChannelId;
 - (bool)hasWebEmbedId;
@@ -64,6 +69,7 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setAlternateHeadline:(id)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setHasWidgetArticleCount:(bool)arg1;
 - (void)setHasWidgetArticleCountInSection:(bool)arg1;

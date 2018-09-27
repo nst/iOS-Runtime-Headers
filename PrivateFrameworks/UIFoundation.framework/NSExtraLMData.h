@@ -110,7 +110,11 @@
         unsigned int forcesTrackingFloor : 1; 
         unsigned int isLiveScrolling : 1; 
         unsigned int hasCustomUnderlineColor : 1; 
-        unsigned int reserved : 9; 
+        unsigned int applicationPlatformContext : 3; 
+        unsigned int limitsLayoutForSuspiciousContents : 1; 
+        unsigned int delegateRespondsToRenderingColor : 1; 
+        unsigned int firstTextViewRespondsToRenderingColor : 1; 
+        unsigned int reserved : 3; 
     }  _lmFlags2;
     NSParagraphArbitrator * _paragraphArbitrator;
     NSLayoutManagerTextBlockRowArrayCache * _rowArrayCache;
@@ -118,6 +122,7 @@
     id  _temporaryAttributes;
     struct __CFDictionary { } * _textContainerGlyphIndexes;
     struct __CFDictionary { } * _textContainerIndexes;
+    double  _timeStampForResizeInScroll;
     long long  _typesetterBehavior;
     NSMutableSet * _viewProviders;
 }

@@ -2,32 +2,40 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
+@interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, PXChangeObserver, PXSettingsKeyObserver, UINavigationControllerDelegate> {
+    PXForYouBadgeManager * _badgeManager;
+    <PUTabbedLibraryViewControllerContainerDelegate> * _containerDelegate;
     NSMutableIndexSet * _everDisplayedContentModes;
     NSArray * _excludedContentModes;
     NSMutableDictionary * _filteredAlbumListsByContentMode;
     PUImportViewController * _importViewController;
     int  _pendingSelectedContentMode;
+    bool  _px_hidesTabBarForRegularHorizontalSizeClass;
     PUSessionInfo * _sessionInfo;
     bool  _sharedTabBadgeIsDirty;
     bool  _shouldNavigateToAllPhotosAlbum;
     PUTabbedLibraryViewControllerSpec * _spec;
+    PUTabbedLibraryViewModel * _viewModel;
     PUMomentsZoomLevelManager * _zoomLevelManager;
 }
 
+@property (nonatomic, retain) PXForYouBadgeManager *badgeManager;
+@property (nonatomic) <PUTabbedLibraryViewControllerContainerDelegate> *containerDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *excludedContentModes;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PUImportViewController *importViewController;
+@property (setter=px_setHidesTabBarForRegularHorizontalSizeClass:, nonatomic) bool px_hidesTabBarForRegularHorizontalSizeClass;
+@property (nonatomic, readonly) NSArray *rootViewControllers;
 @property (nonatomic) int selectedContentMode;
 @property (nonatomic, readonly) UINavigationController *selectedNavigationController;
 @property (nonatomic, retain) PUSessionInfo *sessionInfo;
 @property (nonatomic) bool shouldNavigateToAllPhotosAlbum;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<OS_os_log> *tabbedLibraryLog;
 
 + (bool)_shouldForwardViewWillTransitionToSize;
-+ (void)initialize;
 
 - (void).cxx_destruct;
 - (struct NSObject { Class x1; }*)_albumListForContentMode:(int)arg1;
@@ -38,12 +46,14 @@
 - (void)_didFinishPostingNotifications:(id)arg1;
 - (void)_enumerateViewControllersWithBlock:(id /* block */)arg1;
 - (id)_existingNavigationControllerForContentMode:(int)arg1;
+- (void)_handleFetchedMomentShare:(id)arg1 error:(id)arg2 timedOut:(bool)arg3;
 - (bool)_isNavigationControllerBadged:(id)arg1;
 - (void)_libraryDidChange:(id)arg1;
 - (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 initiallyHidden:(bool)arg3 animated:(bool)arg4 completion:(id /* block */)arg5;
 - (void)_navigateToAsset:(id)arg1 andPerformAction:(int)arg2 inAlbum:(struct NSObject { Class x1; }*)arg3 animated:(bool)arg4;
 - (void)_navigateToContentMode:(int)arg1 defaultLocationIfNeverDisplayed:(bool)arg2 animated:(bool)arg3;
 - (bool)_navigateToDefaultLocationInNavigationController:(id)arg1 animated:(bool)arg2;
+- (id)_navigateToForYou;
 - (id)_navigateToMemories;
 - (bool)_navigateToRootOfCurrentTabAnimated:(bool)arg1;
 - (id)_navigationControllerForContentMode:(int)arg1;
@@ -52,62 +62,76 @@
 - (bool)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)_newNavigationControllerWithRootController:(id)arg1;
 - (id)_nextCloudFeedNavigatingObject;
-- (void)_setTabBarItemForController:(id)arg1 contentMode:(int)arg2;
 - (id)_snapBackRootViewControllerInNavigationController:(id)arg1;
 - (id)_tabRootViewControllerInNavigationController:(id)arg1;
-- (void)_updateSharedStreamsTabBadge;
+- (void)_updateRootViewControllersInNavigationControllers:(id)arg1 tabBarHidden:(bool)arg2;
+- (void)_updateSharedAlbumBadges;
+- (void)_updateTabBarVisibilityForHorizontalSizeClass:(long long)arg1;
 - (bool)albumIsAvailableForNavigation:(struct NSObject { Class x1; }*)arg1;
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
 - (bool)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (bool)assetIsAvailableForNavigationInMoments:(id)arg1;
 - (bool)assetIsAvailableForNavigationInMoments:(id)arg1 refetchSectionsIfNeeded:(bool)arg2;
+- (id)badgeManager;
 - (bool)cloudFeedAssetIsAvailableForNavigation:(id)arg1;
 - (bool)cloudFeedCommentIsAvailableForNavigation:(id)arg1;
 - (bool)cloudFeedInvitationForAlbumIsAvailableForNavigation:(id)arg1;
 - (bool)cloudFeedIsAvailableForNavigation;
 - (bool)commentIsAvailableForNavigation:(id)arg1 inAsset:(id)arg2;
+- (id)containerDelegate;
 - (int)contentModeForTabIdentifier:(unsigned long long)arg1;
 - (bool)contentModeIsAvailableForNavigation:(int)arg1;
 - (void)dealloc;
 - (id)excludedContentModes;
 - (id)importViewController;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithSpec:(id)arg1;
 - (void)invitationRecordsDidChange:(id)arg1;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
-- (void)navigateToAsset:(id)arg1 animated:(bool)arg2;
 - (void)navigateToAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(bool)arg3;
+- (void)navigateToAsset:(id)arg1 openOneUp:(bool)arg2 animated:(bool)arg3;
 - (void)navigateToCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToCloudFeedWithCompletion:(id /* block */)arg1;
 - (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(bool)arg3;
 - (void)navigateToContentMode:(int)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
-- (void)navigateToLastYearPhotosSearchAnimated:(bool)arg1;
-- (id)navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)navigateToInvitationCMMWithIdentifier:(id)arg1 animated:(bool)arg2;
+- (void)navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)navigateToMomentShareWithURL:(id)arg1 animated:(bool)arg2;
 - (void)navigateToOneUpForAsset:(id)arg1 inAssetContainer:(id)arg2 animated:(bool)arg3;
+- (void)navigateToOneYearAgoSearch;
+- (void)navigateToPeopleAlbumAnimated:(bool)arg1 revealPersonWithLocalIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)navigateToPhotosContentBottomAnimated:(bool)arg1;
-- (void)navigateToPhotosSearchAnimated:(bool)arg1;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(bool)arg2 animated:(bool)arg3;
 - (void)navigateToRevealAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(bool)arg3;
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToRevealCloudFeedComment:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToRevealCloudFeedInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
 - (void)navigateToRevealTheMostRecentMemoryAnimated:(bool)arg1;
+- (void)navigateToSuggestedCMMWithIdentifier:(id)arg1 animated:(bool)arg2;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(bool)arg3;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
 - (id)newRootViewControllerForContentMode:(int)arg1;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)ppt_navigationControllerForContentMode:(int)arg1;
 - (void)prepareForDefaultImageSnapshot;
 - (bool)prepareForDismissingForced:(bool)arg1;
 - (bool)pu_shouldSelectViewController:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })px_frameForTabItem:(unsigned long long)arg1 inCoordinateSpace:(id)arg2;
+- (bool)px_hidesTabBarForRegularHorizontalSizeClass;
 - (id)px_navigateToMemoryWithLocalIdentifier:(id)arg1;
+- (void)px_setHidesTabBarForRegularHorizontalSizeClass:(bool)arg1;
+- (id)rootViewControllers;
 - (int)selectedContentMode;
 - (id)selectedNavigationController;
 - (id)sessionInfo;
+- (void)setBadgeManager:(id)arg1;
+- (void)setContainerDelegate:(id)arg1;
 - (void)setExcludedContentModes:(id)arg1;
 - (void)setImportViewController:(id)arg1;
 - (void)setImportViewController:(id)arg1 animated:(bool)arg2;
@@ -115,12 +139,16 @@
 - (void)setSelectedViewController:(id)arg1;
 - (void)setSessionInfo:(id)arg1;
 - (void)setShouldNavigateToAllPhotosAlbum:(bool)arg1;
+- (void)setViewControllers:(id)arg1 animated:(bool)arg2;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (bool)shouldNavigateToAllPhotosAlbum;
-- (bool)shouldShowTabForContentMode:(int)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (unsigned long long)tabIdentifierForContentMode:(int)arg1;
+- (id)tabbedLibraryLog;
 - (void)updateDisplayedTabsAnimated:(bool)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

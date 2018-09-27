@@ -22,6 +22,7 @@
 - (void)didReceiveNotificationRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)extensionInstance;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (void)serviceExtensionPerformCleanup;
 - (void)serviceExtensionTimeWillExpire;
 - (void)setExtensionInstance:(id)arg1;
 

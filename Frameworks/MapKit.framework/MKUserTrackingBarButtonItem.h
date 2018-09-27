@@ -9,7 +9,6 @@
     bool  _explicitlyEnabled;
     bool  _hasCustomAssociatedView;
     bool  _internallyEnabled;
-    bool  _isLegacy;
     MKMapView * _mapView;
     UINavigationBar * _navigationBar;
     UIToolbar * _toolbar;
@@ -53,7 +52,6 @@
 - (void)_setState:(long long)arg1;
 - (void)_setUserTrackingView:(id)arg1;
 - (long long)_state;
-- (long long)_styleForState:(long long)arg1;
 - (id)_toolbar;
 - (id)_trackingEmptyImage;
 - (id)_trackingFollowImage;

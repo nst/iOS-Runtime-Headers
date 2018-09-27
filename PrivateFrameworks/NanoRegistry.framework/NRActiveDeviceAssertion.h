@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) NRDevice *device;
-@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) bool isActive;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 

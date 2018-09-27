@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteDeviceMessageDestination : HMFMessageDestination {
+@interface HMDRemoteDeviceMessageDestination : HMDRemoteMessageDestination {
     HMDDevice * _device;
+    HMDDeviceHandle * _preferredHandle;
 }
 
 @property (nonatomic, readonly) HMDDevice *device;
+@property (nonatomic, copy) HMDDeviceHandle *preferredHandle;
 
-+ (id)allMessageDestinations;
 + (id)shortDescription;
 
 - (void).cxx_destruct;
@@ -20,6 +21,9 @@
 - (id)initWithTarget:(id)arg1;
 - (id)initWithTarget:(id)arg1 device:(id)arg2;
 - (bool)isEqual:(id)arg1;
+- (id)preferredHandle;
+- (id)remoteDestinationString;
+- (void)setPreferredHandle:(id)arg1;
 - (id)shortDescription;
 
 @end

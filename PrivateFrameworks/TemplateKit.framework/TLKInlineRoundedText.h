@@ -6,10 +6,10 @@
     NSString * _string;
 }
 
-@property (retain) NSString *string;
+@property (nonatomic, retain) NSString *string;
 
 - (void).cxx_destruct;
-- (id)observableProperties;
+- (unsigned long long)_itemType;
 - (void)setString:(id)arg1;
 - (id)string;
 

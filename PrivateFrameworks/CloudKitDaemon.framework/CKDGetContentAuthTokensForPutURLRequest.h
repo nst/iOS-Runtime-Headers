@@ -15,6 +15,7 @@
 @property (nonatomic) bool useEncryption;
 
 - (void).cxx_destruct;
+- (bool)allowsAnonymousAccount;
 - (id)assetTokenRequest;
 - (id)generateRequestOperations;
 - (id)headers;

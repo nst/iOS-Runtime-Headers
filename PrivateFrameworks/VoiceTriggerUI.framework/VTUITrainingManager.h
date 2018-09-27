@@ -62,6 +62,7 @@
 - (void)destroyVoiceTrigger;
 - (void)didDetectForceEndPoint;
 - (id)initWithLocaleIdentifier:(id)arg1 withAudioSession:(id)arg2;
+- (void)prepareWithCompletion:(id /* block */)arg1;
 - (void)reset;
 - (float)rms;
 - (void)setDelegate:(id)arg1;

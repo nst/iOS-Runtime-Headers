@@ -10,6 +10,7 @@
 - (void)voiceControllerDidDetectEndpoint:(AVVoiceController *)arg1 ofType:(int)arg2;
 - (void)voiceControllerDidDetectEndpoint:(AVVoiceController *)arg1 ofType:(int)arg2 atTime:(double)arg3;
 - (void)voiceControllerDidDetectStartpoint:(AVVoiceController *)arg1;
+- (void)voiceControllerDidFinishAlertPlayback:(AVVoiceController *)arg1 ofType:(int)arg2 error:(NSError *)arg3;
 - (void)voiceControllerDidSetAudioSessionActive:(AVVoiceController *)arg1 isActivated:(bool)arg2;
 - (void)voiceControllerDidStartRecording:(AVVoiceController *)arg1 successfully:(bool)arg2;
 - (void)voiceControllerDidStartRecording:(AVVoiceController *)arg1 successfully:(bool)arg2 error:(NSError *)arg3;

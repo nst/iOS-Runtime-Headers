@@ -4,6 +4,7 @@
 
 @interface MPAVController : NSObject <AVAudioSessionDelegateMediaPlayerOnly, ICEnvironmentMonitorObserver, MPAVPlaylistManagerDelegate, MPAVRoutingControllerDelegate> {
     unsigned int  _activeRewindHoldingAtStart;
+    bool  _allowsExternalPlaybackError;
     bool  _allowsItemErrorResolution;
     unsigned int  _alwaysPlayWheneverPossible;
     bool  _appHasBeenSuspended;
@@ -126,6 +127,7 @@
 @property (nonatomic, readonly) AVAudioSessionMediaPlayerOnly *_playerAVAudioSession;
 @property (nonatomic, readonly) long long activeRepeatType;
 @property (nonatomic, readonly) long long activeShuffleType;
+@property (nonatomic) bool allowsExternalPlaybackError;
 @property (nonatomic) bool alwaysPlayWheneverPossible;
 @property (nonatomic) bool autoPlayWhenLikelyToKeepUp;
 @property (nonatomic) bool automaticallyHidesVideoLayersForMusicVideosWhenApplicationBackgrounds;
@@ -192,6 +194,7 @@
 + (bool)prefersApplicationAudioSession;
 
 - (void).cxx_destruct;
+- (void)_airPlayFailedUnsupportedVideoFormatForDeviceWithError:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
@@ -310,6 +313,7 @@
 - (void)_updateCurrentItemBookkeepingMarkedAsCheckpoint:(bool)arg1;
 - (void)_updateCurrentItemDurationSnapshotWithPlayerTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_updateCurrentItemHasFinishedDownloading;
+- (void)_updateHasProtectedContentForItem:(id)arg1;
 - (void)_updateLastSetTimeForCurrentItemIfNeeded;
 - (void)_updatePlaybackModeForItem:(id)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
@@ -326,6 +330,7 @@
 - (void)airPlayFailedRentalDownloadRequired;
 - (void)airPlayVideoEnded;
 - (bool)allowsExternalPlayback;
+- (bool)allowsExternalPlaybackError;
 - (bool)alwaysPlayWheneverPossible;
 - (void)applyRepeatSettings;
 - (void)applyShuffleSettings;
@@ -414,6 +419,7 @@
 - (void)routingControllerDidPauseFromActiveRouteChange:(id)arg1;
 - (void)routingControllerExternalScreenTypeDidChange:(id)arg1;
 - (void)setActive:(bool)arg1;
+- (void)setAllowsExternalPlaybackError:(bool)arg1;
 - (void)setAlwaysPlayWheneverPossible:(bool)arg1;
 - (void)setAutoPlayWhenLikelyToKeepUp:(bool)arg1;
 - (void)setAutoclearingDisplayOverridePlaybackState:(long long)arg1;

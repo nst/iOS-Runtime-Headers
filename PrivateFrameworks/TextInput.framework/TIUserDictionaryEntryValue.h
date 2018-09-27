@@ -19,7 +19,7 @@
 + (bool)supportsSecureCoding;
 + (id)valueWithEntry:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

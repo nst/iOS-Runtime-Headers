@@ -42,6 +42,7 @@
 @property (nonatomic, readonly) bool allowsCellularAccess;
 @property (nonatomic, readonly) bool allowsPowerNapScheduling;
 @property (nonatomic, readonly) NSString *authPromptReason;
+@property (nonatomic, readonly) bool automaticallyRetryNetworkFailures;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) NSMutableArray *childOperations;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *childOperationsGroup;
@@ -51,6 +52,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *deviceIdentifier;
+@property (nonatomic, readonly) unsigned long long discretionaryNetworkBehavior;
 @property (retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *finishedChildOperationIDs;
 @property (nonatomic, readonly) NSString *flowControlKey;
@@ -67,6 +69,7 @@
 @property (nonatomic, readonly) NSString *operationID;
 @property (nonatomic, retain) CKOperationInfo *operationInfo;
 @property (nonatomic, readonly) CKOperationResult *operationResult;
+@property (nonatomic, readonly) NSObject<OS_os_activity> *osActivity;
 @property (nonatomic) CKDOperation *parentOperation;
 @property (nonatomic) int pcsWaitCount;
 @property (nonatomic, retain) <NSObject> *powerAssertion;
@@ -127,6 +130,7 @@
 - (bool)allowsCellularAccess;
 - (bool)allowsPowerNapScheduling;
 - (id)authPromptReason;
+- (bool)automaticallyRetryNetworkFailures;
 - (void)beginUserSyncTask;
 - (id)callbackQueue;
 - (void)cancel;
@@ -145,6 +149,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)deviceIdentifier;
+- (unsigned long long)discretionaryNetworkBehavior;
 - (id)error;
 - (void)fillOutOperationResult:(id)arg1;
 - (void)finishWithError:(id)arg1;
@@ -175,6 +180,7 @@
 - (id)operationResult;
 - (Class)operationResultClass;
 - (bool)operationShouldBeFlowControlled;
+- (id)osActivity;
 - (id)parentOperation;
 - (int)pcsWaitCount;
 - (id)powerAssertion;

@@ -7,6 +7,7 @@
     unsigned long long  _currentContent;
     NTKCompanionCustomPhotosEditor * _customPhotosEditor;
     NSArray * _externalAssets;
+    NTKCompanionMemoriesEditor * _memoriesEditor;
     UIViewController * _parentViewController;
     NTKCompanionSyncedAlbumEditor * _syncedAlbumEditor;
     NTKCompanionTransientCustomPhotosEditor * _transientEditor;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NTKBasePhotosFaceView *faceView;
 @property (nonatomic, readonly) bool hasChanges;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NTKCompanionMemoriesEditor *memoriesEditor;
 @property (nonatomic) UIViewController *parentViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NTKCompanionSyncedAlbumEditor *syncedAlbumEditor;
@@ -44,10 +46,12 @@
 - (void)faceDidChangeResourceDirectory;
 - (bool)hasChanges;
 - (id)initWithTableView:(id)arg1 face:(id)arg2 inGallery:(bool)arg3 editOptionCollection:(id)arg4 faceView:(id)arg5 externalAssets:(id)arg6;
+- (id)memoriesEditor;
 - (id)parentViewController;
 - (void)saveChangesWithCompletion:(id /* block */)arg1;
 - (void)setCustomPhotosEditor:(id)arg1;
 - (void)setExternalAssets:(id)arg1;
+- (void)setMemoriesEditor:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSelectedOptions:(id)arg1;
 - (void)setSyncedAlbumEditor:(id)arg1;

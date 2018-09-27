@@ -13,13 +13,13 @@
 
 @property (nonatomic, readonly) NSArray *profiles;
 
+- (void).cxx_destruct;
 - (void)_acceptApplicationSignatureIdentity;
 - (id)_initWithApplicationInfo:(id)arg1 andProvisioningProfiles:(id)arg2 isManaged:(bool)arg3;
 - (void)_initializeProfiles:(id)arg1;
 - (id)_workQueue_expirationDateForProvisioningProfile;
 - (bool)_workQueue_signatureNeedsExplicitUserTrust;
 - (void)acknowledgeTrust;
-- (void)dealloc;
 - (id)profiles;
 - (unsigned long long)trustState;
 - (unsigned long long)trustStateWithTrustRequiredReasons:(unsigned long long*)arg1;

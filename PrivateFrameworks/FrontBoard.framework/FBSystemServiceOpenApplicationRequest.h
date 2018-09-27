@@ -16,9 +16,9 @@
 
 + (id)request;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)clientProcess;
-- (void)dealloc;
 - (id)description;
 - (bool)isTrusted;
 - (id)options;

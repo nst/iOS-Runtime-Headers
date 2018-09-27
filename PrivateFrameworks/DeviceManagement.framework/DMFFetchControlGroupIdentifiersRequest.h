@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchControlGroupIdentifiersRequest : CATTaskRequest {
+@interface DMFFetchControlGroupIdentifiersRequest : DMFTaskRequest {
     bool  _includeTemporary;
     NSString * _leaderIdentifier;
 }

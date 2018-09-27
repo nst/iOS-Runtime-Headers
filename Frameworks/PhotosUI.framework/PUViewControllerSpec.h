@@ -12,6 +12,7 @@
         double width; 
         double height; 
     }  _layoutReferenceSize;
+    bool  _prefersCompactLayoutForSplitScreen;
     bool  _presentedForSecondScreen;
     struct CGSize { 
         double width; 
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) PUViewControllerSpecChange *currentChange;
 @property (nonatomic, readonly) long long currentLayoutStyle;
 @property (nonatomic) struct CGSize { double x1; double x2; } layoutReferenceSize;
+@property (nonatomic) bool prefersCompactLayoutForSplitScreen;
 @property (getter=isPresentedForSecondScreen, nonatomic) bool presentedForSecondScreen;
 @property (nonatomic) struct CGSize { double x1; double x2; } secondScreenSize;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
@@ -37,6 +39,7 @@
 - (void)_didChange;
 - (void)_invalidateLayoutStyle;
 - (bool)_needsUpdateLayoutStyle;
+- (struct CGSize { double x1; double x2; })_portraitOrientedSizeForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_publishChange:(id)arg1;
 - (void)_setChangeCount:(long long)arg1;
 - (void)_setCurrentChange:(id)arg1;
@@ -53,9 +56,11 @@
 - (struct CGSize { double x1; double x2; })layoutReferenceSize;
 - (id)newSpecChange;
 - (void)performChanges:(id /* block */)arg1;
+- (bool)prefersCompactLayoutForSplitScreen;
 - (void)registerChangeObserver:(id)arg1;
 - (struct CGSize { double x1; double x2; })secondScreenSize;
 - (void)setLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPrefersCompactLayoutForSplitScreen:(bool)arg1;
 - (void)setPresentedForSecondScreen:(bool)arg1;
 - (void)setSecondScreenSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTraitCollection:(id)arg1;

@@ -8,6 +8,7 @@
 - (void)accountAdded:(ACAccount *)arg1;
 - (void)accountChanged:(ACAccount *)arg1;
 - (void)accountRemoved:(ACAccount *)arg1;
+- (void)accountsDidNotChange;
 - (void)donating:(CNDonationValue *)arg1;
 - (void)donationFailedWithError:(NSError *)arg1;
 - (void)pluginLoaded;

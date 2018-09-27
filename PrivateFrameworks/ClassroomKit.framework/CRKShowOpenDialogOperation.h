@@ -39,6 +39,6 @@
 - (void)transferDidProgressWithSuccess:(bool)arg1 destinationPath:(id)arg2 error:(id)arg3;
 - (void)transferDidStartWithSuccess:(bool)arg1 destinationPath:(id)arg2 error:(id)arg3;
 - (void)transferWithIdentifierWasAccepted:(id)arg1;
-- (void)transferWithIdentifierWasDeclined:(id)arg1;
+- (void)transferWithIdentifierWasDeclined:(id)arg1 withFailureReason:(unsigned long long)arg2;
 
 @end

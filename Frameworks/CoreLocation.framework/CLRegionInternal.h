@@ -26,6 +26,7 @@
                 double radius; 
                 double desiredAccuracy; 
                 int referenceFrame; 
+                bool allowMonitoringWhileNearby; 
             } circularAttributes; 
         } ; 
     }  _clientRegion;

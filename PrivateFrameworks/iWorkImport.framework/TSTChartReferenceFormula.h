@@ -4,7 +4,7 @@
 
 @interface TSTChartReferenceFormula : TSTWrappedFormula
 
-- (id)initWithCalculationEngine:(id)arg1 expressionTree:(id)arg2 hostCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 hostTable:(id)arg4;
+- (id)initWithCalculationEngine:(id)arg1 expressionTree:(id)arg2 baseHostCell:(struct TSUModelCellCoord { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; })arg3 hostTable:(id)arg4;
 - (void)reparseWithStorage:(id)arg1;
 
 @end

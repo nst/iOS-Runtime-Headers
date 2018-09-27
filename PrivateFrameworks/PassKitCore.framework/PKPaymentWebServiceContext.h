@@ -55,6 +55,7 @@
 - (id)TSMURLStringByPushTopic;
 - (double)_contextProvisioningEnablementValue;
 - (void)addVerificationRequestRecord:(id)arg1 forUniqueID:(id)arg2;
+- (id)betaPaymentNetworksForRegion:(id)arg1;
 - (id)certificates;
 - (id)companionSerialNumber;
 - (id)configuration;

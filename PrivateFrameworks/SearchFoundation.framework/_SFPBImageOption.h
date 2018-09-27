@@ -11,9 +11,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSString *defaultValue;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasDefaultValue;
-@property (nonatomic, readonly) bool hasName;
-@property (nonatomic, readonly) bool hasOptions;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSString *name;
@@ -23,9 +20,6 @@
 - (void).cxx_destruct;
 - (id)defaultValue;
 - (id)dictionaryRepresentation;
-- (bool)hasDefaultValue;
-- (bool)hasName;
-- (bool)hasOptions;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

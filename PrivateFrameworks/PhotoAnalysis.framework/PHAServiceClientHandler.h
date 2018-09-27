@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
  */
 
-@interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PLPhotoAnalysisServiceProtocol> {
+@interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PHAGraphRegistration, PHAServiceOperationHandling, PLPhotoAnalysisServiceProtocol> {
     NSMapTable * _cancelableOperationsById;
     NSString * _clientBundleID;
+    NSMutableArray * _clientHandlers;
     PHAExecutive * _executive;
+    unsigned long long  _graphLoadCount;
+    NSObject<OS_dispatch_group> * _graphReady;
     NSObject<OS_dispatch_semaphore> * _invalidationSemaphore;
     PHAManager * _photoAnalysisManager;
     id  _serviceUnavailableHandler;
@@ -34,10 +37,18 @@
 - (id)description;
 - (id)executive;
 - (id)forwardingTargetForInvocation:(id)arg1 contextInformation:(id)arg2;
+- (void)graphBecameReady:(id)arg1 forPHAGraphManager:(id)arg2;
+- (void)graphUpdateDidStop;
+- (void)graphUpdateIsConsistent;
+- (void)graphUpdateMadeProgress:(double)arg1;
+- (void)handleOperation:(id)arg1;
 - (id)init;
 - (id)initWithXPCConnection:(id)arg1 executive:(id)arg2;
 - (id)invalidationSemaphore;
+- (bool)isPhotos;
+- (bool)isplphotosctl;
 - (id)libraryURLFromContextInformation:(id)arg1;
+- (void)loadGraphWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (id)managerForInvocation:(id)arg1 contextInformation:(id)arg2;
 - (id)photoAnalysisManager;
 - (id)serviceUnavailableHandler;
@@ -50,6 +61,9 @@
 - (id)sharedOperationLock;
 - (void)shutdown;
 - (void)submitBlockToExecutiveStateQueue:(id /* block */)arg1;
+- (void)unloadGraphWithContext:(id)arg1 reply:(id /* block */)arg2;
+- (bool)wantsGraphUpdateNotifications;
+- (bool)wantsLiveGraphUpdates;
 - (id)xpcConnection;
 
 @end

@@ -3,14 +3,12 @@
  */
 
 @interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDCompatibilityAwareMediaContainer, TSDMixing, TSDReducibleImageContainer, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
-    TSCHChartDrawableInfoProxy * _chartDrawableInfoProxy;
     TSCHChartInfo * mChart;
     TSCHChunkManager * mChunkManager;
     TSPObject<TSCHMediatorProvider> * mMediatorPersistentObject;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chart;
-@property (nonatomic) TSCHChartDrawableInfoProxy *chartDrawableInfoProxy;
 @property (nonatomic, readonly) TSCHChunkManager *chunkManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -33,7 +31,6 @@
 - (bool)canSizeBeChangedIncrementally;
 - (id)changeDetailsForCustomFormatListDidUpdateToCustomFormat:(id)arg1;
 - (id)chart;
-- (id)chartDrawableInfoProxy;
 - (id)childInfos;
 - (unsigned long long)chunkCountForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2;
 - (id)chunkManager;
@@ -74,12 +71,11 @@
 - (void)reassignPasteboardCustomFormatKeys;
 - (id)referencedStyles;
 - (bool)registerLast;
-- (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
+- (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 - (Class)repClass;
 - (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (bool)requiresStagesBuildingInReverse;
 - (void)saveToArchiver:(id)arg1;
-- (void)setChartDrawableInfoProxy:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGeometry:(id)arg1 omitLegendResize:(bool)arg2;
 - (void)setInsertionCenterPosition:(struct CGPoint { double x1; double x2; })arg1;
@@ -94,7 +90,7 @@
 - (id)textureDeliveryStylesLocalized:(bool)arg1 animationFilter:(id)arg2;
 - (id)transformedGeometryWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)tsaMoveToPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (void)unregisterFromCalculationEngine:(id)arg1;
+- (void)unregisterFromCalcEngine:(id)arg1;
 - (void)upgradeFormatsForCustomFormatListU2_0;
 - (bool)validatedLoadFromUnarchiver:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBoundsForPositioning;

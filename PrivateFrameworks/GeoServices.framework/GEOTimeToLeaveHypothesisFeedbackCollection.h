@@ -45,7 +45,6 @@
 - (int)StringAsUiNotification:(id)arg1;
 - (int)arrival;
 - (id)arrivalAsString:(int)arg1;
-- (int)bucketValueForTimeDelta:(double)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)departure;
@@ -63,7 +62,6 @@
 - (bool)hasNumberOfReroutes;
 - (bool)hasUiNotification;
 - (unsigned long long)hash;
-- (id)initWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned long long)arg5 uiNotification:(unsigned long long)arg6;
 - (bool)isEqual:(id)arg1;
 - (double)latestArrivalOffset;
 - (double)latestDepartureOffset;

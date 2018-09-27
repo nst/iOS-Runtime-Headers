@@ -30,6 +30,7 @@
     NSArray * _paymentErrors;
     PKPaymentRequest * _paymentRequest;
     PKPaymentWebService * _paymentWebService;
+    PKPaymentPass * _peerPaymentPass;
     PKPeerPaymentQuote * _peerPaymentQuote;
     PKPeerPaymentService * _peerPaymentService;
     NSArray * _pendingTransactions;
@@ -80,6 +81,7 @@
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (nonatomic, retain) NSArray *paymentSummaryItems;
 @property (nonatomic, retain) PKPaymentWebService *paymentWebService;
+@property (nonatomic, retain) PKPaymentPass *peerPaymentPass;
 @property (nonatomic, retain) PKPeerPaymentQuote *peerPaymentQuote;
 @property (nonatomic, retain) PKPeerPaymentService *peerPaymentService;
 @property (nonatomic, retain) NSArray *pendingTransactions;
@@ -105,11 +107,12 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 - (void).cxx_destruct;
+- (id)_defaultSelectedPaymentApplicationForPaymentApplications:(id)arg1;
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePaymentContentItems;
 - (void)_ensurePlaceholderItems;
-- (id)_filterAndProcessPaymentApplicationsUsingConfigurationForPass:(id)arg1;
+- (id)_filterAndProcessPaymentApplicationsUsingConfiguration:(id)arg1 withPrimaryPaymentApplication:(id)arg2;
 - (id)_filterAndProcessPaymentPassesUsingConfiguration:(id)arg1;
 - (id)_inAppPaymentPassesForPaymentRequest:(id)arg1;
 - (id)_inAppPrivateLabelPaymentPasses;
@@ -119,8 +122,10 @@
 - (void)_setPaymentContentDataItems:(id)arg1;
 - (void)_setStatus:(long long)arg1 forPass:(id)arg2;
 - (long long)_statusForPass:(id)arg1;
+- (void)_updatePeerPaymentPromotionAvailability;
 - (id)acceptedPasses;
 - (id)acceptedPaymentApplicationsForPass:(id)arg1;
+- (id)acceptedPaymentApplicationsForRemoteInstrument:(id)arg1;
 - (id)acceptedRemotePaymentInstrumentsForRemoteDevice:(id)arg1;
 - (id)allAcceptedRemotePaymentInstruments;
 - (id)allNearbyRemoteDevices;
@@ -132,6 +137,8 @@
 - (id)cachedRecentAddress;
 - (id)currencyCode;
 - (id)defaultPaymentPassUniqueIdentifier;
+- (id)defaultSelectedPaymentApplicationForPass:(id)arg1;
+- (id)defaultSelectedPaymentApplicationForRemoteInstrument:(id)arg1;
 - (id)defaults;
 - (void)endUpdates;
 - (id)hostAppLocalizedName;
@@ -156,6 +163,7 @@
 - (id)paymentRequest;
 - (id)paymentSummaryItems;
 - (id)paymentWebService;
+- (id)peerPaymentPass;
 - (id)peerPaymentQuote;
 - (id)peerPaymentService;
 - (id)pendingTransactions;
@@ -173,7 +181,7 @@
 - (void)setInstructions:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPass:(id)arg1;
-- (void)setPass:(id)arg1 paymentApplication:(id)arg2;
+- (void)setPass:(id)arg1 withSelectedPaymentApplication:(id)arg2;
 - (void)setPayment:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
 - (void)setPaymentContentItems:(id)arg1;
@@ -181,12 +189,14 @@
 - (void)setPaymentRequest:(id)arg1;
 - (void)setPaymentSummaryItems:(id)arg1;
 - (void)setPaymentWebService:(id)arg1;
+- (void)setPeerPaymentPass:(id)arg1;
 - (void)setPeerPaymentQuote:(id)arg1;
 - (void)setPeerPaymentService:(id)arg1;
 - (void)setPendingTransactions:(id)arg1;
 - (void)setRecents:(id)arg1;
 - (void)setRemoteDevice:(id)arg1;
 - (void)setRemotePaymentInstrument:(id)arg1;
+- (void)setRemotePaymentInstrument:(id)arg1 withSelectedPaymentApplication:(id)arg2;
 - (void)setShippingAddress:(id)arg1;
 - (void)setShippingAddressErrors:(id)arg1;
 - (void)setShippingEditable:(bool)arg1;
@@ -210,6 +220,7 @@
 - (id)transactionAmount;
 - (id)unavailablePasses;
 - (id)unavailablePaymentApplicationsForPass:(id)arg1;
+- (id)unavailablePaymentApplicationsForRemoteInstrument:(id)arg1;
 - (void)updateBillingErrors;
 - (id /* block */)updateHandler;
 - (void)updateRemoteDevices:(id)arg1;

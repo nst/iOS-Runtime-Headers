@@ -19,6 +19,10 @@
     NSString * _processName;
     unsigned long long  _processUniqueID;
     unsigned long long  _threadID;
+    long long  _tv_sec;
+    int  _tv_usec;
+    int  _tz_dsttime;
+    int  _tz_minuteswest;
 }
 
 @property (nonatomic) bool _hasTotalFrames;
@@ -37,8 +41,11 @@
 @property (nonatomic, readonly) bool overridesEndTime;
 @property (nonatomic, readonly) bool overridesTime;
 @property (nonatomic) unsigned long long overridingBeginMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long overridingBeginNanoseconds;
 @property (nonatomic) unsigned long long overridingEmitMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long overridingEmitNanoseconds;
 @property (nonatomic) unsigned long long overridingEndMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long overridingEndNanoseconds;
 @property (nonatomic) int processID;
 @property (nonatomic, retain) NSString *processImagePath;
 @property (nonatomic, retain) NSUUID *processImageUUID;
@@ -47,12 +54,21 @@
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long threadID;
 @property (nonatomic, readonly) unsigned long long timeRecordedMachContinuousTime;
+@property (nonatomic, readonly) unsigned long long timeRecordedNanoseconds;
+@property (nonatomic) long long tv_sec;
+@property (nonatomic) int tv_usec;
+@property (nonatomic) int tz_dsttime;
+@property (nonatomic) int tz_minuteswest;
 
 // Image: /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
 
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
+- (void)_adjustBeginTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (void)_adjustEndTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (void)_adjustTimeStruct:(struct timeval { long long x1; int x2; }*)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
 - (bool)_hasTotalFrames;
 - (id)_key;
 - (unsigned long long)_machContinuousTimestamp;
@@ -60,11 +76,14 @@
 - (unsigned long long)_resolvedTime;
 - (unsigned long long)_totalFrameCount;
 - (id)debugDescription;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (unsigned long long)durationMachContinuousTime;
 - (float)durationSeconds;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)eventType;
+- (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval { long long x1; int x2; }*)arg4 unixTimeZone:(struct timezone { int x1; int x2; }*)arg5;
 - (bool)isAnimationStart;
 - (bool)isEqual:(id)arg1;
 - (id)metadata;
@@ -74,14 +93,16 @@
 - (bool)overridesEndTime;
 - (bool)overridesTime;
 - (unsigned long long)overridingBeginMachContinuousTime;
+- (unsigned long long)overridingBeginNanoseconds;
 - (unsigned long long)overridingEmitMachContinuousTime;
+- (unsigned long long)overridingEmitNanoseconds;
 - (unsigned long long)overridingEndMachContinuousTime;
+- (unsigned long long)overridingEndNanoseconds;
 - (int)processID;
 - (id)processImagePath;
 - (id)processImageUUID;
 - (id)processName;
 - (unsigned long long)processUniqueID;
-- (id)serializeableDictionary;
 - (void)setEventType:(unsigned long long)arg1;
 - (void)setIsAnimationStart:(bool)arg1;
 - (void)setMetadata:(id)arg1;
@@ -95,17 +116,27 @@
 - (void)setProcessName:(id)arg1;
 - (void)setProcessUniqueID:(unsigned long long)arg1;
 - (void)setThreadID:(unsigned long long)arg1;
+- (void)setTv_sec:(long long)arg1;
+- (void)setTv_usec:(int)arg1;
+- (void)setTz_dsttime:(int)arg1;
+- (void)setTz_minuteswest:(int)arg1;
 - (void)set_hasTotalFrames:(bool)arg1;
 - (void)set_machContinuousTimestamp:(unsigned long long)arg1;
 - (void)set_totalFrameCount:(unsigned long long)arg1;
 - (unsigned long long)startMachContinuousTime;
 - (unsigned long long)threadID;
 - (unsigned long long)timeRecordedMachContinuousTime;
+- (unsigned long long)timeRecordedNanoseconds;
+- (long long)tv_sec;
+- (int)tv_usec;
+- (int)tz_dsttime;
+- (int)tz_minuteswest;
 
 // Image: /System/Library/PrivateFrameworks/SignpostCollection.framework/SignpostCollection
 
-- (id)_parseMessage:(id)arg1;
+- (unsigned long long)_extractValuesFromStr:(const char *)arg1 strlen:(unsigned long long)arg2 startIndex:(unsigned long long)arg3 results:(struct metadata_parsing_results { char *x1; char *x2; char *x3; char *x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; }*)arg4;
 - (id)_parseMetadata:(id)arg1;
+- (bool)_processName:(id)arg1 formatterName:(id)arg2 formatType:(id)arg3 value:(id)arg4;
 - (id)initWithOSLogEventProxy:(id)arg1;
 
 @end

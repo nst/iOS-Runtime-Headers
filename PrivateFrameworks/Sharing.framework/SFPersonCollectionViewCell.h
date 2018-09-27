@@ -60,6 +60,9 @@
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) bool stateBeingRestored;
 
++ (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForString:(id)arg1 viewWidth:(double)arg2 sizeCategory:(id)arg3;
++ (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForViewWidth:(double)arg1 sizeCategory:(id)arg2;
+
 - (void).cxx_destruct;
 - (void)_updateForCurrentSizeCategory;
 - (double)activitySheetWidth;

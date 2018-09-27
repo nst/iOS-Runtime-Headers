@@ -33,6 +33,7 @@
     bool  _animatesImageAppearance;
     <PUDisplayAsset> * _asset;
     PUAssetViewModel * _assetViewModel;
+    bool  _canUseFullsizeTiledLayer;
     UIImage * _image;
     bool  _imageIsFullQuality;
     PXImageLayerModulator * _imageLayerModulator;
@@ -63,6 +64,7 @@
 @property (nonatomic) bool animatesImageAppearance;
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
+@property (nonatomic) bool canUseFullsizeTiledLayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -142,6 +144,7 @@
 - (id)assetViewModel;
 - (void)assetViewModelDidChange;
 - (void)becomeReusable;
+- (bool)canUseFullsizeTiledLayer;
 - (void)dealloc;
 - (void)didChangeVisibleRect;
 - (id)generateAssetTransitionInfo;
@@ -157,6 +160,7 @@
 - (void)setAnimatesImageAppearance:(bool)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setAssetViewModel:(id)arg1;
+- (void)setCanUseFullsizeTiledLayer:(bool)arg1;
 - (void)setEdgeAntialiasingEnabled:(bool)arg1;
 - (void)setImageLayerModulator:(id)arg1;
 - (void)setImageModulationManager:(id)arg1;

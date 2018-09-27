@@ -41,6 +41,7 @@
 - (void)_regenerateDisplayName;
 - (id)description;
 - (id)displayName;
+- (void)encodeServerAndDeviceDataWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasCloudArchivableDeviceData;
@@ -53,6 +54,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToMerchant:(id)arg1;
 - (bool)isValid;
+- (unsigned long long)itemType;
 - (id)jsonDictionaryRepresentation;
 - (id)location;
 - (double)locationLatitude;

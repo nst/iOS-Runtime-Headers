@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMApplicationData : NSObject <HFPrettyDescription, HFStateDumpSerializable> {
+@interface HMApplicationData : NSObject <HFStateDumpBuildable> {
     NSSet * _allowedObjectClasses;
     NSMutableDictionary * _applicationData;
 }
@@ -40,7 +40,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

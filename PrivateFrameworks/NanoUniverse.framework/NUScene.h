@@ -5,6 +5,7 @@
 @interface NUScene : NSObject <NUAnimatable> {
     NSMutableArray * _animations;
     unsigned long long  _backgroundType;
+    unsigned long long  _collectionType;
     id /* block */  _currentDateBlock;
     NSDate * _date;
     NUSpheroid * _focus;
@@ -24,8 +25,9 @@
 
 @property (nonatomic, readonly) int acceptableFrameInterval;
 @property (nonatomic) unsigned long long backgroundType;
+@property (nonatomic) unsigned long long collectionType;
 @property (nonatomic, copy) id /* block */ currentDateBlock;
-@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NUSpheroid *focus;
@@ -40,7 +42,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) void target;
 @property (nonatomic, readonly) void up;
-@property (nonatomic) bool updatable;
+@property (getter=isUpdatable, nonatomic) bool updatable;
 @property (nonatomic, readonly) float yearsSince1970;
 
 - (void).cxx_destruct;
@@ -48,11 +50,13 @@
 - (void)addAnimation:(id)arg1;
 - (void)animatedFloatForKey:(unsigned long long)arg1;
 - (unsigned long long)backgroundType;
+- (unsigned long long)collectionType;
 - (id /* block */)currentDateBlock;
 - (id)date;
 - (id)focus;
 - (id)initWithSphereoids:(unsigned long long)arg1 currentDateBlock:(id /* block */)arg2;
 - (bool)isAnimating:(id)arg1 forKeys:(unsigned long long)arg2;
+- (bool)isUpdatable;
 - (int)minFrameInterval;
 - (float)orbit;
 - (void)position;
@@ -63,8 +67,8 @@
 - (void)setAnimatedFloat:(void *)arg1 forKey:(void *)arg2; // needs 2 arg types, found 1: unsigned long long
 - (void)setBackgroundType:(unsigned long long)arg1;
 - (void)setCamera:(void *)arg1 target:(void *)arg2 up:(void *)arg3 roll:(void *)arg4; // needs 4 arg types, found 1: float
+- (void)setCollectionType:(unsigned long long)arg1;
 - (void)setCurrentDateBlock:(id /* block */)arg1;
-- (void)setDate:(id)arg1;
 - (void)setFocus:(id)arg1;
 - (void)setMinFrameInterval:(int)arg1;
 - (void)setOrbit:(float)arg1;
@@ -77,11 +81,9 @@
 - (id)spheroids;
 - (void)target;
 - (void)up;
-- (bool)updatable;
 - (void)update:(float)arg1;
 - (void)updateFromDateIfNeeded;
-- (void)updateSunLocation;
-- (void)updateSunLocationForDate:(id)arg1 animated:(bool)arg2;
+- (void)updateSunLocationAnimated:(bool)arg1;
 - (float)yearsSince1970;
 
 @end

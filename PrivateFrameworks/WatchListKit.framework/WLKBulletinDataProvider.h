@@ -24,6 +24,7 @@
 - (id)displayNameForSubsectionID:(id)arg1;
 - (void)handleBulletinActionResponse:(id)arg1;
 - (id)sectionIdentifier;
+- (id)sectionParameters;
 - (void)setBulletinStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)sortDescriptors;

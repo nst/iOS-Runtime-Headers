@@ -6,12 +6,14 @@
     CKContainer * _container;
     NSOperationQueue * _operationQueue;
     long long  _scope;
+    NSObject<OS_dispatch_queue> * _underlyingDispatchQueue;
 }
 
 @property (nonatomic) CKContainer *container;
 @property (nonatomic, readonly) long long databaseScope;
 @property (nonatomic, readonly) NSOperationQueue *operationQueue;
 @property (nonatomic, readonly) long long scope;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *underlyingDispatchQueue;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -47,6 +49,8 @@
 - (void)saveSubscription:(id)arg1 completionHandler:(id /* block */)arg2;
 - (long long)scope;
 - (void)setContainer:(id)arg1;
+- (void)setUnderlyingDispatchQueue:(id)arg1;
 - (void)showAssetCache;
+- (id)underlyingDispatchQueue;
 
 @end

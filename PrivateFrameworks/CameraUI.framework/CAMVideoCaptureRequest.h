@@ -11,6 +11,7 @@
     bool  _shouldGenerateVideoPreviewImage;
     bool  _timelapse;
     long long  _torchMode;
+    double  _userInitationTimestamp;
 }
 
 @property (nonatomic, readonly) long long captureVideoConfiguration;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) bool shouldGenerateVideoPreviewImage;
 @property (getter=isTimelapse, nonatomic, readonly) bool timelapse;
 @property (nonatomic, readonly) long long torchMode;
+@property (nonatomic, readonly) double userInitationTimestamp;
 
 - (void).cxx_destruct;
 - (long long)captureVideoConfiguration;
@@ -36,5 +38,6 @@
 - (long long)remainingDiskUsageThreshold;
 - (bool)shouldGenerateVideoPreviewImage;
 - (long long)torchMode;
+- (double)userInitationTimestamp;
 
 @end

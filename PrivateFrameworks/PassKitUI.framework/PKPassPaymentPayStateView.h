@@ -16,6 +16,7 @@
     long long  _state;
     long long  _style;
     bool  _touchRecognizingHint;
+    bool  _useSmallStyleGlyph;
 }
 
 @property (nonatomic) bool accessPass;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic) bool touchRecognizingHint;
+@property (nonatomic) bool useSmallStyleGlyph;
 
 - (void).cxx_destruct;
 - (void)_applyStatePreservingGlyphState:(bool)arg1 overridingText:(id)arg2 animated:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -47,12 +49,13 @@
 - (void)dealloc;
 - (id)debugLabel;
 - (id)delegate;
-- (void)emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2;
+- (void)emphasizeStateIfPossible:(long long)arg1 withOverrideText:(id)arg2;
 - (id)glyph;
 - (void)glyphView:(id)arg1 revealingCheckmark:(bool)arg2;
 - (id)initWithStyle:(long long)arg1;
 - (id)label;
 - (double)labelAlpha;
+- (bool)labelWillChangeForState:(long long)arg1 withOverrideText:(id)arg2;
 - (void)layoutSubviews;
 - (bool)persistentEmulationHint;
 - (void)setAccessPass:(bool)arg1;
@@ -61,10 +64,12 @@
 - (void)setLabelAlpha:(double)arg1;
 - (void)setPersistentEmulationHint:(bool)arg1;
 - (void)setState:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)setState:(long long)arg1 preservingGlyphState:(bool)arg2 overridingText:(id)arg3 animated:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (void)setState:(long long)arg1 animated:(bool)arg2 withOverrideText:(id)arg3 preserveGlyphState:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)setTouchRecognizingHint:(bool)arg1;
+- (void)setUseSmallStyleGlyph:(bool)arg1;
 - (long long)state;
 - (bool)touchRecognizingHint;
 - (void)updateDebugLabel:(id)arg1 isErrorState:(bool)arg2;
+- (bool)useSmallStyleGlyph;
 
 @end

@@ -37,7 +37,8 @@
     bool  _hasFullQuality;
     UIImage * _image;
     bool  _isInCloud;
-    PXUIMediaProvider * _mediaProvider;
+    double  _loadingProgress;
+    <PXUIImageProvider> * _mediaProvider;
     struct { 
         bool targetSize; 
         bool imageRequest; 
@@ -64,7 +65,8 @@
 @property (readonly) unsigned long long hash;
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setIsInCloud:, nonatomic) bool isInCloud;
-@property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
+@property (setter=_setLoadingProgress:, nonatomic) double loadingProgress;
+@property (nonatomic, readonly) <PXUIImageProvider> *mediaProvider;
 @property (setter=_setOpportunisticImage:, nonatomic, retain) UIImage *opportunisticImage;
 @property (nonatomic, readonly) double scale;
 @property (readonly) Class superclass;
@@ -76,6 +78,7 @@
 - (void)_cancelRequests;
 - (id)_currentImageSourceAsset;
 - (id)_currentRequest;
+- (void)_handleProgressForImageRequest:(id)arg1 progress:(double)arg2;
 - (void)_handleResultOfImageRequest:(id)arg1 image:(id)arg2 info:(id)arg3;
 - (void)_invalidateImageRequest;
 - (void)_invalidateIsInCloud;
@@ -86,6 +89,7 @@
 - (void)_setHasFullQuality:(bool)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setIsInCloud:(bool)arg1;
+- (void)_setLoadingProgress:(double)arg1;
 - (void)_setOpportunisticImage:(id)arg1;
 - (void)_setTargetSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })_targetSize;
@@ -107,6 +111,7 @@
 - (id)init;
 - (id)initWithMediaProvider:(id)arg1 asset:(id)arg2;
 - (bool)isInCloud;
+- (double)loadingProgress;
 - (id)mediaProvider;
 - (id)mutableChangeObject;
 - (id)opportunisticImage;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration, SGHeaderCollection>
+@interface NSMapTable : NSObject <MPCSupportedCommands, NSCopying, NSFastEnumeration, NSSecureCoding, SGHeaderCollection>
 
 @property (readonly) unsigned long long count;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 + (id)mapTableWithWeakToWeakObjects;
 + (id)strongToStrongObjectsMapTable;
 + (id)strongToWeakObjectsMapTable;
++ (bool)supportsSecureCoding;
 + (id)weakToStrongObjectsMapTable;
 + (id)weakToWeakObjectsMapTable;
 
@@ -78,6 +79,10 @@
 - (void)bs_setSafeObject:(id)arg1 forKey:(id)arg2;
 - (id)bs_takeObjectForKey:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
+
++ (id)bw_strongVideoRequirementToStrongObjectsMapTable;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 + (id)sg_headerKeyFunctions;
@@ -96,6 +101,10 @@
 
 - (id)allKeys;
 
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (struct _MRMediaRemoteCommandInfo { }*)commandInfoForCommand:(unsigned int)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (id)fc_objectsForKeys:(id)arg1;
@@ -108,11 +117,6 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)pk_weakPointerPersonalityToStrongObjectsMapTable;
-
-// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
-
-- (double)_clsScoreForItem:(id)arg1;
-- (double)_clsScoreForItem:(id)arg1 withContext:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 
@@ -143,5 +147,6 @@
 - (void)tsp_removeObjectForIdentifier:(long long)arg1;
 - (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 - (id)tsu_allKeys;
+- (id)tsu_allObjects;
 
 @end

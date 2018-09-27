@@ -8,11 +8,16 @@
     NSString * _altDSID;
     NSString * _artworkPath;
     NSString * _bundleID;
+    NSString * _bundleVersion;
+    NSString * _cohort;
+    NSString * _deviceVendorID;
     NSNumber * _externalVersionIdentifier;
     NSNumber * _installOrder;
+    bool  _isBeta;
     NSNumber * _itemID;
     NSString * _itemName;
     NSNumber * _purchaserDSID;
+    NSString * _shortVersion;
     NSNumber * _storeFront;
     NSString * _vendorName;
 }
@@ -22,11 +27,16 @@
 @property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) NSString *artworkPath;
 @property (nonatomic, readonly) NSString *bundleID;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic, copy) NSString *cohort;
+@property (nonatomic, copy) NSString *deviceVendorID;
 @property (nonatomic, copy) NSNumber *externalVersionIdentifier;
 @property (nonatomic, copy) NSNumber *installOrder;
+@property (nonatomic) bool isBeta;
 @property (nonatomic, copy) NSNumber *itemID;
 @property (nonatomic, copy) NSString *itemName;
 @property (nonatomic, copy) NSNumber *purchaserDSID;
+@property (nonatomic, copy) NSString *shortVersion;
 @property (nonatomic, copy) NSNumber *storeFront;
 @property (nonatomic, copy) NSString *vendorName;
 
@@ -38,13 +48,17 @@
 - (id)altDSID;
 - (id)artworkPath;
 - (id)bundleID;
+- (id)bundleVersion;
+- (id)cohort;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)deviceVendorID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalVersionIdentifier;
 - (id)initWithBundleID:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)installOrder;
+- (bool)isBeta;
 - (id)itemID;
 - (id)itemName;
 - (id)purchaserDSID;
@@ -52,13 +66,19 @@
 - (void)setAccountName:(id)arg1;
 - (void)setAltDSID:(id)arg1;
 - (void)setArtworkPath:(id)arg1;
+- (void)setBundleVersion:(id)arg1;
+- (void)setCohort:(id)arg1;
+- (void)setDeviceVendorID:(id)arg1;
 - (void)setExternalVersionIdentifier:(id)arg1;
 - (void)setInstallOrder:(id)arg1;
+- (void)setIsBeta:(bool)arg1;
 - (void)setItemID:(id)arg1;
 - (void)setItemName:(id)arg1;
 - (void)setPurchaserDSID:(id)arg1;
+- (void)setShortVersion:(id)arg1;
 - (void)setStoreFront:(id)arg1;
 - (void)setVendorName:(id)arg1;
+- (id)shortVersion;
 - (id)storeFront;
 - (id)vendorName;
 

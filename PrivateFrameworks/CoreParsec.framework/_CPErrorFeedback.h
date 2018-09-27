@@ -4,9 +4,6 @@
 
 @interface _CPErrorFeedback : PBCodable <NSSecureCoding, _CPErrorFeedback, _CPProcessableFeedback> {
     _CPError * _error;
-    struct { 
-        unsigned int timestamp : 1; 
-    }  _has;
     unsigned long long  _timestamp;
     _CPError * _underlyingError;
 }
@@ -16,23 +13,16 @@
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, retain) _CPError *error;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasError;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasUnderlyingError;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) _CPError *underlyingError;
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (bool)hasError;
-- (bool)hasTimestamp;
-- (bool)hasUnderlyingError;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

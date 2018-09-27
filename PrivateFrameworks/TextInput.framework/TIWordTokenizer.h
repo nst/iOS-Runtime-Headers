@@ -27,9 +27,9 @@
     }  m_tokenRange;
 }
 
+- (void).cxx_destruct;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })advanceToNextToken;
 - (id)allTokensForString:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfCurrentToken;
 - (void)setString:(id)arg1 withSearchRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;

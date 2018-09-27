@@ -3,10 +3,8 @@
 
 @protocol NTKWellnessTimelineModelSubscriber <NSObject>
 
-@optional
+@required
 
 - (void)wellnessTimeLineModelCurrentEntryModelUpdated:(NTKWellnessEntryModel *)arg1;
-- (void)wellnessTimeLineModelHistoricalDataWasUpdated;
-- (void)wellnessTimelineModelHistorcalDataLoaded:(bool)arg1;
 
 @end

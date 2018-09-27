@@ -18,6 +18,7 @@
 - (PDFPage *)page;
 - (PDFPageLayerEffect *)pageLayerEffectForID:(NSUUID *)arg1;
 - (void)removePageLayerEffectForID:(NSUUID *)arg1;
+- (PDFRenderingProperties *)renderingProperties;
 - (void)restoreOriginalTileLayout;
 - (void)saveOriginalTileLayout;
 - (void)scalePageLayerEffects:(double)arg1;

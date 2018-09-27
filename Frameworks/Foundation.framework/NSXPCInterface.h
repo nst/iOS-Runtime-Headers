@@ -45,6 +45,11 @@
 - (unsigned long long)version;
 - (unsigned long long)versionForSelector:(SEL)arg1;
 
+// Image: /System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices
+
++ (id)_as_credentialProviderExtensionInterface;
++ (id)_as_credentialProviderHostInterface;
+
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
 + (id)cx_callControllerHostInterface;
@@ -68,6 +73,10 @@
 - (void)cx_setAllowedClassesForProviderHostProtocol;
 - (void)cx_setAllowedClassesForProviderVendorProtocol;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
+- (void)ls_setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
+
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (id)_cachedSetForArrayOfClass:(Class)arg1;
@@ -82,9 +91,11 @@
 
 // Image: /System/Library/Frameworks/IdentityLookup.framework/IdentityLookup
 
-+ (id)id_messageFilterExtensionHostInterface;
-+ (id)id_messageFilterExtensionVendorInterface;
-+ (id)id_messageFilterHostInterface;
++ (id)il_classificationUIExtensionHostInterface;
++ (id)il_classificationUIExtensionVendorInterface;
++ (id)il_messageFilterExtensionHostInterface;
++ (id)il_messageFilterExtensionVendorInterface;
++ (id)il_messageFilterHostInterface;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -96,10 +107,6 @@
 + (id)__mf_messageComposerExtensionInterface;
 + (id)__mf_messageComposerHostInterface;
 
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-- (void)ls_setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
-
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
 - (void)atx_addClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
@@ -107,5 +114,9 @@
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 + (id)af_siriTaskDeliveringInterface;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)geo_MapsPushDaemonFromGeodInterface;
 
 @end

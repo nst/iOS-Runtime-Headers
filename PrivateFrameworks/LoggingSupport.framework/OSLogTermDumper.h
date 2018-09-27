@@ -3,6 +3,7 @@
  */
 
 @interface OSLogTermDumper : NSObject {
+    unsigned char  _colorMode;
     unsigned short  _cur_attrs;
     bool  _fancy;
     int  _fd;
@@ -21,20 +22,24 @@
         bool ob_binary; 
     }  _ob;
     unsigned char  _ob_slop;
+    bool  _vis;
 }
 
 @property (nonatomic) unsigned char bgColor;
 @property (getter=isBold, nonatomic) bool bold;
-@property (getter=isFancy, nonatomic, readonly) bool fancy;
+@property (nonatomic, readonly) unsigned char colorMode;
 @property (nonatomic) unsigned char fgColor;
+@property (nonatomic, readonly) bool isFancy;
 @property (getter=isOblique, nonatomic) bool oblique;
 @property (nonatomic) unsigned short style;
 @property (getter=isUnderlined, nonatomic) bool underline;
 
 - (void)_flushAttrs;
+- (void)_resetAttrsForNewline;
 - (void)beginEditing;
 - (unsigned char)bgColor;
 - (void)close;
+- (unsigned char)colorMode;
 - (void)dealloc;
 - (void)endEditing;
 - (unsigned char)fgColor;
@@ -42,7 +47,7 @@
 - (unsigned int)format:(const char *)arg1;
 - (void)hexdump:(const void*)arg1 length:(unsigned long long)arg2;
 - (id)init;
-- (id)initWithFd:(int)arg1 forceFancy:(bool)arg2;
+- (id)initWithFd:(int)arg1 colorMode:(unsigned char)arg2;
 - (bool)isBold;
 - (bool)isFancy;
 - (bool)isOblique;

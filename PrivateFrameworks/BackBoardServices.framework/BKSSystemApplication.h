@@ -18,6 +18,7 @@
 @property (nonatomic) double systemIdleSleepInterval;
 @property (nonatomic) bool waitForDataMigration;
 
+- (void).cxx_destruct;
 - (void)bootstrap;
 - (bool)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;

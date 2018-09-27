@@ -19,9 +19,11 @@
 - (void)setPeople:(PHFetchResult *)arg1;
 - (void)setShouldShowMovieHeader:(bool)arg1;
 - (void)setTitleFontName:(NSString *)arg1;
+- (void)setViewModel:(PXPhotosDetailsViewModel *)arg1;
 - (void)setViewSourceOrigin:(unsigned long long)arg1;
 - (bool)shouldShowMovieHeader;
 - (NSString *)titleFontName;
+- (PXPhotosDetailsViewModel *)viewModel;
 - (unsigned long long)viewSourceOrigin;
 
 @end

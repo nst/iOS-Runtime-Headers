@@ -5,6 +5,6 @@
 
 @required
 
-- (void)manifestDidUpdateUnderMemoryPressure:(XBApplicationSnapshotManifest *)arg1;
+- (void)manifestDidPurgeSnapshotsWithProtectedContent:(XBApplicationSnapshotManifest *)arg1;
 
 @end

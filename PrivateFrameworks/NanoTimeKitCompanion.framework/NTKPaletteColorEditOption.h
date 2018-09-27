@@ -6,12 +6,12 @@
 
 @property (nonatomic, readonly) unsigned long long paletteColor;
 
-+ (id)__orderedValues;
-+ (id)_localizedNameForValue:(unsigned long long)arg1;
-+ (id)_orderedValues;
-+ (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_snapshotKeyForValue:(unsigned long long)arg1;
-+ (id)optionWithPaletteColor:(unsigned long long)arg1;
++ (id)__orderedValuesForDevice:(id)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)_orderedValuesForDevice:(id)arg1;
++ (id)_orderedValuesRestrictedByDevice:(id)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1 forDevice:(id)arg2;
++ (id)optionWithPaletteColor:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (id)_valueToFaceBundleStringDict;
 - (unsigned long long)paletteColor;

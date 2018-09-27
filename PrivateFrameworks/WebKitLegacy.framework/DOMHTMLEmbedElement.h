@@ -26,7 +26,7 @@
 - (id)type;
 - (int)width;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)showsTapHighlight;
 

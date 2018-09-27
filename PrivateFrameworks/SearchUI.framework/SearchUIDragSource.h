@@ -19,7 +19,6 @@
 @property (readonly) Class superclass;
 
 + (id)dragSourceForView:(id)arg1 dragObject:(id)arg2;
-+ (bool)draggingSupported;
 
 - (void).cxx_destruct;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;

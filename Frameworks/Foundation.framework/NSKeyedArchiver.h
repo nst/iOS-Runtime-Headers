@@ -103,13 +103,19 @@
 
 + (id)_et_secureArchivedDataWithRootObject:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
+
++ (id)dnds_secureLegacyArchiver;
+
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
 + (id)xct_archivedDataWithRootObject:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
+// Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
-+ (id)nf_securelyArchiveObject:(id)arg1;
++ (bool)nr_secureArchiveRootObject:(id)arg1 toFile:(id)arg2;
++ (bool)nr_secureArchiveRootObject:(id)arg1 toFile:(id)arg2 withOptions:(unsigned long long)arg3;
++ (id)nr_secureArchivedDataWithRootObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextTableBlock : NSTextBlock {
+@interface NSTextTableBlock : NSTextBlock <NSSecureCoding> {
     long long  _colNum;
     long long  _colSpan;
     long long  _rowNum;
@@ -13,6 +13,7 @@
 }
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (void)_setColumnSpan:(long long)arg1;
 - (void)_setRowSpan:(long long)arg1;

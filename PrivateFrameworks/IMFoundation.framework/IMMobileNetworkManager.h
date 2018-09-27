@@ -2,36 +2,43 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMMobileNetworkManager : IMNetworkManager <RadiosPreferencesDelegate> {
-    int  _applySkipCount;
+@interface IMMobileNetworkManager : IMNetworkManager <CoreTelephonyClientDataDelegate, RadiosPreferencesDelegate> {
     void * _cellAssertion;
     NSMutableSet * _cellAutoAssociationTokens;
+    CoreTelephonyClient * _coreTelephonyClient;
     struct __CTServerConnection { } * _ctServerConnection;
-    bool  _dataContextActive;
+    bool  _isDataContextActive;
+    bool  _isDataContextAttached;
+    bool  _isDataContextUsable;
+    bool  _isDataIndicatorNone;
     NSRecursiveLock * _lock;
     RadiosPreferences * _radiosPreferences;
     bool  _registered;
-    void * _serverConnection;
     bool  _shouldBringUpDataContext;
     NSMutableSet * _wiFiAutoAssociationTokens;
 }
 
-@property (nonatomic) int _applySkipCount;
 @property (nonatomic) void*_cellAssertion;
+@property (nonatomic, retain) CoreTelephonyClient *_coreTelephonyClient;
 @property (nonatomic) struct __CTServerConnection { }*_ctServerConnection;
 @property (nonatomic, retain) RadiosPreferences *_radiosPreferences;
-@property (nonatomic) void*_serverConnection;
 @property (nonatomic, readonly) bool autoAssociateCellular;
 @property (nonatomic, readonly) bool autoAssociateWiFi;
 @property (nonatomic, retain) NSMutableSet *cellularAutoAssociationTokens;
 @property (nonatomic, readonly) bool dataConnectionExists;
-@property (nonatomic) bool dataContextActive;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool disableFastDormancy;
 @property (nonatomic, readonly) bool has2GDataConnection;
 @property (nonatomic, readonly) bool hasLTEDataConnection;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool inValidSIMState;
 @property (nonatomic, readonly) bool isAirplaneModeEnabled;
 @property (nonatomic, readonly) bool isDataConnectionActive;
+@property (nonatomic) bool isDataContextActive;
+@property (nonatomic) bool isDataContextAttached;
+@property (nonatomic) bool isDataContextUsable;
+@property (nonatomic) bool isDataIndicatorNone;
 @property (nonatomic, readonly) bool isDataSwitchEnabled;
 @property (nonatomic, readonly) bool isHostingWiFiHotSpot;
 @property (nonatomic, readonly) bool isSIMLocked;
@@ -44,6 +51,7 @@
 @property (nonatomic) bool registered;
 @property (nonatomic, readonly) bool requiresSIMInserted;
 @property (nonatomic) bool shouldBringUpDataContext;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableSet *wiFiAutoAssociationTokens;
 @property (nonatomic, readonly, retain) NSNumber *wiFiScaledRSSI;
 @property (nonatomic, readonly, retain) NSNumber *wiFiScaledRate;
@@ -52,17 +60,25 @@
 @property (nonatomic, readonly) bool willTryToSearchForWiFiNetwork;
 
 - (void)_adjustCellularAutoAssociation;
-- (int)_applySkipCount;
 - (void*)_cellAssertion;
+- (id)_coreTelephonyClient;
 - (void)_createCTServerConnection;
-- (void)_ctServerCallBack:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (struct __CTServerConnection { }*)_ctServerConnection;
+- (id)_dataCTXPCServiceSubscriptionContext;
+- (void)_initializeDataState;
+- (bool)_isDataCTXPCServiceSubscriptionContext:(id)arg1;
 - (bool)_isDataConnectionAvailable;
+- (bool)_legacy_inValidSIMState;
 - (void)_lockedAdjustCellularAutoAssociation;
+- (void)_locked_recalculateDataContextUsableAndPostNotificationIfNeeded:(bool)arg1;
+- (void)_locked_updateDataConnectionStateWithContext:(id)arg1;
+- (void)_locked_updateDataStateBasedOnDataConnectionStatus:(id)arg1;
+- (void)_locked_updateDataStateBasedOnDataStatus:(id)arg1;
+- (void)_locked_updateDataStateWithContext:(id)arg1;
 - (void)_makeDataConnectionAvailable:(bool)arg1;
 - (id)_radiosPreferences;
 - (void)_releaseCTServerConnection;
-- (void*)_serverConnection;
+- (id)_telephonyDataSIMStatus;
 - (void)addCellularAutoAssociationClientToken:(id)arg1;
 - (void)addFastDormancyDisableToken:(id)arg1;
 - (void)addWiFiAutoAssociationClientToken:(id)arg1;
@@ -70,9 +86,11 @@
 - (bool)autoAssociateCellular;
 - (bool)autoAssociateWiFi;
 - (id)cellularAutoAssociationTokens;
+- (void)connectionActivationError:(id)arg1 connection:(int)arg2 error:(int)arg3;
+- (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
 - (void)cutWiFiManagerLinkDidChange:(id)arg1 context:(id)arg2;
 - (bool)dataConnectionExists;
-- (bool)dataContextActive;
+- (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (void)dealloc;
 - (bool)disableFastDormancy;
 - (bool)has2GDataConnection;
@@ -81,6 +99,10 @@
 - (id)init;
 - (bool)isAirplaneModeEnabled;
 - (bool)isDataConnectionActive;
+- (bool)isDataContextActive;
+- (bool)isDataContextAttached;
+- (bool)isDataContextUsable;
+- (bool)isDataIndicatorNone;
 - (bool)isDataSwitchEnabled;
 - (bool)isHostingWiFiHotSpot;
 - (bool)isSIMLocked;
@@ -97,16 +119,18 @@
 - (bool)requiresSIMInserted;
 - (void)setCellularAutoAssociationTokens:(id)arg1;
 - (void)setDataConnectionActive:(bool)arg1;
-- (void)setDataContextActive:(bool)arg1;
+- (void)setIsDataContextActive:(bool)arg1;
+- (void)setIsDataContextAttached:(bool)arg1;
+- (void)setIsDataContextUsable:(bool)arg1;
+- (void)setIsDataIndicatorNone:(bool)arg1;
 - (void)setLock:(id)arg1;
 - (void)setRegistered:(bool)arg1;
 - (void)setShouldBringUpDataContext:(bool)arg1;
 - (void)setWiFiAutoAssociationTokens:(id)arg1;
-- (void)set_applySkipCount:(int)arg1;
 - (void)set_cellAssertion:(void*)arg1;
+- (void)set_coreTelephonyClient:(id)arg1;
 - (void)set_ctServerConnection:(struct __CTServerConnection { }*)arg1;
 - (void)set_radiosPreferences:(id)arg1;
-- (void)set_serverConnection:(void*)arg1;
 - (bool)shouldBringUpDataContext;
 - (void)showNetworkOptions;
 - (void)showSIMUnlock;

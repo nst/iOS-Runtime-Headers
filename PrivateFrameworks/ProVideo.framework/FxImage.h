@@ -3,7 +3,7 @@
  */
 
 @interface FxImage : NSObject <NSCopying> {
-    struct FxImagePriv { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned long long x_1_1_6; unsigned long long x_1_1_7; bool x_1_1_8; double x_1_1_9; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; int (*x7)(); void *x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; struct FxRect { int x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; id x11; struct CGColorSpace {} x12; unsigned long long x13; } * _imagePriv;
+    struct FxImagePriv { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned long long x_1_1_6; unsigned long long x_1_1_7; bool x_1_1_8; double x_1_1_9; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; int (*x7)(); void *x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; struct FxRect { int x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; id x11; struct CGColorSpace {} x12; unsigned long long x13; int x14; } * _imagePriv;
 }
 
 + (id)alloc;
@@ -18,6 +18,7 @@
 - (void)dealloc;
 - (unsigned long long)depth;
 - (struct FxRect { int x1; int x2; int x3; int x4; })dod;
+- (int)eyeType;
 - (unsigned long long)field;
 - (unsigned long long)fieldOrder;
 - (unsigned long long)fxColorPrimaries;
@@ -42,6 +43,7 @@
 - (void)setDeallocCallback:(int (*)arg1 refcon:(void*)arg2;
 - (void)setDepth:(unsigned long long)arg1;
 - (void)setDod:(struct FxRect { int x1; int x2; int x3; int x4; })arg1;
+- (void)setEyeType:(int)arg1;
 - (void)setField:(unsigned long long)arg1;
 - (void)setFieldOrder:(unsigned long long)arg1;
 - (void)setFxColorPrimaries:(unsigned long long)arg1;

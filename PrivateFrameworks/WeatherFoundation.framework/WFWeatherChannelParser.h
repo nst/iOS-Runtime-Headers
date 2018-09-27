@@ -4,8 +4,6 @@
 
 @interface WFWeatherChannelParser : WFForecastDataParser <WFAirQualityDataParser> {
     NSCalendar * _calendar;
-    WFTemperature * _todayHighTemperature;
-    WFTemperature * _todayLowTemperature;
 }
 
 @property (nonatomic, retain) NSCalendar *calendar;
@@ -13,8 +11,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) WFTemperature *todayHighTemperature;
-@property (nonatomic, retain) WFTemperature *todayLowTemperature;
 
 + (id)componentsForCurrentForecast;
 + (id)componentsForDailyForecasts;
@@ -30,14 +26,10 @@
 - (id)dateComponentsForEpochDateNumber:(id)arg1 toUnitGranularity:(unsigned long long)arg2;
 - (id)init;
 - (void)parseCommonComponents:(id)arg1 data:(id)arg2;
-- (id)parseCurrentCondition:(id)arg1;
+- (id)parseCurrentCondition:(id)arg1 high:(id)arg2 low:(id)arg3;
 - (id)parseDailyForecasts:(id)arg1 date:(id)arg2;
 - (id)parseForecastData:(id)arg1 date:(id)arg2 error:(id*)arg3;
 - (id)parseHourlyForecasts:(id)arg1 date:(id)arg2;
 - (void)setCalendar:(id)arg1;
-- (void)setTodayHighTemperature:(id)arg1;
-- (void)setTodayLowTemperature:(id)arg1;
-- (id)todayHighTemperature;
-- (id)todayLowTemperature;
 
 @end

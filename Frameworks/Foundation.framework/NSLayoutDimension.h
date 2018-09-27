@@ -38,4 +38,8 @@
 - (id)avkit_constraintGreaterThanOrEqualToConstant:(double)arg1 priority:(float)arg2;
 - (id)avkit_constraintLessThanOrEqualToConstant:(double)arg1 priority:(float)arg2;
 
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_constraintsLessThanOrEqualToConstant:(double)arg1 equalityPriority:(float)arg2;
+
 @end

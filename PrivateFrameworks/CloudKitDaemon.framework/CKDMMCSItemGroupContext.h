@@ -38,6 +38,7 @@
 - (void)_cleanupMMCSRegisterItems;
 - (bool)_setupGetMMCSItemsWithError:(id*)arg1;
 - (bool)_setupMMCSItemsWithError:(id*)arg1;
+- (bool)_setupPutContentMetadataMMCSItemsWithError:(id*)arg1;
 - (bool)_setupPutMMCSItemsWithError:(id*)arg1;
 - (bool)_setupRegisterMMCSItemsWithError:(id*)arg1;
 - (void)_startTrackingMMCSItems:(id)arg1;

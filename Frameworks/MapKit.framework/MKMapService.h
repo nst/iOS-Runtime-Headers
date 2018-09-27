@@ -48,6 +48,7 @@
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 placeActionDetails:(id)arg4;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 routeDetails:(id)arg4;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 selectedReportAnIssueIndex:(unsigned int)arg4;
+- (void)captureUserAction:(int)arg1 onTarget:(int)arg2 placeActionDetails:(id)arg3 mapItem:(id)arg4 resultIndex:(int)arg5;
 - (void)captureUserActionAsString:(id)arg1 flyoverAnimationID:(unsigned long long)arg2;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 mapRegion:(id)arg7 zoomLevel:(double)arg8 mapType:(int)arg9;
@@ -65,7 +66,7 @@
 - (id)mapItemsForPlacesInDetails:(id)arg1;
 - (void)setDeviceOrientation:(int)arg1;
 - (void)setGetLogContextForEventBlock:(id /* block */)arg1;
-- (id)ticketForBatchPopularNearbyForSearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (void)siriAnalyticsDonation:(int)arg1 target:(int)arg2 resultIndex:(int)arg3 mapItem:(id)arg4;
 - (id)ticketForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;

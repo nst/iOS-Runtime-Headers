@@ -3,10 +3,12 @@
  */
 
 @interface MSMSPlatform : NSObject <MSPlatform> {
+    ACAccountStore * _accountStore;
     bool  _isPerfLoggingEnabled;
     NSData * _pushToken;
 }
 
+@property (nonatomic, retain) ACAccountStore *accountStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -24,6 +26,7 @@
 - (struct __CFString { }*)_facilityStringForFacility:(int)arg1;
 - (bool)_mayPerformFileTransfer;
 - (void)_rereadDefaults;
+- (id)accountStore;
 - (id)appBundleInfoString;
 - (id)authTokenForPersonID:(id)arg1;
 - (id)baseURLForPersonID:(id)arg1;
@@ -44,6 +47,7 @@
 - (Class)publisherPluginClass;
 - (id)pushToken;
 - (id)pushTokenForPersonID:(id)arg1;
+- (void)setAccountStore:(id)arg1;
 - (void)setIsPerfLoggingEnabled:(bool)arg1;
 - (void)setPushToken:(id)arg1;
 - (Class)sharingPluginClass;

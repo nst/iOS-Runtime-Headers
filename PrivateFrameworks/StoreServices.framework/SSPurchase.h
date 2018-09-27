@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPurchase : NSObject <NSCoding, NSCopying, SSXPCCoding> {
+@interface SSPurchase : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSNumber * _accountIdentifier;
     NSString * _affiliateIdentifier;
     bool  _backgroundPurchase;
@@ -75,6 +75,7 @@
 + (id)newPurchaseWithDatabaseEncoding:(id)arg1;
 + (id)newPurchaseWithXPCEncoding:(id)arg1;
 + (id)purchaseWithBuyParameters:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addEntriesToDatabaseEncoding:(id)arg1;

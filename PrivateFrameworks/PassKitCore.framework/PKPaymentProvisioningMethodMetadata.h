@@ -8,6 +8,7 @@
     PKPaymentDigitalIssuanceMetadata * _digitalIssuanceMetadata;
     NSDecimalNumber * _maxLoadedBalance;
     NSDecimalNumber * _minLoadedBalance;
+    NSDecimalNumber * _minimumReaderModeBalance;
     NSString * _productIdentifier;
     NSDictionary * _readerModeMetadata;
     NSDictionary * _readerModeResources;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) PKPaymentDigitalIssuanceMetadata *digitalIssuanceMetadata;
 @property (nonatomic, readonly, copy) NSDecimalNumber *maxLoadedBalance;
 @property (nonatomic, readonly, copy) NSDecimalNumber *minLoadedBalance;
+@property (nonatomic, readonly, copy) NSDecimalNumber *minimumReaderModeBalance;
 @property (nonatomic, readonly, copy) NSString *productIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *readerModeMetadata;
 @property (nonatomic, readonly, copy) NSDictionary *readerModeResources;
@@ -31,6 +33,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)maxLoadedBalance;
 - (id)minLoadedBalance;
+- (id)minimumReaderModeBalance;
 - (id)productIdentifier;
 - (id)readerModeMetadata;
 - (id)readerModeResources;

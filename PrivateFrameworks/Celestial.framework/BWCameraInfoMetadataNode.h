@@ -25,6 +25,7 @@
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
+- (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleIrisReferenceMovieRequest:(id)arg1 forInput:(id)arg2;
 - (id)initForLivePhotosMetadata:(bool)arg1 generateDebugMetadata:(bool)arg2;
 - (id)nodeSubType;

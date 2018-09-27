@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUGradient : NSObject <NSCoding, NSCopying> {
+@interface SUGradient : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray * _colorStops;
     NSLock * _lock;
     struct SUGradientPoint { 
@@ -31,6 +31,7 @@
 @property (readonly) struct SUGradientPoint { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; } p1;
 
 + (id)gradientWithColor:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)addColorStopWithOffset:(double)arg1 color:(struct CGColor { }*)arg2;
 - (id)colorStopColors;

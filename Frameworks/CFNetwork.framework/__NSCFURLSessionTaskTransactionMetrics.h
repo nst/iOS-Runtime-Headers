@@ -18,6 +18,8 @@
     long long  __responseHeaderBytesReceived;
     bool  __secureConnection;
     bool  __serverPush;
+    long long  __totalBytesReceived;
+    long long  __totalBytesSent;
     NSDate * _connectEndDate;
     NSDate * _connectStartDate;
     NSDate * _domainLookupEndDate;
@@ -55,6 +57,8 @@
 - (long long)_responseHeaderBytesReceived;
 - (bool)_secureConnection;
 - (bool)_serverPush;
+- (long long)_totalBytesReceived;
+- (long long)_totalBytesSent;
 - (id)connectEndDate;
 - (id)connectStartDate;
 - (void)dealloc;
@@ -109,5 +113,7 @@
 - (void)set_responseHeaderBytesReceived:(long long)arg1;
 - (void)set_secureConnection:(bool)arg1;
 - (void)set_serverPush:(bool)arg1;
+- (void)set_totalBytesReceived:(long long)arg1;
+- (void)set_totalBytesSent:(long long)arg1;
 
 @end

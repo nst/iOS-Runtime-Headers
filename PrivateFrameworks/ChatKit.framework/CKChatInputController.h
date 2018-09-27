@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKChatInputController : NSObject <CKBrowserAppManagerViewControllerDelegate, CKBrowserSwitcherViewControllerDelegate, CKBrowserTransitionCoordinatorDelegate, CKBrowserViewControllerSendDelegate, CKBrowserViewControllerStoreSendDelegate, CKDeviceOrientationManagerDelegate, CKFullScreenAppViewControllerDelegate, CKHandwritingPresentationControllerDelegate, CKHandwritingViewControllerSendDelegate, CKMessageEntryViewInputDelegate, CKPhotoBrowserViewControllerSendDelegate, CKPluginEntryViewControllerDelegate, DDMoneyActionDelegate, UITextInputPayloadDelegate> {
+@interface CKChatInputController : NSObject <CKBrowserAppManagerViewControllerDelegate, CKBrowserSwitcherViewControllerDelegate, CKBrowserTransitionCoordinatorDelegate, CKBrowserViewControllerSendDelegate, CKBrowserViewControllerStoreSendDelegate, CKDeviceOrientationManagerDelegate, CKFullScreenAppViewControllerDelegate, CKHandwritingPresentationControllerDelegate, CKHandwritingViewControllerSendDelegate, CKMessageEntryViewInputDelegate, CKPhotoBrowserViewControllerSendDelegate, CKPluginEntryViewControllerDelegate, UITextInputPayloadDelegate> {
     bool  __isRunningPPT;
     IMBalloonPlugin * _browserPlugin;
     IMBalloonPluginDataSource * _browserPluginDataSource;
@@ -11,10 +11,12 @@
     IMBalloonPluginDataSource * _deferredPluginDataSource;
     <CKChatInputControllerDelegate> * _delegate;
     IMScheduledUpdater * _dismissEntryViewShelfUpdater;
+    CKChatEagerUploadController * _eagerUploadController;
     CKMessageEntryView * _entryView;
     CKHandwritingPresentationController * _handwritingPresentationController;
     bool  _inCollapseOrExpandAnimation;
     bool  _inputViewVisible;
+    bool  _inputViewWillBecomeVisible;
     id /* block */  _insertPayloadCompletionHandler;
     bool  _keyboardIsHiding;
     long long  _lastSeenOrientation;
@@ -44,11 +46,13 @@
 @property (nonatomic) <CKChatInputControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) IMScheduledUpdater *dismissEntryViewShelfUpdater;
+@property (nonatomic, retain) CKChatEagerUploadController *eagerUploadController;
 @property (nonatomic, retain) CKMessageEntryView *entryView;
 @property (nonatomic, retain) CKHandwritingPresentationController *handwritingPresentationController;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool inCollapseOrExpandAnimation;
 @property (getter=isInputViewVisible, nonatomic) bool inputViewVisible;
+@property (nonatomic) bool inputViewWillBecomeVisible;
 @property (nonatomic, copy) id /* block */ insertPayloadCompletionHandler;
 @property (nonatomic) bool keyboardIsHiding;
 @property (nonatomic) long long lastSeenOrientation;
@@ -74,9 +78,11 @@
 - (void)_deferredCommitSticker:(id)arg1;
 - (void)_deferredDismissToKeyboardAndFocusEntryView:(id)arg1;
 - (void)_deferredRequestPresentationStyleExpanded:(id)arg1;
+- (void)_deferredRequestPresentationStyleFullScreenModalForPlugin:(id)arg1;
 - (void)_dismissBrowserViewControllerAndReloadInputViews:(bool)arg1;
 - (void)_dismissCompactSwitcherOverKeyboardWithCompletion:(id /* block */)arg1;
 - (id)_entryViewSnapshotWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_formattedPayload:(id)arg1 forPayloadID:(id)arg2;
 - (void)_handleOrientation;
 - (bool)_isRunningInMVS;
 - (bool)_isRunningPPT;
@@ -86,6 +92,7 @@
 - (void)_openContainingBundleID:(id)arg1 applicationService:(id)arg2 withURL:(id)arg3 pluginID:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_presentCompactSwitcherOverKeyboardWithCompletion:(id /* block */)arg1;
 - (void)_presentPluginWithBundleID:(id)arg1 sendingTextInputPayload:(id)arg2 withPayloadID:(id)arg3;
+- (void)_presentPluginWithBundleID:(id)arg1 sendingTextInputPayload:(id)arg2 withPayloadID:(id)arg3 style:(unsigned long long)arg4;
 - (void)_reconfigurePluginDataSourceWithBalloonControllerIfNecessary;
 - (void)_setupObserverForLaunchAppExtensionForDebugging;
 - (bool)_shouldSendTypingIndicatorDataForPluginIdentifier:(id)arg1;
@@ -94,8 +101,10 @@
 - (bool)_switcherPluginCanMessageAPI;
 - (bool)_switcherPluginCanMessageAPIOnBehalfOfPlugin:(id)arg1;
 - (bool)_switcherPluginHasTouchTokenForDirectSend;
+- (id)appIconOverride;
 - (bool)appManagerIsDisplayed;
 - (bool)appStoreIsDisplayed;
+- (id)appTitleOverride;
 - (void)applicationWillAddDeactivationReasonNotification:(id)arg1;
 - (void)browserAppManagerDidSelectPlugin:(id)arg1;
 - (id)browserPlugin;
@@ -107,6 +116,7 @@
 - (void)browserTransitionCoordinatorDidTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorWillCollapseOrDismiss:(id)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorWillTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
+- (bool)canHandleClientActionFromUrl:(id)arg1;
 - (void)clearBrowserViewControllerIfNecessary;
 - (void)commitPayload:(id)arg1;
 - (bool)commitPayload:(id)arg1 forPlugin:(id)arg2 allowAllCommits:(bool)arg3 error:(id*)arg4;
@@ -134,14 +144,19 @@
 - (void)dismissPlugin;
 - (void)dismissToKeyboard:(bool)arg1;
 - (id)dragControllerTranscriptDelegate;
+- (void)eagerUploadCancelIdentifier:(id)arg1;
+- (id)eagerUploadController;
+- (void)eagerUploadPayload:(id)arg1 identifier:(id)arg2 replace:(bool)arg3;
 - (id)entryView;
 - (void)entryViewDidChangeSize;
+- (void)forceDismissWithoutAnimation;
 - (void)fullscreenAppViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;
 - (void)fullscreenAppViewController:(id)arg1 wantsToSwitchToPlugin:(id)arg2 datasource:(id)arg3;
 - (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppManager:(id)arg1;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppStore:(id)arg1;
 - (void)fullscreenAppViewControllerWantsToCollapse:(id)arg1;
+- (void)handleClientActionFromUrl:(id)arg1 context:(id)arg2;
 - (void)handleMoneyActionWithAmount:(id)arg1 currencies:(id)arg2;
 - (void)handlePayload:(id)arg1 withPayloadId:(id)arg2;
 - (bool)handwritingIsDisplayed;
@@ -152,6 +167,7 @@
 - (id)init;
 - (id)inputAccessoryView;
 - (id)inputViewController;
+- (bool)inputViewWillBecomeVisible;
 - (id /* block */)insertPayloadCompletionHandler;
 - (bool)isInputViewVisible;
 - (void)keyboardDidHide:(id)arg1;
@@ -159,6 +175,7 @@
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (long long)lastSeenOrientation;
+- (id)localizedTitleForClientActionFromUrl:(id)arg1 context:(id)arg2;
 - (bool)messageEntryShouldHideCaret:(id)arg1;
 - (void)messageEntryView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
 - (void)messageEntryViewBrowserButtonHit:(id)arg1;
@@ -168,6 +185,7 @@
 - (void)messageEntryViewHandwritingButtonHit:(id)arg1;
 - (long long)messageEntryViewHighLightInputButton:(id)arg1;
 - (void)messageEntryViewPhotoButtonHit:(id)arg1;
+- (void)messageEntryViewPhotoButtonTouchDown:(id)arg1;
 - (id)modalBrowserViewController;
 - (void)notifyBrowserViewControllerOfMatchingNewMessages:(id)arg1;
 - (void)openAppExtensionWithAdamID:(id)arg1;
@@ -182,15 +200,17 @@
 - (void)presentAppStoreForURL:(id)arg1;
 - (void)presentAppStoreForURL:(id)arg1 fromSourceApplication:(id)arg2;
 - (void)presentPluginWithBundleID:(id)arg1 appLaunchPayload:(id)arg2;
-- (void)presentViewControllerWithPluginChatItem:(id)arg1 expanded:(bool)arg2;
+- (void)presentViewControllerWithPluginChatItem:(id)arg1 presentationStyle:(unsigned long long)arg2;
 - (id)presentedBrowserNavigationController;
 - (bool)presentsHandwritingOnRotation;
-- (void)registerForTextInputPayloadHandling:(bool)arg1;
+- (void)registerForTextInputPayloadHandling:(bool)arg1 isGroupChat:(bool)arg2;
 - (void)requestPhotoBrowserInitFromDraft:(id)arg1;
 - (void)requestPhotoBrowserToAppendFinalImagesToComposition;
 - (void)requestPhotoBrowserToPrepareForDraft;
 - (void)requestPresentationStyleExpanded:(bool)arg1;
 - (void)requestPresentationStyleExpanded:(bool)arg1 forPlugin:(id)arg2;
+- (void)requestPresentationStyleFullScreenModalForPlugin:(id)arg1;
+- (void)requestPresentationStyleFullScreenModalForPlugin:(id)arg1 skipValidation:(bool)arg2;
 - (void)setBrowserPlugin:(id)arg1;
 - (void)setBrowserPluginDataSource:(id)arg1;
 - (void)setBrowserSwitcher:(id)arg1;
@@ -198,6 +218,7 @@
 - (void)setDeferredPluginDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissEntryViewShelfUpdater:(id)arg1;
+- (void)setEagerUploadController:(id)arg1;
 - (void)setEntryView:(id)arg1;
 - (void)setEntryViewHidden:(bool)arg1;
 - (void)setHandwritingPresentationController:(id)arg1;
@@ -205,6 +226,7 @@
 - (void)setInputViewVisible:(bool)arg1;
 - (void)setInputViewVisible:(bool)arg1 entryFieldCollapsed:(bool)arg2 animated:(bool)arg3;
 - (void)setInputViewVisible:(bool)arg1 entryFieldCollapsed:(bool)arg2 animated:(bool)arg3 messageDelegate:(bool)arg4;
+- (void)setInputViewWillBecomeVisible:(bool)arg1;
 - (void)setInsertPayloadCompletionHandler:(id /* block */)arg1;
 - (void)setKeyboardIsHiding:(bool)arg1;
 - (void)setLastSeenOrientation:(long long)arg1;
@@ -223,14 +245,18 @@
 - (bool)shouldRestoreAppSwitcher;
 - (bool)shouldSuppressStatusBarForHandwriting;
 - (void)showAppsBrowser;
-- (void)showBrowserForPlugin:(id)arg1 dataSource:(id)arg2 expanded:(bool)arg3;
+- (void)showBrowserForPlugin:(id)arg1 dataSource:(id)arg2 style:(unsigned long long)arg3;
 - (void)showDTCompose;
 - (void)showEntryViewShelf:(id)arg1;
+- (void)showEntryViewShelf:(id)arg1 forPlugin:(id)arg2 completion:(id /* block */)arg3;
+- (void)showFunCamera;
+- (void)showFunCamera:(id)arg1;
 - (void)showHandwritingBrowser;
 - (void)showHandwritingBrowserWithExistingPayload:(id)arg1;
 - (void)showKeyboard;
 - (void)showPhotosBrowser;
 - (void)showPhotosBrowserCollapsingEntryField:(bool)arg1;
+- (void)stageAssetArchive:(id)arg1 skipShelf:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)startEditingPayload:(id)arg1;
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2;
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2 forPlugin:(id)arg3;
@@ -240,6 +266,7 @@
 - (void)swipeDismissBrowser;
 - (id)switcherInputViewController;
 - (id)switcherLastTouchDate;
+- (void)switcherViewController:(id)arg1 didSelectPluginAtIndexPath:(id)arg2;
 - (void)switcherViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;
 - (void)switcherViewController:(id)arg1 willHideSelectionViewWithAnimations:(id /* block */*)arg2 completion:(id /* block */*)arg3;
 - (void)switcherViewController:(id)arg1 willShowSelectionViewWithAnimations:(id /* block */*)arg2 completion:(id /* block */*)arg3;
@@ -250,6 +277,8 @@
 - (void)switcherViewControllerDidStartSwitching:(id)arg1;
 - (id)textInputPayloadController;
 - (void)unregisterForTextInputPayloadHandling;
+- (void)willSendComposition;
 - (id)workingDirForDraft;
+- (id)workingDraftDirForPluginIdentifier:(id)arg1;
 
 @end

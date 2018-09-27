@@ -6,12 +6,13 @@
     id  _currentItem;
     <CKBrowserDragControllerDelegate> * _delegate;
     CKBrowserDragViewController * _dragViewController;
-    CKBrowserDragWindow * _dragWindow;
+    UIWindow * _dragWindow;
     UILongPressGestureRecognizer * _gestureRecognizer;
     struct CGPoint { 
         double x; 
         double y; 
     }  _locationInView;
+    UIViewController * _presentingViewController;
     UIView * _targetView;
     <CKBrowserDragControllerTranscriptDelegate> * _transcriptDelegate;
 }
@@ -21,10 +22,11 @@
 @property (nonatomic) <CKBrowserDragControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKBrowserDragViewController *dragViewController;
-@property (nonatomic, retain) CKBrowserDragWindow *dragWindow;
+@property (nonatomic, retain) UIWindow *dragWindow;
 @property (nonatomic, retain) UILongPressGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct CGPoint { double x1; double x2; } locationInView;
+@property (nonatomic, retain) UIViewController *presentingViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *targetView;
 @property (nonatomic) <CKBrowserDragControllerTranscriptDelegate> *transcriptDelegate;
@@ -43,16 +45,19 @@
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithTargetView:(id)arg1;
 - (struct CGPoint { double x1; double x2; })locationInView;
+- (id)presentingViewController;
 - (void)setCurrentItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDragViewController:(id)arg1;
 - (void)setDragWindow:(id)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setLocationInView:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPresentingViewController:(id)arg1;
 - (void)setTargetView:(id)arg1;
 - (void)setTranscriptDelegate:(id)arg1;
 - (void)tapRecognized:(id)arg1;
 - (id)targetView;
 - (id)transcriptDelegate;
+- (bool)usesSeparateDragWindow;
 
 @end

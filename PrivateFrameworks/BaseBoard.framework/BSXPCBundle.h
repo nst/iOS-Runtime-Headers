@@ -18,7 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDictionary *infoDictionary;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) NSObject<OS_xpc_object> *xpcBundle;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *xpcBundle;
 
 + (id)bundleForPID:(int)arg1;
 + (id)bundleWithExecutablePath:(id)arg1;
@@ -26,15 +26,15 @@
 + (id)bundleWithXPCBundle:(id)arg1;
 + (id)mainBundle;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)bundlePath;
-- (id)bundleWithXPCBundle:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)executablePath;
 - (id)infoDictionary;
+- (id)initWithXPCBundle:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)xpcBundle;

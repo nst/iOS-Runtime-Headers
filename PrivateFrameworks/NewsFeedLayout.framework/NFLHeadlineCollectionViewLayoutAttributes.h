@@ -177,8 +177,8 @@
 - (double)minimumHeightBetweenLowestTextFrameAndBottomOfContent;
 - (id)numberedCircleColor;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })numberedCircleFrame;
-- (void)populateWithProtobuf:(id)arg1;
-- (id)protobufRepresentation;
+- (void)populateWithProtobuf:(id)arg1 normalizedWithFeedGutter:(double)arg2;
+- (id)protobufRepresentationnormalizedWithFeedGutter:(double)arg1;
 - (id)publisherLogoColor;
 - (long long)publisherLogoContentMode;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })publisherLogoFrame;

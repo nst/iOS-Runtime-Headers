@@ -16,7 +16,6 @@
 - (void)createSnapshot;
 - (void)dealloc;
 - (id)group;
-- (id)init;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (void)logAlbum:(id)arg1 index:(unsigned long long)arg2 indent:(unsigned long long)arg3 completeMetadata:(bool)arg4 printAssets:(bool)arg5;
 - (void)logAlbumLists;

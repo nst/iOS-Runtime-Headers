@@ -8,12 +8,12 @@
         unsigned long long length; 
     }  __endRange;
     IKCSSParseBlock * _block;
-    NSArray * _prelude;
+    IKArray * _prelude;
 }
 
 @property (setter=_setEndRange:, nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } _endRange;
 @property (nonatomic, retain) IKCSSParseBlock *block;
-@property (nonatomic, retain) NSArray *prelude;
+@property (nonatomic, retain) IKArray *prelude;
 
 - (void).cxx_destruct;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_endRange;

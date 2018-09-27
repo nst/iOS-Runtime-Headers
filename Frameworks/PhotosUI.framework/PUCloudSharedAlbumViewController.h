@@ -14,6 +14,7 @@
     NSArray * __transitioningOptionsViewControllers;
     PUPhotosPickerViewController * _activePhotosPickerViewController;
     PUPhotoStreamComposeServiceViewController * _composeServiceController;
+    <PUCloudSharedAlbumViewControllerDelegate> * _delegate;
     bool  _displayingOptions;
     PUVideoTrimQueueController * _trimController;
 }
@@ -29,6 +30,7 @@
 @property (setter=_setTransitioningOptionsViewControllers:, nonatomic, retain) NSArray *_transitioningOptionsViewControllers;
 @property (nonatomic, retain) PLCloudSharedAlbum *album;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUCloudSharedAlbumViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=isDisplayingOptions, setter=setDisplayingOptions:, nonatomic) bool displayingOptions;
 @property (readonly) unsigned long long hash;
@@ -70,6 +72,7 @@
 - (bool)canDeleteContent;
 - (void)controller:(id)arg1 didCancelTrimmingVideoSources:(id)arg2;
 - (void)controller:(id)arg1 didFinishTrimmingVideoSources:(id)arg2;
+- (id)delegate;
 - (void)didSelectAddPlaceholderInSection:(long long)arg1;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (id)globalFooterSubtitle;
@@ -81,6 +84,7 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (bool)prepareForDismissingForced:(bool)arg1;
 - (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResult:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setDisplayingOptions:(bool)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (bool)shouldShowTabBar;

@@ -12,6 +12,7 @@
     struct MTLLibraryData { int (**x1)(); int x2; id x3; } * _libraryData;
     NSString * _name;
     MTLType * _returnType;
+    NSString * _unpackedFilePath;
     id  _vendorPrivate;
     NSArray * _vertexAttributes;
 }
@@ -35,14 +36,17 @@
 @property (readonly) bool needsFunctionConstantValues;
 @property (readonly) long long patchControlPointCount;
 @property (readonly) unsigned long long patchType;
+@property (readonly) unsigned long long renderTargetArrayIndexType;
 @property MTLType *returnType;
 @property (readonly) NSArray *stageInputAttributes;
 @property (readonly) Class superclass;
+@property (copy) NSString *unpackedFilePath;
 @property (readonly) id vendorPrivate;
 @property NSArray *vertexAttributes;
 
 - (unsigned long long)bitCodeFileSize;
 - (const struct { unsigned char x1[32]; }*)bitCodeHash;
+- (id)bitcodeData;
 - (void)dealloc;
 - (id)description;
 - (id)device;
@@ -61,7 +65,9 @@
 - (id)reflectionWithOptions:(unsigned long long)arg1;
 - (void)reflectionWithOptions:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)setLabel:(id)arg1;
+- (void)setUnpackedFilePath:(id)arg1;
 - (void)setVendorPrivate:(id)arg1;
+- (id)unpackedFilePath;
 - (id)vendorPrivate;
 
 @end

@@ -12,6 +12,7 @@
 
 - (void)_loadEffects_noLock:(id)arg1;
 - (void)_removeTimedOutEffects_noLock;
+- (void)ageOutEffects;
 - (void)dealloc;
 - (id)init;
 - (void)loadEffectsForGraphs:(id)arg1 loadContext:(struct HGRef<PVInstructionGraphContext> { struct PVInstructionGraphContext {} *x1; })arg2;

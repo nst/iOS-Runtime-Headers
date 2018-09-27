@@ -5,20 +5,21 @@
 @interface TSCEFormulaRewrite_RegionMergedInfo : NSObject {
     TSCEFormulaRewrite_RegionInfo * _mergeRegion;
     struct TSUCellCoord { 
-        unsigned short row; 
-        unsigned char column; 
-        unsigned char reserved; 
+        unsigned int row; 
+        unsigned short column; 
+        bool _preserveRow; 
+        bool _preserveColumn; 
     }  _mergeSource;
 }
 
 @property (nonatomic, readonly) TSCEFormulaRewrite_RegionInfo *mergeRegion;
-@property (nonatomic) const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*mergeSource;
+@property (nonatomic) const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*mergeSource;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
-- (id)initWithMergeRegion:(id)arg1 mergeSource:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (id)initWithMergeRegion:(id)arg1 mergeSource:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 - (id)mergeRegion;
-- (const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)mergeSource;
-- (void)setMergeSource:(const struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg1;
+- (const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)mergeSource;
+- (void)setMergeSource:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg1;
 
 @end

@@ -5,15 +5,17 @@
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::ProcessPoolConfiguration> { 
         struct type { 
-            unsigned char __lx[264]; 
+            unsigned char __lx[248]; 
         } data; 
     }  _processPoolConfiguration;
+    unsigned long long  _wirelessContextIdentifier;
 }
 
 @property (nonatomic, copy) NSString *CTDataConnectionServiceType;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, copy) NSArray *additionalReadAccessAllowedURLs;
 @property (nonatomic) bool allowsCellularAccess;
+@property (nonatomic) bool alwaysKeepAndReuseSwappedProcesses;
 @property (nonatomic, copy) NSArray *alwaysRevalidatedURLSchemes;
 @property (nonatomic) bool alwaysRunsAtBackgroundPriority;
 @property (nonatomic, copy) NSArray *cachePartitionedURLSchemes;
@@ -25,17 +27,23 @@
 @property (nonatomic) bool ignoreSynchronousMessagingTimeoutsForTesting;
 @property (nonatomic, copy) NSURL *injectedBundleURL;
 @property (nonatomic) unsigned long long maximumProcessCount;
+@property (nonatomic) bool pageCacheEnabled;
 @property (nonatomic) int presentingApplicationPID;
+@property (nonatomic) bool processSwapsOnNavigation;
+@property (nonatomic) bool processSwapsOnWindowOpenWithOpener;
 @property (nonatomic) bool shouldCaptureAudioInUIProcess;
 @property (nonatomic) bool shouldTakeUIBackgroundAssertion;
 @property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, copy) NSString *sourceApplicationSecondaryIdentifier;
 @property (readonly) Class superclass;
+@property (nonatomic) bool suppressesConnectionTerminationOnSystemChange;
+@property (nonatomic) unsigned long long wirelessContextIdentifier;
 
 - (id)CTDataConnectionServiceType;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)additionalReadAccessAllowedURLs;
 - (bool)allowsCellularAccess;
+- (bool)alwaysKeepAndReuseSwappedProcesses;
 - (id)alwaysRevalidatedURLSchemes;
 - (bool)alwaysRunsAtBackgroundPriority;
 - (id)cachePartitionedURLSchemes;
@@ -48,9 +56,13 @@
 - (id)init;
 - (id)injectedBundleURL;
 - (unsigned long long)maximumProcessCount;
+- (bool)pageCacheEnabled;
 - (int)presentingApplicationPID;
+- (bool)processSwapsOnNavigation;
+- (bool)processSwapsOnWindowOpenWithOpener;
 - (void)setAdditionalReadAccessAllowedURLs:(id)arg1;
 - (void)setAllowsCellularAccess:(bool)arg1;
+- (void)setAlwaysKeepAndReuseSwappedProcesses:(bool)arg1;
 - (void)setAlwaysRevalidatedURLSchemes:(id)arg1;
 - (void)setAlwaysRunsAtBackgroundPriority:(bool)arg1;
 - (void)setCTDataConnectionServiceType:(id)arg1;
@@ -60,14 +72,21 @@
 - (void)setIgnoreSynchronousMessagingTimeoutsForTesting:(bool)arg1;
 - (void)setInjectedBundleURL:(id)arg1;
 - (void)setMaximumProcessCount:(unsigned long long)arg1;
+- (void)setPageCacheEnabled:(bool)arg1;
 - (void)setPresentingApplicationPID:(int)arg1;
+- (void)setProcessSwapsOnNavigation:(bool)arg1;
+- (void)setProcessSwapsOnWindowOpenWithOpener:(bool)arg1;
 - (void)setShouldCaptureAudioInUIProcess:(bool)arg1;
 - (void)setShouldTakeUIBackgroundAssertion:(bool)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (void)setSuppressesConnectionTerminationOnSystemChange:(bool)arg1;
+- (void)setWirelessContextIdentifier:(unsigned long long)arg1;
 - (bool)shouldCaptureAudioInUIProcess;
 - (bool)shouldTakeUIBackgroundAssertion;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
+- (bool)suppressesConnectionTerminationOnSystemChange;
+- (unsigned long long)wirelessContextIdentifier;
 
 @end

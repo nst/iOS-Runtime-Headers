@@ -9,6 +9,8 @@
 + (id)_bookmarkItemIdentifierForURLString:(id)arg1;
 + (id)_coreSpotlightItemIdentifierForURLString:(id)arg1;
 + (id)_historyItemIdentifierForURLString:(id)arg1;
++ (id)coreSpotlightPageDonationIdentifier;
++ (id)historyItemIdentifierForURL:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

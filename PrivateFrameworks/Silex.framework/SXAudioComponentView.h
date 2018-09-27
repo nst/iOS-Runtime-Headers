@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXAudioComponentView : SXMediaComponentView <SXMediaPlaybackDelegate> {
+@interface SXAudioComponentView : SXMediaComponentView <AVPlayerViewControllerDelegate_AppStoreOnly, SXMediaPlaybackDelegate> {
     bool  _audioHasPlayed;
     <SXHost> * _host;
     SXAudioComponentOverlayView * _overlayView;
@@ -43,6 +43,7 @@
 - (void)playbackStarted;
 - (id)player;
 - (id)playerViewController;
+- (void)playerViewController:(id)arg1 metricsCollectionEventOccured:(long long)arg2;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)renderContents;
 - (id)resourceDataSource;
@@ -57,5 +58,6 @@
 - (void)submitMediaEngageCompleteEvent;
 - (void)submitMediaEngageEventForUserAction:(unsigned long long)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)viewport:(id)arg1 appearStateChangedFromState:(unsigned long long)arg2;
 
 @end

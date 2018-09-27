@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLMomentNode : NSObject {
+@interface PLMomentNode : NSObject <PLRegionsClusteringItem> {
     PLMomentCluster * __cluster;
     NSDate * __creationDate;
     CLLocation * __location;
@@ -18,9 +18,15 @@
 @property (nonatomic) PLMomentCluster *cluster;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly, retain) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CLLocation *location;
 @property (getter=isMarked, nonatomic) bool marked;
 @property (nonatomic, readonly, retain) NSObject<NSCopying> *objectID;
+@property (nonatomic, readonly) NSDate *pl_date;
+@property (nonatomic, readonly) CLLocation *pl_location;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *userTag;
 @property (nonatomic, readonly) unsigned long long userTagType;
 @property (getter=isVisited, nonatomic) bool visited;
@@ -38,6 +44,8 @@
 - (bool)isVisited;
 - (id)location;
 - (id)objectID;
+- (id)pl_date;
+- (id)pl_location;
 - (void)setCacheInsertionIndex:(id)arg1;
 - (void)setCluster:(id)arg1;
 - (void)setMarked:(bool)arg1;

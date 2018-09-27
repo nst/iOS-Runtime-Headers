@@ -5,6 +5,7 @@
 @interface MKOverlayContainerView : UIView {
     <MKOverlayContainerViewDelegate> * _delegate;
     NSMutableArray * _drawables;
+    MKMapView * _mapView;
     double  _mapZoomScale;
     NSMapTable * _overlayToDrawable;
     NSMutableOrderedSet * _overlays;
@@ -12,7 +13,9 @@
     NSMutableArray * _vkOverlays;
 }
 
+@property (nonatomic, readonly) NSArray *allDrawables;
 @property (nonatomic) <MKOverlayContainerViewDelegate> *delegate;
+@property (nonatomic) MKMapView *mapView;
 @property (nonatomic) double mapZoomScale;
 @property (nonatomic, readonly) NSArray *overlays;
 
@@ -32,6 +35,7 @@
 - (void)addOverlay:(id)arg1 level:(long long)arg2;
 - (void)addOverlays:(id)arg1;
 - (void)addOverlays:(id)arg1 level:(long long)arg2;
+- (id)allDrawables;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (id)drawableForOverlay:(id)arg1;
@@ -42,6 +46,7 @@
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2 level:(long long)arg3;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
+- (id)mapView;
 - (double)mapZoomScale;
 - (id)overlays;
 - (id)overlaysInLevel:(long long)arg1;
@@ -49,6 +54,7 @@
 - (void)removeOverlay:(id)arg1;
 - (void)removeOverlays:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMapView:(id)arg1;
 - (void)setMapZoomScale:(double)arg1;
 
 @end

@@ -26,7 +26,6 @@
 - (id)_actions;
 - (bool)_activitySummaryForActivitySummaryIndex:(long long)arg1 activitySummaryOut:(id*)arg2 error:(id*)arg3;
 - (bool)_addRowCountDeltaToEvent:(id)arg1 profile:(id)arg2 currentDate:(id)arg3;
-- (bool)_computeAndSubmitAchievementCountMetric:(bool)arg1;
 - (bool)_computeAndSubmitDatabaseStatsMetric:(bool)arg1;
 - (bool)_computeAndSubmitFitnessDailyReportWithAction:(id)arg1 force:(bool)arg2;
 - (bool)_computeAndSubmitHealthTypesDifferentialPrivacyMetric;
@@ -53,7 +52,6 @@
 - (id)_sleepNightEventFromSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 calendar:(id)arg4;
 - (id)_sleepSamplesBeforeDate:(id)arg1 days:(long long)arg2 startDate:(id*)arg3 endDate:(id*)arg4 calendar:(id)arg5;
 - (id)_statisticsForTimeDeltas:(id)arg1;
-- (bool)_submitAchievementCountMetricWithConnection:(id)arg1 container:(id)arg2 earnedAchievements:(id)arg3 calorieGoal:(id)arg4 force:(bool)arg5;
 - (bool)_submitMetric:(id)arg1 container:(id)arg2 connection:(id)arg3 force:(bool)arg4;
 - (bool)_updateDatabaseStatsEvent:(id)arg1 withSizeFromDatabase:(id)arg2 profile:(id)arg3 currentDate:(id)arg4;
 - (id)_updateMonthDeltaToInt64:(long long)arg1 forKey:(id)arg2 profile:(id)arg3 currentDate:(id)arg4 error:(id*)arg5;

@@ -19,9 +19,11 @@
         unsigned int liveRouteSavingsSeconds : 1; 
         unsigned int localDistanceUnits : 1; 
         unsigned int selectedRouteIndex : 1; 
+        unsigned int hasKhSegments : 1; 
         unsigned int isNavigable : 1; 
         unsigned int routeDeviatesFromOriginal : 1; 
     }  _has;
+    bool  _hasKhSegments;
     NSMutableArray * _incidentsOffRoutes;
     NSMutableArray * _incidentsOnRoutes;
     int  _instructionSignFillColor;
@@ -78,8 +80,10 @@
 @property (nonatomic, readonly) bool hasDisplayHints;
 @property (nonatomic, readonly) bool hasEtaServiceSummary;
 @property (nonatomic, readonly) bool hasFailureAlert;
+@property (nonatomic) bool hasHasKhSegments;
 @property (nonatomic) bool hasInstructionSignFillColor;
 @property (nonatomic) bool hasIsNavigable;
+@property (nonatomic) bool hasKhSegments;
 @property (nonatomic) bool hasLiveRouteSavingsSeconds;
 @property (nonatomic) bool hasLocalDistanceUnits;
 @property (nonatomic, readonly) bool hasNonRecommendedRoutesCache;
@@ -173,8 +177,10 @@
 - (bool)hasDisplayHints;
 - (bool)hasEtaServiceSummary;
 - (bool)hasFailureAlert;
+- (bool)hasHasKhSegments;
 - (bool)hasInstructionSignFillColor;
 - (bool)hasIsNavigable;
+- (bool)hasKhSegments;
 - (bool)hasLiveRouteSavingsSeconds;
 - (bool)hasLocalDistanceUnits;
 - (bool)hasNonRecommendedRoutesCache;
@@ -230,8 +236,10 @@
 - (void)setEtaServiceSummary:(id)arg1;
 - (void)setFailureAlert:(id)arg1;
 - (void)setHasDebugLatencyMs:(bool)arg1;
+- (void)setHasHasKhSegments:(bool)arg1;
 - (void)setHasInstructionSignFillColor:(bool)arg1;
 - (void)setHasIsNavigable:(bool)arg1;
+- (void)setHasKhSegments:(bool)arg1;
 - (void)setHasLiveRouteSavingsSeconds:(bool)arg1;
 - (void)setHasLocalDistanceUnits:(bool)arg1;
 - (void)setHasRouteDeviatesFromOriginal:(bool)arg1;

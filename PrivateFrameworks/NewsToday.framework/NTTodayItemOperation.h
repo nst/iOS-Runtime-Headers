@@ -12,6 +12,7 @@
     NSSet * _itemIDsOfLeadingCells;
     <NTTodayResultOperationInfoProviding> * _operationInfo;
     NSDictionary * _resultAssetFileURLsByRemoteURL;
+    NSObject * _resultAssetsHoldToken;
     NSDictionary * _resultTodayItemsBySectionDescriptor;
     NSDictionary * _slotAllocationByDynamicSlotItemID;
     id /* block */  _todayItemCompletion;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) NSSet *itemIDsOfLeadingCells;
 @property (nonatomic, copy) <NTTodayResultOperationInfoProviding> *operationInfo;
 @property (nonatomic, retain) NSDictionary *resultAssetFileURLsByRemoteURL;
+@property (nonatomic, retain) NSObject *resultAssetsHoldToken;
 @property (nonatomic, retain) NSDictionary *resultTodayItemsBySectionDescriptor;
 @property (nonatomic, copy) NSDictionary *slotAllocationByDynamicSlotItemID;
 @property (nonatomic, copy) id /* block */ todayItemCompletion;
@@ -45,6 +47,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)resultAssetFileURLsByRemoteURL;
+- (id)resultAssetsHoldToken;
 - (id)resultTodayItemsBySectionDescriptor;
 - (void)setAppConfiguration:(id)arg1;
 - (void)setCatchUpOperationResultsBySectionDescriptor:(id)arg1;
@@ -55,6 +58,7 @@
 - (void)setItemIDsOfLeadingCells:(id)arg1;
 - (void)setOperationInfo:(id)arg1;
 - (void)setResultAssetFileURLsByRemoteURL:(id)arg1;
+- (void)setResultAssetsHoldToken:(id)arg1;
 - (void)setResultTodayItemsBySectionDescriptor:(id)arg1;
 - (void)setSlotAllocationByDynamicSlotItemID:(id)arg1;
 - (void)setTodayItemCompletion:(id /* block */)arg1;

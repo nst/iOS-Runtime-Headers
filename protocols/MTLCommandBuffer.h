@@ -13,7 +13,10 @@
 - (<MTLCommandQueue> *)commandQueue;
 - (void)commit;
 - (<MTLComputeCommandEncoder> *)computeCommandEncoder;
+- (<MTLComputeCommandEncoder> *)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
 - (<MTLDevice> *)device;
+- (void)encodeSignalEvent:(id <MTLEvent>)arg1 value:(unsigned long long)arg2;
+- (void)encodeWaitForEvent:(id <MTLEvent>)arg1 value:(unsigned long long)arg2;
 - (void)enqueue;
 - (NSError *)error;
 - (double)kernelEndTime;

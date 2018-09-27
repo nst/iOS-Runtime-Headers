@@ -5,6 +5,7 @@
 @interface CAMPreviewView : UIView {
     int  __exposureBiasSide;
     NSMutableDictionary * __faceIndicators;
+    NSMutableDictionary * __internalMRCIndicatorViews;
     NSMutableDictionary * __internalTrackedSubjectIndicatorsByIdentifier;
     UILabel * __simulatorLabel;
     double  _bottomContentInset;
@@ -13,6 +14,7 @@
     CAMGridView * _gridView;
     UIView * _indicatorContainerView;
     CAMLevelIndicatorView * _levelView;
+    long long  _orientation;
     CAMFocusIndicatorView * _pointIndicator;
     CAMStageLightOverlayView * _stageLightOverlayView;
     <CAMPreviewViewSubjectIndicatorDelegate> * _subjectIndicatorDelegate;
@@ -21,6 +23,7 @@
 
 @property (nonatomic) int _exposureBiasSide;
 @property (nonatomic, readonly) NSMutableDictionary *_faceIndicators;
+@property (nonatomic, readonly) NSMutableDictionary *_internalMRCIndicatorViews;
 @property (nonatomic, readonly) NSMutableDictionary *_internalTrackedSubjectIndicatorsByIdentifier;
 @property (nonatomic, readonly) UILabel *_simulatorLabel;
 @property (nonatomic) double bottomContentInset;
@@ -30,6 +33,8 @@
 @property (nonatomic) CAMGridView *gridView;
 @property (nonatomic, readonly) UIView *indicatorContainerView;
 @property (nonatomic) CAMLevelIndicatorView *levelView;
+@property (nonatomic, readonly) NSDictionary *mrcIndicatorViews;
+@property (nonatomic) long long orientation;
 @property (nonatomic, retain) CAMFocusIndicatorView *pointIndicator;
 @property (nonatomic, retain) CAMStageLightOverlayView *stageLightOverlayView;
 @property (nonatomic) <CAMPreviewViewSubjectIndicatorDelegate> *subjectIndicatorDelegate;
@@ -44,9 +49,11 @@
 - (int)_exposureBiasSide;
 - (id)_faceIndicators;
 - (int)_faceOrientationForRollAngle:(double)arg1;
+- (id)_internalMRCIndicatorViews;
 - (id)_internalTrackedSubjectIndicatorsByIdentifier;
 - (id)_simulatorLabel;
 - (void)addFaceIndicator:(id)arg1 forIdentifier:(long long)arg2;
+- (void)addMRCIndicator:(id)arg1 forIdentifier:(id)arg2;
 - (void)addTrackedSubjectIndicator:(id)arg1 forIdentifier:(long long)arg2;
 - (double)bottomContentInset;
 - (struct CGPoint { double x1; double x2; })captureDevicePointOfInterestForPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -55,22 +62,28 @@
 - (void)dealloc;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceIndicatorFrameForFaceResult:(id)arg1;
 - (id)faceIndicatorsByIdentifier;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForSubjectIndicator:(id)arg1 andFaceResult:(id)arg2 useNominalSize:(bool)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForSubjectIndicator:(id)arg1 andFaceResult:(id)arg2 useFixedSize:(bool)arg3;
 - (id)gridView;
 - (void)indicatePointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
 - (id)indicatorContainerView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)levelView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })mrcIndicatorFrameForMRCResult:(id)arg1;
+- (id)mrcIndicatorViews;
+- (long long)orientation;
 - (struct CGPoint { double x1; double x2; })pointForCaptureDevicePointOfInterest:(struct CGPoint { double x1; double x2; })arg1;
 - (id)pointIndicator;
 - (void)removeFaceIndicatorForIdentifier:(long long)arg1;
+- (void)removeMRCIndicatorForIdentifier:(id)arg1;
 - (void)removeTrackedSubjectIndicatorForIdentifier:(long long)arg1;
 - (void)setBottomContentInset:(double)arg1;
 - (void)setCenteredSubjectIndicatorView:(id)arg1;
 - (void)setContinuousIndicator:(id)arg1;
 - (void)setGridView:(id)arg1;
 - (void)setLevelView:(id)arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
 - (void)setPointIndicator:(id)arg1;
 - (void)setStageLightOverlayView:(id)arg1;
 - (void)setSubjectIndicatorDelegate:(id)arg1;

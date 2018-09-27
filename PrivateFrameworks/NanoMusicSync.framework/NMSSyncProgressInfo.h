@@ -43,7 +43,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoMediaBridgeUI.framework/NanoMediaBridgeUI
 
-- (id)_trackProgressText;
+- (id)_trackProgressTextForMediaType:(unsigned int)arg1;
 - (id)_trackProgressTextWithFormat:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSupportedVideoStreamConfiguration : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSupportedVideoStreamConfiguration : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSDictionary * _codecConfigurations;
 }
 

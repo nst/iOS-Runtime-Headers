@@ -23,6 +23,7 @@
 - (id)handleInfo;
 - (unsigned long long)hash;
 - (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
+- (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3 personCentricID:(id)arg4;
 - (bool)isBetterDefinedThan:(id)arg1;
 - (bool)isBusiness;
 - (bool)isEqual:(id)arg1;

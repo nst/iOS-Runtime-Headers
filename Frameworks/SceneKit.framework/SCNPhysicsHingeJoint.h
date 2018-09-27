@@ -40,6 +40,7 @@
 
 + (id)jointWithBody:(id)arg1 axis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 anchor:(struct SCNVector3 { float x1; float x2; float x3; })arg3;
 + (id)jointWithBodyA:(id)arg1 axisA:(struct SCNVector3 { float x1; float x2; float x3; })arg2 anchorA:(struct SCNVector3 { float x1; float x2; float x3; })arg3 bodyB:(id)arg4 axisB:(struct SCNVector3 { float x1; float x2; float x3; })arg5 anchorB:(struct SCNVector3 { float x1; float x2; float x3; })arg6;
++ (bool)supportsSecureCoding;
 
 - (void)_addToPhysicsWorld:(id)arg1;
 - (void)_willRemoveFromPhysicsWorld:(id)arg1;

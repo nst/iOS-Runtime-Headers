@@ -6,12 +6,14 @@
     unsigned long long  _behavior;
     NSArray * _channelArray;
     HapticClient * _client;
+    id /* block */  _connectionErrorHandler;
     bool  _resourcesAllocated;
 }
 
 @property (nonatomic) unsigned long long behavior;
 @property (nonatomic, readonly) NSArray *channels;
 @property (readonly) HapticClient *client;
+@property (copy) id /* block */ connectionErrorHandler;
 @property (readonly) double currentMediaTime;
 @property (readonly) double hapticLatency;
 @property (readonly) bool resourcesAllocated;
@@ -23,6 +25,7 @@
 - (unsigned long long)behavior;
 - (id)channels;
 - (id)client;
+- (id /* block */)connectionErrorHandler;
 - (double)currentMediaTime;
 - (void)dealloc;
 - (void)deallocateRenderResources;
@@ -42,6 +45,7 @@
 - (void)releaseChannels;
 - (bool)resourcesAllocated;
 - (void)setBehavior:(unsigned long long)arg1;
+- (void)setConnectionErrorHandler:(id /* block */)arg1;
 - (bool)setNumberOfChannels:(unsigned long long)arg1 error:(id*)arg2;
 - (bool)setSequenceParam:(unsigned long long)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3 param:(unsigned long long)arg4 value:(float)arg5 error:(id*)arg6;
 - (void)startRunningWithCompletionHandler:(id /* block */)arg1;

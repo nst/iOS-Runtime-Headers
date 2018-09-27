@@ -7,9 +7,6 @@
 
 - (int)columnAlignment;
 - (int)dataAlignment;
-- (bool)hasColumnAlignment;
-- (bool)hasDataAlignment;
-- (bool)hasIsEqualWidth;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (bool)isEqualWidth;

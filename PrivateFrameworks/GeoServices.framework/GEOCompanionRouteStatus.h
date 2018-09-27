@@ -21,8 +21,10 @@
         unsigned int routeLocationOffset : 1; 
         unsigned int stepID : 1; 
         unsigned int guidancePromptsEnabled : 1; 
+        unsigned int isConnectedToCarplay : 1; 
         unsigned int lowGuidanceNavigation : 1; 
     }  _has;
+    bool  _isConnectedToCarplay;
     GEOLocation * _location;
     bool  _lowGuidanceNavigation;
     unsigned int  _remainingTime;
@@ -55,6 +57,7 @@
 @property (nonatomic) bool hasFeedbackType;
 @property (nonatomic) bool hasGuidancePromptsEnabled;
 @property (nonatomic) bool hasHapticsType;
+@property (nonatomic) bool hasIsConnectedToCarplay;
 @property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic) bool hasLowGuidanceNavigation;
 @property (nonatomic) bool hasRemainingTime;
@@ -64,6 +67,7 @@
 @property (nonatomic, readonly) bool hasRouteMatchCoordinate;
 @property (nonatomic) bool hasStepID;
 @property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool isConnectedToCarplay;
 @property (nonatomic, readonly) bool isNavigating;
 @property (nonatomic, readonly) bool isRecalculating;
 @property (nonatomic, retain) GEOLocation *location;
@@ -109,6 +113,7 @@
 - (bool)hasFeedbackType;
 - (bool)hasGuidancePromptsEnabled;
 - (bool)hasHapticsType;
+- (bool)hasIsConnectedToCarplay;
 - (bool)hasLocation;
 - (bool)hasLowGuidanceNavigation;
 - (bool)hasRemainingTime;
@@ -121,6 +126,7 @@
 - (unsigned long long)hash;
 - (id)initWithRoute:(id)arg1 routeID:(id)arg2;
 - (id)initWithRouteID:(id)arg1;
+- (bool)isConnectedToCarplay;
 - (bool)isEqual:(id)arg1;
 - (bool)isNavigating;
 - (bool)isRecalculating;
@@ -149,12 +155,14 @@
 - (void)setHasFeedbackType:(bool)arg1;
 - (void)setHasGuidancePromptsEnabled:(bool)arg1;
 - (void)setHasHapticsType:(bool)arg1;
+- (void)setHasIsConnectedToCarplay:(bool)arg1;
 - (void)setHasLowGuidanceNavigation:(bool)arg1;
 - (void)setHasRemainingTime:(bool)arg1;
 - (void)setHasRouteLocationIndex:(bool)arg1;
 - (void)setHasRouteLocationOffset:(bool)arg1;
 - (void)setHasStepID:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
+- (void)setIsConnectedToCarplay:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLowGuidanceNavigation:(bool)arg1;
 - (void)setRemainingTime:(unsigned int)arg1;

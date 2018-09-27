@@ -4,6 +4,7 @@
 
 @interface SLGLogXPCClient : NSObject <SLGLogClientProtocol> {
     NSXPCConnection * _connection;
+    bool  _isServerEnabled;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -13,10 +14,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)connectWithCompletion:(id /* block */)arg1;
+- (void)_connectWithCompletion:(id /* block */)arg1;
+- (void)_disconnect;
 - (void)dealloc;
-- (void)disconnect;
 - (id)init;
+- (bool)isServerEnabled;
 - (void)queryServer:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 
 @end

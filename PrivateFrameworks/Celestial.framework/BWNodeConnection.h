@@ -3,9 +3,16 @@
  */
 
 @interface BWNodeConnection : NSObject <BWNodeOutputConsumer> {
+    BWNodeMessage * _configLiveMessageToPropagate;
     BWNodeInput * _input;
     BWNodeOutput * _output;
     BWPipelineStage * _pipelineStage;
+    bool  _resumedByClient;
+    bool  _resumedForEventsOnly;
+    bool  _suspended;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _suspensionLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +27,9 @@
 + (id)_requirementsArrayStartingFromInput:(id)arg1 forAttachedMediaKey:(id)arg2 finalAttachedMediaKeyOut:(id*)arg3;
 + (void)initialize;
 
+- (id)_connectionDescription;
+- (id)_inputDescription;
+- (id)_outputDescription;
 - (bool)_resolveCommonVideoBufferFormatForAttachedMediaKey:(id)arg1;
 - (bool)attach;
 - (void)consumeMessage:(id)arg1 fromOutput:(id)arg2;
@@ -30,5 +40,7 @@
 - (id)output;
 - (id)pipelineStage;
 - (bool)resolveCommonBufferFormat;
+- (void)resumeForEventsOnly:(bool)arg1;
+- (void)suspend;
 
 @end

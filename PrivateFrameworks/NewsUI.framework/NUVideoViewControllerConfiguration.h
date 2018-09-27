@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUVideoViewControllerConfiguration : NSObject <NSCopying, SXVideoViewControllerConfiguration> {
+@interface NUVideoViewControllerConfiguration : NSObject <NSCopying, SVVideoViewControllerConfiguration> {
     NUVideoViewControllerAdConfiguration * _adConfiguration;
     bool  _pagingAllowed;
     bool  _preferredMuteState;

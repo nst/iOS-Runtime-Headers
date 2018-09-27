@@ -10,6 +10,7 @@
 @property (readonly) Class superclass;
 
 + (id)_defaultBlackWallpaperImage;
++ (id)_gradientWallpaperImageForIdentifier:(id)arg1;
 
 - (id)allWallpapersForCollection:(long long)arg1;
 - (id)defaultWallpaperForCollection:(long long)arg1;

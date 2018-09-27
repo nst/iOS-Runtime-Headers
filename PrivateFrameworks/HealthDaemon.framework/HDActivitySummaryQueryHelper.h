@@ -14,7 +14,6 @@
     NSMutableDictionary * _previousActivityCachesByCacheIndex;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    bool  _shouldIncludePrivateProperties;
     id /* block */  _updateHandler;
 }
 
@@ -23,6 +22,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id /* block */ initialResultsHandler;
 @property bool shouldIncludePrivateProperties;
+@property bool shouldIncludeStatistics;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) id /* block */ updateHandler;
 
@@ -48,7 +48,9 @@
 - (void)pause;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)setShouldIncludePrivateProperties:(bool)arg1;
+- (void)setShouldIncludeStatistics:(bool)arg1;
 - (bool)shouldIncludePrivateProperties;
+- (bool)shouldIncludeStatistics;
 - (void)start;
 - (void)stop;
 - (id /* block */)updateHandler;

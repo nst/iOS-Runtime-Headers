@@ -5,21 +5,24 @@
 @interface HMDCharacteristicWriteRequest : HMDCharacteristicRequest {
     NSData * _authorizationData;
     NSUUID * _identifier;
+    unsigned long long  _requestType;
     id  _value;
 }
 
 @property (nonatomic, readonly) NSData *authorizationData;
 @property (nonatomic, readonly) NSUUID *identifier;
+@property (nonatomic, readonly) unsigned long long requestType;
 @property (nonatomic, readonly) id value;
 
-+ (id)writeRequestWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3;
-+ (id)writeRequestWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4;
++ (id)writeRequestWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4 type:(unsigned long long)arg5;
++ (id)writeRequestWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 type:(unsigned long long)arg4;
 
 - (void).cxx_destruct;
 - (id)authorizationData;
 - (id)description;
 - (id)identifier;
-- (id)initWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4;
+- (id)initWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 identifier:(id)arg4 type:(unsigned long long)arg5;
+- (unsigned long long)requestType;
 - (id)value;
 
 @end

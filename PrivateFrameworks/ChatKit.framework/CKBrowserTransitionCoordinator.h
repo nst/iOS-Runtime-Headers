@@ -3,7 +3,7 @@
  */
 
 @interface CKBrowserTransitionCoordinator : NSObject <CKFullScreenAppViewControllerDelegate> {
-    CKPresentationControllerWindow * _appWindow;
+    UIWindow * _appWindow;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -17,21 +17,26 @@
     CKConversation * _conversation;
     UIViewController<CKBrowserViewControllerProtocol> * _currentBrowser;
     long long  _currentConsumer;
+    UIViewController<CKBrowserViewControllerProtocol> * _currentModalBrowser;
     <CKBrowserTransitionCoordinatorDelegate> * _delegate;
     bool  _expanded;
     CKFullScreenAppViewController * _fullscreenViewController;
     long long  _lastTransitionReason;
+    UIWindow * _modalAppWindow;
+    UIWindow * _preModalKeyWindow;
+    UINavigationController * _presentedModalBrowserNavigationController;
     UIViewController * _presentingViewController;
     UIWindow * _previousKeyWindow;
     <CKBrowserViewControllerSendDelegate> * _sendDelegate;
     bool  _underTest;
 }
 
-@property (nonatomic, retain) CKPresentationControllerWindow *appWindow;
+@property (nonatomic, retain) UIWindow *appWindow;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cachedCompactFrame;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (nonatomic, retain) UIViewController<CKBrowserViewControllerProtocol> *currentBrowser;
 @property (nonatomic) long long currentConsumer;
+@property (nonatomic, retain) UIViewController<CKBrowserViewControllerProtocol> *currentModalBrowser;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKBrowserTransitionCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -39,6 +44,10 @@
 @property (nonatomic, retain) CKFullScreenAppViewController *fullscreenViewController;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long lastTransitionReason;
+@property (nonatomic, retain) UIWindow *modalAppWindow;
+@property (nonatomic) UIWindow *preModalKeyWindow;
+@property (nonatomic, retain) UINavigationController *presentedModalBrowserNavigationController;
+@property (getter=isPresentingFullScreenModal, nonatomic, readonly) bool presentingFullScreenModal;
 @property (nonatomic) UIViewController *presentingViewController;
 @property (nonatomic) UIWindow *previousKeyWindow;
 @property (nonatomic) <CKBrowserViewControllerSendDelegate> *sendDelegate;
@@ -47,24 +56,35 @@
 @property (nonatomic, readonly) bool wasCurrentBrowserExpanded;
 
 - (void).cxx_destruct;
+- (id)appIconOverride;
+- (id)appTitleOverride;
 - (id)appWindow;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cachedCompactFrame;
 - (id)conversation;
 - (id)currentBrowser;
 - (long long)currentConsumer;
+- (id)currentModalBrowser;
 - (id)delegate;
+- (void)dismissCurrentFullScreenModalAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)dismissCurrentFullscreenBrowserAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)fullscreenAppViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;
 - (void)fullscreenAppViewController:(id)arg1 wantsToSwitchToPlugin:(id)arg2 datasource:(id)arg3;
+- (double)fullscreenAppViewControllerCollapsedContentHeight:(id)arg1;
 - (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
+- (bool)fullscreenAppViewControllerShouldDismissOnDragSuccess:(id)arg1;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppManager:(id)arg1;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppStore:(id)arg1;
 - (void)fullscreenAppViewControllerWantsToCollapse:(id)arg1;
 - (id)fullscreenViewController;
 - (bool)isExpanded;
 - (bool)isHostingRemoteKeyboardView;
+- (bool)isPresentingFullScreenModal;
 - (long long)lastTransitionReason;
+- (id)modalAppWindow;
+- (id)preModalKeyWindow;
 - (void)presentCurrentBrowserFullscreenAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)presentPluginFullScreenModal:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (id)presentedModalBrowserNavigationController;
 - (id)presentingViewController;
 - (id)previousKeyWindow;
 - (void)releaseOwnershipOfBrowserForConsumer:(long long)arg1;
@@ -75,19 +95,26 @@
 - (void)setConversation:(id)arg1;
 - (void)setCurrentBrowser:(id)arg1;
 - (void)setCurrentConsumer:(long long)arg1;
+- (void)setCurrentModalBrowser:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExpanded:(bool)arg1;
 - (void)setExpanded:(bool)arg1 withReason:(long long)arg2;
 - (void)setFullscreenViewController:(id)arg1;
 - (void)setLastTransitionReason:(long long)arg1;
+- (void)setModalAppWindow:(id)arg1;
+- (void)setPreModalKeyWindow:(id)arg1;
+- (void)setPresentedModalBrowserNavigationController:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setPreviousKeyWindow:(id)arg1;
 - (void)setSendDelegate:(id)arg1;
 - (void)setUnderTest:(bool)arg1;
+- (bool)shouldAlwaysShowAppTitle;
 - (void)transitionCurrentBrowserToCollapsedPresentationAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)transitionCurrentBrowserToExpandedPresentationAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (id)transitionViewController;
 - (bool)underTest;
 - (bool)updateBrowserSessionForPlugin:(id)arg1 datasource:(id)arg2;
+- (bool)usePresentationWindowDuringTransition;
 - (bool)wasCurrentBrowserExpanded;
 
 @end

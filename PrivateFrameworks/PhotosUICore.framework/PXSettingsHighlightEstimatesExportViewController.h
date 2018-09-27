@@ -27,6 +27,7 @@
 - (void)setTextView:(id)arg1;
 - (id)textView;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

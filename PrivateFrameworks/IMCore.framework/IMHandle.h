@@ -17,6 +17,7 @@
     bool  _blockNotifications;
     unsigned long long  _capabilities;
     NSDictionary * _certs;
+    CNContact * _cnContact;
     NSString * _countryCode;
     NSString * _displayID;
     NSArray * _emails;
@@ -28,6 +29,7 @@
     NSSet * _groups;
     NSString * _guid;
     bool  _hasCheckedCardMap;
+    bool  _hasCheckedForSuggestions;
     bool  _hasCheckedPhoneNumber;
     bool  _hasTemporaryWatch;
     NSString * _id;
@@ -49,6 +51,7 @@
     int  _notificationQueueCount;
     NSDictionary * _otherServiceIDs;
     IMPerson * _person;
+    NSString * _personCentricID;
     struct __CFPhoneNumber { } * _phoneNumberRef;
     NSData * _pictureData;
     unsigned long long  _prevStatus;
@@ -80,6 +83,7 @@
 @property (nonatomic, readonly) bool canBeAdded;
 @property (nonatomic, readonly) bool canBeDeleted;
 @property (nonatomic, readonly) unsigned long long capabilities;
+@property (nonatomic, retain) CNContact *cnContact;
 @property (nonatomic, readonly, retain) NSString *countryCode;
 @property (nonatomic, readonly, retain) NSString *displayID;
 @property (nonatomic, readonly, retain) NSString *email;
@@ -93,6 +97,7 @@
 @property (nonatomic, readonly, retain) NSArray *groupsArray;
 @property (nonatomic, readonly, retain) NSString *guid;
 @property (nonatomic, readonly) bool hasAudio;
+@property (nonatomic) bool hasCheckedForSuggestions;
 @property (nonatomic, readonly) bool hasConferencing;
 @property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic, readonly) bool hasMultiwayAudio;
@@ -128,6 +133,7 @@
 @property (nonatomic, readonly, retain) NSString *originalID;
 @property (nonatomic, retain) NSDictionary *otherServiceIDs;
 @property (setter=setIMPerson:, nonatomic, retain) IMPerson *person;
+@property (nonatomic, retain) NSString *personCentricID;
 @property (nonatomic, readonly, retain) NSData *pictureData;
 @property (nonatomic, readonly) unsigned long long previousStatus;
 @property (nonatomic, readonly, retain) NSString *previousStatusMessage;
@@ -176,6 +182,7 @@
 - (void)_clearABPersonLookup;
 - (void)_clearABProperties;
 - (void)_clearStatusMessageURLCache;
+- (void)_contactStoreDidChange:(id)arg1;
 - (void)_createPhoneNumberRefIfNeeded;
 - (id)_displayNameWithAbbreviation;
 - (void)_fetchBusinessInfo;
@@ -195,6 +202,7 @@
 - (id)_nameForComparisonPreferFirst:(bool)arg1;
 - (void)_postNotification:(id)arg1;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
+- (void)_postOnScreenChangedNotificationForProperty:(id)arg1;
 - (void)_registerForNotifications;
 - (void)_sendAutomationData:(id)arg1 properties:(id)arg2;
 - (void)_sendCommand:(id)arg1 properties:(id)arg2;
@@ -229,6 +237,7 @@
 - (unsigned long long)capabilities;
 - (id)chatSiblingsArray;
 - (void)clearABPerson;
+- (id)cnContact;
 - (long long)compareAccountNames:(id)arg1;
 - (long long)compareFirstNames:(id)arg1;
 - (long long)compareIDs:(id)arg1;
@@ -261,6 +270,7 @@
 - (id)guid;
 - (bool)hasAudio;
 - (bool)hasCapability:(unsigned long long)arg1;
+- (bool)hasCheckedForSuggestions;
 - (bool)hasConferencing;
 - (bool)hasLocation;
 - (bool)hasMultiwayAudio;
@@ -313,6 +323,7 @@
 - (id)originalID;
 - (id)otherServiceIDs;
 - (id)person;
+- (id)personCentricID;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)pictureData;
 - (void)postNotificationName:(id)arg1;
@@ -328,6 +339,7 @@
 - (void)resetUniqueName;
 - (id)resource;
 - (id)richStatusMessage;
+- (void)scheduleSuggestedNameFetchIfNecessary;
 - (void)sendNotificationABPersonChanged;
 - (id)server;
 - (id)service;
@@ -335,6 +347,7 @@
 - (void)setAuthRequestStatus:(unsigned int)arg1;
 - (void)setBlocked:(bool)arg1;
 - (void)setCapabilities:(unsigned long long)arg1;
+- (void)setCnContact:(id)arg1;
 - (void)setCustomPictureData:(id)arg1;
 - (void)setCustomPictureData:(id)arg1 key:(id)arg2;
 - (void)setEmail:(id)arg1;
@@ -344,6 +357,7 @@
 - (void)setFeedUpdatedDate:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 andUpdateABPerson:(bool)arg4;
+- (void)setHasCheckedForSuggestions:(bool)arg1;
 - (void)setHasTemporaryWatch:(bool)arg1;
 - (void)setIDStatus:(long long)arg1;
 - (void)setIMPerson:(id)arg1;
@@ -356,6 +370,7 @@
 - (void)setMapItemBannerImageData:(id)arg1;
 - (void)setMapItemImageData:(id)arg1;
 - (void)setOtherServiceIDs:(id)arg1;
+- (void)setPersonCentricID:(id)arg1;
 - (void)setPersonStatus:(unsigned long long)arg1;
 - (void)setPriority:(long long)arg1;
 - (void)setStatus:(unsigned long long)arg1 message:(id)arg2 richMessage:(id)arg3;

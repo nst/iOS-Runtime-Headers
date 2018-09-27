@@ -25,5 +25,6 @@
 
 - (id)artworkCatalog;
 - (id)contentItemCollectionInfo;
+- (id)humanDescription;
 
 @end

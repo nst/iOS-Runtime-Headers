@@ -16,10 +16,13 @@
 + (id)_orderedPrefetchConditionStringsOnAssets;
 + (id)_originalResourceTypes;
 
+- (void).cxx_destruct;
 - (id)_assetPredicateForCPLResourceType:(unsigned long long)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (bool)_canPrefetch;
 - (void)_checkCPLBackgroundDownloadOperations;
 - (void)_cleanupInflightResources;
+- (void)_enqueueCheckCPLBGDownloadFromNow:(id)arg1 withReason:(id)arg2;
+- (id)_excludeMomentShareAssetsString;
 - (void)_handlePrefetchError:(id)arg1 forPLCloudResourceWithObjectID:(id)arg2;
 - (id)_identifierForResourceDownload:(id)arg1;
 - (void)_incrementPrefetchCountForPLCloudResources:(id)arg1;
@@ -28,15 +31,18 @@
 - (id)_masterPredicateForCPLResourceType:(unsigned long long)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (id)_missingLocalOriginalConditionString;
 - (id)_missingThumbnailConditionString;
+- (id)_nrm_assetPredicateForCPLResourceType:(unsigned long long)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
+- (id)_nrm_masterPredicateForCPLResourceType:(unsigned long long)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 - (id)_predicateForImageResourcePixelsLessOrEqual:(long long)arg1;
 - (id)_predicateForKeyFacePrefetching;
 - (id)_predicateForMaxFilesize:(long long)arg1;
 - (id)_predicateForResourceCreatedAfterDate:(id)arg1;
 - (id)_predicateToPrefetchMemories:(id)arg1;
+- (id)_predicateToPrefetchSuggestions:(id)arg1;
 - (id)_predicatesForNonThumbnails;
 - (id)_predicatesForThumbnails;
 - (id)_prefetchResourceForAsset:(id)arg1 inResourceTypes:(id)arg2;
-- (void)_prefetchResources:(id)arg1 shouldAutoPefetchNextBatch:(bool)arg2;
+- (void)_prefetchResources:(id)arg1 shouldAutoPefetchNextBatch:(bool)arg2 prefetchSignpostId:(unsigned long long)arg3;
 - (void)_reloadDefaultDownload;
 - (void)_reloadDownloadOriginalsSetting;
 - (id)_resourcePredicateForCPLResourceType:(unsigned long long)arg1 additionalResourcePredicates:(id)arg2;

@@ -63,6 +63,7 @@
 - (void)processFseventBatch;
 - (void)queueEvents:(id)arg1 markSelfEncountered:(bool)arg2;
 - (void)resetWithReason:(id)arg1;
+- (void)resetWithReason:(id)arg1 dropFSEventID:(bool)arg2;
 - (void)resume;
 - (id)root;
 - (void)setDB:(id)arg1;

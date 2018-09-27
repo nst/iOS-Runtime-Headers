@@ -13,7 +13,6 @@
     NSMutableDictionary * _idsSendIDToCompletionHandler;
     NSMutableDictionary * _idsSendIDToResponseHandler;
     unsigned long long  _lastKnownConnectionStatus;
-    double  _lastTimeRaisedBadIDSProtobuf;
     bool  _pairedDeviceReady;
     BLTPBProtobufSequenceNumberManager * _sequenceNumberManager;
     NSLock * _sequenceNumberSendLock;
@@ -34,7 +33,6 @@
 - (void).cxx_destruct;
 - (bool)_callSendCompletionHandlerWithSuccess:(bool)arg1 identifier:(id)arg2 error:(id)arg3;
 - (void)_deviceConnectionStatusChanged:(id)arg1;
-- (void)_handleDebugException;
 - (void)_handleNewSessionState:(unsigned long long)arg1;
 - (bool)_idsQueueCallSendCompletionHandlerWithSuccess:(bool)arg1 identifier:(id)arg2 error:(id)arg3;
 - (void)_queueHandleIDSProtobuf:(id)arg1;

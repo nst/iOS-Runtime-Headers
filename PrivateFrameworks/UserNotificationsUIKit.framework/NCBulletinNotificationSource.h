@@ -4,9 +4,12 @@
 
 @interface NCBulletinNotificationSource : NSObject <BBObserverDelegate, NCNotificationDispatcherSourceDelegate, NCNotificationSource> {
     NSMutableDictionary * _bulletinFeeds;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
     NCNotificationDispatcher * _dispatcher;
     BBObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _sectionInfoById;
+    BBSettingsGateway * _settingsGateway;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bulletinFeeds;
@@ -16,6 +19,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BBObserver *observer;
 @property (nonatomic, retain) NSMutableDictionary *sectionInfoById;
+@property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,6 +34,9 @@
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
+- (void)dispatcher:(id)arg1 setAllowsCriticalAlerts:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setAllowsNotifications:(bool)arg2 forSectionIdentifier:(id)arg3;
+- (void)dispatcher:(id)arg1 setDeliverQuietly:(bool)arg2 forSectionIdentifier:(id)arg3;
 - (id)init;
 - (id)initWithDispatcher:(id)arg1;
 - (id)initWithDispatcher:(id)arg1 observer:(id)arg2;
@@ -50,5 +57,7 @@
 - (void)setDispatcher:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setSectionInfoById:(id)arg1;
+- (void)setSettingsGateway:(id)arg1;
+- (id)settingsGateway;
 
 @end

@@ -5,7 +5,7 @@
 @interface WKNSArray : NSArray <WKObject> {
     struct ObjectStorage<API::Array> { 
         struct type { 
-            unsigned char __lx[40]; 
+            unsigned char __lx[32]; 
         } data; 
     }  _array;
 }

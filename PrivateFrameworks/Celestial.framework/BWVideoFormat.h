@@ -9,6 +9,7 @@
     unsigned long long  _extendedHeight;
     unsigned long long  _extendedWidth;
     unsigned long long  _height;
+    bool  _memoryPoolUseAllowed;
     NSDictionary * _pixelBufferAttributes;
     unsigned int  _pixelFormat;
     unsigned long long  _planeAlignment;
@@ -22,6 +23,7 @@
 @property (nonatomic) unsigned long long extendedHeight;
 @property (nonatomic) unsigned long long extendedWidth;
 @property (nonatomic) unsigned long long height;
+@property (nonatomic) bool memoryPoolUseAllowed;
 @property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
 @property (nonatomic) unsigned int pixelFormat;
 @property (nonatomic) unsigned long long planeAlignment;
@@ -35,7 +37,7 @@
 + (void)initialize;
 + (id)pixelBufferAttachmentsForColorSpaceProperties:(int)arg1;
 
-- (id)_initWithResolvedPixelBufferAttributes:(id)arg1 colorSpaceProperties:(int)arg2;
+- (id)_initWithResolvedPixelBufferAttributes:(id)arg1 colorSpaceProperties:(int)arg2 memoryPoolUseAllowed:(bool)arg3;
 - (unsigned long long)bytesPerRowAlignment;
 - (unsigned int)cacheMode;
 - (int)colorSpaceProperties;
@@ -48,6 +50,7 @@
 - (unsigned long long)height;
 - (bool)isEqual:(id)arg1;
 - (unsigned int)mediaType;
+- (bool)memoryPoolUseAllowed;
 - (id)pixelBufferAttributes;
 - (unsigned int)pixelFormat;
 - (unsigned long long)planeAlignment;
@@ -57,6 +60,7 @@
 - (void)setExtendedHeight:(unsigned long long)arg1;
 - (void)setExtendedWidth:(unsigned long long)arg1;
 - (void)setHeight:(unsigned long long)arg1;
+- (void)setMemoryPoolUseAllowed:(bool)arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setPlaneAlignment:(unsigned long long)arg1;
 - (void)setPrewireBuffers:(bool)arg1;

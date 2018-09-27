@@ -9,7 +9,9 @@
     unsigned long long  _collapsedNotificationsCount;
     NCNotificationContent * _content;
     NSDictionary * _context;
+    bool  _criticalAlert;
     NCNotificationAction * _defaultAction;
+    NSString * _highestPrioritySubSectionIdentifier;
     bool  _isCollapsedNotification;
     NSString * _notificationIdentifier;
     NCNotificationOptions * _options;
@@ -25,6 +27,7 @@
     NSDictionary * _supplementaryActions;
     NSString * _threadIdentifier;
     NSDate * _timestamp;
+    bool  _uniqueThreadIdentifier;
     UNNotification * _userNotification;
 }
 
@@ -33,8 +36,10 @@
 @property (nonatomic, readonly) NCNotificationAction *clearAction;
 @property (nonatomic, readonly) NCNotificationAction *closeAction;
 @property (nonatomic, readonly) unsigned long long collapsedNotificationsCount;
+@property (nonatomic, readonly) NSString *contactIdentifier;
 @property (nonatomic, readonly) NCNotificationContent *content;
 @property (nonatomic, readonly, copy) NSDictionary *context;
+@property (getter=isCriticalAlert, nonatomic, readonly) bool criticalAlert;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NCNotificationAction *defaultAction;
 @property (nonatomic, readonly, copy) NSArray *defaultEnvironmentActions;
@@ -43,6 +48,7 @@
 @property (nonatomic, readonly) bool hasOnlySingleMinimalTextInputAction;
 @property (nonatomic, readonly) bool hasOnlySingleTextInputAction;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *highestPrioritySubSectionIdentifier;
 @property (nonatomic, readonly) bool isCollapsedNotification;
 @property (nonatomic, readonly, copy) NSArray *minimalEnvironmentActions;
 @property (nonatomic, readonly, copy) NSString *notificationIdentifier;
@@ -62,6 +68,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *supplementaryActions;
 @property (nonatomic, readonly, copy) NSString *threadIdentifier;
 @property (nonatomic, readonly) NSDate *timestamp;
+@property (getter=isUniqueThreadIdentifier, nonatomic, readonly) bool uniqueThreadIdentifier;
 @property (nonatomic, readonly) UNNotification *userNotification;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsKit.framework/UserNotificationsKit
@@ -112,12 +119,16 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (unsigned long long)hash;
+- (id)highestPrioritySubSectionIdentifier;
 - (id)initWithNotificationRequest:(id)arg1;
 - (bool)isCollapsedNotification;
 - (bool)isCollapsibleWithNotificationRequest:(id)arg1;
+- (bool)isCriticalAlert;
 - (bool)isEqual:(id)arg1;
+- (bool)isUniqueThreadIdentifier;
 - (id)loggingDescription;
 - (bool)matchesRequest:(id)arg1;
+- (bool)matchesThreadForRequest:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)notificationIdentifier;
 - (id)options;
@@ -144,6 +155,7 @@
 + (id)notificationRequestForBulletin:(id)arg1 observer:(id)arg2 sectionInfo:(id)arg3 feed:(unsigned long long)arg4 playLightsAndSirens:(bool)arg5;
 
 - (id)bulletin;
+- (id)contactIdentifier;
 - (id)defaultEnvironmentActions;
 - (bool)hasAttachments;
 - (bool)hasOnlySingleMinimalTextInputAction;

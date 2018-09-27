@@ -8,6 +8,7 @@
 @property (nonatomic, retain) MPModelMovie *movie;
 @property (nonatomic, retain) MPModelPlaylist *playlist;
 @property (nonatomic) long long position;
+@property (nonatomic, retain) MPModelSocialPerson *socialContributor;
 @property (nonatomic, retain) MPModelSong *song;
 @property (nonatomic, retain) MPModelTVEpisode *tvEpisode;
 
@@ -17,6 +18,7 @@
 + (id)__movie_KEY;
 + (id)__playlist_KEY;
 + (id)__position_KEY;
++ (id)__socialContributor_KEY;
 + (id)__song_KEY;
 + (id)__tvEpisode_KEY;
 + (id)kindWithKinds:(id)arg1;
@@ -28,6 +30,8 @@
 + (bool)supportsLibraryAddStatusObservation;
 + (bool)supportsLibraryRemoval;
 
+- (id)anyObject;
+- (id)humanDescription;
 - (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
 - (long long)libraryRemovalSupportedOptions;
 - (id)mediaItemPropertyValues;

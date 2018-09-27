@@ -30,7 +30,9 @@
 @property (nonatomic, readonly) IKViewElement *viewElement;
 
 - (void).cxx_destruct;
+- (bool)_isAtWordEnd;
 - (void)_keyboardDidChangeFrame:(id)arg1;
+- (id)_sanitizedText;
 - (void)_setNonResultsView:(id)arg1;
 - (void)_updateKeyboardText;
 - (void)_updateSearchFieldText;

@@ -19,7 +19,6 @@
 // Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
 
 + (bool)__imcore__containsNonSuccess:(id)arg1;
-+ (id)__imcore__unsupportedForRecipients:(id)arg1;
 
 - (bool)__imcore__isSuccess;
 

@@ -2,27 +2,29 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSISLinearExpression : NSObject <NSFastEnumeration, NSISRowBody> {
-    double  constant;
-    union { 
-        /* Warning: unhandled struct encoding: '{?="stored_extern_marker"@"slab"^{?}"capacity"Q}"inline_slab"{?="aligner"Q}"padding"[48C])' */ struct { 
-            id stored_extern_marker; 
-        } extern_data; 
-        unsigned long long capacity; 
-    }  data;
-    unsigned int  inline_capacity;
-    unsigned int  var_count;
+@interface NSISLinearExpression : NSObject <NSFastEnumeration> {
+    NSISEngine * engine;
+    struct { 
+        unsigned short inline_capacity; 
+        unsigned int var_count; 
+        double constant; 
+        union { 
+            /* Warning: unhandled struct encoding: '{?="stored_extern_marker"@"slab"^{?}"capacity"Q}"inline_slab"{?="aligner"Q}"padding"[48C])}' */ struct { 
+                id stored_extern_marker; 
+            } extern_data; 
+            unsigned long long capacity; 
+        } data; 
+    }  linExp;
 }
 
 @property double constant;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
+@property (readonly) NSISEngine *engine;
 
 + (id)acquireFromPoolForUseCase:(long long)arg1;
++ (id)acquireFromPoolForUseCase:(long long)arg1 engine:(id)arg2;
 + (void)initialize;
 + (id)newExpressionWithCapacity:(unsigned long long)arg1;
++ (id)newExpressionWithCapacity:(unsigned long long)arg1 engine:(id)arg2;
 
 - (void)addExpression:(id)arg1 times:(double)arg2;
 - (void)addExpression:(id)arg1 times:(double)arg2 processVariableNewToReceiver:(id /* block */)arg3 processVariableDroppedFromReceiver:(id /* block */)arg4;
@@ -35,13 +37,15 @@
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
+- (id)engine;
 - (void)enumerateVariables:(id /* block */)arg1;
 - (void)enumerateVariablesAndCoefficients:(id /* block */)arg1;
 - (bool)enumerateVariablesAndCoefficientsUntil:(id /* block */)arg1;
 - (unsigned long long)hash;
 - (double)incrementConstant:(double)arg1;
 - (id)init;
-- (id)initWithInlineCapacity:(unsigned long long)arg1;
+- (id)initWithEngine:(id)arg1;
+- (id)initWithInlineCapacity:(unsigned long long)arg1 engine:(id)arg2;
 - (bool)isConstant;
 - (bool)isEqual:(id)arg1;
 - (void)removeVariable:(id)arg1;

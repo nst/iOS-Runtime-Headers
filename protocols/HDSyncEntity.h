@@ -14,6 +14,7 @@
 
 @optional
 
++ (NSSet *)excludedSyncStoresForSession:(HDSyncSession *)arg1;
 + (bool)supportsSyncStore:(id <HDSyncStore>)arg1;
 
 @end

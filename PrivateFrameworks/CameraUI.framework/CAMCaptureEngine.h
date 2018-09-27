@@ -82,7 +82,7 @@
 
 - (void).cxx_destruct;
 - (id)_accumulatedUserInfoFromCommand:(id)arg1;
-- (void)_beginSessionConfigurationIfRequiredByCommand:(id)arg1 withContext:(id)arg2;
+- (void)_beginSessionConfigurationIfRequiredByCommand:(id)arg1 withContext:(id)arg2 logReason:(out id*)arg3;
 - (void)_cancelDelayedSessionNonstartRecovery;
 - (id)_captureEngineDeviceCache;
 - (id)_captureEngineDeviceForDevice:(long long)arg1;
@@ -90,10 +90,9 @@
 - (id)_captureServicesQueue;
 - (id)_captureSession;
 - (id)_captureSessionQueue;
-- (void)_commitSessionConfigurationIfNecessary;
+- (void)_commitSessionConfigurationIfNecessaryWithLogReason:(id)arg1;
 - (id)_coordinationInfoForRequest:(id)arg1 photo:(id)arg2;
 - (id)_coordinationInfoForRequest:(id)arg1 resolvedSettings:(id)arg2 videoComplementURL:(id)arg3 isFiltered:(bool)arg4;
-- (id)_correspondingCaptureEngineDeviceForCaptureInput:(id)arg1;
 - (struct __CVBuffer { }*)_createOutputPixelBufferMatchingInputPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (double)_delayForRecoveryAttempt:(unsigned long long)arg1;
 - (id)_effectsPreviewSampleBufferDelegates;
@@ -114,10 +113,9 @@
 - (void)_handleSessionInterruptionEnded:(id)arg1;
 - (void)_handleSessionRuntimeError:(id)arg1;
 - (bool)_isPerformingRecovery;
-- (bool)_isSessionModificationRequiredByCommand:(id)arg1;
+- (bool)_isSessionModificationRequiredByCommand:(id)arg1 logReason:(out id*)arg2;
 - (bool)_lockAllEngineManagedDevices;
 - (bool)_lockManagedCapturedDevice:(id)arg1;
-- (void)_markSessionRecoveryAsRecovered;
 - (id)_metadataObjectsQueue;
 - (struct __IOSurface { }*)_newFilteredSurfaceFromPixelBuffer:(struct __CVBuffer { }*)arg1 filters:(id)arg2;
 - (long long)_notificationForError:(struct __CFString { }*)arg1;
@@ -137,6 +135,7 @@
 - (id)_powerController;
 - (void)_recoverFromSessionRuntimeError;
 - (id)_recoveryMutexQueue;
+- (void)_resetPerformingRecoveryState;
 - (void)_scheduleDelayedRecoveryCheckIfNecessary;
 - (void)_scheduleDelayedSessionNonstartRecovery;
 - (id)_servicesQueueCaptureServices;
@@ -144,6 +143,7 @@
 - (void)_sessionQueuePanoramaTeardown;
 - (id)_sessionQueueRegisteredStillImageRequests;
 - (id)_sessionQueueRequestsBeingRecorded;
+- (void)_sessionQueue_startWithRetryCount:(unsigned long long)arg1 retryInterval:(double)arg2 logReason:(id)arg3 completion:(id /* block */)arg4;
 - (void)_setInterrupted:(bool)arg1;
 - (void)_setNumberOfRecoveryAttempts:(unsigned long long)arg1;
 - (void)_setPanoramaAssertionIdentifier:(unsigned int)arg1;
@@ -166,6 +166,7 @@
 - (void)_updateVideoThumbnailSubgraph;
 - (void)_validateSessionRecovery;
 - (id)_validateVideoAtURL:(id)arg1 withCaptureError:(id)arg2 isVideoComplement:(bool)arg3 stillImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 reportedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 outActualDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6 outVideoRecordingStoppedReason:(long long*)arg7;
+- (id)_videoDeviceInputFromSession:(id)arg1;
 - (id)_videoPreviewLayer;
 - (id)_videoThumbnailContentsDelegates;
 - (bool)areManagedDevicesLockedForConfiguration;
@@ -201,6 +202,9 @@
 - (id)panoramaConfiguration;
 - (void)panoramaProcessor:(id)arg1 didProcessSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 withStatus:(int)arg3 forRequest:(id)arg4;
 - (id)panoramaVideoDataOutput;
+- (id)prewarmedAudioDeviceInput:(id)arg1 device:(id)arg2;
+- (id)prewarmedCaptureSession;
+- (id)prewarmedVideoDeviceInput:(id)arg1 position:(long long)arg2 device:(id)arg3;
 - (void)registerCaptureService:(id)arg1;
 - (void)registerEffectsPreviewSampleBufferDelegate:(id)arg1;
 - (void)registerStillImageCaptureRequest:(id)arg1 withSettings:(id)arg2;
@@ -208,12 +212,12 @@
 - (void)registerVideoThumbnailContentsDelegate:(id)arg1;
 - (void)setCameraDevice:(id)arg1;
 - (void)setManagedDevicesLockedForConfiguration:(bool)arg1;
-- (void)start;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
+- (void)startWithRetryCount:(unsigned long long)arg1 retryInterval:(double)arg2 logReason:(id)arg3 completion:(id /* block */)arg4;
 - (id)stillImageOutput;
-- (void)stop;
 - (void)stopPanoramaCapture;
 - (void)stopRecording;
+- (void)stopWithCompletion:(id /* block */)arg1;
 - (void)unregisterCaptureService:(id)arg1;
 - (void)unregisterEffectsPreviewSampleBufferDelegate:(id)arg1;
 - (void)unregisterVideoThumbnailContentsDelegate:(id)arg1;

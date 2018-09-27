@@ -32,6 +32,7 @@
 + (struct CGSize { double x1; double x2; })sizeThatFitsCardSection:(id)arg1 boundingSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
+- (id)accessibilityIdentifier;
 - (id)cardSectionViewIdentifier;
 - (id)composedSuperview;
 - (struct CGSize { double x1; double x2; })contentSize;

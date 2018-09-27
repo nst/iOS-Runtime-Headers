@@ -18,8 +18,8 @@
 - (id)description;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)populateWithProtobuf:(id)arg1;
-- (id)protobufRepresentation;
+- (void)populateWithProtobuf:(id)arg1 normalizedWithFeedGutter:(double)arg2;
+- (id)protobufRepresentationnormalizedWithFeedGutter:(double)arg1;
 - (long long)rowSpan;
 - (void)setCellType:(long long)arg1;
 - (void)setColumnSpan:(long long)arg1;

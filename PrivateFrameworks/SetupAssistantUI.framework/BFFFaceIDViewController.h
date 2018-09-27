@@ -5,6 +5,8 @@
 @interface BFFFaceIDViewController : OBSplashController <BKUIPearlEnrollControllerDelegate> {
     bool  _completesOnCancel;
     <BFFFaceIDViewControllerDelegate> * _faceIDViewControllerDelegate;
+    bool  _inDemo;
+    BKUIPearlEnrollControllerPreloadedState * _preloadedState;
     UIImageView * _splashImageView;
 }
 
@@ -13,9 +15,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <BFFFaceIDViewControllerDelegate> *faceIDViewControllerDelegate;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool inDemo;
 @property (readonly) Class superclass;
-
-+ (void)performExtendedInitializationWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)_createSplashImageView;
@@ -24,8 +25,11 @@
 - (void)_userDidTapCancelButton:(id)arg1;
 - (bool)completesOnCancel;
 - (id)faceIDViewControllerDelegate;
+- (bool)inDemo;
 - (id)init;
+- (id)initInDemo:(bool)arg1;
 - (void)pearlEnrollController:(id)arg1 finishedEnrollWithError:(id)arg2;
+- (void)performExtendedInitializationWithCompletion:(id /* block */)arg1;
 - (void)resetColorsAnimated:(bool)arg1;
 - (void)setCompletesOnCancel:(bool)arg1;
 - (void)setFaceIDViewControllerDelegate:(id)arg1;

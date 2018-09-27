@@ -17,10 +17,11 @@
 @property (nonatomic) bool shouldUseSecureConnectionForPermanentURLs;
 
 - (void).cxx_destruct;
-- (id)_permanentURLForRecordID:(id)arg1 field:(long long)arg2 useHTTPS:(bool)arg3;
 - (void)addOperation:(id)arg1;
 - (id)containerIdentifier;
+- (id)init;
 - (id)initWithContainerIdentifier:(id)arg1 productionEnvironment:(bool)arg2 networkBehaviorMonitor:(id)arg3;
+- (id)initWithContextConfiguration:(id)arg1 networkBehaviorMonitor:(id)arg2;
 - (bool)isProductionEnvironment;
 - (id)networkBehaviorMonitor;
 - (id)permanentURLForRecordID:(id)arg1 field:(long long)arg2;

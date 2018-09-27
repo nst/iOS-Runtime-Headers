@@ -35,6 +35,7 @@
 - (bool)isClientEntitled;
 - (id)managedEntityName;
 - (id)objectID;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (id)uuid;
 - (bool)validateForDeleteManagedObject:(id)arg1 error:(id*)arg2;

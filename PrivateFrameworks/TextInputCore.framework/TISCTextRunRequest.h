@@ -14,6 +14,7 @@
 
 + (id)textRunRequestWithStrings:(id)arg1 color:(struct CGColor { }*)arg2 maxFontSize:(double)arg3 minFontSize:(double)arg4 allowTruncation:(bool)arg5 truncationSentinel:(id)arg6 widthGroup:(unsigned long long)arg7;
 
+- (void).cxx_destruct;
 - (bool)allowTruncation;
 - (struct CGColor { }*)color;
 - (void)dealloc;

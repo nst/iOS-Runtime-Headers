@@ -11,17 +11,17 @@
         long long epoch; 
     }  _cumulativeTimePlayed;
     double  _duration;
-    SXKeyValueObserver * _durationObserver;
+    SVKeyValueObserver * _durationObserver;
     double  _elapsedTime;
     double  _frameRate;
-    SXKeyValueObserver * _loadedTimeRangesObserver;
+    SVKeyValueObserver * _loadedTimeRangesObserver;
     id /* block */  _loadingProgressBlock;
     int  _playbackPosition;
     id /* block */  _playbackProgressBlock;
     int  _playbackStatus;
     id /* block */  _playbackStatusBlock;
-    SXKeyValueObserver * _statusObserver;
-    SXKeyValueObserver * _timeControlStatusObserver;
+    SVKeyValueObserver * _statusObserver;
+    SVKeyValueObserver * _timeControlStatusObserver;
     id  _timeObserver;
 }
 
@@ -30,19 +30,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
-@property (nonatomic, retain) SXKeyValueObserver *durationObserver;
+@property (nonatomic, retain) SVKeyValueObserver *durationObserver;
 @property (nonatomic) double elapsedTime;
 @property (nonatomic) double frameRate;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) SXKeyValueObserver *loadedTimeRangesObserver;
+@property (nonatomic, retain) SVKeyValueObserver *loadedTimeRangesObserver;
 @property (nonatomic, copy) id /* block */ loadingProgressBlock;
 @property (nonatomic) int playbackPosition;
 @property (nonatomic, copy) id /* block */ playbackProgressBlock;
 @property (nonatomic) int playbackStatus;
 @property (nonatomic, copy) id /* block */ playbackStatusBlock;
-@property (nonatomic, retain) SXKeyValueObserver *statusObserver;
+@property (nonatomic, retain) SVKeyValueObserver *statusObserver;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) SXKeyValueObserver *timeControlStatusObserver;
+@property (nonatomic, retain) SVKeyValueObserver *timeControlStatusObserver;
 @property (nonatomic, retain) id timeObserver;
 @property (nonatomic, readonly) double totalTimePlayed;
 

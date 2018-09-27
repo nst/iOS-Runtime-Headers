@@ -4,6 +4,7 @@
 
 @interface PGPictureInPictureViewController : UIViewController <PGPictureInPictureControlsViewControllerDelegate> {
     PGPictureInPictureApplication * _application;
+    bool  _canStartShowingChrome;
     UIView * _containerView;
     <PGPictureInPictureViewControllerContentContainer> * _contentContainer;
     PGLayerHostView * _contentView;
@@ -41,10 +42,13 @@
     PGStashedView * _stashedView;
     UIView * _styleViewAbove;
     UIView * _styleViewBelow;
+    id /* block */  _waitForUIFinalizationCompletionBlock;
 }
 
 @property (nonatomic, readonly) PGPictureInPictureApplication *application;
+@property (nonatomic) bool canStartShowingChrome;
 @property (nonatomic) <PGPictureInPictureViewControllerContentContainer> *contentContainer;
+@property (nonatomic, readonly) UIView *contentContainerView;
 @property (nonatomic, readonly) long long controlsStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PGPictureInPictureViewControllerDelegate> *delegate;
@@ -57,12 +61,21 @@
 @property (nonatomic) bool showsLoadingIndicator;
 @property (nonatomic) long long stashState;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ waitForUIFinalizationCompletionBlock;
 
 + (void)animateViewWithAnimationType:(long long)arg1 initialSpringVelocity:(double)arg2 animations:(id /* block */)arg3 completion:(id /* block */)arg4;
++ (double)contentViewCornerRadius;
 
 - (void).cxx_destruct;
+- (void)_handleTapGestureRecognizer:(id)arg1;
+- (void)_performStartAnimationWithCompletionHandler:(id /* block */)arg1;
+- (void)_performStopAnimationWithFinalInterfaceOrientation:(long long)arg1 finalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)_stopShowingControlsAnimated:(bool)arg1;
+- (void)acquireInterfaceOrientationLock;
 - (id)application;
+- (bool)canStartShowingChrome;
 - (id)contentContainer;
+- (id)contentContainerView;
 - (long long)controlsStyle;
 - (void)dealloc;
 - (id)delegate;
@@ -76,8 +89,8 @@
 - (id)loadedTimeRanges;
 - (void)performResumeAnimationWithCompletionHandler:(id /* block */)arg1;
 - (void)performRotateAnimationWithRotation:(long long)arg1 completionHandler:(id /* block */)arg2;
-- (void)performStartAnimationWithCompletionHandler:(id /* block */)arg1;
-- (void)performStopAnimationWithFinalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)performStartAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)performStopAnimated:(bool)arg1 withFinalInterfaceOrientation:(long long)arg2 finalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)performSuspendAnimationWithCompletionHandler:(id /* block */)arg1;
 - (void)pictureInPictureControlsViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureControlsViewControllerCancelButtonTapped:(id)arg1;
@@ -86,7 +99,10 @@
 - (void)pictureInPictureControlsViewControllerStopButtonTapped:(id)arg1;
 - (id)playbackProgress;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
-- (void)prepareStartAnimationWithInitialLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 completionHandler:(id /* block */)arg2;
+- (void)prepareStartAnimationWithInitialInterfaceOrientation:(long long)arg1 initialLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)prepareStopAnimationWithCompletionHandler:(id /* block */)arg1;
+- (void)relinquishInterfaceOrientationLock;
+- (void)setCanStartShowingChrome:(bool)arg1;
 - (void)setContentContainer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostedWindowHostingHandle:(id)arg1;
@@ -97,12 +113,13 @@
 - (void)setShowsLoadingIndicator:(bool)arg1;
 - (void)setStashState:(long long)arg1;
 - (void)setStashState:(long long)arg1 animated:(bool)arg2;
+- (void)setWaitForUIFinalizationCompletionBlock:(id /* block */)arg1;
+- (void)showChrome:(bool)arg1 animated:(bool)arg2;
 - (bool)showsAlternateActionButtonImage;
 - (bool)showsLoadingIndicator;
-- (void)startShowingControlsAnimated:(bool)arg1;
 - (long long)stashState;
-- (void)stopShowingControlsAnimated:(bool)arg1;
 - (void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateLayerHostTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (id /* block */)waitForUIFinalizationCompletionBlock;
 
 @end

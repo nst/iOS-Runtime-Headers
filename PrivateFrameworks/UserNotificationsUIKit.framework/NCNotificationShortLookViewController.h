@@ -2,15 +2,27 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCNotificationShortLookViewController : NCNotificationViewController <NCBannerPresentationTransitioningDelegateObserver, NCLongLookPresentationControllerDelegate, NCNotificationPreviewInteractionManagerDelegate, NCNotificationViewControllerObserving> {
+@interface NCNotificationShortLookViewController : NCNotificationViewController <NCBannerPresentationTransitioningDelegateObserver, NCLongLookDefaultPresentationControllerDelegate, NCNotificationViewControllerObserving, PLExpandedPlatterPresentationControllerDelegate, PLPreviewInteractionManagerDelegate, PLPreviewInteractionPresenting, PLViewControllerAnimatorDelegate> {
     UIView * _audioAccessoryView;
     NSHashTable * _audioAccessoryViewObservers;
     NCBannerPresentationTransitionDelegate * _bannerPresentationTransitionDelegate;
     UIView * _contextDefiningContainerView;
     UIViewController * _contextDefiningViewController;
     bool  _didScrollPresentLongLookViewController;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _finalPresentedFrameOfViewForPreview;
     NCNotificationViewController * _longLookNotificationViewController;
-    NCNotificationPreviewInteractionManager * _previewInteractionManager;
+    PLPreviewInteractionManager * _previewInteractionManager;
+    <UIViewControllerContextTransitioning> * _scrollPresentationTransitionContext;
+    UIScrollView * _scrollView;
     NSDate * _tapBeginTime;
     UITapGestureRecognizer * _tapGesture;
 }
@@ -18,18 +30,29 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_didScrollPresentLongLookViewController, setter=_setDidScrollPresentLongLookViewController:, nonatomic) bool didScrollPresentLongLookViewController;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } finalDismissedFrameOfViewForPreview;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } finalPresentedFrameOfViewForPreview;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialPresentedFrameOfViewForPreview;
 @property (getter=_presentedLongLookViewController, nonatomic, readonly) NCNotificationViewController *presentedLongLookViewController;
-@property (getter=_previewInteractionManager, nonatomic, retain) NCNotificationPreviewInteractionManager *previewInteractionManager;
+@property (nonatomic, readonly) PLPreviewInteractionManager *previewInteractionManager;
+@property (getter=_scrollView, nonatomic, retain) UIScrollView *scrollView;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) UIView *viewForPreview;
+
++ (long long)materialRecipeForLegibilitySettings:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_completeScrollPresentation;
 - (void)_configureScrollViewIfNecessary;
 - (bool)_didScrollPresentLongLookViewController;
+- (void)_expandCoalescedNotificationBundle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForTransitionViewInScrollView;
+- (void)_handlePresentedContentDismissalWithTrigger:(long long)arg1;
 - (void)_handleTapOnView:(id)arg1;
 - (id)_initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(bool)arg2;
 - (bool)_isPresentingCustomContentProvidingViewController;
+- (id)_legibilitySettings;
 - (void)_loadExtensionIfNecessary;
 - (void)_loadLookView;
 - (void)_loadPresentationContainerViewIfNecessary;
@@ -41,8 +64,7 @@
 - (void)_presentLongLookForScrollAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_presentLongLookViaPreviewInteraction:(id /* block */)arg1;
 - (id)_presentedLongLookViewController;
-- (id)_previewInteractionManager;
-- (Class)_scrollViewClass;
+- (id)_scrollView;
 - (void)_setAudioAccessoryView:(id)arg1;
 - (bool)_setDelegate:(id)arg1;
 - (void)_setDidScrollPresentLongLookViewController:(bool)arg1;
@@ -50,28 +72,41 @@
 - (bool)_shouldPadScrollViewContentSizeHeight;
 - (bool)_tryDismissingShortLookInScrollView:(id)arg1;
 - (void)_updateScrollViewContentSize;
+- (void)_updateWithProvidedAuxiliaryOptionsContent;
 - (void)_updateWithProvidedStaticContent;
 - (void)addAudioAccessoryViewObserver:(id)arg1;
+- (void)adjustForLegibilitySettingsChange:(id)arg1;
+- (unsigned long long)backgroundMaterialOptions;
 - (id)containerViewForPreviewInteractionManager:(id)arg1;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (bool)didReceiveNotificationRequest:(id)arg1;
 - (bool)dismissPresentedViewControllerAndClearNotification:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (id)effectiveGroupName;
 - (void)expandAndPlayAudioMessage;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })expandedPlatterPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalDismissedFrameOfViewForPreview;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalPresentedFrameOfViewForPreview;
 - (bool)hasCommittedToPresentingCustomContentProvidingViewController;
-- (id)hideHomeAffordanceAnimationSettingsForLongLookPresentationController:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialPresentedFrameOfViewForPreview;
+- (bool)isCoalescedNotificationBundle;
 - (bool)isContentExtensionVisible:(id)arg1;
 - (bool)isShortLook;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
-- (id)longLookViewControllerForPreviewInteractionManager:(id)arg1;
+- (long long)materialRecipe;
 - (void)notificationViewControllerDidDismiss:(id)arg1;
 - (void)notificationViewControllerDidPresent:(id)arg1;
 - (void)notificationViewControllerWillDismiss:(id)arg1;
 - (void)notificationViewControllerWillPresent:(id)arg1;
+- (unsigned long long)overlayMaterialOptions;
 - (void)presentLongLookAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (id)presentedViewControllerForPreviewInteractionManager:(id)arg1;
+- (id)previewInteractionManager;
+- (void)previewInteractionManager:(id)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
+- (bool)previewInteractionManager:(id)arg1 shouldBeginInteractionWithTouchAtLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)previewInteractionManager:(id)arg1 shouldFinishInteractionWithCompletionBlock:(id /* block */)arg2;
+- (void)previewInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)previewInteractionManagerDidEndUserInteraction:(id)arg1;
-- (bool)previewInteractionManagerShouldBeginInteraction:(id)arg1;
+- (bool)previewInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(id)arg1;
 - (void)previewInteractionManagerWillBeginUserInteraction:(id)arg1;
 - (void)removeAudioAccesoryViewObserver:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -81,9 +116,11 @@
 - (void)setCustomContentHomeAffordanceGestureRecognizer:(id)arg1;
 - (void)setCustomContentHomeAffordanceVisible:(bool)arg1;
 - (void)setInteractionEnabled:(bool)arg1;
-- (void)setPreviewInteractionManager:(id)arg1;
+- (void)setScrollView:(id)arg1;
 - (bool)shouldRestorePresentingShortLookOnDismiss;
-- (id)unhideHomeAffordanceAnimationSettingsForLongLookPresentationController:(id)arg1;
+- (id)transitioningDelegateForPreviewInteractionManager:(id)arg1;
+- (void)viewControllerAnimator:(id)arg1 didEndPresentationAnimation:(bool)arg2 withTransitionContext:(id)arg3;
+- (id)viewForPreview;
 - (void)viewWillLayoutSubviews;
 - (bool)wantsUseableContainerBoundsForTransitionWithDelegate:(id)arg1;
 

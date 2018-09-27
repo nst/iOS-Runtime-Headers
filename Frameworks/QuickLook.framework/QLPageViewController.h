@@ -36,13 +36,16 @@
 
 - (void).cxx_destruct;
 - (void)_applyParallaxEffectWithTransitionProgress:(double)arg1;
+- (id)_cachedViewControllerAtIndex:(unsigned long long)arg1 offset:(long long)arg2;
 - (unsigned long long)_indexOfViewController:(id)arg1;
+- (void)_loadAndCacheViewControllersBeforeAndAfterIndex:(long long)arg1;
+- (void)_rearrangeCachedViewControllersWithNewCurrentPageIndex:(long long)arg1;
 - (id)_retrieveAndStoreViewControllerAtIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
 - (void)_setCurrentPageIndex:(unsigned long long)arg1 direction:(long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_setUp;
 - (void)_setViewControllers:(id)arg1 direction:(long long)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_unsetParallaxEffect;
-- (id)_viewControllerAtIndex:(unsigned long long)arg1 offset:(unsigned long long)arg2;
+- (id)_viewControllerAtIndex:(unsigned long long)arg1 offset:(long long)arg2;
 - (void)clearInternalCache;
 - (id)currentPage;
 - (unsigned long long)currentPageIndex;

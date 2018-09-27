@@ -30,6 +30,7 @@
     id /* block */  _serverClaimerOrNil;
 }
 
+@property (readonly, copy) NSArray *allURLs;
 @property (readonly) NSObject<OS_dispatch_semaphore> *claimerWaiter;
 
 + (bool)canReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned long long)arg4;
@@ -61,6 +62,7 @@
 - (bool)didWait;
 - (void)disavowed;
 - (void)encodeWithCoder:(id)arg1;
+- (void)ensureProvidersOfItemsAtReadingLocations:(id)arg1 writingLocations:(id)arg2 thenContinue:(id /* block */)arg3;
 - (void)evaluateNewClaim:(id)arg1;
 - (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
 - (void)finished;

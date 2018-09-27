@@ -7,11 +7,13 @@
     long long  _priority;
     bool  _requireAudioCategoryActive;
     long long  _routeDirection;
+    unsigned long long  _sessionOptions;
 }
 
 @property (nonatomic, readonly) long long priority;
 @property (nonatomic, readonly) bool requireAudioCategoryActive;
 @property (nonatomic, readonly) long long routeDirection;
+@property (nonatomic) unsigned long long sessionOptions;
 
 + (id)newCaptureAssertionNamed:(id)arg1;
 + (id)newForegroundAppAssertion;
@@ -27,5 +29,7 @@
 - (long long)priority;
 - (bool)requireAudioCategoryActive;
 - (long long)routeDirection;
+- (unsigned long long)sessionOptions;
+- (void)setSessionOptions:(unsigned long long)arg1;
 
 @end

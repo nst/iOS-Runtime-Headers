@@ -5,6 +5,7 @@
 @interface EKDayGridView : UIView <EKCurrentTimeMarkerViewUpdating, EKUITintColorUpdateDelegate> {
     bool  _animatesTimeMarker;
     UIColor * _backgroundColor;
+    double  _cachedWidthForOffMainThreadWork;
     unsigned long long  _daysToDisplay;
     double  _eventHorizontalInset;
     UIView * _fadingHighlightedDayBackground;
@@ -107,8 +108,10 @@
 - (bool)rightBorderInsetsOccurrences;
 - (int)secondAtPosition:(double)arg1;
 - (void)setAnimatesTimeMarker:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setEventHorizontalInset:(double)arg1;
 - (void)setFixedDayWidth:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGridHeightScale:(double)arg1;
 - (void)setGridVisualEffect:(id)arg1;
 - (void)setHighlightedDayIndex:(long long)arg1;

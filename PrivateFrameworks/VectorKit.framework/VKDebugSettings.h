@@ -32,31 +32,7 @@
     unsigned long long  _arSwipeGesture;
     float  _arVirtualPlaneHeight;
     bool  _constantlyChangeTileGroup;
-    struct unordered_map<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > >, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > > > > { 
-        struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > > > > { 
-            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> {} **__value_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > { 
-                            unsigned long long __value_; 
-                        } __data_; 
-                    } __value_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> {} *__next_; 
-                } __value_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                unsigned long long __value_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
-                float __value_; 
-            } __p3_; 
-        } __table_; 
-    }  _customLandmarks;
+    struct unique_ptr<(anonymous namespace)::CustomLandmarksContainer, std::__1::default_delete<(anonymous namespace)::CustomLandmarksContainer> >="__ptr_"{__compressed_pair<(anonymous namespace)::CustomLandmarksContainer *, std::__1::default_delete<(anonymous namespace)::CustomLandmarksContainer> >="__value_"^{CustomLandmarksContainer {}  _customLandmarks;
     NSMutableDictionary * _customTiles;
     bool  _debugStyleAnimations;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
@@ -107,6 +83,7 @@
     bool  _keepTooCloseServerPositionedTransitFeatures;
     bool  _labelAllowDefaultStyle;
     bool  _labelAutoOffsetRoadText;
+    bool  _labelBaseSSLPMEnabled;
     bool  _labelCollideContinuously;
     bool  _labelCollisionEnabled;
     bool  _labelFlipAlternatePositionsEnable;
@@ -126,7 +103,7 @@
     }  _landmark2DStrokeSettings;
     bool  _layoutContinuously;
     bool  _loadGreenTraffic;
-    bool  _newRouteTraffic;
+    bool  _overrideNeworkDefaultsBaseSSLPMSwitch;
     bool  _overrideVenueCameraSettings;
     bool  _paintBuildingNormals;
     bool  _paintCoastlines;
@@ -136,6 +113,7 @@
     bool  _paintLabelCounts;
     bool  _paintLabelRoadFeatures;
     bool  _paintLandcoverTiles;
+    bool  _paintLoadReason;
     bool  _paintMapTiles;
     bool  _paintPoiTiles;
     bool  _paintPointTiles;
@@ -163,6 +141,7 @@
     bool  _showNavCameraDebugConsoleProperties;
     bool  _showNavCameraDebugLegend;
     bool  _showNavCameraDebugOverlay;
+    bool  _showPreliminaryInfo;
     bool  _showTrafficCasing;
     bool  _suppressFootprints;
     bool  _texturedTrafficCasing;
@@ -255,6 +234,7 @@
 @property (nonatomic) bool keepTooCloseServerPositionedTransitFeatures;
 @property (nonatomic) bool labelAllowDefaultStyle;
 @property (nonatomic) bool labelAutoOffsetRoadText;
+@property (nonatomic) bool labelBaseSSLPMEnabled;
 @property (nonatomic) bool labelCollideContinuously;
 @property (nonatomic) bool labelCollisionEnabled;
 @property (nonatomic) bool labelFlipAlternatePositionsEnable;
@@ -268,7 +248,7 @@
 @property (nonatomic) struct { bool x1; bool x2; bool x3; float x4; float x5; } landmark2DStrokeSettings;
 @property (nonatomic) bool layoutContinuously;
 @property (nonatomic) bool loadGreenTraffic;
-@property (nonatomic) bool newRouteTraffic;
+@property (nonatomic) bool overrideNeworkDefaultsBaseSSLPMSwitch;
 @property (nonatomic) bool overrideVenueCameraSettings;
 @property (nonatomic) bool paintBuildingNormals;
 @property (nonatomic) bool paintCoastlines;
@@ -278,6 +258,7 @@
 @property (nonatomic) bool paintLabelCounts;
 @property (nonatomic) bool paintLabelRoadFeatures;
 @property (nonatomic) bool paintLandcoverTiles;
+@property (nonatomic) bool paintLoadReason;
 @property (nonatomic) bool paintMapTiles;
 @property (nonatomic) bool paintPoiTiles;
 @property (nonatomic) bool paintPointTiles;
@@ -305,6 +286,7 @@
 @property (nonatomic) bool showNavCameraDebugConsoleProperties;
 @property (nonatomic) bool showNavCameraDebugLegend;
 @property (nonatomic) bool showNavCameraDebugOverlay;
+@property (nonatomic) bool showPreliminaryInfo;
 @property (nonatomic) bool showTrafficCasing;
 @property (nonatomic) bool suppressFootprints;
 @property (nonatomic) bool texturedTrafficCasing;
@@ -407,6 +389,7 @@
 - (bool)keepTooCloseServerPositionedTransitFeatures;
 - (bool)labelAllowDefaultStyle;
 - (bool)labelAutoOffsetRoadText;
+- (bool)labelBaseSSLPMEnabled;
 - (bool)labelCollideContinuously;
 - (bool)labelCollisionEnabled;
 - (bool)labelFlipAlternatePositionsEnable;
@@ -421,9 +404,9 @@
 - (bool)layoutContinuously;
 - (bool)loadGreenTraffic;
 - (id)nameForPerformanceGroup:(unsigned int)arg1;
-- (bool)newRouteTraffic;
 - (unsigned int)numPerformanceGroups;
 - (bool)overlaysShouldDrawDebug;
+- (bool)overrideNeworkDefaultsBaseSSLPMSwitch;
 - (bool)overrideVenueCameraSettings;
 - (bool)paintBuildingNormals;
 - (bool)paintCoastlines;
@@ -433,6 +416,7 @@
 - (bool)paintLabelCounts;
 - (bool)paintLabelRoadFeatures;
 - (bool)paintLandcoverTiles;
+- (bool)paintLoadReason;
 - (bool)paintMapTiles;
 - (bool)paintPoiTiles;
 - (bool)paintPointTiles;
@@ -531,6 +515,7 @@
 - (void)setKeepTooCloseServerPositionedTransitFeatures:(bool)arg1;
 - (void)setLabelAllowDefaultStyle:(bool)arg1;
 - (void)setLabelAutoOffsetRoadText:(bool)arg1;
+- (void)setLabelBaseSSLPMEnabled:(bool)arg1;
 - (void)setLabelCollideContinuously:(bool)arg1;
 - (void)setLabelCollisionEnabled:(bool)arg1;
 - (void)setLabelFlipAlternatePositionsEnable:(bool)arg1;
@@ -544,7 +529,7 @@
 - (void)setLandmark2DStrokeSettings:(struct { bool x1; bool x2; bool x3; float x4; float x5; })arg1;
 - (void)setLayoutContinuously:(bool)arg1;
 - (void)setLoadGreenTraffic:(bool)arg1;
-- (void)setNewRouteTraffic:(bool)arg1;
+- (void)setOverrideNeworkDefaultsBaseSSLPMSwitch:(bool)arg1;
 - (void)setOverrideVenueCameraSettings:(bool)arg1;
 - (void)setPaintBuildingNormals:(bool)arg1;
 - (void)setPaintCoastlines:(bool)arg1;
@@ -554,6 +539,7 @@
 - (void)setPaintLabelCounts:(bool)arg1;
 - (void)setPaintLabelRoadFeatures:(bool)arg1;
 - (void)setPaintLandcoverTiles:(bool)arg1;
+- (void)setPaintLoadReason:(bool)arg1;
 - (void)setPaintMapTiles:(bool)arg1;
 - (void)setPaintPoiTiles:(bool)arg1;
 - (void)setPaintPointTiles:(bool)arg1;
@@ -581,6 +567,7 @@
 - (void)setShowNavCameraDebugConsoleProperties:(bool)arg1;
 - (void)setShowNavCameraDebugLegend:(bool)arg1;
 - (void)setShowNavCameraDebugOverlay:(bool)arg1;
+- (void)setShowPreliminaryInfo:(bool)arg1;
 - (void)setShowTrafficCasing:(bool)arg1;
 - (void)setSuppressFootprints:(bool)arg1;
 - (void)setTexturedTrafficCasing:(bool)arg1;
@@ -605,6 +592,7 @@
 - (bool)showNavCameraDebugLegend;
 - (bool)showNavCameraDebugOverlay;
 - (void)showPerformanceGroup:(unsigned int)arg1;
+- (bool)showPreliminaryInfo;
 - (bool)showTrafficCasing;
 - (bool)suppressFootprints;
 - (bool)texturedTrafficCasing;

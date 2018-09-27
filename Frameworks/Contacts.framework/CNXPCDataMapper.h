@@ -25,6 +25,7 @@
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
 - (bool)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id*)arg3;
 - (id)connection;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactObservableForFetchRequest:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id*)arg2;
@@ -33,6 +34,7 @@
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (bool)executeSaveRequest:(id)arg1 error:(id*)arg2;
 - (bool)executeSaveRequest:(id)arg1 response:(id*)arg2 error:(id*)arg3;
+- (id)favoritesEntryDictionariesAtPath:(id)arg1 error:(id*)arg2;
 - (bool)fetchAndDecodeEncodedContactsForFetchRequest:(id)arg1 error:(id*)arg2 cancelationToken:(id)arg3 batchHandler:(id /* block */)arg4;
 - (bool)fetchContactsForFetchRequest:(id)arg1 error:(id*)arg2 batchHandler:(id /* block */)arg3;
 - (bool)fetchEncodedContactsForFetchRequest:(id)arg1 error:(id*)arg2 cancelationToken:(id)arg3 batchHandler:(id /* block */)arg4;
@@ -65,5 +67,6 @@
 - (bool)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id*)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)verifyIndexWithError:(id*)arg1;
+- (bool)writeFavoritesPropertyListData:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
 
 @end

@@ -5,8 +5,10 @@
 
 @required
 
+- (<BSInvalidatable> *)acquireFaceDetectionWantedAssertionForReason:(NSString *)arg1;
 - (<BSInvalidatable> *)acquireFingerDetectionWantedAssertionForReason:(NSString *)arg1;
 - (<BSInvalidatable> *)acquireMatchingAssertionWithMode:(unsigned long long)arg1 reason:(NSString *)arg2;
+- (<BSInvalidatable> *)acquireSimulatedLockoutAssertionWithLockoutState:(unsigned long long)arg1 forReason:(NSString *)arg2;
 - (void)addObserver:(id <SBUIBiometricResourceObserver>)arg1;
 - (unsigned long long)biometricLockoutState;
 - (bool)hasBiometricAuthenticationCapabilityEnabled;

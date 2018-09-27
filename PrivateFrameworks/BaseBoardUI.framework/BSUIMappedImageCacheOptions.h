@@ -10,9 +10,9 @@
 
 + (id)optionsWithContainerPathProvider:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)containerPathProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setContainerPathProvider:(id)arg1;
 
 @end

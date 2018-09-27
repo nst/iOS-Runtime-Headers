@@ -14,6 +14,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (unsigned long long)_efficacyForReason:(id)arg1;
 - (void)_notifyDelegateOfAcquisitionForBundleID:(id)arg1 efficacy:(unsigned long long)arg2;
 - (void)_notifyDelegateOfRelinquishForBundleID:(id)arg1;

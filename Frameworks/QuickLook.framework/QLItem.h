@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLItem : NSObject <NSSecureCoding, QLPreviewItemPrivateProtocol> {
+@interface QLItem : NSObject <NSSecureCoding, QLPreviewItemPrivateProtocol, QLSExtensionThumbnailItem> {
     QLUTIAnalyzer * _UTIAnalyzer;
     UIDocumentInteractionController * _archiveController;
     UIColor * _backgroundColorOverride;
@@ -27,8 +27,10 @@
     NSString * _previewItemTitle;
     unsigned long long  _previewItemType;
     NSURL * _previewItemURL;
+    NSDictionary * _previewOptions;
     long long  _processIdentifier;
     NSString * _relativePath;
+    FPSandboxingURLWrapper * _sandboxingURLWrapper;
     NSString * _searchableItemApplicationBundleIdentifier;
     NSString * _searchableItemIdentifier;
     bool  _shouldUseExtensionPreview;
@@ -38,6 +40,7 @@
     unsigned long long  _thumbnailItemType;
     bool  _useAVPlayerViewController;
     bool  _useFullPDFTransition;
+    bool  _useLoadingTimeout;
     NSUUID * _uuid;
     bool  _wantsPreviewInDebugViewController;
 }
@@ -49,6 +52,7 @@
 @property (nonatomic, retain) UIColor *backgroundColorOverride;
 @property (nonatomic) bool canBeEdited;
 @property (nonatomic) bool canBeShared;
+@property (nonatomic, readonly, copy) NSString *contentType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned long long editedFileBehavior;
@@ -66,13 +70,15 @@
 @property (retain) NSData *previewItemData;
 @property (retain) <QLPreviewItemDataProvider> *previewItemDataProvider;
 @property (retain) NSItemProvider *previewItemProvider;
-@property (nonatomic, retain) NSNumber *previewItemProviderProgress;
+@property (nonatomic, copy) NSNumber *previewItemProviderProgress;
 @property (nonatomic, retain) NSString *previewItemTitle;
 @property (nonatomic) unsigned long long previewItemType;
 @property (nonatomic, retain) NSURL *previewItemURL;
 @property (readonly) NSURL *previewItemURLForDisplay;
+@property (nonatomic, copy) NSDictionary *previewOptions;
 @property long long processIdentifier;
 @property (retain) NSString *relativePath;
+@property (nonatomic, retain) FPSandboxingURLWrapper *sandboxingURLWrapper;
 @property (retain) NSString *searchableItemApplicationBundleIdentifier;
 @property (retain) NSString *searchableItemIdentifier;
 @property (nonatomic) bool shouldUseExtensionPreview;
@@ -83,6 +89,7 @@
 @property (nonatomic) unsigned long long thumbnailItemType;
 @property bool useAVPlayerViewController;
 @property (nonatomic) bool useFullPDFTransition;
+@property (nonatomic) bool useLoadingTimeout;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (readonly) bool wantsDefaultMediaPlayer;
 @property bool wantsPreviewInDebugViewController;
@@ -93,6 +100,7 @@
 + (id)contentTypesToPreviewTypes;
 + (id)encodedClasses;
 + (id)itemWithPreviewItem:(id)arg1;
++ (id)previewOptionEncodedClasses;
 + (bool)shouldUseRemoteCollection:(id)arg1;
 + (id)supportedContentTypes;
 + (bool)supportsSecureCoding;
@@ -103,13 +111,13 @@
 - (void)_commonInit;
 - (unsigned long long)_getPreviewItemType;
 - (unsigned long long)_getThumbnailItemType;
-- (void)_setURLFromFPItem;
 - (id)archiveController;
 - (id)backgroundColorOverride;
 - (bool)canBeEdited;
 - (bool)canBePreviewed;
 - (bool)canBePrintedWithCustomPrinter;
 - (bool)canBeShared;
+- (id)contentType;
 - (id)createPreviewContext;
 - (void)dealloc;
 - (long long)defaultWhitePointAdaptivityStyle;
@@ -132,6 +140,7 @@
 - (id)initWithSearchableItemUniqueIdentifier:(id)arg1 queryString:(id)arg2 applicationBundleIdentifier:(id)arg3 previewTitle:(id)arg4;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 MIMEType:(id)arg2;
+- (id)initWithURLSandboxWrapper:(id)arg1;
 - (id)internalCopy;
 - (bool)isEqual:(id)arg1;
 - (bool)isPromisedItem;
@@ -140,6 +149,8 @@
 - (unsigned long long)maximumNumberOfCachedPreviews;
 - (id)originalPreviewItem;
 - (id)password;
+- (void)prepareSaveURL:(id /* block */)arg1;
+- (void)prepareShareableURL:(id /* block */)arg1;
 - (id)previewItemContentType;
 - (id)previewItemData;
 - (id)previewItemDataProvider;
@@ -149,9 +160,13 @@
 - (unsigned long long)previewItemType;
 - (id)previewItemURL;
 - (Class)previewItemViewControllerClass;
+- (id)previewOptions;
 - (struct CGSize { double x1; double x2; })previewSizeForItemViewControllerSize:(struct CGSize { double x1; double x2; })arg1;
 - (long long)processIdentifier;
+- (void)provideURLWrapper:(id /* block */)arg1;
 - (id)relativePath;
+- (id)sandboxingURLWrapper;
+- (id)saveURL;
 - (id)searchableItemApplicationBundleIdentifier;
 - (id)searchableItemIdentifier;
 - (void)setArchiveController:(id)arg1;
@@ -177,8 +192,10 @@
 - (void)setPreviewItemTitle:(id)arg1;
 - (void)setPreviewItemType:(unsigned long long)arg1;
 - (void)setPreviewItemURL:(id)arg1;
+- (void)setPreviewOptions:(id)arg1;
 - (void)setProcessIdentifier:(long long)arg1;
 - (void)setRelativePath:(id)arg1;
+- (void)setSandboxingURLWrapper:(id)arg1;
 - (void)setSearchableItemApplicationBundleIdentifier:(id)arg1;
 - (void)setSearchableItemIdentifier:(id)arg1;
 - (void)setShouldUseExtensionPreview:(bool)arg1;
@@ -189,6 +206,7 @@
 - (void)setUTIAnalyzer:(id)arg1;
 - (void)setUseAVPlayerViewController:(bool)arg1;
 - (void)setUseFullPDFTransition:(bool)arg1;
+- (void)setUseLoadingTimeout:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWantsPreviewInDebugViewController:(bool)arg1;
 - (id)shareableURL;
@@ -201,6 +219,7 @@
 - (bool)useExtensionPreview;
 - (bool)useExtensionThumbnail;
 - (bool)useFullPDFTransition;
+- (bool)useLoadingTimeout;
 - (id)uuid;
 - (bool)wantsPreviewInDebugViewController;
 

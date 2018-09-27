@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCArticleHeadline : FCHeadline {
+@interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields> {
     NSString * _accessoryText;
     NSArray * _allowedStorefrontIDs;
     NSString * _articleID;
@@ -18,9 +18,11 @@
     NSURL * _contentURL;
     FCCoverArt * _coverArt;
     bool  _deleted;
+    FCHeadlineExperimentalTitleMetadata * _experimentalTitleMetadata;
     bool  _featureCandidate;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _globalCohort;
     bool  _hasThumbnail;
+    bool  _hiddenFromAutoFavorites;
     bool  _hiddenFromFeeds;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
@@ -33,6 +35,7 @@
     NSArray * _moreFromPublisherArticleIDs;
     bool  _needsRapidUpdates;
     bool  _paid;
+    bool  _pressRelease;
     NSString * _primaryAudience;
     NSDate * _publishDate;
     long long  _publisherArticleVersion;
@@ -73,11 +76,15 @@
     NSURL * _videoCallToActionURL;
     double  _videoDuration;
     NSURL * _videoURL;
+    bool  _webEmbedsEnabled;
 }
 
 @property (nonatomic, retain) FCInterestToken *articleInterestToken;
 @property (nonatomic, retain) NTPBArticleRecord *articleRecord;
 @property (nonatomic) long long behaviorFlags;
+@property (nonatomic, readonly, copy) NSString *stocksClusterID;
+@property (nonatomic, readonly, copy) NSString *stocksMetadataJSON;
+@property (nonatomic, readonly, copy) NSString *stocksScoresJSON;
 @property (nonatomic, copy) NSString *title;
 
 + (bool)_forceArticlesToBeShownAsSponsored;
@@ -101,6 +108,7 @@
 - (id)contentURL;
 - (id)coverArt;
 - (id)endOfArticleTopicIDs;
+- (id)experimentalTitleMetadata;
 - (id)globalCohort;
 - (bool)hasThumbnail;
 - (id)iAdCategories;
@@ -108,14 +116,16 @@
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)init;
-- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
+- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7 experimentalTitleProvider:(id)arg8;
 - (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
 - (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (bool)isPaid;
+- (bool)isPressRelease;
 - (bool)isSponsored;
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
@@ -127,14 +137,17 @@
 - (long long)publisherArticleVersion;
 - (id)publisherCohort;
 - (id)publisherID;
+- (id)publisherSpecifiedArticleIDs;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
 - (void)setArticleID:(id)arg1;
 - (void)setArticleInterestToken:(id)arg1;
 - (void)setArticleRecord:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
+- (void)setClusterID:(id)arg1;
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
+- (void)setExperimentalTitleMetadata:(id)arg1;
 - (void)setHasThumbnail:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPaid:(bool)arg1;
@@ -158,6 +171,10 @@
 - (bool)showMinimalChrome;
 - (id)sourceChannel;
 - (id)sourceName;
+- (id)stocksClusterID;
+- (id)stocksFields;
+- (id)stocksMetadataJSON;
+- (id)stocksScoresJSON;
 - (id)storyStyle;
 - (unsigned long long)storyType;
 - (id)thumbnail;
@@ -178,5 +195,6 @@
 - (id)videoCallToActionURL;
 - (double)videoDuration;
 - (id)videoURL;
+- (bool)webEmbedsEnabled;
 
 @end

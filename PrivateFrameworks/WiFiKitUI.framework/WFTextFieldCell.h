@@ -42,6 +42,7 @@
 - (bool)canBecomeFirstResponder;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)copy:(id)arg1;
+- (void)dealloc;
 - (bool)editable;
 - (bool)hideLabel;
 - (id)label;

@@ -6,13 +6,14 @@
     SCNOrderedDictionary * _animations;
     NSMutableDictionary * _bindings;
     long long  _calculationMode;
-    NSArray * _channelTargetCounts;
-    NSArray * _channelTargetWeights;
+    NSArray * _inBetweenCounts;
+    NSArray * _inBetweenInfluenceWeights;
     unsigned int  _isPresentationInstance;
     struct __C3DMorph { } * _morpher;
     NSString * _name;
     NSDictionary * _targetNameToIndexes;
     NSArray * _targets;
+    NSArray * _topLevelAndInBetweenTargets;
     bool  _unifyNormal;
     bool  _useSparseTargets;
     NSMutableArray * _weights;
@@ -47,6 +48,7 @@
 - (void)_syncEntityObjCModel;
 - (void)_syncObjCAnimations;
 - (void)_syncObjCModel;
+- (void)_updateTargetsAndInBetween:(id)arg1;
 - (long long)_weightIndexForTargetNamed:(id)arg1;
 - (void)addAnimation:(id)arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
@@ -59,6 +61,7 @@
 - (long long)calculationMode;
 - (id)channelTargetCounts;
 - (id)channelTargetWeights;
+- (void)clearInBetweens;
 - (void)convertToAdditiveWithBaseGeometry:(id)arg1;
 - (void)convertToSparseWithBaseGeometry:(id)arg1;
 - (id)copy;
@@ -68,6 +71,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
+- (id)inBetweenTargetsForTargetAtIndex:(unsigned long long)arg1;
+- (id)inBetweenWeightsForTargetAtIndex:(unsigned long long)arg1;
 - (id)init;
 - (id)initPresentationMorpherWithMorphRef:(struct __C3DMorph { }*)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -80,6 +85,7 @@
 - (id)presentationInstance;
 - (id)presentationMorpher;
 - (void)removeAllAnimations;
+- (void)removeAllBindings;
 - (void)removeAnimationForKey:(id)arg1;
 - (void)removeAnimationForKey:(id)arg1 blendOutDuration:(double)arg2;
 - (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;
@@ -94,6 +100,7 @@
 - (void)setShouldMorphNormals:(bool)arg1;
 - (void)setSpeed:(double)arg1 forAnimationKey:(id)arg2;
 - (void)setTargets:(id)arg1;
+- (void)setTargets:(id)arg1 withInBetweenTargetCounts:(id)arg2 inBetweenWeights:(id)arg3;
 - (void)setUnifiesNormals:(bool)arg1;
 - (void)setWantsCPUMorphing:(bool)arg1;
 - (void)setWeight:(double)arg1 forTargetAtIndex:(unsigned long long)arg2;
@@ -101,6 +108,7 @@
 - (void)setWeights:(id)arg1;
 - (bool)shouldMorphNormals;
 - (id)targets;
+- (id)targetsAndInBetween;
 - (void)unbindAnimatablePath:(id)arg1;
 - (bool)unifiesNormals;
 - (bool)wantsCPUMorphing;

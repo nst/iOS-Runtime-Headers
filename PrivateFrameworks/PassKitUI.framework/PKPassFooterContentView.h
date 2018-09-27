@@ -35,7 +35,8 @@
 - (void)didBecomeHiddenAnimated:(bool)arg1;
 - (void)didBecomeVisibleAnimated:(bool)arg1;
 - (id)infoButton;
-- (id)initWithStyle:(long long)arg1 pass:(id)arg2;
+- (id)init;
+- (id)initWithPass:(id)arg1;
 - (void)invalidate;
 - (bool)invalidated;
 - (bool)isPassAuthorized;

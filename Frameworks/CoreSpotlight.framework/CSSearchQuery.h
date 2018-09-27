@@ -7,6 +7,7 @@
     id /* block */  _changedAttributesHandler;
     id /* block */  _changedItemsHandler;
     id /* block */  _completionHandler;
+    id /* block */  _completionsHandler;
     id /* block */  _countChangedHandler;
     bool  _fetchesURLs;
     bool  _finished;
@@ -32,6 +33,7 @@
 @property (copy) id /* block */ changedAttributesHandler;
 @property (copy) id /* block */ changedItemsHandler;
 @property (copy) id /* block */ completionHandler;
+@property (copy) id /* block */ completionsHandler;
 @property (copy) id /* block */ countChangedHandler;
 @property (nonatomic, readonly) NSArray *fetchAttributes;
 @property (copy) id /* block */ foundAttributesHandler;
@@ -65,10 +67,12 @@
 - (id /* block */)changedAttributesHandler;
 - (id /* block */)changedItemsHandler;
 - (id /* block */)completionHandler;
+- (id /* block */)completionsHandler;
 - (id)connection;
 - (id /* block */)countChangedHandler;
 - (bool)counting;
 - (id)createCSSearchableItemWithOID:(long long)arg1 values:(id*)arg2 valueCount:(unsigned long long)arg3 protectionClass:(id)arg4 isTopHitQuery:(bool)arg5;
+- (double)currentTime;
 - (id)debugDescription;
 - (id)description;
 - (void)didFinishWithError:(id)arg1;
@@ -93,6 +97,7 @@
 - (id)privateBundleID;
 - (bool)privateIndex;
 - (void)processAttributesData:(id)arg1 update:(bool)arg2 protectionClass:(id)arg3;
+- (void)processCompletionsResultsData:(id)arg1 protectionClass:(id)arg2 isTopHitQuery:(bool)arg3;
 - (void)processLiveResultsData:(id)arg1 oidData:(id)arg2 protectionClass:(id)arg3 isTopHitQuery:(bool)arg4;
 - (void)processRemoveResultsData:(id)arg1 protectionClass:(id)arg2;
 - (void)processResultFromPlist:(id)arg1 atIndex:(unsigned long long)arg2 protectionClass:(id)arg3 oids:(long long*)arg4 oidCount:(unsigned int)arg5 items:(id)arg6 isTopHitQuery:(bool)arg7;
@@ -110,6 +115,7 @@
 - (void)setChangedAttributesHandler:(id /* block */)arg1;
 - (void)setChangedItemsHandler:(id /* block */)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionsHandler:(id /* block */)arg1;
 - (void)setCountChangedHandler:(id /* block */)arg1;
 - (void)setFoundAttributesHandler:(id /* block */)arg1;
 - (void)setFoundItemsHandler:(id /* block */)arg1;

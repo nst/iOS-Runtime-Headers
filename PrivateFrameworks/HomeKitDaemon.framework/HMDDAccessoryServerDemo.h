@@ -44,7 +44,7 @@
 - (void)setCategory:(id)arg1;
 - (void)set_hasPairings:(bool)arg1;
 - (void)set_paired:(bool)arg1;
-- (void)startPairing;
+- (void)startPairingWithConsentRequired:(bool)arg1;
 - (bool)stopPairingWithError:(id*)arg1;
 - (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;

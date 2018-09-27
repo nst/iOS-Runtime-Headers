@@ -64,7 +64,6 @@
 @property (nonatomic, readonly) bool isRecentlyAddedAlbum;
 @property (nonatomic, readonly) bool isStandInAlbum;
 @property (nonatomic, readonly) bool isUserLibraryAlbum;
-@property (nonatomic, readonly) bool isWallpaperAlbum;
 @property (nonatomic, retain) PLManagedAsset *keyAsset;
 @property (nonatomic, readonly, retain) NSNumber *kind;
 @property (nonatomic, readonly) int kindValue;
@@ -94,8 +93,10 @@
 + (id)allCloudSharedAlbumsInLibrary:(id)arg1;
 + (id)cloudOwnerDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 includingEmail:(bool)arg5 allowsEmail:(bool)arg6;
 + (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
++ (id)cloudSharedAlbumWithObjectID:(id)arg1 managedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
++ (id)lightweightReimportDirectoryNameWithGUID:(id)arg1 cloudPersonID:(id)arg2;
 + (id)localizedSharedByLabelWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 isOwned:(bool)arg5 allowsEmail:(bool)arg6;
 
 - (id)_expectedKeyAssets:(id)arg1;

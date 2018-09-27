@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchLastLoginDateRequest : CATTaskRequest {
+@interface DMFFetchLastLoginDateRequest : DMFTaskRequest {
     NSSet * _appleIDs;
 }
 

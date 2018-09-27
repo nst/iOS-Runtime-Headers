@@ -10,6 +10,11 @@
     WBSFaviconProviderDatabaseController * _faviconDatabase;
     WBSOnDiskDataCache * _faviconDiskCache;
     NSObject<OS_dispatch_queue> * _internalQueue;
+    bool  _isReadOnly;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _preferredIconSize;
     WBSFaviconProviderPrivateCache * _privateCache;
     WBSFaviconProviderRecordCache * _recordsCache;
     id /* block */  _setUpCompletionHandler;
@@ -39,15 +44,17 @@
 - (void)iconInfoForIconURLString:(id)arg1 includingPrivateData:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)iconInfoForPageURLString:(id)arg1 includingPrivateData:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
-- (id)initWithPersistenceBaseURL:(id)arg1 databaseName:(id)arg2;
+- (id)initWithPersistenceBaseURL:(id)arg1 databaseName:(id)arg2 preferredIconSize:(struct CGSize { double x1; double x2; })arg3 isReadOnly:(bool)arg4;
 - (void)linkPageURLString:(id)arg1 toIconURLString:(id)arg2 isPrivate:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)openAndCheckIntegrity:(bool)arg1 createIfNeeded:(bool)arg2 fallBackToMemoryStoreIfError:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)pageURLStringsPrefixedWithVariantsOfDomainString:(id)arg1 includingPrivateData:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)rejectedResourceInfoForPageURLString:(id)arg1 iconURLString:(id)arg2 includingPrivateData:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)removeAllIconsWithCompletionHandler:(id /* block */)arg1;
 - (void)removeIconWithPageURLString:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeIconsWithURLStringsNotFoundIn:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)savePendingChangesBeforeTermination;
-- (void)setIconData:(id)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 iconSize:(struct CGSize { double x1; double x2; })arg4 isPrivate:(bool)arg5 completionHandler:(id /* block */)arg6;
+- (void)setIconData:(id)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 iconSize:(struct CGSize { double x1; double x2; })arg4 hasGeneratedResolutions:(bool)arg5 isPrivate:(bool)arg6 completionHandler:(id /* block */)arg7;
+- (void)setIconIsRejectedResource:(bool)arg1 forPageURLString:(id)arg2 iconURLString:(id)arg3 isPrivate:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)sqliteStoreDidFailDatabaseIntegrityCheck:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)sqliteStoreDidFallBackToInMemoryStore:(id)arg1;
 

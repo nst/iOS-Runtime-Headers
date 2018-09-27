@@ -16,6 +16,7 @@
     }  _cachedOpticalEdgeInsets;
     bool  _cachedOpticalEdgeInsetsIsValid;
     NSAttributedString * _correctAttributedText;
+    CLKDevice * _device;
     bool  _hideMinutesIfZero;
     UILabel * _label;
     double  _maxWidth;
@@ -42,14 +43,14 @@
 
 - (void).cxx_destruct;
 - (id)_attributedTextShowingBlinker:(bool)arg1 numbers:(bool)arg2;
-- (id)_initPrimary:(bool)arg1 withTimeFormatter:(id)arg2 options:(unsigned long long)arg3 labelFactory:(id /* block */)arg4;
+- (id)_initForDevice:(id)arg1 primary:(bool)arg2 withTimeFormatter:(id)arg3 options:(unsigned long long)arg4 labelFactory:(id /* block */)arg5;
 - (double)_lastLineBaseline;
 - (void)_updateAttributedText;
 - (bool)animationsPaused;
 - (id)effectiveAttributedText;
 - (id)effectiveFont;
 - (void)enumerateUnderlyingLabelsWithBlock:(id /* block */)arg1;
-- (id)initWithTimeFormatter:(id)arg1 options:(unsigned long long)arg2 labelFactory:(id /* block */)arg3;
+- (id)initWithForDevice:(id)arg1 timeFormatter:(id)arg2 options:(unsigned long long)arg3 labelFactory:(id /* block */)arg4;
 - (struct CGSize { double x1; double x2; })intrinsicSize;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
 - (void)setAnimationsPaused:(bool)arg1;
@@ -68,5 +69,6 @@
 - (id)textColor;
 - (void)updateTimeText;
 - (id)view;
+- (id)viewForLastBaselineLayout;
 
 @end

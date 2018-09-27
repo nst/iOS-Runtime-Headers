@@ -2,17 +2,19 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSet : NSObject <HFPrettyDescription, HFStateDumpSerializable, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (readonly) unsigned long long count;
 @property (nonatomic, readonly, copy) NSString *crk_stableDescription;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (getter=hmf_isEmpty, readonly) bool hmf_empty;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
++ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)newSetWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
 + (id)set;
@@ -88,6 +90,12 @@
 - (id)sortedArrayUsingComparator:(id /* block */)arg1;
 - (id)sortedArrayWithOptions:(unsigned long long)arg1 usingComparator:(id /* block */)arg2;
 
+// Image: /System/Library/Frameworks/Accounts.framework/Accounts
+
++ (id)setWithTrackedSet:(id)arg1;
+
+- (id)initWithTrackedSet:(id)arg1;
+
 // Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
 + (id)setWithUnionOfSets:(id)arg1;
@@ -131,7 +139,11 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)hk_setByUnioningSet:(id)arg1 otherSet:(id)arg2;
+
 - (id)hk_filter:(id /* block */)arg1;
+- (id)hk_firstSortedObjectWithComparison:(id /* block */)arg1;
+- (id)hk_intersection:(id)arg1;
 - (id)hk_map:(id /* block */)arg1;
 - (id)hk_minus:(id)arg1;
 
@@ -148,9 +160,31 @@
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
+
+- (id)ax_filteredSetUsingBlock:(id /* block */)arg1;
+- (id)ax_flatMappedSetUsingBlock:(id /* block */)arg1;
+- (id)ax_mappedSetUsingBlock:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
 
 - (id)makeObjectsRespondToSelector:(SEL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ActivityAchievements.framework/ActivityAchievements
+
+- (id)intersectSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (id)aa_setByRemovingObject:(id)arg1;
+- (id)aa_setByRemovingObjectsFromSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (id)ams_filterUsingTest:(id /* block */)arg1;
+- (id)ams_firstObjectPassingTest:(id /* block */)arg1;
+- (id)ams_mapWithTransform:(id /* block */)arg1;
+- (id)ams_nonEmptyComponentsJoinedByString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -169,6 +203,10 @@
 
 - (id)CalMutableRecursiveCopy;
 - (id)allObjectsWithClass:(Class)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
+- (id)mutableDeepCopy;
 
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
@@ -199,6 +237,12 @@
 - (id)rejectItemsPassingTest:(id /* block */)arg1;
 - (id)selectItemsPassingTest:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
+- (bool)dc_containsObjectPassingTest:(id /* block */)arg1;
+- (id)dc_objectPassingTest:(id /* block */)arg1;
+- (id)dc_objectsOfClass:(Class)arg1;
+
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 + (id)fm_setWithSafeObject:(id)arg1;
@@ -228,17 +272,24 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
+- (id)hmf_addedObjectsFromSet:(id)arg1;
+- (id)hmf_commonObjectsFromSet:(id)arg1;
+- (bool)hmf_isEmpty;
+- (id)hmf_removedObjectsFromSet:(id)arg1;
 - (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_prettyDescription;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)__imForEach:(id /* block */)arg1;
 - (id)__imSetByApplyingBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
+
+- (id)xct_setByApplyingBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
@@ -332,24 +383,27 @@
 - (id)pk_setByApplyingBlock:(id /* block */)arg1;
 - (id)setByRemovingObject:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotoVision.framework/PhotoVision
-
-- (id)fetchedObjects;
-
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 - (id)_pl_filter:(id /* block */)arg1;
 - (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
 - (id)_pl_map:(id /* block */)arg1;
+- (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 - (unsigned long long)pl_countOfObjectsPassingTest:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoVision.framework/PhotoVision
+
+- (id)fetchedObjects;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (id)setByIntersectingWithSet:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (id)safari_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
+- (id)safari_shortestURL;
+- (id)safari_smallestObject:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -361,6 +415,11 @@
 + (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 
 - (bool)tsu_containsObjectIdenticalTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
+- (id)tu_anyObjectPassingTest:(id /* block */)arg1;
+- (bool)tu_containsObjectPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
 

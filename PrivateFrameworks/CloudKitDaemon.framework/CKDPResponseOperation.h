@@ -16,6 +16,7 @@
     struct { 
         unsigned int operationCost : 1; 
     }  _has;
+    CKDPResponseOperationHeader * _header;
     CKDPLikeResponse * _likeResponse;
     CKDPMescalCertificateResponse * _mescalCertificateResponse;
     CKDPMescalSessionInfoResponse * _mescalSessionInfoResponse;
@@ -84,6 +85,7 @@
 @property (nonatomic, readonly) bool hasGetCommentResponse;
 @property (nonatomic, readonly) bool hasGetCommentsResponse;
 @property (nonatomic, readonly) bool hasGetLikesResponse;
+@property (nonatomic, readonly) bool hasHeader;
 @property (nonatomic, readonly) bool hasLikeResponse;
 @property (nonatomic, readonly) bool hasMescalCertificateResponse;
 @property (nonatomic, readonly) bool hasMescalSessionInfoResponse;
@@ -130,6 +132,7 @@
 @property (nonatomic, readonly) bool hasZoneRetrieveChangesResponse;
 @property (nonatomic, readonly) bool hasZoneRetrieveResponse;
 @property (nonatomic, readonly) bool hasZoneSaveResponse;
+@property (nonatomic, retain) CKDPResponseOperationHeader *header;
 @property (nonatomic, retain) CKDPLikeResponse *likeResponse;
 @property (nonatomic, retain) CKDPMescalCertificateResponse *mescalCertificateResponse;
 @property (nonatomic, retain) CKDPMescalSessionInfoResponse *mescalSessionInfoResponse;
@@ -202,6 +205,7 @@
 - (bool)hasGetCommentResponse;
 - (bool)hasGetCommentsResponse;
 - (bool)hasGetLikesResponse;
+- (bool)hasHeader;
 - (bool)hasLikeResponse;
 - (bool)hasMescalCertificateResponse;
 - (bool)hasMescalSessionInfoResponse;
@@ -249,6 +253,7 @@
 - (bool)hasZoneRetrieveResponse;
 - (bool)hasZoneSaveResponse;
 - (unsigned long long)hash;
+- (id)header;
 - (bool)isEqual:(id)arg1;
 - (id)likeResponse;
 - (void)mergeFrom:(id)arg1;
@@ -283,6 +288,7 @@
 - (void)setGetCommentsResponse:(id)arg1;
 - (void)setGetLikesResponse:(id)arg1;
 - (void)setHasOperationCost:(bool)arg1;
+- (void)setHeader:(id)arg1;
 - (void)setLikeResponse:(id)arg1;
 - (void)setMescalCertificateResponse:(id)arg1;
 - (void)setMescalSessionInfoResponse:(id)arg1;

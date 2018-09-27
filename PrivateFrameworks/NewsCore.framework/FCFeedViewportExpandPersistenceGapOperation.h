@@ -8,6 +8,7 @@
     <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     id /* block */  _expandGapCompletionHandler;
+    FCFeedDescriptor * _feedDescriptor;
     FCFeedViewportPersistenceGap * _gap;
     unsigned long long  _gapExpansionDirection;
     long long  _gapExpansionPolicy;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) id /* block */ expandGapCompletionHandler;
+@property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, copy) FCFeedViewportPersistenceGap *gap;
 @property (nonatomic) unsigned long long gapExpansionDirection;
 @property (nonatomic) long long gapExpansionPolicy;
@@ -36,6 +38,7 @@
 - (id)configuration;
 - (id)context;
 - (id /* block */)expandGapCompletionHandler;
+- (id)feedDescriptor;
 - (id)gap;
 - (unsigned long long)gapExpansionDirection;
 - (long long)gapExpansionPolicy;
@@ -49,6 +52,7 @@
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setExpandGapCompletionHandler:(id /* block */)arg1;
+- (void)setFeedDescriptor:(id)arg1;
 - (void)setGap:(id)arg1;
 - (void)setGapExpansionDirection:(unsigned long long)arg1;
 - (void)setGapExpansionPolicy:(long long)arg1;

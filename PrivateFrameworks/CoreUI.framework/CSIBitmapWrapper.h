@@ -4,8 +4,11 @@
 
 @interface CSIBitmapWrapper : NSObject {
     bool  _allowsCompactCompression;
+    bool  _allowsDeepmapImageCompression;
+    bool  _allowsHevcCompression;
     bool  _allowsMultiPassEncoding;
     bool  _allowsOptimalRowbytesPacking;
+    bool  _allowsPaletteImageCompression;
     struct CGContext { } * _bitmapContext;
     unsigned long long  _colorSpaceID;
     double  _compressionQuality;
@@ -24,8 +27,11 @@
 }
 
 @property bool allowsCompactCompression;
+@property bool allowsDeepmapImageCompression;
+@property bool allowsHevcCompression;
 @property bool allowsMultiPassEncoding;
 @property bool allowsOptimalRowbytesPacking;
+@property bool allowsPaletteImageCompression;
 @property (nonatomic) unsigned long long colorSpaceID;
 @property (nonatomic) double compressionQuality;
 @property long long compressionType;
@@ -35,8 +41,11 @@
 @property (nonatomic) long long textureInterpretation;
 
 - (bool)allowsCompactCompression;
+- (bool)allowsDeepmapImageCompression;
+- (bool)allowsHevcCompression;
 - (bool)allowsMultiPassEncoding;
 - (bool)allowsOptimalRowbytesPacking;
+- (bool)allowsPaletteImageCompression;
 - (struct CGContext { }*)bitmapContext;
 - (unsigned long long)colorSpaceID;
 - (id)compressedData:(bool)arg1 usedEncoding:(int*)arg2 andRowChunkSize:(unsigned int*)arg3;
@@ -52,8 +61,11 @@
 - (unsigned int)pixelFormat;
 - (unsigned long long)rowbytes;
 - (void)setAllowsCompactCompression:(bool)arg1;
+- (void)setAllowsDeepmapImageCompression:(bool)arg1;
+- (void)setAllowsHevcCompression:(bool)arg1;
 - (void)setAllowsMultiPassEncoding:(bool)arg1;
 - (void)setAllowsOptimalRowbytesPacking:(bool)arg1;
+- (void)setAllowsPaletteImageCompression:(bool)arg1;
 - (void)setColorSpaceID:(unsigned long long)arg1;
 - (void)setCompressionQuality:(double)arg1;
 - (void)setCompressionType:(long long)arg1;

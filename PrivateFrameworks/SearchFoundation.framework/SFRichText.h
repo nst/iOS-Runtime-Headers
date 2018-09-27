@@ -26,7 +26,6 @@
 @property (copy) NSString *text;
 
 + (bool)supportsSecureCoding;
-+ (id)textWithString:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)contentAdvisory;

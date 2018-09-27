@@ -6,21 +6,27 @@
 @required
 
 - (TSDGLState *)GLState;
+- (NSArray *)allTextures;
 - (KNAnimatedBuild *)animatedBuild;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })animationFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvas;
 - (unsigned long long)direction;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawableFrame;
 - (double)duration;
+- (NSArray *)highlightingTextures;
 - (bool)isBuild;
 - (bool)isFrameRenderer;
 - (bool)isMagicMove;
 - (bool)isMetalRenderer;
 - (bool)isMotionBlurred;
+- (bool)isMovieExport;
 - (bool)isOpenGLRenderer;
 - (bool)isPreview;
 - (bool)isTransition;
 - (bool)isWarmingUp;
 - (NSArray *)magicMoveMatches;
+- (TSDMetalContext *)metalContext;
 - (double)percent;
 - (KNAnimationRandomGenerator *)randomGenerator;
 - (NSDictionary *)scaledTextures;

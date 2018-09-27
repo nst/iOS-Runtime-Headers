@@ -9,6 +9,7 @@
     NSObject<OS_dispatch_source> * mProgressSource;
     NSObject<OS_dispatch_queue> * mQueue;
     int  mState;
+    CATOperation * mStrongOperation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -24,22 +24,23 @@
 - (bool)_popChangeBatchOfChangedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 stop:(bool*)arg3 error:(id*)arg4;
 - (bool)_popChangeBatchOfDeletedRecords:(id*)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)appendBatch:(id)arg1 alreadyMingled:(bool)arg2 error:(id*)arg3;
-- (id)changeWithIdentifier:(id)arg1;
+- (id)changeWithScopedIdentifier:(id)arg1;
 - (unsigned long long)countOfAssetChanges;
 - (unsigned long long)countOfUnmingledRecords;
-- (bool)deleteMingledRecordsWithError:(id*)arg1;
-- (bool)hasMingledRecords;
-- (bool)hasRecordWithIdentifier:(id)arg1;
-- (bool)hasUnmingledRecords;
+- (bool)deleteMingledRecordsForScopeWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long*)arg3 error:(id*)arg4;
+- (bool)hasMingledRecordsForScopeWithIdentifier:(id)arg1;
+- (bool)hasRecordWithScopedIdentifier:(id)arg1;
+- (bool)hasUnmingledRecordsForScopeWithIdentifier:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (unsigned long long)maximumCountOfRecordsInBatches;
 - (bool)openWithError:(id*)arg1;
 - (bool)popChangeBatch:(id*)arg1 error:(id*)arg2;
-- (bool)prepareForMinglingWithError:(id*)arg1;
-- (bool)resetMingledRecordsWithError:(id*)arg1;
-- (bool)resetTransientRepositoryWithError:(id*)arg1;
+- (bool)prepareForMinglingWithScopeFilter:(id)arg1 error:(id*)arg2;
+- (bool)resetMingledRecordsForScopeWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)resetMingledRecordsWithScopeFilter:(id)arg1 error:(id*)arg2;
+- (bool)resetTransientRepositoryForScopeWithIdentifier:(id)arg1 error:(id*)arg2;
+- (unsigned long long)scopeType;
 - (void)setMaximumCountOfRecordsInBatches:(unsigned long long)arg1;
-- (bool)storeTransientSyncAnchor:(id)arg1 error:(id*)arg2;
-- (id)transientSyncAnchor;
 
 @end

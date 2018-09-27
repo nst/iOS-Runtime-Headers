@@ -87,8 +87,10 @@
 - (void)setPageRow:(unsigned long long)arg1;
 - (void)setStartingPartitionedAttachments:(id)arg1;
 - (id)startingPartitionedAttachments;
-- (bool)syncsWithEndOfPageHint:(id)arg1 storage:(id)arg2;
+- (bool)syncsFlowRanges:(id)arg1 withEndOfPageHint:(id)arg2;
+- (bool)syncsWithEndOfPageHint:(id)arg1 bodyStorage:(id)arg2 flowRanges:(id)arg3;
 - (id)topicNumbers;
 - (void)trimToCharIndex:(unsigned long long)arg1 inTarget:(id)arg2 removeFootnoteReferenceCount:(unsigned long long)arg3 removeAutoNumberFootnoteCount:(unsigned long long)arg4;
+- (void)updateRangeForIndexPath:(id)arg1 withStorage:(id)arg2;
 
 @end

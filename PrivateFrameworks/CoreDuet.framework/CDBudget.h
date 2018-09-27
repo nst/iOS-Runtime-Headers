@@ -5,13 +5,11 @@
 @interface CDBudget : NSObject {
     unsigned long long  _integerId;
     NSString * _name;
-    CDSession * _session;
     long long  _type;
 }
 
 @property (readonly) unsigned long long integerId;
 @property (readonly) NSString *name;
-@property (readonly) CDSession *session;
 @property (readonly) long long type;
 
 - (void).cxx_destruct;
@@ -26,7 +24,6 @@
 - (id)initWithSession:(id)arg1 name:(id)arg2 type:(long long)arg3 integerId:(unsigned long long)arg4 error:(id*)arg5;
 - (unsigned long long)integerId;
 - (id)name;
-- (id)session;
 - (long long)type;
 
 @end

@@ -5,12 +5,14 @@
 @interface BFFSettingsManager : NSObject {
     NSNumber * _stashedAssistantEnabled;
     NSNumber * _stashedAssistantVoiceTriggerEnabled;
+    NSNumber * _stashedAutoUpdateEnabled;
     NSMutableArray * _stashedButtonHaptics;
     NSArray * _stashedFlowSkipIdentifiers;
     NSNumber * _stashedLocationServicesEnabled;
     NSMutableDictionary * _stashedManagedConfigurationSettings;
     NSMutableArray * _stashedPaths;
     NSMutableDictionary * _stashedPreferences;
+    NSNumber * _stashedScreenTimeEnabled;
     NSData * _stashedWatchData;
 }
 
@@ -18,7 +20,9 @@
 
 - (void).cxx_destruct;
 - (void)_applyAssistantPreferences;
+- (void)_applyAutoUpdatePreferences;
 - (void)_applyLocationServices;
+- (void)_applyScreenTimePreferences;
 - (void)_applyStashedButtonHaptics;
 - (void)_applyStashedFlowSkipIdentifiers;
 - (void)_applyStashedManagedConfiguration;
@@ -47,11 +51,13 @@
 - (void)reset;
 - (void)setAssistantEnabled:(bool)arg1;
 - (void)setAssistantVoiceTriggerEnabled:(bool)arg1;
+- (void)setAutoUpdateEnabled:(bool)arg1;
 - (void)setBool:(bool)arg1 forBuddyKey:(id)arg2;
 - (void)setBool:(bool)arg1 forDomain:(id)arg2 key:(id)arg3;
 - (void)setBool:(bool)arg1 forManagedConfigurationSetting:(id)arg2;
 - (void)setObject:(id)arg1 forBuddyKey:(id)arg2;
 - (void)setObject:(id)arg1 forDomain:(id)arg2 key:(id)arg3;
+- (void)setScreenTimeEnabled:(bool)arg1;
 - (id)stashBuildVersion;
 - (long long)stashConfigurationType;
 - (void)stashFlowSkipIdentifiers:(id)arg1;

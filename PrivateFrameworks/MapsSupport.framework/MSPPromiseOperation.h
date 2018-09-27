@@ -28,6 +28,7 @@
 - (bool)isExecuting;
 - (bool)isFinished;
 - (void)performBlockAsPartOfRunningOperation:(id /* block */)arg1;
+- (void)setNetworkBehaviorIsDiscretionary:(bool)arg1;
 - (bool)shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
 - (void)start;
 

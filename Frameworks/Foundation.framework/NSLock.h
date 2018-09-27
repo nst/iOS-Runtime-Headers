@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSLock : NSObject <NSLocking> {
+@interface NSLock : NSObject <HMFLocking, NSLocking> {
     void * _priv;
 }
 
@@ -25,6 +25,14 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void)hk_withLock:(id /* block */)arg1;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
+- (void)_iAd_withLock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (void)performBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 

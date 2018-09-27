@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
  */
 
-@interface PHAManager : NSObject {
-    PHALibraryChangeListener * _changeListener;
+@interface PHAManager : NSObject <PHAServiceOperationHandling> {
     PHAAssetResourceDataLoader * _dataLoader;
-    <PHAManagerDelegate> * _delegate;
-    NSObject<OS_dispatch_queue> * _executiveStateQueue;
+    PHAExecutive * _executive;
+    PHAGraphManager * _graphManager;
     PHAJobCoordinator * _jobCoordinator;
     NSURL * _libraryURL;
     PHAMonitoring * _monitoring;
@@ -14,14 +13,13 @@
     PHPhotoLibrary * _photoLibrary;
 }
 
-@property (retain) PHALibraryChangeListener *changeListener;
-@property (retain) NSObject<OS_dispatch_queue> *executiveStateQueue;
+@property (readonly) PHAExecutive *executive;
+@property (readonly) PHAGraphManager *graphManager;
 @property (readonly) PHAJobCoordinator *jobCoordinator;
 @property (retain) NSURL *libraryURL;
 @property (retain) NSDictionary *photoAnalysisWorkersByType;
 @property (retain) PHPhotoLibrary *photoLibrary;
 @property (getter=isQuiescent, readonly) bool quiescent;
-@property (getter=isTurboMode, readonly) bool turboMode;
 
 + (id)allWorkerClasses;
 + (void)enumerateWorkerClassesUsingBlock:(id /* block */)arg1;
@@ -29,16 +27,21 @@
 - (void).cxx_destruct;
 - (id)autoloopServiceWorker;
 - (void)backgroundActivityDidBegin;
-- (id)changeListener;
 - (void)checkForQuiescence;
 - (id)description;
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)enumerateWorkersUsingBlock:(id /* block */)arg1;
-- (id)executiveStateQueue;
+- (id)executive;
+- (id)faceClassificationServiceWorker;
 - (id)faceProcessingServiceWorker;
+- (id)graphManager;
+- (void)graphManagerDidUnloadGraph:(id)arg1;
+- (void)graphManagerWillLoadGraph:(id)arg1;
 - (id)graphServiceWorker;
+- (void)handleOperation:(id)arg1;
 - (id)init;
-- (id)initWithPhotoLibraryURL:(id)arg1 executiveStateQueue:(id)arg2 delegate:(id)arg3;
+- (id)initWithPhotoLibraryURL:(id)arg1 executive:(id)arg2;
+- (bool)isInitialSyncActive;
 - (bool)isQuiescent;
 - (bool)isTurboMode;
 - (id)jobCoordinator;
@@ -46,12 +49,13 @@
 - (id)monitoring;
 - (id)photoAnalysisWorkersByType;
 - (id)photoLibrary;
+- (bool)photosIsConnected;
+- (void)requestLocalizedSceneAncestryInformationWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (id)sceneClassificationServiceWorker;
-- (void)setChangeListener:(id)arg1;
-- (void)setExecutiveStateQueue:(id)arg1;
 - (void)setLibraryURL:(id)arg1;
 - (void)setPhotoAnalysisWorkersByType:(id)arg1;
 - (void)setPhotoLibrary:(id)arg1;
+- (void)setTurboMode;
 - (void)shutdown;
 - (id)statusAsDictionary;
 - (void)stopBackgroundActivity;

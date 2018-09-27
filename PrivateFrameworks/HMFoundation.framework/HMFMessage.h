@@ -6,6 +6,7 @@
     HMFMessageInternal * _internal;
 }
 
+@property (nonatomic, readonly) HMFActivity *activity;
 @property (nonatomic, readonly, copy) NSString *applicationBundleIdentifier;
 @property (getter=isAuthorizedForHomeDataAccess, nonatomic, readonly) bool authorizedForHomeDataAccess;
 @property (getter=isAuthorizedForLocationAccess, nonatomic, readonly) bool authorizedForLocationAccess;
@@ -43,6 +44,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
++ (id)activityNameWithMessageName:(id)arg1;
 + (id)messageWithMessage:(id)arg1 messagePayload:(id)arg2;
 + (id)messageWithMessage:(id)arg1 messagePayload:(id)arg2 responseHandler:(id /* block */)arg3;
 + (id)messageWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3;
@@ -54,6 +56,7 @@
 
 - (void).cxx_destruct;
 - (void)__initWithInternalMessage:(id)arg1;
+- (id)activity;
 - (id)arrayForKey:(id)arg1;
 - (id)arrayOfDateComponentsForKey:(id)arg1;
 - (bool)boolForKey:(id)arg1;
@@ -113,6 +116,7 @@
 - (id)clientName;
 - (id)companionAppBundleIdentifier;
 - (id)effectiveLocationBundleIdentifier;
+- (id)hmd_safeUserInfo;
 - (bool)isAuthorizedForHomeDataAccess;
 - (bool)isAuthorizedForLocationAccess;
 - (bool)isAuthorizedForMicrophoneAccess;
@@ -131,6 +135,7 @@
 - (id)remoteUserPairingIdentity;
 - (bool)requiresNoSPIEntitlement;
 - (bool)requiresSPIEntitlement;
+- (void)sendResponseWithError:(id)arg1 payload:(id)arg2;
 - (int)sourcePid;
 - (bool)supportsRequestedFeature:(unsigned long long)arg1;
 - (bool)supportsRequiredFeature:(unsigned long long)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKAttribute : NSObject <NSCoding> {
+@interface SKAttribute : NSObject <NSSecureCoding> {
     NSString * _name;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
         struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
@@ -33,6 +33,7 @@
 @property (nonatomic, readonly) long long type;
 
 + (id)attributeWithName:(id)arg1 type:(long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -41,6 +42,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 type:(long long)arg2;
+- (bool)isEqualToAttribute:(id)arg1;
 - (id)name;
 - (long long)type;
 

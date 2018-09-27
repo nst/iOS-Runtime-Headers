@@ -8,6 +8,7 @@
         double width; 
         double height; 
     }  _complicationSize;
+    CLKDevice * _device;
     CLKImageProvider * _imageProvider;
     UIImageView * _imageView;
     UIColor * _overrideColor;
@@ -27,7 +28,7 @@
 - (void).cxx_destruct;
 - (id)color;
 - (id)imageProvider;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (void)layoutSubviews;
 - (id)overrideColor;
 - (void)setColor:(id)arg1;

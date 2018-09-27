@@ -5,13 +5,13 @@
 @interface NTKPrideFace : NTKFace
 
 + (id)_debugReleaseDate;
-+ (id)_defaultSelectedComplicationSlot;
++ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
 + (void)_setWasAvailable;
 + (bool)_wasAvailable;
 + (void)callBlockWhenFaceBecomesAvailable:(id /* block */)arg1;
 + (unsigned long long)enabledState;
-+ (bool)isAvailable;
-+ (bool)isRestricted;
++ (bool)isAvailableForDevice:(id)arg1;
++ (bool)isRestrictedForDevice:(id)arg1;
 + (id)releaseDate;
 + (bool)releaseImminent;
 + (void)setEnabledState:(unsigned long long)arg1;
@@ -27,6 +27,5 @@
 - (id)_optionAtIndex:(unsigned long long)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;
 - (id)_orderedComplicationSlots;
-- (long long)complicationPickerStyle;
 
 @end

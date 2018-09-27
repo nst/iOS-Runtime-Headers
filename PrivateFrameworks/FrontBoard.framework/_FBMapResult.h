@@ -12,8 +12,8 @@
 @property (nonatomic) bool filtered;
 @property (nonatomic, retain) id result;
 
+- (void).cxx_destruct;
 - (bool)created;
-- (void)dealloc;
 - (bool)filtered;
 - (id)result;
 - (void)setCreated:(bool)arg1;

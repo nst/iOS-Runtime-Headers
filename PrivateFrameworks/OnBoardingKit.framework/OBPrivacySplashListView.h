@@ -4,25 +4,32 @@
 
 @interface OBPrivacySplashListView : UIStackView {
     bool  _darkMode;
+    bool  _displayingPrivacyPane;
     UITextView * _footerTextView;
     NSMutableArray * _stackedIconTextLists;
     NSMutableArray * _textViews;
 }
 
 @property (getter=isDarkMode, nonatomic) bool darkMode;
+@property bool displayingPrivacyPane;
 @property (nonatomic, readonly) UITextView *footerTextView;
 @property (nonatomic, retain) NSMutableArray *stackedIconTextLists;
 @property (nonatomic, retain) NSMutableArray *textViews;
 
 - (void).cxx_destruct;
+- (bool)displayingPrivacyPane;
 - (id)footerTextView;
 - (id)initWithContentList:(id)arg1 dataDetectorTypes:(unsigned long long)arg2;
 - (id)initWithContentList:(id)arg1 dataDetectorTypes:(unsigned long long)arg2 displayingPrivacyPane:(bool)arg3;
 - (bool)isDarkMode;
 - (void)setDarkMode:(bool)arg1;
+- (void)setDisplayingPrivacyPane:(bool)arg1;
 - (void)setStackedIconTextLists:(id)arg1;
 - (void)setTextViews:(id)arg1;
 - (id)stackedIconTextLists;
 - (id)textViews;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFonts;
+- (void)updateSpacing;
 
 @end

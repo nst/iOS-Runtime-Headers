@@ -25,6 +25,8 @@
 - (id)_ML3PredicateForEntityTypeSelector:(SEL)arg1;
 - (id)conditionPredicate;
 - (id)elsePredicate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 - (id)initWithProtobufferDecodableObject:(id)arg1;
 - (id)protobufferEncodableObject;

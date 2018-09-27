@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSConcreteHashTable : NSHashTable {
+@interface NSConcreteHashTable : NSHashTable <NSSecureCoding> {
     unsigned long long  capacity;
     unsigned long long  count;
     unsigned long long  mutations;
@@ -33,6 +33,8 @@
         int (*storeAt)(); 
     }  slice;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void)addObject:(id)arg1;
 - (id)allObjects;

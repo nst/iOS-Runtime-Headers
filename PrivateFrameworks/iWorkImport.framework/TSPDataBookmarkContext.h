@@ -4,6 +4,7 @@
 
 @interface TSPDataBookmarkContext : NSObject {
     NSMutableDictionary * _bookmarkDataURLsForFilenames;
+    NSMutableDictionary * _digestStringsForFilenames;
     NSObject<OS_dispatch_queue> * _queue;
     TSUTemporaryDirectory * _temporaryDirectory;
 }

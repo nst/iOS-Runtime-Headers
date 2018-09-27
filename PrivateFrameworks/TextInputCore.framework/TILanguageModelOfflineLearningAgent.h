@@ -14,9 +14,9 @@
 + (void)didFinishLearningWithAgent:(id)arg1 task:(id)arg2;
 + (id)sharedLearningAgent;
 
+- (void).cxx_destruct;
 - (bool)continueLearningTaskWithStrategy:(id)arg1;
 - (id)currentLearningTask;
-- (void)dealloc;
 - (id)dispatchQueue;
 - (void)handleRemovalOfLearnedModels;
 - (id)init;

@@ -12,6 +12,7 @@
 @property (nonatomic, retain) <UIViewControllerTransitioningDelegate> *paymentTransitioningDelegate;
 
 - (void).cxx_destruct;
+- (id)_backgroundColorForModalFormSheet;
 - (id)authorizationViewController;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

@@ -100,7 +100,6 @@
 - (bool)isVisuallyInset;
 - (id)mediaDetailTintInformation;
 - (id)mediaSplitViewControllerDelegate;
-- (bool)music_allowsMetricsEvents;
 - (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (void)music_viewInheritedLayoutInsetsDidChange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

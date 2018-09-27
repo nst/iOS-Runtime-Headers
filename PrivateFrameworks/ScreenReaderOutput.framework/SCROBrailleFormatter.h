@@ -48,7 +48,7 @@
 - (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 token:(long long)arg4 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg5 isEditableText:(bool)arg6;
 - (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 token:(long long)arg4 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg5 technical:(bool)arg6 isEditableText:(bool)arg7;
 - (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 technical:(bool)arg7 isEditableText:(bool)arg8;
-- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 technical:(bool)arg7 isEditableText:(bool)arg8 paddingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg9;
+- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 token:(long long)arg5 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg6 technical:(bool)arg7 isEditableText:(bool)arg8 paddingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg9 editingString:(id)arg10;
 - (void)addText:(id)arg1 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 token:(long long)arg3 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 isEditableText:(bool)arg5;
 - (void)addText:(id)arg1 selection:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 token:(long long)arg3 focus:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4 technical:(bool)arg5 isEditableText:(bool)arg6;
 - (bool)anyUnread;
@@ -73,6 +73,7 @@
 - (int)outputContractionMode;
 - (bool)outputShowEightDot;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfBrailleCellRepresentingCharacterAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectInChunkArrayAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)setAnyUnread:(bool)arg1;
 - (void)setAppToken:(id)arg1;
 - (void)setCurrentUnread:(bool)arg1;
@@ -83,5 +84,6 @@
 - (bool)showDotsSevenAndEight;
 - (id)statusText;
 - (void)translate;
+- (void)translate:(bool)arg1;
 
 @end

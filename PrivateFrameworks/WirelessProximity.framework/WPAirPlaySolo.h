@@ -20,6 +20,7 @@
 - (id)delegate;
 - (void)deviceDiscovered:(id)arg1;
 - (void)failedToStartTrackingPeer:(id)arg1 error:(id)arg2;
+- (void)foundPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;

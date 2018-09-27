@@ -34,7 +34,6 @@
 - (NSDictionary *)cloudFeedInvitationTitleTextAttributes;
 - (NSDictionary *)cloudFeedLargerDefaultTextAttributes;
 - (NSDictionary *)cloudFeedLargerEmphasizedTextAttributes;
-- (UIImage *)cloudFeedMiniChevronImage;
 - (UIImage *)cloudFeedSectionHeaderBackgroundImage;
 - (UIColor *)cloudFeedSeparatorColor;
 - (double)cloudFeedSeparatorHeight;
@@ -45,10 +44,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })commentsButtonTextInset;
 - (UIImage *)compactLoadErrorIcon;
 - (void)configureAlbumListDeleteButton:(UIButton *)arg1;
-- (void)configureAlbumListEmptyStackViewPadPhotoDecoration:(PUPhotoDecoration *)arg1;
-- (void)configureAlbumListEmptyStackViewPhonePhotoDecoration:(PUPhotoDecoration *)arg1;
 - (void)configureAlbumListSectionTitleLabel:(UILabel *)arg1;
-- (void)configureAlbumListStackViewPadPhotoDecoration:(PUPhotoDecoration *)arg1;
 - (void)configureAlbumListStackViewPhonePhotoDecoration:(PUPhotoDecoration *)arg1;
 - (void)configureAlbumListSubtitleLabel:(UILabel *)arg1 asOpaque:(bool)arg2;
 - (void)configureAlbumListTitleLabel:(UILabel *)arg1 asOpaque:(bool)arg2;
@@ -66,6 +62,8 @@
 - (void)configureEditPluginUserDefaultsAccessorySwitch:(UISwitch *)arg1;
 - (void)configureEditPluginUserDefaultsCell:(UITableViewCell *)arg1 withIcon:(UIImage *)arg2 title:(NSString *)arg3;
 - (void)configureEditPluginUserDefaultsTableView:(UITableView *)arg1;
+- (void)configureImportHeaderSubtitleLabel:(UILabel *)arg1;
+- (void)configureImportHeaderTitleLabel:(UILabel *)arg1;
 - (void)configureMapViewAnnotationCountLabel:(UILabel *)arg1;
 - (void)configurePhotoCollectionGlobalFooterProgressView:(UIProgressView *)arg1 paused:(bool)arg2;
 - (void)configurePhotoCollectionGlobalFooterSubtitleLabel:(UILabel *)arg1;
@@ -75,6 +73,7 @@
 - (void)configurePhotoCollectionHeaderLocationsLabel:(UILabel *)arg1 forStyle:(long long)arg2;
 - (void)configurePhotoCollectionHeaderTitleLabel:(UILabel *)arg1 forStyle:(long long)arg2;
 - (void)configureProgressIndicatorMessageLabel:(UILabel *)arg1;
+- (void)configureSearchResultCountLabel:(UILabel *)arg1;
 - (void)configureSearchSubtitleLabel:(UILabel *)arg1;
 - (void)configureSearchTitleLabel:(UILabel *)arg1;
 - (void)configureSlideshowMusicHeaderTitleLabel:(UILabel *)arg1;
@@ -124,7 +123,6 @@
 - (double)photoCollectionToolbarTextTitleSpacerWidth;
 - (UIColor *)photoCollectionViewBackgroundColor;
 - (int)photoCollectionViewBackgroundColorValue;
-- (UIColor *)photoCollectionViewSecondScreenBackgroundColor;
 - (UIColor *)photoEditingActiveFilterTitleColor;
 - (UIColor *)photoEditingAdjustmentsBarBackgroundColor;
 - (UIColor *)photoEditingAdjustmentsBarCurrentPositionMarkerColor;
@@ -179,8 +177,12 @@
 - (UIColor *)scrubberPlaceholderColor;
 - (NSDictionary *)searchDefaultAttributes;
 - (NSDictionary *)searchDimmedAttributes;
+- (NSDictionary *)searchItalicTitleAttributes;
+- (UIFont *)searchItalicTitleLabelFont;
 - (UIFont *)searchRecentLabelFont;
 - (UIColor *)searchRecentLabelTextColor;
+- (UIFont *)searchResultCountLabelFont;
+- (UIColor *)searchResultCountTextColor;
 - (double)searchSingleTitleBottomBaselineDistance;
 - (double)searchSingleTitleTopBaselineDistance;
 - (double)searchSubtitleBottomBaselineDistance;
@@ -226,6 +228,5 @@
 - (double)videoPaletteBottomMargin;
 - (double)videoPaletteSideMargin;
 - (UIColor *)videoScrubberTileBackgroundColor;
-- (UIFont *)wallpaperCategoryLabelFont;
 
 @end

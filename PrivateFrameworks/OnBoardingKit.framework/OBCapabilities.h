@@ -10,7 +10,6 @@
 @property (nonatomic) bool preventOpeningSafari;
 @property (nonatomic) bool preventURLDataDetection;
 
-+ (void)_setSharedCapabilities:(id)arg1;
 + (id)sharedCapabilities;
 
 - (bool)isWAPI;

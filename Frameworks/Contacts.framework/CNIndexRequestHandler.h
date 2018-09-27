@@ -45,7 +45,7 @@
 - (bool)fullSyncContacts;
 - (id)index;
 - (bool)indexSearchableItems:(id)arg1;
-- (id)init;
+- (id)initWithContactStore:(id)arg1;
 - (id)initWithContactStore:(id)arg1 searchableIndex:(id)arg2 logger:(id)arg3 batchSize:(unsigned long long)arg4;
 - (bool)isFullSyncNeeded;
 - (id)logger;

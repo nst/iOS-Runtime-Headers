@@ -8,9 +8,11 @@
         <MTLBuffer> *visibilityResultBuffer; 
         unsigned long long renderTargetWidth; 
         unsigned long long renderTargetHeight; 
+        unsigned long long defaultColorSampleCount; 
         bool fineGrainedBackgroundVisibilityEnabled; 
         bool ditherEnabled; 
         bool openGLModeEnabled; 
+        unsigned long long renderTargetArrayLength; 
         unsigned long long tileWidth; 
         unsigned long long tileHeight; 
         union { 
@@ -29,12 +31,12 @@
 
 + (id)renderPassDescriptor;
 
-- (const struct MTLRenderPassDescriptorPrivate { id x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; bool x6; unsigned long long x7; unsigned long long x8; union { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; unsigned long long x10; unsigned long long x11; struct { float x_12_1_1; float x_12_1_2; } x12[4]; unsigned long long x13; }*)_descriptorPrivate;
+- (const struct MTLRenderPassDescriptorPrivate { id x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; bool x5; bool x6; bool x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; union { unsigned long long x_11_1_1; unsigned long long x_11_1_2; } x11; unsigned long long x12; unsigned long long x13; struct { float x_14_1_1; float x_14_1_2; } x14[4]; unsigned long long x15; }*)_descriptorPrivate;
 - (id)colorAttachments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned long long)defaultColorSampleCount;
 - (unsigned long long)defaultRasterSampleCount;
-- (unsigned long long)defaultSampleCount;
 - (id)depthAttachment;
 - (id)description;
 - (bool)fineGrainedBackgroundVisibilityEnabled;
@@ -46,15 +48,17 @@
 - (bool)isDitherEnabled;
 - (bool)isEqual:(id)arg1;
 - (bool)openGLModeEnabled;
+- (unsigned long long)renderTargetArrayLength;
 - (unsigned long long)renderTargetHeight;
 - (unsigned long long)renderTargetWidth;
+- (void)setDefaultColorSampleCount:(unsigned long long)arg1;
 - (void)setDefaultRasterSampleCount:(unsigned long long)arg1;
-- (void)setDefaultSampleCount:(unsigned long long)arg1;
 - (void)setDepthAttachment:(id)arg1;
 - (void)setDitherEnabled:(bool)arg1;
 - (void)setFineGrainedBackgroundVisibilityEnabled:(bool)arg1;
 - (void)setImageblockSampleLength:(unsigned long long)arg1;
 - (void)setOpenGLModeEnabled:(bool)arg1;
+- (void)setRenderTargetArrayLength:(unsigned long long)arg1;
 - (void)setRenderTargetHeight:(unsigned long long)arg1;
 - (void)setRenderTargetWidth:(unsigned long long)arg1;
 - (void)setSamplePositions:(const struct { float x1; float x2; }*)arg1 count:(unsigned long long)arg2;

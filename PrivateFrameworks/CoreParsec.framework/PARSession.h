@@ -9,18 +9,17 @@
     <PARSessionDelegate> * _delegate;
     NSFileManager * _fileManager;
     GEOSearchFoundationFeedbackListener * _mapsListener;
-    PARRanker * _ranker;
+    bool  _sampled;
 }
 
 @property (retain) PARBag *bag;
 @property (nonatomic, retain) PARSearchClient *client;
-@property (nonatomic, retain) PARSessionConfiguration *configuration;
+@property (retain) PARSessionConfiguration *configuration;
 @property (nonatomic, readonly) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property <PARSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) PARRanker *ranker;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
@@ -33,7 +32,6 @@
 - (void).cxx_destruct;
 - (id)awaitBag;
 - (id)bag;
-- (void)captureMapsResultsDisplayedFeedback:(id)arg1;
 - (void)cardViewDidAppear:(id)arg1;
 - (void)cardViewDidDisappear:(id)arg1;
 - (id)client;
@@ -64,7 +62,6 @@
 - (bool)loadImage:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (bool)loadMoreResults:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)loadTask:(id)arg1;
-- (id)ranker;
 - (void)reportEvent:(id)arg1;
 - (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)resultsDidBecomeVisible:(id)arg1;
@@ -77,7 +74,6 @@
 - (void)setClient:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRanker:(id)arg1;
 - (void)start;
 - (void)suggestionsDidBecomeVisible:(id)arg1;
 - (id)taskWithRequest:(id)arg1 completion:(id /* block */)arg2;

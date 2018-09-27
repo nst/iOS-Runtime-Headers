@@ -12,7 +12,7 @@
     _KSTextReplacementLegacyStore * _legacyStore;
     NSObject<OS_dispatch_queue> * _migrationQueue;
     bool  _pendingMigration;
-    NSObject<_KSTextReplacementStoreProtocol> * _textReplacementStore;
+    NSObject<_KSTextReplacementSyncProtocol> * _textReplacementStore;
 }
 
 @property (nonatomic, retain) _KSTextReplacementCKStore *ckStore;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) _KSTextReplacementLegacyStore *legacyStore;
 @property (nonatomic) bool pendingMigration;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSObject<_KSTextReplacementStoreProtocol> *textReplacementStore;
+@property (nonatomic, retain) NSObject<_KSTextReplacementSyncProtocol> *textReplacementStore;
 
 + (id)textReplacementStoreWithTestDirectory:(id)arg1 withDelegate:(id)arg2 forceMigration:(bool)arg3 forceCloudKitSync:(bool)arg4;
 
@@ -46,7 +46,7 @@
 - (id)directoryPath;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithDirectoryPath:(id)arg1;
-- (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(bool)arg2 forceCloudKitSync:(bool)arg3;
+- (id)initWithDirectoryPath:(id)arg1 ignoreMigrationBatchCheck:(bool)arg2 syncMode:(int)arg3;
 - (id)legacyStore;
 - (void)migrateLegacyStore;
 - (void)migrateLocallyCheckCompatibility:(bool)arg1;

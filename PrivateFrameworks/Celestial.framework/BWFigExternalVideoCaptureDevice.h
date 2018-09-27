@@ -71,7 +71,7 @@
 - (struct { float x1; float x2; float x3; })grayWorldDeviceWhiteBalanceGains;
 - (void)handleIncomingIAPOverEAPacket:(struct _IAPPacket { unsigned char x1; unsigned short x2; unsigned short x3; unsigned short x4; void *x5; }*)arg1;
 - (void)handleIncomingVideoBufferPacket:(id)arg1 msgID:(unsigned short)arg2;
-- (id)initWithAttributes:(id)arg1 synchronizedStreamsAttributes:(id)arg2 forPID:(int)arg3 clientIDOut:(int*)arg4 errOut:(int*)arg5 deviceAvailabilityChangedHandler:(id /* block */)arg6;
+- (id)initWithAttributes:(id)arg1 synchronizedStreamsAttributes:(id)arg2 forPID:(int)arg3 applicationID:(id)arg4 stealingBehavior:(int)arg5 clientIDOut:(int*)arg6 errOut:(int*)arg7 deviceAvailabilityChangedHandler:(id /* block */)arg8;
 - (bool)isPropertyObserved:(id)arg1;
 - (float)lensPosition;
 - (float)maximumFrameRate;
@@ -81,7 +81,7 @@
 - (void)rampToVideoZoomFactor:(float)arg1 withRampType:(int)arg2 rate:(float)arg3 duration:(double)arg4 commandID:(int)arg5;
 - (void)registerForAEMatrixMetadata;
 - (bool)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
-- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; float x17; unsigned char x18; double x19; int x20; int x21; int x22; float x23; float x24; int x25; int x26; unsigned char x27; int x28; int x29; float x30; float x31; int x32; int x33; int x34; int x35; long long x36; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 depthDataDeliveryEnabled:(bool)arg5 bravoDualPhotoDeliveryEnabled:(bool)arg6 burstQualityCaptureEnabled:(bool)arg7 clientBracketMode:(int)arg8 forSceneMonitoring:(bool)arg9 captureFlags:(unsigned long long*)arg10;
+- (int)resolveStillImageCaptureTypeFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1 flashMode:(int)arg2 hdrMode:(int)arg3 sisMode:(int)arg4 depthDataDeliveryEnabled:(bool)arg5 bravoDualPhotoDeliveryEnabled:(bool)arg6 burstQualityCaptureEnabled:(bool)arg7 clientBracketMode:(int)arg8 forSceneMonitoring:(bool)arg9 captureFlags:(unsigned long long*)arg10;
 - (id)sensorIDDictionaryByPortType;
 - (void)setActiveFormatIndex:(long long)arg1;
 - (bool)setAutoFlashEnabled:(bool)arg1 error:(id*)arg2;
@@ -97,9 +97,8 @@
 - (int)setFocusModeAutoWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 continuous:(bool)arg2 smooth:(bool)arg3 rangeRestrictionNear:(float)arg4 rangeRestrictionFar:(float)arg5;
 - (int)setFocusModeManualWithLensPosition:(float)arg1 requestID:(int)arg2;
 - (bool)setHDRSceneDetectionEnabled:(bool)arg1 error:(id*)arg2;
-- (void)setISPZoomFactor:(float)arg1;
+- (void)setISPZoomFactor:(float)arg1 totalZoomFactor:(float)arg2;
 - (int)setImageControlMode:(int)arg1;
-- (int)setLowLightBoostAutomaticallyEnabled:(bool)arg1 supportedForFormat:(bool)arg2;
 - (void)setMaxTorchLevel:(float)arg1;
 - (void)setMaximumFrameRate:(float)arg1;
 - (void)setMinimumFrameRate:(float)arg1;

@@ -4,6 +4,7 @@
 
 @interface BWImageQueueSinkNode : BWSinkNode {
     NSMutableArray * _bufferIDsInQueue;
+    bool  _didCallFirstFrameAtHostTimeCallback;
     bool  _didCallFirstFrameCallback;
     unsigned long long  _enqueuedBufferContextCount;
     struct _EnqueuedBufferContext {} ** _enqueuedBufferContexts;
@@ -53,11 +54,13 @@
 - (unsigned long long)_bufferIDForSurface:(struct __IOSurface { }*)arg1;
 - (void)_cleanupIOSurfaces;
 - (void)_collectUnconsumedBuffersWithReason:(id)arg1;
-- (struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)_contextForBuffer:(struct opaqueCMSampleBuffer { }*)arg1 node:(id)arg2 bufferId:(unsigned long long)arg3 framePTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)_createContextForBuffer:(struct opaqueCMSampleBuffer { }*)arg1 bufferId:(unsigned long long)arg2 framePTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (double)_displayTimeSyncedWithFramePTS:(double)arg1;
 - (void)_ensureImageQueue;
 - (id)_inputFormatRequirements;
-- (void)_releaseBufferContext:(struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)arg1;
+- (void)_processBufferContext:(struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)arg1;
+- (void)_processReleasedContexts;
+- (void)_removeBufferFromInternalQueues:(struct opaqueCMSampleBuffer { }*)arg1 bufferId:(unsigned long long)arg2;
 - (void)_storePreviewPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withHostTime:(unsigned long long)arg2;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;

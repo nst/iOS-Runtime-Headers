@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBDateTime : PBCodable <NSCopying> {
+@interface _INPBDateTime : PBCodable <NSCopying, NSSecureCoding, _INPBDateTime> {
     int  _calendarSystem;
     _INPBLocalDate * _date;
     struct { 
@@ -10,20 +10,20 @@
     }  _has;
     _INPBLocalTime * _time;
     NSString * _timeZoneID;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int calendarSystem;
 @property (nonatomic, retain) _INPBLocalDate *date;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasCalendarSystem;
 @property (nonatomic, readonly) bool hasDate;
 @property (nonatomic, readonly) bool hasTime;
 @property (nonatomic, readonly) bool hasTimeZoneID;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBLocalTime *time;
-@property (nonatomic, retain) NSString *timeZoneID;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (nonatomic, copy) NSString *timeZoneID;
 
 - (void).cxx_destruct;
 - (int)StringAsCalendarSystem:(id)arg1;
@@ -31,7 +31,6 @@
 - (id)calendarSystemAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCalendarSystem;
 - (bool)hasDate;
@@ -39,7 +38,6 @@
 - (bool)hasTimeZoneID;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setCalendarSystem:(int)arg1;
 - (void)setDate:(id)arg1;
@@ -48,7 +46,6 @@
 - (void)setTimeZoneID:(id)arg1;
 - (id)time;
 - (id)timeZoneID;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

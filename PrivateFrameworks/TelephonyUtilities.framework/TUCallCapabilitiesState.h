@@ -6,7 +6,6 @@
     bool  _accountsMatchForSecondaryCalling;
     bool  _accountsSupportSecondaryCalling;
     NSArray * _cloudCallingDevices;
-    bool  _csCallingCurrentlyAvailable;
     bool  _ctCapabilitiesValid;
     bool  _emergencyCallbackModeEnabled;
     bool  _emergencyCallbackPossible;
@@ -17,6 +16,7 @@
     NSDictionary * _relayCallingDisabledForDeviceID;
     bool  _relayCallingEnabled;
     bool  _relayCallingFeaturesEnabled;
+    NSDictionary * _senderIdentityCapabilitiesStateByUUID;
     bool  _supportsBasebandCalling;
     bool  _supportsCarrierServices;
     bool  _supportsCellularData;
@@ -27,27 +27,12 @@
     bool  _supportsFaceTimeVideoRelayCalling;
     bool  _supportsPrimaryCalling;
     bool  _supportsRelayCalling;
-    bool  _supportsSimultaneousVoiceAndData;
     bool  _supportsTelephonyRelayCalling;
-    bool  _supportsThumperCalling;
-    bool  _thumperCallingAllowedForCurrentDevice;
-    NSSet * _thumperCallingAllowedSecondaryDeviceIDs;
-    TUCTCapabilityInfo * _thumperCallingCapabilityInfo;
-    bool  _thumperCallingCurrentlyAvailable;
-    bool  _thumperCallingEnabled;
-    NSString * _thumperCallingLocalDeviceID;
-    TUCTCapabilityInfo * _voLTECallingCapabilityInfo;
-    bool  _voLTECallingCurrentlyAvailable;
-    TUCTCapabilityInfo * _wiFiCallingCapabilityInfo;
-    bool  _wiFiCallingCurrentlyAvailable;
-    bool  _wiFiEmergencyCallingAvailable;
-    bool  _wiFiEmergencyCallingSupported;
 }
 
 @property (nonatomic) bool accountsMatchForSecondaryCalling;
 @property (nonatomic) bool accountsSupportSecondaryCalling;
 @property (nonatomic, copy) NSArray *cloudCallingDevices;
-@property (getter=isCSCallingCurrentlyAvailable, nonatomic) bool csCallingCurrentlyAvailable;
 @property (getter=areCTCapabilitiesValid, nonatomic) bool ctCapabilitiesValid;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) TUCloudCallingDevice *defaultPairedDevice;
@@ -62,6 +47,7 @@
 @property (nonatomic, copy) NSDictionary *relayCallingDisabledForDeviceID;
 @property (getter=isRelayCallingEnabled, nonatomic) bool relayCallingEnabled;
 @property (getter=areRelayCallingFeaturesEnabled, nonatomic) bool relayCallingFeaturesEnabled;
+@property (nonatomic, copy) NSDictionary *senderIdentityCapabilitiesStateByUUID;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsBasebandCalling;
 @property (nonatomic) bool supportsCarrierServices;
@@ -73,23 +59,8 @@
 @property (nonatomic) bool supportsFaceTimeVideoRelayCalling;
 @property (nonatomic) bool supportsPrimaryCalling;
 @property (nonatomic) bool supportsRelayCalling;
-@property (nonatomic) bool supportsSimultaneousVoiceAndData;
 @property (nonatomic) bool supportsTelephonyRelayCalling;
-@property (nonatomic) bool supportsThumperCalling;
-@property (getter=isThumperCallingAllowedForCurrentDevice, nonatomic) bool thumperCallingAllowedForCurrentDevice;
-@property (nonatomic, copy) NSSet *thumperCallingAllowedSecondaryDeviceIDs;
-@property (nonatomic, copy) TUCTCapabilityInfo *thumperCallingCapabilityInfo;
-@property (getter=isThumperCallingCurrentlyAvailable, nonatomic) bool thumperCallingCurrentlyAvailable;
-@property (getter=isThumperCallingEnabled, nonatomic) bool thumperCallingEnabled;
-@property (nonatomic, copy) NSString *thumperCallingLocalDeviceID;
-@property (nonatomic, copy) TUCTCapabilityInfo *voLTECallingCapabilityInfo;
-@property (getter=isVoLTECallingCurrentlyAvailable, nonatomic) bool voLTECallingCurrentlyAvailable;
-@property (nonatomic, copy) TUCTCapabilityInfo *wiFiCallingCapabilityInfo;
-@property (getter=isWiFiCallingCurrentlyAvailable, nonatomic) bool wiFiCallingCurrentlyAvailable;
-@property (getter=isWiFiEmergencyCallingAvailable, nonatomic) bool wiFiEmergencyCallingAvailable;
-@property (getter=isWiFiEmergencyCallingSupported, nonatomic) bool wiFiEmergencyCallingSupported;
 
-+ (id)allowedCapabilityInformationClasses;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -103,29 +74,22 @@
 - (id)description;
 - (id)deviceIDForPhoneNumber:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isCSCallingCurrentlyAvailable;
 - (bool)isEmergencyCallbackModeEnabled;
 - (bool)isEmergencyCallbackPossible;
 - (bool)isFaceTimeAudioAvailable;
 - (bool)isFaceTimeVideoAvailable;
 - (bool)isRelayCallingEnabled;
-- (bool)isThumperCallingAllowedForCurrentDevice;
-- (bool)isThumperCallingCurrentlyAvailable;
-- (bool)isThumperCallingEnabled;
-- (bool)isVoLTECallingCurrentlyAvailable;
-- (bool)isWiFiCallingCurrentlyAvailable;
-- (bool)isWiFiEmergencyCallingAvailable;
-- (bool)isWiFiEmergencyCallingSupported;
 - (id)outgoingRelayCallerID;
 - (id)publiclyAccessibleCopy;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)relayCallingAvailability;
 - (id)relayCallingDisabledForDeviceID;
+- (id)senderIdentityCapabilitiesStateByUUID;
 - (void)setAccountsMatchForSecondaryCalling:(bool)arg1;
 - (void)setAccountsSupportSecondaryCalling:(bool)arg1;
 - (void)setCloudCallingDevices:(id)arg1;
-- (void)setCsCallingCurrentlyAvailable:(bool)arg1;
 - (void)setCtCapabilitiesValid:(bool)arg1;
 - (void)setEmergencyCallbackModeEnabled:(bool)arg1;
 - (void)setEmergencyCallbackPossible:(bool)arg1;
@@ -136,6 +100,7 @@
 - (void)setRelayCallingDisabledForDeviceID:(id)arg1;
 - (void)setRelayCallingEnabled:(bool)arg1;
 - (void)setRelayCallingFeaturesEnabled:(bool)arg1;
+- (void)setSenderIdentityCapabilitiesStateByUUID:(id)arg1;
 - (void)setSupportsBasebandCalling:(bool)arg1;
 - (void)setSupportsCarrierServices:(bool)arg1;
 - (void)setSupportsCellularData:(bool)arg1;
@@ -146,21 +111,7 @@
 - (void)setSupportsFaceTimeVideoRelayCalling:(bool)arg1;
 - (void)setSupportsPrimaryCalling:(bool)arg1;
 - (void)setSupportsRelayCalling:(bool)arg1;
-- (void)setSupportsSimultaneousVoiceAndData:(bool)arg1;
 - (void)setSupportsTelephonyRelayCalling:(bool)arg1;
-- (void)setSupportsThumperCalling:(bool)arg1;
-- (void)setThumperCallingAllowedForCurrentDevice:(bool)arg1;
-- (void)setThumperCallingAllowedSecondaryDeviceIDs:(id)arg1;
-- (void)setThumperCallingCapabilityInfo:(id)arg1;
-- (void)setThumperCallingCurrentlyAvailable:(bool)arg1;
-- (void)setThumperCallingEnabled:(bool)arg1;
-- (void)setThumperCallingLocalDeviceID:(id)arg1;
-- (void)setVoLTECallingCapabilityInfo:(id)arg1;
-- (void)setVoLTECallingCurrentlyAvailable:(bool)arg1;
-- (void)setWiFiCallingCapabilityInfo:(id)arg1;
-- (void)setWiFiCallingCurrentlyAvailable:(bool)arg1;
-- (void)setWiFiEmergencyCallingAvailable:(bool)arg1;
-- (void)setWiFiEmergencyCallingSupported:(bool)arg1;
 - (bool)supportsBasebandCalling;
 - (bool)supportsCarrierServices;
 - (bool)supportsCellularData;
@@ -171,13 +122,6 @@
 - (bool)supportsFaceTimeVideoRelayCalling;
 - (bool)supportsPrimaryCalling;
 - (bool)supportsRelayCalling;
-- (bool)supportsSimultaneousVoiceAndData;
 - (bool)supportsTelephonyRelayCalling;
-- (bool)supportsThumperCalling;
-- (id)thumperCallingAllowedSecondaryDeviceIDs;
-- (id)thumperCallingCapabilityInfo;
-- (id)thumperCallingLocalDeviceID;
-- (id)voLTECallingCapabilityInfo;
-- (id)wiFiCallingCapabilityInfo;
 
 @end

@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) bool customMotionBlur;
 @property (nonatomic, readonly) long long customTextDelivery;
 @property (nonatomic, readonly) long long customTimingCurve;
+@property (nonatomic, readonly) float customTravelDistance;
 @property (nonatomic, readonly) float customTwist;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double delay;
@@ -47,6 +48,7 @@
 @property (nonatomic, readonly) bool supportsCustomEffectTimingCurve3;
 @property (nonatomic, readonly) bool supportsDirection;
 @property (nonatomic, readonly) bool supportsDuration;
+@property (nonatomic, readonly) bool supportsTravelDistance;
 @property (nonatomic, readonly) bool supportsTwist;
 
 + (id)attributeKeyForBindingKeyPath:(id)arg1;
@@ -74,6 +76,7 @@
 - (bool)customMotionBlur;
 - (long long)customTextDelivery;
 - (long long)customTimingCurve;
+- (float)customTravelDistance;
 - (float)customTwist;
 - (double)delay;
 - (id)description;
@@ -104,6 +107,7 @@
 - (bool)supportsDuration;
 - (bool)supportsRandomNumberSeedInspection;
 - (bool)supportsTimingCurves;
+- (bool)supportsTravelDistance;
 - (bool)supportsTwist;
 
 @end

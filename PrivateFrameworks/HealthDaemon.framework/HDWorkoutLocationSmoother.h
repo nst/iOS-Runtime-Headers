@@ -8,7 +8,8 @@
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
     CLLocationSmoother * _smoother;
-    NSTimer * _timeoutTimer;
+    double  _smoothingTaskTimeout;
+    NSObject<OS_dispatch_source> * _timeoutSource;
     NSString * _xpcTransactionName;
 }
 
@@ -23,16 +24,18 @@
 - (bool)_deleteSample:(id)arg1 error:(id*)arg2;
 - (void)_finishSmoothingSample;
 - (id)_locationsForSampleUUID:(id)arg1 error:(id*)arg2;
-- (bool)_queue_createNewSeriesFromTask:(id)arg1 locations:(id)arg2 error:(id*)arg3;
-- (void)_queue_didSmoothLocations:(id)arg1;
+- (void)_queue_cancelTimeout;
+- (id)_queue_createNewSeriesFromTask:(id)arg1 locations:(id)arg2 error:(id*)arg3;
+- (bool)_queue_insertInitialMetadataForRoute:(id)arg1 syncIdentifier:(id)arg2 error:(id*)arg3;
+- (void)_queue_locationManagerDidSmoothLocations:(id)arg1 forTask:(id)arg2 error:(id)arg3;
+- (void)_queue_saveLocations:(id)arg1 forTask:(id)arg2 smoothingError:(id)arg3;
+- (void)_queue_scheduleSmoothingTimeoutTimerForTask:(id)arg1;
 - (void)_queue_smoothNextSample;
 - (void)_queue_smoothRouteSampleForTask:(id)arg1;
-- (void)_queue_smoothingDidTimeout;
-- (void)_scheduleSmoothingTimeoutTimer;
-- (bool)_workoutExistsForSample:(id)arg1;
+- (void)_queue_smoothingDidFailForTask:(id)arg1 error:(id)arg2 shouldRetry:(bool)arg3;
+- (void)_queue_startSmoothingTask:(id)arg1;
 - (id)initWithProfile:(id)arg1;
-- (void)locationManager:(id)arg1 didSmoothLocations:(id)arg2 ofType:(int)arg3;
 - (void)smoothRouteSample:(id)arg1;
-- (void)unitTest_smoothRouteSample:(id)arg1 completion:(id /* block */)arg2;
+- (void)unitTest_smoothRouteSample:(id)arg1 withSmoother:(id)arg2 completion:(id /* block */)arg3;
 
 @end

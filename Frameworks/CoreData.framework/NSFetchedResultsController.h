@@ -37,9 +37,12 @@
 @property (nonatomic, readonly) NSFetchRequest *fetchRequest;
 @property (nonatomic, readonly) NSArray *fetchedObjects;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly, copy) NSDictionary *rc_sectionsByName;
 @property (nonatomic, readonly) NSArray *sectionIndexTitles;
 @property (nonatomic, readonly) NSString *sectionNameKeyPath;
 @property (nonatomic, readonly) NSArray *sections;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (id)_CoreDataSectionCachesPath;
 + (unsigned long long)_insertIndexForObject:(id)arg1 inArray:(id)arg2 lowIdx:(long long)arg3 highIdx:(long long)arg4 sortDescriptors:(id)arg5;
@@ -50,6 +53,7 @@
 - (bool)_computeSectionInfo:(id)arg1 error:(id*)arg2;
 - (bool)_computeSectionInfoWithGroupBy:(id)arg1 error:(id*)arg2;
 - (void)_core_managedObjectContextDidChange:(id)arg1;
+- (void)_core_managedObjectContextDidSave:(id)arg1;
 - (id)_createNewSectionForObject:(id)arg1;
 - (void)_dumpSectionInfo;
 - (id)_fetchedObjects;
@@ -97,5 +101,9 @@
 - (id)sectionNameKeyPath;
 - (id)sections;
 - (void)setDelegate:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (id)rc_sectionsByName;
 
 @end

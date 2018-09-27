@@ -12,7 +12,9 @@
 
 - (double)declination;
 - (id)initWithDate:(id)arg1 body:(long long)arg2;
+- (id)initWithDate:(id)arg1 body:(long long)arg2 useHighPrecision:(bool)arg3;
 - (id)initWithJulianDay:(double)arg1 body:(long long)arg2;
+- (id)initWithJulianDay:(double)arg1 body:(long long)arg2 useHighPrecision:(bool)arg3;
 - (double)rightAscension;
 
 @end

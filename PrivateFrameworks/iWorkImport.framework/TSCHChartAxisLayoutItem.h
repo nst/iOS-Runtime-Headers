@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) TSCHChartReferenceLineLabelsLayoutItem *refLineLabels;
 @property (nonatomic, retain) TSCHChartAxisID *referenceLineLabelAxisID;
 
+- (void).cxx_destruct;
 - (id)axisID;
 - (id)axisLineLayoutItem;
 - (id)axisPaddingLayoutItem;
@@ -38,7 +39,6 @@
 - (struct CGSize { double x1; double x2; })calcMinSize;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcOverhangRect;
 - (struct CGSize { double x1; double x2; })chartBodySize;
-- (void)dealloc;
 - (id)initWithParent:(id)arg1 axisPosition:(int)arg2;
 - (id)p_description;
 - (void)p_layoutInward;

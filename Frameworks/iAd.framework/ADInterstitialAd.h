@@ -16,6 +16,7 @@
     UIViewController * _internalPresentingViewController;
     ADInterstitialView * _interstitialView;
     long long  _lastErrorCode;
+    ADLayoutOptions * _layoutOptions;
     bool  _loaded;
     long long  _options;
     ADInterstitialAdPresentationViewController * _presentationViewController;
@@ -43,6 +44,7 @@
 @property (nonatomic) UIViewController *internalPresentingViewController;
 @property (nonatomic, retain) ADInterstitialView *interstitialView;
 @property (nonatomic) long long lastErrorCode;
+@property (nonatomic, retain) ADLayoutOptions *layoutOptions;
 @property (getter=isLoaded, nonatomic) bool loaded;
 @property (nonatomic, readonly) long long options;
 @property (nonatomic, retain) ADInterstitialAdPresentationViewController *presentationViewController;
@@ -56,9 +58,9 @@
 
 - (bool)_considerClosingAdSpace;
 - (void)_dismissModalInterstitial;
+- (id)_initWithInternalAdType:(int)arg1 layoutOptions:(id)arg2 options:(long long)arg3;
 - (void)_notifyDelegateOfBannerLoad;
 - (void)_presentFromViewController:(id)arg1;
-- (bool)_shouldClampPresentedFrame;
 - (id)adResponseId;
 - (id)adSpace;
 - (id)adSpaceView;
@@ -94,6 +96,7 @@
 - (bool)isActionInProgress;
 - (bool)isLoaded;
 - (long long)lastErrorCode;
+- (id)layoutOptions;
 - (void)missedOpportunityToFill;
 - (long long)options;
 - (void)pauseBannerMedia;
@@ -127,6 +130,7 @@
 - (void)setInternalPresentingViewController:(id)arg1;
 - (void)setInterstitialView:(id)arg1;
 - (void)setLastErrorCode:(long long)arg1;
+- (void)setLayoutOptions:(id)arg1;
 - (void)setLoaded:(bool)arg1;
 - (void)setPresentationViewController:(id)arg1;
 - (void)setReUsed:(bool)arg1;

@@ -11,8 +11,11 @@
     NSMutableDictionary * _endpointControllersMap;
     MediaControlsHomeObserver * _homeObserver;
     bool  _isRequestingActiveRoute;
+    NSArray * _lastDiffedRoutes;
+    NSString * _pendingActiveSystemRouteUID;
     NSArray * _routes;
     MPAVRoutingController * _routingController;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, retain) MPAVEndpointRoute *activeSystemRoute;
@@ -24,6 +27,7 @@
 @property (nonatomic) long long discoveryMode;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MediaControlsHomeObserver *homeObserver;
+@property (nonatomic, readonly, copy) NSString *pendingActiveSystemRouteUID;
 @property (nonatomic, readonly, copy) NSArray *routes;
 @property (nonatomic, readonly) MPAVRoutingController *routingController;
 @property (readonly) Class superclass;
@@ -47,6 +51,7 @@
 - (id)homeObserver;
 - (void)homeObserverDidUpdateKnownUIDs:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
+- (id)pendingActiveSystemRouteUID;
 - (id)routes;
 - (id)routingController;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

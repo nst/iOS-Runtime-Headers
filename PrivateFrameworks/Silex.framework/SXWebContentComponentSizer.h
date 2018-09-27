@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXWebContentComponentSizer : SXComponentSizer
+@interface SXWebContentComponentSizer : SXComponentSizer {
+    <SXWebContentLoadingPolicyProvider> * _loadingPolicyProvider;
+}
 
+@property (nonatomic, readonly) <SXWebContentLoadingPolicyProvider> *loadingPolicyProvider;
+
+- (void).cxx_destruct;
 - (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5 loadingPolicyProvider:(id)arg6;
+- (id)loadingPolicyProvider;
 
 @end

@@ -18,6 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long popUpPolicy;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) WKWebsiteDataStore *websiteDataStore;
 
@@ -29,10 +30,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (unsigned long long)popUpPolicy;
 - (void)setAllowedAutoplayQuirks:(unsigned long long)arg1;
 - (void)setAutoplayPolicy:(long long)arg1;
 - (void)setContentBlockersEnabled:(bool)arg1;
 - (void)setCustomHeaderFields:(id)arg1;
+- (void)setPopUpPolicy:(unsigned long long)arg1;
 - (void)setWebsiteDataStore:(id)arg1;
 - (id)websiteDataStore;
 

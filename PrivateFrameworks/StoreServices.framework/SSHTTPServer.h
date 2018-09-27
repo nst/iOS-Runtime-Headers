@@ -23,9 +23,7 @@
 @property (nonatomic, readonly) int state;
 @property (nonatomic) bool verbose;
 
-+ (id)_bagBaseOverrideWithOriginal:(id)arg1 isNewBag:(bool)arg2;
 + (bool)_isPortOccupied:(short)arg1;
-+ (void)setBagBaseOverride:(id)arg1 forType:(int)arg2;
 + (id)sharedServer;
 
 - (void).cxx_destruct;
@@ -35,7 +33,6 @@
 - (void)dealloc;
 - (int)downloadSpeed;
 - (id)init;
-- (void)interceptBag:(int)arg1 makeRealRequest:(bool)arg2 handler:(id /* block */)arg3;
 - (short)port;
 - (void)requestDidFinish:(id)arg1;
 - (id /* block */)responseBlockForPath:(id)arg1;

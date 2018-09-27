@@ -23,6 +23,8 @@
 @property (nonatomic, retain) NSDate *sunriseDate;
 @property (nonatomic, retain) NSDate *sunsetDate;
 
++ (id)_eventTimeAndCountdown:(id)arg1 suppressCountdown:(bool)arg2 suppressCommaSeparator:(bool)arg3 abbreviated:(bool)arg4;
++ (id)_signatureCorner:(id)arg1;
 + (id)_swapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 smallCapsBaseFont:(id)arg5;
 + (id)circular:(id)arg1 isMedium:(bool)arg2;
 + (id)extraLarge:(id)arg1;

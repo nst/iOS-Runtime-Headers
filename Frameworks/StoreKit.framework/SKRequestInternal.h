@@ -10,6 +10,8 @@
     long long  _state;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
+- (id)init;
 
 @end

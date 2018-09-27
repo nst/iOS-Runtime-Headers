@@ -6,6 +6,8 @@
 
 + (id)hardwarePlatform;
 + (bool)isAudioAccessory;
++ (bool)isServerTTSPlatform;
++ (bool)isWatch;
 + (id)legacyPlatforms;
 
 @end

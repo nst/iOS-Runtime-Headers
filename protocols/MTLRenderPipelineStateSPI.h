@@ -9,5 +9,10 @@
 - (unsigned int)getVertexShaderTelemetryID;
 - (NSData *)newFragmentShaderDebugInfo;
 - (NSData *)newVertexShaderDebugInfo;
+- (unsigned long long)uniqueIdentifier;
+
+@optional
+
+- (unsigned long long)resourceIndex;
 
 @end

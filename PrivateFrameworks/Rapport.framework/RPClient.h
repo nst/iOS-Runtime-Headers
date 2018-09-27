@@ -18,6 +18,9 @@
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic) unsigned int type;
 
++ (void)primaryAccountSignedIn;
++ (void)primaryAccountSignedOut;
+
 - (void).cxx_destruct;
 - (void)_ensureXPCStarted;
 - (void)_interrupted;
@@ -27,10 +30,13 @@
 - (void)diagnosticLogControl:(id)arg1 completion:(id /* block */)arg2;
 - (void)diagnosticShow:(id)arg1 level:(int)arg2 completion:(id /* block */)arg3;
 - (id)dispatchQueue;
+- (void)getIdentitiesWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (void)primaryAccountSignedInWithCompletion:(id /* block */)arg1;
+- (void)primaryAccountSignedOutWithCompletion:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;

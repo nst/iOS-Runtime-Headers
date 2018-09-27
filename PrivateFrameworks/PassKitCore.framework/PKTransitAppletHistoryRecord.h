@@ -10,7 +10,6 @@
     NSNumber * _historySequenceNumber;
     NSNumber * _loyaltyAmount;
     NSNumber * _loyaltyBalance;
-    long long  _paymentTransactionType;
     long long  _recordType;
     NSData * _startStation;
     unsigned long long  _subtype;

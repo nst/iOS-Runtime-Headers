@@ -5,6 +5,9 @@
 
 @required
 
++ (NSArray *)clustererModelFileNamesFromState:(NSData *)arg1 storedInPath:(NSString *)arg2 error:(id*)arg3;
++ (NSDictionary *)getRepresentativenessForFaces:(NSArray *)arg1 error:(id*)arg2;
+
 - (NSData *)getClusterState:(id*)arg1;
 - (NSSet *)getClusteredIds:(id*)arg1;
 - (NSArray *)getClustersForClusterIds:(NSArray *)arg1 options:(NSDictionary *)arg2 error:(id*)arg3;

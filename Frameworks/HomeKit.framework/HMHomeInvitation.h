@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMHomeInvitation : NSObject <HMObjectMerge, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
+@interface HMHomeInvitation : NSObject <HFStateDumpBuildable, HMObjectMerge, NSSecureCoding> {
+    _HMContext * _context;
     HMHome * _home;
     NSURL * _homeObjectURL;
     HMHomeInvitationData * _invitationData;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMFUnfairLock * _lock;
 }
 
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSDate *endDate;
 @property (readonly) unsigned long long hash;
@@ -22,10 +20,11 @@
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, retain) HMHomeInvitationData *invitationData;
 @property (nonatomic, readonly) long long invitationState;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly, copy) NSDate *startDate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (bool)supportsSecureCoding;
 
@@ -33,8 +32,7 @@
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_updateInvitationState:(long long)arg1;
 - (void)cancelInviteWithCompletionHandler:(id /* block */)arg1;
-- (id)clientQueue;
-- (id)delegateCaller;
+- (id)context;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (unsigned long long)hash;
@@ -47,13 +45,14 @@
 - (id)invitationData;
 - (long long)invitationState;
 - (bool)isEqual:(id)arg1;
-- (id)propertyQueue;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setInvitationData:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
 - (id)startDate;
 - (id)uniqueIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

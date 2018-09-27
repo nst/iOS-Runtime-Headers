@@ -7,16 +7,19 @@
 }
 
 @property (nonatomic, readonly) bool containsHyperlink;
+@property (nonatomic, readonly, copy) NSAttributedString *fallbackCorruptText;
 @property (nonatomic, readonly, copy) NSAttributedString *subject;
 @property (nonatomic, readonly, copy) NSAttributedString *text;
 
 - (void).cxx_destruct;
 - (id)_attributedTextWithTextColor:(id)arg1;
+- (id)_fallbackCorruptMessageTextWithTextColor:(id)arg1;
 - (id)_time;
 - (Class)balloonViewClass;
 - (id)composition;
 - (bool)containsHyperlink;
 - (id)dragItemProvider;
+- (id)fallbackCorruptText;
 - (Class)impactBalloonViewClass;
 - (id)loadTranscriptText;
 - (id)pasteboardItems;

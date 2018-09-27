@@ -3,12 +3,12 @@
  */
 
 @interface AXAlternativeVoices : NSObject {
-    NSDictionary * _voiceClassesMap;
+    NSMutableDictionary * _voiceClassesMap;
     NSMutableDictionary * _voiceNameMap;
 }
 
 @property (nonatomic, readonly, copy) NSSet *supportedSiriLanguages;
-@property (nonatomic, retain) NSDictionary *voiceClassesMap;
+@property (nonatomic, retain) NSMutableDictionary *voiceClassesMap;
 @property (nonatomic, retain) NSMutableDictionary *voiceNameMap;
 
 + (bool)inUnitTestMode;
@@ -25,6 +25,7 @@
 - (bool)isAlexAvailableForLanguage:(id)arg1;
 - (bool)isAlternativeVoice:(id)arg1;
 - (bool)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
+- (bool)isNashvilleSystemVoice:(id)arg1;
 - (bool)isOldSiriVoiceIdentifier:(id)arg1;
 - (bool)isSiriVoiceIdentifier:(id)arg1;
 - (id)nameForVoiceIdentifier:(id)arg1;

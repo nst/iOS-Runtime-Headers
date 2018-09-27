@@ -31,6 +31,7 @@
     NSString * _iadCampaign;
     NSString * _iadLine;
     int  _newsProductType;
+    NSString * _previousArticleId;
     NSString * _sourceChannelId;
     long long  _videoAdDuration;
     int  _videoAdPlacementPosition;
@@ -65,6 +66,7 @@
 @property (nonatomic, readonly) bool hasIadCampaign;
 @property (nonatomic, readonly) bool hasIadLine;
 @property (nonatomic) bool hasNewsProductType;
+@property (nonatomic, readonly) bool hasPreviousArticleId;
 @property (nonatomic, readonly) bool hasSourceChannelId;
 @property (nonatomic) bool hasVideoAdDuration;
 @property (nonatomic) bool hasVideoAdPlacementPosition;
@@ -73,6 +75,7 @@
 @property (nonatomic, retain) NSString *iadCampaign;
 @property (nonatomic, retain) NSString *iadLine;
 @property (nonatomic) int newsProductType;
+@property (nonatomic, retain) NSString *previousArticleId;
 @property (nonatomic, retain) NSString *sourceChannelId;
 @property (nonatomic) long long videoAdDuration;
 @property (nonatomic) int videoAdPlacementPosition;
@@ -122,6 +125,7 @@
 - (bool)hasIadCampaign;
 - (bool)hasIadLine;
 - (bool)hasNewsProductType;
+- (bool)hasPreviousArticleId;
 - (bool)hasSourceChannelId;
 - (bool)hasVideoAdDuration;
 - (bool)hasVideoAdPlacementPosition;
@@ -134,6 +138,7 @@
 - (void)mergeFrom:(id)arg1;
 - (int)newsProductType;
 - (id)newsProductTypeAsString:(int)arg1;
+- (id)previousArticleId;
 - (bool)readFrom:(id)arg1;
 - (void)setAdCreativeType:(int)arg1;
 - (void)setAdImpressionId:(id)arg1;
@@ -161,6 +166,7 @@
 - (void)setIadCampaign:(id)arg1;
 - (void)setIadLine:(id)arg1;
 - (void)setNewsProductType:(int)arg1;
+- (void)setPreviousArticleId:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;
 - (void)setVideoAdDuration:(long long)arg1;
 - (void)setVideoAdPlacementPosition:(int)arg1;

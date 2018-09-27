@@ -3,19 +3,26 @@
  */
 
 @interface GEOLogMsgStateApplicationIdentifier : PBCodable <NSCopying> {
+    bool  _appDarkMode;
     NSString * _appIdentifier;
     NSString * _appMajorVersion;
     NSString * _appMinorVersion;
+    struct { 
+        unsigned int appDarkMode : 1; 
+    }  _has;
 }
 
+@property (nonatomic) bool appDarkMode;
 @property (nonatomic, retain) NSString *appIdentifier;
 @property (nonatomic, retain) NSString *appMajorVersion;
 @property (nonatomic, retain) NSString *appMinorVersion;
+@property (nonatomic) bool hasAppDarkMode;
 @property (nonatomic, readonly) bool hasAppIdentifier;
 @property (nonatomic, readonly) bool hasAppMajorVersion;
 @property (nonatomic, readonly) bool hasAppMinorVersion;
 
 - (void).cxx_destruct;
+- (bool)appDarkMode;
 - (id)appIdentifier;
 - (id)appMajorVersion;
 - (id)appMinorVersion;
@@ -23,6 +30,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasAppDarkMode;
 - (bool)hasAppIdentifier;
 - (bool)hasAppMajorVersion;
 - (bool)hasAppMinorVersion;
@@ -30,9 +38,11 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setAppDarkMode:(bool)arg1;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
+- (void)setHasAppDarkMode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

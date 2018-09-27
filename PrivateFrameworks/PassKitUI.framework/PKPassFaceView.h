@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassFaceView : WLEasyToHitCustomView {
+@interface PKPassFaceView : WLEasyToHitCustomView <PKForegroundActiveArbiterObserver, PKPaymentServiceDelegate> {
     bool  _allowBackgroundPlaceHolders;
     long long  _backgroundMode;
     UIImageView * _backgroundView;
@@ -19,7 +19,9 @@
     double  _dimmer;
     CAFilter * _dimmingFilter;
     UIImage * _faceImage;
+    UIImage * _faceShadowImage;
     PKPassFaceTemplate * _faceTemplate;
+    bool  _foregroundActive;
     NSMutableArray * _headerBucketViews;
     NSMutableSet * _headerContentViews;
     NSMutableSet * _headerInvariantViews;
@@ -28,7 +30,9 @@
     bool  _liveMotionEnabled;
     UIImage * _partialFaceImage;
     PKPass * _pass;
+    PKPaymentService * _paymentService;
     bool  _resizablePartialImage;
+    UIImageView * _shadowBackgroundView;
     bool  _showingBody;
     bool  _showingHeader;
     bool  _showsLiveRendering;
@@ -46,32 +50,39 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentBounds;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, readonly) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPassFaceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKPassFaceTemplate *faceTemplate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *headerBucketViews;
 @property (nonatomic) bool liveMotionEnabled;
 @property (nonatomic, readonly) PKPass *pass;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } shadowInsets;
 @property (nonatomic) bool showsLiveRendering;
 @property (nonatomic) long long style;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned long long visibleRegions;
 
 + (Class)_faceClassForStyle:(long long)arg1;
 + (id)newFrontFaceViewForStyle:(long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_createBucketsIfNecessary;
 - (void)_createContentViewsForRegions:(unsigned long long)arg1;
 - (void)_createDimmingFilterIfNecessary;
 - (void)_createInvariantViewsForRegions:(unsigned long long)arg1;
 - (void)_flushContentViewsForRegions:(unsigned long long)arg1;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
 - (void)_presentDiffRecursivelyDiff:(id)arg1 forBucketAtIndex:(unsigned long long)arg2 withBuckets:(id)arg3 completion:(id /* block */)arg4;
+- (void)_recreateFieldDerivedContent;
 - (id)_relevantBuckets;
+- (void)_setBalances:(id)arg1;
 - (void)_setContentViewsAlpha:(double)arg1;
 - (void)_setShowsBackgroundView:(bool)arg1;
 - (void)_setShowsBodyViews:(bool)arg1;
 - (void)_setShowsHeaderViews:(bool)arg1;
-- (long long)_validityStateForPass:(id)arg1;
+- (void)_updateForeignBalances;
 - (id)_viewSetForContentViewType:(long long)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (bool)allowBackgroundPlaceHolders;
@@ -92,6 +103,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)faceTemplate;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(struct { bool x1; bool x2; })arg2;
 - (id)headerBucketViews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertContentView:(id)arg1 ofType:(long long)arg2;
@@ -99,6 +111,7 @@
 - (bool)liveMotionEnabled;
 - (id)pass;
 - (id)passFaceTemplate;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeContentView:(id)arg1 ofType:(long long)arg2;
 - (void)setAllowBackgroundPlaceHolders:(bool)arg1;
@@ -113,9 +126,11 @@
 - (void)setShowsLiveRendering:(bool)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setVisibleRegions:(unsigned long long)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })shadowBackgroundInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })shadowInsets;
 - (bool)showsLiveRendering;
 - (long long)style;
+- (void)updateShadow:(double)arg1 animated:(bool)arg2 withDelay:(double)arg3;
 - (unsigned long long)visibleRegions;
 
 @end

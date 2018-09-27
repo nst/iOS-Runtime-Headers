@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMCameraRollController : NSObject <PLCameraPreviewWellImageChangeObserver, PUBrowsingViewModelChangeObserver, PUOneUpPresentationHelperAssetDisplayDelegate, PUOneUpPresentationHelperDelegate, PXPhotosDataSourceChangeObserver, UIInteractionProgressObserver, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+@interface CAMCameraRollController : NSObject <PHPhotoLibraryChangeObserver, PLCameraPreviewWellImageChangeObserver, PUBrowsingViewModelChangeObserver, PUOneUpPresentationHelperAssetDisplayDelegate, PUOneUpPresentationHelperDelegate, PXPhotosDataSourceChangeObserver, UIInteractionProgressObserver, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     NSMutableDictionary * __HDRUUIDToIgnoredEV0UUIDs;
     bool  __allowUpdating;
     bool  __deferringStagedMediaLoading;
@@ -15,7 +15,9 @@
     bool  __oneUpVisible;
     PUPhotoKitDataSourceManager * __photoKitDataSourceManager;
     PXPhotosDataSource * __photosDataSource;
+    NSObject<OS_dispatch_queue> * __photosFrameworksPreheatQueue;
     NSMutableSet * __sessionAssetUUIDs;
+    bool  __shouldSkipPhotosFrameworkPreheat;
     PXPhotosDataSource * __stagedDataSource;
     bool  __transientAssetsAreValid;
     CAMTransientDataSource * __transientDataSource;
@@ -39,7 +41,6 @@
     UIGestureRecognizer * _previewGestureRecognizer;
     <CAMCameraRollControllerSessionDelegate> * _sessionDelegate;
     unsigned short  _sessionIdentifier;
-    bool  _shouldPauseAudioSessionUpdatesForCapture;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_HDRUUIDToIgnoredEV0UUIDs;
@@ -54,7 +55,9 @@
 @property (getter=_isOneUpVisible, setter=_setOneUpVisible:, nonatomic) bool _oneUpVisible;
 @property (nonatomic, readonly) PUPhotoKitDataSourceManager *_photoKitDataSourceManager;
 @property (setter=_setPhotosDataSource:, nonatomic, retain) PXPhotosDataSource *_photosDataSource;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_photosFrameworksPreheatQueue;
 @property (nonatomic, readonly) NSMutableSet *_sessionAssetUUIDs;
+@property (setter=_setShouldSkipPhotosFrameworkPreheat:, nonatomic) bool _shouldSkipPhotosFrameworkPreheat;
 @property (setter=_setStagedDataSource:, nonatomic, retain) PXPhotosDataSource *_stagedDataSource;
 @property (setter=_setTransientAssetsAreValid:, nonatomic) bool _transientAssetsAreValid;
 @property (nonatomic, readonly) CAMTransientDataSource *_transientDataSource;
@@ -70,7 +73,6 @@
 @property (setter=_setPreviewGestureRecognizer:, nonatomic, retain) UIGestureRecognizer *previewGestureRecognizer;
 @property (nonatomic) <CAMCameraRollControllerSessionDelegate> *sessionDelegate;
 @property (setter=_setSessionIdentifier:, nonatomic) unsigned short sessionIdentifier;
-@property (nonatomic) bool shouldPauseAudioSessionUpdatesForCapture;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -88,9 +90,9 @@
 - (bool)_isPasscodeLocked;
 - (id)_memoryWarningSource;
 - (id)_oneUpPresentationHelper;
-- (void)_performPreload;
 - (id)_photoKitDataSourceManager;
 - (id)_photosDataSource;
+- (id)_photosFrameworksPreheatQueue;
 - (void)_registerBrowsingViewModelChangeObserver;
 - (void)_scheduleStopCaptureSessionAfterDelay:(double)arg1;
 - (void)_scheduleUpdateIfOneUpIsActive;
@@ -105,11 +107,13 @@
 - (void)_setPrefersPresentingStatusbarHidden:(bool)arg1;
 - (void)_setPreviewGestureRecognizer:(id)arg1;
 - (void)_setSessionIdentifier:(unsigned short)arg1;
+- (void)_setShouldSkipPhotosFrameworkPreheat:(bool)arg1;
 - (void)_setStagedDataSource:(id)arg1;
 - (void)_setTransientAssetsAreValid:(bool)arg1;
 - (void)_setUpdateIsScheduled:(bool)arg1;
 - (void)_setupMechanismsForStoppingCaptureSessionIfNecessary;
 - (void)_setupMemoryWarningNotificationsIfNecessary;
+- (bool)_shouldSkipPhotosFrameworkPreheat;
 - (bool)_shouldStopCaptureSessionForIrisPlayerOfAssetViewModel:(id)arg1;
 - (bool)_shouldStopCaptureSessionForVideoPlayerOfAssetViewModel:(id)arg1;
 - (id)_stagedDataSource;
@@ -156,8 +160,9 @@
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (id)persistedThumbnailImage;
+- (void)photoLibraryDidChange:(id)arg1;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
-- (void)ppt_preload;
+- (void)ppt_awaitPreload:(id /* block */)arg1;
 - (bool)prefersPresentingStatusbarHidden;
 - (void)preload;
 - (void)presentCameraRollViewControllerAnimated:(bool)arg1 interactive:(bool)arg2 deferringStagedMediaLoading:(bool)arg3;
@@ -179,8 +184,6 @@
 - (void)setImageWellDelegate:(id)arg1;
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setSessionDelegate:(id)arg1;
-- (void)setShouldPauseAudioSessionUpdatesForCapture:(bool)arg1;
-- (bool)shouldPauseAudioSessionUpdatesForCapture;
 - (bool)shouldStartPreviewingSimultaneouslyWithGestureRecognizer:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)willPersistAssetWithUUID:(id)arg1 captureSession:(unsigned short)arg2;

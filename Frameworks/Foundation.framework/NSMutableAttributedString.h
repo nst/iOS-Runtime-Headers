@@ -29,14 +29,9 @@
 - (void)mf_removeAttribute:(id)arg1;
 - (void)mf_setString:(id)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
 
-+ (id)_doc_attributedStringForTitle:(id)arg1 textAttributes:(id)arg2 tagColors:(id)arg3 tagDiameter:(double)arg4 position:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
-+ (id)_doc_gridAttributedStringForTitle:(id)arg1 tagColors:(id)arg2 font:(id)arg3;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (void)_ui_restoreOriginalFontAttributes;
+- (void)addAttributesPreservingOriginals:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
@@ -53,7 +48,14 @@
 - (void)dd_replaceResultAttributesWithSimpleLinksForTypes:(unsigned long long)arg1 context:(id)arg2;
 - (void)dd_resetResults;
 - (void)dd_resetResults:(bool)arg1;
+- (bool)dd_urlifyClientRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 index:(unsigned long long)arg2 context:(id)arg3;
 - (bool)dd_urlifyResult:(id)arg1 withBlock:(id /* block */)arg2 referenceDate:(id)arg3 context:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager
+
++ (id)_doc_attributedStringForTitle:(id)arg1 textAttributes:(id)arg2 tagColors:(id)arg3 tagDrawingTraits:(struct { double x1; double x2; double x3; long long x4; })arg4;
++ (id)_doc_gridAttributedStringForTitle:(id)arg1 tagColors:(id)arg2 font:(id)arg3 layoutDirection:(long long)arg4;
++ (id)_doc_spacerImageWithWidth:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
@@ -77,6 +79,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
 
+- (void)ic_addForgroundColorInRangesWhereNoColorAlreadyExists:(struct UIColor { Class x1; }*)arg1;
 - (void)ic_addTextBlocks:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)ic_convertParagraphStyleToBodyInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setParagraphStyleForWritingDirection:(long long)arg1 andAlignment:(bool)arg2;
@@ -86,6 +89,10 @@
 - (id)attributedStringByTrimmingEmptySpaceEdges;
 - (unsigned long long)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (void)scrcAppendFormat:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
+
+- (void)scrAttributedStringTrimTrailingNewlines;
 
 // Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
 
@@ -121,6 +128,10 @@
 - (void)subscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)superscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)unscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (void)_ui_restoreOriginalFontAttributes;
 
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 

@@ -21,7 +21,13 @@
 + (id)monogramColors;
 + (id)monogramWithData:(id)arg1;
 + (id)plateFlatColor;
++ (id)plateGradientEndColor;
++ (id)plateGradientStartColor;
 + (id)plateOverlayLayer;
++ (id)plateSelectedActiveColor;
++ (id)plateSelectedActiveTextColor;
++ (id)plateSelectedInactiveColor;
++ (void)updatePlateOverlayLayer:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_initWithData:(id)arg1;

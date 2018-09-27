@@ -10,6 +10,7 @@
     SFResultSection * _section;
     TLKStackView * _stackView;
     UILabel * _titleLabel;
+    bool  _usesInsetRoundedSections;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +25,7 @@
 @property (readonly) Class superclass;
 @property (readonly) NSString *title;
 @property (retain) UILabel *titleLabel;
+@property bool usesInsetRoundedSections;
 
 + (id)reuseIdentifier;
 
@@ -48,6 +50,7 @@
 - (void)setSection:(id)arg1;
 - (void)setStackView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)setUsesInsetRoundedSections:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stackView;
 - (bool)supportsShowMoreInApp;
@@ -57,6 +60,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateAlignmentRectInsets;
 - (void)updateHeaderButtonVisibility;
-- (void)updateWithSection:(id)arg1 isExpanded:(bool)arg2;
+- (void)updateWithSection:(id)arg1 isExpanded:(bool)arg2 usesInsetRoundedSection:(bool)arg3;
+- (bool)usesInsetRoundedSections;
 
 @end

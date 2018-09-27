@@ -8,10 +8,12 @@
     NSMutableDictionary * _faceViews;
     double  _interiorAngle;
     unsigned long long  _numberOfFaces;
+    unsigned long long  _numberOfVisibleFaces;
 }
 
 @property (nonatomic, readonly) double faceDistanceToCenter;
 @property (nonatomic, readonly) unsigned long long numberOfFaces;
+@property (nonatomic, readonly) unsigned long long numberOfVisibleFaces;
 @property (nonatomic, readonly) double rotationAnglePerFace;
 
 + (Class)layerClass;
@@ -24,6 +26,7 @@
 - (id)initWithNumberOfFaces:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (unsigned long long)numberOfFaces;
+- (unsigned long long)numberOfVisibleFaces;
 - (double)rotationAnglePerFace;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setView:(id)arg1 forFaceAtIndex:(unsigned long long)arg2;

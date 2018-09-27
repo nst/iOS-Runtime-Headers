@@ -5,7 +5,7 @@
 
 @required
 
-+ (void)applyElementAttributeCacheScheme:(int)arg1;
++ (void)applyElementAttributeCacheScheme:(unsigned long long)arg1;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
 + (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 forApplication:(struct __AXUIElement { }*)arg2 contextId:(unsigned int)arg3;
 

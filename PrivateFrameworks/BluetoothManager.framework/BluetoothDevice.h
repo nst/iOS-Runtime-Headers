@@ -31,6 +31,7 @@
 - (unsigned int)doubleTapActionEx:(unsigned int*)arg1 rightAction:(unsigned int*)arg2;
 - (unsigned int)doubleTapCapability;
 - (void)endVoiceCommand;
+- (bool)featureCapability:(int)arg1;
 - (unsigned int)getConnectingServiceMask;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (bool)inEarDetectEnabled;
@@ -58,12 +59,12 @@
 - (void)setPIN:(id)arg1;
 - (void)setServiceSetting:(unsigned int)arg1 key:(id)arg2 value:(id)arg3;
 - (void)setSyncGroup:(int)arg1 enabled:(bool)arg2;
-- (void)setSyncSettings:(struct { bool x1; bool x2; bool x3; bool x4; })arg1;
+- (void)setSyncSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; })arg1;
 - (bool)setUserName:(id)arg1;
 - (void)startVoiceCommand;
 - (bool)supportsBatteryLevel;
 - (id)syncGroups;
-- (struct { bool x1; bool x2; bool x3; bool x4; })syncSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; })syncSettings;
 - (int)type;
 - (void)unpair;
 - (unsigned int)vendorId;

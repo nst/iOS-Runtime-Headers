@@ -3,6 +3,7 @@
  */
 
 @interface CBPeripheralManager : CBManager {
+    unsigned long long  _attributeIDGenerator;
     NSMapTable * _centrals;
     NSMutableDictionary * _characteristicIDs;
     <CBPeripheralManagerDelegate> * _delegate;
@@ -30,6 +31,7 @@
     bool  _waitingForReady;
 }
 
+@property unsigned long long attributeIDGenerator;
 @property (nonatomic, readonly, retain) NSMapTable *centrals;
 @property (nonatomic, readonly, retain) NSMutableDictionary *characteristicIDs;
 @property (nonatomic) <CBPeripheralManagerDelegate> *delegate;
@@ -46,6 +48,7 @@
 
 - (void).cxx_destruct;
 - (void)addService:(id)arg1;
+- (unsigned long long)attributeIDGenerator;
 - (id)centralWithInfo:(id)arg1;
 - (id)centrals;
 - (id)characteristicIDs;
@@ -79,7 +82,9 @@
 - (id)l2capChannels;
 - (id)multipleAdvertisingSupported;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)overrideLocalLeAddress:(id)arg1;
 - (id)peerWithInfo:(id)arg1;
+- (void)publishL2CAPChannel:(unsigned short)arg1 requiresEncryption:(bool)arg2;
 - (void)publishL2CAPChannel:(unsigned short)arg1 requiresEncryption:(bool)arg2 options:(id)arg3;
 - (void)publishL2CAPChannelWithEncryption:(bool)arg1;
 - (bool)readyForUpdates;
@@ -89,6 +94,7 @@
 - (void)respondToRequest:(id)arg1 withResult:(long long)arg2;
 - (void)respondToTransaction:(id)arg1 value:(id)arg2 attributeID:(id)arg3 result:(long long)arg4;
 - (id)services;
+- (void)setAttributeIDGenerator:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredConnectionLatency:(long long)arg1 forCentral:(id)arg2;
 - (void)setIsAdvertising:(bool)arg1;

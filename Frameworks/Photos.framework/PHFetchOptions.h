@@ -5,12 +5,15 @@
 @interface PHFetchOptions : NSObject <NSCopying> {
     NSNumber * _cacheSizeForFetchNumber;
     NSNumber * _chunkSizeForFetchNumber;
+    NSNumber * _curationTypeNumber;
     NSArray * _customObjectIDSortOrder;
     NSNumber * _excludeMontageAssetsNumber;
     NSNumber * _fetchLimitNumber;
+    NSNumber * _fetchOffsetNumber;
     NSNumber * _includeAllBurstAssetsNumber;
     NSNumber * _includeAssetSourceTypesNumber;
     NSNumber * _includeDuplicateAssetsNumber;
+    NSNumber * _includeExpiredMomentSharesNumber;
     NSNumber * _includeFavoriteMemoriesCollectionListNumber;
     NSNumber * _includeHiddenAssetsNumber;
     NSNumber * _includeNonvisibleFacesNumber;
@@ -22,7 +25,7 @@
     NSNumber * _includePlacesSmartAlbumNumber;
     NSNumber * _includeRejectedMemoriesNumber;
     NSNumber * _includeTrashedAssetsNumber;
-    NSNumber * _includeWallpaperAssetsNumber;
+    NSNumber * _includeTrashedMomentSharesNumber;
     NSPredicate * _internalInclusionPredicate;
     NSPredicate * _internalPredicate;
     NSArray * _internalSortDescriptors;
@@ -34,22 +37,27 @@
     NSPredicate * _predicate;
     NSMutableSet * _propertySets;
     NSNumber * _reverseSortOrderNumber;
+    NSNumber * _sharingStreamNumber;
     NSNumber * _shouldPrefetchCountNumber;
     NSArray * _sortDescriptors;
     NSString * _transientIdentifier;
+    NSSet * _verifiedPersonTypes;
     NSNumber * _wantsIncrementalChangeDetailsNumber;
 }
 
 @property (nonatomic) long long cacheSizeForFetch;
 @property (nonatomic) long long chunkSizeForFetch;
+@property (nonatomic) long long curationType;
 @property (nonatomic, retain) NSArray *customObjectIDSortOrder;
 @property (nonatomic) bool excludeMontageAssets;
 @property (nonatomic) unsigned long long fetchLimit;
+@property (nonatomic) unsigned long long fetchOffset;
 @property (nonatomic, retain) NSArray *fetchPropertySets;
 @property (nonatomic, readonly) NSSet *fetchPropertySetsAsSet;
 @property (nonatomic) bool includeAllBurstAssets;
 @property (nonatomic) unsigned long long includeAssetSourceTypes;
 @property (nonatomic) bool includeDuplicateAssets;
+@property (nonatomic) bool includeExpiredMomentShares;
 @property (nonatomic) bool includeFavoriteMemoriesCollectionList;
 @property (nonatomic) bool includeHiddenAssets;
 @property (nonatomic) bool includeNonvisibleFaces;
@@ -61,7 +69,7 @@
 @property (nonatomic) bool includePlacesSmartAlbum;
 @property (nonatomic) bool includeRejectedMemories;
 @property (nonatomic) bool includeTrashedAssets;
-@property (nonatomic) bool includeWallpaperAssets;
+@property (nonatomic) bool includeTrashedMomentShares;
 @property (nonatomic, retain) NSPredicate *internalInclusionPredicate;
 @property (nonatomic, retain) NSPredicate *internalPredicate;
 @property (nonatomic, retain) NSArray *internalSortDescriptors;
@@ -72,13 +80,16 @@
 @property (nonatomic, retain) PHPhotoLibrary *photoLibrary;
 @property (nonatomic, retain) NSPredicate *predicate;
 @property (nonatomic) bool reverseSortOrder;
+@property (nonatomic) unsigned long long sharingStream;
 @property (nonatomic) bool shouldPrefetchCount;
 @property (nonatomic, retain) NSArray *sortDescriptors;
 @property (nonatomic, retain) NSString *transientIdentifier;
+@property (nonatomic, copy) NSSet *verifiedPersonTypes;
 @property (nonatomic) bool wantsIncrementalChangeDetails;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
++ (id)effectivePhotoLibraryForFetchOptions:(id)arg1;
 + (id)fetchOptionsWithInclusiveDefaults;
 
 - (void).cxx_destruct;
@@ -86,15 +97,18 @@
 - (long long)cacheSizeForFetch;
 - (long long)chunkSizeForFetch;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)curationType;
 - (id)customObjectIDSortOrder;
 - (id)description;
 - (bool)excludeMontageAssets;
 - (unsigned long long)fetchLimit;
+- (unsigned long long)fetchOffset;
 - (id)fetchPropertySets;
 - (id)fetchPropertySetsAsSet;
 - (bool)includeAllBurstAssets;
 - (unsigned long long)includeAssetSourceTypes;
 - (bool)includeDuplicateAssets;
+- (bool)includeExpiredMomentShares;
 - (bool)includeFavoriteMemoriesCollectionList;
 - (bool)includeHiddenAssets;
 - (bool)includeNonvisibleFaces;
@@ -106,7 +120,7 @@
 - (bool)includePlacesSmartAlbum;
 - (bool)includeRejectedMemories;
 - (bool)includeTrashedAssets;
-- (bool)includeWallpaperAssets;
+- (bool)includeTrashedMomentShares;
 - (id)init;
 - (id)internalInclusionPredicate;
 - (id)internalPredicate;
@@ -121,13 +135,16 @@
 - (bool)reverseSortOrder;
 - (void)setCacheSizeForFetch:(long long)arg1;
 - (void)setChunkSizeForFetch:(long long)arg1;
+- (void)setCurationType:(long long)arg1;
 - (void)setCustomObjectIDSortOrder:(id)arg1;
 - (void)setExcludeMontageAssets:(bool)arg1;
 - (void)setFetchLimit:(unsigned long long)arg1;
+- (void)setFetchOffset:(unsigned long long)arg1;
 - (void)setFetchPropertySets:(id)arg1;
 - (void)setIncludeAllBurstAssets:(bool)arg1;
 - (void)setIncludeAssetSourceTypes:(unsigned long long)arg1;
 - (void)setIncludeDuplicateAssets:(bool)arg1;
+- (void)setIncludeExpiredMomentShares:(bool)arg1;
 - (void)setIncludeFavoriteMemoriesCollectionList:(bool)arg1;
 - (void)setIncludeHiddenAssets:(bool)arg1;
 - (void)setIncludeNonvisibleFaces:(bool)arg1;
@@ -139,7 +156,7 @@
 - (void)setIncludePlacesSmartAlbum:(bool)arg1;
 - (void)setIncludeRejectedMemories:(bool)arg1;
 - (void)setIncludeTrashedAssets:(bool)arg1;
-- (void)setIncludeWallpaperAssets:(bool)arg1;
+- (void)setIncludeTrashedMomentShares:(bool)arg1;
 - (void)setInternalInclusionPredicate:(id)arg1;
 - (void)setInternalPredicate:(id)arg1;
 - (void)setInternalSortDescriptors:(id)arg1;
@@ -150,14 +167,22 @@
 - (void)setPhotoLibrary:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setReverseSortOrder:(bool)arg1;
+- (void)setSharingStream:(unsigned long long)arg1;
 - (void)setShouldPrefetchCount:(bool)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (void)setTransientIdentifier:(id)arg1;
+- (void)setVerifiedPersonTypes:(id)arg1;
 - (void)setWantsIncrementalChangeDetails:(bool)arg1;
+- (unsigned long long)sharingStream;
 - (bool)shouldPrefetchCount;
 - (id)sortDescriptors;
 - (id)transientIdentifier;
+- (id)verifiedPersonTypes;
 - (bool)wantsIncrementalChangeDetails;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_searchAssetFetchOptions;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 

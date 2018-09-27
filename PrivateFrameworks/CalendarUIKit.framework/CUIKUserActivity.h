@@ -16,6 +16,7 @@
 @property (nonatomic) unsigned long long type;
 @property (nonatomic) unsigned long long version;
 
++ (bool)_boolFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
 + (double)_doubleFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
 + (long long)_integerFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;
 + (id)_stringFromDictionary:(id)arg1 key:(id)arg2 error:(bool*)arg3;

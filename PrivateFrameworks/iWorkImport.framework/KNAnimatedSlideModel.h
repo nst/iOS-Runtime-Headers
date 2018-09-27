@@ -10,6 +10,7 @@
     NSMutableArray * _buildEvents;
     NSMapTable * _infoToArrayOfAnimatedBuildsMap;
     NSArray * _infos;
+    bool  _isMetalSlide;
     unsigned long long  _numberOfAddedEvents;
     KNPlaybackSession * _session;
     KNTransitionRenderer * _transitionRenderer;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) NSSet *ambientBuildRenderers;
 @property (nonatomic, readonly) NSArray *animatedBuilds;
 @property (getter=isFirstBuildEventAutomatic, nonatomic, readonly) bool firstBuildEventAutomatic;
+@property (nonatomic, readonly) bool isMetalSlide;
 @property (nonatomic) unsigned long long numberOfAddedEvents;
 @property (nonatomic) KNPlaybackSession *session;
 @property (nonatomic, readonly) KNTransitionRenderer *transitionRenderer;
@@ -44,14 +46,17 @@
 - (id)initWithBuildChunks:(id)arg1 infos:(id)arg2 session:(id)arg3 animatedSlideView:(id)arg4;
 - (double)initialDelayForEventIndex:(unsigned long long)arg1;
 - (bool)isFirstBuildEventAutomatic;
+- (bool)isMetalSlide;
 - (id)lastAnimatedBuildForInfo:(id)arg1;
 - (double)maxScaleFactorForDrawable:(id)arg1;
+- (id)nextRendererAfterRenderer:(id)arg1;
 - (unsigned long long)numberOfAddedEvents;
 - (long long)outEventForInfo:(id)arg1;
 - (void)p_addAmbientBuildRenderer:(id)arg1;
 - (id)p_animatedBuildForInfo:(id)arg1 event:(long long)arg2 buildIn:(bool)arg3;
 - (id)p_animatedBuildsForInfo:(id)arg1 animationType:(long long)arg2 duringEvent:(long long)arg3 time:(double)arg4;
 - (id)p_applyThemeCurvesToBuildAttributes:(id)arg1;
+- (void)p_checkIfSlideIsMetalCapableWithBuildChunks:(id)arg1 andInfos:(id)arg2;
 - (void)p_convertToBuildEvents:(id)arg1;
 - (id)p_createBuildAnimationRecords:(id)arg1 info:(id)arg2 event:(long long)arg3 start:(double)arg4 eventStart:(double)arg5 animateAtEndOfPreviousBuild:(bool)arg6 previousAnimatedBuild:(id)arg7 parentBuild:(id)arg8;
 - (bool)p_determineVisiblityOfInfo:(id)arg1 inOverloadedEvent:(long long)arg2 duringEvent:(long long)arg3;
@@ -62,6 +67,7 @@
 - (id)p_newImplicitAmbientBuildRendererWithDrawable:(id)arg1 stageIndex:(long long)arg2 buildChunk:(id)arg3 startTime:(double)arg4 eventStartTime:(double)arg5 event:(long long)arg6 animateAtEndOfPreviousBuild:(bool)arg7;
 - (id)p_newTransition;
 - (id)p_previousAnimatedBuildOfType:(long long)arg1 forInfo:(id)arg2 priorToBuild:(id)arg3;
+- (Class)p_rendererClassForBuildChunk:(id)arg1 parentBuild:(id)arg2 effectClass:(Class*)arg3;
 - (void)p_setRenderer:(id)arg1 forAnimatedBuild:(id)arg2;
 - (void)p_sortAnimatedBuilds;
 - (void)p_updatePreviousAndFinalAttributes;
@@ -73,6 +79,7 @@
 - (id)session;
 - (void)setNumberOfAddedEvents:(unsigned long long)arg1;
 - (void)setSession:(id)arg1;
+- (id)sortRenderers:(id)arg1;
 - (id)transitionRenderer;
 
 @end

@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (void)client_dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(id /* block */)arg3;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (bool)queue_shouldDeactivateAfterInitialResults;

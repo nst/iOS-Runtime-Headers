@@ -10,6 +10,7 @@
     SXImageController * _imageController;
 }
 
+@property (nonatomic, readonly) <SXAutoPlacement> *autoplacement;
 @property (nonatomic, retain) NSMutableDictionary *componentStyles;
 @property (nonatomic, retain) NSMutableDictionary *componentTextStyles;
 @property (nonatomic, readonly) SXDocument *document;
@@ -21,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)allImageResources;
+- (id)autoplacement;
 - (id)componentIdentifierUsingThumbnail;
 - (id)componentIdentifierUsingThumbnailInComponents:(id)arg1;
 - (id)componentLayoutForIdentifier:(id)arg1;

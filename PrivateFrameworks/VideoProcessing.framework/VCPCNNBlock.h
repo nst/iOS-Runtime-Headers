@@ -4,6 +4,7 @@
 
 @interface VCPCNNBlock : NSObject {
     VCPCNNMetalContext * _context;
+    bool  _executedOnGPU;
     bool  _generateOutput;
     VCPCNNData * _input;
     NSMutableArray * _inputSize;

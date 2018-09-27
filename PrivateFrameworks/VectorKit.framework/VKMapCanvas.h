@@ -10,13 +10,18 @@
     double  _canonicalSkyHeight;
     VKCamera * _defaultTrackingCamera;
     <VKInteractiveMapDelegate> * _delegate;
-    bool  _hasLastValidCanvasSizeZoomLevel;
     VKTimedAnimation * _horizontalOffsetAnimation;
     struct CGSize { 
         double width; 
         double height; 
     }  _lastCanvasSize;
-    float  _lastValidCanvasSizeZoomLevel;
+    struct optional<float> { 
+        bool _hasValue; 
+        union ValueUnion { 
+            unsigned char data[4]; 
+            float type; 
+        } _value; 
+    }  _lastValidCanvasSizeZoomLevel;
     VKMapModel * _map;
 }
 
@@ -53,6 +58,7 @@
 - (void)_setStyleTransitionProgress:(double)arg1 targetStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg2 step:(long long)arg3;
 - (double)_styleTransitionProgress;
 - (void)_updateViewTransform;
+- (struct optional<float> { bool x1; union ValueUnion { unsigned char x_2_1_1[4]; float x_2_1_2; } x2; })_zoomLevelForCanvasSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)addExternalAnchor:(id)arg1;
 - (void)addOverlay:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
@@ -204,6 +210,7 @@
 - (bool)supportsMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg1;
 - (unsigned char)targetDisplay;
 - (long long)tileSize;
+- (id)tileStatistics;
 - (bool)trafficEnabled;
 - (bool)trafficIncidentsEnabled;
 - (void)transferStateFromCanvas:(id)arg1;

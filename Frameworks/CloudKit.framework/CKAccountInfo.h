@@ -5,7 +5,6 @@
 @interface CKAccountInfo : NSObject <NSSecureCoding> {
     long long  _accountPartition;
     long long  _accountStatus;
-    NSError * _deviceToDeviceEncryptionAvailabilityError;
     bool  _hasEncryptionIdentity;
     bool  _hasValidCredentials;
     NSError * _manateeError;
@@ -28,7 +27,6 @@
 - (long long)accountStatus;
 - (id)description;
 - (id)deviceToDeviceEncryptionAvailabilityError;
-- (id)deviceToDeviceEncryptionAvailabilityError;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasEncryptionIdentity;
 - (bool)hasValidCredentials;
@@ -39,7 +37,6 @@
 - (id)manateeError;
 - (void)setAccountPartition:(long long)arg1;
 - (void)setAccountStatus:(long long)arg1;
-- (void)setDeviceToDeviceEncryptionAvailabilityError:(id)arg1;
 - (void)setDeviceToDeviceEncryptionAvailabilityError:(id)arg1;
 - (void)setHasEncryptionIdentity:(bool)arg1;
 - (void)setHasValidCredentials:(bool)arg1;

@@ -24,6 +24,7 @@
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (Class)documentViewControllerClass;
+- (id)equationEditorAPDID;
 - (id)excelDocumentTypes;
 - (id)importableDocumentTypes;
 - (id)init;
@@ -59,6 +60,9 @@
 - (id)stringForDocumentViewOnly;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
@@ -74,6 +78,7 @@
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
 - (bool)supportsRTL;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;

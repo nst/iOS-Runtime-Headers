@@ -11,6 +11,7 @@
         double height; 
     }  _faceSize;
     UIView * _faceView;
+    UIView * _highlightView;
     CAShapeLayer * _outline;
     long long  _style;
 }
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) UIView *faceContainer;
 @property (nonatomic) struct CGSize { double x1; double x2; } faceSize;
 @property (nonatomic, retain) UIView *faceView;
+@property (nonatomic, retain) UIView *highlightView;
 @property (nonatomic, retain) CAShapeLayer *outline;
 @property (nonatomic) long long style;
 
@@ -35,6 +37,7 @@
 - (id)faceContainer;
 - (struct CGSize { double x1; double x2; })faceSize;
 - (id)faceView;
+- (id)highlightView;
 - (id)initWithFaceSize:(struct CGSize { double x1; double x2; })arg1 style:(long long)arg2;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
@@ -44,6 +47,8 @@
 - (void)setFaceContainer:(id)arg1;
 - (void)setFaceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setFaceView:(id)arg1;
+- (void)setHighlightView:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setOutline:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

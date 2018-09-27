@@ -21,7 +21,6 @@
 - (void)remote_runAWDTask:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_saveDataObjects:(id)arg1 sourceBundleIdentifier:(id)arg2 sourceVersion:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_select:(id)arg1 from:(id)arg2 where:(id)arg3 groupBy:(id)arg4 orderBy:(id)arg5 limit:(long long)arg6 completion:(id /* block */)arg7;
-- (void)remote_setShouldIgnoreUnlockedState:(bool)arg1 completion:(id /* block */)arg2;
 - (void)remote_startFakingDataWithActivityType:(long long)arg1 speed:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_stopFakingDataWithCompletion:(id /* block */)arg1;
 - (void)remote_stopObservingDataCollectionForType:(id)arg1;

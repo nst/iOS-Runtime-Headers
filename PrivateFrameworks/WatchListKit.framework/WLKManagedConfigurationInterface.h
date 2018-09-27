@@ -4,6 +4,7 @@
 
 @interface WLKManagedConfigurationInterface : NSObject
 
++ (bool)_deleteAppWithBundleIdentifier:(id)arg1;
 + (void)_promptAndWait:(id)arg1;
 + (bool)_restoreAppWithBundleIdentifier:(id)arg1;
 + (void)setTVAppAllowed:(bool)arg1;

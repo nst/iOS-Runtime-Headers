@@ -31,6 +31,7 @@
     double  _progressXDelta;
     double  _progressYDelta;
     bool  _renderWithIOSurface;
+    int  _screenClass;
     bool  _showsProgressBar;
     bool  _sideways;
     bool  _weCreatedTheContext;

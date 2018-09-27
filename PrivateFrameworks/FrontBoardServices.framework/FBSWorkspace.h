@@ -11,17 +11,18 @@
     NSObject<OS_dispatch_queue> * _scenesQueue;
     unsigned long long  _signpostName;
     bool  _synchronizingFence;
-    NSMapTable * _triggerToFenceNameMap;
+    BSMutableIntegerMap * _triggerToFenceNameMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSWorkspaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) FBSSerialQueue *queue;
+@property (nonatomic, readonly) FBSSerialQueue *queue;
 @property (nonatomic, readonly, copy) NSArray *scenes;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_client;
 - (Class)_clientClass;
 - (id)_internalQueue;

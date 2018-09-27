@@ -12,6 +12,7 @@
 - (id)delegate;
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(long long)arg2;
 - (id)initWithQueue:(id)arg1;
+- (id)notifyCompanionAboutWebKitStatus:(id)arg1;
 - (id)notifyInitialSyncFinished:(id)arg1;
 - (void)readProtobufData:(id)arg1 type:(unsigned long long)arg2;
 - (id)requestContent:(id)arg1 highPriority:(bool)arg2;

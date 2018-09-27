@@ -13,12 +13,12 @@
 + (bool)detectContacts;
 + (bool)detectNLEvents;
 + (bool)detectStructuredEvents;
-+ (bool)harvestNLEvents;
 + (long long)hashedSessionsLogging;
++ (bool)hidePastEventsForTests;
 + (long long)messagesToProcessImmediately;
 + (bool)onlyShowSignificantNLEvents;
 + (bool)onlyShowSignificantPseudoContacts;
-+ (void)registerBlockOnSuggestionsSettingsChange:(id /* block */)arg1;
++ (int)registerBlockOnSuggestionsSettingsChange:(id /* block */)arg1;
 + (void)removeDeprecatedDefaults;
 + (void)resetAllPreferences;
 + (void)setAllowAgeBasedPruning:(bool)arg1;
@@ -32,7 +32,6 @@
 + (void)setDetectStructuredEvents:(bool)arg1;
 + (void)setFirstPartyCalendarAppIsInstalled:(bool)arg1;
 + (void)setFirstPartyMailAppIsInstalled:(bool)arg1;
-+ (void)setHarvestNLEvents:(bool)arg1;
 + (void)setHashedSessionsLogging:(int)arg1;
 + (void)setHidePastEventsForTests:(bool)arg1;
 + (void)setMessagesToProcessImmediately:(long long)arg1;

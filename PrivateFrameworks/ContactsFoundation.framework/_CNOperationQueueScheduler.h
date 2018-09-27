@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (readonly) double timestamp;
 
 + (id)operationWithQualityOfService:(unsigned long long)arg1 block:(id /* block */)arg2;
 

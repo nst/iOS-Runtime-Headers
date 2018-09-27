@@ -2,23 +2,20 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBEmpty : PBCodable <NSCopying> {
-    PBUnknownFields * _unknownFields;
+@interface _INPBEmpty : PBCodable <NSCopying, NSSecureCoding, _INPBEmpty> {
+    struct { }  _has;
 }
 
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-+ (id)options;
-
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

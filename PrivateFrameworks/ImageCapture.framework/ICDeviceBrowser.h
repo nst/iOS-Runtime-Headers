@@ -13,7 +13,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)devices;
-- (void)finalize;
 - (id)init;
 - (id)internalDevices;
 - (bool)isBrowsing;

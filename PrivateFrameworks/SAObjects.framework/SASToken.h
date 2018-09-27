@@ -10,6 +10,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *endTime;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *ipaPhoneSequence;
 @property (nonatomic, copy) NSString *originalText;
 @property (nonatomic, copy) NSString *phoneSequence;
 @property (nonatomic, copy) NSString *recognitionStability;
@@ -30,6 +31,7 @@
 - (id)encodedClassName;
 - (id)endTime;
 - (id)groupIdentifier;
+- (id)ipaPhoneSequence;
 - (id)originalText;
 - (id)phoneSequence;
 - (id)recognitionStability;
@@ -38,6 +40,7 @@
 - (void)setAddSpaceAfter:(bool)arg1;
 - (void)setConfidenceScore:(id)arg1;
 - (void)setEndTime:(id)arg1;
+- (void)setIpaPhoneSequence:(id)arg1;
 - (void)setOriginalText:(id)arg1;
 - (void)setPhoneSequence:(id)arg1;
 - (void)setRecognitionStability:(id)arg1;

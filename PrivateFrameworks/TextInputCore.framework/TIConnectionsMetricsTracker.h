@@ -14,7 +14,7 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (bool)inputContextDidChange;
 - (bool)isIgnoredTrigger:(id)arg1;

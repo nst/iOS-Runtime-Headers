@@ -9,6 +9,7 @@
 @property (nonatomic) bool httpOnly;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *path;
+@property (nonatomic) long long sameSite;
 @property (nonatomic) bool secure;
 @property (nonatomic) bool session;
 @property (nonatomic) int size;
@@ -19,9 +20,10 @@
 - (id)domain;
 - (double)expires;
 - (bool)httpOnly;
-- (id)initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(bool)arg7 secure:(bool)arg8 session:(bool)arg9;
+- (id)initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(bool)arg7 secure:(bool)arg8 session:(bool)arg9 sameSite:(long long)arg10;
 - (id)name;
 - (id)path;
+- (long long)sameSite;
 - (bool)secure;
 - (bool)session;
 - (void)setDomain:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)setHttpOnly:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
+- (void)setSameSite:(long long)arg1;
 - (void)setSecure:(bool)arg1;
 - (void)setSession:(bool)arg1;
 - (void)setSize:(int)arg1;
@@ -38,6 +41,6 @@
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
-+ (id)safe_initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(bool)arg7 secure:(bool)arg8 session:(bool)arg9;
++ (id)safe_initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(bool)arg7 secure:(bool)arg8 session:(bool)arg9 sameSite:(long long)arg10;
 
 @end

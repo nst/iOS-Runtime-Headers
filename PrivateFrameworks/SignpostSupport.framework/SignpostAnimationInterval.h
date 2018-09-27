@@ -4,25 +4,26 @@
 
 @interface SignpostAnimationInterval : SignpostInterval {
     NSArray * _compositeIntervals;
-    float  _frameRate;
 }
 
 @property (nonatomic, retain) NSArray *compositeIntervals;
 @property (nonatomic, readonly) unsigned long long frameCount;
-@property (nonatomic) float frameRate;
+@property (nonatomic, readonly) float frameRate;
 
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
+- (id)_intervalTypeString;
 - (id)compositeIntervals;
 - (id)debugDescription;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (unsigned long long)frameCount;
 - (float)frameRate;
+- (id)humanReadableType;
 - (id)initWithBeginEvent:(id)arg1 endEvent:(id)arg2 compositeIntervalTimeline:(id)arg3;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
-- (id)serializeableDictionary;
 - (void)setCompositeIntervals:(id)arg1;
-- (void)setFrameRate:(float)arg1;
 
 @end

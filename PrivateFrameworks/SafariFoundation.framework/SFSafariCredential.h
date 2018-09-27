@@ -4,12 +4,15 @@
 
 @interface SFSafariCredential : NSObject <NSSecureCoding> {
     NSDate * _creationDate;
+    <SFSafariPasswordCredential> * _externalCredential;
     NSString * _password;
     NSString * _site;
     NSString * _user;
 }
 
 @property (nonatomic, readonly) NSDate *creationDate;
+@property (getter=isExternal, nonatomic, readonly) bool external;
+@property (nonatomic, readonly) <SFSafariPasswordCredential> *externalCredential;
 @property (nonatomic, readonly) NSString *password;
 @property (nonatomic, readonly) NSString *site;
 @property (nonatomic, readonly) NSString *user;
@@ -20,10 +23,13 @@
 - (id)creationDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)externalCredential;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithExternalCredential:(id)arg1;
 - (id)initWithUser:(id)arg1 password:(id)arg2 site:(id)arg3 creationDate:(id)arg4;
 - (bool)isEqual:(id)arg1;
+- (bool)isExternal;
 - (id)password;
 - (id)site;
 - (id)user;

@@ -5,6 +5,7 @@
 
 @required
 
+- (INSpeakableString *)carName;
 - (NSNumber *)enableCooling;
 - (NSNumber *)enableHeating;
 - (NSNumber *)enableMassage;
@@ -12,6 +13,7 @@
 - (NSNumber *)level;
 - (long long)relativeLevelSetting;
 - (long long)seat;
+- (void)setCarName:(INSpeakableString *)arg1;
 - (void)setEnableCooling:(NSNumber *)arg1;
 - (void)setEnableHeating:(NSNumber *)arg1;
 - (void)setEnableMassage:(NSNumber *)arg1;

@@ -22,8 +22,6 @@
     UIColor * _highlightInputColor;
     bool  _highlighted;
     CAShapeLayer * _layer;
-    CAShapeLayer * _maskLayer;
-    PKShapeView * _maskView;
     UIColor * _normalInputColor;
     bool  _selected;
     UIColor * _selectedInputColor;

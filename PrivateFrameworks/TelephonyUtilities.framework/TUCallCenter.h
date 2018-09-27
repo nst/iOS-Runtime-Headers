@@ -80,13 +80,13 @@
 - (id)_allCalls;
 - (unsigned long long)_callGroupCountForCall:(id)arg1 withCall:(id)arg2;
 - (bool)_canDialWithRequest:(id)arg1 shouldUseRelay:(bool*)arg2;
-- (id)_dial:(id)arg1 callID:(int)arg2 provider:(id)arg3 video:(bool)arg4 sourceIdentifier:(id)arg5 dialType:(long long)arg6;
-- (id)_dial:(id)arg1 callID:(int)arg2 service:(int)arg3 sourceIdentifier:(id)arg4 dialType:(long long)arg5;
 - (id)_dialWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (bool)_existingCallsAllowDialRequest:(id)arg1 allowVoiceWithData:(bool)arg2;
 - (bool)_isCallingAvailableOnSecondaryDeviceWithRelayCallingAvailability:(int)arg1 isProviderAvailable:(bool)arg2 isRelayAllowed:(bool)arg3 isEmergency:(bool)arg4 supportsBasebandCalling:(bool)arg5 shouldUseRelay:(bool*)arg6;
+- (bool)_isEmergencyDialRequest:(id)arg1;
 - (void)_preflightDisconnectForCalls:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_shouldPreferRelayOverDirectSecondaryCallingForRelayingCallingAvailability:(int)arg1 isRelayCallingSupported:(bool)arg2 isEmergencyCallbackPossible:(bool)arg3;
+- (id)activeConversationForCall:(id)arg1;
 - (id)activeVideoCall;
 - (bool)allCallsAreOfService:(int)arg1;
 - (bool)allCallsPassTest:(id /* block */)arg1;
@@ -136,10 +136,6 @@
 - (id)currentVideoCalls;
 - (void)dealloc;
 - (id)debugDescription;
-- (id)dial:(id)arg1 callID:(int)arg2 service:(int)arg3;
-- (id)dial:(id)arg1 service:(int)arg2;
-- (id)dialEmergency:(id)arg1;
-- (id)dialEmergency:(id)arg1 sourceIdentifier:(id)arg2;
 - (id)dialWithRequest:(id)arg1;
 - (void)dialWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)disconnectAllCalls;
@@ -183,8 +179,10 @@
 - (bool)isSendToVoicemailAllowed;
 - (bool)isSwappable;
 - (bool)isTakingCallsPrivateAllowed;
+- (id)joinConversationWithConversationRequest:(id)arg1;
 - (void)joinConversationWithRequest:(id)arg1;
 - (void)launchAppForDialRequest:(id)arg1 completion:(id /* block */)arg2;
+- (bool)launchAppForJoinRequest:(id)arg1;
 - (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
 - (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 - (id)providerManager;

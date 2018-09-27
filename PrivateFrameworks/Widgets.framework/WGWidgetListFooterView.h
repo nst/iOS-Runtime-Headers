@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_availableWidgetsUpdated:(id)arg1;
 - (id)_referenceFont;
+- (void)_setAttributedString:(id)arg1 forWidgetIdentifier:(id)arg2;
 - (void)_updateForContentCategorySizeDidChange;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)delegate;

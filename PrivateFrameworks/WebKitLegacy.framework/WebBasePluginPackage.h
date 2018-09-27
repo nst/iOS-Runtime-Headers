@@ -29,18 +29,20 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } desc; 
-        struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
+        struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16> { 
             struct MimeClassInfo {} *m_buffer; 
             unsigned int m_capacity; 
             unsigned int m_size; 
-            unsigned int m_mask; 
         } mimes; 
         bool isApplicationPlugin; 
         unsigned char clientLoadPolicy; 
+        struct String { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
+                struct StringImpl {} *m_ptr; 
+            } m_impl; 
+        } bundleIdentifier; 
     }  pluginInfo;
 }
-
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 + (void)initialize;
 + (id)pluginWithPath:(id)arg1;
@@ -61,20 +63,12 @@
 - (bool)load;
 - (id)pListForPath:(id)arg1 createFile:(bool)arg2;
 - (const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct MimeClassInfo {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; } x4; bool x5; unsigned char x6; }*)pluginInfo;
+- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16> { struct MimeClassInfo {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; unsigned char x6; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; }*)pluginInfo;
 - (bool)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (bool)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (void)unload;
 - (unsigned int)versionNumber;
 - (void)wasAddedToPluginDatabase:(id)arg1;
 - (void)wasRemovedFromPluginDatabase:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

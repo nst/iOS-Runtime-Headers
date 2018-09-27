@@ -28,6 +28,7 @@
 - (id)children;
 - (id)componentConformingToProtocol:(id)arg1;
 - (id)components;
+- (id)description;
 - (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id /* block */)arg3 stopPointer:(bool*)arg4;
 - (bool)hidden;
 - (id)init;
@@ -37,6 +38,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
 - (id)path;
+- (id)recursiveDescription;
 - (void)setChildren:(id)arg1;
 - (void)setComponent:(id)arg1 forProtocol:(id)arg2;
 - (void)setHidden:(bool)arg1;

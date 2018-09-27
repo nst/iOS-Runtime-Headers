@@ -2,27 +2,30 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBShareFileIntent : PBCodable <NSCopying> {
-    NSMutableArray * _entityNames;
+@interface _INPBShareFileIntent : PBCodable <NSCopying, NSSecureCoding, _INPBShareFileIntent> {
+    NSArray * _entityNames;
     struct { 
         unsigned int shareMode : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
-    NSMutableArray * _recipients;
+    NSArray * _recipients;
     int  _shareMode;
-    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, retain) NSMutableArray *entityNames;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *entityNames;
+@property (nonatomic, readonly) unsigned long long entityNamesCount;
 @property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic) bool hasShareMode;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic, retain) NSMutableArray *recipients;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, readonly) unsigned long long recipientsCount;
 @property (nonatomic) int shareMode;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
 + (Class)entityNameType;
-+ (id)options;
 + (Class)recipientsType;
 
 - (void).cxx_destruct;
@@ -32,7 +35,6 @@
 - (void)clearEntityNames;
 - (void)clearRecipients;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityNameAtIndex:(unsigned long long)arg1;
 - (id)entityNames;
@@ -42,7 +44,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)recipients;
 - (id)recipientsAtIndex:(unsigned long long)arg1;
@@ -54,7 +55,6 @@
 - (void)setShareMode:(int)arg1;
 - (int)shareMode;
 - (id)shareModeAsString:(int)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

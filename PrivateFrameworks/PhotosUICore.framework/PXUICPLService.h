@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXUICPLService : NSObject <PXCPLService> {
+@interface PXUICPLService : NSObject <PXCPLService, PXChangeObserver> {
     id /* block */  _handler;
-    NSObject<OS_dispatch_queue> * _serialQueue;
     PXCPLServiceStatus * _serviceStatus;
     PXCPLState * _state;
     PXCPLStatus * _statusProvider;
@@ -22,6 +21,7 @@
 - (bool)canPerformAction:(long long)arg1;
 - (id /* block */)handler;
 - (id)init;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)performAction:(long long)arg1;
 - (void)setHandler:(id /* block */)arg1;
 

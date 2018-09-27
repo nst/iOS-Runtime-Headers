@@ -4,6 +4,7 @@
 
 @interface SCNBillboardConstraint : SCNConstraint {
     unsigned long long  _freeAxes;
+    bool  _preserveScale;
 }
 
 @property (nonatomic) unsigned long long freeAxes;
@@ -16,6 +17,8 @@
 - (unsigned long long)freeAxes;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)preserveScale;
 - (void)setFreeAxes:(unsigned long long)arg1;
+- (void)setPreserveScale:(bool)arg1;
 
 @end

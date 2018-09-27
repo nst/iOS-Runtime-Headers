@@ -6,6 +6,7 @@
     NSCache * _backgroundCache;
     WUIWeatherCondition * _condition;
     CALayer * _currentBackground;
+    CALayer * _darkeningLayer;
     WUIGradientLayer * _gradientLayer;
     CALayer * _rootLayer;
     NSNumber * _sunHeightOverride;
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSCache *backgroundCache;
 @property (nonatomic, retain) WUIWeatherCondition *condition;
 @property (nonatomic) CALayer *currentBackground;
+@property (nonatomic, retain) CALayer *darkeningLayer;
 @property (nonatomic, retain) WUIGradientLayer *gradientLayer;
 @property (nonatomic, retain) CALayer *rootLayer;
 @property (nonatomic, copy) NSNumber *sunHeightOverride;
@@ -35,6 +37,9 @@
 - (void)completeTransitionWithSuccess:(bool)arg1;
 - (id)condition;
 - (id)currentBackground;
+- (id)darkeningLayer;
+- (double)darkeningLayerOpacityForDay:(bool)arg1;
+- (void)darkerSystemColorsStatusDidChange:(id)arg1;
 - (void)getTopColor:(id*)arg1 middleColor:(id*)arg2 bottomColor:(id*)arg3 gradientStopPoint:(double*)arg4 forCity:(id)arg5 date:(id)arg6;
 - (id)gradientLayer;
 - (bool)hasSublayer:(id)arg1;
@@ -50,6 +55,7 @@
 - (void)setCity:(id)arg1 animationDuration:(double)arg2;
 - (void)setCondition:(id)arg1;
 - (void)setCurrentBackground:(id)arg1;
+- (void)setDarkeningLayer:(id)arg1;
 - (void)setGradientLayer:(id)arg1;
 - (void)setRootLayer:(id)arg1;
 - (void)setSunHeightOverride:(id)arg1;
@@ -57,6 +63,7 @@
 - (id)springAnimationForKeyPath:(id)arg1 mass:(double)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 - (id)sunHeightOverride;
 - (id)transitionBackground;
+- (void)updateForDarkerSystemColors;
 - (id)updateFromCity:(id)arg1 toCity:(id)arg2;
 
 @end

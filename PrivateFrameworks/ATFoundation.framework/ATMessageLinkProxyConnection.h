@@ -5,7 +5,6 @@
 @interface ATMessageLinkProxyConnection : NSObject <ATMessageLinkObserver, ATMessageLinkProxyConnection, ATMessageLinkRequestHandler, NSStreamDelegate> {
     NSXPCConnection * _connection;
     ATMessageLink * _messageLink;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -13,7 +12,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) ATMessageLink *messageLink;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,12 +24,11 @@
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)messageLinkWasInitialized:(id)arg1;
 - (void)messageLinkWasOpened:(id)arg1;
-- (id)queue;
 - (void)removeRequestHandlerForDataClass:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setConnection:(id)arg1;
 - (void)setMessageLink:(id)arg1;
-- (void)setQueue:(id)arg1;
+- (void)stop;
 
 @end

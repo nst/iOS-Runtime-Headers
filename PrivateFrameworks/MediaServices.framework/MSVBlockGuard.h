@@ -14,6 +14,7 @@
 - (void)_interruptWithReason:(long long)arg1;
 - (void)dealloc;
 - (bool)disarm;
+- (id)init;
 - (id)initWithDeallocHandler:(id /* block */)arg1;
 - (id)initWithTimeout:(double)arg1;
 - (id)initWithTimeout:(double)arg1 interruptionHandler:(id /* block */)arg2;

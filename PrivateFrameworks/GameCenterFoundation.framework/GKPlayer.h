@@ -56,6 +56,7 @@
 + (id)unknownPlayer;
 
 - (void)_postChangeNotification;
+- (id)alias;
 - (id)cacheKey;
 - (void)dealloc;
 - (id)description;

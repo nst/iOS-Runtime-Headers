@@ -6,16 +6,17 @@
     <FBSystemServiceDelegate> * _delegate;
     int  _pendingExit;
     FBSSerialQueue * _queue;
-    FBSystemServiceServer * _server;
+    FBServiceFacilityServer * _server;
 }
 
 @property (nonatomic) <FBSystemServiceDelegate> *delegate;
 @property (getter=isPendingExit, readonly) bool pendingExit;
-@property (nonatomic, readonly, retain) FBSSerialQueue *queue;
-@property (nonatomic, retain) FBSystemServiceServer *server;
+@property (nonatomic, readonly) FBSSerialQueue *queue;
+@property (nonatomic, retain) FBServiceFacilityServer *server;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_activateApplication:(id)arg1 requestID:(unsigned int)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id /* block */)arg6;
 - (bool)_isTrustedRequestToOpenApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4;
 - (bool)_isWhitelistedLaunchSuspendedApp:(id)arg1;
@@ -46,6 +47,7 @@
 - (void)setSystemIdleSleepDisabled:(bool)arg1 forReason:(id)arg2;
 - (void)shutdownAndReboot:(bool)arg1;
 - (void)shutdownWithOptions:(unsigned long long)arg1;
+- (void)shutdownWithOptions:(unsigned long long)arg1 forSource:(long long)arg2;
 - (void)terminateApplication:(id)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;
 - (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5;
 - (void)terminateApplicationGroup:(long long)arg1 forReason:(long long)arg2 andReport:(bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;

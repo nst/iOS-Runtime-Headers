@@ -24,11 +24,13 @@
 - (id)_evaluateImageProperties:(out id*)arg1;
 - (id)_sourceNode;
 - (long long)appliedSubsampleFactor;
+- (id)initWithInput:(id)arg1 settings:(id)arg2;
 - (id)initWithPreparedSource:(id)arg1 container:(id)arg2 pipelineSettings:(id)arg3 sourceOptions:(id)arg4;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary { Class x1; }*)arg2;
 - (id)initWithSubsampleFactor:(long long)arg1 source:(id)arg2 container:(id)arg3 pipelineSettings:(id)arg4 sourceOptions:(id)arg5;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id*)arg3;
 - (id)pipelineSettings;
+- (long long)resolveSubsampleFactorForPipelineState:(id)arg1 error:(out id*)arg2;
+- (long long)resolveSubsampleFactorForPipelineState:(id)arg1 sourceScale:(struct { long long x1; long long x2; })arg2;
 - (id)sourceContainer;
 - (id)sourceOptions;
 - (long long)subsampleFactor;

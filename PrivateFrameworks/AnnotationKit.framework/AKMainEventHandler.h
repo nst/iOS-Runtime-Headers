@@ -166,7 +166,6 @@
 - (void)teardown;
 - (id)topmostAnnotationForBorderAndInteriorHitTestAtPoint:(struct CGPoint { double x1; double x2; })arg1 inAnnotations:(id)arg2 onPageController:(id)arg3 wasOnBorder:(bool*)arg4 wasOnText:(bool*)arg5;
 - (bool)undoManagerWasGroupingByEvent;
-- (void)updateCropHandleVisibilityForEvent:(id)arg1;
 - (void)updateCursorForEvent:(id)arg1;
 - (bool)wasSelectedByLongPressRecognizer;
 - (struct CGPoint { double x1; double x2; })windowPointFromEvent:(id)arg1 orRecognizer:(id)arg2;

@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
  */
 
-@interface UNUserNotificationCenter : NSObject <UNUserNotificationServiceConnectionObserver> {
+@interface UNUserNotificationCenter : NSObject <UNUserNotificationCenterDelegateConnectionListenerDelegate, UNUserNotificationServiceConnectionObserver> {
     NSString * _bundleIdentifier;
     <UNUserNotificationCenterDelegate> * _delegate;
-    NSMutableArray * _observers;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
@@ -13,7 +12,6 @@
 @property (nonatomic) <UNUserNotificationCenterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSMutableArray *observers;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsContentExtensions;
 
@@ -23,12 +21,10 @@
 - (void).cxx_destruct;
 - (void)addNotificationRequest:(id)arg1;
 - (void)addNotificationRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)addNotificationRequests:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)addObserver:(id)arg1;
+- (id)badgeNumber;
 - (id)bundleIdentifier;
 - (id)delegate;
-- (void)didChangePendingNotificationRequests:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)didDeliverNotifications:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)didReceiveNotificationResponse:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getBadgeNumberWithCompletionHandler:(id /* block */)arg1;
 - (void)getDeliveredNotificationsWithCompletionHandler:(id /* block */)arg1;
 - (void)getNotificationCategoriesWithCompletionHandler:(id /* block */)arg1;
@@ -37,14 +33,15 @@
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleProxy:(id)arg1;
-- (id)observers;
+- (id)notificationCategories;
+- (id)notificationSettings;
+- (id)pendingNotificationRequests;
 - (void)removeAllDeliveredNotifications;
 - (void)removeAllPendingNotificationRequests;
 - (void)removeDeliveredNotificationsWithIdentifiers:(id)arg1;
-- (void)removeObserver:(id)arg1;
 - (void)removePendingNotificationRequestsWithIdentifiers:(id)arg1;
 - (void)removeSimilarNotificationRequests:(id)arg1;
-- (void)removeSimilarNotificationRequests:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)replaceContentForRequestWithIdentifier:(id)arg1 replacementContent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)requestAuthorizationWithOptions:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)setBadgeNumber:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setBadgeString:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -52,8 +49,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setNotificationCategories:(id)arg1;
 - (void)setNotificationRequests:(id)arg1;
-- (void)setNotificationRequests:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)setObservers:(id)arg1;
+- (void)setWantsNotificationResponsesDelivered;
 - (bool)supportsContentExtensions;
 
 @end

@@ -25,6 +25,8 @@
 - (unsigned long long)durationMachContinuousTime;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)hash;
+- (id)humanReadableDictionaryRepresentation;
+- (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithStartContinuousTime:(unsigned long long)arg1 endContinuousTime:(unsigned long long)arg2 contributingPids:(id)arg3;
 - (bool)isEqual:(id)arg1;

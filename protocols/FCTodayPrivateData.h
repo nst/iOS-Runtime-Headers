@@ -7,7 +7,6 @@
 
 - (NSSet *)autoFavoriteTagIDs;
 - (<FCDerivedPersonalizationData><NSCoding> *)derivedPersonalizationData;
-- (NSString *)feldsparID;
 - (NSSet *)mutedTagIDs;
 - (NSNumber *)onboardingVersion;
 - (NSSet *)purchasedTagIDs;

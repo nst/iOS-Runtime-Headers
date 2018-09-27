@@ -11,12 +11,12 @@
 
 - (struct __WiFiManagerClient { }*)_primitiveWiFiManagerClient;
 - (void)_setWiFiManagerClientType:(int)arg1;
+- (void)acquireWiFiAssertion:(long long)arg1;
 - (void)dealloc;
-- (void)disableWiFiTimeout;
-- (void)enableWiFiTimeout;
 - (bool)hasAssociatedNetworkWithRSSI:(int*)arg1 andSNR:(int*)arg2 andPhyMode:(id*)arg3 andChannelInfo:(id*)arg4 isCaptive:(bool*)arg5;
 - (id)init;
 - (bool)isWifiEnabled;
 - (void)registerOneShotEnabledHandler:(id /* block */)arg1;
+- (void)releaseWiFiAssertion;
 
 @end

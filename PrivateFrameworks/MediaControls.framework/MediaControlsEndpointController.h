@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) bool isDeviceSystemRoute;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, readonly) MPCPlayerPath *playerPath;
+@property (nonatomic, readonly, copy) NSString *representedBundleID;
 @property (nonatomic, readonly) MPRequestResponseController *requestController;
 @property (nonatomic, readonly) MPCPlayerResponse *response;
 @property (nonatomic, retain) MPAVEndpointRoute *route;

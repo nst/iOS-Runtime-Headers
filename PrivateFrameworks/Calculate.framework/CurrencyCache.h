@@ -17,30 +17,30 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSDate *lastRefreshDate;
+@property (nonatomic, readonly) NSDate *lastRefreshDate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serializer;
 @property (readonly) Class superclass;
 @property (readonly) unsigned long long uuid;
 
 + (id)shared;
 
+- (id)_consumerKey;
+- (id)_consumerSecret;
 - (void)_loadPersistedCurrencyCache;
 - (void)_queue_loadPersistedCurrencyCache;
 - (void)_queue_persistCurrencyCache;
 - (bool)_queue_refresh;
+- (id)createCredential;
 - (id)currencyData;
 - (void)dealloc;
 - (id)init;
 - (id)lastRefreshDate;
-- (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
-- (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
-- (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (bool)refresh;
 - (bool)refreshWithTimeOut:(float)arg1;
 - (id)serializer;
 - (void)setCurrencyData:(id)arg1;
-- (void)setLastRefreshDate:(id)arg1;
 - (void)setSerializer:(id)arg1;
+- (bool)updateCurrencyCacheWithData:(id)arg1;
 - (unsigned long long)uuid;
 
 @end

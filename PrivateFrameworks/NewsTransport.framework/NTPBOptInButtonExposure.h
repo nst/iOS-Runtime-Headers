@@ -3,6 +3,7 @@
  */
 
 @interface NTPBOptInButtonExposure : PBCodable <NSCopying> {
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int optInButtonLocation : 1; 
         unsigned int optInButtonType : 1; 
@@ -12,6 +13,8 @@
     int  _optInButtonType;
 }
 
+@property (nonatomic, retain) NSData *groupViewExposureId;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic) bool hasOptInButtonLocation;
 @property (nonatomic, readonly) bool hasOptInButtonLocationId;
 @property (nonatomic) bool hasOptInButtonType;
@@ -23,6 +26,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)groupViewExposureId;
+- (bool)hasGroupViewExposureId;
 - (bool)hasOptInButtonLocation;
 - (bool)hasOptInButtonLocationId;
 - (bool)hasOptInButtonType;
@@ -33,6 +38,7 @@
 - (id)optInButtonLocationId;
 - (int)optInButtonType;
 - (bool)readFrom:(id)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasOptInButtonLocation:(bool)arg1;
 - (void)setHasOptInButtonType:(bool)arg1;
 - (void)setOptInButtonLocation:(int)arg1;

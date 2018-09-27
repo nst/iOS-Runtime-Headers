@@ -21,6 +21,7 @@
 - (id)controlInView:(id)arg1;
 - (void)didEngageAction:(unsigned long long)arg1 destination:(unsigned long long)arg2 actionPerformed:(bool)arg3;
 - (id)initWithUIStyle:(unsigned long long)arg1 cell:(id)arg2;
+- (bool)isPrimarilyTextView;
 - (id)resultForFeedback;
 - (void)setCell:(id)arg1;
 - (void)setResultForFeedback:(id)arg1;

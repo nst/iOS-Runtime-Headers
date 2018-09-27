@@ -24,6 +24,7 @@
 - (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)redirectResponse;
 - (void)setIdentifier:(id)arg1;
 - (void)setRedirectResponse:(id)arg1;

@@ -30,5 +30,6 @@
 - (id)observers;
 - (void)performOnApplicationDidBecomeActive:(id /* block */)arg1;
 - (void)performOnApplicationDidEnterBackground:(id /* block */)arg1;
+- (void)removeObserver:(id)arg1;
 
 @end

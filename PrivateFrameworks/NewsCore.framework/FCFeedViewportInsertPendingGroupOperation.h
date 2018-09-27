@@ -5,6 +5,7 @@
 @interface FCFeedViewportInsertPendingGroupOperation : FCOperation {
     <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
+    FCFeedDescriptor * _feedDescriptor;
     NSArray * _feedGroupEmitters;
     FCFeedGroupEmittingContext * _groupEmittingContext;
     id /* block */  _insertGroupCompletionHandler;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
+@property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, retain) NSArray *feedGroupEmitters;
 @property (nonatomic, retain) FCFeedGroupEmittingContext *groupEmittingContext;
 @property (nonatomic, copy) id /* block */ insertGroupCompletionHandler;
@@ -29,6 +31,7 @@
 - (id)_nextGroupToInsert:(id*)arg1;
 - (id)configuration;
 - (id)context;
+- (id)feedDescriptor;
 - (id)feedGroupEmitters;
 - (id)groupEmittingContext;
 - (id /* block */)insertGroupCompletionHandler;
@@ -38,6 +41,7 @@
 - (id)refreshSession;
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setFeedDescriptor:(id)arg1;
 - (void)setFeedGroupEmitters:(id)arg1;
 - (void)setGroupEmittingContext:(id)arg1;
 - (void)setInsertGroupCompletionHandler:(id /* block */)arg1;

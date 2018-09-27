@@ -4,7 +4,7 @@
 
 @interface SXFullscreenCanvasController : NSObject <SXDragManagerDataSource, SXFullscreenCaptionViewDelegate, SXFullscreenImageViewDelegate, SXFullscreenNavigationBarViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     UIView * _backgroundView;
-    UIView * _canvasView;
+    SXFullscreenCanvasViewController * _canvasViewController;
     SXFullscreenCaptionView * _captionView;
     <SXFullscreenCaptionViewFactory> * _captionViewFactory;
     struct CGRect { 
@@ -67,7 +67,7 @@
 @property (nonatomic, readonly) unsigned long long activeViewIndex;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIView *backgroundView;
-@property (nonatomic, retain) UIView *canvasView;
+@property (nonatomic, retain) SXFullscreenCanvasViewController *canvasViewController;
 @property (nonatomic, retain) SXFullscreenCaptionView *captionView;
 @property (nonatomic, readonly) <SXFullscreenCaptionViewFactory> *captionViewFactory;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentDestinationFrame;
@@ -111,7 +111,7 @@
 - (id)backgroundColor;
 - (id)backgroundView;
 - (struct CGPoint { double x1; double x2; })calculateAnchorPointFromBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (id)canvasView;
+- (id)canvasViewController;
 - (id)captionView;
 - (bool)captionView:(id)arg1 tapGestureRecognizerShouldBegin:(id)arg2;
 - (id)captionViewFactory;
@@ -177,7 +177,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCanvasView:(id)arg1;
+- (void)setCanvasViewController:(id)arg1;
 - (void)setCaptionView:(id)arg1;
 - (void)setCurrentDestinationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCurrentOriginFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -215,6 +215,6 @@
 - (id)viewForDragManager:(id)arg1;
 - (long long)viewIndexForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
-- (bool)willStartTransformingWithGestureRecognizer:(id)arg1;
+- (void)willStartTransformingWithGestureRecognizer:(id)arg1 completionBlock:(id /* block */)arg2;
 
 @end

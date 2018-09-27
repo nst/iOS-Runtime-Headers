@@ -55,6 +55,7 @@
 - (void)setCredential:(id)arg1 type:(long long)arg2 reply:(id /* block */)arg3;
 - (bool)setServerPropertyForOption:(long long)arg1 value:(id)arg2 error:(id*)arg3;
 - (void)setServerPropertyForOption:(long long)arg1 value:(id)arg2 reply:(id /* block */)arg3;
+- (void)setShowingCoachingHint:(bool)arg1 event:(long long)arg2 reply:(id /* block */)arg3;
 - (void)setUiDelegate:(id)arg1;
 - (void)tccPreflightWithService:(id)arg1 reply:(id /* block */)arg2;
 - (id)uiDelegate;

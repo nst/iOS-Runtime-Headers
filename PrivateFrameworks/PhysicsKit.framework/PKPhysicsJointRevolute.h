@@ -40,6 +40,7 @@
 @property (nonatomic) double upperAngleLimit;
 
 + (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { double x1; double x2; })arg3;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (struct b2Joint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; bool x9; bool x10; void *x11; }*)_joint;
@@ -50,6 +51,7 @@
 - (double)frictionTorque;
 - (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchor:(struct CGPoint { double x1; double x2; })arg3;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqualToRevoluteJoint:(id)arg1;
 - (double)lowerAngleLimit;
 - (double)rotationSpeed;
 - (void)setFrictionTorque:(double)arg1;

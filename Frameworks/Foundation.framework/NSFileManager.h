@@ -135,6 +135,14 @@
 
 - (bool)fp_trashItemAtURL:(id)arg1 resultingItemURL:(id*)arg2 error:(id*)arg3;
 
+// Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
+
+- (bool)mdltsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)removeItemAtPath:(id)arg1 type:(unsigned long long)arg2 recursive:(bool)arg3;
+
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 - (long long)_srDeleteAllTempFiles;
@@ -152,6 +160,11 @@
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
 + (id)_web_createTemporaryFileForQuickLook:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
+
+- (id)_deleteLastValidComponentOfPath:(id)arg1;
+- (id)ensureDirectoryExistsAtPath:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
@@ -202,6 +215,11 @@
 - (bool)_cn_removeExtendedAttributeForKey:(id)arg1 path:(id)arg2 error:(id*)arg3;
 - (bool)_cn_setExtendedAttribute:(id)arg1 forKey:(id)arg2 path:(id)arg3 error:(id*)arg4;
 
+// Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
+
+- (bool)convertToRootlessDirectoryAtPath:(id)arg1 error:(id*)arg2;
+- (bool)makeRootlessDirectoryAtPath:(id)arg1 error:(id*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
 
 - (id)makeUniqueDirectoryWithPath:(id)arg1;
@@ -235,9 +253,13 @@
 - (id)_generateLinkForURL:(id)arg1;
 - (bool)_isPathOnMissingVolume:(id)arg1;
 - (bool)_moveItemAtPath:(id)arg1 toPath:(id)arg2 uniquePath:(id*)arg3 error:(id*)arg4 asCopy:(bool)arg5;
+- (id)_randomSimilarFilePathAsPath:(id)arg1;
 - (id)_randomTemporaryPathWithFileName:(id)arg1;
+- (id)_randomTemporaryPathWithFileName:(id)arg1 withAppendedPathComponent:(id)arg2;
 - (id)_randomTemporaryPathWithSuffix:(id)arg1;
 - (id)_randomTemporaryPathWithSuffix:(id)arg1 fileName:(id)arg2;
+- (id)_randomTemporaryPathWithSuffix:(id)arg1 fileName:(id)arg2 withAppendedPathComponent:(id)arg3;
+- (id)_randomTemporaryPathWithSuffix:(id)arg1 withAppendedPathComponent:(id)arg2;
 - (bool)copyItemAtPath:(id)arg1 toPath:(id)arg2 uniquePath:(id*)arg3 error:(id*)arg4;
 - (id)createUniqueDirectoryWithName:(id)arg1 atPath:(id)arg2 ofType:(id)arg3;
 - (bool)makeDirectoriesInPath:(id)arg1 mode:(unsigned int)arg2;
@@ -341,14 +363,17 @@
 
 - (id)_safari_containerDirectory;
 - (id)_safari_libraryDirectoryForHomeDirectory:(id)arg1;
-- (id)_safari_safariLibraryDirectory;
-- (id)_safari_settingsDirectoryForLibraryDirectory:(id)arg1;
+- (id)safari_autoFillQuirksDownloadDirectoryURL;
 - (id)safari_createTemporaryDirectoryWithTemplate:(id)arg1;
 - (id)safari_ensureDirectoryExists:(id)arg1;
+- (bool)safari_moveDownloadedFileAtURL:(id)arg1 toURL:(id)arg2;
+- (id)safari_pathWithUniqueFilenameForPath:(id)arg1;
 - (id)safari_productionSafariSettingsDirectory;
 - (bool)safari_removeFileAtURL:(id)arg1 error:(id*)arg2;
-- (id)safari_settingsDirectory;
+- (id)safari_safariLibraryDirectory;
 - (id)safari_settingsDirectoryForHomeDirectory:(id)arg1;
+- (id)safari_settingsDirectoryForLibraryDirectory:(id)arg1;
+- (id)safari_settingsDirectoryURL;
 - (id)safari_subdirectoryWithName:(id)arg1 inUserDomainOfDirectory:(unsigned long long)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
@@ -405,6 +430,13 @@
 - (bool)rc_isRestrictedByFileProtectionFromWritingAtPath:(id)arg1;
 - (id)rc_uniqueFileSystemURLWithPreferredURL:(id)arg1 uniquenessFormatString:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
+
+- (void)cleanDirectory:(id)arg1 withDateOlderThan:(id)arg2;
+- (void)cleanDirectory:(id)arg1 withLRULimit:(unsigned long long)arg2;
+- (unsigned long long)directorySize:(id)arg1;
+- (void)removeDirectory:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (id)_webkit_createTemporaryDirectoryWithTemplatePrefix:(id)arg1;
@@ -425,6 +457,7 @@
 - (bool)tsu_canCloneItemAtURL:(id)arg1 toURL:(id)arg2;
 - (bool)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
 - (bool)tsu_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (bool)tsu_makeWritableItemAtURL:(id)arg1 permissionsOverride:(id)arg2 error:(id*)arg3;
 - (bool)tsu_replaceItemAtURL:(id)arg1 withItemAtURL:(id)arg2 backupItemName:(id)arg3 options:(unsigned long long)arg4 resultingItemURL:(id*)arg5 error:(id*)arg6;
 
 @end

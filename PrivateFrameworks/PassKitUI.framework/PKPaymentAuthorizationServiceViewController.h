@@ -8,9 +8,11 @@
     PKAuthenticator * _authenticator;
     long long  _authorizationMode;
     unsigned long long  _biometryAttempts;
+    bool  _blockingHardwareCancels;
     bool  _bypassAuthenticator;
     UIBarButtonItem * _cancelBarButtonItem;
     bool  _cancelButtonDisabled;
+    NSMutableSet * _completionHandlers;
     UIView * _contentView;
     NSLayoutConstraint * _contentViewRightConstraint;
     <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> * _delegate;
@@ -21,6 +23,7 @@
     bool  _hostApplicationResignedActive;
     bool  _isPad;
     double  _keyboardHeight;
+    CNContact * _lastUnservicableAddress;
     PKPaymentAuthorizationLayout * _layout;
     bool  _needsFinalCallback;
     bool  _needsToAccommodateKeyboard;
@@ -31,7 +34,8 @@
     PKPaymentAuthorizationPasswordButtonView * _passwordButtonView;
     PKPaymentPreferencesViewController * _paymentCardPreferencesController;
     PKPeerPaymentAccount * _peerPaymentAccount;
-    PKPhysicalButtonView * _physicalButtonView;
+    bool  _peerPaymentBalanceIsInsufficient;
+    LAUIPhysicalButtonView * _physicalButtonView;
     long long  _preferencesStyle;
     PKPaymentPreferencesViewController * _shippingAddressPreferencesController;
     PKPaymentPreferencesViewController * _shippingContactPreferencesController;
@@ -48,12 +52,12 @@
 }
 
 @property (nonatomic, retain) PKAuthenticator *authenticator;
-@property (nonatomic, readonly) bool cancelButtonDisabled;
+@property (nonatomic, readonly) bool blockingHardwareCancels;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) PKPhysicalButtonView *physicalButtonView;
+@property (nonatomic, retain) LAUIPhysicalButtonView *physicalButtonView;
 @property (nonatomic, readonly) bool shouldIgnorePhysicalButton;
 @property (nonatomic, retain) PKPaymentAuthorizationStateMachine *stateMachine;
 @property (readonly) Class superclass;
@@ -63,6 +67,7 @@
 - (void)_addPassphraseViewControllerToHierarchy:(id)arg1 withCompletion:(id /* block */)arg2;
 - (long long)_authenticatorPolicy;
 - (id)_availabilityStringForPass:(id)arg1;
+- (id)_availablePasses;
 - (id)_compactNavigationController;
 - (void)_createSubviews;
 - (void)_didCancel:(bool)arg1;
@@ -70,6 +75,7 @@
 - (void)_didFailWithFatalError:(id)arg1;
 - (void)_didSucceedWithAuthorizationStateParam:(id)arg1;
 - (id)_evaluationRequest;
+- (void)_executeCompletionHandlers;
 - (void)_handleModelUpdate;
 - (void)_hostApplicationDidEnterBackground;
 - (void)_hostApplicationWillEnterForeground;
@@ -91,12 +97,15 @@
 - (void)_setupShippingContact;
 - (void)_setupShippingMethods;
 - (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
+- (void)_showUnservicableAddressAlertForErrors:(id)arg1;
 - (void)_startEvaluation;
 - (void)_startSimulatorHIDListener;
 - (void)_suspendAuthentication;
 - (void)_suspendAuthenticationAndForceReset:(bool)arg1;
 - (Class)_tableViewClassForDataItem:(id)arg1;
 - (long long)_totalViewStyle;
+- (id)_unavailablePasses;
+- (void)_updateAvailableCardsPreferences;
 - (void)_updateBackgroundedState:(bool)arg1;
 - (void)_updateCancelButtonEnabledForState:(unsigned long long)arg1 param:(id)arg2;
 - (void)_updateFooterStateForBiometricMatchMissIfNecessary;
@@ -125,7 +134,7 @@
 - (void)authorizationFooterViewPasscodeButtonPressed:(id)arg1;
 - (void)authorizationFooterViewWillChangeConstraints:(id)arg1;
 - (void)biometricAttemptFailed;
-- (bool)cancelButtonDisabled;
+- (bool)blockingHardwareCancels;
 - (void)cancelPressed:(id)arg1;
 - (void)contextWillBeginPresentingSecondaryUI:(id)arg1;
 - (void)dealloc;
@@ -133,6 +142,7 @@
 - (void)dismissPasscodeViewController;
 - (void)dismissPassphraseViewController;
 - (void)dismissPassphraseViewControllerWithCompletion:(id /* block */)arg1;
+- (void)handleDismissWithCompletion:(id /* block */)arg1;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
 - (void)handleHostApplicationWillResignActive:(bool)arg1;
@@ -147,6 +157,7 @@
 - (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
 - (void)presentPassphraseViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
 - (void)resumeAndUpdateContentSize;
+- (long long)selectedPaymentApplicationIndexFromCardEntries:(id)arg1;
 - (void)setAuthenticator:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(bool)arg3;
@@ -167,7 +178,9 @@
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

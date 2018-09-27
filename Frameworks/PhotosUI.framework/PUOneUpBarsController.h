@@ -37,11 +37,19 @@
         bool respondsToShouldTapBeginAtLocationFromProvider; 
         bool respondsToShouldHideToolbarWhenShowingAccessoryViewForAssetReference; 
         bool respondsToWillExecuteActionPerformer; 
+        bool respondsToCanShowOriginal; 
+        bool respondsToDidBeginShowingOriginal; 
+        bool respondsToDidEndShowingOriginal; 
+        bool respondsToShouldEnableShowingOriginal; 
+        bool respondsToCanViewInLibrary; 
     }  _delegateFlags;
+    bool  _disableShowingNavigationBars;
     bool  _isShowingPlayPauseButton;
     double  _maximumAccessoryToolbarHeight;
     double  _maximumToolbarHeight;
+    PUAssetActionPerformer * _sharingPreheatedPerformer;
     bool  _shouldPlaceButtonsInNavigationBar;
+    bool  _shouldPlaceScrubberInScrubberBar;
     bool  _shouldShowAirPlayButton;
     bool  _shouldShowDoneButton;
     bool  _shouldShowScrubber;
@@ -77,12 +85,15 @@
 @property (nonatomic, retain) PXImageModulationManager *debuggingObservedImageModulationManager;
 @property (nonatomic) <PUOneUpBarsControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableShowingNavigationBars;
 @property (readonly) unsigned long long hash;
 @property (setter=_setShowingPlayPauseButton:, nonatomic) bool isShowingPlayPauseButton;
 @property (nonatomic) double maximumAccessoryToolbarHeight;
 @property (nonatomic) double maximumToolbarHeight;
 @property (nonatomic, readonly) UIView *ppt_scrubberView;
+@property (nonatomic, retain) PUAssetActionPerformer *sharingPreheatedPerformer;
 @property (nonatomic) bool shouldPlaceButtonsInNavigationBar;
+@property (nonatomic) bool shouldPlaceScrubberInScrubberBar;
 @property (nonatomic) bool shouldShowAirPlayButton;
 @property (nonatomic) bool shouldShowDoneButton;
 @property (nonatomic) bool shouldShowScrubber;
@@ -106,6 +117,7 @@
 - (void)_executeActionPerformer:(id)arg1;
 - (void)_executeActionPerformer:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleAssetViewModelBeginEditingTimer:(id)arg1;
+- (void)_handleSharingPreheat;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (long long)_identifierForButton:(id)arg1;
 - (void)_initializeBarButtonItemCollections;
@@ -127,6 +139,9 @@
 - (id)_newCustomButtonItem;
 - (long long)_nextChromeVisibilityUpdateAnimationType;
 - (bool)_nextCommentsActionShouldBeginEditing;
+- (void)_peformSuggestionRevertAction;
+- (void)_peformSuggestionSaveAction;
+- (void)_performAddToLibraryAction;
 - (void)_performAirPlayAction;
 - (void)_performAllPhotosAction;
 - (void)_performAssetExplorerReviewScreenActionType:(unsigned long long)arg1;
@@ -140,6 +155,7 @@
 - (void)_performReviewAction;
 - (void)_performShareAction;
 - (void)_performSlideShowAction;
+- (void)_performSuggestionViewInLibraryAction;
 - (void)_performToggleCommentsAction;
 - (void)_performToggleFavoriteAction;
 - (void)_performTrashAction;
@@ -191,6 +207,7 @@
 - (void)dealloc;
 - (id)debuggingObservedImageModulationManager;
 - (id)delegate;
+- (bool)disableShowingNavigationBars;
 - (void)infoUpdaterDidUpdate:(id)arg1;
 - (id)init;
 - (void)invalidateViewControllerView;
@@ -199,6 +216,7 @@
 - (double)maximumToolbarHeight;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)overOneUpPresentationSession:(id)arg1 barButtonItemForActivityType:(id)arg2;
+- (void)overOneUpPresentationSession:(id)arg1 didAppendReviewScreenAction:(unsigned long long)arg2;
 - (void)overOneUpPresentationSession:(id)arg1 didCompleteWithActivityType:(id)arg2 assetsByAssetCollection:(id)arg3 success:(bool)arg4;
 - (void)photoBrowserTitleViewControllerTapped:(id)arg1;
 - (void)playPauseBarItemsController:(id)arg1 didChange:(id)arg2;
@@ -214,9 +232,12 @@
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDebuggingObservedImageModulationManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisableShowingNavigationBars:(bool)arg1;
 - (void)setMaximumAccessoryToolbarHeight:(double)arg1;
 - (void)setMaximumToolbarHeight:(double)arg1;
+- (void)setSharingPreheatedPerformer:(id)arg1;
 - (void)setShouldPlaceButtonsInNavigationBar:(bool)arg1;
+- (void)setShouldPlaceScrubberInScrubberBar:(bool)arg1;
 - (void)setShouldShowAirPlayButton:(bool)arg1;
 - (void)setShouldShowDoneButton:(bool)arg1;
 - (void)setShouldShowScrubber:(bool)arg1;
@@ -224,7 +245,9 @@
 - (void)setShouldUseCompactCommentsTitle:(bool)arg1;
 - (void)setShouldUseCompactTitleView:(bool)arg1;
 - (void)setViewController:(id)arg1;
+- (id)sharingPreheatedPerformer;
 - (bool)shouldPlaceButtonsInNavigationBar;
+- (bool)shouldPlaceScrubberInScrubberBar;
 - (bool)shouldShowAirPlayButton;
 - (bool)shouldShowDoneButton;
 - (bool)shouldShowScrubber;
@@ -235,6 +258,7 @@
 - (id)subtitle;
 - (id)tapGestureRecognizer;
 - (id)title;
+- (void)toggleOriginalButtonTouched:(id)arg1;
 - (void)updateBars;
 - (void)updateContentGuideInsets;
 - (void)updateGestureRecognizersWithHostingView:(id)arg1;

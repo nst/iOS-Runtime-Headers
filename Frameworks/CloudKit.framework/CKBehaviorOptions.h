@@ -43,6 +43,7 @@
 - (void)_setPref:(id)arg1 forKey:(id)arg2;
 - (void)_startListeningForNotifications;
 - (id)_urlForKey:(id)arg1 defaultURLString:(id)arg2;
+- (bool)allowExpiredDNSBehavior;
 - (unsigned long long)assetEvictionGracePeriodOnHighWatermarkWithDefaultValue:(unsigned long long)arg1;
 - (unsigned long long)assetEvictionGracePeriodWithDefaultValue:(unsigned long long)arg1;
 - (id)automatedDeviceGroup;
@@ -63,8 +64,6 @@
 - (id)customMetricsServiceBaseURL;
 - (id)customShareServiceBaseURL;
 - (void)dealloc;
-- (double)defaultRequestTimeout;
-- (double)defaultResourceTimeout;
 - (int)defaultRetryAfter;
 - (bool)didReadAutomatedDeviceGroup;
 - (bool)disableCaching;
@@ -130,8 +129,6 @@
 - (void)setCustomDeviceServiceBaseURL:(id)arg1;
 - (void)setCustomMetricsServiceBaseURL:(id)arg1;
 - (void)setCustomShareServiceBaseURL:(id)arg1;
-- (void)setDefaultRequestTimeout:(double)arg1;
-- (void)setDefaultResourceTimeout:(double)arg1;
 - (void)setDidReadAutomatedDeviceGroup:(bool)arg1;
 - (void)setDisableCaching:(bool)arg1;
 - (void)setEnableMescal:(bool)arg1;
@@ -155,7 +152,6 @@
 - (void)setSqlBatchTime:(double)arg1;
 - (void)setTestRunIDHeader:(id)arg1;
 - (void)setTrafficLogMaximumDataSize:(int)arg1;
-- (void)setUseBackgroundSessions:(bool)arg1;
 - (void)setUseEncryption:(bool)arg1;
 - (void)setUseEnhancedPCSEncryptionContext:(bool)arg1;
 - (void)setUsePreauth:(bool)arg1;
@@ -170,7 +166,6 @@
 - (id)testRunIDHeader;
 - (int)trafficLogMaximumDataSize;
 - (int)trafficLogQueueWidth;
-- (bool)useBackgroundSessions;
 - (bool)useEncryption;
 - (bool)useEnhancedPCSEncryptionContext;
 - (bool)useModTimeInAssetCacheEviction;

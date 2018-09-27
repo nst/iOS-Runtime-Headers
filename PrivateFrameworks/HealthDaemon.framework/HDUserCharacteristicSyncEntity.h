@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity
+@interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity <HDNanoSyncEntity>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (long long)category;
 + (void)didReceiveValuesForKeys:(id)arg1 profile:(id)arg2;

@@ -6,6 +6,7 @@
 @required
 
 - (void)contentModuleContext:(CCUIContentModuleContext *)arg1 enqueueStatusUpdate:(CCUIStatusUpdate *)arg2;
+- (void)didUpdatePreferredSizeForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)dismissControlCenterForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)dismissExpandedViewForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)requestExpandModuleForContentModuleContext:(CCUIContentModuleContext *)arg1;

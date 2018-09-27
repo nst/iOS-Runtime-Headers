@@ -8,6 +8,7 @@
 
 + (id)speedBy:(double)arg1 duration:(double)arg2;
 + (id)speedTo:(double)arg1 duration:(double)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

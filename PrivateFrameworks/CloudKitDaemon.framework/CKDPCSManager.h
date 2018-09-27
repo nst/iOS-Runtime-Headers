@@ -102,6 +102,7 @@
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSWithEncryptedZonePCS:(struct __CFData { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 createLite:(bool)arg3 error:(id*)arg4;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 createLite:(bool)arg3 error:(id*)arg4;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSForService:(unsigned long long)arg1 withError:(id*)arg2;
+- (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 sharePrivateKey:(id)arg2 error:(id*)arg3;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 sharingIdentity:(struct _PCSIdentityData { }*)arg2 error:(id*)arg3;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 sharingIdentity:(struct _PCSIdentityData { }*)arg2 logFailure:(bool)arg3 error:(id*)arg4;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 withService:(unsigned long long)arg2 error:(id*)arg3;
@@ -125,6 +126,7 @@
 - (struct _PCSIdentityData { }*)debugSharingIdentity;
 - (id)decryptChainPCSForRecordPCS:(id)arg1;
 - (id)decryptPCSDataOnSharePCS:(id)arg1;
+- (id)decryptPCSDataOnSharePCS:(id)arg1 withPublicSharingKey:(id)arg2;
 - (id)etagFromPCSData:(id)arg1;
 - (id)etagFromRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)etagFromSharePCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
@@ -141,6 +143,7 @@
 - (id)missingIdentityPublicKeysByServiceName;
 - (id)newAssetKeyWithType:(unsigned long long)arg1 withError:(id*)arg2;
 - (id)notificationQueue;
+- (id)pcsDataFromFetchedShare:(id)arg1 withPublicSharingKey:(id)arg2 withServiceType:(unsigned long long)arg3 error:(id*)arg4;
 - (id)pcsDataFromFetchedShare:(id)arg1 withServiceType:(unsigned long long)arg2 error:(id*)arg3;
 - (id)pcsUpdateSource;
 - (void)preflightIdentitiesForService:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
@@ -174,6 +177,7 @@
 - (id)sharingIdentityDataFromPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)synchronizeQueue;
 - (void)synchronizeUserKeyRegistryForServiceType:(unsigned long long)arg1 shouldThrottle:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)triggerAutoSysdiagnoseIfNecessaryForError:(id)arg1 encryptedData:(id)arg2 pcs:(struct _OpaquePCSShareProtection { }*)arg3;
 - (id)undecryptableZonePCSHashesByServiceName;
 - (id)unwrapAssetKey:(id)arg1 withRecordPCS:(struct _OpaquePCSShareProtection { }*)arg2 inContext:(id)arg3 withError:(id*)arg4;
 - (id)unwrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 inContext:(id)arg3;

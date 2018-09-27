@@ -12,6 +12,7 @@
     int  renditionLock;
     _CSIRenditionBlockData * retainedBlockData;
     _CSIRenditionBlockData * sharedBlockDataBGRX;
+    _CSIRenditionBlockData * sharedBlockDataGray;
     _CSIRenditionBlockData * sharedBlockDataRGBX;
     unsigned int  shouldCache;
     struct _slice { 

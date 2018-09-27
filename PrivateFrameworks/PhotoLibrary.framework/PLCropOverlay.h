@@ -22,7 +22,7 @@
     PLCropOverlayCropView * _cropView;
     UIToolbar * _customToolbar;
     NSString * _defaultOKButtonTitle;
-    id  _delegate;
+    <PLCropOverlayDelegate> * _delegate;
     bool  _displayedInPopover;
     PLProgressHUD * _hud;
     bool  _isEditingHomeScreen;
@@ -48,6 +48,7 @@
 @property (nonatomic, retain) UIView *cameraBottomBar;
 @property (nonatomic, readonly) PLContactPhotoOverlay *contactPhotoOverlay;
 @property (nonatomic, copy) NSString *defaultOKButtonTitle;
+@property (nonatomic) <PLCropOverlayDelegate> *delegate;
 @property (getter=isDisplayedInPopover, nonatomic) bool displayedInPopover;
 @property (nonatomic) bool isEditingHomeScreen;
 @property (nonatomic) bool isEditingLockScreen;
@@ -56,6 +57,7 @@
 @property (nonatomic) bool previewMode;
 @property (nonatomic, readonly) PLCropOverlayWallpaperBottomBar *wallpaperBottomBar;
 
+- (void).cxx_destruct;
 - (void)_backgroundSavePhoto:(id)arg1;
 - (id)_bottomBar;
 - (id)_cameraCancelButton;
@@ -91,6 +93,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
 - (id)defaultOKButtonTitle;
+- (id)delegate;
 - (void)didCapturePhoto;
 - (void)didCaptureVideo;
 - (void)didPauseVideo;

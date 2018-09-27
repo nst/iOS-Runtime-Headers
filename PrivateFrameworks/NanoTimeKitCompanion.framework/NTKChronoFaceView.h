@@ -24,8 +24,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NTKChronoHandsView *timeView;
 
-+ (id)_swatchColorForColorOption:(id)arg1;
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
++ (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
 + (Class)_timeViewClass;
 
 - (void).cxx_destruct;
@@ -39,11 +39,14 @@
 - (double)_buttonAlphaForEditMode:(long long)arg1;
 - (bool)_canStartTimeScrubbing;
 - (void)_cleanupAfterZoom;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationAlphasForFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (void)_considerUpdatingLabels;
+- (void)_curvedComplicationCircleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 circleCenter:(struct CGPoint { double x1; double x2; }*)arg4 interior:(bool*)arg5 forSlot:(id)arg6;
+- (id)_curvedPickerMaskForSlot:(id)arg1;
 - (id)_dateAccentColorForEditMode:(long long)arg1;
 - (struct CGPoint { double x1; double x2; })_dateComplicationCenterOffset;
 - (id)_dateComplicationFontForStyle:(unsigned long long)arg1;
@@ -55,11 +58,13 @@
 - (bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (double)_handsAlphaForEditMode:(long long)arg1;
 - (bool)_handsAreInForegroundForEditMode:(long long)arg1;
+- (bool)_isComplicationSlotInsideDial:(id)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_lapResetButtonPressed;
 - (void)_layoutForegroundContainerView;
@@ -82,6 +87,8 @@
 - (void)_showAppropriateModeAnimated:(bool)arg1;
 - (void)_showChronographModeAnimated:(bool)arg1;
 - (void)_showTimeModeAnimated:(bool)arg1;
+- (id)_slotForUtilitySlot:(long long)arg1;
+- (bool)_slotSupportsCurvedText:(id)arg1;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_startSessionButtonPressed;
 - (void)_startStopwatchUpdates;
@@ -103,11 +110,12 @@
 - (void)fadeOutLowerSubdialAnimated:(bool)arg1;
 - (void)fadeStartSessionButtonToAlpha:(double)arg1 animated:(bool)arg2;
 - (bool)inSession;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)lapAdded;
 - (bool)lapReset;
 - (void)reload;
 - (void)setUserInteractionForButtonsEnabled:(bool)arg1;
+- (bool)slotUsesCurvedText:(long long)arg1;
 - (bool)startStop;
 - (void)stateChanged;
 - (void)updateStartSessionButtonGlyph;

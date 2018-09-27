@@ -7,9 +7,9 @@
 }
 
 - (void).cxx_destruct;
+- (id)_activityBundleImageConfiguration;
 - (id)_beforeActivity;
 - (void)activityDidFinish:(bool)arg1;
-- (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (bool)canPerformWithActivityItems:(id)arg1;

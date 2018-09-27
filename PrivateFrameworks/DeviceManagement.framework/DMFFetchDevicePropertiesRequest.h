@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchDevicePropertiesRequest : CATTaskRequest {
+@interface DMFFetchDevicePropertiesRequest : DMFTaskRequest {
     NSArray * _propertyKeys;
 }
 
 @property (nonatomic, copy) NSArray *propertyKeys;
 
-+ (id)allPlatformDevicePropertyKeys;
-+ (id)currentPlatformDevicePropertyKeys;
-+ (id)iOSDevicePropertyKeys;
-+ (id)iOSPlatformDevicePropertyKeys;
-+ (id)macOSDevicePropertyKeys;
++ (id)currentDevicePropertyKeys;
++ (id)devicePropertyKeysForPlatform:(unsigned long long)arg1;
++ (bool)isPermittedOnSystemConnection;
++ (bool)isPermittedOnUserConnection;
++ (id)permittedPlatforms;
 + (bool)supportsSecureCoding;
-+ (id)tvOSDevicePropertyKeys;
-+ (id)watchOSDevicePropertyKeys;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

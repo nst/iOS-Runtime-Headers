@@ -45,6 +45,7 @@
 + (id)loadMobileAssetContentsWhenMobileAssetChangesForMecabra:(struct __Mecabra { }*)arg1 inputModes:(id)arg2 onQueue:(id)arg3 oldMobileAssetChangeListener:(id)arg4;
 + (void)removeMobileAssetListener:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)acceptInlineCandidates;
 - (void)addCandidateWithString:(id)arg1 toArray:(id)arg2;
 - (bool)addNewCandidatesIfNecessary:(long long)arg1;
@@ -64,7 +65,6 @@
 - (void)completelyCommitInlineCandidate:(void*)arg1;
 - (id)contextCandidateSurfaces;
 - (void)createNewCandidatesFromDocumentContext;
-- (void)dealloc;
 - (void)declareEndOfSentence;
 - (bool)documentContextIsEmpty;
 - (id)environmentDebuggingInformation;

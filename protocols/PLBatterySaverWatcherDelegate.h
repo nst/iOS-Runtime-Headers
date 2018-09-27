@@ -5,6 +5,6 @@
 
 @required
 
-- (void)batterySaverModeDidChange:(bool)arg1;
+- (void)batterySaverModeDidChange;
 
 @end

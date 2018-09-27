@@ -45,6 +45,7 @@
 - (id)city;
 - (id)cloudDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)countriesSupportAQI;
 - (id)country;
 - (id)countryAbbreviation;
 - (id)county;

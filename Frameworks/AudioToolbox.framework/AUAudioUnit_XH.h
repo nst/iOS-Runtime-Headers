@@ -29,12 +29,11 @@
             struct AUAudioUnit_XH_PropListener {} *__value_; 
         } __end_cap_; 
     }  _propListeners;
-    <AUAudioUnitXPCProtocol> * _remote;
     int  _remotePID;
     bool  _removingObserverWithContext;
     struct IPCAURenderingClient { 
         int (**_vptr$IPCAURenderingClient)(); 
-        <AUAudioUnitXPCProtocol> *mRemote; 
+        NSXPCConnection *mXPCConnection; 
         bool mInitialized; 
         bool mRenderPrioritySet; 
         bool mIsOffline; 
@@ -104,15 +103,13 @@
         double mLastRenderSampleTime; 
     }  _renderClient;
     NSUUID * _requestIdentifier;
-    struct unique_ptr<AUSyncCaller, std::__1::default_delete<AUSyncCaller> > { 
-        struct __compressed_pair<AUSyncCaller *, std::__1::default_delete<AUSyncCaller> > { 
-            struct AUSyncCaller {} *__value_; 
-        } __ptr_; 
-    }  _syncCaller;
+    AUAudioUnit_XH * _strongInstance;
     NSObject<OS_dispatch_queue> * _viewControllerRequestQueue;
+    NSXPCConnection * _xpcConnection;
 }
 
-@property (nonatomic, readonly) <AUAudioUnitXPCProtocol> *remote;
+@property (nonatomic, retain) AUAudioUnit_XH *strongInstance;
+@property (nonatomic) NSXPCConnection *xpcConnection;
 
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)instantiateWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
@@ -131,7 +128,9 @@
 - (void)dealloc;
 - (void)deallocateRenderResources;
 - (void)didCrash;
+- (bool)disableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id*)arg4;
 - (void)doOpen:(id)arg1 completion:(id /* block */)arg2;
+- (bool)enableProfile:(id)arg1 cable:(unsigned char)arg2 onChannel:(unsigned char)arg3 error:(id*)arg4;
 - (id)inputBusses;
 - (void)internalInitWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 completion:(id /* block */)arg4;
 - (id /* block */)internalRenderBlock;
@@ -139,16 +138,20 @@
 - (id)outputBusses;
 - (id)parameterTree;
 - (id)parametersForOverviewWithCount:(long long)arg1;
+- (id)profileStateForCable:(unsigned char)arg1 channel:(unsigned char)arg2;
 - (void)propertiesChanged:(id)arg1;
 - (bool)providesUserInterface;
-- (id)remote;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)requestViewControllerWithCompletionHandler:(id /* block */)arg1;
 - (void)reset;
 - (void)selectViewConfiguration:(id)arg1;
+- (void)setStrongInstance:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (void)setXpcConnection:(id)arg1;
+- (id)strongInstance;
 - (id)supportedViewConfigurations:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
+- (id)xpcConnection;
 
 @end

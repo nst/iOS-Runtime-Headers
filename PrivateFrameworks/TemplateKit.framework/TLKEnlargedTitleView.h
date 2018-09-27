@@ -9,14 +9,13 @@
     UILabel * _titleLabel;
 }
 
-@property (retain) TLKMultilineText *subtitle;
+@property (nonatomic, retain) TLKMultilineText *subtitle;
 @property (retain) TLKVibrantLabel *subtitleLabel;
-@property (retain) TLKMultilineText *title;
+@property (nonatomic, retain) TLKMultilineText *title;
 @property (retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

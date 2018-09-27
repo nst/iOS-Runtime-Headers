@@ -5,6 +5,10 @@
 
 @required
 
-- (void)addPeopleViewControllerDidFinish:(HUAddPeopleViewController *)arg1;
+- (void)addPeopleViewControllerDidCancel:(HUAddPeopleViewController *)arg1;
+
+@optional
+
+- (void)addPeopleViewController:(HUAddPeopleViewController *)arg1 didSendInvitations:(NSArray *)arg2;
 
 @end

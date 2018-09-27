@@ -16,6 +16,7 @@
         unsigned int flags : 1; 
     }  _has;
     long long  _identifier;
+    NSString * _receiverDestinationID;
     long long  _remoteUID;
     NSString * _sender;
     NanoPhoneVoicemailBody * _voicemailBody;
@@ -36,12 +37,14 @@
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasFlags;
 @property (nonatomic) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasReceiverDestinationID;
 @property (nonatomic) bool hasRemoteUID;
 @property (nonatomic, readonly) bool hasSender;
 @property (nonatomic, readonly) bool hasVoicemailBody;
 @property (nonatomic, readonly) bool hasVoicemailTranscript;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long identifier;
+@property (nonatomic, retain) NSString *receiverDestinationID;
 @property (nonatomic) long long remoteUID;
 @property (nonatomic, retain) NSString *sender;
 @property (readonly) Class superclass;
@@ -58,6 +61,7 @@
 - (void)attachToXpcObject:(id)arg1;
 - (id)callbackNumber;
 - (id)callbackNumberOrSender;
+- (id)contactUsingContactStore:(id)arg1 withKeysToFetch:(id)arg2;
 - (id)contextWithSyncOperation:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -66,8 +70,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentation;
-- (void)displayLabelFromAddressBook:(void*)arg1 withUpdateBlock:(id /* block */)arg2;
-- (id)displayNameFromAddressBook:(void*)arg1;
+- (void)displayLabelFromContactStore:(id)arg1 withUpdateBlock:(id /* block */)arg2;
+- (id)displayNameFromContactStore:(id)arg1;
 - (int)duration;
 - (int)flags;
 - (bool)hasCallbackNumber;
@@ -76,6 +80,7 @@
 - (bool)hasDuration;
 - (bool)hasFlags;
 - (bool)hasIdentifier;
+- (bool)hasReceiverDestinationID;
 - (bool)hasRemoteUID;
 - (bool)hasSender;
 - (bool)hasVoicemailBody;
@@ -87,6 +92,7 @@
 - (void)loadVoicemailBodyIfNeeded;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (id)receiverDestinationID;
 - (long long)remoteUID;
 - (id)sender;
 - (void)setCallbackNumber:(id)arg1;
@@ -100,6 +106,7 @@
 - (void)setHasIdentifier:(bool)arg1;
 - (void)setHasRemoteUID:(bool)arg1;
 - (void)setIdentifier:(long long)arg1;
+- (void)setReceiverDestinationID:(id)arg1;
 - (void)setRemoteUID:(long long)arg1;
 - (void)setSender:(id)arg1;
 - (void)setVoicemailBody:(id)arg1;

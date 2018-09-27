@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSDate *representativeDate;
 @property (nonatomic, readonly) int sortIndex;
 
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;

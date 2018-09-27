@@ -36,10 +36,12 @@
     MPQueueFeeder * _feeder;
     unsigned int  _handledFinishTime;
     bool  _hasFinishedDownloading;
+    bool  _hasLoadedHasProtectedContent;
     bool  _hasLoadedPlaybackMode;
     bool  _hasPerformedErrorResolution;
     unsigned int  _hasPlayedThisSession;
     bool  _hasPostedNaturalSizeChange;
+    bool  _hasProtectedContent;
     bool  _hasRegisteredForCaptionsAppearanceChanged;
     bool  _hasValidPlayerItemDuration;
     bool  _isAssetLoaded;
@@ -149,6 +151,7 @@
 @property (nonatomic, readonly) bool hasFinishedDownloading;
 @property (nonatomic) bool hasPerformedErrorResolution;
 @property (nonatomic) bool hasPlayedThisSession;
+@property (nonatomic, readonly) bool hasProtectedContent;
 @property (nonatomic, readonly) bool hasStoreLyrics;
 @property (readonly) unsigned long long hash;
 @property (getter=isInWishList, nonatomic) bool inWishList;
@@ -360,6 +363,7 @@
 - (bool)hasFinishedDownloading;
 - (bool)hasPerformedErrorResolution;
 - (bool)hasPlayedThisSession;
+- (bool)hasProtectedContent;
 - (bool)hasStoreLyrics;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
@@ -419,6 +423,7 @@
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (struct CGSize { double x1; double x2; })presentationSize;
 - (id)queueIdentifier;
+- (void)reevaluateHasProtectedContent;
 - (void)reevaluatePlaybackMode;
 - (void)reevaluateType;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;

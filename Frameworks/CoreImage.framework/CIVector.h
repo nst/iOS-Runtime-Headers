@@ -41,6 +41,9 @@
 - (double)X;
 - (double)Y;
 - (double)Z;
+- (float)_dot:(id)arg1;
+- (float)_norm;
+- (id)_orthonormalizeTo:(id)arg1;
 - (double*)_values;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;

@@ -44,6 +44,8 @@
 - (void)_startDateTimer;
 - (void)_stopDateTimer;
 - (void)_updateDateView;
+- (long long)_wallpaperType;
+- (id)_wallpaperTypeDescription;
 - (id)_wallpaperView;
 - (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(bool)arg6 variant:(long long)arg7;
@@ -77,6 +79,8 @@
 - (void)setWallpaperConfiguration:(id)arg1;
 - (void)setWallpaperForLocations:(long long)arg1;
 - (void)setWallpaperSettings:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (id)wallpaperConfiguration;

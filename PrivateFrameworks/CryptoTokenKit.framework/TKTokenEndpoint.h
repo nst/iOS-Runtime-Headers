@@ -13,7 +13,8 @@
 }
 
 @property (readonly) NSXPCListenerEndpoint *endpoint;
-@property (readonly) TKToken *token;
+@property (retain) TKToken *token;
+@property (retain) NSError *tokenError;
 @property (readonly) NSString *tokenID;
 
 - (void).cxx_destruct;
@@ -23,9 +24,12 @@
 - (id)endpoint;
 - (id)initWithTokenID:(id)arg1;
 - (void)resumeWithToken:(id)arg1 tokenError:(id)arg2;
-- (id)sessionForEvent:(id)arg1 error:(id*)arg2;
+- (id)sessionForEvent:(id)arg1 context:(id*)arg2 error:(id*)arg3;
+- (void)setToken:(id)arg1;
+- (void)setTokenError:(id)arg1;
 - (void)terminateAfterRemovingClientWithNotification:(id /* block */)arg1;
 - (id)token;
+- (id)tokenError;
 - (id)tokenID;
 
 @end

@@ -75,7 +75,7 @@
 - (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 topActionSignal:(id)arg3;
-- (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)navigationController;
 - (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(bool)arg3;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;

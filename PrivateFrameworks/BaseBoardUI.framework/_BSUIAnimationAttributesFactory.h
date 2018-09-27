@@ -6,10 +6,10 @@
     _UIViewAnimationAttributes * _attributes;
 }
 
+- (void).cxx_destruct;
 - (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned long long)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)_initWithAttributes:(id)arg1;
 - (id)_initWithSettings:(id)arg1;
-- (void)dealloc;
 - (double)delay;
 - (id)description;
 - (double)duration;

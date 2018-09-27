@@ -17,11 +17,11 @@
 - (void).cxx_destruct;
 - (void)_initializeDefaultStates;
 - (void)_initializeGlobalDefaultStates;
-- (void)_registerApplicationIdentifierState;
+- (void)_registerApplicationIdentifierState:(id)arg1;
 - (void)_registerDefaultMapUIState;
 - (void)_registerDeviceBaseStateWithTraits:(id)arg1;
 - (void)_registerDeviceConnectionState;
-- (void)_registerDeviceIdentifierState;
+- (void)_registerDeviceIdentifierState:(id)arg1;
 - (void)_registerDeviceLocaleStateWithTraits:(id)arg1;
 - (void)_registerExperimentsState;
 - (void)_registerLogContextWithTraits:(id)arg1;

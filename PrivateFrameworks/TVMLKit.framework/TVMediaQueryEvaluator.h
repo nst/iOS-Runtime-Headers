@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic) <TVMediaQueryEvaluatorDelegate> *delegate;
-@property (nonatomic, readonly, retain) IKViewElement *templateElement;
+@property (nonatomic, retain) IKViewElement *templateElement;
 @property (nonatomic, readonly, retain) <UITraitEnvironment> *traitEnvironment;
 @property (nonatomic, readonly, retain) _TVWindowSizeAdaptor *windowSizeAdaptor;
 
@@ -32,6 +32,7 @@
 - (id)initWithTemplateElement:(id)arg1 inWindow:(id)arg2;
 - (id)initWithTemplateElement:(id)arg1 inWindow:(id)arg2 traitEnvironment:(id)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setTemplateElement:(id)arg1;
 - (id)templateElement;
 - (id)traitEnvironment;
 - (id)windowSizeAdaptor;

@@ -3,9 +3,11 @@
  */
 
 @interface HUQuickControlViewController : UIViewController <HUPreloadableViewController, HUQuickControlContentCharacteristicWriting, HUQuickControlInteractiveContentContaining, HUQuickControlItemHosting> {
+    bool  _areControlItemsRequestingToBeHidden;
     <HUQuickControlContentCharacteristicWritingDelegate> * _characteristicWritingDelegate;
     NSSet * _controlItems;
     unsigned long long  _controlSize;
+    bool  _controlsVisible;
     <HUQuickControlViewControllerDelegate> * _delegate;
     HMHome * _home;
     HUQuickControlSimpleItemUpdater * _internalItemUpdater;
@@ -16,9 +18,11 @@
 }
 
 @property (nonatomic, readonly, copy) NSSet *affectedCharacteristics;
+@property (nonatomic) bool areControlItemsRequestingToBeHidden;
 @property (nonatomic) <HUQuickControlContentCharacteristicWritingDelegate> *characteristicWritingDelegate;
 @property (nonatomic, readonly, copy) NSSet *controlItems;
 @property (nonatomic) unsigned long long controlSize;
+@property (getter=areControlsVisible, nonatomic) bool controlsVisible;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUQuickControlViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -32,14 +36,16 @@
 @property (nonatomic, retain) <HULayoutAnchorProviding> *preferredFrameLayoutGuide;
 @property (nonatomic, readonly) unsigned long long preferredPresentationStyle;
 @property (nonatomic) <HUQuickControlContentHosting> *quickControlHost;
-@property (nonatomic, readonly) bool shouldShowControlWhenUnreachable;
 @property (readonly) Class superclass;
 @property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 
 + (id)controlItemPredicate;
 
 - (void).cxx_destruct;
+- (void)_updateControlItemHiddenStateNotifyingHost:(bool)arg1;
 - (id)affectedCharacteristics;
+- (bool)areControlItemsRequestingToBeHidden;
+- (bool)areControlsVisible;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (id)characteristicWritingDelegate;
 - (id)childQuickControlContentViewControllers;
@@ -63,14 +69,14 @@
 - (unsigned long long)preferredPresentationStyle;
 - (id)quickControlHost;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
+- (void)setAreControlItemsRequestingToBeHidden:(bool)arg1;
 - (void)setCharacteristicWritingDelegate:(id)arg1;
 - (void)setControlSize:(unsigned long long)arg1;
+- (void)setControlsVisible:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPreferredFrameLayoutGuide:(id)arg1;
 - (void)setQuickControlHost:(id)arg1;
 - (void)setUserInteractionEnabled:(bool)arg1;
-- (bool)shouldShowControlWhenUnreachable;
-- (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
+- (bool)shouldShowContentForReachabilityState:(bool)arg1;
 
 @end

@@ -25,6 +25,7 @@
     NSString * _punchoutPickerDismissText;
     NSString * _punchoutPickerTitle;
     bool  _reducedRowHeight;
+    NSArray * _richData;
     int  _separatorStyle;
     NSString * _tabGroupIdentifier;
     NSString * _tableIdentifier;
@@ -55,12 +56,15 @@
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
 @property (nonatomic) bool reducedRowHeight;
 @property (nonatomic, copy) NSString *resultIdentifier;
+@property (nonatomic, copy) NSArray *richData;
 @property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *tabGroupIdentifier;
 @property (nonatomic, copy) NSString *tableIdentifier;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic) int verticalAlign;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (bool)supportsSecureCoding;
 
@@ -91,6 +95,7 @@
 - (id)punchoutPickerDismissText;
 - (id)punchoutPickerTitle;
 - (bool)reducedRowHeight;
+- (id)richData;
 - (int)separatorStyle;
 - (void)setAlignRowsToHeader:(bool)arg1;
 - (void)setAlignmentSchema:(id)arg1;
@@ -104,6 +109,7 @@
 - (void)setPunchoutPickerDismissText:(id)arg1;
 - (void)setPunchoutPickerTitle:(id)arg1;
 - (void)setReducedRowHeight:(bool)arg1;
+- (void)setRichData:(id)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setTabGroupIdentifier:(id)arg1;
 - (void)setTableIdentifier:(id)arg1;
@@ -113,5 +119,9 @@
 - (id)tableIdentifier;
 - (id)type;
 - (int)verticalAlign;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

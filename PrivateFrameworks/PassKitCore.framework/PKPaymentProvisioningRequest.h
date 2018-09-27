@@ -16,6 +16,7 @@
     NSString * _nonce;
     NSNumber * _primaryJSBLSequenceCounter;
     NSString * _referrerIdentifier;
+    long long  _style;
 }
 
 @property (nonatomic, copy) NSData *activationData;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (nonatomic, copy) NSString *nonce;
 @property (nonatomic, copy) NSString *referrerIdentifier;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (void)_deviceScoreWithCompletion:(id /* block */)arg1;
@@ -42,6 +44,7 @@
 - (id)context;
 - (id)cryptogram;
 - (id)eligibilityResponse;
+- (id)init;
 - (id)initWithEligibilityResponse:(id)arg1;
 - (id)nonce;
 - (id)referrerIdentifier;
@@ -54,5 +57,7 @@
 - (void)setEligibilityResponse:(id)arg1;
 - (void)setNonce:(id)arg1;
 - (void)setReferrerIdentifier:(id)arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

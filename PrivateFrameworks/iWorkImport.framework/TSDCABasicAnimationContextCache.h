@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) id fromValue;
 @property (nonatomic, readonly) id toValue;
 
+- (void).cxx_destruct;
 - (id)fromValue;
 - (id)initWithAnimation:(id)arg1;
 - (double)percentAtTime:(double)arg1;

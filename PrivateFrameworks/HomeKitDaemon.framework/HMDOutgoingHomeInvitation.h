@@ -13,11 +13,15 @@
 
 @property (nonatomic, readonly) NSArray *accessoryInvitationsInformation;
 @property (getter=isComplete, nonatomic, readonly) bool complete;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *inviteeDestinationAddress;
 @property (nonatomic, readonly) NSUUID *messageIdentifier;
 @property (nonatomic, retain) NSArray *operationIdentifiers;
 @property (nonatomic, readonly) NSArray *operations;
 @property (nonatomic) bool responseReceived;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) HMDUser *user;
 @property (nonatomic, readonly) NSUUID *uuid;
 
@@ -30,6 +34,7 @@
 - (id)debugDescription;
 - (id)describeWithFormat;
 - (id)description;
+- (id)emptyModelObjectWithChangeType:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInvitee:(id)arg1 invitationState:(long long)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
@@ -38,6 +43,7 @@
 - (bool)isComplete;
 - (id)messageIdentifier;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (void)notifyStateChangedForMessage:(id)arg1;
 - (id)operationIdentifiers;
 - (id)operations;
 - (void)processUserManagementOperationIdentifiers:(id)arg1;

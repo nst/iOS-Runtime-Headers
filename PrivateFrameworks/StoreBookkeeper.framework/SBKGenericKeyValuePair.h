@@ -15,8 +15,11 @@
 @property (readonly) Class superclass;
 
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
 - (id)kvsKey;
 - (id)kvsPayload;

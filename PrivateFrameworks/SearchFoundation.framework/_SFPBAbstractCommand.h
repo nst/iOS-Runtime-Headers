@@ -3,17 +3,12 @@
  */
 
 @interface _SFPBAbstractCommand : PBCodable <NSSecureCoding, _SFPBAbstractCommand> {
-    struct { 
-        unsigned int type : 1; 
-    }  _has;
     int  _type;
     _SFPBCommandValue * _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasType;
-@property (nonatomic, readonly) bool hasValue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (readonly) Class superclass;
@@ -22,8 +17,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasType;
-- (bool)hasValue;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

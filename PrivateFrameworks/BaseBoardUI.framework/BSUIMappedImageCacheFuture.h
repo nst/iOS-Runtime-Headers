@@ -3,15 +3,17 @@
  */
 
 @interface BSUIMappedImageCacheFuture : NSObject {
-    UIImage * _cacheImage;
-    int  _submitted;
-    id /* block */  _waitBlock;
-    NSObject<OS_dispatch_semaphore> * _waitableSemaphore;
-    int  _waited;
-    int  _workCompletionWasCalled;
-    NSObject<OS_dispatch_queue> * _workQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    id /* block */  _lock_workBlock;
+    bool  _lock_workCompletionWasCalled;
+    UIImage * _postlock_cachedImage;
+    NSThread * _submissionThread;
+    BSAtomicSignal * _submitted;
 }
 
+- (void).cxx_destruct;
 - (id)cacheImage;
 - (void)dealloc;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKScene : NSObject <NSCoding, NSCopying> {
+@interface GKScene : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray * _entities;
     NSMutableDictionary * _graphs;
     <GKSceneRootNodeType> * _rootNode;
@@ -15,6 +15,7 @@
 + (id)_sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
 + (id)sceneWithFileNamed:(id)arg1;
 + (id)sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addEntity:(id)arg1;

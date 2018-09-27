@@ -22,6 +22,7 @@
 - (Class)documentRootClass;
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
+- (id)equationEditorAPDID;
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
@@ -61,6 +62,9 @@
 - (id)stringForDocumentViewOnly;
 - (id)stringForDocumentViewOnlyMessage;
 - (id)stringForDocumentViewOnlyTitle;
+- (id)stringForEquationChoiceBody;
+- (id)stringForEquationChoiceTitle;
+- (id)stringForEquationChoiceUseEQKitButtonTitle;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
@@ -76,6 +80,8 @@
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocumentWithoutServiceType;
+- (id)stringForUserActivityTitleForFilename:(id)arg1;
+- (bool)supportsFreehandAnimationUI;
 - (bool)supportsPastingIntoGroups;
 - (bool)supportsRTL;
 - (bool)supportsShrinkTextToFit;

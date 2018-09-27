@@ -8,6 +8,7 @@
     long long  _contentFilters;
     unsigned long long  _creationStamp;
     double  _creationTime;
+    double  _currentTime;
     NSDictionary * _dictationResponse;
     bool  _dictationStable;
     NSArray * _disabledApps;
@@ -41,6 +42,7 @@
 @property (nonatomic) long long contentFilters;
 @property (nonatomic, readonly) unsigned long long creationStamp;
 @property (nonatomic, readonly) double creationTime;
+@property (nonatomic, readonly) double currentTime;
 @property (nonatomic, retain) NSDictionary *dictationResponse;
 @property (nonatomic) bool dictationStable;
 @property (nonatomic, retain) NSArray *disabledApps;
@@ -74,6 +76,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)creationStamp;
 - (double)creationTime;
+- (double)currentTime;
 - (id)dictationResponse;
 - (bool)dictationStable;
 - (id)disabledApps;

@@ -8,7 +8,6 @@
     NSSet * _existingKeys;
     PKFelicaGreenCarTicket * _greenCarTicket;
     bool  _greenCarTicketUsed;
-    bool  _inShinkansenStation;
     bool  _lowBalanceNotificationEnabled;
     PKFelicaShinkansenTicket * _shinkansenTicket;
     bool  _shinkansenTicketActive;
@@ -34,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (id)SPID;
+- (void)_addEnrouteTransitType:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)greenCarTicket;
@@ -42,6 +42,7 @@
 - (bool)isBalanceAllowedForCommute;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
+- (bool)isInStation;
 - (bool)isLowBalanceNotificationEnabled;
 - (bool)isShinkansenTicketActive;
 - (void)sanitizeValuesWithState:(id)arg1;

@@ -71,7 +71,6 @@
 - (bool)isEnabledForDataclass:(id)arg1;
 - (bool)isProvisionedForDataclass:(id)arg1;
 - (id)lastName;
-- (void)lookupEmailAddresses:(id)arg1 withHandler:(id /* block */)arg2;
 - (int)mobileMeAccountStatus;
 - (bool)needsEmailConfiguration;
 - (bool)needsRegistration;

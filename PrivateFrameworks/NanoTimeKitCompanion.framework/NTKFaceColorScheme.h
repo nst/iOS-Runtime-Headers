@@ -5,6 +5,7 @@
 @interface NTKFaceColorScheme : NSObject {
     NSMutableDictionary * _colorsByUnit;
     bool  _containsOverrideFaceColor;
+    CLKDevice * _device;
     NSArray * _faceColors;
     double  _multicolorAlpha;
     double  _siriAlpha;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) UIColor *alternativeTickColor;
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic) bool containsOverrideFaceColor;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, retain) NSArray *faceColors;
 @property (nonatomic, readonly) UIColor *foregroundColor;
 @property (nonatomic) double multicolorAlpha;
@@ -27,11 +29,11 @@
 @property (nonatomic, readonly) unsigned long long units;
 @property (nonatomic, readonly) UIColor *upNextTextColor;
 
-+ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 foregroundColor:(id)arg2 units:(unsigned long long)arg3 alternateHighlight:(bool)arg4;
-+ (id)colorSchemeWithFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
++ (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned long long)arg2 foregroundColor:(id)arg3 units:(unsigned long long)arg4 alternateHighlight:(bool)arg5;
++ (id)colorSchemeForDevice:(id)arg1 withFaceColor:(unsigned long long)arg2 units:(unsigned long long)arg3;
++ (id)interpolationForDevice:(id)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 fraction:(double)arg4 units:(unsigned long long)arg5 brightenUnits:(unsigned long long)arg6 overrideColor:(id)arg7 alternateHighlight:(bool)arg8;
 + (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3;
 + (id)interpolationFrom:(id)arg1 to:(id)arg2 fraction:(double)arg3 brightenUnits:(unsigned long long)arg4;
-+ (id)interpolationFromFaceColor:(unsigned long long)arg1 toFaceColor:(unsigned long long)arg2 fraction:(double)arg3 units:(unsigned long long)arg4 brightenUnits:(unsigned long long)arg5 overrideColor:(id)arg6 alternateHighlight:(bool)arg7;
 
 - (void).cxx_destruct;
 - (id)_colorForUnit:(unsigned long long)arg1;
@@ -41,9 +43,10 @@
 - (id)alternativeTickColor;
 - (id)backgroundColor;
 - (bool)containsOverrideFaceColor;
+- (id)device;
 - (id)faceColors;
 - (id)foregroundColor;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (double)multicolorAlpha;
 - (id)secondaryForegroundColor;

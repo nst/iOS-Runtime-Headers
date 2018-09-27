@@ -14,6 +14,7 @@
 - (long long)oneUpPresentationHelper:(PUOneUpPresentationHelper *)arg1 transitionTypeWithProposedTransitionType:(long long)arg2;
 - (void)oneUpPresentationHelper:(PUOneUpPresentationHelper *)arg1 willPresentOneUpPreviewViewController:(PUOneUpViewController *)arg2;
 - (void)oneUpPresentationHelper:(PUOneUpPresentationHelper *)arg1 willPresentOneUpViewController:(PUOneUpViewController *)arg2;
+- (unsigned long long)oneUpPresentationHelperAdditionalOptions:(PUOneUpPresentationHelper *)arg1;
 - (bool)oneUpPresentationHelperDisableFinalFadeoutAnimation:(PUOneUpPresentationHelper *)arg1;
 - (bool)oneUpPresentationHelperEnableFreezeLayoutOnOrientationChange:(PUOneUpPresentationHelper *)arg1;
 - (long long)oneUpPresentationHelperPreferredBarStyle:(PUOneUpPresentationHelper *)arg1;
@@ -23,5 +24,6 @@
 - (bool)oneUpPresentationHelperShouldAutoPlay:(PUOneUpPresentationHelper *)arg1;
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(PUOneUpPresentationHelper *)arg1;
 - (UIView *)oneUpPresentationHelperViewHostingGestureRecognizers:(PUOneUpPresentationHelper *)arg1;
+- (UIView *)oneUpPresentationHelperViewHostingTilingView:(PUOneUpPresentationHelper *)arg1;
 
 @end

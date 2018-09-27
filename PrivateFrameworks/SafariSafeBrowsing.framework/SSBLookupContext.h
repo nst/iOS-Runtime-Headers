@@ -15,6 +15,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_deleteAllDatabasesWithCompletionHandler:(id /* block */)arg1;
+- (void)_fetchCellularDataPlanWithCompletionHandler:(id /* block */)arg1;
 - (void)_forceDatabaseUpdateWithCompletionHandler:(id /* block */)arg1;
 - (void)_forceLoadRemoteConfigurationFromDiskWithCompletionHandler:(id /* block */)arg1;
 - (void)_forceUpdateRemoteConfigurationFromServerWithCompletionHandler:(id /* block */)arg1;

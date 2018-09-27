@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptInterface : SUScriptObject <SFSafariViewControllerDelegate, SUScriptModalDialogDelegate, SUScriptXMLHTTPRequestDelegate> {
+@interface SUScriptInterface : SUScriptObject <SFSafariViewControllerDelegate, SUScriptModalDialogDelegate, SUScriptXMLHTTPRequestDelegate, SUScriptXMLHTTPStoreRequestDelegate> {
     SUScriptAccountManager * _accountManager;
     SUScriptKeyValueStore * _applicationLocalStorage;
     SSAuthenticationContext * _authenticationContext;
@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> * _hsaTokenQueue;
     SUScriptMediaLibrary * _mediaLibrary;
     SUScriptMetricsController * _metricsController;
+    SUScriptNavigationSimulator * _navigationSimulator;
     SUScriptNotificationObserver * _notificationObserver;
     SUScriptPreviewOverlay * _previewOverlay;
     SUScriptPurchaseManager * _purchaseManager;
@@ -53,14 +54,17 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) SUScriptDevice *device;
 @property (readonly) SUScriptKeyValueStore *deviceLocalStorage;
+@property (readonly) NSArray *deviceOffers;
 @property (readonly) NSString *deviceSerialNumber;
 @property (readonly) id globalRootObject;
+@property (readonly) NSString *gsToken;
 @property (readonly) unsigned long long hash;
 @property (readonly) NSArray *installedSoftwareApplications;
 @property (readonly) id loggingEnabled;
 @property (readonly) SUScriptMediaLibrary *mediaLibrary;
 @property (readonly) SUScriptMetricsController *metricsController;
 @property (readonly) SUScriptNavigationBar *navigationBar;
+@property (readonly) SUScriptNavigationSimulator *navigationSimulator;
 @property (readonly) NSNumber *orientation;
 @property (readonly) SUScriptPassbookLibrary *passbookLibrary;
 @property (readonly) SUScriptPreviewOverlay *previewOverlay;
@@ -86,6 +90,7 @@
 @property (nonatomic, readonly) SUScriptTelephony *telephony;
 @property (readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
 @property (readonly) SUScriptDictionary *tidHeaders;
+@property (readonly) NSString *tidState;
 @property (readonly) NSString *userAgent;
 @property (readonly) SUScriptViewController *viewController;
 @property (retain) WebFrame *webFrame;
@@ -158,6 +163,7 @@
 - (id)delegate;
 - (id)device;
 - (id)deviceLocalStorage;
+- (id)deviceOffers;
 - (id)deviceSerialNumber;
 - (long long)dialogDisplayCountForKey:(id)arg1;
 - (id)diskSpaceAvailable;
@@ -166,6 +172,7 @@
 - (void)dismissWindowsWithOptions:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
 - (void)dispatchXEvent:(id)arg1;
+- (void)financeInterruptionResolved:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)getAudioPlayerForURL:(id)arg1 keyURL:(id)arg2 certificateURL:(id)arg3;
 - (id)getDownloadQueueWithQueueType:(id)arg1;
@@ -176,6 +183,7 @@
 - (void)goBack;
 - (void)gotoStoreURL:(id)arg1;
 - (void)gotoStoreURL:(id)arg1 ofType:(id)arg2 withAuthentication:(bool)arg3 forceAuthentication:(bool)arg4;
+- (id)gsToken;
 - (void)handleDialogPropertyListString:(id)arg1;
 - (void)handleProtocolPropertyListString:(id)arg1;
 - (void)handleRootObjectWithPropertyListString:(id)arg1;
@@ -235,9 +243,11 @@
 - (id)makeVolumeViewController;
 - (id)makeWindow;
 - (id)makeXMLHTTPRequest;
+- (id)makeXMLHTTPStoreRequest;
 - (id)mediaLibrary;
 - (id)metricsController;
 - (id)navigationBar;
+- (id)navigationSimulator;
 - (void)openCreditCardReaderWithCompletionFunction:(id)arg1;
 - (void)openFamilyCircleSetupWithClientName:(id)arg1 completionFunction:(id)arg2;
 - (void)openURL:(id)arg1;
@@ -261,6 +271,7 @@
 - (id)referringUserAgent;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
+- (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2;
 - (void)reportAProblemForIdentifier:(id)arg1;
 - (id)requestInfo;
 - (void)requireCellularForResourceWithURL:(id)arg1;
@@ -277,6 +288,7 @@
 - (id)scriptStoreBagDictionary;
 - (id)scriptWindowContext;
 - (bool)scriptXMLHTTPRequest:(id)arg1 requiresCellularForURL:(id)arg2;
+- (bool)scriptXMLHTTPStoreRequest:(id)arg1 requiresCellularForURL:(id)arg2;
 - (id)sectionsController;
 - (void)selectSectionWithIdentifier:(id)arg1;
 - (void)selectTrackListItemWithIdentifier:(id)arg1;
@@ -291,11 +303,13 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setGlobalRootObject:(id)arg1;
+- (void)setGsToken:(id)arg1;
 - (void)setLibraryIdentifierWithType:(id)arg1 value:(id)arg2;
 - (void)setLoggingEnabled:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setMetricsController:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
+- (void)setNavigationSimulator:(id)arg1;
 - (void)setOrientation:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
 - (void)setPrimaryLockerAccount:(id)arg1;
@@ -309,6 +323,7 @@
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setSubscriptionStatusCoordinator:(id)arg1;
 - (void)setTidHeaders:(id)arg1;
+- (void)setTidState:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;
@@ -359,6 +374,7 @@
 - (id)telephony;
 - (id)threadSafeDelegate;
 - (id)tidHeaders;
+- (id)tidState;
 - (id)userAgent;
 - (id)viewController;
 - (id)webFrame;

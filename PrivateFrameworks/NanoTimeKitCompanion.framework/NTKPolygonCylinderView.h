@@ -2,25 +2,32 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKPolygonCylinderView : UIView {
+@interface NTKPolygonCylinderView : UIView <NTKEditOptionContainerView> {
     double  _rotationAngle;
     _NTKPolygonCylinderTransformView * _transformView;
 }
 
-@property (nonatomic, readonly) unsigned long long numberOfFaces;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long numberOfSides;
+@property (nonatomic, readonly) unsigned long long numberOfVisibleSides;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_informFaceViewsOfRotation;
 - (double)_rotationAngleForFaceIndex:(long long)arg1;
 - (void)_setRotationAngle:(double)arg1;
 - (void)_updateTransform;
-- (void)enumerateFaceViewsWithBlock:(id /* block */)arg1;
-- (id)initWithNumberOfFaces:(unsigned long long)arg1;
+- (void)enumerateSideViewsWithBlock:(id /* block */)arg1;
+- (id)init;
 - (void)layoutSubviews;
-- (unsigned long long)numberOfFaces;
-- (void)rotateToFaceAtIndex:(long long)arg1;
-- (void)rotateToFraction:(double)arg1 fromFaceAtIndex:(long long)arg2 toFaceAtIndex:(long long)arg3;
-- (void)setView:(id)arg1 forFaceAtIndex:(unsigned long long)arg2;
-- (id)viewForFaceAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfSides;
+- (unsigned long long)numberOfVisibleSides;
+- (void)setNumberOfSides:(unsigned long long)arg1;
+- (void)setView:(id)arg1 forSideAtIndex:(unsigned long long)arg2;
+- (void)transitionToFraction:(double)arg1 fromSideAtIndex:(unsigned long long)arg2 toSideAtIndex:(unsigned long long)arg3;
+- (void)transitionToSideAtIndex:(unsigned long long)arg1;
+- (id)viewForSideAtIndex:(unsigned long long)arg1;
 
 @end

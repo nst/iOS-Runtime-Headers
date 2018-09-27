@@ -6,7 +6,7 @@
     NSAttributedString * _cachedAttributedString;
     NSString * _cachedString;
     long long  _count;
-    RMList * _currentList;
+    CPRMList * _currentList;
     struct CGPDFDocument { } * _document;
     NSMutableArray * _headings;
     NSMutableArray * _lists;

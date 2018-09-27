@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)collectionIdentifier;
 - (id)faceAtIndex:(unsigned long long)arg1;
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)faceCollection:(id)arg1 didRemoveFace:(id)arg2 atIndex:(unsigned long long)arg3;

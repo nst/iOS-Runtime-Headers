@@ -8,7 +8,6 @@
         unsigned long long _opaque_1; 
         unsigned long long _opaque_2; 
     }  _symbolicator;
-    bool  _usesLiteMode;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,7 +45,6 @@
 - (id)sourceFileNameForPCaddress:(unsigned long long)arg1;
 - (unsigned int)sourceLineNumberForPCaddress:(unsigned long long)arg1;
 - (id)sourcePathForPCaddress:(unsigned long long)arg1;
-- (bool)usesLiteMode;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;
 
 @end

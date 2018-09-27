@@ -11,7 +11,7 @@
 
 @property long long cellularFallbackFlags;
 @property (getter=isEnabled) bool enabled;
-@property (readonly) bool hasNonDefaultRules;
+@property (nonatomic, readonly) bool hasNonDefaultRules;
 @property (copy) NSArray *pathRules;
 @property (copy) NSArray *payloadAppRules;
 

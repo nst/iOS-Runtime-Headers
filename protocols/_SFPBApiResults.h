@@ -10,8 +10,6 @@
 - (NSArray *)flights;
 - (_SFPBFlight *)flightsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)flightsCount;
-- (bool)hasResultType;
-- (bool)hasStatus;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

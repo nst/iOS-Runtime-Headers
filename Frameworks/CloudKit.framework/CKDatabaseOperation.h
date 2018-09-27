@@ -15,6 +15,7 @@
 - (id)database;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (id)flowControlKey;
 - (void)setDatabase:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared

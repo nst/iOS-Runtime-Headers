@@ -43,7 +43,6 @@
 - (void)_cancelPreloadTasks;
 - (void)_retryFailuresWithErrorsReset:(bool)arg1;
 - (void)_start;
-- (void)_withDownloadedRegionsOnQueue:(id)arg1 perform:(id /* block */)arg2;
 - (void)addTileSetStyle:(int)arg1 betweenZoom:(unsigned int)arg2 andZoom:(unsigned int)arg3;
 - (id /* block */)batteryHandler;
 - (void)beginLoading;

@@ -11,10 +11,8 @@
 - (bool)isRegisteredWithUserInterfaceContext;
 - (bool)isSyncableChange;
 - (id)photoLibrary;
-- (id)pointerDescription;
 - (id)shortObjectIDURI;
 - (bool)supportsCloudUpload;
-- (id)truncatedDescriptionWithPropertyKeys:(id)arg1;
 - (void)willSave;
 
 @end

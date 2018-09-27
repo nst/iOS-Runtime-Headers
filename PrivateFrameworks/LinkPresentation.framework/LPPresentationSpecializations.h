@@ -6,6 +6,7 @@
 
 + (id)canonicalMetadataURLForURL:(id)arg1;
 + (id)destinationForGoogleRedirectURL:(id)arg1;
++ (bool)isAppleTVURL:(id)arg1;
 + (bool)isGitHubURL:(id)arg1;
 + (bool)isGoogleSearchURL:(id)arg1;
 + (bool)isGoogleURL:(id)arg1;

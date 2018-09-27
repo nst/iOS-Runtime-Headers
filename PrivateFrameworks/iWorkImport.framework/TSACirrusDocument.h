@@ -7,6 +7,7 @@
     NSString * _documentPasswordHint;
     NSURL * _fileURL;
     bool  _isClosed;
+    TSUTemporaryDirectory * _tempDirForCache;
     TSUTemporaryDirectory * _tempDirForSupport;
 }
 

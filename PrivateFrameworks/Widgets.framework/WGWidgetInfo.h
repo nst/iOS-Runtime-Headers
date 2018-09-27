@@ -23,14 +23,13 @@
 
 @property (setter=_setDisplayName:, nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) NSExtension *extension;
-@property (setter=_setIcon:, nonatomic, retain) UIImage *icon;
+@property (getter=_icon, setter=_setIcon:, nonatomic, retain) UIImage *icon;
 @property (nonatomic, readonly) long long initialDisplayMode;
 @property (nonatomic, readonly) double initialHeight;
 @property (setter=_setLargestAllowedDisplayMode:, nonatomic) long long largestAllowedDisplayMode;
-@property (setter=_setOutlineIcon:, nonatomic, retain) UIImage *outlineIcon;
+@property (getter=_outlineIcon, setter=_setOutlineIcon:, nonatomic, retain) UIImage *outlineIcon;
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (getter=_sdkVersion, nonatomic, readonly, copy) NSString *sdkVersion;
-@property (nonatomic, readonly) UIImage *settingsIcon;
 @property (setter=_setWantsVisibleFrame:, nonatomic) bool wantsVisibleFrame;
 @property (nonatomic, readonly, copy) NSString *widgetIdentifier;
 
@@ -40,11 +39,15 @@
 + (id)widgetInfoWithExtension:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_iconFromWidgetBundle;
-- (id)_iconWithFormat:(int)arg1;
-- (id)_iconWithOutline;
+- (id)_icon;
+- (id)_outlineIcon;
 - (int)_outlineVariantForScale:(double)arg1;
+- (id)_queue_iconFromWidgetBundleForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;
+- (id)_queue_iconWithFormat:(int)arg1 forWidgetWithIdentifier:(id)arg2 extension:(id)arg3;
+- (id)_queue_iconWithOutlineForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;
+- (void)_requestIcon:(bool)arg1 withHandler:(id /* block */)arg2;
 - (void)_resetIcons;
+- (void)_resetIconsImpl;
 - (id)_sdkVersion;
 - (void)_setDisplayName:(id)arg1;
 - (void)_setIcon:(id)arg1;
@@ -53,17 +56,16 @@
 - (void)_setWantsVisibleFrame:(bool)arg1;
 - (id)displayName;
 - (id)extension;
-- (id)icon;
 - (id)initWithExtension:(id)arg1;
 - (long long)initialDisplayMode;
 - (double)initialHeight;
 - (bool)isLinkedOnOrAfterSystemVersion:(id)arg1;
 - (long long)largestAllowedDisplayMode;
-- (id)outlineIcon;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)registerWidgetHost:(id)arg1;
+- (void)requestIconWithHandler:(id /* block */)arg1;
+- (void)requestSettingsIconWithHandler:(id /* block */)arg1;
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)settingsIcon;
 - (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 forWidgetHost:(id)arg2;
 - (bool)wantsVisibleFrame;
 - (id)widgetIdentifier;

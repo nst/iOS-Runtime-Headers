@@ -6,6 +6,7 @@
     unsigned int  _active;
     NSString * _alarmID;
     bool  _allowsSnooze;
+    bool  _bedtimeDoNotDisturb;
     double  _bedtimeForSleepTracking;
     unsigned int  _bedtimeHour;
     unsigned int  _bedtimeMinute;
@@ -19,7 +20,9 @@
         unsigned int bedtimeSnoozeFire : 1; 
         unsigned int dismissed : 1; 
         unsigned int fired : 1; 
+        unsigned int mediaID : 1; 
         unsigned int snoozeFire : 1; 
+        unsigned int soundVolume : 1; 
     }  _has;
     unsigned int  _hour;
     bool  _isEnabled;
@@ -39,6 +42,7 @@
 @property (nonatomic) unsigned int active;
 @property (nonatomic, retain) NSString *alarmID;
 @property (nonatomic) bool allowsSnooze;
+@property (nonatomic) bool bedtimeDoNotDisturb;
 @property (nonatomic) double bedtimeForSleepTracking;
 @property (nonatomic) unsigned int bedtimeHour;
 @property (nonatomic) unsigned int bedtimeMinute;
@@ -51,7 +55,9 @@
 @property (nonatomic) bool hasBedtimeSnoozeFire;
 @property (nonatomic) bool hasDismissed;
 @property (nonatomic) bool hasFired;
+@property (nonatomic) bool hasMediaID;
 @property (nonatomic) bool hasSnoozeFire;
+@property (nonatomic) bool hasSoundVolume;
 @property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, readonly) bool hasToneID;
 @property (nonatomic, readonly) bool hasVibeID;
@@ -73,6 +79,7 @@
 - (unsigned int)active;
 - (id)alarmID;
 - (bool)allowsSnooze;
+- (bool)bedtimeDoNotDisturb;
 - (double)bedtimeForSleepTracking;
 - (unsigned int)bedtimeHour;
 - (unsigned int)bedtimeMinute;
@@ -89,7 +96,9 @@
 - (bool)hasBedtimeSnoozeFire;
 - (bool)hasDismissed;
 - (bool)hasFired;
+- (bool)hasMediaID;
 - (bool)hasSnoozeFire;
+- (bool)hasSoundVolume;
 - (bool)hasTitle;
 - (bool)hasToneID;
 - (bool)hasVibeID;
@@ -107,6 +116,7 @@
 - (void)setActive:(unsigned int)arg1;
 - (void)setAlarmID:(id)arg1;
 - (void)setAllowsSnooze:(bool)arg1;
+- (void)setBedtimeDoNotDisturb:(bool)arg1;
 - (void)setBedtimeForSleepTracking:(double)arg1;
 - (void)setBedtimeHour:(unsigned int)arg1;
 - (void)setBedtimeMinute:(unsigned int)arg1;
@@ -119,7 +129,9 @@
 - (void)setHasBedtimeSnoozeFire:(bool)arg1;
 - (void)setHasDismissed:(bool)arg1;
 - (void)setHasFired:(bool)arg1;
+- (void)setHasMediaID:(bool)arg1;
 - (void)setHasSnoozeFire:(bool)arg1;
+- (void)setHasSoundVolume:(bool)arg1;
 - (void)setHour:(unsigned int)arg1;
 - (void)setIsEnabled:(bool)arg1;
 - (void)setIsSleepAlarm:(bool)arg1;

@@ -4,6 +4,7 @@
 
 @interface EKEventDetailAttendeesListView : UIView {
     double  _actualHeight;
+    double  _bottomSpacingForSpinner;
     long long  _columnAItems;
     long long  _columnBItems;
     NSArray * _finalizedNames;
@@ -14,12 +15,15 @@
     NSMutableArray * _inviteeNames;
     double  _maxHeight;
     bool  _shouldEvenOutBlocks;
+    bool  _showingSpinner;
+    UIActivityIndicatorView * _spinnerView;
     long long  _statusCounts;
     UIColor * _textColor;
     NSArray * _ungrouped;
     UIViewController * _viewController;
 }
 
+@property (nonatomic) double bottomSpacingForSpinner;
 @property (nonatomic) bool groupsNames;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UIColor *highlightedTextColor;
@@ -27,11 +31,16 @@
 @property (nonatomic, retain) NSArray *ungrouped;
 @property (nonatomic) UIViewController *viewController;
 
-+ (id)statusGlyphs;
-
 - (void).cxx_destruct;
+- (double)_calculateHeightForItemCounts:(long long)arg1;
+- (double)_calculateHeightForSpinnerDisplayMode;
+- (void)_createSpinnerViewIfNeeded;
+- (bool)_haveContentToDraw;
+- (bool)_haveInviteesToDraw;
+- (void)_layoutSpinner;
+- (void)_setShowingSpinner:(bool)arg1;
 - (bool)_shouldAlwaysDrawSingleColumn;
-- (double)calculateHeightForItemCounts:(long long)arg1;
+- (double)bottomSpacingForSpinner;
 - (double)calculatedHeight;
 - (void)contentSizeCategoryChanged;
 - (void)dealloc;
@@ -44,8 +53,10 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isHighlighted;
+- (void)layoutSubviews;
 - (double)maxColumnHeight;
 - (double)maxHeight;
+- (void)setBottomSpacingForSpinner:(double)arg1;
 - (void)setGroupsNames:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedTextColor:(id)arg1;
@@ -54,6 +65,7 @@
 - (void)setUngrouped:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setup;
+- (void)showSpinner;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textColor;
 - (id)ungrouped;

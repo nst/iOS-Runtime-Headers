@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_setPhraseSpotterBypassing:(bool)arg1;
+- (void)_setRaiseToSpeakBypassing:(bool)arg1;
 - (oneway void)clearVoiceTriggerCount;
 - (oneway void)enableTriggerEventXPCNotification:(bool)arg1;
 - (oneway void)enableVoiceTrigger:(bool)arg1 withAssertion:(id)arg2 timestamp:(double)arg3;
@@ -37,5 +38,6 @@
 - (oneway void)requestCurrentVoiceTriggerAssetDictionaryWithReply:(id /* block */)arg1;
 - (oneway void)resetAssertions;
 - (oneway void)setPhraseSpotterBypassing:(bool)arg1 timeout:(double)arg2 timestamp:(double)arg3;
+- (oneway void)setRaiseToSpeakBypassing:(bool)arg1 timeout:(double)arg2 timestamp:(double)arg3;
 
 @end

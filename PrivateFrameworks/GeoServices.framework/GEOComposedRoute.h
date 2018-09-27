@@ -43,6 +43,7 @@
     NSDate * _startDate;
     NSArray * _steps;
     GEOTransitSuggestedRoute * _suggestedRoute;
+    NSArray * _ticketedSegments;
     NSString * _trafficDescription;
     NSArray * _trafficIncidentOffsets;
     NSArray * _trafficIncidents;
@@ -283,6 +284,7 @@
 - (id)styleAttributes;
 - (id)suggestedRoute;
 - (bool)supportsSnapping;
+- (id)ticketingSegmentsForSelectedRides;
 - (unsigned int)trafficColorForDistanceRemaining:(double)arg1;
 - (unsigned long long)trafficColorOffsetAtIndex:(unsigned long long)arg1;
 - (unsigned int*)trafficColorOffsets;

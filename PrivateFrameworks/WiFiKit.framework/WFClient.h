@@ -54,6 +54,7 @@
 - (id)_getScoreForNetwork:(struct __WiFiNetwork { }*)arg1;
 - (void)_logWiFiManagerPropertyChange:(id)arg1 value:(bool)arg2;
 - (void)_managedConfigurationDidChange:(id)arg1;
+- (void)_preferredNetworksDidChange:(id)arg1;
 - (void)_removeNetwork:(struct __WiFiNetwork { }*)arg1;
 - (void)_setAutoJoinEnabled:(bool)arg1 forNetwork:(struct __WiFiNetwork { }*)arg2;
 - (void)_setupDefaultInterfaceWithManager:(struct __WiFiManagerClient { }*)arg1;

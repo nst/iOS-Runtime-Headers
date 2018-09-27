@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCNotificationListCell : UICollectionViewCell <MTContentSizeCategoryAdjusting, NCNotificationViewControllerObserving, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
+@interface NCNotificationListCell : UICollectionViewCell <NCLegibilitySettingsAdjusting, NCNotificationViewControllerObserving, PLContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     unsigned long long  _actionsRevealState;
     bool  _adjustsFontForContentSizeCategory;
     NSString * _backgroundGroupName;
@@ -82,7 +82,6 @@
 - (void)_performSideSwipeHinting;
 - (void)_performSideSwipeHintingHideAnimation;
 - (void)_performSideSwipeHintingRevealAnimation;
-- (void)_removePanGestureRecognizer;
 - (void)_resetActionButtonViews;
 - (void)_resetClipping;
 - (void)_resetNotificationCellPositionAnimated:(bool)arg1 completion:(id /* block */)arg2;
@@ -101,11 +100,13 @@
 - (void)_updateTargetPosition:(double)arg1;
 - (unsigned long long)actionsRevealState;
 - (bool)adjustForContentSizeCategoryChange;
+- (void)adjustForLegibilitySettingsChange:(id)arg1;
 - (bool)adjustsFontForContentSizeCategory;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)backgroundGroupName;
 - (void)cellClearButtonPressed:(id)arg1;
 - (void)cellOpenButtonPressed:(id)arg1;
+- (void)cellSettingsButtonPressed:(id)arg1;
 - (void)cellViewButtonPressed:(id)arg1;
 - (id)contentViewController;
 - (void)dealloc;
@@ -128,6 +129,7 @@
 - (id)panGestureRecognizer;
 - (double)panGestureStartingPosition;
 - (void)prepareForReuse;
+- (void)resetCellActionButtons;
 - (void)resetCellScrollPositionAnimated:(bool)arg1;
 - (id)rightActionButtonsClippingRevealView;
 - (id)rightActionButtonsView;

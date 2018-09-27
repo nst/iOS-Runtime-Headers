@@ -12,7 +12,7 @@
 @property (nonatomic) long long options;
 @property (nonatomic, copy) NSString *reason;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithMode:(long long)arg1 options:(long long)arg2 reason:(id)arg3;
 - (long long)mode;
 - (long long)options;

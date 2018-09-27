@@ -2,23 +2,30 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSeriesSampleEntity : HDSampleEntity
+@interface HDSeriesSampleEntity : HDSampleEntity <_HDSeriesFreezeJournalEntrySeries>
 
-+ (bool)_deleteSeriesWithID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
 + (long long)_insertionEra;
-+ (bool)_replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 profile:(id)arg3 error:(id*)arg4;
-+ (id)_seriesSampleWithID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 + (id)additionalPredicateForEnumeration;
-+ (id)columnsDefinition;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)databaseTable;
++ (bool)deleteSeriesWithID:(id)arg1 deleteHFDData:(bool)arg2 insertDeletedObject:(bool)arg3 profile:(id)arg4 database:(id)arg5 error:(id*)arg6;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 authorizationFilter:(id /* block */)arg4;
++ (id)foreignKeys;
 + (id)freezeSeriesWithIdentifier:(id)arg1 metadata:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 + (id /* block */)objectInsertionFilterForProfile:(id)arg1;
++ (bool)replaceObjectID:(id)arg1 replacementObjectID:(id)arg2 deleteOriginalHFDData:(bool)arg3 insertDeletedObject:(bool)arg4 profile:(id)arg5 database:(id)arg6 error:(id*)arg7;
++ (id)seriesSampleWithID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 + (void)updateInsertionEra;
 
+- (id)HFDKeyWithDatabase:(id)arg1 error:(id*)arg2;
 - (bool)canAddDatumInDatabase:(id)arg1 error:(id*)arg2;
-- (bool)freezeWithDatabase:(id)arg1 error:(id*)arg2;
+- (id)freezeWithDatabase:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 - (bool)updateSampleCount:(long long)arg1 withDatabase:(id)arg2 error:(id*)arg3;
 
 @end

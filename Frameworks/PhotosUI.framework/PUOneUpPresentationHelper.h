@@ -35,6 +35,7 @@
         bool respondsToWillPresentOneUpViewController; 
         bool respondsToDidDismissOneUpViewController; 
         bool respondsToViewHostingGestureRecognizers; 
+        bool respondsToViewHostingTilingView; 
         bool respondsToScrollView; 
         bool respondsToPreferredBarStyle; 
         bool respondsToShouldLeaveContentOnSecondScreen; 
@@ -44,6 +45,7 @@
         bool respondsToPreventRevealInMomentAction; 
         bool respondsToPreferredPresentationOrientation; 
         bool respondsToEnableFreezeLayoutOnOrientationChange; 
+        bool respondsToAdditionalOptions; 
     }  _delegateFlags;
     struct { 
         bool presentationInfo; 

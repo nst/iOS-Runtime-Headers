@@ -20,6 +20,7 @@
 + (unsigned long long)dataSetIndexForRep:(id)arg1 buildStage:(unsigned long long)arg2;
 + (unsigned long long)numberOfFadingBuildStages;
 
+- (void).cxx_destruct;
 - (void)advanceStage;
 - (id)chartLayout;
 - (void)clearParent;

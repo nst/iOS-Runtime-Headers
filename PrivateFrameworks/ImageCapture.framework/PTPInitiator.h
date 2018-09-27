@@ -22,6 +22,7 @@
     PTPEventPacket * _event;
     NSMutableArray * _eventQueue;
     unsigned long long  _excessReceivedDataSize;
+    unsigned long long  _icplState;
     unsigned int  _lastAddedObject;
     unsigned int  _maxMetadataBufferSize;
     char * _metadataBuffer;
@@ -44,7 +45,7 @@
 - (id)UUIDString;
 - (bool)allowKeepAwake;
 - (void)appendDataBuffer:(void*)arg1 length:(unsigned long long)arg2;
-- (int)aptpRequestDataForFiles:(id)arg1 maxSize:(unsigned int)arg2 actualSize:(unsigned int*)arg3 useBuffer:(char *)arg4 forOperation:(unsigned int)arg5;
+- (long long)aptpRequestDataForFiles:(id)arg1 maxSize:(unsigned int)arg2 actualSize:(unsigned int*)arg3 useBuffer:(char *)arg4 forOperation:(unsigned int)arg5;
 - (id)aptpRetrieveDataForFiles:(unsigned short)arg1 maxSize:(unsigned int)arg2 actualSize:(unsigned int*)arg3 useBuffer:(char *)arg4;
 - (void)cancel;
 - (bool)closeSession;
@@ -78,9 +79,9 @@
 - (id)initiator;
 - (bool)isAccessRestrictedAppleDevice;
 - (bool)isApplePTPCapable;
+- (bool)isICloudPhotosEnabled;
 - (void)issueCancelEvent:(unsigned int)arg1;
 - (void)issueCancelRequest:(unsigned int)arg1;
-- (id)itemForObjectHandle:(unsigned int)arg1;
 - (unsigned int)maxMetadataBufferSize;
 - (char *)metadataBuffer;
 - (id)metadataFromFile:(id)arg1;
@@ -93,7 +94,7 @@
 - (bool)openSession;
 - (id)partialDataFromFile:(id)arg1 fromOffset:(unsigned int)arg2 maxSize:(unsigned int)arg3 actualSize:(unsigned int*)arg4 useBuffer:(char *)arg5;
 - (void)processUnhandledEvents;
-- (void)readStorages;
+- (bool)readStorages;
 - (id)refreshAssignedDeviceName;
 - (bool)requestPending;
 - (bool)resetDevicePropertyValueForProperty:(unsigned short)arg1;
@@ -101,6 +102,7 @@
 - (unsigned short)savePartialFile:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
 - (unsigned short)savePartialFileMD5:(id)arg1 fromOffset:(unsigned long long)arg2 size:(unsigned long long)arg3 to:(id)arg4;
 - (bool)sendHostMediaCapabilities;
+- (void)sendProgressNotificationForObject:(unsigned long long)arg1 downloadedBytes:(unsigned long long)arg2 percentComplete:(double)arg3;
 - (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 excessReceivedDataSize:(unsigned long long*)arg3 timeout:(double)arg4;
 - (id)sendRequest:(id)arg1 andReceiveData:(id)arg2 maxDataSize:(unsigned int)arg3 excessReceivedDataSize:(unsigned long long*)arg4 timeout:(double)arg5;
 - (id)sendRequest:(id)arg1 andSendData:(id)arg2;
@@ -117,6 +119,7 @@
 - (id)storageIDs;
 - (id)storageInfo:(unsigned int)arg1;
 - (id)thumbDataFromFile:(id)arg1 maxSize:(unsigned int)arg2 actualSize:(unsigned int*)arg3 useBuffer:(char *)arg4;
+- (id)thumbDataFromFile:(id)arg1 width:(unsigned int)arg2 actualSize:(unsigned int*)arg3 useBuffer:(char *)arg4;
 - (double)timeOffset;
 - (void)transferObject:(id)arg1;
 - (id)transport;

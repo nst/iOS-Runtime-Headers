@@ -54,6 +54,7 @@
 - (bool)openWithRecoveryHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)platformObject;
 - (bool)releaseFileURL:(id)arg1 error:(id*)arg2;
+- (bool)resetWithError:(id*)arg1;
 - (id)retainFileURLForIdentity:(id)arg1 resourceType:(unsigned long long)arg2 error:(id*)arg3;
 - (void)setDeleteImmediately:(bool)arg1;
 - (void)setKeepOriginals:(bool)arg1;

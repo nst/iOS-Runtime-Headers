@@ -40,7 +40,7 @@
     unsigned int  cbBlits;
     unsigned int  cbDispatches;
     unsigned int  cbDraws;
-    unsigned int  cbTextureBarriers;
+    unsigned int  cbMemoryBarriers;
     struct MTLTelemetryStatisticUIRec { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned int x4; } * computeEncoderDispatchDistribution;
     unsigned int  depthClipModeClampCount;
     struct MTLTelemetryDispatchDistributionRec { unsigned int x1; struct MTLTelemetryStatisticUIRec { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned long long x_2_1_3; unsigned int x_2_1_4; } x2; struct MTLTelemetryStatisticUIRec { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned long long x_3_1_3; unsigned int x_3_1_4; } x3; struct MTLTelemetryStatisticUIRec { unsigned int x_4_1_1; unsigned int x_4_1_2; unsigned long long x_4_1_3; unsigned int x_4_1_4; } x4; struct MTLTelemetryStatisticUIRec { unsigned int x_5_1_1; unsigned int x_5_1_2; unsigned long long x_5_1_3; unsigned int x_5_1_4; } x5; struct MTLTelemetryStatisticUIRec { unsigned int x_6_1_1; unsigned int x_6_1_2; unsigned long long x_6_1_3; unsigned int x_6_1_4; } x6; struct MTLTelemetryStatisticUIRec { unsigned int x_7_1_1; unsigned int x_7_1_2; unsigned long long x_7_1_3; unsigned int x_7_1_4; } x7; struct MTLTelemetryStatisticUIRec { unsigned int x_8_1_1; unsigned int x_8_1_2; unsigned long long x_8_1_3; unsigned int x_8_1_4; } x8; struct MTLTelemetryStatisticUIRec { unsigned int x_9_1_1; unsigned int x_9_1_2; unsigned long long x_9_1_3; unsigned int x_9_1_4; } x9; } * dispatchDistribution;
@@ -74,7 +74,9 @@
             } __p3_; 
         } __table_; 
     }  renderTargetMap;
+    struct MTLTelemetryScissorRectDistributionRec { struct MTLTelemetryStatisticUIRec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned long long x_1_1_3; unsigned int x_1_1_4; } x1; struct MTLTelemetryStatisticFRec { float x_2_1_1; float x_2_1_2; float x_2_1_3; unsigned int x_2_1_4; } x2; struct MTLTelemetryStatisticFRec { float x_3_1_1; float x_3_1_2; float x_3_1_3; unsigned int x_3_1_4; } x3; } * scissorRectDistribution;
     struct MTLTelemetryStatisticUIRec { unsigned int x1; unsigned int x2; unsigned long long x3; unsigned int x4; } * textureBindCount;
+    struct MTLTelemetryViewportDistributionRec { struct MTLTelemetryStatisticUIRec { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned long long x_1_1_3; unsigned int x_1_1_4; } x1; struct MTLTelemetryStatisticFRec { float x_2_1_1; float x_2_1_2; float x_2_1_3; unsigned int x_2_1_4; } x2; struct MTLTelemetryStatisticFRec { float x_3_1_1; float x_3_1_2; float x_3_1_3; unsigned int x_3_1_4; } x3; struct MTLTelemetryStatisticFRec { float x_4_1_1; float x_4_1_2; float x_4_1_3; unsigned int x_4_1_4; } x4; struct MTLTelemetryStatisticFRec { float x_5_1_1; float x_5_1_2; float x_5_1_3; unsigned int x_5_1_4; } x5; } * viewportDistribution;
 }
 
 - (id).cxx_construct;
@@ -82,7 +84,6 @@
 - (id)blitCommandEncoder;
 - (void)commit;
 - (id)computeCommandEncoder;
-- (id)computeCommandEncoderWithParallelExecution;
 - (void)dealloc;
 - (void)initDistributions;
 - (id)initWithCommandBuffer:(id)arg1 commandQueue:(id)arg2;

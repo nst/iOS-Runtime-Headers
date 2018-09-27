@@ -83,12 +83,13 @@
 @property (retain) AVPlayerController *playerControllerProxy;
 @property (getter=isPlaying) bool playing;
 @property (getter=isPlayingOnExternalScreen, readonly) bool playingOnExternalScreen;
-@property (getter=isPlayingOnSecondScreen, readonly) bool playingOnSecondScreen;
+@property (getter=isPlayingOnSecondScreen, nonatomic) bool playingOnSecondScreen;
 @property double rate;
 @property (retain) NSArray *seekableTimeRanges;
 @property double seekableTimeRangesLastModifiedTime;
 @property long long status;
 @property (retain) AVValueTiming *timing;
+@property double volume;
 
 + (id)keyPathsForValuesAffectingCanScanForward;
 + (id)keyPathsForValuesAffectingCanSeekToBeginning;
@@ -204,11 +205,13 @@
 - (void)setPlaybackSessionInterface:(struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*)arg1;
 - (void)setPlayerControllerProxy:(id)arg1;
 - (void)setPlaying:(bool)arg1;
+- (void)setPlayingOnSecondScreen:(bool)arg1;
 - (void)setRate:(double)arg1;
 - (void)setSeekableTimeRanges:(id)arg1;
 - (void)setSeekableTimeRangesLastModifiedTime:(double)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setTiming:(id)arg1;
+- (void)setVolume:(double)arg1;
 - (void)skipBackwardThirtySeconds:(id)arg1;
 - (long long)status;
 - (id)timing;
@@ -216,5 +219,7 @@
 - (void)togglePlayback:(id)arg1;
 - (void)togglePlaybackEvenWhenInBackground:(id)arg1;
 - (void)updateMinMaxTiming;
+- (double)volume;
+- (void)volumeChanged:(double)arg1;
 
 @end

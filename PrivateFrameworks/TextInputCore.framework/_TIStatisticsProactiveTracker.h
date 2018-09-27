@@ -13,6 +13,7 @@
     PETScalarEventTracker * _personalizationEngagementTracker;
     PETScalarEventTracker * _personalizationOfferTracker;
     PETScalarEventTracker * _personalizationWordAcceptanceTracker;
+    TIKeyboardCandidate * _responseKitEntryOffered;
     PETScalarEventTracker * _selectedCategoryEventTracker;
     PETScalarEventTracker * _selectedEventTracker;
     PETScalarEventTracker * _suggestedCategoryEventTracker;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) PETScalarEventTracker *personalizationEngagementTracker;
 @property (nonatomic, retain) PETScalarEventTracker *personalizationOfferTracker;
 @property (nonatomic, retain) PETScalarEventTracker *personalizationWordAcceptanceTracker;
+@property (nonatomic, retain) TIKeyboardCandidate *responseKitEntryOffered;
 @property (nonatomic, retain) PETScalarEventTracker *selectedCategoryEventTracker;
 @property (nonatomic, retain) PETScalarEventTracker *selectedEventTracker;
 @property (nonatomic, retain) PETScalarEventTracker *suggestedCategoryEventTracker;
@@ -44,7 +46,7 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)engagementCategoryEventDescriptionTracker;
 - (id)engagementEventDescriptionTracker;
 - (id)failureCategoryEventDescriptionTracker;
@@ -56,6 +58,7 @@
 - (id)personalizationEngagementTracker;
 - (id)personalizationOfferTracker;
 - (id)personalizationWordAcceptanceTracker;
+- (id)responseKitEntryOffered;
 - (id)selectedCategoryEventTracker;
 - (id)selectedEventTracker;
 - (void)setEngagementCategoryEventDescriptionTracker:(id)arg1;
@@ -68,6 +71,7 @@
 - (void)setPersonalizationEngagementTracker:(id)arg1;
 - (void)setPersonalizationOfferTracker:(id)arg1;
 - (void)setPersonalizationWordAcceptanceTracker:(id)arg1;
+- (void)setResponseKitEntryOffered:(id)arg1;
 - (void)setSelectedCategoryEventTracker:(id)arg1;
 - (void)setSelectedEventTracker:(id)arg1;
 - (void)setSuggestedCategoryEventTracker:(id)arg1;

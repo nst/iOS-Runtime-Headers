@@ -3,12 +3,14 @@
  */
 
 @interface PLCloudBatchDownloader : NSObject {
+    PLKeywordManager * _keywordManager;
     PLCloudPhotoLibraryManager * _manager;
     PLPhotoLibrary * _photoLibrary;
 }
 
 + (id)_adjustmentStateDictionaryForComparingIncomingFaceRecordForAsset:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_debugPrintAlbumOrderForAssets:(id)arg1;
 - (void)_dedupePersonsInSyncContext:(id)arg1;
 - (void)_dropDeferredRebuildFacesInPhotoLibrary:(id)arg1;
@@ -23,14 +25,16 @@
 - (id)_handlePersonRecords:(id)arg1 inLibrary:(id)arg2 includesTiboSchema:(bool*)arg3;
 - (void)_handleRelationsForAlbumRecords:(id)arg1 inLibrary:(id)arg2;
 - (void)_handleRelationsForAssetRecords:(id)arg1 inLibrary:(id)arg2;
+- (void)_handleScopeChanges:(id)arg1 inLibrary:(id)arg2;
+- (void)_handleSuggestionRecords:(id)arg1 inLibrary:(id)arg2;
 - (void)_mergeExistingPersonsWithPerson:(id)arg1 inPhotoLibrary:(id)arg2;
 - (id)_mergeTargetFromPersons:(id)arg1;
 - (void)_mergeUpdatedPersons:(id)arg1 inLibrary:(id)arg2;
 - (void)_processNotificationUpdatesForMemories:(id)arg1;
+- (void)_processNotificationUpdatesForSuggestions:(id)arg1;
 - (void)_saveIfNeeded;
 - (void)_triggerBackgroundDownloadFailureForResources:(id)arg1;
-- (void)dealloc;
-- (id)deletedRecordUuidsFromBatch:(id)arg1;
+- (id)deletedRecordsFromBatch:(id)arg1;
 - (id)handleIncomingBatch:(id)arg1;
 - (id)initWithLibrary:(id)arg1 withManager:(id)arg2;
 

@@ -77,7 +77,7 @@
 @property (nonatomic) unsigned long long lastUpdateStatus;
 @property (nonatomic) double latitude;
 @property (nonatomic, copy) NSURL *link;
-@property (nonatomic, copy) CLLocation *location;
+@property (copy) CLLocation *location;
 @property (nonatomic, readonly) NSString *locationID;
 @property (nonatomic) bool lockedForDemoMode;
 @property (nonatomic) double longitude;
@@ -144,6 +144,7 @@
 - (double)distanceToLocation:(id)arg1;
 - (id)feelsLike;
 - (id)fullName;
+- (id)getName;
 - (unsigned long long)hash;
 - (float)heatIndex;
 - (id)hourlyForecasts;

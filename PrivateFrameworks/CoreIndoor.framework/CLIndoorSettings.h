@@ -40,7 +40,6 @@
             } dummy_; 
         } m_storage; 
     }  _indoorTilePrefetchRadius;
-    long long  _operatingMode;
     bool  _pipelinedEnabled;
     struct optional<double> { 
         bool m_initialized; 
@@ -123,7 +122,6 @@
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } indoorPrefetchClusterMergeRadius;
 @property (nonatomic) struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } indoorTilePrefetchMaxCount;
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } indoorTilePrefetchRadius;
-@property (nonatomic) long long operatingMode;
 @property (nonatomic) bool pipelinedEnabled;
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } prefetchClusterMergeRadius;
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } regionalPrefetchClusterMergeRadius;
@@ -151,7 +149,6 @@
 - (struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })indoorTilePrefetchRadius;
 - (id)init;
 - (id)initWithSettings:(id)arg1;
-- (long long)operatingMode;
 - (bool)pipelinedEnabled;
 - (const struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; }*)prefetchClusterMergeRadius;
 - (struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })regionalPrefetchClusterMergeRadius;
@@ -166,7 +163,6 @@
 - (void)setIndoorPrefetchClusterMergeRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setIndoorTilePrefetchMaxCount:(struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setIndoorTilePrefetchRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
-- (void)setOperatingMode:(long long)arg1;
 - (void)setPipelinedEnabled:(bool)arg1;
 - (void)setPrefetchClusterMergeRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setRegionalPrefetchClusterMergeRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;

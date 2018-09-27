@@ -5,7 +5,6 @@
 @interface _OSLogIndex : NSObject {
     NSString * _file;
     NSMutableArray * _fileq;
-    NSMutableArray * _files;
     _OSLogCollectionReference * _lcr;
     struct { 
         struct _os_log_index_timeref { 
@@ -16,6 +15,10 @@
             unsigned char uuid[16]; 
             unsigned long long continuous; 
         } olim_oldestspecial; 
+        struct _os_log_index_timeref { 
+            unsigned char uuid[16]; 
+            unsigned long long continuous; 
+        } olim_oldestsignpost; 
         struct _os_log_index_timeref { 
             unsigned char uuid[16]; 
             unsigned long long continuous; 
@@ -52,6 +55,7 @@
 - (bool)_buildFileIndex:(id*)arg1;
 - (bool)_buildSingleFileIndex:(id*)arg1;
 - (void)_enumerateEntriesInRange:(struct os_timesync_range_s { struct os_trace_uuid_map_s {} *x1; unsigned long long x2; unsigned long long x3; unsigned char x4[0][16]; }*)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)_foreachIndexFile:(id /* block */)arg1;
 - (bool)_openTimesyncDatabase:(id*)arg1;
 - (bool)_readArchiveMetadata:(id*)arg1;
 - (bool)addReferenceToIndex:(id)arg1 error:(id*)arg2;
@@ -59,7 +63,7 @@
 - (unsigned long long)endWalltime;
 - (void)enumerateEntriesFrom:(unsigned long long)arg1 to:(unsigned long long)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateEntriesFromLastBootWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateEntriesInRange:(struct os_timesync_range_s { struct os_trace_uuid_map_s {} *x1; unsigned long long x2; unsigned long long x3; unsigned char x4[0][16]; }*)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateEntriesInRange:(struct os_timesync_range_s { struct os_trace_uuid_map_s {} *x1; unsigned long long x2; unsigned long long x3; unsigned char x4[0][16]; }*)arg1 options:(unsigned int)arg2 usingCatalogFilter:(id)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateEntriesUsingBlock:(id /* block */)arg1;
 - (void)enumerateFilesUsingBlock:(id /* block */)arg1;
 - (id)init;

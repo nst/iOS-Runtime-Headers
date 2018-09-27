@@ -28,7 +28,6 @@
     BRCAccountSession * _session;
     unsigned int  _state;
     NSMutableSet * _targetAppLibraries;
-    NSObject<OS_dispatch_queue> * _targetAppLibraryQueue;
     NSMutableSet * _targetSharedServerZones;
     brc_task_tracker * _tracker;
     BRCZoneRowID * _zoneRowID;
@@ -105,6 +104,8 @@
 - (void)cancelWriteCoordinatorForItem:(id)arg1;
 - (void)clearStateBits:(unsigned int)arg1;
 - (void)close;
+- (void)computeDocumentEvictableSizeUsageWithDB:(id)arg1 reply:(id /* block */)arg2;
+- (void)computeDocumentEvictableSizeUsageWithLowTimeDelta:(double)arg1 medTimeDelta:(double)arg2 highTimeDelta:(double)arg3 db:(id)arg4 reply:(id /* block */)arg5;
 - (id)containerMetadata;
 - (id)containerMetadataEtag;
 - (id)containerMetadataFilledWithTCCInfo;
@@ -124,9 +125,8 @@
 - (void)didFindLostItem:(id)arg1 oldAppLibrary:(id)arg2;
 - (void)didReceiveHandoffRequest;
 - (void)didRemoveDocumentsFolder;
+- (void)didUpdateDocumentScopePublic;
 - (unsigned long long)documentCountWithDB:(id)arg1;
-- (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(double)arg1 db:(id)arg2;
-- (unsigned long long)documentEvictableSizeUsageWithDB:(id)arg1;
 - (unsigned long long)documentSizeUsageWithDB:(id)arg1;
 - (id)documentsFolderItemID;
 - (id)documentsPath;

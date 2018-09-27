@@ -20,6 +20,7 @@
 + (id)lookupAppNames;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)appNames;
 - (id)cache;
 - (void)cacheNames:(id)arg1;

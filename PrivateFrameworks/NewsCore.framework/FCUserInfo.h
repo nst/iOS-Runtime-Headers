@@ -37,6 +37,8 @@
 @property (nonatomic, retain) FCMTWriterMutexLock *userInfoLock;
 @property (nonatomic, copy) NSDate *userStartDate;
 
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
 + (id)backingRecordIDs;
 + (id)backingRecordZoneIDs;
 + (long long)commandQueueUrgency;
@@ -46,6 +48,7 @@
 + (id)iCloudDataKeys;
 + (id)localStoreFilename;
 + (unsigned long long)localStoreVersion;
++ (id)overrideFeldsparID;
 + (bool)requiresBatchedSync;
 + (bool)requiresHighPriorityFirstSync;
 + (bool)requiresPushNotificationSupport;
@@ -110,5 +113,10 @@
 - (id)userInfoLock;
 - (id)userStartDate;
 - (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
+
+- (id)stocks_generateFeldsparIDIfNeeded;
+- (id)stocks_resetFeldsparID;
 
 @end

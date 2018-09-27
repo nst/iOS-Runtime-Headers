@@ -32,12 +32,15 @@
 - (bool)_isFaceTimeAudioAvailable;
 - (bool)_isFaceTimeVideoAvailable;
 - (bool)_isTelephonyDevice;
+- (id)_preferredCallServiceToIDMap;
+- (bool)_preferredRoutesDisabledViaServerBag;
 - (void)_refreshFaceTimeIDSStatusWithCompletion:(id /* block */)arg1;
+- (void)_setPreferredCallServiceToIDMap:(id)arg1;
 - (bool)_showFaceTimeVideoButtonForEntity:(id)arg1;
 - (bool)_showMessageButtonForEntity:(id)arg1;
 - (bool)_showPhoneButtonForEntity:(id)arg1;
 - (void)_startCallWithEntity:(id)arg1 phoneAddress:(id)arg2;
-- (void)_startCommunicationForEntity:(id)arg1;
+- (void)_startCommunicationForEntity:(id)arg1 usePreferredRouteIfAvailable:(bool)arg2;
 - (void)_startFacetimeCommunicationForEntity:(id)arg1 audioOnly:(bool)arg2;
 - (void)_startMessageWithEntity:(id)arg1;
 - (void)_updateViewModels;
@@ -49,13 +52,16 @@
 - (id)facetimeAudioIDStatuses;
 - (id)facetimeIDStatuses;
 - (id)initWithConversation:(id)arg1 delegate:(id)arg2;
+- (unsigned long long)preferredCallServiceForID:(id)arg1;
 - (id)serviceAvailabilityKey;
 - (void)setContactsViewModels:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFacetimeAudioIDStatuses:(id)arg1;
 - (void)setFacetimeIDStatuses:(id)arg1;
+- (void)setPreferredCallService:(unsigned long long)arg1 forID:(id)arg2;
 - (void)setServiceAvailabilityKey:(id)arg1;
 - (void)startCommunicationForEntity:(id)arg1 action:(unsigned long long)arg2 address:(id)arg3;
+- (void)startCommunicationForEntity:(id)arg1 action:(unsigned long long)arg2 address:(id)arg3 usePreferredRouteIfAvailable:(bool)arg4;
 
 @end

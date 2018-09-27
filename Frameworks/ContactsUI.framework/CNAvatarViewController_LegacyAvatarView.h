@@ -6,6 +6,7 @@
     CNAvatarView * _avatarView;
     CNContactStore * _contactStore;
     NSArray * _contacts;
+    <NSObject><CNAvatarViewControllerDelegate> * _delegate;
     <CNUILikenessRendering> * _imageRenderer;
     PRPersonaStore * _personaStore;
     <CNSchedulerProvider> * _schedulerProvider;
@@ -16,6 +17,7 @@
 @property (nonatomic) CNAvatarView *avatarView;
 @property (nonatomic, readonly) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NSObject><CNAvatarViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNUILikenessRendering> *imageRenderer;
@@ -29,7 +31,9 @@
 - (id)avatarView;
 - (id)contactStore;
 - (id)contacts;
+- (id)delegate;
 - (id)descriptorForRequiredKeys;
+- (void)didUpdateContentForAvatarView:(id)arg1;
 - (id)imageRenderer;
 - (id)initWithSettings:(id)arg1;
 - (bool)isThreeDTouchEnabled;
@@ -39,6 +43,7 @@
 - (id)schedulerProvider;
 - (void)setAvatarView:(id)arg1;
 - (void)setContacts:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setThreeDTouchEnabled:(bool)arg1;
 - (unsigned long long)style;

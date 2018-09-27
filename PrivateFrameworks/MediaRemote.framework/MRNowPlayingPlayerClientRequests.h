@@ -6,27 +6,23 @@
     NSOperationQueue * _enquedNowPlayingInfoAssetRequests;
     NSOperationQueue * _enquedNowPlayingInfoRequests;
     _MRPlaybackQueueProtobuf * _playbackQueue;
-    MRPlaybackQueuePlayerClient * _playbackQueueClient;
     NSMutableDictionary * _playbackQueueCompletions;
     unsigned int  _playbackState;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _responseQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
+    MRPlaybackQueueSubscriptionController * _subscriptionController;
     NSMutableDictionary * _transactionCallbacks;
     NSMutableDictionary * _transactions;
 }
 
-@property (nonatomic, readonly) _MRPlaybackQueueProtobuf *playbackQueue;
-@property (nonatomic, readonly) MRPlaybackQueuePlayerClient *playbackQueueClient;
-@property (nonatomic, readonly) unsigned int playbackState;
+@property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
+@property (nonatomic) unsigned int playbackState;
 @property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
+@property (nonatomic, readonly) MRPlaybackQueueSubscriptionController *subscriptionController;
 
 - (void).cxx_destruct;
-- (void)_handleContentItemArtworkDidChangeNotification:(id)arg1;
-- (void)_handleContentItemsDidChangeNotification:(id)arg1;
 - (void)_handleEnqueuedPlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handlePlaybackQueueDidChangeNotification:(id)arg1;
-- (void)_handlePlaybackStateDidChangeNotification:(id)arg1;
 - (void)_handleTransactionPackets:(id)arg1 packets:(id)arg2 completion:(id /* block */)arg3;
 - (void)_registerDefaultCallbacks;
 - (id)_transactionDestintationForName:(unsigned long long)arg1;
@@ -37,13 +33,17 @@
 - (void)enqueuePlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithPlayerPath:(id)arg1;
 - (id)playbackQueue;
-- (id)playbackQueueClient;
 - (unsigned int)playbackState;
 - (id)playerPath;
 - (void)receiveTransaction:(unsigned long long)arg1 fromMessage:(id)arg2;
 - (void)removePlaybackQueueCompletionForRequest:(id)arg1;
 - (void)restoreNowPlayingClientState;
 - (void)setPlaybackQueue:(id)arg1;
+- (void)setPlaybackState:(unsigned int)arg1;
+- (id)subscriptionController;
 - (id)transactionCallbacksForName:(unsigned long long)arg1;
+- (void)updateContentItemArtwork:(id)arg1;
+- (void)updateContentItems:(id)arg1;
+- (void)updatePlaybackQueue:(id)arg1;
 
 @end

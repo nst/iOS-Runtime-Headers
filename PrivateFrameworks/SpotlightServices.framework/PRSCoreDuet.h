@@ -3,28 +3,20 @@
  */
 
 @interface PRSCoreDuet : NSObject {
-    CDAttribute * _bundleIdAttribute;
-    CDSession * _cdSession;
-    CDAttribute * _spotlightAttr;
+    _DKKnowledgeStore * _knowledgeStore;
+    _DKEventStream * _spotlightStream;
 }
 
-@property (retain) CDAttribute *bundleIdAttribute;
-@property (retain) CDSession *cdSession;
-@property (retain) CDAttribute *spotlightAttr;
+@property (retain) _DKKnowledgeStore *knowledgeStore;
+@property (retain) _DKEventStream *spotlightStream;
 
 - (void).cxx_destruct;
-- (void)addResultCategoryAndGroupToHistory:(id)arg1 groupName:(id)arg2 cost:(unsigned long long)arg3 error:(id)arg4;
-- (void)addResultCategoryToHistory:(id)arg1 cost:(unsigned long long)arg2 error:(id)arg3;
-- (id)bundleIdAttribute;
-- (id)cdSession;
-- (id)getRankedCategories;
+- (void)addResultCategoryAndGroupToHistory:(id)arg1 groupName:(id)arg2 error:(id)arg3;
 - (id)getRankedCategoriesDictionaryWithPredictionWindow:(double)arg1 predictionInterval:(double)arg2;
-- (id)getRankedCategoriesWithPredictionWindow:(double)arg1 predictionInterval:(double)arg2;
-- (id)getTopApps;
-- (id)initWithDuetClientID:(unsigned long long)arg1 attributeString:(id)arg2;
-- (void)setBundleIdAttribute:(id)arg1;
-- (void)setCdSession:(id)arg1;
-- (void)setSpotlightAttr:(id)arg1;
-- (id)spotlightAttr;
+- (id)initWithStreamName:(id)arg1;
+- (id)knowledgeStore;
+- (void)setKnowledgeStore:(id)arg1;
+- (void)setSpotlightStream:(id)arg1;
+- (id)spotlightStream;
 
 @end

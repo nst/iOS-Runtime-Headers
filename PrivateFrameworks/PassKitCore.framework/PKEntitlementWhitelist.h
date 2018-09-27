@@ -48,7 +48,11 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_arrayValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
+- (bool)_boolValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
+- (void*)_copyValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
 - (void)_probeEntitlementsWithConnection:(id)arg1;
+- (id)_stringValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
 - (bool)addSilently;
 - (bool)allAccess;
 - (id)applicationID;

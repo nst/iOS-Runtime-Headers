@@ -7,6 +7,7 @@
     double  _contentToLabelPadding;
     UIView * _contentView;
     UIView * _contentViewSizingView;
+    bool  _inBridge;
     UILabel * _secondarySubtitleLabel;
     NSString * _secondarySubtitleText;
     UILabel * _subtitleLabel;
@@ -18,6 +19,7 @@
 @property (nonatomic) double contentToLabelPadding;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic, readonly) UIView *contentViewSizingView;
+@property (nonatomic) bool inBridge;
 @property (nonatomic, retain) UILabel *secondarySubtitleLabel;
 @property (nonatomic, copy) NSString *secondarySubtitleText;
 @property (nonatomic, retain) UILabel *subtitleLabel;
@@ -31,12 +33,14 @@
 - (double)contentToLabelPadding;
 - (id)contentView;
 - (id)contentViewSizingView;
-- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4;
+- (bool)inBridge;
+- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4 runningInBridge:(bool)arg5;
 - (void)layoutSubviews;
 - (id)secondarySubtitleLabel;
 - (id)secondarySubtitleText;
 - (void)setBottomPadding:(double)arg1;
 - (void)setContentToLabelPadding:(double)arg1;
+- (void)setInBridge:(bool)arg1;
 - (void)setSecondarySubtitleLabel:(id)arg1;
 - (void)setSecondarySubtitleText:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

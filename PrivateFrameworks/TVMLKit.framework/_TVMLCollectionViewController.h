@@ -103,6 +103,7 @@
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (id)indexPathsByIndexTitle;
 - (id)indexTitlesForCollectionView:(id)arg1;
+- (id)init;
 - (id)lastFocusedIndexPath;
 - (void)loadView;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;

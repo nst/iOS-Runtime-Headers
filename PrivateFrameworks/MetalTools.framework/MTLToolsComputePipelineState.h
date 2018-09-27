@@ -15,6 +15,7 @@
 @property (readonly) unsigned long long staticThreadgroupMemoryLength;
 @property (readonly) Class superclass;
 @property (readonly) unsigned long long threadExecutionWidth;
+@property (readonly) unsigned long long uniqueIdentifier;
 
 - (void)acceptVisitor:(id)arg1;
 - (void)dealloc;
@@ -23,7 +24,9 @@
 - (unsigned long long)imageblockMemoryLengthForDimensions:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
 - (id)label;
 - (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (unsigned long long)resourceIndex;
 - (unsigned long long)staticThreadgroupMemoryLength;
 - (unsigned long long)threadExecutionWidth;
+- (unsigned long long)uniqueIdentifier;
 
 @end

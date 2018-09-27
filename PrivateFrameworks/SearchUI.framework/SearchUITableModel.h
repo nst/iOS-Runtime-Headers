@@ -26,7 +26,7 @@
 - (id)indexPathForResult:(id)arg1;
 - (long long)numberOfRowsForSection:(long long)arg1;
 - (unsigned long long)numberOfSections;
-- (void)replaceResult:(id)arg1 withResult:(id)arg2 inResultSection:(id)arg3 completion:(id /* block */)arg4;
+- (void)replaceResult:(id)arg1 withResult:(id)arg2 completion:(id /* block */)arg3;
 - (id)resultForIndexPath:(id)arg1;
 - (id)rowModelForIndexPath:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rowRangeForSelectingForIndexPath:(id)arg1;

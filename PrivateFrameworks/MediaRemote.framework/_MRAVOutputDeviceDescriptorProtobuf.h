@@ -7,6 +7,8 @@
     bool  _canAccessAppleMusic;
     bool  _canAccessRemoteAssets;
     bool  _canAccessiCloudMusicLibrary;
+    bool  _canFetchMediaDataFromSender;
+    bool  _canPlayEncryptedProgressiveDownloadAssets;
     bool  _canRelayCommunicationChannel;
     int  _deviceSubType;
     int  _deviceType;
@@ -21,6 +23,8 @@
         unsigned int canAccessAppleMusic : 1; 
         unsigned int canAccessRemoteAssets : 1; 
         unsigned int canAccessiCloudMusicLibrary : 1; 
+        unsigned int canFetchMediaDataFromSender : 1; 
+        unsigned int canPlayEncryptedProgressiveDownloadAssets : 1; 
         unsigned int canRelayCommunicationChannel : 1; 
         unsigned int groupContainsGroupLeader : 1; 
         unsigned int isAirPlayReceiverSessionActive : 1; 
@@ -31,6 +35,8 @@
         unsigned int isProxyGroupPlayer : 1; 
         unsigned int isRemoteControllable : 1; 
         unsigned int isVolumeControlAvailable : 1; 
+        unsigned int parentGroupContainsDiscoverableLeader : 1; 
+        unsigned int presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets : 1; 
         unsigned int requiresAuthorization : 1; 
         unsigned int shouldForceRemoteControlabillity : 1; 
         unsigned int supportsBufferedAirPlay : 1; 
@@ -49,6 +55,9 @@
     NSString * _modelID;
     NSData * _modelSpecificInfoData;
     NSString * _name;
+    bool  _parentGroupContainsDiscoverableLeader;
+    NSString * _parentGroupIdentifier;
+    bool  _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     bool  _requiresAuthorization;
     bool  _shouldForceRemoteControlabillity;
     _MRAVOutputDeviceSourceInfoProtobuf * _sourceInfo;
@@ -62,6 +71,8 @@
 @property (nonatomic) bool canAccessAppleMusic;
 @property (nonatomic) bool canAccessRemoteAssets;
 @property (nonatomic) bool canAccessiCloudMusicLibrary;
+@property (nonatomic) bool canFetchMediaDataFromSender;
+@property (nonatomic) bool canPlayEncryptedProgressiveDownloadAssets;
 @property (nonatomic) bool canRelayCommunicationChannel;
 @property (nonatomic) int deviceSubType;
 @property (nonatomic) int deviceType;
@@ -72,6 +83,8 @@
 @property (nonatomic) bool hasCanAccessAppleMusic;
 @property (nonatomic) bool hasCanAccessRemoteAssets;
 @property (nonatomic) bool hasCanAccessiCloudMusicLibrary;
+@property (nonatomic) bool hasCanFetchMediaDataFromSender;
+@property (nonatomic) bool hasCanPlayEncryptedProgressiveDownloadAssets;
 @property (nonatomic) bool hasCanRelayCommunicationChannel;
 @property (nonatomic) bool hasDeviceSubType;
 @property (nonatomic) bool hasDeviceType;
@@ -91,6 +104,9 @@
 @property (nonatomic, readonly) bool hasModelID;
 @property (nonatomic, readonly) bool hasModelSpecificInfoData;
 @property (nonatomic, readonly) bool hasName;
+@property (nonatomic) bool hasParentGroupContainsDiscoverableLeader;
+@property (nonatomic, readonly) bool hasParentGroupIdentifier;
+@property (nonatomic) bool hasPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property (nonatomic) bool hasRequiresAuthorization;
 @property (nonatomic) bool hasShouldForceRemoteControlabillity;
 @property (nonatomic, readonly) bool hasSourceInfo;
@@ -111,6 +127,9 @@
 @property (nonatomic, retain) NSString *modelID;
 @property (nonatomic, retain) NSData *modelSpecificInfoData;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic) bool parentGroupContainsDiscoverableLeader;
+@property (nonatomic, retain) NSString *parentGroupIdentifier;
+@property (nonatomic) bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property (nonatomic) bool requiresAuthorization;
 @property (nonatomic) bool shouldForceRemoteControlabillity;
 @property (nonatomic, retain) _MRAVOutputDeviceSourceInfoProtobuf *sourceInfo;
@@ -126,6 +145,8 @@
 - (bool)canAccessAppleMusic;
 - (bool)canAccessRemoteAssets;
 - (bool)canAccessiCloudMusicLibrary;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (bool)canRelayCommunicationChannel;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -142,6 +163,8 @@
 - (bool)hasCanAccessAppleMusic;
 - (bool)hasCanAccessRemoteAssets;
 - (bool)hasCanAccessiCloudMusicLibrary;
+- (bool)hasCanFetchMediaDataFromSender;
+- (bool)hasCanPlayEncryptedProgressiveDownloadAssets;
 - (bool)hasCanRelayCommunicationChannel;
 - (bool)hasDeviceSubType;
 - (bool)hasDeviceType;
@@ -161,6 +184,9 @@
 - (bool)hasModelID;
 - (bool)hasModelSpecificInfoData;
 - (bool)hasName;
+- (bool)hasParentGroupContainsDiscoverableLeader;
+- (bool)hasParentGroupIdentifier;
+- (bool)hasPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (bool)hasRequiresAuthorization;
 - (bool)hasShouldForceRemoteControlabillity;
 - (bool)hasSourceInfo;
@@ -184,12 +210,17 @@
 - (id)modelID;
 - (id)modelSpecificInfoData;
 - (id)name;
+- (bool)parentGroupContainsDiscoverableLeader;
+- (id)parentGroupIdentifier;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (bool)readFrom:(id)arg1;
 - (bool)requiresAuthorization;
 - (void)setBatteryLevel:(float)arg1;
 - (void)setCanAccessAppleMusic:(bool)arg1;
 - (void)setCanAccessRemoteAssets:(bool)arg1;
 - (void)setCanAccessiCloudMusicLibrary:(bool)arg1;
+- (void)setCanFetchMediaDataFromSender:(bool)arg1;
+- (void)setCanPlayEncryptedProgressiveDownloadAssets:(bool)arg1;
 - (void)setCanRelayCommunicationChannel:(bool)arg1;
 - (void)setDeviceSubType:(int)arg1;
 - (void)setDeviceType:(int)arg1;
@@ -200,6 +231,8 @@
 - (void)setHasCanAccessAppleMusic:(bool)arg1;
 - (void)setHasCanAccessRemoteAssets:(bool)arg1;
 - (void)setHasCanAccessiCloudMusicLibrary:(bool)arg1;
+- (void)setHasCanFetchMediaDataFromSender:(bool)arg1;
+- (void)setHasCanPlayEncryptedProgressiveDownloadAssets:(bool)arg1;
 - (void)setHasCanRelayCommunicationChannel:(bool)arg1;
 - (void)setHasDeviceSubType:(bool)arg1;
 - (void)setHasDeviceType:(bool)arg1;
@@ -212,6 +245,8 @@
 - (void)setHasIsProxyGroupPlayer:(bool)arg1;
 - (void)setHasIsRemoteControllable:(bool)arg1;
 - (void)setHasIsVolumeControlAvailable:(bool)arg1;
+- (void)setHasParentGroupContainsDiscoverableLeader:(bool)arg1;
+- (void)setHasPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets:(bool)arg1;
 - (void)setHasRequiresAuthorization:(bool)arg1;
 - (void)setHasShouldForceRemoteControlabillity:(bool)arg1;
 - (void)setHasSupportsBufferedAirPlay:(bool)arg1;
@@ -230,6 +265,9 @@
 - (void)setModelID:(id)arg1;
 - (void)setModelSpecificInfoData:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setParentGroupContainsDiscoverableLeader:(bool)arg1;
+- (void)setParentGroupIdentifier:(id)arg1;
+- (void)setPresentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets:(bool)arg1;
 - (void)setRequiresAuthorization:(bool)arg1;
 - (void)setShouldForceRemoteControlabillity:(bool)arg1;
 - (void)setSourceInfo:(id)arg1;

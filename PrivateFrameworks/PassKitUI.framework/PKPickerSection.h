@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, copy) NSString *footer;
-@property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, readonly, copy) NSMutableArray *items;
 @property (nonatomic, copy) NSString *title;
 
 + (id)sectionWithTitle:(id)arg1;
@@ -19,7 +19,6 @@
 - (id)footer;
 - (id)items;
 - (void)setFooter:(id)arg1;
-- (void)setItems:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

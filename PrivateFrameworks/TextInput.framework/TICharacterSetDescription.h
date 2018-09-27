@@ -16,13 +16,13 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (long long)baseIdentifier;
 - (id)characterSet;
 - (id)charactersAddedToBase;
 - (void)clearCachedCharacterSet;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

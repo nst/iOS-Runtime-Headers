@@ -8,10 +8,12 @@
     NSArray * _completionAttributes;
     long long  _completionResultCount;
     NSString * _completionString;
+    double  _currentTime;
     NSArray * _disableBundles;
     long long  _dominantRankingQueryCount;
     long long  _dominatedRankingQueryCount;
     NSArray * _fetchAttributes;
+    NSArray * _filterQueries;
     NSString * _filterQuery;
     unsigned char  _flags;
     /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _fuzzyMask;
@@ -35,10 +37,12 @@
 @property (nonatomic) long long completionResultCount;
 @property (nonatomic, retain) NSString *completionString;
 @property (nonatomic) bool counting;
+@property (nonatomic) double currentTime;
 @property (nonatomic, retain) NSArray *disableBundles;
 @property (nonatomic) long long dominantRankingQueryCount;
 @property (nonatomic) long long dominatedRankingQueryCount;
 @property (nonatomic, retain) NSArray *fetchAttributes;
+@property (nonatomic, copy) NSArray *filterQueries;
 @property (nonatomic, retain) NSString *filterQuery;
 @property (nonatomic) unsigned char flags;
 @property (nonatomic) /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*fuzzyMask;
@@ -70,6 +74,7 @@
 - (id)completionString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)counting;
+- (double)currentTime;
 - (id)debugDescription;
 - (id)description;
 - (id)disableBundles;
@@ -77,6 +82,7 @@
 - (long long)dominatedRankingQueryCount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fetchAttributes;
+- (id)filterQueries;
 - (id)filterQuery;
 - (unsigned char)flags;
 - (/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)fuzzyMask;
@@ -104,10 +110,12 @@
 - (void)setCompletionResultCount:(long long)arg1;
 - (void)setCompletionString:(id)arg1;
 - (void)setCounting:(bool)arg1;
+- (void)setCurrentTime:(double)arg1;
 - (void)setDisableBundles:(id)arg1;
 - (void)setDominantRankingQueryCount:(long long)arg1;
 - (void)setDominatedRankingQueryCount:(long long)arg1;
 - (void)setFetchAttributes:(id)arg1;
+- (void)setFilterQueries:(id)arg1;
 - (void)setFilterQuery:(id)arg1;
 - (void)setFlags:(unsigned char)arg1;
 - (void)setFuzzyMask:(/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)arg1;

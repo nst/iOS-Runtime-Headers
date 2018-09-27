@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/PersonalizationPortrait
  */
 
-@interface PPTopicRecord : NSObject <NSCopying, NSMutableCopying> {
+@interface PPTopicRecord : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     unsigned long long  _algorithm;
     double  _decayRate;
     unsigned long long  _extractionAssetVersion;
@@ -23,13 +23,16 @@
 @property (nonatomic, readonly) PPTopic *topic;
 
 + (id)describeAlgorithm:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)algorithm;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)decayRate;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)extractionAssetVersion;
 - (id)extractionOsBuild;
+- (id)initWithCoder:(id)arg1;
 - (double)initialScore;
 - (bool)isLocal;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

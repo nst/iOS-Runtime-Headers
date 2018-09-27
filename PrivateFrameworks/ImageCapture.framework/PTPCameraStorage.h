@@ -3,15 +3,13 @@
  */
 
 @interface PTPCameraStorage : PTPCameraFolder {
-    NSMutableArray * _tempArrayOfAllObjectHandles;
-    NSMutableArray * _tempArrayOfAllObjectHandlesToBeIgnored;
+    NSMutableArray * _objectInfoArray;
 }
 
 - (void)dealloc;
 - (id)initWithStorageID:(unsigned int)arg1 device:(id)arg2;
+- (id)objectInfoArray;
 - (void)prime;
 - (void)refreshInfo;
-- (id)tempArrayOfAllObjectHandles;
-- (id)tempArrayOfAllObjectHandlesToBeIgnored;
 
 @end

@@ -100,6 +100,7 @@
 - (bool)cutIsContiguous:(id)arg1 transition:(id)arg2 next:(id)arg3;
 - (id)cutawaysIntersectingWithClip:(id)arg1 previousTransition:(id)arg2 nextTransition:(id)arg3 cutaways:(id)arg4;
 - (void)dealloc;
+- (void)discardPlayerItem;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (float)dynamicScale;
 - (id)editList;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, GEOLogContextDelegate, MKActivityViewControllerDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKOfficialAppViewControllerDelegate, MKPlaceCardActionControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceDealsViewControllerDelegate, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKStackingViewControllerDelegate, MKTransitAttributionViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, RadiosPreferencesDelegate, _MKInfoCardAnalyticsDelegate, _MKInfoCardController> {
+@interface _MKPlaceViewController : MKLayoutCardViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, GEOLogContextDelegate, MKActivityViewControllerDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKOfficialAppViewControllerDelegate, MKPlaceCardActionControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKStackingViewControllerDelegate, MKTransitAttributionViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, RadiosPreferencesDelegate, _MKInfoCardAnalyticsDelegate, _MKInfoCardController> {
     MKPlaceActionManager * _actionManager;
     NSMapTable * _additionalViewControllers;
     bool  _attemptedToCreateAddressBook;
@@ -16,8 +16,6 @@
     CNContactStore * _contactStore;
     CNContactNavigationController<CNContactViewControllerPrivateDelegate> * _contactsNavigationController;
     CNContactViewController * _creatingContactController;
-    MKMapItemMetadataDealRequest * _dealRequest;
-    MKPlaceDealsViewController * _dealsViewController;
     _MKDistanceDetailProvider * _distanceMonitor;
     NSUserActivity * _donationUserActivity;
     CNContactViewController * _editingContactController;
@@ -104,7 +102,6 @@
 - (void)ETAProviderLocationUpdated:(id)arg1;
 - (bool)_canShowExtensionReservationButton;
 - (void)_checkDeviceLockStatusWithCompletion:(id /* block */)arg1;
-- (void)_checkForDealsIfNecessary;
 - (void)_commonInit;
 - (id)_contactForEditOperations;
 - (id)_contactStore;
@@ -123,7 +120,6 @@
 - (id)_refetchedContactForCCTV:(id)arg1 error:(id*)arg2;
 - (id)_removeMapsDataFromContact:(id)arg1;
 - (long long)_sectionPositionForMapTableKey:(id)arg1;
-- (void)_setDeal:(id)arg1 forYelpId:(id)arg2;
 - (void)_setDefaultViewControllers:(id)arg1;
 - (bool)_shouldShowContactActions;
 - (bool)_shouldShowSiriReservationController;
@@ -138,6 +134,8 @@
 - (id)additionalViewControllersAtPosition:(long long)arg1;
 - (void)airplaneModeChanged;
 - (bool)allowTransitLineSelection;
+- (unsigned long long)annotatedItemListDisplayStyle;
+- (id)annotatedItemListViewControllerWithDisplayStyle:(unsigned long long)arg1;
 - (id)attributionsVC;
 - (id)automobileOptions;
 - (id)businessInfosVC;
@@ -154,8 +152,6 @@
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
 - (void)dealloc;
-- (id)dealsVC;
-- (void)dealsViewController:(id)arg1 didSelectDeal:(id)arg2;
 - (bool)disableReportAProblem;
 - (id)distanceMonitor;
 - (id)draggableContent;
@@ -181,7 +177,6 @@
 - (void)infoCardTransitAnalyticsDidSelectionAction:(int)arg1 resultIndex:(long long)arg2 targetID:(unsigned long long)arg3 transitSystem:(id)arg4 transitDepartureSequence:(id)arg5 transitCardCategory:(int)arg6 transitIncident:(id)arg7 feedbackDelegateSelector:(int)arg8;
 - (id)infosVC;
 - (id)init;
-- (id)initWithAppId:(id)arg1 configurationProvider:(id)arg2;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2 options:(unsigned long long)arg3;
 - (id)initWithMapItem:(id)arg1;
@@ -205,8 +200,8 @@
 - (id)photoVC;
 - (void)placeActionManager:(id)arg1 didSelectShareFromView:(id)arg2;
 - (void)placeCardActionControllerDidSelectAddPhoto:(id)arg1;
-- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1;
-- (void)placeCardActionControllerDidSelectAddToExistingContact:(id)arg1;
+- (void)placeCardActionControllerDidSelectAddToContacts:(id)arg1 fromView:(id)arg2;
+- (void)placeCardActionControllerDidSelectAddToExistingContact:(id)arg1 fromView:(id)arg2;
 - (void)placeCardActionControllerDidSelectAddToFavorites:(id)arg1;
 - (void)placeCardActionControllerDidSelectOpenInSkyline:(id)arg1;
 - (void)placeCardActionControllerDidSelectRemoveFromFavorites:(id)arg1;

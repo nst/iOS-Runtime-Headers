@@ -6,11 +6,6 @@
 @required
 
 - (_SFPBImage *)glyph;
-- (bool)hasGlyph;
-- (bool)hasIsBold;
-- (bool)hasIsEmphasized;
-- (bool)hasText;
-- (bool)hasTextColor;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (bool)isBold;

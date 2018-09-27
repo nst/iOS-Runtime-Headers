@@ -45,6 +45,7 @@
     }  _imageTransform;
     long long  _interfaceOrientation;
     bool  _invalidated;
+    bool  _keepImageAccessForPreHeat;
     bool  _keepImageAccessUntilExpiration;
     NSDate * _lastUsedDate;
     NSString * _launchInterfaceIdentifier;
@@ -115,11 +116,15 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *variantID;
 
++ (id)_allSecureCodingClassesIncludingDefaultAndClientSpecified;
 + (id)dataForImage:(id)arg1 withFormat:(long long)arg2;
 + (id)normalizeSnapshotName:(id)arg1;
++ (id)secureCodableCustomExtendedDataClasses;
++ (void)setSecureCodableCustomExtendedDataClasses:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_beginPreHeatImageAccess;
 - (void)_cacheImage:(id)arg1;
 - (id)_cachedImage;
 - (void)_commonInitWithIdentifier:(id)arg1;
@@ -129,6 +134,7 @@
 - (id)_createVariantWithIdentifier:(id)arg1;
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 includeVariants:(bool)arg2;
 - (id)_determineRelativePathForPath:(id)arg1 location:(long long*)arg2;
+- (void)_endPreHeatImageAccess;
 - (long long)_fileLocation;
 - (bool)_hasGenerationContext;
 - (id)_initWithContainerIdentity:(id)arg1 store:(id)arg2 groupID:(id)arg3 generationContext:(id)arg4;
@@ -201,6 +207,7 @@
 - (id)lastUsedDate;
 - (id)launchInterfaceIdentifier;
 - (void)loadImage;
+- (void)loadImageForPreHeat;
 - (id)logIdentifier;
 - (id)name;
 - (struct CGSize { double x1; double x2; })naturalSize;

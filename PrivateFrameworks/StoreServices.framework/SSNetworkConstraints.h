@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSNetworkConstraints : NSObject <NSCoding, NSCopying, SSXPCCoding> {
+@interface SSNetworkConstraints : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSMutableDictionary * _sizeLimits;
 }
@@ -18,6 +18,7 @@
 + (id)_newModernNetworkConstraintsWithArray:(id)arg1;
 + (id)networkConstraintsForDownloadKind:(id)arg1 fromBag:(id)arg2;
 + (id)newNetworkConstraintsByDownloadKindFromURLBag:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)_copySizeLimits;
 - (void)_disableAllNetworkTypes;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTexture : NSObject <NSCoding, NSCopying> {
+@interface SKTexture : NSObject <NSCopying, NSSecureCoding> {
     int  _alignment;
     unsigned int * _alphaMap;
     struct CGSize { 
@@ -94,6 +94,7 @@
 + (id)preloadQueue;
 + (void)preloadTextures:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)registerTextureCache:(id)arg1 forName:(id)arg2;
++ (bool)supportsSecureCoding;
 + (id)textureNoiseWithSmoothness:(double)arg1 size:(struct CGSize { double x1; double x2; })arg2 grayscale:(bool)arg3;
 + (id)textureVectorNoiseWithSmoothness:(double)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)textureWithCGImage:(struct CGImage { }*)arg1;
@@ -143,6 +144,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImageNamed:(id)arg1;
 - (id)initWithImagePath:(id)arg1;
+- (bool)isEqualToTexture:(id)arg1;
 - (bool)isFlipped;
 - (bool)isRepeatable;
 - (bool)isRotated;

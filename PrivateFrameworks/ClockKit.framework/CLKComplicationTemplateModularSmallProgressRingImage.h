@@ -12,6 +12,8 @@
 @property (nonatomic, copy) CLKProgressProvider *progressProvider;
 @property (nonatomic) long long ringStyle;
 
++ (struct CGSize { double x1; double x2; })imageSize;
+
 - (void).cxx_destruct;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;

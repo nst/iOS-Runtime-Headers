@@ -2,17 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPaymentSheetPriceSectionItem : NSObject <NSCopying, SSXPCCoding> {
+@interface SSPaymentSheetPriceSectionItem : NSObject <NSCopying> {
     NSString * _label;
     NSString * _price;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
 @property (copy) NSString *price;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_parseDictionary:(id)arg1 withCaseControl:(bool)arg2;

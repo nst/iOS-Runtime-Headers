@@ -10,6 +10,7 @@
 @property (readonly) Class superclass;
 
 - (void)captureActionForItem:(id)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
+- (void)captureActionForItemIdentifier:(id)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
 - (void)captureClientAddition:(id)arg1;
 - (void)captureClientRemoval:(id)arg1;
 - (void)captureCurrentState:(id)arg1;

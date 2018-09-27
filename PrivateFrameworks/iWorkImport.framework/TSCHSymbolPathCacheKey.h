@@ -9,8 +9,8 @@
     int  mSymbolType;
 }
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (unsigned long long)hash;
 - (id)initWithSymbolType:(int)arg1 symbolSize:(double)arg2 stroke:(id)arg3 forHitCheck:(bool)arg4;
 - (bool)isEqual:(id)arg1;

@@ -5,7 +5,6 @@
 @interface SiriCoreLocalSpeechRecognizer : NSObject <AFSpeechServiceDelegate> {
     NSString * _currentLanguage;
     <SiriCoreLocalSpeechRecognizerDelegate> * _delegate;
-    SiriCoreLocalSpeechDESRecord * _desRecord;
     NSXPCConnection * _esConnection;
     bool  _hasRecognizedAnything;
     unsigned char  _instanceUUID;
@@ -14,8 +13,6 @@
     NSObject<OS_dispatch_queue> * _queue;
     bool  _recognitionActive;
     NSError * _recognitionError;
-    bool  _shouldCreateRecordSPIv1;
-    bool  _shouldCreateRecordSPIv2;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,11 +32,9 @@
 - (id)_service;
 - (id)_serviceWithFunctionName:(id)arg1 errorHandler:(id /* block */)arg2;
 - (id)_synchronousServiceWithErrorHandler:(id /* block */)arg1;
-- (void)_writeDESRecord;
 - (void)addAudioPacket:(id)arg1;
 - (void)createSpeechProfileWithLanguage:(id)arg1 JSONData:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;
-- (void)disableDESWithCompletion:(id /* block */)arg1;
 - (void)fetchAssetsForLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchUserDataForLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)finishAudio;
@@ -49,7 +44,8 @@
 - (id)initWithDelegate:(id)arg1 instanceUUID:(unsigned char)arg2;
 - (void)invalidate;
 - (void)preheatSpeechRecognitionWithLanguage:(id)arg1;
-- (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 attachments:(id)arg3 completion:(id /* block */)arg4;
+- (void)resetDESWithCompletion:(id /* block */)arg1;
+- (void)runAdaptationRecipeEvaluation:(id)arg1 recordData:(id)arg2 attachments:(id)arg3 completion:(id /* block */)arg4;
 - (oneway void)speechServiceDidFinishRecognitionWithStatistics:(id)arg1 error:(id)arg2;
 - (oneway void)speechServiceDidProcessAudioDuration:(double)arg1;
 - (oneway void)speechServiceDidRecognizePackage:(id)arg1;

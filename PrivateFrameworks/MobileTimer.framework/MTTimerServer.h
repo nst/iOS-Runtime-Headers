@@ -25,6 +25,7 @@
 - (void)checkIn;
 - (id)connectionListenerProvider;
 - (void)dismissTimerWithIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)gatherDiagnostics;
 - (void)getTimersWithCompletion:(id /* block */)arg1;
 - (void)handleSystemReady;
 - (id)initWithStorage:(id)arg1;

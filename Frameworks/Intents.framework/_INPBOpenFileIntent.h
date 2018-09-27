@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBOpenFileIntent : PBCodable <NSCopying> {
+@interface _INPBOpenFileIntent : PBCodable <NSCopying, NSSecureCoding, _INPBOpenFileIntent> {
     _INPBString * _appId;
     _INPBString * _entityName;
     int  _entityType;
@@ -11,13 +11,14 @@
         unsigned int scope : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
-    NSMutableArray * _properties;
+    NSArray * _properties;
     int  _scope;
     _INPBString * _scopeEntityName;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBString *appId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
 @property (nonatomic, readonly) bool hasAppId;
@@ -26,13 +27,14 @@
 @property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic) bool hasScope;
 @property (nonatomic, readonly) bool hasScopeEntityName;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic, retain) NSMutableArray *properties;
+@property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, readonly) unsigned long long propertiesCount;
 @property (nonatomic) int scope;
 @property (nonatomic, retain) _INPBString *scopeEntityName;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
-+ (id)options;
 + (Class)propertiesType;
 
 - (void).cxx_destruct;
@@ -42,7 +44,6 @@
 - (id)appId;
 - (void)clearProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityName;
 - (int)entityType;
@@ -56,7 +57,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)properties;
 - (id)propertiesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)propertiesCount;
@@ -73,7 +73,6 @@
 - (void)setProperties:(id)arg1;
 - (void)setScope:(int)arg1;
 - (void)setScopeEntityName:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

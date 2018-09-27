@@ -27,5 +27,6 @@
 - (void)invalidate;
 - (oneway void)processData:(id)arg1 usingProcedure:(long long)arg2 completion:(id /* block */)arg3;
 - (oneway void)processDataMap:(id)arg1 usingProcedure:(long long)arg2 completion:(id /* block */)arg3;
+- (oneway void)setKeychainValue:(id)arg1 forKey:(id)arg2 accountIdentifier:(id)arg3 completion:(id /* block */)arg4;
 
 @end

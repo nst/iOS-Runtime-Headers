@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (void)_completeWithResult:(unsigned long long)arg1;
 - (void)_userDidTapCancelButton:(id)arg1;
-- (bool)canCompleteExtendedInitializationQuickly;
 - (id /* block */)completion;
 - (bool)controllerNeedsToRun;
 - (id)initWithHost:(id)arg1;

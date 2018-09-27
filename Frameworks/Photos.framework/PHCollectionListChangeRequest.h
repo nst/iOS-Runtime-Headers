@@ -65,6 +65,7 @@
 - (id)objectID;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedCollectionList;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)removeChildCollection:(id)arg1;
 - (void)removeChildCollectionFromChildCollectionsAtIndex:(unsigned long long)arg1;

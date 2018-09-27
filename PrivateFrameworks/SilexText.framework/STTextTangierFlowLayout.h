@@ -40,6 +40,7 @@
 @property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *previousTargetLastColumn;
 @property (nonatomic, readonly) const void*previousTargetTopicNumbers;
 @property (nonatomic, readonly) bool pushAscendersIntoColumn;
+@property (nonatomic, readonly) double reservedWidthWhenTruncating;
 @property (nonatomic, readonly) bool shouldHyphenate;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool textIsVertical;

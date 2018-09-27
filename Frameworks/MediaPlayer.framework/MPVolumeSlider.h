@@ -3,9 +3,11 @@
  */
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate, MPVolumeDisplaying> {
+    bool  _beganTrackingFromEUVolumeLimit;
     NSTimer * _commitTimer;
     bool  _configuredLayoutGuide;
     bool  _forcingOffscreenVisibility;
+    MPAVEndpointRoute * _groupRoute;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -18,12 +20,13 @@
     double  _originalMaxValueViewAlphaOverride;
     double  _originalMinTrackViewAlphaOverride;
     double  _originalMinValueViewAlphaOverride;
+    MPAVOutputDeviceRoute * _outputDeviceRoute;
+    MPAVController * _player;
     UILabel * _routeNameLabel;
     long long  _style;
     UIImageView * _thumbImageView;
     bool  _thumbIsDefault;
     UILayoutGuide * _trackLayoutGuide;
-    bool  _userWasBlocked;
     MPVolumeController * _volumeController;
     bool  _volumeWarningBlinking;
     UIImage * _volumeWarningTrackImage;
@@ -33,12 +36,14 @@
 @property (setter=_setIsOffScreen:, nonatomic) bool _isOffScreen;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) MPAVEndpointRoute *groupRoute;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
 @property (getter=isOnScreen, nonatomic, readonly) bool onScreen;
 @property (getter=isOnScreenForVolumeDisplay, nonatomic, readonly) bool onScreenForVolumeDisplay;
 @property (getter=isInOptimisticState, nonatomic) bool optimisticState;
 @property (nonatomic) float optimisticValue;
+@property (nonatomic, retain) MPAVOutputDeviceRoute *outputDeviceRoute;
 @property (nonatomic, retain) MPAVController *player;
 @property (nonatomic, retain) MPAVRoute *route;
 @property (nonatomic, readonly) long long style;
@@ -76,25 +81,29 @@
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (id)groupRoute;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })hitRectInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
-- (id)initWithoutDataSource:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2 endpointRoute:(id)arg3 outputDeviceRoute:(id)arg4;
 - (bool)isInOptimisticState;
 - (bool)isOnScreenForVolumeDisplay;
 - (void)layoutSubviews;
 - (float)maximumValue;
 - (float)minimumValue;
 - (float)optimisticValue;
+- (id)outputDeviceRoute;
 - (id)player;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)route;
 - (void)setAlpha:(double)arg1;
+- (void)setGroupRoute:(id)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setHitRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setOptimisticState:(bool)arg1;
 - (void)setOptimisticValue:(float)arg1;
+- (void)setOutputDeviceRoute:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setThumbImage:(id)arg1 forState:(unsigned long long)arg2;
@@ -116,6 +125,7 @@
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeControlLabelDidChange:(id)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(long long)arg2;
 - (id)volumeWarningTrackImage;
 
 @end

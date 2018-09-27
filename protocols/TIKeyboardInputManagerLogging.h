@@ -5,7 +5,7 @@
 
 @required
 
-- (void)logAutocorrections:(TIAutocorrectionList *)arg1 forKeyboardState:(TIKeyboardState *)arg2;
+- (void)logAutocorrections:(TIAutocorrectionList *)arg1 forKeyboardState:(TIKeyboardState *)arg2 requestToken:(TICandidateRequestToken *)arg3;
 - (void)logCandidateResultSet:(TIKeyboardCandidateResultSet *)arg1 forKeyboardState:(TIKeyboardState *)arg2;
 - (void)logHitKeyCode:(long long)arg1 forTouchEvent:(TIKeyboardTouchEvent *)arg2 keyboardState:(TIKeyboardState *)arg3;
 - (void)logKeyboardConfig:(TIKeyboardConfiguration *)arg1 forAdjustedPhraseBoundaryInForwardDirection:(bool)arg2 granularity:(int)arg3 keyboardState:(TIKeyboardState *)arg4;

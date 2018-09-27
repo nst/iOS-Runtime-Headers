@@ -5,7 +5,9 @@
 @interface FCContextConfiguration : NSObject <NSCopying> {
     NSString * _contentContainerCombinationIdentifier;
     NSString * _contentContainerIdentifier;
-    bool  _isProductionEnvironment;
+    long long  _environment;
+    bool  _isProductionContentEnvironment;
+    bool  _isProductionPrivateDataEnvironment;
     NSString * _privateDataContainerCombinationIdentifier;
     NSString * _privateDataContainerIdentifier;
     NSString * _privateDataSecureContainerIdentifier;
@@ -13,7 +15,9 @@
 
 @property (nonatomic, readonly, copy) NSString *contentContainerCombinationIdentifier;
 @property (nonatomic, readonly, copy) NSString *contentContainerIdentifier;
-@property (nonatomic, readonly) bool isProductionEnvironment;
+@property (nonatomic, readonly) long long environment;
+@property (nonatomic, readonly) bool isProductionContentEnvironment;
+@property (nonatomic, readonly) bool isProductionPrivateDataEnvironment;
 @property (nonatomic, readonly, copy) NSString *privateDataContainerCombinationIdentifier;
 @property (nonatomic, readonly, copy) NSString *privateDataContainerIdentifier;
 @property (nonatomic, readonly, copy) NSString *privateDataSecureContainerIdentifier;
@@ -24,9 +28,12 @@
 - (id)contentContainerCombinationIdentifier;
 - (id)contentContainerIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)environment;
 - (id)init;
-- (id)initWithProductionEnvironment:(bool)arg1 contentContainerIdentifier:(id)arg2 privateDataContainerIdentifier:(id)arg3 privateDataSecureContainerIdentifier:(id)arg4 storeFrontID:(id)arg5;
-- (bool)isProductionEnvironment;
+- (id)initWithEnvironment:(long long)arg1;
+- (id)initWithProductionContentEnvironment:(bool)arg1 productionPrivateDataEnvironment:(bool)arg2 contentContainerIdentifier:(id)arg3 privateDataContainerIdentifier:(id)arg4 privateDataSecureContainerIdentifier:(id)arg5 storeFrontID:(id)arg6 environment:(long long)arg7;
+- (bool)isProductionContentEnvironment;
+- (bool)isProductionPrivateDataEnvironment;
 - (id)privateDataContainerCombinationIdentifier;
 - (id)privateDataContainerIdentifier;
 - (id)privateDataSecureContainerIdentifier;

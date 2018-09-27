@@ -9,8 +9,7 @@
     NSProgress * _downloadProgress;
     id /* block */  _fetchCompletionBlock;
     bool  _isAutoArchive;
-    bool  _isDataAvailableLocally;
-    unsigned long long  _lastProgressBytes;
+    long long  _lastProgressBytes;
     double  _lastProgressTime;
     MFMimePart * _part;
     MFAttachmentPlaceholder * _placeholder;
@@ -57,7 +56,7 @@
 @property bool isPlaceholder;
 @property (nonatomic, readonly) bool isRFC822;
 @property (nonatomic, readonly) bool isRestrictedMIMEType;
-@property (nonatomic) unsigned long long lastProgressBytes;
+@property (nonatomic) long long lastProgressBytes;
 @property (nonatomic) double lastProgressTime;
 @property (nonatomic, retain) MFMailDropMetadata *mailDropMetadata;
 @property (nonatomic, retain) NSString *meetingStorePersistentID;
@@ -128,7 +127,7 @@
 - (bool)isMailDrop;
 - (bool)isMailDropPhotoArchive;
 - (bool)isPlaceholder;
-- (unsigned long long)lastProgressBytes;
+- (long long)lastProgressBytes;
 - (double)lastProgressTime;
 - (id)mailDropMetadata;
 - (id)metadataValueForKey:(id)arg1;
@@ -149,7 +148,7 @@
 - (void)setFetchCompletionBlock:(id /* block */)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setIsPlaceholder:(bool)arg1;
-- (void)setLastProgressBytes:(unsigned long long)arg1;
+- (void)setLastProgressBytes:(long long)arg1;
 - (void)setLastProgressTime:(double)arg1;
 - (void)setMailDropMetadata:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
@@ -163,7 +162,7 @@
 - (unsigned long long)sizeOnDisk;
 - (id)textEncodingGuessWithData:(id)arg1;
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
-- (void)updateProgressWithCurrentBytes:(unsigned long long)arg1;
+- (void)updateProgressWithCurrentBytes:(long long)arg1;
 - (id)url;
 - (bool)wantsCompletionBlockOffMainThread;
 - (void)writeToDiskWithData:(id)arg1;

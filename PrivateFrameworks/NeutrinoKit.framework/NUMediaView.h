@@ -19,6 +19,7 @@
             double height; 
         } size; 
     }  _cropRect;
+    bool  _debugEnabled;
     <NUMediaViewDelegate> * _delegate;
     struct { 
         bool hasDidFinishRendering; 
@@ -37,7 +38,6 @@
         double bottom; 
         double right; 
     }  _edgeInsets;
-    bool  _inTransition;
     UIView * _livePhotoView;
     bool  _loopsVideo;
     bool  _muted;
@@ -45,7 +45,9 @@
     NUAVPlayerView * _playerView;
     NURenderView * _renderView;
     NUMediaViewRenderer * _renderer;
+    bool  _scrollUpdatesSuppressed;
     NUScrollView * _scrollView;
+    long long  _transitionCount;
     bool  _videoPlayerVisible;
 }
 
@@ -55,6 +57,7 @@
 @property (nonatomic, copy) NUComposition *composition;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (readonly, copy) NSString *debugDescription;
+@property (getter=isDebugEnabled, nonatomic) bool debugEnabled;
 @property (nonatomic) <NUMediaViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
@@ -65,6 +68,7 @@
 @property (nonatomic) double minimumZoomScale;
 @property (getter=isMuted, nonatomic) bool muted;
 @property (nonatomic) NSArray *pipelineFilters;
+@property (nonatomic) bool scrollUpdatesSuppressed;
 @property (readonly) Class superclass;
 @property (getter=isVideoEnabled, nonatomic) bool videoEnabled;
 @property (getter=isVideoPlayerVisible, nonatomic) bool videoPlayerVisible;
@@ -73,10 +77,13 @@
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_proposedInsetsForInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 contentSize:(struct CGSize { double x1; double x2; })arg2 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 centerContent:(bool)arg4;
 
 - (void).cxx_destruct;
+- (void)_beginTransition;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForContentSize:(struct CGSize { double x1; double x2; })arg1 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_endTransition;
 - (id)_geometry;
 - (id)_imageLayer;
 - (struct CGSize { double x1; double x2; })_imageSize;
+- (id)_layerRecursiveDescription;
 - (id)_livePhotoView;
 - (struct CGSize { double x1; double x2; })_masterSizeWithoutGeometry;
 - (id)_renderView;
@@ -98,6 +105,7 @@
 - (void)_updateVideoPlayerAlpha;
 - (id)_videoPlayerView;
 - (id)_videoPlayerViewWithoutControls;
+- (id)_viewRecursiveDescription;
 - (void)_withComposition:(id)arg1 visitRenderClient:(id /* block */)arg2;
 - (double)angle;
 - (bool)centerContent;
@@ -113,6 +121,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageFrame;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDebugEnabled;
 - (bool)isMuted;
 - (bool)isReady;
 - (bool)isVideoEnabled;
@@ -126,6 +135,7 @@
 - (void)playerControllerDidFinishPlaying:(id)arg1 duration:(double)arg2;
 - (void)playerControllerIsReadyForPlayback:(id)arg1;
 - (void)playerViewReadyForDisplayDidChange:(id)arg1;
+- (bool)scrollUpdatesSuppressed;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
@@ -137,6 +147,7 @@
 - (void)setCenterContent:(bool)arg1;
 - (void)setComposition:(id)arg1;
 - (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDebugEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLoopsVideoPlayback:(bool)arg1;
@@ -144,6 +155,7 @@
 - (void)setMinimumZoomScale:(double)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setPipelineFilters:(id)arg1;
+- (void)setScrollUpdatesSuppressed:(bool)arg1;
 - (void)setVideoEnabled:(bool)arg1;
 - (void)setVideoPlayerVisible:(bool)arg1;
 - (void)setZoomScale:(double)arg1;

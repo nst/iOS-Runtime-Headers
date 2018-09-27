@@ -5,6 +5,7 @@
 @interface CMWakeGesturePhone : CMWakeGestureManager {
     unsigned int  backlightService;
     long long  fCurrentState;
+    BOOL  fDisplayState;
     bool  fEnableAudioAlert;
     bool  fEnableLatencyAlert;
     unsigned int  fIoNotification;
@@ -30,7 +31,6 @@
 }
 
 + (bool)hasSlowBootArgs;
-+ (bool)isWakeGestureAvailable;
 + (id)stringForGestureState:(long long)arg1;
 + (id)stringForMode:(unsigned char)arg1;
 + (id)stringForNotification:(unsigned char)arg1;

@@ -6,6 +6,7 @@
     unsigned long long  _active;
     NSUUID * _alarmID;
     bool  _allowsSnooze;
+    bool  _bedtimeDoNotDisturb;
     NSDate * _bedtimeForSleepTracking;
     unsigned long long  _bedtimeHour;
     unsigned long long  _bedtimeMinute;
@@ -31,8 +32,10 @@
 @property (getter=isActiveAnywhere, nonatomic, readonly) bool activeAnywhere;
 @property (getter=isActiveForThisDevice, nonatomic, readonly) bool activeForThisDevice;
 @property (nonatomic, readonly) NSUUID *alarmID;
+@property (nonatomic, readonly) INObject *alarmIDIntentObject;
 @property (nonatomic, readonly) NSURL *alarmURL;
 @property (nonatomic) bool allowsSnooze;
+@property (nonatomic) bool bedtimeDoNotDisturb;
 @property (nonatomic, copy) NSDate *bedtimeForSleepTracking;
 @property (nonatomic) unsigned long long bedtimeHour;
 @property (nonatomic) unsigned long long bedtimeMinute;
@@ -49,17 +52,19 @@
 @property (getter=isFiring, nonatomic) bool firing;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long hour;
+@property (nonatomic, readonly) NSString *intentLabel;
 @property (nonatomic, copy) NSDate *lastModifiedDate;
 @property (nonatomic) unsigned long long minute;
 @property (nonatomic, readonly) NSDate *nextFireDate;
 @property (nonatomic) unsigned long long repeatSchedule;
 @property (nonatomic, readonly) bool repeats;
 @property (getter=isSleepAlarm, nonatomic) bool sleepAlarm;
-@property (nonatomic, readonly) long long sleepDuration;
+@property (nonatomic, readonly) unsigned long long sleepDuration;
 @property (nonatomic, copy) NSDate *snoozeFireDate;
 @property (getter=isSnoozed, nonatomic, readonly) bool snoozed;
 @property (nonatomic, copy) MTSound *sound;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) INObject *timeObject;
 @property (nonatomic, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
@@ -70,6 +75,7 @@
 + (id)alarmWithHour:(unsigned long long)arg1 minute:(unsigned long long)arg2;
 + (unsigned long long)defaultActiveStatus;
 + (id)descriptionForActiveStatus:(unsigned long long)arg1;
++ (id)mostRecentlyUpdatedAlarmForAlarms:(id)arg1;
 + (id)sleepAlarm;
 + (id)sleepAlarmWithHour:(long long)arg1 minute:(long long)arg2;
 + (id)sleepAlarmWithHour:(long long)arg1 minute:(long long)arg2 bedtimeHour:(long long)arg3 bedtimeMinute:(long long)arg4;
@@ -78,15 +84,17 @@
 - (void).cxx_destruct;
 - (id)_actualTriggerStartDateForDate:(id)arg1;
 - (void)_copyStateOntoAlarm:(id)arg1;
-- (id)_initForCopy;
-- (id)_initWithCurrentTime;
+- (id)_initCommon;
 - (bool)_isEqualToAlarm:(id)arg1 checkLastModified:(bool)arg2;
-- (id)_nextDateHelperWithDate:(id)arg1 hour:(long long)arg2 minute:(long long)arg3 calendar:(id)arg4;
+- (id)_nextBedtimeTriggersHelperWithDate:(id)arg1 wakeUpDate:(id)arg2 includeBedtimeNotification:(bool)arg3 includeBedtime:(bool)arg4 calendar:(id)arg5;
+- (id)_nextDateHelperWithDate:(id)arg1 calendar:(id)arg2;
 - (unsigned long long)active;
 - (id)alarmID;
+- (id)alarmIDIntentObject;
 - (id)alarmIDString;
 - (id)alarmURL;
 - (bool)allowsSnooze;
+- (bool)bedtimeDoNotDisturb;
 - (id)bedtimeForSleepTracking;
 - (unsigned long long)bedtimeHour;
 - (unsigned long long)bedtimeMinute;
@@ -95,6 +103,7 @@
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)currentDateProvider;
+- (id)dateComponents;
 - (id)description;
 - (id)dismissedDate;
 - (id)displayTitle;
@@ -105,8 +114,11 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithCurrentTimeFromCurrentDateProvider:(id /* block */)arg1;
 - (id)initWithHour:(unsigned long long)arg1 minute:(unsigned long long)arg2;
+- (id)initWithHour:(unsigned long long)arg1 minute:(unsigned long long)arg2 currentDateProvider:(id /* block */)arg3;
 - (id)initWithIdentifier:(id)arg1;
+- (id)intentLabel;
 - (bool)isActiveAndEnabledForThisDevice;
 - (bool)isActiveAnywhere;
 - (bool)isActiveForThisDevice;
@@ -134,12 +146,15 @@
 - (id)nextTriggerAfterDate:(id)arg1 includeSnooze:(bool)arg2 includeBedtimeNotification:(bool)arg3;
 - (id)nextTriggerAfterDate:(id)arg1 ofType:(unsigned long long)arg2;
 - (id)nextTriggersAfterDate:(id)arg1;
+- (id)nextTriggersAfterDate:(id)arg1 includeBedtime:(bool)arg2;
 - (id)nextTriggersAfterDate:(id)arg1 includeSnooze:(bool)arg2 includeBedtimeNotification:(bool)arg3;
+- (id)nextTriggersAfterDate:(id)arg1 includeSnooze:(bool)arg2 includeBedtimeNotification:(bool)arg3 includeBedtime:(bool)arg4;
 - (unsigned long long)repeatSchedule;
 - (bool)repeats;
 - (void)setActive:(unsigned long long)arg1;
 - (void)setActiveForThisDevice:(bool)arg1;
 - (void)setAllowsSnooze:(bool)arg1;
+- (void)setBedtimeDoNotDisturb:(bool)arg1;
 - (void)setBedtimeForSleepTracking:(id)arg1;
 - (void)setBedtimeHour:(unsigned long long)arg1;
 - (void)setBedtimeMinute:(unsigned long long)arg1;
@@ -159,9 +174,11 @@
 - (void)setSound:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (bool)shouldBeScheduled;
-- (long long)sleepDuration;
+- (unsigned long long)sleepDuration;
+- (double)sleepDurationSeconds;
 - (id)snoozeFireDate;
 - (id)sound;
+- (id)timeObject;
 - (id)title;
 - (id)upcomingTriggersAfterDate:(id)arg1;
 

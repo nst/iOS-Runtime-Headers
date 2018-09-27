@@ -14,7 +14,7 @@
 @property bool canHaveSmallSpotlightIcons;
 @property (retain) SFSearchResult *result;
 @property <SearchUIFeedbackDelegate> *selectionAndFeedbackDelegate;
-@property (retain) UIView *thumbnailView;
+@property UIView *thumbnailView;
 
 - (void).cxx_destruct;
 - (id)application;

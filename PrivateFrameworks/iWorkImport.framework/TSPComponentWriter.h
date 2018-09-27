@@ -3,17 +3,17 @@
  */
 
 @interface TSPComponentWriter : NSObject {
-    NSHashTable * _analyzedCommandToModelReferences;
-    NSHashTable * _archivedObjects;
+    TSPReferenceOrderedSet * _analyzedCommandToModelReferences;
+    TSPReferenceOrderedSet * _archivedObjects;
     NSMapTable * _archivedObjectsDictionary;
     TSPArchiverManager * _archiverManager;
-    NSHashTable * _commandToModelReferences;
+    TSPReferenceOrderedSet * _commandToModelReferences;
     TSPComponent * _component;
     TSPMutableComponentObjectUUIDMap * _componentObjectUUIDMap;
     NSHashTable * _dataReferences;
     <TSPComponentWriterDelegate> * _delegate;
     NSObject<OS_dispatch_semaphore> * _delegateSemaphore;
-    NSHashTable * _externalReferences;
+    TSPReferenceOrderedSet * _externalReferences;
     NSMutableSet * _featureInfos;
     struct { 
         unsigned int success : 1; 
@@ -25,11 +25,11 @@
         unsigned int delegateRespondsToExternalPackageDidWriteObject : 1; 
         unsigned int delegateRespondsToShouldDelayWritingObject : 1; 
     }  _flags;
-    NSHashTable * _indirectCommandToModelExternalReferences;
+    TSPReferenceOrderedSet * _indirectCommandToModelExternalReferences;
     NSHashTable * _lazyReferences;
     NSString * _locator;
     long long  _mode;
-    NSHashTable * _newCommandToModelReferences;
+    TSPReferenceOrderedSet * _newCommandToModelReferences;
     TSPObjectReferenceMap * _objectReferenceMap;
     struct vector<TSP::ObjectStackEntry, std::__1::allocator<TSP::ObjectStackEntry> > { 
         struct ObjectStackEntry {} *__begin_; 
@@ -41,7 +41,7 @@
     unsigned long long  _objectTargetType;
     unsigned char  _packageIdentifier;
     TSPObject * _rootObject;
-    NSHashTable * _weakReferences;
+    TSPReferenceOrderedSet * _weakReferences;
     <TSPComponentWriteChannel> * _writeChannel;
     NSObject<OS_dispatch_group> * _writeGroup;
     NSObject<OS_dispatch_queue> * _writeQueue;

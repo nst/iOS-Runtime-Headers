@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <PXMutableTitleSubtitleCALayerPromise> {
+@interface PXTitleSubtitleCALayerPromise : PXCALayerPromise <CALayerDelegate, PXMutableTitleSubtitleCALayerPromise> {
     double  __textScaleFactor;
     bool  _diagnosticsEnabled;
     NSArray * _diagnosticsRenderedLines;

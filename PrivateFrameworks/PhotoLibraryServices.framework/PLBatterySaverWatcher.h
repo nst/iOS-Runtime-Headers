@@ -4,7 +4,6 @@
 
 @interface PLBatterySaverWatcher : NSObject {
     NSHashTable * _delegates;
-    int  _notifyBatterySaverModeToken;
 }
 
 @property (nonatomic, readonly) bool batterySaverModeEnabled;
@@ -14,8 +13,6 @@
 - (void)addDelegate:(id)arg1;
 - (bool)batterySaverModeEnabled;
 - (void)dealloc;
-- (unsigned int)registerToBatterySaverModeNotification;
 - (void)removeDelegate:(id)arg1;
-- (void)unregisterToBatterySaverModeNotification;
 
 @end

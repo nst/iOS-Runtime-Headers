@@ -44,7 +44,6 @@
 - (void)loadThemeElements;
 - (void)loadThemeGraphicsFeatureSetClasses;
 - (void)loadThemeIdioms;
-- (void)loadThemeLooks;
 - (void)loadThemeParts;
 - (void)loadThemePresentationStates;
 - (void)loadThemeSizes;

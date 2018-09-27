@@ -6,11 +6,11 @@
     TLKImage * _image;
 }
 
-@property (retain) TLKImage *image;
+@property (nonatomic, retain) TLKImage *image;
 
 - (void).cxx_destruct;
+- (unsigned long long)_itemType;
 - (id)image;
-- (id)observableProperties;
 - (void)setImage:(id)arg1;
 
 @end

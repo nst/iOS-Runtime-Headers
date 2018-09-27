@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVideoPlayerAdSlotVisiblePercentageProvider : NSObject <SXVisiblePercentageProviding>
+@interface SXVideoPlayerAdSlotVisiblePercentageProvider : NSObject <SVVisiblePercentageProviding>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

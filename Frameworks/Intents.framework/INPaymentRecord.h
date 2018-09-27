@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPaymentRecord : NSObject <INCacheableContainer, INPaymentRecordExport, NSCopying, NSSecureCoding> {
+@interface INPaymentRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding> {
     INCurrencyAmount * _currencyAmount;
     INCurrencyAmount * _feeAmount;
     NSString * _note;

@@ -7,6 +7,7 @@
     UIColor * _backgroundColor;
     UIColor * _chronoHandColor;
     UIColor * _dateComplicationColor;
+    CLKDevice * _device;
     UIColor * _foregroundColor;
     UIColor * _glyphBackgroundColor;
     UIColor * _glyphColor;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIColor *chronoHandColor;
 @property (nonatomic, readonly) UIColor *dateComplicationColor;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, readonly) UIColor *foregroundColor;
 @property (nonatomic, readonly) UIColor *glyphBackgroundColor;
 @property (nonatomic, readonly) UIColor *glyphColor;
@@ -34,17 +36,19 @@
 @property (nonatomic, readonly) UIColor *tickColor;
 
 + (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(double)arg3;
-+ (id)paletteWithColor:(unsigned long long)arg1;
++ (id)paletteForDevice:(id)arg1 withColor:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithColor:(unsigned long long)arg1;
+- (id)_initForDevice:(id)arg1 withColor:(unsigned long long)arg2;
 - (id)alternativeTickColor;
 - (id)backgroundColor;
 - (id)chronoHandColor;
 - (id)dateComplicationColor;
+- (id)device;
 - (id)foregroundColor;
 - (id)glyphBackgroundColor;
 - (id)glyphColor;
+- (id)initForDevice:(id)arg1;
 - (id)inlayColor;
 - (id)labelColor;
 - (double)largeTickValue;

@@ -3,6 +3,8 @@
  */
 
 @interface IMMessagePartChatItem : IMMessageChatItem <IMVisibleAssociatedMessageHost> {
+    bool  _chatInScrutinyMode;
+    NSAttributedString * _fallbackCorruptText;
     long long  _index;
     bool  _isBusiness;
     NSArray * _messageEditChatItems;
@@ -14,11 +16,14 @@
     NSArray * _visibleAssociatedMessageChatItems;
 }
 
+@property (nonatomic) bool chatInScrutinyMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSAttributedString *fallbackCorruptText;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long index;
 @property (nonatomic) bool isBusiness;
+@property (nonatomic, readonly) bool isCorrupt;
 @property (nonatomic, readonly) NSArray *messageEditChatItems;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } messagePartRange;
 @property (readonly) Class superclass;
@@ -30,7 +35,7 @@
 + (bool)_isWhiteListedURL:(id)arg1;
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
-+ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(bool)arg2 isBusiness:(bool)arg3 hasKnownParticipants:(bool)arg4;
++ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(bool)arg2 isBusiness:(bool)arg3 parentChatIsSpam:(bool)arg4 hasKnownParticipants:(bool)arg5;
 + (bool)_testingSupportsURL:(id)arg1;
 
 - (void).cxx_destruct;
@@ -40,12 +45,16 @@
 - (void)_setVisibleAssociatedMessageChatItems:(id)arg1;
 - (bool)canDelete;
 - (bool)canSendMessageAcknowledgment;
+- (bool)chatInScrutinyMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)fallbackCorruptText;
 - (long long)index;
 - (bool)isBusiness;
+- (bool)isCorrupt;
 - (id)messageEditChatItems;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })messagePartRange;
+- (void)setChatInScrutinyMode:(bool)arg1;
 - (void)setIndex:(long long)arg1;
 - (void)setIsBusiness:(bool)arg1;
 - (void)setMessagePartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

@@ -5,15 +5,23 @@
 @interface NSSQLBatchDeleteRequestContext : NSSQLStoreRequestContext {
     NSArray * _deleteStatements;
     NSArray * _deletedObjectIDs;
+    NSArray * _externalDataReferenceTriggerStatements;
+    NSArray * _externalDataReferencesToDelete;
     NSSQLFetchRequestContext * _fetchContext;
     NSFetchRequest * _fetchRequestForObjectsToDelete;
+    NSArray * _fileBackedFuturesToDelete;
+    NSString * _tempTableName;
 }
 
 @property (nonatomic, retain) NSArray *affectedObjectIDs;
 @property (nonatomic, readonly, retain) NSArray *deleteStatements;
+@property (nonatomic, retain) NSArray *exernalDataReferenceStatements;
+@property (nonatomic, retain) NSArray *externalDataReferencesToDelete;
 @property (nonatomic, readonly, retain) NSSQLFetchRequestContext *fetchContext;
 @property (nonatomic, readonly, retain) NSFetchRequest *fetchRequestForObjectsToDelete;
+@property (nonatomic, retain) NSArray *fileBackedFuturesToDelete;
 @property (nonatomic, readonly) NSBatchDeleteRequest *request;
+@property (nonatomic, retain) NSString *tempTableName;
 
 - (void)_createDeleteStatements;
 - (id)_createFetchRequestContextForObjectsToDelete;
@@ -22,10 +30,18 @@
 - (id)deleteStatements;
 - (void)executePrologue;
 - (void)executeRequestCore:(id*)arg1;
+- (id)exernalDataReferenceStatements;
+- (id)externalDataReferencesToDelete;
 - (id)fetchContext;
 - (id)fetchRequestForObjectsToDelete;
+- (id)fileBackedFuturesToDelete;
 - (bool)isWritingRequest;
 - (id)request;
 - (void)setAffectedObjectIDs:(id)arg1;
+- (void)setExernalDataReferenceStatements:(id)arg1;
+- (void)setExternalDataReferencesToDelete:(id)arg1;
+- (void)setFileBackedFuturesToDelete:(id)arg1;
+- (void)setTempTableName:(id)arg1;
+- (id)tempTableName;
 
 @end

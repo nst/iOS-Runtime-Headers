@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLUIImageViewController : UIViewController <PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate> {
+@interface PLUIImageViewController : UIViewController <PLCropOverlayDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLVideoViewDelegate> {
     unsigned int  _allowEditing;
     PLCropOverlay * _cropOverlay;
     struct CGRect { 

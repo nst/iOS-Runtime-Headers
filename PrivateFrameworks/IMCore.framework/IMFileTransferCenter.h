@@ -70,6 +70,7 @@
 - (bool)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;
 - (id)orderedTransfers;
 - (id)orderedTransfersGUIDs;
+- (void)preWarmConnection;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
 - (bool)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
 - (void)registerTransferWithDaemon:(id)arg1;

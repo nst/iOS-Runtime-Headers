@@ -26,9 +26,9 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (bool)canMultitap;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (bool)diacriticForwardCompose;
 - (void)encodeWithCoder:(id)arg1;

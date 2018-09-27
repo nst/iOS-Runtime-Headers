@@ -9,6 +9,7 @@
     CAFilter * _filter;
     long long  _filterType;
     CALayer * _filteredLayer;
+    float  _hdrGain;
     double  _intensity;
     double  _intensityAnimationDuration;
     bool  _isPerformingChanges;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly) long long filterType;
 @property (nonatomic, retain) CALayer *filteredLayer;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) float hdrGain;
 @property (nonatomic, readonly) double intensity;
 @property (nonatomic) double intensityAnimationDuration;
 @property (nonatomic, readonly) CALayer *layer;
@@ -56,8 +58,9 @@
 - (id)filter;
 - (long long)filterType;
 - (id)filteredLayer;
+- (float)hdrGain;
 - (id)init;
-- (id)initWithContentType:(long long)arg1 filterType:(long long)arg2;
+- (id)initWithContentType:(long long)arg1 filterType:(long long)arg2 hdrGain:(float)arg3;
 - (double)intensity;
 - (double)intensityAnimationDuration;
 - (bool)isDisplayingVideoComplement;

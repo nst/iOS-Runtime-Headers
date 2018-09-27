@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFSetAirPlayRouteRequest : CATTaskRequest {
+@interface DMFSetAirPlayRouteRequest : DMFTaskRequest {
     NSString * _password;
     NSString * _routeUID;
     bool  _suppressPasscodePrompt;

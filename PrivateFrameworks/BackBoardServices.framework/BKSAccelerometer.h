@@ -28,6 +28,7 @@
 @property (nonatomic) float yThreshold;
 @property (nonatomic) float zThreshold;
 
+- (void).cxx_destruct;
 - (void)_checkIn;
 - (void)_checkOut;
 - (void)_orientationDidChange;

@@ -8,8 +8,8 @@
 
 @property (nonatomic, copy) NSSet *actions;
 
+- (void).cxx_destruct;
 - (id)actions;
-- (void)dealloc;
 - (void)setActions:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, retain) MTMetrics *metrics;
 @property (nonatomic, retain) NSNotificationCenter *notificationCenter;
 
++ (id)_filteredAlarms:(id)arg1 afterDate:(id)arg2 maxCount:(unsigned long long)arg3 filter:(id /* block */)arg4;
 + (id)assistantSyncNotificationName;
 + (id)daySettingToString:(unsigned long long)arg1 longVersion:(bool)arg2 everyWeekdayVersion:(bool)arg3 showNever:(bool)arg4;
 + (void)warmUp;
@@ -24,6 +25,7 @@
 - (void)_getCachedAlarmsWithFuture:(id)arg1 finishBlock:(id /* block */)arg2;
 - (id)_initWithConnectionProvidingBlock:(id /* block */)arg1 metrics:(id)arg2;
 - (id)_initWithConnectionProvidingBlock:(id /* block */)arg1 metrics:(id)arg2 notificationCenter:(id)arg3;
+- (id)_sortedNextAlarmsAfterDate:(id)arg1 includeSleepAlarm:(bool)arg2 includeBedtimeNotification:(bool)arg3;
 - (id)addAlarm:(id)arg1;
 - (id)alarmAtIndex:(unsigned long long)arg1;
 - (unsigned long long)alarmCount;
@@ -51,8 +53,16 @@
 - (id)nextAlarmSync;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2;
 - (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(bool)arg3;
+- (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3;
+- (id)nextAlarmsForDate:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3 includeBedtimeNotification:(bool)arg4;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2;
 - (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeBedtimeNotification:(bool)arg3;
+- (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3;
+- (id)nextAlarmsForDateSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3 includeBedtimeNotification:(bool)arg4;
+- (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3;
+- (id)nextAlarmsInRange:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3 includeBedtimeNotification:(bool)arg4;
+- (id)nextAlarmsInRangeSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3;
+- (id)nextAlarmsInRangeSync:(id)arg1 maxCount:(unsigned long long)arg2 includeSleepAlarm:(bool)arg3 includeBedtimeNotification:(bool)arg4;
 - (id)notificationCenter;
 - (void)reconnect;
 - (id)removeAlarm:(id)arg1;

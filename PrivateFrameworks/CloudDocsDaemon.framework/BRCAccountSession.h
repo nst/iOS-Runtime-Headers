@@ -6,6 +6,7 @@
     NSString * _accountID;
     bool  _accountIsReady;
     BRCAccountWaitOperation * _accountWaitOperation;
+    BRCAnalyticsReporter * _analyticsReporter;
     NSMutableDictionary * _appLibrariesByRowID;
     BRCThrottle * _appLibraryAliasRemovalThrottle;
     BRCThrottle * _appLibraryResetThrottle;
@@ -16,9 +17,9 @@
     NSString * _cacheDirPath;
     BRCPQLConnection * _clientDB;
     BRCClientState * _clientState;
+    NSObject<OS_dispatch_queue> * _clientTruthWorkloop;
     int  _cloudDocsFD;
     BRCContainerScheduler * _containerScheduler;
-    CDSession * _coreDuetSession;
     NSString * _databaseID;
     NSObject<OS_dispatch_queue> * _dbCorruptionQueue;
     id /* block */  _dbProfilingHook;
@@ -50,6 +51,7 @@
     NSMutableDictionary * _privateClientZonesByID;
     NSMutableDictionary * _privateServerZonesByID;
     BRCPQLConnection * _readOnlyDB;
+    NSObject<OS_dispatch_queue> * _readOnlyWorkloop;
     BRCRecentsEnumerator * _recentsEnumerator;
     br_pacer * _reschedulePendingDiskItemsPacer;
     NSObject<OS_dispatch_queue> * _resetQueue;
@@ -57,6 +59,7 @@
     NSMutableDictionary * _rootsByFolderType;
     BRCPQLConnection * _serverDB;
     BRCServerPersistedState * _serverState;
+    NSObject<OS_dispatch_queue> * _serverTruthWorkloop;
     NSMutableDictionary * _serverZonesByZoneRowID;
     BRCThrottle * _sharedAppLibraryResetThrottle;
     NSMutableDictionary * _sharedClientZonesByMangledID;
@@ -88,6 +91,7 @@
 
 @property (nonatomic, readonly) NSString *accountID;
 @property (nonatomic, readonly) BRCAccountWaitOperation *accountWaitOperation;
+@property (nonatomic, readonly) BRCAnalyticsReporter *analyticsReporter;
 @property (nonatomic, readonly) BRCThrottle *appLibraryAliasRemovalThrottle;
 @property (nonatomic, readonly) BRCThrottle *appLibraryResetThrottle;
 @property (nonatomic, readonly) BRCThrottle *appLibraryScanThrottle;
@@ -97,8 +101,8 @@
 @property (nonatomic, retain) NSString *cacheDirPath;
 @property (nonatomic, readonly) BRCPQLConnection *clientDB;
 @property (nonatomic, readonly) BRCClientState *clientState;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientTruthWorkloop;
 @property (nonatomic, readonly) BRCContainerScheduler *containerScheduler;
-@property (nonatomic, readonly) CDSession *coreDuetSession;
 @property (nonatomic, readonly) unsigned long long databaseID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) BRCDeadlineScheduler *defaultScheduler;
@@ -122,10 +126,12 @@
 @property (nonatomic, readonly) BRCThrottle *operationFailureThrottle;
 @property (nonatomic, readonly) BRCPowerLogReporter *powerLogReporter;
 @property (nonatomic, readonly) BRCPQLConnection *readOnlyDB;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *readOnlyWorkloop;
 @property (nonatomic, readonly) BRCRecentsEnumerator *recentsEnumerator;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *resetQueue;
 @property (nonatomic, readonly) BRCPQLConnection *serverDB;
 @property (nonatomic, readonly) BRCServerPersistedState *serverState;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serverTruthWorkloop;
 @property (nonatomic, readonly) BRCThrottle *sharedAppLibraryResetThrottle;
 @property (nonatomic, readonly) BRCStageRegistry *stageRegistry;
 @property (readonly) Class superclass;
@@ -214,6 +220,7 @@
 - (void)addOfflineClientZone:(id)arg1;
 - (void)addOfflineServerZone:(id)arg1;
 - (id)allSyncContexts;
+- (id)analyticsReporter;
 - (id)appLibraries;
 - (id)appLibrariesMatchingSearchString:(id)arg1 error:(id*)arg2;
 - (id)appLibraryAliasRemovalThrottle;
@@ -234,6 +241,7 @@
 - (id)cacheDirPath;
 - (id)clientDB;
 - (id)clientState;
+- (id)clientTruthWorkloop;
 - (id)clientZoneByMangledID:(id)arg1;
 - (id)clientZones;
 - (id)clientZonesMatchingSearchString:(id)arg1 error:(id*)arg2;
@@ -243,8 +251,10 @@
 - (void)closeXPCClientsSync;
 - (void)cloudDocsAppsListDidChange:(id)arg1;
 - (id)cloudDocsClientZone;
+- (void)computeDocumentEvictableSizesForLowTime:(unsigned long long)arg1 medTime:(unsigned long long)arg2 highTime:(unsigned long long)arg3 lowSize:(unsigned long long)arg4 medSize:(unsigned long long)arg5 highSize:(unsigned long long)arg6 minRowID:(unsigned long long)arg7 minSize:(unsigned long long)arg8 batchSize:(unsigned long long)arg9 injection:(struct NSObject { Class x1; }*)arg10 db:(id)arg11 reply:(id /* block */)arg12;
+- (void)computeTotalEvictableSizeWithAccessLowTimeDelta:(double)arg1 medTimeDelta:(double)arg2 highTimeDelta:(double)arg3 db:(id)arg4 reply:(id /* block */)arg5;
+- (unsigned long long)computeTotalLiveDocumentSizeWithDb:(id)arg1;
 - (id)containerScheduler;
-- (id)coreDuetSession;
 - (bool)createAppLibrariesIfNeededWithError:(id*)arg1;
 - (bool)createAppLibraryOnDisk:(id)arg1 createdRoot:(bool*)arg2 createdDocuments:(bool*)arg3 rootFileID:(unsigned long long*)arg4;
 - (id)createDeviceKeyForNameInServerDB:(id)arg1;
@@ -350,6 +360,7 @@
 - (id)privateClientZoneByID:(id)arg1;
 - (id)privateServerZoneByID:(id)arg1;
 - (id)readOnlyDB;
+- (id)readOnlyWorkloop;
 - (id)recentsEnumerator;
 - (void)recomputeAppSyncBlockStateForPrivateClientZone:(id)arg1;
 - (void)recreateDesktopSymlinksIfNecessary;
@@ -375,6 +386,7 @@
 - (id)serverAliasItemForSharedItem:(id)arg1 inZone:(id)arg2 db:(id)arg3;
 - (id)serverDB;
 - (id)serverState;
+- (id)serverTruthWorkloop;
 - (id)serverZoneByMangledID:(id)arg1;
 - (id)serverZoneByName:(id)arg1 ownerName:(id)arg2;
 - (id)serverZoneByRowID:(id)arg1;
@@ -405,7 +417,6 @@
 - (id)syncContextForMangledID:(id)arg1 metadata:(bool)arg2 createIfNeeded:(bool)arg3;
 - (id)syncUpScheduler;
 - (unsigned long long)syncedFolderTypeForURL:(id)arg1;
-- (unsigned long long)totalEvictableSizeWithAccessTimeDelta:(double)arg1 db:(id)arg2;
 - (id)ubiquityTokenSalt;
 - (void)unregisterClient:(id)arg1;
 - (void)userDefaultsChanged;

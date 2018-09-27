@@ -5,6 +5,7 @@
 @interface PXMemoriesUITileSource : NSObject <PXReusableObjectPoolDelegate, PXTileSource, PXTilingControllerPreheatHandler> {
     PXFeedDateFormatter * __dateFormatter;
     PXPhotoKitUIMediaProvider * __mediaProvider;
+    unsigned long long  __memoriesStyle;
     bool  _canRenderTextAsynchronously;
     NSMutableSet * _checkedOutTiles;
     <PXMemoriesUITileSourceDelegate> * _delegate;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, readonly) PXFeedDateFormatter *_dateFormatter;
 @property (nonatomic, readonly) PXPhotoKitUIMediaProvider *_mediaProvider;
+@property (nonatomic, readonly) unsigned long long _memoriesStyle;
 @property (nonatomic) bool canRenderTextAsynchronously;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXMemoriesUITileSourceDelegate> *delegate;
@@ -34,6 +36,7 @@
 - (void)_dateFormatterChanged:(id)arg1;
 - (void)_getImageRequester:(id*)arg1 title:(id*)arg2 subtitle:(id*)arg3 forIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg4 dataSource:(id)arg5;
 - (id)_mediaProvider;
+- (unsigned long long)_memoriesStyle;
 - (void*)_tileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
 - (void)_updateDateLabelTile:(id)arg1;
 - (bool)canRenderTextAsynchronously;
@@ -41,7 +44,7 @@
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithScrollViewController:(id)arg1;
+- (id)initWithScrollViewController:(id)arg1 memoriesStyle:(unsigned long long)arg2;
 - (bool)providesTileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1;
 - (id)providingTilesForKinds;
 - (void)reusableObjectPool:(id)arg1 didCreateReusableObject:(id)arg2;

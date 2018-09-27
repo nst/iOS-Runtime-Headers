@@ -9,7 +9,12 @@
     CSAudioCircularBuffer * _audioBuffer;
     bool  _audioCaptureRequested;
     NSString * _audioFileDir;
+    VTAudioFileReader * _audioFileReader;
+    unsigned long long  _audioInjectionIndex;
     bool  _audioLoggingEnabled;
+    double  _combinedThreshold;
+    double  _combinedThresholdLogNearMisses;
+    double  _combinedThresholdSecondChance;
     NSString * _configData;
     NSString * _configLanguageCode;
     NSString * _configPath;
@@ -25,6 +30,7 @@
     double  _earlyDetectTime;
     bool  _earlyDetected;
     double  _effectiveThreshold;
+    bool  _externalPhraseSpotterRunning;
     unsigned int  _extraSamplesAtStart;
     NSData * _firstChanceAudioBuffer;
     bool  _firstChanceDetected;
@@ -39,6 +45,7 @@
     double  _hardwareSampleRate;
     int  _heartbeatCounter;
     bool  _implicitlyTrained;
+    NSString * _injectedAudioFilePath;
     bool  _isMaximized;
     bool  _isRecognitionResultPending;
     bool  _isRunningRecognizer;
@@ -57,7 +64,11 @@
     double  _lastSupervecScore;
     unsigned char  _lastTriggerType;
     double  _lastUptime;
+    NSDictionary * _lastVoiceTriggerEventInfo;
     NSObject<OS_dispatch_queue> * _loggingQueue;
+    double  _ndapiThreshold;
+    double  _ndapiThresholdLogNearMisses;
+    double  _ndapiThresholdSecondChance;
     NSObject<OS_dispatch_queue> * _ndetectQueue;
     bool  _nearMissLogPending;
     int  _nearMissLogPreDelayTimer;
@@ -143,6 +154,7 @@
 
 - (void).cxx_destruct;
 - (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(bool)arg2;
+- (void)VTAudioRouteChangeMonitorDidChangeAudioRoute:(id)arg1;
 - (void)VTLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
 - (unsigned long long)_addExtraTime:(double)arg1 to:(unsigned long long)arg2;
 - (id)_analyzeEnrollmentUtts:(id)arg1 enrollmentUtts:(id)arg2 thresholdTrigger:(double)arg3 thresholdSAT:(double)arg4 isUpdatingModel:(bool)arg5 extraUtts:(id*)arg6;
@@ -186,6 +198,7 @@
 - (bool)_removeInvalidSATModel;
 - (unsigned long long)_removeUnusedUttsFrom:(id)arg1 selectedUtts:(id)arg2;
 - (void)_resetCounters;
+- (void)_resetVoiceTriggerDueToRTSTrigger;
 - (bool)_retrainingSATModel:(id)arg1 spkrFile:(id)arg2;
 - (void)_safeConfigureWithAnalyzer:(id)arg1 path:(id)arg2 data:(id)arg3 resourcePath:(id)arg4;
 - (void)_safeReconfig;
@@ -223,6 +236,7 @@
 - (double)lastScore;
 - (double)lastSupervecScore;
 - (unsigned char)lastTriggerType;
+- (id)lastVoiceTriggerEventInfo;
 - (void)looseTriggerThreshold;
 - (void)notifyAssetChangeWithCallback:(id /* block */)arg1;
 - (void)prepareWithProperty:(id)arg1 readyCompletion:(id /* block */)arg2;
@@ -234,6 +248,7 @@
 - (unsigned long long)samplerate;
 - (void)sanitizeSATFiles;
 - (void)setBypass:(bool)arg1;
+- (void)setStartSampleHostTime:(unsigned long long)arg1;
 - (void)startAudioCapture;
 - (void)stopAudioCapture;
 - (void)textDependentSpeakerRecognizer:(id)arg1 failedWithError:(id)arg2;

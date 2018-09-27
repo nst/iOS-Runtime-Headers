@@ -16,7 +16,7 @@
     bool  _pictureInPictureActive;
     NSSet * _pictureInPictureApplications;
     NSMutableSet * _pictureInPictureRemoteObjects;
-    PGPictureInPictureRemoteObject * _suspenedPictureInPictureRemoteObject;
+    PGPictureInPictureRemoteObject * _suspendedPictureInPictureRemoteObject;
 }
 
 @property (nonatomic, readonly) PGPictureInPictureApplication *activePictureInPictureApplication;
@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameForInteractivePictureInPictureAnimationEnteringBackgroundForApplication:(id)arg1;
 - (bool)isPictureInPictureActive;
 - (bool)isStartingStoppingOrCancellingPictureInPicture;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
@@ -50,6 +51,7 @@
 - (void)pictureInPictureRemoteObject:(id)arg1 willHidePictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 willShowPictureInPictureViewController:(id)arg2;
 - (bool)pictureInPictureRemoteObjectShouldAcceptSetupRequest:(id)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSizeForInteractivePictureInPictureAnimationEnteringBackgroundForApplication:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (bool)shouldStartPictureInPictureForApplicationEnteringBackground:(id)arg1;
 - (void)startPictureInPictureForApplicationEnteringBackground:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;

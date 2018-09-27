@@ -61,12 +61,15 @@
 - (bool)handlesBalloonViewTitleTapsSeparately;
 - (bool)hidesUnreadIndicatorWhenEditing;
 - (bool)hyphenatesTextContent;
+- (id)impactBalloonName;
+- (id)impactSkinnyBalloonName;
 - (bool)isSizeConstrained;
 - (double)largeTranscriptSpace;
 - (struct CGSize { double x1; double x2; })mapThumbnailFillSizeForWidth:(double)arg1;
 - (double)maxTranscriptPortraitHeight;
 - (double)mediumTranscriptSpace;
 - (id)messageAcknowledgmentPickerBarAcknowledgmentOrder;
+- (id)messageAcknowledgmentPickerBarBubbleImage;
 - (id)messageAcknowledgmentPickerBarBubbleName;
 - (id)messageAcknowledgmentPickerBarBubbleTailName;
 - (struct CGSize { double x1; double x2; })messageAcknowledgmentPickerBarItemViewSize;
@@ -76,6 +79,10 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })messageAcknowledgmentTranscriptGlyphInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minTranscriptMarginInsets;
 - (bool)opensLocationsInMapsApp;
+- (id)orbComposeImage;
+- (id)orbDetailsImage;
+- (id)orbReplyImage;
+- (id)orbShareLocationImage;
 - (id)playButtonArrowImage;
 - (long long)playButtonBackdropStyle;
 - (id)playButtonImage;

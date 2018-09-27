@@ -23,6 +23,7 @@
     NSString * _flintDocumentUrlString;
     NSArray * _flintFontResourceIDs;
     bool  _hasThumbnail;
+    bool  _hiddenFromAutoFavorites;
     bool  _hiddenFromFeeds;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
@@ -35,6 +36,7 @@
     NSArray * _moreFromPublisherArticleIDs;
     bool  _needsRapidUpdates;
     bool  _paid;
+    bool  _pressRelease;
     NSString * _primaryAudience;
     NSDate * _publishDate;
     long long  _publisherArticleVersion;
@@ -68,6 +70,7 @@
     NSString * _versionIdentifier;
     double  _videoDuration;
     NSURL * _videoURL;
+    bool  _webEmbedsEnabled;
 }
 
 @property (nonatomic, retain) NSDictionary *articlePayload;
@@ -107,8 +110,10 @@
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (bool)isPaid;
+- (bool)isPressRelease;
 - (bool)isSponsored;
 - (bool)isValid;
 - (id)lastFetchedDate;
@@ -125,6 +130,7 @@
 - (void)setArticlePayload:(id)arg1;
 - (void)setAssetManager:(id)arg1;
 - (void)setChangeEtag:(id)arg1;
+- (void)setClusterID:(id)arg1;
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
 - (void)setFlintDocumentPrefetchedData:(id)arg1;
@@ -166,5 +172,6 @@
 - (id)versionIdentifier;
 - (double)videoDuration;
 - (id)videoURL;
+- (bool)webEmbedsEnabled;
 
 @end

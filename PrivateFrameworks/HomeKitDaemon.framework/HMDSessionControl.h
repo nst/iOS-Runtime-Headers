@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSessionControl : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSessionControl : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     unsigned long long  _controlCommand;
     NSUUID * _sessionID;
 }

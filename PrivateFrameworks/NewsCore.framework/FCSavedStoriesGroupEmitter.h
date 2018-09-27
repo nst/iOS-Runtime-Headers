@@ -23,7 +23,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)backingChannelTagIDWithCoreConfiguration:(id)arg1;
+- (id)backingChannelTagIDWithConfiguration:(id)arg1;
 - (long long)desiredArticlesCount;
 - (bool)emitsSingletonGroups;
 - (id)emittableGroupTypes;

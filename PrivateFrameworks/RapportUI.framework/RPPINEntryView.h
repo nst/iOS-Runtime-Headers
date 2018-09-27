@@ -48,6 +48,7 @@
 @property (nonatomic, retain) UILabel *label7;
 @property (nonatomic, retain) UILabel *label8;
 @property (nonatomic, retain) NSArray *labels;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
 @property (nonatomic) long long smartDashesType;

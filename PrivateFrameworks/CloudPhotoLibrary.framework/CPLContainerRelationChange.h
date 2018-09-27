@@ -12,17 +12,22 @@
 
 + (id)relationToContainerWithIdentifier:(id)arg1;
 + (id)relationWithItemIdentifier:(id)arg1 containerIdentifier:(id)arg2;
++ (id)relationWithItemScopedIdentifier:(id)arg1 containerIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(bool)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
+- (id)containerScopedIdentifier;
 - (id)description;
-- (id)identifierForQuarantine;
-- (id)identifiersForMapping;
 - (id)itemIdentifier;
+- (id)itemScopedIdentifier;
 - (id)relatedIdentifier;
 - (id)relation;
+- (id)scopedIdentifierForQuarantine;
+- (id)scopedIdentifiersForMapping;
 - (id)secondaryIdentifier;
+- (void)setContainerScopedIdentifier:(id)arg1;
 - (void)setItemIdentifier:(id)arg1;
+- (void)setItemScopedIdentifier:(id)arg1;
 - (void)setRelatedIdentifier:(id)arg1;
 - (void)setRelation:(id)arg1;
 - (void)setSecondaryIdentifier:(id)arg1;

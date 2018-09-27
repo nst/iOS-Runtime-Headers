@@ -60,6 +60,7 @@
 - (void)_cleanupAfterEditing;
 - (void)_cleanupAfterOrb:(bool)arg1;
 - (void)_cleanupAfterZoom;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationFactory;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForEditMode:(long long)arg1;
@@ -116,7 +117,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)imageViewDidBeginPlaying:(id)arg1;
 - (void)imageViewDidEndPlaying:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (bool)isInteractive;
 - (bool)isNoPhotosViewVisible;
 - (void)layoutSubviews;

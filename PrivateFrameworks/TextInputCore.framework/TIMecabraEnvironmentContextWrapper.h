@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSMutableArray *temporaryCandidates;
 @property (nonatomic) int textContentType;
 
+- (void).cxx_destruct;
 - (void)acceptInlineCandidates;
 - (void)addContextCandidate:(void*)arg1 accept:(bool)arg2;
 - (void)addContextStringCandidate:(void*)arg1;

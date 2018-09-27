@@ -14,7 +14,7 @@
     NSObject<OS_dispatch_queue> * _televisionQueue;
     NSObject<OS_dispatch_queue> * _voiceInputQueue;
     const struct { void *x1; int (*x2)(); } * agentEndpoint;
-    const struct { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); } * browsableContentEndpoint;
+    const struct { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); } * browsableContentEndpoint;
     const struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); void *x10; } * clientModule;
     const struct { void *x1; id /* block */ x2; } * televisionEndpoint;
     const struct { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); } * voiceRecordingEndpoint;

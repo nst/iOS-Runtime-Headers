@@ -16,6 +16,7 @@
 - (void)remoteUIController:(RemoteUIController *)arg1 didRemoveObjectModel:(RUIObjectModel *)arg2;
 - (bool)remoteUIController:(RemoteUIController *)arg1 objectModel:(RUIObjectModel *)arg2 shouldDisplayNamedElement:(RUIElement *)arg3 page:(RUIPage *)arg4;
 - (bool)remoteUIController:(RemoteUIController *)arg1 shouldLoadRequest:(NSMutableURLRequest *)arg2 redirectResponse:(NSURLResponse *)arg3;
+- (void)remoteUIController:(void *)arg1 shouldLoadRequest:(void *)arg2 redirectResponse:(void *)arg3 withCompletionHandler:(void *)arg4; // needs 4 arg types, found 10: RemoteUIController *, NSMutableURLRequest *, NSURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)remoteUIController:(RemoteUIController *)arg1 willLoadRequest:(NSMutableURLRequest *)arg2;
 - (void)remoteUIController:(RemoteUIController *)arg1 willPresentModalNavigationController:(UINavigationController *)arg2;
 - (void)remoteUIController:(RemoteUIController *)arg1 willPresentObjectModel:(RUIObjectModel *)arg2 modally:(bool)arg3;

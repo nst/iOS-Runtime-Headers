@@ -3,6 +3,7 @@
  */
 
 @interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
+    bool  _disconnectOnDemandEnabled;
     bool  _enabled;
     NSArray * _exceptionApps;
     bool  _onDemandEnabled;
@@ -10,6 +11,7 @@
     NEVPNProtocol * _protocol;
 }
 
+@property (getter=isDisconnectOnDemandEnabled, nonatomic) bool disconnectOnDemandEnabled;
 @property (getter=isEnabled) bool enabled;
 @property (copy) NSArray *exceptionApps;
 @property (getter=isOnDemandEnabled) bool onDemandEnabled;
@@ -30,10 +32,12 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isDisconnectOnDemandEnabled;
 - (bool)isEnabled;
 - (bool)isOnDemandEnabled;
 - (id)onDemandRules;
 - (id)protocol;
+- (void)setDisconnectOnDemandEnabled:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setExceptionApps:(id)arg1;
 - (void)setOnDemandEnabled:(bool)arg1;

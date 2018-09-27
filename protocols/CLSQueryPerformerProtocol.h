@@ -12,6 +12,8 @@
 - (unsigned long long)cacheItems:(NSArray *)arg1;
 - (void)cancel;
 - (bool)isCancelled;
+- (void)logAggdGeoLookupCounterAndDurationWithLookupDuration:(NSNumber *)arg1;
+- (void)logAggdGeoLookupFailureResult;
 - (double)precision;
 - (NSArray *)regions;
 - (void)setPrecision:(double)arg1;

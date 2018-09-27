@@ -5,6 +5,7 @@
 
 @required
 
+- (bool)allowGPUOptimizedContents;
 - (unsigned long long)arrayLength;
 - (<MTLBuffer> *)buffer;
 - (unsigned long long)bufferBytesPerRow;

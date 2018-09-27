@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic) double endTimestamp;
-@property (nonatomic, retain) NSData *routeID;
+@property (nonatomic, copy) NSData *routeID;
 @property (nonatomic) unsigned long long selectedRouteIndex;
 @property (nonatomic) double startTimestamp;
 

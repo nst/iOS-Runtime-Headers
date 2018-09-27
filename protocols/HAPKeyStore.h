@@ -19,6 +19,7 @@
 - (bool)removeAccessoryKeyForName:(NSString *)arg1 error:(id*)arg2;
 - (bool)removeAllAccessoryKeys:(id*)arg1;
 - (bool)removeControllerKeyPairForIdentifier:(NSString *)arg1 leaveTombstone:(bool)arg2 error:(id*)arg3;
+- (bool)removeControllerKeyPairLeaveTombstone:(bool)arg1 error:(id*)arg2;
 - (bool)removeControllerKeyPairWithError:(id*)arg1;
 - (bool)saveKeyPair:(NSData *)arg1 username:(NSString *)arg2 syncable:(bool)arg3 error:(id*)arg4;
 - (bool)saveLocalPairingIdentity:(HAPPairingIdentity *)arg1 syncable:(bool)arg2 error:(id*)arg3;

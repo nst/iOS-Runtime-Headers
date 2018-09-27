@@ -24,5 +24,6 @@
 - (id)_rowIdsOfEntriesBeforeTimeStamp:(double)arg1;
 - (long long)_threadUnsafeRowIdOfKey:(id)arg1;
 - (id)initWithPath:(id)arg1;
+- (void)tearDown;
 
 @end

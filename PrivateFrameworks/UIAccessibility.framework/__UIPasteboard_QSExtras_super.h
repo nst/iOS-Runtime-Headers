@@ -8,7 +8,7 @@
 
 + (Class)safeCategoryBaseClass;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (id)generalPasteboard;
 + (id)pasteboardWithName:(id)arg1 create:(bool)arg2;

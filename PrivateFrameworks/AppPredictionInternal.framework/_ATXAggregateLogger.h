@@ -14,24 +14,30 @@
     PETGoalConversionEventTracker * _fidesRecordCreationTracker;
     PETDistributionEventTracker * _inputsTracker;
     PETScalarEventTracker * _itemsShownTracker;
+    PETScalarEventTracker * _notificationOutcomeTracker;
     PETScalarEventTracker * _outcomeConsumerTracker;
     PETDistributionEventTracker * _outcomeConsumerTrackerWithCacheAge;
     PETScalarEventTracker * _outcomeTracker;
     PETScalarEventTracker * _predictUninstalledAppsTracker;
     PETScalarEventTracker * _predictionTracker;
+    PETScalarEventTracker * _promotingSuggestionOutcomeTracker;
+    PETScalarEventTracker * _quietingSuggestionOutcomeTracker;
     PETDistributionEventTracker * _scoreTracker;
+    PETScalarEventTracker * _suggestionsCountTracker;
     PETScalarEventTracker * _widgetBackgroundRefreshTracker;
 }
 
-+ (id)_launchReasonToPropertyString;
++ (long long)getBuildType;
 + (bool)isConversionOutcome:(unsigned long long)arg1;
++ (id)notificationOutcomesMapping;
 + (id)predictedItemOutcomesMapping;
 + (id)predictionOutcomesMapping;
 + (id)propertyStringForLaunchReason:(id)arg1;
++ (id)quietingSuggestionOutcomesMapping;
 + (id)sharedInstance;
 + (id)stringForPredictedItemOutcome:(unsigned long long)arg1;
 + (id)stringForPredictionOutcome:(unsigned long long)arg1;
-+ (id)validPropertyStringForLaunchReasonValues;
++ (id)suggestionCountsArray;
 + (bool)yesWithProbability:(double)arg1;
 + (void)yesWithProbabilityAlwaysSays:(bool)arg1;
 + (void)yesWithProbabilityStopMocking;
@@ -39,11 +45,15 @@
 - (void).cxx_destruct;
 - (id)init;
 - (void)logFidesRecordCreation:(bool)arg1;
-- (void)logInputs:(const double*)arg1 andScore:(double)arg2 withOutcome:(unsigned long long)arg3;
+- (void)logInputs:(const float*)arg1 andScore:(float)arg2 withOutcome:(unsigned long long)arg3;
 - (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(bool)arg2 position:(long long)arg3;
+- (void)logNotificationInteraction:(long long)arg1 orbed:(bool)arg2 onscreen:(bool)arg3;
 - (void)logPredictUninstalledApps:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2;
 - (void)logPredictionEventWith:(id)arg1 outcome:(unsigned long long)arg2 forABGroup:(id)arg3 consumerType:(unsigned long long)arg4 andSubType:(unsigned char)arg5;
-- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(const double*)arg2 outcome:(unsigned long long)arg3 rank:(unsigned long long)arg4 score:(double)arg5 forABGroup:(id)arg6;
+- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(const float*)arg2 outcome:(unsigned long long)arg3 rank:(unsigned long long)arg4 score:(float)arg5 forABGroup:(id)arg6;
+- (void)logPromotingSuggestionOutcome:(long long)arg1;
+- (void)logQuietingSuggestionOutcome:(long long)arg1;
 - (void)logRefreshedWidgetInBackground;
+- (void)logSuggestionCounts:(id)arg1;
 
 @end

@@ -5,7 +5,10 @@
 @interface PLSecurity : NSObject
 
 + (id)_secTask:(struct __SecTask { }*)arg1 grantedEntitlements:(id)arg2;
-+ (bool)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
++ (unsigned long long)assetsdEntitlementTypesForConnection:(id)arg1;
++ (unsigned long long)assetsdEntitlementTypesForCurrentProcess;
++ (unsigned long long)assetsdEntitlementTypesFromSecTask:(struct __SecTask { }*)arg1;
++ (bool)auditToken:(struct { unsigned int x1[8]; })arg1 hasEntitlement:(id)arg2;
 + (id)connection:(id)arg1 grantedEntitlements:(id)arg2;
 + (bool)connection:(id)arg1 hasEntitlement:(id)arg2;
 + (id)connection:(id)arg1 valueForEntitlement:(id)arg2;

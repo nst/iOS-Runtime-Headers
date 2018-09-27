@@ -3,6 +3,7 @@
  */
 
 @interface PKFieldProperties : NSObject <NSSecureCoding> {
+    NSArray * _TCIs;
     NSError * _error;
     NSArray * _merchantIdentifiers;
     unsigned long long  _technology;
@@ -10,15 +11,18 @@
     long long  _valueAddedServiceMode;
 }
 
+@property (nonatomic, copy) NSArray *TCIs;
 @property (nonatomic, copy) NSError *error;
 @property (nonatomic, copy) NSArray *merchantIdentifiers;
 @property (nonatomic, readonly) unsigned long long technology;
 @property (nonatomic, readonly) long long terminalType;
 @property (nonatomic, readonly) long long valueAddedServiceMode;
 
++ (id)fieldPropertiesForFieldNotification:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)TCIs;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
@@ -27,6 +31,7 @@
 - (id)merchantIdentifiers;
 - (void)setError:(id)arg1;
 - (void)setMerchantIdentifiers:(id)arg1;
+- (void)setTCIs:(id)arg1;
 - (unsigned long long)technology;
 - (long long)terminalType;
 - (long long)valueAddedServiceMode;

@@ -10,7 +10,7 @@
     unsigned long long  _numberOfReferencedItems;
     long long  _pauseReason;
     unsigned long long  _pendingNumberOfItems;
-    double  _pendingProgress;
+    float  _pendingProgress;
     long long  _state;
     NSDate * _syncDate;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic) unsigned long long numberOfReferencedItems;
 @property (nonatomic) long long pauseReason;
 @property (nonatomic) unsigned long long pendingNumberOfItems;
-@property (nonatomic) double pendingProgress;
+@property (nonatomic) float pendingProgress;
 @property (nonatomic) long long state;
 @property (nonatomic, retain) NSDate *syncDate;
 
@@ -38,7 +38,7 @@
 - (unsigned long long)numberOfReferencedItems;
 - (long long)pauseReason;
 - (unsigned long long)pendingNumberOfItems;
-- (double)pendingProgress;
+- (float)pendingProgress;
 - (void)setAction:(long long)arg1;
 - (void)setActivity:(unsigned long long)arg1;
 - (void)setExitDate:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)setNumberOfReferencedItems:(unsigned long long)arg1;
 - (void)setPauseReason:(long long)arg1;
 - (void)setPendingNumberOfItems:(unsigned long long)arg1;
-- (void)setPendingProgress:(double)arg1;
+- (void)setPendingProgress:(float)arg1;
 - (void)setState:(long long)arg1;
 - (void)setSyncDate:(id)arg1;
 - (long long)state;

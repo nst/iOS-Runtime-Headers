@@ -5,7 +5,7 @@
 @interface PHADirtyChangeCoalescer : NSObject {
     <PHADirtyChangeCoalescerDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _queue;
-    PHACoalescer * _valueCoalescer;
+    PFCoalescer * _valueCoalescer;
 }
 
 @property (nonatomic) <PHADirtyChangeCoalescerDelegate> *delegate;

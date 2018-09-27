@@ -3,10 +3,10 @@
  */
 
 @interface IKCSSParseStylesheet : NSObject {
-    NSArray * _cssValue;
+    IKArray * _cssValue;
 }
 
-@property (nonatomic, retain) NSArray *cssValue;
+@property (nonatomic, retain) IKArray *cssValue;
 
 - (void).cxx_destruct;
 - (id)cssValue;

@@ -10,8 +10,8 @@
 - (ARPointCloud *)featurePoints;
 - (ARLightEstimate *)lightEstimate;
 - (double)timestamp;
-- (struct { long long x1; long long x2; bool x3; bool x4; int x5; })trackingState;
 - (unsigned long long)worldAlignmentModifiers;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })worldAlignmentTransform;
+- (ARWorldTrackingState *)worldTrackingState;
 
 @end

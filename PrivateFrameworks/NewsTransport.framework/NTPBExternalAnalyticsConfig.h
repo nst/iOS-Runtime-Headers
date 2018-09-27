@@ -25,6 +25,8 @@
 @property (nonatomic, retain) NSMutableArray *queryParameterConfigs;
 @property (nonatomic) bool usesProxyProfile;
 
+// Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
+
 + (Class)proxyHostNamesType;
 + (Class)queryParameterConfigType;
 
@@ -62,5 +64,9 @@
 - (void)setUsesProxyProfile:(bool)arg1;
 - (bool)usesProxyProfile;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)externalAnalyticsConfigWithDictionary:(id)arg1;
 
 @end

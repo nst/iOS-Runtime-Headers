@@ -4,7 +4,6 @@
 
 @interface WBSParsecLegacySearchResult : WBSParsecModel <WBSCompletionListItem, WBSParsecSearchResult> {
     WBSParsecActionButton * _actionButton;
-    NSArray * _additionalMapItems;
     NSURL * _appPunchoutURL;
     NSString * _completion;
     WBSParsecImageRepresentation * _completionIcon;
@@ -28,7 +27,6 @@
 }
 
 @property (nonatomic, readonly) WBSParsecActionButton *actionButton;
-@property (nonatomic, readonly) NSArray *additionalMapItems;
 @property (nonatomic, readonly) NSURL *appPunchoutURL;
 @property (nonatomic, readonly) NSString *completion;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *completionIcon;
@@ -65,7 +63,6 @@
 - (id)_glyphRepresentationsFromGlyphDictionaries:(id)arg1;
 - (id)_glyphsFromGlyphRepresentations:(id)arg1 withSession:(id)arg2;
 - (id)actionButton;
-- (id)additionalMapItems;
 - (id)appPunchoutURL;
 - (bool)canBecomeTopHitForQuery:(id)arg1;
 - (id)completion;

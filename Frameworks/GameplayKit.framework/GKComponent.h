@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKComponent : NSObject <NSCoding, NSCopying> {
+@interface GKComponent : NSObject <NSCopying, NSSecureCoding> {
     NSString * _componentName;
     GKComponentSystem * _componentSystem;
     GKEntity * _entity;
@@ -13,6 +13,8 @@
 @property (nonatomic) GKComponentSystem *componentSystem;
 @property (nonatomic, readonly) GKEntity *entity;
 @property (nonatomic) bool usesPerComponentUpdate;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)componentName;

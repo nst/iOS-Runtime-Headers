@@ -53,8 +53,9 @@
 
 - (void).cxx_destruct;
 - (id)URL;
-- (void)_applyTimeRangeToEKEvent:(id)arg1;
+- (void)_applyTimeRangeToEKEvent:(id)arg1 withTZID:(id)arg2;
 - (id)_componentsForDate:(id)arg1 timeZone:(id)arg2 isEnd:(bool)arg3 calendar:(id)arg4;
+- (void)_mergeTagsIntoEKEvent:(id)arg1 withStore:(id)arg2;
 - (id)_naturalLanguageEventTagsInTags:(id)arg1;
 - (id)creationDate;
 - (id)dateForUTCDate:(id)arg1 withTimeZone:(id)arg2;

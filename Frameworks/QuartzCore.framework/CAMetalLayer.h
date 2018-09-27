@@ -8,6 +8,7 @@
 
 @property bool allowsNextDrawableTimeout;
 @property (retain) <MTLDevice> *device;
+@property (readonly) unsigned long long displayCompositingInternalStatus;
 @property struct CGSize { double x1; double x2; } drawableSize;
 @property bool fenceEnabled;
 @property bool framebufferOnly;
@@ -31,6 +32,7 @@
 - (id)device;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)discardContents;
+- (unsigned long long)displayCompositingInternalStatus;
 - (bool)displaySyncEnabled;
 - (struct CGSize { double x1; double x2; })drawableSize;
 - (bool)fenceEnabled;

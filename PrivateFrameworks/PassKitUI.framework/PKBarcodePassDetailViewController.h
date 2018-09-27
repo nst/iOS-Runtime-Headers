@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKBarcodePassDetailViewController : UITableViewController <PKPassHeaderViewDelegate, UITextViewDelegate> {
+@interface PKBarcodePassDetailViewController : PKSectionTableViewController <PKPassHeaderViewDelegate, UITextViewDelegate> {
     PKSettingTableCell * _automaticSelectionCell;
-    unsigned long long  _automaticSelectionSection;
     PKSettingTableCell * _automaticUpdatesCell;
+    PKBarcodeTableViewCell * _barcodeCell;
     UIVisualEffectView * _blurView;
     BluetoothManager * _btManager;
     PKPassColorProfile * _colorProfile;
     UITableViewCell * _deleteCell;
     <PKPassDeleteHandler> * _deleteOverrider;
-    unsigned long long  _deleteSection;
+    bool  _didRampScreenBrightness;
     PKPassDisplayProfile * _displayProfile;
-    NSMutableDictionary * _fieldCellHeightsByIndexPath;
-    NSMutableDictionary * _fieldCellsByIndexPath;
-    unsigned long long  _fieldsSection;
+    NSMutableDictionary * _fieldCellHeightsByRow;
+    NSMutableDictionary * _fieldCellsByRow;
+    bool  _forcedRefresh;
+    double  _forcedTopContentInset;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -29,27 +30,21 @@
     bool  _isWifiEnabled;
     UIView * _keyLine;
     PKLinkedAppView * _linkedApp;
-    unsigned long long  _linkedAppSection;
     UIView * _locationHelpView;
     bool  _navigationControllerHidesShadow;
     PKPass * _pass;
     PKPassHeaderView * _passHeaderView;
     UITableViewCell * _personalizePassCell;
-    unsigned long long  _personalizePassSection;
-    double  _previousLayoutTableViewWidth;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _previousLayoutTableViewBoundsSize;
     UIRefreshControl * _refreshControl;
     NSObject<OS_dispatch_source> * _refreshTimeout;
-    NSArray * _rowCountBySection;
-    unsigned long long  _settingsSection;
     UITableViewCell * _shareCell;
-    unsigned long long  _shareSection;
     PKSettingTableCell * _showInLockScreenCell;
-    bool  _showsDelete;
-    bool  _showsLinkedApp;
+    PKSettingTableCell * _showNotificationsCell;
     bool  _showsLinks;
-    bool  _showsPersonalize;
-    bool  _showsSettings;
-    bool  _showsShare;
     unsigned long long  _suppressedContent;
     UISegmentedControl * _tabBar;
     double  _tabBarHeight;
@@ -70,17 +65,19 @@
 
 - (void).cxx_destruct;
 - (id)_automaticSelectionCell;
+- (id)_barcodeCell;
 - (void)_bluetoothPowerChanged:(id)arg1;
 - (id)_createTabBarWithSelectedIndex:(long long)arg1;
 - (id)_deleteCell;
 - (void)_deletePass;
 - (void)_done:(id)arg1;
-- (id)_fieldCellForIndexPath:(id)arg1;
-- (id)_fieldForIndexPath:(id)arg1;
+- (id)_fieldCellForRow:(unsigned long long)arg1;
+- (id)_fieldForRow:(unsigned long long)arg1;
 - (bool)_isBluetoothEnabled;
 - (bool)_linkedAppAvailable;
 - (id)_locationHelpViewForTableView:(id)arg1;
 - (id)_locationRelevancyHelpText;
+- (unsigned long long)_numberOfAvailableSettings;
 - (double)_offscreenHeaderHeight;
 - (void)_passSettingsChanged:(id)arg1;
 - (bool)_personalizeAvailable;
@@ -88,6 +85,7 @@
 - (void)_refreshFinished:(bool)arg1;
 - (id)_relevantBuckets;
 - (void)_reloadPassAndView;
+- (unsigned long long)_settingForRow:(unsigned long long)arg1;
 - (bool)_settingsAvailable;
 - (id)_settingsCellForRow:(unsigned long long)arg1;
 - (id)_shareCell;
@@ -97,28 +95,32 @@
 - (void)_updatePassProperties;
 - (void)_updateTabBar;
 - (void)_updateTabBarWithSegments:(id)arg1;
-- (void)_updateTableSections;
 - (void)_wifiChanged:(id)arg1;
 - (void)dealloc;
 - (id)deleteOverrider;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPass:(id)arg1;
-- (id)initWithStyle:(long long)arg1;
+- (id)initWithStyle:(long long)arg1 numberOfSections:(unsigned long long)arg2;
 - (id)linkedApp;
 - (void)loadView;
-- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pass;
 - (void)passHeaderViewDidChangePass:(id)arg1;
 - (bool)pkui_prefersNavigationBarShadowHidden;
 - (void)pushSettingsFromViewToModel;
 - (void)refreshControlValueChanged:(id)arg1;
-- (void)reloadData;
+- (bool)reloadData;
+- (void)reloadSection:(unsigned long long)arg1;
+- (void)reloadSections:(id)arg1;
+- (long long)rowAnimationForReloadingSection:(unsigned long long)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setDeleteOverrider:(id)arg1;
 - (void)setShowsLinks:(bool)arg1;
 - (void)setSuppressedContent:(unsigned long long)arg1;
 - (bool)shouldAllowRefresh;
+- (bool)shouldMapSection:(unsigned long long)arg1;
 - (unsigned long long)suppressedContent;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -133,5 +135,6 @@
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

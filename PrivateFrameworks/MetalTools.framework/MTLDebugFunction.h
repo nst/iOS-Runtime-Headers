@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) MTLFunctionConstantValues *constantValues;
 
+- (id)bitcodeData;
 - (id)constantValues;
 - (void)dealloc;
 - (id)formattedDescription:(unsigned long long)arg1;

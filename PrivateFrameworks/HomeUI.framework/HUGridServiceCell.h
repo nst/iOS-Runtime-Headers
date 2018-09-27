@@ -15,6 +15,7 @@
     HUGridServiceCellTextView * _serviceTextView;
     bool  _shouldColorDescription;
     bool  _shouldShowLoadingState;
+    bool  _shouldShowRoomName;
     <NACancelable> * _showProgressIndicatorAfterDelayToken;
     <NACancelable> * _showUpdatingStateAfterDelayToken;
     bool  _showingProgressIndicator;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) HUGridServiceCellTextView *serviceTextView;
 @property (nonatomic) bool shouldColorDescription;
 @property (nonatomic) bool shouldShowLoadingState;
+@property (nonatomic) bool shouldShowRoomName;
 @property (nonatomic) bool showProgressIndicatorAfterDelay;
 @property (nonatomic, retain) <NACancelable> *showProgressIndicatorAfterDelayToken;
 @property (nonatomic) bool showUpdatingStateAfterDelay;
@@ -91,6 +93,7 @@
 - (void)setServiceTextView:(id)arg1;
 - (void)setShouldColorDescription:(bool)arg1;
 - (void)setShouldShowLoadingState:(bool)arg1;
+- (void)setShouldShowRoomName:(bool)arg1;
 - (void)setShowProgressIndicatorAfterDelay:(bool)arg1;
 - (void)setShowProgressIndicatorAfterDelayToken:(id)arg1;
 - (void)setShowUpdatingStateAfterDelay:(bool)arg1;
@@ -99,6 +102,7 @@
 - (void)setShowingUpdatingState:(bool)arg1;
 - (bool)shouldColorDescription;
 - (bool)shouldShowLoadingState;
+- (bool)shouldShowRoomName;
 - (bool)showProgressIndicatorAfterDelay;
 - (id)showProgressIndicatorAfterDelayToken;
 - (bool)showUpdatingStateAfterDelay;

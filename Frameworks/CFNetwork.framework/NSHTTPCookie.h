@@ -7,6 +7,7 @@
 }
 
 @property (getter=isHTTPOnly, readonly) bool HTTPOnly;
+@property (getter=ams_isCookieValidForBag, nonatomic, readonly) bool ams_cookieValidForBag;
 @property (readonly, copy) NSString *comment;
 @property (readonly, copy) NSURL *commentURL;
 @property (readonly, copy) NSString *domain;
@@ -42,6 +43,7 @@
 - (id)OriginURL;
 - (id)Path;
 - (id)Port;
+- (id)SameSite;
 - (id)Secure;
 - (id)StoragePartition;
 - (id)Value;
@@ -72,6 +74,7 @@
 - (id)path;
 - (id)portList;
 - (id)properties;
+- (id)sameSitePolicy;
 - (id)value;
 - (unsigned long long)version;
 
@@ -82,5 +85,9 @@
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
 - (bool)sf_matchesTopLevelDomain:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (bool)ams_isCookieValidForBag;
 
 @end

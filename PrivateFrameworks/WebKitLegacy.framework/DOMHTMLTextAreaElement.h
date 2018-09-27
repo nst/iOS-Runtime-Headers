@@ -72,7 +72,7 @@
 - (bool)willValidate;
 - (id)wrap;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)_requiresAccessoryView;
 - (bool)_requiresInputView;

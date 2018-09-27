@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEndPointAddress : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDEndPointAddress : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     NSNumber * _audioRTPPort;
     NSString * _ipAddress;
     bool  _isIPv6Address;

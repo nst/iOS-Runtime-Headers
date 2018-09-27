@@ -65,7 +65,6 @@
 - (void)dealloc;
 - (void)endResizeOperation;
 - (id)initWithChartInfo:(id)arg1;
-- (id)initWithParent:(id)arg1;
 - (void)invalidateSeriesIndexedPieWedgeExplosions;
 - (void)invalidateTransientModel;
 - (bool)isInResize;

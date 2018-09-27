@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface>
+@interface SBUIRemoteAlertServiceViewController : UIViewController <SBUIRemoteAlertServiceInterface, SBUIRemoteAlertServiceInterface_Internal>
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
@@ -15,6 +15,8 @@
 - (void)noteActivatedForActivityContinuationWithIdentifier:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (void)prepareForActivationWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)sb_becomeFirstResponder;
+- (void)sb_resignFirstResponder;
 - (void)setUserInfo:(id)arg1;
 
 @end

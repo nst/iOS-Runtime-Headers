@@ -36,6 +36,7 @@
 
 - (void).cxx_destruct;
 - (id)_decompressData:(id)arg1;
+- (void)_onQueue_stop;
 - (void)_writeAvailablePendingData;
 - (unsigned long long)bytesWritten;
 - (id /* block */)canWriteDataBlock;
@@ -61,6 +62,7 @@
 - (void)setTimestamp:(double)arg1;
 - (void)start;
 - (void)stop;
+- (void)stopWithCompletion:(id /* block */)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (double)timestamp;
 - (bool)writeAllData:(id)arg1 error:(id*)arg2;

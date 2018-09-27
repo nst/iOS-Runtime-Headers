@@ -26,6 +26,7 @@
 - (id)allKeys;
 - (bool)asyncPersistToShMemWithCompletionBlock:(id /* block */)arg1;
 - (id)dataForKey:(id)arg1;
+- (id)description;
 - (id)errorForExceedingSizeLimits;
 - (id)initWithName:(id)arg1 size:(unsigned long long)arg2;
 - (void*)memoryPointer;

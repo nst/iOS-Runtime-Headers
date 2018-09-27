@@ -18,7 +18,7 @@
 - (void)cancel;
 - (id)dataclass;
 - (void)dealloc;
-- (id)initWithSIJob:(struct __SIJobRef { }*)arg1 dataclass:(id)arg2 resultsHandler:(id /* block */)arg3;
+- (id)initWithSIJob:(struct __SIJobRef { }*)arg1 dataclass:(id)arg2 eventHandler:(id /* block */)arg3 resultsHandler:(id /* block */)arg4;
 - (id /* block */)resultsHandler;
 - (id)resultsQueue;
 - (void)setDataclass:(id)arg1;

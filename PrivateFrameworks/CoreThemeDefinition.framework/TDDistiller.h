@@ -78,6 +78,7 @@
 - (bool)distillCustomFonts;
 - (bool)distillNamedElements;
 - (bool)distillRenditions;
+- (bool)distillThemeAppearances;
 - (id)documentPath;
 - (bool)dontPackRenditionsBeforeDistilling;
 - (int)fileCompression;

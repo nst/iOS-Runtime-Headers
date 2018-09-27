@@ -13,6 +13,7 @@
     NSDate * _notAfterDate;
     NSDate * _notBeforeDate;
     NSDate * _publishedDate;
+    NSString * _threadID;
     NSString * _title;
     NSDictionary * _userInfo;
 }
@@ -27,6 +28,7 @@
 @property (nonatomic, copy) NSDate *notAfterDate;
 @property (nonatomic, copy) NSDate *notBeforeDate;
 @property (nonatomic, copy) NSDate *publishedDate;
+@property (nonatomic, copy) NSString *threadID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
@@ -62,8 +64,10 @@
 - (void)setNotAfterDate:(id)arg1;
 - (void)setNotBeforeDate:(id)arg1;
 - (void)setPublishedDate:(id)arg1;
+- (void)setThreadID:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (id)threadID;
 - (id)title;
 - (id)userInfo;
 

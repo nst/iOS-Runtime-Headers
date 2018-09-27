@@ -11,7 +11,7 @@
     }  _delegate;
     struct ObjectStorage<WebKit::WebAutomationSession> { 
         struct type { 
-            unsigned char __lx[696]; 
+            unsigned char __lx[800]; 
         } data; 
     }  _session;
 }
@@ -40,5 +40,6 @@
 - (id)sessionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
+- (void)terminate;
 
 @end

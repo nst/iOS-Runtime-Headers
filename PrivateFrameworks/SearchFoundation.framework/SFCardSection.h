@@ -89,12 +89,13 @@
 - (void)setType:(id)arg1;
 - (id)type;
 
-// Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 
-+ (id)crk_interactiveBehaviorPrecedenceOrder;
++ (id)acs_uniquelyIdentifiedCardSection;
 
-- (bool)_crkinteractivecardsectionviewcontroller_shouldRenderButtonOverlay;
-- (unsigned long long)crk_intrinsicInteractiveBehavior;
+- (void)acs_addParameter:(id)arg1;
+- (id)acs_parameterKeyPathFromParameter:(id)arg1;
+- (void)acs_setParameters:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
@@ -103,5 +104,13 @@
 - (id)cardSectionIdentifier;
 - (bool)hasNextCard;
 - (id)parametersForInteraction:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
+
+// Image: /System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/SearchUICardKitProviderSupport
+
+- (bool)_SUICKPInteractiveCardSectionViewController_shouldRenderButtonOverlay;
 
 @end

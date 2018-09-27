@@ -31,6 +31,15 @@
         struct PlatformMediaResourceLoader {} *m_ptr; 
     }  _loader;
     unsigned long long  _nextTaskIdentifier;
+    struct HashSet<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> >, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > >, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > > > { 
+        struct HashTable<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> >, WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> >, WTF::IdentityExtractor, WTF::PtrHash<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > >, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > >, WTF::HashTraits<WTF::RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > > > { 
+            struct RefPtr<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > {} *m_table; 
+            unsigned int m_tableSize; 
+            unsigned int m_tableSizeMask; 
+            unsigned int m_keyCount; 
+            unsigned int m_deletedCount; 
+        } m_impl; 
+    }  _origins;
     struct RetainPtr<NSOperationQueue> { 
         void *m_ptr; 
     }  _queue;
@@ -73,9 +82,11 @@
 - (id)streamTaskWithHostName:(id)arg1 port:(long long)arg2;
 - (id)streamTaskWithNetService:(id)arg1;
 - (void)task:(id)arg1 didReceiveCORSAccessCheckResult:(bool)arg2;
+- (void)task:(id)arg1 didReceiveResponseFromOrigin:(struct Ref<WebCore::SecurityOrigin, WTF::DumbPtrTraits<WebCore::SecurityOrigin> > { struct SecurityOrigin {} *x1; }*)arg2;
 - (void)taskCompleted:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2;
 - (id)uploadTaskWithStreamedRequest:(id)arg1;
+- (bool)wouldTaintOrigin:(const struct SecurityOrigin { struct atomic<unsigned int> { unsigned int x_1_1_1; } x1; struct SecurityOriginData { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_2_1_1; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_2_2_1; } x_2_1_2; struct optional<unsigned short> { bool x_3_2_1; union constexpr_storage_t<unsigned short> { unsigned char x_2_3_1; unsigned short x_2_3_2; } x_3_2_2; } x_2_1_3; } x2; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; int x9; bool x10; bool x11; bool x12; bool x13; }*)arg1;
 
 @end

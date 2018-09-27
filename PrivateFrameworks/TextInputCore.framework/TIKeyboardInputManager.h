@@ -15,7 +15,6 @@
         unsigned long long length; 
     }  _candidateRange;
     TIKeyboardInputManagerConfig * _config;
-    NSMutableArray * _conversationTurns;
     TIKeyboardInputManagerState * _currentState;
     long long  _deleteKeyCount;
     TIEmojiCandidateGenerator * _emojiCandidateGenerator;
@@ -96,7 +95,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)_canStartSentenceAfterString:(id)arg1 maxRecursionDepth:(unsigned long long)arg2;
-- (id)_responseKitResponseCandidatesForString:(id)arg1;
 - (void)acceptCurrentCandidateIfSelectedWithContext:(id)arg1;
 - (void)acceptCurrentCandidateWithContext:(id)arg1;
 - (void)acceptInput;
@@ -196,13 +194,15 @@
 - (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 tokenLookupMode:(unsigned int)arg4;
 - (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 tokenLookupMode:(unsigned int)arg4 surfaceFormPtr:(id*)arg5 hasCaseInsensitiveStaticVariant:(bool*)arg6;
 - (id)generateAndRenderProactiveSuggestionsWithTriggers:(id)arg1 withAdditionalPredictions:(id)arg2 withInput:(id)arg3;
-- (id)generateAutocorrectionsWithKeyboardState:(id)arg1;
-- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)generateAndRenderProactiveSuggestionsWithTriggers:(id)arg1 withAdditionalPredictions:(id)arg2 withInput:(id)arg3 async:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 candidateHandler:(id)arg3;
 - (id)generateAutofillFormWithKeyboardState:(id)arg1;
 - (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id /* block */)arg3;
-- (id)generateProactiveAutocompletionsWithDocumentState:(id)arg1;
+- (void)generateCannedResponseCandidatesAsyncForString:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)generateOneTimeCodeCandidatesWithKeyboardState:(id)arg1;
 - (id)generateReplacementsForString:(id)arg1 keyLayout:(id)arg2;
 - (struct RefPtr<KB::DictionaryContainer> { struct DictionaryContainer {} *x1; })getDictionary;
+- (id)getTestingStateObject;
 - (id)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2;
 - (void)groupedCandidatesFromCandidates:(id)arg1 usingSortingMethod:(id)arg2 completion:(id /* block */)arg3;
 - (id)handleAcceptedCandidate:(id)arg1 keyboardState:(id)arg2;
@@ -213,15 +213,15 @@
 - (id)humanReadableTrace;
 - (bool)ignoresDeadKeys;
 - (bool)inHardwareKeyboardMode;
-- (void)incrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4 saveToDifferentialPrivacy:(bool)arg5;
+- (void)incrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4 saveToDifferentialPrivacy:(int)arg5;
 - (void)incrementUsageTrackingKey:(id)arg1;
 - (void)incrementUsageTrackingKeyForAutocorrectionStatistic:(id)arg1 autocorrectionTypes:(unsigned int)arg2;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
 - (id)indexTitlesForGroupTitles:(id)arg1 sortingMethod:(id)arg2;
 - (id)indexesOfDuplicatesInCandidates:(id)arg1;
 - (struct TIInputManager { int (**x1)(); struct vector<KB::Input, std::__1::allocator<KB::Input> > { struct Input {} *x_2_1_1; struct Input {} *x_2_1_2; struct __compressed_pair<KB::Input *, std::__1::allocator<KB::Input> > { struct Input {} *x_3_2_1; } x_2_1_3; } x2; struct String { unsigned short x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned char x_3_1_4; char *x_3_1_5; BOOL x_3_1_6[16]; } x3; struct String { unsigned short x_4_1_1; unsigned short x_4_1_2; unsigned short x_4_1_3; unsigned char x_4_1_4; char *x_4_1_5; BOOL x_4_1_6[16]; } x4; unsigned int x5; struct String { unsigned short x_6_1_1; unsigned short x_6_1_2; unsigned short x_6_1_3; unsigned char x_6_1_4; char *x_6_1_5; BOOL x_6_1_6[16]; } x6; struct retain_ptr<const __CFLocale *> { struct __CFLocale {} *x_7_1_1; } x7; struct LockedInput { unsigned int x_8_1_1; unsigned int x_8_1_2; } x8; struct StrokeBuildManager {} *x9; struct String { unsigned short x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; unsigned char x_10_1_4; char *x_10_1_5; BOOL x_10_1_6[16]; } x10; }*)initImplementation;
-- (id)initWithConfig:(id)arg1;
-- (id)initWithInputMode:(id)arg1;
+- (id)initWithConfig:(id)arg1 keyboardState:(id)arg2;
+- (id)initWithInputMode:(id)arg1 keyboardState:(id)arg2;
 - (unsigned long long)initialCandidateBatchCount;
 - (unsigned long long)initialSelectedIndex;
 - (id)inputContext;
@@ -293,7 +293,7 @@
 - (id)recentPredictiveInputSelections;
 - (void)reconcileCandidates:(struct CandidateCollection { struct vector<KB::Candidate, std::__1::allocator<KB::Candidate> > { struct Candidate {} *x_1_1_1; struct Candidate {} *x_1_1_2; struct __compressed_pair<KB::Candidate *, std::__1::allocator<KB::Candidate> > { struct Candidate {} *x_3_2_1; } x_1_1_3; } x1; struct vector<KB::Candidate, std::__1::allocator<KB::Candidate> > { struct Candidate {} *x_2_1_1; struct Candidate {} *x_2_1_2; struct __compressed_pair<KB::Candidate *, std::__1::allocator<KB::Candidate> > { struct Candidate {} *x_3_2_1; } x_2_1_3; } x2; }*)arg1 forTypedString:(struct String { unsigned short x1; unsigned short x2; unsigned short x3; unsigned char x4; char *x5; BOOL x6[16]; }*)arg2 withPhraseCandidate:(struct Candidate { struct Vector<KB::Word, 3> { unsigned long long x_1_1_1; struct VectorBuffer<KB::Word, 3> { struct Word {} *x_2_2_1; unsigned long long x_2_2_2; struct AlignedBuffer<408, 8> { BOOL x_3_3_1[408]; } x_2_2_3; } x_1_1_2; } x1; float x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; unsigned int x4; unsigned int x5; struct LanguageModelContext { struct vector<TITokenID, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_1_2_1; struct TITokenID {} *x_1_2_2; struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_3_3_1; } x_1_2_3; } x_6_1_1; unsigned long long x_6_1_2; unsigned long long x_6_1_3; } x6; struct String { unsigned short x_7_1_1; unsigned short x_7_1_2; unsigned short x_7_1_3; unsigned char x_7_1_4; char *x_7_1_5; BOOL x_7_1_6[16]; } x7; struct ByteString { union { struct { unsigned short x_1_3_1; char *x_1_3_2; } x_1_2_1; struct { unsigned short x_2_3_1; unsigned char x_2_3_2[14]; } x_1_2_2; } x_8_1_1; } x8; bool x9; bool x10; struct retain_ptr<const __CFDictionary *> { struct __CFDictionary {} *x_11_1_1; } x11; }*)arg3 replacing:(const struct String { unsigned short x1; unsigned short x2; unsigned short x3; unsigned char x4; char *x5; BOOL x6[16]; }*)arg4;
 - (void)recordAcceptedAutocorrection:(id)arg1 fromPredictiveInputBar:(bool)arg2;
-- (void)recordRejectedAutocorrectionForAcceptedText:(id)arg1;
+- (void)recordRejectedAutocorrectionForAcceptedText:(id)arg1 fromPredictiveInputBar:(bool)arg2;
 - (void)recordSuggestedAutocorrectionList:(id)arg1;
 - (void)refreshInputManagerState;
 - (void)registerKeyArea:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyCode:(short)arg2 keyString:(const char *)arg3;
@@ -301,6 +301,7 @@
 - (id)rejectedAutocorrections;
 - (id)rejectedDisplayedAutocorrectionsForCurrentStem;
 - (void)releaseDynamicLanguageModel;
+- (void)releaseMRLBuffers;
 - (id)remainingInput;
 - (bool)removeSuffixOfInputContext:(id)arg1;
 - (id)replacementForDoubleSpace;
@@ -309,7 +310,6 @@
 - (void)resume;
 - (id)revisionHistory;
 - (id)revisionListFromAutocorrectionList:(id)arg1 afterAcceptingCandidate:(id)arg2;
-- (id)rewriteMoneyAttributes:(id)arg1;
 - (void)scheduleLinguisticResourceUpdate;
 - (id)searchStringForMarkedText;
 - (struct LanguageModelContext { struct vector<TITokenID, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_1_1_1; struct TITokenID {} *x_1_1_2; struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { struct TITokenID {} *x_3_2_1; } x_1_1_3; } x1; unsigned long long x2; unsigned long long x3; })sentenceContextForInputStem:(id)arg1;

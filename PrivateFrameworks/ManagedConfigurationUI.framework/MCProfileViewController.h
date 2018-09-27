@@ -7,7 +7,7 @@
     bool  _profileOffersReenroll;
     bool  _profileRemovable;
     <MCProfileViewControllerDelegate> * _profileViewControllerDelegate;
-    int  _profileViewMode;
+    long long  _profileViewMode;
 }
 
 @property (nonatomic, retain) MCUIProfile *UIProfile;
@@ -17,7 +17,7 @@
 @property (nonatomic) bool profileOffersReenroll;
 @property (nonatomic) bool profileRemovable;
 @property (nonatomic) <MCProfileViewControllerDelegate> *profileViewControllerDelegate;
-@property (nonatomic) int profileViewMode;
+@property (nonatomic) long long profileViewMode;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,17 +33,17 @@
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)initWithStyle:(long long)arg1;
-- (id)initWithStyle:(long long)arg1 profile:(id)arg2 profileViewMode:(int)arg3;
+- (id)initWithStyle:(long long)arg1 profile:(id)arg2 profileViewMode:(long long)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (bool)profileOffersReenroll;
 - (bool)profileRemovable;
 - (id)profileViewControllerDelegate;
-- (int)profileViewMode;
+- (long long)profileViewMode;
 - (void)setProfile:(id)arg1;
 - (void)setProfileOffersReenroll:(bool)arg1;
 - (void)setProfileRemovable:(bool)arg1;
 - (void)setProfileViewControllerDelegate:(id)arg1;
-- (void)setProfileViewMode:(int)arg1;
+- (void)setProfileViewMode:(long long)arg1;
 - (void)setUIProfile:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

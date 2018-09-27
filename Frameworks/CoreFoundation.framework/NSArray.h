@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSArray : NSObject <AFSecurityDigestibleChunksProviding, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CSCoderEncoder, FCOrderedCollectionAdditions, HFPrettyDescription, HFPropertyListConvertible, HFStateDumpSerializable, INCacheableContainer, INIntentResolutionResultDataProviding, MPSectionedIdentifierListIdentifierPair, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSArray : NSObject <AADataType, AFSecurityDigestibleChunksProviding, ASDNotificationType, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CSCoderEncoder, CUByteCodable, FCOrderedCollectionAdditions, HFPropertyListConvertible, HMFObject, INCacheableContainer, INImageProxyInjecting, INIntentResolutionResultDataProviding, INKeyImageProducing, MPSectionedIdentifierListIdentifierPair, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, REDonatedActionIdentifierProviding>
 
 @property (nonatomic, readonly) IMMessageItem *__imLastMessageItem;
+@property (readonly) INImage *_keyImage;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
 @property (nonatomic, readonly) NSDictionary *bw_builtInMicRouteDictionary;
 @property (readonly) unsigned long long count;
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +16,7 @@
 @property (nonatomic, readonly) AXEventPathInfoRepresentation *firstPath;
 @property (readonly) unsigned long long hash;
 @property (getter=hmf_isEmpty, readonly) bool hmf_empty;
+@property (nonatomic, readonly) id ic_randomObject;
 @property (nonatomic, readonly) bool isQueryResultSetInvalidated;
 @property (nonatomic, readonly) NSString *itemIdentifier;
 @property (nonatomic, readonly) IMMessage *lastFinishedMessage;
@@ -23,11 +26,15 @@
 @property (nonatomic, readonly) IMMessageItem *lastMessageItem;
 @property (nonatomic, readonly) NSArray *mf_tail;
 @property (nonatomic, readonly) unsigned long long prevailingLocalSecretType;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
 @property (nonatomic, readonly) NSString *sectionIdentifier;
+@property (readonly, copy) NSString *shortDescription;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
++ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)array;
 + (id)arrayWithArray:(id)arg1;
@@ -149,6 +156,10 @@
 
 - (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
++ (id)arrayByFilteringLaunchProhibitedAppsFrom:(id)arg1;
+
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 - (void)encodeWithCSCoder:(id)arg1;
@@ -230,15 +241,20 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (bool)_permutationHelperForArray:(id)arg1 number:(long long)arg2 permutationHandler:(id /* block */)arg3;
+
+- (bool)hk_allElementsUnique;
 - (id)hk_averageUsingEvaluationBlock:(id /* block */)arg1;
 - (bool)hk_containsObjectsInArray:(id)arg1;
+- (void)hk_enumeratePermutationsWithBlock:(id /* block */)arg1;
 - (id)hk_filter:(id /* block */)arg1;
 - (id)hk_firstObjectPassingTest:(id /* block */)arg1;
 - (id)hk_firstObjectWithMaximumValueUsingEvaluationBlock:(id /* block */)arg1;
 - (id)hk_firstObjectWithMinimumValueUsingEvaluationBlock:(id /* block */)arg1;
+- (id)hk_firstSortedObjectWithComparison:(id /* block */)arg1;
 - (id)hk_foldRightFrom:(id)arg1 with:(id /* block */)arg2;
 - (id)hk_map:(id /* block */)arg1;
-- (id)hk_map:(id /* block */)arg1 error:(out id*)arg2;
+- (id)hk_map:(id /* block */)arg1 error:(id*)arg2;
 - (id)hk_mapToDictionary:(id /* block */)arg1;
 - (id)hk_mapToSet:(id /* block */)arg1;
 - (id)hk_orPredicateWithPredicateBlock:(id /* block */)arg1;
@@ -247,9 +263,14 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 - (id)_escapedComponentsJoinedByString:(id)arg1 forLocale:(id)arg2;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_intents_cacheableObjects;
+- (id)_intents_localizedCopyForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_keyImage;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2 error:(id*)arg3;
 
@@ -273,10 +294,6 @@
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2;
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
 - (unsigned long long)mf_indexOfRecipientWithEmailAddress:(id)arg1;
-
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-+ (id)arrayByFilteringLaunchProhibitedAppsFrom:(id)arg1;
 
 // Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
 
@@ -322,16 +339,6 @@
 - (id)objectsPassingTest:(id /* block */)arg1;
 - (id)objectsPassingTest:(id /* block */)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (id)_filteredArrayOfObjectsPassingTest:(id /* block */)arg1;
-- (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawComponentsJoinedByString:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; }*)arg2 forWidth:(double)arg3 withFont:(id)arg4 lineBreakMode:(long long)arg5;
-- (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
-- (id)_ui_firstObject;
-- (id)_ui_onlyObject;
-- (id)ui_arrayByRemovingLastObjectEqualTo:(id)arg1;
-
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
 - (void)un_each:(id /* block */)arg1;
@@ -344,6 +351,17 @@
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
 - (id)vs_componentsJoinedByAttributedString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
+
+- (id)ax_filteredArrayUsingBlock:(id /* block */)arg1;
+- (id)ax_flatMappedArrayUsingBlock:(id /* block */)arg1;
+- (id)ax_mappedArrayUsingBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
+
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
 
@@ -384,16 +402,29 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
+- (id)atx_subarrayWithLimit:(unsigned long long)arg1;
 - (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
+- (id)aa_arrayByRemovingObject:(id)arg1;
+- (id)aa_filter:(id /* block */)arg1;
 - (id)aa_firstObjectPassingTest:(id /* block */)arg1;
 - (bool)aa_isSubsetOfArray:(id)arg1;
+- (id)aa_map:(id /* block */)arg1;
+- (id)aa_mapNullable:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
 - (id)aaui_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
+- (id)ams_dictionaryUsingTransform:(id /* block */)arg1;
+- (id)ams_filterUsingTest:(id /* block */)arg1;
+- (id)ams_firstObjectPassingTest:(id /* block */)arg1;
+- (id)ams_mapWithTransform:(id /* block */)arg1;
+- (id)ams_nonEmptyComponentsJoinedByString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
@@ -409,7 +440,13 @@
 + (id)ak_arrayWithJSONResponseData:(id)arg1;
 + (id)ak_arrayWithResponseData:(id)arg1;
 
+- (id)ak_filter:(id /* block */)arg1;
 - (id)ak_map:(id /* block */)arg1;
+- (id)ak_mapNullable:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
+
+- (id)avt_description;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -464,6 +501,14 @@
 - (id)_CalStringForArrayOfValues:(id)arg1;
 - (id)allObjectsWithClass:(Class)arg1;
 - (id)filteredArrayUsingTest:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
+- (id)mutableDeepCopy;
+
+// Image: /System/Library/PrivateFrameworks/CarPlaySupport.framework/CarPlaySupport
+
+- (id)cps_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
@@ -545,6 +590,7 @@
 - (bool)_cn_all:(id /* block */)arg1;
 - (bool)_cn_any:(id /* block */)arg1;
 - (id)_cn_arrayByRotatingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 by:(long long)arg2;
+- (id)_cn_balancedSlicesWithMaximumCount:(unsigned long long)arg1;
 - (id)_cn_distinctObjects;
 - (void)_cn_each:(id /* block */)arg1;
 - (void)_cn_each:(id /* block */)arg1 until:(id /* block */)arg2;
@@ -571,6 +617,7 @@
 - (id)_cn_safeSortedArrayUsingComparator:(id /* block */)arg1;
 - (id)_cn_skip:(unsigned long long)arg1;
 - (id)_cn_skipLast:(unsigned long long)arg1;
+- (id)_cn_slicesWithMaximumCount:(unsigned long long)arg1;
 - (id)_cn_sortedArrayUsingAuxiliarySortOrder:(id)arg1 transform:(id /* block */)arg2;
 - (id)_cn_tail;
 - (id)_cn_take:(unsigned long long)arg1;
@@ -589,6 +636,7 @@
 // Image: /System/Library/PrivateFrameworks/CoreFollowUp.framework/CoreFollowUp
 
 - (id)fl_map:(id /* block */)arg1;
+- (id)fl_multiMap:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
 
@@ -628,6 +676,18 @@
 
 - (void)enumerateChunksOfSize:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
++ (id)createWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 error:(id*)arg3;
+
+- (const char *)encodedBytesAndReturnLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (id)encodedDataAndReturnError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
+
+- (bool)DACPLogArrayBeginsWithArray:(id)arg1;
+- (id)DACPLogSubarrayFromIndexToEndOfArray:(unsigned long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
 
 - (id)findWithBlock:(id /* block */)arg1;
@@ -644,6 +704,20 @@
 - (id)_fides_objectByReplacingValue:(id)arg1 withValue:(id)arg2;
 - (id)_fides_shuffledArray;
 
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
+- (id)dc_arrayByGroupingIntoArraysWithMaxCount:(unsigned long long)arg1;
+- (bool)dc_containsObjectPassingTest:(id /* block */)arg1;
+- (bool)dc_indexIsValid:(long long)arg1;
+- (unsigned long long)dc_indexOfSortedObject:(id)arg1 insertionIndex:(out unsigned long long*)arg2 usingComparator:(id /* block */)arg3;
+- (id)dc_objectAfter:(id)arg1;
+- (id)dc_objectAfter:(id)arg1 wrap:(bool)arg2;
+- (id)dc_objectBefore:(id)arg1;
+- (id)dc_objectBefore:(id)arg1 wrap:(bool)arg2;
+- (id)dc_objectPassingTest:(id /* block */)arg1;
+- (id)dc_objectsOfClass:(Class)arg1;
+- (id)dc_objectsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/DocumentManagerCore.framework/DocumentManagerCore
 
 - (id)_doc_componentsJoinedByAnd;
@@ -651,6 +725,14 @@
 - (id)_doc_componentsWrappedInQuotes;
 - (id)_doc_filter:(id /* block */)arg1;
 - (id)_doc_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
+
++ (id)array:(id)arg1 withItemsIn:(id)arg2;
++ (id)arrayWithIntersectionOf:(id)arg1 and:(id)arg2;
++ (id)arrayWithUnionOf:(id)arg1 and:(id)arg2;
+
+- (bool)anyItemsIntersectArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
@@ -676,6 +758,15 @@
 // Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
 
 - (id)fa_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Fitness.framework/Fitness
+
++ (id)fi_arrayByEnumeratingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+
+- (id)fi_filteredArrayUsingBlock:(id /* block */)arg1;
+- (id)fi_flatMapUsingBlock:(id /* block */)arg1;
+- (id)fi_mapUsingBlock:(id /* block */)arg1;
+- (id)fi_reduceWithReduction:(id)arg1 block:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -716,9 +807,14 @@
 
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
++ (id)shortDescription;
+
 - (id)describeElements:(id /* block */)arg1;
 - (bool)hmf_isEmpty;
+- (id)hmf_objectPassingTest:(id /* block */)arg1;
 - (bool)hmf_objectsAreKindOfClass:(Class)arg1;
+- (id)hmf_objectsPassingTest:(id /* block */)arg1;
+- (id)privateDescription;
 - (id)secureDescriptionWithBlacklistKeys:(id)arg1;
 - (id)secureDescriptionWithIndent:(id)arg1 newLine:(bool)arg2 blacklistedKeys:(id)arg3;
 - (id)shortDescription;
@@ -727,8 +823,7 @@
 
 + (id)hf_arrayWithNumbersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 stride:(unsigned long long)arg2;
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_prettyDescription;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -737,6 +832,10 @@
 // Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
 
 - (id)componentsJoinedIntoListWithMaxItems:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
+
+- (id)__im_assistant_arrayByApplyingBlockWithIndex:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
@@ -777,10 +876,24 @@
 - (void)differencesFromArray:(id)arg1 usingComparator:(id /* block */)arg2 removedIndexes:(id*)arg3 insertedIndexes:(id*)arg4;
 - (long long)indexOfObject:(id)arg1 matchingComparison:(SEL)arg2;
 
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
+
+- (id)xct_arrayByApplyingBlock:(id /* block */)arg1;
+- (id)xct_objectsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
 - (id)__im_canonicalIDSIDsFromAddresses;
 - (bool)isArchivable_im;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
+
++ (void)initialize;
+
+- (id)copyGroupIntoDictionary:(id /* block */)arg1;
+- (unsigned long long)indexForInsertingObject:(id)arg1 sortDescriptor:(id)arg2;
+- (unsigned long long)indexForInsertingObject:(id)arg1 sortFunction:(int (*)arg2 context:(void*)arg3;
+- (unsigned long long)indexForInsertingObject:(id)arg1 sortSelector:(SEL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -821,6 +934,10 @@
 - (id)_maps_arrayWithObjectsConformingToProtocols:(id)arg1;
 - (unsigned long long)_maps_indexOfObjectCorrespondingToIdentifiableObject:(id)arg1;
 - (id)_maps_indexesOfObjectsCorrespondingToIdentifiableObjects:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
+
+- (id)muDeepMutableCopy;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
@@ -960,6 +1077,7 @@
 - (double)fc_reduceArrayWithDouble:(double)arg1 block:(id /* block */)arg2;
 - (id)fc_reduceArrayWithInitial:(id)arg1 block:(id /* block */)arg2;
 - (id)fc_rotateElementsFromTheIndexOfSelectedItem:(unsigned long long)arg1;
+- (id)fc_safeObjectAtIndex:(unsigned long long)arg1;
 - (id)fc_safeSubarrayWithCountFromBack:(unsigned long long)arg1;
 - (id)fc_safeSubarrayWithCountFromFront:(unsigned long long)arg1;
 - (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
@@ -988,6 +1106,7 @@
 - (bool)containsObjectPassingTest:(id /* block */)arg1;
 - (bool)ic_indexIsValid:(long long)arg1;
 - (unsigned long long)ic_indexOfSortedObject:(id)arg1 insertionIndex:(out unsigned long long*)arg2 usingComparator:(id /* block */)arg3;
+- (id)ic_randomObject;
 - (id)objectAfter:(id)arg1;
 - (id)objectAfter:(id)arg1 wrap:(bool)arg2;
 - (id)objectBefore:(id)arg1;
@@ -1054,10 +1173,6 @@
 
 - (id)pr_objectPassingTest:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotoVision.framework/PhotoVision
-
-- (id)fetchedObjects;
-
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
 - (id)anyObject;
@@ -1091,6 +1206,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
+- (bool)_pl_any:(id /* block */)arg1;
 - (id)_pl_filter:(id /* block */)arg1;
 - (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
 - (id)_pl_flatMap:(id /* block */)arg1;
@@ -1106,11 +1222,18 @@
 - (unsigned long long)pl_indexOfLastObjectPassingTest:(id /* block */)arg1;
 - (id)pl_shortDescription;
 
+// Image: /System/Library/PrivateFrameworks/PhotoVision.framework/PhotoVision
+
+- (id)fetchedObjects;
+
 // Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
 
 + (id)arrayWithValues:(id)arg1 inBlock:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
+
++ (void)pk_updateSpecifiers:(id)arg1 withIconsFromCache:(id)arg2;
++ (void)pk_updateSpecifiers:(id)arg1 withIconsFromCache:(id)arg2 isInterfaceRTL:(bool)arg3;
 
 - (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id /* block */)arg1;
 - (unsigned long long)indexOfSpecifierWithID:(id)arg1;
@@ -1119,6 +1242,17 @@
 // Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
 
 - (bool)containsString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
+- (id)rc_arrayByTransformingWithBlock:(id /* block */)arg1;
+- (id)rc_arrayByTransformingWithBlockWithIndex:(id /* block */)arg1;
+- (bool)rc_containsObjectPassingTest:(id /* block */)arg1;
+- (id)rc_firstObjectPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -1167,6 +1301,11 @@
 
 - (id)by_actionsByRemovingAction:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
+
+- (void)sf_differencesFromArray:(id)arg1 removedIndexes:(id*)arg2 insertedIndexes:(id*)arg3;
+- (void)sf_differencesFromArray:(id)arg1 usingComparator:(id /* block */)arg2 removedIndexes:(id*)arg3 insertedIndexes:(id*)arg4;
+
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 - (bool)containsAnyObjects:(id)arg1;
@@ -1187,10 +1326,20 @@
 - (id)prs_stringAtIndex:(unsigned long long)arg1;
 - (id)stringRepresentation;
 
+// Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
+
+- (bool)sck_containsObjectPassingTest:(id /* block */)arg1;
+- (id)sck_dictionaryWithKeyBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (bool)_ss_any:(id /* block */)arg1;
 - (id)_ss_arrayByRemovingObjectsPassingTest:(id /* block */)arg1;
+- (id)_ss_filterUsingTest:(id /* block */)arg1;
 - (id)_ss_firstObjectPassingTest:(id /* block */)arg1;
 - (id)_ss_index:(id /* block */)arg1;
 - (id)_ss_map:(id /* block */)arg1;
@@ -1252,6 +1401,21 @@
 - (id)deletionRangesWithElementsToKeep:(id)arg1;
 - (id)mecabraCandidateSurfaces;
 
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
+- (id)accessibilityElements;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrame;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (id)_filteredArrayOfObjectsPassingTest:(id /* block */)arg1;
+- (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (struct CGSize { double x1; double x2; })_legacy_drawComponentsJoinedByString:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; }*)arg2 forWidth:(double)arg3 withFont:(id)arg4 lineBreakMode:(long long)arg5;
+- (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (id)_ui_firstObject;
+- (id)_ui_onlyObject;
+- (id)ui_arrayByRemovingLastObjectEqualTo:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 - (bool)uns_containsSimilarRecord:(id)arg1;
@@ -1269,6 +1433,7 @@
 - (id)vcp_localMovieResourcesSorted:(bool)arg1;
 - (id)vcp_localPhotoResourcesSorted:(bool)arg1;
 - (id)vcp_originalResource;
+- (id)vcp_originalVideoResource;
 - (id)vcp_resourceWithType:(unsigned long long)arg1;
 - (id)vcp_thumbnailResource;
 
@@ -1277,10 +1442,22 @@
 - (bool)ikAssetArraysEqual:(id)arg1;
 - (id)ikAssetAttributes;
 
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
+- (id)vui_arrayByApplyingChangeSet:(id)arg1 destinationObjects:(id)arg2;
+- (id)vui_arrayByApplyingChangeSet:(id)arg1 destinationObjects:(id)arg2 updateObjectBlock:(id /* block */)arg3;
+- (id)vui_arrayByApplyingChangeSet:(id)arg1 destinationObjectsBlock:(id /* block */)arg2;
+- (id)vui_arrayByApplyingChangeSet:(id)arg1 destinationObjectsBlock:(id /* block */)arg2 updateObjectBlock:(id /* block */)arg3;
+- (id)vui_deepCopy;
+
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 
 - (id)_nextKeywordUsingCursors:(struct __CFDictionary { }*)arg1;
 - (id)_scrambledKeywordsAndAddToSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcuts.framework/VoiceShortcuts
+
+- (id)mappedWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
 

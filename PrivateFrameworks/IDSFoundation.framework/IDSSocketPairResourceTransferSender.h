@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) bool sentFirstMessage;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) unsigned short streamID;
+@property (nonatomic, readonly) unsigned long long totalBytes;
 
 - (void).cxx_destruct;
 - (void)closeFileAndMarkDone;
@@ -57,5 +58,6 @@
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setStreamID:(unsigned short)arg1;
 - (unsigned short)streamID;
+- (unsigned long long)totalBytes;
 
 @end

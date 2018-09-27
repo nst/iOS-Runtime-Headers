@@ -8,8 +8,8 @@
 
 @property (nonatomic, readonly, copy) NSString *sceneID;
 
+- (void).cxx_destruct;
 - (id)_initWithExternalSceneID:(id)arg1 level:(double)arg2 trackingContext:(id)arg3;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned long long)hash;

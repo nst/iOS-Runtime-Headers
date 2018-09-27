@@ -9,7 +9,8 @@
 - (void).cxx_destruct;
 - (void)_sendAction:(id)arg1;
 - (id)init;
-- (void)sendDittoProcessEnvironmentDescription:(id)arg1;
+- (void)preheatDittoProcess;
+- (void)sendDittoProcessEnvironmentDescription:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendDittoProcessImageIdentifierUpdate:(id)arg1;
 
 @end

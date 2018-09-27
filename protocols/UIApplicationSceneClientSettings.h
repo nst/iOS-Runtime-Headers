@@ -5,7 +5,9 @@
 
 @required
 
+- (NSArray *)audioCategoriesDisablingVolumeHUD;
 - (long long)backgroundStyle;
+- (double)brightnessLevel;
 - (long long)compatibilityMode;
 - (double)controlCenterAmbiguousActivationMargin;
 - (long long)controlCenterRevealMode;
@@ -14,6 +16,8 @@
 - (bool)defaultStatusBarHidden;
 - (long long)defaultStatusBarStyle;
 - (bool)deviceOrientationEventsEnabled;
+- (bool)disablesMirroring;
+- (FBSDisplayConfigurationRequest *)displayConfigurationRequest;
 - (bool)homeIndicatorAutoHidden;
 - (bool)idleModeVisualEffectsEnabled;
 - (bool)idleTimerDisabled;
@@ -22,7 +26,6 @@
 - (bool)isReachabilitySupported;
 - (bool)isStatusBarForegroundTransparent;
 - (long long)notificationCenterRevealMode;
-- (long long)overscanCompensation;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
 - (unsigned long long)proximityDetectionModes;
 - (FBSDisplayMode *)requestedDisplayMode;
@@ -32,6 +35,7 @@
 - (long long)statusBarStyle;
 - (unsigned long long)supportedInterfaceOrientations;
 - (long long)userInterfaceStyle;
+- (unsigned long long)visibleMiniAlertCount;
 - (bool)wantsExclusiveForeground;
 - (long long)whitePointAdaptivityStyle;
 

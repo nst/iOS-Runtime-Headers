@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INGetRestaurantGuestIntentResponse : INIntentResponse <INGetRestaurantGuestIntentResponseExport> {
+@interface INGetRestaurantGuestIntentResponse : INIntentResponse <INGetRestaurantGuestIntentResponseExport, INImageProxyInjecting> {
     INRestaurantGuest * _guest;
     INRestaurantGuestDisplayPreferences * _guestDisplayPreferences;
 }
@@ -19,7 +19,10 @@
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
+- (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (long long)code;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guest;
 - (id)guestDisplayPreferences;

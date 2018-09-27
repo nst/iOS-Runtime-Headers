@@ -16,6 +16,8 @@
     struct OpaqueJSContextGroup { } * m_group;
 }
 
++ (unsigned long long)setNumberOfDFGCompilerThreads:(unsigned long long)arg1;
++ (unsigned long long)setNumberOfFTLCompilerThreads:(unsigned long long)arg1;
 + (id)virtualMachineWithContextGroupRef:(struct OpaqueJSContextGroup { }*)arg1;
 
 - (id).cxx_construct;
@@ -31,5 +33,6 @@
 - (id)initWithContextGroupRef:(struct OpaqueJSContextGroup { }*)arg1;
 - (bool)isOldExternalObject:(id)arg1;
 - (void)removeManagedReference:(id)arg1 withOwner:(id)arg2;
+- (void)shrinkFootprintWhenIdle;
 
 @end

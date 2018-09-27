@@ -8,7 +8,6 @@
     NSArray * _results;
     NSMutableArray * _reusableIconViews;
     NSMutableArray * _tableData;
-    NSArray * _tableDataCopy;
 }
 
 @property (nonatomic) <PSSpotlightSearchResultsControllerDelegate> *delegate;
@@ -21,6 +20,7 @@
 - (void)_selectIndexPath:(id)arg1;
 - (void)_updateIconViews:(bool)arg1;
 - (id)delegate;
+- (double)iconWidth;
 - (id)init;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)results;
@@ -40,6 +40,7 @@
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableViewDidFinishReload:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 
 @end

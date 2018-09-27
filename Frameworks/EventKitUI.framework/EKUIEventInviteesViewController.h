@@ -14,6 +14,7 @@
     EKUIInviteesViewNotRespondedInviteesSection * _notRespondedSection;
     EKUIInviteesViewOriginalConflictSection * _originalConflictSection;
     EKUIEventInviteesEditViewController * _parentController;
+    bool  _prohibitCallingSearcherStateChanged;
     EKUIInviteesViewProposedTimeSection * _proposedTimeSection;
     bool  _resetAttendeesSections;
     bool  _resetConflictResolutionSections;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) EKUIInviteesViewOriginalConflictSection *originalConflictSection;
 @property (nonatomic) EKUIEventInviteesEditViewController *parentController;
 @property (nonatomic) bool presentModally;
+@property (nonatomic) bool prohibitCallingSearcherStateChanged;
 @property (nonatomic, retain) EKUIInviteesViewProposedTimeSection *proposedTimeSection;
 @property (nonatomic) bool resetAttendeesSections;
 @property (nonatomic) bool resetConflictResolutionSections;
@@ -86,6 +88,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)originalConflictSection;
 - (id)parentController;
+- (bool)prohibitCallingSearcherStateChanged;
 - (id)proposedTimeSection;
 - (bool)resetAttendeesSections;
 - (bool)resetConflictResolutionSections;
@@ -104,6 +107,7 @@
 - (void)setNotRespondedSection:(id)arg1;
 - (void)setOriginalConflictSection:(id)arg1;
 - (void)setParentController:(id)arg1;
+- (void)setProhibitCallingSearcherStateChanged:(bool)arg1;
 - (void)setProposedTimeSection:(id)arg1;
 - (void)setResetAttendeesSections:(bool)arg1;
 - (void)setResetConflictResolutionSections:(bool)arg1;

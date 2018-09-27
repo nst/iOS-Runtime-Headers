@@ -22,12 +22,12 @@
 @property (nonatomic, readonly) TIRollingLog *traceLog;
 @property (nonatomic, readonly) NSUUID *uuid;
 
+- (void).cxx_destruct;
 - (id)buildVersion;
 - (id)clientIdentifier;
 - (id)config;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
-- (void)dealloc;
 - (void)enumerateHumanReadableTraceEntriesWithBlock:(id /* block */)arg1;
 - (void)enumerateRecordsWithBlock:(id /* block */)arg1;
 - (id)filename;

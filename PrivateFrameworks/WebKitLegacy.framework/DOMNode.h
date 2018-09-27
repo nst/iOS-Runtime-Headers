@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (getter=_proxyTextInput, nonatomic, readonly) UIResponder<UITextInput> *__content;
+@property (nonatomic, readonly) RTIInputSystemSourceSession *_rtiSourceSession;
 @property (nonatomic) long long _textInputSource;
 @property (nonatomic, readonly) UIView<UITextInputPrivate> *_textSelectingContainer;
 @property (nonatomic) bool acceptsDictationSearchResults;
@@ -41,6 +42,7 @@
 @property (nonatomic) bool hasDefaultContents;
 @property (nonatomic, readonly) bool hasText;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool hidePrediction;
 @property (nonatomic, retain) UIInputContextHistory *inputContextHistory;
 @property (nonatomic) <UITextInputDelegate> *inputDelegate;
 @property (nonatomic, readonly) id insertDictationResultPlaceholder;
@@ -68,6 +70,7 @@
 @property (readonly) DOMDocument *ownerDocument;
 @property (readonly) DOMElement *parentElement;
 @property (readonly) DOMNode *parentNode;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (copy) NSString *prefix;
 @property (readonly) DOMNode *previousSibling;
 @property (nonatomic, copy) NSString *recentInputIdentifier;
@@ -226,7 +229,12 @@
 - (id)mf_traversePreviousNode;
 - (void)recursivelyRemoveMailAttributes;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (void)dd_removeResultLinks;
+- (bool)dd_searchForLinkRemovingExistingDDLinksWithEndNode:(id)arg1 didModifyDOM:(bool*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (void)_accessoryClear;
 - (unsigned int)_characterAfterCaretSelection;
@@ -281,6 +289,7 @@
 - (id)_proxyTextInput;
 - (bool)_range:(id)arg1 containsRange:(id)arg2;
 - (bool)_range:(id)arg1 intersectsRange:(id)arg2;
+- (id)_rangeFromCurrentRangeWithDelta:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfLineEnclosingPosition:(id)arg1;
 - (id)_rangeOfParagraphEnclosingPosition:(id)arg1;
@@ -303,12 +312,14 @@
 - (bool)_selectionAtDocumentStart;
 - (bool)_selectionAtWordStart;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionClipRect;
+- (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)_setCaretSelectionAtEndOfSelection;
 - (void)_setGestureRecognizers;
 - (id)_setHistory:(id)arg1 withExtending:(bool)arg2 withAnchor:(int)arg3 withAffinityDownstream:(bool)arg4;
 - (void)_setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(bool)arg2;
 - (id)_setSelectionRangeWithHistory:(id)arg1;
+- (void)_setSelectionToPosition:(id)arg1;
 - (bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(bool)arg3;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
@@ -485,10 +496,5 @@
 - (id)urlScheme;
 - (id)webFrame;
 - (int)wordOffsetInRange:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
-
-- (void)dd_removeResultLinks;
-- (bool)dd_searchForLinkRemovingExistingDDLinksWithEndNode:(id)arg1 didModifyDOM:(bool*)arg2;
 
 @end

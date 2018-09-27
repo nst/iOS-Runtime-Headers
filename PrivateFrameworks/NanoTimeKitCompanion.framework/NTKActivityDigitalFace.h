@@ -4,8 +4,8 @@
 
 @interface NTKActivityDigitalFace : NTKFace
 
-+ (bool)_customEditModeIsShowSeconds:(long long)arg1;
-+ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1;
++ (bool)_customEditModeIsShowSeconds:(long long)arg1 forDevice:(id)arg2;
++ (id)_localizedNameOverrideForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 
 - (id)_complicationSlotDescriptors;
 - (id)_customEditModes;

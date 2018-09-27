@@ -9,17 +9,13 @@
 }
 
 @property (nonatomic, retain) NSString *articleID;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *displayDate;
 @property (nonatomic, retain) NSString *displayDateString;
 @property (nonatomic, readonly) bool hasArticleID;
 @property (nonatomic, readonly) bool hasDisplayDateString;
 @property (nonatomic, readonly) bool hasStoryType;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSString *storyType;
 @property (nonatomic, readonly) NSString *storyType;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *storyType;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 

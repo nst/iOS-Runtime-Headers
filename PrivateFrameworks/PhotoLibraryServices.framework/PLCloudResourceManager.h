@@ -15,8 +15,8 @@
 - (id)init;
 - (id)initWithCPLManager:(id)arg1;
 - (void)startAutomaticPrefetchAndPruneWithTimeout:(bool)arg1;
-- (void)startAutomaticPruneIfNecessary;
 - (id)statusForDebug:(bool)arg1;
 - (void)stop;
+- (void)updateCacheDeletePurgeableAmount;
 
 @end

@@ -32,6 +32,7 @@
     }  _playerStreamDescription;
     unsigned long long  _requestCreatedTimestamp;
     id /* block */  _stopHandler;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly, copy) NSData *audioData;
@@ -43,6 +44,7 @@
 @property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; } playerStreamDescription;
 @property (nonatomic) unsigned long long requestCreatedTimestamp;
 @property (nonatomic, copy) id /* block */ stopHandler;
+@property (nonatomic, retain) NSString *text;
 
 + (bool)supportsSecureCoding;
 
@@ -69,6 +71,8 @@
 - (void)setPcmDataSize:(unsigned long long)arg1;
 - (void)setRequestCreatedTimestamp:(unsigned long long)arg1;
 - (void)setStopHandler:(id /* block */)arg1;
+- (void)setText:(id)arg1;
 - (id /* block */)stopHandler;
+- (id)text;
 
 @end

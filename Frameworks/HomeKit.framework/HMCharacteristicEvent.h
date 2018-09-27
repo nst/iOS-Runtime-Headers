@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicEvent : HMEvent <HFCharacteristicLikeEvent, HFPrettyDescription, HFStateDumpSerializable, HMCharacteristicEventProtocol, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface HMCharacteristicEvent : HMEvent <HFCharacteristicLikeEvent, HMCharacteristicEventProtocol, NSCopying, NSMutableCopying, NSSecureCoding> {
     HMCharacteristic * _characteristic;
     <NSCopying> * _triggerValue;
 }
@@ -39,8 +39,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_representativeTriggerValue;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

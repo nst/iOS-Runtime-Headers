@@ -3,9 +3,11 @@
  */
 
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebResourceLoadDelegate, WebUIDelegate> {
+    ACAccount * _account;
     SSAuthenticationContext * _authenticationContext;
     SUClientInterface * _clientInterface;
     <SUWebViewManagerDelegate> * _delegate;
+    bool  _initialLoadReported;
     ISURLRequestPerformance * _initialRequestPerformance;
     NSLock * _lock;
     id  _originalFrameLoadDelegate;
@@ -18,11 +20,13 @@
     SUScriptWindowContext * _scriptWindowContext;
     bool  _shouldSignRequests;
     NSSet * _suppressCookiesHosts;
+    NSDictionary * _tidHeaders;
     long long  _usingNetworkCount;
     struct __CFSet { } * _webFramesPendingInitialRequest;
     UIWebView * _webView;
 }
 
+@property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUWebViewManagerDelegate> *delegate;
@@ -36,6 +40,7 @@
 @property (nonatomic, retain) SUScriptWindowContext *scriptWindowContext;
 @property (nonatomic) bool shouldSignRequests;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSDictionary *tidHeaders;
 @property (nonatomic, readonly) UIWebView *webView;
 
 + (id)defaultLocalStoragePath;
@@ -50,6 +55,7 @@
 - (bool)_presentModalAlertWithMessage:(id)arg1 includingCancelButton:(bool)arg2 configurationHandler:(id /* block */)arg3;
 - (void)_requestWebScriptReloadWithContext:(id)arg1;
 - (id)_userIdentifier;
+- (id)account;
 - (id)authenticationContext;
 - (void)connectToWebView:(id)arg1;
 - (void)dealloc;
@@ -71,6 +77,7 @@
 - (bool)respondsToSelector:(SEL)arg1;
 - (void)scriptInterface:(id)arg1 requireCellularForResourceWithURL:(id)arg2;
 - (id)scriptWindowContext;
+- (void)setAccount:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInitialRequestPerformance:(id)arg1;
@@ -80,7 +87,9 @@
 - (void)setOriginalUIDelegate:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setShouldSignRequests:(bool)arg1;
+- (void)setTidHeaders:(id)arg1;
 - (bool)shouldSignRequests;
+- (id)tidHeaders;
 - (id)uiWebView:(id)arg1 connectionPropertiesForResource:(id)arg2 dataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (id)uiWebView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;

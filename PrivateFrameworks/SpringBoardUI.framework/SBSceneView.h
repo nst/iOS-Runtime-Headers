@@ -6,6 +6,7 @@
     UIView * _backgroundView;
     UIView * _crossfadeView;
     UIView * _customContentView;
+    <SBSceneViewDelegate> * _delegate;
     long long  _effectiveDisplayMode;
     UIView<FBSceneHostView> * _hostView;
     long long  _hostingPriority;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic, retain) UIView *customContentView;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBSceneViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long displayMode;
 @property (nonatomic, readonly) long long effectiveDisplayMode;
@@ -74,6 +76,7 @@
 - (id)backgroundView;
 - (id)customContentView;
 - (void)dealloc;
+- (id)delegate;
 - (id)description;
 - (long long)displayMode;
 - (long long)effectiveDisplayMode;
@@ -99,6 +102,7 @@
 - (void)sceneHandle:(id)arg1 didUpdateContentState:(long long)arg2;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCustomContentView:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDisplayMode:(long long)arg1 animationFactory:(id)arg2 completion:(id /* block */)arg3;
 - (void)setPlaceholderContentContext:(id)arg1;
 - (void)setPlaceholderContentEnabled:(bool)arg1;

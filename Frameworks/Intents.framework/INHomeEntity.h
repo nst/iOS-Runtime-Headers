@@ -2,24 +2,23 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INHomeEntity : NSObject <INHomeEntityExport, NSCopying, NSSecureCoding> {
+@interface INHomeEntity : NSObject <NSCopying, NSSecureCoding> {
     long long  _deviceType;
     NSString * _name;
     long long  _type;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long deviceType;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (long long)deviceType;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

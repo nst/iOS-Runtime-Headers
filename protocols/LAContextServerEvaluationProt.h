@@ -12,5 +12,6 @@
 - (void)resetEvent:(void *)arg1 originator:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: long long, <LAOriginatorProt> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)retryEvent:(void *)arg1 originator:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: long long, <LAOriginatorProt> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)setCredential:(void *)arg1 type:(void *)arg2 originator:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSData *, long long, <LAOriginatorProt> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)setShowingCoachingHint:(void *)arg1 event:(void *)arg2 originator:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: bool, long long, <LAOriginatorProt> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 
 @end

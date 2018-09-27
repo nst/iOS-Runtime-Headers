@@ -10,7 +10,9 @@
 @property (nonatomic, readonly) bool onHighCellularDataPlan;
 
 - (void).cxx_destruct;
-- (void)_fetchCellularDataPlanInfo;
+- (void)_fetchCellularDataPlan;
+- (void)_fetchCellularDataPlanWithCompletionHandler:(id /* block */)arg1;
+- (id)fetchCellularDataPlanSynchronously;
 - (id)init;
 - (bool)onHighCellularDataPlan;
 

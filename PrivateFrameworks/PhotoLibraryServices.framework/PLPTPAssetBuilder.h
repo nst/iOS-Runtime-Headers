@@ -13,6 +13,7 @@
     NSString * _filenameForPTP;
     PLPTPAsset * _fullSizeRenderImagePtpAsset;
     PLPTPAsset * _fullSizeRenderVideoPtpAsset;
+    bool  _irisSidecarRequiresFormatConversion;
     PLPTPAsset * _originalAdjustmentPtpAsset;
     PLPTPAsset * _originalPtpAsset;
     NSArray * _sidecarPtpAssets;
@@ -52,9 +53,10 @@
 - (bool)_suppressPtpInfo;
 - (void)_updateAsset:(id)arg1 withConversionResult:(id)arg2;
 - (void)_updateAssetForTranscodeChoice:(id)arg1 withConversionResult:(id)arg2;
+- (void)_updateOriginalAssetFormatConversionFromVideoComplement;
 - (id)initWithAsset:(id)arg1 conversionSupport:(id)arg2;
 - (id)initWithAsset:(id)arg1 conversionSupport:(id)arg2 fileManager:(id)arg3;
 - (id)pictureTransferProtocolAssets;
-- (void)updateAssetForFormatConversion:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3;
+- (void)updateAssetForFormatConversion:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3 forceLegacyConversion:(bool)arg4;
 
 @end

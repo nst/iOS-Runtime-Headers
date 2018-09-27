@@ -28,6 +28,7 @@
 - (struct OpaqueJSValue { }*)originalArticleFinder;
 - (id)originalPageController;
 - (id)printingMailingFrame;
+- (void)reloadArticle;
 - (void)setOriginalPageController:(id)arg1;
 - (void)setReaderFont:(id)arg1;
 - (void)setReaderTheme:(id)arg1;

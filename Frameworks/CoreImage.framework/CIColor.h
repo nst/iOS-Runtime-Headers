@@ -62,13 +62,13 @@
 - (double)red;
 - (id)stringRepresentation;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (id)initWithColor:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
 
 + (id)colorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3;
 + (id)colorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (id)initWithColor:(id)arg1;
 
 @end

@@ -10,8 +10,8 @@
 @property (nonatomic, retain) FBSSerialQueue *callOutQueue;
 @property (nonatomic, retain) FBSScene *scene;
 
+- (void).cxx_destruct;
 - (id)callOutQueue;
-- (void)dealloc;
 - (id)scene;
 - (void)setCallOutQueue:(id)arg1;
 - (void)setScene:(id)arg1;

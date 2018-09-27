@@ -10,6 +10,8 @@
         unsigned int totalAccessTransaction : 1; 
         unsigned int totalAuthECommerce : 1; 
         unsigned int totalCEEnable : 1; 
+        unsigned int totalCEEnabledWithMissingTransactionEndEvent : 1; 
+        unsigned int totalCEEnabledWithNoFieldDetected : 1; 
         unsigned int totalCardProvisioned : 1; 
         unsigned int totalDynamicPackages : 1; 
         unsigned int totalDynamicRFParametersUpdate : 1; 
@@ -46,6 +48,8 @@
     unsigned int  _totalAccessTransaction;
     unsigned int  _totalAuthECommerce;
     unsigned int  _totalCEEnable;
+    unsigned int  _totalCEEnabledWithMissingTransactionEndEvent;
+    unsigned int  _totalCEEnabledWithNoFieldDetected;
     unsigned int  _totalCardProvisioned;
     unsigned int  _totalDynamicPackages;
     unsigned int  _totalDynamicRFParametersUpdate;
@@ -83,6 +87,8 @@
 @property (nonatomic) bool hasTotalAccessTransaction;
 @property (nonatomic) bool hasTotalAuthECommerce;
 @property (nonatomic) bool hasTotalCEEnable;
+@property (nonatomic) bool hasTotalCEEnabledWithMissingTransactionEndEvent;
+@property (nonatomic) bool hasTotalCEEnabledWithNoFieldDetected;
 @property (nonatomic) bool hasTotalCardProvisioned;
 @property (nonatomic) bool hasTotalDynamicPackages;
 @property (nonatomic) bool hasTotalDynamicRFParametersUpdate;
@@ -110,6 +116,8 @@
 @property (nonatomic) unsigned int totalAccessTransaction;
 @property (nonatomic) unsigned int totalAuthECommerce;
 @property (nonatomic) unsigned int totalCEEnable;
+@property (nonatomic) unsigned int totalCEEnabledWithMissingTransactionEndEvent;
+@property (nonatomic) unsigned int totalCEEnabledWithNoFieldDetected;
 @property (nonatomic) unsigned int totalCardProvisioned;
 @property (nonatomic) unsigned int totalDynamicPackages;
 @property (nonatomic) unsigned int totalDynamicRFParametersUpdate;
@@ -150,6 +158,8 @@
 - (bool)hasTotalAccessTransaction;
 - (bool)hasTotalAuthECommerce;
 - (bool)hasTotalCEEnable;
+- (bool)hasTotalCEEnabledWithMissingTransactionEndEvent;
+- (bool)hasTotalCEEnabledWithNoFieldDetected;
 - (bool)hasTotalCardProvisioned;
 - (bool)hasTotalDynamicPackages;
 - (bool)hasTotalDynamicRFParametersUpdate;
@@ -189,6 +199,8 @@
 - (void)setHasTotalAccessTransaction:(bool)arg1;
 - (void)setHasTotalAuthECommerce:(bool)arg1;
 - (void)setHasTotalCEEnable:(bool)arg1;
+- (void)setHasTotalCEEnabledWithMissingTransactionEndEvent:(bool)arg1;
+- (void)setHasTotalCEEnabledWithNoFieldDetected:(bool)arg1;
 - (void)setHasTotalCardProvisioned:(bool)arg1;
 - (void)setHasTotalDynamicPackages:(bool)arg1;
 - (void)setHasTotalDynamicRFParametersUpdate:(bool)arg1;
@@ -216,6 +228,8 @@
 - (void)setTotalAccessTransaction:(unsigned int)arg1;
 - (void)setTotalAuthECommerce:(unsigned int)arg1;
 - (void)setTotalCEEnable:(unsigned int)arg1;
+- (void)setTotalCEEnabledWithMissingTransactionEndEvent:(unsigned int)arg1;
+- (void)setTotalCEEnabledWithNoFieldDetected:(unsigned int)arg1;
 - (void)setTotalCardProvisioned:(unsigned int)arg1;
 - (void)setTotalDynamicPackages:(unsigned int)arg1;
 - (void)setTotalDynamicRFParametersUpdate:(unsigned int)arg1;
@@ -243,6 +257,8 @@
 - (unsigned int)totalAccessTransaction;
 - (unsigned int)totalAuthECommerce;
 - (unsigned int)totalCEEnable;
+- (unsigned int)totalCEEnabledWithMissingTransactionEndEvent;
+- (unsigned int)totalCEEnabledWithNoFieldDetected;
 - (unsigned int)totalCardProvisioned;
 - (unsigned int)totalDynamicPackages;
 - (unsigned int)totalDynamicRFParametersUpdate;

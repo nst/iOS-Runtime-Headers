@@ -7,6 +7,10 @@
     PKGroup * _deletingGroup;
     bool  _editingMode;
     PKGroupsController * _groupsController;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _imageSizeNeeded;
     <UIViewControllerPreviewing> * _previewingContext;
     UITableView * _tableView;
     PKGroup * _viewingGroup;
@@ -32,9 +36,10 @@
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)groupsController:(id)arg1 didUpdateGroup:(id)arg2;
 - (id)indexPathForGroup:(id)arg1;
-- (id)initInEditingMode:(bool)arg1;
+- (id)initInEditingMode:(bool)arg1 existingGroupsController:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)passAtIndexPath:(id)arg1;
+- (bool)passExistsWithUniqueIdentifier:(id)arg1;
 - (void)prefetchItemsAtIndexPaths:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;

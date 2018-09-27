@@ -15,6 +15,7 @@
     bool  _isSending;
     long long  _maxConcurrentMessages;
     NSDictionary * _options;
+    bool  _paused;
     NSMutableDictionary * _peerGenerationIDs;
     NSMutableSet * _pendingMessageIDs;
     double  _perMessageTimeout;

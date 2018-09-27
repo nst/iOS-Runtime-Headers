@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface FaceRecognizer : NSObject {
+@interface FaceRecognizer : VEiOSSharedObject {
     bool  _highAccuracy;
 }
 

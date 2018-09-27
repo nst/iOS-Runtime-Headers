@@ -87,7 +87,7 @@
 - (bool)_loadsSynchronously;
 - (id)_markDOMRange;
 - (bool)_needsLayout;
-- (id)_nodesFromList:(struct Vector<WebCore::Node *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct Node {} **x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
+- (id)_nodesFromList:(struct Vector<WebCore::Node *, 0, WTF::CrashOnOverflow, 16> { struct Node {} **x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (unsigned int)_paintBehaviorForDestinationContext:(struct CGContext { }*)arg1;
 - (unsigned int)_pendingFrameUnloadEventCount;
 - (id)_rectsForRange:(id)arg1;
@@ -148,7 +148,7 @@
 - (void)confirmMarkedText:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })convertDOMRangeToNSRange:(id)arg1;
 - (id)convertNSRangeToDOMRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct Frame { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct MainFrame {} *x4; struct Page {} *x5; struct RefPtr<WebCore::Settings, WTF::DumbPtrTraits<WebCore::Settings> > { struct Settings {} *x_6_1_1; } x6; struct FrameTree { struct Frame {} *x_7_1_1; struct Frame {} *x_7_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_7_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_7_1_4; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_5_2_1; } x_7_1_5; struct Frame {} *x_7_1_6; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_7_2_1; } x_7_1_7; struct Frame {} *x_7_1_8; unsigned int x_7_1_9; } x7; }*)coreFrame;
+- (struct Frame { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; struct Ref<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> > { struct WindowProxy {} *x_3_1_1; } x3; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_4_1_1; } x4; struct Frame {} *x5; struct Page {} *x6; struct RefPtr<WebCore::Settings, WTF::DumbPtrTraits<WebCore::Settings> > { struct Settings {} *x_7_1_1; } x7; struct FrameTree { struct Frame {} *x_8_1_1; struct Frame {} *x_8_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_8_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_8_1_4; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_5_2_1; } x_8_1_5; struct Frame {} *x_8_1_6; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_7_2_1; } x_8_1_7; struct Frame {} *x_8_1_8; unsigned int x_8_1_9; unsigned long long x_8_1_10; } x8; }*)coreFrame;
 - (id)dataSource;
 - (void)dealloc;
 - (id)deepestNodeAtViewportLocation:(struct CGPoint { double x1; double x2; })arg1;
@@ -282,27 +282,19 @@
 - (id)wordRangeContainingCaretSelection;
 - (id)wordsInCurrentParagraph;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (id)dd_newOperation;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (bool)containsOnlySelectableElements;
 - (bool)isMainFrame;
 - (bool)isTexty;
 
-// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
-
-- (id)dd_newOperation;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 
 - (id)webui_URL;
 - (struct __SecTrust { }*)webui_serverTrust;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

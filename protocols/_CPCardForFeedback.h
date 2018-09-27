@@ -11,7 +11,6 @@
 - (unsigned long long)cardSectionsCount;
 - (void)clearCardSections;
 - (NSString *)fbr;
-- (bool)hasFbr;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

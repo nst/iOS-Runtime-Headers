@@ -30,6 +30,7 @@
 - (void)searchButtonAction:(id)arg1;
 - (id)searchInSegmentControl;
 - (id)stackView;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;

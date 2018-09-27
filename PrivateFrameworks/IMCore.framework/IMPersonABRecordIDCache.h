@@ -29,5 +29,6 @@
 - (void)setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 sequenceNumber:(long long)arg4;
 - (void)setCoalescingPeriod:(double)arg1;
 - (void)setParentPath:(id)arg1;
+- (unsigned long long)versionNumber;
 
 @end

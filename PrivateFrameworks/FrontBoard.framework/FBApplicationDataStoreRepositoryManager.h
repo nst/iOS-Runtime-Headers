@@ -18,8 +18,8 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_handleApplicationInstalled:(id)arg1;
-- (void)_handleApplicationsUninstalled:(id)arg1;
 - (id)_initWithDataStore:(id)arg1 lsWorkspace:(id)arg2;
 - (void)_performAfterDeferredWork:(id /* block */)arg1;
 - (id)_safeObjectForKey:(id)arg1 forApplication:(id)arg2 ofType:(Class)arg3;

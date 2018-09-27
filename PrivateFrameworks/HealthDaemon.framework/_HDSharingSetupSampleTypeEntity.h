@@ -4,8 +4,9 @@
 
 @interface _HDSharingSetupSampleTypeEntity : HDHealthEntity
 
-+ (id)columnsDefinition;
++ (const struct { id x1; unsigned char x2; }*)columnDefinitionsWithCount:(unsigned long long*)arg1;
 + (id)databaseTable;
++ (id)foreignKeys;
 + (long long)protectionClass;
 + (id)uniquedColumns;
 

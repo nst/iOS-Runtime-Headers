@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) CADisplay *display;
+@property (nonatomic, readonly) CADisplay *display;
 @property (nonatomic, copy) NSString *displayUUID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long interfaceOrientation;
@@ -28,9 +28,9 @@
 + (id)descriptorWithName:(id)arg1 display:(id)arg2;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_initWithName:(id)arg1 displayUUID:(id)arg2;
 - (void)_setInterstitial:(bool)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

@@ -5,7 +5,7 @@
 @interface MSPMapsPushDaemonRemoteProxy : NSObject <MSPMapsPushDaemonProxy, MSPMapsPushDaemonProxyObserver> {
     MSPUserRoutingPreferences * _cachedUserRoutingPreferences;
     NSXPCConnection * _connection;
-    NSMutableArray * _observers;
+    NSHashTable * _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -24,13 +24,13 @@
 + (bool)shouldLenientlyMatchWithContentItemsForRegion:(id)arg1;
 + (long long)supportedCompatibilityVersion;
 
+- (void).cxx_destruct;
 - (void)addAssertion;
 - (id)assetContentItemsMatching:(id)arg1;
 - (id)attributes;
 - (long long)compatibilityVersion;
 - (long long)contentVersion;
 - (id)contents;
-- (void)dealloc;
 - (id)description;
 - (bool)hasAssertions;
 - (unsigned long long)hash;

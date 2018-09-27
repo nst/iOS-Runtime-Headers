@@ -8,5 +8,6 @@
 
 - (id)g_genericToSpecificPropertyMap3DBar;
 - (id)genericToSpecificPropertyMap;
+- (bool)supportsRoundedCorners;
 
 @end

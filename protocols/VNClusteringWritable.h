@@ -5,7 +5,8 @@
 
 @required
 
-- (bool)cancelClustering:(id*)arg1;
++ (NSUUID *)nonGroupedGroupID;
+
 - (NSArray *)getClustersWithOptions:(NSDictionary *)arg1 error:(id*)arg2;
 
 @end

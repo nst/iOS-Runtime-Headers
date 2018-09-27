@@ -46,10 +46,13 @@
     NSDateComponents * _originalDisplayDate;
     NSDateComponents * _pendingNextDate;
     NSDateComponents * _pendingPreviousDate;
+    bool  _preloadExtraDays;
     EKDayView * _previousDay;
     CalendarOccurrencesCollection * _previousDayOccurrences;
     EKDayViewWithGutters * _previousDayWithGutter;
     EKDayOccurrenceView * _proposedTimeView;
+    NSObject<OS_dispatch_queue> * _protectionQueue;
+    NSObject<OS_dispatch_queue> * _reloadQueue;
     bool  _resizing;
     unsigned int  _scrollViewAnimating;
     unsigned int  _settingDateFromScrolling;
@@ -86,6 +89,7 @@
 @property (nonatomic) bool notifyWhenTapOtherEventDuringDragging;
 @property (nonatomic, copy) NSDateComponents *pendingNextDate;
 @property (nonatomic, copy) NSDateComponents *pendingPreviousDate;
+@property (nonatomic) bool preloadExtraDays;
 @property (nonatomic) bool scrollEventsInToViewIgnoresVisibility;
 @property (nonatomic) bool shouldAutoscrollAfterAppearance;
 @property (nonatomic, retain) NSTimer *showNowTimer;
@@ -96,12 +100,17 @@
 + (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
+- (void)__cutLongCallbackTailForDecelerationFromUserInput;
+- (void)__cutLongTailCallbackForScrollAnimationFromExternalSource;
 - (bool)_canScrollToNow;
 - (bool)_canShowNowAfterScrollViewDidEndDecelerating:(id)arg1;
+- (void)_cancelAllLongTailCuttingCallbacks;
 - (void)_cleanUpTargetDateComponents;
 - (void)_completeDecelerationIfNeeded;
 - (void)_completeScrollingAnimationIfNeeded;
 - (id)_createGutterDayViewWithDayView:(id)arg1;
+- (void)_cutAnimationTailAfterDelayForDecelerationFromUserInput;
+- (void)_cutAnimationTailAfterDelayForScrollAnimationFromExternalSource;
 - (void)_didRespondToApplicationDidBecomeActiveStateChange;
 - (id)_eventGestureSuperview;
 - (id)_eventsForDay:(id)arg1;
@@ -212,10 +221,12 @@
 - (id)pendingNextDate;
 - (id)pendingPreviousDate;
 - (id)preferredEventToSelectOnDate:(id)arg1;
+- (bool)preloadExtraDays;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)reloadData;
-- (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
+- (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(id /* block */)arg3;
+- (void)reloadDataWithCompletion:(id /* block */)arg1;
 - (void)scrollDayViewAppropriatelyWithAnimation:(bool)arg1;
 - (void)scrollEventIntoView:(id)arg1 animated:(bool)arg2;
 - (bool)scrollEventsInToViewIgnoresVisibility;
@@ -245,6 +256,7 @@
 - (void)setNotifyWhenTapOtherEventDuringDragging:(bool)arg1;
 - (void)setPendingNextDate:(id)arg1;
 - (void)setPendingPreviousDate:(id)arg1;
+- (void)setPreloadExtraDays:(bool)arg1;
 - (void)setScrollEventsInToViewIgnoresVisibility:(bool)arg1;
 - (void)setShouldAutoscrollAfterAppearance:(bool)arg1;
 - (void)setShowNowTimer:(id)arg1;
@@ -260,10 +272,11 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (bool)transitionedToSameDay;
 - (void)updateFrameForProposedTimeView;
+- (void)validateInterfaceOrientation;
+- (id)verticalScrollView;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 

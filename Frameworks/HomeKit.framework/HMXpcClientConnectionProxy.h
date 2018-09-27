@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMXpcClientConnectionProxy : HMFMessageTransport <HMXPCMessageTransport> {
+@interface HMXPCClientConnectionProxy : HMFMessageTransport <HMXPCMessageTransport> {
     id /* block */  _refreshHandler;
 }
 

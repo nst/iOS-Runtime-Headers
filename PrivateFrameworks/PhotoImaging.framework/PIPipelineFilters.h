@@ -7,14 +7,16 @@
 + (id)applyOrientationFilter;
 + (id)autoCropFilter;
 + (id)noCropFilter;
++ (id)noGeometryFilter;
 + (id)noMuteFilter;
 + (id)noRedEyeFilter;
 + (id)noTrimFilter;
-+ (id)originalWithGeometry;
 + (id)postGeometryFilter;
 + (id)preGeometryFilter;
++ (id)rawFaceBalanceFilter;
 + (id)sourceFilterIncludingOrientation:(bool)arg1;
 + (id)stopAtTagIncludeGeometryFilter:(id)arg1;
++ (id)stopAtTagIncludeOrientationFilter:(id)arg1;
 + (id)sushiLevel1Filter;
 
 @end

@@ -35,8 +35,8 @@
 - (id)_equationDescriptionInParent;
 - (id)_equationDescriptionLegendEntries;
 - (id)_expressionForValueInItem:(id)arg1;
-- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=q@}' */ struct { long long x1; id x2; })arg1;
-- (id)_expressionInDefaultContext;
+- (id)_expressionInContext:(struct { long long x1; id x2; })arg1;
+- (id)_expressionInDefaultContextWithEngine:(id)arg1;
 - (bool)_isReferencedByConstraint:(id)arg1;
 - (id)_nearestAncestorLayoutItem;
 - (long long)_proxiedAttribute;

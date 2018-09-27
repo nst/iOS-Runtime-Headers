@@ -21,8 +21,8 @@
 - (void)_queue_querySwimDataWithCompletion:(id /* block */)arg1;
 - (void)_queue_startCollectionWithSessionId:(id)arg1;
 - (void)_queue_stopCollection;
-- (void)immediateUpdateWithCompletion:(id /* block */)arg1;
 - (id)initWithProfile:(id)arg1 delegate:(id)arg2;
+- (void)requestPendingEventsThroughDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)startWithSessionId:(id)arg1;
 - (void)stop;
 - (bool)supportsWorkoutActivityType:(unsigned long long)arg1;

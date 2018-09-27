@@ -8,6 +8,7 @@
     NSString * _externalDataReferencesDirectory;
     NSFaultHandler * _faultHandler;
     _PFFetchPlanHeader * _fetchPlan;
+    NSString * _fileBackedFuturesDirectory;
     int  _fileProtectionLevel;
     bool  _isFaultRequest;
     bool  _isUsingCachedStatement;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly, retain) NSArray *faultsThatWereFired;
 @property (nonatomic, readonly) _PFFetchPlanHeader *fetchPlan;
 @property (nonatomic, retain) NSSQLiteStatement *fetchStatement;
+@property (nonatomic, readonly) NSString *fileBackedFuturesDirectory;
 @property (nonatomic, readonly) int fileProtectionLevel;
 @property (nonatomic) bool isFaultRequest;
 @property (nonatomic) bool isUsingCachedStatement;
@@ -64,6 +66,7 @@
 - (id)faultsThatWereFired;
 - (id)fetchPlan;
 - (id)fetchStatement;
+- (id)fileBackedFuturesDirectory;
 - (int)fileProtectionLevel;
 - (id)initWithRequest:(id)arg1 connection:(id)arg2 context:(id)arg3 sqlCore:(id)arg4 parentContext:(id)arg5;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;

@@ -6,6 +6,7 @@
 @required
 
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 avatarPickerViewControllerDidSelectEntity:(CKEntity *)arg2;
+- (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 buttonWasPressedOfType:(long long)arg2 wasLongPress:(bool)arg3;
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 didTapView:(UIView *)arg2;
 - (void)navbarCanvasViewControllerWantsNavbarResize:(CKNavbarCanvasViewController *)arg1;
 

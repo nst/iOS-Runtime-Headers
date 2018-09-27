@@ -9,6 +9,7 @@
     struct CAARiseTransitSetDetails { 
         bool bRiseValid; 
         double Rise; 
+        bool bTransitValid; 
         bool bTransitAboveHorizon; 
         double Transit; 
         bool bSetValid; 
@@ -24,7 +25,7 @@
 @property (nonatomic, readonly) double julianDay;
 @property (nonatomic, readonly) NSDate *lastEventDate;
 @property (nonatomic, readonly) unsigned long long lastEventType;
-@property (nonatomic, readonly) struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; } riseTransitSet;
+@property (nonatomic, readonly) struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; bool x4; double x5; bool x6; double x7; } riseTransitSet;
 @property (nonatomic, readonly) NSDate *sunrise;
 @property (nonatomic, readonly) NSDate *sunset;
 @property (nonatomic, readonly) NSDate *transit;
@@ -36,12 +37,12 @@
 - (long long)compareToDate:(id)arg1;
 - (id)firstEventDate;
 - (unsigned long long)firstEventType;
-- (id)initWithJulianEphemerisDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })arg2;
+- (id)initWithJulianEphemerisDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; bool x4; double x5; bool x6; double x7; })arg2;
 - (bool)isCompatibleWith:(id)arg1;
 - (double)julianDay;
 - (id)lastEventDate;
 - (unsigned long long)lastEventType;
-- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })riseTransitSet;
+- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; bool x4; double x5; bool x6; double x7; })riseTransitSet;
 - (id)sunrise;
 - (id)sunset;
 - (id)transit;

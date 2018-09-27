@@ -13,9 +13,11 @@
         unsigned int flags; 
         long long epoch; 
     }  deprecatedMinFrameDuration;
-    struct OpaqueFigSimpleMutex { } * remoteQueueMutex;
-    struct remoteQueueReceiverOpaque { } * remoteReceiverQueue;
+    struct localQueueOpaque { } * localQueue;
+    struct OpaqueFigSimpleMutex { } * queueMutex;
+    struct remoteQueueReceiverOpaque { } * remoteQueueReceiver;
     NSDictionary * videoSettings;
+    bool  videoSettingsDimensionsOverrideEnabled;
     AVWeakReference * weakReference;
 }
 

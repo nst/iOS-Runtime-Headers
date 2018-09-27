@@ -122,6 +122,7 @@
 + (id)cleanImageMetadataFromData:(id)arg1;
 + (bool)hasPrivateImageMetadata:(id)arg1;
 + (id)markupBarButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
++ (id)supportedOutputTypes;
 
 - (void).cxx_destruct;
 - (void)_bailFailedAnimateEnterMarkup;
@@ -140,6 +141,7 @@
 - (void)_saveEditing:(id)arg1;
 - (void)_setData:(id)arg1 withArchivedModelData:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_setFileURL:(id)arg1 withArchivedModelData:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_setLegacyToolbarHidden:(bool)arg1 animated:(bool)arg2;
 - (void)_setupAnnotationController;
 - (void)_setupInitialBaseModelScaleFactorWithScreenSize:(struct CGSize { double x1; double x2; })arg1 windowDecorationSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_showTextStyleOptions:(id)arg1;
@@ -192,6 +194,7 @@
 - (void)editTextAnnotation:(id)arg1;
 - (bool)encryptPrivateMetadata;
 - (id)filteredToolbarItemsForItems:(id)arg1 fromController:(id)arg2;
+- (void)finalizeCrop;
 - (bool)forcesPDFViewTopAlignment;
 - (void)fullTeardown;
 - (id)hostProcessBundleIdentifier;

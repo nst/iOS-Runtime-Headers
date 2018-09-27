@@ -21,7 +21,6 @@
 + (id)contextForEvent:(long long)arg1 settings:(id)arg2 transitionContext:(id)arg3;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

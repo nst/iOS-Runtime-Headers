@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface PHAssetRepresentationPersistenceManager : NSObject <PHAssetRepresentationDownloadOperationDelegate, PHPhotoLibraryChangeObserver> {
+@interface PHAssetRepresentationPersistenceManager : VEiOSSharedObject <PHAssetRepresentationDownloadOperationDelegate, PHPhotoLibraryChangeObserver> {
     NSMapTable * _assetRepresentationToPersistenceObserverMap;
     bool  _bulkAssetRegistrationRequestCount;
     unsigned long long  _cellularAuthorization;
@@ -52,6 +52,7 @@
 @property (nonatomic, retain) NSMutableSet *unreadDownloads;
 @property (nonatomic, retain) Reachability *wifiReachability;
 
++ (void)purgeSharedInstance;
 + (id)sharedManager;
 
 - (void).cxx_destruct;

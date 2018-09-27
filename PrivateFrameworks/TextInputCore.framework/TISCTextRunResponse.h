@@ -11,6 +11,7 @@
 + (id)textRunResponseByMergingResponses:(id)arg1;
 + (id)textRunResponseWithFont:(struct __CTFont { }*)arg1;
 
+- (void).cxx_destruct;
 - (struct __CFArray { }*)ctLines;
 - (void)dealloc;
 - (struct __CTFont { }*)font;

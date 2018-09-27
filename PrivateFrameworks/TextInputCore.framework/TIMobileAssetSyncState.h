@@ -17,10 +17,10 @@
 
 + (id)buildVersionString;
 
+- (void).cxx_destruct;
 - (long long)attemptCount;
 - (id)buildVersion;
 - (id)date;
-- (void)dealloc;
 - (void)didSyncToRemoteMetadataWithError:(id)arg1;
 - (id)initWithDate:(id)arg1 buildVersion:(id)arg2 status:(long long)arg3 attemptCount:(long long)arg4;
 - (void)loadStateIfNecessary;

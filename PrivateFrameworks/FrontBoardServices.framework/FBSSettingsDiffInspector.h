@@ -8,6 +8,7 @@
     BSMutableSettings * _otherSettingsObserverInfo;
 }
 
+- (void).cxx_destruct;
 - (void)_addObserver:(id)arg1 forSetting:(unsigned long long)arg2 inInfo:(id)arg3;
 - (void)_observeSetting:(unsigned long long)arg1 withBlock:(id /* block */)arg2;
 - (void)dealloc;

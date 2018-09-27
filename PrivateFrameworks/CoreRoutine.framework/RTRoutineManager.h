@@ -5,6 +5,7 @@
 @interface RTRoutineManager : NSObject <RTFrameworkProtocol> {
     RTRoutineManagerRegistrantAction * _actionRegistrant;
     RTRoutineManagerRegistrantApplicationPrediction * _applicationPredictionRegistrant;
+    RTTokenBucket * _clientThrottle;
     RTEventAgentHelper * _eventAgentHelper;
     id /* block */  _leechedLowConfidenceVisitHandler;
     id /* block */  _leechedVisitHandler;
@@ -19,6 +20,7 @@
 
 @property (nonatomic, retain) RTRoutineManagerRegistrantAction *actionRegistrant;
 @property (nonatomic, retain) RTRoutineManagerRegistrantApplicationPrediction *applicationPredictionRegistrant;
+@property (nonatomic, retain) RTTokenBucket *clientThrottle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) RTEventAgentHelper *eventAgentHelper;
@@ -50,6 +52,7 @@
 - (void)clearAllVehicleEvents;
 - (void)clearAllVehicleEventsWithHandler:(id /* block */)arg1;
 - (void)clearRoutineWithHandler:(id /* block */)arg1;
+- (id)clientThrottle;
 - (void)createConnection;
 - (void)dealloc;
 - (void)engageInVehicleEventWithIdentifier:(id)arg1;
@@ -80,7 +83,6 @@
 - (void)fetchPredictedConditionsForAction:(id)arg1 dateInterval:(id)arg2 handler:(id /* block */)arg3;
 - (void)fetchPredictedConditionsForAction:(id)arg1 handler:(id /* block */)arg2;
 - (void)fetchPredictedConditionsForAction:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)fetchPredictedContentForBundleWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)fetchPredictedExitDatesFromLocation:(id)arg1 onDate:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)fetchPredictedExitDatesWithHandler:(id /* block */)arg1;
 - (void)fetchPredictedLocationsOfInterestAssociatedToTitle:(id)arg1 location:(id)arg2 calendarIdentifier:(id)arg3 withHandler:(id /* block */)arg4;
@@ -89,6 +91,8 @@
 - (void)fetchPredictedRoutesToLocationOfInterestWithIdentifier:(id)arg1 fromLocation:(id)arg2 handler:(id /* block */)arg3;
 - (void)fetchRoutineEnabledWithHandler:(id /* block */)arg1;
 - (void)fetchRoutineModeFromLocation:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)fetchRoutineStateWithHandler:(id /* block */)arg1;
+- (void)fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(id /* block */)arg3;
 - (void)handleDaemonStart;
 - (id)init;
 - (id)initWithRestorationIdentifier:(id)arg1;
@@ -113,6 +117,7 @@
 - (id)scenarioTriggerRegistrant;
 - (void)setActionRegistrant:(id)arg1;
 - (void)setApplicationPredictionRegistrant:(id)arg1;
+- (void)setClientThrottle:(id)arg1;
 - (void)setEventAgentHelper:(id)arg1;
 - (void)setLeechedLowConfidenceVisitHandler:(id /* block */)arg1;
 - (void)setLeechedVisitHandler:(id /* block */)arg1;

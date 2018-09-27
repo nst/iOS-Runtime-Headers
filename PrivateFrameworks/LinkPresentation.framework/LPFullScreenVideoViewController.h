@@ -9,7 +9,17 @@
     LPControlsSuppressingAVPlayerViewController * _playerViewController;
     UIPanGestureRecognizer * _slideGesture;
     LPVideoView * _sourceView;
-    LPSwipeDownTracker * _swipeDownTracker;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _swipeDownInitialBounds;
+    PHSwipeDownTracker * _swipeDownTracker;
     CALayer * _videoMaskLayer;
 }
 

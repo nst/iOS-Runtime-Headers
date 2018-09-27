@@ -13,10 +13,7 @@
     bool  _queue_hasBeenNeutered;
     bool  _queue_invalidated;
     id /* block */  _queue_invalidationHandler;
-    struct { 
-        unsigned int port; 
-        NSObject<OS_xpc_object> *endpoint; 
-    }  _queue_listenerTokens;
+    BSActionListenerToken * _queue_listenerToken;
     BSPortDeathSentinel * _queue_portDeathSentinel;
     BSMachPortReceiveRight * _queue_receiveRight;
     BSActionResponse * _queue_response;
@@ -71,7 +68,7 @@
 - (id)succinctDescriptionBuilder;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (long long)UIActionType;
 

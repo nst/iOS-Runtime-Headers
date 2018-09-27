@@ -4,6 +4,7 @@
 
 @interface SCNShadableHelper : NSObject <NSSecureCoding> {
     NSMutableArray * _argumentsNames;
+    NSArray * _c3dShaderModifierCache;
     id  _owner;
     SCNProgram * _program;
     NSDictionary * _shaderModifiers;
@@ -24,11 +25,11 @@
 - (void)_customDecodingOfSCNShadableHelper:(id)arg1;
 - (void)_customEncodingOfSCNShadableHelper:(id)arg1;
 - (void)_didDecodeSCNShadableHelper:(id)arg1;
+- (void)_parseAndSetShaderModifier:(id)arg1;
 - (void)_programDidChange:(id)arg1;
 - (struct __C3DFXGLSLProgram { }*)_programFromPassAtIndex:(long long)arg1;
 - (void)_setC3DProgram;
 - (void)_setC3DProgramDelegate;
-- (void)_shaderModifiersDidChange;
 - (void)_startObservingProgram;
 - (void)_stopObservingProgram;
 - (struct __C3DFXTechnique { }*)_technique;
@@ -36,6 +37,7 @@
 - (void)_updateAllC3DProgramInputs;
 - (void)_updateC3DProgramInput:(struct __C3DFXGLSLProgram { }*)arg1 forSymbol:(id)arg2;
 - (void)_updateC3DProgramInputForSymbol:(id)arg1;
+- (void)copyModifiersFrom:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
@@ -48,6 +50,7 @@
 - (id)program;
 - (void)setProgram:(id)arg1;
 - (void)setShaderModifiers:(id)arg1;
+- (id)shaderModifierCache;
 - (id)shaderModifiers;
 - (id)shaderModifiersArgumentsNames;
 

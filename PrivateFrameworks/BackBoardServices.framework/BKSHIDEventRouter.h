@@ -8,7 +8,7 @@
 }
 
 @property (readonly) long long destination;
-@property (readonly, retain) NSSet *hidEventDescriptors;
+@property (readonly) NSSet *hidEventDescriptors;
 
 + (id)defaultEventRouters;
 + (id)defaultFocusedAppEventRouter;
@@ -16,9 +16,9 @@
 + (id)routerWithDestination:(long long)arg1;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)addHIDEventDescriptors:(id)arg1;
 - (bool)containsDescriptor:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (long long)destination;
 - (id)dumpContents;

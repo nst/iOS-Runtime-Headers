@@ -36,14 +36,19 @@
 + (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 + (bool)isPreviewable;
++ (struct CGImage { }*)playButtonPreviewForCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 isFromMe:(bool)arg3;
++ (id)playButtonPreviewForUIImage:(id)arg1 scale:(double)arg2 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 
 - (void).cxx_destruct;
 - (bool)_assetContainsMetadataKey:(id)arg1;
 - (id)asset;
+- (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })bbSize;
 - (bool)canExport;
 - (bool)checkedVideoInfo;
 - (void)export:(id)arg1;
+- (id)generatePreviewFromThumbnail:(id)arg1 width:(double)arg2 orientation:(BOOL)arg3;
+- (bool)generatePreviewOutOfProcess;
 - (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (bool)hasNoVideoTrack;
@@ -74,5 +79,6 @@
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 - (void)updateVideoInfo;
+- (bool)validatePreviewFormat;
 
 @end

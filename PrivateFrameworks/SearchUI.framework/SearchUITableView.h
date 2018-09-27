@@ -8,11 +8,11 @@
 
 @property (nonatomic) unsigned long long searchUIStyle;
 
+- (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;
 - (bool)allowsHeaderViewsToFloat;
 - (id)init;
+- (void)safeAreaInsetsDidChange;
 - (unsigned long long)searchUIStyle;
-- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSearchUIStyle:(unsigned long long)arg1;
-- (void)updateSeparatorsForStyle;
 
 @end

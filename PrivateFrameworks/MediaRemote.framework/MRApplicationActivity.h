@@ -6,7 +6,6 @@
     int  _creatorProcessID;
     NSString * _primaryApplicationDisplayID;
     NSString * _secondaryApplicationDisplayID;
-    bool  _shouldPrepareAppPlaybackQueue;
     int  _status;
     NSUUID * _uniqueIdentifier;
 }
@@ -14,7 +13,6 @@
 @property (nonatomic, readonly) int creatorProcessID;
 @property (nonatomic, readonly) NSString *primaryApplicationDisplayID;
 @property (nonatomic, readonly) NSString *secondaryApplicationDisplayID;
-@property (nonatomic, readonly) bool shouldPrepareAppPlaybackQueue;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
@@ -32,7 +30,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)primaryApplicationDisplayID;
 - (id)secondaryApplicationDisplayID;
-- (bool)shouldPrepareAppPlaybackQueue;
 - (int)status;
 - (id)uniqueIdentifier;
 

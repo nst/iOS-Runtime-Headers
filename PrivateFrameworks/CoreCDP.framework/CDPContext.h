@@ -25,6 +25,7 @@
     NSString * _passwordEquivToken;
     AKCircleRequestContext * _resumeContext;
     CUMessageSession * _sharingChannel;
+    NSMutableArray * _signInMetricsStack;
     bool  _supportsSkipSignIn;
     long long  _type;
 }
@@ -56,6 +57,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
 
++ (id)_metricsQueue;
++ (id)preflightContext:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -75,6 +78,7 @@
 - (id)dsid;
 - (id)duplexSession;
 - (void)encodeWithCoder:(id)arg1;
+- (struct __CFData { }*)encodedTopLevelMetric;
 - (id)findMyiPhoneUUID;
 - (bool)guestMode;
 - (bool)idmsMasterKeyRecovery;
@@ -113,7 +117,10 @@
 - (void)set_recoveryToken:(id)arg1;
 - (void)set_useSecureBackupCachedPassphrase:(bool)arg1;
 - (id)sharingChannel;
+- (id)startMetricForEventName:(id)arg1;
+- (void)stopMetric:(id)arg1 withAttributes:(id)arg2;
 - (bool)supportsSkipSignIn;
+- (id)topLevelMetric;
 - (long long)type;
 - (void)updateWithAuthenticationResults:(id)arg1;
 

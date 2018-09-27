@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver> {
+@interface TKToneClassicsTableViewController : UITableViewController <PSStateRestoration, TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver> {
     TKTonePickerItem * _classicTonesHeaderItem;
     <TKTonePickerTableViewControllerHelper> * _tonePickerTableViewControllerHelper;
 }
@@ -14,6 +14,7 @@
 @property (nonatomic) <TKTonePickerTableViewControllerHelper> *tonePickerTableViewControllerHelper;
 
 - (void).cxx_destruct;
+- (bool)canBeShownFromSuspendedState;
 - (void)dealloc;
 - (void)didReloadTones;
 - (void)didUpdateCheckedStatus:(bool)arg1 ofToneClassicsPickerItem:(id)arg2;

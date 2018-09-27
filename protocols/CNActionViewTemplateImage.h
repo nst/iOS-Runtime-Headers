@@ -6,5 +6,6 @@
 @required
 
 - (UIImage *)imageWithColor:(UIColor *)arg1;
+- (UIImage *)templateImage;
 
 @end

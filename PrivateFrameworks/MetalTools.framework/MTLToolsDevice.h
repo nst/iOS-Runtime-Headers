@@ -9,10 +9,12 @@
     MTLToolsPointerArray * _computePipelineStates;
     MTLToolsPointerArray * _depthStencilStates;
     <MTLDeviceSPI> * _deviceWrapper;
+    MTLToolsPointerArray * _events;
     MTLToolsPointerArray * _fences;
     MTLToolsPointerArray * _functions;
     MTLToolsPointerArray * _heaps;
     MTLToolsPointerArray * _indirectArgumentEncoders;
+    MTLToolsPointerArray * _indirectCommandBuffers;
     bool  _integrated;
     MTLToolsPointerArray * _libraries;
     unsigned long long  _memorySize;
@@ -38,6 +40,7 @@
 @property (readonly) unsigned long long deviceLinearReadOnlyTextureAlignmentBytes;
 @property (readonly) unsigned long long deviceLinearTextureAlignmentBytes;
 @property (readonly) unsigned long long doubleFPConfig;
+@property (nonatomic, readonly) MTLToolsPointerArray *events;
 @property (readonly) unsigned long long featureProfile;
 @property (nonatomic, readonly) MTLToolsPointerArray *fences;
 @property (nonatomic, readonly) MTLToolsPointerArray *functions;
@@ -48,13 +51,17 @@
 @property (readonly) struct IndirectArgumentBufferCapabilities { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 29; } indirectArgumentBufferCapabilities;
 @property (readonly) unsigned long long indirectArgumentBuffersSupport;
 @property (nonatomic, readonly) MTLToolsPointerArray *indirectArgumentEncoders;
+@property (nonatomic, readonly) MTLToolsPointerArray *indirectCommandBuffers;
 @property (getter=isIntegrated, readonly) bool integrated;
 @property (readonly) unsigned long long iosurfaceReadOnlyTextureAlignmentBytes;
 @property (readonly) unsigned long long iosurfaceTextureAlignmentBytes;
 @property (nonatomic, readonly) MTLToolsPointerArray *libraries;
-@property (readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; }*limits;
+@property (readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; unsigned int x55; unsigned int x56; unsigned long long x57; }*limits;
 @property (readonly) unsigned long long linearTextureAlignmentBytes;
+@property (readonly) unsigned long long linearTextureArrayAlignmentBytes;
+@property (readonly) unsigned long long linearTextureArrayAlignmentSlice;
 @property (getter=isLowPower, readonly) bool lowPower;
+@property (readonly) unsigned long long maxArgumentBufferSamplerCount;
 @property (readonly) unsigned long long maxBufferLength;
 @property (readonly) unsigned long long maxColorAttachments;
 @property (readonly) unsigned long long maxComputeBuffers;
@@ -71,11 +78,16 @@
 @property (readonly) unsigned long long maxFragmentTextures;
 @property (readonly) unsigned long long maxFramebufferStorageBits;
 @property (readonly) unsigned long long maxFunctionConstantIndices;
+@property (readonly) unsigned long long maxIndirectBuffers;
+@property (readonly) unsigned long long maxIndirectSamplers;
+@property (readonly) unsigned long long maxIndirectSamplersPerDevice;
+@property (readonly) unsigned long long maxIndirectTextures;
 @property (readonly) unsigned long long maxInterpolants;
 @property (readonly) unsigned long long maxInterpolatedComponents;
 @property (readonly) float maxLineWidth;
 @property (readonly) float maxPointSize;
 @property (readonly) unsigned long long maxTessellationFactor;
+@property (readonly) unsigned long long maxTextureBufferWidth;
 @property (readonly) unsigned long long maxTextureDepth3D;
 @property (readonly) unsigned long long maxTextureDimensionCube;
 @property (readonly) unsigned long long maxTextureHeight2D;
@@ -96,6 +108,7 @@
 @property (readonly) unsigned long long maxVertexInlineDataSize;
 @property (readonly) unsigned long long maxVertexSamplers;
 @property (readonly) unsigned long long maxVertexTextures;
+@property (readonly) unsigned long long maxViewportCount;
 @property (readonly) unsigned long long maxVisibilityQueryOffset;
 @property (readonly) unsigned long long memorySize;
 @property (nonatomic) bool metalAssertionsEnabled;
@@ -122,9 +135,10 @@
 @property (nonatomic, readonly) MTLToolsPointerArray *textureLayouts;
 @property (nonatomic, readonly) MTLToolsPointerArray *textures;
 
-+ (bool)metalBufferSanitizerEnabled;
 + (void)registerDevices;
 
+- (void).cxx_destruct;
+- (id)_deviceWrapper;
 - (void)_setDeviceWrapper:(id)arg1;
 - (unsigned int)acceleratorPort;
 - (void)acceptVisitor:(id)arg1;
@@ -146,6 +160,8 @@
 - (bool)deviceSupportsFeatureSet:(unsigned long long)arg1;
 - (unsigned long long)doubleFPConfig;
 - (id)endCollectingPipelineDescriptors;
+- (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
+- (id)events;
 - (id)familyName;
 - (unsigned long long)featureProfile;
 - (id)fences;
@@ -158,6 +174,7 @@
 - (id)heaps;
 - (struct IndirectArgumentBufferCapabilities { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 29; })indirectArgumentBufferCapabilities;
 - (id)indirectArgumentEncoders;
+- (id)indirectCommandBuffers;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 lockingPolicy:(struct ILayerLockingPolicy { int (**x1)(); }*)arg3;
 - (unsigned long long)iosurfaceReadOnlyTextureAlignmentBytes;
@@ -170,9 +187,12 @@
 - (bool)isRemovable;
 - (id)libraries;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
-- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; }*)limits;
+- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; unsigned int x37; unsigned int x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; unsigned int x55; unsigned int x56; unsigned long long x57; }*)limits;
 - (unsigned long long)linearTextureAlignmentBytes;
+- (unsigned long long)linearTextureArrayAlignmentBytes;
+- (unsigned long long)linearTextureArrayAlignmentSlice;
 - (bool)mapShaderSampleBufferWithBuffer:(struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 capacity:(unsigned long long)arg2 size:(unsigned long long)arg3;
+- (unsigned long long)maxArgumentBufferSamplerCount;
 - (unsigned long long)maxBufferLength;
 - (unsigned long long)maxColorAttachments;
 - (unsigned long long)maxComputeBuffers;
@@ -189,11 +209,16 @@
 - (unsigned long long)maxFragmentTextures;
 - (unsigned long long)maxFramebufferStorageBits;
 - (unsigned long long)maxFunctionConstantIndices;
+- (unsigned long long)maxIndirectBuffers;
+- (unsigned long long)maxIndirectSamplers;
+- (unsigned long long)maxIndirectSamplersPerDevice;
+- (unsigned long long)maxIndirectTextures;
 - (unsigned long long)maxInterpolants;
 - (unsigned long long)maxInterpolatedComponents;
 - (float)maxLineWidth;
 - (float)maxPointSize;
 - (unsigned long long)maxTessellationFactor;
+- (unsigned long long)maxTextureBufferWidth;
 - (unsigned long long)maxTextureDepth3D;
 - (unsigned long long)maxTextureDimensionCube;
 - (unsigned long long)maxTextureHeight2D;
@@ -214,6 +239,7 @@
 - (unsigned long long)maxVertexInlineDataSize;
 - (unsigned long long)maxVertexSamplers;
 - (unsigned long long)maxVertexTextures;
+- (unsigned long long)maxViewportCount;
 - (unsigned long long)maxVisibilityQueryOffset;
 - (unsigned long long)memorySize;
 - (bool)metalAssertionsEnabled;
@@ -222,6 +248,7 @@
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minTilePixels;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
+- (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (id)name;
 - (id)newArgumentEncoderWithArguments:(id)arg1;
 - (id)newArgumentEncoderWithLayout:(id)arg1;
@@ -244,6 +271,7 @@
 - (id)newDefaultLibrary;
 - (id)newDefaultLibraryWithBundle:(id)arg1 error:(id*)arg2;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
+- (id)newEvent;
 - (id)newFence;
 - (id)newFunctionWithGLIR:(void*)arg1 functionType:(unsigned long long)arg2;
 - (id)newFunctionWithGLIR:(void*)arg1 inputsDescription:(id)arg2 functionType:(unsigned long long)arg3;
@@ -251,6 +279,9 @@
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (id)newIndirectArgumentEncoderWithArguments:(id)arg1;
 - (id)newIndirectArgumentEncoderWithLayout:(id)arg1;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id)newIndirectRenderCommandEncoderWithBuffer:(id)arg1;
 - (id)newLibraryWithCIFilters:(id)arg1 imageFilterFunctionInfo:(const struct { bool x1; unsigned long long x2; struct { /* ? */ } *x3; }*)arg2 error:(id*)arg3;
 - (id)newLibraryWithCIFiltersForComputePipeline:(id)arg1 imageFilterFunctionInfo:(const struct { bool x1; unsigned long long x2; struct { /* ? */ } *x3; }*)arg2 error:(id*)arg3;
 - (id)newLibraryWithData:(id)arg1 error:(id*)arg2;
@@ -268,6 +299,9 @@
 - (void)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (id)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
+- (id)newSharedEvent;
+- (id)newSharedEventWithHandle:(id)arg1;
+- (id)newSharedEventWithMachPort:(unsigned int)arg1;
 - (id)newTextureLayoutWithDescriptor:(id)arg1 isHeapOrBufferBacked:(bool)arg2;
 - (id)newTextureWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 deallocator:(id /* block */)arg4;
 - (id)newTextureWithDescriptor:(id)arg1;
@@ -279,6 +313,8 @@
 - (unsigned long long)readWriteTextureSupport;
 - (unsigned long long)recommendedMaxWorkingSetSize;
 - (unsigned long long)registryID;
+- (void)reserveResourceIndicesForResourceType:(unsigned long long)arg1 indices:(unsigned long long*)arg2 indexCount:(unsigned long long)arg3;
+- (unsigned long long)resourcePatchingTypeForResourceType:(unsigned long long)arg1;
 - (id)samplers;
 - (void)setMetalAssertionsEnabled:(bool)arg1;
 - (void)setShaderDebugInfoCaching:(bool)arg1;

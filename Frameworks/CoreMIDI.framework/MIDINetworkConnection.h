@@ -6,7 +6,7 @@
     void * _imp;
 }
 
-@property (nonatomic, readonly, retain) MIDINetworkHost *host;
+@property (nonatomic, readonly) MIDINetworkHost *host;
 
 + (id)connectionWithHost:(id)arg1;
 

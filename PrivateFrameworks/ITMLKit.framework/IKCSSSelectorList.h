@@ -3,10 +3,10 @@
  */
 
 @interface IKCSSSelectorList : NSObject <NSCopying> {
-    NSMutableArray * _selectors;
+    IKMutableArray * _selectors;
 }
 
-@property (nonatomic, readonly) NSMutableArray *selectors;
+@property (nonatomic, readonly) IKMutableArray *selectors;
 
 - (void).cxx_destruct;
 - (void)addSelector:(id)arg1;

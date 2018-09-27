@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUIFeedbackDelegateInternal> {
+@interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUIFeedbackDelegateInternal, SearchUITableViewTesting> {
     <SFFeedbackListener> * _feedbackListener;
     SearchUIPeekDelegate * _peekDelegate;
     long long  _preferredPunchoutIndex;
     <UIViewControllerPreviewing> * _previewingContext;
     <SearchUIResultViewDelegate> * _resultViewDelegate;
+    TLKTableViewScrollTester * _scrollTester;
     bool  _shouldUseInsetRoundedSections;
     SearchUITableModel * _tableModel;
+    id /* block */  cellWillDisplayHandler;
+    id /* block */  tableViewDidUpdateHandler;
+    id /* block */  tableViewWillUpdateHandler;
 }
 
+@property (nonatomic, copy) id /* block */ cellWillDisplayHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <SFFeedbackListener> *feedbackListener;
@@ -20,11 +25,14 @@
 @property long long preferredPunchoutIndex;
 @property (retain) <UIViewControllerPreviewing> *previewingContext;
 @property <SearchUIResultViewDelegate> *resultViewDelegate;
+@property (retain) TLKTableViewScrollTester *scrollTester;
 @property (nonatomic) bool shouldUseInsetRoundedSections;
 @property (nonatomic) unsigned long long style;
 @property (readonly) Class superclass;
 @property (retain) SearchUITableModel *tableModel;
 @property (retain) SearchUITableView *tableView;
+@property (nonatomic, copy) id /* block */ tableViewDidUpdateHandler;
+@property (nonatomic, copy) id /* block */ tableViewWillUpdateHandler;
 
 + (void)applySeparatorStyleToCell:(id)arg1 forCurrentRowModel:(id)arg2 nextRowModel:(id)arg3;
 + (double)layoutMarginWidthForOrientation:(long long)arg1;
@@ -34,6 +42,8 @@
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(bool)arg2;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(bool)arg2;
+- (id /* block */)cellWillDisplayHandler;
+- (id)currentTableModel;
 - (void)deselectRowsForIndexPath:(id)arg1 animated:(bool)arg2;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })enumerateSelectableCellsForIndexPath:(id)arg1 withBlock:(id /* block */)arg2;
@@ -47,6 +57,8 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (double)offScreenContentScrollDistance;
 - (id)peekDelegate;
+- (void)performScrollTestWithCompletion:(id /* block */)arg1;
+- (void)performScrollTestWithHandlerForFirstScrollCompletion:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (long long)preferredPunchoutIndex;
 - (id)preferredViewControllerForIndexPath:(id)arg1 isPreview:(bool)arg2;
 - (void)presentViewController:(id)arg1;
@@ -61,15 +73,20 @@
 - (id)resultForIndexPath:(id)arg1;
 - (id)resultViewDelegate;
 - (void)roundNecessaryCornersForTableCellSelectedBackground:(id)arg1;
+- (id)scrollTester;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setCellWillDisplayHandler:(id /* block */)arg1;
 - (void)setFeedbackListener:(id)arg1;
 - (void)setPeekDelegate:(id)arg1;
 - (void)setPreferredPunchoutIndex:(long long)arg1;
 - (void)setPreviewingContext:(id)arg1;
 - (void)setResultViewDelegate:(id)arg1;
+- (void)setScrollTester:(id)arg1;
 - (void)setShouldUseInsetRoundedSections:(bool)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setTableModel:(id)arg1;
+- (void)setTableViewDidUpdateHandler:(id /* block */)arg1;
+- (void)setTableViewWillUpdateHandler:(id /* block */)arg1;
 - (bool)shouldUseInsetRoundedSections;
 - (void)showViewController:(id)arg1;
 - (unsigned long long)style;
@@ -81,9 +98,13 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id /* block */)tableViewDidUpdateHandler;
+- (id /* block */)tableViewWillUpdateHandler;
+- (void)tapAtIndexPath:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContentScrolledOffScreenStatus;
 - (void)updateLayoutMarginsForOrientation:(long long)arg1;
+- (bool)updateMustAccountForLayout;
 - (void)updateTableForNewCellHeightAnimated:(bool)arg1;
 - (void)updateViewControllerTitle:(id)arg1;
 - (void)updateWithTableModel:(id)arg1;

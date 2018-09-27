@@ -4,8 +4,8 @@
 
 @interface SGSMFeedbackListener : NSObject <SFFeedbackListener> {
     NSCache * _eventLastInteractionTime;
-    SGSMutableSearchState * _previousState;
-    SGSMutableSearchState * _searchState;
+    SGSMMutableSearchState * _previousState;
+    SGSMMutableSearchState * _searchState;
     <SGSuggestionsServiceEventsProtocol> * _suggestionsService;
 }
 

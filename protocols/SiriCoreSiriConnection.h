@@ -42,19 +42,19 @@
 - (void)setProductTypePrefix:(NSString *)arg1;
 - (void)setSendPings:(bool)arg1;
 - (void)setSiriConnectionUsesPeerManagedSync:(bool)arg1;
-- (void)setSkipEdge:(bool)arg1;
 - (void)setSkipPeer:(bool)arg1;
 - (void)setSkipPeerError:(NSError *)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(NSURL *)arg1;
+- (void)setUseWiFiHint:(bool)arg1;
 - (void)setUsesProxyConnection:(bool)arg1;
 - (bool)siriConnectionUsesPeerManagedSync;
-- (bool)skipEdge;
 - (bool)skipPeer;
 - (NSError *)skipPeerError;
 - (void)start;
 - (double)timeout;
 - (NSURL *)url;
+- (bool)useWiFiHint;
 - (bool)usesProxyConnection;
 
 @end

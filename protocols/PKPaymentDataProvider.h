@@ -8,6 +8,7 @@
 - (PKPaymentApplication *)defaultPaymentApplicationForPassUniqueIdentifier:(NSString *)arg1;
 - (NSString *)defaultPaymentPassIdentifier;
 - (<PKPaymentDataProviderDelegate> *)delegate;
+- (NSString *)deviceName;
 - (bool)isDeviceInRestrictedMode;
 - (bool)isPaymentHandoffDisabled;
 - (NSString *)secureElementIdentifier;
@@ -20,16 +21,21 @@
 @optional
 
 - (void)addDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
-- (NSString *)defaultExpressFelicaTransitPassIdentifier;
-- (NSString *)defaultExpressTransitPassIdentifier;
+- (void)balancesForPaymentPassWithUniqueIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
 - (void)deletePaymentTransactionWithIdentifier:(NSString *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2;
 - (PKExpressPassInformation *)expressPassInformationForMode:(NSString *)arg1;
 - (NSSet *)expressPassesInformation;
+- (NSSet *)expressPassesInformationWithCardType:(long long)arg1;
 - (void)felicaStateWithPassUniqueIdentifier:(void *)arg1 paymentApplication:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, PKPaymentApplication *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKFelicaTransitAppletState *, void*
 - (void)removeDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
+- (void)removeExpressPassWithUniqueIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, PKExpressPassInformation *, void*
+- (void)removeExpressPassWithUniqueIdentifier:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, id, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, PKExpressPassInformation *, void*
+- (void)removeExpressPassesWithCardType:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSSet *, void*
+- (void)removeExpressPassesWithCardType:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: long long, id, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSSet *, void*
 - (void)setExpressWithPassInformation:(void *)arg1 credential:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKExpressPassInformation *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, PKExpressPassInformation *, void*
 - (void)setExpressWithPassInformation:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKExpressPassInformation *, id, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, PKExpressPassInformation *, void*
 - (void)startServiceModeForPassWithUniqueIdentifier:(NSString *)arg1 visibleViewController:(id)arg2;
+- (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (bool)supportsExpressMode:(NSString *)arg1;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (bool)supportsInAppPaymentsForPass:(PKPass *)arg1;

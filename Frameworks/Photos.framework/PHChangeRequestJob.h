@@ -3,6 +3,7 @@
  */
 
 @interface PHChangeRequestJob : PLDaemonJob {
+    PLAssetsdClientServiceSender * _clientSender;
     id /* block */  _completionHandler;
     NSOrderedSet * _deletes;
     NSOrderedSet * _inserts;
@@ -12,6 +13,7 @@
     NSObject<OS_xpc_object> * _xpcUpdates;
 }
 
+@property (nonatomic, retain) PLAssetsdClientServiceSender *clientSender;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, copy) NSOrderedSet *deletes;
 @property (nonatomic, copy) NSOrderedSet *inserts;
@@ -24,6 +26,7 @@
 + (void)applyPhotoKitInserts:(id)arg1 updates:(id)arg2 deletes:(id)arg3 completionHandler:(id /* block */)arg4;
 
 - (void).cxx_destruct;
+- (id)clientSender;
 - (id /* block */)completionHandler;
 - (long long)daemonOperation;
 - (id)deletes;
@@ -33,6 +36,7 @@
 - (id)inserts;
 - (void)run;
 - (void)runDaemonSide;
+- (void)setClientSender:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDeletes:(id)arg1;
 - (void)setInserts:(id)arg1;

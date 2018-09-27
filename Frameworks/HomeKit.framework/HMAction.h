@@ -2,50 +2,49 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAction : NSObject <HMObjectMerge> {
+@interface HMAction : NSObject <HFStateDumpBuildable, HMObjectMerge> {
     HMActionSet * _actionSet;
     unsigned long long  _actionType;
-    NSObject<OS_dispatch_queue> * _clientQueue;
-    HMDelegateCaller * _delegateCaller;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
+    _HMContext * _context;
+    HMFUnfairLock * _lock;
     NSUUID * _uniqueIdentifier;
     NSUUID * _uuid;
 }
 
-@property (nonatomic) HMActionSet *actionSet;
+@property HMActionSet *actionSet;
 @property (nonatomic) unsigned long long actionType;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic, retain) _HMContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
-@property (nonatomic, retain) NSUUID *uuid;
+@property (copy) NSUUID *uuid;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
 + (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_configure:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
+- (void)__configureWithContext:(id)arg1 actionSet:(id)arg2;
 - (bool)_handleUpdates:(id)arg1;
 - (void)_invalidate;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
 - (id)actionSet;
 - (unsigned long long)actionType;
-- (id)clientQueue;
-- (id)delegateCaller;
+- (id)context;
 - (id)init;
-- (id)propertyQueue;
 - (void)setActionSet:(id)arg1;
 - (void)setActionType:(unsigned long long)arg1;
-- (void)setClientQueue:(id)arg1;
-- (void)setDelegateCaller:(id)arg1;
-- (void)setPropertyQueue:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uniqueIdentifier;
 - (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

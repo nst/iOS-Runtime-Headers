@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVScrubber : UISlider {
+@interface AVScrubber : UISlider <AVExternalGestureRecognizerPreventing, UIScrollViewDelegate> {
     bool  _collapsed;
     UIImageView * _currentThumbView;
     double  _currentValueChangedTime;
@@ -34,6 +34,8 @@
     double  _previousValueChangeTime;
     float  _rate;
     double  _resolution;
+    bool  _scrollScrubbing;
+    UIScrollView * _scrollView;
     long long  _scrubbingSpeed;
     bool  _shouldRecoverFromPrecisionScrubbingIfNeeded;
     bool  _slowKnobMovementDetected;
@@ -45,12 +47,15 @@
 @property (getter=isCollapsed, nonatomic) bool collapsed;
 @property (getter=isCollapsedOrExcluded, nonatomic, readonly) bool collapsedOrExcluded;
 @property (nonatomic) UIImageView *currentThumbView;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AVScrubberDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) float estimatedFrameRate;
 @property (nonatomic) struct CGSize { double x1; double x2; } extrinsicContentSize;
 @property (nonatomic, readonly) UISelectionFeedbackGenerator *feedbackGenerator;
 @property (nonatomic) bool hasAlternateAppearance;
 @property (nonatomic) bool hasFullScreenAppearance;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
 @property (getter=isIncluded, nonatomic) bool included;
 @property (nonatomic, copy) NSArray *loadedTimeRanges;
@@ -59,9 +64,12 @@
 @property (nonatomic, retain) NSMutableArray *previousScrubberVelocities;
 @property (nonatomic) float rate;
 @property (nonatomic) double resolution;
+@property (getter=isScrollScrubbing, nonatomic) bool scrollScrubbing;
+@property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic) long long scrubbingSpeed;
 @property (nonatomic) bool shouldRecoverFromPrecisionScrubbingIfNeeded;
 @property (nonatomic) bool slowKnobMovementDetected;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeIntervalSinceTrackingEnded;
 @property (nonatomic) double timestampWhenTrackingEnded;
 @property (nonatomic, retain) NSTimer *updateSlowKnobMovementDetectedTimer;
@@ -69,16 +77,20 @@
 + (id)keyPathsForValuesAffectingLocalizedScrubbingSpeedName;
 
 - (void).cxx_destruct;
+- (bool)_shouldTrackTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updateSlowKnobMovementDetected;
 - (void)_updateSlowKnobMovementDetectedForTargetValue:(float)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (bool)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (float)clampedEstimatedFrameRate;
+- (struct CGPoint { double x1; double x2; })contentOffsetFromValue;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)createThumbView;
 - (id)currentThumbView;
 - (id)delegate;
+- (float)duration;
 - (void)endOrCancelTracking;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (float)estimatedFrameRate;
@@ -93,16 +105,21 @@
 - (bool)isCollapsed;
 - (bool)isCollapsedOrExcluded;
 - (bool)isIncluded;
+- (bool)isScrollScrubbing;
+- (bool)isTracking;
 - (void)layoutSubviews;
 - (id)loadedTimeRanges;
 - (id)loadedTrackOverlayView;
 - (id)localizedScrubbingSpeedName;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maximumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })minimumValueImageRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (float)normalizedPosition;
+- (double)normalizedScrollOffset;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)previousScrubberVelocities;
 - (float)rate;
 - (double)resolution;
+- (id)scrollView;
 - (long long)scrubbingSpeed;
 - (void)setCollapsed:(bool)arg1;
 - (void)setCurrentThumbView:(id)arg1;
@@ -118,18 +135,22 @@
 - (void)setPreviousScrubberVelocities:(id)arg1;
 - (void)setRate:(float)arg1;
 - (void)setResolution:(double)arg1;
+- (void)setScrollScrubbing:(bool)arg1;
+- (void)setScrollView:(id)arg1;
 - (void)setScrubbingSpeed:(long long)arg1;
 - (void)setShouldRecoverFromPrecisionScrubbingIfNeeded:(bool)arg1;
 - (void)setSlowKnobMovementDetected:(bool)arg1;
 - (void)setTimestampWhenTrackingEnded:(double)arg1;
 - (void)setUpdateSlowKnobMovementDetectedTimer:(id)arg1;
+- (void)setValue:(float)arg1;
 - (bool)shouldRecoverFromPrecisionScrubbingIfNeeded;
 - (bool)slowKnobMovementDetected;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (double)timeIntervalSinceTrackingEnded;
 - (double)timestampWhenTrackingEnded;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)updateScrollViewContentSizeAndOffsetIfNeeded;
 - (id)updateSlowKnobMovementDetectedTimer;
-- (void)willMoveToWindow:(id)arg1;
+- (float)valueFromScrollView;
 
 @end

@@ -42,6 +42,7 @@
 + (void)upgradeShadowPropertyForParagraphStyles:(id)arg1;
 + (void)upgradeTrendLinesAndErrorBarsForSeriesPresets:(id)arg1 valueAxisPresets:(id)arg2 paragraphPresets:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)allStyles;
 - (id)applyStyleSwapTuple:(id)arg1;
 - (id)buildAxisNonStyle;
@@ -53,10 +54,8 @@
 - (id)chartStyleState;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithContext:(id)arg1 shallowCopyStyles:(bool)arg2;
-- (void)dealloc;
 - (id)description;
 - (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8 uuid:(id)arg9;

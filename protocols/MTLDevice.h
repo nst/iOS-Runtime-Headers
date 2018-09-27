@@ -16,9 +16,12 @@
 - (bool)isHeadless;
 - (bool)isLowPower;
 - (bool)isRemovable;
+- (unsigned long long)maxArgumentBufferSamplerCount;
+- (unsigned long long)maxBufferLength;
 - (unsigned long long)maxThreadgroupMemoryLength;
 - (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })maxThreadsPerThreadgroup;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
+- (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (NSString *)name;
 - (<MTLArgumentEncoder> *)newArgumentEncoderWithArguments:(NSArray *)arg1;
 - (<MTLBuffer> *)newBufferWithBytes:(const void*)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
@@ -35,8 +38,10 @@
 - (<MTLLibrary> *)newDefaultLibrary;
 - (<MTLLibrary> *)newDefaultLibraryWithBundle:(NSBundle *)arg1 error:(id*)arg2;
 - (<MTLDepthStencilState> *)newDepthStencilStateWithDescriptor:(MTLDepthStencilDescriptor *)arg1;
+- (<MTLEvent> *)newEvent;
 - (<MTLFence> *)newFence;
 - (<MTLHeap> *)newHeapWithDescriptor:(MTLHeapDescriptor *)arg1;
+- (<MTLIndirectCommandBuffer> *)newIndirectCommandBufferWithDescriptor:(MTLIndirectCommandBufferDescriptor *)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (<MTLLibrary> *)newLibraryWithData:(NSObject<OS_dispatch_data> *)arg1 error:(id*)arg2;
 - (<MTLLibrary> *)newLibraryWithFile:(NSString *)arg1 error:(id*)arg2;
 - (void)newLibraryWithSource:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, MTLCompileOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLLibrary> *, NSError *, void*
@@ -49,6 +54,8 @@
 - (void)newRenderPipelineStateWithTileDescriptor:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: MTLTileRenderPipelineDescriptor *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLRenderPipelineState> *, MTLRenderPipelineReflection *, NSError *, void*
 - (<MTLRenderPipelineState> *)newRenderPipelineStateWithTileDescriptor:(MTLTileRenderPipelineDescriptor *)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (<MTLSamplerState> *)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
+- (<MTLSharedEvent> *)newSharedEvent;
+- (<MTLSharedEvent> *)newSharedEventWithHandle:(MTLSharedEventHandle *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 iosurface:(struct __IOSurface { }*)arg2 plane:(unsigned long long)arg3;
 - (unsigned long long)readWriteTextureSupport;

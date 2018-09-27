@@ -6,6 +6,8 @@
     NSDictionary * _parameterValues;
 }
 
+@property (nonatomic, readonly) NSDictionary *parameterValues;
+
 + (id)carrierServiceName;
 + (bool)ignoresRoamingSwitch;
 + (id)messageNotificationFallbackTimeout;
@@ -15,9 +17,8 @@
 + (bool)supportsPasswordChanges;
 
 - (void).cxx_destruct;
-- (void)_initForBundle:(id)arg1;
-- (id)initForService:(id)arg1;
-- (id)initForServiceBundleId:(id)arg1;
+- (id)initWithSubscriptionContext:(id)arg1 service:(id)arg2;
 - (id)parameterValueForKey:(id)arg1;
+- (id)parameterValues;
 
 @end

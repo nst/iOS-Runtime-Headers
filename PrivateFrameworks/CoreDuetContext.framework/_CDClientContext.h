@@ -38,6 +38,9 @@
 
 - (void).cxx_destruct;
 - (void)addKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
+- (bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (bool)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
+- (id)cachedValueIfClientHasRegistrationsForKeyPath:(id)arg1;
 - (void)cleanupInternalReferencesToRegistration:(id)arg1;
 - (void)clearCacheForKeyPathsWithFireOnChangeRegistrations:(id)arg1;
 - (id)currentConnection;
@@ -63,7 +66,9 @@
 - (id)registrationCallbackQueue;
 - (id)registrations;
 - (void)removeKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
+- (bool)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
 - (void)retryTimes:(int)arg1 block:(id /* block */)arg2;
+- (void)setCachedValueIfClientHasRegistrations:(id)arg1 forKeyPath:(id)arg2;
 - (void)setEndpoint:(id)arg1;
 - (void)setInterrupted:(bool)arg1;
 - (void)setKeyPathToValues:(id)arg1;

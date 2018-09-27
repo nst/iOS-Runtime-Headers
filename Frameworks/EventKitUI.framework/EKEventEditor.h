@@ -13,17 +13,20 @@
     UIColor * _backgroundColor;
     EKCalendarItemCalendarEditItem * _calendarEditItem;
     EKEventDateEditItem * _dateItem;
-    bool  _focusTitleOnAppearance;
+    unsigned long long  _focusOnAppearanceTarget;
     bool  _hasShownNaturalLanguageResult;
     bool  _hasShownZeroKeywordResult;
     bool  _isTransitioning;
     EKCalendarItemLocationInlineEditItem * _locationInlineEditItem;
     EKUIAutocompleteSearchResult * _naturalLanguageResult;
+    EKEventURLAndNotesInlineEditItem * _notesEditItem;
     <EKUIAutocompletePendingSearchProtocol> * _pendingSearch;
+    bool  _selectOnFocus;
     EKUIAutocompleteSearchResult * _selectedAutocompleteResult;
     unsigned long long  _selectedAutocompleteResultIndex;
     bool  _shouldAutocomplete;
     bool  _showAttachments;
+    NSString * _suggestionKey;
     EKCalendarItemTitleInlineEditItem * _titleInlineEditItem;
     EKUIAutocompleteSearchResult * _zeroKeywordResult;
 }
@@ -34,6 +37,7 @@
 @property (nonatomic, retain) EKEvent *event;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool showAttachments;
+@property (nonatomic, retain) NSString *suggestionKey;
 @property (readonly) Class superclass;
 
 + (Class)_SGSuggestionsServiceClass;
@@ -50,6 +54,7 @@
 - (void)_cancelPendingAutocompleteAndCleanup;
 - (void)_copyEventForPossibleRevert;
 - (id)_editItems;
+- (void)_focusAppearanceTarget;
 - (void)_hideAndCancelAutocompleteResults;
 - (id)_nameForDeleteButton;
 - (id)_orderedEditItems;
@@ -70,7 +75,7 @@
 - (void)editItemTextChanged:(id)arg1;
 - (unsigned long long)entityType;
 - (id)event;
-- (void)focusAndSelectTitle;
+- (void)focus:(unsigned long long)arg1 select:(bool)arg2;
 - (void)loadView;
 - (id)notificationNamesForLocaleChange;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
@@ -83,9 +88,11 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setShowAttachments:(bool)arg1;
+- (void)setSuggestionKey:(id)arg1;
 - (void)setupDeleteButton;
 - (bool)shouldAutorotate;
 - (bool)showAttachments;
+- (id)suggestionKey;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;

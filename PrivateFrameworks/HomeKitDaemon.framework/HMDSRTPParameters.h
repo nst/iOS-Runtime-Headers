@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSRTPParameters : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDSRTPParameters : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     HMDSRTPCryptoSuite * _srtpCryptoSuite;
     NSData * _srtpMasterKey;
     NSData * _srtpMasterSalt;

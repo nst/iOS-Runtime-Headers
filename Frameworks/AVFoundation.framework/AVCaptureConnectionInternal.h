@@ -13,6 +13,7 @@
     bool  cameraIntrinsicMatrixDeliverySupported;
     int  changeSeed;
     NSString * connectionID;
+    bool  debugMetadataSidecarFileEnabled;
     AVCaptureInputPort * depthDataInputPort;
     bool  enabled;
     bool  hasActiveObservers;
@@ -46,6 +47,7 @@
     int  videoRetainedBufferCountHint;
     double  videoScaleAndCropFactor;
     bool  videoStabilizationEnabled;
+    AVCaptureInputPort * visionDataInputPort;
 }
 
 @end

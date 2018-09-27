@@ -30,9 +30,12 @@
     NSURL * _urlValue;
 }
 
+@property (setter=acs_setInteraction:, nonatomic, retain) INInteraction *acs_interaction;
 @property (nonatomic, readonly) bool asynchronous;
 @property (nonatomic, readonly) SFCard *backingCard;
+@property (nonatomic, readonly) unsigned long long cardFormat;
 @property (nonatomic, copy) NSString *cardId;
+@property (nonatomic, readonly, copy) NSString *cardIdentifier;
 @property (nonatomic, readonly) NSArray *cardSections;
 @property (copy) NSArray *cardSections;
 @property (nonatomic, copy) NSString *contextReferenceIdentifier;
@@ -118,6 +121,13 @@
 - (int)type;
 - (id)urlValue;
 
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
+
++ (id)acs_uniquelyIdentifiedCard;
+
+- (id)acs_interaction;
+- (void)acs_setInteraction:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
 + (id)_interactionsByIntentDataHashes;
@@ -125,8 +135,11 @@
 - (id)_interactionDataKey;
 - (bool)asynchronous;
 - (id)backingCard;
+- (unsigned long long)cardFormat;
+- (id)cardIdentifier;
 - (id)interaction;
 - (id)interactions;
 - (void)loadCardWithCompletion:(id /* block */)arg1;
+- (id)underlyingInteraction;
 
 @end

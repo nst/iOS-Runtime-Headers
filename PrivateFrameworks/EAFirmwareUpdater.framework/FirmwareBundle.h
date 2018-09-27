@@ -33,6 +33,7 @@
 - (id)initWithBundle:(id)arg1;
 - (id)initWithBundleName:(id)arg1;
 - (id)initWithBundlePath:(id)arg1;
+- (id)initWithData:(id)arg1 hashData:(id)arg2 signatureData:(id)arg3 certData:(id)arg4;
 - (void)parseFileName:(id)arg1 intoPath:(id*)arg2 andExtension:(id*)arg3;
 - (id)parseMSP430TXTFile:(id)arg1 withDefaultByteValue:(unsigned char)arg2;
 - (id)parseResourceFileIntoData:(id)arg1;

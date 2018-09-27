@@ -15,7 +15,7 @@
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     }  _shippingMethods;
-    struct WebPaymentCoordinatorProxy { int (**x1)(); struct WebPageProxy {} *x2; struct WeakPtrFactory<WebKit::WebPaymentCoordinatorProxy> { struct RefPtr<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy> > > { struct WeakReference<WebKit::WebPaymentCoordinatorProxy> {} *x_1_2_1; } x_3_1_1; } x3; int x4; int x5; struct RetainPtr<PKPaymentAuthorizationViewController> { void *x_6_1_1; } x6; struct RetainPtr<WKPaymentAuthorizationViewControllerDelegate> { void *x_7_1_1; } x7; } * _webPaymentCoordinatorProxy;
+    struct WebPaymentCoordinatorProxy { int (**x1)(); struct WeakPtrFactory<WebKit::WebPaymentCoordinatorProxy> { struct RefPtr<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy> > > { struct WeakReference<WebKit::WebPaymentCoordinatorProxy> {} *x_1_2_1; } x_2_1_1; } x2; struct WebPageProxy {} *x3; int x4; int x5; struct RetainPtr<PKPaymentAuthorizationViewController> { void *x_6_1_1; } x6; struct RetainPtr<WKPaymentAuthorizationViewControllerDelegate> { void *x_7_1_1; } x7; } * _webPaymentCoordinatorProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +25,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithPaymentCoordinatorProxy:(struct WebPaymentCoordinatorProxy { int (**x1)(); struct WebPageProxy {} *x2; struct WeakPtrFactory<WebKit::WebPaymentCoordinatorProxy> { struct RefPtr<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy> > > { struct WeakReference<WebKit::WebPaymentCoordinatorProxy> {} *x_1_2_1; } x_3_1_1; } x3; int x4; int x5; struct RetainPtr<PKPaymentAuthorizationViewController> { void *x_6_1_1; } x6; struct RetainPtr<WKPaymentAuthorizationViewControllerDelegate> { void *x_7_1_1; } x7; }*)arg1;
+- (id)initWithPaymentCoordinatorProxy:(struct WebPaymentCoordinatorProxy { int (**x1)(); struct WeakPtrFactory<WebKit::WebPaymentCoordinatorProxy> { struct RefPtr<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebPaymentCoordinatorProxy> > > { struct WeakReference<WebKit::WebPaymentCoordinatorProxy> {} *x_1_2_1; } x_2_1_1; } x2; struct WebPageProxy {} *x3; int x4; int x5; struct RetainPtr<PKPaymentAuthorizationViewController> { void *x_6_1_1; } x6; struct RetainPtr<WKPaymentAuthorizationViewControllerDelegate> { void *x_7_1_1; } x7; }*)arg1;
 - (void)invalidate;
 - (void)paymentAuthorizationViewController:(id)arg1 didAuthorizePayment:(id)arg2 handler:(id /* block */)arg3;
 - (void)paymentAuthorizationViewController:(id)arg1 didRequestMerchantSession:(id /* block */)arg2;

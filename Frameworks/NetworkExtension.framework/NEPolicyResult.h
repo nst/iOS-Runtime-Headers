@@ -31,6 +31,8 @@
 + (id)pass;
 + (id)routeRules:(id)arg1;
 + (id)scopeSocketToInterfaceName:(id)arg1;
++ (id)scopeToDirectInterface;
++ (id)scopedNetworkAgent:(id)arg1;
 + (id)skipWithOrder:(unsigned int)arg1;
 + (id)triggerScopedService:(id)arg1 data:(unsigned int)arg2;
 + (id)tunnelIPToInterfaceName:(id)arg1 secondaryResultType:(long long)arg2;

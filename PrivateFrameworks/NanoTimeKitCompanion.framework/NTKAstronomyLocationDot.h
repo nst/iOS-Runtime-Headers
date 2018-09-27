@@ -4,6 +4,7 @@
 
 @interface NTKAstronomyLocationDot : UIView {
     bool  _animating;
+    CLKDevice * _device;
     UIColor * _innerDotColor;
     double  _innerDotDiameter;
     UIView * _innerDotImageView;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic) bool animating;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, retain) UIColor *innerDotColor;
 @property (nonatomic) double innerDotDiameter;
 @property (nonatomic, retain) UIView *innerDotImageView;
@@ -33,8 +35,9 @@
 - (double)defaultOuterDotDiameter;
 - (double)defaultPulseAlphaDelay;
 - (double)defaultPulseDuration;
-- (id)initWithDefaultSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)device;
+- (id)initForDevice:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
 - (id)innerDotColor;
 - (double)innerDotDiameter;
 - (id)innerDotImageView;

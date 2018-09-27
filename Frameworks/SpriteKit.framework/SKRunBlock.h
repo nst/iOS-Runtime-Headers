@@ -8,6 +8,7 @@
 }
 
 + (id)runBlock:(id /* block */)arg1 queue:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

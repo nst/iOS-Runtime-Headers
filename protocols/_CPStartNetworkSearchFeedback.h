@@ -7,15 +7,6 @@
 
 - (int)endpoint;
 - (bool)getHeaders:(id*)arg1 forKey:(NSString *)arg2;
-- (bool)hasEndpoint;
-- (bool)hasInput;
-- (bool)hasLookupSelectionType;
-- (bool)hasQueryId;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
-- (bool)hasTuscanyStatus;
-- (bool)hasUrl;
-- (bool)hasUuid;
 - (NSDictionary *)headers;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

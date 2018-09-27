@@ -5,6 +5,7 @@
 @interface NTKNumeralsHourViewsManager : NSObject {
     bool  _adjustingForStatusIndicator;
     bool  _areComplicationsOff;
+    CLKDevice * _device;
     bool  _hasUpperComplication;
     NSArray * _hourViews;
     long long  _visibleComplicationSlot;
@@ -24,10 +25,10 @@
 - (void)applyTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3 faceConfiguration:(id)arg4;
 - (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 faceConfiguration:(id)arg4;
 - (void)configureForEditMode:(long long)arg1;
-- (id)initWithStyleFromFaceConfiguration:(id)arg1;
+- (id)initWithStyleFromFaceConfiguration:(id)arg1 forDevice:(id)arg2;
 - (bool)needHourAnimationForChangeToHour:(long long)arg1 toFaceConfiguration:(id)arg2;
 - (void)removeHourViews;
 - (void)setAdjustsForStatusIndicator:(bool)arg1 animated:(bool)arg2;
-- (void)updateVisibleHour:(long long)arg1 targetUtilitySlot:(long long)arg2 faceConfiguration:(id)arg3 animationProgress:(double)arg4;
+- (void)updateVisibleHour:(long long)arg1 targetUtilitySlot:(long long)arg2 faceConfiguration:(id)arg3 animationProgress:(double)arg4 forEditMode:(long long)arg5;
 
 @end

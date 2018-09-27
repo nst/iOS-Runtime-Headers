@@ -50,7 +50,6 @@
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_iconImageForRoute:(id)arg1;
 - (id)_pairedDeviceTextForRoute:(id)arg1;
-- (void)_removeVolumeSlider;
 - (bool)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
 - (void)_updateSmartAudioAccessory;
 - (void)_updateSpinnerStyle;

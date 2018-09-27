@@ -32,7 +32,7 @@
 @property (getter=isUserIntentRequired, nonatomic, readonly) bool userIntentRequired;
 
 - (void).cxx_destruct;
-- (void)_acquireContactlessInterfaceSessionWithHandler:(id /* block */)arg1;
+- (void)_acquireContactlessInterfaceSessionWithSessionToken:(unsigned long long)arg1 handler:(id /* block */)arg2;
 - (void)_advanceContentViewVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
 - (void)_advanceVisibilityToState:(unsigned char)arg1 animated:(bool)arg2;
 - (bool)_canApplyContentViewForPersonalizedApplication;
@@ -47,7 +47,7 @@
 - (void)_lostModeButtonTapped;
 - (void)_setContentView:(id)arg1 animated:(bool)arg2;
 - (void)_setUserIntentRequired:(bool)arg1;
-- (void)_startContactlessInterfaceSessionWithSessionAvailable:(id /* block */)arg1 sessionUnavailable:(id /* block */)arg2;
+- (void)_startContactlessInterfaceSessionWithContext:(id)arg1 sessionAvailable:(id /* block */)arg2 sessionUnavailable:(id /* block */)arg3;
 - (void)_updateForForegroundActivePresentationIfNecessaryAnimated:(bool)arg1;
 - (void)_updateForNonForegroundActivePresentationAnimated:(bool)arg1;
 - (void)configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
@@ -60,6 +60,7 @@
 - (id)initWithPassView:(id)arg1 state:(long long)arg2 context:(id)arg3;
 - (void)invalidate;
 - (bool)isPassAuthorized;
+- (bool)isPassFooterContentViewInGroup:(id)arg1;
 - (bool)isUserIntentRequired;
 - (void)layoutSubviews;
 - (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
@@ -70,6 +71,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPassView:(id)arg1;
 - (long long)state;
+- (unsigned long long)suppressedContentForContentView:(id)arg1;
 - (void)willBecomeHiddenAnimated:(bool)arg1;
 - (void)willBecomeVisibleAnimated:(bool)arg1;
 

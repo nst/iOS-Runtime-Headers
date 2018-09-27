@@ -14,9 +14,9 @@
 - (id)nsFormulaOwnerUID;
 - (id)objectToArchiveInDependencyTracker;
 - (bool)registerLast;
-- (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
+- (void)registerWithCalcEngineForDocumentLoad:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)unregisterFromCalculationEngine:(id)arg1;
+- (void)unregisterFromCalcEngine:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

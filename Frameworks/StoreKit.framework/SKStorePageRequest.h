@@ -12,8 +12,8 @@
 @property (nonatomic, copy) NSDictionary *productParameters;
 @property (nonatomic, copy) NSURL *productURL;
 
+- (void).cxx_destruct;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
 - (long long)productPageStyle;
 - (id)productParameters;

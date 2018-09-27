@@ -11,6 +11,7 @@
 
 + (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (void)_closeConnection;
 - (id)_initWithSqlitePath:(id)arg1 dataProtectionClass:(unsigned long long)arg2;
 - (void)_queue_close;

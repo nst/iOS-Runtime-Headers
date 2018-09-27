@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroMetadataManager : NSObject {
+@interface MiroMetadataManager : VEiOSSharedObject {
     NSCache * _assetMetadataCache;
 }
 

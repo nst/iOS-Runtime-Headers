@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPerson : NSObject <INCacheableContainer, INPersonExport, INSpeakable, NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface INPerson : NSObject <INCacheableContainer, INImageProxyInjecting, INKeyImageProducing, INPersonExport, INSpeakable, NSCopying, NSMutableCopying, NSSecureCoding, REDonatedActionIdentifierProviding> {
     NSArray * _aliases;
     NSArray * _alternatives;
     NSString * _contactIdentifier;
@@ -18,6 +18,7 @@
     NSString * _userInput;
 }
 
+@property (readonly) INImage *_keyImage;
 @property (nonatomic, readonly, copy) NSArray *aliases;
 @property (nonatomic, copy) NSArray *aliases;
 @property (nonatomic, readonly, copy) NSArray *alternativeSiriMatches;
@@ -58,11 +59,15 @@
 
 - (void).cxx_destruct;
 - (id)_aliases;
+- (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (id)_displayName;
 - (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(long long)arg10 isMe:(bool)arg11 alternatives:(id)arg12 sourceAppBundleIdentifier:(id)arg13;
+- (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_intents_cacheableObjects;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_keyImage;
 - (id)_sourceAppBundleIdentifier;
 - (id)_userInput;
 - (id)aliases;
@@ -89,6 +94,7 @@
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(long long)arg8;
+- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 isMe:(bool)arg7;
 - (bool)isEqual:(id)arg1;
 - (bool)isMe;
 - (id)lastName;
@@ -102,6 +108,7 @@
 - (void)setContactIdentifier:(id)arg1;
 - (void)setCustomIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setHandle:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setIsMe:(bool)arg1;
 - (void)setNameComponents:(id)arg1;
@@ -117,8 +124,24 @@
 - (id)userURIString;
 - (id)vocabularyIdentifier;
 
+// Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
+
+- (id)acs_formattedPersonName;
+
 // Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
 
-- (id)contactsSearchPredicate;
+- (id)__im_assistant_allContactIdentifiers;
+- (id)__im_assistant_displayNameForContact:(id)arg1 displayFormattedHandle:(id)arg2 normalizedHandle:(id)arg3;
+- (id)__im_assistant_imCoreBundle;
+- (id)__im_assistant_initAnonymousRecipientWithIMHandle:(id)arg1;
+- (id)__im_assistant_initForContactResolutionResultWithContact:(id)arg1 type:(long long)arg2 label:(id)arg3;
+- (id)__im_assistant_initWithContact:(id)arg1 displayFormattedHandle:(id)arg2 normalizedHandle:(id)arg3 type:(long long)arg4 label:(id)arg5;
+- (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2;
+- (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2 type:(long long)arg3 label:(id)arg4;
+- (id)__im_assistant_initWithContact:(id)arg1 unformattedPersonHandle:(id)arg2 account:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
 
 @end

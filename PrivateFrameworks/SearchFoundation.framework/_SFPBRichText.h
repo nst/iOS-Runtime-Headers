@@ -14,9 +14,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *formattedTextPieces;
-@property (nonatomic, readonly) bool hasContentAdvisory;
-@property (nonatomic, readonly) bool hasStarRating;
-@property (nonatomic, readonly) bool hasText;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *icons;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -37,9 +34,6 @@
 - (id)formattedTextPieces;
 - (id)formattedTextPiecesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)formattedTextPiecesCount;
-- (bool)hasContentAdvisory;
-- (bool)hasStarRating;
-- (bool)hasText;
 - (unsigned long long)hash;
 - (id)icons;
 - (id)iconsAtIndex:(unsigned long long)arg1;

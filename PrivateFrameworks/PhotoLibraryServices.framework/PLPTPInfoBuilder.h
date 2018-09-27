@@ -19,7 +19,6 @@
 - (void)_buildCloudPhotosEnabledWithFirstAsset:(bool)arg1;
 - (bool)_buildDiagnosticRelatedFile:(id)arg1;
 - (bool)_buildDirectoryPathAndFilename;
-- (void)_buildEvent;
 - (void)_buildExifAvailable;
 - (void)_buildFileSize;
 - (void)_buildGPSInformation;

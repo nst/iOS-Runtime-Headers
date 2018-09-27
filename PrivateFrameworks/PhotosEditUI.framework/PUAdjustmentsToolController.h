@@ -23,6 +23,8 @@
     double  _ppt_scrollDelta;
     double  _scrollViewModeSwitchSideOriginOffset;
     NSMapTable * _sliderThumbnailsByModeAndIntensity;
+    PUAdjustmentsStatisticsCache * _statisticsCache;
+    long long  _viewLoadingStartTime;
 }
 
 @property (setter=_setSnappingController:, nonatomic, retain) PXUISnappingController *_snappingController;
@@ -73,9 +75,11 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
 - (bool)installTogglePreviewGestureRecognizer:(id)arg1;
+- (void)invalidateStatisticsCacheWithEditModel:(id)arg1 andUpdate:(bool)arg2;
 - (void)loadView;
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
+- (void)mediaViewIsReady;
 - (void)photoEditModelDidChange;
 - (void)ppt_scrollSelectedSliderByDelta;
 - (void)ppt_selectBWSlider:(id /* block */)arg1;
@@ -93,9 +97,11 @@
 - (id)selectedToolbarIcon;
 - (void)setLayoutOrientation:(long long)arg1;
 - (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
+- (void)setupWithPhotoEditModel:(id)arg1 editSource:(id)arg2 valuesCalculator:(id)arg3;
 - (void)specDidChange;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;

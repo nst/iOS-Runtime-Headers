@@ -6,9 +6,9 @@
 @required
 
 - (unsigned short)numberOfColumns;
-- (unsigned short)numberOfFooterRows;
-- (unsigned short)numberOfHeaderColumns;
-- (unsigned short)numberOfHeaderRows;
-- (unsigned short)numberOfRows;
+- (unsigned int)numberOfFooterRows;
+- (unsigned int)numberOfHeaderColumns;
+- (unsigned int)numberOfHeaderRows;
+- (unsigned int)numberOfRows;
 
 @end

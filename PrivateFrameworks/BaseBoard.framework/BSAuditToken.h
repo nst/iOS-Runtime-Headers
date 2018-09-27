@@ -7,6 +7,10 @@
         unsigned int val[8]; 
     }  _auditToken;
     NSString * _bundleID;
+    struct __SecTask { } * _lazy_secTaskLock_secTask;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _secTaskLock;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
@@ -26,6 +30,8 @@
 + (id)tokenFromXPCConnection:(id)arg1;
 + (id)tokenFromXPCMessage:(id)arg1;
 
+- (void).cxx_destruct;
+- (void)_accessSecTask:(id /* block */)arg1;
 - (id)_bundleIDGeneratingIfNeeded:(bool)arg1;
 - (id)_dataWithValue:(id)arg1;
 - (id)_valueFromData:(id)arg1 ofType:(const char *)arg2;

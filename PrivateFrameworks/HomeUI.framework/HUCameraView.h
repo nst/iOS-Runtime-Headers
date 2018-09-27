@@ -3,6 +3,7 @@
  */
 
 @interface HUCameraView : UIView <UIScrollViewDelegate> {
+    UIActivityIndicatorView * _activityIndicatorView;
     bool  _allowDigitalZoom;
     UIView * _backgroundView;
     NSLayoutConstraint * _badgeLeadingConstraint;
@@ -17,15 +18,18 @@
     HURemoteContextHostingView * _cameraContainerView;
     UIView * _cameraDimmingView;
     UIView * _cameraOverlayView;
+    UIImageView * _demoSnapshotImageView;
     UITapGestureRecognizer * _doubleTapRecognizer;
     HUCameraErrorContent * _errorContent;
     HUCameraErrorView * _errorView;
     unsigned long long  _maskedCameraCorners;
     HUCenteringScrollView * _scrollView;
+    bool  _showActivityIndicator;
     NADecayingTimer * _snapshotAgeUpdateTimer;
     NSArray * _staticConstraints;
 }
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic) bool allowDigitalZoom;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (getter=isBadgeHidden, nonatomic) bool badgeHidden;
@@ -45,6 +49,8 @@
 @property (nonatomic, retain) HMCameraSource *cameraSource;
 @property (nonatomic, readonly) HMCameraView *cameraView;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) UIImageView *demoSnapshotImageView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } derivedCameraContentFrame;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UITapGestureRecognizer *doubleTapRecognizer;
 @property (nonatomic, retain) HUCameraErrorContent *errorContent;
@@ -52,6 +58,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long maskedCameraCorners;
 @property (nonatomic, retain) HUCenteringScrollView *scrollView;
+@property (nonatomic) bool showActivityIndicator;
 @property (nonatomic, retain) NADecayingTimer *snapshotAgeUpdateTimer;
 @property (nonatomic, retain) NSArray *staticConstraints;
 @property (readonly) Class superclass;
@@ -59,6 +66,7 @@
 + (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
+- (void)_adjustContentInsets;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computeZoomRectForLocation:(struct CGPoint { double x1; double x2; })arg1 andScale:(double)arg2;
 - (double)_continuousCornerRadius;
 - (void)_createTapRecognizer;
@@ -67,8 +75,9 @@
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)_updateBadgeView;
 - (void)_updateBadgeViewReschedulingTimerIfNecessary:(bool)arg1;
-- (void)_updateErrorVisibilityStateAnimated:(bool)arg1;
+- (void)_updateErrorAndActivityIndicatorVisibilityAnimated:(bool)arg1;
 - (void)_updateMaskedCameraCorners;
+- (id)activityIndicatorView;
 - (bool)allowDigitalZoom;
 - (id)backgroundColor;
 - (id)backgroundView;
@@ -88,6 +97,8 @@
 - (id)cameraSource;
 - (id)cameraView;
 - (void)dealloc;
+- (id)demoSnapshotImageView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })derivedCameraContentFrame;
 - (id)doubleTapRecognizer;
 - (id)errorContent;
 - (id)errorView;
@@ -96,7 +107,10 @@
 - (bool)isBadgeHidden;
 - (void)layoutSubviews;
 - (unsigned long long)maskedCameraCorners;
+- (void)resetCameraZoom;
 - (id)scrollView;
+- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
+- (void)setActivityIndicatorView:(id)arg1;
 - (void)setAllowDigitalZoom:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
@@ -110,14 +124,19 @@
 - (void)setCameraDimmingView:(id)arg1;
 - (void)setCameraSource:(id)arg1;
 - (void)setCameraSource:(id)arg1 animated:(bool)arg2;
+- (void)setCameraSource:(id)arg1 withDemoSnapshotURL:(id)arg2 animated:(bool)arg3;
+- (void)setDemoSnapshotImageView:(id)arg1;
 - (void)setDoubleTapRecognizer:(id)arg1;
 - (void)setErrorContent:(id)arg1;
 - (void)setErrorContent:(id)arg1 animated:(bool)arg2;
 - (void)setErrorView:(id)arg1;
 - (void)setMaskedCameraCorners:(unsigned long long)arg1;
 - (void)setScrollView:(id)arg1;
+- (void)setShowActivityIndicator:(bool)arg1;
+- (void)setShowActivityIndicator:(bool)arg1 animated:(bool)arg2;
 - (void)setSnapshotAgeUpdateTimer:(id)arg1;
 - (void)setStaticConstraints:(id)arg1;
+- (bool)showActivityIndicator;
 - (id)snapshotAgeUpdateTimer;
 - (id)staticConstraints;
 - (void)updateConstraints;

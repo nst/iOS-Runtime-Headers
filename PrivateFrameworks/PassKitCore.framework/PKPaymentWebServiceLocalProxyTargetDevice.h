@@ -21,6 +21,7 @@
 - (void)archiveContext:(id)arg1;
 - (id)bridgedClientInfo;
 - (bool)claimSecureElementForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(id /* block */)arg1;
 - (id)connection;
 - (id)context;
 - (void)contextWithCompletion:(id /* block */)arg1;

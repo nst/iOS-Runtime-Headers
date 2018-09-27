@@ -6,9 +6,6 @@
 @required
 
 - (int)feedbackType;
-- (bool)hasFeedbackType;
-- (bool)hasJsonFeedback;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

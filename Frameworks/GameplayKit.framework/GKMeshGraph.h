@@ -15,6 +15,7 @@
 
 + (id)graphWithBufferRadius:(void *)arg1 minCoordinate:(void *)arg2 maxCoordinate:(void *)arg3; // needs 3 arg types, found 1: float
 + (id)graphWithBufferRadius:(void *)arg1 minCoordinate:(void *)arg2 maxCoordinate:(void *)arg3 nodeClass:(void *)arg4; // needs 4 arg types, found 2: float, Class
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addObstacles:(id)arg1;

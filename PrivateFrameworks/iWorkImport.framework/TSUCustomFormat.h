@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly) unsigned long long conditionCount;
 @property (nonatomic, readonly) NSMutableArray *conditionList;
+@property (nonatomic, readonly) bool conditionsAllowed;
 @property (nonatomic, readonly) NSString *currencyCode;
 @property (nonatomic, readonly) TSUCustomFormatData *defaultFormatData;
 @property (nonatomic, readonly) NSString *formatName;
@@ -29,6 +30,7 @@
 - (id)conditionalFormatDataForKey:(unsigned long long)arg1;
 - (id)conditionalFormatDataForValue:(double)arg1;
 - (id)conditionalFormatDataForValue:(double)arg1 outKey:(unsigned long long*)arg2;
+- (bool)conditionsAllowed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
 - (id)customFormatWithNewName:(id)arg1;
@@ -48,5 +50,6 @@
 - (void)p_addConditionOfType:(int)arg1 value:(double)arg2 data:(id)arg3;
 - (bool)p_isEqual:(id)arg1 matchingFullName:(bool)arg2;
 - (void)p_makeFormatNameStemAndTag;
+- (void)p_setFormatType:(int)arg1;
 
 @end

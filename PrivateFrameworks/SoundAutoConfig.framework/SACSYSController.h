@@ -10,7 +10,7 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) <SACSYSDelegate> *delegate;
+@property (nonatomic) <SACSYSDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;

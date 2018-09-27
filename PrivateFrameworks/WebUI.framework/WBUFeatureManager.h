@@ -10,10 +10,12 @@
     bool  _cloudSyncAvailable;
     bool  _inMemoryBookmarkChangeTrackingAvailable;
     NSObject<OS_dispatch_queue> * _internalQueue;
+    RMManagementState * _managementState;
     bool  _offlineReadingListAvailable;
     bool  _readingListAvailable;
 }
 
+@property (getter=isAirDropPasswordsAvailable, nonatomic, readonly) bool airDropPasswordsAvailable;
 @property (getter=isAutoFillAvailable, nonatomic, readonly) bool autoFillAvailable;
 @property (getter=isBookmarksAvailable, nonatomic, readonly) bool bookmarksAvailable;
 @property (getter=isCloudHistorySyncAvailable, nonatomic, readonly) bool cloudHistorySyncAvailable;
@@ -23,9 +25,9 @@
 @property (getter=isCreditCardStorageAvailable, nonatomic, readonly) bool creditCardStorageAvailable;
 @property (getter=isInMemoryBookmarkChangeTrackingAvailable, nonatomic, readonly) bool inMemoryBookmarkChangeTrackingAvailable;
 @property (getter=isOfflineReadingListAvailable, nonatomic, readonly) bool offlineReadingListAvailable;
-@property (getter=isParsecITunesResultsAvailable, nonatomic, readonly) bool parsecITunesResultsAvailable;
 @property (getter=isPrivateBrowsingAvailable, nonatomic, readonly) bool privateBrowsingAvailable;
 @property (getter=isReadingListAvailable, nonatomic, readonly) bool readingListAvailable;
+@property (getter=isUserRemotelyManagedAndLocallyRestricted, nonatomic, readonly) bool userRemotelyManagedAndLocallyRestricted;
 
 + (long long)accessLevel;
 + (id)webui_sharedFeatureManager;
@@ -37,7 +39,9 @@
 - (void)_updateAppleAccount;
 - (void)_updateFeatureAvailabilityByAccessLevel;
 - (void)dealloc;
+- (void)determineIfPrivateBrowsingIsAvailableWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
+- (bool)isAirDropPasswordsAvailable;
 - (bool)isAutoFillAvailable;
 - (bool)isBookmarksAvailable;
 - (bool)isCloudHistorySyncAvailable;
@@ -47,8 +51,8 @@
 - (bool)isCreditCardStorageAvailable;
 - (bool)isInMemoryBookmarkChangeTrackingAvailable;
 - (bool)isOfflineReadingListAvailable;
-- (bool)isParsecITunesResultsAvailable;
 - (bool)isPrivateBrowsingAvailable;
 - (bool)isReadingListAvailable;
+- (bool)isUserRemotelyManagedAndLocallyRestricted;
 
 @end

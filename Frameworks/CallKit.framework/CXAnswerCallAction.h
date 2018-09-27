@@ -4,6 +4,7 @@
 
 @interface CXAnswerCallAction : CXCallAction {
     NSDate * _dateConnected;
+    bool  _downgradeToAudio;
     struct CGSize { 
         double width; 
         double height; 
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, copy) NSDate *dateConnected;
+@property (nonatomic) bool downgradeToAudio;
 
 + (bool)supportsSecureCoding;
 + (double)timeout;
@@ -22,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)customDescription;
 - (id)dateConnected;
+- (bool)downgradeToAudio;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fulfill;
 - (void)fulfillWithDateConnected:(id)arg1;
@@ -29,6 +32,7 @@
 - (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
 - (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
 - (void)setDateConnected:(id)arg1;
+- (void)setDowngradeToAudio:(bool)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateAsFulfilledWithDateConnected:(id)arg1;

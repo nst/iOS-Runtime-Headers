@@ -12,6 +12,7 @@
     NSString * _currentCloudAssetGUID;
     unsigned long long  _currentCloudAssetMediaAssetType;
     NSString * _currentFilePath;
+    bool  _isPhotoIris;
     bool  _isVideo;
     long long  _jobType;
     NSDictionary * _mstreamdInfoDictionary;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSString *currentCloudAssetGUID;
 @property (nonatomic) unsigned long long currentCloudAssetMediaAssetType;
 @property (nonatomic, retain) NSString *currentFilePath;
+@property (nonatomic) bool isPhotoIris;
 @property (nonatomic) bool isVideo;
 @property (nonatomic) long long jobType;
 @property (nonatomic, retain) NSDictionary *mstreamdInfoDictionary;
@@ -44,7 +46,7 @@
 + (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned long long)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(bool)arg7;
 
 - (void)_addDownloadNotification:(id)arg1;
-- (bool)_createPlaceHolderInSharedAlbum:(id)arg1;
+- (id)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (void)_incrementDerivativesCount:(long long)arg1 thumbnailsCount:(long long)arg2;
 - (unsigned long long)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
 - (bool)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
@@ -75,6 +77,7 @@
 - (void)executeDaemonOperationSaveAssetMetadataForCollectionsJobType;
 - (id)init;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (bool)isPhotoIris;
 - (bool)isProcessingThumbnail;
 - (bool)isVideo;
 - (long long)jobType;
@@ -90,6 +93,7 @@
 - (void)setCurrentCloudAssetGUID:(id)arg1;
 - (void)setCurrentCloudAssetMediaAssetType:(unsigned long long)arg1;
 - (void)setCurrentFilePath:(id)arg1;
+- (void)setIsPhotoIris:(bool)arg1;
 - (void)setIsVideo:(bool)arg1;
 - (void)setJobType:(long long)arg1;
 - (void)setMstreamdInfoDictionary:(id)arg1;

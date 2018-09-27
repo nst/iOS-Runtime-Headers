@@ -6,6 +6,7 @@
 @required
 
 - (int)characterType;
+- (void)setReduceTransparencyButtonColor:(UIColor *)arg1;
 - (NSString *)stringCharacter;
 
 @end

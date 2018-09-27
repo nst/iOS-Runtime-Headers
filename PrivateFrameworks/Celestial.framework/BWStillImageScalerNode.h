@@ -4,12 +4,12 @@
 
 @interface BWStillImageScalerNode : BWNode {
     bool  _defersCropToPhotoEncoderWhenPossible;
-    struct { 
-        int width; 
-        int height; 
-    }  _nativeOutputDimensions;
     BWVideoFormat * _outputFormat;
     struct opaqueCMFormatDescription { } * _outputFormatDescription;
+    float  _personSegmentationMainImageDownscalingFactor;
+    struct opaqueCMFormatDescription { } * _personSegmentationOutputFormatDescription;
+    BWPixelBufferPool * _personSegmentationPool;
+    struct OpaqueVTPixelTransferSession { } * _personSegmentationScalingSession;
     BWPixelBufferPool * _pool;
     int  _poolCapacity;
     struct OpaqueVTPixelTransferSession { } * _scalingSession;
@@ -27,11 +27,11 @@
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)init;
 - (id)initWithPoolCapacity:(int)arg1;
-- (struct { int x1; int x2; })nativeOutputDimensions;
 - (id)nodeSubType;
 - (id)nodeType;
+- (float)personSegmentationMainImageDownscalingFactor;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setDefersCropToPhotoEncoderWhenPossible:(bool)arg1;
-- (void)setNativeOutputDimensions:(struct { int x1; int x2; })arg1;
+- (void)setPersonSegmentationMainImageDownscalingFactor:(float)arg1;
 
 @end

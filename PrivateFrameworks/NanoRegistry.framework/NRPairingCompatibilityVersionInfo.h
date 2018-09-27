@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@interface NRPairingCompatibilityVersionInfo : NSObject <NSCopying, NSSecureCoding> {
+@interface NRPairingCompatibilityVersionInfo : NSObject {
     bool  _isOverrideActive;
     long long  _maxPairingCompatibilityVersion;
     long long  _minPairingCompatibilityVersion;
@@ -16,19 +16,19 @@
 @property (nonatomic) long long minQuickSwitchCompatibilityVersion;
 @property (nonatomic) long long pairingCompatibilityVersion;
 
-+ (void)setValue:(unsigned long long)arg1 forToken:(int)arg2;
-+ (bool)supportsSecureCoding;
++ (id)numberFromCFPrefs:(id)arg1;
++ (id)stringFromCFPrefs:(id)arg1;
 + (id)systemVersions;
 + (unsigned long long)valueForToken:(int)arg1;
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
-- (id)initWithCoder:(id)arg1;
+- (id)initInternal;
 - (bool)isOverrideActive;
 - (long long)maxPairingCompatibilityVersion;
 - (long long)minPairingCompatibilityVersion;
+- (long long)minPairingCompatibilityVersionForChipID:(id)arg1;
+- (long long)minPairingCompatibilityVersionForChipID:(id)arg1 name:(id)arg2 defaultVersion:(long long)arg3;
 - (long long)minQuickSwitchCompatibilityVersion;
+- (long long)minQuickSwitchPairingCompatibilityVersionForChipID:(id)arg1;
 - (long long)pairingCompatibilityVersion;
 - (void)setIsOverrideActive:(bool)arg1;
 - (void)setMaxPairingCompatibilityVersion:(long long)arg1;

@@ -9,11 +9,11 @@
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFHTTPClientDelegate> * _delegate;
     HMFExponentialBackoffTimer * _delegatedPingTimer;
+    HMFUnfairLock * _lock;
     HMFNetService * _netService;
     _HMFNetServiceMonitor * _netServiceMonitor;
     unsigned long long  _options;
     bool  _pinging;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     HMFNetMonitor * _reachabilityMonitor;
     NSOperationQueue * _reachabilityProbeQueue;
     bool  _reachable;
@@ -33,7 +33,6 @@
 @property (nonatomic, readonly) _HMFNetServiceMonitor *netServiceMonitor;
 @property (nonatomic, readonly) unsigned long long options;
 @property (getter=isPinging, nonatomic) bool pinging;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) HMFNetMonitor *reachabilityMonitor;
 @property (nonatomic, readonly) NSOperationQueue *reachabilityProbeQueue;
 @property (getter=isReachable, nonatomic) bool reachable;
@@ -41,24 +40,20 @@
 @property (readonly) Class superclass;
 
 + (id)baseURLWithScheme:(id)arg1 hostAddress:(id)arg2 port:(unsigned long long)arg3;
-+ (bool)isValidBaseURL:(id)arg1;
 + (id)logCategory;
-+ (id)shortDescription;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)__initializeWithOptions:(unsigned long long)arg1;
 - (bool)allowAnonymousConnection;
+- (id)attributeDescriptions;
 - (id)baseURL;
 - (void)cancelPendingRequests;
 - (id)clientQueue;
 - (void)dealloc;
-- (id)debugDescription;
 - (id)delegate;
 - (id)delegatedPingTimer;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
 - (id)initWithBaseURL:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithNetService:(id)arg1 options:(unsigned long long)arg2;
@@ -73,9 +68,7 @@
 - (id)netServiceMonitor;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;
-- (void)notifyDelegateOfReachabilityChange:(bool)arg1;
 - (unsigned long long)options;
-- (id)propertyQueue;
 - (id)reachabilityMonitor;
 - (id)reachabilityProbeQueue;
 - (bool)requestClientReachabilityPingWithRetry:(bool)arg1;
@@ -89,7 +82,6 @@
 - (void)setNetService:(id)arg1;
 - (void)setPinging:(bool)arg1;
 - (void)setReachable:(bool)arg1;
-- (id)shortDescription;
 - (void)startDelegatedPingTimer;
 - (void)startReachabilityProbe;
 - (void)stopDelegatedPingTimer;

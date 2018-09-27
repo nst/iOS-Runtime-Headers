@@ -7,7 +7,6 @@
     long long  _attemptCount;
     id /* block */  _completion;
     NSDictionary * _downloadOptions;
-    NSString * _operationName;
     NSObject<OS_dispatch_queue> * _queue;
     long long  _state;
 }
@@ -25,6 +24,7 @@
 - (void)_queue_transitionToFailureWithError:(id)arg1;
 - (void)_queue_transitionToInitialized;
 - (void)_queue_transitionToState:(long long)arg1;
+- (id)description;
 - (id)initWithAsset:(id)arg1 serialQueue:(id)arg2 downloadOptions:(id)arg3 completion:(id /* block */)arg4;
 - (void)run;
 

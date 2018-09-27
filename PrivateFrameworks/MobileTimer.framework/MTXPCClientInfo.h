@@ -25,6 +25,7 @@
 - (id)connectedDate;
 - (id)connection;
 - (id)description;
+- (bool)donatesIntent;
 - (unsigned long long)hash;
 - (id)initWithConnection:(id)arg1 clientLink:(id)arg2;
 - (bool)isEqual:(id)arg1;

@@ -4,11 +4,13 @@
 
 @interface CPLEngineFeedbackManager : NSObject {
     bool  _closed;
+    bool  _deactivated;
     CPLEngineLibrary * _engineLibrary;
     NSURL * _feedbackMessagesURL;
     NSDate * _lastAttemptDate;
     NSArray * _messagesSending;
     NSMutableArray * _messagesToSend;
+    bool  _opened;
     NSObject<OS_dispatch_queue> * _queue;
     <CPLEngineTransportSendFeedbackTask> * _sendTask;
 }
@@ -28,11 +30,12 @@
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (void)openWithCompletionHandler:(id /* block */)arg1;
-- (void)reportEndOfReset;
+- (void)reportEndOfResetWithUUID:(id)arg1 reason:(id)arg2;
 - (void)reportFetchChangesRewindToFeatureVersion:(unsigned long long)arg1;
 - (void)reportMessage:(id)arg1;
 - (void)reportMessages:(id)arg1;
-- (void)reportResetType:(id)arg1 reason:(id)arg2;
+- (void)reportMiscInformation:(id)arg1;
+- (void)reportResetType:(id)arg1 reason:(id)arg2 uuid:(id)arg3;
 - (void)reportSetting:(id)arg1 hasBeenSetToValue:(id)arg2;
 - (void)sendFeedbackToServerIfNecessary;
 

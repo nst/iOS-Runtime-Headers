@@ -109,6 +109,8 @@
 @property (nonatomic, readonly) NSString *parentPath;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSString *physicalName;
+@property (nonatomic, readonly) NSString *preformattedMostRecentEditorName;
+@property (nonatomic, readonly) NSString *preformattedOwnerName;
 @property (readonly, copy) NSString *providerIdentifier;
 @property (nonatomic) id replacement;
 @property (getter=isShared, nonatomic, readonly) bool shared;
@@ -117,6 +119,7 @@
 @property (nonatomic, readonly) NSNumber *size;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSData *tagData;
+@property (readonly, copy) NSArray *tags;
 @property (getter=isTrashed, nonatomic, readonly) bool trashed;
 @property (nonatomic, readonly, copy) NSString *typeIdentifier;
 @property (getter=isUploaded, nonatomic, readonly) bool uploaded;

@@ -8,8 +8,8 @@
 
 @property (nonatomic, copy) NSSet *actions;
 
+- (void).cxx_destruct;
 - (id)actions;
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)setActions:(id)arg1;

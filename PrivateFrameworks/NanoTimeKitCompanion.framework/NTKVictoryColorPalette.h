@@ -2,22 +2,51 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKVictoryColorPalette : NSObject
+@interface NTKVictoryColorPalette : NSObject {
+    UIColor * _analogComplicationsColor;
+    UIColor * _analogDotColor;
+    UIColor * _backgroundColor;
+    UIColor * _digitalComplicationsColor;
+    UIColor * _digitalComplicationsPlatterColor;
+    UIColor * _handInlayColor;
+    UIColor * _handsColor;
+    bool  _hasWhiteElements;
+    UIColor * _logoColor;
+    UIColor * _numbersColor;
+    UIColor * _platterColor;
+    UIColor * _secondHandColor;
+}
 
-+ (bool)_colorIsPairedWithWhite:(unsigned long long)arg1;
-+ (id)_grayColor;
-+ (id)_offWhiteColor;
-+ (id)_primaryColorForColor:(unsigned long long)arg1;
-+ (id)analogComplicationsColorForColor:(unsigned long long)arg1;
-+ (id)analogDotColorForColor:(unsigned long long)arg1;
-+ (bool)colorHasWhiteElements:(unsigned long long)arg1;
-+ (id)digitalComplicationsColorForColor:(unsigned long long)arg1;
-+ (id)digitalComplicationsPlatterColorForColor:(unsigned long long)arg1;
-+ (id)handInlayColorForColor:(unsigned long long)arg1;
-+ (id)handsAndLogoColorForColor:(unsigned long long)arg1;
-+ (id)numbersColorForColor:(unsigned long long)arg1;
-+ (id)platterColor;
-+ (id)secondHandColorForColor:(unsigned long long)arg1;
+@property (nonatomic, readonly) UIColor *analogComplicationsColor;
+@property (nonatomic, readonly) UIColor *analogDotColor;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) UIColor *digitalComplicationsColor;
+@property (nonatomic, readonly) UIColor *digitalComplicationsPlatterColor;
+@property (nonatomic, readonly) UIColor *handInlayColor;
+@property (nonatomic, readonly) UIColor *handsColor;
+@property (nonatomic, readonly) bool hasWhiteElements;
+@property (nonatomic, readonly) UIColor *logoColor;
+@property (nonatomic, readonly) UIColor *numbersColor;
+@property (nonatomic, readonly) UIColor *platterColor;
+@property (nonatomic, readonly) UIColor *secondHandColor;
+
++ (id)paletteForColor:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
++ (id)paletteForColor:(unsigned long long)arg1 style:(unsigned long long)arg2;
 + (id)voltColor;
+
+- (void).cxx_destruct;
+- (id)analogComplicationsColor;
+- (id)analogDotColor;
+- (id)backgroundColor;
+- (id)digitalComplicationsColor;
+- (id)digitalComplicationsPlatterColor;
+- (id)handInlayColor;
+- (id)handsColor;
+- (bool)hasWhiteElements;
+- (id)initWithColor:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
+- (id)logoColor;
+- (id)numbersColor;
+- (id)platterColor;
+- (id)secondHandColor;
 
 @end

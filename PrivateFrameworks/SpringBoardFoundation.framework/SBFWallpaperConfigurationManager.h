@@ -83,7 +83,6 @@
 - (long long)parallaxDeviceType;
 - (double)parallaxFactorForCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(bool)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 zoomScale:(double)arg4;
 - (void)performMigrationWithFailureHandler:(id /* block */)arg1;
-- (void)preheatImageCacheForVariant:(long long)arg1;
 - (Class)proceduralWallpaperClassForIdentifier:(id)arg1;
 - (id)proceduralWallpaperInfoForVariant:(long long)arg1;
 - (id)proceduralWallpaperProvider;

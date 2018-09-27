@@ -12,6 +12,8 @@
     NTPBAnfComponentExposure * _anfComponentExposure;
     NTPBAppSessionEnd * _appSessionEnd;
     NTPBAppSessionEndWatch * _appSessionEndWatch;
+    NTPBAppSessionResign * _appSessionResign;
+    NTPBAppSessionResume * _appSessionResume;
     NTPBAppSessionStart * _appSessionStart;
     NTPBAppSessionStartWatch * _appSessionStartWatch;
     NTPBArticleEngagement * _articleEngagement;
@@ -19,6 +21,8 @@
     NTPBArticleLikeDislike * _articleLikeDislike;
     NTPBArticleScroll * _articleScroll;
     NTPBArticleScrollNotw * _articleScrollNotw;
+    NTPBArticleSessionResign * _articleSessionResign;
+    NTPBArticleSessionResume * _articleSessionResume;
     NTPBArticleViewNotw * _articleViewNotw;
     NTPBArticleViewWatch * _articleViewWatch;
     NTPBBackgroundSubscriptionValidation * _backgroundSubscriptionValidation;
@@ -70,6 +74,12 @@
     NTPBShareSheetIapFail * _shareSheetIapFail;
     NTPBSubscriptionDetectionScreenView * _subscriptionDetectionScreenView;
     NTPBSuggestionsFeedback * _suggestionsFeedback;
+    NTPBTocCardDrag * _tocCardDrag;
+    NTPBTocCellExposure * _tocCellExposure;
+    NTPBTocExposure * _tocExposure;
+    NTPBTocHandleTap * _tocHandleTap;
+    NTPBTocReorder * _tocReorder;
+    NTPBTocToggleTap * _tocToggleTap;
     NTPBTodayWidgetExposure * _todayWidgetExposure;
     NTPBTodayWidgetHeadlineExposure * _todayWidgetHeadlineExposure;
     NTPBTodayWidgetSession * _todayWidgetSession;
@@ -94,6 +104,8 @@
 @property (nonatomic, retain) NTPBAnfComponentExposure *anfComponentExposure;
 @property (nonatomic, retain) NTPBAppSessionEnd *appSessionEnd;
 @property (nonatomic, retain) NTPBAppSessionEndWatch *appSessionEndWatch;
+@property (nonatomic, retain) NTPBAppSessionResign *appSessionResign;
+@property (nonatomic, retain) NTPBAppSessionResume *appSessionResume;
 @property (nonatomic, retain) NTPBAppSessionStart *appSessionStart;
 @property (nonatomic, retain) NTPBAppSessionStartWatch *appSessionStartWatch;
 @property (nonatomic, retain) NTPBArticleEngagement *articleEngagement;
@@ -101,6 +113,8 @@
 @property (nonatomic, retain) NTPBArticleLikeDislike *articleLikeDislike;
 @property (nonatomic, retain) NTPBArticleScroll *articleScroll;
 @property (nonatomic, retain) NTPBArticleScrollNotw *articleScrollNotw;
+@property (nonatomic, retain) NTPBArticleSessionResign *articleSessionResign;
+@property (nonatomic, retain) NTPBArticleSessionResume *articleSessionResume;
 @property (nonatomic, retain) NTPBArticleViewNotw *articleViewNotw;
 @property (nonatomic, retain) NTPBArticleViewWatch *articleViewWatch;
 @property (nonatomic, retain) NTPBBackgroundSubscriptionValidation *backgroundSubscriptionValidation;
@@ -128,6 +142,8 @@
 @property (nonatomic, readonly) bool hasAnfComponentExposure;
 @property (nonatomic, readonly) bool hasAppSessionEnd;
 @property (nonatomic, readonly) bool hasAppSessionEndWatch;
+@property (nonatomic, readonly) bool hasAppSessionResign;
+@property (nonatomic, readonly) bool hasAppSessionResume;
 @property (nonatomic, readonly) bool hasAppSessionStart;
 @property (nonatomic, readonly) bool hasAppSessionStartWatch;
 @property (nonatomic, readonly) bool hasArticleEngagement;
@@ -135,6 +151,8 @@
 @property (nonatomic, readonly) bool hasArticleLikeDislike;
 @property (nonatomic, readonly) bool hasArticleScroll;
 @property (nonatomic, readonly) bool hasArticleScrollNotw;
+@property (nonatomic, readonly) bool hasArticleSessionResign;
+@property (nonatomic, readonly) bool hasArticleSessionResume;
 @property (nonatomic, readonly) bool hasArticleViewNotw;
 @property (nonatomic, readonly) bool hasArticleViewWatch;
 @property (nonatomic, readonly) bool hasBackgroundSubscriptionValidation;
@@ -186,6 +204,12 @@
 @property (nonatomic, readonly) bool hasShareSheetIapFail;
 @property (nonatomic, readonly) bool hasSubscriptionDetectionScreenView;
 @property (nonatomic, readonly) bool hasSuggestionsFeedback;
+@property (nonatomic, readonly) bool hasTocCardDrag;
+@property (nonatomic, readonly) bool hasTocCellExposure;
+@property (nonatomic, readonly) bool hasTocExposure;
+@property (nonatomic, readonly) bool hasTocHandleTap;
+@property (nonatomic, readonly) bool hasTocReorder;
+@property (nonatomic, readonly) bool hasTocToggleTap;
 @property (nonatomic, readonly) bool hasTodayWidgetExposure;
 @property (nonatomic, readonly) bool hasTodayWidgetHeadlineExposure;
 @property (nonatomic, readonly) bool hasTodayWidgetSession;
@@ -232,6 +256,12 @@
 @property (nonatomic, retain) NTPBShareSheetIapFail *shareSheetIapFail;
 @property (nonatomic, retain) NTPBSubscriptionDetectionScreenView *subscriptionDetectionScreenView;
 @property (nonatomic, retain) NTPBSuggestionsFeedback *suggestionsFeedback;
+@property (nonatomic, retain) NTPBTocCardDrag *tocCardDrag;
+@property (nonatomic, retain) NTPBTocCellExposure *tocCellExposure;
+@property (nonatomic, retain) NTPBTocExposure *tocExposure;
+@property (nonatomic, retain) NTPBTocHandleTap *tocHandleTap;
+@property (nonatomic, retain) NTPBTocReorder *tocReorder;
+@property (nonatomic, retain) NTPBTocToggleTap *tocToggleTap;
 @property (nonatomic, retain) NTPBTodayWidgetExposure *todayWidgetExposure;
 @property (nonatomic, retain) NTPBTodayWidgetHeadlineExposure *todayWidgetHeadlineExposure;
 @property (nonatomic, retain) NTPBTodayWidgetSession *todayWidgetSession;
@@ -256,6 +286,8 @@
 - (id)anfComponentExposure;
 - (id)appSessionEnd;
 - (id)appSessionEndWatch;
+- (id)appSessionResign;
+- (id)appSessionResume;
 - (id)appSessionStart;
 - (id)appSessionStartWatch;
 - (id)articleEngagement;
@@ -263,6 +295,8 @@
 - (id)articleLikeDislike;
 - (id)articleScroll;
 - (id)articleScrollNotw;
+- (id)articleSessionResign;
+- (id)articleSessionResume;
 - (id)articleViewNotw;
 - (id)articleViewWatch;
 - (id)backgroundSubscriptionValidation;
@@ -293,6 +327,8 @@
 - (bool)hasAnfComponentExposure;
 - (bool)hasAppSessionEnd;
 - (bool)hasAppSessionEndWatch;
+- (bool)hasAppSessionResign;
+- (bool)hasAppSessionResume;
 - (bool)hasAppSessionStart;
 - (bool)hasAppSessionStartWatch;
 - (bool)hasArticleEngagement;
@@ -300,6 +336,8 @@
 - (bool)hasArticleLikeDislike;
 - (bool)hasArticleScroll;
 - (bool)hasArticleScrollNotw;
+- (bool)hasArticleSessionResign;
+- (bool)hasArticleSessionResume;
 - (bool)hasArticleViewNotw;
 - (bool)hasArticleViewWatch;
 - (bool)hasBackgroundSubscriptionValidation;
@@ -351,6 +389,12 @@
 - (bool)hasShareSheetIapFail;
 - (bool)hasSubscriptionDetectionScreenView;
 - (bool)hasSuggestionsFeedback;
+- (bool)hasTocCardDrag;
+- (bool)hasTocCellExposure;
+- (bool)hasTocExposure;
+- (bool)hasTocHandleTap;
+- (bool)hasTocReorder;
+- (bool)hasTocToggleTap;
 - (bool)hasTodayWidgetExposure;
 - (bool)hasTodayWidgetHeadlineExposure;
 - (bool)hasTodayWidgetSession;
@@ -404,6 +448,8 @@
 - (void)setAnfComponentExposure:(id)arg1;
 - (void)setAppSessionEnd:(id)arg1;
 - (void)setAppSessionEndWatch:(id)arg1;
+- (void)setAppSessionResign:(id)arg1;
+- (void)setAppSessionResume:(id)arg1;
 - (void)setAppSessionStart:(id)arg1;
 - (void)setAppSessionStartWatch:(id)arg1;
 - (void)setArticleEngagement:(id)arg1;
@@ -411,6 +457,8 @@
 - (void)setArticleLikeDislike:(id)arg1;
 - (void)setArticleScroll:(id)arg1;
 - (void)setArticleScrollNotw:(id)arg1;
+- (void)setArticleSessionResign:(id)arg1;
+- (void)setArticleSessionResume:(id)arg1;
 - (void)setArticleViewNotw:(id)arg1;
 - (void)setArticleViewWatch:(id)arg1;
 - (void)setBackgroundSubscriptionValidation:(id)arg1;
@@ -462,6 +510,12 @@
 - (void)setShareSheetIapFail:(id)arg1;
 - (void)setSubscriptionDetectionScreenView:(id)arg1;
 - (void)setSuggestionsFeedback:(id)arg1;
+- (void)setTocCardDrag:(id)arg1;
+- (void)setTocCellExposure:(id)arg1;
+- (void)setTocExposure:(id)arg1;
+- (void)setTocHandleTap:(id)arg1;
+- (void)setTocReorder:(id)arg1;
+- (void)setTocToggleTap:(id)arg1;
 - (void)setTodayWidgetExposure:(id)arg1;
 - (void)setTodayWidgetHeadlineExposure:(id)arg1;
 - (void)setTodayWidgetSession:(id)arg1;
@@ -481,6 +535,12 @@
 - (id)shareSheetIapFail;
 - (id)subscriptionDetectionScreenView;
 - (id)suggestionsFeedback;
+- (id)tocCardDrag;
+- (id)tocCellExposure;
+- (id)tocExposure;
+- (id)tocHandleTap;
+- (id)tocReorder;
+- (id)tocToggleTap;
 - (id)todayWidgetExposure;
 - (id)todayWidgetHeadlineExposure;
 - (id)todayWidgetSession;

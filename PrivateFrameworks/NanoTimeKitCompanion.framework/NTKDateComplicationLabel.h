@@ -3,18 +3,24 @@
  */
 
 @interface NTKDateComplicationLabel : UIControl <NTKControl, NTKDateComplicationDisplay> {
+    UIColor * _accentColor;
+    long long  _accentType;
     struct CGSize { 
         double width; 
         double height; 
     }  _cachedSize;
     bool  _cachedSizeIsValid;
     NSString * _currentDateText;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _dayTextRange;
+    CLKDevice * _device;
     CLKFont * _font;
     bool  _frozen;
     UIView * _highlightView;
     UILabel * _internalLabel;
     bool  _legibilityHidden;
-    UIColor * _numberColor;
     unsigned long long  _overrideDateStyle;
     long long  _sizeStyle;
     struct UIEdgeInsets { 
@@ -24,20 +30,24 @@
         double right; 
     }  _touchEdgeInsets;
     bool  _usesLegibility;
+    bool  canUseCurvedText;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
 @property (setter=_setFirstLineBaselineFrameOriginY:, nonatomic) double _firstLineBaselineFrameOriginY;
 @property (nonatomic, readonly) double _lastLineBaseline;
 @property (setter=_setLastLineBaselineFrameOriginY:, nonatomic) double _lastLineBaselineFrameOriginY;
+@property (nonatomic, retain) UIColor *accentColor;
+@property (nonatomic, readonly) long long accentType;
+@property (nonatomic) bool canUseCurvedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
 @property (nonatomic, retain) CLKFont *font;
 @property (readonly) unsigned long long hash;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic) bool legibilityHidden;
-@property (nonatomic, retain) UIColor *numberColor;
 @property (nonatomic) unsigned long long overrideDateStyle;
 @property (nonatomic) bool shouldUseTemplateColors;
 @property (nonatomic, readonly) long long sizeStyle;
@@ -61,21 +71,24 @@
 - (void)_setFont:(id)arg1;
 - (void)_setLastLineBaselineFrameOriginY:(double)arg1;
 - (void)_setText:(id)arg1;
+- (id)accentColor;
+- (long long)accentType;
+- (bool)canUseCurvedText;
+- (id)device;
 - (id)displayObserver;
 - (id)font;
-- (id)initWithSizeStyle:(long long)arg1;
+- (id)initWithSizeStyle:(long long)arg1 accentType:(long long)arg2 forDevice:(id)arg3;
 - (void)layoutSubviews;
 - (bool)legibilityHidden;
-- (id)numberColor;
 - (unsigned long long)overrideDateStyle;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (void)setContentsMultiplyColor:(id)arg1 animated:(bool)arg2 withDuration:(double)arg3;
-- (void)setDateComplicationText:(id)arg1 forDateStyle:(unsigned long long)arg2;
+- (void)setAccentColor:(id)arg1;
+- (void)setCanUseCurvedText:(bool)arg1;
+- (void)setDateComplicationText:(id)arg1 withDayRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forDateStyle:(unsigned long long)arg3;
 - (void)setDisplayObserver:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setLegibilityHidden:(bool)arg1;
-- (void)setNumberColor:(id)arg1;
 - (void)setOverrideDateStyle:(unsigned long long)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTouchEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

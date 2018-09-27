@@ -25,13 +25,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSceneMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) FBSSceneSettings *effectiveSceneSettings;
+@property (nonatomic, readonly) FBSSceneSettings *effectiveSceneSettings;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) FBScene *scene;
+@property (nonatomic, readonly) FBScene *scene;
 @property (nonatomic, readonly, copy) NSString *sceneID;
-@property (nonatomic, readonly, retain) FBSSceneSettings *sceneSettings;
+@property (nonatomic, readonly) FBSSceneSettings *sceneSettings;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_effectiveBehaviors;
 - (void)_evaluateEffectiveMonitorBehaviors;
 - (id)_initWithSceneManager:(id)arg1 sceneID:(id)arg2;

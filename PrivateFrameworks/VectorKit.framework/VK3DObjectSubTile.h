@@ -35,7 +35,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (bool)_createMeshForObjects:(struct { struct { id x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; unsigned long long x_1_1_4; unsigned long long x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; bool x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; char *x2; unsigned long long x3; }*)arg1 count:(unsigned long long)arg2;
+- (bool)_createMeshForObjectsInModelTile:(id)arg1 count:(unsigned long long)arg2;
 - (void)_read3DObjects:(struct vector<GEO3DBuildingFeature, std::__1::allocator<GEO3DBuildingFeature> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<GEO3DBuildingFeature *, std::__1::allocator<GEO3DBuildingFeature> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg1 fromDiskForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2;
 - (void)_replaceThreeBuldingsInModelTile:(id)arg1 objects:(struct vector<GEO3DBuildingFeature, std::__1::allocator<GEO3DBuildingFeature> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<GEO3DBuildingFeature *, std::__1::allocator<GEO3DBuildingFeature> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg2;
 - (double)contentScale;

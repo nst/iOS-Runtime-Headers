@@ -6,6 +6,7 @@
     bool  _attempsAutomaticRedeem;
     <SKUIRedeemViewCameraOverrideDelegate> * _cameraDelegate;
     BOOL  _cameraRedeemEnabled;
+    bool  _cameraRedeemVisible;
     UIBarButtonItem * _cancelButtonItem;
     long long  _category;
     SKUIClientContext * _clientContext;
@@ -20,6 +21,7 @@
 
 @property (nonatomic) bool attempsAutomaticRedeem;
 @property (nonatomic) <SKUIRedeemViewCameraOverrideDelegate> *cameraDelegate;
+@property (nonatomic) bool cameraRedeemVisible;
 @property (nonatomic, retain) UIBarButtonItem *cancelButtonItem;
 @property (nonatomic, readonly) long long category;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -28,6 +30,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *initialCode;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, retain) SKUIRedeemConfiguration *redeemConfiguration;
 @property (nonatomic) bool shouldPerformInitialOperationOnAppear;
 @property (readonly) Class superclass;
 
@@ -48,6 +51,7 @@
 - (void)_showNationalIdVerificationPage;
 - (bool)attempsAutomaticRedeem;
 - (id)cameraDelegate;
+- (bool)cameraRedeemVisible;
 - (id)cancelButtonItem;
 - (long long)category;
 - (id)clientContext;
@@ -56,15 +60,18 @@
 - (id)operationQueue;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)redeemAgainAnimated:(bool)arg1;
+- (id)redeemConfiguration;
 - (void)redeemIdViewController:(id)arg1 submittedWithFields:(id)arg2;
 - (void)redeemIdViewControllerDidCancel:(id)arg1;
 - (void)redeemStepViewControllerShouldValidateNationalID:(id)arg1;
 - (void)setAttempsAutomaticRedeem:(bool)arg1;
 - (void)setCameraDelegate:(id)arg1;
+- (void)setCameraRedeemVisible:(bool)arg1;
 - (void)setCancelButtonItem:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
+- (void)setRedeemConfiguration:(id)arg1;
 - (void)setShouldPerformInitialOperationOnAppear:(bool)arg1;
 - (bool)shouldPerformInitialOperationOnAppear;
 - (unsigned long long)supportedInterfaceOrientations;

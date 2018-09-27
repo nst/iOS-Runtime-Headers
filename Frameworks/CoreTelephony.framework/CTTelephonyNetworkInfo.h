@@ -2,68 +2,91 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@interface CTTelephonyNetworkInfo : NSObject {
-    NSString * _cachedCellId;
-    NSString * _cachedCurrentRadioAccessTechnology;
-    NSDictionary * _cachedSignalStrength;
-    bool  _monitoringCellId;
+@interface CTTelephonyNetworkInfo : NSObject <CoreTelephonyClientDataDelegate, CoreTelephonyClientRegistrationDelegate> {
+    NSMutableDictionary * _cachedCellIds;
+    NSMutableDictionary * _cachedCurrentRadioAccessTechnology;
+    NSMutableDictionary * _cachedSignalStrength;
+    CoreTelephonyClient * _client;
+    CTServiceDescriptorContainer * _descriptors;
     struct queue { 
         struct object { 
             struct dispatch_object_s {} *fObj; 
         } fObj; 
     }  _queue;
+    NSDictionary * _serviceCurrentRadioAccessTechnology;
+    NSMutableDictionary * _serviceSubscriberCellularProvider;
+    id /* block */  _serviceSubscriberCellularProviderDidUpdateNotifier;
+    NSDictionary * _serviceSubscriberCellularProviders;
+    id /* block */  _serviceSubscriberCellularProvidersDidUpdateNotifier;
     CTCarrier * _subscriberCellularProvider;
     id /* block */  _subscriberCellularProviderDidUpdateNotifier;
-    struct __CTServerConnection { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; unsigned char x8; unsigned char x9; } * server_connection;
-    NSLock * server_lock;
 }
 
-@property (retain) NSString *cachedCellId;
-@property (retain) NSString *cachedCurrentRadioAccessTechnology;
-@property (retain) NSDictionary *cachedSignalStrength;
-@property (nonatomic, retain) NSString *cellId;
+@property (retain) NSMutableDictionary *cachedCellIds;
+@property (retain) NSMutableDictionary *cachedCurrentRadioAccessTechnology;
+@property (retain) NSMutableDictionary *cachedSignalStrength;
 @property (nonatomic, readonly, retain) NSString *currentRadioAccessTechnology;
-@property bool monitoringCellId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) CTServiceDescriptorContainer *descriptors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, retain) NSDictionary *serviceCurrentRadioAccessTechnology;
+@property (retain) NSMutableDictionary *serviceSubscriberCellularProvider;
+@property (readonly, retain) NSDictionary *serviceSubscriberCellularProviders;
+@property (nonatomic, copy) id /* block */ serviceSubscriberCellularProvidersDidUpdateNotifier;
 @property (retain) CTCarrier *subscriberCellularProvider;
 @property (nonatomic, copy) id /* block */ subscriberCellularProviderDidUpdateNotifier;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)cachedCellId;
+- (id)cachedCellIds;
 - (id)cachedCurrentRadioAccessTechnology;
 - (id)cachedSignalStrength;
+- (void)carrierBundleChange:(id)arg1;
+- (void)cellChanged:(id)arg1 cell:(id)arg2;
 - (id)cellId;
-- (void)cleanUpServerConnection;
-- (id)createSignalStrengthDictWithBars:(id)arg1;
+- (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
 - (id)currentRadioAccessTechnology;
+- (id)currentServiceRadioAccessTechnology;
 - (void)dealloc;
-- (bool)getAllowsVOIP:(bool*)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (bool)getCarrierName:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (bool)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 withCTError:(struct { int x1; int x2; }*)arg3;
-- (bool)getMobileNetworkCode:(id)arg1 withCTError:(struct { int x1; int x2; }*)arg2;
-- (void)handleCTRegistrationCellChangedNotification:(id)arg1;
-- (void)handleCTSignalStrengthNotification:(id)arg1;
-- (void)handleNotificationFromConnection:(void*)arg1 ofType:(id)arg2 withInfo:(id)arg3;
+- (id)descriptors;
+- (bool)getAllowsVOIP:(bool*)arg1 forContext:(id)arg2 withError:(id*)arg3;
+- (bool)getCarrierName:(id)arg1 forContext:(id)arg2 withError:(id*)arg3;
+- (id)getFirstCellId;
+- (bool)getMobileCountryCode:(id)arg1 andIsoCountryCode:(id)arg2 forContext:(id)arg3 withError:(id*)arg4;
+- (bool)getMobileNetworkCode:(id)arg1 forContext:(id)arg2 withError:(id*)arg3;
 - (id)init;
-- (bool)monitoringCellId;
 - (void)postCellularProviderUpdatesIfNecessary;
-- (void)queryCTSignalStrengthNotification;
-- (void)queryCellId;
-- (void)queryDataMode;
+- (void)queryCTSignalStrength;
+- (void)queryCellIds;
+- (void)queryRat;
+- (void)queryRatForDescriptor:(id)arg1;
+- (void)querySignalStrengthForDescriptor:(id)arg1;
 - (id)radioAccessTechnology;
-- (void)setCachedCellId:(id)arg1;
+- (id)serviceCellId;
+- (id)serviceCurrentRadioAccessTechnology;
+- (id)serviceSignalStrength;
+- (id)serviceSubscriberCellularProvider;
+- (id /* block */)serviceSubscriberCellularProviderDidUpdateNotifier;
+- (id)serviceSubscriberCellularProviders;
+- (id /* block */)serviceSubscriberCellularProvidersDidUpdateNotifier;
+- (void)setCachedCellIds:(id)arg1;
 - (void)setCachedCurrentRadioAccessTechnology:(id)arg1;
 - (void)setCachedSignalStrength:(id)arg1;
-- (void)setCellId:(id)arg1;
-- (void)setMonitoringCellId:(bool)arg1;
+- (void)setServiceSubscriberCellularProvider:(id)arg1;
+- (void)setServiceSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;
+- (void)setServiceSubscriberCellularProvidersDidUpdateNotifier:(id /* block */)arg1;
 - (void)setSubscriberCellularProvider:(id)arg1;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;
-- (bool)setUpServerConnection;
 - (id)signalStrength;
+- (void)signalStrengthChanged:(id)arg1 info:(id)arg2;
 - (id)subscriberCellularProvider;
 - (id /* block */)subscriberCellularProviderDidUpdateNotifier;
-- (bool)updateNetworkInfoAndShouldNotifyClient:(bool*)arg1;
-- (void)updateRadioAccessTechnology:(id)arg1;
-- (void)updateSignalStrength:(id)arg1;
+- (void)updateCellId:(id)arg1 forDescriptor:(id)arg2;
+- (void)updateLegacyRat:(id)arg1;
+- (bool)updateNetworkInfoAndShouldNotifyClient:(bool*)arg1 forContext:(id)arg2;
+- (void)updateRat:(id)arg1 descriptor:(id)arg2;
+- (void)updateSignalStrength:(id)arg1 descriptor:(id)arg2;
 
 @end

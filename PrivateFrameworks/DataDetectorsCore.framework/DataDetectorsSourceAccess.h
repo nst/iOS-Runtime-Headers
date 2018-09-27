@@ -22,9 +22,9 @@
 
 - (struct { unsigned int x1[8]; })auditToken;
 - (bool)clientCanWriteSource:(int)arg1;
-- (void)fileForSourceRead:(id)arg1 withReply:(id /* block */)arg2;
-- (id)fileHandleForSourceRead:(int)arg1;
-- (void)filesForSourceRead:(id)arg1 withReply:(id /* block */)arg2;
+- (void)fileForSourceRead:(id)arg1 resourceType:(unsigned long long)arg2 withReply:(id /* block */)arg3;
+- (id)fileHandleForSourceRead:(int)arg1 resourceType:(unsigned long long)arg2;
+- (void)filesForSourceRead:(id)arg1 resourceType:(unsigned long long)arg2 withReply:(id /* block */)arg3;
 - (bool)privacySystemWriteEntitled;
 - (bool)privacyUserReadEntitled;
 - (bool)privacyUserWriteEntitled;

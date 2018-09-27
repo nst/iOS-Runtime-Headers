@@ -3,6 +3,7 @@
  */
 
 @interface NTKHandView : NTKColoringImageView {
+    CLKDevice * _device;
     UIColor * _inlayColor;
     struct UIEdgeInsets { 
         double top; 
@@ -33,12 +34,12 @@
 @property (nonatomic) bool shadowsHidden;
 @property (nonatomic) double zRotation;
 
-+ (id)_resizableInlayImage;
++ (id)_resizableInlayImageForDevice:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updateShadows;
 - (void)_updateTransform;
-- (id)initWithImage:(id)arg1;
+- (id)initWithImage:(id)arg1 forDevice:(id)arg2;
 - (id)inlayColor;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })inlayInsets;
 - (id)inlayView;

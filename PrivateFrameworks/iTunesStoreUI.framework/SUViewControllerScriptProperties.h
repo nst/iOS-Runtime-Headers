@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
+@interface SUViewControllerScriptProperties : NSObject <NSCopying, NSSecureCoding> {
     bool  _alwaysDispatchesScrollEvents;
     UIColor * _backgroundColor;
     NSDictionary * _contextDictionary;
@@ -50,6 +50,8 @@
 @property (nonatomic) bool showsVerticalScrollIndicator;
 @property (nonatomic, retain) UIColor *topExtensionColor;
 @property (nonatomic) bool usesBlurredBackground;
+
++ (bool)supportsSecureCoding;
 
 - (bool)alwaysDispatchesScrollEvents;
 - (id)backgroundColor;

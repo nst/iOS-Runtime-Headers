@@ -21,6 +21,7 @@
         unsigned int safariAutoSubscribeFeedCount : 1; 
         unsigned int sessionStartMethod : 1; 
         unsigned int topicSubscriptionCount : 1; 
+        unsigned int viewabilityState : 1; 
         unsigned int widgetArticleRank : 1; 
         unsigned int widgetSection : 1; 
         unsigned int widgetSectionArticleRank : 1; 
@@ -45,6 +46,7 @@
     NSMutableArray * _subscribedFeedIds;
     int  _topicSubscriptionCount;
     NSString * _userActivityType;
+    int  _viewabilityState;
     NSMutableArray * _visibleViews;
     int  _widgetArticleRank;
     NTPBWidgetEngagement * _widgetEngagement;
@@ -80,6 +82,7 @@
 @property (nonatomic) bool hasStartedFromNotification;
 @property (nonatomic) bool hasTopicSubscriptionCount;
 @property (nonatomic, readonly) bool hasUserActivityType;
+@property (nonatomic) bool hasViewabilityState;
 @property (nonatomic) bool hasWidgetArticleRank;
 @property (nonatomic, readonly) bool hasWidgetEngagement;
 @property (nonatomic) bool hasWidgetSection;
@@ -103,6 +106,7 @@
 @property (nonatomic, retain) NSMutableArray *subscribedFeedIds;
 @property (nonatomic) int topicSubscriptionCount;
 @property (nonatomic, retain) NSString *userActivityType;
+@property (nonatomic) int viewabilityState;
 @property (nonatomic, retain) NSMutableArray *visibleViews;
 @property (nonatomic) int widgetArticleRank;
 @property (nonatomic, retain) NTPBWidgetEngagement *widgetEngagement;
@@ -165,6 +169,7 @@
 - (bool)hasStartedFromNotification;
 - (bool)hasTopicSubscriptionCount;
 - (bool)hasUserActivityType;
+- (bool)hasViewabilityState;
 - (bool)hasWidgetArticleRank;
 - (bool)hasWidgetEngagement;
 - (bool)hasWidgetSection;
@@ -210,6 +215,7 @@
 - (void)setHasSessionStartMethod:(bool)arg1;
 - (void)setHasStartedFromNotification:(bool)arg1;
 - (void)setHasTopicSubscriptionCount:(bool)arg1;
+- (void)setHasViewabilityState:(bool)arg1;
 - (void)setHasWidgetArticleRank:(bool)arg1;
 - (void)setHasWidgetSection:(bool)arg1;
 - (void)setHasWidgetSectionArticleRank:(bool)arg1;
@@ -232,6 +238,7 @@
 - (void)setSubscribedFeedIds:(id)arg1;
 - (void)setTopicSubscriptionCount:(int)arg1;
 - (void)setUserActivityType:(id)arg1;
+- (void)setViewabilityState:(int)arg1;
 - (void)setVisibleViews:(id)arg1;
 - (void)setWidgetArticleRank:(int)arg1;
 - (void)setWidgetEngagement:(id)arg1;
@@ -243,6 +250,7 @@
 - (unsigned long long)subscribedFeedIdsCount;
 - (int)topicSubscriptionCount;
 - (id)userActivityType;
+- (int)viewabilityState;
 - (id)visibleViews;
 - (id)visibleViewsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)visibleViewsCount;

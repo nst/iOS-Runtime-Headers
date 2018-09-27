@@ -3,6 +3,8 @@
  */
 
 @interface PSUISoftwareUpdateController : PSListController <DevicePINControllerDelegate, PSUISoftwareUpdateManagerDelegate, UITableViewDelegate> {
+    PSSpecifier * _automaticUpdateGroup;
+    PSSpecifier * _automaticUpdateSpecifier;
     NSString * _devicePasscode;
     id /* block */  _devicePasscodeCompletion;
     bool  _disableInstallButton;
@@ -27,8 +29,11 @@
 
 - (void).cxx_destruct;
 - (id)SUError;
+- (bool)autoInstallArmed;
 - (void)autoInstallCancel:(id)arg1;
 - (void)autoInstallCancelPrompt:(id)arg1;
+- (id)automaticUpdateStatus;
+- (id)automaticUpdateStatusString;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
 - (void)detailedReleaseNotesDonePressed:(id)arg1;
@@ -49,6 +54,7 @@
 - (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)refreshState;
 - (void)resumeDownload:(id)arg1;
+- (void)setAutomaticUpdatesFromUI:(id)arg1 forSpecifier:(id)arg2;
 - (void)setDevicePasscodeCompletion:(id /* block */)arg1;
 - (void)setSUError:(id)arg1;
 - (void)setSUError:(id)arg1 disableButton:(bool)arg2 reload:(bool)arg3;

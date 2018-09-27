@@ -59,6 +59,7 @@
 - (void)_reloadControllerDidDisplay:(id)arg1;
 - (bool)_shouldReloadOnResume;
 - (void)_statusBarOrientationDidChange:(id)arg1;
+- (id)activeDocument;
 - (void)appContext:(id)arg1 didChangeInspectElementMode:(bool)arg2;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2;

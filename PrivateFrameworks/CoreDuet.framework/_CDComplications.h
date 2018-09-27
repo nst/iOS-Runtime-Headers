@@ -4,12 +4,10 @@
 
 @interface _CDComplications : NSObject {
     NSDictionary * _activeComplications;
-    CDAttribute * attribute;
     NSObject<OS_dispatch_queue> * complicationQueue;
     int  deviceChangeToken;
     NSMutableDictionary * meterTokens;
     NSUserDefaults * pushLimits;
-    CDSession * session;
 }
 
 @property (copy) NSDictionary *activeComplications;

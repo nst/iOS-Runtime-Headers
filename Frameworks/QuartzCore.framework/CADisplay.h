@@ -3,7 +3,6 @@
  */
 
 @interface CADisplay : NSObject {
-    bool  _allowsVirtualModes;
     void * _impl;
 }
 
@@ -21,9 +20,11 @@
 @property (readonly) CADisplayAttributes *externalDisplayAttributes;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (readonly) double heartbeatRate;
+@property (readonly) int linkQuality;
 @property (readonly) long long minimumFrameDuration;
 @property (nonatomic, readonly) NSString *name;
 @property (readonly) NSString *nativeOrientation;
+@property (readonly) unsigned int odLUTVersion;
 @property (nonatomic, copy) NSString *overscanAdjustment;
 @property (readonly) double overscanAmount;
 @property (readonly) struct CGSize { double x1; double x2; } overscanAmounts;
@@ -62,9 +63,11 @@
 - (bool)isExternal;
 - (bool)isOverscanned;
 - (bool)isSupported;
+- (int)linkQuality;
 - (long long)minimumFrameDuration;
 - (id)name;
 - (id)nativeOrientation;
+- (unsigned int)odLUTVersion;
 - (id)overscanAdjustment;
 - (double)overscanAmount;
 - (struct CGSize { double x1; double x2; })overscanAmounts;

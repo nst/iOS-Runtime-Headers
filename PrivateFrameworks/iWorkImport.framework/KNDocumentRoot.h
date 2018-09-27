@@ -75,7 +75,6 @@
 - (bool)validateUIState:(id)arg1;
 - (id)warningLocationDescriptionForAffectedObjects:(id)arg1 sortingInfo:(id*)arg2;
 - (void)willClose;
-- (unsigned long long)writingDirection;
 - (unsigned long long)writingDirectionForStorage;
 
 @end

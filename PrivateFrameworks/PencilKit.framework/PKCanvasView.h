@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
  */
 
-@interface PKCanvasView : UIView <PKInternalDrawingViewDelegate, PKSelectionDelegate, UIDropInteractionDelegate> {
+@interface PKCanvasView : UIView <PKDrawableView, PKInternalDrawingViewDelegate, PKSelectionDelegate, PKToolPickerDelegate, UIDropInteractionDelegate> {
     bool  __maintainsTransformsOnLayout;
+    UIColor * _backgroundColor;
     UIImage * _backgroundImage;
     <PKCanvasViewDelegate> * _delegate;
     PKInternalDrawingView * _drawingView;
@@ -13,12 +14,10 @@
         double height; 
     }  _fixedPixelSize;
     bool  _layerFixedPixelSize;
-    PKInkPicker * _managedInkPicker;
     PKRecognitionOverlayView * _overlayView;
     PKSelectionController * _selectionController;
     <PKSelectionDelegate> * _selectionViewDelegate;
     bool  _visualizationsEnabled;
-    bool  _wantsThickerInks;
 }
 
 @property (nonatomic, readonly) PKController *_drawingController;
@@ -27,7 +26,8 @@
 @property (nonatomic, readonly) bool _layerFixedPixelSize;
 @property (nonatomic) bool _maintainsTransformsOnLayout;
 @property (nonatomic, readonly) CHVisualizationManager *_recognitionVisualizationManager;
-@property (nonatomic, readonly) PKRendererController *_rendererController;
+@property (nonatomic, readonly) <PKRendererControllerProtocol> *_rendererController;
+@property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKCanvasViewDelegate> *delegate;
@@ -44,7 +44,6 @@
 @property (nonatomic, copy) PKInk *ink;
 @property (nonatomic, readonly) bool isDrawing;
 @property (nonatomic, readonly) bool isRendering;
-@property (nonatomic, retain) PKInkPicker *managedInkPicker;
 @property (nonatomic) double maximumZoomScale;
 @property (nonatomic) double minimumZoomScale;
 @property (nonatomic, retain) PKRecognitionOverlayView *overlayView;
@@ -55,7 +54,6 @@
 @property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } strokeTransform;
 @property (readonly) Class superclass;
 @property (nonatomic) bool visualizationsEnabled;
-@property (nonatomic) bool wantsThickerInks;
 
 - (void).cxx_destruct;
 - (id)_drawingController;
@@ -76,13 +74,15 @@
 - (void)_setup;
 - (void)_updateVisualizationSupport;
 - (void)applyCommand:(id)arg1 toDrawing:(id)arg2;
+- (id)backgroundColor;
 - (id)backgroundImage;
 - (bool)canBecomeFirstResponder;
 - (bool)canBeginDrawingWithTouch:(id)arg1;
+- (bool)canModifyWhitespace;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (id)canvasViewForToolPicker:(id)arg1;
 - (struct CGPoint { double x1; double x2; })closestPointForPastedSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withDrawing:(id*)arg2;
 - (void)commitSelectionIfNecessaryWithCompletion:(id /* block */)arg1;
-- (bool)containsDrawingUUID:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)dealloc;
@@ -92,6 +92,7 @@
 - (void)didFinishRenderingStroke:(id)arg1 inDrawing:(id)arg2;
 - (bool)disableWideGamut;
 - (void)drawStrokeWithPath:(struct CGPath { }*)arg1;
+- (void)drawStrokeWithPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
 - (id)drawing;
 - (void)drawingCancelled;
 - (void)drawingDidChange:(id)arg1;
@@ -105,7 +106,6 @@
 - (void)duplicate:(id)arg1;
 - (void)eraseAll;
 - (bool)hasCurrentSelection;
-- (struct CGImage { }*)image;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })imageTransform;
 - (void)imageWithCompletionBlock:(id /* block */)arg1;
 - (void)initDrawingView;
@@ -122,17 +122,17 @@
 - (double)layerContentScale;
 - (void)layoutSubviews;
 - (bool)liveDrawingIsAtEndOfDocument;
-- (id)managedInkPicker;
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;
 - (id)overlayView;
 - (void)paste:(id)arg1;
 - (void)performUndo:(id)arg1;
-- (void)pickInk;
 - (struct CGPoint { double x1; double x2; })pointInStrokeSpace:(struct CGPoint { double x1; double x2; })arg1 inDrawing:(id)arg2;
 - (void)renderingDidFinish;
+- (void)replaceWithStrokesFromDrawing:(id)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)resetSelectedStrokeStateForRenderer;
 - (void)scrollContent:(struct CGPoint { double x1; double x2; })arg1;
+- (id)selectedInkForToolPicker:(id)arg1;
 - (id)selectionController;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })selectionDrawingTransform;
 - (struct CGPoint { double x1; double x2; })selectionOffsetForDrawing:(id)arg1;
@@ -140,6 +140,7 @@
 - (id)selectionTopView;
 - (id)selectionView;
 - (id)selectionViewDelegate;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableWideGamut:(bool)arg1;
@@ -151,7 +152,6 @@
 - (void)setHidden:(bool)arg1;
 - (void)setInk:(id)arg1;
 - (void)setIsDrawing:(bool)arg1;
-- (void)setManagedInkPicker:(id)arg1;
 - (void)setMaximumZoomScale:(double)arg1;
 - (void)setMinimumZoomScale:(double)arg1;
 - (void)setOpaque:(bool)arg1;
@@ -160,13 +160,14 @@
 - (void)setSelectionViewDelegate:(id)arg1;
 - (void)setStrokeTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setVisualizationsEnabled:(bool)arg1;
-- (void)setWantsThickerInks:(bool)arg1;
 - (void)set_maintainsTransformsOnLayout:(bool)arg1;
 - (void)simulateHIDPoints:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })strokeTransform;
-- (void)toggleSelectedStrokes:(id)arg1 hide:(bool)arg2 inDrawing:(id)arg3;
+- (void)toggleSelectedStrokes:(id)arg1 hide:(bool)arg2 inDrawing:(id)arg3 isErasing:(bool)arg4;
+- (void)toolPicker:(id)arg1 setSelectedInk:(id)arg2;
+- (id)undoManagerForToolPicker:(id)arg1;
+- (id)visibleStrokesOnscreen:(id)arg1 forDrawing:(id)arg2;
 - (bool)visualizationsEnabled;
-- (bool)wantsThickerInks;
 - (void)willBeginDrawingWithTouch:(id)arg1;
 - (void)windowDidResize:(id)arg1;
 

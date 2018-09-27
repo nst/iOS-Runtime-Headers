@@ -12,8 +12,6 @@
 @property (nonatomic, readonly) NSString *loggingCategory;
 @property (nonatomic, readonly) NSString *loggingSubsystem;
 
-+ (void)_addCategory:(id)arg1 inSubsystem:(id)arg2;
-+ (id)_getCategory:(id)arg1;
 + (id)categoryWithName:(id)arg1;
 + (id)categoryWithName:(id)arg1 inSubsystem:(id)arg2;
 + (id)defaultCategory;

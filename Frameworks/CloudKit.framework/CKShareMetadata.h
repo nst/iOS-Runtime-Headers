@@ -11,8 +11,8 @@
     NSArray * _outOfNetworkMatches;
     CKUserIdentity * _ownerIdentity;
     long long  _participantPermission;
+    long long  _participantRole;
     long long  _participantStatus;
-    long long  _participantType;
     NSData * _privateToken;
     NSData * _protectedFullToken;
     NSData * _publicToken;
@@ -20,6 +20,7 @@
     CKRecordID * _rootRecordID;
     NSString * _rootRecordType;
     CKShare * _share;
+    NSArray * _sharedItemHierarchy;
 }
 
 @property (nonatomic) bool acceptedInProcess;
@@ -31,8 +32,9 @@
 @property (nonatomic, retain) NSArray *outOfNetworkMatches;
 @property (nonatomic, retain) CKUserIdentity *ownerIdentity;
 @property (nonatomic) long long participantPermission;
+@property (nonatomic) long long participantRole;
 @property (nonatomic) long long participantStatus;
-@property (nonatomic) long long participantType;
+@property (nonatomic, readonly) long long participantType;
 @property (nonatomic, copy) NSData *privateToken;
 @property (nonatomic, copy) NSData *protectedFullToken;
 @property (nonatomic, copy) NSData *publicToken;
@@ -40,6 +42,7 @@
 @property (nonatomic, copy) CKRecordID *rootRecordID;
 @property (nonatomic, retain) NSString *rootRecordType;
 @property (nonatomic, retain) CKShare *share;
+@property (nonatomic, copy) NSArray *sharedItemHierarchy;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -65,6 +68,7 @@
 - (id)outOfNetworkMatches;
 - (id)ownerIdentity;
 - (long long)participantPermission;
+- (long long)participantRole;
 - (long long)participantStatus;
 - (long long)participantType;
 - (id)privateToken;
@@ -81,8 +85,8 @@
 - (void)setOutOfNetworkMatches:(id)arg1;
 - (void)setOwnerIdentity:(id)arg1;
 - (void)setParticipantPermission:(long long)arg1;
+- (void)setParticipantRole:(long long)arg1;
 - (void)setParticipantStatus:(long long)arg1;
-- (void)setParticipantType:(long long)arg1;
 - (void)setPrivateToken:(id)arg1;
 - (void)setProtectedFullToken:(id)arg1;
 - (void)setPublicToken:(id)arg1;
@@ -90,7 +94,9 @@
 - (void)setRootRecordID:(id)arg1;
 - (void)setRootRecordType:(id)arg1;
 - (void)setShare:(id)arg1;
+- (void)setSharedItemHierarchy:(id)arg1;
 - (id)share;
+- (id)sharedItemHierarchy;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 

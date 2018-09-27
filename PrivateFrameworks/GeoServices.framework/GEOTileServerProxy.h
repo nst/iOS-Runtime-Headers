@@ -23,8 +23,10 @@
 - (id)delegateQueue;
 - (void)endPreloadSession;
 - (void)flushPendingWrites;
+- (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1;
+- (void)generateRequestedFromTileLoaderEndSignpost:(unsigned long long)arg1;
 - (id)initWithCacheLocation:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 delegateQueue:(id)arg4 delegate:(id)arg5;
-- (void)loadTiles:(id)arg1 priorities:(const unsigned int*)arg2 hasAdditionalInfos:(const bool*)arg3 additionalInfos:(const struct { unsigned int x1[4]; }*)arg4 options:(unsigned long long)arg5 client:(id)arg6;
+- (void)loadTiles:(id)arg1 priorities:(const unsigned int*)arg2 hasAdditionalInfos:(const bool*)arg3 additionalInfos:(const struct { unsigned int x1[4]; }*)arg4 signpostIDs:(const unsigned long long*)arg5 reason:(unsigned char)arg6 options:(unsigned long long)arg7 client:(id)arg8;
 - (void)open;
 - (void)reportCorruptTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)reprioritizeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 newPriority:(unsigned int)arg2;

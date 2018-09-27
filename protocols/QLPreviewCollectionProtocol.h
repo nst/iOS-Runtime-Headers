@@ -9,11 +9,12 @@
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationDidEnterBackground:(bool)arg1;
 - (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
-- (void)invalidatePreviewCollection;
+- (void)invalidateService;
 - (void)keyCommandWasPerformed:(UIKeyCommand *)arg1;
 - (void)keyCommandsWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
 - (void)notifyFirstTimeAppearanceWithActions:(unsigned long long)arg1;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)preparePreviewCollectionForInvalidationWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)setAppearance:(QLAppearance *)arg1 animated:(bool)arg2;
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setLoadingString:(NSString *)arg1;

@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)author;
+- (id)description;
 - (id)identifier;
 - (id)legacyUniqueIdentifier;
 - (id)path;

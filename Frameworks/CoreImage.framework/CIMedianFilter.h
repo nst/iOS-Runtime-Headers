@@ -10,7 +10,7 @@
 
 + (id)customAttributes;
 
-- (id)_kernel;
+- (id)_kernel3x3;
 - (id)inputImage;
 - (id)outputImage;
 - (void)setInputImage:(id)arg1;

@@ -22,6 +22,7 @@
 @property (nonatomic, retain) PHCachingImageManager *imageManager;
 @property (nonatomic, copy) NSString *namedSectionTitle;
 @property (nonatomic, retain) HUNamedWallpaperCollectionViewController *namedWallpaperController;
+@property (nonatomic, readonly) bool shouldShowPhotoLibrary;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -48,6 +49,7 @@
 - (void)setImageManager:(id)arg1;
 - (void)setNamedSectionTitle:(id)arg1;
 - (void)setNamedWallpaperController:(id)arg1;
+- (bool)shouldShowPhotoLibrary;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

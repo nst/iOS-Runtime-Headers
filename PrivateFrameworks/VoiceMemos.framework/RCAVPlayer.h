@@ -6,6 +6,7 @@
     AVPlayerItem * _AVPlayerItemBeingObserved;
     <RCAVPlayerDelegate> * _delegate;
     id  _periodicTimeObserverToken;
+    bool  _scrubbing;
     double  _updateRate;
     bool  _valid;
 }
@@ -18,8 +19,10 @@
 - (void)_AVAudioSessionMediaServicesWereLostNotification:(id)arg1;
 - (void)_AVAudioSessionMediaServicesWereResetNotification:(id)arg1;
 - (void)_beginObservingPlayerItem:(id)arg1;
+- (void)_beginScrubbing;
 - (void)_currentItemBecameReadyToPlay;
 - (void)_endObservingObservedPlayerItem;
+- (void)_endScrubbing;
 - (void)_invalidate;
 - (void)_periodicTimeUpdate;
 - (void)_rateDidChange;

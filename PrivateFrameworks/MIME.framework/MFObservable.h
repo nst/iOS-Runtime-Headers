@@ -33,6 +33,7 @@
 - (id)filter:(id /* block */)arg1;
 - (id)first;
 - (id)map:(id /* block */)arg1;
+- (id)multicast:(id)arg1;
 - (id)observeOn:(id)arg1;
 - (id)publish;
 - (id)replay;

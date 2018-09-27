@@ -11,11 +11,12 @@
     NSSet * _organizationUUIDs;
     CRKClassSessionBeaconBrowser * mBeaconBrowser;
     NSMutableDictionary * mClassSessionsByIdentifier;
-    NSMutableDictionary * mConnectWithoutBeaconAssertionCountByInviteSessionIP;
+    NSMutableDictionary * mConnectWithoutBeaconAssertionCountByInviteSessionEndpoint;
     NSMutableDictionary * mConnectWithoutBeaconAssertionCountBySessionIdentifier;
     NSMutableArray * mInRangeClassSessions;
-    NSMutableDictionary * mInvitationSessionsByIPAddress;
+    NSMutableDictionary * mInvitationSessionsByEndpoint;
     CATNetworkReachability * mNetworkReachability;
+    NSMapTable * mWhitelistedEndpointsBySessionClass;
 }
 
 @property (nonatomic) bool allowInvitationSessions;
@@ -31,14 +32,15 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)acquireConnectWithoutBeaconAssertionForInvitationSessionWithIPAddress:(id)arg1;
+- (void)acquireConnectWithoutBeaconAssertionForInvitationSessionWithEndpoint:(id)arg1;
 - (void)acquireConnectWithoutBeaconAssertionForSessionIdentifier:(id)arg1;
 - (void)addInRangeClassSession:(id)arg1;
 - (bool)allowInvitationSessions;
 - (bool)allowUnenrolledSessions;
+- (void)assertPort:(unsigned short)arg1 canBeWhitelistedForHost:(id)arg2 sessionClass:(Class)arg3;
 - (void)beaconBrowser:(id)arg1 didFailWithError:(id)arg2;
 - (void)beaconBrowser:(id)arg1 didFindBeaconForClassSession:(id)arg2 flags:(unsigned short)arg3;
-- (void)beaconBrowser:(id)arg1 didFindBeaconForInvitationSessionWithIPAddress:(id)arg2;
+- (void)beaconBrowser:(id)arg1 didFindBeaconForInvitationSessionWithEndpoint:(id)arg2;
 - (id)browserStateDictionary;
 - (void)classSessionInvalidated:(id)arg1;
 - (void)classSessionRejected:(id)arg1;
@@ -59,17 +61,19 @@
 - (id)delegateNeedsClientIdentityForGroup:(id)arg1;
 - (id)delegateNeedsClientIdentityInvitationSession;
 - (id)delegateNeedsTrustedAnchorCertificatesForGroup:(id)arg1;
+- (void)dewhitelistEndpoint:(id)arg1 forSessionClass:(Class)arg2;
 - (id)enrolledControlGroupIdentifiers;
 - (bool)hasConnectionToClassWithIdentifier:(id)arg1;
 - (id)init;
 - (id)invitationSessionDelegate;
-- (void)invitationSessionWithIPAddressInvalidated:(id)arg1;
+- (void)invitationSessionWithEndpointInvalidated:(id)arg1;
 - (bool)isBrowsing;
+- (bool)isEndpointWhitelisted:(id)arg1 forSessionClass:(Class)arg2;
 - (void)lostConnectionToClassSession:(id)arg1;
-- (void)lostConnectionToInvitationSessionWithIPAddress:(id)arg1;
+- (void)lostConnectionToInvitationSessionWithEndpoint:(id)arg1;
 - (id)organizationUUIDs;
 - (void)reachabilityDidChange:(id)arg1;
-- (void)releaseConnectWithoutBeaconAssertionForInvitationSessionWithIPAddress:(id)arg1;
+- (void)releaseConnectWithoutBeaconAssertionForInvitationSessionWithEndpoint:(id)arg1;
 - (void)releaseConnectWithoutBeaconAssertionForSessionIdentifier:(id)arg1;
 - (void)removeInRangeClassSession:(id)arg1;
 - (void)session:(id)arg1 didConnectWithTransport:(id)arg2;
@@ -79,6 +83,7 @@
 - (void)sessionDidDisconnect:(id)arg1;
 - (void)sessionDidInvalidate:(id)arg1;
 - (void)sessionDidLoseBeacon:(id)arg1;
+- (id)sessionsForClass:(Class)arg1;
 - (void)setAllowInvitationSessions:(bool)arg1;
 - (void)setAllowUnenrolledSessions:(bool)arg1;
 - (void)setDelegate:(id)arg1;
@@ -91,5 +96,6 @@
 - (id)trustedAnchorCertificatesForSession:(id)arg1;
 - (void)updateConnectedSessions;
 - (void)updateRequiresBeaconFlagForSession:(id)arg1;
+- (void)whitelistEndpointAndInvalidateNonWhitelistedSessionsOnSameHost:(id)arg1 forSessionClass:(Class)arg2;
 
 @end

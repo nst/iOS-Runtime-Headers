@@ -18,8 +18,9 @@
 
 @optional
 
-- (struct __CFString { }*)currentRAT;
+- (int)currentRAT;
 - (bool)isLTEWithCDRX;
+- (NSString *)networkCode;
 - (struct __CFString { }*)wwanInterfaceName;
 
 @end

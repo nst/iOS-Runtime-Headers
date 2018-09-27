@@ -19,6 +19,7 @@
     NSMutableArray * recordingDelegatesArray;
     bool  sendLastVideoPreviewFrame;
     NSString * videoCodec;
+    NSDictionary * videoCompressionProperties;
     AVWeakReference * weakReference;
 }
 

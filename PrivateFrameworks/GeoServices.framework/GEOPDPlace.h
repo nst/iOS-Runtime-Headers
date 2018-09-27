@@ -89,7 +89,6 @@
 - (bool)hasStatus;
 - (bool)hasUpdateVersion;
 - (unsigned long long)hash;
-- (bool)isCacheable;
 - (bool)isDisputed;
 - (bool)isEqual:(id)arg1;
 - (bool)isStandAloneBrand;

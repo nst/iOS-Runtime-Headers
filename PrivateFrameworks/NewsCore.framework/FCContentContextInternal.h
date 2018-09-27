@@ -12,7 +12,6 @@
     FCPurchaseLookupRecordSource * _purchaseLookupRecordSource;
     FCResourceRecordSource * _resourceRecordSource;
     FCTagRecordSource * _tagRecordSource;
-    FCWebArchiveSource * _webArchiveSource;
     FCWidgetSectionConfigRecordSource * _widgetSectionConfigRecordSource;
 }
 
@@ -26,10 +25,10 @@
 @property (nonatomic, retain) FCForYouConfigRecordSource *forYouConfigRecordSource;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCPurchaseLookupRecordSource *purchaseLookupRecordSource;
+@property (nonatomic, readonly) NSArray *recordSources;
 @property (nonatomic, retain) FCResourceRecordSource *resourceRecordSource;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
-@property (nonatomic, retain) FCWebArchiveSource *webArchiveSource;
 @property (nonatomic, retain) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource;
 
 - (void).cxx_destruct;
@@ -42,6 +41,7 @@
 - (id)forYouConfigRecordSource;
 - (id)init;
 - (id)purchaseLookupRecordSource;
+- (id)recordSources;
 - (id)resourceRecordSource;
 - (void)setArticleListRecordSource:(id)arg1;
 - (void)setArticleRecordSource:(id)arg1;
@@ -52,10 +52,8 @@
 - (void)setPurchaseLookupRecordSource:(id)arg1;
 - (void)setResourceRecordSource:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
-- (void)setWebArchiveSource:(id)arg1;
 - (void)setWidgetSectionConfigRecordSource:(id)arg1;
 - (id)tagRecordSource;
-- (id)webArchiveSource;
 - (id)widgetSectionConfigRecordSource;
 
 @end

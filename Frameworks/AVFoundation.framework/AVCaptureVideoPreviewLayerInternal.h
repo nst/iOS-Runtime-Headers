@@ -15,8 +15,6 @@
     int  changeSeed;
     bool  chromaNoiseReductionEnabled;
     AVCaptureConnection * connection;
-    double  d22ScreenScale;
-    double  d22ScreenWidth;
     bool  depthDataDeliveryEnabled;
     bool  depthDataDeliverySupported;
     bool  disableActions;
@@ -28,6 +26,8 @@
     bool  isPaused;
     bool  isPresentationLayer;
     bool  mirrored;
+    double  oddScreenScale;
+    double  oddScreenWidth;
     long long  orientation;
     double  previewRotationDegrees;
     struct CGSize { 

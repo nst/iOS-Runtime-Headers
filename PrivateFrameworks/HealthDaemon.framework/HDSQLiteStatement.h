@@ -3,7 +3,6 @@
  */
 
 @interface HDSQLiteStatement : NSObject {
-    bool  _cache;
     HDSQLiteDatabase * _database;
     NSString * _sql;
 }

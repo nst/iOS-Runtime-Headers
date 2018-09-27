@@ -13,6 +13,7 @@
 @property bool visible;
 
 - (void)addLayerEffectComponent:(id)arg1;
+- (id)colorOverlay;
 - (void)dealloc;
 - (id)dropShadow;
 - (id)effectList;

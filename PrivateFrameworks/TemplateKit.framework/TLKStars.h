@@ -6,9 +6,9 @@
     double  _starRating;
 }
 
-@property double starRating;
+@property (nonatomic) double starRating;
 
-- (id)observableProperties;
+- (unsigned long long)_itemType;
 - (void)setStarRating:(double)arg1;
 - (double)starRating;
 

@@ -24,6 +24,7 @@
 
 + (id)scheduledTimerWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 
+- (void).cxx_destruct;
 - (void)_callOutQueue_noteTimerFired;
 - (void)_queue_cancel;
 - (void)cancel;

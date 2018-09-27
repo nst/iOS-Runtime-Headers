@@ -16,6 +16,8 @@
 - (bool)canShowSiriScreen;
 - (bool)canShowTouchIDScreen;
 - (bool)isPearlEnrolled;
+- (bool)mgHasCellularTelephony;
+- (bool)mgHasGreenTea;
 - (bool)mgHasMesa;
 - (bool)mgHasSecureElement;
 - (bool)mgHasSiriCapability;

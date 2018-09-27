@@ -39,8 +39,10 @@
 - (bool)_shouldTryLowPriorityDownloadWithError:(id*)arg1;
 - (unsigned long long)_transportTaskCount;
 - (void)_unscheduleBackgroundDownloads;
-- (id)cloudResourceForLocalResource:(id*)arg1 shouldNotTrustCaches:(bool*)arg2 error:(id*)arg3;
+- (void)barrier;
+- (id)cloudResourceForLocalResource:(id*)arg1 shouldNotTrustCaches:(bool*)arg2 transportScope:(id*)arg3 error:(id*)arg4;
 - (unsigned long long)countOfQueuedDownloadTasks;
+- (bool)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long*)arg3 error:(id*)arg4;
 - (id)dequeueNextBackgroundDownloadTasksForResourceType:(unsigned long long)arg1 maximumSize:(unsigned long long)arg2 maximumCount:(unsigned long long)arg3 error:(id*)arg4;
 - (id)downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(bool)arg3 proposedTaskIdentifier:(id)arg4 didStartHandler:(id /* block */)arg5 progressHandler:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (bool)enqueueBackgroundDownloadTaskForResource:(id)arg1 downloading:(bool)arg2 error:(id*)arg3;
@@ -49,10 +51,10 @@
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (bool)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 error:(id*)arg2;
 - (bool)reenqueueBackgroundDownloadTaskForResource:(id)arg1 bumpRetryCount:(bool)arg2 didDiscard:(bool*)arg3 error:(id*)arg4;
-- (bool)removeAllBackgroundDownloadTasksForItemWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)removeAllBackgroundDownloadTasksForItemWithScopedIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)removeBackgroundDownloadTaskForResource:(id)arg1 error:(id*)arg2;
 - (bool)resetDequeuedBackgroundDownloadTasksWithError:(id*)arg1;
-- (bool)resetWithError:(id*)arg1;
+- (unsigned long long)scopeType;
 - (id)status;
 
 @end

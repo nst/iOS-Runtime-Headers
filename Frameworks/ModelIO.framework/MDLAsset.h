@@ -15,12 +15,15 @@
     NSMutableArray * _objects;
     <MDLAssetResolver> * _resolver;
     double  _startTime;
+    NSURL * _temporaryFolderURL;
+    NSUnitLength * _unitLength;
     void _upAxis;
     MDLVertexDescriptor * _vertexDescriptor;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;
 @property (nonatomic, readonly) struct MDLAABB { } _bounds;
+@property (nonatomic, retain) NSURL *_temporaryFolderURL;
 @property (nonatomic) double _timeCodesPerSecond;
 @property (nonatomic, retain) <MDLObjectContainerComponent> *animations;
 @property (nonatomic, readonly) struct { } boundingBox;
@@ -31,6 +34,7 @@
 @property (nonatomic, retain) <MDLObjectContainerComponent> *masters;
 @property (nonatomic, retain) <MDLAssetResolver> *resolver;
 @property (nonatomic) double startTime;
+@property (nonatomic, retain) NSUnitLength *unitLength;
 @property (nonatomic) void upAxis;
 @property (nonatomic, readonly, retain) MDLVertexDescriptor *vertexDescriptor;
 
@@ -45,6 +49,7 @@
 - (struct MDLAABB { })_bounds;
 - (void)_commonInit;
 - (void)_conformVertexBuffers:(id)arg1 error:(id*)arg2;
+- (id)_temporaryFolderURL;
 - (double)_timeCodesPerSecond;
 - (void)addObject:(id)arg1;
 - (id)animations;
@@ -57,6 +62,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
+- (void)dealloc;
+- (id)description;
 - (double)endTime;
 - (void)enumerateChildObjectsOfClass:(Class)arg1 usingBlock:(id /* block */)arg2 stopPointer:(bool*)arg3;
 - (bool)exportAssetToURL:(id)arg1;
@@ -67,6 +74,7 @@
 - (id)initWithBufferAllocator:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 bufferAllocator:(id)arg2 preserveIndexing:(bool)arg3 error:(id*)arg4;
+- (id)initWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3;
 - (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3 preserveTopology:(bool)arg4 error:(id*)arg5;
 - (void)loadTextures;
@@ -87,9 +95,12 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setResolver:(id)arg1;
 - (void)setStartTime:(double)arg1;
+- (void)setUnitLength:(id)arg1;
 - (void)setUpAxis;
+- (void)set_temporaryFolderURL:(id)arg1;
 - (void)set_timeCodesPerSecond:(double)arg1;
 - (double)startTime;
+- (id)unitLength;
 - (void)upAxis;
 - (id)vertexDescriptor;
 

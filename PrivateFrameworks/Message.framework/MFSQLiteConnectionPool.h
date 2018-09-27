@@ -14,7 +14,6 @@
     <MFSQLiteConnectionPoolDelegate> * _delegate;
     unsigned long long  _maxConcurrentBackgroundReaders;
     unsigned long long  _maxConcurrentWriters;
-    NSObject<OS_dispatch_source> * _terminationTimer;
     NSObject<OS_dispatch_semaphore> * _writerSemaphore;
     int  _writersWaiting;
 }
@@ -27,18 +26,16 @@
 @property (readonly) unsigned long long writersWaiting;
 
 - (id)_connectionWithType:(unsigned long long)arg1;
-- (void)_interruptActiveConnections;
 - (id)_semaphoreForConnectionType:(unsigned long long)arg1 waitCounter:(int**)arg2;
 - (id)backgroundReaderConnection;
 - (unsigned long long)backgroundReadersWaiting;
 - (unsigned long long)cacheSize;
-- (void)cancelTerminationTimer;
 - (void)checkInConnection:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)detachProtectedDatabase;
 - (void)flush;
 - (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned long long)arg2;
-- (void)interruptConnectionsAfterDelay:(double)arg1;
 - (unsigned long long)maxConcurrentBackgroundReaders;
 - (unsigned long long)maxConcurrentReaders;
 - (unsigned long long)maxConcurrentWriters;

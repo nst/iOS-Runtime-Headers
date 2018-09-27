@@ -3,6 +3,7 @@
  */
 
 @interface WBSAnalyticsLogger : NSObject {
+    NSObject<OS_dispatch_queue> * _analyticsSynchronizationQueue;
     AWDServerConnection * _awdServer;
     NSMutableDictionary * _pageLoadStartTimes;
 }
@@ -28,11 +29,11 @@
 - (void)didSuccessfullyMigrateToCKBookmarksAsPrimaryMigrator:(bool)arg1;
 - (void)didToggleDomainSpecificAutomaticReader:(bool)arg1;
 - (void)didToggleGloballyUseAutomaticReader:(bool)arg1;
-- (id)init;
+- (id)initWithQueue:(id)arg1;
 - (void)pageLoadCompleted:(unsigned long long)arg1;
 - (void)pageLoadCompleted:(unsigned long long)arg1 withErrorCode:(long long)arg2;
 - (void)pageLoadStarted:(unsigned long long)arg1;
-- (bool)registerQueriableMetric:(unsigned int)arg1 callback:(id /* block */)arg2;
+- (void)registerQueriableMetric:(unsigned int)arg1 callback:(id /* block */)arg2;
 - (void)safeBrowsingUserActionAfterSeeingWarning:(int)arg1;
 - (void)safeBrowsingWarningPageShown:(int)arg1;
 - (void)showedAutoFillQuickTypeSuggestionWithCategory:(int)arg1 formProperty:(id)arg2;
@@ -40,6 +41,9 @@
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;
 - (void)unableToSilentlyMigrateToCKBookmarksWithReason:(int)arg1;
 - (void)userDidParticipateInPasswordAutoFillWithInteraction:(int)arg1;
+- (void)userDidReceiveSharedPasswordWithOutcome:(int)arg1;
+- (void)userDidSharePasswordWithOutcome:(int)arg1;
+- (void)userInteractedWithGeneratedPasswordWithInteractionType:(int)arg1;
 - (void)userTappedAutoFillQuickTypeSuggestionWithCategory:(int)arg1 formProperty:(id)arg2;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices

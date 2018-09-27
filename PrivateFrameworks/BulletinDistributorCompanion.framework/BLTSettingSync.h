@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSettingSync : BLTSettingSyncInternal <BBObserverDelegate, BLTSectionConfigurationDelegate, BLTSectionInfoListDelegate> {
+@interface BLTSettingSync : BLTSettingSyncInternal <BBObserverDelegate, BLTSectionConfigurationDelegate, BLTSectionInfoListDelegate, BLTSiriActionAppListDelegate> {
     BLTSectionInfoListBridgeProvider * _bridgeProvider;
     bool  _initialSyncPerformed;
     BBObserver * _observer;
@@ -12,6 +12,7 @@
     NSObject<OS_dispatch_queue> * _sectionInfoSyncCoordinatorQueue;
     BLTSettingSyncSendQueue * _settingSendQueue;
     unsigned long long  _settingSyncSendQueueMaxConcurrentSendCount;
+    BLTSiriActionAppList * _siriActionAppList;
     unsigned long long  _stateHandler;
 }
 
@@ -32,6 +33,7 @@
 - (void)_logNotificationSettings;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
 - (void)_sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(bool)arg3 spoolToFile:(bool)arg4 andCompletion:(id /* block */)arg5;
+- (void)_sendSiriAppListWithInstalled:(struct NSDictionary { Class x1; }*)arg1 removed:(id)arg2;
 - (void)_sendSpooledSyncWithCompletion:(id /* block */)arg1 withProgress:(id /* block */)arg2;
 - (void)_setupSectionInfoListWithCompletion:(id /* block */)arg1;
 - (void)_spoolInitialSync;
@@ -41,7 +43,7 @@
 - (bool)_willSectionIDAlert:(id)arg1;
 - (void)clearSectionInfoSentCache;
 - (void)dealloc;
-- (void)enableNotifications:(bool)arg1 sectionID:(id)arg2 mirror:(bool)arg3 fromRemote:(bool)arg4;
+- (void)handleAllSyncComplete;
 - (id)initWithSectionConfiguration:(id)arg1 queue:(id)arg2;
 - (bool)isSectionInfoSentCacheEmpty;
 - (id)observer;
@@ -54,11 +56,14 @@
 - (void)sectionInfoList:(id)arg1 receivedRemoveSectionWithSectionID:(id)arg2;
 - (void)sectionInfoList:(id)arg1 receivedUpdatedSectionInfoForSectionID:(id)arg2;
 - (void)sendAllSectionInfoWithSpool:(bool)arg1 completion:(id /* block */)arg2;
-- (void)sendRemoveSectionWithSectionID:(id)arg1;
+- (void)sendOverrideOnly:(id)arg1 sectionID:(id)arg2 spoolToFile:(bool)arg3;
+- (void)sendRemoveSectionWithSectionID:(id)arg1 sent:(id /* block */)arg2;
 - (void)sendSectionInfoWithSectionID:(id)arg1 completion:(id /* block */)arg2 spoolToFile:(bool)arg3;
+- (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(bool)arg3 fromRemote:(bool)arg4;
 - (void)setObserver:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(id /* block */)arg2;
 - (id)settingOverrides;
+- (void)siriActionAppListUpdated:(id)arg1;
 - (void)spoolSectionInfoWithCompletion:(id /* block */)arg1;
 - (id)universalSectionIDForSectionID:(id)arg1;
 

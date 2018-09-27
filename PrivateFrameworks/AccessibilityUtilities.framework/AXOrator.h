@@ -6,6 +6,7 @@
     double  _audioInterruptionStartedTime;
     AXDispatchTimer * _audioSessionTimer;
     bool  _contentIsSpeakable;
+    NSString * _currentLanguageCode;
     <AXOratorDelegate> * _delegate;
     bool  _didRequestPauseSpeakingDuringAudioInterruption;
     bool  _didRequestResumeSpeakingDuringAudioInterruption;
@@ -25,6 +26,7 @@
     }  _lastUtteranceSubstringRange;
     unsigned long long  _numberOfTokensToSkip;
     bool  _pendingAudioSessionActive;
+    bool  _preferredLanguageWasSpecified;
     NSString * _requestedLanguageCodeDuringAudioInterruption;
     AXLanguageTaggedContent * _selectedContent;
     bool  _shouldSpeakNextItemOnResume;
@@ -41,6 +43,7 @@
 
 @property (nonatomic) double audioInterruptionStartedTime;
 @property (nonatomic, copy) NSString *content;
+@property (nonatomic, retain) NSString *currentLanguageCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AXOratorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -57,6 +60,7 @@
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } lastUtteranceSubstringRange;
 @property (nonatomic) unsigned long long numberOfTokensToSkip;
 @property (nonatomic) bool pendingAudioSessionActive;
+@property (nonatomic) bool preferredLanguageWasSpecified;
 @property (nonatomic, copy) NSString *requestedLanguageCodeDuringAudioInterruption;
 @property (nonatomic, retain) AXLanguageTaggedContent *selectedContent;
 @property (nonatomic) bool shouldSpeakNextItemOnResume;
@@ -77,6 +81,7 @@
 - (long long)_currentTokenIndex:(bool)arg1;
 - (void)_didBeginInterruption;
 - (void)_didEndInterruption;
+- (id)_getLangCodeForItem:(id)arg1;
 - (void)_handleAudioInterruption:(id)arg1;
 - (void)_handleMediaServicesWereLost:(id)arg1;
 - (void)_handleMediaServicesWereReset:(id)arg1;
@@ -96,6 +101,7 @@
 - (void)clearSelectedContent;
 - (id)content;
 - (bool)contentIsSpeakable;
+- (id)currentLanguageCode;
 - (void)dealloc;
 - (id)delegate;
 - (bool)didRequestPauseSpeakingDuringAudioInterruption;
@@ -115,6 +121,7 @@
 - (unsigned long long)numberOfTokensToSkip;
 - (bool)pauseSpeaking:(id*)arg1;
 - (bool)pendingAudioSessionActive;
+- (bool)preferredLanguageWasSpecified;
 - (id)requestedLanguageCodeDuringAudioInterruption;
 - (bool)resumeSpeaking:(id*)arg1;
 - (bool)resumeSpeakingAfterDelay:(double)arg1 error:(id*)arg2;
@@ -122,6 +129,7 @@
 - (id)selectedContent;
 - (void)setAudioInterruptionStartedTime:(double)arg1;
 - (void)setContent:(id)arg1;
+- (void)setCurrentLanguageCode:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidRequestPauseSpeakingDuringAudioInterruption:(bool)arg1;
 - (void)setDidRequestResumeSpeakingDuringAudioInterruption:(bool)arg1;
@@ -135,6 +143,7 @@
 - (void)setLastUtteranceSubstringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setNumberOfTokensToSkip:(unsigned long long)arg1;
 - (void)setPendingAudioSessionActive:(bool)arg1;
+- (void)setPreferredLanguageWasSpecified:(bool)arg1;
 - (void)setRequestedLanguageCodeDuringAudioInterruption:(id)arg1;
 - (void)setSelectedContent:(id)arg1;
 - (void)setShouldSpeakNextItemOnResume:(bool)arg1;

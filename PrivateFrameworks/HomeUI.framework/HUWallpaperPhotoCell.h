@@ -5,28 +5,62 @@
 @interface HUWallpaperPhotoCell : UICollectionViewCell {
     NSString * _assetIdentifier;
     bool  _busy;
+    double  _cornerRadius;
+    <HUWallpaperPhotoCellDelegate> * _delegate;
+    UIButton * _deleteButton;
+    bool  _empty;
     UIImageView * _imageView;
+    bool  _removable;
+    UIView * _selectionOverlayView;
+    bool  _showBorder;
     UIActivityIndicatorView * _spinnerView;
 }
 
 @property (nonatomic, copy) NSString *assetIdentifier;
 @property (nonatomic) bool busy;
-@property (nonatomic, copy) UIImage *image;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) <HUWallpaperPhotoCellDelegate> *delegate;
+@property (nonatomic, retain) UIButton *deleteButton;
+@property (nonatomic) bool empty;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) bool removable;
+@property (nonatomic, retain) UIView *selectionOverlayView;
+@property (nonatomic) bool showBorder;
 @property (nonatomic, retain) UIActivityIndicatorView *spinnerView;
 
 - (void).cxx_destruct;
 - (id)assetIdentifier;
 - (bool)busy;
+- (double)cornerRadius;
+- (id)delegate;
+- (id)deleteButton;
+- (void)deleteButtonPressed;
+- (bool)empty;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)image;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (bool)removable;
+- (id)selectionOverlayView;
 - (void)setAssetIdentifier:(id)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBusy:(bool)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDeleteButton:(id)arg1;
+- (void)setEmpty:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageView:(id)arg1;
+- (void)setRemovable:(bool)arg1;
+- (void)setSelectionOverlayView:(id)arg1;
+- (void)setShowBorder:(bool)arg1;
 - (void)setSpinnerView:(id)arg1;
+- (bool)showBorder;
+- (void)showBorder:(bool)arg1 animated:(bool)arg2;
 - (id)spinnerView;
+- (void)updateView;
 
 @end

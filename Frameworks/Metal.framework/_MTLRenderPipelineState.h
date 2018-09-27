@@ -6,7 +6,9 @@
     <MTLDevice> * _device;
     MTLIndirectArgumentBufferEmulationData * _fragmentIABEmulationData;
     NSString * _label;
+    bool  _supportIndirectCommandBuffers;
     bool  _threadgroupSizeMatchesTileSize;
+    unsigned long long  _uniqueIdentifier;
     MTLIndirectArgumentBufferEmulationData * _vertexIABEmulationData;
 }
 
@@ -19,7 +21,9 @@
 @property (readonly) NSString *label;
 @property (readonly) unsigned long long maxTotalThreadsPerThreadgroup;
 @property (readonly) Class superclass;
+@property (readonly) bool supportIndirectCommandBuffers;
 @property (readonly) bool threadgroupSizeMatchesTileSize;
+@property (readonly) unsigned long long uniqueIdentifier;
 @property (nonatomic, retain) MTLIndirectArgumentBufferEmulationData *vertexIABEmulationData;
 
 - (void)dealloc;
@@ -31,7 +35,9 @@
 - (id)label;
 - (void)setFragmentIABEmulationData:(id)arg1;
 - (void)setVertexIABEmulationData:(id)arg1;
+- (bool)supportIndirectCommandBuffers;
 - (bool)threadgroupSizeMatchesTileSize;
+- (unsigned long long)uniqueIdentifier;
 - (id)vertexIABEmulationData;
 
 @end

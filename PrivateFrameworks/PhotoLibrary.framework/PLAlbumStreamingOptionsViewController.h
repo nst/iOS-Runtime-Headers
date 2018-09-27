@@ -23,9 +23,9 @@
     NSOperationQueue * _familyRequestQueue;
     bool  _isPresentedModally;
     UITableView * _optionsTableView;
+    NSArray * _sharedAlbumSubscribers;
     bool  _showShareLink;
     bool  _streamOwner;
-    NSArray * _visibleInvitationRecords;
     NSString * _visiblePublicURL;
     UISwitch * _wantsAcceptCloudNotificationSwitch;
     UISwitch * _wantsMultipleContributorsSwitch;
@@ -44,6 +44,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isPresentedModally;
+@property (nonatomic, retain) NSArray *sharedAlbumSubscribers;
 @property (nonatomic) bool streamOwner;
 @property (readonly) Class superclass;
 
@@ -65,8 +66,7 @@
 - (id)_lastMultiContributorsSectionFooterTitle;
 - (id)_lastPublicURLSectionFooterTitle;
 - (bool)_multipleContributorsEnabled;
-- (id)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 withFirstName:(id)arg3 lastName:(id)arg4 outMatchingKey:(id*)arg5 outMatchingIdentifier:(id*)arg6 keysToFetch:(id)arg7;
-- (id)_personViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(bool)arg5 canRemoveSubscriber:(bool)arg6;
+- (id)_personViewControllerSubscriberInfo:(id)arg1 canResendInvitation:(bool)arg2 canRemoveSubscriber:(bool)arg3;
 - (bool)_publicURLEnabled;
 - (void)_removeSelectedSubscriber;
 - (void)_resendInvitationToSelectedSubscriber;
@@ -79,14 +79,13 @@
 - (void)_setShowingPublicURLActivitySpinner:(bool)arg1;
 - (bool)_shouldScrollToTopOnNextViewLayout;
 - (bool)_shouldShowPublicURLActivitySpinner;
-- (id)_suppresionContexts;
+- (id)_suppressionContexts;
 - (void)_updateAllControls;
 - (void)_updateMultipleContributorsState;
 - (void)_updatePublicURLStateIfNecessaryAnimated:(bool)arg1;
 - (void)_updateWantsAcceptCloudNotificationField;
 - (void)_updateWantsMultipleContributorsField;
 - (void)_updateWantsPublicWebsiteField;
-- (id)_visibleInvitationRecordsForStreamOwner:(bool)arg1;
 - (id)album;
 - (bool)albumIsFamilyStream;
 - (id)albumName;
@@ -104,7 +103,9 @@
 - (void)setAlbumName:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsPresentedModally:(bool)arg1;
+- (void)setSharedAlbumSubscribers:(id)arg1;
 - (void)setStreamOwner:(bool)arg1;
+- (id)sharedAlbumSubscribers;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (bool)streamOwner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

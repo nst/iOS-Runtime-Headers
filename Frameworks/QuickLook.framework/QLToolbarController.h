@@ -47,10 +47,13 @@
 @property (nonatomic) double toolbarAlpha;
 
 - (void).cxx_destruct;
+- (double)_computeClippingExtensionContainerBottomConstraint;
+- (double)_computeClippingExtensionContainerHeightForCurrentHiddenProgress;
 - (void)_embedAccessoryView;
 - (void)_layoutAccessoryView:(id)arg1;
 - (double)_originalToolbarHeightIncludingSafeAreaBottomInset:(bool)arg1;
 - (double)_toolbarExtensionHeight;
+- (double)_toolbarSafeAreaInsetBottom;
 - (double)_totalHeight;
 - (bool)_tryToSetUp:(bool)arg1;
 - (id)accessoryView;

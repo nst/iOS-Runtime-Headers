@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKTileGroup : NSObject <NSCoding, NSCopying> {
+@interface SKTileGroup : NSObject <NSCopying, NSSecureCoding> {
     NSString * _name;
     SKTileSet * _parentSet;
     NSMutableArray * _rules;
@@ -15,6 +15,7 @@
 @property (nonatomic) unsigned long long type;
 
 + (id)emptyTileGroup;
++ (bool)supportsSecureCoding;
 + (id)tileGroupWithRules:(id)arg1;
 + (id)tileGroupWithTileDefinition:(id)arg1;
 
@@ -27,6 +28,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRules:(id)arg1;
 - (id)initWithTileDefinition:(id)arg1;
+- (bool)isEqualToNode:(id)arg1;
 - (id)name;
 - (id)parentSet;
 - (id)rules;

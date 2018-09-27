@@ -4,12 +4,14 @@
 
 @interface CUShutterButton : UIButton {
     UIView * __innerView;
+    UIView * __innerViewContrastView;
     UIImageView * __outerImageView;
     CAMShutterButtonRingView * __outerView;
     UIImageView * __spinnerView;
     UIView * __stopModeBackground;
     CAMTimelapseShutterRingView * __timelapseOuterView;
     UIColor * _contentColor;
+    <CAMShutterButtonDelegate> * _delegate;
     long long  _layoutStyle;
     long long  _mode;
     bool  _showDisabled;
@@ -31,12 +33,14 @@
 }
 
 @property (nonatomic, readonly) UIView *_innerView;
+@property (nonatomic, readonly) UIView *_innerViewContrastView;
 @property (nonatomic, readonly) UIImageView *_outerImageView;
 @property (nonatomic, readonly) CAMShutterButtonRingView *_outerView;
 @property (nonatomic, retain) UIImageView *_spinnerView;
 @property (nonatomic, retain) UIView *_stopModeBackground;
 @property (nonatomic, readonly) CAMTimelapseShutterRingView *_timelapseOuterView;
 @property (nonatomic, retain) UIColor *contentColor;
+@property (nonatomic) <CAMShutterButtonDelegate> *delegate;
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic) long long mode;
 @property (nonatomic) bool showDisabled;
@@ -58,6 +62,7 @@
 - (id)_innerCircleColorForMode:(long long)arg1 spinning:(bool)arg2;
 - (double)_innerCircleDiameter;
 - (id)_innerView;
+- (id)_innerViewContrastView;
 - (bool)_isSpinningSupportedForLayoutStyle:(long long)arg1;
 - (bool)_isStopMode:(long long)arg1;
 - (id)_outerImageForMode:(long long)arg1 layoutStyle:(long long)arg2;
@@ -77,6 +82,8 @@
 - (void)_updateSpinningAnimations;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)contentColor;
+- (id)delegate;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layoutStyle:(long long)arg2 spec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; double x5; })arg3;
@@ -86,6 +93,7 @@
 - (void)layoutSubviews;
 - (long long)mode;
 - (void)setContentColor:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setLayoutStyle:(long long)arg1;
 - (void)setMode:(long long)arg1;

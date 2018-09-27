@@ -22,7 +22,8 @@
     PKPaymentRequest * _paymentRequest;
     PKPaymentSetupNavigationController * _paymentSetupNavigationController;
     bool  _paymentSetupWasRequired;
-    PKPhysicalButtonView * _physicalButtonView;
+    bool  _pearlViewsInserted;
+    LAUIPhysicalButtonView * _physicalButtonView;
     bool  _shouldAcquireLockButtonObserver;
     int  _statusBarVisibility;
 }
@@ -61,7 +62,7 @@
 - (id)_remoteObjectProxy;
 - (void)_setStatusBarHidden:(bool)arg1;
 - (bool)_shouldRemoveViewFromHierarchyOnDisappear;
-- (void)_updatePhysicalButtonViewState;
+- (void)_updatePearlViews;
 - (void)_willAppearInRemoteViewController;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
@@ -100,8 +101,8 @@
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(bool)arg1;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

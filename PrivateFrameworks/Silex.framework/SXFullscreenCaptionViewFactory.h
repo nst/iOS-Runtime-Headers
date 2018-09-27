@@ -4,20 +4,20 @@
 
 @interface SXFullscreenCaptionViewFactory : NSObject <SXFullscreenCaptionViewFactory> {
     <SXComponentActionHandler> * _actionHandler;
-    <SXActionProvider> * _actionProvider;
+    <SXSmartFieldFactory> * _smartFieldFactory;
 }
 
 @property (nonatomic, readonly) <SXComponentActionHandler> *actionHandler;
-@property (nonatomic, readonly) <SXActionProvider> *actionProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <SXSmartFieldFactory> *smartFieldFactory;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)actionHandler;
-- (id)actionProvider;
 - (id)createCaptionView;
-- (id)initWithActionProvider:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
+- (id)smartFieldFactory;
 
 @end

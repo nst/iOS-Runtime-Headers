@@ -25,16 +25,25 @@
     bool  __shouldHideCommentButton;
     bool  __shouldHideOverlayPlayButton;
     bool  __shouldUpdateOverlayPlayButtonBackground;
+    ISWrappedAVAudioSession * _audioSession;
     long long  _commentCount;
+    double  _cornerRadius;
     UIImage * _image;
     long long  _imageAlignment;
     long long  _imageContentMode;
     bool  _imageHidden;
+    UIImageView * _likeBadgeView;
     struct CGSize { 
         double width; 
         double height; 
     }  _maximumImageSize;
     long long  _overlayOptions;
+    AVPlayerItem * _playerItem;
+    int  _playerItemRequestID;
+    PXRoundedCornerOverlayView * _roundedCornerOverlayView;
+    bool  _shouldHideLikeBadge;
+    ISWrappedAVPlayer * _videoPlayer;
+    PXVideoPlayerView * _videoPlayerView;
 }
 
 @property (setter=_setCenterOverlayImageView:, nonatomic, retain) UIImageView *_centerOverlayImageView;
@@ -50,13 +59,22 @@
 @property (setter=_setShouldHideCommentButton:, nonatomic) bool _shouldHideCommentButton;
 @property (setter=_setShouldHideOverlayPlayButton:, nonatomic) bool _shouldHideOverlayPlayButton;
 @property (setter=_setShouldUpdateOverlayPlayButtonBackground:, nonatomic) bool _shouldUpdateOverlayPlayButtonBackground;
+@property (nonatomic, readonly) ISWrappedAVAudioSession *audioSession;
 @property (nonatomic) long long commentCount;
+@property (nonatomic) double cornerRadius;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) long long imageAlignment;
 @property (nonatomic) long long imageContentMode;
 @property (getter=isImageHidden, nonatomic) bool imageHidden;
+@property (nonatomic, retain) UIImageView *likeBadgeView;
 @property (nonatomic) struct CGSize { double x1; double x2; } maximumImageSize;
 @property (nonatomic) long long overlayOptions;
+@property (nonatomic, retain) AVPlayerItem *playerItem;
+@property (nonatomic) int playerItemRequestID;
+@property (nonatomic, retain) PXRoundedCornerOverlayView *roundedCornerOverlayView;
+@property (setter=setShouldHideLikeBadge:, nonatomic) bool shouldHideLikeBadge;
+@property (nonatomic, readonly) ISWrappedAVPlayer *videoPlayer;
+@property (nonatomic, readonly) PXVideoPlayerView *videoPlayerView;
 
 + (bool)_allowHighQualityVideoOverlayButton;
 + (Class)_contentViewClass;
@@ -97,25 +115,44 @@
 - (bool)_shouldUpdateOverlayPlayButtonBackground;
 - (void)_updateCommentButton;
 - (void)_updateOverlays;
+- (void)_updateRoundedCornersOverlayView;
+- (void)_updateVideoPlayerContents;
+- (void)_updateVideoViewContentMode;
+- (id)audioSession;
 - (long long)commentCount;
+- (double)cornerRadius;
 - (id)image;
 - (long long)imageAlignment;
 - (long long)imageContentMode;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isImageHidden;
 - (void)layoutSubviews;
+- (id)likeBadgeView;
 - (struct CGSize { double x1; double x2; })maximumImageSize;
 - (long long)overlayOptions;
+- (id)playerItem;
+- (int)playerItemRequestID;
 - (void)prepareForReuse;
+- (id)roundedCornerOverlayView;
+- (void)setAudioSession:(id)arg1;
 - (void)setCommentCount:(long long)arg1;
+- (void)setCornerRadius:(double)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImage:(id)arg1 withTag:(long long)arg2;
 - (void)setImageAlignment:(long long)arg1;
 - (void)setImageContentMode:(long long)arg1;
 - (void)setImageHidden:(bool)arg1;
+- (void)setLikeBadgeView:(id)arg1;
 - (void)setMaximumImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setOverlayOptions:(long long)arg1;
 - (void)setParallaxOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPlayerItem:(id)arg1;
+- (void)setPlayerItemRequestID:(int)arg1;
+- (void)setRoundedCornerOverlayView:(id)arg1;
+- (void)setShouldHideLikeBadge:(bool)arg1;
+- (bool)shouldHideLikeBadge;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)videoPlayer;
+- (id)videoPlayerView;
 
 @end

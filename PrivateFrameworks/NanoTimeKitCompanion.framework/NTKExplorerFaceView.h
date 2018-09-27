@@ -2,23 +2,27 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKExplorerFaceView : NTKAnalogFaceView {
+@interface NTKExplorerFaceView : NTKAnalogFaceView <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate> {
     unsigned long long  _color;
     unsigned long long  _density;
     NTKExplorerDialView * _dialView;
     long long  _dotPosition;
-    NTKFaceLayoutContentProvider * _layoutContentProvider;
+    NTKColorCircularUtilitarianFaceViewComplicationFactory * _faceViewComplicationFactory;
     bool  _observingConnectivity;
     long long  _signalAnimationState;
     NTKExplorerStatusView * _statusView;
 }
 
 @property (nonatomic) unsigned long long color;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned long long density;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NTKExplorerHandsView *timeView;
 
-+ (id)_swatchForEditModeDependsOnOptions:(long long)arg1;
-+ (id)_swatchImageForColorOption:(id)arg1;
++ (id)_swatchForEditModeDependsOnOptions:(long long)arg1 forDevice:(id)arg2;
++ (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 + (Class)_timeViewClass;
 
 - (void).cxx_destruct;
@@ -41,11 +45,15 @@
 - (double)_contentAlphaForEditMode:(long long)arg1;
 - (struct CGPoint { double x1; double x2; })_contentCenterOffset;
 - (double)_contentScaleForEditMode:(long long)arg1;
+- (void)_curvedComplicationCircleRadius:(double*)arg1 centerAngle:(double*)arg2 maxAngularWidth:(double*)arg3 circleCenter:(struct CGPoint { double x1; double x2; }*)arg4 interior:(bool*)arg5 forSlot:(id)arg6;
+- (id)_curvedPickerMaskForSlot:(id)arg1;
 - (double)_handAlphaForEditMode:(long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (unsigned long long)_keylineLabelAlignmentForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
+- (long long)_keylineStyleForComplicationSlot:(id)arg1;
+- (id)_keylineViewForComplicationSlot:(id)arg1;
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
 - (void)_loadLayoutRules;
@@ -54,14 +62,16 @@
 - (void)_prepareForEditing;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(double)arg2 maxDiameter:(double)arg3;
 - (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
+- (bool)_slotSupportsCurvedText:(id)arg1;
 - (bool)_supportsTimeScrubbing;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
 - (void)_unloadSnapshotContentViews;
 - (double)_verticalPaddingForStatusBar;
 - (unsigned long long)color;
 - (unsigned long long)density;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)setColor:(unsigned long long)arg1;
 - (void)setDensity:(unsigned long long)arg1;
+- (bool)slotUsesCurvedText:(id)arg1;
 
 @end

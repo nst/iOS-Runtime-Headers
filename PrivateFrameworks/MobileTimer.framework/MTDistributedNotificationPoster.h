@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface MTDistributedNotificationPoster : NSObject <MTNotificationPoster>
+@interface MTDistributedNotificationPoster : NSObject <MTNotificationCenter>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

@@ -4,6 +4,7 @@
 
 @interface NTKVictoryDigitsView : UIView {
     long long  _appearance;
+    CLKDevice * _device;
     bool  _dimIsUpper;
     CAGradientLayer * _dimmingOverlay;
     bool  _hasSetAppearance;
@@ -18,7 +19,7 @@
 @property (nonatomic, copy) NSString *digitText;
 @property (nonatomic) double scale;
 
-+ (id)_cachedFontForAppearance:(long long)arg1;
++ (id)_cachedFontForAppearance:(long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_makeLabel;
@@ -26,7 +27,7 @@
 - (long long)appearance;
 - (id)color;
 - (id)digitText;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareAppearance:(long long)arg1;
 - (double)scale;

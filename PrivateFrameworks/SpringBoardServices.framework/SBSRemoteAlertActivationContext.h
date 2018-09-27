@@ -4,13 +4,16 @@
 
 @interface SBSRemoteAlertActivationContext : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding> {
     NSSet * _actions;
+    SBSRemoteAlertPresentationTarget * _presentationTarget;
     BSMutableSettings * _settings;
 }
 
 @property (nonatomic, retain) NSSet *actions;
+@property (getter=isActivatingForSiri, nonatomic) bool activatingForSiri;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SBSRemoteAlertPresentationTarget *presentationTarget;
 @property (nonatomic, retain) NSString *reason;
 @property (readonly) Class superclass;
 
@@ -18,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithSettings:(id)arg1 actions:(id)arg2;
+- (id)_initWithSettings:(id)arg1 actions:(id)arg2 presentationTarget:(id)arg3;
 - (id)actions;
 - (void)dealloc;
 - (id)description;
@@ -29,8 +33,12 @@
 - (id)initWithActions:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
+- (bool)isActivatingForSiri;
+- (id)presentationTarget;
 - (id)reason;
 - (void)setActions:(id)arg1;
+- (void)setActivatingForSiri:(bool)arg1;
+- (void)setPresentationTarget:(id)arg1;
 - (void)setReason:(id)arg1;
 - (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned long long)arg2;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(long long)arg2 object:(id)arg3 ofSetting:(unsigned long long)arg4;

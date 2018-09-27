@@ -5,7 +5,7 @@
 @interface _WKDownload : NSObject <WKObject> {
     struct ObjectStorage<WebKit::DownloadProxy> { 
         struct type { 
-            unsigned char __lx[336]; 
+            unsigned char __lx[328]; 
         } data; 
     }  _download;
 }
@@ -18,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSArray *redirectChain;
 @property (nonatomic, readonly) NSURLRequest *request;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool wasUserInitiated;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)cancel;
@@ -25,5 +26,6 @@
 - (id)originatingWebView;
 - (id)redirectChain;
 - (id)request;
+- (bool)wasUserInitiated;
 
 @end

@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithInitialState:(id)arg1 condition:(id /* block */)arg2 nextState:(id /* block */)arg3 resultSelector:(id /* block */)arg4 delay:(id /* block */)arg5 scheduler:(id)arg6;
+- (bool)isCanceled;
 - (bool)isFinished;
 - (void)scheduleNextResultForObserver:(id)arg1;
 - (void)sendCurrentStateToObserver:(id)arg1;

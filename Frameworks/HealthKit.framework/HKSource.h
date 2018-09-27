@@ -30,16 +30,17 @@
 + (id)_generateIdentifierForAppleDeviceWithUUID:(id)arg1;
 + (bool)_isPlaceholderBundleIdentifier:(id)arg1;
 + (id)_localDeviceSource;
++ (id)_privateSourceForClinicalAccountIdentifier:(id)arg1 name:(id)arg2;
++ (id)_publicSourceForGatewayExternalIdentifier:(id)arg1 name:(id)arg2;
 + (bool)_representsCurrentDeviceWithBundleIdentifier:(id)arg1;
 + (id)_sourceBundleIdentifierWithEntitlements:(id)arg1 processBundleIdentifier:(id)arg2 isExtension:(bool)arg3;
-+ (id)_sourceForClinicalAccountIdentifier:(id)arg1;
 + (id)_sourceNameWithRepresentsCurrentDevice:(bool)arg1 defaultSource:(bool)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
 + (id)defaultSource;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_clinicalAccountIdentifier;
+- (id)_deducedClinicalAccountIdentifier;
 - (bool)_hasFirstPartyBundleID;
 - (id)_init;
 - (bool)_isAppleDevice;
@@ -76,5 +77,9 @@
 + (id)createWithCodable:(id)arg1;
 
 - (id)codableRepresentationForSync;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (id)hkui_fetchAppBundleWithError:(out id*)arg1;
 
 @end

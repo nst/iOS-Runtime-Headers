@@ -3,6 +3,7 @@
  */
 
 @interface HMFMessageInternal : HMFObject <NSCopying> {
+    HMFActivity * _activity;
     HMFMessageDestination * _destination;
     NSDictionary * _headers;
     NSUUID * _identifier;
@@ -14,6 +15,7 @@
     NSDictionary * _userInfo;
 }
 
+@property (nonatomic, retain) HMFActivity *activity;
 @property (nonatomic, retain) HMFMessageDestination *destination;
 @property (nonatomic, copy) NSDictionary *headers;
 @property (nonatomic, copy) NSUUID *identifier;
@@ -25,6 +27,7 @@
 @property (nonatomic, copy) NSDictionary *userInfo;
 
 - (void).cxx_destruct;
+- (id)activity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)destination;
 - (id)headers;
@@ -34,6 +37,7 @@
 - (id)name;
 - (long long)qualityOfService;
 - (id /* block */)responseHandler;
+- (void)setActivity:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setIdentifier:(id)arg1;

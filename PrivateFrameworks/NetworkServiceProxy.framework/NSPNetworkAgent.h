@@ -28,6 +28,7 @@
 @property (retain) NSData *keybag;
 @property (getter=isNetworkProvider, nonatomic) bool networkProvider;
 @property (getter=isNexusProvider, nonatomic) bool nexusProvider;
+@property (nonatomic) bool requiresAssert;
 @property (getter=isSpecificUseOnly, nonatomic) bool specificUseOnly;
 @property (nonatomic) bool supportsBrowseRequests;
 @property (getter=isUserActivated, nonatomic) bool userActivated;

@@ -5,6 +5,7 @@
 @interface CKCompleteParticipantVettingOperation : CKOperation {
     NSString * _baseToken;
     id /* block */  _completeParticipantVettingCompletionBlock;
+    NSString * _displayedHostname;
     NSData * _encryptedKey;
     NSURL * _reconstructedShareURL;
     NSString * _routingKey;
@@ -17,6 +18,7 @@
 
 @property (nonatomic, copy) NSString *baseToken;
 @property (nonatomic, copy) id /* block */ completeParticipantVettingCompletionBlock;
+@property (nonatomic, copy) NSString *displayedHostname;
 @property (nonatomic, copy) NSData *encryptedKey;
 @property (nonatomic, copy) NSURL *reconstructedShareURL;
 @property (nonatomic, copy) NSString *routingKey;
@@ -33,16 +35,18 @@
 - (id)activityCreate;
 - (id)baseToken;
 - (id /* block */)completeParticipantVettingCompletionBlock;
+- (id)displayedHostname;
 - (id)encryptedKey;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
-- (id)initWithVettingToken:(id)arg1 vettingRecord:(id)arg2;
+- (id)initWithVettingToken:(id)arg1 vettingRecord:(id)arg2 displayedHostname:(id)arg3;
 - (void)performCKOperation;
 - (id)reconstructedShareURL;
 - (id)routingKey;
 - (void)setBaseToken:(id)arg1;
 - (void)setCompleteParticipantVettingCompletionBlock:(id /* block */)arg1;
+- (void)setDisplayedHostname:(id)arg1;
 - (void)setEncryptedKey:(id)arg1;
 - (void)setReconstructedShareURL:(id)arg1;
 - (void)setRoutingKey:(id)arg1;

@@ -28,6 +28,7 @@
 - (void)calculateAstronomicalTimeForLocation:(struct { double x1; double x2; })arg1 time:(double)arg2 altitudeInDegrees:(double)arg3;
 - (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3;
 - (void)calculateGeocentricDirectionForSunX:(double*)arg1 Y:(double*)arg2 Z:(double*)arg3 date:(id)arg4;
+- (id)description;
 - (bool)isDayLight;
 - (bool)isDayLightForDate:(id)arg1;
 - (bool)isDayLightForTime:(double)arg1;

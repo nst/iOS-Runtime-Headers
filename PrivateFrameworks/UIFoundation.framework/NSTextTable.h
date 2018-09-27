@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextTable : NSTextBlock {
+@interface NSTextTable : NSTextBlock <NSSecureCoding> {
     id  _lcache;
     unsigned long long  _numCols;
     unsigned long long  _tableFlags;
@@ -11,6 +11,7 @@
 }
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForCharRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 textContainer:(id)arg2;
 - (id)_descriptionAtIndex:(unsigned long long)arg1 text:(id)arg2;

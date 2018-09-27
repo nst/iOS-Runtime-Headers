@@ -3,6 +3,7 @@
  */
 
 @interface TIPreferencesController : NSObject <TIPreferencesControllerActions> {
+    NSMutableDictionary * _cachedMCRestrictedValue;
     NSMutableDictionary * _configuredDomains;
     NSMutableDictionary * _configuredPreferences;
     bool  _ignoreNextSyncNotification;
@@ -28,6 +29,7 @@
 + (void)registerPreferredLanguagesForInputModes:(id)arg1 replacingInputModes:(id)arg2;
 + (id)sharedPreferencesController;
 
+- (void).cxx_destruct;
 - (int)MCValueForManagedPreferenceKey:(id)arg1;
 - (void)_configureDomain:(id)arg1 notification:(id)arg2;
 - (void)_configureDomains;
@@ -74,7 +76,6 @@
 - (void)touchSynchronizePreferencesTimer;
 - (void)updateDidPerformFirstReachableKeyboardInteraction;
 - (void)updateEnabledDictationLanguages:(id)arg1;
-- (void)updateEnabledDictationLanguagesForInputModes:(id)arg1;
 - (void)updateInputModes:(id)arg1;
 - (void)updateKeyboardHandBias:(id)arg1;
 - (void)updateKeyboardIsFloating:(bool)arg1;

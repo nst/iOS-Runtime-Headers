@@ -3,7 +3,6 @@
  */
 
 @interface NSPersistentStore : NSObject {
-    int  _activeRequests;
     NSString * _configurationName;
     NSPersistentStoreCoordinator * _coordinator;
     id  _coreSpotlightDelegate;
@@ -16,7 +15,7 @@
     }  _flags;
     id * _oidFactories;
     NSDictionary * _options;
-    int  _reserved32;
+    void * _reserved1;
     void * _temporaryIDClass;
     NSURL * _url;
 }
@@ -55,6 +54,7 @@
 - (id)_rawMetadata__;
 - (void)_resetObjectIDFactoriesForStoreUUIDChange;
 - (void)_setMetadataDirty:(bool)arg1;
+- (void)_setupObserver;
 - (id)_storeInfoForEntityDescription:(id)arg1;
 - (bool)_unload:(id*)arg1;
 - (void)_updateAncillaryVersionHashesInMetadata:(id)arg1;
@@ -67,7 +67,6 @@
 - (id)currentChangeToken;
 - (id)currentQueryGeneration;
 - (void)dealloc;
-- (void)decrementInUseCounter;
 - (id)description;
 - (void)didAddToPersistentStoreCoordinator:(id)arg1;
 - (void)doFilesystemCleanupOnRemove:(bool)arg1;
@@ -76,7 +75,6 @@
 - (Class)faultHandlerClass;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)identifier;
-- (void)incrementInUseCounter;
 - (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (bool)isReadOnly;

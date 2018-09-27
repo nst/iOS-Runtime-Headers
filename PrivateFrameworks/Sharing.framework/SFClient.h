@@ -37,6 +37,7 @@
 - (void)preventExitForLocaleReason:(id)arg1;
 - (void)reenableProxCardType:(unsigned char)arg1 completion:(id /* block */)arg2;
 - (void)repairDevice:(id)arg1 completion:(id /* block */)arg2;
+- (void)repairDevice:(id)arg1 flags:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)retriggerProximityPairing:(id /* block */)arg1;
 - (void)retriggerProximitySetup:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
@@ -45,6 +46,7 @@
 - (void)setupDevice:(id)arg1 home:(id)arg2 completion:(id /* block */)arg3;
 - (void)showDevicePickerWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)triggerHomeKitDeviceDetectedWithURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)triggerProximityAutoFillDetectedWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(id /* block */)arg1;
 
 @end

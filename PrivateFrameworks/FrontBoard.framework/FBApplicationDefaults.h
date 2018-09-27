@@ -20,9 +20,9 @@
 @property (nonatomic) bool statusBarHiddenWhenVerticallyCompact;
 @property (nonatomic) long long statusBarStyle;
 
+- (void).cxx_destruct;
 - (long long)backgroundStyle;
 - (bool)canChangeBackgroundStyle;
-- (void)dealloc;
 - (id)init;
 - (long long)interfaceOrientation;
 - (id)launchImageFile;

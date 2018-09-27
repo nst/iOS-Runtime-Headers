@@ -69,6 +69,7 @@
 - (id)cardController;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;
 - (void)contentSizeCategoryDidChange:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)didAddActionsViewToHierarchy;
 - (void)dismissAnimated:(bool)arg1;
@@ -110,6 +111,7 @@
 - (bool)transitioningImageVisible;
 - (id)transitioningView;
 - (void)updateActionsControllerHeightConstraint;
+- (void)updateActionsViewBackgroundColor;
 - (void)updateViewConstraints;
 - (id)verticalConstraints;
 - (id)viewControllerForCardActionsView:(id)arg1;

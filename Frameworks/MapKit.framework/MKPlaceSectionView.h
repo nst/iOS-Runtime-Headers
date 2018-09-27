@@ -4,28 +4,16 @@
 
 @interface MKPlaceSectionView : _MKStackView {
     <MKPlaceSectionViewDelegate> * _delegate;
-    bool  _earlyReturnLayout;
     MKPlaceSectionItemView * _footerView;
     MKViewWithHairline * _hairLineView;
     MKPlaceSectionItemView * _headerView;
     bool  _highlightsTouches;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _oldBounds;
     NSArray * _rowViews;
     bool  _showsBottomHairline;
     unsigned long long  _trackingSelectForRow;
 }
 
 @property (nonatomic) <MKPlaceSectionViewDelegate> *delegate;
-@property (nonatomic) bool earlyReturnLayout;
 @property (nonatomic, retain) MKPlaceSectionItemView *footerView;
 @property (nonatomic, retain) MKPlaceSectionItemView *headerView;
 @property (nonatomic) bool highlightsTouches;
@@ -39,7 +27,6 @@
 - (void)_updateHairlineInsets;
 - (void)_updateViewsAnimated:(bool)arg1;
 - (id)delegate;
-- (bool)earlyReturnLayout;
 - (id)footerView;
 - (id)headerView;
 - (bool)highlightsTouches;
@@ -51,7 +38,6 @@
 - (id)rowAt:(struct CGPoint { double x1; double x2; })arg1;
 - (id)rowViews;
 - (void)setDelegate:(id)arg1;
-- (void)setEarlyReturnLayout:(bool)arg1;
 - (void)setFooterView:(id)arg1;
 - (void)setFooterView:(id)arg1 animated:(bool)arg2;
 - (void)setHeaderView:(id)arg1;

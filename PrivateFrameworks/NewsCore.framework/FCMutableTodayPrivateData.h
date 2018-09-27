@@ -9,7 +9,6 @@
 @property (nonatomic, readonly, copy) <FCDerivedPersonalizationData><NSCoding> *derivedPersonalizationData;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableDictionary *dictionary;
-@property (nonatomic, readonly, copy) NSString *feldsparID;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
 @property (nonatomic, readonly, copy) NSNumber *onboardingVersion;
@@ -24,7 +23,6 @@
 - (id)initWithDictionary:(id)arg1;
 - (void)setAutoFavoriteTagIDs:(id)arg1;
 - (void)setDerivedPersonalizationData:(id)arg1;
-- (void)setFeldsparID:(id)arg1;
 - (void)setMutedTagIDs:(id)arg1;
 - (void)setOnboardingVersion:(id)arg1;
 - (void)setPurchasedTagIDs:(id)arg1;

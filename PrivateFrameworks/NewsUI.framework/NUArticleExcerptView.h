@@ -12,7 +12,7 @@
     UIImageView * _headlineImageView;
     UILabel * _headlineTitleLabel;
     UIScrollView * _imageScrollView;
-    NUMultiDelegate * _multiDelegate;
+    NFMultiDelegate * _multiDelegate;
     NUArticleExcerptReadMoreButton * _readMoreButton;
     NUArticleExcerptTraits * _traits;
 }
@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) UIImageView *headlineImageView;
 @property (nonatomic, readonly) UILabel *headlineTitleLabel;
 @property (nonatomic, readonly) UIScrollView *imageScrollView;
-@property (nonatomic, readonly) NUMultiDelegate *multiDelegate;
+@property (nonatomic, readonly) NFMultiDelegate *multiDelegate;
 @property (nonatomic, readonly) NUArticleExcerptReadMoreButton *readMoreButton;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NUArticleExcerptTraits *traits;

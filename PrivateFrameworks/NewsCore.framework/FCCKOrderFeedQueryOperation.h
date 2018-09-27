@@ -3,9 +3,11 @@
  */
 
 @interface FCCKOrderFeedQueryOperation : FCOperation {
+    NSDictionary * _additionalRequestHTTPHeaders;
     NSArray * _articleKeysMappingToTag;
     FCCKContentDatabase * _database;
     NSArray * _desiredKeys;
+    FCEdgeCacheHint * _edgeCacheHint;
     NSArray * _feedRequests;
     NSArray * _networkEvents;
     id /* block */  _queryCompletionHandler;
@@ -17,9 +19,11 @@
     unsigned long long  _resultsLimit;
 }
 
+@property (nonatomic, copy) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic, copy) NSArray *articleKeysMappingToTag;
 @property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
+@property (nonatomic, copy) FCEdgeCacheHint *edgeCacheHint;
 @property (nonatomic, copy) NSArray *feedRequests;
 @property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
@@ -36,9 +40,11 @@
 - (id)_predicateForPerFeedFieldName:(id)arg1 key:(id)arg2 defaultValue:(id)arg3;
 - (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3;
 - (id)_requiredKeys;
+- (id)additionalRequestHTTPHeaders;
 - (id)articleKeysMappingToTag;
 - (id)database;
 - (id)desiredKeys;
+- (id)edgeCacheHint;
 - (id)feedRequests;
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -52,9 +58,11 @@
 - (id)resultFeedResponses;
 - (id)resultTagRecords;
 - (unsigned long long)resultsLimit;
+- (void)setAdditionalRequestHTTPHeaders:(id)arg1;
 - (void)setArticleKeysMappingToTag:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
+- (void)setEdgeCacheHint:(id)arg1;
 - (void)setFeedRequests:(id)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setQueryCompletionHandler:(id /* block */)arg1;

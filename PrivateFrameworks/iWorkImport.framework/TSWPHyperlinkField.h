@@ -23,6 +23,7 @@
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (bool)allowsEditing;
+- (id)canonicalRepresentationURL;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)displayText;

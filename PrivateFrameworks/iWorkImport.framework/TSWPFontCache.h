@@ -18,7 +18,7 @@
 - (id)autorelease;
 - (id)availableMembersOfFontFamily:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(double)arg2;
+- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(double)arg2 weight:(double)arg3;
 - (void)dealloc;
 - (id)displayNameForFontFamily:(id)arg1;
 - (id)init;

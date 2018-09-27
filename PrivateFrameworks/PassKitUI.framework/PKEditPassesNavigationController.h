@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKEditPassesNavigationController : UINavigationController {
-    <PKEditPassesNavigationControllerDelegate> * _editPassesControllerDelegate;
-}
+@interface PKEditPassesNavigationController : UINavigationController
 
-- (void).cxx_destruct;
 - (void)_done;
 - (id)init;
-- (id)initInEditingMode:(bool)arg1 delegate:(id)arg2;
+- (id)initWithExistingGroupsController:(id)arg1;
 - (long long)modalPresentationStyle;
 - (long long)modalTransitionStyle;
 - (unsigned long long)supportedInterfaceOrientations;

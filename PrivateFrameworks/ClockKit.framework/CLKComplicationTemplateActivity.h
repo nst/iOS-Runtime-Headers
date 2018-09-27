@@ -17,6 +17,8 @@
 
 + (id)activityTemplateWithFamily:(long long)arg1;
 
+- (void)_enumerateBOOLKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateFloatKeysWithBlock:(id /* block */)arg1;
 - (double)briskMinutesPercentComplete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)dotsAreHidden;

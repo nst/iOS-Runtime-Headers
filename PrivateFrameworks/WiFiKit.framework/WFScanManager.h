@@ -43,7 +43,6 @@
 - (void)_checkForNoNetworksFound;
 - (bool)_isScanning;
 - (void)_processNextScan;
-- (id)_profileForNetwork:(id)arg1;
 - (void)_queueScan;
 - (void)_scan;
 - (void)_scanningDidFinish;

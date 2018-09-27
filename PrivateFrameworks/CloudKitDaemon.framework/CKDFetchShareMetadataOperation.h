@@ -24,9 +24,10 @@
 
 - (void).cxx_destruct;
 - (id)_decodeProtectedFullToken:(id)arg1 tokenMetadata:(id)arg2;
+- (void)_decryptRootRecordsForShareURL:(id)arg1 withMetadata:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchShortTokenMetadata;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_performCallbackAfterFetchingRootRecordForURL:(id)arg1 withMetadata:(id)arg2;
+- (void)_handleTokenResolveWithLookupInfo:(id)arg1 shareMetadata:(id)arg2 responseCode:(id)arg3 urlByShortTokenLookupInfos:(id)arg4 tokensToFetchByURL:(id)arg5;
 - (void)_performCallbackForURL:(id)arg1 withMetadata:(id)arg2 error:(id)arg3;
 - (void)_prepareShortTokens;
 - (id)activityCreate;

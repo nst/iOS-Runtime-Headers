@@ -37,7 +37,7 @@
 - (void)setDigit:(id)arg1;
 - (void)setDigit:(id)arg1 primaryLetters:(id)arg2 secondaryLetters:(id)arg3;
 - (void)setDigitBaseline:(id)arg1;
-- (void)setFontStylesForHighlightState:(bool)arg1 language:(unsigned long long)arg2 showLocalizedLetters:(bool)arg3 shouldCenterDigit:(bool)arg4 fontColor:(bool)arg5 circleDiameter:(double)arg6;
+- (void)setFontStylesForHighlightState:(bool)arg1 language:(unsigned long long)arg2 showLocalizedLetters:(bool)arg3 shouldCenterDigit:(bool)arg4 fontColor:(bool)arg5 circleDiameter:(double)arg6 largeFont:(bool)arg7;
 - (void)setLetterBaseline:(id)arg1;
 - (void)setLetters:(id)arg1;
 - (void)setSecondaryLetterBaseline:(id)arg1;

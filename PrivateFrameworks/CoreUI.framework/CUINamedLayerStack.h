@@ -30,7 +30,7 @@
 - (void)setLayers:(id)arg1;
 - (struct CGSize { double x1; double x2; })size;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (id)flattenedUIImage;
 - (id)traitCollection;

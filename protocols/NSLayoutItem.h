@@ -26,7 +26,6 @@
 - (NSISVariable *)nsli_boundsWidthVariable;
 - (bool)nsli_canHostIndependentVariableAnchor;
 - (struct CGSize { double x1; double x2; })nsli_engineToUserScalingCoefficients;
-- (NSISVariable *)nsli_heightVariable;
 - (NSArray *)nsli_installedConstraints;
 - (bool)nsli_isLegalConstraintItem;
 - (bool)nsli_isRTL;
@@ -41,6 +40,5 @@
 - (unsigned long long)nsli_piercingToken;
 - (bool)nsli_removeConstraint:(NSLayoutConstraint *)arg1;
 - (void)nsli_setPiercingToken:(unsigned long long)arg1;
-- (NSISVariable *)nsli_widthVariable;
 
 @end

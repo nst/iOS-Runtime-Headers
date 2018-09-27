@@ -3,6 +3,7 @@
  */
 
 @interface ICPersistentContainer : NSPersistentContainer {
+    bool  _abortAfterReplacingDatabase;
     unsigned long long  _fakeFreeDiskSpace;
     NSMergePolicy * _mergePolicy;
     NSDictionary * _storeOptions;
@@ -10,6 +11,7 @@
     NSURL * _storeURL;
 }
 
+@property (nonatomic) bool abortAfterReplacingDatabase;
 @property (nonatomic, readonly) NSURL *backupsDirectoryURL;
 @property (nonatomic) unsigned long long fakeFreeDiskSpace;
 @property (nonatomic, retain) NSMergePolicy *mergePolicy;
@@ -22,6 +24,7 @@
 + (id)standardStoreOptions;
 
 - (void).cxx_destruct;
+- (bool)abortAfterReplacingDatabase;
 - (void)backupPersistentStore;
 - (id)backupsDirectoryURL;
 - (unsigned long long)fakeFreeDiskSpace;
@@ -31,6 +34,7 @@
 - (bool)loadPersistentStore:(id*)arg1;
 - (id)mergePolicy;
 - (id)newBackgroundContext;
+- (void)setAbortAfterReplacingDatabase:(bool)arg1;
 - (void)setFakeFreeDiskSpace:(unsigned long long)arg1;
 - (void)setMergePolicy:(id)arg1;
 - (void)setStoreOptions:(id)arg1;

@@ -19,7 +19,8 @@
         unsigned int _hasUniqueProperties : 1; 
         unsigned int _validationUniqueProperties : 1; 
         unsigned int _isPersistentHistoryEntity : 1; 
-        unsigned int _reservedEntityDescription : 19; 
+        unsigned int _hasAttributesWithFileBackedFutures : 1; 
+        unsigned int _reservedEntityDescription : 17; 
     }  _entityDescriptionFlags;
     void * _extraIvars;
     id  _flattenedSubentities;
@@ -79,6 +80,7 @@
 - (id)_checkForNonCascadeNoInverses;
 - (id)_collectSubentities;
 - (void)_commonCachesAndOptimizedState;
+- (id)_constraintAsIndex:(id)arg1;
 - (bool)_constraintIsExtension:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (void)_dropIndexes;
@@ -88,6 +90,7 @@
 - (void)_flattenProperties;
 - (id)_flattenedSubentities;
 - (bool)_hasAttributesWithExternalDataReferences;
+- (bool)_hasAttributesWithFileBackedFutures;
 - (bool)_hasCustomPrimitiveProperties;
 - (bool)_hasIndexForProperty:(id)arg1;
 - (bool)_hasPotentialHashSkew;
@@ -105,6 +108,7 @@
 - (bool)_isFlattened;
 - (bool)_isInheritedPropertyNamed:(id)arg1;
 - (bool)_isPathologicalForConstraintMerging:(id*)arg1;
+- (bool)_isSchemaEqual:(id)arg1;
 - (id)_keypathsForDeletions;
 - (id)_keypathsToPrefetchForDeletePropagation;
 - (id)_keypathsToPrefetchForDeletePropagationPrefixedWith:(id)arg1 toDepth:(long long)arg2 processedEntities:(id)arg3;
@@ -152,6 +156,7 @@
 - (void)_throwIfNotEditable;
 - (bool)_tryRetain;
 - (id)_uniquenessConstraints;
+- (id)_uniquenessConstraintsAsFetchIndexes;
 - (void)_validateIndex:(id)arg1;
 - (void)_validateIndexNameChangeFrom:(id)arg1 to:(id)arg2;
 - (id)_versionHashInStyle:(unsigned long long)arg1;
@@ -166,7 +171,6 @@
 - (id)description;
 - (id)elementID;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (unsigned long long)hash;
 - (id)indexes;
 - (id)init;
@@ -175,6 +179,7 @@
 - (bool)isAbstract;
 - (bool)isEqual:(id)arg1;
 - (bool)isKindOfEntity:(id)arg1;
+- (id)keypathsToPrefetchForDeletePropagation;
 - (id)knownKeysMappingStrategy;
 - (id)managedObjectClassName;
 - (id)managedObjectModel;

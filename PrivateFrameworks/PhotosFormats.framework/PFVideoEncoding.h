@@ -4,7 +4,6 @@
 
 @interface PFVideoEncoding : NSObject
 
-+ (bool)_deviceSupportsHardwareHEVCEncoding;
-+ (bool)shouldGenerateLargeVideoDerivativeForFileURL:(id)arg1 videoDimensions:(struct CGSize { double x1; double x2; })arg2;
++ (bool)deviceSupportsHardwareHEVCEncoding;
 
 @end

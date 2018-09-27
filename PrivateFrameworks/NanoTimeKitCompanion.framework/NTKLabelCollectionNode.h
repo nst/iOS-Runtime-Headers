@@ -10,7 +10,7 @@
     unsigned int  _labels;
     unsigned int  _multiple;
     bool  _paddedWithZeros;
-    struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; } * _positions;
+    const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; } * _positions;
     unsigned int  _repeat;
     unsigned int  _start;
 }
@@ -22,14 +22,14 @@
 @property (nonatomic) unsigned int labels;
 @property (nonatomic) unsigned int multiple;
 @property (nonatomic) bool paddedWithZeros;
-@property (nonatomic) struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*positions;
+@property (nonatomic) const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*positions;
 @property (nonatomic) unsigned int repeat;
 @property (nonatomic) unsigned int start;
 
-+ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNode:(id)arg2;
-+ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNode:(id)arg3;
-+ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNodes:(id)arg2;
-+ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3;
++ (void)applyLabelPosition:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNode:(id)arg2 forDevice:(id)arg3;
++ (void)applyLabelPosition:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNode:(id)arg3 forDevice:(id)arg4;
++ (void)applyLabelPositions:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNodes:(id)arg2 forDevice:(id)arg3;
++ (void)applyLabelPositions:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3 forDevice:(id)arg4;
 
 - (void)applyAppearanceFraction:(double)arg1 inverted:(bool)arg2;
 - (double)color;
@@ -38,11 +38,11 @@
 - (long long)faceStyle;
 - (long long)font;
 - (double)fontSize;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (unsigned int)labels;
 - (unsigned int)multiple;
 - (bool)paddedWithZeros;
-- (struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)positions;
+- (const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)positions;
 - (unsigned int)repeat;
 - (void)setColor:(double)arg1;
 - (void)setFaceStyle:(long long)arg1;
@@ -51,7 +51,7 @@
 - (void)setLabels:(unsigned int)arg1;
 - (void)setMultiple:(unsigned int)arg1;
 - (void)setPaddedWithZeros:(bool)arg1;
-- (void)setPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1;
+- (void)setPositions:(const struct NTKLabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1;
 - (void)setRepeat:(unsigned int)arg1;
 - (void)setStart:(unsigned int)arg1;
 - (unsigned int)start;

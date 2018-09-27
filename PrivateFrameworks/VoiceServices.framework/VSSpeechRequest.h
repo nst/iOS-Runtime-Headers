@@ -7,6 +7,7 @@
     unsigned int  _audioQueueFlags;
     unsigned int  _audioSessionID;
     bool  _audioSessionIDIsValid;
+    bool  _canUseServerTTS;
     NSString * _clientBundleIdentifier;
     NSDictionary * _contextInfo;
     bool  _disableCompactVoiceFallback;
@@ -36,6 +37,7 @@
 @property (nonatomic) unsigned int audioQueueFlags;
 @property (nonatomic) unsigned int audioSessionID;
 @property (nonatomic) bool audioSessionIDIsValid;
+@property (nonatomic) bool canUseServerTTS;
 @property (nonatomic, copy) NSString *clientBundleIdentifier;
 @property (nonatomic, copy) NSDictionary *contextInfo;
 @property (nonatomic) bool disableCompactVoiceFallback;
@@ -67,6 +69,7 @@
 - (unsigned int)audioQueueFlags;
 - (unsigned int)audioSessionID;
 - (bool)audioSessionIDIsValid;
+- (bool)canUseServerTTS;
 - (id)clientBundleIdentifier;
 - (id)contextInfo;
 - (id)contextInfoString;
@@ -93,6 +96,7 @@
 - (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setAudioSessionIDIsValid:(bool)arg1;
+- (void)setCanUseServerTTS:(bool)arg1;
 - (void)setClientBundleIdentifier:(id)arg1;
 - (void)setContextInfo:(id)arg1;
 - (void)setDisableCompactVoiceFallback:(bool)arg1;

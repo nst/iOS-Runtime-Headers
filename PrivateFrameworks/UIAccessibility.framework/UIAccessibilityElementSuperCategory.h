@@ -15,6 +15,7 @@
 - (bool)_accessibilitySupportsActivateAction;
 - (bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityUserTestingVisibleAncestor;
+- (bool)_accessibilityUsesFrameInContainerSpace;
 - (bool)_accessibilityViewHierarchyHasNativeFocus;
 - (bool)accessibilityActivate;
 - (struct CGPoint { double x1; double x2; })accessibilityActivationPoint;

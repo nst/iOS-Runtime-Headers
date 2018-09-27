@@ -16,11 +16,11 @@
 @property (nonatomic, copy) id /* block */ installedApplicationFilter;
 @property (nonatomic, copy) id /* block */ placeholderFilter;
 
+- (void).cxx_destruct;
 - (bool)allowConcurrentLoading;
 - (Class)applicationInfoClass;
 - (Class)applicationPlaceholderClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)init;
 - (id /* block */)installedApplicationFilter;
 - (id /* block */)placeholderFilter;

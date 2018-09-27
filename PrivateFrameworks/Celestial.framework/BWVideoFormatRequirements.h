@@ -6,6 +6,7 @@
     unsigned long long  _bytesPerRowAlignment;
     unsigned long long  _height;
     unsigned long long  _heightAlignment;
+    bool  _memoryPoolUseAllowed;
     unsigned long long  _planeAlignment;
     bool  _prewireBuffers;
     NSArray * _supportedCacheModes;
@@ -18,6 +19,7 @@
 @property (nonatomic) unsigned long long bytesPerRowAlignment;
 @property (nonatomic) unsigned long long height;
 @property (nonatomic) unsigned long long heightAlignment;
+@property (nonatomic) bool memoryPoolUseAllowed;
 @property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
 @property (nonatomic) unsigned long long planeAlignment;
 @property (nonatomic) bool prewireBuffers;
@@ -43,12 +45,14 @@
 - (id)init;
 - (id)initWithPixelBufferAttributes:(id)arg1;
 - (unsigned int)mediaType;
+- (bool)memoryPoolUseAllowed;
 - (id)pixelBufferAttributes;
 - (unsigned long long)planeAlignment;
 - (bool)prewireBuffers;
 - (void)setBytesPerRowAlignment:(unsigned long long)arg1;
 - (void)setHeight:(unsigned long long)arg1;
 - (void)setHeightAlignment:(unsigned long long)arg1;
+- (void)setMemoryPoolUseAllowed:(bool)arg1;
 - (void)setPlaneAlignment:(unsigned long long)arg1;
 - (void)setPrewireBuffers:(bool)arg1;
 - (void)setSupportedCacheModes:(id)arg1;

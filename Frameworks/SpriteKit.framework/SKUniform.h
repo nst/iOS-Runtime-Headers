@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKUniform : NSObject <NSCoding, NSCopying> {
+@interface SKUniform : NSObject <NSCopying, NSSecureCoding> {
     NSString * _name;
     unsigned long long  _seed;
     NSMutableArray * _targetShaders;
@@ -32,6 +32,7 @@
 @property (nonatomic) void vectorFloat3Value;
 @property (nonatomic) void vectorFloat4Value;
 
++ (bool)supportsSecureCoding;
 + (id)uniformWithName:(id)arg1;
 + (id)uniformWithName:(id)arg1 float:(float)arg2;
 + (id)uniformWithName:(id)arg1 floatMatrix2:(union _GLKMatrix2 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2[2][2]; float x3[4]; })arg2;
@@ -79,6 +80,7 @@
 - (id)initWithName:(void *)arg1 vectorFloat2:(void *)arg2; // needs 2 arg types, found 1: id
 - (id)initWithName:(void *)arg1 vectorFloat3:(void *)arg2; // needs 2 arg types, found 1: id
 - (id)initWithName:(void *)arg1 vectorFloat4:(void *)arg2; // needs 2 arg types, found 1: id
+- (bool)isEqualToUniform:(id)arg1;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[2]; })matrixFloat2x2Value;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })matrixFloat3x3Value;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })matrixFloat4x4Value;

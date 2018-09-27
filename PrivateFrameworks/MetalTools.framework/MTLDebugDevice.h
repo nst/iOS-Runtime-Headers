@@ -60,6 +60,7 @@
 - (void)bufferChecksummedInFrame:(id)arg1;
 - (unsigned int)checksumBuffer:(id)arg1;
 - (void)dealloc;
+- (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
 - (unsigned int)frameNum;
 - (struct { unsigned long long x1; unsigned long long x2; })heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (struct { unsigned long long x1; unsigned long long x2; })heapTextureSizeAndAlignWithDescriptor:(id)arg1;
@@ -86,7 +87,9 @@
 - (id)newDefaultLibrary;
 - (id)newDefaultLibraryWithBundle:(id)arg1 error:(id*)arg2;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
+- (id)newEvent;
 - (id)newHeapWithDescriptor:(id)arg1;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newLibraryWithData:(id)arg1 error:(id*)arg2;
 - (id)newLibraryWithFile:(id)arg1 error:(id*)arg2;
 - (void)newLibraryWithSource:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -102,6 +105,9 @@
 - (void)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (id)newRenderPipelineStateWithTileDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
+- (id)newSharedEvent;
+- (id)newSharedEventWithHandle:(id)arg1;
+- (id)newSharedEventWithMachPort:(unsigned int)arg1;
 - (id)newTextureLayoutWithDescriptor:(id)arg1 isHeapOrBufferBacked:(bool)arg2;
 - (id)newTextureWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 deallocator:(id /* block */)arg4;
 - (id)newTextureWithDescriptor:(id)arg1;
@@ -117,5 +123,6 @@
 - (void)validateMemorylessResource:(id)arg1;
 - (void)validateNewBufferArgs:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateResourceOptions:(unsigned long long)arg1 isTexture:(bool)arg2 isIOSurface:(bool)arg3;
+- (void)validateTraceBuffer:(unsigned long long)arg1 maxBufferCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 
 @end

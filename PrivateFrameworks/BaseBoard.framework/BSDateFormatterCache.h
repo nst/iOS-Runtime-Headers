@@ -28,6 +28,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_resetFormatters;
 - (bool)_shouldShowHoursForTimerDuration:(double)arg1;
 - (void)dealloc;

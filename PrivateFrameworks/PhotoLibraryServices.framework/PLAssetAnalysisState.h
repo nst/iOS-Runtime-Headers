@@ -26,7 +26,9 @@
 + (id)_subArrayOfChanges:(id)arg1 toRetryWithConflicts:(id)arg2;
 + (id)analysisCountsForWorkerType:(short)arg1;
 + (bool)applyAnalysisStateChanges:(id)arg1 assetUUID:(id)arg2 allowUnsafeSetProcessed:(bool)arg3 error:(id*)arg4;
++ (id)assetUUIDsFromAssetObjectIDs:(id)arg1 whereAllWorkerTypes:(id)arg2 matchState:(id)arg3;
 + (bool)cleanupInvalidIgnoreUntilDatesWithError:(id*)arg1;
++ (bool)clearIgnoreUntilDatesWithError:(id*)arg1;
 + (int)defaultWorkerFlagsForWorkerType:(short)arg1;
 + (id)deletedAssetUUIDsForAnalysisByWorkerType:(short)arg1 fetchLimit:(unsigned long long)arg2 inLibrary:(id)arg3 error:(id*)arg4;
 + (id)entityInManagedObjectContext:(id)arg1;

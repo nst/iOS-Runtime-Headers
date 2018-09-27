@@ -5,27 +5,32 @@
 @interface NTKComplicationDataSource : NSObject {
     NTKComplication * _complication;
     <NTKComplicationDataSourceDelegate> * _delegate;
+    CLKDevice * _device;
     long long  _family;
 }
 
 @property (nonatomic, readonly) NTKComplication *complication;
 @property (nonatomic) <NTKComplicationDataSourceDelegate> *delegate;
+@property (nonatomic, readonly) CLKDevice *device;
 @property (nonatomic, readonly) long long family;
 @property (nonatomic, readonly) bool supportsTapAction;
 @property (nonatomic, readonly) unsigned long long timelineAnimationBehavior;
 
-+ (bool)acceptsComplicationFamily:(long long)arg1;
-+ (bool)acceptsComplicationType:(unsigned long long)arg1;
-+ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
-+ (Class)dataSourceClassForComplicationType:(unsigned long long)arg1 family:(long long)arg2;
++ (bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2 forDevice:(id)arg3;
++ (Class)dataSourceClassForComplicationType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
++ (Class)richComplicationDisplayViewClassForType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 - (void).cxx_destruct;
+- (bool)alwaysShowIdealizedTemplateInSwitcher;
 - (void)becomeActive;
 - (void)becomeInactive;
 - (id)complication;
 - (id)complicationApplicationIdentifier;
 - (id)currentSwitcherTemplate;
 - (id)delegate;
+- (id)device;
 - (void)didTouchDown;
 - (void)didTouchUpInside;
 - (long long)family;
@@ -37,7 +42,7 @@
 - (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)getTimelineStartDateWithHandler:(id /* block */)arg1;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 - (id)lockedTemplate;
 - (void)pause;
 - (void)pauseAnimations;

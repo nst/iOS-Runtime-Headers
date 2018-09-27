@@ -29,20 +29,27 @@
 @property (nonatomic) unsigned long long alertType;
 @property (nonatomic) bool allowsNotifications;
 @property (nonatomic, copy) NSString *appName;
+@property (nonatomic) long long authorizationStatus;
 @property (nonatomic) unsigned long long bulletinCount;
+@property (nonatomic) long long bulletinGroupingSetting;
 @property (nonatomic) long long carPlaySetting;
 @property (nonatomic) long long contentPreviewSetting;
+@property (nonatomic) long long criticalAlertSetting;
 @property (nonatomic, copy) NSArray *dataProviderIDs;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic) bool displaysCriticalBulletins;
 @property (nonatomic) bool enabled;
 @property (nonatomic, copy) NSString *factorySectionID;
 @property (nonatomic, copy) NSArray *filters;
+@property (nonatomic, readonly) bool hasEnabledSettings;
 @property (nonatomic) bool hideWeeApp;
 @property (nonatomic, copy) BBSectionIcon *icon;
 @property (nonatomic, readonly, copy) NSData *iconData;
+@property (nonatomic, readonly) bool isDeliveredQuietly;
+@property (nonatomic) long long lockScreenSetting;
 @property (nonatomic, copy) BBSectionInfoSettings *managedSectionInfoSettings;
 @property (nonatomic) unsigned long long notificationCenterLimit;
+@property (nonatomic) long long notificationCenterSetting;
 @property (nonatomic) BBSectionInfo *parentSection;
 @property (nonatomic, copy) NSString *pathToWeeAppPluginBundle;
 @property (nonatomic) unsigned long long pushSettings;
@@ -51,8 +58,7 @@
 @property (nonatomic, copy) NSString *sectionID;
 @property (nonatomic, copy) BBSectionInfoSettings *sectionInfoSettings;
 @property (nonatomic) long long sectionType;
-@property (nonatomic) bool showsInLockScreen;
-@property (nonatomic) bool showsInNotificationCenter;
+@property (nonatomic) bool showsCustomSettingsLink;
 @property (nonatomic) bool showsOnExternalDevices;
 @property (nonatomic, copy) NSString *subsectionID;
 @property (nonatomic) long long subsectionPriority;
@@ -73,29 +79,37 @@
 - (void)_addSubsection:(id)arg1;
 - (void)_associateDataProviderSectionInfo:(id)arg1;
 - (void)_configureWithDefaultsForSectionType:(long long)arg1;
+- (void)_deliverQuietly:(bool)arg1;
 - (void)_dissociateDataProviderSectionInfo:(id)arg1;
+- (bool)_isDeliveredQuietly;
 - (void)_replaceSubsection:(id)arg1;
 - (id)_subsectionForID:(id)arg1;
 - (unsigned long long)alertType;
 - (bool)allowsNotifications;
 - (id)appName;
+- (long long)authorizationStatus;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (unsigned long long)bulletinCount;
+- (long long)bulletinGroupingSetting;
 - (long long)carPlaySetting;
 - (long long)contentPreviewSetting;
 - (id)copyFromManagedSettings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)criticalAlertSetting;
 - (id)dataProviderIDs;
+- (void)deliverQuietly:(bool)arg1;
 - (id)description;
 - (long long)disabledSettingForSetting:(long long)arg1;
 - (id)displayName;
 - (bool)displaysCriticalBulletins;
 - (id)effectiveSectionInfoWithDefaultContentPreviewSetting:(long long)arg1;
 - (id)effectiveSectionInfoWithFactoryInfo:(id)arg1 defaultContentPreviewSetting:(long long)arg2;
+- (long long)emergencySetting;
 - (bool)enabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)factorySectionID;
 - (id)filters;
+- (bool)hasEnabledSettings;
 - (unsigned long long)hash;
 - (bool)hideWeeApp;
 - (id)icon;
@@ -103,9 +117,12 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDefaultsForSectionType:(long long)arg1;
+- (bool)isDeliveredQuietly;
 - (bool)isEqual:(id)arg1;
+- (long long)lockScreenSetting;
 - (id)managedSectionInfoSettings;
 - (unsigned long long)notificationCenterLimit;
+- (long long)notificationCenterSetting;
 - (id)parentSection;
 - (id)pathToWeeAppPluginBundle;
 - (unsigned long long)pushSettings;
@@ -120,19 +137,25 @@
 - (void)setAlertType:(unsigned long long)arg1;
 - (void)setAllowsNotifications:(bool)arg1;
 - (void)setAppName:(id)arg1;
+- (void)setAuthorizationStatus:(long long)arg1;
 - (void)setBulletinCount:(unsigned long long)arg1;
+- (void)setBulletinGroupingSetting:(long long)arg1;
 - (void)setCarPlaySetting:(long long)arg1;
 - (void)setContentPreviewSetting:(long long)arg1;
+- (void)setCriticalAlertSetting:(long long)arg1;
 - (void)setDataProviderIDs:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDisplaysCriticalBulletins:(bool)arg1;
+- (void)setEmergencySetting:(long long)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setFactorySectionID:(id)arg1;
 - (void)setFilters:(id)arg1;
 - (void)setHideWeeApp:(bool)arg1;
 - (void)setIcon:(id)arg1;
+- (void)setLockScreenSetting:(long long)arg1;
 - (void)setManagedSectionInfoSettings:(id)arg1;
 - (void)setNotificationCenterLimit:(unsigned long long)arg1;
+- (void)setNotificationCenterSetting:(long long)arg1;
 - (void)setParentSection:(id)arg1;
 - (void)setPathToWeeAppPluginBundle:(id)arg1;
 - (void)setPushSettings:(unsigned long long)arg1;
@@ -140,6 +163,7 @@
 - (void)setSectionID:(id)arg1;
 - (void)setSectionInfoSettings:(id)arg1;
 - (void)setSectionType:(long long)arg1;
+- (void)setShowsCustomSettingsLink:(bool)arg1;
 - (void)setShowsInLockScreen:(bool)arg1;
 - (void)setShowsInNotificationCenter:(bool)arg1;
 - (void)setShowsMessagePreview:(bool)arg1;
@@ -150,6 +174,7 @@
 - (void)setSuppressFromSettings:(bool)arg1;
 - (void)setSuppressedSettings:(unsigned long long)arg1;
 - (void)setVersion:(unsigned long long)arg1;
+- (bool)showsCustomSettingsLink;
 - (bool)showsInLockScreen;
 - (bool)showsInNotificationCenter;
 - (bool)showsMessagePreview;
@@ -165,11 +190,25 @@
 - (unsigned long long)version;
 - (id)writableSettings;
 
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (void)bltApplyNotificationLevel:(unsigned long long)arg1;
+- (id)dataProviderIDs;
+- (void)enableAlertsForGizmo:(bool)arg1;
+- (id)factorySectionID;
+- (void)setDataProviderIDs:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setFactorySectionID:(id)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setSubsections:(id)arg1;
+- (void)updateAlertingStatusForGizmoWithAlertsEnabled:(bool)arg1 NCEnabled:(bool)arg2;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (bool)uns_isEnabled;
 - (long long)uns_notificationSettingForBBSectionInfoSetting:(long long)arg1;
 - (id)uns_notificationSettings;
-- (id)uns_sectionInfoWithAuthorizationOptions:(unsigned long long)arg1;
+- (void)uns_setPropertiesFromAuthorizationOptions:(unsigned long long)arg1;
+- (void)uns_setPropertiesFromSourceSettingsDescription:(id)arg1;
+- (void)uns_setPropertiesFromTopicRecord:(id)arg1;
 
 @end

@@ -31,11 +31,12 @@
 - (id)_performerClassByType;
 - (void)_setActivePerformer:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
+- (id)alertActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
 - (bool)canPerformActionType:(id)arg1;
 - (bool)canPerformAssetVariationActions;
 - (id)dataSourceManager;
-- (id)initWithSelectionSnapshot:(id)arg1;
+- (id)initWithSelectionManager:(id)arg1;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)person;
 - (id)previewActionForActionType:(id)arg1;

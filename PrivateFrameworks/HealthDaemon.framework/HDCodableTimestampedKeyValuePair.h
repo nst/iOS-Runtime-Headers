@@ -32,7 +32,6 @@
 - (void).cxx_destruct;
 - (id)bytesValue;
 - (void)copyTo:(id)arg1;
-- (id)copyWithUpdatedTimestamp:(double)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decodedTimestamp;
 - (id)decodedValue;

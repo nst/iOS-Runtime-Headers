@@ -22,6 +22,7 @@
 - (id)errorProvider;
 - (id)initWithWebContentViewController:(id)arg1 interactionProvider:(id)arg2 errorProvider:(id)arg3 configurationManager:(id)arg4 presentationManager:(id)arg5;
 - (id)interactionProvider;
+- (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;
 - (id)presentationManager;
 - (void)viewDidLayoutSubviews;

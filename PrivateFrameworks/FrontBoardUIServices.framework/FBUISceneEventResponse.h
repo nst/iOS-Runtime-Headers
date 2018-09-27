@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSError *error;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)error;
 - (void)setError:(id)arg1;
 

@@ -11,6 +11,6 @@
 - (void)proximityConnectionInitiated;
 - (void)proximityConnectionPreparing:(CUMessageSession *)arg1;
 - (void)proximityConnectionTerminated;
-- (void)receivedLanguage:(NSString *)arg1 locale:(NSString *)arg2 model:(NSString *)arg3 deviceClass:(NSString *)arg4;
+- (void)receivedLanguages:(NSArray *)arg1 locale:(NSString *)arg2 model:(NSString *)arg3 deviceClass:(NSString *)arg4;
 
 @end

@@ -20,8 +20,10 @@
 - (id)bundleId;
 - (double)confidence;
 - (id)description;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithBundleId:(id)arg1 predictionSource:(unsigned long long)arg2 reason:(long long)arg3 reasonMetadata:(id)arg4 confidence:(double)arg5;
+- (bool)isEqual:(id)arg1;
 - (bool)isEqualToPredictionItem:(id)arg1;
 - (unsigned long long)predictionSource;
 - (long long)reason;

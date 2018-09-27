@@ -18,6 +18,9 @@
 
 - (void).cxx_destruct;
 - (void)addCallback:(id)arg1 forKeyPath:(id)arg2;
+- (bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (id)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3 valueDidChange:(bool*)arg4;
+- (bool)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
 - (id)callbackQueue;
 - (id)context;
 - (void)deregisterCallback:(id)arg1;
@@ -31,6 +34,7 @@
 - (id)propertiesForContextualKeyPath:(id)arg1;
 - (void)registerCallback:(id)arg1;
 - (id)registrations;
+- (bool)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setContextValue:(id)arg1 forContextualKeyPath:(id)arg2;
@@ -41,5 +45,6 @@
 - (void)setSyncQueue:(id)arg1;
 - (id)syncQueue;
 - (void)unsafeDeregisterCallback:(id)arg1;
+- (id)unsafe_setObject:(id)arg1 returningMetadataForContextualKeyPath:(id)arg2;
 
 @end

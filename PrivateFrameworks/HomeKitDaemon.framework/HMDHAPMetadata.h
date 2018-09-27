@@ -155,8 +155,10 @@
 - (bool)shouldAllowHomeNotificationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (bool)shouldAutoEnableNotificationForCharacteristic:(id)arg1 ofService:(id)arg2;
 - (bool)shouldCoalesceCharacteristicNotifications:(id)arg1 forService:(id)arg2;
+- (bool)shouldFilterChangeNotificationsForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (bool)shouldFilterCharacteristicOfType:(id)arg1;
 - (bool)shouldFilterCharacteristicOfTypeFromApp:(id)arg1;
+- (bool)shouldFilterEnableNotificationsForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (bool)shouldFilterServiceOfType:(id)arg1;
 - (bool)shouldFilterServiceOfTypeFromApp:(id)arg1;
 - (bool)shouldHomeAppShowTileForServiceType:(id)arg1;

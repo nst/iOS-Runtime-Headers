@@ -6,6 +6,5 @@
 @optional
 
 - (void)fileUploadPanelDidDismiss:(WKFileUploadPanel *)arg1;
-- (UIViewController *)viewControllerForPresentingFileUploadPanel:(WKFileUploadPanel *)arg1;
 
 @end

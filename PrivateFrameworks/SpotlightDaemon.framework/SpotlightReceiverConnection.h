@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> * _senderQueue;
     bool  _setupComplete;
     NSObject<OS_dispatch_semaphore> * _setupSemaphore;
+    bool  _setupStarted;
     bool  _skipFileProviderItems;
     int  _supportedJobs;
     bool  _wantsHTML;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *senderQueue;
 @property (nonatomic) bool setupComplete;
 @property (retain) NSObject<OS_dispatch_semaphore> *setupSemaphore;
+@property (nonatomic) bool setupStarted;
 @property (nonatomic) bool skipFileProviderItems;
 @property (nonatomic, readonly) int supportedJobs;
 @property (nonatomic, readonly) bool unresponsive;
@@ -46,6 +48,7 @@
 - (bool)canRun;
 - (id)contentTypes;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;
+- (void)deleteAllUserActivities:(id)arg1;
 - (void)deleteFromBundle:(id)arg1;
 - (void)deleteFromBundle:(id)arg1 contentType:(id)arg2 identifiers:(id)arg3;
 - (void)deleteFromBundle:(id)arg1 domainIdentifiers:(id)arg2;
@@ -53,7 +56,10 @@
 - (void)deleteFromBundle:(id)arg1 sinceDate:(id)arg2;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2;
 - (void)disableReceiver;
+- (bool)disabled;
+- (void)donateRelevantActions:(id)arg1 bundleID:(id)arg2;
 - (void)enableReceiver;
 - (void)handleError:(id)arg1;
 - (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4;
@@ -69,12 +75,14 @@
 - (void)setMinDate:(double)arg1;
 - (void)setSetupComplete:(bool)arg1;
 - (void)setSetupSemaphore:(id)arg1;
+- (void)setSetupStarted:(bool)arg1;
 - (void)setSkipFileProviderItems:(bool)arg1;
 - (void)setWantsHTML:(bool)arg1;
 - (void)setWantsText:(bool)arg1;
 - (bool)setupComplete;
 - (void)setupComplete:(bool)arg1;
 - (id)setupSemaphore;
+- (bool)setupStarted;
 - (bool)skipFileProviderItems;
 - (void)startSetup;
 - (int)supportedJobs;

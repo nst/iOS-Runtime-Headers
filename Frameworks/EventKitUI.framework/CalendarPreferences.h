@@ -37,6 +37,12 @@
 @property (nonatomic) bool showWindowDebugButton;
 @property (nonatomic, retain) NSDate *simulatedCurrentDate;
 @property (nonatomic) bool swipeToDeleteEnabled;
+@property (nonatomic, retain) NSString *upNextColor;
+@property (nonatomic) double upNextDuration;
+@property (nonatomic, retain) NSString *upNextLocation;
+@property (nonatomic) bool upNextSimpleModeEnabled;
+@property (nonatomic, retain) NSDate *upNextStartTime;
+@property (nonatomic, retain) NSString *upNextTitle;
 @property (nonatomic) bool viewedTimeZoneAutomatic;
 @property (nonatomic, retain) NSNumber *weekStart;
 @property (nonatomic, retain) NSNumber *weekViewHourScale;
@@ -96,6 +102,12 @@
 - (void)setShowWindowDebugButton:(bool)arg1;
 - (void)setSimulatedCurrentDate:(id)arg1;
 - (void)setSwipeToDeleteEnabled:(bool)arg1;
+- (void)setUpNextColor:(id)arg1;
+- (void)setUpNextDuration:(double)arg1;
+- (void)setUpNextLocation:(id)arg1;
+- (void)setUpNextSimpleModeEnabled:(bool)arg1;
+- (void)setUpNextStartTime:(id)arg1;
+- (void)setUpNextTitle:(id)arg1;
 - (void)setViewedTimeZoneAutomatic:(bool)arg1;
 - (void)setWeekStart:(id)arg1;
 - (void)setWeekViewHourScale:(id)arg1;
@@ -108,6 +120,12 @@
 - (bool)showWindowDebugButton;
 - (id)simulatedCurrentDate;
 - (bool)swipeToDeleteEnabled;
+- (id)upNextColor;
+- (double)upNextDuration;
+- (id)upNextLocation;
+- (bool)upNextSimpleModeEnabled;
+- (id)upNextStartTime;
+- (id)upNextTitle;
 - (bool)viewedTimeZoneAutomatic;
 - (id)weekStart;
 - (id)weekViewHourScale;

@@ -52,6 +52,7 @@
 - (UIResponder<UITextInput> *)_proxyTextInput;
 - (bool)_range:(UITextRange *)arg1 containsRange:(UITextRange *)arg2;
 - (bool)_range:(UITextRange *)arg1 intersectsRange:(UITextRange *)arg2;
+- (UITextRange *)_rangeFromCurrentRangeWithDelta:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (UITextRange *)_rangeOfEnclosingWord:(UITextPosition *)arg1;
 - (UITextRange *)_rangeOfLineEnclosingPosition:(UITextPosition *)arg1;
 - (UITextRange *)_rangeOfParagraphEnclosingPosition:(UITextPosition *)arg1;
@@ -70,10 +71,12 @@
 - (bool)_selectionAtDocumentStart;
 - (bool)_selectionAtWordStart;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionClipRect;
+- (void)_setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)_setCaretSelectionAtEndOfSelection;
 - (void)_setGestureRecognizers;
 - (void)_setMarkedText:(NSString *)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)_setSelectedTextRange:(UITextRange *)arg1 withAffinityDownstream:(bool)arg2;
+- (void)_setSelectionToPosition:(UITextPosition *)arg1;
 - (bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(NSString *)arg2 checkAutocorrection:(bool)arg3;
 - (UIColor *)_textColorForCaretSelection;
 - (UITextRange *)_textRangeFromNSRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

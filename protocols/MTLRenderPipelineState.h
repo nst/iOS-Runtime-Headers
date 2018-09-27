@@ -10,6 +10,7 @@
 - (unsigned long long)imageblockSampleLength;
 - (NSString *)label;
 - (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (bool)supportIndirectCommandBuffers;
 - (bool)threadgroupSizeMatchesTileSize;
 
 @end

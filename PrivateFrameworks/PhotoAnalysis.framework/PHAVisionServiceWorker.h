@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
  */
 
-@interface PHAVisionServiceWorker : PHAWorker <PHAVisionServiceAssetsAnalyzingOperationDelegate> {
+@interface PHAVisionServiceWorker : PHAWorker <PHAVisionServiceAssetsAnalyzingOperationDelegate, PVVisionIntegrating> {
     bool  _analysisJobCancelled;
     NSOperationQueue * _assetAnalysisOperationQueue;
     NSMutableDictionary * _coalescedAnalysisResultsByAssetLocalIdentifier;
@@ -11,6 +11,7 @@
     NSMapTable * _jobToAssetsAnalyzingOperationMapTable;
     unsigned long long  _lastPerformedJobScenario;
     NSNumber * _lastRecordedDarkWakeState;
+    unsigned int  _visionAlgorithmUmbrellaVersion;
 }
 
 @property bool analysisJobCancelled;
@@ -18,9 +19,11 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic) unsigned int visionAlgorithmUmbrellaVersion;
 
 + (id /* block */)assetResourceLargestToSmallestComparator;
 + (id /* block */)assetResourceSmallestToLargestComparator;
++ (id)defaultImageCreationOptions;
 + (void)initialize;
 
 - (void).cxx_destruct;
@@ -37,9 +40,9 @@
 - (bool)canProvideAnalysisJobResultInformation:(id)arg1 withoutRequiringAssetResourceForAsset:(id)arg2;
 - (void)coalesceJobResult:(unsigned long long)arg1 forAssetLocalIdentifier:(id)arg2;
 - (void)coalesceResultsDictionary:(id)arg1 forAssetLocalIdentifier:(id)arg2;
+- (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;
 - (struct CGImage { }*)createCGImageForAssetResource:(id)arg1 imageOptions:(id)arg2 orientation:(unsigned long long*)arg3 error:(id*)arg4;
 - (struct CGImage { }*)createCGImageFromImageFileURL:(id)arg1 imageOptions:(id)arg2 orientation:(unsigned long long*)arg3 error:(id*)arg4;
-- (id)defaultImageCreationOptions;
 - (void)didPerformJob:(id)arg1;
 - (bool)getLocallyAvailableAssetResource:(id*)arg1 forAnalyzingAsset:(id)arg2 error:(id*)arg3;
 - (id)imageDataForAssetResource:(id)arg1 error:(id*)arg2;
@@ -48,12 +51,12 @@
 - (bool)isExecutingDuringDarkWake;
 - (unsigned long long)lastPerformedJobScenario;
 - (id)localFileURLForAssetResource:(id)arg1 error:(id*)arg2;
-- (id)newCVMLRequestOptions;
-- (void)performCVMLForcedCleanup;
-- (void)performCVMLForcedCleanupWithOptions:(id)arg1;
+- (void)performVisionForcedCleanup;
+- (void)performVisionForcedCleanupWithOptions:(id)arg1;
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;
 - (bool)processAsset:(id)arg1 error:(id*)arg2;
 - (void)setAnalysisJobCancelled:(bool)arg1;
+- (void)setVisionAlgorithmUmbrellaVersion:(unsigned int)arg1;
 - (void)shutdown;
 - (bool)startAcknowledgeDeletionsJob:(id)arg1 error:(id*)arg2;
 - (bool)startAnalysisJob:(id)arg1 error:(id*)arg2;
@@ -61,6 +64,7 @@
 - (bool)stopAcknowledgeDeletionsJob:(id)arg1 error:(id*)arg2;
 - (bool)stopAnalysisJob:(id)arg1 error:(id*)arg2;
 - (bool)supportsCoalescingResults;
+- (unsigned int)visionAlgorithmUmbrellaVersion;
 - (void)visionServiceAssetsProcessingOperation:(id)arg1 didExecuteToCompletion:(bool)arg2;
 - (void)willCompleteJob:(id)arg1;
 - (void)willPerformJob:(id)arg1;

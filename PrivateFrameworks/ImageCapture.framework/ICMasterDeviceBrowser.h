@@ -19,12 +19,12 @@
 
 - (void)addBrowser:(id)arg1;
 - (int)addMSCamera:(id)arg1;
+- (int)addMagicDisk:(id)arg1;
 - (int)addPTPCamera:(id)arg1;
 - (id)browsers;
 - (void)dealloc;
 - (id)deviceWithDelegate:(id)arg1;
 - (id)devices;
-- (void)finalize;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
 - (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
@@ -34,6 +34,5 @@
 - (void)removePTPCamera:(id)arg1;
 - (int)start:(id)arg1;
 - (void)stop:(id)arg1;
-- (int)updateExFATCamera:(id)arg1;
 
 @end

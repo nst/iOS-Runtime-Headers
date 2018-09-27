@@ -264,8 +264,6 @@
 - (id)_copyCKRecordFromExistingCKMetadata:(bool)arg1;
 - (id)_fileManager;
 - (bool)_isUsingStingRay;
-- (id)_recordIDUsingSalt:(id)arg1 zoneID:(id)arg2;
-- (id)_recordNameWithSalt:(id)arg1;
 - (void)_setRecordPropertiesBasedOnExistingRecord:(id)arg1 useStingRay:(bool)arg2;
 - (id)ckRecordIDFromExistingMetadata;
 - (id)copyCKRecordRepresentationWithZoneID:(id)arg1 salt:(id)arg2 useStingRay:(bool)arg3;

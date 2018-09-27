@@ -2,39 +2,36 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBCompressFileIntentResponse : PBCodable <NSCopying> {
+@interface _INPBCompressFileIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBCompressFileIntentResponse> {
     _INPBString * _entityName;
     struct { 
         unsigned int success : 1; 
     }  _has;
     bool  _success;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic, readonly) bool hasEntityName;
 @property (nonatomic) bool hasSuccess;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool success;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityName;
 - (bool)hasEntityName;
 - (bool)hasSuccess;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setHasSuccess:(bool)arg1;
 - (void)setSuccess:(bool)arg1;
 - (bool)success;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

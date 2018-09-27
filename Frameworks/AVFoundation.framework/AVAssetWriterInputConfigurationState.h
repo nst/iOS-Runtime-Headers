@@ -17,6 +17,7 @@
     NSString * _languageCode;
     long long  _layer;
     bool  _marksOutputTrackAsEnabled;
+    bool  _maximizePowerEfficiency;
     NSString * _mediaDataLocation;
     int  _mediaTimeScale;
     NSString * _mediaType;
@@ -50,6 +51,7 @@
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic) long long layer;
 @property (nonatomic) bool marksOutputTrackAsEnabled;
+@property (nonatomic) bool maximizePowerEfficiency;
 @property (nonatomic, copy) NSString *mediaDataLocation;
 @property (nonatomic) int mediaTimeScale;
 @property (nonatomic, copy) NSString *mediaType;
@@ -76,6 +78,7 @@
 - (id)languageCode;
 - (long long)layer;
 - (bool)marksOutputTrackAsEnabled;
+- (bool)maximizePowerEfficiency;
 - (id)mediaDataLocation;
 - (int)mediaTimeScale;
 - (id)mediaType;
@@ -95,6 +98,7 @@
 - (void)setLanguageCode:(id)arg1;
 - (void)setLayer:(long long)arg1;
 - (void)setMarksOutputTrackAsEnabled:(bool)arg1;
+- (void)setMaximizePowerEfficiency:(bool)arg1;
 - (void)setMediaDataLocation:(id)arg1;
 - (void)setMediaTimeScale:(int)arg1;
 - (void)setMediaType:(id)arg1;

@@ -16,8 +16,9 @@
 
 @property (nonatomic, readonly) bool exited;
 @property (nonatomic, readonly) bool failedLaunch;
-@property (nonatomic, readonly, retain) FBApplicationProcess *process;
+@property (nonatomic, readonly) FBApplicationProcess *process;
 
+- (void).cxx_destruct;
 - (void)_begin;
 - (bool)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
@@ -31,7 +32,6 @@
 - (void)_willComplete;
 - (void)_willInterruptWithReason:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (bool)exited;
 - (bool)failedLaunch;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(id /* block */)arg2;

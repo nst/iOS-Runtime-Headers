@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, UITableViewDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKLinkedApplicationObserver, PKPaymentSetupActivitySpinnerProtocol, UITableViewDelegate, UITextFieldDelegate> {
     <PKPaymentSetupBrowseProductsViewControllerDelegate> * _delegate;
     PKSearchableTableHeaderView * _headerView;
+    bool  _isBridgeContext;
+    PKLinkedApplication * _loadingLinkedApplication;
+    <PKPaymentSetupActivitySpinnerProtocol> * _loadingLinkedApplicationSpinner;
     PKPaymentSetupBrowseProductsModel * _model;
+    double  _previousHeaderHeight;
+    PKPaymentProvisioningController * _provisioningController;
     PKPaymentSetupProduct * _selectedProduct;
+    <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
+    bool  _showScanCardButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,16 +22,22 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKPaymentSetupBrowseProductsModel *model;
 @property (nonatomic, readonly) PKPaymentSetupProduct *selectedProduct;
+@property (nonatomic) bool showScanCardButton;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_cardTypeFlowPickerForProduct:(id)arg1;
 - (bool)_isLikelySection:(long long)arg1;
 - (bool)_isUnlikelySection:(long long)arg1;
+- (void)_nextStepInSetupFlowWithProduct:(id)arg1;
 - (void)_nextTapped:(id)arg1;
 - (void)_notifyDelegateDidSelectProduct:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_productAtIndexPath:(id)arg1;
+- (void)_pushAppRequiredViewControllerForProduct:(id)arg1 linkedApplication:(id)arg2;
 - (bool)_searchUIEnabled;
 - (void)_setNavigationBarEnabled:(bool)arg1;
+- (void)_showAppRequiredForProduct:(id)arg1 withSpinner:(id)arg2;
+- (void)_showCameraCapture;
 - (bool)_showLikelySection;
 - (void)_updateFilterString:(id)arg1 userInteraction:(bool)arg2;
 - (void)_updateSelectedProduct:(id)arg1;
@@ -33,11 +46,14 @@
 - (void)dealloc;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
+- (id)defaultSearchPrompt;
 - (id)delegate;
 - (void)hideActivitySpinner;
 - (id)initWithModel:(id)arg1 context:(long long)arg2;
 - (id)initWithProducts:(id)arg1 context:(long long)arg2;
+- (id)initWithProducts:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3 setupDelegate:(id)arg4;
 - (id)initWithProducts:(id)arg1 likelyProductIdentifiers:(id)arg2 context:(long long)arg3;
+- (void)linkedApplicationDidChangeState:(id)arg1;
 - (id)model;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -45,15 +61,19 @@
 - (id)selectedProduct;
 - (void)setDelegate:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setShowScanCardButton:(bool)arg1;
 - (void)showActivitySpinner;
+- (bool)showScanCardButton;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (bool)textFieldShouldClear:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
 
 @end

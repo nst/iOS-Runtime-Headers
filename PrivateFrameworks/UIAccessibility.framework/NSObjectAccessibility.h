@@ -7,6 +7,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
+- (bool)accessibilityActivate;
 - (struct CGPoint { double x1; double x2; })accessibilityActivationPoint;
 - (id)accessibilityElementAtIndex:(long long)arg1;
 - (long long)accessibilityElementCount;

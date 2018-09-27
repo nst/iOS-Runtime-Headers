@@ -12,6 +12,7 @@
 + (struct CGPath { }*)_newClipMaskEOPathForAnnotation:(id)arg1 withPageController:(id)arg2;
 + (struct CGPath { }*)_newRectanglePathForAnnotation:(id)arg1 withPageController:(id)arg2 outLineWidth:(double*)arg3;
 + (void)_pixelAlignedBaseRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 interiorRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 scaleFactor:(double*)arg3 forAnnotation:(id)arg4 withPageController:(id)arg5;
++ (struct CGPath { }*)cropHandle:(long long)arg1 forAnnotation:(id)arg2 withPageController:(id)arg3;
 + (struct CGPath { }*)newBottomEdgePathForAnnotation:(id)arg1 withPageController:(id)arg2;
 + (struct CGPath { }*)newBottomLeftCornerPathForAnnotation:(id)arg1 withPageController:(id)arg2;
 + (struct CGPath { }*)newBottomRightCornerPathForAnnotation:(id)arg1 withPageController:(id)arg2;

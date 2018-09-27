@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualAlert.framework/VisualAlert
  */
 
-@interface AXDistributedNotificationHandler : AXNotificationHandler
+@interface AXDistributedNotificationHandler : VISAXNotificationHandler
 
 + (void)postDistributedNotificationWithName:(id)arg1;
 

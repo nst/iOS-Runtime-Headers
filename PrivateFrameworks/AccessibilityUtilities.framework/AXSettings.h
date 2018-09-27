@@ -3,6 +3,7 @@
  */
 
 @interface AXSettings : NSObject {
+    bool  _assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
     double  _lastGuidedAccessTimeLimitResetCount;
     double  _lastGuidedAccessTimeResetCount;
     double  _lastHearingAidControlPanelTimeResetCount;
@@ -13,6 +14,7 @@
     NSMutableSet * _registeredNotifications;
     NSMutableDictionary * _synchronizeDomains;
     NSLock * _synchronizeDomainsLock;
+    bool  _touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
     NSMutableDictionary * _unarchivedVoiceCache;
     NSMutableDictionary * _updateBlocks;
     bool  _voiceOverVerbositySpeakCustomActionsHint;
@@ -40,12 +42,12 @@
 @property (nonatomic) bool assistiveTouchGroupElementsEnabled;
 @property bool assistiveTouchHardwareEnabled;
 @property (nonatomic) long long assistiveTouchHeadMovementSensitivity;
-@property (nonatomic) bool assistiveTouchHeadlessModeEnabled;
 @property (nonatomic) double assistiveTouchIdleOpacity;
 @property (nonatomic) double assistiveTouchInputCoalescingDuration;
 @property (nonatomic) bool assistiveTouchInputCoalescingEnabled;
 @property (nonatomic) double assistiveTouchInputHoldDuration;
 @property (nonatomic) bool assistiveTouchInputHoldEnabled;
+@property (nonatomic) bool assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 @property (nonatomic, retain) NSString *assistiveTouchLongPressAction;
 @property (nonatomic) double assistiveTouchLongPressActionDuration;
 @property (nonatomic) double assistiveTouchLongPressDuration;
@@ -68,7 +70,6 @@
 @property (nonatomic) bool assistiveTouchScannerCompactMenuEnabled;
 @property (nonatomic) bool assistiveTouchScannerCursorHighVisibilityEnabled;
 @property (nonatomic) bool assistiveTouchScannerMenuLabelsEnabled;
-@property (nonatomic) bool assistiveTouchScannerPointPickerDefaultsToRescan;
 @property (nonatomic) bool assistiveTouchScannerSoundEnabled;
 @property (nonatomic) bool assistiveTouchScannerSpeechEnabled;
 @property (nonatomic) bool assistiveTouchScannerSpeechIsInterruptedByScanning;
@@ -192,6 +193,7 @@
 @property (nonatomic, readonly) NSArray *settingsKeys;
 @property (nonatomic) bool shouldFlashForAlertInSilentMode;
 @property (nonatomic) bool shouldLimitDisplayRefreshRate;
+@property (nonatomic) bool shouldPerformValidationsAtRuntime;
 @property (nonatomic) bool shouldSpeakMedicalPreamble;
 @property (nonatomic) bool shouldStreamToLeftAid;
 @property (nonatomic) bool shouldStreamToRightAid;
@@ -216,7 +218,7 @@
 @property (nonatomic, retain) NSArray *switchControlMediaControlsMenuItems;
 @property (nonatomic, retain) NSArray *switchControlMediaControlsTopLevelMenuItems;
 @property (nonatomic) long long switchControlPlatformSwitchedCount;
-@property (nonatomic) bool switchControlPointPickerHighPrecisionEnabled;
+@property (nonatomic) long long switchControlPointPickerSelectionStyle;
 @property (nonatomic, retain) NSArray *switchControlRecipes;
 @property (nonatomic) bool switchControlRestartScanningAtCurrentKey;
 @property (nonatomic) long long switchControlScanAfterTapLocation;
@@ -229,15 +231,20 @@
 @property (nonatomic) bool switchControlShouldUseShortFirstPage;
 @property (nonatomic) long long switchControlTapBehavior;
 @property (nonatomic, retain) NSArray *switchControlTopLevelMenuItems;
+@property (nonatomic) bool switchControlUserDidReadUSBRestrictedModeAlert;
 @property (nonatomic) bool syncPronunciationsWithCloudKit;
 @property (nonatomic, retain) NSMutableDictionary *synchronizeDomains;
 @property (nonatomic) long long tapticTimeUsageCount;
+@property (nonatomic) bool touchAccommodationsAllowsSwipeGesturesToBypass;
 @property (nonatomic, readonly) bool touchAccommodationsAreConfigured;
 @property (nonatomic) bool touchAccommodationsEnabled;
 @property (nonatomic) double touchAccommodationsHoldDuration;
+@property (nonatomic) bool touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
 @property (nonatomic) bool touchAccommodationsHoldDurationEnabled;
+@property (nonatomic, readonly) long long touchAccommodationsHoldDurationSwipeGestureSensitivity;
 @property (nonatomic) double touchAccommodationsIgnoreRepeatDuration;
 @property (nonatomic) bool touchAccommodationsIgnoreRepeatEnabled;
+@property (nonatomic) double touchAccommodationsSwipeGestureMinimumDistance;
 @property (nonatomic) long long touchAccommodationsTapActivationMethod;
 @property (nonatomic) double touchAccommodationsTapActivationTimeout;
 @property (nonatomic) bool touchAccommodationsTripleClickConfirmed;
@@ -245,10 +252,12 @@
 @property (retain) NSArray *tripleClickOptions;
 @property (nonatomic, copy) NSArray *tripleClickOrderedOptions;
 @property (nonatomic, retain) NSMutableDictionary *updateBlocks;
+@property (nonatomic) bool useNewAXBundleLoader;
 @property (nonatomic) bool validateSecondPartyApps;
 @property (nonatomic) long long voiceOverActivationWorkaround;
 @property (nonatomic) bool voiceOverAlwaysUseNemethCodeForMathEnabled;
 @property (nonatomic) bool voiceOverAudioDuckingEnabled;
+@property (nonatomic) bool voiceOverAudioFollowsHDMIAudio;
 @property (nonatomic) long long voiceOverBSIUsageCount;
 @property (nonatomic) double voiceOverBrailleAlertDisplayDuration;
 @property (copy) NSDictionary *voiceOverBrailleBluetoothDisplay;
@@ -296,6 +305,7 @@
 @property (nonatomic) bool voiceOverSilenceAnnouncements;
 @property (nonatomic) long long voiceOverSoftwareTypingFeedback;
 @property (nonatomic) bool voiceOverSoundEffectsEnabled;
+@property (nonatomic) bool voiceOverSpeakActionConfirmation;
 @property (nonatomic) bool voiceOverSpeakNonfocusableElementsAfterDelay;
 @property (nonatomic) bool voiceOverSpeakNotificationsEnabled;
 @property (nonatomic) long long voiceOverSpeakSecondsEncoding;
@@ -322,6 +332,7 @@
 @property int voiceOverTypingMode;
 @property bool voiceOverUIEnabled;
 @property bool voiceOverUsageConfirmed;
+@property (nonatomic) bool voiceOverUserDidReadUSBRestrictedModeAlert;
 @property (nonatomic) bool voiceOverVerbosityEmojiSuffixEnabled;
 @property (nonatomic) bool voiceOverVerbositySpeakCustomActionsHint;
 @property float voiceOverVolume;
@@ -369,9 +380,11 @@
 - (void)_handlePreferenceChanged:(id)arg1;
 - (void)_handleVoiceUnarchivedCache:(id)arg1;
 - (bool)_hasSwitchWithUUID:(id)arg1;
+- (void)_listenForAccessibilitySupportPassthroughs;
 - (void)_localeChange:(id)arg1;
 - (id)_migratePreferenceIfNecessary:(id)arg1;
 - (id)_notificationForPreferenceKey:(id)arg1;
+- (void)_postNotificationForPreferenceKey:(id)arg1;
 - (id)_preferenceKeyForSelector:(SEL)arg1;
 - (id)_quickSpeakAltVoices;
 - (id)_quickSpeakPrefersCompact;
@@ -427,12 +440,13 @@
 - (bool)assistiveTouchGroupElementsEnabled;
 - (bool)assistiveTouchHardwareEnabled;
 - (long long)assistiveTouchHeadMovementSensitivity;
-- (bool)assistiveTouchHeadlessModeEnabled;
 - (double)assistiveTouchIdleOpacity;
 - (double)assistiveTouchInputCoalescingDuration;
 - (bool)assistiveTouchInputCoalescingEnabled;
 - (double)assistiveTouchInputHoldDuration;
 - (bool)assistiveTouchInputHoldEnabled;
+- (bool)assistiveTouchInternalOnlyHiddenNubbitMode;
+- (bool)assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 - (id)assistiveTouchLongPressAction;
 - (double)assistiveTouchLongPressActionDuration;
 - (double)assistiveTouchLongPressDuration;
@@ -455,7 +469,6 @@
 - (bool)assistiveTouchScannerCompactMenuEnabled;
 - (bool)assistiveTouchScannerCursorHighVisibilityEnabled;
 - (bool)assistiveTouchScannerMenuLabelsEnabled;
-- (bool)assistiveTouchScannerPointPickerDefaultsToRescan;
 - (bool)assistiveTouchScannerPrefersCompact:(id)arg1;
 - (bool)assistiveTouchScannerSoundEnabled;
 - (bool)assistiveTouchScannerSpeechEnabled;
@@ -573,6 +586,7 @@
 - (id)mediaControlsKeys;
 - (id)medicalPreamble;
 - (bool)monoAudioEnabled;
+- (void)nukeAll;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pairedHearingAids;
 - (bool)phoneticFeedbackEnabled;
@@ -615,12 +629,12 @@
 - (void)setAssistiveTouchGroupElementsEnabled:(bool)arg1;
 - (void)setAssistiveTouchHardwareEnabled:(bool)arg1;
 - (void)setAssistiveTouchHeadMovementSensitivity:(long long)arg1;
-- (void)setAssistiveTouchHeadlessModeEnabled:(bool)arg1;
 - (void)setAssistiveTouchIdleOpacity:(double)arg1;
 - (void)setAssistiveTouchInputCoalescingDuration:(double)arg1;
 - (void)setAssistiveTouchInputCoalescingEnabled:(bool)arg1;
 - (void)setAssistiveTouchInputHoldDuration:(double)arg1;
 - (void)setAssistiveTouchInputHoldEnabled:(bool)arg1;
+- (void)setAssistiveTouchInternalOnlyHiddenNubbitModeEnabled:(bool)arg1;
 - (void)setAssistiveTouchLongPressAction:(id)arg1;
 - (void)setAssistiveTouchLongPressActionDuration:(double)arg1;
 - (void)setAssistiveTouchLongPressDuration:(double)arg1;
@@ -643,7 +657,6 @@
 - (void)setAssistiveTouchScannerCompactMenuEnabled:(bool)arg1;
 - (void)setAssistiveTouchScannerCursorHighVisibilityEnabled:(bool)arg1;
 - (void)setAssistiveTouchScannerMenuLabelsEnabled:(bool)arg1;
-- (void)setAssistiveTouchScannerPointPickerDefaultsToRescan:(bool)arg1;
 - (void)setAssistiveTouchScannerPrefersCompact:(bool)arg1 forLanguage:(id)arg2;
 - (void)setAssistiveTouchScannerSoundEnabled:(bool)arg1;
 - (void)setAssistiveTouchScannerSpeechEnabled:(bool)arg1;
@@ -762,6 +775,7 @@
 - (void)setRegisteredNotifications:(id)arg1;
 - (void)setShouldFlashForAlertInSilentMode:(bool)arg1;
 - (void)setShouldLimitDisplayRefreshRate:(bool)arg1;
+- (void)setShouldPerformValidationsAtRuntime:(bool)arg1;
 - (void)setShouldSpeakMedicalPreamble:(bool)arg1;
 - (void)setShouldStreamToLeftAid:(bool)arg1;
 - (void)setShouldStreamToRightAid:(bool)arg1;
@@ -786,7 +800,7 @@
 - (void)setSwitchControlMediaControlsMenuItems:(id)arg1;
 - (void)setSwitchControlMediaControlsTopLevelMenuItems:(id)arg1;
 - (void)setSwitchControlPlatformSwitchedCount:(long long)arg1;
-- (void)setSwitchControlPointPickerHighPrecisionEnabled:(bool)arg1;
+- (void)setSwitchControlPointPickerSelectionStyle:(long long)arg1;
 - (void)setSwitchControlRecipes:(id)arg1;
 - (void)setSwitchControlRestartScanningAtCurrentKey:(bool)arg1;
 - (void)setSwitchControlScanAfterTapLocation:(long long)arg1;
@@ -799,15 +813,19 @@
 - (void)setSwitchControlShouldUseShortFirstPage:(bool)arg1;
 - (void)setSwitchControlTapBehavior:(long long)arg1;
 - (void)setSwitchControlTopLevelMenuItems:(id)arg1;
+- (void)setSwitchControlUserDidReadUSBRestrictedModeAlert:(bool)arg1;
 - (void)setSyncPronunciationsWithCloudKit:(bool)arg1;
 - (void)setSynchronizeDomains:(id)arg1;
 - (void)setTapticTimeUsageCount:(long long)arg1;
 - (void)setTestingExtantVoices:(id)arg1;
+- (void)setTouchAccommodationsAllowsSwipeGesturesToBypass:(bool)arg1;
 - (void)setTouchAccommodationsEnabled:(bool)arg1;
 - (void)setTouchAccommodationsHoldDuration:(double)arg1;
+- (void)setTouchAccommodationsHoldDurationAllowsSwipeGesturesToBypass:(bool)arg1;
 - (void)setTouchAccommodationsHoldDurationEnabled:(bool)arg1;
 - (void)setTouchAccommodationsIgnoreRepeatDuration:(double)arg1;
 - (void)setTouchAccommodationsIgnoreRepeatEnabled:(bool)arg1;
+- (void)setTouchAccommodationsSwipeGestureMinimumDistance:(double)arg1;
 - (void)setTouchAccommodationsTapActivationMethod:(long long)arg1;
 - (void)setTouchAccommodationsTapActivationTimeout:(double)arg1;
 - (void)setTouchAccommodationsTripleClickConfirmed:(bool)arg1;
@@ -815,11 +833,14 @@
 - (void)setTripleClickOptions:(id)arg1;
 - (void)setTripleClickOrderedOptions:(id)arg1;
 - (void)setUpdateBlocks:(id)arg1;
+- (void)setUseNewAXBundleLoader:(bool)arg1;
+- (void)setUserDidSelectVoiceForLanguage:(id)arg1 source:(long long)arg2;
 - (void)setValidateSecondPartyApps:(bool)arg1;
 - (void)setVoiceOverActivationWorkaround:(long long)arg1;
 - (void)setVoiceOverAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
 - (void)setVoiceOverAlwaysUseNemethCodeForMathEnabled:(bool)arg1;
 - (void)setVoiceOverAudioDuckingEnabled:(bool)arg1;
+- (void)setVoiceOverAudioFollowsHDMIAudio:(bool)arg1;
 - (void)setVoiceOverBSIUsageCount:(long long)arg1;
 - (void)setVoiceOverBrailleAlertDisplayDuration:(double)arg1;
 - (void)setVoiceOverBrailleBluetoothDisplay:(id)arg1;
@@ -864,6 +885,7 @@
 - (void)setVoiceOverSilenceAnnouncements:(bool)arg1;
 - (void)setVoiceOverSoftwareTypingFeedback:(long long)arg1;
 - (void)setVoiceOverSoundEffectsEnabled:(bool)arg1;
+- (void)setVoiceOverSpeakActionConfirmation:(bool)arg1;
 - (void)setVoiceOverSpeakNonfocusableElementsAfterDelay:(bool)arg1;
 - (void)setVoiceOverSpeakNotificationsEnabled:(bool)arg1;
 - (void)setVoiceOverSpeakSecondsEncoding:(long long)arg1;
@@ -891,6 +913,7 @@
 - (void)setVoiceOverTypingMode:(int)arg1;
 - (void)setVoiceOverUIEnabled:(bool)arg1;
 - (void)setVoiceOverUsageConfirmed:(bool)arg1;
+- (void)setVoiceOverUserDidReadUSBRestrictedModeAlert:(bool)arg1;
 - (void)setVoiceOverVerbosityEmojiSuffixEnabled:(bool)arg1;
 - (void)setVoiceOverVerbositySpeakCustomActionsHint:(bool)arg1;
 - (void)setVoiceOverVolume:(float)arg1;
@@ -931,6 +954,7 @@
 - (id)settingsKeys;
 - (bool)shouldFlashForAlertInSilentMode;
 - (bool)shouldLimitDisplayRefreshRate;
+- (bool)shouldPerformValidationsAtRuntime;
 - (bool)shouldSpeakMedicalPreamble;
 - (bool)shouldStreamToLeftAid;
 - (bool)shouldStreamToRightAid;
@@ -956,7 +980,7 @@
 - (id)switchControlMediaControlsMenuItems;
 - (id)switchControlMediaControlsTopLevelMenuItems;
 - (long long)switchControlPlatformSwitchedCount;
-- (bool)switchControlPointPickerHighPrecisionEnabled;
+- (long long)switchControlPointPickerSelectionStyle;
 - (id)switchControlRecipes;
 - (bool)switchControlRestartScanningAtCurrentKey;
 - (long long)switchControlScanAfterTapLocation;
@@ -969,17 +993,23 @@
 - (bool)switchControlShouldUseShortFirstPage;
 - (long long)switchControlTapBehavior;
 - (id)switchControlTopLevelMenuItems;
+- (bool)switchControlUserDidReadUSBRestrictedModeAlert;
 - (id)switchForUUID:(id)arg1;
 - (bool)syncPronunciationsWithCloudKit;
 - (id)synchronizeDomains;
 - (long long)tapticTimeUsageCount;
+- (id)testingExtantVoices;
 - (id)topLevelKeys;
+- (bool)touchAccommodationsAllowsSwipeGesturesToBypass;
 - (bool)touchAccommodationsAreConfigured;
 - (bool)touchAccommodationsEnabled;
 - (double)touchAccommodationsHoldDuration;
+- (bool)touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
 - (bool)touchAccommodationsHoldDurationEnabled;
+- (long long)touchAccommodationsHoldDurationSwipeGestureSensitivity;
 - (double)touchAccommodationsIgnoreRepeatDuration;
 - (bool)touchAccommodationsIgnoreRepeatEnabled;
+- (double)touchAccommodationsSwipeGestureMinimumDistance;
 - (long long)touchAccommodationsTapActivationMethod;
 - (double)touchAccommodationsTapActivationTimeout;
 - (bool)touchAccommodationsTripleClickConfirmed;
@@ -988,12 +1018,15 @@
 - (id)tripleClickOrderedOptions;
 - (id)updateBlocks;
 - (bool)updateRecipe:(id)arg1;
+- (bool)useNewAXBundleLoader;
+- (bool)userDidSelectVoiceForLanguage:(id)arg1 source:(long long)arg2;
 - (bool)validateAndUpdateRecipeIfNeeded:(id)arg1;
 - (bool)validateSecondPartyApps;
 - (long long)voiceOverActivationWorkaround;
 - (id)voiceOverAlternativeVoiceIdentifier:(id)arg1;
 - (bool)voiceOverAlwaysUseNemethCodeForMathEnabled;
 - (bool)voiceOverAudioDuckingEnabled;
+- (bool)voiceOverAudioFollowsHDMIAudio;
 - (long long)voiceOverBSIUsageCount;
 - (double)voiceOverBrailleAlertDisplayDuration;
 - (id)voiceOverBrailleBluetoothDisplay;
@@ -1041,6 +1074,7 @@
 - (bool)voiceOverSilenceAnnouncements;
 - (long long)voiceOverSoftwareTypingFeedback;
 - (bool)voiceOverSoundEffectsEnabled;
+- (bool)voiceOverSpeakActionConfirmation;
 - (bool)voiceOverSpeakNonfocusableElementsAfterDelay;
 - (bool)voiceOverSpeakNotificationsEnabled;
 - (long long)voiceOverSpeakSecondsEncoding;
@@ -1068,6 +1102,7 @@
 - (int)voiceOverTypingMode;
 - (bool)voiceOverUIEnabled;
 - (bool)voiceOverUsageConfirmed;
+- (bool)voiceOverUserDidReadUSBRestrictedModeAlert;
 - (bool)voiceOverVerbosityEmojiSuffixEnabled;
 - (bool)voiceOverVerbositySpeakCustomActionsHint;
 - (float)voiceOverVolume;

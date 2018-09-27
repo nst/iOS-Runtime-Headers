@@ -15,7 +15,7 @@
 
 - (struct { double x1; double x2; double x3; double x4; })attachmentBoundsMargins;
 - (bool)canDragWithoutSelecting;
-- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3;
+- (void)fixAttachmentForAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forPlainText:(bool)arg3 forStandardizedText:(bool)arg4;
 - (struct CGSize { double x1; double x2; })lastAttachmentSize;
 - (double)lastAvailableWidth;
 - (id)printableTextContent;

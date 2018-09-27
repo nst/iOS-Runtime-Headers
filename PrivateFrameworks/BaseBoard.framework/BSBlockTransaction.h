@@ -9,11 +9,11 @@
 
 @property (nonatomic, copy) NSString *debugName;
 
+- (void).cxx_destruct;
 - (void)_begin;
 - (bool)_canBeInterrupted;
 - (id)_descriptionProem;
 - (id)_graphNodeDebugName;
-- (void)dealloc;
 - (id)debugName;
 - (id)initWithBlock:(id /* block */)arg1;
 - (void)setDebugName:(id)arg1;

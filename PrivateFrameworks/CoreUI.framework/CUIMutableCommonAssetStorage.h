@@ -18,6 +18,7 @@
 - (id)initWithPath:(id)arg1;
 - (void)removeAssetForKey:(id)arg1;
 - (void)removeAssetForKey:(const void*)arg1 withLength:(unsigned long long)arg2;
+- (void)setAppearanceIdentifier:(unsigned short)arg1 forName:(id)arg2;
 - (void)setAsset:(id)arg1 forKey:(id)arg2;
 - (void)setAsset:(id)arg1 forKey:(const void*)arg2 withLength:(unsigned long long)arg3;
 - (void)setAssociatedChecksum:(unsigned int)arg1;

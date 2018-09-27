@@ -21,11 +21,12 @@
 - (oneway void)extensionRequestFinishedForApplication:(NSString *)arg1 error:(NSError *)arg2;
 - (oneway void)extensionRequestWillStartForApplication:(NSString *)arg1;
 - (oneway void)getBulletinContext:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (oneway void)handleIntent:(void *)arg1 inBackgroundAppWithBundleId:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: INIntent *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, INIntentResponse *, NSError *, void*
+- (oneway void)getClockContext:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AFClockAlarmSnapshot *, AFClockTimerSnapshot *, void*
 - (oneway void)invalidateCurrentUserActivity;
 - (oneway void)musicWasDetected;
 - (oneway void)quickStopWasHandledWithActions:(unsigned long long)arg1;
 - (oneway void)requestDidReceiveCommand:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AceObject<SAAceCommand> *, void*
+- (oneway void)requestHandleCommand:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AceObject<SAAceCommand> *, NSError *, void*
 - (oneway void)requestRequestedDismissAssistant;
 - (oneway void)requestRequestedOpenApplicationWithBundleID:(void *)arg1 URL:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (oneway void)requestRequestedOpenURL:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*

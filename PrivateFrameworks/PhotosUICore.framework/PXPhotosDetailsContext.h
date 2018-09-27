@@ -15,6 +15,7 @@
     bool  _shouldShowMovieHeader;
     bool  _shouldUseKeyFace;
     NSString * _titleFontName;
+    PXPhotosDetailsViewModel * _viewModel;
     unsigned long long  _viewSourceOrigin;
 }
 
@@ -35,9 +36,11 @@
 @property (nonatomic, readonly) bool shouldUseKeyFace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *titleFontName;
+@property (nonatomic, readonly) PXPhotosDetailsViewModel *viewModel;
 @property (nonatomic, readonly) unsigned long long viewSourceOrigin;
 
 + (id)photosDetailsContextForMemory:(id)arg1;
++ (id)photosDetailsContextForSection:(long long)arg1 inPhotosDataSource:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (void)_updatePropertiesDerivedFromDisplayTitleInfo;
@@ -65,11 +68,13 @@
 - (void)setPeople:(id)arg1;
 - (void)setShouldShowMovieHeader:(bool)arg1;
 - (void)setTitleFontName:(id)arg1;
+- (void)setViewModel:(id)arg1;
 - (void)setViewSourceOrigin:(unsigned long long)arg1;
 - (bool)shouldShowHeaderTitle;
 - (bool)shouldShowMovieHeader;
 - (bool)shouldUseKeyFace;
 - (id)titleFontName;
+- (id)viewModel;
 - (unsigned long long)viewSourceOrigin;
 
 @end

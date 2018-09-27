@@ -36,6 +36,10 @@
 - (id)videoSettings;
 - (id)videoTracks;
 
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
++ (id)assetReaderVideoCompositionOutputWithVideoComposition:(id)arg1 appliedToAsset:(id)arg2 videoSettings:(id)arg3;
+
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 + (id)assetReaderVideoCompositionOutputWithVideoComposition:(id)arg1 appliedToAsset:(id)arg2 videoSettings:(id)arg3;

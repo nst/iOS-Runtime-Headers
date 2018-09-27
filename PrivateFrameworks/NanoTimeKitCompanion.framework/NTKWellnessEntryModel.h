@@ -3,33 +3,31 @@
  */
 
 @interface NTKWellnessEntryModel : NTKTimelineEntryModel <CLKTimelineEntry, NSCopying> {
-    HKQuantity * _activeEnergy;
     HKQuantity * _activeEnergyGoal;
     HKQuantity * _activeEnergyTotal;
-    double  _briskMinutes;
     double  _briskMinutesGoal;
     double  _briskMinutesTotal;
     bool  _databaseLoading;
     bool  _deviceLocked;
-    NTKWellnessEntryModel * _previousEntryModel;
-    unsigned long long  _standHourState;
+    NSArray * _exerciseChartData;
+    NSArray * _moveChartData;
+    NSArray * _standChartData;
     long long  _standHoursGoal;
     long long  _standHoursTotal;
 }
 
-@property (nonatomic, retain) HKQuantity *activeEnergy;
 @property (nonatomic, retain) HKQuantity *activeEnergyGoal;
 @property (nonatomic, retain) HKQuantity *activeEnergyTotal;
-@property (nonatomic) double briskMinutes;
 @property (nonatomic) double briskMinutesGoal;
 @property (nonatomic) double briskMinutesTotal;
 @property (nonatomic) bool databaseLoading;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool deviceLocked;
+@property (nonatomic, retain) NSArray *exerciseChartData;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) NTKWellnessEntryModel *previousEntryModel;
-@property (nonatomic) unsigned long long standHourState;
+@property (nonatomic, retain) NSArray *moveChartData;
+@property (nonatomic, retain) NSArray *standChartData;
 @property (nonatomic) long long standHoursGoal;
 @property (nonatomic) long long standHoursTotal;
 @property (readonly) Class superclass;
@@ -37,6 +35,9 @@
 
 + (id)_LocalizedStringWithActiveEnergy:(id)arg1;
 + (id)_activityTemplateWithFamily:(long long)arg1 entryModel:(id)arg2;
++ (id)_signatureBezelFromModel:(id)arg1;
++ (id)_signatureCornerFromModel:(id)arg1;
++ (id)_signatureRectangleFromModel:(id)arg1;
 + (id)formattingManager;
 + (id)idealizedEntryModel;
 + (id)largeModular:(id)arg1;
@@ -44,13 +45,11 @@
 + (id)lockedEntryModel;
 
 - (void).cxx_destruct;
-- (id)activeEnergy;
 - (id)activeEnergyGoal;
 - (double)activeEnergyGoalCompletionPercentage;
 - (id)activeEnergyTotal;
 - (long long)availabilityState;
 - (double)briskMinuteGoalCompletionPercentage;
-- (double)briskMinutes;
 - (double)briskMinutesGoal;
 - (double)briskMinutesTotal;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -59,21 +58,21 @@
 - (id)debugDescription;
 - (id)description;
 - (bool)deviceLocked;
-- (id)previousEntryModel;
-- (void)setActiveEnergy:(id)arg1;
+- (id)exerciseChartData;
+- (id)moveChartData;
 - (void)setActiveEnergyGoal:(id)arg1;
 - (void)setActiveEnergyTotal:(id)arg1;
-- (void)setBriskMinutes:(double)arg1;
 - (void)setBriskMinutesGoal:(double)arg1;
 - (void)setBriskMinutesTotal:(double)arg1;
 - (void)setDatabaseLoading:(bool)arg1;
 - (void)setDate:(id)arg1;
-- (void)setPreviousEntryModel:(id)arg1;
-- (void)setStandHourState:(unsigned long long)arg1;
+- (void)setExerciseChartData:(id)arg1;
+- (void)setMoveChartData:(id)arg1;
+- (void)setStandChartData:(id)arg1;
 - (void)setStandHoursGoal:(long long)arg1;
 - (void)setStandHoursTotal:(long long)arg1;
+- (id)standChartData;
 - (double)standHourGoalCompletionPercentage;
-- (unsigned long long)standHourState;
 - (long long)standHoursGoal;
 - (long long)standHoursTotal;
 - (id)templateForComplicationFamily:(long long)arg1;

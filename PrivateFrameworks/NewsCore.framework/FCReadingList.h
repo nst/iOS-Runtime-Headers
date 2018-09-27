@@ -38,7 +38,7 @@
 - (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2 eventInitiationLevel:(long long)arg3;
 - (void)_fetchArticleIDsAvailableForOfflineReadingWithCompletion:(id /* block */)arg1;
 - (void)_invalidateAllSortedEntriesInReadingList;
-- (unsigned long long)_maxCountOfArticlesAvailableOfflineWithCoreConfiguration:(id)arg1;
+- (unsigned long long)_maxCountOfArticlesAvailableOfflineWithConfiguration:(id)arg1;
 - (void)addArticleToReadingList:(id)arg1;
 - (void)addArticleToReadingList:(id)arg1 eventInitiationLevel:(long long)arg2 origin:(unsigned long long)arg3;
 - (void)addObserver:(id)arg1;

@@ -19,6 +19,7 @@
 - (NSString *)punchoutPickerDismissText;
 - (NSString *)punchoutPickerTitle;
 - (bool)reducedRowHeight;
+- (NSArray *)richData;
 - (int)separatorStyle;
 - (void)setAlignRowsToHeader:(bool)arg1;
 - (void)setAlignmentSchema:(SFTableAlignmentSchema *)arg1;
@@ -32,6 +33,7 @@
 - (void)setPunchoutPickerDismissText:(NSString *)arg1;
 - (void)setPunchoutPickerTitle:(NSString *)arg1;
 - (void)setReducedRowHeight:(bool)arg1;
+- (void)setRichData:(NSArray *)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setTabGroupIdentifier:(NSString *)arg1;
 - (void)setTableIdentifier:(NSString *)arg1;

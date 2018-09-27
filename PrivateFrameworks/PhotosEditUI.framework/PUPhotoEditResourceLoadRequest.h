@@ -4,6 +4,7 @@
 
 @interface PUPhotoEditResourceLoadRequest : NSObject <NSCopying> {
     long long  __resolvedVersion;
+    bool  _assetLoadingAsRaw;
     <PUPhotoEditResourceLoaderDelegate> * _delegate;
     bool  _requireAdjustments;
     bool  _requireLocalResources;
@@ -15,6 +16,7 @@
 }
 
 @property (setter=_setResolvedVersion:, nonatomic) long long _resolvedVersion;
+@property (nonatomic) bool assetLoadingAsRaw;
 @property (nonatomic) <PUPhotoEditResourceLoaderDelegate> *delegate;
 @property (nonatomic) bool requireAdjustments;
 @property (nonatomic) bool requireLocalResources;
@@ -24,19 +26,21 @@
 - (void).cxx_destruct;
 - (id)_adjustmentsRequestOptions;
 - (void)_assertWorkVersionResolved;
-- (id)_imageRequestOptions;
-- (long long)_imageRequestVersion;
+- (id)_imageRequestOptionsWithAsset:(id)arg1;
+- (long long)_imageRequestVersionWithAsset:(id)arg1;
 - (bool)_isWorkVersionResolved;
 - (bool)_needsLoadAdjustments;
 - (void)_resolveVersionIfNeededWithAdjustmentsResult:(id)arg1;
 - (long long)_resolvedVersion;
 - (void)_setResolvedVersion:(long long)arg1;
-- (id)_videoRequestOptions;
+- (id)_videoRequestOptionsWithAsset:(id)arg1;
 - (long long)_videoRequestVersion;
+- (bool)assetLoadingAsRaw;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
 - (bool)requireAdjustments;
 - (bool)requireLocalResources;
+- (void)setAssetLoadingAsRaw:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRequireAdjustments:(bool)arg1;
 - (void)setRequireLocalResources:(bool)arg1;

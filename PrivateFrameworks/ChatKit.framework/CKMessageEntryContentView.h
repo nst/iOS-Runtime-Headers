@@ -71,7 +71,7 @@
 + (void)prewarmTextView;
 
 - (void).cxx_destruct;
-- (double)_calcuateIdealMaxPluginHeight;
+- (double)_calcuateIdealMaxPluginHeight:(bool)arg1;
 - (void)_layoutDividerLine:(id)arg1 leftInset:(double)arg2 rightInset:(double)arg3 currentYOffset:(double*)arg4;
 - (void)_layoutTextView:(id)arg1 currentYOffset:(double*)arg2 originX:(double)arg3 maxWidth:(double)arg4;
 - (double)_maxWidthForTextView;
@@ -116,9 +116,9 @@
 - (id)placeholderText;
 - (id)pluginDividerLine;
 - (id)pluginEntryViewController;
+- (void)pluginPayloadWantsResize:(id)arg1;
 - (id)pluginView;
 - (void)plugingPayloadDidLoad:(id)arg1;
-- (void)plugingPayloadWantsResize:(id)arg1;
 - (void)prepareForShelfPayloadAnimation;
 - (id)requestedPlaceholderText;
 - (double)sendButtonTextInsetWidth;

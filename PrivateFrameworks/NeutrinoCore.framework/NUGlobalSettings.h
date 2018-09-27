@@ -24,6 +24,8 @@
 + (bool)imageSourceDisableRAW;
 + (long long)imageTileSize;
 + (bool)isViewDebugEnabled;
++ (bool)logPeakRenderCIUsuage;
++ (id)pipelineSourceURL;
 + (bool)platformHasWideColor;
 + (double)renderJSPipelineTimeout;
 + (bool)renderVideoLive;
@@ -46,6 +48,8 @@
 + (void)setImageSourceDisableCacheImmediately:(bool)arg1;
 + (void)setImageSourceDisableRAW:(bool)arg1;
 + (void)setImageTileSize:(long long)arg1;
++ (void)setLogPeakRenderCIUsuage:(bool)arg1;
++ (void)setPipelineSourceURL:(id)arg1;
 + (void)setPlatformHasWideColor:(bool)arg1;
 + (void)setRenderJSPipelineTimeout:(double)arg1;
 + (void)setRenderVideoLive:(bool)arg1;

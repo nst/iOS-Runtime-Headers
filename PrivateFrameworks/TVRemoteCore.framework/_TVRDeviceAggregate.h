@@ -4,11 +4,11 @@
 
 @interface _TVRDeviceAggregate : NSObject {
     _TVRCMRTelevisionWrapper * _mediaRemote;
-    TVRCDevice * _publicDevice;
+    _TVRXDevice * _publicDevice;
 }
 
 @property (nonatomic, retain) _TVRCMRTelevisionWrapper *mediaRemote;
-@property (nonatomic, retain) TVRCDevice *publicDevice;
+@property (nonatomic, retain) _TVRXDevice *publicDevice;
 
 - (void).cxx_destruct;
 - (id)bestImpl;

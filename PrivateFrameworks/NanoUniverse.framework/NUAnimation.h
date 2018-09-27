@@ -23,7 +23,7 @@
     int  _valuesCount;
 }
 
-@property (nonatomic, retain) <NUAnimatable> *animatable;
+@property (nonatomic) <NUAnimatable> *animatable;
 @property (nonatomic) float delay;
 @property (nonatomic) float duration;
 @property (nonatomic) int frameInterval;
@@ -31,13 +31,14 @@
 @property (nonatomic) unsigned long long function;
 @property (nonatomic) unsigned long long key;
 @property (nonatomic) <NUAnimationObserver> *observer;
-@property (nonatomic) bool pause;
-@property (nonatomic) bool repeat;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (getter=isRepeat, nonatomic) bool repeat;
 @property (nonatomic) float startTime;
 @property (nonatomic) void to;
 
 - (void).cxx_destruct;
 - (id)animatable;
+- (void)apply:(float)arg1;
 - (float)delay;
 - (float)duration;
 - (int)frameInterval;
@@ -47,10 +48,10 @@
 - (id)initWithAnimatable:(void *)arg1 from:(void *)arg2 to:(void *)arg3 key:(void *)arg4; // needs 4 arg types, found 2: id, unsigned long long
 - (id)initWithAnimatable:(void *)arg1 value:(void *)arg2 key:(void *)arg3; // needs 3 arg types, found 2: id, unsigned long long
 - (id)initWithAnimatable:(id)arg1 values:(/* Warning: Unrecognized filer type: '2' using 'void*' */ void**)arg2 count:(int)arg3 key:(unsigned long long)arg4;
+- (bool)isPaused;
+- (bool)isRepeat;
 - (unsigned long long)key;
 - (id)observer;
-- (bool)pause;
-- (bool)repeat;
 - (void)setAnimatable:(id)arg1;
 - (void)setDelay:(float)arg1;
 - (void)setDuration:(float)arg1;
@@ -59,7 +60,7 @@
 - (void)setFunction:(unsigned long long)arg1;
 - (void)setKey:(unsigned long long)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setPause:(bool)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setRepeat:(bool)arg1;
 - (void)setStartTime:(float)arg1;
 - (void)setTo;

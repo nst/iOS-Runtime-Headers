@@ -14,9 +14,9 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)checkin;
 - (id)checkout;
-- (void)dealloc;
 - (id)init;
 - (id)prefetchedKeys;
 - (void)registerClientClass:(Class)arg1;

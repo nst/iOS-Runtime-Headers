@@ -28,6 +28,7 @@
 @property (nonatomic) <_TVAppDocumentControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool dismissAppOnMenu;
+@property (nonatomic, readonly) <UIFocusItemContainer> *focusItemContainer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) TVMediaQueryEvaluator *mediaQueryEvaluator;
 @property (nonatomic, copy) id /* block */ menuGestureHandler;
@@ -35,6 +36,7 @@
 @property (nonatomic) bool opaque;
 @property (nonatomic, retain) _TVPagePerformanceController *pagePerformance;
 @property (nonatomic, retain) UIView *pagePerformanceView;
+@property (nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (readonly) Class superclass;
@@ -82,6 +84,7 @@
 - (void)pagePerformanceController:(id)arg1 didUpdateMetrics:(id)arg2;
 - (id)pagePerformanceView;
 - (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (bool)ppt_isLoading;
 - (id)preferredFocusEnvironments;
 - (long long)preferredStatusBarStyle;
 - (void)reload;

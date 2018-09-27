@@ -4,12 +4,12 @@
 
 @interface NCNotificationListStalenessEventTracker : NSObject {
     NSMutableDictionary * _lastDisplayedDateByNotificationMetadata;
-    <NCNotificationList> * _notificationList;
+    NCNotificationListSection * _notificationList;
     NSObject<OS_dispatch_queue> * _queue;
     PETScalarEventTracker * _stalenessEventTracker;
 }
 
-@property (nonatomic) <NCNotificationList> *notificationList;
+@property (nonatomic) NCNotificationListSection *notificationList;
 
 + (id)_allMetricsSafeBundleIdentifiers;
 + (id)_metricsSafeBundleIdentifierByBundleIdentifier;

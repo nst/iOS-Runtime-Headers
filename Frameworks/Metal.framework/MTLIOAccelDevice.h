@@ -10,10 +10,11 @@
         struct MTLRangeAllocator { 
             struct MTLRangeAllocatorElement {} *elements; 
             unsigned int numElements; 
-            unsigned int capacity; 
-            unsigned int capacityIncrement; 
-            unsigned int defaultAlignmentMask; 
+            unsigned long long capacity; 
+            unsigned long long capacityIncrement; 
+            unsigned long long defaultAlignmentMask; 
         } allocators[64]; 
+        unsigned int allocations[64]; 
         unsigned int count; 
     }  _bufferHeaps;
     /* Warning: unhandled struct encoding: '{MTLIOAccelCommandBufferStoragePool={storageQueue=^{MTLIOAccelCommandBufferStorage}^^{MTLIOAccelCommandBufferStorage}}{os_unfair_lock_s=I}ii@}' */ struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; struct os_unfair_lock_s { unsigned int x_2_1_1; } x2; int x3; int x4; id x5; } * _commandBufferStoragePool;
@@ -62,11 +63,11 @@
 - (unsigned int)acceleratorPort;
 - (id)akPrivateResourceListPool;
 - (id)akResourceListPool;
-- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
+- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(unsigned long long*)arg6;
 - (bool)areProgrammableSamplePositionsSupported;
 - (unsigned long long)currentAllocatedSize;
 - (void)dealloc;
-- (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
+- (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5;
 - (unsigned long long)dedicatedMemorySize;
 - (struct __IOAccelDevice { }*)deviceRef;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
@@ -76,10 +77,13 @@
 - (id)initWithAcceleratorPort:(unsigned int)arg1;
 - (unsigned int)initialKernelCommandShmemSize;
 - (unsigned int)initialSegmentListShmemSize;
+- (unsigned long long)maxBufferLength;
 - (id)newCommandQueueWithDescriptor:(id)arg1;
+- (id)newEvent;
 - (id)newFence;
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (id)newIndirectArgumentEncoderWithLayout:(id)arg1;
+- (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (int)numCommandBuffers;
 - (unsigned long long)recommendedMaxWorkingSetSize;
 - (unsigned long long)registryID;

@@ -10,10 +10,12 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
+@property (getter=_searchQuery, nonatomic, readonly) NSString *searchQuery;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
+- (id)_searchQuery;
 - (void)applyToSuggestionEntry:(id)arg1 withAutocompleteSearchResultIdentifier:(id)arg2;
 - (void)applyToSuggestionList:(id)arg1;
 - (bool)hasShouldDisplayNoResults;

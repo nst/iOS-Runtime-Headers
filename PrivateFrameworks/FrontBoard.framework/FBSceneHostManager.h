@@ -8,6 +8,15 @@
     bool  _contentStateIsChanging;
     UIColor * _defaultBackgroundColorWhileHosting;
     UIColor * _defaultBackgroundColorWhileNotHosting;
+    bool  _defaultClippingDisabled;
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _defaultHostViewTransform;
     unsigned long long  _defaultHostedLayerTypes;
     NSString * _defaultMinificationFilterName;
     unsigned long long  _defaultRenderingMode;
@@ -31,6 +40,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) UIColor *defaultBackgroundColorWhileHosting;
 @property (nonatomic, copy) UIColor *defaultBackgroundColorWhileNotHosting;
+@property (nonatomic) bool defaultClippingDisabled;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } defaultHostViewTransform;
 @property (nonatomic) unsigned long long defaultHostedLayerTypes;
 @property (nonatomic, copy) NSString *defaultMinificationFilterName;
 @property (nonatomic) unsigned long long defaultRenderingMode;
@@ -39,9 +50,10 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (getter=isInvalidated, nonatomic, readonly) bool invalidated;
-@property (nonatomic, readonly, retain) FBScene *scene;
+@property (nonatomic, readonly) FBScene *scene;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_activateRequester:(id)arg1;
 - (id)_activeHostRequester;
 - (void)_callOutToObservers:(id /* block */)arg1;
@@ -58,6 +70,8 @@
 - (void)dealloc;
 - (id)defaultBackgroundColorWhileHosting;
 - (id)defaultBackgroundColorWhileNotHosting;
+- (bool)defaultClippingDisabled;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })defaultHostViewTransform;
 - (unsigned long long)defaultHostedLayerTypes;
 - (id)defaultMinificationFilterName;
 - (unsigned long long)defaultRenderingMode;
@@ -83,6 +97,8 @@
 - (void)setContextId:(unsigned int)arg1 hidden:(bool)arg2 forRequester:(id)arg3;
 - (void)setDefaultBackgroundColorWhileHosting:(id)arg1;
 - (void)setDefaultBackgroundColorWhileNotHosting:(id)arg1;
+- (void)setDefaultClippingDisabled:(bool)arg1;
+- (void)setDefaultHostViewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setDefaultHostedLayerTypes:(unsigned long long)arg1;
 - (void)setDefaultMinificationFilterName:(id)arg1;
 - (void)setDefaultRenderingMode:(unsigned long long)arg1;

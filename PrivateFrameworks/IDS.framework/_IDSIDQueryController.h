@@ -11,7 +11,6 @@
     NSMutableDictionary * _listenerIDToServicesMap;
     NSMutableDictionary * _listeners;
     NSObject<OS_dispatch_queue> * _queue;
-    NSString * _rerouteService;
     NSString * _serviceToken;
     NSMutableDictionary * _transactionIDToBlockMap;
 }
@@ -47,7 +46,6 @@
 - (void)_requestCachedStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)_requestRemoteDevicesForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)_requestStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 completionBlock:(id /* block */)arg4;
-- (id)_reroutedPrototypeService:(id)arg1;
 - (void)_setCurrentIDStatus:(long long)arg1 forDestination:(id)arg2 service:(id)arg3;
 - (void)_updateCacheWithDictionary:(id)arg1 service:(id)arg2;
 - (bool)_warmupQueryCacheForService:(id)arg1;

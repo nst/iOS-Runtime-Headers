@@ -34,4 +34,8 @@
 
 - (id)hk_equivalentQuantity;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+
 @end

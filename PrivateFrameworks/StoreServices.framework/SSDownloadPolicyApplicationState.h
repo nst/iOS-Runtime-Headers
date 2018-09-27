@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadPolicyApplicationState : NSObject <NSCoding, NSCopying, NSSecureCoding, SSXPCCoding> {
+@interface SSDownloadPolicyApplicationState : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSString * _applicationIdentifier;
     NSSet * _applicationStates;
 }

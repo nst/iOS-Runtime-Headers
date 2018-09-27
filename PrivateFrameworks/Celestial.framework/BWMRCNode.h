@@ -65,6 +65,7 @@
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (id)init;
+- (id)initUsingSceneClassifierQRCodeDetectionVersion:(struct { unsigned short x1; unsigned short x2; unsigned short x3; })arg1;
 - (bool)lowPowerModeEnabled;
 - (id)mrcIdentifiers;
 - (id)nodeSubType;
@@ -76,7 +77,5 @@
 - (void)setLowPowerModeEnabled:(bool)arg1;
 - (void)setMrcIdentifiers:(id)arg1;
 - (void)setRectOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setUsesSceneClassifierToGateQRCodeDetection:(bool)arg1;
-- (bool)usesSceneClassifierToGateQRCodeDetection;
 
 @end

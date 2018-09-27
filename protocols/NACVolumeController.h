@@ -12,6 +12,7 @@
 - (void)endObservingHaptics;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
+- (long long)hapticState;
 - (bool)isMuted;
 - (bool)isProminentHapticEnabled;
 - (bool)isSystemMuted;
@@ -19,6 +20,7 @@
 - (bool)isVolumeWarningEnabled;
 - (void)setDelegate:(id <NACVolumeControllerDelegate>)arg1;
 - (void)setHapticIntensity:(float)arg1;
+- (void)setHapticState:(long long)arg1;
 - (void)setMuted:(bool)arg1;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;

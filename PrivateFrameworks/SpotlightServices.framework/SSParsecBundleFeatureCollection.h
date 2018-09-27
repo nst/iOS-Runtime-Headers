@@ -3,6 +3,7 @@
  */
 
 @interface SSParsecBundleFeatureCollection : NSObject {
+    NSNumber * _blockIdValue;
     NSNumber * _cep;
     NSNumber * _cepAllMaxRatio;
     NSNumber * _cepMaxRatio;
@@ -16,6 +17,7 @@
     NSNumber * _originalOrderRelRank;
 }
 
+@property (nonatomic, retain) NSNumber *blockIdValue;
 @property (nonatomic, retain) NSNumber *cep;
 @property (nonatomic, retain) NSNumber *cepAllMaxRatio;
 @property (nonatomic, retain) NSNumber *cepMaxRatio;
@@ -29,6 +31,7 @@
 @property (nonatomic, retain) NSNumber *originalOrderRelRank;
 
 - (void).cxx_destruct;
+- (id)blockIdValue;
 - (id)cep;
 - (id)cepAllMaxRatio;
 - (id)cepMaxRatio;
@@ -41,6 +44,7 @@
 - (id)numResults;
 - (id)originalOrderAbsRank;
 - (id)originalOrderRelRank;
+- (void)setBlockIdValue:(id)arg1;
 - (void)setCep:(id)arg1;
 - (void)setCepAllMaxRatio:(id)arg1;
 - (void)setCepMaxRatio:(id)arg1;

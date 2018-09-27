@@ -4,7 +4,6 @@
 
 @interface NSSQLiteConnection : NSObject {
     NSMutableArray * _activeGenerations;
-    NSMutableArray * _batchChangedObjectsForHistoryTracking;
     NSSQLiteStatement * _beginStatement;
     struct __CFDictionary { } * _cachedEntityConstrainedValuesUpdateStatements;
     struct __CFDictionary { } * _cachedEntityUpdateStatements;
@@ -50,7 +49,7 @@
     struct sqlite3_stmt { } * _updatePKStatement;
     bool  _useSyntaxColoredLogging;
     long long  _vacuumTracker;
-    NSMutableSet * _vmCachedStatements;
+    struct __CFDictionary { } * _vmCachedStatements;
     struct sqlite3_stmt { } * _vmstatement;
     NSURL * _workingURL;
 }
@@ -80,6 +79,7 @@
 - (void)_clearBindVariablesForUpdateStatement:(id)arg1 forDeltasMask:(struct __CFBitVector { }*)arg2;
 - (void)_clearCachedStatements;
 - (void)_clearOtherStatements;
+- (void)_clearSaveGeneratedCachedStatements;
 - (void)_clearTransactionCaches;
 - (id)_compressedDataWithModel:(id)arg1;
 - (void)_configureAutoVacuum;
@@ -87,8 +87,11 @@
 - (void)_configurePageSize;
 - (void)_configurePragmaOptions:(int)arg1 createdSchema:(bool)arg2;
 - (void)_configureSynchronousMode;
+- (long long)_countOfRowsInTable:(id)arg1;
+- (unsigned long long)_countOfVMCachedStatements;
 - (id)_currentQueryGenerationSnapshot:(id*)arg1;
 - (id)_decompressedModelWithData:(id)arg1;
+- (void)_dropKnownHistoryTrackingTables;
 - (void)_dropOldCloudKitTables;
 - (void)_dropOldHistoryTrackingTables;
 - (void)_dropOldHistoryTrackingTablesV0;
@@ -112,7 +115,10 @@
 - (bool)_hasOldHistoryTrackingTablesV1;
 - (bool)_hasPersistentHistoryTables;
 - (bool)_hasTableWithName:(id)arg1;
-- (long long)_insertTransactionForRequestContext:(id)arg1;
+- (bool)_hasTableWithName:(id)arg1 isTemp:(bool)arg2;
+- (bool)_hasTempTableWithName:(id)arg1;
+- (long long)_insertTransactionForRequestContext:(id)arg1 andStrings:(id)arg2;
+- (id)_insertTransactionStringsForRequestContext:(id)arg1;
 - (bool)_isQueryGenerationTrackingConnection;
 - (id)_lastInsertRowID;
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
@@ -122,11 +128,14 @@
 - (void)_restoreBusyTimeOutSettings;
 - (int)_rowsChangedByLastExecute;
 - (void)_setupVacuumIfNecessary;
+- (bool)_tableHasRows:(id)arg1;
+- (bool)_useContextObjects;
 - (struct sqlite3_stmt { }*)_vmstatement;
 - (id)adapter;
 - (void)addPeerRange:(id)arg1;
 - (void)addPeerRangeForPeerID:(id)arg1 entityName:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 peerRangeStart:(id)arg5 peerRangeEnd:(id)arg6;
 - (bool)addTombstoneColumnsForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)addTransactionStringColumnsToTransactionTable;
 - (void)addVMCachedStatement:(id)arg1;
 - (void)adoptQueryGenerationWithIdentifier:(id)arg1;
 - (id)allPeerRanges;
@@ -140,7 +149,6 @@
 - (id)cachedUpdateConstrainedValuesStatmentForEntity:(id)arg1;
 - (id)cachedUpdateStatementForEntity:(id)arg1 andDeltasMask:(struct __CFBitVector { }*)arg2;
 - (bool)canConnect;
-- (void)clearBatchChangedObjectsForHistoryTracking;
 - (void)clearObjectIDsUpdatedByTriggers;
 - (void)clearPrefetchRequestCache;
 - (id)columnsToFetch;
@@ -171,6 +179,7 @@
 - (bool)deleteRow:(id)arg1 forRequestContext:(id)arg2;
 - (void)didCreateSchema;
 - (void)disconnect;
+- (void)dropHistoryBeforeTransactionID:(id)arg1;
 - (void)dropHistoryTrackingTables;
 - (void)dropUbiquityTables;
 - (void)endFetchAndRecycleStatement:(bool)arg1;
@@ -179,6 +188,8 @@
 - (void)executeCorrelationChangesForValue1:(unsigned long long)arg1 value2:(unsigned long long)arg2 value3:(unsigned long long)arg3 value4:(unsigned long long)arg4;
 - (id)executeMulticolumnUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
 - (id)fetchCachedModel;
+- (id)fetchCreationSQLForType:(id)arg1;
+- (id)fetchIndexCreationSQL;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (id)fetchMetadata;
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
@@ -187,20 +198,24 @@
 - (id)fetchUbiquityKnowledgeVector;
 - (void)forceTransactionClosed;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
+- (id)gatherUpdatedObjectIDs;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
+- (id)hasAncillaryEntitiesInHistory;
 - (bool)hasCachedModelTable;
 - (bool)hasChangeTrackingTables;
 - (bool)hasCloudKitTables;
+- (bool)hasHistoryRows;
 - (bool)hasHistoryTransactionWithNumber:(id)arg1;
 - (bool)hasMetadataTable;
 - (bool)hasMirroredRelationshipTable;
 - (bool)hasOpenTransaction;
 - (bool)hasPrimaryKeyTable;
+- (bool)hasTransactionStringColumnsInTransactionTable;
 - (id)initAsQueryGenerationTrackingConnectionForSQLCore:(id)arg1;
 - (id)initForSQLCore:(id)arg1;
 - (void)insertAncillaryModelObject:(id)arg1 withEntity:(id)arg2;
-- (void)insertBatchDeleteChanges:(id)arg1 transactionID:(long long)arg2;
+- (void)insertBatchDeleteChangesForTransactionID:(long long)arg1;
 - (void)insertChanges:(id)arg1 type:(long long)arg2 transactionID:(long long)arg3 context:(id)arg4;
 - (long long)insertImportOperation:(id)arg1;
 - (void)insertImportPendingRelationship:(id)arg1 withOperationPrimaryKey:(long long)arg2;
@@ -214,7 +229,6 @@
 - (id)metadataColumns;
 - (id)newFetchUUIDSForSubentitiesRootedAt:(id)arg1;
 - (id)newFetchedArray;
-- (id)newFetchedChangesArray;
 - (int)numberOfTombstones;
 - (void)performAndWait:(id /* block */)arg1;
 - (bool)performIntegrityCheck;
@@ -223,6 +237,7 @@
 - (void)prepareInsertStatementForAncillaryEntity:(id)arg1;
 - (void)prepareSQLStatement:(id)arg1;
 - (void)processDeleteRequest:(id)arg1;
+- (void)processExternalDataReferenceFilesDeletedByRequest:(id)arg1;
 - (void)processRelationshipUpdatesForRequestContext:(id)arg1;
 - (void)processSaveRequest:(id)arg1;
 - (void)processUpdateRequest:(id)arg1 withOIDs:(id)arg2 forAttributes:(id)arg3;
@@ -252,8 +267,7 @@
 - (void)transactionDidBegin;
 - (void)transactionDidCommit;
 - (void)transactionDidRollback;
-- (void)triggerBatchDeleteUpdatedRowForEntityID:(long long)arg1 primaryKey:(long long)arg2 relationshipName:(const char *)arg3;
-- (void)triggerBatchDeletedRowForEntityID:(long long)arg1 primaryKey:(long long)arg2 tombstone:(id)arg3;
+- (id)transactionStringForName:(id)arg1;
 - (void)triggerUpdatedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(long long)arg5;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;

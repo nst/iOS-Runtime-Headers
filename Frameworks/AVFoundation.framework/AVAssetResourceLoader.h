@@ -32,7 +32,6 @@
 - (void)_handleRequest:(struct __CFDictionary { }*)arg1 requestID:(unsigned long long)arg2 willHandleRequest:(bool*)arg3;
 - (void)_issueLoadingRequestWithKey:(id)arg1 loadingRequest:(id)arg2 isRenewalRequest:(bool)arg3 fallbackHandler:(id /* block */)arg4;
 - (void)_issueLoadingRequestWithKey:(id)arg1 requestDictionary:(id)arg2 fallbackHandler:(id /* block */)arg3;
-- (void)_makeURLSessionSupportGooIfNecessary;
 - (void)_noteFinishingOfRequest:(id)arg1;
 - (void)_performDelegateCallbackSynchronouslyIfCurrentDelegateQueueIsQueue:(id)arg1 delegateCallbackBlock:(id /* block */)arg2;
 - (void)_performDelegateSelector:(SEL)arg1 withObject:(id)arg2 representingNewRequest:(bool)arg3 key:(id)arg4 fallbackHandler:(id /* block */)arg5;
@@ -48,7 +47,6 @@
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)cancelLoading;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
-- (id)customURLBridge;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
@@ -58,7 +56,6 @@
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (bool)preloadsEligibleContentKeys;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)setCustomURLBridge:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setPreloadsEligibleContentKeys:(bool)arg1;
 - (void)setURLSession:(id)arg1;

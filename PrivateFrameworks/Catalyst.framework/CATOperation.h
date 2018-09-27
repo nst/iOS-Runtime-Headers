@@ -46,14 +46,12 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
-- (void)addDependency:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 delegateQueue:(id)arg4;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 userInfo:(id)arg4;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned long long)arg3 userInfo:(id)arg4 delegateQueue:(id)arg5;
 - (bool)canCancel;
-- (void)cancel;
 - (long long)completedUnitCount;
 - (id)createdDate;
 - (id)description;
@@ -75,7 +73,6 @@
 - (void)operationWillFinish;
 - (void)operationWillStart;
 - (unsigned long long)phase;
-- (void)removeDependency:(id)arg1;
 - (id)resultObject;
 - (void)setCompletedUnitCount:(long long)arg1;
 - (void)setCreatedDate:(id)arg1;

@@ -4,6 +4,7 @@
 
 @interface TDSimpleArtworkElementProduction : TDElementProduction
 
+@property (nonatomic) short autoscalingType;
 @property (nonatomic) bool isFlippable;
 @property (nonatomic) bool optOutOfThinning;
 @property (nonatomic) bool preservesVectorRepresentation;

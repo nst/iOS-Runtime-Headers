@@ -3,13 +3,15 @@
  */
 
 @interface MapsSuggestionsEngineBuilder : NSObject <MapsSuggestionsObject> {
-    NSMutableArray * _excludeDedupers;
-    NSMutableArray * _excludeFilters;
-    NSMutableArray * _excludeImprovers;
+    struct NSMutableArray { Class x1; } * _excludeDedupers;
+    struct NSMutableArray { Class x1; } * _excludeImprovers;
+    struct NSMutableSet { Class x1; } * _excludePostFilters;
+    struct NSMutableSet { Class x1; } * _excludePreFilters;
     bool  _hasTracker;
-    NSMutableArray * _includeDedupers;
-    NSMutableArray * _includeFilters;
-    NSMutableArray * _includeImprovers;
+    struct NSMutableArray { Class x1; } * _includeDedupers;
+    struct NSMutableArray { Class x1; } * _includeImprovers;
+    struct NSMutableSet { Class x1; } * _includePostFilters;
+    struct NSMutableSet { Class x1; } * _includePreFilters;
     <MapsSuggestionsLocationUpdater> * _locationUpdater;
     long long  _managerStyle;
     NSMutableArray * _sourceClasses;
@@ -20,13 +22,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableArray *excludeDedupers;
-@property (nonatomic, retain) NSMutableArray *excludeFilters;
 @property (nonatomic, retain) NSMutableArray *excludeImprovers;
+@property (nonatomic, retain) NSMutableSet *excludePostFilters;
+@property (nonatomic, retain) NSMutableSet *excludePreFilters;
 @property (nonatomic) bool hasTracker;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *includeDedupers;
-@property (nonatomic, retain) NSMutableArray *includeFilters;
 @property (nonatomic, retain) NSMutableArray *includeImprovers;
+@property (nonatomic, retain) NSMutableSet *includePostFilters;
+@property (nonatomic, retain) NSMutableSet *includePreFilters;
 @property (nonatomic, retain) <MapsSuggestionsLocationUpdater> *locationUpdater;
 @property (nonatomic) long long managerStyle;
 @property (nonatomic, retain) NSMutableArray *sourceClasses;
@@ -45,22 +49,26 @@
 
 - (void).cxx_destruct;
 - (id)build;
-- (id)excludeDedupers;
-- (id)excludeFilters;
-- (id)excludeImprovers;
+- (struct NSMutableArray { Class x1; }*)excludeDedupers;
+- (struct NSMutableArray { Class x1; }*)excludeImprovers;
+- (struct NSMutableSet { Class x1; }*)excludePostFilters;
+- (struct NSMutableSet { Class x1; }*)excludePreFilters;
 - (bool)hasTracker;
-- (id)includeDedupers;
-- (id)includeFilters;
-- (id)includeImprovers;
+- (struct NSMutableArray { Class x1; }*)includeDedupers;
+- (struct NSMutableArray { Class x1; }*)includeImprovers;
+- (struct NSMutableSet { Class x1; }*)includePostFilters;
+- (struct NSMutableSet { Class x1; }*)includePreFilters;
 - (id)locationUpdater;
 - (long long)managerStyle;
-- (void)setExcludeDedupers:(id)arg1;
-- (void)setExcludeFilters:(id)arg1;
-- (void)setExcludeImprovers:(id)arg1;
+- (void)setExcludeDedupers:(struct NSMutableArray { Class x1; }*)arg1;
+- (void)setExcludeImprovers:(struct NSMutableArray { Class x1; }*)arg1;
+- (void)setExcludePostFilters:(struct NSMutableSet { Class x1; }*)arg1;
+- (void)setExcludePreFilters:(struct NSMutableSet { Class x1; }*)arg1;
 - (void)setHasTracker:(bool)arg1;
-- (void)setIncludeDedupers:(id)arg1;
-- (void)setIncludeFilters:(id)arg1;
-- (void)setIncludeImprovers:(id)arg1;
+- (void)setIncludeDedupers:(struct NSMutableArray { Class x1; }*)arg1;
+- (void)setIncludeImprovers:(struct NSMutableArray { Class x1; }*)arg1;
+- (void)setIncludePostFilters:(struct NSMutableSet { Class x1; }*)arg1;
+- (void)setIncludePreFilters:(struct NSMutableSet { Class x1; }*)arg1;
 - (void)setLocationUpdater:(id)arg1;
 - (void)setManagerStyle:(long long)arg1;
 - (void)setSourceClasses:(id)arg1;
@@ -71,14 +79,14 @@
 - (struct NSMutableDictionary { Class x1; }*)titleFormatters;
 - (struct NSString { Class x1; }*)uniqueName;
 - (id)withDedupers:(id)arg1;
-- (id)withFilters:(id)arg1;
 - (id)withImprovers:(id)arg1;
 - (id)withLocationUpdater:(id)arg1;
 - (id)withManagerStyle:(long long)arg1;
+- (id)withPostFilters:(struct NSSet { Class x1; }*)arg1;
+- (id)withPreFilters:(struct NSSet { Class x1; }*)arg1;
 - (id)withSourceClasses:(id)arg1;
-- (id)withTitleFormatter:(id)arg1 forType:(unsigned long long)arg2;
+- (id)withTitleFormatter:(id)arg1 forType:(long long)arg2;
 - (id)withoutDedupers:(id)arg1;
-- (id)withoutFilters:(id)arg1;
 - (id)withoutImprovers:(id)arg1;
 - (id)withoutTracker;
 

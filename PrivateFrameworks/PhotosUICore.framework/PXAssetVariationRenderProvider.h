@@ -32,7 +32,6 @@
     NSProgress * _recipeGenerationProgress;
     bool  _renderAllResources;
     NSMutableDictionary * _resultsByVariationType;
-    unsigned char  _signpostID;
     long long  _status;
     NSString * _statusDescription;
     struct CGSize { 
@@ -82,7 +81,6 @@
 
 + (id)_imageURLCache;
 + (void)_performSimulatedWorkWithProgress:(id)arg1;
-+ (id)_renderingLog;
 + (id)_videoURLCache;
 + (id)placeholderFilters;
 + (id)sharedOperationQueue;

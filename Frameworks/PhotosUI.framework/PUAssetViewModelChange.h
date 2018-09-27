@@ -10,6 +10,7 @@
     bool  _contentOffsetChanged;
     bool  _focusValueChanged;
     bool  _forceBadgesVisibleChanged;
+    bool  _importStateChanged;
     PUBrowsingIrisPlayerChange * _irisPlayerChange;
     bool  _isFavoriteChanged;
     bool  _isInEditModeChanged;
@@ -29,6 +30,7 @@
 @property (setter=_setContentOffsetChanged:, nonatomic) bool contentOffsetChanged;
 @property (setter=_setFocusValueChanged:, nonatomic) bool focusValueChanged;
 @property (setter=_setForceBadgesVisibleChanged:, nonatomic) bool forceBadgesVisibleChanged;
+@property (setter=_setImportStateChanged:, nonatomic) bool importStateChanged;
 @property (setter=_setIrisPlayerChange:, nonatomic, retain) PUBrowsingIrisPlayerChange *irisPlayerChange;
 @property (setter=_setIsFavoriteChanged:, nonatomic) bool isFavoriteChanged;
 @property (setter=_setIsInEditModeChanged:, nonatomic) bool isInEditModeChanged;
@@ -48,6 +50,7 @@
 - (void)_setContentOffsetChanged:(bool)arg1;
 - (void)_setFocusValueChanged:(bool)arg1;
 - (void)_setForceBadgesVisibleChanged:(bool)arg1;
+- (void)_setImportStateChanged:(bool)arg1;
 - (void)_setIrisPlayerChange:(id)arg1;
 - (void)_setIsFavoriteChanged:(bool)arg1;
 - (void)_setIsInEditModeChanged:(bool)arg1;
@@ -66,6 +69,7 @@
 - (bool)focusValueChanged;
 - (bool)forceBadgesVisibleChanged;
 - (bool)hasChanges;
+- (bool)importStateChanged;
 - (id)irisPlayerChange;
 - (bool)isFavoriteChanged;
 - (bool)isInEditModeChanged;

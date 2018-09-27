@@ -56,6 +56,7 @@
 - (bool)cancelled;
 - (void)closeMemoryTransition:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)createDebugGraphics;
@@ -72,6 +73,7 @@
 - (bool)isSaveMode;
 - (id)logFeaturedPeopleInMemory;
 - (id)makeEnhancedStringFromPlainOne:(id)arg1;
+- (id)makeEnhancedStringFromPlainOne:(id)arg1 size:(int)arg2;
 - (id)memory;
 - (id)miroMovie;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
@@ -108,6 +110,7 @@
 - (void)setTextContainerView:(id)arg1;
 - (void)setTextOnly:(bool)arg1;
 - (void)showMemoryTransitions;
+- (void)showProject;
 - (void)showScoreLog;
 - (void)showTextVersion;
 - (void)showTextViewWith:(id)arg1;

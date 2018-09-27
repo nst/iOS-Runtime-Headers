@@ -8,11 +8,11 @@
     NSMutableArray * _connections;
     <HMFHTTPServerDelegate> * _delegate;
     _HMFCFHTTPServer * _internal;
+    HMFUnfairLock * _lock;
     NSString * _name;
     HMFMutableNetService * _netService;
     unsigned long long  _options;
     unsigned long long  _port;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableArray * _requestHandlers;
     NSString * _serviceType;
 }
@@ -29,13 +29,11 @@
 @property (nonatomic, readonly) HMFMutableNetService *netService;
 @property (nonatomic, readonly) unsigned long long options;
 @property (readonly) unsigned long long port;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly, copy) NSArray *requestHandlers;
 @property (nonatomic, readonly, copy) NSString *serviceType;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
-+ (id)shortDescription;
 
 - (void).cxx_destruct;
 - (void)_handleClosedConnection:(id)arg1;
@@ -43,15 +41,13 @@
 - (void)_handleReceivedRequest:(id)arg1 connection:(id)arg2;
 - (void)_stopWithError:(id)arg1;
 - (void)addConnection:(id)arg1;
+- (id)attributeDescriptions;
 - (id)clientQueue;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (double)connectionIdleTimeout;
 - (id)connections;
 - (void)dealloc;
-- (id)debugDescription;
 - (id)delegate;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
 - (id)initWithServiceType:(id)arg1 name:(id)arg2 port:(unsigned long long)arg3 options:(unsigned long long)arg4;
 - (id)internal;
@@ -60,7 +56,6 @@
 - (id)netService;
 - (unsigned long long)options;
 - (unsigned long long)port;
-- (id)propertyQueue;
 - (void)registerRequestHandler:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)requestHandlers;

@@ -40,7 +40,6 @@
 - (void)_updateSignificantEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateSignificantEventOffset:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateTimeZone:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fireDate;
 - (id)init;

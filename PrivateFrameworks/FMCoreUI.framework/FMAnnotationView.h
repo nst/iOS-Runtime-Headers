@@ -32,6 +32,7 @@
 @property (nonatomic, retain) CAShapeLayer *smallRingLayer;
 
 + (bool)_followsTerrain;
++ (void)preloadAssets;
 + (void)setImagePadding:(double)arg1;
 + (void)setLargeAnnotationBorderVisible:(bool)arg1;
 + (void)setShouldMaskLayer:(bool)arg1;

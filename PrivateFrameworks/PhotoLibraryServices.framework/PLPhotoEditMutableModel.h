@@ -31,6 +31,8 @@
 @property (nonatomic) double colorVibrancyLevelOffset;
 @property (nonatomic) double contrastLevelOffset;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
+@property (nonatomic) double depthEffectAperture;
+@property (nonatomic) double depthEffectApertureCaptured;
 @property (getter=isDepthEffectEnabled, nonatomic) bool depthEffectEnabled;
 @property (nonatomic, copy) NSDictionary *depthEffectSettings;
 @property (nonatomic, copy) NSString *effectFilterName;
@@ -38,6 +40,7 @@
 @property (nonatomic) double exposureLevelOffset;
 @property (getter=isFusionEnabled, nonatomic) bool fusionEnabled;
 @property (nonatomic, copy) NSDictionary *fusionParameters;
+@property (nonatomic) bool hasPortraitEffectAdjustment;
 @property (nonatomic) double highlightsLevelOffset;
 @property (nonatomic) long long inputOrientation;
 @property (nonatomic) struct CGSize { double x1; double x2; } inputSize;
@@ -49,6 +52,13 @@
 @property (nonatomic, copy) NSString *portraitEffectFilterName;
 @property (nonatomic) long long portraitEffectFilterVersion;
 @property (nonatomic, copy) NSDictionary *portraitEffectSettings;
+@property (nonatomic, retain) NSString *rawMethodVersion;
+@property (nonatomic, copy) NSNumber *rawNoiseReductionCNRAmount;
+@property (nonatomic, copy) NSNumber *rawNoiseReductionContrastAmount;
+@property (nonatomic, copy) NSNumber *rawNoiseReductionDetailAmount;
+@property (getter=isRawNoiseReductionEnabled, nonatomic) bool rawNoiseReductionEnabled;
+@property (nonatomic, copy) NSNumber *rawNoiseReductionLNRAmount;
+@property (nonatomic, copy) NSNumber *rawNoiseReductionSharpnessAmount;
 @property (nonatomic, copy) NSArray *redEyeCorrections;
 @property (nonatomic) double shadowsLevelOffset;
 @property (getter=isSmartBWEnabled, nonatomic) bool smartBWEnabled;
@@ -66,11 +76,18 @@
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } trimEndTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } trimStartTime;
 @property (nonatomic) long long userOrientation;
+@property (nonatomic) long long whiteBalanceColorType;
 @property (getter=isWhiteBalanceEnabled, nonatomic) bool whiteBalanceEnabled;
 @property (nonatomic) double whiteBalanceFaceI;
 @property (nonatomic) double whiteBalanceFaceQ;
 @property (nonatomic) double whiteBalanceFaceStrength;
 @property (nonatomic) double whiteBalanceFaceWarmth;
+@property (nonatomic) double whiteBalanceGrayI;
+@property (nonatomic) double whiteBalanceGrayQ;
+@property (nonatomic) double whiteBalanceGrayWarmth;
+@property (nonatomic) double whiteBalanceGrayY;
+@property (nonatomic) double whiteBalanceTemperature;
+@property (nonatomic) double whiteBalanceTint;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
@@ -108,6 +125,8 @@
 - (void)setContrastLevelOffset:(double)arg1;
 - (void)setCropConstraintWidth:(long long)arg1 height:(long long)arg2;
 - (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setDepthEffectAperture:(double)arg1;
+- (void)setDepthEffectApertureCaptured:(double)arg1;
 - (void)setDepthEffectEnabled:(bool)arg1;
 - (void)setDepthEffectSettings:(id)arg1;
 - (void)setEffectFilterName:(id)arg1;
@@ -115,6 +134,7 @@
 - (void)setExposureLevelOffset:(double)arg1;
 - (void)setFusionEnabled:(bool)arg1;
 - (void)setFusionParameters:(id)arg1;
+- (void)setHasPortraitEffectAdjustment:(bool)arg1;
 - (void)setHighlightsLevelOffset:(double)arg1;
 - (void)setInputOrientation:(long long)arg1;
 - (void)setInputSize:(struct CGSize { double x1; double x2; })arg1;
@@ -126,6 +146,13 @@
 - (void)setPortraitEffectFilterName:(id)arg1;
 - (void)setPortraitEffectFilterVersion:(long long)arg1;
 - (void)setPortraitEffectSettings:(id)arg1;
+- (void)setRawMethodVersion:(id)arg1;
+- (void)setRawNoiseReductionCNRAmount:(id)arg1;
+- (void)setRawNoiseReductionContrastAmount:(id)arg1;
+- (void)setRawNoiseReductionDetailAmount:(id)arg1;
+- (void)setRawNoiseReductionEnabled:(bool)arg1;
+- (void)setRawNoiseReductionLNRAmount:(id)arg1;
+- (void)setRawNoiseReductionSharpnessAmount:(id)arg1;
 - (void)setRedEyeCorrections:(id)arg1;
 - (void)setShadowsLevelOffset:(double)arg1;
 - (void)setSmartBWEnabled:(bool)arg1;
@@ -143,11 +170,18 @@
 - (void)setTrimEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setTrimStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setUserOrientation:(long long)arg1;
+- (void)setWhiteBalanceColorType:(long long)arg1;
 - (void)setWhiteBalanceEnabled:(bool)arg1;
 - (void)setWhiteBalanceFaceI:(double)arg1;
 - (void)setWhiteBalanceFaceQ:(double)arg1;
 - (void)setWhiteBalanceFaceStrength:(double)arg1;
 - (void)setWhiteBalanceFaceWarmth:(double)arg1;
+- (void)setWhiteBalanceGrayI:(double)arg1;
+- (void)setWhiteBalanceGrayQ:(double)arg1;
+- (void)setWhiteBalanceGrayWarmth:(double)arg1;
+- (void)setWhiteBalanceGrayY:(double)arg1;
+- (void)setWhiteBalanceTemperature:(double)arg1;
+- (void)setWhiteBalanceTint:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 

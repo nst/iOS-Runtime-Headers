@@ -26,6 +26,7 @@
 
 + (id)currentProcess;
 
+- (void).cxx_destruct;
 - (id)_initForCurrentProcess;
 - (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
 - (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;

@@ -12,6 +12,7 @@
 - (id)_currentAssetIdentifierDescription;
 - (id)_currentAssetMetadata;
 - (id)_currentAssetViewModelDescription;
+- (id)_descriptionForAllUIState;
 - (id)_descriptionOfUIState:(long long)arg1;
 - (id)_viewControllerHierarchyDescription;
 - (id)_viewModelDescription;

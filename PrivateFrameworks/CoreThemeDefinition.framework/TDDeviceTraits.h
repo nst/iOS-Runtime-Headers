@@ -16,6 +16,7 @@
     long long  _sizeClassHorizontal;
     long long  _sizeClassVertical;
     long long  _subtype;
+    NSArray * _subtypeFallbackValues;
 }
 
 @property (nonatomic, retain) NSString *deploymentTarget;
@@ -36,6 +37,7 @@
 @property (nonatomic) long long memoryPerformanceClass;
 @property (nonatomic) double scale;
 @property (nonatomic) long long subtype;
+@property (nonatomic, retain) NSArray *subtypeFallbackValues;
 
 - (long long)_deploymentTargetFromTraitString:(id)arg1;
 - (id)_deploymentTargetToTraitString:(long long)arg1;
@@ -86,6 +88,8 @@
 - (void)setMemoryPerformanceClass:(long long)arg1;
 - (void)setScale:(double)arg1;
 - (void)setSubtype:(long long)arg1;
+- (void)setSubtypeFallbackValues:(id)arg1;
 - (long long)subtype;
+- (id)subtypeFallbackValues;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBSetAudioSourceInCarIntent : PBCodable <NSCopying> {
+@interface _INPBSetAudioSourceInCarIntent : PBCodable <NSCopying, NSSecureCoding, _INPBSetAudioSourceInCarIntent> {
     int  _audioSource;
     struct { 
         unsigned int audioSource : 1; 
@@ -10,18 +10,18 @@
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
     int  _relativeAudioSourceReference;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) int audioSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasAudioSource;
 @property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic) bool hasRelativeAudioSourceReference;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic) int relativeAudioSourceReference;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)StringAsAudioSource:(id)arg1;
@@ -29,7 +29,6 @@
 - (int)audioSource;
 - (id)audioSourceAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAudioSource;
 - (bool)hasIntentMetadata;
@@ -37,7 +36,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (int)relativeAudioSourceReference;
 - (id)relativeAudioSourceReferenceAsString:(int)arg1;
@@ -46,7 +44,6 @@
 - (void)setHasRelativeAudioSourceReference:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setRelativeAudioSourceReference:(int)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -54,9 +54,6 @@
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (void)continueCanAuthenticateAgainstProtectionSpace:(bool)arg1;
-- (void)continueDidReceiveResponse;
-- (void)continueWillCacheResponse:(id)arg1;
 - (void)dealloc;
 - (void)detachHandle;
 - (id)initWithHandle:(struct ResourceHandle { int (**x1)(); unsigned int x2; struct unique_ptr<WebCore::ResourceHandleInternal, std::__1::default_delete<WebCore::ResourceHandleInternal> > { struct __compressed_pair<WebCore::ResourceHandleInternal *, std::__1::default_delete<WebCore::ResourceHandleInternal> > { struct ResourceHandleInternal {} *x_1_2_1; } x_3_1_1; } x3; }*)arg1 messageQueue:(struct MessageQueue<WTF::Function<void ()> >={Lock={Atomic<unsigned char>={atomic<unsigned char>=AC {}*)arg2;

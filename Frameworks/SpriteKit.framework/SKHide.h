@@ -7,6 +7,7 @@
 }
 
 + (id)hide;
++ (bool)supportsSecureCoding;
 + (id)unhide;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

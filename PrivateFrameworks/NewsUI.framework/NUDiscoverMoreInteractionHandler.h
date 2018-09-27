@@ -2,19 +2,29 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUDiscoverMoreInteractionHandler : NSObject <SXDiscoverMoreInteractionHandler> {
+@interface NUDiscoverMoreInteractionHandler : NSObject <SVDiscoverMoreInteractionHandling> {
+    <NUURLHandling> * _URLHandler;
     NUDiscoverMoreVideosInfo * _discoverMoreVideosInfo;
-    NUVideoViewController * _videoViewController;
+    <SVVideoPlaybackController> * _playbackController;
+    <SVVideoViewControllerProviding> * _videoViewControllerProvider;
 }
 
+@property (nonatomic, readonly) <NUURLHandling> *URLHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NUDiscoverMoreVideosInfo *discoverMoreVideosInfo;
-@property (nonatomic, readonly) NUVideoViewController *videoViewController;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <SVVideoPlaybackController> *playbackController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <SVVideoViewControllerProviding> *videoViewControllerProvider;
 
 - (void).cxx_destruct;
+- (id)URLHandler;
 - (id)discoverMoreVideosInfo;
-- (void)handleInteractionWithDiscoverMoreControl;
+- (void)handleInteraction;
 - (id)init;
-- (id)initWithVideoViewController:(id)arg1 discoverMoreVideosInfo:(id)arg2;
-- (id)videoViewController;
+- (id)initWithURLHandler:(id)arg1 discoverMoreVideosInfo:(id)arg2 videoViewControllerProvider:(id)arg3 playbackController:(id)arg4;
+- (id)playbackController;
+- (id)videoViewControllerProvider;
 
 @end

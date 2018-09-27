@@ -23,7 +23,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (id)initWithDictionary:(id)arg1 bundle:(id)arg2 privateBundle:(id)arg3;
 - (id)localizedDescription;
 - (void)setAppLaunchURL:(id)arg1;
 - (void)setBarcode:(id)arg1;

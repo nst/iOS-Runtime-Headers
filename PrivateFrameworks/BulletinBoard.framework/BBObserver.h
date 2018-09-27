@@ -68,7 +68,6 @@
 - (id)description;
 - (id)gatewayName;
 - (unsigned long long)gatewayPriority;
-- (void)getAlertBehaviorOverridesWithCompletion:(id /* block */)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)getBulletinsWithCompletion:(id /* block */)arg1;
@@ -77,13 +76,10 @@
 - (void)getDataForAttachment:(id)arg1 bulletin:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)getParametersForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getPrimaryAttachmentDataForBulletin:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)getPrivilegedSenderTypesWithCompletion:(id /* block */)arg1;
 - (void)getPublisherMatchIDsOfBulletinsPublishedAfterDate:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSectionInfoForActiveSectionsWithCompletion:(id /* block */)arg1;
 - (void)getSectionInfoForSectionIDs:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSectionInfoWithCompletion:(id /* block */)arg1;
-- (void)getSectionOrderRuleWithCompletion:(id /* block */)arg1;
-- (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
@@ -93,8 +89,6 @@
 - (id)initWithQueue:(id)arg1 forGateway:(id)arg2;
 - (void)invalidate;
 - (bool)isValid;
-- (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
-- (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (unsigned long long)observerFeed;
 - (id)parametersForSectionID:(id)arg1;
@@ -111,8 +105,6 @@
 - (void)setObserverFeed:(unsigned long long)arg1;
 - (void)updateBulletin:(id)arg1 withReply:(id /* block */)arg2;
 - (void)updateSectionInfo:(id)arg1;
-- (void)updateSectionOrder:(id)arg1;
-- (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 
 @end

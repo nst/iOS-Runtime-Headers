@@ -57,6 +57,7 @@
 - (bool)logApplicationName;
 - (void)logDistributionValue:(double)arg1 forKey:(id)arg2;
 - (void)logScalarValue:(long long)arg1 forKey:(id)arg2;
+- (void)logScalarValueAddition:(long long)arg1 forKey:(id)arg2;
 - (struct { long long x1; long long x2; long long x3; })minOSXVersion;
 - (struct { long long x1; long long x2; long long x3; })miniOSVersion;
 - (void)p_finishMessage;

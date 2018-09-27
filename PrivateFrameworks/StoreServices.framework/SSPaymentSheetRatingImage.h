@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSPaymentSheetRatingImage : NSObject <NSCopying, SSXPCCoding> {
+@interface SSPaymentSheetRatingImage : NSObject <NSCopying> {
     struct CGImage { } * _image;
     long long  _ratingType;
     NSString * _urlString;
     NSString * _value;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (readonly) long long ratingType;
-@property (readonly) Class superclass;
 @property (readonly, copy) NSString *urlString;
 @property (readonly, copy) NSString *value;
 

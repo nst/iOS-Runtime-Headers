@@ -22,6 +22,7 @@
         unsigned int hasVideo : 1; 
         unsigned int isExplicitContent : 1; 
         unsigned int isFromBlockedStorefront : 1; 
+        unsigned int isHiddenFromAutoFavorites : 1; 
         unsigned int isPaid : 1; 
     }  _has;
     bool  _hasCoverArt;
@@ -29,6 +30,7 @@
     bool  _hasVideo;
     bool  _isExplicitContent;
     bool  _isFromBlockedStorefront;
+    bool  _isHiddenFromAutoFavorites;
     bool  _isPaid;
     long long  _minimumNewsVersion;
     unsigned long long  _order;
@@ -72,6 +74,7 @@
 @property (nonatomic) bool hasHasVideo;
 @property (nonatomic) bool hasIsExplicitContent;
 @property (nonatomic) bool hasIsFromBlockedStorefront;
+@property (nonatomic) bool hasIsHiddenFromAutoFavorites;
 @property (nonatomic) bool hasIsPaid;
 @property (nonatomic) bool hasMinimumNewsVersion;
 @property (nonatomic) bool hasOrder;
@@ -83,9 +86,11 @@
 @property (nonatomic, readonly) bool hasVideo;
 @property (nonatomic) bool hasVideo;
 @property (readonly) unsigned long long hash;
+@property (getter=isHiddenFromAutoFavorites, nonatomic, readonly) bool hiddenFromAutoFavorites;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic) bool isExplicitContent;
 @property (nonatomic) bool isFromBlockedStorefront;
+@property (nonatomic) bool isHiddenFromAutoFavorites;
 @property (nonatomic) bool isPaid;
 @property (nonatomic, readonly) long long minimumNewsVersion;
 @property (nonatomic) long long minimumNewsVersion;
@@ -135,6 +140,7 @@
 - (bool)hasHasVideo;
 - (bool)hasIsExplicitContent;
 - (bool)hasIsFromBlockedStorefront;
+- (bool)hasIsHiddenFromAutoFavorites;
 - (bool)hasIsPaid;
 - (bool)hasMinimumNewsVersion;
 - (bool)hasOrder;
@@ -148,6 +154,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isExplicitContent;
 - (bool)isFromBlockedStorefront;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isPaid;
 - (void)mergeFrom:(id)arg1;
 - (long long)minimumNewsVersion;
@@ -171,6 +178,7 @@
 - (void)setHasHasVideo:(bool)arg1;
 - (void)setHasIsExplicitContent:(bool)arg1;
 - (void)setHasIsFromBlockedStorefront:(bool)arg1;
+- (void)setHasIsHiddenFromAutoFavorites:(bool)arg1;
 - (void)setHasIsPaid:(bool)arg1;
 - (void)setHasMinimumNewsVersion:(bool)arg1;
 - (void)setHasOrder:(bool)arg1;
@@ -180,6 +188,7 @@
 - (void)setHasVideo:(bool)arg1;
 - (void)setIsExplicitContent:(bool)arg1;
 - (void)setIsFromBlockedStorefront:(bool)arg1;
+- (void)setIsHiddenFromAutoFavorites:(bool)arg1;
 - (void)setIsPaid:(bool)arg1;
 - (void)setMinimumNewsVersion:(long long)arg1;
 - (void)setOrder:(unsigned long long)arg1;

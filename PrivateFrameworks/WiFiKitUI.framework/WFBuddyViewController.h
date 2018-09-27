@@ -11,8 +11,6 @@
     float  _currentNetworkScaledRSSI;
     long long  _currentNetworkState;
     long long  _deviceCapability;
-    UISwitch * _enableWAPISwitch;
-    UIView * _footerView;
     BFFPaneHeaderView * _headerView;
     <WFNetworkListDelegate> * _listDelegate;
     NSOrderedSet * _sections;
@@ -36,8 +34,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long deviceCapability;
 @property (nonatomic) bool disabled;
-@property (nonatomic, retain) UISwitch *enableWAPISwitch;
-@property (nonatomic, retain) UIView *footerView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BFFPaneHeaderView *headerView;
 @property <WFNetworkListDelegate> *listDelegate;
@@ -66,8 +62,6 @@
 - (float)currentNetworkScaledRSSI;
 - (long long)currentNetworkState;
 - (long long)deviceCapability;
-- (id)enableWAPISwitch;
-- (id)footerView;
 - (id)headerView;
 - (id)init;
 - (id)listDelegate;
@@ -85,8 +79,6 @@
 - (void)setCurrentNetworkScaledRSSI:(float)arg1;
 - (void)setCurrentNetworkState:(long long)arg1;
 - (void)setDeviceCapability:(long long)arg1;
-- (void)setEnableWAPISwitch:(id)arg1;
-- (void)setFooterView:(id)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)setListDelegate:(id)arg1;
 - (void)setNetworks:(id)arg1;
@@ -113,6 +105,7 @@
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

@@ -48,7 +48,10 @@
     }  _cropRect;
     <PUCropAndStraightenViewDelegate> * _delegate;
     UIImage * _image;
-    long long  _imageModulationOptions;
+    struct { 
+        long long privateInteger; 
+        float privateFloat; 
+    }  _imageModulationOptions;
     PHLivePhoto * _livePhoto;
     long long  _orientation;
     double  _straightenAngle;
@@ -80,7 +83,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageCropRect;
-@property (nonatomic) long long imageModulationOptions;
+@property (nonatomic) struct { long long x1; float x2; } imageModulationOptions;
 @property (nonatomic, retain) PHLivePhoto *livePhoto;
 @property (nonatomic) long long orientation;
 @property (nonatomic) double straightenAngle;
@@ -148,7 +151,7 @@
 - (id)image;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageCropRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageCropRectForViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (long long)imageModulationOptions;
+- (struct { long long x1; float x2; })imageModulationOptions;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isDecelerating;
 - (bool)isTracking;
@@ -168,7 +171,7 @@
 - (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageModulationOptions:(long long)arg1;
+- (void)setImageModulationOptions:(struct { long long x1; float x2; })arg1;
 - (void)setLivePhoto:(id)arg1;
 - (void)setOrientation:(long long)arg1;
 - (void)setStraightenAngle:(double)arg1;

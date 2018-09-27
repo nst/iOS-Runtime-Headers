@@ -33,7 +33,7 @@
 + (bool)supportsSecureCoding;
 
 - (double)avgPace;
-- (void)convertToSwimEntry:(struct CLSwimEntry { unsigned long long x1; unsigned char x2[16]; unsigned char x3[16]; double x4; double x5; double x6; double x7; double x8; double x9; int x10; int x11; int x12; int x13; float x14; float x15; float x16; int x17; }*)arg1;
+- (void)convertToSwimEntry:(struct CLSwimEntry { unsigned long long x1; unsigned char x2[16]; unsigned char x3[16]; double x4; double x5; double x6; double x7; double x8; double x9; int x10; int x11; int x12; int x13; float x14; float x15; float x16; int x17; int x18; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -43,7 +43,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordId:(unsigned long long)arg1 sourceId:(id)arg2 sessionId:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 strokeCount:(unsigned long long)arg6 distance:(double)arg7 avgPace:(double)arg8 lapCount:(unsigned long long)arg9 strokeType:(long long)arg10 segment:(unsigned long long)arg11;
 - (id)initWithSessionId:(id)arg1;
-- (id)initWithSwimEntry:(const struct CLSwimEntry { unsigned long long x1; unsigned char x2[16]; unsigned char x3[16]; double x4; double x5; double x6; double x7; double x8; double x9; int x10; int x11; int x12; int x13; float x14; float x15; float x16; int x17; }*)arg1;
+- (id)initWithSwimEntry:(const struct CLSwimEntry { unsigned long long x1; unsigned char x2[16]; unsigned char x3[16]; double x4; double x5; double x6; double x7; double x8; double x9; int x10; int x11; int x12; int x13; float x14; float x15; float x16; int x17; int x18; }*)arg1;
 - (unsigned long long)lapCount;
 - (unsigned long long)recordId;
 - (unsigned long long)segment;

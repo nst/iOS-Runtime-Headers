@@ -13,6 +13,7 @@
 
 + (id)sharedTypingAssertion;
 
+- (void).cxx_destruct;
 - (id)__restingPathIndices;
 - (void)_sbsSetTypingActive:(bool)arg1;
 - (void)dealloc;

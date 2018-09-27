@@ -6,9 +6,9 @@
     NSDecimalNumber * _balance;
     bool  _blacklisted;
     NSString * _currency;
+    NSSet * _enrouteTransitTypes;
     NSDate * _expirationDate;
     NSArray * _historyRecords;
-    bool  _inStation;
     NSArray * _inStationDetails;
     NSNumber * _loyaltyBalance;
     NSString * _serviceProvider;
@@ -18,9 +18,10 @@
 @property (nonatomic, copy) NSDecimalNumber *balance;
 @property (getter=isBlacklisted, nonatomic) bool blacklisted;
 @property (nonatomic, copy) NSString *currency;
+@property (nonatomic, copy) NSSet *enrouteTransitTypes;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, copy) NSArray *historyRecords;
-@property (getter=isInStation, nonatomic) bool inStation;
+@property (getter=isInStation, nonatomic, readonly) bool inStation;
 @property (nonatomic, copy) NSArray *inStationDetails;
 @property (nonatomic, copy) NSNumber *loyaltyBalance;
 @property (nonatomic, copy) NSString *serviceProvider;
@@ -33,6 +34,7 @@
 - (id)currency;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)enrouteTransitTypes;
 - (id)expirationDate;
 - (id)felicaHistory;
 - (id)historyRecords;
@@ -48,9 +50,9 @@
 - (void)setBalance:(id)arg1;
 - (void)setBlacklisted:(bool)arg1;
 - (void)setCurrency:(id)arg1;
+- (void)setEnrouteTransitTypes:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setHistoryRecords:(id)arg1;
-- (void)setInStation:(bool)arg1;
 - (void)setInStationDetails:(id)arg1;
 - (void)setLoyaltyBalance:(id)arg1;
 - (void)setServiceProvider:(id)arg1;

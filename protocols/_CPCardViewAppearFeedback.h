@@ -7,10 +7,6 @@
 
 - (_CPCardForFeedback *)card;
 - (NSString *)fbr;
-- (bool)hasCard;
-- (bool)hasFbr;
-- (bool)hasLevel;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

@@ -3,10 +3,6 @@
  */
 
 @interface _CPVisibleResultsFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPVisibleResultsFeedback> {
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int triggerEvent : 1; 
-    }  _has;
     NSArray * _results;
     unsigned long long  _timestamp;
     int  _triggerEvent;
@@ -16,14 +12,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasTriggerEvent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, copy) NSArray *results;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int triggerEvent;
 
@@ -32,8 +25,6 @@
 - (void)clearResults;
 - (id)dictionaryRepresentation;
 - (id)feedbackJSON;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

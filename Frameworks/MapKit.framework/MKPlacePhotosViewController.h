@@ -4,8 +4,11 @@
 
 @interface MKPlacePhotosViewController : UIViewController <MKModuleViewControllerProtocol, MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
     MKPlaceAttributionCell * _attributionCell;
+    NSLayoutConstraint * _bottomConstraint;
+    UIView * _bottomHairline;
     bool  _canUseFullscreenViewer;
     bool  _canUseGallery;
+    MKPlacePhotosView * _currentPhotoViewer;
     NSLayoutConstraint * _heightConstraint;
     bool  _isRTL;
     double  _lastPhotoScrollOffset;
@@ -25,6 +28,7 @@
     <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> * _photosControllerDelegate;
     unsigned long long  _photosCount;
     MKPhotoSmallAttributionView * _photosSmallAttributionsView;
+    bool  _showsBottomHairline;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +36,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) _MKPlaceViewController *owner;
 @property (nonatomic) <MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate> *photosControllerDelegate;
+@property (nonatomic) bool showsBottomHairline;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -57,15 +62,17 @@
 - (id)owner;
 - (id)photosControllerDelegate;
 - (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
-- (id)placePhotoViewerGetDelegatesMapItem;
 - (id)placePhotoViewerViewForPhotoAtIndex:(unsigned long long)arg1;
 - (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
+- (void)setShowsBottomHairline:(bool)arg1;
+- (bool)showsBottomHairline;
 - (struct CGSize { double x1; double x2; })sizeForIndex:(unsigned long long)arg1;
 - (void)updateAttributionPositionWithOffset:(double)arg1;
+- (void)updateBottomHairlineVisibility;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

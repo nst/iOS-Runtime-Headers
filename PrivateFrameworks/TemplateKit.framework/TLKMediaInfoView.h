@@ -9,9 +9,9 @@
     TLKImageView * _imageView;
 }
 
-@property (retain) NSArray *contents;
+@property (nonatomic, retain) NSArray *contents;
 @property (retain) TLKContentsContainerView *contentsContainer;
-@property (retain) TLKImage *image;
+@property (nonatomic, retain) TLKImage *image;
 @property (retain) TLKImageView *imageView;
 
 - (void).cxx_destruct;
@@ -22,7 +22,6 @@
 - (id)imageView;
 - (bool)imageViewIsHidden;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setContents:(id)arg1;
 - (void)setContentsContainer:(id)arg1;

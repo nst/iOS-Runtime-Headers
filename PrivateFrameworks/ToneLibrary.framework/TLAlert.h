@@ -17,6 +17,10 @@
 @property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly) NSString *vibrationIdentifier;
 
+// Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
+
++ (long long)_currentOverridePolicyForType:(long long)arg1;
++ (void)_setCurrentOverridePolicy:(long long)arg1 forType:(long long)arg2;
 + (void)_setWatchPrefersSalientToneAndVibration:(bool)arg1;
 + (bool)_stopAllAlerts;
 + (bool)_watchPrefersSalientToneAndVibration;
@@ -44,5 +48,9 @@
 - (id)toneIdentifier;
 - (long long)type;
 - (id)vibrationIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
++ (long long)bb_toneLibraryAlertTypeForSectionID:(id)arg1;
 
 @end

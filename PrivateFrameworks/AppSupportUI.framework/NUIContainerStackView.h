@@ -6,8 +6,6 @@
     long long  _alignment;
     long long  _axis;
     long long  _distribution;
-    long long  _effectiveAxis;
-    double  _smallestWidthKnownToCompress;
     double  _spacing;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
@@ -68,7 +66,6 @@
 @property (nonatomic) <NUIContainerStackViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long distribution;
-@property (nonatomic, readonly) long long effectiveAxis;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double spacing;
 @property (readonly) Class superclass;
@@ -87,12 +84,9 @@
 - (void)didInsertArrangedSubview:(id)arg1 atIndex:(long long)arg2;
 - (void)didRemoveArrangedSubview:(id)arg1 atIndex:(long long)arg2;
 - (long long)distribution;
-- (long long)effectiveAxis;
 - (id)initWithArrangedSubviews:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(bool)arg1;
-- (bool)isLayoutSizeDependentOnPerpendicularAxis;
-- (bool)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutArrangedSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)populateGridArrangementCells:(struct vector<_NUIGridArrangementCell, std::__1::allocator<_NUIGridArrangementCell> > { struct _NUIGridArrangementCell {} *x1; struct _NUIGridArrangementCell {} *x2; struct __compressed_pair<_NUIGridArrangementCell *, std::__1::allocator<_NUIGridArrangementCell> > { struct _NUIGridArrangementCell {} *x_3_1_1; } x3; }*)arg1;
 - (void)populateGridArrangementDimension:(struct vector<_NUIGridArrangementDimension, std::__1::allocator<_NUIGridArrangementDimension> > { struct _NUIGridArrangementDimension {} *x1; struct _NUIGridArrangementDimension {} *x2; struct __compressed_pair<_NUIGridArrangementDimension *, std::__1::allocator<_NUIGridArrangementDimension> > { struct _NUIGridArrangementDimension {} *x_3_1_1; } x3; }*)arg1 withCells:(const struct vector<_NUIGridArrangementCell, std::__1::allocator<_NUIGridArrangementCell> > { struct _NUIGridArrangementCell {} *x1; struct _NUIGridArrangementCell {} *x2; struct __compressed_pair<_NUIGridArrangementCell *, std::__1::allocator<_NUIGridArrangementCell> > { struct _NUIGridArrangementCell {} *x_3_1_1; } x3; }*)arg2 axis:(long long)arg3;
 - (void)setAlignment:(long long)arg1;

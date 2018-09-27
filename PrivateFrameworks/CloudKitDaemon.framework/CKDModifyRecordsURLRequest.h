@@ -31,6 +31,7 @@
 @property (nonatomic) bool sendAllFields;
 
 - (void).cxx_destruct;
+- (bool)allowsAnonymousAccount;
 - (bool)atomic;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUDiscoverMoreVideosInfo : NSObject <NSCopying, SXDiscoverMoreConfigurationProviding> {
+@interface NUDiscoverMoreVideosInfo : NSObject <NSCopying, SVDiscoverMoreConfigurationProviding> {
     NTPBDiscoverMoreVideosInfo * _discoverMoreVideosInfo;
 }
 

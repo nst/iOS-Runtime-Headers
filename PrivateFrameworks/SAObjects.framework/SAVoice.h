@@ -9,6 +9,9 @@
 @property (nonatomic, copy) NSString *masteredVersion;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *quality;
+@property (nonatomic) long long resourceContentVersion;
+@property (nonatomic, copy) NSString *resourceMasteredVersion;
+@property (nonatomic) long long voiceContentVersion;
 @property (nonatomic, copy) NSString *voiceType;
 
 + (id)voice;
@@ -21,12 +24,18 @@
 - (id)masteredVersion;
 - (id)name;
 - (id)quality;
+- (long long)resourceContentVersion;
+- (id)resourceMasteredVersion;
 - (void)setGender:(id)arg1;
 - (void)setLanguageString:(id)arg1;
 - (void)setMasteredVersion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setQuality:(id)arg1;
+- (void)setResourceContentVersion:(long long)arg1;
+- (void)setResourceMasteredVersion:(id)arg1;
+- (void)setVoiceContentVersion:(long long)arg1;
 - (void)setVoiceType:(id)arg1;
+- (long long)voiceContentVersion;
 - (id)voiceType;
 
 @end

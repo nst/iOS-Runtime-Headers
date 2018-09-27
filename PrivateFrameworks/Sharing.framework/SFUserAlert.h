@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFUserAlert : NSObject <NSSecureCoding, SFXPCInterface> {
+@interface SFUserAlert : NSObject {
     NSDictionary * _additionalInfo;
     NSString * _alternateButtonTitle;
     bool  _asBanner;
@@ -16,7 +16,6 @@
     NSString * _message;
     NSString * _otherButtonTitle;
     id /* block */  _responseHandler;
-    SDXPCServer * _server;
     NSURL * _soundURL;
     bool  _textInput;
     NSString * _textInputTitle;
@@ -37,7 +36,6 @@
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *otherButtonTitle;
 @property (nonatomic, copy) id /* block */ responseHandler;
-@property (nonatomic, retain) SDXPCServer *server;
 @property (nonatomic, retain) NSURL *soundURL;
 @property (nonatomic) bool textInput;
 @property (nonatomic, retain) NSString *textInputTitle;
@@ -73,7 +71,6 @@
 - (id)otherButtonTitle;
 - (void)present;
 - (id /* block */)responseHandler;
-- (id)server;
 - (void)setAdditionalInfo:(id)arg1;
 - (void)setAlternateButtonTitle:(id)arg1;
 - (void)setAsBanner:(bool)arg1;
@@ -85,7 +82,6 @@
 - (void)setMessage:(id)arg1;
 - (void)setOtherButtonTitle:(id)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
-- (void)setServer:(id)arg1;
 - (void)setSoundURL:(id)arg1;
 - (void)setTextInput:(bool)arg1;
 - (void)setTextInputTitle:(id)arg1;

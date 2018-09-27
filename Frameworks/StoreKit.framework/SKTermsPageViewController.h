@@ -16,6 +16,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_buttonAccept:(id)arg1;
 - (void)_buttonDecline:(id)arg1;
 - (void)_dismissViewController;
@@ -23,7 +24,6 @@
 - (void)_dismissViewControllerAnimated:(bool)arg1 withAcceptance:(bool)arg2;
 - (void)_loadSubviews;
 - (id)_markupTermsWithHTML:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (unsigned long long)edgesForExtendedLayout;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CKShortDescription, CLSGraphVertex, CNKeyDescriptor_Private, CNUIURLDestinationID, CRCoding, CRDataType, CREquatable, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue, UIItemProviderReading, UIItemProviderWriting>
+@interface NSString : NSObject <AADataType, AFSecurityDigestibleChunksProviding, ASDNotificationType, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CKShortDescription, CLSGraphVertex, CNKeyDescriptor_Private, CNUIURLDestinationID, CRCoding, CRDataType, CREquatable, CSCoderEncoder, CUByteCodable, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, REContentEncodable, REDonatedActionIdentifierProviding, SASerializable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue, UIItemProviderReading, UIItemProviderWriting, _DKDeduping>
 
 @property (nonatomic, retain) NSString *IPASpeechPhonemes;
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
@@ -10,6 +10,11 @@
 @property (readonly) bool _cn_requiresPhoneNumberSanitizing;
 @property (readonly, copy) NSString *cam_uppercaseStringWithPreferredLocale;
 @property (readonly) bool containsDotDotPathComponents;
+@property (nonatomic, readonly) NSString *contentEncodedString;
+@property (nonatomic, readonly) NSString *dc_sanitizedFilenameString;
+@property (nonatomic, readonly) NSString *dc_stringReplacingUnsafeHTMLCharacters;
+@property (nonatomic, readonly) NSString *dc_trimmedString;
+@property (nonatomic, readonly) NSString *dc_whitespaceAndNewlineCoalescedString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasMobileMeSuffix;
@@ -24,22 +29,29 @@
 @property (readonly, copy) NSString *localizedString;
 @property (nonatomic, readonly) NSString *mobileMeDomain;
 @property (readonly) bool npkHasContent;
+@property (nonatomic, readonly) bool px_endsWithFullStopOrEquivalentPunctuationMark;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } px_firstLetterRange;
+@property (nonatomic, readonly) NSArray *px_integerValues;
 @property (nonatomic, readonly) long long px_platformAgnosticHash;
 @property (nonatomic, readonly) NSString *px_stringByIndentingNewLines;
+@property (nonatomic, readonly) NSString *px_stringConvertedToHTMLString;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
+@property (nonatomic, readonly, copy) NSString *safari_domainFromHost;
 @property (nonatomic, readonly) bool safari_isSpecialFolderRecordName;
 @property (nonatomic, readonly, copy) NSString *safari_stringByNormalizingVersionString;
 @property (nonatomic, readonly, copy) NSString *safari_stringByRemovingExcessWhitespace;
 @property (nonatomic, readonly, copy) NSString *safari_stringByReplacingHomoglyphForSpaceWithSpace;
 @property (nonatomic, readonly, copy) NSString *safari_userVisibleSafariBundleVersionFromFullVersion;
+@property (nonatomic, readonly) bool sc_containsCJKScripts;
 @property (nonatomic, readonly) NSString *sf_URLScheme;
 @property (nonatomic, readonly) bool sf_isFeedScheme;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{basic_string<char' */ struct  stdString; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}} */
 @property (readonly) NSString *stringByEscapingXMLEntities;
 @property (readonly, copy) NSString *stringByRemovingPercentEncoding;
 @property (readonly) NSString *stringByUnescapingXMLEntities;
 @property (nonatomic, readonly) NSString *stripMobileMSuffixIfPresent;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) long long tps_encryptedIdentityType;
 @property (nonatomic, readonly) bool tsp_isPasteboardStateType;
 @property (nonatomic, readonly) NSString *tsu_UTIFilenameExtension;
 @property (nonatomic, readonly) NSString *tsu_pathUTI;
@@ -322,6 +334,10 @@
 - (unsigned long long)dbgUnsignedIntegerValue;
 - (unsigned long long)dbgUnsignedLongValue;
 
+// Image: /System/Library/Frameworks/BusinessChat.framework/BusinessChat
+
+- (id)normalizedBase64Encoded;
+
 // Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
 - (id)vertexID;
@@ -381,6 +397,19 @@
 - (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
 - (bool)hasSuffixInsensitive:(id)arg1;
 
+// Image: /System/Library/Frameworks/CoreServices.framework/CoreServices
+
++ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
+
+- (id)clean;
+- (bool)matches:(id)arg1;
+- (bool)matchesString:(id)arg1;
+
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 - (void)encodeWithCSCoder:(id)arg1;
@@ -419,6 +448,7 @@
 - (id)hk_MD2Hash;
 - (id)hk_MD4Hash;
 - (id)hk_MD5Hash;
+- (id)hk_MD5HashAsUUID;
 - (id)hk_SHA1Hash;
 - (id)hk_SHA224Hash;
 - (id)hk_SHA256Hash;
@@ -427,14 +457,30 @@
 - (long long)hk_compareBuildVersionWithString:(id)arg1;
 - (id)hk_copyNonEmptyString;
 - (bool)hk_isBase64;
+- (bool)hk_isCaseInsensitiveSubstringInString:(id)arg1;
+- (bool)hk_isValidPurposeString;
 - (id)hk_stringByAppendingKeyPathComponent:(id)arg1;
 - (id)hk_stringByRemovingCharactersInSet:(id)arg1;
+- (id)hk_stringByUnescapingJSONCharactersForDisplay;
 - (id)hk_stripLeadingTrailingWhitespace;
 - (id)hk_trimWhitespaceAndNewlines;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (id)generateSHA1;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2 arguments:(char *)arg3;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2 bundle:(id)arg3;
+
+- (id)_intents_decodeFromProto;
+- (id)_intents_encodeForProto;
+- (id)_intents_localizedCopyForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)localizeForLanguage:(id)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -469,22 +515,13 @@
 - (id)mf_substringTruncatedInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)mf_substringTruncatedToIndex:(unsigned long long)arg1;
 
-// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
-
-+ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
-+ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
-+ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
-+ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
-+ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
-+ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
-
-- (id)clean;
-- (bool)matches:(id)arg1;
-- (bool)matchesString:(id)arg1;
-
 // Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
 
 - (id)_issueDirectory;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)volumePath;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
@@ -521,72 +558,17 @@
 - (unsigned long long)SLTencentWeiboCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
 - (unsigned long long)SLTwitterCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
 - (unsigned long long)SLWeiboCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
+- (id)_SHA256String;
 - (bool)hasCaseInsensitiveSuffix:(id)arg1;
 - (bool)isTencentWeiboDuplicatePostError;
 - (bool)isTwitterDuplicatePostError;
 - (bool)isWeiboDuplicatePostError;
+- (id)sl_urlEncodedSHA256;
 - (id)urlEncodedString;
 
 // Image: /System/Library/Frameworks/Twitter.framework/Twitter
 
 - (int)TWTwitterCharacterCountWithShortenedURLLength:(int)arg1;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
-
-- (id)_adjustedFontFromFont:(id)arg1 withinFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumSize:(double)arg3 textSize:(struct CGSize { double x1; double x2; }*)arg4;
-- (struct CGSize { double x1; double x2; })_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
-- (id)_initWithUTF8String:(const char *)arg1 maxLength:(unsigned long long)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6 includeEmoji:(bool)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5 includeEmoji:(bool)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7 includeEmoji:(bool)arg8;
-- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6;
-- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3 lineSpacing:(int)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3 letterSpacing:(double)arg4;
-- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 minFontSize:(double)arg2 actualFontSize:(double*)arg3 forWidth:(double)arg4 lineBreakMode:(long long)arg5;
-- (struct CGSize { double x1; double x2; })_optimizedSizeWithFont:(id)arg1;
-- (id)_ui_secureString;
-- (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
-- (id)_uikit_stringWithWritingDirection:(long long)arg1 asOverride:(bool)arg2;
-- (id)_uikit_unescapedQueryValue;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6 includeEmoji:(bool)arg7;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5 includeEmoji:(bool)arg6;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7 includeEmoji:(bool)arg8;
-- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5;
-- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6;
-- (id)queryKeysAndValues;
-- (void)registerLoadHandlersToItemProvider:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3 lineSpacing:(int)arg4;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3 letterSpacing:(double)arg4;
-- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 minFontSize:(double)arg2 actualFontSize:(double*)arg3 forWidth:(double)arg4 lineBreakMode:(long long)arg5;
-- (id)stringByStandardizingWhitespace;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
@@ -609,6 +591,10 @@
 
 // Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
 
+- (id)_axDictionaryKeyReplacementRepresentation;
+- (id)_axReconstitutedRepresentationForDictionaryKeyReplacement;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id*)arg1;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_axUnit:(unsigned long long)arg1 fromPosition:(long long)arg2 inDirection:(unsigned long long)arg3;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_ax_rangeOfNextUnitWithStartPosition:(long long)arg1 direction:(unsigned long long)arg2 withCharacterSet:(id)arg3;
 - (id)axAttributedStringWithAttributes:(id)arg1;
@@ -693,6 +679,10 @@
 
 - (id)stringByEscapingXMLSpecialCharacters;
 
+// Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
+
+- (id)aa_base64String;
+
 // Image: /System/Library/PrivateFrameworks/ApplePushService.framework/ApplePushService
 
 + (id)apsStringGUID;
@@ -710,9 +700,15 @@
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
++ (id)ak_base64EncodedJsonFromObject:(id)arg1;
+
 - (id)ak_SHA256;
 - (id)ak_SHA256String;
 - (id)ak_urlEncoded;
+
+// Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
+
+- (id)avt_MD5String;
 
 // Image: /System/Library/PrivateFrameworks/BarcodeSupport.framework/BarcodeSupport
 
@@ -727,6 +723,14 @@
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 - (id)_initWithUTF8String:(const char *)arg1 maxLength:(unsigned long long)arg2;
+
+// Image: /System/Library/PrivateFrameworks/BaseBoardUI.framework/BaseBoardUI
+
+- (id)_bsui_rangesOfEmojiTokens:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BookDataStore.framework/BookDataStore
+
++ (id)bds_UUID;
 
 // Image: /System/Library/PrivateFrameworks/BookLibrary.framework/BookLibrary
 
@@ -743,6 +747,10 @@
 - (bool)_validHexChar:(BOOL)arg1;
 - (id)fromHex;
 - (id)hex;
+
+// Image: /System/Library/PrivateFrameworks/C2.framework/C2
+
+- (unsigned long long)c2UniformlyDistributedIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
 
@@ -841,6 +849,12 @@
 - (id)unquote;
 - (id)userFromEmail;
 
+// Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
+
++ (id)stringFromMat4:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
++ (id)stringFromOSThermalPressureLevel:(int)arg1;
++ (id)stringFromSCNMatrix4:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
+
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
 - (id)cam_uppercaseStringWithPreferredLocale;
@@ -856,10 +870,13 @@
 - (bool)__ck_containsOnlyCharactersFromSet:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })__ck_rangeOfSequenceOfCharactersFromSet:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (bool)__ck_shouldUseBigEmoji;
+- (id)__ck_stringByExpandingTildeInPath;
 - (bool)isAddressBookLabel;
 - (id)unformattedPhoneNumber;
 
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_stringWithIPAddress:(unsigned int)arg1;
 
 - (id)crk_sha1Hash;
 - (id)crk_stringByRemovingPrefix:(id)arg1;
@@ -929,6 +946,7 @@
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)cplStringByAppendingPathExtension:(id)arg1 fallbackExtension:(id)arg2;
+- (id)cpl_redactedShareURL;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
@@ -942,6 +960,8 @@
 
 + (id)_cn_LTRControlCharacters;
 + (bool)_cn_isBlank:(id)arg1;
++ (id)_cn_phoneNumberSanitizeCharacters;
++ (id)_cn_stringByRepeatingCharacter:(BOOL)arg1 length:(unsigned long long)arg2;
 
 - (id)_cn_SHA256HashStringWithSalt:(id)arg1;
 - (bool)_cn_caseInsensitiveIsEqual:(id)arg1;
@@ -949,6 +969,7 @@
 - (bool)_cn_containsSubstring:(id)arg1;
 - (bool)_cn_containsSubstring:(id)arg1 options:(unsigned long long)arg2;
 - (void)_cn_eachCharacter:(id /* block */)arg1;
+- (id)_cn_flatMap:(id /* block */)arg1;
 - (bool)_cn_hasCaseAndDiacriticInsensitivePrefix:(id)arg1;
 - (bool)_cn_hasPrefix:(id)arg1;
 - (bool)_cn_hasPrefix:(id)arg1 options:(unsigned long long)arg2;
@@ -958,6 +979,8 @@
 - (id)_cn_nameComponentTokens;
 - (id)_cn_nameComponentTokensUsingLocale:(id)arg1 inferredNameOrder:(long long*)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_cn_rangeFromIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_cn_rangeOfCommonPrefixWithString:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_cn_rangeOfCommonPrefixWithString:(id)arg1 options:(unsigned long long)arg2;
 - (bool)_cn_requiresPhoneNumberSanitizing;
 - (id)_cn_resultWithAllCharacters:(id /* block */)arg1;
 - (id)_cn_stringByAddingPercentEscapesIfNecessary;
@@ -992,6 +1015,10 @@
 - (id)CDVStringByXMLUnquoting;
 - (id)initWithCDVNameSpace:(id)arg1 andName:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
+- (id)dedup;
+
 // Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
 
 - (long long)ch_occurrencesOfCharactersInSet:(id)arg1 maxCount:(long long)arg2;
@@ -1000,7 +1027,7 @@
 
 + (id)MSMakeUUID;
 + (id)MSStringWithBool:(bool)arg1;
-+ (id)MSTempFilePath;
++ (int)MSTempFileOutFileName:(id*)arg1;
 
 - (id)MSHexData;
 - (unsigned long long)MSUniqueID;
@@ -1062,6 +1089,7 @@
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (id)sg_deepCopy;
+- (id)sg_md5Hash;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
@@ -1072,6 +1100,13 @@
 // Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
 
 - (id)td_stringByStandardizingPath;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
++ (id)createWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 error:(id*)arg3;
+
+- (const char *)encodedBytesAndReturnLength:(unsigned long long*)arg1 error:(id*)arg2;
+- (id)encodedDataAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CourseKit.framework/CourseKit
 
@@ -1128,6 +1163,10 @@
 - (bool)isSubCalURLString;
 - (id)modTagForSubCal;
 
+// Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
+
++ (id)DACPLogMakeUUID;
+
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
 - (id)dd_leadingTextWithNumberOfCharacters:(long long)arg1 beforeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
@@ -1146,6 +1185,28 @@
 - (id)dp_numbersFromCSVString;
 - (id)dp_stringsFromCSVString;
 - (id)dp_wordRecordsFromCSVString;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturb.framework/DoNotDisturb
+
+- (id)dnds_privacyObfuscatedString;
+
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
+- (void)dc_enumerateContentLineRangesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)dc_enumerateParagraphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+- (unsigned long long)dc_lengthOfLongestLine;
+- (unsigned long long)dc_numberOfLines;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })dc_paragraphRangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 contentEnd:(unsigned long long*)arg2;
+- (id)dc_sanitizedFilenameString;
+- (id)dc_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
+- (id)dc_stringByReplacingCharactersInStringMap:(id)arg1;
+- (id)dc_stringByReplacingNewlineCharactersWithWhiteSpace;
+- (id)dc_stringReplacingUnsafeHTMLCharacters;
+- (id)dc_substringFromIndex:(unsigned long long)arg1;
+- (id)dc_substringToIndex:(unsigned long long)arg1;
+- (id)dc_substringWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)dc_trimmedString;
+- (id)dc_whitespaceAndNewlineCoalescedString;
 
 // Image: /System/Library/PrivateFrameworks/EmojiFoundation.framework/EmojiFoundation
 
@@ -1236,8 +1297,14 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
++ (id)_geo_keyStringForCacheHitWithLoadReason:(unsigned char)arg1 tileSource:(unsigned char)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4;
++ (id)_geo_keyStringForCacheMissErrorDomain:(id)arg1 code:(long long)arg2;
++ (id)_geo_keyStringForCacheMissWithLoadReason:(unsigned char)arg1 missType:(int)arg2 tileStyle:(int)arg3 tileZoom:(unsigned int)arg4 httpStatus:(unsigned int)arg5;
 + (id)stringWithStdString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1 copy:(bool)arg2;
 
+- (void)_geo_cacheHitParameters:(id /* block */)arg1;
+- (void)_geo_cacheMissErrorParameters:(id /* block */)arg1;
+- (void)_geo_cacheMissParameters:(id /* block */)arg1;
 - (id)initWithStdString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1 copy:(bool)arg2;
 - (id)serverFormattedString;
 - (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; })stdString;
@@ -1254,7 +1321,6 @@
 // Image: /System/Library/PrivateFrameworks/HealthRecordServices.framework/HealthRecordServices
 
 - (id)hk_base64PaddedString;
-- (id)hrs_stringByUnescapingJSONCharactersForDisplay;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -1265,6 +1331,10 @@
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 spacing:(double)arg2 attributes:(id)arg3;
 - (double)hk_boundingHeightWithWidth:(double)arg1 font:(id)arg2;
 - (double)hk_boundingWidthWithHeight:(double)arg1 font:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
+
+- (id)htmlDecodedString;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
@@ -1286,9 +1356,11 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
++ (id)parsedFromData:(id)arg1 error:(id*)arg2;
 + (id)stringWithSQLite3Column:(struct sqlite3_stmt { }*)arg1 column:(int)arg2;
 
 - (id)generateSHA1;
+- (id)serializeWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
@@ -1382,6 +1454,7 @@
 + (long long)ik_valueForBooleanAttribute:(id)arg1;
 
 - (bool)ik_attributeBoolValue;
+- (id)ik_sharedInstance;
 - (id)ik_stringByTrimmingControlChars;
 - (id)ikrwi_camelCase;
 
@@ -1395,6 +1468,10 @@
 + (id)stringWithFileSystemRepresentation:(const char *)arg1 length:(unsigned long long)arg2;
 
 - (bool)containsDotDotPathComponents;
+
+// Image: /System/Library/PrivateFrameworks/IntentsFoundation.framework/IntentsFoundation
+
+- (id)_inf_stringByLowercasingFirstCharacter;
 
 // Image: /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
 
@@ -1415,16 +1492,8 @@
 
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
-+ (void)_lp_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
-
-- (bool)_lp_hasCaseInsensitivePrefix:(id)arg1;
-- (id)_lp_highLevelDomainFromHost;
 - (bool)_lp_isEqualIgnoringCase:(id)arg1;
 - (bool)_lp_isEqualToAnyIgnoringCase:(id)arg1;
-- (id)_lp_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2;
-- (id)_lp_stringForcingLeftToRightDirection;
-- (id)_lp_topLevelDomainUsingCFFromComponents:(id)arg1;
-- (id)_lp_userVisibleHost;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -1853,6 +1922,7 @@
 + (id)tsu_stringWithUUID;
 + (id)tsu_stringWithXMLString:(const char *)arg1;
 
+- (id)CM_stringByAddingCSSEscapes;
 - (id)_copyCsvRows:(unsigned long long*)arg1 usingDelimiter:(id)arg2 columnCountIsConstant:(bool*)arg3;
 - (int*)cWideString;
 - (id)copyCsvRows:(unsigned long long*)arg1;
@@ -2007,32 +2077,34 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/KnowledgeGraphKit.framework/KnowledgeGraphKit
 
-+ (id)normalizeString:(id)arg1;
-
+- (id)ma_normalizedString;
 - (id)sha1HashData;
 - (id)sha1HashString;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-+ (id)generateUUID;
-+ (id)normalizeString:(id)arg1;
++ (id)cls_generateUUID;
 
 - (id)clsBetterComponentsSeparatedByCharactersInSet:(id)arg1;
-- (id)indentBy:(unsigned long long)arg1;
+- (id)cls_indentBy:(unsigned long long)arg1;
+- (id)cls_normalizedString;
 - (id)sha1HashData;
 - (id)sha1HashString;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/PipelineKit.framework/PipelineKit
 
-+ (id)generateUUID;
-+ (id)normalizeString:(id)arg1;
++ (id)pi_generateUUID;
 
 - (id)sha1HashData;
 - (id)sha1HashString;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/PhotosGraph
 
+- (id)_pg_stringByRemovingRegExPattern:(id)arg1;
 - (unsigned long long)pg_levenshteinDistanceToString:(id)arg1;
+- (id)pg_stringByRemovingDates;
+- (id)pg_stringByRemovingParentheses;
+- (id)pg_stringByRemovingParenthesesAndBrackets;
 - (id)pg_stringByTrailingCharactersInSet:(id)arg1 options:(unsigned long long)arg2;
 - (id)sha1HashData;
 - (id)sha1HashString;
@@ -2041,20 +2113,35 @@
 
 - (id)setterName;
 
+// Image: /System/Library/PrivateFrameworks/PhotoFoundation.framework/PhotoFoundation
+
+- (id)canonicalUuidString;
+- (bool)isCanonicalUuidString;
+- (bool)isEquivalentToUuidString:(id)arg1;
+- (bool)isMercuryUuidString;
+- (bool)isSupportedUuidString;
+- (id)mercuryUuidString;
+- (id)uniqueString;
+- (id)uuidData;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 - (id)_pl_stringByReplacingPathExtension:(id)arg1;
+- (id)pl_redactedShareURL;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (bool)containsDigits;
 - (long long)digits;
+- (bool)px_endsWithFullStopOrEquivalentPunctuationMark;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })px_firstLetterRange;
 - (bool)px_hasPrefixIgnoringCaseAndDiacritics:(id)arg1;
 - (bool)px_hasStringIgnoringCaseAndDiacritics:(id)arg1;
+- (id)px_integerValues;
 - (long long)px_platformAgnosticHash;
 - (id)px_stringByApplyingCapitalization:(long long)arg1;
 - (id)px_stringByIndentingNewLines;
+- (id)px_stringConvertedToHTMLString;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfDigits;
 - (id)stringByRemovingDigits;
 
@@ -2090,6 +2177,24 @@
 
 + (id)queryStringForRadioRequestParameters:(id)arg1 protocolVersion:(int)arg2 error:(id*)arg3;
 
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (id)contentEncodedString;
+- (unsigned long long)re_actionIdentifierHashValue;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
++ (id)rc_string:(id /* block */)arg1;
++ (bool)rc_string:(id)arg1 isEqualToString:(id)arg2;
++ (id)stringWithValue:(id)arg1;
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (id)rc_numberFollowingString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RemoteManagement.framework/RemoteManagement
+
+- (id)rm_sha1;
+
 // Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
 
 - (bool)consistsOfCharactersFromSet:(id)arg1 options:(unsigned long long)arg2;
@@ -2108,8 +2213,12 @@
 
 - (bool)safari_anyComponentSeparatedByString:(id)arg1 hasLocalizedCaseInsensitivePrefix:(id)arg2;
 - (id)safari_base64DecodedData;
+- (bool)safari_containsAllCharactersInString:(id)arg1;
 - (bool)safari_containsInteriorWhitespace;
 - (bool)safari_containsPeriodOrHomoglyphForPeriod;
+- (unsigned long long)safari_countOfString:(id)arg1;
+- (id)safari_domainFromHost;
+- (id)safari_filenameByFixingIllegalCharacters;
 - (bool)safari_hasCaseInsensitivePrefix:(id)arg1;
 - (bool)safari_hasCaseInsensitiveSuffix:(id)arg1;
 - (bool)safari_hasLocalizedCaseInsensitivePrefix:(id)arg1;
@@ -2120,10 +2229,18 @@
 - (bool)safari_isSpecialFolderRecordName;
 - (bool)safari_isVersionStringBetweenVersionString:(id)arg1 andVersionString:(id)arg2;
 - (bool)safari_isVersionStringGreaterThanVersionString:(id)arg1;
+- (long long)safari_localizedCompareSortingEmptyStringAndNumericPrefixToEnd:(id)arg1;
+- (bool)safari_looksLikeEmailAddress;
+- (id)safari_setOfAllSubstringsWithMinimumLength:(unsigned long long)arg1;
+- (id)safari_simplifiedSiteNameForCredentialLookup;
 - (id)safari_simplifiedUserVisibleURLString;
 - (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2 simplifiedStringOffset:(unsigned long long*)arg3;
 - (id)safari_stringByNormalizingVersionString;
 - (id)safari_stringByRedactingBookmarkDAVServerID;
+- (id)safari_stringByRemovingCharactersInSet:(id)arg1;
+- (id)safari_stringByRemovingWwwDotPrefix;
+- (id)safari_stringByRepeatingWithCount:(unsigned long long)arg1 joinedByString:(id)arg2;
+- (id)safari_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)safari_stringByReplacingHomoglyphForSpaceWithSpace;
 - (id)safari_stringByTrimmingWhitespace;
 - (id)safari_topLevelDomainUsingCFFromComponents:(id)arg1;
@@ -2145,12 +2262,10 @@
 - (id)safari_bestURLStringForUserTypedString;
 - (id)safari_canonicalURLStringForFrequentlyVisitedSites;
 - (id)safari_containedURLs;
-- (unsigned long long)safari_countOfString:(id)arg1;
 - (id)safari_domainFaviconURLStringVariantsForFaviconDatabase;
-- (id)safari_domainFromHost;
 - (id)safari_domainURLStringPrefixVariantsForFaviconDatabase;
 - (void)safari_enumerateSubdomainRangesInHostUsingBlock:(id /* block */)arg1;
-- (id)safari_fixedStringByExpandingTildeInPath;
+- (id)safari_fixedStringByExpandingTildeInPathToUserHomeDirectory;
 - (bool)safari_hasDirectionalPrefix;
 - (bool)safari_isJavaScriptURLString;
 - (bool)safari_isPathExtensionAllowedForAnalytics;
@@ -2161,16 +2276,15 @@
 - (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
 - (id)safari_scriptIfJavaScriptURLString;
 - (id)safari_sha256Hash;
+- (id)safari_stringByDeletingStartingSlash;
+- (id)safari_stringByDeletingTrailingSlash;
 - (id)safari_stringByFoldingWideCharactersAndNormalizing;
 - (id)safari_stringByFormattingForFaviconDatabase;
 - (id)safari_stringByFormattingForIconControllerDatabase;
-- (id)safari_stringByRemovingCharactersInSet:(id)arg1;
 - (id)safari_stringByRemovingDirectionalPrefix;
 - (id)safari_stringByRemovingExcessWhitespace;
 - (id)safari_stringByRemovingTopLevelDomainFromHost;
 - (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
-- (id)safari_stringByRemovingWwwDotPrefix;
-- (id)safari_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
 - (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
 - (id)safari_stringEncodedAsURLQueryParameter;
@@ -2178,6 +2292,16 @@
 - (id)safari_urlStringVariantsForFaviconDatabase;
 - (id)safari_urlStringVariantsForIconControllerDatabase;
 - (id)safari_userVisibleURL;
+
+// Image: /System/Library/PrivateFrameworks/SampleAnalysis.framework/SampleAnalysis
+
++ (id)classDictionaryKey;
++ (id)newInstanceWithoutReferencesFromSerializedBuffer:(const void*)arg1 bufferLength:(unsigned long long)arg2;
+
+- (bool)addSelfToBuffer:(void*)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (void)populateReferencesUsingBuffer:(const void*)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -2193,6 +2317,7 @@
 - (bool)hasMultipleWordsWithLocaleName:(const char *)arg1 ignorePunctuation:(bool)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })nextWordFromPosition:(long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })previousWordFromPosition:(long long)arg1;
+- (id)scrStringByTrimmingTrailingNewlines;
 - (id)scrc_composedCharacterAtIndex:(unsigned long long)arg1;
 - (id)scrc_composedCharacterEnumerator;
 - (bool)scrc_containsNumberOfGlyphs:(unsigned char)arg1;
@@ -2298,12 +2423,6 @@
 
 - (id)fileCacheStableDataRepresentation;
 
-// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
-
-+ (id)sbs_stringFromCGRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sbs_cgRectValue;
-
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 
 - (id)sbui_rangesOfEmojiTokens:(id*)arg1;
@@ -2321,6 +2440,18 @@
 - (bool)isSingleCharacterAndMemberOfSet:(id)arg1;
 - (bool)sb_containsEmoji;
 - (bool)sb_isEntirelyCharactersInSet:(struct USet { }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/NewsFeed.framework/NewsFeed
+
+- (bool)ne_isNaturallyRTL;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
+
+- (bool)sc_containsCJKScripts;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
@@ -2462,6 +2593,17 @@
 - (id)tv_MD5String;
 - (id)tv_SHA256String;
 - (id)tv_filenameSafeString;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyPreferences.framework/TelephonyPreferences
+
++ (id)tps_ctStringWithTPSEncryptedIdentityType:(long long)arg1;
++ (id)tps_stringWithCTPhoneBookName:(int)arg1;
++ (id)tps_stringWithTPSCallForwardingServiceType:(long long)arg1;
++ (id)tps_stringWithTPSCallWaitingState:(long long)arg1;
++ (id)tps_stringWithTPSCallingLineIdRestrictionState:(long long)arg1;
++ (id)tps_stringWithTPSEncryptedIdentityType:(long long)arg1;
+
+- (long long)tps_encryptedIdentityType;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
@@ -2630,6 +2772,76 @@
 - (struct CGSize { double x1; double x2; })sizeWithAttributes:(id)arg1;
 - (id)stringByStrippingLeadingAndTrailingWhitespace;
 
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)newObjectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 options:(id)arg3 error:(id*)arg4;
+
+- (id)_adjustedFontFromFont:(id)arg1 withinFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 minimumSize:(double)arg3 textSize:(struct CGSize { double x1; double x2; }*)arg4;
+- (struct CGSize { double x1; double x2; })_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
+- (id)_initWithUTF8String:(const char *)arg1 maxLength:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6 includeEmoji:(bool)arg7;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5 includeEmoji:(bool)arg6;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7 includeEmoji:(bool)arg8;
+- (struct CGSize { double x1; double x2; })_legacy_drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6;
+- (struct CGSize { double x1; double x2; })_legacy_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6 truncationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg7;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3 lineSpacing:(int)arg4;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3 letterSpacing:(double)arg4;
+- (struct CGSize { double x1; double x2; })_legacy_sizeWithFont:(id)arg1 minFontSize:(double)arg2 actualFontSize:(double*)arg3 forWidth:(double)arg4 lineBreakMode:(long long)arg5;
+- (struct CGSize { double x1; double x2; })_optimizedSizeWithFont:(id)arg1;
+- (id)_ui_secureString;
+- (id)_uikit_stringByTrimmingWhitespaceAndNewlines;
+- (id)_uikit_stringWithWritingDirection:(long long)arg1 asOverride:(bool)arg2;
+- (id)_uikit_unescapedQueryValue;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 fontSize:(double)arg4 lineBreakMode:(long long)arg5 baselineAdjustment:(long long)arg6 includeEmoji:(bool)arg7;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 lineBreakMode:(long long)arg4 letterSpacing:(double)arg5 includeEmoji:(bool)arg6;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(double)arg2 withFont:(id)arg3 minFontSize:(double)arg4 actualFontSize:(double*)arg5 lineBreakMode:(long long)arg6 baselineAdjustment:(long long)arg7 includeEmoji:(bool)arg8;
+- (struct CGSize { double x1; double x2; })drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2;
+- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4;
+- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5;
+- (struct CGSize { double x1; double x2; })drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withFont:(id)arg2 lineBreakMode:(long long)arg3 alignment:(long long)arg4 lineSpacing:(int)arg5 includeEmoji:(bool)arg6;
+- (id)queryKeysAndValues;
+- (void)registerLoadHandlersToItemProvider:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize { double x1; double x2; })arg2 lineBreakMode:(long long)arg3 lineSpacing:(int)arg4;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3 letterSpacing:(double)arg4;
+- (struct CGSize { double x1; double x2; })sizeWithFont:(id)arg1 minFontSize:(double)arg2 actualFontSize:(double*)arg3 forWidth:(double)arg4 lineBreakMode:(long long)arg5;
+- (id)stringByStandardizingWhitespace;
+
+// Image: /System/Library/PrivateFrameworks/URLFormatting.framework/URLFormatting
+
++ (void)_lp_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
+
+- (bool)_lp_hasCaseInsensitivePrefix:(id)arg1;
+- (bool)_lp_hasCaseInsensitiveSubstring:(id)arg1 startingAt:(unsigned long long)arg2;
+- (id)_lp_highLevelDomainFromHost;
+- (unsigned long long)_lp_lengthOfDeepSubdomainsFromComponents:(id)arg1;
+- (id)_lp_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2;
+- (id)_lp_stringForcingLeftToRightDirection;
+- (id)_lp_topLevelDomainFromComponents:(id)arg1 indexOfFirstComponent:(unsigned long long*)arg2;
+- (id)_lp_userVisibleHost;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 + (id)uns_stringWithDigestOfSHA1Hash:(id)arg1;
@@ -2641,6 +2853,11 @@
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 - (id)_vk_internedString;
+
+// Image: /System/Library/PrivateFrameworks/VisualTestKit.framework/VisualTestKit
+
+- (id)vtkAssertName;
+- (unsigned long long)vtkIDDecorationsMask;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
@@ -2708,6 +2925,13 @@
 - (id)WF_stringByReplacingString:(id)arg1 withString:(id)arg2;
 - (id)WF_stringWithMostSignificatDomainPart;
 - (bool)_isIPv4DomainAddress;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/Frameworks/libwebrtc.dylib
+
++ (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; })stdStringForString:(id)arg1;
++ (id)stringForStdString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
+
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; })stdString;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
@@ -2784,10 +3008,6 @@
 + (id)customNumberFormatIntegerTokenRepresentedStringWithDigits:(unsigned int)arg1 separator:(bool)arg2 digitString:(id)arg3;
 + (id)customNumberFormatTokenStringOfType:(int)arg1 content:(id)arg2;
 + (id)sfu_numberSymbols;
-+ (id)tsce_stringWithCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-+ (id)tsce_stringWithCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 stickyBits:(unsigned char)arg2;
-+ (id)tsce_stringWithCellRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 stickyBits:(unsigned char)arg2;
-+ (id)tsce_stringWithSignedCellID:(struct { int x1; short x2; unsigned int x3 : 1; unsigned int x4 : 1; })arg1 stickyBits:(unsigned char)arg2;
 + (id)tsk_normalizedDisplayName:(id)arg1;
 + (id)tsk_regexStringForSearchString:(id)arg1 options:(unsigned long long)arg2;
 + (id)tsp_stringWithProtobufString:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
@@ -2802,6 +3022,7 @@
 + (id)tsu_fogShareTokenFromFileURL:(id)arg1;
 + (id)tsu_localizedDisplayNameWithPersonNameComponents:(id)arg1;
 + (id)tsu_numberSymbols;
++ (id)tsu_redactedStringWithFormat:(id)arg1 arguments:(char *)arg2;
 + (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned long long)arg2;
 + (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned long long)arg2 breakLines:(bool)arg3;
 + (id)tsu_stringByHexEncodingData:(id)arg1;
@@ -2812,6 +3033,7 @@
 + (id)tsu_stringWithSqlStatement:(struct sqlite3_stmt { }*)arg1 columnIndex:(int)arg2;
 + (id)tsu_stringWithUUID;
 + (id)tsu_stringWithXMLString:(const char *)arg1;
++ (id)tsu_unRedactedStringWithFormat:(id)arg1 arguments:(char *)arg2;
 + (unsigned long long)tswp_numberForString:(id)arg1 withListNumberFormat:(int)arg2;
 + (unsigned long long)tswp_numberForString:(id)arg1 withPageNumberFormat:(int)arg2;
 + (id)tswp_stringForValue:(unsigned int)arg1 withListNumberFormat:(int)arg2;
@@ -2844,10 +3066,7 @@
 - (id)sfu_suffixOfNumberFormatSubpattern;
 - (unsigned short)spaceCharacterInCustomNumberFormatSpaceToken;
 - (id)stringByInsertingGroupingSeparators;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })tsce_coordinateValue;
-- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })tsce_coordinateValueGettingStickyBits:(char *)arg1;
 - (bool)tsce_hasCaseInsensitivePrefix:(id)arg1 withLocale:(id)arg2;
-- (id)tsce_initWithCellID:(struct { int x1; short x2; unsigned int x3 : 1; unsigned int x4 : 1; })arg1 stickyBits:(unsigned char)arg2;
 - (bool)tsce_isSingleQuoted;
 - (bool)tsce_needsReferenceSingleQuoteEscaping;
 - (id)tsce_newStringByAddingDoubleQuoteEscapesIfNecessary;
@@ -2987,7 +3206,11 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })tswp_rangeOfWordAtCharacterIndex:(unsigned long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 includePreviousWord:(bool)arg3 includeHyphenation:(bool)arg4;
 - (id)tswp_replaceOccurrencesOfCharactersInSet:(id)arg1 minimumConsecutiveLength:(unsigned long long)arg2 replaceString:(id)arg3;
 - (id)tswp_stringByNormalizingParagraphBreaks;
+- (id)tswp_stringWithAddedIsolatesBasedOn:(int)arg1;
+- (id)tswp_stringWithUnambiguousNeutralEnding;
+- (id)tswp_stringWithoutControlCharacters;
 - (unsigned int)tswp_utf32CharacterAtIndex:(unsigned long long)arg1;
+- (unsigned int)tswp_utf32CharacterAtIndex:(unsigned long long)arg1 planeClassification:(long long*)arg2;
 
 // Image: /usr/lib/libmecabra.dylib
 

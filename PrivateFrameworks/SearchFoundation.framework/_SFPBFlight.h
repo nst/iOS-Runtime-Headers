@@ -20,13 +20,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *flightID;
 @property (nonatomic, copy) NSString *flightNumber;
-@property (nonatomic, readonly) bool hasCarrierCode;
-@property (nonatomic, readonly) bool hasCarrierName;
-@property (nonatomic, readonly) bool hasCarrierPhoneNumber;
-@property (nonatomic, readonly) bool hasFlightID;
-@property (nonatomic, readonly) bool hasFlightNumber;
-@property (nonatomic, readonly) bool hasOperatorCarrierCode;
-@property (nonatomic, readonly) bool hasOperatorFlightNumber;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSArray *legs;
@@ -43,13 +36,6 @@
 - (id)dictionaryRepresentation;
 - (id)flightID;
 - (id)flightNumber;
-- (bool)hasCarrierCode;
-- (bool)hasCarrierName;
-- (bool)hasCarrierPhoneNumber;
-- (bool)hasFlightID;
-- (bool)hasFlightNumber;
-- (bool)hasOperatorCarrierCode;
-- (bool)hasOperatorFlightNumber;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

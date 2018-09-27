@@ -82,11 +82,9 @@
 
 - (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
 
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
-+ (id)geo_predicateForItemsMatchingMapItemIdentifiers:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)_hd_predicateForCompatibilityVersion:(long long)arg1;
 
 - (id)_sqlPredicateForSelect;
 
@@ -107,5 +105,17 @@
 + (id)vcp_moviesPredicate:(bool)arg1;
 + (id)vcp_photosPredicate:(bool)arg1;
 + (id)vcp_stillPhotosPredicate:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
++ (id)_vui_keyPathsInComparisonPredicate:(id)arg1;
++ (id)_vui_keyPathsInCompoundPredicate:(id)arg1;
++ (id)_vui_keyPathsInPredicate:(id)arg1;
++ (id)vui_equalPredicateWithKeyPath:(id)arg1 value:(id)arg2;
++ (id)vui_keyPathBitTestPredicateWithKeyPath:(id)arg1 value:(id)arg2;
++ (id)vui_notEqualPredicateWithKeyPath:(id)arg1 value:(id)arg2;
++ (id)vui_predicateWithSubpredicates:(id)arg1 type:(unsigned long long)arg2;
+
+- (id)vui_keyPathsInPredicate;
 
 @end

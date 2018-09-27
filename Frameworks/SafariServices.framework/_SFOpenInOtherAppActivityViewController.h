@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFOpenInOtherAppActivityViewController : _SFManagedActivityViewController {
+@interface _SFOpenInOtherAppActivityViewController : _SFActivityViewController {
     NSString * _filePath;
 }
 

@@ -112,19 +112,6 @@
 - (void)_sf_loadObjectOfClasses:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_sf_registerFileRepresentationForQuickLookDocument:(id)arg1;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)itemProviderWithURL:(id)arg1 title:(id)arg2;
-
-- (void)_NSItemProviderDidRegisterObject:(id)arg1;
-- (Class)_highestFidelityClassForLoading:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredPresentationSize;
-- (long long)preferredPresentationStyle;
-- (void)setPreferredPresentationSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPreferredPresentationStyle:(long long)arg1;
-- (void)setTeamData:(id)arg1;
-- (id)teamData;
-
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (id)_fileProviderItemProviderForAsset:(id)arg1;
@@ -143,5 +130,18 @@
 - (id)_px_sharedMediaVideoComplementFromURL:(id)arg1;
 - (void)px_createAssetWithCompletionBlock:(id /* block */)arg1;
 - (void)px_createStreamShareSourceWithCompletionBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)itemProviderWithURL:(id)arg1 title:(id)arg2;
+
+- (void)_NSItemProviderDidRegisterObject:(id)arg1;
+- (Class)_highestFidelityClassForLoading:(id)arg1;
+- (struct CGSize { double x1; double x2; })preferredPresentationSize;
+- (long long)preferredPresentationStyle;
+- (void)setPreferredPresentationSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredPresentationStyle:(long long)arg1;
+- (void)setTeamData:(id)arg1;
+- (id)teamData;
 
 @end

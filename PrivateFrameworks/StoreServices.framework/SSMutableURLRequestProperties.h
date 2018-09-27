@@ -36,6 +36,7 @@
 @property bool shouldDisableCellular;
 @property bool shouldDisableCellularFallback;
 @property bool shouldDisableReversePush;
+@property bool shouldDisableReversePushSampling;
 @property bool shouldProcessProtocol;
 @property bool shouldSendSecureToken;
 @property bool shouldSetCookies;
@@ -73,6 +74,7 @@
 - (void)setShouldDisableCellular:(bool)arg1;
 - (void)setShouldDisableCellularFallback:(bool)arg1;
 - (void)setShouldDisableReversePush:(bool)arg1;
+- (void)setShouldDisableReversePushSampling:(bool)arg1;
 - (void)setShouldProcessProtocol:(bool)arg1;
 - (void)setShouldSendSecureToken:(bool)arg1;
 - (void)setShouldSetCookies:(bool)arg1;

@@ -24,6 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithFieldNotification:(id)arg1;
 - (id)initWithTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2;
 - (id)initWithTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2 andSystemCode:(unsigned short)arg3;
 - (unsigned short)systemCode;

@@ -84,6 +84,7 @@
 - (void)copySerializableValuesFrom:(id)arg1;
 - (id)currentRoute;
 - (id)currentVoiceLanguage;
+- (id)description;
 - (id)displayString;
 - (double)distanceUntilManeuver;
 - (double)distanceUntilSign;

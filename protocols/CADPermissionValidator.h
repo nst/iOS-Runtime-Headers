@@ -9,6 +9,7 @@
 - (bool)canModifyCalendarDatabase;
 - (bool)canModifySuggestedEventCalendar;
 - (bool)hasCalendarToolEntitlement;
+- (bool)hasChangeIdTrackingOverrideEntitlement;
 - (bool)hasContactsUIEntitlement;
 - (bool)hasMigrationEntitlement;
 - (bool)hasSyncClientEntitlement;

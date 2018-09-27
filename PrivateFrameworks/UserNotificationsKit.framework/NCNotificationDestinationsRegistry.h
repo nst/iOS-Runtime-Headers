@@ -8,10 +8,10 @@
     struct NSMutableDictionary { Class x1; } * _readyDestinations;
 }
 
-@property (nonatomic, copy) NSMutableDictionary *activeDestinations;
+@property (nonatomic, retain) NSMutableDictionary *activeDestinations;
 @property (nonatomic, readonly) unsigned long long count;
-@property (nonatomic, copy) NSMutableDictionary *destinations;
-@property (nonatomic, copy) NSMutableDictionary *readyDestinations;
+@property (nonatomic, retain) NSMutableDictionary *destinations;
+@property (nonatomic, retain) NSMutableDictionary *readyDestinations;
 @property (nonatomic, readonly) NSArray *registeredDestinations;
 
 - (void).cxx_destruct;

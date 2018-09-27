@@ -33,7 +33,7 @@
 - (id)effectiveAttributedText;
 - (id)effectiveFont;
 - (void)enumerateUnderlyingLabelsWithBlock:(id /* block */)arg1;
-- (id)initWithTimeFormatter:(id)arg1 options:(unsigned long long)arg2 labelFactory:(id /* block */)arg3;
+- (id)initWithForDevice:(id)arg1 timeFormatter:(id)arg2 options:(unsigned long long)arg3 labelFactory:(id /* block */)arg4;
 - (struct CGSize { double x1; double x2; })intrinsicSize;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })opticalInsets;
@@ -50,5 +50,6 @@
 - (void)timeFormatterReportingLiveTimeDidChange:(id)arg1;
 - (void)updateTimeText;
 - (id)view;
+- (id)viewForLastBaselineLayout;
 
 @end

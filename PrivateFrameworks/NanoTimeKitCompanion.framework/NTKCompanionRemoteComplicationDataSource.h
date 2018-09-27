@@ -14,7 +14,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2 forDevice:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_activeDeviceChanged;
@@ -30,6 +30,6 @@
 - (void)complicationCollectionDidLoad:(id)arg1;
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 
 @end

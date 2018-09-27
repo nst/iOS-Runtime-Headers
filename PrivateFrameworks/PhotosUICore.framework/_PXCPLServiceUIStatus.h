@@ -10,7 +10,7 @@
     NSString * _actionTitle;
     NSString * _failureDescription;
     bool  _paused;
-    double  _progress;
+    float  _progress;
     NSString * _referencedItemsDescription;
     long long  _serviceAction;
     NSString * _stateDescription;
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSString *failureDescription;
 @property (readonly) unsigned long long hash;
 @property (getter=isPaused, nonatomic) bool paused;
-@property (nonatomic) double progress;
+@property (nonatomic) float progress;
 @property (nonatomic, retain) NSString *referencedItemsDescription;
 @property (nonatomic) long long serviceAction;
 @property (nonatomic, retain) NSString *stateDescription;
@@ -43,7 +43,7 @@
 - (id)failureDescription;
 - (id)init;
 - (bool)isPaused;
-- (double)progress;
+- (float)progress;
 - (id)referencedItemsDescription;
 - (long long)serviceAction;
 - (void)setAction:(id /* block */)arg1;
@@ -53,7 +53,7 @@
 - (void)setActionTitle:(id)arg1;
 - (void)setFailureDescription:(id)arg1;
 - (void)setPaused:(bool)arg1;
-- (void)setProgress:(double)arg1;
+- (void)setProgress:(float)arg1;
 - (void)setReferencedItemsDescription:(id)arg1;
 - (void)setServiceAction:(long long)arg1;
 - (void)setStateDescription:(id)arg1;

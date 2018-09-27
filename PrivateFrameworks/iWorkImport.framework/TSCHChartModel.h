@@ -61,6 +61,7 @@
 - (id)dataSetNameForMultiDataModel;
 - (void)dealloc;
 - (unsigned long long)defaultOrdinalForAxisType:(int)arg1 seriesIndex:(unsigned long long)arg2;
+- (void)disableCachingMediatorDataDuringBlock:(id /* block */)arg1;
 - (void)enumerateMultiDataModelsUsingBlock:(id /* block */)arg1;
 - (void)forceLoadDefaultData;
 - (id)grid;

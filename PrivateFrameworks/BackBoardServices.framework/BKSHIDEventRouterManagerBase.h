@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSArray *eventRouters;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)eventRouters;
 - (id)init;

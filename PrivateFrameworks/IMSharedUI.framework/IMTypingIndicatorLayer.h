@@ -3,6 +3,7 @@
  */
 
 @interface IMTypingIndicatorLayer : CALayer <IMTypingIndicatorLayerProtocol> {
+    struct UIColor { Class x1; } * _bubbleColor;
     CALayer * _bubbleContainer;
     double  _bubbleOpacity;
     struct UIColor { Class x1; } * _customBubbleColor;
@@ -13,11 +14,13 @@
     CALayer * _mediumBubble;
     CALayer * _smallBubble;
     CALayer * _thinkingDot;
+    struct UIColor { Class x1; } * _thinkingDotColor;
     CALayer * _thinkingDotContainer;
+    double  _thinkingDotOpacity;
     CAReplicatorLayer * _thinkingDots;
 }
 
-@property (nonatomic, readonly) UIColor *bubbleColor;
+@property (nonatomic, copy) UIColor *bubbleColor;
 @property (nonatomic, retain) CALayer *bubbleContainer;
 @property (nonatomic) double bubbleOpacity;
 @property (nonatomic, copy) UIColor *customBubbleColor;
@@ -32,13 +35,16 @@
 @property (nonatomic, retain) CALayer *smallBubble;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CALayer *thinkingDot;
+@property (nonatomic, copy) UIColor *thinkingDotColor;
 @property (nonatomic, retain) CALayer *thinkingDotContainer;
+@property (nonatomic) double thinkingDotOpacity;
 @property (nonatomic, retain) CAReplicatorLayer *thinkingDots;
 
-+ (struct UIColor { Class x1; }*)darkBackgroundThinkingDotColor;
 + (struct UIColor { Class x1; }*)defaultBubbleColor;
++ (double)defaultBubbleOpacity;
 + (struct CGSize { double x1; double x2; })defaultSize;
 + (struct UIColor { Class x1; }*)defaultThinkingDotColor;
++ (double)defaultThinkingDotOpacity;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })iconImageFrame;
 + (double)iconImageTrailingSpace;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })largeBubbleFrame;
@@ -63,6 +69,7 @@
 - (id)_smallBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
 - (id)_smallBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
 - (void)_updateBubbleColors;
+- (void)_updateBubbleOpacity;
 - (void)_updateForImage;
 - (struct UIColor { Class x1; }*)bubbleColor;
 - (id)bubbleContainer;
@@ -75,6 +82,7 @@
 - (id)init;
 - (id)largeBubble;
 - (id)mediumBubble;
+- (void)setBubbleColor:(struct UIColor { Class x1; }*)arg1;
 - (void)setBubbleContainer:(id)arg1;
 - (void)setBubbleOpacity:(double)arg1;
 - (void)setCustomBubbleColor:(struct UIColor { Class x1; }*)arg1;
@@ -85,16 +93,21 @@
 - (void)setMediumBubble:(id)arg1;
 - (void)setSmallBubble:(id)arg1;
 - (void)setThinkingDot:(id)arg1;
+- (void)setThinkingDotColor:(struct UIColor { Class x1; }*)arg1;
 - (void)setThinkingDotContainer:(id)arg1;
+- (void)setThinkingDotOpacity:(double)arg1;
 - (void)setThinkingDots:(id)arg1;
 - (id)smallBubble;
 - (void)startGrowAnimation;
+- (void)startGrowAnimationWithCompletionBlock:(id /* block */)arg1;
 - (void)startPulseAnimation;
 - (void)startShrinkAnimationWithCompletionBlock:(id /* block */)arg1;
 - (void)stopAnimation;
 - (void)stopPulseAnimation;
 - (id)thinkingDot;
+- (struct UIColor { Class x1; }*)thinkingDotColor;
 - (id)thinkingDotContainer;
+- (double)thinkingDotOpacity;
 - (id)thinkingDots;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface _HKGraphViewSelectionContext : NSObject {
+    HKGraphSeries * _closestSeriesToSelection;
     NSArray * _selectedRangeBoundariesXValue;
-    HKGraphSeries * _selectedSeries;
     NSArray * _selectionAreaMapping;
     long long  _selectionState;
     struct CGRect { 
@@ -20,23 +20,23 @@
     NSArray * _touchPoints;
 }
 
+@property (nonatomic, retain) HKGraphSeries *closestSeriesToSelection;
 @property (nonatomic, readonly) double minimumSelectionDistance;
 @property (nonatomic, retain) NSArray *selectedRangeBoundariesXValue;
-@property (nonatomic, retain) HKGraphSeries *selectedSeries;
 @property (nonatomic, retain) NSArray *selectionAreaMapping;
 @property (nonatomic) long long selectionState;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } seriesSelectionRect;
 @property (nonatomic, retain) NSArray *touchPoints;
 
 - (void).cxx_destruct;
+- (id)closestSeriesToSelection;
 - (double)minimumSelectionDistance;
 - (id)selectedRangeBoundariesXValue;
-- (id)selectedSeries;
 - (id)selectionAreaMapping;
 - (long long)selectionState;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })seriesSelectionRect;
+- (void)setClosestSeriesToSelection:(id)arg1;
 - (void)setSelectedRangeBoundariesXValue:(id)arg1;
-- (void)setSelectedSeries:(id)arg1;
 - (void)setSelectionAreaMapping:(id)arg1;
 - (void)setSelectionState:(long long)arg1;
 - (void)setSeriesSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

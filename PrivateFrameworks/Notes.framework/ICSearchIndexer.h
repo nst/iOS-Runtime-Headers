@@ -5,6 +5,7 @@
 @interface ICSearchIndexer : NSObject <CSSearchableIndexDelegate> {
     ICSelectorDelayer * _changeProcessingDelayer;
     NSDictionary * _dataSourcesByIdentifier;
+    bool  _disabled;
     NSObject<OS_dispatch_queue> * _indexingQueue;
     unsigned long long  _maxBytesPerIndexingBatch;
     bool  _observingChanges;
@@ -19,6 +20,7 @@
 @property (nonatomic, copy) NSDictionary *dataSourcesByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isDisabled, nonatomic) bool disabled;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *indexingQueue;
 @property (nonatomic) unsigned long long maxBytesPerIndexingBatch;
@@ -44,6 +46,7 @@
 - (void)finishRemainingOperationsWithCompletionHandler:(id /* block */)arg1;
 - (id)indexingQueue;
 - (id)init;
+- (bool)isDisabled;
 - (bool)isObservingChanges;
 - (unsigned long long)maxBytesPerIndexingBatch;
 - (id)newContextsForAllDataSources;
@@ -67,6 +70,7 @@
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (void)setChangeProcessingDelayer:(id)arg1;
 - (void)setDataSourcesByIdentifier:(id)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setIndexingQueue:(id)arg1;
 - (void)setMaxBytesPerIndexingBatch:(unsigned long long)arg1;
 - (void)setObservingChanges:(bool)arg1;

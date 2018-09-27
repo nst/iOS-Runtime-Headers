@@ -7,8 +7,6 @@
     bool  fastReversing;
     double  mAbsoluteCurrentTime;
     <TSKMediaPlayerControllerDelegate> * mDelegate;
-    CADisplayLink * mDisplayLink;
-    unsigned long long  mDisplayLinkCounter;
     double  mEndTime;
     NSArray * mFrames;
     double  mLastDisplayUpdateTime;
@@ -31,6 +29,7 @@
 @property (nonatomic) double lastDisplayUpdateTime;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
 - (void)addLayer:(id)arg1;
@@ -58,13 +57,8 @@
 - (bool)isScrubbing;
 - (double)lastDisplayUpdateTime;
 - (id)newLayer;
-- (void)p_disableDisplayLink;
-- (void)p_displayLinkDidTrigger:(id)arg1;
-- (void)p_enableDisplayLink;
-- (void)p_getAbsoluteMovieTime:(double*)arg1 shouldStopPlayback:(bool*)arg2 shouldReversePlayback:(bool*)arg3;
 - (void)p_prepareFrameTimes;
 - (void)p_setAbsoluteCurrentTime:(double)arg1;
-- (void)p_updateDisplayLink;
 - (void)p_updateLayers;
 - (float)rate;
 - (double)remainingTime;

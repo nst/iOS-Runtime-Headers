@@ -19,6 +19,8 @@
 @property (nonatomic, readonly) _MRAVEndpointDescriptorProtobuf *descriptor;
 @property (nonatomic, readonly) MRAVOutputDevice *designatedGroupLeader;
 @property (nonatomic, readonly) MRExternalDevice *externalDevice;
+@property (nonatomic, readonly) NSDictionary *jsonEncodableDictionaryRepresentation;
+@property (getter=isLocalEndpoint, nonatomic, readonly) bool localEndpoint;
 @property (nonatomic, retain) NSString *localizedName;
 @property (nonatomic, readonly) unsigned long long logicalOutputDeviceCount;
 @property (nonatomic, readonly) NSArray *outputDeviceUIDs;
@@ -47,8 +49,10 @@
 - (id)designatedGroupLeader;
 - (id)externalDevice;
 - (bool)isEqual:(id)arg1;
+- (bool)isLocalEndpoint;
 - (bool)isProxyGroupPlayer;
 - (bool)isVolumeControlAvailable;
+- (id)jsonEncodableDictionaryRepresentation;
 - (id)localizedName;
 - (unsigned long long)logicalOutputDeviceCount;
 - (id)outputDeviceUIDs;

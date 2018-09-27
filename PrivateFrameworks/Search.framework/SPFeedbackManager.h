@@ -11,6 +11,8 @@
 
 + (id)sharedManager;
 
+- (void)_sendFeedback:(id)arg1 type:(long long)arg2;
+- (void)_sendFeedback:(id)arg1 type:(long long)arg2 queryId:(unsigned long long)arg3;
 - (void)cardViewDidAppear:(id)arg1;
 - (void)cardViewDidDisappear:(id)arg1;
 - (void)didAppendLateSections:(id)arg1;
@@ -31,7 +33,6 @@
 - (void)searchViewDidDisappear:(id)arg1;
 - (void)sectionHeaderDidBecomeVisible:(id)arg1;
 - (void)sendCustomFeedback:(id)arg1;
-- (void)sendFeedbackMessage:(SEL)arg1 withFeedback:(id)arg2;
 - (void)suggestionsDidBecomeVisible:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSOperation : NSObject <FCOperationIdentifying, ICLoggable> {
+@interface NSOperation : NSObject <FCOperationIdentifying, ICLoggable, RCOperationIdentifying> {
     id  _private;
     int  _private1;
     int  _private1b;
@@ -28,6 +28,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (bool)_removesDependenciesAfterFinish;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentOperation;
 + (id)keyPathsForValuesAffectingCancelled;
@@ -63,6 +64,7 @@
 - (void*)observationInfo;
 - (long long)qualityOfService;
 - (long long)queuePriority;
+- (void)removeAllDependencies;
 - (void)removeDependency:(id)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)setCompletionBlock:(id /* block */)arg1;
@@ -94,5 +96,10 @@
 
 - (id)ic_loggingIdentifier;
 - (id)ic_loggingValues;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
+- (id)longOperationDescription;
+- (id)shortOperationDescription;
 
 @end

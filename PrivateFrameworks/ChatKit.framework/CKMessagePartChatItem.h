@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) UIItemProvider *dragItemProvider;
 @property (nonatomic, readonly) bool hasMessageAcknowledgment;
 @property (nonatomic, readonly) bool hasStickers;
+@property (nonatomic, readonly) bool isCorrupt;
 @property (nonatomic, readonly) IMMessage *message;
 @property (nonatomic, readonly, copy) NSArray *messageAcknowledgments;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } messagePartRange;
@@ -34,6 +35,7 @@
 - (bool)hasMessageAcknowledgment;
 - (bool)hasStickers;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
+- (bool)isCorrupt;
 - (bool)isFromMe;
 - (id)message;
 - (id)messageAcknowledgments;

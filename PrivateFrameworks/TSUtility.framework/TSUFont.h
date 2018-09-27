@@ -29,6 +29,7 @@
 - (id)UIFont;
 - (double)ascender;
 - (double)capHeight;
+- (id)convertFontToBold:(bool)arg1 italic:(bool)arg2;
 - (void)dealloc;
 - (double)descender;
 - (id)familyName;

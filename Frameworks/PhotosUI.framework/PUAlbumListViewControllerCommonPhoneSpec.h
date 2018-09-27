@@ -6,7 +6,6 @@
 
 - (long long)albumDeletionConfirmationStyle;
 - (id)albumViewControllerSpec;
-- (bool)canDisplaySearchActionInNavigationBar;
 - (id)emptyStackPhotoDecoration;
 - (id)feedViewControllerSpec;
 - (id)gridViewControllerSpec;

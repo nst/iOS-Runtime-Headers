@@ -62,6 +62,6 @@
 - (bool)isInterestingToUser;
 - (bool)isLike;
 - (bool)isMyComment;
-- (bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
+- (bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
 
 @end

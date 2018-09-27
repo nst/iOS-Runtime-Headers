@@ -6,8 +6,10 @@
     <ICCloudContextDelegate> * _cloudContextDelegate;
     CKContainer * _container;
     bool  _didAddObservers;
+    bool  _didCheckForLongLivedOperations;
     bool  _disabled;
     bool  _disabledInternal;
+    unsigned long long  _discretionaryNetworkBehavior;
     bool  _fetchOperationsPending;
     bool  _fetchingEnabled;
     NSDate * _lastSyncDate;
@@ -34,8 +36,10 @@
 @property (nonatomic, readonly) NSDictionary *cloudObjectClassesByRecordType;
 @property (nonatomic, retain) CKContainer *container;
 @property (nonatomic) bool didAddObservers;
+@property (nonatomic) bool didCheckForLongLivedOperations;
 @property (getter=isDisabled) bool disabled;
 @property (getter=isDisabledInternal) bool disabledInternal;
+@property (nonatomic) unsigned long long discretionaryNetworkBehavior;
 @property (nonatomic, readonly) bool fetchOperationsPending;
 @property (getter=isFetchingEnabled, nonatomic) bool fetchingEnabled;
 @property (retain) NSDate *lastSyncDate;
@@ -106,8 +110,10 @@
 - (void)deleteServerChangeTokenForChangedZonesInDatabase:(id)arg1;
 - (void)deleteServerChangeTokenForRecordZoneID:(id)arg1 databaseScope:(long long)arg2;
 - (bool)didAddObservers;
+- (bool)didCheckForLongLivedOperations;
 - (void)didFetchShare:(id)arg1 context:(id)arg2;
 - (void)disableCloudSyncingIfCurrentVersionNotSuppported;
+- (unsigned long long)discretionaryNetworkBehavior;
 - (id)existingCloudObjectForRecord:(id)arg1 context:(id)arg2;
 - (id)existingCloudObjectForRecordID:(id)arg1 recordType:(id)arg2 context:(id)arg3;
 - (id)existingCloudObjectForUserSpecificRecordID:(id)arg1 createPlaceholderIfNecessary:(bool)arg2 context:(id)arg3;
@@ -202,8 +208,10 @@
 - (void)setCloudContextDelegate:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setDidAddObservers:(bool)arg1;
+- (void)setDidCheckForLongLivedOperations:(bool)arg1;
 - (void)setDisabled:(bool)arg1;
 - (void)setDisabledInternal:(bool)arg1;
+- (void)setDiscretionaryNetworkBehavior:(unsigned long long)arg1;
 - (void)setFetchingEnabled:(bool)arg1;
 - (void)setLastSyncDate:(id)arg1;
 - (void)setNeedsToProcessAllObjects:(bool)arg1;

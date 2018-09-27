@@ -71,6 +71,7 @@
 - (void)provideRemediationMap:(id)arg1;
 - (void)provideURLAppendStringMap:(id)arg1;
 - (void)providerControlSocketFileHandle:(id)arg1;
+- (void)purgeData:(int)arg1 size:(int)arg2 buf:(char *)arg3 bufSize:(int)arg4;
 - (id)remediationMap;
 - (void)report:(id)arg1;
 - (void)reportFlow:(id)arg1 forVerdict:(id)arg2;

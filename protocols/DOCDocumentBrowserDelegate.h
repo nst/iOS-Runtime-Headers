@@ -12,7 +12,7 @@
 - (void)browser:(DOCBrowserViewController *)arg1 didUpdateCurrentLocationCanSelect:(bool)arg2;
 - (void)browser:(DOCBrowserViewController *)arg1 didUpdateCurrentLocationIsWritable:(bool)arg2;
 - (void)browser:(DOCBrowserViewController *)arg1 didUpdateImportSupportInCurrentLocation:(bool)arg2;
-- (void)browser:(DOCBrowserViewController *)arg1 didUpdateNumberOfItems:(unsigned long long)arg2;
+- (void)browser:(DOCBrowserViewController *)arg1 didUpdateNumberOfSelectableItems:(unsigned long long)arg2;
 - (void)browser:(DOCBrowserViewController *)arg1 isDisplayingEmptyCollection:(bool)arg2;
 - (void)browser:(DOCBrowserViewController *)arg1 wantsToShowInfoForItem:(DOCItem *)arg2;
 - (void)browser:(DOCBrowserViewController *)arg1 wantsToShowLocation:(DOCConcreteLocation *)arg2 forceReplaceLocation:(bool)arg3;

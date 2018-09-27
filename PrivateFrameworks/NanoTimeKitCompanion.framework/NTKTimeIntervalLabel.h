@@ -4,6 +4,7 @@
 
 @interface NTKTimeIntervalLabel : UIView {
     double  _currentTextTime;
+    CLKDevice * _device;
     id /* block */  _didResizeHandler;
     double  _digitWidth;
     NSMutableArray * _digits;
@@ -56,9 +57,9 @@
 - (id)formatTimeInterval;
 - (bool)frozen;
 - (id)getTimeText;
-- (id)initWithMonospacedFontOfSize:(double)arg1;
-- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3;
-- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 signed:(bool)arg4;
+- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 forDevice:(id)arg4;
+- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2 style:(long long)arg3 signed:(bool)arg4 forDevice:(id)arg5;
+- (id)initWithMonospacedFontOfSize:(double)arg1 forDevice:(id)arg2;
 - (void)layoutSubviews;
 - (id)prefix;
 - (void)recalculateSize;

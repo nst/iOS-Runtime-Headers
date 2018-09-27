@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (id)_compressedDataForData:(id)arg1;
 - (bool)_shouldHandleEvent;
+- (void)_stop;
 - (void)dealloc;
 - (id /* block */)didEncounterErrorBlock;
 - (id /* block */)didFinishReadingBlock;
@@ -52,6 +53,7 @@
 - (bool)shouldCompress;
 - (void)start;
 - (void)stop;
+- (void)stopWithCompletion:(id /* block */)arg1;
 - (id)stream;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (double)timestamp;

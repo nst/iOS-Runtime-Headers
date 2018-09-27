@@ -7,6 +7,7 @@
     PUImageDataRenderNode * _imageRenderNode;
     PUPhotoEditIrisModel * _livePhotoModel;
     bool  _success;
+    bool  _useRawIfAvailable;
     <PUVideoURLNode> * _videoNode;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) PUImageDataRenderNode *imageRenderNode;
 @property (nonatomic, readonly, copy) PUPhotoEditIrisModel *livePhotoModel;
 @property (nonatomic, readonly) bool success;
+@property (nonatomic, readonly) bool useRawIfAvailable;
 @property (nonatomic, readonly) <PUVideoURLNode> *videoNode;
 
 - (void).cxx_destruct;
@@ -24,10 +26,11 @@
 - (void)_handleDidCompleteChangeWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)imageDataNode;
 - (id)imageRenderNode;
-- (id)initWithImageDataNode:(id)arg1 imageRenderNode:(id)arg2 videoNode:(id)arg3 livePhotoModel:(id)arg4;
+- (id)initWithImageDataNode:(id)arg1 imageRenderNode:(id)arg2 videoNode:(id)arg3 livePhotoModel:(id)arg4 useRawIfAvailable:(bool)arg5;
 - (id)livePhotoModel;
 - (void)run;
 - (bool)success;
+- (bool)useRawIfAvailable;
 - (id)videoNode;
 
 @end

@@ -24,7 +24,7 @@
 - (id)jsonLdOutputFromEntity:(id)arg1;
 - (id)jsonLdOutputFromPackedJSEntity:(id)arg1;
 - (id)jsonLdOutputFromURL:(id)arg1 title:(id)arg2 payload:(id)arg3 extractionDate:(id)arg4;
-- (struct _PASTuple3 { Class x1; }*)outputFromPackedJSEntity:(id)arg1 documentType:(unsigned long long)arg2 isDownloaded:(bool)arg3 forEntity:(id)arg4;
+- (id)outputFromPackedJSEntity:(id)arg1 documentType:(unsigned long long)arg2 isDownloaded:(bool)arg3 forEntity:(id)arg4;
 - (id)packedEntityForJS:(id)arg1;
 - (id)packedJSEntityFromURL:(id)arg1 title:(id)arg2 payload:(id)arg3;
 - (id)packedJSEntityFromURL:(id)arg1 title:(id)arg2 payload:(id)arg3 creationTimestamp:(double)arg4;

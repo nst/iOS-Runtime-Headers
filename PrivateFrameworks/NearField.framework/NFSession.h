@@ -42,5 +42,6 @@
 - (void)setIsFirstInQueue:(bool)arg1;
 - (void)setProxy:(id)arg1;
 - (unsigned long long)state;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 
 @end

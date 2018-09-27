@@ -15,7 +15,6 @@
     id /* block */  tc_cancel_handler;
     unsigned int  tc_client_owns_dup_fd;
     NSObject<OS_dispatch_queue> * tc_client_queue;
-    BOOL  tc_connection_activity;
     NSObject<OS_dispatch_source> * tc_connection_attempt_timer;
     NSObject<OS_xpc_object> * tc_context;
     int  tc_dup_fd;
@@ -30,7 +29,7 @@
     unsigned int  tc_keepalive_count;
     unsigned int  tc_keepalive_events;
     unsigned int  tc_keepalive_interval;
-    struct __CFError { } * tc_last_nw_error;
+    NSObject<OS_nw_error> * tc_last_nw_error;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  tc_lock;

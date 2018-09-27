@@ -6,7 +6,6 @@
     LAContext * _LAContext;
     PSSpecifier * _addCardButtonSpecifier;
     PKPaymentPreference * _availableCards;
-    PSSpecifier * _cardsGroupSpecifier;
     PSSpecifier * _companionCardsGroupSpecifier;
     NSArray * _companionPassSpecifiers;
     NSArray * _companionPasses;
@@ -26,10 +25,14 @@
     NSMutableDictionary * _latestTransitPassProperties;
     NSArray * _lockscreenSwitchSpecifiers;
     <PKPaymentOptionsProtocol> * _optionsDelegate;
+    PSSpecifier * _otherCardsGroupSpecifier;
+    NSArray * _otherPassSpecifiers;
+    NSArray * _otherPasses;
     <PKPassLibraryDataProvider> * _passLibraryDataProvider;
-    NSArray * _passSpecifiers;
-    NSArray * _passes;
+    PSSpecifier * _paymentCardsGroupSpecifier;
     <PKPaymentDataProvider> * _paymentDataProvider;
+    NSArray * _paymentPassSpecifiers;
+    NSArray * _paymentPasses;
     PKPeerPaymentAccount * _peerPaymentAccount;
     PKPeerPaymentAccountResolutionController * _peerPaymentAccountResolutionController;
     <PKPassbookPeerPaymentSettingsDelegate> * _peerPaymentDelegate;
@@ -59,6 +62,7 @@
 - (id)_defaultShippingAddressSpecifier;
 - (id)_defaultsGroupSpecifiers;
 - (id)_displayableStringForLabeledValue:(id)arg1;
+- (id)_expressTransitFooter;
 - (void)_finishDefaultExpressTransitUpdateWithContainer:(id)arg1 preference:(id)arg2;
 - (id)_getDefaultContactEmail;
 - (id)_getDefaultContactPhone;
@@ -74,7 +78,10 @@
 - (id)_lockscreenSwitchGroupSpecifiers;
 - (id)_lockscreenSwitchSettingForSpecifier:(id)arg1;
 - (void)_openPrivacyLink;
-- (id)_passSpecifiers;
+- (id)_otherPassSpecifiers;
+- (id)_passSpecifiersForPasses:(id)arg1;
+- (id)_passSpecifiersForPasses:(id)arg1 peerPaymentPassUniqueID:(id)arg2 showPeerPaymentSetup:(bool)arg3;
+- (id)_paymentPassSpecifiers;
 - (long long)_paymentPreferencesStyle;
 - (long long)_paymentSetupContextForSettingsContext:(long long)arg1;
 - (void)_peerPaymentAccountDidChangeNotification:(id)arg1;
@@ -85,6 +92,7 @@
 - (void)_presentPeerPaymentReOpenCardFlowForSpecifier:(id)arg1;
 - (void)_presentPeerPaymentSetupFlowForSpecifier:(id)arg1;
 - (void)_presentPeerPaymentSetupFlowForSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_presentPeerPaymentSetupFlowWithAmount:(id)arg1 flowState:(unsigned long long)arg2 senderAddress:(id)arg3 completion:(id /* block */)arg4;
 - (void)_presentProvisioningPaymentPassNavController:(id)arg1 paymentPass:(id)arg2;
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_registerForPeerPaymentWithSpecifier:(id)arg1;
@@ -121,6 +129,7 @@
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(long long)arg3;
 - (void)openPaymentSetupWithMode:(long long)arg1 referrerIdentifier:(id)arg2;
+- (void)openPeerPaymentSetupWithCurrenyAmount:(id)arg1 state:(unsigned long long)arg2 senderAddress:(id)arg3;
 - (id)passWithUniqueIdentifier:(id)arg1;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(bool)arg2;

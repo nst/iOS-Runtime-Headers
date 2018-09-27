@@ -41,6 +41,7 @@
     UIView * _toolbarView;
     AKToolbarViewController * _toolbarViewController;
     AKUndoController * _undoController;
+    bool  _useHighVisibilityDefaultInks;
     bool  overlayShouldPixelate;
 }
 
@@ -83,6 +84,7 @@
 @property (retain) UIView *toolbarView;
 @property (retain) AKToolbarViewController *toolbarViewController;
 @property (retain) AKUndoController *undoController;
+@property (nonatomic) bool useHighVisibilityDefaultInks;
 
 + (bool)_isInLowMemoryEnvironment;
 + (void)adjustAnnotationBoundsToFitText:(id)arg1;
@@ -105,10 +107,12 @@
 - (double)akModelToCanvasFixedPixelScaleOfFirstEncounteredPage;
 - (bool)allEditingDisabled;
 - (bool)annotationEditingEnabled;
+- (void)applyCurrentCrop;
 - (id)attributeController;
 - (id)author;
 - (void)beginLogging:(id)arg1 documentType:(id)arg2;
 - (bool)canBeginEditingTextAnnotation:(id)arg1;
+- (void)clearUndoStack;
 - (void)commitEditing;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentAlignedRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onPageAtIndex:(unsigned long long)arg2;
 - (void)copy:(id)arg1;
@@ -211,9 +215,11 @@
 - (void)setStatisticsLogger:(id)arg1;
 - (void)setTextEditorController:(id)arg1;
 - (void)setToolController:(id)arg1;
+- (void)setToolMode:(unsigned long long)arg1;
 - (void)setToolbarView:(id)arg1;
 - (void)setToolbarViewController:(id)arg1;
 - (void)setUndoController:(id)arg1;
+- (void)setUseHighVisibilityDefaultInks:(bool)arg1;
 - (bool)shapeDetectionEnabled;
 - (bool)shouldDrawVariableStrokeDoodles;
 - (void)showAttributeInspector:(id)arg1;
@@ -226,12 +232,14 @@
 - (void)teardown;
 - (id)textEditorController;
 - (id)toolController;
+- (unsigned long long)toolMode;
 - (id)toolbarButtonItemOfType:(unsigned long long)arg1;
 - (id)toolbarView;
 - (id)toolbarViewController;
 - (void)undo:(id)arg1;
 - (id)undoController;
 - (void)updateOverlayViewAtIndex:(unsigned long long)arg1;
+- (bool)useHighVisibilityDefaultInks;
 - (bool)validateCopy:(id)arg1;
 - (bool)validateCut:(id)arg1;
 - (bool)validateDelete:(id)arg1;

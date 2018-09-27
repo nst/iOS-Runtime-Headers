@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ProVideo.framework/ProVideo
  */
 
-@interface PAEEquirectProject : PAEGeneratorDefaultBase {
-    unsigned long long  backgroundHeight;
-    unsigned long long  backgroundWidth;
-    struct RGBA8Pixel { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; } * defaultBackground;
-}
+@interface PAEEquirectProject : PAEGeneratorDefaultBase
 
 - (bool)addParameters;
 - (void)dealloc;
 - (bool)frameCleanup;
 - (bool)frameSetup:(struct { union { double x_1_1_1; struct { /* ? */ } *x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; })arg1 hardware:(bool*)arg2 software:(bool*)arg3;
-- (struct HGRef<HGBitmapLoader> { struct HGBitmapLoader {} *x1; })getEquirectBackgroundWithWidth:(unsigned long long*)arg1 andHeight:(unsigned long long*)arg2;
-- (struct HGEquirectProjectParams { double x1; float x2[16]; float x3[16]; bool x4; int x5; int x6; })getParams:(struct { union { double x_1_1_1; struct { /* ? */ } *x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; })arg1 withOutputImage:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 xRotation:(double)arg5 yRotation:(double)arg6 zRotation:(double)arg7 paramAPI:(id)arg8;
+- (struct HGEquirectProjectParams { float x1[3]; float x2[3]; float x3[3]; float x4; float x5; bool x6; float x7; float x8; float x9; float x10; float x11; float x12; int x13; int x14; int x15; int x16; bool x17; bool x18; float x19[4]; float x20[4]; float x21[4]; float x22[4]; })getParams:(struct { union { double x_1_1_1; struct { /* ? */ } *x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; })arg1 :(id)arg2 :(id)arg3 :(id)arg4;
 - (double)getProjectionFOVYDegrees:(union { double x1; struct { /* ? */ } *x2; })arg1;
 - (struct PCMatrix44Tmpl<float> { float x1[4][4]; })getViewMatrix:(union { double x1; struct { /* ? */ } *x2; })arg1;
 - (id)initWithAPIManager:(id)arg1;
 - (id)properties;
-- (void)readDefaultBackgroundImageWithWidth:(unsigned long long*)arg1 andHeight:(unsigned long long*)arg2;
 - (bool)renderOutput:(id)arg1 withInfo:(struct { union { double x_1_1_1; struct { /* ? */ } *x_1_1_2; } x1; unsigned long long x2; unsigned long long x3; double x4; double x5; unsigned long long x6; })arg2;
 - (bool)variesOverTime;
 

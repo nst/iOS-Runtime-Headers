@@ -4,6 +4,7 @@
 
 @interface CKNotificationChatController : CKCoreChatController <CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate, UIPreviewInteractionDelegate, UITextInputPayloadDelegate> {
     CKMessageEntryView * _entryView;
+    CKFullScreenBalloonViewControllerNotification * _notificationFullScreenBalloonController;
     CKRaiseGesture * _raiseGesture;
     bool  _shouldAllowReplyFromLockScreen;
     CKScheduledUpdater * _typingUpdater;
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKMessageEntryView *entryView;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) CKFullScreenBalloonViewControllerNotification *notificationFullScreenBalloonController;
 @property (nonatomic, retain) CKRaiseGesture *raiseGesture;
 @property (nonatomic) bool shouldAllowReplyFromLockScreen;
 @property (readonly) Class superclass;
@@ -23,7 +25,10 @@
 
 - (void).cxx_destruct;
 - (bool)_deviceIsPasscodeLocked;
+- (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(bool)arg1 completion:(id /* block */)arg2;
+- (id)_fullScreenBalloonViewControllerWithChatItem:(id)arg1 showActionMenu:(bool)arg2;
 - (double)_maxEntryViewHeight;
+- (id)_menuTitleForChatItem:(id)arg1;
 - (void)_messageReceivedInCurrentTranscript:(id)arg1;
 - (void)_raiseToListenSettingChanged:(id)arg1;
 - (void)_setConversationDeferredSetup;
@@ -35,8 +40,17 @@
 - (double)balloonMaxWidth;
 - (bool)becomeFirstResponder;
 - (bool)canBecomeFirstResponder;
+- (bool)constrainToPresentingVCBounds;
 - (void)dealloc;
 - (id)entryView;
+- (bool)forceWindowedPresentation;
+- (void)fullScreenBalloonViewController:(id)arg1 didAppearAnimated:(bool)arg2;
+- (void)fullScreenBalloonViewController:(id)arg1 sendMessageAcknowledgment:(long long)arg2 forChatItem:(id)arg3;
+- (void)fullScreenBalloonViewController:(id)arg1 verticallyScrollTranscriptByAmount:(double)arg2 animated:(bool)arg3 completion:(id /* block */)arg4;
+- (void)fullScreenBalloonViewController:(id)arg1 willAppearAnimated:(bool)arg2;
+- (void)fullScreenBalloonViewController:(id)arg1 willDisappearWithSendAnimation:(bool)arg2;
+- (void)fullScreenBalloonViewControllerDidDisappear:(id)arg1;
+- (void)fullScreenBalloonViewControllerHandleDismissTap:(id)arg1;
 - (bool)getContainerWidth:(double*)arg1 offset:(double*)arg2;
 - (void)handlePayload:(id)arg1 withPayloadId:(id)arg2;
 - (id)initWithConversation:(id)arg1;
@@ -63,7 +77,9 @@
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
 - (void)messageEntryViewSendButtonLongPressBegan:(id)arg1;
 - (bool)messageEntryViewShouldBeginEditing:(id)arg1;
+- (id)notificationFullScreenBalloonController;
 - (bool)pluginButtonsEnabled;
+- (bool)preserveModalPresentationStyle;
 - (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(bool)arg3;
 - (void)previewInteractionDidCancel:(id)arg1;
 - (id)progressBar;
@@ -75,12 +91,16 @@
 - (void)setConversation:(id)arg1;
 - (void)setEntryView:(id)arg1;
 - (void)setLocalUserIsComposing:(bool)arg1 withPluginBundleID:(id)arg2 typingIndicatorData:(id)arg3;
+- (void)setNotificationFullScreenBalloonController:(id)arg1;
 - (void)setRaiseGesture:(id)arg1;
 - (void)setSendingMessage:(bool)arg1;
 - (void)setShouldAllowReplyFromLockScreen:(bool)arg1;
 - (void)setTypingUpdater:(id)arg1;
 - (void)setUrlOpenContext:(id)arg1;
 - (bool)shouldAllowReplyFromLockScreen;
+- (void)showFullScreenAcknowledgmentPickerForChatItem:(id)arg1 showActionMenu:(bool)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 longPressedForItemWithIndexPath:(id)arg3;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (id)typingUpdater;
@@ -89,7 +109,7 @@
 - (void)updateTyping;
 - (id)urlOpenContext;
 - (void)viewDidAppear:(bool)arg1;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (bool)wantsWindowedPresentation;
 
 @end

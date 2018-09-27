@@ -2,22 +2,25 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBDataString : PBCodable <NSCopying> {
-    NSMutableArray * _alternatives;
+@interface _INPBDataString : PBCodable <NSCopying, NSSecureCoding, _INPBDataString> {
+    NSArray * _alternatives;
+    struct { }  _has;
     NSString * _localizedValue;
-    PBUnknownFields * _unknownFields;
     NSString * _vocabularyIdentifier;
 }
 
-@property (nonatomic, retain) NSMutableArray *alternatives;
+@property (nonatomic, copy) NSArray *alternatives;
+@property (nonatomic, readonly) unsigned long long alternativesCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasLocalizedValue;
 @property (nonatomic, readonly) bool hasVocabularyIdentifier;
-@property (nonatomic, retain) NSString *localizedValue;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-@property (nonatomic, retain) NSString *vocabularyIdentifier;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *localizedValue;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *vocabularyIdentifier;
 
 + (Class)alternativesType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addAlternatives:(id)arg1;
@@ -26,19 +29,16 @@
 - (unsigned long long)alternativesCount;
 - (void)clearAlternatives;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasLocalizedValue;
 - (bool)hasVocabularyIdentifier;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)localizedValue;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setAlternatives:(id)arg1;
 - (void)setLocalizedValue:(id)arg1;
 - (void)setVocabularyIdentifier:(id)arg1;
-- (id)unknownFields;
 - (id)vocabularyIdentifier;
 - (void)writeTo:(id)arg1;
 

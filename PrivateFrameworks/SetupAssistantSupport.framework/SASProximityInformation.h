@@ -8,6 +8,7 @@
     bool  _automaticTimeZoneEnabled;
     NSData * _backupMetadata;
     NSString * _backupUUID;
+    NSNumber * _connectedToWiFi;
     NSNumber * _deviceAnalyticsOptIn;
     NSString * _deviceClass;
     NSString * _deviceModel;
@@ -22,6 +23,7 @@
     NSObject<OS_dispatch_semaphore> * _nearbyNetworksSemaphore;
     NSArray * _networkPasswords;
     NSArray * _networks;
+    NSString * _productVersion;
     bool  _restoring;
     NSNumber * _siriOptIn;
     NSString * _timeZone;
@@ -33,6 +35,7 @@
 @property bool automaticTimeZoneEnabled;
 @property (retain) NSData *backupMetadata;
 @property (copy) NSString *backupUUID;
+@property (retain) NSNumber *connectedToWiFi;
 @property (retain) NSNumber *deviceAnalyticsOptIn;
 @property (copy) NSString *deviceClass;
 @property (copy) NSString *deviceModel;
@@ -47,6 +50,7 @@
 @property (retain) NSObject<OS_dispatch_semaphore> *nearbyNetworksSemaphore;
 @property (copy) NSArray *networkPasswords;
 @property (copy) NSArray *networks;
+@property (retain) NSString *productVersion;
 @property (getter=isRestoring) bool restoring;
 @property (retain) NSNumber *siriOptIn;
 @property (copy) NSString *timeZone;
@@ -61,6 +65,7 @@
 - (bool)automaticTimeZoneEnabled;
 - (id)backupMetadata;
 - (id)backupUUID;
+- (id)connectedToWiFi;
 - (id)deviceAnalyticsOptIn;
 - (id)deviceClass;
 - (id)deviceModel;
@@ -81,11 +86,13 @@
 - (id)networkPasswords;
 - (id)networks;
 - (id)numberFromMCUserBoolSetting:(id)arg1;
+- (id)productVersion;
 - (void)setAppAnalyticsOptIn:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (void)setAutomaticTimeZoneEnabled:(bool)arg1;
 - (void)setBackupMetadata:(id)arg1;
 - (void)setBackupUUID:(id)arg1;
+- (void)setConnectedToWiFi:(id)arg1;
 - (void)setDeviceAnalyticsOptIn:(id)arg1;
 - (void)setDeviceClass:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
@@ -100,6 +107,7 @@
 - (void)setNearbyNetworksSemaphore:(id)arg1;
 - (void)setNetworkPasswords:(id)arg1;
 - (void)setNetworks:(id)arg1;
+- (void)setProductVersion:(id)arg1;
 - (void)setRestoring:(bool)arg1;
 - (void)setSiriOptIn:(id)arg1;
 - (void)setTimeZone:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFOpenAppRequest : CATTaskRequest {
+@interface DMFOpenAppRequest : DMFTaskRequest {
     NSData * _activityData;
     NSString * _activityType;
     NSString * _bundleIdentifier;
@@ -14,6 +14,9 @@
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic) bool lockInApp;
 
++ (bool)isPermittedOnSystemConnection;
++ (bool)isPermittedOnUserConnection;
++ (id)permittedPlatforms;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

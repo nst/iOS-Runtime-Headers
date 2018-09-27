@@ -11,8 +11,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)_invalidate;
 - (void)_usePolicy:(int)arg1;
@@ -20,13 +18,5 @@
 - (void)download;
 - (void)ignore;
 - (void)use;
-
-// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
-
-- (oneway void)release;
-
-// Image: /usr/lib/libobjc.A.dylib
-
-- (oneway void)_webcore_releaseOnWebThread;
 
 @end

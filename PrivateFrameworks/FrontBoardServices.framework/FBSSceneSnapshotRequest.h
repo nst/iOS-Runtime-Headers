@@ -19,8 +19,8 @@
 @property (nonatomic, readonly, copy) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (bool)allowsProtectedContent;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

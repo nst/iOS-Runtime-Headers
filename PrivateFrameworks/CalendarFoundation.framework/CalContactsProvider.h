@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@interface CalContactsProvider : NSObject {
+@interface CalContactsProvider : NSObject <CalContactsProviderProtocol> {
     CNReputationStore * _reputationStore;
     CNContactStore * _store;
 }

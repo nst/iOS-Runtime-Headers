@@ -6,12 +6,6 @@
 @required
 
 - (NSString *)fbr;
-- (bool)hasFbr;
-- (bool)hasIdentifier;
-- (bool)hasQuery;
-- (bool)hasScore;
-- (bool)hasSuggestion;
-- (bool)hasType;
 - (NSString *)identifier;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

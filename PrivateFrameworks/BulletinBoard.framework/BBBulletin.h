@@ -8,6 +8,7 @@
     NSArray * _additionalAttachments;
     long long  _addressBookRecordID;
     NSSet * _alertSuppressionContexts;
+    long long  _backgroundStyle;
     NSString * _bulletinID;
     NSString * _bulletinVersionID;
     NSArray * _buttons;
@@ -25,15 +26,20 @@
     NSDate * _expirationDate;
     unsigned long long  _expirationEvents;
     bool  _expiresOnPublisherDeath;
+    bool  _hasCriticalIcon;
     bool  _hasEventDate;
+    NSString * _header;
     BBSectionIcon * _icon;
+    bool  _ignoresDowntime;
     bool  _ignoresQuietMode;
     NSArray * _intentIDs;
     NSDate * _lastInterruptDate;
     bool  _loading;
+    long long  _lockScreenPriority;
     BBContent * _modalAlertContent;
     NSString * _parentSectionID;
     NSArray * _peopleIDs;
+    bool  _preventAutomaticRemovalFromLockScreen;
     BBAttachmentMetadata * _primaryAttachment;
     NSDate * _publicationDate;
     NSString * _publisherBulletinID;
@@ -44,6 +50,8 @@
     BBSound * _sound;
     BBContent * _starkBannerContent;
     NSSet * _subsectionIDs;
+    NSString * _summaryArgument;
+    unsigned long long  _summaryArgumentCount;
     NSMutableDictionary * _supplementaryActionsByLayout;
     NSString * _threadID;
     NSTimeZone * _timeZone;
@@ -68,6 +76,7 @@
 @property (nonatomic, readonly) bool allowsAutomaticRemovalFromLockScreen;
 @property (nonatomic, copy) BBAction *alternateAction;
 @property (nonatomic, readonly) NSString *alternateActionLabel;
+@property (nonatomic) long long backgroundStyle;
 @property (nonatomic, readonly) NSString *bannerAccessoryRemoteServiceBundleIdentifier;
 @property (nonatomic, readonly) NSString *bannerAccessoryRemoteViewControllerClassName;
 @property (nonatomic, copy) NSString *bulletinID;
@@ -94,16 +103,20 @@
 @property (nonatomic) bool expiresOnPublisherDeath;
 @property (nonatomic, readonly) NSString *fullAlternateActionLabel;
 @property (nonatomic, readonly) NSString *fullUnlockActionLabel;
+@property (nonatomic) bool hasCriticalIcon;
 @property (nonatomic) bool hasEventDate;
 @property (nonatomic) bool hasPrivateContent;
+@property (nonatomic, copy) NSString *header;
 @property (nonatomic, readonly) NSString *hiddenPreviewsBodyPlaceholder;
 @property (nonatomic, readonly) long long iPodOutAlertType;
 @property (nonatomic, retain) BBSectionIcon *icon;
+@property (nonatomic) bool ignoresDowntime;
 @property (nonatomic) bool ignoresQuietMode;
 @property (nonatomic, readonly) bool inertWhenLocked;
 @property (nonatomic, copy) NSArray *intentIDs;
 @property (nonatomic, retain) NSDate *lastInterruptDate;
 @property (getter=isLoading, nonatomic) bool loading;
+@property (nonatomic) long long lockScreenPriority;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, readonly) unsigned long long messageNumberOfLines;
 @property (nonatomic, readonly) NSString *missedBannerDescriptionFormat;
@@ -114,6 +127,7 @@
 @property (nonatomic, readonly) bool playsSoundForModify;
 @property (nonatomic, readonly) bool preemptsPresentedAlert;
 @property (nonatomic, readonly) bool preservesUnlockActionCase;
+@property (nonatomic) bool preventAutomaticRemovalFromLockScreen;
 @property (nonatomic, readonly) bool preventLock;
 @property (nonatomic, copy) BBAttachmentMetadata *primaryAttachment;
 @property (nonatomic, readonly) bool prioritizeAtTopOfLockScreen;
@@ -135,6 +149,7 @@
 @property (nonatomic, copy) NSString *sectionID;
 @property (nonatomic, readonly) BBSectionIcon *sectionIcon;
 @property (nonatomic) long long sectionSubtype;
+@property (nonatomic, readonly) bool shouldDismissBulletinWhenClosed;
 @property (nonatomic, readonly) bool showsContactPhoto;
 @property (nonatomic, readonly) bool showsDateInFloatingLockScreenAlert;
 @property (nonatomic, readonly) bool showsSubtitle;
@@ -145,6 +160,9 @@
 @property (nonatomic, copy) NSSet *subsectionIDs;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, readonly) unsigned long long subtypePriority;
+@property (nonatomic, readonly) NSString *subtypeSummaryFormat;
+@property (nonatomic, copy) NSString *summaryArgument;
+@property (nonatomic) unsigned long long summaryArgumentCount;
 @property (nonatomic, retain) NSMutableDictionary *supplementaryActionsByLayout;
 @property (nonatomic, readonly) bool suppressesAlertsWhenAppIsActive;
 @property (nonatomic, readonly) bool suppressesMessageForPrivacy;
@@ -199,6 +217,7 @@
 - (bool)allowsAutomaticRemovalFromLockScreen;
 - (id)alternateAction;
 - (id)alternateActionLabel;
+- (long long)backgroundStyle;
 - (id)bannerAccessoryRemoteServiceBundleIdentifier;
 - (id)bannerAccessoryRemoteViewControllerClassName;
 - (id)bulletinID;
@@ -233,12 +252,15 @@
 - (id)firstValidObserver;
 - (id)fullAlternateActionLabel;
 - (id)fullUnlockActionLabel;
+- (bool)hasCriticalIcon;
 - (bool)hasEventDate;
 - (bool)hasPrivateContent;
 - (unsigned long long)hash;
+- (id)header;
 - (id)hiddenPreviewsBodyPlaceholder;
 - (long long)iPodOutAlertType;
 - (id)icon;
+- (bool)ignoresDowntime;
 - (bool)ignoresQuietMode;
 - (bool)inertWhenLocked;
 - (id)init;
@@ -248,6 +270,7 @@
 - (bool)isLoading;
 - (id)lastInterruptDate;
 - (id)lifeAssertions;
+- (long long)lockScreenPriority;
 - (id)message;
 - (unsigned long long)messageNumberOfLines;
 - (id)missedBannerDescriptionFormat;
@@ -260,6 +283,7 @@
 - (bool)playsSoundForModify;
 - (bool)preemptsPresentedAlert;
 - (bool)preservesUnlockActionCase;
+- (bool)preventAutomaticRemovalFromLockScreen;
 - (bool)preventLock;
 - (id)primaryAttachment;
 - (long long)primaryAttachmentType;
@@ -299,6 +323,7 @@
 - (void)setAlertSuppressionAppIDs_deprecated:(id)arg1;
 - (void)setAlertSuppressionContexts:(id)arg1;
 - (void)setAlternateAction:(id)arg1;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)setBulletinID:(id)arg1;
 - (void)setBulletinVersionID:(id)arg1;
 - (void)setButtons:(id)arg1;
@@ -319,17 +344,22 @@
 - (void)setExpirationEvents:(unsigned long long)arg1;
 - (void)setExpireAction:(id)arg1;
 - (void)setExpiresOnPublisherDeath:(bool)arg1;
+- (void)setHasCriticalIcon:(bool)arg1;
 - (void)setHasEventDate:(bool)arg1;
 - (void)setHasPrivateContent:(bool)arg1;
+- (void)setHeader:(id)arg1;
 - (void)setIcon:(id)arg1;
+- (void)setIgnoresDowntime:(bool)arg1;
 - (void)setIgnoresQuietMode:(bool)arg1;
 - (void)setIntentIDs:(id)arg1;
 - (void)setLastInterruptDate:(id)arg1;
 - (void)setLoading:(bool)arg1;
+- (void)setLockScreenPriority:(long long)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setModalAlertContent:(id)arg1;
 - (void)setParentSectionID:(id)arg1;
 - (void)setPeopleIDs:(id)arg1;
+- (void)setPreventAutomaticRemovalFromLockScreen:(bool)arg1;
 - (void)setPrimaryAttachment:(id)arg1;
 - (void)setPublicationDate:(id)arg1;
 - (void)setPublisherBulletinID:(id)arg1;
@@ -347,6 +377,8 @@
 - (void)setStarkBannerContent:(id)arg1;
 - (void)setSubsectionIDs:(id)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setSummaryArgument:(id)arg1;
+- (void)setSummaryArgumentCount:(unsigned long long)arg1;
 - (void)setSupplementaryActionsByLayout:(id)arg1;
 - (void)setThreadID:(id)arg1;
 - (void)setTimeZone:(id)arg1;
@@ -357,6 +389,7 @@
 - (void)setUsesExternalSync:(bool)arg1;
 - (void)setWantsFullscreenPresentation:(bool)arg1;
 - (id)shortDescription;
+- (bool)shouldDismissBulletinWhenClosed;
 - (bool)showsContactPhoto;
 - (bool)showsDateInFloatingLockScreenAlert;
 - (bool)showsMessagePreview;
@@ -369,6 +402,9 @@
 - (id)subsectionIDs;
 - (id)subtitle;
 - (unsigned long long)subtypePriority;
+- (id)subtypeSummaryFormat;
+- (id)summaryArgument;
+- (unsigned long long)summaryArgumentCount;
 - (id)supplementaryActions;
 - (id)supplementaryActionsByLayout;
 - (id)supplementaryActionsForLayout:(long long)arg1;
@@ -400,17 +436,8 @@
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 
-- (id)_defaultActionWithFilter:(id /* block */)arg1;
-- (id)_launchURLForAction:(id)arg1 context:(id)arg2;
-- (id)_responseForAction:(id)arg1 withOrigin:(int)arg2 context:(id)arg3;
-- (id /* block */)actionBlockForAction:(id)arg1 withOrigin:(int)arg2;
-- (id /* block */)actionBlockForAction:(id)arg1 withOrigin:(int)arg2 context:(id)arg3;
 - (id /* block */)actionBlockForButton:(id)arg1;
-- (bool)bulletinAlertShouldOverridePocketMode;
-- (bool)bulletinAlertShouldOverrideQuietMode;
 - (void)killSound;
 - (bool)playSound;
-- (id)sb_minimalSupplementaryActions;
-- (id)sb_nonPluginDefaultAction;
 
 @end

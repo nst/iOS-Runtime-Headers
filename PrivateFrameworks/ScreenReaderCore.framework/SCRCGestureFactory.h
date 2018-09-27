@@ -65,7 +65,7 @@
             double x; 
             double y; 
         } lastDownPoint; 
-        double orbValue; 
+        double pressure; 
         double altitude; 
         double azimuth; 
     }  _finger;
@@ -231,7 +231,7 @@
 - (unsigned long long)fingerCount;
 - (double)firstFingerAltitude;
 - (double)firstFingerAzimuth;
-- (double)firstFingerOrbValue;
+- (double)firstFingerPressure;
 - (double)flickSpeed;
 - (int)gestureState;
 - (id)gestureStateString;

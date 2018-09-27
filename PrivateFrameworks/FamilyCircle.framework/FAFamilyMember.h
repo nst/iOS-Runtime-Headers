@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, readonly) unsigned long long age;
+@property (nonatomic, readonly, copy) NSNumber *altDSID;
 @property (nonatomic, readonly, copy) NSString *appleID;
 @property (nonatomic, readonly, copy) NSDictionary *dictionary;
 @property (nonatomic, readonly, copy) NSNumber *dsid;
@@ -20,9 +21,11 @@
 @property (nonatomic, readonly, copy) NSString *inviteEmail;
 @property (nonatomic, readonly) bool isChildAccount;
 @property (nonatomic, readonly) bool isMe;
+@property (nonatomic, readonly) bool isOrganizer;
 @property (nonatomic, readonly) bool isParent;
 @property (nonatomic, readonly, copy) NSDate *joinedDate;
 @property (nonatomic, readonly, copy) NSString *lastName;
+@property (nonatomic, readonly) long long memberType;
 @property (nonatomic, readonly, copy) NSString *memberTypeDisplayString;
 @property (nonatomic, readonly, copy) NSString *memberTypeString;
 @property (nonatomic, readonly, copy) NSString *statusString;
@@ -31,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)age;
+- (id)altDSID;
 - (id)appleID;
 - (id)description;
 - (id)dictionary;
@@ -49,9 +53,11 @@
 - (id)inviteEmail;
 - (bool)isChildAccount;
 - (bool)isMe;
+- (bool)isOrganizer;
 - (bool)isParent;
 - (id)joinedDate;
 - (id)lastName;
+- (long long)memberType;
 - (id)memberTypeDisplayString;
 - (id)memberTypeString;
 - (id)statusString;

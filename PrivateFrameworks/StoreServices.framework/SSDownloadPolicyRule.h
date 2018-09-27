@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadPolicyRule : NSObject <NSCoding, NSCopying, NSSecureCoding, SSXPCCoding> {
+@interface SSDownloadPolicyRule : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSSet * _applicationStates;
     float  _batteryLevel;
     long long  _cellularDataStates;

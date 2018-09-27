@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString *altDSID;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, readonly) bool isInvalid;
 @property (nonatomic, readonly) bool needsUpdate;
 @property (nonatomic, retain) NSDate *nextCheckDate;
 @property (nonatomic) unsigned long long suggestedValidDuration;
@@ -33,11 +34,13 @@
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)expirationDate;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToValidationRecord:(id)arg1;
+- (bool)isInvalid;
 - (bool)needsUpdate;
 - (id)nextCheckDate;
 - (void)setAltDSID:(id)arg1;

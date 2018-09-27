@@ -45,6 +45,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double timeOffset;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (unsigned long long)CAMLState;
 - (bool)_interfaceConsideredPortraitForCAMLLayer;

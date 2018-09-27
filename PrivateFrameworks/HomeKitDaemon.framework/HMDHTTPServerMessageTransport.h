@@ -6,7 +6,7 @@
     NSMutableArray * _clientConnections;
     <HMDHTTPServerMessageTransportDelegate> * _delegate;
     NSUUID * _identifier;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMFUnfairLock * _lock;
     HMFHTTPServer * _server;
 }
 
@@ -18,7 +18,6 @@
 @property (nonatomic, readonly, copy) NSArray *devices;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) HMFHTTPServer *server;
 @property (readonly) Class superclass;
 
@@ -43,7 +42,6 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithServerIdentifier:(id)arg1;
-- (id)propertyQueue;
 - (void)removeAllClientConnections;
 - (void)removeClientConnection:(id)arg1;
 - (void)removeTXTRecordValueForKey:(id)arg1;

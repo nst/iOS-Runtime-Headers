@@ -12,6 +12,7 @@
     long long  _subsampleFactor;
 }
 
+@property (nonatomic, readonly) NSString *cacheIdentifier;
 @property (retain) NSString *cachedCacheIdentifier;
 @property (nonatomic, readonly) NURenderNode *inputNode;
 @property (nonatomic, readonly) long long subsampleFactor;
@@ -49,7 +50,7 @@
 - (id)persistentURLPrefix;
 - (bool)requiresAudioMix;
 - (bool)requiresVideoComposition;
-- (void)resolveSourceWithResponse:(struct NUResponse { Class x1; }*)arg1 temporaryURL:(id)arg2;
+- (void)resolveSourceWithResponse:(struct NUResponse { Class x1; }*)arg1;
 - (void)resolveWithSourceNode:(id)arg1 error:(id)arg2;
 - (id)resolvedSourceNode:(out id*)arg1;
 - (long long)sampleMode;

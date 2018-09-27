@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_addDifferentCard;
+- (id)_bodyText;
 - (void)_continuePressed;
 - (void)_displayTermsWithCompletionHandler:(id /* block */)arg1;
 - (void)_handleNextStep;

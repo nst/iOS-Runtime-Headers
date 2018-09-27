@@ -26,6 +26,7 @@
 - (bool)session:(VCCallSession *)arg1 didStopVideoIO:(bool)arg2 error:(id*)arg3;
 - (void)session:(VCCallSession *)arg1 didStopWithError:(NSError *)arg2;
 - (void)session:(VCCallSession *)arg1 initiateRelayRequest:(NSDictionary *)arg2;
+- (void)session:(VCCallSession *)arg1 isSendingAudio:(bool)arg2 error:(NSError *)arg3;
 - (void)session:(VCCallSession *)arg1 localAudioEnabled:(bool)arg2 withCallID:(unsigned int)arg3 error:(NSError *)arg4;
 - (void)session:(VCCallSession *)arg1 localIPChange:(NSData *)arg2 withCallID:(unsigned int)arg3;
 - (void)session:(VCCallSession *)arg1 packMeters:(char *)arg2 withLength:(char *)arg3;

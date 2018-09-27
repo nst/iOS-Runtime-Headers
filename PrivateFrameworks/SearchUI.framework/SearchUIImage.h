@@ -3,12 +3,16 @@
  */
 
 @interface SearchUIImage : SFImage {
+    bool  _needsTinting;
     SFImage * _sfImage;
     UIImage * _uiImage;
+    bool  _useFastPathShadow;
 }
 
+@property bool needsTinting;
 @property (retain) SFImage *sfImage;
 @property (retain) UIImage *uiImage;
+@property bool useFastPathShadow;
 
 + (id)cachedImageFromSFImage:(id)arg1;
 + (id)imageFromData:(id)arg1;
@@ -22,11 +26,15 @@
 - (bool)isTemplate;
 - (id)loadImage;
 - (void)loadImageWithCompletionHandler:(id /* block */)arg1;
+- (bool)needsTinting;
+- (void)setNeedsTinting:(bool)arg1;
 - (void)setSfImage:(id)arg1;
 - (void)setUiImage:(id)arg1;
+- (void)setUseFastPathShadow:(bool)arg1;
 - (id)sfImage;
 - (bool)shouldCropToCircle;
 - (struct CGSize { double x1; double x2; })size;
 - (id)uiImage;
+- (bool)useFastPathShadow;
 
 @end

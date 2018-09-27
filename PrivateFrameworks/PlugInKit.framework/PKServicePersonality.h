@@ -10,6 +10,7 @@
     NSUserDefaults * _preferences;
 }
 
+@property (copy) NSDictionary *_userInfo;
 @property (readonly) NSDictionary *bundleInfoDictionary;
 @property (retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;

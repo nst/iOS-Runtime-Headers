@@ -5,6 +5,6 @@
 
 @required
 
-- (void)signalFetchChangesTransaction;
+- (void)signalFetchChangesTransaction:(NSString *)arg1;
 
 @end

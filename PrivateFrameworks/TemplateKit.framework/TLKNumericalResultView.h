@@ -10,15 +10,14 @@
     bool  _topLabelIsVibrant;
 }
 
-@property (retain) TLKMultilineText *subtitle;
+@property (nonatomic, retain) TLKMultilineText *subtitle;
 @property (retain) TLKVibrantLabel *subtitleLabel;
-@property (retain) TLKMultilineText *title;
+@property (nonatomic, retain) TLKMultilineText *title;
 @property (retain) TLKVibrantLabel *titleLabel;
-@property bool topLabelIsVibrant;
+@property (nonatomic) bool topLabelIsVibrant;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

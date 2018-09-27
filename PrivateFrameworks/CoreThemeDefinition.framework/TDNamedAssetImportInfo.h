@@ -13,12 +13,17 @@
             double height; 
         } size; 
     }  _alignmentRect;
+    long long  _appearanceIdentifier;
+    NSString * _appearanceName;
     unsigned long long  _arrayIndex;
+    short  _autoscalingType;
+    NSArray * _backgroundColorComponents;
+    NSString * _backgroundColorName;
+    long long  _backgroundColorSpaceID;
     struct CGSize { 
         double width; 
         double height; 
     }  _canvasSize;
-    struct CGColor { } * _cgColor;
     NSArray * _colorComponents;
     long long  _colorSpaceID;
     long long  _compressionType;
@@ -26,6 +31,9 @@
     bool  _cubeMap;
     long long  _displayGamut;
     NSURL * _fileURL;
+    NSString * _fontName;
+    double  _fontSize;
+    NSString * _foregroundColorName;
     unsigned long long  _graphicsClass;
     long long  _graphicsFeatureSetClass;
     NSValue * _iconSize;
@@ -34,10 +42,13 @@
     NSArray * _layerReferences;
     long long  _layoutDirection;
     double  _lossyCompressionQuality;
+    double  _maxPointSize;
     unsigned long long  _memoryClass;
+    double  _minPointSize;
     NSDate * _modificationDate;
     NSString * _name;
     long long  _nameIdentifier;
+    int  _objectVersion;
     bool  _optOutOfThinning;
     struct CGSize { 
         double width; 
@@ -60,6 +71,7 @@
         double right; 
     }  _sliceInsets;
     long long  _subtype;
+    NSString * _systemColorName;
     NSSet * _tags;
     long long  _templateRenderingMode;
     unsigned long long  _textureDepth;
@@ -68,13 +80,21 @@
     long long  _textureInterpretation;
     long long  _texturePixelFormat;
     unsigned long long  _textureWidth;
+    struct { 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
+    }  _transformation;
     NSString * _universalTypeIdentifier;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
+@property (nonatomic) long long appearanceIdentifier;
+@property (nonatomic, copy) NSString *appearanceName;
 @property (nonatomic) unsigned long long arrayIndex;
+@property (nonatomic) short autoscalingType;
+@property (nonatomic, copy) NSArray *backgroundColorComponents;
+@property (nonatomic, copy) NSString *backgroundColorName;
+@property (nonatomic) long long backgroundColorSpaceID;
 @property (nonatomic) struct CGSize { double x1; double x2; } canvasSize;
-@property (nonatomic, readonly) struct CGColor { }*cgColor;
 @property (nonatomic, copy) NSArray *colorComponents;
 @property (nonatomic) long long colorSpaceID;
 @property (nonatomic) long long compressionType;
@@ -82,6 +102,9 @@
 @property (nonatomic) bool cubeMap;
 @property (nonatomic) long long displayGamut;
 @property (nonatomic, copy) NSURL *fileURL;
+@property (nonatomic, copy) NSString *fontName;
+@property (nonatomic) double fontSize;
+@property (nonatomic, copy) NSString *foregroundColorName;
 @property (nonatomic) unsigned long long graphicsClass;
 @property (nonatomic) long long graphicsFeatureSetClass;
 @property (nonatomic, copy) NSValue *iconSize;
@@ -91,10 +114,13 @@
 @property (nonatomic, copy) NSArray *layerReferences;
 @property (nonatomic) long long layoutDirection;
 @property (nonatomic) double lossyCompressionQuality;
+@property (nonatomic) double maxPointSize;
 @property (nonatomic) unsigned long long memoryClass;
+@property (nonatomic) double minPointSize;
 @property (nonatomic, copy) NSDate *modificationDate;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) long long nameIdentifier;
+@property (nonatomic) int objectVersion;
 @property (nonatomic) bool optOutOfThinning;
 @property (nonatomic) struct CGSize { double x1; double x2; } physicalSizeInMeters;
 @property (nonatomic) bool preservesVectorRepresentation;
@@ -106,6 +132,7 @@
 @property (nonatomic) long long sizeClassVertical;
 @property (nonatomic) struct { double x1; double x2; double x3; double x4; } sliceInsets;
 @property (nonatomic) long long subtype;
+@property (nonatomic, retain) NSString *systemColorName;
 @property (nonatomic, copy) NSSet *tags;
 @property (nonatomic) long long templateRenderingMode;
 @property (nonatomic) unsigned long long textureDepth;
@@ -114,12 +141,18 @@
 @property (nonatomic) long long textureInterpretation;
 @property (nonatomic) long long texturePixelFormat;
 @property (nonatomic) unsigned long long textureWidth;
+@property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } transformation;
 @property (nonatomic, copy) NSString *universalTypeIdentifier;
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
+- (long long)appearanceIdentifier;
+- (id)appearanceName;
 - (unsigned long long)arrayIndex;
+- (short)autoscalingType;
+- (id)backgroundColorComponents;
+- (id)backgroundColorName;
+- (long long)backgroundColorSpaceID;
 - (struct CGSize { double x1; double x2; })canvasSize;
-- (struct CGColor { }*)cgColor;
 - (id)colorComponents;
 - (long long)colorSpaceID;
 - (long long)compressionType;
@@ -130,6 +163,9 @@
 - (id)description;
 - (long long)displayGamut;
 - (id)fileURL;
+- (id)fontName;
+- (double)fontSize;
+- (id)foregroundColorName;
 - (unsigned long long)graphicsClass;
 - (long long)graphicsFeatureSetClass;
 - (id)iconSize;
@@ -140,10 +176,13 @@
 - (id)layerReferences;
 - (long long)layoutDirection;
 - (double)lossyCompressionQuality;
+- (double)maxPointSize;
 - (unsigned long long)memoryClass;
+- (double)minPointSize;
 - (id)modificationDate;
 - (id)name;
 - (long long)nameIdentifier;
+- (int)objectVersion;
 - (bool)optOutOfThinning;
 - (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (bool)preservesVectorRepresentation;
@@ -153,8 +192,13 @@
 - (long long)resizingMode;
 - (unsigned long long)scaleFactor;
 - (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAppearanceIdentifier:(long long)arg1;
+- (void)setAppearanceName:(id)arg1;
 - (void)setArrayIndex:(unsigned long long)arg1;
-- (void)setCGColor:(struct CGColor { }*)arg1;
+- (void)setAutoscalingType:(short)arg1;
+- (void)setBackgroundColorComponents:(id)arg1;
+- (void)setBackgroundColorName:(id)arg1;
+- (void)setBackgroundColorSpaceID:(long long)arg1;
 - (void)setCanvasSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setColorComponents:(id)arg1;
 - (void)setColorSpaceID:(long long)arg1;
@@ -163,6 +207,9 @@
 - (void)setCubeMap:(bool)arg1;
 - (void)setDisplayGamut:(long long)arg1;
 - (void)setFileURL:(id)arg1;
+- (void)setFontName:(id)arg1;
+- (void)setFontSize:(double)arg1;
+- (void)setForegroundColorName:(id)arg1;
 - (void)setGraphicsClass:(unsigned long long)arg1;
 - (void)setGraphicsFeatureSetClass:(long long)arg1;
 - (void)setIconSize:(id)arg1;
@@ -172,10 +219,13 @@
 - (void)setLayerReferences:(id)arg1;
 - (void)setLayoutDirection:(long long)arg1;
 - (void)setLossyCompressionQuality:(double)arg1;
+- (void)setMaxPointSize:(double)arg1;
 - (void)setMemoryClass:(unsigned long long)arg1;
+- (void)setMinPointSize:(double)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameIdentifier:(long long)arg1;
+- (void)setObjectVersion:(int)arg1;
 - (void)setOptOutOfThinning:(bool)arg1;
 - (void)setPhysicalSizeInMeters:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreservesVectorRepresentation:(bool)arg1;
@@ -187,6 +237,7 @@
 - (void)setSizeClassVertical:(long long)arg1;
 - (void)setSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSubtype:(long long)arg1;
+- (void)setSystemColorName:(id)arg1;
 - (void)setTags:(id)arg1;
 - (void)setTemplateRenderingMode:(long long)arg1;
 - (void)setTextureDepth:(unsigned long long)arg1;
@@ -195,11 +246,13 @@
 - (void)setTextureInterpretation:(long long)arg1;
 - (void)setTexturePixelFormat:(long long)arg1;
 - (void)setTextureWidth:(unsigned long long)arg1;
+- (void)setTransformation:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setUniversalTypeIdentifier:(id)arg1;
 - (long long)sizeClassHorizontal;
 - (long long)sizeClassVertical;
 - (struct { double x1; double x2; double x3; double x4; })sliceInsets;
 - (long long)subtype;
+- (id)systemColorName;
 - (id)tags;
 - (long long)templateRenderingMode;
 - (unsigned long long)textureDepth;
@@ -208,6 +261,7 @@
 - (long long)textureInterpretation;
 - (long long)texturePixelFormat;
 - (unsigned long long)textureWidth;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })transformation;
 - (id)universalTypeIdentifier;
 
 @end

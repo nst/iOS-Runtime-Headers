@@ -25,7 +25,6 @@
 - (void)client_deliverUpdatedSources:(id)arg1 added:(id)arg2 forQuery:(id)arg3;
 - (id /* block */)completionHandler;
 - (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (bool)queue_shouldDeactivateAfterInitialResults;

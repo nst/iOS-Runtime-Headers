@@ -22,16 +22,16 @@
 @property (readonly, copy) NSString *description;
 @property (retain) UITextView *detailsTextView;
 @property (readonly) unsigned long long hash;
-@property (retain) TLKImage *image;
+@property (nonatomic, retain) TLKImage *image;
 @property (retain) NUIContainerBoxView *imageAndDescriptionBoxView;
 @property (retain) TLKImageView *imageView;
 @property (retain) UIBezierPath *imageViewExclusionPath;
 @property (retain) UIButton *moreButton;
 @property (retain) UIBezierPath *moreButtonExclusionPath;
-@property (retain) NSString *moreButtonText;
+@property (nonatomic, retain) NSString *moreButtonText;
 @property (readonly) Class superclass;
-@property (retain) TLKMultilineText *text;
-@property (retain) TLKMultilineText *title;
+@property (nonatomic, retain) TLKMultilineText *text;
+@property (nonatomic, retain) TLKMultilineText *title;
 @property (retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
@@ -57,7 +57,6 @@
 - (void)moreButtonPressed;
 - (id)moreButtonText;
 - (long long)numberOfLines;
-- (id)observableProperties;
 - (void)observedPropertiesChanged;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailsTextView:(id)arg1;

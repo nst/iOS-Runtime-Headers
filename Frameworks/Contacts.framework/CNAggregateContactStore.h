@@ -18,6 +18,7 @@
 - (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
 - (bool)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id*)arg3;
+- (id)contactCountForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactStores;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id*)arg2;

@@ -9,10 +9,11 @@
 @property (readonly) bool canMakeSpotlightChanges;
 @property (readonly) bool canModifyCalendarDatabase;
 @property (readonly) bool canModifySuggestedEventCalendar;
-@property (retain) ClientConnection *connection;
+@property (nonatomic, readonly) ClientConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) bool hasCalendarToolEntitlement;
+@property (readonly) bool hasChangeIdTrackingOverrideEntitlement;
 @property (readonly) bool hasContactsUIEntitlement;
 @property (readonly) bool hasMigrationEntitlement;
 @property (readonly) bool hasSyncClientEntitlement;
@@ -28,12 +29,12 @@
 - (bool)canModifySuggestedEventCalendar;
 - (id)connection;
 - (bool)hasCalendarToolEntitlement;
+- (bool)hasChangeIdTrackingOverrideEntitlement;
 - (bool)hasContactsUIEntitlement;
 - (bool)hasMigrationEntitlement;
 - (bool)hasSyncClientEntitlement;
 - (id)initWithClientConnection:(id)arg1;
 - (bool)internalAccessLevelGranted;
-- (void)setConnection:(id)arg1;
 - (bool)testingAccessLevelGranted;
 
 @end

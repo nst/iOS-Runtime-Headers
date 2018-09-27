@@ -15,6 +15,7 @@
     NSMutableDictionary * _toManyRelationshipStatementCache;
 }
 
+- (void)_clearSaveGeneratedCachedStatements;
 - (void)cacheCorrelationDeleteStatement:(id)arg1 forRelationship:(id)arg2;
 - (void)cacheCorrelationInsertStatement:(id)arg1 forRelationship:(id)arg2;
 - (void)cacheCorrelationMasterReorderStatement:(id)arg1 forRelationship:(id)arg2;

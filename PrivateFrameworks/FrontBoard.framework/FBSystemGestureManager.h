@@ -13,6 +13,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_defaultsDidChange:(id)arg1;
 - (id)_systemGestureManagerForDisplayWithIdentityCreatingIfNeeded:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1 recognitionEvent:(long long)arg2 toDisplayWithIdentity:(id)arg3;

@@ -31,6 +31,10 @@
 @property (nonatomic) long long behavior;
 @property (nonatomic, copy) NSDictionary *behaviorParameters;
 @property (nonatomic) bool canBypassPinLock;
+@property (nonatomic, readonly) bool hasInteractiveAction;
+@property (nonatomic, readonly) bool hasLaunchAction;
+@property (nonatomic, readonly) bool hasPluginAction;
+@property (nonatomic, readonly) bool hasRemoteViewAction;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) id /* block */ internalBlock;
 @property (nonatomic, copy) NSString *launchBundleID;

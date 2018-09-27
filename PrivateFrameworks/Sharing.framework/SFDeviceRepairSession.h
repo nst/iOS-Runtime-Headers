@@ -17,6 +17,7 @@
     UIViewController * _presentingViewController;
     unsigned long long  _problemFlags;
     id /* block */  _progressHandler;
+    unsigned int  _repairFlags;
     SFSession * _sfSession;
     int  _sfSessionState;
     unsigned long long  _startTicks;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) SFDevice *peerDevice;
 @property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) unsigned int repairFlags;
 @property (nonatomic) unsigned long long triggerMs;
 
 - (void).cxx_destruct;
@@ -63,10 +65,12 @@
 - (id)peerDevice;
 - (id)presentingViewController;
 - (id /* block */)progressHandler;
+- (unsigned int)repairFlags;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setRepairFlags:(unsigned int)arg1;
 - (void)setTriggerMs:(unsigned long long)arg1;
 - (unsigned long long)triggerMs;
 

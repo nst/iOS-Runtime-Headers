@@ -13,6 +13,8 @@
 @property (nonatomic, copy) CLKImageProvider *line1ImageProvider;
 @property (nonatomic, copy) CLKTextProvider *line2TextProvider;
 
++ (struct CGSize { double x1; double x2; })imageSize;
+
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;

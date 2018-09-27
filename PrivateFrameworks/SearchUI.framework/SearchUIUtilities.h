@@ -6,8 +6,10 @@
 
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })absoluteFrameForView:(id)arg1;
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
++ (bool)appIsValidForBundleIdentifier:(id)arg1;
 + (bool)backgroundColorPrefersWhiteForegroundText:(id)arg1;
 + (id)boldBodyFont;
++ (bool)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
 + (id)buttonColorForStyle:(unsigned long long)arg1;
 + (id)captionFont;
 + (bool)deviceIsAuthenticated;
@@ -15,6 +17,7 @@
 + (void)dispatchAsyncIfNecessary:(id /* block */)arg1;
 + (void)dispatchMainIfNecessary:(id /* block */)arg1;
 + (id)footnoteFont;
++ (id)horizontalAppNameFont;
 + (id)hyphenatableStringForString:(id)arg1;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 cornersToRound:(unsigned long long)arg3 cornerRadius:(double)arg4;
@@ -25,6 +28,7 @@
 + (id)localizedStringForKey:(id)arg1;
 + (struct CGSize { double x1; double x2; })maxThumbnailSize;
 + (double)onePixelForCurrentScreenResolution;
++ (void)openApplicationWithBundleIdentifier:(id)arg1;
 + (id)openOptions;
 + (void)openPunchout:(id)arg1;
 + (void)openPunchout:(id)arg1 fromCardSection:(id)arg2 toListener:(id)arg3 triggerEvent:(unsigned long long)arg4;
@@ -33,9 +37,11 @@
 + (void)performAnimatableChanges:(id /* block */)arg1 animated:(bool)arg2;
 + (void)performAnimatableChanges:(id /* block */)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 + (void)performOpenTask:(id /* block */)arg1;
++ (void)playNegativeHaptic;
 + (void)requestDeviceUnlockWithSuccessHandler:(id /* block */)arg1;
++ (bool)resultIsSiriAction:(id)arg1;
++ (id)richTextForBlockedAppName:(id)arg1 style:(unsigned long long)arg2;
 + (id)sendFeedbackForPunchout:(id)arg1 toListener:(id)arg2 fromCardSection:(id)arg3 triggerEvent:(unsigned long long)arg4;
-+ (double)separatorHeight;
 + (id)shortBodyFont;
 + (id)shortFontForFontStyle:(id)arg1;
 + (id)shortFootnoteFont;

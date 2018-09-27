@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKAddPaymentPassRequestViewController : UITableViewController <PKPaymentSetupPrivacyFooterViewDelegate> {
+@interface PKAddPaymentPassRequestViewController : UITableViewController {
     PKAddPaymentPassRequest * _addRequest;
     PKAddPaymentPassRequestConfiguration * _configuration;
     NSObject<OS_dispatch_source> * _datasourceTimeout;
@@ -11,12 +11,16 @@
     long long  _headerState;
     PKTableHeaderView * _headerView;
     bool  _hidePrivacy;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _lastBoundsSize;
     <NSObject> * _notificationToken;
     double  _offsetForTextfield;
     bool  _offsetForTextfieldWasCalculated;
     CLInUseAssertion * _passbookForegroundAssertion;
     bool  _preconditionsValidated;
-    PKPaymentSetupPrivacyFooterView * _privacyView;
+    OBPrivacyLinkController * _privacyController;
     PKPaymentProvisioningController * _provisioningController;
     bool  _singleTarget;
     NSString * _subtitle;
@@ -51,13 +55,15 @@
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setupTermsControllerHandlerWithNavigationController:(id)arg1 forCompletion:(id /* block */)arg2;
 - (void)_showEligibilityIssueForStatus:(long long)arg1 learnMoreURL:(id)arg2 completion:(id /* block */)arg3;
+- (id)_titleForCurrentHeaderState;
+- (void)_updateHeaderSize;
+- (void)_updateHeaderWithSubtitle:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (bool)hidePrivacy;
 - (id)initWithPaymentWebService:(id)arg1 configuration:(id)arg2;
 - (void)loadView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)privacyFooterLinkTapped:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHidePrivacy:(bool)arg1;
@@ -66,6 +72,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;

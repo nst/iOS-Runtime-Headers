@@ -28,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)_cancelPendingWriteSynchronouslyLeavingSuddenTerminationIntact;
 - (id)_dataFromDataSource;
-- (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceQueue:(id)arg4 dataSourceBlock:(id /* block */)arg5;
+- (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceQueue:(id)arg4 dataSourceBlock:(id /* block */)arg5 writeDelayInterval:(double)arg6;
 - (void)_invalidateTimer;
 - (void)_scheduleTimer;
 - (void)_timerFired;
@@ -40,6 +40,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceBlock:(id /* block */)arg3;
+- (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceBlock:(id /* block */)arg3 writeDelayInterval:(double)arg4;
 - (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceQueue:(id)arg3 dataSourceBlock:(id /* block */)arg4;
 - (id)initWithName:(id)arg1 writerBlock:(id /* block */)arg2 dataSourceBlock:(id /* block */)arg3;
 - (id)initWithName:(id)arg1 writerBlock:(id /* block */)arg2 dataSourceQueue:(id)arg3 dataSourceBlock:(id /* block */)arg4;

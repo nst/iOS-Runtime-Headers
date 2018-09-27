@@ -18,6 +18,7 @@
 - (void)didStopSharingMyLocationWithHandle:(FMFHandle *)arg1;
 - (void)didUpdateActiveDeviceList:(NSSet *)arg1;
 - (void)didUpdateFavoriteHandles:(NSArray *)arg1;
+- (void)didUpdateFences:(NSSet *)arg1;
 - (void)didUpdateHidingStatus:(bool)arg1;
 - (void)didUpdatePendingOffersForHandles:(NSSet *)arg1;
 - (void)mappingPacketProcessingCompleted:(NSString *)arg1;

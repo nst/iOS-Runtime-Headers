@@ -7,6 +7,8 @@
 
 + (NSNumber *)serializationTypeNumber;
 
+- (NSDictionary *)humanReadableDictionaryRepresentation;
+- (NSString *)humanReadableType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (NSDictionary *)serializeableDictionary;
 

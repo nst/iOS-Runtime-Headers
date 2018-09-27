@@ -5,6 +5,7 @@
 @interface PXPhotoKitAssetCollectionActionPerformer : PXAssetCollectionActionPerformer
 
 + (bool)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;
++ (id)createAlertActionWithTitle:(id)arg1 handler:(id /* block */)arg2;
 + (id)createBarButtonItemForAssetCollection:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 + (id)createPreviewActionForAssetCollection:(id)arg1 withHandler:(id /* block */)arg2;
 + (id)createPreviewActionGroupForAssetCollection:(id)arg1 mutableActionTypeToPreviewActionMap:(id)arg2 withHandler:(id /* block */)arg3;

@@ -97,6 +97,7 @@
 - (id)nujs_properties;
 - (id)nujs_toArray;
 - (id)nujs_toDictionary;
+- (id)nujs_toObject;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit
 

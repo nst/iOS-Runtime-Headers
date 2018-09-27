@@ -52,7 +52,7 @@
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 - (id)_newChatItems;
-- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 hasKnownParticipants:(bool)arg3;
+- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 parentChatIsSpam:(bool)arg3 hasKnownParticipants:(bool)arg4;
 - (bool)isCancelTypingMessage;
 - (bool)isIncomingTypingMessage;
 - (bool)isIncomingTypingOrCancelTypingMessage;

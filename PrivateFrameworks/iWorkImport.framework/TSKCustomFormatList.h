@@ -60,6 +60,7 @@
 - (void)p_setCustomFormat:(id)arg1 key:(id)arg2 legacyKey:(unsigned int)arg3;
 - (bool)p_validateNameStemCount;
 - (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
+- (void)removeAll;
 - (void)removeCustomFormatForKey:(id)arg1;
 - (void)removeCustomFormatsForKeys:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

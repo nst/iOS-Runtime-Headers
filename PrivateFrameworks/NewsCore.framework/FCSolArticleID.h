@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCSolArticleID : NSObject <NSCoding, NSCopying> {
+@interface FCSolArticleID : NSObject <NSCopying, NSSecureCoding> {
     NSString * _identifier;
     double  _score;
 }
 
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) double score;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

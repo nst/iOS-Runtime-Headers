@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@interface CLLocation : NSObject <CKRecordValue, NSCopying, NSSecureCoding> {
+@interface CLLocation : NSObject <CKRecordValue, HMFObject, NSCopying, NSSecureCoding> {
     id  _internal;
 }
 
 @property (nonatomic, readonly) int _mapkit_source;
 @property (nonatomic, readonly) double altitude;
+@property (nonatomic, readonly, copy) NSArray *attributeDescriptions;
 @property (nonatomic, readonly) struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; } clientLocation;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly) double course;
@@ -26,11 +27,14 @@
 @property (nonatomic, readonly) NSString *iso6709Notation;
 @property (getter=_navigation_locationDescription, nonatomic, readonly) NSString *locationDescription;
 @property (nonatomic, readonly) CLLocationMatchInfo *matchInfo;
+@property (readonly, copy) NSString *privateDescription;
+@property (readonly, copy) NSString *propertyDescription;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } rawCoordinate;
 @property (nonatomic, readonly) double rawCourse;
 @property (getter=_navigation_rawShiftedCoordinate, nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } rawShiftedCoordinate;
 @property (nonatomic) int referenceFrame;
 @property (getter=_navigation_routeMatch, nonatomic, readonly) GEORouteMatch *routeMatch;
+@property (readonly, copy) NSString *shortDescription;
 @property (nonatomic, readonly) double speed;
 @property (nonatomic, readonly) double speedAccuracy;
 @property (readonly) Class superclass;
@@ -97,9 +101,14 @@
 
 - (int)_mapkit_source;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
+
+- (bool)atx_isFuzzyMatch:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
 - (unsigned int)atx_locationHash;
+- (unsigned long long)atx_locationHashWithLevel:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
@@ -116,8 +125,18 @@
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (id)shortDescription;
+
+- (id)attributeDescriptions;
+- (id)description;
+- (id)privateDescription;
+- (id)shortDescription;
+
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
++ (bool)_navigation_isLocation:(id)arg1 equalTo:(id)arg2;
 + (id)_navigation_stringWithType:(int)arg1;
 
 - (double)_navigation_courseAccuracy;

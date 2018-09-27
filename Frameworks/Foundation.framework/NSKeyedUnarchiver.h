@@ -41,6 +41,7 @@
 - (id)_allowedClassNames;
 - (bool)_allowsValueCoding;
 - (id)_blobForCurrentObject;
+- (bool)_containsNextUnkeyedObject;
 - (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)_decodePropertyListForKey:(id)arg1;
@@ -125,6 +126,7 @@
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 + (id)cpl_safeUnarchiveObjectWithData:(id)arg1 class:(Class)arg2;
++ (id)cpl_safeUnarchiveObjectWithData:(id)arg1 classes:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
 
@@ -141,6 +143,10 @@
 
 + (id)_et_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)_et_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
+
++ (id)dnds_secureLegacyUnarchiverForReadingFromData:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
@@ -172,6 +178,11 @@
 + (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
+
++ (id)nr_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)nr_secureUnarchiveObjectOfClasses:(id)arg1 withFile:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
 
 + (id)nf_securelyUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
@@ -197,7 +208,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-+ (int)_swift_checkClassAndWarnForKeyedArchiving:(Class)arg1 operation:(int)arg2;
++ (int)_swift_checkClassAndWarnForKeyedArchivingoperation;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

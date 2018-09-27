@@ -26,7 +26,6 @@
 - (void)dealloc;
 - (id)exifCreationDateTime;
 - (id)exifModificationDateTime;
-- (void)finalize;
 - (struct timespec { long long x1; long long x2; })fsCreationTime;
 - (struct timespec { long long x1; long long x2; })fsModificationTime;
 - (unsigned long long)fsSN;

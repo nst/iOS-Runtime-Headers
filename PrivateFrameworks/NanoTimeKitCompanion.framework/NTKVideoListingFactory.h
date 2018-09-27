@@ -5,14 +5,15 @@
 @interface NTKVideoListingFactory : NSObject {
     NSMutableSet * _assetListings;
     NSArray * _butterflyListings;
+    CLKDevice * _device;
     NSArray * _flowerListings;
     NSArray * _jellyfishListings;
 }
 
-+ (id)sharedInstance;
++ (id)sharedInstanceForDevice:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_initLibrary;
+- (id)_initLibraryForDevice:(id)arg1;
 - (id)_listingWithTheme:(unsigned long long)arg1 variant:(long long)arg2 tag:(unsigned long long)arg3;
 - (id)_listingsWithTheme:(unsigned long long)arg1;
 - (id)_listingsWithTheme:(unsigned long long)arg1 notMatchingVariant:(long long)arg2;

@@ -31,6 +31,7 @@
     double  _elapsedTime;
     double  _elapsedTimeTimestamp;
     int  _episodeNumber;
+    int  _episodeType;
     NSString * _genre;
     struct { 
         unsigned int duration : 1; 
@@ -54,6 +55,7 @@
         unsigned int downloadState : 1; 
         unsigned int editingStyleFlags : 1; 
         unsigned int episodeNumber : 1; 
+        unsigned int episodeType : 1; 
         unsigned int mediaSubType : 1; 
         unsigned int mediaType : 1; 
         unsigned int numberOfSections : 1; 
@@ -160,6 +162,7 @@
 @property (nonatomic) double elapsedTime;
 @property (nonatomic) double elapsedTimeTimestamp;
 @property (nonatomic) int episodeNumber;
+@property (nonatomic) int episodeType;
 @property (nonatomic, retain) NSString *genre;
 @property (nonatomic, readonly) bool hasAlbumArtistName;
 @property (nonatomic, readonly) bool hasAlbumName;
@@ -189,6 +192,7 @@
 @property (nonatomic) bool hasElapsedTime;
 @property (nonatomic) bool hasElapsedTimeTimestamp;
 @property (nonatomic) bool hasEpisodeNumber;
+@property (nonatomic) bool hasEpisodeType;
 @property (nonatomic, readonly) bool hasGenre;
 @property (nonatomic) bool hasITunesStoreAlbumIdentifier;
 @property (nonatomic) bool hasITunesStoreArtistIdentifier;
@@ -324,6 +328,7 @@
 - (double)elapsedTime;
 - (double)elapsedTimeTimestamp;
 - (int)episodeNumber;
+- (int)episodeType;
 - (id)genre;
 - (bool)hasAlbumArtistName;
 - (bool)hasAlbumName;
@@ -353,6 +358,7 @@
 - (bool)hasElapsedTime;
 - (bool)hasElapsedTimeTimestamp;
 - (bool)hasEpisodeNumber;
+- (bool)hasEpisodeType;
 - (bool)hasGenre;
 - (bool)hasITunesStoreAlbumIdentifier;
 - (bool)hasITunesStoreArtistIdentifier;
@@ -474,6 +480,7 @@
 - (void)setElapsedTime:(double)arg1;
 - (void)setElapsedTimeTimestamp:(double)arg1;
 - (void)setEpisodeNumber:(int)arg1;
+- (void)setEpisodeType:(int)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setHasArtworkAvailable:(bool)arg1;
 - (void)setHasArtworkDataHeightDeprecated:(bool)arg1;
@@ -488,6 +495,7 @@
 - (void)setHasElapsedTime:(bool)arg1;
 - (void)setHasElapsedTimeTimestamp:(bool)arg1;
 - (void)setHasEpisodeNumber:(bool)arg1;
+- (void)setHasEpisodeType:(bool)arg1;
 - (void)setHasITunesStoreAlbumIdentifier:(bool)arg1;
 - (void)setHasITunesStoreArtistIdentifier:(bool)arg1;
 - (void)setHasITunesStoreIdentifier:(bool)arg1;

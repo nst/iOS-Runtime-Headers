@@ -6,6 +6,7 @@
     bool  _isAnimationKeyDoubleSided;
     bool  _isAnimationKeyHidden;
     bool  _isAnimationKeyTypeOfRotation;
+    bool  _isContentsAnimation;
     bool  _isObjectTypeCGColor;
     NSString * _keyPath;
 }
@@ -13,17 +14,21 @@
 @property (nonatomic, readonly) bool isAnimationKeyDoubleSided;
 @property (nonatomic, readonly) bool isAnimationKeyHidden;
 @property (nonatomic, readonly) bool isAnimationKeyTypeOfRotation;
+@property (nonatomic) bool isContentsAnimation;
 @property (nonatomic) bool isObjectTypeCGColor;
 @property (nonatomic, readonly) NSString *keyPath;
 
+- (void).cxx_destruct;
 - (id)adjustedResultWithValue:(id)arg1;
 - (id)initWithAnimation:(id)arg1;
 - (id)interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(double)arg3;
 - (bool)isAnimationKeyDoubleSided;
 - (bool)isAnimationKeyHidden;
 - (bool)isAnimationKeyTypeOfRotation;
+- (bool)isContentsAnimation;
 - (bool)isObjectTypeCGColor;
 - (id)keyPath;
+- (void)setIsContentsAnimation:(bool)arg1;
 - (void)setIsObjectTypeCGColor:(bool)arg1;
 - (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 

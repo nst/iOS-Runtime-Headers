@@ -34,6 +34,7 @@
 - (void)_standardizeHTML:(id)arg1;
 - (void)_standardizeMarkAs:(id)arg1;
 - (void)_standardizePeople:(id)arg1;
+- (void)_standardizeSiriShortcuts:(id)arg1;
 - (void)_updateWithSearchableItem:(id)arg1;
 - (id)attributeSet;
 - (id)attributes;

@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) id invocationTarget;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithProtocol:(id)arg1;
 - (id)invocationTarget;

@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) TIInputMode *inputMode;
 @property (nonatomic, retain) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer;
 
+- (void).cxx_destruct;
 - (void)addSynthesizedTouchToInput:(id)arg1;
 - (void)adjustPhraseBoundaryInForwardDirection:(bool)arg1;
 - (void)adjustPhraseBoundaryInForwardDirection:(bool)arg1 granularity:(int)arg2;
@@ -20,10 +21,8 @@
 - (void)clearHumanReadableTrace;
 - (id)configurationPropertyList;
 - (id)currentInputModeIdentifier;
-- (void)dealloc;
 - (long long)deletionCountForString:(id)arg1;
-- (id)generateAutocorrectionsWithKeyboardState:(id)arg1;
-- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 candidateHandler:(id)arg3;
 - (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id /* block */)arg3;
 - (id)generateRefinementsForCandidate:(id)arg1;
 - (id)generateReplacementsForString:(id)arg1 keyLayout:(id)arg2;
@@ -32,7 +31,7 @@
 - (bool)hasHandledInput;
 - (id)humanReadableTrace;
 - (id)init;
-- (id)initWithInputMode:(id)arg1;
+- (id)initWithInputMode:(id)arg1 keyboardState:(id)arg2;
 - (id)inputMode;
 - (bool)isHardwareKeyboardAutocorrectionEnabled;
 - (id)keyboardConfiguration;

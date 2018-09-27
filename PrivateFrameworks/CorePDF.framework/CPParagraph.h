@@ -7,12 +7,12 @@
     bool  below;
     id  flowProperties;
     bool  hasDropCap;
-    CPListItem * listItem;
+    CPParagraphListItem * listItem;
     bool  noIndentation;
     double  preformatWidth;
 }
 
-@property (nonatomic, retain) CPListItem *listItem;
+@property (nonatomic, retain) CPParagraphListItem *listItem;
 
 - (void)accept:(id)arg1;
 - (unsigned long long)alignment;

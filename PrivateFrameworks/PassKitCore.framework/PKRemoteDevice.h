@@ -12,6 +12,7 @@
     NSString * _modelIdentifier;
     long long  _proximityState;
     NSArray * _remotePaymentInstruments;
+    bool  _supportsFaceID;
     long long  _type;
     NSString * _uniqueID;
     bool  _userDisabled;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSString *modelIdentifier;
 @property (nonatomic) long long proximityState;
 @property (nonatomic, retain) NSArray *remotePaymentInstruments;
+@property (nonatomic) bool supportsFaceID;
 @property (nonatomic) long long type;
 @property (nonatomic, copy) NSString *uniqueID;
 @property (nonatomic) bool userDisabled;
@@ -65,9 +67,11 @@
 - (void)setModelIdentifier:(id)arg1;
 - (void)setProximityState:(long long)arg1;
 - (void)setRemotePaymentInstruments:(id)arg1;
+- (void)setSupportsFaceID:(bool)arg1;
 - (void)setType:(long long)arg1;
 - (void)setUniqueID:(id)arg1;
 - (void)setUserDisabled:(bool)arg1;
+- (bool)supportsFaceID;
 - (long long)type;
 - (id)uniqueID;
 - (bool)userDisabled;

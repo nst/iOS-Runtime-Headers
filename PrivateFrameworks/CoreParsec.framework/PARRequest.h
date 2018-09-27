@@ -5,7 +5,7 @@
 @interface PARRequest : NSObject <NSSecureCoding> {
     NSDictionary * _headerItems;
     NSString * _keyboardInputMode;
-    NSString * _keyboardLocale;
+    bool  _pretend;
     unsigned long long  _queryId;
     NSArray * _queryItems;
     double  _scale;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) unsigned long long clientQueryId;
 @property (nonatomic, copy) NSDictionary *headerItems;
 @property (nonatomic, copy) NSString *keyboardInputMode;
-@property (nonatomic, copy) NSString *keyboardLocale;
+@property (nonatomic) bool pretend;
 @property (nonatomic, readonly) unsigned long long queryId;
 @property (nonatomic, copy) NSArray *queryItems;
 @property (nonatomic) double scale;
@@ -44,14 +44,14 @@
 - (id)headerItems;
 - (id)initWithCoder:(id)arg1;
 - (id)keyboardInputMode;
-- (id)keyboardLocale;
+- (bool)pretend;
 - (unsigned long long)queryId;
 - (id)queryItems;
 - (Class)responseClass;
 - (double)scale;
 - (void)setHeaderItems:(id)arg1;
 - (void)setKeyboardInputMode:(id)arg1;
-- (void)setKeyboardLocale:(id)arg1;
+- (void)setPretend:(bool)arg1;
 - (void)setQueryId:(unsigned long long)arg1;
 - (void)setQueryItems:(id)arg1;
 - (void)setScale:(double)arg1;

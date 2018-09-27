@@ -38,6 +38,8 @@
 + (id)_preferredFontForTextStyle:(id)arg1 maximumContentSizeCategory:(id)arg2;
 + (id)_preferredFontForTextStyle:(id)arg1 maximumContentSizeCategory:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 + (id)_preferredFontForTextStyle:(id)arg1 maximumPointSize:(double)arg2 compatibleWithTraitCollection:(id)arg3;
++ (id)_preferredFontForTextStyle:(id)arg1 variant:(long long)arg2;
++ (id)_preferredFontForTextStyle:(id)arg1 variant:(long long)arg2 maximumContentSizeCategory:(id)arg3;
 + (double)_readableWidth;
 + (id)_sharedFontCache;
 + (id)_sharedZeroPointFont;
@@ -76,6 +78,7 @@
 
 - (struct __CTFont { }*)CTFont;
 - (id)_alternateSystemFonts;
+- (void)_applyToCGContext:(struct CGContext { }*)arg1 graphicsContext:(id)arg2;
 - (double)_ascenderDeltaForBehavior:(long long)arg1;
 - (struct CGFont { }*)_backingCGSFont;
 - (double)_baseLineHeightForFont:(bool)arg1;
@@ -94,7 +97,7 @@
 - (id)_kernOverride;
 - (double)_leading;
 - (double)_scaledValueForValue:(double)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_textMatrixTransformForContext:(struct CGContext { }*)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_textMatrixTransformForContext:(id)arg1;
 - (double)_totalAdvancementForNativeGlyphs:(const unsigned short*)arg1 count:(long long)arg2;
 - (struct CGSize { double x1; double x2; })advancementForGlyph:(unsigned short)arg1;
 - (double)ascender;
@@ -176,14 +179,9 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (bool)_mapkit_accessibilityTextEnabled;
-+ (bool)_mapkit_accessibilityTextEnabled;
-+ (bool)_mapkit_ax3TextEnabled;
 + (bool)_mapkit_ax3TextEnabled;
 + (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
-+ (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
-+ (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
-+ (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 useMonospace:(bool)arg3;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 useMonospace:(bool)arg3;
 
 - (id)_mapkit_fontByAddingFeaturesForTabularFigures;
@@ -204,16 +202,9 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-+ (id)pu_defaultFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2;
-+ (id)pu_preferredFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2 options:(unsigned long long)arg3;
 + (double)pu_scaledValue:(double)arg1 usingFontOfAttributedString:(id)arg2;
 
 - (id)pu_fontWithMonospacedNumbers;
-- (double)pu_scaledValue:(double)arg1;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)_ui_bulletFontForFont:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
 
@@ -230,6 +221,28 @@
 + (id)aa_messageFontForTraitCollection:(id)arg1;
 + (id)aa_primaryActionFontForTraitCollection:(id)arg1;
 + (id)aa_titleFontForTraitCollection:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
+
++ (id)avt_appropriateContentSizeCategoryForCategory:(id)arg1 minCategory:(id)arg2 maxCategory:(id)arg3;
++ (id)avt_attributeTitleFont;
++ (id)avt_avatarActionButtonTitleFont;
++ (id)avt_funCamItemTitleFont;
++ (id)avt_groupDialBoldLabelFont;
++ (id)avt_groupDialLabelFont;
++ (id)avt_splashContinueButtonFont;
++ (id)avt_splashSubTitleFont;
++ (id)avt_splashTitleFont;
++ (id)avt_templateInstructionLabelFont;
++ (id)avt_templateTitleLabelFont;
++ (id)avt_userInfoLabelFont;
+
+// Image: /System/Library/PrivateFrameworks/BaseBoardUI.framework/BaseBoardUI
+
++ (id)bsui_defaultFont:(bool)arg1 forTextStyle:(id)arg2 hiFontStyle:(long long)arg3 contentSizeCategory:(id)arg4;
++ (id)bsui_defaultFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
++ (id)bsui_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
++ (id)bsui_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2 contentSizeCategory:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
@@ -284,10 +297,22 @@
 - (id)CLKFontWithMonospacedNumbers;
 - (id)CLKFontWithStraightSix;
 
+// Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
+
+- (double)_compass_scaledValueForValue:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DocumentCamera.framework/DocumentCamera
+
++ (struct UIFont { Class x1; }*)dc_preferredFontForTextStyle:(id)arg1 adjustedForDefaultSize:(double)arg2;
++ (struct UIFont { Class x1; }*)dc_preferredFontForTextStyle:(id)arg1 adjustedForDefaultSize:(double)arg2 maxSize:(double)arg3;
+
+// Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
+
++ (id)fa_fontWithStyle:(id)arg1 traits:(unsigned int)arg2;
+
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
 + (id)_fiui_nonBoldedVersionOfFont:(id)arg1 size:(double)arg2;
-+ (id)_fiui_weightSuffixForWeight:(double)arg1;
 + (id)_fu_sausageFontOfSize:(double)arg1 fontWeight:(double)arg2;
 + (id)_fu_sausageFontOfSize:(double)arg1 fontWeight:(double)arg2 centeredColons:(bool)arg3;
 + (id)fiui_nonBoldingRoundedSystemFontOfSize:(double)arg1 weight:(double)arg2;
@@ -298,6 +323,7 @@
 + (id)fu_bodyShortFont;
 + (id)fu_boldSausageFontOfSize:(double)arg1;
 + (id)fu_fontByApplyingFeatureSettings:(id)arg1 toFont:(id)arg2;
++ (id)fu_heavySausageFontOfSize:(double)arg1;
 + (id)fu_lightSausageFontOfSize:(double)arg1;
 + (id)fu_lightSausageFontOfSize:(double)arg1 centeredColons:(bool)arg2;
 + (id)fu_mediumFontOfSize:(double)arg1;
@@ -320,6 +346,8 @@
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_chartAxisLabelFont;
++ (id)hk_chartLollipopKeyFont;
++ (id)hk_chartLollipopValueFont;
 + (id)hk_defaultFontWithUIFontTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 attributes:(id)arg3;
 + (double)hk_fittingScaleFactorForUILabels:(id)arg1 constrainingWidth:(double)arg2;
 + (id)hk_preferredFontForTextStyle:(id)arg1;
@@ -338,12 +366,6 @@
 - (id)hk_fontByAddingSymbolicTraits:(unsigned int)arg1;
 - (id)hk_fontByRemovingSymbolicTraits:(unsigned int)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
-
-+ (id)hu_preferredFontForTextStyle:(id)arg1 traits:(unsigned int)arg2;
-+ (id)hu_staticPreferredFontForTextStyle:(id)arg1;
-+ (id)hu_staticPreferredFontForTextStyle:(id)arg1 traits:(unsigned int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 - (id)_lp_CSSFontWeight;
@@ -351,13 +373,6 @@
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (double)MPU_scaledValueForValue:(double)arg1;
-
-// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
-
-+ (id)mt_defaultFont:(bool)arg1 forTextStyle:(id)arg2 hiFontStyle:(long long)arg3 contentSizeCategory:(id)arg4;
-+ (id)mt_defaultFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
-+ (id)mt_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
-+ (id)mt_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2 contentSizeCategory:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
@@ -439,6 +454,12 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
++ (id)px_defaultFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2;
++ (id)px_preferredEmphasizedFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2 options:(unsigned long long)arg3;
++ (id)px_preferredFontForTextStyle:(id)arg1 maxContentSizeCategory:(id)arg2 withSymbolicTraits:(unsigned int)arg3;
++ (id)px_preferredFontForTextStyle:(id)arg1 maxContentSizeCategory:(id)arg2 withSymbolicTraits:(unsigned int)arg3 emphasized:(bool)arg4;
++ (id)px_preferredFontForTextStyle:(id)arg1 withSymbolicTraits:(unsigned int)arg2 options:(unsigned long long)arg3;
+
 - (id)px_fontWithMonospacedNumbers;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
@@ -460,6 +481,8 @@
 + (id)siriui_mediumWeightBodySizeFont;
 + (id)siriui_mediumWeightBodySubtextSizeFont;
 + (id)siriui_mediumWeightFontWithSize:(double)arg1;
++ (float)siriui_preferredDynamicBodySize;
++ (float)siriui_preferredDynamicBodySubtextSize;
 + (id)siriui_ratingFont;
 + (id)siriui_serverTipFont;
 + (id)siriui_serverTipPrefixFont;
@@ -487,12 +510,36 @@
 
 - (id)telephonyUIFontByAddingCaseSensitiveLayoutEnabledAttribute;
 
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)_normalizedContentSizeCategory:(id)arg1 default:(bool)arg2;
++ (id)_preferredContentSizeCategory:(unsigned long long)arg1;
++ (id)_ui_bulletFontForFont:(id)arg1;
++ (id)preferredContentSizeCategory;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
++ (id)vui_fontFromTextStyle:(long long)arg1 fontWeight:(long long)arg2 fontSize:(double)arg3 symbolicTraits:(unsigned int)arg4;
++ (id)vui_fontFromTextStyle:(long long)arg1 maximumContentSizeCategory:(id)arg2 fontWeight:(long long)arg3 fontSize:(double)arg4 symbolicTraits:(unsigned int)arg5;
+
+- (double)baselineHeight;
+- (double)bottomMarginWithBaselineMargin:(double)arg1 traitCollection:(id)arg2;
+- (double)topMarginToFont:(id)arg1 withBaselineMargin:(double)arg2 traitCollection:(id)arg3;
+- (double)topMarginWithBaselineMargin:(double)arg1 traitCollection:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 + (id)rcs_dynamicMonospacedTitle0Font;
 + (id)rcs_monospacedSubheadlineFont;
 
 - (id)rc_textStyle;
+
+// Image: /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
+
++ (id)vcui_buttonFont;
++ (id)vcui_preferredContentSize;
++ (id)vcui_preferredFontForTextStyle:(id)arg1;
++ (id)vcui_preferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
 

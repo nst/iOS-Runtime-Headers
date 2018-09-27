@@ -3,22 +3,17 @@
  */
 
 @interface _SFPBLocalImage : PBCodable <NSSecureCoding, _SFPBLocalImage> {
-    struct { 
-        unsigned int localImageType : 1; 
-    }  _has;
     int  _localImageType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasLocalImageType;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) int localImageType;
 @property (readonly) Class superclass;
 
 - (id)dictionaryRepresentation;
-- (bool)hasLocalImageType;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;

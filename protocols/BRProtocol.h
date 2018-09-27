@@ -34,7 +34,7 @@
 - (void)boostFilePresenterAtURL:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)capabilityWhenTryingToReparentItemAtURL:(void *)arg1 toNewParent:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSURL *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned short, NSError *, void*
 - (oneway void)checkinAskClientIfUsingUbiquity:(bool)arg1;
-- (void)computePurgableSpaceWithUrgency:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)computePurgeableSpaceForAllUrgenciesWithReply:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSNumber *, NSError *, void*
 - (void)copyBulkShareIDsAtURLs:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 - (void)copyCurrentUserIdentifierWithReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
 - (void)copyCurrentUserNameAndDisplayHandleWithReply:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSPersonNameComponents *, NSString *, NSError *, void*

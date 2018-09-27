@@ -6,11 +6,15 @@
 @required
 
 - (NSNumber *)chargePercentRemaining;
+- (NSNumber *)charging;
 - (long long)code;
 - (NSMeasurement *)distanceRemaining;
 - (NSNumber *)fuelPercentRemaining;
+- (NSNumber *)minutesToFull;
 - (void)setChargePercentRemaining:(NSNumber *)arg1;
+- (void)setCharging:(NSNumber *)arg1;
 - (void)setDistanceRemaining:(NSMeasurement *)arg1;
 - (void)setFuelPercentRemaining:(NSNumber *)arg1;
+- (void)setMinutesToFull:(NSNumber *)arg1;
 
 @end

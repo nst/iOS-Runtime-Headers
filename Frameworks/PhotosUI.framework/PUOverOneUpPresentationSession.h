@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUOverOneUpPresentationSession : NSObject <PLDismissableViewController, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUOneUpPhotosSharingTransitionDelegate, PUPhotoEditViewControllerPresentationDelegate, PUPhotoMarkupViewControllerObserver, PUPhotosSharingViewControllerDelegate, PUSlideshowViewControllerDelegate, PUVideoEditViewControllerPresentationDelegate> {
+@interface PUOverOneUpPresentationSession : NSObject <PLDismissableViewController, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUFunEffectsViewControllerObserver, PUOneUpPhotosSharingTransitionDelegate, PUPhotoEditViewControllerPresentationDelegate, PUPhotoMarkupViewControllerObserver, PUPhotosSharingViewControllerDelegate, PUSlideshowViewControllerDelegate, PUVideoEditViewControllerPresentationDelegate> {
     PUAvalancheReviewController * __avalancheReviewController;
     PUEditViewController * __editViewController;
+    PUFunEffectsViewController * __funEffectsViewController;
     bool  __needsUpdatePresentedViewControllers;
     PUPhotoMarkupViewController * __photoMarkupViewController;
     struct NSHashTable { Class x1; } * __presentedViewControllers;
@@ -15,6 +16,7 @@
     struct { 
         bool respondsToActivities; 
         bool respondsToBarButtonItem; 
+        bool respondsToDidAppendReviewScreenAction; 
     }  _barsDelegateFlags;
     <PUOverOneUpPresentationSessionDelegate> * _delegate;
     struct { 
@@ -29,6 +31,7 @@
 
 @property (setter=_setAvalancheReviewController:, nonatomic, retain) PUAvalancheReviewController *_avalancheReviewController;
 @property (setter=_setEditViewController:, nonatomic, retain) PUEditViewController *_editViewController;
+@property (setter=_setFunEffectsViewController:, nonatomic, retain) PUFunEffectsViewController *_funEffectsViewController;
 @property (setter=_setNeedsUpdatePresentedViewControllers:, nonatomic) bool _needsUpdatePresentedViewControllers;
 @property (setter=_setPhotoMarkupViewController:, nonatomic, retain) PUPhotoMarkupViewController *_photoMarkupViewController;
 @property (setter=_setPresentedViewControllers:, nonatomic, retain) NSHashTable *_presentedViewControllers;
@@ -51,6 +54,7 @@
 - (id)_currentTileController;
 - (bool)_dismissAvalancheReviewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (bool)_dismissEditViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (bool)_dismissFunEffectsViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (bool)_dismissPhotoMarkupViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (bool)_dismissPhotosSharingViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (bool)_dismissSlideshowViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
@@ -60,6 +64,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForAssetReference:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(bool)arg3;
+- (id)_funEffectsViewController;
 - (long long)_globalIndexForAssetReference:(id)arg1;
 - (long long)_globalIndexForIndexPath:(id)arg1;
 - (id)_indexPathForGlobalIndex:(long long)arg1;
@@ -71,6 +76,7 @@
 - (void)_prepareForSharingViewControllerDismiss:(id)arg1 withAsset:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)_presentAvalancheReviewController:(id)arg1;
 - (bool)_presentEditViewController:(id)arg1;
+- (bool)_presentFunEffectsViewController:(id)arg1 animated:(bool)arg2;
 - (bool)_presentPhotoMarkupViewController:(id)arg1;
 - (bool)_presentPhotosSharingViewController:(id)arg1;
 - (bool)_presentScreenRoutePickerViewController:(id)arg1;
@@ -78,6 +84,7 @@
 - (struct NSHashTable { Class x1; }*)_presentedViewControllers;
 - (void)_setAvalancheReviewController:(id)arg1;
 - (void)_setEditViewController:(id)arg1;
+- (void)_setFunEffectsViewController:(id)arg1;
 - (void)_setNeedsUpdatePresentedViewControllers:(bool)arg1;
 - (void)_setPhotoMarkupViewController:(id)arg1;
 - (void)_setPresentedViewControllers:(struct NSHashTable { Class x1; }*)arg1;
@@ -98,6 +105,7 @@
 - (id)delegate;
 - (void)dismissViewController:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)finishOverOneUpPresentationSessionDismissForced:(bool)arg1 animated:(bool)arg2;
+- (void)funEffectsViewController:(id)arg1 didSaveAsset:(id)arg2 withCompletion:(unsigned long long)arg3;
 - (bool)isPresentingAnOverOneUpViewController;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

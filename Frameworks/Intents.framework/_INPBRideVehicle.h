@@ -2,32 +2,32 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRideVehicle : PBCodable <NSCopying> {
+@interface _INPBRideVehicle : PBCodable <NSCopying, NSSecureCoding, _INPBRideVehicle> {
+    struct { }  _has;
     GEOLocation * _location;
     NSString * _manufacturer;
     _INPBImageValue * _mapAnnotationImage;
     NSString * _model;
     NSString * _registrationPlate;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic, readonly) bool hasManufacturer;
 @property (nonatomic, readonly) bool hasMapAnnotationImage;
 @property (nonatomic, readonly) bool hasModel;
 @property (nonatomic, readonly) bool hasRegistrationPlate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEOLocation *location;
-@property (nonatomic, retain) NSString *manufacturer;
+@property (nonatomic, copy) NSString *manufacturer;
 @property (nonatomic, retain) _INPBImageValue *mapAnnotationImage;
-@property (nonatomic, retain) NSString *model;
-@property (nonatomic, retain) NSString *registrationPlate;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *registrationPlate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasLocation;
 - (bool)hasManufacturer;
@@ -39,7 +39,6 @@
 - (id)location;
 - (id)manufacturer;
 - (id)mapAnnotationImage;
-- (void)mergeFrom:(id)arg1;
 - (id)model;
 - (bool)readFrom:(id)arg1;
 - (id)registrationPlate;
@@ -48,7 +47,6 @@
 - (void)setMapAnnotationImage:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setRegistrationPlate:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

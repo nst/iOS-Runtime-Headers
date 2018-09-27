@@ -4,17 +4,18 @@
 
 @interface _CFPrefsClientContext : NSObject {
     id  _cfprefsd;
+    bool  _didDeferKVONotifications;
     NSObject<OS_xpc_object> * _entitlements;
+    bool  _hasInFlightKVONotifications;
+    bool  _impersonatingAnotherProcess;
     BOOL  _isPlatformBinary;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
-    struct __CFArray { } * _ownedSources;
-    struct __CFDictionary { } * _readPermissionsCache;
+    struct __CFSet { } * _observedSources;
     struct __CFBoolean { } * _sandboxed;
     struct __CFDictionary { } * _suiteCache;
-    unsigned long long  _token;
-    struct __CFDictionary { } * _writePermissionsCache;
+    bool  _valid;
 }
 
 @end

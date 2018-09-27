@@ -21,8 +21,6 @@
     }  _floatPadding;
     double  _floatingBottomDecorationHeight;
     long long  _flowDirection;
-    bool  _hasHeadersAboveContent;
-    bool  _hasHeadersBelowContent;
     struct CGSize { 
         double width; 
         double height; 
@@ -77,13 +75,11 @@
 - (void)_getSize:(out struct CGSize { double x1; double x2; }*)arg1 headerSize:(out struct CGSize { double x1; double x2; }*)arg2 footerSize:(out struct CGSize { double x1; double x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out long long*)arg7 forSection:(long long)arg8 isJoined:(bool)arg9;
 - (void)_getSizeForHorizontalFlowDirection:(out struct CGSize { double x1; double x2; }*)arg1 headerSize:(out struct CGSize { double x1; double x2; }*)arg2 footerSize:(out struct CGSize { double x1; double x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out long long*)arg7 forSection:(long long)arg8 isJoined:(bool)arg9;
 - (void)_getSizeForVerticalFlowDirection:(out struct CGSize { double x1; double x2; }*)arg1 headerSize:(out struct CGSize { double x1; double x2; }*)arg2 footerSize:(out struct CGSize { double x1; double x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out long long*)arg7 forSection:(long long)arg8 isJoined:(bool)arg9;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_layoutHorizontalSectionFooterIfNecessary:(id)arg1 fixedLayoutAttributes:(id)arg2 floatingLayoutAttributes:(id)arg3 footerConfig:(long long)arg4 origin:(struct CGPoint { double x1; double x2; })arg5 size:(struct CGSize { double x1; double x2; })arg6 section:(long long)arg7 isJoined:(bool)arg8;
 - (long long)_layoutTilesAndGetNumberOfTilesOmittedWithCollectionView:(id)arg1 tileLayoutAttributes:(id)arg2 fixedLayoutAttributes:(id)arg3 origin:(inout struct CGPoint { double x1; double x2; }*)arg4 size:(inout struct CGSize { double x1; double x2; }*)arg5 sectionContentSize:(struct CGSize { double x1; double x2; })arg6 itemCount:(long long)arg7 section:(long long)arg8;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_layoutVerticalSectionHeaderIfNecessary:(id)arg1 fixedLayoutAttributes:(id)arg2 floatingLayoutAttributes:(id)arg3 section:(long long)arg4;
 - (id)_parallaxComputer;
 - (void)_sectionAtIndex:(long long)arg1 sizeDidChangeFrom:(struct CGSize { double x1; double x2; })arg2 to:(struct CGSize { double x1; double x2; })arg3;
 - (void)_setOrigin:(struct CGPoint { double x1; double x2; })arg1 forSectionLayoutInfo:(id)arg2;
-- (void)_updateExpectedHeaderLocations;
 - (void)_updateGlobalLayoutInfoWithOptions:(long long)arg1 sectionsWithUpdatedGroupIDs:(out id*)arg2;
 - (void)_updateLayoutInfoForSection:(long long)arg1 ignoreSizeChange:(bool)arg2;
 - (void)_updateParallaxComputer;

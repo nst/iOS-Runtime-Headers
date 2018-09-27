@@ -6,7 +6,7 @@
     CKAsset * _asset;
     NSDictionary * _assetChunkerOptions;
     NSData * _assetKey;
-    NSData * _authRequest;
+    CKDAssetZoneKey * _assetZoneKey;
     NSString * _authToken;
     NSData * _boundaryKey;
     unsigned int  _chunkCount;
@@ -14,6 +14,7 @@
     NSFileHandle * _clientOpenedFileHandle;
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
+    CKAssetDownloadPreauthorization * _downloadPreauthorization;
     unsigned long long  _downloadTokenExpiration;
     NSError * _error;
     NSNumber * _fileID;
@@ -26,6 +27,7 @@
     bool  _inMemoryDownloadLooksOkay;
     bool  _isAlreadyRegistered;
     bool  _isReaderReadFrom;
+    bool  _isRereferencedAssetUpload;
     unsigned long long  _itemID;
     NSString * _itemTypeHint;
     NSNumber * _modTimeInSeconds;
@@ -56,7 +58,7 @@
 @property (nonatomic, retain) CKAsset *asset;
 @property (nonatomic, retain) NSDictionary *assetChunkerOptions;
 @property (nonatomic, retain) NSData *assetKey;
-@property (nonatomic, retain) NSData *authRequest;
+@property (nonatomic, retain) CKDAssetZoneKey *assetZoneKey;
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, retain) NSData *boundaryKey;
 @property (nonatomic) unsigned int chunkCount;
@@ -64,6 +66,7 @@
 @property (nonatomic, retain) NSFileHandle *clientOpenedFileHandle;
 @property (nonatomic, retain) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSNumber *deviceID;
+@property (nonatomic, retain) CKAssetDownloadPreauthorization *downloadPreauthorization;
 @property (nonatomic) unsigned long long downloadTokenExpiration;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSNumber *fileID;
@@ -76,6 +79,7 @@
 @property (nonatomic) bool inMemoryDownloadLooksOkay;
 @property (nonatomic) bool isAlreadyRegistered;
 @property (nonatomic) bool isReaderReadFrom;
+@property (nonatomic) bool isRereferencedAssetUpload;
 @property (nonatomic) unsigned long long itemID;
 @property (nonatomic, retain) NSString *itemTypeHint;
 @property (nonatomic, retain) NSNumber *modTimeInSeconds;
@@ -108,7 +112,7 @@
 - (id)asset;
 - (id)assetChunkerOptions;
 - (id)assetKey;
-- (id)authRequest;
+- (id)assetZoneKey;
 - (id)authToken;
 - (id)boundaryKey;
 - (bool)canBeRegistered;
@@ -119,6 +123,7 @@
 - (id)contentBaseURL;
 - (id)description;
 - (id)deviceID;
+- (id)downloadPreauthorization;
 - (unsigned long long)downloadTokenExpiration;
 - (id)error;
 - (id)fileID;
@@ -138,6 +143,7 @@
 - (id)initWithPackage:(id)arg1;
 - (bool)isAlreadyRegistered;
 - (bool)isReaderReadFrom;
+- (bool)isRereferencedAssetUpload;
 - (bool)isTemporary;
 - (unsigned long long)itemID;
 - (id)itemTypeHint;
@@ -160,7 +166,7 @@
 - (void)setAsset:(id)arg1;
 - (void)setAssetChunkerOptions:(id)arg1;
 - (void)setAssetKey:(id)arg1;
-- (void)setAuthRequest:(id)arg1;
+- (void)setAssetZoneKey:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setBoundaryKey:(id)arg1;
 - (void)setChunkCount:(unsigned int)arg1;
@@ -168,6 +174,7 @@
 - (void)setClientOpenedFileHandle:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDeviceID:(id)arg1;
+- (void)setDownloadPreauthorization:(id)arg1;
 - (void)setDownloadTokenExpiration:(unsigned long long)arg1;
 - (void)setError:(id)arg1;
 - (void)setFileID:(id)arg1;
@@ -180,6 +187,7 @@
 - (void)setInMemoryDownloadLooksOkay:(bool)arg1;
 - (void)setIsAlreadyRegistered:(bool)arg1;
 - (void)setIsReaderReadFrom:(bool)arg1;
+- (void)setIsRereferencedAssetUpload:(bool)arg1;
 - (void)setItemID:(unsigned long long)arg1;
 - (void)setItemTypeHint:(id)arg1;
 - (void)setModTimeInSeconds:(id)arg1;
@@ -205,6 +213,7 @@
 - (void)setUploadTokenExpiration:(unsigned long long)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
 - (void)setWriter:(id)arg1;
+- (void)setupForGetChunkKeysWithAsset:(id)arg1;
 - (bool)shouldReadRawEncryptedData;
 - (id)signature;
 - (id)trackingUUID;

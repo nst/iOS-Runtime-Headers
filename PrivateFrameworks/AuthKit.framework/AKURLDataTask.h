@@ -24,6 +24,7 @@
 - (void)_completeWithError:(id)arg1;
 - (bool)canceledOrCompleted;
 - (id /* block */)completionHandler;
+- (id)description;
 - (id)lastRetryError;
 - (id)receivedData;
 - (id)request;

@@ -6,6 +6,7 @@
     <TUCallProviderManagerDataSource> * _dataSource;
     NSMapTable * _delegateToQueue;
     NSObject<OS_dispatch_queue> * _queue;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) <TUCallProviderManagerDataSource> *dataSource;
@@ -21,6 +22,8 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TUCallProvider *telephonyProvider;
+@property (nonatomic, readonly) TUCallProvider *tinCanProvider;
+@property (nonatomic, readonly) unsigned long long type;
 @property (nonatomic, readonly) TUCallProvider *voicemailProvider;
 
 + (id)defaultProviders;
@@ -28,7 +31,6 @@
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-- (void)blockUntilInitialStateReceivedIfNecessary;
 - (id)dataSource;
 - (void)dealloc;
 - (id)debugDescription;
@@ -37,7 +39,10 @@
 - (id)emergencyProvider;
 - (id)faceTimeProvider;
 - (id)init;
-- (id)initWithDataSource:(id)arg1 queue:(id)arg2;
+- (id)initWithDataSource:(id)arg1 type:(unsigned long long)arg2 queue:(id)arg3;
+- (id)initWithLocalProviders;
+- (id)initWithPairedHostDeviceProviders;
+- (id)initWithType:(unsigned long long)arg1;
 - (void)launchAppForDialRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)providerForFavoritesEntry:(id)arg1;
 - (id)providerForFavoritesEntryActionBundleIdentifier:(id)arg1;
@@ -52,6 +57,8 @@
 - (void)removeDelegate:(id)arg1;
 - (void)setDelegateToQueue:(id)arg1;
 - (id)telephonyProvider;
+- (id)tinCanProvider;
+- (unsigned long long)type;
 - (id)voicemailProvider;
 
 @end

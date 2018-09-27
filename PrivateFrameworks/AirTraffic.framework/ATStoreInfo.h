@@ -5,6 +5,7 @@
 @interface ATStoreInfo : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * _assetDictionary;
     NSMutableDictionary * _downloadDictionary;
+    ICStoreMediaResponseItem * _storeMediaResponseItem;
 }
 
 @property (nonatomic, retain) NSNumber *DSID;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSString *redownloadParams;
 @property (nonatomic, retain) NSNumber *redownloadStatus;
 @property (nonatomic, retain) NSNumber *sagaID;
+@property (nonatomic, retain) ICStoreMediaResponseItem *storeMediaResponseItem;
 @property (nonatomic, retain) NSString *storefrontID;
 @property (nonatomic, retain) NSNumber *subscriptionID;
 @property (nonatomic, retain) NSString *syncID;
@@ -67,11 +69,13 @@
 - (void)setRedownloadParams:(id)arg1;
 - (void)setRedownloadStatus:(id)arg1;
 - (void)setSagaID:(id)arg1;
+- (void)setStoreMediaResponseItem:(id)arg1;
 - (void)setStorefrontID:(id)arg1;
 - (void)setSubscriptionID:(id)arg1;
 - (void)setSyncID:(id)arg1;
 - (void)setVersionID:(id)arg1;
 - (void)setXID:(id)arg1;
+- (id)storeMediaResponseItem;
 - (id)storefrontID;
 - (id)subscriptionID;
 - (id)syncID;

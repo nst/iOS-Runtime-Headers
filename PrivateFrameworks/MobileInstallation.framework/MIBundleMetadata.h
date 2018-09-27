@@ -9,6 +9,7 @@
     unsigned long long  _placeholderFailureReason;
     NSError * _placeholderFailureUnderlyingError;
     unsigned long long  _placeholderFailureUnderlyingErrorSource;
+    NSString * _watchKitAppExecutableHash;
 }
 
 @property (nonatomic, copy) NSString *installBuildVersion;
@@ -17,12 +18,14 @@
 @property (nonatomic) unsigned long long placeholderFailureReason;
 @property (nonatomic, retain) NSError *placeholderFailureUnderlyingError;
 @property (nonatomic) unsigned long long placeholderFailureUnderlyingErrorSource;
+@property (nonatomic, copy) NSString *watchKitAppExecutableHash;
 
 + (id)metadataFromURL:(id)arg1 error:(id*)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)installBuildVersion;
@@ -39,5 +42,7 @@
 - (void)setPlaceholderFailureReason:(unsigned long long)arg1;
 - (void)setPlaceholderFailureUnderlyingError:(id)arg1;
 - (void)setPlaceholderFailureUnderlyingErrorSource:(unsigned long long)arg1;
+- (void)setWatchKitAppExecutableHash:(id)arg1;
+- (id)watchKitAppExecutableHash;
 
 @end

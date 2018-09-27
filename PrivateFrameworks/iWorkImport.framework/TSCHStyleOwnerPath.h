@@ -15,9 +15,9 @@
 + (id)styleOwnerPathWithUUIDs:(id)arg1;
 + (id)verifiedUUIDs:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)TSUUUIDPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)didInitFromSOS;
 - (Class)genericPropertyMapClass;
 - (unsigned long long)hash;

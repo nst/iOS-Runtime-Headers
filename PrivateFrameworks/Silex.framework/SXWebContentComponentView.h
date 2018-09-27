@@ -11,9 +11,11 @@
     SXWebContentComponentInteractionManager * _interactionManager;
     NFPendingPromise * _invalidationPromise;
     UIActivityIndicatorView * _loadingIndicator;
+    <SXWebContentLoadingPolicyProvider> * _loadingPolicyProvider;
     <SXWebContentNavigationManager> * _navigationManager;
     id /* block */  _queuedExposureBeginWork;
     <SXReachabilityProvider> * _reachabilityProvider;
+    <SXResourceDataSource> * _resourceDataSource;
     NFStateMachine * _stateMachine;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
@@ -29,9 +31,11 @@
 @property (nonatomic, readonly) SXWebContentComponentInteractionManager *interactionManager;
 @property (nonatomic, retain) NFPendingPromise *invalidationPromise;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic, readonly) <SXWebContentLoadingPolicyProvider> *loadingPolicyProvider;
 @property (nonatomic, readonly) <SXWebContentNavigationManager> *navigationManager;
 @property (nonatomic, copy) id /* block */ queuedExposureBeginWork;
 @property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
+@property (nonatomic, readonly) <SXResourceDataSource> *resourceDataSource;
 @property (nonatomic, readonly) NFStateMachine *stateMachine;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
@@ -47,13 +51,14 @@
 - (void)configurePresentationManager;
 - (void)configureViewController;
 - (id)containerViewController;
+- (id)createDisabledState;
 - (id)createErrorState;
 - (id)createLoadingState;
 - (id)createPresentationState;
 - (id)createStateMachine;
 - (id)errorLabel;
 - (void)handleTap:(id)arg1;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 containerViewController:(id)arg6 configurationProvider:(id)arg7 navigationManager:(id)arg8 componentExposureMonitor:(id)arg9 interactionManagerFactory:(id)arg10 reachabilityProvider:(id)arg11;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 containerViewController:(id)arg6 configurationProvider:(id)arg7 navigationManager:(id)arg8 componentExposureMonitor:(id)arg9 interactionManagerFactory:(id)arg10 reachabilityProvider:(id)arg11 resourceDataSource:(id)arg12 loadingPolicyProvider:(id)arg13;
 - (id)interactionManager;
 - (id)invalidationPromise;
 - (void)layout;
@@ -63,12 +68,14 @@
 - (void)layoutWebView;
 - (void)loadWebContent;
 - (id)loadingIndicator;
+- (id)loadingPolicyProvider;
 - (id)navigationManager;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (id /* block */)queuedExposureBeginWork;
 - (void)reachabilityChanged:(bool)arg1;
 - (id)reachabilityProvider;
 - (void)reloadWebContent;
+- (id)resourceDataSource;
 - (void)setComponentExposureEvent:(id)arg1;
 - (void)setErrorLabel:(id)arg1;
 - (void)setInvalidationPromise:(id)arg1;

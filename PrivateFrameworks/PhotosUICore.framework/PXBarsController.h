@@ -3,9 +3,9 @@
  */
 
 @interface PXBarsController : NSObject {
+    <PXActionPerformerDelegate> * _actionPerformerDelegate;
+    NSMutableDictionary * _barButtonItemCache;
     PXBarSpec * _barSpec;
-    <PXBarsControllerDelegate> * _delegate;
-    struct { }  _delegateFlags;
     struct { 
         bool needsUpdateBars; 
     }  _needsUpdateFlags;
@@ -13,22 +13,32 @@
     bool  _wantsAnimatedBarsUpdate;
 }
 
+@property (nonatomic) <PXActionPerformerDelegate> *actionPerformerDelegate;
+@property (nonatomic, readonly) NSMutableDictionary *barButtonItemCache;
 @property (nonatomic, retain) PXBarSpec *barSpec;
-@property (nonatomic) <PXBarsControllerDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *leftBarButtonItemIdentifiers;
+@property (nonatomic, readonly) NSArray *rightBarButtonItemIdentifiers;
+@property (nonatomic, readonly) NSArray *toolbarItemIdentifiers;
 @property (nonatomic) UIViewController *viewController;
 @property (nonatomic) bool wantsAnimatedBarsUpdate;
 
 - (void).cxx_destruct;
+- (id)_getCachedOrCreateNewBarButtonItemForIdentifier:(id)arg1;
 - (bool)_needsUpdate;
 - (void)_updateBarsIfNeeded;
+- (id)actionPerformerDelegate;
+- (id)barButtonItemCache;
+- (id)barButtonItemForIdentifier:(id)arg1;
 - (id)barSpec;
-- (id)delegate;
 - (id)init;
 - (void)invalidateBars;
+- (id)leftBarButtonItemIdentifiers;
+- (id)rightBarButtonItemIdentifiers;
+- (void)setActionPerformerDelegate:(id)arg1;
 - (void)setBarSpec:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setWantsAnimatedBarsUpdate:(bool)arg1;
+- (id)toolbarItemIdentifiers;
 - (void)updateBars;
 - (void)updateIfNeeded;
 - (id)viewController;

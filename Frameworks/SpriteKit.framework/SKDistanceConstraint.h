@@ -18,6 +18,7 @@
 + (id)constraintWithNode:(id)arg1 distanceRange:(id)arg2;
 + (id)constraintWithPoint:(struct CGPoint { double x1; double x2; })arg1 distanceRange:(id)arg2;
 + (id)constraintWithPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,6 +26,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
+- (bool)isEqualToDistanceConstraint:(id)arg1;
 - (id)node;
 - (struct CGPoint { double x1; double x2; })point;
 - (void)setDistanceRange:(id)arg1;

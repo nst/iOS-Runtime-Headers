@@ -15,6 +15,7 @@
 - (id)assetFeatureValueForFeature:(long long)arg1;
 - (id)assetTypeForCurrentDevice;
 - (void)downloadAsset:(id)arg1 completion:(id /* block */)arg2;
+- (id)featureKey;
 - (id)movieURLForAsset:(id)arg1;
 - (id)placeholderImageForFeature:(long long)arg1;
 - (id)placeholderImageNameForFeature:(long long)arg1;
@@ -26,5 +27,6 @@
 - (void)retrieveMovieForFeature:(long long)arg1 completion:(id /* block */)arg2;
 - (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 completion:(id /* block */)arg3;
 - (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(bool)arg3 completion:(id /* block */)arg4;
+- (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(bool)arg3 useLocalAssets:(bool)arg4 completion:(id /* block */)arg5;
 
 @end

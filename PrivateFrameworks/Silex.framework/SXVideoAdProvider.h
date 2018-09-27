@@ -7,12 +7,12 @@
     <SXAnalyticsReporting> * _analyticsReporter;
     <SXVideoAdProviderDataSource> * _dataSource;
     <SXVideoAdViewControllerProviding> * _fullscreenViewControllerProvider;
-    <SXVideoMetadataProviding> * _metadata;
+    <SVVideoMetadata> * _metadata;
     SXPrerollAdResponse * _response;
     SXVideoAdStateManager * _stateManager;
-    SXTimeline * _timeline;
-    <SXVisibilityMonitoring> * _videoPlayerVisibilityMonitor;
-    <SXVisibilityMonitoring> * _videoVisibilityMonitor;
+    SVTimeline * _timeline;
+    <SVVisibilityMonitoring> * _videoPlayerVisibilityMonitor;
+    <SVVisibilityMonitoring> * _videoVisibilityMonitor;
 }
 
 @property (nonatomic, readonly) <SXVASTAnalyticsEventInfoFactory> *analyticsEventInfoFactory;
@@ -23,17 +23,17 @@
 @property (nonatomic, readonly) <SXVideoAdViewControllerProviding> *fullscreenViewControllerProvider;
 @property (nonatomic, readonly) bool hasAction;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) <SXVideoMetadataProviding> *metadata;
+@property (nonatomic) <SVVideoMetadata> *metadata;
 @property (nonatomic, retain) SXPrerollAdResponse *response;
 @property (nonatomic, readonly) unsigned long long skipThreshold;
 @property (nonatomic, readonly) SXVideoAdStateManager *stateManager;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double threshold;
-@property (nonatomic, readonly) SXTimeline *timeline;
-@property (nonatomic, readonly) <SXVisibilityMonitoring> *videoPlayerVisibilityMonitor;
-@property (nonatomic, readonly) <SXVisibilityMonitoring> *videoVisibilityMonitor;
+@property (nonatomic, readonly) SVTimeline *timeline;
+@property (nonatomic, readonly) <SVVisibilityMonitoring> *videoPlayerVisibilityMonitor;
+@property (nonatomic, readonly) <SVVisibilityMonitoring> *videoVisibilityMonitor;
 
 - (void).cxx_destruct;
+- (void)adVisibilityStateChanged;
 - (id)analyticsEventInfoFactory;
 - (id)analyticsReporter;
 - (void)configureTimelineForImpressionReporting;
@@ -46,6 +46,7 @@
 - (id /* block */)loadWithCompletionBlock:(id /* block */)arg1;
 - (id)metadata;
 - (void)muteStateChanged:(bool)arg1;
+- (void)nextVideoStartPlaying;
 - (void)playbackFailedWithError:(id)arg1;
 - (void)playbackFinished;
 - (void)playbackInitiated;

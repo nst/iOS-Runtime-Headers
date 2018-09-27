@@ -5,7 +5,7 @@
 
 @required
 
-+ (NSString *)registeredClass;
-+ (NSString *)registeredType;
++ (NSString *)registeredClassName;
++ (NSString *)registeredIdentifier;
 
 @end

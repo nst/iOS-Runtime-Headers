@@ -11,6 +11,7 @@
 
 @optional
 
+- (void)connectionConfigured;
 - (void)connectionInterrupted;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface HMFMutableMessage : HMFMessage
 
+@property (nonatomic, retain) HMFActivity *activity;
 @property (nonatomic, retain) HMFMessageDestination *destination;
 @property (nonatomic, copy) NSDictionary *headers;
 @property (nonatomic, copy) NSUUID *identifier;
@@ -23,6 +24,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setActivity:(id)arg1;
 - (void)setHeaderValue:(id)arg1 forKey:(id)arg2;
 - (void)setHeaders:(id)arg1;
 - (void)setName:(id)arg1;

@@ -53,6 +53,7 @@
 - (id)imageData;
 - (id)imageHash;
 - (struct CGImage { }*)imageRef;
+- (id)imageWithoutCapInsets;
 - (id)init;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
 - (id)initWithCoder:(id)arg1;

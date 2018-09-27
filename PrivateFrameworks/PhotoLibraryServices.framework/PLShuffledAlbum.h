@@ -42,7 +42,6 @@
 @property (nonatomic, readonly) bool isRecentlyAddedAlbum;
 @property (nonatomic, readonly) bool isStandInAlbum;
 @property (nonatomic, readonly) bool isUserLibraryAlbum;
-@property (nonatomic, readonly) bool isWallpaperAlbum;
 @property (nonatomic, retain) PLManagedAsset *keyAsset;
 @property (nonatomic, readonly, retain) NSNumber *kind;
 @property (nonatomic, readonly) int kindValue;
@@ -110,7 +109,6 @@
 - (bool)isRecentlyAddedAlbum;
 - (bool)isStandInAlbum;
 - (bool)isUserLibraryAlbum;
-- (bool)isWallpaperAlbum;
 - (id)keyAsset;
 - (id)kind;
 - (int)kindValue;

@@ -4,6 +4,7 @@
 
 @interface KNNoteLayout : TSDLayout <TSWPColumnMetrics, TSWPLayoutParent, TSWPStyleProvider> {
     TSWPLayout * _containedLayout;
+    NSMutableArray * _invertedParagraphsStyles;
     TSWPPadding * _padding;
     struct CGSize { 
         double width; 

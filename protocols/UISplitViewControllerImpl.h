@@ -16,15 +16,18 @@
 - (void)_didEndSnapshotSession;
 - (void)_didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
 - (bool)_disableAutomaticKeyboardBehavior;
+- (void)_displayModeBarButtonItemWasUsedForFirstTime:(UISplitViewControllerDisplayModeBarButtonItem *)arg1;
 - (NSString *)_displayModeButtonItemTitle;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(UIViewController *)arg1 insetsAreAbsolute:(bool*)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForChildContentContainer:(id <UIContentContainer>)arg1;
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (bool)_handlesCounterRotationForPresentation;
 - (bool)_hasPreferredInterfaceOrientationForPresentation;
+- (bool)_iPhoneShouldUseOverlayInCurrentEnvironment;
 - (void)_initWithCoder:(NSCoder *)arg1;
 - (bool)_isCollapsed;
 - (bool)_isRotating;
+- (bool)_layoutPrimaryOnRight;
 - (void)_marginInfoForChild:(UIViewController *)arg1 leftMargin:(double*)arg2 rightMargin:(double*)arg3;
 - (bool)_optsOutOfPopoverControllerHierarchyCheck;
 - (void)_popoverController:(UIPopoverController *)arg1 didChangeFromVisible:(bool)arg2;
@@ -32,10 +35,12 @@
 - (UIResponder *)_primaryContentResponder;
 - (UIDimmingView *)_primaryDimmingView;
 - (void)_setDisplayModeButtonItemTitle:(NSString *)arg1;
+- (void)_setUsesExtraWidePrimaryColumn:(bool)arg1;
 - (bool)_shouldPersistViewWhenCoding;
 - (bool)_shouldSynthesizeSupportedOrientations;
 - (void)_updateChildContentMargins;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
+- (bool)_usesExtraWidePrimaryColumn;
 - (void)_willBeginSnapshotSession;
 - (void)_willShowCollapsedDetailViewController:(UIViewController *)arg1 inTargetController:(UIViewController *)arg2;
 - (void)decodeRestorableStateWithCoder:(NSCoder *)arg1;
@@ -60,6 +65,7 @@
 - (UIView *)preferredFocusedView;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (double)preferredPrimaryColumnWidthFraction;
+- (bool)prefersOverlayInRegularWidthPhone;
 - (bool)presentsWithGesture;
 - (double)primaryColumnWidth;
 - (long long)primaryEdge;
@@ -72,8 +78,10 @@
 - (void)setMinimumPrimaryColumnWidth:(double)arg1;
 - (void)setPreferredDisplayMode:(long long)arg1;
 - (void)setPreferredPrimaryColumnWidthFraction:(double)arg1;
+- (void)setPrefersOverlayInRegularWidthPhone:(bool)arg1;
 - (void)setPresentsWithGesture:(bool)arg1;
 - (void)setPrimaryEdge:(long long)arg1;
+- (void)setUsesDeviceOverlayPreferences:(bool)arg1;
 - (void)setViewControllers:(NSArray *)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (bool)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
@@ -84,6 +92,7 @@
 - (void)toggleMasterVisible:(id)arg1;
 - (void)traitCollectionDidChange:(UITraitCollection *)arg1;
 - (void)unloadViewForced:(bool)arg1;
+- (bool)usesDeviceOverlayPreferences;
 - (NSArray *)viewControllers;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
@@ -99,6 +108,5 @@
 
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id <UIContentContainer>)arg1;
 - (void)removeChildViewController:(UIViewController *)arg1;
-- (void)updateViewConstraints;
 
 @end

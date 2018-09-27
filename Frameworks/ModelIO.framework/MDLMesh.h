@@ -8,6 +8,7 @@
         /* Warning: Unrecognized filer type: '"' using 'void*' */ void*maxBounds; 
     }  _bounds;
     NSArray * _controlNodes;
+    unsigned long long  _subdivisionScheme;
     NSMutableArray * _submeshes;
     NSMutableArray * _vertexBuffers;
     unsigned long long  _vertexCount;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, readonly, retain) <MDLMeshBufferAllocator> *allocator;
 @property (nonatomic, readonly) struct { } boundingBox;
+@property (nonatomic) unsigned long long subdivisionScheme;
 @property (nonatomic, copy) NSMutableArray *submeshes;
 @property (nonatomic, retain) NSArray *vertexBuffers;
 @property (nonatomic) unsigned long long vertexCount;
@@ -54,6 +56,7 @@
 - (void)copyDataVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 toAttr:(id)arg2;
 - (void)createSourceDataVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1 attr:(id)arg2 srcElementCount:(int)arg3 dstElementCount:(int)arg4;
 - (void)debugPrintToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (id)description;
 - (void)enumerateSubmeshesUsingBlock:(id /* block */)arg1;
 - (void)flipTextureCoordinatesInAttributeNamed:(id)arg1;
 - (bool)generateAmbientOcclusionTextureWithQuality:(float)arg1 attenuationFactor:(float)arg2 objectsToConsider:(id)arg3 vertexAttributeNamed:(id)arg4 materialPropertyNamed:(id)arg5;
@@ -80,12 +83,15 @@
 - (bool)makeVerticesUniqueAndReturnError:(id*)arg1;
 - (void)removeAttributeNamed:(id)arg1;
 - (void)replaceAttributeNamed:(id)arg1 withData:(id)arg2;
+- (void)setSubdivisionScheme:(unsigned long long)arg1;
 - (void)setSubmeshes:(id)arg1;
 - (void)setVertexBuffers:(id)arg1;
 - (void)setVertexCount:(unsigned long long)arg1;
 - (void)setVertexDescriptor:(id)arg1;
+- (unsigned long long)subdivisionScheme;
 - (int)submeshCount;
 - (id)submeshes;
+- (bool)triangulate;
 - (void)updateAttributeNamed:(id)arg1 withData:(id)arg2;
 - (id)vertexAttributeDataForAttributeNamed:(id)arg1;
 - (id)vertexAttributeDataForAttributeNamed:(id)arg1 asFormat:(unsigned long long)arg2;

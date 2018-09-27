@@ -4,6 +4,7 @@
 
 @interface _CUIThemePixelRendition : CUIThemeRendition {
     _CSIRenditionBlockData * _cachedBlockDataBGRX;
+    _CSIRenditionBlockData * _cachedBlockDataGray;
     _CSIRenditionBlockData * _cachedBlockDataRGBX;
     struct CGImage {} * _image;
     NSMutableArray * _layers;

@@ -25,6 +25,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *manufacturerName;
 @property (nonatomic, readonly) bool requiresSetupCode;
+@property (nonatomic, readonly) bool requiresSoftwareUpdate;
 @property (nonatomic, readonly) SFDevice *sharingDevice;
 @property (nonatomic, readonly) unsigned long long status;
 @property (readonly) Class superclass;
@@ -46,6 +47,7 @@
 - (id)initWithSharingDevice:(id)arg1;
 - (id)manufacturerName;
 - (bool)requiresSetupCode;
+- (bool)requiresSoftwareUpdate;
 - (void)setAccessory:(id)arg1;
 - (void)setAccessoryName:(id)arg1;
 - (void)setCertificationStatus:(unsigned long long)arg1;

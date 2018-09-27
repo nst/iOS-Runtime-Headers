@@ -5,6 +5,7 @@
 @interface CKModalTranscriptController : CKShareSheetChatController {
     bool  _alreadySetUp;
     bool  _cameraSelectionDisabled;
+    CKChatEagerUploadController * _eagerUploadController;
     int  _entryViewInvisible;
     bool  _forceMMS;
     bool  _mimeType;
@@ -12,6 +13,7 @@
     NSMutableArray * _typesToInsert;
 }
 
+@property (nonatomic, retain) CKChatEagerUploadController *eagerUploadController;
 @property (nonatomic) bool forceMMS;
 @property (nonatomic) bool mimeType;
 
@@ -25,6 +27,7 @@
 - (bool)_shouldUseDefaultFirstResponder;
 - (bool)_shouldUseExistingConversations;
 - (void)disableCameraAttachments;
+- (id)eagerUploadController;
 - (bool)forceMMS;
 - (bool)getContainerWidth:(double*)arg1 offset:(double*)arg2;
 - (id)initWithNavigationController:(id)arg1;
@@ -36,6 +39,8 @@
 - (void)registerForNotifications;
 - (void)sendComposition:(id)arg1;
 - (void)setCanEditRecipients:(bool)arg1;
+- (void)setComposition:(id)arg1;
+- (void)setEagerUploadController:(id)arg1;
 - (void)setForceMMS:(bool)arg1;
 - (void)setMimeType:(bool)arg1;
 - (void)setPendingAddresses:(id)arg1;

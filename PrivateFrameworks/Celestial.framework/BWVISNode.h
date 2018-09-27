@@ -7,6 +7,8 @@
     bool  _fillExtendedRowsOfOutputBuffer;
     bool  _flushingSBP;
     bool  _irisVIS;
+    struct OpaqueFigCaptureISPProcessingSession { } * _ispProcessingSession;
+    BWLimitedGMErrorLogger * _limitedGMErrorLogger;
     bool  _logStripProcessingTiming;
     int  _numberOfBuffersEmitted;
     int  _numberOfTimesWaited;
@@ -24,7 +26,7 @@
     bool  _sphereVideoEnabled;
     int  _stabilizationMethod;
     int  _stabilizationType;
-    struct OpaqueFigCaptureISPProcessingSession { } * _stripProcessingSession;
+    NSArray * _supportedOutputPixelFormats;
 }
 
 + (void)initialize;
@@ -33,7 +35,7 @@
 - (void)_ensureSemaphoreIsBalanced;
 - (void)_flushBuffers;
 - (struct __CVBuffer { }*)_newOutputPixelBuffer;
-- (void)_prepareStripProcessingSession;
+- (void)_prepareISPProcessingSession;
 - (int)_setupSampleBufferProcessor;
 - (void)_tallyAndEmitDroppedSample:(id)arg1;
 - (void)_tallyAndEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -43,7 +45,7 @@
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)emitSampleBufferSemaphore;
-- (id)initWithSensorIDDict:(id)arg1 stabilizationMethod:(int)arg2 stabilizationType:(int)arg3 stripProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg4 requiredFormat:(id)arg5 activeMaxFrameRate:(float)arg6 motionAttachmentsSource:(int)arg7 fillExtendedRowsOfOutputBuffer:(bool)arg8 offlineOutputDimensions:(struct { int x1; int x2; })arg9 irisVISCleanOutputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg10 cameraInfoByPortType:(id)arg11;
+- (id)initWithSensorIDDict:(id)arg1 stabilizationMethod:(int)arg2 stabilizationType:(int)arg3 ispProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg4 requiredFormat:(id)arg5 activeMaxFrameRate:(float)arg6 motionAttachmentsSource:(int)arg7 fillExtendedRowsOfOutputBuffer:(bool)arg8 offlineOutputDimensions:(struct { int x1; int x2; })arg9 irisVISCleanOutputRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg10 cameraInfoByPortType:(id)arg11;
 - (id)nodeSubType;
 - (id)nodeType;
 - (unsigned long long)outputHeight;

@@ -7,6 +7,10 @@
     NSString * _auxSubtitle;
     UILabel * _auxSubtitleLabel;
     PXRoundedCornerOverlayView * _cornerOverlayView;
+    UIColor * _highlightColor;
+    bool  _highlighted;
+    UIView * _imageContentView;
+    unsigned long long  _imageCropStyle;
     UIImageView * _imageView;
     NSString * _subtitle;
     UILabel * _subtitleLabel;
@@ -15,6 +19,9 @@
 }
 
 @property (nonatomic, copy) NSString *auxSubtitle;
+@property (nonatomic, retain) UIColor *highlightColor;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) unsigned long long imageCropStyle;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSAttributedString *title;
@@ -22,16 +29,23 @@
 - (void).cxx_destruct;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_updateAuxSubtitleLabel;
+- (void)_updateCornerOverlayViewRadius;
 - (void)_updateSubtitleLabel;
 - (void)_updateTitleLabel;
 - (id)auxSubtitle;
 - (void)dealloc;
+- (id)highlightColor;
+- (unsigned long long)imageCropStyle;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHighlighted;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (void)setAuxSubtitle:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setHighlightColor:(id)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setImageCropStyle:(unsigned long long)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

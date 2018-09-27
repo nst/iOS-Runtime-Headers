@@ -9,6 +9,7 @@
     NSString * _imageDataUTI;
     long long  _imageExifOrientation;
     int  _requestID;
+    bool  _useEmbeddedPreview;
     long long  _version;
 }
 
@@ -27,6 +28,7 @@
 @property (getter=isRunning, readonly) bool running;
 @property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool useEmbeddedPreview;
 @property (nonatomic, readonly) long long version;
 @property (getter=isWaiting, readonly) bool waiting;
 
@@ -38,8 +40,9 @@
 - (id)imageDataURL;
 - (id)imageDataUTI;
 - (long long)imageExifOrientation;
-- (id)initWithAsset:(id)arg1 version:(long long)arg2;
+- (id)initWithAsset:(id)arg1 version:(long long)arg2 useEmbeddedPreview:(bool)arg3;
 - (void)run;
+- (bool)useEmbeddedPreview;
 - (long long)version;
 
 @end

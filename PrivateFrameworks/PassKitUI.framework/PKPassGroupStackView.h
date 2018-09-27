@@ -11,6 +11,7 @@
     bool  _delegateWantsBottomContentSeparation;
     bool  _delegateWantsTopContentSeparation;
     PKPassDeleteAnimationController * _deleteAnimationController;
+    NSNumber * _featuredGroupID;
     UIImageView * _footerPocketBackgroundShadow;
     UIImageView * _footerPocketForegroundShadow;
     bool  _footerSuppressed;
@@ -20,7 +21,6 @@
     NSMutableDictionary * _groupViewsInFlightByGroupID;
     bool  _hasSuspendedTransition;
     PKPassthroughView * _headerContainerView;
-    bool  _inPassthroughHitTest;
     unsigned long long  _initialIndexOfReorderedGroup;
     bool  _invalidated;
     struct UIEdgeInsets { 
@@ -57,7 +57,6 @@
         unsigned int mutatingForcePileOffscreen : 1; 
     }  _layoutState;
     unsigned long long  _modalGroupIndex;
-    PKGroup * _modallyPresentedGroup;
     PKPassGroupView * _modallyPresentedGroupView;
     long long  _nextState;
     UIColor * _pageIndicatorTintColor;
@@ -69,7 +68,6 @@
     PKPassFooterView * _passFooterView;
     PKPGSVSectionHeaderContext * _passHeaderContext;
     NSMutableArray * _passPileViews;
-    NSMutableArray * _passthroughViews;
     PKPGSVSectionHeaderContext * _paymentHeaderContext;
     PKPaymentService * _paymentService;
     long long  _presentationState;
@@ -128,8 +126,8 @@
 - (void).cxx_destruct;
 - (void)_addGroupViewAsSubview:(id)arg1 forIndex:(unsigned long long)arg2;
 - (void)_addPanGestureRecognizerToGroupView:(id)arg1;
+- (void)_adjustGroupViewsForReordering;
 - (void)_adjustPassFooterViewOpacityForYOffset:(double)arg1;
-- (void)_adjustSeparationGroupAndPassViewsForReordering;
 - (void)_animateGroupViewAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2 withAnchorView:(id)arg3 insertAbove:(bool)arg4;
 - (void)_animateGroupViewForUndo:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)_animatorForGestureRecognizer:(id)arg1;
@@ -153,7 +151,6 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForFooterViewForPassView:(id)arg1;
 - (id)_frontmostPastViewForGroupIndex:(unsigned long long)arg1;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 reservePlaceForModalGroup:(bool)arg2;
-- (id)_groupBeforeSeparatorGroup;
 - (double)_groupCellHeight;
 - (id)_groupViewAtIndex:(unsigned long long)arg1;
 - (id)_groupViewAtIndexWhileEnsuringVisible:(unsigned long long)arg1 withContentMode:(long long)arg2;
@@ -217,8 +214,7 @@
 - (bool)_shouldTablePresentationScroll;
 - (void)_showPassFooterView:(bool)arg1 forPassView:(id)arg2 animated:(bool)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
 - (void)_showPassFooterView:(bool)arg1 forPassView:(id)arg2 context:(id)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
-- (id)_sortedAscendingGroupViewIndexes;
-- (id)_sortedDescendingGroupViewIndexes;
+- (id)_sortedGroupViewIndexes;
 - (id)_stackedIndices;
 - (unsigned long long)_startVisibleIndex;
 - (void)_stopAutoscrollTimer;
@@ -275,20 +271,18 @@
 - (bool)groupView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
 - (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
-- (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2;
+- (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2 withContext:(id)arg3;
 - (void)groupView:(id)arg1 panned:(struct CGPoint { double x1; double x2; })arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3;
-- (void)groupView:(id)arg1 resizeButtonPressedForPass:(id)arg2 withBarcode:(bool)arg3;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })groupView:(id)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (bool)groupViewCanShowBarcode:(id)arg1;
 - (long long)groupViewContentModeForFrontmostPassWhenPiled:(id)arg1 withDefaultContentMode:(long long)arg2;
 - (long long)groupViewContentModeForFrontmostPassWhenStacked:(id)arg1;
 - (void)groupViewDidUpdatePageControlVisibility:(id)arg1;
-- (void)groupViewFrontPassDidResize:(id)arg1 animated:(bool)arg2;
+- (void)groupViewFrontPassDidUpdateBarcodeVisibility:(id)arg1 animated:(bool)arg2;
 - (void)groupViewPanDidBegin:(id)arg1;
 - (void)groupViewPanDidEnd:(id)arg1;
 - (unsigned long long)groupViewPassesSuppressedContent:(id)arg1;
 - (id)groupViewReusablePassViewQueue:(id)arg1;
 - (bool)groupViewShouldAllowPanning:(id)arg1;
-- (bool)groupViewShouldAllowPassResize:(id)arg1;
 - (void)groupViewTapped:(id)arg1;
 - (bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
 - (id)headerForPassType:(unsigned long long)arg1;
@@ -296,6 +290,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidate;
 - (bool)isModallyPresentedPassAuthorized;
+- (bool)isPassFooterViewInGroup:(id)arg1;
 - (bool)isPresentingPassViewFront;
 - (bool)isReordering;
 - (void)layoutContentForCurrentPresentationState:(bool)arg1;
@@ -310,12 +305,11 @@
 - (void)passFooterViewDidChangeUserIntentRequirement:(id)arg1 withContext:(id)arg2;
 - (void)paymentDeviceDidBecomeAvailable;
 - (void)paymentDeviceDidBecomeUnavailable;
-- (void)paymentDeviceDidEnterRestrictedMode;
-- (void)paymentDeviceDidLeaveRestrictedMode;
 - (double)pileHeight;
 - (long long)pilingMode;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentPassWithUniqueID:(id)arg1;
+- (void)presentPassWithUniqueID:(id)arg1 withContext:(id)arg2;
 - (long long)presentationState;
 - (void)reloadData;
 - (void)resetBrightness;
@@ -341,6 +335,7 @@
 - (void)stageGroupInPresentationState:(long long)arg1 atIndex:(unsigned long long)arg2;
 - (bool)staggerPileAnimations;
 - (id)subheaderForPassType:(unsigned long long)arg1;
+- (unsigned long long)suppressedContentForPassFooter:(id)arg1;
 - (void)testGoModal;
 - (void)testGroupSelection;
 - (void)tilePassesEagerly:(bool)arg1;

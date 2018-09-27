@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSDownloadMetadata : NSObject <NSCoding, NSCopying, SSXPCCoding> {
+@interface SSDownloadMetadata : NSObject <NSCopying, NSSecureCoding, SSXPCCoding> {
     NSMutableDictionary * _dictionary;
     long long  _keyStyle;
     NSLock * _lock;
@@ -69,6 +69,8 @@
 @property (copy) NSURL *transitMapDataURL;
 @property (getter=isTvTemplate) bool tvTemplate;
 @property (getter=isVideosKind, readonly) bool videosKind;
+
++ (bool)supportsSecureCoding;
 
 - (id)MD5HashStrings;
 - (id)_assetDictionary;

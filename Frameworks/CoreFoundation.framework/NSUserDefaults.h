@@ -17,6 +17,11 @@
 - (void)_setContainer:(struct __CFURL { }*)arg1;
 - (void)_setIdentifier:(struct __CFString { }*)arg1;
 
+// Image: /System/Library/Frameworks/ARKit.framework/ARKit
+
++ (id)appleGlobalDomain;
++ (id)appleGlobalDomainARKitKeys;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)_copyStandardUserDefaultsIfPresent;
@@ -29,7 +34,9 @@
 + (id)standardUserDefaults;
 
 - (id)URLForKey:(id)arg1;
+- (void)_didEndKeyValueObserving;
 - (id)_initWithSuiteName:(id)arg1 container:(id)arg2;
+- (void)_willBeginKeyValueObserving;
 - (void)addSuiteNamed:(id)arg1;
 - (id)arrayForKey:(id)arg1;
 - (bool)boolForKey:(id)arg1;
@@ -66,7 +73,6 @@
 - (void)setLong:(long long)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
-- (void)setObservationInfo:(void*)arg1;
 - (void)setPersistentDomain:(id)arg1 forName:(id)arg2;
 - (void)setSearchList:(id)arg1;
 - (void)setURL:(id)arg1 forKey:(id)arg2;
@@ -81,12 +87,19 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)hk_featureAvailabilityUserDefaults;
+
+- (bool)hk_keyExists:(id)arg1;
 - (void)hk_removeObjectsForKeysWithPrefix:(id)arg1;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_copyCompositionServicesPreferenceValueForKey:(id)arg1;
 + (void)mf_setCompositionServicesPreferenceValue:(id)arg1 forKey:(id)arg2;
+
+// Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
+
++ (void)mdltsu_registerDefaults;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
@@ -100,11 +113,6 @@
 - (bool)_sf_shouldAutomaticallyDownloadReadingListItems;
 - (id)_sf_stringForKey:(id)arg1 defaultValue:(id)arg2;
 - (bool)_sf_warnAboutFraudulentWebsites;
-
-// Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
-
-- (id)DOC_roleSpecificKeyForKey:(id)arg1 configuration:(id)arg2;
-- (void)DOC_setObject:(id)arg1 forRoleKey:(id)arg2 configuation:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
@@ -124,6 +132,10 @@
 - (bool)bs_defaultExists:(id)arg1;
 - (id)bs_domain;
 - (void)bs_setDomain:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/C2.framework/C2
+
++ (id)c2DefaultsDomain;
 
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
@@ -153,6 +165,11 @@
 - (const char *)utf8ValueSafeForKey:(id)arg1;
 - (const char *)utf8ValueSafeForKey:(id)arg1 status:(int*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager
+
+- (id)DOC_roleSpecificKeyForKey:(id)arg1 configuration:(id)arg2;
+- (void)DOC_setObject:(id)arg1 forRoleKey:(id)arg2 configuation:(id)arg3;
+
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
 + (void)fu_backupStandardUserDefaultsKey:(id)arg1;
@@ -172,6 +189,10 @@
 + (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
+
+- (void)nf_migrateObjectForKey:(id)arg1 toKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 + (id)safari_cloudBookmarksDefaults;
@@ -184,6 +205,10 @@
 - (bool)boolForKey:(id)arg1 withDefaultValue:(bool)arg2;
 - (long long)integerForSettingKey:(id)arg1 withDefaultValue:(long long)arg2;
 - (id)stringForSettingKey:(id)arg1 withDefaultValue:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
+
++ (id)sc_userDefaultsWithSuiteName:(id)arg1 backupDisabled:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 

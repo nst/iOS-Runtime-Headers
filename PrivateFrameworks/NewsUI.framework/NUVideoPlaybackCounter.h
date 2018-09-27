@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUVideoPlaybackCounter : NSObject <NUVideoPlaybackCounter, NUVideoPlayerEventTracker> {
+@interface NUVideoPlaybackCounter : NSObject <NUAdContextProvider, NUVideoPlaybackCounter, NUVideoPlayerEventTracker> {
     unsigned long long  numberOfVideosPlayedInSession;
     unsigned long long  numberOfVideosPlayedSinceLastAd;
 }
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) unsigned long long numberOfVideosPlayedSinceLastAd;
 @property (readonly) Class superclass;
 
+- (id)adContextValueForKeyPath:(id)arg1;
 - (void)incrementNumberOfVideosPlayedInSession;
 - (void)incrementNumberOfVideosPlayedSinceLastAd;
 - (unsigned long long)numberOfVideosPlayedInSession;

@@ -13,6 +13,8 @@
 @property (readonly) Class superclass;
 
 + (id)eligibleBundleIDs;
++ (bool)grantAccessToBundleIDs:(id)arg1;
++ (bool)grantAccessToBundleIDs:(id)arg1 shouldSuppressWelcomeVideoAddOnOptIn:(bool)arg2;
 + (void)resolveBundleIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;

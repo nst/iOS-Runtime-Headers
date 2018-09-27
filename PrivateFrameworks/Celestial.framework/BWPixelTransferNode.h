@@ -10,6 +10,7 @@
     bool  _flipHorizontal;
     bool  _flipVertical;
     bool  _haveLiveInputCropRect;
+    bool  _htpcCompressionSupported;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -26,6 +27,7 @@
         int height; 
     }  _intermediatePoolDimensions;
     int  _lastInputUprightExifOrientation;
+    BWLimitedGMErrorLogger * _limitedGMErrorLogger;
     bool  _liveAppliesUprightExifOrientationTransformToInput;
     int  _liveCropMode;
     bool  _liveExpectsMarkerBuffers;
@@ -75,8 +77,7 @@
 - (void)_ensureTransferSession;
 - (struct { int x1; int x2; })_intermediateBufferDimensionsForInputDimensions:(struct { int x1; int x2; })arg1 outputDimensions:(struct { int x1; int x2; })arg2;
 - (void)_makeCurrentConfigurationLive;
-- (id)_preferredPixelFormats;
-- (id)_preferredPixelFormatsWithInputPixelFormatFirst;
+- (id)_supportedOutputPixelFormatsInPreferredOrder;
 - (void)_updateCameraIntrinsicsMatrixOnSampleBufferIfNeeded:(struct opaqueCMSampleBuffer { }*)arg1 inputCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_updateLiveRotationAndFlipsToApplyUprightExifOrientation:(int)arg1;
 - (void)_updateOutputRequirements;
@@ -93,6 +94,7 @@
 - (bool)flipHorizontal;
 - (bool)flipVertical;
 - (bool)hasNonLiveConfigurationChanges;
+- (bool)htpcCompressionSupported;
 - (id)init;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputCropRect;
 - (bool)lowSpeed;
@@ -114,6 +116,7 @@
 - (void)setExpectsMarkerBuffers:(bool)arg1;
 - (void)setFlipHorizontal:(bool)arg1;
 - (void)setFlipVertical:(bool)arg1;
+- (void)setHtpcCompressionSupported:(bool)arg1;
 - (void)setInputCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLowSpeed:(bool)arg1;
 - (void)setOutputColorSpaceProperties:(int)arg1;

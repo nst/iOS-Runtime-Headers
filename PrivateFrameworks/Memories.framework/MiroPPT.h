@@ -23,6 +23,7 @@
 - (bool)dismissAllModalViewControllers;
 - (void)failedCurrentTest;
 - (void)finishedCurrentTest;
+- (void)finishedCurrentTestWithExtraResults:(id)arg1;
 - (id)playerViewController;
 - (bool)runTest:(id)arg1 options:(id)arg2;
 - (void)setCurrentTestName:(id)arg1;

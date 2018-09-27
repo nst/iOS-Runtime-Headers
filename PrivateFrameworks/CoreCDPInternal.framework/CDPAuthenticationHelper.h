@@ -10,6 +10,5 @@
 + (id)_contextForPrimaryAccountSilentAuth;
 + (void)silentAuthenticationForContext:(id)arg1 withCompletion:(id /* block */)arg2;
 + (void)silentAuthenticationForPrimaryAccountWithCompletion:(id /* block */)arg1;
-+ (void)verifyCredentialsFromContext:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

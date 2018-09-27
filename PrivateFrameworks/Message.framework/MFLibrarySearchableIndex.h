@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFLibrarySearchableIndex : NSObject <CSSearchableIndexDelegate, MFDiagnosticsGenerator, MFLibrarySearchableIndexVerifierDataSource> {
+@interface MFLibrarySearchableIndex : NSObject <CSSearchableIndexDelegate, MFDiagnosticsGenerator, MFLibrarySearchableIndexVerifierDataSource, MFSearchableIndexSchedulable> {
     NSObject<OS_os_activity> * _batchIndexingActivity;
-    MFCoalescer * _budgetCoalescer;
-    _MFLibrarySearchableIndexBudgetConfiguration * _budgetConfiguration;
     MFCancelationToken * _cancelationToken;
     bool  _clientStateFetched;
     bool  _coalesceTimerFired;
@@ -13,6 +11,7 @@
     CSSearchableIndex * _csIndex;
     unsigned long long  _currentMaximumBatchSize;
     <MFLibrarySearchableIndexDataSource> * _dataSource;
+    bool  _dataSourceIndexingPermitted;
     NSObject<OS_dispatch_queue> * _dataSourceQueue;
     NSString * _indexName;
     <MFScheduler> * _indexingBatchScheduler;
@@ -26,26 +25,28 @@
     _MFLibrarySearchableIndexPendingRemovals * _pendingIdentifierRemovals;
     NSMutableArray * _pendingItems;
     NSObject<OS_dispatch_queue> * _queue;
-    double  _remainingIndexingBudget;
-    long long  _remainingIndexingBudgetOverage;
     long long  _resumeCount;
+    <MFSearchableIndexSchedulableDelegate> * _schedulableDelegate;
     bool  _scheduledProcessing;
     bool  _scheduledRefresh;
     bool  _scheduledVerification;
     MFLazyCache * _searchResultsCache;
+    bool  _suspendedForContentProtection;
     unsigned long long  _throttledDataSourceBatchSize;
     unsigned long long  _throttledIndexingBatchSize;
     long long  _transaction;
 }
 
-@property (nonatomic, readonly) _MFLibrarySearchableIndexBudgetConfiguration *budgetConfiguration;
 @property (nonatomic, retain) CSSearchableIndex *csIndex;
 @property (nonatomic) <MFLibrarySearchableIndexDataSource> *dataSource;
+@property (getter=isDataSourceIndexingPermitted, nonatomic) bool dataSourceIndexingPermitted;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_isForeground, setter=_setForeground:, nonatomic) bool foreground;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *indexName;
 @property (nonatomic, readonly) unsigned long long pendingIndexItemsCount;
+@property (nonatomic) <MFSearchableIndexSchedulableDelegate> *schedulableDelegate;
 @property (readonly) Class superclass;
 @property (getter=_transaction, readonly) long long transaction;
 
@@ -53,7 +54,7 @@
 + (id)_localClientStateURL;
 + (void)_saveLocalClientState:(id)arg1;
 
-- (id)_budgetPersistenceKey;
+- (void).cxx_destruct;
 - (void)_coalescingTimerFired;
 - (id)_consumeBatchOfSize:(unsigned long long)arg1;
 - (void)_dataSourceAssignTransaction:(long long)arg1 forIdentifiers:(id)arg2 completion:(id /* block */)arg3;
@@ -67,10 +68,8 @@
 - (void)_indexItems:(id)arg1 fromRefresh:(bool)arg2;
 - (void)_invalidateCache;
 - (bool)_isForeground;
-- (void)_logIndexingPowerEventWithIdentifier:(id)arg1 additionalEventData:(id)arg2 usePersistentLog:(bool)arg3;
 - (long long)_nextTransaction;
 - (void)_noteNeedsLastClientStateFetch;
-- (void)_persistRemainingIndexingBudgetValue:(id)arg1;
 - (void)_powerStateChanged;
 - (id)_processDomainRemovals:(id)arg1;
 - (void)_processIdentifierRemovals:(id)arg1;
@@ -83,15 +82,15 @@
 - (void)_queueTransitionActive:(bool)arg1;
 - (void)_registerDistantFutureSpotlightVerification;
 - (void)_reindexAllSearchableItemsWithOptions:(unsigned long long)arg1 acknowledgementHandler:(id /* block */)arg2;
-- (void)_resetIndexingBudgetTimer;
+- (void)_resume;
 - (void)_scheduleDataSourceRefresh;
 - (void)_scheduleProcessPendingItems;
-- (void)_scheduleResetIndexingBudgetTimer;
 - (void)_scheduleSpotlightVerification;
 - (void)_scheduleSpotlightVerificationOnIndexingQueueWithCompletion:(id /* block */)arg1;
 - (void)_setForeground:(bool)arg1;
 - (void)_startCoalescingTimer;
 - (void)_stopCoalescingTimer;
+- (void)_suspend;
 - (double)_throttleRequestedSize:(unsigned long long*)arg1 action:(id /* block */)arg2;
 - (long long)_transaction;
 - (void)_transitionWithBudgetTimeUsed:(double)arg1;
@@ -99,7 +98,6 @@
 - (void)addMiddleware:(id)arg1;
 - (void)applicationWillResume;
 - (void)applicationWillSuspend;
-- (id)budgetConfiguration;
 - (id)copyDiagnosticInformation;
 - (id)csIndex;
 - (id)dataSamplesForSearchableIndexVerifier:(id)arg1 searchableIndex:(id)arg2;
@@ -107,11 +105,12 @@
 - (void)dealloc;
 - (id)identifiersMatchingCriterion:(id)arg1;
 - (void)indexItems:(id)arg1;
+- (id)indexName;
 - (id)indexedEmptySubjectIdentifers;
 - (id)initWithName:(id)arg1 dataSource:(id)arg2;
+- (bool)isDataSourceIndexingPermitted;
 - (id)librarySearchableIndexForSearchableIndexVerifier:(id)arg1;
 - (unsigned long long)pendingIndexItemsCount;
-- (double)persistedRemainingIndexingBudget;
 - (void)refresh;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg1;
 - (void)reindexSearchableItemsWithIdentifiers:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
@@ -121,11 +120,15 @@
 - (void)removeItemsWithIdentifiers:(id)arg1 reasons:(id)arg2;
 - (id)requestSpotlightDiagnosticsForMessageRowId:(id)arg1;
 - (void)resume;
+- (void)resumeForContentProtection;
+- (id)schedulableDelegate;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (void)setCsIndex:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setRemainingIndexingBudget:(double)arg1 shouldPersist:(bool)arg2;
+- (void)setDataSourceIndexingPermitted:(bool)arg1;
+- (void)setSchedulableDelegate:(id)arg1;
 - (void)suspend;
+- (void)suspendForContentProtection;
 
 @end

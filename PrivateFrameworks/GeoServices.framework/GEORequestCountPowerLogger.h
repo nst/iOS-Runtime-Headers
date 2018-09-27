@@ -9,6 +9,7 @@
     NSDate * _startDate;
 }
 
++ (void)cancelOldActivities;
 + (id)sharedInstance;
 + (bool)shouldIgnoreRequestType:(unsigned char)arg1 fromClientWithId:(id)arg2;
 

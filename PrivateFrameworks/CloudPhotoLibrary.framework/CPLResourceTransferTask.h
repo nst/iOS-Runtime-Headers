@@ -4,7 +4,7 @@
 
 @interface CPLResourceTransferTask : NSObject <NSSecureCoding> {
     bool  _cancelled;
-    long long  _priority;
+    bool  _highPriority;
     CPLResource * _resource;
     NSString * _taskIdentifier;
 }
@@ -23,7 +23,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isCancelled;
 - (bool)isEqual:(id)arg1;

@@ -5,8 +5,6 @@
 
 @required
 
-- (bool)hasHeight;
-- (bool)hasWidth;
 - (_SFPBGraphicalFloat *)height;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

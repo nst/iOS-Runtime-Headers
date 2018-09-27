@@ -14,6 +14,7 @@
     NSMutableSet * _mutableAllReadCharacteristics;
     HFCharacteristicValueTransaction * _openTransaction;
     NSMutableArray * _readTransactionsToExecuteOnNextRunLoop;
+    HFCharacteristicReadLogger * _readsCompleteLogger;
     NSMutableArray * _runningTransactions;
     NSRecursiveLock * _transactionLock;
     <HFCharacteristicValueReader> * _valueReader;
@@ -39,16 +40,20 @@
 @property (nonatomic, retain) NSMutableSet *mutableAllReadCharacteristics;
 @property (nonatomic, retain) HFCharacteristicValueTransaction *openTransaction;
 @property (nonatomic, retain) NSMutableArray *readTransactionsToExecuteOnNextRunLoop;
+@property (nonatomic, retain) HFCharacteristicReadLogger *readsCompleteLogger;
 @property (nonatomic, retain) NSMutableArray *runningTransactions;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSRecursiveLock *transactionLock;
 @property (nonatomic, retain) <HFCharacteristicValueReader> *valueReader;
 @property (nonatomic, retain) <HFCharacteristicValueWriter> *valueWriter;
 
++ (bool)_shouldTrackReadsCompleteForPerformanceTesting;
 + (id)na_identity;
 
 - (void).cxx_destruct;
+- (void)_beginReadsCompleteTrackingForCharacteristics:(id)arg1 withLogger:(id)arg2;
 - (long long)_debug_totalNumberOfIssuedBatchReadRequests;
+- (void)_endReadsCompleteTrackingForCharacteristic:(id)arg1 withLogger:(id)arg2 didRead:(bool)arg3;
 - (id)_openTransactionCompletionFuture;
 - (id)_transactionLock_characteristicsWithPendingWritesInTransacton:(id)arg1 includeDirectWrites:(bool)arg2 includeActionSets:(bool)arg3;
 - (void)_transactionLock_executeActionSetTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -84,6 +89,7 @@
 - (void)invalidateCachedValueForCharacteristic:(id)arg1;
 - (void)invalidateCachedValuesForAccessory:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (unsigned long long)loadingStateForCharacteristics:(id)arg1 actionSets:(id)arg2;
 - (id)mutableAllReadCharacteristics;
 - (id)openTransaction;
 - (id)readTransactionsToExecuteOnNextRunLoop;
@@ -91,6 +97,7 @@
 - (id)readValuesForCharacteristicTypes:(id)arg1 inServices:(id)arg2;
 - (id)readValuesForCharacteristics:(id)arg1;
 - (id)readValuesForCharacteristicsPassingTest:(id /* block */)arg1 inServices:(id)arg2;
+- (id)readsCompleteLogger;
 - (id)runningTransactions;
 - (void)setCachedExecutionErrorsKeyedByActionSetIdentifier:(id)arg1;
 - (void)setCachedReadErrorsKeyedByCharacteristicIdentifier:(id)arg1;
@@ -101,6 +108,7 @@
 - (void)setMutableAllReadCharacteristics:(id)arg1;
 - (void)setOpenTransaction:(id)arg1;
 - (void)setReadTransactionsToExecuteOnNextRunLoop:(id)arg1;
+- (void)setReadsCompleteLogger:(id)arg1;
 - (void)setRunningTransactions:(id)arg1;
 - (void)setTransactionLock:(id)arg1;
 - (void)setValueReader:(id)arg1;

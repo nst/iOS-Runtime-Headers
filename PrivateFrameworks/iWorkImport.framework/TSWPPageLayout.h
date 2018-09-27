@@ -48,7 +48,7 @@
 - (bool)headerFooterProviderValid;
 - (double)headerHeight;
 - (void)i_clearHeaderFooterLayouts;
-- (void)i_insertValidatedHeaderFooterLayouts;
+- (id)i_insertValidatedHeaderFooterLayouts;
 - (bool)i_updateHeaderFooterLayouts;
 - (bool)isHeaderFooterLayout:(id)arg1;
 - (bool)p_isHeaderFooter:(long long)arg1 editingAtFragmentIndex:(long long)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface SYDeletedObject : NSObject <SYChange, SYObject> {
+@interface SYDeletedObject : NSObject <SYChange> {
     NSString * _sequencer;
     NSString * _syncId;
 }

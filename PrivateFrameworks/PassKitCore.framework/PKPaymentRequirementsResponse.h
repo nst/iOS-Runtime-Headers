@@ -22,6 +22,7 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithProduct:(id)arg1;
 - (id)initWithProvisioningMethodMetadata:(id)arg1;
+- (id)initWithRemoteCredential:(id)arg1;
 - (id)learnMoreURL;
 - (id)nonce;
 - (id)possibleProducts;

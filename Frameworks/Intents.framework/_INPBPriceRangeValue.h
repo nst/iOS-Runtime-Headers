@@ -2,30 +2,30 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPriceRangeValue : PBCodable <NSCopying> {
+@interface _INPBPriceRangeValue : PBCodable <NSCopying, NSSecureCoding, _INPBPriceRangeValue> {
     NSString * _currencyCode;
+    struct { }  _has;
     _INPBDecimalNumberValue * _maximumPrice;
     _INPBDecimalNumberValue * _minimumPrice;
-    PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic, retain) NSString *currencyCode;
+@property (nonatomic, copy) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasCurrencyCode;
 @property (nonatomic, readonly) bool hasMaximumPrice;
 @property (nonatomic, readonly) bool hasMinimumPrice;
 @property (nonatomic, readonly) bool hasValueMetadata;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBDecimalNumberValue *maximumPrice;
 @property (nonatomic, retain) _INPBDecimalNumberValue *minimumPrice;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCurrencyCode;
 - (bool)hasMaximumPrice;
@@ -34,14 +34,12 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)maximumPrice;
-- (void)mergeFrom:(id)arg1;
 - (id)minimumPrice;
 - (bool)readFrom:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setMaximumPrice:(id)arg1;
 - (void)setMinimumPrice:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
-- (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

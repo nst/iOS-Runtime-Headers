@@ -26,6 +26,7 @@
     float  _maxSampleDataOutputRate;
     unsigned int  _mediaType;
     bool  _mediaTypeIsVideo;
+    BWMemoryPool * _memoryPool;
     NSString * _name;
     BWNode * _node;
     unsigned int  _numberOfBuffersDropped;
@@ -55,6 +56,7 @@
 @property (nonatomic) float maxSampleDataOutputRate;
 @property (nonatomic, readonly) unsigned int mediaType;
 @property (nonatomic, readonly) bool mediaTypeIsVideo;
+@property (nonatomic, retain) BWMemoryPool *memoryPool;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) BWNode *node;
 @property (nonatomic, readonly) unsigned int numberOfBuffersDropped;
@@ -117,6 +119,7 @@
 - (id)mediaPropertiesForAttachedMediaKey:(id)arg1;
 - (unsigned int)mediaType;
 - (bool)mediaTypeIsVideo;
+- (id)memoryPool;
 - (id)name;
 - (id)node;
 - (unsigned int)numberOfBuffersDropped;
@@ -142,6 +145,7 @@
 - (void)setLiveFormat:(id)arg1;
 - (void)setMaxSampleDataOutputRate:(float)arg1;
 - (void)setMediaConfiguration:(id)arg1 forAttachedMediaKey:(id)arg2;
+- (void)setMemoryPool:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNodePreparedPixelBufferPool:(id)arg1;
 - (void)setOwningNodeRetainedBufferCount:(int)arg1;

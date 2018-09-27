@@ -54,6 +54,7 @@
     NSString * _phoneticOrganizationName;
     NSArray * _postalAddresses;
     NSString * _preferredApplePersonaIdentifier;
+    NSString * _preferredChannel;
     bool  _preferredForImage;
     bool  _preferredForName;
     NSString * _preferredLikenessSource;
@@ -158,6 +159,7 @@
 @property (nonatomic, readonly, copy) NSString *phoneticOrganizationName;
 @property (nonatomic, readonly, copy) NSArray *postalAddresses;
 @property (nonatomic, readonly, copy) NSString *preferredApplePersonaIdentifier;
+@property (nonatomic, readonly, copy) NSString *preferredChannel;
 @property (getter=isPreferredForImage, nonatomic, readonly) bool preferredForImage;
 @property (getter=isPreferredForName, nonatomic, readonly) bool preferredForName;
 @property (nonatomic, readonly, copy) NSString *preferredLikenessSource;
@@ -240,6 +242,7 @@
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1;
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1 prefixHint:(id)arg2;
 + (id)predicateForContactsMatchingPostalAddress:(id)arg1;
++ (id)predicateForContactsMatchingPreferredChannel:(id)arg1 limitOne:(bool)arg2;
 + (id)predicateForContactsMatchingSocialProfile:(id)arg1;
 + (id)predicateForContactsMatchingString:(id)arg1 accountIdentifier:(id)arg2 containerIdentifier:(id)arg3 groupIdentifier:(id)arg4;
 + (id)predicateForContactsWithIdentifiers:(id)arg1;
@@ -361,6 +364,7 @@
 - (id)phoneticOrganizationName;
 - (id)postalAddresses;
 - (id)preferredApplePersonaIdentifier;
+- (id)preferredChannel;
 - (bool)preferredForImage;
 - (bool)preferredForName;
 - (id)preferredLikenessSource;
@@ -395,6 +399,7 @@
 + (bool)contactRemindersEnabled;
 + (id)contactWithStateRestorationCoder:(id)arg1 store:(id)arg2 keys:(id)arg3;
 + (id)descriptorForAllUIKeys;
++ (bool)geminiEnabled;
 + (id)multiValuePropertiesSupportingPredicateValidation;
 + (bool)quickActionsEnabled;
 + (bool)settableMeCardEnabled;
@@ -437,6 +442,22 @@
 - (bool)hasPhoneNumber:(id)arg1;
 - (bool)hasPostalAddress:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
+
++ (id)dnds_predicateForContactsMatchingEventSource:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
+- (id)collationString;
+
+// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
+
+- (id)__im_assistant_allIMHandles;
+- (id)__im_assistant_allValidPersonOptionsWithAccount:(id)arg1;
+- (bool)__im_assistant_labeledContactValue:(id)arg1 matchesPersonHandleLabel:(id)arg2;
+- (id)__im_assistant_matchingNormalizedHandlesForType:(long long)arg1 andLabel:(id)arg2 forCountryCode:(id)arg3;
+- (id)__im_assistant_normalizedHandleForAnonymousContactUsingCountryCode:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)contactWithABRecordRef:(void*)arg1;
@@ -472,10 +493,15 @@
 - (void)setContactSource:(unsigned long long)arg1;
 - (void)setRecentContact:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
++ (id)pl_findBestMatchingContactFromMatchingContacts:(id)arg1 firstName:(id)arg2 lastName:(id)arg3 contactFormatter:(id)arg4;
+
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_defaultDescriptors;
 + (id)safari_imageViewDescriptors;
++ (id)safari_oneTimeCodeViewDescriptors;
 
 - (id)safari_fullName;
 - (id)safari_valueForWBSABProperty:(id)arg1;

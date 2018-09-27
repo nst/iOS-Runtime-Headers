@@ -13,6 +13,7 @@
 - (void)dealloc;
 - (bool)hasError;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (void)prepareForReuse;
 - (void)setHasError:(bool)arg1;
 
 @end

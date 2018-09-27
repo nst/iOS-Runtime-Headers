@@ -17,6 +17,7 @@
 
 + (id)logCategory;
 + (id)remoteMessageFromMessage:(id)arg1 secure:(bool)arg2 accountRegistry:(id)arg3;
++ (id)remoteMessageTransportsForProductInfo:(id)arg1;
 + (unsigned long long)restriction;
 
 - (void).cxx_destruct;

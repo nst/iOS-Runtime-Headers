@@ -11,9 +11,10 @@
 @property (nonatomic, readonly) NSSQLiteStatement *updateStatement;
 
 - (void)_createUpdateStatement;
-- (id)createCountRequestContextForObjectsToUpdate;
 - (id)createFetchRequestContextForObjectsToUpdate;
+- (id)createObjectIDCaptureStatements;
 - (void)dealloc;
+- (id)dropObjectIDCaptureStatements;
 - (void)executePrologue;
 - (void)executeRequestCore:(id*)arg1;
 - (id)fetchRequestDescribingObjectsToUpdate;

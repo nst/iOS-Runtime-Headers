@@ -21,14 +21,14 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool destroyed;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) FBSSceneSettings *newSettings;
-@property (nonatomic, readonly, retain) FBScene *scene;
-@property (nonatomic, readonly, retain) NSString *sceneIdentifier;
-@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
-@property (nonatomic, readonly, retain) FBSSceneSpecification *specification;
+@property (nonatomic, readonly) FBSSceneSettings *newSettings;
+@property (nonatomic, readonly) FBScene *scene;
+@property (nonatomic, readonly) NSString *sceneIdentifier;
+@property (nonatomic, readonly) FBSSceneSettings *settings;
+@property (nonatomic, readonly) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
-@property (nonatomic, readonly, retain) FBSSceneTransitionContext *transitionContext;
+@property (nonatomic, readonly) FBSSceneTransitionContext *transitionContext;
 @property (nonatomic) bool waitsForSceneCommit;
 
 - (void).cxx_destruct;

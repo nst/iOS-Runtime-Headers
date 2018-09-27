@@ -5,7 +5,7 @@
 @interface NUVideoLoadingCoordinator : NSObject <NUAsyncContentViewControllerLoader, NUVideoPlayerEventTracker> {
     id /* block */  _completionBlock;
     bool  _loadStarted;
-    <SXVideoPlaybackController> * _playbackController;
+    <SVVideoPlaybackController> * _playbackController;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;
@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=hasLoadStarted, nonatomic) bool loadStarted;
-@property (nonatomic, readonly) <SXVideoPlaybackController> *playbackController;
+@property (nonatomic, readonly) <SVVideoPlaybackController> *playbackController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

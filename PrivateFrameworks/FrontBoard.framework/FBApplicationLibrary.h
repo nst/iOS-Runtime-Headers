@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBApplicationLibrary : NSObject <LSApplicationWorkspaceObserverProtocol> {
+@interface FBApplicationLibrary : NSObject <FBApplicationInfoProvider, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace * _applicationWorkspace;
     NSObject<OS_dispatch_queue> * _callOutQueue;
     NSObject<OS_dispatch_queue> * _completionQueue;
@@ -28,6 +28,8 @@
 + (id)_systemApplicationProxy;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
+- (void)_handleApplicationStateDidChange:(id)arg1 notifyForUpdateInsteadOfReplacement:(bool)arg2;
 - (void)_load;
 - (void)_notifyDidAddApplications:(id)arg1;
 - (void)_notifyDidAddPlaceholders:(id)arg1;
@@ -36,6 +38,7 @@
 - (void)_notifyDidDemoteApplications:(id)arg1;
 - (void)_notifyDidRemoveApplications:(id)arg1;
 - (void)_notifyDidReplaceApplications:(id)arg1;
+- (void)_notifyDidUpdateApplications:(id)arg1;
 - (void)_notifyForType:(long long)arg1 synchronously:(bool)arg2 withCastingBlock:(id /* block */)arg3;
 - (id)_observeType:(long long)arg1 withBlock:(id)arg2;
 - (bool)_workQueue_applicationHasBeenModified:(id)arg1 applicationProxy:(id)arg2;
@@ -51,6 +54,7 @@
 - (void)_workQueue_removePlaceholderFromModelForBundleID:(id)arg1 withReason:(id)arg2;
 - (id)allInstalledApplications;
 - (id)allPlaceholders;
+- (id)applicationInfoForBundleIdentifier:(id)arg1;
 - (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
 - (void)applicationInstallsDidCancel:(id)arg1;
 - (void)applicationInstallsDidChange:(id)arg1;
@@ -68,6 +72,7 @@
 - (void)applicationsWillUninstall:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)deviceManagementPolicyDidChange:(id)arg1;
 - (void)executeOrPendInstallSynchronizationBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithApplicationWorkspace:(id)arg1 configuration:(id)arg2;
@@ -84,6 +89,7 @@
 - (id)observeDidDemoteApplicationsWithBlock:(id /* block */)arg1;
 - (id)observeDidRemoveApplicationsWithBlock:(id /* block */)arg1;
 - (id)observeDidReplaceApplicationsWithBlock:(id /* block */)arg1;
+- (id)observeDidUpdateApplicationsWithBlock:(id /* block */)arg1;
 - (id)placeholderWithBundleIdentifier:(id)arg1;
 - (void)removeObserverForToken:(id)arg1;
 - (void)uninstallApplication:(id)arg1 completion:(id /* block */)arg2;

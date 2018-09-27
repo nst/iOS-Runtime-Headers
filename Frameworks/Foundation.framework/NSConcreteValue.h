@@ -10,7 +10,7 @@
 + (void)initialize;
 + (bool)supportsSecureCoding;
 
-- (bool)_matchType:(const char *)arg1 size:(unsigned long long)arg2;
+- (bool)_matchType:(const char *)arg1 size:(unsigned long long)arg2 strict:(bool)arg3;
 - (const void*)_value;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

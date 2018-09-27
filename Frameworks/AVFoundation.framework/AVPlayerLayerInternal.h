@@ -5,7 +5,6 @@
 @interface AVPlayerLayerInternal : NSObject {
     NSSet * KVOInvokers;
     AVPlayerLayer * associatedPIPLayer;
-    bool  canEnterPIPMode;
     NSDictionary * clientLayers;
     FigBaseCALayer * closedCaptionLayer;
     NSObject<OS_dispatch_queue> * configurationQueue;

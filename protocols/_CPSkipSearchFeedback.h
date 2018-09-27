@@ -5,9 +5,6 @@
 
 @required
 
-- (bool)hasInput;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSString *)input;

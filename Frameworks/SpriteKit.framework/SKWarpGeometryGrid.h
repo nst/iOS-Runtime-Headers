@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKWarpGeometryGrid : SKWarpGeometry <NSCoding> {
+@interface SKWarpGeometryGrid : SKWarpGeometry <NSSecureCoding> {
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__value_"^ {}  _destPositions;
     void _dimensions;
     bool  _isIdentityWarp;
@@ -19,6 +19,7 @@
 + (id)grid;
 + (id)gridWithColumns:(long long)arg1 rows:(long long)arg2;
 + (id)gridWithColumns:(long long)arg1 rows:(long long)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '3' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -31,6 +32,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithColumns:(long long)arg1 rows:(long long)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '3' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4;
+- (bool)isEqualToGrid:(id)arg1;
 - (bool)isIdentityWarp;
 - (long long)numberOfColumns;
 - (long long)numberOfRows;

@@ -18,6 +18,7 @@
 - (id)collection;
 - (id)delegate;
 - (id)fetchOptions;
+- (void)handleBegin;
 - (void)handleFinish;
 - (id)init;
 - (id)initWithCollection:(id)arg1;

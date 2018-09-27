@@ -15,6 +15,7 @@
 + (struct USet { }*)createAcceptableCharacterSetForKeyboardLocale:(id)arg1;
 + (id)createSpecializationForInputMode:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)accentKeyStringForKeyboardState:(id)arg1;
 - (bool)acceptsCharacter:(unsigned int)arg1;
 - (bool)allowsAutocorrectionOfValidWords;

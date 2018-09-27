@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPClientConnection : HMFObject <_HMFCFHTTPServerConnectionDelegate> {
+@interface HMFHTTPClientConnection : HMFObject <HMFLogging, _HMFCFHTTPServerConnectionDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFHTTPClientConnectionDelegate> * _delegate;
     _HMFCFHTTPServerConnection * _internal;
@@ -19,19 +19,18 @@
 @property (nonatomic, readonly) NSMutableArray *pendingRespones;
 @property (readonly) Class superclass;
 
-+ (id)shortDescription;
++ (id)logCategory;
 
 - (void).cxx_destruct;
+- (id)attributeDescriptions;
 - (id)clientQueue;
 - (void)close;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)dealloc;
-- (id)debugDescription;
 - (id)delegate;
-- (id)description;
-- (id)descriptionWithPointer:(bool)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)internal;
+- (id)logIdentifier;
 - (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)peerAddress;
 - (id)pendingRespones;

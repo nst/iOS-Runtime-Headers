@@ -5,6 +5,7 @@
 @interface AFSpeechToken : NSObject <NSSecureCoding> {
     long long  _confidenceScore;
     double  _endTime;
+    NSString * _ipaPhoneSequence;
     NSString * _phoneSequence;
     bool  _removeSpaceAfter;
     bool  _removeSpaceBefore;
@@ -15,6 +16,7 @@
 
 @property (nonatomic) long long confidenceScore;
 @property (nonatomic) double endTime;
+@property (nonatomic, copy) NSString *ipaPhoneSequence;
 @property (nonatomic, copy) NSString *phoneSequence;
 @property (nonatomic) bool removeSpaceAfter;
 @property (nonatomic) bool removeSpaceBefore;
@@ -32,12 +34,14 @@
 - (double)endTime;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)ipaPhoneSequence;
 - (bool)isEqual:(id)arg1;
 - (id)phoneSequence;
 - (bool)removeSpaceAfter;
 - (bool)removeSpaceBefore;
 - (void)setConfidenceScore:(long long)arg1;
 - (void)setEndTime:(double)arg1;
+- (void)setIpaPhoneSequence:(id)arg1;
 - (void)setPhoneSequence:(id)arg1;
 - (void)setRemoveSpaceAfter:(bool)arg1;
 - (void)setRemoveSpaceBefore:(bool)arg1;

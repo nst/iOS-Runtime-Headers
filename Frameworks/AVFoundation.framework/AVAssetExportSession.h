@@ -41,6 +41,7 @@
 - (id)init;
 - (id)initWithAsset:(id)arg1 presetName:(id)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maxDuration;
+- (bool)maximizePowerEfficiency;
 - (id)metadata;
 - (id)metadataItemFilter;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minVideoFrameDuration;
@@ -54,6 +55,7 @@
 - (void)setCanPerformMultiplePassesOverSourceMediaData:(bool)arg1;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
 - (void)setFileLengthLimit:(long long)arg1;
+- (void)setMaximizePowerEfficiency:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadataItemFilter:(id)arg1;
 - (void)setMinVideoFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

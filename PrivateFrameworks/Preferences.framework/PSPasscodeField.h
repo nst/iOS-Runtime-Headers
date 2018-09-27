@@ -32,6 +32,7 @@
 @property (nonatomic) long long keyboardAppearance;
 @property (nonatomic) long long keyboardType;
 @property (nonatomic) unsigned long long numberOfEntryFields;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property (nonatomic) long long returnKeyType;
 @property (nonatomic) bool securePasscodeEntry;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;

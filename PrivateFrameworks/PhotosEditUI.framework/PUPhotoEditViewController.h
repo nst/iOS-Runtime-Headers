@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotosEditUI.framework/PhotosEditUI
  */
 
-@interface PUPhotoEditViewController : PUEditViewController <CAMLightingControlDelegate, NUMediaViewDelegatePrivate, PHLivePhotoViewDelegate, PLDismissableViewController, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUOneUpAssetTransitionViewController, PUPhotoEditIrisModelChangeObserver, PUPhotoEditLayoutSource, PUPhotoEditResourceLoaderDelegate, PUPhotoEditToolControllerDelegate, PUPhotoEditToolbarDelegate, PUVideoEditPluginSessionDataSource, PUViewControllerSpecChangeObserver, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
+@interface PUPhotoEditViewController : PUEditViewController <CAMLightingControlDelegate, NUMediaViewDelegatePrivate, PHLivePhotoViewDelegate, PLDismissableViewController, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUOneUpAssetTransitionViewController, PUPhotoEditApertureToolbarDelegate, PUPhotoEditIrisModelChangeObserver, PUPhotoEditLayoutSource, PUPhotoEditResourceLoaderDelegate, PUPhotoEditToolControllerDelegate, PUPhotoEditToolbarDelegate, PUVideoEditPluginSessionDataSource, PUViewControllerSpecChangeObserver, PXChangeObserver, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
     PLPhotoEditAggregateSession * __aggregateSession;
     NSArray * __allTools;
     long long  __assetChangeDismissalState;
     bool  __canAnimateNextAutoEnhance;
     UIAlertController * __cancelConfirmationAlert;
     PLEditSource * __editSource;
+    NSString * __editSourceUTI;
+    bool  __hasLoadedRaw;
     struct { 
         long long value; 
         int timescale; 
@@ -17,6 +19,8 @@
     }  __initialSeekTime;
     UIAlertController * __irisRevertConfirmationAlert;
     bool  __isCachingVideo;
+    bool  __isLoadingAdjustments;
+    UIAlertController * __jpegPreviewForRawConfirmationAlert;
     struct CGSize { 
         double width; 
         double height; 
@@ -60,6 +64,8 @@
     PUAdjustmentsToolController * _adjustmentsController;
     PUPhotoEditToolbar * _alternateToolbar;
     NSArray * _alternateToolbarConstraints;
+    PUPhotoEditApertureToolbar * _apertureToolbar;
+    PFCoalescer * _apertureUpdateCoalescer;
     UIButton * _autoEnhanceButton;
     PUAutoAdjustmentController * _autoEnhanceController;
     bool  _canModifyDepth;
@@ -68,7 +74,7 @@
     NSArray * _coreToolButtons;
     PUCropToolController * _cropController;
     PUPhotoEditToolController * _currentEditingTool;
-    bool  _currentToolShouldAppearUnderneathMediaView;
+    UIViewController * _currentTool;
     NSArray * _currentToolViewConstraints;
     UIButton * _depthBadge;
     NSArray * _depthBadgeConstraints;
@@ -78,7 +84,10 @@
     PXImageLayerModulator * _imageLayerModulator;
     int  _inProgressSaveRequestID;
     bool  _isAnimatingLayoutOrientation;
+    bool  _isEmbeddedEdit;
     bool  _isImageFrameReady;
+    bool  _isImageZooming;
+    bool  _isStageLightDisabled;
     long long  _layoutOrientation;
     CAMLightingControl * _lightingControl;
     NSArray * _lightingControlConstraints;
@@ -91,7 +100,6 @@
     PUTouchingGestureRecognizer * _livePhotoTouchRecognizer;
     UIButton * _mainActionButton;
     long long  _mainButtonAction;
-    GLKView * _mainRenderView;
     NSArray * _mainToolButtons;
     PUPhotoEditToolbar * _mainToolbar;
     NSArray * _mainToolbarConstraints;
@@ -101,14 +109,13 @@
     long long  _mediaViewEdgeInsetsUpdateDisableCount;
     UIButton * _muteLivePhotoButton;
     bool  _needToReloadTools;
-    bool  _oldToolShouldDisappearUnderneathMediaView;
-    UIView * _oldToolView;
     <PUEditableAsset> * _photo;
     PUPhotoEditViewControllerSpec * _photoEditSpec;
     bool  _photoTakenWithoutFlash;
     NSArray * _placeholderImageFilters;
     UIImageView * _placeholderImageView;
     NSArray * _placeholderImageViewConstraints;
+    bool  _placeholderImageViewTransitioningOut;
     UIButton * _pluginButton;
     NSString * _pluginFullSizeImageSandboxExtensionToken;
     NSURL * _pluginFullSizeImageURL;
@@ -128,6 +135,8 @@
     id  _progressIndicatorInteractionDisablingToken;
     PUProgressIndicatorView * _progressIndicatorView;
     NSArray * _progressIndicatorViewConstraints;
+    PXUIAssetBadgeView * _rawDecodeBadge;
+    NSArray * _rawDecodeBadgeConstraints;
     UIButton * _redEyeButton;
     NUBufferRenderClient * _renderImageClient;
     NSObject<OS_dispatch_source> * _saveProgressTimer;
@@ -137,7 +146,7 @@
     PUPhotoEditToolbar * _secondaryToolbar;
     NSArray * _secondaryToolbarConstraints;
     <PUPhotoEditViewControllerSessionDelegate> * _sessionDelegate;
-    NURenderPipelineFilter * _showOrignalWithGeometry;
+    bool  _shouldShowRawDecodeBadge;
     PUPhotoEditSnapshot * _stashedSnapshot;
     bool  _switchingToolsAnimated;
     NSArray * _toggleOriginalInitialPoints;
@@ -155,12 +164,16 @@
 @property (setter=_setCanAnimateNextAutoEnhance:, nonatomic) bool _canAnimateNextAutoEnhance;
 @property (setter=_setCancelConfirmationAlert:, nonatomic) UIAlertController *_cancelConfirmationAlert;
 @property (setter=_setEditSource:, nonatomic, retain) PLEditSource *_editSource;
+@property (setter=_setEditSourceUTI:, nonatomic, retain) NSString *_editSourceUTI;
+@property (setter=_setHasLoadedRaw:, nonatomic) bool _hasLoadedRaw;
 @property (setter=_setInitialSeekTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _initialSeekTime;
 @property (setter=_setIrisRevertConfirmationAlert:, nonatomic) UIAlertController *_irisRevertConfirmationAlert;
 @property (setter=_setIsCachingVideo:, nonatomic) bool _isCachingVideo;
 @property (nonatomic, readonly) bool _isEnabledLivePhoto;
+@property (setter=_setIsLoadingAdjustments:, nonatomic) bool _isLoadingAdjustments;
 @property (nonatomic, readonly) bool _isLoopingVideo;
 @property (nonatomic, readonly) bool _isVideoOn;
+@property (setter=_setJpegPreviewForRawConfirmationAlert:, nonatomic) UIAlertController *_jpegPreviewForRawConfirmationAlert;
 @property (setter=_setLastKnownPreviewImageSize:, nonatomic) struct CGSize { double x1; double x2; } _lastKnownPreviewImageSize;
 @property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } _layoutReferenceSize;
 @property (setter=_setLivePhotoToolsAlert:, nonatomic) UIAlertController *_livePhotoToolsAlert;
@@ -185,7 +198,6 @@
 @property (setter=_setUneditedPhotoEditModel:, nonatomic, copy) PLPhotoEditModel *_uneditedPhotoEditModel;
 @property (setter=_setValuesCalculator:, nonatomic, retain) PUPhotoEditValuesCalculator *_valuesCalculator;
 @property (setter=_setWorkImageVersion:, nonatomic) long long _workImageVersion;
-@property (nonatomic) bool currentToolShouldAppearUnderneathMediaView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -194,8 +206,6 @@
 @property (nonatomic, readonly) PUMediaDestination *mediaDestination;
 @property (nonatomic, readonly) PUEditableMediaProvider *mediaProvider;
 @property (nonatomic) long long mediaViewEdgeInsetsUpdateDisableCount;
-@property (nonatomic) bool oldToolShouldDisappearUnderneathMediaView;
-@property (nonatomic, retain) UIView *oldToolView;
 @property (nonatomic, readonly) <PUEditableAsset> *photo;
 @property (nonatomic, readonly) PUPhotoEditViewControllerSpec *photoEditSpec;
 @property (nonatomic, readonly, copy) NSArray *placeholderImageFilters;
@@ -212,7 +222,7 @@
 + (id)_defaultRenderPipelineFilters;
 + (bool)_isForceTouchEnabled;
 + (bool)_shouldForwardViewWillTransitionToSize;
-+ (void)initialize;
++ (id)photoEditLog;
 + (double)toggleOriginalLongPressDelay;
 
 - (void).cxx_destruct;
@@ -223,14 +233,17 @@
 - (id)_cancelConfirmationAlert;
 - (void)_captureSnapshotOfBasePhotoWithCompletionHandler:(id /* block */)arg1;
 - (void)_checkPhotoTakenWithoutFlashWithURL:(id)arg1;
+- (void)_clearBadgeConstraints;
 - (id)_composition;
 - (void)_configureEnablenessOfControlButton:(id)arg1 animated:(bool)arg2;
 - (id)_createMediaView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_currentToolPreviewInsets;
 - (id)_defaultInitialEditingTool;
 - (id)_depthButtonIcon;
 - (id)_depthButtonTitle;
 - (void)_editPluginSession:(id)arg1 checkVideoEnabled:(bool)arg2 loadVideoComplementURLWithHandler:(id /* block */)arg3;
 - (id)_editSource;
+- (id)_editSourceUTI;
 - (void)_handleAssetChangeTimeoutWithAsset:(id)arg1;
 - (void)_handleAutoEnhanceButton:(id)arg1;
 - (void)_handleCancelButton:(id)arg1;
@@ -250,14 +263,16 @@
 - (void)_handleTogglePreviewPressGesture:(id)arg1;
 - (void)_handleTogglePreviewTapGesture:(id)arg1;
 - (void)_handleToolbarToolButton:(id)arg1;
+- (bool)_hasLoadedRaw;
 - (bool)_hasLoopingVideoAdjustment;
 - (bool)_hasUnsavedChanges;
-- (long long)_imageModulationOptions;
+- (struct { long long x1; float x2; })_imageModulationOptions;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_initialSeekTime;
 - (void)_invalidateTrimControlScrubberThumbnails;
 - (id)_irisRevertConfirmationAlert;
 - (bool)_isCachingVideo;
 - (bool)_isEnabledLivePhoto;
+- (bool)_isLoadingAdjustments;
 - (bool)_isLoopingVideo;
 - (bool)_isLoopingVideo:(bool)arg1;
 - (bool)_isPenultimateAvailable;
@@ -268,11 +283,11 @@
 - (bool)_isVideoOn;
 - (bool)_isWaitingForAssetChange;
 - (bool)_isWaitingForSaveCompletion;
+- (id)_jpegPreviewForRawConfirmationAlert;
 - (struct CGSize { double x1; double x2; })_lastKnownPreviewImageSize;
 - (struct CGSize { double x1; double x2; })_layoutReferenceSize;
 - (id)_livePhotoGestureRecognizer;
 - (id)_livePhotoToolsAlert;
-- (void)_loadLightingStateFromModel;
 - (void)_loadOriginalImageIfNeeded;
 - (void)_loadPhotoEditResourcesIfNeeded;
 - (void)_loadToolsIfNeeded;
@@ -312,15 +327,18 @@
 - (int)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
 - (long long)_saveCompetionDismissalState;
 - (int)_saveOnlyDepthEditsCompletionHandler:(id /* block */)arg1;
-- (struct CGSize { double x1; double x2; })_scaleSize:(struct CGSize { double x1; double x2; })arg1 toFitSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_setAggregateSession:(id)arg1;
 - (void)_setAssetChangeDismissalState:(long long)arg1;
 - (void)_setCanAnimateNextAutoEnhance:(bool)arg1;
 - (void)_setCancelConfirmationAlert:(id)arg1;
 - (void)_setEditSource:(id)arg1;
+- (void)_setEditSourceUTI:(id)arg1;
+- (void)_setHasLoadedRaw:(bool)arg1;
 - (void)_setInitialSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setIrisRevertConfirmationAlert:(id)arg1;
 - (void)_setIsCachingVideo:(bool)arg1;
+- (void)_setIsLoadingAdjustments:(bool)arg1;
+- (void)_setJpegPreviewForRawConfirmationAlert:(id)arg1;
 - (void)_setLastKnownPreviewImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setLayoutOrientation:(long long)arg1;
 - (void)_setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
@@ -359,18 +377,21 @@
 - (bool)_shouldShowDepthControl;
 - (bool)_shouldShowLightingControl;
 - (void)_showCancelAndRevertOptionsAllowResetTool:(bool)arg1;
+- (void)_showJpegPreviewForRawRevertAlert;
 - (void)_startMonitoringSaveProgressIfNeeded;
 - (void)_startWaitingForAssetChange;
 - (void)_startWaitingForSaveRequestID:(int)arg1;
 - (void)_stopMonitoringSaveProgress;
 - (void)_stopWaitingForAssetChangeWithAsset:(id)arg1 success:(bool)arg2;
 - (void)_stopWaitingForSaveRequestWithAsset:(id)arg1;
-- (void)_switchToEditingTool:(id)arg1 animated:(bool)arg2;
+- (void)_transitionToEditingTool:(id)arg1 animated:(bool)arg2;
+- (void)_transitionToNewToolViewController:(id)arg1 oldToolViewController:(id)arg2 animationBlock:(id /* block */)arg3 completion:(id /* block */)arg4 animated:(bool)arg5;
 - (id)_uneditedPhotoEditModel;
 - (void)_updateAlternateToolbarAnimated:(bool)arg1;
 - (void)_updateAutoEnhanceButtonAnimated:(bool)arg1;
 - (void)_updateBackgroundColor;
 - (void)_updateDepthEffectAnimated:(bool)arg1;
+- (void)_updateEditModelWithApertureValue;
 - (void)_updateEditModelWithPortraitEffect:(long long)arg1;
 - (void)_updateLayoutOrientationWithViewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_updateLightingHierarchy;
@@ -391,6 +412,7 @@
 - (void)_updatePluginButtonAnimated:(bool)arg1;
 - (void)_updatePluginSession;
 - (void)_updatePluginWorkImageVersion;
+- (void)_updatePortraitControls:(bool)arg1;
 - (void)_updatePreviewingOriginal;
 - (void)_updatePreviewingOriginalBadge;
 - (void)_updateProgressIndicatorAnimated:(bool)arg1;
@@ -409,8 +431,8 @@
 - (id)_valuesCalculator;
 - (bool)_wantsTrimControl;
 - (long long)_workImageVersion;
+- (void)apertureToolbar:(id)arg1 didChangeValue:(double)arg2;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (bool)currentToolShouldAppearUnderneathMediaView;
 - (void)dealloc;
 - (void)didFinishWithAsset:(id)arg1 savedChanges:(bool)arg2;
 - (void)didFinishWithChanges:(bool)arg1;
@@ -447,8 +469,6 @@
 - (void)mediaViewIsReadyForVideoPlayback:(id)arg1;
 - (void)mediaViewWillBeginZooming:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
-- (bool)oldToolShouldDisappearUnderneathMediaView;
-- (id)oldToolView;
 - (void)oneUpAssetTransition:(id)arg1 animateTransitionWithContext:(id)arg2 duration:(double)arg3 completion:(id /* block */)arg4;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(id /* block */)arg2;
 - (void)oneUpAssetTransitionDidEnd:(id)arg1;
@@ -497,10 +517,7 @@
 - (double)px_HDRFocus;
 - (double)px_imageModulationIntensity;
 - (id)sessionDelegate;
-- (void)setCurrentToolShouldAppearUnderneathMediaView:(bool)arg1;
 - (void)setMediaViewEdgeInsetsUpdateDisableCount:(long long)arg1;
-- (void)setOldToolShouldDisappearUnderneathMediaView:(bool)arg1;
-- (void)setOldToolView:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setPpt_afterAutoenhanceBlock:(id /* block */)arg1;
 - (void)setPpt_afterRenderBlock:(id /* block */)arg1;
@@ -509,6 +526,7 @@
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setPreviewViewHidden:(bool)arg1;
 - (void)setSessionDelegate:(id)arg1;
+- (void)switchToEditingTool:(id)arg1 animated:(bool)arg2;
 - (void)toolController:(id)arg1 didChangePreferredPreviewViewInsetsAnimated:(bool)arg2;
 - (struct CGPoint { double x1; double x2; })toolController:(id)arg1 originalPointFromViewPoint:(struct CGPoint { double x1; double x2; })arg2 view:(id)arg3;
 - (void)toolController:(id)arg1 updateModelDependentControlsAnimated:(bool)arg2;
@@ -519,7 +537,7 @@
 - (void)toolControllerDidFinish:(id)arg1;
 - (void)toolControllerDidFinishLoadingThumbnails:(id)arg1;
 - (id)toolControllerHitEventForwardView:(id)arg1;
-- (long long)toolControllerImageModulationOptions:(id)arg1;
+- (struct { long long x1; float x2; })toolControllerImageModulationOptions:(id)arg1;
 - (id)toolControllerLivePhoto:(id)arg1;
 - (id)toolControllerMainContainerView:(id)arg1;
 - (id)toolControllerMainRenderer:(id)arg1;

@@ -18,6 +18,7 @@
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2 sampler:(id)arg3 options:(unsigned long long)arg4;
 
 - (void).cxx_destruct;
+- (void)_printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 cumulativeOutput:(id)arg2 indentString:(id)arg3 branchPointCount:(unsigned int)arg4 topFunctions:(id)arg5 options:(unsigned long long)arg6;
 - (void)addChild:(id)arg1;
 - (void)addChildCountsIntoNode;
 - (unsigned long long)address;
@@ -30,6 +31,7 @@
 - (id)childAtIndex:(unsigned int)arg1;
 - (long long)compare:(id)arg1;
 - (long long)comparePuttingMainThreadFirst:(id)arg1;
+- (long long)comparePuttingRetainCycleNodesAtTop:(id)arg1;
 - (long long)compareSizeAndCount:(id)arg1;
 - (unsigned int)count;
 - (void)countFunctionOccurrencesInTree:(id)arg1;
@@ -56,6 +58,7 @@
 - (void)parseNameIntoSymbol:(id*)arg1 library:(id*)arg2 loadAddress:(unsigned long long*)arg3 offset:(unsigned long long*)arg4 address:(unsigned long long*)arg5 suffix:(id*)arg6;
 - (void)printCallTree;
 - (void)printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+- (void)printCallTreeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 options:(unsigned long long)arg2;
 - (id)pruneCount:(unsigned int)arg1;
 - (id)pruneMallocSize:(unsigned long long)arg1;
 - (id)pseudoName;
@@ -66,6 +69,7 @@
 - (id)sortedChildrenWithPseudoNode:(id)arg1 withCompare:(SEL)arg2;
 - (id)stringFromCallTreeIndentIfNoBranches:(bool)arg1;
 - (id)stringFromCallTreeIndentIfNoBranches:(bool)arg1 showPseudoNodes:(bool)arg2;
+- (unsigned int)sumOfChildCounts;
 - (bool)symbolNameIsUnknown;
 
 @end

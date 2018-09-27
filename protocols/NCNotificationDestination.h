@@ -16,6 +16,6 @@
 @optional
 
 - (bool)interceptsQueueRequest:(NCNotificationRequest *)arg1;
-- (void)updateNotificationSectionSettings:(NCNotificationSectionSettings *)arg1;
+- (void)updateNotificationSectionSettings:(NCNotificationSectionSettings *)arg1 previousSectionSettings:(NCNotificationSectionSettings *)arg2;
 
 @end

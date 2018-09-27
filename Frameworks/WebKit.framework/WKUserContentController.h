@@ -5,7 +5,7 @@
 @interface WKUserContentController : NSObject <NSSecureCoding, WKObject> {
     struct ObjectStorage<WebKit::WebUserContentControllerProxy> { 
         struct type { 
-            unsigned char __lx[144]; 
+            unsigned char __lx[168]; 
         } data; 
     }  _userContentControllerProxy;
 }
@@ -22,6 +22,7 @@
 
 - (void)_addScriptMessageHandler:(id)arg1 name:(id)arg2 userContentWorld:(id)arg3;
 - (void)_addUserContentFilter:(id)arg1;
+- (void)_addUserScriptImmediately:(id)arg1;
 - (void)_addUserStyleSheet:(id)arg1;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)_removeAllScriptMessageHandlersAssociatedWithUserContentWorld:(id)arg1;

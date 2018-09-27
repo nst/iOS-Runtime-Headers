@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPArchivedLayoutState : TSPObject <TPArchivedLayoutStateProtocol> {
-    unsigned long long  _bodyLength;
-    unsigned long long  _documentPageIndex;
-    unsigned long long  _lastPageCount;
-    NSSet * _missingFonts;
-    NSArray * _sectionHints;
-    unsigned long long  _sectionIndex;
-    unsigned long long  _sectionPageIndex;
+@interface TPArchivedLayoutState : TSPObject {
+    TPLayoutState * _layoutState;
 }
 
+@property (nonatomic, copy) TPLayoutState *layoutState;
+
 - (void).cxx_destruct;
-- (void)captureLayoutStateWithProvider:(id)arg1;
-- (id)initWithContext:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithContext:(id)arg1 layoutState:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToArchivedLayoutState:(id)arg1;
+- (id)layoutState;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)p_reset;
-- (void)readLayoutStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
+- (void)setLayoutState:(id)arg1;
 
 @end

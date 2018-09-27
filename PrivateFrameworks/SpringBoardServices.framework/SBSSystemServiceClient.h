@@ -13,8 +13,15 @@
 - (void)fetchHapticTypeForButtonKind:(long long)arg1 completion:(id /* block */)arg2;
 - (void)fetchUnlockCredentialSetWithCompletion:(id /* block */)arg1;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
+- (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)resetToHomeScreenAnimated:(bool)arg1 useSafeTransitions:(bool)arg2;
+- (void)setAlertsEnabled:(bool)arg1;
+- (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(bool)arg2;
 - (void)setButtonEventServiceIsWaitingForServerMessages:(bool)arg1;
 - (void)setEventMask:(unsigned long long)arg1 forButtonKind:(long long)arg2 priority:(long long)arg3;
 - (void)setHapticType:(long long)arg1 forButtonKind:(long long)arg2;
+- (void)setIdleTimerEnabled:(bool)arg1;
+- (void)setOrientationLockEnabled:(bool)arg1;
+- (void)suspendAllDisplays;
 
 @end

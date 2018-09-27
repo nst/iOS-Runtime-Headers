@@ -32,6 +32,7 @@
 - (double)screenScale;
 - (struct CGSize { double x1; double x2; })screenSize;
 - (void)setOpenURLDelegate:(id)arg1;
+- (bool)shouldCaptureMapViewGestureAnalytics;
 - (bool)supports3DImagery;
 - (bool)supports3DMaps;
 - (bool)supportsAlwaysOnCompass;

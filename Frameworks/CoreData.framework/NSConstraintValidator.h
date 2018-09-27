@@ -4,12 +4,13 @@
 
 @interface NSConstraintValidator : NSObject {
     id * _cachesByEntity;
-    NSManagedObjectModel * _model;
+    NSArray * _entities;
+    _PFModelMap * _modelMap;
 }
 
 - (void)_addConstraintRoot:(id)arg1 forEntity:(id)arg2;
 - (void)dealloc;
-- (id)initWithManagedObjectModel:(id)arg1;
+- (id)initWithManagedObjectContext:(id)arg1;
 - (void)registerObject:(id)arg1;
 - (void)registerObjects:(id)arg1;
 - (void)reset;

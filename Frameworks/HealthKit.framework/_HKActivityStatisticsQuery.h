@@ -22,6 +22,7 @@
 @property (getter=_updateInterval, setter=_setUpdateInterval:, nonatomic) double updateInterval;
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
@@ -31,7 +32,6 @@
 - (void)client_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4 query:(id)arg5;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 moveIntervalComponents:(id)arg3 exerciseIntervalComponents:(id)arg4 initialResultsHandler:(id /* block */)arg5;
 - (id /* block */)initialResultsHandler;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;

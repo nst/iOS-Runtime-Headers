@@ -15,7 +15,6 @@
 + (long long)activityCategory;
 
 - (void).cxx_destruct;
-- (id)_activityImage;
 - (void)_cleanup;
 - (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;

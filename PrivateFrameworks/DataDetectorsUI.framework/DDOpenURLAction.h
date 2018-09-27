@@ -12,6 +12,8 @@
 - (bool)canBePerformedByOpeningURL;
 - (id)companionAction;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationURL;
 - (void)performFromView:(id)arg1;
 - (bool)useAppLink;
 

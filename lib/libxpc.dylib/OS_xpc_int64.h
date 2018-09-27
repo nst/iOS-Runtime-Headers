@@ -11,4 +11,10 @@
 
 + (void)load;
 
+- (bool)allowsWeakReference;
+- (oneway void)release;
+- (id)retain;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
+
 @end

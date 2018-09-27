@@ -13,13 +13,13 @@
 @property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic) TIAsset *currentAsset;
 
+- (void).cxx_destruct;
 - (void)addAsset:(id)arg1;
 - (id)assetContentItemsMatching:(id)arg1;
 - (id)assets;
 - (id)attributes;
 - (unsigned long long)count;
 - (id)currentAsset;
-- (void)dealloc;
 - (id)initWithAttributes:(id)arg1;
 - (bool)isEmpty;
 - (bool)purgeAsset:(id)arg1;

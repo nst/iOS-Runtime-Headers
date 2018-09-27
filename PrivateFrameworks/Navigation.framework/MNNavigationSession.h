@@ -141,6 +141,7 @@
 - (void)setAudioSession:(id)arg1;
 - (void)setGuidancePromptsEnabled:(bool)arg1;
 - (void)setIsConnectedToCarplay:(bool)arg1;
+- (void)setIsNavigatingInLowGuidance:(bool)arg1;
 - (void)startNavigationSessionWithDetails:(id)arg1;
 - (void)stopCurrentGuidancePrompt;
 - (void)stopNavigationSession;

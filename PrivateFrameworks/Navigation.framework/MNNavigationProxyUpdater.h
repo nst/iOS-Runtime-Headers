@@ -33,6 +33,7 @@
 - (void)navigationSessionStarted:(id)arg1;
 - (void)navigationSessionStopped:(id)arg1;
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
+- (void)setIsConnectedToCarplay:(bool)arg1;
 - (void)setIsNavigatingInLowGuidance:(bool)arg1;
 - (void)setVoiceVolume:(unsigned long long)arg1;
 - (void)updateClusteredSectionSelectedRideForNavigationSession:(id)arg1;

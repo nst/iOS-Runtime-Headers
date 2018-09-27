@@ -5,6 +5,6 @@
 
 @required
 
-- (void)applyStyle:(SXDocumentStyle *)arg1 onView:(UIView *)arg2;
+- (void)applyStyle:(SXDocumentStyle *)arg1 onView:(UIScrollView *)arg2;
 
 @end

@@ -12,6 +12,8 @@
 @property (nonatomic, readonly) NSArray *limitedPersistentIDs;
 @property (nonatomic, readonly) bool requiresSmartLimiting;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)container;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

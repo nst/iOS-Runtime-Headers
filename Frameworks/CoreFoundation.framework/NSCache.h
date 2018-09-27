@@ -53,6 +53,10 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (id)px_objectForKey:(id)arg1 usingPromise:(id /* block */)arg2;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)tsp_cacheComponent:(id)arg1;

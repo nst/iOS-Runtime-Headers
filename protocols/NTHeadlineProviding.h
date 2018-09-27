@@ -16,6 +16,7 @@
 - (NSURL *)flintDocumentURL;
 - (NSString *)identifier;
 - (bool)isBoundToContext;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (NSObject<NTHeadlinePersonalizationMetadata> *)personalizationMetadata;
 - (SFSearchResult *)searchResult;

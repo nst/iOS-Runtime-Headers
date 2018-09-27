@@ -10,6 +10,7 @@
     NSArray * _postalAddresses;
     SGRecordId * _recordId;
     unsigned long long  _significance;
+    unsigned long long  _significanceOrigin;
     NSArray * _socialProfiles;
 }
 
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) NSArray *postalAddresses;
 @property (nonatomic, readonly) SGRecordId *recordId;
 @property (nonatomic) unsigned long long significance;
+@property (nonatomic) unsigned long long significanceOrigin;
 @property (nonatomic, copy) NSArray *socialProfiles;
 
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
@@ -53,8 +55,10 @@
 - (void)setPhones:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
 - (void)setSignificance:(unsigned long long)arg1;
+- (void)setSignificanceOrigin:(unsigned long long)arg1;
 - (void)setSocialProfiles:(id)arg1;
 - (unsigned long long)significance;
+- (unsigned long long)significanceOrigin;
 - (id)socialProfiles;
 
 @end

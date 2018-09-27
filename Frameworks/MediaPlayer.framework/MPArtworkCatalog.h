@@ -37,7 +37,7 @@
 
 + (id)_artworkCacheForIdentifier:(id)arg1 requestingContext:(id)arg2;
 + (id)_artworkLoadQueue;
-+ (void)setCacheLimit:(unsigned long long)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
++ (void)setCacheLimit:(long long)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (void)setCachePurgesWhenEnteringBackground:(bool)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (id)staticArtworkCatalogWithImage:(id)arg1;
 

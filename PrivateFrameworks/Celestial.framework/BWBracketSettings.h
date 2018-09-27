@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWBracketSettings : NSObject {
+@interface BWBracketSettings : NSObject <NSSecureCoding> {
     int  _bracketingMode;
     NSArray * _exposureValues;
     bool  _lensStabilizationEnabledForClientBracket;
@@ -20,13 +20,16 @@
 @property (nonatomic) bool providePreBracketedEV0;
 
 + (id)bracketSettingsForBracketingMode:(int)arg1;
++ (bool)supportsSecureCoding;
 
 - (int)bracketFrameCount;
 - (int)bracketingMode;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)exposureValues;
 - (id)initWithBracketingMode:(int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (bool)lensStabilizationEnabledForClientBracket;
 - (id)manualExposureBracketedCaptureParams;
 - (id)oisBracketedCaptureParams;

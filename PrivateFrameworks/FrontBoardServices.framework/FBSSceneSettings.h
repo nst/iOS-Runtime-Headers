@@ -45,6 +45,7 @@
 + (bool)_isMutable;
 + (id)settings;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -73,15 +74,15 @@
 - (id)transientLocalSettings;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-- (Class)canvasClass;
-- (bool)isUISubclass;
-
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
 - (id)fb_fallbackSpecification;
 - (bool)fb_isUnderLock;
 - (bool)isEffectivelyBackgrounded;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
+- (Class)canvasClass;
+- (bool)isUISubclass;
 
 @end

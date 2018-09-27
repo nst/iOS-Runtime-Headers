@@ -9,6 +9,7 @@
 }
 
 + (id)referenceActionWithName:(id)arg1 duration:(double)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_ensureReferencedAction;

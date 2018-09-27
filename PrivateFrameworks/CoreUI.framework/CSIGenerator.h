@@ -3,8 +3,11 @@
  */
 
 @interface CSIGenerator : NSObject {
+    bool  _allowsDeepmapImageCompression;
+    bool  _allowsHevcCompression;
     bool  _allowsMultiPassEncoding;
     bool  _allowsOptimalRowbytesPacking;
+    bool  _allowsPaletteImageCompression;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -51,6 +54,7 @@
     NSMutableArray * _mipReferences;
     NSDate * _modtime;
     NSString * _name;
+    int  _objectVersion;
     double  _opacity;
     bool  _optOutOfThinning;
     struct CGSize { 
@@ -64,6 +68,7 @@
     unsigned int  _pixelFormat;
     bool  _preservedVectorRepresentation;
     NSData * _rawData;
+    NSDictionary * _renditionProperties;
     unsigned long long  _rowbytes;
     unsigned int  _scaleFactor;
     struct CGSize { 
@@ -72,15 +77,22 @@
     }  _size;
     NSDictionary * _sizesByIndex;
     NSMutableArray * _slices;
+    NSString * _systemColorName;
     long long  _templateRenderingMode;
     long long  _textureFormat;
     long long  _textureInterpretation;
     bool  _textureOpaque;
+    struct { 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
+    }  _transformation;
     NSString * _utiType;
 }
 
+@property (nonatomic) bool allowsDeepmapImageCompression;
+@property (nonatomic) bool allowsHevcCompression;
 @property (nonatomic) bool allowsMultiPassEncoding;
 @property (nonatomic) bool allowsOptimalRowbytesPacking;
+@property (nonatomic) bool allowsPaletteImageCompression;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alphaCroppedFrame;
 @property (nonatomic) int blendMode;
 @property (nonatomic) bool clampMetrics;
@@ -101,12 +113,14 @@
 @property (nonatomic, readonly) NSArray *mipReferences;
 @property (nonatomic, copy) NSDate *modtime;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) int objectVersion;
 @property (nonatomic) double opacity;
 @property (nonatomic) bool optOutOfThinning;
 @property (nonatomic) struct CGSize { double x1; double x2; } originalUncroppedSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } physicalSizeInMeters;
 @property (nonatomic) unsigned int pixelFormat;
 @property (nonatomic) bool preservedVectorRepresentation;
+@property (nonatomic, copy) NSDictionary *renditionProperties;
 @property (nonatomic) unsigned int scaleFactor;
 @property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, copy) NSDictionary *sizesByIndex;
@@ -114,6 +128,7 @@
 @property (nonatomic) long long textureFormat;
 @property (nonatomic) long long textureInterpretation;
 @property (nonatomic) bool textureOpaque;
+@property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } transformation;
 @property (nonatomic, copy) NSString *utiType;
 
 + (int)fileEncoding;
@@ -129,8 +144,11 @@
 - (void)addMetrics:(struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
 - (void)addMipReference:(id)arg1;
 - (void)addSliceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)allowsDeepmapImageCompression;
+- (bool)allowsHevcCompression;
 - (bool)allowsMultiPassEncoding;
 - (bool)allowsOptimalRowbytesPacking;
+- (bool)allowsPaletteImageCompression;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedFrame;
 - (int)blendMode;
 - (bool)clampMetrics;
@@ -146,6 +164,7 @@
 - (id)gradient;
 - (id)initWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 sliceCount:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3;
+- (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3 linkedToSystemColorWithName:(id)arg4;
 - (id)initWithExternalReference:(id)arg1 tags:(id)arg2;
 - (id)initWithInternalReferenceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(short)arg2;
 - (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { double x1; double x2; })arg2;
@@ -164,6 +183,7 @@
 - (id)mipReferences;
 - (id)modtime;
 - (id)name;
+- (int)objectVersion;
 - (double)opacity;
 - (bool)optOutOfThinning;
 - (struct CGSize { double x1; double x2; })originalUncroppedSize;
@@ -171,9 +191,13 @@
 - (unsigned int)pixelFormat;
 - (bool)preservedVectorRepresentation;
 - (id)rawData;
+- (id)renditionProperties;
 - (unsigned int)scaleFactor;
+- (void)setAllowsDeepmapImageCompression:(bool)arg1;
+- (void)setAllowsHevcCompression:(bool)arg1;
 - (void)setAllowsMultiPassEncoding:(bool)arg1;
 - (void)setAllowsOptimalRowbytesPacking:(bool)arg1;
+- (void)setAllowsPaletteImageCompression:(bool)arg1;
 - (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setClampMetrics:(bool)arg1;
@@ -192,12 +216,14 @@
 - (void)setIsVectorBased:(bool)arg1;
 - (void)setModtime:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setObjectVersion:(int)arg1;
 - (void)setOpacity:(double)arg1;
 - (void)setOptOutOfThinning:(bool)arg1;
 - (void)setOriginalUncroppedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPhysicalSizeInMeters:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setPreservedVectorRepresentation:(bool)arg1;
+- (void)setRenditionProperties:(id)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSizesByIndex:(id)arg1;
@@ -205,6 +231,7 @@
 - (void)setTextureFormat:(long long)arg1;
 - (void)setTextureInterpretation:(long long)arg1;
 - (void)setTextureOpaque:(bool)arg1;
+- (void)setTransformation:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setUtiType:(id)arg1;
 - (struct CGSize { double x1; double x2; })size;
 - (id)sizesByIndex;
@@ -212,6 +239,7 @@
 - (long long)textureFormat;
 - (long long)textureInterpretation;
 - (bool)textureOpaque;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })transformation;
 - (id)utiType;
 - (unsigned long long)writeBitmap:(id)arg1 toData:(id)arg2 compress:(bool)arg3;
 - (unsigned long long)writeColorToData:(id)arg1;
@@ -220,6 +248,7 @@
 - (void)writeHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1 toData:(id)arg2;
 - (unsigned long long)writeMultisizeImageSetToData:(id)arg1;
 - (unsigned long long)writeRawDataToData:(id)arg1;
+- (unsigned long long)writeRecognitionObjectToData:(id)arg1;
 - (unsigned long long)writeResourcesToData:(id)arg1;
 - (unsigned long long)writeTextureToData:(id)arg1;
 

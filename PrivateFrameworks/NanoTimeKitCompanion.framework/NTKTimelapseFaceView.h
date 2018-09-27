@@ -6,6 +6,7 @@
     UIView * _bottomGradientView;
     NTKUtilityComplicationFactory * _complicationFactory;
     UIView * _cornerView;
+    unsigned long long  _deviceSizeClass;
     UIColor * _foregroundColor;
     unsigned int  _isComplicationColorApplied;
     unsigned int  _isUsingLegibility;
@@ -20,6 +21,7 @@
 - (void)_applyDataMode;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyScrubbingForegroundColor:(id)arg1 shadowColor:(id)arg2;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationFactory;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
@@ -47,12 +49,13 @@
 - (void)_setDateAttributes:(id)arg1 animated:(bool)arg2;
 - (void)_startScrubbingAnimationFromUIViewAnimateWithDuration;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
+- (bool)_timeLabelUsesLegibility;
 - (void)_unloadSnapshotContentViews;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (id)_viewForEditOption:(id)arg1;
 - (void)dealloc;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
 

@@ -41,7 +41,5 @@
 - (void)setDelegate:(id)arg1;
 - (void)setScreenUpdatesDisabled:(bool)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
-- (bool)shouldAutomaticallyForwardRotationMethods;
-- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 
 @end

@@ -13,6 +13,7 @@
     }  _delegateFlags;
     PUDoubleTapZoomController * _doubleTapZoomController;
     PULongPressDragController * _longPressDragController;
+    UILongPressGestureRecognizer * _longPressGestureRecognizer;
     PUOneUpBarsController * _oneUpBarsController;
     PUTouchingGestureRecognizer * _touchingGestureRecognizer;
 }
@@ -47,6 +48,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)invalidateViewHostingGestureRecognizers;
 - (id)longPressDragController;
+- (id)longPressGestureRecognizer;
 - (id)oneUpBarsController;
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;

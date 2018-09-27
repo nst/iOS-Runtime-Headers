@@ -6,8 +6,8 @@
     NSString * _appletFormat;
     PKCurrencyAmount * _balance;
     bool  _blacklisted;
+    NSArray * _enrouteTransitTypes;
     NSDate * _expirationDate;
-    bool  _inStation;
 }
 
 @property (nonatomic, copy) NSString *appletFormat;
@@ -16,11 +16,14 @@
 @property (nonatomic, readonly) NSString *currencyCode;
 @property (nonatomic, readonly) NSDecimalNumber *decimalTransitBalance;
 @property (nonatomic, readonly) NSString *displayableTransitBalance;
+@property (nonatomic, copy) NSArray *enrouteTransitTypes;
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic, readonly) PKFelicaPassProperties *felicaProperties;
-@property (getter=isInStation, nonatomic) bool inStation;
+@property (getter=isInStation, nonatomic, readonly) bool inStation;
 @property (nonatomic, readonly, copy) NSDecimalNumber *transitBalance;
 @property (nonatomic, readonly, copy) NSString *transitBalanceCurrencyCode;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)passPropertiesForPass:(id)arg1;
 + (bool)supportsSecureCoding;
@@ -33,6 +36,7 @@
 - (id)decimalTransitBalance;
 - (id)displayableTransitBalance;
 - (void)encodeWithCoder:(id)arg1;
+- (id)enrouteTransitTypes;
 - (id)expirationDate;
 - (id)felicaProperties;
 - (id)initWithCoder:(id)arg1;
@@ -42,9 +46,14 @@
 - (void)setAppletFormat:(id)arg1;
 - (void)setBalance:(id)arg1;
 - (void)setBlacklisted:(bool)arg1;
+- (void)setEnrouteTransitTypes:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
-- (void)setInStation:(bool)arg1;
 - (id)transitBalance;
 - (id)transitBalanceCurrencyCode;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (bool)npkHasTransitBalance;
+- (bool)npkIsEnroute;
 
 @end

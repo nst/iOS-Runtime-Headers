@@ -22,10 +22,10 @@
 - (void)_saveVideoAtPath:(id)arg1 properties:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_setIsTakingPhoto:(bool)arg1;
 - (void)batchSavePendingAssetJobs;
-- (void)copyAssetToCameraRoll:(id)arg1;
 - (void)dealloc;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
+- (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 importSessionIdentifier:(id)arg3 importedBy:(short)arg4 alternateImportImageDate:(id)arg5 isPhotoStreamsPublishCandidate:(bool)arg6 avalancheUUID:(id)arg7 destinationAlbumUUID:(id)arg8 completionHandler:(id /* block */)arg9;
 - (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(bool)arg5 avalancheUUID:(id)arg6;
 - (id)init;
 - (id)pathForNewAssetOfType:(short)arg1 extension:(id)arg2;
@@ -51,6 +51,6 @@
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionTarget:(id)arg3 completionSelector:(SEL)arg4 contextInfo:(void*)arg5;
 - (void)setAvalancheInProgress:(bool)arg1 uuid:(id)arg2;
 - (void)set_pendingSaveAssetJobs:(id)arg1;
-- (void)validateAvalanches:(id)arg1;
+- (id)validateAvalanches:(id)arg1;
 
 @end

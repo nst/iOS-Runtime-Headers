@@ -5,10 +5,13 @@
 
 @required
 
+- (UIColor *)baseOverlayColor;
+- (double)baseOverlayTintAlpha;
 - (double)primaryOverlayTintAlpha;
 - (UIColor *)primaryOverlayTintColor;
 - (double)secondaryOverlayTintAlpha;
 - (UIColor *)secondaryOverlayTintColor;
+- (void)setBaseOverlayTintAlpha:(double)arg1;
 - (void)setPrimaryOverlayTintAlpha:(double)arg1;
 - (void)setSecondaryOverlayTintAlpha:(double)arg1;
 

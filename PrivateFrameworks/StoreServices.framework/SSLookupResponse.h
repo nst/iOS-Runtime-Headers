@@ -42,12 +42,10 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (bool)mpFakeCompletionDataForBuys;
-+ (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
 + (bool)mpShowBuysWithNoCompletionOffer;
 + (bool)mpVerboseCMCLogging;
 
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
 - (bool)mpIsPersonalizedOffer;
-- (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 
 @end

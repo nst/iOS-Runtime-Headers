@@ -10,11 +10,14 @@
 @property (nonatomic, retain) UIView *separatorView;
 @property (nonatomic) bool showsSeparator;
 
++ (id)defaultTextColor;
 + (id)reuseIdentifier;
 + (id)titleFont;
 
 - (void).cxx_destruct;
 - (id)_disclosureChevronImage:(bool)arg1;
+- (id)_fontForDetailTextLabel;
+- (id)_fontForTextLabel;
 - (void)_fontSizeDidChange;
 - (bool)_visibleAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;

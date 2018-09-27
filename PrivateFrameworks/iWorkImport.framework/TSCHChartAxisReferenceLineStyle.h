@@ -10,8 +10,8 @@
 @property (nonatomic, copy) TSCHChartAxisID *axisIdentifier;
 @property (nonatomic, copy) NSArray *referenceLineStyles;
 
+- (void).cxx_destruct;
 - (id)axisIdentifier;
-- (void)dealloc;
 - (void)didInitFromSOS;
 - (id)referenceLineStyles;
 - (void)setAxisIdentifier:(id)arg1;

@@ -8,7 +8,7 @@
     NSError * _error;
     bool  _gotFullQualityImage;
     UIImage * _image;
-    PXUIMediaProvider * _mediaProvider;
+    <PXUIImageProvider> * _mediaProvider;
     PHImageRequestOptions * _options;
     long long  _requestID;
     bool  _resultIsInCloud;
@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) bool gotFullQualityImage;
 @property (nonatomic) UIImage *image;
-@property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
+@property (nonatomic, readonly) <PXUIImageProvider> *mediaProvider;
 @property (nonatomic, readonly) PHImageRequestOptions *options;
 @property (nonatomic) long long requestID;
 @property (nonatomic) bool resultIsInCloud;

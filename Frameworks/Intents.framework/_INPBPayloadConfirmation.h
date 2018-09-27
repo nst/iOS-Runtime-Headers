@@ -2,29 +2,27 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBPayloadConfirmation : PBCodable <NSCopying> {
+@interface _INPBPayloadConfirmation : PBCodable <NSCopying, NSSecureCoding, _INPBPayloadConfirmation> {
     _INPBSelectionItem * _confirmationItem;
-    PBUnknownFields * _unknownFields;
+    struct { }  _has;
 }
 
 @property (nonatomic, retain) _INPBSelectionItem *confirmationItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasConfirmationItem;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)confirmationItem;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasConfirmationItem;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setConfirmationItem:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,7 +4,6 @@
 
 @interface PLPhotoEditSource : PLEditSource
 
-- (id)initWithURL:(id)arg1 type:(id)arg2;
-- (id)initWithURL:(id)arg1 type:(id)arg2 image:(id)arg3;
+- (id)initWithURL:(id)arg1 type:(id)arg2 image:(id)arg3 useEmbeddedPreview:(bool)arg4;
 
 @end

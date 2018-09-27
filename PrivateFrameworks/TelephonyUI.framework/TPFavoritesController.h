@@ -8,9 +8,7 @@
     NSCache * _contactCache;
     CNContactStore * _contactStore;
     NSArray * _favoritesEntries;
-    CNFavorites * _favoritesReadManager;
-    CNFavorites * _favoritesWriteManager;
-    NSObject<OS_dispatch_queue> * _favoritesWriteManagerDispatchQueue;
+    CNFavorites * _favoritesManager;
     unsigned long long  _prefetchCount;
     NSObject<OS_dispatch_queue> * _serialDispatchQueue;
     NSCache * _transportNameCache;
@@ -23,9 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *favoritesEntries;
-@property (nonatomic, retain) CNFavorites *favoritesReadManager;
-@property (nonatomic, readonly) CNFavorites *favoritesWriteManager;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *favoritesWriteManagerDispatchQueue;
+@property (nonatomic, readonly) CNFavorites *favoritesManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long prefetchCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialDispatchQueue;
@@ -45,14 +41,12 @@
 - (id)contactStore;
 - (void)dealloc;
 - (id)favoritesEntries;
-- (id)favoritesReadManager;
-- (id)favoritesWriteManager;
-- (id)favoritesWriteManagerDispatchQueue;
+- (id)favoritesManager;
 - (id)fetchContactForFavoritesEntry:(id)arg1;
 - (id)fetchContactForFavoritesEntry:(id)arg1 keyDescriptors:(id)arg2;
 - (id)fetchFavoritesEntries;
 - (id)fetchTransportNameForFavoritesEntry:(id)arg1;
-- (void)handleCNContactStoreDidChangeNotification:(id)arg1;
+- (void)handleContactsFavoritesDidChangeNotification:(id)arg1;
 - (id)init;
 - (id)initWithPrefetchCount:(unsigned long long)arg1;
 - (void)moveEntryAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
@@ -61,7 +55,6 @@
 - (void)removeEntriesAtIndexes:(id)arg1;
 - (id)serialDispatchQueue;
 - (void)setFavoritesEntries:(id)arg1;
-- (void)setFavoritesReadManager:(id)arg1;
 - (id)transportNameCache;
 - (id)transportNameCacheKeyForFavoritesEntry:(id)arg1;
 - (id)transportNameForFavoritesEntry:(id)arg1;

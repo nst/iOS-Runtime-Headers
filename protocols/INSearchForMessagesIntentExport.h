@@ -6,6 +6,7 @@
 @required
 
 - (unsigned long long)attributes;
+- (NSArray *)conversationIdentifiers;
 - (INDateComponentsRange *)dateTimeRange;
 - (NSArray *)identifiers;
 - (id)init;
@@ -14,6 +15,7 @@
 - (NSArray *)searchTerms;
 - (NSArray *)senders;
 - (void)setAttributes:(unsigned long long)arg1;
+- (void)setConversationIdentifiers:(NSArray *)arg1;
 - (void)setDateTimeRange:(INDateComponentsRange *)arg1;
 - (void)setIdentifiers:(NSArray *)arg1;
 - (void)setNotificationIdentifiers:(NSArray *)arg1;

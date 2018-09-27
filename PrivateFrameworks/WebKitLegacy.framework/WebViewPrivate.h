@@ -134,11 +134,11 @@
         struct LayerFlushController {} *m_ptr; 
     }  layerFlushController;
     <WebDeviceOrientationProvider> * m_deviceOrientationProvider;
-    <WebUserMediaClient> * m_userMediaClient;
     bool  mainFrameDocumentReady;
     bool  mainViewIsScrollingOrZooming;
     NSString * mediaStyle;
     bool  needsOneShotDrawingSynchronization;
+    WebFullScreenController * newFullscreenController;
     struct Page { } * page;
     struct CGRect { 
         struct CGPoint { 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISURLRequest : NSObject <NSCoding, NSCopying> {
+@interface ISURLRequest : NSObject <NSCopying, NSSecureCoding> {
     NSLock * _lock;
     SSMutableURLRequestProperties * _properties;
 }
@@ -22,6 +22,7 @@
 @property double timeoutInterval;
 
 + (id)requestWithURL:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)HTTPBody;

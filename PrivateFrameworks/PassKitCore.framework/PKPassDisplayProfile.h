@@ -10,6 +10,7 @@
     PKColor * _labelColor;
     NSData * _manifestHash;
     long long  _passStyle;
+    PKColor * _secondaryBackgroundColor;
     PKColor * _stripColor;
     bool  _tallCode;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) long long layoutMode;
 @property (nonatomic, retain) NSData *manifestHash;
 @property (nonatomic) long long passStyle;
+@property (nonatomic, retain) PKColor *secondaryBackgroundColor;
 @property (nonatomic, readonly) bool showsBackgroundImage;
 @property (nonatomic, readonly) bool showsStripImage;
 @property (nonatomic, retain) PKColor *stripColor;
@@ -42,6 +44,7 @@
 - (long long)layoutMode;
 - (id)manifestHash;
 - (long long)passStyle;
+- (id)secondaryBackgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setHasBackgroundImage:(bool)arg1;
@@ -49,6 +52,7 @@
 - (void)setLabelColor:(id)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setPassStyle:(long long)arg1;
+- (void)setSecondaryBackgroundColor:(id)arg1;
 - (void)setStripColor:(id)arg1;
 - (void)setTallCode:(bool)arg1;
 - (bool)showsBackgroundImage;

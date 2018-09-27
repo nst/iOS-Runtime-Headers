@@ -2,28 +2,27 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXPlaybackCoordinator : NSObject <SXMediaSelectionControllerDataSource, SXMediaSelectionControllerDelegate, SXVideoMetadataProviding, SXVideoPrefetching> {
+@interface SXPlaybackCoordinator : NSObject <SVVideoMetadata> {
     id /* block */  _cancelHandler;
     struct CGSize { 
         double width; 
         double height; 
     }  _dimensions;
     NSError * _error;
-    bool  _hasMediaSelectionOptions;
     NSObject<SXVideoPlaybackHost> * _host;
     bool  _initiatedPlayback;
-    SXKeyValueObserver * _muteStateObserver;
+    SVKeyValueObserver * _muteStateObserver;
     bool  _muted;
     NSHashTable * _observers;
     bool  _playbackBufferFull;
-    SXKeyValueObserver * _playbackBufferFullObserver;
+    SVKeyValueObserver * _playbackBufferFullObserver;
     bool  _playbackLikelyToKeepUp;
-    SXKeyValueObserver * _playbackLikelyToKeepUpObserver;
+    SVKeyValueObserver * _playbackLikelyToKeepUpObserver;
     bool  _playbackRequested;
     SXAVPlayer * _player;
     <SXAVPlayerFactory> * _playerFactory;
-    SXKeyValueObserver * _playerItemPresentationSizeObserver;
-    SXKeyValueObserver * _readyForDisplayObserver;
+    SVKeyValueObserver * _playerItemPresentationSizeObserver;
+    SVKeyValueObserver * _readyForDisplayObserver;
     unsigned long long  _state;
     <SXVideoProviding> * _video;
 }
@@ -35,24 +34,23 @@
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) double framerate;
-@property (nonatomic) bool hasMediaSelectionOptions;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) NSObject<SXVideoPlaybackHost> *host;
 @property (nonatomic) bool initiatedPlayback;
 @property (nonatomic, readonly) NSArray *loadedTimeRanges;
 @property (nonatomic, readonly) double loadingProgress;
-@property (nonatomic, retain) SXKeyValueObserver *muteStateObserver;
+@property (nonatomic, retain) SVKeyValueObserver *muteStateObserver;
 @property (nonatomic) bool muted;
 @property (nonatomic, readonly) NSHashTable *observers;
 @property (nonatomic, readonly) bool playbackBufferFull;
-@property (nonatomic, retain) SXKeyValueObserver *playbackBufferFullObserver;
+@property (nonatomic, retain) SVKeyValueObserver *playbackBufferFullObserver;
 @property (nonatomic, readonly) bool playbackLikelyToKeepUp;
-@property (nonatomic, retain) SXKeyValueObserver *playbackLikelyToKeepUpObserver;
+@property (nonatomic, retain) SVKeyValueObserver *playbackLikelyToKeepUpObserver;
 @property (nonatomic) bool playbackRequested;
 @property (nonatomic, retain) SXAVPlayer *player;
 @property (nonatomic, readonly) <SXAVPlayerFactory> *playerFactory;
-@property (nonatomic, retain) SXKeyValueObserver *playerItemPresentationSizeObserver;
-@property (nonatomic, retain) SXKeyValueObserver *readyForDisplayObserver;
+@property (nonatomic, retain) SVKeyValueObserver *playerItemPresentationSizeObserver;
+@property (nonatomic, retain) SVKeyValueObserver *readyForDisplayObserver;
 @property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double time;
@@ -71,20 +69,14 @@
 - (double)duration;
 - (id)error;
 - (double)framerate;
-- (bool)hasMediaSelectionOptions;
 - (id)host;
 - (id)initWithVideo:(id)arg1 playerFactory:(id)arg2;
 - (bool)initiatedPlayback;
 - (void)load;
-- (void)loadAvailableMediaCharacteristics;
 - (void)loadVideoIfNeeded;
 - (id)loadedTimeRanges;
 - (void)loadedTimeRangesChanged;
 - (double)loadingProgress;
-- (id)mediaSelectionController:(id)arg1 mediaSelectionGroupWithCharacteristic:(id)arg2;
-- (id)mediaSelectionController:(id)arg1 preferredMediaSelectionOptionInMediaSelectionGroup:(id)arg2;
-- (void)mediaSelectionController:(id)arg1 selectMediaSelectionOption:(id)arg2 inMediaSelectionGroup:(id)arg3;
-- (id)mediaSelectionController:(id)arg1 selectedMediaSelectionOptionInMediaSelectionGroup:(id)arg2;
 - (void)muteStateChanged;
 - (id)muteStateObserver;
 - (bool)muted;
@@ -114,7 +106,6 @@
 - (void)setCancelHandler:(id /* block */)arg1;
 - (void)setDimensions:(struct CGSize { double x1; double x2; })arg1;
 - (void)setError:(id)arg1;
-- (void)setHasMediaSelectionOptions:(bool)arg1;
 - (void)setHost:(id)arg1;
 - (void)setInitiatedPlayback:(bool)arg1;
 - (void)setMuteStateObserver:(id)arg1;
@@ -132,7 +123,6 @@
 - (double)time;
 - (void)timeElapsed:(double)arg1 duration:(double)arg2;
 - (double)timePlayed;
-- (void)updateMediaSelectionOptionAvailability;
 - (id)video;
 - (double)volume;
 

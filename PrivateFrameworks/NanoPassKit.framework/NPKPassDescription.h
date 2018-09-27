@@ -189,7 +189,6 @@
 - (void)setUniqueID:(id)arg1;
 - (unsigned long long)settings;
 - (long long)style;
-- (bool)supportsExpressPassType:(long long)arg1;
 - (bool)supportsInAppPaymentOnNetworks:(id)arg1 capabilities:(unsigned long long)arg2 issuerCountryCodes:(id)arg3 paymentApplicationStates:(id)arg4;
 - (bool)supportsInAppPaymentOnNetworks:(id)arg1 issuerCountryCodes:(id)arg2;
 - (id)transitAppletState;

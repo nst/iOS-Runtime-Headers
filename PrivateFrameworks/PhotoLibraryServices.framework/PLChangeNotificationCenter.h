@@ -56,6 +56,7 @@
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
     }  _momentsContent;
+    NSObject<OS_dispatch_queue> * _notificationHandlingQueue;
     NSMutableSet * _overloadedObjects;
     NSDictionary * _remoteNotificationData;
     NSMutableArray * _snapshots;
@@ -67,7 +68,7 @@
 + (id)allManagedObjectKeysStrategy;
 + (id)defaultCenter;
 + (void)forceFetchingAlbumReload;
-+ (void)getInsertedAssetCount:(unsigned long long*)arg1 deletedAssetCount:(unsigned long long*)arg2 updatedAssets:(id)arg3 fromContextDidChangeNotification:(id)arg4;
++ (void)getInsertedAssetCount:(unsigned long long*)arg1 deletedAssetCount:(unsigned long long*)arg2 fromContextDidChangeNotification:(id)arg3;
 
 - (id)_attributesOfInterestForObject:(id)arg1;
 - (void)_cleanupState;
@@ -122,6 +123,7 @@
 - (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(bool)arg3 isCoalescedEvent:(bool)arg4;
 - (void)managedObjectContextWasOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
 - (void)managedObjectContextWillBeOverloaded:(id)arg1 withNotificationData:(id)arg2 usingObjectIDs:(bool)arg3;
+- (id)observeCameraPreviewWellImageChangeOnQueue:(id)arg1 block:(id /* block */)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)postShouldReloadNotification;
 - (void)processContextDidChangeNotification:(id)arg1;

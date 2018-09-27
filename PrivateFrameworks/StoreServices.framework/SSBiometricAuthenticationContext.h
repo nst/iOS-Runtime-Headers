@@ -12,6 +12,7 @@
     bool  _didAuthenticate;
     bool  _didBuyParamsChange;
     bool  _didFallbackToPassword;
+    bool  _isExtendedAction;
     bool  _isIdentityMapInvalid;
     bool  _isPayment;
     NSLock * _lock;
@@ -22,6 +23,8 @@
     bool  _shouldSendFallbackHeader;
     NSString * _signature;
     NSString * _userAgent;
+    NSString * _xAppleAMDHeader;
+    NSString * _xAppleAMDMHeader;
 }
 
 @property (copy) NSNumber *accountIdentifier;
@@ -36,6 +39,7 @@
 @property bool didBuyParamsChange;
 @property bool didFallbackToPassword;
 @property (readonly) unsigned long long hash;
+@property bool isExtendedAction;
 @property bool isIdentityMapInvalid;
 @property bool isPayment;
 @property (copy) NSString *passwordEquivalentToken;
@@ -46,6 +50,8 @@
 @property (copy) NSString *signature;
 @property (readonly) Class superclass;
 @property (copy) NSString *userAgent;
+@property (copy) NSString *xAppleAMDHeader;
+@property (copy) NSString *xAppleAMDMHeader;
 
 - (void).cxx_destruct;
 - (id)accountIdentifier;
@@ -61,6 +67,7 @@
 - (bool)didFallbackToPassword;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
+- (bool)isExtendedAction;
 - (bool)isIdentityMapInvalid;
 - (bool)isPayment;
 - (id)passwordEquivalentToken;
@@ -75,6 +82,7 @@
 - (void)setDidAuthenticate:(bool)arg1;
 - (void)setDidBuyParamsChange:(bool)arg1;
 - (void)setDidFallbackToPassword:(bool)arg1;
+- (void)setIsExtendedAction:(bool)arg1;
 - (void)setIsIdentityMapInvalid:(bool)arg1;
 - (void)setIsPayment:(bool)arg1;
 - (void)setPasswordEquivalentToken:(id)arg1;
@@ -84,9 +92,13 @@
 - (void)setShouldSendFallbackHeader:(bool)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setUserAgent:(id)arg1;
+- (void)setXAppleAMDHeader:(id)arg1;
+- (void)setXAppleAMDMHeader:(id)arg1;
 - (bool)shouldContinueTouchIDSession;
 - (bool)shouldSendFallbackHeader;
 - (id)signature;
 - (id)userAgent;
+- (id)xAppleAMDHeader;
+- (id)xAppleAMDMHeader;
 
 @end

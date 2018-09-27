@@ -21,7 +21,7 @@
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
-+ (id)entityKeyForPropertyKey:(id)arg1;
++ (id)entityKeyMap;
 + (id)fetchEmptyFaceGroupsWithOptions:(id)arg1;
 + (id)fetchFaceGroupsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFaceGroupsGroupedByFaceLocalIdentifierForFaces:(id)arg1 options:(id)arg2;

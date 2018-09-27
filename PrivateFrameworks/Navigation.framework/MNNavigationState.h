@@ -23,7 +23,6 @@
 
 - (void).cxx_destruct;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
-- (void)acquireDesiredResourcePolicy;
 - (void)addCommuteDestinationSuggestion:(id)arg1;
 - (void)changeSettings:(id)arg1;
 - (void)confirmDestination:(id)arg1;

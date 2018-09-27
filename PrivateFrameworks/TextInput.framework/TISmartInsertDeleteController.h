@@ -10,7 +10,7 @@
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, readonly) TITextInputTraits *textInputTraits;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithTextInputTraits:(id)arg1;
 - (bool)isEnabled;
 - (void)setEnabled:(bool)arg1;

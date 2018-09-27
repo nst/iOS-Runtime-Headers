@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSpeakableString : NSObject <INSpeakable, INSpeakableStringExport, NSSecureCoding> {
+@interface INSpeakableString : NSObject <INSpeakable, INSpeakableStringExport, NSCopying, NSSecureCoding> {
     NSArray * _alternativeSpeakableMatches;
     NSString * _pronunciationHint;
     NSString * _spokenPhrase;
@@ -24,6 +24,8 @@
 - (void).cxx_destruct;
 - (id)_effectiveNSStringValue;
 - (id)_initWithVocabularyIdentifier:(id)arg1 spokenPhrase:(id)arg2 pronunciationHint:(id)arg3 alternativeMatches:(id)arg4;
+- (id)_intents_localizedCopyForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (id)alternativeSpeakableMatches;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,6 +35,7 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 spokenPhrase:(id)arg2 pronunciationHint:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 string:(id)arg2;
 - (id)initWithSpokenPhrase:(id)arg1;
 - (id)initWithVocabularyIdentifier:(id)arg1 spokenPhrase:(id)arg2 pronunciationHint:(id)arg3;
 - (bool)isEqual:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)setVocabularyIdentifier:(id)arg1;
 - (id)spokenPhrase;
 - (id)spokenPhrases;
+- (id)string;
 - (id)vocabularyIdentifier;
 
 @end

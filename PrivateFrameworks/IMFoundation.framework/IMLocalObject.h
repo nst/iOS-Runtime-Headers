@@ -23,6 +23,7 @@
 
 - (void)_cancelHandlerCompleted;
 - (void)_clearPort:(bool)arg1;
+- (void)_clearPort:(bool)arg1 signalRunLoopIfNeeded:(bool)arg2;
 - (id)_currentMessageContext;
 - (void)_enqueueInvocation:(id)arg1;
 - (void)_enqueueInvocation:(id)arg1 xpcMessage:(id)arg2;

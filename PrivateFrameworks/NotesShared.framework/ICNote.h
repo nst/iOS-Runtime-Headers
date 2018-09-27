@@ -13,6 +13,7 @@
     NSUUID * _uuid;
     TTVectorMultiTimestamp * archivedTimestamp;
     NSData * decryptedData;
+    bool  isRecoveringCryptoWrappedKey;
     <ICNoteMergeabilityDelegate> * mergeabilityDelegate;
     bool  needsRefresh;
     bool  needsToSaveLastViewedTimestamp;
@@ -39,6 +40,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isModernNote;
 @property (nonatomic) bool isPinned;
+@property bool isRecoveringCryptoWrappedKey;
 @property (nonatomic, retain) NSDate *lastNotifiedDate;
 @property (nonatomic, copy) TTVectorMultiTimestamp *lastNotifiedTimestamp;
 @property (nonatomic, retain) NSData *lastNotifiedTimestampData;
@@ -195,6 +197,7 @@
 - (bool)isHiddenFromSearch;
 - (bool)isInICloudAccount;
 - (bool)isModernNote;
+- (bool)isRecoveringCryptoWrappedKey;
 - (bool)isSharedViaICloud;
 - (bool)isVisible;
 - (id)lastNotifiedTimestamp;
@@ -236,6 +239,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeForTitle:(bool*)arg1;
 - (id)recordType;
 - (id)recordZoneName;
+- (void)recoverMissingCryptoWrappedKeyIfNecessaryWithMasterKey:(id)arg1;
 - (void)refreshNoteTextFromDataStore;
 - (void)regenerateTitle:(bool)arg1 snippet:(bool)arg2;
 - (void)regenerateTitleAndSnippetIfNecessaryForEdit:(unsigned long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 changeInLength:(long long)arg3;
@@ -264,6 +268,7 @@
 - (void)setDecryptedData:(id)arg1;
 - (void)setDocument:(id)arg1;
 - (void)setFolder:(id)arg1;
+- (void)setIsRecoveringCryptoWrappedKey:(bool)arg1;
 - (void)setLastNotifiedTimestamp:(id)arg1;
 - (void)setLastViewedTimestamp:(id)arg1;
 - (void)setLegacyManagedObjectID:(id)arg1;
@@ -361,6 +366,7 @@
 - (void)textStorageWillProcessEditing:(id)arg1;
 - (id)textStorageWithoutCreating;
 - (struct UIImage { Class x1; }*)thumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 imageScaling:(unsigned long long*)arg3 showAsFileIcon:(bool*)arg4 isMovie:(bool*)arg5 movieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6;
+- (struct UIImage { Class x1; }*)thumbnailImageWithMinSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 imageScaling:(unsigned long long*)arg3 showAsFileIcon:(bool*)arg4 isMovie:(bool*)arg5 movieDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg6 attachment:(id*)arg7;
 - (id)uiAttributedString;
 - (void)updateModificationDateAndChangeCount;
 - (void)updateModificationDateAndChangeCountAndSaveAfterDelay;

@@ -43,6 +43,7 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateObject;
+- (bool)_isValidObject;
 - (void)_prepareForLocalExtraction:(id /* block */)arg1;
 - (void)_prepareForRemoteExtraction:(id /* block */)arg1;
 - (void)_setUpWithPath:(id)arg1 options:(id)arg2;
@@ -50,6 +51,7 @@
 - (bool)consumeExtractedDataIfNeeded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
+- (id)description;
 - (bool)doesConsumeExtractedData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;

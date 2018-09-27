@@ -17,10 +17,10 @@
 @property (nonatomic, readonly) double totalElapsedTime;
 @property (nonatomic, readonly) double totalElapsedUserTime;
 
+- (void).cxx_destruct;
 - (double)_elapsedCPUTime;
 - (void)_getApplicationCPUTimesForUser:(double*)arg1 system:(double*)arg2 idle:(double*)arg3;
 - (void)_hostwideUserElapsedCPUTime:(double*)arg1 systemElapsedCPUTime:(double*)arg2 idleElapsedCPUTime:(double*)arg3;
-- (void)dealloc;
 - (id)descriptionForCrashReport;
 - (id)initWithTaskNameRight:(id)arg1;
 - (double)totalElapsedIdleTime;

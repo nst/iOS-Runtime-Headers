@@ -3,30 +3,18 @@
  */
 
 @interface CRVehicleInformation : NSObject {
-    AVExternalDevice * _externalDevice;
-    int  _mapsAmbientBrightnessNotifyToken;
-    unsigned long long  _mapsFallbackAmbientBrightness;
+    CARSessionStatus * _currentSessionStatus;
 }
 
+@property (nonatomic, retain) CARSessionStatus *currentSessionStatus;
 @property (nonatomic, readonly) unsigned long long driverPosition;
-@property (nonatomic, retain) AVExternalDevice *externalDevice;
-@property (nonatomic, readonly) unsigned long long interactionRestrictions;
-@property (nonatomic) unsigned long long mapsFallbackAmbientBrightness;
 @property (nonatomic, readonly) unsigned long long vehicleAmbientBrightness;
 
 - (void).cxx_destruct;
-- (void)_fetchMapsFallbackAmbientBrightnessWithToken:(int)arg1;
-- (void)_handleLimitedUIChanged:(id)arg1;
-- (void)_handleNightModeChanged:(id)arg1;
-- (void)_screenDidUpdate:(id)arg1;
-- (void)dealloc;
+- (id)currentSessionStatus;
 - (unsigned long long)driverPosition;
-- (id)externalDevice;
 - (id)init;
-- (unsigned long long)interactionRestrictions;
-- (unsigned long long)mapsFallbackAmbientBrightness;
-- (void)setExternalDevice:(id)arg1;
-- (void)setMapsFallbackAmbientBrightness:(unsigned long long)arg1;
+- (void)setCurrentSessionStatus:(id)arg1;
 - (unsigned long long)vehicleAmbientBrightness;
 
 @end

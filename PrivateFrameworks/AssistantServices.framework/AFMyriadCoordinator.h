@@ -4,17 +4,22 @@
 
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol> {
     bool  _BTLEReady;
+    float  _advertInterval;
     AFMyriadEmergencyCallPunchout * _callPunchout;
     struct __CFNotificationCenter { } * _center;
+    bool  _clientDoneRespondingToSlowdown;
     bool  _clientIsDirectActivating;
     bool  _clientIsListeningAfterRecentWin;
+    bool  _clientIsRespondingToSlowdown;
     bool  _clientIsWatchActivation;
     bool  _clientIsWatchTrumpPromote;
     bool  _clientLostDueToTrumping;
     bool  _clientRecentlyLostElection;
+    int  _constantGoodness;
     bool  _coordinationEnabled;
     _DKKnowledgeStore * _coreDuetStore;
     NSDateFormatter * _dateFormat;
+    float  _delayTarget;
     id  _delegate;
     NSUUID * _designatedSelfID;
     int  _deviceAdjust;
@@ -34,6 +39,8 @@
     unsigned short  _lastPHash;
     double  _lastSiriActivationTime;
     bool  _listenTimerIsRunning;
+    AFMyriadRecord * _maxSlowdownRecord;
+    NSMutableDictionary * _multipleContinuations;
     NSObject<OS_dispatch_queue> * _myriadReadinessQueue;
     unsigned long long  _myriadState;
     NSObject<OS_dispatch_queue> * _myriadTimerManagementQueue;
@@ -43,13 +50,16 @@
     int  _nTimesContinued;
     int  _nTimesExtended;
     unsigned long long  _nextState;
+    AFMyriadStereoPairManager * _pairManager;
     AFPowerAssertionManager * _powerAssertionManager;
     NSData * _previousAdvertisedData;
     unsigned long long  _previousState;
     NSMutableDictionary * _previousTrumps;
     NSMutableDictionary * _replies;
     NSMutableDictionary * _replyCounts;
+    int  _slowdownMsecs;
     bool  _supportsExtended;
+    int  _testInducedSlowdownMsecs;
     NSObject<OS_dispatch_source> * _timer;
     NSString * _timerLabel;
     NSObject<OS_dispatch_source> * _timerSource;
@@ -72,9 +82,11 @@
 - (void).cxx_destruct;
 - (void)_CreateDispatchTimerFor:(double)arg1 toExecute:(id /* block */)arg2;
 - (void)_CreateDispatchTimerForEvent:(id)arg1 toExecute:(id /* block */)arg2;
+- (void)_adjustActionWindowsFromSlowdown:(int)arg1;
 - (void)_advertise:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3 andMoveTo:(unsigned long long)arg4;
 - (void)_advertise:(id)arg1 andMoveTo:(unsigned long long)arg2;
 - (void)_advertiseIndefinite:(id)arg1;
+- (void)_advertiseSlowdown;
 - (void)_advertiseSuppressTriggerInOutput;
 - (void)_advertiseTrigger;
 - (void)_advertiseWith:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3 thenExecute:(id /* block */)arg4;
@@ -88,6 +100,7 @@
 - (void)_initDeviceClassAndAdjustments;
 - (void)_initializeTimer;
 - (bool)_isAPhone:(unsigned char)arg1;
+- (void)_loseElection;
 - (bool)_okayToSuppressOnOutput;
 - (void)_readDefaults;
 - (void)_resetActionWindows;
@@ -142,8 +155,9 @@
 - (void)resetReplies;
 - (id)responseObject:(unsigned short)arg1;
 - (void)setInTask:(bool)arg1;
-- (void)setupAdvIntervalsInDelay:(float*)arg1 interval:(float*)arg2;
+- (void)setupAdvIntervalsInDelay:(float*)arg1 interval:(float*)arg2 withSlowdown:(int)arg3;
 - (void)setupEnabled:(bool)arg1;
+- (id)slowdownRecord:(unsigned short)arg1;
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
@@ -152,6 +166,7 @@
 - (void)startAdvertisingFromOutgoingTrigger;
 - (void)startAdvertisingFromVoiceTrigger;
 - (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
+- (void)startAdvertisingSlowdown:(unsigned short)arg1;
 - (void)startListening;
 - (void)startResponseAdvertising:(unsigned short)arg1;
 - (void)startWatchAdvertisingFromDirectTrigger;

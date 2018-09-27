@@ -16,6 +16,7 @@
     bool  hasStats;
     bool  isHistorical;
     bool  isInstant;
+    NSString * knowledgeBaseMetadataClass;
     NSString * knowledgeBaseName;
     double  maxLatency;
     NSString * name;
@@ -23,6 +24,7 @@
     long long  pollingPeriod;
     bool  setupOnDemand;
     long long  sharingPolicy;
+    bool  shouldSaveCurrentEventOnShutdown;
     long long  statisticsType;
     double  temporalPrecision;
     double  timeToLive;
@@ -43,6 +45,7 @@
 @property (nonatomic, readonly) bool isHistorical;
 @property (nonatomic, readonly) bool isInstant;
 @property (nonatomic, readonly) NSString *keyPathString;
+@property (nonatomic, readonly) NSString *knowledgeBaseMetadataClass;
 @property (nonatomic, readonly) NSString *knowledgeBaseName;
 @property (nonatomic, readonly) double maxLatency;
 @property (nonatomic, readonly) NSString *name;
@@ -50,6 +53,7 @@
 @property (nonatomic, readonly) long long pollingPeriod;
 @property (nonatomic, readonly) bool setupOnDemand;
 @property (nonatomic, readonly) long long sharingPolicy;
+@property (nonatomic, readonly) bool shouldSaveCurrentEventOnShutdown;
 @property (nonatomic, readonly) long long statisticsType;
 @property (nonatomic, readonly) double temporalPrecision;
 @property (nonatomic, readonly) double timeToLive;
@@ -74,6 +78,7 @@
 - (bool)isHistorical;
 - (bool)isInstant;
 - (id)keyPathString;
+- (id)knowledgeBaseMetadataClass;
 - (id)knowledgeBaseName;
 - (double)maxLatency;
 - (id)name;
@@ -81,6 +86,7 @@
 - (long long)pollingPeriod;
 - (bool)setupOnDemand;
 - (long long)sharingPolicy;
+- (bool)shouldSaveCurrentEventOnShutdown;
 - (long long)statisticsType;
 - (double)temporalPrecision;
 - (double)timeToLive;

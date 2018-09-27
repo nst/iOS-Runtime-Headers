@@ -3,6 +3,7 @@
  */
 
 @interface _HKSourceFilter : _HKFilter {
+    bool  _includesLocalDevice;
     unsigned long long  _operatorType;
     NSSet * _sources;
 }

@@ -16,6 +16,7 @@
     unsigned long long  _firmwareVersion;
     unsigned long long  _hardwareVersion;
     NSString * _identifier;
+    bool  _jcopTooOld;
     NSData * _manifestQuery;
     unsigned long long  _migrationContext;
     NSNumber * _migrationInstances;
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) unsigned long long firmwareVersion;
 @property (nonatomic, readonly) unsigned long long hardwareVersion;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) bool jcopTooOld;
 @property (nonatomic, readonly) NSData *manifestQuery;
 @property (nonatomic, readonly) unsigned long long migrationContext;
 @property (nonatomic, readonly) NSNumber *migrationInstances;
@@ -97,6 +99,7 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (bool)jcopTooOld;
 - (id)manifestQuery;
 - (unsigned long long)migrationContext;
 - (id)migrationInstances;

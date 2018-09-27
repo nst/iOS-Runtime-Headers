@@ -5,7 +5,9 @@
 @interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView> {
     NTKColoringImageView * _backgroundImageView;
     UIColor * _color;
+    CLKDevice * _device;
     UIImageView * _foregroundAccentImageView;
+    UIColor * _foregroundColor;
     NTKColoringImageView * _foregroundImageView;
     CLKImageProvider * _imageProvider;
     double  _imageScaleFactor;
@@ -25,6 +27,7 @@
 @property (nonatomic, readonly) UIColor *contentColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIColor *foregroundColor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CLKImageProvider *imageProvider;
 @property (nonatomic) bool legibilityEnabled;
@@ -49,6 +52,7 @@
 - (void)_updateShadowViewImages;
 - (id)color;
 - (id)contentColor;
+- (id)foregroundColor;
 - (bool)hasMonochromeImage;
 - (id)imageProvider;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -57,6 +61,7 @@
 - (double)multicolorAlpha;
 - (id)overrideColor;
 - (void)setColor:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setLegibilityEnabled:(bool)arg1;
 - (void)setMulticolorAlpha:(double)arg1;

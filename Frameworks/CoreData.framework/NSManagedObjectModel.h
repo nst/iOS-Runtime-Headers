@@ -3,11 +3,11 @@
  */
 
 @interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration, NSSecureCoding> {
+    id * _additionalPrivateIvars;
     NSMutableDictionary * _configurations;
     id  _dataForOptimization;
     NSMutableDictionary * _entities;
     NSMutableDictionary * _fetchRequestTemplates;
-    id  _localizationPolicy;
     struct __managedObjectModelFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _isImmutable : 1; 
@@ -20,6 +20,7 @@
     NSSet * _versionIdentifiers;
 }
 
+@property (setter=_setModelsReferenceIDOffset:, nonatomic) long long _modelsReferenceIDOffset;
 @property (readonly) NSArray *configurations;
 @property (retain) NSArray *entities;
 @property (readonly, copy) NSDictionary *entitiesByName;
@@ -62,6 +63,7 @@
 - (id)_localizationPolicy;
 - (void)_markTombstones;
 - (id)_modelForVersionHashes:(id)arg1;
+- (long long)_modelsReferenceIDOffset;
 - (id)_optimizedEncoding:(id*)arg1;
 - (id)_precomputedKeysForEntity:(id)arg1;
 - (void)_removeEntities:(id)arg1 fromConfiguration:(id)arg2;
@@ -71,6 +73,7 @@
 - (void)_setIsEditable:(bool)arg1;
 - (void)_setIsEditable:(bool)arg1 optimizationStyle:(unsigned long long)arg2;
 - (void)_setLocalizationPolicy:(id)arg1;
+- (void)_setModelsReferenceIDOffset:(long long)arg1;
 - (void)_skipUserInfoTombstones:(bool)arg1;
 - (id)_sortedEntitiesForConfiguration:(id)arg1;
 - (void)_stripForMigration;

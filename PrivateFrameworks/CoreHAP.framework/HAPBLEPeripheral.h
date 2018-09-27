@@ -5,6 +5,7 @@
 @interface HAPBLEPeripheral : HMFObject {
     NSString * _accessoryName;
     NSNumber * _advInterval;
+    NSNumber * _averageRSSI;
     NSNumber * _category;
     NSNumber * _compatibleVersion;
     NSNumber * _configNumber;
@@ -20,6 +21,7 @@
 
 @property (nonatomic, retain) NSString *accessoryName;
 @property (nonatomic, retain) NSNumber *advInterval;
+@property (nonatomic, retain) NSNumber *averageRSSI;
 @property (nonatomic, retain) NSNumber *category;
 @property (nonatomic, retain) NSNumber *compatibleVersion;
 @property (nonatomic, retain) NSNumber *configNumber;
@@ -33,8 +35,10 @@
 @property (nonatomic, retain) NSNumber *stateNumber;
 
 - (void).cxx_destruct;
+- (void)_resetAverageRSSI;
 - (id)accessoryName;
 - (id)advInterval;
+- (id)averageRSSI;
 - (id)category;
 - (id)compatibleVersion;
 - (id)configNumber;
@@ -50,6 +54,7 @@
 - (id)peripheralUUID;
 - (void)setAccessoryName:(id)arg1;
 - (void)setAdvInterval:(id)arg1;
+- (void)setAverageRSSI:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setCompatibleVersion:(id)arg1;
 - (void)setConfigNumber:(id)arg1;

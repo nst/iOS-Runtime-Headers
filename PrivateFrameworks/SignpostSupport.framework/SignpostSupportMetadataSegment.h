@@ -19,12 +19,12 @@
 // Image: /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
 - (id)argument;
 - (id)initWithArgumentObject:(id)arg1 typeNamespace:(id)arg2 type:(id)arg3 tokens:(id)arg4 stringPrefix:(id)arg5;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)placeholderTokens;
-- (id)serializeableDictionary;
 - (id)stringPrefix;
 - (id)type;
 - (id)typeNamespace;

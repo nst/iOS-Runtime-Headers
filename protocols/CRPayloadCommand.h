@@ -5,7 +5,7 @@
 
 @required
 
-- (<NSSecureCoding> *)payload;
-- (void)setPayload:(id <NSSecureCoding>)arg1;
+- (<NSSecureCoding><NSCopying> *)payload;
+- (void)setPayload:(id <NSSecureCoding><NSCopying>)arg1;
 
 @end

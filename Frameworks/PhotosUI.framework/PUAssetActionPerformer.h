@@ -41,6 +41,7 @@
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 - (void)performWithCompletionHandler:(id /* block */)arg1;
+- (void)preheatUserInteractionTask;
 - (bool)presentViewController:(id)arg1;
 - (id)presentedViewController;
 - (void)setActionPerformerLog:(id)arg1;

@@ -2,7 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
  */
 
-@interface MUPDFContentViewController : MUContentViewController <MUContentViewControllerProtocol, PDFAKControllerDelegateProtocol, PDFViewDelegatePrivate> {
+@interface MUPDFContentViewController : MUContentViewController <MUContentViewControllerProtocol, PDFAKControllerDelegateProtocol, PDFViewDelegatePrivate, _UIViewBoundingPathChangeObserver> {
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _cachedThumnailViewInsets;
     bool  _constraintsAreHorizontal;
     bool  _didSetup;
     struct UIEdgeInsets { 
@@ -33,6 +39,7 @@
     double  _viewTransitionPreviousScale;
 }
 
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cachedThumnailViewInsets;
 @property (nonatomic) bool centersIgnoringContentInsets;
 @property bool constraintsAreHorizontal;
 @property (nonatomic, readonly) UIScrollView *contentViewScrollView;
@@ -65,18 +72,21 @@
 
 - (void).cxx_destruct;
 - (bool)PDFView:(id)arg1 shouldHandleLink:(id)arg2;
+- (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(bool)arg2;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_compensatingAffineTransformForPage:(id)arg1;
 - (void)_createPDFView;
 - (struct CGSize { double x1; double x2; })_medianSizeForCurrentDocumentInPDFViewWithGetter:(id /* block */)arg1;
 - (void)_prepareToRotate;
 - (void)_recoverFromRotation;
 - (void)_teardownPDFViewIfNecessary;
+- (bool)_updateCachedThumbnailViewInsetsDidChangeRight;
 - (void)_updateMinMaxZoomFactor;
 - (void)_updatePDFViewDisplayMode;
 - (void)_updatePageNumberOverlayToPage:(unsigned long long)arg1 animate:(bool)arg2;
 - (void)_updateThumbnailViewAppearance;
 - (void)_updateThumbnailViewHolderConstraints;
 - (void)_userChangedScrollViewMagnificationNotification:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cachedThumnailViewInsets;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (bool)constraintsAreHorizontal;
 - (struct CGSize { double x1; double x2; })contentSize;
@@ -111,6 +121,7 @@
 - (void)penStrokeCompletedForAnnotationController:(id)arg1;
 - (id)popoverPresentingViewControllerForAnnotationController:(id)arg1;
 - (void)positionSketchOverlay:(id)arg1 forAnnotationController:(id)arg2;
+- (void)setCachedThumnailViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setConstraintsAreHorizontal:(bool)arg1;
 - (void)setDidSetup:(bool)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

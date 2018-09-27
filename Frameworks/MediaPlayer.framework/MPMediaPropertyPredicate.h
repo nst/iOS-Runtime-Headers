@@ -16,6 +16,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id value;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2;
 + (id)predicateWithValue:(id)arg1 forProperty:(id)arg2 comparisonType:(long long)arg3;
 + (bool)supportsSecureCoding;
@@ -38,5 +40,10 @@
 - (void)setProperty:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
++ (long long)vui_mediaPropertyPredicateComparisonWithPredicateOperatorType:(unsigned long long)arg1;
++ (id)vui_mediaPropertyPredicateWithProperty:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3;
 
 @end

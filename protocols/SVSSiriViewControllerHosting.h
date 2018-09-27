@@ -14,13 +14,11 @@
 - (void)serviceDidDetectMicButtonLongPressBegan;
 - (void)serviceDidDetectMicButtonLongPressEnded;
 - (void)serviceDidDetectMicButtonTap;
-- (void)serviceDidDismissBugReporter;
 - (void)serviceDidDismissViewControllerWithStatusBarStyle:(long long)arg1;
 - (void)serviceDidEndTaptoEdit;
 - (void)serviceDidEnterUITrackingMode;
 - (void)serviceDidExitUITrackingMode;
 - (void)serviceDidFinishTest:(NSString *)arg1;
-- (void)serviceDidPresentBugReporter;
 - (void)serviceDidPresentConversationFromBreadcrumb;
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidPresentViewControllerWithStatusBarStyle:(long long)arg1;
@@ -29,6 +27,7 @@
 - (void)serviceDidRequestKeyboard:(bool)arg1;
 - (void)serviceDidRequestKeyboard:(bool)arg1 minimized:(bool)arg2;
 - (void)serviceDidResetTextInput;
+- (void)serviceFailTest:(NSString *)arg1 withReason:(NSString *)arg2;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(void *)arg1 withURL:(void *)arg2 launchOptions:(void *)arg3 replyHandler:(void *)arg4; // needs 4 arg types, found 9: NSString *, NSURL *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)serviceOpenURL:(NSURL *)arg1 appBundleID:(NSString *)arg2 allowSiriDismissal:(bool)arg3;
 - (void)serviceOpenURL:(void *)arg1 delaySessionEndForTTS:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSURL *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
@@ -52,5 +51,10 @@
 - (void)setStatusViewHidden:(bool)arg1;
 - (void)setStatusViewUserInteractionEnabled:(bool)arg1;
 - (void)siriIdleAndQuietStatusDidChange:(bool)arg1;
+
+@optional
+
+- (void)serviceDidDismissBugReporter;
+- (void)serviceDidPresentBugReporter;
 
 @end

@@ -17,6 +17,8 @@
 - (void)userEngagedWithDiscoverMoreButtonWithVideoItem:(id <NUVideoItem>)arg1;
 - (void)userEngagedWithNowPlayingButtonWithVideoItem:(id <NUVideoItem>)arg1;
 - (void)userEngagedWithReplayButtonWithVideoItem:(id <NUVideoItem>)arg1;
+- (void)videoDidAppearWithVideoItem:(id <NUVideoItem>)arg1;
+- (void)videoDidDisappearWithVideoItem:(id <NUVideoItem>)arg1;
 - (void)videoPlaybackPassedFirstQuartileWithVideoItem:(id <NUVideoItem>)arg1;
 - (void)videoPlaybackPassedSecondQuartileWithVideoItem:(id <NUVideoItem>)arg1;
 - (void)videoPlaybackPassedThirdQuartileWithVideoItem:(id <NUVideoItem>)arg1;

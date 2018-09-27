@@ -3,6 +3,7 @@
  */
 
 @interface BBSectionIconVariant : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _applicationIdentifier;
     NSString * _bundlePath;
     long long  _format;
     NSData * _imageData;
@@ -11,6 +12,7 @@
     bool  _precomposed;
 }
 
+@property (nonatomic, copy) NSString *applicationIdentifier;
 @property (nonatomic, copy) NSString *bundlePath;
 @property (nonatomic) long long format;
 @property (nonatomic, copy) NSData *imageData;
@@ -25,6 +27,7 @@
 + (id)variantWithFormat:(long long)arg1 imagePath:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)applicationIdentifier;
 - (id)bundlePath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +39,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isPrecomposed;
+- (void)setApplicationIdentifier:(id)arg1;
 - (void)setBundlePath:(id)arg1;
 - (void)setFormat:(long long)arg1;
 - (void)setImageData:(id)arg1;

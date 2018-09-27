@@ -12,6 +12,7 @@
     UIView * _transitionBackgroundView;
     <UIViewControllerContextTransitioning> * _transitionContext;
     id  _transitionDriver;
+    unsigned long long  _transitionState;
 }
 
 @property (readonly) UIViewController<QLCustomTransitioning> *animatedController;
@@ -26,6 +27,7 @@
 @property (readonly) Class superclass;
 @property <UIViewControllerContextTransitioning> *transitionContext;
 @property (readonly) id transitionDriver;
+@property unsigned long long transitionState;
 
 - (void).cxx_destruct;
 - (void)_completeBackgroundTransition:(bool)arg1;
@@ -48,12 +50,14 @@
 - (void)setQuickLookTransitionContext:(id)arg1;
 - (void)setShowing:(bool)arg1;
 - (void)setTransitionContext:(id)arg1;
+- (void)setTransitionState:(unsigned long long)arg1;
 - (void)setUpWithTransitionContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)showing;
 - (void)tearDownTransition:(bool)arg1;
 - (id)transitionContext;
 - (id)transitionDriver;
 - (double)transitionDuration:(id)arg1;
+- (unsigned long long)transitionState;
 - (void)updateTransitionWithProgress:(double)arg1;
 
 @end

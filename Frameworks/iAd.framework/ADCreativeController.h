@@ -111,6 +111,8 @@
 - (void)webProcessVideoAdJSOGetVideoInfo:(id /* block */)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
+- (void)webViewWebContentProcessDidTerminate:(id)arg1;
 
 @end

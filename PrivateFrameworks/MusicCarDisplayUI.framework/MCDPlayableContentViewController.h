@@ -22,7 +22,6 @@
 - (id)_createRootViewController;
 - (id)_createSectionedRootViewController;
 - (void)_modelDidInvalidate:(id)arg1;
-- (void)_modelWillInvalidate:(id)arg1;
 - (void)_nowPlayingIdentifiersChanged:(id)arg1;
 - (void)_populateStack;
 - (void)_setupView;

@@ -174,6 +174,7 @@
 - (long long)motionState;
 - (id)name;
 - (id)nameString;
+- (bool)overdueAtDate:(id)arg1;
 - (bool)overwritesPrevious;
 - (int)pid;
 - (id)policyScores;
@@ -264,6 +265,7 @@
 - (bool)timewiseEligibleAtDate:(id)arg1;
 - (unsigned long long)transferSize;
 - (bool)triggersRestart;
+- (void)updateGroupIfNecessary;
 - (unsigned long long)uploadSize;
 - (id)userInfo;
 - (id)uuid;

@@ -25,11 +25,12 @@
 - (id)delegate;
 - (long long)editMode;
 - (id)editingContentViewController;
-- (id)initWithEditModes:(id)arg1;
+- (id)initWithEditModes:(id)arg1 forDevice:(id)arg2;
 - (bool)isTransitioningBetweenEditPages;
 - (struct CGPoint { double x1; double x2; })pageOffsetFromCenter:(long long)arg1;
 - (void)removeAllKeylinesForEditMode:(long long)arg1;
 - (void)selectKeylineForKey:(id)arg1 editMode:(long long)arg2;
+- (void)setBackgroundFillAlpha:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeselectedKeylineFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(long long)arg3;
 - (void)setEditMode:(long long)arg1;
@@ -38,7 +39,9 @@
 - (void)setForEditMode:(long long)arg1 gestureDidStopHandler:(id /* block */)arg2;
 - (void)setForEditMode:(long long)arg1 gestureDiscreteScrollHandler:(id /* block */)arg2;
 - (void)setForEditMode:(long long)arg1 numberOfLisaValues:(unsigned long long)arg2 currentValue:(unsigned long long)arg3 valueHeight:(double)arg4;
-- (void)setForEditMode:(long long)arg1 numberOfLisaValues:(unsigned long long)arg2 currentValue:(unsigned long long)arg3 valueHeight:(double)arg4 animated:(bool)arg5;
+- (void)setForEditMode:(long long)arg1 numberOfLisaValues:(unsigned long long)arg2 currentValue:(unsigned long long)arg3 valueHeight:(double)arg4 animated:(bool)arg5 detentType:(unsigned long long)arg6;
+- (void)setInfoText:(id)arg1 forEditMode:(long long)arg2;
+- (void)setLabelActiveAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forKey:(id)arg2 editMode:(long long)arg3;
 - (void)setLabelAlignment:(unsigned long long)arg1 forKey:(id)arg2 editMode:(long long)arg3;
 - (void)setLabelText:(id)arg1 forKey:(id)arg2 editMode:(long long)arg3;
 - (void)setSelectedKeylineFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forKey:(id)arg2 editMode:(long long)arg3;

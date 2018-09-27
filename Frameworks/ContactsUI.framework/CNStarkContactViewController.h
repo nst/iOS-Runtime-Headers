@@ -26,6 +26,7 @@
 - (id)iMessageEmailGroup;
 - (id)initWithContact:(id)arg1;
 - (void)initializeTableViewsForHeaderHeight;
+- (bool)isGeminiAvailable;
 - (void)loadContactViewControllerViews;
 - (void)queryComplete;
 - (void)scrollViewDidScroll:(id)arg1;

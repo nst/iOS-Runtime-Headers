@@ -34,9 +34,13 @@
 
 - (void).cxx_destruct;
 - (id)cities;
+- (id)description;
 - (id)firstName;
 - (id)flatten;
+- (unsigned long long)hash;
 - (id)initWithFirstName:(id)arg1 phoneticFirstName:(id)arg2 middleName:(id)arg3 phoneticMiddleName:(id)arg4 lastName:(id)arg5 phoneticLastName:(id)arg6 organizationName:(id)arg7 jobTitle:(id)arg8 nickname:(id)arg9 relations:(id)arg10 streets:(id)arg11 cities:(id)arg12 score:(double)arg13;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContact:(id)arg1;
 - (id)jobTitle;
 - (id)lastName;
 - (id)middleName;

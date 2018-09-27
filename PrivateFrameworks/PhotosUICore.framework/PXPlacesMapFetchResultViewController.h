@@ -10,7 +10,7 @@
     <PXPlacesMapGeotaggableInfoDelegate> * _geotaggableInfoDelegate;
     PXPlacesMapFetchResultController * _mapFetchResultsController;
     UIViewController * _pxOneUpPresentationViewController;
-    <PXPlacesGeotaggable> * _selectedGeotaggable;
+    PHAsset<PXPlacesGeotaggable> * _selectedGeotaggable;
     bool  _showNavigationBar;
     unsigned long long  _style;
 }
@@ -25,7 +25,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPlacesMapFetchResultController *mapFetchResultsController;
 @property (nonatomic) UIViewController *pxOneUpPresentationViewController;
-@property (retain) <PXPlacesGeotaggable> *selectedGeotaggable;
+@property (retain) PHAsset<PXPlacesGeotaggable> *selectedGeotaggable;
 @property (nonatomic) bool showNavigationBar;
 @property (nonatomic) unsigned long long style;
 @property (readonly) Class superclass;

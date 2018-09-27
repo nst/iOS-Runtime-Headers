@@ -8,14 +8,10 @@
 }
 
 @property (nonatomic, readonly) NSString *articleID;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *dictionary;
 @property (nonatomic, retain) NSDate *displayDate;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isTreatedAsNew;
 @property (nonatomic, readonly) NSString *storyType;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)articleID;

@@ -8,16 +8,16 @@
     _MROriginProtobuf * _origin;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSMutableDictionary * _transactionCallbacks;
+    float  _volume;
     unsigned int  _volumeCapabilities;
 }
 
 @property (nonatomic, copy) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, readonly) _MROriginProtobuf *origin;
+@property (nonatomic) float volume;
 @property (nonatomic) unsigned int volumeCapabilities;
 
 - (void).cxx_destruct;
-- (void)_handleDeviceInfoDidChange:(id)arg1;
-- (void)_handleVolumeControlCapabilitiesDidChange:(id)arg1;
 - (id)debugDescription;
 - (id)deviceInfo;
 - (id)existingNowPlayingClientRequestsForPlayerPath:(id)arg1;
@@ -29,8 +29,10 @@
 - (void)restoreNowPlayingClientState;
 - (void)setDeviceInfo:(id)arg1;
 - (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
+- (void)setVolume:(float)arg1;
 - (void)setVolumeCapabilities:(unsigned int)arg1;
 - (id /* block */)transactionCallbackForName:(unsigned long long)arg1;
+- (float)volume;
 - (unsigned int)volumeCapabilities;
 
 @end

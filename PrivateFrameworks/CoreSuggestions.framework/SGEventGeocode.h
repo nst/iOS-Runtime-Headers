@@ -4,6 +4,7 @@
 
 @interface SGEventGeocode : NSObject
 
++ (id)_serialQueue;
 + (id)dateForUTCDate:(id)arg1 withTimeZone:(id)arg2;
 + (id)geocodeEvent:(id)arg1;
 + (void)geocodeEvent:(id)arg1 withCallback:(id /* block */)arg2;

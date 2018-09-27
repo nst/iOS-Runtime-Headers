@@ -8,9 +8,11 @@
 - (NSDictionary *)activityRunStatistics;
 - (NSDictionary *)currentPredictions;
 - (void)forceRunActivities:(NSArray *)arg1;
+- (double)remainingBalanceForBudgetWithName:(NSString *)arg1;
 - (NSArray *)runningActivities;
 - (NSArray *)runningGroupActivities;
 - (NSArray *)scoresForActivityWithName:(NSString *)arg1;
+- (void)setBalance:(double)arg1 forBudgetWithName:(NSString *)arg2;
 - (NSArray *)submittedActivities;
 
 @end

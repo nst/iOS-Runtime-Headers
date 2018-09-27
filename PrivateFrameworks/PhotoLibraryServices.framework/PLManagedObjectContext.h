@@ -58,7 +58,8 @@
 + (bool)_rebuildAndRetryPersistentStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forced:(bool)arg4;
 + (id)_relationshipNamesByIndexByEntityNames;
 + (bool)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
-+ (id)allContextsNotIdenticalTo:(void*)arg1;
++ (id)allContexts;
++ (id)allContextsNotIdenticalTo:(id)arg1;
 + (bool)assetsLibraryLoggingEnabled;
 + (id)attributeNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
 + (bool)canMergeRemoteChanges;
@@ -81,19 +82,21 @@
 + (id)managedObjectModelURL;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id /* block */)arg3;
 + (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)recordChangedKeys:(id)arg1 forObjectID:(id)arg2 inAttributesByOID:(id)arg3 relationshipsByOID:(id)arg4;
++ (void)recordChangedProperties:(id)arg1 forObjectID:(id)arg2 inAttributesByOID:(id)arg3 relationshipsByOID:(id)arg4;
 + (void)recordVersion:(int)arg1 forStore:(id)arg2 extraMetadata:(id)arg3;
 + (id)relationshipNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
 + (void)removeAsidePhotosDatabase;
 + (void)removePhotosDatabase;
 + (id)sanitizedErrorFromError:(id)arg1;
++ (id)sharedContextList;
 + (id)sharedPersistentStoreCoordinator;
 + (bool)shouldUseXPCPhotoLibraryStore;
 + (bool)storeIsOldEnough;
 
+- (void)_addCloudUUID:(id)arg1 forDeletionType:(long long)arg2;
 - (bool)_adjustmentTimestampChangedChangedAttribute:(id)arg1 from:(id)arg2;
-- (void)_contextObjectsDidChange:(id)arg1;
 - (void)_createDelayedSaveActionsWithTransaction:(id)arg1;
-- (id)_deletionKeyForObjectWithID:(id)arg1;
 - (void)_destroyDelayedSaveActions;
 - (void)_getInsertedIDs:(id)arg1 deletedIDs:(id)arg2 changedIDs:(id)arg3 adjustedIDs:(id)arg4 ofEntityKind:(id)arg5 fromRemoteContextDidSaveObjectIDsNotification:(id)arg6;
 - (void)_informPTPDelegateAboutChangesFromRemoteContextSaveNotification:(id)arg1;
@@ -126,13 +129,14 @@
 - (bool)isUserInterfaceContext;
 - (bool)mergingChanges;
 - (bool)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
+- (id)pathManager;
 - (id)photoLibrary;
 - (id)pl_fetchObjectsWithIDs:(id)arg1;
 - (id)pl_fetchObjectsWithIDs:(id)arg1 rootEntity:(id)arg2;
 - (id)ptpNotificationDelegate;
 - (void)recordAvalancheUUIDForUpdate:(id)arg1;
 - (void)recordChangesFromTriggerModifiedObjectIDs:(id)arg1;
-- (void)recordCloudDeletionForObjectWithID:(id)arg1 withCloudUUID:(id)arg2;
+- (void)recordCloudDeletionForObject:(id)arg1;
 - (void)recordManagedObjectWillSave:(id)arg1;
 - (void)recordSyncChangeMarker;
 - (bool)regenerateVideoThumbnails;
@@ -152,6 +156,7 @@
 - (void)setRegenerateVideoThumbnails:(bool)arg1;
 - (void)setupLocalChangeNotifications;
 - (void)tearDownLocalChangeNotifications;
+- (void)updateTransactionAuthor;
 - (void)withDispatchGroup:(id)arg1 performBlock:(id /* block */)arg2;
 
 @end

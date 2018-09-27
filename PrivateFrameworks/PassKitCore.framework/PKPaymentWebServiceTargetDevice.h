@@ -7,6 +7,7 @@
     PKPaymentService * _paymentService;
     PKAssertion * _provisioningAssertion;
     bool  _provisioningAssertionActive;
+    PKSecureElement * _secureElement;
     PKAssertion * _verificationAssertion;
     bool  _verificationAssertionActive;
 }
@@ -22,6 +23,7 @@
 - (void)_validateCommonPreconditionsWithCompletion:(id /* block */)arg1;
 - (id)bridgedClientInfo;
 - (bool)claimSecureElementForCurrentUser;
+- (void)claimSecureElementForCurrentUserWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
 - (id)deviceName;
@@ -64,8 +66,7 @@
 - (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
 - (bool)supportsAutomaticPassPresentation;
 - (bool)supportsCredentialType:(long long)arg1;
-- (bool)supportsExpressMode:(id)arg1;
-- (bool)supportsExpressModeForExpressPassType:(long long)arg1;
+- (bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
 - (id)trustedDeviceEnrollmentInfoForWebService:(id)arg1;
 
 @end

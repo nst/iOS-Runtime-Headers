@@ -29,6 +29,7 @@
 @property (getter=isFinished, nonatomic) bool finished;
 @property (getter=isFirstRun, nonatomic) bool firstRun;
 @property (nonatomic, retain) NSDate *firstSampleDate;
+@property (getter=isHiking, nonatomic, readonly) bool hiking;
 @property (nonatomic, retain) NSDate *lastRunDate;
 @property (nonatomic, retain) NSDate *lastSampleDate;
 @property (getter=isRunning, nonatomic, readonly) bool running;
@@ -57,6 +58,7 @@
 - (bool)isExercising;
 - (bool)isFinished;
 - (bool)isFirstRun;
+- (bool)isHiking;
 - (bool)isRunning;
 - (bool)isSwimming;
 - (bool)isWalking;

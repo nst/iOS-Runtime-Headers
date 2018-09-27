@@ -12,7 +12,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *transitionReason;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

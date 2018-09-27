@@ -4,6 +4,7 @@
 
 @interface HAPPairSetupSession : HMFObject <HMFTimerDelegate> {
     HMFTimer * _backoffTimer;
+    NSData * _certificate;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HAPPairSetupSessionDelegate> * _delegate;
     unsigned long long  _pairSetupType;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, retain) HMFTimer *backoffTimer;
+@property (nonatomic, retain) NSData *certificate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <HAPPairSetupSessionDelegate> *delegate;
@@ -46,6 +48,7 @@
 - (void)_processSetupExchangeData:(id)arg1 error:(id)arg2;
 - (void)_stopWithError:(id)arg1;
 - (id)backoffTimer;
+- (id)certificate;
 - (id)clientQueue;
 - (void)dealloc;
 - (id)debugDescription;
@@ -55,6 +58,7 @@
 - (id)descriptionWithPointer:(bool)arg1;
 - (id)encryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id*)arg3;
 - (void)generateSessionKeys;
+- (id)getCertificate;
 - (void)handleBackoffRequestWithTimeout:(double)arg1;
 - (void)handleInvalidSetupCode;
 - (bool)handleSavePeerRequestWithPeerIdentity:(id)arg1 error:(id*)arg2;
@@ -71,6 +75,7 @@
 - (id)sessionWriteKey;
 - (id)sessionWriteNonce;
 - (void)setBackoffTimer:(id)arg1;
+- (void)setCertificate:(id)arg1;
 - (void)setPairSetupType:(unsigned long long)arg1;
 - (void)setSessionReadKey:(id)arg1;
 - (void)setSessionReadNonce:(id)arg1;

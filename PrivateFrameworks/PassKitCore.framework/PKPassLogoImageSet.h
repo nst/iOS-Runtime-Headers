@@ -28,6 +28,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (id)archiveName;
 + (long long)imageSetType;
 + (bool)shouldCache;
 + (bool)supportsSecureCoding;
@@ -63,6 +64,7 @@
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
 - (void)loadPDFArtFromBundle:(id)arg1;
+- (void)loadPDFArtFromBundle:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3;
 - (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

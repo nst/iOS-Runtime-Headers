@@ -55,6 +55,7 @@
 @property (nonatomic) SCROBrailleChunk *chunkPendingTranslation;
 @property (nonatomic) bool displayEnabled;
 @property (nonatomic) SCROBrailleChunk *editingChunk;
+@property (nonatomic, readonly) NSAttributedString *editingString;
 @property (nonatomic) unsigned long long generationID;
 @property (nonatomic, readonly) bool hasEdits;
 @property (nonatomic) bool isKeyboardHelpOn;
@@ -110,6 +111,7 @@
 - (bool)displayEnabled;
 - (int)displayMode;
 - (id)editingChunk;
+- (id)editingString;
 - (long long)firstToken;
 - (bool)forwardDeleteAtCursorShouldTranslate:(out bool*)arg1;
 - (unsigned long long)generationID;

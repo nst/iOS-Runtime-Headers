@@ -7,6 +7,7 @@
     NSArray * _bundleIdentifiers;
     NSArray * _bundles;
     bool  _displayCaptionText;
+    unsigned long long  _displayDeviceType;
     bool  _displayIcon;
     NSString * _displayLanguage;
     bool  _displayLargeIcon;
@@ -17,6 +18,7 @@
 @property (readonly) OBBundle *bundle;
 @property (readonly) NSArray *bundles;
 @property bool displayCaptionText;
+@property unsigned long long displayDeviceType;
 @property bool displayIcon;
 @property (retain) NSString *displayLanguage;
 @property bool displayLargeIcon;
@@ -34,6 +36,7 @@
 - (id)bundle;
 - (id)bundles;
 - (bool)displayCaptionText;
+- (unsigned long long)displayDeviceType;
 - (bool)displayIcon;
 - (id)displayLanguage;
 - (bool)displayLargeIcon;
@@ -44,6 +47,7 @@
 - (bool)presentedViewControllerShouldUseDarkMode;
 - (void)setAllowsOpeningSafari:(bool)arg1;
 - (void)setDisplayCaptionText:(bool)arg1;
+- (void)setDisplayDeviceType:(unsigned long long)arg1;
 - (void)setDisplayIcon:(bool)arg1;
 - (void)setDisplayLanguage:(id)arg1;
 - (void)setDisplayLargeIcon:(bool)arg1;

@@ -17,5 +17,6 @@
 - (id)allRecentlyInstalledApplications;
 - (id)init;
 - (id)initTrackingAppsMoreRecentThan:(double)arg1;
+- (void)reset;
 
 @end

@@ -26,8 +26,8 @@
 - (id)colorSpace;
 - (id)image;
 - (struct { long long x1; long long x2; })imageSize;
+- (id)initWithImageSize:(struct { long long x1; long long x2; })arg1 tileSize:(struct { long long x1; long long x2; })arg2 pixelFormat:(id)arg3 colorSpace:(id)arg4 input:(id)arg5;
 - (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary { Class x1; }*)arg2;
-- (id)initWithSize:(struct { long long x1; long long x2; })arg1 pixelFormat:(id)arg2 colorSpace:(id)arg3 input:(id)arg4;
 - (id)layout;
 - (id)pixelFormat;
 

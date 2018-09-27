@@ -8,7 +8,6 @@
     bool  __isRenderingInitialMap;
     NSSet * __preloadedHandles;
     bool  __refreshingIsPaused;
-    void * _addressBook;
     bool  _alwaysShowAccuracy;
     UIColor * _annotationTintColor;
     UIImageView * _cachedMapView;
@@ -47,7 +46,6 @@
 @property (nonatomic) bool _isRenderingInitialMap;
 @property (nonatomic, retain) NSSet *_preloadedHandles;
 @property (nonatomic) bool _refreshingIsPaused;
-@property (nonatomic) void*addressBook;
 @property (nonatomic) bool alwaysShowAccuracy;
 @property (nonatomic, copy) UIColor *annotationTintColor;
 @property (nonatomic, retain) UIImageView *cachedMapView;
@@ -87,6 +85,7 @@
 - (void)_authorizeMonitoringLocation;
 - (bool)_blockDidReceiveAnimation;
 - (void)_dismiss:(id)arg1;
+- (void)_enablePreloadedHandles:(id)arg1;
 - (id)_internalAnnotationTintColor;
 - (id)_internalHandlesShowingLocations;
 - (bool)_isRenderingInitialMap;
@@ -98,10 +97,8 @@
 - (void)_updateLocationButtonEnabled;
 - (void)_updateTitleViewLocation:(id)arg1;
 - (void)addHandlesToSession;
-- (void*)addressBook;
 - (bool)alwaysShowAccuracy;
 - (id)annotationImageForAnnotation:(id)arg1 andHandle:(id)arg2;
-- (id)annotationImageForHandle:(id)arg1;
 - (id)annotationTintColor;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (id)cachedMapView;
@@ -169,7 +166,6 @@
 - (void)selectAnnotationIfSingleForMac;
 - (void)selectAnnotationIfSingleFriend:(id)arg1;
 - (bool)sessionContainsHandle:(id)arg1;
-- (void)setAddressBook:(void*)arg1;
 - (void)setAlwaysShowAccuracy:(bool)arg1;
 - (void)setAnnotationTintColor:(id)arg1;
 - (void)setCachedMapView:(id)arg1;

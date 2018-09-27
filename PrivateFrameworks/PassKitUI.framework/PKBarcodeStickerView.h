@@ -8,7 +8,6 @@
     UIImage * _barcodeImage;
     UIImageView * _barcodeView;
     bool  _drawBarcode;
-    long long  _layoutMode;
     NSMutableArray * _matteConstraints;
     UIImageView * _matteView;
     NSMutableArray * _stickerConstraints;
@@ -20,6 +19,7 @@
 
 + (struct PKBarcodeQuietZone { double x1; double x2; double x3; double x4; })_quiteZoneForBarcode:(id)arg1;
 + (struct CGSize { double x1; double x2; })_sizeForBarcode:(id)arg1;
++ (long long)validityStateForPass:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_generateMatteRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { double x1; double x2; })arg4;
@@ -28,7 +28,7 @@
 - (void)_updateValidity;
 - (struct CGSize { double x1; double x2; })_varianceForBarcode:(id)arg1;
 - (id)barcodeImage;
-- (id)initWithBarcode:(id)arg1 validityState:(long long)arg2 layoutMode:(long long)arg3;
+- (id)initWithBarcode:(id)arg1 validityState:(long long)arg2;
 - (void)layoutSubviews;
 - (id)matteView;
 - (void)setValidity:(long long)arg1;

@@ -14,6 +14,7 @@
 - (void)_sendMessageAndObserveNotification:(id)arg1;
 - (id)_sendMessageAndReturnGUIDs:(id)arg1;
 - (bool)isMMSEnabled;
+- (bool)isMMSEnabledForPhoneNumber:(id)arg1 simID:(id)arg2;
 - (bool)isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot;
 - (id)sendComposition:(id)arg1 toConversation:(id)arg2 useStandalone:(bool)arg3;
 - (void)sendMessage:(id)arg1;

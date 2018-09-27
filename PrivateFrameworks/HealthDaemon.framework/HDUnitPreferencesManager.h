@@ -4,8 +4,7 @@
 
 @interface HDUnitPreferencesManager : NSObject {
     NSMutableDictionary * _defaultPreferredUnits;
-    NSObject<OS_dispatch_queue> * _observerQueue;
-    NSHashTable * _observers;
+    HKObserverSet * _observers;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _resourceQueue;
     NSDictionary * _unitPreferences;
@@ -26,7 +25,7 @@
 - (id)_unitFromValueString:(id)arg1 quantityType:(id)arg2;
 - (id)_unitPreferencesDictionaryFromKeyValueDictionary:(id)arg1;
 - (void)_unitPreferencesDidChange;
-- (void)addUnitPreferenceObserver:(id)arg1;
+- (void)addUnitPreferenceObserver:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 - (void)removeUnitPreferenceObserver:(id)arg1;

@@ -16,6 +16,7 @@
 - (void)isMigrationNeeded:(id /* block */)arg1;
 - (void)migrateCheckingNecessity:(bool)arg1 lastRelevantPlugin:(id)arg2 testMigrationInfrastructureOnly:(bool)arg3 completion:(id /* block */)arg4;
 - (void)migrationPhaseDescription:(id /* block */)arg1;
+- (void)migrationPluginResults:(id /* block */)arg1;
 - (void)orderedPluginIdentifiersWithCompletion:(id /* block */)arg1;
 - (void)previousBuildVersion:(id /* block */)arg1;
 - (void)reportMigrationFailure;

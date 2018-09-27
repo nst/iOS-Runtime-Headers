@@ -10,14 +10,14 @@
     NSString * _truncationSentinel;
 }
 
-@property (nonatomic, readonly, retain) NSString *input;
-@property (nonatomic, readonly, retain) NSString *secureContent;
-@property (nonatomic, readonly, retain) NSString *secureFormattedContent;
-@property (nonatomic, readonly, retain) NSString *secureHeader;
-@property (nonatomic, readonly, retain) NSString *truncationSentinel;
+@property (nonatomic, readonly) NSString *input;
+@property (nonatomic, readonly) NSString *secureContent;
+@property (nonatomic, readonly) NSString *secureFormattedContent;
+@property (nonatomic, readonly) NSString *secureHeader;
+@property (nonatomic, readonly) NSString *truncationSentinel;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)initWithSecureHeader:(id)arg1 secureContent:(id)arg2 secureFormattedContent:(id)arg3 input:(id)arg4 truncationSentinel:(id)arg5;
 - (id)input;

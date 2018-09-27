@@ -7,7 +7,7 @@
     <NTTodayResultsFetchDescriptor> * _fetchDescriptor;
     FCAsyncOnceOperation * _firstOperationCompletionOperation;
     bool  _flushingHasBeenEnabled;
-    NSObject * _latestConstituentRecordsHoldToken;
+    NSObject * _latestConstituentAssetsHoldToken;
     <NTReadablePrivateDataStorage> * _privateDataStorage;
     id /* block */  _sessionProvider;
 }
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) FCAsyncOnceOperation *firstOperationCompletionOperation;
 @property (getter=hasFlushingBeenEnabled, nonatomic) bool flushingHasBeenEnabled;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSObject *latestConstituentRecordsHoldToken;
+@property (nonatomic, retain) NSObject *latestConstituentAssetsHoldToken;
 @property (nonatomic, retain) <NTReadablePrivateDataStorage> *privateDataStorage;
 @property (nonatomic, copy) id /* block */ sessionProvider;
 @property (readonly) Class superclass;
@@ -32,14 +32,14 @@
 - (bool)hasFlushingBeenEnabled;
 - (id)init;
 - (id)initWithFetchDescriptor:(id)arg1 privateDataStorage:(id)arg2 contentContext:(id)arg3 sessionProvider:(id /* block */)arg4;
-- (id)latestConstituentRecordsHoldToken;
+- (id)latestConstituentAssetsHoldToken;
 - (id)privateDataStorage;
 - (id /* block */)sessionProvider;
 - (void)setContentContext:(id)arg1;
 - (void)setFetchDescriptor:(id)arg1;
 - (void)setFirstOperationCompletionOperation:(id)arg1;
 - (void)setFlushingHasBeenEnabled:(bool)arg1;
-- (void)setLatestConstituentRecordsHoldToken:(id)arg1;
+- (void)setLatestConstituentAssetsHoldToken:(id)arg1;
 - (void)setPrivateDataStorage:(id)arg1;
 - (void)setSessionProvider:(id /* block */)arg1;
 

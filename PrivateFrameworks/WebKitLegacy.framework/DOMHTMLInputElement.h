@@ -29,6 +29,7 @@
 @property int maxLength;
 @property bool multiple;
 @property (copy) NSString *name;
+@property (nonatomic, copy) UITextInputPasswordRules *passwordRules;
 @property bool readOnly;
 @property (nonatomic) long long returnKeyType;
 @property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
@@ -162,7 +163,7 @@
 - (unsigned int)width;
 - (bool)willValidate;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (void)_accessoryClear;
 - (bool)_requiresAccessoryView;

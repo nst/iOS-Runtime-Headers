@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteAccountMessageDestination : HMFMessageDestination {
+@interface HMDRemoteAccountMessageDestination : HMDRemoteAccountHandleMessageDestination {
     HMDAccount * _account;
-    bool  _multicast;
 }
 
 @property (nonatomic, readonly) HMDAccount *account;
-@property (getter=isMulticast, nonatomic, readonly) bool multicast;
 
-+ (id)allMessageDestinations;
 + (id)shortDescription;
 
 - (void).cxx_destruct;
@@ -21,8 +18,9 @@
 - (unsigned long long)hash;
 - (id)initWithTarget:(id)arg1;
 - (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(bool)arg3;
+- (id)initWithTarget:(id)arg1 handle:(id)arg2 multicast:(bool)arg3;
 - (bool)isEqual:(id)arg1;
-- (bool)isMulticast;
+- (id)remoteDestinationString;
 - (id)shortDescription;
 
 @end

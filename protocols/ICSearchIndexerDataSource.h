@@ -5,7 +5,7 @@
 
 @required
 
-- (NSArray *)allIndexableObjectIDs;
+- (NSDictionary *)allIndexableObjectIdentifiersByObjectID;
 - (NSString *)dataSourceIdentifier;
 - (NSArray *)indexableObjectIDsWithIdentifiers:(NSArray *)arg1;
 - (bool)isObservingChanges;
@@ -17,12 +17,11 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 - (void)searchIndexerDidFinishDeletingSearchableItemsWithIdentifiers:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)searchIndexerDidFinishIndexingObjectIDs:(NSArray *)arg1 error:(NSError *)arg2;
-- (void)searchIndexerDidFinishReindexingWithError:(NSError *)arg1;
-- (void)searchIndexerWillBeginReindexing;
 - (void)searchIndexerWillDeleteSearchableItemsWithIdentifiers:(NSArray *)arg1;
 - (void)searchIndexerWillIndexObjectIDs:(NSArray *)arg1;
 - (NSArray *)searchableItemIdentifiersToBeDeleted;
 - (NSArray *)searchableItemsForObjectIDs:(NSArray *)arg1;
+- (void)stageForReindexing;
 - (void)startObservingChanges;
 - (void)stopObservingChanges;
 

@@ -158,6 +158,7 @@
 - (void)setSlideTree:(id)arg1;
 - (void)setThumbnailsAreDirty:(bool)arg1;
 - (id)slide;
+- (id)slideAndReturnError:(id*)arg1;
 - (id)slideIfLoaded;
 - (id)slideSpecificHyperlinkMap;
 - (id)slideTree;

@@ -4,8 +4,12 @@
 
 @interface NSLocale : NSObject <NSCopying, NSSecureCoding>
 
+@property (readonly) long long ITUCountryCode;
 @property (readonly) long long _calendarDirection;
+@property (readonly, copy) NSArray *availableNumberingSystems;
 @property (nonatomic, readonly) NSString *languageIdentifier;
+@property (readonly) NSString *languageIdentifier;
+@property (readonly, copy) NSString *numberingSystem;
 @property (nonatomic) int wf_temperatureUnit;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
@@ -103,6 +107,8 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (bool)hk_isUSLocale;
++ (void)hk_setTestLocale:(id)arg1;
++ (id)hk_testableAutoupdatingCurrentLocale;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
@@ -116,13 +122,16 @@
 
 + (id)currentDeviceLanguageForFacebook;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
-+ (id)_UIKBPreferredLocale;
-
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
 + (id)vs_systemLanaguage;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (void)af_setAceTemperatureUnit:(id)arg1;
++ (id)af_temperatureUnitForAceTemperatureUnit:(id)arg1;
+
+- (id)af_aceTemperatureUnit;
 
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
@@ -144,7 +153,9 @@
 
 + (id)_ICUdisplayNameForLanguage:(id)arg1 capitalization:(struct ULocaleDisplayNames { }*)arg2;
 + (id)_addLikelySubtagsForLocaleIdentifier:(id)arg1;
++ (id)_displayNameForLanguage:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3;
 + (id)_displayNameForNormalizedLanguage:(id)arg1 context:(long long)arg2 displayLanguage:(id)arg3;
++ (id)_displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3 short:(bool)arg4;
 + (id)_filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
 + (id)_languageNameOverrides;
 + (id)_languagesForRegionWithoutFiltering:(id)arg1;
@@ -163,8 +174,15 @@
 + (id)supportedRegions;
 + (id)systemLanguagesForRegion:(id)arg1;
 
+- (id)availableNumberingSystems;
 - (id)displayNameForLanguage:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3;
 - (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3 short:(bool)arg4;
+- (bool)isEquivalentTo:(id)arg1;
+- (id)languageIdentifier;
+- (id)localizedStringForLanguage:(id)arg1 context:(long long)arg2;
+- (id)localizedStringForNumberingSystem:(id)arg1 short:(bool)arg2;
+- (id)localizedStringForRegion:(id)arg1 context:(long long)arg2 short:(bool)arg3;
+- (id)numberingSystem;
 
 // Image: /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
 
@@ -199,6 +217,10 @@
 - (id)languageIdentifier;
 - (id)localeByChangingLanguageTo:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
+- (bool)mtIsIn24HourTime;
+
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
 + (void)__loadSwizzledCurrentLocaleIfNeeded;
@@ -231,17 +253,41 @@
 + (id)pk_deviceLanguage;
 + (id)pk_preferredLocale;
 
+// Image: /System/Library/PrivateFrameworks/PhoneNumbers.framework/PhoneNumbers
+
++ (long long)ITUCountryCodeForISOCountryCode:(id)arg1;
+
+- (long long)ITUCountryCode;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (bool)psi_languageIsGerman;
+
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (unsigned long long)px_currentCharacterDirection;
+
+// Image: /System/Library/PrivateFrameworks/RemoteConfiguration.framework/RemoteConfiguration
+
++ (id)rc_preferredLanguageCodes;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_localeIdentifiersForMostWidelyUsedLanguages;
 
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
++ (id)_nonRomanLanguages;
+
+- (bool)usesRomanTextProcessing;
+
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
 + (id)localeForBundleLanguage:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+
++ (id)_UIKBPreferredLocale;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 

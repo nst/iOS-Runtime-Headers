@@ -3,27 +3,33 @@
  */
 
 @interface PKPassFieldTemplate : NSObject {
+    NSNumber * _boxedLabelCaseStyle;
     NSNumber * _boxedSuppressesEmptyLabel;
     NSNumber * _boxedSuppressesLabel;
     NSNumber * _boxedTextAlignment;
     NSNumber * _boxedValueCanWrap;
+    NSNumber * _boxedValueSignificant;
     NSNumber * _boxedVerticalPadding;
     UIFont * _labelFont;
     UIFont * _valueFont;
     Class  _viewSubclass;
 }
 
+@property (nonatomic, retain) NSNumber *boxedLabelCaseStyle;
 @property (nonatomic, retain) NSNumber *boxedSuppressesEmptyLabel;
 @property (nonatomic, retain) NSNumber *boxedSuppressesLabel;
 @property (nonatomic, retain) NSNumber *boxedTextAlignment;
 @property (nonatomic, retain) NSNumber *boxedValueCanWrap;
+@property (nonatomic, retain) NSNumber *boxedValueSignificant;
 @property (nonatomic, retain) NSNumber *boxedVerticalPadding;
+@property (nonatomic) long long labelCaseStyle;
 @property (nonatomic, retain) UIFont *labelFont;
 @property (nonatomic) bool suppressesEmptyLabel;
 @property (nonatomic) bool suppressesLabel;
 @property (nonatomic) long long textAlignment;
 @property (nonatomic) bool valueCanWrap;
 @property (nonatomic, retain) UIFont *valueFont;
+@property (nonatomic) bool valueSignificant;
 @property (nonatomic) double verticalPadding;
 @property (nonatomic, retain) Class viewSubclass;
 
@@ -33,23 +39,30 @@
 + (id)fieldTemplateWithViewSubclass:(Class)arg1;
 
 - (void).cxx_destruct;
+- (id)boxedLabelCaseStyle;
 - (id)boxedSuppressesEmptyLabel;
 - (id)boxedSuppressesLabel;
 - (id)boxedTextAlignment;
 - (id)boxedValueCanWrap;
+- (id)boxedValueSignificant;
 - (id)boxedVerticalPadding;
+- (long long)labelCaseStyle;
 - (id)labelFont;
+- (void)setBoxedLabelCaseStyle:(id)arg1;
 - (void)setBoxedSuppressesEmptyLabel:(id)arg1;
 - (void)setBoxedSuppressesLabel:(id)arg1;
 - (void)setBoxedTextAlignment:(id)arg1;
 - (void)setBoxedValueCanWrap:(id)arg1;
+- (void)setBoxedValueSignificant:(id)arg1;
 - (void)setBoxedVerticalPadding:(id)arg1;
+- (void)setLabelCaseStyle:(long long)arg1;
 - (void)setLabelFont:(id)arg1;
 - (void)setSuppressesEmptyLabel:(bool)arg1;
 - (void)setSuppressesLabel:(bool)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setValueCanWrap:(bool)arg1;
 - (void)setValueFont:(id)arg1;
+- (void)setValueSignificant:(bool)arg1;
 - (void)setVerticalPadding:(double)arg1;
 - (void)setViewSubclass:(Class)arg1;
 - (bool)suppressesEmptyLabel;
@@ -57,6 +70,7 @@
 - (long long)textAlignment;
 - (bool)valueCanWrap;
 - (id)valueFont;
+- (bool)valueSignificant;
 - (double)verticalPadding;
 - (Class)viewSubclass;
 

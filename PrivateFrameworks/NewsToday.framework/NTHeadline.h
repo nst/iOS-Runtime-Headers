@@ -13,6 +13,7 @@
     NSURL * _compactSourceNameImageRemoteURL;
     bool  _displaysWithLeadingCellAppearance;
     NSURL * _flintDocumentURL;
+    bool  _hiddenFromAutoFavorites;
     bool  _hiddenFromFeeds;
     NSString * _identifier;
     bool  _needsSeenStateTracking;
@@ -59,6 +60,7 @@
 @property (nonatomic) bool displaysWithLeadingCellAppearance;
 @property (nonatomic, copy) NSURL *flintDocumentURL;
 @property (readonly) unsigned long long hash;
+@property (getter=isHiddenFromAutoFavorites, nonatomic) bool hiddenFromAutoFavorites;
 @property (getter=isHiddenFromFeeds, nonatomic) bool hiddenFromFeeds;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) unsigned long long itemType;
@@ -106,6 +108,7 @@
 - (id)initWithIdentifier:(id)arg1;
 - (bool)isBoundToContext;
 - (bool)isEqual:(id)arg1;
+- (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (unsigned long long)itemType;
 - (bool)needsSeenStateTracking;
@@ -120,6 +123,7 @@
 - (void)setCompactSourceNameImageRemoteURL:(id)arg1;
 - (void)setDisplaysWithLeadingCellAppearance:(bool)arg1;
 - (void)setFlintDocumentURL:(id)arg1;
+- (void)setHiddenFromAutoFavorites:(bool)arg1;
 - (void)setHiddenFromFeeds:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setNeedsSeenStateTracking:(bool)arg1;

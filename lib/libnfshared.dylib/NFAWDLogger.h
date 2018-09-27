@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> * _awdSubmissionQueue;
     NFWeakReference * _delegate;
     NSData * _deviceExceptionUuid;
+    NSCountedSet * _expressTransactionInfo;
     unsigned int  _hwType;
     unsigned long long  _middlewareExceptionCount;
     unsigned long long  _previousCardIngestionSessionState;
@@ -35,6 +36,11 @@
 - (void)_postReaderSessionStartedWithType:(unsigned int)arg1 uuid:(id)arg2;
 - (void)_postReaderSessionTagFoundWithType:(unsigned int)arg1 uuid:(id)arg2 startTime:(id)arg3 params:(id)arg4;
 - (void)_postReaderSessionTagReadWithType:(unsigned int)arg1 uuid:(id)arg2 startTime:(id)arg3 params:(id)arg4;
+- (void)_registerDeviceExceptionStatisticMetric;
+- (void)_registerExpressTransactionStatisticMetric;
+- (void)_registerGeneralStatisticMetric;
+- (void)_registerLPCDStatisticMetric;
+- (void)_registerNFCVersionMetric;
 - (void)_resetAWDLoadStackExceptionCount;
 - (void)_updateStats:(id)arg1 reset:(bool)arg2;
 - (id)activeAID;
@@ -54,7 +60,8 @@
 - (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
 - (void)postAWDCardIngestionSessionStateChange:(id)arg1;
 - (void)postAWDEvent:(id)arg1;
-- (void)postAWDExpressTransactionEventFor:(unsigned int)arg1 started:(bool)arg2;
+- (void)postAWDExpressTransactionEvent:(id)arg1;
+- (void)postAWDFelicaStateChangeEvent:(id)arg1;
 - (void)postAWDFieldEventWithFieldOn:(bool)arg1 withTechnology:(unsigned int)arg2;
 - (void)postAWDHCEEndEvent;
 - (void)postAWDHCEStartEvent:(id)arg1;
@@ -65,6 +72,7 @@
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
 - (void)postAWDHCIStartOfTransactionV2EventWithParameters:(id)arg1;
 - (void)postAWDMiddlewareException:(unsigned int)arg1 mwVersion:(unsigned int)arg2 errorType:(unsigned int)arg3 errorCode:(unsigned int)arg4 breadcrumb:(unsigned long long)arg5 checkMaxExceptionCounter:(bool)arg6;
+- (void)postAWDMobileSoftwareUpdateException:(unsigned int)arg1;
 - (void)postAWDPLLUnlockEvent;
 - (void)postAWDPeerPaymentEnrollmentWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentRequestWithParameters:(id)arg1;

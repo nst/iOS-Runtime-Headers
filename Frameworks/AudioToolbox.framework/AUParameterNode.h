@@ -32,6 +32,7 @@
 @property (nonatomic) /* Warning: unhandled struct encoding: '{AUObserverList={vector<AULocalParameterObserver *' */ struct *observerList; /* unknown property attribute:  std::__1::allocator<AULocalParameterObserver *> >=^^{AULocalParameterObserver}}}} */
 @property (nonatomic) AUParameterGroup *parentNode;
 
+- (void).cxx_destruct;
 - (void*)_addRecObserver:(id /* block */)arg1 autoObserver:(id /* block */)arg2;
 - (void)_deserialize:(struct CADeserializer { struct __CFData {} *x1; char *x2; char *x3; char *x4; bool x5; }*)arg1;
 - (void)_observersChanged:(bool)arg1 deltaCount:(int)arg2;

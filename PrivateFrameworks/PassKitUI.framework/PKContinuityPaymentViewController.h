@@ -17,7 +17,7 @@
     PKContinuityPaymentFaviconView * _faviconImage;
     UIViewController * _passcodeViewController;
     UIViewController * _passphraseViewController;
-    PKPhysicalButtonView * _physicalButtonView;
+    LAUIPhysicalButtonView * _physicalButtonView;
     UILabel * _priceLabel;
     UIView * _priceView;
     PKRemotePaymentRequest * _remoteRequest;
@@ -90,5 +90,6 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

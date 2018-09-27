@@ -69,6 +69,7 @@
 @property (nonatomic, readonly) TSWPStorage *storage;
 @property (readonly) Class superclass;
 @property (getter=isSelectionHighlightSuppressed, nonatomic) bool suppressSelectionHighlight;
+@property (nonatomic, readonly) NSArray *sxaxSupportedEditRotorActions;
 @property (nonatomic, readonly) TSWPEditingController *textEditor;
 @property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformToConvertNaturalToScaledRoot;
@@ -316,23 +317,30 @@
 - (id)_STAXColumnForLineIndex:(long long)arg1;
 - (id)_STAXColumnForStorageRelativeCharIndex:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityFrameForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)_accessibilityHasTextOperations;
 - (long long)_accessibilityLineEndPosition;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_accessibilityLineRangeForPosition:(unsigned long long)arg1;
 - (long long)_accessibilityLineStartPosition;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_accessibilityRangeForLineNumber:(long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_accessibilityRawRangeForUITextRange:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_accessibilitySelectedTextRange;
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (bool)_accessibilitySpeakThisShouldScrollTextRects;
+- (id)_accessibilityTextOperations;
 - (id)_accessibilityTextRangeFromNSRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_accessibilityTextRectsForSpeakThisStringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_sxaxStorageRelativeRangeOfLineFragmentAtStorageRelativeCharIndex:(unsigned long long)arg1;
+- (id)_sxaxTextInputEditor;
 - (id)accessibilityContentForLineNumber:(long long)arg1;
+- (bool)accessibilityEditOperationAction:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrameForLineNumber:(long long)arg1;
 - (long long)accessibilityLineNumberForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)accessibilityPageContent;
 - (id)accessibilityValue;
 - (bool)isAccessibilityElement;
+- (id)sxaxNameForEditRotorAction:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })sxaxRepRelativeRangeFromStorageRelativeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })sxaxStorageRelativeRangeFromRepRelativeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)sxaxSupportedEditRotorActions;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface HMDIncomingHomeInvitation : HMDHomeInvitation {
-    NSString * _inviterControllerName;
-    NSData * _inviterPublicKey;
+    HMDAccount * _inviterAccount;
+    HMFPairingIdentity * _inviterIdentity;
 }
 
 @property (nonatomic, readonly) NSDictionary *bulletinContext;
 @property (nonatomic, readonly, copy) NSString *homeName;
 @property (nonatomic, readonly, copy) NSUUID *homeUUID;
-@property (nonatomic, readonly, copy) NSString *inviterControllerName;
-@property (nonatomic, readonly, copy) NSData *inviterPublicKey;
+@property (readonly) HMDAccount *inviterAccount;
+@property (readonly, copy) HMFPairingIdentity *inviterIdentity;
 @property (nonatomic, readonly, copy) NSString *inviterUserID;
 
 + (bool)supportsSecureCoding;
@@ -23,9 +23,9 @@
 - (id)homeName;
 - (id)homeUUID;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInviterUserID:(id)arg1 invitationIdentifier:(id)arg2 invitationState:(long long)arg3 homeName:(id)arg4 homeUUID:(id)arg5 inviterPublicKey:(id)arg6 inviterControllerName:(id)arg7 expiryDate:(id)arg8;
-- (id)inviterControllerName;
-- (id)inviterPublicKey;
+- (id)initWithInviterAccount:(id)arg1 invitationIdentifier:(id)arg2 invitationState:(long long)arg3 homeName:(id)arg4 homeUUID:(id)arg5 inviterIdentity:(id)arg6 expiryDate:(id)arg7;
+- (id)inviterAccount;
+- (id)inviterIdentity;
 - (id)inviterUserID;
 - (bool)refreshDisplayName;
 

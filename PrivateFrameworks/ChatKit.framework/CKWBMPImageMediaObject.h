@@ -7,4 +7,6 @@
 + (id)UTITypes;
 + (Class)imageDataClass;
 
+- (bool)generatePreviewOutOfProcess;
+
 @end

@@ -12,7 +12,6 @@
 
 + (id)reuseIdentifier;
 
-- (void)_resetIndentation;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setShouldIndentContent:(bool)arg1;

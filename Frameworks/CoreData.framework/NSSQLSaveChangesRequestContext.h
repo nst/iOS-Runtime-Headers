@@ -3,7 +3,10 @@
  */
 
 @interface NSSQLSaveChangesRequestContext : NSSQLStoreRequestContext {
+    NSString * _externalDataLinksDirectory;
+    NSString * _externalDataReferencesDirectory;
     NSFaultHandler * _faultHandler;
+    NSString * _fileBackedFuturesDirectory;
     NSDictionary * _metadataToWrite;
     NSSet * _objectIDsToPruneTrigger;
     NSMutableDictionary * _originalCachedRows;
@@ -11,7 +14,10 @@
     NSMutableDictionary * _updateMasksForHistoryTracking;
 }
 
+@property (nonatomic, readonly) NSString *externalDataLinksDirectory;
+@property (nonatomic, readonly) NSString *externalDataReferencesDirectory;
 @property (nonatomic, readonly) NSFaultHandler *faultHandler;
+@property (nonatomic, readonly) NSString *fileBackedFuturesDirectory;
 @property (nonatomic, readonly) NSDictionary *metadataToWrite;
 @property (nonatomic, readonly) NSSQLModel *model;
 @property (nonatomic, readonly) NSMutableDictionary *originalCachedRows;
@@ -24,7 +30,10 @@
 - (void)executeEpilogue;
 - (void)executePrologue;
 - (void)executeRequestCore:(id*)arg1;
+- (id)externalDataLinksDirectory;
+- (id)externalDataReferencesDirectory;
 - (id)faultHandler;
+- (id)fileBackedFuturesDirectory;
 - (bool)hasChangesForWriting;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
 - (bool)isWritingRequest;

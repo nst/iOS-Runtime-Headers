@@ -2,24 +2,23 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMUser : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMFLogging, HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
+@interface HMUser : NSObject <HFStateDumpBuildable, HMFLogging, HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
     HMAssistantAccessControl * _assistantAccessControl;
     _HMContext * _context;
     bool  _currentUser;
     <HMUserDelegatePrivate> * _delegate;
     HMHome * _home;
     HMHomeAccessControl * _homeAccessControl;
+    HMFUnfairLock * _lock;
     NSString * _name;
     HMFPairingIdentity * _pairingIdentity;
-    HMThreadSafeMutableArrayCollection * _pendingAccessoryInvitations;
-    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMMutableArray * _pendingAccessoryInvitations;
     NSUUID * _uniqueIdentifier;
     NSString * _userID;
     NSUUID * _uuid;
 }
 
 @property (copy) HMAssistantAccessControl *assistantAccessControl;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (retain) _HMContext *context;
 @property (getter=isCurrentUser, nonatomic) bool currentUser;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,7 +31,6 @@
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, copy) NSString *name;
 @property (copy) HMFPairingIdentity *pairingIdentity;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, copy) NSString *userID;
@@ -44,7 +42,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_configureWith:(id)arg1 context:(id)arg2;
+- (void)__configureWithContext:(id)arg1 home:(id)arg2;
 - (id)_filterAccessoryInvitationsFromOutgoingInvitation:(id)arg1;
 - (void)_handleUpdatedAssistantAccessControl:(id)arg1;
 - (bool)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
@@ -54,7 +52,6 @@
 - (void)_updatePresenceAuthorizationStatus:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)assistantAccessControl;
 - (id)assistantAccessControlForHome:(id)arg1;
-- (id)clientQueue;
 - (id)context;
 - (void)dealloc;
 - (id)delegate;
@@ -72,8 +69,8 @@
 - (id)messageTargetUUID;
 - (id)name;
 - (id)pairingIdentity;
+- (void)pairingIdentityWithCompletionHandler:(id /* block */)arg1;
 - (id)pendingAccessoryInvitations;
-- (id)propertyQueue;
 - (void)setAssistantAccessControl:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCurrentUser:(bool)arg1;
@@ -93,7 +90,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_serializedStateDumpRepresentation;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 @end

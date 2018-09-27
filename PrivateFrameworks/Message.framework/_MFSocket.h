@@ -12,6 +12,7 @@
     NSInvocation * _eventHandler;
     NSString * _host;
     int  _lowThroughputCounter;
+    NSString * _networkAccountIdentifier;
     int  _numTimeoutSecs;
     NSString * _protocol;
     NSString * _service;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) bool isReadable;
 @property (nonatomic, readonly) bool isValid;
 @property (nonatomic, readonly) bool isWritable;
+@property (nonatomic, copy) NSString *networkAccountIdentifier;
 @property (nonatomic, readonly) NSString *remoteHostname;
 @property (nonatomic, readonly) unsigned int remotePortNumber;
 @property (nonatomic, readonly) NSArray *serverCertificates;
@@ -59,6 +61,7 @@
 - (bool)isReadable;
 - (bool)isValid;
 - (bool)isWritable;
+- (id)networkAccountIdentifier;
 - (long long)readBytes:(char *)arg1 length:(unsigned long long)arg2;
 - (id)remoteHostname;
 - (unsigned int)remotePortNumber;
@@ -70,6 +73,7 @@
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
 - (void)setDisableEphemeralDiffieHellmanCiphers:(bool)arg1;
 - (void)setEventHandler:(id)arg1;
+- (void)setNetworkAccountIdentifier:(id)arg1;
 - (bool)setSecurityProtocol:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setStream:(id)arg1;

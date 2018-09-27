@@ -3,36 +3,60 @@
  */
 
 @interface NEVPNConnection : NSObject {
+    NEConfigurationManager * _configManager;
+    NSString * _configurationName;
     NSDate * _connectedDate;
+    bool  _initialized;
+    NSError * _lastDisconnectError;
+    NSObject<OS_dispatch_queue> * _queue;
     void * _session;
     int  _sessionType;
     long long  _status;
     NEVPNManager * _weakmanager;
 }
 
+@property (nonatomic, readonly) NEConfigurationManager *configManager;
+@property (nonatomic, retain) NSString *configurationName;
 @property (readonly) NSDate *connectedDate;
+@property (nonatomic) bool initialized;
+@property (readonly) NSError *lastDisconnectError;
 @property (readonly) NEVPNManager *manager;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property void*session;
-@property (readonly) int sessionType;
+@property (nonatomic, readonly) int sessionType;
 @property (readonly) long long status;
 @property NEVPNManager *weakmanager;
 
++ (id)createConnectionForEnabledEnterpriseConfiguration;
++ (id)createDisconnectErrorWithDomain:(id)arg1 code:(unsigned int)arg2;
+
 - (void).cxx_destruct;
+- (id)configManager;
+- (id)configurationName;
 - (id)connectedDate;
+- (void)createSessionWithConfigurationIdentifier:(id)arg1 forceInfoFetch:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)destroySession;
+- (id)initHeadless;
 - (id)initWithType:(int)arg1;
+- (bool)initialized;
+- (id)lastDisconnectError;
 - (id)manager;
 - (void)newSessionWithConfigID:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)queue;
+- (void)reload;
+- (void)resetLastDisconnectError:(id)arg1;
 - (void*)session;
 - (int)sessionType;
+- (void)setConfigurationName:(id)arg1;
+- (void)setInitialized:(bool)arg1;
 - (void)setSession:(void*)arg1;
 - (void)setWeakmanager:(id)arg1;
 - (bool)startVPNTunnelAndReturnError:(id*)arg1;
 - (bool)startVPNTunnelWithOptions:(id)arg1 andReturnError:(id*)arg2;
 - (long long)status;
 - (void)stopVPNTunnel;
-- (void)updateSessionInfoWithCompletionHandler:(id /* block */)arg1;
+- (void)updateSessionInfoForce:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)weakmanager;
 
 @end

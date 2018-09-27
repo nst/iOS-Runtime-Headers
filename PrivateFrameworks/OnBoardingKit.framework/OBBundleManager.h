@@ -4,7 +4,6 @@
 
 @interface OBBundleManager : NSObject
 
-+ (void)_setSharedManager:(id)arg1;
 + (id)sharedManager;
 
 - (id)_allPrivacyBundles;

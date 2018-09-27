@@ -19,6 +19,7 @@
 
 - (id)allKeys;
 - (id)blacklist;
+- (struct _MDPlistContainer { }*)container;
 - (unsigned long long)count;
 - (void)dealloc;
 - (id)description;

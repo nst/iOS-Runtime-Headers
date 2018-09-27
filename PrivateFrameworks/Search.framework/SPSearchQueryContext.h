@@ -4,6 +4,7 @@
 
 @interface SPSearchQueryContext : NSObject {
     bool  _allowInternet;
+    double  _currentTime;
     NSArray * _disabledApps;
     NSArray * _disabledBundles;
     NSArray * _disabledDomains;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic) bool allowInternet;
+@property (nonatomic) double currentTime;
 @property (nonatomic, retain) NSArray *disabledApps;
 @property (nonatomic, retain) NSArray *disabledBundles;
 @property (nonatomic, retain) NSArray *disabledDomains;
@@ -50,6 +52,7 @@
 
 - (void).cxx_destruct;
 - (bool)allowInternet;
+- (double)currentTime;
 - (id)disabledApps;
 - (id)disabledBundles;
 - (id)disabledDomains;
@@ -57,6 +60,7 @@
 - (id)engagedSuggestion;
 - (bool)forceQueryEvenIfSame;
 - (bool)hasMarkedText;
+- (id)init;
 - (id)initWithSearchString:(id)arg1;
 - (bool)isPasscodeLocked;
 - (id)keyboardLanguage;
@@ -70,6 +74,7 @@
 - (id)searchEntities;
 - (id)searchString;
 - (void)setAllowInternet:(bool)arg1;
+- (void)setCurrentTime:(double)arg1;
 - (void)setDisabledApps:(id)arg1;
 - (void)setDisabledBundles:(id)arg1;
 - (void)setDisabledDomains:(id)arg1;

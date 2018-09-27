@@ -34,8 +34,6 @@
 @property (nonatomic, readonly) unsigned long long status;
 @property (nonatomic, readonly) NSString *uniqueID;
 
-// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
-
 + (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
 + (void)_setCachedQueriesEnabled:(bool)arg1;
 + (void)_setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 addressBook:(void*)arg4;
@@ -49,6 +47,7 @@
 + (id)existingABPersonWithFirstName:(id)arg1 andLastName:(id)arg2 orEmail:(id)arg3 orNumber:(id)arg4;
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(bool)arg3;
++ (bool)shouldPurgeCacheForIMPerson:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_abPersonChanged:(id)arg1;
@@ -103,9 +102,5 @@
 - (id)uniqueID;
 - (id)valuesForIMProperty:(id)arg1;
 - (id)valuesForProperty:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
-
-- (id)initWithContact:(id)arg1;
 
 @end

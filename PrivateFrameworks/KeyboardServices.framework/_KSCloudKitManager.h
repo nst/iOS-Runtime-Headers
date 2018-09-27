@@ -40,11 +40,12 @@
 - (void)_inconvenientOperation:(id)arg1;
 - (void)_submitFetchRecordsOperation:(id)arg1 withPriority:(unsigned long long)arg2 changeToken:(id)arg3 completionHandler:(id /* block */)arg4 retryCount:(unsigned long long)arg5;
 - (void)accountStatusDidChange:(id)arg1;
+- (void)addOperation:(id)arg1;
+- (void)addOperation:(id)arg1 priority:(unsigned long long)arg2;
 - (id)cloudKitContainer;
 - (id)cloudKitDatabase;
 - (void)copyFieldsFromRecord:(id)arg1 toRecord:(id)arg2;
 - (void)dealloc;
-- (long long)defaultQualityOfService;
 - (id)delegate;
 - (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3;

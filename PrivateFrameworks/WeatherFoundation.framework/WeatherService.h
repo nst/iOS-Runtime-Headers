@@ -3,7 +3,7 @@
  */
 
 @interface WeatherService : NSObject <WeatherServicePrivateProtocol, WeatherServiceProtocol> {
-    NSMutableDictionary * _clientDictionary;
+    NSMapTable * _clientDictionary;
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableArray * _clients;
     WFWeatherStoreService * _internalService;
@@ -11,7 +11,7 @@
     WFTemperatureUnitProvider * _temperatureUnitProvider;
 }
 
-@property (retain) NSMutableDictionary *clientDictionary;
+@property (retain) NSMapTable *clientDictionary;
 @property (nonatomic, readonly) NSArray *clients;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

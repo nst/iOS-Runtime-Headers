@@ -17,6 +17,7 @@
     NSString * _password;
     bool  _syncDefaultFoldersOnly;
     NSNumber * _syncDefaultFoldersOnlyNum;
+    NSNumber * _useOAuth;
     NSNumber * _useSSL;
     NSString * _username;
 }
@@ -36,6 +37,7 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic) bool syncDefaultFoldersOnly;
 @property (nonatomic, readonly) NSNumber *syncDefaultFoldersOnlyNum;
+@property (nonatomic, retain) NSNumber *useOAuth;
 @property (nonatomic, retain) NSNumber *useSSL;
 @property (nonatomic, copy) NSString *username;
 
@@ -68,6 +70,7 @@
 - (void)setEmbeddedCertificatePassword:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setSyncDefaultFoldersOnly:(bool)arg1;
+- (void)setUseOAuth:(id)arg1;
 - (void)setUseSSL:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)stubDictionary;
@@ -78,6 +81,7 @@
 - (bool)syncDefaultFoldersOnly;
 - (id)syncDefaultFoldersOnlyNum;
 - (id)title;
+- (id)useOAuth;
 - (id)useSSL;
 - (id)username;
 

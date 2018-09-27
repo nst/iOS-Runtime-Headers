@@ -17,7 +17,7 @@
 - (id)currentPosterImage;
 - (id)currentStyleComplicationColor;
 - (id)getListingWithTag:(id)arg1;
-- (id)init;
+- (id)initForDevice:(id)arg1;
 - (void)invalidateCurrentListing;
 - (void)prepareUserTapAction;
 - (id)preparedListing;

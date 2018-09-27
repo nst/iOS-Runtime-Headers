@@ -5,7 +5,7 @@
 
 @required
 
-- (UIView *)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 canvasViewForShowable:(id <SXFullscreenCanvasShowable>)arg2;
+- (SXFullscreenCanvasViewController *)fullScreenCanvasController:(void *)arg1 canvasViewControllerForShowable:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 7: SXFullscreenCanvasController *, <SXFullscreenCanvasShowable> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 fullScreenFrameForShowable:(id <SXFullscreenCanvasShowable>)arg2 viewIndex:(unsigned long long)arg3 withinRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (unsigned long long)fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 numberOfViewsForShowable:(id <SXFullscreenCanvasShowable>)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullScreenCanvasController:(SXFullscreenCanvasController *)arg1 originalFrameForShowable:(id <SXFullscreenCanvasShowable>)arg2 onCanvasView:(UIView *)arg3 viewIndex:(unsigned long long)arg4;

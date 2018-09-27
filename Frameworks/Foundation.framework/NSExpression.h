@@ -25,6 +25,7 @@
 @property (readonly, copy) NSExpression *rightExpression;
 @property (readonly, copy) NSExpression *trueExpression;
 @property (readonly, copy) NSString *variable;
+@property (nonatomic, readonly) bool vui_isKeyPathBitTestExpression;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -100,5 +101,11 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)expressionWithFCCKPRecordFieldValue:(id)arg1 translator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/VideosUICore.framework/VideosUICore
+
++ (id)vui_keyPathBitTestExpressionWithKeyPath:(id)arg1 value:(id)arg2;
+
+- (bool)vui_isKeyPathBitTestExpression;
 
 @end

@@ -37,6 +37,7 @@
 - (id)name;
 - (void)raise;
 - (id)reason;
+- (id)redactedDescription;
 - (id)userInfo;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -45,6 +46,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
+
++ (bool)mdltsu_catchExceptionsInBlock:(id /* block */)arg1 error:(id*)arg2;
++ (void)mdltsu_raiseWithError:(id)arg1;
+
+- (id)mdltsu_error;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
@@ -60,6 +68,10 @@
 
 - (id)nr_safeDescription;
 
+// Image: /System/Library/PrivateFrameworks/News/TeaFoundation.framework/TeaFoundation
+
++ (bool)tf_tryCatch:(id /* block */)arg1 error:(id*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
 + (void)sfu_errnoRaise:(id)arg1 format:(id)arg2;
@@ -72,6 +84,10 @@
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 
 - (id)psy_safeDescription;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/TeaFoundation.framework/TeaFoundation
+
++ (bool)tf_tryCatch:(id /* block */)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
 

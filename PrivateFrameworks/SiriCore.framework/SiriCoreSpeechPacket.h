@@ -32,8 +32,8 @@
 - (void)setPackets:(id)arg1;
 - (void)setRefId:(id)arg1;
 - (bool)siriCore_bufferingAllowedDuringActiveSession;
-- (bool)siriCore_canBeRemapped;
 - (void)siriCore_invokeThunk;
+- (bool)siriCore_isProvisional;
 - (bool)siriCore_isRestartable;
 - (bool)siriCore_isRetryable;
 - (void)siriCore_logDiagnostics;

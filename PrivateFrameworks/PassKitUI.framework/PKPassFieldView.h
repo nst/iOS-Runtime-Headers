@@ -27,10 +27,10 @@
 + (id)newViewForField:(id)arg1 fieldTemplate:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)_labelAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
+- (id)_labelAttributedStringForColorProfile:(id)arg1;
 - (struct CGSize { double x1; double x2; })_resizeMultiLineValueFontForAvailableSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_shouldDisplayLabel;
-- (id)_valueAttributedStringForColorProfile:(id)arg1 background:(long long)arg2;
+- (id)_valueAttributedStringForColorProfile:(id)arg1;
 - (id)colorProfile;
 - (void)dealloc;
 - (id)description;

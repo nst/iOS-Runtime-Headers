@@ -19,8 +19,8 @@
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
-- (void)_attemptBackupRecoveryByPromptingForRemoteSecretWithLocalSecret:(id)arg1 localSecretType:(unsigned long long)arg2 useCachedSecret:(bool)arg3 hasPeersForRemoteApproval:(bool)arg4 completion:(id /* block */)arg5;
-- (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned long long)arg2 useCachedSecret:(bool)arg3 hasPeersForRemoteApproval:(bool)arg4 completion:(id /* block */)arg5;
+- (void)_attemptBackupRecoveryByPromptingForRemoteSecretWithLocalSecret:(id)arg1 localSecretType:(unsigned long long)arg2 useCachedSecret:(bool)arg3 circleJoinResult:(id)arg4 completion:(id /* block */)arg5;
+- (void)_attemptBackupRecoveryWithLocalSecret:(id)arg1 type:(unsigned long long)arg2 useCachedSecret:(bool)arg3 circleJoinResult:(id)arg4 completion:(id /* block */)arg5;
 - (void)_attemptCDPEnable:(id /* block */)arg1;
 - (void)_authenticatedRepairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
 - (void)_authenticatedShouldPerformRepairWithCompletion:(id /* block */)arg1;
@@ -30,18 +30,18 @@
 - (void)_enableSecureBackupWithCircleJoinResult:(id)arg1 completion:(id /* block */)arg2;
 - (void)_enrollOrDisableCDPAfterEnabledStateVerified:(id /* block */)arg1;
 - (void)_handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)_handleInteractiveRecoveryFlowWithCircleJoinResult:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleJoinResult:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handlePreflightError:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleRecoveryResetRequestWithCompletion:(id /* block */)arg1;
 - (void)_handleiCDPStatusCheckError:(id)arg1 completion:(id /* block */)arg2;
 - (void)_performInteractivelyAuthenticatedRepair:(id /* block */)arg1;
+- (void)_postRecoveryEnableSecureBackupWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (id)_predicateForRecordUpgradeCheck;
 - (id)_predicateForRecordUpgradeCheckIgnoringBottled;
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)_recoverSecureBackupWithCircleJoinResult:(id)arg1 completion:(id /* block */)arg2;
-- (void)_recoverSecureBackupWithHasPeersForRemoteApproval:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_refreshAndAuthenticateWithContext:(id)arg1;
-- (void)_renewAndRepairWithContext:(id)arg1 completion:(id /* block */)arg2;
-- (void)_repairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
 - (void)_resetAccountCDPStateWithCompletion:(id /* block */)arg1;
 - (bool)attemptedCDPEnable;
 - (id)circleController;

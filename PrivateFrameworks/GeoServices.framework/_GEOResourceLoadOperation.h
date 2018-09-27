@@ -10,6 +10,8 @@
     bool  _expectsPartialContent;
     NSLock * _lock;
     GEOReportedProgress * _progress;
+    NSURL * _proxyURL;
+    bool  _requiresProxy;
     bool  _requiresWiFi;
     NSURLSession * _session;
     NSURLSessionTask * _task;
@@ -31,7 +33,7 @@
 - (void)cancel;
 - (id)data;
 - (void)dealloc;
-- (id)initWithResource:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3 baseURLString:(id)arg4;
+- (id)initWithResource:(id)arg1 existingPartialData:(id)arg2 auditToken:(id)arg3 baseURL:(id)arg4 proxyURL:(id)arg5;
 - (id)progress;
 - (bool)requiresWiFi;
 - (void)setRequiresWiFi:(bool)arg1;

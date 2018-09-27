@@ -53,6 +53,7 @@
 @property (nonatomic, readonly) double customScaleAmount;
 @property (nonatomic, readonly) bool customShine;
 @property (nonatomic, readonly) long long customTextDelivery;
+@property (nonatomic, readonly) double customTravelDistance;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSString *delivery;
 @property (nonatomic, readonly) unsigned long long deliveryStyle;
@@ -103,9 +104,10 @@
 @property (nonatomic, readonly) bool supportsRandomNumberSeedInspection;
 @property (nonatomic, readonly) bool supportsScaleAmount;
 @property (nonatomic, readonly) bool supportsShine;
+@property (nonatomic, readonly) bool supportsTravelDistance;
 @property (nonatomic, readonly) NSString *title;
 
-+ (id)buildWithEffect:(id)arg1 animationType:(long long)arg2 drawable:(id)arg3;
++ (id)buildWithEffect:(id)arg1 animationType:(long long)arg2 drawable:(id)arg3 slide:(id)arg4;
 + (void)i_repairBuildToDrawableReferencesFromUUIDsForBuilds:(id)arg1 drawables:(id)arg2;
 + (id)menuAnimationInfosForDrawableInfo:(id)arg1 animationType:(long long)arg2;
 + (bool)needsObjectUUID;
@@ -151,6 +153,7 @@
 - (double)customScaleAmount;
 - (bool)customShine;
 - (long long)customTextDelivery;
+- (double)customTravelDistance;
 - (id)deliveriesLocalized:(bool)arg1;
 - (id)delivery;
 - (unsigned long long)deliveryStyle;
@@ -229,6 +232,7 @@
 - (bool)supportsRandomNumberSeedInspection;
 - (bool)supportsScaleAmount;
 - (bool)supportsShine;
+- (bool)supportsTravelDistance;
 - (id)title;
 
 @end

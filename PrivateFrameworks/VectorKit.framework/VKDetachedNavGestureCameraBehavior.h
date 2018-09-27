@@ -17,7 +17,6 @@
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
-- (void)_startZoomAnimationFrom:(double)arg1 to:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)beginPitch:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)initWithNavCameraController:(id)arg1;

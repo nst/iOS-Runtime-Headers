@@ -7,6 +7,9 @@
     NSObject<OS_dispatch_semaphore> * _cloudResourceDownloadWaitSemaphore;
     int  _cloudResourceRequestID;
     id /* block */  _dataHandler;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _dataHandlerLock;
     NSError * _error;
     PHAssetResourceRequestOptions * _options;
     NSObject<OS_dispatch_queue> * _queue;

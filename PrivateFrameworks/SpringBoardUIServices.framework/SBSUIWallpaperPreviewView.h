@@ -23,6 +23,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SBFWallpaperView *wallpaperView;
 
++ (bool)shouldEnableParallaxForEffect:(unsigned long long)arg1;
+
 - (void).cxx_destruct;
 - (void)_effectChanged:(id)arg1;
 - (void)_layoutDateView;
@@ -42,11 +44,13 @@
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)segmentedControl;
+- (unsigned long long)selectedEffect;
 - (void)setDateView:(id)arg1;
 - (void)setIrisInstructionsLabel1:(id)arg1;
 - (void)setIrisInstructionsLabel2:(id)arg1;
 - (void)setIrisInstructionsVisible:(bool)arg1 animated:(bool)arg2;
 - (void)setSegmentedControl:(id)arg1;
+- (bool)shouldEnableParallax;
 - (id)wallpaperView;
 
 @end

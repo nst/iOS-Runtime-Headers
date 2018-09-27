@@ -22,6 +22,7 @@
     NSMutableArray * _passDescriptions;
     struct sqlite3_stmt { } * _removeTransactionStatement;
     struct sqlite3_stmt { } * _removeTransactionWithServiceIdentifier;
+    struct sqlite3_stmt { } * _selectBalancesForPassStatement;
     struct sqlite3_stmt { } * _selectCloudKitArchivedTransactionsStatement;
     struct sqlite3_stmt { } * _selectDeletePendingStatement;
     struct sqlite3_stmt { } * _selectLastAddValueAmountForPassStatement;
@@ -40,6 +41,7 @@
     struct sqlite3_stmt { } * _selectTransitAppletStateForPassStatement;
     bool  _sendingLocalNotifyDatabaseChanged;
     struct sqlite3_stmt { } * _trimTransactionsForPassStatement;
+    struct sqlite3_stmt { } * _updateBalancesForPassStatement;
     struct sqlite3_stmt { } * _updateDeletePendingStatment;
     struct sqlite3_stmt { } * _updateLastAddValueAmountForPassStatement;
     struct sqlite3_stmt { } * _updatePendingAddValueDateForPassStatement;
@@ -114,6 +116,7 @@
 - (id)_passForUniqueIDLocked:(id)arg1 includeImageSets:(bool)arg2;
 - (id)_passUniqueIDForTransactionWithIdentifier:(id)arg1;
 - (id)_passUniqueIDForTransactionWithServiceIdentifier:(id)arg1;
+- (id)_paymentBalancesForPassWithUniqueIDLocked:(id)arg1;
 - (id)_pendingAddValueDateForPassWithUniqueIDLocked:(id)arg1;
 - (void)_performTransactionWithBlock:(id /* block */)arg1;
 - (bool)_preconditionsMetForDatabaseOpen;
@@ -127,6 +130,7 @@
 - (void)_saveTransactionLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setCurrentEphemeralTransactionIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setLastAddValueAmountLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (void)_setPaymentBalancesLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setPendingAddValueDateLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setTransitAppletStateLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (bool)_table:(id)arg1 containsColumn:(id)arg2;
@@ -186,6 +190,7 @@
 - (id)passForUniqueID:(id)arg1 includeImageSets:(bool)arg2;
 - (id)passUniqueIDForTransactionWithIdentifier:(id)arg1;
 - (id)passUniqueIDForTransactionWithServiceIdentifier:(id)arg1;
+- (id)paymentBalancesForPassWithUniqueID:(id)arg1;
 - (id)pendingAddValueDateForPassWithUniqueID:(id)arg1;
 - (id)preferredPaymentApplicationForPaymentPass:(id)arg1;
 - (id)rebuildDatabaseWithPasses:(id)arg1;
@@ -198,6 +203,7 @@
 - (id)savePass:(id)arg1 isLocalPass:(bool)arg2;
 - (void)saveTransaction:(id)arg1 forPass:(id)arg2;
 - (void)saveTransaction:(id)arg1 forPassWithUniqueID:(id)arg2 withPaymentCredentialType:(long long)arg3;
+- (struct sqlite3_stmt { }*)selectBalancesForPassStatement;
 - (struct sqlite3_stmt { }*)selectCloudKitArchivedTransactionsStatement;
 - (struct sqlite3_stmt { }*)selectDeletePendingStatement;
 - (struct sqlite3_stmt { }*)selectLastAddValueAmountForPassStatement;
@@ -216,6 +222,7 @@
 - (void)setDeletePending:(bool)arg1 forUniqueID:(id)arg2;
 - (void)setLastAddValueAmount:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)setPassDBIsAvailable:(bool)arg1;
+- (void)setPaymentBalances:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)setPendingAddValueDate:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)setPreferredPaymentApplication:(id)arg1 forPaymentPass:(id)arg2;
 - (void)setTransitAppletState:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -225,6 +232,7 @@
 - (id)transactionsWithCloudKitArchivedState:(bool)arg1;
 - (id)transitAppletStateForPassWithUniqueID:(id)arg1;
 - (struct sqlite3_stmt { }*)trimTransactionsForPassStatement;
+- (struct sqlite3_stmt { }*)updateBalancesForPassStatement;
 - (struct sqlite3_stmt { }*)updateDeletePendingStatement;
 - (struct sqlite3_stmt { }*)updateLastAddValueAmountForPassStatement;
 - (struct sqlite3_stmt { }*)updatePendingAddValueDateForPassStatement;

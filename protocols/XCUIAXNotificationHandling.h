@@ -5,6 +5,7 @@
 
 @required
 
-- (void)handleAccessibilityNotification:(int)arg1 withPayload:(NSData *)arg2;
+- (bool)axNotificationsIncludeElement;
+- (void)handleAccessibilityNotification:(long long)arg1 fromElement:(XCAccessibilityElement *)arg2 payload:(NSData *)arg3;
 
 @end

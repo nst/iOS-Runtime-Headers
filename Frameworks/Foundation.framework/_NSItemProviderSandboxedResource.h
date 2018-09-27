@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
+- (id)initWithContentsOfURL:(id)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 error:(id*)arg3;
 - (bool)isAccessingSecurityScopedResource;
 - (id)resolveURLAndReturnError:(id*)arg1;
 - (id)resourceURL;

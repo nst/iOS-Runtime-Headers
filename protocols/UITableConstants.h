@@ -11,11 +11,11 @@
 - (double)defaultAlphaForReorderingCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIColor *)defaultBackgroundColorForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIColor *)defaultBackgroundColorForTableViewStyle:(long long)arg1;
+- (NSArray *)defaultBackgroundEffectsForTableViewStyle:(long long)arg1;
 - (UIImage *)defaultCheckmarkImageForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (double)defaultContentAccessoryPaddingForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (double)defaultContentEditPaddingForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (double)defaultContentReorderPaddingForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
-- (UIImage *)defaultDeleteBackgroundImageForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIImage *)defaultDeleteImageForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultDeleteMinusRectForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIColor *)defaultDetailTextColorForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
@@ -57,6 +57,7 @@
 - (double)defaultRowHeightForTableView:(id <UITable>)arg1 cellStyle:(long long)arg2;
 - (double)defaultSectionFooterHeightForTableView:(id <UITable>)arg1;
 - (double)defaultSectionHeaderHeightForTableView:(id <UITable>)arg1;
+- (NSArray *)defaultSelectionEffectsForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIColor *)defaultSelectionTintColorForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (UIColor *)defaultSeparatorColorForTableViewStyle:(long long)arg1;
 - (long long)defaultSeparatorStyleForTableViewStyle:(long long)arg1;
@@ -67,7 +68,9 @@
 - (double)defaultTrailingCellMarginWidthForTableView:(id <UITable>)arg1;
 - (bool)imageViewOffsetByLayoutMarginsForCell:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
 - (bool)reorderingCellWantsShadows:(UITableViewCell *)arg1 inTableView:(id <UITable>)arg2;
+- (<UITableConstants> *)sidebarVariant;
 - (bool)supportsUserInterfaceStyles;
+- (<UITableConstants> *)variantForActive:(bool)arg1 dark:(bool)arg2;
 
 @optional
 

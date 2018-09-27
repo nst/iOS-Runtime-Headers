@@ -24,7 +24,10 @@
 @property (nonatomic, readonly) NSString *_rootDirectory;
 @property (nonatomic, readonly) NSString *_systemRingtoneDirectory;
 
+// Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
+
 + (bool)_checkForFileExistenceAtPath:(id)arg1 allowingTCCPreflight:(bool)arg2;
++ (id)_currentOverridePolicyPreferenceKeyForAlertType:(long long)arg1;
 + (id)_defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 + (bool)_migrateLegacyToneSettings;
 + (id)_systemWideTonePreferenceKeyForAlertType:(long long)arg1;
@@ -37,15 +40,17 @@
 - (id)_aliasForToneIdentifier:(id)arg1;
 - (id)_allSyncedTones;
 - (id)_baseDirectoryForAlertToneSoundFiles;
+- (long long)_currentOverridePolicyForAlertType:(long long)arg1;
+- (long long)_currentOverridePolicyForAlertType:(long long)arg1 didFindAlertOverridePolicy:(bool*)arg2;
 - (id)_currentToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (long long)_currentToneWatchAlertPolicyForAlertType:(long long)arg1;
 - (long long)_currentToneWatchAlertPolicyForAlertType:(long long)arg1 accountIdentifier:(id)arg2;
 - (long long)_currentToneWatchAlertPolicyForAlertType:(long long)arg1 topic:(id)arg2;
 - (long long)_currentToneWatchAlertPolicyForAlertType:(long long)arg1 topic:(id)arg2 didFindPersistedWatchAlertPolicy:(bool*)arg3;
 - (id)_currentToneWatchAlertPolicyPreferenceKeyForAlertType:(long long)arg1 topic:(id)arg2;
+- (id)_defaultPreferablyNonSilentToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)_defaultRingtoneName;
 - (id)_defaultRingtonePath;
-- (id)_defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)_deviceITunesRingtoneDirectory;
 - (id)_deviceITunesRingtoneInformationPlist;
 - (void)_didSetTonePreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned long long)arg3;
@@ -82,6 +87,7 @@
 - (bool)_removeToneWithSyncIdentifier:(id)arg1;
 - (bool)_removeTonesFromManifestAtPath:(id)arg1 fileNames:(id)arg2 shouldSkipReload:(bool)arg3 alreadyLockedManifest:(bool)arg4 removedEntries:(id*)arg5;
 - (id)_rootDirectory;
+- (void)_setCurrentOverridePolicy:(long long)arg1 forAlertType:(long long)arg2;
 - (void)_setCurrentToneWatchAlertPolicy:(long long)arg1 forAlertType:(long long)arg2;
 - (void)_setCurrentToneWatchAlertPolicy:(long long)arg1 forAlertType:(long long)arg2 accountIdentifier:(id)arg3;
 - (void)_setCurrentToneWatchAlertPolicy:(long long)arg1 forAlertType:(long long)arg2 topic:(id)arg3;
@@ -93,6 +99,7 @@
 - (id)_systemNewSoundDirectory;
 - (id)_systemRingtoneDirectory;
 - (id)_systemSoundDirectory;
+- (id)_systemWatchSoundDirectory;
 - (id)_toneForSyncIdentifier:(id)arg1;
 - (id)_toneIdentifierForFileAtPath:(id)arg1 isValid:(bool*)arg2;
 - (id)_tonePreferencesFromService;
@@ -116,7 +123,9 @@
 - (void)dealloc;
 - (id)defaultRingtoneIdentifier;
 - (id)defaultToneIdentifierForAlertType:(long long)arg1;
+- (id)defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (id)filePathForToneIdentifier:(id)arg1;
+- (bool)hasSpecificDefaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 - (void)importTone:(id)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithITunesRingtonePlistAtPath:(id)arg1;
@@ -126,5 +135,10 @@
 - (void)setCurrentToneIdentifier:(id)arg1 forAlertType:(long long)arg2 accountIdentifier:(id)arg3;
 - (void)setCurrentToneIdentifier:(id)arg1 forAlertType:(long long)arg2 topic:(id)arg3;
 - (bool)toneWithIdentifierIsValid:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
+- (bool)_bb_isToneEnabledForAlertType:(long long)arg1 topic:(id)arg2;
+- (bool)bb_isToneEnabledForSectionInfo:(id)arg1;
 
 @end

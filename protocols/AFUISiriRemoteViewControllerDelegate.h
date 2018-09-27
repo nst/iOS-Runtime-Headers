@@ -16,10 +16,11 @@
 - (void)siriRemoteViewController:(void *)arg1 didRequestCurrentTextInputWithReplyHandler:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didRequestKeyboard:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didRequestKeyboard:(bool)arg2 minimized:(bool)arg3;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 failTest:(NSString *)arg2 withReason:(NSString *)arg3;
 - (void)siriRemoteViewController:(void *)arg1 handlePasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (void)siriRemoteViewController:(void *)arg1 launchApplicationWithBundleIdentifier:(void *)arg2 withURL:(void *)arg3 launchOptions:(void *)arg4 replyHandler:(void *)arg5; // needs 5 arg types, found 10: AFUISiriRemoteViewController *, NSString *, NSURL *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (bool)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 openURL:(NSURL *)arg2 appBundleID:(NSString *)arg3 allowSiriDismissal:(bool)arg4;
-- (bool)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 openURL:(NSURL *)arg2 delaySessionEndForTTS:(bool)arg3;
+- (void)siriRemoteViewController:(void *)arg1 openURL:(void *)arg2 delaySessionEndForTTS:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: AFUISiriRemoteViewController *, NSURL *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setBugReportingAvailable:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setCarDisplayGatekeeperVisible:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setCarDisplaySnippetVisible:(bool)arg2;

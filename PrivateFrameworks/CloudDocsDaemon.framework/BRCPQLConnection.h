@@ -39,7 +39,7 @@
 - (void)setProfilingEnabled:(bool)arg1;
 - (void)setProfilingHook:(id /* block */)arg1;
 - (long long)sizeInBytes;
-- (void)usePacedBatchingWithInterval:(double)arg1 changeCount:(int)arg2;
+- (void)usePacedBatchingOnTargetQueue:(id)arg1 withInterval:(double)arg2 changeCount:(int)arg3;
 - (unsigned long long)vmStepsExecuted;
 
 @end

@@ -30,6 +30,7 @@
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) NSString *serializedIdentifier;
+@property (nonatomic, readonly) NSUUID *spiClientIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, readonly) NSUUID *uuid;
@@ -62,6 +63,7 @@
 - (void)_processActionSetModelUpdated:(id)arg1 message:(id)arg2;
 - (void)_registerForMessages;
 - (void)_removeAction:(id)arg1 message:(id)arg2;
+- (void)_removeDonatedIntent;
 - (id)actionWithUUID:(id)arg1;
 - (id)actions;
 - (id)allCharacteristicsInActionsForServices:(id)arg1;
@@ -83,6 +85,8 @@
 - (id)home;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 uuid:(id)arg2 type:(id)arg3 home:(id)arg4 queue:(id)arg5;
+- (void)invalidate;
+- (id)isAccessValidForExecutionWithMessage:(id)arg1;
 - (id)lastExecutionDate;
 - (id)messageDestination;
 - (id)messageReceiveQueue;
@@ -103,6 +107,7 @@
 - (void)setName:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)spiClientIdentifier;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (id)type;

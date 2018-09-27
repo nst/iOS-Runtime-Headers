@@ -12,6 +12,9 @@
     NSMutableArray * _nonFullScreenApps;
 }
 
+@property (getter=isOnHomeScreen, nonatomic, readonly) bool onHomeScreen;
+@property (getter=isOnLockScreen, nonatomic, readonly) bool onLockScreen;
+
 + (int)_openFrontBoardServicesFramework;
 + (id)sharedDisplayLayoutMonitor;
 
@@ -20,6 +23,8 @@
 - (void)addLayoutObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (bool)isOnHomeScreen;
+- (bool)isOnLockScreen;
 - (void)removeLayoutObserver:(id)arg1;
 
 @end

@@ -9,6 +9,9 @@
     unsigned long long  _filteringOptions;
     NSArray * _nowPlayingOrigins;
     NSHashTable * _observerDelegates;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _observerLock;
     NSMapTable * _originControllers;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _registeredObserversCount;
@@ -58,6 +61,7 @@
 - (void)originObserver:(id)arg1 didUpdateSupportedCommandsForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateTimestampForOrigin:(id)arg2;
 - (id)playbackQueueForOrigin:(id)arg1;
+- (void)prepareLocalOriginObserverForNewPlaybackIntent;
 - (void)removeObserverDelegate:(id)arg1;
 - (void)sendMediaRemoteCommand:(unsigned int)arg1 toOrigin:(id)arg2 options:(id)arg3 launchApp:(bool)arg4;
 - (void)setDelegate:(id)arg1;

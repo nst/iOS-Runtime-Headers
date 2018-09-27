@@ -6,10 +6,10 @@
     void * _imp;
 }
 
-@property (nonatomic, readonly, retain) NSString *address;
-@property (nonatomic, readonly, retain) NSString *name;
-@property (nonatomic, readonly, retain) NSString *netServiceDomain;
-@property (nonatomic, readonly, retain) NSString *netServiceName;
+@property (nonatomic, readonly) NSString *address;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *netServiceDomain;
+@property (nonatomic, readonly) NSString *netServiceName;
 @property (nonatomic, readonly) unsigned long long port;
 
 + (id)fromAddressAsText:(id)arg1 withName:(id)arg2;

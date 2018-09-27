@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@interface IMDChat : NSObject {
+@interface IMDChat : NSObject <INSpeakable> {
     NSString * _accountID;
     NSString * _chatIdentifier;
     NSMutableDictionary * _chatInfo;
@@ -17,6 +17,7 @@
     bool  _isArchived;
     bool  _isFiltered;
     NSString * _lastAddressedLocalHandle;
+    NSString * _lastAddressedSIMID;
     IMMessageItem * _lastMessage;
     long long  _lastMessageTimeStampOnLoad;
     long long  _lastReadMessageTimeStamp;
@@ -40,29 +41,36 @@
 
 @property (readonly, retain) IMDAccount *account;
 @property (copy) NSString *accountID;
+@property (nonatomic, readonly) NSArray *alternativeSpeakableMatches;
 @property (copy) NSString *chatIdentifier;
 @property (readonly, retain) NSDictionary *chatProperties;
 @property (copy) NSString *cloudKitRecordID;
 @property long long cloudKitSyncState;
 @property bool createEngramGroupOnMessageSend;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (readonly, retain) NSDictionary *dictionaryRepresentation;
 @property (copy) NSString *displayName;
 @property (setter=setEngramID:, copy) NSString *engramID;
 @property (setter=setGroupID:, copy) NSString *groupID;
 @property (copy) NSString *guid;
 @property bool hasHadSuccessfulQuery;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
 @property (readonly) bool isArchived;
 @property bool isFiltered;
 @property (nonatomic, readonly) bool isUnnamedChat;
 @property (copy) NSString *lastAddressedLocalHandle;
+@property (copy) NSString *lastAddressedSIMID;
 @property (retain) IMMessageItem *lastMessage;
-@property (readonly) long long lastMessageTimeStampOnLoad;
+@property long long lastMessageTimeStampOnLoad;
 @property (nonatomic) long long lastReadMessageTimeStamp;
 @property (readonly, retain) NSDate *lastSentMessageDate;
 @property (readonly, copy) NSString *originalGroupID;
 @property (copy) NSArray *participants;
 @property bool pendingENGroupParticipantUpdate;
 @property (nonatomic, readonly) NSString *personCentricID;
+@property (nonatomic, readonly) NSString *pronunciationHint;
 @property (retain) NSDictionary *properties;
 @property (copy) NSString *roomName;
 @property (setter=_setRowID:) long long rowID;
@@ -70,22 +78,22 @@
 @property (readonly, retain) IMDService *service;
 @property (copy) NSString *serviceName;
 @property (readonly, retain) IMDServiceSession *serviceSession;
+@property (nonatomic, readonly) NSString *spokenPhrase;
 @property (copy) NSString *srCloudKitRecordID;
 @property long long srCloudKitSyncState;
 @property (copy) NSString *srServerChangeToken;
 @property long long state;
 @property unsigned char style;
+@property (readonly) Class superclass;
 @property (setter=_setUnreadCount:) unsigned long long unreadCount;
+@property (nonatomic, readonly) NSString *vocabularyIdentifier;
 
 + (id)_recordType;
 
+- (id)_chatRegistry;
 - (id)_ckUniqueID;
 - (id)_copyCKRecordFromExistingCKMetadataIsUsingStringRay:(bool)arg1 zoneID:(id)arg2 salt:(id)arg3;
 - (id)_personIdentity;
-- (id)_recordIDUsingName:(id)arg1 zoneID:(id)arg2;
-- (id)_recordIDUsingSalt:(id)arg1 zoneID:(id)arg2;
-- (id)_recordNameForRecordChangeTag:(id)arg1 ckRecordID:(id)arg2 salt:(id)arg3;
-- (id)_recordNameUsingSalt:(id)arg1;
 - (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned long long)arg1;
 - (void)_updateCachedParticipants;
@@ -94,6 +102,7 @@
 - (id)accountID;
 - (void)addParticipant:(id)arg1;
 - (void)addParticipants:(id)arg1;
+- (id)alternativeSpeakableMatches;
 - (bool)applyChangesUsingCKRecord:(id)arg1 isUsingStingRay:(bool)arg2;
 - (id)chatIdentifier;
 - (id)chatProperties;
@@ -117,7 +126,7 @@
 - (id)groupID;
 - (id)guid;
 - (bool)hasHadSuccessfulQuery;
-- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(long long)arg11 style:(unsigned char)arg12 isFiltered:(bool)arg13 hasHadSuccessfulQuery:(bool)arg14 engramID:(id)arg15 serverChangeToken:(id)arg16 cloudKitSyncState:(long long)arg17 originalGroupID:(id)arg18 lastReadMessageTimeStamp:(long long)arg19 lastMessageTimeStampOnLoad:(long long)arg20 srServerChangeToken:(id)arg21 srCloudKitSyncState:(long long)arg22 cloudKitRecordID:(id)arg23 srCloudKitRecordID:(id)arg24;
+- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 lastAddressedSIMID:(id)arg10 properties:(id)arg11 state:(long long)arg12 style:(unsigned char)arg13 isFiltered:(bool)arg14 hasHadSuccessfulQuery:(bool)arg15 engramID:(id)arg16 serverChangeToken:(id)arg17 cloudKitSyncState:(long long)arg18 originalGroupID:(id)arg19 lastReadMessageTimeStamp:(long long)arg20 lastMessageTimeStampOnLoad:(long long)arg21 srServerChangeToken:(id)arg22 srCloudKitSyncState:(long long)arg23 cloudKitRecordID:(id)arg24 srCloudKitRecordID:(id)arg25;
 - (id)initWithCKRecord:(id)arg1 isUsingStingRay:(bool)arg2;
 - (bool)isArchived;
 - (bool)isBusinessChat;
@@ -127,6 +136,7 @@
 - (bool)isSMSSpam;
 - (bool)isUnnamedChat;
 - (id)lastAddressedLocalHandle;
+- (id)lastAddressedSIMID;
 - (id)lastMessage;
 - (long long)lastMessageTimeStampOnLoad;
 - (long long)lastReadMessageTimeStamp;
@@ -135,6 +145,7 @@
 - (id)participants;
 - (bool)pendingENGroupParticipantUpdate;
 - (id)personCentricID;
+- (id)pronunciationHint;
 - (id)properties;
 - (id)recordName;
 - (void)removeParticipant:(id)arg1;
@@ -158,6 +169,7 @@
 - (void)setHasHadSuccessfulQuery:(bool)arg1;
 - (void)setIsFiltered:(bool)arg1;
 - (void)setLastAddressedLocalHandle:(id)arg1;
+- (void)setLastAddressedSIMID:(id)arg1;
 - (void)setLastMessage:(id)arg1;
 - (void)setLastMessageTimeStampOnLoad:(long long)arg1;
 - (void)setLastReadMessageTimeStamp:(long long)arg1;
@@ -174,6 +186,7 @@
 - (void)setSrServerChangeToken:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setStyle:(unsigned char)arg1;
+- (id)spokenPhrase;
 - (id)srCloudKitRecordID;
 - (long long)srCloudKitSyncState;
 - (id)srServerChangeToken;
@@ -192,6 +205,8 @@
 - (void)updateIsFiltered:(bool)arg1;
 - (void)updateIsSMSSpamChatProperty:(bool)arg1;
 - (void)updateLastAddressedHandle:(id)arg1;
+- (void)updateLastAddressedHandle:(id)arg1 forceUpdate:(bool)arg2;
+- (void)updateLastAddressedSIMID:(id)arg1;
 - (void)updateLastReadMessageTimeStampIfNeeded:(long long)arg1;
 - (void)updateNumberOfTimesRespondedToThread;
 - (void)updateOriginalGroupID:(id)arg1;
@@ -200,6 +215,8 @@
 - (void)updateSRCloudKitSyncState:(long long)arg1;
 - (void)updateSRServerChangeToken:(id)arg1;
 - (void)updateServerChangeToken:(id)arg1;
+- (void)updateShouldForceToSMS:(bool)arg1;
 - (void)updateSrCloudKitRecordID:(id)arg1;
+- (id)vocabularyIdentifier;
 
 @end

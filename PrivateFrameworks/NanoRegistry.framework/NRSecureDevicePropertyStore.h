@@ -5,6 +5,7 @@
 @interface NRSecureDevicePropertyStore : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * _IDToProperty;
     bool  _dirty;
+    NSObject<OS_dispatch_queue> * _dirtyQueue;
     NSMutableDictionary * _propertyToID;
 }
 
@@ -22,6 +23,8 @@
 - (id)description;
 - (bool)dirty;
 - (void)encodeWithCoder:(id)arg1;
+- (void)forceImportSecureProperties:(id)arg1;
+- (void)forceWriteSecurePropertyID:(id)arg1 withValue:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;

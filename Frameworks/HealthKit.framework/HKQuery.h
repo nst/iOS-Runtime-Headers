@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKQuery : NSObject <HKQueryClientInterface> {
+@interface HKQuery : NSObject <HKQueryClientInterface, _HKXPCExportable> {
     long long  _activationState;
     NSUUID * _activationUUID;
     NSObject<OS_dispatch_queue> * _clientQueue;
+    int  _deactivateCallCount;
     bool  _deactivating;
     <HKQueryDelegate> * _delegate;
     _HKFilter * _filter;
     bool  _hasBeenExecuted;
     HKObjectType * _objectType;
     NSPredicate * _predicate;
+    HKQueryServerProxyProvider * _proxyProvider;
     NSObject<OS_dispatch_queue> * _queue;
     <HKQueryServerInterface> * _serverProxy;
     bool  _shouldSuppressDataCollection;
@@ -21,6 +23,7 @@
 @property (nonatomic, readonly) long long activationState;
 @property (nonatomic, readonly) NSUUID *activationUUID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly) long long deactivateCallCount;
 @property (readonly) bool deactivating;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HKQueryDelegate> *delegate;
@@ -31,7 +34,6 @@
 @property (retain) NSPredicate *predicate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) HKSampleType *sampleType;
-@property (nonatomic, readonly) <HKQueryServerInterface> *serverProxy;
 @property (nonatomic) bool shouldSuppressDataCollection;
 @property (readonly) Class superclass;
 
@@ -41,12 +43,15 @@
 + (id)_predicateForObjectsFromAppleWatches;
 + (id)clientInterface;
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 + (void)configureServerInterface:(id)arg1;
 + (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 + (id)predicateForActivitySummariesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 + (id)predicateForActivitySummaryWithDateComponents:(id)arg1;
 + (id)predicateForCategorySamplesWithOperatorType:(unsigned long long)arg1 value:(long long)arg2;
++ (id)predicateForClinicalRecordsFromSource:(id)arg1 FHIRResourceType:(id)arg2 identifier:(id)arg3;
++ (id)predicateForClinicalRecordsWithFHIRResourceType:(id)arg1;
 + (id)predicateForCreationDateWithTodayViewRange:(id)arg1;
 + (id)predicateForDiagnosticTestResultCategory:(id)arg1;
 + (id)predicateForObjectWithUUID:(id)arg1;
@@ -63,6 +68,7 @@
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
 + (id)predicateForQuantitySamplesWithOperatorType:(unsigned long long)arg1 quantity:(id)arg2;
 + (id)predicateForRecordsFromClinicalAccountIdentifier:(id)arg1;
++ (id)predicateForRecordsFromGatewayWithExternalIdentifier:(id)arg1;
 + (id)predicateForRecordsWithSortDateFromStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 + (id)predicateForSamplesAssociatedWithSample:(id)arg1;
 + (id)predicateForSamplesForDayFromDate:(id)arg1 calendar:(id)arg2 options:(unsigned long long)arg3;
@@ -78,6 +84,7 @@
 + (id)serverInterface;
 + (id)serverInterfaceProtocol;
 + (bool)shouldApplyAdditionalPredicateForObjectType:(id)arg1;
++ (id)taskIdentifier;
 
 - (void).cxx_destruct;
 - (id)_filter;
@@ -85,20 +92,24 @@
 - (id)_predicateFilterClasses;
 - (void)_queue_activateWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_deactivateWithError:(id)arg1;
+- (void)_queue_finishActivationWithServerProxy:(id)arg1 activationUUID:(id)arg2 error:(id)arg3 completion:(id /* block */)arg4;
 - (void)_throwInvalidArgumentExceptionIfHasBeenExecuted:(SEL)arg1;
 - (void)activateWithClientQueue:(id)arg1 healthStore:(id)arg2 delegate:(id)arg3 completion:(id /* block */)arg4;
 - (long long)activationState;
 - (id)activationUUID;
 - (id)clientQueue;
 - (void)client_deliverError:(id)arg1 forQuery:(id)arg2;
+- (void)connectionInterrupted;
+- (void)connectionInvalidated;
 - (void)deactivate;
+- (long long)deactivateCallCount;
 - (bool)deactivating;
 - (id)delegate;
 - (id)description;
+- (id)exportedInterface;
 - (id)objectType;
 - (id)predicate;
 - (id)queue;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deactivate;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_dispatchToClientForUUID:(id)arg1 block:(id /* block */)arg2;
@@ -108,8 +119,8 @@
 - (bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)reactivateWithHealthStore:(id)arg1;
+- (id)remoteInterface;
 - (id)sampleType;
-- (id)serverProxy;
 - (void)setObjectType:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setShouldSuppressDataCollection:(bool)arg1;

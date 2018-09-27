@@ -16,7 +16,7 @@
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
-- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 fromArchiver:(bool)arg4;
+- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 validatingValues:(bool)arg4;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)readVersion;
 - (unsigned long long)writeVersion;

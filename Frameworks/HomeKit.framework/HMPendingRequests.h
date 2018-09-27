@@ -4,11 +4,10 @@
 
 @interface HMPendingRequests : NSObject {
     NSMutableArray * _contextLists;
-    NSObject<OS_dispatch_queue> * _workQueue;
+    HMFUnfairLock * _lock;
 }
 
 @property (nonatomic, retain) NSMutableArray *contextLists;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_addRequest:(id)arg1 ofType:(long long)arg2 forIdentifier:(id)arg3;
@@ -42,7 +41,5 @@
 - (id)retrieveProgressBlockForIdentifier:(id)arg1;
 - (id)retrieveRequestOfType:(long long)arg1 forIdentifier:(id)arg2;
 - (void)setContextLists:(id)arg1;
-- (void)setWorkQueue:(id)arg1;
-- (id)workQueue;
 
 @end

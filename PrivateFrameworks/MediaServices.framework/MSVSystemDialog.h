@@ -16,7 +16,6 @@
 @property (nonatomic) struct __CFUserNotification { }*presentedUserNotification;
 @property (nonatomic, readonly) NSArray *textFields;
 
-+ (id)passwordAlertWithOptions:(id)arg1;
 + (id)systemDialogWithOptions:(id)arg1;
 
 - (void).cxx_destruct;

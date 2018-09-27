@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLManagedAlbum : _PLManagedAlbum <PLSearchableAssetCollection, PLUserEditableAlbumProtocol> {
+@interface PLManagedAlbum : _PLManagedAlbum <PLCloudDeletable, PLSearchableAssetCollection, PLUserEditableAlbumProtocol> {
     bool  _albumShouldBeAutomaticallyDeleted;
     bool  _needsPersistenceUpdate;
 }
@@ -16,6 +16,9 @@
 @property (nonatomic, readonly) bool canContributeToCloudSharedAlbum;
 @property (nonatomic, readonly) bool canShowAvalancheStacks;
 @property (nonatomic, readonly) bool canShowComments;
+@property (nonatomic) short cloudDeleteState;
+@property (readonly) long long cloudDeletionType;
+@property (readonly, copy) NSString *cloudUUIDForDeletion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSDate *endDate;
@@ -38,8 +41,9 @@
 @property (nonatomic, readonly) bool isRecentlyAddedAlbum;
 @property (nonatomic, readonly) bool isStandInAlbum;
 @property (nonatomic, readonly) bool isUserLibraryAlbum;
-@property (nonatomic, readonly) bool isWallpaperAlbum;
 @property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, readonly) NSDate *keyAssetCreationDate;
+@property (nonatomic, readonly) NSString *keyAssetUUID;
 @property (nonatomic, readonly, retain) NSNumber *kind;
 @property (nonatomic, readonly) int kindValue;
 @property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
@@ -47,17 +51,22 @@
 @property (nonatomic, readonly, retain) NSMutableOrderedSet *mutableAssets;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic) bool needsPersistenceUpdate;
+@property (nonatomic, readonly) unsigned long long numberOfAssets;
 @property (nonatomic) int pendingItemsCount;
 @property (nonatomic) int pendingItemsType;
 @property (nonatomic, readonly) unsigned long long photosCount;
 @property (nonatomic, readonly, retain) UIImage *posterImage;
+@property (nonatomic, readonly) NSDate *searchableEndDate;
+@property (nonatomic, readonly) NSDate *searchableStartDate;
 @property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
 @property (nonatomic, readonly) bool shouldDeleteWhenEmpty;
 @property (nonatomic, retain) NSDictionary *slideshowSettings;
 @property (nonatomic, readonly, copy) id /* block */ sortingComparator;
 @property (nonatomic, readonly, retain) NSDate *startDate;
+@property (nonatomic, readonly) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly, retain) NSString *title;
 @property (nonatomic, readonly, retain) NSMutableOrderedSet *userEditableAssets;
 @property (nonatomic, readonly, retain) NSString *uuid;
@@ -68,6 +77,8 @@
 + (id)baseSearchIndexPredicate;
 + (id)childKeyForOrdering;
 + (void)clearAssetOrderByAbumUUIDs;
++ (long long)cloudDeletionTypeForTombstone:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
 + (id)keyPathsForValuesAffectingApproximateCount;
 + (id)keyPathsForValuesAffectingPhotosCount;
 + (id)keyPathsForValuesAffectingVideosCount;
@@ -89,6 +100,8 @@
 - (unsigned long long)assetsCount;
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
 - (id)childKeyForOrdering;
+- (long long)cloudDeletionType;
+- (id)cloudUUIDForDeletion;
 - (unsigned long long)countOfInternalUserEditableAssets;
 - (id)descriptionOfAssetOrderValues;
 - (void)didSave;
@@ -101,8 +114,11 @@
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
 - (bool)isEmpty;
 - (bool)isValidKindForPersistence;
+- (id)keyAssetCreationDate;
+- (id)keyAssetUUID;
 - (id)mutableAssets;
 - (bool)needsPersistenceUpdate;
+- (unsigned long long)numberOfAssets;
 - (id)objectInInternalUserEditableAssetsAtIndex:(unsigned long long)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)persistMetadataToFileSystem;
@@ -117,9 +133,12 @@
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (unsigned long long)searchIndexCategory;
 - (id)searchIndexContents;
+- (id)searchableEndDate;
+- (id)searchableStartDate;
 - (void)setAlbumShouldBeAutomaticallyDeleted:(bool)arg1;
 - (void)setNeedsPersistenceUpdate:(bool)arg1;
 - (void)sortAssetsUsingiTunesAlbumOrder;
+- (id)subtitle;
 - (bool)supportsAssetOrderKeys;
 - (void)unregisterForChanges;
 - (void)updateKeyAssetsIfNeeded;

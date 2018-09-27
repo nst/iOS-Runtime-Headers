@@ -27,9 +27,9 @@
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)contextAfterInput;
 - (id)contextBeforeInput;
-- (void)dealloc;
 - (bool)deletingBackwardsWillRemoveText;
 - (id)description;
 - (bool)documentIsEmpty;
@@ -57,7 +57,7 @@
 - (id)selectedText;
 - (id)wordPrefixOfString:(id)arg1 withTerminatorPredicate:(id /* block */)arg2 reverse:(bool)arg3;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (id)documentStateOfDocument:(id)arg1;
 + (id)documentStateOfDocumentWithRecentInputIdentifier:(id)arg1;
@@ -68,6 +68,7 @@
 - (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
 - (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
 - (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
+- (id)fullString;
 - (id)initWithDocument:(id)arg1;
 - (id)initWithDocument:(id)arg1 contextBoundary:(long long)arg2;
 - (id)initWithDocumentWithRecentInputIdentifier:(id)arg1;

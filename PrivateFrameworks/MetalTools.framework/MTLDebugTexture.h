@@ -3,10 +3,12 @@
  */
 
 @interface MTLDebugTexture : MTLToolsTexture {
+    unsigned long long  _bytesPerImage;
     unsigned long long  _bytesPerRow;
     MTLDebugResource * _common;
     MTLDebugDevice * _debugDevice;
     MTLTextureDescriptor * _descriptor;
+    bool  _isLinearTexture;
     unsigned long long  _offset;
     struct MTLPixelFormatInfo { 
         char *name; 
@@ -36,9 +38,11 @@
     unsigned long long  _usageRequired;
 }
 
+@property (nonatomic, readonly) unsigned long long bytesPerImage;
 @property (nonatomic, readonly) unsigned long long bytesPerRow;
 @property (nonatomic, readonly) MTLDebugResource *common;
 @property (nonatomic, readonly, copy) MTLTextureDescriptor *descriptor;
+@property (nonatomic, readonly) bool isLinearTexture;
 @property (nonatomic, readonly) unsigned long long offset;
 @property (nonatomic, readonly) unsigned long long plane;
 @property (nonatomic, readonly) unsigned long long purgeableState;
@@ -53,6 +57,7 @@
 - (void)accessedByGPU;
 - (void)blitManagedToPrivate;
 - (void)blitManagedToShared;
+- (unsigned long long)bytesPerImage;
 - (unsigned long long)bytesPerRow;
 - (id)common;
 - (void)dealloc;
@@ -66,12 +71,14 @@
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned long long)arg4;
 - (id)heap;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 buffer:(id)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
+- (id)initWithBaseTexture:(id)arg1 device:(id)arg2 buffer:(id)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6 bytesPerImage:(unsigned long long)arg7;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 descriptor:(id)arg3 plane:(unsigned long long)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 texture:(id)arg3 descriptor:(id)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 texture:(id)arg3 pixelFormat:(unsigned long long)arg4;
 - (id)initWithBaseTexture:(id)arg1 device:(id)arg2 texture:(id)arg3 pixelFormat:(unsigned long long)arg4 textureType:(unsigned long long)arg5 levels:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 slices:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg7;
 - (id)initWithBaseTexture:(id)arg1 heap:(id)arg2 device:(id)arg3 descriptor:(id)arg4;
+- (bool)isLinearTexture;
 - (void)makeAliasable;
 - (id)newCompressedTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 level:(unsigned long long)arg3 slice:(unsigned long long)arg4;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1;

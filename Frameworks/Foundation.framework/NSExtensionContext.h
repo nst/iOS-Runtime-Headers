@@ -7,6 +7,9 @@
     NSXPCConnection * __auxiliaryConnection;
     NSXPCListener * __auxiliaryListener;
     bool  __dummyExtension;
+    struct { 
+        unsigned int val[8]; 
+    }  __extensionHostAuditToken;
     <_NSExtensionContextHosting> * __extensionHostProxy;
     <_NSExtensionContextVending> * __extensionVendorProxy;
     id  __principalObject;
@@ -20,6 +23,7 @@
 @property (setter=_setAuxiliaryConnection:, nonatomic, retain) NSXPCConnection *_auxiliaryConnection;
 @property (setter=_setAuxiliaryListener:, nonatomic, retain) NSXPCListener *_auxiliaryListener;
 @property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) bool _dummyExtension;
+@property (setter=_setExtensionHostAuditToken:) struct { unsigned int x1[8]; } _extensionHostAuditToken;
 @property (setter=_setExtensionHostProxy:, retain) <_NSExtensionContextHosting> *_extensionHostProxy;
 @property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
 @property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
@@ -45,7 +49,6 @@
 + (id)_extensionContextHostProtocolAllowedClassesForItems;
 + (id)_extensionContextHostProtocolWithAllowedErrorClasses:(id)arg1;
 + (id)_extensionContextVendorProtocolWithAllowedErrorClasses:(id)arg1;
-+ (void)initialize;
 + (bool)supportsSecureCoding;
 
 - (id)_UUID;
@@ -54,6 +57,7 @@
 - (id)_auxiliaryListener;
 - (void)_completeRequestReturningItemsSecondHalf:(id /* block */)arg1;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
+- (struct { unsigned int x1[8]; })_extensionHostAuditToken;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
 - (bool)_isDummyExtension;
@@ -67,6 +71,7 @@
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
 - (void)_setDummyExtension:(bool)arg1;
+- (void)_setExtensionHostAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)_setExtensionHostProxy:(id)arg1;
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;

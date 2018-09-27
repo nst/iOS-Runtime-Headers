@@ -10,7 +10,7 @@
 
 @optional
 
-- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
+- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1 undoing:(bool)arg2;
 - (void)willLoadMoreSuggestionsForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
 
 @end

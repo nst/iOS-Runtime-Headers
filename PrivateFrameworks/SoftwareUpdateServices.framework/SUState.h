@@ -8,6 +8,7 @@
     SUDescriptor * _failedPatchDescriptor;
     SUInstallPolicy * _installPolicy;
     _SUAutoInstallOperationModel * _lastAutoInstallOperationModel;
+    NSString * _lastDeletedSUAssetID;
     SUDownload * _lastDownload;
     NSString * _lastProductBuild;
     NSString * _lastProductType;
@@ -21,6 +22,7 @@
     NSDate * _scheduledAutodownloadPolicyChangeTime;
     NSDate * _scheduledAutodownloadWifiPeriodEndTime;
     NSDate * _scheduledManualDownloadWifiPeriodEndTime;
+    NSString * _sessionID;
     bool  _stashbagPersisted;
     NSDictionary * _unlockCallbacks;
 }
@@ -33,6 +35,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SUInstallPolicy *installPolicy;
 @property (nonatomic, retain) _SUAutoInstallOperationModel *lastAutoInstallOperationModel;
+@property (nonatomic, retain) NSString *lastDeletedSUAssetID;
 @property (nonatomic, copy) SUDownload *lastDownload;
 @property (nonatomic, retain) NSString *lastProductBuild;
 @property (nonatomic, retain) NSString *lastProductType;
@@ -46,6 +49,7 @@
 @property (nonatomic, retain) NSDate *scheduledAutodownloadPolicyChangeTime;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadWifiPeriodEndTime;
 @property (nonatomic, retain) NSDate *scheduledManualDownloadWifiPeriodEndTime;
+@property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) bool stashbagPersisted;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *unlockCallbacks;
@@ -62,6 +66,7 @@
 - (id)init;
 - (id)installPolicy;
 - (id)lastAutoInstallOperationModel;
+- (id)lastDeletedSUAssetID;
 - (id)lastDownload;
 - (id)lastProductBuild;
 - (id)lastProductType;
@@ -79,11 +84,13 @@
 - (id)scheduledAutodownloadPolicyChangeTime;
 - (id)scheduledAutodownloadWifiPeriodEndTime;
 - (id)scheduledManualDownloadWifiPeriodEndTime;
+- (id)sessionID;
 - (void)setAutodownloadNeedsOneTimeRetry:(bool)arg1;
 - (void)setCurrentDescriptor:(id)arg1;
 - (void)setFailedPatchDescriptor:(id)arg1;
 - (void)setInstallPolicy:(id)arg1;
 - (void)setLastAutoInstallOperationModel:(id)arg1;
+- (void)setLastDeletedSUAssetID:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;
 - (void)setLastProductType:(id)arg1;
@@ -97,6 +104,7 @@
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;
 - (void)setScheduledAutodownloadWifiPeriodEndTime:(id)arg1;
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;
+- (void)setSessionID:(id)arg1;
 - (void)setStashbagPersisted:(bool)arg1;
 - (void)setUnlockCallbacks:(id)arg1;
 - (bool)stashbagPersisted;

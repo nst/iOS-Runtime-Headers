@@ -6,16 +6,19 @@
 
 + (id)_generateSalt;
 + (id)_keychainPasswordForRestrictions;
++ (void)_migrateRestrictionsPasscodeIfNeeded;
 + (void)_removeKeychainPasswordForRestrictions;
 + (id)_restrictionPasswordDictionary;
++ (void)_setKeychainPasswordForRestrictions:(id)arg1;
++ (bool)hasHashAndSaltLegacyPassword;
 + (bool)legacyRestrictionsInEffect;
 + (void)migrateRestrictionsPasscode;
 + (id)newHashDataForPassword:(id)arg1 andSalt:(id)arg2;
-+ (id)passwordForRestrictions;
-+ (void)removePasswordForRestrictions;
-+ (id)saltForRestrictions;
++ (id)passwordForHashAndSaltLegacyRestrictions;
++ (id)pinFromHashAndSaltLegacyPassword;
++ (void)removePasswordForHashAndSaltLegacyRestrictions;
++ (id)saltForHashAndSaltLegacyRestrictions;
 + (void)setPIN:(id)arg1;
-+ (void)setPasswordForRestrictions:(id)arg1;
 + (bool)settingEnabled;
 + (bool)validatePIN:(id)arg1;
 

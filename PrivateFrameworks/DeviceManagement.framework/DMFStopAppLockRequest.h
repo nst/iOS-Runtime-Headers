@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFStopAppLockRequest : CATTaskRequest
+@interface DMFStopAppLockRequest : DMFTaskRequest
 
 @end

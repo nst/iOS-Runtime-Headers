@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXComponentView : UIView <STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXTransitionDataSource, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate> {
+@interface SXComponentView : UIView <STTextCanvasRenderSource, SXAXAssistiveTechStatusChangeListener, SXComponentInteractable, SXTransitionDataSource, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -213,6 +213,7 @@
 - (bool)transitionViewUsesThumbnail;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionVisibleFrame;
 - (void)updateAllowHierarchyRemovalWithComponent:(id)arg1 componentStyle:(id)arg2;
+- (bool)userInteractable;
 - (id)viewport;
 - (long long)visibilityState;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;

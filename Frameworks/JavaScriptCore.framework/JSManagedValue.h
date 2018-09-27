@@ -10,7 +10,7 @@
         struct JSLock {} *m_ptr; 
     }  m_lock;
     NSMapTable * m_owners;
-    struct WeakValueRef { 
+    struct JSWeakValue { 
         int m_tag; 
         union WeakValueUnion { 
             struct JSValue { 
@@ -22,14 +22,14 @@
                         int tag; 
                     } asBits; 
                 } u; 
-            } m_primitive; 
+            } primitive; 
             struct Weak<JSC::JSObject> { 
                 struct WeakImpl {} *m_impl; 
-            } m_object; 
+            } object; 
             struct Weak<JSC::JSString> { 
                 struct WeakImpl {} *m_impl; 
-            } m_string; 
-        } u; 
+            } string; 
+        } m_value; 
     }  m_weakValue;
 }
 

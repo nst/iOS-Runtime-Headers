@@ -3,11 +3,11 @@
  */
 
 @interface TSPArchiver : TSPArchiverBase {
-    NSHashTable * _aggregatedCommandToModelReferences;
+    TSPReferenceOrderedSet * _aggregatedCommandToModelReferences;
     NSHashTable * _aggregatedDataReferences;
     NSHashTable * _aggregatedLazyReferences;
-    NSHashTable * _aggregatedStrongReferences;
-    NSHashTable * _aggregatedWeakReferences;
+    TSPReferenceOrderedSet * _aggregatedStrongReferences;
+    TSPReferenceOrderedSet * _aggregatedWeakReferences;
     NSObject<OS_dispatch_group> * _archiveGroup;
     TSPObject * _explicitComponentRootObject;
     NSMutableSet * _featureInfos;
@@ -15,14 +15,14 @@
     NSUUID * _objectUUID;
     NSObject<OS_dispatch_group> * _serializeGroup;
     NSObject<OS_dispatch_data> * _serializedData;
-    NSArray * _unknownMessages;
+    TSPUnknownContentSnapshot * _unknownContentSnapshot;
 }
 
-@property (nonatomic, readonly) NSHashTable *aggregatedCommandToModelReferences;
+@property (nonatomic, readonly) TSPReferenceOrderedSet *aggregatedCommandToModelReferences;
 @property (nonatomic, readonly) NSHashTable *aggregatedDataReferences;
 @property (nonatomic, readonly) NSHashTable *aggregatedLazyReferences;
-@property (nonatomic, readonly) NSHashTable *aggregatedStrongReferences;
-@property (nonatomic, readonly) NSHashTable *aggregatedWeakReferences;
+@property (nonatomic, readonly) TSPReferenceOrderedSet *aggregatedStrongReferences;
+@property (nonatomic, readonly) TSPReferenceOrderedSet *aggregatedWeakReferences;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *archiveGroup;
 @property (nonatomic, readonly) TSPObject *explicitComponentRootObject;
 @property (nonatomic, readonly) NSSet *featureInfos;
@@ -35,7 +35,8 @@
 @property (nonatomic, readonly) bool success;
 
 - (void).cxx_destruct;
-- (void)addDocumentFeatureInfoWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3;
+- (id)addAlternateArchiverForVersion:(unsigned long long)arg1 fieldPath:(const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)arg2 isDiffArchiver:(bool)arg3 diffReadVersion:(unsigned long long)arg4;
+- (void)addDocumentFeatureInfoWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 validatingValues:(bool)arg4;
 - (void)aggregateReferencesFromArchiver:(id)arg1;
 - (id)aggregatedCommandToModelReferences;
 - (id)aggregatedDataReferences;
@@ -64,7 +65,7 @@
 - (id)serializedData;
 - (bool)shouldSaveAlternates;
 - (bool)success;
-- (bool)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7; unsigned int x8; struct RepeatedPtrField<TSP::FieldInfo> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedField<unsigned long long> { unsigned long long *x_12_1_1; int x_12_1_2; int x_12_1_3; } x12; int x13; struct RepeatedField<unsigned int> { unsigned int *x_14_1_1; int x_14_1_2; int x_14_1_3; } x14; int x15; struct FieldPath {} *x16; struct RepeatedPtrField<TSP::FieldPath> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; unsigned int x18; }*)arg1 withArchiver:(id)arg2;
+- (bool)updateMessageInfo:(struct MessageInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; unsigned int x7; unsigned int x8; struct RepeatedPtrField<TSP::FieldInfo> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; struct RepeatedField<unsigned long long> { unsigned long long *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedField<unsigned long long> { unsigned long long *x_12_1_1; int x_12_1_2; int x_12_1_3; } x12; int x13; struct RepeatedField<unsigned int> { unsigned int *x_14_1_1; int x_14_1_2; int x_14_1_3; } x14; int x15; struct FieldPath {} *x16; struct RepeatedPtrField<TSP::FieldPath> { void **x_17_1_1; int x_17_1_2; int x_17_1_3; int x_17_1_4; } x17; struct RepeatedField<unsigned int> { unsigned int *x_18_1_1; int x_18_1_2; int x_18_1_3; } x18; int x19; unsigned int x20; }*)arg1 withArchiver:(id)arg2;
 - (void)validateOrderedArchivableContent:(id)arg1;
 
 @end

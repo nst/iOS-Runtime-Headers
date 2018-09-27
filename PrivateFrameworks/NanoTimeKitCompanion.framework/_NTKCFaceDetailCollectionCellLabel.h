@@ -10,6 +10,7 @@
 }
 
 @property (nonatomic) bool active;
+@property (nonatomic, readonly) double firstLineBaseline;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) bool usesShortTextWidth;
 
@@ -19,6 +20,7 @@
 - (id)_inactiveFont;
 - (id)_inactiveTextColor;
 - (bool)active;
+- (double)firstLineBaseline;
 - (id)init;
 - (void)layoutSubviews;
 - (void)setActive:(bool)arg1;

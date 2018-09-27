@@ -47,6 +47,7 @@
 - (id)_generateNewUniqueID;
 - (bool)_hadAttendees;
 - (bool)_hadRecurrenceRules;
+- (bool)_isExternallyOrganizedInvitationWithAttendees:(bool)arg1;
 - (void)_moveToCalendar:(id)arg1 forCommittingItem:(id)arg2;
 - (void)_recursivelyPerformBlockOnSelfAndDetachedItems:(id /* block */)arg1 forCommittingItem:(id)arg2;
 - (void)_removeAttachment:(id)arg1;

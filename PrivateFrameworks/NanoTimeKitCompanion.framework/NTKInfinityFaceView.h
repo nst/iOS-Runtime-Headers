@@ -7,7 +7,7 @@
     UIView * _cornerView;
     UIColor * _currentComplicationColor;
     NTKInfinityListing * _currentQueueListing;
-    NTKFaceLayoutContentProvider * _layoutContentProvider;
+    NTKFaceViewComplicationFactory * _faceViewComplicationFactory;
     long long  _previousDataMode;
     UILabel * _reviewLabel;
     unsigned int  _tapPromptedVideoChange;
@@ -23,6 +23,7 @@
 - (void)_backlightWillTurnOff;
 - (void)_cleanupAfterEditing;
 - (id)_complicationDisplayWrapperForTouch:(id)arg1;
+- (long long)_complicationPickerStyleForSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_currentPosterImageView;
 - (id)_editingComplicationColor;
@@ -53,14 +54,13 @@
 - (double)_timeLabelAlphaForEditMode:(long long)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateComplicationWithColor:(id)arg1 animated:(bool)arg2;
-- (void)_updateComplicationWithColor:(id)arg1 animated:(bool)arg2 useComplicationFlickerWorkaround:(bool)arg3;
 - (void)_updatePaused;
 - (void)_updateReviewLabel;
 - (id)_viewForEditOption:(id)arg1;
 - (bool)_wantsTimeTravelStatusModule;
 - (void)dealloc;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)layoutSubviews;
 - (void)setTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 customEditMode:(long long)arg4 slot:(id)arg5;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
@@ -70,7 +70,7 @@
 - (void)updateReviewDirection:(id)arg1;
 - (id)videoPlayerView;
 - (void)videoPlayerViewDidBeginPlaying:(id)arg1;
-- (void)videoPlayerViewDidFinishPlayingVideoToEnd:(id)arg1;
+- (void)videoPlayerViewDidBeginPlayingQueuedVideo:(id)arg1;
 - (void)videoPlayerViewDidPauseAfterPlayingVideoToEnd:(id)arg1;
 
 @end

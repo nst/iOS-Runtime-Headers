@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) <NTKMonogramComplicationDisplay> *legacyDisplay;
 
-+ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_activate;

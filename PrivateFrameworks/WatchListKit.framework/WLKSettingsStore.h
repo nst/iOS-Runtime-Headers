@@ -7,6 +7,7 @@
     NSString * _accountID;
     NSMutableArray * _apps;
     NSXPCConnection * _connection;
+    NSUserDefaults * _defaultsAccessor;
     int  _didChangeNotificationToken;
     bool  _hasOutstandingChanges;
     int  _ignoreChangesCount;
@@ -29,13 +30,14 @@
 @property (nonatomic) bool migratediOS;
 @property (nonatomic) bool migratedtvOS;
 @property (nonatomic) bool optedIn;
-@property (nonatomic, retain) NSNumber *optedInVal;
+@property (nonatomic, copy) NSNumber *optedInVal;
 @property (nonatomic) bool privateModeEnabled;
-@property (nonatomic, retain) NSString *pushToken;
+@property (nonatomic, copy) NSString *pushToken;
 @property (nonatomic) bool sportsScoreSpoilersAllowed;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)sharedSettings;
++ (void)synchronizeSettingsDefaultsForKeys:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_accountStoreChangedNotification:(id)arg1;
@@ -59,7 +61,7 @@
 - (id)deniedBrands;
 - (id)description;
 - (void)endIgnoringChanges;
-- (void)forceUpdate;
+- (void)forceUpdateWithCompletion:(id /* block */)arg1;
 - (bool)hasOutstandingChanges;
 - (int)ignoreChangesCount;
 - (id)init;

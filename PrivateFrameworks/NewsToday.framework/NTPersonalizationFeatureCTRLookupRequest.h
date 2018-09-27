@@ -5,12 +5,12 @@
 @interface NTPersonalizationFeatureCTRLookupRequest : NSObject <NSCopying> {
     double  _clickPrior;
     double  _impressionPrior;
-    FRPersonalizationFeature * _personalizationFeature;
+    FCPersonalizationFeature * _personalizationFeature;
 }
 
 @property (nonatomic) double clickPrior;
 @property (nonatomic) double impressionPrior;
-@property (nonatomic, copy) FRPersonalizationFeature *personalizationFeature;
+@property (nonatomic, copy) FCPersonalizationFeature *personalizationFeature;
 
 - (void).cxx_destruct;
 - (double)clickPrior;

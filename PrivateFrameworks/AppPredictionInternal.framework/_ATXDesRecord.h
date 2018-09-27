@@ -7,7 +7,7 @@
     unsigned long long  _consumerType;
     NSString * _launchBundle;
     unsigned long long  _predictionCount;
-    struct { double x1[153]; double x2; } * _predictionItems;
+    struct { double x1[259]; double x2; } * _predictionItems;
     long long  _version;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) unsigned long long consumerType;
 @property (nonatomic, readonly) NSString *launchBundle;
 @property (nonatomic, readonly) unsigned long long predictionCount;
-@property (nonatomic, readonly) struct { double x1[153]; double x2; }*predictionItems;
+@property (nonatomic, readonly) struct { double x1[259]; double x2; }*predictionItems;
 @property (nonatomic, readonly) long long version;
 
 + (bool)supportsSecureCoding;
@@ -30,12 +30,12 @@
 - (id)info;
 - (id)initWithAppsByRank:(id)arg1 version:(long long)arg2 launchBundle:(id)arg3 consumerType:(unsigned long long)arg4;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithScores:(struct { char *x1; float x2[153]; float x3; }*)arg1 count:(unsigned long long)arg2 version:(long long)arg3 launchBundle:(id)arg4;
+- (id)initWithScores:(const struct vector<ATXPredictionItem, std::__1::allocator<ATXPredictionItem> > { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::__1::allocator<ATXPredictionItem> > { struct ATXPredictionItem {} *x_3_1_1; } x3; }*)arg1 version:(long long)arg2 launchBundle:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToRecord:(id)arg1;
 - (id)launchBundle;
 - (unsigned long long)predictionCount;
-- (struct { double x1[153]; double x2; }*)predictionItems;
+- (struct { double x1[259]; double x2; }*)predictionItems;
 - (long long)version;
 
 @end

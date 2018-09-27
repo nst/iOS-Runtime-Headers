@@ -115,6 +115,7 @@
 + (id)messageFromIMMessageItem:(id)arg1 sender:(id)arg2 subject:(id)arg3;
 + (id)messageFromIMMessageItemDictionary:(id)arg1 body:(id)arg2 sender:(id)arg3 subject:(id)arg4;
 + (id)messageWithLocation:(id)arg1 flags:(unsigned long long)arg2 error:(id)arg3 guid:(id)arg4;
++ (bool)supportedRichLinkURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_associatedMessageGUID:(id)arg1;
@@ -228,6 +229,7 @@
 - (bool)__ck_isiMessage;
 - (id)__ck_mediaObjects;
 - (id)__ck_previewTextWithChat:(id)arg1;
+- (id)__ck_previewTextWithChat:(id)arg1 ignorePluginContent:(bool)arg2;
 - (id)__ck_service;
 - (id)__ck_undowngradedMessage;
 

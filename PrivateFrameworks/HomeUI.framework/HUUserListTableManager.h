@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUUserListTableManager : NSObject <HMHomeDelegatePrivate, HUAddUserViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    void * _addressBook;
+@interface HUUserListTableManager : NSObject <HMHomeDelegatePrivate, HUAddPeopleViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     bool  _allowsEditing;
+    CNContactStore * _contactStore;
     <HUUserListManagerTableDelegate> * _delegate;
     bool  _editing;
     HMHome * _home;
@@ -15,8 +15,8 @@
     UIViewController * _viewController;
 }
 
-@property (nonatomic) void*addressBook;
 @property (nonatomic) bool allowsEditing;
+@property (nonatomic, retain) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUUserListManagerTableDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -32,7 +32,7 @@
 
 - (void).cxx_destruct;
 - (void)_configurePersonViewController:(id)arg1 invitation:(id)arg2;
-- (void*)_copyPersonForUser:(id)arg1;
+- (id)_contactForUser:(id)arg1;
 - (void)_didAddUser:(id)arg1;
 - (void)_didInsertAtIndex:(unsigned long long)arg1;
 - (void)_didReloadAtIndex:(unsigned long long)arg1;
@@ -49,10 +49,10 @@
 - (void)_stopSharing;
 - (void)_stopSharingWithCompletion:(id /* block */)arg1;
 - (id)_stringForInvitationState:(long long)arg1;
-- (void*)addressBook;
+- (void)addPeopleViewController:(id)arg1 didSendInvitations:(id)arg2;
+- (void)addPeopleViewControllerDidCancel:(id)arg1;
 - (bool)allowsEditing;
-- (void)controllerDidDismissWithError:(id)arg1;
-- (void)controllerDidSendInvitations:(id)arg1;
+- (id)contactStore;
 - (id)delegate;
 - (bool)editing;
 - (id)home;
@@ -64,8 +64,8 @@
 - (long long)numberOfDataRows;
 - (long long)sectionForPeople;
 - (id)selectedIndexPath;
-- (void)setAddressBook:(void*)arg1;
 - (void)setAllowsEditing:(bool)arg1;
+- (void)setContactStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(bool)arg1;
 - (void)setHome:(id)arg1;

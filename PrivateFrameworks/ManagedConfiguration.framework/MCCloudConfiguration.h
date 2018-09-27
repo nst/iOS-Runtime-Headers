@@ -38,6 +38,7 @@
 - (void)setMemberQueueDetails:(id)arg1;
 - (void)setMemberQueueSetAsideDetails:(id)arg1;
 - (void)setSetAsideDetails:(id)arg1;
+- (id)tvProviderUserToken;
 - (int)userMode;
 
 @end

@@ -19,6 +19,7 @@
 - (void)harvestedSuggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)harvestedSuggestionsFromMessages:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
+- (bool)isMessageEligibleForSuggestions:(id)arg1;
 - (id)messagesDaemonConnection;
 - (id)previousMessages;
 - (void)sendContextForMessage:(id)arg1;

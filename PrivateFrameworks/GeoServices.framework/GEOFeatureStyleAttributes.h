@@ -82,5 +82,6 @@
 + (id)styleAttributesForDraggingWithAttributes:(id)arg1;
 + (id)styleAttributesForTrafficCameraType:(long long)arg1 isAboveThreshold:(bool)arg2;
 + (id)styleAttributesForTrafficIncidentType:(long long)arg1;
++ (id)trainStationStyleAttributes;
 
 @end

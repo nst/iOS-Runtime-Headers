@@ -3,7 +3,7 @@
  */
 
 @interface NTKUpNextMultilineCell : NTKUpNextBaseCell {
-    NTKUpNextAccessoryView * _accessoryView;
+    UIView * _accessoryView;
     UILayoutGuide * _bodyImageSizingLayoutGuide;
     CLKFont * _boldFont;
     UILayoutGuide * _contentLayoutGuide;
@@ -18,29 +18,31 @@
     NSArray * _headerWithNoImageConstraints;
     NSArray * _headerWithRightImageConstraints;
     CLKFont * _italicFont;
-    bool  _showingAccessory;
+    bool  _showingDescriptionAccessory;
     bool  _showingDescriptionImage;
     bool  _showingHeader;
     bool  _showingHeaderImage;
-    bool  _showingThreeLineLayout;
+    bool  _showingImageAccessory;
+    bool  _showingThirdLine;
     CLKFont * _standardFont;
     bool  _usingStretchableImage;
+    NSArray * _withAccessoryConstraints;
     NSArray * _withDescription2Constraints;
-    NSArray * _withDescriptionAccessoryConstraints;
     NSArray * _withDescriptionImageViewConstraints;
     NSArray * _withHeaderConstraints;
     NSArray * _withStretchableDescriptionImageViewConstraints;
+    NSArray * _withoutAccessoryConstraints;
     NSArray * _withoutDescription2Constraints;
-    NSArray * _withoutDescriptionAccessoryConstraints;
     NSArray * _withoutDescriptionImageViewConstraints;
     NSArray * _withoutHeaderConstraints;
 }
 
-+ (void)initialize;
++ (struct CGSize { double x1; double x2; })suggestedBodyImageSizeForDevice:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)configureWithContent:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPaused:(bool)arg1;
 - (void)updateConstraints;
 
 @end

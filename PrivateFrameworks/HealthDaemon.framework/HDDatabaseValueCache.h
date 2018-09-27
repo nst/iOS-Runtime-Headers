@@ -13,9 +13,11 @@
 @property (nonatomic, copy) NSString *threadLocalKey;
 
 - (void).cxx_destruct;
-- (id)_resourceQueue_objectForKey:(id)arg1;
-- (void)_resourceQueue_removeThreadLocalObjectForKey:(id)arg1;
-- (void)_resourceQueue_storeThreadLocalObject:(id)arg1 forKey:(id)arg2;
+- (void)_commitTransactionStorage:(id)arg1;
+- (id)_resourceQueue_objectForKey:(id)arg1 database:(id)arg2;
+- (void)_resourceQueue_removeAllObjectsWithDatabase:(id)arg1;
+- (void)_resourceQueue_storeObject:(id)arg1 forKey:(id)arg2 database:(id)arg3;
+- (id)_transactionStorageWithDatabase:(id)arg1 createIfNecessary:(bool)arg2;
 - (id)cache;
 - (id)fetchObjectForKey:(id)arg1 database:(id)arg2 error:(id*)arg3 faultHandler:(id /* block */)arg4;
 - (id)init;

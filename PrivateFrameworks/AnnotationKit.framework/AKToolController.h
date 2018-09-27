@@ -13,7 +13,7 @@
 @property AKController *controller;
 @property (nonatomic, readonly) bool isInDefaultMode;
 @property bool pencilInkEnabled;
-@property (nonatomic) unsigned long long toolMode;
+@property unsigned long long toolMode;
 
 + (void)cascadeAnnotations:(id)arg1 onPageController:(id)arg2 forPaste:(bool)arg3;
 

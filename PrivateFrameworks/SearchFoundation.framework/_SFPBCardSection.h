@@ -5,9 +5,6 @@
 @interface _SFPBCardSection : PBCodable <NSSecureCoding, _SFPBCardSection> {
     NSString * _cardSectionId;
     NSArray * _commands;
-    struct { 
-        unsigned int type : 1; 
-    }  _has;
     _SFPBCard * _nextCard;
     NSArray * _parameterKeyPaths;
     NSString * _resultIdentifier;
@@ -19,11 +16,6 @@
 @property (nonatomic, copy) NSArray *commands;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasCardSectionId;
-@property (nonatomic, readonly) bool hasNextCard;
-@property (nonatomic, readonly) bool hasResultIdentifier;
-@property (nonatomic, readonly) bool hasType;
-@property (nonatomic, readonly) bool hasValue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) _SFPBCard *nextCard;
@@ -43,11 +35,6 @@
 - (id)commandsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)commandsCount;
 - (id)dictionaryRepresentation;
-- (bool)hasCardSectionId;
-- (bool)hasNextCard;
-- (bool)hasResultIdentifier;
-- (bool)hasType;
-- (bool)hasValue;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;

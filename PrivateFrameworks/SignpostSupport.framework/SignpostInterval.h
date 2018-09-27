@@ -7,20 +7,28 @@
     SignpostEvent * _endEvent;
 }
 
+@property (nonatomic, readonly) NSString *_intervalTypeString;
 @property (nonatomic, retain) SignpostEvent *beginEvent;
 @property (nonatomic, retain) SignpostEvent *endEvent;
 
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
+- (void)_adjustBeginTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (void)_adjustEndTimeVal:(struct timeval { long long x1; int x2; }*)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
 - (id)_eventDescriptions;
+- (id)_intervalTypeString;
 - (id)beginEvent;
 - (id)debugDescription;
+- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (id)descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
 - (unsigned long long)durationMachContinuousTime;
 - (float)durationSeconds;
 - (id)endEvent;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)hash;
+- (id)humanReadableType;
 - (id)initWithBeginEvent:(id)arg1 endEvent:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
@@ -29,7 +37,6 @@
 - (id)number2Name;
 - (id)number2Value;
 - (unsigned long long)scope;
-- (id)serializeableDictionary;
 - (void)setBeginEvent:(id)arg1;
 - (void)setEndEvent:(id)arg1;
 - (unsigned long long)startMachContinuousTime;
@@ -38,5 +45,9 @@
 - (id)string2Name;
 - (id)string2Value;
 - (bool)telemetryEnabled;
+- (long long)tv_sec;
+- (int)tv_usec;
+- (int)tz_dsttime;
+- (int)tz_minuteswest;
 
 @end

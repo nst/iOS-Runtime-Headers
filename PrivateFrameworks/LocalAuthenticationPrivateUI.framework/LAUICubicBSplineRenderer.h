@@ -27,7 +27,9 @@
     bool  _caps_dirty;
     MTLRenderPassDescriptor * _clear_pass_descriptor;
     <MTLCommandQueue> * _command_queue;
-    id /* block */  _completion;
+    struct animation_completion_handler_container { 
+        id /* block */ _completion; 
+    }  _completion_container;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
@@ -43,6 +45,7 @@
         } __end_cap_; 
     }  _control_points;
     unsigned long long  _current_animation_target_index;
+    unsigned long long  _frame_index;
     struct global_state_animator { 
         struct animator<float, 0> { 
             float _target; 
@@ -172,6 +175,8 @@
 - (void)_updateTarget:(const struct global_state { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1;
 - (unsigned long long)addInstance:(const struct spline_instance { unsigned long long x1; struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x_2_1_1; struct spline_instance_state {} *x_2_1_2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x_3_2_1; } x_2_1_3; } x2; unsigned long long x3; bool x4; struct animator<float __attribute__((ext_vector_type(3))), 0>=ffffC {} x5; struct animator<simd::quatf, 0> { struct quatf { } x_6_1_1; struct quatf { } x_6_1_2; struct quatf { } x_6_1_3; float x_6_1_4; float x_6_1_5; float x_6_1_6; float x_6_1_7; unsigned char x_6_1_8; } x6; struct animator<float __attribute__((ext_vector_type(3))), 0>=ffffC {} x7; struct animator<simd::quatf, 0> { struct quatf { } x_8_1_1; struct quatf { } x_8_1_2; struct quatf { } x_8_1_3; float x_8_1_4; float x_8_1_5; float x_8_1_6; float x_8_1_7; unsigned char x_8_1_8; } x8; }*)arg1;
 - (unsigned long long)addSpline:(const struct spline { struct vector<std::__1::vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >, std::__1::allocator<std::__1::vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > > >=^{vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > {} x1; struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > {} *x2; struct __compressed_pair<std::__1::vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > *, std::__1::allocator<std::__1::vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > > >=^{vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> > {} x3; }*)arg1;
+- (struct spline_instance_state { struct quatf { } x1; struct quatf { } x2; float x3; float x4; float x5; float x6; float x7; bool x8; float x9; int (*x10)(); })animationTargetForSpline:(unsigned long long)arg1 instance:(unsigned long long)arg2;
+- (void)dealloc;
 - (id)init;
 - (id)initWithMTKView:(id)arg1 sharedState:(const struct renderer_shared_state { id x1; id x2; struct array<id<MTLRenderPipelineState>, 3> { /* Warning: unhandled array encoding: '[3@]}{array<id<MTLRenderPipelineState>, 3>=[3@]}@@@}' */ id x_3_1_1[3]; } x3; id x4; id x5; }*)arg2;
 - (void)invalidateRenderPassDescriptor;
@@ -180,11 +185,11 @@
 - (struct double4x4 { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })projectionTransform;
 - (void)releaseBuffers;
 - (bool)render;
-- (void)setGlobalAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::global_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::global_state> > { struct global_state {} *x1; struct global_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::global_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::global_state> > { struct global_state {} *x_3_1_1; } x3; }*)arg1 withCompletion:(id /* block */)arg2;
-- (void)setInstanceAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x1; struct spline_instance_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x_3_1_1; } x3; }*)arg1 forSpline:(unsigned long long)arg2 instance:(unsigned long long)arg3 withCompletion:(id /* block */)arg4;
+- (void)setAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x1; struct spline_instance_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state> > { struct spline_instance_state {} *x_3_1_1; } x3; }*)arg1 forSpline:(unsigned long long)arg2 instance:(unsigned long long)arg3 withCompletion:(id /* block */)arg4;
+- (void)setAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_state> > { struct spline_state {} *x1; struct spline_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_state> > { struct spline_state {} *x_3_1_1; } x3; }*)arg1 forSpline:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
+- (void)setAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::global_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::global_state> > { struct global_state {} *x1; struct global_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::global_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::global_state> > { struct global_state {} *x_3_1_1; } x3; }*)arg1 withCompletion:(id /* block */)arg2;
 - (void)setModelTransform:(struct double4x4 { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setProjectionTransform:(struct double4x4 { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
-- (void)setSplineAnimationTargets:(const struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_state, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_state> > { struct spline_state {} *x1; struct spline_state {} *x2; struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_state> > { struct spline_state {} *x_3_1_1; } x3; }*)arg1 forSpline:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
 - (void)setSplineInstanceUniform:(struct instance_uniform { struct float4x4 { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_1_1[4]; } x1; })arg1 forSpline:(unsigned long long)arg2 instance:(unsigned long long)arg3 forceCapRegeneration:(bool)arg4;
 - (void)setViewTransform:(struct double4x4 { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setWireframeEnabled:(bool)arg1;

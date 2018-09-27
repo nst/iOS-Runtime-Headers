@@ -4,6 +4,7 @@
 
 @interface GEOPlatform : NSObject
 
++ (bool)isRunningInGeod;
 + (void)setIsRunningInGeod:(bool)arg1;
 + (id)sharedPlatform;
 
@@ -15,6 +16,7 @@
 - (long long)deviceScreenWidthInPixels;
 - (id)hardwareIdentifier;
 - (id)hardwareModel;
+- (bool)isCellDataPossible;
 - (bool)isInternalInstall;
 - (bool)mapsFeatureFreedomEnabled;
 - (id)osVersion;

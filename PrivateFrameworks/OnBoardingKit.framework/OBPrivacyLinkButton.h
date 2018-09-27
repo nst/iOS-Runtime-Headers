@@ -25,6 +25,8 @@
 - (id)containerView;
 - (id)iconView;
 - (id)initWithCaption:(id)arg1 buttonText:(id)arg2 image:(id)arg3 imageSize:(struct CGSize { double x1; double x2; })arg4 useLargeIcon:(bool)arg5;
+- (id)labelText;
+- (void)layoutSubviews;
 - (void)setEnabled:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (id)textView;

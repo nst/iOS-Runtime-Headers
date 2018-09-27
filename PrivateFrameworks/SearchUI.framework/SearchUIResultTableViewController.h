@@ -35,12 +35,15 @@
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(bool)arg2;
 - (void)clearResultsFromSection:(id)arg1;
 - (id)currentQueryString;
-- (bool)defaultApplicationExistsAndSupportsOpenInPlaceForResult:(id)arg1 open:(bool)arg2;
+- (bool)defaultApplicationExistsAndSupportsOpenInPlaceForFileURL:(id)arg1 performOpenIfSo:(bool)arg2;
+- (bool)defaultApplicationExistsAndSupportsOpenInPlaceForResult:(id)arg1;
 - (void)didEngageActionItem:(id)arg1 actionPerformed:(bool)arg2;
 - (void)didEngageResult:(id)arg1;
 - (bool)downloadDemotedAppIfNecessaryForBundleIdentifier:(id)arg1;
+- (void)expandCellsIfNeeded;
 - (id)expandedSections;
 - (id)fallbackPeekViewControllerForIndexPath:(id)arg1;
+- (void)fetchURLForFileResult:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(bool)arg2;
 - (unsigned long long)handleSelectionOfResult:(id)arg1;
 - (double)headerHeight;
@@ -52,16 +55,14 @@
 - (id)latestVisibleResultsAccountedForInFeedback;
 - (void)modalViewControllerClosed;
 - (double)offScreenContentScrollDistance;
-- (void)openUserActivityForResult:(id)arg1;
 - (void)performExpansion:(bool)arg1 withSectionIndex:(unsigned long long)arg2;
 - (void)placeViewController:(id)arg1 shouldLogFeedbackOfType:(int)arg2;
 - (id)potentiallyVisibleCells;
 - (id)potentiallyVisibleHeaders;
 - (void)productViewController:(id)arg1 didFinishWithResult:(long long)arg2;
-- (void)reloadResult:(id)arg1 inResultSection:(id)arg2;
-- (void)replaceResult:(id)arg1 withResult:(id)arg2 inResultSection:(id)arg3;
+- (void)replaceResult:(id)arg1 withResult:(id)arg2;
+- (void)scrollTableToTop;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
 - (bool)sectionIsClearable:(id)arg1;
 - (bool)sectionShouldBeExpanded:(id)arg1;
 - (id)sections;
@@ -86,9 +87,11 @@
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)toggleExpansionForSection:(id)arg1;
 - (void)updateDataModel;
-- (void)updateWithResultSections:(id)arg1;
+- (bool)updateMustAccountForLayout;
+- (void)updateWithResultSections:(id)arg1 scrollToTop:(bool)arg2;
 - (bool)view:(id)arg1 isVisibleInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)viewControllerForIndexPath:(id)arg1 isPeek:(bool)arg2;
+- (void)viewWillAppear:(bool)arg1;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

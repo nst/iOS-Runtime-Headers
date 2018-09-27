@@ -6,8 +6,6 @@
 @required
 
 - (<FCPrivateDataContextInternal> *)internalPrivateDataContext;
-- (bool)isABTestingEnabled;
-- (bool)isPersonalizationEnabled;
 - (bool)isPrivateDataSyncingEnabled;
 - (FCNetworkBehaviorMonitor *)networkBehaviorMonitor;
 - (FCPersonalizationData *)personalizationData;

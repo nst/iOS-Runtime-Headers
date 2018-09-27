@@ -3,9 +3,6 @@
  */
 
 @interface _SFPBButton : PBCodable <NSSecureCoding, _SFPBButton> {
-    struct { 
-        unsigned int isSelected : 1; 
-    }  _has;
     _SFPBImage * _image;
     bool  _isSelected;
     _SFPBImage * _selectedImage;
@@ -13,9 +10,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasImage;
-@property (nonatomic, readonly) bool hasIsSelected;
-@property (nonatomic, readonly) bool hasSelectedImage;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _SFPBImage *image;
 @property (nonatomic) bool isSelected;
@@ -25,9 +19,6 @@
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (bool)hasImage;
-- (bool)hasIsSelected;
-- (bool)hasSelectedImage;
 - (unsigned long long)hash;
 - (id)image;
 - (id)initWithDictionary:(id)arg1;

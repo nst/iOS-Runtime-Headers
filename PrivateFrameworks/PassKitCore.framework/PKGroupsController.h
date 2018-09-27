@@ -46,7 +46,7 @@
 - (void)_fixIndicesFrom:(unsigned long long)arg1 through:(unsigned long long)arg2;
 - (void)_getPassesAndCatalogSynchronously:(bool)arg1 withHandler:(id /* block */)arg2;
 - (bool)_groupIDIsNew:(id)arg1;
-- (id)_groupsExcludingPayment;
+- (id)_groupsExcludingTypePayment;
 - (unsigned long long)_indexOfGroupID:(id)arg1;
 - (void)_insertGroup:(id)arg1 atIndex:(unsigned long long)arg2 notify:(bool)arg3;
 - (void)_insertLocalGroupsIntoCatalog:(id)arg1 withPassesByUniqueID:(id)arg2;
@@ -73,6 +73,7 @@
 - (unsigned long long)indexOfSeparationGroup;
 - (id)init;
 - (id)initLimited;
+- (id)initWithPassLibrary:(id)arg1;
 - (id)initWithPassTypeMask:(unsigned long long)arg1 passFilters:(unsigned long long)arg2;
 - (void)loadGroupsSynchronously;
 - (void)loadGroupsWithCompletion:(id /* block */)arg1;

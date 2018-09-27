@@ -63,6 +63,8 @@
 @property (nonatomic, copy) NSString *watchListContinuationText;
 @property (nonatomic, copy) NSString *watchListIdentifier;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -115,5 +117,9 @@
 - (id)watchListConfirmationText;
 - (id)watchListContinuationText;
 - (id)watchListIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

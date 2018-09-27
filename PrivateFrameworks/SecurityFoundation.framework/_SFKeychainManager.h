@@ -6,7 +6,7 @@
     id  _keychainManagerInternal;
 }
 
-@property (readonly) SFCredentialStore *credentialStore;
+@property (readonly) _SFCredentialStore *credentialStore;
 
 + (id)defaultManager;
 

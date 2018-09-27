@@ -23,7 +23,7 @@
 - (void)_activate;
 - (void)_handleResponse:(id)arg1 data:(id)arg2 error:(id)arg3 identifier:(id)arg4 responseHandler:(id /* block */)arg5;
 - (void)_invalidate;
-- (void)_requestURL:(id)arg1 methodName:(id)arg2 params:(id)arg3 httpHeaders:(id)arg4 identifier:(id*)arg5 responseHandler:(id /* block */)arg6;
+- (void)_requestURL:(id)arg1 methodName:(id)arg2 params:(id)arg3 httpHeaders:(id)arg4 identifier:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)activate;
 - (void)dealloc;
 - (id)dispatchQueue;

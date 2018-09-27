@@ -68,6 +68,7 @@
 - (void)addBinarySamples:(id)arg1;
 - (void)addCategorySamples:(id)arg1;
 - (void)addCdaDocumentSamples:(id)arg1;
+- (void)addClinicalRecord:(id)arg1;
 - (void)addConditionRecord:(id)arg1;
 - (void)addCorrelations:(id)arg1;
 - (void)addDeletedSamples:(id)arg1;

@@ -37,6 +37,7 @@
 
 + (struct CGSize { double x1; double x2; })previewImageMaxSizeForType:(unsigned long long)arg1;
 + (struct CGSize { double x1; double x2; })previewImageSizeForType:(unsigned long long)arg1;
++ (bool)shouldShowImportedDataNotificationsOnOpen;
 
 - (void).cxx_destruct;
 - (id)UIStateForChart:(id)arg1;

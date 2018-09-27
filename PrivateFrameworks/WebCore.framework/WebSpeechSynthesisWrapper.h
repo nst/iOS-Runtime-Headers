@@ -6,7 +6,7 @@
     struct RetainPtr<AVSpeechSynthesizer> { 
         void *m_ptr; 
     }  m_synthesizer;
-    struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> > {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; } * m_synthesizerObject;
+    struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> >, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> > {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; } * m_synthesizerObject;
     struct RefPtr<WebCore::PlatformSpeechSynthesisUtterance, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisUtterance> > { 
         struct PlatformSpeechSynthesisUtterance {} *m_ptr; 
     }  m_utterance;
@@ -20,7 +20,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithSpeechSynthesizer:(struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> >, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> > {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; }*)arg1;
+- (id)initWithSpeechSynthesizer:(struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> >, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice, WTF::DumbPtrTraits<WebCore::PlatformSpeechSynthesisVoice> > {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; }*)arg1;
 - (float)mapSpeechRateToPlatformRate:(float)arg1;
 - (void)pause;
 - (void)resume;

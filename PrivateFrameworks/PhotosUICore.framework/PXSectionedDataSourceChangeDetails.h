@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long toDataSourceIdentifier;
 
++ (void)debug_assertValidChangeDetails:(id)arg1 fromDataSource:(id)arg2 toDataSource:(id)arg3;
 + (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathAfterApplyingChanges:(id)arg1 toIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2 hasIncrementalChanges:(out bool*)arg3 objectChanged:(out bool*)arg4;
 + (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })indexPathAfterRevertingChanges:(id)arg1 fromIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2 hasIncrementalChanges:(out bool*)arg3 objectChanged:(out bool*)arg4;
 + (id)indexPathSetAfterApplyingChanges:(id)arg1 toIndexPathSet:(id)arg2 hasIncrementalChanges:(out bool*)arg3;

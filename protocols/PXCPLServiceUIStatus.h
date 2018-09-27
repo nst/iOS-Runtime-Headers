@@ -12,7 +12,7 @@
 - (NSString *)actionTitle;
 - (NSString *)failureDescription;
 - (bool)isPaused;
-- (double)progress;
+- (float)progress;
 - (NSString *)referencedItemsDescription;
 - (NSString *)stateDescription;
 

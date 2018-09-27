@@ -29,8 +29,9 @@
 - (void)dealloc;
 - (id /* block */)disconnectHandler;
 - (id)eventQueue;
+- (id)eventQueueWithQOS:(unsigned int)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
-- (id)initWithXPCConnection:(id)arg1;
+- (id)initWithXPCConnection:(id)arg1 qos:(unsigned int)arg2;
 - (id /* block */)messageHandler;
 - (void)sendMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 withReply:(id /* block */)arg2;

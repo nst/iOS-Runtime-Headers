@@ -70,6 +70,7 @@
 - (void)_onqueue_dealWithSessionTrustAuth:(long long)arg1 credential:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_onqueue_errorOrCancelError;
 - (void)_onqueue_ioTick;
+- (bool)_onqueue_isSecure;
 - (void)_onqueue_needClientCert:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_onqueue_needServerTrust:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_onqueue_postConnectConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -101,6 +102,7 @@
 - (id)initWithHost:(id)arg1 port:(long long)arg2 session:(id)arg3 disavow:(id /* block */)arg4;
 - (id)initWithTask:(id)arg1 Connection:(struct shared_ptr<TCPIOConnection> { struct TCPIOConnection {} *x1; struct __shared_weak_count {} *x2; })arg2 disavow:(id /* block */)arg3;
 - (struct shared_ptr<TCPIOConnectionObjCPP> { struct TCPIOConnectionObjCPP {} *x1; struct __shared_weak_count {} *x2; })ios;
+- (bool)isKindOfClass:(Class)arg1;
 - (void)readDataOfMinLength:(unsigned long long)arg1 maxLength:(unsigned long long)arg2 timeout:(double)arg3 completionHandler:(id /* block */)arg4;
 - (void)setCurrentReadTask:(id)arg1;
 - (void)setCurrentWriteTask:(id)arg1;

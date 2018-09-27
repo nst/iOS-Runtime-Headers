@@ -2,90 +2,67 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEFunctionArgumentSpec : NSObject <NSCopying> {
-    int  mAccessorMode;
-    int  mArgumentContext;
-    int  mArgumentType;
-    short  mDefaultModeIndex;
-    bool  mDisallowCurrency;
-    bool  mDisallowDuration;
-    NSArray * mDisallowedTypes;
-    bool  mForceArrayMode;
-    TSCEFunctionSpec * mFunctionSpec;
-    short  mIndex;
-    bool  mIsInteger;
-    bool  mMaxInclusive;
-    double  mMaxValue;
-    bool  mMinInclusive;
-    double  mMinValue;
-    struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; } * mModeValues;
-    unsigned char  mRangeContext;
-    bool  mReferenceForGeometryOnly;
+@interface TSCEFunctionArgumentSpec : NSObject {
+    struct TSCEFunctionArgSpec { 
+        int _argumentType; 
+        int _accessorMode; 
+        unsigned char _rangeContext; 
+        int _argumentContext; 
+        struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { 
+            struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { 
+                struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { 
+                    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { 
+                        struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **__value_; 
+                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { 
+                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { 
+                                unsigned long long __value_; 
+                            } __data_; 
+                        } __value_; 
+                    } __ptr_; 
+                } __bucket_list_; 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { 
+                        struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *__next_; 
+                    } __value_; 
+                } __p1_; 
+                struct __compressed_pair<unsigned long, std::__1::hash<TSCEArgumentType> > { 
+                    unsigned long long __value_; 
+                } __p2_; 
+                struct __compressed_pair<float, std::__1::equal_to<TSCEArgumentType> > { 
+                    float __value_; 
+                } __p3_; 
+            } __table_; 
+        } _disallowedTypes; 
+        struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { 
+            struct TSCEValue {} *__begin_; 
+            struct TSCEValue {} *__end_; 
+            struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { 
+                struct TSCEValue {} *__value_; 
+            } __end_cap_; 
+        } _modeValues; 
+        short _defaultModeIndex; 
+        TSCEFunctionSpec *_functionSpec; 
+        double _minValue; 
+        double _maxValue; 
+        short _index; 
+        bool _minInclusive; 
+        bool _maxInclusive; 
+        bool _disallowDuration; 
+        bool _disallowCurrency; 
+        bool _isInteger; 
+        bool _forceArrayMode; 
+        bool _referenceForGeometryOnly; 
+    }  _argSpec;
 }
 
-@property (nonatomic, readonly) int accessorMode;
-@property (nonatomic, readonly) int argumentContext;
-@property (nonatomic, readonly) short defaultModeIndex;
-@property (nonatomic, readonly) bool disallowCurrency;
-@property (nonatomic, readonly) bool disallowDuration;
-@property (nonatomic, readonly) NSArray *disallowedTypes;
-@property (nonatomic, readonly) bool forceArrayMode;
-@property (nonatomic) TSCEFunctionSpec *functionSpec;
-@property (nonatomic, readonly) short index;
-@property (nonatomic, readonly) bool isInteger;
-@property (nonatomic, readonly) bool isMode;
-@property (nonatomic, readonly) bool isOptional;
-@property (nonatomic, readonly) bool maxInclusive;
-@property (nonatomic, readonly) double maxValue;
-@property (nonatomic, readonly) bool minInclusive;
-@property (nonatomic, readonly) double minValue;
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<TSCEValue' */ struct *modeValues; /* unknown property attribute:  std::__1::allocator<TSCEValue> >=^{TSCEValue}}} */
-@property (nonatomic, readonly) short numModes;
-@property (nonatomic) unsigned char rangeContext;
-@property (nonatomic, readonly) bool referenceForGeometryOnly;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3 argumentContext:(int)arg4;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3 argumentContext:(int)arg4 minValue:(double)arg5 minInclusive:(bool)arg6 maxValue:(double)arg7 maxInclusive:(bool)arg8 isInteger:(bool)arg9 disallowedTypes:(const struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg10 disallowDuration:(bool)arg11 disallowCurrency:(bool)arg12 modeValues:(const struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg13 defaultModeIndex:(short)arg14 referenceForGeometryOnly:(bool)arg15 forceArrayMode:(bool)arg16;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3 disallowedTypes:(const struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg4 disallowDuration:(bool)arg5 disallowCurrency:(bool)arg6;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3 minValue:(double)arg4 minInclusive:(bool)arg5 maxValue:(double)arg6 maxInclusive:(bool)arg7 disallowedTypes:(const struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg8 disallowDuration:(bool)arg9 disallowCurrency:(bool)arg10;
++ (struct TSCEFunctionArgSpec { int x1; int x2; unsigned char x3; int x4; struct unordered_set<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct __hash_table<TSCEArgumentType, std::__1::hash<TSCEArgumentType>, std::__1::equal_to<TSCEArgumentType>, std::__1::allocator<TSCEArgumentType> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *>, std::__1::allocator<std::__1::__hash_node<TSCEArgumentType, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSCEArgumentType, void *> *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; } x_5_1_1; } x5; })argSpecWithType:(int)arg1 accessorMode:(int)arg2 rangeContext:(unsigned char)arg3 modeValues:(const struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg4 defaultModeIndex:(short)arg5;
 
-+ (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(bool)arg8 maxValue:(double)arg9 maxInclusive:(bool)arg10 isInteger:(bool)arg11 disallowDuration:(bool)arg12 disallowCurrency:(bool)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(bool)arg16 forceArrayMode:(bool)arg17;
-
-- (int)accessorMode;
-- (int)argumentContext;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (short)defaultModeIndex;
-- (bool)disallowCurrency;
-- (bool)disallowDuration;
-- (id)disallowedTypes;
-- (bool)forceArrayMode;
-- (id)functionSpec;
-- (short)index;
-- (long long)indexForModeBool:(bool)arg1 locale:(id)arg2;
-- (long long)indexForModeNumber:(double)arg1 locale:(id)arg2;
-- (long long)indexForModeString:(id)arg1 locale:(id)arg2;
-- (long long)indexForModeValue:(struct TSCEValue { unsigned long long x1[10]; int x2; }*)arg1 locale:(id)arg2;
-- (id)initArgumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(unsigned char)arg6 minValue:(double)arg7 minInclusive:(bool)arg8 maxValue:(double)arg9 maxInclusive:(bool)arg10 isInteger:(bool)arg11 disallowDuration:(bool)arg12 disallowCurrency:(bool)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(bool)arg16 forceArrayMode:(bool)arg17;
-- (bool)isInteger;
-- (bool)isMode;
-- (bool)isModeEnabled:(short)arg1;
-- (bool)isOptional;
-- (id)localizedArgumentNameForLocale:(id)arg1;
-- (id)localizedFunctionNameForLocale:(id)arg1;
-- (id)localizedModeMenuItemStringForModeIndex:(short)arg1 locale:(id)arg2;
-- (id)localizedModeNameForModeIndex:(short)arg1 locale:(id)arg2;
-- (id)localizedModeToolTipStringForModeIndex:(short)arg1 locale:(id)arg2;
-- (id)localizedToolTipStringForLocale:(id)arg1;
-- (bool)maxInclusive;
-- (double)maxValue;
-- (bool)minInclusive;
-- (double)minValue;
-- (struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)modeValues;
-- (id)nativeSyntaxString;
-- (id)nativeSyntaxStringForModeIndex:(short)arg1;
-- (short)numModes;
-- (int)preferredType;
-- (unsigned char)rangeContext;
-- (bool)referenceForGeometryOnly;
-- (void)setFunctionSpec:(id)arg1;
-- (void)setRangeContext:(unsigned char)arg1;
-- (bool)typeIsDisallowed:(int)arg1 value:(struct TSCEValue { unsigned long long x1[10]; int x2; }*)arg2;
-- (struct TSCEValue { unsigned long long x1[10]; int x2; })valueForModeIndex:(short)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 
 @end

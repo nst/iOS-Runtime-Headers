@@ -15,6 +15,7 @@
 - (struct PCVector2<double> { double x1; double x2; })convertRelativeToImageCoordinates:(const struct PCVector2<double> { double x1; double x2; }*)arg1 withImage:(id)arg2;
 - (struct PCVector2<double> { double x1; double x2; })convertRelativeToPixelCoordinates:(const struct PCVector2<double> { double x1; double x2; }*)arg1 withImage:(id)arg2;
 - (void)crop:(struct HGRef<HGNode> { struct HGNode {} *x1; }*)arg1 fromImage:(id)arg2 toImage:(id)arg3;
+- (void)crop:(struct HGRef<HGNode> { struct HGNode {} *x1; }*)arg1 withRect:(struct PCRect<float> { float x1; float x2; float x3; float x4; })arg2;
 - (struct HGRef<HGNode> { struct HGNode {} *x1; })cropFromImage:(id)arg1 toImage:(id)arg2;
 - (void)dealloc;
 - (bool)frameCleanup;

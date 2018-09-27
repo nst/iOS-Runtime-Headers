@@ -9,11 +9,11 @@
 - (NSString *)articleID;
 - (NSString *)callToActionTitle;
 - (NSURL *)callToActionURL;
-- (NSString *)compactSourceName;
-- (FCAssetHandle *)compactSourceNameImageAssetHandle;
 - (bool)isBoundToContext;
 - (bool)isHiddenFromFeeds;
 - (bool)isPaid;
+- (FCAssetHandle *)nameImageAssetHandle;
+- (NSString *)sourceName;
 - (NSString *)sourceTagID;
 - (NSString *)title;
 - (NSURL *)videoURL;

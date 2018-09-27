@@ -9,6 +9,7 @@
     }  _cornerRadii;
     HKFillStyle * _selectedFillStyle;
     HKStrokeStyle * _selectedStrokeStyle;
+    HKStrokeStyle * _tiledStrokeStyle;
     HKFillStyle * _unselectedFillStyle;
     HKStrokeStyle * _unselectedStrokeStyle;
 }
@@ -16,6 +17,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } cornerRadii;
 @property (nonatomic, retain) HKFillStyle *selectedFillStyle;
 @property (nonatomic, retain) HKStrokeStyle *selectedStrokeStyle;
+@property (nonatomic, retain) HKStrokeStyle *tiledStrokeStyle;
 @property (nonatomic, retain) HKFillStyle *unselectedFillStyle;
 @property (nonatomic, retain) HKStrokeStyle *unselectedStrokeStyle;
 
@@ -35,9 +37,11 @@
 - (void)setCornerRadii:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSelectedFillStyle:(id)arg1;
 - (void)setSelectedStrokeStyle:(id)arg1;
+- (void)setTiledStrokeStyle:(id)arg1;
 - (void)setUnselectedFillStyle:(id)arg1;
 - (void)setUnselectedStrokeStyle:(id)arg1;
 - (bool)supportsMultiTouchSelection;
+- (id)tiledStrokeStyle;
 - (id)unselectedFillStyle;
 - (id)unselectedStrokeStyle;
 - (long long)visibleBarCountWithZoomLevelConfiguration:(id)arg1;

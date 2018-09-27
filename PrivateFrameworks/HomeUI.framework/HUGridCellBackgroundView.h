@@ -35,11 +35,9 @@
 - (void)_createCCMaterialViewIfNecessary;
 - (void)_createEffectViewIfNecessary;
 - (id)_highlightedBackgroundColor;
-- (void)_invalidateStaticPunchOutMask;
 - (bool)_isUsingControlCenterDisplayStyle;
 - (id)_normalBackgroundColor;
 - (bool)_shouldUseCCMaterialView;
-- (bool)_shouldUseCCStaticPunchOutStyle;
 - (bool)_shouldUsePrecomputedWallpaperContents;
 - (bool)_shouldUseVisualEffectStyle;
 - (void)_updateBackgroundColor;
@@ -50,13 +48,11 @@
 - (unsigned long long)backgroundState;
 - (id)blurredWallpaperSlice;
 - (id)ccMaterialView;
-- (id)ccuiPunchOutMaskForView:(id)arg1;
 - (double)cornerRadius;
 - (void)didMoveToSuperview;
 - (id)displayOptions;
 - (id)effectView;
 - (bool)isPressed;
-- (void)layoutSubviews;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })normalizedWallpaperRect;
 - (void)setBackgroundState:(unsigned long long)arg1;
 - (void)setBlurredWallpaperSlice:(id)arg1;
@@ -67,6 +63,5 @@
 - (void)setNormalizedWallpaperRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPressed:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)willMoveToWindow:(id)arg1;
 
 @end

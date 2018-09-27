@@ -45,10 +45,10 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned long long)autocapitalizationType;
 - (unsigned long long)autocorrectionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (bool)disablePrediction;
 - (bool)enablesReturnKeyAutomatically;
@@ -82,7 +82,7 @@
 - (id)textContentType;
 - (unsigned long long)textScriptType;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (id)traitsForUITextInputTraits:(id)arg1;
 + (unsigned long long)translateToTextInputAutocapitalizationType:(long long)arg1;

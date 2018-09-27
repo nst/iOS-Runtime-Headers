@@ -42,6 +42,7 @@
 - (void)_cancelDueToTimeout;
 - (void)_completedWithMainResourceImageData:(id)arg1 MIMEType:(id)arg2 URL:(id)arg3;
 - (void)_completedWithResolvedMetadata:(id)arg1 error:(id)arg2;
+- (id)_createFetcherWebView;
 - (void)_failedWithErrorCode:(long long)arg1 underlyingError:(id)arg2;
 - (void)_fetchFirstSuccessfulItem:(id)arg1 group:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchMetadataFromWebView;
@@ -49,6 +50,7 @@
 - (void)_fetchResolvableItems:(id)arg1 group:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchSubresources;
 - (void)_fetchedMetadata:(id)arg1;
+- (void)_generateSpecializationIfPossibleForCompleteMetadata:(id)arg1 URL:(id)arg2;
 - (void)_redistinguishImagesAndIcons;
 - (void)_startWatchdogTimer;
 - (bool)_switchToSpecializationIfPossibleForMIMEType:(id)arg1 URL:(id)arg2;

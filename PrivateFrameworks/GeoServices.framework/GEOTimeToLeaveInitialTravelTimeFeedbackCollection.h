@@ -13,14 +13,12 @@
 @property (nonatomic) int travelTime;
 
 - (int)StringAsTravelTime:(id)arg1;
-- (int)bucketValueForTravelTime:(double)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasTravelTime;
 - (unsigned long long)hash;
-- (id)initWithTravelTime:(double)arg1;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

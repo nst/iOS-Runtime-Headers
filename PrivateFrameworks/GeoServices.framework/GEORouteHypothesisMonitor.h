@@ -21,7 +21,7 @@
     GEOETARoute * _liveETARoute;
     bool  _needReroute;
     GEOLocation * _originLocation;
-    NSObject<OS_dispatch_semaphore> * _requestLock;
+    NSObject<OS_dispatch_queue> * _requestIsolationQueue;
     NSMutableArray * _rerouteEntries;
     GEOComposedRoute * _route;
     GEORouteAttributes * _routeAttributes;

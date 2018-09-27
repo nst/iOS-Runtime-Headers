@@ -36,6 +36,7 @@
 - (unsigned int)getTextureNameFromArray:(int)arg1;
 - (id)init;
 - (id)lookUpBuffer;
+- (bool)lookupFailedToLoad;
 - (void)newLookUp:(id)arg1;
 - (id)outputBufferAndTexture;
 - (void)setLookUpBuffer:(id)arg1;

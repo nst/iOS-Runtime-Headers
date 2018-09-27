@@ -17,7 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_getRemoteProcessWithIdentifier:(int)arg1 canReadItemAtURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_getRemoteProcessWithAuditToken:(struct { unsigned int x1[8]; })arg1 canReadItemAtURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (oneway void)addPublisher:(id)arg1 forID:(id)arg2 acknowledgementAppBundleIDs:(id)arg3 category:(id)arg4 fileURL:(id)arg5 initialValues:(id)arg6 completionHandler:(id /* block */)arg7;
 - (oneway void)addSubscriber:(id)arg1 forID:(id)arg2 appBundleID:(id)arg3 category:(id)arg4 completionHandler:(id /* block */)arg5;
 - (oneway void)addSubscriber:(id)arg1 forID:(id)arg2 appBundleID:(id)arg3 fileURL:(id)arg4 completionHandler:(id /* block */)arg5;

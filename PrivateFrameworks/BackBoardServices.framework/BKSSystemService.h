@@ -6,10 +6,10 @@
     FBSSystemService * _fbsSystemService;
 }
 
+- (void).cxx_destruct;
 - (bool)canOpenApplication:(id)arg1 reason:(int*)arg2;
 - (void)cleanupClientPort:(unsigned int)arg1;
 - (unsigned int)createClientPort;
-- (void)dealloc;
 - (id)init;
 - (void)openApplication:(id)arg1 options:(id)arg2 clientPort:(unsigned int)arg3 withResult:(id /* block */)arg4;
 - (void)openApplication:(id)arg1 options:(id)arg2 withResult:(id /* block */)arg3;

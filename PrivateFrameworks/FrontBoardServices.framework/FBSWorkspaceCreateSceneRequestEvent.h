@@ -10,8 +10,8 @@
 @property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;
 @property (nonatomic, retain) NSString *identifier;
 
+- (void).cxx_destruct;
 - (id)clientSettingsDiff;
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)identifier;
 - (id)initWithXPCDictionary:(id)arg1;

@@ -3,21 +3,25 @@
  */
 
 @interface TNFormSelection : TSKSelection {
-    unsigned char  _fieldIndex;
-    unsigned short  _recordIndex;
+    struct TSUModelColumnIndex { 
+        unsigned short _column; 
+    }  _fieldIndex;
+    struct TSUModelRowIndex { 
+        unsigned int _row; 
+    }  _recordIndex;
 }
 
-@property (nonatomic, readonly) unsigned char fieldIndex;
-@property (nonatomic, readonly) unsigned short recordIndex;
+@property (nonatomic, readonly) struct TSUModelColumnIndex { unsigned short x1; } fieldIndex;
+@property (nonatomic, readonly) struct TSUModelRowIndex { unsigned int x1; } recordIndex;
 
 + (Class)archivedSelectionClass;
 + (id)selection;
-+ (id)selectionForRecordIndex:(unsigned short)arg1 fieldIndex:(unsigned char)arg2;
++ (id)selectionForRecordIndex:(struct TSUModelRowIndex { unsigned int x1; })arg1 fieldIndex:(struct TSUModelColumnIndex { unsigned short x1; })arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned char)fieldIndex;
-- (id)initWithRecordIndex:(unsigned short)arg1 fieldIndex:(unsigned char)arg2;
+- (struct TSUModelColumnIndex { unsigned short x1; })fieldIndex;
+- (id)initWithRecordIndex:(struct TSUModelRowIndex { unsigned int x1; })arg1 fieldIndex:(struct TSUModelColumnIndex { unsigned short x1; })arg2;
 - (bool)isEqual:(id)arg1;
-- (unsigned short)recordIndex;
+- (struct TSUModelRowIndex { unsigned int x1; })recordIndex;
 
 @end

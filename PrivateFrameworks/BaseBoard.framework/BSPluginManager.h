@@ -8,15 +8,15 @@
     NSString * _pluginDirectory;
 }
 
-@property (nonatomic, readonly, retain) NSBundle *bundle;
+@property (nonatomic, readonly) NSBundle *bundle;
 @property (nonatomic, readonly, copy) NSArray *pluginBundles;
 @property (nonatomic, readonly, copy) NSString *pluginDirectory;
 
 + (id)mainManager;
 + (id)managerForBundle:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)bundle;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

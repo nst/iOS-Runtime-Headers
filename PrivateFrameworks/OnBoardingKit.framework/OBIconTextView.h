@@ -30,7 +30,9 @@
 - (void)setPadding:(double)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
+- (void)updateFont;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 

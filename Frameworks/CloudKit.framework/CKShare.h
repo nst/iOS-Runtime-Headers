@@ -5,6 +5,7 @@
 @interface CKShare : CKRecord <NSCopying, NSSecureCoding> {
     NSMutableSet * _addedParticipantIDs;
     NSMutableArray * _allParticipants;
+    bool  _allowsAnonymousPublicAccess;
     bool  _allowsReadOnlyParticipantsToSeeEachOther;
     CKContainerID * _containerID;
     NSArray * _invitedKeysToRemove;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, retain) NSMutableSet *addedParticipantIDs;
 @property (nonatomic, retain) NSMutableArray *allParticipants;
+@property (nonatomic) bool allowsAnonymousPublicAccess;
 @property (nonatomic) bool allowsReadOnlyParticipantsToSeeEachOther;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, readonly) CKShareParticipant *currentUserParticipant;
@@ -72,6 +74,7 @@
 - (id)addedParticipantIDs;
 - (id)addedParticipants;
 - (id)allParticipants;
+- (bool)allowsAnonymousPublicAccess;
 - (bool)allowsReadOnlyParticipantsToSeeEachOther;
 - (void)clearModifiedParticipants;
 - (id)containerID;
@@ -109,6 +112,7 @@
 - (bool)serializePersonalInfo;
 - (void)setAddedParticipantIDs:(id)arg1;
 - (void)setAllParticipants:(id)arg1;
+- (void)setAllowsAnonymousPublicAccess:(bool)arg1;
 - (void)setAllowsReadOnlyParticipantsToSeeEachOther:(bool)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setInvitedKeysToRemove:(id)arg1;
@@ -140,7 +144,8 @@
 - (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2;
 - (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2;
 - (bool)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 error:(id*)arg3;
-- (bool)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 removeServerSpecifiedKeys:(bool)arg3 error:(id*)arg4;
+- (bool)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 publicSharingKey:(id)arg3 error:(id*)arg4;
+- (bool)_prepPCSDataWithContext:(id)arg1 databaseScope:(long long)arg2 publicSharingKey:(id)arg3 removeServerSpecifiedKeys:(bool)arg4 error:(id*)arg5;
 - (bool)hasEncryptedPersonalInfo;
 - (struct _OpaquePCSShareProtection { }*)privatePCS;
 - (struct _OpaquePCSShareProtection { }*)publicPCS;

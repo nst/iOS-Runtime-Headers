@@ -28,6 +28,7 @@
 
 @property (nonatomic, readonly) bool shouldDisableMultiDataControls;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)didEndZooming;
 - (bool)frameInUnscaledCanvasNeedsPaddingForShadows;

@@ -35,6 +35,7 @@
 @property (nonatomic, readonly) NSArray *registeredKeyCommands;
 @property (readonly) Class superclass;
 
++ (double)maxLoadingTimeForItem:(id)arg1;
 + (bool)providesCustomPrinter;
 + (bool)shouldBeRemoteForContentType:(id)arg1;
 + (bool)shouldBeRemoteForMediaContentType:(id)arg1;
@@ -49,24 +50,29 @@
 - (void)_scrollScrollViewByPercentualOffset:(double)arg1;
 - (void)_scrollScrollViewWithKeyCommand:(id)arg1;
 - (id)accessoryView;
+- (id)additionalItemViewControllerDescription;
 - (id)appearance;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
 - (bool)automaticallyUpdateScrollViewIndicatorInset;
+- (void)beginPreviewHostAppearanceTransitionIfNeeded:(bool)arg1 animated:(bool)arg2;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)canEnterFullScreen;
 - (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (bool)canPinchToDismiss;
+- (bool)canShowNavBar;
 - (bool)canShowToolBar;
 - (bool)canSwipeToDismiss;
 - (bool)canToggleFullScreen;
 - (id)contents;
 - (id)context;
 - (id)delegate;
+- (id)description;
 - (bool)didAppearOnce;
 - (id)dragInteraction;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (id)draggableView;
+- (void)endPreviewHostAppearanceTransitionIfNeeded:(bool)arg1;
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
 - (id)fullscreenBackgroundColor;
 - (id)init;
@@ -81,7 +87,9 @@
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)performFirstTimeAppearanceActionsIfNeeded:(unsigned long long)arg1;
 - (long long)preferredWhitePointAdaptivityStyle;
+- (void)preloadViewControllerForContext:(id)arg1;
 - (void)prepareForActionSheetPresentation;
+- (bool)presenterShouldHandleLoadingView:(id)arg1 readyToDisplay:(id /* block */)arg2;
 - (id)presentingDelegate;
 - (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
 - (void)previewDidAppear:(bool)arg1;
@@ -104,6 +112,7 @@
 - (void)setLoadingFailed:(bool)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (bool)shouldAlwaysRunFullscreen;
 - (bool)shouldRecognizeGestureRecognizer:(id)arg1;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
 - (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;

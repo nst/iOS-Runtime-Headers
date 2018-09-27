@@ -60,6 +60,7 @@
 - (bool)isPrimaryiCloudAccount:(id)arg1;
 - (id)masterTokenForAccount:(id)arg1;
 - (id)mostRecentlyUsedAuthKitAccount;
+- (bool)needsRepairForAccount:(id)arg1;
 - (id)passwordResetTokenBackupForAccount:(id)arg1;
 - (id)passwordResetTokenBackupForAccount:(id)arg1 error:(id*)arg2;
 - (id)passwordResetTokenForAccount:(id)arg1;
@@ -67,7 +68,8 @@
 - (void)removeAllPasswordResetTokens;
 - (void)removeContinuationTokenForAccount:(id)arg1;
 - (void)removeMasterTokenForAccount:(id)arg1;
-- (void)removeUnusedAuthKitAccounts;
+- (void)removeUnusedAndDuplicateAuthKitAccountsWithCompletion:(id /* block */)arg1;
+- (unsigned long long)repairStateForAccount:(id)arg1;
 - (bool)saveAccount:(id)arg1 error:(id*)arg2;
 - (unsigned long long)securityLevelForAccount:(id)arg1;
 - (id)servicesUsingAccount:(id)arg1;
@@ -76,6 +78,7 @@
 - (void)setAltDSID:(id)arg1 forAccount:(id)arg2;
 - (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setDSID:(id)arg1 forAccount:(id)arg2;
+- (void)setRepairState:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setStore:(id)arg1;
 - (id)store;

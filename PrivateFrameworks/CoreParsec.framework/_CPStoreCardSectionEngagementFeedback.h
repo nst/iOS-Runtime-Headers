@@ -7,12 +7,6 @@
     _CPCardSectionForFeedback * _cardSection;
     NSString * _cardSectionId;
     _CPPunchoutForFeedback * _destination;
-    struct { 
-        unsigned int timestamp : 1; 
-        unsigned int triggerEvent : 1; 
-        unsigned int actionCardType : 1; 
-        unsigned int productPageResult : 1; 
-    }  _has;
     int  _productPageResult;
     NSString * _resultId;
     unsigned long long  _timestamp;
@@ -27,21 +21,12 @@
 @property (nonatomic, retain) _CPPunchoutForFeedback *destination;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) id feedbackJSON;
-@property (nonatomic, readonly) bool hasActionCardType;
-@property (nonatomic, readonly) bool hasCardSection;
-@property (nonatomic, readonly) bool hasCardSectionId;
-@property (nonatomic, readonly) bool hasDestination;
-@property (nonatomic, readonly) bool hasProductPageResult;
-@property (nonatomic, readonly) bool hasResultId;
-@property (nonatomic, readonly) bool hasTimestamp;
-@property (nonatomic, readonly) bool hasTriggerEvent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) int productPageResult;
 @property (nonatomic, readonly) bool requiresQueryId;
 @property (nonatomic, copy) NSString *resultId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int triggerEvent;
 
@@ -51,14 +36,6 @@
 - (id)cardSectionId;
 - (id)destination;
 - (id)dictionaryRepresentation;
-- (bool)hasActionCardType;
-- (bool)hasCardSection;
-- (bool)hasCardSectionId;
-- (bool)hasDestination;
-- (bool)hasProductPageResult;
-- (bool)hasResultId;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

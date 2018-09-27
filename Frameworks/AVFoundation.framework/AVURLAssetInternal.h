@@ -6,6 +6,7 @@
     NSURL * URL;
     AVAssetClientURLRequestHelper * URLRequestHelper;
     AVAssetCache * assetCache;
+    AVAssetCustomURLAuthentication * customURLAuthenticationUsingKeychain;
     AVAssetCustomURLBridgeForNSURLProtocol * customURLBridgeForNSURLProtocol;
     bool  hasInstanceIdentifierMapping;
     NSDictionary * initializationOptions;

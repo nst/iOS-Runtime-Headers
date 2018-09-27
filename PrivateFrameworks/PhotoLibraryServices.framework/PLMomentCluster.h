@@ -24,7 +24,7 @@
 @property (setter=_setEndingDate:, nonatomic, retain) NSDate *endingDate;
 @property (nonatomic) short generationType;
 @property (nonatomic, readonly, copy) NSArray *nodes;
-@property (nonatomic, readonly) NSObject<NSCopying> *objectID;
+@property (nonatomic, copy) NSObject<NSCopying> *objectID;
 @property (setter=_setStartingDate:, nonatomic, retain) NSDate *startingDate;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) bool usedLocationsOfInterest;
@@ -65,6 +65,7 @@
 - (void)removeNodes:(id)arg1;
 - (void)removeNodesFromCluster:(id)arg1;
 - (void)setGenerationType:(short)arg1;
+- (void)setObjectID:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUsedLocationsOfInterest:(bool)arg1;
 - (id)splitTags;

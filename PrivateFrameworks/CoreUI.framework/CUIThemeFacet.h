@@ -83,7 +83,7 @@
 - (void)drawAbsoluteAnimationFrame:(double)arg1 destinationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isFocused:(int)arg3 context:(struct CGContext { }*)arg4;
 - (void)drawAnimationFrameMappedFrom0_1RangedValue:(double)arg1 destinationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isFocused:(int)arg3 context:(struct CGContext { }*)arg4;
 - (void)drawAsOnePartWithSlice:(int)arg1 inFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isFocused:(int)arg3 context:(struct CGContext { }*)arg4 effects:(id)arg5;
-- (void)drawGradientInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 angle:(double)arg2 alpha:(double)arg3 operation:(int)arg4 isFocused:(int)arg5 keyAdjustment:(id)arg6 context:(struct CGContext { }*)arg7;
+- (void)drawGradientInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 angle:(double)arg2 alpha:(double)arg3 operation:(int)arg4 isFocused:(int)arg5 keyAdjustment:(id)arg6 context:(struct CGContext { }*)arg7 effects:(id)arg8;
 - (void)drawHighlightInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 alpha:(double)arg2 keyAdjustment:(id)arg3 context:(struct CGContext { }*)arg4;
 - (void)drawHighlightInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 alpha:(double)arg2 operation:(int)arg3 keyAdjustment:(id)arg4 context:(struct CGContext { }*)arg5;
 - (void)drawHighlightInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 alpha:(double)arg2 operation:(int)arg3 owner:(id)arg4 userInfo:(id)arg5 context:(struct CGContext { }*)arg6;
@@ -130,6 +130,7 @@
 - (id)makeLayer;
 - (id)maskForSlice:(long long)arg1 withKeyAdjustment:(id)arg2;
 - (id)maskWithSize:(struct CGSize { double x1; double x2; })arg1 keyAdjustment:(id)arg2;
+- (id)properties;
 - (id)renditionForSpecificKeyWrapper:(id)arg1;
 - (id)renditionKey;
 - (id)renditionMetricsWithKeyAdjustment:(id)arg1;

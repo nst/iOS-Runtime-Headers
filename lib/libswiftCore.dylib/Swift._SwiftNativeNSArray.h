@@ -4,6 +4,4 @@
 
 @interface Swift._SwiftNativeNSArray : _SwiftNativeNSArrayBase
 
-- (id)init;
-
 @end

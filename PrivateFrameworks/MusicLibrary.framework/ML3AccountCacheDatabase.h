@@ -3,20 +3,19 @@
  */
 
 @interface ML3AccountCacheDatabase : NSObject {
-    NSObject<OS_dispatch_queue> * _accessQueue;
-    NSMutableDictionary * _appleIdCache;
-    ML3DatabaseConnection * _databaseConnection;
+    ML3MusicLibrary * _library;
+    NSMutableDictionary * _propertiesCache;
+    NSObject<OS_dispatch_queue> * accessQueue;
 }
 
 - (void).cxx_destruct;
-- (bool)_clearCacheDatabase;
-- (bool)_closeDatabase;
-- (id)_databasePath;
-- (bool)_internalSetAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
-- (bool)_openDatabase;
-- (bool)_openDatabaseIsRetry:(bool)arg1;
+- (id)_cacheEntryForDSID:(unsigned long long)arg1;
+- (void)_lookupAltDSIDForDSID:(unsigned long long)arg1 completion:(id /* block */)arg2;
+- (void)_setCacheEntry:(id)arg1 forDSID:(unsigned long long)arg2;
 - (id)appleIDForDSID:(unsigned long long)arg1;
-- (id)init;
+- (bool)getPropertiesForDSID:(unsigned long long)arg1 appleID:(id*)arg2 altDSID:(id*)arg3;
+- (id)initWithLibrary:(id)arg1;
+- (bool)setAppleID:(id)arg1 altDSID:(id)arg2 forDSID:(unsigned long long)arg3;
 - (bool)setAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
 
 @end

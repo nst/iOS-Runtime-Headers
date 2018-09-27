@@ -12,11 +12,7 @@
 @property (nonatomic, retain) ServiceState *state;
 @property (readonly) Class superclass;
 
-+ (int)locationType:(id)arg1;
-
 - (void).cxx_destruct;
-- (void)changeOrSetVenues:(id)arg1 isChange:(bool)arg2;
-- (void)changeVenues:(id)arg1;
 - (id)endpointName;
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;
@@ -30,12 +26,9 @@
 - (void)setApiKey:(id)arg1 onServer:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setState:(id)arg1;
-- (void)setVenues:(id)arg1;
-- (void)startUpdatingLocation;
-- (void)startUpdatingLocationWithMode:(long long)arg1;
+- (void)startUpdatingLocationAtLocation:(id)arg1;
 - (id)state;
 - (void)stopUpdatingLocation;
-- (void)updateOperatingMode:(long long)arg1;
 - (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (id)withinQueuePermanentShutdownReason;

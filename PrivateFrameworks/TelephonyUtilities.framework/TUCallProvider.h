@@ -14,6 +14,7 @@
     unsigned long long  _maximumCallGroups;
     unsigned long long  _maximumCallsPerCallGroup;
     NSURL * _originalRingtoneSoundURL;
+    NSOrderedSet * _prioritizedSenderIdentities;
     TUSandboxExtendedURL * _sandboxExtendedRingtoneSoundURL;
     NSSet * _supportedHandleTypes;
     bool  _supportsAudioAndVideo;
@@ -36,6 +37,7 @@
 @property (nonatomic) unsigned long long maximumCallGroups;
 @property (nonatomic) unsigned long long maximumCallsPerCallGroup;
 @property (nonatomic, retain) NSURL *originalRingtoneSoundURL;
+@property (nonatomic, copy) NSOrderedSet *prioritizedSenderIdentities;
 @property (nonatomic, retain) NSURL *ringtoneSoundURL;
 @property (nonatomic, retain) TUSandboxExtendedURL *sandboxExtendedRingtoneSoundURL;
 @property (nonatomic, copy) NSSet *supportedHandleTypes;
@@ -51,7 +53,6 @@
 
 - (void).cxx_destruct;
 - (unsigned int)audioSessionID;
-- (id)bundle;
 - (id)bundleIdentifier;
 - (id)bundleURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -73,13 +74,18 @@
 - (bool)isFaceTimeProvider;
 - (bool)isSystemProvider;
 - (bool)isTelephonyProvider;
+- (bool)isTinCanProvider;
 - (id)localizedName;
 - (unsigned long long)maximumCallGroups;
 - (unsigned long long)maximumCallsPerCallGroup;
 - (id)originalRingtoneSoundURL;
 - (bool)prefersShowingInCallUI;
+- (id)prioritizedSenderIdentities;
 - (id)ringtoneSoundURL;
 - (id)sandboxExtendedRingtoneSoundURL;
+- (id)senderIdentities;
+- (id)senderIdentityForAccountUUID:(id)arg1;
+- (id)senderIdentityForHandle:(id)arg1;
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleURL:(id)arg1;
@@ -91,8 +97,10 @@
 - (void)setMaximumCallGroups:(unsigned long long)arg1;
 - (void)setMaximumCallsPerCallGroup:(unsigned long long)arg1;
 - (void)setOriginalRingtoneSoundURL:(id)arg1;
+- (void)setPrioritizedSenderIdentities:(id)arg1;
 - (void)setRingtoneSoundURL:(id)arg1;
 - (void)setSandboxExtendedRingtoneSoundURL:(id)arg1;
+- (void)setSenderIdentities:(id)arg1;
 - (void)setSupportedHandleTypes:(id)arg1;
 - (void)setSupportsAudioAndVideo:(bool)arg1;
 - (void)setSupportsAudioOnly:(bool)arg1;

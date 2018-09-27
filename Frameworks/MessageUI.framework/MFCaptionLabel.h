@@ -17,7 +17,10 @@
 @property (nonatomic, retain) NSArray *fromSenders;
 @property (nonatomic, retain) NSArray *toRecipients;
 
++ (id)attributedStringsCache;
+
 - (void).cxx_destruct;
+- (id)_formattedAttributedString;
 - (void)_setNeedsLabelUpdate;
 - (id)_stringAtIndexForCombinedRecipientLists:(unsigned long long)arg1;
 - (id)bccRecipients;

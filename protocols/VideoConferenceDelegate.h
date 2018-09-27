@@ -38,6 +38,7 @@
 - (void)videoConference:(VideoConference *)arg1 videoQualityNotificationForCallID:(unsigned int)arg2 isDegraded:(bool)arg3 isRemote:(bool)arg4;
 - (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 didPauseAudio:(bool)arg3 error:(NSError *)arg4;
 - (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 didPauseVideo:(bool)arg3 error:(NSError *)arg4;
+- (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 isSendingAudio:(bool)arg3 error:(NSError *)arg4;
 - (void)videoConference:(VideoConference *)arg1 withCallID:(unsigned int)arg2 networkHint:(bool)arg3;
 
 @end

@@ -5,7 +5,6 @@
 
 @required
 
-- (unsigned int)activeFaceAlgorithmVersion;
 - (NSMutableArray *)allAlgorithmicFaceGroups:(id*)arg1;
 - (NSArray *)allPersons:(id*)arg1;
 - (NSString *)associateFace:(PVFace *)arg1 withFaceCrop:(PVFaceCrop *)arg2 error:(id*)arg3;
@@ -23,6 +22,7 @@
 - (bool)deleteEmptyGroupsAndReturnError:(id*)arg1;
 - (NSArray *)deterministicallyOrderedFaceIdentifiersWithLocalIdentifiers:(NSArray *)arg1 faceprintVersion:(unsigned int)arg2;
 - (NSArray *)dirtyFaceCropsWithLimit:(unsigned long long)arg1;
+- (unsigned int)faceAlgorithmUmbrellaVersion;
 - (PVFace *)faceAssociatedWithFaceCrop:(PVFaceCrop *)arg1;
 - (NSSet *)faceLocalIdentifiersInFaceGroupWithLocalIdentifier:(NSString *)arg1 error:(id*)arg2;
 - (NSDictionary *)faceprintsByFaceLocalIdentifiers:(NSArray *)arg1 version:(unsigned int)arg2 error:(id*)arg3;
@@ -30,7 +30,7 @@
 - (NSArray *)facesForClusteringWithLocalIdentifiers:(NSArray *)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(bool)arg3;
 - (NSSet *)facesForFaceLocalIdentifiers:(NSArray *)arg1 error:(id*)arg2;
 - (NSArray *)facesForPersonWithLocalIdentifier:(NSString *)arg1 error:(id*)arg2;
-- (NSArray *)facesFromAsset:(id)arg1 error:(id*)arg2;
+- (NSArray *)facesFromAsset:(PHAsset *)arg1;
 - (NSMutableArray *)groupedClusterSequenceNumbersOfFacesInFaceGroupsOfMinimumSize:(unsigned long long)arg1 error:(id*)arg2;
 - (bool)hasDirtyFaceCrops;
 - (NSSet *)invalidFaceClusterSequenceNumbersInClusterSequenceNumbers:(NSSet *)arg1 canceler:(PVCanceler *)arg2 error:(id*)arg3;
@@ -43,7 +43,7 @@
 - (void)logPVWarningMessage:(NSString *)arg1;
 - (bool)needsPersonBuilding;
 - (bool)persistChangesToAlgorithmicFaceGroups:(void *)arg1 faceCSNByLocalIdentifierForNewlyClusteredFaces:(void *)arg2 faceCSNsOfUnclusteredFaces:(void *)arg3 localIdentifiersOfUnclusteredFaces:(void *)arg4 persistenceCompletionBlock:(void *)arg5 canceler:(void *)arg6 error:(void *)arg7; // needs 7 arg types, found 11: NSDictionary *, NSDictionary *, NSMutableSet *, NSMutableSet *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, PVCanceler *, id*
-- (bool)persistFaces:(NSArray *)arg1 deleteFaces:(NSArray *)arg2 forAsset:(id)arg3 persistedFaces:(id*)arg4 error:(id*)arg5;
+- (bool)persistFaces:(NSArray *)arg1 deleteFaces:(NSArray *)arg2 forAsset:(PHAsset *)arg3 persistedFaces:(id*)arg4 error:(id*)arg5;
 - (bool)persistGeneratedFaceCrops:(NSArray *)arg1 error:(id*)arg2;
 - (PVPerson *)personWithFaceLocalIdentifier:(NSString *)arg1 error:(id*)arg2;
 - (NSSet *)personsForLocalIdentifiers:(NSSet *)arg1 error:(id*)arg2;
@@ -56,7 +56,10 @@
 - (bool)removeAlgorithmicallyGroupedFacesWithLocalIdentifiers:(NSArray *)arg1 error:(id*)arg2;
 - (bool)resetClusterSequenceNumberOfFacesWithLocalIdentifiers:(NSArray *)arg1 error:(id*)arg2;
 - (bool)resetLibraryClustersWithCanceler:(PVCanceler *)arg1 error:(id*)arg2;
+- (unsigned int)sceneAlgorithmUmbrellaVersion;
+- (void)setFaceAlgorithmUmbrellaVersion:(unsigned int)arg1;
 - (bool)setKeyFaceOfAlgorithmicFaceGroupToFaceWithClusterSequenceNumbers:(NSArray *)arg1 error:(id*)arg2;
+- (void)setSceneAlgorithmUmbrellaVersion:(unsigned int)arg1;
 - (NSString *)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(NSString *)arg1 faceClusterer:(id <PVFaceClusteringProtocol>)arg2 canceler:(PVCanceler *)arg3 context:(PVContext *)arg4 error:(id*)arg5;
 - (NSSet *)unclusteredClusteringEligibleFaceLocalIdentifiers:(id*)arg1;
 - (bool)ungroupFaceClusterSequenceNumbers:(NSArray *)arg1 batchSizeForUnclusteringFaces:(unsigned long long)arg2 canceler:(PVCanceler *)arg3 error:(id*)arg4;

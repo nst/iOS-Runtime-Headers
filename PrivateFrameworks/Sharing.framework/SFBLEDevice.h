@@ -17,6 +17,8 @@
     NSString * _name;
     double  _pairCheckTime;
     bool  _paired;
+    unsigned int  _productID2;
+    SFProximityEstimator * _proxPairProximityEstimator;
     long long  _rssi;
     long long  _rssiCeiling;
     unsigned char  _rssiCount;
@@ -43,6 +45,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) double pairCheckTime;
 @property (nonatomic) bool paired;
+@property (nonatomic) unsigned int productID2;
+@property (nonatomic, retain) SFProximityEstimator *proxPairProximityEstimator;
 @property (nonatomic) long long rssi;
 @property (nonatomic) long long rssiCeiling;
 @property (nonatomic) int rssiEstimate;
@@ -73,6 +77,8 @@
 - (id)name;
 - (double)pairCheckTime;
 - (bool)paired;
+- (unsigned int)productID2;
+- (id)proxPairProximityEstimator;
 - (long long)rssi;
 - (long long)rssiCeiling;
 - (int)rssiEstimate;
@@ -91,6 +97,8 @@
 - (void)setName:(id)arg1;
 - (void)setPairCheckTime:(double)arg1;
 - (void)setPaired:(bool)arg1;
+- (void)setProductID2:(unsigned int)arg1;
+- (void)setProxPairProximityEstimator:(id)arg1;
 - (void)setRssi:(long long)arg1;
 - (void)setRssiCeiling:(long long)arg1;
 - (void)setRssiEstimate:(int)arg1;

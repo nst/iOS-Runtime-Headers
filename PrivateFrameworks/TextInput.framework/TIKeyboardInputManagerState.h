@@ -79,13 +79,13 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (bool)acceptInputString:(id)arg1;
 - (id)autocorrectionRecordForInputString;
 - (unsigned long long)autoquoteType;
 - (bool)canHandleKeyHitTest;
 - (bool)commitsAcceptedCandidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)ignoresDeadKeys;
 - (id)initWithCoder:(id)arg1;

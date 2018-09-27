@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBrowsingViewModel : PUViewModel <PUAssetSharedViewModelChangeObserver, PUAssetViewModelChangeObserver> {
+@interface PUBrowsingViewModel : PUViewModel <PUAssetSharedViewModelChangeObserver, PUAssetViewModelChangeObserver, PXImportStatusObserver> {
     NSMutableSet * __animatingTransitionIdentifiers;
     long long  __scrubbingSessionDistance;
     long long  __userNavigationDistance;
@@ -11,12 +11,12 @@
     bool  _allAssetViewModelsAreInvalid;
     PUCachedMapTable * _assetSharedViewModelByAsset;
     PUAssetsDataSource * _assetsDataSource;
-    PXAutoloopScheduler * _autoloopScheduler;
     long long  _browsingSpeedRegime;
     bool  _browsingSpeedRegimeIsValid;
     PUAssetReference * _currentAssetReference;
     NSDate * _currentAssetReferenceChangedDate;
     double  _currentAssetTransitionProgress;
+    <PXImportStatusManager> * _importStatusManager;
     NSMutableSet * _invalidAssetViewModels;
     bool  _isAnimatingAnyTransition;
     bool  _isBrowsingSpeedRegimeInvalidationScheduled;
@@ -30,6 +30,7 @@
     PUMediaProvider * _mediaProvider;
     int  _ongoingEnumerations;
     bool  _presentingOverOneUp;
+    PUReviewScreenBarsModel * _reviewScreenBarsModel;
     struct CGSize { 
         double width; 
         double height; 
@@ -46,13 +47,13 @@
 @property (setter=_setVideoDisallowedReasons:, nonatomic, retain) NSMutableSet *_videoDisallowedReasons;
 @property (nonatomic) bool accessoryViewsDefaultVisibility;
 @property (nonatomic, retain) PUAssetsDataSource *assetsDataSource;
-@property (nonatomic, retain) PXAutoloopScheduler *autoloopScheduler;
 @property (setter=_setBrowsingSpeedRegime:, nonatomic) long long browsingSpeedRegime;
 @property (nonatomic, retain) PUAssetReference *currentAssetReference;
 @property (nonatomic, readonly) double currentAssetTransitionProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <PXImportStatusManager> *importStatusManager;
 @property (setter=_setAnimatingAnyTransition:, nonatomic) bool isAnimatingAnyTransition;
 @property (setter=setChromeVisible:, nonatomic) bool isChromeVisible;
 @property (nonatomic) bool isScrolling;
@@ -62,6 +63,7 @@
 @property (setter=_setLeadingAssetReference:, nonatomic, retain) PUAssetReference *leadingAssetReference;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (getter=isPresentingOverOneUp, nonatomic) bool presentingOverOneUp;
+@property (nonatomic, retain) PUReviewScreenBarsModel *reviewScreenBarsModel;
 @property (nonatomic) struct CGSize { double x1; double x2; } secondScreenSize;
 @property (readonly) Class superclass;
 @property (setter=_setTrailingAssetReference:, nonatomic, retain) PUAssetReference *trailingAssetReference;
@@ -77,6 +79,7 @@
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAsyncBrowsingSpeedRegimeInvalidation;
+- (long long)_importStateForAssetReference:(id)arg1;
 - (void)_invalidateAllAssetViewModels;
 - (void)_invalidateAssetViewModel:(id)arg1;
 - (void)_invalidateBrowsingSpeedRegime;
@@ -110,13 +113,14 @@
 - (id)assetSharedViewModelForAsset:(id)arg1;
 - (id)assetViewModelForAssetReference:(id)arg1;
 - (id)assetsDataSource;
-- (id)autoloopScheduler;
 - (long long)browsingSpeedRegime;
 - (id)currentAssetReference;
 - (double)currentAssetTransitionProgress;
 - (id)currentChange;
 - (id)debugDetailedDescription;
 - (void)didPerformChanges;
+- (id)importStatusManager;
+- (void)importStatusManager:(id)arg1 didChangeStatusForAssetReference:(id)arg2;
 - (id)init;
 - (bool)isAnimatingAnyTransition;
 - (bool)isChromeVisible;
@@ -129,21 +133,23 @@
 - (id)mediaProvider;
 - (id)newViewModelChange;
 - (void)registerChangeObserver:(id)arg1;
+- (id)reviewScreenBarsModel;
 - (struct CGSize { double x1; double x2; })secondScreenSize;
 - (void)setAccessoryViewsDefaultVisibility:(bool)arg1;
 - (void)setAccessoryViewsDefaultVisibility:(bool)arg1 changeReason:(long long)arg2;
 - (void)setAnimating:(bool)arg1 transitionWithIdentifier:(id)arg2;
 - (void)setAssetsDataSource:(id)arg1;
-- (void)setAutoloopScheduler:(id)arg1;
 - (void)setChromeVisible:(bool)arg1;
 - (void)setChromeVisible:(bool)arg1 changeReason:(long long)arg2;
 - (void)setChromeVisible:(bool)arg1 changeReason:(long long)arg2 context:(id)arg3;
 - (void)setCurrentAssetReference:(id)arg1;
 - (void)setCurrentAssetReference:(id)arg1 transitionProgress:(double)arg2 transitionDriverIdentifier:(id)arg3;
+- (void)setImportStatusManager:(id)arg1;
 - (void)setIsScrolling:(bool)arg1;
 - (void)setIsScrubbing:(bool)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setPresentingOverOneUp:(bool)arg1;
+- (void)setReviewScreenBarsModel:(id)arg1;
 - (void)setSecondScreenSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setVideoContentAllowed:(bool)arg1 forReason:(id)arg2;
 - (id)trailingAssetReference;

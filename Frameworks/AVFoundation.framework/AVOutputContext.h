@@ -26,10 +26,9 @@
 + (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 communicationChannelManagerCreator:(id /* block */)arg2;
 + (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 outputDeviceTranslator:(id)arg2;
 + (id)outputContextWithFigRoutingContextCreator:(id /* block */)arg1 volumeController:(struct OpaqueFigVolumeControllerState { }*)arg2;
-+ (void)resetCurrentRoutingContextFactory;
++ (id)preferredOutputDevicesForAudioSession:(id)arg1;
 + (void)resetOutputDeviceForAllOutputContexts;
 + (void)resetRoutingContextFactoryForQueue:(id)arg1;
-+ (void)setCurrentRoutingContextFactory:(id)arg1;
 + (void)setRoutingContextFactory:(id)arg1 forQueue:(id)arg2;
 + (id)sharedAudioPresentationOutputContext;
 + (id)sharedSystemAudioContext;

@@ -106,4 +106,8 @@
 - (int)_crk_leadingCardSectionSeparatorStyle;
 - (int)_crk_trailingCardSectionSeparatorStyle;
 
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
+
 @end

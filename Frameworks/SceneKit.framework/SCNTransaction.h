@@ -15,6 +15,7 @@
 + (bool)disableActions;
 + (void)flush;
 + (bool)immediateMode;
++ (struct __C3DScene { }*)immediateModeRestrictedContext;
 + (void)lock;
 + (void)postCommandWithContext:(struct __C3DScene { }*)arg1 object:(id)arg2 applyBlock:(id /* block */)arg3;
 + (void)postCommandWithContext:(struct __C3DScene { }*)arg1 object:(id)arg2 key:(id)arg3 applyBlock:(id /* block */)arg4;
@@ -24,6 +25,7 @@
 + (void)setCompletionBlock:(id /* block */)arg1;
 + (void)setDisableActions:(bool)arg1;
 + (void)setImmediateMode:(bool)arg1;
++ (void)setImmediateModeRestrictedContext:(struct __C3DScene { }*)arg1;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)unlock;
 + (id)valueForKey:(id)arg1;

@@ -2,19 +2,22 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBDateTimeRangeList : PBCodable <NSCopying> {
+@interface _INPBDateTimeRangeList : PBCodable <NSCopying, NSSecureCoding, _INPBDateTimeRangeList> {
     _INPBCondition * _condition;
-    NSMutableArray * _dateRanges;
-    PBUnknownFields * _unknownFields;
+    NSArray * _dateRanges;
+    struct { }  _has;
 }
 
 @property (nonatomic, retain) _INPBCondition *condition;
-@property (nonatomic, retain) NSMutableArray *dateRanges;
+@property (nonatomic, copy) NSArray *dateRanges;
+@property (nonatomic, readonly) unsigned long long dateRangesCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasCondition;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (Class)dateRangeType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (void)addDateRange:(id)arg1;
@@ -24,16 +27,13 @@
 - (id)dateRangeAtIndex:(unsigned long long)arg1;
 - (id)dateRanges;
 - (unsigned long long)dateRangesCount;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCondition;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setDateRanges:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

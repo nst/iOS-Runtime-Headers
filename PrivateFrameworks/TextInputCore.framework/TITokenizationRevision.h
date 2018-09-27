@@ -24,9 +24,9 @@
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } originalSelectedTokenRange;
 @property (nonatomic) unsigned long long revisedDocumentLocation;
 
+- (void).cxx_destruct;
 - (id)branchTokens;
 - (unsigned long long)branchedTokenIndex;
-- (void)dealloc;
 - (id)init;
 - (id)initWithTokenIterator:(struct _TIRevisionHistoryTokenIterator { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned long long)mergedTokenIndex;

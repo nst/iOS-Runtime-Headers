@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUManagerClient : NSObject <SUInstallationConstraintObserverDelegate, SUManagerClientInterface> {
+@interface SUManagerClient : NSObject <SUInstallationConstraintObserverDelegate, SUManagerClientInterface, SUPreferencesObserver> {
     int  _clientType;
     bool  _connected;
     <SUManagerClientDelegate> * _delegate;
@@ -42,9 +42,11 @@
 - (void)_setClientType;
 - (void)_unregisterAutoInstallOperationClientHandler:(id)arg1;
 - (void)autoInstallOperationDidConsent:(id)arg1;
-- (void)autoInstallOperationDidExpire:(id)arg1;
+- (void)autoInstallOperationDidExpire:(id)arg1 withError:(id)arg2;
 - (void)autoInstallOperationIsReadyToInstall:(id)arg1 withResult:(id /* block */)arg2;
+- (void)autoInstallOperationPasscodePolicyChanged:(id)arg1 passcodePolicyType:(unsigned long long)arg2;
 - (void)autoInstallOperationWasCancelled:(id)arg1;
+- (void)autoScanAndDownloadIfAvailable:(id /* block */)arg1;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id /* block */)arg1;
 - (int)clientType;
@@ -52,6 +54,7 @@
 - (bool)createInstallationKeybag:(id)arg1;
 - (bool)createInstallationKeybag:(id)arg1 forUnattendedInstall:(bool)arg2;
 - (void)currentAutoInstallOperation:(bool)arg1 withResult:(id /* block */)arg2;
+- (void)currentPasscodePolicy:(id /* block */)arg1;
 - (void)dealloc;
 - (void)delayEndDate:(id /* block */)arg1;
 - (id)delegate;
@@ -64,6 +67,7 @@
 - (void)downloadDidStart:(id)arg1;
 - (void)downloadProgressDidChange:(id)arg1;
 - (void)downloadWasInvalidatedForNewUpdateAvailable:(id)arg1;
+- (void)enableAutomaticUpdateV2:(bool)arg1;
 - (void)extraSpaceNeededForDownloadWithoutAppPurging:(id /* block */)arg1;
 - (void)getMandatorySoftwareUpdateDictionary:(id /* block */)arg1;
 - (id)init;
@@ -79,6 +83,8 @@
 - (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)installationConstraintObserverDidRemoveAllObserverBlocks:(id)arg1;
 - (void)invalidate;
+- (void)isAutoUpdateEnabled:(id /* block */)arg1;
+- (bool)isAutomaticUpdateV2Enabled;
 - (void)isDelayingUpdates:(id /* block */)arg1;
 - (void)isDownloading:(id /* block */)arg1;
 - (bool)isInstallationKeybagRequired;
@@ -88,6 +94,8 @@
 - (void)noteServerExiting;
 - (id)observeInstallationConstraintChangesForDownload:(id)arg1 observer:(id /* block */)arg2;
 - (void)pauseDownload:(id /* block */)arg1;
+- (void)preference:(id)arg1 didChange:(id)arg2;
+- (void)presentAutoUpdateBanner:(id /* block */)arg1;
 - (void)purgeDownload:(id /* block */)arg1;
 - (void)resumeDownload:(id /* block */)arg1;
 - (id)scanDescriptor;

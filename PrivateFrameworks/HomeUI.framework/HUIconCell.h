@@ -4,6 +4,7 @@
 
 @interface HUIconCell : UITableViewCell <HUCellProtocol, HUDisableableCellProtocol> {
     UIView * _containerView;
+    HUIconCellContentMetrics * _contentMetrics;
     bool  _disabled;
     NSArray * _dynamicConstraints;
     bool  _hideIcon;
@@ -11,10 +12,6 @@
     unsigned long long  _iconDisplayStyle;
     UIColor * _iconForegroundColor;
     bool  _iconForegroundColorFollowsTintColor;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _iconSize;
     NSArray * _iconSpacingConstraints;
     UILayoutGuide * _iconSpacingLayoutGuide;
     bool  _iconTintColorFollowsDisabledState;
@@ -24,6 +21,7 @@
 }
 
 @property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, retain) HUIconCellContentMetrics *contentMetrics;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILabel *detailTextLabel;
@@ -36,7 +34,6 @@
 @property (nonatomic) unsigned long long iconDisplayStyle;
 @property (nonatomic, retain) UIColor *iconForegroundColor;
 @property (nonatomic) bool iconForegroundColorFollowsTintColor;
-@property (nonatomic) struct CGSize { double x1; double x2; } iconSize;
 @property (nonatomic, retain) NSArray *iconSpacingConstraints;
 @property (nonatomic, retain) UILayoutGuide *iconSpacingLayoutGuide;
 @property (nonatomic) bool iconTintColorFollowsDisabledState;
@@ -55,6 +52,7 @@
 - (void)_updateIcon;
 - (id)_verticalConstraintsForContentSubview:(id)arg1;
 - (id)containerView;
+- (id)contentMetrics;
 - (bool)disableContinuousIconAnimation;
 - (id)dynamicConstraints;
 - (bool)hideIcon;
@@ -62,7 +60,6 @@
 - (unsigned long long)iconDisplayStyle;
 - (id)iconForegroundColor;
 - (bool)iconForegroundColorFollowsTintColor;
-- (struct CGSize { double x1; double x2; })iconSize;
 - (id)iconSpacingConstraints;
 - (id)iconSpacingLayoutGuide;
 - (bool)iconTintColorFollowsDisabledState;
@@ -73,6 +70,7 @@
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setContainerView:(id)arg1;
+- (void)setContentMetrics:(id)arg1;
 - (void)setDisableContinuousIconAnimation:(bool)arg1;
 - (void)setDisabled:(bool)arg1;
 - (void)setDynamicConstraints:(id)arg1;
@@ -81,7 +79,6 @@
 - (void)setIconDisplayStyle:(unsigned long long)arg1;
 - (void)setIconForegroundColor:(id)arg1;
 - (void)setIconForegroundColorFollowsTintColor:(bool)arg1;
-- (void)setIconSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIconSpacingConstraints:(id)arg1;
 - (void)setIconSpacingLayoutGuide:(id)arg1;
 - (void)setIconTintColorFollowsDisabledState:(bool)arg1;

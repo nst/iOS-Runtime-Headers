@@ -15,6 +15,7 @@
     NSNumber * _homeButtonUpFromBeep;
     bool  _initialBringUp;
     NSDictionary * _messagesDirectActionContext;
+    bool  _predictedRecordRouteIsZLL;
     SASPronunciationContext * _pronunciationContext;
     bool  _pronunciationRequest;
     bool  _releaseAudioSessionOnRecordingCompletion;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) NSNumber *homeButtonUpFromBeep;
 @property (getter=isInitialBringUp, nonatomic) bool initialBringUp;
 @property (nonatomic, copy) NSDictionary *messagesDirectActionContext;
+@property (nonatomic) bool predictedRecordRouteIsZLL;
 @property (nonatomic, retain) SASPronunciationContext *pronunciationContext;
 @property (getter=isPronunciationRequest, nonatomic) bool pronunciationRequest;
 @property (nonatomic) bool releaseAudioSessionOnRecordingCompletion;
@@ -81,6 +83,7 @@
 - (bool)isInitialBringUp;
 - (bool)isPronunciationRequest;
 - (id)messagesDirectActionContext;
+- (bool)predictedRecordRouteIsZLL;
 - (id)pronunciationContext;
 - (bool)releaseAudioSessionOnRecordingCompletion;
 - (id)requestInfo;
@@ -98,6 +101,7 @@
 - (void)setHomeButtonUpFromBeep:(id)arg1;
 - (void)setInitialBringUp:(bool)arg1;
 - (void)setMessagesDirectActionContext:(id)arg1;
+- (void)setPredictedRecordRouteIsZLL:(bool)arg1;
 - (void)setPronunciationContext:(id)arg1;
 - (void)setPronunciationRequest:(bool)arg1;
 - (void)setReleaseAudioSessionOnRecordingCompletion:(bool)arg1;

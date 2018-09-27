@@ -16,6 +16,7 @@
 - (id)characteristic;
 - (id)description;
 - (id)initWithCharacteristic:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)previousValue;
 
 @end

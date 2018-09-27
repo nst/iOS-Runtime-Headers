@@ -10,7 +10,9 @@
 @property (nonatomic) unsigned long long collapsedNotificationsCount;
 @property (nonatomic, retain) NCNotificationContent *content;
 @property (nonatomic, copy) NSDictionary *context;
+@property (getter=isCriticalAlert, nonatomic) bool criticalAlert;
 @property (nonatomic, retain) NCNotificationAction *defaultAction;
+@property (nonatomic, copy) NSString *highestPrioritySubSectionIdentifier;
 @property (nonatomic) bool isCollapsedNotification;
 @property (nonatomic, copy) NSString *notificationIdentifier;
 @property (nonatomic, retain) NCNotificationOptions *options;
@@ -26,6 +28,7 @@
 @property (nonatomic, copy) NSDictionary *supplementaryActions;
 @property (nonatomic, copy) NSString *threadIdentifier;
 @property (nonatomic, retain) NSDate *timestamp;
+@property (getter=isUniqueThreadIdentifier, nonatomic) bool uniqueThreadIdentifier;
 @property (nonatomic, retain) UNNotification *userNotification;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,7 +38,9 @@
 - (void)setCollapsedNotificationsCount:(unsigned long long)arg1;
 - (void)setContent:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setCriticalAlert:(bool)arg1;
 - (void)setDefaultAction:(id)arg1;
+- (void)setHighestPrioritySubSectionIdentifier:(id)arg1;
 - (void)setIsCollapsedNotification:(bool)arg1;
 - (void)setNotificationIdentifier:(id)arg1;
 - (void)setOptions:(id)arg1;
@@ -51,6 +56,7 @@
 - (void)setSupplementaryActions:(id)arg1;
 - (void)setThreadIdentifier:(id)arg1;
 - (void)setTimestamp:(id)arg1;
+- (void)setUniqueThreadIdentifier:(bool)arg1;
 - (void)setUserNotification:(id)arg1;
 
 @end

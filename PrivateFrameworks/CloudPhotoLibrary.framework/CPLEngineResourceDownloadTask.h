@@ -16,6 +16,7 @@
     NSMutableArray * _stateProgressDates;
     unsigned long long  _taskIdentifierForQueue;
     NSString * _transportIdentifier;
+    NSData * _transportScope;
     <CPLEngineTransportResourcesDownloadTask> * _transportTask;
 }
 
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) id /* block */ progressHandler;
 @property (nonatomic) unsigned long long taskIdentifierForQueue;
 @property (nonatomic, copy) NSString *transportIdentifier;
+@property (nonatomic, retain) NSData *transportScope;
 @property (nonatomic) <CPLEngineTransportResourcesDownloadTask> *transportTask;
 @property (nonatomic, readonly) bool willGenerateReport;
 
@@ -55,9 +57,11 @@
 - (void)setCloudResource:(id)arg1;
 - (void)setTaskIdentifierForQueue:(unsigned long long)arg1;
 - (void)setTransportIdentifier:(id)arg1;
+- (void)setTransportScope:(id)arg1;
 - (void)setTransportTask:(id)arg1;
 - (unsigned long long)taskIdentifierForQueue;
 - (id)transportIdentifier;
+- (id)transportScope;
 - (id)transportTask;
 - (bool)willGenerateReport;
 

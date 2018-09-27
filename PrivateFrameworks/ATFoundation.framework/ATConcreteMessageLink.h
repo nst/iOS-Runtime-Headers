@@ -23,12 +23,16 @@
     NSMutableDictionary * _receivedRequestsByID;
     NSMutableDictionary * _receivedResponsesByID;
     NSMutableDictionary * _requestHandlersByDataClass;
+    NSMutableSet * _requestReadersPendingStopByID;
     NSObject<OS_dispatch_source> * _requestTimeoutTimer;
     NSMutableDictionary * _requestWritersByID;
+    NSMutableSet * _requestWritersPendingStopByID;
     NSMutableDictionary * _responseWritersByID;
+    NSMutableSet * _responseWritersPendingStopByID;
     NSMutableDictionary * _sentRequestsByID;
     ATSignatureProvider * _signatureProvider;
     ATSocket * _socket;
+    NSObject<OS_dispatch_group> * _stopReadersAndWritersGroup;
     NSMutableDictionary * _streamReadersByID;
 }
 
@@ -49,6 +53,7 @@
 - (void)_checkMessageTimeouts;
 - (id)_getObservers;
 - (void)_invokeCompletionHandlerForResponseID:(unsigned long long)arg1 withError:(id)arg2;
+- (bool)_isWriterPendingStopForforMessage:(id)arg1;
 - (unsigned int)_nextRequestID;
 - (void)_prepareStreamReaderForMessage:(id)arg1 withProgress:(id /* block */)arg2;
 - (void)_processIncomingDataRequest:(id)arg1;
@@ -58,6 +63,7 @@
 - (void)_processIncomingRequest:(id)arg1;
 - (void)_processIncomingResponse:(id)arg1;
 - (bool)_sendMessage:(id)arg1 error:(id*)arg2;
+- (void)_stopWriter:(id)arg1 withStreamError:(bool)arg2 forMessageId:(unsigned int)arg3 type:(int)arg4;
 - (void)addKeepAliveException;
 - (void)addObserver:(id)arg1;
 - (void)addRequestHandler:(id)arg1 forDataClass:(id)arg2;

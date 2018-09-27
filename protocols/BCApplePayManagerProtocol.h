@@ -7,7 +7,7 @@
 
 - (long long)applePayStatus;
 - (<BCApplePayManagerDelegate> *)delegate;
-- (id)initWithMessage:(id <BCMessageProtocol>)arg1 delegate:(id <BCApplePayManagerDelegate>)arg2;
+- (id)initWithMessage:(BCMessage *)arg1 delegate:(id <BCApplePayManagerDelegate>)arg2;
 - (BCMessage *)message;
 - (void)presentApplePay;
 - (void)setDelegate:(id <BCApplePayManagerDelegate>)arg1;

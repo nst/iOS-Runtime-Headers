@@ -38,6 +38,7 @@
     NSMutableDictionary * _observersByID;
     AVPlayer * _playerQueue_avPlayer;
     AVQueuePlayer * _playerQueue_avQueuePlayer;
+    bool  _playerQueue_didBeginObservingPlayer;
     id  _playerQueue_playerItemDidPlayToEndObserver;
     ISWrappedAVAudioSession * _playerQueue_wrappedAudioSession;
 }

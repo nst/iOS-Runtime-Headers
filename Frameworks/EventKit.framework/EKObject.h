@@ -5,6 +5,7 @@
 @interface EKObject : NSObject <EKFrozenMeltedPair, EKProtocolMutableObject> {
     NSMutableDictionary * __cachedMeltedObjects;
     NSMutableDictionary * __cachedValues;
+    EKObjectValidationContext * __validationContext;
     NSDictionary * _additionalFrozenProperties;
     EKChangeSet * _changeSet;
     EKPersistentObject * _persistentObject;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary *_cachedMeltedObjects;
 @property (nonatomic, retain) NSMutableDictionary *_cachedValues;
+@property (nonatomic, retain) EKObjectValidationContext *_validationContext;
 @property (nonatomic, retain) NSDictionary *additionalFrozenProperties;
 @property (nonatomic, readonly) bool canBeConvertedToFullObject;
 @property (nonatomic, retain) EKChangeSet *changeSet;
@@ -24,9 +26,11 @@
 @property (nonatomic, readonly) bool isPartialObject;
 @property (getter=isNew, nonatomic, readonly) bool new;
 @property (nonatomic, readonly) NSDictionary *preFrozenRelationshipObjects;
+@property (nonatomic, readonly) NSString *semanticIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
++ (bool)_isWeakRelationMeltedObject:(id)arg1 forKey:(id)arg2;
 + (unsigned long long)_numberOfSharedLocksForUnitTesting;
 + (Class)frozenClass;
 + (bool)isDerivedRelationship;
@@ -85,6 +89,7 @@
 - (id)_singleRelationshipKeysToCheckForChanges;
 - (void)_updateCachedMeltedObjectSetForMultiValueKey:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_updatePersistentValueForKey:(id)arg1;
+- (id)_validationContext;
 - (void)addCachedMeltedObject:(id)arg1 forMultiValueKey:(id)arg2;
 - (void)addChanges:(id)arg1;
 - (void)addChangesFromObject:(id)arg1;
@@ -149,7 +154,7 @@
 - (id)objectID;
 - (id)persistentObject;
 - (id)preFrozenRelationshipObjects;
-- (id)previouslySavedObject;
+- (id)privacyDescription;
 - (void)rebase;
 - (void)rebaseSkippingRelationProperties:(id)arg1;
 - (void)refetch;
@@ -162,6 +167,7 @@
 - (bool)revert;
 - (void)rollback;
 - (int)rowID;
+- (id)semanticIdentifier;
 - (void)setAdditionalFrozenProperties:(id)arg1;
 - (void)setBackingObject:(id)arg1;
 - (void)setCachedMeltedObject:(id)arg1 forSingleValueKey:(id)arg2;
@@ -173,6 +179,7 @@
 - (void)setSingleChangedValue:(id)arg1 forKey:(id)arg2;
 - (void)set_cachedMeltedObjects:(id)arg1;
 - (void)set_cachedValues:(id)arg1;
+- (void)set_validationContext:(id)arg1;
 - (id)singleChangedValueForKey:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)updateMeltedAndCachedMultiRelationObjects:(id)arg1 forKey:(id)arg2;

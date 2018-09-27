@@ -8,6 +8,7 @@
     bool  _invalidateCalled;
     bool  _invalidateDone;
     id /* block */  _invalidationHandler;
+    NSXPCConnection * _xpcAuthCnx;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -18,14 +19,14 @@
 - (void).cxx_destruct;
 - (void)_copyCertificateForAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_copyIdentityForAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_ensureAuthXPCStarted;
 - (void)_ensureXPCStarted;
 - (void)_interrupted;
 - (void)_invalidate;
 - (void)_invalidated;
 - (void)_myAccountWithCompletion:(id /* block */)arg1;
 - (void)_personInfoWithEmailOrPhone:(id)arg1 completion:(id /* block */)arg2;
-- (void)addAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)appleIDListWithCompletion:(id /* block */)arg1;
+- (void)authenticateAccountWithAppleID:(id)arg1 password:(id)arg2 completion:(id /* block */)arg3;
 - (void)copyCertificateForAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)copyIdentityForAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;

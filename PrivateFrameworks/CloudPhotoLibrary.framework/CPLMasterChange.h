@@ -15,6 +15,7 @@
     NSString * _mediaMetaDataType;
     long long  _originalOrientation;
     NSString * _originatingFingerprint;
+    NSDictionary * _resourcePerResourceType;
     NSArray * _resources;
     short  _videoFrameRate;
 }
@@ -37,9 +38,10 @@
 @property (nonatomic) short videoFrameRate;
 
 - (void).cxx_destruct;
-- (void)awakeFromStorage;
+- (void)_copyDerivatives:(unsigned long long*)arg1 count:(int)arg2 ifMatchingResourceType:(unsigned long long)arg3 fromRecord:(id)arg4 inResourcePerType:(id)arg5;
 - (id /* block */)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)codec;
+- (void)copyDerivativesFromRecordIfPossible:(id)arg1;
 - (id)creationDate;
 - (unsigned long long)dataClassType;
 - (long long)dequeueOrder;
@@ -58,9 +60,9 @@
 - (id)name;
 - (long long)originalOrientation;
 - (id)originatingFingerprint;
-- (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned long long)arg1;
+- (id)resourceForType:(unsigned long long)arg1;
 - (id)resources;
 - (void)setCodec:(id)arg1;
 - (void)setCreationDate:(id)arg1;

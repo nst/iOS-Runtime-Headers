@@ -2,9 +2,58 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKZeusColorPalette : NSObject
+@interface NTKZeusColorPalette : NSObject {
+    UIColor * _backgroundColor;
+    unsigned long long  _bleed;
+    unsigned long long  _color;
+    UIColor * _complicationColor;
+    UIColor * _dialColor;
+    UIColor * _handInlayColor;
+    UIColor * _hourHandColor;
+    UIColor * _minuteHandColor;
+    double  _secondHandAlpha;
+    UIColor * _secondHandColor;
+    UIColor * _splitColor;
+}
 
-+ (id)orangeColor;
-+ (id)silverColor;
+@property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) unsigned long long bleed;
+@property (nonatomic, readonly) UIColor *complicationColor;
+@property (nonatomic, readonly) UIColor *dialColor;
+@property (nonatomic, readonly) UIColor *handInlayColor;
+@property (nonatomic, readonly) UIColor *hourHandColor;
+@property (nonatomic, readonly) UIColor *minuteHandColor;
+@property (nonatomic, readonly) double secondHandAlpha;
+@property (nonatomic, readonly) UIColor *secondHandColor;
+@property (nonatomic, readonly) UIColor *splitColor;
+
++ (id)ambreColor;
++ (id)bordeauxColor;
++ (id)capucineColor;
++ (id)charcoalColor;
++ (id)craieColor;
++ (id)feuColor;
++ (id)indigoColor;
++ (id)offWhiteColor;
++ (id)paletteForColor:(unsigned long long)arg1;
++ (id)roseAzaleeColor;
++ (id)roseExtremeColor;
++ (id)swatchColorForColor:(unsigned long long)arg1;
++ (id)swatchImageForColor:(unsigned long long)arg1;
++ (id)zeusOrangeColor;
++ (id)zeusSilverColor;
+
+- (void).cxx_destruct;
+- (id)backgroundColor;
+- (unsigned long long)bleed;
+- (id)complicationColor;
+- (id)dialColor;
+- (id)handInlayColor;
+- (id)hourHandColor;
+- (id)initWithColor:(unsigned long long)arg1;
+- (id)minuteHandColor;
+- (double)secondHandAlpha;
+- (id)secondHandColor;
+- (id)splitColor;
 
 @end

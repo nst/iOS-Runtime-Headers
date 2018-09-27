@@ -6,7 +6,7 @@
     struct NSMutableDictionary { Class x1; } * _extensions;
 }
 
-@property (nonatomic, copy) NSMutableDictionary *extensions;
+@property (nonatomic, retain) NSMutableDictionary *extensions;
 
 - (void).cxx_destruct;
 - (void)_addExtension:(id)arg1;

@@ -9,6 +9,8 @@
     bool  _canAccessAppleMusic;
     bool  _canAccessRemoteAssets;
     bool  _canAccessiCloudMusicLibrary;
+    bool  _canFetchMediaDataFromSender;
+    bool  _canPlayEncryptedProgressiveDownloadAssets;
     bool  _canRelayCommunicationChannel;
     bool  _deviceGroupable;
     unsigned int  _deviceSubtype;
@@ -25,8 +27,11 @@
     NSString * _modelID;
     NSDictionary * _modelSpecificInfo;
     NSString * _name;
+    bool  _parentGroupContainsDiscoverableLeader;
+    NSString * _parentGroupIdentifier;
     bool  _pickedOnPairedDevice;
     NSString * _playingPairedDeviceName;
+    bool  _presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
     bool  _proxyGroupPlayer;
     bool  _remoteControllable;
     bool  _requiresAuthorization;
@@ -44,7 +49,11 @@
 @property (nonatomic, readonly) bool canAccessAppleMusic;
 @property (nonatomic, readonly) bool canAccessRemoteAssets;
 @property (nonatomic, readonly) bool canAccessiCloudMusicLibrary;
+@property (nonatomic, readonly) bool canFetchMediaDataFromSender;
+@property (nonatomic, readonly) bool canPlayEncryptedProgressiveDownloadAssets;
 @property (nonatomic, readonly) bool canRelayCommunicationChannel;
+@property (nonatomic, readonly) NSString *capabilitiesDescription;
+@property (nonatomic, readonly) NSString *composedTypeDescription;
 @property (nonatomic, readonly) _MRAVOutputDeviceDescriptorProtobuf *descriptor;
 @property (getter=isDeviceGroupable, nonatomic, readonly) bool deviceGroupable;
 @property (nonatomic, readonly) unsigned int deviceSubtype;
@@ -56,16 +65,21 @@
 @property (getter=isGroupLeader, nonatomic, readonly) bool groupLeader;
 @property (getter=isGroupable, nonatomic, readonly) bool groupable;
 @property (nonatomic, readonly) bool hasBatteryLevel;
+@property (nonatomic, readonly) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property (getter=isLocalDevice, nonatomic, readonly) bool localDevice;
 @property (nonatomic, readonly) NSString *logicalDeviceID;
 @property (nonatomic, readonly) NSString *modelID;
 @property (nonatomic, readonly) NSDictionary *modelSpecificInfo;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) bool parentGroupContainsDiscoverableLeader;
+@property (nonatomic, copy) NSString *parentGroupIdentifier;
 @property (getter=isPickedOnPairedDevice, nonatomic, readonly) bool pickedOnPairedDevice;
 @property (nonatomic, readonly) NSString *playingPairedDeviceName;
+@property (nonatomic, readonly) bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property (getter=isProxyGroupPlayer, nonatomic, readonly) bool proxyGroupPlayer;
 @property (getter=isRemoteControllable, nonatomic, readonly) bool remoteControllable;
 @property (nonatomic, readonly) bool requiresAuthorization;
+@property (nonatomic, readonly) NSString *roleDescription;
 @property (nonatomic, readonly) MRAVOutputDeviceSourceInfo *sourceInfo;
 @property (nonatomic, readonly) bool supportsBufferedAirPlay;
 @property (nonatomic, readonly) bool supportsExternalScreen;
@@ -73,6 +87,7 @@
 @property (nonatomic) float volume;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
 
++ (id)localDeviceLocalizedName;
 + (id)localDeviceUID;
 
 - (void).cxx_destruct;
@@ -81,7 +96,11 @@
 - (bool)canAccessAppleMusic;
 - (bool)canAccessRemoteAssets;
 - (bool)canAccessiCloudMusicLibrary;
+- (bool)canFetchMediaDataFromSender;
+- (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (bool)canRelayCommunicationChannel;
+- (id)capabilitiesDescription;
+- (id)composedTypeDescription;
 - (id)description;
 - (id)descriptor;
 - (unsigned int)deviceSubtype;
@@ -102,14 +121,20 @@
 - (bool)isProxyGroupPlayer;
 - (bool)isRemoteControllable;
 - (bool)isVolumeControlAvailable;
+- (id)jsonEncodableDictionaryRepresentation;
 - (id)logicalDeviceID;
 - (id)modelID;
 - (id)modelSpecificInfo;
 - (id)name;
+- (bool)parentGroupContainsDiscoverableLeader;
+- (id)parentGroupIdentifier;
 - (id)playingPairedDeviceName;
+- (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (bool)requiresAuthorization;
+- (id)roleDescription;
 - (void)setEndpoint:(id)arg1;
 - (void)setGroupID:(id)arg1;
+- (void)setParentGroupIdentifier:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (id)sourceInfo;
 - (bool)supportsBufferedAirPlay;

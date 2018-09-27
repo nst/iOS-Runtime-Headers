@@ -7,6 +7,7 @@
 @property (nonatomic, copy) NSString *alertTopic;
 @property (nonatomic, copy) NSString *audioCategory;
 @property (nonatomic, copy) NSNumber *audioVolume;
+@property (getter=isCritical, nonatomic) bool critical;
 @property (nonatomic) double maximumDuration;
 @property (nonatomic) bool shouldIgnoreRingerSwitch;
 @property (nonatomic) bool shouldRepeat;
@@ -20,6 +21,7 @@
 - (void)setAlertTopic:(id)arg1;
 - (void)setAudioCategory:(id)arg1;
 - (void)setAudioVolume:(id)arg1;
+- (void)setCritical:(bool)arg1;
 - (void)setMaximumDuration:(double)arg1;
 - (void)setShouldIgnoreRingerSwitch:(bool)arg1;
 - (void)setShouldRepeat:(bool)arg1;

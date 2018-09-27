@@ -44,7 +44,6 @@
 @property (nonatomic) float opticalVignetting;
 @property (nonatomic) unsigned long long projection;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } projectionMatrix;
-@property (nonatomic, readonly) struct RTCamera { int (**x1)(); unsigned long long x2; unsigned long long x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*rtCamera;
 @property (nonatomic) float sensorAspect;
 @property (nonatomic) void sensorEnlargement;
 @property (nonatomic) void sensorShift;
@@ -65,6 +64,7 @@
 - (float)chromaticAberration;
 - (float)circleOfConfusionForDistance:(float)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (void)exposure;
 - (void)exposureCompression;
 - (float)fStop;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBDateTimeRangeValue : PBCodable <NSCopying> {
+@interface _INPBDateTimeRangeValue : PBCodable <NSCopying, NSSecureCoding, _INPBDateTimeRangeValue> {
     long long  _endCalendar;
     _INPBDateTime * _endDateTime;
     struct { 
@@ -12,10 +12,11 @@
     _INPBRecurrenceValue * _recurrence;
     long long  _startCalendar;
     _INPBDateTime * _startDateTime;
-    PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) long long endCalendar;
 @property (nonatomic, retain) _INPBDateTime *endDateTime;
 @property (nonatomic) bool hasEndCalendar;
@@ -24,17 +25,15 @@
 @property (nonatomic) bool hasStartCalendar;
 @property (nonatomic, readonly) bool hasStartDateTime;
 @property (nonatomic, readonly) bool hasValueMetadata;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBRecurrenceValue *recurrence;
 @property (nonatomic) long long startCalendar;
 @property (nonatomic, retain) _INPBDateTime *startDateTime;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-+ (id)options;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (long long)endCalendar;
 - (id)endDateTime;
@@ -46,7 +45,6 @@
 - (bool)hasValueMetadata;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)recurrence;
 - (void)setEndCalendar:(long long)arg1;
@@ -59,7 +57,6 @@
 - (void)setValueMetadata:(id)arg1;
 - (long long)startCalendar;
 - (id)startDateTime;
-- (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
 

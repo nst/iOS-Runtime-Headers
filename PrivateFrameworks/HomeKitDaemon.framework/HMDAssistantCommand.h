@@ -41,7 +41,6 @@
 
 - (void).cxx_destruct;
 - (void)_logEvent:(id)arg1;
-- (id)actionSetFromObject:(id)arg1;
 - (void)addActivationCharacteristicsIfNeeded:(id)arg1 forCharacteristic:(id)arg2;
 - (void)addBridgedAcessoryCharacteristicsFor:(id)arg1 toCollection:(id)arg2 assistantObjects:(id)arg3;
 - (void)addCharacteristicWithType:(id)arg1 fromService:(id)arg2 toCollection:(id)arg3 assistantObjects:(id)arg4;

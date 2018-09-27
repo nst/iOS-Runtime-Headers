@@ -30,6 +30,7 @@
 - (void)callCompletion:(id /* block */)arg1 room:(id)arg2 error:(id)arg3;
 - (void)callCompletion:(id /* block */)arg1 serviceGroup:(id)arg2 error:(id)arg3;
 - (void)callCompletion:(id /* block */)arg1 user:(id)arg2 error:(id)arg3;
+- (void)callCompletion:(id /* block */)arg1 value:(bool)arg2 conflictName:(id)arg3 error:(id)arg4;
 - (void)callCompletion:(id /* block */)arg1 value:(bool)arg2 error:(id)arg3;
 - (void)callCompletion:(id /* block */)arg1 zone:(id)arg2 error:(id)arg3;
 - (id)initWithQueue:(id)arg1;

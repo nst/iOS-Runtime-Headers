@@ -29,6 +29,7 @@
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithName:(id)arg1;
 - (bool)_isRelationship;
+- (bool)_isSchemaEqual:(id)arg1;
 - (bool)_isToManyRelationship;
 - (bool)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (unsigned long long)_propertyType;

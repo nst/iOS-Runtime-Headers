@@ -13,7 +13,6 @@
 @property (nonatomic, copy) NSString *loggingFacility;
 
 + (bool)requestTrafficAndETAFromWaypoint:(id)arg1 toWaypoints:(id)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 handler:(id /* block */)arg5;
-+ (bool)requestTrafficAndETAFromWaypoint:(id)arg1 toWaypoints:(id)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 withShortTrafficString:(bool)arg5 handler:(id /* block */)arg6;
 
 - (void).cxx_destruct;
 - (void)_calculateRoutingETAWithHandler:(id /* block */)arg1;

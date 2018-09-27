@@ -45,6 +45,7 @@
 @property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (getter=isExplicitContent, nonatomic, readonly) bool explicitContent;
 @property (nonatomic, readonly) long long explicitRating;
+@property (nonatomic, readonly, copy) NSArray *formerStoreAdamIDs;
 @property (nonatomic, readonly, copy) NSArray *genreNames;
 @property (nonatomic, readonly, copy) NSString *handle;
 @property (nonatomic, readonly) bool hasArtistBiography;
@@ -52,6 +53,7 @@
 @property (nonatomic, readonly) bool hasSocialPosts;
 @property (nonatomic, readonly) bool hasSubscriptionOffer;
 @property (nonatomic, readonly, copy) NSString *iTunesBrandType;
+@property (nonatomic, readonly) bool isChart;
 @property (nonatomic, readonly) bool isPreorder;
 @property (nonatomic, readonly, copy) NSString *itemKind;
 @property (nonatomic, readonly, copy) NSDate *lastModifiedDate;
@@ -140,6 +142,7 @@
 - (id)expirationDate;
 - (long long)explicitRating;
 - (id)flowcaseEditorialArtworkRequestToken;
+- (id)formerStoreAdamIDs;
 - (id)genreNames;
 - (id)handle;
 - (bool)hasArtistBiography;
@@ -155,6 +158,7 @@
 - (id)initWithStorePlatformDictionary:(id)arg1 parentStoreItemMetadata:(id)arg2;
 - (id)initWithStorePlatformDictionary:(id)arg1 parentStoreItemMetadata:(id)arg2 expirationDate:(id)arg3;
 - (bool)isBeats1;
+- (bool)isChart;
 - (bool)isCompilation;
 - (bool)isExpired;
 - (bool)isExplicitContent;

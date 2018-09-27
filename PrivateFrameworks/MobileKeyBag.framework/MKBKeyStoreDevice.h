@@ -7,10 +7,10 @@
 + (id)sharedService;
 
 - (int)ChangeSystemSecretWithEscrow:(id)arg1 FromOldPasscode:(id)arg2 ToNew:(id)arg3 withOpaqueDats:(id)arg4 withKeepState:(int)arg5;
+- (int)Event:(int)arg1;
 - (bool)MKBUserSessionSetInternalTest:(bool)arg1 WithReturnedError:(id*)arg2;
 - (int)SeshatDebug:(int)arg1;
 - (int)SeshatEnroll:(id)arg1;
-- (int)SeshatReport;
 - (int)SeshatUnlock:(id)arg1;
 - (id)_CreateMKBServerConnection;
 - (bool)addSyncServiceSource:(id)arg1 ToUserSessionWithID:(int)arg2 WithReturnedError:(id*)arg3;
@@ -27,6 +27,7 @@
 - (bool)getDeviceLockStateForUser:(int)arg1 extendedState:(bool)arg2 withLockStateInfo:(int*)arg3;
 - (id)getFileHandleForData:(id)arg1;
 - (id)getLockStateForUser:(int)arg1;
+- (bool)isDeviceInLoginSessionWithReturnedError:(id*)arg1;
 - (int)isKeyRollingWithKeyStatus:(int*)arg1;
 - (int)limitNumberOfUserSessionsTo:(int)arg1 WithReturnedError:(id*)arg2;
 - (id)listAllUserSessionIDSWithReturnedError:(id*)arg1;

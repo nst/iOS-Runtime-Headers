@@ -16,11 +16,12 @@
     }  _lock;
     id  _lockStateNotificationRegistrationToken;
     NSObject<OS_dispatch_queue> * _queue;
-    id  _resetPrivacyWarningsNotificationToken;
     NSDictionary * _totalIntentLaunchCountMap;
     NSDictionary * _totalLaunchCountMap;
     bool  _waitingLoad;
 }
+
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)defaultPath;
 + (void)joinLaunchEvents:(id)arg1 withVisits:(id)arg2 block:(id /* block */)arg3;
@@ -39,7 +40,6 @@
 - (int)_launchCountAtCurrentLOIOfBundle:(id)arg1;
 - (int)_launchCountAtCurrentLOIOfIntent:(id)arg1;
 - (void)_registerClassAUnlockHandler;
-- (void)_registerForResetPrivacyWarningsNotification;
 - (int)_totalIntentLaunchCountAtCurrentLOI;
 - (int)_totalLaunchCountAtCurrentLOI;
 - (void)dealloc;
@@ -58,6 +58,8 @@
 - (unsigned long long)loadModelAtPath:(id)arg1;
 - (void)loadOrTrain;
 - (id)locationManager;
+- (id)queue;
+- (void)resetAppIntentLocationData;
 - (int)totalIntentLaunchCountAtCurrentLOI;
 - (int)totalLaunchCountAtCurrentLOI;
 - (void)train;

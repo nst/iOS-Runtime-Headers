@@ -9,6 +9,7 @@
 
 @property (nonatomic, readonly) unsigned long long changeType;
 @property (nonatomic, readonly) NRDeviceDiff *diff;
+@property (nonatomic, readonly) NRPBDeviceDiffType *protobuf;
 
 + (bool)supportsSecureCoding;
 
@@ -21,6 +22,8 @@
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDiff:(id)arg1 andChangeType:(unsigned long long)arg2;
+- (id)initWithProtobuf:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)protobuf;
 
 @end

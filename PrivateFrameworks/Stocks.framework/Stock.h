@@ -37,6 +37,9 @@
 @property (nonatomic, retain) StockDataSource *dataSource;
 @property (nonatomic, retain) NSString *dividendYield;
 @property (nonatomic, retain) Exchange *exchange;
+@property (nonatomic, readonly) NSString *formattedChange;
+@property (nonatomic, readonly) NSString *formattedChangePercent;
+@property (nonatomic, readonly) NSString *formattedPrice;
 @property (nonatomic, retain) NSString *high;
 @property (nonatomic, retain) NSURL *infoURL;
 @property (nonatomic, retain) NSString *low;
@@ -57,21 +60,11 @@
 @property (nonatomic, retain) NSString *yearLow;
 
 + (id)BlankValueString;
-+ (id)PercentFormatter;
-+ (id)_formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3 groupingSeparators:(bool)arg4;
 + (id)_potentiallyAbsentKeys;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3 groupingSeparators:(bool)arg4;
-+ (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3 groupingSeparators:(bool)arg4 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg5;
-+ (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3;
-+ (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(bool)arg3 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg4;
 + (id)listNameOverridesBySymbol;
-+ (bool)localeUsesASCIIDigits;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1 fractionDigits:(unsigned int)arg2;
-+ (id)percentSymbol;
 + (id)postfixCharacterForMagnitude:(unsigned int)arg1 unitMagnitude:(unsigned int*)arg2;
-+ (void)resetLocale;
 + (id)symbolForURL:(id)arg1;
 + (id)urlForStock:(id)arg1;
 + (id)urlForStockSymbol:(id)arg1;
@@ -94,9 +87,11 @@
 - (bool)doesMetadataNeedUpdate;
 - (bool)doesQuoteNeedUpdate;
 - (id)exchange;
+- (id)formattedChange;
+- (id)formattedChangePercent;
 - (id)formattedChangePercent:(bool)arg1;
-- (id)formattedChangePercent:(bool)arg1 includePercentSign:(bool)arg2;
 - (id)formattedPrice;
+- (id)formattedPriceDroppingFractionDigitsIfLengthExceeds:(unsigned long long)arg1;
 - (unsigned long long)hash;
 - (id)high;
 - (id)infoURL;
@@ -118,7 +113,6 @@
 - (void)populateFromDictionary:(id)arg1;
 - (id)price;
 - (unsigned int)pricePrecision;
-- (void)resetLocale;
 - (void)setAverageVolume:(id)arg1;
 - (void)setChange:(id)arg1;
 - (void)setChartData:(id)arg1 forInterval:(long long)arg2;

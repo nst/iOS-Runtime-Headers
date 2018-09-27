@@ -306,8 +306,8 @@
         double _verticalMargin; 
         double _verticalOffset; 
         double _textSize; 
-        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
-            struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
+        struct basic_string<char, std::__1::char_traits<char>, geo::StdAllocator<char, lhp::Allocator> > { 
+            struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, geo::StdAllocator<char, lhp::Allocator> >::__rep, geo::StdAllocator<char, lhp::Allocator> > { 
                 struct __rep { 
                     union { 
                         struct __long { 
@@ -326,6 +326,9 @@
                         } __r; 
                     } ; 
                 } __value_; 
+                struct StdAllocator<char, lhp::Allocator> { 
+                    struct Allocator {} *_allocator; 
+                } __value_; 
             } __r_; 
         } _fontFamily; 
         double _textDrawWidth; 
@@ -337,7 +340,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)image;
-- (id)initWithString:(id)arg1 signMetrics:(struct RoadSignMetrics { unsigned char x1; double x2; double x3; double x4; double x5; struct CGSize { double x_6_1_1; double x_6_1_2; } x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; struct CGSize { double x_14_1_1; double x_14_1_2; } x14; })arg2 textMetrics:(struct RoadSignTextMetrics { double x1; double x2; double x3; double x4; double x5; double x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_7_1_1; } x7; double x8; double x9; })arg3 signColoring:(struct RoadSignColoring { bool x1; bool x2; bool x3; bool x4; struct array<double, 4> { double x_5_1_1[4]; } x5; struct array<double, 4> { double x_6_1_1[4]; } x6; struct array<double, 4> { double x_7_1_1[4]; } x7; struct array<double, 4> { double x_8_1_1[4]; } x8; })arg4 glyph:(struct CGImage { }*)arg5;
+- (id)initWithString:(id)arg1 signMetrics:(struct RoadSignMetrics { unsigned char x1; double x2; double x3; double x4; double x5; struct CGSize { double x_6_1_1; double x_6_1_2; } x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; struct CGSize { double x_14_1_1; double x_14_1_2; } x14; })arg2 textMetrics:(struct RoadSignTextMetrics { double x1; double x2; double x3; double x4; double x5; double x6; struct basic_string<char, std::__1::char_traits<char>, geo::StdAllocator<char, lhp::Allocator> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, geo::StdAllocator<char, lhp::Allocator> >::__rep, geo::StdAllocator<char, lhp::Allocator> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; struct StdAllocator<char, lhp::Allocator> { struct Allocator {} *x_2_3_1; } x_1_2_2; } x_7_1_1; } x7; double x8; double x9; })arg3 signColoring:(struct RoadSignColoring { bool x1; bool x2; bool x3; bool x4; struct array<double, 4> { double x_5_1_1[4]; } x5; struct array<double, 4> { double x_6_1_1[4]; } x6; struct array<double, 4> { double x_7_1_1[4]; } x7; struct array<double, 4> { double x_8_1_1[4]; } x8; })arg4 glyph:(struct CGImage { }*)arg5;
 - (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localCollisionBounds;
 - (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localRenderBounds;
 - (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localSignBounds;

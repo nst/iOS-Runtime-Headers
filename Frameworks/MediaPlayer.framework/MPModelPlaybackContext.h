@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;
+- (id)descriptionComponents;
 - (id)endTimeModifications;
 - (id)init;
 - (id)playbackRequestEnvironment;

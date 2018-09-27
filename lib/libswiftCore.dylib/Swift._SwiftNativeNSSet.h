@@ -4,6 +4,4 @@
 
 @interface Swift._SwiftNativeNSSet : _SwiftNativeNSSetBase
 
-- (id)init;
-
 @end

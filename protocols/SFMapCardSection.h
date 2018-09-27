@@ -18,6 +18,7 @@
 - (SFLatLng *)location;
 - (int)pinBehavior;
 - (SFColor *)pinColor;
+- (NSArray *)pins;
 - (NSArray *)punchoutOptions;
 - (NSString *)punchoutPickerDismissText;
 - (NSString *)punchoutPickerTitle;
@@ -33,6 +34,7 @@
 - (void)setLocation:(SFLatLng *)arg1;
 - (void)setPinBehavior:(int)arg1;
 - (void)setPinColor:(SFColor *)arg1;
+- (void)setPins:(NSArray *)arg1;
 - (void)setPunchoutOptions:(NSArray *)arg1;
 - (void)setPunchoutPickerDismissText:(NSString *)arg1;
 - (void)setPunchoutPickerTitle:(NSString *)arg1;

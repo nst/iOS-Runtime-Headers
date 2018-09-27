@@ -6,7 +6,6 @@
     <FCNewsAppConfiguration> * _appConfiguration;
     NSMutableArray * _articleIDsRequests;
     NSMutableArray * _articleListRequests;
-    FCCachePolicy * _cachePolicyForArticleLists;
     id /* block */  _catchUpCompletionHandler;
     <FCContentContext> * _contentContext;
     <FCFeedPersonalizing> * _feedPersonalizer;
@@ -19,12 +18,12 @@
     NSDictionary * _resultsByArticleIDsRequestID;
     NSDictionary * _resultsByArticleListID;
     id /* block */  _sessionProvider;
+    NSDictionary * _todayConfigOperationHeldRecordsByType;
 }
 
 @property (nonatomic, copy) <FCNewsAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) NSMutableArray *articleIDsRequests;
 @property (nonatomic, retain) NSMutableArray *articleListRequests;
-@property (nonatomic, retain) FCCachePolicy *cachePolicyForArticleLists;
 @property (nonatomic, copy) id /* block */ catchUpCompletionHandler;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (nonatomic, retain) <FCFeedPersonalizing> *feedPersonalizer;
@@ -37,6 +36,7 @@
 @property (nonatomic, copy) NSDictionary *resultsByArticleIDsRequestID;
 @property (nonatomic, copy) NSDictionary *resultsByArticleListID;
 @property (nonatomic, copy) id /* block */ sessionProvider;
+@property (nonatomic, retain) NSDictionary *todayConfigOperationHeldRecordsByType;
 
 - (void).cxx_destruct;
 - (void)_fetchArticleListAndArticleIDsResultsIfNeededWithCompletion:(id /* block */)arg1;
@@ -46,7 +46,6 @@
 - (id)appConfiguration;
 - (id)articleIDsRequests;
 - (id)articleListRequests;
-- (id)cachePolicyForArticleLists;
 - (id /* block */)catchUpCompletionHandler;
 - (id)contentContext;
 - (id)feedPersonalizer;
@@ -66,7 +65,6 @@
 - (void)setAppConfiguration:(id)arg1;
 - (void)setArticleIDsRequests:(id)arg1;
 - (void)setArticleListRequests:(id)arg1;
-- (void)setCachePolicyForArticleLists:(id)arg1;
 - (void)setCatchUpCompletionHandler:(id /* block */)arg1;
 - (void)setContentContext:(id)arg1;
 - (void)setFeedPersonalizer:(id)arg1;
@@ -79,6 +77,8 @@
 - (void)setResultsByArticleIDsRequestID:(id)arg1;
 - (void)setResultsByArticleListID:(id)arg1;
 - (void)setSessionProvider:(id /* block */)arg1;
+- (void)setTodayConfigOperationHeldRecordsByType:(id)arg1;
+- (id)todayConfigOperationHeldRecordsByType;
 - (bool)validateOperation;
 
 @end

@@ -7,7 +7,7 @@
     FCAssetHandle * _excerptAssetHandle;
     NSURL * _sourceURL;
     FCInterestToken * _webArchiveHoldToken;
-    FCWebArchiveSource * _webArchiveSource;
+    <FCWebArchiveSource> * _webArchiveSource;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) FCAssetHandle *excerptAssetHandle;
 @property (nonatomic, retain) NSURL *sourceURL;
 @property (nonatomic, retain) FCInterestToken *webArchiveHoldToken;
-@property (nonatomic, retain) FCWebArchiveSource *webArchiveSource;
+@property (nonatomic, retain) <FCWebArchiveSource> *webArchiveSource;
 
 - (void).cxx_destruct;
 - (id)URL;

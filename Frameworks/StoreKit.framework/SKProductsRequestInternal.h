@@ -4,8 +4,10 @@
 
 @interface SKProductsRequestInternal : NSObject {
     NSSet * _productIdentifiers;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)init;
 
 @end

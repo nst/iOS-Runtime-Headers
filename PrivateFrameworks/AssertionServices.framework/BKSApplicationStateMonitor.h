@@ -30,6 +30,7 @@
 - (unsigned int)applicationStateForApplication:(id)arg1;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;
 - (void)dealloc;
+- (id)dumpDescriptionForSubsystem:(id)arg1;
 - (bool)elevatedPriority;
 - (id /* block */)handler;
 - (id)init;

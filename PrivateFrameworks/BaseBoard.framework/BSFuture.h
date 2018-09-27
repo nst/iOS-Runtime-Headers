@@ -16,13 +16,13 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_addCompletionBlock:(id /* block */)arg1;
 - (void)_flushCompletionBlocks;
 - (bool)_nts_isFinished;
 - (void)addFailureBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
 - (bool)cancel;
-- (void)dealloc;
 - (void)didCancel;
 - (bool)finishWithError:(id)arg1;
 - (bool)finishWithResult:(id)arg1;

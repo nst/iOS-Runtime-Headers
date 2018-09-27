@@ -20,7 +20,8 @@
     bool  __needsAggdLoggingForUncuratedAssetsCount;
     PXPhotosDataSource * __photosDataSource;
     UIPinchGestureRecognizer * __pinchGesture;
-    bool  __showDisclosureButton;
+    bool  __showCurationButton;
+    bool  __showSelectionButton;
     PXPhotosDetailsAssetsSpecManager * __specManager;
     PXSwipeSelectionManager * __swipeSelectionManager;
     PXUITapGestureRecognizer * __tapGesture;
@@ -66,7 +67,8 @@
 @property (setter=_setPhotosDataSource:, nonatomic, retain) PXPhotosDataSource *_photosDataSource;
 @property (nonatomic, readonly) UIPinchGestureRecognizer *_pinchGesture;
 @property (nonatomic, readonly) PXSectionedSelectionManager *_selectionManager;
-@property (setter=_setShowDisclosureButton:, nonatomic) bool _showDisclosureButton;
+@property (setter=_setShowCurationButton:, nonatomic) bool _showCurationButton;
+@property (setter=_setShowSelectionButton:, nonatomic) bool _showSelectionButton;
 @property (nonatomic, readonly) PXPhotosDetailsAssetsSpecManager *_specManager;
 @property (nonatomic, readonly) PXSwipeSelectionManager *_swipeSelectionManager;
 @property (nonatomic, readonly) PXUITapGestureRecognizer *_tapGesture;
@@ -105,8 +107,6 @@
 
 - (void).cxx_destruct;
 - (bool)_addAssetReferencesToDrag:(id)arg1;
-- (id)_api_dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
-- (void)_api_dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
 - (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })_assetIndexPathAtLocation:(struct CGPoint { double x1; double x2; })arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)_assetReferenceAtPoint:(struct CGPoint { double x1; double x2; })arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)_assetsScene;
@@ -116,6 +116,7 @@
 - (void)_configureLayout:(id)arg1;
 - (id)_createNewLayout;
 - (bool)_curate;
+- (id)_curationButtonTitle;
 - (id)_currentDataSourceStressTest;
 - (id)_dataSourceManager;
 - (id)_dragItemForSimpleIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
@@ -142,7 +143,7 @@
 - (id)_photosDataSource;
 - (id)_pinchGesture;
 - (void)_presentConfidentialityWarning;
-- (id)_regionOfInterestForAssetReference:(id)arg1 inCoordinateSpace:(id)arg2;
+- (id)_regionOfInterestForAssetReference:(id)arg1;
 - (id)_selectionManager;
 - (void)_setCurate:(bool)arg1;
 - (void)_setCurrentDataSourceStressTest:(id)arg1;
@@ -158,10 +159,12 @@
 - (void)_setNeedsAggdLoggingForCuratedAssetsCount:(bool)arg1;
 - (void)_setNeedsAggdLoggingForUncuratedAssetsCount:(bool)arg1;
 - (void)_setPhotosDataSource:(id)arg1;
-- (void)_setShowDisclosureButton:(bool)arg1;
+- (void)_setShowCurationButton:(bool)arg1;
+- (void)_setShowSelectionButton:(bool)arg1;
 - (void)_setTransitionWithoutAnimation:(bool)arg1;
 - (void)_setVisibleOriginScrollTarget:(struct CGPoint { double x1; double x2; })arg1;
-- (bool)_showDisclosureButton;
+- (bool)_showCurationButton;
+- (bool)_showSelectionButton;
 - (id)_specManager;
 - (id)_subtitle;
 - (id)_swipeSelectionManager;
@@ -175,8 +178,10 @@
 - (void)_updateDraggingAssetReferencesWithDataSource:(id)arg1;
 - (void)_updateHasLoadedContentData;
 - (void)_updateLayoutEngineIfNeeded;
-- (void)_updateShowDisclosureButton;
+- (void)_updateShowCurationButton;
+- (void)_updateShowSelectionButton;
 - (void)_updateTilingLayoutIfNeeded;
+- (void)_userDidSelectCurationButton;
 - (struct CGPoint { double x1; double x2; })_visibleOriginScrollTarget;
 - (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
@@ -195,12 +200,15 @@
 - (id)dataSourceManager;
 - (void)dealloc;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
+- (void)dragInteraction:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
 - (id)dragInteraction:(id)arg1 itemsForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 previewForCancellingItem:(id)arg2 withDefault:(id)arg3;
+- (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
+- (void)dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
 - (id)dragInteraction:(id)arg1 sessionForAddingItems:(id)arg2 withTouchAtPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;
-- (unsigned long long)dragInteraction:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2 session:(id)arg3;
+- (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
 - (id)dragSession;
 - (double)engineDrivenLayout:(id)arg1 aspectRatioForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })engineDrivenLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2 forAspectRatio:(double)arg3;
@@ -223,10 +231,10 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)oneUpPresentation;
 - (id)oneUpPresentation:(id)arg1 currentImageForAssetReference:(id)arg2;
-- (id)oneUpPresentation:(id)arg1 regionOfInterestForAssetReference:(id)arg2 inCoordinateSpace:(id)arg3;
+- (id)oneUpPresentation:(id)arg1 regionOfInterestForAssetReference:(id)arg2;
 - (void)oneUpPresentation:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;
 - (void)oneUpPresentation:(id)arg1 setHiddenAssetReferences:(id)arg2;
-- (id)oneUpPresentationActionManager:(id)arg1;
+- (id)oneUpPresentationActionManagerForPreviewing:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
@@ -256,6 +264,7 @@
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (void)userDidSelectDisclosureControl;
+- (void)userDidSelectSubtitle;
 - (id)widgetDelegate;
 
 @end

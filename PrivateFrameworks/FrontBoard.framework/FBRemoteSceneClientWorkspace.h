@@ -14,13 +14,14 @@
 }
 
 @property (nonatomic, readonly, copy) FBUISceneClientIdentity *clientIdentity;
-@property (nonatomic, readonly, retain) FBProcess<FBUIProcess> *clientProcess;
+@property (nonatomic, readonly) FBProcess<FBUIProcess> *clientProcess;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FBWorkspace *processWorkspace;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_createSceneClientForIdentifier:(id)arg1 withSpecification:(id)arg2;
 - (void)_processLaunched:(id)arg1;
 - (id)_processWorkspace;

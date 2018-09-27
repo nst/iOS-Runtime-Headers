@@ -4,17 +4,16 @@
 
 @interface VCPCNNPoolingBlock : VCPCNNBlock {
     int  _chunk;
-    MPSCNNPoolingMax * _mpsPooling;
     int  _px;
     int  _py;
 }
 
-- (void).cxx_destruct;
++ (id)poolingBlockWithPoolX:(int)arg1 poolY:(int)arg2 chunk:(int)arg3;
+
 - (int)constructBlock:(id)arg1 context:(id)arg2;
-- (int)doMaxPoolingChunkFour;
-- (int)doMaxPoolingChunkOne;
 - (int)forward;
 - (id)initWithParameters:(int)arg1 poolY:(int)arg2 chunk:(int)arg3;
+- (int)initializeRest;
 - (bool)supportGPU;
 - (bool)useGPU;
 

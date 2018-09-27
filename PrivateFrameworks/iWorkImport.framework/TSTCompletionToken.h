@@ -3,15 +3,15 @@
  */
 
 @interface TSTCompletionToken : TSTWPTokenAttachment {
-    <TSTCanvasReferenceProvider> * mCanvasReferenceProvider;
-    NSString * mCompletionText;
-    TSTReferenceNode * mEditingReferenceNode;
+    <TSTCanvasReferenceProvider> * _canvasReferenceProvider;
+    NSString * _completionText;
+    TSTReferenceNode * _editingReferenceNode;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
-    }  mPrefixRange;
-    TSUColor * mReferenceColor;
-    int  mRenderAsTokenType;
+    }  _prefixRange;
+    TSUColor * _referenceColor;
+    int  _renderAsTokenType;
 }
 
 @property (nonatomic) <TSTCanvasReferenceProvider> *canvasReferenceProvider;
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) TSUColor *referenceColor;
 @property (nonatomic, readonly) int renderAsTokenType;
 
+- (void).cxx_destruct;
 - (id)canvasReferenceProvider;
 - (id)completionText;
 - (id)copyIntoContext:(id)arg1 bakeModes:(bool)arg2;

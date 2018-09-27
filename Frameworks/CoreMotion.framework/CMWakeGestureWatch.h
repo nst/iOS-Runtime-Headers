@@ -4,6 +4,4 @@
 
 @interface CMWakeGestureWatch : CMWakeGestureManager
 
-+ (bool)isWakeGestureAvailable;
-
 @end

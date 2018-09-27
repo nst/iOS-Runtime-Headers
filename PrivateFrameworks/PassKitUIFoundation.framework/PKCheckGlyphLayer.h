@@ -3,6 +3,7 @@
  */
 
 @interface PKCheckGlyphLayer : PKMicaLayer {
+    <PKCheckGlyphLayerDelegate> * _checkGlyphDelegate;
     bool  _covered;
     struct CATransform3D { 
         double m11; 
@@ -23,7 +24,7 @@
         double m44; 
     }  _coveredTransform;
     CAGradientLayer * _maskLayer;
-    struct UIColor { Class x1; } * _primaryColor;
+    UIColor * _primaryColor;
     bool  _revealed;
     CAShapeLayer * _shapeLayer;
     struct CATransform3D { 
@@ -46,17 +47,20 @@
     }  _uncoveredTransform;
 }
 
-@property (nonatomic, copy) UIColor *primaryColor;
+@property (nonatomic) <PKCheckGlyphLayerDelegate> *checkGlyphDelegate;
+@property (nonatomic, readonly, copy) UIColor *primaryColor;
 @property (nonatomic) bool revealed;
 
 - (void).cxx_destruct;
 - (void)_createMask;
 - (double)_updateCovered:(bool)arg1;
+- (id)checkGlyphDelegate;
 - (void)dealloc;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 package:(id)arg2;
-- (struct UIColor { Class x1; }*)primaryColor;
+- (id)primaryColor;
 - (bool)revealed;
+- (void)setCheckGlyphDelegate:(id)arg1;
 - (double)setCovered:(bool)arg1 animated:(bool)arg2;
 - (void)setPrimaryColor:(struct UIColor { Class x1; }*)arg1;
 - (void)setPrimaryColor:(struct UIColor { Class x1; }*)arg1 animated:(bool)arg2;

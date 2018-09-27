@@ -47,7 +47,7 @@
 - (bool)isInterestingForAlbumsSorting;
 - (bool)isLikeBoolValue;
 - (void)prepareForDeletion;
-- (bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
+- (bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
 - (void)willSave;
 
 @end

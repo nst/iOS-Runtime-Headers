@@ -7,7 +7,6 @@
     bool  _cellNeedsUpdate;
     UITableViewCell * _moreButtonCell;
     <EKEventDetailNotesCellDelegate> * _noteDelegate;
-    UITextView * _notesView;
 }
 
 @property (nonatomic) <EKEventDetailNotesCellDelegate> *noteDelegate;

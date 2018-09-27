@@ -25,6 +25,7 @@
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableVoicesForLanguageCode:(id)arg1;
 - (void)beginAudioPowerUpdateWithReply:(id /* block */)arg1;
+- (void)cachePresynthesizedAudioRequest:(id)arg1;
 - (oneway void)cleanUnusedAssets:(id /* block */)arg1;
 - (id)concurrentSynthesisRequests;
 - (void)continueCurrentSpeechRequest;

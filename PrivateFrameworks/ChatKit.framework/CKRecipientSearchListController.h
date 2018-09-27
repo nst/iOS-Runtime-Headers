@@ -3,6 +3,7 @@
  */
 
 @interface CKRecipientSearchListController : MFAutocompleteResultsTableViewController <CKContactsSearchManagerDelegate, IDSBatchIDQueryControllerDelegate> {
+    NSArray * _conversationCache;
     IMAccount * _defaultiMessageAccount;
     NSArray * _enteredRecipients;
     NSDate * _idsQueryStartTime;
@@ -13,6 +14,7 @@
     IDSBatchIDQueryController * _statusQueryController;
 }
 
+@property (nonatomic, copy) NSArray *conversationCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) IMAccount *defaultiMessageAccount;
 @property (nonatomic) <CKRecipientSearchListControllerDelegate> *delegate;
@@ -32,7 +34,10 @@
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;
 - (void)cancelSearch;
+- (void)chatStateChanged:(id)arg1;
 - (void)contactsSearchManager:(id)arg1 finishedSearchingWithResults:(id)arg2;
+- (id)conversationCache;
+- (id)conversationCacheForContactsSearchManager:(id)arg1;
 - (void)dealloc;
 - (id)defaultiMessageAccount;
 - (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -53,6 +58,7 @@
 - (id)searchManager;
 - (id)searchResults;
 - (void)searchWithText:(id)arg1;
+- (void)setConversationCache:(id)arg1;
 - (void)setDefaultiMessageAccount:(id)arg1;
 - (void)setEnteredRecipients:(id)arg1;
 - (void)setIdsQueryStartTime:(id)arg1;
@@ -66,6 +72,8 @@
 - (id)statusQueryController;
 - (bool)suppressGroupSuggestions;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidAppearDeferredSetup;
 - (void)viewWillAppear:(bool)arg1;
 
 @end

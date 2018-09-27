@@ -32,12 +32,14 @@
 - (void)monitorDataMigrationWithCompletionBlock:(id /* block */)arg1;
 - (id)queue;
 - (void)registerHandlerWithEventMonitor:(id)arg1;
+- (void)resumeMigrationQueue;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setEventHandler:(id /* block */)arg1;
 - (void)setFinishedDataMigration:(bool)arg1;
 - (void)setFoundExtensions:(bool)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setUnlocked:(bool)arg1;
+- (void)suspendMigrationQueue;
 - (void)unlock;
 - (bool)unlocked;
 

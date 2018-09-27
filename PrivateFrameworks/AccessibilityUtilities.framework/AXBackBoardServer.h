@@ -40,6 +40,7 @@
 - (void)disableBrightnessFilters;
 - (unsigned long long)guidedAccessAvailability;
 - (id)guidedAccessEffectiveAppBundleIdentifier;
+- (void)guidedAccessEffectiveAppBundleIdentifier:(id /* block */)arg1;
 - (id)guidedAccessIgnoredRegions;
 - (void)homeClickSwallowedForGuidedAccess;
 - (bool)inCheckerBoardMode;

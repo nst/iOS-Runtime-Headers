@@ -9,8 +9,8 @@
 }
 
 @property (getter=isPlaying, nonatomic, readonly) bool playing;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, retain) TURepeatingActor *repeatingActor;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) TURepeatingActor *repeatingActor;
 @property (nonatomic) unsigned int soundID;
 
 - (void).cxx_destruct;
@@ -22,8 +22,6 @@
 - (void)playSoundIndefinitely:(unsigned int)arg1 pauseDurationBetweenIterations:(double)arg2;
 - (id)queue;
 - (id)repeatingActor;
-- (void)setQueue:(id)arg1;
-- (void)setRepeatingActor:(id)arg1;
 - (void)setSoundID:(unsigned int)arg1;
 - (unsigned int)soundID;
 - (void)stopPlaying;

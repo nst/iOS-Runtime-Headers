@@ -58,7 +58,7 @@
 - (id)kenBurnsPanZoomPatterns;
 - (unsigned long long)kenBurnsPreferredMovementForClip:(id)arg1;
 - (id)layoutClips;
-- (int)maxTransitionDurationFromClip:(id)arg1 toClip:(id)arg2;
+- (int)maxTransitionDurationFromClip:(id)arg1 toClip:(id)arg2 transitionName:(id)arg3;
 - (id)multiTransitions;
 - (id)nextKBPanAndZoomSetForNumberOfEdits:(int)arg1 following:(id)arg2 forAlt:(bool)arg3;
 - (int)numberOfMultiTransitionsNeeded;

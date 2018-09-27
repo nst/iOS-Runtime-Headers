@@ -34,6 +34,7 @@
 - (id)mediaObjectWithFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 attributionInfo:(id)arg4 hideAttachment:(bool)arg5;
 - (id)mediaObjectWithSticker:(id)arg1 stickerUserInfo:(id)arg2;
 - (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2;
+- (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2 parentChatIsSpam:(bool)arg3;
 - (void)setClasses:(id)arg1;
 - (void)setDynTypes:(id)arg1;
 - (void)setTransfers:(id)arg1;

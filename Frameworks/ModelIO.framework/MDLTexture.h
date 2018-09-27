@@ -32,8 +32,13 @@
 + (id)irradianceTextureCubeWithTexture:(void *)arg1 name:(void *)arg2 dimensions:(void *)arg3 roughness:(void *)arg4; // needs 4 arg types, found 3: id, id, float
 + (id)textureCubeWithImagesNamed:(id)arg1;
 + (id)textureCubeWithImagesNamed:(id)arg1 bundle:(id)arg2;
++ (id)textureFromResource:(id)arg1;
 + (id)textureNamed:(id)arg1;
++ (id)textureNamed:(id)arg1 assetResolver:(id)arg2;
 + (id)textureNamed:(id)arg1 bundle:(id)arg2;
++ (id)textureResourceNamed:(id)arg1 assetResolver:(id)arg2;
++ (id)textureWithURL:(id)arg1;
++ (id)textureWithURL:(id)arg1 offset:(unsigned long long)arg2 size:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)allocateDataAtLevel:(long long)arg1;

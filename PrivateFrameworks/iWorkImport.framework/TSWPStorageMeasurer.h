@@ -61,6 +61,7 @@
 @property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *previousTargetLastColumn;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *previousTargetTopicNumbers; /* unknown property attribute:  true> >=Q}}}QQ@} */
 @property (nonatomic, readonly) bool pushAscendersIntoColumn;
+@property (nonatomic, readonly) double reservedWidthWhenTruncating;
 @property (nonatomic, readonly) bool shouldHyphenate;
 @property (nonatomic, readonly) bool shrinkTextToFit;
 @property (readonly) Class superclass;

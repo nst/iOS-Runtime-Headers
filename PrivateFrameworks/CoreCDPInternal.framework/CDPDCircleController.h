@@ -36,7 +36,7 @@
 - (id)peerID;
 - (void)prepareCircleStateForRecovery;
 - (void)promptForCredentials:(id /* block */)arg1;
-- (void)resetCircleIncludingCloudKitData:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)resetCircleIncludingCloudKitData:(bool)arg1 cloudKitResetReasonDescription:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setCircleProxy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setUiProvider:(id)arg1;

@@ -44,7 +44,7 @@
 - (void)_addFigAssetNotifications;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
-- (int)_attachToContentKeySession:(id)arg1;
+- (int)_attachToContentKeySession:(id)arg1 failedSinceAlreadyAttachedToAnotherSession:(bool*)arg2;
 - (bool)_attachedToExternalContentKeySession;
 - (Class)_classForAssetTracks;
 - (Class)_classForFigAssetInspectorLoader;

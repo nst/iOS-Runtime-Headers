@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)assetReaderForFormatConvertedPTPAsset:(id)arg1 ofManagedAsset:(id)arg2 path:(id)arg3;
-- (id)conversionResultForAsset:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3;
+- (id)conversionResultForAsset:(id)arg1 isVideo:(bool)arg2 isRender:(bool)arg3 forceLegacyConversion:(bool)arg4;
 - (id)convertedAssetLivePhotoPairingIdentifierForOriginalIdentifier:(id)arg1;
 - (id)convertedLivePhotoPairingIdentifiersByOriginalIdentifiers;
 - (void)dealloc;

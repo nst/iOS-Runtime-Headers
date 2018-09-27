@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTHiddenStateIndexSet : NSObject {
+@interface TSTHiddenStateIndexSet : NSObject <NSCopying> {
     NSMutableIndexSet * _visibleIndexSet;
 }
 
 @property (nonatomic, retain) NSMutableIndexSet *visibleIndexSet;
 
 - (bool)anyHiddenIndicesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned long long)findNthNextVisibleIndex:(unsigned long long)arg1 fromIndex:(unsigned long long)arg2;

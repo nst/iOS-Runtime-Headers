@@ -5,7 +5,7 @@
 @interface MTTimerScheduler : NSObject <MTAgentDiagnosticDelegate, MTAgentNotificationListener, MTScheduledListDelegate, MTTimerObserver> {
     id /* block */  _currentDateProvider;
     <MTTimerSchedulerDelegate> * _delegate;
-    <MTNotificationPoster> * _notificationPoster;
+    <MTNotificationCenter> * _notificationCenter;
     MTScheduledList * _scheduledTimers;
     <MTSchedulingDelegate> * _schedulingDelegate;
     <NAScheduler> * _serializer;
@@ -18,7 +18,7 @@
 @property (nonatomic) <MTTimerSchedulerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) <MTNotificationPoster> *notificationPoster;
+@property (nonatomic, retain) <MTNotificationCenter> *notificationCenter;
 @property (nonatomic, readonly) MTScheduledList *scheduledTimers;
 @property (nonatomic, readonly) <MTSchedulingDelegate> *schedulingDelegate;
 @property (nonatomic, retain) <NAScheduler> *serializer;
@@ -43,15 +43,16 @@
 - (void)_queue_updatePersistentTimerForNextTimerWithCompletion:(id /* block */)arg1;
 - (id /* block */)currentDateProvider;
 - (id)delegate;
+- (id)gatherDiagnostics;
 - (void)handleNotification:(id)arg1;
 - (bool)handlesNotification:(id)arg1;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2 scheduler:(id)arg3;
-- (id)initWithStorage:(id)arg1 notificationPoster:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(id /* block */)arg6;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(id /* block */)arg6;
 - (id)nextTimer;
 - (void)nextTimerDidChange:(id)arg1;
 - (id)nextTriggerDate;
-- (id)notificationPoster;
+- (id)notificationCenter;
 - (void)printDiagnostics;
 - (void)rescheduleTimers;
 - (void)rescheduleTimersWithCompletion:(id /* block */)arg1;
@@ -61,7 +62,7 @@
 - (id)schedulingDelegate;
 - (id)serializer;
 - (void)setDelegate:(id)arg1;
-- (void)setNotificationPoster:(id)arg1;
+- (void)setNotificationCenter:(id)arg1;
 - (void)setSerializer:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (void)source:(id)arg1 didAddTimers:(id)arg2;

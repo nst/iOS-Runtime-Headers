@@ -11,7 +11,10 @@
     bool  _hasExpressECPAccessMode;
     bool  _hasExpressFelicaTransitMode;
     bool  _hasExpressGenericAMode;
+    bool  _hasHLMSupport;
     bool  _hasIcfResistor;
+    bool  _hasLPCDSupport;
+    bool  _hasMFW;
     unsigned long long  _middlewareVersion;
     unsigned long long  _siliconName;
     unsigned long long  _siliconVersion;
@@ -25,7 +28,10 @@
 @property (nonatomic, readonly) bool hasExpressECPAccessMode;
 @property (nonatomic, readonly) bool hasExpressFelicaTransitMode;
 @property (nonatomic, readonly) bool hasExpressGenericAMode;
+@property (nonatomic, readonly) bool hasHLMSupport;
 @property (nonatomic, readonly) bool hasIcfResistor;
+@property (nonatomic, readonly) bool hasLPCDSupport;
+@property (nonatomic, readonly) bool hasMFW;
 @property (nonatomic, readonly) unsigned long long middlewareVersion;
 @property (nonatomic, readonly) unsigned long long siliconName;
 @property (nonatomic, readonly) unsigned long long siliconVersion;
@@ -42,7 +48,10 @@
 - (bool)hasExpressECPAccessMode;
 - (bool)hasExpressFelicaTransitMode;
 - (bool)hasExpressGenericAMode;
+- (bool)hasHLMSupport;
 - (bool)hasIcfResistor;
+- (bool)hasLPCDSupport;
+- (bool)hasMFW;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (unsigned long long)middlewareVersion;

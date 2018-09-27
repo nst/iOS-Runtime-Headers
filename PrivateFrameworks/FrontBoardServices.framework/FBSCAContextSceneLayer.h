@@ -6,7 +6,7 @@
     unsigned int  _contextID;
 }
 
-@property (nonatomic, readonly, retain) CAContext *CAContext;
+@property (nonatomic, readonly) CAContext *CAContext;
 @property (nonatomic, readonly) unsigned int contextID;
 
 + (id)layerWithCAContext:(id)arg1;
@@ -14,7 +14,6 @@
 - (id)CAContext;
 - (id)_initWithCAContext:(id)arg1 contextID:(unsigned int)arg2 level:(double)arg3;
 - (unsigned int)contextID;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned long long)hash;

@@ -42,6 +42,6 @@
 - (void)setAutoDismissDisabled:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)showInView:(id)arg1 actionHandlerBlock:(id /* block */)arg2;
-- (void)showInViewController:(id)arg1 actionHandlerBlock:(id /* block */)arg2;
+- (void)showInViewController:(id)arg1 source:(id)arg2 actionHandlerBlock:(id /* block */)arg3;
 
 @end

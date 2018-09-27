@@ -10,13 +10,13 @@
     <PUDisplayAsset> * _asset;
     PUAssetReference * _assetReference;
     PUAssetSharedViewModel * _assetSharedViewModel;
-    PXAutoloopScheduler * _autoloopScheduler;
     PUBadgeInfoPromise * _badgeInfoPromise;
     double  _contentOffsetOverrideFactor;
     long long  _displayedContentUpdateCount;
     NSObject<OS_dispatch_group> * _displayedContentUpdateGroup;
     double  _focusValue;
     bool  _forceBadgesVisible;
+    long long  _importState;
     PUBrowsingIrisPlayer * _irisPlayer;
     bool  _isFavorite;
     NSNumber * _isFavoriteOverride;
@@ -51,7 +51,6 @@
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetReference *assetReference;
 @property (nonatomic, retain) PUAssetSharedViewModel *assetSharedViewModel;
-@property (nonatomic, retain) PXAutoloopScheduler *autoloopScheduler;
 @property (nonatomic, copy) PUBadgeInfoPromise *badgeInfoPromise;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffset;
 @property (nonatomic) double contentOffsetOverrideFactor;
@@ -64,6 +63,7 @@
 @property (nonatomic) double focusValue;
 @property (nonatomic) bool forceBadgesVisible;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) long long importState;
 @property (nonatomic, readonly) PUBrowsingIrisPlayer *irisPlayer;
 @property (setter=_setFavorite:, nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSNumber *isFavoriteOverride;
@@ -105,7 +105,6 @@
 - (id)asset;
 - (id)assetReference;
 - (id)assetSharedViewModel;
-- (id)autoloopScheduler;
 - (id)badgeInfoPromise;
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (double)contentOffsetOverrideFactor;
@@ -119,6 +118,7 @@
 - (id)displayedContentUpdateGroup;
 - (double)focusValue;
 - (bool)forceBadgesVisible;
+- (long long)importState;
 - (id)init;
 - (id)irisPlayer;
 - (bool)isAccessoryViewVisible;
@@ -144,13 +144,13 @@
 - (void)setAsset:(id)arg1;
 - (void)setAssetReference:(id)arg1;
 - (void)setAssetSharedViewModel:(id)arg1;
-- (void)setAutoloopScheduler:(id)arg1;
 - (void)setBadgeInfoPromise:(id)arg1;
 - (void)setContentOffsetOverrideFactor:(double)arg1;
 - (void)setDisplayedContentUpdateCount:(long long)arg1;
 - (void)setDisplayedContentUpdateGroup:(id)arg1;
 - (void)setFocusValue:(double)arg1;
 - (void)setForceBadgesVisible:(bool)arg1;
+- (void)setImportState:(long long)arg1;
 - (void)setIsFavoriteOverride:(id)arg1;
 - (void)setIsInEditMode:(bool)arg1;
 - (void)setIsUpdatingDisplayedContent:(bool)arg1;

@@ -23,6 +23,7 @@
     SFLatLng * _location;
     int  _pinBehavior;
     SFColor * _pinColor;
+    NSArray * _pins;
     NSArray * _punchoutOptions;
     NSString * _punchoutPickerDismissText;
     NSString * _punchoutPickerTitle;
@@ -52,6 +53,7 @@
 @property (nonatomic, copy) NSArray *parameterKeyPaths;
 @property (nonatomic) int pinBehavior;
 @property (nonatomic, retain) SFColor *pinColor;
+@property (nonatomic, copy) NSArray *pins;
 @property (nonatomic, copy) NSArray *punchoutOptions;
 @property (nonatomic, copy) NSString *punchoutPickerDismissText;
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
@@ -90,6 +92,7 @@
 - (id)location;
 - (int)pinBehavior;
 - (id)pinColor;
+- (id)pins;
 - (id)punchoutOptions;
 - (id)punchoutPickerDismissText;
 - (id)punchoutPickerTitle;
@@ -105,6 +108,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setPinBehavior:(int)arg1;
 - (void)setPinColor:(id)arg1;
+- (void)setPins:(id)arg1;
 - (void)setPunchoutOptions:(id)arg1;
 - (void)setPunchoutPickerDismissText:(id)arg1;
 - (void)setPunchoutPickerTitle:(id)arg1;
@@ -118,5 +122,9 @@
 
 - (int)_crk_leadingCardSectionSeparatorStyle;
 - (int)_crk_trailingCardSectionSeparatorStyle;
+
+// Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
+
+- (Class)_searchUIViewClass;
 
 @end

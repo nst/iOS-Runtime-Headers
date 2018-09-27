@@ -6,8 +6,11 @@
 @required
 
 - (NSArray *)allImageNames;
+- (unsigned short)appearanceIdentifierForName:(NSString *)arg1;
+- (NSDictionary *)appearances;
 - (bool)canGetRenditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (NSArray *)imagesWithName:(NSString *)arg1;
+- (NSString *)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(NSString *)arg1;
 
 @optional

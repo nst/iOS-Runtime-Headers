@@ -12,7 +12,7 @@
     double  _maximumTrimmedDuration;
     bool  _playing;
     RCActionSheetController * _presentedActionSheetController;
-    RCSavedRecording * _recording;
+    <RCRecording> * _recording;
     NSString * _sourcePath;
     RCTrimTimeRangeOperation * _trimOperation;
     NSOperationQueue * _trimOperationQueue;
@@ -23,7 +23,7 @@
 @property (nonatomic) bool deletesDestinationPathWhenDone;
 @property (nonatomic, readonly, copy) NSString *destinationPath;
 @property (nonatomic) double maximumTrimmedDuration;
-@property (nonatomic, readonly) RCSavedRecording *recording;
+@property (nonatomic, readonly) <RCRecording> *recording;
 @property (nonatomic, readonly, copy) NSString *sourcePath;
 
 + (id)exportableAudioFormatPathExtensionWithSourceURL:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDeletesDestinationPathWhenDone:(bool)arg1;
 - (void)setMaximumTrimmedDuration:(double)arg1;
-- (void)showWithPresentationViewController:(id)arg1 message:(id)arg2 trimButtonTitle:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)showWithPresentationViewController:(id)arg1 source:(id)arg2 message:(id)arg3 trimButtonTitle:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)sourcePath;
 
 @end

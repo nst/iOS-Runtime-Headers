@@ -12,7 +12,8 @@
     struct _migrationManagerFlags { 
         unsigned int _migrationWasCancelled : 1; 
         unsigned int _usesStoreSpecificMigrationManager : 1; 
-        unsigned int _reservedMigrationManager : 30; 
+        unsigned int _migrationWasInPlace : 1; 
+        unsigned int _reservedMigrationManager : 29; 
     }  _migrationManagerFlags;
     id  _reserved1;
     id  _reserved2;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property bool usesStoreSpecificMigrationManager;
 
++ (bool)_canMigrateWithMappingModel:(id)arg1;
 + (bool)_performSanityCheckForMapping:(id)arg1 fromSourceModel:(id)arg2 toDestinationModel:(id)arg3;
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
@@ -46,6 +48,8 @@
 - (id)_mappingNamed:(id)arg1;
 - (bool)_migrateStoreFromURL:(id)arg1 type:(id)arg2 options:(id)arg3 withMappingModel:(id)arg4 toDestinationURL:(id)arg5 destinationType:(id)arg6 destinationOptions:(id)arg7 error:(id*)arg8;
 - (id)_migrationContext;
+- (bool)_performedInPlaceMigration;
+- (void)_setPerformedInPlaceMigration:(bool)arg1;
 - (bool)_validateAllObjectsAfterMigration:(id*)arg1;
 - (void)associateSourceInstance:(id)arg1 withDestinationInstance:(id)arg2 forEntityMapping:(id)arg3;
 - (void)cancelMigrationWithError:(id)arg1;

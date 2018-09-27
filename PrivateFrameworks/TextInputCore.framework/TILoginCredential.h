@@ -8,12 +8,12 @@
     NSString * _username;
 }
 
-@property (nonatomic, readonly, retain) NSString *password;
-@property (nonatomic, readonly, retain) NSString *site;
-@property (nonatomic, readonly, retain) NSString *username;
+@property (nonatomic, readonly) NSString *password;
+@property (nonatomic, readonly) NSString *site;
+@property (nonatomic, readonly) NSString *username;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)initWithUsername:(id)arg1 password:(id)arg2 site:(id)arg3;
 - (bool)isEqual:(id)arg1;

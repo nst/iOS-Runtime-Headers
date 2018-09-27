@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBMoveFileIntentResponse : PBCodable <NSCopying> {
+@interface _INPBMoveFileIntentResponse : PBCodable <NSCopying, NSSecureCoding, _INPBMoveFileIntentResponse> {
     _INPBString * _destinationName;
-    NSMutableArray * _entityNames;
+    NSArray * _entityNames;
     struct { 
         int *list; 
         unsigned long long count; 
@@ -17,24 +17,26 @@
     bool  _overwrite;
     _INPBString * _sourceName;
     bool  _success;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _INPBString *destinationName;
-@property (nonatomic, retain) NSMutableArray *entityNames;
+@property (nonatomic, copy) NSArray *entityNames;
+@property (nonatomic, readonly) unsigned long long entityNamesCount;
 @property (nonatomic, readonly) int*entityTypes;
 @property (nonatomic, readonly) unsigned long long entityTypesCount;
 @property (nonatomic, readonly) bool hasDestinationName;
 @property (nonatomic) bool hasOverwrite;
 @property (nonatomic, readonly) bool hasSourceName;
 @property (nonatomic) bool hasSuccess;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool overwrite;
 @property (nonatomic, retain) _INPBString *sourceName;
 @property (nonatomic) bool success;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (readonly) Class superclass;
 
 + (Class)entityNameType;
-+ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsEntityTypes:(id)arg1;
@@ -43,8 +45,6 @@
 - (void)clearEntityNames;
 - (void)clearEntityTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
 - (id)destinationName;
 - (id)dictionaryRepresentation;
 - (id)entityNameAtIndex:(unsigned long long)arg1;
@@ -60,7 +60,6 @@
 - (bool)hasSuccess;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (bool)overwrite;
 - (bool)readFrom:(id)arg1;
 - (void)setDestinationName:(id)arg1;
@@ -73,7 +72,6 @@
 - (void)setSuccess:(bool)arg1;
 - (id)sourceName;
 - (bool)success;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

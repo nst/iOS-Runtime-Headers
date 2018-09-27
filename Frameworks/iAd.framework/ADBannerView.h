@@ -33,6 +33,7 @@
         double height; 
     }  _landscapeSize;
     long long  _lastErrorCode;
+    ADLayoutOptions * _layoutOptions;
     NSDate * _loadEndTime;
     NSDate * _loadStartTime;
     long long  _options;
@@ -85,6 +86,7 @@
 @property (nonatomic) bool internalAdTypeCanChange;
 @property (nonatomic) struct CGSize { double x1; double x2; } landscapeSize;
 @property (nonatomic) long long lastErrorCode;
+@property (nonatomic, retain) ADLayoutOptions *layoutOptions;
 @property (nonatomic, copy) NSDate *loadEndTime;
 @property (nonatomic, copy) NSDate *loadStartTime;
 @property (nonatomic, readonly) long long options;
@@ -113,6 +115,7 @@
 - (id)_accessibilityUserTestingElementAttributes;
 - (void)_commonInit;
 - (void)_forwardErrorToDelegate:(id)arg1;
+- (id)_initWithInternalAdType:(int)arg1 layoutOptions:(id)arg2 options:(long long)arg3;
 - (id)_initWithInternalAdType:(int)arg1 options:(long long)arg2;
 - (bool)_needsDoubleUpdateConstraintsPass;
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
@@ -125,6 +128,7 @@
 - (int)action;
 - (double)adDataLoadTime;
 - (id)adDisplayDate;
+- (id)adPrivacyDetailsAttributes;
 - (id)adResponseId;
 - (id)adSpace;
 - (id)adSpaceView;
@@ -191,6 +195,7 @@
 - (bool)isBannerViewActionInProgress;
 - (struct CGSize { double x1; double x2; })landscapeSize;
 - (long long)lastErrorCode;
+- (id)layoutOptions;
 - (void)layoutSubviews;
 - (id)loadEndTime;
 - (id)loadStartTime;
@@ -226,6 +231,10 @@
 - (bool)reUsed;
 - (void)registerVideoPlayerForAdAnalytics:(id)arg1;
 - (void)removeCreativeView;
+- (void)reportAdPrivacySheetDidAppear;
+- (void)reportAdPrivacySheetDidDisappear;
+- (void)reportAdPrivacySheetDidLinkOut;
+- (void)reportAdPrivacySheetDidRender;
 - (void)reportNativeClickEvent;
 - (bool)requestCalledbackError;
 - (id)requiredContentSizeIdentifiers;
@@ -276,6 +285,7 @@
 - (void)setInternalDelegate:(id)arg1;
 - (void)setLandscapeSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLastErrorCode:(long long)arg1;
+- (void)setLayoutOptions:(id)arg1;
 - (void)setLoadEndTime:(id)arg1;
 - (void)setLoadStartTime:(id)arg1;
 - (void)setOriginID:(id)arg1;

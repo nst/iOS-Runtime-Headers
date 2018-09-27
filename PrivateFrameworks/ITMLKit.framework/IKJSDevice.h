@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSDevice : IKJSObject <IKJSDevice, NSObject, RadiosPreferencesDelegate, _IKJSDevice, _IKJSDeviceProxy> {
+@interface IKJSDevice : IKJSObject <IKJSDevice, NSObject, _IKJSDevice, _IKJSDeviceProxy> {
     <IKAppDeviceConfig> * _deviceConfig;
-    id  _isNetworkTypeChangedToken;
-    id  _networkReachabilityChangedToken;
-    RadiosPreferences * _radioPrefs;
+    id  _networkPropertiesChangedToken;
 }
 
 @property (nonatomic, readonly) NSString *advertisingIdentifier;
@@ -34,9 +32,7 @@
 + (id)getMobileGestaltString:(struct __CFString { }*)arg1;
 
 - (void).cxx_destruct;
-- (void)_notifyObservers;
 - (id)advertisingIdentifier;
-- (void)airplaneModeChanged;
 - (id)appIdentifier;
 - (id)appVersion;
 - (id)asPrivateIKJSDevice;

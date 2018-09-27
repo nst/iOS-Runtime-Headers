@@ -9,8 +9,8 @@
 @property (nonatomic, copy) FBSSceneClientSettings *clientSettings;
 @property (nonatomic, copy) FBSSceneSettings *settings;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setDisplay:(id)arg1;
 - (void)setSettings:(id)arg1;
 - (void)updateClientSettingsWithBlock:(id /* block */)arg1;

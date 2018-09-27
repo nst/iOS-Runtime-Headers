@@ -11,6 +11,7 @@
 
 + (id)dictionaryWithMaximumCapacity:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (void)_addNodeToFront:(id)arg1;
 - (void)_moveNodeToFront:(id)arg1;
 - (void)_removeNode:(id)arg1;

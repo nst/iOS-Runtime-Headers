@@ -4,6 +4,7 @@
 
 @interface TDMicaRenditionSpec : TDRenditionSpec
 
+@property (nonatomic) bool isTintable;
 @property (nonatomic, copy) NSString *layerPath;
 
 - (void)_logError:(id)arg1;

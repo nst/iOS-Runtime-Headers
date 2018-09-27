@@ -26,7 +26,7 @@
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
 - (bool)siriCore_bufferingAllowedDuringActiveSession;
-- (bool)siriCore_canBeRemapped;
+- (bool)siriCore_isProvisional;
 - (bool)siriCore_isRestartable;
 - (bool)siriCore_isRetryable;
 - (void)siriCore_logDiagnostics;

@@ -4,6 +4,8 @@
 
 @interface CADNotificationMonitorOperationGroup : CADOperationGroup <CADNotificationMonitorInterface>
 
++ (void)_logNotificationCountsForNotificationTypes:(id)arg1;
++ (id)_stringForNotificationType:(int)arg1;
 + (bool)requiresEventAccess;
 + (bool)requiresEventOrReminderAccess;
 + (bool)requiresReminderAccess;

@@ -28,6 +28,7 @@
 - (id)plugin;
 - (Class)pluginClass;
 - (id)pluginContext;
+- (void)prepareAnimations;
 - (void)renderTextures;
 - (void)resumeAnimationsIfPaused;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;

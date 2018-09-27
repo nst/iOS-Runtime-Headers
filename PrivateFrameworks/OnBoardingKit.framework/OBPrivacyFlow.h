@@ -14,7 +14,7 @@
     NSString * _splashTitle;
 }
 
-@property (nonatomic, retain) UIImage *buttonIcon;
+@property (nonatomic, readonly) UIImage *buttonIcon;
 @property (nonatomic, readonly) unsigned long long contentVersion;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *localizedButtonCaption;
@@ -28,7 +28,7 @@
 
 // Image: /System/Library/PrivateFrameworks/OnBoardingKit.framework/OnBoardingKit
 
-+ (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;
++ (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 + (id)flowWithBundle:(id)arg1;
 
 - (void).cxx_destruct;
@@ -36,23 +36,24 @@
 - (bool)_conformsToRequirement:(id)arg1;
 - (bool)_conformsToRequirements:(id)arg1;
 - (id)_currentPlatform;
-- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2;
-- (id)_textForConditionalItem:(id)arg1 language:(id)arg2;
+- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
+- (id)_textForConditionalItem:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 - (struct UIImage { Class x1; }*)buttonIcon;
 - (unsigned long long)contentVersion;
 - (id)identifier;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithSplashContent:(id)arg1;
 - (bool)isPersonallyIdentifiable;
 - (id)localizedButtonCaption;
-- (id)localizedButtonCaptionForLanguage:(id)arg1;
+- (id)localizedButtonCaptionForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 - (id)localizedButtonTitle;
-- (id)localizedButtonTitleForLanguage:(id)arg1;
+- (id)localizedButtonTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 - (id)localizedContentList;
-- (id)localizedContentListForLanguage:(id)arg1;
+- (id)localizedContentListForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 - (id)localizedShortTitle;
-- (id)localizedShortTitleForLanguage:(id)arg1;
+- (id)localizedShortTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 - (id)localizedTitle;
-- (id)localizedTitleForLanguage:(id)arg1;
+- (id)localizedTitleForLanguage:(id)arg1 preferredDeviceType:(unsigned long long)arg2;
 - (bool)platformSupported;
 - (void)setButtonIcon:(struct UIImage { Class x1; }*)arg1;
 - (bool)showInCombinedList;

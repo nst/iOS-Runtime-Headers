@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFBrowserContentViewController : UIViewController <SFReaderAppearanceViewControllerDelegate, SFReaderEnabledWebViewControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityViewControllerDelegate, _SFAppleConnectExtensionUIDelegate, _SFBarManagerDelegate, _SFBrowserKeyCommandMethods, _SFBrowserToolbarDataSource, _SFDownloadControllerDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFMailContentProviderDataSource, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFPrintControllerDelegate, _SFSafeBrowsingControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate> {
+@interface _SFBrowserContentViewController : UIViewController <SFBrowserViewDelegate, SFReaderAppearanceViewControllerDelegate, SFReaderEnabledWebViewControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, WBSFluidProgressControllerWindowDelegate, WBSFluidProgressStateSource, _SFActivityViewControllerDelegate, _SFAppleConnectExtensionUIDelegate, _SFBarManagerDelegate, _SFBrowserKeyCommandMethods, _SFBrowserToolbarDataSource, _SFDownloadDelegate, _SFDynamicBarAnimatorDelegate, _SFFindOnPageViewDelegate, _SFMailContentProviderDataSource, _SFNavigationBarDelegate, _SFPageLoadErrorControllerDelegate, _SFPrintControllerDelegate, _SFSafeBrowsingControllerDelegate, _SFSingleBookmarkNavigationControllerDelegate> {
     NSString * _EVOrganizationName;
     bool  _EVOrganizationNameIsValid;
     _SFURLSpoofingMitigator * _URLSpoofingMitigator;
@@ -10,6 +10,7 @@
     unsigned long long  __persona;
     bool  __privateBrowsingInitiallyEnabled;
     _WKActivatedElementInfo * _activatedElementInfo;
+    _SFDownload * _activeDownload;
     _SFAppleConnectExtensionPageController * _appleConnectPageController;
     bool  _autoHidingHomeIndicatorPermitted;
     WBSAutomaticReaderActivationManager * _automaticReaderActivationManager;
@@ -29,7 +30,6 @@
     bool  _didReceivePolicyForInitialLoad;
     long long  _dismissButtonStyle;
     long long  _displayMode;
-    _SFDownloadController * _downloadController;
     _SFDynamicBarAnimator * _dynamicBarAnimator;
     unsigned long long  _externalAppRedirectState;
     _SFFindOnPageView * _findOnPageView;
@@ -51,6 +51,7 @@
     NSArray * _linkActions;
     _SFNavigationBar * _navigationBar;
     _SFNavigationBarItem * _navigationBarItem;
+    NSURL * _originalRequestURL;
     SFReaderEnabledWebViewController * _ownerWebViewController;
     _SFPageLoadErrorController * _pageLoadErrorController;
     bool  _pageScrollsWithBottomBar;
@@ -108,18 +109,21 @@
 @property (nonatomic) bool remoteSwipeGestureEnabled;
 @property (nonatomic) long long safariDataSharingMode;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) WKWebView *webView;
 @property (nonatomic, retain) SFReaderEnabledWebViewController *webViewController;
 @property (nonatomic) bool webViewLayoutUnderlapsStatusBar;
 
 - (void).cxx_destruct;
 - (id)_EVOrganizationName;
 - (id)_activeToolbar;
+- (id)_activityItemsForSharingURL:(id)arg1 title:(id)arg2;
 - (id)_analyticsHelper;
 - (id)_applicationPayloadForOpeningInSafari;
 - (bool)_canScrollToTopInView:(id)arg1;
 - (bool)_canShowDownloadWithoutPrompting:(id)arg1;
+- (void)_cleanUpAfterRedirectToExternalApp;
 - (void)_commitPreviewViewController:(id)arg1;
-- (id)_committedDomainForAutomaticReader;
+- (id)_committedDomainForPreferences;
 - (void)_completeRedirectToExternalNavigationResult:(id)arg1 fromOriginalRequest:(id)arg2 userCancelled:(bool)arg3;
 - (double)_crashBannerDraggingOffsetForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_currentWebView;
@@ -213,7 +217,7 @@
 - (void)appleConnectExtensionPageController:(id)arg1 dismissViewController:(id)arg2;
 - (void)appleConnectExtensionPageController:(id)arg1 presentViewController:(id)arg2;
 - (unsigned long long)availableContentTypeForMailContentProvider:(id)arg1;
-- (void)barManager:(id)arg1 didRecieveTapForBarItem:(long long)arg2;
+- (void)barManager:(id)arg1 didReceiveTapForBarItem:(long long)arg2;
 - (bool)becomeFirstResponder;
 - (unsigned long long)browserPersonaForWebViewController:(id)arg1;
 - (double)browserToolbarDismissButtonPadding:(id)arg1;
@@ -233,9 +237,11 @@
 - (bool)currentLoadIsEligibleForAutoFillAuthenticationForWebViewController:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)didUpdateNavigationBarItem:(id)arg1;
 - (long long)dismissButtonStyle;
 - (long long)displayMode;
-- (id)downloadBackgroundTaskName;
+- (void)downloadDidFail:(id)arg1;
+- (void)downloadDidFinish:(id)arg1;
 - (bool)dynamicBarAnimator:(id)arg1 canHideBarsByDraggingWithOffset:(double)arg2;
 - (double)dynamicBarAnimator:(id)arg1 minimumTopBarHeightForOffset:(double)arg2;
 - (void)dynamicBarAnimatorOutputsDidChange:(id)arg1;
@@ -243,7 +249,6 @@
 - (void)dynamicBarAnimatorWillLeaveSteadyState:(id)arg1;
 - (double)estimatedProgress;
 - (id)expectedOrCurrentURL;
-- (void)fileDownloadDidFinish:(id)arg1;
 - (void)findKeyPressed;
 - (id)findOnPageView;
 - (void)fluidProgressRocketAnimationDidComplete;
@@ -339,12 +344,14 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)visibilityWillChangeForFindOnPageView:(id)arg1;
+- (id)webView;
 - (id)webViewConfiguration;
 - (id)webViewController;
 - (void)webViewController:(id)arg1 commitPreviewedViewController:(id)arg2;
 - (void)webViewController:(id)arg1 createWebViewWithConfiguration:(id)arg2 forNavigationAction:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webViewController:(id)arg1 didChangeFullScreen:(bool)arg2;
 - (void)webViewController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;
 - (void)webViewController:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didEndNavigationGestureToBackForwardListItem:(id)arg2;
@@ -356,6 +363,7 @@
 - (void)webViewController:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didSameDocumentNavigation:(id)arg2 ofType:(long long)arg3;
 - (void)webViewController:(id)arg1 didStartProvisionalNavigation:(id)arg2;
+- (long long)webViewController:(id)arg1 presentationPolicyForDialog:(id)arg2;
 - (id)webViewController:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
 - (void)webViewController:(id)arg1 printFrame:(id)arg2;
 - (void)webViewController:(id)arg1 webViewDidClose:(id)arg2;

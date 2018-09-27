@@ -28,6 +28,8 @@
 
 - (void).cxx_destruct;
 - (id)activateMonitorQueue;
+- (void)addObjects:(id)arg1 andRemoveObjects:(id)arg2 forArrayAtPath:(id)arg3 handler:(id /* block */)arg4;
+- (void)addObjects:(id)arg1 toArrayAtPath:(id)arg2 handler:(id /* block */)arg3;
 - (id)clientConnection;
 - (void)dealloc;
 - (void)deregisterAllCallbacks:(bool)arg1;
@@ -40,6 +42,7 @@
 - (void)propertiesOfPath:(id)arg1 handler:(id /* block */)arg2;
 - (id)queue;
 - (void)registerCallback:(id)arg1;
+- (void)removeObjects:(id)arg1 fromArrayAtPath:(id)arg2 handler:(id /* block */)arg3;
 - (id)service;
 - (void)setActivateMonitorQueue:(id)arg1;
 - (void)setClientConnection:(id)arg1;

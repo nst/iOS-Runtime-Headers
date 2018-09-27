@@ -6,6 +6,7 @@
     SBFAuthenticationAssertionManager * _assertionManager;
     long long  _authenticationState;
     long long  _cachedAuthFlag;
+    SBFMobileKeyBagState * _cachedExtendedState;
     bool  _inSecureMode;
     SBFMobileKeyBag * _keybag;
     NSString * _lastIncorrectPasscodeAttempt;
@@ -32,6 +33,7 @@
 - (void)_addPrivateAuthenticationObserver:(id)arg1;
 - (bool)_authenticateIfInGracePeriod;
 - (bool)_boolForAuthenticationResult:(long long)arg1;
+- (id)_cachedLockStateExtended;
 - (void)_clearBlockedState;
 - (void)_clearUnblockTimer;
 - (long long)_evaluateAuthenticationAttempt:(id)arg1 outError:(id*)arg2;

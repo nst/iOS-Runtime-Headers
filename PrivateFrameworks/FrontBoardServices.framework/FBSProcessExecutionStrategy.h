@@ -32,8 +32,8 @@
 + (id)userInteractive;
 + (id)userInteractiveWithoutUI;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -4,12 +4,9 @@
 
 @interface SBUILegibilityLabel : UIView <SBUILegibility> {
     NSAttributedString * _attributedText;
-    UILayoutGuide * _firstBaselineLayoutGuide;
     UIFont * _font;
     bool  _isDirty;
     bool  _isWaitingToMoveToWindow;
-    UILayoutGuide * _lastBaselineLayoutGuide;
-    NSArray * _legibilityConstraints;
     _UILegibilitySettings * _legibilitySettings;
     _UILegibilityView * _legibilityView;
     UILabel * _lookasideLabel;
@@ -29,6 +26,7 @@
 @property (nonatomic, readonly) double firstBaselineOffsetFromBottom;
 @property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) float hyphenationFactor;
 @property (nonatomic, readonly) double lastBaselineOffsetFromBottom;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) long long lineBreakMode;
@@ -39,10 +37,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic) long long textAlignment;
 @property (nonatomic, copy) UIColor *textColor;
-@property (nonatomic) bool useColorFilters;
 
 - (void).cxx_destruct;
-- (double)_layoutGuideOffsetFromBottom:(id)arg1;
+- (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (void)_markOurselfDirty;
 - (bool)_needsColorImage;
 - (void)_updateLabelForLegibilitySettings;
@@ -54,6 +51,7 @@
 - (void)didMoveToWindow;
 - (double)firstBaselineOffsetFromBottom;
 - (id)font;
+- (float)hyphenationFactor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithSettings:(id)arg1 strength:(double)arg2;
@@ -70,6 +68,7 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHyphenationFactor:(float)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setLineBreakMode:(long long)arg1;
 - (void)setMinimumScaleFactor:(double)arg1;
@@ -79,13 +78,11 @@
 - (void)setString:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setUseColorFilters:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)strength;
 - (id)string;
 - (long long)textAlignment;
 - (id)textColor;
-- (bool)useColorFilters;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 

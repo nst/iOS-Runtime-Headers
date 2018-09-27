@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Messages.framework/Messages
  */
 
-@interface MSStickerBrowserViewController : UIViewController <MSStickerBrowserViewDataSource> {
+@interface MSStickerBrowserViewController : UIViewController <MSRootViewControllerProtocol, MSStickerBrowserViewDataSource> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -50,7 +50,7 @@
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (bool)viewHasAppeared;
-- (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(bool)arg1;
 - (void)willTransitionToPresentationStyle:(unsigned long long)arg1;
 
 @end

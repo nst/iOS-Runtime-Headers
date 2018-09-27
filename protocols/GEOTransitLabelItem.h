@@ -7,6 +7,6 @@
 
 - (<GEOTransitArtworkDataSource> *)labelArtwork;
 - (NSString *)labelString;
-- (long long)type;
+- (unsigned long long)type;
 
 @end

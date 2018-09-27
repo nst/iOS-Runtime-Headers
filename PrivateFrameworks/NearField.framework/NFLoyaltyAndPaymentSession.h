@@ -8,9 +8,9 @@
     NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
     bool  _emulationActive;
+    bool  _fieldNotificationSent;
     unsigned long long  _numActiveSEs;
     bool  _pendingServerRequest;
-    NFTechnologyEvent * _technologyEvent;
     bool  _vasTransactionInProgress;
 }
 
@@ -29,7 +29,7 @@
 - (id)defaultApplet;
 - (id)delegate;
 - (void)didDetectField:(bool)arg1;
-- (void)didDetectTechnology:(id)arg1;
+- (void)didDetectFieldNotification:(id)arg1;
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface PKSecureElementConsistencyChecker : NSObject {
+    <PKCloudStoreCoordinatorDelegate> * _cloudStoreCoordinatorDelegate;
     <PKSecureElementConsistencyCheckerDelegate> * _delegate;
     PKPaymentWebService * _paymentWebService;
     NSObject<OS_dispatch_queue> * _processingQueue;
@@ -19,6 +20,7 @@
 - (void)checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;
 - (id)initWithPaymentWebService:(id)arg1 delegate:(id)arg2;
+- (id)initWithPaymentWebService:(id)arg1 delegate:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3;
 - (id)paymentWebService;
 - (void)queue_checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 registeredRegions:(id)arg3 completion:(id /* block */)arg4;
 - (void)queue_startWithCompletion:(id /* block */)arg1;

@@ -13,7 +13,7 @@
     bool  _isOffline;
     bool  _isSyncing;
     bool  _isUserPaused;
-    double  _itemsToUploadProgress;
+    float  _itemsToUploadProgress;
     unsigned long long  _numberOfItemsFailingToUpload;
     unsigned long long  _numberOfItemsToAdd;
     unsigned long long  _numberOfItemsToUpload;
@@ -32,7 +32,7 @@
 @property (nonatomic) bool isOffline;
 @property (nonatomic) bool isSyncing;
 @property (nonatomic) bool isUserPaused;
-@property (nonatomic) double itemsToUploadProgress;
+@property (nonatomic) float itemsToUploadProgress;
 @property (nonatomic) unsigned long long numberOfItemsFailingToUpload;
 @property (nonatomic) unsigned long long numberOfItemsToAdd;
 @property (nonatomic) unsigned long long numberOfItemsToUpload;
@@ -55,7 +55,7 @@
 - (bool)isOffline;
 - (bool)isSyncing;
 - (bool)isUserPaused;
-- (double)itemsToUploadProgress;
+- (float)itemsToUploadProgress;
 - (unsigned long long)numberOfItemsFailingToUpload;
 - (unsigned long long)numberOfItemsToAdd;
 - (unsigned long long)numberOfItemsToUpload;
@@ -71,7 +71,7 @@
 - (void)setIsOffline:(bool)arg1;
 - (void)setIsSyncing:(bool)arg1;
 - (void)setIsUserPaused:(bool)arg1;
-- (void)setItemsToUploadProgress:(double)arg1;
+- (void)setItemsToUploadProgress:(float)arg1;
 - (void)setNumberOfItemsFailingToUpload:(unsigned long long)arg1;
 - (void)setNumberOfItemsToAdd:(unsigned long long)arg1;
 - (void)setNumberOfItemsToUpload:(unsigned long long)arg1;

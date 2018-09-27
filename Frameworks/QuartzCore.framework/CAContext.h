@@ -33,6 +33,7 @@
 - (unsigned int)createSlot;
 - (void)deleteSlot:(unsigned int)arg1;
 - (float)desiredDynamicRange;
+- (unsigned int)hitTestContext:(struct CGPoint { double x1; double x2; })arg1;
 - (void)invalidate;
 - (void)invalidateFences;
 - (void)orderAbove:(unsigned int)arg1;

@@ -4,18 +4,21 @@
 
 @interface HMFHTTPRequestInternal : HMFObject {
     NSURL * _URL;
+    HMFActivity * _activity;
     NSData * _body;
     NSMutableDictionary * _headerFields;
     NSString * _method;
 }
 
 @property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, readonly) HMFActivity *activity;
 @property (nonatomic, retain) NSData *body;
 @property (nonatomic, retain) NSDictionary *headerFields;
 @property (nonatomic, copy) NSString *method;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (id)activity;
 - (id)body;
 - (id)headerFields;
 - (id)init;

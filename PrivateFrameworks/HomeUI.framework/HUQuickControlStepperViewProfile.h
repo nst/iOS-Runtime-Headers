@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)numberOfSegments;
-- (double)percentageValueForViewValue:(id)arg1;
 - (id)segmentTitles;
 - (void)setNumberOfSegments:(unsigned long long)arg1;
 - (void)setSegmentTitles:(id)arg1;
@@ -25,6 +24,5 @@
 - (void)setStepperBehavior:(unsigned long long)arg1;
 - (bool)showSegmentTitles;
 - (unsigned long long)stepperBehavior;
-- (id)viewValueForPercentageValue:(double)arg1 round:(bool)arg2;
 
 @end

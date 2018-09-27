@@ -9,7 +9,7 @@
 
 @optional
 
-- (UIViewController *)backgroundViewController;
+- (UIViewController<CCUIContentModuleBackgroundViewController> *)backgroundViewController;
 - (void)setContentModuleContext:(CCUIContentModuleContext *)arg1;
 
 @end

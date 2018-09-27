@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
     CUReachabilityMonitor * _reachabilityMonitor;
+    unsigned int  _repairFlags;
     id /* block */  _responseHandler;
     NSDictionary * _scanResult;
     SFSession * _sfSession;
@@ -14,6 +15,7 @@
     NSError * _stepError;
     int  _wifiChannel;
     bool  _wifiDirected;
+    bool  _wifiHomeNetwork;
     NSData * _wifiPSK;
     NSString * _wifiPassword;
     NSString * _wifiSSID;

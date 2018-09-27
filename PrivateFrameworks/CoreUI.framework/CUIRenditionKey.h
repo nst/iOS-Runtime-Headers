@@ -30,6 +30,7 @@
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)keyList;
 - (id)nameOfAttributeName:(int)arg1;
 - (void)removeValueForKeyTokenIdentifier:(long long)arg1;
+- (void)setThemeAppearance:(long long)arg1;
 - (void)setThemeDeploymentTarget:(long long)arg1;
 - (void)setThemeDimension1:(long long)arg1;
 - (void)setThemeDimension2:(long long)arg1;
@@ -53,6 +54,7 @@
 - (void)setThemeSubtype:(long long)arg1;
 - (void)setThemeValue:(long long)arg1;
 - (void)setValuesFromKeyList:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (long long)themeAppearance;
 - (long long)themeDeploymentTarget;
 - (long long)themeDimension1;
 - (long long)themeDimension2;

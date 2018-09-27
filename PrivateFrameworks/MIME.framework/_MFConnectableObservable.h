@@ -4,10 +4,9 @@
 
 @interface _MFConnectableObservable : MFObservable <MFConnectableObservable> {
     MFCancelationToken * _cancelable;
-    bool  _connected;
     NSLock * _lock;
     <MFObservable> * _observable;
-    NSMapTable * _observersToCancelable;
+    MFObservable<MFObserver> * _subject;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,9 +14,10 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void)_disconnect;
 - (id)connect;
 - (void)dealloc;
-- (id)initWithObservable:(id)arg1;
+- (id)initWithObservable:(id)arg1 subject:(id)arg2;
 - (id)subscribe:(id)arg1;
 
 @end

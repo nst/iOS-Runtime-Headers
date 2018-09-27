@@ -6,6 +6,7 @@
     AVCapturePhotoOutputInternal * _internal;
 }
 
+@property (getter=isAutoRedEyeReductionSupported, nonatomic, readonly) bool autoRedEyeReductionSupported;
 @property (nonatomic, readonly) NSArray *availableLivePhotoVideoCodecTypes;
 @property (nonatomic, readonly) NSArray *availablePhotoCodecTypes;
 @property (nonatomic, readonly) NSArray *availablePhotoFileTypes;
@@ -64,6 +65,7 @@
 - (void)_setIsFlashScene:(bool)arg1 firingKVO:(bool)arg2;
 - (void)_setIsHDRScene:(bool)arg1 firingKVO:(bool)arg2;
 - (void)_setIsStillImageStabilizationScene:(bool)arg1 firingKVO:(bool)arg2;
+- (void)_updateAutoRedReductionSupportedForSourceDevice:(id)arg1;
 - (void)_updateAvailableLivePhotoVideoCodecTypesForSourceDevice:(id)arg1;
 - (void)_updateAvailablePhotoCodecTypesForSourceDevice:(id)arg1;
 - (void)_updateAvailablePhotoFileTypesForSourceDevice:(id)arg1;
@@ -99,6 +101,7 @@
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)figCaptureIrisPreparedSettings;
 - (id)init;
+- (bool)isAutoRedEyeReductionSupported;
 - (bool)isCameraCalibrationDataDeliverySupported;
 - (bool)isDepthDataDeliveryEnabled;
 - (bool)isDepthDataDeliverySupported;
@@ -116,6 +119,8 @@
 - (bool)isLivePhotoCaptureSupported;
 - (bool)isLivePhotoCaptureSuspended;
 - (bool)isLivePhotoMovieProcessingSuspended;
+- (bool)isPortraitEffectsMatteDeliveryEnabled;
+- (bool)isPortraitEffectsMatteDeliverySupported;
 - (bool)isStillImageStabilizationScene;
 - (bool)isStillImageStabilizationSupported;
 - (struct { int x1; int x2; })livePhotoMovieDimensions;
@@ -123,6 +128,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })livePhotoMovieVideoFrameDuration;
 - (unsigned long long)maxBracketedCapturePhotoCount;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (struct { int x1; int x2; })optimizedImageDimensionsForOfflineStabilization;
 - (bool)optimizesImagesForOfflineVideoStabilization;
 - (id)photoSettingsForSceneMonitoring;
 - (id)preparedPhotoSettingsArray;
@@ -140,6 +146,7 @@
 - (void)setLivePhotoMovieProcessingSuspended:(bool)arg1;
 - (void)setOptimizesImagesForOfflineVideoStabilization:(bool)arg1;
 - (void)setPhotoSettingsForSceneMonitoring:(id)arg1;
+- (void)setPortraitEffectsMatteDeliveryEnabled:(bool)arg1;
 - (void)setPreparedPhotoSettingsArray:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)supportedFlashModes;
 - (id)supportedHDRModes;

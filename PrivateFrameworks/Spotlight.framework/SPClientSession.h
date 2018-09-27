@@ -4,6 +4,7 @@
 
 @interface SPClientSession : NSObject {
     SPAppService * _appService;
+    long long  _contentFilter;
     bool  _infinitePatience;
     bool  _observersAdded;
     int  _prefsToken;
@@ -14,6 +15,7 @@
 @property (readonly) NSArray *disabledBundleIds;
 @property (nonatomic) bool infinitePatience;
 
++ (void)initialize;
 + (void)retrieveFirstTimeExperienceTextWithReply:(id /* block */)arg1;
 
 - (void).cxx_destruct;
@@ -21,6 +23,7 @@
 - (void)activate;
 - (long long)contentFilters;
 - (void)deactivate;
+- (void)dealloc;
 - (id)disabledBundleIds;
 - (void)finishRanking:(id)arg1 blendingDuration:(double)arg2;
 - (bool)infinitePatience;

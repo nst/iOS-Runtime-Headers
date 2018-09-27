@@ -28,6 +28,7 @@
     bool  _returningFromPINSheetWithSuccess;
     bool  _shouldEraseDataPlans;
     bool  _shouldEraseWithFMiP;
+    bool  _shouldSkipBasebandStatusCheck;
     bool  _shouldSkipCloudStatusCheck;
     bool  _shouldTryEraseAgainWithFMiP;
 }
@@ -35,6 +36,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldSkipBasebandStatusCheck;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -71,10 +73,13 @@
 - (void)profileNotification:(id)arg1;
 - (void)reprovisionAccount;
 - (void)resetAKey;
+- (void)resetAllCellularNetworks:(id)arg1;
 - (void)resetIconPositions:(id)arg1;
 - (void)resetKeyboardDictionary:(id)arg1;
 - (void)resetNetworkSettings:(id)arg1;
 - (void)resetPrivacyWarnings:(id)arg1;
+- (void)setShouldSkipBasebandStatusCheck:(bool)arg1;
+- (bool)shouldSkipBasebandStatusCheck;
 - (id)specifiers;
 - (void)startSync:(bool)arg1 continueBackup:(bool)arg2;
 - (unsigned long long)statusForCloudDataClasses:(unsigned long long)arg1 backupState:(int)arg2;

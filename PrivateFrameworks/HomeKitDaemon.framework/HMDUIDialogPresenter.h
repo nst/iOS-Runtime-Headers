@@ -25,8 +25,6 @@
 - (void).cxx_destruct;
 - (bool)_addCurrentNotification:(struct __CFUserNotification { }*)arg1 withContext:(id)arg2;
 - (bool)_addToPendingContext:(id)arg1;
-- (void)_confirmAddUser:(id)arg1 toHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)_confirmRemoveUser:(id)arg1 fromHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_displayInternalErrorWithContext:(id)arg1 message:(id)arg2;
 - (void)_displayKeychainSyncForHome:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_displayUpgradeNeededWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -41,11 +39,10 @@
 - (void)_requestUserPermissionForUnauthenticatedAccessory:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_requestUserPermissionWithAccessoryPPIDInfo:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_showUserDialogForIncompatibleAccessory:(id)arg1 name:(id)arg2 category:(id)arg3 withContext:(id)arg4 queue:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)confirmAddUser:(id)arg1 toHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)confirmRemoveUser:(id)arg1 fromHome:(id)arg2 withContext:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)confirmReportAccessory:(id)arg1 context:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)currentContext;
 - (struct __CFUserNotification { }*)currentNotification;
+- (void)dealloc;
 - (void)dismissPendingDialogDueToPeerDeviceSelection:(bool)arg1 context:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dismissPendingDialogWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)displayExecutionErrorOfTrigger:(id)arg1 partialSuccess:(bool)arg2 context:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;

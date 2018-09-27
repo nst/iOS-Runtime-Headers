@@ -16,10 +16,10 @@
 
 + (id)bandWithSceneLevel:(double)arg1;
 
+- (void).cxx_destruct;
 - (void)addAssertion:(id)arg1;
 - (unsigned long long)assertionCount;
 - (unsigned long long)deactivationReasonsForScene:(id)arg1 withSettings:(id)arg2;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

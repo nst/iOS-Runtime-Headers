@@ -14,6 +14,7 @@
     NSDictionary * _titleDict;
     id  _userInfo;
     NSArray * _values;
+    id  _weakUserInfo;
     SEL  action;
     long long  autoCapsType;
     long long  autoCorrectionType;
@@ -44,8 +45,11 @@
 @property (nonatomic) bool showContentString;
 @property (nonatomic) id target;
 @property (nonatomic, retain) NSDictionary *titleDictionary;
+@property (nonatomic, readonly) CTXPCServiceSubscriptionContext *tps_subscriptionContext;
+@property (nonatomic, readonly, copy) NSOrderedSet *tps_subscriptions;
 @property (nonatomic, retain) id userInfo;
 @property (nonatomic, retain) NSArray *values;
+@property (nonatomic) id weakUserInfo;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
@@ -73,6 +77,7 @@
 - (bool)hasValidSetter;
 - (id)identifier;
 - (id)init;
+- (id)initWithName:(id)arg1 target:(id)arg2 set:(SEL)arg3 get:(SEL)arg4 detail:(Class)arg5 cell:(long long)arg6 edit:(Class)arg7;
 - (bool)isEqualToSpecifier:(id)arg1;
 - (SEL)legacyAction;
 - (SEL)legacyCancel;
@@ -114,6 +119,7 @@
 - (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3;
 - (void)setValues:(id)arg1 titles:(id)arg2 shortTitles:(id)arg3 usingLocalizedTitleSorting:(bool)arg4;
 - (void)setVersionLabelEnabled:(bool)arg1;
+- (void)setWeakUserInfo:(id)arg1;
 - (void)setupIconImageWithBundle:(id)arg1;
 - (void)setupIconImageWithPath:(id)arg1;
 - (id)shortTitleDictionary;
@@ -124,6 +130,7 @@
 - (id)userInfo;
 - (id)values;
 - (bool)versionLabelEnabled;
+- (id)weakUserInfo;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIUtilities.framework/AccessibilityUIUtilities
 
@@ -162,5 +169,14 @@
 
 + (id)buttonSpecifierWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3 confirmationInfo:(id)arg4;
 + (id)switchSpecifierWithTitle:(id)arg1 target:(id)arg2 setter:(SEL)arg3 getter:(SEL)arg4 key:(id)arg5;
+
+// Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
+
++ (id)st_emptyGroupSpecifier;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyPreferences.framework/TelephonyPreferences
+
+- (id)tps_subscriptionContext;
+- (id)tps_subscriptions;
 
 @end

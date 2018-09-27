@@ -14,6 +14,7 @@
     bool  _allowPlayButtonInBars;
     bool  _allowScrubber;
     bool  _allowStatusBar;
+    bool  _allowToggleOriginalBarItem;
     bool  _allowUserTransform;
     bool  _alwaysShowAirPlayButton;
     double  _barsAreaVerticalOutset;
@@ -103,6 +104,7 @@
 @property (nonatomic) bool allowPlayButtonInBars;
 @property (nonatomic) bool allowScrubber;
 @property (nonatomic) bool allowStatusBar;
+@property (nonatomic) bool allowToggleOriginalBarItem;
 @property (nonatomic) bool allowUserTransform;
 @property (nonatomic) bool alwaysShowAirPlayButton;
 @property (nonatomic) double barsAreaVerticalOutset;
@@ -197,6 +199,7 @@
 - (bool)allowPlayButtonInBars;
 - (bool)allowScrubber;
 - (bool)allowStatusBar;
+- (bool)allowToggleOriginalBarItem;
 - (bool)allowUserTransform;
 - (bool)alwaysShowAirPlayButton;
 - (double)barsAreaVerticalOutset;
@@ -261,6 +264,7 @@
 - (void)setAllowPlayButtonInBars:(bool)arg1;
 - (void)setAllowScrubber:(bool)arg1;
 - (void)setAllowStatusBar:(bool)arg1;
+- (void)setAllowToggleOriginalBarItem:(bool)arg1;
 - (void)setAllowUserTransform:(bool)arg1;
 - (void)setAlwaysShowAirPlayButton:(bool)arg1;
 - (void)setBarsAreaVerticalOutset:(double)arg1;

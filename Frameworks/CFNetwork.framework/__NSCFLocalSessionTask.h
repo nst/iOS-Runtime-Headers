@@ -5,7 +5,7 @@
 @interface __NSCFLocalSessionTask : __NSCFURLSessionTask <NSURLSessionDataTaskSubclass, NSURLSessionTaskSubclass, NSURLSessionUploadTaskSubclass, SessionConnectionDelegate> {
     id /* block */  _async_initialization;
     __NSCFURLSessionConnection * _cfConn;
-    struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; } * _connKey;
+    struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; struct unique_ptr<const __CFDictionary, Deleter_CFRelease> { struct __compressed_pair<const __CFDictionary *, Deleter_CFRelease> { struct __CFDictionary {} *x_1_2_1; } x_15_1_1; } x15; struct unique_ptr<const __CFString, Deleter_CFRelease> { struct __compressed_pair<const __CFString *, Deleter_CFRelease> { struct __CFString {} *x_1_2_1; } x_16_1_1; } x16; } * _connKey;
     NSNumber * _connectedSocket;
     struct shared_ptr<TCPIOConnection> { 
         struct TCPIOConnection {} *__ptr_; 
@@ -101,7 +101,7 @@
 - (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 didFinishCollectingMetrics:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; }*)arg2;
+- (void)connection:(id)arg1 didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned long long x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned long long x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; struct unique_ptr<const __CFDictionary, Deleter_CFRelease> { struct __compressed_pair<const __CFDictionary *, Deleter_CFRelease> { struct __CFDictionary {} *x_1_2_1; } x_15_1_1; } x15; struct unique_ptr<const __CFString, Deleter_CFRelease> { struct __compressed_pair<const __CFString *, Deleter_CFRelease> { struct __CFString {} *x_1_2_1; } x_16_1_1; } x16; }*)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
@@ -115,7 +115,6 @@
 - (void)connectionWillFinishLoading:(id)arg1;
 - (id /* block */)dataTaskCompletion;
 - (void)dealloc;
-- (id)description;
 - (bool)didIssueDidFinish;
 - (bool)didIssueWaitingForConnectivity;
 - (id)error:(id)arg1 code:(long long)arg2;

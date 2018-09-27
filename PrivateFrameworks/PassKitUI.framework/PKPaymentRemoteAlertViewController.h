@@ -7,7 +7,7 @@
     bool  _backlightActive;
     bool  _brightnessRampingAllowed;
     bool  _deviceUILocked;
-    PKFieldDetectEducationViewController * _educationVC;
+    PKEducationViewController * _educationVC;
     NSArray * _fieldPassUniqueIdentifiers;
     PKFieldProperties * _fieldProperties;
     NSObject<OS_dispatch_group> * _fieldPropertiesLookupGroup;
@@ -24,6 +24,7 @@
     unsigned long long  _presentationStartTime;
     bool  _processHomeButtonEvents;
     bool  _shouldInsertGroupsVC;
+    id  _staticGlyphResources;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface _SwiftNativeNSSetBase : NSSet {
-    struct RefCounts<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
-        struct atomic<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+    struct RefCounts<swift::RefCountBitsT<swift::RefCountIsInline> > { 
+        struct atomic<swift::RefCountBitsT<swift::RefCountIsInline> > { 
             /* Warning: Unrecognized filer type: '{' using 'void*' */ void*__a_; 
         } refCounts; 
     }  refCounts;

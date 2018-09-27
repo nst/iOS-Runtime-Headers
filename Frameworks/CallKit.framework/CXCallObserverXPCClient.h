@@ -3,24 +3,24 @@
  */
 
 @interface CXCallObserverXPCClient : NSObject <CXCallObserverDataSource> {
+    bool  _clientsShouldConnect;
+    int  _clientsShouldConnectToken;
     NSObject<OS_dispatch_queue> * _concurrentQueue;
     NSXPCConnection * _connection;
     NSHashTable * _delegates;
-    bool  _hasCallHostLaunched;
     NSMutableDictionary * _mutableCallUUIDToCallMap;
-    int  _notifyToken;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *callUUIDToCallMap;
+@property (nonatomic) bool clientsShouldConnect;
+@property (nonatomic) int clientsShouldConnectToken;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *concurrentQueue;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) bool hasCallHostLaunched;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *mutableCallUUIDToCallMap;
-@property (nonatomic) int notifyToken;
 @property (readonly) Class superclass;
 
 + (void)releaseSharedXPCClient;
@@ -38,23 +38,23 @@
 - (void)addDelegate:(id)arg1;
 - (oneway void)addOrUpdateCall:(id)arg1;
 - (id)callUUIDToCallMap;
+- (bool)clientsShouldConnect;
+- (int)clientsShouldConnectToken;
 - (id)concurrentQueue;
 - (id)connection;
 - (void)dealloc;
 - (id)delegates;
-- (bool)hasCallHostLaunched;
 - (id)init;
 - (void)invalidate;
 - (id)mutableCallUUIDToCallMap;
-- (int)notifyToken;
 - (oneway void)removeCall:(id)arg1;
 - (void)removeDelegate:(id)arg1;
-- (void)requestTransaction:(id)arg1 forExtensionIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)requestTransaction:(id)arg1 completion:(id /* block */)arg2;
+- (void)setClientsShouldConnect:(bool)arg1;
+- (void)setClientsShouldConnectToken:(int)arg1;
 - (void)setConcurrentQueue:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegates:(id)arg1;
-- (void)setHasCallHostLaunched:(bool)arg1;
 - (void)setMutableCallUUIDToCallMap:(id)arg1;
-- (void)setNotifyToken:(int)arg1;
 
 @end

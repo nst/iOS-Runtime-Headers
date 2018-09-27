@@ -4,7 +4,7 @@
 
 @interface NUSurfaceRenderJob : NUImageRenderJob
 
-- (id)imageAccumulationNodeWithSize:(struct { long long x1; long long x2; })arg1 format:(id)arg2 colorSpace:(id)arg3;
+- (id)imageAccumulationNodeWithImageSize:(struct { long long x1; long long x2; })arg1 tileSize:(struct { long long x1; long long x2; })arg2 format:(id)arg3 colorSpace:(id)arg4;
 - (id)result;
 
 @end

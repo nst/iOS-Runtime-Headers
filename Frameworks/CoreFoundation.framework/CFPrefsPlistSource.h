@@ -12,7 +12,6 @@
     bool  _observing;
     bool  _readonly;
     bool  _restrictedAccess;
-    NSObject<OS_dispatch_group> * _synchGroup;
     bool  _volatile;
     char * accessPath;
     struct __CFString { } * container;
@@ -20,7 +19,6 @@
     struct __CFString { } * userIdentifier;
 }
 
-- (void)_goReadOnlyOrVolatileAfterTryingToWriteKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (void)_sharedCleanup;
 - (void)addPIDImpersonationIfNecessary:(id)arg1;
 - (void)alreadylocked_clearCache;
@@ -29,7 +27,7 @@
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
 - (long long)alreadylocked_generationCount;
 - (bool)alreadylocked_requestNewData;
-- (void)alreadylocked_setValues:(const void**)arg1 forKeys:(const struct __CFString {}**)arg2 count:(long long)arg3 from:(id)arg4;
+- (void)alreadylocked_setPrecopiedValues:(const void**)arg1 forKeys:(const struct __CFString {}**)arg2 count:(long long)arg3 from:(id)arg4;
 - (void)alreadylocked_updateObservingRemoteChanges;
 - (bool)attachAccessTokenToMessage:(id)arg1 accessType:(int)arg2;
 - (struct __CFString { }*)container;
@@ -60,5 +58,6 @@
 - (bool)synchronize;
 - (struct __CFString { }*)userIdentifier;
 - (bool)volatilizeIfInvalidHomeDir;
+- (void)writeFailedForKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 
 @end

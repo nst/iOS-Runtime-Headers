@@ -4,6 +4,8 @@
 
 @interface AVCaptureConnection : NSObject {
     AVCaptureConnectionInternal * _internal;
+    bool  _supportsVideoFieldMode;
+    long long  _videoFieldMode;
 }
 
 @property (getter=isActive, nonatomic, readonly) bool active;
@@ -17,11 +19,13 @@
 @property (nonatomic, readonly) NSArray *inputPorts;
 @property (nonatomic, readonly) AVCaptureOutput *output;
 @property (nonatomic) long long preferredVideoStabilizationMode;
+@property (getter=isVideoFieldModeSupported, nonatomic, readonly) bool supportsVideoFieldMode;
 @property (getter=isVideoMaxFrameDurationSupported, nonatomic, readonly) bool supportsVideoMaxFrameDuration;
 @property (getter=isVideoMinFrameDurationSupported, nonatomic, readonly) bool supportsVideoMinFrameDuration;
 @property (getter=isVideoMirroringSupported, nonatomic, readonly) bool supportsVideoMirroring;
 @property (getter=isVideoOrientationSupported, nonatomic, readonly) bool supportsVideoOrientation;
 @property (getter=isVideoStabilizationSupported, nonatomic, readonly) bool supportsVideoStabilization;
+@property (nonatomic) long long videoFieldMode;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
 @property (nonatomic, readonly) double videoMaxScaleAndCropFactor;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
@@ -63,8 +67,10 @@
 - (bool)isActive;
 - (bool)isCameraIntrinsicMatrixDeliveryEnabled;
 - (bool)isCameraIntrinsicMatrixDeliverySupported;
+- (bool)isDebugMetadataSidecarFileEnabled;
 - (bool)isEnabled;
 - (bool)isLive;
+- (bool)isVideoFieldModeSupported;
 - (bool)isVideoMaxFrameDurationSet;
 - (bool)isVideoMaxFrameDurationSupported;
 - (bool)isVideoMinFrameDurationSet;
@@ -82,9 +88,11 @@
 - (id)session;
 - (void)setAutomaticallyAdjustsVideoMirroring:(bool)arg1;
 - (void)setCameraIntrinsicMatrixDeliveryEnabled:(bool)arg1;
+- (void)setDebugMetadataSidecarFileEnabled:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setEnablesVideoStabilizationWhenAvailable:(bool)arg1;
 - (void)setPreferredVideoStabilizationMode:(long long)arg1;
+- (void)setVideoFieldMode:(long long)arg1;
 - (void)setVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoMirrored:(bool)arg1;
@@ -98,6 +106,7 @@
 - (void)teardownObservers;
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
+- (long long)videoFieldMode;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
 - (double)videoMaxScaleAndCropFactor;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;

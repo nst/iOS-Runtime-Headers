@@ -18,6 +18,7 @@
 + (id)propertiesWithMainDisplayAndClientID:(id)arg1 pid:(int)arg2 contextID:(unsigned int)arg3;
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)clientID;
 - (id)conciseDescription;
 - (unsigned int)contextID;

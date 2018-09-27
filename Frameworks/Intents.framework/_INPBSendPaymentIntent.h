@@ -2,30 +2,30 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBSendPaymentIntent : PBCodable <NSCopying> {
+@interface _INPBSendPaymentIntent : PBCodable <NSCopying, NSSecureCoding, _INPBSendPaymentIntent> {
     _INPBCurrencyAmount * _currencyAmount;
+    struct { }  _has;
     _INPBIntentMetadata * _intentMetadata;
     _INPBString * _note;
     _INPBContact * _payee;
-    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBCurrencyAmount *currencyAmount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasCurrencyAmount;
 @property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, readonly) bool hasNote;
 @property (nonatomic, readonly) bool hasPayee;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBString *note;
 @property (nonatomic, retain) _INPBContact *payee;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyAmount;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCurrencyAmount;
 - (bool)hasIntentMetadata;
@@ -34,7 +34,6 @@
 - (unsigned long long)hash;
 - (id)intentMetadata;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)note;
 - (id)payee;
 - (bool)readFrom:(id)arg1;
@@ -42,7 +41,6 @@
 - (void)setIntentMetadata:(id)arg1;
 - (void)setNote:(id)arg1;
 - (void)setPayee:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

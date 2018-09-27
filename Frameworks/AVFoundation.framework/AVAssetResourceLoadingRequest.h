@@ -15,6 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURLRequest *redirect;
 @property (nonatomic, readonly) NSURLRequest *request;
+@property (nonatomic, readonly) AVAssetResourceLoadingRequestor *requestor;
 @property (nonatomic, copy) NSURLResponse *response;
 @property (readonly) Class superclass;
 
@@ -59,7 +60,7 @@
 - (void)forwardRequestToContentKeySession;
 - (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
-- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 allowedContentTypes:(id)arg6 figCryptor:(struct OpaqueFigCPECryptor { }*)arg7 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg8 figAssetImageGenerator:(struct OpaqueFigAssetImageGenerator { }*)arg9;
+- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 allowedContentTypes:(id)arg6 figCryptor:(struct OpaqueFigCPECryptor { }*)arg7 cryptorKeyRequestID:(unsigned long long)arg8 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg9 figAssetImageGenerator:(struct OpaqueFigAssetImageGenerator { }*)arg10;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
 - (id)initWithResourceLoader:(id)arg1 requestInfo:(struct __CFDictionary { }*)arg2 requestID:(unsigned long long)arg3;
 - (bool)isCancelled;
@@ -67,6 +68,7 @@
 - (id)persistentContentKeyFromKeyVendorResponse:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)redirect;
 - (id)request;
+- (id)requestor;
 - (id)response;
 - (id)serializableRepresentation;
 - (void)setRedirect:(id)arg1;

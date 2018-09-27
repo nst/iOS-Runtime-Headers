@@ -6,10 +6,6 @@
 @required
 
 - (_SFPBPunchout *)appPunchout;
-- (bool)hasAppPunchout;
-- (bool)hasImage;
-- (bool)hasImageAlign;
-- (bool)hasTitle;
 - (_SFPBImage *)image;
 - (int)imageAlign;
 - (id)initWithDictionary:(NSDictionary *)arg1;

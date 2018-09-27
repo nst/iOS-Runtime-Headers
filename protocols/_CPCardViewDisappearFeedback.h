@@ -6,8 +6,6 @@
 @required
 
 - (int)cardDisappearEvent;
-- (bool)hasCardDisappearEvent;
-- (bool)hasTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSData *)jsonData;

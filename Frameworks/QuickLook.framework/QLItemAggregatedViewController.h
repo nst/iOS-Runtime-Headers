@@ -8,7 +8,6 @@
     <QLPreviewItemViewControllerDelegate> * _delegate;
     bool  _fullScreen;
     bool  _isAppearing;
-    bool  _isDisappearing;
     bool  _isVisible;
 }
 
@@ -20,15 +19,18 @@
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
 - (bool)automaticallyUpdateScrollViewIndicatorInset;
+- (void)beginPreviewHostAppearanceTransitionIfNeeded:(bool)arg1 animated:(bool)arg2;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)canEnterFullScreen;
 - (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (bool)canPinchToDismiss;
+- (bool)canShowNavBar;
 - (bool)canShowToolBar;
 - (bool)canSwipeToDismiss;
 - (id)currentPreviewViewController;
 - (id)delegate;
 - (id)draggableView;
+- (void)endPreviewHostAppearanceTransitionIfNeeded:(bool)arg1;
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
 - (id)fullscreenBackgroundColor;
 - (id)parallaxView;
@@ -52,11 +54,14 @@
 - (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 - (bool)shouldRecognizeGestureRecognizer:(id)arg1;
 - (void)showPreviewViewController:(id)arg1;
+- (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(bool)arg2;
 - (id)title;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
 - (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
 - (void)transitionDidStart:(bool)arg1;
 - (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
 - (id)transitioningView;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -34,12 +34,10 @@
 @property (nonatomic, readonly) <GEOResourceManifestServerProxy> *serverProxy;
 @property (readonly) Class superclass;
 
-+ (id)additionalMigrationTaskClasses;
 + (void)disableServerConnection;
 + (id)modernManager;
 + (id)modernManagerForConfiguration:(id)arg1;
 + (id)modernManagerForTileGroupIdentifier:(unsigned int)arg1;
-+ (void)setAdditionalMigrationTaskClasses:(id)arg1;
 + (void)setHiDPI:(bool)arg1;
 + (void)setServerProxyClass:(Class)arg1;
 + (id)sharedManager;
@@ -51,9 +49,11 @@
 - (id)_activeTileSetForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)_buildResourceNamesToPaths;
 - (id)_detailedDescriptionDictionaryRepresentationForTileGroup:(id)arg1;
+- (unsigned long long)_fromgeod_maximumZoomLevelForStyle:(int)arg1 scale:(int)arg2;
 - (id)_loadActiveTileGroupIfNecessary:(bool)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)_notifyObserversOfResourcesChange;
+- (void)_purgeCachedResourceInfo;
 - (void)_registerHandlerForStateCapture;
 - (void)_scheduleCachedResourceInfoPurgeTimer;
 - (struct os_state_data_s { unsigned int x1; union { unsigned int x_2_1_1 : 32; unsigned int x_2_1_2; } x2; struct os_state_data_decoder_s { BOOL x_3_1_1[64]; BOOL x_3_1_2[64]; } x3; BOOL x4[64]; unsigned char x5[0]; }*)_stateCapture;
@@ -72,6 +72,7 @@
 - (id)baseURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)cancelCurrentManifestUpdate;
 - (void)closeServerConnection;
+- (void)closeServerConnection:(bool)arg1;
 - (void)deactivateResourceScale:(int)arg1;
 - (void)deactivateResourceScenario:(int)arg1;
 - (void)dealloc;
@@ -118,6 +119,7 @@
 - (void)updateManifest:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateManifestIfNecessary:(id /* block */)arg1;
 - (id)updateProgress;
+- (bool)useProxyAuthForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (unsigned int)versionForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 
 @end

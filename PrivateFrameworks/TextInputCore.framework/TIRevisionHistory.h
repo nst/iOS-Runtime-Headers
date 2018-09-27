@@ -15,6 +15,7 @@
         unsigned long long location; 
         unsigned long long length; 
     }  _selectedRange;
+    bool  _shouldReportRevisionToDP;
     NSMutableArray * _tokenization;
     void * _tokenizer;
 }
@@ -25,12 +26,14 @@
 @property (nonatomic, retain) TIRevisionHistoryToken *lastRejectedToken;
 @property (nonatomic, retain) TILRUDictionary *recentAutocorrections;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } selectedRange;
+@property (nonatomic) bool shouldReportRevisionToDP;
 @property (nonatomic, readonly) NSMutableArray *tokenization;
 @property (nonatomic, readonly) void*tokenizer;
 
+- (void).cxx_destruct;
 - (void)acceptCurrentSentence;
 - (void)acceptText:(id)arg1 isAutoshifted:(bool)arg2;
-- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 saveToDifferentialPrivacy:(bool)arg4;
+- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long long)arg3 saveToDifferentialPrivacy:(int)arg4;
 - (void)acceptTokensInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)addRevisedTokenString:(id)arg1 withTokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 inDocumentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 toRevision:(id)arg4;
 - (void)adjustTokenOffsetAfterDeletedTokenRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withDeletedCharacterCount:(unsigned long long)arg2;
@@ -84,6 +87,8 @@
 - (void)setLastRejectedToken:(id)arg1;
 - (void)setRecentAutocorrections:(id)arg1;
 - (void)setSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setShouldReportRevisionToDP:(bool)arg1;
+- (bool)shouldReportRevisionToDP;
 - (bool)shouldValidateOriginalIterator:(struct _TIRevisionHistoryTokenIterator { unsigned long long x1; unsigned long long x2; })arg1 withRevisedDocumentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forRevision:(id)arg3;
 - (void)syncToDocumentState:(id)arg1;
 - (id)tokenAtIterator:(struct _TIRevisionHistoryTokenIterator { unsigned long long x1; unsigned long long x2; })arg1;

@@ -51,6 +51,7 @@
 - (void)addToPendingTaskCacheForType:(id)arg1 forClientID:(short)arg2 forKey:(id)arg3 withPayload:(id)arg4;
 - (bool)batchDropMessages;
 - (id)batchFlushQueue;
+- (int)batchSizeForClientID:(short)arg1;
 - (void)batchTasksCacheFlush;
 - (int)batchedDropMessageCount;
 - (id)batchedTaskCache;
@@ -61,6 +62,7 @@
 - (short)cachedPermissionForClientID:(short)arg1 withKey:(id)arg2 withType:(id)arg3;
 - (bool)clientDebug;
 - (bool)forceBatching;
+- (id)getWorkQueueForClientID:(short)arg1;
 - (id)init;
 - (void)logForClientID:(short)arg1 withKey:(id)arg2 withPayload:(id)arg3;
 - (void)logStateCaches;

@@ -12,6 +12,7 @@
     NSObject<OS_dispatch_queue> * _connectionQueue;
     <FMFSessionDelegate> * _delegate;
     NSOperationQueue * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _handlesQueue;
     NSMutableSet * _internalHandles;
     bool  _isModelInitialized;
 }
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSOperationQueue *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSSet *handles;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *handlesQueue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *internalHandles;
 @property (nonatomic) bool isModelInitialized;
@@ -35,6 +37,7 @@
 
 + (bool)FMFAllowed;
 + (bool)FMFRestricted;
++ (bool)isAnyAccountManaged;
 + (bool)isProvisionedForLocationSharing;
 + (id)sharedInstance;
 
@@ -48,6 +51,8 @@
 - (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (oneway void)abDidChange;
 - (oneway void)abPreferencesDidChange;
+- (void)addFavorite:(id)arg1 completion:(id /* block */)arg2;
+- (void)addFence:(id)arg1 completion:(id /* block */)arg2;
 - (void)addHandles:(id)arg1;
 - (void)approveFriendshipRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)cachedCanShareLocationWithHandleByHandle;
@@ -71,6 +76,7 @@
 - (void)decryptPayload:(id)arg1 withToken:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;
 - (id)delegateQueue;
+- (void)deleteFence:(id)arg1 completion:(id /* block */)arg2;
 - (oneway void)didAddFollowerHandle:(id)arg1;
 - (oneway void)didChangeActiveLocationSharingDevice:(id)arg1;
 - (void)didReceiveFriendshipRequest:(id)arg1;
@@ -80,6 +86,7 @@
 - (oneway void)didStopFollowingHandle:(id)arg1;
 - (oneway void)didUpdateActiveDeviceList:(id)arg1;
 - (oneway void)didUpdateFavorites:(id)arg1;
+- (oneway void)didUpdateFences:(id)arg1;
 - (oneway void)didUpdateFollowers:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
 - (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;
@@ -92,8 +99,8 @@
 - (void)extendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;
 - (void)favoritesForMaxCount:(id)arg1 completion:(id /* block */)arg2;
+- (void)fencesForHandles:(id)arg1 completion:(id /* block */)arg2;
 - (void)forceRefresh;
-- (void)getAbRecordIdForHandle:(id)arg1 completion:(id /* block */)arg2;
 - (id)getActiveLocationSharingDevice;
 - (void)getActiveLocationSharingDevice:(id /* block */)arg1;
 - (id)getAllDevices;
@@ -101,6 +108,8 @@
 - (void)getAllLocations:(id /* block */)arg1;
 - (void)getDataForPerformanceRequest:(id /* block */)arg1;
 - (id)getFavoritesSharingLocationWithMe;
+- (void)getFavoritesWithCompletion:(id /* block */)arg1;
+- (void)getFences:(id /* block */)arg1;
 - (id)getHandlesFollowingMyLocation;
 - (void)getHandlesFollowingMyLocation:(id /* block */)arg1;
 - (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(id /* block */)arg2;
@@ -114,9 +123,11 @@
 - (void)getPendingFriendshipRequestsWithCompletion:(id /* block */)arg1;
 - (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(id /* block */)arg3;
 - (void)getPrettyNameForHandle:(id)arg1 completion:(id /* block */)arg2;
+- (void)getRecordIdForHandle:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleAndLocationForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleIncomingAirDropURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)handles;
+- (id)handlesQueue;
 - (bool)hasModelInitialized;
 - (oneway void)iCloudAccountNameWithCompletion:(id /* block */)arg1;
 - (void)includeDeviceInAutomations:(id /* block */)arg1;
@@ -144,6 +155,7 @@
 - (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id /* block */)arg4;
 - (void)reloadDataIfNotLoaded;
 - (void)removeDevice:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeFavorite:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeHandles:(id)arg1;
 - (void)sendFriendshipInviteToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (void)sendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
@@ -164,11 +176,14 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)setExpiredInitTimestamp;
 - (void)setHandles:(id)arg1;
+- (void)setHandlesQueue:(id)arg1;
 - (void)setHideMyLocationEnabled:(bool)arg1 completion:(id /* block */)arg2;
 - (void)setInternalHandles:(id)arg1;
 - (void)setIsModelInitialized:(bool)arg1;
 - (oneway void)setLocations:(id)arg1;
 - (bool)shouldHandleErrorInFWK:(id)arg1;
+- (void)showShareMyLocationRestrictedAlert;
+- (void)showShareMyLocationiCloudSettingsOffAlert;
 - (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)verifyRestrictionsAndShowDialogIfRequired;

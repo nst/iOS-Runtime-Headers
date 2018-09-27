@@ -10,6 +10,7 @@
 + (id)sharedManager;
 
 - (id)advertisingIdentifier;
+- (void)clearAdvertisingIdentifier;
 - (bool)isAdvertisingTrackingEnabled;
 
 @end

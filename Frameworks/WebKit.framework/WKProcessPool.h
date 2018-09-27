@@ -20,7 +20,7 @@
     }  _geolocationProvider;
     struct ObjectStorage<WebKit::WebProcessPool> { 
         struct type { 
-            unsigned char __lx[1352]; 
+            unsigned char __lx[1424]; 
         } data; 
     }  _processPool;
 }
@@ -40,6 +40,7 @@
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
++ (id)_allProcessPoolsForTesting;
 + (void)_forceGameControllerFramework;
 + (id)_sharedProcessPool;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1;
@@ -48,21 +49,29 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_addSupportedPlugin:(id)arg1 named:(id)arg2 withMimeTypes:(id)arg3 withExtensions:(id)arg4;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)_automationCapabilitiesDidChange;
 - (id)_automationDelegate;
+- (void)_clearSupportedPlugins;
 - (id)_configuration;
 - (id)_coreLocationProvider;
+- (void)_disableServiceWorkerProcessTerminationDelay;
 - (id)_downloadDelegate;
 - (id)_geolocationProvider;
 - (id)_initWithConfiguration:(id)arg1;
 - (bool)_isCookieStoragePartitioningEnabled;
 - (bool)_isStorageAccessAPIEnabled;
+- (void)_makeNextNetworkProcessLaunchFailForTesting;
+- (void)_makeNextWebProcessLaunchFailForTesting;
 - (int)_networkProcessIdentifier;
 - (id)_objectForBundleParameter:(id)arg1;
 - (unsigned long long)_pluginProcessCount;
 - (void)_preconnectToServer:(id)arg1;
+- (unsigned long long)_prewarmedWebProcessCount;
+- (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
 - (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
+- (unsigned long long)_serviceWorkerProcessCount;
 - (void)_setAllowsAnySSLCertificateForServiceWorker:(bool)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 - (void)_setAutomationDelegate:(id)arg1;
@@ -79,11 +88,12 @@
 - (int)_storageProcessIdentifier;
 - (void)_syncNetworkProcessCookies;
 - (void)_terminateNetworkProcess;
-- (void)_terminateServiceWorkerProcess;
+- (void)_terminateServiceWorkerProcesses;
 - (void)_terminateStorageProcess;
 - (void)_warmInitialProcess;
 - (unsigned long long)_webPageContentProcessCount;
 - (unsigned long long)_webProcessCount;
+- (unsigned long long)_webProcessCountIgnoringPrewarmed;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

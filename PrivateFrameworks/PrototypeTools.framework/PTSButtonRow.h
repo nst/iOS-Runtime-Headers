@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSButtonRow : PTSRow
-
-+ (id)rowWithTitle:(id)arg1 action:(id)arg2;
-
-- (Class)rowTableViewCellClass;
+@interface PTSButtonRow : PTButtonRow
 
 @end

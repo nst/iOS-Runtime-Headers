@@ -12,11 +12,13 @@
     }  _size;
     unsigned int  _texture;
     struct __CVOpenGLESTextureCache { } * _textureCache;
+    bool  _validLUT;
 }
 
 @property (readonly) unsigned int framebuffer;
 @property (readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) unsigned int texture;
+@property (readonly) bool validLUT;
 
 - (void)dealloc;
 - (unsigned int)framebuffer;
@@ -27,5 +29,6 @@
 - (id)initWithTexName:(id)arg1;
 - (struct CGSize { double x1; double x2; })size;
 - (unsigned int)texture;
+- (bool)validLUT;
 
 @end

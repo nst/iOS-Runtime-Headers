@@ -128,6 +128,11 @@
 
 - (id)_lp_copyWithBeginTime:(double)arg1;
 
+// Image: /System/Library/PrivateFrameworks/LocalAuthenticationPrivateUI.framework/LocalAuthenticationPrivateUI
+
+- (void)laui_setDidStopHandler:(id /* block */)arg1;
+- (id /* block */)pkui_didStopHandler;
+
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)pkui_shakeAnimation;

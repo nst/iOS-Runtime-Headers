@@ -4,6 +4,8 @@
 
 @interface HUGridCellVibrancyEffect : UIVisualEffect
 
++ (id)vibrancyEffect;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
 

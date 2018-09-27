@@ -41,8 +41,4 @@
 - (id)safari_allSafariCredentials;
 - (void)safari_setSynchronizableCredential:(id)arg1 forHTMLFormProtectionSpace:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
-
-- (void)purge;
-
 @end

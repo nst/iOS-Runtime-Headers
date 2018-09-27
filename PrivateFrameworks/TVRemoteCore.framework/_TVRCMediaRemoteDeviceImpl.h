@@ -2,32 +2,32 @@
    Image: /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
  */
 
-@interface _TVRCMediaRemoteDeviceImpl : NSObject <TVRCVoiceRecorderDelegate, _TVRCDeviceImpl, _TVRCMROriginDelegate> {
-    TVRCDevice * _device;
+@interface _TVRCMediaRemoteDeviceImpl : NSObject <_TVRCDeviceImpl, _TVRCMROriginDelegate, _TVRXVoiceRecorderDelegate> {
+    _TVRXDevice * _device;
     _TVRCMediaRemoteEventTranslator * _eventTranslator;
     unsigned long long  _gameControllerID;
     long long  _gameControllerState;
-    TVRCKeyboardController * _keyboardController;
-    _TVRCMediaRemoteKeyboardImpl * _keyboardImpl;
+    _TVRXKeyboardController * _keyboardController;
+    <_TVRXKeyboardImpl> * _keyboardImpl;
     NSSet * _mediaButtons;
     _TVRCMROriginWrapper * _origin;
     NSMutableArray * _queuedAudioBuffers;
     _TVRCMRTelevisionWrapper * _television;
     unsigned long long  _touchDeviceID;
     unsigned int  _voiceDeviceID;
-    TVRCVoiceRecorder * _voiceRecorder;
+    _TVRXVoiceRecorder * _voiceRecorder;
     NSSet * _volumeButtons;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) TVRCDevice *device;
+@property (nonatomic) _TVRXDevice *device;
 @property (nonatomic, retain) _TVRCMediaRemoteEventTranslator *eventTranslator;
 @property (nonatomic) unsigned long long gameControllerID;
 @property (nonatomic) long long gameControllerState;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) TVRCKeyboardController *keyboardController;
-@property (nonatomic, retain) _TVRCMediaRemoteKeyboardImpl *keyboardImpl;
+@property (nonatomic, retain) _TVRXKeyboardController *keyboardController;
+@property (nonatomic, retain) <_TVRXKeyboardImpl> *keyboardImpl;
 @property (nonatomic, copy) NSSet *mediaButtons;
 @property (nonatomic, retain) _TVRCMROriginWrapper *origin;
 @property (nonatomic, retain) NSMutableArray *queuedAudioBuffers;
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) _TVRCMRTelevisionWrapper *television;
 @property (nonatomic) unsigned long long touchDeviceID;
 @property (nonatomic) unsigned int voiceDeviceID;
-@property (nonatomic, retain) TVRCVoiceRecorder *voiceRecorder;
+@property (nonatomic, retain) _TVRXVoiceRecorder *voiceRecorder;
 @property (nonatomic, copy) NSSet *volumeButtons;
 
 + (id)implWithTelevision:(id)arg1;

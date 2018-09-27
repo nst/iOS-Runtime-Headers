@@ -3,26 +3,21 @@
  */
 
 @interface TVRCKeyboardController : NSObject {
+    TVRCKeyboardAttributes * _attributes;
     <TVRCKeyboardControllerDelegate> * _delegate;
-    <_TVRCKeyboardImpl> * _impl;
+    TVRCDevice * _device;
+    bool  _editing;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) TVRCKeyboardAttributes *attributes;
 @property (nonatomic) <TVRCKeyboardControllerDelegate> *delegate;
 @property (getter=isEditing, nonatomic, readonly) bool editing;
-@property (getter=_impl, setter=_setImpl:, nonatomic, retain) <_TVRCKeyboardImpl> *impl;
 @property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
-- (void)_beginSessionWithAttributes:(id)arg1;
-- (void)_editingSessionBeganWithAttributes:(id)arg1;
-- (void)_editingSessionEnded;
-- (void)_editingSessionUpdatedAttributes:(id)arg1;
-- (void)_editingSessionUpdatedText:(id)arg1;
-- (void)_endSession;
-- (id)_impl;
-- (id)_init;
-- (void)_setImpl:(id)arg1;
+- (id)_initWithDevice:(id)arg1;
+- (void)_setCurrentState:(id)arg1;
 - (id)attributes;
 - (id)delegate;
 - (bool)isEditing;

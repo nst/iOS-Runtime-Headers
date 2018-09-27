@@ -14,7 +14,7 @@
 
 - (void)_registerObserver:(id)arg1;
 - (void)_setRunning:(bool)arg1 forCaptureSession:(struct OpaqueFigCaptureSession { }*)arg2;
-- (void)captureSessionWasCreated:(void*)arg1;
+- (void)captureSessionWasCreated:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)registerObserver:(id)arg1;

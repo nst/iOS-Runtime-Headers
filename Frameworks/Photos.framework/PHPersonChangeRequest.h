@@ -120,6 +120,7 @@
 - (id)personUUID;
 - (id)personUri;
 - (id)placeholderForCreatedPerson;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (void)rejectMergeCandidatePersons:(id)arg1;
 - (id)rejectedFacesHelper;

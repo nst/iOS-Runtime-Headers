@@ -5,8 +5,7 @@
 @interface PKDeviceScorer : NSObject {
     PKDSPContext * _context;
     double  _deviceScoreTimeout;
-    NSData * _lastDeviceScore;
-    NSData * _lastDeviceScoreIdentifier;
+    NSMutableDictionary * _scoreCompletions;
     CdQwUTvJnDEPQgR8 * _scorer;
 }
 

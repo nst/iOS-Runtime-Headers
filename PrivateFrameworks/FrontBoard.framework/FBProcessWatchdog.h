@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) long long event;
 @property (nonatomic, readonly, retain) FBProcessWatchdogEventContext *eventContext;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (long long)event;
 - (id)eventContext;
 - (id)initWithProcess:(id)arg1 context:(id)arg2 policy:(id)arg3;

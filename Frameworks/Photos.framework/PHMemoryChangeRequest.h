@@ -20,7 +20,7 @@
 }
 
 @property (nonatomic, retain) PHMemoryFeature *blacklistedFeature;
-@property (nonatomic) long long category;
+@property (nonatomic) unsigned long long category;
 @property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
 @property (nonatomic, readonly) bool clientEntitledToMemoryMutation;
 @property (nonatomic, readonly) NSString *clientName;
@@ -65,10 +65,10 @@
 + (bool)canGenerateUUIDWithoutEntitlements;
 + (id)changeRequestForMemory:(id)arg1;
 + (id)changeRequestForRemotelyViewedMemoryWithLocalIdentifier:(id)arg1;
-+ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 assets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
-+ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 representativeAssets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
-+ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 subcategory:(long long)arg5 representativeAssets:(id)arg6 curatedAssets:(id)arg7 extendedCuratedAssets:(id)arg8 keyAsset:(id)arg9;
-+ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(long long)arg4 subcategory:(long long)arg5 representativeAssets:(id)arg6 curatedAssets:(id)arg7 keyAsset:(id)arg8;
++ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(unsigned long long)arg4 assets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
++ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(unsigned long long)arg4 representativeAssets:(id)arg5 curatedAssets:(id)arg6 keyAsset:(id)arg7;
++ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(unsigned long long)arg4 subcategory:(unsigned long long)arg5 representativeAssets:(id)arg6 curatedAssets:(id)arg7 extendedCuratedAssets:(id)arg8 keyAsset:(id)arg9;
++ (id)creationRequestForMemoryWithTitle:(id)arg1 subtitle:(id)arg2 creationDate:(id)arg3 category:(unsigned long long)arg4 subcategory:(unsigned long long)arg5 representativeAssets:(id)arg6 curatedAssets:(id)arg7 keyAsset:(id)arg8;
 + (void)deleteMemories:(id)arg1;
 + (id)preferredAttributesForMemoryCreationFromAssetCollection:(id)arg1 proposedAttributes:(id)arg2;
 + (id)preferredAttributesForMemoryCreationFromCollectionList:(id)arg1 proposedAttributes:(id)arg2;
@@ -84,7 +84,7 @@
 - (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
 - (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (id)blacklistedFeature;
-- (long long)category;
+- (unsigned long long)category;
 - (bool)clientEntitledToMemoryMutation;
 - (id)clientName;
 - (int)clientProcessID;
@@ -122,11 +122,12 @@
 - (id)photosGraphData;
 - (long long)photosGraphVersion;
 - (id)placeholderForCreatedMemory;
+- (bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id*)arg2;
 - (bool)prepareForServicePreflightCheck:(id*)arg1;
 - (id)representativeAssetsHelper;
 - (double)score;
 - (void)setBlacklistedFeature:(id)arg1;
-- (void)setCategory:(long long)arg1;
+- (void)setCategory:(unsigned long long)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setFavorite:(bool)arg1;
 - (void)setKeyAsset:(id)arg1;
@@ -144,11 +145,11 @@
 - (void)setRejected:(bool)arg1;
 - (void)setRepresentativeAssets:(id)arg1 curatedAssets:(id)arg2 extendedCuratedAssets:(id)arg3 keyAsset:(id)arg4;
 - (void)setScore:(double)arg1;
-- (void)setSubcategory:(long long)arg1;
+- (void)setSubcategory:(unsigned long long)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserCreated:(bool)arg1;
-- (long long)subcategory;
+- (unsigned long long)subcategory;
 - (id)subtitle;
 - (id)title;
 - (id)uuid;

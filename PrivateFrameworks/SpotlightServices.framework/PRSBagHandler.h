@@ -13,6 +13,7 @@
     bool  _collectAnonymousData;
     bool  _collectScores;
     bool  _disableAsTypedSuggestion;
+    bool  _enabled;
     NSArray * _enabledDomains;
     NSString * _fteContinueString;
     NSString * _fteLearnMoreString;
@@ -31,6 +32,7 @@
     double  _searchRenderTimeout;
     long long  _status;
     NSArray * _suggestionRankerModelParams;
+    double  _suggestionsRenderTimeout;
     NSMutableArray * _tasks;
     bool  _use2LayerRanking;
     bool  _waitingForLocation;
@@ -44,6 +46,7 @@
 @property (nonatomic) bool collectAnonymousData;
 @property (nonatomic) bool collectScores;
 @property (nonatomic) bool disableAsTypedSuggestion;
+@property (nonatomic) bool enabled;
 @property (nonatomic, retain) NSArray *enabledDomains;
 @property (nonatomic, retain) NSString *fteContinueString;
 @property (nonatomic, retain) NSString *fteLearnMoreString;
@@ -60,6 +63,7 @@
 @property (nonatomic) double searchRenderTimeout;
 @property (nonatomic) long long status;
 @property (nonatomic, retain) NSArray *suggestionRankerModelParams;
+@property (nonatomic) double suggestionsRenderTimeout;
 @property (nonatomic) bool use2LayerRanking;
 
 + (void)initialize;
@@ -79,6 +83,7 @@
 - (bool)collectScores;
 - (void)deactivate;
 - (bool)disableAsTypedSuggestion;
+- (bool)enabled;
 - (id)enabledDomains;
 - (id)excludedDomainIdentifiers;
 - (void)fetchModifiedResourceFromSession:(id)arg1 resource:(id)arg2 completion:(id /* block */)arg3;
@@ -112,6 +117,7 @@
 - (void)setCollectAnonymousData:(bool)arg1;
 - (void)setCollectScores:(bool)arg1;
 - (void)setDisableAsTypedSuggestion:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setEnabledDomains:(id)arg1;
 - (void)setFteContinueString:(id)arg1;
 - (void)setFteLearnMoreString:(id)arg1;
@@ -124,9 +130,11 @@
 - (void)setSearchRenderTimeout:(double)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setSuggestionRankerModelParams:(id)arg1;
+- (void)setSuggestionsRenderTimeout:(double)arg1;
 - (void)setUse2LayerRanking:(bool)arg1;
 - (long long)status;
 - (id)suggestionRankerModelParams;
+- (double)suggestionsRenderTimeout;
 - (id)supportedServices;
 - (void)triggerTaskWhenReady:(id)arg1;
 - (void)updateFromSession:(id)arg1 bag:(id)arg2 forClient:(id)arg3 error:(id)arg4;

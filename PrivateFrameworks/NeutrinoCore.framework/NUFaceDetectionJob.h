@@ -4,6 +4,10 @@
 
 @interface NUFaceDetectionJob : NURenderJob {
     NSArray * _faces;
+    struct { 
+        long long width; 
+        long long height; 
+    }  _imageSize;
 }
 
 @property (readonly) NUFaceDetectionRequest *faceDetectionRequest;
@@ -19,6 +23,7 @@
 - (id)result;
 - (id)scalePolicy;
 - (bool)wantsCompleteStage;
+- (bool)wantsOutputGeometry;
 - (bool)wantsOutputImage;
 
 @end

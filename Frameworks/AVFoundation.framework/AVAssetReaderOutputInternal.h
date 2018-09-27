@@ -10,6 +10,7 @@
     int  extractionID;
     struct OpaqueFigAssetReader { } * figAssetReader;
     int  finished;
+    bool  maximizePowerEfficiency;
     AVRunLoopCondition * sampleBufferAvailabilityCondition;
     bool  supportsRandomAccess;
     AVWeakReference * weakReference;

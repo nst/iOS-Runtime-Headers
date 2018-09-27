@@ -6,7 +6,7 @@
     AVAudioSession * _audioSession;
     id /* block */  _muteStateChangeBlock;
     bool  _muted;
-    SXKeyValueObserver * _outputVolumeObserver;
+    SVKeyValueObserver * _outputVolumeObserver;
     SXPlaybackCoordinator * _playbackCoordinator;
     float  _volume;
     id /* block */  _volumeChangeBlock;
@@ -18,7 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (setter=onMuteStateChange:, nonatomic, copy) id /* block */ muteStateChangeBlock;
 @property (nonatomic, readonly) bool muted;
-@property (nonatomic, readonly) SXKeyValueObserver *outputVolumeObserver;
+@property (nonatomic, readonly) SVKeyValueObserver *outputVolumeObserver;
 @property (nonatomic, readonly) SXPlaybackCoordinator *playbackCoordinator;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) float volume;

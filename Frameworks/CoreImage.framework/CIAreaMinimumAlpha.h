@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIAreaMinimumAlpha : CIAreaMaximum
+@interface CIAreaMinimumAlpha : CIAreaMaximumAlpha
 
 - (id)_reduce1X4;
 - (id)_reduce2X2;

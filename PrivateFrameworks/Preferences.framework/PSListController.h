@@ -13,7 +13,7 @@
     UIColor * _cellAccessoryHighlightColor;
     UIColor * _cellHighlightColor;
     NSMutableDictionary * _cells;
-    PSListContainerView * _containerView;
+    UIView * _containerView;
     struct CGPoint { 
         double x; 
         double y; 
@@ -77,7 +77,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long observerType;
 @property (nonatomic, retain) NSDictionary *pendingURLResourceDictionary;
-@property (nonatomic) bool prefetchingEnabled;
+@property (getter=isPrefetchingEnabled, nonatomic) bool prefetchingEnabled;
 @property (nonatomic, retain) UIColor *segmentedSliderTrackColor;
 @property (nonatomic, retain) UIColor *separatorColor;
 @property (nonatomic, retain) <PSSpecifierDataSource> *specifierDataSource;
@@ -201,6 +201,7 @@
 - (void)insertSpecifier:(id)arg1 atIndex:(long long)arg2;
 - (void)insertSpecifier:(id)arg1 atIndex:(long long)arg2 animated:(bool)arg3;
 - (void)invalidateSpecifiersForDataSource:(id)arg1;
+- (bool)isPrefetchingEnabled;
 - (void)lazyLoadBundle:(id)arg1;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
@@ -221,7 +222,6 @@
 - (id)popupStylePopoverController;
 - (void)popupViewWillDisappear;
 - (void)prefetchResourcesFor:(id)arg1;
-- (bool)prefetchingEnabled;
 - (bool)prepareHandlingURLForSpecifierID:(id)arg1 resourceDictionary:(id)arg2 animatePush:(bool*)arg3;
 - (void)prepareSpecifiersMetadata;
 - (void)pushController:(id)arg1 animate:(bool)arg2;
@@ -281,6 +281,7 @@
 - (void)setSpecifierIDPendingPush:(id)arg1;
 - (void)setSpecifiers:(id)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setUsesDarkTheme:(bool)arg1;
 - (bool)shouldDeferPushForSpecifierID:(id)arg1;
 - (bool)shouldReloadSpecifiersOnResume;

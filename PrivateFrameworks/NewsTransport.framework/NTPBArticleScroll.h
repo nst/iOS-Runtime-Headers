@@ -4,6 +4,7 @@
 
 @interface NTPBArticleScroll : PBCodable <NSCopying> {
     bool  _adSupportedChannel;
+    NTPBAlternateHeadline * _alternateHeadline;
     NSString * _articleId;
     NSData * _articleSessionId;
     NSData * _articleViewingSessionId;
@@ -29,12 +30,14 @@
 }
 
 @property (nonatomic) bool adSupportedChannel;
+@property (nonatomic, retain) NTPBAlternateHeadline *alternateHeadline;
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSData *articleSessionId;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
 @property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic, retain) NSMutableArray *fractionalCohortMemberships;
 @property (nonatomic) bool hasAdSupportedChannel;
+@property (nonatomic, readonly) bool hasAlternateHeadline;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleSessionId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
@@ -65,6 +68,7 @@
 - (void).cxx_destruct;
 - (bool)adSupportedChannel;
 - (void)addFractionalCohortMembership:(id)arg1;
+- (id)alternateHeadline;
 - (id)articleId;
 - (id)articleSessionId;
 - (id)articleViewingSessionId;
@@ -77,6 +81,7 @@
 - (id)fractionalCohortMemberships;
 - (unsigned long long)fractionalCohortMembershipsCount;
 - (bool)hasAdSupportedChannel;
+- (bool)hasAlternateHeadline;
 - (bool)hasArticleId;
 - (bool)hasArticleSessionId;
 - (bool)hasArticleViewingSessionId;
@@ -101,6 +106,7 @@
 - (float)scrollingVelocity;
 - (id)sectionHeadlineId;
 - (void)setAdSupportedChannel:(bool)arg1;
+- (void)setAlternateHeadline:(id)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleSessionId:(id)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;

@@ -15,6 +15,7 @@
 - (void)dealloc;
 - (id /* block */)destructor;
 - (id)initWithData:(void*)arg1 destructor:(id /* block */)arg2;
+- (void)invalidate;
 - (void)setData:(void*)arg1;
 - (void)setDestructor:(id /* block */)arg1;
 

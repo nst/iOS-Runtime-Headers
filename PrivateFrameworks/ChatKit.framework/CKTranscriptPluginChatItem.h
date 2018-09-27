@@ -42,7 +42,6 @@
 - (id)extensableView;
 - (id)extensibleViewController;
 - (bool)handlePresentationAction;
-- (bool)hasTail;
 - (id)imTranscriptPluginChatItem;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
 - (bool)isAppearing;

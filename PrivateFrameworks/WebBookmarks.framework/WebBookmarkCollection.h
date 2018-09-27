@@ -13,6 +13,7 @@
     bool  _readonly;
     WebBookmark * _rootBookmark;
     SafariFetcherServerProxy * _safariFetcherServerProxy;
+    bool  _setupFinished;
     bool  _skipExternalNotifications;
     WebBookmarkTitleWordTokenizer * _wordTokenizer;
 }
@@ -198,7 +199,7 @@
 - (bool)_reindexBookmarkID:(int)arg1 title:(id)arg2;
 - (void)_rerunMigrationsIfNecessary;
 - (bool)_restoreBookmarkBarIfMissing;
-- (bool)_restoreMissingSpecialBookmarks;
+- (bool)_restoreMissingSpecialBookmarksWithChangeNotification:(bool)arg1;
 - (void)_restoreOrMergeReadingListFolderWithChangeNotification:(bool)arg1;
 - (void)_restoreOrMergeWhiteListFolderAndContentsWithWebFilterWhiteList:(id)arg1 ensureChildCount:(bool)arg2 postChangeNotification:(bool)arg3;
 - (id)_rootFolderHiddenChildrenClause;

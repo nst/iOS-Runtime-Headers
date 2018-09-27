@@ -7,6 +7,7 @@
 + (id)aggdPrefix;
 + (id)appleLanguagesPreference;
 + (id)errorStringForCode:(long long)arg1;
++ (id)errorWithCode:(long long)arg1 description:(id)arg2;
 + (id)errorWithCode:(long long)arg1 failedAdds:(id)arg2 failedDeletes:(id)arg3;
 + (id)errorWithCode:(long long)arg1 forEntry:(id)arg2;
 + (void)extractAggdMetricsForTextReplacement:(id)arg1;

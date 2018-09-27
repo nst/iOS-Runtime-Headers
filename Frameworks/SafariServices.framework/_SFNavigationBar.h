@@ -22,7 +22,7 @@
     bool  _controlsHidden;
     _UIBackdropViewSettings * _customBackdropSettings;
     <_SFNavigationBarDelegate> * _delegate;
-    _SFDismissButton * _dismissButton;
+    SFDismissButton * _dismissButton;
     UIView * _dismissButtonContainer;
     bool  _expanded;
     double  _expandedURLHeight;
@@ -68,7 +68,6 @@
     bool  _urlLabelShowsNotSecureAnnotation;
     bool  _usesLiftedAppearance;
     bool  _usesNarrowLayout;
-    bool  _usesUnscaledBackdrop;
     bool  _usingLightControls;
     long long  _visibleTrailingButtonType;
     SFWebsiteNotSecureMessageView * _websiteNotSecureMessageView;
@@ -107,7 +106,6 @@
 @property (nonatomic) bool unifiedFieldShowsProgressView;
 @property (nonatomic) bool updatesBackdrop;
 @property (nonatomic) bool usesNarrowLayout;
-@property (nonatomic) bool usesUnscaledBackdrop;
 @property (getter=isUsingLightControls, nonatomic) bool usingLightControls;
 @property (nonatomic, readonly) double visualHeight;
 
@@ -284,7 +282,6 @@
 - (void)setUnifiedFieldShowsProgressView:(bool)arg1;
 - (void)setUpdatesBackdrop:(bool)arg1;
 - (void)setUsesNarrowLayout:(bool)arg1;
-- (void)setUsesUnscaledBackdrop:(bool)arg1;
 - (void)setUsingLightControls:(bool)arg1;
 - (bool)suppressesBlur;
 - (id)textField;
@@ -298,7 +295,6 @@
 - (void)updateToolbarTintColor;
 - (bool)updatesBackdrop;
 - (bool)usesNarrowLayout;
-- (bool)usesUnscaledBackdrop;
 - (double)visualHeight;
 
 @end

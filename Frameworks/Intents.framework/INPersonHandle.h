@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPersonHandle : NSObject <INPersonHandleExport, NSCopying, NSSecureCoding> {
+@interface INPersonHandle : NSObject <INPersonHandleExport, NSCopying, NSSecureCoding, REDonatedActionIdentifierProviding> {
     NSString * _label;
     long long  _type;
     NSString * _value;
@@ -15,6 +15,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, copy) NSString *value;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (bool)supportsSecureCoding;
 
@@ -32,5 +34,16 @@
 - (id)label;
 - (long long)type;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/IMAssistantCore.framework/IMAssistantCore
+
++ (id)__im_assistant_extractIntentHandleLabelAndTypeFromContact:(id)arg1 forNormalizedID:(id)arg2;
+
+- (id)__im_assistant_initWithUnstructuredValue:(id)arg1;
+- (bool)__im_assistant_isEqualIgnoringFormatting:(id)arg1 ignoringLabel:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
+
+- (unsigned long long)re_actionIdentifierHashValue;
 
 @end

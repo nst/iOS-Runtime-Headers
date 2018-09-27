@@ -5,6 +5,7 @@
 @interface FCForYouCatchUpOperation : FCOperation {
     NSHashTable * _conditionWaiters;
     NFMutexLock * _conditionWaitersLock;
+    long long  _contentTypes;
     FCCoverArticlesOperation * _coverArticlesOperation;
     FCEditorialOperation * _editorialOperation;
     FCMyArticlesOperation * _myArticlesOperation;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly, copy) NSError *catchUpError;
 @property (nonatomic, retain) NSHashTable *conditionWaiters;
 @property (nonatomic, retain) NFMutexLock *conditionWaitersLock;
+@property (nonatomic) long long contentTypes;
 @property (nonatomic, readonly, copy) NSArray *coverArticleHeadlines;
 @property (nonatomic, retain) FCCoverArticlesOperation *coverArticlesOperation;
 @property (nonatomic, retain) FCEditorialOperation *editorialOperation;
@@ -51,6 +53,7 @@
 - (id)catchUpErrorForContentTypes:(long long)arg1;
 - (id)conditionWaiters;
 - (id)conditionWaitersLock;
+- (long long)contentTypes;
 - (id)coverArticleHeadlines;
 - (id)coverArticlesOperation;
 - (id)editorialOperation;
@@ -67,6 +70,7 @@
 - (void)performOperation;
 - (void)setConditionWaiters:(id)arg1;
 - (void)setConditionWaitersLock:(id)arg1;
+- (void)setContentTypes:(long long)arg1;
 - (void)setCoverArticlesOperation:(id)arg1;
 - (void)setEditorialOperation:(id)arg1;
 - (void)setMyArticlesOperation:(id)arg1;

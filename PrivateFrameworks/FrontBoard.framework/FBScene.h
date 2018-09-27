@@ -25,22 +25,22 @@
 
 @property (getter=_isInTransaction, nonatomic, readonly) bool _inTransaction;
 @property (nonatomic, readonly) unsigned long long _transactionID;
-@property (nonatomic, readonly, retain) <FBSceneClient> *client;
-@property (nonatomic, readonly, retain) FBProcess *clientProcess;
-@property (nonatomic, readonly, retain) <FBSceneClientProvider> *clientProvider;
-@property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
+@property (nonatomic, readonly) <FBSceneClient> *client;
+@property (nonatomic, readonly) FBProcess *clientProcess;
+@property (nonatomic, readonly) <FBSceneClientProvider> *clientProvider;
+@property (nonatomic, readonly) FBSSceneClientSettings *clientSettings;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) FBSSceneDefinition *definition;
 @property (nonatomic) <FBSceneDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) FBSDisplayConfiguration *display;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, retain) FBSceneHostManager *hostManager;
+@property (nonatomic, readonly) FBSceneHostManager *hostManager;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly, retain) FBSceneLayerManager *layerManager;
+@property (nonatomic, readonly) FBSceneLayerManager *layerManager;
 @property (nonatomic, retain) FBSMutableSceneSettings *mutableSettings;
 @property (nonatomic, readonly, copy) FBSSceneParameters *parameters;
-@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (nonatomic, readonly) FBSSceneSettings *settings;
 @property (nonatomic, readonly, copy) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) bool valid;
@@ -48,6 +48,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
+- (void).cxx_destruct;
 - (void)_addSceneGeometryObserver:(id)arg1;
 - (void)_applyUpdateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)_beginTransaction;

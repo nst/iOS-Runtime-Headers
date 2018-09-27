@@ -6,6 +6,7 @@
     NSDate * _entry;
     NSDate * _exit;
     NSUUID * _identifier;
+    double  _locationOfInterestConfidence;
 }
 
 @property (nonatomic, readonly) NSDate *entry;
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly) NSDate *exit;
 @property (nonatomic, readonly) NSDate *exitTime;
 @property (nonatomic, readonly) NSUUID *identifier;
+@property (nonatomic, readonly) double locationOfInterestConfidence;
 
 + (bool)supportsSecureCoding;
 
@@ -28,7 +30,8 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 entry:(id)arg2 exit:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 entry:(id)arg2 exit:(id)arg3 locationOfInterestConfidence:(double)arg4;
 - (bool)isEqual:(id)arg1;
+- (double)locationOfInterestConfidence;
 
 @end

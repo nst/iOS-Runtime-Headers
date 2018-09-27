@@ -22,7 +22,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(bool)arg4 options:(id)arg5;
+- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 options:(id)arg4;
 - (long long)_preferredWhitePointAdaptivityStyle;
 - (void)_setTabbedLibraryViewController:(id)arg1;
 - (id)_tabbedLibraryViewController;
@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2;
-- (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 isLocal:(bool)arg3;
+- (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2;
 - (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 options:(id)arg3;
 - (void)loadView;
 - (id)photosPickerOptions;

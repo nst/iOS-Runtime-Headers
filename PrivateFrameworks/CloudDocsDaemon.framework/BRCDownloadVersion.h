@@ -4,6 +4,7 @@
 
 @interface BRCDownloadVersion : BRCDownload {
     BRCClientZone * _clientZone;
+    NSNumber * _docID;
     NSError * _gsError;
     bool  _isLoser;
     CKRecord * _secondaryRecord;
@@ -12,6 +13,7 @@
     GSPermanentStorage * _storage;
 }
 
+@property (nonatomic, readonly) NSNumber *docID;
 @property (nonatomic, readonly) NSError *gsError;
 @property (nonatomic, readonly) bool isLoser;
 @property (nonatomic, retain) BRCProgress *progress;
@@ -21,6 +23,7 @@
 - (id)_stageContentWithSession:(id)arg1 error:(id*)arg2;
 - (id)_stageWithSession:(id)arg1 creationInfo:(id*)arg2 error:(id*)arg3;
 - (id)description;
+- (id)docID;
 - (id)gsError;
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2 etag:(id)arg3 isLoser:(bool)arg4;
 - (bool)isLoser;

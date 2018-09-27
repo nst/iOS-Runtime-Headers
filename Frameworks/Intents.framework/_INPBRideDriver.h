@@ -2,41 +2,45 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface _INPBRideDriver : PBCodable <NSCopying> {
+@interface _INPBRideDriver : PBCodable <NSCopying, NSSecureCoding, _INPBRideDriver> {
+    struct { }  _has;
+    _INPBImageValue * _image;
     _INPBContactValue * _person;
     NSString * _phoneNumber;
     NSString * _rating;
-    PBUnknownFields * _unknownFields;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasImage;
 @property (nonatomic, readonly) bool hasPerson;
 @property (nonatomic, readonly) bool hasPhoneNumber;
 @property (nonatomic, readonly) bool hasRating;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) _INPBImageValue *image;
 @property (nonatomic, retain) _INPBContactValue *person;
-@property (nonatomic, retain) NSString *phoneNumber;
-@property (nonatomic, retain) NSString *rating;
-@property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-+ (id)options;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *rating;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasImage;
 - (bool)hasPerson;
 - (bool)hasPhoneNumber;
 - (bool)hasRating;
 - (unsigned long long)hash;
+- (id)image;
 - (bool)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
 - (id)person;
 - (id)phoneNumber;
 - (id)rating;
 - (bool)readFrom:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setRating:(id)arg1;
-- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

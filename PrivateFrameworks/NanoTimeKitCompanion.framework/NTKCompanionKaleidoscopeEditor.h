@@ -19,7 +19,7 @@
 - (void)finalizeWithCompletion:(id /* block */)arg1;
 - (void)generateGalleryPreviewResourceDirectoryWithCompletion:(id /* block */)arg1;
 - (void)imageForPhotoWithCompletion:(id /* block */)arg1;
-- (id)initWithResourceDirectory:(id)arg1;
+- (id)initWithResourceDirectory:(id)arg1 forDevice:(id)arg2;
 - (long long)photosCount;
 - (void)setAsset:(id)arg1 completion:(id /* block */)arg2;
 - (void)setPhoto:(id)arg1 completion:(id /* block */)arg2;

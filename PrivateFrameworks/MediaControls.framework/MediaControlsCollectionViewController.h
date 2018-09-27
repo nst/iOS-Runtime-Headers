@@ -28,7 +28,7 @@
         double height; 
     }  _lastKnownEnvironmentSize;
     bool  _needsReloadData;
-    id /* block */  _pendingUpdates;
+    NSMutableArray * _pendingUpdates;
     UIScrollView * _scrollView;
     struct UIEdgeInsets { 
         double top; 
@@ -68,6 +68,7 @@
 - (double)_backgroundCornerRadius;
 - (void)_beginAppearanceTransitionForChildViewControllers:(bool)arg1 animated:(bool)arg2;
 - (void)_beginAppearanceTransitionIfNeeded:(bool)arg1 forChildViewController:(id)arg2 animated:(bool)arg3;
+- (bool)_canPerformBatchUpdates;
 - (long long)_closestItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_commonInit;
 - (void)_dequeueAndPerformBatchUpdatesIfNeeded;

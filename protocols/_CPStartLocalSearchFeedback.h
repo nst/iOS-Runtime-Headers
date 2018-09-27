@@ -5,12 +5,6 @@
 
 @required
 
-- (bool)hasIndexType;
-- (bool)hasInput;
-- (bool)hasQueryId;
-- (bool)hasTimestamp;
-- (bool)hasTriggerEvent;
-- (bool)hasUuid;
 - (int)indexType;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;

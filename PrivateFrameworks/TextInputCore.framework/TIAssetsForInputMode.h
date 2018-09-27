@@ -9,6 +9,7 @@
 
 @property (nonatomic, readonly) NSString *inputMode;
 
+- (void).cxx_destruct;
 - (void)addAssetsForInputModeLevel:(id)arg1;
 - (id)assetContentItemsMatching:(id)arg1;
 - (void)dealloc;

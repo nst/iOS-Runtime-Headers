@@ -4,14 +4,23 @@
 
 @interface CKUIThemeDark : CKUITheme
 
+- (id)appGrabberBackgroundColor;
+- (id)appGrabberCloseImage;
+- (id)appGrabberPillColor;
+- (id)appGrabberTitleColor;
+- (id)appSelectionOutlineColor;
+- (id)appStripCoverFillColor;
 - (id)appTintColor;
 - (id)balloonColorsForColorType:(BOOL)arg1;
 - (id)balloonTextColorForColorType:(BOOL)arg1;
 - (id)blue_balloonColors;
 - (id)blue_balloonTextColor;
+- (id)browserAppStripSeperatorBackgroundColor;
 - (id)browserBackgroundColor;
-- (id)browserContentBackgroundColor;
 - (id)browserLabelColor;
+- (id)browserSwitcherBorderColor;
+- (id)browserSwitcherGutterColor;
+- (id)browserSwitcherGutterDividerColor;
 - (id)businessDescriptionViewControllerBackgroundColor;
 - (id)businessInfoViewDescriptionTextColor;
 - (id)contactCellTextColor;
@@ -40,10 +49,19 @@
 - (id)entryFieldTextColor;
 - (id)entryViewBackdropSettings;
 - (long long)entryViewStyle;
+- (id)fsmPickerCloseButtonColor;
+- (id)fsmPickerCurrentPageIndicatorColor;
+- (id)fsmPickerPageIndicatorColor;
+- (id)fsmPickerPrimaryColor;
+- (id)fsmPickerPrimaryTintColor;
+- (id)fsmPickerSecondaryColor;
+- (id)fsmPickerSendButtonColor;
+- (id)fullscreenAppDismissViewColor;
 - (id)gray_balloonColors;
 - (id)gray_balloonTextColor;
 - (id)green_balloonColors;
 - (id)green_balloonTextColor;
+- (bool)isDarkMode;
 - (long long)keyboardAppearance;
 - (id)messageAcknowledgment:(long long)arg1 acknowledgmentImageColor:(long long)arg2;
 - (id)messageAcknowledgment:(long long)arg1 selectedAcknowledgmentImageColor:(long long)arg2;
@@ -51,7 +69,6 @@
 - (id)messageAcknowledgmentBalloonColorForStyle:(long long)arg1;
 - (BOOL)messageAcknowledgmentBalloonColorTypeForStyle:(long long)arg1;
 - (id)messageAcknowledgmentPickerBackgroundColor;
-- (id)messageAcknowledgmentSelectedBalloonColorForStyle:(long long)arg1;
 - (id)messagesControllerBackgroundColor;
 - (long long)navBarStyle;
 - (id)recipientsDividerColor;
@@ -62,6 +79,7 @@
 - (id)segmentedControlSelectionTintColor;
 - (id)sharedContentsCellBackgroundColor;
 - (id)sharedContentsCellTextColor;
+- (bool)shouldOverlayAppBorderImage;
 - (id)siri_balloonColors;
 - (id)siri_balloonTextColor;
 - (long long)statusBarStyle;

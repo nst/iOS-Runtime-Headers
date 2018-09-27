@@ -48,13 +48,13 @@
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;
 
 - (bool)addAnimationsAtLayerTime:(double)arg1;
-- (void)animateAfterDelay:(double)arg1;
+- (void)animate;
 - (void)applyMovieControl:(long long)arg1;
 - (id)buildInRenderer;
 - (void)dealloc;
 - (void)forceRemoveAnimations;
 - (bool)hasAmbientBuildStarted;
-- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
+- (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 animatedSlideView:(id)arg4;
 - (void)interruptAndReset;
 - (id)movieTimelineMovieIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

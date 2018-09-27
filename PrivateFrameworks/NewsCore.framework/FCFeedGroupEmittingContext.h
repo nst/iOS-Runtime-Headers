@@ -87,7 +87,7 @@
 - (id)forYouCatchUpOperation;
 - (id)groupFromPageWithType:(long long)arg1;
 - (id)groupsFromPage;
-- (id)initWithCoreConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(bool)arg13 forYouCatchUpOperation:(id)arg14;
+- (id)initWithConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(bool)arg13 forYouCatchUpOperation:(id)arg14;
 - (bool)isFirstPageInRefreshSession;
 - (bool)isNewEdition;
 - (bool)isOffline;
@@ -95,7 +95,7 @@
 - (id)pageDateRange;
 - (bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
 - (bool)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
-- (bool)pageWillContainExpandedGroupWithType:(long long)arg1;
+- (bool)pageWillContainExpandedNewGroupWithType:(long long)arg1;
 - (bool)pageWillContainGroupWithType:(long long)arg1;
 - (bool)pageWillContainHeadlineCount:(unsigned long long)arg1 fromGroupTypes:(id)arg2;
 - (id)pendingGroups;

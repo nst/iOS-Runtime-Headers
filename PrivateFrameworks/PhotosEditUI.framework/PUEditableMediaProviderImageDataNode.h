@@ -10,6 +10,7 @@
     long long  _imageExifOrientation;
     PUEditableMediaProvider * _mediaProvider;
     int  _requestID;
+    bool  _useEmbeddedPreview;
     long long  _version;
 }
 
@@ -29,6 +30,7 @@
 @property (getter=isRunning, readonly) bool running;
 @property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool useEmbeddedPreview;
 @property (nonatomic, readonly) long long version;
 @property (getter=isWaiting, readonly) bool waiting;
 
@@ -43,6 +45,7 @@
 - (id)initWithAsset:(id)arg1 mediaProvider:(id)arg2 version:(long long)arg3;
 - (id)mediaProvider;
 - (void)run;
+- (bool)useEmbeddedPreview;
 - (long long)version;
 
 @end

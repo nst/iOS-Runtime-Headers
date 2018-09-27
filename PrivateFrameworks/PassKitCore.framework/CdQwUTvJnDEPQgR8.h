@@ -24,8 +24,8 @@
 + (id)scorerWithContext:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_decryptScores:(id)arg1 error:(id*)arg2;
-- (void)_safeCallbackWithMessage:(id)arg1 uuid:(id)arg2 error:(id)arg3;
+- (id)VkBISyFszEu5z9lr:(id)arg1 hko2JNPyipruHYjD:(id*)arg2;
+- (void)_safeCallbackWithMessage:(id)arg1 uuid:(id)arg2 hko2JNPyipruHYjD:(id)arg3;
 - (id)callback_queue;
 - (id)context;
 - (id /* block */)handler;

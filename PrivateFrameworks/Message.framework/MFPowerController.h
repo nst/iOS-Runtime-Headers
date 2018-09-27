@@ -4,7 +4,8 @@
 
 @interface MFPowerController : NSObject <MFDiagnosticsGenerator> {
     <MFCancelable> * _appStateCancelable;
-    CDSession * _duetSession;
+    float  _batteryLevel;
+    int  _batteryNotificationToken;
     NSCountedSet * _identifiers;
     bool  _isForeground;
     int  _pluggedIn;
@@ -15,6 +16,8 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
+@property (nonatomic, readonly) float batteryLevel;
+@property (nonatomic, readonly) MFObservable *batteryLevelObservable;
 @property (getter=isBatterySaverModeEnabled, readonly) bool batterySaverModeEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -29,20 +32,24 @@
 + (id)sharedInstance;
 
 - (void)_applicationForegroundStateChanged:(bool)arg1;
+- (void)_applicationForegroundStateChanged_nts:(bool)arg1;
 - (double)_assertionTimeout;
-- (bool)_createBudgetWithName:(id)arg1 parentBudgetName:(id)arg2 attribute:(id)arg3 error:(id*)arg4;
-- (bool)_deleteBudgetWithName:(id)arg1;
-- (void)_deleteDuetAttributesForAccountWithUniqueId:(id)arg1;
-- (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(bool)arg2;
-- (void)_initDuet;
+- (void)_batteryInformationChanged;
+- (bool)_isHoldingTaskAssertion;
 - (void)_lowPowerModeChangedNotification:(id)arg1;
-- (void)_releaseAssertion_nts;
-- (void)_retainAssertion_nts;
+- (void)_registerForBatteryLevelChanges;
+- (void)_releasePowerAssertion_nts;
+- (void)_releaseTaskAssertion_nts;
+- (void)_retainPowerAssertion_nts;
+- (void)_retainTaskAssertion_nts;
 - (void)_setPluggedIn:(unsigned int)arg1;
 - (void)_setupAssertionTimer:(double)arg1;
+- (void)_unregisterForBatteryLevelChanges;
+- (float)batteryLevel;
+- (id)batteryLevelObservable;
+- (id)batteryLevelStateChangeNotificationObservable;
 - (id)copyDiagnosticInformation;
 - (void)dealloc;
-- (id)duetIdentifier;
 - (id)init;
 - (bool)isBatterySaverModeEnabled;
 - (bool)isHoldingAssertion;
@@ -50,7 +57,6 @@
 - (id)lowPowerModeObservable;
 - (id)pluggedInObservable;
 - (id)powerObservable;
-- (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;

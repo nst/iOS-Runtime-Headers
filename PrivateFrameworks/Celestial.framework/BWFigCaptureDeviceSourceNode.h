@@ -4,7 +4,6 @@
 
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float  _aeMaxGain;
-    bool  _automaticallyEnablesLowLightBoostWhenAvailable;
     NSObject<OS_dispatch_queue> * _bufferServicingQueue;
     BWFigVideoCaptureDevice * _captureDevice;
     BWFigVideoCaptureStream * _captureStream;
@@ -13,9 +12,32 @@
     BWNodeOutput * _detectedFacesOutput;
     bool  _detectedFacesOutputEnabled;
     NSMutableDictionary * _dutyCycleMetadataCache;
-    bool  _lowLightBoostSupportedForFormat;
+    struct { 
+        int width; 
+        int height; 
+    }  _ispOutputDimensions;
+    struct { 
+        int width; 
+        int height; 
+    }  _lastISPCropDimensions;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _maxExposureDurationClientOverride;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _maxExposureDurationFrameworkOverride;
     float  _maxFrameRate;
-    int  _maxIntegrationTimeOverride;
+    struct { 
+        int width; 
+        int height; 
+    }  _maxISPCropDimensions;
+    float  _maxISPZoomFactor;
     float  _minFrameRate;
     struct { 
         int width; 
@@ -28,6 +50,10 @@
         int width; 
         int height; 
     }  _outputDimensions;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _overscanPercentage;
     bool  _requiresOverscan;
     int  _resolvedOfflineConfigurationSeed;
     int  _resolvedSensorFormatIndex;
@@ -91,23 +117,26 @@
 - (void)_handleSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (bool)_haveNonLiveConfigurationChangesWithSensorFormatIndexChanged:(bool*)arg1 sensorPixelFormatChanged:(bool*)arg2 outputDimensionsChanged:(bool*)arg3;
 - (id)_initWithCaptureDevice:(id)arg1;
+- (float)_ispAppliedZoomFromSampleBufferMetadataDictionary:(id)arg1;
 - (int)_lockFramerateToMaxSupportedByCurrentSensorFormat;
 - (struct { int x1; int x2; })_maxOutputDimensionsForResolvedSensorFormatIndex;
 - (int)_prepareStillImageQueue;
 - (bool)_prepareStreamQueue;
 - (void)_registerForStreamNotifications;
 - (void)_resolveOfflineConfiguration;
+- (void)_serviceZoomForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 updateISPZoom:(bool)arg2;
 - (int)_startStreaming;
 - (int)_stopStreaming;
 - (void)_unprepareStillImageQueue;
 - (void)_unprepareStreamQueue;
 - (void)_unregisterFromStreamNotifications;
 - (void)_updateDutyCycleMetadataCacheForActiveFormatIndex:(long long)arg1;
+- (void)_updateISPCropForZoomFactor:(float)arg1;
 - (void)_updateMetadataConfigurations;
 - (void)_updateMinOutputDimensionsForResolvedSensorFormatIndex;
 - (int)_updateStreamOutputDimensions;
+- (void)_updateZoomCapabilitiesForActiveFormatIndex:(long long)arg1;
 - (float)aeMaxGain;
-- (bool)automaticallyEnablesLowLightBoostWhenAvailable;
 - (id)captureDevice;
 - (id)captureStream;
 - (bool)chromaNoiseReductionEnabled;
@@ -117,16 +146,17 @@
 - (id)detectedFacesOutput;
 - (bool)detectedFacesOutputEnabled;
 - (bool)hasNonLiveConfigurationChanges;
-- (bool)lowLightBoostSupportedForFormat;
 - (void)makeCurrentConfigurationLive;
 - (void)makeOutputsLiveIfNeeded;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxExposureDurationClientOverride;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxExposureDurationFrameworkOverride;
 - (float)maxFrameRate;
-- (int)maxIntegrationTimeOverride;
 - (float)minFrameRate;
 - (struct { int x1; int x2; })minOutputDimensions;
 - (int)motionAttachmentsSource;
 - (id)nodeSubType;
 - (struct { int x1; int x2; })outputDimensions;
+- (struct CGSize { double x1; double x2; })overscanPercentage;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (bool)requiresOverscan;
 - (struct { int x1; int x2; })sensorDimensions;
@@ -134,15 +164,15 @@
 - (struct { int x1; int x2; })sensorOverscanDimensions;
 - (unsigned int)sensorPixelFormat;
 - (void)setAeMaxGain:(float)arg1;
-- (void)setAutomaticallyEnablesLowLightBoostWhenAvailable:(bool)arg1;
 - (void)setChromaNoiseReductionEnabled:(bool)arg1;
 - (void)setDetectedFacesOutputEnabled:(bool)arg1;
-- (void)setLowLightBoostSupportedForFormat:(bool)arg1;
+- (void)setMaxExposureDurationClientOverride:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMaxExposureDurationFrameworkOverride:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMaxFrameRate:(float)arg1;
-- (void)setMaxIntegrationTimeOverride:(int)arg1;
 - (void)setMinFrameRate:(float)arg1;
 - (void)setMotionAttachmentsSource:(int)arg1;
 - (void)setOutputDimensions:(struct { int x1; int x2; })arg1;
+- (void)setOverscanPercentage:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRequiresOverscan:(bool)arg1;
 - (void)setSensorDimensions:(struct { int x1; int x2; })arg1;
 - (void)setSensorFormatIndex:(int)arg1;

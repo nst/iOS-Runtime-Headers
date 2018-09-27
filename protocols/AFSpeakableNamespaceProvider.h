@@ -5,7 +5,7 @@
 
 @required
 
-- (NSString *)stringForExpression:(NSString *)arg1;
+- (NSString *)stringForExpression:(NSString *)arg1 containsPrivacySensitiveContents:(bool*)arg2;
 
 @optional
 
@@ -13,5 +13,6 @@
 - (NSString *)identifier;
 - (id)initWithAceObject:(AceObject *)arg1;
 - (void)setAssistantBulletin:(AFBulletin *)arg1;
+- (NSString *)stringForExpression:(NSString *)arg1;
 
 @end

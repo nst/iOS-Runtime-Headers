@@ -7,7 +7,6 @@
     PHCachingImageManager * _cachingImageManager;
     PUSectionedGridLayout * _collectionViewLayout;
     PUGridRenderedStrip * _currentRenderedStrip;
-    NSString * _displayTitle;
     struct CGSize { 
         double width; 
         double height; 
@@ -34,7 +33,6 @@
 @property (nonatomic, readonly) unsigned long long dateRangeFormatterPreset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *displayTitle;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageRequestItemSize;
 @property (nonatomic, readonly) double itemContentScale;
@@ -73,7 +71,6 @@
 - (id)diagnosticsProviderForVisualSection:(long long)arg1;
 - (void)didFinishZoomLevelTransition;
 - (void)didTapHeaderView:(id)arg1;
-- (id)displayTitle;
 - (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(long long)arg3;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)imageDataForAsset:(id)arg1 itemContentScale:(double)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
@@ -101,7 +98,6 @@
 - (long long)sectionedGridLayout:(id)arg1 maximumRowsForVisualSection:(long long)arg2;
 - (struct CGPoint { double x1; double x2; })sectionedGridLayout:(id)arg1 targetContentOffsetForProposedUpdatesContentOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
-- (id)sectionedGridLayoutName:(id)arg1;
 - (bool)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
 - (void)setLastItemPixelSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPendingContentWidth:(double)arg1;

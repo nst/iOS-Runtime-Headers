@@ -33,8 +33,10 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })oneUpPresentationHelper:(id)arg1 rectForAssetReference:(id)arg2 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (void)oneUpPresentationHelper:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 shouldHideAssetReferences:(id)arg2;
+- (unsigned long long)oneUpPresentationHelperAdditionalOptions:(id)arg1;
 - (bool)oneUpPresentationHelperShouldAutoPlay:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
+- (id)oneUpPresentationHelperViewHostingTilingView:(id)arg1;
 - (void)presentingViewControllerViewDidAppear:(bool)arg1;
 - (void)presentingViewControllerViewDidDisappear:(bool)arg1;
 - (void)presentingViewControllerViewWillAppear:(bool)arg1;

@@ -6,5 +6,6 @@
 @required
 
 - (NSURL *)URL;
+- (NSString *)resourceIdentifier;
 
 @end

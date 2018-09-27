@@ -14,8 +14,8 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)computeScoresUsingSettings:(id)arg1 completion:(id /* block */)arg2;
-- (void)getScoreMessageWithIdentifier:(id)arg1 hostChallenge:(id)arg2 challengeResponse:(id)arg3 seid:(id)arg4 nonce:(id)arg5 completion:(id /* block */)arg6;
+- (void)JI0A3nkqsab9cUj8:(id)arg1 completion:(id /* block */)arg2;
+- (void)QeMnG23X94qgz7jT:(id)arg1 hostChallenge:(id)arg2 challengeResponse:(id)arg3 seid:(id)arg4 nonce:(id)arg5 completion:(id /* block */)arg6;
 - (id)initWithServiceName:(id)arg1;
 
 @end

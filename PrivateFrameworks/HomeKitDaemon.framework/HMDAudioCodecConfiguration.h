@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAudioCodecConfiguration : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
+@interface HMDAudioCodecConfiguration : HMDTLVBase <HMDTLVCreateParse, NSSecureCoding> {
     HMDAudioCodecParameters * _audioCodecParameters;
     HMDAudioCodecGroup * _codecGroup;
 }

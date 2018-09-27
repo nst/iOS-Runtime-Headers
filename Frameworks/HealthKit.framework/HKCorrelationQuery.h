@@ -19,6 +19,7 @@
 @property (readonly) Class superclass;
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
 + (void)configureClientInterface:(id)arg1;
 + (bool)shouldApplyAdditionalPredicateForObjectType:(id)arg1;
 
@@ -29,7 +30,6 @@
 - (id)correlationType;
 - (id)filterDictionary;
 - (id)initWithType:(id)arg1 predicate:(id)arg2 samplePredicates:(id)arg3 completion:(id /* block */)arg4;
-- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
 - (void)queue_queryDidDeactivate:(id)arg1;

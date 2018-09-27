@@ -26,6 +26,7 @@
 @property (getter=isScrolling, nonatomic, readonly) bool scrolling;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (long long)_activeMethod;
 - (id)_animationForAnimationSettings:(id)arg1;
 - (void)_bs_didEndScrolling;

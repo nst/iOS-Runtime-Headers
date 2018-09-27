@@ -4,6 +4,7 @@
 
 @interface SiriUISnippetViewController : SiriUIBaseSnippetViewController {
     NSAttributedString * _attributedSubtitle;
+    bool  _awaitingSuccessOrFailureEvent;
     bool  _cancelled;
     bool  _confirmed;
     UIView * _containingView;
@@ -38,6 +39,7 @@
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedSubtitle;
+@property (getter=_isAwaitingSuccessOrFailureEvent, setter=_setAwaitingSuccessOrFailureEvent:, nonatomic) bool awaitingSuccessOrFailureEvent;
 @property (getter=isCancelled, nonatomic) bool cancelled;
 @property (getter=isConfirmed, nonatomic) bool confirmed;
 @property (nonatomic) UIView *containingView;
@@ -73,12 +75,14 @@
 - (bool)_hasConfirmationOrCancelledInsets;
 - (id)_headerView;
 - (long long)_insertionAnimation;
+- (bool)_isAwaitingSuccessOrFailureEvent;
 - (bool)_isProvisional;
 - (long long)_pinAnimationType;
 - (id)_previousConfirmationOptions;
 - (id)_privateDelegate;
 - (long long)_replacementAnimation;
 - (void)_resumeTouchesIfNecessary;
+- (void)_setAwaitingSuccessOrFailureEvent:(bool)arg1;
 - (void)_setPreviousConfirmationOptions:(id)arg1;
 - (void)_setProvisional:(bool)arg1;
 - (void)_setVirgin:(bool)arg1;

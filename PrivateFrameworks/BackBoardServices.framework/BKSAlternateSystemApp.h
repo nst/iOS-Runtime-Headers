@@ -24,6 +24,7 @@
 @property (nonatomic) bool stateChangeWaiter;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_handleInterruptedConnection;
 - (void)_handleInvalidatedConnection;
 - (void)_queue_changeState:(long long)arg1;

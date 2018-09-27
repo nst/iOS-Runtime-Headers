@@ -4,7 +4,6 @@
 
 @interface _DKExpertConsumerCategory : NSObject
 
-+ (id)nowPlaying;
 + (id)spotlight;
 + (id)springboard;
 + (id)stark;

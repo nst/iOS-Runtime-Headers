@@ -32,8 +32,6 @@
 + (void)initialize;
 
 - (id)URL;
-- (id)_URLSessionDataDelegate;
-- (id)_URLSessionOperationQueue;
 - (Class)_classForTrackInspectors;
 - (id)_createAVErrorForError:(id)arg1 andFigErrorCode:(int)arg2;
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
@@ -66,7 +64,6 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
 - (id)originalNetworkContentURL;
-- (void)postURLSessionSetUpDidCompleteNotificationIfAppropriate;
 - (id)resolvedURL;
 - (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 

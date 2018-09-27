@@ -23,12 +23,13 @@
 - (void)resetContextTypes:(long long)arg1;
 - (void)resultDidChangeForAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)resultDidChangeForAceCommand:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AceObject<SAAceCommand> *, void*
+- (void)resumeInterruptedAudioPlaybackIfNeeded;
 - (void)rollbackClearContext;
 - (void)sendReplyCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)setAlertContext;
 - (void)setApplicationContext;
 - (void)setCarDNDActive:(bool)arg1;
-- (void)setIsStark:(bool)arg1;
+- (void)setDeviceInStarkMode:(bool)arg1;
 - (void)setLockState:(unsigned long long)arg1;
 - (void)startCorrectedRequestWithText:(NSString *)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(AFUserUtteranceSelectionResults *)arg3;
 - (void)startRequestWithOptions:(AFUIRequestOptions *)arg1;

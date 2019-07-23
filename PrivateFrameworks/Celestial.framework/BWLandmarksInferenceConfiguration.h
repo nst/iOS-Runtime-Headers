@@ -4,6 +4,7 @@
 
 @interface BWLandmarksInferenceConfiguration : BWInferenceConfiguration {
     NSNumber * _cascadeStepCount;
+    bool  _detectLandmarksInFullSizeInput;
     bool  _detectsBlinking;
     unsigned long long  _maximumNumberOfFaces;
     bool  _refinesLeftEyeLandmarks;
@@ -12,6 +13,7 @@
 }
 
 @property (nonatomic, retain) NSNumber *cascadeStepCount;
+@property (nonatomic) bool detectLandmarksInFullSizeInput;
 @property (nonatomic) bool detectsBlinking;
 @property (nonatomic) unsigned long long maximumNumberOfFaces;
 @property (nonatomic) bool refinesLeftEyeLandmarks;
@@ -25,6 +27,7 @@
 
 - (id)cascadeStepCount;
 - (void)dealloc;
+- (bool)detectLandmarksInFullSizeInput;
 - (bool)detectsBlinking;
 - (int)inferenceType;
 - (id)initWithInferenceType:(int)arg1;
@@ -33,6 +36,7 @@
 - (bool)refinesMouthLandmarks;
 - (bool)refinesRightEyeLandmarks;
 - (void)setCascadeStepCount:(id)arg1;
+- (void)setDetectLandmarksInFullSizeInput:(bool)arg1;
 - (void)setDetectsBlinking:(bool)arg1;
 - (void)setMaximumNumberOfFaces:(unsigned long long)arg1;
 - (void)setRefinesLeftEyeLandmarks:(bool)arg1;

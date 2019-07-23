@@ -102,6 +102,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateAttachmentGUIDsWithBlock:(id /* block */)arg1;
 - (unsigned int)errorCode;
 - (long long)expireState;
 - (id)expressiveSendStyleID;

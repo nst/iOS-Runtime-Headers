@@ -59,6 +59,7 @@
     bool  _shouldAutoscrollAfterAppearance;
     NSTimer * _showNowTimer;
     bool  _showsBanner;
+    int  _springAnimatedDecelerationsInProgress;
     NSDateComponents * _targetDateComponents;
     bool  _transitionedToSameDay;
     bool  _viewAppeared;

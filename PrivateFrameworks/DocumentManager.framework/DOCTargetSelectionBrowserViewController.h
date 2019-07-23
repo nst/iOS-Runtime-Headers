@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DocumentManager.framework/DocumentManager
  */
 
-@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCAppearanceProtocol, DOCHostTargetSelectionBrowserViewControllerProxy> {
+@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCAppearanceProtocol, DOCHostTargetSelectionBrowserViewControllerProxy, DOCRemoteViewControllerDelegate> {
     DOCConfiguration * _configuration;
     NSArray * _items;
     DOCAppearance * _lastAppearance;
@@ -32,6 +32,7 @@
 - (void)notifyDelegateOfCancellation;
 - (id)remoteInterface;
 - (id)remoteViewController;
+- (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
 - (void)setTargetSelectionDelegate:(id)arg1;
 - (void)setURLs:(id)arg1;
 - (id)targetSelectionDelegate;

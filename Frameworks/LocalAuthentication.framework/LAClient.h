@@ -31,10 +31,11 @@
 - (void)_serializedInvalidateWithMessage:(id)arg1;
 - (bool)_setPermanentError:(id)arg1;
 - (id)_updateOptions:(id)arg1;
+- (void)authMethodWithReply:(id /* block */)arg1;
 - (void)connectToServerWithInterruptionHandler:(id /* block */)arg1;
 - (void)dealloc;
-- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 reply:(id /* block */)arg4;
-- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(id /* block */)arg5;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(id /* block */)arg5;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(id /* block */)arg3;
 - (void)evaluatePolicy:(long long)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(id /* block */)arg4;
 - (id)externalizedContext;

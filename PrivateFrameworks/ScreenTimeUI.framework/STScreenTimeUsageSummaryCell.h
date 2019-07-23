@@ -6,11 +6,15 @@
     STUsageSummaryView * _usageSummaryView;
 }
 
-@property (nonatomic, retain) STUsageSummaryView *usageSummaryView;
+@property (nonatomic, readonly) STUsageSummaryView *usageSummaryView;
 
 - (void).cxx_destruct;
+- (void)_heightDidChange;
+- (void)_layoutDidChangeFrom:(bool)arg1 to:(bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)setUsageSummaryView:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setValue:(id)arg1;
 - (id)usageSummaryView;
 

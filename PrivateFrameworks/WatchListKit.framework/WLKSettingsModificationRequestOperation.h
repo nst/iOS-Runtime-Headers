@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKSettingsModificationRequestOperation : WLKSettingsRequestOperation {
+@interface WLKSettingsModificationRequestOperation : WLKNetworkRequestOperation {
     NSDictionary * _modifications;
 }
 
-+ (id)URLBagKey;
++ (id)_requestURL:(id*)arg1;
 
 - (void).cxx_destruct;
 - (id)_postBody;
 - (id)initWithModifications:(id)arg1;
-- (id)requestProperties;
+- (void)prepareURLRequest:(id /* block */)arg1;
 
 @end

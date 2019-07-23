@@ -15,6 +15,7 @@
     NSArray * _recordZoneIDs;
     NSMutableArray * _requestInfos;
     bool  _shouldFetchAssetContents;
+    bool  _shouldReportAllPerItemFailures;
 }
 
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) NSArray *recordZoneIDs;
 @property (nonatomic, retain) NSMutableArray *requestInfos;
 @property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic) bool shouldReportAllPerItemFailures;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -77,6 +79,8 @@
 - (void)setRecordZoneIDs:(id)arg1;
 - (void)setRequestInfos:(id)arg1;
 - (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setShouldReportAllPerItemFailures:(bool)arg1;
 - (bool)shouldFetchAssetContents;
+- (bool)shouldReportAllPerItemFailures;
 
 @end

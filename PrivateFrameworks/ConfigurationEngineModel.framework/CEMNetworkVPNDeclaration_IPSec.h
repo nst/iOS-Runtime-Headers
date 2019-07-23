@@ -4,6 +4,8 @@
 
 @interface CEMNetworkVPNDeclaration_IPSec : CEMPayloadBase {
     NSString * _payloadAuthenticationMethod;
+    NSNumber * _payloadDisconnectOnIdle;
+    NSNumber * _payloadDisconnectOnIdleTimer;
     NSString * _payloadLocalIdentifier;
     NSString * _payloadLocalIdentifierType;
     NSNumber * _payloadOnDemandEnabled;
@@ -22,6 +24,8 @@
 }
 
 @property (nonatomic, copy) NSString *payloadAuthenticationMethod;
+@property (nonatomic, copy) NSNumber *payloadDisconnectOnIdle;
+@property (nonatomic, copy) NSNumber *payloadDisconnectOnIdleTimer;
 @property (nonatomic, copy) NSString *payloadLocalIdentifier;
 @property (nonatomic, copy) NSString *payloadLocalIdentifierType;
 @property (nonatomic, copy) NSNumber *payloadOnDemandEnabled;
@@ -40,12 +44,14 @@
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnly;
-+ (id)buildWithRemoteAddress:(id)arg1 withAuthenticationMethod:(id)arg2 withXAuthName:(id)arg3 withXAuthPassword:(id)arg4 withXAuthEnabled:(id)arg5 withXAuthPasswordEncryption:(id)arg6 withLocalIdentifier:(id)arg7 withLocalIdentifierType:(id)arg8 withSharedSecret:(id)arg9 withPayloadCertificateUUID:(id)arg10 withPromptForVPNPIN:(id)arg11 withOnDemandEnabled:(id)arg12 withOnDemandMatchDomainsAlways:(id)arg13 withOnDemandMatchDomainsNever:(id)arg14 withOnDemandMatchDomainsOnRetry:(id)arg15 withOnDemandRules:(id)arg16;
++ (id)buildWithRemoteAddress:(id)arg1 withAuthenticationMethod:(id)arg2 withXAuthName:(id)arg3 withXAuthPassword:(id)arg4 withXAuthEnabled:(id)arg5 withXAuthPasswordEncryption:(id)arg6 withLocalIdentifier:(id)arg7 withLocalIdentifierType:(id)arg8 withSharedSecret:(id)arg9 withPayloadCertificateUUID:(id)arg10 withPromptForVPNPIN:(id)arg11 withOnDemandEnabled:(id)arg12 withOnDemandMatchDomainsAlways:(id)arg13 withOnDemandMatchDomainsNever:(id)arg14 withOnDemandMatchDomainsOnRetry:(id)arg15 withOnDemandRules:(id)arg16 withDisconnectOnIdle:(id)arg17 withDisconnectOnIdleTimer:(id)arg18;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)loadPayload:(id)arg1 error:(id*)arg2;
 - (id)payloadAuthenticationMethod;
+- (id)payloadDisconnectOnIdle;
+- (id)payloadDisconnectOnIdleTimer;
 - (id)payloadLocalIdentifier;
 - (id)payloadLocalIdentifierType;
 - (id)payloadOnDemandEnabled;
@@ -63,6 +69,8 @@
 - (id)payloadXAuthPasswordEncryption;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (void)setPayloadAuthenticationMethod:(id)arg1;
+- (void)setPayloadDisconnectOnIdle:(id)arg1;
+- (void)setPayloadDisconnectOnIdleTimer:(id)arg1;
 - (void)setPayloadLocalIdentifier:(id)arg1;
 - (void)setPayloadLocalIdentifierType:(id)arg1;
 - (void)setPayloadOnDemandEnabled:(id)arg1;

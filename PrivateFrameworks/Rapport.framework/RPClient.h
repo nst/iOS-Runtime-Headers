@@ -31,6 +31,7 @@
 - (void)diagnosticShow:(id)arg1 level:(int)arg2 completion:(id /* block */)arg3;
 - (id)dispatchQueue;
 - (void)getIdentitiesWithCompletion:(id /* block */)arg1;
+- (void)getIdentitiesWithFlags:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;

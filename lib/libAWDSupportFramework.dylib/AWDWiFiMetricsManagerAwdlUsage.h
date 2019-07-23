@@ -19,6 +19,7 @@
     unsigned int  _cachedPeersOn5G;
     unsigned int  _cachedPeersOnDFS;
     unsigned int  _cachedPeersSameInfra;
+    AWDWifiAwdlD2dMigrationStats * _d2dMigrationStats;
     unsigned int  _dfspAirplayConnected;
     unsigned int  _dfspAirplayFailed;
     unsigned int  _dfspCSAReceivedFromAP;
@@ -105,6 +106,7 @@
 @property (nonatomic) unsigned int cachedPeersOn5G;
 @property (nonatomic) unsigned int cachedPeersOnDFS;
 @property (nonatomic) unsigned int cachedPeersSameInfra;
+@property (nonatomic, retain) AWDWifiAwdlD2dMigrationStats *d2dMigrationStats;
 @property (nonatomic) unsigned int dfspAirplayConnected;
 @property (nonatomic) unsigned int dfspAirplayFailed;
 @property (nonatomic) unsigned int dfspCSAReceivedFromAP;
@@ -128,6 +130,7 @@
 @property (nonatomic) bool hasCachedPeersOn5G;
 @property (nonatomic) bool hasCachedPeersOnDFS;
 @property (nonatomic) bool hasCachedPeersSameInfra;
+@property (nonatomic, readonly) bool hasD2dMigrationStats;
 @property (nonatomic) bool hasDfspAirplayConnected;
 @property (nonatomic) bool hasDfspAirplayFailed;
 @property (nonatomic) bool hasDfspCSAReceivedFromAP;
@@ -203,6 +206,7 @@
 - (void)clearStates;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)d2dMigrationStats;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)dfspAirplayConnected;
@@ -229,6 +233,7 @@
 - (bool)hasCachedPeersOn5G;
 - (bool)hasCachedPeersOnDFS;
 - (bool)hasCachedPeersSameInfra;
+- (bool)hasD2dMigrationStats;
 - (bool)hasDfspAirplayConnected;
 - (bool)hasDfspAirplayFailed;
 - (bool)hasDfspCSAReceivedFromAP;
@@ -295,6 +300,7 @@
 - (void)setCachedPeersOn5G:(unsigned int)arg1;
 - (void)setCachedPeersOnDFS:(unsigned int)arg1;
 - (void)setCachedPeersSameInfra:(unsigned int)arg1;
+- (void)setD2dMigrationStats:(id)arg1;
 - (void)setDfspAirplayConnected:(unsigned int)arg1;
 - (void)setDfspAirplayFailed:(unsigned int)arg1;
 - (void)setDfspCSAReceivedFromAP:(unsigned int)arg1;

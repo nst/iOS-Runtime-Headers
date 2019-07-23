@@ -3,6 +3,7 @@
  */
 
 @interface AVButton : UIButton {
+    UIVisualEffectView * _backgroundEffectView;
     bool  _clampsHitRectInsetsWhenContainedInScrollableView;
     bool  _collapsed;
     bool  _disablesHighlightWhenLongPressed;
@@ -36,10 +37,12 @@
     double  _trackingStartTime;
     bool  _treatsForcePressAsLongPress;
     AVUserInteractionObserverGestureRecognizer * _userInteractionGestureRecognizer;
+    bool  _usesBackgroundEffectViewForTextOnlyButtons;
     bool  _wasForcePressTriggered;
     bool  _wasLongPressed;
 }
 
+@property (nonatomic, retain) UIVisualEffectView *backgroundEffectView;
 @property (nonatomic) bool clampsHitRectInsetsWhenContainedInScrollableView;
 @property (getter=isCollapsed, nonatomic) bool collapsed;
 @property (getter=isCollapsedOrExcluded, nonatomic, readonly) bool collapsedOrExcluded;
@@ -66,6 +69,7 @@
 @property (nonatomic) double trackingStartTime;
 @property (nonatomic) bool treatsForcePressAsLongPress;
 @property (nonatomic, retain) AVUserInteractionObserverGestureRecognizer *userInteractionGestureRecognizer;
+@property (nonatomic) bool usesBackgroundEffectViewForTextOnlyButtons;
 @property (nonatomic) bool wasForcePressTriggered;
 @property (nonatomic) bool wasLongPressed;
 
@@ -76,8 +80,11 @@
 - (id)_preferredImageName;
 - (struct CGSize { double x1; double x2; })_preferredLayoutSize;
 - (void)_resetTrackedState;
+- (void)_updateBackgroundEffectViewIsHidden;
+- (void)_updateEdgeInsets;
 - (void)_updateImageIfNeeded;
 - (void)_updateIsHiddenAndAlpha;
+- (id)backgroundEffectView;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)clampsHitRectInsetsWhenContainedInScrollableView;
@@ -102,12 +109,14 @@
 - (bool)isCollapsed;
 - (bool)isCollapsedOrExcluded;
 - (bool)isIncluded;
+- (void)layoutSubviews;
 - (id)longPressTimer;
 - (double)maximumForceSinceTrackingBegan;
 - (id)micaPackage;
 - (bool)multipleTouchesEndsTracking;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)previousHorizontalPositionOfLongPress;
+- (void)setBackgroundEffectView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setClampsHitRectInsetsWhenContainedInScrollableView:(bool)arg1;
 - (void)setCollapsed:(bool)arg1;
@@ -134,14 +143,17 @@
 - (void)setMicaPackage:(id)arg1;
 - (void)setMultipleTouchesEndsTracking:(bool)arg1;
 - (void)setPreviousHorizontalPositionOfLongPress:(id)arg1;
+- (void)setTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setTrackingStartTime:(double)arg1;
 - (void)setTreatsForcePressAsLongPress:(bool)arg1;
 - (void)setUserInteractionGestureRecognizer:(id)arg1;
+- (void)setUsesBackgroundEffectViewForTextOnlyButtons:(bool)arg1;
 - (void)setWasForcePressTriggered:(bool)arg1;
 - (void)setWasLongPressed:(bool)arg1;
 - (double)trackingStartTime;
 - (bool)treatsForcePressAsLongPress;
 - (id)userInteractionGestureRecognizer;
+- (bool)usesBackgroundEffectViewForTextOnlyButtons;
 - (bool)wasForcePressTriggered;
 - (bool)wasLongPressed;
 - (void)willMoveToWindow:(id)arg1;

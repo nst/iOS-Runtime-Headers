@@ -5,16 +5,14 @@
 @interface TSAPdfHyperlinkController : NSObject {
     NSMutableArray * mDestinations;
     NSMutableArray * mHyperlinks;
-    NSMutableArray * mOutlines;
 }
 
+- (void).cxx_destruct;
 - (void)addHyperlinkForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withUrl:(id)arg2 context:(struct CGContext { }*)arg3;
 - (void)addHyperlinksForContents:(id)arg1 context:(struct CGContext { }*)arg2;
 - (void)addHyperlinksForRep:(id)arg1 context:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })canvasRect;
 - (void)commitHyperlinksToPDF:(struct CGContext { }*)arg1 targetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
-- (void)commitOutlinesToPDF:(struct CGContext { }*)arg1;
-- (void)dealloc;
 - (id)destinationFromUrl:(id)arg1;
 - (bool)ignoreUrl:(id)arg1;
 - (id)init;

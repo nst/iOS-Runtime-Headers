@@ -16,6 +16,7 @@
     long long  _encodingType;
     NSString * _fallbackActivityType;
     unsigned long long  _indexInApplicationDefinedActivities;
+    bool  _isCapabilityBasedActivity;
     NSString * _overrideTitle;
     NSString * _positionBeforeActivityType;
     struct CGSize { 
@@ -39,6 +40,7 @@
 @property (nonatomic) long long encodingType;
 @property (nonatomic, readonly) NSString *fallbackActivityType;
 @property (nonatomic, readonly) unsigned long long indexInApplicationDefinedActivities;
+@property (nonatomic) bool isCapabilityBasedActivity;
 @property (nonatomic, retain) NSString *overrideTitle;
 @property (nonatomic, readonly) NSString *positionBeforeActivityType;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredThumbnailSize;
@@ -75,6 +77,7 @@
 - (unsigned long long)indexInApplicationDefinedActivities;
 - (id)initWithActivity:(id)arg1 encodingType:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
+- (bool)isCapabilityBasedActivity;
 - (id)overrideTitle;
 - (id)positionBeforeActivityType;
 - (struct CGSize { double x1; double x2; })preferredThumbnailSize;
@@ -82,6 +85,7 @@
 - (void)setActivityImageConfiguration:(id)arg1;
 - (void)setActivitySettingsImageConfiguration:(id)arg1;
 - (void)setEncodingType:(long long)arg1;
+- (void)setIsCapabilityBasedActivity:(bool)arg1;
 - (void)setOverrideTitle:(id)arg1;
 - (id)settingsImage;
 - (void)updateConfigurationWithOverrideTitle:(id)arg1;

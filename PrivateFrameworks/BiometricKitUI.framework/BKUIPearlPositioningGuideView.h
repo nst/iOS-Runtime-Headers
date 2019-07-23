@@ -19,10 +19,12 @@
     }  _portalCenter;
     double  _postCornerLength;
     double  _ringRadius;
+    CAShapeLayer * _roundedRectMaskLayer;
     double  _startCornerRadius;
     double  _startEdgeDistance;
     double  _startLineAlpha;
     double  _startLineWidth;
+    bool  _startMaskFromCenter;
     struct CGPoint { 
         double x; 
         double y; 
@@ -47,12 +49,16 @@
 @property (nonatomic) double edgeDistance;
 @property (nonatomic) double lineAlpha;
 @property (nonatomic) double lineWidth;
+@property (nonatomic, readonly) double maximumMaskLayerDistanceFromCenter;
+@property (nonatomic, readonly) double minimumMaskLayerDistanceFromCenter;
 @property (nonatomic) struct CGPoint { double x1; double x2; } portalCenter;
 @property (nonatomic) double postCornerLength;
 @property (nonatomic) double ringRadius;
+@property (nonatomic) CAShapeLayer *roundedRectMaskLayer;
 
 - (void).cxx_destruct;
 - (void)_displayTick;
+- (id)_roundedRectMaskForMaskDistance:(double)arg1 portalCenter:(struct CGPoint { double x1; double x2; })arg2 cornerRadius:(double)arg3;
 - (void)_startAnimationWithDuration:(double)arg1 completion:(id /* block */)arg2;
 - (void)_startDisplay;
 - (void)_stopDisplay;
@@ -72,10 +78,15 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)lineAlpha;
 - (double)lineWidth;
+- (double)maximumMaskLayerDistanceFromCenter;
+- (double)minimumMaskLayerDistanceFromCenter;
 - (struct CGPoint { double x1; double x2; })portalCenter;
 - (double)postCornerLength;
+- (void)prepareMaskLayerForReducedMotionOpenTransition;
+- (void)prepareMaskLayerForStartToOpenTransition;
 - (void)resetValuesToStart;
 - (double)ringRadius;
+- (id)roundedRectMaskLayer;
 - (void)setAnimationCompletion:(id /* block */)arg1;
 - (void)setAnimationCurve:(long long)arg1;
 - (void)setAnimationDuration:(double)arg1;
@@ -88,5 +99,7 @@
 - (void)setPortalCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPostCornerLength:(double)arg1;
 - (void)setRingRadius:(double)arg1;
+- (void)setRoundedRectMaskLayer:(id)arg1;
+- (bool)useRegularPadLayout;
 
 @end

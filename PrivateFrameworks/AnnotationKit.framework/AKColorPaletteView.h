@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
  */
 
-@interface AKColorPaletteView : UIControl <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface AKColorPaletteView : UIControl <AKColorChooserUserInterfaceItem, AKInkIsUpdatable, AKUserInterfaceItem, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView * _collectionView;
     UIColor * _color;
     NSArray * _colors;
@@ -38,5 +38,6 @@
 - (void)setColor:(id)arg1;
 - (void)setColors:(id)arg1;
 - (void)setScrollDirection:(long long)arg1;
+- (bool)wantsInkUpdate;
 
 @end

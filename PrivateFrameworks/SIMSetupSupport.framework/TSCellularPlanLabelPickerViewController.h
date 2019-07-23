@@ -22,13 +22,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_doneButtonTapped;
 - (id)associatedPlanItem;
 - (id)chosenLabel;
 - (id)chosenLabelIndexPath;
 - (id)customLabel;
 - (id)customLabelIndexPath;
 - (id)customLabelRowValue;
-- (void)doneClicked;
 - (id)init;
 - (id)initialLabel;
 - (long long)numberOfSectionsInTableView:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface STRootViewModel : NSObject {
+    bool  _canStopScreenTimeWithoutPasscode;
     NSArray * _children;
     NSArray * _devices;
     NSSet * _installedBundleIDs;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) bool canSignIn;
 @property (nonatomic, readonly) bool canStartScreenTime;
 @property (nonatomic, readonly) bool canStopScreenTime;
+@property (nonatomic) bool canStopScreenTimeWithoutPasscode;
 @property (nonatomic, readonly) bool canStopSharingScreenTime;
 @property (nonatomic, readonly) bool canToggleCloudSyncData;
 @property (nonatomic, readonly) bool canToggleWebsiteData;
@@ -50,6 +52,7 @@
 - (bool)canSignIn;
 - (bool)canStartScreenTime;
 - (bool)canStopScreenTime;
+- (bool)canStopScreenTimeWithoutPasscode;
 - (bool)canStopSharingScreenTime;
 - (bool)canToggleCloudSyncData;
 - (bool)canToggleWebsiteData;
@@ -66,6 +69,7 @@
 - (bool)isSharingUsageData;
 - (bool)isWebUsageEnabled;
 - (id)me;
+- (void)setCanStopScreenTimeWithoutPasscode:(bool)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setDevices:(id)arg1;
 - (void)setInstalledBundleIDs:(id)arg1;

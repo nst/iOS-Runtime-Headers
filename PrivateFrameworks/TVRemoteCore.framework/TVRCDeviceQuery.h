@@ -11,6 +11,7 @@
 
 + (id)_allDiscoveredDevices;
 + (void)_allDiscoveredDevicesDidUpdate:(id)arg1;
++ (void)fetchActiveEndpointUIDWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;

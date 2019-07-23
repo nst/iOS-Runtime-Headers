@@ -9,17 +9,12 @@
 
 @property (nonatomic) UIPickerTableView *pickerTable;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_modernCenterCellFont;
 + (id)_modernNonCenterCellFont;
 
 - (void).cxx_destruct;
 - (void)_setIsCenterCell:(bool)arg1 shouldModifyAlphaOfView:(bool)arg2;
 - (void)_tapAction:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)pickerTable;
 - (void)setPickerTable:(id)arg1;

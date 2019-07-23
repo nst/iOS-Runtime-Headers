@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_group> * _fetchRecordsGroup;
     bool  _forcePCSDecrypt;
     NSArray * _fullRecordsToFetch;
+    NSMutableDictionary * _keyOrErrorForHostname;
     id /* block */  _recordFetchCommandBlock;
     id /* block */  _recordFetchCompletionBlock;
     id /* block */  _recordFetchProgressBlock;
@@ -44,6 +45,7 @@
 @property (nonatomic) bool forcePCSDecrypt;
 @property (nonatomic, retain) NSArray *fullRecordsToFetch;
 @property (nonatomic, readonly) bool hasRecordDecryptOperation;
+@property (nonatomic, retain) NSMutableDictionary *keyOrErrorForHostname;
 @property (nonatomic, readonly) CKDDecryptRecordsOperation *recordDecryptOperation;
 @property (nonatomic, copy) id /* block */ recordFetchCommandBlock;
 @property (nonatomic, copy) id /* block */ recordFetchCompletionBlock;
@@ -66,11 +68,12 @@
 - (void)_decryptPropertiesOnRecord:(id)arg1 recordID:(id)arg2;
 - (void)_didDownloadAssetsWithError:(id)arg1;
 - (void)_downloadAssets;
+- (void)_fetchCloudCerts;
 - (void)_findSpecialParticipantsOnShare:(id)arg1 identityDelegate:(id)arg2;
 - (void)_finishAllDownloadTasksWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(bool)arg3 responseCode:(id)arg4;
-- (bool)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 assetTransferOptions:(id)arg4;
+- (int)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 assetTransferOptions:(id)arg4;
 - (id)activityCreate;
 - (id)assetFieldNamesToPublishURLs;
 - (id)assetTransferOptionsByRecordTypeAndKey;
@@ -88,6 +91,7 @@
 - (id)fullRecordsToFetch;
 - (bool)hasRecordDecryptOperation;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
+- (id)keyOrErrorForHostname;
 - (void)main;
 - (bool)makeStateTransition;
 - (id)nameForState:(unsigned long long)arg1;
@@ -112,6 +116,7 @@
 - (void)setFetchRecordsGroup:(id)arg1;
 - (void)setForcePCSDecrypt:(bool)arg1;
 - (void)setFullRecordsToFetch:(id)arg1;
+- (void)setKeyOrErrorForHostname:(id)arg1;
 - (void)setRecordFetchCommandBlock:(id /* block */)arg1;
 - (void)setRecordFetchCompletionBlock:(id /* block */)arg1;
 - (void)setRecordFetchProgressBlock:(id /* block */)arg1;

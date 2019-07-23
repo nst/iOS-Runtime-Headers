@@ -4,9 +4,18 @@
 
 @interface PMLHashingVectorizer : NSObject <PMLPlistAndChunksSerializableProtocol, PMLTransformerProtocol> {
     int  _buckets;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _characterNGramRange;
     bool  _intercept;
-    int  _ngrams;
     bool  _normalize;
+    bool  _shouldNormalizeCharacters;
+    bool  _shouldNormalizeTokens;
+    struct _NSRange { 
+        unsigned long long location; 
+        unsigned long long length; 
+    }  _tokenNGramRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,9 +26,11 @@
 
 + (id)withBucketSize:(int)arg1;
 + (id)withBucketSize:(int)arg1 andNgrams:(int)arg2;
++ (id)withBucketSize:(int)arg1 characterNGramRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 tokenNGramRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 shouldNormalizeTokens:(bool)arg4 shouldNormalizeCharacters:(bool)arg5 withIntercept:(bool)arg6;
 + (id)withBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(bool)arg3;
 
 - (id)init;
+- (id)initWithBucketSize:(int)arg1 characterNGramRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 tokenNGramRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 shouldNormalizeTokens:(bool)arg4 shouldNormalizeCharacters:(bool)arg5 withIntercept:(bool)arg6;
 - (id)initWithBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(bool)arg3;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (bool)normalize;

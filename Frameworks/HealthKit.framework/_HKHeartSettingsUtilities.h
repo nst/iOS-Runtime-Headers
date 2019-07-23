@@ -5,6 +5,7 @@
 @interface _HKHeartSettingsUtilities : NSObject
 
 + (long long)bradycardiaThresholdHeartRate;
++ (void)deleteAtrialFibrillationDetectionLastAnalyzedSampleDate;
 + (id)heartRateSettingsURL;
 + (bool)isBackgroundHeartRateEnabled;
 + (bool)isBradycardiaDetectionEnabled;

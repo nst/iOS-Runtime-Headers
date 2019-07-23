@@ -17,6 +17,7 @@
 
 @optional
 
+- (double)boundingWidthForSnippetViewController:(SiriUISnippetViewController *)arg1;
 - (unsigned long long)navigationIndexOfSnippetViewController:(SiriUISnippetViewController *)arg1;
 - (unsigned long long)siriDeviceLockStateForSnippetViewController:(id <SiriUIViewController>)arg1;
 - (NSSet *)siriEnabledAppListForSiriViewController:(id <SiriUIViewController>)arg1;

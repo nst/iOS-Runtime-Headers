@@ -8,7 +8,6 @@
 @property (nonatomic, readonly) unsigned long long dataOrientation;
 @property (nonatomic, readonly) bool showDescriptorLabels;
 @property (nonatomic, readonly) SXJSONArray *sortBy;
-@property (nonatomic, readonly) NSString *tableStyle;
 
 + (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
 

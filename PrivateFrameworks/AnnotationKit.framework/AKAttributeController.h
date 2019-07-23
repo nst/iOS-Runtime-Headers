@@ -86,5 +86,6 @@
 - (void)syncStrokeColorOnSelectionToUI;
 - (id)textAttributes;
 - (void)updateAttributeSenderState:(id)arg1 segment:(long long)arg2 enabled:(bool)arg3;
+- (void)updateInkIfNeeded:(id)arg1;
 
 @end

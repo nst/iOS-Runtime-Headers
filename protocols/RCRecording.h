@@ -24,6 +24,7 @@
 - (NSString *)title;
 - (NSString *)titleDisallowingEmptyString;
 - (NSString *)uniqueID;
+- (bool)uploaded;
 - (NSURL *)url;
 
 @end

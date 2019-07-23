@@ -20,8 +20,6 @@
 @property (nonatomic, retain) UIColor *selectionTintColor;
 @property (nonatomic) long long separatorStyle;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)_flushCacheOnNotification:(id)arg1;
 + (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 sectionCornerRadius:(double)arg3 cornerRadiusAdjustment:(double)arg4 sectionBorderWidth:(double)arg5 forBorder:(bool)arg6;
 + (void)initialize;
@@ -43,9 +41,6 @@
 - (id)_topShadowColor;
 - (id)_topShadowViewWithColor:(id)arg1;
 - (bool)_usesResizableBackgroundImage;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundColor;
 - (void)displayLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

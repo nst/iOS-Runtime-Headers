@@ -33,11 +33,11 @@
     int  _hydraSettlingTimeInMs;
     int  _initalPhaseInDegrees;
     int  _inputFrameSizeInBytes;
-    bool  _isAudioPathInitialized;
     bool  _isCalibrationDone;
     bool  _isMeasurementDone;
     bool  _isPowerAssertionHeld;
     unsigned short  _maxOutputAmplitude;
+    double  _measurementCondetSNR;
     double  _measurementCurrentNoiseLevel;
     double  _measurementCurrentSNR;
     double  _measurementCurrentSignalLevel;
@@ -114,11 +114,11 @@
 @property int hydraSettlingTimeInMs;
 @property int initalPhaseInDegrees;
 @property int inputFrameSizeInBytes;
-@property bool isAudioPathInitialized;
 @property bool isCalibrationDone;
 @property bool isMeasurementDone;
 @property bool isPowerAssertionHeld;
 @property unsigned short maxOutputAmplitude;
+@property (readonly) double measurementCondetSNR;
 @property (readonly) double measurementCurrentNoiseLevel;
 @property (readonly) double measurementCurrentSNR;
 @property (readonly) double measurementCurrentSignalLevel;
@@ -170,12 +170,11 @@
 - (void)_deinitAudioPath;
 - (void)_destroySleepWakeNotifier;
 - (void)_disconnectFromAccessoryManager;
-- (bool)_doHalogenLdcmCalc;
+- (bool)_doHalogenLdcmCalc:(bool)arg1 isReceptacleWet:(bool)arg2;
 - (void)_freeBuffers;
 - (void)_generateSineWave;
 - (bool)_holdPowerAssertion:(bool)arg1;
 - (bool)_initAudioPath;
-- (bool)_reinitAudioPath;
 - (void)_resetCalcValues;
 - (id)arbiterClient;
 - (bool)arbiterLocked;
@@ -199,7 +198,7 @@
 - (double)currentGainCorrection;
 - (double)currentPhaseCompensation;
 - (void)dealloc;
-- (int)doMeasurement:(bool)arg1 onPin:(int)arg2;
+- (int)doMeasurement:(bool)arg1 onPin:(int)arg2 isReceptacleEmpty:(bool)arg3 isReceptacleWet:(bool)arg4;
 - (unsigned long long)eisPinToken1;
 - (unsigned long long)eisPinToken2;
 - (id)getResultString;
@@ -211,9 +210,9 @@
 - (id)initWithSize:(int)arg1 onPort:(int)arg2;
 - (int)initalPhaseInDegrees;
 - (int)inputFrameSizeInBytes;
-- (bool)isAudioPathInitialized;
 - (bool)isBoundViolation_currentGainCorrection;
 - (bool)isBoundViolation_currentPhaseCompensation;
+- (bool)isBoundViolation_measurementCondetSNR;
 - (bool)isBoundViolation_voltageGainCorrection;
 - (bool)isCalibrationDone;
 - (bool)isLowerBoundViolation_goertzelImpedance;
@@ -223,6 +222,7 @@
 - (bool)isUpperBoundViolation_goertzelImpedance;
 - (bool)isUpperBoundViolation_goertzelPhase;
 - (unsigned short)maxOutputAmplitude;
+- (double)measurementCondetSNR;
 - (double)measurementCurrentNoiseLevel;
 - (double)measurementCurrentSNR;
 - (double)measurementCurrentSignalLevel;
@@ -271,7 +271,6 @@
 - (void)setHydraSettlingTimeInMs:(int)arg1;
 - (void)setInitalPhaseInDegrees:(int)arg1;
 - (void)setInputFrameSizeInBytes:(int)arg1;
-- (void)setIsAudioPathInitialized:(bool)arg1;
 - (void)setIsCalibrationDone:(bool)arg1;
 - (void)setIsMeasurementDone:(bool)arg1;
 - (void)setIsPowerAssertionHeld:(bool)arg1;

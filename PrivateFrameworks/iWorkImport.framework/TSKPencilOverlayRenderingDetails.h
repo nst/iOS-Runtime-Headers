@@ -5,10 +5,10 @@
 @interface TSKPencilOverlayRenderingDetails : NSObject {
     TSPData * _dataToInvalidateFromAfterDownload;
     bool  _isSplit;
-    NSMutableArray * _mutableUnscaledSelectionRectangles;
+    unsigned long long  _pageIndex;
     <TSKPencilAnnotationStorage> * _pencilAnnotationStorage;
     TSUImage * _scaledImage;
-    PKDrawing * _subDrawing;
+    TSKPKDrawing * _subDrawing;
     TSUBezierPath * _transformedPath;
     struct CGRect { 
         struct CGPoint { 
@@ -30,40 +30,41 @@
             double height; 
         } size; 
     }  _unscaledImageFrame;
+    TSKPencilOverlayAnchorSelectionRectangle * _unscaledSelectionRectangle;
 }
 
 @property (nonatomic, readonly) TSPData *dataToInvalidateFromAfterDownload;
 @property (nonatomic) bool isSplit;
-@property (nonatomic, retain) NSMutableArray *mutableUnscaledSelectionRectangles;
+@property (nonatomic) unsigned long long pageIndex;
 @property (nonatomic, retain) <TSKPencilAnnotationStorage> *pencilAnnotationStorage;
 @property (nonatomic, readonly) TSUImage *scaledImage;
-@property (nonatomic, retain) PKDrawing *subDrawing;
+@property (nonatomic, retain) TSKPKDrawing *subDrawing;
 @property (nonatomic, retain) TSUBezierPath *transformedPath;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledImageClipRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledImageFrame;
-@property (nonatomic, readonly) NSArray *unscaledSelectionRectangles;
+@property (nonatomic, retain) TSKPencilOverlayAnchorSelectionRectangle *unscaledSelectionRectangle;
 
 - (void).cxx_destruct;
-- (void)addUnscaledSelectionRectangle:(id)arg1;
 - (bool)containsPointForHitTesting:(struct CGPoint { double x1; double x2; })arg1;
 - (id)dataToInvalidateFromAfterDownload;
 - (id)description;
 - (id)initWithPencilAnnotation:(id)arg1 scaledImage:(id)arg2 dataToInvalidateFromAfterDownload:(id)arg3;
 - (bool)isSplit;
-- (id)mutableUnscaledSelectionRectangles;
+- (unsigned long long)pageIndex;
 - (id)pencilAnnotationStorage;
 - (id)scaledImage;
 - (void)setIsSplit:(bool)arg1;
-- (void)setMutableUnscaledSelectionRectangles:(id)arg1;
+- (void)setPageIndex:(unsigned long long)arg1;
 - (void)setPencilAnnotationStorage:(id)arg1;
 - (void)setSubDrawing:(id)arg1;
 - (void)setTransformedPath:(id)arg1;
 - (void)setUnscaledImageClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setUnscaledImageFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUnscaledSelectionRectangle:(id)arg1;
 - (id)subDrawing;
 - (id)transformedPath;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledImageClipRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledImageFrame;
-- (id)unscaledSelectionRectangles;
+- (id)unscaledSelectionRectangle;
 
 @end

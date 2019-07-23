@@ -3,11 +3,12 @@
  */
 
 @interface CPGridTemplate : CPTemplate <CPBarButtonProviding, CPGridTemplateClientDelegate> {
-    NSMutableArray * _buttons;
+    NSArray * _buttons;
     NSArray * _gridButtons;
     NSString * _title;
 }
 
+@property (nonatomic, retain) CPBarButton *backButton;
 @property (nonatomic, readonly) NSArray *buttons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

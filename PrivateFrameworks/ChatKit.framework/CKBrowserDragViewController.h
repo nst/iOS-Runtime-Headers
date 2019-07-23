@@ -179,6 +179,7 @@
 - (struct CGPoint { double x1; double x2; })dragViewCenter;
 - (double)dragViewRotation;
 - (double)dragViewScale;
+- (double)dragViewScaleUp;
 - (id)dropShadowLayer;
 - (struct CGPoint { double x1; double x2; })dropShadowLayerStartPosition;
 - (id)elasticFunctionPositionX;

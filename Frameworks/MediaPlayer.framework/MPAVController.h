@@ -227,7 +227,6 @@
 - (void)_delayedSetCurrentTime;
 - (void)_delayedUpdateScanningRate;
 - (void)_delayedUpdateTimeMarker;
-- (void)_delegateAuthorizationForItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)_disconnectAVPlayerWithReason:(long long)arg1;
 - (long long)_displayPlaybackState;
 - (void)_durationDidChange:(id)arg1;
@@ -348,10 +347,10 @@
 - (bool)canSeekBackwards;
 - (bool)canSeekForwards;
 - (bool)canSkipToSeekableEnd;
-- (void)changePlaybackIndexBy:(long long)arg1;
-- (void)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2;
-- (void)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(bool)arg3;
-- (void)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(bool)arg3 allowSkippingUnskippableContent:(bool)arg4;
+- (bool)changePlaybackIndexBy:(long long)arg1;
+- (bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2;
+- (bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(bool)arg3;
+- (bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(bool)arg3 allowSkippingUnskippableContent:(bool)arg4;
 - (bool)changePlaybackIndexBy:(long long)arg1 deltaType:(long long)arg2 ignoreElapsedTime:(bool)arg3 allowSkippingUnskippableContent:(bool)arg4 error:(id*)arg5;
 - (id)currentItem;
 - (id)currentMediaItem;

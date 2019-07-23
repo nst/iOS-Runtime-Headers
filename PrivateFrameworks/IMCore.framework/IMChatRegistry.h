@@ -156,6 +156,8 @@
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(bool)arg3 newGUID:(id)arg4;
 - (void)_registerChatDictionary:(id)arg1 forChat:(id)arg2 isIncoming:(bool)arg3 newGUID:(id)arg4 shouldPostNotification:(bool)arg5;
 - (void)_registerCompletion:(id /* block */)arg1 forQueryID:(id)arg2;
+- (void)_removeChatIdFromChatIdToLastMessageItemMap:(id)arg1;
+- (void)_removeFromGroupParticipantToChatsMap:(id)arg1;
 - (void)_resetChatReconstructionGroupMaps;
 - (void)_resetChatRegistry;
 - (void)_setChatHasCommunicatedOveriMessage:(id)arg1;

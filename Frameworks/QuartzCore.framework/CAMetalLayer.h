@@ -3,13 +3,14 @@
  */
 
 @interface CAMetalLayer : CALayer {
-    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; struct List<_CAMetalDrawablePrivate *> {} *x6; unsigned int x7; struct _CAMetalDrawablePrivate {} *x8; id x9; struct CGSize { double x_10_1_1; double x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct Atomic { struct { int x_1_2_1; } x_15_1_1; } x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
+    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; double x6; struct List<_CAMetalDrawablePrivate *> {} *x7; unsigned int x8; id x9; struct CGSize { double x_10_1_1; double x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct Atomic { struct { int x_1_2_1; } x_15_1_1; } x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
 }
 
 @property bool allowsNextDrawableTimeout;
 @property (retain) <MTLDevice> *device;
 @property (readonly) unsigned long long displayCompositingInternalStatus;
 @property struct CGSize { double x1; double x2; } drawableSize;
+@property double drawableTimeoutSeconds;
 @property bool fenceEnabled;
 @property bool framebufferOnly;
 @property double inputTime;
@@ -19,7 +20,6 @@
 @property unsigned long long pixelFormat;
 @property bool presentsWithTransaction;
 @property bool serverSyncEnabled;
-@property bool wantsExtendedDynamicRangeContent;
 
 + (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;
@@ -35,6 +35,7 @@
 - (unsigned long long)displayCompositingInternalStatus;
 - (bool)displaySyncEnabled;
 - (struct CGSize { double x1; double x2; })drawableSize;
+- (double)drawableTimeoutSeconds;
 - (bool)fenceEnabled;
 - (bool)framebufferOnly;
 - (id)init;
@@ -55,6 +56,7 @@
 - (void)setDevice:(id)arg1;
 - (void)setDisplaySyncEnabled:(bool)arg1;
 - (void)setDrawableSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDrawableTimeoutSeconds:(double)arg1;
 - (void)setFenceEnabled:(bool)arg1;
 - (void)setFramebufferOnly:(bool)arg1;
 - (void)setInputTime:(double)arg1;

@@ -22,7 +22,7 @@
 - (bool)isAsynchronous;
 - (void)main;
 - (void)performSyncDown;
-- (void)performSyncDownAfterPrewarm;
+- (void)performSyncDown2;
 - (void)startPerfMetrics;
 
 @end

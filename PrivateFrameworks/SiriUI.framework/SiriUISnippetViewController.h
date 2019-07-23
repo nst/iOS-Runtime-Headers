@@ -18,6 +18,7 @@
     UICollectionReusableView<SiriUIReusableView> * _footerView;
     SAUIAppPunchOut * _headerPunchOut;
     UICollectionReusableView<SiriUIReusableView> * _headerView;
+    struct NSUUID { Class x1; } * _instrumentationTurnIdentifier;
     bool  _isFullPadWidth;
     bool  _isTransparent;
     bool  _loading;
@@ -48,6 +49,7 @@
 @property (nonatomic) <SiriUISnippetViewControllerDelegate> *delegate;
 @property (nonatomic, retain) SAUIAppPunchOut *headerPunchOut;
 @property (getter=isIndicatingActivity, nonatomic, readonly) bool indicatingActivity;
+@property (nonatomic, retain) NSUUID *instrumentationTurnIdentifier;
 @property (nonatomic) bool isFullPadWidth;
 @property (nonatomic) bool isTransparent;
 @property (getter=isLoading, nonatomic) bool loading;
@@ -115,6 +117,7 @@
 - (void)headerTapped:(id)arg1;
 - (Class)headerViewClass;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (struct NSUUID { Class x1; }*)instrumentationTurnIdentifier;
 - (bool)isCancelled;
 - (bool)isConfirmed;
 - (bool)isFullPadWidth;
@@ -134,6 +137,7 @@
 - (void)setDefaultKeylineType:(long long)arg1;
 - (void)setDefaultViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHeaderPunchOut:(id)arg1;
+- (void)setInstrumentationTurnIdentifier:(struct NSUUID { Class x1; }*)arg1;
 - (void)setIsFullPadWidth:(bool)arg1;
 - (void)setIsTransparent:(bool)arg1;
 - (void)setLoading:(bool)arg1;

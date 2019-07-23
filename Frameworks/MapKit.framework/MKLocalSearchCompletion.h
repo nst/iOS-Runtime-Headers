@@ -23,10 +23,12 @@
 @property (nonatomic, readonly) NSArray *displayLines;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
 @property (getter=_hasDisambiguationRadiusMeters, nonatomic, readonly) bool hasDisambiguationRadiusMeters;
+@property (nonatomic, readonly) bool hasSortPriority;
 @property (nonatomic, copy) NSString *localizedSectionHeader;
 @property (nonatomic, readonly) MKMapItem *mapItem;
 @property (getter=_placeType, nonatomic, readonly) int placeType;
 @property (nonatomic, readonly) GEORetainedSearchMetadata *retainedSearchMetadata;
+@property (nonatomic, readonly) long long sortPriority;
 @property (nonatomic, copy) NSString *sourceID;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (nonatomic, readonly) NSArray *subtitleHighlightRanges;
@@ -51,6 +53,7 @@
 - (id)displayLines;
 - (id)geoCompletionItem;
 - (bool)getCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg1;
+- (bool)hasSortPriority;
 - (unsigned long long)hash;
 - (id)highlightsForLine:(unsigned long long)arg1;
 - (id)iconWithScale:(double)arg1;
@@ -66,6 +69,7 @@
 - (void)setDirectionIntentOrigin:(id)arg1;
 - (void)setLocalizedSectionHeader:(id)arg1;
 - (void)setSourceID:(id)arg1;
+- (long long)sortPriority;
 - (id)sourceID;
 - (id)subtitle;
 - (id)subtitleHighlightRanges;

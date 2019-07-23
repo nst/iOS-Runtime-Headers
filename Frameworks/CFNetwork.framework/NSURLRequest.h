@@ -84,6 +84,10 @@
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (id)sl_urlRequestWithToken:(id)arg1 forURLString:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
 - (id)aa_HTTPBody;
@@ -122,6 +126,10 @@
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
++ (id)wlk_requestWithURL:(id)arg1 httpMethod:(id)arg2 httpHeaders:(id)arg3 cachePolicy:(unsigned long long)arg4 timeout:(double)arg5;
 
 // Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
 

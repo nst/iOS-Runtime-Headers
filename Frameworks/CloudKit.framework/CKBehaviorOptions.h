@@ -104,6 +104,7 @@
 - (double)publicIdentitiesExpirationTimeout;
 - (unsigned long long)recentProxiesToSave;
 - (unsigned long long)recordCacheSizeLimit;
+- (id)recordNamesForFakingDecryptionFailure;
 - (bool)rollRecordMasterKeysOnUnshare;
 - (bool)rollRecordPCSMasterKeys;
 - (bool)rollZonePCSIdentities;

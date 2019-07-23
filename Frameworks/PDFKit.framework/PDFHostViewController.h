@@ -17,17 +17,20 @@
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsInDocument;
+- (struct CGSize { double x1; double x2; })_documentViewSize;
+- (void)_endPDFViewRotationAnimated:(bool)arg1 withUpdate:(bool)arg2;
 - (void)_gestureInit;
 - (bool)_hasDraggableSelectionAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (double)_hostScrollViewZoomScale;
 - (bool)_isTouchingLollipopAtLocationOfFirstTouch:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_resetContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_pdfViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_pdfViewSafeAreaInsets;
 - (void)_resetPDFHostViewControllerViews;
 - (void)_setMaximumZoomScale:(double)arg1;
 - (void)_setMinimumZoomScale:(double)arg1;
-- (void)_setupContentInsets;
 - (void)_setupExtensionInterruptionBlock;
 - (unsigned long long)_typeForGestureRecognizer:(id)arg1;
-- (void)_updateContentInsets;
 - (void)appendPasswordUI;
 - (void)beginPDFViewRotation;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -43,7 +46,7 @@
 - (void)didLongPressURL:(id)arg1 atLocation:(struct CGPoint { double x1; double x2; })arg2 withAnnotationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)documentIsLocked:(bool)arg1;
 - (void)endPDFViewRotation;
-- (void)endPDFViewRotation:(struct CGSize { double x1; double x2; })arg1 horizontalScaleFactor:(double)arg2 documentViewCenter:(struct CGPoint { double x1; double x2; })arg3 documentViewSize:(struct CGSize { double x1; double x2; })arg4;
+- (void)endPDFViewRotationWithContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)findString:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)findStringUpdate:(unsigned long long)arg1 done:(bool)arg2;
 - (void)focusOnSearchResultAtIndex:(unsigned long long)arg1;
@@ -58,6 +61,7 @@
 - (void)killExtensionProcess;
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (long long)pageCount;
 - (id)pageNumberIndicator;
 - (void)selectAll:(id)arg1;
@@ -68,11 +72,12 @@
 - (void)setTextSelectionPoints:(struct CGPoint { double x1; double x2; })arg1 right:(struct CGPoint { double x1; double x2; })arg2;
 - (void)setTextSelectionState:(int)arg1;
 - (void)setup;
-- (void)setupAutoScaleFactor:(struct CGSize { double x1; double x2; })arg1;
-- (void)setupScrollViewContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setupDocumentViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)showTextSelectionMenu:(bool)arg1 selectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)updateAutoScaleFactor;
 - (void)updateCurrentPageIndex:(long long)arg1;
 - (void)updateDocumentIsLocked:(bool)arg1;
+- (void)updateDocumentViewSize;
 - (void)updatePDFViewLayout;
 - (void)updatePageCount:(long long)arg1;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;

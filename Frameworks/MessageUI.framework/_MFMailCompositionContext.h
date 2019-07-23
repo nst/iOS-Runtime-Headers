@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface _MFMailCompositionContext : NSObject <MFMailCompositionUTITypes> {
-    NSArray * UTITypes;
+@interface _MFMailCompositionContext : NSObject <MFMailCompositionAdditionalDonating> {
+    NSArray * _UTITypes;
     MFAttachmentCompositionContext * _attachmentContext;
     NSString * _attachmentToMarkupContentID;
     NSString * _autosaveIdentifier;
@@ -11,7 +11,10 @@
     UIView<MFComposeBodyField> * _bodyField;
     unsigned long long  _caretPosition;
     NSArray * _ccRecipients;
+    NSArray * _cloudPhotoIDs;
     int  _composeType;
+    NSArray * _contentText;
+    NSArray * _contentURLs;
     NSMutableArray * _deferredAttachments;
     bool  _includeAttachments;
     bool  _loadRest;
@@ -20,6 +23,7 @@
     id  _originalContent;
     MFMailMessage * _originalMessage;
     NSString * _originatingBundleID;
+    NSArray * _photoIDs;
     bool  _prefersFirstLineSelection;
     bool  _registeredForDraw;
     NSString * _sendingAddress;
@@ -39,7 +43,10 @@
 @property UIView<MFComposeBodyField> *bodyField;
 @property (nonatomic) unsigned long long caretPosition;
 @property (nonatomic, copy) NSArray *ccRecipients;
+@property (nonatomic, copy) NSArray *cloudPhotoIDs;
 @property (nonatomic, readonly) int composeType;
+@property (nonatomic, copy) NSArray *contentText;
+@property (nonatomic, copy) NSArray *contentURLs;
 @property (nonatomic, readonly) NSString *contextID;
 @property (nonatomic) bool includeAttachments;
 @property (nonatomic) bool loadRest;
@@ -47,6 +54,7 @@
 @property (nonatomic, retain) id originalContent;
 @property (nonatomic, readonly) MFMailMessage *originalMessage;
 @property (nonatomic, copy) NSString *originatingBundleID;
+@property (nonatomic, copy) NSArray *photoIDs;
 @property (nonatomic) bool prefersFirstLineSelection;
 @property (nonatomic, copy) NSString *sendingAddress;
 @property (nonatomic) bool showContentImmediately;
@@ -69,10 +77,14 @@
 - (id)bodyField;
 - (unsigned long long)caretPosition;
 - (id)ccRecipients;
+- (id)cloudPhotoIDs;
 - (int)composeType;
+- (id)contentText;
+- (id)contentURLs;
 - (void)contextDidDraw:(id)arg1;
 - (id)contextID;
 - (void)dealloc;
+- (bool)hasDuetDonationContext;
 - (bool)includeAttachments;
 - (id)init;
 - (id)initDraftRestoreOfMessage:(id)arg1;
@@ -96,6 +108,7 @@
 - (id)originalContent;
 - (id)originalMessage;
 - (id)originatingBundleID;
+- (id)photoIDs;
 - (bool)prefersFirstLineSelection;
 - (void)recordPasteboardAttachmentsForURLs:(id)arg1;
 - (void)recordUndoAttachmentsForURLs:(id)arg1;
@@ -106,12 +119,16 @@
 - (void)setBodyField:(id)arg1;
 - (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setCcRecipients:(id)arg1;
+- (void)setCloudPhotoIDs:(id)arg1;
+- (void)setContentText:(id)arg1;
+- (void)setContentURLs:(id)arg1;
 - (void)setIncludeAttachments:(bool)arg1;
 - (void)setLoadRest:(bool)arg1;
 - (void)setLoadingContext:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(bool)arg2;
 - (void)setOriginalContent:(id)arg1;
 - (void)setOriginatingBundleID:(id)arg1;
+- (void)setPhotoIDs:(id)arg1;
 - (void)setPrefersFirstLineSelection:(bool)arg1;
 - (void)setSendingAddress:(id)arg1;
 - (void)setShowContentImmediately:(bool)arg1;

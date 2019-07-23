@@ -3,6 +3,7 @@
  */
 
 @interface VKTileProvider : NSObject <VKLRUCacheDelegate, VKTileSourceClient> {
+    bool  _canceled;
     <VKTileProviderClient> * _client;
     double  _contentScale;
     <VKMapLayer> * _debugLayer;
@@ -96,6 +97,7 @@
     bool  _useStableFallback;
 }
 
+@property (getter=isCanceled, nonatomic, readonly) bool canceled;
 @property (nonatomic) <VKTileProviderClient> *client;
 @property (nonatomic) double contentScale;
 @property (readonly, copy) NSString *debugDescription;
@@ -136,7 +138,7 @@
 - (bool)canRenderTile:(id)arg1;
 - (void)cancelLoadForMapTile:(id)arg1;
 - (void)cancelLoadingTiles;
-- (void)changeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 toState:(unsigned long long)arg2 withMetadata:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
+- (void)changeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 toState:(unsigned long long)arg2 withError:(id)arg3 withTile:(id)arg4 forLayer:(unsigned char)arg5;
 - (bool)checkMapTileIntegrity:(id)arg1 errors:(id)arg2;
 - (void)clearScene;
 - (id)client;
@@ -154,6 +156,7 @@
 - (void)dirtyTile:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 source:(id)arg2;
 - (void)dirtyTilesFromTileSource:(id)arg1;
 - (void)dirtyTilesFromTileSource:(id)arg1 withState:(unsigned long long)arg2;
+- (id)errorsForRequiredLayers;
 - (bool)evaluateNeighborTileForRendering:(id)arg1;
 - (bool)evaluateSelectedTileForRendering:(id)arg1;
 - (unsigned char)fallbackFunction;
@@ -167,6 +170,7 @@
 - (id)initWithClient:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 taskContext:(struct shared_ptr<md::TaskContext> { struct TaskContext {} *x1; struct __shared_weak_count {} *x2; })arg4 tileSelectionProfile:(struct unique_ptr<md::TileSelectionProfile, std::__1::default_delete<md::TileSelectionProfile> > { struct __compressed_pair<md::TileSelectionProfile *, std::__1::default_delete<md::TileSelectionProfile> > { struct TileSelectionProfile {} *x_1_1_1; } x1; }*)arg5;
 - (void)invalidateRasterizedTiles;
 - (void)invalidateTilesFromTileSource:(id)arg1;
+- (bool)isCanceled;
 - (bool)isFinishedLoading;
 - (bool)isFinishedLoadingOptionalLayers;
 - (bool)isPrefetchEnabled;

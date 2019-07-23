@@ -6,6 +6,7 @@
     bool  _avoidsDaemonCache;
     bool  _checkedInvalidHome;
     bool  _disableBackup;
+    int  _fileProtectionClass;
     bool  _isByHost;
     bool  _lastWriteFailed;
     /* Warning: Unrecognized filer type: '^' using 'void*' */ void* _locallySetDict;
@@ -54,6 +55,7 @@
 - (void)setContainer:(struct __CFString { }*)arg1;
 - (void)setDaemonCacheEnabled:(bool)arg1;
 - (void)setDomainIdentifier:(struct __CFString { }*)arg1;
+- (void)setFileProtectionClass:(int)arg1;
 - (void)setUserIdentifier:(struct __CFString { }*)arg1;
 - (bool)synchronize;
 - (struct __CFString { }*)userIdentifier;

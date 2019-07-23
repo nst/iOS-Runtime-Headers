@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSArray *locations;
 @property (nonatomic, readonly) UIColor *topColor;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
 + (id)defaultGradient;
 
 - (void).cxx_destruct;
@@ -27,5 +29,9 @@
 - (void)setColors:(id)arg1;
 - (void)setLocations:(id)arg1;
 - (id)topColor;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)hrui_resultsSeparatorGradient;
 
 @end

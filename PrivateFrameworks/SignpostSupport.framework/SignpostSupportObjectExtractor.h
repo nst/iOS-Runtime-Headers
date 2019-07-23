@@ -11,6 +11,7 @@
     id /* block */  _animationIntervalCompletionProcessingBlock;
     id /* block */  _beginEventProcessingBlock;
     NSObject<OS_dispatch_semaphore> * _completionSemaphore;
+    id /* block */  _deviceRebootProcessingBlock;
     id /* block */  _emitEventProcessingBlock;
     id /* block */  _endEventProcessingBlock;
     SignpostIntervalBuilder * _intervalBuilder;
@@ -39,6 +40,7 @@
 @property (nonatomic, copy) id /* block */ beginEventProcessingBlock;
 @property (nonatomic) bool buildAnimationCompositeIntervalTimelines;
 @property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *completionSemaphore;
+@property (nonatomic, copy) id /* block */ deviceRebootProcessingBlock;
 @property (nonatomic, copy) id /* block */ emitEventProcessingBlock;
 @property (nonatomic, copy) id /* block */ endEventProcessingBlock;
 @property (nonatomic, readonly) SignpostIntervalBuilder *intervalBuilder;
@@ -63,6 +65,7 @@
 - (bool)_eventPassesFilters:(id)arg1;
 - (bool)_eventPassesWithPid:(int)arg1 uniquePid:(unsigned long long)arg2 processName:(id)arg3 subsystem:(id)arg4 category:(id)arg5;
 - (bool)_generateIntervalFromEnd:(id)arg1 shouldReport:(bool)arg2;
+- (bool)_hasNonObjectFilters;
 - (bool)_hasSignpostProcessingBlock;
 - (id /* block */)_intervalEndHandler;
 - (bool)_isTrackingIntervals;
@@ -81,6 +84,7 @@
 - (bool)buildAnimationCompositeIntervalTimelines;
 - (id)completionSemaphore;
 - (void)dealloc;
+- (id /* block */)deviceRebootProcessingBlock;
 - (id /* block */)emitEventProcessingBlock;
 - (id /* block */)endEventProcessingBlock;
 - (void)finishProcessingSerializedData;
@@ -100,6 +104,7 @@
 - (void)setAnimationIntervalCompletionProcessingBlock:(id /* block */)arg1;
 - (void)setBeginEventProcessingBlock:(id /* block */)arg1;
 - (void)setBuildAnimationCompositeIntervalTimelines:(bool)arg1;
+- (void)setDeviceRebootProcessingBlock:(id /* block */)arg1;
 - (void)setEmitEventProcessingBlock:(id /* block */)arg1;
 - (void)setEndEventProcessingBlock:(id /* block */)arg1;
 - (void)setIntervalCompletionProcessingBlock:(id /* block */)arg1;

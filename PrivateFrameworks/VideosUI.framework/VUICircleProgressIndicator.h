@@ -21,6 +21,7 @@
     UIImageView * _indeterminateView;
     bool  _isAnimating;
     double  _progress;
+    double  _totalAutoFillDuration;
     UIColor * _unhighlightedBackgroundColor;
 }
 
@@ -29,6 +30,7 @@
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageInsets;
 @property (getter=isIndeterminate, nonatomic) bool indeterminate;
 @property (nonatomic) double progress;
+@property (nonatomic) double totalAutoFillDuration;
 
 + (id)_borderImage;
 + (id)_fillImage;
@@ -55,7 +57,9 @@
 - (void)setIndeterminate:(bool)arg1;
 - (void)setProgress:(double)arg1;
 - (void)setProgress:(double)arg1 animated:(bool)arg2;
+- (void)setTotalAutoFillDuration:(double)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
+- (double)totalAutoFillDuration;
 
 @end

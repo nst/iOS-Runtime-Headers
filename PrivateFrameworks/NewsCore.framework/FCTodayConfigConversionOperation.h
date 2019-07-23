@@ -9,7 +9,7 @@
     NSDictionary * _resultHeldRecordsByType;
     NTPBTodayConfig * _resultTodayConfig;
     id /* block */  _todayConfigCompletionHandler;
-    NSData * _widgetConfigData;
+    NSDictionary * _widgetConfiguration;
 }
 
 @property (nonatomic, copy) <FCCoreConfiguration> *configuration;
@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSDictionary *resultHeldRecordsByType;
 @property (nonatomic, copy) NTPBTodayConfig *resultTodayConfig;
 @property (nonatomic, copy) id /* block */ todayConfigCompletionHandler;
-@property (nonatomic, retain) NSData *widgetConfigData;
+@property (nonatomic, retain) NSDictionary *widgetConfiguration;
 
 - (void).cxx_destruct;
 - (void)_collectRecordIDsReferencedBySectionConfig:(id)arg1 withArticleListIDs:(id)arg2 articleIDs:(id)arg3;
@@ -36,9 +36,9 @@
 - (void)setResultHeldRecordsByType:(id)arg1;
 - (void)setResultTodayConfig:(id)arg1;
 - (void)setTodayConfigCompletionHandler:(id /* block */)arg1;
-- (void)setWidgetConfigData:(id)arg1;
+- (void)setWidgetConfiguration:(id)arg1;
 - (id /* block */)todayConfigCompletionHandler;
 - (bool)validateOperation;
-- (id)widgetConfigData;
+- (id)widgetConfiguration;
 
 @end

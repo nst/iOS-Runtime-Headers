@@ -9,6 +9,7 @@
     PSUICellularDataPlanDetailGroup * _cellularDataPlanDetailGroup;
     PSUICellularDataPlanListGroup * _cellularDataPlanListGroup;
     PSUICellularDataPlanSetupGroup * _cellularDataPlanSetupGroup;
+    PSUICellularDataSpecifier * _cellularDataSpecifier;
     PSUICarrierItemGroup * _cellularNewNetworkGroup;
     PSUICellularPlanListGroup * _cellularPlanListGroup;
     CoreTelephonyClient * _coreTelephonyClient;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) PSUICellularDataPlanDetailGroup *cellularDataPlanDetailGroup;
 @property (nonatomic, retain) PSUICellularDataPlanListGroup *cellularDataPlanListGroup;
 @property (nonatomic, retain) PSUICellularDataPlanSetupGroup *cellularDataPlanSetupGroup;
+@property (nonatomic, retain) PSUICellularDataSpecifier *cellularDataSpecifier;
 @property (nonatomic, retain) PSUICarrierItemGroup *cellularNewNetworkGroup;
 @property (nonatomic, retain) PSUICellularPlanListGroup *cellularPlanListGroup;
 @property (nonatomic, retain) CoreTelephonyClient *coreTelephonyClient;
@@ -45,7 +47,6 @@
 - (id)_lastUpdateDate;
 - (void)_updateLastResetText;
 - (void)airplaneModeChanged;
-- (void)airplaneModeOrSIMStatusChanged;
 - (id)appUsageGroup;
 - (id)callHistoryManager;
 - (id)callTime:(id)arg1;
@@ -56,6 +57,7 @@
 - (id)cellularDataPlanDetailGroup;
 - (id)cellularDataPlanListGroup;
 - (id)cellularDataPlanSetupGroup;
+- (id)cellularDataSpecifier;
 - (id)cellularNewNetworkGroup;
 - (void)cellularPlanChanged:(id)arg1;
 - (id)cellularPlanListGroup;
@@ -83,6 +85,7 @@
 - (void)setCellularDataPlanDetailGroup:(id)arg1;
 - (void)setCellularDataPlanListGroup:(id)arg1;
 - (void)setCellularDataPlanSetupGroup:(id)arg1;
+- (void)setCellularDataSpecifier:(id)arg1;
 - (void)setCellularNewNetworkGroup:(id)arg1;
 - (void)setCellularPlanListGroup:(id)arg1;
 - (void)setCoreTelephonyClient:(id)arg1;
@@ -100,7 +103,7 @@
 - (void)totalBytesUsedChangedNotification;
 - (id)totalDataUsageForSpecifier:(id)arg1;
 - (id)totalRoamingDataUsageForSpecifier:(id)arg1;
-- (void)updateAppUsageGroupEnabledState;
+- (void)turnOnLocationServicesPressed:(id)arg1;
 - (void)updatePaneWithCellularDataState:(bool)arg1;
 - (void)viewAccountPressed:(id)arg1;
 - (void)viewWillAppear:(bool)arg1;

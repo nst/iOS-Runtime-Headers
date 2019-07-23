@@ -62,6 +62,7 @@
 @property (getter=isDoubleRowLayoutEnabled, nonatomic) bool doubleRowLayoutEnabled;
 @property (getter=isFullScreen, nonatomic) bool fullScreen;
 @property (nonatomic, readonly) AVButton *fullScreenButton;
+@property (nonatomic, readonly) bool hasVisibleSubview;
 @property (nonatomic) long long includedContainers;
 @property (nonatomic, readonly) AVButton *mediaSelectionButton;
 @property (nonatomic, readonly) AVButton *miniPlayPauseButton;
@@ -127,6 +128,7 @@
 - (id)defaultDisplayModeControls;
 - (id)doneButton;
 - (id)fullScreenButton;
+- (bool)hasVisibleSubview;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (long long)includedContainers;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleSheet:(id)arg2 captureView:(id)arg3;

@@ -15,6 +15,7 @@
     NSArray * _mediaItems;
     bool  _playShuffled;
     int  _playbackRepeatMode;
+    NSString * _proxiedBundleIdentifier;
     NSString * _recoID;
     bool  _resumePlayback;
 }
@@ -29,6 +30,7 @@
 @property (nonatomic, readonly) bool hasMediaContainer;
 @property (nonatomic) bool hasPlayShuffled;
 @property (nonatomic) bool hasPlaybackRepeatMode;
+@property (nonatomic, readonly) bool hasProxiedBundleIdentifier;
 @property (nonatomic, readonly) bool hasRecoID;
 @property (nonatomic) bool hasResumePlayback;
 @property (readonly) unsigned long long hash;
@@ -38,6 +40,7 @@
 @property (nonatomic, readonly) unsigned long long mediaItemsCount;
 @property (nonatomic) bool playShuffled;
 @property (nonatomic) int playbackRepeatMode;
+@property (nonatomic, copy) NSString *proxiedBundleIdentifier;
 @property (nonatomic, copy) NSString *recoID;
 @property (nonatomic) bool resumePlayback;
 @property (readonly) Class superclass;
@@ -62,6 +65,7 @@
 - (bool)hasMediaContainer;
 - (bool)hasPlayShuffled;
 - (bool)hasPlaybackRepeatMode;
+- (bool)hasProxiedBundleIdentifier;
 - (bool)hasRecoID;
 - (bool)hasResumePlayback;
 - (unsigned long long)hash;
@@ -74,6 +78,7 @@
 - (bool)playShuffled;
 - (int)playbackRepeatMode;
 - (id)playbackRepeatModeAsString:(int)arg1;
+- (id)proxiedBundleIdentifier;
 - (bool)readFrom:(id)arg1;
 - (id)recoID;
 - (bool)resumePlayback;
@@ -87,6 +92,7 @@
 - (void)setMediaItems:(id)arg1;
 - (void)setPlayShuffled:(bool)arg1;
 - (void)setPlaybackRepeatMode:(int)arg1;
+- (void)setProxiedBundleIdentifier:(id)arg1;
 - (void)setRecoID:(id)arg1;
 - (void)setResumePlayback:(bool)arg1;
 - (void)writeTo:(id)arg1;

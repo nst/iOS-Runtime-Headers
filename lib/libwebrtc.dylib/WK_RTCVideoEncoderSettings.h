@@ -9,6 +9,79 @@
     unsigned int  _minBitrate;
     unsigned long long  _mode;
     NSString * _name;
+    struct VideoCodec { 
+        int codecType; 
+        unsigned char plType; 
+        unsigned short width; 
+        unsigned short height; 
+        unsigned int startBitrate; 
+        unsigned int maxBitrate; 
+        unsigned int minBitrate; 
+        unsigned int targetBitrate; 
+        unsigned int maxFramerate; 
+        bool active; 
+        unsigned int qpMax; 
+        unsigned char numberOfSimulcastStreams; 
+        struct SpatialLayer { 
+            unsigned short width; 
+            unsigned short height; 
+            float maxFramerate; 
+            unsigned char numberOfTemporalLayers; 
+            unsigned int maxBitrate; 
+            unsigned int targetBitrate; 
+            unsigned int minBitrate; 
+            unsigned int qpMax; 
+            bool active; 
+        } simulcastStream[4]; 
+        struct SpatialLayer { 
+            unsigned short width; 
+            unsigned short height; 
+            float maxFramerate; 
+            unsigned char numberOfTemporalLayers; 
+            unsigned int maxBitrate; 
+            unsigned int targetBitrate; 
+            unsigned int minBitrate; 
+            unsigned int qpMax; 
+            bool active; 
+        } spatialLayers[5]; 
+        int mode; 
+        bool expect_encode_from_texture; 
+        struct TimingFrameTriggerThresholds { 
+            long long delay_ms; 
+            unsigned short outlier_ratio_percent; 
+        } timing_frame_thresholds; 
+        union VideoCodecUnion { 
+            struct VideoCodecVP8 { 
+                int complexity; 
+                unsigned char numberOfTemporalLayers; 
+                bool denoisingOn; 
+                bool automaticResizeOn; 
+                bool frameDroppingOn; 
+                int keyFrameInterval; 
+            } VP8; 
+            struct VideoCodecVP9 { 
+                int complexity; 
+                unsigned char numberOfTemporalLayers; 
+                bool denoisingOn; 
+                bool frameDroppingOn; 
+                int keyFrameInterval; 
+                bool adaptiveQpMode; 
+                bool automaticResizeOn; 
+                unsigned char numberOfSpatialLayers; 
+                bool flexibleMode; 
+                int interLayerPred; 
+            } VP9; 
+            struct VideoCodecH264 { 
+                bool frameDroppingOn; 
+                int keyFrameInterval; 
+                char *spsData; 
+                unsigned long long spsLen; 
+                char *ppsData; 
+                unsigned long long ppsLen; 
+                int profile; 
+            } H264; 
+        } codec_specific_; 
+    }  _nativeVideoCodec;
     unsigned int  _qpMax;
     unsigned int  _startBitrate;
     unsigned int  _targetBitrate;
@@ -26,15 +99,16 @@
 @property (nonatomic) unsigned int targetBitrate;
 @property (nonatomic) unsigned short width;
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned short)height;
-- (id)initWithNativeVideoCodec:(const struct VideoCodec { int x1; BOOL x2[32]; unsigned char x3; unsigned short x4; unsigned short x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned char x12; struct SimulcastStream { unsigned short x_13_1_1; unsigned short x_13_1_2; unsigned char x_13_1_3; unsigned int x_13_1_4; unsigned int x_13_1_5; unsigned int x_13_1_6; unsigned int x_13_1_7; } x13[4]; struct SpatialLayer { int x_14_1_1; int x_14_1_2; int x_14_1_3; } x14[5]; int x15; bool x16; struct TimingFrameTriggerThresholds { long long x_17_1_1; unsigned short x_17_1_2; } x17; union VideoCodecUnion { struct VideoCodecVP8 { bool x_1_2_1; int x_1_2_2; int x_1_2_3; unsigned char x_1_2_4; bool x_1_2_5; bool x_1_2_6; bool x_1_2_7; bool x_1_2_8; int x_1_2_9; struct TemporalLayersFactory {} *x_1_2_10; } x_18_1_1; struct VideoCodecVP9 { int x_2_2_1; bool x_2_2_2; unsigned char x_2_2_3; bool x_2_2_4; bool x_2_2_5; int x_2_2_6; bool x_2_2_7; bool x_2_2_8; unsigned char x_2_2_9; bool x_2_2_10; } x_18_1_2; struct VideoCodecH264 { bool x_3_2_1; int x_3_2_2; char *x_3_2_3; unsigned long long x_3_2_4; char *x_3_2_5; unsigned long long x_3_2_6; int x_3_2_7; } x_18_1_3; } x18; }*)arg1;
+- (id)initWithNativeVideoCodec:(const struct VideoCodec { int x1; unsigned char x2; unsigned short x3; unsigned short x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; bool x10; unsigned int x11; unsigned char x12; struct SpatialLayer { unsigned short x_13_1_1; unsigned short x_13_1_2; float x_13_1_3; unsigned char x_13_1_4; unsigned int x_13_1_5; unsigned int x_13_1_6; unsigned int x_13_1_7; unsigned int x_13_1_8; bool x_13_1_9; } x13[4]; struct SpatialLayer { unsigned short x_14_1_1; unsigned short x_14_1_2; float x_14_1_3; unsigned char x_14_1_4; unsigned int x_14_1_5; unsigned int x_14_1_6; unsigned int x_14_1_7; unsigned int x_14_1_8; bool x_14_1_9; } x14[5]; int x15; bool x16; struct TimingFrameTriggerThresholds { long long x_17_1_1; unsigned short x_17_1_2; } x17; union VideoCodecUnion { struct VideoCodecVP8 { int x_1_2_1; unsigned char x_1_2_2; bool x_1_2_3; bool x_1_2_4; bool x_1_2_5; int x_1_2_6; } x_18_1_1; struct VideoCodecVP9 { int x_2_2_1; unsigned char x_2_2_2; bool x_2_2_3; bool x_2_2_4; int x_2_2_5; bool x_2_2_6; bool x_2_2_7; unsigned char x_2_2_8; bool x_2_2_9; int x_2_2_10; } x_18_1_2; struct VideoCodecH264 { bool x_3_2_1; int x_3_2_2; char *x_3_2_3; unsigned long long x_3_2_4; char *x_3_2_5; unsigned long long x_3_2_6; int x_3_2_7; } x_18_1_3; } x18; }*)arg1;
 - (unsigned int)maxBitrate;
 - (unsigned int)maxFramerate;
 - (unsigned int)minBitrate;
 - (unsigned long long)mode;
 - (id)name;
-- (struct VideoCodec { int x1; BOOL x2[32]; unsigned char x3; unsigned short x4; unsigned short x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned char x12; struct SimulcastStream { unsigned short x_13_1_1; unsigned short x_13_1_2; unsigned char x_13_1_3; unsigned int x_13_1_4; unsigned int x_13_1_5; unsigned int x_13_1_6; unsigned int x_13_1_7; } x13[4]; struct SpatialLayer { int x_14_1_1; int x_14_1_2; int x_14_1_3; } x14[5]; int x15; bool x16; struct TimingFrameTriggerThresholds { long long x_17_1_1; unsigned short x_17_1_2; } x17; union VideoCodecUnion { struct VideoCodecVP8 { bool x_1_2_1; int x_1_2_2; int x_1_2_3; unsigned char x_1_2_4; bool x_1_2_5; bool x_1_2_6; bool x_1_2_7; bool x_1_2_8; int x_1_2_9; struct TemporalLayersFactory {} *x_1_2_10; } x_18_1_1; struct VideoCodecVP9 { int x_2_2_1; bool x_2_2_2; unsigned char x_2_2_3; bool x_2_2_4; bool x_2_2_5; int x_2_2_6; bool x_2_2_7; bool x_2_2_8; unsigned char x_2_2_9; bool x_2_2_10; } x_18_1_2; struct VideoCodecH264 { bool x_3_2_1; int x_3_2_2; char *x_3_2_3; unsigned long long x_3_2_4; char *x_3_2_5; unsigned long long x_3_2_6; int x_3_2_7; } x_18_1_3; } x18; })nativeVideoCodec;
+- (struct VideoCodec { int x1; unsigned char x2; unsigned short x3; unsigned short x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; bool x10; unsigned int x11; unsigned char x12; struct SpatialLayer { unsigned short x_13_1_1; unsigned short x_13_1_2; float x_13_1_3; unsigned char x_13_1_4; unsigned int x_13_1_5; unsigned int x_13_1_6; unsigned int x_13_1_7; unsigned int x_13_1_8; bool x_13_1_9; } x13[4]; struct SpatialLayer { unsigned short x_14_1_1; unsigned short x_14_1_2; float x_14_1_3; unsigned char x_14_1_4; unsigned int x_14_1_5; unsigned int x_14_1_6; unsigned int x_14_1_7; unsigned int x_14_1_8; bool x_14_1_9; } x14[5]; int x15; bool x16; struct TimingFrameTriggerThresholds { long long x_17_1_1; unsigned short x_17_1_2; } x17; union VideoCodecUnion { struct VideoCodecVP8 { int x_1_2_1; unsigned char x_1_2_2; bool x_1_2_3; bool x_1_2_4; bool x_1_2_5; int x_1_2_6; } x_18_1_1; struct VideoCodecVP9 { int x_2_2_1; unsigned char x_2_2_2; bool x_2_2_3; bool x_2_2_4; int x_2_2_5; bool x_2_2_6; bool x_2_2_7; unsigned char x_2_2_8; bool x_2_2_9; int x_2_2_10; } x_18_1_2; struct VideoCodecH264 { bool x_3_2_1; int x_3_2_2; char *x_3_2_3; unsigned long long x_3_2_4; char *x_3_2_5; unsigned long long x_3_2_6; int x_3_2_7; } x_18_1_3; } x18; })nativeVideoCodec;
 - (unsigned int)qpMax;
 - (void)setHeight:(unsigned short)arg1;
 - (void)setMaxBitrate:(unsigned int)arg1;

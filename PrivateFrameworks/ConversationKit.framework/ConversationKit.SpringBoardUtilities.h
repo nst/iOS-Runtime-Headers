@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.SpringBoardUtilities : SwiftObject
+@interface ConversationKit.SpringBoardUtilities : Swift._SwiftObject
 
 @end

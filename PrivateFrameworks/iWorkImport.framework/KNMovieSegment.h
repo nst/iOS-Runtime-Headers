@@ -14,12 +14,12 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)initEmptySegmentWithStartTime:(double)arg1;
-- (id)initWithContext:(id)arg1 archive:(const struct MovieSegmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; double x6; struct Reference {} *x7; }*)arg2 unarchiver:(id)arg3;
+- (id)initWithContext:(id)arg1 archive:(const struct MovieSegmentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct DataReference {} *x6; double x7; }*)arg2 unarchiver:(id)arg3;
 - (id)initWithMovieData:(id)arg1 startTime:(double)arg2;
 - (bool)isEmptySegment;
 - (id)movieData;
 - (id)movieSegmentByAddingTimeOffset:(double)arg1;
-- (void)saveToArchive:(struct MovieSegmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DataReference {} *x5; double x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct MovieSegmentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct DataReference {} *x6; double x7; }*)arg1 archiver:(id)arg2;
 - (double)startTime;
 
 @end

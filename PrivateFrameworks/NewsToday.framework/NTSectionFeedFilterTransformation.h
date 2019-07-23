@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)embedsLimit;
 - (id)init;
-- (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 purchasedTagIDs:(id)arg3 readArticlesFilterMethod:(int)arg4 recentlyReadHistoryItems:(id)arg5 seenArticlesFilterMethod:(int)arg6 minimumTimeSinceFirstSeenToFilter:(double)arg7 recentlySeenHistoryItems:(id)arg8 supplementalFeedFilterOptions:(long long)arg9 embedsLimit:(unsigned long long)arg10 otherArticleIDs:(id)arg11 otherClusterIDs:(id)arg12 filterDate:(id)arg13;
+- (id)initWithTodayData:(id)arg1 readArticlesFilterMethod:(int)arg2 seenArticlesFilterMethod:(int)arg3 minimumTimeSinceFirstSeenToFilter:(double)arg4 supplementalFeedFilterOptions:(long long)arg5 embedsLimit:(unsigned long long)arg6 otherArticleIDs:(id)arg7 otherClusterIDs:(id)arg8 filterDate:(id)arg9;
 - (id)transformFeedItems:(id)arg1;
 - (id)underlyingTransformation;
 

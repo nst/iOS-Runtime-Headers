@@ -249,4 +249,10 @@
 - (id)sf_sessionID;
 - (long long)sf_transferState;
 
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tsu_progressWithTSUProgress:(id)arg1 totalUnitCount:(long long)arg2;
+
+- (void)tsu_stopObservingTSUProgress;
+
 @end

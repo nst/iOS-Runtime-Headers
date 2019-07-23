@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface _TtC15ConversationKitP33_264EA2FC71937CD31FD6CE8FDDC74F0A26DisplayLinkCallbackWrapper : SwiftObject {
+@interface _TtC15ConversationKitP33_264EA2FC71937CD31FD6CE8FDDC74F0A26DisplayLinkCallbackWrapper : Swift._SwiftObject {
     void callback;
 }
 

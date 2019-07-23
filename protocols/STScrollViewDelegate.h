@@ -8,4 +8,10 @@
 - (void)didTouchScrollView:(STScrollView *)arg1 withEvent:(UIEvent *)arg2;
 - (bool)shouldPreventDraggingForScrollView:(STScrollView *)arg1;
 
+@optional
+
+- (bool)accessibilityShouldScrollForScrollView:(STScrollView *)arg1;
+- (bool)accessibilityShouldScrollForScrollView:(STScrollView *)arg1 defaultValue:(bool)arg2;
+- (bool)scrollView:(STScrollView *)arg1 shouldOccludeAccessibilityElement:(id)arg2;
+
 @end

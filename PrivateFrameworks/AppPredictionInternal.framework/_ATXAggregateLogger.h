@@ -14,6 +14,7 @@
     PETGoalConversionEventTracker * _fidesRecordCreationTracker;
     PETDistributionEventTracker * _inputsTracker;
     PETScalarEventTracker * _itemsShownTracker;
+    PETScalarEventTracker * _limitedAppLaunchTracker;
     PETScalarEventTracker * _notificationOutcomeTracker;
     PETScalarEventTracker * _outcomeConsumerTracker;
     PETDistributionEventTracker * _outcomeConsumerTrackerWithCacheAge;
@@ -44,6 +45,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)logAppLaunch:(id)arg1 bundleId:(id)arg2;
 - (void)logFidesRecordCreation:(bool)arg1;
 - (void)logInputs:(const float*)arg1 andScore:(float)arg2 withOutcome:(unsigned long long)arg3;
 - (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(bool)arg2 position:(long long)arg3;

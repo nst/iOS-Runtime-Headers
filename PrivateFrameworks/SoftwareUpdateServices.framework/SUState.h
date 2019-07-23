@@ -7,6 +7,7 @@
     SUDescriptor * _currentDescriptor;
     SUDescriptor * _failedPatchDescriptor;
     SUInstallPolicy * _installPolicy;
+    NSString * _lastAssetAudience;
     _SUAutoInstallOperationModel * _lastAutoInstallOperationModel;
     NSString * _lastDeletedSUAssetID;
     SUDownload * _lastDownload;
@@ -34,6 +35,7 @@
 @property (nonatomic, copy) SUDescriptor *failedPatchDescriptor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SUInstallPolicy *installPolicy;
+@property (nonatomic, retain) NSString *lastAssetAudience;
 @property (nonatomic, retain) _SUAutoInstallOperationModel *lastAutoInstallOperationModel;
 @property (nonatomic, retain) NSString *lastDeletedSUAssetID;
 @property (nonatomic, copy) SUDownload *lastDownload;
@@ -65,6 +67,7 @@
 - (id)failedPatchDescriptor;
 - (id)init;
 - (id)installPolicy;
+- (id)lastAssetAudience;
 - (id)lastAutoInstallOperationModel;
 - (id)lastDeletedSUAssetID;
 - (id)lastDownload;
@@ -89,6 +92,7 @@
 - (void)setCurrentDescriptor:(id)arg1;
 - (void)setFailedPatchDescriptor:(id)arg1;
 - (void)setInstallPolicy:(id)arg1;
+- (void)setLastAssetAudience:(id)arg1;
 - (void)setLastAutoInstallOperationModel:(id)arg1;
 - (void)setLastDeletedSUAssetID:(id)arg1;
 - (void)setLastDownload:(id)arg1;

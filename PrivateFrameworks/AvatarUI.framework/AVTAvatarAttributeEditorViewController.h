@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
  */
 
-@interface AVTAvatarAttributeEditorViewController : UIViewController <AVTAvatarAttributeEditorControllerSubSelectionDelegate, AVTCollapsibleHeaderControllerDelegate, AVTGroupDialDelegate, AVTTransitionModel, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout> {
+@interface AVTAvatarAttributeEditorViewController : UIViewController <AVTAvatarAttributeEditorControllerSubSelectionDelegate, AVTCollapsibleHeaderControllerDelegate, AVTFaceTrackingManagerDelegate, AVTGroupDialDelegate, AVTNotifyingContainerViewDelegate, AVTTransitionModel, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout> {
     UILabel * _alphaAssetsLabel;
     AVTAttributeEditorAnimationCoordinator * _animationCoordinator;
     UICollectionView * _attributesCollectionView;
@@ -19,7 +19,7 @@
     UIView * _groupDialContainerView;
     bool  _hasMadeAnySelection;
     UIView * _headerMaskingView;
-    <AVTScheduler> * _imageProviderScheduler;
+    <AVTTaskScheduler> * _imageProviderScheduler;
     bool  _isAnimatingHighlight;
     bool  _isCreating;
     AVTAvatarAttributeEditorModelManager * _modelManager;
@@ -53,7 +53,7 @@
 @property (nonatomic) bool hasMadeAnySelection;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *headerMaskingView;
-@property (nonatomic, readonly) <AVTScheduler> *imageProviderScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *imageProviderScheduler;
 @property (nonatomic) bool isAnimatingHighlight;
 @property (nonatomic, readonly) bool isCreating;
 @property (nonatomic, readonly) AVTAvatarAttributeEditorModelManager *modelManager;
@@ -125,10 +125,14 @@
 - (id)imageProviderScheduler;
 - (id)init;
 - (id)initWithAvatarRecord:(id)arg1 avtViewSessionProvider:(id)arg2 environment:(id)arg3 isCreating:(bool)arg4;
+- (long long)interfaceOrientationForFaceTrackingManager:(id)arg1;
 - (bool)isAnimatingHighlight;
 - (bool)isCreating;
 - (id)liveView;
+- (void)loadView;
 - (id)modelManager;
+- (void)notifyingContainerViewDidChangeSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)notifyingContainerViewWillChangeSize:(struct CGSize { double x1; double x2; })arg1;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id /* block */)pendingUnhighlightBlock;
 - (id /* block */)postSessionDidBecomeActiveHandler;

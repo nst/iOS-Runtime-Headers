@@ -10,11 +10,13 @@
     int  _pathLength;
     float  _sampleRadiusX;
     float  _sampleRadiusY;
+    float  _startRotation;
 }
 
 @property (nonatomic, readonly) int cellGridHeight;
 @property (nonatomic, readonly) int cellGridWidth;
 @property (nonatomic, readonly) int pathLength;
+@property (nonatomic, readonly) float startRotation;
 
 + (id)pathfinderFromDirectory:(id)arg1;
 + (id)pathfinderFromFile:(id)arg1;
@@ -22,6 +24,8 @@
 + (bool)supportsSecureCoding;
 
 - (void)adjustPathStart;
+- (void)adjustRotationStart:(float)arg1;
+- (void)adjustSampleRadius:(float)arg1;
 - (int)cellGridHeight;
 - (int)cellGridWidth;
 - (void)dealloc;
@@ -30,6 +34,7 @@
 - (id)initWithImage:(id)arg1;
 - (int)pathLength;
 - (struct NTKKaleidoscopePathfinderPoint { double x1[4]; })pointForTime:(float)arg1;
+- (float)startRotation;
 - (bool)writeToDirectory:(id)arg1;
 - (bool)writeToFile:(id)arg1;
 

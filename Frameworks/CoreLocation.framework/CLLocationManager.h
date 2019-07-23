@@ -133,7 +133,7 @@
 - (void)onClientEventInterrupted:(id)arg1;
 - (void)onClientEventLocation:(id)arg1 forceMapMatching:(bool)arg2 type:(id)arg3;
 - (void)onClientEventLocationUnavailable:(id)arg1;
-- (void)onClientEventMicroLocations:(id)arg1;
+- (void)onClientEventMicroLocation:(id)arg1;
 - (void)onClientEventPeerRanging:(id)arg1;
 - (void)onClientEventPeerRangingError:(id)arg1;
 - (void)onClientEventPeerRangingRequestProcessed:(id)arg1;
@@ -244,5 +244,9 @@
 + (id)referenceFrameDescription:(int)arg1;
 + (id)regionDescription:(id)arg1;
 + (id)regionStateDescription:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksUI.framework/StocksUI
+
++ (void)su_enableIAdCoreLocationAuthorizationOnMac;
 
 @end

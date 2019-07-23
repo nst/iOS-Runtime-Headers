@@ -60,6 +60,8 @@
 @property (nonatomic, readonly) double verticalMarginInRows;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })adjustedLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 viewportWidth:(double)arg2;
+
 - (void).cxx_destruct;
 - (double)adjustedFeedWidth;
 - (bool)allowsExcerptsInAllCells;

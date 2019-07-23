@@ -20,19 +20,14 @@
 @property (nonatomic) bool usesInnerShadow;
 @property (nonatomic) bool usesRoundedCorners;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_installShadowViews;
 - (void)_setFlagsFromDelegate:(id)arg1;
 - (void)_tearDownShadowViews;
 - (void)_updateShadowViews;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addSubview:(id)arg1;
 - (void)beginWhileDisablingSetNeedsLayout;
+- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)encodeWithCoder:(id)arg1;

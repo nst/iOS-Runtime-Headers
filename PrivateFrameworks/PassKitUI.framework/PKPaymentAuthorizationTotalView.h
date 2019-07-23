@@ -13,6 +13,7 @@
     UIActivityIndicatorView * _processingIndicator;
     NSLayoutConstraint * _rightMarginConstraint;
     UIView * _separatorView;
+    bool  _showsBoldValueText;
     long long  _style;
     UILabel * _valueView;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic) long long labelNumberOfLines;
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;
 @property (getter=isProcessing, nonatomic) bool processing;
+@property (nonatomic) bool showsBoldValueText;
 @property (nonatomic) long long style;
 
 - (void).cxx_destruct;
@@ -42,7 +44,9 @@
 - (void)setLabelNumberOfLines:(long long)arg1;
 - (void)setLayout:(id)arg1;
 - (void)setProcessing:(bool)arg1;
+- (void)setShowsBoldValueText:(bool)arg1;
 - (void)setStyle:(long long)arg1;
+- (bool)showsBoldValueText;
 - (long long)style;
 - (void)updateConstraints;
 

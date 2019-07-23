@@ -102,7 +102,6 @@
 @property (nonatomic, readonly) bool hasImportWarningSet;
 @property (nonatomic, readonly) bool hasMismatchedFormatAndValue;
 @property (nonatomic, readonly) bool hasRichText;
-@property (nonatomic, readonly) bool hasStockFormula;
 @property (nonatomic, readonly) bool hasTextStyle;
 @property (nonatomic, readonly) bool hasValueOrError;
 @property (nonatomic, retain) TSTImportWarningSet *importWarningSet;
@@ -119,7 +118,6 @@
 @property (nonatomic) unsigned int richTextID;
 @property (nonatomic, readonly) TSWPStorage *richTextStorageForLayout;
 @property (nonatomic, retain) TSWPStorage *richTextValue;
-@property (nonatomic, readonly) TSTStockDetails *stockDetails;
 @property (nonatomic, readonly) NSString *stringForEditing;
 @property (nonatomic, readonly) NSString *stringForUnderlyingValue;
 @property (nonatomic) unsigned int stringID;
@@ -220,7 +218,6 @@
 - (bool)hasImportWarningSet;
 - (bool)hasMismatchedFormatAndValue;
 - (bool)hasRichText;
-- (bool)hasStockFormula;
 - (bool)hasTextStyle;
 - (bool)hasValueOrError;
 - (id)importWarningSet;
@@ -308,7 +305,6 @@
 - (void)setTextStyleID:(unsigned int)arg1;
 - (void)setValueType:(int)arg1;
 - (id)spareFormatOfType:(int)arg1 allowMismatchedSpare:(bool)arg2;
-- (id)stockDetails;
 - (id)stringForEditing;
 - (id)stringForUnderlyingValue;
 - (unsigned int)stringID;

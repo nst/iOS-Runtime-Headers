@@ -20,6 +20,7 @@
 
 - (void)dealloc;
 - (void)didReceiveCharacter:(unsigned short)arg1;
+- (void)didReceiveText:(struct NSString { Class x1; }*)arg1;
 - (id)init;
 - (double)lastReceivedRTCPPacketTime;
 - (double)lastReceivedRTPPacketTime;
@@ -35,6 +36,7 @@
 - (id)receiveDelegate;
 - (double)rtcpHeartbeatLeeway;
 - (void)sendCharacter:(unsigned short)arg1;
+- (void)sendText:(struct NSString { Class x1; }*)arg1;
 - (void)setReceiveDelegate:(id)arg1;
 - (bool)setupTextReceiverWithError:(id*)arg1;
 - (void)setupTextTransmitter;

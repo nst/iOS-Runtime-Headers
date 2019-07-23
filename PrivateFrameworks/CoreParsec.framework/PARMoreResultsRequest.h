@@ -14,6 +14,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)moreResultsURL;
+- (unsigned int)nwActivityLabel;
 - (void)setMoreResultsURL:(id)arg1;
 
 @end

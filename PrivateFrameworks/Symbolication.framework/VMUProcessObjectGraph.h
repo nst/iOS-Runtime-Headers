@@ -6,6 +6,7 @@
     NSString * _binaryImagesDescription;
     VMURangeToStringMap * _binarySectionNameRanges;
     VMUDebugTimer * _debugTimer;
+    NSString * _executablePath;
     bool  _gotObjcClassStructureRanges;
     bool  _javaScriptCoreUsingPoisoning;
     unsigned int  _kernPageSize;
@@ -32,6 +33,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) VMUDebugTimer *debugTimer;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *executablePath;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool is64bit;
 @property (nonatomic) bool javaScriptCoreUsingPoisoning;
@@ -68,6 +70,7 @@
 - (id)debugTimer;
 - (unsigned int)enumerateReferencesFromDataRegion:(id)arg1 atGlobalSymbol:(id)arg2 withBlock:(id /* block */)arg3;
 - (unsigned int)enumerateRegionsWithBlock:(id /* block */)arg1;
+- (id)executablePath;
 - (bool)hasLabelsForNodes;
 - (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3;
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void*)arg8;

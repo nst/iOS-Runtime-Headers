@@ -20,21 +20,16 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultHeight;
 + (Class)textFieldClass;
 
 - (void).cxx_destruct;
 - (void)_textDidChange;
 - (void)_updateFields;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)appendString:(id)arg1;
 - (bool)becomeFirstResponder;
 - (bool)canBecomeFirstResponder;
+- (void)dealloc;
 - (void)deleteLastCharacter;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

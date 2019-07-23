@@ -86,6 +86,7 @@
 - (void)_updateComponentConstraints;
 - (void)_updateFocusSizeIncrease;
 - (void)_updateShadowForLabel:(id)arg1 inFocus:(bool)arg2;
+- (void)_updateSubviewHeirarchyWithComponents:(id)arg1;
 - (id)animatedLabel;
 - (struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })cellMetrics;
 - (id)components;
@@ -100,10 +101,12 @@
 - (id)marqueeLabels;
 - (struct CGSize { double x1; double x2; })maxBoundsSize;
 - (id)overlayView;
+- (id)preferredFocusEnvironments;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionMarginsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setAnimatedLabel:(id)arg1;
 - (void)setCellMetrics:(struct TVCellMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct UIEdgeInsets { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct UIEdgeInsets { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })arg1;
 - (void)setComponents:(id)arg1;
+- (void)setComponents:(id)arg1 mainImageComponent:(id)arg2;
 - (void)setConfiguresForCollectionViewCell:(bool)arg1;
 - (void)setFilteredComponents:(id)arg1;
 - (void)setFocusDirection:(struct CGPoint { double x1; double x2; })arg1;

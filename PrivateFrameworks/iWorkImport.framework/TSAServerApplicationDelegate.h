@@ -10,8 +10,8 @@
 
 + (id)sharedDelegate;
 
+- (void).cxx_destruct;
 - (id)baseApplicationDelegate;
-- (void)dealloc;
 - (id)init;
 - (id)initWithBaseApplicationDelegate:(id)arg1;
 - (void)setBaseApplicationDelegate:(id)arg1;

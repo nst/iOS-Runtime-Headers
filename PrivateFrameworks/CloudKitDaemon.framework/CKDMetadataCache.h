@@ -25,6 +25,7 @@
 - (void)inlock_setDateOfLastTokenUpdate:(id)arg1;
 - (id)knownAppContainerTuples;
 - (id)knownApplicationBundleIDs;
+- (id)publicKeyOfType:(id)arg1 withIdentifier:(id)arg2;
 - (id)pushTokenForAppContainerTuple:(id)arg1;
 - (void)removeContainerID:(id)arg1;
 - (void)removeKnownApplicationBundleID:(id)arg1;
@@ -34,6 +35,7 @@
 - (void)setContainerInfo:(id)arg1 forContainerID:(id)arg2;
 - (void)setDateOfLastTokenUpdate:(id)arg1;
 - (void)setGlobalConfiguration:(id)arg1;
+- (void)setPublicKey:(id)arg1 ofType:(id)arg2 withIdentifier:(id)arg3;
 - (void)setPushToken:(id)arg1 forAppContainerTuple:(id)arg2;
 
 @end

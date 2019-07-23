@@ -5,12 +5,16 @@
 @interface HDDemoDataHeartSampleGenerator : HDDemoDataBaseSampleGenerator {
     double  _lastRestingHeartRate;
     double  _lastWalkingHeartRateAverage;
+    unsigned long long  _nextElectrocardiogramClassification;
+    double  _nextElectrocardiogramSampleTime;
     double  _nextRestingHeartRateSampleTime;
     double  _nextWalkingHeartRateAverageSampleTime;
 }
 
 @property (nonatomic) double lastRestingHeartRate;
 @property (nonatomic) double lastWalkingHeartRateAverage;
+@property (nonatomic) unsigned long long nextElectrocardiogramClassification;
+@property (nonatomic) double nextElectrocardiogramSampleTime;
 @property (nonatomic) double nextRestingHeartRateSampleTime;
 @property (nonatomic) double nextWalkingHeartRateAverageSampleTime;
 
@@ -18,17 +22,23 @@
 
 - (double)_computeRestingHeartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computeWalkingHeartRateAverageForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (id)_generateElectrocardiogramForDemoPerson:(id)arg1 atTime:(double)arg2 classification:(unsigned long long)arg3 sampleDate:(id)arg4;
+- (id)electrocardiogramForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (double)lastRestingHeartRate;
 - (double)lastWalkingHeartRateAverage;
+- (unsigned long long)nextElectrocardiogramClassification;
+- (double)nextElectrocardiogramSampleTime;
 - (double)nextRestingHeartRateSampleTime;
 - (double)nextWalkingHeartRateAverageSampleTime;
 - (id)restingHeartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)setLastRestingHeartRate:(double)arg1;
 - (void)setLastWalkingHeartRateAverage:(double)arg1;
+- (void)setNextElectrocardiogramClassification:(unsigned long long)arg1;
+- (void)setNextElectrocardiogramSampleTime:(double)arg1;
 - (void)setNextRestingHeartRateSampleTime:(double)arg1;
 - (void)setNextWalkingHeartRateAverageSampleTime:(double)arg1;
 - (void)setupWithDemoDataGenerator:(id)arg1;

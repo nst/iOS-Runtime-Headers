@@ -19,7 +19,9 @@
     APUILongLookViewController<PLPreviewInteractionPresentable> * _presentableViewController;
     PLPreviewInteractionManager * _previewInteractionManager;
     bool  _representsVoiceShortcut;
+    bool  _safeToReleaseLongLookViewController;
     SFSearchResult * _searchResult;
+    APUITVIntentHandler * _tvIntentHandler;
     NSUserActivity * _userActivity;
     NSUserDefaults * _userDefaults;
     bool  _wasPresentedImmediately;
@@ -71,6 +73,7 @@
 - (id)currentCardViewController;
 - (id)delegate;
 - (bool)fetchViewControllerForContentViewInLongLook:(id)arg1 completion:(id /* block */)arg2;
+- (void)handOverIntentHandlingToApp;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)intent;
 - (id)intentHandlingViewController;

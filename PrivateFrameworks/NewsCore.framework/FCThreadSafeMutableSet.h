@@ -3,20 +3,29 @@
  */
 
 @interface FCThreadSafeMutableSet : NSObject {
-    NFMutexLock * _mutexLock;
+    NFUnfairLock * _lock;
     NSMutableSet * _set;
 }
 
+@property (readonly, copy) NSArray *allObjects;
+@property (readonly) unsigned long long count;
+@property (readonly) bool isEmpty;
 @property (nonatomic, readonly, copy) NSSet *readOnlySet;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
+- (id)allObjects;
 - (bool)containsObject:(id)arg1;
+- (unsigned long long)count;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (id)init;
+- (bool)isEmpty;
 - (id)readOnlySet;
+- (void)readWithAccessor:(id /* block */)arg1;
+- (void)readWriteWithAccessor:(id /* block */)arg1;
 - (void)removeObject:(id)arg1;
+- (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInSet:(id)arg1;
 
 @end

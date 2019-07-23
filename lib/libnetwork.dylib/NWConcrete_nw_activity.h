@@ -3,12 +3,8 @@
  */
 
 @interface NWConcrete_nw_activity : NSObject <OS_nw_activity> {
-    struct atomic_flag { 
-        bool _Value; 
-    }  activated;
-    struct atomic_flag { 
-        bool _Value; 
-    }  completed;
+    unsigned int  activated;
+    unsigned int  completed;
     int  completion_reason;
     unsigned int  domain;
     unsigned long long  end_time;
@@ -16,6 +12,9 @@
     unsigned int  is_lightweight;
     unsigned int  is_retry;
     unsigned int  label;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  lock;
     NWConcrete_nw_activity * parent;
     int  reporting_strategy;
     unsigned long long  start_time;

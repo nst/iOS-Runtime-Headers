@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Rapport.framework/Rapport
  */
 
-@interface RPCompanionLinkClient : NSObject <NSSecureCoding, RPCompanionLinkXPCClientInterface, RPMessageable> {
+@interface RPCompanionLinkClient : NSObject <NSSecureCoding, RPAuthenticatable, RPCompanionLinkXPCClientInterface, RPMessageable> {
     bool  _activateCalled;
+    NSString * _appID;
     struct NSMutableSet { Class x1; } * _assertions;
+    id /* block */  _authCompletionHandler;
+    unsigned int  _clientID;
     unsigned long long  _controlFlags;
     RPCompanionLinkDevice * _destinationDevice;
     id /* block */  _deviceChangedHandler;
@@ -14,22 +17,33 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     struct NSMutableDictionary { Class x1; } * _eventRegistrations;
     unsigned int  _flags;
+    id /* block */  _hidePasswordHandler;
+    unsigned int  _internalAuthFlags;
     id /* block */  _interruptionHandler;
     bool  _invalidateCalled;
     bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     RPCompanionLinkDevice * _localDevice;
     id /* block */  _localDeviceUpdatedHandler;
+    unsigned int  _pairSetupFlags;
+    unsigned int  _pairVerifyFlags;
     NSString * _password;
+    int  _passwordType;
+    int  _passwordTypeActual;
     id /* block */  _promptForPasswordHandler;
     NSMutableOrderedSet * _registeredProfileIDs;
     struct NSMutableDictionary { Class x1; } * _requestRegistrations;
+    NSString * _serviceType;
+    id /* block */  _showPasswordHandler;
     NSDictionary * _siriInfo;
     NSXPCConnection * _xpcCnx;
 }
 
 @property (readonly, copy) NSArray *activeDevices;
 @property (readonly) RPCompanionLinkDevice *activePersonalCompanion;
+@property (nonatomic, copy) NSString *appID;
+@property (nonatomic, copy) id /* block */ authCompletionHandler;
+@property (nonatomic) unsigned int clientID;
 @property (nonatomic) unsigned long long controlFlags;
 @property (nonatomic, retain) RPCompanionLinkDevice *destinationDevice;
 @property (nonatomic, copy) id /* block */ deviceChangedHandler;
@@ -37,12 +51,20 @@
 @property (nonatomic, copy) id /* block */ deviceLostHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) unsigned int flags;
+@property (nonatomic, copy) id /* block */ hidePasswordHandler;
+@property (nonatomic, readonly) unsigned int internalAuthFlags;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (retain) RPCompanionLinkDevice *localDevice;
 @property (nonatomic, copy) id /* block */ localDeviceUpdatedHandler;
+@property (nonatomic) unsigned int pairSetupFlags;
+@property (nonatomic) unsigned int pairVerifyFlags;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic) int passwordType;
+@property (nonatomic, readonly) int passwordTypeActual;
 @property (nonatomic, copy) id /* block */ promptForPasswordHandler;
+@property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic, copy) id /* block */ showPasswordHandler;
 @property (nonatomic, copy) NSDictionary *siriInfo;
 
 + (bool)supportsSecureCoding;
@@ -66,10 +88,15 @@
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (id)activeDevices;
 - (id)activePersonalCompanion;
+- (id)appID;
+- (id /* block */)authCompletionHandler;
+- (unsigned int)clientID;
+- (void)companionLinkAuthCompleted:(id)arg1;
 - (void)companionLinkChangedDevice:(id)arg1 changes:(unsigned int)arg2;
 - (void)companionLinkFoundDevice:(id)arg1;
 - (void)companionLinkLocalDeviceUpdated:(id)arg1;
 - (void)companionLinkLostDevice:(id)arg1;
+- (void)companionLinkPromptForPasswordType:(int)arg1 flags:(unsigned int)arg2 throttleSeconds:(int)arg3;
 - (void)companionLinkReceivedEventID:(id)arg1 event:(id)arg2 options:(id)arg3;
 - (void)companionLinkReceivedRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(id /* block */)arg4;
 - (unsigned long long)controlFlags;
@@ -84,20 +111,34 @@
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)flags;
+- (id /* block */)hidePasswordHandler;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)internalAuthFlags;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (void)launchAppWithBundleID:(id)arg1 destinationID:(id)arg2 completion:(id /* block */)arg3;
+- (void)launchAppWithURL:(id)arg1 destinationID:(id)arg2 completion:(id /* block */)arg3;
 - (id)localDevice;
 - (id /* block */)localDeviceUpdatedHandler;
+- (unsigned int)pairSetupFlags;
+- (unsigned int)pairVerifyFlags;
 - (id)password;
+- (int)passwordType;
+- (int)passwordTypeActual;
 - (id /* block */)promptForPasswordHandler;
 - (void)registerEventID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (void)registerProfileID:(id)arg1 completion:(id /* block */)arg2;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (void)sendEventID:(id)arg1 event:(id)arg2 destinationID:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
+- (void)sendEventID:(id)arg1 event:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
 - (void)sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(id /* block */)arg5;
+- (void)sendRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(id /* block */)arg4;
+- (id)serviceType;
+- (void)setAppID:(id)arg1;
+- (void)setAuthCompletionHandler:(id /* block */)arg1;
+- (void)setClientID:(unsigned int)arg1;
 - (void)setControlFlags:(unsigned long long)arg1;
 - (void)setDestinationDevice:(id)arg1;
 - (void)setDeviceChangedHandler:(id /* block */)arg1;
@@ -105,14 +146,21 @@
 - (void)setDeviceLostHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
+- (void)setHidePasswordHandler:(id /* block */)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLocalDevice:(id)arg1;
 - (void)setLocalDeviceUpdatedHandler:(id /* block */)arg1;
+- (void)setPairSetupFlags:(unsigned int)arg1;
+- (void)setPairVerifyFlags:(unsigned int)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setPasswordType:(int)arg1;
 - (void)setPromptForPasswordHandler:(id /* block */)arg1;
+- (void)setServiceType:(id)arg1;
+- (void)setShowPasswordHandler:(id /* block */)arg1;
 - (void)setSiriInfo:(id)arg1;
 - (bool)shouldReportDevice:(id)arg1;
+- (id /* block */)showPasswordHandler;
 - (id)siriInfo;
 - (void)tryPassword:(id)arg1;
 

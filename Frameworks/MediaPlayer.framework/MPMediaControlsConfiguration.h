@@ -7,6 +7,7 @@
     NSString * _presentingAppBundleID;
     NSString * _routingContextUID;
     bool  _shouldPreventAutorotation;
+    bool  _sortByIsVideoRoute;
     long long  _style;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSString *presentingAppBundleID;
 @property (nonatomic, copy) NSString *routingContextUID;
 @property (nonatomic) bool shouldPreventAutorotation;
+@property (nonatomic) bool sortByIsVideoRoute;
 @property (nonatomic) long long style;
 
 + (bool)supportsSecureCoding;
@@ -31,8 +33,10 @@
 - (void)setPresentingAppBundleID:(id)arg1;
 - (void)setRoutingContextUID:(id)arg1;
 - (void)setShouldPreventAutorotation:(bool)arg1;
+- (void)setSortByIsVideoRoute:(bool)arg1;
 - (void)setStyle:(long long)arg1;
 - (bool)shouldPreventAutorotation;
+- (bool)sortByIsVideoRoute;
 - (long long)style;
 
 @end

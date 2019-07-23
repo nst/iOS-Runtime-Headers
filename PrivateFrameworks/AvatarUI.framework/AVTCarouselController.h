@@ -127,6 +127,7 @@
 - (void)setView:(id)arg1;
 - (void)showMultiAvatarControllerAnimated:(bool)arg1;
 - (void)showSingleAvatarControllerAnimated:(bool)arg1;
+- (void)significantRecordChangeInDataSource:(id)arg1;
 - (id)singleAvatarController;
 - (bool)singleAvatarMode;
 - (id)snapshotProviderFocusedOnRecordWithIdentifier:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;

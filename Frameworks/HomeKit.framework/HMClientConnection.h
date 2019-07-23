@@ -22,6 +22,7 @@
 
 + (bool)areAnyAccessoriesConfigured;
 + (bool)areAnySpeakersConfigured;
++ (bool)areAnyTelevisionAccessoriesConfigured;
 + (bool)areHomesConfigured;
 + (id)sharedInstance;
 + (id)siriHomeIdentifier;

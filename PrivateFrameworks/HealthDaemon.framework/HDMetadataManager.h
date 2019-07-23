@@ -15,6 +15,7 @@
 - (bool)_insertMetadata:(id)arg1 forObjectID:(id)arg2 database:(id)arg3 error:(id*)arg4;
 - (id)_keyEntityForKey:(id)arg1 createIfNecessary:(bool)arg2 database:(id)arg3 error:(id*)arg4;
 - (id)_keyForKeyID:(id)arg1 database:(id)arg2 error:(id*)arg3;
+- (id)_mappedMetadataKeyForMetadataKey:(id)arg1;
 - (id)_metadataForObjectID:(long long)arg1 baseMetadata:(id)arg2 keyFilter:(id /* block */)arg3 statement:(id)arg4 error:(id*)arg5;
 - (bool)_useExternalSyncIdentifierPredicateForKey:(id)arg1;
 - (id)initWithProfile:(id)arg1;

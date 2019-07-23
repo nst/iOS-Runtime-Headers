@@ -4,8 +4,12 @@
 
 @interface CSMyriadPHash : NSObject <CSSelfTriggerDetectorDelegate, CSVoiceTriggerDelegate> {
     <CSMyriadPHashDelegate> * _delegate;
+    float * _hammingWindow;
+    struct OpaqueFFTSetup { } * _setup;
     short  _signalEstimate;
     unsigned char  _signalFractional;
+    struct OpaqueFFTSetup { } * _snrSetup;
+    float * _snrWindow;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,13 +20,19 @@
 @property (nonatomic) unsigned char signalFractional;
 @property (readonly) Class superclass;
 
++ (id)createHashResult:(unsigned short)arg1 goodness:(unsigned char)arg2 confidence:(unsigned char)arg3 absTime:(unsigned long long)arg4 frac:(unsigned char)arg5;
 + (id)currentMyriadPHash;
 + (id)lastHash;
++ (void)notifyAudioHashNotification;
++ (void)notifyHashlessTrigger:(unsigned long long)arg1;
++ (bool)writeHashResultIntoFile:(id)arg1;
++ (bool)writeHashlessResult:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_audioLogDirectory;
-- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 channel:(unsigned long long)arg3 absoluteTime:(unsigned long long)arg4;
+- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 absoluteTime:(unsigned long long)arg5;
 - (id)cachedHash;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithAudioBuffer:(id)arg1;
 - (unsigned short)pHash:(float*)arg1 length:(int)arg2;
@@ -32,7 +42,7 @@
 - (void)setSignalFractional:(unsigned char)arg1;
 - (short)signalEstimate;
 - (unsigned char)signalFractional;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 

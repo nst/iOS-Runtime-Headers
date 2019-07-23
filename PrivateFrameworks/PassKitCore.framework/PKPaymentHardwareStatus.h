@@ -3,12 +3,15 @@
  */
 
 @interface PKPaymentHardwareStatus : NSObject <NSCopying, NSSecureCoding> {
+    bool  _canDecryptBAAEncryptedData;
     bool  _canMakeRemotePayments;
     bool  _hasRemoteDevices;
     bool  _hasSecureElement;
     bool  _inFailForward;
 }
 
+@property (getter=_isDemoModeActive, nonatomic, readonly) bool _isDemoModeActive;
+@property (nonatomic) bool canDecryptBAAEncryptedData;
 @property (nonatomic, readonly) bool canMakeLocalPayments;
 @property (nonatomic, readonly) bool canMakePayments;
 @property (nonatomic) bool canMakeRemotePayments;
@@ -18,6 +21,8 @@
 
 + (bool)supportsSecureCoding;
 
+- (bool)_isDemoModeActive;
+- (bool)canDecryptBAAEncryptedData;
 - (bool)canMakeLocalPayments;
 - (bool)canMakePayments;
 - (bool)canMakeRemotePayments;
@@ -28,6 +33,7 @@
 - (bool)hasSecureElement;
 - (id)initWithCoder:(id)arg1;
 - (bool)isInFailForward;
+- (void)setCanDecryptBAAEncryptedData:(bool)arg1;
 - (void)setCanMakeRemotePayments:(bool)arg1;
 - (void)setHasRemoteDevices:(bool)arg1;
 - (void)setHasSecureElement:(bool)arg1;

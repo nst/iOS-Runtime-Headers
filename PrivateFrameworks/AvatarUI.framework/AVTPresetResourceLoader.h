@@ -8,7 +8,7 @@
     AVTInMemoryImageCache * _inMemoryImageCache;
     <AVTUILogger> * _logger;
     AVTInMemoryResourceCache * _presetCache;
-    <AVTScheduler> * _renderingScheduler;
+    <AVTTaskScheduler> * _renderingScheduler;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) AVTInMemoryImageCache *inMemoryImageCache;
 @property (nonatomic, readonly) <AVTUILogger> *logger;
 @property (nonatomic, readonly) AVTInMemoryResourceCache *presetCache;
-@property (nonatomic, readonly) <AVTScheduler> *renderingScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;

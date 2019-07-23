@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCNewsAppConfig : NSObject <FCCoreConfiguration, FCNewsAppConfiguration> {
+@interface FCNewsAppConfig : NSObject <FCCoreConfiguration, FCJSONEncodableObjectProviding, FCNewsAppConfiguration> {
     NSDictionary * _analyticsContentTypeConfigsByContentTypeByEnvironment;
+    FCPersonalizationTreatment * _cachedPersonalizationTreatment;
     NSDictionary * _configDictionary;
     NSDictionary * _endpointConfigsByEnvironment;
     NSArray * _externalAnalyticsConfigurations;
@@ -13,13 +14,14 @@
     NSDictionary * _languageConfigDictionary;
     NSDate * _lastModificationDate;
     FCNotificationsConfiguration * _notificationsConfig;
-    FCPersonalizationTreatment * _personalizationTreatment;
+    FCPaidBundleConfiguration * _paidBundleConfig;
     FCPrefetchConfiguration * _prefetchConfig;
     bool  _privateDataEncryptionAllowed;
     bool  _privateDataEncryptionMigrationDesired;
     bool  _privateDataEncryptionMigrationRequiresAllDevicesRunningTigris;
     bool  _privateDataMigrationCleanupEnabled;
     NTPBDiscoverMoreVideosInfo * _shareDiscoverMoreVideosInfo;
+    NSString * _storefrontID;
     FCTopStoriesConfiguration * _topStoriesConfig;
     FCWidgetConfig * _widgetConfig;
 }
@@ -35,14 +37,18 @@
 @property (nonatomic, readonly) NSString *articleRecirculationComponentPlacementConfigJSON;
 @property (nonatomic, readonly) NSString *articleRecirculationConfigJSON;
 @property (nonatomic, readonly) long long articleRecirculationPopularFeedQueryTimeRange;
+@property (getter=isArticleToolbarCompressionEnabled, nonatomic, readonly) bool articleToolbarCompressionEnabled;
 @property (nonatomic, readonly) long long autoRefreshMinimumInterval;
 @property (nonatomic, readonly) long long autoScrollToTopFeedTimeout;
+@property (nonatomic, readonly) unsigned long long bestOfBundleFeedGroupKind;
 @property (nonatomic, readonly) NSString *breakingNewsChannelID;
 @property (nonatomic, readonly) NSString *briefingsTagID;
+@property (nonatomic, readonly) FCPersonalizationTreatment *cachedPersonalizationTreatment;
 @property (nonatomic, readonly) NSDictionary *configDictionary;
 @property (nonatomic, readonly) bool corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 @property (nonatomic, readonly) long long corryBarMaxArticleCountForArticleList;
 @property (nonatomic, readonly) long long corryBarMaxArticleCountForSingleArticle;
+@property (nonatomic, readonly) long long criticalStorageThreshold;
 @property (nonatomic, readonly) NSNumber *currentTreatment;
 @property (nonatomic, readonly) double delayBeforeRetryingDroppedFeeds;
 @property (nonatomic, readonly) NSString *description;
@@ -55,12 +61,15 @@
 @property (nonatomic, readonly) long long endOfArticleMaxInaccessiblePaidArticleCount;
 @property (nonatomic, readonly) double endOfArticleMinPaidHeadlineRatio;
 @property (nonatomic, readonly) NSDictionary *endpointConfigsByEnvironment;
+@property (nonatomic, readonly) long long entitlementsCacheRecoveryAttemptDurationInSeconds;
 @property (nonatomic, readonly) NSString *experimentalizableFieldPostfix;
 @property (nonatomic, readonly) long long expirePinnedArticlesAfter;
 @property (nonatomic, readonly) long long expiredPaidSubscriptionGroupCutoffTime;
 @property (nonatomic, readonly) NSString *exploreArticleID;
 @property (nonatomic, retain) NSArray *externalAnalyticsConfigurations;
 @property (nonatomic, readonly) NSString *featuredStoriesTagID;
+@property (nonatomic, readonly) long long feedContentExposureTestMaximumInterval;
+@property (nonatomic, readonly) double feedLineHeightMultiplier;
 @property (nonatomic, readonly) NSString *feedNavigationConfigJSON;
 @property (nonatomic, readonly) FCForYouGroupsConfiguration *forYouGroupsConfiguration;
 @property (nonatomic, readonly) NSString *forYouRecordConfigID;
@@ -68,10 +77,14 @@
 @property (nonatomic, readonly) NSArray *hiddenFeedIDs;
 @property (nonatomic, readonly) FCIAdConfiguration *iAdConfig;
 @property (nonatomic, readonly) double interstitialAdLoadDelay;
+@property (nonatomic, readonly) bool isDefaultConfiguration;
 @property (nonatomic, readonly) bool isExpired;
 @property (nonatomic, readonly) bool isSpecialEventsMicaAnimationDisabled;
+@property (nonatomic, readonly) NSString *issueArticleRecirculationConfigJSON;
 @property (nonatomic, readonly) NSDictionary *languageConfigDictionary;
 @property (nonatomic, readonly) NSDate *lastModificationDate;
+@property (nonatomic, readonly) long long lowStorageThreshold;
+@property (nonatomic, readonly) NSString *magazinesConfigRecordID;
 @property (nonatomic, readonly) long long maxRetriesForDroppedFeeds;
 @property (nonatomic, readonly) long long maximumNumberOfExpiredPaidSubscriptionGroups;
 @property (nonatomic, readonly) long long maximumPaidSubscriptionGroupSizeiPad;
@@ -83,7 +96,6 @@
 @property (nonatomic, readonly) long long minimumDurationBetweenForYouGroupsWeekend;
 @property (nonatomic, readonly) long long minimumDurationBetweenTrendingGroupsWeekday;
 @property (nonatomic, readonly) long long minimumDurationBetweenTrendingGroupsWeekend;
-@property (nonatomic, readonly) long long minimumFollowCountToRemovePersonalizePlacardInFollowingAndForYou;
 @property (nonatomic, readonly) double minimumTrendingUnseenRatio;
 @property (nonatomic, readonly) NSString *moreVideosChannelID;
 @property (nonatomic, readonly) long long newFavoriteNotificationAlertsFrequency;
@@ -94,11 +106,11 @@
 @property (nonatomic, readonly) NSArray *onboardingFeedIDs;
 @property (nonatomic, readonly) long long optionalTopStoriesRefreshRate;
 @property (getter=isOrderFeedEndpointEnabled, nonatomic, readonly) bool orderFeedEndpointEnabled;
+@property (nonatomic, readonly) FCPaidBundleConfiguration *paidBundleConfig;
 @property (nonatomic, readonly) double parsecPopulationCeiling;
 @property (nonatomic, readonly) double parsecPopulationFloor;
 @property (nonatomic, readonly) NSString *personalizationBundleIdMappingResourceId;
 @property (nonatomic, readonly) NSString *personalizationFavorabilityResourceId;
-@property (nonatomic, readonly) FCPersonalizationTreatment *personalizationTreatment;
 @property (nonatomic, readonly) NSString *personalizationUrlMappingResourceId;
 @property (nonatomic, readonly) NSString *personalizationWhitelistResourceId;
 @property (nonatomic, readonly) FCPrefetchConfiguration *prefetchConfig;
@@ -115,22 +127,21 @@
 @property (nonatomic, readonly) NSString *savedStoriesTagID;
 @property (nonatomic, readonly) NTPBDiscoverMoreVideosInfo *shareDiscoverMoreVideosInfo;
 @property (nonatomic, readonly) bool shouldShowAlternateHeadlines;
-@property (nonatomic, readonly) long long showCardNavHintMaxCount;
 @property (nonatomic, readonly) long long singleChannelFeedMinFeedItemsPerRequest;
 @property (nonatomic, readonly) long long singleTopicFeedMinFeedItemsPerRequest;
+@property (nonatomic, readonly) NSString *spotlightChannelID;
 @property (nonatomic, readonly) long long stateRestorationAllowedTimeWindow;
+@property (nonatomic, readonly, copy) NSString *storefrontID;
 @property (nonatomic, readonly) long long subscriptionsGlobalMeteredCount;
 @property (nonatomic, readonly) long long subscriptionsGracePeriodForTokenVerificationSeconds;
 @property (nonatomic, readonly) long long subscriptionsPlacardGlobalMaximumPerDay;
 @property (nonatomic, readonly) long long subscriptionsPlacardPublisherFrequencyInSeconds;
 @property (nonatomic, readonly) bool terminateAppOnBackgroundAfterJoiningOrLeavingExperiment;
 @property (nonatomic, readonly) double tileProminenceScoreBalanceValue;
-@property (nonatomic, readonly) NSArray *topLevelCuratedTagIDs;
-@property (nonatomic, readonly) NSArray *topLevelRecommendedChannelTagIDs;
-@property (nonatomic, readonly) NSArray *topLevelRecommendedTopicTagIDs;
 @property (nonatomic, readonly) FCTopStoriesConfiguration *topStoriesConfig;
 @property (nonatomic, readonly, copy) NSArray *topStoriesPublishDates;
 @property (nonatomic, readonly) NSString *topVideosChannelID;
+@property (nonatomic, readonly) NSString *translationMapResourceID;
 @property (nonatomic, readonly) unsigned long long trendingStyle;
 @property (nonatomic, readonly) NSString *trendingTagID;
 @property (nonatomic, readonly) long long trendingTopicsRefreshRate;
@@ -142,8 +153,11 @@
 @property (nonatomic, readonly) long long widgetMinimumArticleExposureDurationToBePreseenInMilliseconds;
 @property (nonatomic, readonly) unsigned int widgetMinimumNumberOfTimesPreseenToBeSeen;
 
-+ (id)configurationWithData:(id)arg1 preferredLanguageTags:(id)arg2;
-+ (id)defaultConfiguration;
++ (id)configurationWithData:(id)arg1 storefrontID:(id)arg2 preferredLanguageTags:(id)arg3;
++ (id)defaultConfigurationForStoreFrontID:(id)arg1;
++ (id)defaultForYouRecordConfigIDByLocalizedStorefrontID;
++ (id)defaultMagazinesConfigRecordIDByLocalizedStorefrontID;
++ (id)defaultWidgetRecordConfigIDByLocalizedStorefrontID;
 + (id)languageConfigDictionaryForConfig:(id)arg1 preferredLanguageTags:(id)arg2;
 + (id)overrideForYouConfigID;
 + (id)overrideWidgetSectionConfigID;
@@ -153,6 +167,7 @@
 - (void)_loadEndpointConfiguration;
 - (void)_loadForYouGroupsConfiguration;
 - (void)_loadNotificationsConfiguration;
+- (void)_loadPaidBundleConfigurationForStorefrontID:(id)arg1;
 - (void)_loadPrefetchConfiguration;
 - (void)_loadPrivateDataEncryptionConfiguration;
 - (void)_loadTopStoriesConfiguration;
@@ -172,13 +187,16 @@
 - (long long)articleRecirculationPopularFeedQueryTimeRange;
 - (long long)autoRefreshMinimumInterval;
 - (long long)autoScrollToTopFeedTimeout;
+- (unsigned long long)bestOfBundleFeedGroupKind;
 - (id)breakingNewsChannelID;
 - (id)briefingsTagID;
+- (id)cachedPersonalizationTreatment;
 - (id)configDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)corryBarHideDiscoverMoreInterstitialForNonOnboardedUsers;
 - (long long)corryBarMaxArticleCountForArticleList;
 - (long long)corryBarMaxArticleCountForSingleArticle;
+- (long long)criticalStorageThreshold;
 - (id)currentTreatment;
 - (double)delayBeforeRetryingDroppedFeeds;
 - (id)description;
@@ -191,12 +209,15 @@
 - (long long)endOfArticleMaxInaccessiblePaidArticleCount;
 - (double)endOfArticleMinPaidHeadlineRatio;
 - (id)endpointConfigsByEnvironment;
+- (long long)entitlementsCacheRecoveryAttemptDurationInSeconds;
 - (id)experimentalizableFieldPostfix;
 - (long long)expirePinnedArticlesAfter;
 - (long long)expiredPaidSubscriptionGroupCutoffTime;
 - (id)exploreArticleID;
 - (id)externalAnalyticsConfigurations;
 - (id)featuredStoriesTagID;
+- (long long)feedContentExposureTestMaximumInterval;
+- (double)feedLineHeightMultiplier;
 - (id)feedNavigationConfigJSON;
 - (id)forYouGroupsConfiguration;
 - (id)forYouRecordConfigID;
@@ -204,16 +225,24 @@
 - (id)hiddenFeedIDs;
 - (id)iAdConfig;
 - (id)init;
-- (id)initWithConfigDictionary:(id)arg1 languageConfigDictionary:(id)arg2;
+- (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2 languageConfigDictionary:(id)arg3;
+- (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2 languageConfigDictionary:(id)arg3 lastModificationDate:(id)arg4;
 - (double)interstitialAdLoadDelay;
+- (bool)isArticleToolbarCompressionEnabled;
+- (bool)isDefaultConfiguration;
 - (bool)isExpired;
 - (bool)isOrderFeedEndpointEnabled;
 - (bool)isPrivateDataEncryptionAllowed;
 - (bool)isPrivateDataEncryptionMigrationDesired;
 - (bool)isPrivateDataMigrationCleanupEnabled;
 - (bool)isSpecialEventsMicaAnimationDisabled;
+- (id)issueArticleRecirculationConfigJSON;
+- (id)jsonEncodableObject;
 - (id)languageConfigDictionary;
 - (id)lastModificationDate;
+- (id)localizedStorefrontID;
+- (long long)lowStorageThreshold;
+- (id)magazinesConfigRecordID;
 - (long long)maxRetriesForDroppedFeeds;
 - (long long)maximumNumberOfExpiredPaidSubscriptionGroups;
 - (long long)maximumPaidSubscriptionGroupSizeiPad;
@@ -225,7 +254,6 @@
 - (long long)minimumDurationBetweenForYouGroupsWeekend;
 - (long long)minimumDurationBetweenTrendingGroupsWeekday;
 - (long long)minimumDurationBetweenTrendingGroupsWeekend;
-- (long long)minimumFollowCountToRemovePersonalizePlacardInFollowingAndForYou;
 - (double)minimumTrendingUnseenRatio;
 - (id)moreVideosChannelID;
 - (long long)newFavoriteNotificationAlertsFrequency;
@@ -235,6 +263,7 @@
 - (id)notificationsConfig;
 - (id)onboardingFeedIDs;
 - (long long)optionalTopStoriesRefreshRate;
+- (id)paidBundleConfig;
 - (double)parsecPopulationCeiling;
 - (double)parsecPopulationFloor;
 - (id)personalizationBundleIdMappingResourceId;
@@ -255,10 +284,11 @@
 - (void)setExternalAnalyticsConfigurations:(id)arg1;
 - (id)shareDiscoverMoreVideosInfo;
 - (bool)shouldShowAlternateHeadlines;
-- (long long)showCardNavHintMaxCount;
 - (long long)singleChannelFeedMinFeedItemsPerRequest;
 - (long long)singleTopicFeedMinFeedItemsPerRequest;
+- (id)spotlightChannelID;
 - (long long)stateRestorationAllowedTimeWindow;
+- (id)storefrontID;
 - (long long)subscriptionsGlobalMeteredCount;
 - (long long)subscriptionsGracePeriodForTokenVerificationSeconds;
 - (long long)subscriptionsPlacardGlobalMaximumPerDay;
@@ -266,12 +296,10 @@
 - (bool)terminateAppOnBackgroundAfterJoiningOrLeavingExperiment;
 - (double)tileProminenceScoreBalanceValue;
 - (id)todayConfigWithQueueConfigs:(id)arg1 maxSlotCount:(unsigned long long)arg2;
-- (id)topLevelCuratedTagIDs;
-- (id)topLevelRecommendedChannelTagIDs;
-- (id)topLevelRecommendedTopicTagIDs;
 - (id)topStoriesConfig;
 - (id)topStoriesPublishDates;
 - (id)topVideosChannelID;
+- (id)translationMapResourceID;
 - (unsigned long long)trendingStyle;
 - (id)trendingTagID;
 - (long long)trendingTopicsRefreshRate;

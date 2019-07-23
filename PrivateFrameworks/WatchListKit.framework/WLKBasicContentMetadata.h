@@ -7,11 +7,14 @@
     NSArray * _categories;
     NSNumber * _commonSenseBeginsAge;
     unsigned long long  _contentType;
+    NSString * _contentTypeString;
     NSString * _descriptiveText;
+    NSArray * _genres;
     WLKArtworkVariantListing * _images;
     bool  _isEvod;
     NSString * _shortTitle;
     NSString * _title;
+    NSURL * _tvAppDeeplinkURL;
 }
 
 @property (nonatomic, readonly, copy) NSString *canonicalID;
@@ -19,10 +22,12 @@
 @property (nonatomic, readonly) NSNumber *commonSenseBeginsAge;
 @property (nonatomic, readonly) unsigned long long contentType;
 @property (nonatomic, readonly, copy) NSString *descriptiveText;
+@property (nonatomic, readonly, copy) NSArray *genres;
 @property (nonatomic, readonly) WLKArtworkVariantListing *images;
 @property (nonatomic, readonly) bool isEvod;
 @property (nonatomic, readonly, copy) NSString *shortTitle;
 @property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSURL *tvAppDeeplinkURL;
 
 + (Class)_classForContentType:(unsigned long long)arg1;
 + (unsigned long long)contentTypeForString:(id)arg1;
@@ -32,12 +37,15 @@
 - (id)categories;
 - (id)commonSenseBeginsAge;
 - (unsigned long long)contentType;
+- (id)description;
 - (id)descriptiveText;
+- (id)genres;
 - (id)images;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEvod;
 - (id)shortTitle;
 - (id)title;
+- (id)tvAppDeeplinkURL;
 
 @end

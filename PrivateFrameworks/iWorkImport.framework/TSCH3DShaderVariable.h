@@ -16,9 +16,12 @@
 }
 
 @property (nonatomic, readonly) unsigned long long arraySize;
+@property (nonatomic, readonly) NSString *commonShaderType;
+@property (nonatomic, readonly) unsigned long long componentCount;
 @property (nonatomic, readonly) TSCH3DShaderVariable *genericName;
 @property (nonatomic, readonly) struct TSCH3DShaderType { unsigned long long x1; } initialLinkType;
 @property (nonatomic, readonly) bool isSpecial;
+@property (nonatomic, readonly) bool isTexture;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *precision;
 @property (nonatomic, readonly) struct TSCH3DShaderType { unsigned long long x1; } shaderType;
@@ -28,6 +31,8 @@
 
 - (id).cxx_construct;
 - (unsigned long long)arraySize;
+- (id)commonShaderType;
+- (unsigned long long)componentCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -37,6 +42,7 @@
 - (struct TSCH3DShaderType { unsigned long long x1; })initialLinkType;
 - (bool)isEqual:(id)arg1;
 - (bool)isSpecial;
+- (bool)isTexture;
 - (id)name;
 - (struct NSString { Class x1; }*)precision;
 - (struct TSCH3DShaderType { unsigned long long x1; })shaderType;

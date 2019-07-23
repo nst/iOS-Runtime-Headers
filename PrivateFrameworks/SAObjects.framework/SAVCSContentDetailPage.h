@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSString *loadingText;
 @property (nonatomic, copy) NSString *seasonId;
 @property (nonatomic, copy) NSString *showId;
+@property (nonatomic, copy) NSURL *url;
 @property (nonatomic) bool userDriven;
 @property (nonatomic, copy) NSString *utsId;
 
@@ -32,9 +33,11 @@
 - (void)setLoadingText:(id)arg1;
 - (void)setSeasonId:(id)arg1;
 - (void)setShowId:(id)arg1;
+- (void)setUrl:(id)arg1;
 - (void)setUserDriven:(bool)arg1;
 - (void)setUtsId:(id)arg1;
 - (id)showId;
+- (id)url;
 - (bool)userDriven;
 - (id)utsId;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.ParticipantContactDetailsCache : SwiftObject {
+@interface ConversationKit.ParticipantContactDetailsCache : Swift._SwiftObject {
     void cache;
     void contactStore;
 }

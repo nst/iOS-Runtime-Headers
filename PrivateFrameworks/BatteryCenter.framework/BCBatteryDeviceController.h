@@ -28,6 +28,7 @@
 - (int)_displayChargePercentForCurrentCapacity:(id)arg1 andMaxCapacity:(id)arg2 updateZeroValue:(bool)arg3;
 - (void)_handleBatterySaverModeChanged:(int)arg1;
 - (void)_handlePSChange;
+- (id)_identifierFromPowerSourceDescription:(id)arg1;
 - (void)_incrementNumberOfConnectedDevices:(bool)arg1;
 - (void)_incrementPercentChargeForConnectedDevices:(bool)arg1;
 - (bool)_isDevicePartOfPair:(id)arg1;

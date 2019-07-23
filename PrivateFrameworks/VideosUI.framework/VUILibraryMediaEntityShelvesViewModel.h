@@ -4,6 +4,7 @@
 
 @interface VUILibraryMediaEntityShelvesViewModel : NSObject {
     id /* block */  _configureShelfViewControllerBlock;
+    NSDictionary * _mediaEntitiesByShelfType;
     id /* block */  _shelfTypeComparator;
     NSArray * _shelfTypes;
     NSDictionary * _shelfViewControllerByShelfType;
@@ -11,6 +12,7 @@
 
 @property (nonatomic, copy) id /* block */ configureShelfViewControllerBlock;
 @property (nonatomic, readonly) bool hasContent;
+@property (nonatomic, readonly) NSDictionary *mediaEntitiesByShelfType;
 @property (nonatomic, copy) id /* block */ shelfTypeComparator;
 @property (nonatomic, retain) NSArray *shelfTypes;
 @property (nonatomic, retain) NSDictionary *shelfViewControllerByShelfType;
@@ -24,6 +26,7 @@
 - (bool)hasContent;
 - (id)init;
 - (id)initWithMediaEntitiesMap:(id)arg1 shelfTypeComparator:(id /* block */)arg2 configureShelfViewControllerBlock:(id /* block */)arg3;
+- (id)mediaEntitiesByShelfType;
 - (void)setConfigureShelfViewControllerBlock:(id /* block */)arg1;
 - (void)setShelfTypeComparator:(id /* block */)arg1;
 - (void)setShelfTypes:(id)arg1;

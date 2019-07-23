@@ -9,6 +9,9 @@
 @property (nonatomic, retain) PSSpecifier *togglePasscodeSpecifier;
 
 - (void).cxx_destruct;
+- (void)_removeManagedPasscode;
+- (id)_removePasscodeAction;
+- (void)_setManagedPasscode;
 - (void)changeOrRemovePasscode:(id)arg1;
 - (id)init;
 - (bool)isHidden;

@@ -20,6 +20,7 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     }  _opusOutASBD;
+    float  _outPacketSizeInSec;
     unsigned int  _recordBasePacketsPerSecond;
 }
 

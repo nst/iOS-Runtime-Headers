@@ -4,6 +4,7 @@
 
 @interface REDataSourceManager : RERelevanceEngineSubsystem <RELoggable> {
     NSSet * _availableDataSourceIdentifiers;
+    bool  _completedFirstElementLoad;
     NSSet * _currentDataSourceIdentifiers;
     NSArray * _currentDataSources;
     NSMutableArray * _dataSourceControllers;
@@ -20,6 +21,7 @@
 }
 
 @property (retain) NSSet *availableDataSourceIdentifiers;
+@property (getter=hasCompletedFirstElementLoad, nonatomic, readonly) bool completedFirstElementLoad;
 @property (retain) NSSet *currentDataSourceIdentifiers;
 @property (retain) NSArray *currentDataSources;
 @property (readonly, copy) NSString *debugDescription;
@@ -49,6 +51,7 @@
 - (id)delegate;
 - (id)elementGroupForIdentifier:(id)arg1;
 - (void)enumerateElementDataSourceControllers:(id /* block */)arg1;
+- (bool)hasCompletedFirstElementLoad;
 - (id)initWithRelevanceEngine:(id)arg1 dataSourceLoader:(id)arg2 withDelegate:(id)arg3;
 - (id)loader;
 - (struct { long long x1; long long x2; long long x3; })minimumSupportedSystemVersionForDataSourceWithIdentifier:(id)arg1;

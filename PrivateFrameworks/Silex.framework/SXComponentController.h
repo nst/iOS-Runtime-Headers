@@ -2,47 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXComponentController : NSObject <SXAXAssistiveTechStatusChangeListener, SXViewportChangeListener> {
-    NSMutableDictionary * _componentIdentifiersToInvalidate;
+@interface SXComponentController : NSObject <SXComponentController, SXLayoutIntegrator, SXViewportChangeListener> {
+    <SXDOMObjectProviding> * _DOMObjectProvider;
     <SXComponentViewEngine> * _componentViewEngine;
-    <SXComponentControllerDelegate> * _delegate;
-    bool  _invalidationDispatched;
+    NSArray * _flattenedComponentViews;
+    <SXComponentHosting> * _host;
     bool  _isPresented;
     bool  _isPresenting;
     NSMutableDictionary * _mappedComponentViews;
     NSMutableArray * _nestedComponentViews;
-    NSMutableSet * _possibleInvalidations;
+    NSHashTable * _observers;
     SXPresentationAttributes * _presentationAttributes;
     SXLayoutBlueprint * _presentedBlueprint;
     NSMutableArray * _sortedComponentViews;
     SXViewport * _viewport;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *componentIdentifiersToInvalidate;
+@property (nonatomic, readonly) <SXDOMObjectProviding> *DOMObjectProvider;
 @property (nonatomic, readonly) <SXComponentViewEngine> *componentViewEngine;
-@property (nonatomic, readonly) NSArray *componentViews;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SXComponentControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *flattenedComponentViews;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool invalidationDispatched;
+@property (nonatomic) <SXComponentHosting> *host;
 @property (nonatomic, readonly) bool isPresented;
 @property (nonatomic) bool isPresenting;
 @property (nonatomic, retain) NSMutableDictionary *mappedComponentViews;
 @property (nonatomic, retain) NSMutableArray *nestedComponentViews;
-@property (nonatomic, retain) NSMutableSet *possibleInvalidations;
+@property (nonatomic, readonly) NSHashTable *observers;
 @property (nonatomic, readonly) SXPresentationAttributes *presentationAttributes;
 @property (nonatomic, readonly) SXLayoutBlueprint *presentedBlueprint;
 @property (nonatomic, retain) NSMutableArray *sortedComponentViews;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SXViewport *viewport;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
 - (void).cxx_destruct;
+- (id)DOMObjectProvider;
+- (void)addObserver:(id)arg1;
 - (void)assistiveTechnologyStatusDidChange;
-- (void)cancelInvalidationForComponentWithIdentifier:(id)arg1;
-- (id)componentIdentifiersToInvalidate;
 - (id)componentViewEngine;
 - (id)componentViewForIdentifier:(id)arg1;
 - (id)componentViewForPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -51,38 +48,30 @@
 - (id)componentViewsForRole:(int)arg1;
 - (id)componentViewsForRole:(int)arg1 forLayoutBlueprint:(id)arg2;
 - (id)componentsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)delegate;
 - (void)fadeComponent:(id)arg1 completion:(id /* block */)arg2;
 - (id)flattenedComponentViews;
-- (id)initWithViewport:(id)arg1 componentViewEngine:(id)arg2;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2;
-- (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2 priority:(int)arg3;
-- (void)invalidateQueuedComponentsIfNeededInLayoutBlueprint:(id)arg1;
-- (bool)invalidationDispatched;
+- (id)host;
+- (id)initWithViewport:(id)arg1 componentViewEngine:(id)arg2 DOMObjectProvider:(id)arg3;
+- (void)integrateBlueprint:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)isPresented;
 - (bool)isPresenting;
 - (id)mappedComponentViews;
-- (void)mightInvalidateComponentWithIdentifier:(id)arg1;
 - (id)nestedComponentViews;
-- (id)possibleInvalidations;
-- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3 presentationDelegate:(id)arg4;
-- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 animated:(bool)arg4;
-- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 attributes:(id)arg4;
-- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 presentationDelegate:(id)arg3 columnLayout:(id)arg4;
+- (id)observers;
+- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3;
+- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 columnLayout:(id)arg3;
 - (void)presentComponentsInBlueprint:(id)arg1;
 - (id)presentationAttributes;
 - (id)presentedBlueprint;
 - (void)provideInfosLayoutTo:(id)arg1;
+- (void)removeComponentsInLayoutBlueprint:(id)arg1 removedFromLayoutBlueprint:(id)arg2;
+- (void)removeObserver:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })renderBounds;
 - (void)renderContentsIfNeededForComponents:(id)arg1;
-- (void)setComponentIdentifiersToInvalidate:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setInvalidationDispatched:(bool)arg1;
+- (void)setHost:(id)arg1;
 - (void)setIsPresenting:(bool)arg1;
 - (void)setMappedComponentViews:(id)arg1;
 - (void)setNestedComponentViews:(id)arg1;
-- (void)setPossibleInvalidations:(id)arg1;
 - (void)setSortedComponentViews:(id)arg1;
 - (id)sortedComponentViews;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1;

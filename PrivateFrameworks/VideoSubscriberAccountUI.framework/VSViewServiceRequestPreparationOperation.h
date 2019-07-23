@@ -43,11 +43,11 @@
 - (void)_checkEntitlement;
 - (void)_checkPrivacy;
 - (void)_checkSupportedProviders;
-- (void)_determineProviderDisplayName;
+- (void)_determineProviderDisplayNameWithUI:(bool)arg1;
 - (void)_finishWithError:(id)arg1;
 - (void)_finishWithSupportedProviders:(id)arg1;
 - (id)_privacyServiceWithErrorHandler:(id /* block */)arg1;
-- (void)_promptForPrivacyWithDisplayName:(id)arg1 providerID:(id)arg2;
+- (void)_promptForPrivacyWithDisplayNameIfRequired:(id)arg1 providerID:(id)arg2 allowUI:(bool)arg3;
 - (id)auditToken;
 - (id)availabilityInfoCenter;
 - (id)bag;

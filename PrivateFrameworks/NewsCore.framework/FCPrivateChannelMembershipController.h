@@ -27,20 +27,21 @@
 + (bool)requiresPushNotificationSupport;
 
 - (void).cxx_destruct;
+- (void)_fetchPrivateChannelMembershipsWithCompletion:(id /* block */)arg1;
+- (void)_refreshPublicMembershipsWithCompletion:(id /* block */)arg1;
 - (void)activityObservingApplicationDidBecomeActive;
 - (void)addItem:(id)arg1 toStore:(bool)arg2;
 - (void)addObserver:(id)arg1;
 - (void)changedMembershipsFrom:(id)arg1 toMemberships:(id)arg2;
-- (void)checkArticleID:(id)arg1 inFeedDescriptors:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)checkNextArticleID:(id)arg1 inFeedDescriptors:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)dealloc;
-- (id)feedDescriptorForDraftFeedForChannelID:(id)arg1;
+- (id)feedDescriptorForDraftFeedForChannel:(id)arg1;
 - (void)fetchMembershipsWithIDs:(id)arg1 queue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (bool)hasMemberships;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
 - (void)isAllowedToSeeArticleID:(id)arg1 completionBlock:(id /* block */)arg2;
 - (bool)isAllowedToSeeDraftsForChannelID:(id)arg1;
+- (void)isAllowedToSeeIssueID:(id)arg1 completionBlock:(id /* block */)arg2;
 - (bool)isMemberOfChannelID:(id)arg1;
 - (void)loadLocalCachesFromStore;
 - (id)membershipReferences;
@@ -51,5 +52,6 @@
 - (void)removeObserver:(id)arg1;
 - (void)setMembershipReferences:(id)arg1;
 - (void)setMembershipsByChannelID:(id)arg1;
+- (bool)shouldShowAllDraftContent;
 
 @end

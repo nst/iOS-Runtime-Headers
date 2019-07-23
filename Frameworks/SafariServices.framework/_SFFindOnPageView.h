@@ -77,6 +77,7 @@
 - (id)matchLabelText;
 - (void)next;
 - (unsigned long long)numberOfFindMatches;
+- (void)prepareFindOnPage;
 - (void)prepareFindOnPageWithString:(id)arg1;
 - (void)previous;
 - (void)selectFindOnPageText;

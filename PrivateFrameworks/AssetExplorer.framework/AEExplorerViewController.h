@@ -100,6 +100,7 @@
 - (void)_invalidateCameraTileLayout;
 - (bool)_isPresentingFullscreenCamera;
 - (long long)_layoutStyleForSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })_maximumThumbnailSize;
 - (id)_mediaProvider;
 - (id)_missingThumbnailAssetIndexes;
 - (unsigned long long)_options;

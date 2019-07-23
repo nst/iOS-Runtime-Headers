@@ -2,18 +2,99 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUIMetricsController : NSObject
+@interface VUIMetricsController : NSObject {
+    MTMetricsKit * _activeMetricsKit;
+    NSDictionary * _baseFields;
+    NSString * _currentTabIdentifier;
+    NSString * _exitEventDestinationUrl;
+    bool  _isAppJustDeepLinkOpened;
+    bool  _isAppJustLaunched;
+    bool  _isGDPRConsented;
+    bool  _isInternalBuild;
+    VUIMetricsPageEventData * _lastRecordedPageEventData;
+    MTMetricsKit * _loggerKit;
+    NSObject<OS_dispatch_queue> * _metricsDataDispatchSQ;
+    MTMetricsKit * _metricsKitMain;
+    MTMetricsKit * _metricsKitUnidentified;
+    MTMetricsKit * _perfMetricsKit;
+    NSHashTable * _savedRecentEvents;
+    bool  _shouldPostAppLaunchData;
+}
 
-- (id)_createMetricsController;
-- (id)_getClientIDForAccount:(id)arg1;
-- (id)_getClientIDFromCookies:(id)arg1;
-- (id)_getMediaEntityTypeStringForMediaItem:(id)arg1 setPageType:(id*)arg2;
-- (id)_getMediaLibraryTypeStringForMediaItem:(id)arg1;
-- (bool)_isAllowedToSubmit;
-- (void)_populateBaseFieldsAndSendEvent:(id)arg1 thatOccuredAt:(id)arg2;
-- (void)_submitLibraryMediaPlayEventForMediaItem:(id)arg1 withDate:(id)arg2;
-- (void)_submitLibraryPageEventWithDate:(id)arg1;
-- (void)submitLibraryMediaPlayEventForMediaItem:(id)arg1;
-- (void)submitLibraryPageEvent;
+@property (nonatomic, retain) MTMetricsKit *activeMetricsKit;
+@property (nonatomic, copy) NSDictionary *baseFields;
+@property (nonatomic, readonly, copy) NSDictionary *baseFieldsForVPAF;
+@property (nonatomic, readonly, copy) NSString *currentTabIdentifier;
+@property (nonatomic, retain) NSString *exitEventDestinationUrl;
+@property (nonatomic, readonly, copy) NSDictionary *iTunesVPAF;
+@property (nonatomic, retain) VUIMetricsPageEventData *lastRecordedPageEventData;
+@property (nonatomic, retain) MTMetricsKit *loggerKit;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *metricsDataDispatchSQ;
+@property (nonatomic, retain) MTMetricsKit *metricsKitMain;
+@property (nonatomic, retain) MTMetricsKit *metricsKitUnidentified;
+@property (nonatomic, retain) MTMetricsKit *perfMetricsKit;
+@property (nonatomic, retain) NSHashTable *savedRecentEvents;
+@property (nonatomic) bool shouldPostAppLaunchData;
+
++ (id)_baseToVPAFMapping;
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (id)_createDataAddingBaseAndPageFieldsToEventData:(id)arg1;
+- (id)_createMetricsKitForTopic:(id)arg1;
+- (void)_flushMetricsOnExit;
+- (void)_flushUnreportedEvents:(id)arg1;
+- (void)_handleServerConfigChange:(id)arg1;
+- (void)_handleTabBarChange:(id)arg1;
+- (void)_handleWLKAppLibChange:(id)arg1;
+- (void)_handleWLKSettingsDidChange:(id)arg1;
+- (void)_initializeBaseFields;
+- (void)_recordEnter:(id)arg1;
+- (void)_recordEvent:(id)arg1 withEventData:(id)arg2;
+- (void)_recordExit:(id)arg1;
+- (void)_saveRecentEvents:(id)arg1;
+- (void)_updateBaseFieldsWithData:(id)arg1;
+- (id)activeMetricsKit;
+- (id)baseFields;
+- (id)baseFieldsForVPAF;
+- (id)currentTabIdentifier;
+- (id)exitEventDestinationUrl;
+- (void)flushMetrics;
+- (id)getRecentEventsForDebuggerUI;
+- (id)iTunesVPAF;
+- (id)init;
+- (void)jsDelegateRecordEvent:(id)arg1;
+- (void)jsDelegateRecordLogEvent:(id)arg1;
+- (void)jsDelegateRecordPerfEvent:(id)arg1;
+- (id)lastRecordedPageEventData;
+- (id)loggerKit;
+- (id)metricsDataDispatchSQ;
+- (id)metricsKitMain;
+- (id)metricsKitUnidentified;
+- (id)perfMetricsKit;
+- (void)recordAppBecameActive;
+- (void)recordAppLaunched;
+- (void)recordAppWillBackground;
+- (void)recordAppWillTerminate;
+- (void)recordClick:(id)arg1;
+- (void)recordMedia:(id)arg1;
+- (void)recordOpenUrlLaunchWithExtURL:(id)arg1 andOptions:(id)arg2;
+- (void)recordPage:(id)arg1;
+- (void)registerForBaseFieldChanges;
+- (id)savedRecentEvents;
+- (void)setActiveMetricsKit:(id)arg1;
+- (void)setBaseFields:(id)arg1;
+- (void)setExitEventDestinationUrl:(id)arg1;
+- (void)setLastRecordedPageEventData:(id)arg1;
+- (void)setLoggerKit:(id)arg1;
+- (void)setMetricsDataDispatchSQ:(id)arg1;
+- (void)setMetricsKitMain:(id)arg1;
+- (void)setMetricsKitUnidentified:(id)arg1;
+- (void)setPerfMetricsKit:(id)arg1;
+- (void)setSavedRecentEvents:(id)arg1;
+- (void)setShouldPostAppLaunchData:(bool)arg1;
+- (void)setupMetricsController;
+- (bool)shouldPostAppLaunchData;
+- (void)updateGDPRConsentStatus;
 
 @end

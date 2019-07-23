@@ -38,6 +38,10 @@
     UIImage * _image;
     bool  _isInCloud;
     double  _loadingProgress;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maximumRequestSize;
     <PXUIImageProvider> * _mediaProvider;
     struct { 
         bool targetSize; 
@@ -66,6 +70,7 @@
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setIsInCloud:, nonatomic) bool isInCloud;
 @property (setter=_setLoadingProgress:, nonatomic) double loadingProgress;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maximumRequestSize;
 @property (nonatomic, readonly) <PXUIImageProvider> *mediaProvider;
 @property (setter=_setOpportunisticImage:, nonatomic, retain) UIImage *opportunisticImage;
 @property (nonatomic, readonly) double scale;
@@ -112,6 +117,7 @@
 - (id)initWithMediaProvider:(id)arg1 asset:(id)arg2;
 - (bool)isInCloud;
 - (double)loadingProgress;
+- (struct CGSize { double x1; double x2; })maximumRequestSize;
 - (id)mediaProvider;
 - (id)mutableChangeObject;
 - (id)opportunisticImage;
@@ -121,6 +127,7 @@
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDesiredContentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMaximumRequestSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setScale:(double)arg1;
 - (void)setViewportSize:(struct CGSize { double x1; double x2; })arg1;

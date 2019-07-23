@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSDate *startDate;
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)determineEndDate;
 - (id)endDate;
 - (id)init;

@@ -3,19 +3,24 @@
  */
 
 @interface PKPaymentSetupFieldPickerItem : NSObject <NSCopying> {
+    DIAttributePickerItem * _attributePickerItem;
     NSString * _localizedDisplayName;
     NSString * _submissionValue;
 }
 
+@property (nonatomic, retain) DIAttributePickerItem *attributePickerItem;
 @property (nonatomic, readonly, copy) NSString *localizedDisplayName;
 @property (nonatomic, readonly, copy) NSString *submissionValue;
 
++ (id)_itemWithDIAttributePickerItem:(id)arg1;
 + (id)_itemWithDictionary:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)attributePickerItem;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 - (id)localizedDisplayName;
+- (void)setAttributePickerItem:(id)arg1;
 - (id)submissionValue;
 
 @end

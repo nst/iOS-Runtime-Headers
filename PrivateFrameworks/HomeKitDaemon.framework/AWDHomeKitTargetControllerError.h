@@ -3,9 +3,11 @@
  */
 
 @interface AWDHomeKitTargetControllerError : PBCodable <NSCopying> {
+    int  _certified;
     int  _error;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int certified : 1; 
         unsigned int error : 1; 
         unsigned int transportType : 1; 
     }  _has;
@@ -14,7 +16,9 @@
     AWDHomeKitVendorInformation * _vendorDetails;
 }
 
+@property (nonatomic) int certified;
 @property (nonatomic) int error;
+@property (nonatomic) bool hasCertified;
 @property (nonatomic) bool hasError;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool hasTransportType;
@@ -24,14 +28,18 @@
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorDetails;
 
 - (void).cxx_destruct;
+- (int)StringAsCertified:(id)arg1;
 - (int)StringAsError:(id)arg1;
 - (int)StringAsTransportType:(id)arg1;
+- (int)certified;
+- (id)certifiedAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)error;
 - (id)errorAsString:(int)arg1;
+- (bool)hasCertified;
 - (bool)hasError;
 - (bool)hasTimestamp;
 - (bool)hasTransportType;
@@ -40,7 +48,9 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setCertified:(int)arg1;
 - (void)setError:(int)arg1;
+- (void)setHasCertified:(bool)arg1;
 - (void)setHasError:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;

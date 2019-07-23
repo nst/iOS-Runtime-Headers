@@ -263,15 +263,6 @@
 - (bool)_usesSimpleTextEffects;
 - (id)_visualStyle;
 - (bool)_wantsUnderlineForAccessibilityButtonShapesEnabled;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsFontForContentSizeCategory;
 - (bool)adjustsFontSizeToFitWidth;
 - (bool)adjustsLetterSpacingToFitWidth;
@@ -282,6 +273,7 @@
 - (bool)centersHorizontally;
 - (id)color;
 - (id)currentTextColor;
+- (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)drawContentsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -384,6 +376,17 @@
 
 - (void)_gkUpdateShadowForFocusChange:(bool)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)_hkecg_bodyLabel;
++ (id)_hkecg_heartRateLabel;
++ (id)_hkecg_titleLabel;
++ (id)hk_fontAdjustingLabel;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)hrui_fontAdjustingLabel;
+
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (bool)MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
@@ -472,15 +475,12 @@
 - (bool)accessibilityExposeLabelAsValue;
 - (void)setAccessibilityExposeLabelAsValue:(bool)arg1;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 - (long long)_textAlignmentFromElementAlignment:(unsigned long long)arg1;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(bool)arg4;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(bool)arg4 overrideWithTraitCollection:(id)arg5;
-
-// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
-
 - (double)vui_heightToBaseline;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

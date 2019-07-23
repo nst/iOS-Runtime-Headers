@@ -6,17 +6,19 @@
     NSString * _badgeString;
     bool  _callForwardingEnabled;
     NSString * _crossfadeString;
-    bool  _showsEmergencyOnlyWhenDisconnected;
+    bool  _showsSOSWhenDisabled;
     NSString * _string;
     long long  _type;
+    bool  _wifiCallingEnabled;
 }
 
 @property (nonatomic, copy) NSString *badgeString;
 @property (nonatomic) bool callForwardingEnabled;
 @property (nonatomic, copy) NSString *crossfadeString;
-@property (nonatomic) bool showsEmergencyOnlyWhenDisconnected;
+@property (nonatomic) bool showsSOSWhenDisabled;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic) long long type;
+@property (nonatomic) bool wifiCallingEnabled;
 
 + (bool)supportsSecureCoding;
 
@@ -33,11 +35,13 @@
 - (void)setBadgeString:(id)arg1;
 - (void)setCallForwardingEnabled:(bool)arg1;
 - (void)setCrossfadeString:(id)arg1;
-- (void)setShowsEmergencyOnlyWhenDisconnected:(bool)arg1;
+- (void)setShowsSOSWhenDisabled:(bool)arg1;
 - (void)setString:(id)arg1;
 - (void)setType:(long long)arg1;
-- (bool)showsEmergencyOnlyWhenDisconnected;
+- (void)setWifiCallingEnabled:(bool)arg1;
+- (bool)showsSOSWhenDisabled;
 - (id)string;
 - (long long)type;
+- (bool)wifiCallingEnabled;
 
 @end

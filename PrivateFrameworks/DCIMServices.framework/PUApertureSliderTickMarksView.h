@@ -4,14 +4,19 @@
 
 @interface PUApertureSliderTickMarksView : UIView {
     long long  _mainTickMarkOffset;
+    bool  _useLegibilityShadows;
 }
 
 @property (nonatomic) long long mainTickMarkOffset;
+@property (nonatomic) bool useLegibilityShadows;
 
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)mainTickMarkOffset;
 - (void)setMainTickMarkOffset:(long long)arg1;
+- (void)setUseLegibilityShadows:(bool)arg1;
+- (bool)useLegibilityShadows;
 - (double)widthForTickMarkCount:(unsigned long long)arg1;
 - (double)xOffsetForTickMarkIndex:(long long)arg1;
 

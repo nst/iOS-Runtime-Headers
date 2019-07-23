@@ -6,6 +6,7 @@
     NSMutableDictionary * _completionHandlersByInternalMessageID;
     NSLock * _completionHandlersLock;
     NSMutableDictionary * _internalMessageIDsByTransportID;
+    NSObject<OS_dispatch_queue> * _messageSendingQueue;
     IDSService * _messageSendingService;
     ACRemoteCommandHandler * _remoteCommandHandler;
 }
@@ -23,7 +24,6 @@
 - (long long)_priorityForMessageCarryingCommand:(id)arg1;
 - (bool)_sendMessageData:(id)arg1 toDestination:(id)arg2 withPriority:(long long)arg3 bypassDuet:(bool)arg4 transportID:(id*)arg5 error:(id*)arg6;
 - (void)_sendReplyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;
-- (id)identityServicesCommandQueue;
 - (id)init;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;

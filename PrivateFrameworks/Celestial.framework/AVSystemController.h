@@ -30,6 +30,7 @@
 - (bool)getVolumeForAccessory:(float*)arg1 forCategory:(id)arg2 accessoryRoute:(id)arg3 andAccessoryDeviceIdentifier:(id)arg4;
 - (bool)getVolumeForRoute:(float*)arg1 forCategory:(id)arg2 mode:(id)arg3 route:(id)arg4 deviceIdentifier:(id)arg5 andRouteSubtype:(id)arg6;
 - (void)handleServerDied;
+- (bool)hasRouteSharingPolicyLongFormVideo:(id)arg1;
 - (id)init;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(int)arg3;
 - (bool)okToNotifyFromThisThread;

@@ -4,12 +4,14 @@
 
 @interface NUActivityIndicatorLoadingView : UIView <NULoadingViewProviding> {
     UIActivityIndicatorView * _activityIndicatorView;
+    UILabel * _label;
 }
 
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicatorView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UILabel *label;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -17,6 +19,7 @@
 - (id)initWithActivityIndicatorStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)label;
 - (void)layoutSubviews;
 - (void)loadingViewStartAnimating;
 - (void)loadingViewStopAnimating;

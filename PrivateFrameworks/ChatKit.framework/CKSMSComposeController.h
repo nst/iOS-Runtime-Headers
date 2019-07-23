@@ -46,10 +46,14 @@
 - (id)remoteViewController;
 - (id)remoteViewControllerProxy;
 - (void)setCanEditRecipients:(bool)arg1;
+- (void)setCloudPhotoIDs:(id)arg1;
+- (void)setContentText:(id)arg1;
+- (void)setContentURLs:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGameCenterModeWithPickerBlock:(id /* block */)arg1;
 - (void)setGameCenterPickedHandles:(id)arg1 playerNames:(id)arg2;
 - (void)setPendingAddresses:(id)arg1;
+- (void)setPhotoIDs:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setRemoteViewControllerProxy:(id)arg1;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;

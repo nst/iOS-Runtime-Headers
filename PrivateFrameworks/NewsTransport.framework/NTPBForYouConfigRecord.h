@@ -11,6 +11,7 @@
     NSMutableArray * _editorialSectionTagIDs;
     NSString * _moreVideosArticleListID;
     NSMutableArray * _specialEventArticleIDs;
+    NSString * _spotlightArticleID;
     NSMutableArray * _topStoriesCombinedArticleIDs;
     NSMutableArray * _topVideosArticleIDs;
     NSString * _trendingArticleListID;
@@ -26,9 +27,11 @@
 @property (nonatomic, readonly) bool hasConfiguration;
 @property (nonatomic, readonly) bool hasCoverArticlesArticleListID;
 @property (nonatomic, readonly) bool hasMoreVideosArticleListID;
+@property (nonatomic, readonly) bool hasSpotlightArticleID;
 @property (nonatomic, readonly) bool hasTrendingArticleListID;
 @property (nonatomic, retain) NSString *moreVideosArticleListID;
 @property (nonatomic, retain) NSMutableArray *specialEventArticleIDs;
+@property (nonatomic, retain) NSString *spotlightArticleID;
 @property (nonatomic, retain) NSMutableArray *topStoriesCombinedArticleIDs;
 @property (nonatomic, retain) NSMutableArray *topVideosArticleIDs;
 @property (nonatomic, retain) NSString *trendingArticleListID;
@@ -72,6 +75,7 @@
 - (bool)hasConfiguration;
 - (bool)hasCoverArticlesArticleListID;
 - (bool)hasMoreVideosArticleListID;
+- (bool)hasSpotlightArticleID;
 - (bool)hasTrendingArticleListID;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
@@ -86,12 +90,14 @@
 - (void)setEditorialSectionTagIDs:(id)arg1;
 - (void)setMoreVideosArticleListID:(id)arg1;
 - (void)setSpecialEventArticleIDs:(id)arg1;
+- (void)setSpotlightArticleID:(id)arg1;
 - (void)setTopStoriesCombinedArticleIDs:(id)arg1;
 - (void)setTopVideosArticleIDs:(id)arg1;
 - (void)setTrendingArticleListID:(id)arg1;
 - (id)specialEventArticleIDs;
 - (id)specialEventArticleIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)specialEventArticleIDsCount;
+- (id)spotlightArticleID;
 - (id)topStoriesCombinedArticleIDs;
 - (id)topStoriesCombinedArticleIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)topStoriesCombinedArticleIDsCount;

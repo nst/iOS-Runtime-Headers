@@ -3,52 +3,38 @@
  */
 
 @interface PKPaymentTransactionDetailHeaderView : UIView {
-    double  _bottomPadding;
-    double  _contentToLabelPadding;
-    UIView * _contentView;
-    UIView * _contentViewSizingView;
+    UILabel * _amountLabel;
+    NSString * _amountText;
     bool  _inBridge;
-    UILabel * _secondarySubtitleLabel;
+    bool  _isTemplateLayout;
+    UILabel * _secondaryLabel;
     NSString * _secondarySubtitleText;
     UILabel * _subtitleLabel;
     NSString * _subtitleText;
-    double  _topPadding;
+    UILabel * _tertiaryLabel;
+    NSString * _tertiarySubtitleText;
 }
 
-@property (nonatomic) double bottomPadding;
-@property (nonatomic) double contentToLabelPadding;
-@property (nonatomic, readonly) UIView *contentView;
-@property (nonatomic, readonly) UIView *contentViewSizingView;
+@property (nonatomic, copy) NSString *amountText;
 @property (nonatomic) bool inBridge;
-@property (nonatomic, retain) UILabel *secondarySubtitleLabel;
 @property (nonatomic, copy) NSString *secondarySubtitleText;
-@property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, copy) NSString *subtitleText;
-@property (nonatomic) double topPadding;
+@property (nonatomic, copy) NSString *tertiarySubtitleText;
 
 - (void).cxx_destruct;
-- (void)_updateSecondarySubtitleLabel;
-- (void)_updateSubtitleLabel;
-- (double)bottomPadding;
-- (double)contentToLabelPadding;
-- (id)contentView;
-- (id)contentViewSizingView;
+- (struct CGSize { double x1; double x2; })_layoutWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)amountText;
 - (bool)inBridge;
-- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4 runningInBridge:(bool)arg5;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (id)secondarySubtitleLabel;
 - (id)secondarySubtitleText;
-- (void)setBottomPadding:(double)arg1;
-- (void)setContentToLabelPadding:(double)arg1;
+- (void)setAmountText:(id)arg1;
 - (void)setInBridge:(bool)arg1;
-- (void)setSecondarySubtitleLabel:(id)arg1;
 - (void)setSecondarySubtitleText:(id)arg1;
-- (void)setSubtitleLabel:(id)arg1;
 - (void)setSubtitleText:(id)arg1;
-- (void)setTopPadding:(double)arg1;
+- (void)setTertiarySubtitleText:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (id)subtitleLabel;
 - (id)subtitleText;
-- (double)topPadding;
+- (id)tertiarySubtitleText;
 
 @end

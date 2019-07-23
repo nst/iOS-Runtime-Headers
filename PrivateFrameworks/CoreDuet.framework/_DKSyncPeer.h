@@ -4,6 +4,7 @@
 
 @interface _DKSyncPeer : NSObject {
     NSString * _idsDeviceIdentifier;
+    NSDate * _lastSeenDate;
     bool  _me;
     NSString * _model;
     NSString * _name;
@@ -14,6 +15,7 @@
 
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *idsDeviceIdentifier;
+@property (nonatomic, copy) NSDate *lastSeenDate;
 @property (nonatomic) bool me;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
@@ -30,10 +32,12 @@
 - (id)initWithIDSDeviceIdentifier:(id)arg1;
 - (id)initWithIDSDeviceIdentifier:(id)arg1 zoneName:(id)arg2;
 - (id)initWithZoneName:(id)arg1;
+- (id)lastSeenDate;
 - (bool)me;
 - (id)model;
 - (id)name;
 - (void)setIdsDeviceIdentifier:(id)arg1;
+- (void)setLastSeenDate:(id)arg1;
 - (void)setMe:(bool)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;

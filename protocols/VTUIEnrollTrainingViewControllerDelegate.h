@@ -9,4 +9,8 @@
 - (void)showLearnMore;
 - (void)skipSetup;
 
+@optional
+
+- (void)dismissSetup;
+
 @end

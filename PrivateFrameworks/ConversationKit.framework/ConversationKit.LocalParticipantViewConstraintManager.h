@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.LocalParticipantViewConstraintManager : SwiftObject {
+@interface ConversationKit.LocalParticipantViewConstraintManager : Swift._SwiftObject {
     void bottomConstraint;
     void centerXConstraint;
     void centerYConstraint;

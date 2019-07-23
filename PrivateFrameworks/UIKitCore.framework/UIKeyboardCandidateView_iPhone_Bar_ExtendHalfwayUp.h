@@ -4,8 +4,6 @@
 
 @interface UIKeyboardCandidateView_iPhone_Bar_ExtendHalfwayUp : UIKeyboardCandidateView_iPhone_Bar
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })extendedViewInsets;
 - (double)extendedViewTop;
 

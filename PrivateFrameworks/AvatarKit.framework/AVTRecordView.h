@@ -3,17 +3,13 @@
  */
 
 @interface AVTRecordView : AVTView <AVTFaceTrackerDelegate> {
-    bool  _actionStarted;
-    double  _actionT0;
     bool  _audioIsRecording;
     NSLock * _audioLock;
     AVPlayer * _audioPlayer;
     AVAssetWriter * _audioWriter;
     AVAssetWriterInput * _audioWriterInput;
-    CAAnimation * _backedAnimation;
     CALayer * _backingLayer;
     int  _benchFrameCounter;
-    bool  _captureImageIsTooDark;
     bool  _checkDrawableAvailable;
     struct { 
         long long value; 
@@ -31,7 +27,7 @@
     float  _maxRecordingDuration;
     AVCaptureMovieFileOutput * _movieFileOutput;
     bool  _mute;
-    bool  _playBackedAnimation;
+    bool  _playBakedAnimation;
     bool  _playing;
     long long  _preferredFramesPerSecond_thermal;
     long long  _preferredFramesPerSecond_user;
@@ -46,6 +42,8 @@
     long long  _recordedSampleCount;
     bool  _recording;
     int  _recordingCapacity;
+    double  _recordingStartTime;
+    double  _referenceAnimationBeginTime;
     struct { 
         long long value; 
         int timescale; 
@@ -91,6 +89,7 @@
 - (id)_tmpVideoURL;
 - (void)_updateFrameRateForThermalState:(long long)arg1;
 - (void)_updateTrackingState;
+- (void)addRecordedAnimationToAvatar:(id)arg1;
 - (bool)allowTrackSmoothing;
 - (void)audioPlayerItemDidReachEnd:(id)arg1;
 - (void)audioSessionInterruption:(id)arg1;
@@ -98,8 +97,7 @@
 - (void)cancelMovieExport;
 - (void)cancelRecording;
 - (void)cancelRecordingAudio;
-- (bool)captureImageIsTooDark;
-- (id)convertRecordedDataToAnimationGroup;
+- (void)convertRecordedDataToAnimationGroup;
 - (struct opaqueCMSampleBuffer { }*)createSilentAudioAtFrame:(long long)arg1 nFrames:(int)arg2 sampleRate:(double)arg3 numChannels:(int)arg4;
 - (double)currentAudioTime;
 - (void)dealloc;
@@ -134,6 +132,7 @@
 - (id)recordDelegate;
 - (bool)recording;
 - (double)recordingDuration;
+- (void)removeRecordedAnimationFromAvatar:(id)arg1;
 - (void)renderer:(id)arg1 updateAtTime:(double)arg2;
 - (void)setAvatar:(id)arg1;
 - (void)setDisableRendering:(bool)arg1;

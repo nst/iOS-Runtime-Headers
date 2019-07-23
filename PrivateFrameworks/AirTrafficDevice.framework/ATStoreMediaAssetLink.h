@@ -25,12 +25,11 @@
 - (void).cxx_destruct;
 - (void)ATStoreDownloadService:(id)arg1 didChangeStateForAsset:(id)arg2 oldState:(long long)arg3 newState:(long long)arg4;
 - (void)ATStoreDownloadService:(id)arg1 didEnqueueAsset:(id)arg2;
-- (void)ATStoreDownloadService:(id)arg1 didFinishAsset:(id)arg2 withError:(id)arg3;
+- (void)ATStoreDownloadService:(id)arg1 didFinishAsset:(id)arg2 withError:(id)arg3 cancelPendingAssetsInBatch:(bool)arg4;
 - (void)ATStoreDownloadService:(id)arg1 didResumeAsset:(id)arg2;
 - (void)ATStoreDownloadService:(id)arg1 didUpdateProgressForAsset:(id)arg2 progress:(float)arg3;
 - (long long)_ATAssetStateForStoreDownloadState:(long long)arg1;
-- (void)_enqueueAssets:(id)arg1;
-- (void)_finishAsset:(id)arg1 error:(id)arg2;
+- (void)_finishAsset:(id)arg1 error:(id)arg2 cancelPendingAssetsInBatch:(bool)arg3;
 - (void)_setupActivityToResumeDownloads;
 - (bool)canEnqueueAsset:(id)arg1;
 - (void)cancelAssets:(id)arg1;

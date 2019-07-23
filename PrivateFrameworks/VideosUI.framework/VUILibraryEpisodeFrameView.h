@@ -7,7 +7,7 @@
     UIImageView * _fullyPlayedImageView;
     _TVImageView * _imageView;
     long long  _layout;
-    _TVButton * _playButton;
+    TVButton * _playButton;
     _TVProgressView * _progressView;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) UIImageView *fullyPlayedImageView;
 @property (nonatomic, retain) _TVImageView *imageView;
 @property (nonatomic) long long layout;
-@property (nonatomic, retain) _TVButton *playButton;
+@property (nonatomic, retain) TVButton *playButton;
 @property (nonatomic, retain) _TVProgressView *progressView;
 
 + (id)_episodePlaceholderImage;

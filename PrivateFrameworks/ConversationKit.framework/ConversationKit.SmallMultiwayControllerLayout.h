@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.SmallMultiwayControllerLayout : SwiftObject {
+@interface ConversationKit.SmallMultiwayControllerLayout : Swift._SwiftObject {
     void currentConstraints;
+    void effectsConstraintManagers;
     void participantListHeightConstraint;
     void stateConstraints;
 }

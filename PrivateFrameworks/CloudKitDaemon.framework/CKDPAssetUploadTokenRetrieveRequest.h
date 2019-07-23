@@ -17,10 +17,12 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *assets;
+@property (nonatomic, retain) NSData *authCopyRequest;
 @property (nonatomic, retain) NSData *authPutRequest;
 @property (nonatomic) int authPutType;
 @property (nonatomic, retain) NSMutableArray *contentRequestHeaders;
 @property (nonatomic, retain) CKDPRecordFieldIdentifier *field;
+@property (nonatomic, readonly) bool hasAuthCopyRequest;
 @property (nonatomic, readonly) bool hasAuthPutRequest;
 @property (nonatomic) bool hasAuthPutType;
 @property (nonatomic, readonly) bool hasField;
@@ -41,6 +43,7 @@
 - (id)assets;
 - (id)assetsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)assetsCount;
+- (id)authCopyRequest;
 - (id)authPutRequest;
 - (int)authPutType;
 - (id)authPutTypeAsString:(int)arg1;
@@ -55,6 +58,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)field;
+- (bool)hasAuthCopyRequest;
 - (bool)hasAuthPutRequest;
 - (bool)hasAuthPutType;
 - (bool)hasField;
@@ -66,6 +70,7 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAssets:(id)arg1;
+- (void)setAuthCopyRequest:(id)arg1;
 - (void)setAuthPutRequest:(id)arg1;
 - (void)setAuthPutType:(int)arg1;
 - (void)setContentRequestHeaders:(id)arg1;

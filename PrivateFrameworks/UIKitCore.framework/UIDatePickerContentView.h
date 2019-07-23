@@ -20,13 +20,8 @@
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic) double titleLabelMaxX;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (bool)_canBeReusedInPickerView;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithMode:(id)arg1;
 - (bool)isAmPm;

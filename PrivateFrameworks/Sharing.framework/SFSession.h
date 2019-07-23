@@ -5,7 +5,10 @@
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface> {
     bool  _activateCalled;
     bool  _activateCompleted;
+    id /* block */  _activateCompletion;
     bool  _activateInProgress;
+    bool  _appleIDContactCompleted;
+    SFAppleIDContactInfo * _appleIDContactInfo;
     long long  _bluetoothState;
     id /* block */  _bluetoothStateChangedHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -134,9 +137,11 @@
 - (void).cxx_destruct;
 - (void)_activateWithCompletion:(id /* block */)arg1;
 - (void)_activated;
+- (void)_activatedIfReady:(id)arg1;
 - (void)_cleanup;
 - (void)_deregisterRequestID:(id)arg1;
 - (void)_ensureXPCStarted;
+- (void)_fetchInfo;
 - (void)_hearbeatTimer;
 - (void)_interrupted;
 - (void)_invalidated;

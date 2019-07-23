@@ -84,6 +84,7 @@
 @property (nonatomic, readonly) NSString *productOSVersion;
 @property (nonatomic, readonly) NSString *productVersion;
 @property (nonatomic, readonly) bool registrationSupported;
+@property (nonatomic, readonly) bool slowCPUDevice;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsAppleIDIdentification;
 @property (nonatomic, readonly) bool supportsApplePay;
@@ -146,6 +147,7 @@
 - (bool)conferencingAllowed;
 - (bool)conferencingBlocked;
 - (bool)conferencingEnabled;
+- (int)cpuFamily;
 - (void)dealloc;
 - (id)deviceColor;
 - (id)deviceIDPrefix;
@@ -162,6 +164,7 @@
 - (bool)iMessageBlocked;
 - (bool)iMessageSupported;
 - (bool)identityServicesSupported;
+- (bool)inProcess_isCallingSupported;
 - (id)init;
 - (bool)isC2KEquipment;
 - (bool)isGreenTea;
@@ -196,6 +199,7 @@
 - (id)registrationState;
 - (bool)registrationSupported;
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
+- (bool)slowCPUDevice;
 - (bool)supportsAppleIDIdentification;
 - (bool)supportsApplePay;
 - (bool)supportsBackFacingCamera;

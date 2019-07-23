@@ -6,11 +6,8 @@
     long long  _mode;
 }
 
-@property (nonatomic, readonly) struct AttachmentDisplayOptions { int x1; } coreDisplayOptions;
 @property (nonatomic) long long mode;
 
-- (struct AttachmentDisplayOptions { int x1; })coreDisplayOptions;
-- (id)init;
 - (long long)mode;
 - (void)setMode:(long long)arg1;
 

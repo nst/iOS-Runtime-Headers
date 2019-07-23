@@ -16,15 +16,10 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)controlBeginEditing;
 - (void)controlEndEditing;
 - (id)controlView;
+- (void)dealloc;
 - (id)initWithDOMHTMLSelectElement:(id)arg1 allItems:(id)arg2;
 - (long long)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;

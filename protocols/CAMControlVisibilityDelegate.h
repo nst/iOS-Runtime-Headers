@@ -17,6 +17,7 @@
 - (bool)shouldHideQRCodeInstructionLabel;
 - (bool)shouldHideTimerButton;
 - (bool)shouldHideTopBar;
+- (bool)shouldLayoutLightingNameBadgeAtBottom;
 - (bool)shouldShiftPreviewForUtilityBar;
 
 @end

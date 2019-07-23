@@ -16,9 +16,10 @@
     NSMutableArray * _mutableNetworkEvents;
     long long  _options;
     id /* block */  _requestCompletionHandler;
-    id /* block */  _requestCompletionHandlerWithInterestToken;
+    id /* block */  _requestCompletionHandlerWithHeldRecords;
     NSMutableDictionary * _resultFeedResponses;
     FCHeldRecords * _resultHeldArticleRecords;
+    FCHeldRecords * _resultHeldIssueRecords;
     FCHeldRecords * _resultHeldTagRecords;
 }
 
@@ -36,9 +37,10 @@
 @property (nonatomic, readonly) NSArray *networkEvents;
 @property (nonatomic) long long options;
 @property (nonatomic, copy) id /* block */ requestCompletionHandler;
-@property (nonatomic, copy) id /* block */ requestCompletionHandlerWithInterestToken;
+@property (nonatomic, copy) id /* block */ requestCompletionHandlerWithHeldRecords;
 @property (nonatomic, retain) NSMutableDictionary *resultFeedResponses;
 @property (nonatomic, retain) FCHeldRecords *resultHeldArticleRecords;
+@property (nonatomic, retain) FCHeldRecords *resultHeldIssueRecords;
 @property (nonatomic, retain) FCHeldRecords *resultHeldTagRecords;
 
 + (bool)_orderFeedTopKEnabled;
@@ -77,10 +79,11 @@
 - (void)performOperation;
 - (void)prepareOperation;
 - (id /* block */)requestCompletionHandler;
-- (id /* block */)requestCompletionHandlerWithInterestToken;
+- (id /* block */)requestCompletionHandlerWithHeldRecords;
 - (void)resetForRetry;
 - (id)resultFeedResponses;
 - (id)resultHeldArticleRecords;
+- (id)resultHeldIssueRecords;
 - (id)resultHeldTagRecords;
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
@@ -95,9 +98,10 @@
 - (void)setMutableNetworkEvents:(id)arg1;
 - (void)setOptions:(long long)arg1;
 - (void)setRequestCompletionHandler:(id /* block */)arg1;
-- (void)setRequestCompletionHandlerWithInterestToken:(id /* block */)arg1;
+- (void)setRequestCompletionHandlerWithHeldRecords:(id /* block */)arg1;
 - (void)setResultFeedResponses:(id)arg1;
 - (void)setResultHeldArticleRecords:(id)arg1;
+- (void)setResultHeldIssueRecords:(id)arg1;
 - (void)setResultHeldTagRecords:(id)arg1;
 - (bool)validateOperation;
 

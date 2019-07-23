@@ -3,6 +3,7 @@
  */
 
 @interface VSFontCenter : NSObject {
+    UIFont * _appAgeRatingFont;
     UIFont * _bodyFont;
     UIFont * _calloutFont;
     UIFont * _caption1Font;
@@ -18,6 +19,7 @@
     <UITraitEnvironment> * _traitEnvironment;
 }
 
+@property (nonatomic, copy) UIFont *appAgeRatingFont;
 @property (nonatomic, copy) UIFont *bodyFont;
 @property (nonatomic, copy) UIFont *calloutFont;
 @property (nonatomic, copy) UIFont *caption1Font;
@@ -35,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateFontsWithTraitCollection:(id)arg1;
+- (id)appAgeRatingFont;
 - (id)bodyFont;
 - (id)calloutFont;
 - (id)caption1Font;
@@ -44,6 +47,7 @@
 - (id)headlineFont;
 - (id)init;
 - (id)initWithTraitEnvironment:(id)arg1;
+- (void)setAppAgeRatingFont:(id)arg1;
 - (void)setBodyFont:(id)arg1;
 - (void)setCalloutFont:(id)arg1;
 - (void)setCaption1Font:(id)arg1;

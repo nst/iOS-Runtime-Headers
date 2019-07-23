@@ -6,6 +6,7 @@
     long long  _bisectedSegmentIdentifier;
     unsigned long long  _bisectedSegmentIndex;
     unsigned int  _delayedArchivingPriority;
+    unsigned long long  _estimatedByteSize;
     unsigned long long  _maxSegmentElementCount;
     unsigned long long  _maxSegmentSize;
     unsigned long long  _mergingSegmentIndex;
@@ -22,13 +23,17 @@
     bool  _storeOutsideObjectArchive;
 }
 
+@property (nonatomic, readonly) NSArray *allObjects;
 @property (readonly) unsigned long long count;
 @property (nonatomic) unsigned int delayedArchivingPriority;
+@property (nonatomic, readonly) unsigned long long estimatedByteSize;
 @property (nonatomic, readonly) bool hasDelayedArchivingPriority;
 @property (nonatomic, readonly) bool hasMaxSegmentElementCount;
 @property (nonatomic, readonly) bool hasMaxSegmentSize;
 @property (nonatomic) unsigned long long maxSegmentElementCount;
 @property (nonatomic) unsigned long long maxSegmentSize;
+@property (nonatomic, readonly) NSMutableArray *mutableArrayWrapper;
+@property (nonatomic, readonly) NSString *packageLocatorForSegments;
 @property (nonatomic, readonly) unsigned long long segmentCount;
 @property (nonatomic) bool shouldDelayArchiving;
 @property (nonatomic) bool storeOutsideObjectArchive;
@@ -39,6 +44,7 @@
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (void)addRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)allObjects;
 - (void)bisectSegmentIfNeeded:(unsigned long long)arg1;
 - (void)commonInit;
 - (id)convertElementToSegmentElement:(id)arg1;
@@ -48,6 +54,7 @@
 - (id)createArraySegment;
 - (unsigned int)delayedArchivingPriority;
 - (unsigned long long)elementCount;
+- (unsigned long long)estimatedByteSize;
 - (id)firstObject;
 - (bool)hasDelayedArchivingPriority;
 - (bool)hasMaxSegmentElementCount;
@@ -62,13 +69,15 @@
 - (void)largeArraySegmentDidBisectAtIndex:(unsigned long long)arg1 segments:(id)arg2;
 - (id)lastObject;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })lastRange;
-- (void)loadFromLargeArrayMessage:(const struct LargeArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned long long x7; unsigned long long x8; unsigned int x9; bool x10; bool x11; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromLargeArrayMessage:(const struct LargeArray { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Range> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; unsigned long long x7; unsigned long long x8; unsigned int x9; bool x10; bool x11; unsigned long long x12; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (unsigned long long)maxSegmentElementCount;
 - (unsigned long long)maxSegmentSize;
 - (void)mergeSegmentIfNeededAtIndex:(unsigned long long)arg1;
+- (id)mutableArrayWrapper;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (id)packageLocatorForSegments;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfSegmentIndex:(unsigned long long)arg1;
 - (void)removeAllObjects;
 - (void)removeLastObject;
@@ -78,7 +87,7 @@
 - (void)removeRangeAtSegmentIndex:(unsigned long long)arg1;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToLargeArrayMessage:(struct LargeArray { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned long long x7; unsigned long long x8; unsigned int x9; bool x10; bool x11; }*)arg1 archiver:(id)arg2;
+- (void)saveToLargeArrayMessage:(struct LargeArray { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Range> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; unsigned long long x7; unsigned long long x8; unsigned int x9; bool x10; bool x11; unsigned long long x12; }*)arg1 archiver:(id)arg2;
 - (id)segmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)segmentCount;
 - (unsigned long long)segmentIndexForElementIndex:(unsigned long long)arg1 firstSegmentIndex:(unsigned long long)arg2 lastSegmentIndex:(unsigned long long)arg3 segmentIndexGuess:(unsigned long long)arg4;

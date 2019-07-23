@@ -3,6 +3,7 @@
  */
 
 @interface _TVStackCollectionViewCell : UICollectionViewCell {
+    UIView * _cellContentView;
     UIViewController * _viewController;
 }
 

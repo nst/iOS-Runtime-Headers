@@ -23,6 +23,7 @@
     IKJSFoundation * _jsFoundation;
     struct __CFRunLoop { } * _jsThreadRunLoop;
     struct __CFRunLoopSource { } * _jsThreadRunLoopSource;
+    IKJSViewModelService * _jsViewModelService;
     NSObject<OS_dispatch_source> * _lowMemoryWarningSource;
     bool  _mescalPrimeEnabledForXHRRequests;
     unsigned long long  _mode;
@@ -31,7 +32,7 @@
     NSMutableArray * _pendingQueue;
     NSMutableArray * _postEvaluationBlocks;
     bool  _privileged;
-    id  _reloadData;
+    IKAppReloadContext * _reloadContext;
     bool  _remoteInspectionEnabled;
     NSURL * _resolvedBootURL;
     bool  _respondsToTraitCollection;
@@ -58,6 +59,7 @@
 @property bool isValid;
 @property (nonatomic, retain) JSContext *jsContext;
 @property (nonatomic, retain) IKJSFoundation *jsFoundation;
+@property (nonatomic, retain) IKJSViewModelService *jsViewModelService;
 @property (nonatomic) bool mescalPrimeEnabledForXHRRequests;
 @property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentage;
 @property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentageCachedResponses;
@@ -68,7 +70,7 @@
 @property (nonatomic, retain) NSMutableArray *pendingQueue;
 @property (nonatomic, retain) NSMutableArray *postEvaluationBlocks;
 @property (getter=isPrivileged, nonatomic) bool privileged;
-@property (nonatomic, retain) id reloadData;
+@property (nonatomic, retain) IKAppReloadContext *reloadContext;
 @property (nonatomic) bool remoteInspectionEnabled;
 @property (nonatomic, readonly, copy) NSURL *resolvedBootURL;
 @property (nonatomic, retain) NSError *responseError;
@@ -139,6 +141,7 @@
 - (bool)isValid;
 - (id)jsContext;
 - (id)jsFoundation;
+- (id)jsViewModelService;
 - (void)launchAppWithOptions:(id)arg1;
 - (bool)mescalPrimeEnabledForXHRRequests;
 - (unsigned long long)mode;
@@ -151,7 +154,7 @@
 - (id)postEvaluationBlocks;
 - (id)registerLoaderWithIdentifier:(id)arg1;
 - (void)reload;
-- (id)reloadData;
+- (id)reloadContext;
 - (bool)remoteInspectionEnabled;
 - (id)resolvedBootURL;
 - (id)responseError;
@@ -164,12 +167,13 @@
 - (void)setIsValid:(bool)arg1;
 - (void)setJsContext:(id)arg1;
 - (void)setJsFoundation:(id)arg1;
+- (void)setJsViewModelService:(id)arg1;
 - (void)setMescalPrimeEnabledForXHRRequests:(bool)arg1;
 - (void)setNextJSChecksum:(id)arg1;
 - (void)setPendingQueue:(id)arg1;
 - (void)setPostEvaluationBlocks:(id)arg1;
 - (void)setPrivileged:(bool)arg1;
-- (void)setReloadData:(id)arg1;
+- (void)setReloadContext:(id)arg1;
 - (void)setRemoteInspectionEnabled:(bool)arg1;
 - (void)setResponseError:(id)arg1;
 - (void)setResponseScript:(id)arg1;

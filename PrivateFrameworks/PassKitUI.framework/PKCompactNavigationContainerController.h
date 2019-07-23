@@ -30,6 +30,7 @@
             double height; 
         } size; 
     }  _statusBarFrame;
+    unsigned long long  _style;
     UITapGestureRecognizer * _tapGestureRecognizer;
     UIViewController * _topVC;
     struct { 
@@ -51,6 +52,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } exclusionRect;
 @property (readonly) unsigned long long hash;
 @property (getter=isPresentingNavigationController, nonatomic) bool presentingNavigationController;
+@property (nonatomic, readonly) unsigned long long style;
 @property (readonly) Class superclass;
 
 + (id)dimmingColor;
@@ -81,6 +83,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (id)initWithNavigationController:(id)arg1;
+- (id)initWithNavigationController:(id)arg1 style:(unsigned long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)isPresentingNavigationController;
 - (void)loadView;
@@ -92,6 +95,7 @@
 - (void)setExclusionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withCoordinateSpace:(id)arg2;
 - (void)setPresentingNavigationController:(bool)arg1;
 - (void)statusBarFrameWillChange:(id)arg1;
+- (unsigned long long)style;
 - (void)tapGestureRecognized:(id)arg1;
 - (bool)updateChildViewControllerSizeAnimated:(bool)arg1;
 - (void)viewDidLoad;

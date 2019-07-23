@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITextField : UIControl <ABText, DebugHierarchyObject_Fallback, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContentViewContextProvider, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
+@interface UITextField : UIControl <ABText, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContentViewContextProvider, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
     _UIFieldEditorLayoutManager * __layoutManager;
     NSTextContainer * __textContainer;
     bool  _adjustsFontForContentSizeCategory;
@@ -509,15 +509,6 @@
 - (void)_willUpdateAfterDetachingFieldEditor;
 - (void)_windowBecameKey;
 - (void)_windowResignedKey;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actualFont;
 - (double)actualMinimumFontSize;
 - (void)addGhostedRange:(id)arg1;
@@ -577,6 +568,7 @@
 - (id)createTextLabelWithTextColor:(id)arg1;
 - (id)customOverlayContainer;
 - (void)cut:(id)arg1;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)decreaseSize:(id)arg1;
 - (id)defaultTextAttributes;
@@ -847,14 +839,6 @@
 - (id)willGenerateCancelPreview;
 - (void)willMoveToWindow:(id)arg1;
 
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilityQuickSpeakContent;
-- (id)_accessibilityQuickSpeakTokenizer;
-- (bool)_accessibilitySystemShouldShowSpeakBubbleCommon;
-
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 - (void)_cnui_applyContactStyle;
@@ -894,6 +878,13 @@
 - (void)resizeToFitAsAccessoryInCell:(id)arg1 tableView:(id)arg2;
 - (void)resizeToFitAsAccessoryInCellWithLabelText:(id)arg1 tableView:(id)arg2;
 - (void)resizeToFitAsAccessoryInCellWithLabelTextWidth:(double)arg1 tableView:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
++ (void)tmlLoadCategory;
+
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)tmlSetValue:(id)arg1 forUndefinedKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

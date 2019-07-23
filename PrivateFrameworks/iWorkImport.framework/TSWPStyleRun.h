@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPStyleRun : NSObject {
+@interface TSWPStyleRun : NSObject <NSCopying> {
     NSDictionary * _attributes;
     unsigned long long  _charIndex;
     TSWPCharacterStyle * _characterStyle;
     struct __CTFont { } * _ctFont;
-    unsigned int  _flags;
+    unsigned long long  _flags;
     struct { 
         double spaceBefore; 
         double attachmentHeight; 
@@ -24,7 +24,7 @@
 @property (nonatomic) unsigned long long charIndex;
 @property (nonatomic, retain) TSWPCharacterStyle *characterStyle;
 @property (nonatomic) struct __CTFont { }*ctFont;
-@property (nonatomic) unsigned int flags;
+@property (nonatomic) unsigned long long flags;
 @property (nonatomic) struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; } fontHeightInfo;
 @property (nonatomic) unsigned long long runLength;
 
@@ -33,16 +33,18 @@
 - (unsigned long long)charIndex;
 - (id)characterStyle;
 - (bool)coalesceWith:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __CTFont { }*)ctFont;
-- (unsigned int)flags;
+- (unsigned long long)flags;
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; })fontHeightInfo;
+- (id)init;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (unsigned long long)runLength;
 - (void)setAttributes:(id)arg1;
 - (void)setCharIndex:(unsigned long long)arg1;
 - (void)setCharacterStyle:(id)arg1;
 - (void)setCtFont:(struct __CTFont { }*)arg1;
-- (void)setFlags:(unsigned int)arg1;
+- (void)setFlags:(unsigned long long)arg1;
 - (void)setFontHeightInfo:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; })arg1;
 - (void)setRunLength:(unsigned long long)arg1;
 

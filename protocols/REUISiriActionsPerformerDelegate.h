@@ -9,5 +9,6 @@
 - (bool)siriActionsPerformer:(REUISiriActionsPerformer *)arg1 wantsToPresentViewController:(UIViewController *)arg2;
 - (void)siriActionsPerformerDidSucceed:(REUISiriActionsPerformer *)arg1;
 - (UIImage *)siriActionsPerformerWantsAlertBackgroundImage:(REUISiriActionsPerformer *)arg1;
+- (UIView *)siriActionsPerformerWantsBackgroundViewToBlur:(REUISiriActionsPerformer *)arg1;
 
 @end

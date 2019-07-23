@@ -3,12 +3,12 @@
  */
 
 @interface WebCoreAVCaptureDeviceManagerObserver : NSObject {
-    struct AVCaptureDeviceManager { int (**x1)(); struct HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()> > >={HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WTF::Function<void ()> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WTF::Function<void ()> > >, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()> > >::KeyValuePairTraits, WTF::HashTraits<unsigned int> >=^{KeyValuePair<unsigned int, WTF::Function<void ()> > {} x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * m_callback;
+    struct AVCaptureDeviceManager { int (**x1)(); struct WeakPtrFactory<WebCore::CaptureDeviceManager> { struct RefPtr<WTF::WeakReference<WebCore::CaptureDeviceManager>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CaptureDeviceManager> > > { struct WeakReference<WebCore::CaptureDeviceManager> {} *x_1_2_1; } x_2_1_1; } x2; struct RetainPtr<WebCoreAVCaptureDeviceManagerObserver> { void *x_3_1_1; } x3; struct Vector<WebCore::CaptureDevice, 0, WTF::CrashOnOverflow, 16> { struct CaptureDevice {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct RetainPtr<NSMutableArray> { void *x_5_1_1; } x5; bool x6; } * m_callback;
 }
 
-- (void)deviceConnected:(id)arg1;
-- (void)deviceDisconnected:(id)arg1;
+- (void)deviceConnectedDidChange:(id)arg1;
 - (void)disconnect;
-- (id)initWithCallback:(struct AVCaptureDeviceManager { int (**x1)(); struct HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()> > >={HashTable<unsigned int, WTF::KeyValuePair<unsigned int, WTF::Function<void ()> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, WTF::Function<void ()> > >, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, WTF::Function<void ()>, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<WTF::Function<void ()> > >::KeyValuePairTraits, WTF::HashTraits<unsigned int> >=^{KeyValuePair<unsigned int, WTF::Function<void ()> > {} x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1;
+- (id)initWithCallback:(struct AVCaptureDeviceManager { int (**x1)(); struct WeakPtrFactory<WebCore::CaptureDeviceManager> { struct RefPtr<WTF::WeakReference<WebCore::CaptureDeviceManager>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::CaptureDeviceManager> > > { struct WeakReference<WebCore::CaptureDeviceManager> {} *x_1_2_1; } x_2_1_1; } x2; struct RetainPtr<WebCoreAVCaptureDeviceManagerObserver> { void *x_3_1_1; } x3; struct Vector<WebCore::CaptureDevice, 0, WTF::CrashOnOverflow, 16> { struct CaptureDevice {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct RetainPtr<NSMutableArray> { void *x_5_1_1; } x5; bool x6; }*)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 
 @end

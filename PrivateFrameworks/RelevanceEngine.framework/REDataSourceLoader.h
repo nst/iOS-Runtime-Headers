@@ -21,5 +21,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)enumerateBundleConfigurations:(id /* block */)arg1;
 - (void)enumerationDataSourceClassesWithBlock:(id /* block */)arg1;
+- (void)prewarm;
 
 @end

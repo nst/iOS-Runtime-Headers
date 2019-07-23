@@ -113,6 +113,7 @@
 - (void).cxx_destruct;
 - (struct CGImage { }*)CGImage;
 - (struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })_backingTexture;
+- (int)_convert_jet_texture_format_to_ci_format:(unsigned int)arg1;
 - (id)_copyImageData;
 - (struct CGImage { }*)_createCGImage;
 - (void)_ensureImageData;

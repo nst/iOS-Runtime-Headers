@@ -5,6 +5,7 @@
 @interface DEDXPCConnector : NSObject <NSXPCListenerDelegate> {
     unsigned long long  _connType;
     NSXPCConnection * _connection;
+    <DEDXPCConnectorDaemonDelegate> * _daemonDelegate;
     DEDXPCInbound * _inbound;
     bool  _isDaemon;
     NSXPCListener * _listener;
@@ -14,6 +15,7 @@
 
 @property unsigned long long connType;
 @property (retain) NSXPCConnection *connection;
+@property <DEDXPCConnectorDaemonDelegate> *daemonDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -27,11 +29,12 @@
 - (void).cxx_destruct;
 - (id)_whitelistedXPCInterface;
 - (void)configureConnectionType:(unsigned long long)arg1;
-- (void)configureDaemonMode;
+- (void)configureDaemonModeWithDelegate:(id)arg1;
 - (void)configureXPCInbound:(id)arg1;
 - (unsigned long long)connType;
 - (id)connection;
 - (id)connectionWithEndpoint:(id)arg1 forMachService:(id)arg2;
+- (id)daemonDelegate;
 - (id)inbound;
 - (id)init;
 - (bool)isDaemon;
@@ -40,6 +43,7 @@
 - (id)log;
 - (void)setConnType:(unsigned long long)arg1;
 - (void)setConnection:(id)arg1;
+- (void)setDaemonDelegate:(id)arg1;
 - (void)setInbound:(id)arg1;
 - (void)setIsDaemon:(bool)arg1;
 - (void)setListener:(id)arg1;

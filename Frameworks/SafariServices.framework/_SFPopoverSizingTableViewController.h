@@ -3,17 +3,28 @@
  */
 
 @interface _SFPopoverSizingTableViewController : UITableViewController {
+    UIBlurEffect * _backgroundBlurEffect;
     bool  _didHaveTranslucentAppearance;
     bool  _didUpdateTranslucentAppearanceAtLeastOnce;
 }
 
+@property (nonatomic, readonly) UIBlurEffect *backgroundBlurEffect;
 @property (nonatomic, readonly) bool hasTranslucentAppearance;
 
-- (double)_totalContentHeightForPreferredContentSize;
++ (void)initialize;
++ (id)tableViewCellForSizeEstimation;
+
+- (void).cxx_destruct;
+- (bool)_needsTranslucentAppearanceUpdate;
 - (void)_updateTranslucentAppearanceIfNeeded;
+- (id)backgroundBlurEffect;
 - (id)backgroundColorUsingTranslucentAppearance:(bool)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (bool)hasTranslucentAppearance;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (double)tableViewSpacingForExtraSeparators:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updatePreferredContentSize;
 - (void)updateTranslucentAppearance;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;

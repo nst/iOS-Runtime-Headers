@@ -3,27 +3,35 @@
  */
 
 @interface IKDOMConditionality : NSObject {
-    NSSet * _dependentPropertyPaths;
+    NSSet * _dependentPathStrings;
     IKDOMElement * _domElement;
-    NSArray * _expressions;
+    NSArray * _exclusionExpressions;
     NSString * _identifier;
+    NSArray * _inclusionExpressions;
+    bool  _mutable;
 }
 
-@property (nonatomic, readonly, copy) NSSet *dependentPropertyPaths;
+@property (nonatomic, readonly, copy) NSSet *dependentPathStrings;
 @property (nonatomic, readonly) IKDOMElement *domElement;
-@property (nonatomic, readonly, copy) NSArray *expressions;
+@property (nonatomic, readonly, copy) NSArray *exclusionExpressions;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, copy) NSArray *inclusionExpressions;
+@property (getter=isMutable, nonatomic, readonly) bool mutable;
 
-+ (id)_applyOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
-+ (id)conditionalityWithDOMElement:(id)arg1;
++ (id)_applyGeneralizationOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
++ (id)_applySpecializationOnDOMElement:(id)arg1 withDOMElement:(id)arg2;
++ (id)conditionalityWithDOMElement:(id)arg1 mutable:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)applyOnDOMElement:(id)arg1;
-- (id)dependentPropertyPaths;
+- (long long)compare:(id)arg1;
+- (id)dependentPathStrings;
 - (id)domElement;
-- (id)expressions;
+- (id)exclusionExpressions;
 - (id)identifier;
-- (id)initWithDOMElement:(id)arg1;
+- (id)inclusionExpressions;
+- (id)initWithDOMElement:(id)arg1 mutable:(bool)arg2;
+- (bool)isMutable;
 - (bool)passesForDataItem:(id)arg1;
 
 @end

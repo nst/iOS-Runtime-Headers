@@ -6,7 +6,7 @@
     NSString * _groupingKeyPath;
     id /* block */  _groupingSortComparator;
     NSString * _identifier;
-    VUIMediaEntityType * _mediaEntityType;
+    NSSet * _mediaEntityTypes;
     NSDictionary * _options;
     NSPredicate * _predicate;
     NSSet * _properties;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *groupingKeyPath;
 @property (nonatomic, copy) id /* block */ groupingSortComparator;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) VUIMediaEntityType *mediaEntityType;
+@property (nonatomic, copy) NSSet *mediaEntityTypes;
 @property (nonatomic, copy) NSDictionary *options;
 @property (nonatomic, copy) NSPredicate *predicate;
 @property (nonatomic, copy) NSSet *properties;
@@ -42,6 +42,8 @@
 + (id)_finalizedSortDescriptorsFromSortDescriptors:(id)arg1 mediaEntityKind:(id)arg2;
 + (id)_identifierPredicateWithIdentifier:(id)arg1;
 + (id)_includeSortIndexesOptions;
++ (id)_isEqualPredicateWithAdamId:(id)arg1;
++ (id)_isInPredicateWithAdamId:(id)arg1;
 + (id)_isLocalPredicate;
 + (id)_minimalMovieRentalsPropertiesFetchRequest;
 + (id)_minimalMoviesPropertiesFetchRequest;
@@ -82,6 +84,9 @@
 - (bool)_shouldGenerateSortIndexes;
 - (id)_sortIndexPropertyKeyWithMediaEntityKind:(id)arg1;
 - (void)add4KResolutionPredicate;
+- (void)addAdamIdPredicate:(id)arg1;
+- (void)addAdamIdsPredicate:(id)arg1;
+- (void)addDownloadStatePredicateForStates:(unsigned long long)arg1;
 - (void)addGroupingSortIndexesOption;
 - (void)addHDRColorCapabilityOr4KResolutionPredicate;
 - (void)addHDRColorCapabilityPredicate;
@@ -96,8 +101,9 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithMediaEntityType:(id)arg1;
+- (id)initWithMediaEntityTypes:(id)arg1;
 - (bool)isEqual:(id)arg1;
-- (id)mediaEntityType;
+- (id)mediaEntityTypes;
 - (id)options;
 - (id)predicate;
 - (id)properties;
@@ -105,7 +111,7 @@
 - (void)setGroupingKeyPath:(id)arg1;
 - (void)setGroupingSortComparator:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setMediaEntityType:(id)arg1;
+- (void)setMediaEntityTypes:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setProperties:(id)arg1;

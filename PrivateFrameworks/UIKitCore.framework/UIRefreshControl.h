@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIRefreshControl : UIControl <DebugHierarchyObject_Fallback> {
+@interface UIRefreshControl : UIControl {
     double  _additionalTopInset;
     bool  _adjustingInsets;
     struct UIEdgeInsets { 
@@ -29,16 +29,10 @@
 @property (nonatomic, readonly) double _visibleHeight;
 @property (getter=_appliedInsets, nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } appliedInsets;
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long refreshControlState;
 @property (getter=isRefreshing, nonatomic, readonly) bool refreshing;
 @property (nonatomic, readonly) long long style;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
-
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (Class)_contentViewClassForStyle:(long long)arg1;
 + (id)_defaultColor;
@@ -81,17 +75,9 @@
 - (void)_updateSnappingHeight;
 - (double)_visibleHeight;
 - (double)_visibleHeightForContentOffset:(struct CGPoint { double x1; double x2; })arg1 origin:(struct CGPoint { double x1; double x2; })arg2;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)attributedTitle;
 - (void)beginRefreshing;
+- (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endRefreshing;

@@ -4,17 +4,22 @@
 
 @interface SKCloudServiceController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
+    bool  _allowsPromptingForPrivacyAcknowledgement;
     unsigned long long  _cloudServiceCapability;
     bool  _hasValidCloudServiceCapability;
 }
+
+@property (setter=_setAllowsPromptingForPrivacyAcknowledgement:, nonatomic) bool _allowsPromptingForPrivacyAcknowledgement;
 
 + (long long)authorizationStatus;
 + (void)requestAuthorization:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification;
+- (bool)_allowsPromptingForPrivacyAcknowledgement;
 - (void)_handleInvalidation;
 - (void)_playbackCapabilitiesDidChangeNotification;
+- (void)_setAllowsPromptingForPrivacyAcknowledgement:(bool)arg1;
 - (void)_storefrontDidChangeNotification;
 - (void)_updateCapabilitiesWithResponse:(id)arg1 postNotification:(bool)arg2;
 - (void)dealloc;

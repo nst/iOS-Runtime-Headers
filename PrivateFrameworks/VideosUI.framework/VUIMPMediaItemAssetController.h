@@ -40,17 +40,17 @@
 - (bool)_isDownloaded;
 - (void)_notifyDelegateStateDidChange:(id)arg1;
 - (void)_onProcessingQueue_calculateStateAndNotify:(bool)arg1;
+- (void)_onProcessingQueue_cancelAndRemoveDownload;
 - (id)_onProcessingQueue_downloadController;
 - (void)_onProcessingQueue_invalidate;
 - (void)_onProcessingQueue_invalidateAndSetState;
-- (void)_onProcessingQueue_removeDownloadWithCompletion:(id /* block */)arg1;
 - (void)_onProcessingQueue_setDownloadController:(id)arg1;
 - (void)_onProcessingQueue_startDownloadWithCompletion:(id /* block */)arg1;
 - (void)_onProcessingQueue_startMonitoringDownload;
 - (void)_onProcessingQueue_updateStateWithStatus:(unsigned long long)arg1 downloadProgress:(double)arg2 bytesDownloaded:(unsigned long long)arg3 bytesToDownload:(unsigned long long)arg4 supportsPausing:(bool)arg5 supportsCancellation:(bool)arg6 notify:(bool)arg7;
 - (void)_onProcessingQueue_updateStateWithStatus:(unsigned long long)arg1 notify:(bool)arg2;
 - (void)_postStateDidChangeNotificationWithFromState:(id)arg1 toState:(id)arg2;
-- (void)cancelDownload;
+- (void)cancelAndRemoveDownload;
 - (id)completionDispatchQueue;
 - (void)dealloc;
 - (id)delegate;
@@ -65,7 +65,6 @@
 - (id)mediaItem;
 - (void)mediaItemDownloadController:(id)arg1 stateDidChange:(id)arg2;
 - (void)pauseDownload;
-- (void)removeDownloadWithCompletion:(id /* block */)arg1;
 - (void)resumeDownload;
 - (id)serialProcessingDispatchQueue;
 - (void)setCompletionDispatchQueue:(id)arg1;

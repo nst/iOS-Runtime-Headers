@@ -18,11 +18,14 @@
 
 - (void).cxx_destruct;
 - (id)assetHandle;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)fileURL;
+- (unsigned long long)hash;
 - (id)initWithPermanentURLForResourceID:(id)arg1 cacheLifetimeHint:(long long)arg2 contentContext:(id)arg3;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2 assetManager:(id)arg3;
 - (id)initWithResourceID:(id)arg1 assetHandle:(id)arg2;
 - (id)interestToken;
+- (bool)isEqual:(id)arg1;
 - (bool)isOnDisk;
 - (id)resourceID;
 - (id)resourceRecord;

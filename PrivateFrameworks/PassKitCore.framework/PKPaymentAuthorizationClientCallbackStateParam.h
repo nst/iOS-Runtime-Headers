@@ -7,7 +7,10 @@
     id  _object;
 }
 
+@property (nonatomic, readonly) PKAccountServicePaymentMethod *accountServicePaymentMethod;
+@property (nonatomic, readonly) PKApplePayTrustSignature *applePayTrustSignature;
 @property (nonatomic, readonly) PKAuthorizedPeerPaymentQuote *authorizedPeerPaymentQuote;
+@property (nonatomic, readonly) PKDisbursementVoucher *disbursementVoucher;
 @property (nonatomic) long long kind;
 @property (nonatomic, retain) id object;
 @property (nonatomic, readonly) PKPayment *payment;
@@ -19,8 +22,11 @@
 + (id)paramWithCallbackKind:(long long)arg1 object:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)accountServicePaymentMethod;
+- (id)applePayTrustSignature;
 - (id)authorizedPeerPaymentQuote;
 - (id)description;
+- (id)disbursementVoucher;
 - (long long)kind;
 - (id)object;
 - (id)payment;

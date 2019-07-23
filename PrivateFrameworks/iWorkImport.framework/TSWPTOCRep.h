@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPTOCRep : TSWPShapeRep
+@interface TSWPTOCRep : TSWPShapeRep {
+    CAShapeLayer * _selectionHighlightLayer;
+}
 
 + (id)TOCReferenceNameWithParagraphIndex:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (bool)canMakePathEditable;
 - (unsigned long long)charIndexAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)hyperlinkRegions;

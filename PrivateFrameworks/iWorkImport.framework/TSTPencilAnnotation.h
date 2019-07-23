@@ -3,34 +3,30 @@
  */
 
 @interface TSTPencilAnnotation : TSPObject <TSKPencilAnnotation> {
-    unsigned long long  _index;
     TSDPencilAnnotationStorage * _pencilAnnotationStorage;
-    TSTInfo * _table;
+    TSTTableInfo * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) unsigned long long index;
 @property (nonatomic, readonly) TSDPencilAnnotationStorage *pencilAnnotationStorage;
 @property (readonly) Class superclass;
-@property (nonatomic) TSTInfo *table;
+@property (nonatomic) TSTTableInfo *table;
 @property (nonatomic, readonly) NSString *uuid;
 
 + (bool)needsObjectUUID;
 
 - (void).cxx_destruct;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_cellRange;
-- (unsigned long long)index;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 tableInfo:(id)arg2 pencilAnnotationStorage:(id)arg3;
 - (id)initWithTableInfo:(id)arg1 pencilAnnotationStorage:(id)arg2;
-- (void)loadFromArchive:(const struct PencilAnnotationArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct PencilAnnotationArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)pencilAnnotationStorage;
-- (void)saveToArchive:(struct PencilAnnotationArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct PencilAnnotationArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setIndex:(unsigned long long)arg1;
 - (void)setTable:(id)arg1;
 - (id)table;
 - (id)uuid;

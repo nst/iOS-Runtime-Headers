@@ -5,6 +5,8 @@
 
 @required
 
+- (bool)readerAppearanceFontSizeCanDecrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
+- (bool)readerAppearanceFontSizeCanIncrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
 - (void)readerAppearanceFontSizeDidDecrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
 - (void)readerAppearanceFontSizeDidIncrease:(SFReaderAppearanceFontSizeSelectorTableViewCell *)arg1;
 

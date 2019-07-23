@@ -33,7 +33,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isActive;
 @property (nonatomic, readonly) bool isInTransientRegistrationState;
-@property (nonatomic, readonly) bool isTransientCloudPairingAccount;
+@property (nonatomic, readonly) bool isTransientWhitelistedAccount;
 @property (nonatomic, readonly) bool isUsableForOuterMessaging;
 @property (nonatomic, readonly) bool isUserDisabled;
 @property (nonatomic, retain) NSString *loginID;
@@ -69,6 +69,7 @@
 - (void)_connect;
 - (bool)_isEnabled;
 - (bool)_isInvisibleAlias:(id)arg1;
+- (bool)_isThumperService;
 - (bool)_isiCloudPairingService;
 - (id)_keychainRegistration;
 - (void)_loadCachedDevices;
@@ -113,7 +114,7 @@
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;
 - (bool)isActive;
 - (bool)isInTransientRegistrationState;
-- (bool)isTransientCloudPairingAccount;
+- (bool)isTransientWhitelistedAccount;
 - (bool)isUsableForOuterMessaging;
 - (bool)isUserDisabled;
 - (id)loginID;

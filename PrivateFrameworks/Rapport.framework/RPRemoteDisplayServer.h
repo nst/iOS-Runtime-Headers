@@ -4,6 +4,7 @@
 
 @interface RPRemoteDisplayServer : NSObject <NSSecureCoding, RPAuthenticatable> {
     bool  _activateCalled;
+    id /* block */  _authCompletionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _hidePasswordHandler;
     unsigned int  _internalAuthFlags;
@@ -15,6 +16,7 @@
     unsigned int  _pairVerifyFlags;
     NSString * _password;
     int  _passwordType;
+    int  _passwordTypeActual;
     id /* block */  _promptForPasswordHandler;
     id /* block */  _sessionEndedHandler;
     id /* block */  _sessionStartHandler;
@@ -23,6 +25,7 @@
     NSXPCConnection * _xpcCnx;
 }
 
+@property (nonatomic, copy) id /* block */ authCompletionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ hidePasswordHandler;
 @property (nonatomic, readonly) unsigned int internalAuthFlags;
@@ -32,6 +35,7 @@
 @property (nonatomic) unsigned int pairVerifyFlags;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic) int passwordType;
+@property (nonatomic, readonly) int passwordTypeActual;
 @property (nonatomic, copy) id /* block */ promptForPasswordHandler;
 @property (nonatomic, copy) id /* block */ sessionEndedHandler;
 @property (nonatomic, copy) id /* block */ sessionStartHandler;
@@ -45,6 +49,7 @@
 - (void)_interrupted;
 - (void)_invalidated;
 - (void)activateWithCompletion:(id /* block */)arg1;
+- (id /* block */)authCompletionHandler;
 - (id)description;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
@@ -59,6 +64,7 @@
 - (unsigned int)pairVerifyFlags;
 - (id)password;
 - (int)passwordType;
+- (int)passwordTypeActual;
 - (id /* block */)promptForPasswordHandler;
 - (void)remoteDisplayHidePasswordWithFlags:(unsigned int)arg1;
 - (void)remoteDisplayReceivedEventID:(id)arg1 event:(id)arg2 options:(id)arg3 sessionID:(id)arg4;
@@ -68,6 +74,7 @@
 - (void)remoteDisplayStartServerSessionID:(id)arg1 device:(id)arg2 completion:(id /* block */)arg3;
 - (id /* block */)sessionEndedHandler;
 - (id /* block */)sessionStartHandler;
+- (void)setAuthCompletionHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setHidePasswordHandler:(id /* block */)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;

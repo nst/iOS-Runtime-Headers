@@ -2,16 +2,22 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKAstronomyRichComplicationContentView : UIView {
+@interface NTKAstronomyRichComplicationContentView : UIView <NTKAstronomyVistaViewObserver> {
     NTKAstronomyVistaView * _astronomyVistaView;
     NSDate * _date;
-    NTKDelayedBlock * _pauseDelayBlock;
-    bool  _paused;
+    unsigned int  _isAnimating;
+    unsigned int  _isPaused;
+    unsigned int  _isRenderOneFrame;
+    NTKDelayedBlock * _stopAnimationDelayedBlock;
 }
 
 - (void).cxx_destruct;
 - (bool)_shouldAnimateWithTemplateUpdateReason:(long long)arg1;
+- (void)_startAnimating;
+- (void)_stopAnimating;
 - (void)applyPausedUpdate:(bool)arg1;
+- (void)astronomyVistaViewContentsAnimationFinished:(id)arg1;
+- (void)astronomyVistaViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)handleOrdinaryScreenWake;
 - (void)handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)handleWristRaiseScreenWake;

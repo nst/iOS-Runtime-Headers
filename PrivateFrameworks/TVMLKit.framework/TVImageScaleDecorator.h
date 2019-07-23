@@ -18,6 +18,7 @@
         double bottom; 
         double right; 
     }  _padding;
+    bool  _preservesAlpha;
     long long  _scaleMode;
     struct CGSize { 
         double width; 
@@ -31,6 +32,7 @@
 @property (nonatomic) bool cropToFit;
 @property (nonatomic) double focusedSizeIncrease;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic) bool preservesAlpha;
 @property (nonatomic) long long scaleMode;
 @property (nonatomic) struct CGSize { double x1; double x2; } scaleToSize;
 @property (nonatomic) double upscaleAdjustment;
@@ -58,6 +60,7 @@
 - (struct CGSize { double x1; double x2; })loaderScaleToSize;
 - (bool)needsAlphaForImage:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (bool)preservesAlpha;
 - (long long)scaleMode;
 - (struct CGSize { double x1; double x2; })scaleToSize;
 - (void)setBgColor:(id)arg1;
@@ -66,6 +69,7 @@
 - (void)setCropToFit:(bool)arg1;
 - (void)setFocusedSizeIncrease:(double)arg1;
 - (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreservesAlpha:(bool)arg1;
 - (void)setScaleMode:(long long)arg1;
 - (void)setScaleToSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setUpscaleAdjustment:(double)arg1;

@@ -37,6 +37,7 @@
 - (bool)oneUpPresentationHelperShouldAutoPlay:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (id)oneUpPresentationHelperViewHostingTilingView:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)presentingViewControllerViewDidAppear:(bool)arg1;
 - (void)presentingViewControllerViewDidDisappear:(bool)arg1;
 - (void)presentingViewControllerViewWillAppear:(bool)arg1;

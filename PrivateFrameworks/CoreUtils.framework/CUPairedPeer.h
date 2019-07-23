@@ -5,6 +5,7 @@
 @interface CUPairedPeer : NSObject <NSSecureCoding> {
     NSDictionary * _acl;
     NSData * _altIRK;
+    NSDate * _dateModified;
     NSUUID * _identifier;
     NSString * _identifierStr;
     NSDictionary * _info;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, copy) NSDictionary *acl;
 @property (nonatomic, copy) NSData *altIRK;
+@property (nonatomic, copy) NSDate *dateModified;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) NSString *identifierStr;
 @property (nonatomic, copy) NSDictionary *info;
@@ -29,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)acl;
 - (id)altIRK;
+- (id)dateModified;
 - (id)description;
 - (id)detailedDescription;
 - (void)encodeWithCoder:(id)arg1;
@@ -42,6 +45,7 @@
 - (id)publicKey;
 - (void)setAcl:(id)arg1;
 - (void)setAltIRK:(id)arg1;
+- (void)setDateModified:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierStr:(id)arg1;
 - (void)setInfo:(id)arg1;

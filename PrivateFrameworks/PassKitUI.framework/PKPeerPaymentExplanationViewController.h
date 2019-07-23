@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, RemoteUIControllerDelegate> {
+@interface PKPeerPaymentExplanationViewController : PKExplanationViewController <AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, PKExplanationViewDelegate, PKPaymentSelectPassesViewControllerDelegate> {
     bool  _allowsManualEntry;
     PKPeerPaymentCredential * _credential;
     bool  _hidesSetupLater;
@@ -11,7 +11,7 @@
     bool  _presentedDeviceToDeviceEncryptionFlow;
     PKPaymentProvisioningController * _provisioningController;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
-    RemoteUIController * _termsController;
+    PKPeerPaymentTermsController * _termsController;
 }
 
 @property (nonatomic) bool allowsManualEntry;
@@ -39,7 +39,6 @@
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 credential:(id)arg4;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long*)arg3;
 - (void)selectPassesViewController:(id)arg1 didSelectPasses:(id)arg2 completion:(id /* block */)arg3;
 - (void)setAllowsManualEntry:(bool)arg1;
 - (void)setHideSetupLaterButton:(bool)arg1;

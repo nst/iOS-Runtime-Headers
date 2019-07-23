@@ -61,6 +61,7 @@
 - (bool)isDocumentComponentTreeModified;
 - (bool)isPerformingCacheOperation;
 - (bool)isSupportComponentTreeModified;
+- (void)loadComponent:(const struct ComponentInfo { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; struct RepeatedField<unsigned int> { int x_7_1_1; int x_7_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_7_1_3; } x7; int x8; struct RepeatedPtrField<TSP::ComponentExternalReference> { struct Arena {} *x_9_1_1; int x_9_1_2; int x_9_1_3; struct Rep {} *x_9_1_4; } x9; struct RepeatedPtrField<TSP::ComponentDataReference> { struct Arena {} *x_10_1_1; int x_10_1_2; int x_10_1_3; struct Rep {} *x_10_1_4; } x10; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { struct Arena {} *x_11_1_1; int x_11_1_2; int x_11_1_3; struct Rep {} *x_11_1_4; } x11; struct RepeatedPtrField<TSP::FeatureInfo> { struct Arena {} *x_12_1_1; int x_12_1_2; int x_12_1_3; struct Rep {} *x_12_1_4; } x12; }*)arg1 package:(id)arg2;
 - (void)loadFromPackage:(id)arg1 metadata:(id)arg2;
 - (id)objectForIdentifier:(long long)arg1;
 - (unsigned long long)objectTargetType;

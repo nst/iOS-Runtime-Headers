@@ -15,10 +15,8 @@
 
 @property (getter=isCarDisplay, nonatomic, readonly) bool carDisplay;
 @property (getter=isCarInstrumentsDisplay, nonatomic, readonly) bool carInstrumentsDisplay;
-@property (nonatomic, readonly) unsigned int connectionSeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int displayID;
 @property (getter=isExternal, nonatomic, readonly) bool external;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRootIdentity;

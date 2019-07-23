@@ -26,8 +26,8 @@
 @property (nonatomic) bool upgrading;
 @property (nonatomic) bool upgradingDone;
 
-+ (void)archiveKeys:(id)arg1 message:(struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg2;
-+ (id)unarchiveKeys:(const struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
++ (void)archiveKeys:(id)arg1 message:(struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg2;
++ (id)unarchiveKeys:(const struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
 
 - (void).cxx_destruct;
 - (id)addCustomFormat:(id)arg1 oldKey:(id)arg2 fuzzyNameMatching:(bool)arg3;

@@ -26,7 +26,7 @@
 + (id)contactPropertiesByKey;
 + (id)contactRelationsDescription;
 + (id)contactTypeDescription;
-+ (id)contactUnifyingContacts:(id)arg1 includingMainStoreContacts:(bool)arg2;
++ (id)contactUnifyingContacts:(id)arg1 includingMainStoreContacts:(bool)arg2 allowMutableContactFreeze:(bool)arg3;
 + (id)containerEnabledDescription;
 + (id)containerIdentifierDescription;
 + (id)containerNameDescription;

@@ -5,11 +5,13 @@
 @interface PKPaymentCredentialTableViewCell : PKTableViewCell {
     UILabel * _credentialDetailLabel;
     bool  _showingPlaceholder;
+    bool  _snapshotImageHasBorder;
     UIImageView * _snapshotImageView;
 }
 
 @property (nonatomic, readonly) UILabel *credentialDetailLabel;
 @property (nonatomic) bool showingPlaceholder;
+@property (nonatomic) bool snapshotImageHasBorder;
 @property (nonatomic, readonly) UIImageView *snapshotImageView;
 
 + (struct CGSize { double x1; double x2; })defaultImageViewSize;
@@ -23,8 +25,10 @@
 - (id)pk_childrenForAppearance;
 - (void)prepareForReuse;
 - (void)setShowingPlaceholder:(bool)arg1;
+- (void)setSnapshotImageHasBorder:(bool)arg1;
 - (bool)showingPlaceholder;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)snapshotImageHasBorder;
 - (id)snapshotImageView;
 
 @end

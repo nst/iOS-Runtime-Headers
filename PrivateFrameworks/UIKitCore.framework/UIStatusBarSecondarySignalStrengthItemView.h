@@ -4,8 +4,6 @@
 
 @interface UIStatusBarSecondarySignalStrengthItemView : UIStatusBarSignalStrengthItemView
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (double)extraLeftPadding;
 - (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 

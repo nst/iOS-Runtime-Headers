@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@interface _GCMicroGamepadSnapshot : _GCGamepad <_GCSnapshot> {
+@interface _GCMicroGamepadSnapshot : _GCMicroGamepad <_GCSnapshot> {
     GCMotion * _motion;
     NSData * _snapshotData;
 }

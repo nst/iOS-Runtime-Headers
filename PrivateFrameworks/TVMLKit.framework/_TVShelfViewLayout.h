@@ -16,6 +16,7 @@
     _TVShelfLayoutHelper * _layoutHelper;
     double  _minimumInteritemSpacing;
     double  _minimumLineSpacing;
+    long long  _prominentSectionIndex;
     long long  _rowCount;
     struct UIEdgeInsets { 
         double top; 
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) _TVShelfLayoutHelper *layoutHelper;
 @property (nonatomic) double minimumInteritemSpacing;
 @property (nonatomic) double minimumLineSpacing;
+@property (nonatomic) long long prominentSectionIndex;
 @property (nonatomic) long long rowCount;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInset;
 @property (nonatomic, retain) NSArray *shelfLayoutSections;
@@ -58,6 +60,7 @@
 - (double)minimumInteritemSpacing;
 - (double)minimumLineSpacing;
 - (void)prepareLayout;
+- (long long)prominentSectionIndex;
 - (long long)rowCount;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
 - (void)setHeaderBottomMargin:(double)arg1;
@@ -67,6 +70,7 @@
 - (void)setLayoutHelper:(id)arg1;
 - (void)setMinimumInteritemSpacing:(double)arg1;
 - (void)setMinimumLineSpacing:(double)arg1;
+- (void)setProminentSectionIndex:(long long)arg1;
 - (void)setRowCount:(long long)arg1;
 - (void)setSectionInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setShelfLayoutSections:(id)arg1;

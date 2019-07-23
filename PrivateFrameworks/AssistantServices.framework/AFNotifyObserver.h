@@ -27,6 +27,7 @@
 - (void)_invalidate;
 - (void)_updateStateWithToken:(int)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithName:(id)arg1 options:(unsigned long long)arg2 queue:(id)arg3 delegate:(id)arg4;
 - (void)invalidate;
 - (id)name;

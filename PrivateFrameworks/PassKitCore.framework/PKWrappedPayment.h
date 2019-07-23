@@ -4,6 +4,7 @@
 
 @interface PKWrappedPayment : NSObject <NSSecureCoding> {
     PKSecureElementCertificateSet * _certificates;
+    NSData * _enrollmentSignature;
     NSString * _kextBlacklistVersion;
     NSData * _transactionData;
     NSString * _transactionIdentifier;
@@ -11,6 +12,7 @@
 }
 
 @property (nonatomic, copy) PKSecureElementCertificateSet *certificates;
+@property (nonatomic, copy) NSData *enrollmentSignature;
 @property (nonatomic, copy) NSString *kextBlacklistVersion;
 @property (nonatomic, copy) NSData *transactionData;
 @property (nonatomic, copy) NSString *transactionIdentifier;
@@ -22,9 +24,11 @@
 - (id)certificates;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)enrollmentSignature;
 - (id)initWithCoder:(id)arg1;
 - (id)kextBlacklistVersion;
 - (void)setCertificates:(id)arg1;
+- (void)setEnrollmentSignature:(id)arg1;
 - (void)setKextBlacklistVersion:(id)arg1;
 - (void)setTransactionData:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;

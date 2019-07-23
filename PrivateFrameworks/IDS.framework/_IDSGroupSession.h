@@ -22,6 +22,8 @@
     NSArray * _existingParticipants;
     NSString * _fromID;
     NSString * _groupID;
+    NSString * _instanceID;
+    bool  _isInvalidated;
     NSError * _joinLeaveError;
     bool  _needsToWaitForPreConnectionData;
     NSDictionary * _participantInfo;
@@ -60,6 +62,7 @@
 - (void)groupSessionDidTerminate:(id)arg1;
 - (void)groupSessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3 delegateContext:(id)arg4;
+- (void)invalidate;
 - (void)joinGroupSession;
 - (void)joinWithOptions:(id)arg1;
 - (void)leaveGroupSession;

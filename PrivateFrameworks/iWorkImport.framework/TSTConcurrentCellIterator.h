@@ -9,7 +9,7 @@
     TSUWidthLimitedQueue * _queue;
     TSTCellRegion * _region;
     unsigned long long  _searchFlags;
-    TSTInfo * _tableInfo;
+    TSTTableInfo * _tableInfo;
 }
 
 @property (nonatomic, retain) NSMutableArray *arrayOfArraysOfRowRocks;
@@ -18,7 +18,7 @@
 @property (nonatomic) TSUWidthLimitedQueue *queue;
 @property (nonatomic, retain) TSTCellRegion *region;
 @property (nonatomic) unsigned long long searchFlags;
-@property (nonatomic, retain) TSTInfo *tableInfo;
+@property (nonatomic, retain) TSTTableInfo *tableInfo;
 
 + (id)p_sharedQueue;
 

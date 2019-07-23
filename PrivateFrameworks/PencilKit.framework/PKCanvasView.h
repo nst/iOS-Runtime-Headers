@@ -4,6 +4,7 @@
 
 @interface PKCanvasView : UIView <PKDrawableView, PKInternalDrawingViewDelegate, PKSelectionDelegate, PKToolPickerDelegate, UIDropInteractionDelegate> {
     bool  __maintainsTransformsOnLayout;
+    long long  _aggd_cachedVisibleStrokeCount;
     UIColor * _backgroundColor;
     UIImage * _backgroundImage;
     <PKCanvasViewDelegate> * _delegate;
@@ -27,6 +28,7 @@
 @property (nonatomic) bool _maintainsTransformsOnLayout;
 @property (nonatomic, readonly) CHVisualizationManager *_recognitionVisualizationManager;
 @property (nonatomic, readonly) <PKRendererControllerProtocol> *_rendererController;
+@property (nonatomic) long long aggd_cachedVisibleStrokeCount;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (readonly, copy) NSString *debugDescription;
@@ -73,6 +75,7 @@
 - (void)_setNeedsDrawingDisplay;
 - (void)_setup;
 - (void)_updateVisualizationSupport;
+- (long long)aggd_cachedVisibleStrokeCount;
 - (void)applyCommand:(id)arg1 toDrawing:(id)arg2;
 - (id)backgroundColor;
 - (id)backgroundImage;
@@ -140,6 +143,7 @@
 - (id)selectionTopView;
 - (id)selectionView;
 - (id)selectionViewDelegate;
+- (void)setAggd_cachedVisibleStrokeCount:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setDelegate:(id)arg1;

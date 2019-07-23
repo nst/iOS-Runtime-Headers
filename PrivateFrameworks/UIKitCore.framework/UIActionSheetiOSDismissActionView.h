@@ -15,15 +15,10 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) bool usesShortCompactVerticalLayout;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_applyContinuousCornerRadius:(double)arg1;
 - (double)_heightForTraitCollection:(id)arg1;
 - (void)_setupDismissButton;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)dismissButton;
 - (id)init;
 - (id)initWithContinuousCornerRadius:(double)arg1;

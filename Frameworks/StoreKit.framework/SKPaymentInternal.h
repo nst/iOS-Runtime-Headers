@@ -7,6 +7,7 @@
     bool  _isStoreOriginated;
     NSString * _partnerIdentifier;
     NSString * _partnerTransactionIdentifier;
+    SKPaymentDiscount * _paymentDiscount;
     NSString * _productIdentifier;
     long long  _quantity;
     NSData * _requestData;

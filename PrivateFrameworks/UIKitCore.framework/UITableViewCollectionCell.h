@@ -26,8 +26,6 @@
 @property (nonatomic) bool shouldIndentWhileEditing;
 @property (nonatomic) bool showsReorderControl;
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundInset;
 - (double)defaultLeadingCellMarginWidth;
 - (double)defaultTrailingCellMarginWidth;

@@ -7,6 +7,7 @@
     NSDate * _lastUsageDataRefreshTime;
     NSString * _organizationIdentifier;
     <RMPersistenceControllerProtocol> * _persistenceController;
+    bool  _refreshing;
     NSString * _selectedDeviceIdentifier;
     NSFetchedResultsController * _usageBlocksFetchedResultsController;
     unsigned long long  _usageDataRefreshReferenceCount;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSDate *lastUsageDataRefreshTime;
 @property (nonatomic, copy) NSString *organizationIdentifier;
 @property (nonatomic, retain) <RMPersistenceControllerProtocol> *persistenceController;
+@property (getter=isRefreshing) bool refreshing;
 @property (nonatomic, copy) NSString *selectedDeviceIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSFetchedResultsController *usageBlocksFetchedResultsController;
@@ -33,11 +35,12 @@
 - (void).cxx_destruct;
 - (void)_refreshUsageDataAndReschedule;
 - (void)_refreshUsageDataWithCompletion:(id /* block */)arg1;
-- (id)_usageItemsWithUser:(id)arg1 device:(id)arg2 lastUpdatedDate:(id*)arg3 inManagedObjectContext:(id)arg4 error:(id*)arg5;
+- (id)_usageItemsWithUser:(id)arg1 device:(id)arg2 lastUpdatedDate:(id*)arg3 firstPickupOnReferenceDate:(id*)arg4 referenceDate:(id)arg5 inManagedObjectContext:(id)arg6 error:(id*)arg7;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)dealloc;
 - (id)devices;
 - (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3 devices:(id)arg4;
+- (bool)isRefreshing;
 - (id)lastUsageDataRefreshTime;
 - (void)loadViewModelWithCompletionHandler:(id /* block */)arg1;
 - (id)organizationIdentifier;
@@ -49,6 +52,7 @@
 - (void)setLastUsageDataRefreshTime:(id)arg1;
 - (void)setOrganizationIdentifier:(id)arg1;
 - (void)setPersistenceController:(id)arg1;
+- (void)setRefreshing:(bool)arg1;
 - (void)setSelectedDeviceIdentifier:(id)arg1;
 - (void)setUsageBlocksFetchedResultsController:(id)arg1;
 - (void)setUsageDataRefreshReferenceCount:(unsigned long long)arg1;

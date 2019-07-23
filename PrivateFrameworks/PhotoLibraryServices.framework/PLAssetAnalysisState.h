@@ -13,6 +13,7 @@
 @property (nonatomic) int workerFlags;
 @property (nonatomic) short workerType;
 
++ (id)_batchOperationQueue;
 + (bool)_bulkUpdateAnalysisStatesTo:(int)arg1 predicate:(id)arg2 error:(id*)arg3;
 + (id)_countOfAnalysisStatesByWorkerTypeWithPredicate:(id)arg1 inContext:(id)arg2 error:(id*)arg3;
 + (unsigned long long)_countOfAssetsAllowedForProcessingInLibrary:(id)arg1 error:(id*)arg2;
@@ -39,7 +40,7 @@
 + (id)keyPathDictionaryWithWorkerType:(short)arg1 workerFlags:(int)arg2 analysisState:(int)arg3 lastIgnoredDate:(id)arg4 ignoreUntilDate:(id)arg5;
 + (bool)markStatesProcessedForWorkerType:(short)arg1 error:(id*)arg2;
 + (void)removeAnalysisRecordsForDeletedAssetUUIDs:(id)arg1 forWorkerType:(short)arg2;
-+ (void)removeAnalysisRecordsWithNoAssetUUID;
++ (void)removeAnalysisRecordsWithNoAssetOrUUIDUseMaintenanceMode:(bool)arg1;
 + (void)requestAnalysisCountsWithCompletion:(id /* block */)arg1;
 + (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(id /* block */)arg1;
 + (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(id /* block */)arg3;

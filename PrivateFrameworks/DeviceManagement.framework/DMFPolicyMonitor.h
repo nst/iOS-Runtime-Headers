@@ -19,7 +19,9 @@
 + (id)remoteInterface;
 
 - (void).cxx_destruct;
+- (void)_notifyClientsOfApplicationsChange:(id)arg1;
 - (void)_notifyClientsOfCategoryChange:(id)arg1;
+- (void)_notifyClientsOfChange:(id)arg1;
 - (void)addRegistration:(id)arg1 forPolicyMonitorIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;

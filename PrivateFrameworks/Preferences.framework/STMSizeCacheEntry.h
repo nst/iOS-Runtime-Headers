@@ -3,22 +3,30 @@
  */
 
 @interface STMSizeCacheEntry : NSObject {
+    unsigned long long  _fsEvtID;
     NSString * _itemPath;
     NSNumber * _itemSize;
+    unsigned long long  _sizeEventID;
     unsigned long long  _status;
 }
 
+@property unsigned long long fsEvtID;
 @property (retain) NSString *itemPath;
 @property (retain) NSNumber *itemSize;
+@property unsigned long long sizeEventID;
 @property unsigned long long status;
 
 - (void).cxx_destruct;
+- (unsigned long long)fsEvtID;
 - (id)initWithPath:(id)arg1;
 - (id)itemPath;
 - (id)itemSize;
+- (void)setFsEvtID:(unsigned long long)arg1;
 - (void)setItemPath:(id)arg1;
 - (void)setItemSize:(id)arg1;
+- (void)setSizeEventID:(unsigned long long)arg1;
 - (void)setStatus:(unsigned long long)arg1;
+- (unsigned long long)sizeEventID;
 - (id)sizeOperation;
 - (unsigned long long)status;
 

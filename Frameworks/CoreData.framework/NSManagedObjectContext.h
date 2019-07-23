@@ -267,6 +267,7 @@
 - (bool)automaticallyMergesChangesFromParent;
 - (id)changeTrackingToken;
 - (bool)commitEditing;
+- (bool)commitEditingAndReturnError:(id*)arg1;
 - (void)commitEditingWithDelegate:(id)arg1 didCommitSelector:(SEL)arg2 contextInfo:(void*)arg3;
 - (unsigned long long)concurrencyType;
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id*)arg2;

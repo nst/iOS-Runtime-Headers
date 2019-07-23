@@ -10,7 +10,7 @@
 
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } collectionViewContentSize;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

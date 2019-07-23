@@ -22,7 +22,7 @@
 + (void)submitPresenceReportMetricWithPresenceAuth:(id)arg1 presenceCompute:(id)arg2 reason:(id)arg3 error:(id)arg4;
 
 - (void).cxx_destruct;
-- (void)_handleLocationAuthorizationMessage:(id)arg1;
+- (void)_handleLocationAuthorizationChangedNotification:(id)arg1;
 - (void)_registerForMessages;
 - (id)_sendPresenceAuthStatusForUser:(id)arg1 presenceAuthStatus:(id)arg2 presenceRegionStatus:(id)arg3 presenceComputeStatus:(id)arg4 reason:(id)arg5;
 - (void)_sendPresenceReport:(unsigned long long)arg1;

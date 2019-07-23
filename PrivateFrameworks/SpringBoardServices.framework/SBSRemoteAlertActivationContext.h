@@ -6,6 +6,7 @@
     NSSet * _actions;
     SBSRemoteAlertPresentationTarget * _presentationTarget;
     BSMutableSettings * _settings;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSSet *actions;
@@ -16,12 +17,14 @@
 @property (nonatomic, retain) SBSRemoteAlertPresentationTarget *presentationTarget;
 @property (nonatomic, retain) NSString *reason;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *userInfo;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithSettings:(id)arg1 actions:(id)arg2;
 - (id)_initWithSettings:(id)arg1 actions:(id)arg2 presentationTarget:(id)arg3;
+- (id)_initWithSettings:(id)arg1 actions:(id)arg2 presentationTarget:(id)arg3 userInfo:(id)arg4;
 - (id)actions;
 - (void)dealloc;
 - (id)description;
@@ -40,9 +43,11 @@
 - (void)setActivatingForSiri:(bool)arg1;
 - (void)setPresentationTarget:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned long long)arg2;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(long long)arg2 object:(id)arg3 ofSetting:(unsigned long long)arg4;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
+- (id)userInfo;
 
 @end

@@ -3,15 +3,18 @@
  */
 
 @interface TSCellularPlanConfirmationCodeViewController : UIViewController <TSSetupFlowItem, UITextFieldDelegate> {
+    NSString * _confirmationCode;
     TSCellularPlanTableViewCell * _confirmationCodeCell;
     UILabel * _confirmationCodeTitleLabel;
     <TSSIMSetupFlowDelegate> * _delegate;
     NSString * _fauxCardData;
     UITableView * _infoTableView;
     NSLayoutConstraint * _infoTableViewHeightConstraint;
+    bool  _isMidOperation;
     long long  _userConsentResponse;
 }
 
+@property (nonatomic, readonly) NSString *confirmationCode;
 @property (nonatomic) UILabel *confirmationCodeTitleLabel;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TSSIMSetupFlowDelegate> *delegate;
@@ -23,11 +26,13 @@
 
 - (void).cxx_destruct;
 - (void)confirm:(id)arg1;
+- (id)confirmationCode;
 - (id)confirmationCodeTitleLabel;
 - (id)delegate;
 - (id)infoTableView;
 - (id)infoTableViewHeightConstraint;
-- (id)initWithCardData:(id)arg1 userConsentResponse:(long long)arg2;
+- (id)initAsMidOperation;
+- (id)initWithCardData:(id)arg1;
 - (void)setConfirmationCodeTitleLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInfoTableView:(id)arg1;
@@ -35,10 +40,10 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)textFieldDidBeginEditing:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

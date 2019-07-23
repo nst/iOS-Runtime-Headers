@@ -50,6 +50,7 @@
 - (id)getIdentitiesDatabaseHashForUser:(unsigned int)arg1 withClient:(id)arg2;
 - (id)getIdentitiesDatabaseUUIDForUser:(unsigned int)arg1 withClient:(id)arg2;
 - (id)getIdentityFromUUID:(id)arg1 withClient:(id)arg2;
+- (int)getLastMatchEvent:(id*)arg1 withClient:(id)arg2;
 - (unsigned long long)getLoggingType;
 - (id)getLogs:(bool)arg1 withDetails:(id*)arg2;
 - (long long)getMaxIdentityCount:(int)arg1 withClient:(id)arg2;

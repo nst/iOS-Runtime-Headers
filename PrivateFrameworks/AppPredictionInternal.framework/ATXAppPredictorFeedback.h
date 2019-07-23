@@ -8,6 +8,7 @@
 
 + (id)_appDictionaryForFeedbackItem:(id)arg1;
 + (double)_bucketize:(double)arg1 bucketSize:(double)arg2;
++ (id)_getLastAppIntentsWithEngagedAction:(id)arg1 limit:(int)arg2;
 + (id)_getLastAppsWithEngagedApp:(id)arg1 limit:(int)arg2;
 + (unsigned long long)_outcomeForEngagementType:(unsigned long long)arg1 engagedFeedbackItem:(id)arg2;
 + (void)_sessionObjectLoggingForFeedbackItems:(id)arg1 engagedBundleId:(id)arg2 shownBundleIdIndexes:(id)arg3 consumerType:(unsigned long long)arg4 consumerSubType:(unsigned char)arg5 outcome:(unsigned long long)arg6 aprIntentType:(id)arg7 aprFeedbackSource:(unsigned long long)arg8 aprEngagementType:(unsigned long long)arg9 aprSiriExperience:(unsigned long long)arg10;

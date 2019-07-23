@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIViewController : UIResponder <DebugHierarchyObject_Fallback, GKContentRefresh, GKURLHandling, HUItemPresentationContainer, MKInfoCardThemeListener, NSCoding, NSExtensionRequestHandling, PXAnonymousViewController, PXDiagnosticsEnvironment, TSPresenterType, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
+@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, HUItemPresentationContainer, MKInfoCardThemeListener, NSCoding, NSExtensionRequestHandling, PXAnonymousViewController, PXDiagnosticsEnvironment, SXHostable, TSPresenterType, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
     UIViewController * __childControllerToIgnoreWhileLookingForTransitionCoordinator;
     <_UIViewControllerContentViewEmbedding> * __embeddedDelegate;
     UIView * __embeddedView;
@@ -233,6 +233,7 @@
 @property (setter=_setRightContentMargin:, nonatomic) double _rightContentMargin;
 @property (setter=_setSegueResponsibleForModalPresentation:, nonatomic, retain) UIStoryboardSegue *_segueResponsibleForModalPresentation;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _sf_bottomUnsafeAreaFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _sf_bottomUnsafeAreaFrameForToolbar;
 @property (nonatomic, readonly) bool _sf_isMFMailComposeViewController;
 @property (nonatomic, readonly) bool _sf_isPKAddPassesViewController;
 @property (nonatomic, readonly) UIViewController *_sf_viewControllerToPresentFrom;
@@ -292,6 +293,7 @@
 @property (nonatomic, readonly) HFItem *hu_presentedItem;
 @property (nonatomic, readonly) HFItem *hu_topmostPresentedItem;
 @property (nonatomic, readonly) bool ic_isRTL;
+@property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) bool ignoresParentMargins;
 @property (getter=isInAnimatedVCTransition, nonatomic) bool inAnimatedVCTransition;
 @property (nonatomic, readonly) bool inExplicitAppearanceTransition;
@@ -350,6 +352,7 @@
 @property (getter=_presentingFocusedItem, setter=_setPresentingFocusedItem:, nonatomic) <UIFocusItem> *presentingFocusedItem;
 @property (getter=isPresentingFullScreenAd, nonatomic, readonly) bool presentingFullScreenAd;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
+@property (nonatomic, copy) NSArray *previewActionItems;
 @property (nonatomic, readonly) NSArray *previewActionItems;
 @property (nonatomic) bool providesPresentationContextTransitionStyle;
 @property (nonatomic, readonly) PUModalTransition *pu_currentInteractiveModalTransition;
@@ -415,15 +418,21 @@
 @property (nonatomic, retain) UITabBarItem *tabBarItem;
 @property (getter=_temporaryPresentationController, setter=_setTemporaryPresentationController:, nonatomic, retain) UIPresentationController *temporaryPresentationController;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) TMLContext *tmlContext;
+@property (nonatomic, copy) NSDictionary *tmlObjects;
+@property (nonatomic, readonly) NSString *tmlViewPath;
 @property (nonatomic, readonly, retain) <UILayoutSupport><_UILayoutItem> *topLayoutGuide;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic) <UIViewControllerTransitioningDelegate> *transitioningDelegate;
 @property (nonatomic, readonly) UIViewController *ts_parentVC;
+@property (nonatomic, readonly) TSTransitionContainerViewController *ts_transitionContainerViewController;
 @property (setter=tv_setIdentifier:, nonatomic, copy) NSString *tvIdentifier;
 @property (nonatomic, retain) UIView *view;
 @property (nonatomic, readonly) SUViewControllerFactory *viewControllerFactory;
 @property (nonatomic, readonly) UIView *viewIfLoaded;
 @property (getter=isViewLoaded, nonatomic, readonly) bool viewLoaded;
+@property (nonatomic, readonly) unsigned long long viewingLocation;
+@property (getter=vui_ppt_isLoading, nonatomic, readonly) bool vui_ppt_loading;
 @property (nonatomic) bool wantsFullScreenLayout;
 @property (getter=_window, nonatomic, readonly) UIWindow *window;
 
@@ -1330,14 +1339,6 @@
 - (void)window:(id)arg1 willRotateToInterfaceOrientation:(long long)arg2 duration:(double)arg3;
 - (void)window:(id)arg1 willRotateToInterfaceOrientation:(long long)arg2 duration:(double)arg3 newSize:(struct CGSize { double x1; double x2; })arg4;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyAdditionalGroupingIDs;
-+ (id)fallback_debugHierarchyChildGroupingID;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/Frameworks/AuthenticationServices.framework/AuthenticationServices
 
 - (id /* block */)_as_applicationBackgroundBlock;
@@ -1441,6 +1442,7 @@
 
 - (void)_sf_animateAlongsideTransitionOrPerform:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sf_bottomUnsafeAreaFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sf_bottomUnsafeAreaFrameForToolbar;
 - (bool)_sf_isMFMailComposeViewController;
 - (bool)_sf_isPKAddPassesViewController;
 - (void)_sf_presentViewControllerOnTopOfPresentedViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
@@ -1489,6 +1491,20 @@
 - (bool)bs_removeChildViewController:(id)arg1;
 - (bool)bs_removeChildViewController:(id)arg1 animated:(bool)arg2 transitionBlock:(id /* block */)arg3;
 - (id)bs_topPresentedViewController;
+
+// Image: /System/Library/PrivateFrameworks/BiometricKitUI.framework/BiometricKitUI
+
++ (unsigned long long)bkui_getState:(int)arg1;
++ (long long)bkui_reverseLeftRight:(long long)arg1;
+
+- (long long)bkui_deviceOrientationForIterfaceOrientation:(long long)arg1;
+- (long long)bkui_rawDeviceOrientationIgnoringOrientationLocks;
+- (id)bkui_registerRotationLockObserver:(id /* block */)arg1;
+- (id)bkui_registerRotationObserver:(id /* block */)arg1;
+- (long long)bkui_reverseLeftRight:(long long)arg1;
+- (void)bkui_rotateView:(id)arg1 fromOrientation:(long long)arg2 toOrientation:(long long)arg3 animatedDuration:(double)arg4 alongSide:(id /* block */)arg5 completion:(id /* block */)arg6;
+- (bool)bkui_rotationLockStatus;
+- (long long)bkui_uiforDeviceOrientation:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CameraEffectsKit.framework/CameraEffectsKit
 
@@ -1651,6 +1667,26 @@
 - (id)hu_presentedItem;
 - (id)hu_topmostPresentedItem;
 
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (void)_replaceMethodImplementation:(Class)arg1 originalSelector:(SEL)arg2 swizzledSelector:(SEL)arg3;
++ (void)presentViewControllerOnTopmostViewController:(id)arg1 fromViewController:(id)arg2 completion:(id /* block */)arg3;
++ (void)replaceViewMethodsImplementation;
++ (id)topmostViewControllerForViewController:(id)arg1;
+
+- (void)dismissAnimated;
+- (void)iam_viewDidAppear:(bool)arg1;
+- (void)iam_viewWillDisappear:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/JITAppKit.framework/JITAppKit
+
++ (id)jitappkit:(id)arg1;
+
+- (id)identifier;
+- (void)setIdentifier:(id)arg1;
+- (void)setTkPage:(id)arg1;
+- (id)tkPage;
+
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)MPUViewControllerConfiguration;
@@ -1697,7 +1733,8 @@
 - (void)removeMenuBarItemHandlerProviders;
 - (void)removeToolbarItemHandlerProviders;
 - (id)ts_parentVC;
-- (void)ts_setAppearanceTransitionsAreDisabled:(bool)arg1;
+- (bool)ts_setAppearanceTransitionsAreDisabled:(bool)arg1;
+- (id)ts_transitionContainerViewController;
 
 // Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
 
@@ -1723,6 +1760,19 @@
 - (id)pk_childrenForAppearance;
 - (void)pk_paymentSetupPreflight:(id /* block */)arg1;
 - (void)pk_paymentSetupSetHideSetupLaterButton:(bool)arg1;
+- (bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
+- (id)pkui_frontMostViewController;
+- (void)pkui_setNeedsNavigationBarUpdate;
+
+// Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
+
++ (void)_pk_blockSerialTransitionsOnQueue:(id)arg1 semaphore:(id)arg2;
++ (void)_pk_unblockSerialTransitionsUsingSemaphore:(id)arg1;
+
+- (bool)_pk_canDismissViewController;
+- (bool)_pk_canPresentViewController:(id)arg1;
+- (void)_pk_seriallyDismissViewControllerOnQueue:(id)arg1 animated:(bool)arg2 willDismiss:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)_pk_seriallyPresentViewController:(id)arg1 queue:(id)arg2 animated:(bool)arg3 willPresent:(id /* block */)arg4 completion:(id /* block */)arg5;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -1837,6 +1887,10 @@
 
 - (void)popRecursivelyToRootController;
 
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
+- (unsigned long long)viewingLocation;
+
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 - (bool)siriui_isVisible;
@@ -1890,7 +1944,57 @@
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (id)tvIdentifier;
 - (void)tv_setIdentifier:(id)arg1;
+- (void)tv_setShowcaseConfig:(struct TVShowcaseConfig { double x1; })arg1;
 - (void)tv_updateViewLayout;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
++ (void)tmlLoadCategory;
+
+- (id)_tmlEnsureContext;
+- (void)_tmlUnloadContext;
+- (void)setChildViewControllerForStatusBarHidden:(id)arg1;
+- (void)setChildViewControllerForStatusBarStyle:(id)arg1;
+- (void)setPreferredStatusBarStyle:(long long)arg1;
+- (void)setPreferredStatusBarUpdateAnimation:(long long)arg1;
+- (void)setPrefersStatusBarHidden:(bool)arg1;
+- (void)setPreviewActionItems:(id)arg1;
+- (void)setTMLValue:(id)arg1 forKeyPath:(id)arg2;
+- (void)setTmlObjects:(id)arg1;
+- (bool)tmlAccessibilityPerformEscape;
+- (bool)tmlAccessibilityPerformMagicTap;
+- (id)tmlChildViewControllerForStatusBarHidden;
+- (id)tmlChildViewControllerForStatusBarStyle;
+- (id)tmlContext;
+- (void)tmlDecodeRestorableStateWithCoder:(id)arg1;
+- (void)tmlEncodeRestorableStateWithCoder:(id)arg1;
+- (bool)tmlLoadView;
+- (id)tmlLoadView:(id)arg1;
+- (bool)tmlLoadViewControllerFromPath:(id)arg1;
+- (bool)tmlLoadViewControllerWithSource:(id)arg1;
+- (id)tmlLoadViewFromPath:(id)arg1;
+- (void)tmlLoadViewOverride;
+- (bool)tmlLoadViewWithSource:(id)arg1;
+- (id)tmlObjects;
+- (long long)tmlPreferredInterfaceOrientationForPresentation;
+- (long long)tmlPreferredStatusBarStyle;
+- (long long)tmlPreferredStatusBarUpdateAnimation;
+- (bool)tmlPrefersStatusBarHidden;
+- (id)tmlPreviewActionItems;
+- (bool)tmlShouldAutorotate;
+- (unsigned long long)tmlSupportedInterfaceOrientations;
+- (void)tmlTraitCollectionDidChange:(id)arg1;
+- (void)tmlUpdateViewConstraints;
+- (void)tmlViewDidAppear:(bool)arg1;
+- (void)tmlViewDidDisappear:(bool)arg1;
+- (void)tmlViewDidLayoutSubviews;
+- (void)tmlViewDidLoad;
+- (id)tmlViewPath;
+- (void)tmlViewWillAppear:(bool)arg1;
+- (void)tmlViewWillDisappear:(bool)arg1;
+- (void)tmlViewWillLayoutSubviews;
+- (void)tmlViewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)tmlWillTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
@@ -1910,6 +2014,9 @@
 
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
++ (Class)_vui_TVLoadingViewControllerClass;
+
+- (bool)vui_ppt_isLoading;
 - (void)vui_presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

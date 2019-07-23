@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIPearlPasscodeController : PSUIBiometricController <BKUIPearlEnrollControllerDelegate, LAUIDelegate> {
+@interface PSUIPearlPasscodeController : PSUIBiometricController <BFFPasscodeViewControllerDelegate, BKUIPearlEnrollControllerDelegate, LAUIDelegate> {
     PSPearlAttentionGroupController * _attentionGroupController;
     LAContext * _authContext;
     PSEnrollmentNavigationController * _enrollFaceController;
@@ -40,11 +40,15 @@
 - (unsigned long long)numberOfAppsUsingPearl;
 - (id)numberOfAppsUsingPearlDescription:(id)arg1;
 - (id)passcodeController;
+- (void)passcodeViewController:(id)arg1 didFinishWithPasscodeCreation:(id)arg2;
+- (bool)passcodeViewControllerAllowSkip:(id)arg1;
+- (id)passcodeViewControllerCustomFirstEntryInstructions:(id)arg1;
 - (void)pearlEnrollController:(id)arg1 finishedEnrollWithError:(id)arg2;
 - (id)pearlEnrollSpecifiers;
 - (void)pearlLearnMoreTapped:(id)arg1;
 - (void)popPearlEnrollmentController;
 - (id)presenter;
+- (void)pushPasscodePane;
 - (void)setAttentionGroupController:(id)arg1;
 - (void)setAuthContext:(id)arg1;
 - (void)setBiometricUnlockEnabled:(id)arg1 specifier:(id)arg2;

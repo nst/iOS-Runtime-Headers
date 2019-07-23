@@ -41,6 +41,7 @@
 + (id)_activitySettingsImageForBundleImageConfiguration:(id)arg1;
 + (id)_defaultFallbackActivityType;
 + (id)_imageByApplyingDefaultEffectsToImage:(id)arg1 activityCategory:(long long)arg2;
++ (bool)_isCapabilityBasedActivity;
 + (void)_performAfterActivityImageLoadingCompletes:(id /* block */)arg1;
 + (unsigned long long)_xpcAttributes;
 + (long long)activityCategory;

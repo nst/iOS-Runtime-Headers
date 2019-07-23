@@ -21,6 +21,9 @@
         unsigned int totalFelicaEMoneyTransaction : 1; 
         unsigned int totalFelicaTransitTransaction : 1; 
         unsigned int totalGenericAExpressTransaction : 1; 
+        unsigned int totalPTDatabaseCorruption : 1; 
+        unsigned int totalPTKeyDeletionFailed : 1; 
+        unsigned int totalPTKeys : 1; 
         unsigned int totalPeerPaymentRequest : 1; 
         unsigned int totalPeerPaymentRequestFailure : 1; 
         unsigned int totalPlasticCardModeEnable : 1; 
@@ -59,6 +62,9 @@
     unsigned int  _totalFelicaEMoneyTransaction;
     unsigned int  _totalFelicaTransitTransaction;
     unsigned int  _totalGenericAExpressTransaction;
+    unsigned int  _totalPTDatabaseCorruption;
+    unsigned int  _totalPTKeyDeletionFailed;
+    unsigned int  _totalPTKeys;
     unsigned int  _totalPeerPaymentRequest;
     unsigned int  _totalPeerPaymentRequestFailure;
     unsigned int  _totalPlasticCardModeEnable;
@@ -98,6 +104,9 @@
 @property (nonatomic) bool hasTotalFelicaEMoneyTransaction;
 @property (nonatomic) bool hasTotalFelicaTransitTransaction;
 @property (nonatomic) bool hasTotalGenericAExpressTransaction;
+@property (nonatomic) bool hasTotalPTDatabaseCorruption;
+@property (nonatomic) bool hasTotalPTKeyDeletionFailed;
+@property (nonatomic) bool hasTotalPTKeys;
 @property (nonatomic) bool hasTotalPeerPaymentRequest;
 @property (nonatomic) bool hasTotalPeerPaymentRequestFailure;
 @property (nonatomic) bool hasTotalPlasticCardModeEnable;
@@ -127,6 +136,9 @@
 @property (nonatomic) unsigned int totalFelicaEMoneyTransaction;
 @property (nonatomic) unsigned int totalFelicaTransitTransaction;
 @property (nonatomic) unsigned int totalGenericAExpressTransaction;
+@property (nonatomic) unsigned int totalPTDatabaseCorruption;
+@property (nonatomic) unsigned int totalPTKeyDeletionFailed;
+@property (nonatomic) unsigned int totalPTKeys;
 @property (nonatomic) unsigned int totalPeerPaymentRequest;
 @property (nonatomic) unsigned int totalPeerPaymentRequestFailure;
 @property (nonatomic) unsigned int totalPlasticCardModeEnable;
@@ -169,6 +181,9 @@
 - (bool)hasTotalFelicaEMoneyTransaction;
 - (bool)hasTotalFelicaTransitTransaction;
 - (bool)hasTotalGenericAExpressTransaction;
+- (bool)hasTotalPTDatabaseCorruption;
+- (bool)hasTotalPTKeyDeletionFailed;
+- (bool)hasTotalPTKeys;
 - (bool)hasTotalPeerPaymentRequest;
 - (bool)hasTotalPeerPaymentRequestFailure;
 - (bool)hasTotalPlasticCardModeEnable;
@@ -210,6 +225,9 @@
 - (void)setHasTotalFelicaEMoneyTransaction:(bool)arg1;
 - (void)setHasTotalFelicaTransitTransaction:(bool)arg1;
 - (void)setHasTotalGenericAExpressTransaction:(bool)arg1;
+- (void)setHasTotalPTDatabaseCorruption:(bool)arg1;
+- (void)setHasTotalPTKeyDeletionFailed:(bool)arg1;
+- (void)setHasTotalPTKeys:(bool)arg1;
 - (void)setHasTotalPeerPaymentRequest:(bool)arg1;
 - (void)setHasTotalPeerPaymentRequestFailure:(bool)arg1;
 - (void)setHasTotalPlasticCardModeEnable:(bool)arg1;
@@ -239,6 +257,9 @@
 - (void)setTotalFelicaEMoneyTransaction:(unsigned int)arg1;
 - (void)setTotalFelicaTransitTransaction:(unsigned int)arg1;
 - (void)setTotalGenericAExpressTransaction:(unsigned int)arg1;
+- (void)setTotalPTDatabaseCorruption:(unsigned int)arg1;
+- (void)setTotalPTKeyDeletionFailed:(unsigned int)arg1;
+- (void)setTotalPTKeys:(unsigned int)arg1;
 - (void)setTotalPeerPaymentRequest:(unsigned int)arg1;
 - (void)setTotalPeerPaymentRequestFailure:(unsigned int)arg1;
 - (void)setTotalPlasticCardModeEnable:(unsigned int)arg1;
@@ -268,6 +289,9 @@
 - (unsigned int)totalFelicaEMoneyTransaction;
 - (unsigned int)totalFelicaTransitTransaction;
 - (unsigned int)totalGenericAExpressTransaction;
+- (unsigned int)totalPTDatabaseCorruption;
+- (unsigned int)totalPTKeyDeletionFailed;
+- (unsigned int)totalPTKeys;
 - (unsigned int)totalPeerPaymentRequest;
 - (unsigned int)totalPeerPaymentRequestFailure;
 - (unsigned int)totalPlasticCardModeEnable;

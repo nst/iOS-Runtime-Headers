@@ -14,7 +14,7 @@
 
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)authToken;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hostName;

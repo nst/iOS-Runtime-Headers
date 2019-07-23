@@ -15,6 +15,7 @@
     <PKPaymentAuthorizationHostProtocol> * _delegate;
     UIView * _dimmingBackgroundView;
     PKContinuityPaymentFaviconView * _faviconImage;
+    long long  _internalCoachingState;
     UIViewController * _passcodeViewController;
     UIViewController * _passphraseViewController;
     LAUIPhysicalButtonView * _physicalButtonView;
@@ -57,9 +58,11 @@
 - (void)_suspendAuthentication;
 - (void)_timeoutFired;
 - (void)_updateCardView;
+- (void)_updateCoachingInstruction;
 - (void)_updatePendingTransaction:(id)arg1 withAuthorizationStateParam:(id)arg2;
 - (void)_updateUserIntentRequired;
 - (void)authenticator:(id)arg1 didRequestUserAction:(long long)arg2;
+- (void)authenticator:(id)arg1 didTransitionToCoachingState:(long long)arg2;
 - (void)authenticator:(id)arg1 didTransitionToPearlState:(long long)arg2;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;

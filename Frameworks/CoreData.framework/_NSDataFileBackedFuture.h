@@ -17,6 +17,7 @@
 @property (readonly) NSURL *fileURL;
 @property (retain) NSURL *originalFileURL;
 
++ (Class)classForKeyedUnarchiver;
 + (bool)supportsSecureCoding;
 
 - (id)UUID;

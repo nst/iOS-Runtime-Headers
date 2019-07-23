@@ -22,6 +22,7 @@
     bool  _groupLeader;
     bool  _groupable;
     bool  _hasBatteryLevel;
+    bool  _isAddedToHomeKit;
     bool  _localDevice;
     NSString * _logicalDeviceID;
     NSString * _modelID;
@@ -38,6 +39,7 @@
     MRAVOutputDeviceSourceInfo * _sourceInfo;
     bool  _supportsBufferedAirPlay;
     bool  _supportsExternalScreen;
+    bool  _supportsRapport;
     NSString * _uid;
     float  _volume;
     bool  _volumeControlAvailable;
@@ -65,6 +67,7 @@
 @property (getter=isGroupLeader, nonatomic, readonly) bool groupLeader;
 @property (getter=isGroupable, nonatomic, readonly) bool groupable;
 @property (nonatomic, readonly) bool hasBatteryLevel;
+@property (nonatomic, readonly) bool isAddedToHomeKit;
 @property (nonatomic, readonly) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property (getter=isLocalDevice, nonatomic, readonly) bool localDevice;
 @property (nonatomic, readonly) NSString *logicalDeviceID;
@@ -83,8 +86,10 @@
 @property (nonatomic, readonly) MRAVOutputDeviceSourceInfo *sourceInfo;
 @property (nonatomic, readonly) bool supportsBufferedAirPlay;
 @property (nonatomic, readonly) bool supportsExternalScreen;
+@property (nonatomic, readonly) bool supportsRapport;
 @property (nonatomic, readonly) NSString *uid;
 @property (nonatomic) float volume;
+@property (nonatomic, readonly) unsigned int volumeCapabilities;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
 
 + (id)localDeviceLocalizedName;
@@ -111,6 +116,7 @@
 - (id)groupID;
 - (bool)hasBatteryLevel;
 - (unsigned long long)hash;
+- (bool)isAddedToHomeKit;
 - (bool)isAirPlayReceiverSessionActive;
 - (bool)isDeviceGroupable;
 - (bool)isEqual:(id)arg1;
@@ -139,7 +145,9 @@
 - (id)sourceInfo;
 - (bool)supportsBufferedAirPlay;
 - (bool)supportsExternalScreen;
+- (bool)supportsRapport;
 - (id)uid;
 - (float)volume;
+- (unsigned int)volumeCapabilities;
 
 @end

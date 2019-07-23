@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIColor : NSObject <DebugHierarchyValue_Fallback, LPCSSText, LPHTMLAttributeText, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, TSDPathPainter, UIItemProviderReading, UIItemProviderWriting> {
+@interface UIColor : NSObject <LPCSSText, LPHTMLAttributeText, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, TSDPathPainter, UIColorJSExports, UIItemProviderReading, UIItemProviderWriting> {
     NSString * _cachedStyleString;
     NSString * _systemColorName;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
+@property (nonatomic, readonly) id CGColorRef;
 @property (nonatomic, readonly) CIColor *CIColor;
 @property (nonatomic, readonly) double MP_lightness;
 @property (setter=_icaxSetCachedApproximateColorDescription:, nonatomic, retain) NSString *_icaxCachedApproximateColorDescription;
@@ -238,10 +239,6 @@
 - (id)styleString;
 - (id)writableTypeIdentifiersForItemProvider;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)fallback_debugHierarchyValueWithOutOptions:(id*)arg1 outError:(id*)arg2;
-
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 + (id)AV_indicatorBackgroundColor;
@@ -321,8 +318,11 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
++ (id)_sf_backgroundColor;
 + (id)_sf_defaultMonogramBackgroundColor;
 + (id)_sf_defaultWebContentBackgroundColor;
++ (id)_sf_labelColor;
++ (id)_sf_secondaryBackgroundColor;
 + (id)ss_browserSystemColor;
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
@@ -580,6 +580,15 @@
 + (id)hk_defaultKeyColor;
 + (id)hk_defaultPrimaryTextColor;
 + (id)hk_defaultSecondaryTextColor;
++ (id)hk_electrocardiogramCardBackgroundColor;
++ (id)hk_electrocardiogramCardHeaderColor;
++ (id)hk_electrocardiogramCardOnboardingBackgroundColor;
++ (id)hk_electrocardiogramCardOnboardingHeaderColor;
++ (id)hk_electrocardiogramChartBorderColor;
++ (id)hk_electrocardiogramChartMajorGridlineColor;
++ (id)hk_electrocardiogramChartMediumGridlineColor;
++ (id)hk_electrocardiogramChartMinorGridlineColor;
++ (id)hk_electrocardiogramChartVeryMinorGridlineColor;
 + (id)hk_hearingHealthKeyColor;
 + (id)hk_immunizationsClinicalGradientBottomColor;
 + (id)hk_immunizationsClinicalGradientTopColor;
@@ -735,10 +744,13 @@
 + (id)ts_systemRedColor;
 + (id)ts_systemTealColor;
 
+- (double)ts_luminance;
+
 // Image: /System/Library/PrivateFrameworks/NewsFeedLayout.framework/NewsFeedLayout
 
 + (id)nfl_accessoryColorForTextColor:(id)arg1 backgroundColor:(id)arg2;
 + (long long)nfl_binForColor:(id)arg1;
++ (long long)nfl_binUsingBrightnessForColor:(id)arg1;
 + (id)nfl_blue;
 + (id)nfl_colorBetweenGradientColors:(id)arg1 andColor:(id)arg2 atPosition:(double)arg3;
 + (id)nfl_colorByInterpolatingFromColor:(id)arg1 toColor:(id)arg2 percent:(double)arg3;
@@ -880,6 +892,8 @@
 
 + (id)colorWithPKColor:(id)arg1;
 + (id)pkui_osloErrorColor;
+
+- (id)pkui_linearColor;
 
 // Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
 
@@ -1036,6 +1050,7 @@
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
++ (id)tv_opacityColorForType:(long long)arg1 userInterfaceStyle:(long long)arg2;
 + (id)tvmlkit_keyColor;
 
 - (id)blendWithColor:(id)arg1 percentage:(double)arg2;
@@ -1050,14 +1065,27 @@
 - (id)darkerColorByPercentage:(float)arg1;
 - (id)tpImageFromColor;
 
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
++ (void)initializeJSContext:(id)arg1;
+
+- (id)CGColorRef;
+- (id)image;
+
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 + (id)_vui_darkModeKeyBlueColor;
 + (id)_vui_lightModeKeyBlueColor;
++ (id)vui_backgroundGradientColors;
 + (id)vui_imageBorderColor;
 + (id)vui_imageHighlightColor;
 + (id)vui_keyBlueColor;
 + (id)vui_keyBlueHighlightedColor;
++ (id)vui_opacityColorWithType:(long long)arg1 userInterfaceStyle:(long long)arg2;
++ (id)vui_progressBarFillColor;
++ (id)vui_progressBarGradientColors;
+
+- (id)vui_blendWithColor:(id)arg1 percentage:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
 
@@ -1074,7 +1102,6 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (id)tsu_darkInsertSwatchBackgroundColor;
 + (id)tsu_darkToolbarBackgroundColor;
 + (id)tsu_darkToolbarTintColor;
 + (id)tsu_darkToolbarTitleColor;

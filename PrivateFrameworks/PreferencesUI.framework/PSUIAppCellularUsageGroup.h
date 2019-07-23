@@ -40,7 +40,6 @@
 - (void)setGroupSpecifier:(id)arg1;
 - (void)setHeaderSpecifiers:(id)arg1;
 - (void)setLoading:(bool)arg1;
-- (void)setSwitchesEnabled:(bool)arg1;
 - (id)specifiers;
 - (void)updateTotalUsage:(id)arg1;
 - (id /* block */)usageComparator;

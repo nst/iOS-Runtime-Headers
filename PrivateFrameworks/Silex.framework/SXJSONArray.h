@@ -7,8 +7,6 @@
     NSArray * _json;
     id /* block */  _objectValueClassBlock;
     NSMutableArray * _objects;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
-    NSString * _specificationVersion;
     id /* block */  _valueClassBlock;
 }
 
@@ -16,7 +14,6 @@
 @property (nonatomic, readonly) NSArray *json;
 @property (nonatomic, readonly) id /* block */ objectValueClassBlock;
 @property (nonatomic, readonly) NSMutableArray *objects;
-@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 @property (nonatomic, readonly) id /* block */ valueClassBlock;
 
 - (void).cxx_destruct;
@@ -31,8 +28,6 @@
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id /* block */)objectValueClassBlock;
 - (id)objects;
-- (id)semaphore;
-- (id)specificationVersion;
 - (id /* block */)valueClassBlock;
 
 @end

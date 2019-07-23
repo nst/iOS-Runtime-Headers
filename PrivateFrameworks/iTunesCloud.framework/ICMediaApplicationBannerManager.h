@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)_addConnection:(id)arg1;
+- (void)_handleUserIdentityStoreDidChange;
 - (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
 - (void)_postClientStoreDidChangeNotification;
 - (void)_processSyncCommands:(id)arg1 completion:(id /* block */)arg2;

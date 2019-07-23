@@ -3,6 +3,7 @@
  */
 
 @interface ICUserIdentityProperties : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
+    NSDate * _ageVerificationExpirationDate;
     NSString * _alternateDSID;
     NSString * _carrierBundleDeviceIdentifier;
     bool  _cloudBackupEnabled;
@@ -15,10 +16,12 @@
     bool  _managedAppleID;
     bool  _sandboxed;
     NSString * _storefrontIdentifier;
+    bool  _subscriptionStatusEnabled;
     NSString * _username;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *DSID;
+@property (nonatomic, readonly, copy) NSDate *ageVerificationExpirationDate;
 @property (nonatomic, readonly, copy) NSString *alternateDSID;
 @property (nonatomic, readonly, copy) NSString *carrierBundleDeviceIdentifier;
 @property (getter=isCloudBackupEnabled, nonatomic) bool cloudBackupEnabled;
@@ -30,12 +33,14 @@
 @property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
 @property (getter=isSandboxed, nonatomic, readonly) bool sandboxed;
 @property (nonatomic, readonly, copy) NSString *storefrontIdentifier;
+@property (getter=isSubscriptionStatusEnabled, nonatomic, readonly) bool subscriptionStatusEnabled;
 @property (nonatomic, readonly, copy) NSString *username;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DSID;
+- (id)ageVerificationExpirationDate;
 - (id)alternateDSID;
 - (id)carrierBundleDeviceIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -48,6 +53,7 @@
 - (bool)isDelegated;
 - (bool)isManagedAppleID;
 - (bool)isSandboxed;
+- (bool)isSubscriptionStatusEnabled;
 - (id)lastName;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCloudBackupEnabled:(bool)arg1;

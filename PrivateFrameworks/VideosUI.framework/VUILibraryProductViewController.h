@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUILibraryProductViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUIMediaEntitiesFetchControllerDelegate, VUIMediaEntityDownloadViewControllerDelegate, VUIProductLockupViewDelegate, VUIRoundButtonDelegate> {
-    VUIMediaEntityDownloadViewController * _downloadViewController;
+@interface VUILibraryProductViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUIMediaEntitiesFetchControllerDelegate, VUIProductLockupViewDelegate, VUIRoundButtonDelegate> {
+    VUIDownloadButton * _downloadButton;
     VUIMediaEntitiesFetchController * _fetchController;
     VUIMediaItem * _mediaItem;
-    VUIMetricsController * _metricsController;
     VUILibraryProductInfoView * _productInfoView;
     VUIProductLockupView * _productLockupView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) VUIMediaEntityDownloadViewController *downloadViewController;
+@property (nonatomic, retain) VUIDownloadButton *downloadButton;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) VUIMetricsController *metricsController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -31,16 +29,15 @@
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
 - (void)didSelectButton:(id)arg1;
-- (id)downloadViewController;
-- (void)downloadViewController:(id)arg1 didRemoveDownloadForAssetController:(id)arg2;
+- (id)downloadButton;
 - (id)initWithMediaItem:(id)arg1;
 - (id)initWithMediaLibrary:(id)arg1;
-- (id)metricsController;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)setDownloadViewController:(id)arg1;
-- (void)setMetricsController:(id)arg1;
+- (void)reportMetricsPageEvent;
+- (void)setDownloadButton:(id)arg1;
 - (void)start;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

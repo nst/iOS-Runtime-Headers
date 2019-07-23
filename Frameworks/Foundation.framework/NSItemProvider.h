@@ -32,6 +32,7 @@
 @property (copy) NSString *suggestedName;
 @property (nonatomic, copy) NSData *teamData;
 @property (copy) NSDictionary *userInfo;
+@property (nonatomic, readonly) bool web_containsFileURLAndFileUploadContent;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -143,5 +144,10 @@
 - (void)setPreferredPresentationStyle:(long long)arg1;
 - (void)setTeamData:(id)arg1;
 - (id)teamData;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
+
+- (bool)web_containsFileURLAndFileUploadContent;
+- (id)web_fileUploadContentTypes;
 
 @end

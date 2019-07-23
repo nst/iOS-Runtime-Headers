@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _invalidationHandler;
     APCListenerEngine * _listenerEngine;
+    APCListenerResultData * _resultData;
     id /* block */  _retrievedDataHandler;
 }
 
@@ -18,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (id)dispatchQueue;
+- (bool)getResultData:(id*)arg1;
 - (id)init;
 - (id)initWithCodecConfiguration:(id)arg1;
 - (id)initWithConfigurationData:(struct NSData { Class x1; }*)arg1;

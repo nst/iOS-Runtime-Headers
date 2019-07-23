@@ -64,6 +64,8 @@
     BWBravoStreamSelector * _bravoStreamSelector;
     BWFigVideoCaptureStream * _bravoTelephotoCaptureStream;
     NSString * _bravoTelephotoNonLocalizedName;
+    bool  _buttonMashingEventStartedAtRate0;
+    bool  _buttonMashingEventStartedAtRate1;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -92,6 +94,7 @@
     struct OpaqueCMClock { } * _clock;
     bool  _collectAPSStatistics;
     int (* _createAutofocusSampleBufferProcessorFunction;
+    NSMutableSet * _criticalFocusErrorOccurredByPortType;
     int  _currentBiasedExposureCompletedID;
     int  _currentExifOrientation;
     struct { 
@@ -190,9 +193,11 @@
     struct OpaqueFigSimpleMutex { } * _manualPropertyMutex;
     float  _maxISPZoomFactor;
     int  _maxSkippedFramesForStillImageCaptureRetry;
+    unsigned int  _maxTimeSinceLastPhotoCapture;
     float  _maxTorchLevel;
     BWMemoryPool * _memoryPool;
     struct OpaqueFigFlatDictionaryKeySpec { } * _metadataKeySpec;
+    unsigned int  _minTimeSinceLastPhotoCapture;
     float  _minimumTimeBetweenStationaryChecks;
     NSDictionary * _moduleInfoByPortType;
     BWInferenceResult * _mostRecentSmartCameraResult;
@@ -203,7 +208,14 @@
     NSString * _nonLocalizedName;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     int  _numAPSStatisticsSamples;
+    unsigned int  _numberOfBalancedPhotoCaptures;
+    unsigned int  _numberOfBurstPhotoCaptures;
+    unsigned int  _numberOfButtonMashingCapturesAtRate0;
+    unsigned int  _numberOfButtonMashingCapturesAtRate1;
+    unsigned int  _numberOfButtonMashingEventsAtRate0;
+    unsigned int  _numberOfButtonMashingEventsAtRate1;
     int  _numberOfCompletedStillCaptures;
+    unsigned int  _numberOfPhotoCaptures;
     NSMutableDictionary * _observedProperties;
     BWRamp * _parallaxMitigationRamp;
     int  _parallaxMitigationRampDuration;
@@ -219,6 +231,7 @@
     id /* block */  _prepareToCaptureStillImageNowCompletionHandler;
     NSArray * _previewMetadataForTimeMachinePTSRange;
     <BWPreviewTimeMachineProcessor> * _previewTimeMachineProcessor;
+    long long  _previousPhotoCaptureTime;
     struct { 
         long long value; 
         int timescale; 
@@ -248,6 +261,7 @@
     NSDictionary * _sensorIDDictionaryByPortType;
     bool  _shallowDepthOfFieldEffectEnabled;
     NSMutableSet * _shouldCheckAPSOffsetEstimatorByPortType;
+    NSMutableSet * _shouldCheckCriticalFocusErrorByPortType;
     int  _sisModeForSceneMonitoring;
     bool  _sisScene;
     int  _skippedFramesCountForStillImageCaptureRetry;
@@ -317,6 +331,9 @@
         BOOL currentTemporalHysteresis; 
         char *name; 
     }  _smartCameraSunsetSunriseScene;
+    NSMutableDictionary * _sphereJitterDetectionAttemptsByPortType;
+    NSMutableDictionary * _sphereJitterSuccessfulDetectionsByPortType;
+    NSString * _sphereMode;
     bool  _stereoFusionEnabled;
     bool  _stillImageCaptureEnabled;
     bool  _stillImageCaptureNowAfterAutofocusTimeoutSupported;
@@ -337,6 +354,7 @@
     int  _stillImagePhaseDetectionAutofocusTimeout;
     double  _stillImageStabilizationIntegrationTimeThreshold;
     struct OpaqueFigCaptureStream { } * _stream;
+    long long  _streamingStartTime;
     NSDictionary * _supportedProperties;
     NSDate * _synchronizationMasterCaptureStreamStartTime;
     BWFigVideoCaptureStream * _synchronizationSlaveCaptureStream;
@@ -362,11 +380,13 @@
     bool  _synchronizedStreamsSwitchOverLockCameraWhenFocusScanCompletes;
     int  _synchronizedStreamsSwitchOverNewCameraSelectionBehavior;
     float  _synchronizedStreamsTeleAutoFlashNormalizedSNRThreshold;
+    unsigned int  _timeToFirstPhotoCapture;
     bool  _torchActive;
     float  _torchLevel;
     struct OpaqueFigSimpleMutex { } * _torchLock;
     int  _type;
     BWUBCaptureParameters * _ubCaptureParameters;
+    bool  _ubSIFREnabled;
     BWUBCaptureParameters * _ubSynchronizedStreamsTeleCaptureParameters;
     bool  _unifiedBracketingEnabled;
     bool  _useAutoImageControlMode;
@@ -408,6 +428,7 @@
 - (void)_addExifMetadata:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_addFeature1ToMetadata:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_addLensMakersFocusDistanceMetadata:(struct opaqueCMSampleBuffer { }*)arg1 captureStream:(id)arg2;
+- (void)_addPortraitSceneMonitoringMetadataToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_addStillImageSettingsToStillImageSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (int)_attachMetadataFlatDictionaryToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (struct OpaqueFigSampleBufferProcessor { }*)_autofocusProcessor;
@@ -418,6 +439,8 @@
 - (int)_captureTypeOverride;
 - (void)_checkAPSOffsetEstimatorInfo:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_checkAPSOffsetEstimatorInfoForPortType:(id)arg1 metadataDict:(id)arg2;
+- (void)_checkCriticalFocusError:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_checkSphereJitterDetection:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_collectAPSStatistics:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_convertNoiseReductionAndSharpeningConfiguration:(id)arg1 toStillImageCaptureOptions:(id)arg2 captureStreamSettings:(id)arg3 forMasterStream:(bool)arg4 isBurstCapture:(bool)arg5;
 - (int)_convertStillImageCaptureSettings:(id)arg1 masterCaptureStreamPortType:(id)arg2 synchronizedStreamsEnabled:(bool)arg3 toStillImageCaptureNowOptions:(id*)arg4 captureStreamPropertyValues:(id*)arg5;
@@ -432,11 +455,13 @@
 - (id)_initWithFigCaptureDeviceRef:(struct OpaqueFigCaptureDevice { }*)arg1 attributes:(id)arg2 synchronizedStreamsAttributes:(id)arg3 forPID:(int)arg4 applicationID:(id)arg5 createAutofocusSampleBufferProcessorFunction:(int (*)arg6 cameraParameters:(id)arg7 deviceVendorClass:(id)arg8 errOut:(int*)arg9;
 - (void)_initiateCaptureStillImageNowWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
 - (bool)_isLowLightSceneUsingFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1;
+- (void)_logStillImageCaptureTimingStatistics;
 - (id)_noiseReductionAndSharpeningConfigurationFromTuningParameters:(id)arg1;
 - (void)_postManualControlRequestCompletedWithName:(id)arg1 requestID:(int)arg2 timeDictionary:(id)arg3 additionalPayloadItems:(id)arg4;
 - (void)_postNotificationWithName:(id)arg1 payloadNewPropertyValue:(id)arg2;
 - (void)_postNotificationWithPayload:(id)arg1 notificationPayload:(id)arg2;
 - (void)_postSDOFEffectStatus:(int)arg1 SDOFStagePreviewStatus:(int)arg2;
+- (void)_reportStreamingSessionCoreAnalyticsData;
 - (void)_resetStillImageCaptureRequestState;
 - (void)_resumeTimeMachines;
 - (void)_runSmartCameraReferenceFrameSelectionOnSampleBuffersIfNeeded:(id)arg1 userInitiatedRequestPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 sensorToPreviewNormalizedTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
@@ -481,7 +506,8 @@
 - (id)_ubStillImageCaptureSettingsWithID:(long long)arg1 userInitiatedRequestPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 captureType:(int)arg3 captureFlags:(unsigned long long)arg4 sceneFlags:(unsigned long long)arg5 deliverProcessedImage:(bool)arg6 deliverOriginalImage:(bool)arg7 deliverSushiRaw:(bool)arg8 deliverBravoDualPhoto:(bool)arg9;
 - (unsigned long long)_ubStillImageSceneFlagsFromStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1 fusionEnabled:(bool)arg2 metadata:(id)arg3;
 - (id)_ubSuspendTimeMachinesAndGetTimeMachineFramesMetadata;
-- (bool)_ubUseSquareRootToneCurveUsingFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1 sceneFlags:(unsigned long long)arg2;
+- (void)_ubUpdateSIFREnabled;
+- (bool)_ubUseSquareRootToneCurveForNonHDRCapturesUsingFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; int x13; int x14; int x15; unsigned int x16; unsigned char x17; unsigned char x18; float x19; float x20; float x21; unsigned char x22; double x23; double x24; int x25; int x26; int x27; float x28; float x29; float x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned char x35; int x36; int x37; float x38; float x39; int x40; int x41; long long x42; }*)arg1 sceneFlags:(unsigned long long)arg2;
 - (int)_updateAutoFocusRectIfNeededForZoomFactor:(float)arg1;
 - (void)_updateBravoStreamSelectionBehaviorForMasterStream:(id)arg1 forceNotification:(bool)arg2;
 - (void)_updateBravoSwitchOverStateForAutofocusProperty:(struct __CFString { }*)arg1 propertyValue:(void*)arg2;

@@ -3,10 +3,10 @@
  */
 
 @interface TNSheetUIState : NSObject <NSCopying> {
-    long long  mDeviceIdiom;
-    bool  mHasPreviousVisibleRect;
-    bool  mHasVisibleRect;
-    float  mPreviousViewScale;
+    long long  _archivedDeviceIdiom;
+    bool  _hasPreviousVisibleRect;
+    bool  _hasVisibleRect;
+    float  _previousViewScale;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -16,9 +16,9 @@
             double width; 
             double height; 
         } size; 
-    }  mPreviousVisibleRect;
-    TSKSelectionPath * mSelectionPath;
-    float  mViewScale;
+    }  _previousVisibleRect;
+    TSKSelectionPath * _selectionPath;
+    float  _viewScale;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -28,7 +28,7 @@
             double width; 
             double height; 
         } size; 
-    }  mVisibleRect;
+    }  _visibleRect;
 }
 
 @property (nonatomic) long long archivedDeviceIdiom;
@@ -47,21 +47,21 @@
 + (id)sheetUIStateWithPreviousVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)sheetUIStateWithVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
+- (void).cxx_destruct;
 - (long long)archivedDeviceIdiom;
 - (void)clearPreviousVisibleRect;
 - (void)clearVisibleRect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (bool)hasPreviousVisibleRect;
 - (bool)hasVisibleRect;
 - (id)init;
-- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; float x6; float x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SheetUIStateArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Point {} *x5; struct Point {} *x6; struct Size {} *x7; struct Size {} *x8; struct SelectionPathArchive {} *x9; struct Reference {} *x10; float x11; float x12; bool x13; bool x14; bool x15; unsigned int x16; }*)arg1 unarchiver:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)p_persistableSelectionPathFromSelectionPath:(id)arg1;
 - (struct CGPoint { double x1; double x2; })previousScrollPosition;
 - (float)previousViewScale;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousVisibleRect;
-- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; float x6; float x7; struct Point {} *x8; bool x9; bool x10; bool x11; unsigned int x12; struct Size {} *x13; struct Size {} *x14; struct SelectionPathArchive {} *x15; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (void)saveToArchive:(struct SheetUIStateArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Point {} *x5; struct Point {} *x6; struct Size {} *x7; struct Size {} *x8; struct SelectionPathArchive {} *x9; struct Reference {} *x10; float x11; float x12; bool x13; bool x14; bool x15; unsigned int x16; }*)arg1 archiver:(id)arg2 context:(id)arg3;
 - (struct CGPoint { double x1; double x2; })scrollPosition;
 - (id)selectionPath;
 - (void)setArchivedDeviceIdiom:(long long)arg1;

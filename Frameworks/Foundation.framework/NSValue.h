@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSValue : NSObject <DebugHierarchyValue_Fallback, NSCopying, NSSecureCoding, REDonatedActionIdentifierProviding, TSDMixing>
+@interface NSValue : NSObject <NSCopying, NSSecureCoding, REDonatedActionIdentifierProviding, TSDMixing>
 
 @property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } AXMAffineTransformValue;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } AXMPointValue;
@@ -83,22 +83,6 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeValue;
 - (id)weakObjectValue;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyValueForObjCType_CATransform3D;
-- (id)debugHierarchyValueForObjCType_CGAffineTransform;
-- (id)debugHierarchyValueForObjCType_CGPoint;
-- (id)debugHierarchyValueForObjCType_CGPoint;
-- (id)debugHierarchyValueForObjCType_CGRect;
-- (id)debugHierarchyValueForObjCType_CGRect;
-- (id)debugHierarchyValueForObjCType_CGSize;
-- (id)debugHierarchyValueForObjCType_CGSize;
-- (id)debugHierarchyValueForObjCType_CGVector;
-- (id)debugHierarchyValueForObjCType_NSDirectionalEdgeInsets;
-- (id)debugHierarchyValueForObjCType_UIEdgeInsets;
-- (id)debugHierarchyValueForObjCType_UIOffset;
-- (id)fallback_debugHierarchyValueWithOutOptions:(id*)arg1 outError:(id*)arg2;
 
 // Image: /Developer/Library/PrivateFrameworks/DVTInstrumentsUtilities.framework/DVTInstrumentsUtilities
 

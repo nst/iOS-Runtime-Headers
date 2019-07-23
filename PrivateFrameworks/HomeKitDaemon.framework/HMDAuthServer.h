@@ -40,6 +40,7 @@
 - (id)context;
 - (unsigned long long)currentOperation;
 - (id)delegate;
+- (void)getPPIDInfo:(id)arg1 model:(id)arg2 cert:(id)arg3 context:(id)arg4;
 - (id)initWithDelegate:(id)arg1;
 - (id)locale;
 - (id)model;

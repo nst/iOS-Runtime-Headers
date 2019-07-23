@@ -22,6 +22,7 @@
     NSString * _lastSearchString;
     NSString * _lastUserTypedSearchString;
     GEORPMapLocation * _mapLocation;
+    GEORPMerchantLookupContext * _merchantLookupContext;
     GEORPNavigationSettings * _navigationSettings;
     GEOPlace * _originalPlace;
     unsigned long long  _originatingAuxiliaryControlIndex;
@@ -55,6 +56,7 @@
 @property (nonatomic, readonly) bool hasLastSearchString;
 @property (nonatomic, readonly) bool hasLastUserTypedSearchString;
 @property (nonatomic, readonly) bool hasMapLocation;
+@property (nonatomic, readonly) bool hasMerchantLookupContext;
 @property (nonatomic, readonly) bool hasNavigationSettings;
 @property (nonatomic, readonly) bool hasOriginalPlace;
 @property (nonatomic) bool hasOriginatingAuxiliaryControlIndex;
@@ -69,6 +71,7 @@
 @property (nonatomic, retain) NSString *lastSearchString;
 @property (nonatomic, retain) NSString *lastUserTypedSearchString;
 @property (nonatomic, retain) GEORPMapLocation *mapLocation;
+@property (nonatomic, retain) GEORPMerchantLookupContext *merchantLookupContext;
 @property (nonatomic, retain) GEORPNavigationSettings *navigationSettings;
 @property (nonatomic, retain) GEOPlace *originalPlace;
 @property (nonatomic) unsigned long long originatingAuxiliaryControlIndex;
@@ -133,6 +136,7 @@
 - (bool)hasLastSearchString;
 - (bool)hasLastUserTypedSearchString;
 - (bool)hasMapLocation;
+- (bool)hasMerchantLookupContext;
 - (bool)hasNavigationSettings;
 - (bool)hasOriginalPlace;
 - (bool)hasOriginatingAuxiliaryControlIndex;
@@ -149,6 +153,7 @@
 - (id)lastSearchString;
 - (id)lastUserTypedSearchString;
 - (id)mapLocation;
+- (id)merchantLookupContext;
 - (void)mergeFrom:(id)arg1;
 - (id)navigationSettings;
 - (id)originalPlace;
@@ -178,6 +183,7 @@
 - (void)setLastSearchString:(id)arg1;
 - (void)setLastUserTypedSearchString:(id)arg1;
 - (void)setMapLocation:(id)arg1;
+- (void)setMerchantLookupContext:(id)arg1;
 - (void)setNavigationSettings:(id)arg1;
 - (void)setOriginalPlace:(id)arg1;
 - (void)setOriginatingAuxiliaryControlIndex:(unsigned long long)arg1;

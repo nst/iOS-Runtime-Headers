@@ -4,24 +4,30 @@
 
 @interface PKNumericSuggestion : NSObject {
     NSString * _displayValue;
+    NSString * _title;
     bool  _usedMaximumSuggestion;
     NSDecimalNumber * _value;
 }
 
 @property (nonatomic, copy) NSString *displayValue;
+@property (nonatomic, copy) NSString *title;
 @property (nonatomic) bool usedMaximumSuggestion;
 @property (nonatomic, readonly, copy) NSDecimalNumber *value;
 
++ (id)suggestionWithTitle:(id)arg1 value:(id)arg2 currencyCode:(id)arg3;
 + (id)suggestionWithValue:(id)arg1 currencyCode:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)displayValue;
 - (unsigned long long)hash;
+- (id)initWithTitle:(id)arg1 value:(id)arg2 currencyCode:(id)arg3;
 - (id)initWithValue:(id)arg1 currencyCode:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (void)setDisplayValue:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setUsedMaximumSuggestion:(bool)arg1;
+- (id)title;
 - (bool)usedMaximumSuggestion;
 - (id)value;
 

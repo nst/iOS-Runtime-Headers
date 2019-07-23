@@ -31,7 +31,7 @@
 @property (nonatomic, copy) id /* block */ beginLyricsEventCallback;
 @property (nonatomic) bool canBeNowPlayingApp;
 @property (nonatomic, copy) id /* block */ commandCallback;
-@property (nonatomic, readonly) _MRDeviceInfoMessageProtobuf *deviceInfo;
+@property (nonatomic, retain) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, copy) id /* block */ endLyricsEventCallback;
 @property (nonatomic) unsigned int hardwareRemoteBehavior;
 @property (nonatomic) unsigned int inputMode;
@@ -77,6 +77,7 @@
 - (void)setBeginLyricsEventCallback:(id /* block */)arg1;
 - (void)setCanBeNowPlayingApp:(bool)arg1;
 - (void)setCommandCallback:(id /* block */)arg1;
+- (void)setDeviceInfo:(id)arg1;
 - (void)setEndLyricsEventCallback:(id /* block */)arg1;
 - (void)setHardwareRemoteBehavior:(unsigned int)arg1;
 - (void)setInputMode:(unsigned int)arg1;
@@ -85,7 +86,6 @@
 - (void)setPlaybackQueueTransactionCallback:(id /* block */)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setVolumeCapabilities:(unsigned int)arg1;
-- (void)updateDeviceInfo:(id)arg1;
 - (unsigned int)volumeCapabilities;
 
 @end

@@ -5,7 +5,9 @@
 @interface SXColumnLayouter : NSObject <SXLayouter> {
     <SXLayouterDelegate> * _delegate;
     NSMutableDictionary * _intersectionCache;
+    <SXLayoutContextFactory> * _layoutContextFactory;
     SXLayouterFactory * _layouterFactory;
+    <SXUnitConverterFactory> * _unitConverterFactory;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,8 +15,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableDictionary *intersectionCache;
+@property (nonatomic, readonly) <SXLayoutContextFactory> *layoutContextFactory;
 @property (nonatomic, readonly) SXLayouterFactory *layouterFactory;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) <SXUnitConverterFactory> *unitConverterFactory;
 
 - (void).cxx_destruct;
 - (void)analyzeSnapLinesForLayoutBlueprint:(id)arg1;
@@ -27,14 +31,16 @@
 - (id)delegate;
 - (double)factorForLayoutAttribute:(int)arg1;
 - (id)findComponentStackBeforeComponent:(id)arg1 inColumnStack:(id)arg2;
-- (id)initWithLayouterFactory:(id)arg1;
+- (id)initWithLayouterFactory:(id)arg1 layoutContextFactory:(id)arg2 unitConverterFactory:(id)arg3;
 - (id)intersectionCache;
 - (bool)intersectionPossibleForComponentWithBlueprint:(id)arg1 anchoredToComponentWithBlueprint:(id)arg2 layoutBlueprint:(id)arg3 columnStack:(id)arg4;
 - (int)layoutAttributeForAnchor:(long long)arg1;
-- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 layoutAttributes:(id)arg3 shouldContinue:(bool*)arg4;
+- (void)layoutBlueprint:(id)arg1 columnLayout:(id)arg2 shouldContinue:(bool*)arg3;
+- (id)layoutContextFactory;
 - (id)layouterFactory;
 - (void)setDelegate:(id)arg1;
 - (id)sortComponentDependencies:(id)arg1 forBlueprint:(id)arg2;
 - (bool)stack:(id)arg1 stackComponents:(id)arg2 containsComponentIncludingAnchoredComponents:(id)arg3 forSourceComponent:(id)arg4;
+- (id)unitConverterFactory;
 
 @end

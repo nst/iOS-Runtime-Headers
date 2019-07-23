@@ -62,7 +62,7 @@
 - (void)_addUUIDAttribute:(long long)arg1 value:(id)arg2;
 - (void)_addXORAddressAttribute:(long long)arg1 value:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2;
 - (bool)addAttribute:(struct IDSStunAttribute { unsigned short x1; unsigned short x2; unsigned short x3; bool x4; union { struct sockaddr_storage { unsigned char x_1_2_1; unsigned char x_1_2_2; BOOL x_1_2_3[6]; long long x_1_2_4; BOOL x_1_2_5[112]; } x_5_1_1; unsigned char x_5_1_2; unsigned short x_5_1_3; unsigned int x_5_1_4; unsigned long long x_5_1_5; struct StunBinaryData { int x_6_2_1; unsigned char x_6_2_2[1472]; } x_5_1_6; struct StunErrorCode { int x_7_2_1; int x_7_2_2; unsigned char x_7_2_3[128]; int x_7_2_4; } x_5_1_7; struct StunUnknownAttribute { int x_8_2_1; unsigned short x_8_2_2[20]; } x_5_1_8; } x5; }*)arg1;
-- (bool)dataIndicationToBuffer:(char *)arg1 outputLength:(int*)arg2 data:(char *)arg3 dataLen:(int)arg4 keyData:(id)arg5;
+- (bool)dataIndicationToBuffer:(char *)arg1 outputLength:(int*)arg2 data:(char *)arg3 dataLen:(int)arg4 keyData:(id)arg5 remainingLength:(unsigned long long)arg6;
 - (void)dealloc;
 - (bool)decryptAES128CTRStunAttributes:(id)arg1;
 - (id)description;
@@ -80,12 +80,12 @@
 - (void)setTransactionID:(id)arg1;
 - (void)setTransactionID:(id)arg1 attributes:(id)arg2;
 - (double)startTime;
-- (bool)stunRequestToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(char *)arg3 reqCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8;
-- (bool)stunResponseToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(id)arg3 reqCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7;
+- (bool)stunRequestToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(char *)arg3 reqCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8 remainingLength:(unsigned long long)arg9;
+- (bool)stunResponseToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(id)arg3 reqCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7 remainingLength:(unsigned long long)arg8;
 - (id)transactionID;
 - (long long)type;
 - (bool)verifyMessageIntegrityWithKey:(id)arg1 inputBuffer:(char *)arg2 inputLength:(int)arg3;
-- (bool)write:(char *)arg1 outputLength:(int*)arg2;
-- (bool)write:(char *)arg1 outputLength:(int*)arg2 internal:(bool)arg3;
+- (bool)write:(char *)arg1 outputLength:(int*)arg2 remainingLength:(unsigned long long)arg3;
+- (bool)write:(char *)arg1 outputLength:(int*)arg2 remainingLength:(unsigned long long)arg3 internal:(bool)arg4;
 
 @end

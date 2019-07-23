@@ -20,8 +20,8 @@
 @property (nonatomic, copy) NSString *headerTitle;
 
 - (void).cxx_destruct;
-- (void)_continousButtonPressed;
-- (void)_setContinousButtonEnabledState;
+- (void)_continuousButtonPressed;
+- (void)_setContinuousButtonEnabledState;
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setViewEnabledState:(bool)arg1;
 - (id)buttonText;

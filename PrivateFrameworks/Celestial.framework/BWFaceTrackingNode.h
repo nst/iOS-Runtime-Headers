@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_semaphore> * _processingSemaphore;
     struct OpaqueFigCaptureISPProcessingSession { } * _processingSession;
     bool  _setupDone;
+    bool  _structuredLightOccluded;
 }
 
 + (void)initialize;

@@ -25,6 +25,8 @@
 @property (nonatomic, retain) SSDownloadStatus *status;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
 + (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
@@ -82,5 +84,9 @@
 - (void)setStatus:(id)arg1;
 - (void)setValuesWithStoreDownloadMetadata:(id)arg1;
 - (id)status;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (bool)vui_isEqualToDownload:(id)arg1;
 
 @end

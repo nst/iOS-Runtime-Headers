@@ -17,6 +17,7 @@
         struct __CFDictionary {} *mapping; 
         unsigned long long numPRSRankingBundleFeatures; 
         unsigned long long *PRSRankingBundleFeatureOrder; 
+        id /* block */ *PRSRankingBundleFeaturePickers; 
         float *score_vector; 
         unsigned long long mapSize; 
     }  directive_local_resultset_id_values_mapping;
@@ -26,6 +27,7 @@
         unsigned long long end_idx; 
         unsigned long long numFeatures; 
         struct __CFDictionary {} *mapping; 
+        id /* block */ *PRSRankingBundleFeaturePickers; 
         float *score_vector; 
         unsigned long long mapSize; 
     }  directive_parsec_resultset_id_values_mapping;

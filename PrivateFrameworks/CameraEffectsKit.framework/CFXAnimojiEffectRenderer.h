@@ -3,6 +3,7 @@
  */
 
 @interface CFXAnimojiEffectRenderer : NSObject <SCNSceneRendererDelegate> {
+    bool  _allowAntialiasing;
     bool  _asynchronouslyLoadNewPuppets;
     AVTAvatarStore * _avatarStore;
     NSString * _currentAvatarIdentifier;
@@ -20,6 +21,7 @@
     }  _workingSize;
 }
 
+@property (nonatomic) bool allowAntialiasing;
 @property (nonatomic) bool asynchronouslyLoadNewPuppets;
 @property (nonatomic, retain) AVTAvatarStore *avatarStore;
 @property (nonatomic, retain) NSString *currentAvatarIdentifier;
@@ -43,6 +45,7 @@
 - (double)CFX_focalLengthForFrame:(id)arg1 workingSize:(struct CGSize { double x1; double x2; })arg2;
 - (bool)CFX_getRenderer:(id*)arg1 forAnimojiEffect:(id)arg2 primeFrame:(id)arg3 captureOrientation:(long long)arg4 interfaceOrientation:(long long)arg5;
 - (id)_createNewRendererForPuppet:(id)arg1;
+- (bool)allowAntialiasing;
 - (void)asyncLoadNewPuppet:(id)arg1 currentPuppet:(id)arg2 captureOrientation:(long long)arg3 interfaceOrientation:(long long)arg4 primeFrame:(id)arg5;
 - (bool)asynchronouslyLoadNewPuppets;
 - (id)avatarStore;
@@ -63,6 +66,7 @@
 - (id)renderWithInputs:(id)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 metadata:(id)arg3;
 - (id)renderer;
 - (id)rendererLock;
+- (void)setAllowAntialiasing:(bool)arg1;
 - (void)setAsynchronouslyLoadNewPuppets:(bool)arg1;
 - (void)setAvatarStore:(id)arg1;
 - (void)setCurrentAvatarIdentifier:(id)arg1;

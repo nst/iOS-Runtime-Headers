@@ -3,6 +3,7 @@
  */
 
 @interface PKProtobufPaymentMerchantSession : PBCodable <NSCopying> {
+    NSData * _ampEnrollmentPinning;
     NSString * _displayName;
     NSString * _domain;
     unsigned long long  _epochTimestamp;
@@ -21,10 +22,12 @@
     NSMutableArray * _signedFields;
 }
 
+@property (nonatomic, retain) NSData *ampEnrollmentPinning;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *domain;
 @property (nonatomic) unsigned long long epochTimestamp;
 @property (nonatomic) unsigned long long expiresAt;
+@property (nonatomic, readonly) bool hasAmpEnrollmentPinning;
 @property (nonatomic, readonly) bool hasDisplayName;
 @property (nonatomic, readonly) bool hasDomain;
 @property (nonatomic) bool hasEpochTimestamp;
@@ -49,6 +52,7 @@
 
 - (void).cxx_destruct;
 - (void)addSignedFields:(id)arg1;
+- (id)ampEnrollmentPinning;
 - (void)clearSignedFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -58,6 +62,7 @@
 - (id)domain;
 - (unsigned long long)epochTimestamp;
 - (unsigned long long)expiresAt;
+- (bool)hasAmpEnrollmentPinning;
 - (bool)hasDisplayName;
 - (bool)hasDomain;
 - (bool)hasEpochTimestamp;
@@ -79,6 +84,7 @@
 - (bool)readFrom:(id)arg1;
 - (id)retryNonce;
 - (id)sessionIdentifier;
+- (void)setAmpEnrollmentPinning:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setEpochTimestamp:(unsigned long long)arg1;

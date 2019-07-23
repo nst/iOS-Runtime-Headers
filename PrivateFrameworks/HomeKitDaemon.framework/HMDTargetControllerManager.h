@@ -36,8 +36,8 @@
 - (void)__accessoryIsReachable:(id)arg1;
 - (void)__accessoryNameUpdated:(id)arg1;
 - (void)__accessoryRemoved:(id)arg1;
-- (void)__characteristicsChanged:(id)arg1;
-- (void)__handleActiveIdentifierChanges:(id)arg1;
+- (void)__characteristicEventsReceived:(id)arg1;
+- (void)__handleActiveIdentifierChange:(id)arg1 forCharacteristic:(id)arg2;
 - (id)__refreshedConfiguration:(id)arg1;
 - (void)_addTargets:(id)arg1;
 - (void)_auditTargets:(id)arg1;
@@ -60,7 +60,6 @@
 - (void)_resetTargets;
 - (void)_saveTargetUUIDs;
 - (void)_updateName:(id)arg1 buttonConfiguration:(id)arg2 target:(id)arg3;
-- (void)_writeData:(id)arg1 toCharacteristic:(id)arg2 completion:(id /* block */)arg3;
 - (void)acknowledgeTargetControlService:(id)arg1 active:(bool)arg2;
 - (void)addConfiguredTarget:(id)arg1;
 - (void)addTargetAccessory:(id)arg1 buttonConfiguration:(id)arg2;

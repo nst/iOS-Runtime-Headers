@@ -11,6 +11,7 @@
     NSString * _manufacturer;
     NSString * _model;
     NSString * _name;
+    NSString * _ppid;
     NSString * _primaryUUID;
     NSString * _serial;
 }
@@ -23,6 +24,7 @@
 @property (retain) NSString *manufacturer;
 @property (retain) NSString *model;
 @property (retain) NSString *name;
+@property (retain) NSString *ppid;
 @property (retain) NSString *primaryUUID;
 @property (retain) NSString *serial;
 
@@ -40,6 +42,7 @@
 - (id)manufacturer;
 - (id)model;
 - (id)name;
+- (id)ppid;
 - (id)primaryUUID;
 - (id)serial;
 - (void)setDestinationSharingOptions:(unsigned long long)arg1;
@@ -50,6 +53,7 @@
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPpid:(id)arg1;
 - (void)setPrimaryUUID:(id)arg1;
 - (void)setSerial:(id)arg1;
 

@@ -5,7 +5,6 @@
 @interface _ATXDuetHelper : NSObject {
     _PASLock * _deletionHandlerLock;
     _PASLock * _rootOfAppDataLock;
-    NSDictionary * magicalMomentsPlistParameters;
 }
 
 + (id)sharedInstance;
@@ -17,13 +16,15 @@
 - (id)_getTombstoneUUIDsBetweenStartDate:(id)arg1 endDate:(id)arg2 predicate:(id)arg3;
 - (void)_handleTombstoneCreationWithNotification:(id)arg1;
 - (id)_queryDuetStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 otherPredicates:(id)arg4 limit:(unsigned long long)arg5;
-- (id)_queryDuetStreamUnbatched:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 otherPredicates:(id)arg4 limit:(unsigned long long)arg5;
+- (id)_queryDuetStreamUnbatched:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ascending:(bool)arg4 otherPredicates:(id)arg5 limit:(unsigned long long)arg6;
 - (void)dealloc;
 - (void)deregisterDeletionHandlerWithToken:(unsigned long long)arg1;
+- (id)getActivityAndIntentEventsFromLastMonth;
 - (id)getActivityEventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getActivityEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3;
 - (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2 limit:(unsigned long long)arg3;
+- (id)getAppLaunchesFromOneMonth;
 - (unsigned long long)getDocFreqFor:(id)arg1 contentKey:(id)arg2;
 - (id)getEligibleActivityDeletionsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getFirstActivityEventBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3;
@@ -32,7 +33,9 @@
 - (id)getIntentEventForUUID:(id)arg1 forSource:(long long)arg2;
 - (id)getIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3 forSource:(long long)arg4 allowMissingTitles:(bool)arg5;
 - (id)getIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 forSource:(long long)arg3;
+- (id)getMicroLocationsFromLastMonth;
 - (id)getMostRecentINPlayMediaIntentEvent;
+- (id)getMostRecentMicroLocation;
 - (id)getRootOfAppSignalsFor:(id)arg1 contentKey:(id)arg2;
 - (id)getScreenTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getSortedActivityAndIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 comparator:(id /* block */)arg3;

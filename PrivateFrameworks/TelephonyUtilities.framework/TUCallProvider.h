@@ -86,6 +86,7 @@
 - (id)senderIdentities;
 - (id)senderIdentityForAccountUUID:(id)arg1;
 - (id)senderIdentityForHandle:(id)arg1;
+- (id)senderIdentityForUUID:(id)arg1;
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleURL:(id)arg1;

@@ -13,6 +13,7 @@
 + (double)roundedElapsedTimeWithStartDate:(id)arg1 endDate:(id)arg2 accuracy:(double)arg3;
 
 - (void).cxx_destruct;
+- (void)_removeScoreInputsWithoutCrashTracerApproval:(id)arg1;
 - (id)constructActionDataDictionaryWithEngagedIndicesOut:(id*)arg1 andAWDActionOut:(id*)arg2 andEngagementTypeFound:(unsigned long long*)arg3 forTestingMode:(bool)arg4;
 - (id)constructSessionLogDictionaryWithAWDSessionOut:(id*)arg1 forTestingMode:(bool)arg2;
 - (id)init;

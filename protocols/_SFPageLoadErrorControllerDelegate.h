@@ -12,6 +12,7 @@
 - (_SFSecIdentityPreferencesController *)pageLoadErrorControllerGetSecIdentityPreferencesController:(_SFPageLoadErrorController *)arg1;
 - (bool)pageLoadErrorControllerShouldHandleCertificateError:(_SFPageLoadErrorController *)arg1;
 - (bool)pageLoadErrorControllerShouldPermanentlyAcceptCertificate:(_SFPageLoadErrorController *)arg1;
+- (bool)pageLoadErrorControllerShouldReloadAfterError:(_SFPageLoadErrorController *)arg1;
 
 @optional
 

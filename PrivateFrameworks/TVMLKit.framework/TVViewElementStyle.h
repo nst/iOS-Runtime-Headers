@@ -45,6 +45,7 @@
 - (long long)contentAlignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cssValueForStyleProperty:(id)arg1;
+- (id)darkTintColor;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })focusMargin;
 - (double)fontSize;
 - (id)fontWeight;

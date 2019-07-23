@@ -12,13 +12,8 @@
     UIButton * _waveTapEndpointButton;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)darkGrayColor;
+- (void)dealloc;
 - (void)finishReturnToKeyboard;
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2;
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3;

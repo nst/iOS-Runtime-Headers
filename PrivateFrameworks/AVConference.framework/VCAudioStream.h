@@ -15,9 +15,12 @@
     unsigned int  _lastRTPTimestamp;
     double  _lastReceivedAudioTimestamp;
     int  _packetsSinceStallCount;
+    unsigned int  _pullAudioSamplesCount;
     int  _reportingModuleID;
     unsigned int  _reportingSSRCCount;
     unsigned int * _reportingSSRCList;
+    bool  _rtcpEnabledBeforeInterrupt;
+    bool  _rtpEnabledBeforeInterrupt;
     bool  _sendActiveVoiceOnly;
     NSNumber * _targetStreamID;
     AVTelephonyInterface * _telephonyInterface;

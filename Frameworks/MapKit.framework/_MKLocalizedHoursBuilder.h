@@ -3,41 +3,62 @@
  */
 
 @interface _MKLocalizedHoursBuilder : NSObject {
+    NSDate * _compareDate;
     unsigned long long  _geoMapItemOpeningHourOptions;
     UIColor * _hoursStateLabelColor;
     bool  _isClosedTodayAllDay;
     bool  _isClosingSoon;
     bool  _isCurrentlyClosed;
     bool  _isOpeningSoon;
+    bool  _isPermanentlyClosed;
+    bool  _isTemporarilyClosed;
     unsigned long long  _localizedHoursStringOptions;
+    NSString * _localizedOpenState;
     NSString * _localizedOperatingHours;
-    NSArray * _operatingHours;
+    GEOBusinessHours * _operatingHours;
     NSTimeZone * _timeZone;
 }
 
+@property (nonatomic, retain) NSDate *compareDate;
 @property (nonatomic) unsigned long long geoMapItemOpeningHourOptions;
 @property (nonatomic, readonly) UIColor *hoursStateLabelColor;
 @property (nonatomic) unsigned long long localizedHoursStringOptions;
+@property (nonatomic, readonly) NSString *localizedOpenState;
 @property (nonatomic, readonly) NSString *localizedOperatingHours;
-@property (nonatomic, retain) NSArray *operatingHours;
+@property (nonatomic, retain) GEOBusinessHours *operatingHours;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
++ (id)localizedHoursDayRangeString:(id)arg1;
++ (id)localizedHoursStringNormalHours;
++ (id)localizedHoursStringSpecialHours;
++ (id)testGetDayOfWeekFormatterFull;
++ (id)testGetDayOfWeekFormatterShort;
++ (id)testGetHoursFormatter;
++ (id)testGetMonthAndDayFormatter;
+
 - (void).cxx_destruct;
+- (void)_commonInit;
+- (void)_resetLocalizedBuilder:(bool)arg1;
+- (id)_updateLocalizedOperatingHoursString:(unsigned long long)arg1;
 - (void)_updateLocalizedString;
-- (id)_updatedHoursLabelColor;
-- (id)_updatedLocalizedOperatingHoursString;
+- (void)calculateWidthsForData:(id)arg1;
+- (id)compareDate;
+- (id)formatData:(id)arg1;
 - (unsigned long long)geoMapItemOpeningHourOptions;
 - (id)hoursStateLabelColor;
+- (id)initWithBusinessHours:(id)arg1 timeZone:(id)arg2 localizedHoursStringOptions:(unsigned long long)arg3;
 - (id)initWithMapItem:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;
 - (id)initWithMapItemForMessageForBusiness:(id)arg1 localizedHoursStringOptions:(unsigned long long)arg2;
-- (id)initWithTimeZone:(id)arg1 operatingHours:(id)arg2 geoMapItemOpeningHourOptions:(unsigned long long)arg3 localizedHoursStringOptions:(unsigned long long)arg4;
 - (unsigned long long)localizedHoursStringOptions;
+- (id)localizedOpenState;
 - (id)localizedOperatingHours;
 - (id)operatingHours;
+- (void)setCompareDate:(id)arg1;
 - (void)setGeoMapItemOpeningHourOptions:(unsigned long long)arg1;
 - (void)setLocalizedHoursStringOptions:(unsigned long long)arg1;
 - (void)setOperatingHours:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)timeZone;
+- (void)updateHoursLabelColor;
 
 @end

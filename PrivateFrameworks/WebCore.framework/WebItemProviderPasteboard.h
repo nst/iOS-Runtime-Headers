@@ -47,6 +47,7 @@
 - (void)doAfterLoadingProvidedContentIntoFileURLs:(id /* block */)arg1;
 - (void)doAfterLoadingProvidedContentIntoFileURLs:(id /* block */)arg1 synchronousTimeout:(double)arg2;
 - (void)enumerateItemProvidersWithBlock:(id /* block */)arg1;
+- (id)fileUploadURLsAtIndex:(unsigned long long)arg1 fileTypes:(id*)arg2;
 - (bool)hasPendingOperation;
 - (void)incrementPendingOperationCount;
 - (id)init;
@@ -57,14 +58,13 @@
 - (id)pasteboardTypes;
 - (id)pasteboardTypesByFidelityForItemAtIndex:(unsigned long long)arg1;
 - (long long)pendingOperationCount;
-- (id)preferredFileUploadURLAtIndex:(unsigned long long)arg1 fileType:(id*)arg2;
 - (void)setChangeCount:(long long)arg1;
 - (void)setItemProviders:(id)arg1;
 - (void)setNumberOfItems:(long long)arg1;
 - (void)setPendingOperationCount:(long long)arg1;
 - (void)stageRegistrationList:(id)arg1;
 - (id)takeRegistrationList;
-- (id)typeIdentifiersToLoadForRegisteredTypeIdentfiers:(id)arg1;
+- (id)typeIdentifiersToLoad:(id)arg1;
 - (void)updateSupportedTypeIdentifiers:(id)arg1;
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 

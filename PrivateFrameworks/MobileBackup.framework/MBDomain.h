@@ -3,8 +3,10 @@
  */
 
 @interface MBDomain : NSObject {
-    int  _fileDescriptor;
-    int  _fileDescriptorRefCount;
+    NSFileHandle * _fileHandle;
+    NSFileHandle * _fileHandleForSnapshot;
+    NSString * _fileHandlePath;
+    NSString * _fileHandlePathForSnapshot;
     bool  _hasExternalConfig;
     bool  _isExternalConfig;
     NSString * _name;
@@ -98,6 +100,7 @@
 + (bool)isSystemSharedContainerName:(id)arg1;
 + (id)nameWithAppID:(id)arg1;
 + (id)placeholderNameWithAppID:(id)arg1;
++ (void)resetSystemDomains;
 + (bool)shouldRestoreRelativeSymlinksForDomainName:(id)arg1;
 + (id)systemContainerDomainWithIdentifier:(id)arg1 rootPath:(id)arg2;
 + (id)systemDomains;
@@ -107,14 +110,14 @@
 + (double)systemDomainsVersion;
 + (id)systemSharedContainerDomainWithIdentifier:(id)arg1 rootPath:(id)arg2;
 
-- (void)_releaseFileDescriptor;
+- (int)_cachedFileDescriptorWithError:(id*)arg1;
+- (int)_cachedFileDescriptorWithSnapshotPath:(id)arg1 error:(id*)arg2;
+- (int)cachedFileDescriptorWithSnapshotPath:(id)arg1 error:(id*)arg2;
 - (long long)compare:(id)arg1;
 - (id)containerID;
 - (int)containerType;
 - (void)dealloc;
 - (id)description;
-- (int)fileDescriptor;
-- (int)fileDescriptorWithSnapshotPath:(id)arg1;
 - (bool)hasExternalConfig;
 - (bool)hasRootPath;
 - (unsigned long long)hash;
@@ -157,6 +160,7 @@
 - (id)relativePathsToRestore;
 - (id)relativePathsToRestoreOnly;
 - (id)relativePathsToRestoreOnlyFromService;
+- (void)releaseCachedFileDescriptors;
 - (id)rootPath;
 - (void)setHasExternalConfig:(bool)arg1;
 - (void)setIsExternalConfig:(bool)arg1;

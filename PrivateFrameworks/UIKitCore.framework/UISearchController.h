@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UISearchController : UIViewController <DebugHierarchyObject_Fallback, NSCoding, TSPresentable, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollViewScrollObserver_Internal> {
+@interface UISearchController : UIViewController <NSCoding, TSPresentable, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollViewScrollObserver_Internal> {
     long long  __previousSearchBarPosition;
     unsigned long long  __requestedInteractionModel;
     double  __resultsContentScrollViewPresentationOffset;
@@ -197,11 +197,6 @@
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 

@@ -3,34 +3,20 @@
  */
 
 @interface PKPaymentHeroImageManifest : NSObject {
-    NSDictionary * _manifest;
-    NSString * _preferredLanguage;
-    PKPaymentWebService * _webService;
+    NSDictionary * _images;
 }
 
-+ (id)_manifestFileNameForRegion:(id)arg1;
+@property (nonatomic, readonly) NSDictionary *images;
+
++ (void)downloadManifestForRegion:(id)arg1 url:(id)arg2 fileDownloader:(id)arg3 completion:(id /* block */)arg4;
 + (bool)manifestFileExistsForRegion:(id)arg1;
++ (id)manifestFileForRegion:(id)arg1;
++ (id)manifestForRegion:(id)arg1;
 + (void)removeManifestFileForRegion:(id)arg1;
++ (void)saveManifestDataToDeviceForRegion:(id)arg1 data:(id)arg2;
 
 - (void).cxx_destruct;
-- (bool)_deviceMeetsRequirementsForNetwork:(id)arg1;
-- (void)_downloadManifestWithCompletion:(id /* block */)arg1;
-- (id)_fileNameForNetworkImageOnDisk:(id)arg1;
-- (id)_readManifestDataFromDevice;
-- (void)_saveManifestDataToDevice:(id)arg1;
-- (bool)containsPaymentCredentialType:(long long)arg1;
-- (id)description;
-- (void)downloadRemoteManifestWithCompletion:(id /* block */)arg1;
-- (id)imageDataOnDiskForNetwork:(id)arg1;
-- (id)imageInfoForNetwork:(id)arg1;
-- (id)imageURLsForFeaturedNetworks:(id)arg1;
-- (id)initWithWebService:(id)arg1;
-- (id)initWithWebService:(id)arg1 preferredLanguage:(id)arg2;
-- (id)parseData:(id)arg1;
-- (id)primaryFeaturedNetwork;
-- (id)requirementsForNetwork:(id)arg1;
-- (void)setManifestWithData:(id)arg1;
-- (id)sha1ForNetwork:(id)arg1;
-- (id)urlForNetwork:(id)arg1;
+- (id)images;
+- (id)initWithDictionary:(id)arg1;
 
 @end

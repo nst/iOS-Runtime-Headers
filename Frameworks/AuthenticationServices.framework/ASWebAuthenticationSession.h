@@ -9,6 +9,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (bool)start;
 
 @end

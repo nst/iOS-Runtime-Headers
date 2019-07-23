@@ -128,14 +128,17 @@
 - (void)un_safeAddObject:(id)arg1 class:(Class)arg2;
 - (void)un_safeAddObject:(id)arg1 classes:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+// Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
 
-- (void)axSafelyAddObject:(id)arg1;
-- (void)axSafelyAddObjectsFromArray:(id)arg1;
 - (id)ax_dequeueObject;
 - (void)ax_enqueueObject:(id)arg1;
 - (id)ax_lastEnqueuedObject;
 - (id)ax_nextDequeuedObject;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+
+- (void)axSafelyAddObject:(id)arg1;
+- (void)axSafelyAddObjectsFromArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
@@ -394,6 +397,11 @@
 - (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;
 - (void)tsu_removeObjectsIdenticalToObjectsInSet:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (void)tvp_addObjectIfNotNil:(id)arg1;
+- (void)tvp_shuffle;
+
 // Image: /System/Library/PrivateFrameworks/TinCanShared.framework/TinCanShared
 
 - (id)dequeue;
@@ -450,14 +458,14 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (id)tsch_instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
++ (id)tsch_instanceWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<double> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
 
 - (void)replaceStrokeLayerAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)strokeLayerAtIndex:(unsigned long long)arg1;
 - (unsigned long long)strokeLayerCount;
 - (void)tsce_addObjectNonNil:(id)arg1;
-- (id)tsch_initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<double> { double *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; }*)arg1 archiver:(id)arg2;
+- (id)tsch_initWithArchive:(const struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<double> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; }*)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToArchive:(struct ChartsNSArrayOfNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<double> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; }*)arg1 archiver:(id)arg2;
 - (void)tss_addProperty:(int)arg1;
 - (void)tsu_addNonNilObject:(id)arg1;
 - (void)tsu_addObjects:(id)arg1;

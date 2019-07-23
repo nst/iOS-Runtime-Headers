@@ -8,7 +8,9 @@
 + (id)_extractValueInKeyValueBlob:(id)arg1 withKey:(id)arg2;
 + (id /* block */)actionKeyFilterForCandidateBundleIds:(id)arg1 candidateActionTypes:(id)arg2 blacklist:(id)arg3;
 + (double)calculateWeightWith:(unsigned long long)arg1 strength:(double)arg2 termFreq:(unsigned long long)arg3 docFreq:(unsigned long long)arg4 docLength:(unsigned long long)arg5;
++ (id)filterContainersWithNilAction:(id)arg1;
 + (id)filterDuplicateActionPredictions:(id)arg1;
++ (id)filterDuplicateTVActionPredictions:(id)arg1;
 + (id)filterMissingOrBlockedRecipientPredictions:(id)arg1;
 + (id)filterRecentlyDeletedNotePredictions:(id)arg1;
 + (id)firstIntent:(id)arg1 inAppLaunchSession:(id)arg2;
@@ -27,6 +29,7 @@
 + (bool)isTitleEquivalenceBetweenAction:(id)arg1 other:(id)arg2;
 + (id)limitParameterCombinations:(id)arg1 limit:(int)arg2;
 + (id)markTodayInTitleAndUserActivityString:(id)arg1 withActionKey:(id)arg2;
++ (id)partOfWeekStringForDate:(id)arg1;
 + (void)prefillActionHistograms;
 + (void)prefillActionSlotDatabase;
 + (id)recipientFromMessageIntent:(id)arg1;

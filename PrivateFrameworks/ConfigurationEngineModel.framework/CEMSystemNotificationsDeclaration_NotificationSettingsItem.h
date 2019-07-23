@@ -8,6 +8,7 @@
     NSString * _payloadBundleIdentifier;
     NSNumber * _payloadCriticalAlertEnabled;
     NSNumber * _payloadEmergencyEnabled;
+    NSNumber * _payloadGroupingType;
     NSNumber * _payloadNotificationsEnabled;
     NSNumber * _payloadShowInCarPlay;
     NSNumber * _payloadShowInLockScreen;
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) NSString *payloadBundleIdentifier;
 @property (nonatomic, copy) NSNumber *payloadCriticalAlertEnabled;
 @property (nonatomic, copy) NSNumber *payloadEmergencyEnabled;
+@property (nonatomic, copy) NSNumber *payloadGroupingType;
 @property (nonatomic, copy) NSNumber *payloadNotificationsEnabled;
 @property (nonatomic, copy) NSNumber *payloadShowInCarPlay;
 @property (nonatomic, copy) NSNumber *payloadShowInLockScreen;
@@ -28,7 +30,7 @@
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnlyWithBundleIdentifier:(id)arg1;
-+ (id)buildWithBundleIdentifier:(id)arg1 withNotificationsEnabled:(id)arg2 withShowInNotificationCenter:(id)arg3 withShowInLockScreen:(id)arg4 withAlertType:(id)arg5 withBadgesEnabled:(id)arg6 withSoundsEnabled:(id)arg7 withShowInCarPlay:(id)arg8 withEmergencyEnabled:(id)arg9 withCriticalAlertEnabled:(id)arg10;
++ (id)buildWithBundleIdentifier:(id)arg1 withNotificationsEnabled:(id)arg2 withShowInNotificationCenter:(id)arg3 withShowInLockScreen:(id)arg4 withAlertType:(id)arg5 withBadgesEnabled:(id)arg6 withSoundsEnabled:(id)arg7 withShowInCarPlay:(id)arg8 withEmergencyEnabled:(id)arg9 withCriticalAlertEnabled:(id)arg10 withGroupingType:(id)arg11;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -38,6 +40,7 @@
 - (id)payloadBundleIdentifier;
 - (id)payloadCriticalAlertEnabled;
 - (id)payloadEmergencyEnabled;
+- (id)payloadGroupingType;
 - (id)payloadNotificationsEnabled;
 - (id)payloadShowInCarPlay;
 - (id)payloadShowInLockScreen;
@@ -49,6 +52,7 @@
 - (void)setPayloadBundleIdentifier:(id)arg1;
 - (void)setPayloadCriticalAlertEnabled:(id)arg1;
 - (void)setPayloadEmergencyEnabled:(id)arg1;
+- (void)setPayloadGroupingType:(id)arg1;
 - (void)setPayloadNotificationsEnabled:(id)arg1;
 - (void)setPayloadShowInCarPlay:(id)arg1;
 - (void)setPayloadShowInLockScreen:(id)arg1;

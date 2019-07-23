@@ -10,14 +10,14 @@
     id /* block */  _outputBlock;
     NSString * _redeemCode;
     SKUIRedeemConfiguration * _redeemConfiguration;
-    SKUIRedeemViewController * _redeemViewController;
+    SKUIRedeemViewControllerLegacy * _redeemViewController;
 }
 
 @property (nonatomic) bool forcesAuthentication;
 @property bool loadsRedeemCodeMetadata;
 @property (copy) id /* block */ outputBlock;
 @property (retain) SKUIRedeemConfiguration *redeemConfiguration;
-@property (nonatomic) SKUIRedeemViewController *redeemViewController;
+@property (nonatomic) SKUIRedeemViewControllerLegacy *redeemViewController;
 
 - (void).cxx_destruct;
 - (id)_authenticationContext;

@@ -9,6 +9,7 @@
     PSSpecifier * _chooseAppsGroupSpecifier;
     NSArray * _chooseAppsSpecifiers;
     NSArray * _chooseBundleIDs;
+    <STRootViewModelCoordinator> * _coordinator;
     <STAlwaysAllowListControllerDelegate> * _delegate;
     NSSet * _installedBundleIDs;
 }
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) PSSpecifier *chooseAppsGroupSpecifier;
 @property (nonatomic, retain) NSArray *chooseAppsSpecifiers;
 @property (nonatomic, copy) NSArray *chooseBundleIDs;
+@property (nonatomic, retain) <STRootViewModelCoordinator> *coordinator;
 @property (nonatomic) <STAlwaysAllowListControllerDelegate> *delegate;
 @property (nonatomic, copy) NSSet *installedBundleIDs;
 
@@ -31,18 +33,21 @@
 - (id)chooseAppsGroupSpecifier;
 - (id)chooseAppsSpecifiers;
 - (id)chooseBundleIDs;
+- (id)coordinator;
 - (id)createAllowedAppsSpecifiers;
 - (id)createChooseAppsSpecifiers;
 - (id)delegate;
 - (id)init;
 - (id)installedBundleIDs;
 - (void)removeAllowedIdentifier:(id)arg1 withSpecifier:(id)arg2;
+- (id)removeMessagesConfirmationPrompt;
 - (void)setAllowedAppsGroupSpecifier:(id)arg1;
 - (void)setAllowedAppsSpecifiers:(id)arg1;
 - (void)setAlwaysAllowList:(id)arg1;
 - (void)setChooseAppsGroupSpecifier:(id)arg1;
 - (void)setChooseAppsSpecifiers:(id)arg1;
 - (void)setChooseBundleIDs:(id)arg1;
+- (void)setCoordinator:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInstalledBundleIDs:(id)arg1;
 - (bool)shouldReloadSpecifiersOnResume;

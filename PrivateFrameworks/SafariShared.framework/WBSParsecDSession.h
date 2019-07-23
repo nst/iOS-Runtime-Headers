@@ -41,7 +41,6 @@
 - (unsigned long long)currentQueryID;
 - (id)delegate;
 - (id)feedbackDispatcher;
-- (id)init;
 - (id)initWithParsecdSession:(id)arg1 skipAutoFillDataUpdates:(bool)arg2;
 - (bool)isValid;
 - (id)parsecdSession;

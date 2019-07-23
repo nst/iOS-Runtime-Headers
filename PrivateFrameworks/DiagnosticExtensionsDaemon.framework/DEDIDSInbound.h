@@ -35,7 +35,6 @@
 - (id)initWithConnection:(id)arg1 controller:(id)arg2;
 - (void)local_device_query_callback:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)logMalformedMessage;
-- (void)pingDeviceAtAddress:(id)arg1 withSessionID:(id)arg2;
 - (void)remote_device_query_request:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)remote_list_DE:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;

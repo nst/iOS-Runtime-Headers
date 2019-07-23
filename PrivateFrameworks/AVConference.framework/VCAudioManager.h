@@ -4,6 +4,7 @@
 
 @interface VCAudioManager : NSObject <VCAudioIOControllerControl, VCAudioIOSink, VCAudioIOSource, VCAudioSessionDelegate> {
     NSMutableArray * _allClients;
+    struct opaqueVCAudioLimiter { } * _audioLimiter;
     VCAudioSessionMediaProperties * _currentAudioSessionMediaProperties;
     VCAudioUnitProperties * _currentAudioUnitProperties;
     NSObject<OS_dispatch_queue> * _dispatchQueue;

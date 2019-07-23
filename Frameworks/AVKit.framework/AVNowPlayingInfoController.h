@@ -19,9 +19,16 @@
 @property (nonatomic) AVPlayerController *playerControllerToActivateAfterDelay;
 @property (nonatomic) bool requiresLinearPlayback;
 
++ (id)_avMediaCharacteristics;
++ (void*)_createMediaRemoteLanguageOptionGroupWithAVMediaSelectionOptions:(id)arg1;
++ (void*)_createMediaRemoteLanguageOptionWithAVMediaSelectionOption:(id)arg1;
++ (id)_mediaRemoteLanguageOptionCharacteristicForAVMediaCharacteristic:(id)arg1;
++ (id)_mediaRemoteLanguageOptionCharacteristicsForAVMediaSelectionOption:(id)arg1;
 + (void)sharedNowPlayingInfoControllerWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
+- (id)_availableLanguageOptions;
+- (id)_currentLanguageOptions;
 - (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (id)_makeCommandsAndStatesDictionaryForPlayerController:(id)arg1;
 - (id)_makeNowPlayingInfo;

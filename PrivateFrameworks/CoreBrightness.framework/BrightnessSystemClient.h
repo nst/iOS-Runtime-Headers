@@ -3,20 +3,31 @@
  */
 
 @interface BrightnessSystemClient : NSObject {
+    id /* block */  _displayNotificationBlock;
     NSObject<OS_os_log> * _logHandle;
+    id /* block */  _propertyNotificationBlock;
     BrightnessSystemClientInternal * bsci;
 }
 
 - (id)copyPropertyForKey:(id)arg1;
+- (id)copyPropertyForKey:(id)arg1 andDisplay:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)init;
 - (bool)isAlsSupported;
+- (void)registerDisplayNotificationCallbackBlock:(id /* block */)arg1;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)registerNotificationBlock:(id /* block */)arg1 forProperties:(id)arg2;
 - (void)registerNotificationForKey:(id)arg1;
+- (void)registerNotificationForKey:(id)arg1 andDisplay:(unsigned long long)arg2;
 - (void)registerNotificationForKeys:(id)arg1;
+- (void)registerNotificationForKeys:(id)arg1 andDisplay:(unsigned long long)arg2;
 - (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (bool)setProperty:(id)arg1 withKey:(id)arg2 andDisplay:(unsigned long long)arg3;
+- (void)unregisterDisplayNotificationBlock;
 - (void)unregisterNotificationForKey:(id)arg1;
+- (void)unregisterNotificationForKey:(id)arg1 andDisplay:(unsigned long long)arg2;
 - (void)unregisterNotificationForKeys:(id)arg1;
+- (void)unregisterNotificationForKeys:(id)arg1 andDisplay:(unsigned long long)arg2;
+- (void)unregisterPropertyNotificationBlock;
 
 @end

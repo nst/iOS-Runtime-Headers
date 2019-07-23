@@ -444,6 +444,7 @@
 - (id)hf_accessoryWithDeviceIdentifier:(id)arg1;
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_actionSetWithUUID:(id)arg1;
+- (id)hf_activeRooms;
 - (id)hf_allBridgeAccessories;
 - (id)hf_allCameraProfiles;
 - (id)hf_allMediaProfiles;

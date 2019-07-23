@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) UIView *behaviorView;
 @property (nonatomic, readonly) SXComponentView *componentView;
 @property (nonatomic, readonly) bool isSetup;
+@property (nonatomic, readonly) bool requiresContinuousUpdates;
 
 - (void).cxx_destruct;
 - (id)behavior;
@@ -20,6 +21,7 @@
 - (void)destroyWithBehaviorController:(id)arg1;
 - (id)initWithComponentView:(id)arg1 withBehavior:(id)arg2;
 - (bool)isSetup;
+- (bool)requiresContinuousUpdates;
 - (void)setupWithBehaviorController:(id)arg1;
 - (void)updateWithBehaviorController:(id)arg1;
 

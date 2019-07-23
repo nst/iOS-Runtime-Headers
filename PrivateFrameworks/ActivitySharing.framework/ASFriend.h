@@ -73,10 +73,11 @@
 - (id)as_competitionAcceptErrorMessage;
 - (id)as_competitionAcceptedNotificationMessageForCompetition:(id)arg1;
 - (id)as_competitionAcceptedNotificationTitle;
-- (id)as_competitionLearnMoreAction;
+- (id)as_competitionLearnMoreDetailAction;
 - (id)as_competitionLearnMoreDetailMessage;
 - (id)as_competitionLearnMoreFullDescription;
 - (id)as_competitionLearnMoreIntroduction;
+- (id)as_competitionLearnMorePopupAction;
 - (id)as_competitionLearnMoreReceivedNotificationMessageWithWheelchairUse:(long long)arg1;
 - (id)as_competitionLearnMoreSendConfirmationMessageWithWheelchairUse:(long long)arg1;
 - (id)as_competitionLearnMoreTitle;

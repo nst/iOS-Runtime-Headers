@@ -9,6 +9,7 @@
     id /* block */  fCumulativeUpdateHandler;
     double  fDistanceFromStart;
     double  fDistanceOffset;
+    int  fDistanceSource;
     int  fElevationAscendedOffset;
     int  fElevationAscendedStart;
     bool  fElevationCountingAvailable;
@@ -36,11 +37,11 @@
 }
 
 - (void)_handleQueryResponse:(struct shared_ptr<CLConnectionMessage> { struct CLConnectionMessage {} *x1; struct __shared_weak_count {} *x2; })arg1 onQueue:(id)arg2 withHandler:(id /* block */)arg3;
-- (void)_handleRecordQueryResponse:(struct shared_ptr<CLConnectionMessage> { struct CLConnectionMessage {} *x1; struct __shared_weak_count {} *x2; })arg1 withHandler:(id /* block */)arg2;
+- (void)_handleRecordQueryResponse:(struct shared_ptr<CLConnectionMessage> { struct CLConnectionMessage {} *x1; struct __shared_weak_count {} *x2; })arg1 withHandler:(id /* block */)arg2 shouldStartUpdates:(bool)arg3;
 - (void)_internalQueryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 onQueue:(id)arg3 withHandler:(id /* block */)arg4;
 - (void)_queryPedometerCalibrationBinsWithHandler:(id /* block */)arg1 forType:(long long)arg2 forRemote:(bool)arg3;
 - (void)_queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id /* block */)arg3;
-- (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2 shouldStartUpdates:(bool)arg3;
 - (void)_startPedometerEventUpdatesWithHandler:(id /* block */)arg1;
 - (void)_startPedometerUpdatesFromDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)_startPedometerUpdatesSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
@@ -49,6 +50,7 @@
 - (void)_stopPedometerUpdates;
 - (void)_stopWatchdogCheckins;
 - (id)_strideCalibrationDump;
+- (void)_subscribeToCumulativePedometerUpdates:(id /* block */)arg1;
 - (void)_teardown;
 - (void)dealloc;
 - (id)init;

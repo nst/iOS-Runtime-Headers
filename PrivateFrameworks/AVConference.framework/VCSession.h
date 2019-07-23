@@ -44,6 +44,7 @@
     NSString * _uuid;
 }
 
+@property (nonatomic, readonly) NSDictionary *capabilities;
 @property (nonatomic, retain) <VCConnectionProtocol> *currentActiveConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <VCSessionDelegate> *delegate;
@@ -68,6 +69,7 @@
 - (void)broadcastMessage:(id)arg1 withTopic:(id)arg2;
 - (unsigned int)calculateExpectedTotalNetworkBitrateDownlink;
 - (unsigned int)calculateExpectedTotalNetworkBitrateUplink;
+- (id)capabilities;
 - (void)collectSessionEventKeyFields:(struct __CFDictionary { }*)arg1 eventType:(unsigned short)arg2 withParticipant:(id)arg3 keyChangeReason:(id)arg4 newMKI:(id)arg5 withStreamID:(unsigned short)arg6;
 - (void)createMediaQueue;
 - (void)createSessionMessaging;
@@ -146,6 +148,7 @@
 - (void)setSessionInfoSynchronizerPeerSubscribedStreamsCallback;
 - (void)setSessionMessaging:(id)arg1;
 - (void)setState:(unsigned int)arg1;
+- (void)setTransportSessionEventHandler;
 - (void)setupAudioEnabledMessages;
 - (void)setupAudioPausedMessages;
 - (void)setupKeyFrameGenerationMessages;

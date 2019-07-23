@@ -31,7 +31,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
-@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, retain) TSWPStorage *textStorage;
 @property (nonatomic, retain) NSArray *textboxes;
 @property (nonatomic, readonly) TSUColor *userInterfaceFillColor;
@@ -71,12 +70,12 @@
 - (bool)isSelectable;
 - (bool)isThemeContent;
 - (Class)layoutClass;
-- (void)loadFromFlowInfoArchive:(const struct FlowInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromFlowInfoArchive:(const struct FlowInfoArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct Reference {} *x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)objectUUIDPath;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
-- (void)pSaveToFlowInfoArchive:(struct FlowInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; }*)arg1 archiver:(id)arg2 textBoxes:(id)arg3;
+- (void)pSaveToFlowInfoArchive:(struct FlowInfoArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct Reference {} *x6; unsigned int x7; }*)arg1 archiver:(id)arg2 textBoxes:(id)arg3;
 - (id)parentInfo;
 - (bool)preventsChangeTracking;
 - (bool)preventsComments;
@@ -93,7 +92,7 @@
 - (void)setUserInterfaceIdentifier:(unsigned long long)arg1;
 - (bool)supportsMultipleColumns;
 - (bool)textIsLinked;
-- (bool)textIsVertical;
+- (bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 - (id)textStorage;
 - (id)textboxes;
 - (id)userInterfaceFillColor;

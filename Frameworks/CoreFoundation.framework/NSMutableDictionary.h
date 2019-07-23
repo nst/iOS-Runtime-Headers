@@ -275,6 +275,10 @@
 - (void)mf_setBool:(bool)arg1 forKey:(id)arg2;
 - (void)mf_setInteger:(int)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
+
+- (void)removeNaNValues;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)mergeWithDictionary:(id)arg1;
@@ -300,6 +304,7 @@
 - (void)fc_popActionTypesUpToCount:(unsigned long long)arg1;
 - (void)fc_removeObjectsForKeysNotInArray:(id)arg1;
 - (void)fc_removeObjectsForKeysNotInSet:(id)arg1;
+- (void)fc_removeObjectsForKeysPassingTest:(id /* block */)arg1;
 - (void)fc_safelySetObject:(id)arg1 forKey:(id)arg2;
 - (void)fc_safelySetObjectAllowingNil:(id)arg1 forKey:(id)arg2;
 - (void)fc_safelySetObjectAllowingNil:(id)arg1 forKeyAllowingNil:(id)arg2;
@@ -389,11 +394,6 @@
 
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
-
-- (void)_swift_objectForKeyedSubscript;
-- (void)_swift_setObjectforKeyedSubscript;
-
 // Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
 
 - (void)setActions:(id)arg1 forProcess:(id)arg2;
@@ -406,6 +406,10 @@
 - (id)tsu_objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
 - (id)tsu_objectForKey:(id)arg1 withDefaultUsingBlock:(id /* block */)arg2;
 - (void)tsu_removeObjectsWithoutKeys:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (void)tvp_setObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
@@ -456,23 +460,11 @@
 
 - (void)wlk_setObjectUnlessNil:(id)arg1 forKey:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
-- (void)_webkit_setBool:(bool)arg1 forKey:(id)arg2;
-- (void)_webkit_setFloat:(float)arg1 forKey:(id)arg2;
-- (void)_webkit_setInt:(int)arg1 forKey:(id)arg2;
-- (void)_webkit_setLongLong:(long long)arg1 forKey:(id)arg2;
-- (void)_webkit_setUnsignedInt:(unsigned int)arg1 forKey:(id)arg2;
-- (void)_webkit_setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
 
 - (void)blj_setObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
-
-+ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
-+ (id)tsu_dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 
 - (void)tsp_addObject:(id)arg1 toArrayWithDeepCopyOptionKey:(id)arg2;
 - (void)tsp_addObject:(id)arg1 toArrayWithSerializationOptionKey:(id)arg2;
@@ -486,5 +478,10 @@
 - (id)tsu_objectForKey:(id)arg1 withDefaultUsingBlock:(id /* block */)arg2;
 - (void)tsu_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (void)tsu_setNonNilValueForKey:(id)arg1 fromDictionary:(id)arg2;
+
+// Image: /usr/lib/swift/libswiftFoundation.dylib
+
+- (id)__swift_objectForKeyedSubscript:(id)arg1;
+- (void)__swift_setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 
 @end

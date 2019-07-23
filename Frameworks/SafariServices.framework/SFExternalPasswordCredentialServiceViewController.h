@@ -19,7 +19,6 @@
 - (id)_authenticationContext;
 - (void)_dismiss;
 - (id)authenticationCustomUIProgressObserverForContext:(id)arg1;
-- (bool)authenticationEnabledForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;
 - (void)autoFillWithCredentialIdentity:(id)arg1;
 - (bool)contextRequiresSessionBasedAuthentication:(id)arg1;

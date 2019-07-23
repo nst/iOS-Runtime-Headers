@@ -17,14 +17,9 @@
 @property (nonatomic, retain) UIStackView *stackView;
 @property (nonatomic) bool usesDarkTheme;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_populateSegmentViewsWithCount:(unsigned long long)arg1;
 - (void)_removeAllSegmentViews;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (unsigned long long)numberOfSegments;

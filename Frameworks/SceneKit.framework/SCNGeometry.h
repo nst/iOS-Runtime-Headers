@@ -74,6 +74,7 @@
 - (bool)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (id)__shadableHelper;
 - (void)_copyAnimationsFrom:(id)arg1;
+- (void)_copyAttributesTo:(id)arg1;
 - (void)_customDecodingOfSCNGeometry:(id)arg1;
 - (void)_customEncodingOfSCNGeometry:(id)arg1;
 - (void)_discardOriginalTopology;

@@ -34,11 +34,11 @@
 @property (nonatomic, retain) APUIWFLIntentController *wfIntentController;
 
 - (void).cxx_destruct;
+- (unsigned long long)_cardFormatForCardRequestWithInteraction:(id)arg1;
 - (void)_constructCardViewControllerForInteraction:(id)arg1 completion:(id /* block */)arg2;
 - (id)_contentForCardRequestWithInteraction:(id)arg1;
 - (void)_createOrUpdateCardViewControllerForInteraction:(id)arg1 completion:(id /* block */)arg2;
 - (void)_installChildViewController:(id)arg1;
-- (void)_setWorkflowControllerExecutionContext;
 - (void)_setupProgressIndicator;
 - (void)_updateCardViewControllerForInteraction:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;
 - (id)activityIndicatorView;

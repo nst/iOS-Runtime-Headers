@@ -23,6 +23,7 @@
     long long  _requestState;
     NSMutableData * _responseData;
     NSURL * _responseDataURL;
+    ICURLResponseHandler * _responseHandler;
     NSData * _resumeData;
     unsigned long long  _retryCount;
     double  _retryDelay;
@@ -53,6 +54,7 @@
 @property (nonatomic) long long requestState;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) NSURL *responseDataURL;
+@property (nonatomic, retain) ICURLResponseHandler *responseHandler;
 @property (nonatomic, readonly, copy) NSData *resumeData;
 @property (nonatomic) unsigned long long retryCount;
 @property (nonatomic) double retryDelay;
@@ -90,6 +92,7 @@
 - (long long)requestState;
 - (id)responseData;
 - (id)responseDataURL;
+- (id)responseHandler;
 - (id)resumeData;
 - (unsigned long long)retryCount;
 - (double)retryDelay;
@@ -109,6 +112,7 @@
 - (void)setRequestState:(long long)arg1;
 - (void)setResponseData:(id)arg1;
 - (void)setResponseDataURL:(id)arg1;
+- (void)setResponseHandler:(id)arg1;
 - (void)setRetryCount:(unsigned long long)arg1;
 - (void)setRetryDelay:(double)arg1;
 - (void)setTask:(id)arg1;

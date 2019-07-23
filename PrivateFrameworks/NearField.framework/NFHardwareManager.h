@@ -89,6 +89,7 @@
 - (id)startSecureElementManagerSessionWithPriority:(id /* block */)arg1;
 - (id)startSecureElementSession:(id)arg1 didStartCallback:(id /* block */)arg2;
 - (id)startSesHatSession:(id /* block */)arg1;
+- (id)startTrustSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id)arg1 callback:(id /* block */)arg2;
 - (bool)suspendBackgroundTagReading;

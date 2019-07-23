@@ -3,12 +3,12 @@
  */
 
 @interface TSCH3DFBOResource : TSCH3DResource {
-    NSString * mName;
+    NSString * _name;
 }
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)get;
 - (bool)isEqual:(id)arg1;

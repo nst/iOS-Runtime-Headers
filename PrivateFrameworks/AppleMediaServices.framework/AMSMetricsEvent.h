@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
  */
 
-@interface AMSMetricsEvent : NSObject {
+@interface AMSMetricsEvent : NSObject <NSCopying> {
     ACAccount * _account;
     NSNumber * _databasePID;
     NSObject<OS_dispatch_queue> * _internalQueue;
@@ -36,6 +36,7 @@
 - (id)appVersion;
 - (id)baseVersion;
 - (id)canaryIdentifier;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)databaseEventBody;
 - (id)databasePID;
 - (id)eventTime;
@@ -43,6 +44,7 @@
 - (id)eventVersion;
 - (id)initWithDatabaseEventBody:(id)arg1;
 - (id)initWithTopic:(id)arg1;
+- (id)initWithUnderlyingDictionary:(id)arg1;
 - (id)osVersion;
 - (id)propertyForBodyKey:(id)arg1;
 - (void)removePropertiesForKeys:(id)arg1;

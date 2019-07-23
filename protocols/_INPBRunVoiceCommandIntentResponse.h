@@ -5,9 +5,13 @@
 
 @required
 
++ (Class)stepType;
+
 - (int)StringAsIntentCategory:(NSString *)arg1;
 - (int)StringAsToggleState:(NSString *)arg1;
+- (void)addStep:(_INPBVoiceCommandStepInfo *)arg1;
 - (NSString *)appBundleId;
+- (void)clearSteps;
 - (bool)continueRunning;
 - (bool)customResponsesDisabled;
 - (bool)hasAppBundleId;
@@ -42,11 +46,15 @@
 - (void)setLocalizedAppName:(NSString *)arg1;
 - (void)setParameters:(_INPBDictionary *)arg1;
 - (void)setResponseTemplate:(NSString *)arg1;
+- (void)setSteps:(NSArray *)arg1;
 - (void)setToggleState:(int)arg1;
 - (void)setUnderlyingIntent:(_INPBArchivedObject *)arg1;
 - (void)setUnderlyingIntentResponse:(_INPBArchivedObject *)arg1;
 - (void)setUnderlyingIntentTitle:(NSString *)arg1;
 - (void)setVerb:(NSString *)arg1;
+- (_INPBVoiceCommandStepInfo *)stepAtIndex:(unsigned long long)arg1;
+- (NSArray *)steps;
+- (unsigned long long)stepsCount;
 - (int)toggleState;
 - (NSString *)toggleStateAsString:(int)arg1;
 - (_INPBArchivedObject *)underlyingIntent;

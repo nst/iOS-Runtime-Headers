@@ -5,11 +5,14 @@
 @interface PKExplanationView : UIView <UIScrollViewDelegate, UITextViewDelegate> {
     UIActivityIndicatorView * _activityIndicator;
     NSAttributedString * _attributedBodyText;
+    NSAttributedString * _attributedSecondaryBodyText;
     long long  _backdropStyle;
     _UIBackdropView * _backdropView;
     double  _backdropWeight;
+    UIButton * _bodyButton;
+    NSString * _bodyButtonText;
     NSString * _bodyText;
-    bool  _bodyTextIsLeftAlgined;
+    bool  _bodyTextIsNaturalAlgined;
     UITextView * _bodyTextView;
     UIView * _bodyView;
     PKCheckGlyphLayer * _checkmarkLayer;
@@ -25,8 +28,10 @@
     bool  _privacyFooterShouldPin;
     OBPrivacyLinkController * _privacyLink;
     UIScrollView * _scrollView;
+    UITextView * _secondaryBodyTextView;
     bool  _showPrivacyView;
     UIFont * _titleFont;
+    UIImage * _titleImage;
     UILabel * _titleLabel;
     struct CGRect { 
         struct CGPoint { 
@@ -50,14 +55,18 @@
     }  _titleLabelLastLineBounds;
     double  _titleLabelLastLineDescent;
     NSString * _titleText;
+    bool  _titleTextIsNaturalAlgined;
     double  _topMargin;
     bool  _updatingBackdropSettings;
 }
 
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, copy) NSAttributedString *attributedBodyText;
+@property (nonatomic, copy) NSAttributedString *attributedSecondaryBodyText;
+@property (nonatomic, copy) NSString *bodyButtonText;
 @property (nonatomic, copy) NSString *bodyText;
-@property (nonatomic) bool bodyTextIsLeftAlgined;
+@property (nonatomic) bool bodyTextIsNaturalAlgined;
+@property (nonatomic, retain) UITextView *bodyTextView;
 @property (nonatomic, retain) UIView *bodyView;
 @property (nonatomic, readonly) PKCheckGlyphLayer *checkmarkLayer;
 @property (readonly, copy) NSString *debugDescription;
@@ -72,26 +81,34 @@
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, retain) UIImageView *logoImageView;
 @property (nonatomic, retain) OBPrivacyLinkController *privacyLink;
+@property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic) bool showPrivacyView;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) UIFont *titleFont;
+@property (nonatomic, retain) UIImage *titleImage;
 @property (nonatomic, copy) NSString *titleText;
+@property (nonatomic) bool titleTextIsNaturalAlgined;
 @property (nonatomic) double topMargin;
 
 - (void).cxx_destruct;
 - (void)_accessibilitySettingsDidChange:(id)arg1;
+- (void)_bodyButtonTapped;
 - (void)_calculateBlur;
 - (void)_continue;
+- (id)_createBodyTextView;
 - (void)_createSubviews;
 - (bool)_isBuddyiPad;
 - (void)_setupLater;
-- (bool)_showApplePayLogo;
+- (bool)_showTitleLogoImageView;
 - (void)_updateCachedTitleLabelLastLine;
 - (void)_updateTitleLabel;
 - (id)activityIndicator;
 - (id)attributedBodyText;
+- (id)attributedSecondaryBodyText;
+- (id)bodyButtonText;
 - (id)bodyText;
-- (bool)bodyTextIsLeftAlgined;
+- (bool)bodyTextIsNaturalAlgined;
+- (id)bodyTextView;
 - (id)bodyView;
 - (id)checkmarkLayer;
 - (void)dealloc;
@@ -110,10 +127,14 @@
 - (id)logoImageView;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)privacyLink;
+- (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setAttributedBodyText:(id)arg1;
+- (void)setAttributedSecondaryBodyText:(id)arg1;
+- (void)setBodyButtonText:(id)arg1;
 - (void)setBodyText:(id)arg1;
-- (void)setBodyTextIsLeftAlgined:(bool)arg1;
+- (void)setBodyTextIsNaturalAlgined:(bool)arg1;
+- (void)setBodyTextView:(id)arg1;
 - (void)setBodyView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceShowSetupLaterButton:(bool)arg1;
@@ -124,12 +145,17 @@
 - (void)setPrivacyLink:(id)arg1;
 - (void)setShowPrivacyView:(bool)arg1;
 - (void)setTitleFont:(id)arg1;
+- (void)setTitleImage:(id)arg1;
 - (void)setTitleText:(id)arg1;
+- (void)setTitleTextIsNaturalAlgined:(bool)arg1;
 - (void)setTopMargin:(double)arg1;
 - (bool)showPrivacyView;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
+- (void)tintColorDidChange;
 - (id)titleFont;
+- (id)titleImage;
 - (id)titleText;
+- (bool)titleTextIsNaturalAlgined;
 - (double)topMargin;
 
 @end

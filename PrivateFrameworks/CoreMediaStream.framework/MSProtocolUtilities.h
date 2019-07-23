@@ -9,7 +9,7 @@
 + (id)appleIDSession;
 + (void)applyUserDefaultOverridesToResponse:(id)arg1;
 + (id)deviceInfoDictForPersonID:(id)arg1;
-+ (void)fetchMPSStateWithBaseAvailabilityURL:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
++ (void)fetchMPSStateWithBaseAvailabilityURL:(id)arg1 personID:(id)arg2 originalLibrarySize:(id)arg3 completionBlock:(id /* block */)arg4;
 + (id)retryAfterDateBasedOnRetryAfterHeaderString:(id)arg1;
 
 @end

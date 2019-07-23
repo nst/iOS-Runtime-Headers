@@ -4,10 +4,13 @@
 
 @interface _GCControllerDirectionPad : GCControllerDirectionPad {
     NSString * _descriptionName;
+    bool  _nonAnalog;
     id /* block */  _valueChangedHandler;
     _GCControllerAxisInput * _xAxis;
     _GCControllerAxisInput * _yAxis;
 }
+
+@property bool nonAnalog;
 
 - (void).cxx_destruct;
 - (void)_fireValueChanged;
@@ -16,10 +19,13 @@
 - (id)down;
 - (id)initWithFlippedY:(bool)arg1 digital:(bool)arg2;
 - (id)initWithFlippedY:(bool)arg1 digital:(bool)arg2 descriptionName:(id)arg3;
+- (bool)isAnalog;
 - (id)left;
+- (bool)nonAnalog;
 - (id)right;
 - (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
 - (bool)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
+- (void)setNonAnalog:(bool)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id)up;
 - (id /* block */)valueChangedHandler;

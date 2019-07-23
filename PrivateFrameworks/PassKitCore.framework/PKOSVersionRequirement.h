@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKOSVersionRequirement : NSObject {
+@interface PKOSVersionRequirement : NSObject <NSCopying, NSSecureCoding> {
     NSString * _appletv;
     NSString * _ipad;
     NSString * _iphone;
@@ -19,15 +19,20 @@
 @property (nonatomic, readonly) NSString *watch;
 
 + (id)fromDeviceVersion;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appletv;
 - (long long)compare:(id)arg1 deviceClass:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)ipad;
 - (id)iphone;
 - (id)ipod;
 - (id)mac;
+- (id)versionForDeviceClass:(id)arg1;
 - (id)watch;
 
 @end

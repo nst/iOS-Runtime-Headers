@@ -5,8 +5,7 @@
 @interface WLKChannelUtilities : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _channelsByBundleID;
-    WLKServerConfiguration * _config;
-    bool  _offLineMode;
+    bool  _filtered;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *channelsByBundleID;
@@ -15,19 +14,19 @@
 
 + (id)_validiTunesBundles;
 + (bool)isItunesBundleID:(id)arg1;
-+ (bool)isItunesOrFirstPartyBundleID:(id)arg1;
 + (id)sharedInstance;
++ (id)sharedInstanceFiltered;
 
 - (void).cxx_destruct;
-- (id)_init;
-- (id)_serverConfiguration;
+- (id)_configuration;
 - (id)channelForBundleID:(id)arg1;
 - (id)channelForID:(id)arg1;
 - (id)channelIDForBundleID:(id)arg1;
 - (id)channelsByBundleID;
 - (id)channelsByID;
 - (id)init;
-- (id)initOffline;
+- (id)initFiltered:(bool)arg1;
+- (bool)isItunesOrFirstPartyBundleID:(id)arg1;
 - (id)orderedChannels;
 
 @end

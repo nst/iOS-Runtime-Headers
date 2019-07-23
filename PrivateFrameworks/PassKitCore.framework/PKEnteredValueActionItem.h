@@ -5,6 +5,7 @@
 @interface PKEnteredValueActionItem : NSObject <NSSecureCoding> {
     NSString * _currency;
     NSArray * _defaultSuggestions;
+    NSArray * _lowBalanceReminderOptions;
     bool  _maxAmountIncludesLocalBalance;
     NSDecimalNumber * _maxLoadAmount;
     NSDecimalNumber * _maxLoadedBalance;
@@ -15,6 +16,7 @@
 
 @property (nonatomic, readonly, copy) NSString *currency;
 @property (nonatomic, readonly, copy) NSArray *defaultSuggestions;
+@property (nonatomic, readonly, copy) NSArray *lowBalanceReminderOptions;
 @property (nonatomic, readonly, copy) NSDecimalNumber *maxAmount;
 @property (nonatomic, readonly) bool maxAmountIncludesLocalBalance;
 @property (nonatomic, readonly, copy) NSDecimalNumber *maxLoadAmount;
@@ -33,6 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (id)lowBalanceReminderOptions;
 - (id)maxAmount;
 - (bool)maxAmountIncludesLocalBalance;
 - (id)maxLoadAmount;

@@ -6,32 +6,56 @@
     NSAttributedString * _attributedTitle;
     UIImage * _backgroundImage;
     VUITextBadgeLayout * _badgeLayout;
+    <VUITextBadgeViewDelegate> * _delegate;
+    NSTimer * _expiryUpdateTimer;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _glyphSize;
+    _TVImageView * _imageView;
     double  _strokeSize;
-    UIColor * _tintColor;
+    IKViewElement * _viewElement;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedTitle;
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (nonatomic, retain) VUITextBadgeLayout *badgeLayout;
+@property (nonatomic) <VUITextBadgeViewDelegate> *delegate;
+@property (nonatomic, retain) NSTimer *expiryUpdateTimer;
+@property (nonatomic) struct CGSize { double x1; double x2; } glyphSize;
+@property (nonatomic, retain) _TVImageView *imageView;
 @property (nonatomic) double strokeSize;
-@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic, retain) IKViewElement *viewElement;
+
++ (bool)badgeElementHasContent:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_imageLoaded;
+- (void)_invalidateTimer;
 - (struct CGSize { double x1; double x2; })_textSize;
 - (id)attributedTitle;
 - (id)backgroundImage;
 - (id)badgeLayout;
+- (void)dealloc;
+- (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)expiryUpdateTimer;
+- (struct CGSize { double x1; double x2; })glyphSize;
+- (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)reset;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBadgeLayout:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setElement:(id)arg1 withBadgeLayout:(id)arg2;
+- (void)setExpiryUpdateTimer:(id)arg1;
+- (void)setGlyphSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImageView:(id)arg1;
 - (void)setStrokeSize:(double)arg1;
-- (void)setText:(id)arg1 withBadgeLayout:(id)arg2;
-- (void)setTintColor:(id)arg1;
+- (void)setViewElement:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)strokeSize;
-- (id)tintColor;
+- (id)viewElement;
 
 @end

@@ -5,6 +5,9 @@
 @interface FCMutableTodayPrivateData : FCTodayPrivateData <FCMutableTodayPrivateData>
 
 @property (nonatomic, readonly, copy) NSSet *autoFavoriteTagIDs;
+@property (nonatomic, readonly, copy) NSString *bundleIAP;
+@property (nonatomic, readonly) FCBundleSubscription *bundleSubscription;
+@property (nonatomic, readonly) unsigned long long bundleSubscriptionState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) <FCDerivedPersonalizationData><NSCoding> *derivedPersonalizationData;
 @property (readonly, copy) NSString *description;
@@ -22,6 +25,8 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (void)setAutoFavoriteTagIDs:(id)arg1;
+- (void)setBundleIAP:(id)arg1;
+- (void)setBundleSubscriptionState:(unsigned long long)arg1;
 - (void)setDerivedPersonalizationData:(id)arg1;
 - (void)setMutedTagIDs:(id)arg1;
 - (void)setOnboardingVersion:(id)arg1;

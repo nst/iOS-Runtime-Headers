@@ -47,8 +47,8 @@
 - (id)logMsgStateForMapsServerWithSearchCategoriesDisplayedAsNSData:(id)arg1 selectedSearchCategory:(id)arg2;
 - (id)logMsgStateForMapsServerWithServerMetadata:(id)arg1;
 - (id)logMsgStateForMapsServerWithStateOrigin:(id)arg1 serverMetadata:(id)arg2;
-- (id)logMsgStateForMapsUIShownWithIsAirQualityShown:(bool)arg1;
-- (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isAirQualityShown:(bool)arg2;
+- (id)logMsgStateForMapsUIShownWithIsAirQualityShown:(bool)arg1 isWeatherShown:(bool)arg2;
+- (id)logMsgStateForMapsUIShownWithStateOrigin:(id)arg1 isAirQualityShown:(bool)arg2 isWeatherShown:(bool)arg3;
 - (id)logMsgStateForMapsUIWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
 - (id)logMsgStateForMapsUIWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (id)logMsgStateForMapsUIWithStateOrigin:(id)arg1 layoutInfo:(int)arg2 layoutStyle:(int)arg3;

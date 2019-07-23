@@ -8,7 +8,7 @@
 - (void)routingController:(MPAVRoutingController *)arg1 didFailToPickRouteWithError:(NSError *)arg2;
 - (void)routingController:(MPAVRoutingController *)arg1 pickedRouteDidChange:(MPAVRoute *)arg2;
 - (void)routingController:(MPAVRoutingController *)arg1 pickedRoutesDidChange:(NSArray *)arg2;
-- (void)routingController:(void *)arg1 shouldHijackRoute:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: MPAVRoutingController *, MPAVRoute *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)routingController:(void *)arg1 shouldHijackRoute:(void *)arg2 alertStyle:(void *)arg3 busyRouteName:(void *)arg4 presentingAppName:(void *)arg5 completion:(void *)arg6; // needs 6 arg types, found 11: MPAVRoutingController *, MPAVRoute *, long long, NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)routingController:(MPAVRoutingController *)arg1 volumeControlAvailabilityDidChange:(bool)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(MPAVRoutingController *)arg1;
 - (void)routingControllerDidPauseFromActiveRouteChange:(MPAVRoutingController *)arg1;

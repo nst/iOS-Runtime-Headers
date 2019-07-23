@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *captionPipelineStrategy;
 @property (nonatomic, copy) NSString *captionRenderingStrategy;
 @property (nonatomic) bool disallowsAMRAudio;
+@property (getter=_disallowsAutoPauseOnRouteRemovalIfNoAudio, setter=_setDisallowsAutoPauseOnRouteRemovalIfNoAudio:, nonatomic) bool disallowsAutoPauseOnRouteRemovalIfNoAudio;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, retain) <AVLoggingIdentifier> *loggingIdentifier;
 @property (nonatomic) float maxRateForAudioPlayback;
@@ -87,7 +88,9 @@
 - (void)_detachClosedCaptionLayersFromFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (void)_detachFigPlayerFromSubtitleLayers;
 - (void)_detachVideoLayersFromFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
+- (void)_didEnterBackground:(id)arg1;
 - (void)_didFinishSuspension:(id)arg1;
+- (bool)_disallowsAutoPauseOnRouteRemovalIfNoAudio;
 - (bool)_disallowsVideoLayerDisplayCompositing;
 - (id)_displaysUsedForPlayback;
 - (bool)_dynamicallyChoosesInitialVariant;
@@ -104,6 +107,7 @@
 - (long long)_inferredTimeControlStatusAndWaitingReason:(id*)arg1 forRate:(float)arg2;
 - (void)_insertItem:(id)arg1 afterItem:(id)arg2;
 - (bool)_isAirPlayVideoActive;
+- (bool)_isConnectedToPhysicalSecondScreen;
 - (bool)_isDisplayingClosedCaptions;
 - (bool)_isIAPDExtendedModeActive;
 - (bool)_isMuted;
@@ -123,6 +127,7 @@
 - (bool)_outputObscuredDueToInsufficientExternalProtection;
 - (id)_pendingFigPlayerProperties;
 - (id)_pendingFigPlayerPropertyForKey:(id)arg1;
+- (id)_performanceDictionary;
 - (id)_pixelBufferAttributeMediator;
 - (void)_pixelBufferAttributesDidChangeForLayer:(id)arg1;
 - (id)_playbackDisplaysForFigPlayer;
@@ -149,6 +154,7 @@
 - (void)_setClientName:(id)arg1;
 - (void)_setClientPriority:(long long)arg1;
 - (void)_setCurrentItem:(id)arg1;
+- (void)_setDisallowsAutoPauseOnRouteRemovalIfNoAudio:(bool)arg1;
 - (void)_setDisallowsVideoLayerDisplayCompositing:(bool)arg1;
 - (void)_setDisplaysUsedForPlayback:(id)arg1;
 - (void)_setDynamicallyChoosesInitialVariant:(bool)arg1;
@@ -175,6 +181,7 @@
 - (long long)_timeControlStatusAndWaitingReason:(id*)arg1 forPlaybackState:(int)arg2;
 - (id /* block */)_unregisterAndReturnRetainedPrerollCompletionHandler;
 - (void)_updateClosedCaptionLayerBounds:(id)arg1;
+- (void)_updateConnectionToSecondScreen;
 - (void)_updateCurrentItemPreferredPixelBufferAttributesAndVideoLayerSuppression;
 - (void)_updateDecoderPixelBufferAttributes:(id)arg1 onFigPlayer:(struct OpaqueFigPlayer { }*)arg2;
 - (void)_updateProxyTimebaseFromNewCurrentItem;
@@ -310,5 +317,9 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (id)pu_generateSnapshotImageAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/BiometricKitUI.framework/BiometricKitUI
+
+- (id)bkui_snapshotImageAt:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 asset:(id)arg2 error:(id*)arg3;
 
 @end

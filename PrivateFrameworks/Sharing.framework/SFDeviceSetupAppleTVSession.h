@@ -5,6 +5,10 @@
 @interface SFDeviceSetupAppleTVSession : NSObject {
     bool  _activateCalled;
     int  _basicConfigState;
+    bool  _cdpEnabled;
+    SFDeviceOperationCDPSetup * _cdpSetupOperation;
+    double  _cdpSetupSecs;
+    int  _cdpState;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     int  _finishState;
     bool  _homeKitDoFullSetup;
@@ -20,6 +24,7 @@
     double  _pairSetupSecs;
     int  _pairSetupState;
     SFDevice * _peerDevice;
+    unsigned long long  _peerFeatureFlags;
     int  _preAuthState;
     int  _preflightWiFiState;
     int  _preflightiTunesState;
@@ -57,6 +62,7 @@
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, retain) SFDevice *peerDevice;
+@property (nonatomic) unsigned long long peerFeatureFlags;
 @property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic, copy) id /* block */ promptForHomeHandler;
@@ -70,6 +76,7 @@
 - (int)_runBasicConfig;
 - (void)_runBasicConfigRequest;
 - (void)_runBasicConfigResponse:(id)arg1 error:(id)arg2;
+- (int)_runCDPSetup;
 - (int)_runFinish:(bool)arg1;
 - (int)_runHomeKitSetup;
 - (int)_runHomeKitUserInput;
@@ -96,6 +103,7 @@
 - (void)invalidate;
 - (void)pairSetupTryPIN:(id)arg1;
 - (id)peerDevice;
+- (unsigned long long)peerFeatureFlags;
 - (id)presentingViewController;
 - (id /* block */)progressHandler;
 - (id /* block */)promptForHomeHandler;
@@ -103,6 +111,7 @@
 - (id /* block */)promptForRoomHandler;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
+- (void)setPeerFeatureFlags:(unsigned long long)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setPromptForHomeHandler:(id /* block */)arg1;

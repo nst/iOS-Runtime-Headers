@@ -5,14 +5,14 @@
 @interface NFPromiseSeal : NSObject {
     NSError * _error;
     NSMutableArray * _handlers;
-    NFMutexLock * _lock;
+    NFUnfairLock * _lock;
     unsigned long long  _state;
     id  _value;
 }
 
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSMutableArray *handlers;
-@property (nonatomic, readonly) NFMutexLock *lock;
+@property (nonatomic, readonly) NFUnfairLock *lock;
 @property (nonatomic) unsigned long long state;
 @property (nonatomic, retain) id value;
 

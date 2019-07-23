@@ -16,6 +16,7 @@
 
 + (unsigned long long)_connectionStateFromMPMediaLibraryStatus:(long long)arg1;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_enqueueProcessingBlock:(id /* block */)arg1;

@@ -26,7 +26,7 @@
 - (struct CGPoint { double x1; double x2; })originAtIndex:(long long)arg1;
 - (const struct CGPoint { double x1; double x2; }*)origins;
 - (void)popGlyphAtIndex:(long long)arg1;
-- (void)prepareWithCapacity:(long long)arg1 preallocated:(bool)arg2;
+- (id)prepareWithCapacity:(long long)arg1 preallocated:(bool)arg2;
 - (void)puntStringIndicesInRange:(struct { long long x1; long long x2; })arg1 by:(long long)arg2;
 - (void)pushGlyphAtIndex:(long long)arg1;
 - (oneway void)release;

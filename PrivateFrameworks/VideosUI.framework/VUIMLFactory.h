@@ -2,32 +2,26 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUIMLFactory : NSObject <TVInterfaceCreating, _TVInterfaceCreatingPrivate> {
-    NSDictionary * _elementTypeLookup;
-}
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSDictionary *elementTypeLookup;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
+@interface VUIMLFactory : NSObject
 
 + (void)_registerElements;
++ (void)_registerIOStyleSheets;
 + (void)_registerStyles;
++ (void)_registerStylesheets;
++ (id)_urlForStyleSheetName:(id)arg1;
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (id)_imageProxyForElement:(id)arg1;
-- (void)_parseAppConfigurationForElement:(id)arg1;
+- (id)URLForResource:(id)arg1;
+- (id)_URLForResource:(id)arg1 inBundle:(id)arg2;
 - (id)_styleSheetURLForTemplate:(id)arg1;
 - (Class)collectionViewCellClassForElement:(id)arg1;
-- (id)elementTypeLookup;
 - (id)imageForResource:(id)arg1;
+- (id)imageProxyForElement:(id)arg1 withLayout:(id)arg2;
 - (id)init;
 - (id)navigationControllerForTabIdentifier:(id)arg1;
-- (void)setElementTypeLookup:(id)arg1;
+- (void)parseAppConfigurationForElement:(id)arg1;
+- (id)styleSheetURLForTemplate:(id)arg1;
 - (id)viewControllerForElement:(id)arg1 existingViewController:(id)arg2;
 - (id)viewForElement:(id)arg1 existingView:(id)arg2;
-- (unsigned long long)vuiElementTypeForElement:(id)arg1;
 
 @end

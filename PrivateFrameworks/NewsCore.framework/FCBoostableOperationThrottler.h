@@ -3,36 +3,49 @@
  */
 
 @interface FCBoostableOperationThrottler : NSObject <FCOperationThrottler> {
-    <FCOperationThrottlerDelegate> * _delegate;
+    <FCBoostableOperationThrottlerDelegate> * _delegate;
+    unsigned long long  _mergedData;
     NSObject<OS_dispatch_queue> * _serialWorkQueue;
     bool  _workPending;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _workPendingLock;
+    unsigned long long  _workPendingMergedData;
+    long long  _workPendingQualityOfService;
 }
 
-@property (nonatomic) <FCOperationThrottlerDelegate> *delegate;
+@property (nonatomic) <FCBoostableOperationThrottlerDelegate> *delegate;
+@property (nonatomic) unsigned long long mergedData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialWorkQueue;
 @property bool suspended;
 @property (nonatomic) bool workPending;
 @property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } workPendingLock;
+@property (nonatomic) unsigned long long workPendingMergedData;
+@property (nonatomic) long long workPendingQualityOfService;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
+- (unsigned long long)mergedData;
 - (id)serialWorkQueue;
 - (void)setDelegate:(id)arg1;
+- (void)setMergedData:(unsigned long long)arg1;
 - (void)setSerialWorkQueue:(id)arg1;
 - (void)setSuspended:(bool)arg1;
 - (void)setWorkPending:(bool)arg1;
 - (void)setWorkPendingLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
+- (void)setWorkPendingMergedData:(unsigned long long)arg1;
+- (void)setWorkPendingQualityOfService:(long long)arg1;
 - (bool)suspended;
 - (void)tickle;
 - (void)tickleWithCompletion:(id /* block */)arg1;
 - (void)tickleWithQualityOfService:(long long)arg1;
 - (void)tickleWithQualityOfService:(long long)arg1 completion:(id /* block */)arg2;
+- (void)tickleWithQualityOfService:(long long)arg1 data:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (bool)workPending;
 - (struct os_unfair_lock_s { unsigned int x1; })workPendingLock;
+- (unsigned long long)workPendingMergedData;
+- (long long)workPendingQualityOfService;
 
 @end

@@ -18,6 +18,7 @@
 
 + (unsigned long long)availableCacheSize;
 + (unsigned long long)fileSystemCapacity;
++ (void)removeDeviceTransferDirectoryWithEarliestCreationDate:(id)arg1;
 + (id)sharedManager;
 
 - (void).cxx_destruct;

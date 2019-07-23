@@ -31,5 +31,6 @@
 - (void)requestAuthenticationWithCompletionHandler:(id /* block */)arg1;
 - (void)requestExpandModule;
 - (void)setDelegate:(id)arg1;
+- (void)setHomeGestureDismissalAllowed:(bool)arg1;
 
 @end

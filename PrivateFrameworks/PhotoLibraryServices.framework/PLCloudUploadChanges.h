@@ -15,6 +15,7 @@
     NSMutableSet * _propertyChangedAssetUuids;
     NSMutableArray * _suggestionChanges;
     NSMutableArray * _updatedAssets;
+    NSMutableArray * _updatedMasters;
     NSMutableSet * _updatedRelationship;
 }
 
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSMutableSet *propertyChangedAssetUuids;
 @property (nonatomic, retain) NSMutableArray *suggestionChanges;
 @property (nonatomic, retain) NSMutableArray *updatedAssets;
+@property (nonatomic, retain) NSMutableArray *updatedMasters;
 @property (nonatomic, retain) NSMutableSet *updatedRelationship;
 
 - (void).cxx_destruct;
@@ -57,10 +59,12 @@
 - (void)setPropertyChangedAssetUuids:(id)arg1;
 - (void)setSuggestionChanges:(id)arg1;
 - (void)setUpdatedAssets:(id)arg1;
+- (void)setUpdatedMasters:(id)arg1;
 - (void)setUpdatedRelationship:(id)arg1;
 - (id)suggestionChanges;
 - (id)summaryDescription;
 - (id)updatedAssets;
+- (id)updatedMasters;
 - (id)updatedRelationship;
 
 @end

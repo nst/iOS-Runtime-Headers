@@ -3,7 +3,7 @@
  */
 
 @interface TSKSelectionPath : NSObject {
-    NSArray * mCurrentSelection;
+    NSArray * _currentSelection;
 }
 
 @property (nonatomic, readonly) NSString *UUIDDescription;
@@ -11,22 +11,22 @@
 
 + (id)selectionPathWithSelectionArray:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)UUIDDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)enumerateSelectionsLeastToMostSpecificInPathUsingBlock:(id /* block */)arg1;
 - (void)enumerateSelectionsMostToLeastSpecificInPathUsingBlock:(id /* block */)arg1;
 - (unsigned long long)hash;
 - (unsigned long long)indexForSelection:(id)arg1;
-- (id)initWithArchive:(const struct SelectionPathArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SelectionPathArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithSelectionArray:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)leastSpecificSelectionOfClass:(Class)arg1;
 - (id)mostSpecificSelectionConformingToProtocol:(id)arg1;
 - (id)mostSpecificSelectionOfClass:(Class)arg1;
 - (id)orderedSelections;
-- (void)saveToArchive:(struct SelectionPathArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 archiver:(id)arg2 context:(id)arg3;
+- (void)saveToArchive:(struct SelectionPathArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1 archiver:(id)arg2 context:(id)arg3;
 - (id)selectionAtIndex:(unsigned long long)arg1;
 - (id)selectionPathByAppendingOrReplacingMostSpecificSelectionWithSelection:(id)arg1;
 - (id)selectionPathPoppingOffSelection:(id)arg1;

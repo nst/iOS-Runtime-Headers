@@ -86,6 +86,7 @@
 
 - (void).cxx_destruct;
 - (id)_displayStringForAlertDates:(id)arg1;
+- (id)_displayStringForAvailableCountryCodes:(id)arg1;
 - (id)alertDates;
 - (id)alertabilityPredicate;
 - (id)availabilityEnd;

@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) bool skipDocumentUpgrade;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)close;
 - (id)context;
 - (void)dealloc;

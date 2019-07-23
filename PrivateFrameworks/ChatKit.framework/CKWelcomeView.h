@@ -5,13 +5,8 @@
 @interface CKWelcomeView : UIView {
     UIVisualEffectView * _buttonView;
     NSLayoutConstraint * _buttonViewBottomAnchorLayoutConstraint;
-    double  _buttonViewBottomAnchorLayoutConstraintConstant;
     NSLayoutConstraint * _buttonViewLeadingAnchorLayoutConstraint;
-    double  _buttonViewLeadingAnchorLayoutConstraintConstant;
-    NSLayoutConstraint * _buttonViewTopAnchorLayoutConstraint;
-    double  _buttonViewTopAnchorLayoutConstraintConstant;
     NSLayoutConstraint * _buttonViewTrailingAnchorLayoutConstraint;
-    double  _buttonViewTrailingAnchorLayoutConstraintConstant;
     UIButton * _cancelButton;
     NSLayoutConstraint * _cancelButtonFirstBaselineAnchorLayoutConstraint;
     NSLayoutConstraint * _cancelButtonHeightAnchorLayoutConstraint;
@@ -35,6 +30,7 @@
     UIImageView * _imageView;
     NSLayoutConstraint * _imageViewHeightAnchorLayoutConstraint;
     NSLayoutConstraint * _imageViewWidthAnchorLayoutConstraint;
+    bool  _isForMiC;
     UIScrollView * _scrollView;
     UILabel * _titleLabel;
     NSLayoutConstraint * _titleLabelFirstBaselineAnchorLayoutConstraint;
@@ -46,8 +42,6 @@
 @property (nonatomic, readonly) double buttonViewBottomAnchorLayoutConstraintConstant;
 @property (nonatomic) NSLayoutConstraint *buttonViewLeadingAnchorLayoutConstraint;
 @property (nonatomic, readonly) double buttonViewLeadingAnchorLayoutConstraintConstant;
-@property (nonatomic) NSLayoutConstraint *buttonViewTopAnchorLayoutConstraint;
-@property (nonatomic, readonly) double buttonViewTopAnchorLayoutConstraintConstant;
 @property (nonatomic) NSLayoutConstraint *buttonViewTrailingAnchorLayoutConstraint;
 @property (nonatomic, readonly) double buttonViewTrailingAnchorLayoutConstraintConstant;
 @property (nonatomic, readonly) UIButton *cancelButton;
@@ -89,6 +83,7 @@
 @property (nonatomic, readonly) double imageViewHeightAnchorLayoutConstraintConstant;
 @property (nonatomic) NSLayoutConstraint *imageViewWidthAnchorLayoutConstraint;
 @property (nonatomic, readonly) double imageViewWidthAnchorLayoutConstraintConstant;
+@property (nonatomic) bool isForMiC;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic) NSLayoutConstraint *titleLabelFirstBaselineAnchorLayoutConstraint;
@@ -96,6 +91,9 @@
 @property (nonatomic) <CKWelcomeViewDelegate> *welcomeViewDelegate;
 
 + (bool)requiresConstraintBasedLayout;
++ (double)welcomeLayoutConstraintFeatureInnerForMiC;
++ (double)welcomeLayoutConstraintFeatureLeadingTrailingForMiC;
++ (double)welcomeLayoutConstraintLeadingTrailingForMiC;
 
 - (void).cxx_destruct;
 - (id)buttonView;
@@ -103,8 +101,6 @@
 - (double)buttonViewBottomAnchorLayoutConstraintConstant;
 - (id)buttonViewLeadingAnchorLayoutConstraint;
 - (double)buttonViewLeadingAnchorLayoutConstraintConstant;
-- (id)buttonViewTopAnchorLayoutConstraint;
-- (double)buttonViewTopAnchorLayoutConstraintConstant;
 - (id)buttonViewTrailingAnchorLayoutConstraint;
 - (double)buttonViewTrailingAnchorLayoutConstraintConstant;
 - (id)cancelButton;
@@ -152,11 +148,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isCancelButtonHidden;
 - (bool)isConstraintsLoaded;
+- (bool)isForMiC;
+- (void)layoutSubviews;
 - (void)loadConstraints;
 - (id)scrollView;
 - (void)setButtonViewBottomAnchorLayoutConstraint:(id)arg1;
 - (void)setButtonViewLeadingAnchorLayoutConstraint:(id)arg1;
-- (void)setButtonViewTopAnchorLayoutConstraint:(id)arg1;
 - (void)setButtonViewTrailingAnchorLayoutConstraint:(id)arg1;
 - (void)setCancelButtonFirstBaselineAnchorLayoutConstraint:(id)arg1;
 - (void)setCancelButtonHeightAnchorLayoutConstraint:(id)arg1;
@@ -176,6 +173,7 @@
 - (void)setContentViewTrailingAnchorLayoutConstraint:(id)arg1;
 - (void)setImageViewHeightAnchorLayoutConstraint:(id)arg1;
 - (void)setImageViewWidthAnchorLayoutConstraint:(id)arg1;
+- (void)setIsForMiC:(bool)arg1;
 - (void)setTitleLabelFirstBaselineAnchorLayoutConstraint:(id)arg1;
 - (void)setWelcomeViewDelegate:(id)arg1;
 - (id)titleLabel;
@@ -184,6 +182,7 @@
 - (void)updateConstraintConstants;
 - (void)updateConstraints;
 - (void)updateFonts;
+- (void)updateLayoutForMiC;
 - (id)welcomeViewDelegate;
 
 @end

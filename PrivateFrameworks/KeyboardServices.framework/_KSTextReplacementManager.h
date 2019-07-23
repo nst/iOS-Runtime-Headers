@@ -70,7 +70,6 @@
 - (void)setLegacyStore:(id)arg1;
 - (void)setPendingMigration:(bool)arg1;
 - (void)setTextReplacementStore:(id)arg1;
-- (bool)shouldMigrateToCloudKit;
 - (id)textReplacementStore;
 
 @end

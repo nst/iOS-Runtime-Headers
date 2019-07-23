@@ -6,18 +6,20 @@
 @required
 
 - (TSBridgedNewsActivity *)adPreviewWithIdentifier:(NSString *)arg1;
-- (TSBridgedNewsActivity *)editorialFeedWithIdentifier:(NSString *)arg1 articleViewContext:(TSArticleContext *)arg2 analyticsReferral:(TSAnalyticsReferral *)arg3;
-- (void)feedWithTagIdentifier:(void *)arg1 fragmentIdentifier:(void *)arg2 feedViewContext:(void *)arg3 articleViewContext:(void *)arg4 analyticsReferral:(void *)arg5 completion:(void *)arg6; // needs 6 arg types, found 12: NSString *, NSString *, TSFeedViewContext *, TSArticleContext *, TSAnalyticsReferral *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TSBridgedNewsActivity *, NSError *, void*
-- (TSBridgedNewsActivity *)feedWithTagProviding:(id <FCTagProviding>)arg1 fragmentIdentifier:(NSString *)arg2 feedViewContext:(TSFeedViewContext *)arg3 articleViewContext:(TSArticleContext *)arg4 analyticsReferral:(TSAnalyticsReferral *)arg5;
+- (TSBridgedNewsActivity *)editorialArticleWithIdentifier:(NSString *)arg1 articleViewContext:(TSArticleContext *)arg2;
+- (TSBridgedNewsActivity *)feedWithTag:(id <FCTagProviding>)arg1 feedViewContext:(TSFeedViewContext *)arg2;
+- (void)feedWithTagIdentifier:(void *)arg1 feedViewContext:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, TSFeedViewContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TSBridgedNewsActivity *, NSError *, void*
 - (TSBridgedNewsActivity *)forYouFeedWithFeedViewContext:(TSFeedViewContext *)arg1 articleViewContext:(TSArticleContext *)arg2 analyticsReferral:(TSAnalyticsReferral *)arg3;
-- (TSBridgedNewsActivity *)headlineWithHeadlineProviding:(id <FCHeadlineProviding>)arg1 articleContext:(TSArticleContext *)arg2 notificationSenderChannelID:(NSString *)arg3 articlePresentationStyle:(long long)arg4 showShareSheet:(bool)arg5 forceArticleUpdate:(bool)arg6;
+- (TSBridgedNewsActivity *)headlineWithHeadlineProviding:(id <FCHeadlineProviding>)arg1 articleContext:(TSArticleContext *)arg2 articlePresentationStyle:(long long)arg3 showShareSheet:(bool)arg4 forceArticleUpdate:(bool)arg5;
 - (TSBridgedNewsActivity *)history;
+- (TSBridgedNewsActivity *)manageSubscriptions;
 - (TSBridgedNewsActivity *)notifications;
 - (TSBridgedNewsActivity *)pickYourFavorites;
 - (TSBridgedNewsActivity *)previewWithHeadline:(id <FCHeadlineProviding>)arg1;
 - (TSBridgedNewsActivity *)saved;
-- (TSBridgedNewsActivity *)unrealizedHeadlineWithArticleID:(NSString *)arg1 articleContext:(TSArticleContext *)arg2 notificationSenderChannelID:(NSString *)arg3 articlePresentationStyle:(long long)arg4 showShareSheet:(bool)arg5 forceArticleUpdate:(bool)arg6;
+- (TSBridgedNewsActivity *)unrealizedHeadlineWithArticleID:(NSString *)arg1 articleContext:(TSArticleContext *)arg2 articlePresentationStyle:(long long)arg3 showShareSheet:(bool)arg4 forceArticleUpdate:(bool)arg5;
 - (TSBridgedNewsActivity *)videoPlayerWithArticleIDs:(NSArray *)arg1 analyticsReferral:(TSAnalyticsReferral *)arg2;
 - (TSBridgedNewsActivity *)videoPlayerWithWidgetPlaylist:(TSNewsReferralItemWidgetVideoPlaylist *)arg1 analyticsReferral:(TSAnalyticsReferral *)arg2;
+- (TSBridgedNewsActivity *)webLinkWithURL:(NSURL *)arg1;
 
 @end

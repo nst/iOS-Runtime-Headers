@@ -3,8 +3,6 @@
  */
 
 @interface RERemoteTrainingContext : RETrainingContext {
-    NSObject<OS_dispatch_queue> * _queue;
-    REUpNextScheduler * _scheduler;
     NSMutableArray * _trainingElements;
     NSMutableArray * _trainingEvents;
     NSMutableArray * _trainingInteractions;
@@ -12,10 +10,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_configureForRelevanceEngine:(id)arg1;
 - (void)_didPerformRemoteTraining;
 - (void)_didSetAttributeForRemoteTraining;
-- (id)_elementRelevanceEngine;
 - (void)_queue_enqueueRemoteTrainingForElement:(id)arg1 isPositiveEvent:(bool)arg2 interaction:(id)arg3;
 - (void)_queue_performRemoteTraining;
 - (void)_queue_setRemoteAttribute:(id)arg1 forKey:(id)arg2;

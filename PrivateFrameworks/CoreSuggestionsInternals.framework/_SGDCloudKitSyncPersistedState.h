@@ -9,6 +9,7 @@
     NSString * _primaryICloudCalendarAccount;
     NSData * _salt;
     CKRecordID * _saltAtomicReferenceId;
+    NSNumber * _saltUsesManatee;
     CKServerChangeToken * _syncToken;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSString *primaryICloudCalendarAccount;
 @property (nonatomic, retain) NSData *salt;
 @property (nonatomic, retain) CKRecordID *saltAtomicReferenceId;
+@property (nonatomic, retain) NSNumber *saltUsesManatee;
 @property (nonatomic, retain) CKServerChangeToken *syncToken;
 
 + (id)properties;
@@ -38,12 +40,14 @@
 - (id)primaryICloudCalendarAccount;
 - (id)salt;
 - (id)saltAtomicReferenceId;
+- (id)saltUsesManatee;
 - (void)setChangeCallback:(id /* block */)arg1;
 - (void)setEventsWereRemovedFromEventKit:(id)arg1;
 - (void)setHasSubscription:(id)arg1;
 - (void)setPrimaryICloudCalendarAccount:(id)arg1;
 - (void)setSalt:(id)arg1;
 - (void)setSaltAtomicReferenceId:(id)arg1;
+- (void)setSaltUsesManatee:(id)arg1;
 - (void)setSyncToken:(id)arg1;
 - (void)setupKvo;
 - (void)stopKvo;

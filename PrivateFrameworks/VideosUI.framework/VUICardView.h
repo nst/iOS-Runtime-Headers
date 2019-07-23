@@ -3,36 +3,36 @@
  */
 
 @interface VUICardView : UIView {
-    TVImageElement * _appImageElement;
     _TVImageView * _appImageView;
+    VUIButton * _button;
     NSString * _debugString;
-    bool  _hasAppImage;
-    TVImageElement * _imageElement;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _imageSize;
     _TVImageView * _imageView;
     NSArray * _labelViews;
     VUICardViewLayoutFactory * _layoutFactory;
-    UIView<VUIOverlayViewProtocol> * _overlayView;
+    UIView * _overlayView;
 }
 
-@property (nonatomic, retain) TVImageElement *appImageElement;
 @property (nonatomic, retain) _TVImageView *appImageView;
+@property (nonatomic, retain) VUIButton *button;
 @property (nonatomic, copy) NSString *debugString;
-@property (nonatomic) bool hasAppImage;
-@property (nonatomic, retain) TVImageElement *imageElement;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, retain) _TVImageView *imageView;
 @property (nonatomic, copy) NSArray *labelViews;
 @property (nonatomic, readonly) VUICardViewLayoutFactory *layoutFactory;
-@property (nonatomic, retain) UIView<VUIOverlayViewProtocol> *overlayView;
+@property (nonatomic, retain) UIView *overlayView;
 
 - (void).cxx_destruct;
 - (void)_mainImageLoaded;
-- (double)_textOffset;
-- (id)appImageElement;
+- (double)_maxTextWidthForImagePosition:(long long)arg1 width:(double)arg2 appImageLayout:(id)arg3 textLayout:(id)arg4;
 - (id)appImageView;
+- (id)button;
 - (void)dealloc;
 - (id)debugString;
-- (bool)hasAppImage;
-- (id)imageElement;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layoutFactory:(id)arg2;
 - (id)labelViews;
@@ -40,12 +40,11 @@
 - (void)layoutSubviews;
 - (id)overlayView;
 - (void)prepareForCellReuse;
-- (void)setAppImageElement:(id)arg1;
 - (void)setAppImageView:(id)arg1;
+- (void)setButton:(id)arg1;
 - (void)setDebugString:(id)arg1;
-- (void)setHasAppImage:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
-- (void)setImageElement:(id)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setImageView:(id)arg1;
 - (void)setLabelViews:(id)arg1;
 - (void)setOverlayView:(id)arg1;

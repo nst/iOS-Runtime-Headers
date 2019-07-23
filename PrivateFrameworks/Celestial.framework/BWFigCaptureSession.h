@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWIrisStagingNodeEmitIrisRequestDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWPipelineNotificationDelegate, BWRemoteQueueSinkNodeDelegate, BWStillImageCaptureStatusDelegate, FigCaptureDisplayLayoutObserver> {
+@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWIrisStagingNodeIrisRequestDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWPipelineNotificationDelegate, BWRemoteQueueSinkNodeDelegate, BWStillImageCaptureStatusDelegate, FigCaptureDisplayLayoutObserver> {
     struct OpaqueFigCaptureSession { } * _captureSession;
 }
 
@@ -28,6 +28,7 @@
 - (void)postNotification:(id)arg1 notificationPayload:(id)arg2;
 - (void)remoteQueueSinkNode:(id)arg1 localQueueBecameReady:(struct localQueueOpaque { }*)arg2;
 - (void)remoteQueueSinkNode:(id)arg1 queueBecameReady:(struct remoteQueueSenderOpaque { }*)arg2;
+- (void)stagingNode:(id)arg1 readyToReceiveRequestsWithEarliestAllowedStillImageCaptureHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)stagingNode:(id)arg1 willEmitIrisRequest:(id)arg2;
 - (void)stillImageCoordinator:(id)arg1 didCapturePhotoForSettings:(id)arg2;
 - (void)stillImageCoordinator:(id)arg1 didResolveStillImagePTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 forSettings:(id)arg3 resolvedCaptureType:(int)arg4 isPreBracketedEV0:(bool)arg5;

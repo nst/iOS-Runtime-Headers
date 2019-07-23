@@ -3,14 +3,17 @@
  */
 
 @interface NUArticleAdManager : NSObject <NUAdContextProvider, SXAdControllerDelegate, SXAdControllerFactory, SXAdProvider> {
+    <NUAdControllerFactory> * _adControllerFactory;
     <NUAdMetadataFactory> * _adMetadataFactory;
     <NUAdProvider> * _adProvider;
     FCArticle * _article;
     <NUDevice> * _device;
+    FCIssue * _issue;
     <NUAdLayoutOptionsFactory> * _layoutOptionsFactory;
-    <NUAdSettings> * _settings;
+    <NUAdContextProvider> * _subscriptionAdContextProvider;
 }
 
+@property (nonatomic, readonly) <NUAdControllerFactory> *adControllerFactory;
 @property (nonatomic, readonly) <NUAdMetadataFactory> *adMetadataFactory;
 @property (nonatomic, readonly) <NUAdProvider> *adProvider;
 @property (nonatomic, readonly) FCArticle *article;
@@ -18,8 +21,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <NUDevice> *device;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) FCIssue *issue;
 @property (nonatomic, readonly) <NUAdLayoutOptionsFactory> *layoutOptionsFactory;
-@property (nonatomic, readonly) <NUAdSettings> *settings;
+@property (nonatomic, readonly) <NUAdContextProvider> *subscriptionAdContextProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,6 +31,7 @@
 - (void)adController:(id)arg1 componentWithIdentifier:(id)arg2 didLoadBannerView:(id)arg3;
 - (void)adController:(id)arg1 componentWithIdentifier:(id)arg2 didUnloadBannerView:(id)arg3 withError:(id)arg4;
 - (void)adController:(id)arg1 componentWithIdentifier:(id)arg2 failedToLoadBannerView:(id)arg3 error:(id)arg4;
+- (id)adControllerFactory;
 - (id)adControllerForDocument:(id)arg1 viewport:(id)arg2;
 - (id /* block */)adForRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)adMetadataFactory;
@@ -34,8 +39,9 @@
 - (id)article;
 - (id)contextProvidersForKeyPath:(id)arg1;
 - (id)device;
-- (id)initWithArticle:(id)arg1 adProvider:(id)arg2 adMetadataFactory:(id)arg3 settings:(id)arg4 device:(id)arg5 layoutOptionsFactory:(id)arg6;
+- (id)initWithArticle:(id)arg1 issue:(id)arg2 adProvider:(id)arg3 adControllerFactory:(id)arg4 adMetadataFactory:(id)arg5 device:(id)arg6 layoutOptionsFactory:(id)arg7 subscriptionAdContextProvider:(id)arg8;
+- (id)issue;
 - (id)layoutOptionsFactory;
-- (id)settings;
+- (id)subscriptionAdContextProvider;
 
 @end

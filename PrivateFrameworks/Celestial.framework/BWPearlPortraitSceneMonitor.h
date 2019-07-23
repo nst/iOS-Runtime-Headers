@@ -37,6 +37,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) float focusDistanceToMaxAllowedFocusDistanceRatio;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool portraitSceneMonitoringRequiresStageThresholds;
 @property (readonly) Class superclass;
@@ -44,6 +45,7 @@
 + (void)initialize;
 
 - (void)dealloc;
+- (float)focusDistanceToMaxAllowedFocusDistanceRatio;
 - (void)focusScanDidComplete;
 - (id)initWithTuningParameters:(id)arg1 attachDebugFrameStatistics:(bool)arg2;
 - (bool)portraitSceneMonitoringRequiresStageThresholds;

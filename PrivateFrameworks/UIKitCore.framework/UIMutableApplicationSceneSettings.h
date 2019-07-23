@@ -6,6 +6,7 @@
 
 @property (nonatomic) unsigned long long artworkSubtype;
 @property (nonatomic) bool canShowAlerts;
+@property (nonatomic, retain) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property (nonatomic) unsigned long long deactivationReasons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -36,6 +37,7 @@
 - (bool)canShowAlerts;
 - (Class)canvasClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)cornerRadiusConfiguration;
 - (unsigned long long)deactivationReasons;
 - (long long)deviceOrientation;
 - (bool)deviceOrientationEventsEnabled;
@@ -52,6 +54,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsetsPortraitUpsideDown;
 - (void)setArtworkSubtype:(unsigned long long)arg1;
 - (void)setCanShowAlerts:(bool)arg1;
+- (void)setCornerRadiusConfiguration:(id)arg1;
 - (void)setDeactivationReasons:(unsigned long long)arg1;
 - (void)setDeviceOrientation:(long long)arg1;
 - (void)setDeviceOrientationEventsEnabled:(bool)arg1;

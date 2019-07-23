@@ -4,12 +4,14 @@
 
 @interface AUPasscodeCodecConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSString * _algorithmName;
+    long long  _callbackTimingMSec;
     long long  _numChannels;
     long long  _payloadLengthBytes;
     long long  _sampleRate;
 }
 
 @property (nonatomic, retain) NSString *algorithmName;
+@property (nonatomic) long long callbackTimingMSec;
 @property (nonatomic) long long numChannels;
 @property (nonatomic) long long payloadLengthBytes;
 @property (nonatomic) long long sampleRate;
@@ -19,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)__setDefaultValues;
 - (id)algorithmName;
+- (long long)callbackTimingMSec;
 - (id)commandLineOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -29,6 +32,7 @@
 - (long long)payloadLengthBytes;
 - (long long)sampleRate;
 - (void)setAlgorithmName:(id)arg1;
+- (void)setCallbackTimingMSec:(long long)arg1;
 - (void)setNumChannels:(long long)arg1;
 - (void)setPayloadLengthBytes:(long long)arg1;
 - (void)setSampleRate:(long long)arg1;

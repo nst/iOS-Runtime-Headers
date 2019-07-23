@@ -67,6 +67,7 @@
 - (void)_setupPageViewController;
 - (bool)_shouldHandleAnnotationAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_syncPageIndexToScrollView;
+- (void)_tileRefresh;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageToPageView:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageViewToPage:(id)arg1;
 - (double)_unboundAutoScaleFactorForPage:(id)arg1;
@@ -88,10 +89,10 @@
 - (double)autoScaleFactor;
 - (double)autoScaleFactorForPage:(id)arg1;
 - (double)autoScaleFactorForPageWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (struct CGSize { double x1; double x2; })autoScalePageSize;
 - (bool)autoScales;
 - (bool)automaticallyHandleGutter;
 - (id)backgroundColor;
+- (bool)backgroundImagesEnabled;
 - (void)beginPDFViewRotation;
 - (void)callPageVisibilityDelegateMethod:(int)arg1 forPageView:(id)arg2 atPageIndex:(unsigned long long)arg3;
 - (void)callPageVisibilityDelegateMethodForOverlayAdaptorOnly:(int)arg1 forPageView:(id)arg2 atPageIndex:(unsigned long long)arg3;
@@ -141,7 +142,6 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })documentMargins;
 - (id)documentScrollView;
 - (id)documentView;
-- (struct CGPoint { double x1; double x2; })documentViewCenterBeforeRotation;
 - (id)documentViewController;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentViewFrustumForSelection:(id)arg1;
 - (void)documentWasUnlocked;
@@ -153,6 +153,7 @@
 - (void)drawAccessibilityNodeType:(int)arg1 enableDrawing:(bool)arg2;
 - (void)drawPage:(id)arg1 toContext:(struct CGContext { }*)arg2;
 - (void)drawPagePost:(id)arg1 toContext:(struct CGContext { }*)arg2;
+- (void)enableBackgroundImages:(bool)arg1;
 - (bool)enableDataDetectors;
 - (void)enablePageShadows:(bool)arg1;
 - (bool)enableSelectionDrawing;
@@ -162,7 +163,6 @@
 - (void)endPDFViewRotation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })extendedRootViewBounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })extensionViewBoundsInDocument;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })extensionViewFrame;
 - (double)extensionViewZoomScale;
 - (void)findVisiblePages;
 - (bool)flipsTileContents;
@@ -193,7 +193,6 @@
 - (id)highlightedSelections;
 - (void)hintScrollDirectionHorizontal:(unsigned long long)arg1 andVertical:(unsigned long long)arg2;
 - (id)history;
-- (double)horizontalScaleFactorBeforeRotation;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)interactWithAnnotation:(id)arg1;
@@ -257,6 +256,7 @@
 - (void)setAkToolbarViewTintColor:(id)arg1;
 - (void)setAutoScales:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setBackgroundImage:(id)arg1 forPage:(id)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCurrentSelection:(id)arg1;
 - (void)setCurrentSelection:(id)arg1 animate:(bool)arg2;
@@ -278,8 +278,6 @@
 - (void)setEnablePageShadows:(bool)arg1;
 - (void)setEnableSelectionDrawing:(bool)arg1;
 - (void)setEnableTileUpdates:(bool)arg1;
-- (void)setExtensionViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setExtensionViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setForcesTopAlignment:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGreekingThreshold:(double)arg1;
@@ -317,7 +315,7 @@
 - (id)tapGestureRecognizer;
 - (int)textSelectionState;
 - (void)updateCurrentPageUsingViewCenter;
-- (void)updatePDFViewLayout:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 boundsInView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 scrollViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 zoomScale:(double)arg4;
+- (void)updatePDFViewLayout:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scrollViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomScale:(double)arg3;
 - (void)usePageViewController:(bool)arg1 withViewOptions:(id)arg2;
 - (bool)usesPageLabels;
 - (id)viewForPage:(id)arg1;
@@ -326,13 +324,9 @@
 - (void)zoomIn:(id)arg1;
 - (void)zoomOut:(id)arg1;
 
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+// Image: /System/Library/PrivateFrameworks/News/NewsArticles.framework/NewsArticles
 
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilityQuickSpeakContent;
-- (void)_accessibilityQuickSpeakTextRectsWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 string:(id)arg2 highlightRects:(id)arg3 sentenceRects:(id)arg4 singleTextRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5;
-- (id)_accessibilitySpeakTextSelectionViews;
-- (void)_axConvertRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toRects:(id)arg2 operatingPage:(id)arg3;
+- (id)na_documentScrollView;
+- (void)na_setBackgroundImage:(id)arg1 forPage:(id)arg2;
 
 @end

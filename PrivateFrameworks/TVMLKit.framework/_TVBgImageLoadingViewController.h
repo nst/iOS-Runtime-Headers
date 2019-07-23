@@ -12,8 +12,9 @@
         bool respondsToBlurEffectStyle; 
         bool respondsToPurgeBgImages; 
         bool respondsToConfigureBgImageBackdropImage; 
+        bool respondsToShouldLoadBackgroundImageAsynchronously; 
     }  _bgImageLoadingOptions;
-    TVImageProxy * _bgImageProxy;
+    id  _imageProxy;
     bool  _loaded;
     IKViewElement * _navigationItemElement;
     UIView * _rightLargeTitleButton;
@@ -37,6 +38,8 @@
 - (bool)_isBackdropNeeded;
 - (long long)_overrideLargeTitleDisplayMode;
 - (void)_reparentNavigationItem:(id)arg1;
+- (bool)_shouldLoadBackgroundImageAsynchronously;
+- (id)_stackViewWithMinSpacing:(double)arg1 layoutMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)_updateNavigationBarPadding;
 - (void)_updateNavigationItem;
 - (bool)appliedNavigationItem;

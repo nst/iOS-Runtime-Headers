@@ -10,7 +10,7 @@
     void serverProxy.storage;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (void)clientConfigurationWithUpdateConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (void)credential:(id /* block */)arg1;
 - (void)credentialNotAuthorizedWithCredential:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;

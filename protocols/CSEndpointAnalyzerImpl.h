@@ -10,9 +10,10 @@
 - (<CSEndpointAnalyzerDelegate> *)delegate;
 - (void)processAudioSamplesAsynchronously:(CSAudioChunk *)arg1;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(NSDictionary *)arg2;
 - (void)setActiveChannel:(unsigned long long)arg1;
 - (void)setDelegate:(id <CSEndpointAnalyzerDelegate>)arg1;
+- (double)trailingSilenceDurationAtEndpoint;
 
 @optional
 

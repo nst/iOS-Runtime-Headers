@@ -25,7 +25,9 @@
 - (void)analyzeWavData:(id)arg1 numSamples:(unsigned long long)arg2;
 - (id)delegate;
 - (id)getAnalyzedResult;
+- (float)getLoggingThreshold;
 - (id)getSuperVectorWithEndPoint:(unsigned long long)arg1;
+- (float)getThreshold;
 - (id)initWithConfigPath:(id)arg1 resourcePath:(id)arg2;
 - (void)processAudioChunk:(id)arg1;
 - (void)reset;

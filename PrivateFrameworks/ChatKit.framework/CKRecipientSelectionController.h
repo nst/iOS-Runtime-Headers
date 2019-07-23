@@ -65,6 +65,7 @@
 - (id)_canonicalRecipientAddresses;
 - (void)_dismissPeoplePicker;
 - (void)_handleAddressBookChangedNotification:(id)arg1;
+- (void)_handleAddressBookPartialChangedNotification:(id)arg1;
 - (void)_handleConversationPreferredServiceDidChangeNotification:(id)arg1;
 - (void)_handleRecipientAvailabilityTimeout:(id)arg1;
 - (void)_handleRecipientViewChanged:(id)arg1;

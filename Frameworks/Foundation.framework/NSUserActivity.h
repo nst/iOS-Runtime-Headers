@@ -203,6 +203,11 @@
 - (id)ndefMessagePayload;
 - (void)setNdefMessagePayload:(id)arg1;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)_hk_userActivityForAtrialFibrillationEventType;
++ (id)_hk_userActivityForElectrocardiogramType;
+
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;

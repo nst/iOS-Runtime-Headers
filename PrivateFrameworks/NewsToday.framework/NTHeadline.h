@@ -16,6 +16,7 @@
     bool  _hiddenFromAutoFavorites;
     bool  _hiddenFromFeeds;
     NSString * _identifier;
+    NSString * _language;
     bool  _needsSeenStateTracking;
     NTHeadlinePersonalizationMetadata * _personalizationMetadata;
     SFSearchResult * _searchResult;
@@ -40,6 +41,7 @@
     unsigned long long  _thumbnailSizePreset;
     NSString * _title;
     NSString * _titleCompact;
+    NSArray * _topicIDs;
     NSString * _videoCallToActionTitle;
     NSURL * _videoCallToActionURL;
     double  _videoDuration;
@@ -64,6 +66,7 @@
 @property (getter=isHiddenFromFeeds, nonatomic) bool hiddenFromFeeds;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) unsigned long long itemType;
+@property (nonatomic, copy) NSString *language;
 @property (nonatomic) bool needsSeenStateTracking;
 @property (nonatomic, copy) NTHeadlinePersonalizationMetadata *personalizationMetadata;
 @property (nonatomic, copy) SFSearchResult *searchResult;
@@ -80,6 +83,7 @@
 @property (nonatomic) unsigned long long thumbnailSizePreset;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *titleCompact;
+@property (nonatomic, copy) NSArray *topicIDs;
 @property (nonatomic, copy) NSString *videoCallToActionTitle;
 @property (nonatomic, copy) NSURL *videoCallToActionURL;
 @property (nonatomic) double videoDuration;
@@ -111,6 +115,7 @@
 - (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
 - (unsigned long long)itemType;
+- (id)language;
 - (bool)needsSeenStateTracking;
 - (id)personalizationMetadata;
 - (id)searchResult;
@@ -126,6 +131,7 @@
 - (void)setHiddenFromAutoFavorites:(bool)arg1;
 - (void)setHiddenFromFeeds:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setNeedsSeenStateTracking:(bool)arg1;
 - (void)setNewsURL:(id)arg1;
 - (void)setPersonalizationMetadata:(id)arg1;
@@ -142,6 +148,7 @@
 - (void)setThumbnailSizePreset:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleCompact:(id)arg1;
+- (void)setTopicIDs:(id)arg1;
 - (void)setVideoCallToActionTitle:(id)arg1;
 - (void)setVideoCallToActionURL:(id)arg1;
 - (void)setVideoDuration:(double)arg1;
@@ -159,6 +166,7 @@
 - (unsigned long long)thumbnailSizePreset;
 - (id)title;
 - (id)titleCompact;
+- (id)topicIDs;
 - (id)videoCallToActionTitle;
 - (id)videoCallToActionURL;
 - (double)videoDuration;

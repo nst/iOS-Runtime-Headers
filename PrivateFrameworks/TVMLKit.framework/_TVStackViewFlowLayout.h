@@ -3,21 +3,44 @@
  */
 
 @interface _TVStackViewFlowLayout : _TVCollectionViewFlowLayout {
+    IKChangeSet * _changeSet;
+    NSIndexSet * _indexesAddedAtEnd;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _initialContentOffset;
+    bool  _isFullReplace;
     id /* block */  _onPrepareLayout;
+    double  _showcaseFactor;
+    double  _showcaseHeight;
+    <_TVStackViewDelegateFlowLayout> * _stackViewDelegateFlowLayout;
+    struct { 
+        bool hasShowcaseFactorDidChange; 
+    }  _stackViewDelegateFlowLayoutFlags;
     NSArray * _supplementaryCellLayoutAttributes;
 }
 
 @property (nonatomic, copy) id /* block */ onPrepareLayout;
+@property (nonatomic, readonly) double showcaseFactor;
+@property (nonatomic) double showcaseHeight;
 @property (nonatomic, copy) NSArray *supplementaryCellLayoutAttributes;
 
++ (Class)layoutAttributesClass;
+
 - (void).cxx_destruct;
+- (double)_computeShowcaseFactorForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id /* block */)onPrepareLayout;
 - (void)prepareLayout;
 - (void)setOnPrepareLayout:(id /* block */)arg1;
+- (void)setShowcaseHeight:(double)arg1;
 - (void)setSupplementaryCellLayoutAttributes:(id)arg1;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)showcaseFactor;
+- (double)showcaseHeight;
 - (id)supplementaryCellLayoutAttributes;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKParticipant : EKObject <EKIdentityProtocol, NSCopying> {
+@interface EKParticipant : EKObject <EKIdentityProtocol, EKParticipantSemanticIdentifierGeneratorDelegate, NSCopying> {
     EKCalendarItem * _owner;
 }
 
@@ -39,6 +39,7 @@
 - (id)comment;
 - (id)contactPredicate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)displayName;
 - (id)displayNameRaw;
 - (id)emailAddress;
 - (id)firstName;
@@ -72,6 +73,7 @@
 - (void)setProposedStartDateStatus:(int)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUUID:(id)arg1;
+- (id)url;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 

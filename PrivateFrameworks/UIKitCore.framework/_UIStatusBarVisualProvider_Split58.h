@@ -5,6 +5,7 @@
 @interface _UIStatusBarVisualProvider_Split58 : _UIStatusBarVisualProvider_Split
 
 + (double)baselineBottomInset;
++ (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double*)arg3;
 + (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })expandedEdgeInsets;
 + (id)expandedFont;
 + (double)itemSpacing;
@@ -17,6 +18,7 @@
 + (struct CGSize { double x1; double x2; })pillSize;
 + (double)referenceWidth;
 
+- (id)stringForCellularType:(long long)arg1 condensed:(bool)arg2;
 - (id)styleAttributes;
 
 @end

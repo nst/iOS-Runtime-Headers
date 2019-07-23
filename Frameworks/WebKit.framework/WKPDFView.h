@@ -21,7 +21,7 @@
     struct RetainPtr<UIView> { 
         void *m_ptr; 
     }  _fixedOverlayView;
-    struct optional<unsigned long> { 
+    struct Optional<unsigned long> { 
         bool init_; 
         union constexpr_storage_t<unsigned long> { 
             unsigned char dummy_; 
@@ -39,9 +39,11 @@
     struct RetainPtr<UIView> { 
         void *m_ptr; 
     }  _pageNumberIndicator;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
-    }  _password;
+    struct CString { 
+        struct RefPtr<WTF::CStringBuffer, WTF::DumbPtrTraits<WTF::CStringBuffer> > { 
+            struct CStringBuffer {} *m_ptr; 
+        } m_buffer; 
+    }  _passwordForPrinting;
     struct InteractionInformationAtPosition { 
         struct InteractionInformationRequest { 
             struct IntPoint { 
@@ -51,7 +53,7 @@
             bool includeSnapshot; 
             bool includeLinkIndicator; 
         } request; 
-        bool nodeAtPositionIsAssistedNode; 
+        bool nodeAtPositionIsFocusedElement; 
         bool hasSelectionAtPosition; 
         bool isSelectable; 
         bool isNearMarkedText; 
@@ -62,6 +64,7 @@
         bool isAnimatedImage; 
         bool isElement; 
         bool isDataDetectorLink; 
+        bool preventTextInteraction; 
         struct FloatPoint { 
             float m_x; 
             float m_y; 
@@ -252,7 +255,7 @@
 - (void)pdfHostViewController:(id)arg1 goToURL:(id)arg2;
 - (void)pdfHostViewController:(id)arg1 updatePageCount:(long long)arg2;
 - (void)pdfHostViewControllerExtensionProcessDidCrash:(id)arg1;
-- (struct optional<WebKit::InteractionInformationAtPosition> { bool x1; union storage_t<WebKit::InteractionInformationAtPosition> { unsigned char x_2_1_1; struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_4_1; int x_1_4_2; } x_1_3_1; bool x_1_3_2; bool x_1_3_3; } x_2_2_1; bool x_2_2_2; bool x_2_2_3; bool x_2_2_4; bool x_2_2_5; bool x_2_2_6; bool x_2_2_7; bool x_2_2_8; bool x_2_2_9; bool x_2_2_10; bool x_2_2_11; bool x_2_2_12; struct FloatPoint { float x_13_3_1; float x_13_3_2; } x_2_2_13; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_14_3_1; unsigned int x_14_3_2 : 1; unsigned int x_14_3_3 : 1; unsigned int x_14_3_4 : 1; unsigned int x_14_3_5 : 3; unsigned int x_14_3_6 : 26; unsigned int x_14_3_7; unsigned int x_14_3_8; unsigned int x_14_3_9; unsigned int x_14_3_10; unsigned int x_14_3_11; unsigned int x_14_3_12; unsigned int x_14_3_13; } x_2_2_14; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_15_3_1; unsigned int x_15_3_2 : 1; unsigned int x_15_3_3 : 1; unsigned int x_15_3_4 : 1; unsigned int x_15_3_5 : 3; unsigned int x_15_3_6 : 26; unsigned int x_15_3_7; unsigned int x_15_3_8; unsigned int x_15_3_9; unsigned int x_15_3_10; unsigned int x_15_3_11; unsigned int x_15_3_12; unsigned int x_15_3_13; } x_2_2_15; } x_2_1_2; } x2; })positionInformationForActionSheetAssistant:(id)arg1;
+- (struct Optional<WebKit::InteractionInformationAtPosition> { bool x1; union storage_t<WebKit::InteractionInformationAtPosition> { unsigned char x_2_1_1; struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_4_1; int x_1_4_2; } x_1_3_1; bool x_1_3_2; bool x_1_3_3; } x_2_2_1; bool x_2_2_2; bool x_2_2_3; bool x_2_2_4; bool x_2_2_5; bool x_2_2_6; bool x_2_2_7; bool x_2_2_8; bool x_2_2_9; bool x_2_2_10; bool x_2_2_11; bool x_2_2_12; bool x_2_2_13; struct FloatPoint { float x_14_3_1; float x_14_3_2; } x_2_2_14; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_15_3_1; unsigned int x_15_3_2 : 1; unsigned int x_15_3_3 : 1; unsigned int x_15_3_4 : 1; unsigned int x_15_3_5 : 3; unsigned int x_15_3_6 : 26; unsigned int x_15_3_7; unsigned int x_15_3_8; unsigned int x_15_3_9; unsigned int x_15_3_10; unsigned int x_15_3_11; unsigned int x_15_3_12; unsigned int x_15_3_13; } x_2_2_15; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_16_3_1; unsigned int x_16_3_2 : 1; unsigned int x_16_3_3 : 1; unsigned int x_16_3_4 : 1; unsigned int x_16_3_5 : 3; unsigned int x_16_3_6 : 26; unsigned int x_16_3_7; unsigned int x_16_3_8; unsigned int x_16_3_9; unsigned int x_16_3_10; unsigned int x_16_3_11; unsigned int x_16_3_12; unsigned int x_16_3_13; } x_2_2_16; } x_2_1_2; } x2; })positionInformationForActionSheetAssistant:(id)arg1;
 - (void)web_beginAnimatedResizeWithUpdates:(id /* block */)arg1;
 - (void)web_computedContentInsetDidChange;
 - (id)web_contentView;
@@ -260,6 +263,7 @@
 - (id)web_dataRepresentation;
 - (void)web_didSameDocumentNavigation:(unsigned int)arg1;
 - (void)web_findString:(id)arg1 options:(unsigned long long)arg2 maxCount:(unsigned long long)arg3;
+- (bool)web_handleKeyEvent:(id)arg1;
 - (void)web_hideFindUI;
 - (id)web_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 webView:(id)arg2 mimeType:(id)arg3;
 - (bool)web_isBackground;

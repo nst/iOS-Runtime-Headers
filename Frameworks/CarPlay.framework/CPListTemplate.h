@@ -8,6 +8,7 @@
     NSString * _title;
 }
 
+@property (nonatomic, retain) CPBarButton *backButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CPListTemplateDelegate> *delegate;
 @property (readonly, copy) NSString *description;

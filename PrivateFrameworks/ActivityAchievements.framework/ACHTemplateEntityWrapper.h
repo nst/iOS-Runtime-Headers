@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)allTemplatesWithError:(id*)arg1;
 - (id)initWithProfile:(id)arg1;
-- (bool)insertTemplates:(id)arg1 provenance:(long long)arg2 error:(id*)arg3;
+- (bool)insertTemplates:(id)arg1 provenance:(long long)arg2 databaseContext:(id)arg3 error:(id*)arg4;
 - (id)profile;
 - (bool)removeTemplates:(id)arg1 error:(id*)arg2;
 - (void)setProfile:(id)arg1;

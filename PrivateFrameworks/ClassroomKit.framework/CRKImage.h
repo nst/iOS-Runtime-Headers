@@ -2,8 +2,52 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKImage : UIImage
+@interface CRKImage : NSObject <NSCopying, NSSecureCoding> {
+    bool  _horizontallyFlipped;
+    UIImage * _underlyingImage;
+}
 
-+ (id)imageWithContentsOfFile:(id)arg1;
+@property (nonatomic, readonly, copy) NSData *PNGRepresentation;
+@property (nonatomic, copy) NSString *accessibilityDescription;
+@property (getter=isHorizontallyFlipped, nonatomic) bool horizontallyFlipped;
+@property (nonatomic, readonly) CRKImage *localizedImage;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, retain) UIImage *underlyingImage;
+
++ (id)imageNamed:(id)arg1;
++ (id)imageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)imageWithCGImage:(struct CGImage { }*)arg1;
++ (id)imageWithData:(id)arg1;
++ (id)imageWithUnderlyingImage:(id)arg1;
++ (bool)supportsSecureCoding;
++ (id)templateImageNamed:(id)arg1;
++ (id)templateImageNamed:(id)arg1 inBundle:(id)arg2;
+
+- (void).cxx_destruct;
+- (id)JPEGRepresentationWithCompressionFactor:(double)arg1;
+- (id)PNGRepresentation;
+- (id)accessibilityDescription;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)flippedUnderlyingImage;
+- (unsigned long long)hash;
+- (id)imageByAspectFittingToBox:(struct CGSize { double x1; double x2; })arg1;
+- (id)imageByEnlargingCanvasToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)imageByResizingToSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithUnderlyingImage:(id)arg1;
+- (id)initWithUnderlyingImage:(id)arg1 horizontallyFlipped:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToImage:(id)arg1;
+- (bool)isHorizontallyFlipped;
+- (bool)isLargerThanSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)layoutIsLeftToRight;
+- (id)localizedImage;
+- (void)setAccessibilityDescription:(id)arg1;
+- (void)setHorizontallyFlipped:(bool)arg1;
+- (void)setUnderlyingImage:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (id)underlyingImage;
 
 @end

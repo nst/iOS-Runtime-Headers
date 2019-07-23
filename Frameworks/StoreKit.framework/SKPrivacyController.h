@@ -5,6 +5,7 @@
 @interface SKPrivacyController : NSObject
 
 + (id)sharedInstance;
++ (void)validatePermissionsExpiryWithCompletion:(id /* block */)arg1;
 
 - (long long)authorizationStatus;
 - (void)requestAuthorization:(id /* block */)arg1;

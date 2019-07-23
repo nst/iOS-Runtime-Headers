@@ -33,6 +33,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)absoluteCellTractRefForHostCell:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg1;
+- (id)absoluteCellTractRefForHostCell:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg1 offTable:(bool*)arg2;
 - (void)addColumn:(unsigned short)arg1;
 - (void)addColumnRange:(const struct TSUIndexRange { long long x1; long long x2; }*)arg1;
 - (void)addRelativeColumn:(short)arg1;
@@ -41,7 +42,7 @@
 - (void)addRelativeRowRange:(const struct TSUIndexRange { long long x1; long long x2; }*)arg1;
 - (void)addRow:(unsigned int)arg1;
 - (void)addRowRange:(const struct TSUIndexRange { long long x1; long long x2; }*)arg1;
-- (void)adjustRelativeIndexesBy:(const struct { int x1; int x2; }*)arg1;
+- (void)adjustRelativeIndexesBy:(const struct TSUColumnRowOffset { int x1; int x2; }*)arg1;
 - (const struct TSUIndexSet { unsigned int x1 : 1; unsigned int x2 : 1; struct TSUIndexRange { long long x_3_1_1; long long x_3_1_2; } x3; struct { /* ? */ } *x4; }*)columns;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
@@ -53,13 +54,16 @@
 - (id)initWithTableUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1 preserveFlags:(const struct TSUPreserveFlags { unsigned char x1; }*)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isRectangularRange;
+- (bool)isSingleCellOrSpanningRange;
 - (unsigned int)numColumns;
 - (unsigned int)numRelativeColumns;
 - (unsigned int)numRelativeRows;
 - (unsigned int)numRows;
 - (struct TSUPreserveFlags { unsigned char x1; })preserveFlags;
+- (void)preserveFlagsFixingInversionsForTract:(id)arg1 absFromRelColumns:(const struct TSUIndexSet { unsigned int x1 : 1; unsigned int x2 : 1; struct TSUIndexRange { long long x_3_1_1; long long x_3_1_2; } x3; struct { /* ? */ } *x4; }*)arg2 absFromRelRows:(const struct TSUIndexSet { unsigned int x1 : 1; unsigned int x2 : 1; struct TSUIndexRange { long long x_3_1_1; long long x_3_1_2; } x3; struct { /* ? */ } *x4; }*)arg3;
 - (bool)preserveRectangular;
 - (struct TSCERelativeCellCoordinate { int x1; short x2; bool x3; bool x4; })relativeBottomRight;
+- (struct { struct TSCERelativeCellCoordinate { int x_1_1_1; short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct TSCERelativeCellCoordinate { int x_2_1_1; short x_2_1_2; bool x_2_1_3; bool x_2_1_4; } x2; })relativeBoundingRangeWithContainingCell:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg1;
 - (const struct TSUIndexSet { unsigned int x1 : 1; unsigned int x2 : 1; struct TSUIndexRange { long long x_3_1_1; long long x_3_1_2; } x3; struct { /* ? */ } *x4; }*)relativeColumns;
 - (const struct TSUIndexSet { unsigned int x1 : 1; unsigned int x2 : 1; struct TSUIndexRange { long long x_3_1_1; long long x_3_1_2; } x3; struct { /* ? */ } *x4; }*)relativeRows;
 - (struct TSCERelativeCellCoordinate { int x1; short x2; bool x3; bool x4; })relativeTopLeft;

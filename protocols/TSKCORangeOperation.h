@@ -5,6 +5,6 @@
 
 @required
 
-- (TSKCORangeAddress *)address;
+- (const struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)rangeVector;
 
 @end

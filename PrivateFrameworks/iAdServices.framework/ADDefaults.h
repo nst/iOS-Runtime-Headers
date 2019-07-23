@@ -16,11 +16,13 @@
 + (id)arrayForKey:(id)arg1;
 + (bool)boolForKey:(id)arg1;
 + (bool)defaultIsSetForKey:(id)arg1;
++ (id)dictionaryForKey:(id)arg1;
 + (double)doubleForKey:(id)arg1;
 + (id)factoryDefaults;
 + (long long)integerForKey:(id)arg1;
 + (void)setArray:(id)arg1 forKey:(id)arg2;
 + (void)setBool:(bool)arg1 forKey:(id)arg2;
++ (void)setDictionary:(id)arg1 forKey:(id)arg2;
 + (void)setDouble:(double)arg1 forKey:(id)arg2;
 + (void)setInteger:(long long)arg1 forKey:(id)arg2;
 + (void)setString:(id)arg1 forKey:(id)arg2;

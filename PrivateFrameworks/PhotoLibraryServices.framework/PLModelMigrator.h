@@ -41,7 +41,7 @@
 + (id)_dateWithiTunesTimeInterval:(double)arg1;
 + (bool)_deleteAllMemoriesInStore:(id)arg1;
 + (bool)_deleteAllMomentsViaSQLFromStore:(id)arg1;
-+ (bool)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
++ (bool)_deleteCloudSharedAndSynced:(bool)arg1 assetReferencesInStore:(id)arg2;
 + (bool)_deleteOrphanedUnverifiedPeople:(id)arg1;
 + (bool)_deletePersistentHistoryInStore:(id)arg1;
 + (bool)_deletePersonsMissingUUIDInStore:(id)arg1;
@@ -218,7 +218,6 @@
 + (bool)_repushAssetsWithNewGroupingPropertiesInStore:(id)arg1;
 + (bool)_repushMemoriesWithNewFeaturesInStore:(id)arg1;
 + (bool)_repushPersonsWithMergeTargetInStore:(id)arg1;
-+ (bool)_repushVideoAssetsInStore:(id)arg1;
 + (bool)_resetAlbumToFolderOrderKeyForAlbums:(id)arg1;
 + (bool)_resetAnalysisStateForVideosInStore:(id)arg1;
 + (bool)_resetDupesAnalysisInStore:(id)arg1;
@@ -339,6 +338,7 @@
 + (bool)resetManualOrderForNonFavoritePeopleInManagedObjectContext:(id)arg1;
 + (bool)resetManualOrderForNonFavoritePeopleInStore:(id)arg1;
 + (bool)resetRejectedFacesOnAllPersonsInStore:(id)arg1;
++ (bool)restartingAfterDeviceToDeviceRestoreFromBackup;
 + (bool)restartingAfterNonCloudRestoreFromBackup;
 + (bool)restartingAfterOTAMigration;
 + (bool)restartingAfterRestoreFromBackup;

@@ -10,7 +10,7 @@
 @property (nonatomic) bool enabled;
 @property (nonatomic) long long type;
 
-+ (id)convertFromEmergencyMode:(const struct EmergencyMode { bool x1; int x2; int x3; }*)arg1;
++ (id)convertFromEmergencyMode:(const struct EmergencyMode { int x1; int x2; int x3; }*)arg1;
 + (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

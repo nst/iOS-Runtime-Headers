@@ -3,9 +3,10 @@
  */
 
 @interface NWConcrete_nw_context : NSObject <OS_nw_context> {
-    struct atomic_flag { 
-        bool _Value; 
-    }  activated;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  activate_lock;
+    unsigned int  activated;
     struct nw_hash_table { } * address_endpoints;
     struct nw_mem_buffer_manager { } * buffer_manager_128;
     struct nw_mem_buffer_manager { } * buffer_manager_16;

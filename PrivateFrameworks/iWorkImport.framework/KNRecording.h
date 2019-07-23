@@ -30,7 +30,7 @@
 - (id)movieTrack;
 - (id)recordingByMarkingAsOutOfSyncWithShow:(bool)arg1 withLocalOutOfSyncToken:(id)arg2 restoringModificationDate:(id)arg3;
 - (id)recordingByReplacingAfterTime:(double)arg1 withRecording:(id)arg2 trimmedMovieSegment:(id)arg3;
-- (void)saveToArchive:(struct RecordingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Reference {} *x6; double x7; struct Date {} *x8; struct RecordingSyncState {} *x9; int x10; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct RecordingArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct Reference {} *x6; struct Date {} *x7; struct RecordingSyncState {} *x8; double x9; int x10; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)slideNodeWasAddedToDocument:(id)arg1;
 - (void)slideNodeWillBeRemovedFromDocument:(id)arg1;

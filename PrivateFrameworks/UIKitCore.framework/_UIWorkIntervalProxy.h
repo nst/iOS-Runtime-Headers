@@ -4,7 +4,10 @@
 
 @interface _UIWorkIntervalProxy : NSObject {
     bool  _complex;
+    double  _frameDuration;
     struct work_interval_instance { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; } * _instance;
+    bool  _started;
+    double  _targetTimestamp;
 }
 
 - (void)dealloc;

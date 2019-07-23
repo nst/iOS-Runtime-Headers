@@ -52,7 +52,7 @@
 - (void)_updateHistoricTrafficDensity:(double)arg1 staticTravelTime:(double)arg2;
 - (void)_updateTrafficDensityDescription:(id)arg1;
 - (void)_updateTrafficIncidents:(id)arg1;
-- (void)_updateTravelStateHasArrived:(bool)arg1 isTraveling:(bool)arg2 travelScore:(double)arg3;
+- (void)_updateTravelStateHasArrived:(bool)arg1 isTraveling:(bool)arg2 travelScore:(double)arg3 isNavigating:(bool)arg4 isNavigatingToDestination:(bool)arg5;
 - (id)aggressiveDepartureDate;
 - (double)aggressiveTravelTime;
 - (id)conservativeDepartureDate;

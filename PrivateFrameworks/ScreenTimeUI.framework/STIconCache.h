@@ -26,6 +26,7 @@
 - (void)_handleiTunesResponseForAppInfo:(id)arg1 response:(id)arg2 data:(id)arg3 error:(id)arg4;
 - (void)_updateCacheWithImage:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_updateCacheWithImage:(id)arg1 dsid:(id)arg2;
+- (void)addObserver:(id)arg1 selector:(SEL)arg2 bundleIdentifier:(id)arg3;
 - (id)blankSpaceImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)bundleIdentifiersWithPendingRequests;
 - (id)circleImageWithFillColor:(id)arg1 fillDiameter:(double)arg2 outlineColor:(id)arg3 outlineWidth:(double)arg4;
@@ -39,6 +40,7 @@
 - (id)monogrammer;
 - (id)personImageWithDSID:(id)arg1 fullName:(id)arg2;
 - (id)personNameComponentsFormatter;
+- (void)removeObserver:(id)arg1 bundleIdentifier:(id)arg2;
 - (id)roundedImageForImageWithName:(id)arg1;
 - (void)setMonogrammer:(id)arg1;
 - (void)setPersonNameComponentsFormatter:(id)arg1;

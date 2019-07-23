@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UINavigationBar : UIView <DebugHierarchyObject_Fallback, NSCoding, UIAccessibilityHUDGestureDelegate, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal> {
+@interface UINavigationBar : UIView <NSCoding, UIAccessibilityHUDGestureDelegate, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal> {
     double  __backgroundOpacity;
     double  __overrideBackgroundExtension;
     bool  __startedAnimationTracking;
@@ -299,16 +299,6 @@
 - (bool)_wantsLargeTitleDisplayed;
 - (bool)_wantsLetterpressContent;
 - (void)_willMoveToWindow:(id)arg1;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (bool)alwaysUseDefaultMetrics;
 - (long long)animationDisabledCount;
@@ -331,11 +321,13 @@
 - (long long)currentContentSize;
 - (id)currentLeftView;
 - (id)currentRightView;
+- (void)dealloc;
 - (double)defaultBackButtonAlignmentHeight;
 - (double)defaultHeight;
 - (double)defaultHeightForMetrics:(long long)arg1;
 - (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(long long)arg1;
 - (id)delegate;
+- (id)description;
 - (void)didAddSubview:(id)arg1;
 - (void)disableAnimation;
 - (void)drawBackButtonBackgroundInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withStyle:(long long)arg2 pressed:(bool)arg3;
@@ -449,9 +441,11 @@
 
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (id)ts_barButtonViews;
 - (void)ts_clearAccessibilityElementsCache;
+- (id)ts_contentView;
+- (void)ts_setBackgroundEffects:(id)arg1;
 - (void)ts_setBlurthroughBackground;
-- (void)ts_setPrefersLargeTitles:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

@@ -48,8 +48,6 @@
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSTimer *updateTimer;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_activeInstances;
 + (void)_deregisterActiveInstance:(id)arg1;
 + (void)_registerActiveInstance:(id)arg1;
@@ -72,11 +70,6 @@
 - (void)_setPredictions:(id)arg1 autocorrection:(id)arg2 emojiList:(id)arg3;
 - (bool)_shouldUpdatePredictions;
 - (void)_updateAssistantBarForPredictionViewState:(int)arg1;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptCandidate;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)acceptPredictiveInput:(id)arg1;
@@ -87,7 +80,9 @@
 - (void)contentSizeDidChange:(id)arg1;
 - (id)currentFirstTextSuggestion;
 - (void)deactivateCandidate;
+- (void)dealloc;
 - (void)delayActivateCellForPrediction:(id)arg1;
+- (id)description;
 - (void)dimKeys:(id)arg1;
 - (bool)enabled;
 - (bool)hasPredictions;

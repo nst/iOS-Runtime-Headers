@@ -15,6 +15,7 @@
     TSPDocumentRevision * _documentRevision;
     NSUUID * _documentUUID;
     NSMutableSet * _duplicatedUUIDs;
+    NSSet * _featureIdentifiers;
     TSPFinalizeHandlerQueue * _finalizeHandlerQueue;
     NSObject<OS_dispatch_queue> * _ioCompletionQueue;
     NSObject<OS_dispatch_queue> * _ioQueue;
@@ -95,6 +96,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool didRequireUpgrade;
 @property (nonatomic, readonly) TSPDocumentRevision *documentRevision;
+@property (nonatomic, readonly) NSSet *featureIdentifiers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isReadingFromDocument;
 @property (nonatomic, readonly) bool losesDataOnWrite;
@@ -117,8 +119,9 @@
 - (id)documentRevision;
 - (bool)endReading;
 - (id)externalObjectForIdentifier:(long long)arg1 componentIdentifier:(long long)arg2 isReadFinished:(bool)arg3;
+- (id)featureIdentifiers;
 - (unsigned long long)fileFormatVersion;
-- (unsigned long long)fileFormatVersionFromMetadataMessage:(const struct PackageMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct DocumentRevision {} *x6; struct RepeatedPtrField<TSP::ComponentInfo> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TSP::DataInfo> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { unsigned int *x_11_1_1; int x_11_1_2; int x_11_1_3; } x11; int x12; struct RepeatedField<unsigned int> { unsigned int *x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; int x14; unsigned long long x15; struct Reference {} *x16; int x17; }*)arg1;
+- (unsigned long long)fileFormatVersionFromMetadataMessage:(const struct PackageMetadata { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::ComponentInfo> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::DataInfo> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedField<unsigned int> { int x_7_1_1; int x_7_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_7_1_3; } x7; int x8; struct RepeatedField<unsigned int> { int x_9_1_1; int x_9_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_9_1_3; } x9; int x10; struct RepeatedField<unsigned int> { int x_11_1_1; int x_11_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_11_1_3; } x11; int x12; struct RepeatedPtrField<TSP::ComponentInfo> { struct Arena {} *x_13_1_1; int x_13_1_2; int x_13_1_3; struct Rep {} *x_13_1_4; } x13; }*)arg1;
 - (bool)hasDocumentVersionUUID;
 - (id)init;
 - (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 areExternalDataReferencesAllowed:(bool)arg5 skipDocumentUpgrade:(bool)arg6;

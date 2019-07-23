@@ -7,6 +7,7 @@
     NSNumber * _accountIdentifier;
     NSArray * _accountPermissions;
     long long  _accountStatus;
+    long long  _carrierBundlingErrorCode;
     long long  _carrierBundlingStatus;
     NSString * _cellularOperatorName;
     bool  _discoveryModeEligible;
@@ -30,6 +31,7 @@
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSArray *accountPermissions;
 @property (nonatomic) long long accountStatus;
+@property (nonatomic) long long carrierBundlingErrorCode;
 @property (nonatomic) long long carrierBundlingStatus;
 @property (nonatomic, copy) NSString *cellularOperatorName;
 @property (readonly, copy) NSString *debugDescription;
@@ -60,6 +62,7 @@
 - (id)accountIdentifier;
 - (id)accountPermissions;
 - (long long)accountStatus;
+- (long long)carrierBundlingErrorCode;
 - (long long)carrierBundlingStatus;
 - (id)cellularOperatorName;
 - (id)copyUserDefaultsRepresentation;
@@ -89,6 +92,7 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAccountPermissions:(id)arg1;
 - (void)setAccountStatus:(long long)arg1;
+- (void)setCarrierBundlingErrorCode:(long long)arg1;
 - (void)setCarrierBundlingStatus:(long long)arg1;
 - (void)setCellularOperatorName:(id)arg1;
 - (void)setDiscoveryModeEligible:(bool)arg1;

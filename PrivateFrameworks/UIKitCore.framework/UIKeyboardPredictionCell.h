@@ -34,17 +34,12 @@
 @property (nonatomic) unsigned int slotID;
 @property (nonatomic) long long state;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)fontSizeForSingleLineLayout;
 + (double)predictionCellTopPadding;
 
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)active;
 - (long long)candidateType;
+- (void)dealloc;
 - (void)dimKeys:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isAutocorrection;

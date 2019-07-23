@@ -18,6 +18,7 @@
 - (id)componentIdentifier;
 - (id)componentRole;
 - (id)componentType;
+- (id)description;
 - (id)initWithComponent:(id)arg1;
 - (id)metaData;
 

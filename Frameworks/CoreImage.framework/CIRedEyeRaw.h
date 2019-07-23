@@ -32,8 +32,10 @@
     NSNumber * inputFoobar3;
     NSNumber * inputFoobar4;
     NSNumber * inputGamma;
+    NSNumber * inputGlintThreshold;
     NSNumber * inputInterPeakMin;
     NSNumber * inputIntersect;
+    NSNumber * inputMaxInterDispersion;
     CIVector * inputMidSpectrumWhiteOffsets;
     NSNumber * inputOrientationHint;
     NSNumber * inputOrientationScale;
@@ -62,11 +64,13 @@
     NSNumber * inputSkinThreshold;
     NSNumber * inputSkinThresholdMed;
     NSNumber * inputSpecArea;
+    NSNumber * inputSpecAreaScale;
     NSNumber * inputSpecIntensity;
     NSNumber * inputSpecMax;
     NSNumber * inputSpecMin;
     NSNumber * inputSpecular;
     NSNumber * inputSplat;
+    NSNumber * inputTargetClosing;
     NSNumber * inputWhiteCutoff;
 }
 
@@ -99,8 +103,10 @@
 @property (nonatomic, retain) NSNumber *inputFoobar3;
 @property (nonatomic, retain) NSNumber *inputFoobar4;
 @property (nonatomic, retain) NSNumber *inputGamma;
+@property (nonatomic, retain) NSNumber *inputGlintThreshold;
 @property (nonatomic, retain) NSNumber *inputInterPeakMin;
 @property (nonatomic, retain) NSNumber *inputIntersect;
+@property (nonatomic, retain) NSNumber *inputMaxInterDispersion;
 @property (nonatomic, retain) CIVector *inputMidSpectrumWhiteOffsets;
 @property (nonatomic, retain) NSNumber *inputOrientationHint;
 @property (nonatomic, retain) NSNumber *inputOrientationScale;
@@ -129,11 +135,13 @@
 @property (nonatomic, retain) NSNumber *inputSkinThreshold;
 @property (nonatomic, retain) NSNumber *inputSkinThresholdMed;
 @property (nonatomic, retain) NSNumber *inputSpecArea;
+@property (nonatomic, retain) NSNumber *inputSpecAreaScale;
 @property (nonatomic, retain) NSNumber *inputSpecIntensity;
 @property (nonatomic, retain) NSNumber *inputSpecMax;
 @property (nonatomic, retain) NSNumber *inputSpecMin;
 @property (nonatomic, retain) NSNumber *inputSpecular;
 @property (nonatomic, retain) NSNumber *inputSplat;
+@property (nonatomic, retain) NSNumber *inputTargetClosing;
 @property (nonatomic, retain) NSNumber *inputWhiteCutoff;
 
 - (id)inputAbortDensityDiff;
@@ -165,8 +173,10 @@
 - (id)inputFoobar3;
 - (id)inputFoobar4;
 - (id)inputGamma;
+- (id)inputGlintThreshold;
 - (id)inputInterPeakMin;
 - (id)inputIntersect;
+- (id)inputMaxInterDispersion;
 - (id)inputMidSpectrumWhiteOffsets;
 - (id)inputOrientationHint;
 - (id)inputOrientationScale;
@@ -195,11 +205,13 @@
 - (id)inputSkinThreshold;
 - (id)inputSkinThresholdMed;
 - (id)inputSpecArea;
+- (id)inputSpecAreaScale;
 - (id)inputSpecIntensity;
 - (id)inputSpecMax;
 - (id)inputSpecMin;
 - (id)inputSpecular;
 - (id)inputSplat;
+- (id)inputTargetClosing;
 - (id)inputWhiteCutoff;
 - (id)outputImage;
 - (void)setInputAbortDensityDiff:(id)arg1;
@@ -231,8 +243,10 @@
 - (void)setInputFoobar4:(id)arg1;
 - (void)setInputFoobar:(id)arg1;
 - (void)setInputGamma:(id)arg1;
+- (void)setInputGlintThreshold:(id)arg1;
 - (void)setInputInterPeakMin:(id)arg1;
 - (void)setInputIntersect:(id)arg1;
+- (void)setInputMaxInterDispersion:(id)arg1;
 - (void)setInputMidSpectrumWhiteOffsets:(id)arg1;
 - (void)setInputOrientationHint:(id)arg1;
 - (void)setInputOrientationScale:(id)arg1;
@@ -261,11 +275,13 @@
 - (void)setInputSkinThreshold:(id)arg1;
 - (void)setInputSkinThresholdMed:(id)arg1;
 - (void)setInputSpecArea:(id)arg1;
+- (void)setInputSpecAreaScale:(id)arg1;
 - (void)setInputSpecIntensity:(id)arg1;
 - (void)setInputSpecMax:(id)arg1;
 - (void)setInputSpecMin:(id)arg1;
 - (void)setInputSpecular:(id)arg1;
 - (void)setInputSplat:(id)arg1;
+- (void)setInputTargetClosing:(id)arg1;
 - (void)setInputWhiteCutoff:(id)arg1;
 
 @end

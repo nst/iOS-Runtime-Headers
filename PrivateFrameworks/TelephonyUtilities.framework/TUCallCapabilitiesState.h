@@ -18,7 +18,6 @@
     bool  _relayCallingFeaturesEnabled;
     NSDictionary * _senderIdentityCapabilitiesStateByUUID;
     bool  _supportsBasebandCalling;
-    bool  _supportsCarrierServices;
     bool  _supportsCellularData;
     bool  _supportsDisplayingFaceTimeAudioCalls;
     bool  _supportsDisplayingFaceTimeVideoCalls;
@@ -50,7 +49,6 @@
 @property (nonatomic, copy) NSDictionary *senderIdentityCapabilitiesStateByUUID;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsBasebandCalling;
-@property (nonatomic) bool supportsCarrierServices;
 @property (nonatomic) bool supportsCellularData;
 @property (nonatomic) bool supportsDisplayingFaceTimeAudioCalls;
 @property (nonatomic) bool supportsDisplayingFaceTimeVideoCalls;
@@ -102,7 +100,6 @@
 - (void)setRelayCallingFeaturesEnabled:(bool)arg1;
 - (void)setSenderIdentityCapabilitiesStateByUUID:(id)arg1;
 - (void)setSupportsBasebandCalling:(bool)arg1;
-- (void)setSupportsCarrierServices:(bool)arg1;
 - (void)setSupportsCellularData:(bool)arg1;
 - (void)setSupportsDisplayingFaceTimeAudioCalls:(bool)arg1;
 - (void)setSupportsDisplayingFaceTimeVideoCalls:(bool)arg1;
@@ -113,7 +110,6 @@
 - (void)setSupportsRelayCalling:(bool)arg1;
 - (void)setSupportsTelephonyRelayCalling:(bool)arg1;
 - (bool)supportsBasebandCalling;
-- (bool)supportsCarrierServices;
 - (bool)supportsCellularData;
 - (bool)supportsDisplayingFaceTimeAudioCalls;
 - (bool)supportsDisplayingFaceTimeVideoCalls;

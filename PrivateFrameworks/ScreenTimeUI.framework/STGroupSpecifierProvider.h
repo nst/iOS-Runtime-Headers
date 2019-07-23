@@ -24,6 +24,7 @@
 + (bool)automaticallyNotifiesObserversOfIsHidden;
 
 - (void).cxx_destruct;
+- (void)_tableCellHeightDidChange:(id)arg1;
 - (void)beginUpdates;
 - (void)dealloc;
 - (id)delegate;

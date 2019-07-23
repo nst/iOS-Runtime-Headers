@@ -14,6 +14,9 @@
     NSString * _yearFormat;
 }
 
++ (id)monthFormatForLocale:(id)arg1;
++ (id)yearFormatForLocale:(id)arg1;
+
 - (id)_arrangedMonthSymbols;
 - (id)_inqNewLocalizedStringFromDate:(id)arg1;
 - (void)_inqSetupDateFormatter;

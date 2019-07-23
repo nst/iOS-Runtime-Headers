@@ -4,16 +4,23 @@
 
 @interface CLKUIQuad : NSObject {
     bool  _opaque;
+    CLKUIQuadView * _quadView;
 }
 
 @property (getter=isOpaque, nonatomic) bool opaque;
+@property (nonatomic) CLKUIQuadView *quadView;
 
+- (void).cxx_destruct;
 - (void)encodeGLforSize:(struct CLKUIQuadSize { int x1; int x2; })arg1;
-- (void)encodeMetalForSize:(struct CLKUIQuadSize { int x1; int x2; })arg1 encoder:(id)arg2;
 - (id)init;
 - (bool)isOpaque;
-- (void)prepare;
+- (void)performOffscreenPassesWithCommandBuffer:(id)arg1;
+- (void)prepareForQuadView:(id)arg1;
+- (bool)prepareForTime:(double)arg1;
 - (void)purge;
+- (id)quadView;
+- (void)renderForDisplayWithEncoder:(id)arg1;
 - (void)setOpaque:(bool)arg1;
+- (void)setQuadView:(id)arg1;
 
 @end

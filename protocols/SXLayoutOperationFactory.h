@@ -5,6 +5,6 @@
 
 @required
 
-- (SXLayoutOperation *)layoutOperationWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(SXLayoutDataProvider *)arg3;
+- (SXLayoutOperation *)layoutOperationWithTask:(SXLayoutTask *)arg1 DOMObjectProvider:(id <SXDOMObjectProviding>)arg2;
 
 @end

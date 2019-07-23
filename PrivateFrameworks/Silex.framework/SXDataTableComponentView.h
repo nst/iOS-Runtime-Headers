@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXDataTableComponentView : SXComponentView <SXDataTableComponentControllerDataSource, SXDataTableViewDataSource, SXTangierControllerDelegate, SXViewportChangeListener, UIGestureRecognizerDelegate> {
+@interface SXDataTableComponentView : SXComponentView <SXDataTableViewDataSource, SXTangierControllerDelegate, SXViewportChangeListener, UIGestureRecognizerDelegate> {
     SXDataTableBlueprint * _blueprint;
     <SXComponentActionHandler> * _componentActionHandler;
-    SXComponentController * _componentController;
+    <SXComponentController> * _componentController;
     SXDataTableComponentController * _dataTableComponentController;
     <SXImageViewFactory> * _imageViewFactory;
     SXDataTableDictionary * _imageViews;
@@ -20,7 +20,7 @@
 
 @property (nonatomic, retain) SXDataTableBlueprint *blueprint;
 @property (nonatomic, readonly) <SXComponentActionHandler> *componentActionHandler;
-@property (nonatomic, readonly) SXComponentController *componentController;
+@property (nonatomic, readonly) <SXComponentController> *componentController;
 @property (nonatomic, retain) SXDataTableComponentController *dataTableComponentController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -41,20 +41,16 @@
 - (id)blueprint;
 - (id)componentActionHandler;
 - (id)componentController;
-- (id)componentForDataTableComponentController:(id)arg1;
-- (id)contentSizeCategoryForDataTableComponentController:(id)arg1;
 - (id)contentViewForBehavior:(id)arg1;
 - (id)dataTableComponentController;
 - (id)dataTableView:(id)arg1 viewForCellAtIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg2 constraintToSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)dealloc;
 - (id)descriptorForIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)documentColumnLayoutForDataTableComponentController:(id)arg1;
-- (id)documentControllerForDataTableComponentController:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)imageViewFactory;
 - (id)imageViews;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 imageViewFactory:(id)arg6 componentActionHandler:(id)arg7 textComponentLayoutHosting:(id)arg8 componentController:(id)arg9;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 imageViewFactory:(id)arg5 componentActionHandler:(id)arg6 textComponentLayoutHosting:(id)arg7 componentController:(id)arg8;
 - (id)leftShadow;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
@@ -74,11 +70,9 @@
 - (id)tangierController;
 - (void)tangierControllerDidScroll:(id)arg1;
 - (id)textComponentLayoutHosting;
-- (id)textComponentLayoutHostingForDataTableComponentController:(id)arg1;
 - (id)textViews;
 - (void)updateShadowOpacity;
 - (void)updateTangierController;
 - (bool)userInteractable;
-- (double)widthForDataTableComponentController:(id)arg1;
 
 @end

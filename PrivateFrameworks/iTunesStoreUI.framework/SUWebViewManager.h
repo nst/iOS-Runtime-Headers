@@ -26,7 +26,7 @@
     UIWebView * _webView;
 }
 
-@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, copy) ACAccount *account;
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUWebViewManagerDelegate> *delegate;

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLFileUtilities : NSObject
+@interface PLFileUtilities : NSObject {
+    <PLUnixFileServices> * _unixFileServices;
+}
 
 + (bool)_isFileExistsError:(id)arg1;
 + (id)_mobileOwnerAttributes;
@@ -19,7 +21,13 @@
 + (bool)ingestItemAtURL:(id)arg1 toURL:(id)arg2 type:(long long)arg3 options:(unsigned long long)arg4 error:(id*)arg5;
 + (id)realPathForPath:(id)arg1 error:(id*)arg2;
 + (bool)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
++ (id)sharedFileUtilities;
 + (bool)stripExtendedAttributesFromFileAtURL:(id)arg1 inDomain:(id)arg2 error:(id*)arg3;
 + (bool)supportsClone;
+
+- (bool)filePath:(id)arg1 hasPrefix:(id)arg2;
+- (id)init;
+- (id)initWithUnixFileServices:(id)arg1;
+- (id)realPathForPath:(id)arg1 error:(id*)arg2;
 
 @end

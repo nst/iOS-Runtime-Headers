@@ -11,6 +11,7 @@
     NSMutableArray * _authenticationDialogManagerClients;
     ACDAuthenticationPluginManager * _authenticationPluginManager;
     NSMutableDictionary * _clientsByConnection;
+    ACDDatabaseBackupActivity * _databaseBackupActivity;
     ACDDataclassOwnersManager * _dataclassOwnersManager;
     NSObject<OS_dispatch_queue> * _deferredConnectionResumeQueue;
     NSObject<OS_dispatch_semaphore> * _deferredConnectionResumeQueueSemaphore;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) ACDAccessPluginManager *accessPluginManager;
 @property (nonatomic, retain) ACDAuthenticationDialogManager *authenticationDialogManager;
 @property (nonatomic, retain) ACDAuthenticationPluginManager *authenticationPluginManager;
+@property (nonatomic, retain) ACDDatabaseBackupActivity *databaseBackupActivity;
 @property (nonatomic, retain) ACDDataclassOwnersManager *dataclassOwnersManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -51,6 +53,7 @@
 - (id)clientForConnection:(id)arg1;
 - (id)createClientForConnection:(id)arg1;
 - (void)credentialsDidChangeForAccountWithIdentifier:(id)arg1;
+- (id)databaseBackupActivity;
 - (id)dataclassOwnersManager;
 - (void)dealloc;
 - (id)init;
@@ -59,6 +62,7 @@
 - (void)setAccessPluginManager:(id)arg1;
 - (void)setAuthenticationDialogManager:(id)arg1;
 - (void)setAuthenticationPluginManager:(id)arg1;
+- (void)setDatabaseBackupActivity:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setRemoteDeviceProxy:(id)arg1;
 - (void)setUpWithAccountStoreConnectionListener:(id)arg1 oauthSignerConnectionListener:(id)arg2 authenticationDialogConnectionListener:(id)arg3;

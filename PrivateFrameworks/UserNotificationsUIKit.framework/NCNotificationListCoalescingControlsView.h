@@ -36,6 +36,7 @@
 - (double)_cornerRadius;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsets;
 - (double)_effectiveButtonHeight;
+- (id)_effectiveGroupName;
 - (double)_effectiveHorizontalPadding;
 - (double)_effectiveValue:(double)arg1;
 - (double)_effectiveVerticalPadding;

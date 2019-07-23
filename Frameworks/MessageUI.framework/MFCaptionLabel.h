@@ -8,6 +8,7 @@
     <MFCaptionLabelDataSource> * _dataSource;
     NSArray * _fromSenders;
     bool  _needsLabelUpdate;
+    NSArray * _otherSigners;
     NSArray * _toRecipients;
 }
 
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSArray *ccRecipients;
 @property (nonatomic) <MFCaptionLabelDataSource> *dataSource;
 @property (nonatomic, retain) NSArray *fromSenders;
+@property (nonatomic, retain) NSArray *otherSigners;
 @property (nonatomic, retain) NSArray *toRecipients;
 
 + (id)attributedStringsCache;
@@ -30,12 +32,14 @@
 - (id)fromSenders;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)otherSigners;
 - (void)setBccRecipients:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFromSenders:(id)arg1;
+- (void)setOtherSigners:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (id)toRecipients;
 - (void)updateLabelNow;

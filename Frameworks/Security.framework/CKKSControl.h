@@ -16,6 +16,7 @@
 - (id)connection;
 - (id)endpoint;
 - (id)initWithConnection:(id)arg1;
+- (void)rpcFastStatus:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcFetchAndProcessChanges:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcFetchAndProcessClassAChanges:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcGetCKDeviceIDWithReply:(id /* block */)arg1;

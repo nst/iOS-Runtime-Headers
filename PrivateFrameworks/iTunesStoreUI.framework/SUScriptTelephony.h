@@ -2,10 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptTelephony : SUScriptObject {
-    NSObject<OS_dispatch_queue> * _telephonyQueue;
-    struct __CTServerConnection { } * _telephonyServer;
-}
+@interface SUScriptTelephony : SUScriptObject
 
 @property (getter=isCellularRoaming, nonatomic, readonly) id cellularRoaming;
 @property (nonatomic, readonly) NSString *countryCode;
@@ -19,9 +16,11 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
-- (void).cxx_destruct;
 - (bool)_checkIfIsAllowed;
 - (id)_className;
+- (void)_handleOperatorNameChangedNotification:(id)arg1;
+- (void)_handlePhoneNumberChangedNotification:(id)arg1;
+- (void)_handleRegistrationChangedNotification:(id)arg1;
 - (id)attributeKeys;
 - (id)countryCode;
 - (void)dealloc;

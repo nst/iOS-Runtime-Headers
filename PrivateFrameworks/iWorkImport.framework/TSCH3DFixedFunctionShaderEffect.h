@@ -4,7 +4,7 @@
 
 @interface TSCH3DFixedFunctionShaderEffect : TSCH3DPhongLikeShaderEffect
 
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)injectDiffuseToProgram:(id)arg1;
 - (void)injectFinalColorToProgram:(id)arg1;
 

@@ -4,6 +4,7 @@
 
 @interface SXComponentExposureTracking : NSObject {
     SXComponentView * _componentView;
+    id /* block */  _conditionBlock;
     id /* block */  _exposureStateChangeBlock;
     long long  _lastObservedVisibilityState;
     double  _maximumVisibleY;
@@ -12,19 +13,21 @@
 }
 
 @property (nonatomic, readonly) SXComponentView *componentView;
+@property (nonatomic, readonly, copy) id /* block */ conditionBlock;
 @property (nonatomic, readonly, copy) id /* block */ exposureStateChangeBlock;
 @property (nonatomic) long long lastObservedVisibilityState;
 @property (nonatomic) double maximumVisibleY;
 @property (nonatomic) double minimumVisibleY;
 @property (nonatomic, readonly) double visibilityFactor;
 
-+ (id)exposureTrackingWithComponent:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2;
++ (id)exposureTrackingWithComponent:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2 conditionBlock:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)calculateVisibilityFactor;
 - (id)componentView;
+- (id /* block */)conditionBlock;
 - (id /* block */)exposureStateChangeBlock;
-- (id)initWithComponent:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2;
+- (id)initWithComponent:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2 conditionBlock:(id /* block */)arg3;
 - (long long)lastObservedVisibilityState;
 - (double)maximumVisibleY;
 - (double)minimumVisibleY;

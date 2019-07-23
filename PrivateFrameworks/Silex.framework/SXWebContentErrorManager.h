@@ -24,6 +24,5 @@
 - (id)logger;
 - (void)onError:(id /* block */)arg1;
 - (void)reportError:(id)arg1;
-- (void)simulateCrashForError:(id)arg1;
 
 @end

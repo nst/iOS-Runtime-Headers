@@ -48,6 +48,7 @@
 @property (nonatomic, retain) SFRichText *suggestionText;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 

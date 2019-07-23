@@ -4,6 +4,7 @@
 
 @interface _SFBrowserConfiguration : NSObject {
     long long  _configuration;
+    <UITraitEnvironment> * _traitEnvironment;
 }
 
 @property (nonatomic, readonly) bool allowsClosingLastTab;
@@ -17,13 +18,13 @@
 @property (nonatomic, readonly) bool allowsSpeculativeLoading;
 @property (nonatomic, readonly) bool allowsStreamlinedLogin;
 @property (nonatomic, readonly) bool allowsUserActivityFeedback;
-@property (nonatomic, readonly) bool forcesDoNotTrack;
-@property (nonatomic, readonly) unsigned long long navigationBarTintStyle;
+@property (nonatomic, readonly) unsigned long long barTintStyle;
 @property (getter=isPrivateBrowsingEnabled, nonatomic, readonly) bool privateBrowsingEnabled;
-@property (nonatomic, readonly) unsigned long long toolbarTintStyle;
+@property (nonatomic, readonly) <UITraitEnvironment> *traitEnvironment;
 @property (nonatomic, readonly) bool usesDarkTheme;
 @property (nonatomic, readonly) bool usesPersistentDataStore;
 
+- (void).cxx_destruct;
 - (bool)allowsClosingLastTab;
 - (bool)allowsKeyboardCorrectionLearning;
 - (bool)allowsPersistingTabState;
@@ -35,14 +36,13 @@
 - (bool)allowsSpeculativeLoading;
 - (bool)allowsStreamlinedLogin;
 - (bool)allowsUserActivityFeedback;
+- (unsigned long long)barTintStyle;
 - (id)description;
-- (bool)forcesDoNotTrack;
 - (unsigned long long)hash;
-- (id)initWithPrivateBrowsingEnabled:(bool)arg1;
+- (id)initWithPrivateBrowsingEnabled:(bool)arg1 traitEnvironment:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isPrivateBrowsingEnabled;
-- (unsigned long long)navigationBarTintStyle;
-- (unsigned long long)toolbarTintStyle;
+- (id)traitEnvironment;
 - (bool)usesDarkTheme;
 - (bool)usesPersistentDataStore;
 

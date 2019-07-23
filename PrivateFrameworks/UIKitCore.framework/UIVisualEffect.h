@@ -45,6 +45,8 @@
 
 + (id)ts_sideBarEffect;
 + (id)ts_sideBarSelectionEffect;
++ (id)ts_visualEffectsForBarWithBackgroundColor:(id)arg1;
++ (id)ts_visualEffectsForWhiteBackgroundBarAppearance;
 
 // Image: /System/Library/PrivateFrameworks/Stocks/TeaUI.framework/TeaUI
 

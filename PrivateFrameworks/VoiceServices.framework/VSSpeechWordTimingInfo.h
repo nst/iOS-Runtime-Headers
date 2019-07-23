@@ -13,7 +13,9 @@
 @property (nonatomic) double startTime;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } textRange;
 
++ (unsigned long long)extraBytesFromUTF8ToUTF16With:(const char *)arg1 totalLength:(unsigned long long)arg2 begin:(unsigned long long)arg3 end:(unsigned long long)arg4;
 + (bool)supportsSecureCoding;
++ (id)utf16TimingInfoWithUTF8Range:(id)arg1 withText:(id)arg2;
 + (id)wordTimingInfoFrom:(id)arg1 timestamps:(id)arg2;
 
 - (void)encodeWithCoder:(id)arg1;

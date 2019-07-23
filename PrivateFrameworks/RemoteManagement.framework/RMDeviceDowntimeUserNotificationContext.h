@@ -18,7 +18,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)localizedUserNotificationBodyKey;
 - (id)notificationBundleIdentifier;
-- (void)setEndDateComponents:(id)arg1;
+- (void)setEndDateComponents:(id)arg1 referenceDate:(id)arg2;
+- (void)setEndDateComponents:(id)arg1 referenceDate:(id)arg2 locale:(id)arg3;
 - (void)setLocalizedUserNotificationBodyKey:(id)arg1;
 
 @end

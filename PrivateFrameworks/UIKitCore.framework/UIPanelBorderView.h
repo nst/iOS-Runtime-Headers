@@ -14,17 +14,12 @@
 @property (nonatomic, retain) UIPanelBorderReplicatingView *replicatingView;
 @property (nonatomic) long long statusBarAvoidance;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_cachedBackdropGroupName;
 - (void)_statusBarTimeDidChange:(id)arg1;
 - (void)_updateObservationOfTime;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backdropGroupName;
+- (void)dealloc;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (bool)observesTime;

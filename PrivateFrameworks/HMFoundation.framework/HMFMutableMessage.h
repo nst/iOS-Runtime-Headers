@@ -43,6 +43,8 @@
 - (void)setRemote:(bool)arg1;
 - (void)setRemoteRestriction:(unsigned long long)arg1;
 - (void)setRemoteSourceID:(id)arg1;
+- (void)setRequiresNoSPIEntitlement;
+- (void)setRequiresSPIEntitlement;
 - (void)setSecureRemote:(bool)arg1;
 
 @end

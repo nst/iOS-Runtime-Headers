@@ -5,6 +5,8 @@
 
 @required
 
+- (bool)readerAppearanceViewControllerCanDecreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
+- (bool)readerAppearanceViewControllerCanIncreaseTextSize:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidChangeFont:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidChangeTheme:(_SFReaderAppearanceViewController *)arg1;
 - (void)readerAppearanceViewControllerDidDecreaseTextSize:(_SFReaderAppearanceViewController *)arg1;

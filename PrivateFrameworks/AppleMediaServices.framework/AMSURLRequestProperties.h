@@ -9,6 +9,7 @@
     <AMSURLBagContract> * _bagContract;
     AMSProcessInfo * _clientInfo;
     long long  _dialogOptions;
+    bool  _disableLoadURLMetrics;
     bool  _knownToBeTrusted;
     NSString * _logUUID;
     long long  _mescalType;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) <AMSURLBagContract> *bagContract;
 @property (nonatomic, retain) AMSProcessInfo *clientInfo;
 @property (nonatomic) long long dialogOptions;
+@property (nonatomic) bool disableLoadURLMetrics;
 @property (nonatomic) bool knownToBeTrusted;
 @property (nonatomic, retain) NSString *logUUID;
 @property (nonatomic) long long mescalType;
@@ -38,6 +40,7 @@
 - (id)clientInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)dialogOptions;
+- (bool)disableLoadURLMetrics;
 - (id)init;
 - (bool)knownToBeTrusted;
 - (id)logUUID;
@@ -51,6 +54,7 @@
 - (void)setBagContract:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setDialogOptions:(long long)arg1;
+- (void)setDisableLoadURLMetrics:(bool)arg1;
 - (void)setKnownToBeTrusted:(bool)arg1;
 - (void)setLogUUID:(id)arg1;
 - (void)setMescalType:(long long)arg1;

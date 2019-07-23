@@ -3,14 +3,18 @@
  */
 
 @interface MPCFWrapper : NSObject {
+    bool  _nullRef;
     const void * _refValue;
 }
 
+@property (getter=isNullRef, nonatomic) bool nullRef;
 @property (nonatomic, readonly) const void*refValue;
 
 - (void)dealloc;
 - (id)description;
 - (id)initWithCFType:(void*)arg1;
+- (bool)isNullRef;
 - (const void*)refValue;
+- (void)setNullRef:(bool)arg1;
 
 @end

@@ -45,7 +45,7 @@
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
 @property (nonatomic, readonly) bool hasFreeformTextPlaceholders;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool inDocument;
+@property (nonatomic) bool inDocument;
 @property (nonatomic, readonly) NSArray *infosToDisplay;
 @property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
 @property (nonatomic, readonly) bool isMasterSlide;
@@ -109,6 +109,7 @@
 - (id)childEnumerator;
 - (id)childInfos;
 - (id)chunksForDrawable:(id)arg1 animationType:(long long)arg2;
+- (id)chunksWhichPlayWithChunk:(id)arg1;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (id)containedModels;
 - (bool)containsProperty:(int)arg1;
@@ -168,7 +169,7 @@
 - (bool)isThemeContent;
 - (bool)isTitleVisible;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SlideArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct RepeatedPtrField<TSD::GuideArchive> { struct Arena {} *x_8_1_1; int x_8_1_2; int x_8_1_3; struct Rep {} *x_8_1_4; } x8; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { struct Arena {} *x_9_1_1; int x_9_1_2; int x_9_1_3; struct Rep {} *x_9_1_4; } x9; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_10_1_1; int x_10_1_2; int x_10_1_3; struct Rep {} *x_10_1_4; } x10; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_11_1_1; int x_11_1_2; int x_11_1_3; struct Rep {} *x_11_1_4; } x11; }*)arg1 unarchiver:(id)arg2;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (void)moveModel:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)objectForProperty:(int)arg1;
@@ -228,13 +229,14 @@
 - (Class)repClass;
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
 - (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
-- (void)saveToArchive:(struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SlideArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct RepeatedPtrField<TSD::GuideArchive> { struct Arena {} *x_8_1_1; int x_8_1_2; int x_8_1_3; struct Rep {} *x_8_1_4; } x8; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { struct Arena {} *x_9_1_1; int x_9_1_2; int x_9_1_3; struct Rep {} *x_9_1_4; } x9; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_10_1_1; int x_10_1_2; int x_10_1_3; struct Rep {} *x_10_1_4; } x10; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_11_1_1; int x_11_1_2; int x_11_1_3; struct Rep {} *x_11_1_4; } x11; }*)arg1 archiver:(id)arg2;
 - (void)setBodyPlaceholder:(id)arg1;
 - (void)setBuildChunks:(id)arg1 generateIdentifiers:(bool)arg2;
 - (void)setBuilds:(id)arg1;
 - (void)setChildInfos:(id)arg1;
 - (void)setChildInfosWithoutDOLC:(id)arg1;
 - (void)setGeometry:(id)arg1;
+- (void)setInDocument:(bool)arg1;
 - (void)setInfo:(id)arg1 forSageTag:(id)arg2;
 - (void)setObjectPlaceholder:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;

@@ -13,10 +13,7 @@
             struct dispatch_object_s {} *fObj; 
         } fObj; 
     }  _queue;
-    NSDictionary * _serviceCurrentRadioAccessTechnology;
-    NSMutableDictionary * _serviceSubscriberCellularProvider;
-    id /* block */  _serviceSubscriberCellularProviderDidUpdateNotifier;
-    NSDictionary * _serviceSubscriberCellularProviders;
+    NSMutableDictionary * _serviceSubscriberCellularProviders;
     id /* block */  _serviceSubscriberCellularProvidersDidUpdateNotifier;
     CTCarrier * _subscriberCellularProvider;
     id /* block */  _subscriberCellularProviderDidUpdateNotifier;
@@ -31,8 +28,7 @@
 @property (readonly) CTServiceDescriptorContainer *descriptors;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSDictionary *serviceCurrentRadioAccessTechnology;
-@property (retain) NSMutableDictionary *serviceSubscriberCellularProvider;
-@property (readonly, retain) NSDictionary *serviceSubscriberCellularProviders;
+@property (retain) NSMutableDictionary *serviceSubscriberCellularProviders;
 @property (nonatomic, copy) id /* block */ serviceSubscriberCellularProvidersDidUpdateNotifier;
 @property (retain) CTCarrier *subscriberCellularProvider;
 @property (nonatomic, copy) id /* block */ subscriberCellularProviderDidUpdateNotifier;
@@ -48,7 +44,6 @@
 - (id)cellId;
 - (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
 - (id)currentRadioAccessTechnology;
-- (id)currentServiceRadioAccessTechnology;
 - (void)dealloc;
 - (id)descriptors;
 - (bool)getAllowsVOIP:(bool*)arg1 forContext:(id)arg2 withError:(id*)arg3;
@@ -67,15 +62,14 @@
 - (id)serviceCellId;
 - (id)serviceCurrentRadioAccessTechnology;
 - (id)serviceSignalStrength;
-- (id)serviceSubscriberCellularProvider;
-- (id /* block */)serviceSubscriberCellularProviderDidUpdateNotifier;
 - (id)serviceSubscriberCellularProviders;
 - (id /* block */)serviceSubscriberCellularProvidersDidUpdateNotifier;
+- (id /* block */)serviceSubscribersCellularProviderDidUpdateNotifier;
 - (void)setCachedCellIds:(id)arg1;
 - (void)setCachedCurrentRadioAccessTechnology:(id)arg1;
 - (void)setCachedSignalStrength:(id)arg1;
-- (void)setServiceSubscriberCellularProvider:(id)arg1;
 - (void)setServiceSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;
+- (void)setServiceSubscriberCellularProviders:(id)arg1;
 - (void)setServiceSubscriberCellularProvidersDidUpdateNotifier:(id /* block */)arg1;
 - (void)setSubscriberCellularProvider:(id)arg1;
 - (void)setSubscriberCellularProviderDidUpdateNotifier:(id /* block */)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface INCExtensionProxy : NSObject <INCExtensionProxy> {
+    NSValue * _auditTokenValue;
     id /* block */  _backgroundAppHandler;
     INCExtensionConnection * _connection;
     NSExtension * _extension;
@@ -13,6 +14,7 @@
     <INExtensionContextVending> * _vendorRemote;
 }
 
+@property (nonatomic, readonly) NSValue *_auditTokenValue;
 @property (nonatomic, readonly) INCExtensionConnection *_connection;
 @property (nonatomic, readonly) NSExtension *_extension;
 @property (getter=_isExtensionBeingDebugged, nonatomic, readonly) bool _extensionBeingDebugged;
@@ -26,11 +28,13 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (id)_auditTokenValue;
 - (id)_connection;
 - (id)_extension;
-- (id)_initWithConnection:(id)arg1 extension:(id)arg2 vendorRemote:(id)arg3;
+- (id)_initWithConnection:(id)arg1 extension:(id)arg2 vendorRemote:(id)arg3 auditTokenValue:(id)arg4;
 - (bool)_isExtensionBeingDebugged;
 - (bool)_isIntentRestrictedWhileProtectedDataUnavailableWithCompletionHandler:(id /* block */)arg1;
+- (void)_issueSandboxExtensionsForFileURLsIfNeededToIntent:(id)arg1;
 - (id)_processIntent:(id)arg1 intentResponse:(id)arg2 withCacheItems:(id)arg3;
 - (id)_vendorRemote;
 - (id /* block */)backgroundAppHandler;

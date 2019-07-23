@@ -18,6 +18,8 @@
     bool  _paused;
     double  _replicationPadding;
     float  _scrollRate;
+    bool  _starting;
+    bool  _stopping;
     double  _underPosterOutset;
 }
 
@@ -39,10 +41,9 @@
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)_clearAnimations;
 - (void)_clearAttributedStrings;
-- (void)_clearLabelTextContents;
-- (id)_imageForText:(bool)arg1;
-- (void)_nextAttributedString;
-- (void)_prepareNextMarquee;
+- (bool)_isRTL;
+- (void)_prepareNextMarqueeWithDelay:(double)arg1;
+- (id)_rasterizedTextWithMarquee:(bool)arg1;
 - (bool)_shouldCycle;
 - (void)_startMarqueeIfNeeded;
 - (id)attributedStrings;

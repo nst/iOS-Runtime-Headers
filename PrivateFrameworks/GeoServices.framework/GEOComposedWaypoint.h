@@ -37,6 +37,10 @@
 + (id)composedWaypointForWaypointTyped:(id)arg1 completionHandler:(id /* block */)arg2 networkActivityHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
+- (id)_addressCandidatesForComparison;
+- (id)_locationCandidatesForComparison;
+- (id)_muidCandidatesForComparison;
+- (id)_regionCandidatesForContainment;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -52,6 +56,8 @@
 - (bool)isCurrentLocation;
 - (bool)isEqual:(id)arg1;
 - (bool)isLocationWaypointType;
+- (bool)isSameAs:(id)arg1;
+- (bool)isSameAs:(id)arg1 comparisonCriteria:(unsigned long long)arg2;
 - (id)latLng;
 - (id)mapItemStorage;
 - (void)mergeFrom:(id)arg1;

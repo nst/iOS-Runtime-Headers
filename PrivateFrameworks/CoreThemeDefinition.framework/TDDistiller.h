@@ -60,7 +60,7 @@
 - (void)_resetDocumentUuid:(id)arg1;
 - (bool)_setupWithOutputPath:(id)arg1 attemptIncremental:(bool)arg2;
 - (bool)_sortRenditionEntries;
-- (void)_storeRenditions;
+- (bool)_storeRenditions;
 - (id)_textureFaceExclusionPredicate;
 - (id)accumulatedErrorDescription;
 - (long long)assetStoreVersionNumber;

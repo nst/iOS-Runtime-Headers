@@ -10,14 +10,9 @@
 @property (nonatomic, retain) NSString *destinationText;
 @property (nonatomic, retain) UISystemNavigationAction *systemNavigationAction;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_displayStringFromURL:(id)arg1;
 - (id)_nominalTitleWithDestinationText:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)destinationText;
 - (bool)layoutImageOnTrailingEdge;
 - (void)setDestinationText:(id)arg1;

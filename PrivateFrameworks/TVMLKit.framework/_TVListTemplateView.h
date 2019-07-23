@@ -19,6 +19,7 @@
 @property (nonatomic, retain) UIView *bannerView;
 @property (nonatomic, retain) UIView *bgImageView;
 @property (nonatomic) bool floatingBanner;
+@property (nonatomic, readonly) long long listAlignment;
 @property (nonatomic, retain) UIView *listView;
 @property (nonatomic, retain) UIView *previewView;
 
@@ -30,6 +31,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isBackdropEnabled;
 - (void)layoutSubviews;
+- (long long)listAlignment;
 - (id)listView;
 - (id)preferredFocusEnvironments;
 - (id)previewView;

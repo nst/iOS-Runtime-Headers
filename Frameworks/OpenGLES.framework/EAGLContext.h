@@ -52,9 +52,6 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (void)tsd_setCurrentContext:(id)arg1;
-
 - (id)initForBrushes;
-- (id)tsd_initForShadow;
 
 @end

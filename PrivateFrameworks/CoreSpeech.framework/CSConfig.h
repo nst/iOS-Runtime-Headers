@@ -22,6 +22,7 @@
 + (float)inputRecordingSampleRate;
 + (id)inputRecordingSampleRateConverterAlgorithm;
 + (float)inputRecordingSampleRateNarrowBand;
++ (float)remoteVADDuration;
 + (unsigned short)zeroFilterApproxAbsSpeechThreshold;
 + (unsigned long long)zeroFilterWindowSizeInMs;
 

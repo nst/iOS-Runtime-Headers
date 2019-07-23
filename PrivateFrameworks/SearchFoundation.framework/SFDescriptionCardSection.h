@@ -78,6 +78,7 @@
 @property (nonatomic) bool titleNoWrap;
 @property (nonatomic, copy) NSNumber *titleWeight;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 

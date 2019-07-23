@@ -18,6 +18,7 @@
     NSString * _resultIdentifier;
     int  _separatorStyle;
     NSString * _type;
+    SFUserReportRequest * _userReportRequest;
 }
 
 @property (nonatomic, readonly) NSArray *actionCommands;
@@ -45,6 +46,7 @@
 @property (nonatomic) int separatorStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
@@ -87,7 +89,9 @@
 - (void)setResultIdentifier:(id)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setType:(id)arg1;
+- (void)setUserReportRequest:(id)arg1;
 - (id)type;
+- (id)userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 
@@ -111,6 +115,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/SearchUICardKitProviderSupport
 
+- (bool)_SUICKPInteractiveCardSectionViewController_shouldHandlePunchout;
 - (bool)_SUICKPInteractiveCardSectionViewController_shouldRenderButtonOverlay;
 
 @end

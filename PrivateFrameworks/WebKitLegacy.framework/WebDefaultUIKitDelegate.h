@@ -16,6 +16,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentVisibleRectForWebView:(id)arg1;
 - (long long)getPasteboardChangeCount;
 - (long long)getPasteboardItemsCount;
+- (bool)handleKeyCommandForCurrentEvent;
 - (bool)hasRichlyEditableSelection;
 - (struct CGPoint { double x1; double x2; })interactionLocation;
 - (bool)isUnperturbedDictationResultMarker:(id)arg1;

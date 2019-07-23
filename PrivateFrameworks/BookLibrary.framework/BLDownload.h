@@ -63,7 +63,7 @@
 @property (nonatomic, copy) NSDate *lastStateChangeTime;
 @property (nonatomic, copy) NSString *md5HashStrings;
 @property (nonatomic) long long numberOfBytesToHash;
-@property (nonatomic, retain) NSString *originalURL;
+@property (nonatomic, copy) NSString *originalURL;
 @property (nonatomic, copy) NSString *permlink;
 @property (nonatomic, retain) NSNumber *persistentIdentifier;
 @property (nonatomic, copy) NSNumber *publicationVersion;

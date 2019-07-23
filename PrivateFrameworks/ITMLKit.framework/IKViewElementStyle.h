@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKViewElementStyle : NSObject {
+@interface IKViewElementStyle : NSObject <NSCopying> {
     NSString * _classDescriptorString;
     IKCSSRule * _cssRule;
     bool  _filterBlockedStyles;
@@ -45,6 +45,7 @@
 @property (nonatomic, readonly) NSString *itemWidth;
 @property (nonatomic, readonly) NSString *labelsState;
 @property (nonatomic, readonly) NSNumber *letterSpacing;
+@property (nonatomic, readonly) NSNumber *lineHeight;
 @property (nonatomic, readonly) NSString *lockupType;
 @property (nonatomic, readonly) NSString *maxHeight;
 @property (nonatomic, readonly) long long maxTextLines;
@@ -92,7 +93,8 @@
 - (void)_addDeclaration:(id)arg1;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForStyleKey:(id)arg1;
+- (id)_declarationForStyleName:(id)arg1 expectedClass:(Class)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForStyleName:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
 - (id)_styleNameForAlias:(id)arg1;
@@ -108,10 +110,12 @@
 - (long long)columnCount;
 - (id)columnItemType;
 - (id)columnType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cssRule;
 - (id)debugDescription;
 - (id)description;
 - (id)dividerType;
+- (unsigned long long)edgeFlagForStyle:(id)arg1;
 - (unsigned long long)elementAlignment;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementMargin;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementPadding;
@@ -136,6 +140,7 @@
 - (id)itemWidth;
 - (id)labelsState;
 - (id)letterSpacing;
+- (id)lineHeight;
 - (id)lockupType;
 - (id)maxHeight;
 - (long long)maxTextLines;
@@ -166,6 +171,8 @@
 - (long long)tv_alignment;
 - (id)tv_associatedViewElementStyle;
 - (id)tv_backgroundColor;
+- (id)tv_backgroundHighlightColor;
+- (id)tv_backgroundHighlightStyle;
 - (id)tv_borderColor;
 - (bool)tv_borderContinuous;
 - (id)tv_borderRadius;
@@ -175,9 +182,12 @@
 - (unsigned long long)tv_columnCount;
 - (double)tv_columnPadding;
 - (long long)tv_contentAlignment;
+- (id)tv_cssValueForStyle:(id)arg1;
+- (id)tv_darkTintColor;
+- (unsigned long long)tv_edgeFlagForStyle:(id)arg1;
 - (id)tv_focusAlign;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tv_focusMargin;
-- (unsigned long long)tv_focusSizeIncrease;
+- (double)tv_focusSizeIncrease;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })tv_focusTransform;
 - (id)tv_fontFamily;
 - (double)tv_fontSize;
@@ -185,8 +195,11 @@
 - (id)tv_fontWeight;
 - (id)tv_group;
 - (bool)tv_hasFocusMargin;
+- (bool)tv_hasHeight;
+- (bool)tv_hasWidth;
 - (double)tv_height;
 - (id)tv_highlightColor;
+- (id)tv_highlightStyle;
 - (id)tv_imageTreatment;
 - (double)tv_imageUpscaleFactor;
 - (double)tv_interitemSpacing;
@@ -205,9 +218,11 @@
 - (id)tv_progressStyle;
 - (id)tv_ratingStyle;
 - (unsigned long long)tv_rowCount;
+- (id)tv_scrollMode;
 - (id)tv_searchStyle;
 - (void)tv_setStyleMetrics:(id)arg1;
 - (id)tv_shadow;
+- (id)tv_showcaseMode;
 - (id)tv_styleMetrics;
 - (long long)tv_textAlignment;
 - (id)tv_textHighlightStyle;
@@ -224,7 +239,7 @@
 - (id)tv_visualEffect;
 - (double)tv_width;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 + (id)positionConstraintsForView:(id)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 position:(unsigned long long)arg3;
 

@@ -5,9 +5,11 @@
 
 @required
 
+- (UIImage *)referenceImageWithID:(id <VTKAssertID>)arg1 testCase:(XCTestCase *)arg2 error:(id*)arg3;
+
+@optional
+
 - (NSString *)itemsDirectory;
-- (NSURL *)referenceImageURLWithTestCase:(XCTestCase *)arg1;
-- (UIImage *)referenceImageWithID:(id <VTKAssertID>)arg1 testCase:(XCTestCase *)arg2;
 - (void)setItemsDirectory:(NSString *)arg1;
 
 @end

@@ -2,15 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming> {
+@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupViewControllerDelegate, SBSHardwareButtonEventConsuming> {
+    LAUIHorizontalArrowView * _cameraArrowView;
+    long long  _coachingState;
     bool  _didDismiss;
+    bool  _didSendAuthorizationDidFinish;
     bool  _didSendAuthorizationDidPresent;
     bool  _dismissAfterPaymentSetup;
     PKPaymentAuthorizationRemoteAlertViewControllerExportedObject * _exportedObject;
     long long  _hostAppInterfaceOrientation;
     NSString * _hostApplicationIdentifier;
+    NSString * _hostBundleIdentifier;
     NSXPCConnection * _hostConnection;
     NSString * _hostLocalizedAppName;
+    NSString * _hostTeamID;
     PKInAppPaymentService * _inAppPaymentService;
     bool  _isPerformingPaymentSetup;
     <BSInvalidatable> * _lockButtonObserver;
@@ -23,6 +28,7 @@
     PKPaymentSetupNavigationController * _paymentSetupNavigationController;
     bool  _paymentSetupWasRequired;
     bool  _pearlViewsInserted;
+    PKPeerPaymentAccount * _peerPaymentAccount;
     LAUIPhysicalButtonView * _physicalButtonView;
     bool  _shouldAcquireLockButtonObserver;
     int  _statusBarVisibility;
@@ -47,23 +53,30 @@
 - (void)_dismiss;
 - (void)_handlePaymentRequestPresentationResultType:(long long)arg1 relevantUniqueID:(id)arg2 firstAttempt:(bool)arg3;
 - (void)_invalidateLockButtonObserver;
+- (bool)_peerPaymentIdentityVerificationRequired;
 - (int)_preferredStatusBarVisibility;
 - (void)_presentActivatingPassAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentAddCardAlert;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2 actionTitle:(id)arg3 actionHandler:(id /* block */)arg4;
 - (void)_presentAlertWithTitle:(id)arg1 message:(id)arg2 cancelTitle:(id)arg3 actionTitle:(id)arg4 actionHandler:(id /* block */)arg5;
+- (void)_presentAmpEnrollmentAuthorization;
 - (void)_presentInvalidAlert;
 - (void)_presentLostModeAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentPassNotSupportedAlertWithRelevantUniqueID:(id)arg1;
 - (void)_presentPaymentAuthorization;
 - (void)_presentPaymentSetup;
+- (void)_presentPeerPaymentIdentityVerification;
+- (void)_presentPeerPaymentIdentityVerificationAlert;
 - (void)_presentVerifyPassAlertWithRelevantUniqueID:(id)arg1;
 - (id)_provisioningController;
 - (id)_remoteObjectProxy;
 - (void)_setStatusBarHidden:(bool)arg1;
+- (bool)_shouldBlockHardwareCancels;
 - (bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (void)_updatePearlViews;
 - (void)_willAppearInRemoteViewController;
+- (void)authorizationDidAuthorizeApplePayTrustSignature:(id)arg1;
+- (void)authorizationDidAuthorizeDisbursement:(id)arg1;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
@@ -72,7 +85,9 @@
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationDidUpdateAccountServicePaymentMethod:(id)arg1;
 - (void)authorizationViewController:(id)arg1 didEncounterAuthorizationEvent:(unsigned long long)arg2;
+- (void)authorizationViewControllerDidChangeCoachingState:(id)arg1;
 - (void)authorizationViewControllerDidChangeUserIntentRequirement:(id)arg1;
 - (void)authorizationWillStart;
 - (void)compactNavigationContainerControllerReceivedExternalTap:(id)arg1;
@@ -100,6 +115,8 @@
 - (bool)shouldAutorotate;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (unsigned long long)supportedInterfaceOrientations;
+- (void)viewControllerDidCancelSetupFlow:(id)arg1;
+- (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;

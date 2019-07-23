@@ -141,6 +141,7 @@
 @property (nonatomic, retain) NSData *imageRequestHints;
 @property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, retain) PLImportSession *importSession;
+@property (nonatomic) short importedBy;
 @property (nonatomic, readonly, retain) UIImage *inflightImage;
 @property (nonatomic, retain) UIImage *inflightImageInMemory;
 @property (nonatomic, retain) NSString *inflightImagePath;
@@ -289,6 +290,7 @@
 + (id)URLForMetadataWithExtension:(id)arg1 forMediaInMainDirectory:(id)arg2 withFilename:(id)arg3;
 + (id)_assetsWithCloudAssetUUIDs:(id)arg1 inMomentShare:(id)arg2 inLibrary:(id)arg3 fetchLimit:(unsigned long long)arg4;
 + (unsigned long long)_calculateSizeOfAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
++ (unsigned long long)_calculateSizeOfSidecarFilesOnAssetsInFetchRequest:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)_cloudAdjustmentFingerprintWithAdjustmentDataBlob:(id)arg1 largeAdjustmentBlobFingerpint:(id)arg2 formatIdentifier:(id)arg3 formatVersion:(id)arg4 editorBundleID:(id)arg5 baseVersion:(long long)arg6 baseImageData:(id)arg7 baseImageFingerprint:(id)arg8;
 + (short)_correctedOrientation:(short)arg1;
 + (unsigned long long)_countAssetsInLibrary:(id)arg1 withPredicate:(id)arg2 withKeyPathsForPrefetching:(id)arg3;
@@ -426,6 +428,7 @@
 + (id)sortedCloudSharedAssetsWithPlaceholderKind:(short)arg1 ascending:(bool)arg2 inLibrary:(id)arg3;
 + (id)supportedAssetTypesForUpload;
 + (id)toUploadAssetsInLibrary:(id)arg1;
++ (long long)totalPurgeableSizeOnDiskInManagedObjectContext:(id)arg1 urgency:(long long)arg2;
 + (id)totalResourceSizeOnDiskInManagedObjectContext:(id)arg1;
 + (unsigned long long)totalSizeOfUnpushedOriginalsInPhotoLibrary:(id)arg1 outMasterList:(id*)arg2;
 + (id)uniformTypeIdentifierFromPathExtension:(id)arg1 assetType:(short)arg2;
@@ -459,7 +462,6 @@
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize { double x1; double x2; })arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(long long)arg6 renderedImageFilePath:(id)arg7 completionHandler:(id /* block */)arg8;
 - (id)_availableCloudResourcesForPhotosRequireUnadjusted:(bool)arg1 allowPenultimate:(bool)arg2;
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned long long)arg1;
-- (id)_bestAvaliableAdjustedResource;
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
 - (int)_calculateStateForWorkerType:(short)arg1 flags:(int*)arg2;
 - (bool)_checkResource:(unsigned long long)arg1 onPath:(id)arg2 onMaster:(bool)arg3;
@@ -474,7 +476,6 @@
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
 - (void)_copyResourcesFromSouceAsset:(id)arg1 toCPLAsset:(id)arg2 inLibrary:(id)arg3;
 - (void)_copySRGBFileFrom:(id)arg1 to:(id)arg2;
-- (id)_cplMasterFromCloudMaster:(id)arg1 withCPLResources:(id)arg2;
 - (id)_cplMasterResourcesFromCloudMaster:(id)arg1 includeFile:(bool)arg2;
 - (id)_cplRelationsForAssetInLibrary:(id)arg1;
 - (id)_createCPLResourceFromResourcePath:(id)arg1 withResourceType:(unsigned long long)arg2 uniformTypeIdentifier:(id)arg3 scopedIdentifier:(id)arg4;
@@ -517,7 +518,6 @@
 - (void)_loadReverseGeoIfNeeded;
 - (bool)_location:(id)arg1 isEqualToLocationForUpdating:(id)arg2;
 - (id)_markDirtyChangeDictionaryForWorkerType:(short)arg1 workerFlags:(int)arg2;
-- (unsigned long long)_masterResourceTypeForAdjustedAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(bool)arg3;
 - (id)_mediaGroupUUIDForPersistence;
 - (id)_mediaGroupUUIDFromPersistence:(id)arg1;
 - (bool)_migrateKeyedArchiverAdjustmentsToPropertyListSerializationFormat;
@@ -605,6 +605,7 @@
 - (void)awakeFromInsert;
 - (void)awakeFromSnapshotEvents:(unsigned long long)arg1;
 - (bool)becomePhotoIrisWithMediaGroupUUID:(id)arg1 videoURL:(id)arg2 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 stillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 createSidecar:(bool)arg5 options:(unsigned long long)arg6;
+- (id)bestAvailableAdjustedResource;
 - (unsigned long long)bestResourceTypeForAdjustedFingerPrint;
 - (id)cachedLocation;
 - (id)cachedNonPersistedVideoPlaybackURL;
@@ -636,6 +637,7 @@
 - (unsigned long long)cplBurstFlagsFromPLAvalancheType:(int)arg1;
 - (id)cplFullRecord;
 - (id)cplMasterChangeInLibrary:(id)arg1 shouldGenerateDerivatives:(bool)arg2;
+- (id)cplMasterFromCloudMaster:(id)arg1 withCPLResources:(id)arg2;
 - (id)cplResourceForResourceType:(unsigned long long)arg1;
 - (void)createMasterIfNecessaryInLibrary:(id)arg1;
 - (void)createMasterResourcesIn:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -730,6 +732,7 @@
 - (struct CGSize { double x1; double x2; })imageSize;
 - (id)imageWithFormat:(int)arg1;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
+- (short)importedBy;
 - (void)incrementUploadAttempts;
 - (id)indexSheetImage;
 - (id)inflightImage;
@@ -802,6 +805,7 @@
 - (void)markForNeedingFaceDetection;
 - (id)masterFingerPrintCacheIfNecessaryAndAdjustedFingerPrint:(id*)arg1 error:(id*)arg2;
 - (id)masterResourceForCPLType:(unsigned long long)arg1;
+- (unsigned long long)masterResourceTypeForAdjustedAssetResourceType:(unsigned long long)arg1 sourceAsset:(id)arg2 flattenLivePhoto:(bool)arg3;
 - (bool)migrateLegacyPhotoAdjustments;
 - (bool)migrateLegacyVideoAdjustments;
 - (bool)migrateLocationDataIfNeededAfterOTARestore:(bool)arg1;
@@ -971,6 +975,7 @@
 - (bool)setImageInfoFromImageSource:(struct CGImageSource { }*)arg1 overwriteOriginalProperties:(bool)arg2;
 - (void)setImageInfoFromOriginalImageProperties:(id)arg1;
 - (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setImportedBy:(short)arg1;
 - (void)setInflightImageInMemory:(id)arg1;
 - (void)setInflightImagePath:(id)arg1;
 - (void)setInflightIndexSheetImage:(id)arg1;
@@ -1019,6 +1024,7 @@
 - (void)setUserCloudSharedLiked:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (bool)setVideoInfoFromFileAtURL:(id)arg1 fullSizeRenderURL:(id)arg2 overwriteOriginalProperties:(bool)arg3;
+- (void)setVideoInfoOnMasterFromAVAsset:(id)arg1;
 - (void)setWidth:(long long)arg1;
 - (bool)setupPlaceholderAssetWithRequiredPropertiesFromSourceAsset:(id)arg1 assetUUID:(id)arg2 placeholderAssetMomentShareUUID:(id)arg3 bakeInAdjustmentsFromSourceAsset:(bool)arg4 flattenLivePhoto:(bool)arg5 library:(id)arg6;
 - (id)shiftedLocation;

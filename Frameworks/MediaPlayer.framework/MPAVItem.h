@@ -114,6 +114,7 @@
 @property (nonatomic, readonly, copy) NSArray *buyOffers;
 @property (nonatomic, readonly) bool canReusePlayerItem;
 @property (nonatomic, readonly) bool canSeedGenius;
+@property (nonatomic, readonly) bool canUseLoadedAsset;
 @property (nonatomic, retain) NSArray *chapterTimeMarkers;
 @property (nonatomic, retain) NSArray *closedCaptionTimeMarkers;
 @property (nonatomic, readonly) NSString *cloudAlbumID;
@@ -322,6 +323,7 @@
 - (id)buyOffers;
 - (bool)canReusePlayerItem;
 - (bool)canSeedGenius;
+- (bool)canUseLoadedAsset;
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
 - (id)closedCaptionTimeMarkerForTime:(double)arg1;

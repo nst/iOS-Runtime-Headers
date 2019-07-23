@@ -16,8 +16,6 @@
     double  _serviceWidth;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_contentsImageFromString:(id)arg1 withWidth:(double)arg2 letterSpacing:(double)arg3;
 - (id)_crossfadeContentsImage;
@@ -27,9 +25,6 @@
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (bool)_loopingNecessary;
 - (id)_serviceContentsImage;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)addContentOverlap:(double)arg1;
 - (bool)animatesDataChange;

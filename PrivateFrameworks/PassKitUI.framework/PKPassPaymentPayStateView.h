@@ -16,7 +16,6 @@
     long long  _state;
     long long  _style;
     bool  _touchRecognizingHint;
-    bool  _useSmallStyleGlyph;
 }
 
 @property (nonatomic) bool accessPass;
@@ -33,7 +32,6 @@
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic) bool touchRecognizingHint;
-@property (nonatomic) bool useSmallStyleGlyph;
 
 - (void).cxx_destruct;
 - (void)_applyStatePreservingGlyphState:(bool)arg1 overridingText:(id)arg2 animated:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -66,10 +64,8 @@
 - (void)setState:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setState:(long long)arg1 animated:(bool)arg2 withOverrideText:(id)arg3 preserveGlyphState:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)setTouchRecognizingHint:(bool)arg1;
-- (void)setUseSmallStyleGlyph:(bool)arg1;
 - (long long)state;
 - (bool)touchRecognizingHint;
 - (void)updateDebugLabel:(id)arg1 isErrorState:(bool)arg2;
-- (bool)useSmallStyleGlyph;
 
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, retain) PKServiceProviderOrder *serviceProviderOrder;
 
 - (void).cxx_destruct;
-- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 webService:(id)arg4 completion:(id /* block */)arg5;
+- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3 webService:(id)arg4 completion:(id /* block */)arg5;
 - (id)nonce;
 - (id)pass;
 - (id)serviceProviderOrder;

@@ -19,7 +19,6 @@
 
 - (void).cxx_destruct;
 - (id)ASVForSlideNode:(id)arg1;
-- (void)addMetalTextureToRasterizationQueue:(id)arg1 asv:(id)arg2;
 - (void)addTextureToRasterizationQueue:(id)arg1 isOpenGL:(bool)arg2 asv:(id)arg3;
 - (id)currentSlideNode;
 - (void)dealloc;
@@ -39,7 +38,6 @@
 - (void)p_serializeTexturesForSlideNode:(id)arg1;
 - (void)p_setCurrentSlideNodeToProcess:(id)arg1;
 - (id)p_setupGenerateTexturesOperationOnSlideNode:(id)arg1;
-- (void)p_setupMetalTexture:(id)arg1 forDevice:(id)arg2;
 - (id)p_setupPrepareAnimationsOperationOnSlideNode:(id)arg1;
 - (id)p_setupRenderTexturesOperationOnSlideNode:(id)arg1;
 - (bool)p_shouldProcessSlideNode:(id)arg1;

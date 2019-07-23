@@ -5,6 +5,7 @@
 @interface STMSizeCache : NSObject {
     unsigned long long  _cacheEventID;
     <STMSizeCacheDelegate> * _delegate;
+    NSMutableArray * _eventsToProcess;
     NSMutableDictionary * _itemsByPath;
     NSLock * _itemsLock;
     struct __CFString { } * _prefsKey;
@@ -22,8 +23,8 @@
 
 - (void).cxx_destruct;
 - (void)_flushCache:(id)arg1;
-- (void)_sizeEntry:(id)arg1;
-- (void)_sizePath:(id)arg1;
+- (id)_sizeEntry:(id)arg1;
+- (void)_updateTotalSize;
 - (void)_writeCache;
 - (unsigned long long)cacheEventID;
 - (id)createCacheEntryForPath:(id)arg1;
@@ -40,7 +41,8 @@
 - (void)loadCacheFromPref;
 - (void)notifyItemsChanged;
 - (void)notifySizesChanged;
-- (void)removeItem:(id)arg1;
+- (void)processCacheEvent:(id)arg1;
+- (void)processCacheEvents:(id)arg1;
 - (void)setCacheEventID:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setItems:(id)arg1;
@@ -52,6 +54,6 @@
 - (id)sizeOfItem:(id)arg1;
 - (long long)totalSize;
 - (long long)totalSizeOfItems;
-- (void)updateTotalSize;
+- (void)updateCacheID:(id)arg1;
 
 @end

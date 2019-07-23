@@ -62,6 +62,7 @@
 - (bool)isContinuousPreviewEnabled;
 - (bool)isUsingCameraForContinuousPreview;
 - (unsigned long long)numberOfCollectionViewItems;
+- (void)orientationDidChange;
 - (id)previewBackgroundImage;
 - (id)previewManager;
 - (bool)previewingIsWaitingForConfiguration;

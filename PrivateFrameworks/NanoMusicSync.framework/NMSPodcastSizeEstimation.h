@@ -12,7 +12,12 @@
 @property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (retain) NSMutableDictionary *sizeInfoDict;
 
++ (unsigned long long)_defaultEstimatedSize;
++ (double)_defaultSizeDurationRatio;
++ (unsigned long long)_minimumSizeThreshold;
+
 - (void).cxx_destruct;
+- (double)_adjustedSizeDurationRatio:(double)arg1;
 - (id)_cachedPodcastSizeInfoDict;
 - (void)_setupFromCache;
 - (unsigned long long)_totalAverageSize;

@@ -4,6 +4,6 @@
 
 @interface PKPeerPaymentAccountRequest : PKPeerPaymentWebServiceRequest
 
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 
 @end

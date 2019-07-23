@@ -11,14 +11,9 @@
     bool  _useSmallBars;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (id)_signalStrengthBarsImageName;
 - (id)_stringForRSSI;
 - (bool)_updateWithRaw:(int)arg1 bars:(int)arg2 enableRSSI:(bool)arg3 showFailure:(bool)arg4 useSmallBars:(bool)arg5;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
 - (double)extraLeftPadding;

@@ -8,12 +8,8 @@
 
 @property (nonatomic, copy) NSDictionary *certificatesByPersonLinkID;
 
-+ (bool)supportsSecureCoding;
-
 - (void).cxx_destruct;
 - (id)certificatesByPersonLinkID;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)setCertificatesByPersonLinkID:(id)arg1;
 
 @end

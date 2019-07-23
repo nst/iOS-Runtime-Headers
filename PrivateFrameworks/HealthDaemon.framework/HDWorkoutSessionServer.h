@@ -9,6 +9,7 @@
     HKSource * _clientSource;
     bool  _hasFailed;
     NSUUID * _identifier;
+    BKSProcessAssertion * _invalidationAssertion;
     _HKExpiringCompletionTimer * _invalidationTimer;
     HKObserverSet * _observers;
     NSObject<OS_dispatch_queue> * _persistenceQueue;
@@ -86,6 +87,7 @@
 - (id)client;
 - (id)clientProcessBundleIdentifier;
 - (id)clientSource;
+- (void)dealloc;
 - (id)description;
 - (void)didBecomeCurrent;
 - (void)didResignCurrentWithError:(id)arg1;

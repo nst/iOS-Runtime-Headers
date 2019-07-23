@@ -16,5 +16,6 @@
 - (void)controllerForCard:(id <CRCard>)arg1 didRequestAsyncCard:(id <CRCard>)arg2 withAsyncCardRequestFeedback:(id <CRAsyncCardRequestFeedback>)arg3;
 - (bool)shouldHandleEngagement:(id <CRCardSectionEngagementFeedback>)arg1 forCardSection:(id <CRCardSection>)arg2;
 - (void)userDidEngageCardSection:(id <CRCardSection>)arg1 withEngagementFeedback:(id <CRCardSectionEngagementFeedback>)arg2;
+- (void)userDidReportFeedback:(id <CRUserReportRequestFeedback>)arg1 fromCardSection:(id <CRCardSection>)arg2;
 
 @end

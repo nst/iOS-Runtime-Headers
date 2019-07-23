@@ -3,6 +3,8 @@
  */
 
 @interface IMDRecordZoneManager : NSObject <APSConnectionDelegate> {
+    CKRecordZone * _analyticRecordZone;
+    CKRecordZoneID * _analyticRecordZoneID;
     CKRecordZone * _attachmentRecordZone;
     CKRecordZoneID * _attachmentRecordZoneID;
     CKRecordZone * _chatRecordZone;
@@ -16,6 +18,8 @@
     APSConnection * _pushConnection;
 }
 
+@property (nonatomic, readonly) CKRecordZone *analyticRecordZone;
+@property (nonatomic, readonly) CKRecordZoneID *analyticRecordZoneID;
 @property (nonatomic, readonly) CKRecordZone *attachmentRecordZone;
 @property (nonatomic, readonly) CKRecordZoneID *attachmentRecordZoneID;
 @property (nonatomic, readonly) CKRecordZone *chatRecordZone;
@@ -44,6 +48,8 @@
 - (void)_deleteZone:(id)arg1 forDatabase:(id)arg2;
 - (void)_handleNotificationForZoneID:(id)arg1 subscriptionID:(id)arg2;
 - (void)_setUpPushConnection;
+- (id)analyticRecordZone;
+- (id)analyticRecordZoneID;
 - (id)attachmentRecordZone;
 - (id)attachmentRecordZoneID;
 - (id)chatRecordZone;
@@ -51,6 +57,7 @@
 - (id)ckUtilities;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)createAnalyticZoneIfNeededWithCompletionBlock:(id /* block */)arg1;
 - (void)createAttachmentZoneIfNeededWithCompletionBlock:(id /* block */)arg1;
 - (void)createChatZoneIfNeededWithCompletionBlock:(id /* block */)arg1;
 - (void)createDeDupeSaltZoneIfNeededWithCompletionBlock:(id /* block */)arg1;
@@ -61,6 +68,7 @@
 - (id)deDupeSaltZoneID;
 - (void)dealloc;
 - (void)deleteAllZones;
+- (void)deleteAnalyticZone;
 - (void)deleteAttachmentZone;
 - (void)deleteChatZone;
 - (void)deleteDeDupeSaltZone;

@@ -39,8 +39,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *thumbTintColor;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (struct CGSize { double x1; double x2; })preferredContentSize;
 
 - (void).cxx_destruct;
@@ -91,9 +89,6 @@
 - (void)_updateDisplayAnimated:(bool)arg1;
 - (double)_wellBorderWidthPressed:(bool)arg1 on:(bool)arg2;
 - (struct CGColor { }*)_wellColorOn:(bool)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)displayedOn;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;

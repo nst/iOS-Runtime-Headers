@@ -31,7 +31,7 @@
 - (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;
 - (id)description;
 - (id)earliestCertificateExpiryDate;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (id)initWithDictionary:(id)arg1 signerCerts:(id)arg2 allowEmptyPayload:(bool)arg3 outError:(id*)arg4;
 - (id)installationWarningsIncludeUnsignedProfileWarning:(bool)arg1;
 - (bool)isCloudLocked;
 - (id)isCloudLockedNum;

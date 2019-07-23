@@ -8,10 +8,11 @@
     NSString * _urlString;
 }
 
-@property (nonatomic, retain) NSArray *childBookmarks;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *urlString;
+@property (nonatomic, copy) NSArray *childBookmarks;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *urlString;
 
++ (id)bookmarkFromDMFBookmark:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

@@ -44,6 +44,7 @@
 - (id)organizationIdentifier;
 - (id)persistenceController;
 - (void)respondToAskForTime:(id)arg1 withApproval:(bool)arg2 timeApproved:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)saveAllAllowancesEnabled:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveAllowance:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveAlwaysAllowList:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveDefaultAlwaysAllowListWithCompletionHandler:(id /* block */)arg1;

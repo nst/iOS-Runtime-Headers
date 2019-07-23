@@ -23,7 +23,7 @@
 - (void)_receiveParallelRecordingFromPeerId:(id)arg1 recordingInfo:(id)arg2 withReply:(id /* block */)arg3;
 - (void)_receiveVoiceGradingDataFromPeerId:(id)arg1 requestInfo:(id)arg2 withReply:(id /* block */)arg3;
 - (void)_receiveVoiceProfileFromPeerId:(id)arg1 voiceProfileInfo:(id)arg2 withReply:(id /* block */)arg3;
-- (void)_sendGradingData:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(bool)arg4;
+- (void)_sendGradingData:(id)arg1 withFileName:(id)arg2 toPeerId:(id)arg3 withCompressedFlag:(bool)arg4 withUncompressedDataSize:(unsigned long long)arg5 withRetainFileFlag:(bool)arg6;
 - (void)_sendNearMissGradingDataToPeerId:(id)arg1;
 - (void)_sendParallelRecordingsToPeerId:(id)arg1 voiceProfileRequestInfo:(id)arg2 withReply:(id /* block */)arg3;
 - (void)_sendVoiceGradingDataToPeerId:(id)arg1;

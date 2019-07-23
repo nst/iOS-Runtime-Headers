@@ -3,7 +3,29 @@
  */
 
 @interface MPModelLibraryDefaultSectionedCollectionDataSource : NSObject <MPLazySectionedCollectionDataSource> {
+    struct map<long long, unsigned long, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, unsigned long> > > { 
+        struct __tree<std::__1::__value_type<long long, unsigned long>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, unsigned long>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, unsigned long> > > { 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long long, unsigned long>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __value_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, unsigned long>, std::__1::less<long long>, true> > { 
+                unsigned long long __value_; 
+            } __pair3_; 
+        } __tree_; 
+    }  _allowedItemPersistentIDToItemQueryResultsIndexMap;
+    struct vector<long long, std::__1::allocator<long long> > { 
+        long long *__begin_; 
+        long long *__end_; 
+        struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
+            long long *__value_; 
+        } __end_cap_; 
+    }  _allowedItemPersistentIDs;
+    bool  _contentItemIDPredetermined;
     MPMediaLibraryEntityTranslationContext * _entityTranslationContext;
+    NSDictionary * _indexPathToContentItemIDMap;
     struct shared_ptr<std::__1::vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > > { 
         struct vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -15,9 +37,11 @@
     MPModelLibraryRequest * _request;
 }
 
+@property (getter=isContentItemIDPredetermined, nonatomic) bool contentItemIDPredetermined;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSDictionary *indexPathToContentItemIDMap;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{shared_ptr<std::__1::vector<std::__1::shared_ptr<mlcore::Entity>' */ struct  itemIdentifierQueryResults; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > >}^{__shared_weak_count}} */
 @property (nonatomic, readonly) struct shared_ptr<mlcore::EntityQueryResult> { struct EntityQueryResult {} *x1; struct __shared_weak_count {} *x2; } itemQueryResults;
 @property (nonatomic, readonly) MPModelLibraryRequest *request;
@@ -25,13 +49,21 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)_adjustedGlobalIndexForIndexPath:(id)arg1;
+- (bool)_allowedEntityIdentifiersContainsAllPersistentIDs;
+- (id)_buildIndexPathToContentItemIDMapFromItemQueryResults:(struct shared_ptr<mlcore::EntityQueryResult> { struct EntityQueryResult {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (id)_contentItemIDForItemPersistentID:(long long)arg1 atIndexPath:(id)arg2;
+- (id)_contentItemIDForItemPersistentID:(long long)arg1 withOccurrenceCount:(long long)arg2;
+- (void)_populateIndexMap;
 - (bool)_usesSections;
 - (bool)hasSameContentAsDataSource:(id)arg1;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)identifiersForSectionAtIndex:(long long)arg1;
 - (long long)indexOfSectionForSectionIndexTitleAtIndex:(long long)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
+- (id)indexPathToContentItemIDMap;
 - (id)initWithRequest:(id)arg1 itemQueryResults:(struct shared_ptr<mlcore::EntityQueryResult> { struct EntityQueryResult {} *x1; struct __shared_weak_count {} *x2; })arg2 itemIdentifierQueryResults:(struct shared_ptr<std::__1::vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > > { struct vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > {} *x1; struct __shared_weak_count {} *x2; })arg3;
+- (bool)isContentItemIDPredetermined;
 - (id)itemAtIndexPath:(id)arg1;
 - (struct shared_ptr<std::__1::vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > > { struct vector<std::__1::shared_ptr<mlcore::Entity>, std::__1::allocator<std::__1::shared_ptr<mlcore::Entity> > > {} *x1; struct __shared_weak_count {} *x2; })itemIdentifierQueryResults;
 - (struct shared_ptr<mlcore::EntityQueryResult> { struct EntityQueryResult {} *x1; struct __shared_weak_count {} *x2; })itemQueryResults;
@@ -41,5 +73,7 @@
 - (id)request;
 - (id)sectionAtIndex:(unsigned long long)arg1;
 - (id)sectionIndexTitles;
+- (void)setContentItemIDPredetermined:(bool)arg1;
+- (void)setIndexPathToContentItemIDMap:(id)arg1;
 
 @end

@@ -13,7 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)documentColumnLayoutForGalleryLayouter:(id)arg1;
 - (struct CGSize { double x1; double x2; })galleryLayouter:(id)arg1 dimensionsForItemAtIndex:(unsigned long long)arg2;
 - (id)galleryLayouter:(id)arg1 viewForItemAtIndex:(unsigned long long)arg2;

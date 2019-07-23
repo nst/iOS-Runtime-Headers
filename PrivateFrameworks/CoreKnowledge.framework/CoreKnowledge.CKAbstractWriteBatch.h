@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKAbstractWriteBatch : SwiftObject {
+@interface CoreKnowledge.CKAbstractWriteBatch : Swift._SwiftObject {
     void backingStore;
     void buffer;
 }

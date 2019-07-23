@@ -44,8 +44,4 @@
 - (id)sg_namedEmailAddress;
 - (id)sg_serialized;
 
-// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
-
-- (bool)isKnownAppleContact;
-
 @end

@@ -7,6 +7,7 @@
     bool  _activateCompleted;
     bool  _activateInProgress;
     long long  _advertiseRate;
+    NSData * _authTagOverride;
     bool  _autoUnlockEnabled;
     bool  _autoUnlockWatch;
     unsigned char  _deviceActionType;
@@ -79,6 +80,7 @@
 }
 
 @property (nonatomic) long long advertiseRate;
+@property (nonatomic, copy) NSData *authTagOverride;
 @property (nonatomic) bool autoUnlockEnabled;
 @property (nonatomic) bool autoUnlockWatch;
 @property (nonatomic) unsigned char deviceActionType;
@@ -157,6 +159,7 @@
 - (void)activateTLSWithIdentity:(struct __SecIdentity { }*)arg1 recordData:(id)arg2 completion:(id /* block */)arg3;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (long long)advertiseRate;
+- (id)authTagOverride;
 - (bool)autoUnlockEnabled;
 - (bool)autoUnlockWatch;
 - (void)clearEncryptionInfoForPeer:(id)arg1;
@@ -223,6 +226,7 @@
 - (id /* block */)sessionSecuredHandler;
 - (id /* block */)sessionStartedHandler;
 - (void)setAdvertiseRate:(long long)arg1;
+- (void)setAuthTagOverride:(id)arg1;
 - (void)setAutoUnlockEnabled:(bool)arg1;
 - (void)setAutoUnlockWatch:(bool)arg1;
 - (void)setDeviceActionType:(unsigned char)arg1;

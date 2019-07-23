@@ -14,7 +14,7 @@
 
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)devices;

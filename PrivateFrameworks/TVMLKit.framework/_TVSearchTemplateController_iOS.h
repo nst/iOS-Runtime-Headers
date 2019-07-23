@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVSearchTemplateController_iOS : _TVBgImageLoadingViewController <IKAppKeyboardDelegate, UISearchResultsUpdating> {
+@interface _TVSearchTemplateController_iOS : _TVBgImageLoadingViewController <IKAppKeyboardDelegate, TVAppTemplateImpressionable, UISearchResultsUpdating, _TVStackCollectionViewControllerDelegate> {
     IKViewElement * _collectionListElement;
     IKAppKeyboard * _ikKeyboard;
+    double  _impressionThreshold;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -30,19 +31,25 @@
 @property (nonatomic, readonly) IKViewElement *viewElement;
 
 - (void).cxx_destruct;
+- (void)_cancelImpressionsUpdate;
 - (bool)_isAtWordEnd;
 - (void)_keyboardDidChangeFrame:(id)arg1;
+- (void)_recordImpressionsForVisibleView;
 - (id)_sanitizedText;
 - (void)_setNonResultsView:(id)arg1;
+- (void)_updateImpressions;
 - (void)_updateKeyboardText;
 - (void)_updateSearchFieldText;
 - (void)dealloc;
+- (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)init;
 - (void)loadView;
+- (void)stackCollectionViewController:(id)arg1 scrollViewDidScroll:(id)arg2;
 - (void)textDidChangeForKeyboard:(id)arg1;
 - (void)updateNavigationItem:(id)arg1;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (id)viewElement;
 

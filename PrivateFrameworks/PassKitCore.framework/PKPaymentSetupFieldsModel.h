@@ -23,6 +23,7 @@
 - (id)paymentSetupFieldIdentifiers;
 - (id)paymentSetupFieldWithIdentifier:(id)arg1;
 - (id)paymentSetupFields;
+- (void)prefillDefaultValues;
 - (void)replaceAllPaymentSetupFields:(id)arg1;
 - (void)replaceAllPaymentSetupFieldsPreservingCurrentValues:(id)arg1;
 - (void)resetAllPaymentSetupFieldValues;

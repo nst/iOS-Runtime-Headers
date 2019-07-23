@@ -12,13 +12,8 @@
 @property (nonatomic, readonly) bool overlay;
 @property (nonatomic) UIScrollView *scrollView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (bool)_selectEntry:(id)arg1 atIndex:(long long)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)displayEntryNearestToContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (long long)edge;
 - (bool)overlay;

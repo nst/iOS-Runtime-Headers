@@ -31,6 +31,7 @@
 - (bool)_migrateToSchemaVersion:(int)arg1 forDatabase:(id)arg2;
 - (int)_migrateToSchemaVersion_2;
 - (int)_migrateToSchemaVersion_3;
+- (int)_migrateToSchemaVersion_4;
 - (id)_normalizeDomain:(id)arg1;
 - (void)_openDatabasesIfNeeded;
 - (void)_openLocalDatabase;

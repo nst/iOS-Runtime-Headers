@@ -2,28 +2,22 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebFrame : NSObject <WBUFormAutoFillFrameHandle> {
+@interface WebFrame : NSObject {
     WebFramePrivate * _private;
 }
 
 @property (nonatomic, readonly) DOMDocument *DOMDocument;
 @property (nonatomic, readonly, copy) NSArray *childFrames;
 @property (nonatomic, readonly) WebDataSource *dataSource;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) DOMHTMLElement *frameElement;
 @property (nonatomic, readonly) WebFrameView *frameView;
 @property (nonatomic, readonly) struct OpaqueJSContext { }*globalContext;
 @property (nonatomic, readonly) bool hasRichlyEditableDragCaret;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) JSContext *javaScriptContext;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) WebFrame *parentFrame;
 @property (nonatomic, readonly) WebDataSource *provisionalDataSource;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) WebView *webView;
-@property (nonatomic, readonly) NSURL *webui_URL;
-@property (nonatomic, readonly) struct __SecTrust { }*webui_serverTrust;
 @property (nonatomic, readonly) WebScriptObject *windowObject;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
@@ -53,7 +47,7 @@
 - (id)_convertNSRangeToDOMRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct RefPtr<WebCore::Range, WTF::DumbPtrTraits<WebCore::Range> > { struct Range {} *x1; })_convertToDOMRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct RefPtr<WebCore::Range, WTF::DumbPtrTraits<WebCore::Range> > { struct Range {} *x1; })_convertToDOMRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 rangeIsRelativeTo:(unsigned char)arg2;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
 - (id)_dataSource;
 - (void)_detachScriptDebugger;
 - (void)_dispatchDidReceiveTitle:(id)arg1;
@@ -88,7 +82,7 @@
 - (id)_markDOMRange;
 - (bool)_needsLayout;
 - (id)_nodesFromList:(struct Vector<WebCore::Node *, 0, WTF::CrashOnOverflow, 16> { struct Node {} **x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (unsigned int)_paintBehaviorForDestinationContext:(struct CGContext { }*)arg1;
+- (struct OptionSet<WebCore::PaintBehavior> { unsigned short x1; })_paintBehaviorForDestinationContext:(struct CGContext { }*)arg1;
 - (unsigned int)_pendingFrameUnloadEventCount;
 - (id)_rectsForRange:(id)arg1;
 - (void)_replaceSelectionWithFragment:(id)arg1 selectReplacement:(bool)arg2 smartReplace:(bool)arg3 matchStyle:(bool)arg4;
@@ -115,7 +109,7 @@
 - (void)_setSelectionFromNone;
 - (void)_setShouldCreateRenderers:(bool)arg1;
 - (void)_setTextAutosizingWidth:(double)arg1;
-- (void)_setTypingStyle:(id)arg1 withUndoAction:(int)arg2;
+- (void)_setTypingStyle:(id)arg1 withUndoAction:(unsigned char)arg2;
 - (void)_setVisibleSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_stringByEvaluatingJavaScriptFromString:(id)arg1;
 - (id)_stringByEvaluatingJavaScriptFromString:(id)arg1 forceUserGesture:(bool)arg2;
@@ -235,7 +229,7 @@
 - (bool)selectionAtWordStart;
 - (int)selectionBaseWritingDirection;
 - (id)selectionRects;
-- (id)selectionRectsForCoreRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
+- (id)selectionRectsForCoreRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
 - (id)selectionRectsForRange:(id)arg1;
 - (int)selectionState;
 - (void)sendScrollEvent;
@@ -291,10 +285,5 @@
 - (bool)containsOnlySelectableElements;
 - (bool)isMainFrame;
 - (bool)isTexty;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)webui_URL;
-- (struct __SecTrust { }*)webui_serverTrust;
 
 @end

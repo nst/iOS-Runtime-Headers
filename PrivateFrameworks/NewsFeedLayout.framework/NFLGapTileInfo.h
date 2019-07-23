@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, readonly) unsigned long long bookmarkOffsetType;
-@property (nonatomic, readonly) bool bookmarkable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
 @property (nonatomic, readonly, copy) NSString *groupIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
@@ -22,8 +22,8 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)bookmarkOffsetType;
-- (bool)bookmarkable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)feedTileInfoForBookmarking;
 - (id)groupIdentifier;
 - (unsigned long long)hash;
 - (id)identifier;
@@ -33,5 +33,6 @@
 - (bool)pageable;
 - (unsigned long long)tileInfoType;
 - (id)underlyingFeedElements;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 
 @end

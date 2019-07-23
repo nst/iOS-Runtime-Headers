@@ -14,6 +14,7 @@
 + (void)processAPSOffsetEstimatorInfo:(id)arg1 portType:(id)arg2;
 + (id)sharedInstance;
 
+- (void)_appendApsMotionData:(id)arg1 sphereMotionData:(id)arg2 toDataString:(id)arg3;
 - (void)_appendLensMotionData:(id)arg1 toDataString:(id)arg2;
 - (id)_getLogFileHandle;
 - (void)_logAPSOffsetEstimatorInfo:(id)arg1 portType:(id)arg2;

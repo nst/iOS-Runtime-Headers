@@ -19,6 +19,7 @@
 @property (nonatomic) bool bypassStorage;
 @property (nonatomic, retain) IDSOutgoingMessageCheckpointTrace *checkpointTrace;
 @property (nonatomic, retain) NSNumber *command;
+@property (nonatomic, retain) NSNumber *commandContext;
 @property (nonatomic) bool compressPayload;
 @property (nonatomic) bool compressed;
 @property (nonatomic) bool daemonDeathResend;
@@ -89,6 +90,7 @@
 - (bool)bypassStorage;
 - (id)checkpointTrace;
 - (id)command;
+- (id)commandContext;
 - (bool)compressPayload;
 - (bool)compressed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -156,6 +158,7 @@
 - (void)setBypassStorage:(bool)arg1;
 - (void)setCheckpointTrace:(id)arg1;
 - (void)setCommand:(id)arg1;
+- (void)setCommandContext:(id)arg1;
 - (void)setCompressPayload:(bool)arg1;
 - (void)setCompressed:(bool)arg1;
 - (void)setDaemonDeathResend:(bool)arg1;

@@ -8,6 +8,7 @@
 - (CNContactViewCache *)contactViewCache;
 - (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerPhotoDidUpdate;
+- (void)headerViewDidPickPreferredChannel:(NSString *)arg1;
 - (void)headerViewDidUpdateLabelSizes;
 - (UIViewController *)viewControllerForHeaderView:(CNContactHeaderView *)arg1;
 

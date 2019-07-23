@@ -3,21 +3,25 @@
  */
 
 @interface SUNavigationContainerViewController : SUViewController {
+    AMSBinaryPromise * _appearancePromise;
     bool  _bridgedNavigation;
     id /* block */  _popHandler;
     bool  _shouldRunPopHandler;
 }
 
+@property (nonatomic, retain) AMSBinaryPromise *appearancePromise;
 @property (nonatomic) bool bridgedNavigation;
 @property (nonatomic, readonly) UIViewController *embeddedViewController;
 @property (nonatomic, copy) id /* block */ popHandler;
 @property (nonatomic) bool shouldRunPopHandler;
 
 - (void).cxx_destruct;
+- (id)appearancePromise;
 - (bool)bridgedNavigation;
 - (id)embeddedViewController;
 - (id)initWithChildViewController:(id)arg1;
 - (id /* block */)popHandler;
+- (void)setAppearancePromise:(id)arg1;
 - (void)setBridgedNavigation:(bool)arg1;
 - (void)setEmbeddedViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setPopHandler:(id /* block */)arg1;
@@ -27,6 +31,7 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

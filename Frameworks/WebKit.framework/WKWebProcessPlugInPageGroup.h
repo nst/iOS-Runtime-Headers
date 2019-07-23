@@ -5,7 +5,7 @@
 @interface WKWebProcessPlugInPageGroup : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPageGroupProxy> { 
         struct type { 
-            unsigned char __lx[64]; 
+            unsigned char __lx[56]; 
         } data; 
     }  _bundlePageGroup;
 }

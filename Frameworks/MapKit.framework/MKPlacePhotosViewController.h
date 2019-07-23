@@ -54,6 +54,7 @@
 - (void)addAttributionCell;
 - (id)attributionString;
 - (void)dealloc;
+- (id)formattedAttributionString;
 - (id)infoCardChildPossibleActions;
 - (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2;
@@ -71,6 +72,7 @@
 - (void)setShowsBottomHairline:(bool)arg1;
 - (bool)showsBottomHairline;
 - (struct CGSize { double x1; double x2; })sizeForIndex:(unsigned long long)arg1;
+- (void)updateAttributionCell;
 - (void)updateAttributionPositionWithOffset:(double)arg1;
 - (void)updateBottomHairlineVisibility;
 - (void)viewDidAppear:(bool)arg1;

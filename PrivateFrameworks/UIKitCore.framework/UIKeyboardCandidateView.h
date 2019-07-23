@@ -25,17 +25,12 @@
 @property (nonatomic, retain) UIView<UIKeyboardCandidateList> *inlineView;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultExtendedControlHeight;
 
 - (void).cxx_destruct;
 - (bool)_needsBackdrop;
 - (unsigned long long)_numberOfColumns:(bool)arg1;
 - (void)_toggleExtendedCandidateView:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
 - (int)candidatesVisualStyle;

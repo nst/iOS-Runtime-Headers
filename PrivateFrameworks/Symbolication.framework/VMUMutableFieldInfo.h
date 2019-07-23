@@ -13,6 +13,8 @@
 @property (nonatomic) unsigned int scannableSize;
 @property (nonatomic) unsigned int stride;
 
+- (void)mutateTypeFieldsRecursivelyWithBlock:(id /* block */)arg1 parentOffset:(unsigned int)arg2;
+- (bool)replaceFieldRecursively:(id)arg1 withField:(id)arg2;
 - (void)setDestinationLayout:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setIsByref:(bool)arg1;

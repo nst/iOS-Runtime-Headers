@@ -3,6 +3,26 @@
  */
 
 @interface _TVStackSection : NSObject {
+    struct TVRowMetrics { 
+        long long rowType; 
+        double rowHeight; 
+        struct { 
+            double top; 
+            double bottom; 
+        } rowPadding; 
+        struct { 
+            double top; 
+            double bottom; 
+        } rowInset; 
+        struct { 
+            double top; 
+            double bottom; 
+        } rowInsetAlt; 
+        struct { 
+            double top; 
+            double bottom; 
+        } rowMargin; 
+    }  _compoundRowMetrics;
     long long  _firstItemRowIndex;
     long long  _firstRowIndex;
     long long  _rowCount;
@@ -13,24 +33,40 @@
         double bottom; 
         double right; 
     }  _sectionSpacing;
+    double  _showcaseSectionHeight;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _showcaseSectionSpacing;
 }
 
+@property (nonatomic) struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; } compoundRowMetrics;
 @property (nonatomic) long long firstItemRowIndex;
 @property (nonatomic) long long firstRowIndex;
 @property (nonatomic) long long rowCount;
 @property (nonatomic) double sectionHeight;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionSpacing;
+@property (nonatomic) double showcaseSectionHeight;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } showcaseSectionSpacing;
 
+- (struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; })compoundRowMetrics;
 - (id)debugDescription;
 - (long long)firstItemRowIndex;
 - (long long)firstRowIndex;
 - (long long)rowCount;
 - (double)sectionHeight;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionSpacing;
+- (void)setCompoundRowMetrics:(struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; })arg1;
 - (void)setFirstItemRowIndex:(long long)arg1;
 - (void)setFirstRowIndex:(long long)arg1;
 - (void)setRowCount:(long long)arg1;
 - (void)setSectionHeight:(double)arg1;
 - (void)setSectionSpacing:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setShowcaseSectionHeight:(double)arg1;
+- (void)setShowcaseSectionSpacing:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (double)showcaseSectionHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })showcaseSectionSpacing;
 
 @end

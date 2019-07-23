@@ -2,6 +2,8 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@interface CMWakeGestureWatch : CMWakeGestureManager
+@interface CMWakeGestureWatch : CMWakeGestureManager {
+    int  fSelector;
+}
 
 @end

@@ -20,6 +20,7 @@
 @property (getter=isAuthorizationRequiredForPlayback, nonatomic, readonly) bool authorizationRequiredForPlayback;
 @property (getter=isContentAuthorizedForPlayback, nonatomic, readonly) bool contentAuthorizedForPlayback;
 @property (nonatomic, readonly) NSError *error;
+@property (nonatomic, copy) NSArray *externalMetadata;
 @property (getter=is_isHighFramerate, nonatomic, readonly) bool is_highFramerate;
 @property (nonatomic, readonly) NSArray *mediaDataCollectors;
 @property (nonatomic, readonly) NSArray *outputs;
@@ -455,6 +456,11 @@
 - (id)videoEnhancementMode;
 - (float)volumeAdjustment;
 - (bool)willNeverSeekBackwardsHint;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (id)externalMetadata;
+- (void)setExternalMetadata:(id)arg1;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 

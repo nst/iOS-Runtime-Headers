@@ -68,7 +68,6 @@
 @property (nonatomic, readonly) bool supportsCollaborativeEditing;
 @property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
-@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic) bool usesSingleHeaderFooter;
 @property (getter=isUsingStartPageNumber) bool usingStartPageNumber;
 
@@ -134,7 +133,7 @@
 - (int)layoutDirection;
 - (bool)layoutIsLeftToRight;
 - (bool)layoutIsRightToLeft;
-- (void)loadFromArchive:(const struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; float x11; struct EdgeInsetsArchive {} *x12; int x13; int x14; float x15; float x16; struct Reference {} *x17; struct Reference {} *x18; struct Reference {} *x19; bool x20; bool x21; int x22; struct RepeatedPtrField<TSP::Reference> { void **x_23_1_1; int x_23_1_2; int x_23_1_3; int x_23_1_4; } x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SheetArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_8_1_1; } x8; struct EdgeInsetsArchive {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; bool x14; bool x15; bool x16; float x17; int x18; int x19; float x20; float x21; bool x22; bool x23; int x24; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (void)moveDrawables:(id)arg1 toIndexes:(id)arg2;
@@ -167,7 +166,7 @@
 - (id)resolversMatchingPrefix:(id)arg1;
 - (void)rollbackNextUntitledResolverIndex:(unsigned int)arg1;
 - (unsigned int)saveNextUntitledResolverIndex;
-- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; bool x7; bool x8; bool x9; bool x10; float x11; struct EdgeInsetsArchive {} *x12; int x13; int x14; float x15; float x16; struct Reference {} *x17; struct Reference {} *x18; struct Reference {} *x19; bool x20; bool x21; int x22; struct RepeatedPtrField<TSP::Reference> { void **x_23_1_1; int x_23_1_2; int x_23_1_3; int x_23_1_4; } x23; struct RepeatedPtrField<TSP::Reference> { void **x_24_1_1; int x_24_1_2; int x_24_1_3; int x_24_1_4; } x24; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SheetArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_8_1_1; } x8; struct EdgeInsetsArchive {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; bool x13; bool x14; bool x15; bool x16; float x17; int x18; int x19; float x20; float x21; bool x22; bool x23; int x24; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setChildInfos:(id)arg1;
 - (void)setContentScale:(double)arg1;
@@ -194,7 +193,7 @@
 - (id)tableInfoForName:(id)arg1 caseSensitive:(bool)arg2;
 - (id)tableInfos;
 - (bool)textIsLinked;
-- (bool)textIsVertical;
+- (bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 - (bool)usesSingleHeaderFooter;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

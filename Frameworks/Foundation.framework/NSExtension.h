@@ -122,8 +122,8 @@
 - (id /* block */)_requestPostCompletionBlockWithItems;
 - (void)_resetExtensionState;
 - (void)_safelyBeginUsing:(id /* block */)arg1;
-- (void)_safelyBeginUsingSynchronously:(bool)arg1 withAssertion_onSafeQueue:(id /* block */)arg2;
-- (void)_safelyBeginUsing_withAssertion:(id /* block */)arg1;
+- (void)_safelyBeginUsingSynchronously:(bool)arg1 options:(unsigned long long)arg2 withAssertion_onSafeQueue:(id /* block */)arg3;
+- (void)_safelyBeginUsingWithOptions:(unsigned long long)arg1 withAssertion_onSafeQueue:(id /* block */)arg2;
 - (void)_safelyEndUsing:(id /* block */)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(id /* block */)arg2;
 - (void)_setAllowedErrorClasses:(id)arg1;
@@ -143,6 +143,10 @@
 - (id)beginExtensionRequestWithInputItems:(id)arg1 error:(id*)arg2;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id /* block */)arg3;
 - (id)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 error:(id*)arg3;
+- (void)beginExtensionRequestWithOptions:(unsigned long long)arg1 inputItems:(id)arg2 completion:(id /* block */)arg3;
+- (id)beginExtensionRequestWithOptions:(unsigned long long)arg1 inputItems:(id)arg2 error:(id*)arg3;
+- (void)beginExtensionRequestWithOptions:(unsigned long long)arg1 inputItems:(id)arg2 listenerEndpoint:(id)arg3 completion:(id /* block */)arg4;
+- (id)beginExtensionRequestWithOptions:(unsigned long long)arg1 inputItems:(id)arg2 listenerEndpoint:(id)arg3 error:(id*)arg4;
 - (void)cancelExtensionRequestWithIdentifier:(id)arg1;
 - (id)connectionUUID;
 - (void)dealloc;
@@ -155,7 +159,7 @@
 - (id)infoDictionary;
 - (id)init;
 - (bool)isEqual:(id)arg1;
-- (id)newAssertionToBeginUsingPluginWithError:(id*)arg1;
+- (id)newAssertionToBeginUsingPluginWithOptions:(unsigned long long)arg1 error:(id*)arg2;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (bool)optedIn;
 - (int)pidForRequestIdentifier:(id)arg1;

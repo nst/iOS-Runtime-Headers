@@ -54,6 +54,7 @@
     bool  _printJson;
     bool  _printSpinSignatureStack;
     bool  _printTargetHIDEvent;
+    bool  _printTargetThreadOnly;
     bool  _showThreadStateAsLeafFrame;
     bool  _systemstatsFormat;
     bool  _tabDelineateBinaryImageSections;
@@ -110,6 +111,7 @@
 @property bool printJson;
 @property bool printSpinSignatureStack;
 @property bool printTargetHIDEvent;
+@property bool printTargetThreadOnly;
 @property bool showThreadStateAsLeafFrame;
 @property bool systemstatsFormat;
 @property bool tabDelineateBinaryImageSections;
@@ -168,6 +170,7 @@
 - (bool)printJson;
 - (bool)printSpinSignatureStack;
 - (bool)printTargetHIDEvent;
+- (bool)printTargetThreadOnly;
 - (void)setAggregateFramesByOffsetIntoBinary:(bool)arg1;
 - (void)setAggregateProcessesByExecutable:(bool)arg1;
 - (void)setAggregateStacksByProcess:(bool)arg1;
@@ -219,6 +222,7 @@
 - (void)setPrintJson:(bool)arg1;
 - (void)setPrintSpinSignatureStack:(bool)arg1;
 - (void)setPrintTargetHIDEvent:(bool)arg1;
+- (void)setPrintTargetThreadOnly:(bool)arg1;
 - (void)setShowThreadStateAsLeafFrame:(bool)arg1;
 - (void)setSystemstatsFormat:(bool)arg1;
 - (void)setTabDelineateBinaryImageSections:(bool)arg1;

@@ -28,6 +28,7 @@
 - (void)_validateGUIDURLConfigIfNeeded;
 - (id)allValues;
 - (id)bagValues;
+- (bool)boolValueForBagKey:(id)arg1;
 - (bool)canPostKeybagSyncData;
 - (id)convertedActionsCache;
 - (bool)hasValueForBagKey:(id)arg1;

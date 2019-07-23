@@ -14,6 +14,7 @@
         double width; 
         double height; 
     }  _maximumExpandedSize;
+    id  _notificationObserver;
     _WKRemoteObjectInterface * _remoteObjectInterface;
     bool  _shouldBlockNavigation;
     bool  _tapWasRecognized;
@@ -33,6 +34,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ADHomeButtonHandler *homeButtonHandler;
 @property (nonatomic) struct CGSize { double x1; double x2; } maximumExpandedSize;
+@property (nonatomic, retain) id notificationObserver;
 @property (nonatomic, retain) _WKRemoteObjectInterface *remoteObjectInterface;
 @property (nonatomic) bool shouldBlockNavigation;
 @property (readonly) Class superclass;
@@ -66,6 +68,7 @@
 - (id)homeButtonHandler;
 - (bool)isVisible;
 - (struct CGSize { double x1; double x2; })maximumExpandedSize;
+- (id)notificationObserver;
 - (id)remoteObjectInterface;
 - (void)setAdIsDismissing:(bool)arg1;
 - (void)setBrowserContextControllerDidLoad:(bool)arg1;
@@ -74,6 +77,7 @@
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setHomeButtonHandler:(id)arg1;
 - (void)setMaximumExpandedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNotificationObserver:(id)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setShouldBlockNavigation:(bool)arg1;
 - (void)setTapWasRecognized:(bool)arg1;

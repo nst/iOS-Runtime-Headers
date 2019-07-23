@@ -61,7 +61,7 @@
 - (void)_routeChangeStartedWithID:(id)arg1;
 - (void)_routeConfigUpdateEndedWithID:(struct __CFString { }*)arg1 reason:(struct __CFString { }*)arg2;
 - (void)_routeConfigUpdateStartedWithID:(struct __CFString { }*)arg1;
-- (void)_routeConfigUpdatedWithID:(struct __CFString { }*)arg1 reason:(struct __CFString { }*)arg2;
+- (void)_routeConfigUpdatedWithID:(struct __CFString { }*)arg1 reason:(struct __CFString { }*)arg2 initiator:(const struct __CFString { }*)arg3;
 - (void)_sendCommand:(struct __CFString { }*)arg1 completionHandler:(id /* block */)arg2;
 - (void)_serverConnectionDied;
 - (void)_systemPickerVideoRouteChanged;
@@ -95,6 +95,7 @@
 - (id)routingContextUUID;
 - (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setOutputDevices:(id)arg1;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setParentOutputContext:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (bool)supportsMultipleOutputDevices;

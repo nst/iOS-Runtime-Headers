@@ -18,6 +18,7 @@
     bool  _deferringState;
     <PKPaymentAuthorizationFooterViewDelegate> * _delegate;
     NSMutableArray * _dynamicRegularConstraints;
+    unsigned int  _emphasizedEdge;
     PKGlyphView * _glyphView;
     bool  _hasPearl;
     NSArray * _hiddenConstraints;
@@ -26,6 +27,7 @@
     PKPaymentAuthorizationLayout * _layout;
     UIView * _lockupView;
     double  _minimumHeight;
+    NSString * _overrideString;
     UILabel * _passbookPaymentDetailsView;
     UIButton * _payWithPasscodeButton;
     long long  _queuedConstraintState;
@@ -64,6 +66,7 @@
 - (id)defaultHeightConstraints;
 - (id)delegate;
 - (void)glyphView:(id)arg1 revealingCheckmark:(bool)arg2;
+- (void)glyphViewUserIntentEdgeDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(id)arg2;
 - (id)layout;
@@ -81,5 +84,6 @@
 - (void)setState:(long long)arg1 string:(id)arg2 animated:(bool)arg3 withCompletion:(id /* block */)arg4;
 - (long long)state;
 - (void)updateConstraints;
+- (void)updateRotation;
 
 @end

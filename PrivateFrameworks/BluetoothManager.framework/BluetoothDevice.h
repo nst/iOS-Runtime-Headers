@@ -13,6 +13,7 @@
 - (bool)_isNameCached;
 - (void)acceptSSP:(long long)arg1;
 - (int)accessorySettingFeatureBitMask;
+- (id)aclUID;
 - (id)address;
 - (int)batteryLevel;
 - (bool)cloudPaired;
@@ -33,6 +34,7 @@
 - (void)endVoiceCommand;
 - (bool)featureCapability:(int)arg1;
 - (unsigned int)getConnectingServiceMask;
+- (int)getLowSecurityStatus;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (bool)inEarDetectEnabled;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
@@ -63,6 +65,7 @@
 - (bool)setUserName:(id)arg1;
 - (void)startVoiceCommand;
 - (bool)supportsBatteryLevel;
+- (bool)supportsHS;
 - (id)syncGroups;
 - (struct { bool x1; bool x2; bool x3; bool x4; bool x5; })syncSettings;
 - (int)type;

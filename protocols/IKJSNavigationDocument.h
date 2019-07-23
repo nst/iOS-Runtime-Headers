@@ -16,5 +16,6 @@
 - (void)pushDocument:(IKDOMDocument *)arg1 :(NSDictionary *)arg2;
 - (void)removeDocument:(IKDOMDocument *)arg1;
 - (void)replaceDocument:(IKDOMDocument *)arg1 :(IKDOMDocument *)arg2 :(NSDictionary *)arg3;
+- (void)setDocuments:(NSArray *)arg1 :(NSDictionary *)arg2;
 
 @end

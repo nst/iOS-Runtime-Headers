@@ -25,8 +25,8 @@
 - (id)initWithFloats:(const float*)arg1 count:(unsigned long long)arg2;
 - (id)initWithFloatsNoCopy:(float*)arg1 count:(unsigned long long)arg2 deallocator:(id /* block */)arg3;
 - (id)initWithFloatsNoCopy:(float*)arg1 count:(unsigned long long)arg2 freeWhenDone:(bool)arg3;
+- (float)l1norm;
 - (float)l2norm;
-- (float)maxAbsValue;
 - (float)maxValue;
 - (float)minValue;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

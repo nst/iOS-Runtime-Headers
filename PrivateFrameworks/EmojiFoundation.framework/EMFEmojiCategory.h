@@ -13,9 +13,11 @@
 + (id)ActivityEmoji;
 + (id)CelebrationEmoji;
 + (id)DingbatsVariantEmoji;
++ (id)FlagsEmoji;
 + (id)FoodAndDrinkEmoji;
 + (id)GenderEmoji;
 + (id)NatureEmoji;
++ (id)NewlyAddedEmoji;
 + (id)NoneVariantEmoji;
 + (id)ObjectsEmoji;
 + (id)PeopleEmoji;
@@ -27,7 +29,9 @@
 + (id)_baseLocalizationKeyForIdentifier:(id)arg1;
 + (id)_emojiSetForIdentifier:(id)arg1;
 + (bool)_isDingbatsVariantEmoji:(id)arg1;
++ (bool)_isFlagEmoji:(id)arg1;
 + (bool)_isGenderEmoji:(id)arg1;
++ (bool)_isNewlyAddedEmoji:(id)arg1;
 + (bool)_isNoneVariantEmoji:(id)arg1;
 + (bool)_isProfessionEmoji:(id)arg1;
 + (bool)_isSkinToneEmoji:(id)arg1;

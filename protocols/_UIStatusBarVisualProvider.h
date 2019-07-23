@@ -21,6 +21,7 @@
 - (bool)canFixupDisplayItemAttributes;
 - (void)dataUpdated:(_UIStatusBarData *)arg1;
 - (NSSet *)displayItemIdentifiersForPartWithIdentifier:(NSString *)arg1;
+- (void)itemCreated:(_UIStatusBarItem *)arg1;
 - (void)modeUpdatedFromMode:(long long)arg1;
 - (void)orientationUpdatedFromOrientation:(long long)arg1;
 - (_UIStatusBarStyleAttributes *)overriddenStyleAttributesForDisplayItemWithIdentifier:(_UIStatusBarIdentifier *)arg1;

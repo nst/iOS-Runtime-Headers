@@ -3,6 +3,7 @@
  */
 
 @interface UISApplicationState : NSObject {
+    NSString * _bundleIdentifier;
     UISApplicationStateClient * _client;
 }
 

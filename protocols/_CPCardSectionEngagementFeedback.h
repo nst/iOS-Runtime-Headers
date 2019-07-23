@@ -6,6 +6,7 @@
 @required
 
 - (int)actionCardType;
+- (int)actionTarget;
 - (_CPCardSectionForFeedback *)cardSection;
 - (NSString *)cardSectionId;
 - (_CPPunchoutForFeedback *)destination;
@@ -16,6 +17,7 @@
 - (NSString *)parPunchoutActionTarget;
 - (NSString *)resultId;
 - (void)setActionCardType:(int)arg1;
+- (void)setActionTarget:(int)arg1;
 - (void)setCardSection:(_CPCardSectionForFeedback *)arg1;
 - (void)setCardSectionId:(NSString *)arg1;
 - (void)setDestination:(_CPPunchoutForFeedback *)arg1;

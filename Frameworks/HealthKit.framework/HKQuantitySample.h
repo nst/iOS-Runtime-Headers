@@ -59,6 +59,6 @@
 
 - (void)addDetailValuesToSection:(id)arg1;
 - (id)dataProviderValue;
-- (bool)hasBeatToBeatData;
+- (id)hk_additionalMetadataSectionsWithHealthStore:(id)arg1 displayTypeController:(id)arg2 unitController:(id)arg3;
 
 @end

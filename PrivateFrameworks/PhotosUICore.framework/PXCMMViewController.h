@@ -11,6 +11,7 @@
     PXCMMAssetsProgressListener * _assetsProgressListener;
     PXCMMAssetsViewController * _assetsViewController;
     <PXCMMViewControllerDelegate> * _delegate;
+    bool  _didIncrementNumberOfPresentedSendBacks;
     bool  _hasStartedPreloadingTasks;
     NSArray * _layoutConstraints;
     bool  _loadingPeopleSuggestions;

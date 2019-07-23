@@ -36,6 +36,7 @@
 - (bool)loadPersistentStoreWithURL:(id)arg1;
 - (void)markChangesAsSynced:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)registerSyncService:(id)arg1 asMaster:(bool)arg2;
+- (void)removeSyncStateForChanges:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)removeSyncStateForSyncServiceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (bool)resetPersistentStore;
 

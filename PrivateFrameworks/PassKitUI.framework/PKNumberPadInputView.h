@@ -3,10 +3,12 @@
  */
 
 @interface PKNumberPadInputView : UIInputView {
+    UIColor * _numberPadColor;
     bool  _showsDecimalPointButton;
     UIStackView * _verticalStackView;
 }
 
+@property (nonatomic, copy) UIColor *numberPadColor;
 @property (nonatomic) bool showsDecimalPointButton;
 
 + (struct CGSize { double x1; double x2; })defaultSize;
@@ -19,6 +21,8 @@
 - (id)initWithDefaultFrame;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)numberPadColor;
+- (void)setNumberPadColor:(id)arg1;
 - (void)setShowsDecimalPointButton:(bool)arg1;
 - (bool)showsDecimalPointButton;
 

@@ -9,9 +9,12 @@
     id /* block */  _completion;
     NSData * _data;
     NSError * _error;
+    bool  _hasMessageUUID;
     unsigned long long  _length;
     unsigned long long  _maxLength;
+    unsigned char  _messageUUID;
     unsigned long long  _minLength;
+    unsigned int  _statusFlags;
 }
 
 @property (nonatomic) void*bufferBytes;
@@ -19,9 +22,12 @@
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, readonly) NSError *error;
+@property (nonatomic) bool hasMessageUUID;
 @property (nonatomic, readonly) unsigned long long length;
 @property (nonatomic) unsigned long long maxLength;
+@property (nonatomic, readonly) char *messageUUID;
 @property (nonatomic) unsigned long long minLength;
+@property (nonatomic) unsigned int statusFlags;
 
 - (void).cxx_destruct;
 - (void*)bufferBytes;
@@ -29,14 +35,19 @@
 - (id /* block */)completion;
 - (id)data;
 - (id)error;
+- (bool)hasMessageUUID;
 - (unsigned long long)length;
 - (unsigned long long)maxLength;
+- (char *)messageUUID;
 - (unsigned long long)minLength;
 - (void)setBufferBytes:(void*)arg1;
 - (void)setBufferData:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setData:(id)arg1;
+- (void)setHasMessageUUID:(bool)arg1;
 - (void)setMaxLength:(unsigned long long)arg1;
 - (void)setMinLength:(unsigned long long)arg1;
+- (void)setStatusFlags:(unsigned int)arg1;
+- (unsigned int)statusFlags;
 
 @end

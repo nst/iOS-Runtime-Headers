@@ -21,6 +21,7 @@
 - (void)installDidFinish:(SUDescriptor *)arg1;
 - (void)installDidStart:(SUDescriptor *)arg1;
 - (void)installPolicyDidChange:(SUInstallPolicy *)arg1;
+- (void)managedInstallationRequested:(SUInstallPolicy *)arg1;
 - (void)scanDidCompleteWithNewUpdateAvailable:(SUDescriptor *)arg1 error:(NSError *)arg2;
 - (void)scanRequestDidFinishForOptions:(SUScanOptions *)arg1 update:(SUDescriptor *)arg2 error:(NSError *)arg3;
 - (void)scanRequestDidStartForOptions:(SUScanOptions *)arg1;

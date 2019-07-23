@@ -38,6 +38,6 @@
 - (void)setSceneObjectDelegate:(id)arg1;
 - (void)setSlack:(float)arg1;
 - (float)slack;
-- (void)submit:(const /* Warning: unhandled struct encoding: '{PrimitiveInfo=iii@}' */ struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;
+- (void)submit:(id)arg1;
 
 @end

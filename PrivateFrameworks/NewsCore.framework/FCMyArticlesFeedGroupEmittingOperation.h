@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)_joinedFeedTransformation;
 - (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2 showStoriesOnlyFromFavorites:(bool)arg3;
-- (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4;
+- (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4 translationProvider:(id)arg5;
 - (id)emittableGroupTypes;
 - (id)headlineClusterOrderer;
 - (id)headlineClusterer;

@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *origin;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *turnId;
 @property (nonatomic, copy) NSDictionary *voiceTriggerEventInfo;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -68,7 +69,9 @@
 - (void)setMotionConfidence:(id)arg1;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setTurnId:(id)arg1;
 - (void)setVoiceTriggerEventInfo:(id)arg1;
+- (id)turnId;
 - (id)voiceTriggerEventInfo;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore

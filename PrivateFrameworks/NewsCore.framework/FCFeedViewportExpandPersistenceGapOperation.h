@@ -47,6 +47,7 @@
 - (id)inflatedGroup;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)prepareOperation;
 - (void)setBookmark:(id)arg1;
 - (void)setCachedOnly:(bool)arg1;
 - (void)setConfiguration:(id)arg1;

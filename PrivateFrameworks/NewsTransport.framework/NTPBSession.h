@@ -58,12 +58,14 @@
         unsigned int isPaidSubscriberFromAppStore : 1; 
         unsigned int isPaidSubscriberFromNews : 1; 
         unsigned int isPaidSubscriberFromThirdParty : 1; 
+        unsigned int isStoreDemoModeEnabled : 1; 
         unsigned int locationPermissionGranted : 1; 
         unsigned int notificationsEnabled : 1; 
         unsigned int privateDataEncrypted : 1; 
         unsigned int privateDataSyncOn : 1; 
         unsigned int progressivePersonalizationAllowed : 1; 
         unsigned int runningObsolete : 1; 
+        unsigned int signedIntoITunes : 1; 
         unsigned int signedIntoIcloud : 1; 
         unsigned int upgradedFromObsolete : 1; 
     }  _has;
@@ -80,6 +82,7 @@
     bool  _isPaidSubscriberFromAppStore;
     bool  _isPaidSubscriberFromNews;
     bool  _isPaidSubscriberFromThirdParty;
+    bool  _isStoreDemoModeEnabled;
     NSString * _languageCode;
     long long  _lastAppOpenDate;
     bool  _locationPermissionGranted;
@@ -103,6 +106,7 @@
     bool  _runningObsolete;
     NSData * _sessionId;
     NSData * _sessionIdWatch;
+    bool  _signedIntoITunes;
     bool  _signedIntoIcloud;
     long long  _testBucket;
     int  _textSize;
@@ -182,6 +186,7 @@
 @property (nonatomic) bool hasIsPaidSubscriberFromAppStore;
 @property (nonatomic) bool hasIsPaidSubscriberFromNews;
 @property (nonatomic) bool hasIsPaidSubscriberFromThirdParty;
+@property (nonatomic) bool hasIsStoreDemoModeEnabled;
 @property (nonatomic, readonly) bool hasLanguageCode;
 @property (nonatomic) bool hasLastAppOpenDate;
 @property (nonatomic) bool hasLocationPermissionGranted;
@@ -205,6 +210,7 @@
 @property (nonatomic) bool hasRunningObsolete;
 @property (nonatomic, readonly) bool hasSessionId;
 @property (nonatomic, readonly) bool hasSessionIdWatch;
+@property (nonatomic) bool hasSignedIntoITunes;
 @property (nonatomic) bool hasSignedIntoIcloud;
 @property (nonatomic) bool hasTestBucket;
 @property (nonatomic) bool hasTextSize;
@@ -232,6 +238,7 @@
 @property (nonatomic) bool isPaidSubscriberFromAppStore;
 @property (nonatomic) bool isPaidSubscriberFromNews;
 @property (nonatomic) bool isPaidSubscriberFromThirdParty;
+@property (nonatomic) bool isStoreDemoModeEnabled;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic) long long lastAppOpenDate;
 @property (nonatomic) bool locationPermissionGranted;
@@ -255,6 +262,7 @@
 @property (nonatomic) bool runningObsolete;
 @property (nonatomic, retain) NSData *sessionId;
 @property (nonatomic, retain) NSData *sessionIdWatch;
+@property (nonatomic) bool signedIntoITunes;
 @property (nonatomic) bool signedIntoIcloud;
 @property (nonatomic) long long testBucket;
 @property (nonatomic) int textSize;
@@ -346,6 +354,7 @@
 - (bool)hasIsPaidSubscriberFromAppStore;
 - (bool)hasIsPaidSubscriberFromNews;
 - (bool)hasIsPaidSubscriberFromThirdParty;
+- (bool)hasIsStoreDemoModeEnabled;
 - (bool)hasLanguageCode;
 - (bool)hasLastAppOpenDate;
 - (bool)hasLocationPermissionGranted;
@@ -369,6 +378,7 @@
 - (bool)hasRunningObsolete;
 - (bool)hasSessionId;
 - (bool)hasSessionIdWatch;
+- (bool)hasSignedIntoITunes;
 - (bool)hasSignedIntoIcloud;
 - (bool)hasTestBucket;
 - (bool)hasTextSize;
@@ -398,6 +408,7 @@
 - (bool)isPaidSubscriberFromAppStore;
 - (bool)isPaidSubscriberFromNews;
 - (bool)isPaidSubscriberFromThirdParty;
+- (bool)isStoreDemoModeEnabled;
 - (id)languageCode;
 - (long long)lastAppOpenDate;
 - (bool)locationPermissionGranted;
@@ -469,6 +480,7 @@
 - (void)setHasIsPaidSubscriberFromAppStore:(bool)arg1;
 - (void)setHasIsPaidSubscriberFromNews:(bool)arg1;
 - (void)setHasIsPaidSubscriberFromThirdParty:(bool)arg1;
+- (void)setHasIsStoreDemoModeEnabled:(bool)arg1;
 - (void)setHasLastAppOpenDate:(bool)arg1;
 - (void)setHasLocationPermissionGranted:(bool)arg1;
 - (void)setHasNewsWidgetModeGroup:(bool)arg1;
@@ -479,6 +491,7 @@
 - (void)setHasProgressivePersonalizationAllowed:(bool)arg1;
 - (void)setHasReachabilityStatus:(bool)arg1;
 - (void)setHasRunningObsolete:(bool)arg1;
+- (void)setHasSignedIntoITunes:(bool)arg1;
 - (void)setHasSignedIntoIcloud:(bool)arg1;
 - (void)setHasTestBucket:(bool)arg1;
 - (void)setHasTextSize:(bool)arg1;
@@ -501,6 +514,7 @@
 - (void)setIsPaidSubscriberFromAppStore:(bool)arg1;
 - (void)setIsPaidSubscriberFromNews:(bool)arg1;
 - (void)setIsPaidSubscriberFromThirdParty:(bool)arg1;
+- (void)setIsStoreDemoModeEnabled:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLastAppOpenDate:(long long)arg1;
 - (void)setLocationPermissionGranted:(bool)arg1;
@@ -524,6 +538,7 @@
 - (void)setRunningObsolete:(bool)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setSessionIdWatch:(id)arg1;
+- (void)setSignedIntoITunes:(bool)arg1;
 - (void)setSignedIntoIcloud:(bool)arg1;
 - (void)setTestBucket:(long long)arg1;
 - (void)setTextSize:(int)arg1;
@@ -540,6 +555,7 @@
 - (void)setWidgetModeType:(int)arg1;
 - (void)setWidgetSessionId:(id)arg1;
 - (void)setWidgetUserId:(id)arg1;
+- (bool)signedIntoITunes;
 - (bool)signedIntoIcloud;
 - (long long)testBucket;
 - (int)textSize;

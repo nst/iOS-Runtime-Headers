@@ -54,7 +54,10 @@
 - (void)_grantPrivacyAccess;
 - (void)_updatePrivacyState;
 - (id)adamID;
+- (id)appAdamIDs;
+- (id)appBundleIDs;
 - (id)appDescription;
+- (id)appIconURLForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)appStoreURL;
 - (void)applicationsDidFailToInstall:(id)arg1;
 - (void)applicationsDidFailToUninstall:(id)arg1;
@@ -82,6 +85,7 @@
 - (bool)isAccessGranted;
 - (void)launchApp;
 - (id)launchAppTitle;
+- (id)name;
 - (id)privacyFacade;
 - (long long)privacyState;
 - (int)registrationToken;

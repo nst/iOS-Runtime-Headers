@@ -90,6 +90,7 @@
 @property (nonatomic, readonly) bool isFinished;
 @property (nonatomic) bool isIncoming;
 @property (nonatomic) bool isLocation;
+@property (nonatomic, readonly) bool isOpusAudioMessage;
 @property (nonatomic, readonly) bool isRecipeBasedSticker;
 @property (nonatomic) bool isSticker;
 @property (setter=_setLocalPath:, nonatomic, retain) NSString *localPath;
@@ -181,6 +182,7 @@
 - (bool)isFinished;
 - (bool)isIncoming;
 - (bool)isLocation;
+- (bool)isOpusAudioMessage;
 - (bool)isRecipeBasedSticker;
 - (bool)isSticker;
 - (id)localPath;
@@ -270,5 +272,6 @@
 - (id)initWithCKRecord:(id)arg1 writeAssetToDisk:(bool)arg2;
 - (id)md5HashForTransfer;
 - (id)md5HashForURL:(id)arg1;
+- (void)moveTransferAssertFromRecord:(id)arg1;
 
 @end

@@ -77,7 +77,6 @@
 - (id)applicationBundleIdentifier;
 - (id)bundleIdentifier;
 - (void)collectLoggableState:(id /* block */)arg1;
-- (void)dataBecameAvailable;
 - (id)dataSource;
 - (Class)dataSourceClass;
 - (void)dealloc;

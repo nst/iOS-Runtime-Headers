@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.InCallControlsViewConstraintManager : SwiftObject {
+@interface ConversationKit.InCallControlsViewConstraintManager : Swift._SwiftObject {
     void bottomConstraint;
     void constraints;
     void expandedTopLandscapeAnchorConstraint;

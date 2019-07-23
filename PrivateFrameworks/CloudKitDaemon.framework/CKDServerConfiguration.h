@@ -50,6 +50,7 @@
 - (void)setValues:(id)arg1;
 - (bool)shouldSignForMessageType:(int)arg1 inDatabaseScope:(long long)arg2 forContainer:(id)arg3;
 - (long long)tokenRegisterDaysForContainer:(id)arg1;
+- (id)transcodeServerPublicKeyURLsForContainer:(id)arg1;
 - (id)valueForKeyPath:(id)arg1 forContainer:(id)arg2;
 - (id)values;
 

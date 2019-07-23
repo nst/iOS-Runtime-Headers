@@ -26,6 +26,7 @@
 - (id)entitlementValues;
 - (bool)hasAccessEntitlementWithIdentifer:(id)arg1;
 - (bool)hasEntitlement:(id)arg1;
+- (bool)hasPrivateAccessEntitlementWithIdentifer:(id)arg1;
 - (id)init;
 - (id)stringForEntitlement:(id)arg1;
 - (id)typesForReadAuthorizationOverride;

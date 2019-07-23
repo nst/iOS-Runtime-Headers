@@ -9,6 +9,8 @@
 
 @property (nonatomic, retain) NSXPCConnection *connection;
 
++ (bool)requiresMainThread;
+
 - (void).cxx_destruct;
 - (void)_initializePlaybackStack;
 - (void)_updatePlayerPath;

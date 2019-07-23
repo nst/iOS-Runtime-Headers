@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITableViewCell : UIView <DebugHierarchyObject_Fallback, NSCoding, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UIInteractiveHighlighting, _UILayoutEngineSuspending> {
+@interface UITableViewCell : UIView <NSCoding, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UIInteractiveHighlighting, _UILayoutEngineSuspending> {
     NSMutableDictionary * __editingControlTintColors;
     SEL  _accessoryAction;
     UIStoryboardPreviewingSegueTemplateStorage * _accessoryActionPreviewingSegueTemplateStorage;
@@ -468,15 +468,6 @@
 - (bool)_usesRoundedGroups;
 - (void)_willBeDeleted;
 - (void)_willTransitionToState:(unsigned long long)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (SEL)accessoryAction;
 - (id)accessoryActionPreviewingSegueTemplateStorage;
 - (id)accessoryActionSegueTemplate;
@@ -498,6 +489,7 @@
 - (void)copy:(id)arg1;
 - (unsigned long long)currentStateMask;
 - (void)cut:(id)arg1;
+- (void)dealloc;
 - (void)deleteConfirmationControlWasCancelled:(id)arg1;
 - (void)deleteConfirmationControlWasClicked:(id)arg1;
 - (id)detailTextLabel;

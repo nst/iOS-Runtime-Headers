@@ -5,12 +5,15 @@
 @interface CUKeychainItem : NSObject {
     NSString * _accessGroup;
     int  _accessibleType;
+    NSDate * _dateCreated;
+    NSDate * _dateModified;
     NSString * _identifier;
     bool  _invisible;
     bool  _legacy;
     NSDictionary * _metadata;
     NSString * _name;
     NSData * _persistentRef;
+    NSArray * _removedMetadata;
     NSDictionary * _secrets;
     int  _syncType;
     NSString * _type;
@@ -20,12 +23,15 @@
 
 @property (nonatomic, copy) NSString *accessGroup;
 @property (nonatomic) int accessibleType;
+@property (nonatomic, readonly, copy) NSDate *dateCreated;
+@property (nonatomic, readonly, copy) NSDate *dateModified;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) bool invisible;
 @property (nonatomic) bool legacy;
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSData *persistentRef;
+@property (nonatomic, copy) NSArray *removedMetadata;
 @property (nonatomic, copy) NSDictionary *secrets;
 @property (nonatomic) int syncType;
 @property (nonatomic, copy) NSString *type;
@@ -40,6 +46,8 @@
 - (bool)_updateWithAttributesDictionary:(id)arg1 flags:(unsigned int)arg2 error:(id*)arg3;
 - (id)accessGroup;
 - (int)accessibleType;
+- (id)dateCreated;
+- (id)dateModified;
 - (id)description;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)identifier;
@@ -49,6 +57,7 @@
 - (id)metadata;
 - (id)name;
 - (id)persistentRef;
+- (id)removedMetadata;
 - (id)secrets;
 - (void)setAccessGroup:(id)arg1;
 - (void)setAccessibleType:(int)arg1;
@@ -58,6 +67,7 @@
 - (void)setMetadata:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPersistentRef:(id)arg1;
+- (void)setRemovedMetadata:(id)arg1;
 - (void)setSecrets:(id)arg1;
 - (void)setSyncType:(int)arg1;
 - (void)setType:(id)arg1;

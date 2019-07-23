@@ -26,7 +26,7 @@
 - (id)initWithSerializeableObjectArray:(id)arg1;
 - (unsigned long long)machContinuousTimeFirst;
 - (unsigned long long)machContinuousTimeLast;
-- (id)newSerializedCollection;
+- (id)newSerializedCollection:(bool)arg1;
 - (id)objectArray;
 
 @end

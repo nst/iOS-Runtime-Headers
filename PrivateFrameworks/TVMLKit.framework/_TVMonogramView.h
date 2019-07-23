@@ -12,6 +12,7 @@
     _TVMonogramDescription * _monogramDescription;
     UIView * _overlayView;
     UIImage * _placeholderImage;
+    UIView * _placeholderView;
     id /* block */  _pressCompletionBlock;
     double  _unfocusedImageAlpha;
     UIView * _unfocusedShadowView;
@@ -34,6 +35,9 @@
 - (void).cxx_destruct;
 - (void)_loadWithMonogramDescription:(id)arg1 imageProxy:(id)arg2;
 - (void)_updateAppearanceForSelectionStateWithCoordinator:(id)arg1;
+- (void)_updateFocusedShadowFrameAndLayerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updatePlaceholerView;
+- (void)_updateUnfocusedShadowFrameAndLayerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)configuration;
 - (void)floatingContentView:(id)arg1 didFinishTransitioningToState:(unsigned long long)arg2;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

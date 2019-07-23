@@ -34,6 +34,7 @@
     bool  _faceDetectionMetadataRequested;
     <BWFaceDetector> * _faceDetector;
     float  _focalLength;
+    NSData * _focalPlaneCharacterizationCoefficients;
     bool  _focusBlurMapEnabled;
     NSDictionary * _focusPositionToLensMakersPFLLinearFit;
     NSObject<OS_dispatch_queue> * _frameScoringQueue;
@@ -42,6 +43,8 @@
     float  _gravityFactor;
     bool  _handlesHDRReferenceFrameReporting;
     bool  _hasFocus;
+    bool  _highlightRecoveryEnabled;
+    bool  _highlightRecoverySuspended;
     NSMutableDictionary * _keypointDetectionConfiguration;
     bool  _keypointDetectionConfigured;
     bool  _keypointDetectionEnabled;
@@ -104,7 +107,6 @@
         unsigned int flags; 
         long long epoch; 
     }  _shortBracketFramePTSs;
-    bool  _sifrSupported;
     int  _skippedFramesCountForAF;
     bool  _smartCameraReferenceFrameSelectionEnabled;
     bool  _sphereEnabled;
@@ -132,7 +134,6 @@
     bool  _timeMachineEnabled;
     bool  _unifiedBracketingEnabled;
     bool  _usesStillFusionReferenceFramePTSForDidCaptureCallback;
-    bool  _videoHDRSuspended;
     bool  _zeroShutterLagEnabled;
 }
 
@@ -149,6 +150,7 @@
 @property (readonly) NSData *extrinsicMatrix;
 @property (nonatomic, retain) <BWFaceDetector> *faceDetector;
 @property (readonly) float focalLength;
+@property (readonly) NSData *focalPlaneCharacterizationCoefficients;
 @property (nonatomic) bool focusBlurMapEnabled;
 @property (readonly) NSDictionary *focusPositionToLensMakersPFLLinearFit;
 @property (readonly) NSDictionary *geometricDistortionCoefficients;
@@ -156,6 +158,8 @@
 @property (nonatomic) bool handlesHDRReferenceFrameReporting;
 @property (readonly) bool hasFocus;
 @property (readonly) bool hasSphere;
+@property (nonatomic) bool highlightRecoveryEnabled;
+@property (nonatomic) bool highlightRecoverySuspended;
 @property (nonatomic) bool isStationary;
 @property (nonatomic) bool keypointDetectionEnabled;
 @property (nonatomic, readonly) int lastStillImageCaptureType;
@@ -183,7 +187,6 @@
 @property (nonatomic, readonly) bool providesPreBracketedEV0;
 @property (readonly) NSDictionary *sensorIDDictionary;
 @property (readonly) NSString *sensorIDString;
-@property (nonatomic) bool sifrSupported;
 @property (nonatomic) bool smartCameraReferenceFrameSelectionEnabled;
 @property (readonly) bool sphereEnabled;
 @property (nonatomic) int sphereThermalLevel;
@@ -202,7 +205,6 @@
 @property (nonatomic) bool timeMachineEnabled;
 @property (nonatomic) bool unifiedBracketingEnabled;
 @property (nonatomic) bool usesStillFusionReferenceFramePTSForDidCaptureCallback;
-@property (nonatomic) bool videoHDRSuspended;
 @property (nonatomic) bool zeroShutterLagEnabled;
 
 + (void)initialize;
@@ -221,7 +223,7 @@
 - (void)_resetStillImageCaptureState;
 - (void)_serviceTimeMachineWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_setFaceDetectionEnabled:(bool)arg1;
-- (int)_setHighlightRecoveryEnabledForSIFRSupported:(bool)arg1 videoHDRSuspended:(bool)arg2;
+- (int)_setHighlightRecoveryEnabled:(bool)arg1 highlightRecoverySuspended:(bool)arg2;
 - (void)_setLowPowerSphereModeEnabled:(bool)arg1;
 - (void)_setMaxExposureDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_updateAETables;
@@ -254,6 +256,7 @@
 - (id)faceDetector;
 - (void)failedToCaptureStillImageFromFirmwareWithError:(int)arg1;
 - (float)focalLength;
+- (id)focalPlaneCharacterizationCoefficients;
 - (bool)focusBlurMapEnabled;
 - (id)focusPositionToLensMakersPFLLinearFit;
 - (id)geometricDistortionCoefficients;
@@ -261,6 +264,8 @@
 - (bool)handlesHDRReferenceFrameReporting;
 - (bool)hasFocus;
 - (bool)hasSphere;
+- (bool)highlightRecoveryEnabled;
+- (bool)highlightRecoverySuspended;
 - (id)initWithFigCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 attributes:(id)arg2 sensorIDDictionary:(id)arg3 synchronizedStreamsEnabled:(bool)arg4 extrinsicMatrix:(id)arg5;
 - (bool)isStationary;
 - (bool)keypointDetectionEnabled;
@@ -303,6 +308,8 @@
 - (void)setFaceDetector:(id)arg1;
 - (void)setFocusBlurMapEnabled:(bool)arg1;
 - (void)setHandlesHDRReferenceFrameReporting:(bool)arg1;
+- (void)setHighlightRecoveryEnabled:(bool)arg1;
+- (void)setHighlightRecoverySuspended:(bool)arg1;
 - (void)setIsStationary:(bool)arg1;
 - (void)setKeypointDetectionEnabled:(bool)arg1;
 - (void)setLowLightVideoEnabled:(bool)arg1;
@@ -317,7 +324,6 @@
 - (void)setMotionDataInvalid:(bool)arg1;
 - (void)setMultiBandNoiseReductionMode:(int)arg1;
 - (void)setPeopleAndMotionFrameScoreWeights:(struct FigPAMFrameScoreWeightsStruct { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setSifrSupported:(bool)arg1;
 - (void)setSmartCameraReferenceFrameSelectionEnabled:(bool)arg1;
 - (void)setSphereThermalLevel:(int)arg1;
 - (void)setSphereVideoEnabled:(bool)arg1;
@@ -329,9 +335,7 @@
 - (void)setTimeMachineEnabled:(bool)arg1;
 - (void)setUnifiedBracketingEnabled:(bool)arg1;
 - (void)setUsesStillFusionReferenceFramePTSForDidCaptureCallback:(bool)arg1;
-- (void)setVideoHDRSuspended:(bool)arg1;
 - (void)setZeroShutterLagEnabled:(bool)arg1;
-- (bool)sifrSupported;
 - (bool)smartCameraReferenceFrameSelectionEnabled;
 - (void)sourceNodeDidStartStreaming;
 - (void)sourceNodeDidStopStreaming;
@@ -365,7 +369,6 @@
 - (void)unregisterForFaceDetectionMetadata;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })updateMaxExposureDurationClientOverride:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (bool)usesStillFusionReferenceFramePTSForDidCaptureCallback;
-- (bool)videoHDRSuspended;
 - (void)willBecomeMasterStream;
 - (void)willBecomeSlaveStream;
 - (void)willCaptureStillImageFromFirmware;

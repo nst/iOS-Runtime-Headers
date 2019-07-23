@@ -10,6 +10,7 @@
     FCInterestToken * _interestToken;
     FCVideoGroupConfig * _moreVideosGroupConfig;
     FCSpecialEventGroupConfig * _specialEventGroupConfig;
+    FCSpotlightGroupConfig * _spotlightGroupConfig;
     FCTopStoriesGroupConfig * _topStoriesGroupConfig;
     FCVideoGroupConfig * _topVideosGroupConfig;
     FCGroupConfig * _trendingGroupConfig;
@@ -29,6 +30,8 @@
 @property (nonatomic, retain) FCVideoGroupConfig *moreVideosGroupConfig;
 @property (nonatomic, readonly) NSArray *specialEventArticleIDs;
 @property (nonatomic, retain) FCSpecialEventGroupConfig *specialEventGroupConfig;
+@property (nonatomic, readonly) NSString *spotlightArticleID;
+@property (nonatomic, retain) FCSpotlightGroupConfig *spotlightGroupConfig;
 @property (nonatomic, readonly) NSArray *topStoriesCombinedArticleIDs;
 @property (nonatomic, retain) FCTopStoriesGroupConfig *topStoriesGroupConfig;
 @property (nonatomic, readonly) NSArray *topVideosArticleIDs;
@@ -58,11 +61,14 @@
 - (void)setInterestToken:(id)arg1;
 - (void)setMoreVideosGroupConfig:(id)arg1;
 - (void)setSpecialEventGroupConfig:(id)arg1;
+- (void)setSpotlightGroupConfig:(id)arg1;
 - (void)setTopStoriesGroupConfig:(id)arg1;
 - (void)setTopVideosGroupConfig:(id)arg1;
 - (void)setTrendingGroupConfig:(id)arg1;
 - (id)specialEventArticleIDs;
 - (id)specialEventGroupConfig;
+- (id)spotlightArticleID;
+- (id)spotlightGroupConfig;
 - (id)topStoriesCombinedArticleIDs;
 - (id)topStoriesGroupConfig;
 - (id)topVideosArticleIDs;

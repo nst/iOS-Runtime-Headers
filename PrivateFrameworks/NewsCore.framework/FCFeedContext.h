@@ -8,6 +8,7 @@
     bool  _isEditorial;
     bool  _isEditorialGems;
     bool  _isHiddenFeed;
+    bool  _isPaidBundleFeed;
     bool  _isTopStories;
     NSString * _sectionID;
     NSString * _topicID;
@@ -18,6 +19,7 @@
 @property (nonatomic) bool isEditorial;
 @property (nonatomic) bool isEditorialGems;
 @property (nonatomic) bool isHiddenFeed;
+@property (nonatomic) bool isPaidBundleFeed;
 @property (nonatomic) bool isTopStories;
 @property (nonatomic, copy) NSString *sectionID;
 @property (nonatomic, copy) NSString *topicID;
@@ -29,6 +31,7 @@
 + (id)feedContextForEditorialChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForEditorialTag:(id)arg1;
 + (id)feedContextForHiddenFeed;
++ (id)feedContextForPaidBundleFeed;
 + (id)feedContextForTag:(id)arg1;
 + (id)feedContextForTopStoriesChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForTopStoriesTag:(id)arg1;
@@ -40,6 +43,7 @@
 - (bool)isEditorial;
 - (bool)isEditorialGems;
 - (bool)isHiddenFeed;
+- (bool)isPaidBundleFeed;
 - (bool)isTopStories;
 - (id)sectionID;
 - (void)setChannelID:(id)arg1;
@@ -47,6 +51,7 @@
 - (void)setIsEditorial:(bool)arg1;
 - (void)setIsEditorialGems:(bool)arg1;
 - (void)setIsHiddenFeed:(bool)arg1;
+- (void)setIsPaidBundleFeed:(bool)arg1;
 - (void)setIsTopStories:(bool)arg1;
 - (void)setSectionID:(id)arg1;
 - (void)setTopicID:(id)arg1;

@@ -13,6 +13,8 @@
 @property (nonatomic) <TSDCanvasLayerHosting> *layerHost;
 @property (nonatomic, readonly) TSDCanvasView *rootCanvasView;
 
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
 + (Class)layerClass;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
@@ -25,5 +27,14 @@
 - (void)setController:(id)arg1;
 - (void)setLayerHost:(id)arg1;
 - (void)teardown;
+
+// Image: /System/Library/PrivateFrameworks/SilexText.framework/SilexText
+
+- (bool)_accessibilityIsSpeakThisElement;
+- (bool)_accessibilitySpeakThisIgnoresAccessibilityElementStatus;
+- (id)_accessibilitySpeakThisString;
+- (id)_accessibilityTextRectsForSpeakThisStringRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)_speakThisElementStrings;
+- (id)_speakThisElements;
 
 @end

@@ -5,8 +5,9 @@
 @interface NFLNativeAdHeadlineTileInfo : NFLHeadlineTileInfo
 
 - (unsigned long long)bookmarkOffsetType;
-- (bool)bookmarkable;
+- (id)feedTileInfoForBookmarking;
 - (bool)pageable;
 - (unsigned long long)tileInfoType;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 
 @end

@@ -6,14 +6,9 @@
     NSString * _timeString;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_timeImageSet;
 - (id)_timeImageSetForColor:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)contentsImage;
 - (double)extraLeftPadding;
 - (double)extraRightPadding;

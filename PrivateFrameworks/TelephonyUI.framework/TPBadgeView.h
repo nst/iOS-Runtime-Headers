@@ -3,43 +3,74 @@
  */
 
 @interface TPBadgeView : TPView {
+    double  _layerCornerRadius;
+    unsigned long long  _sizeCategory;
     unsigned long long  _theme;
     NSString * _title;
     UILabel * _titleLabel;
-    NSLayoutConstraint * _titleLabelBottomAnchorLayoutConstraint;
+    NSLayoutConstraint * _titleLabelFirstBaselineAnchorLayoutConstraint;
+    double  _titleLabelFirstBaselineAnchorLayoutConstraintConstant;
+    double  _titleLabelFontSize;
+    NSLayoutConstraint * _titleLabelLastBaselineAnchorLayoutConstraint;
+    double  _titleLabelLastBaselineAnchorLayoutConstraintConstant;
     NSLayoutConstraint * _titleLabelLeadingAnchorLayoutConstraint;
-    NSLayoutConstraint * _titleLabelTopAnchorLayoutConstraint;
+    double  _titleLabelLeadingAnchorLayoutConstraintConstant;
     NSLayoutConstraint * _titleLabelTrailingAnchorLayoutConstraint;
+    double  _titleLabelTrailingAnchorLayoutConstraintConstant;
 }
 
+@property (nonatomic) double layerCornerRadius;
+@property (nonatomic) unsigned long long sizeCategory;
 @property (nonatomic) unsigned long long theme;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic, retain) NSLayoutConstraint *titleLabelBottomAnchorLayoutConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *titleLabelFirstBaselineAnchorLayoutConstraint;
+@property (nonatomic) double titleLabelFirstBaselineAnchorLayoutConstraintConstant;
+@property (nonatomic) double titleLabelFontSize;
+@property (nonatomic, retain) NSLayoutConstraint *titleLabelLastBaselineAnchorLayoutConstraint;
+@property (nonatomic) double titleLabelLastBaselineAnchorLayoutConstraintConstant;
 @property (nonatomic, retain) NSLayoutConstraint *titleLabelLeadingAnchorLayoutConstraint;
-@property (nonatomic, retain) NSLayoutConstraint *titleLabelTopAnchorLayoutConstraint;
+@property (nonatomic) double titleLabelLeadingAnchorLayoutConstraintConstant;
 @property (nonatomic, retain) NSLayoutConstraint *titleLabelTrailingAnchorLayoutConstraint;
+@property (nonatomic) double titleLabelTrailingAnchorLayoutConstraintConstant;
 
 - (void).cxx_destruct;
 - (void)commonInit;
 - (id)initWithTitle:(id)arg1;
 - (id)initWithTitle:(id)arg1 theme:(unsigned long long)arg2;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (double)layerCornerRadius;
 - (void)loadConstraints;
+- (void)setLayerCornerRadius:(double)arg1;
+- (void)setSizeCategory:(unsigned long long)arg1;
 - (void)setTheme:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleLabelBottomAnchorLayoutConstraint:(id)arg1;
+- (void)setTitleLabelFirstBaselineAnchorLayoutConstraint:(id)arg1;
+- (void)setTitleLabelFirstBaselineAnchorLayoutConstraintConstant:(double)arg1;
+- (void)setTitleLabelFontSize:(double)arg1;
+- (void)setTitleLabelLastBaselineAnchorLayoutConstraint:(id)arg1;
+- (void)setTitleLabelLastBaselineAnchorLayoutConstraintConstant:(double)arg1;
 - (void)setTitleLabelLeadingAnchorLayoutConstraint:(id)arg1;
-- (void)setTitleLabelTopAnchorLayoutConstraint:(id)arg1;
+- (void)setTitleLabelLeadingAnchorLayoutConstraintConstant:(double)arg1;
 - (void)setTitleLabelTrailingAnchorLayoutConstraint:(id)arg1;
+- (void)setTitleLabelTrailingAnchorLayoutConstraintConstant:(double)arg1;
+- (unsigned long long)sizeCategory;
 - (unsigned long long)theme;
 - (id)title;
 - (id)titleLabel;
-- (id)titleLabelBottomAnchorLayoutConstraint;
+- (id)titleLabelFirstBaselineAnchorLayoutConstraint;
+- (double)titleLabelFirstBaselineAnchorLayoutConstraintConstant;
+- (double)titleLabelFontSize;
+- (id)titleLabelLastBaselineAnchorLayoutConstraint;
+- (double)titleLabelLastBaselineAnchorLayoutConstraintConstant;
 - (id)titleLabelLeadingAnchorLayoutConstraint;
-- (id)titleLabelTopAnchorLayoutConstraint;
+- (double)titleLabelLeadingAnchorLayoutConstraintConstant;
 - (id)titleLabelTrailingAnchorLayoutConstraint;
+- (double)titleLabelTrailingAnchorLayoutConstraintConstant;
+- (void)unloadConstraints;
+- (void)updateConstraintsConstants;
 - (void)updateFonts;
+- (void)updateSizeCategory;
 - (void)updateTheme;
 
 @end

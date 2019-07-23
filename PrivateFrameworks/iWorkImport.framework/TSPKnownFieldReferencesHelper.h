@@ -4,15 +4,21 @@
 
 @interface TSPKnownFieldReferencesHelper : NSObject {
     struct RepeatedField<long long> { 
-        long long *elements_; 
         int current_size_; 
         int total_size_; 
+        union Pointer { 
+            struct Arena {} *arena; 
+            struct Rep {} *rep; 
+        } ptr_; 
     }  _dataReferences;
     NSArray * _datas;
     struct RepeatedField<long long> { 
-        long long *elements_; 
         int current_size_; 
         int total_size_; 
+        union Pointer { 
+            struct Arena {} *arena; 
+            struct Rep {} *rep; 
+        } ptr_; 
     }  _objectReferences;
     TSPLazyReferenceArray * _strongObjects;
     TSPLazyReferenceArray * _weakObjects;
@@ -20,10 +26,10 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithFieldDescriptor:(const struct FieldDescriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct FileDescriptor {} *x5; int x6; int x7; int x8; bool x9; int x10; struct Descriptor {} *x11; struct OneofDescriptor {} *x12; struct Descriptor {} *x13; struct Descriptor {} *x14; struct EnumDescriptor {} *x15; struct FieldDescriptor {} *x16; struct FieldOptions {} *x17; bool x18; union { int x_19_1_1; long long x_19_1_2; unsigned int x_19_1_3; unsigned long long x_19_1_4; float x_19_1_5; double x_19_1_6; bool x_19_1_7; struct EnumValueDescriptor {} *x_19_1_8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_19_1_9; } x19; }*)arg1 message:(const struct Message { int (**x1)(); }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
+- (id)initWithFieldDescriptor:(const struct FieldDescriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct FileDescriptor {} *x6; struct GoogleOnceDynamic {} *x7; int x8; int x9; bool x10; bool x11; bool x12; int x13; int x14; struct Descriptor {} *x15; struct OneofDescriptor {} *x16; struct Descriptor {} *x17; struct Descriptor {} *x18; struct EnumDescriptor {} *x19; struct FieldOptions {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x22; union { int x_23_1_1; long long x_23_1_2; unsigned int x_23_1_3; unsigned long long x_23_1_4; float x_23_1_5; double x_23_1_6; bool x_23_1_7; struct EnumValueDescriptor {} *x_23_1_8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_23_1_9; } x23; }*)arg1 message:(const struct Message { int (**x1)(); }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
 - (void)loadFromUnarchiver:(id)arg1;
-- (void)processFieldDescriptor:(const struct FieldDescriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct FileDescriptor {} *x5; int x6; int x7; int x8; bool x9; int x10; struct Descriptor {} *x11; struct OneofDescriptor {} *x12; struct Descriptor {} *x13; struct Descriptor {} *x14; struct EnumDescriptor {} *x15; struct FieldDescriptor {} *x16; struct FieldOptions {} *x17; bool x18; union { int x_19_1_1; long long x_19_1_2; unsigned int x_19_1_3; unsigned long long x_19_1_4; float x_19_1_5; double x_19_1_6; bool x_19_1_7; struct EnumValueDescriptor {} *x_19_1_8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_19_1_9; } x19; }*)arg1 message:(const struct Message { int (**x1)(); }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
-- (void)processFieldsFromMessage:(const struct Message { int (**x1)(); }*)arg1 messageDescriptor:(const struct Descriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct FileDescriptor {} *x3; struct Descriptor {} *x4; struct MessageOptions {} *x5; bool x6; bool x7; int x8; struct FieldDescriptor {} *x9; int x10; struct OneofDescriptor {} *x11; int x12; struct Descriptor {} *x13; int x14; struct EnumDescriptor {} *x15; int x16; struct ExtensionRange {} *x17; int x18; struct FieldDescriptor {} *x19; }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
+- (void)processFieldDescriptor:(const struct FieldDescriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct FileDescriptor {} *x6; struct GoogleOnceDynamic {} *x7; int x8; int x9; bool x10; bool x11; bool x12; int x13; int x14; struct Descriptor {} *x15; struct OneofDescriptor {} *x16; struct Descriptor {} *x17; struct Descriptor {} *x18; struct EnumDescriptor {} *x19; struct FieldOptions {} *x20; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x21; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x22; union { int x_23_1_1; long long x_23_1_2; unsigned int x_23_1_3; unsigned long long x_23_1_4; float x_23_1_5; double x_23_1_6; bool x_23_1_7; struct EnumValueDescriptor {} *x_23_1_8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_23_1_9; } x23; }*)arg1 message:(const struct Message { int (**x1)(); }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
+- (void)processFieldsFromMessage:(const struct Message { int (**x1)(); }*)arg1 messageDescriptor:(const struct Descriptor { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x2; struct FileDescriptor {} *x3; struct Descriptor {} *x4; struct MessageOptions {} *x5; struct FieldDescriptor {} *x6; struct OneofDescriptor {} *x7; struct Descriptor {} *x8; struct EnumDescriptor {} *x9; struct ExtensionRange {} *x10; struct FieldDescriptor {} *x11; struct ReservedRange {} *x12; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} **x13; int x14; int x15; int x16; int x17; int x18; int x19; int x20; int x21; bool x22; bool x23; }*)arg2 reflection:(const struct Reflection { int (**x1)(); }*)arg3;
 - (void)saveToArchiver:(id)arg1;
 
 @end

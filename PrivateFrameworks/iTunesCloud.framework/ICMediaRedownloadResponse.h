@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICMediaRedownloadResponse : NSObject {
+@interface ICMediaRedownloadResponse : NSObject <ICStoreResponseProtocol> {
     NSDate * _requestDate;
     NSDictionary * _responseDictionary;
     ICURLBag * _urlBag;
 }
 
 @property (nonatomic, readonly) bool authorized;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) ICStoreDialogResponse *dialog;
 @property (nonatomic, readonly) unsigned int downloadQueueItemCount;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic, readonly, copy) NSString *jingleAction;
 @property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
+@property (nonatomic, readonly, copy) NSError *serverError;
 @property (nonatomic, readonly) bool shouldCancelPurchaseBatch;
 @property (nonatomic, readonly) long long status;
 @property (nonatomic, readonly, copy) NSData *subscriptionKeyBagData;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (bool)authorized;
@@ -26,6 +31,7 @@
 - (id)items;
 - (id)jingleAction;
 - (id)responseDictionary;
+- (id)serverError;
 - (bool)shouldCancelPurchaseBatch;
 - (long long)status;
 - (id)subscriptionKeyBagData;

@@ -4,7 +4,9 @@
 
 @interface TLAlertConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSString * _audioCategory;
+    double  _audioPlaybackInitiationDelay;
     float  _audioVolume;
+    double  _audioVolumeRampingDuration;
     NSURL * _externalToneFileURL;
     unsigned long long  _externalToneMediaLibraryItemIdentifier;
     NSDictionary * _externalVibrationPattern;
@@ -23,6 +25,8 @@
     NSString * _vibrationIdentifier;
 }
 
+@property (setter=_setAudioPlaybackInitiationDelay:, nonatomic) double _audioPlaybackInitiationDelay;
+@property (setter=_setAudioVolumeRampingDuration:, nonatomic) double _audioVolumeRampingDuration;
 @property (nonatomic, readonly) bool _hasCustomAudioVolume;
 @property (nonatomic, copy) NSString *audioCategory;
 @property (nonatomic) float audioVolume;
@@ -43,8 +47,12 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)_audioPlaybackInitiationDelay;
+- (double)_audioVolumeRampingDuration;
 - (void)_freeze;
 - (bool)_hasCustomAudioVolume;
+- (void)_setAudioPlaybackInitiationDelay:(double)arg1;
+- (void)_setAudioVolumeRampingDuration:(double)arg1;
 - (void)_throwForFrozenInstance;
 - (id)audioCategory;
 - (float)audioVolume;

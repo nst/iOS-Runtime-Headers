@@ -6,6 +6,8 @@
 
 @property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
+@property (nonatomic, readonly, copy) NSString *crk_JSONStringValue;
+@property (getter=crk_isInPast, readonly) bool crk_inPast;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool fc_isWeekend;
@@ -307,6 +309,13 @@
 
 - (id)cat_internetTimeString;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_sharedDateFormatter;
+
+- (id)crk_JSONStringValue;
+- (bool)crk_isInPast;
+
 // Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
 
 - (id)JSONObjectRepresentation;
@@ -483,8 +492,10 @@
 
 - (long long)__im_nanosecondTimeInterval;
 - (long long)differenceFromDate:(id)arg1;
+- (long long)hoursDifferenceFromDate:(id)arg1;
 - (bool)isArchivable_im;
 - (bool)isToday;
+- (long long)minutesDifferenceFromDate:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -516,6 +527,12 @@
 - (id)mf_descriptionForMimeHeaders;
 - (id)mf_replyPrefixForSender:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
+
++ (id)millisecondsSince1970;
+
+- (id)millisecondsSince1970;
+
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
 + (id)mtNow;
@@ -541,6 +558,10 @@
 
 - (bool)isWholeHour;
 
+// Image: /System/Library/PrivateFrameworks/News/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)_fr_sharedYearAndMonthDateFormatter;
@@ -551,6 +572,9 @@
 + (id)fc_dateWithMillisecondTimeIntervalSince1970:(unsigned long long)arg1;
 + (id)fc_earlierDateAllowingNilWithDate:(id)arg1 andDate:(id)arg2;
 + (id)fc_laterDateAllowingNilWithDate:(id)arg1 andDate:(id)arg2;
++ (double)fc_timeIntervalOneDay;
++ (double)fc_timeIntervalOneHour;
++ (double)fc_timeIntervalOneWeek;
 + (int)keyValuePairType;
 + (id)pbDate;
 + (id)readValueFromKeyValuePair:(id)arg1;
@@ -706,6 +730,20 @@
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
++ (id)tvp_dateWithMillisecondsSince1970:(id)arg1;
++ (bool)tvp_networkTimeIsApproximatelyCorrect;
+
+- (bool)_isEqualToDateIgnoringTime:(id)arg1;
+- (id)tvp_dateByAddingDays:(long long)arg1;
+- (id)tvp_dateBySubtractingDays:(long long)arg1;
+- (id)tvp_dateCeiledToNearestMinute:(int)arg1;
+- (id)tvp_dateFlooredToNearestMinute:(int)arg1;
+- (bool)tvp_isToday;
+- (bool)tvp_isTomorrow;
+- (bool)tvp_isYesterday;
+
 // Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
 
 + (id)wlk_dateWithMillisecondsSince1970:(id)arg1;
@@ -725,14 +763,15 @@
 + (id)tsce_dateWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6;
 
 - (int)chartGridValueType;
+- (id)dateFormatterFromTemplate12Hour:(id)arg1 template24Hour:(id)arg2 withDateFormatter:(id)arg3;
 - (double)doubleValue;
+- (bool)p_localeUses24HourTimeCycle;
 - (id)p_rule1To23HoursAgo:(long long)arg1;
 - (id)p_rule1To59MinutesAgo:(long long)arg1;
 - (id)p_ruleForOverAWeekAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForOverAYearAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForUpToSevenDaysAgoAndNotYesterdayForDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)p_ruleForYesterday:(id)arg1 withDateFormatter:(id)arg2;
-- (id)p_ruleForYesterdayShortAsPossible:(id)arg1;
 - (long long)tsce_day;
 - (long long)tsce_hour;
 - (double)tsce_mapToDouble;
@@ -742,15 +781,16 @@
 - (long long)tsce_weekNumberForType:(int)arg1;
 - (long long)tsce_weekday;
 - (long long)tsce_year;
-- (id)tsp_initWithMessage:(const struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
-- (void)tsp_saveToMessage:(struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
+- (id)tsp_initWithMessage:(const struct Date { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1;
+- (void)tsp_saveToMessage:(struct Date { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1;
 - (struct { unsigned short x1; unsigned short x2; })tsu_DOSTime;
-- (id)tsu_fullFormattedDateWithPeriod;
+- (id)tsu_fullFormattedDate;
 - (id)tsu_initWithDOSTime:(struct { unsigned short x1; unsigned short x2; })arg1;
 - (bool)tsu_isEqualToDate:(id)arg1;
 - (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1;
 - (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1 withDateFormatter:(id)arg2;
 - (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1 withDateFormatter:(id)arg2 shortAsPossible:(bool)arg3;
+- (id)tsu_shortFormattedDate;
 
 // Image: /usr/lib/libprequelite.dylib
 

@@ -8,8 +8,8 @@
     UIView * _clipView;
     NSString * _complicationSlotIdentifier;
     CLKComplicationTemplate * _complicationTemplate;
-    UIView * _currentComplicationView;
-    UIView * _deferredComplicationView;
+    UIView<NTKComplicationDisplay> * _currentComplicationView;
+    UIView<NTKComplicationDisplay> * _deferredComplicationView;
     bool  _didChangeLayoutOverride;
     bool  _dimmed;
     UIView<NTKComplicationDisplay> * _display;
@@ -27,7 +27,7 @@
         double height; 
     }  _maxSize;
     id /* block */  _needsResizeHandler;
-    UIView * _nextComplicationView;
+    UIView<NTKComplicationDisplay> * _nextComplicationView;
     bool  _paused;
     bool  _supportsCurvedText;
     bool  _tapEnabled;

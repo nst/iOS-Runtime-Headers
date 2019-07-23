@@ -89,6 +89,16 @@
 - (bool)shouldMatchDataInCacheByURLWithoutQueryComponent;
 - (id)tracks;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (struct CGSize { double x1; double x2; })hk_assetSize;
+- (id)hk_thumbnailImage;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
+- (struct CGSize { double x1; double x2; })hrui_assetSize;
+- (id)hrui_thumbnailImage;
+
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
 - (void)mpc_addDownloadCompletionHandler:(id /* block */)arg1;

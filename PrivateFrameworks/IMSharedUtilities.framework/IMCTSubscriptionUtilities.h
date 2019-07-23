@@ -49,6 +49,7 @@
 - (id)ctSubscriptionInfoWithError:(id)arg1;
 - (bool)deviceSupportsMultipleSubscriptions;
 - (id)init;
+- (id)newSubscriptionContextWithPhoneNumber:(id)arg1 labelID:(id)arg2 isDefaultVoice:(id)arg3 isDefaultData:(id)arg4 slot:(long long)arg5;
 - (id)newSubscriptionContextWithSlot:(long long)arg1;
 - (unsigned long long)numberOfSubscriptions;
 - (id)phoneCertificateVendor;

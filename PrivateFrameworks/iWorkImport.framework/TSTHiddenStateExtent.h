@@ -112,7 +112,7 @@
     }  _pendingComputedShowRowResults;
     NSObject<OS_dispatch_queue> * _pendingComputedShowRowResultsQueue;
     TSTTableFilterSet * _rewrittenFilterSet;
-    TSTInfo * _tableInfo;
+    TSTTableInfo * _tableInfo;
     NSMutableArray * _thresholdCellValues;
     NSMutableIndexSet * _userHiddenIndexes;
     struct _opaque_pthread_mutex_t { 
@@ -137,7 +137,7 @@
 @property (nonatomic, readonly) unsigned int numberOfHidden;
 @property (nonatomic, readonly) unsigned int numberOfUserHidden;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) TSTInfo *tableInfo;
+@property (nonatomic, readonly) TSTTableInfo *tableInfo;
 @property (nonatomic, readonly) NSArray *thresholdCellValues;
 
 + (id)mutableIndexSetByIntersecting:(id)arg1 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
@@ -168,10 +168,12 @@
 - (void)didRemoveGroup:(id)arg1;
 - (void)didRemoveRowUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1 fromGroup:(id)arg2;
 - (void)dirtyFilterState;
+- (void)dirtyFilterStateForHeaders;
+- (void)dirtyFilterStateForRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)duplicateFilterSet;
 - (id)duplicateFilterSetInUidFormWithTable:(id)arg1;
 - (void)enableFilterSet:(bool)arg1;
-- (void)encodeToArchive:(struct HiddenStateExtentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; int x8; bool x9; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::UUID> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; }*)arg1 archiver:(id)arg2;
+- (void)encodeToArchive:(struct HiddenStateExtentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct UUID {} *x8; int x9; bool x10; }*)arg1 archiver:(id)arg2;
 - (void)endOfGroupingChangesBatch;
 - (id)expandSummaryGroupUIDs:(id)arg1;
 - (id)filterSet;
@@ -195,13 +197,15 @@
 - (unsigned int)indexOfVisibleAfterIndex:(unsigned int)arg1;
 - (unsigned int)indexOfVisibleBeforeAndIncludingIndex:(unsigned int)arg1;
 - (unsigned int)indexOfVisibleBeforeIndex:(unsigned int)arg1;
+- (id)indexesOfCollapsedInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)indexesOfFilteredInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfHiddenInBaseRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfHiddenInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfUserHiddenInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfUserVisibleInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfVisibleInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)indexesOfVisibleIndexesInIndexes:(id)arg1;
-- (id)initWithArchive:(const struct HiddenStateExtentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct Reference {} *x7; int x8; bool x9; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_10_1_1; int x_10_1_2; int x_10_1_3; int x_10_1_4; } x10; struct RepeatedPtrField<TSP::UUID> { void **x_11_1_1; int x_11_1_2; int x_11_1_3; int x_11_1_4; } x11; }*)arg1 unarchiver:(id)arg2 forHiddenStatesOwner:(id)arg3;
+- (id)initWithArchive:(const struct HiddenStateExtentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::HiddenStateExtentArchive_RowOrColumnState> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct UUID {} *x8; int x9; bool x10; }*)arg1 unarchiver:(id)arg2 forHiddenStatesOwner:(id)arg3;
 - (id)initWithHiddenStatesOwner:(id)arg1 forRows:(bool)arg2;
 - (void)insertBaseRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)invalidateForCalcEngine:(id)arg1;
@@ -221,8 +225,9 @@
 - (unsigned int)numberOfHiddenInBaseRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned int)numberOfHiddenInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned int)numberOfUserHidden;
+- (unsigned int)numberOfUserHiddenInBaseRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned int)numberOfUserHiddenInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })ownerUID;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })p_calculateAverageThresholdWithCalcEngine:(id)arg1 formulaCoord:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg2;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })p_calculateTopOrBottomThresholdWithCalcEngine:(id)arg1 formulaCoord:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg2 isTop:(bool)arg3 keyScale:(int)arg4;
@@ -231,7 +236,7 @@
 - (void)p_removeAllFormulaFromCalculationEngine;
 - (id)precedentsForFilterSet:(id)arg1 calcEngine:(id)arg2 hostOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg3 hostCellID:(const struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; }*)arg4;
 - (struct { bool x1; bool x2; bool x3; })recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2 recalcOptions:(struct { bool x1; bool x2; })arg3;
-- (int)registerWithCalcEngine:(id)arg1;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg2;
 - (void)remapTableUIDsInFormulasWithMap:(const struct UUIDMap<TSP::UUIDMap> { struct __hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, std::__1::hash<TSUUUID>, true>, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, true>, std::__1::allocator<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> > > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, TSU::UUIDData<TSP::UUIDData> >, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; } x1; }*)arg1 calcEngine:(id)arg2;
 - (void)removeHiddenIndex:(struct TSUModelColumnOrRowIndex { unsigned int x1; })arg1 forAction:(unsigned char)arg2;
 - (void)removeUid:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1;

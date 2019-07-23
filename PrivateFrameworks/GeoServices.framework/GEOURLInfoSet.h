@@ -6,6 +6,10 @@
     GEOURLInfo * _abExperimentURL;
     GEOURLInfo * _addressCorrectionInitURL;
     GEOURLInfo * _addressCorrectionUpdateURL;
+    GEOURLInfo * _analyticsCohortSessionURL;
+    GEOURLInfo * _analyticsLongSessionURL;
+    GEOURLInfo * _analyticsSessionlessURL;
+    GEOURLInfo * _analyticsShortSessionURL;
     GEOURLInfo * _announcementsURL;
     GEOURLInfo * _authProxyURL;
     GEOURLInfo * _backgroundDispatcherURL;
@@ -42,6 +46,10 @@
 @property (nonatomic, retain) GEOURLInfo *abExperimentURL;
 @property (nonatomic, retain) GEOURLInfo *addressCorrectionInitURL;
 @property (nonatomic, retain) GEOURLInfo *addressCorrectionUpdateURL;
+@property (nonatomic, retain) GEOURLInfo *analyticsCohortSessionURL;
+@property (nonatomic, retain) GEOURLInfo *analyticsLongSessionURL;
+@property (nonatomic, retain) GEOURLInfo *analyticsSessionlessURL;
+@property (nonatomic, retain) GEOURLInfo *analyticsShortSessionURL;
 @property (nonatomic, retain) GEOURLInfo *announcementsURL;
 @property (nonatomic, retain) GEOURLInfo *authProxyURL;
 @property (nonatomic, retain) GEOURLInfo *backgroundDispatcherURL;
@@ -57,6 +65,10 @@
 @property (nonatomic, readonly) bool hasAbExperimentURL;
 @property (nonatomic, readonly) bool hasAddressCorrectionInitURL;
 @property (nonatomic, readonly) bool hasAddressCorrectionUpdateURL;
+@property (nonatomic, readonly) bool hasAnalyticsCohortSessionURL;
+@property (nonatomic, readonly) bool hasAnalyticsLongSessionURL;
+@property (nonatomic, readonly) bool hasAnalyticsSessionlessURL;
+@property (nonatomic, readonly) bool hasAnalyticsShortSessionURL;
 @property (nonatomic, readonly) bool hasAnnouncementsURL;
 @property (nonatomic, readonly) bool hasAuthProxyURL;
 @property (nonatomic, readonly) bool hasBackgroundDispatcherURL;
@@ -106,6 +118,10 @@
 - (id)abExperimentURL;
 - (id)addressCorrectionInitURL;
 - (id)addressCorrectionUpdateURL;
+- (id)analyticsCohortSessionURL;
+- (id)analyticsLongSessionURL;
+- (id)analyticsSessionlessURL;
+- (id)analyticsShortSessionURL;
 - (id)announcementsURL;
 - (id)authProxyURL;
 - (id)backgroundDispatcherURL;
@@ -125,6 +141,10 @@
 - (bool)hasAbExperimentURL;
 - (bool)hasAddressCorrectionInitURL;
 - (bool)hasAddressCorrectionUpdateURL;
+- (bool)hasAnalyticsCohortSessionURL;
+- (bool)hasAnalyticsLongSessionURL;
+- (bool)hasAnalyticsSessionlessURL;
+- (bool)hasAnalyticsShortSessionURL;
 - (bool)hasAnnouncementsURL;
 - (bool)hasAuthProxyURL;
 - (bool)hasBackgroundDispatcherURL;
@@ -172,6 +192,10 @@
 - (void)setAbExperimentURL:(id)arg1;
 - (void)setAddressCorrectionInitURL:(id)arg1;
 - (void)setAddressCorrectionUpdateURL:(id)arg1;
+- (void)setAnalyticsCohortSessionURL:(id)arg1;
+- (void)setAnalyticsLongSessionURL:(id)arg1;
+- (void)setAnalyticsSessionlessURL:(id)arg1;
+- (void)setAnalyticsShortSessionURL:(id)arg1;
 - (void)setAnnouncementsURL:(id)arg1;
 - (void)setAuthProxyURL:(id)arg1;
 - (void)setBackgroundDispatcherURL:(id)arg1;

@@ -90,6 +90,7 @@
 - (bool)_lockedHasTCCAuthorization;
 - (void)_lockedSetHasTCCAuthorizationTernary:(long long)arg1;
 - (id)_locked_eligiblePendingContextForSetupInfo:(id)arg1;
+- (unsigned long long)_outstandingOperationCount;
 - (void)_performFetchCurrentUserRecordOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_reallyPerformFetchRecordsOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_setApplicationPermission:(unsigned long long)arg1 enabled:(bool)arg2 setupInfo:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -109,6 +110,7 @@
 - (id)bundleIdentifier;
 - (id)cachedSandboxExtensions;
 - (bool)canOpenByID;
+- (bool)canOpenFileAtURL:(id)arg1;
 - (bool)canRunGivenAvailabilityState:(unsigned long long)arg1;
 - (bool)canUsePackages;
 - (bool)canUsePackagesWithError:(id*)arg1;
@@ -147,6 +149,7 @@
 - (id)getFileMetadataWithFileHandle:(id)arg1 openInfo:(id)arg2 error:(id*)arg3;
 - (void)getNewWebSharingIdentityDataWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getNewWebSharingIdentityWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getOutstandingOperationCountWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;

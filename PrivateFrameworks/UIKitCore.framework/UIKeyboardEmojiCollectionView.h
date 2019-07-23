@@ -10,15 +10,10 @@
 @property (readonly, retain) UIKeyboardEmojiGraphicsTraits *emojiGraphicsTraits;
 @property (nonatomic) UIResponder *hitTestResponder;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (double)_currentScreenScale;
 - (bool)_shouldReverseLayoutDirection;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)closestCellForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)dealloc;
 - (id)emojiGraphicsTraits;
 - (id)hitTestResponder;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2 emojiGraphicsTraits:(id)arg3;

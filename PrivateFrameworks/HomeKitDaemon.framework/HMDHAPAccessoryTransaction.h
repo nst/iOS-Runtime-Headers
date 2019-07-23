@@ -9,6 +9,8 @@
 @property (nonatomic, retain) NSString *bridgeUUID;
 @property (nonatomic, retain) NSData *broadcastKey;
 @property (nonatomic, retain) NSNumber *certificationStatus;
+@property (nonatomic, retain) HMFConnectivityInfo *connectivityInfo;
+@property (nonatomic, retain) NSNumber *hardwareSupport;
 @property (nonatomic, retain) NSNumber *keyUpdatedStateNumber;
 @property (nonatomic, retain) NSDate *keyUpdatedTime;
 @property (nonatomic, retain) NSString *pairingUsername;

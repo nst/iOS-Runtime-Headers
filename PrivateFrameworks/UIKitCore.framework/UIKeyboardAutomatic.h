@@ -14,15 +14,10 @@
 @property (nonatomic) bool showsCandidateBar;
 @property (nonatomic) bool showsCandidateInline;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (bool)_isAutomaticKeyboard;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)activate;
 - (bool)caretBlinks;
+- (void)dealloc;
 - (void)didSuspend:(id)arg1;
 - (struct UIPeripheralAnimationGeometry { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; })geometryForHeightDelta:(double)arg1;
 - (void)implBoundsHeightChangeDone:(double)arg1 suppressNotification:(bool)arg2;

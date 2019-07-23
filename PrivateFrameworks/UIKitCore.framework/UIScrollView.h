@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIScrollView : UIView <DebugHierarchyObject_Fallback, NSCoding, UIFocusItemScrollableContainer, UIGestureRecognizerDelegate, UIIndexBarAccessoryViewDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView> {
+@interface UIScrollView : UIView <NSCoding, UIFocusItemScrollableContainer, UIGestureRecognizerDelegate, UIIndexBarAccessoryViewDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView> {
     NSArray * __allowedTouchTypesForScrolling;
     struct UIEdgeInsets { 
         double top; 
@@ -284,6 +284,7 @@
     id  _swipe;
     UIScrollViewDelayedTouchesBeganGestureRecognizer * _touchDelayGestureRecognizer;
     long long  _touchLevel;
+    CADisplayLink * _trackingHeartbeat;
     NSTimer * _trackingWatchdogTimer;
     bool  _useContentDimensionVariablesForConstraintLowering;
     double  _velocityScaleFactor;
@@ -394,7 +395,9 @@
 @property (getter=_topScrollIndicatorFollowsContentOffset, setter=_setTopScrollIndicatorFollowsContentOffset:, nonatomic) bool topScrollIndicatorFollowsContentOffset;
 @property (getter=_touchDelayForScrollDetection, nonatomic, readonly) double touchDelayForScrollDetection;
 @property (getter=isTracking, nonatomic, readonly) bool tracking;
+@property (nonatomic, readonly) bool ts_isAnimatingScroll;
 @property (nonatomic, readonly) bool ts_isScrolling;
+@property (nonatomic, readonly) double ts_verticalVelocity;
 @property (getter=_velocityScaleFactor, setter=_setVelocityScaleFactor:, nonatomic) double velocityScaleFactor;
 @property (getter=_verticalScrollIndicator, nonatomic, readonly) UIView *verticalScrollIndicator;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } visibleSize;
@@ -580,6 +583,7 @@
 - (void)_handleLowFidelitySwipe:(id)arg1;
 - (void)_handlePanFailure;
 - (void)_handleSwipe:(id)arg1;
+- (void)_handleTrackingHeartbeat:(id)arg1;
 - (bool)_hasScrollViewWillEndDraggingInvocationsToPerform;
 - (double)_heightForFocusFastScrollingUI:(double)arg1;
 - (void)_hideScrollIndicators;
@@ -808,6 +812,8 @@
 - (double)_touchDelayForScrollDetection;
 - (bool)_touchMayChangeSelection;
 - (id)_touchesDelayedGestureRecognizer;
+- (void)_trackingDidBegin;
+- (void)_trackingDidEnd;
 - (bool)_transfersScrollToContainer;
 - (id)_uili_existingObservationEligibleLayoutVariables;
 - (void)_unregisterForSpringBoardBlankedScreenNotification;
@@ -853,22 +859,6 @@
 - (double)_zoomScaleFromPresentationLayer:(bool)arg1;
 - (void)_zoomToCenter:(struct CGPoint { double x1; double x2; })arg1 scale:(double)arg2 duration:(double)arg3;
 - (void)_zoomToCenter:(struct CGPoint { double x1; double x2; })arg1 scale:(double)arg2 duration:(double)arg3 force:(bool)arg4;
-- (void)dealloc;
-- (id)description;
-- (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
-- (id)nsli_contentHeightVariable;
-- (id)nsli_contentWidthVariable;
-- (id)nsli_contentXOffsetVariable;
-- (id)nsli_contentYOffsetVariable;
-- (id)nsli_layoutMarginsItem;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })accessoryInsets;
 - (void)accessoryInsetsDidChange:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)accessoryViewAtEdge:(long long)arg1;
@@ -894,11 +884,13 @@
 - (id)contentLayoutGuide;
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (struct CGSize { double x1; double x2; })contentSize;
+- (void)dealloc;
 - (double)decelerationRate;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)delayed:(id)arg1;
 - (bool)delaysContentTouches;
 - (id)delegate;
+- (id)description;
 - (id)directionalPressGestureRecognizer;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -934,6 +926,12 @@
 - (double)maxVelocityInDirection:(int)arg1;
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;
+- (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
+- (id)nsli_contentHeightVariable;
+- (id)nsli_contentWidthVariable;
+- (id)nsli_contentXOffsetVariable;
+- (id)nsli_contentYOffsetVariable;
+- (id)nsli_layoutMarginsItem;
 - (id)panGestureRecognizer;
 - (void)performWhileAnimatingAutomaticContentOffsetAdjustments:(id /* block */)arg1;
 - (id)pinchGestureRecognizer;
@@ -1130,7 +1128,15 @@
 
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (bool)ts_isAnimatingScroll;
+- (bool)ts_isAutomaticContentOffsetAdjustmentEnabled;
 - (bool)ts_isScrolling;
+- (bool)ts_scrollToTop:(bool)arg1;
+- (void)ts_setAutomaticContentOffsetAdjustmentEnabled:(bool)arg1;
+- (void)ts_setIndicatorInsetAdjustmentBehaviorAlways;
+- (void)ts_setIndicatorInsetAdjustmentBehaviorAutomatic;
+- (void)ts_setIndicatorInsetAdjustmentBehaviorNever;
+- (double)ts_verticalVelocity;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

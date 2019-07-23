@@ -120,6 +120,7 @@
 - (id)storeDirectory;
 - (id)syncManagers;
 - (id)syncQueue;
+- (void)syncWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (void)zoneSyncManager:(id)arg1 stateDidChange:(id)arg2;
 - (void)zoneSyncManagerNotifyObservers:(id)arg1;

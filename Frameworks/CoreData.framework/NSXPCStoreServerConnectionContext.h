@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSXPCStoreServerConnectionContext : NSObject {
+@interface NSXPCStoreServerConnectionContext : NSObject <NSCoreDataKeyedArchivingDelegate> {
     NSManagedObjectContext * _context;
     NSXPCStoreConnectionInfo * _info;
     id  _manager;
 }
 
+- (bool)_allowCoreDataFutures;
 - (struct { unsigned int x1[8]; })auditToken;
 - (id)cache;
 - (void)dealloc;

@@ -5,7 +5,6 @@
 
 @required
 
-- (WBSFormMetadata *)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (WBSFormMetadata *)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (NSString *)webui_lastGeneratedPasswordForCurrentBackForwardItem;
 - (UIViewController *)webui_presentingViewController;

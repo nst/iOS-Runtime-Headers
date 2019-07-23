@@ -50,6 +50,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool trending;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 + (bool)supportsSecureCoding;
 

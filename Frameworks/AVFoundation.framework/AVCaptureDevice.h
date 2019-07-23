@@ -108,6 +108,7 @@
 - (bool)hasFlash;
 - (bool)hasMediaType:(id)arg1;
 - (bool)hasTorch;
+- (bool)hevcAllowBFramesForHighCTUCount;
 - (int)hevcTurboModeVersion;
 - (long long)imageControlMode;
 - (id)initSubclass;

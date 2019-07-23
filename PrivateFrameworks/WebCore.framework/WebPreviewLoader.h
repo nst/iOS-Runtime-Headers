@@ -115,91 +115,37 @@
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } protocol; 
-            struct optional<WTF::String> { 
-                bool init_; 
-                union storage_t<WTF::String> { 
-                    unsigned char dummy_; 
-                    struct String { 
-                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
-                            struct StringImpl {} *m_ptr; 
-                        } m_impl; 
-                    } value_; 
-                } storage_; 
+            struct String { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
             } remoteAddress; 
-            struct optional<WTF::String> { 
-                bool init_; 
-                union storage_t<WTF::String> { 
-                    unsigned char dummy_; 
-                    struct String { 
-                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
-                            struct StringImpl {} *m_ptr; 
-                        } m_impl; 
-                    } value_; 
-                } storage_; 
+            struct String { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
+                    struct StringImpl {} *m_ptr; 
+                } m_impl; 
             } connectionIdentifier; 
-            struct optional<WebCore::NetworkLoadPriority> { 
-                bool init_; 
-                union constexpr_storage_t<WebCore::NetworkLoadPriority> { 
-                    unsigned char dummy_; 
-                    unsigned char value_; 
-                } storage_; 
-            } priority; 
+            unsigned char priority; 
             bool complete; 
-            struct optional<WebCore::HTTPHeaderMap> { 
-                bool init_; 
-                union storage_t<WebCore::HTTPHeaderMap> { 
-                    unsigned char dummy_; 
-                    struct HTTPHeaderMap { 
-                        struct Vector<WebCore::HTTPHeaderMap::CommonHeader, 0, WTF::CrashOnOverflow, 6> { 
-                            struct CommonHeader {} *m_buffer; 
-                            unsigned int m_capacity; 
-                            unsigned int m_size; 
-                        } m_commonHeaders; 
-                        struct Vector<WebCore::HTTPHeaderMap::UncommonHeader, 0, WTF::CrashOnOverflow, 0> { 
-                            struct UncommonHeader {} *m_buffer; 
-                            unsigned int m_capacity; 
-                            unsigned int m_size; 
-                        } m_uncommonHeaders; 
-                    } value_; 
-                } storage_; 
+            struct HTTPHeaderMap { 
+                struct Vector<WebCore::HTTPHeaderMap::CommonHeader, 0, WTF::CrashOnOverflow, 6> { 
+                    struct CommonHeader {} *m_buffer; 
+                    unsigned int m_capacity; 
+                    unsigned int m_size; 
+                } m_commonHeaders; 
+                struct Vector<WebCore::HTTPHeaderMap::UncommonHeader, 0, WTF::CrashOnOverflow, 0> { 
+                    struct UncommonHeader {} *m_buffer; 
+                    unsigned int m_capacity; 
+                    unsigned int m_size; 
+                } m_uncommonHeaders; 
             } requestHeaders; 
-            struct optional<unsigned long long> { 
-                bool init_; 
-                union constexpr_storage_t<unsigned long long> { 
-                    unsigned char dummy_; 
-                    unsigned long long value_; 
-                } storage_; 
-            } requestHeaderBytesSent; 
-            struct optional<unsigned long long> { 
-                bool init_; 
-                union constexpr_storage_t<unsigned long long> { 
-                    unsigned char dummy_; 
-                    unsigned long long value_; 
-                } storage_; 
-            } requestBodyBytesSent; 
-            struct optional<unsigned long long> { 
-                bool init_; 
-                union constexpr_storage_t<unsigned long long> { 
-                    unsigned char dummy_; 
-                    unsigned long long value_; 
-                } storage_; 
-            } responseHeaderBytesReceived; 
-            struct optional<unsigned long long> { 
-                bool init_; 
-                union constexpr_storage_t<unsigned long long> { 
-                    unsigned char dummy_; 
-                    unsigned long long value_; 
-                } storage_; 
-            } responseBodyBytesReceived; 
-            struct optional<unsigned long long> { 
-                bool init_; 
-                union constexpr_storage_t<unsigned long long> { 
-                    unsigned char dummy_; 
-                    unsigned long long value_; 
-                } storage_; 
-            } responseBodyDecodedSize; 
+            unsigned int requestHeaderBytesSent; 
+            unsigned int responseHeaderBytesReceived; 
+            unsigned long long requestBodyBytesSent; 
+            unsigned long long responseBodyBytesReceived; 
+            unsigned long long responseBodyDecodedSize; 
         } m_networkLoadMetrics; 
-        struct optional<WebCore::CertificateInfo> { 
+        struct Optional<WebCore::CertificateInfo> { 
             bool init_; 
             union storage_t<WebCore::CertificateInfo> { 
                 unsigned char dummy_; 
@@ -213,41 +159,25 @@
                 } value_; 
             } storage_; 
         } m_certificateInfo; 
-        struct optional<WTF::Seconds> { 
-            bool init_; 
-            union constexpr_storage_t<WTF::Seconds> { 
-                unsigned char dummy_; 
-                struct Seconds { 
-                    double m_value; 
-                } value_; 
-            } storage_; 
+        struct Markable<WTF::Seconds, WTF::Seconds::MarkableTraits> { 
+            struct Seconds { 
+                double m_value; 
+            } m_value; 
         } m_age; 
-        struct optional<WTF::WallTime> { 
-            bool init_; 
-            union constexpr_storage_t<WTF::WallTime> { 
-                unsigned char dummy_; 
-                struct WallTime { 
-                    double m_value; 
-                } value_; 
-            } storage_; 
+        struct Markable<WTF::WallTime, WTF::WallTime::MarkableTraits> { 
+            struct WallTime { 
+                double m_value; 
+            } m_value; 
         } m_date; 
-        struct optional<WTF::WallTime> { 
-            bool init_; 
-            union constexpr_storage_t<WTF::WallTime> { 
-                unsigned char dummy_; 
-                struct WallTime { 
-                    double m_value; 
-                } value_; 
-            } storage_; 
+        struct Markable<WTF::WallTime, WTF::WallTime::MarkableTraits> { 
+            struct WallTime { 
+                double m_value; 
+            } m_value; 
         } m_expires; 
-        struct optional<WTF::WallTime> { 
-            bool init_; 
-            union constexpr_storage_t<WTF::WallTime> { 
-                unsigned char dummy_; 
-                struct WallTime { 
-                    double m_value; 
-                } value_; 
-            } storage_; 
+        struct Markable<WTF::WallTime, WTF::WallTime::MarkableTraits> { 
+            struct WallTime { 
+                double m_value; 
+            } m_value; 
         } m_lastModified; 
         struct ParsedContentRange { 
             long long m_firstBytePosition; 
@@ -256,49 +186,32 @@
             bool m_isValid; 
         } m_contentRange; 
         struct CacheControlDirectives { 
-            struct optional<WTF::Seconds> { 
-                bool init_; 
-                union constexpr_storage_t<WTF::Seconds> { 
-                    unsigned char dummy_; 
-                    struct Seconds { 
-                        double m_value; 
-                    } value_; 
-                } storage_; 
+            struct Markable<WTF::Seconds, WTF::Seconds::MarkableTraits> { 
+                struct Seconds { 
+                    double m_value; 
+                } m_value; 
             } maxAge; 
-            struct optional<WTF::Seconds> { 
-                bool init_; 
-                union constexpr_storage_t<WTF::Seconds> { 
-                    unsigned char dummy_; 
-                    struct Seconds { 
-                        double m_value; 
-                    } value_; 
-                } storage_; 
+            struct Markable<WTF::Seconds, WTF::Seconds::MarkableTraits> { 
+                struct Seconds { 
+                    double m_value; 
+                } m_value; 
             } maxStale; 
-            bool noCache; 
-            bool noStore; 
-            bool mustRevalidate; 
-            bool immutable; 
+            unsigned int noCache : 1; 
+            unsigned int noStore : 1; 
+            unsigned int mustRevalidate : 1; 
+            unsigned int immutable : 1; 
         } m_cacheControlDirectives; 
-        struct optional<std::__1::array<unsigned char, 20> > { 
-            bool init_; 
-            union constexpr_storage_t<std::__1::array<unsigned char, 20> > { 
-                unsigned char dummy_; 
-                struct array<unsigned char, 20> { 
-                    unsigned char __elems_[20]; 
-                } value_; 
-            } storage_; 
-        } m_cacheBodyKey; 
-        bool m_haveParsedCacheControlHeader; 
-        bool m_haveParsedAgeHeader; 
-        bool m_haveParsedDateHeader; 
-        bool m_haveParsedExpiresHeader; 
-        bool m_haveParsedLastModifiedHeader; 
-        bool m_haveParsedContentRangeHeader; 
-        bool m_isRedirected; 
+        unsigned int m_haveParsedCacheControlHeader : 1; 
+        unsigned int m_haveParsedAgeHeader : 1; 
+        unsigned int m_haveParsedDateHeader : 1; 
+        unsigned int m_haveParsedExpiresHeader : 1; 
+        unsigned int m_haveParsedLastModifiedHeader : 1; 
+        unsigned int m_haveParsedContentRangeHeader : 1; 
+        unsigned int m_isRedirected : 1; 
+        unsigned int m_isNull : 1; 
         unsigned char m_source; 
         unsigned char m_type; 
         unsigned char m_tainting; 
-        bool m_isNull; 
         int m_httpStatusCode; 
         unsigned int m_initLevel : 3; 
         bool m_isQuickLook; 

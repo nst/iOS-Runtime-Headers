@@ -5,28 +5,46 @@
 @interface WBSCreditCardData : NSObject {
     NSString * _cardName;
     NSString * _cardNumber;
+    NSString * _cardSecurityCode;
     NSString * _cardholderName;
     NSDate * _expirationDate;
+    NSDate * _lastUsedDate;
+    PKVirtualCard * _virtualCard;
 }
 
 @property (nonatomic, copy) NSString *cardName;
 @property (nonatomic, copy) NSString *cardNumber;
+@property (nonatomic, readonly, copy) NSString *cardSecurityCode;
 @property (nonatomic, copy) NSString *cardholderName;
 @property (nonatomic, readonly, copy) NSDate *expirationDate;
+@property (nonatomic, retain) NSDate *lastUsedDate;
+@property (nonatomic, readonly) PKVirtualCard *virtualCard;
+@property (nonatomic, readonly) UIImage *virtualCardIcon;
 
 - (void).cxx_destruct;
+- (id)_expirationDateFromPKVirtualCard:(id)arg1;
 - (id)cardName;
 - (id)cardNumber;
+- (id)cardSecurityCode;
 - (id)cardholderName;
 - (id)creditCardDataByMergingCardholderNameAndExpirationDateFromCard:(id)arg1;
+- (id)creditCardDataByUpdatingLastUsedDate:(id)arg1;
 - (id)description;
 - (id)expirationDate;
+- (bool)hasSameCreditCardInformationAs:(id)arg1;
 - (id)initWithCameraReaderOutput:(id)arg1;
 - (id)initWithCardName:(id)arg1 number:(id)arg2 cardholderName:(id)arg3 expirationDate:(id)arg4;
+- (id)initWithCardName:(id)arg1 number:(id)arg2 cardholderName:(id)arg3 expirationDate:(id)arg4 securityCode:(id)arg5;
 - (id)initWithKeychainRepresentation:(id)arg1;
+- (id)initWithVirtualCard:(id)arg1;
+- (id)initWithVirtualCardCredentials:(id)arg1 virtualCard:(id)arg2;
 - (id)keychainRepresentation;
+- (id)lastUsedDate;
 - (void)setCardName:(id)arg1;
 - (void)setCardNumber:(id)arg1;
 - (void)setCardholderName:(id)arg1;
+- (void)setLastUsedDate:(id)arg1;
+- (id)virtualCard;
+- (id)virtualCardIcon;
 
 @end

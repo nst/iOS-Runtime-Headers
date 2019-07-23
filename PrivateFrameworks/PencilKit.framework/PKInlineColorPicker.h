@@ -4,7 +4,10 @@
 
 @interface PKInlineColorPicker : UIView <PKColorPickerDelegatePrivate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate, _PKAllowDrawingWhilePresentingPopoverViewDelegate> {
     <_PKInlineColorPickerAllowDrawingWithPopoverDelegate> * __allowDrawingWithPopoverDelegate;
+    <PKInlineColorPickerContentsHiddenDelegate> * __contentsHiddenDelegate;
     UIColor * __pickerColor;
+    long long  _aggd_colorsChangedCount;
+    UIColor * _aggd_initialColorOnPopoverOpen;
     NSArray * _buttonItems;
     unsigned long long  _colorSet;
     NSArray * _colors;
@@ -19,12 +22,16 @@
     UIColor * _selectedColorBeforeSpringLoadedSelection;
     unsigned long long  _selectedColorIndex;
     unsigned long long  _selectionState;
+    <PKInlineColorPickerSerialViewControllerTransitionDelegate> * _serialViewControllerTransitionDelegate;
     bool  _shouldEmboss;
     unsigned long long  _sizeState;
 }
 
 @property (nonatomic) <_PKInlineColorPickerAllowDrawingWithPopoverDelegate> *_allowDrawingWithPopoverDelegate;
+@property (nonatomic) <PKInlineColorPickerContentsHiddenDelegate> *_contentsHiddenDelegate;
 @property (nonatomic, retain) UIColor *_pickerColor;
+@property (nonatomic) long long aggd_colorsChangedCount;
+@property (nonatomic, retain) UIColor *aggd_initialColorOnPopoverOpen;
 @property (nonatomic, retain) NSArray *buttonItems;
 @property (nonatomic) unsigned long long colorSet;
 @property (nonatomic, retain) NSArray *colors;
@@ -43,6 +50,7 @@
 @property (nonatomic, retain) UIColor *selectedColorBeforeSpringLoadedSelection;
 @property (nonatomic) unsigned long long selectedColorIndex;
 @property (nonatomic) unsigned long long selectionState;
+@property (nonatomic) <PKInlineColorPickerSerialViewControllerTransitionDelegate> *serialViewControllerTransitionDelegate;
 @property (nonatomic) bool shouldEmboss;
 @property (nonatomic) unsigned long long sizeState;
 @property (readonly) Class superclass;
@@ -52,20 +60,24 @@
 - (id)_allowDrawingWithPopoverDelegate;
 - (void)_axHandleLongPressOnColorButtonForLargeTextHUD:(id)arg1;
 - (id)_axLabelForColorButton:(id)arg1;
-- (void)_colorPicker:(id)arg1 willDismissAnimated:(bool)arg2;
 - (void)_colorPickerUserDidTouchUpInside:(id)arg1;
 - (void)_colorPickerWillDismiss:(id)arg1;
 - (void)_commonInit;
+- (id)_contentsHiddenDelegate;
 - (void)_dismissColorPickerPopover:(bool)arg1;
+- (id)_effectiveBarButtonItemForPopoverPresentation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_effectiveRectForPopoverPresentation;
 - (id)_effectiveViewControllerForPopoverPresentation;
 - (void)_forceSetColorSet:(unsigned long long)arg1;
+- (bool)_isInkPickerContentsHidden;
 - (id)_pickerColor;
 - (void)_presentColorPickerPopover:(bool)arg1;
 - (id)_representableColorForColor:(id)arg1;
 - (void)_selectColorWithButton:(id)arg1;
-- (void)_showColorPickerFromButton:(id)arg1 animated:(bool)arg2;
 - (void)_toggleColorPickerPopoverPresentation:(bool)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (long long)aggd_colorsChangedCount;
+- (id)aggd_initialColorOnPopoverOpen;
 - (id)buttonItems;
 - (void)colorButtonTapHandler:(id)arg1;
 - (id)colorForIndex:(long long)arg1;
@@ -86,9 +98,10 @@
 - (bool)isUsedOnDarkBackground;
 - (void)layoutSubviews;
 - (id)leftOverflowView;
-- (void)notifiyDelegateDidSelectColor:(bool)arg1;
+- (void)notifyDelegateDidSelectColor:(bool)arg1;
 - (void)notifyDelegateDidSelectColorInCompactChooseToolState;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (id)presentedColorPicker;
 - (id)rightOverflowView;
 - (id)scrollView;
@@ -98,6 +111,9 @@
 - (id)selectedColorBeforeSpringLoadedSelection;
 - (unsigned long long)selectedColorIndex;
 - (unsigned long long)selectionState;
+- (id)serialViewControllerTransitionDelegate;
+- (void)setAggd_colorsChangedCount:(long long)arg1;
+- (void)setAggd_initialColorOnPopoverOpen:(id)arg1;
 - (void)setButtonItems:(id)arg1;
 - (void)setColorSet:(unsigned long long)arg1;
 - (void)setColors:(id)arg1;
@@ -113,9 +129,11 @@
 - (void)setSelectedColorBeforeSpringLoadedSelection:(id)arg1;
 - (void)setSelectedColorIndex:(unsigned long long)arg1;
 - (void)setSelectionState:(unsigned long long)arg1;
+- (void)setSerialViewControllerTransitionDelegate:(id)arg1;
 - (void)setShouldEmboss:(bool)arg1;
 - (void)setSizeState:(unsigned long long)arg1;
 - (void)set_allowDrawingWithPopoverDelegate:(id)arg1;
+- (void)set_contentsHiddenDelegate:(id)arg1;
 - (void)set_pickerColor:(id)arg1;
 - (bool)shouldEmboss;
 - (void)showOverflowViewsIfNeeded;

@@ -5,6 +5,7 @@
 @interface AVTAvatarRecord : NSObject <AVTAvatarRecordInternal, NSCopying, NSSecureCoding, UIActivityItemSource> {
     NSData * _avatarData;
     NSString * _identifier;
+    NSDate * _orderDate;
 }
 
 @property (nonatomic, retain) NSData *avatarData;
@@ -13,6 +14,7 @@
 @property (getter=isEditable, nonatomic, readonly) bool editable;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly) NSDate *orderDate;
 @property (getter=isPuppet, nonatomic, readonly) bool puppet;
 @property (readonly) Class superclass;
 
@@ -31,16 +33,18 @@
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)avatarData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
-- (id)initWithAvatarData:(id)arg1;
-- (id)initWithAvatarData:(id)arg1 identifier:(id)arg2;
+- (id)initWithAvatarData:(id)arg1 identifier:(id)arg2 orderDate:(id)arg3;
+- (id)initWithAvatarData:(id)arg1 orderDate:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEditable;
 - (bool)isEqual:(id)arg1;
 - (bool)isPuppet;
+- (id)orderDate;
 - (void)setAvatarData:(id)arg1;
 
 @end

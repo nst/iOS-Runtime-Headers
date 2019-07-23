@@ -4,9 +4,11 @@
 
 @interface TSDPencilAnnotationSelection : TSKSelection {
     TSPObject<TSKPencilAnnotation> * _pencilAnnotation;
+    NSDate * _pencilAnnotationAnchorStartDate;
 }
 
 @property (nonatomic, readonly) TSPObject<TSKPencilAnnotation> *pencilAnnotation;
+@property (nonatomic, retain) NSDate *pencilAnnotationAnchorStartDate;
 
 + (Class)archivedSelectionClass;
 
@@ -15,5 +17,7 @@
 - (bool)canSaveSelectionToArchivedViewState;
 - (id)initWithPencilAnnotation:(id)arg1;
 - (id)pencilAnnotation;
+- (id)pencilAnnotationAnchorStartDate;
+- (void)setPencilAnnotationAnchorStartDate:(id)arg1;
 
 @end

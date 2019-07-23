@@ -90,6 +90,7 @@
 - (bool)isInstallationKeybagRequired;
 - (void)isScanning:(id /* block */)arg1;
 - (void)isUpdateReadyForInstallation:(id /* block */)arg1;
+- (void)managedInstallationRequested:(id)arg1;
 - (void)noteConnectionDropped;
 - (void)noteServerExiting;
 - (id)observeInstallationConstraintChangesForDownload:(id)arg1 observer:(id /* block */)arg2;

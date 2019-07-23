@@ -34,6 +34,7 @@
 - (bool)p_shouldTextFlowAroundWrappable:(id)arg1 inTarget:(id)arg2 inColumn:(id)arg3;
 - (unsigned int)p_splitLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineSegmentRects:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 wrappable:(id)arg3 cookie:(id)arg4 skipHint:(double*)arg5;
 - (id)p_wrapDrawables:(id)arg1 userInfo:(id)arg2;
+- (void)setUpCanvasToWrapSpaceAffineTransformationForColumn:(id)arg1 withTarget:(id)arg2;
 - (unsigned int)splitLine:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineSegmentRects:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 wrappableAttachments:(id)arg3 ignoreFloatingGraphics:(bool)arg4 canvasCausedWrap:(out bool*)arg5 skipHint:(out double*)arg6 userInfo:(id)arg7;
 
 @end

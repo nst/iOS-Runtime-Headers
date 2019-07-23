@@ -9,11 +9,13 @@
 }
 
 @property (nonatomic, readonly) NSString *author;
+@property (nonatomic, readonly) bool businessProvided;
 @property (nonatomic, readonly) NSString *caption;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool displayFullPhotoInline;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool highQuality;
 @property (nonatomic, readonly) NSString *licenseDescription;
 @property (nonatomic, readonly) NSURL *licenseURL;
 @property (nonatomic, readonly) double sizeRatio;
@@ -24,8 +26,10 @@
 - (void).cxx_destruct;
 - (id)author;
 - (id)bestPhotoForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (bool)businessProvided;
 - (id)caption;
 - (bool)displayFullPhotoInline;
+- (bool)highQuality;
 - (id)initWithCaptionedPhoto:(id)arg1;
 - (id)initWithPhoto:(id)arg1;
 - (id)largestPhoto;

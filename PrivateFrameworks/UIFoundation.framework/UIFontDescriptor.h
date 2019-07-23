@@ -40,6 +40,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fontAttributes;
 - (id)fontDescriptorByAddingAttributes:(id)arg1;
+- (id)fontDescriptorWithDesign:(id)arg1;
 - (id)fontDescriptorWithFace:(id)arg1;
 - (id)fontDescriptorWithFamily:(id)arg1;
 - (id)fontDescriptorWithMatrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;

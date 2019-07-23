@@ -17,6 +17,7 @@
     }  _keyboardScreenFrame;
     bool  _keyboardVisible;
     double  _minimumBottomInset;
+    id /* block */  _overrideScrollBlock;
     UIScrollView * _scrollView;
     bool  _topInsetIncludesPalette;
     double  _topInsetPadding;
@@ -31,6 +32,7 @@
 @property (getter=isKeyboardUndocked, nonatomic, readonly) bool keyboardUndocked;
 @property (getter=isKeyboardVisible, nonatomic) bool keyboardVisible;
 @property (nonatomic, readonly) double minimumBottomInset;
+@property (nonatomic, copy) id /* block */ overrideScrollBlock;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) bool topInsetIncludesPalette;
 @property (nonatomic, readonly) double topInsetPadding;
@@ -67,10 +69,12 @@
 - (double)minimumBottomInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsWithoutPalette;
+- (id /* block */)overrideScrollBlock;
 - (id)scrollView;
 - (void)setKeyboardInteractionCancelled:(bool)arg1;
 - (void)setKeyboardScreenFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setKeyboardVisible:(bool)arg1;
+- (void)setOverrideScrollBlock:(id /* block */)arg1;
 - (void)setUpdater:(id)arg1;
 - (bool)topInsetIncludesPalette;
 - (double)topInsetPadding;

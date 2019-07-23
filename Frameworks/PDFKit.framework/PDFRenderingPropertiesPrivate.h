@@ -6,6 +6,7 @@
     struct CGColorSpace { } * deviceColorSpace;
     long long  displayBox;
     bool  enableAccessibilityDrawing;
+    bool  enableBackgroundImages;
     bool  enablePageShadows;
     bool  enableTileEdgeColoring;
     bool  enableTileUpdates;

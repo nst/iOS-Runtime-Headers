@@ -10,6 +10,8 @@
 - (void)userInfoDidChangeDateLastViewedSaved:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
 - (void)userInfoDidChangeEditorialArticleVersion:(FCUserInfo *)arg1;
 - (void)userInfoDidChangeFeldsparID:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
+- (void)userInfoDidChangeMarketingNotificationsEnabled:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
+- (void)userInfoDidChangeNewIssueNotificationsEnabled:(FCUserInfo *)arg1 fromCloud:(bool)arg2;
 - (void)userInfoDidChangeNotificationsUserID:(FCUserInfo *)arg1;
 - (void)userInfoDidChangeOnboardingStatus:(FCUserInfo *)arg1;
 

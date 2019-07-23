@@ -5,7 +5,7 @@
 @interface ASCodableBulletin : PBCodable <NSCopying> {
     NSData * _achievementData;
     long long  _competitionStage;
-    NSData * _friendData;
+    NSData * _friendListData;
     NSString * _friendUUID;
     struct { 
         unsigned int competitionStage : 1; 
@@ -21,11 +21,11 @@
 
 @property (nonatomic, retain) NSData *achievementData;
 @property (nonatomic) long long competitionStage;
-@property (nonatomic, retain) NSData *friendData;
+@property (nonatomic, retain) NSData *friendListData;
 @property (nonatomic, retain) NSString *friendUUID;
 @property (nonatomic, readonly) bool hasAchievementData;
 @property (nonatomic) bool hasCompetitionStage;
-@property (nonatomic, readonly) bool hasFriendData;
+@property (nonatomic, readonly) bool hasFriendListData;
 @property (nonatomic, readonly) bool hasFriendUUID;
 @property (nonatomic, readonly) bool hasSnapshotData;
 @property (nonatomic) bool hasTimestamp;
@@ -45,11 +45,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)friendData;
+- (id)friendListData;
 - (id)friendUUID;
 - (bool)hasAchievementData;
 - (bool)hasCompetitionStage;
-- (bool)hasFriendData;
+- (bool)hasFriendListData;
 - (bool)hasFriendUUID;
 - (bool)hasSnapshotData;
 - (bool)hasTimestamp;
@@ -62,7 +62,7 @@
 - (bool)readFrom:(id)arg1;
 - (void)setAchievementData:(id)arg1;
 - (void)setCompetitionStage:(long long)arg1;
-- (void)setFriendData:(id)arg1;
+- (void)setFriendListData:(id)arg1;
 - (void)setFriendUUID:(id)arg1;
 - (void)setHasCompetitionStage:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;

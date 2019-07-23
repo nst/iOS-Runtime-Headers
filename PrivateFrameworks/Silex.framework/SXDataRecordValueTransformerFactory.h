@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXDataRecordValueTransformerFactory : NSObject {
-    SXDocumentController * _documentController;
+@interface SXDataRecordValueTransformerFactory : NSObject <SXDataRecordValueTransformerFactory> {
+    <SXDOMObjectProviding> * _DOMObjectProvider;
 }
 
-@property (nonatomic, readonly) SXDocumentController *documentController;
+@property (nonatomic, readonly) <SXDOMObjectProviding> *DOMObjectProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)documentController;
-- (id)initWithDocumentController:(id)arg1;
+- (id)DOMObjectProvider;
+- (id)initWithDOMObjectProvider:(id)arg1;
 - (id)recordValueTransformerForDataDescriptor:(id)arg1;
 
 @end

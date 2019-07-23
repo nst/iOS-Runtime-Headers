@@ -6,6 +6,7 @@
 @required
 
 - (void)cancelOutstandingOperations;
+- (void)clearPrewarmedFlag;
 - (void)fetchAdditionsHighWaterMarkWithPeer:(void *)arg1 highPriority:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: _DKSyncPeer *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, NSError *, void*
 - (void)fetchDeletedEventIDsFromPeer:(void *)arg1 sinceDate:(void *)arg2 streamNames:(void *)arg3 limit:(void *)arg4 highPriority:(void *)arg5 completion:(void *)arg6; // needs 6 arg types, found 13: _DKSyncPeer *, NSDate *, NSArray *, unsigned long long, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSDate *, NSError *, void*
 - (void)fetchDeletionsHighWaterMarkWithPeer:(void *)arg1 highPriority:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: _DKSyncPeer *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, NSError *, void*

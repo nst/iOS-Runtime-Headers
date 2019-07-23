@@ -30,6 +30,7 @@
     MPAVLightweightRoutingController * _lightweightRoutingController;
     UIActivityIndicatorView * _loadingIndicator;
     UILabel * _loadingLabel;
+    MPMediaControls * _mediaControls;
     long long  _overrideType;
     MPKnockoutButton * _pictureInPictureButton;
     MPKnockoutButton * _playPauseButton;

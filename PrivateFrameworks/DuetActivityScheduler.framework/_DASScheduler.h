@@ -61,6 +61,7 @@
 - (id)initWithListenerEndpoint:(id)arg1;
 - (bool)interrupted;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)pauseWithParameters:(id)arg1;
 - (id)queue;
 - (id)rateLimiter;
 - (double)remainingBalanceForBudgetWithName:(id)arg1;

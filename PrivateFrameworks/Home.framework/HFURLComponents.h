@@ -34,5 +34,6 @@
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 homeKitDispatcher:(id)arg2;
 - (unsigned long long)secondaryDestination;
+- (id)valueForParameter:(id)arg1;
 
 @end

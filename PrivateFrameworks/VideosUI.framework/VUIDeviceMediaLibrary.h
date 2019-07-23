@@ -9,6 +9,7 @@
 
 - (bool)isInitialUpdateInProgress;
 - (bool)isUpdating;
+- (void)updateFromCloudWithReason:(long long)arg1;
 - (void)updateProgressWithCompletionHandler:(id /* block */)arg1;
 
 @end

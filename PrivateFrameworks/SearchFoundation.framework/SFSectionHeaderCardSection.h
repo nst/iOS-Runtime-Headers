@@ -43,6 +43,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SFRichText *text;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 

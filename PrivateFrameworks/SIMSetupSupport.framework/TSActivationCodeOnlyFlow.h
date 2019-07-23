@@ -2,11 +2,32 @@
    Image: /System/Library/PrivateFrameworks/SIMSetupSupport.framework/SIMSetupSupport
  */
 
-@interface TSActivationCodeOnlyFlow : TSSIMSetupFlow
+@interface TSActivationCodeOnlyFlow : TSSIMSetupFlow <TSCellularPlanManagerCacheDelegate, TSSIMSetupFlowDelegate> {
+    UIBarButtonItem * _cancelButton;
+    NSString * _carrierName;
+    bool  _confirmationCodeRequired;
+    UIViewController<TSSetupFlowItem> * _currentViewController;
+    bool  _isPreinstallingViewControllerActive;
+    NSError * _planInstallError;
+    unsigned long long  _userConsentType;
+}
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (void)dealloc;
 - (id)firstViewController;
 - (void)firstViewController:(id /* block */)arg1;
+- (id)init;
+- (bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
+- (void)planItemsUpdated:(id)arg1 planListError:(id)arg2;
+- (void)popViewController:(id)arg1;
+- (void)setDefaultNavigationItems:(id)arg1;
+- (long long)signupUserConsentResponse;
 - (void)viewControllerDidComplete:(id)arg1;
 
 @end

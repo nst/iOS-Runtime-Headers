@@ -49,8 +49,8 @@
 - (void)disableAllButtons;
 - (void)disableButtonsAndSetTitle:(id)arg1;
 - (id)dropdownView;
-- (void)dropdownView:(id)arg1 didUpdateState:(bool)arg2;
 - (void)dropdownView:(id)arg1 selectedDevice:(id)arg2;
+- (void)dropdownView:(id)arg1 willUpdateState:(bool)arg2;
 - (void)enableButtons:(id)arg1;
 - (void)expandPicker:(bool)arg1;
 - (void)hidePicker:(bool)arg1;

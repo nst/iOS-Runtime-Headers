@@ -4,16 +4,27 @@
 
 @interface VUIUtilities : NSObject
 
-+ (id)VideosBundle;
++ (id)VideosUIBundle;
++ (id)colorFromHexStr:(id)arg1;
++ (id)colorFromRGBStr:(id)arg1;
 + (bool)contentSizeCategoryIsAccessibility:(id)arg1;
 + (id)createImageProxyForResourceObject:(id)arg1 imageSize:(struct CGSize { double x1; double x2; })arg2;
++ (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 properties:(id)arg3 configuration:(struct { struct UIEdgeInsets { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct UIEdgeInsets { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)arg4;
++ (struct TVCornerRadii { double x1; double x2; double x3; double x4; })imageCornerRadiiWithStyle:(long long)arg1;
++ (double)imageCornerRadiusWithStyle:(long long)arg1;
 + (struct CGSize { double x1; double x2; })imageSizeWithAspectRatio:(double)arg1 scaleToSize:(struct CGSize { double x1; double x2; })arg2;
++ (long long)interfaceStyleFromTheme:(id)arg1 defaultInterfaceStyle:(long long)arg2;
 + (bool)isAXLargeEnabled:(id)arg1;
 + (bool)isAXSmallEnabled:(id)arg1;
 + (bool)isIpadLayout;
++ (double)libraryCategoryListWidth;
++ (double)libraryListMarginToGrid;
 + (unsigned long long)minimumNumberOfItemsToEnableSeeAllButton;
++ (id)placeholderImageResourceName:(long long)arg1;
 + (id)randomColor;
 + (double)scaleContentSizeValue:(double)arg1 forTraitCollection:(id)arg2;
++ (double)scaleContentSizeValue:(double)arg1 forTraitCollection:(id)arg2 maximumContentSizeCategory:(id)arg3;
 + (bool)shouldInvalidateLayoutWithPreviousTraitCollection:(id)arg1 newTraitCollection:(id)arg2;
++ (long long)textAlignmentWithSemanticContentAttribute:(long long)arg1;
 
 @end

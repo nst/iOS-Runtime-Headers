@@ -60,8 +60,6 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) NSString *title;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(long long)arg2 isEnabled:(bool)arg3 withAccessibilityBackground:(bool)arg4 wantsBlendModeForAccessibilityBackgrounds:(bool)arg5 accessibilityBackgroundTintColor:(id)arg6;
 + (id)defaultFont;
 
@@ -154,15 +152,12 @@
 - (id)_visualStyleForMetrics:(long long)arg1;
 - (bool)_wantsAccessibilityButtonShapes;
 - (bool)_wantsBlendModeForAccessibilityBackgrounds;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)barStyle;
 - (long long)buttonType;
 - (bool)canBecomeFocused;
 - (bool)contentsEqualTo:(id)arg1 withStyle:(int)arg2;
 - (int)controlSize;
+- (void)dealloc;
 - (id)image;
 - (id)initWithImage:(id)arg1;
 - (id)initWithImage:(id)arg1 style:(int)arg2;

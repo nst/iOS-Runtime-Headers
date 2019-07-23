@@ -3,15 +3,19 @@
  */
 
 @interface AVStatusBarBackgroundGradientView : UIView {
-    double  _gradientOpacity;
+    AVStatusBarBackgroundGradientViewSubview * _gradientView;
 }
 
-@property (nonatomic) double gradientOpacity;
+@property (nonatomic, retain) AVStatusBarBackgroundGradientViewSubview *gradientView;
+@property (nonatomic, readonly) CABackdropLayer *layer;
 
 + (Class)layerClass;
 
-- (double)gradientOpacity;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setGradientOpacity:(double)arg1;
+- (void).cxx_destruct;
+- (double)alpha;
+- (id)gradientView;
+- (void)layoutSubviews;
+- (void)setAlpha:(double)arg1;
+- (void)setGradientView:(id)arg1;
 
 @end

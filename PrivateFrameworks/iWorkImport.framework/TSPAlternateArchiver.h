@@ -4,12 +4,12 @@
 
 @interface TSPAlternateArchiver : TSPArchiverBase <TSPKnownFieldRuleProvider> {
     unsigned long long  _diffReadVersion;
-    const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; } * _fieldPath;
+    const struct FieldPath { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; } * _fieldPath;
     struct RepeatedPtrField<TSP::FieldPath> { 
-        void **elements_; 
+        struct Arena {} *arena_; 
         int current_size_; 
-        int allocated_size_; 
         int total_size_; 
+        struct Rep {} *rep_; 
     }  _fieldPathsToRemove;
     struct { 
         unsigned int hasPreserveNewerValueRule : 1; 
@@ -22,8 +22,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long diffReadVersion;
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{FieldPath=^^?{UnknownFieldSet=^{vector<google::protobuf::UnknownField' */ struct *fieldPath; /* unknown property attribute:  std::__1::allocator<google::protobuf::UnknownField> >}}[1I]i{RepeatedField<unsigned int>=^Iii}i} */
-@property (nonatomic, readonly) const struct RepeatedPtrField<TSP::FieldPath> { void **x1; int x2; int x3; int x4; }*fieldPathsToRemove;
+@property (nonatomic, readonly) const struct FieldPath { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; }*fieldPath;
+@property (nonatomic, readonly) const struct RepeatedPtrField<TSP::FieldPath> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*fieldPathsToRemove;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isContentUnknown;
 @property (nonatomic, readonly) bool isDiff;
@@ -35,16 +35,18 @@
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 field:(int)arg3;
 - (id)alternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 fieldPath:(int*)arg3;
-- (const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)baseFieldPathAndReturnShouldDeleteReturnedValue:(bool*)arg1;
+- (const struct FieldPath { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; }*)baseFieldPathAndReturnShouldDeleteReturnedValue:(bool*)arg1;
 - (void)dealloc;
 - (unsigned long long)diffReadVersion;
 - (void)enumerateKnownFieldRulesUsingBlock:(id /* block */)arg1;
-- (const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)fieldPath;
-- (const struct RepeatedPtrField<TSP::FieldPath> { void **x1; int x2; int x3; int x4; }*)fieldPathsToRemove;
+- (const struct FieldPath { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; }*)fieldPath;
+- (const struct RepeatedPtrField<TSP::FieldPath> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)fieldPathsToRemove;
 - (id)initWithObject:(id)arg1;
-- (id)initWithObject:(id)arg1 version:(unsigned long long)arg2 fieldPath:(const struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; }*)arg3 isDiff:(bool)arg4 diffReadVersion:(unsigned long long)arg5 parentArchiver:(id)arg6;
+- (id)initWithObject:(id)arg1 version:(unsigned long long)arg2 fieldPath:(const struct FieldPath { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; }*)arg3 isDiff:(bool)arg4 diffReadVersion:(unsigned long long)arg5 parentArchiver:(id)arg6;
 - (bool)isContentUnknown;
 - (bool)isDiff;
+- (bool)isSavingCollaborativeDocument;
+- (bool)isSavingDocumentAs;
 - (void)p_setPreserveNewerValueRuleForFieldPath:(int*)arg1 fileFormatVersion:(unsigned long long)arg2 featureIdentifier:(id)arg3;
 - (void)p_setPreserveNewerValueUntilModifiedRuleForFieldPath:(int*)arg1 fileFormatVersion:(unsigned long long)arg2 featureIdentifier:(id)arg3;
 - (id)parentAlternateDiffToMergeBeforeVersion:(unsigned long long)arg1 fileFormatVersion:(unsigned long long)arg2 fieldPath:(int*)arg3;

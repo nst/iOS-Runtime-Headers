@@ -28,6 +28,7 @@
     bool  _isPermanentlyClosed;
     bool  _isStandaloneBrand;
     NSMutableArray * _localizedCategorys;
+    NSString * _mapsCategoryId;
     NSMutableArray * _names;
     int  _placeDisplayType;
     struct { 
@@ -36,12 +37,16 @@
         unsigned long long size; 
     }  _placeLookupCategorys;
     int  _searchSection;
+    GEOLocalizedString * _secondaryName;
+    GEOLocalizedString * _secondarySpokenName;
     NSMutableArray * _spokenNames;
+    GEOStyleAttributes * _styleAttributes;
     NSString * _telephone;
     bool  _telephoneAdsOptOut;
     int  _type;
     PBUnknownFields * _unknownFields;
     NSString * _url;
+    NSString * _walletCategoryId;
 }
 
 @property (nonatomic, retain) NSMutableArray *altFaxs;
@@ -60,27 +65,37 @@
 @property (nonatomic) bool hasIsDisputed;
 @property (nonatomic) bool hasIsPermanentlyClosed;
 @property (nonatomic) bool hasIsStandaloneBrand;
+@property (nonatomic, readonly) bool hasMapsCategoryId;
 @property (nonatomic) bool hasPlaceDisplayType;
 @property (nonatomic) bool hasSearchSection;
+@property (nonatomic, readonly) bool hasSecondaryName;
+@property (nonatomic, readonly) bool hasSecondarySpokenName;
+@property (nonatomic, readonly) bool hasStyleAttributes;
 @property (nonatomic, readonly) bool hasTelephone;
 @property (nonatomic) bool hasTelephoneAdsOptOut;
 @property (nonatomic) bool hasType;
 @property (nonatomic, readonly) bool hasUrl;
+@property (nonatomic, readonly) bool hasWalletCategoryId;
 @property (nonatomic) bool isDisputed;
 @property (nonatomic) bool isPermanentlyClosed;
 @property (nonatomic) bool isStandaloneBrand;
 @property (nonatomic, retain) NSMutableArray *localizedCategorys;
+@property (nonatomic, retain) NSString *mapsCategoryId;
 @property (nonatomic, retain) NSMutableArray *names;
 @property (nonatomic) int placeDisplayType;
 @property (nonatomic, readonly) int*placeLookupCategorys;
 @property (nonatomic, readonly) unsigned long long placeLookupCategorysCount;
 @property (nonatomic) int searchSection;
+@property (nonatomic, retain) GEOLocalizedString *secondaryName;
+@property (nonatomic, retain) GEOLocalizedString *secondarySpokenName;
 @property (nonatomic, retain) NSMutableArray *spokenNames;
+@property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
 @property (nonatomic, retain) NSString *telephone;
 @property (nonatomic) bool telephoneAdsOptOut;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *url;
+@property (nonatomic, retain) NSString *walletCategoryId;
 
 + (Class)altFaxType;
 + (Class)altTelephoneType;
@@ -139,12 +154,17 @@
 - (bool)hasIsDisputed;
 - (bool)hasIsPermanentlyClosed;
 - (bool)hasIsStandaloneBrand;
+- (bool)hasMapsCategoryId;
 - (bool)hasPlaceDisplayType;
 - (bool)hasSearchSection;
+- (bool)hasSecondaryName;
+- (bool)hasSecondarySpokenName;
+- (bool)hasStyleAttributes;
 - (bool)hasTelephone;
 - (bool)hasTelephoneAdsOptOut;
 - (bool)hasType;
 - (bool)hasUrl;
+- (bool)hasWalletCategoryId;
 - (unsigned long long)hash;
 - (bool)isDisputed;
 - (bool)isEqual:(id)arg1;
@@ -153,6 +173,7 @@
 - (id)localizedCategoryAtIndex:(unsigned long long)arg1;
 - (id)localizedCategorys;
 - (unsigned long long)localizedCategorysCount;
+- (id)mapsCategoryId;
 - (void)mergeFrom:(id)arg1;
 - (id)nameAtIndex:(unsigned long long)arg1;
 - (id)names;
@@ -166,6 +187,8 @@
 - (bool)readFrom:(id)arg1;
 - (int)searchSection;
 - (id)searchSectionAsString:(int)arg1;
+- (id)secondaryName;
+- (id)secondarySpokenName;
 - (void)setAltFaxs:(id)arg1;
 - (void)setAltTelephoneAdsOptOut:(bool)arg1;
 - (void)setAltTelephones:(id)arg1;
@@ -189,24 +212,31 @@
 - (void)setIsPermanentlyClosed:(bool)arg1;
 - (void)setIsStandaloneBrand:(bool)arg1;
 - (void)setLocalizedCategorys:(id)arg1;
+- (void)setMapsCategoryId:(id)arg1;
 - (void)setNames:(id)arg1;
 - (void)setPlaceDisplayType:(int)arg1;
 - (void)setPlaceLookupCategorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setSearchSection:(int)arg1;
+- (void)setSecondaryName:(id)arg1;
+- (void)setSecondarySpokenName:(id)arg1;
 - (void)setSpokenNames:(id)arg1;
+- (void)setStyleAttributes:(id)arg1;
 - (void)setTelephone:(id)arg1;
 - (void)setTelephoneAdsOptOut:(bool)arg1;
 - (void)setType:(int)arg1;
 - (void)setUrl:(id)arg1;
+- (void)setWalletCategoryId:(id)arg1;
 - (id)spokenNameAtIndex:(unsigned long long)arg1;
 - (id)spokenNames;
 - (unsigned long long)spokenNamesCount;
+- (id)styleAttributes;
 - (id)telephone;
 - (bool)telephoneAdsOptOut;
 - (int)type;
 - (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (id)url;
+- (id)walletCategoryId;
 - (void)writeTo:(id)arg1;
 
 @end

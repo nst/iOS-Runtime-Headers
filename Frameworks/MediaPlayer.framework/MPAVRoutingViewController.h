@@ -16,7 +16,6 @@
     long long  _discoveryModeBeforeEnteringBackground;
     NSNumber * _discoveryModeOverride;
     MPAVRoute * _displayedEndpointRoute;
-    MPAVRoutingEmptyStateView * _emptyStateView;
     MPAVEndpointRoute * _endpointRoute;
     MPVolumeGroupSliderCoordinator * _groupSliderCoordinator;
     bool  _hasUserSelections;
@@ -31,6 +30,7 @@
     MPAVRoutingController * _routingController;
     bool  _shouldAutomaticallyUpdateRoutesList;
     bool  _shouldPickRouteOnSelection;
+    bool  _sortByIsVideoRoute;
     unsigned long long  _style;
     bool  _suspendedDiscoveryModeDueToApplicationState;
     UIView * _tableBackgroundView;
@@ -63,6 +63,7 @@
 @property (nonatomic) unsigned long long iconStyle;
 @property (nonatomic) unsigned long long mirroringStyle;
 @property (nonatomic, retain) NSMapTable *outputDeviceVolumeSliders;
+@property (nonatomic) bool sortByIsVideoRoute;
 @property (nonatomic, readonly) unsigned long long style;
 @property (readonly) Class superclass;
 @property (nonatomic) <MPAVRoutingViewControllerThemeDelegate> *themeDelegate;
@@ -87,7 +88,6 @@
 - (void)_initWithStyle:(unsigned long long)arg1 routingController:(id)arg2;
 - (double)_normalCellHeight;
 - (void)_registerNotifications;
-- (void)_reloadEmptyStateVisibility;
 - (id)_routingController;
 - (void)_setNeedsDisplayedRoutesUpdate;
 - (void)_setNeedsRouteDiscoveryModeUpdate;
@@ -133,7 +133,7 @@
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(bool)arg2;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
-- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 completion:(id /* block */)arg3;
+- (void)routingController:(id)arg1 shouldHijackRoute:(id)arg2 alertStyle:(long long)arg3 busyRouteName:(id)arg4 presentingAppName:(id)arg5 completion:(id /* block */)arg6;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAVItemType:(long long)arg1;
 - (void)setAllowMirroring:(bool)arg1;
@@ -144,7 +144,9 @@
 - (void)setIconStyle:(unsigned long long)arg1;
 - (void)setMirroringStyle:(unsigned long long)arg1;
 - (void)setOutputDeviceVolumeSliders:(id)arg1;
+- (void)setSortByIsVideoRoute:(bool)arg1;
 - (void)setThemeDelegate:(id)arg1;
+- (bool)sortByIsVideoRoute;
 - (unsigned long long)style;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -14,7 +14,7 @@
 
 @property (nonatomic) <TVMediaQueryEvaluatorDelegate> *delegate;
 @property (nonatomic, retain) IKViewElement *templateElement;
-@property (nonatomic, readonly, retain) <UITraitEnvironment> *traitEnvironment;
+@property (nonatomic, readonly) <UITraitEnvironment> *traitEnvironment;
 @property (nonatomic, readonly, retain) _TVWindowSizeAdaptor *windowSizeAdaptor;
 
 + (id)_mobileGestaltStringForKey:(struct __CFString { }*)arg1;

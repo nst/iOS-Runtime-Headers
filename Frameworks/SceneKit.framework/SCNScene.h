@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNScene : NSObject <DebugHierarchyObject_Fallback, NSSecureCoding> {
+@interface SCNScene : NSObject <NSSecureCoding> {
     bool  _allowsDefaultLightingEnvironmentFallback;
     SCNAuthoringEnvironment * _authoringEnvironment;
     SCNMaterialProperty * _background;
@@ -23,20 +23,14 @@
 }
 
 @property (nonatomic, readonly) SCNMaterialProperty *background;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) id fogColor;
 @property (nonatomic) double fogDensityExponent;
 @property (nonatomic) double fogEndDistance;
 @property (nonatomic) double fogStartDistance;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SCNMaterialProperty *lightingEnvironment;
 @property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic, readonly) SCNPhysicsWorld *physicsWorld;
 @property (nonatomic, readonly) SCNNode *rootNode;
-@property (readonly) Class superclass;
-
-// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 + (id)_indexPathForNode:(id)arg1;
 + (bool)canImportFileExtension:(id)arg1;
@@ -137,10 +131,5 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (bool)writeToURL:(id)arg1 options:(id)arg2;
 - (bool)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(id /* block */)arg4;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 @end

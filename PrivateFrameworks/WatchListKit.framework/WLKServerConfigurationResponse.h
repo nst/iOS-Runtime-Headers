@@ -3,19 +3,24 @@
  */
 
 @interface WLKServerConfigurationResponse : NSObject <NSCopying, NSSecureCoding> {
+    NSDictionary * _endpointsDictionary;
     unsigned long long  _environmentHash;
     NSDate * _expirationDate;
     NSDictionary * _responseDictionary;
 }
 
+@property (getter=isActiveUser, nonatomic, readonly) bool activeUser;
 @property (nonatomic, readonly) NSDictionary *endpointsDictionary;
 @property (nonatomic, readonly) unsigned long long environmentHash;
 @property (nonatomic, readonly) NSDate *expirationDate;
-@property (nonatomic, readonly) NSArray *orderedChannels;
+@property (nonatomic, readonly) NSDictionary *features;
+@property (nonatomic, readonly) NSURL *playActivityURL;
 @property (nonatomic, readonly) NSDictionary *requiredRequestKeyValuePairsDictionary;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
-@property (nonatomic, readonly) NSDictionary *serverRoutesDictionary;
-@property (nonatomic, readonly) NSString *vppaStatus;
+@property (nonatomic, readonly, copy) NSString *utsk;
+@property (nonatomic, readonly, copy) NSNumber *vppaSessionDurationInMillis;
+@property (nonatomic, readonly) long long vppaStatus;
+@property (nonatomic, readonly) NSString *vppaStatusString;
 
 + (bool)supportsSecureCoding;
 
@@ -27,16 +32,21 @@
 - (id)endpointsDictionary;
 - (unsigned long long)environmentHash;
 - (id)expirationDate;
+- (id)features;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithServerResponseDictionary:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned long long)arg3;
+- (bool)isActiveUser;
 - (bool)isEqual:(id)arg1;
 - (bool)isValid;
-- (id)orderedChannels;
+- (id)playActivityURL;
 - (id)requiredRequestKeyValuePairsDictionary;
 - (id)responseDictionary;
-- (id)serverRoutesDictionary;
-- (id)vppaStatus;
+- (id)utsc;
+- (id)utsk;
+- (id)vppaSessionDurationInMillis;
+- (long long)vppaStatus;
+- (id)vppaStatusString;
 
 @end

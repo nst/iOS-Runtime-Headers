@@ -4,13 +4,16 @@
 
 @interface FLFollowUpItem : NSObject <NSSecureCoding> {
     NSArray * _actions;
+    NSString * _bundleIconName;
     NSString * _clientIdentifier;
     NSString * _delegateMachServiceName;
     unsigned long long  _displayStyle;
     NSString * _extensionIdentifier;
     NSString * _groupIdentifier;
+    NSString * _informativeFooterText;
     NSString * _informativeText;
     FLFollowUpNotification * _notification;
+    NSString * _representingBundlePath;
     bool  _shouldPersistWhenActivated;
     bool  _shouldPersistWhenDismissed;
     bool  _showInSettings;
@@ -23,13 +26,16 @@
 
 @property (nonatomic, retain) NSData *_userInfoData;
 @property (copy) NSArray *actions;
+@property (nonatomic, copy) NSString *bundleIconName;
 @property (nonatomic, copy) NSString *clientIdentifier;
 @property (nonatomic, copy) NSString *delegateMachServiceName;
 @property unsigned long long displayStyle;
 @property (copy) NSString *extensionIdentifier;
 @property (nonatomic, copy) NSString *groupIdentifier;
+@property (nonatomic, copy) NSString *informativeFooterText;
 @property (nonatomic, copy) NSString *informativeText;
 @property (nonatomic, retain) FLFollowUpNotification *notification;
+@property (nonatomic, copy) NSString *representingBundlePath;
 @property bool shouldPersistWhenActivated;
 @property bool shouldPersistWhenDismissed;
 @property (nonatomic) bool showInSettings;
@@ -44,6 +50,7 @@
 - (void).cxx_destruct;
 - (id)_userInfoData;
 - (id)actions;
+- (id)bundleIconName;
 - (id)clientIdentifier;
 - (id)delegateMachServiceName;
 - (id)description;
@@ -51,6 +58,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)extensionIdentifier;
 - (id)groupIdentifier;
+- (id)informativeFooterText;
 - (id)informativeText;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -58,14 +66,18 @@
 - (bool)isHSA2LoginItem;
 - (bool)isHSA2PasswordResetItem;
 - (id)notification;
+- (id)representingBundlePath;
 - (void)setActions:(id)arg1;
+- (void)setBundleIconName:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegateMachServiceName:(id)arg1;
 - (void)setDisplayStyle:(unsigned long long)arg1;
 - (void)setExtensionIdentifier:(id)arg1;
 - (void)setGroupIdentifier:(id)arg1;
+- (void)setInformativeFooterText:(id)arg1;
 - (void)setInformativeText:(id)arg1;
 - (void)setNotification:(id)arg1;
+- (void)setRepresentingBundlePath:(id)arg1;
 - (void)setShouldPersistWhenActivated:(bool)arg1;
 - (void)setShouldPersistWhenDismissed:(bool)arg1;
 - (void)setShowInSettings:(bool)arg1;

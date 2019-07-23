@@ -4,12 +4,16 @@
 
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridgeInternal, IKStyleMediaQueryEvaluator> {
     IKAppContext * _appContext;
+    NSDictionary * _cachedSnapshotImpressionsMap;
     <IKAppDocumentDelegate> * _delegate;
     NSError * _error;
     IKHeadElement * _headElement;
     NSString * _identifier;
+    bool  _implicitlyUpdated;
     double  _impressionThreshold;
+    double  _impressionViewablePercentage;
     NSMutableDictionary * _impressions;
+    bool  _isTrackingImplicitUpdates;
     bool  _isViewElementRegistryDirty;
     IKDOMDocument * _jsDocument;
     NSMutableDictionary * _mediaQueryCache;
@@ -25,6 +29,7 @@
 }
 
 @property (readonly) IKAppContext *appContext;
+@property (nonatomic, retain) NSDictionary *cachedSnapshotImpressionsMap;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <IKAppDocumentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -32,7 +37,9 @@
 @property (readonly) unsigned long long hash;
 @property (retain) IKHeadElement *headElement;
 @property (retain) NSString *identifier;
+@property (getter=isImplicitlyUpdated, nonatomic, readonly) bool implicitlyUpdated;
 @property (nonatomic) double impressionThreshold;
+@property (nonatomic) double impressionViewablePercentage;
 @property (nonatomic, retain) NSMutableDictionary *impressions;
 @property (nonatomic, readonly) IKDOMDocument *jsDocument;
 @property (retain) IKViewElement *navigationBarElement;
@@ -49,12 +56,12 @@
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 - (void).cxx_destruct;
-- (bool)_clearUpdatesForElement:(id)arg1;
 - (bool)_isUpdateAllowed;
 - (void)_setViewElementStylesDirtyForced:(bool)arg1;
 - (void)_updateWithXML:(id)arg1;
 - (id)_viewElementForNodeID:(unsigned long long)arg1;
 - (id)appContext;
+- (id)cachedSnapshotImpressionsMap;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
@@ -63,17 +70,23 @@
 - (id)headElement;
 - (id)identifier;
 - (double)impressionThreshold;
+- (double)impressionViewablePercentage;
 - (id)impressions;
 - (id)impressionsMatching:(id)arg1 reset:(bool)arg2;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
+- (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3 extraInfo:(id)arg4;
+- (bool)isImplicitlyUpdated;
 - (bool)isSubtreeUpdated;
 - (bool)isUpdated;
 - (id)jsDocument;
+- (bool)markImplicitlyUpdated;
 - (id)navigationBarElement;
 - (id)navigationDocument;
+- (void)onActive;
 - (void)onAppear;
 - (void)onDisappear;
 - (void)onImpressionsChange:(id)arg1;
+- (void)onInactive;
 - (void)onLoad;
 - (void)onNeedsUpdateWithCompletion:(id /* block */)arg1;
 - (void)onPerformanceMetricsChange:(id)arg1;
@@ -81,6 +94,7 @@
 - (void)onUpdate;
 - (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id /* block */)arg2;
 - (id)owner;
+- (void)performImplicitUpdates:(id /* block */)arg1;
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (id)recordedImpressions;
 - (id)recordedImpressions:(bool)arg1;
@@ -88,11 +102,13 @@
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)scrollToTop;
+- (void)setCachedSnapshotImpressionsMap:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeadElement:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImpressionThreshold:(double)arg1;
+- (void)setImpressionViewablePercentage:(double)arg1;
 - (void)setImpressions:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
@@ -103,6 +119,7 @@
 - (void)setUpdated:(bool)arg1;
 - (void)setViewElementStylesDirty;
 - (id)snapshotImpressions;
+- (void)snapshotImpressionsForViewElements:(id)arg1;
 - (id)styleFactory;
 - (id)templateElement;
 - (id)toolbarElement;
@@ -112,5 +129,9 @@
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
 - (struct CGSize { double x1; double x2; })tv_adjustedWindowSize;
+- (id)tv_featuresManager;
+- (bool)tv_handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id*)arg4;
+- (id)tv_interactionPreviewControllerForViewController:(id)arg1 presentingView:(id)arg2 presentingElement:(id)arg3;
+- (bool)tv_isPresentedModal;
 
 @end

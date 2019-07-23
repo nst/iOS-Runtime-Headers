@@ -14,14 +14,17 @@
         double width; 
         double height; 
     }  _oldSize;
+    NSString * _overrideRoutingContextUID;
+    bool  _prioritizesVideoDevices;
     UIButton * _routePickerButton;
     AVMicaPackage * _routePickerButtonMicaPackage;
     long long  _routePickerButtonStyle;
-    MPMediaControlsViewController * _routePickerViewController;
+    MPMediaControls * _routePickingControls;
 }
 
 @property (nonatomic, retain) UIColor *activeTintColor;
 @property (nonatomic) <AVRoutePickerViewDelegate> *delegate;
+@property (nonatomic, copy) NSString *overrideRoutingContextUID;
 @property (nonatomic) long long routePickerButtonStyle;
 
 - (void).cxx_destruct;
@@ -45,11 +48,15 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isAirPlayActive;
 - (void)layoutSubviews;
+- (id)overrideRoutingContextUID;
+- (bool)prioritizesVideoDevices;
 - (long long)routePickerButtonStyle;
 - (void)setActiveTintColor:(id)arg1;
 - (void)setAirPlayActive:(bool)arg1;
 - (void)setCustomButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setOverrideRoutingContextUID:(id)arg1;
+- (void)setPrioritizesVideoDevices:(bool)arg1;
 - (void)setRoutePickerButtonStyle:(long long)arg1;
 - (void)tintColorDidChange;
 - (void)updateButtonAppearance;

@@ -20,6 +20,7 @@
 - (id)activeSectionInfo;
 - (id)allSectionInfo;
 - (void)dealloc;
+- (id)effectiveSectionInfoForSectionID:(id)arg1;
 - (void)getEffectiveGlobalContentPreviewsSettingWithCompletion:(id /* block */)arg1;
 - (void)getEffectiveSectionInfoForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getEffectiveSectionInfoForSectionIDs:(id)arg1 withCompletion:(id /* block */)arg2;

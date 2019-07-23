@@ -72,6 +72,7 @@
     bool  _preventsSystemHTTPProxyAuthentication;
     float  _priorityHint;
     long long  _priorityValue;
+    NSObject<OS_nw_activity> * _private_nw_activity;
     NSProgress * _progress;
     bool  _progressReportingFinished;
     bool  _prohibitAuthUI;
@@ -82,6 +83,7 @@
     long long  _requestPriority;
     bool  _requiresSecureHTTPSProxyConnection;
     NSURLResponse * _response;
+    bool  _seenFirstResume;
     NSURLSession * _session;
     bool  _shouldHandleCookies;
     bool  _shouldPipelineHTTP;
@@ -190,6 +192,7 @@
 - (bool)_preventsSystemHTTPProxyAuthentication;
 - (long long)_priority;
 - (long long)_priorityValue;
+- (id)_private_nw_activity;
 - (bool)_prohibitAuthUI;
 - (id)_protocolForTask;
 - (id)_proxySettings;
@@ -251,6 +254,7 @@
 - (void)initializeHTTPAuthenticatorWithAppleIDContext:(id)arg1 statusCodes:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)originalRequest;
+- (void)performSetupOnFirstResume;
 - (float)priority;
 - (id)progress;
 - (id)response;
@@ -326,6 +330,7 @@
 - (void)set_preventsSystemHTTPProxyAuthentication:(bool)arg1;
 - (void)set_priority:(long long)arg1;
 - (void)set_priorityValue:(long long)arg1;
+- (void)set_private_nw_activity:(id)arg1;
 - (void)set_prohibitAuthUI:(bool)arg1;
 - (void)set_protocolForTask:(id)arg1;
 - (void)set_proxySettings:(id)arg1;

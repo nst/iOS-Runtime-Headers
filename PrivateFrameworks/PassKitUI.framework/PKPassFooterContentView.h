@@ -5,31 +5,38 @@
 @interface PKPassFooterContentView : UIView {
     PKLinkedAppIconView * _appIconView;
     UIView * _bottomRule;
+    long long  _coachingState;
     <PKPassFooterContentViewDelegate> * _delegate;
     UIButton * _infoButton;
     bool  _invalidated;
     PKPass * _pass;
+    bool  _requestPileSuppression;
     long long  _style;
     bool  _userIntentRequired;
 }
 
 @property (nonatomic, readonly) PKLinkedAppIconView *appIconView;
 @property (nonatomic, readonly) UIView *bottomRule;
+@property (nonatomic, readonly) long long coachingState;
 @property (nonatomic) <PKPassFooterContentViewDelegate> *delegate;
 @property (nonatomic, readonly) UIButton *infoButton;
 @property (nonatomic, readonly) bool invalidated;
 @property (nonatomic, readonly) PKPass *pass;
 @property (getter=isPassAuthorized, nonatomic, readonly) bool passAuthorized;
 @property (nonatomic, readonly) PKPaymentPass *paymentPass;
+@property (nonatomic, readonly) bool requestPileSuppression;
 @property (nonatomic, readonly) long long style;
 @property (getter=isUserIntentRequired, nonatomic, readonly) bool userIntentRequired;
 
 - (void).cxx_destruct;
-- (double)_bottomRulePadding;
+- (id)_buttonWithTitle:(id)arg1;
 - (void)_infoButtonPressed:(id)arg1;
+- (void)_setCoachingState:(long long)arg1;
+- (void)_setRequestPileSuppression:(bool)arg1;
 - (void)_setUserIntentRequired:(bool)arg1;
 - (id)appIconView;
 - (id)bottomRule;
+- (long long)coachingState;
 - (void)dealloc;
 - (id)delegate;
 - (void)didBecomeHiddenAnimated:(bool)arg1;
@@ -44,6 +51,7 @@
 - (void)layoutSubviews;
 - (id)pass;
 - (id)paymentPass;
+- (bool)requestPileSuppression;
 - (void)setDelegate:(id)arg1;
 - (long long)style;
 - (void)willBecomeHiddenAnimated:(bool)arg1;

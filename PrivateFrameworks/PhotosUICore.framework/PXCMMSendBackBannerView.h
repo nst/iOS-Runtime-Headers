@@ -13,6 +13,7 @@
 }
 
 + (id)_headlineLabelFont;
++ (double)bottomInset;
 + (id)captionLabelFont;
 + (double)captionLabelTopInset;
 

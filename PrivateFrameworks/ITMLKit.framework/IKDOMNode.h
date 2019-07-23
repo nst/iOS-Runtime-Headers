@@ -4,7 +4,6 @@
 
 @interface IKDOMNode : IKJSObject <IKJSDOMEventTarget, IKJSDOMNode, NSObject, _IKJSDOMNode, _IKJSDOMNodeProxy> {
     long long  _ITMLID;
-    IKJSDataItem * _boxedDataItem;
     NSHashTable * _domObservers;
     NSMutableDictionary * _eventListenersMap;
     NSString * _identifier;
@@ -17,7 +16,6 @@
 }
 
 @property (nonatomic) long long ITMLID;
-@property (nonatomic, retain) IKJSDataItem *boxedDataItem;
 @property (nonatomic, readonly, retain) IKDOMNodeList *childNodes;
 @property (nonatomic) JSValue *dataItem;
 @property (readonly, copy) NSString *debugDescription;
@@ -67,12 +65,12 @@
 - (void)addEventListener:(id)arg1 :(id)arg2 :(bool)arg3;
 - (id)appendChild:(id)arg1;
 - (id)asPrivateIKJSDOMNode;
-- (id)boxedDataItem;
 - (unsigned long long)childElementCount;
 - (id)childNodes;
 - (id)childNodesAsArray;
 - (id)children;
 - (void)childrenUpdatedWithUpdatedChildNodes:(id)arg1 notify:(bool)arg2;
+- (bool)clearUpdates;
 - (id)cloneNode:(bool)arg1;
 - (bool)contains:(id)arg1;
 - (id)dataItem;
@@ -117,7 +115,6 @@
 - (void)removeDOMObserver:(id)arg1;
 - (void)removeEventListener:(id)arg1 :(id)arg2 :(bool)arg3;
 - (id)replaceChild:(id)arg1 :(id)arg2;
-- (void)setBoxedDataItem:(id)arg1;
 - (void)setDataItem:(id)arg1;
 - (void)setDomObservers:(id)arg1;
 - (void)setEventListenersMap:(id)arg1;
@@ -128,7 +125,7 @@
 - (void)setNodeValue:(id)arg1;
 - (void)setTextContent:(id)arg1;
 - (id)textContent;
+- (id)toStringWithError:(id*)arg1;
 - (void)updatedAndMark:(bool)arg1 notify:(bool)arg2;
-- (id)writeToStringWithError:(id*)arg1;
 
 @end

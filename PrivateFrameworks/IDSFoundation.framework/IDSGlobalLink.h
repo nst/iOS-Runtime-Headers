@@ -13,8 +13,8 @@
     unsigned short  _basebandPacketChannelNumber;
     NSString * _cbuuid;
     struct IDSSimpleUInt16List { 
-        int listSize; 
-        int itemCount; 
+        unsigned long long listSize; 
+        unsigned long long itemCount; 
         unsigned short *items; 
     }  _channelNumberList;
     NSMutableDictionary * _channelToCandidatePairs;
@@ -63,8 +63,8 @@
     double  _previousReportTime;
     IDSGlobalLinkBlocks * _qraBlocks;
     struct IDSSimpleUInt16List { 
-        int listSize; 
-        int itemCount; 
+        unsigned long long listSize; 
+        unsigned long long itemCount; 
         unsigned short *items; 
     }  _reallocChannelList;
     bool  _recvRemoteSKEData;

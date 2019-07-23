@@ -3,27 +3,96 @@
  */
 
 @interface SignpostAnimationInterval : SignpostInterval {
+    NSArray * _allCommits;
+    NSArray * _allContributedFrameLatencies;
+    NSArray * _allContributedFrameLifetimes;
+    NSArray * _allFrameLatencies;
+    NSArray * _allFrameLifetimes;
+    NSArray * _allHIDLatencies;
+    NSArray * _allRenderServerRenders;
+    NSArray * _allSystemwideCommits;
+    NSArray * _allTransactionLifetimes;
     NSArray * _compositeIntervals;
+    NSArray * _contributedLongFrameLatencies;
+    NSArray * _longCommits;
+    NSArray * _longContributedFrameLifetimes;
+    NSArray * _longFrameLatencies;
+    NSArray * _longFrameLifetimes;
+    NSArray * _longHIDLatencies;
+    NSArray * _longRenderServerRenders;
+    NSArray * _longSystemwideCommits;
+    NSArray * _longTransactionLifetimes;
 }
 
+@property (nonatomic, readonly) NSArray *allCommits;
+@property (nonatomic, readonly) NSArray *allContributedFrameLatencies;
+@property (nonatomic, readonly) NSArray *allContributedFrameLifetimes;
+@property (nonatomic, readonly) NSArray *allFrameLatencies;
+@property (nonatomic, readonly) NSArray *allFrameLifetimes;
+@property (nonatomic, readonly) NSArray *allHIDLatencies;
+@property (nonatomic, readonly) NSArray *allRenderServerRenders;
+@property (nonatomic, readonly) NSArray *allSystemwideCommits;
+@property (nonatomic, readonly) NSArray *allTransactionLifetimes;
 @property (nonatomic, retain) NSArray *compositeIntervals;
+@property (nonatomic, readonly) NSArray *contributedGlitches;
+@property (nonatomic, readonly) NSArray *contributedLongFrameLatencies;
 @property (nonatomic, readonly) unsigned long long frameCount;
 @property (nonatomic, readonly) float frameRate;
+@property (nonatomic, readonly) double glitchTimeRatio;
+@property (nonatomic, readonly) NSArray *glitches;
+@property (nonatomic, readonly) NSArray *longCommits;
+@property (nonatomic, readonly) NSArray *longContributedFrameLifetimes;
+@property (nonatomic, readonly) NSArray *longFrameLatencies;
+@property (nonatomic, readonly) NSArray *longFrameLifetimes;
+@property (nonatomic, readonly) NSArray *longHIDLatencies;
+@property (nonatomic, readonly) NSArray *longRenderServerRenders;
+@property (nonatomic, readonly) NSArray *longSystemwideCommits;
+@property (nonatomic, readonly) NSArray *longTransactionLifetimes;
 
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
+- (id)_animationStatsDescription;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(bool)arg3;
+- (id)_detailedFrameDescription;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1 shouldRedact:(bool)arg2;
+- (id)_frameDescription;
 - (id)_intervalTypeString;
+- (id)_poorPerfFrameDescription;
+- (id)_statsStringForTimeIntervals:(id)arg1 label:(id)arg2;
+- (id)allCommits;
+- (id)allContributedFrameLatencies;
+- (id)allContributedFrameLifetimes;
+- (id)allFrameLatencies;
+- (id)allFrameLifetimes;
+- (id)allHIDLatencies;
+- (id)allRenderServerRenders;
+- (id)allSystemwideCommits;
+- (id)allTransactionLifetimes;
 - (id)compositeIntervals;
+- (id)contributedGlitches;
+- (id)contributedLongFrameLatencies;
 - (id)debugDescription;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (unsigned long long)durationToFirstBeginMachContinuousTime:(id)arg1;
+- (double)durationToFirstBeginSeconds:(id)arg1;
+- (unsigned long long)durationToFirstEndMachContinuousTime:(id)arg1;
+- (double)durationToFirstEndSeconds:(id)arg1;
 - (unsigned long long)frameCount;
 - (float)frameRate;
+- (double)glitchTimeRatio;
+- (id)glitches;
 - (id)humanReadableType;
-- (id)initWithBeginEvent:(id)arg1 endEvent:(id)arg2 compositeIntervalTimeline:(id)arg3;
+- (id)initWithBeginEvent:(id)arg1 endEvent:(id)arg2 accumulatedState:(id)arg3;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)longCommits;
+- (id)longContributedFrameLifetimes;
+- (id)longFrameLatencies;
+- (id)longFrameLifetimes;
+- (id)longHIDLatencies;
+- (id)longRenderServerRenders;
+- (id)longSystemwideCommits;
+- (id)longTransactionLifetimes;
 - (void)setCompositeIntervals:(id)arg1;
 
 @end

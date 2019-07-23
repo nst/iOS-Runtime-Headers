@@ -18,6 +18,7 @@
 - (void)_handleMessage:(id)arg1;
 - (id)connection;
 - (void)handleMessage:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id /* block */)interruptionHandler;

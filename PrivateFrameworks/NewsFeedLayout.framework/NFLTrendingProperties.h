@@ -22,7 +22,6 @@
 - (id)bylineFontColorWithTemplate:(id)arg1;
 - (id)bylineFontWithTemplate:(id)arg1;
 - (double)bylineLineHeight;
-- (id)initWithLayout:(id)arg1 columnIrrespectiveProperties:(id)arg2 fontCache:(id)arg3 scaleValue:(double)arg4 headlineScales:(struct { double x1; double x2; double x3; })arg5;
 - (id)numberedCircleColor;
 - (double)numberedCircleTitleSpacingWithTemplate:(id)arg1;
 - (double)numberedCircleTopSpacingAboveLogoWithTemplate:(id)arg1;
@@ -32,7 +31,6 @@
 - (id)titleFontNameWithTemplate:(id)arg1;
 - (double)titleFontSizeWithTemplate:(id)arg1;
 - (id)titleFontWithTemplate:(id)arg1;
-- (double)titleLineHeightWithTemplate:(id)arg1;
 - (double)titleToAccessorySpacingWithTemplate:(id)arg1;
 
 @end

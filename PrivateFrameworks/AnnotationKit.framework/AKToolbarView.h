@@ -100,6 +100,7 @@
 - (id)inkPicker;
 - (void)inlineInkPicker:(id)arg1 didSelectColor:(id)arg2;
 - (void)inlineInkPicker:(id)arg1 didSelectTool:(id)arg2;
+- (bool)inlineInkPickerShouldChangeToolColorForSelectedColor:(id)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isPresentingPopover;
 - (bool)isPresentingPopovers;
@@ -114,6 +115,7 @@
 - (id)presentedViewController;
 - (void)resetToLastDrawingTool;
 - (void)revalidateItems;
+- (id)selectedAnnotations;
 - (void)setAlwaysShowUndoButton:(bool)arg1;
 - (void)setAnnotationController:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;

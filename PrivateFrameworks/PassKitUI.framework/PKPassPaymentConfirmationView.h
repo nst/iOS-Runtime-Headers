@@ -13,9 +13,12 @@
     bool  _receivedExit;
     bool  _receivedTransaction;
     NSMutableDictionary * _registeredExpressObservers;
+    unsigned long long  _resolutionCounter;
     bool  _showingAlert;
     bool  _showingResolution;
+    bool  _showingSuccessResolution;
     PKFooterTransactionView * _transactionView;
+    PKTransitBalanceModel * _transitBalanceModel;
     NSDate * _visibleDate;
 }
 
@@ -25,6 +28,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_beginResolution;
 - (void)_disableActivityTimer;
 - (id)_expressNotificationNames;
 - (void)_handleExpressNotification:(id)arg1;
@@ -35,9 +39,10 @@
 - (void)_registerForExpressTransactionNotifications:(bool)arg1;
 - (void)_registerObserverForNotificationName:(id)arg1 center:(id)arg2 handler:(id /* block */)arg3;
 - (void)_resolveActivityIfNecessary;
+- (void)_resolveActivityIfNecessaryWithDelay;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
-- (void)_updateContentViewsWithTransaction:(id)arg1 transitProperties:(id)arg2;
-- (void)_updateContentViewsWithTransitProperties:(id)arg1;
+- (void)_updateContentViewsWithTransaction:(id)arg1 transitBalanceModel:(id)arg2;
+- (void)_updateContentViewsWithTransitBalanceModel:(id)arg1;
 - (void)dealloc;
 - (void)didBecomeHiddenAnimated:(bool)arg1;
 - (void)didBecomeVisibleAnimated:(bool)arg1;
@@ -45,6 +50,7 @@
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (void)payStateView:(id)arg1 revealingCheckmark:(bool)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)willBecomeHiddenAnimated:(bool)arg1;

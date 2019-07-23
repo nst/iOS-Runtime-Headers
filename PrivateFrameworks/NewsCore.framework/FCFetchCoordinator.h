@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCFetchCoordinator : NSObject <FCOperationThrottlerDelegate> {
+@interface FCFetchCoordinator : NSObject <FCBoostableOperationThrottlerDelegate> {
     NFMutexLock * _accessLock;
     NSCountedSet * _allKeys;
     <FCFetchCoordinatorDelegate> * _delegate;

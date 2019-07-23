@@ -36,9 +36,11 @@
     bool  _isGKVoiceChat;
     bool  _isMuted;
     <VCAudioIODelegate><VCAudioIOSource><VCAudioIOSink> * _loadedDelegate;
+    unsigned int  _pullAudioSamplesCount;
     struct _VCAudioEndpointData { 
         struct SoundDec_t {} *converter; 
         struct opaqueVCAudioBufferList {} *converterBuffer; 
+        bool isLastHostTimeValid; 
         double lastHostTime; 
         unsigned int lastTimestamp; 
         unsigned int timestampOffset; 
@@ -47,6 +49,7 @@
     struct _VCAudioEndpointData { 
         struct SoundDec_t {} *converter; 
         struct opaqueVCAudioBufferList {} *converterBuffer; 
+        bool isLastHostTimeValid; 
         double lastHostTime; 
         unsigned int lastTimestamp; 
         unsigned int timestampOffset; 
@@ -71,6 +74,7 @@
 @property (nonatomic) bool isGKVoiceChat;
 @property (getter=isMuted, nonatomic) bool muted;
 @property (getter=isOutputMeteringEnabled, nonatomic) bool outputMeteringEnabled;
+@property (nonatomic, readonly) unsigned int pullAudioSamplesCount;
 @property (nonatomic, readonly) unsigned int samplesPerFrame;
 @property (nonatomic, readonly) unsigned int state;
 @property (readonly) Class superclass;
@@ -78,7 +82,7 @@
 + (id)controllerForDeviceRole:(int)arg1;
 
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })clientAudioFormat;
-- (unsigned int)computeTimestampForControllerTime:(const struct _VCAudioIOControllerTime { unsigned int x1; unsigned long long x2; }*)arg1 hostTime:(double)arg2 endpoint:(struct _VCAudioEndpointData { struct SoundDec_t {} *x1; struct opaqueVCAudioBufferList {} *x2; double x3; unsigned int x4; unsigned int x5; bool x6; }*)arg3;
+- (unsigned int)computeTimestampForControllerTime:(const struct _VCAudioIOControllerTime { unsigned int x1; unsigned long long x2; }*)arg1 hostTime:(double)arg2 endpoint:(struct _VCAudioEndpointData { struct SoundDec_t {} *x1; struct opaqueVCAudioBufferList {} *x2; bool x3; double x4; unsigned int x5; unsigned int x6; bool x7; }*)arg3;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })controllerFormat;
 - (void)controllerFormatChanged:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg1;
 - (bool)createConverterForSource:(bool)arg1 error:(id*)arg2;
@@ -96,6 +100,7 @@
 - (bool)isMuted;
 - (bool)isOutputMeteringEnabled;
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1 controllerTime:(const struct _VCAudioIOControllerTime { unsigned int x1; unsigned long long x2; }*)arg2;
+- (unsigned int)pullAudioSamplesCount;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1 controllerTime:(const struct _VCAudioIOControllerTime { unsigned int x1; unsigned long long x2; }*)arg2;
 - (bool)reconfigureWithOperatingMode:(int)arg1 deviceRole:(int)arg2 direction:(unsigned char)arg3 allowAudioRecording:(bool)arg4;
 - (void)releaseConverters;

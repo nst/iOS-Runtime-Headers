@@ -4,12 +4,7 @@
 
 @interface UIDebuggingInformationValueViewNumber : UIDebuggingInformationValueView
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)_sliderValueChanged:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addViewsToContentView;
 
 @end

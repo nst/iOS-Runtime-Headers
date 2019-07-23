@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *localizedAppName;
 @property (nonatomic, copy) NSDictionary *parameters;
 @property (nonatomic, copy) NSString *responseTemplate;
+@property (nonatomic, copy) NSArray *steps;
 @property (readonly) Class superclass;
 @property (nonatomic) long long toggleState;
 @property (nonatomic, copy) INArchivedObject *underlyingIntent;
@@ -60,11 +61,13 @@
 - (void)setParameters:(id)arg1;
 - (void)setPropertiesByName:(id)arg1;
 - (void)setResponseTemplate:(id)arg1;
+- (void)setSteps:(id)arg1;
 - (void)setToggleState:(long long)arg1;
 - (void)setUnderlyingIntent:(id)arg1;
 - (void)setUnderlyingIntentResponse:(id)arg1;
 - (void)setUnderlyingIntentTitle:(id)arg1;
 - (void)setVerb:(id)arg1;
+- (id)steps;
 - (long long)toggleState;
 - (id)underlyingIntent;
 - (id)underlyingIntentResponse;

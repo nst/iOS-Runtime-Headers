@@ -12,6 +12,7 @@
     GEOPDBoundsFilter * _boundsFilter;
     GEOPDBrowseCategoriesFilter * _browseCategoriesFilter;
     GEOPDBusinessClaimFilter * _businessClaimFilter;
+    GEOPDBusinessHoursFilter * _businessHoursFilter;
     GEOPDCaptionedPhotoFilter * _captionedPhotoFilter;
     GEOPDContainedPlaceFilter * _containedPlaceFilter;
     GEOPDEntityFilter * _entityFilter;
@@ -21,9 +22,11 @@
     GEOPDFlyoverFilter * _flyoverFilter;
     GEOPDHoursFilter * _hoursFilter;
     GEOPDIconFilter * _iconFilter;
+    GEOPDLinkedServiceFilter * _linkedServiceFilter;
     GEOPDLocationEventFilter * _locationEventFilter;
     GEOPDMessageLinkFilter * _messageLinkFilter;
     GEOPDPhotoFilter * _photoFilter;
+    GEOPDPlaceCollectionFilter * _placeCollectionFilter;
     GEOPDPlaceInfoFilter * _placeInfoFilter;
     GEOPDPlacecardLayoutConfigurationFilter * _placecardLayoutConfigurationFilter;
     GEOPDPlacecardURLFilter * _placecardUrlFilter;
@@ -46,8 +49,10 @@
     GEOPDTransitInfoFilter * _transitInfoFilter;
     GEOPDTransitInfoSnippetFilter * _transitInfoSnippetFilter;
     GEOPDTransitScheduleFilter * _transitScheduleFilter;
+    GEOPDVehiclePositionFilter * _transitVehiclePositionFilter;
     PBUnknownFields * _unknownFields;
     GEOPDVenueInfoFilter * _venueInfoFilter;
+    GEOPDWalletCategoryInformationFilter * _walletCategoryInformationFilter;
     GEOPDWifiFingerprintFilter * _wifiFingerprintFilter;
 }
 
@@ -60,6 +65,7 @@
 @property (nonatomic, retain) GEOPDBoundsFilter *boundsFilter;
 @property (nonatomic, retain) GEOPDBrowseCategoriesFilter *browseCategoriesFilter;
 @property (nonatomic, retain) GEOPDBusinessClaimFilter *businessClaimFilter;
+@property (nonatomic, retain) GEOPDBusinessHoursFilter *businessHoursFilter;
 @property (nonatomic, retain) GEOPDCaptionedPhotoFilter *captionedPhotoFilter;
 @property (nonatomic, retain) GEOPDContainedPlaceFilter *containedPlaceFilter;
 @property (nonatomic, retain) GEOPDEntityFilter *entityFilter;
@@ -76,6 +82,7 @@
 @property (nonatomic, readonly) bool hasBoundsFilter;
 @property (nonatomic, readonly) bool hasBrowseCategoriesFilter;
 @property (nonatomic, readonly) bool hasBusinessClaimFilter;
+@property (nonatomic, readonly) bool hasBusinessHoursFilter;
 @property (nonatomic, readonly) bool hasCaptionedPhotoFilter;
 @property (nonatomic, readonly) bool hasContainedPlaceFilter;
 @property (nonatomic, readonly) bool hasEntityFilter;
@@ -85,9 +92,11 @@
 @property (nonatomic, readonly) bool hasFlyoverFilter;
 @property (nonatomic, readonly) bool hasHoursFilter;
 @property (nonatomic, readonly) bool hasIconFilter;
+@property (nonatomic, readonly) bool hasLinkedServiceFilter;
 @property (nonatomic, readonly) bool hasLocationEventFilter;
 @property (nonatomic, readonly) bool hasMessageLinkFilter;
 @property (nonatomic, readonly) bool hasPhotoFilter;
+@property (nonatomic, readonly) bool hasPlaceCollectionFilter;
 @property (nonatomic, readonly) bool hasPlaceInfoFilter;
 @property (nonatomic, readonly) bool hasPlacecardLayoutConfigurationFilter;
 @property (nonatomic, readonly) bool hasPlacecardUrlFilter;
@@ -110,13 +119,17 @@
 @property (nonatomic, readonly) bool hasTransitInfoFilter;
 @property (nonatomic, readonly) bool hasTransitInfoSnippetFilter;
 @property (nonatomic, readonly) bool hasTransitScheduleFilter;
+@property (nonatomic, readonly) bool hasTransitVehiclePositionFilter;
 @property (nonatomic, readonly) bool hasVenueInfoFilter;
+@property (nonatomic, readonly) bool hasWalletCategoryInformationFilter;
 @property (nonatomic, readonly) bool hasWifiFingerprintFilter;
 @property (nonatomic, retain) GEOPDHoursFilter *hoursFilter;
 @property (nonatomic, retain) GEOPDIconFilter *iconFilter;
+@property (nonatomic, retain) GEOPDLinkedServiceFilter *linkedServiceFilter;
 @property (nonatomic, retain) GEOPDLocationEventFilter *locationEventFilter;
 @property (nonatomic, retain) GEOPDMessageLinkFilter *messageLinkFilter;
 @property (nonatomic, retain) GEOPDPhotoFilter *photoFilter;
+@property (nonatomic, retain) GEOPDPlaceCollectionFilter *placeCollectionFilter;
 @property (nonatomic, retain) GEOPDPlaceInfoFilter *placeInfoFilter;
 @property (nonatomic, retain) GEOPDPlacecardLayoutConfigurationFilter *placecardLayoutConfigurationFilter;
 @property (nonatomic, retain) GEOPDPlacecardURLFilter *placecardUrlFilter;
@@ -139,8 +152,10 @@
 @property (nonatomic, retain) GEOPDTransitInfoFilter *transitInfoFilter;
 @property (nonatomic, retain) GEOPDTransitInfoSnippetFilter *transitInfoSnippetFilter;
 @property (nonatomic, retain) GEOPDTransitScheduleFilter *transitScheduleFilter;
+@property (nonatomic, retain) GEOPDVehiclePositionFilter *transitVehiclePositionFilter;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDVenueInfoFilter *venueInfoFilter;
+@property (nonatomic, retain) GEOPDWalletCategoryInformationFilter *walletCategoryInformationFilter;
 @property (nonatomic, retain) GEOPDWifiFingerprintFilter *wifiFingerprintFilter;
 
 - (void).cxx_destruct;
@@ -153,6 +168,7 @@
 - (id)boundsFilter;
 - (id)browseCategoriesFilter;
 - (id)businessClaimFilter;
+- (id)businessHoursFilter;
 - (id)captionedPhotoFilter;
 - (id)containedPlaceFilter;
 - (void)copyTo:(id)arg1;
@@ -173,6 +189,7 @@
 - (bool)hasBoundsFilter;
 - (bool)hasBrowseCategoriesFilter;
 - (bool)hasBusinessClaimFilter;
+- (bool)hasBusinessHoursFilter;
 - (bool)hasCaptionedPhotoFilter;
 - (bool)hasContainedPlaceFilter;
 - (bool)hasEntityFilter;
@@ -182,9 +199,11 @@
 - (bool)hasFlyoverFilter;
 - (bool)hasHoursFilter;
 - (bool)hasIconFilter;
+- (bool)hasLinkedServiceFilter;
 - (bool)hasLocationEventFilter;
 - (bool)hasMessageLinkFilter;
 - (bool)hasPhotoFilter;
+- (bool)hasPlaceCollectionFilter;
 - (bool)hasPlaceInfoFilter;
 - (bool)hasPlacecardLayoutConfigurationFilter;
 - (bool)hasPlacecardUrlFilter;
@@ -207,7 +226,9 @@
 - (bool)hasTransitInfoFilter;
 - (bool)hasTransitInfoSnippetFilter;
 - (bool)hasTransitScheduleFilter;
+- (bool)hasTransitVehiclePositionFilter;
 - (bool)hasVenueInfoFilter;
+- (bool)hasWalletCategoryInformationFilter;
 - (bool)hasWifiFingerprintFilter;
 - (unsigned long long)hash;
 - (id)hoursFilter;
@@ -223,10 +244,12 @@
 - (id)initTipUserPhotoFilterWithTraits:(id)arg1;
 - (id)initTransitScheduleFilterWithTraits:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)linkedServiceFilter;
 - (id)locationEventFilter;
 - (void)mergeFrom:(id)arg1;
 - (id)messageLinkFilter;
 - (id)photoFilter;
+- (id)placeCollectionFilter;
 - (id)placeInfoFilter;
 - (id)placecardLayoutConfigurationFilter;
 - (id)placecardUrlFilter;
@@ -249,6 +272,7 @@
 - (void)setBoundsFilter:(id)arg1;
 - (void)setBrowseCategoriesFilter:(id)arg1;
 - (void)setBusinessClaimFilter:(id)arg1;
+- (void)setBusinessHoursFilter:(id)arg1;
 - (void)setCaptionedPhotoFilter:(id)arg1;
 - (void)setContainedPlaceFilter:(id)arg1;
 - (void)setEntityFilter:(id)arg1;
@@ -258,9 +282,11 @@
 - (void)setFlyoverFilter:(id)arg1;
 - (void)setHoursFilter:(id)arg1;
 - (void)setIconFilter:(id)arg1;
+- (void)setLinkedServiceFilter:(id)arg1;
 - (void)setLocationEventFilter:(id)arg1;
 - (void)setMessageLinkFilter:(id)arg1;
 - (void)setPhotoFilter:(id)arg1;
+- (void)setPlaceCollectionFilter:(id)arg1;
 - (void)setPlaceInfoFilter:(id)arg1;
 - (void)setPlacecardLayoutConfigurationFilter:(id)arg1;
 - (void)setPlacecardUrlFilter:(id)arg1;
@@ -283,7 +309,9 @@
 - (void)setTransitInfoFilter:(id)arg1;
 - (void)setTransitInfoSnippetFilter:(id)arg1;
 - (void)setTransitScheduleFilter:(id)arg1;
+- (void)setTransitVehiclePositionFilter:(id)arg1;
 - (void)setVenueInfoFilter:(id)arg1;
+- (void)setWalletCategoryInformationFilter:(id)arg1;
 - (void)setWifiFingerprintFilter:(id)arg1;
 - (id)simpleRestaurantMenuTextFilter;
 - (id)spatialLookupFilter;
@@ -295,8 +323,10 @@
 - (id)transitInfoFilter;
 - (id)transitInfoSnippetFilter;
 - (id)transitScheduleFilter;
+- (id)transitVehiclePositionFilter;
 - (id)unknownFields;
 - (id)venueInfoFilter;
+- (id)walletCategoryInformationFilter;
 - (id)wifiFingerprintFilter;
 - (void)writeTo:(id)arg1;
 

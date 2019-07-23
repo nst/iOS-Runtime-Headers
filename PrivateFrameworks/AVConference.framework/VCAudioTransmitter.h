@@ -33,6 +33,7 @@
     unsigned int  _currentTargetBitrate;
     id  _delegate;
     struct opaqueVCAudioBufferList { } * _encodeBuffer;
+    unsigned int  _encodedBytes;
     unsigned int  _estimateTxAudioBytes;
     struct { 
         unsigned short streamIDs[12]; 
@@ -132,6 +133,7 @@
 @property <VCAudioTransmitterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dtxMetrics;
+@property (nonatomic, readonly) unsigned int encodedBytes;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool ignoreSilence;
 @property unsigned char inputMeter;
@@ -164,6 +166,7 @@
 - (id)dtxMetrics;
 - (int)encodeAudio:(struct opaqueVCAudioBufferList { }*)arg1 numInputSamples:(int)arg2 outputBytes:(void*)arg3 numOutputBytes:(int)arg4 withPayload:(int*)arg5 isTalking:(bool)arg6;
 - (void)encodeBundleAndSendAudio:(struct opaqueVCAudioBufferList { }*)arg1 sampleCount:(unsigned int)arg2;
+- (unsigned int)encodedBytes;
 - (void*)generateControlInfo;
 - (void)handleActiveConnectionChange:(id)arg1;
 - (bool)handleCodecRateModeChange:(unsigned char)arg1 withBitrate:(unsigned int)arg2;

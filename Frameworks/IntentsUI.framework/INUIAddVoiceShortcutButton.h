@@ -10,6 +10,7 @@
     NSLayoutConstraint * _addedToSiriLeadingConstraint;
     NSLayoutConstraint * _checkmarkHeightConstraint;
     UIImageView * _checkmarkImageView;
+    double  _cornerRadius;
     <INUIAddVoiceShortcutButtonDelegate> * _delegate;
     CAFilter * _highlightFilter;
     UILabel * _phraseLabel;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *addedToSiriLeadingConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *checkmarkHeightConstraint;
 @property (nonatomic) UIImageView *checkmarkImageView;
+@property (nonatomic) double cornerRadius;
 @property (nonatomic) <INUIAddVoiceShortcutButtonDelegate> *delegate;
 @property (nonatomic, retain) CAFilter *highlightFilter;
 @property (nonatomic) UILabel *phraseLabel;
@@ -59,6 +61,7 @@
 - (id)addedToSiriLeadingConstraint;
 - (id)checkmarkHeightConstraint;
 - (id)checkmarkImageView;
+- (double)cornerRadius;
 - (void)dealloc;
 - (id)delegate;
 - (id)highlightFilter;
@@ -73,6 +76,7 @@
 - (void)setAddedToSiriLeadingConstraint:(id)arg1;
 - (void)setCheckmarkHeightConstraint:(id)arg1;
 - (void)setCheckmarkImageView:(id)arg1;
+- (void)setCornerRadius:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHighlightFilter:(id)arg1;
 - (void)setHighlighted:(bool)arg1;

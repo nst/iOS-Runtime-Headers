@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
  */
 
-@interface _PKInkAttributesPickerView : UIControl {
+@interface _PKInkAttributesPickerView : UIControl <_PKColorAlphaSliderDelegate> {
     _PKColorAlphaSlider * _colorAlphaSlider;
+    <_PKInkAttributesPickerViewDelegate> * _delegate;
     unsigned long long  _displayMode;
     PKInk * _ink;
     UIView * _separatorView;
@@ -11,15 +12,21 @@
 }
 
 @property (nonatomic, retain) _PKColorAlphaSlider *colorAlphaSlider;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_PKInkAttributesPickerViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned long long displayMode;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKInk *ink;
 @property (nonatomic, retain) UIView *separatorView;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) _PKInkThicknessPicker *thicknessPicker;
 
-+ (double)representableOpacityForOpacity:(double)arg1;
-
 - (void).cxx_destruct;
+- (void)_colorAlphaSliderUserDidEndDraggingSlider:(id)arg1;
+- (void)_colorAlphaSliderUserDidStartDraggingSlider:(id)arg1;
 - (id)colorAlphaSlider;
+- (id)delegate;
 - (unsigned long long)displayMode;
 - (id)initWithInk:(id)arg1;
 - (id)ink;
@@ -27,8 +34,10 @@
 - (void)opacityValueChanged:(id)arg1;
 - (id)separatorView;
 - (void)setColorAlphaSlider:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDisplayMode:(unsigned long long)arg1;
 - (void)setInk:(id)arg1;
+- (void)setInk:(id)arg1 animated:(bool)arg2;
 - (void)setSeparatorView:(id)arg1;
 - (void)setThicknessPicker:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

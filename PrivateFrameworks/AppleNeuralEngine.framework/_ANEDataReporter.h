@@ -7,6 +7,7 @@
 + (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
 + (id)aggdKey:(id)arg1;
 + (void)clearScalarKey:(id)arg1;
++ (id)reportClient:(id)arg1 modelName:(id)arg2;
 + (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 
 @end

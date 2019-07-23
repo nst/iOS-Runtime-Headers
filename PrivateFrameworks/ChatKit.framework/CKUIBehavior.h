@@ -4,17 +4,12 @@
 
 @interface CKUIBehavior : NSObject {
     long long  _HUDStyle;
-    UIImage * _arouetReplyImage;
-    UIImage * _dictationReplyImage;
-    UIImage * _digitalTouchReplyImage;
     UIImage * _dismissButtonImage;
-    UIImage * _emojiReplyImage;
     UIImage * _messageReplyImage;
     UIImage * _orbComposeImage;
     UIImage * _orbDetailsImage;
     UIImage * _orbReplyImage;
     UIImage * _orbShareLocationImage;
-    UIImage * _surfReplyImage;
     double  _waveformMaxWidth;
 }
 
@@ -36,7 +31,6 @@
 @property (nonatomic, readonly) unsigned long long appIconPrefetchLimit;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } appIconSize;
 @property (nonatomic, readonly) UIFont *appLabelFont;
-@property (nonatomic, readonly) UIImage *arouetReplyImage;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBalloonSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } attachmentBrowserDefaultSizeForSquare;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } attachmentBrowserFeedLayoutSectionInset;
@@ -155,8 +149,6 @@
 @property (nonatomic, readonly) UIImage *defaultWaveformImage;
 @property (nonatomic, readonly) UIImage *detailsImage;
 @property (nonatomic, readonly) bool detailsSeperatorsFollowLayoutMargins;
-@property (nonatomic, readonly) UIImage *dictationReplyImage;
-@property (nonatomic, readonly) UIImage *digitalTouchReplyImage;
 @property (nonatomic, readonly) UIImage *disabledFacetimeAudioImage;
 @property (nonatomic, readonly) UIImage *disabledFacetimeVideoImage;
 @property (nonatomic, readonly) UIImage *dismissButtonImage;
@@ -174,7 +166,6 @@
 @property (nonatomic, readonly) NSDictionary *drawerTranscriptTextAttributes;
 @property (nonatomic, readonly) double editingTransitionAnimationDuration;
 @property (nonatomic, readonly) double emojiPreviewMaxWidth;
-@property (nonatomic, readonly) UIImage *emojiReplyImage;
 @property (nonatomic, readonly) double entryFieldCoverLineWidth;
 @property (nonatomic, readonly) bool entryFieldShouldUseBackdropView;
 @property (nonatomic, readonly) bool entryFieldShouldUseNewPhotoUI;
@@ -291,6 +282,8 @@
 @property (nonatomic, readonly) UIImage *orbDetailsImage;
 @property (nonatomic, readonly) UIImage *orbReplyImage;
 @property (nonatomic, readonly) UIImage *orbShareLocationImage;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } phishingWarningEdgeInsets;
+@property (nonatomic, readonly) NSDictionary *phishingWarningTextAttributes;
 @property (nonatomic, readonly) bool phoneIsWhitelisted;
 @property (nonatomic, readonly) UIImage *photoPickerDisabledBadge;
 @property (nonatomic, readonly) double photoPickerInterItemSpacing;
@@ -401,7 +394,6 @@
 @property (nonatomic, readonly) bool supportsContiguousAttachments;
 @property (nonatomic, readonly) bool supportsPassbookAttachments;
 @property (nonatomic, readonly) bool supportsTypingIndicatorAnimation;
-@property (nonatomic, readonly) UIImage *surfReplyImage;
 @property (nonatomic, readonly) UIFont *syncProgressLabelFont;
 @property (nonatomic, readonly) NSString *taillessBallonName;
 @property (nonatomic, readonly) double textAlignmentRectInsetsScaleFactor;
@@ -514,7 +506,6 @@
 - (unsigned long long)appIconPrefetchLimit;
 - (struct CGSize { double x1; double x2; })appIconSize;
 - (id)appLabelFont;
-- (id)arouetReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsetsWithTailShape:(BOOL)arg1;
 - (struct CGSize { double x1; double x2; })attachmentBalloonSize;
@@ -659,8 +650,6 @@
 - (id)defaultWaveformImage;
 - (id)detailsImage;
 - (bool)detailsSeperatorsFollowLayoutMargins;
-- (id)dictationReplyImage;
-- (id)digitalTouchReplyImage;
 - (id)disabledFacetimeAudioImage;
 - (id)disabledFacetimeVideoImage;
 - (id)disabledNavigationBarImageWithGlyph:(id)arg1;
@@ -682,7 +671,6 @@
 - (id)drawerTranscriptTextAttributes;
 - (double)editingTransitionAnimationDuration;
 - (double)emojiPreviewMaxWidth;
-- (id)emojiReplyImage;
 - (double)entryFieldCoverLineWidth;
 - (bool)entryFieldShouldUseBackdropView;
 - (bool)entryFieldShouldUseNewPhotoUI;
@@ -824,6 +812,8 @@
 - (id)orbDetailsImage;
 - (id)orbReplyImage;
 - (id)orbShareLocationImage;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })phishingWarningEdgeInsets;
+- (id)phishingWarningTextAttributes;
 - (bool)phoneIsWhitelisted;
 - (id)photoPickerDisabledBadge;
 - (double)photoPickerInterItemSpacing;
@@ -951,7 +941,6 @@
 - (bool)supportsContiguousAttachments;
 - (bool)supportsPassbookAttachments;
 - (bool)supportsTypingIndicatorAnimation;
-- (id)surfReplyImage;
 - (id)syncProgressLabelFont;
 - (id)systemGrayChevronImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })taillessAttachmentBalloonAlignmentRectInsets;

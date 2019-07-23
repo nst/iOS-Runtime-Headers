@@ -71,11 +71,13 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
+- (double)_personalizationValueWithBaselineClicks:(double)arg1 baselineImpressions:(double)arg2 decayRate:(double)arg3 baselineClicksMultiplier:(double)arg4;
 - (double)confidence;
 - (id)lastModified;
 - (double)personalizationValueWithBaseline:(id)arg1 decayRate:(double)arg2;
 - (double)personalizationValueWithBaseline:(id)arg1 decayRate:(double)arg2 baselineClicksMultiplier:(double)arg3;
+- (double)personalizationValueWithCorrelatedAggregate:(id)arg1 baseline:(id)arg2 decayRate:(double)arg3 baselineClicksMultiplier:(double)arg4;
 - (double)powerWithDecayFactor:(double)arg1;
-- (double)relativePersonalizationValueWithBaselineAggregate:(id)arg1 decayFactor:(double)arg2 baselineClicksMultiplier:(double)arg3;
+- (double)relativePersonalizationValueWithCorrelatedAggregate:(id)arg1 baseline:(id)arg2 decayFactor:(double)arg3 baselineClicksMultiplier:(double)arg4;
 
 @end

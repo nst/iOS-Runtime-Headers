@@ -7,6 +7,7 @@
 + (id)getSpeechManagerStateMachine;
 + (id)getSpeechManagerStateMachineAOPBridgeOS;
 + (id)getSpeechManagerStateMachineDefault;
-+ (id)getSpeechManagerStateMachineForMac;
++ (id)getSpeechManagerStateMachineForBluetoothDevice;
++ (id)getSpeechManagerStateMachineWithType:(unsigned long long)arg1;
 
 @end

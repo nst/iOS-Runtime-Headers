@@ -34,17 +34,12 @@
 @property (nonatomic) double widthNeededDuringAnimation;
 @property (nonatomic) double widthNeededForFinalState;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)lockSlideAnimationDuration;
 
 - (void).cxx_destruct;
 - (void)_beginAnimation;
 - (void)_endAnimation;
 - (bool)_isAnimating;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (bool)alongsideViewIsBecomingVisible;
 - (void)animateUnlockForegroundView:(id)arg1 timeItemSnapshot:(id)arg2 completionBlock:(id /* block */)arg3;

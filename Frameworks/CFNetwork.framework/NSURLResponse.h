@@ -81,10 +81,6 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)ssv_isExpiredResponse;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (struct __SecTrust { }*)webui_serverTrust;
-
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
 - (id)allHeaderFields;

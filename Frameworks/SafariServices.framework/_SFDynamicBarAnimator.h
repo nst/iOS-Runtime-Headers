@@ -15,6 +15,7 @@
     double  _lastUnroundedTopBarHeight;
     double  _minimumTopBarHeight;
     bool  _performingBatchUpdates;
+    bool  _sendingOutputsDidChange;
     long long  _state;
     double  _targetTopBarHeight;
     double  _topBarHeight;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly) double bottomBarOffset;
 @property (nonatomic) <_SFDynamicBarAnimatorDelegate> *delegate;
 @property (nonatomic) double minimumTopBarHeight;
+@property (getter=isSendingOutputsDidChange, nonatomic, readonly) bool sendingOutputsDidChange;
 @property (nonatomic, readonly) long long state;
 @property (nonatomic, readonly) long long targetState;
 @property (nonatomic, readonly) double topBarHeight;
@@ -50,6 +52,7 @@
 - (void)endDraggingWithTargetOffset:(double)arg1 velocity:(double)arg2;
 - (void)endScrolling;
 - (id)init;
+- (bool)isSendingOutputsDidChange;
 - (double)minimumTopBarHeight;
 - (void)performBatchUpdates:(id /* block */)arg1;
 - (void)setBottomBarOffset:(double)arg1 forState:(long long)arg2;

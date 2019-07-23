@@ -4,7 +4,6 @@
 
 @interface VCSecurityKeyManager : NSObject {
     id  _delegate;
-    bool  _isDuplicateKeyReported;
     bool  _isKeyIndexNotReceivedReported;
     bool  _isReceiveKeysCleanUpPending;
     bool  _isSendKeysCleanUpPending;

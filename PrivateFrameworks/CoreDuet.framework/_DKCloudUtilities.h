@@ -3,6 +3,7 @@
  */
 
 @interface _DKCloudUtilities : NSObject {
+    _DKThrottledActivity * _activityThrottler;
     NSObject<OS_dispatch_queue> * _fetchQueue;
     bool  _isSingleDevice;
     bool  _supportsDeviceToDeviceEncryption;

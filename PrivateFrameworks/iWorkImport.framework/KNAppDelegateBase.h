@@ -42,11 +42,12 @@
 - (bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (id)stringForApplicationUpdateError;
 - (id)stringForBoxCollaborationOptInMessage;
+- (id)stringForChangePasswordWhileConnectingAlertMessage;
 - (id)stringForCloseDocument;
 - (id)stringForCloseDocumentConfirmationAlertMessage;
 - (id)stringForCloseDocumentConfirmationWillContinueToUpdateInformativeText;
 - (id)stringForCollaborationConnecting;
-- (id)stringForCollaborationOffline;
+- (id)stringForCollaborationOfflinePlacard;
 - (id)stringForCollaborationOnline;
 - (id)stringForCollaborator1_6ConflictDetails;
 - (id)stringForCollaborator1_6ConflictWithKeepDetails;
@@ -68,6 +69,7 @@
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
+- (id)stringForNoItemsSyncingListItem;
 - (id)stringForOwnerHasCollabEnabledMessage;
 - (id)stringForOwnerHasCollabEnabledTitle;
 - (id)stringForOwnerPasswordOnConflictAlertMessage;
@@ -79,6 +81,7 @@
 - (id)stringForRemoveSelfAlertConfirmationTitle;
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
+- (id)stringForSyncActivityPopoverTitle;
 - (id)stringForUpdatingDocumentWithoutServiceType;
 - (id)stringForUserActivityTitleForFilename:(id)arg1;
 - (bool)supportsFreehandAnimationUI;

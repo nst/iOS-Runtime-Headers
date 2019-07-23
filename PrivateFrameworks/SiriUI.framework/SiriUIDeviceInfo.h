@@ -7,6 +7,7 @@
     bool  _deviceShouldFreezeAura;
     bool  _deviceShouldSkipGuidePreloading;
     bool  _deviceShouldUseFrozenBackdropSnapshot;
+    bool  _deviceSupportsProximitySensor;
     bool  _deviceZoomed;
     bool  _largeFormatPhone;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) bool deviceShouldFreezeAura;
 @property (nonatomic, readonly) bool deviceShouldSkipGuidePreloading;
 @property (nonatomic, readonly) bool deviceShouldUseFrozenBackdropSnapshot;
+@property (nonatomic, readonly) bool deviceSupportsProximitySensor;
 @property (getter=isDeviceZoomed, nonatomic, readonly) bool deviceZoomed;
 @property (getter=isLargeFormatPhone, nonatomic, readonly) bool largeFormatPhone;
 
@@ -27,6 +29,7 @@
 - (bool)deviceShouldFreezeAura;
 - (bool)deviceShouldSkipGuidePreloading;
 - (bool)deviceShouldUseFrozenBackdropSnapshot;
+- (bool)deviceSupportsProximitySensor;
 - (id)init;
 - (bool)isDeviceZoomed;
 - (bool)isLargeFormatPhone;

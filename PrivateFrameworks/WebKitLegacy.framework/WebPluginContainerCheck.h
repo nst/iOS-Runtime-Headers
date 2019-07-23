@@ -17,7 +17,7 @@
 
 - (id)_actionInformationWithURL:(id)arg1;
 - (void)_askPolicyDelegate;
-- (void)_continueWithPolicy:(int)arg1;
+- (void)_continueWithPolicy:(unsigned char)arg1;
 - (bool)_isForbiddenFileLoad;
 - (void)cancel;
 - (id)contextInfo;

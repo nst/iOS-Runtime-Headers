@@ -7,6 +7,7 @@
 
 - (NUArticleExcerptViewController *)createArticleExcerptViewControllerWithArticle:(FCArticle *)arg1 traits:(NUArticleExcerptTraits *)arg2;
 - (NUArticleViewController *)createArticleViewControllerWithArticle:(FCArticle *)arg1;
+- (NUArticleViewController *)createArticleViewControllerWithArticle:(FCArticle *)arg1 issue:(FCIssue *)arg2;
 - (NUArticleWebViewController *)createArticleWebViewControllerWithArticle:(FCArticle *)arg1;
 - (NSHashTable *)loadingListeners;
 

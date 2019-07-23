@@ -9,14 +9,17 @@
 }
 
 - (void).cxx_destruct;
+- (void)_beginLoadingData;
 - (void)_distributeAllDonatedActions;
 - (void)_distributeRecentDeletedActions;
 - (void)_distributeRecentDonatedActions;
+- (void)_finishLoadingData;
 - (void)_queue_distributeAllDonatedActions;
 - (void)_queue_distributeRecentDeletedActions;
 - (void)_queue_distributeRecentDonatedActions;
 - (void)_removeThenDistributeAllActions;
 - (void)_subscribeToNotifications;
+- (id)callbackQueue;
 - (void)dealloc;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;

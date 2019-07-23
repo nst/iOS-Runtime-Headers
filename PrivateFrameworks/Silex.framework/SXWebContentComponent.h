@@ -11,11 +11,14 @@
 @property (nonatomic, readonly) SXComponentAnimation *animation;
 @property (nonatomic, readonly) SXJSONArray *behaviors;
 @property (nonatomic, readonly) SXComponentClassification *classification;
+@property (nonatomic, readonly) SXJSONArray *conditional;
 @property (nonatomic, readonly) SXComponentConditions *conditions;
 @property (nonatomic, readonly) unsigned long long contentRelevance;
+@property (nonatomic, readonly) SXJSONDictionary *dataSourceReferences;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *layout;
 @property (nonatomic, readonly) NSString *resourceIdentifier;
@@ -25,7 +28,9 @@
 @property (nonatomic, readonly) unsigned long long traits;
 @property (nonatomic, readonly) NSString *type;
 
++ (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
 + (id)typeString;
++ (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
 
 - (id)URLWithValue:(id)arg1 withType:(int)arg2;
 - (unsigned long long)traits;

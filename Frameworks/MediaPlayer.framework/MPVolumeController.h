@@ -5,6 +5,7 @@
 @interface MPVolumeController : NSObject <MPVolumeControllerDataSourceDelegate> {
     <MPVolumeControllerDataSource> * _dataSource;
     <MPVolumeControllerDelegate> * _delegate;
+    unsigned int  _volumeCapabilities;
     int  _volumeChangeCoalescingCount;
 }
 
@@ -17,18 +18,25 @@
 @property (getter=isMuted, nonatomic) bool muted;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *volumeAudioCategory;
+@property (nonatomic, readonly) unsigned int volumeCapabilities;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
 @property (nonatomic, readonly, copy) NSString *volumeControlLabel;
 @property (nonatomic) float volumeValue;
 @property (nonatomic, readonly) bool volumeWarningEnabled;
 @property (nonatomic, readonly) long long volumeWarningState;
 
++ (id)descriptionForWarningState:(long long)arg1;
+
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
 - (void)_updateVolumeControlAvailability;
 - (void)adjustVolumeValue:(float)arg1;
+- (void)beginDecreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
 - (id)dataSource;
 - (id)delegate;
+- (void)endDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
 - (void)getVolumeValueWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDataSource:(id)arg1;
@@ -44,12 +52,14 @@
 - (void)updateVolumeValue;
 - (void)updateVolumeWarningState;
 - (id)volumeAudioCategory;
+- (unsigned int)volumeCapabilities;
 - (id)volumeControlLabel;
 - (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimit:(float)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeEUVolumeLimitEnforced:(bool)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeMuted:(bool)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolume:(float)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeAudioCategory:(id)arg2;
+- (void)volumeControllerDataSource:(id)arg1 didChangeVolumeCapabilities:(unsigned int)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeControlAvailability:(bool)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeLabel:(id)arg2;
 - (void)volumeControllerDataSource:(id)arg1 didChangeVolumeWarning:(long long)arg2;

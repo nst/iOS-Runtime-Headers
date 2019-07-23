@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) GEOApplicationAuditToken *auditToken;
 @property (nonatomic, readonly) MNCommuteSession *commuteSession;
 @property (nonatomic, readonly) MNNavigationState *currentState;
-@property (nonatomic, readonly) unsigned long long currentStateType;
+@property (nonatomic, readonly) long long currentStateType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -33,7 +33,7 @@
 - (void)_changeToDesiredLocationProviderType;
 - (id)_initialState;
 - (void)_replayStateForNewObserver:(id)arg1;
-- (unsigned long long)_stateTypeForState:(id)arg1;
+- (long long)_stateTypeForState:(id)arg1;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (id)auditToken;
@@ -42,7 +42,7 @@
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
 - (void)commuteSessionDidArrive:(id)arg1;
 - (id)currentState;
-- (unsigned long long)currentStateType;
+- (long long)currentStateType;
 - (void)dealloc;
 - (id)init;
 - (void)interfaceHashesWithHandler:(id /* block */)arg1;
@@ -58,6 +58,7 @@
 - (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)mapsAppStateMonitor:(id)arg1 didChangeToState:(unsigned int)arg2;
+- (id)navSessionDestination;
 - (id)navigationDelegate;
 - (void)prepareNavigationWithRouteDetails:(id)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;

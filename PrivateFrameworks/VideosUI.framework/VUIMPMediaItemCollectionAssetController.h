@@ -37,16 +37,15 @@
 - (void)_enqueueAsyncProcessingQueueStrongSelfBlock:(id /* block */)arg1;
 - (void)_enqueueCompletionQueueBlock:(id /* block */)arg1;
 - (void)_notifyDelegateStateDidChange:(id)arg1;
-- (void)_onProcessingQueue_cancelDownload;
+- (void)_onProcessingQueue_cancelAndRemoveDownload;
 - (void)_onProcessingQueue_invalidate;
 - (void)_onProcessingQueue_pauseDownload;
-- (void)_onProcessingQueue_removeDownloadWithCompletion:(id /* block */)arg1;
 - (void)_onProcessingQueue_resumeDownload;
 - (void)_onProcessingQueue_setState:(id)arg1 andNotifyDelegate:(bool)arg2;
 - (void)_onProcessingQueue_startDownloadWithCompletion:(id /* block */)arg1;
 - (void)_onProcessingQueue_updateStateAndNotifyDelegate:(bool)arg1;
 - (id)assetControllers;
-- (void)cancelDownload;
+- (void)cancelAndRemoveDownload;
 - (id)completionDispatchQueue;
 - (id)delegate;
 - (unsigned long long)fullyDownloadedAssetBytes;
@@ -58,7 +57,6 @@
 - (id)mediaEntityType;
 - (id)mediaItemCollection;
 - (void)pauseDownload;
-- (void)removeDownloadWithCompletion:(id /* block */)arg1;
 - (void)resumeDownload;
 - (id)serialProcessingDispatchQueue;
 - (void)setAssetControllers:(id)arg1;

@@ -6,6 +6,7 @@
     CoreTelephonyClient * _ctClient;
     struct __CTServerConnection { } * _ctServerConnection;
     NSObject<OS_dispatch_queue> * _ctServerQueue;
+    CTXPCServiceSubscriptionContext * _currentDataSimContext;
     int  _currentRAT;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     CUTWeakReference * _delegateReference;
@@ -43,15 +44,17 @@
 @property (nonatomic, readonly) struct __CFString { }*wwanInterfaceName;
 
 - (void).cxx_destruct;
-- (void)_adjustInterfaceNameForWWANContextID:(int)arg1 interfaceName:(id)arg2;
+- (void)_adjustInterfaceNameForWWANContextID:(int)arg1 interfaceName:(id)arg2 forContext:(id)arg3;
 - (void)_callDelegateOnIvarQueueWithBlock:(id /* block */)arg1;
-- (id)_dataPreferredSubcriptionContext;
+- (id)_currentDataSimContext;
 - (void)_forwardConfigurationOnIvarQueue;
+- (bool)_isCurrentDataSimContextOnIvarQueue:(id)arg1;
 - (void)_processCallStatusChanged:(id)arg1;
-- (void)_processDataConnectionStatus:(id)arg1;
-- (void)_processDataStatus:(id)arg1;
+- (void)_processDataConnectionStatus:(id)arg1 forContext:(id)arg2;
+- (void)_processDataStatus:(id)arg1 forContext:(id)arg2;
 - (void)_setupWWANMonitor;
 - (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
+- (void)currentDataSimChanged:(id)arg1;
 - (int)currentRAT;
 - (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;
 - (void)dealloc;

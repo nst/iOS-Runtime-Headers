@@ -8,8 +8,6 @@
     bool  _reverseShadow;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_defaultAttributes;
 
 - (void).cxx_destruct;
@@ -21,9 +19,6 @@
 - (void)_setWantsAutolayout;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateTextColorWithFallbackColorIfNeeded;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
 - (void)setFont:(id)arg1;

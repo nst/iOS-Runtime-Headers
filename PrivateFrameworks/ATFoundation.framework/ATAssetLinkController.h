@@ -26,7 +26,7 @@
 - (void)_assetsDidChange;
 - (bool)_canEnqueueAsset:(id)arg1;
 - (bool)_canEnqueueAsset:(id)arg1 onLink:(id)arg2;
-- (void)_cancelAsset:(id)arg1 withError:(id)arg2;
+- (void)_cancelAssets:(id)arg1 withError:(id)arg2;
 - (void)_finishAsset:(id)arg1 withError:(id)arg2;
 - (void)_handleEnqueue:(id)arg1 onLink:(id)arg2 withPriority:(bool)arg3;
 - (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2 object:(id)arg3;
@@ -39,6 +39,7 @@
 - (bool)assetIsEnqueued:(id)arg1;
 - (void)assetLink:(id)arg1 didCloseWithOutstandingAssets:(id)arg2;
 - (void)assetLink:(id)arg1 didFinishAsset:(id)arg2 error:(id)arg3 retryable:(bool)arg4;
+- (void)assetLink:(id)arg1 didFinishAsset:(id)arg2 error:(id)arg3 retryable:(bool)arg4 cancelPendingAssetsInBatch:(bool)arg5;
 - (void)assetLink:(id)arg1 didOpenWithPendingAssets:(id)arg2;
 - (void)assetLink:(id)arg1 didPauseAsseDownload:(id)arg2 error:(id)arg3;
 - (void)assetLink:(id)arg1 didTransitionAssetStates:(id)arg2;

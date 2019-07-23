@@ -22,7 +22,7 @@
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (void)reportResponse:(id)arg1 forExtension:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)reportResponseViaNetwork:(id)arg1 forExtension:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)reportViaSMSWithSender:(id)arg1 body:(id)arg2;
+- (void)reportResponseViaSMS:(id)arg1 forExtension:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setCompletion:(id /* block */)arg1;
 
 @end

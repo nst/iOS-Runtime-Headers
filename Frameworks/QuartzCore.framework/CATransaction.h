@@ -16,6 +16,7 @@
 + (id /* block */)animator;
 + (void)assertInactive;
 + (void)begin;
++ (double)beginTime;
 + (void)commit;
 + (double)commitTime;
 + (id /* block */)completionBlock;
@@ -34,6 +35,7 @@
 + (void)setAnimatesFromModelValues:(bool)arg1;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
++ (void)setBeginTime:(double)arg1;
 + (void)setCommitHandler:(id /* block */)arg1;
 + (void)setCommitTime:(double)arg1;
 + (void)setCompletionBlock:(id /* block */)arg1;

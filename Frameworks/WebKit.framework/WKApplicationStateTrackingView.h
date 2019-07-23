@@ -10,7 +10,7 @@
     }  _applicationStateTracker;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
-    }  _webView;
+    }  _webViewToTrack;
 }
 
 @property (nonatomic, readonly) UIView *_contentView;

@@ -4,6 +4,7 @@
 
 @interface NTPBFeedViewportHeadline : PBCodable <NSCopying> {
     NSString * _articleID;
+    NSString * _callToActionText;
     NSString * _clusterID;
     NTPBDate * _displayDate;
     struct { 
@@ -32,9 +33,11 @@
 }
 
 @property (nonatomic, retain) NSString *articleID;
+@property (nonatomic, retain) NSString *callToActionText;
 @property (nonatomic, retain) NSString *clusterID;
 @property (nonatomic, retain) NTPBDate *displayDate;
 @property (nonatomic, readonly) bool hasArticleID;
+@property (nonatomic, readonly) bool hasCallToActionText;
 @property (nonatomic, readonly) bool hasClusterID;
 @property (nonatomic, readonly) bool hasDisplayDate;
 @property (nonatomic) bool hasStoryType;
@@ -58,6 +61,7 @@
 
 - (void)addSurfacedByTagIDsRefs:(int)arg1;
 - (id)articleID;
+- (id)callToActionText;
 - (void)clearSurfacedByTagIDsRefs;
 - (id)clusterID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -66,6 +70,7 @@
 - (id)dictionaryRepresentation;
 - (id)displayDate;
 - (bool)hasArticleID;
+- (bool)hasCallToActionText;
 - (bool)hasClusterID;
 - (bool)hasDisplayDate;
 - (bool)hasStoryType;
@@ -81,6 +86,7 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
+- (void)setCallToActionText:(id)arg1;
 - (void)setClusterID:(id)arg1;
 - (void)setDisplayDate:(id)arg1;
 - (void)setHasStoryType:(bool)arg1;

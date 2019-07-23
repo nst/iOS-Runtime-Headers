@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_setupPhysicsChain:(id)arg1 scene:(id)arg2;
+- (void)applyForces:(double)arg1;
 - (void)getPhysicsOffsetOfNode:(id)arg1 relativeToNode:(id)arg2;
 - (void)setupWithAvatarNode:(id)arg1 scene:(id)arg2 downforceNodeCheck:(id /* block */)arg3;
 - (void)updateAtTime:(double)arg1 avatarNode:(id)arg2 scene:(id)arg3 forceMultiplier:(double)arg4 downforceNodeCheck:(id /* block */)arg5;

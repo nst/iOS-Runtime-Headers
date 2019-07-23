@@ -4,35 +4,50 @@
 
 @interface APCPlayerEngine : NSObject {
     AVAudioPCMBuffer * _assetBuffer;
+    id /* block */  _beginningCallback;
+    NSObject<OS_dispatch_source> * _callbackDispatchSrc;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    APCPlayerEmbedInfo * _embeddingInfo;
     AUPasscodeEncoder * _encoderAU;
     AVAudioUnit * _encoderAUNode;
     AVAudioEngine * _engine;
     bool  _isRunning;
     AVAudioPlayerNode * _player;
     float  _prePlayVolume;
+    bool  _requestingStop;
     AVAudioSession * _session;
     id /* block */  _stopEngineCompletion;
 }
 
+@property (nonatomic, copy) id /* block */ beginningCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, retain) APCPlayerEmbedInfo *embeddingInfo;
 @property (nonatomic, copy) id /* block */ stopEngineCompletion;
 
 + (id)playerWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 error:(id*)arg4;
 
 - (void).cxx_destruct;
+- (void)_playbackBufferLoopCompletionHdlr;
 - (void)_stopAudioEngineAndSession;
+- (id /* block */)beginningCallback;
 - (id)createAU:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
 - (void)createEngineAndAttachNodes;
 - (id)dispatchQueue;
+- (id)embeddingInfo;
 - (void)endPasscodeEmbedding;
 - (float)evaluateAsset;
 - (id)initWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 error:(id*)arg4;
 - (void)makeEngineConnections;
+- (void)setBeginningCallback:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setEmbeddingInfo:(id)arg1;
 - (void)setStopEngineCompletion:(id /* block */)arg1;
 - (void)setupAudioSession;
+- (void)startAPCPlayLoop;
+- (void)startAPCPlayLoopAtTime:(unsigned long long)arg1;
 - (bool)startEngine;
+- (bool)startEngineAtTime:(unsigned long long)arg1;
+- (bool)startEngineAtTime:(unsigned long long)arg1 withBeginning:(id /* block */)arg2;
 - (void)stopEngine:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)stopEngineAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (id /* block */)stopEngineCompletion;

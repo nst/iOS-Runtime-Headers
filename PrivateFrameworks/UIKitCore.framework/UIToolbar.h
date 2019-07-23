@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIToolbar : UIView <DebugHierarchyObject_Fallback, UIAccessibilityHUDGestureDelegate, UIBarPositioning, UIGestureRecognizerDelegatePrivate, _UIBarPositioningInternal> {
+@interface UIToolbar : UIView <UIAccessibilityHUDGestureDelegate, UIBarPositioning, UIGestureRecognizerDelegatePrivate, _UIBarPositioningInternal> {
     id  __appearanceStorage;
     bool  __wantsLetterpressContent;
     UIAccessibilityHUDGestureManager * _axHUDGestureManager;
@@ -105,16 +105,6 @@
 - (void)_updateBackgroundView;
 - (void)_updateBarForStyle;
 - (bool)_wantsLetterpressContent;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(long long)arg2;
 - (id)backgroundEffects;
@@ -123,8 +113,10 @@
 - (long long)barStyle;
 - (id)barTintColor;
 - (bool)centerTextButtons;
+- (void)dealloc;
 - (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(long long)arg1;
 - (id)delegate;
+- (id)description;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withItemList:(id)arg3;
@@ -166,7 +158,10 @@
 
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (id)ts_barButtonViews;
+- (void)ts_setBackgroundEffects:(id)arg1;
 - (void)ts_setBlurthroughBackground;
+- (void)ts_setTransparentBackground;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

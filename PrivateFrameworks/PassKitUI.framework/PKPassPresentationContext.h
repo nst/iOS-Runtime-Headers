@@ -6,6 +6,8 @@
     NSArray * _additionalPassUniqueIdentifiers;
     bool  _animated;
     bool  _fieldDetect;
+    bool  _forcePayment;
+    bool  _limitServerLoad;
     bool  _persistentCardEmulation;
     bool  _postPayment;
     <NSCopying> * _userInfo;
@@ -15,6 +17,8 @@
 @property (nonatomic, copy) NSArray *additionalPassUniqueIdentifiers;
 @property (nonatomic) bool animated;
 @property (getter=isFieldDetect, nonatomic) bool fieldDetect;
+@property (getter=wantsForcedPayment, nonatomic) bool forcePayment;
+@property (nonatomic) bool limitServerLoad;
 @property (getter=wantsPersistentCardEmulation, nonatomic) bool persistentCardEmulation;
 @property (getter=isPostPayment, nonatomic) bool postPayment;
 @property (nonatomic, copy) <NSCopying> *userInfo;
@@ -31,14 +35,18 @@
 - (id)description;
 - (bool)isFieldDetect;
 - (bool)isPostPayment;
+- (bool)limitServerLoad;
 - (void)setAdditionalPassUniqueIdentifiers:(id)arg1;
 - (void)setAnimated:(bool)arg1;
 - (void)setFieldDetect:(bool)arg1;
+- (void)setForcePayment:(bool)arg1;
+- (void)setLimitServerLoad:(bool)arg1;
 - (void)setPersistentCardEmulation:(bool)arg1;
 - (void)setPostPayment:(bool)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setWasAutomaticallySelected:(bool)arg1;
 - (id)userInfo;
+- (bool)wantsForcedPayment;
 - (bool)wantsPersistentCardEmulation;
 - (bool)wasAutomaticallySelected;
 

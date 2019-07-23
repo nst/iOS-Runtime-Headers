@@ -6,10 +6,12 @@
     NSData * _bagData;
     NSString * _clientName;
     NSString * _userAgent;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, readonly) NSArray *anonymousMetadataPreference;
 @property (nonatomic, readonly, copy) NSString *clientName;
+@property (nonatomic, readonly) NSNumber *cohortsLookbackInDays;
 @property (nonatomic, readonly) bool collectAnonymousMetadata;
 @property (nonatomic, readonly) bool collectScores;
 @property (nonatomic, readonly) NSURL *crowdsourcingURL;
@@ -38,6 +40,7 @@
 @property (nonatomic, readonly) double minimumIntervalBetweenQueriesFromBag;
 @property (nonatomic, readonly) unsigned long long minimumQueryLength;
 @property (nonatomic, readonly) NSNumber *otherRenderTimeout;
+@property (nonatomic, readonly, copy) NSString *parsecFeedbackFormat;
 @property (nonatomic, readonly, copy) NSDictionary *rawBag;
 @property (nonatomic, readonly, copy) NSArray *recentlyUsedAppIdentifierWhitelist;
 @property (nonatomic, readonly, copy) NSDictionary *resources;
@@ -53,7 +56,6 @@
 @property (nonatomic, readonly) NSNumber *searchRenderTimeout;
 @property (nonatomic, readonly) NSURL *searchURL;
 @property (nonatomic, readonly) bool sendGeoEnvironmentHeader;
-@property (nonatomic, readonly) bool sendProtobuf;
 @property (nonatomic, readonly) unsigned long long smartHistoryCompletionReturnCount;
 @property (nonatomic, readonly) bool smartHistoryEnabled;
 @property (nonatomic, readonly) bool smartHistoryFeatureFeedbackEnabled;
@@ -70,6 +72,7 @@
 @property (nonatomic, readonly) NSDictionary *tuscanyConfiguration;
 @property (nonatomic, readonly) bool use2LayerRanking;
 @property (nonatomic, readonly, copy) NSString *userAgent;
+@property (nonatomic, readonly) NSUserDefaults *userDefaults;
 @property (nonatomic, readonly, copy) NSString *version;
 @property (nonatomic, readonly) NSURL *warmURL;
 
@@ -87,6 +90,7 @@
 - (id)bag_numberForKey:(id)arg1;
 - (id)bag_stringForKey:(id)arg1;
 - (id)clientName;
+- (id)cohortsLookbackInDays;
 - (bool)collectAnonymousMetadata;
 - (bool)collectScores;
 - (id)crowdsourcingURL;
@@ -112,6 +116,7 @@
 - (id)initWithData:(id)arg1;
 - (id)initWithData:(id)arg1 userAgent:(id)arg2;
 - (id)initWithURL:(id)arg1 userAgent:(id)arg2;
+- (id)initWithURL:(id)arg1 userDefaults:(id)arg2;
 - (bool)isEnabled;
 - (bool)isRefreshDisabled;
 - (unsigned long long)maximumCachedQueriesToSend;
@@ -125,6 +130,7 @@
 - (double)minimumIntervalBetweenQueriesFromBag;
 - (unsigned long long)minimumQueryLength;
 - (id)otherRenderTimeout;
+- (id)parsecFeedbackFormat;
 - (id)personalizationParameters;
 - (id)rawBag;
 - (id)recentlyUsedAppIdentifierWhitelist;
@@ -141,7 +147,6 @@
 - (id)searchRenderTimeout;
 - (id)searchURL;
 - (bool)sendGeoEnvironmentHeader;
-- (bool)sendProtobuf;
 - (unsigned long long)smartHistoryCompletionReturnCount;
 - (bool)smartHistoryEnabled;
 - (bool)smartHistoryFeatureFeedbackEnabled;
@@ -159,6 +164,7 @@
 - (id)urlForIdentifier:(id)arg1;
 - (bool)use2LayerRanking;
 - (id)userAgent;
+- (id)userDefaults;
 - (id)valueForKey:(id)arg1;
 - (id)valueForKey:(id)arg1 override:(bool)arg2;
 - (id)version;

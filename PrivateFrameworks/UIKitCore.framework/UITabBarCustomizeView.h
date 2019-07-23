@@ -37,13 +37,8 @@
 @property (nonatomic, retain) NSArray *availableItems;
 @property (nonatomic, retain) UINavigationBar *navigationBar;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (long long)_barMetrics;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)adjustDragImageWithTouches:(id)arg1 withEvent:(id)arg2;
 - (id)availableItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

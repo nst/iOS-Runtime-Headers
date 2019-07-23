@@ -77,9 +77,8 @@
 - (id)faceRectNode;
 - (id)init;
 - (struct __CVPixelBufferPool { }*)inputBufferPool;
-- (bool)isFaceAnchorInRange:(id)arg1;
 - (struct __CVMetalTextureCache { }*)metalTextureCache;
-- (struct __CVBuffer { }*)newPixelBufferRenderedFromARFrame:(id)arg1 withInputs:(id)arg2 renderSize:(struct CGSize { double x1; double x2; })arg3 interfaceOrientation:(long long)arg4;
+- (struct __CVBuffer { }*)newPixelBufferRenderedFromARFrame:(id)arg1 withInputs:(id)arg2 renderSize:(struct CGSize { double x1; double x2; })arg3 interfaceOrientation:(long long)arg4 withFaceRectScaleFactor:(struct CGSize { double x1; double x2; })arg5;
 - (struct __CVBuffer { }*)newPixelBufferRenderedWithFaceAnchor:(id)arg1 withInputs:(id)arg2 renderSize:(struct CGSize { double x1; double x2; })arg3;
 - (struct CGPoint { double x1; double x2; })normalizedTopLeftFacePlanePointFromNormalizedUIKitPoint:(struct CGPoint { double x1; double x2; })arg1 onFacePlane:(bool)arg2;
 - (struct CGSize { double x1; double x2; })outputSize;

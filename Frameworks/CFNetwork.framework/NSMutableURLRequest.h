@@ -101,6 +101,7 @@
 - (void)ams_addParameters:(id)arg1 encoding:(long long)arg2 compressBody:(bool)arg3 error:(id*)arg4;
 - (void)ams_addPrimaryiCloudIdentifierHeader;
 - (void)ams_addRequestingProcessWithClient:(id)arg1;
+- (void)ams_addSilentEnrollmentHeadersForAccount:(id)arg1;
 - (void)ams_addStoreFrontHeaderFromAccount:(id)arg1 bagContract:(id)arg2;
 - (void)ams_addTimezoneOffsetHeader;
 - (void)ams_addUserAgentHeaderFromClient:(id)arg1 additionalComponents:(id)arg2;
@@ -190,6 +191,16 @@
 - (void)setSAPSignature:(id)arg1;
 - (void)setSAPversion:(id)arg1;
 - (void)setStoreMode:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewDeviceOutreachUI.framework/NewDeviceOutreachUI
+
+- (bool)_addGSHeadersForAccount:(id)arg1 withStore:(id)arg2 forceReprovisioning:(bool)arg3 avoidUI:(bool)arg4;
+- (id)_userAgent;
+- (id)bodyDescription;
+- (id)headerDescription;
+- (void)ndo_addOASHeadersWithOfferID:(id)arg1 serialNumber:(id)arg2;
+- (void)ndo_setCoverageRequestBodyWithSerialNumber:(id)arg1;
+- (bool)ndo_signWithAccountHeaders:(bool)arg1 avoidUI:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

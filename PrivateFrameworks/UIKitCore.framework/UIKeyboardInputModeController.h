@@ -121,6 +121,7 @@
 - (void)extensionsChanged;
 - (id)filteredInputModesForSiriLanguageFromInputModes:(id)arg1;
 - (id)filteredTVInputModesFromInputModes:(id)arg1;
+- (void)getHardwareKeyboardLanguage:(id*)arg1 countryCode:(id*)arg2;
 - (void)handleLastUsedInputMode:(id)arg1 withNewInputMode:(id)arg2;
 - (void)handleSpecificHardwareKeyboard;
 - (id)hardwareInputMode;
@@ -181,8 +182,10 @@
 - (void)startDictationConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)stopDictation;
 - (id)suggestedDictationLanguagesForDeviceLanguage;
+- (id)suggestedInputModesForCurrentHardwareKeyboardAndSuggestedInputModes:(id)arg1;
 - (id)suggestedInputModesForCurrentLocale;
 - (id)suggestedInputModesForCurrentLocale:(bool)arg1 fallbackToDefaultInputModes:(bool)arg2;
+- (id)suggestedInputModesForHardwareKeyboardLanguage:(id)arg1 countryCode:(id)arg2 inputModes:(id)arg3;
 - (id)suggestedInputModesForPreferredLanguages;
 - (id)suggestedInputModesForSiriLanguage;
 - (id)supportedInputModeIdentifiers;

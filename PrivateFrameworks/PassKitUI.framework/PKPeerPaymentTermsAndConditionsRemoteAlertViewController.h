@@ -3,7 +3,7 @@
  */
 
 @interface PKPeerPaymentTermsAndConditionsRemoteAlertViewController : SBUIRemoteAlertServiceViewController {
-    RemoteUIController * _termsController;
+    PKPeerPaymentTermsController * _termsController;
 }
 
 + (bool)_isSecureForRemoteViewService;

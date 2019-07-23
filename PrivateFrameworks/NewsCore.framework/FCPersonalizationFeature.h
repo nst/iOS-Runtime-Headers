@@ -18,7 +18,8 @@
 + (id)featureFromTagID:(id)arg1;
 + (id)featureObserver;
 + (id)featuresFromHeadline:(id)arg1;
-+ (id)featuresFromPersonalizingArticle:(id)arg1;
++ (id)featuresFromIssue:(id)arg1;
++ (id)featuresFromPersonalizingItem:(id)arg1;
 + (id)featuresFromTag:(id)arg1;
 + (id)featuresFromTagIDs:(id)arg1;
 + (id)featuresFromTodayPersonalizationEvent:(id)arg1;

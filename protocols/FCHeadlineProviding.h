@@ -17,7 +17,6 @@
 - (NSURL *)contentURL;
 - (FCCoverArt *)coverArt;
 - (NSDate *)displayDate;
-- (NSArray *)endOfArticleTopicIDs;
 - (unsigned long long)feedOrder;
 - (double)globalUserFeedback;
 - (bool)hasThumbnail;
@@ -37,6 +36,7 @@
 - (bool)isPressRelease;
 - (bool)isSponsored;
 - (bool)isTopStory;
+- (NSString *)language;
 - (NSDate *)lastFetchedDate;
 - (NSDate *)lastModifiedDate;
 - (NSString *)localDraftPath;
@@ -48,9 +48,10 @@
 - (NSArray *)publisherSpecifiedArticleIDs;
 - (NSString *)referencedArticleID;
 - (NSArray *)relatedArticleIDs;
-- (FCFeedPersonalizedArticleScoreProfile *)scoreProfile;
+- (FCFeedPersonalizedItemScoreProfile *)scoreProfile;
 - (NSString *)shortExcerpt;
 - (bool)showMinimalChrome;
+- (bool)showPublisherLogo;
 - (bool)showSubscriptionRequiredText;
 - (<FCChannelProviding> *)sourceChannel;
 - (NSString *)sourceName;
@@ -87,9 +88,17 @@
 @optional
 
 - (NSData *)backingArticleRecordData;
+- (NSString *)callToActionText;
 - (FCArticleContentManifest *)contentManifestWithContext:(id <FCContentContext>)arg1;
 - (FCHeadlineExperimentalTitleMetadata *)experimentalTitleMetadata;
-- (void)setExperimentalTitleMetadata:(FCHeadlineExperimentalTitleMetadata *)arg1;
+- (bool)isBundlePaid;
+- (bool)isIssueOnly;
+- (bool)isLocalDraft;
+- (NSArray *)linkedArticleIDs;
+- (NSArray *)linkedIssueIDs;
+- (FCIssue *)masterIssue;
+- (unsigned long long)role;
+- (bool)showBundleSoftPaywall;
 - (<FCHeadlineStocksFields> *)stocksFields;
 - (bool)webEmbedsEnabled;
 

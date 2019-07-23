@@ -96,6 +96,7 @@
 - (void)_addHomeWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_checkEventValidity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_checkName:(id)arg1 inHome:(id)arg2 withValidationOptions:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)_connectivityInfoForAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_declineInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_deleteDuetEvents:(id)arg1 completion:(id /* block */)arg2;
 - (void)_determineCacheDirectory;
@@ -170,6 +171,7 @@
 - (void)checkEventValidity:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkName:(id)arg1 inHome:(id)arg2 withValidationOptions:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (id)configuration;
+- (void)connectivityInfoForAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)context;
 - (id)currentAccessory;
 - (id)currentHome;

@@ -7,8 +7,12 @@
 }
 
 - (void).cxx_destruct;
+- (void)addPaymentSetupProducts:(id)arg1;
 - (id)allSetupProducts;
+- (id)init;
+- (id)productsForFeatureIdentifier:(unsigned long long)arg1;
 - (void)setPaymentSetupProducts:(id)arg1;
+- (void)setPaymentSetupProducts:(id)arg1 forType:(unsigned long long)arg2;
 - (id)setupProductsOfType:(unsigned long long)arg1;
 
 @end

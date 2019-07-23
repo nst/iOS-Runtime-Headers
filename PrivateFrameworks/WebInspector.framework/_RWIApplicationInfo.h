@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) bool allowsRemoteAutomation;
 @property (nonatomic, readonly) unsigned long long applicationState;
 @property (nonatomic, copy) NSString *bundleId;
-@property (nonatomic, retain) _RWIRelayConnectionToApplication *connection;
+@property (nonatomic) _RWIRelayConnectionToApplication *connection;
 @property (nonatomic, copy) NSString *debuggerConnectionIdentifier;
 @property (nonatomic, readonly) bool hasRemoteDebugSession;
 @property (nonatomic, readonly) bool hasUpdatedFromListing;

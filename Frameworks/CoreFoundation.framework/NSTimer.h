@@ -58,9 +58,4 @@
 + (void)blockInvoke:(id)arg1;
 + (id)is_timerWithTimeInterval:(double)arg1 block:(id /* block */)arg2 repeats:(bool)arg3;
 
-// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
-
-+ (id)safari_scheduledTimerWithTimeInterval:(double)arg1 repeats:(bool)arg2 block:(id /* block */)arg3;
-+ (id)safari_timerWithTimeInterval:(double)arg1 repeats:(bool)arg2 block:(id /* block */)arg3;
-
 @end

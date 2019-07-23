@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITabBarController : UIViewController <DebugHierarchyObject_Fallback, GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate> {
+@interface UITabBarController : UIViewController <GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate, _UIScrollViewScrollObserver, _UITVScrollViewManagerDelegate> {
     <UIViewControllerAnimatedTransitioning> * __animator;
     NSString * __backdropGroupName;
     <UIViewControllerInteractiveTransitioning> * __interactor;
+    bool  __shouldFocusViewControllerAfterTransition;
     UILongPressGestureRecognizer * _accessibilityLongPressGestureRecognizer;
     UIView * _accessoryView;
     UITapGestureRecognizer * _backGestureRecognizer;
@@ -19,11 +20,14 @@
     UIMoreNavigationController * _moreNavigationController;
     UITapGestureRecognizer * _nudgeLeftGestureRecognizer;
     UITapGestureRecognizer * _nudgeRightGestureRecognizer;
+    UIScrollView * _observingScrollView;
     NSMapTable * _rememberedFocusedItemsByViewController;
+    _UITVScrollViewManager * _scrollViewManager;
     UITapGestureRecognizer * _selectGestureRecognizer;
     UIViewController * _selectedViewController;
     UIViewController * _selectedViewControllerDuringWillAppear;
     UITabBar * _tabBar;
+    UIView * _tabBarContainerView;
     struct { 
         unsigned int isShowingMoreItem : 1; 
         unsigned int needsToRebuildItems : 1; 
@@ -48,6 +52,7 @@
 @property (setter=_setAnimator:, nonatomic, retain) <UIViewControllerAnimatedTransitioning> *_animator;
 @property (getter=_backdropGroupName, setter=_setBackdropGroupName:, nonatomic, retain) NSString *_backdropGroupName;
 @property (setter=_setInteractor:, nonatomic, retain) <UIViewControllerInteractiveTransitioning> *_interactor;
+@property (nonatomic) bool _shouldFocusViewControllerAfterTransition;
 @property (nonatomic, copy) NSArray *customizableViewControllers;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UITabBarControllerDelegate> *delegate;
@@ -80,6 +85,7 @@
 - (id)_accessoryView;
 - (id)_additionalViewControllersToCheckForUserActivity;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustContentViewFrameForOffscreenFocus:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 viewController:(id)arg2;
+- (void)_adjustFloatingTabBarForContentScrollView:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustTabBarFrameForOffscreenFocus:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 barPosition:(long long)arg2;
 - (id)_allContainedViewControllers;
 - (bool)_allowSelectionWithinMoreList;
@@ -111,11 +117,13 @@
 - (id)_interactor;
 - (void)_invalidateBarLayoutIfNecessary;
 - (bool)_isBarHidden;
+- (bool)_isFloaty;
 - (bool)_isPresentationContextByDefault;
 - (bool)_isSupportedInterfaceOrientation:(long long)arg1;
 - (bool)_isTabBarFocused;
 - (void)_layoutContainerView;
 - (void)_layoutViewController:(id)arg1;
+- (void)_observeScrollViewDidScroll:(id)arg1;
 - (id)_overridingPreferredFocusEnvironment;
 - (void)_performBackGesture:(id)arg1;
 - (void)_performFocusGesture:(unsigned long long)arg1;
@@ -134,6 +142,7 @@
 - (id)_rememberedFocusedItemsByViewController;
 - (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_safeAreaInsetsDidChangeForView;
+- (void)_scrollViewManagerDidFinishScrolling:(id)arg1;
 - (void)_selectDefaultViewControllerIfNecessaryWithAppearanceTransitions:(bool)arg1;
 - (id)_selectedViewControllerInTabBar;
 - (void)_setAccessoryView:(id)arg1;
@@ -150,6 +159,7 @@
 - (void)_setUpFocusContainerGuides;
 - (void)_setViewControllers:(id)arg1 animated:(bool)arg2;
 - (bool)_shouldAdjustContentViewFrameForOffscreenFocus:(id)arg1 adjustedTabBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (bool)_shouldFocusViewControllerAfterTransition;
 - (bool)_shouldPersistViewWhenCoding;
 - (bool)_shouldSynthesizeSupportedOrientations;
 - (bool)_shouldUseOnePartRotation;
@@ -165,6 +175,7 @@
 - (void)_updateLayoutForTraitCollection:(id)arg1;
 - (void)_updateOffscreenStatus:(bool)arg1;
 - (void)_updateTabBarLayout;
+- (void)_updateViewControllerForFloatingTabBar:(id)arg1;
 - (id)_viewControllerForSelectAtIndex:(unsigned long long)arg1;
 - (id)_viewControllerForTabBarItem:(id)arg1;
 - (id)_viewControllersInTabBar;
@@ -226,6 +237,7 @@
 - (void)setView:(id)arg1;
 - (void)setViewControllers:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(bool)arg2;
+- (void)set_shouldFocusViewControllerAfterTransition:(bool)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
@@ -259,11 +271,6 @@
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

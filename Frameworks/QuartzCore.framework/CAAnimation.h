@@ -130,8 +130,10 @@
 
 // Image: /System/Library/PrivateFrameworks/LocalAuthenticationPrivateUI.framework/LocalAuthenticationPrivateUI
 
+- (id /* block */)laui_didStartHandler;
+- (id /* block */)laui_didStopHandler;
+- (void)laui_setDidStartHandler:(id /* block */)arg1;
 - (void)laui_setDidStopHandler:(id /* block */)arg1;
-- (id /* block */)pkui_didStopHandler;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -157,8 +159,6 @@
 - (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
-
-+ (void)TSD_enableAdjustmentForLagacyCacheBoundaries;
 
 - (id)TSDCAAnimationContextCache;
 - (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;

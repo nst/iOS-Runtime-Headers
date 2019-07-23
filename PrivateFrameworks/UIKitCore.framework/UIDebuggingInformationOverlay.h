@@ -23,17 +23,12 @@
 @property (nonatomic) bool touchCaptureEnabled;
 @property (nonatomic, retain) NSMutableArray *touchObservers;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)overlay;
 + (void)popDisableApplyingConfigurations;
 + (void)prepareDebuggingOverlay;
 + (void)pushDisableApplyingConfigurations;
 
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)checkingTouches;
 - (struct CGPoint { double x1; double x2; })drawingOrigin;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

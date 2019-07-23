@@ -4,6 +4,7 @@
 
 @interface NTPBTagRecord : PBCodable <NSCopying> {
     NSMutableArray * _allowedStorefrontIDs;
+    NSString * _archiveIssueListID;
     NSData * _articleRecirculationConfiguration;
     NTPBRecordBase * _base;
     long long  _behaviorFlags;
@@ -43,7 +44,10 @@
     bool  _isHidden;
     bool  _isNotificationEnabled;
     bool  _isPublic;
+    NSString * _language;
+    NSMutableArray * _latestIssueIDs;
     NSString * _logoURL;
+    NSString * _magazineGenre;
     long long  _minimumNewsVersion;
     NSString * _name;
     NSString * _nameCompact;
@@ -58,9 +62,9 @@
     double  _nameImageScaleFactor;
     NSString * _nameImageURL;
     NSString * _parentID;
-    NSMutableArray * _pinnedArticleIDs;
     NSString * _primaryAudience;
     NSString * _publisherPaidAuthorizationURL;
+    NSMutableArray * _publisherPaidBundlePurchaseIDs;
     NTPBPublisherPaidDescriptionStrings * _publisherPaidDescriptionStrings;
     NSMutableArray * _publisherPaidFeldsparablePurchaseIDs;
     bool  _publisherPaidLeakyPaywallOptOut;
@@ -70,10 +74,6 @@
     NSMutableArray * _publisherSpecifiedArticleIds;
     NTPBDate * _publisherSpecifiedArticleIdsModifiedDate;
     NSMutableArray * _purchaseOfferableConfigurations;
-    NSMutableArray * _relatedChannelIDs;
-    NSMutableArray * _relatedChannelIDsForOnboardings;
-    NSMutableArray * _relatedTopicIDs;
-    NSMutableArray * _relatedTopicIDsForOnboardings;
     NSString * _replacementID;
     long long  _score;
     NSString * _subtitle;
@@ -82,6 +82,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *allowedStorefrontIDs;
+@property (nonatomic, retain) NSString *archiveIssueListID;
 @property (nonatomic, retain) NSData *articleRecirculationConfiguration;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic) long long behaviorFlags;
@@ -95,6 +96,7 @@
 @property (nonatomic, retain) NTPBFeedConfiguration *feedConfiguration;
 @property (nonatomic, retain) NSString *feedNavImageURL;
 @property (nonatomic) int groupingAvailability;
+@property (nonatomic, readonly) bool hasArchiveIssueListID;
 @property (nonatomic, readonly) bool hasArticleRecirculationConfiguration;
 @property (nonatomic, readonly) bool hasBase;
 @property (nonatomic) bool hasBehaviorFlags;
@@ -111,7 +113,9 @@
 @property (nonatomic) bool hasIsHidden;
 @property (nonatomic) bool hasIsNotificationEnabled;
 @property (nonatomic) bool hasIsPublic;
+@property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic, readonly) bool hasLogoURL;
+@property (nonatomic, readonly) bool hasMagazineGenre;
 @property (nonatomic) bool hasMinimumNewsVersion;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasNameCompact;
@@ -147,7 +151,10 @@
 @property (nonatomic) bool isHidden;
 @property (nonatomic) bool isNotificationEnabled;
 @property (nonatomic) bool isPublic;
+@property (nonatomic, retain) NSString *language;
+@property (nonatomic, retain) NSMutableArray *latestIssueIDs;
 @property (nonatomic, retain) NSString *logoURL;
+@property (nonatomic, retain) NSString *magazineGenre;
 @property (nonatomic) long long minimumNewsVersion;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nameCompact;
@@ -162,9 +169,9 @@
 @property (nonatomic) double nameImageScaleFactor;
 @property (nonatomic, retain) NSString *nameImageURL;
 @property (nonatomic, retain) NSString *parentID;
-@property (nonatomic, retain) NSMutableArray *pinnedArticleIDs;
 @property (nonatomic, retain) NSString *primaryAudience;
 @property (nonatomic, retain) NSString *publisherPaidAuthorizationURL;
+@property (nonatomic, retain) NSMutableArray *publisherPaidBundlePurchaseIDs;
 @property (nonatomic, retain) NTPBPublisherPaidDescriptionStrings *publisherPaidDescriptionStrings;
 @property (nonatomic, retain) NSMutableArray *publisherPaidFeldsparablePurchaseIDs;
 @property (nonatomic) bool publisherPaidLeakyPaywallOptOut;
@@ -174,10 +181,6 @@
 @property (nonatomic, retain) NSMutableArray *publisherSpecifiedArticleIds;
 @property (nonatomic, retain) NTPBDate *publisherSpecifiedArticleIdsModifiedDate;
 @property (nonatomic, retain) NSMutableArray *purchaseOfferableConfigurations;
-@property (nonatomic, retain) NSMutableArray *relatedChannelIDs;
-@property (nonatomic, retain) NSMutableArray *relatedChannelIDsForOnboardings;
-@property (nonatomic, retain) NSMutableArray *relatedTopicIDs;
-@property (nonatomic, retain) NSMutableArray *relatedTopicIDsForOnboardings;
 @property (nonatomic, retain) NSString *replacementID;
 @property (nonatomic) long long score;
 @property (nonatomic, retain) NSString *subtitle;
@@ -192,14 +195,11 @@
 + (Class)channelSectionIDsType;
 + (Class)iAdCategoriesType;
 + (Class)iAdKeywordsType;
-+ (Class)pinnedArticleIDsType;
++ (Class)latestIssueIDsType;
++ (Class)publisherPaidBundlePurchaseIDsType;
 + (Class)publisherPaidFeldsparablePurchaseIDsType;
 + (Class)publisherSpecifiedArticleIdsType;
 + (Class)purchaseOfferableConfigurationType;
-+ (Class)relatedChannelIDsForOnboardingType;
-+ (Class)relatedChannelIDsType;
-+ (Class)relatedTopicIDsForOnboardingType;
-+ (Class)relatedTopicIDsType;
 
 - (void)addAllowedStorefrontIDs:(id)arg1;
 - (void)addBlockedStorefrontIDs:(id)arg1;
@@ -207,17 +207,15 @@
 - (void)addChannelSectionIDs:(id)arg1;
 - (void)addIAdCategories:(id)arg1;
 - (void)addIAdKeywords:(id)arg1;
-- (void)addPinnedArticleIDs:(id)arg1;
+- (void)addLatestIssueIDs:(id)arg1;
+- (void)addPublisherPaidBundlePurchaseIDs:(id)arg1;
 - (void)addPublisherPaidFeldsparablePurchaseIDs:(id)arg1;
 - (void)addPublisherSpecifiedArticleIds:(id)arg1;
 - (void)addPurchaseOfferableConfiguration:(id)arg1;
-- (void)addRelatedChannelIDs:(id)arg1;
-- (void)addRelatedChannelIDsForOnboarding:(id)arg1;
-- (void)addRelatedTopicIDs:(id)arg1;
-- (void)addRelatedTopicIDsForOnboarding:(id)arg1;
 - (id)allowedStorefrontIDs;
 - (id)allowedStorefrontIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)allowedStorefrontIDsCount;
+- (id)archiveIssueListID;
 - (id)articleRecirculationConfiguration;
 - (id)base;
 - (long long)behaviorFlags;
@@ -237,14 +235,11 @@
 - (void)clearChannelSectionIDs;
 - (void)clearIAdCategories;
 - (void)clearIAdKeywords;
-- (void)clearPinnedArticleIDs;
+- (void)clearLatestIssueIDs;
+- (void)clearPublisherPaidBundlePurchaseIDs;
 - (void)clearPublisherPaidFeldsparablePurchaseIDs;
 - (void)clearPublisherSpecifiedArticleIds;
 - (void)clearPurchaseOfferableConfigurations;
-- (void)clearRelatedChannelIDs;
-- (void)clearRelatedChannelIDsForOnboardings;
-- (void)clearRelatedTopicIDs;
-- (void)clearRelatedTopicIDsForOnboardings;
 - (long long)contentProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticleListID;
@@ -255,6 +250,7 @@
 - (id)feedConfiguration;
 - (id)feedNavImageURL;
 - (int)groupingAvailability;
+- (bool)hasArchiveIssueListID;
 - (bool)hasArticleRecirculationConfiguration;
 - (bool)hasBase;
 - (bool)hasBehaviorFlags;
@@ -271,7 +267,9 @@
 - (bool)hasIsHidden;
 - (bool)hasIsNotificationEnabled;
 - (bool)hasIsPublic;
+- (bool)hasLanguage;
 - (bool)hasLogoURL;
+- (bool)hasMagazineGenre;
 - (bool)hasMinimumNewsVersion;
 - (bool)hasName;
 - (bool)hasNameCompact;
@@ -313,7 +311,12 @@
 - (bool)isHidden;
 - (bool)isNotificationEnabled;
 - (bool)isPublic;
+- (id)language;
+- (id)latestIssueIDs;
+- (id)latestIssueIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)latestIssueIDsCount;
 - (id)logoURL;
+- (id)magazineGenre;
 - (void)mergeFrom:(id)arg1;
 - (long long)minimumNewsVersion;
 - (id)name;
@@ -329,11 +332,11 @@
 - (double)nameImageScaleFactor;
 - (id)nameImageURL;
 - (id)parentID;
-- (id)pinnedArticleIDs;
-- (id)pinnedArticleIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)pinnedArticleIDsCount;
 - (id)primaryAudience;
 - (id)publisherPaidAuthorizationURL;
+- (id)publisherPaidBundlePurchaseIDs;
+- (id)publisherPaidBundlePurchaseIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)publisherPaidBundlePurchaseIDsCount;
 - (id)publisherPaidDescriptionStrings;
 - (id)publisherPaidFeldsparablePurchaseIDs;
 - (id)publisherPaidFeldsparablePurchaseIDsAtIndex:(unsigned long long)arg1;
@@ -350,21 +353,10 @@
 - (id)purchaseOfferableConfigurations;
 - (unsigned long long)purchaseOfferableConfigurationsCount;
 - (bool)readFrom:(id)arg1;
-- (id)relatedChannelIDs;
-- (id)relatedChannelIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)relatedChannelIDsCount;
-- (id)relatedChannelIDsForOnboardingAtIndex:(unsigned long long)arg1;
-- (id)relatedChannelIDsForOnboardings;
-- (unsigned long long)relatedChannelIDsForOnboardingsCount;
-- (id)relatedTopicIDs;
-- (id)relatedTopicIDsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)relatedTopicIDsCount;
-- (id)relatedTopicIDsForOnboardingAtIndex:(unsigned long long)arg1;
-- (id)relatedTopicIDsForOnboardings;
-- (unsigned long long)relatedTopicIDsForOnboardingsCount;
 - (id)replacementID;
 - (long long)score;
 - (void)setAllowedStorefrontIDs:(id)arg1;
+- (void)setArchiveIssueListID:(id)arg1;
 - (void)setArticleRecirculationConfiguration:(id)arg1;
 - (void)setBase:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
@@ -402,7 +394,10 @@
 - (void)setIsHidden:(bool)arg1;
 - (void)setIsNotificationEnabled:(bool)arg1;
 - (void)setIsPublic:(bool)arg1;
+- (void)setLanguage:(id)arg1;
+- (void)setLatestIssueIDs:(id)arg1;
 - (void)setLogoURL:(id)arg1;
+- (void)setMagazineGenre:(id)arg1;
 - (void)setMinimumNewsVersion:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameCompact:(id)arg1;
@@ -417,9 +412,9 @@
 - (void)setNameImageScaleFactor:(double)arg1;
 - (void)setNameImageURL:(id)arg1;
 - (void)setParentID:(id)arg1;
-- (void)setPinnedArticleIDs:(id)arg1;
 - (void)setPrimaryAudience:(id)arg1;
 - (void)setPublisherPaidAuthorizationURL:(id)arg1;
+- (void)setPublisherPaidBundlePurchaseIDs:(id)arg1;
 - (void)setPublisherPaidDescriptionStrings:(id)arg1;
 - (void)setPublisherPaidFeldsparablePurchaseIDs:(id)arg1;
 - (void)setPublisherPaidLeakyPaywallOptOut:(bool)arg1;
@@ -429,10 +424,6 @@
 - (void)setPublisherSpecifiedArticleIds:(id)arg1;
 - (void)setPublisherSpecifiedArticleIdsModifiedDate:(id)arg1;
 - (void)setPurchaseOfferableConfigurations:(id)arg1;
-- (void)setRelatedChannelIDs:(id)arg1;
-- (void)setRelatedChannelIDsForOnboardings:(id)arg1;
-- (void)setRelatedTopicIDs:(id)arg1;
-- (void)setRelatedTopicIDsForOnboardings:(id)arg1;
 - (void)setReplacementID:(id)arg1;
 - (void)setScore:(long long)arg1;
 - (void)setSubtitle:(id)arg1;

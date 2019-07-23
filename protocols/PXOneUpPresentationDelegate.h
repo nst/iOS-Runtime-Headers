@@ -7,6 +7,7 @@
 
 - (PXAssetsDataSourceManager *)oneUpPresentationDataSourceManager:(PXOneUpPresentation *)arg1;
 - (PXUIMediaProvider *)oneUpPresentationMediaProvider:(PXOneUpPresentation *)arg1;
+- (long long)oneUpPresentationOrigin:(PXOneUpPresentation *)arg1;
 
 @optional
 

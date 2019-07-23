@@ -3,9 +3,13 @@
  */
 
 @interface PKEntitlementWhitelist : NSObject {
+    bool  _AMPCardEnrollment;
     bool  _addSilently;
+    bool  _applePayTrustAllAccess;
     NSString * _applicationID;
     bool  _cardOnFilePayments;
+    NSString * _developerTeamID;
+    bool  _featuresAllAccess;
     bool  _inAppPayments;
     bool  _inAppPaymentsPrivate;
     NSArray * _merchantIdentifiers;
@@ -18,16 +22,21 @@
     bool  _paymentPresentation;
     bool  _peerPaymentAllAccess;
     int  _processIdentifier;
+    bool  _supportsDisbursements;
     NSArray * _teamIDs;
     bool  _trustedDeviceEnrollmentInfo;
     bool  _webPayments;
     bool  _winterpegPayments;
 }
 
+@property (readonly) bool AMPCardEnrollment;
 @property bool addSilently;
 @property (readonly) bool allAccess;
+@property (readonly) bool applePayTrustAllAccess;
 @property (readonly, copy) NSString *applicationID;
 @property (readonly) bool cardOnFilePayments;
+@property (readonly, copy) NSString *developerTeamID;
+@property (readonly) bool featuresAllAccess;
 @property (readonly) bool inAppPayments;
 @property (readonly) bool inAppPaymentsPrivate;
 @property (readonly, copy) NSArray *merchantIdentifiers;
@@ -40,6 +49,7 @@
 @property (readonly) bool paymentPresentation;
 @property (readonly) bool peerPaymentAllAccess;
 @property (readonly) int processIdentifier;
+@property (readonly) bool supportsDisbursements;
 @property (copy) NSArray *teamIDs;
 @property (readonly) bool trustedDeviceEnrollmentInfo;
 @property (readonly) bool webPayments;
@@ -48,6 +58,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)AMPCardEnrollment;
 - (id)_arrayValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
 - (bool)_boolValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
 - (void*)_copyValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
@@ -55,8 +66,11 @@
 - (id)_stringValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask { }*)arg2;
 - (bool)addSilently;
 - (bool)allAccess;
+- (bool)applePayTrustAllAccess;
 - (id)applicationID;
 - (bool)cardOnFilePayments;
+- (id)developerTeamID;
+- (bool)featuresAllAccess;
 - (bool)inAppPayments;
 - (bool)inAppPaymentsPrivate;
 - (id)initWithConnection:(id)arg1;
@@ -75,6 +89,7 @@
 - (void)setAddSilently:(bool)arg1;
 - (void)setPassTypeIDs:(id)arg1;
 - (void)setTeamIDs:(id)arg1;
+- (bool)supportsDisbursements;
 - (bool)supportsWebPayments;
 - (id)teamIDs;
 - (bool)trustedDeviceEnrollmentInfo;

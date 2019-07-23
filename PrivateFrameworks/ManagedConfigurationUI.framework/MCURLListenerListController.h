@@ -12,7 +12,9 @@
 + (bool)showingProfileInstallation;
 
 - (void)_pushProfileDetailsForProfileWithID:(id)arg1;
-- (void)_showSheetToInstallConfigurationProfile;
+- (void)_showSheetToInstallConfigurationProfileFromInstallationQueue;
+- (void)_showSheetToInstallConfigurationProfileFromPurgatory;
+- (void)_showSheetToInstallConfigurationProfileWithData:(id)arg1;
 - (void)_showSheetToInstallProvisioningProfile;
 - (void)handleURL:(id)arg1;
 

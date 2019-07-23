@@ -106,6 +106,7 @@
 @property (nonatomic, retain) ACAccountType *accountType;
 @property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, readonly) NSNumber *ams_DSID;
+@property (getter=ams_isHSA2, nonatomic, readonly) bool ams_HSA2;
 @property (getter=ams_isIDMSAccount, nonatomic, readonly) bool ams_IDMSAccount;
 @property (nonatomic, readonly) NSString *ams_altDSID;
 @property (nonatomic, readonly) NSArray *ams_cookies;
@@ -119,6 +120,7 @@
 @property (getter=ams_isLocalAccount, nonatomic, readonly) bool ams_localAccount;
 @property (getter=ams_isManagedAppleID, nonatomic, readonly) bool ams_managedAppleID;
 @property (getter=ams_isSandboxAccount, nonatomic, readonly) bool ams_sandboxAccount;
+@property (nonatomic, readonly) unsigned long long ams_securityLevel;
 @property (nonatomic, readonly) NSString *ams_storefront;
 @property (getter=isAuthenticated, nonatomic) bool authenticated;
 @property (nonatomic, readonly) NSString *authenticationType;
@@ -178,6 +180,7 @@
 @property (nonatomic, readonly) NSString *hashedDescription;
 @property (setter=ic_setDSID:, nonatomic, copy) NSNumber *ic_DSID;
 @property (getter=ic_isActiveLockerAccount, setter=ic_setActiveLockerAccount:, nonatomic) bool ic_activeLockerAccount;
+@property (setter=ic_setAgeVerificationExpirationDate:, nonatomic, copy) NSDate *ic_ageVerificationExpirationDate;
 @property (setter=ic_setAltDSID:, nonatomic, copy) NSString *ic_altDSID;
 @property (getter=ic_isCloudBackupEnabled, nonatomic, readonly) bool ic_cloudBackupEnabled;
 @property (setter=ic_setFirstName:, nonatomic, copy) NSString *ic_firstName;
@@ -185,6 +188,7 @@
 @property (getter=ic_isManagedAppleID, setter=ic_setManagedAppleID:, nonatomic) bool ic_managedAppleID;
 @property (getter=ic_isSandboxed, setter=ic_setSandboxed:, nonatomic) bool ic_sandboxed;
 @property (setter=ic_setStorefront:, nonatomic, copy) NSString *ic_storefront;
+@property (getter=ic_isSubscriptionStatusEnabled, setter=ic_setSubscriptionStatusEnabled:, nonatomic) bool ic_subscriptionStatusEnabled;
 @property (setter=ic_setUniqueIdentifier:, nonatomic, copy) NSNumber *ic_uniqueIdentifier;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) NSDate *lastCredentialRenewalRejectionDate;
@@ -457,15 +461,19 @@
 
 // Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
 
-+ (bool)_defaultValueForAccountFlag:(id)arg1;
++ (id)_defaultValueForAccountFlag:(id)arg1;
++ (bool)_isAccountFlagValue:(id)arg1 validForAccountFlag:(id)arg2;
 + (bool)_isAccountFlagWritable:(id)arg1;
 
+- (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned long long)arg2 expectedClass:(Class)arg3 error:(id*)arg4;
 - (id)_accountPropertyForKey:(id)arg1 expectedClass:(Class)arg2;
 - (id)_cookiesMatchingProperties:(id)arg1;
 - (id)_createCookieStorage;
+- (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned long long)arg3 expectedClass:(Class)arg4;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
 - (void)_setCookies:(id)arg1;
 - (id)ams_DSID;
+- (id)ams_accountFlagValueForAccountFlag:(id)arg1;
 - (id)ams_accountFlags;
 - (void)ams_addCookies:(id)arg1;
 - (id)ams_altDSID;
@@ -473,10 +481,12 @@
 - (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_creditsString;
 - (bool)ams_didAgreeToTerms;
+- (bool)ams_encryptAccountFlags;
 - (id)ams_firstName;
 - (id)ams_fullName;
 - (bool)ams_isDemoAccount;
 - (bool)ams_isDuplicate:(id)arg1;
+- (bool)ams_isHSA2;
 - (bool)ams_isIDMSAccount;
 - (bool)ams_isInGoodStanding;
 - (bool)ams_isLocalAccount;
@@ -495,6 +505,8 @@
 - (void)ams_removeCookiesMatchingProperties:(id)arg1;
 - (bool)ams_requiresAuthKitUpdate;
 - (id)ams_secureToken;
+- (unsigned long long)ams_securityLevel;
+- (void)ams_setAccountFlagValue:(id)arg1 forAccountFlag:(id)arg2;
 - (void)ams_setAccountFlags:(id)arg1;
 - (void)ams_setAgreedToTerms:(bool)arg1;
 - (void)ams_setAltDSID:(id)arg1;
@@ -671,6 +683,10 @@
 - (bool)ic_isPrimaryAppleAccount;
 - (bool)ic_supportsHTMLNotes;
 
+// Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
+
+- (bool)sc_isEnabledForStocksDataclass;
+
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)_ss_DSID;
@@ -688,14 +704,17 @@
 // Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
 
 - (id)ic_DSID;
+- (id)ic_ageVerificationExpirationDate;
 - (id)ic_altDSID;
 - (id)ic_firstName;
 - (bool)ic_isActiveLockerAccount;
 - (bool)ic_isCloudBackupEnabled;
 - (bool)ic_isManagedAppleID;
 - (bool)ic_isSandboxed;
+- (bool)ic_isSubscriptionStatusEnabled;
 - (id)ic_lastName;
 - (void)ic_setActiveLockerAccount:(bool)arg1;
+- (void)ic_setAgeVerificationExpirationDate:(id)arg1;
 - (void)ic_setAltDSID:(id)arg1;
 - (void)ic_setDSID:(id)arg1;
 - (void)ic_setFirstName:(id)arg1;
@@ -703,6 +722,7 @@
 - (void)ic_setManagedAppleID:(bool)arg1;
 - (void)ic_setSandboxed:(bool)arg1;
 - (void)ic_setStorefront:(id)arg1;
+- (void)ic_setSubscriptionStatusEnabled:(bool)arg1;
 - (void)ic_setUniqueIdentifier:(id)arg1;
 - (id)ic_storefront;
 - (id)ic_uniqueIdentifier;

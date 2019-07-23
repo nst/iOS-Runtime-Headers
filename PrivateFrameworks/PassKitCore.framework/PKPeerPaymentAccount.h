@@ -9,6 +9,7 @@
     NSURL * _associatedPassURL;
     NSString * _countryCode;
     PKCurrencyAmount * _currentBalance;
+    bool  _identityVerificationForDisbursementsRequired;
     bool  _identityVerificationRequired;
     NSDate * _lastUpdated;
     NSDecimalNumber * _maximumBalance;
@@ -29,6 +30,7 @@
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) PKCurrencyAmount *currentBalance;
 @property (nonatomic, readonly, copy) NSArray *defaultSuggestions;
+@property (nonatomic) bool identityVerificationForDisbursementsRequired;
 @property (nonatomic) bool identityVerificationRequired;
 @property (nonatomic, retain) NSDate *lastUpdated;
 @property (nonatomic, copy) NSDecimalNumber *maximumBalance;
@@ -58,10 +60,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
+- (bool)identityVerificationForDisbursementsRequired;
 - (bool)identityVerificationRequired;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 lastUpdated:(id)arg2;
+- (id)instantWithdrawalPromotionFeatureDescriptor;
 - (bool)isAccountOutOfDate;
 - (bool)isAccountStateDirty;
 - (bool)isEqual:(id)arg1;
@@ -80,6 +84,7 @@
 - (void)setAssociatedPassURL:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrentBalance:(id)arg1;
+- (void)setIdentityVerificationForDisbursementsRequired:(bool)arg1;
 - (void)setIdentityVerificationRequired:(bool)arg1;
 - (void)setLastUpdated:(id)arg1;
 - (void)setMaximumBalance:(id)arg1;
@@ -95,6 +100,7 @@
 - (unsigned long long)state;
 - (id)supportedFeatureDescriptors;
 - (bool)supportsCardBalancePromotion;
+- (bool)supportsInstantWithdrawal;
 - (bool)supportsLoadFromCard;
 - (bool)supportsRequestFromUser;
 - (bool)supportsSendToUser;

@@ -19,6 +19,6 @@
 - (void)increaseTriggerCount;
 - (id)init;
 - (unsigned long long)triggerCount;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 
 @end

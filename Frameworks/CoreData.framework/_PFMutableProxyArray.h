@@ -12,11 +12,15 @@
     NSMutableArray * _updatedObjectsArray;
 }
 
++ (Class)classForKeyedUnarchiver;
+
 - (bool)_isDeallocating;
 - (void)_rehash;
 - (bool)_tryRetain;
 - (void)addObject:(id)arg1;
 - (id)arrayFromObjectIDs;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;

@@ -11,15 +11,12 @@
 
 + (long long)cellStyle;
 
-- (void)_didFetchAppInfo:(id)arg1;
-- (void)_didFetchIcon:(id)arg1;
-- (void)_registerForAppInfoCacheNotifications;
-- (void)_registerForIconCacheNotifications;
+- (void)_didFetchAppInfoOrIcon:(id)arg1;
 - (bool)hasSubtitle;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (bool)isAppCell;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 - (void)setHasSubtitle:(bool)arg1;
+- (void)setSpecifier:(id)arg1;
 
 @end

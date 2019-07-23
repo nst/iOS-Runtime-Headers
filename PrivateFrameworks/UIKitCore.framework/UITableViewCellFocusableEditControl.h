@@ -6,16 +6,11 @@
     _UIFloatingContentView * _focusedFloatingContentView;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_currentImage;
 - (void)_ensureFocusedFloatingContentView;
 - (bool)_shouldHandlePressEvent:(id)arg1;
 - (void)_updateFloatingViewForCurrentTraits;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)layoutSubviews;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;

@@ -5,20 +5,22 @@
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::ProcessPoolConfiguration> { 
         struct type { 
-            unsigned char __lx[248]; 
+            unsigned char __lx[256]; 
         } data; 
     }  _processPoolConfiguration;
     unsigned long long  _wirelessContextIdentifier;
 }
 
 @property (nonatomic, copy) NSString *CTDataConnectionServiceType;
+@property (getter=isJITEnabled, nonatomic) bool JITEnabled;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, copy) NSArray *additionalReadAccessAllowedURLs;
-@property (nonatomic) bool allowsCellularAccess;
 @property (nonatomic) bool alwaysKeepAndReuseSwappedProcesses;
 @property (nonatomic, copy) NSArray *alwaysRevalidatedURLSchemes;
 @property (nonatomic) bool alwaysRunsAtBackgroundPriority;
+@property (nonatomic) bool attrStyleEnabled;
 @property (nonatomic, copy) NSArray *cachePartitionedURLSchemes;
+@property (nonatomic, copy) NSString *customWebContentServiceBundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long diskCacheSizeOverride;
@@ -29,6 +31,7 @@
 @property (nonatomic) unsigned long long maximumProcessCount;
 @property (nonatomic) bool pageCacheEnabled;
 @property (nonatomic) int presentingApplicationPID;
+@property (nonatomic) bool prewarmsProcessesAutomatically;
 @property (nonatomic) bool processSwapsOnNavigation;
 @property (nonatomic) bool processSwapsOnWindowOpenWithOpener;
 @property (nonatomic) bool shouldCaptureAudioInUIProcess;
@@ -37,17 +40,19 @@
 @property (nonatomic, copy) NSString *sourceApplicationSecondaryIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic) bool suppressesConnectionTerminationOnSystemChange;
+@property (nonatomic) bool usesWebProcessCache;
 @property (nonatomic) unsigned long long wirelessContextIdentifier;
 
 - (id)CTDataConnectionServiceType;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)additionalReadAccessAllowedURLs;
-- (bool)allowsCellularAccess;
 - (bool)alwaysKeepAndReuseSwappedProcesses;
 - (id)alwaysRevalidatedURLSchemes;
 - (bool)alwaysRunsAtBackgroundPriority;
+- (bool)attrStyleEnabled;
 - (id)cachePartitionedURLSchemes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customWebContentServiceBundleIdentifier;
 - (void)dealloc;
 - (id)description;
 - (long long)diskCacheSizeOverride;
@@ -55,25 +60,30 @@
 - (bool)ignoreSynchronousMessagingTimeoutsForTesting;
 - (id)init;
 - (id)injectedBundleURL;
+- (bool)isJITEnabled;
 - (unsigned long long)maximumProcessCount;
 - (bool)pageCacheEnabled;
 - (int)presentingApplicationPID;
+- (bool)prewarmsProcessesAutomatically;
 - (bool)processSwapsOnNavigation;
 - (bool)processSwapsOnWindowOpenWithOpener;
 - (void)setAdditionalReadAccessAllowedURLs:(id)arg1;
-- (void)setAllowsCellularAccess:(bool)arg1;
 - (void)setAlwaysKeepAndReuseSwappedProcesses:(bool)arg1;
 - (void)setAlwaysRevalidatedURLSchemes:(id)arg1;
 - (void)setAlwaysRunsAtBackgroundPriority:(bool)arg1;
+- (void)setAttrStyleEnabled:(bool)arg1;
 - (void)setCTDataConnectionServiceType:(id)arg1;
 - (void)setCachePartitionedURLSchemes:(id)arg1;
+- (void)setCustomWebContentServiceBundleIdentifier:(id)arg1;
 - (void)setDiskCacheSizeOverride:(long long)arg1;
 - (void)setDiskCacheSpeculativeValidationEnabled:(bool)arg1;
 - (void)setIgnoreSynchronousMessagingTimeoutsForTesting:(bool)arg1;
 - (void)setInjectedBundleURL:(id)arg1;
+- (void)setJITEnabled:(bool)arg1;
 - (void)setMaximumProcessCount:(unsigned long long)arg1;
 - (void)setPageCacheEnabled:(bool)arg1;
 - (void)setPresentingApplicationPID:(int)arg1;
+- (void)setPrewarmsProcessesAutomatically:(bool)arg1;
 - (void)setProcessSwapsOnNavigation:(bool)arg1;
 - (void)setProcessSwapsOnWindowOpenWithOpener:(bool)arg1;
 - (void)setShouldCaptureAudioInUIProcess:(bool)arg1;
@@ -81,12 +91,14 @@
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setSuppressesConnectionTerminationOnSystemChange:(bool)arg1;
+- (void)setUsesWebProcessCache:(bool)arg1;
 - (void)setWirelessContextIdentifier:(unsigned long long)arg1;
 - (bool)shouldCaptureAudioInUIProcess;
 - (bool)shouldTakeUIBackgroundAssertion;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (bool)suppressesConnectionTerminationOnSystemChange;
+- (bool)usesWebProcessCache;
 - (unsigned long long)wirelessContextIdentifier;
 
 @end

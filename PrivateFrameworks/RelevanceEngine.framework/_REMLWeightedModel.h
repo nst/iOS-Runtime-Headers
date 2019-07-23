@@ -3,17 +3,21 @@
  */
 
 @interface _REMLWeightedModel : NSObject {
-    REMLModel * _model;
-    float  _weight;
+    REInteractionDescriptor * _descriptor;
 }
 
-@property (nonatomic, retain) REMLModel *model;
-@property (nonatomic) float weight;
+@property (nonatomic, readonly) float weight;
+
++ (id)weightedModelWithDescriptor:(id)arg1 featureSet:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)model;
-- (void)setModel:(id)arg1;
-- (void)setWeight:(float)arg1;
+- (void)_configureMode:(id)arg1;
+- (bool)_loadModel:(id)arg1 fromURL:(id)arg2 error:(id*)arg3;
+- (void)enumerateModels:(id /* block */)arg1;
+- (bool)loadModelFromURL:(id)arg1 error:(id*)arg2;
+- (id)predictWithFeatures:(id)arg1;
+- (bool)saveModelToURL:(id)arg1 error:(id*)arg2;
+- (void)trainModelWithFeatureMap:(id)arg1 positiveEvent:(id)arg2;
 - (float)weight;
 
 @end

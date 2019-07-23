@@ -18,6 +18,7 @@
 - (bool)isBoundToContext;
 - (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
+- (NSString *)language;
 - (NSObject<NTHeadlinePersonalizationMetadata> *)personalizationMetadata;
 - (SFSearchResult *)searchResult;
 - (NSString *)shortExcerpt;
@@ -32,6 +33,7 @@
 - (unsigned long long)thumbnailSizePreset;
 - (NSString *)title;
 - (NSString *)titleCompact;
+- (NSArray *)topicIDs;
 - (NSString *)videoCallToActionTitle;
 - (NSURL *)videoCallToActionURL;
 - (double)videoDuration;

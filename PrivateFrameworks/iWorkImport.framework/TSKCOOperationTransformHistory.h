@@ -9,8 +9,8 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (void)didTransformOperationWithResult:(id)arg1 token:(id)arg2;
+- (void)didTransformOperationWithResult:(struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; })arg1 token:(id)arg2;
 - (id)init;
-- (id)willTransformOperation:(id)arg1 withOperation:(id)arg2;
+- (id)willTransformOperation:(struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; })arg1 withOperation:(struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; })arg2;
 
 @end

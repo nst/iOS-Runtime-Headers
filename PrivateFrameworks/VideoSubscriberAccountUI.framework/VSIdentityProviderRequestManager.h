@@ -62,6 +62,7 @@
 - (void)_completeDeletingAccountWithError:(id)arg1;
 - (id)_currentRequest;
 - (id)_currentRequestContext;
+- (void)_enqueueSubscriptionOperationIfRequiredForResponse:(id)arg1 asDependencyOf:(id)arg2;
 - (bool)_handleAccountMetadataRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
 - (void)_handleApplicationControllerError:(id)arg1 forRequest:(id)arg2;
 - (void)_handleApplicationControllerRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
@@ -82,6 +83,7 @@
 - (void)_stopApplicationControllerTimer;
 - (void)_stopObservingViewModel:(id)arg1;
 - (void)_submitApplicationControllerRequest:(id)arg1;
+- (id)_supportedProviderAuthenticationToken;
 - (void)_updateAccountWithAccountAuthentication:(id)arg1;
 - (id)account;
 - (bool)allowsApplicationControllerTimer;

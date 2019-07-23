@@ -31,7 +31,9 @@
 - (void)_startRecordingWithContextualStrings:(id)arg1 fileAtPath:(id)arg2;
 - (id)audioQueue;
 - (float)averagePowerLevel;
+- (void)clearDictationConnection;
 - (bool)currentlyRecording;
+- (void)dealloc;
 - (id)delegate;
 - (id)dictationConnection;
 - (void)dictationConnection:(id)arg1 didRecognizePackage:(id)arg2;

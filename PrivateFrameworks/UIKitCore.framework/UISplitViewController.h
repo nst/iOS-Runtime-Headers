@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UISplitViewController : UIViewController <DebugHierarchyObject_Fallback, GKContentRefresh, GKURLHandling> {
+@interface UISplitViewController : UIViewController <GKContentRefresh, GKURLHandling> {
     <UISplitViewControllerImpl> * _impl;
 }
 
@@ -174,11 +174,6 @@
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
 - (void)_gkForceNextContentUpdate;
@@ -187,13 +182,11 @@
 - (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/News/Tea.framework/Tea
-
-- (void)setDisplayMode:(long long)arg1 animated:(bool)arg2;
-
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (void)togglePrimaryViewVisibilityAnimated:(bool)arg1;
 - (bool)ts_isCollapsedOrCollapsing;
+- (bool)ts_isCollapsing;
 - (void)ts_setGutterWidth:(double)arg1;
 - (void)ts_setPrefersOverlayInRegularWidthPhone:(bool)arg1;
 

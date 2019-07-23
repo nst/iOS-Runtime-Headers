@@ -11,7 +11,7 @@
 - (void)effectEditorView:(CFXEffectEditorView *)arg1 didRemoveEffect:(CFXEffect *)arg2;
 - (void)effectEditorView:(CFXEffectEditorView *)arg1 didTransformEffect:(CFXEffect *)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (CFXEffect *)effectEditorView:(CFXEffectEditorView *)arg1 effectAtPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(CFXEffectEditorView *)arg1 frameForEffect:(CFXEffect *)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(CFXEffectEditorView *)arg1 frameForEffect:(CFXEffect *)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4 adjustForMinimumHitTestArea:(bool)arg5;
 - (bool)effectEditorView:(CFXEffectEditorView *)arg1 isEffectAtPoint:(struct CGPoint { double x1; double x2; })arg2 effect:(CFXEffect *)arg3;
 - (struct CGPoint { double x1; double x2; })effectEditorView:(CFXEffectEditorView *)arg1 removeButtonPositionForEffect:(CFXEffect *)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (bool)effectEditorView:(CFXEffectEditorView *)arg1 shouldEditTextForEffect:(CFXEffect *)arg2;
@@ -26,7 +26,7 @@
 - (void)effectEditorView:(CFXEffectEditorView *)arg1 didBeginEditingEffect:(CFXEffect *)arg2;
 - (void)effectEditorView:(CFXEffectEditorView *)arg1 didEndEditingByTappingOutSideEffectAtScreenPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)effectEditorView:(CFXEffectEditorView *)arg1 didEndEditingEffect:(CFXEffect *)arg2;
-- (void)effectEditorView:(CFXEffectEditorView *)arg1 didMoveEffect:(CFXEffect *)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (void)effectEditorView:(CFXEffectEditorView *)arg1 didMoveEffect:(CFXEffect *)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg4;
 - (unsigned long long)effectEditorView:(CFXEffectEditorView *)arg1 maximumTextLengthForEffect:(CFXEffect *)arg2;
 - (bool)effectEditorView:(CFXEffectEditorView *)arg1 presentCustomTextEditingUI:(CFXEffect *)arg2;
 - (bool)effectEditorView:(CFXEffectEditorView *)arg1 shouldMoveEffect:(CFXEffect *)arg2;

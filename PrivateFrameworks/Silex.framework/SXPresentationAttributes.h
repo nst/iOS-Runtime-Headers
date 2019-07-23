@@ -11,6 +11,7 @@
     bool  _enableViewportDebugging;
     bool  _fadeInComponents;
     unsigned long long  _presentationMode;
+    bool  _testingConditionEnabled;
 }
 
 @property (nonatomic) struct CGSize { double x1; double x2; } canvasSize;
@@ -19,6 +20,7 @@
 @property (nonatomic) bool fadeInComponents;
 @property (nonatomic, readonly) bool fadeWhenTransitioning;
 @property (nonatomic) unsigned long long presentationMode;
+@property (nonatomic) bool testingConditionEnabled;
 
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })canvasSize;
@@ -35,5 +37,7 @@
 - (void)setEnableViewportDebugging:(bool)arg1;
 - (void)setFadeInComponents:(bool)arg1;
 - (void)setPresentationMode:(unsigned long long)arg1;
+- (void)setTestingConditionEnabled:(bool)arg1;
+- (bool)testingConditionEnabled;
 
 @end

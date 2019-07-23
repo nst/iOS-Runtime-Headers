@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface TVApplicationController : NSObject <IKAppContextInspectorDelegate, IKAppDeviceConfig, _TVAppNavigationControllerDelegate> {
+@interface TVApplicationController : NSObject <IKAppContextDelegate, IKAppContextInspectorDelegate, IKAppDeviceConfig, _TVAppNavigationControllerDelegate> {
     IKAppContext * _appContext;
     IKAppDataStorage * _appLocalStorage;
+    UIViewController<TVAppRootViewController> * _appRootViewController;
     _TVMLKitApplication * _application;
     _TVApplicationInspector * _applicationInspector;
     TVApplicationControllerContext * _context;
@@ -13,8 +14,6 @@
     long long  _interfaceOrientation;
     <UITraitEnvironment> * _keyTraitEnvironment;
     NSDictionary * _launchOpenURLOptions;
-    _TVRootMenuBarController * _menuBarController;
-    _TVAppNavigationController * _navigationController;
     NSDictionary * _openURLReloadOptions;
     NSDictionary * _openURLResumeOptions;
     bool  _popViewControllerOnBackground;
@@ -24,11 +23,12 @@
     double  _reloadOnResumeMinInterval;
     NSXPCListener * _serviceListener;
     bool  _suspended;
-    IKAppTabBar * _tabBar;
     UIWindow * _window;
 }
 
 @property (nonatomic, readonly) UINavigationController *_currentNavigationController;
+@property (nonatomic, readonly) IKAppContext *appContext;
+@property (nonatomic, readonly) _TVApplicationInspector *applicationInspector;
 @property (nonatomic, readonly) TVApplicationControllerContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <TVApplicationControllerDelegate> *delegate;
@@ -57,9 +57,11 @@
 - (void)_openURLControllerHandler:(bool)arg1;
 - (void)_openURLOnAppLaunchControllerDidDisplay:(id)arg1;
 - (void)_reloadControllerDidDisplay:(id)arg1;
+- (id)_rootViewController;
 - (bool)_shouldReloadOnResume;
 - (void)_statusBarOrientationDidChange:(id)arg1;
 - (id)activeDocument;
+- (id)appContext;
 - (void)appContext:(id)arg1 didChangeInspectElementMode:(bool)arg2;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2;
@@ -73,6 +75,7 @@
 - (bool)appNavigationController:(id)arg1 shouldIgnoreDismissalForViewController:(id)arg2;
 - (bool)appNavigationController:(id)arg1 shouldOverrideModalBehaviorForDocument:(id)arg2 andExistingDocument:(id)arg3;
 - (void)applicationDidResume:(id)arg1;
+- (id)applicationInspector;
 - (void)applicationWillSuspend:(id)arg1;
 - (bool)cancelHighlightViewForAppContext:(id)arg1;
 - (id)context;

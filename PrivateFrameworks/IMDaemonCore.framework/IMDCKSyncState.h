@@ -8,8 +8,11 @@
 }
 
 @property (nonatomic) long long accountStatus;
+@property (nonatomic, copy) NSDictionary *analyticSyncDatesDictionary;
+@property (nonatomic) bool createdChatZone;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <IMDCKSyncStateDelegate> *delegate;
+@property (nonatomic) bool deletedZones;
 @property (readonly, copy) NSString *description;
 @property (getter=isDisablingDevices, nonatomic) bool disablingDevices;
 @property (getter=isEligibleForTruthZone, nonatomic) bool eligibleForTruthZone;
@@ -33,19 +36,29 @@
 @property (getter=isSyncingPaused, nonatomic) bool syncingPaused;
 
 + (id)logHandle;
++ (void)removeBuildObjectsFromDict:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_describeErrors:(id)arg1;
 - (void)_finishBatchChange;
+- (void)_removeObjectForKey:(id)arg1 forDictionary:(id)arg2;
+- (void)_setObject:(id)arg1 forKey:(id)arg2 forDictionary:(id)arg3 shouldSetBuild:(bool)arg4;
 - (void)_setStartingSync;
+- (bool)_shouldReportNewUserIfCreatedChatZones:(bool)arg1 deletedZones:(bool)arg2;
 - (void)_startBatchChange;
 - (long long)accountStatus;
 - (void)addSyncError:(id)arg1;
+- (id)analyticSyncDatesDictionary;
 - (void)broadcastSyncState;
 - (void)clearLocalCloudKitSyncState;
 - (void)clearSyncErrors;
+- (bool)createdChatZone;
 - (id)delegate;
+- (bool)deletedZones;
+- (id)describeErrors;
 - (id)description;
 - (id)exitDate;
+- (id)getAnalyticSyncDatesObjectForKey:(id)arg1;
 - (id)init;
 - (id)initWithKeyValueCollection:(id)arg1;
 - (bool)isDisablingDevices;
@@ -64,9 +77,14 @@
 - (void)keyValueCollection:(id)arg1 willUpdateValues:(id)arg2;
 - (id)lastSyncDate;
 - (id)logHandle;
+- (void)removeObjectFromAnalyticSyncDatesDictionaryForKey:(id)arg1;
 - (id)serializedRepresentation;
 - (void)setAccountStatus:(long long)arg1;
+- (void)setAnalyticSyncDatesDictionary:(id)arg1;
+- (void)setAnalyticSyncDatesDictionaryObject:(id)arg1 forKey:(id)arg2 shouldOverrideIfExists:(bool)arg3;
+- (void)setCreatedChatZone:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDeletedZones:(bool)arg1;
 - (void)setDisablingDevices:(bool)arg1;
 - (void)setEligibleForTruthZone:(bool)arg1;
 - (void)setErrorToAccountNeedsRepair;
@@ -93,5 +111,8 @@
 - (unsigned long long)syncControllerSyncState;
 - (long long)syncControllerSyncType;
 - (id)syncErrors;
+- (id)syncReportDictionary;
+- (id)syncReportDictionaryForAttempt:(unsigned long long)arg1 withSuccess:(bool)arg2;
+- (id)syncUserType;
 
 @end

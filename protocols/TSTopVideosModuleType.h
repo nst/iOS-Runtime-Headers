@@ -5,6 +5,6 @@
 
 @required
 
-- (UIViewController<TSHeadlineGroupConfigurable><NFReuseIdentifiable><TSVideoGroupRoutedType> *)createViewController;
+- (<TSTopVideosPluginFactoryType> *)createPluginFactoryForParentView:(UIView *)arg1;
 
 @end

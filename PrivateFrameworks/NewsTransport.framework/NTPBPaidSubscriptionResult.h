@@ -9,6 +9,7 @@
     NSString * _campaignId;
     NSString * _campaignType;
     NSString * _creativeId;
+    NSString * _groupFeedId;
     int  _groupType;
     struct { 
         unsigned int groupType : 1; 
@@ -20,8 +21,11 @@
         unsigned int subscriptionOnlyArticlePreview : 1; 
     }  _has;
     NSString * _iadQtoken;
+    NTPBIssueData * _issueData;
     int  _paidSubscriptionConversionPointType;
+    NSString * _parentFeedId;
     int  _parentFeedType;
+    NSString * _purchaseId;
     int  _resultType;
     bool  _sawSubscriptionSheet;
     NSString * _sectionId;
@@ -36,6 +40,7 @@
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupType;
 @property (nonatomic) bool hasArrivedFromAd;
 @property (nonatomic, readonly) bool hasArticleId;
@@ -43,10 +48,14 @@
 @property (nonatomic, readonly) bool hasCampaignId;
 @property (nonatomic, readonly) bool hasCampaignType;
 @property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadQtoken;
+@property (nonatomic, readonly) bool hasIssueData;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointType;
+@property (nonatomic, readonly) bool hasParentFeedId;
 @property (nonatomic) bool hasParentFeedType;
+@property (nonatomic, readonly) bool hasPurchaseId;
 @property (nonatomic) bool hasResultType;
 @property (nonatomic) bool hasSawSubscriptionSheet;
 @property (nonatomic, readonly) bool hasSectionId;
@@ -54,8 +63,11 @@
 @property (nonatomic) bool hasSubscriptionOnlyArticlePreview;
 @property (nonatomic, readonly) bool hasSubscriptionPurchaseSessionId;
 @property (nonatomic, retain) NSString *iadQtoken;
+@property (nonatomic, retain) NTPBIssueData *issueData;
 @property (nonatomic) int paidSubscriptionConversionPointType;
+@property (nonatomic, retain) NSString *parentFeedId;
 @property (nonatomic) int parentFeedType;
+@property (nonatomic, retain) NSString *purchaseId;
 @property (nonatomic) int resultType;
 @property (nonatomic) bool sawSubscriptionSheet;
 @property (nonatomic, retain) NSString *sectionId;
@@ -76,6 +88,7 @@
 - (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)groupFeedId;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
 - (bool)hasArrivedFromAd;
@@ -84,10 +97,14 @@
 - (bool)hasCampaignId;
 - (bool)hasCampaignType;
 - (bool)hasCreativeId;
+- (bool)hasGroupFeedId;
 - (bool)hasGroupType;
 - (bool)hasIadQtoken;
+- (bool)hasIssueData;
 - (bool)hasPaidSubscriptionConversionPointType;
+- (bool)hasParentFeedId;
 - (bool)hasParentFeedType;
+- (bool)hasPurchaseId;
 - (bool)hasResultType;
 - (bool)hasSawSubscriptionSheet;
 - (bool)hasSectionId;
@@ -97,11 +114,14 @@
 - (unsigned long long)hash;
 - (id)iadQtoken;
 - (bool)isEqual:(id)arg1;
+- (id)issueData;
 - (void)mergeFrom:(id)arg1;
 - (int)paidSubscriptionConversionPointType;
 - (id)paidSubscriptionConversionPointTypeAsString:(int)arg1;
+- (id)parentFeedId;
 - (int)parentFeedType;
 - (id)parentFeedTypeAsString:(int)arg1;
+- (id)purchaseId;
 - (bool)readFrom:(id)arg1;
 - (int)resultType;
 - (bool)sawSubscriptionSheet;
@@ -112,6 +132,7 @@
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
 - (void)setCreativeId:(id)arg1;
+- (void)setGroupFeedId:(id)arg1;
 - (void)setGroupType:(int)arg1;
 - (void)setHasArrivedFromAd:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
@@ -121,8 +142,11 @@
 - (void)setHasSawSubscriptionSheet:(bool)arg1;
 - (void)setHasSubscriptionOnlyArticlePreview:(bool)arg1;
 - (void)setIadQtoken:(id)arg1;
+- (void)setIssueData:(id)arg1;
 - (void)setPaidSubscriptionConversionPointType:(int)arg1;
+- (void)setParentFeedId:(id)arg1;
 - (void)setParentFeedType:(int)arg1;
+- (void)setPurchaseId:(id)arg1;
 - (void)setResultType:(int)arg1;
 - (void)setSawSubscriptionSheet:(bool)arg1;
 - (void)setSectionId:(id)arg1;

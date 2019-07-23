@@ -14,8 +14,8 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_clear;
 - (void)_handleMemoryPressure;
-- (void)_handleTimeout;
 - (void)dealloc;
 - (id)init;
 - (void)runBlock:(id /* block */)arg1;

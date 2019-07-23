@@ -24,6 +24,7 @@
 - (id)descriptionForPersistentStore:(id)arg1;
 - (id)init;
 - (id)lastPersistentHistoryTokenByStoreIdentifier;
+- (id)localPersistentStoreMetadataValueForKey:(id)arg1;
 - (id)newBackgroundContext;
 - (void)performBackgroundTask:(id /* block */)arg1;
 - (void)performBackgroundTaskAndWait:(id /* block */)arg1;
@@ -31,6 +32,7 @@
 - (id)persistentHistoryTokenForStore:(id)arg1;
 - (void)savePersistentHistoryToken:(id)arg1 forStore:(id)arg2;
 - (void)setCoreDataQueue:(id)arg1;
+- (void)setLocalPersistentStoreValue:(id)arg1 forKey:(id)arg2;
 - (void)setPersistentContainer:(id)arg1;
 - (id)viewContext;
 

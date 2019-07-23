@@ -58,7 +58,6 @@
 - (long long)diskSpaceBudgetForThumbnails;
 - (id)init;
 - (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2;
-- (void)prefetchResource:(unsigned long long)arg1 forAssetsWithObjectIDs:(id)arg2;
 - (void)prefetchResourcesWithPredicates:(id)arg1;
 - (id)prefetchStatusForDebug:(bool)arg1;
 - (void)startAutomaticPrefetch;

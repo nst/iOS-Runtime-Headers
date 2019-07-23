@@ -15,13 +15,15 @@
 - (GEOAssociatedApp *)_associatedApp;
 - (GEOMapItemPlaceAttribution *)_attribution;
 - (NSURL *)_bestAvatarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (NSURL *)_bestHeroBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (NSURL *)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (unsigned long long)_brandMUID;
 - (NSArray *)_browseCategories;
 - (GEOPDBusinessClaim *)_businessClaim;
+- (NSArray *)_businessHours;
 - (NSString *)_businessURL;
 - (NSArray *)_childPlaces;
 - (GEOMapItemClientAttributes *)_clientAttributes;
-- (NSArray *)_completeOperatingHours;
 - (GEOMapItemContainedPlace *)_containedPlace;
 - (unsigned long long)_customIconID;
 - (NSString *)_disambiguationName;
@@ -33,7 +35,9 @@
 - (bool)_hasAcceptsApplePayAmenity;
 - (bool)_hasAnyAmenities;
 - (bool)_hasAreaInMeters;
+- (bool)_hasBrandMUID;
 - (bool)_hasBusinessClaim;
+- (bool)_hasBusinessHours;
 - (bool)_hasCurrentOperatingHours;
 - (bool)_hasDelivery;
 - (bool)_hasDeliveryAmenity;
@@ -43,6 +47,7 @@
 - (bool)_hasGenderNeutralRestroom;
 - (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
+- (bool)_hasLinkedServices;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasMUID;
 - (bool)_hasOperatingHours;
@@ -61,6 +66,7 @@
 - (bool)_isInLinkedPlaceRelationship;
 - (bool)_isStandaloneBrand;
 - (bool)_isTransitDisplayFeature;
+- (NSArray *)_linkedServices;
 - (NSArray *)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (<GEOMapItem> *)_mapItemByStrippingOptionalData;
 - (GEOMessageLink *)_messageLink;
@@ -68,7 +74,6 @@
 - (bool)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned long long)_openingHoursOptions;
-- (NSArray *)_operatingHours;
 - (bool)_optsOutOfTelephoneAds;
 - (int)_parsecSectionType;
 - (NSArray *)_photos;
@@ -104,6 +109,14 @@
 - (NSString *)_vendorID;
 - (int)_venueFeatureType;
 - (<GEOMapItemVenueInfo> *)_venueInfo;
+- (NSString *)_walletCategoryIdentifier;
+- (NSString *)_walletCategoryLocalizedString;
+- (NSString *)_walletCategoryLocalizedStringLocale;
+- (GEOStyleAttributes *)_walletCategoryStyling;
+- (NSString *)_walletMapsCategoryIdentifier;
+- (NSString *)_walletPlaceLocalizedString;
+- (NSString *)_walletPlaceLocalizedStringLocale;
+- (GEOStyleAttributes *)_walletPlaceStyling;
 - (NSURL *)_webURL;
 - (unsigned int)_wifiFingerprintConfidence;
 - (int)_wifiFingerprintLabelStatusCode;
@@ -138,6 +151,8 @@
 - (bool)isValid;
 - (NSString *)name;
 - (int)referenceFrame;
+- (NSString *)secondaryName;
+- (NSString *)secondarySpokenName;
 - (NSString *)shortAddress;
 - (NSArray *)spatialMappedCategories;
 - (NSArray *)spatialMappedPlaceCategories;

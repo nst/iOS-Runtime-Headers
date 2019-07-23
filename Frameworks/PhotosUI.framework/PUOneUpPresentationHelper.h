@@ -15,6 +15,7 @@
     PUChangeDirectionValueFilter * __panDirectionValueFilter;
     PUPinchedTileTracker * __pinchedTileTracker;
     long long  __presentationEndTimeoutIdentifier;
+    long long  __presentationOrigin;
     bool  __shouldPauseLibraryChanges;
     long long  __state;
     UITapGestureRecognizer * __tapGestureRecognizer;
@@ -69,6 +70,7 @@
 @property (setter=_setPanDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_panDirectionValueFilter;
 @property (setter=_setPinchedTileTracker:, nonatomic, retain) PUPinchedTileTracker *_pinchedTileTracker;
 @property (setter=_setPresentationEndTimeoutIdentifier:, nonatomic) long long _presentationEndTimeoutIdentifier;
+@property (nonatomic) long long _presentationOrigin;
 @property (setter=_setShouldPauseLibraryChanges:, nonatomic) bool _shouldPauseLibraryChanges;
 @property (setter=_setState:, nonatomic) long long _state;
 @property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
@@ -120,6 +122,7 @@
 - (void)_presentOneUpViewController:(id)arg1 animated:(bool)arg2 interactiveMode:(long long)arg3 completion:(id /* block */)arg4;
 - (void)_presentationEndDidTimeOut:(long long)arg1;
 - (long long)_presentationEndTimeoutIdentifier;
+- (long long)_presentationOrigin;
 - (id)_scrollViewForPreviewing;
 - (void)_setAssetReferencesDisplayedInTilingView:(id)arg1;
 - (void)_setBrowsingSession:(id)arg1;
@@ -196,6 +199,7 @@
 - (void)setPhotosDataSource:(id)arg1;
 - (void)setUnlockDeviceHandler:(id /* block */)arg1;
 - (void)setUnlockDeviceStatus:(id /* block */)arg1;
+- (void)set_presentationOrigin:(long long)arg1;
 - (bool)shouldStartPreviewingSimultaneouslyWithGestureRecognizer:(id)arg1;
 - (id)tilingView:(id)arg1 dataSourceConverterForTransitionFromLayout:(id)arg2 toLayout:(id)arg3;
 - (void)tilingView:(id)arg1 didStopUsingTileController:(id)arg2;

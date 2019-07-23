@@ -21,6 +21,7 @@
 - (bool)isAborting;
 - (bool)isEnabled;
 - (void)jitter;
+- (id)loadDelegate;
 - (void)restart;
 - (void)setEnabled:(bool)arg1;
 - (void)stopIfNeeded;

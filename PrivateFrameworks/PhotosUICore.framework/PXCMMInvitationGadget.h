@@ -53,6 +53,7 @@
 - (id)assetsProgressListener;
 - (id)backgroundColor;
 - (void)commitPreviewViewController:(id)arg1;
+- (void)contentHasBeenSeen;
 - (struct NSObject { Class x1; }*)contentView;
 - (id)delegate;
 - (id)gadgetSpec;

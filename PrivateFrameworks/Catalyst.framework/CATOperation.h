@@ -90,7 +90,6 @@
 - (id)stateDescription;
 - (long long)totalUnitCount;
 - (id)userInfo;
-- (void)waitUntilFinished;
 - (bool)whenStateIs:(int)arg1 atomicallySwapWith:(int)arg2;
 
 @end

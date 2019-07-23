@@ -66,8 +66,7 @@
                 unsigned long long signpost_id; 
                 unsigned int signpost_name_offset; 
                 char *signpost_name; 
-                struct os_trace_context_data_s {} *ctxdata; 
-                unsigned long long ctxdata_sz; 
+                bool has_context_data; 
             } log_message; 
             struct { 
                 char *action; 

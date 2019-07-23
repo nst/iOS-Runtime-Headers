@@ -57,9 +57,11 @@
 @property (nonatomic, copy) NSString *widgetFieldType;
 @property (nonatomic, copy) NSString *widgetStringValue;
 
++ (bool)annotationPageLayerEffectIsFlipped;
 + (id)getProperNameStringFromString:(id)arg1;
 + (long long)lineStyleFromName:(id)arg1;
 + (id)nameForLineStyle:(long long)arg1;
++ (void)setAnnotationPageLayerEffectIsFlipped:(bool)arg1;
 
 - (void).cxx_destruct;
 - (struct CGPDFAnnotation { }*)CGPDFAnnotation;
@@ -76,6 +78,7 @@
 - (void)_didSetValue:(id)arg1 forAnnotationKey:(id)arg2;
 - (void)_drawAnnotationWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)_generateFormFieldName;
+- (id)_getAttributedStringForTextWidget;
 - (bool)_isValidAnnotationKey:(id)arg1;
 - (void)_printDictionary:(id)arg1 atDepth:(int)arg2;
 - (void)_releaseDictionaryRef;
@@ -152,6 +155,7 @@
 - (id)control;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createDefaultAppearanceStringWithFont:(id)arg1 fontColor:(id)arg2;
+- (void)createTextStorageAndLayoutManager;
 - (void)dealloc;
 - (id)debugQuickLookObject;
 - (void)derotateContext:(struct CGContext { }*)arg1;
@@ -159,6 +163,7 @@
 - (id)destination;
 - (struct __CFDictionary { }*)dictionaryRef;
 - (struct __CFDictionary { }*)dictionaryRefExcludingParentOrPopup;
+- (void)discardTextStorageAndLayoutManager;
 - (void)drawAppearance:(struct CGPDFForm { }*)arg1 withBox:(long long)arg2 inContext:(struct CGContext { }*)arg3;
 - (void)drawAppearance:(struct CGPDFForm { }*)arg1 withBox:(long long)arg2 inContext:(struct CGContext { }*)arg3 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 scaleProportional:(bool)arg5;
 - (void)drawAppearance:(struct CGPDFForm { }*)arg1 withBox:(long long)arg2 inContext:(struct CGContext { }*)arg3 scaleProportional:(bool)arg4;
@@ -206,7 +211,9 @@
 - (bool)isReadOnlyAnnotation;
 - (bool)isSelected;
 - (bool)isSignature;
+- (bool)isTextWidget;
 - (bool)isWidgetOrMarkupAnnotation;
+- (id)layoutManager;
 - (long long)markupType;
 - (long long)maximumLength;
 - (id)modificationDate;
@@ -236,6 +243,7 @@
 - (id)replaceTextWidgetWithString:(id)arg1;
 - (bool)savesAppearanceStream;
 - (double)scaleFactor;
+- (id)scaledFontForTextWidget;
 - (void)secondaryInit;
 - (void)setAccessibilityNode:(id)arg1;
 - (void)setAction:(id)arg1;
@@ -273,6 +281,7 @@
 - (void)setIsFullyConstructed:(bool)arg1;
 - (void)setIsSelected:(bool)arg1;
 - (void)setIsSignature:(bool)arg1;
+- (void)setLayoutManager:(id)arg1;
 - (void)setListChoice:(bool)arg1;
 - (void)setLocked:(bool)arg1;
 - (void)setMarkupType:(long long)arg1;
@@ -306,6 +315,8 @@
 - (void)setStampName:(id)arg1;
 - (void)setStartLineStyle:(long long)arg1;
 - (void)setStartPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTextInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTextStorage:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUserName:(id)arg1;
@@ -329,6 +340,8 @@
 - (long long)startLineStyle;
 - (struct CGPoint { double x1; double x2; })startPoint;
 - (bool)supportsNSCoding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
+- (id)textStorage;
 - (id)tokenizeAppearanceString:(id)arg1;
 - (id)toolTip;
 - (id)type;

@@ -42,7 +42,7 @@
         double width; 
         double height; 
     }  _portraitSize;
-    ADPrivacyButton * _privacyButton;
+    ADPrivacyMarker * _privacyMarker;
     bool  _reUsed;
     bool  _requestCalledbackError;
     int  _screenfuls;
@@ -93,7 +93,7 @@
 @property (nonatomic, copy) NSString *originID;
 @property (nonatomic) struct CGSize { double x1; double x2; } portraitSize;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
-@property (nonatomic, retain) ADPrivacyButton *privacyButton;
+@property (nonatomic, retain) ADPrivacyMarker *privacyMarker;
 @property (nonatomic) bool reUsed;
 @property (nonatomic) bool requestCalledbackError;
 @property (nonatomic) int screenfuls;
@@ -225,8 +225,8 @@
 - (void)prerollDidStart;
 - (void)prerollDidStop;
 - (id)presentingViewController;
-- (id)privacyButton;
 - (void)privacyButtonWasTapped;
+- (id)privacyMarker;
 - (id)publicImpressionAttributes;
 - (bool)reUsed;
 - (void)registerVideoPlayerForAdAnalytics:(id)arg1;
@@ -290,7 +290,7 @@
 - (void)setLoadStartTime:(id)arg1;
 - (void)setOriginID:(id)arg1;
 - (void)setPortraitSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setPrivacyButton:(id)arg1;
+- (void)setPrivacyMarker:(id)arg1;
 - (void)setReUsed:(bool)arg1;
 - (void)setRequestCalledbackError:(bool)arg1;
 - (void)setRequiredContentSizeIdentifiers:(id)arg1;

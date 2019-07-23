@@ -127,6 +127,7 @@
 - (void)dealloc;
 - (void)didEndTransitionFromFullScreen:(bool)arg1 toFullScreen:(bool)arg2;
 - (void)didFinishFullscreenActiveIndex:(unsigned long long)arg1;
+- (void)dismiss;
 - (id)dragManager;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (struct CGSize { double x1; double x2; })fitSizeForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

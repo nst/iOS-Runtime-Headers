@@ -4,6 +4,7 @@
 
 @interface BWInferenceVideoFormat : NSObject <NSCopying> {
     bool  _deviceOriented;
+    bool  _includesInvalidContent;
     BWVideoFormat * _underlyingVideoFormat;
     long long  _videoContentMode;
 }
@@ -11,6 +12,7 @@
 @property (nonatomic, readonly) int colorSpaceProperties;
 @property (nonatomic, readonly) bool deviceOriented;
 @property (nonatomic, readonly) unsigned long long height;
+@property (nonatomic, readonly) bool includesInvalidContent;
 @property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;
 @property (nonatomic, readonly) unsigned int pixelFormat;
 @property (nonatomic, readonly) BWVideoFormat *underlyingVideoFormat;
@@ -26,7 +28,8 @@
 - (bool)deviceOriented;
 - (unsigned long long)hash;
 - (unsigned long long)height;
-- (id)initWithUnderlyingFormat:(id)arg1 isDeviceOriented:(bool)arg2 videoContentMode:(long long)arg3;
+- (bool)includesInvalidContent;
+- (id)initWithUnderlyingFormat:(id)arg1 isDeviceOriented:(bool)arg2 videoContentMode:(long long)arg3 includesInvalidContent:(bool)arg4;
 - (bool)isEqual:(id)arg1;
 - (id)pixelBufferAttributes;
 - (unsigned int)pixelFormat;

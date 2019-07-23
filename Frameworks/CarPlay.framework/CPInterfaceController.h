@@ -6,6 +6,7 @@
     CPWindow * _carWindow;
     NSXPCConnection * _connection;
     <CPInterfaceControllerDelegate> * _delegate;
+    CPTemplate * _lastPresentedTemplate;
     CPTemplate * _presentedTemplate;
     CPTemplate * _rootTemplate;
     <CPTemplateProviding> * _templateProvider;
@@ -18,6 +19,7 @@
 @property (nonatomic) <CPInterfaceControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CPTemplate *lastPresentedTemplate;
 @property (nonatomic, retain) CPTemplate *presentedTemplate;
 @property (nonatomic, retain) CPTemplate *rootTemplate;
 @property (readonly) Class superclass;
@@ -61,6 +63,7 @@
 - (id)delegate;
 - (void)dismissTemplateAnimated:(bool)arg1;
 - (void)handleActionForControlIdentifier:(id)arg1;
+- (id)lastPresentedTemplate;
 - (void)popTemplateAnimated:(bool)arg1;
 - (void)popToRootTemplateAnimated:(bool)arg1;
 - (void)popToTemplate:(id)arg1 animated:(bool)arg2;
@@ -71,6 +74,7 @@
 - (void)setCarWindow:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLastPresentedTemplate:(id)arg1;
 - (void)setPresentedTemplate:(id)arg1;
 - (void)setRootTemplate:(id)arg1;
 - (void)setRootTemplate:(id)arg1 animated:(bool)arg2;

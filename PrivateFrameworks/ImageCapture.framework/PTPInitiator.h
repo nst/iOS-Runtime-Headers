@@ -17,7 +17,6 @@
     unsigned short  _deviceProductID;
     NSString * _deviceSerialNumberString;
     unsigned short  _deviceVendorID;
-    NSObject<OS_dispatch_queue> * _enumerationQueue;
     unsigned int  _estimatedNumOfDownloadableObjects;
     PTPEventPacket * _event;
     NSMutableArray * _eventQueue;

@@ -15,6 +15,7 @@
 - (double)_excerptTopOffsetWithTemplate:(id)arg1;
 - (double)_titleFontSizeWithTemplate:(id)arg1;
 - (double)_titleTopOffsetWithTemplate:(id)arg1;
+- (double)accessoryViewToBottomSpacing;
 - (double)accessoryViewToSharrowPadding;
 - (double)ageLabelToAccessoryLabelSpacingWithTemplate:(id)arg1;
 - (bool)allowsExcerpt;
@@ -23,21 +24,24 @@
 - (id)bylineFontColorWithTemplate:(id)arg1;
 - (id)bylineFontNameWithTemplate:(id)arg1;
 - (id)bylineFontWithTemplate:(id)arg1;
-- (double)bylineLineHeight;
 - (id)excerptFontNameWithTemplate:(id)arg1;
 - (id)excerptFontWithTemplate:(id)arg1;
-- (double)excerptLineHeightWithTemplate:(id)arg1;
+- (double)excerptLineHeightWithTemplate:(id)arg1 font:(id)arg2;
+- (double)excerptToAccessorySpacing;
 - (double)excerptToAccessorySpacingWithTemplate:(id)arg1;
 - (double)extraYOffsetForSharrow;
+- (double)imageToTitleSpacing;
 - (double)publisherLogoHeight;
 - (double)publisherLogoToTitleSpacingWithTemplate:(id)arg1;
 - (long long)rowSpan;
+- (double)segmentViewHeight;
 - (double)sharrowHeight;
 - (double)sharrowWidth;
 - (id)titleFontNameWithTemplate:(id)arg1;
 - (id)titleFontWithTemplate:(id)arg1;
-- (double)titleLineHeightWithTemplate:(id)arg1;
+- (double)titleLineHeightWithTemplate:(id)arg1 font:(id)arg2;
 - (double)titleToAccessorySpacingWithTemplate:(id)arg1;
+- (double)titleToExcerptSpacing;
 - (double)titleToExcerptSpacingWithTemplate:(id)arg1;
 
 @end

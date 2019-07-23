@@ -10,10 +10,11 @@
 }
 
 @property (nonatomic) bool dumpData;
-@property (nonatomic) ETImageDescriptorExtractor *extractor;
-@property (nonatomic) ETModelDef *model;
-@property (nonatomic) ETOptimizerDef *optimizer;
+@property (nonatomic, retain) ETImageDescriptorExtractor *extractor;
+@property (nonatomic, retain) ETModelDef *model;
+@property (nonatomic, retain) ETOptimizerDef *optimizer;
 
+- (void).cxx_destruct;
 - (bool)dumpData;
 - (id)evaluate:(id)arg1;
 - (id)extractor;
@@ -21,6 +22,7 @@
 - (float)fit:(id)arg1 numberOfEpochs:(int)arg2 withProgress:(id /* block */)arg3;
 - (id)init;
 - (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3;
+- (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3 needWeightsInitialization:(bool)arg4;
 - (id)model;
 - (id)optimizer;
 - (void)saveNetwork:(id)arg1;

@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *ownerName;
 @property (nonatomic) bool showCleanCells;
 
-+ (id)stringForOwnerKind:(int)arg1;
++ (id)stringForOwnerKind:(unsigned short)arg1;
 
 - (void).cxx_destruct;
 - (void)addDependencyRow:(id)arg1;

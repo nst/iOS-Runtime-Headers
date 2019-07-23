@@ -3,13 +3,19 @@
 
 @protocol RPCompanionLinkXPCClientInterface
 
-@required
+@optional
 
+- (void)companionLinkAuthCompleted:(NSError *)arg1;
 - (void)companionLinkChangedDevice:(RPCompanionLinkDevice *)arg1 changes:(unsigned int)arg2;
 - (void)companionLinkFoundDevice:(RPCompanionLinkDevice *)arg1;
 - (void)companionLinkLocalDeviceUpdated:(RPCompanionLinkDevice *)arg1;
 - (void)companionLinkLostDevice:(RPCompanionLinkDevice *)arg1;
+- (void)companionLinkPromptForPasswordType:(int)arg1 flags:(unsigned int)arg2 throttleSeconds:(int)arg3;
 - (void)companionLinkReceivedEventID:(NSString *)arg1 event:(NSDictionary *)arg2 options:(NSDictionary *)arg3;
 - (void)companionLinkReceivedRequestID:(void *)arg1 request:(void *)arg2 options:(void *)arg3 responseHandler:(void *)arg4; // needs 4 arg types, found 11: NSString *, NSDictionary *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSDictionary *, NSError *, void*
+- (void)xpcDiscoveryChangedEndpoint:(RPEndpoint *)arg1;
+- (void)xpcDiscoveryFoundEndpoint:(RPEndpoint *)arg1;
+- (void)xpcDiscoveryLostEndpoint:(RPEndpoint *)arg1;
+- (void)xpcServerAcceptSession:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: RPSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 
 @end

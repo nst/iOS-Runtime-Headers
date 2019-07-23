@@ -35,6 +35,7 @@
     bool  _notPresentInIAPAccessoriesArray;
     id /* block */  _pairingCompletionBlock;
     bool  _pointOfInterestHandoffEnabled;
+    NSString * _ppid;
     NSString * _preferredApp;
     NSDictionary * _protocols;
     NSString * _serialNumber;
@@ -74,6 +75,7 @@
 @property (nonatomic) bool notPresentInIAPAccessoriesArray;
 @property (copy) id /* block */ pairingCompletionBlock;
 @property bool pointOfInterestHandoffEnabled;
+@property (nonatomic, copy) NSString *ppid;
 @property (nonatomic, copy) NSString *preferredApp;
 @property (nonatomic, retain) NSDictionary *protocols;
 @property (nonatomic, copy) NSString *serialNumber;
@@ -115,6 +117,7 @@
 - (bool)notPresentInIAPAccessoriesArray;
 - (id /* block */)pairingCompletionBlock;
 - (bool)pointOfInterestHandoffEnabled;
+- (id)ppid;
 - (id)preferredApp;
 - (id)protocols;
 - (void)removeSession:(id)arg1;
@@ -150,6 +153,7 @@
 - (void)setNotPresentInIAPAccessoriesArray:(bool)arg1;
 - (void)setPairingCompletionBlock:(id /* block */)arg1;
 - (void)setPointOfInterestHandoffEnabled:(bool)arg1;
+- (void)setPpid:(id)arg1;
 - (void)setPreferredApp:(id)arg1;
 - (void)setProtocols:(id)arg1;
 - (void)setSerialNumber:(id)arg1;

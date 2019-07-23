@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITabBar : UIView <DebugHierarchyObject_Fallback, _UIShadowedView> {
+@interface UITabBar : UIView <_UIShadowedView> {
     _UITabBarAppearanceStorage * _appearanceStorage;
     NSArray * _backgroundEffects;
     long long  _barMetrics;
@@ -10,6 +10,7 @@
     NSArray * _customizationItems;
     UITabBarCustomizeView * _customizeView;
     <UITabBarDelegate> * _delegate;
+    long long  _displayStyle;
     bool  _hidesShadow;
     long long  _imageStyle;
     double  _itemDimension;
@@ -65,6 +66,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UITabBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_displayStyle, setter=_setDisplayStyle:, nonatomic) long long displayStyle;
 @property (getter=_focusedItemHighlightShouldBeVisible, setter=_setFocusedItemHightlightShouldBeVisible:, nonatomic) bool focusedItemHighlightShouldBeVisible;
 @property (getter=_focusedTabBarItem, nonatomic, readonly) UITabBarItem *focusedTabBarItem;
 @property (readonly) unsigned long long hash;
@@ -113,10 +115,12 @@
 - (void)_customizeDoneButtonAction:(id)arg1;
 - (void)_customizeWithAvailableItems:(id)arg1;
 - (double)_defaultAutolayoutSpacing;
+- (id)_defaultUnselectedTintColorForFloating;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (bool)_disableBlurTinting;
 - (void)_dismissCustomizeSheet:(bool)arg1;
+- (long long)_displayStyle;
 - (id)_dividerImageForLeftButtonState:(unsigned long long)arg1 rightButtonState:(unsigned long long)arg2;
 - (void)_doCommonTabBarInit;
 - (long long)_effectiveBarOrientation;
@@ -154,6 +158,7 @@
 - (void)_setBarOrientation:(long long)arg1;
 - (void)_setBlurEnabled:(bool)arg1;
 - (void)_setDisableBlurTinting:(bool)arg1;
+- (void)_setDisplayStyle:(long long)arg1;
 - (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned long long)arg2 rightButtonState:(unsigned long long)arg3;
 - (void)_setFocusedItemHightlightShouldBeVisible:(bool)arg1;
 - (void)_setHiddenAwaitingFocus:(bool)arg1;
@@ -188,15 +193,6 @@
 - (void)_updateTabBarItemView:(id)arg1;
 - (void)_updateTintedImages:(id)arg1 selected:(bool)arg2;
 - (bool)_vibrantLabels;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (id)backgroundEffects;
 - (id)backgroundImage;
@@ -204,6 +200,7 @@
 - (id)barTintColor;
 - (void)beginCustomizingItems:(id)arg1;
 - (bool)canBecomeFocused;
+- (void)dealloc;
 - (id)delegate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)dismissCustomizeSheet:(bool)arg1;
@@ -260,5 +257,9 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)unselectedItemTintColor;
+
+// Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
+
+- (void)ts_setBackgroundView:(id)arg1;
 
 @end

@@ -2,66 +2,50 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUIProductMetadataLayout : NSObject {
+@interface VUIProductMetadataLayout : TVViewLayout {
+    UIColor * _darkHighlightedDescriptionText;
+    UIColor * _darkSeeMoreTextColor;
+    double  _descriptionLineSpacing;
     VUITextLayout * _footerTextLayout;
     VUITextLayout * _headerTextLayout;
+    UIColor * _highlightedDescriptionText;
     VUITextLayout * _infoBodyTextLayout;
     VUITextLayout * _infoDescriptionTextLayout;
     VUITextLayout * _infoHeaderTextLayout;
-    double  _infoTableMiddleSpacing;
-    bool  _isRTL;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  _mainViewMargin;
-    double  _sectionDataViewBottomSpace;
-    double  _sectionFooterBottomSpace;
-    double  _sectionFooterTopSpace;
-    double  _sectionHeaderBottomSpace;
-    double  _sectionInfoViewBottomSpace;
     UIColor * _seeMoreTextColor;
 }
 
+@property (nonatomic, readonly) UIColor *darkHighlightedDescriptionText;
+@property (nonatomic, readonly) UIColor *darkSeeMoreTextColor;
+@property (nonatomic, readonly) double descriptionLineSpacing;
 @property (nonatomic, readonly) VUITextLayout *footerTextLayout;
 @property (nonatomic, readonly) VUITextLayout *headerTextLayout;
+@property (nonatomic, readonly) UIColor *highlightedDescriptionText;
 @property (nonatomic, readonly) VUITextLayout *infoBodyTextLayout;
 @property (nonatomic, readonly) VUITextLayout *infoDescriptionTextLayout;
 @property (nonatomic, readonly) VUITextLayout *infoHeaderTextLayout;
-@property (nonatomic, readonly) double infoTableMiddleSpacing;
 @property (nonatomic, readonly) bool isDynamicTextEnabled;
 @property (nonatomic, readonly) bool isHorizontal;
-@property (nonatomic) bool isRTL;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } mainViewMargin;
-@property (nonatomic, readonly) double sectionDataViewBottomSpace;
-@property (nonatomic, readonly) double sectionFooterBottomSpace;
-@property (nonatomic, readonly) double sectionFooterTopSpace;
-@property (nonatomic, readonly) double sectionHeaderBottomSpace;
-@property (nonatomic, readonly) double sectionInfoViewBottomSpace;
+@property (nonatomic, readonly) bool isTVOS;
 @property (nonatomic, readonly) UIColor *seeMoreTextColor;
-@property (nonatomic, readonly) long long type;
+
++ (id)layoutWithLayout:(id)arg1 element:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_setupLayouts;
+- (id)darkHighlightedDescriptionText;
+- (id)darkSeeMoreTextColor;
+- (double)descriptionLineSpacing;
 - (id)footerTextLayout;
 - (id)headerTextLayout;
+- (id)highlightedDescriptionText;
 - (id)infoBodyTextLayout;
 - (id)infoDescriptionTextLayout;
 - (id)infoHeaderTextLayout;
-- (double)infoTableMiddleSpacing;
 - (id)init;
 - (bool)isDynamicTextEnabled;
 - (bool)isHorizontal;
-- (bool)isRTL;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })mainViewMargin;
-- (double)sectionDataViewBottomSpace;
-- (double)sectionFooterBottomSpace;
-- (double)sectionFooterTopSpace;
-- (double)sectionHeaderBottomSpace;
-- (double)sectionInfoViewBottomSpace;
+- (bool)isTVOS;
 - (id)seeMoreTextColor;
-- (void)setIsRTL:(bool)arg1;
-- (long long)type;
 
 @end

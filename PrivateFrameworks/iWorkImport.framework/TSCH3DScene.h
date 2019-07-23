@@ -28,7 +28,6 @@
 - (id)accessorFactory;
 - (void)addObject:(id)arg1;
 - (id)camera;
-- (struct ChartScenePropertyAccessor { id x1; })chartProperties;
 - (id)clone;
 - (void)copyPropertiesFromScene:(id)arg1;
 - (unsigned long long)count;
@@ -58,7 +57,7 @@
 - (id)objects;
 - (id)original;
 - (void)overrideObjects;
-- (struct TSCH3DScenePart { id x1; })partForType:(id)arg1;
+- (id)partForType:(id)arg1;
 - (id)propertiesForType:(id)arg1;
 - (id)propertiesMap;
 - (id)reallocateObjects;
@@ -81,7 +80,7 @@
 - (void)setEnumerator:(id)arg1 properties:(id)arg2 forType:(id)arg3;
 - (void)setMain:(id)arg1;
 - (void)setOriginal:(id)arg1;
-- (void)setPart:(struct TSCH3DScenePart { id x1; })arg1 forType:(id)arg2;
+- (void)setPart:(id)arg1 forType:(id)arg2;
 - (void)setProperties:(id)arg1 forType:(id)arg2;
 - (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })transform;
 

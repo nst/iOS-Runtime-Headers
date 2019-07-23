@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyVideoPlayerTransform;
+- (id)_complicationsCompanionForegroundColor;
 - (void)_configureReusableTimeView:(id)arg1;
 - (void)_customizeVideoPlayerOnSetup;
 - (id)_editOptionThatHidesAllComplications;

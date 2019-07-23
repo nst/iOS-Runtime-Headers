@@ -27,6 +27,6 @@
 - (void)webProcessVideoAdJSODidCallVideoTapped:(float)arg1 volume:(float)arg2;
 - (void)webProcessVideoAdJSODidCallViewabilityChanged:(bool)arg1 playTime:(float)arg2 volume:(float)arg3;
 - (void)webProcessVideoAdJSODidCallVolumeChanged:(float)arg1 playTime:(float)arg2;
-- (void)webProcessVideoAdJSOGetVideoInfo:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, bool, void*
+- (void)webProcessVideoAdJSOGetVideoInfo:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, bool, NSDictionary *, void*
 
 @end

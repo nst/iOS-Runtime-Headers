@@ -35,6 +35,11 @@
     double  _basicConfigSecs;
     unsigned long long  _basicConfigStartTicks;
     int  _basicConfigState;
+    int  _bonjourTestState;
+    bool  _cdpEnabled;
+    SFDeviceOperationCDPSetup * _cdpSetupOperation;
+    double  _cdpSetupSecs;
+    int  _cdpState;
     RPCompanionLinkClient * _companionLinkClient;
     NSString * _deviceGUID;
     NSString * _deviceSerialNumber;
@@ -75,6 +80,7 @@
     NSDictionary * _preAuthResponse;
     bool  _preAuthStartedProgress;
     int  _preAuthState;
+    bool  _prefBonjourTest;
     bool  _prefForceSiriGreeting;
     bool  _prefStereoPairEnabled;
     bool  _prefStereoWait;
@@ -126,7 +132,7 @@
     int  _stereoPairUserInputState;
     bool  _termsAgreed;
     int  _termsState;
-    unsigned int  _testFlags;
+    unsigned long long  _testFlags;
     double  _totalSecs;
     bool  _touchRemoteEnabled;
     double  _trActivationSecs;
@@ -136,8 +142,6 @@
     unsigned long long  _trAuthenticationStartTicks;
     int  _trAuthenticationState;
     bool  _trNeedsNetwork;
-    unsigned long long  _trNetworkStartTicks;
-    int  _trNetworkState;
     TROperationQueue * _trOperationQueue;
     NSMutableArray * _trOperations;
     TRSession * _trSession;
@@ -146,13 +150,13 @@
     unsigned long long  _trSetupConfigurationStartTicks;
     int  _trSetupConfigurationState;
     NSSet * _trUnauthServices;
-    bool  _wifiSetupEnabled;
     SFDeviceOperationWiFiSetup * _wifiSetupOperation;
     double  _wifiSetupSecs;
     int  _wifiSetupState;
 }
 
 @property (nonatomic, copy) NSDictionary *additionalMetrics;
+@property (nonatomic, readonly) int bonjourTestState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
@@ -184,7 +188,7 @@
 @property (nonatomic, readonly) NSString *selectedSiriLanguage;
 @property (nonatomic, readonly) unsigned char stereoCounterpartColor;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int testFlags;
+@property (nonatomic) unsigned long long testFlags;
 @property (nonatomic) bool touchRemoteEnabled;
 
 - (void).cxx_destruct;
@@ -218,6 +222,7 @@
 - (int)_runBasicConfig;
 - (void)_runBasicConfigReceiveResponse:(id)arg1 error:(id)arg2;
 - (void)_runBasicConfigSendRequest;
+- (int)_runCDPSetup;
 - (int)_runCheckAccount;
 - (void)_runFinishRequest;
 - (void)_runFinishResponse:(id)arg1 error:(id)arg2;
@@ -244,7 +249,6 @@
 - (void)_runStereoPairUserInputPickColors:(bool)arg1;
 - (int)_runTRActivation;
 - (int)_runTRAuthentication;
-- (int)_runTRNetwork;
 - (int)_runTRSessionStart;
 - (int)_runTRSetupConfiguration;
 - (int)_runTerms;
@@ -257,6 +261,7 @@
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (void)audioSessionInterrupted:(id)arg1;
+- (int)bonjourTestState;
 - (void)dealloc;
 - (void)disconnect;
 - (id)dispatchQueue;
@@ -322,7 +327,7 @@
 - (void)setPromptForiTunesSignInHandler:(id /* block */)arg1;
 - (void)setPromptToInstallHomeAppHandler:(id /* block */)arg1;
 - (void)setPromptToShareSettingsHandler:(id /* block */)arg1;
-- (void)setTestFlags:(unsigned int)arg1;
+- (void)setTestFlags:(unsigned long long)arg1;
 - (void)setTouchRemoteEnabled:(bool)arg1;
 - (void)shareSettingsAgreed;
 - (void)siriEnable;
@@ -337,7 +342,7 @@
 - (void)stereoMultiplePicked:(id)arg1;
 - (void)stereoRolePicked:(int)arg1;
 - (void)termsAgreed;
-- (unsigned int)testFlags;
+- (unsigned long long)testFlags;
 - (bool)touchRemoteEnabled;
 
 @end

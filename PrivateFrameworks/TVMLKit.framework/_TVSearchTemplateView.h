@@ -3,7 +3,6 @@
  */
 
 @interface _TVSearchTemplateView : UIView {
-    bool  _bannerHidden;
     UIView * _bannerView;
     UIImageView * _bgImageView;
     struct UIEdgeInsets { 
@@ -22,13 +21,8 @@
         unsigned int hasDidOffsetOrigin : 1; 
     }  _delegateFlags;
     UIView * _fieldAndKeyboardContainer;
+    double  _fieldOriginY;
     bool  _focusHidden;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  _inset;
     bool  _isTouchEnabled;
     UIView * _keyboard;
     NSArray * _keyboardConstraints;
@@ -42,6 +36,7 @@
     _TVSearchBarWrapper * _searchBarWrapper;
     bool  _spinning;
     int  _targetKeyboardState;
+    UIView * _templateContainerView;
 }
 
 @property (nonatomic, retain) UIView *bannerView;
@@ -50,7 +45,6 @@
 @property (nonatomic, readonly, retain) UICollectionView *collectionView;
 @property (nonatomic) <_TVSearchTemplateViewDelegate> *delegate;
 @property (getter=isFocusHidden, nonatomic) bool focusHidden;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } inset;
 @property (nonatomic, readonly) bool isTouchEnabled;
 @property (getter=isPartialViewEnabled, nonatomic) bool partialViewEnabled;
 @property (getter=isSpinning, nonatomic) bool spinning;
@@ -58,7 +52,6 @@
 - (void).cxx_destruct;
 - (void)_addKeyboard;
 - (void)_adjustKeyboardContainerPositionForContentOffset:(struct CGPoint { double x1; double x2; })arg1;
-- (double)_bannerMarginBottom;
 - (void)_handleMenuAction:(id)arg1;
 - (bool)_isSearchFieldVisible;
 - (void)_pushKeyboardTowardsStableState:(unsigned long long)arg1;
@@ -72,20 +65,16 @@
 - (id)delegate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithCollectionView:(id)arg1 searchBar:(id)arg2 keyboard:(id)arg3 touchEnabled:(bool)arg4;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })inset;
 - (bool)isFocusHidden;
 - (bool)isPartialViewEnabled;
 - (bool)isSpinning;
 - (bool)isTouchEnabled;
 - (void)layoutSubviews;
-- (void)offsetBannerToHide:(bool)arg1;
 - (id)preferredFocusEnvironments;
-- (void)safeAreaInsetsDidChange;
 - (void)setBannerView:(id)arg1;
 - (void)setCollectionMargin:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFocusHidden:(bool)arg1;
-- (void)setInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPartialViewEnabled:(bool)arg1;
 - (void)setSpinning:(bool)arg1;
 - (bool)shouldUpdateFocusInContext:(id)arg1;

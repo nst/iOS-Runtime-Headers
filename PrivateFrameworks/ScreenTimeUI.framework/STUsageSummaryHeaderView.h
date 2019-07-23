@@ -24,5 +24,7 @@
 - (void)setSpecifier:(id)arg1;
 - (id)singleLineHeaderView;
 - (id)specifier;
+- (void)startAnimatingSpinner;
+- (void)stopAnimatingSpinner;
 
 @end

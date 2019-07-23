@@ -49,6 +49,7 @@
 - (void)dealloc;
 - (id)debugSidecarFileURLsForAsset:(id)arg1;
 - (void)deleteAssetWithURL:(id)arg1 handler:(id /* block */)arg2;
+- (void)deleteiTunesSyncedContentWithCompletionHandler:(id /* block */)arg1;
 - (id)deviceSpecificReplyQueue;
 - (id)dictionaryWithContentsOfMediaFilePath:(id)arg1;
 - (void)downloadCloudPhotoLibraryAsset:(id)arg1 resourceType:(unsigned long long)arg2 highPriority:(bool)arg3 trackCPLDownload:(bool)arg4 downloadIsTransient:(bool)arg5 proposedTaskIdentifier:(id)arg6 completion:(id /* block */)arg7;
@@ -82,6 +83,7 @@
 - (id)getPhotosXPCEndpoint;
 - (void)getSandboxExtensionForPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSearchIndexProgress:(id /* block */)arg1;
+- (void)getSizeOfResourcesToUploadByCPLWithHandler:(id /* block */)arg1;
 - (void)getSystemBudgetsWithCompletionHandler:(id /* block */)arg1;
 - (id)getXPCTransactionStatus;
 - (bool)hasCompletedMomentAnalysis;
@@ -106,7 +108,6 @@
 - (void)noteInterestingMemoryNotificationViewedForColletionID:(id)arg1;
 - (void)noteSuggestedCMMNotificationForColletionID:(id)arg1 notificationDeliveryDate:(id)arg2;
 - (void)noteSuggestedCMMViewedForColletionID:(id)arg1;
-- (void)noteUserRespondedToMemoriesNotification;
 - (void)overrideSystemBudgetsForSyncSession:(bool)arg1 forSystemBudgets:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)pauseICloudPhotos:(bool)arg1 reason:(short)arg2;
 - (void)pauseICloudPhotos:(bool)arg1 reason:(short)arg2 waitForReply:(bool)arg3;

@@ -7,6 +7,7 @@
     NSDictionary * _dictionary;
     NSString * _path;
     FCHeadlineThumbnail * _thumbnail;
+    bool  _webEmbedsEnabled;
 }
 
 @property (nonatomic, readonly) <FCChannelProviding> *channel;
@@ -23,7 +24,6 @@
 - (unsigned long long)contentType;
 - (id)contentURL;
 - (id)dictionary;
-- (id)endOfArticleTopicIDs;
 - (bool)hasThumbnail;
 - (id)iAdCategories;
 - (id)iAdKeywords;
@@ -33,6 +33,7 @@
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isLocalDraft;
 - (bool)isPremium;
 - (bool)isSponsored;
 - (id)lastModifiedDate;
@@ -51,5 +52,6 @@
 - (id)topicIDs;
 - (double)videoDuration;
 - (id)videoURL;
+- (bool)webEmbedsEnabled;
 
 @end

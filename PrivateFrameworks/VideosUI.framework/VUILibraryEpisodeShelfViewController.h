@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUILibraryEpisodeShelfViewController : VUIShelfViewController <TVShelfViewLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, VUIDialogInteractionControllerDelegate, VUIEpisodeDetailViewControllerDelegate, VUILibraryDownloadPopoverViewControllerDelegate, VUILibraryEpisodeListCellDelegate, VUILocalContentProtocol, VUIMediaEntityAssetControllerDelegate> {
+@interface VUILibraryEpisodeShelfViewController : VUIShelfViewController <TVShelfViewLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, VUIDialogInteractionControllerDelegate, VUIEpisodeDetailViewControllerDelegate, VUILibraryDownloadPopoverViewControllerDelegate, VUILocalContentProtocol> {
     <VUILibraryEpisodeShelfViewControllerDelegate> * _delegate;
     VUIDialogInteractionController * _dialogInteractionController;
     VUIEpisodeDetailViewController * _episodeDetailViewController;
@@ -25,12 +25,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_assetControllerForCell:(id)arg1;
 - (bool)_canRemoveEpisodeAtIndexPath:(id)arg1;
 - (void)_configureShelfLayout:(id)arg1;
 - (id)_episodeViewModelsWithFetchedEpisodes:(id)arg1;
 - (id)_episodeWithIdentifier:(id)arg1;
-- (void)_updateCell:(id)arg1 withAssetController:(id)arg2;
 - (void)_updateHeaderView;
 - (void)_updateViewWithFetchedEpisodes:(id)arg1 andChangeSet:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -45,11 +43,8 @@
 - (bool)dialogInteractionController:(id)arg1 shouldBeginInteractionForIndexPath:(id)arg2;
 - (id)episodeDetailViewController;
 - (void)episodeDetailViewControllerWasDismissed:(id)arg1;
-- (void)episodeListCellDidRequestCancelDownload:(id)arg1;
-- (void)episodeListCellDidRequestStartDownload:(id)arg1;
 - (id)episodeViewModels;
 - (id)initWithEpisodes:(id)arg1;
-- (void)mediaEntityAssetController:(id)arg1 stateDidChange:(id)arg2;
 - (bool)onlyShowLocalContent;
 - (id)popoverIndexPath;
 - (void)removeDownloadDismissed;

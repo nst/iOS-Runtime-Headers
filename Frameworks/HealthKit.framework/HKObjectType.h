@@ -36,6 +36,7 @@
 + (id)activityCacheType;
 + (id)activitySummaryType;
 + (id)allergyRecordTypeForIdentifier:(id)arg1;
++ (id)atrialFibrillationEventType;
 + (id)bradycardiaType;
 + (id)briskMinuteDataType;
 + (id)calorieGoal;

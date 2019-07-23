@@ -16,6 +16,7 @@
     NTPBAppSessionResume * _appSessionResume;
     NTPBAppSessionStart * _appSessionStart;
     NTPBAppSessionStartWatch * _appSessionStartWatch;
+    NTPBAppleIdSignInResult * _appleidSignInResult;
     NTPBArticleEngagement * _articleEngagement;
     NTPBArticleHostViewExposure * _articleHostViewExposure;
     NTPBArticleLikeDislike * _articleLikeDislike;
@@ -27,6 +28,7 @@
     NTPBArticleViewWatch * _articleViewWatch;
     NTPBBackgroundSubscriptionValidation * _backgroundSubscriptionValidation;
     NTPBBundleIdMappingMiss * _bundleIdMappingMiss;
+    NTPBBundleSubscriberInfo * _bundleSubscriberInfo;
     NTPBChannelMuteUnmute * _channelMuteUnmute;
     NTPBComscoreEventSend * _comscoreEventSend;
     NTPBCoverArticleWidgetExposure * _coverArticleWidgetExposure;
@@ -42,6 +44,9 @@
     NTPBFeedViewExposure * _feedViewExposure;
     NTPBGroupViewExposure * _groupViewExposure;
     NTPBInAppWebEmbedExposure * _inAppWebEmbedExposure;
+    NTPBIssueDownload * _issueDownload;
+    NTPBIssueExposure * _issueExposure;
+    NTPBIssueTocView * _issueTocView;
     NTPBLinkTap * _linkTap;
     NTPBLinkTapArticle * _linkTapArticle;
     NTPBLocalNotificationReceived * _localNotificationReceived;
@@ -58,6 +63,8 @@
     NTPBPaidSubscriptionResult * _paidSubscriptionResult;
     NTPBPaidSubscriptionSheetIapFail * _paidSubscriptionSheetIapFail;
     NTPBPaidSubscriptionSheetView * _paidSubscriptionSheetView;
+    NTPBPaywallButtonTap * _paywallButtonTap;
+    NTPBPDFPageView * _pdfPageView;
     NTPBPullToRefresh * _pullToRefresh;
     NTPBReadingListAddRemove * _readingListAddRemove;
     NTPBReadingListShow * _readingListShow;
@@ -108,6 +115,7 @@
 @property (nonatomic, retain) NTPBAppSessionResume *appSessionResume;
 @property (nonatomic, retain) NTPBAppSessionStart *appSessionStart;
 @property (nonatomic, retain) NTPBAppSessionStartWatch *appSessionStartWatch;
+@property (nonatomic, retain) NTPBAppleIdSignInResult *appleidSignInResult;
 @property (nonatomic, retain) NTPBArticleEngagement *articleEngagement;
 @property (nonatomic, retain) NTPBArticleHostViewExposure *articleHostViewExposure;
 @property (nonatomic, retain) NTPBArticleLikeDislike *articleLikeDislike;
@@ -119,6 +127,7 @@
 @property (nonatomic, retain) NTPBArticleViewWatch *articleViewWatch;
 @property (nonatomic, retain) NTPBBackgroundSubscriptionValidation *backgroundSubscriptionValidation;
 @property (nonatomic, retain) NTPBBundleIdMappingMiss *bundleIdMappingMiss;
+@property (nonatomic, retain) NTPBBundleSubscriberInfo *bundleSubscriberInfo;
 @property (nonatomic, retain) NTPBChannelMuteUnmute *channelMuteUnmute;
 @property (nonatomic, retain) NTPBComscoreEventSend *comscoreEventSend;
 @property (nonatomic, retain) NTPBCoverArticleWidgetExposure *coverArticleWidgetExposure;
@@ -146,6 +155,7 @@
 @property (nonatomic, readonly) bool hasAppSessionResume;
 @property (nonatomic, readonly) bool hasAppSessionStart;
 @property (nonatomic, readonly) bool hasAppSessionStartWatch;
+@property (nonatomic, readonly) bool hasAppleidSignInResult;
 @property (nonatomic, readonly) bool hasArticleEngagement;
 @property (nonatomic, readonly) bool hasArticleHostViewExposure;
 @property (nonatomic, readonly) bool hasArticleLikeDislike;
@@ -157,6 +167,7 @@
 @property (nonatomic, readonly) bool hasArticleViewWatch;
 @property (nonatomic, readonly) bool hasBackgroundSubscriptionValidation;
 @property (nonatomic, readonly) bool hasBundleIdMappingMiss;
+@property (nonatomic, readonly) bool hasBundleSubscriberInfo;
 @property (nonatomic, readonly) bool hasChannelMuteUnmute;
 @property (nonatomic, readonly) bool hasComscoreEventSend;
 @property (nonatomic, readonly) bool hasCoverArticleWidgetExposure;
@@ -172,6 +183,9 @@
 @property (nonatomic, readonly) bool hasFeedViewExposure;
 @property (nonatomic, readonly) bool hasGroupViewExposure;
 @property (nonatomic, readonly) bool hasInAppWebEmbedExposure;
+@property (nonatomic, readonly) bool hasIssueDownload;
+@property (nonatomic, readonly) bool hasIssueExposure;
+@property (nonatomic, readonly) bool hasIssueTocView;
 @property (nonatomic, readonly) bool hasLinkTap;
 @property (nonatomic, readonly) bool hasLinkTapArticle;
 @property (nonatomic, readonly) bool hasLocalNotificationReceived;
@@ -188,6 +202,8 @@
 @property (nonatomic, readonly) bool hasPaidSubscriptionResult;
 @property (nonatomic, readonly) bool hasPaidSubscriptionSheetIapFail;
 @property (nonatomic, readonly) bool hasPaidSubscriptionSheetView;
+@property (nonatomic, readonly) bool hasPaywallButtonTap;
+@property (nonatomic, readonly) bool hasPdfPageView;
 @property (nonatomic, readonly) bool hasPullToRefresh;
 @property (nonatomic, readonly) bool hasReadingListAddRemove;
 @property (nonatomic, readonly) bool hasReadingListShow;
@@ -224,6 +240,9 @@
 @property (nonatomic, readonly) bool hasWebAccessScreenView;
 @property (nonatomic, readonly) bool hasWidgetEngagement;
 @property (nonatomic, retain) NTPBInAppWebEmbedExposure *inAppWebEmbedExposure;
+@property (nonatomic, retain) NTPBIssueDownload *issueDownload;
+@property (nonatomic, retain) NTPBIssueExposure *issueExposure;
+@property (nonatomic, retain) NTPBIssueTocView *issueTocView;
 @property (nonatomic, retain) NTPBLinkTap *linkTap;
 @property (nonatomic, retain) NTPBLinkTapArticle *linkTapArticle;
 @property (nonatomic, retain) NTPBLocalNotificationReceived *localNotificationReceived;
@@ -240,6 +259,8 @@
 @property (nonatomic, retain) NTPBPaidSubscriptionResult *paidSubscriptionResult;
 @property (nonatomic, retain) NTPBPaidSubscriptionSheetIapFail *paidSubscriptionSheetIapFail;
 @property (nonatomic, retain) NTPBPaidSubscriptionSheetView *paidSubscriptionSheetView;
+@property (nonatomic, retain) NTPBPaywallButtonTap *paywallButtonTap;
+@property (nonatomic, retain) NTPBPDFPageView *pdfPageView;
 @property (nonatomic, retain) NTPBPullToRefresh *pullToRefresh;
 @property (nonatomic, retain) NTPBReadingListAddRemove *readingListAddRemove;
 @property (nonatomic, retain) NTPBReadingListShow *readingListShow;
@@ -290,6 +311,7 @@
 - (id)appSessionResume;
 - (id)appSessionStart;
 - (id)appSessionStartWatch;
+- (id)appleidSignInResult;
 - (id)articleEngagement;
 - (id)articleHostViewExposure;
 - (id)articleLikeDislike;
@@ -301,6 +323,7 @@
 - (id)articleViewWatch;
 - (id)backgroundSubscriptionValidation;
 - (id)bundleIdMappingMiss;
+- (id)bundleSubscriberInfo;
 - (id)channelMuteUnmute;
 - (id)comscoreEventSend;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -331,6 +354,7 @@
 - (bool)hasAppSessionResume;
 - (bool)hasAppSessionStart;
 - (bool)hasAppSessionStartWatch;
+- (bool)hasAppleidSignInResult;
 - (bool)hasArticleEngagement;
 - (bool)hasArticleHostViewExposure;
 - (bool)hasArticleLikeDislike;
@@ -342,6 +366,7 @@
 - (bool)hasArticleViewWatch;
 - (bool)hasBackgroundSubscriptionValidation;
 - (bool)hasBundleIdMappingMiss;
+- (bool)hasBundleSubscriberInfo;
 - (bool)hasChannelMuteUnmute;
 - (bool)hasComscoreEventSend;
 - (bool)hasCoverArticleWidgetExposure;
@@ -357,6 +382,9 @@
 - (bool)hasFeedViewExposure;
 - (bool)hasGroupViewExposure;
 - (bool)hasInAppWebEmbedExposure;
+- (bool)hasIssueDownload;
+- (bool)hasIssueExposure;
+- (bool)hasIssueTocView;
 - (bool)hasLinkTap;
 - (bool)hasLinkTapArticle;
 - (bool)hasLocalNotificationReceived;
@@ -373,6 +401,8 @@
 - (bool)hasPaidSubscriptionResult;
 - (bool)hasPaidSubscriptionSheetIapFail;
 - (bool)hasPaidSubscriptionSheetView;
+- (bool)hasPaywallButtonTap;
+- (bool)hasPdfPageView;
 - (bool)hasPullToRefresh;
 - (bool)hasReadingListAddRemove;
 - (bool)hasReadingListShow;
@@ -411,6 +441,9 @@
 - (unsigned long long)hash;
 - (id)inAppWebEmbedExposure;
 - (bool)isEqual:(id)arg1;
+- (id)issueDownload;
+- (id)issueExposure;
+- (id)issueTocView;
 - (id)linkTap;
 - (id)linkTapArticle;
 - (id)localNotificationReceived;
@@ -428,6 +461,8 @@
 - (id)paidSubscriptionResult;
 - (id)paidSubscriptionSheetIapFail;
 - (id)paidSubscriptionSheetView;
+- (id)paywallButtonTap;
+- (id)pdfPageView;
 - (id)pullToRefresh;
 - (bool)readFrom:(id)arg1;
 - (id)readingListAddRemove;
@@ -452,6 +487,7 @@
 - (void)setAppSessionResume:(id)arg1;
 - (void)setAppSessionStart:(id)arg1;
 - (void)setAppSessionStartWatch:(id)arg1;
+- (void)setAppleidSignInResult:(id)arg1;
 - (void)setArticleEngagement:(id)arg1;
 - (void)setArticleHostViewExposure:(id)arg1;
 - (void)setArticleLikeDislike:(id)arg1;
@@ -463,6 +499,7 @@
 - (void)setArticleViewWatch:(id)arg1;
 - (void)setBackgroundSubscriptionValidation:(id)arg1;
 - (void)setBundleIdMappingMiss:(id)arg1;
+- (void)setBundleSubscriberInfo:(id)arg1;
 - (void)setChannelMuteUnmute:(id)arg1;
 - (void)setComscoreEventSend:(id)arg1;
 - (void)setCoverArticleWidgetExposure:(id)arg1;
@@ -478,6 +515,9 @@
 - (void)setFeedViewExposure:(id)arg1;
 - (void)setGroupViewExposure:(id)arg1;
 - (void)setInAppWebEmbedExposure:(id)arg1;
+- (void)setIssueDownload:(id)arg1;
+- (void)setIssueExposure:(id)arg1;
+- (void)setIssueTocView:(id)arg1;
 - (void)setLinkTap:(id)arg1;
 - (void)setLinkTapArticle:(id)arg1;
 - (void)setLocalNotificationReceived:(id)arg1;
@@ -494,6 +534,8 @@
 - (void)setPaidSubscriptionResult:(id)arg1;
 - (void)setPaidSubscriptionSheetIapFail:(id)arg1;
 - (void)setPaidSubscriptionSheetView:(id)arg1;
+- (void)setPaywallButtonTap:(id)arg1;
+- (void)setPdfPageView:(id)arg1;
 - (void)setPullToRefresh:(id)arg1;
 - (void)setReadingListAddRemove:(id)arg1;
 - (void)setReadingListShow:(id)arg1;

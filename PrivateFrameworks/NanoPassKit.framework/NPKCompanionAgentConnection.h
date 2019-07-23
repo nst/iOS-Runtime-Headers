@@ -64,6 +64,8 @@
 - (void)defaultPaymentApplicationForPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2 fromDevice:(id)arg3 completion:(id /* block */)arg4;
+- (void)handleDeviceUnlockedForPendingProvisioningRequestFromGizmo;
+- (void)handlePeerPaymentTermsAndConditionsRequestFromGizmo;
 - (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
 - (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (bool)hasQueuedPaymentPasses;
@@ -82,8 +84,10 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)peerPaymentAccountForDevice:(id)arg1;
+- (void)provisionPassForAccountIdentifier:(id)arg1 makeDefault:(bool)arg2 completion:(id /* block */)arg3;
 - (bool)queueAppropriateFailedActions;
 - (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
+- (void)registerDeviceWithCompletion:(id /* block */)arg1;
 - (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 waitForConfirmation:(bool)arg3 completion:(id /* block */)arg4;
 - (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(id /* block */)arg3;
 - (void)setCachedPasses:(id)arg1;
@@ -103,7 +107,7 @@
 - (id)sharedPeerPaymentWebServiceContextForDevice:(id)arg1;
 - (void)shouldShowApplePaySettingsWithCompletion:(id /* block */)arg1;
 - (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderedByDate:(long long)arg6 limit:(long long)arg7 completion:(id /* block */)arg8;
 - (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(id)arg1 sessionData:(id)arg2 handler:(id /* block */)arg3;
 - (void)updateSettings:(unsigned long long)arg1 forPassWithUniqueID:(id)arg2;

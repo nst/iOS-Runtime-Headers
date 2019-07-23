@@ -57,6 +57,7 @@
 - (void)_removeETAComponents;
 - (void)addComponent:(id)arg1;
 - (id)bestName;
+- (unsigned long long)brandMUID;
 - (id)businessURL;
 - (id)cacheKey;
 - (void)clearComponents;
@@ -79,6 +80,7 @@
 - (void)enumerateValidComponentsWithValuesUsingBlock:(id /* block */)arg1;
 - (id)geoMapItem;
 - (id)geoMapItemWithDetourInfo:(id)arg1;
+- (bool)hasBrandMUID;
 - (bool)hasExpiredComponentsAsOf:(double)arg1;
 - (bool)hasMapsId;
 - (bool)hasMuid;
@@ -107,6 +109,8 @@
 - (id)referenceFrameAsString:(int)arg1;
 - (id)requestData;
 - (int)resultProviderId;
+- (id)secondaryName;
+- (id)secondarySpokenName;
 - (void)setComponents:(id)arg1;
 - (void)setFirstSeenTimestamp:(double)arg1;
 - (void)setHasMuid:(bool)arg1;

@@ -3,14 +3,18 @@
  */
 
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell {
+    UILabel * _internalPhishingWarningLabel;
     UIButton * _reportSpamButton;
     bool  _showReportSMSSpam;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;
+@property (nonatomic, readonly) UILabel *internalPhishingWarningLabel;
 @property (nonatomic, retain) UIButton *reportSpamButton;
 @property (nonatomic) bool showReportSMSSpam;
 
++ (id)internalPhishingWarning;
++ (id)internalPhishingWarningLabel;
 + (id)reportSpamButton;
 
 - (void).cxx_destruct;
@@ -19,7 +23,9 @@
 - (void)clearFilters;
 - (void)configureForChatItem:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)internalPhishingWarningLabel;
 - (void)layoutSubviewsForAlignmentContents;
+- (void)prepareForReuse;
 - (id)reportSpamButton;
 - (void)setAttributedButtonText:(id)arg1;
 - (void)setReportSpamButton:(id)arg1;

@@ -10,6 +10,7 @@
     GEODirectionIntent * _directionIntent;
     NSArray * _displayHeaderSubstitutes;
     unsigned int  _dymSuggestionVisibleTime;
+    GEOPDMerchantLookupResult * _merchantLookupResult;
     NSArray * _relatedSearchSuggestions;
     GEOMapRegion * _resultBoundingRegion;
     NSString * _resultDisplayHeader;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly) NSArray *displayHeaderSubstitutes;
 @property (nonatomic, readonly) unsigned int dymSuggestionVisibleTime;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) GEOPDMerchantLookupResult *merchantLookupResult;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
@@ -54,6 +56,7 @@
 - (id)displayHeaderSubstitutes;
 - (unsigned int)dymSuggestionVisibleTime;
 - (bool)isChainResultSet;
+- (id)merchantLookupResult;
 - (id)relatedSearchSuggestions;
 - (id)resultBoundingRegion;
 - (id)resultDisplayHeader;

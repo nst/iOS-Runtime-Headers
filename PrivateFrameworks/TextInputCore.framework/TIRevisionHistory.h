@@ -38,6 +38,7 @@
 - (void)addRevisedTokenString:(id)arg1 withTokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 inDocumentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 toRevision:(id)arg4;
 - (void)adjustTokenOffsetAfterDeletedTokenRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withDeletedCharacterCount:(unsigned long long)arg2;
 - (void)annotateTokensCreatedFromDocumentState;
+- (void)collectPFLTelemetryForTokenAtIndex:(unsigned long long)arg1;
 - (struct _TIRevisionHistoryTokenIterator { unsigned long long x1; unsigned long long x2; })currentTokenIterator;
 - (id)currentUserTyping;
 - (id)currentWord;

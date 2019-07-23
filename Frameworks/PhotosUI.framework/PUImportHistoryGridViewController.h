@@ -34,6 +34,7 @@
 - (id)initWithSpec:(id)arg1;
 - (bool)initiallyScrolledToBottom;
 - (id)newGridLayout;
+- (long long)oneUpPresentationOrigin;
 - (id)referenceHeaderView;
 - (double)referenceWidth;
 - (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;

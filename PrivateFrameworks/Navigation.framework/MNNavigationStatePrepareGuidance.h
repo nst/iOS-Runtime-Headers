@@ -18,6 +18,6 @@
 - (void)startNavigationForRouteDetails:(id)arg1 handler:(id /* block */)arg2;
 - (void)stopNavigation;
 - (id)traceManager;
-- (unsigned long long)type;
+- (long long)type;
 
 @end

@@ -6,6 +6,7 @@
     id /* block */  _deviceStatusCallback;
     NSObject<OS_dispatch_queue> * _discovery_queue;
     <IDSServiceDelegate> * _incomingDelegate;
+    IDSService * _localService;
     NSObject<OS_os_log> * _log;
     <DEDClientProtocol> * _remoteSideDelegate;
     NSObject<OS_dispatch_queue> * _run_queue;
@@ -18,6 +19,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *discovery_queue;
 @property (readonly) unsigned long long hash;
 @property (retain) <IDSServiceDelegate> *incomingDelegate;
+@property (retain) IDSService *localService;
 @property (retain) NSObject<OS_os_log> *log;
 @property <DEDClientProtocol> *remoteSideDelegate;
 @property (retain) NSObject<OS_dispatch_queue> *run_queue;
@@ -36,16 +38,20 @@
 - (id)incomingDelegate;
 - (void)incomingDeviceReceived:(id)arg1;
 - (id)initWithConroller:(id)arg1;
+- (id)localService;
 - (id)log;
 - (id)remoteSideDelegate;
 - (id)run_queue;
-- (bool)sendMessage:(int)arg1 withData:(id)arg2 forDevice:(id)arg3 isResponse:(bool)arg4;
-- (bool)sendMessage:(int)arg1 withData:(id)arg2 forID:(id)arg3 isResponse:(bool)arg4;
+- (bool)sendMessage:(int)arg1 withData:(id)arg2 forDevices:(id)arg3 isResponse:(bool)arg4;
+- (bool)sendMessage:(int)arg1 withData:(id)arg2 forIDSDeviceID:(id)arg3 isResponse:(bool)arg4;
+- (bool)sendMessage:(int)arg1 withData:(id)arg2 forIDSDeviceIDs:(id)arg3 isResponse:(bool)arg4;
+- (bool)sendMessage:(int)arg1 withData:(id)arg2 forIDSDeviceIDs:(id)arg3 localIDSDeviceIDs:(id)arg4 isResponse:(bool)arg5;
 - (id)service;
 - (void)setDeviceCallback:(id /* block */)arg1;
 - (void)setDeviceStatusCallback:(id /* block */)arg1;
 - (void)setDiscovery_queue:(id)arg1;
 - (void)setIncomingDelegate:(id)arg1;
+- (void)setLocalService:(id)arg1;
 - (void)setLog:(id)arg1;
 - (void)setRemoteSideDelegate:(id)arg1;
 - (void)setRun_queue:(id)arg1;

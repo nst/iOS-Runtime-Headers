@@ -3,19 +3,25 @@
  */
 
 @interface ICMusicSubscriptionStatusRequestOperation : ICAsyncOperation {
+    bool  _allowsFuseHeaderEnrichment;
     ICMusicSubscriptionStatusRequest * _request;
     id /* block */  _responseHandler;
 }
 
+@property (nonatomic) bool allowsFuseHeaderEnrichment;
 @property (nonatomic, readonly, copy) ICMusicSubscriptionStatusRequest *request;
 @property (nonatomic, copy) id /* block */ responseHandler;
 
 - (void).cxx_destruct;
+- (void)_cacheAccountEligibilityWithStatus:(id)arg1 requestContext:(id)arg2;
+- (bool)_carrierBundleStatusIsValidForCachedSubscriptionStatus:(id)arg1;
 - (void)_performSubscriptionStatusURLRequestWithRequestContext:(id)arg1 subscriptionStatusURL:(id)arg2 allowsAuthentication:(bool)arg3 maximumRetryCount:(unsigned long long)arg4 completion:(id /* block */)arg5;
+- (bool)allowsFuseHeaderEnrichment;
 - (void)execute;
 - (id)initWithRequest:(id)arg1;
 - (id)request;
 - (id /* block */)responseHandler;
+- (void)setAllowsFuseHeaderEnrichment:(bool)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
 
 @end

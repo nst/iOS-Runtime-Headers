@@ -35,6 +35,7 @@
 - (id)fetchAll;
 - (id)fetchAllNoLimit;
 - (id)fetchAllObjectsWithUniqueId:(id)arg1;
+- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithPredicate:(id)arg1;
 - (id)fetchObjectsWithUniqueIds:(id)arg1;

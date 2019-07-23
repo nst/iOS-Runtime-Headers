@@ -17,6 +17,8 @@
 - (void)_updateCloudKitStateWithDictionary:(id)arg1;
 - (void)broadcastCloudKitState;
 - (void)broadcastCloudKitStateAfterClearingErrors;
+- (void)broadcastCloudKitStateAfterFetchingAccountStatus;
+- (void)clearAnalyticDefaultsAndLocalSyncState;
 - (void)clearChatZoneSyncToken;
 - (void)clearDataFromCloudKit;
 - (void)clearLocalSyncState;
@@ -60,6 +62,9 @@
 - (bool)rampedIntoTruthZone;
 - (void)removePathFromiCloudBackups:(id)arg1;
 - (bool)removedFromiCloudBackup;
+- (void)reportMetricToCK:(id)arg1;
+- (void)reportMetricToCK:(id)arg1 withDict:(id)arg2;
+- (void)reportMetricToCK:(id)arg1 withSuccess:(bool)arg2;
 - (void)requestMOCEnabledState;
 - (void)sendRestoreFailuresLogDumps;
 - (void)setEnabled:(bool)arg1;
@@ -76,6 +81,8 @@
 - (void)toggleiCloudBackupsIfNeeded;
 - (void)tryToAutoCollectLogsWithErrorString:(id)arg1 sendLogsTo:(id)arg2;
 - (void)tryToDisableAllDevices;
+- (void)updateAttachmentFileSizes;
+- (void)uploadDailyAnalyticstoCloudKit;
 - (void)writeAttachments;
 - (void)writeCloudKitSyncCounts:(id)arg1;
 - (void)writeDirtyChats;

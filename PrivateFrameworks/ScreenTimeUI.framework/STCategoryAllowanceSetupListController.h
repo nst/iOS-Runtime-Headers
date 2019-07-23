@@ -13,11 +13,13 @@
 @property (nonatomic, retain) PSSpecifier *categoriesGroupSpecifier;
 
 - (void).cxx_destruct;
+- (void)_selectInitialSelectedIdentifiersIfNeeded;
 - (void)addButtonTapped:(id)arg1;
 - (id)allAppsAndCategoriesSpecifier;
 - (id)bundleIDsByCategoryIdentifier;
 - (id)categoriesGroupSpecifier;
 - (id)categorySpecifiers;
+- (id)initWithSelectedIdentifiers:(id)arg1 creatingNewAllowance:(bool)arg2;
 - (void)setAllAppsAndCategoriesSpecifier:(id)arg1;
 - (void)setBundleIDsByCategoryIdentifier:(id)arg1;
 - (void)setCategoriesGroupSpecifier:(id)arg1;

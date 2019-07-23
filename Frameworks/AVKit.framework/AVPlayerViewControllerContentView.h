@@ -5,6 +5,7 @@
 @interface AVPlayerViewControllerContentView : UIView <AVCaptureViewConfiguring, AVContentTransitioning> {
     UIImageView * _audioOnlyIndicatorView;
     NSString * _automaticVideoGravity;
+    bool  _backdropCaptureViewHidden;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -45,6 +46,7 @@
 @property (nonatomic, readonly) UIImageView *audioOnlyIndicatorView;
 @property (nonatomic, readonly) UIImageView *audioOnlyIndicatorViewIfLoaded;
 @property (nonatomic, copy) NSString *automaticVideoGravity;
+@property (nonatomic) bool backdropCaptureViewHidden;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundsForLastLayoutSubviews;
 @property (nonatomic) bool canAutomaticallyZoomLetterboxVideos;
 @property (nonatomic, readonly) NSString *captureGroupName;
@@ -98,6 +100,7 @@
 - (id)audioOnlyIndicatorView;
 - (id)audioOnlyIndicatorViewIfLoaded;
 - (id)automaticVideoGravity;
+- (bool)backdropCaptureViewHidden;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForLastLayoutSubviews;
 - (bool)canAutomaticallyZoomLetterboxVideos;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -134,6 +137,7 @@
 - (id)playerLayerView;
 - (void)playerLayerViewDidChange;
 - (void)setAutomaticVideoGravity:(id)arg1;
+- (void)setBackdropCaptureViewHidden:(bool)arg1;
 - (void)setBoundsForLastLayoutSubviews:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCanAutomaticallyZoomLetterboxVideos:(bool)arg1;
 - (void)setContentTransitioningDelegate:(id)arg1;
@@ -161,5 +165,6 @@
 - (id)turboModePlaybackControlsPlaceholderView;
 - (id)unsupportedContentIndicatorView;
 - (id)unsupportedContentIndicatorViewIfLoaded;
+- (void)updateBackdropCaptureViewHidden;
 
 @end

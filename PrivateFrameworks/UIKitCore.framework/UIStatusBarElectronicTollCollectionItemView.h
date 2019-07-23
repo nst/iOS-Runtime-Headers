@@ -6,8 +6,6 @@
     bool  _available;
 }
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (double)alphaForAvailable:(bool)arg1;
 - (id)contentsImage;
 - (void)setVisible:(bool)arg1;

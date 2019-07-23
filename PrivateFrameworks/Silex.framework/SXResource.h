@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXResource : SXJSONObject <SXClassFactoryProtocol>
+@interface SXResource : SXJSONObject <SXClassFactoryProtocol, SXResource>
 
 @property (nonatomic, readonly) NSURL *URL;
 @property (readonly, copy) NSString *debugDescription;

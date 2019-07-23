@@ -28,7 +28,6 @@
 @property (nonatomic, copy) NSData *manifestHash;
 @property (nonatomic) double preferredImageScale;
 @property (nonatomic, retain) NSString *preferredImageSuffix;
-@property (nonatomic, readonly) bool remoteAssetsDownloaded;
 @property (nonatomic) unsigned long long settings;
 @property (nonatomic) long long shareCount;
 @property (nonatomic, copy) NSString *uniqueID;

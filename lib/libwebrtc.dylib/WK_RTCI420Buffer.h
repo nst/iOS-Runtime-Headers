@@ -33,7 +33,9 @@
 - (int)height;
 - (id)initWithFrameBuffer:(struct scoped_refptr<webrtc::I420BufferInterface> { struct I420BufferInterface {} *x1; })arg1;
 - (id)initWithWidth:(int)arg1 height:(int)arg2;
+- (id)initWithWidth:(int)arg1 height:(int)arg2 dataY:(const char *)arg3 dataU:(const char *)arg4 dataV:(const char *)arg5;
 - (id)initWithWidth:(int)arg1 height:(int)arg2 strideY:(int)arg3 strideU:(int)arg4 strideV:(int)arg5;
+- (struct scoped_refptr<webrtc::I420BufferInterface> { struct I420BufferInterface {} *x1; })nativeI420Buffer;
 - (int)strideU;
 - (int)strideV;
 - (int)strideY;

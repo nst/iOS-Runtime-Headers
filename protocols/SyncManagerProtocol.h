@@ -10,6 +10,7 @@
 - (void)deleteObjectsWithLimits:(NSDictionary *)arg1;
 - (void)deleteObjectsWithUniqueIds:(NSArray *)arg1;
 - (NSArray *)fetchAllObjects;
+- (NSArray *)fetchCallsWithPredicate:(NSPredicate *)arg1 sortDescriptors:(NSArray *)arg2 limit:(unsigned long long)arg3;
 - (CHRecentCall *)fetchObjectWithUniqueId:(NSString *)arg1;
 - (NSArray *)fetchObjectsWithLimits:(NSDictionary *)arg1;
 - (void)insert:(CHRecentCall *)arg1;

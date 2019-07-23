@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *senderAddress;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3;
 - (id)recipientAddress;
 - (unsigned long long)recipientAddressSource;
 - (id)senderAddress;

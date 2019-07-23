@@ -12,8 +12,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)emojiKeyManager;
 - (void)setEmojiKeyManager:(id)arg1;
 - (void)updateToCategory:(long long)arg1;

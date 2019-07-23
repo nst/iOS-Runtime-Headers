@@ -11,6 +11,7 @@
     UIColor * _darkKeyColor;
     <SUClientInterfaceDelegatePrivate> * _delegate;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    bool  _ignoreDefaultKeyboardNotifications;
     bool  _ignoresExpectedClientsProtocol;
     bool  _inAskToBuyApprovalFlow;
     UIColor * _lightKeyColor;
@@ -32,6 +33,7 @@
 @property (copy) NSString *clientIdentifier;
 @property (nonatomic, copy) UIColor *darkKeyColor;
 @property (nonatomic) <SUClientInterfaceDelegate> *delegate;
+@property bool ignoreDefaultKeyboardNotifications;
 @property bool inAskToBuyApprovalFlow;
 @property (nonatomic, copy) UIColor *lightKeyColor;
 @property (copy) NSString *localStoragePath;
@@ -71,6 +73,7 @@
 - (id)darkKeyColor;
 - (void)dealloc;
 - (id)delegate;
+- (bool)ignoreDefaultKeyboardNotifications;
 - (bool)inAskToBuyApprovalFlow;
 - (id)init;
 - (id)lightKeyColor;
@@ -85,6 +88,7 @@
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIgnoreDefaultKeyboardNotifications:(bool)arg1;
 - (void)setInAskToBuyApprovalFlow:(bool)arg1;
 - (void)setLightKeyColor:(id)arg1;
 - (void)setLocalStoragePath:(id)arg1;

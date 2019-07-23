@@ -4,6 +4,7 @@
 
 @interface PKPaymentPass : PKPass <NSCopying, NSSecureCoding> {
     NSString * _appURLScheme;
+    NSString * _associatedAccountServiceAccountIdentifier;
     NSSet * _associatedApplicationIdentifiers;
     NSSet * _associatedWebDomains;
     NSArray * _availableActions;
@@ -37,6 +38,7 @@
 
 @property (nonatomic, readonly) unsigned long long activationState;
 @property (nonatomic, copy) NSString *appURLScheme;
+@property (nonatomic, copy) NSString *associatedAccountServiceAccountIdentifier;
 @property (nonatomic, copy) NSSet *associatedApplicationIdentifiers;
 @property (nonatomic, copy) NSSet *associatedWebDomains;
 @property (nonatomic, copy) NSArray *availableActions;
@@ -72,6 +74,7 @@
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
 @property (nonatomic, readonly, copy) PKTransitPassProperties *transitProperties;
+@property (nonatomic, readonly) NSArray *upgradeRequests;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -88,6 +91,7 @@
 - (unsigned long long)activationState;
 - (id)addValueURL;
 - (id)appURLScheme;
+- (id)associatedAccountServiceAccountIdentifier;
 - (id)associatedApplicationIdentifiers;
 - (id)associatedWebDomains;
 - (id)availableActions;
@@ -115,6 +119,7 @@
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (bool)isAccessPass;
 - (bool)isCobranded;
+- (bool)isContactlessPaymentSupportedForTransitNetworks:(id)arg1;
 - (bool)isDevicePrimaryPaymentApplicationPersonalized;
 - (bool)isPaymentOptionSelectable;
 - (bool)isPrivateLabel;
@@ -137,6 +142,7 @@
 - (id)sanitizedDeviceAccountNumber;
 - (id)sanitizedPrimaryAccountNumber;
 - (void)setAppURLScheme:(id)arg1;
+- (void)setAssociatedAccountServiceAccountIdentifier:(id)arg1;
 - (void)setAssociatedApplicationIdentifiers:(id)arg1;
 - (void)setAssociatedWebDomains:(id)arg1;
 - (void)setAvailableActions:(id)arg1;
@@ -167,6 +173,7 @@
 - (void)setSupportsSerialNumberBasedProvisioning:(bool)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
+- (bool)shouldIgnoreTransactionUpdatesSwitch;
 - (bool)shouldSuppressNoChargeAmount;
 - (id)sortedPaymentApplications:(id)arg1 ascending:(bool)arg2;
 - (bool)supportsDPANNotifications;
@@ -181,6 +188,7 @@
 - (id)transactionServiceURL;
 - (id)transitProperties;
 - (void)updateDevicePaymentApplicationsWithSecureElementIdentifiers:(id)arg1;
+- (id)upgradeRequests;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 

@@ -146,6 +146,7 @@
 - (id)_previewContainerView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previewFrameForAspectRatio:(long long)arg1 topBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 bottomBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 shouldShiftPreviewForUtilityBar:(bool)arg4;
 - (void)_previewLayoutForAspectRatio:(long long)arg1 shouldShiftPreviewForUtilityBar:(bool)arg2 outPreviewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 outPreviewCenter:(struct CGPoint { double x1; double x2; }*)arg4 outFourThreeTopBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5 outBottomBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg6;
+- (struct UIOffset { double x1; double x2; })_previewOffset;
 - (struct CGSize { double x1; double x2; })_previewSizeForAspectRatio:(long long)arg1;
 - (void)_setBottomBarExtensionView:(id)arg1;
 - (void)_setFlipTransition:(id)arg1;
@@ -156,6 +157,7 @@
 - (void)_topBarForLayoutForLayoutStyle:(long long)arg1 shouldAdjustTopBarOrientation:(bool)arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 center:(struct CGPoint { double x1; double x2; }*)arg4 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg5;
 - (struct CGSize { double x1; double x2; })_topBarSizeForLayoutStyle:(long long)arg1;
 - (void)_updateBarExtensionViewsIfNecessary;
+- (double)_utilityBarExtensionDistanceForLayoutStyle:(long long)arg1;
 - (id)_viewToLayoutBadgesBelowForLayoutStyle:(long long)arg1 orientation:(long long)arg2;
 - (bool)_wantsFullScreenPreviewRegardlessOfLayoutForLayoutStyle:(long long)arg1;
 - (bool)_wantsInterfaceOrientedPreviewForLayoutStyle:(long long)arg1;

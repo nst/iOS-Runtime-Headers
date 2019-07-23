@@ -53,6 +53,7 @@
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
+- (void)sendText:(struct NSString { Class x1; }*)arg1;
 - (void)setCanProcessAudio:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceRole:(int)arg1;

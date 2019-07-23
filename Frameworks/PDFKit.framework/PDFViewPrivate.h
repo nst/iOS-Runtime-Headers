@@ -55,23 +55,7 @@
             double width; 
             double height; 
         } size; 
-    }  extensionViewBoundsInView;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
     }  extensionViewFrame;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  extensionViewInsets;
     double  extensionViewZoomScale;
     unsigned long long  firstVisiblePage;
     PDFPage * fromPage;
@@ -105,6 +89,7 @@
     bool  showsScrollIndicators;
     UISwipeGestureRecognizer * swipeGestureRecognizer;
     UITapGestureRecognizer * tapGestureRecognizer;
+    PDFTimer * tilesSyncTimer;
     PDFViewLayout * viewLayout;
     bool  wantsForceUpdate;
     double  zoomIncrement;

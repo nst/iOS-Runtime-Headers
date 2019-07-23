@@ -38,7 +38,7 @@
 - (unsigned long long)hash;
 - (unsigned long long)index;
 - (id)initFromSOSWithSwapType:(int)arg1 index:(unsigned long long)arg2 oldValue:(id)arg3 newValue:(id)arg4 refLineUUID:(id)arg5;
-- (id)initWithArchive:(const struct StyleSwapUndoTupleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; int x6; unsigned int x7; struct Reference {} *x8; struct Reference {} *x9; struct UUID {} *x10; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StyleSwapUndoTupleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct UUID {} *x8; unsigned int x9; int x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5;
 - (id)initWithChartInfo:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5 refLineUUID:(id)arg6;
 - (id)initWithChartStylePreset:(id)arg1 swapType:(int)arg2 index:(unsigned long long)arg3 oldValue:(id)arg4 newValue:(id)arg5;
@@ -54,7 +54,7 @@
 - (id)p_nonequalPropertiesFromMap:(id)arg1 toMap:(id)arg2;
 - (id)refLineUUID;
 - (id)reverseDelta;
-- (void)saveToArchive:(struct StyleSwapUndoTupleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; int x6; unsigned int x7; struct Reference {} *x8; struct Reference {} *x9; struct UUID {} *x10; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StyleSwapUndoTupleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct UUID {} *x8; unsigned int x9; int x10; }*)arg1 archiver:(id)arg2;
 - (id)semanticTag;
 - (id)styleOwnerReference;
 - (id)styleSwapSupporting;

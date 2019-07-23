@@ -15,7 +15,9 @@
     NSString * _modelNumber;
     NSString * _name;
     bool  _present;
+    int  _primaryPlacement;
     unsigned int  _productIdentifier;
+    int  _secondaryPlacement;
     bool  _supportsAACPService;
 }
 
@@ -29,7 +31,9 @@
 @property (nonatomic, copy) NSString *modelNumber;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) bool present;
+@property (nonatomic) int primaryPlacement;
 @property (nonatomic) unsigned int productIdentifier;
+@property (nonatomic) int secondaryPlacement;
 @property (nonatomic) bool supportsAACPService;
 
 - (void).cxx_destruct;
@@ -47,7 +51,9 @@
 - (id)modelNumber;
 - (id)name;
 - (bool)present;
+- (int)primaryPlacement;
 - (unsigned int)productIdentifier;
+- (int)secondaryPlacement;
 - (void)setAddress:(struct { unsigned char x1[6]; })arg1;
 - (void)setAddressString:(id)arg1;
 - (void)setColorCode:(int)arg1;
@@ -58,7 +64,9 @@
 - (void)setModelNumber:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPresent:(bool)arg1;
+- (void)setPrimaryPlacement:(int)arg1;
 - (void)setProductIdentifier:(unsigned int)arg1;
+- (void)setSecondaryPlacement:(int)arg1;
 - (void)setSupportsAACPService:(bool)arg1;
 - (bool)supportsAACPService;
 

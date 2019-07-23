@@ -7,18 +7,31 @@
 
 - (long long)attachedLocation;
 - (long long)attachedType;
-- (struct CGPoint { double x1; double x2; })centerOfStrokes;
-- (PKDrawing *)drawing;
+- (long long)compoundAnnotationType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertStrokeRectToUnscaledCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertStrokeToUnscaledCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })convertStrokeToUnscaledCanvasSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertUnscaledCanvasToStrokePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertUnscaledCanvasToStrokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })convertUnscaledCanvasToStrokeSize:(struct CGSize { double x1; double x2; })arg1;
+- (NSDate *)creationDate;
+- (TSKPKDrawing *)drawing;
 - (PKDrawing *)drawingForTextRecognition;
 - (NSData *)encodedDrawing;
+- (bool)isCalloutLine;
+- (bool)isCalloutMarginAnnotation;
+- (bool)isCalloutParentStorage;
+- (bool)isStretchableParagraphAnnotation;
 - (struct CGPoint { double x1; double x2; })markupOffset;
 - (bool)needsTextRecognition;
 - (struct CGSize { double x1; double x2; })originalAttachedSize;
 - (struct CGPath { }*)path;
 - (TSUColor *)penColor;
 - (double)percentOfPAContainedInParentRep;
+- (TSUImage *)rasterizedImage;
 - (struct CGSize { double x1; double x2; })rasterizedImageSize;
 - (TSPData *)rasterizedImageTSPData;
+- (void)setCompoundAnnotationType:(long long)arg1;
 - (bool)shouldResizeWithAnchor;
 - (bool)shouldShowAnchorRect;
 - (bool)shouldSplitAcrossAnchorRects;
@@ -26,6 +39,7 @@
 - (unsigned long long)textBaselinesTouchedCount;
 - (long long)toolType;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledBoundsOfStrokes;
+- (struct CGPath { }*)unscaledPath;
 - (unsigned long long)visibleStrokesCount;
 
 @end

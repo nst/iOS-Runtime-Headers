@@ -8,6 +8,8 @@
     NSData * _sourceData;
 }
 
++ (Class)classForKeyedUnarchiver;
+
 - (bool)_isDeallocating;
 - (void)_replaceObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (bool)_tryRetain;

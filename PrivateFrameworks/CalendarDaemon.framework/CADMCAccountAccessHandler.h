@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) <CADPermissionValidator> *permissionValidator;
 
 - (void).cxx_destruct;
+- (id)_cachedAccounts;
 - (bool)_existingCalStoreMapsToAccountIdentifier:(id)arg1;
 - (id)_filteredAccountsForAction:(unsigned long long)arg1 withUnfilteredAccounts:(id)arg2;
 - (bool)_isDisabledForAction:(unsigned long long)arg1;

@@ -6,12 +6,7 @@
     NSString * _notChargingString;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
 - (bool)updateForNewData:(id)arg1 actions:(int)arg2;

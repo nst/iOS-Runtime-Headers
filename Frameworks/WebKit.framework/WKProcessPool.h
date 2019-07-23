@@ -20,7 +20,7 @@
     }  _geolocationProvider;
     struct ObjectStorage<WebKit::WebProcessPool> { 
         struct type { 
-            unsigned char __lx[1424]; 
+            unsigned char __lx[1464]; 
         } data; 
     }  _processPool;
 }
@@ -58,19 +58,25 @@
 - (id)_coreLocationProvider;
 - (void)_disableServiceWorkerProcessTerminationDelay;
 - (id)_downloadDelegate;
+- (id)_downloadURLRequest:(id)arg1 originatingWebView:(id)arg2;
 - (id)_geolocationProvider;
+- (void)_getActivePagesOriginsInWebProcessForTesting:(int)arg1 completionHandler:(id /* block */)arg2;
+- (bool)_hasPrewarmedWebProcess;
 - (id)_initWithConfiguration:(id)arg1;
 - (bool)_isCookieStoragePartitioningEnabled;
 - (bool)_isStorageAccessAPIEnabled;
 - (void)_makeNextNetworkProcessLaunchFailForTesting;
 - (void)_makeNextWebProcessLaunchFailForTesting;
+- (unsigned long long)_maximumSuspendedPageCount;
+- (bool)_networkProcessHasEntitlementForTesting:(id)arg1;
 - (int)_networkProcessIdentifier;
 - (id)_objectForBundleParameter:(id)arg1;
 - (unsigned long long)_pluginProcessCount;
 - (void)_preconnectToServer:(id)arg1;
-- (unsigned long long)_prewarmedWebProcessCount;
+- (unsigned long long)_processCacheCapacity;
 - (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
 - (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
+- (id)_resumeDownloadFromData:(id)arg1 path:(id)arg2 originatingWebView:(id)arg3;
 - (unsigned long long)_serviceWorkerProcessCount;
 - (void)_setAllowsAnySSLCertificateForServiceWorker:(bool)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
@@ -85,15 +91,14 @@
 - (void)_setObject:(id)arg1 forBundleParameter:(id)arg2;
 - (void)_setObjectsForBundleParametersWithDictionary:(id)arg1;
 - (void)_setStorageAccessAPIEnabled:(bool)arg1;
-- (int)_storageProcessIdentifier;
 - (void)_syncNetworkProcessCookies;
 - (void)_terminateNetworkProcess;
 - (void)_terminateServiceWorkerProcesses;
-- (void)_terminateStorageProcess;
 - (void)_warmInitialProcess;
 - (unsigned long long)_webPageContentProcessCount;
 - (unsigned long long)_webProcessCount;
 - (unsigned long long)_webProcessCountIgnoringPrewarmed;
+- (unsigned long long)_webProcessCountIgnoringPrewarmedAndCached;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -102,9 +107,13 @@
 
 // Image: /System/Library/Frameworks/iAd.framework/iAd
 
-+ (id)_createProcessPoolWithPriority:(bool)arg1 video:(bool)arg2;
++ (id)_newProcessPoolWithPriority:(bool)arg1 video:(bool)arg2;
 + (id)advertisingProcessPool:(bool)arg1;
 + (id)advertisingProcessPoolForVideo:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (id)webContentProcessPool;
 
 // Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
 

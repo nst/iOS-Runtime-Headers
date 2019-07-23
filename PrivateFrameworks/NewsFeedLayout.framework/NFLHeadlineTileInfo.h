@@ -3,16 +3,20 @@
  */
 
 @interface NFLHeadlineTileInfo : NSObject <NFLFeedTileInfo> {
+    bool  _aggregated;
+    NSString * _bookmarkableIdentifier;
     NSString * _groupIdentifier;
     <FCHeadlineProviding> * _headline;
     NSString * _namespacedIdentifier;
 }
 
+@property (getter=isAggregated, nonatomic, readonly) bool aggregated;
 @property (nonatomic, readonly) unsigned long long bookmarkOffsetType;
-@property (nonatomic, readonly) bool bookmarkable;
+@property (nonatomic, readonly, copy) NSString *bookmarkableIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) NSString *groupIdentifier;
+@property (nonatomic, readonly) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
+@property (nonatomic, readonly, copy) NSString *groupIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) <FCHeadlineProviding> *headline;
 @property (nonatomic, readonly, copy) NSString *identifier;
@@ -22,24 +26,29 @@
 @property (nonatomic, readonly) unsigned long long tileInfoType;
 @property (nonatomic, readonly) NSArray *underlyingFeedElements;
 
++ (id)identifierWithBookmarkableIdentifier:(id)arg1 groupIdentifier:(id)arg2;
+
 - (void).cxx_destruct;
 - (unsigned long long)bookmarkOffsetType;
-- (bool)bookmarkable;
+- (id)bookmarkableIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)feedTileInfoForBookmarking;
 - (id)groupIdentifier;
 - (unsigned long long)hash;
 - (id)headline;
 - (id)identifier;
 - (id)init;
 - (id)initWithHeadline:(id)arg1 groupIdentifier:(id)arg2;
+- (id)initWithHeadline:(id)arg1 groupIdentifier:(id)arg2 aggregated:(bool)arg3;
+- (bool)isAggregated;
 - (bool)isEqual:(id)arg1;
 - (id)namespacedIdentifier;
 - (bool)pageable;
-- (void)setGroupIdentifier:(id)arg1;
 - (void)setHeadline:(id)arg1;
 - (void)setNamespacedIdentifier:(id)arg1;
 - (unsigned long long)tileInfoType;
 - (id)underlyingFeedElements;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 
 @end

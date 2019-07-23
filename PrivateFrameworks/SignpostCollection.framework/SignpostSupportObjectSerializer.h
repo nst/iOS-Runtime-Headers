@@ -9,6 +9,7 @@
     unsigned long long  _maxBytesSize;
     NSMutableArray * _outstandingLogMessage;
     NSMutableArray * _outstandingSignpostObjects;
+    bool  _redactPrivacySensitiveData;
     id /* block */  _serializedLogMessageBlock;
     id /* block */  _serializedSignpostEventBlock;
 }
@@ -19,6 +20,7 @@
 @property (nonatomic) unsigned long long maxBytesSize;
 @property (nonatomic, retain) NSMutableArray *outstandingLogMessage;
 @property (nonatomic, retain) NSMutableArray *outstandingSignpostObjects;
+@property (nonatomic) bool redactPrivacySensitiveData;
 @property (nonatomic, copy) id /* block */ serializedLogMessageBlock;
 @property (nonatomic, copy) id /* block */ serializedSignpostEventBlock;
 
@@ -33,6 +35,7 @@
 - (unsigned long long)maxBytesSize;
 - (id)outstandingLogMessage;
 - (id)outstandingSignpostObjects;
+- (bool)redactPrivacySensitiveData;
 - (bool)serializeLogArchiveWithPath:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 errorOut:(id*)arg4;
 - (bool)serializeNotificationsWithIntervalTimeoutInSeconds:(unsigned long long)arg1 errorOut:(id*)arg2;
 - (id /* block */)serializedLogMessageBlock;
@@ -43,6 +46,7 @@
 - (void)setMaxBytesSize:(unsigned long long)arg1;
 - (void)setOutstandingLogMessage:(id)arg1;
 - (void)setOutstandingSignpostObjects:(id)arg1;
+- (void)setRedactPrivacySensitiveData:(bool)arg1;
 - (void)setSerializedLogMessageBlock:(id /* block */)arg1;
 - (void)setSerializedSignpostEventBlock:(id /* block */)arg1;
 

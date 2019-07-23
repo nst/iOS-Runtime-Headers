@@ -6,6 +6,7 @@
     NSArray * _actions;
     NSString * _deviceIdentifier;
     NSString * _identifier;
+    NSString * _partnerMetadata;
     NSDate * _purchaseDate;
     PKServiceProviderPurchaseData * _serviceProviderData;
     NSString * _serviceProviderIdentifier;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSArray *actions;
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *partnerMetadata;
 @property (nonatomic, copy) NSDate *purchaseDate;
 @property (nonatomic, copy) PKServiceProviderPurchaseData *serviceProviderData;
 @property (nonatomic, copy) NSString *serviceProviderIdentifier;
@@ -38,12 +40,14 @@
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToServiceProviderPurchase:(id)arg1;
+- (id)partnerMetadata;
 - (id)purchaseDate;
 - (id)serviceProviderData;
 - (id)serviceProviderIdentifier;
 - (void)setActions:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setPartnerMetadata:(id)arg1;
 - (void)setPurchaseDate:(id)arg1;
 - (void)setServiceProviderData:(id)arg1;
 - (void)setServiceProviderIdentifier:(id)arg1;

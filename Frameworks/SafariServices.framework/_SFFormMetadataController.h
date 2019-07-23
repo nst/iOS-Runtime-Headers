@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)_assistedNodeMetadataWithPasswordField:(id)arg1 passwordFieldMetadata:(id)arg2 formMetadata:(id)arg3 inFrame:(id)arg4;
+- (void)_collectFormMetadataForPreFilling:(bool)arg1;
 - (bool)_formContainsAutoFilledElements:(id)arg1;
 - (id)_observer;
 - (void)_webProcessPlugInBrowserContextController:(id)arg1 textDidChangeInTextField:(id)arg2 inFrame:(id)arg3 initiatedByUserTyping:(bool)arg4;
@@ -43,16 +44,15 @@
 - (void)didSameDocumentNavigation:(long long)arg1 inFrame:(id)arg2;
 - (bool)didStartProvisionalLoadForFrame:(id)arg1;
 - (id)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
-- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(bool)arg3;
 - (void)focusFormForStreamlinedLogin:(double)arg1 inFrame:(id)arg2;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)initWithPageController:(id)arg1;
 - (void)invalidate;
-- (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
+- (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2 isPasswordFieldForUserCredentials:(bool)arg3;
 - (void)removeAutomaticPasswordElementsInFrame:(id)arg1 focusedPasswordControlUniqueID:(id)arg2 passwordControlUniqueIDs:(id)arg3 blurAfterRemoval:(bool)arg4;
 - (void)removeAutomaticPasswordVisualTreatmentInFrame:(id)arg1 passwordControlUniqueIDs:(id)arg2;
 - (id)scriptWorld;
-- (bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (bool)shouldIncludeNonEmptyFields;
 - (void)usernameFieldFocused:(id)arg1 fieldMetadata:(id)arg2 inForm:(id)arg3 inFrame:(id)arg4;
 

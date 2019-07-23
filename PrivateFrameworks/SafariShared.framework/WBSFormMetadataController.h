@@ -44,7 +44,7 @@
 - (void)disableSpellCheckInField:(id)arg1 inFrame:(id)arg2;
 - (void)fillField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (id)fillForm:(double)arg1 inFrame:(id)arg2 withPassword:(id)arg3;
-- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2;
+- (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(bool)arg3;
 - (void)focusField:(id)arg1 inFrame:(id)arg2;
 - (void)focusFormForStreamlinedLogin:(double)arg1 inFrame:(id)arg2;
 - (id)formAutoFillNodeForField:(id)arg1 inFrame:(id)arg2;
@@ -62,9 +62,10 @@
 - (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; }*)metadataForFrame:(id)arg1 requestType:(unsigned long long)arg2;
 - (void)oneTimeCodeFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)oneTimeCodeFieldFocused:(id)arg1 withFieldMetadata:(id)arg2 inFrame:(id)arg3;
+- (void)otherCreditCardFieldBlurred:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
+- (void)otherCreditCardFieldFocused:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
 - (bool)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)passwordFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
-- (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2 isPasswordFieldForUserCredentials:(bool)arg3;
 - (void)recursivelyClearMetadataForFrames:(id)arg1;
 - (void)recursivelyCollectMetadataInFrame:(id)arg1 requestType:(unsigned long long)arg2 frames:(id)arg3 formMetadata:(id)arg4;
@@ -75,11 +76,12 @@
 - (void)selectRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inField:(id)arg2 inFrame:(id)arg3;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })selectionRangeInField:(id)arg1 inFrame:(id)arg2;
 - (void)setFormControls:(id)arg1 inFrame:(id)arg2 asAutoFilled:(bool)arg3;
-- (bool)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 - (bool)shouldIncludeNonEmptyFields;
 - (id)substitutePasswordElementsWithAutomaticPasswordElementsInFrame:(id)arg1 formID:(double)arg2 focusedPasswordControlUniqueID:(id)arg3 passwordControlUniqueIDs:(id)arg4 automaticPassword:(id)arg5 blurAfterSubstitution:(bool)arg6;
 - (void)textFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)textFieldFocused:(id)arg1 inFrame:(id)arg2;
+- (void)unidentifiedTextFieldBlurred:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
+- (void)unidentifiedTextFieldFocused:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id)arg3 formMetadata:(id)arg4;
 - (id)uniqueIDForTextField:(id)arg1 inFrame:(id)arg2;
 - (unsigned long long)userEditedTextControlCountInArray:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 expectTextFieldsRatherThanTextAreas:(bool)arg3;
 - (void)usernameFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;

@@ -14,15 +14,10 @@
 @property (getter=isChecked, nonatomic) bool checked;
 @property (nonatomic, readonly) UILabel *titleLabel;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)_checkmarkOffset;
 
 - (void).cxx_destruct;
 - (bool)_isSelectable;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)checkedColor;
 - (bool)isChecked;
 - (bool)isHighlighted;

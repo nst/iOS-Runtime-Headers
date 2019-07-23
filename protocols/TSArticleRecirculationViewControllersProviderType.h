@@ -6,10 +6,10 @@
 @required
 
 - (UIViewController *)bottomMarginViewController;
-- (<TSArticleRecirculationRoutableFeedDelegate><TSArticleRecirculationViewControllerDelegate><TSParentViewBoundsProvider><TSPurchaseContextProvider> *)delegate;
+- (<TSArticleRecirculationRoutableFeedDelegate><TSArticleRecirculationViewControllerDelegate> *)delegate;
 - (UIViewController<TSArticleRecirculationRoutedType><TSArticleRecirculationViewControllerType> *)inArticleViewController;
 - (UIViewController<TSArticleRecirculationRoutedType><TSArticleRecirculationViewControllerType> *)primaryViewController;
 - (UIViewController<TSArticleRecirculationRoutedType><TSArticleRecirculationViewControllerType> *)secondaryViewController;
-- (void)setDelegate:(id <TSArticleRecirculationRoutableFeedDelegate><TSArticleRecirculationViewControllerDelegate><TSParentViewBoundsProvider><TSPurchaseContextProvider>)arg1;
+- (void)setDelegate:(id <TSArticleRecirculationRoutableFeedDelegate><TSArticleRecirculationViewControllerDelegate>)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIActivityIndicatorView : UIView <DebugHierarchyObject_Fallback, NSCoding> {
+@interface UIActivityIndicatorView : UIView <NSCoding> {
     long long  _activityIndicatorViewStyle;
     long long  _actualActivityIndicatorViewStyle;
     bool  _animating;
@@ -37,10 +37,7 @@
 @property (nonatomic, readonly) NSString *artBackupKeyString;
 @property (nonatomic) bool clockWise;
 @property (nonatomic, retain) UIColor *color;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property bool hasShadow;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesWhenStopped;
 @property (nonatomic, readonly) NSString *highlightArtBackupKeyString;
 @property (nonatomic) double innerRadius;
@@ -53,7 +50,6 @@
 @property (nonatomic) long long spokeFrameRatio;
 @property (readonly) NSArray *spokeHighlightImages;
 @property (readonly) NSArray *spokeImages;
-@property (readonly) Class superclass;
 @property (nonatomic) bool useArtwork;
 @property (nonatomic) bool useOutlineShadow;
 @property (nonatomic) double width;
@@ -102,20 +98,12 @@
 - (void)_tearDownAnimation;
 - (void)_updateInternalViewFrameWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)_widthForGearWidth:(double)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)activityIndicatorViewStyle;
 - (id)artBackupKey;
 - (id)artBackupKeyString;
 - (bool)clockWise;
 - (id)color;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)generateImages;
 - (bool)hasShadow;

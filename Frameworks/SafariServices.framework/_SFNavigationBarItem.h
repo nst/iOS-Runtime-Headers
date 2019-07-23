@@ -4,6 +4,7 @@
 
 @interface _SFNavigationBarItem : NSObject {
     NSString * _customPlaceholderText;
+    bool  _hasFocusedSensitiveFieldOnCurrentPage;
     bool  _lockIconHasEVCertificateTint;
     unsigned long long  _mediaCaptureDeviceIcon;
     _SFNavigationBar * _navigationBar;
@@ -12,7 +13,6 @@
     bool  _readerButtonSelected;
     bool  _showsLockIcon;
     bool  _showsNotSecureAnnotation;
-    bool  _showsNotSecureMessage;
     bool  _showsReaderAvailabilityText;
     bool  _showsReaderButton;
     bool  _showsSearchIndicator;
@@ -25,6 +25,7 @@
 }
 
 @property (nonatomic, copy) NSString *customPlaceholderText;
+@property (nonatomic) bool hasFocusedSensitiveFieldOnCurrentPage;
 @property (nonatomic) bool lockIconHasEVCertificateTint;
 @property (nonatomic) unsigned long long mediaCaptureDeviceIcon;
 @property (setter=_setNavigationBar:, nonatomic) _SFNavigationBar *navigationBar;
@@ -33,7 +34,6 @@
 @property (nonatomic) bool readerButtonSelected;
 @property (nonatomic) bool showsLockIcon;
 @property (nonatomic) bool showsNotSecureAnnotation;
-@property (nonatomic) bool showsNotSecureMessage;
 @property (nonatomic, readonly) bool showsReaderAvailabilityText;
 @property (nonatomic) bool showsReaderButton;
 @property (nonatomic) bool showsSearchIndicator;
@@ -47,6 +47,7 @@
 - (void).cxx_destruct;
 - (void)_setNavigationBar:(id)arg1;
 - (id)customPlaceholderText;
+- (bool)hasFocusedSensitiveFieldOnCurrentPage;
 - (id)init;
 - (bool)lockIconHasEVCertificateTint;
 - (unsigned long long)mediaCaptureDeviceIcon;
@@ -55,6 +56,7 @@
 - (id)progressView;
 - (bool)readerButtonSelected;
 - (void)setCustomPlaceholderText:(id)arg1;
+- (void)setHasFocusedSensitiveFieldOnCurrentPage:(bool)arg1;
 - (void)setLockIconHasEVCertificateTint:(bool)arg1;
 - (void)setMediaCaptureDeviceIcon:(unsigned long long)arg1;
 - (void)setOverrideBarStyleForSecurityWarning:(bool)arg1;
@@ -62,8 +64,7 @@
 - (void)setReaderButtonSelected:(bool)arg1;
 - (void)setShowsLockIcon:(bool)arg1;
 - (void)setShowsNotSecureAnnotation:(bool)arg1;
-- (void)setShowsNotSecureAnnotation:(bool)arg1 showsNotSecureMessage:(bool)arg2;
-- (void)setShowsNotSecureMessage:(bool)arg1;
+- (void)setShowsNotSecureAnnotation:(bool)arg1 hasFocusedSensitiveField:(bool)arg2;
 - (void)setShowsReaderButton:(bool)arg1;
 - (void)setShowsReaderButton:(bool)arg1 showsAvailabilityText:(bool)arg2;
 - (void)setShowsSearchIndicator:(bool)arg1;
@@ -73,7 +74,6 @@
 - (void)setTextHasEVCertificateTint:(bool)arg1;
 - (bool)showsLockIcon;
 - (bool)showsNotSecureAnnotation;
-- (bool)showsNotSecureMessage;
 - (bool)showsReaderAvailabilityText;
 - (bool)showsReaderButton;
 - (bool)showsSearchIndicator;

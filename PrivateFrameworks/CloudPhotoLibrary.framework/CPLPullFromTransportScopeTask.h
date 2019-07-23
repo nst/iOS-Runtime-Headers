@@ -6,15 +6,18 @@
     CPLLibraryInfo * _currentLibraryInfo;
     Class  _currentQueryClass;
     <CPLEngineTransportDownloadBatchTask> * _downloadTask;
-    <CPLEngineTransportGetLibraryInfoTask> * _getLibraryInfoTask;
+    <CPLEngineTransportGetCurrentSyncAnchorTask> * _fetchInitialSyncAnchorTask;
     bool  _hasCachedTotalAssetCountForScope;
+    bool  _hasFetchedInitialSyncAnchor;
     bool  _ignoreNewBatches;
+    CPLLibraryInfo * _initialLibraryInfo;
+    CPLLibraryState * _initialLibraryState;
     struct NSData { Class x1; } * _initialSyncAnchor;
-    struct NSData { Class x1; } * _lastKnownSyncAnchor;
     <CPLEngineTransportQueryTask> * _queryTask;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _rewindFeatureVersion;
     struct NSData { Class x1; } * _rewindSyncAnchor;
+    bool  _shouldStoreInitialSyncAnchor;
     long long  _taskItem;
     unsigned long long  _totalAssetCountForScope;
     CPLEngineTransport * _transport;
@@ -27,6 +30,7 @@
 - (void)_cancelAllTasks;
 - (void)_checkServerFeatureVersionWithCompletionHandler:(id /* block */)arg1;
 - (void)_extractAndMingleAssetsIfPossibleFromBatch:(id)arg1 inTransaction:(id)arg2;
+- (void)_fetchInitialSyncAnchor;
 - (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(struct NSData { Class x1; }*)arg2 inTransaction:(id)arg3;
 - (void)_handleNewBatchFromChanges:(id)arg1 updatedLibraryInfo:(id)arg2 updatedLibraryState:(id)arg3 newSyncAnchor:(struct NSData { Class x1; }*)arg4;
 - (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2;
@@ -36,6 +40,7 @@
 - (void)_launchNextQueryTask;
 - (void)_launchPullTasksAndDisableQueries:(bool)arg1;
 - (void)_launchQueryForClass:(Class)arg1 cursor:(id)arg2;
+- (void)_storeInitialSyncAnchorIfNecessaryInTransaction:(id)arg1;
 - (unsigned long long)_totalAssetCountForScope;
 - (void)_updateLastFeatureVersionAndRelaunchFetchChangesFromSyncAnchor:(struct NSData { Class x1; }*)arg1;
 - (void)cancel;

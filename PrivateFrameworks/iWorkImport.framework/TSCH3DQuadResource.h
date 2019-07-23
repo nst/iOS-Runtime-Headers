@@ -5,6 +5,7 @@
 @interface TSCH3DQuadResource : TSCH3DDataBufferResource
 
 + (id)normalized2D;
++ (id)normalized3D;
 + (id)normalized4D;
 + (id)normalizedCenteredCube;
 + (id)normalizedCube;

@@ -153,6 +153,7 @@
 - (void)_updateNonOpaqueShadowStateFromLayerStack;
 - (void)_updateNormalImageLayers;
 - (void)_updateOverlayContainerLayerHierarchy:(bool)arg1;
+- (void)_updateOverlayLayout;
 - (void)_updatePerspective;
 - (void)_updateRadiosityFromLayerStack;
 - (void)_updateRotationAndTranslation:(id)arg1;

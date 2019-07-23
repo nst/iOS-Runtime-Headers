@@ -29,6 +29,7 @@
 - (void)_runBlockOnObservers:(id /* block */)arg1;
 - (void)_updateModuleInstances;
 - (void)addObserver:(id)arg1;
+- (void)contentModuleContext:(id)arg1 didUpdateHomeGestureDismissalAllowed:(bool)arg2;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
 - (id)contextDelegate;
 - (void)didUpdatePreferredSizeForContentModuleContext:(id)arg1;

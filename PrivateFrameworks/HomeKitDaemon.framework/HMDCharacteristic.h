@@ -110,6 +110,7 @@
 - (id)stateNumber;
 - (bool)supportsNotification;
 - (bool)supportsRead;
+- (bool)supportsWrite;
 - (id)type;
 - (void)unconfigure;
 - (void)unconfigureForServerIdentifier:(id)arg1 linkType:(long long)arg2;

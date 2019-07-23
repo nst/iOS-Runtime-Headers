@@ -8,14 +8,12 @@
     IKImageElement * _bannerImgElement;
     UIImage * _bgImage;
     IKImageElement * _bgImgElement;
-    UIVisualEffectView * _bgVisualEffectView;
     IKViewElement * _collectionListElement;
     _TVStackCollectionView * _collectionView;
     _TVFocusCaptureView * _disabledTemplateFocusCaptureView;
     UIViewController * _focusedSupplementaryViewController;
     IKImageElement * _heroImgElement;
     double  _impressionThreshold;
-    long long  _numberOfCollections;
     UIView * _overlayView;
     NSArray * _supplementaryViewControllers;
     IKImageElement * _uberImgElement;
@@ -34,7 +32,6 @@
 @property (nonatomic, retain) UIViewController *focusedSupplementaryViewController;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IKImageElement *heroImgElement;
-@property (nonatomic) long long numberOfCollections;
 @property (nonatomic, readonly, retain) _TVStackWrappingView *stackWrappingView;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *supplementaryViewControllers;
@@ -49,16 +46,17 @@
 - (void)_cancelImpressionsUpdate;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (void)_disableScrollingIfNecessary:(id)arg1;
-- (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtIndexPath:(id)arg2;
+- (void)_dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (id)_flowLayout;
+- (bool)_isBackdropNeeded;
 - (id)_modalPresenterPresentedViewController;
 - (id)_overlayView;
 - (id)_preferredFocusedSupplementaryView;
 - (void)_recordImpressionsForVisibleView;
-- (bool)_shouldOverlayBlur;
+- (long long)_supplementaryViewSectionIndex;
+- (void)_updateBackgroundViews;
 - (void)_updateImpressions;
-- (void)_updateOverlayBlurView;
 - (bool)_updateSupplementaryViewControllersWithElements:(id)arg1 updateStyles:(bool)arg2;
-- (void)_updateViewBackground;
 - (void)_updateViewLayout;
 - (void)_updateViewOverlay;
 - (void)_updateViewSupplementaryViews;
@@ -88,7 +86,6 @@
 - (id)heroImgElement;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)loadView;
-- (long long)numberOfCollections;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)scrollToTop;
@@ -102,7 +99,6 @@
 - (void)setCollectionView:(id)arg1;
 - (void)setFocusedSupplementaryViewController:(id)arg1;
 - (void)setHeroImgElement:(id)arg1;
-- (void)setNumberOfCollections:(long long)arg1;
 - (void)setSupplementaryViewControllers:(id)arg1;
 - (void)setUberImgElement:(id)arg1;
 - (void)setViewElement:(id)arg1;
@@ -110,9 +106,12 @@
 - (id)supplementaryViewControllers;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)uberImgElement;
+- (void)updateBackdropMaskFactor;
+- (void)updateBackgroundAndBackdrop;
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (id)viewElement;
+- (void)viewSafeAreaInsetsDidChange;
 
 @end

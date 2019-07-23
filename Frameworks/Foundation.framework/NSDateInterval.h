@@ -4,6 +4,7 @@
 
 @interface NSDateInterval : NSObject <NSCopying, NSSecureCoding>
 
+@property (nonatomic, readonly) bool crk_containsCurrentDate;
 @property (readonly) double duration;
 @property (readonly, copy) NSDate *endDate;
 @property (readonly, copy) NSDate *startDate;
@@ -39,6 +40,11 @@
 - (bool)hk_containsTime:(double)arg1;
 - (bool)hk_intersectsDateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)hk_midDate;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (bool)crk_containsCurrentDate;
+- (id)crk_dateIntervalByAddingTimeInterval:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
 

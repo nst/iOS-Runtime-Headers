@@ -3,6 +3,7 @@
  */
 
 @interface CISparseRenderer : CIFilter {
+    NSNumber * inputAperture;
     NSNumber * inputApertureScaling;
     NSNumber * inputDraftMode;
     CIImage * inputImage;
@@ -11,6 +12,7 @@
     NSDictionary * inputTuningParameters;
 }
 
+@property (nonatomic, copy) NSNumber *inputAperture;
 @property (nonatomic, copy) NSNumber *inputApertureScaling;
 @property (nonatomic, copy) NSNumber *inputDraftMode;
 @property (retain) CIImage *inputImage;
@@ -26,6 +28,7 @@
 - (bool)_useD2XRenderer;
 - (id)baseVecsLUT:(unsigned int)arg1;
 - (id)baseVecsLUTGenerator;
+- (id)inputAperture;
 - (id)inputApertureScaling;
 - (id)inputDraftMode;
 - (id)inputImage;
@@ -33,6 +36,7 @@
 - (id)inputScale;
 - (id)inputTuningParameters;
 - (id)outputImage;
+- (void)setInputAperture:(id)arg1;
 - (void)setInputApertureScaling:(id)arg1;
 - (void)setInputDraftMode:(id)arg1;
 - (void)setInputImage:(id)arg1;

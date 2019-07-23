@@ -4,9 +4,8 @@
 
 @interface DeviceManager : NSObject <ICDeviceManagerProtocol> {
     NSDictionary * _deviceMatchingInfo;
-    NSOperationQueue * _deviceOperations;
+    NSOperationQueue * _deviceOperationQueue;
     NSMutableDictionary * _devices;
-    DeviceManagerThread * _thread;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +13,6 @@
 @property (retain) NSOperationQueue *deviceOperations;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (retain) DeviceManagerThread *thread;
 
 - (void)addInitiatedOperation:(id)arg1;
 - (void)addInteractiveOperation:(id)arg1;
@@ -49,11 +47,7 @@
 - (void)postCommandCompletionNotification:(id)arg1;
 - (void)postNotification:(id)arg1;
 - (void)setDeviceOperations:(id)arg1;
-- (void)setThread:(id)arg1;
-- (void)startRunning;
-- (void)stopRunning;
 - (long long)syncClock:(id)arg1 contextInfo:(void*)arg2;
 - (void)syncClockImp:(id)arg1;
-- (id)thread;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.GridViewConstraintManager : SwiftObject {
+@interface ConversationKit.GridViewConstraintManager : Swift._SwiftObject {
     void constraints;
 }
 

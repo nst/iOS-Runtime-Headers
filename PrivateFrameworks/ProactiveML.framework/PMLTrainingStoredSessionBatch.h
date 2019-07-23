@@ -18,6 +18,7 @@
 - (id)initWithCovariates:(id)arg1 outcomes:(id)arg2;
 - (id)minibatchStats;
 - (id)minibatchStatsForPositiveLabel:(unsigned long long)arg1;
+- (id)minibatchStatsForPositiveLabels:(id)arg1;
 - (id)outcomes;
 
 @end

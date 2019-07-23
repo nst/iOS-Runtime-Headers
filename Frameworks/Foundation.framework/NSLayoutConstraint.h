@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSLayoutConstraint : NSObject <DebugHierarchyObject_Fallback, NSISConstraint> {
+@interface NSLayoutConstraint : NSObject <NSISConstraint> {
     float  _coefficient;
     double  _constant;
     id  _container;
@@ -171,11 +171,6 @@
 - (id)symbolicConstant;
 - (double)unsatisfaction;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 + (id)avkit_constraintsFromEdgesOfItem:(id)arg1 toEdgesOfItem:(id)arg2;
@@ -197,6 +192,10 @@
 
 - (id)ax_copyWithPriority:(float)arg1;
 - (void)ax_removeFromContainer;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (void)crk_setPriority:(float)arg1 onConstraints:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
 

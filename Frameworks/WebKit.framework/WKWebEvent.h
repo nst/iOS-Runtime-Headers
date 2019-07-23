@@ -3,13 +3,16 @@
  */
 
 @interface WKWebEvent : WebEvent {
-    UIEvent * _uiEvent;
+    struct RetainPtr<UIEvent> { 
+        void *m_ptr; 
+    }  _uiEvent;
 }
 
-@property (nonatomic, retain) UIEvent *uiEvent;
+@property (nonatomic, readonly, retain) UIEvent *uiEvent;
 
-- (void)dealloc;
-- (void)setUiEvent:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)initWithEvent:(id)arg1;
 - (id)uiEvent;
 
 @end

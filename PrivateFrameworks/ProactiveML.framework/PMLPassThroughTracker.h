@@ -5,6 +5,7 @@
 @interface PMLPassThroughTracker : NSObject <PMLEvaluationTrackerProtocol, PMLLogRegTrackerProtocol> {
     struct NSString { Class x1; } * _planId;
     unsigned long long  _quantizationNumberOfBuckets;
+    NSMutableArray * _results;
 }
 
 @property (readonly, copy) NSString *debugDescription;

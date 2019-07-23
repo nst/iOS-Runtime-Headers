@@ -4,12 +4,8 @@
 
 @interface UIKeyboardDictationMenu : UIKeyboardMenuView
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)activeInstance;
 + (id)sharedInstance;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (bool)centerPopUpOverKey;
 - (void)cleanupForFadeOrHide;

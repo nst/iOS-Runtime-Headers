@@ -16,6 +16,7 @@
     NTKColorCircularUtilitarianFaceViewComplicationFactory * _faceViewComplicationFactory;
     unsigned int  _frameCounter;
     double  _lastComplicationUpdateTime;
+    NSMutableSet * _loadedAssets;
     NSMapTable * _quadPathfinderMapTable;
     CLKUIQuadView * _quadView;
     CLKUIResourceProviderKey * _resourceProviderKey;

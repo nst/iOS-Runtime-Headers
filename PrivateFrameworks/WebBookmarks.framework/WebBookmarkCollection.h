@@ -97,7 +97,7 @@
 - (bool)_deleteBookmark:(id)arg1 postChangeNotification:(bool)arg2 forApplyingInMemoryChanges:(bool)arg3;
 - (void)_deleteBookmarkInMemory:(id)arg1;
 - (void)_deleteIconForBookmark:(id)arg1;
-- (bool)_deleteRecursively:(int)arg1;
+- (bool)_deleteRecursively:(int)arg1 descendantsOnly:(bool)arg2;
 - (bool)_deleteSyncPropertyForKey:(id)arg1;
 - (bool)_ensureFolderChildrenCount:(id)arg1;
 - (void)_enumerateBookmarksForMatchStatement:(id)arg1 normalizedQuery:(id)arg2 usingBlock:(id /* block */)arg3;
@@ -128,7 +128,6 @@
 - (bool)_insertTombstoneWithServerID:(id)arg1 syncData:(id)arg2;
 - (int)_intFromExecutingSQL:(id)arg1;
 - (id)_lastServerIDInFolderWithServerID:(id)arg1;
-- (id)_lazyCreateFrequentlyVisitedSitesBookmark;
 - (long long)_localMigrationState;
 - (bool)_markBookmarkID:(int)arg1 added:(bool)arg2;
 - (bool)_markBookmarkID:(int)arg1 withSpecialID:(int)arg2;
@@ -251,6 +250,7 @@
 - (bool)applyInMemoryChangesToDatabase;
 - (bool)beginSyncTransaction;
 - (id)bookmarkAtPath:(id)arg1;
+- (bool)bookmarkContainsLeafBookmark:(id)arg1;
 - (bool)bookmarkIsFavoritesFolder:(id)arg1;
 - (id)bookmarkWithID:(int)arg1;
 - (id)bookmarkWithUUID:(id)arg1;
@@ -262,6 +262,7 @@
 - (bool)cleanupReadingListArchives;
 - (bool)clearAllReadingListArchives;
 - (void)clearCarrierBookmarks;
+- (bool)clearFrequentlyVisitedSitesFolder;
 - (bool)clearReadingListArchiveWithUUID:(id)arg1;
 - (void)commitSyncTransaction;
 - (bool)containsOnlyStockBookmarks;
@@ -279,6 +280,7 @@
 - (void)deleteBookmarkInMemory:(id)arg1;
 - (bool)deleteBookmarks:(id)arg1 postChangeNotification:(bool)arg2;
 - (void)deleteBookmarksInMemory:(id)arg1 inFolder:(int)arg2;
+- (id)descendantsOfBookmarkFolder:(id)arg1;
 - (void)enumerateBookmarks:(bool)arg1 andReadingListItems:(bool)arg2 matchingString:(id)arg3 usingBlock:(id /* block */)arg4;
 - (id)fastFetchBookmarksInBookmarkList:(id)arg1;
 - (id)favoritesFolder;
@@ -289,6 +291,8 @@
 - (bool)fixCachedNumberOfChildrenIfNeeded;
 - (id)frequentlyVisitedSitesFolder;
 - (id)frequentlyVisitedSitesFolderBookmarkID;
+- (id)frequentlyVisitedSitesFolderCreatingIfNeeded:(bool)arg1;
+- (id)frequentlyVisitedSitesFolderCreatingIfNeeded:(bool)arg1 postChangeNotification:(bool)arg2;
 - (id)frequentlyVisitedSitesList;
 - (unsigned long long)generation;
 - (bool)hasInMemoryChanges;
@@ -297,8 +301,6 @@
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1;
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1 readonlyCollection:(bool)arg2 skipExternalNotifications:(bool)arg3;
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1 skipExternalNotifications:(bool)arg2;
-- (id)initWithPath:(id)arg1;
-- (id)initWithPath:(id)arg1 checkIntegrity:(bool)arg2;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(bool)arg4 readonlyCollection:(bool)arg5 skipExternalNotifications:(bool)arg6;
 - (bool)isEmpty;

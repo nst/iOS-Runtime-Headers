@@ -7,7 +7,7 @@
     IKColor * _tintColor;
 }
 
-@property (nonatomic, readonly, retain) IKBadgeElement *badge;
+@property (nonatomic, readonly) IKBadgeElement *badge;
 @property (nonatomic, retain) IKColor *tintColor;
 @property (setter=tv_setCurrentTintColor:, nonatomic, retain) IKColor *tv_currentTintColor;
 @property (setter=tv_setHighlightColor:, nonatomic, retain) IKColor *tv_highlightColor;

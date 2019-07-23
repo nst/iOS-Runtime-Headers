@@ -16,8 +16,6 @@
 @property (nonatomic, retain) UIColor *highlightedBackgroundColor;
 @property (nonatomic, readonly) UIView *sourceView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultButtonWidth;
 + (id)titleFont;
 + (id)titleFontOfSize:(double)arg1;
@@ -27,9 +25,6 @@
 - (unsigned long long)_defaultLayoutForHeight:(double)arg1;
 - (bool)_heightDemandsCompactLayout;
 - (long long)_numberOfLinesForTitle:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)autosizes;
 - (id)backgroundView;
 - (double)buttonWidth;

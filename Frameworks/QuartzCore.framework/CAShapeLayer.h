@@ -55,12 +55,12 @@
 - (double)strokeEnd;
 - (double)strokeStart;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)horizontalLineLayerWithLength:(double)arg1 lineWidth:(double)arg2;
++ (id)verticalLineLayerWithLength:(double)arg1 lineWidth:(double)arg2;
+
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
-
-- (void)setCGLineCap:(int)arg1;
-- (void)setCGLineJoin:(int)arg1;
-
-// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)setCGLineCap:(int)arg1;
 - (void)setCGLineJoin:(int)arg1;

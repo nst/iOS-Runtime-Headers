@@ -136,7 +136,7 @@
 - (bool)_table:(id)arg1 containsColumn:(id)arg2;
 - (id)_transactionWithIdentifierLocked:(id)arg1;
 - (id)_transactionWithServiceIdentifierLocked:(id)arg1;
-- (id)_transactionsForUniqueIDLocked:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (id)_transactionsForUniqueIDLocked:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderByDate:(long long)arg6 limit:(unsigned long long)arg7;
 - (id)_transactionsWithCloudKitArchivedState:(bool)arg1;
 - (id)_transitAppletStateForPassWithUniqueIDLocked:(id)arg1;
 - (void)_trimTransactionsForPassWithUniqueIDLocked:(id)arg1 withPaymentCredentialType:(long long)arg2;
@@ -216,7 +216,7 @@
 - (struct sqlite3_stmt { }*)selectPreferredAIDStatement;
 - (struct sqlite3_stmt { }*)selectTransactionWithIdentifierStatement;
 - (struct sqlite3_stmt { }*)selectTransactionWithServiceIdentifierStatement;
-- (struct sqlite3_stmt { }*)selectTransactionsStatementWithTransactionSource:(unsigned long long)arg1;
+- (struct sqlite3_stmt { }*)selectTransactionsStatementWithTransactionSource:(unsigned long long)arg1 orderByDate:(long long)arg2;
 - (struct sqlite3_stmt { }*)selectTransitAppletStateForPassStatement;
 - (void)setCurrentEphemeralTransactionIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)setDeletePending:(bool)arg1 forUniqueID:(id)arg2;
@@ -228,7 +228,7 @@
 - (void)setTransitAppletState:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (id)transactionWithIdentifier:(id)arg1;
 - (id)transactionWithServiceIdentifier:(id)arg1;
-- (id)transactionsForPassWithUniqueID:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (id)transactionsForPassWithUniqueID:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderedByDate:(long long)arg6 limit:(long long)arg7;
 - (id)transactionsWithCloudKitArchivedState:(bool)arg1;
 - (id)transitAppletStateForPassWithUniqueID:(id)arg1;
 - (struct sqlite3_stmt { }*)trimTransactionsForPassStatement;

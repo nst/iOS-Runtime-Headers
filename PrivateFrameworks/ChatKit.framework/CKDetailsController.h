@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKDetailsController : CKScrollViewController <CKAttachmentCollectionManagerDelegate, CKBusinessInfoViewDelegate, CKDetailsAddGroupNameViewDelegate, CKDetailsContactsManagerDelegate, CKDetailsContactsTableViewCellDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, CKSharedAssetsControllerDelegate, CNAvatarViewDelegate, FMFMapViewControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIViewControllerPreviewingDelegate> {
+@interface CKDetailsController : CKScrollViewController <CKAttachmentCollectionManagerDelegate, CKBusinessInfoViewDelegate, CKDetailsAddGroupNameViewDelegate, CKDetailsContactsManagerDelegate, CKDetailsContactsTableViewCellDelegate, CKDetailsDownloadAttachmentsHeaderFooterViewDelegate, CKSharedAssetsControllerDelegate, CNAvatarViewDelegate, FMFMapViewControllerDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIViewControllerPreviewingDelegate> {
     CKGroupRecipientSelectionController * _addRecipientsController;
     NSMutableArray * _attachmentCollectionManagerArray;
     CKAvatarPickerViewController * _avatarPickerViewController;
@@ -21,6 +21,7 @@
     bool  _fmfRestricted;
     NSTimer * _fmfUpdateTimer;
     CKDetailsGroupNameCell * _groupNameCell;
+    CKDetailsAddGroupNameView * _groupNameView;
     bool  _isContactsSectionCollapsed;
     bool  _isDisplayingPhotos;
     CKTranscriptDetailsResizableCell * _locationSendCell;
@@ -57,6 +58,7 @@
 @property (nonatomic) bool fmfRestricted;
 @property (nonatomic, retain) NSTimer *fmfUpdateTimer;
 @property (nonatomic, retain) CKDetailsGroupNameCell *groupNameCell;
+@property (nonatomic, retain) CKDetailsAddGroupNameView *groupNameView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isContactsSectionCollapsed;
 @property (nonatomic) bool isDisplayingPhotos;
@@ -76,13 +78,18 @@
 @property (nonatomic, retain) UIVisualEffectView *visualEffectView;
 
 - (void).cxx_destruct;
+- (bool)_allRecipientsAlreadyFollowingLocation;
 - (bool)_canLeaveConversation;
 - (void)_configureSeparatorForCell:(id)arg1 indexPath:(id)arg2;
+- (id)_conversationOfferTimeExpiration;
+- (unsigned long long)_countOfContactViewModels;
 - (void)_didFetchAttachments:(id)arg1;
 - (bool)_fmfExpirationDateIsValid;
 - (void)_handleKeyboardWillHideNotification:(id)arg1;
 - (void)_handleKeyboardWillShowNotification:(id)arg1;
 - (void)_handlePurgedAttachmentDownloadNotification:(id)arg1;
+- (double)_heightForAuxContactCellAtindexPath:(id)arg1;
+- (double)_heightForContactCellAtIndexPath:(id)arg1;
 - (void)_insertRowForNewlyDownloadedAttachmentsWithTransferGUIDs:(id)arg1;
 - (void)_lastAddressedHandleUpdateNotification:(id)arg1;
 - (void)_presentRemoveRecipientSheetForHandle:(id)arg1 fromView:(id)arg2;
@@ -90,8 +97,11 @@
 - (void)_requestCallTypeForEntity:(id)arg1 withAddresses:(id)arg2 withLabels:(id)arg3 faceTimeAudioEnabled:(bool)arg4;
 - (void)_resetPurgedAttachmentCount;
 - (void)_showContactCardForEntity:(id)arg1 fromView:(id)arg2;
+- (id)_tableViewCellForSendLocation;
+- (id)_tableViewCellForSharingLocation:(bool)arg1;
 - (void)_toggleSharingStateFromABCard;
 - (void)_updateDownloadFooterView;
+- (void)_updateSharedAssetsControllersForScrollView:(id)arg1 cell:(id)arg2;
 - (id)addRecipientsController;
 - (void)adjustContentOffsetReloadingSharedAssetsContentViewCell;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
@@ -144,6 +154,7 @@
 - (id)fmfViewControllerCellForIndexPath:(id)arg1;
 - (id)groupNameCell;
 - (id)groupNameCellForIndexPath:(id)arg1;
+- (id)groupNameView;
 - (void)handleActiveDeviceChanged:(id)arg1;
 - (void)handleCancelAction:(id)arg1;
 - (void)handleDoneAction:(id)arg1;
@@ -182,6 +193,7 @@
 - (void)readReceiptsSwitchValueChanged:(id)arg1;
 - (long long)rowForAddMemberCell;
 - (long long)rowForShowMoreContactsCell;
+- (struct CGSize { double x1; double x2; })screenSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)segmentedControlCellForIndexPath:(id)arg1;
@@ -205,6 +217,7 @@
 - (void)setFmfRestricted:(bool)arg1;
 - (void)setFmfUpdateTimer:(id)arg1;
 - (void)setGroupNameCell:(id)arg1;
+- (void)setGroupNameView:(id)arg1;
 - (void)setIsContactsSectionCollapsed:(bool)arg1;
 - (void)setIsDisplayingPhotos:(bool)arg1;
 - (void)setLocationSendCell:(id)arg1;
@@ -241,7 +254,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 editActionsForRowAtIndexPath:(id)arg2;
-- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

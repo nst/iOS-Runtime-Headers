@@ -3,32 +3,31 @@
  */
 
 @interface TSCellularPlanUserConsentViewController : BFFSplashController <TSSetupFlowItem> {
+    NSString * _confirmationCode;
     unsigned long long  _consentType;
     <TSSIMSetupFlowDelegate> * _delegate;
-    bool  _didAccept;
+    bool  _didReceiveResponse;
     NSString * _name;
+    bool  _requireAdditionalConsent;
 }
 
-@property unsigned long long consentType;
+@property (nonatomic, readonly) unsigned long long consentType;
 @property (readonly, copy) NSString *debugDescription;
 @property <TSSIMSetupFlowDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property bool didAccept;
 @property (readonly) unsigned long long hash;
-@property (retain) NSString *name;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_acceptButtonTapped;
+- (void)_cancelButtonTapped;
+- (void)_declineButtonTapped;
 - (unsigned long long)consentType;
 - (id)delegate;
-- (bool)didAccept;
-- (id)initWithName:(id)arg1 consentType:(unsigned long long)arg2;
-- (id)name;
-- (void)setConsentType:(unsigned long long)arg1;
+- (id)initWithConfirmationCode:(id)arg1 consentType:(unsigned long long)arg2 requireAdditionalConsent:(bool)arg3 confirmationCode:(id)arg4;
+- (id)initWithName:(id)arg1 consentType:(unsigned long long)arg2 requireAdditionalConsent:(bool)arg3;
 - (void)setDelegate:(id)arg1;
-- (void)setDidAccept:(bool)arg1;
-- (void)setName:(id)arg1;
-- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

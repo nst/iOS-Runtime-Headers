@@ -4,8 +4,6 @@
 
 @interface UISplitAndMaskView : UIView
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithImage:(id)arg1 visibleTopHeight:(double)arg2 visibleBottomHeight:(double)arg3;
 
 @end

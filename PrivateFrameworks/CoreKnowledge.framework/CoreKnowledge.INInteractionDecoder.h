@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.INInteractionDecoder : SwiftObject
+@interface CoreKnowledge.INInteractionDecoder : Swift._SwiftObject
 
 @end

@@ -19,6 +19,7 @@
     FCKeyValueStore * _localStore;
     NSDictionary * _localizedExperimentalizedKeysByOriginalKey;
     NSDictionary * _localizedKeysByOriginalKey;
+    NSDictionary * _localizedLanguageSpecificKeysByOriginalKey;
 }
 
 @property (nonatomic, readonly) NSString *activeTreatmentID;
@@ -39,8 +40,10 @@
 @property (nonatomic, readonly) FCKeyValueStore *localStore;
 @property (nonatomic, readonly) NSArray *localizableExperimentalizableKeys;
 @property (nonatomic, readonly) NSArray *localizableKeys;
+@property (nonatomic, readonly) NSArray *localizableLanguageSpecificKeys;
 @property (nonatomic, readonly) NSDictionary *localizedExperimentalizedKeysByOriginalKey;
 @property (nonatomic, readonly) NSDictionary *localizedKeysByOriginalKey;
+@property (nonatomic, readonly) NSDictionary *localizedLanguageSpecificKeysByOriginalKey;
 @property (nonatomic, readonly) NSArray *nonLocalizableKeys;
 @property (readonly) Class superclass;
 
@@ -53,9 +56,10 @@
 
 - (void).cxx_destruct;
 - (id)_ckRecordIDFromIdentifier:(id)arg1;
+- (id)_deleteRecordsWithWriteLockWithIDs:(id)arg1;
 - (void)_deriveDesiredKeys;
 - (void)_deriveDesiredKeysIfNeeded;
-- (id)_desiredKeysForContentStoreFrontID:(id)arg1 experimentPostfix:(id)arg2;
+- (id)_desiredKeysForContentStoreFrontID:(id)arg1 experimentPostfix:(id)arg2 languageCode:(id)arg3;
 - (id)_experimentalizedKeysByOriginalKeyForExperimentPostfix:(id)arg1;
 - (id)_faultableRecordsWithIdentifiers:(id)arg1;
 - (id)_fetchErrorForKey:(id)arg1;
@@ -63,6 +67,7 @@
 - (void)_initStore;
 - (id)_localizedExperimentalizedKeysByOriginalKeyForContentStoreFrontID:(id)arg1 experimentPostfix:(id)arg2;
 - (id)_localizedKeysByOriginalKeyForContentStoreFrontID:(id)arg1;
+- (id)_localizedLanguageSpecificKeysByOriginalKeyForContentStoreFrontID:(id)arg1 languageCode:(id)arg2;
 - (void)_prepareForUse;
 - (id)_recordBaseFromCKRecord:(id)arg1;
 - (id)_saveCKRecordsWithWriteLock:(id)arg1 updateFetchDateForRecordIdentifiers:(id)arg2 fetchContext:(id)arg3;
@@ -74,6 +79,7 @@
 - (id)contentDatabase;
 - (id)contentDirectory;
 - (id)convertRecords:(id)arg1;
+- (id)deleteRecordsWithIDs:(id)arg1;
 - (struct os_unfair_lock_s { unsigned int x1; })derivedKeysLock;
 - (id)desiredKeys;
 - (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
@@ -98,8 +104,10 @@
 - (id)localStore;
 - (id)localizableExperimentalizableKeys;
 - (id)localizableKeys;
+- (id)localizableLanguageSpecificKeys;
 - (id)localizedExperimentalizedKeysByOriginalKey;
 - (id)localizedKeysByOriginalKey;
+- (id)localizedLanguageSpecificKeysByOriginalKey;
 - (unsigned long long)lowThresholdDataSizeLimit;
 - (id)nonLocalizableKeys;
 - (int)pbRecordType;

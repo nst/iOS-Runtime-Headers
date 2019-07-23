@@ -12,6 +12,7 @@
     struct opaqueCMSimpleQueue { } * _audioRedundancyChangeEventQueue;
     float  _audioSilencePowerAverageMultiplier;
     struct opaqueCMSimpleQueue { } * _audioStreamUpdateEventQueue;
+    struct tagVCMemoryPool { struct { void *x_1_1_1; long long x_1_1_2; } x1; unsigned long long x2; } * _audioStreamUpdatePool;
     struct _opaque_pthread_rwlock_t { 
         long long __sig; 
         BOOL __opaque[192]; 
@@ -100,6 +101,7 @@
 - (void)generateKeyFrameWithStreamID:(unsigned short)arg1;
 - (unsigned int)generateSSRC;
 - (unsigned short)generateStreamID;
+- (id)getAudioDumpName;
 - (void)handleActiveConnectionChange:(id)arg1;
 - (id)initWithIDSDestination:(id)arg1 delegate:(id)arg2 processId:(int)arg3 sessionUUID:(id)arg4;
 - (void)initializeUplinkVideoStreamController;
@@ -143,7 +145,7 @@
 - (id)supportedAudioRules;
 - (void)thermalLevelDidChange:(int)arg1;
 - (void)updateActiveAudioStreamWithTargetBitrate:(unsigned int)arg1;
-- (void)updateActiveAudioStreams:(id)arg1;
+- (void)updateActiveAudioStreams:(id)arg1 allStreamIds:(id)arg2;
 - (void)updateActiveVideoStreamWithTargetBitrate:(unsigned int)arg1;
 - (void)updateActiveVoiceOnly;
 - (void)updateAudioPriorityWithSampleBuffer:(struct opaqueVCAudioBufferList { }*)arg1;

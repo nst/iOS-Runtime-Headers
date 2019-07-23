@@ -8,6 +8,7 @@
     unsigned long long  _headlinesPerFeedFetchCount;
     NSSet * _hiddenFeedIDs;
     NSSet * _mutedTagIDs;
+    NSString * _paidBundleFeedID;
     NSSet * _purchasedTagIDs;
     NSSet * _subscribedTagIDs;
     NSString * _topStoriesChannelID;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) unsigned long long headlinesPerFeedFetchCount;
 @property (nonatomic, readonly, copy) NSSet *hiddenFeedIDs;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
+@property (nonatomic, readonly, copy) NSString *paidBundleFeedID;
 @property (nonatomic, readonly, copy) NSSet *purchasedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *subscribedTagIDs;
 @property (nonatomic, readonly, copy) NSString *topStoriesChannelID;
@@ -29,8 +31,9 @@
 - (unsigned long long)headlinesPerFeedFetchCount;
 - (id)hiddenFeedIDs;
 - (id)init;
-- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 mutedTagIDs:(id)arg4 purchasedTagIDs:(id)arg5 subscribedTagIDs:(id)arg6;
+- (id)initWithForYouTodaySectionSpecificConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 paidBundleFeedID:(id)arg4 mutedTagIDs:(id)arg5 purchasedTagIDs:(id)arg6 subscribedTagIDs:(id)arg7;
 - (id)mutedTagIDs;
+- (id)paidBundleFeedID;
 - (id)purchasedTagIDs;
 - (id)subscribedTagIDs;
 - (id)topStoriesChannelID;

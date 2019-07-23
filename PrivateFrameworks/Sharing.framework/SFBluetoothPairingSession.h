@@ -4,6 +4,7 @@
 
 @interface SFBluetoothPairingSession : NSObject {
     BOOL  _btAddrStr;
+    bool  _btConfigured;
     bool  _btConnecting;
     struct BTDeviceImpl { } * _btDevice;
     struct BTPairingAgentImpl { } * _btPairingAgent;
@@ -15,6 +16,9 @@
     id /* block */  _completionHandler;
     NSString * _deviceAddress;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _guestAddress;
+    NSData * _guestKey;
+    bool  _guestMode;
     bool  _invalidateCalled;
     NSString * _name;
     unsigned int  _retryCount;
@@ -30,6 +34,9 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, copy) NSString *deviceAddress;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) NSString *guestAddress;
+@property (nonatomic, copy) NSData *guestKey;
+@property (nonatomic) bool guestMode;
 @property (nonatomic, readonly, copy) NSString *name;
 
 - (void).cxx_destruct;
@@ -44,11 +51,17 @@
 - (void)dealloc;
 - (id)deviceAddress;
 - (id)dispatchQueue;
+- (id)guestAddress;
+- (id)guestKey;
+- (bool)guestMode;
 - (id)init;
 - (void)invalidate;
 - (id)name;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDeviceAddress:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setGuestAddress:(id)arg1;
+- (void)setGuestKey:(id)arg1;
+- (void)setGuestMode:(bool)arg1;
 
 @end

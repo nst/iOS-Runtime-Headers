@@ -11,7 +11,6 @@
 - (void).cxx_destruct;
 - (id)_allowChangesSpecifiers;
 - (id)_featureSwitchSpecifier;
-- (id)_iTunesPurchasesSpecifiers;
 - (id)_privacySpecifiers;
 - (id)_topLevelExternalSpecifierWithClass:(Class)arg1 name:(id)arg2 idTitle:(id)arg3;
 - (id)_topLevelSpecifierWithAction:(SEL)arg1 name:(id)arg2;
@@ -34,6 +33,7 @@
 - (void)showMediaRestrictions:(id)arg1;
 - (void)showiTunesPurchasesRestrictions:(id)arg1;
 - (id)specifiers;
+- (id)storeDetailSpecifiers;
 - (id)tccSpecifierWithCapabilityKey:(id)arg1 id:(id)arg2;
 
 @end

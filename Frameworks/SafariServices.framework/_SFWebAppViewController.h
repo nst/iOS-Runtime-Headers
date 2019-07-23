@@ -30,6 +30,7 @@
 - (void)loadWebAppWithIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteSwipeGestureEnabled:(bool)arg1;
+- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)willDismissServiceViewController;
 - (void)willOpenURLInHostApplication:(id)arg1;
 

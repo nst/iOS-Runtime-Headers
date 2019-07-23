@@ -19,7 +19,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)identifier;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 isManagedAppleID:(bool)arg2 isHSA2:(bool)arg3;
 - (bool)isEqual:(id)arg1;

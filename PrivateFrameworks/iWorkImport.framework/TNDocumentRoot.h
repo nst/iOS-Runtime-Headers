@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) unsigned long long tableCount;
 @property (nonatomic, readonly) TNTheme *theme;
 @property (nonatomic, retain) TNUIState *uiState;
+@property (nonatomic, readonly) TNDocumentViewController *viewController;
 
 + (struct CGSize { double x1; double x2; })previewImageMaxSizeForType:(unsigned long long)arg1;
 + (struct CGSize { double x1; double x2; })previewImageSizeForType:(unsigned long long)arg1;
@@ -78,7 +79,7 @@
 - (id)paperID;
 - (void)performDeferredUpgradeImportOperationsOnNewThreadForCharts:(id)arg1;
 - (void)performDeferredUpgradeImportOperationsRequiringCalcEngine;
-- (bool)prepareAndValidateSidecarViewStateObjectWithVersionUUIDMismatch:(id)arg1 originalDocumentViewStateObject:(id)arg2;
+- (bool)prepareAndValidateSidecarViewStateRootWithVersionUUIDMismatch:(id)arg1 sidecarDocumentRevision:(id)arg2 originalDocumentViewStateRoot:(id)arg3;
 - (void)prepareNewDocumentWithTemplateBundle:(id)arg1 documentLocale:(id)arg2;
 - (id)previewImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)printerID;

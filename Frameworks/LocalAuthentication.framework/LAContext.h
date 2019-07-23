@@ -31,15 +31,18 @@
 + (void)notifyEvent:(long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(id)arg2 options:(id)arg3 reply:(id /* block */)arg4;
 - (id)_evaluationMechanismsFromReturnedError:(id)arg1 error:(id*)arg2;
 - (id)_hashWithBundleIdentifier:(id)arg1;
 - (id)_publicErrorFromInternalError:(id)arg1 options:(id)arg2;
 - (id)_serverPropertyValueForOption:(long long)arg1;
 - (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2;
+- (void)authMethodWithReply:(id /* block */)arg1;
 - (long long)biometryType;
 - (bool)canEvaluatePolicy:(long long)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
+- (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 aksOperation:(void*)arg2 options:(id)arg3 reply:(id /* block */)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(long long)arg2 localizedReason:(id)arg3 reply:(id /* block */)arg4;
 - (id)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(long long)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(long long)arg2 options:(id)arg3 reply:(id /* block */)arg4;
@@ -75,6 +78,7 @@
 - (id)optionCancelVisible;
 - (id)optionFaceDetectLength;
 - (id)optionFallbackVisible;
+- (id)optionFingerMustBeOff;
 - (id)optionMaxBiometryFailures;
 - (id)optionNoFailureUI;
 - (id)optionNotInteractive;
@@ -85,6 +89,7 @@
 - (id)optionPasscodeScreenStyle;
 - (id)optionPasscodeTitle;
 - (id)optionPasswordAuthenticationReason;
+- (id)optionPhysicalButtonTitle;
 - (id)optionPresentationStyle;
 - (id)optionReturnBiometryDatabaseHash;
 - (id)optionSharedValidity;
@@ -122,6 +127,7 @@
 - (void)setOptionCancelVisible:(id)arg1;
 - (void)setOptionFaceDetectLength:(id)arg1;
 - (void)setOptionFallbackVisible:(id)arg1;
+- (void)setOptionFingerMustBeOff:(id)arg1;
 - (void)setOptionMaxBiometryFailures:(id)arg1;
 - (void)setOptionNoFailureUI:(id)arg1;
 - (void)setOptionNotInteractive:(id)arg1;
@@ -132,6 +138,7 @@
 - (void)setOptionPasscodeScreenStyle:(id)arg1;
 - (void)setOptionPasscodeTitle:(id)arg1;
 - (void)setOptionPasswordAuthenticationReason:(id)arg1;
+- (void)setOptionPhysicalButtonTitle:(id)arg1;
 - (void)setOptionPresentationStyle:(id)arg1;
 - (void)setOptionReturnBiometryDatabaseHash:(id)arg1;
 - (void)setOptionSharedValidity:(id)arg1;

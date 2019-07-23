@@ -6,16 +6,18 @@
     unsigned long long  _eventCount;
     unsigned long long  _state;
     unsigned long long  _stateCount;
-    struct { unsigned long long x1; unsigned long long x2; id /* block */ x3; } * _transitionTable;
+    struct { unsigned long long x1; unsigned long long x2; id /* block */ x3; id /* block */ x4; } * _transitionTable;
 }
 
 @property (nonatomic) unsigned long long state;
 
+- (unsigned long long)_totalStateCount;
 - (void)dealloc;
 - (void)handleEvent:(unsigned long long)arg1 withContext:(id)arg2;
 - (id)initWithStates:(unsigned long long)arg1 events:(unsigned long long)arg2 initialState:(unsigned long long)arg3;
 - (void)setState:(unsigned long long)arg1;
 - (void)setTransitionHandlerForState:(unsigned long long)arg1 withEvent:(unsigned long long)arg2 transitionHandler:(id /* block */)arg3;
+- (void)setTransitionHandlerForState:(unsigned long long)arg1 withEvent:(unsigned long long)arg2 transitionHandler:(id /* block */)arg3 postTransitionHandler:(id /* block */)arg4;
 - (unsigned long long)state;
 
 @end

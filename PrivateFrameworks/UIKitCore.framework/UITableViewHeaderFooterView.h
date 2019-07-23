@@ -119,9 +119,6 @@
 - (void)_updateLabelBackgroundColorIfNeeeded;
 - (void)_updateLayerContents;
 - (bool)_useDetailText;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundImage;
 - (id)backgroundView;
 - (id)contentView;

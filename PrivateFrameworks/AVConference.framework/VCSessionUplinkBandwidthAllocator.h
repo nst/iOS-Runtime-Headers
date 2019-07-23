@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
  */
 
-@interface VCSessionUplinkBandwidthAllocator : NSObject {
+@interface VCSessionUplinkBandwidthAllocator : VCObject {
     NSDictionary * _currentTable;
     bool  _redundancyEnabled;
     VCSessionBandwidthAllocationTable * _table;
@@ -12,21 +12,21 @@
 @property (getter=isRedundancyEnabled, nonatomic) bool redundancyEnabled;
 @property (getter=isVideoEnabled, nonatomic) bool videoEnabled;
 
+- (void)_assignCurrentTables;
+- (id)_audioEntriesForTargetBitrate:(unsigned int)arg1;
+- (bool)_isAvailableStreamConfiguration:(id)arg1;
+- (id)_videoEntriesForTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(bool)arg2;
 - (void)addBandwidthAllocationTableEntry:(id)arg1 updateNow:(bool)arg2;
-- (void)assignCurrentTables;
-- (id)audioEntriesForTargetBitrate:(unsigned int)arg1;
 - (id)audioRepairStreamIDsForStreamIDs;
 - (id)audioRepairStreamIDsforTargetBitrate:(unsigned int)arg1;
 - (id)audioStreamIDsforTargetBitrate:(unsigned int)arg1;
 - (void)dealloc;
 - (bool)enableVideoStream:(bool)arg1 streamID:(unsigned short)arg2;
 - (id)init;
-- (bool)isAvailableStreamConfiguration:(id)arg1;
 - (bool)isRedundancyEnabled;
 - (bool)isVideoEnabled;
 - (void)setRedundancyEnabled:(bool)arg1;
 - (void)setVideoEnabled:(bool)arg1;
-- (id)videoEntriesForTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(bool)arg2;
 - (id)videoRepairStreamIDsForStreamIDs;
 - (id)videoRepairStreamIDsforTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(bool)arg2;
 - (id)videoStreamIDsforTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(bool)arg2;

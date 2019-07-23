@@ -6,11 +6,7 @@
 
 @property (nonatomic) int progressIndicatorStyle;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (struct CGSize { double x1; double x2; })size;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (int)progressIndicatorStyle;
 - (void)setAnimating:(bool)arg1;

@@ -54,7 +54,7 @@
 - (void)didCloseDocument;
 - (void)didReadFileFormatVersion:(unsigned long long)arg1;
 - (void)didReferenceData:(id)arg1;
-- (bool)didReloadZipArchive:(id)arg1 error:(id*)arg2;
+- (bool)didReloadZipArchive:(id)arg1 packageURL:(id)arg2 error:(id*)arg3;
 - (void)didRetrieveDecryptionKey:(id)arg1;
 - (id)documentProperties;
 - (void)enumerateDatasUsingBlock:(id /* block */)arg1;
@@ -69,11 +69,12 @@
 - (id)keyFromPassword:(id)arg1;
 - (id)keyFromPassword:(id)arg1 passwordVerifier:(id)arg2;
 - (id)lastReloadError;
+- (id)newCompressionReadChannelWithReadChannel:(id)arg1 compressionAlgorithm:(long long)arg2;
 - (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2 packageURL:(id)arg3 lastModificationDate:(out id*)arg4;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
 - (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
-- (id)newReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;
+- (id)newReadChannelForComponentLocator:(id)arg1 compressionAlgorithm:(long long)arg2 isStoredOutsideObjectArchive:(bool)arg3;
 - (id)newZipArchiveFromPackageURL:(id)arg1 isLazyLoading:(bool)arg2 error:(id*)arg3;
 - (id)packageEntryInfoAtRelativePath:(id)arg1 error:(id*)arg2;
 - (id)packageEntryInfoForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(bool)arg2;

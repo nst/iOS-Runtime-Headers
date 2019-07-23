@@ -3,6 +3,7 @@
  */
 
 @interface REWorkoutRelevanceProviderManager : RERelevanceProviderManager <REPredictorObserver> {
+    NSDate * _lastWorkoutDate;
     unsigned long long  _state;
 }
 
@@ -14,6 +15,7 @@
 + (id)_features;
 + (Class)_relevanceProviderClass;
 
+- (void).cxx_destruct;
 - (void)_prepareForUpdate;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;
 - (void)collectLoggableState:(id /* block */)arg1;

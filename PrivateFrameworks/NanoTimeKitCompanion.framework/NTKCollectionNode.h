@@ -38,7 +38,6 @@
 + (id)ticks60ForDevice:(id)arg1;
 + (id)ticks60UtilitarianForDevice:(id)arg1;
 + (id)ticks6ChronoForDevice:(id)arg1;
-+ (id)ticksColorAnalogForDevice:(id)arg1;
 + (id)ticksPillsForDevice:(id)arg1;
 
 - (void).cxx_destruct;

@@ -27,6 +27,7 @@
 
 - (void).cxx_destruct;
 - (void)_updateTXTDictionary:(id)arg1;
+- (id)copyConnectionInfoWithFlags:(unsigned long long)arg1 interfaceName:(id)arg2 error:(id*)arg3;
 - (id)copyConnectionStringWithFlags:(unsigned long long)arg1 error:(id*)arg2;
 - (id)description;
 - (id)descriptionWithLevel:(int)arg1;

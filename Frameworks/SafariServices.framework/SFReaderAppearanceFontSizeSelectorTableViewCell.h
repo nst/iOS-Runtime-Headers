@@ -19,6 +19,7 @@
 - (void)_createFontSizeSelectorButtons;
 - (void)_decreaseButtonAction:(id)arg1;
 - (void)_increaseButtonAction:(id)arg1;
+- (void)_updateButtons;
 - (id)decreaseFontSizeButton;
 - (id)delegate;
 - (id)increaseFontSizeButton;

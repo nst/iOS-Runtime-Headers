@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _APRFeedback : NSObject {
-    double  _decayHalfLifeSeconds;
-}
+@interface _APRFeedback : NSObject
 
 + (id)sharedInstance;
 

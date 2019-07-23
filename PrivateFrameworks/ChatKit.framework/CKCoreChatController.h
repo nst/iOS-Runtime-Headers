@@ -10,6 +10,7 @@
     CKFullScreenBalloonViewController * _fullScreenBalloonViewController;
     bool  _ignoreLastBalloonVisibleInMarkAsReadCheck;
     bool  _initialLayoutComplete;
+    id /* block */  _overrideScrollBlock;
     UIProgressView * _progressBar;
     CKScheduledUpdater * _refreshServiceForSendingUpdater;
     double  _sendProgress;
@@ -17,6 +18,7 @@
     unsigned long long  _sendProgressTotalCount;
     bool  _sendingMessage;
     bool  _transitionedFromComposing;
+    bool  _userInitiatedTranscriptPush;
     bool  _viewIsVisible;
 }
 
@@ -34,6 +36,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool ignoreLastBalloonVisibleInMarkAsReadCheck;
 @property (nonatomic) bool initialLayoutComplete;
+@property (nonatomic, copy) id /* block */ overrideScrollBlock;
 @property (nonatomic, retain) UIProgressView *progressBar;
 @property (nonatomic, retain) CKScheduledUpdater *refreshServiceForSendingUpdater;
 @property (nonatomic) double sendProgress;
@@ -43,6 +46,7 @@
 @property (nonatomic, readonly) bool shouldDismissAfterSend;
 @property (readonly) Class superclass;
 @property (nonatomic) bool transitionedFromComposing;
+@property (nonatomic) bool userInitiatedTranscriptPush;
 @property (nonatomic) bool viewIsVisible;
 
 - (void).cxx_destruct;
@@ -102,6 +106,7 @@
 - (bool)isSendingMessage;
 - (void)keyboardWillHideViaGesture;
 - (void)loadView;
+- (id /* block */)overrideScrollBlock;
 - (void)parentControllerDidBecomeActive;
 - (void)parentControllerDidResume:(bool)arg1 animating:(bool)arg2;
 - (void)preferredSendingServiceChanged;
@@ -123,6 +128,7 @@
 - (void)setFullScreenBalloonViewController:(id)arg1;
 - (void)setIgnoreLastBalloonVisibleInMarkAsReadCheck:(bool)arg1;
 - (void)setInitialLayoutComplete:(bool)arg1;
+- (void)setOverrideScrollBlock:(id /* block */)arg1;
 - (void)setProgressBar:(id)arg1;
 - (void)setRefreshServiceForSendingUpdater:(id)arg1;
 - (void)setSendProgress:(double)arg1;
@@ -130,6 +136,7 @@
 - (void)setSendProgressTotalCount:(unsigned long long)arg1;
 - (void)setSendingMessage:(bool)arg1;
 - (void)setTransitionedFromComposing:(bool)arg1;
+- (void)setUserInitiatedTranscriptPush:(bool)arg1;
 - (void)setViewIsVisible:(bool)arg1;
 - (void)setupScrollingForKeyboardInteraction;
 - (void)setupStateForLaunchURL:(id)arg1;
@@ -168,6 +175,7 @@
 - (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
 - (bool)transitionedFromComposing;
+- (bool)userInitiatedTranscriptPush;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidLayoutSubviews;

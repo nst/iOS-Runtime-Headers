@@ -206,7 +206,7 @@
 - (bool)hasAtLeastTwoVisuallyDistinctSubregions;
 - (unsigned long long)hash;
 - (id)init;
-- (id)initWithArchive:(const struct Path { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Path_Element> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (id)initWithArchive:(const struct Path { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Path_Element> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
 - (id)initWithCString:(const char *)arg1;
 - (id)intersectBezierPath:(id)arg1;
 - (bool)intersectsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 hasFill:(bool)arg2;
@@ -258,7 +258,7 @@
 - (void)relativeMoveToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)removeAllPoints;
 - (struct CGPoint { double x1; double x2; })roundPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(struct CGContext { }*)arg2 strokeWidth:(int)arg3;
-- (void)saveToArchive:(struct Path { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Path_Element> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (void)saveToArchive:(struct Path { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Path_Element> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
 - (void)setAssociatedPoints:(struct CGPoint { double x1; double x2; }*)arg1 atIndex:(long long)arg2;
 - (void)setFlatness:(double)arg1;
 - (void)setLineCapStyle:(unsigned long long)arg1;

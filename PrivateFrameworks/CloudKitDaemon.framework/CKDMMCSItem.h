@@ -12,6 +12,8 @@
     unsigned int  _chunkCount;
     NSData * _clearAssetKey;
     NSFileHandle * _clientOpenedFileHandle;
+    NSURL * _constructedAssetDownloadURL;
+    unsigned long long  _constructedAssetEstimatedSize;
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
     CKAssetDownloadPreauthorization * _downloadPreauthorization;
@@ -64,6 +66,8 @@
 @property (nonatomic) unsigned int chunkCount;
 @property (nonatomic, retain) NSData *clearAssetKey;
 @property (nonatomic, retain) NSFileHandle *clientOpenedFileHandle;
+@property (nonatomic, retain) NSURL *constructedAssetDownloadURL;
+@property (nonatomic) unsigned long long constructedAssetEstimatedSize;
 @property (nonatomic, retain) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSNumber *deviceID;
 @property (nonatomic, retain) CKAssetDownloadPreauthorization *downloadPreauthorization;
@@ -120,6 +124,8 @@
 - (id)clearAssetKey;
 - (void)clearFileSize;
 - (id)clientOpenedFileHandle;
+- (id)constructedAssetDownloadURL;
+- (unsigned long long)constructedAssetEstimatedSize;
 - (id)contentBaseURL;
 - (id)description;
 - (id)deviceID;
@@ -172,6 +178,8 @@
 - (void)setChunkCount:(unsigned int)arg1;
 - (void)setClearAssetKey:(id)arg1;
 - (void)setClientOpenedFileHandle:(id)arg1;
+- (void)setConstructedAssetDownloadURL:(id)arg1;
+- (void)setConstructedAssetEstimatedSize:(unsigned long long)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setDownloadPreauthorization:(id)arg1;

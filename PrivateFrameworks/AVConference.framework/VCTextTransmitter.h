@@ -8,9 +8,11 @@
         unsigned int sampleRate; 
         bool isRedEnabled; 
         unsigned int numRedundantPayloads; 
+        float txIntervalMin; 
     }  _config;
     int  _currentPayloadType;
-    unsigned int  _emptyFramesSent;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    unsigned int  _emptyFramesToBeSent;
     NSObject<OS_dispatch_source> * _heartbeat;
     double  _idleDuration;
     bool  _isIdle;
@@ -19,6 +21,7 @@
     double  _startTime;
     NSMutableArray * _textFramesSendQueue;
     NSLock * _textFramesSendQueueLock;
+    double  _txIntervalMin;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,12 +32,14 @@
 - (void)dealloc;
 - (unsigned int)getCharTimestampForSystemTime:(double)arg1;
 - (void)heartbeat;
-- (id)initWithConfiguration:(struct _VCTextTransmitterConfiguration { struct tagHANDLE {} *x1; unsigned int x2; bool x3; unsigned int x4; }*)arg1;
+- (id)initWithConfiguration:(struct _VCTextTransmitterConfiguration { struct tagHANDLE {} *x1; unsigned int x2; bool x3; unsigned int x4; float x5; }*)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
+- (void)sendText:(struct NSString { Class x1; }*)arg1;
 - (void)sendTextFrameWithRedundancy:(id)arg1 marker:(int)arg2;
 - (bool)start;
 - (bool)startHeartbeat;
 - (void)stop;
 - (void)stopHeartbeat;
+- (void)updatePayloadHistory:(id)arg1 timestamp:(unsigned int)arg2 payloadType:(int*)arg3 payload:(char **)arg4 payloadLength:(int*)arg5;
 
 @end

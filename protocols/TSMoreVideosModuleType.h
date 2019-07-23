@@ -5,6 +5,6 @@
 
 @required
 
-- (UIViewController<TSBlueprintInspectable><TSHeadlineGroupConfigurable><NFReuseIdentifiable> *)createViewController;
+- (<TSMoreVideosPluginFactoryType> *)createPluginFactoryForParentView:(UIView *)arg1;
 
 @end

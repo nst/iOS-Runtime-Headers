@@ -27,6 +27,7 @@
 - (id)searchURLForUserTypedString:(id)arg1;
 - (id)suggestionsURLForUserTypedString:(id)arg1;
 - (id)suggestionsURLTemplate;
+- (id)urlAttributingToSafariIfValidSearchURL:(id)arg1;
 - (bool)urlIsValidSearch:(id)arg1;
 - (id)userVisibleQueryFromSearchURL:(id)arg1;
 - (id)userVisibleQueryFromSearchURL:(id)arg1 allowQueryThatLooksLikeURL:(bool)arg2;

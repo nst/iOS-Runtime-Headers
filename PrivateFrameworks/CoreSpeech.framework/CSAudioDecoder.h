@@ -34,7 +34,7 @@
 + (id)opusDecoder;
 
 - (void).cxx_destruct;
-- (void)addPackets:(id)arg1 timestamp:(unsigned long long)arg2;
+- (void)addPackets:(id)arg1 remoteVAD:(id)arg2 timestamp:(unsigned long long)arg3;
 - (id)delegate;
 - (id)initWithInASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg1 outASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg2;
 - (void)setDelegate:(id)arg1;

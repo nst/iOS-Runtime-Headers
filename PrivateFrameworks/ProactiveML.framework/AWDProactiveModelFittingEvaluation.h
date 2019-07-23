@@ -42,6 +42,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)minibatchStats;
 - (id)modelInfo;
+- (float)precisionAtK:(unsigned long long)arg1;
 - (id)precisionAtKAtIndex:(unsigned long long)arg1;
 - (id)precisionAtKs;
 - (unsigned long long)precisionAtKsCount;

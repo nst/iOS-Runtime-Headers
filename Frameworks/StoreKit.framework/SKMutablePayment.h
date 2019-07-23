@@ -8,6 +8,7 @@
 @property (nonatomic) bool isStoreOriginated;
 @property (nonatomic, copy) NSString *partnerIdentifier;
 @property (nonatomic, copy) NSString *partnerTransactionIdentifier;
+@property (nonatomic, copy) SKPaymentDiscount *paymentDiscount;
 @property (nonatomic, copy) NSString *productIdentifier;
 @property (nonatomic) long long quantity;
 @property (nonatomic, copy) NSData *requestData;
@@ -18,6 +19,7 @@
 - (void)setIsStoreOriginated:(bool)arg1;
 - (void)setPartnerIdentifier:(id)arg1;
 - (void)setPartnerTransactionIdentifier:(id)arg1;
+- (void)setPaymentDiscount:(id)arg1;
 - (void)setProductIdentifier:(id)arg1;
 - (void)setQuantity:(long long)arg1;
 - (void)setRequestData:(id)arg1;

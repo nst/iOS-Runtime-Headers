@@ -2,8 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKCanonicalContainerRequestOperation : WLKCanonicalPlayablesRequestOperation
+@interface WLKCanonicalContainerRequestOperation : WLKCanonicalPlayablesRequestOperation {
+    WLKCanonicalContainerResponse * _containerResponse;
+}
 
-- (id)responseProcessor;
+@property (nonatomic, readonly) WLKCanonicalContainerResponse *containerResponse;
+
+- (void).cxx_destruct;
+- (id)containerResponse;
+- (void)processResponse;
 
 @end

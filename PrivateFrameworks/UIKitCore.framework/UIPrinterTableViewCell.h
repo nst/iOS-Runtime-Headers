@@ -20,12 +20,7 @@
 @property (nonatomic) int printerState;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)checked;
 - (id)delegate;
 - (void)expandedAccessoryAreaTapped;

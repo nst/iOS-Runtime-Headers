@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *steps;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) INArchivedObject *underlyingIntent;
 @property (nonatomic, copy) INArchivedObject *underlyingIntentResponse;
@@ -39,10 +40,12 @@
 - (id)propertiesByName;
 - (void)setContinueRunning:(id)arg1;
 - (void)setPropertiesByName:(id)arg1;
+- (void)setSteps:(id)arg1;
 - (void)setUnderlyingIntent:(id)arg1;
 - (void)setUnderlyingIntentResponse:(id)arg1;
 - (void)setUtterance:(id)arg1;
 - (void)setWaitingForResume:(id)arg1;
+- (id)steps;
 - (id)underlyingIntent;
 - (id)underlyingIntentResponse;
 - (id)utterance;

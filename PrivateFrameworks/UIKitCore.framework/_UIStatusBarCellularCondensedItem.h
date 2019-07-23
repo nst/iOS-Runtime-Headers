@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)_fontForEntry:(id)arg1 styleAttributes:(id)arg2 baselineOffset:(double*)arg3;
 - (id)_singleCellularEntryMatching:(id /* block */)arg1;
+- (id)_stringForCellularType:(long long)arg1;
 - (void)applyStyleAttributes:(id)arg1 toDisplayItem:(id)arg2;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (bool)canEnableDisplayItem:(id)arg1 fromData:(id)arg2;

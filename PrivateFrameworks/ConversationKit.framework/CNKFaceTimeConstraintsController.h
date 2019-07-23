@@ -4,6 +4,7 @@
 
 @interface CNKFaceTimeConstraintsController : NSObject {
     void floatingControlsState;
+    void inCallControlsFramesCache;
     void inCallControlsState;
     void localParticipantState;
     void participantListState;
@@ -14,12 +15,16 @@
 @property (nonatomic) long long inCallControlsState;
 @property (nonatomic) long long localParticipantState;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (long long)inCallControlsState;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inCallControlsViewFrameFor:(id)arg1 state:(long long)arg2;
 - (id)init;
 - (id)initWithContainingView:(id)arg1 controlsViewController:(id)arg2 inCallControlsState:(long long)arg3 deviceOrientation:(long long)arg4;
 - (long long)localParticipantState;
+- (void)removeEffectsConstraints;
 - (void)setInCallControlsState:(long long)arg1;
 - (void)setLocalParticipantState:(long long)arg1;
+- (void)updateConstraintsWith:(id)arg1 controlsViewController:(id)arg2 effectsView:(id)arg3 effectsBrowserViewController:(id)arg4;
+- (void)updateFor:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 deviceOrientation:(long long)arg2;
 
 @end

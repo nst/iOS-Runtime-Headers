@@ -55,6 +55,7 @@
 - (id)pillContainerView;
 - (id)pillView;
 - (void)pillViewWasTapped:(id)arg1;
+- (void)presentAlertForSubscriptionContext;
 - (void)presentContextSelectionAlertForRecipient:(id)arg1 completion:(id /* block */)arg2;
 - (id)proposedRecipients;
 - (void)recipientSelectionControllerDidChange;

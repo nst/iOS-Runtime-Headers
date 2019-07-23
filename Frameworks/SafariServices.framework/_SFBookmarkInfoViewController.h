@@ -7,6 +7,7 @@
     bool  _addingToFavorites;
     _SFBookmarkTextEntryTableViewCell * _addressCell;
     WebBookmark * _bookmark;
+    NSArray * _childBookmarks;
     WebBookmarkCollection * _collection;
     <_SFBookmarkInfoViewControllerDelegate> * _delegate;
     bool  _didSelectFolder;
@@ -22,7 +23,7 @@
     _SFBookmarkTextEntryTableViewCell * _titleCell;
 }
 
-@property (nonatomic, retain) WebBookmark *bookmark;
+@property (nonatomic, copy) WebBookmark *bookmark;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFBookmarkInfoViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -70,9 +71,8 @@
 - (id)delegate;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (bool)hasTranslucentAppearance;
+- (id)initWithBookmark:(id)arg1 childBookmarks:(id)arg2 inCollection:(id)arg3 addingBookmark:(bool)arg4 toFavorites:(bool)arg5 willBeDisplayedModally:(bool)arg6;
 - (id)initWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(bool)arg3;
-- (id)initWithBookmark:(id)arg1 inCollection:(id)arg2 addingBookmark:(bool)arg3 toFavorites:(bool)arg4 willBeDisplayedModally:(bool)arg5;
-- (id)initWithBookmarkForFavorites:(id)arg1 inCollection:(id)arg2 addingBookmark:(bool)arg3;
 - (bool)isEditingField;
 - (void)loadView;
 - (long long)numberOfSectionsInTableView:(id)arg1;

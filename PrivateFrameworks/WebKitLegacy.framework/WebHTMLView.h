@@ -19,8 +19,8 @@
 
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (double)_adjustedBottomOfPageWithTop:(double)arg1 bottom:(double)arg2 limit:(double)arg3;
-- (void)_applyEditingStyleToSelection:(struct Ref<WebCore::EditingStyle, WTF::DumbPtrTraits<WebCore::EditingStyle> > { struct EditingStyle {} *x1; }*)arg1 withUndoAction:(int)arg2;
-- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
+- (void)_applyEditingStyleToSelection:(struct Ref<WebCore::EditingStyle, WTF::DumbPtrTraits<WebCore::EditingStyle> > { struct EditingStyle {} *x1; }*)arg1 withUndoAction:(unsigned char)arg2;
+- (void)_applyStyleToSelection:(id)arg1 withUndoAction:(unsigned char)arg2;
 - (bool)_beginPrintModeWithMinimumPageWidth:(double)arg1 height:(double)arg2 maximumPageWidth:(double)arg3;
 - (bool)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(bool)arg3;
 - (bool)_beginScreenPaginationModeWithPageSize:(struct CGSize { double x1; double x2; })arg1 shrinkToFit:(bool)arg2;
@@ -44,7 +44,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_16_1_1; } x16; struct EventPath {} *x17; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_18_1_1; } x18; struct MonotonicTime { double x_19_1_1; } x19; struct RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event> > { struct Event {} *x_20_1_1; } x20; struct RefPtr<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> > { struct WindowProxy {} *x_21_1_1; } x21; int x22; bool x23; bool x24; bool x25; bool x26; bool x27; bool x28; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_29_1_1; } x29; }*)arg1;
+- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_16_1_1; } x16; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_17_1_1; } x17; struct EventPath {} *x18; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_19_1_1; } x19; struct MonotonicTime { double x_20_1_1; } x20; struct RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event> > { struct Event {} *x_21_1_1; } x21; struct RefPtr<WebCore::WindowProxy, WTF::DumbPtrTraits<WebCore::WindowProxy> > { struct WindowProxy {} *x_22_1_1; } x22; }*)arg1;
 - (bool)_hasInsertionPoint;
 - (bool)_hasSelection;
 - (bool)_hasSelectionOrInsertionPoint;

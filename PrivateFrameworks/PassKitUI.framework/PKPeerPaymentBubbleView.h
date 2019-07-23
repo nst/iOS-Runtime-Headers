@@ -39,6 +39,7 @@
     UILabel * _statusLabel;
     NSTimer * _testTimer;
     bool  _testTransition;
+    bool  _usedForSnapshotting;
     bool  _usesWatchColors;
 }
 
@@ -96,6 +97,7 @@
 - (id)generatedSnapshot;
 - (bool)hasRoundedCorners;
 - (id)init;
+- (id)initForSnapshotting;
 - (id)initWithAmount:(id)arg1 currency:(id)arg2 state:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCurrencyAmount:(id)arg1 state:(unsigned long long)arg2;

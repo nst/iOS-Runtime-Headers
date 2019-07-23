@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPBodyLayout : TSDLayout <TPAttachmentLayoutParent, TSWPLayoutTarget> {
+@interface TPBodyLayout : TSDLayout <TPAttachmentLayoutParent, TPFootnotePageDelegate, TSWPLayoutTarget> {
     NSMutableArray * _anchoredDrawablesForRelayout;
     NSMutableArray * _columns;
     TPFootnoteHeightMeasurer * _footnoteHeightMeasurer;
@@ -11,7 +11,7 @@
 
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } anchorPoint;
 @property (nonatomic, retain) NSMutableArray *anchoredDrawablesForRelayout;
-@property (nonatomic, readonly) unsigned int autosizeFlags;
+@property (nonatomic, readonly) unsigned long long autosizeFlags;
 @property (nonatomic, readonly) TSDCanvas *canvas;
 @property (nonatomic, readonly) NSMutableArray *columns;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } currentSize;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) bool layoutIsValid;
 @property (nonatomic, readonly) bool marginsAreMirrored;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } maskRect;
-@property (nonatomic, readonly) double maxAnchorY;
+@property (nonatomic, readonly) double maxAnchorInBlockDirection;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } maxSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } minSize;
 @property (nonatomic, readonly) int naturalAlignment;
@@ -57,14 +57,16 @@
 - (struct CGPoint { double x1; double x2; })anchorPoint;
 - (struct CGPoint { double x1; double x2; })anchoredAttachmentPositionFromLayoutPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (id)anchoredDrawablesForRelayout;
-- (unsigned int)autosizeFlags;
+- (unsigned long long)autosizeFlags;
 - (struct CGPoint { double x1; double x2; })calculatePointFromSearchReference:(id)arg1;
 - (id)canvas;
 - (struct CGPoint { double x1; double x2; })capturedInfoPositionForAttachment;
 - (id)columnMetricsForCharIndex:(unsigned long long)arg1 outRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
 - (id)columns;
 - (id)computeLayoutGeometry;
-- (double)contentHeight;
+- (id)containedPencilAnnotations;
+- (bool)containsStartOfPencilAnnotation:(id)arg1;
+- (double)contentBlockHeight;
 - (id)currentAnchoredDrawableLayouts;
 - (id)currentInlineDrawableLayouts;
 - (struct CGSize { double x1; double x2; })currentSize;
@@ -75,13 +77,14 @@
 - (void)insertChild:(id)arg1 atIndex:(unsigned long long)arg2;
 - (bool)invalidateForPageCountChange;
 - (void)invalidateSize;
+- (bool)isFootnoteContainerOnSamePageAsTarget:(id)arg1;
 - (bool)isInstructional;
 - (bool)isLastTarget;
 - (bool)isLayoutOffscreen;
 - (bool)layoutIsValid;
 - (struct CGPoint { double x1; double x2; })layoutPositionFromAnchoredAttachmentPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)marginsAreMirrored;
-- (double)maxAnchorY;
+- (double)maxAnchorInBlockDirection;
 - (struct CGSize { double x1; double x2; })maxSize;
 - (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
 - (struct CGSize { double x1; double x2; })minSize;
@@ -109,6 +112,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
+- (void)resetFootnoteHeightMeasurer;
 - (bool)selectionMustBeEntirelyOnscreenToCountAsVisibleInSelectionPath:(id)arg1;
 - (void)setAnchoredDrawablesForRelayout:(id)arg1;
 - (void)setChildren:(id)arg1;

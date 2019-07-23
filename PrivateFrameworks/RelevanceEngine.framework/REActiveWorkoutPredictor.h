@@ -5,7 +5,7 @@
 @interface REActiveWorkoutPredictor : REPredictor {
     float  _dailyAverageWorkouts;
     bool  _hasActiveWorkout;
-    NSDate * _lastWorkoutQueryDate;
+    NSDate * _lastCompletedWorkoutDate;
     unsigned long long  _numberOfWorkoutsPerformedToday;
     HKQuery * _workoutObservationQuery;
     REUpNextTimer * _workoutQueryCoalesceTimer;
@@ -14,6 +14,8 @@
 
 @property (getter=isActiveWorkout, nonatomic, readonly) bool activeWorkout;
 @property bool hasActiveWorkout;
+@property (retain) NSDate *lastCompletedWorkoutDate;
+@property (nonatomic, readonly) NSDate *lastWorkoutDate;
 
 + (id)supportedFeatures;
 + (double)updateInterval;
@@ -30,9 +32,12 @@
 - (bool)hasActiveWorkout;
 - (id)init;
 - (bool)isActiveWorkout;
+- (id)lastCompletedWorkoutDate;
+- (id)lastWorkoutDate;
 - (void)pause;
 - (void)resume;
 - (void)setHasActiveWorkout:(bool)arg1;
+- (void)setLastCompletedWorkoutDate:(id)arg1;
 - (void)update;
 
 @end

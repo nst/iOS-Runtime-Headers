@@ -2,9 +2,29 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassthroughView : UIView
+@interface PKPassthroughView : UIView {
+    bool  _hitTestEnabled;
+    bool  _inHitTest;
+    bool  _inPortalHitTest;
+    PKPassthroughView * _portal;
+    bool  _portalled;
+}
 
+@property (getter=isHitTestEnabled, nonatomic) bool hitTestEnabled;
+@property (nonatomic) bool inPortalHitTest;
+@property (nonatomic) PKPassthroughView *portal;
+@property (getter=isPortalled, nonatomic) bool portalled;
+
+- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (bool)inPortalHitTest;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHitTestEnabled;
+- (bool)isPortalled;
+- (id)portal;
+- (void)setHitTestEnabled:(bool)arg1;
+- (void)setInPortalHitTest:(bool)arg1;
+- (void)setPortal:(id)arg1;
+- (void)setPortalled:(bool)arg1;
 
 @end

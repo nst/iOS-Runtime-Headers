@@ -3,11 +3,11 @@
  */
 
 @interface KNImager : TSDImager <TSDConnectedInfoReplacing> {
-    double  _elementListThumbnailContentInset;
+    double  _drawableThumbnailContentInset;
     struct CGSize { 
         double width; 
         double height; 
-    }  _elementListThumbnailSize;
+    }  _drawableThumbnailSize;
     KNBodyPlaceholderInfo * _replacementBodyPlaceholder;
     KNTitlePlaceholderInfo * _replacementTitlePlaceholder;
     bool  _shouldShowInstructionalText;
@@ -19,9 +19,9 @@
 @property (nonatomic, readonly) <TSDCanvasProxyDelegate> *canvasProxyDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double elementListThumbnailContentInset;
-@property (nonatomic, readonly) TSUImage *elementListThumbnailImage;
-@property (nonatomic) struct CGSize { double x1; double x2; } elementListThumbnailSize;
+@property (nonatomic) double drawableThumbnailContentInset;
+@property (nonatomic, readonly) TSUImage *drawableThumbnailImage;
+@property (nonatomic) struct CGSize { double x1; double x2; } drawableThumbnailSize;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) KNBodyPlaceholderInfo *replacementBodyPlaceholder;
 @property (nonatomic, retain) KNTitlePlaceholderInfo *replacementTitlePlaceholder;
@@ -32,9 +32,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (double)elementListThumbnailContentInset;
-- (id)elementListThumbnailImage;
-- (struct CGSize { double x1; double x2; })elementListThumbnailSize;
+- (double)drawableThumbnailContentInset;
+- (id)drawableThumbnailImage;
+- (struct CGSize { double x1; double x2; })drawableThumbnailSize;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
 - (bool)isInfoAKeynoteMasterObject:(id)arg1;
@@ -46,8 +46,8 @@
 - (double)p_strokeWidthForScaleFactor:(double)arg1 drawable:(id)arg2;
 - (id)replacementBodyPlaceholder;
 - (id)replacementTitlePlaceholder;
-- (void)setElementListThumbnailContentInset:(double)arg1;
-- (void)setElementListThumbnailSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setDrawableThumbnailContentInset:(double)arg1;
+- (void)setDrawableThumbnailSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setReplacementBodyPlaceholder:(id)arg1;
 - (void)setReplacementTitlePlaceholder:(id)arg1;
 - (void)setShouldShowInstructionalText:(bool)arg1;

@@ -8,6 +8,7 @@
     TSPPackage * _package;
 }
 
+@property (nonatomic, readonly) NSURL *URL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSPDocumentProperties *documentProperties;
@@ -24,6 +25,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)URL;
 - (bool)checkPassword:(id)arg1;
 - (id)documentProperties;
 - (bool)hasDataAtRelativePath:(id)arg1;

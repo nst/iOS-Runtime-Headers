@@ -5,6 +5,6 @@
 
 @required
 
-- (void)insertComponentsForBlueprint:(SXLayoutBlueprint *)arg1 layoutDataProvider:(SXLayoutDataProvider *)arg2;
+- (SXDOM *)insertComponentsForBlueprint:(SXLayoutBlueprint *)arg1 DOMObjectProvider:(SXDOMObjectProvider *)arg2;
 
 @end

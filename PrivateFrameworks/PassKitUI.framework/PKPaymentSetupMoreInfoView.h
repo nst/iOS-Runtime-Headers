@@ -10,6 +10,7 @@
     long long  _context;
     UIImageView * _customImageView;
     PKTableHeaderView * _headerView;
+    UIButton * _linkButton;
     PKPaymentSetupMoreInfoItem * _moreInfoItem;
     PKPaymentPass * _pass;
     PKPassView * _passView;
@@ -18,15 +19,18 @@
 @property (nonatomic, readonly) long long context;
 @property (nonatomic, readonly) UIImageView *customImageView;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
+@property (nonatomic, readonly) UIButton *linkButton;
 @property (nonatomic, readonly) PKPaymentSetupMoreInfoItem *moreInfoItem;
 @property (nonatomic, readonly) PKPaymentPass *pass;
 
 - (void).cxx_destruct;
+- (void)_linkButtonTapped:(id)arg1;
 - (long long)context;
 - (id)customImageView;
 - (id)headerView;
 - (id)initWithMoreInfoItem:(id)arg1 paymentPass:(id)arg2 context:(long long)arg3;
 - (void)layoutSubviews;
+- (id)linkButton;
 - (id)moreInfoItem;
 - (id)pass;
 - (void)pk_applyAppearance:(id)arg1;

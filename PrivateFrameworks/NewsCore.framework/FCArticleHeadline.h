@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCArticleHeadline : FCHeadline <FCHeadlineStocksFields> {
+@interface FCArticleHeadline : FCHeadline <FCArticleAccessCheckable, FCHeadlineStocksFields> {
     NSString * _accessoryText;
     NSArray * _allowedStorefrontIDs;
     NSString * _articleID;
@@ -12,6 +12,7 @@
     long long  _behaviorFlags;
     NSArray * _blockedStorefrontIDs;
     bool  _boundToContext;
+    bool  _bundlePaid;
     bool  _canBePurchased;
     NSString * _clusterID;
     unsigned long long  _contentType;
@@ -20,7 +21,8 @@
     bool  _deleted;
     FCHeadlineExperimentalTitleMetadata * _experimentalTitleMetadata;
     bool  _featureCandidate;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _globalCohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList * _globalCohorts;
+    unsigned long long  _halfLife;
     bool  _hasThumbnail;
     bool  _hiddenFromAutoFavorites;
     bool  _hiddenFromFeeds;
@@ -29,8 +31,14 @@
     NSArray * _iAdSectionIDs;
     NSString * _identifier;
     bool  _isDraft;
+    bool  _isLocalDraft;
+    bool  _issueOnly;
+    NSString * _language;
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
+    NSArray * _linkedArticleIDs;
+    NSArray * _linkedIssueIDs;
+    FCIssue * _masterIssue;
     long long  _minimumNewsVersion;
     NSArray * _moreFromPublisherArticleIDs;
     bool  _needsRapidUpdates;
@@ -39,10 +47,12 @@
     NSString * _primaryAudience;
     NSDate * _publishDate;
     long long  _publisherArticleVersion;
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _publisherCohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList * _publisherCohorts;
     NSString * _referencedArticleID;
     NSArray * _relatedArticleIDs;
+    unsigned long long  _role;
     NSString * _shortExcerpt;
+    bool  _showBundleSoftPaywall;
     bool  _showMinimalChrome;
     <FCChannelProviding> * _sourceChannel;
     NSString * _sourceName;
@@ -79,9 +89,19 @@
     bool  _webEmbedsEnabled;
 }
 
+@property (nonatomic, readonly, copy) NSArray *allowedStorefrontIDs;
 @property (nonatomic, retain) FCInterestToken *articleInterestToken;
 @property (nonatomic, retain) NTPBArticleRecord *articleRecord;
 @property (nonatomic) long long behaviorFlags;
+@property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
+@property (getter=isBundlePaid, nonatomic, readonly) bool bundlePaid;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly) bool isBlockedExplicitContent;
+@property (nonatomic, readonly) bool isDraft;
+@property (nonatomic, readonly) bool isLocalDraft;
+@property (nonatomic, readonly) long long minimumNewsVersion;
+@property (getter=isPaid, nonatomic, readonly) bool paid;
+@property (nonatomic, readonly, copy) <FCChannelProviding> *sourceChannel;
 @property (nonatomic, readonly, copy) NSString *stocksClusterID;
 @property (nonatomic, readonly, copy) NSString *stocksMetadataJSON;
 @property (nonatomic, readonly, copy) NSString *stocksScoresJSON;
@@ -107,39 +127,48 @@
 - (unsigned long long)contentType;
 - (id)contentURL;
 - (id)coverArt;
-- (id)endOfArticleTopicIDs;
 - (id)experimentalTitleMetadata;
-- (id)globalCohort;
+- (id)globalCohorts;
+- (unsigned long long)halfLife;
 - (bool)hasThumbnail;
 - (id)iAdCategories;
 - (id)iAdKeywords;
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)init;
-- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7 experimentalTitleProvider:(id)arg8;
-- (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
+- (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 masterIssue:(id)arg4 storyStyleConfigs:(id)arg5 storyTypeTimeout:(long long)arg6 rapidUpdatesTimeout:(long long)arg7 assetManager:(id)arg8 experimentalTitleProvider:(id)arg9;
+- (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 masterIssue:(id)arg3 assetManager:(id)arg4;
 - (bool)isBoundToContext;
+- (bool)isBundlePaid;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
 - (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
+- (bool)isIssueOnly;
+- (bool)isLocalDraft;
 - (bool)isPaid;
 - (bool)isPressRelease;
 - (bool)isSponsored;
+- (id)language;
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
+- (id)linkedArticleIDs;
+- (id)linkedIssueIDs;
+- (id)masterIssue;
 - (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIDs;
 - (bool)needsRapidUpdates;
 - (id)primaryAudience;
 - (id)publishDate;
 - (long long)publisherArticleVersion;
-- (id)publisherCohort;
+- (id)publisherCohorts;
 - (id)publisherID;
 - (id)publisherSpecifiedArticleIDs;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
+- (unsigned long long)role;
+- (void)setAccessoryText:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setArticleInterestToken:(id)arg1;
 - (void)setArticleRecord:(id)arg1;
@@ -147,13 +176,11 @@
 - (void)setClusterID:(id)arg1;
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
-- (void)setExperimentalTitleMetadata:(id)arg1;
+- (void)setHalfLife:(unsigned long long)arg1;
 - (void)setHasThumbnail:(bool)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setPaid:(bool)arg1;
 - (void)setPublishDate:(id)arg1;
+- (void)setRole:(unsigned long long)arg1;
 - (void)setShortExcerpt:(id)arg1;
-- (void)setSourceChannel:(id)arg1;
 - (void)setSourceName:(id)arg1;
 - (void)setSponsored:(bool)arg1;
 - (void)setStoryStyle:(id)arg1;
@@ -168,6 +195,7 @@
 - (void)setTitleCompact:(id)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (id)shortExcerpt;
+- (bool)showBundleSoftPaywall;
 - (bool)showMinimalChrome;
 - (id)sourceChannel;
 - (id)sourceName;

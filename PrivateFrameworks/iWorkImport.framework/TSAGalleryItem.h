@@ -62,7 +62,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
-@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, retain) TSPData *thumbnailAdjustedImageData;
 @property (nonatomic, retain) TSPData *thumbnailImageData;
 
@@ -98,7 +97,7 @@
 - (bool)isThemeContent;
 - (unsigned long long)itemIndex;
 - (Class)layoutClass;
-- (void)loadFromMessage:(const struct GalleryItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct DataReference {} *x6; struct DataReference {} *x7; struct ImageAdjustmentsArchive {} *x8; struct DataReference {} *x9; struct DataReference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; float x13; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromMessage:(const struct GalleryItem { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; struct Point {} *x6; struct DataReference {} *x7; struct DataReference {} *x8; struct ImageAdjustmentsArchive {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Reference {} *x12; float x13; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (struct CGSize { double x1; double x2; })naturalSize;
 - (bool)needsDownload;
@@ -111,7 +110,7 @@
 - (bool)preventsComments;
 - (Class)repClass;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToMessage:(struct GalleryItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct DataReference {} *x6; struct DataReference {} *x7; struct ImageAdjustmentsArchive {} *x8; struct DataReference {} *x9; struct DataReference {} *x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; float x13; }*)arg1 archiver:(id)arg2;
+- (void)saveToMessage:(struct GalleryItem { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; struct Point {} *x6; struct DataReference {} *x7; struct DataReference {} *x8; struct ImageAdjustmentsArchive {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Reference {} *x12; float x13; }*)arg1 archiver:(id)arg2;
 - (double)scale;
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setAdjustedImageData:(id)arg1;
@@ -129,7 +128,7 @@
 - (bool)storageChangesInvalidateWrap;
 - (bool)supportsMultipleColumns;
 - (bool)textIsLinked;
-- (bool)textIsVertical;
+- (bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 - (id)thumbnailAdjustedImageData;
 - (id)thumbnailImageData;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_addConstraints;
+- (id)_dateFormatTemplateForLocale:(id)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)_populateHourlyForecastStackView:(id)arg1 withHourlyConditionsViews:(id)arg2;
 - (void)_resetHourlyConditionsViews:(id)arg1 emptyTemperatureString:(id)arg2;

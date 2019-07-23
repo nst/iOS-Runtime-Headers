@@ -62,6 +62,8 @@
 - (id)sourceIdentifier;
 - (id)userDefinedSleepWindow;
 - (id)userDefinedSleepWindowForAlarm:(id)arg1;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1 inSleepWindow:(bool*)arg2;
 - (id)userDefinedSleepWindowForAlarm:(id)arg1 now:(id)arg2;
+- (id)userDefinedSleepWindowForAlarm:(id)arg1 now:(id)arg2 inSleepWindow:(bool*)arg3;
 
 @end

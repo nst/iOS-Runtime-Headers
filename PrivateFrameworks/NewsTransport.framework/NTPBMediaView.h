@@ -45,6 +45,9 @@
     bool  _isDigitalReplicaAd;
     bool  _isNativeAd;
     bool  _isUserSubscribedToFeed;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
+    NTPBIssueViewData * _issueViewData;
     NSString * _mediaId;
     int  _mediaType;
     NSString * _metadata;
@@ -103,6 +106,9 @@
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsNativeAd;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
+@property (nonatomic, readonly) bool hasIssueViewData;
 @property (nonatomic, readonly) bool hasMediaId;
 @property (nonatomic) bool hasMediaType;
 @property (nonatomic, readonly) bool hasMetadata;
@@ -126,6 +132,9 @@
 @property (nonatomic) bool isDigitalReplicaAd;
 @property (nonatomic) bool isNativeAd;
 @property (nonatomic) bool isUserSubscribedToFeed;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
+@property (nonatomic, retain) NTPBIssueViewData *issueViewData;
 @property (nonatomic, retain) NSString *mediaId;
 @property (nonatomic) int mediaType;
 @property (nonatomic, retain) NSString *metadata;
@@ -210,6 +219,9 @@
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsNativeAd;
 - (bool)hasIsUserSubscribedToFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
+- (bool)hasIssueViewData;
 - (bool)hasMediaId;
 - (bool)hasMediaType;
 - (bool)hasMetadata;
@@ -235,6 +247,9 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isNativeAd;
 - (bool)isUserSubscribedToFeed;
+- (id)issueData;
+- (id)issueExposureData;
+- (id)issueViewData;
 - (id)mediaId;
 - (int)mediaType;
 - (id)mediaTypeAsString:(int)arg1;
@@ -292,6 +307,9 @@
 - (void)setIsDigitalReplicaAd:(bool)arg1;
 - (void)setIsNativeAd:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
+- (void)setIssueViewData:(id)arg1;
 - (void)setMediaId:(id)arg1;
 - (void)setMediaType:(int)arg1;
 - (void)setMetadata:(id)arg1;

@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge._CKLogger : SwiftObject
+@interface CoreKnowledge._CKLogger : Swift._SwiftObject
 
 @end

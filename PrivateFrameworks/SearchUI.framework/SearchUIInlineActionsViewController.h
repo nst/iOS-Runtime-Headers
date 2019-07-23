@@ -27,7 +27,6 @@
 @property (readonly) Class superclass;
 
 + (id)directionsButtonImage;
-+ (bool)regionIsBlocked;
 + (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;

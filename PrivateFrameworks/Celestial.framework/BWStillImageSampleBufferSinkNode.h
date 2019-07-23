@@ -6,6 +6,8 @@
     bool  _aggdClientIsCameraOrMessages;
     bool  _aggdIsPhotoFormat;
     bool  _aggdIsTimeLapse;
+    NSString * _clientApplicationID;
+    long long  _lastCaptureRequestTime;
     id /* block */  _sampleBufferAvailableHandler;
 }
 
@@ -14,6 +16,7 @@
 + (void)initialize;
 
 - (void)_reportAggdDataWithRequestedStillImageSettings:(id)arg1 resolvedStillImageCaptureSettings:(id)arg2 sbuf:(struct opaqueCMSampleBuffer { }*)arg3;
+- (void)_reportCoreAnalyticsDataWithRequestedStillImageSettings:(id)arg1 resolvedStillImageCaptureSettings:(id)arg2 sbuf:(struct opaqueCMSampleBuffer { }*)arg3;
 - (bool)aggdClientIsCameraOrMessages;
 - (bool)aggdIsPhotoFormat;
 - (bool)aggdIsTimeLapse;
@@ -27,6 +30,7 @@
 - (void)setAggdClientIsCameraOrMessages:(bool)arg1;
 - (void)setAggdIsPhotoFormat:(bool)arg1;
 - (void)setAggdIsTimeLapse:(bool)arg1;
+- (void)setClientApplicationID:(id)arg1;
 - (void)setSampleBufferAvailableHandler:(id /* block */)arg1;
 
 @end

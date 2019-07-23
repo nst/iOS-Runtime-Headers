@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentCredential : NSObject {
+@interface PKPaymentCredential : NSObject <NSSecureCoding> {
+    long long  _cardType;
     long long  _credentialType;
     PKPaymentEligibilityResponse * _eligibilityResponse;
     NSString * _expiration;
@@ -11,29 +12,34 @@
     NSString * _sanitizedPrimaryAccountNumber;
 }
 
+@property (nonatomic) long long cardType;
 @property (nonatomic) long long credentialType;
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (nonatomic, copy) NSString *expiration;
 @property (nonatomic, copy) NSString *longDescription;
 @property (nonatomic, retain) PKPaymentRequirementsResponse *requirementsResponse;
 @property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
-@property (getter=isTransitCredential, nonatomic, readonly) bool transitCredential;
 
 + (id)fakeRemoteCredentials;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)accountCredential;
+- (long long)cardType;
 - (id)contactlessProductCredential;
 - (long long)credentialType;
 - (id)digitalIssuanceProductCredential;
 - (id)eligibilityResponse;
+- (void)encodeWithCoder:(id)arg1;
 - (id)expiration;
+- (id)initWithCoder:(id)arg1;
+- (bool)isAccountCredential;
 - (bool)isContactlessProductCredential;
 - (bool)isDigitalIssuanceProductCredential;
 - (bool)isLocalPassCredential;
 - (bool)isPeerPaymentCredential;
 - (bool)isPurchasedProductCredential;
 - (bool)isRemoteCredential;
-- (bool)isTransitCredential;
 - (id)localPassCredential;
 - (id)longDescription;
 - (id)peerPaymentCredential;
@@ -41,6 +47,7 @@
 - (id)remoteCredential;
 - (id)requirementsResponse;
 - (id)sanitizedPrimaryAccountNumber;
+- (void)setCardType:(long long)arg1;
 - (void)setCredentialType:(long long)arg1;
 - (void)setEligibilityResponse:(id)arg1;
 - (void)setExpiration:(id)arg1;

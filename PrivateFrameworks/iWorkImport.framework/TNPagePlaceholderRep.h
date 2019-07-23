@@ -4,8 +4,4 @@
 
 @interface TNPagePlaceholderRep : TSDContainerRep
 
-- (void)didUpdateLayer:(id)arg1;
-- (bool)directlyManagesLayerContent;
-- (Class)layerClass;
-
 @end

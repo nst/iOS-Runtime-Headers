@@ -13,7 +13,7 @@
     id /* block */  _deviceChangedHandler;
     id /* block */  _deviceFoundHandler;
     id /* block */  _deviceLostHandler;
-    struct NSMutableDictionary { Class x1; } * _devices;
+    struct NSMutableDictionary { Class x1; } * _deviceMap;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSString * _domain;
     NSString * _interfaceName;
@@ -32,6 +32,7 @@
 @property (nonatomic, copy) id /* block */ deviceChangedHandler;
 @property (nonatomic, copy) id /* block */ deviceFoundHandler;
 @property (nonatomic, copy) id /* block */ deviceLostHandler;
+@property (readonly, copy) NSArray *devices;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic, copy) NSString *interfaceName;
@@ -61,6 +62,7 @@
 - (id /* block */)deviceChangedHandler;
 - (id /* block */)deviceFoundHandler;
 - (id /* block */)deviceLostHandler;
+- (id)devices;
 - (id)dispatchQueue;
 - (id)domain;
 - (id)init;

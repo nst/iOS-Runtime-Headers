@@ -33,6 +33,7 @@
 - (id)backupState;
 - (void)cancel;
 - (bool)cancelApplicationRestoreWithBundleID:(id)arg1 error:(id*)arg2;
+- (bool)cancelDeviceTransferWithTaskType:(long long)arg1 error:(id*)arg2;
 - (void)cancelRestore;
 - (void)clearRestoreSession;
 - (void)connection:(id)arg1 didReceiveMessage:(id)arg2;
@@ -70,6 +71,7 @@
 - (bool)isBackupEnabledForDomainName:(id)arg1;
 - (bool)isLocalBackupPasswordSetWithError:(id*)arg1;
 - (id)journalForBackupUUID:(id)arg1 error:(id*)arg2;
+- (id)journalLastModifiedForBackupUUID:(id)arg1 error:(id*)arg2;
 - (void)keyBagIsLocking;
 - (void)keyBagIsUnlocked;
 - (bool)mergeSnapshots:(id)arg1 backupUUID:(id)arg2 error:(id*)arg3;
@@ -101,6 +103,7 @@
 - (id)restoreInfo;
 - (id)restoreState;
 - (bool)restoreSupportsBatching;
+- (bool)resumeDeviceTransferWithTaskType:(long long)arg1 error:(id*)arg2;
 - (bool)saveKeybagsForBackupUDID:(id)arg1 withError:(id*)arg2;
 - (void)setAllowiTunesBackup:(bool)arg1;
 - (void)setBackupEnabled:(bool)arg1;
@@ -114,6 +117,12 @@
 - (bool)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (bool)shouldSupportiTunes;
 - (bool)startBackupWithError:(id*)arg1;
+- (void)startDataTransferWithPreflightInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)startDeviceTransferWithTaskType:(long long)arg1 sessionInfo:(id)arg2 error:(id*)arg3;
+- (void)startKeychainDataImportWithKeychainInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)startKeychainDataTransferWithCompletionHandler:(id /* block */)arg1;
+- (void)startKeychainTransferWithCompletionHandler:(id /* block */)arg1;
+- (void)startPreflightWithCompletionHandler:(id /* block */)arg1;
 - (bool)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)startScanForBundleIDs:(id)arg1 error:(id*)arg2;
 - (bool)startScanWithError:(id*)arg1;

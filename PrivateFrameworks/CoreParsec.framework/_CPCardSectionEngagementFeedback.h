@@ -4,6 +4,7 @@
 
 @interface _CPCardSectionEngagementFeedback : PBCodable <NSSecureCoding, _CPCardSectionEngagementFeedback, _CPProcessableFeedback> {
     int  _actionCardType;
+    int  _actionTarget;
     _CPCardSectionForFeedback * _cardSection;
     NSString * _cardSectionId;
     _CPPunchoutForFeedback * _destination;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic) int actionCardType;
+@property (nonatomic) int actionTarget;
 @property (nonatomic, retain) _CPCardSectionForFeedback *cardSection;
 @property (nonatomic, copy) NSString *cardSectionId;
 @property (readonly, copy) NSString *debugDescription;
@@ -34,6 +36,7 @@
 
 - (void).cxx_destruct;
 - (int)actionCardType;
+- (int)actionTarget;
 - (id)cardSection;
 - (id)cardSectionId;
 - (id)destination;
@@ -52,6 +55,7 @@
 - (bool)requiresQueryId;
 - (id)resultId;
 - (void)setActionCardType:(int)arg1;
+- (void)setActionTarget:(int)arg1;
 - (void)setCardSection:(id)arg1;
 - (void)setCardSectionId:(id)arg1;
 - (void)setDestination:(id)arg1;

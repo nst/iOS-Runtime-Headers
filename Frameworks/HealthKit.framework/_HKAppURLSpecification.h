@@ -4,6 +4,7 @@
 
 @interface _HKAppURLSpecification : NSObject
 
++ (bool)isAtrialFibrillationEventURL:(id)arg1;
 + (bool)isClinicalLoginRedirectURL:(id)arg1;
 + (bool)isClinicalOnboardingURL:(id)arg1;
 + (bool)isViewHealthRecordsURL:(id)arg1;

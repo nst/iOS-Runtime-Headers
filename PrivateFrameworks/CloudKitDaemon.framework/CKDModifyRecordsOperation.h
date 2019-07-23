@@ -29,6 +29,7 @@
     id /* block */  _saveCompletionBlock;
     long long  _savePolicy;
     id /* block */  _saveProgressBlock;
+    bool  _shouldModifyRecordsInDatabase;
     bool  _shouldOnlySaveAssetContent;
     bool  _shouldReportRecordsInFlight;
     CKDProtocolTranslator * _translator;
@@ -63,6 +64,7 @@
 @property (nonatomic, copy) id /* block */ saveCompletionBlock;
 @property (nonatomic) long long savePolicy;
 @property (nonatomic, copy) id /* block */ saveProgressBlock;
+@property (nonatomic) bool shouldModifyRecordsInDatabase;
 @property (nonatomic) bool shouldOnlySaveAssetContent;
 @property (nonatomic) bool shouldReportRecordsInFlight;
 @property (nonatomic, readonly) CKDProtocolTranslator *translator;
@@ -170,10 +172,12 @@
 - (void)setSaveCompletionBlock:(id /* block */)arg1;
 - (void)setSavePolicy:(long long)arg1;
 - (void)setSaveProgressBlock:(id /* block */)arg1;
+- (void)setShouldModifyRecordsInDatabase:(bool)arg1;
 - (void)setShouldOnlySaveAssetContent:(bool)arg1;
 - (void)setShouldReportRecordsInFlight:(bool)arg1;
 - (void)setTrustProtectionData:(bool)arg1;
 - (void)setUploadCompletionBlock:(id /* block */)arg1;
+- (bool)shouldModifyRecordsInDatabase;
 - (bool)shouldOnlySaveAssetContent;
 - (bool)shouldReportRecordsInFlight;
 - (id)translator;

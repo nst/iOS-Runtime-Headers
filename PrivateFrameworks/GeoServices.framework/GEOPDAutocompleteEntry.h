@@ -10,12 +10,14 @@
     GEOPDAutocompleteEntryClientResolved * _clientResolved;
     GEOPDAutocompleteEntryDirectionIntent * _directionIntent;
     struct { 
+        unsigned int sortPriority : 1; 
         unsigned int type : 1; 
     }  _has;
     GEOPDAutocompleteEntryHighlightLine * _highlightExtra;
     GEOPDAutocompleteEntryHighlightLine * _highlightMain;
     GEOPDAutocompleteEntryQuery * _query;
     GEOPDRetainedSearchMetadata * _retainSearch;
+    int  _sortPriority;
     int  _type;
     PBUnknownFields * _unknownFields;
 }
@@ -36,11 +38,13 @@
 @property (nonatomic, readonly) bool hasHighlightMain;
 @property (nonatomic, readonly) bool hasQuery;
 @property (nonatomic, readonly) bool hasRetainSearch;
+@property (nonatomic) bool hasSortPriority;
 @property (nonatomic) bool hasType;
 @property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightExtra;
 @property (nonatomic, retain) GEOPDAutocompleteEntryHighlightLine *highlightMain;
 @property (nonatomic, retain) GEOPDAutocompleteEntryQuery *query;
 @property (nonatomic, retain) GEOPDRetainedSearchMetadata *retainSearch;
+@property (nonatomic) int sortPriority;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -66,6 +70,7 @@
 - (bool)hasHighlightMain;
 - (bool)hasQuery;
 - (bool)hasRetainSearch;
+- (bool)hasSortPriority;
 - (bool)hasType;
 - (unsigned long long)hash;
 - (id)highlightExtra;
@@ -81,12 +86,15 @@
 - (void)setCategory:(id)arg1;
 - (void)setClientResolved:(id)arg1;
 - (void)setDirectionIntent:(id)arg1;
+- (void)setHasSortPriority:(bool)arg1;
 - (void)setHasType:(bool)arg1;
 - (void)setHighlightExtra:(id)arg1;
 - (void)setHighlightMain:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setRetainSearch:(id)arg1;
+- (void)setSortPriority:(int)arg1;
 - (void)setType:(int)arg1;
+- (int)sortPriority;
 - (int)type;
 - (id)typeAsString:(int)arg1;
 - (id)unknownFields;

@@ -27,6 +27,7 @@
 - (id)defaultDelegate;
 - (void)didEngageCardSection:(id)arg1;
 - (void)didErrorOccur:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (id)feedbackDelegatesByCardSectionIdentifiers;
 - (id)feedbackDelegatesByCardSectionViewIds;
 - (id)init;
@@ -35,5 +36,6 @@
 - (void)sendCustomFeedback:(id)arg1;
 - (void)setDefaultDelegate:(id)arg1;
 - (bool)shouldHandleCardSectionEngagement:(id)arg1;
+- (void)willDismissViewController:(id)arg1;
 
 @end

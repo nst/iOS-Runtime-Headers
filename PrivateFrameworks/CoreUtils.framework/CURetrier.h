@@ -3,7 +3,7 @@
  */
 
 @interface CURetrier : NSObject {
-    id /* block */  _action;
+    id /* block */  _actionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     double  _interval;
     bool  _invalidateCalled;
@@ -13,7 +13,7 @@
     double  _startTime;
 }
 
-@property (nonatomic, copy) id /* block */ action;
+@property (nonatomic, copy) id /* block */ actionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) double interval;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
@@ -21,7 +21,7 @@
 @property (nonatomic) double startTime;
 
 - (void).cxx_destruct;
-- (id /* block */)action;
+- (id /* block */)actionHandler;
 - (id)dispatchQueue;
 - (void)failed;
 - (void)failedDirect;
@@ -31,7 +31,7 @@
 - (void)invalidateDirect;
 - (id /* block */)invalidationHandler;
 - (double)leeway;
-- (void)setAction:(id /* block */)arg1;
+- (void)setActionHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterval:(double)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;

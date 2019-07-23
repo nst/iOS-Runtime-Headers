@@ -18,6 +18,8 @@
 @property (nonatomic, readonly, copy) NSArray *requiredPaymentSetupFields;
 @property (nonatomic, readonly) long long status;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 - (id)initWithProduct:(id)arg1;

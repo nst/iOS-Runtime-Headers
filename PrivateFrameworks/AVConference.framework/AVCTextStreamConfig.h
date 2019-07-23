@@ -6,12 +6,14 @@
     long long  _codecType;
     unsigned long long  _numRedundantPayloads;
     unsigned long long  _rxRedPayloadType;
+    float  _txIntervalMin;
     unsigned long long  _txRedPayloadType;
 }
 
 @property (nonatomic) long long codecType;
 @property (nonatomic) unsigned long long numRedundantPayloads;
 @property (nonatomic) unsigned long long rxRedPayloadType;
+@property (nonatomic) float txIntervalMin;
 @property (nonatomic) unsigned long long txRedPayloadType;
 
 + (long long)clientCodecTypeWithCodecType:(long long)arg1;
@@ -26,8 +28,10 @@
 - (void)setCodecType:(long long)arg1;
 - (void)setNumRedundantPayloads:(unsigned long long)arg1;
 - (void)setRxRedPayloadType:(unsigned long long)arg1;
+- (void)setTxIntervalMin:(float)arg1;
 - (void)setTxRedPayloadType:(unsigned long long)arg1;
 - (void)setUpWithDictionary:(id)arg1;
+- (float)txIntervalMin;
 - (unsigned long long)txRedPayloadType;
 
 @end

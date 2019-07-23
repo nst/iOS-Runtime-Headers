@@ -28,10 +28,12 @@
     bool  _isVideo;
     NSData * _localFrequency;
     float  _localMeterLevel;
+    NSUUID * _localSenderIdentityAccountUUID;
     NSUUID * _localSenderIdentityUUID;
     <TURemoteVideoClient> * _localVideo;
     NSMutableDictionary * _localVideoModeToLayer;
     bool  _mediaStalled;
+    bool  _mutuallyExclusiveCall;
     bool  _needsManualInCallSounds;
     bool  _outgoing;
     long long  _outputAudioPowerSpectrumToken;
@@ -110,10 +112,12 @@
 @property (nonatomic) bool isVideo;
 @property (nonatomic, retain) NSData *localFrequency;
 @property (nonatomic) float localMeterLevel;
+@property (nonatomic, copy) NSUUID *localSenderIdentityAccountUUID;
 @property (nonatomic, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic, retain) <TURemoteVideoClient> *localVideo;
 @property (nonatomic, retain) NSMutableDictionary *localVideoModeToLayer;
 @property (getter=isMediaStalled, nonatomic) bool mediaStalled;
+@property (getter=isMutuallyExclusiveCall, nonatomic) bool mutuallyExclusiveCall;
 @property (nonatomic) bool needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic) bool outgoing;
 @property (nonatomic) long long outputAudioPowerSpectrumToken;
@@ -185,6 +189,7 @@
 - (bool)isEmergency;
 - (bool)isHostedOnCurrentDevice;
 - (bool)isMediaStalled;
+- (bool)isMutuallyExclusiveCall;
 - (bool)isOutgoing;
 - (bool)isRemoteUplinkMuted;
 - (bool)isSOS;
@@ -201,6 +206,7 @@
 - (struct CGSize { double x1; double x2; })localAspectRatioForOrientation:(long long)arg1;
 - (id)localFrequency;
 - (float)localMeterLevel;
+- (id)localSenderIdentityAccountUUID;
 - (id)localSenderIdentityUUID;
 - (id)localVideo;
 - (id)localVideoModeToLayer;
@@ -257,11 +263,13 @@
 - (void)setIsVideo:(bool)arg1;
 - (void)setLocalFrequency:(id)arg1;
 - (void)setLocalMeterLevel:(float)arg1;
+- (void)setLocalSenderIdentityAccountUUID:(id)arg1;
 - (void)setLocalSenderIdentityUUID:(id)arg1;
 - (void)setLocalVideo:(id)arg1;
 - (void)setLocalVideoLayer:(id)arg1 forMode:(long long)arg2;
 - (void)setLocalVideoModeToLayer:(id)arg1;
 - (void)setMediaStalled:(bool)arg1;
+- (void)setMutuallyExclusiveCall:(bool)arg1;
 - (void)setNeedsManualInCallSounds:(bool)arg1;
 - (void)setOutgoing:(bool)arg1;
 - (void)setOutputAudioPowerSpectrumToken:(long long)arg1;

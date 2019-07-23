@@ -26,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)SIMStatus;
+- (id)description;
 - (id)persistentError;
 - (unsigned long long)planFlows;
 - (id)serviceSubscriptionContext;

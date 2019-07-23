@@ -6,12 +6,16 @@
 @required
 
 - (void)changeToMediaAtIndex:(unsigned long long)arg1;
+- (NSDictionary *)contextMenuData;
 - (IKJSMediaItem *)currentMediaItem;
+- (NSArray *)currentMediaItemAccessLogs;
 - (NSDate *)currentMediaItemDate;
 - (NSNumber *)currentMediaItemDuration;
+- (NSArray *)currentMediaItemErrorLogs;
 - (id)init;
 - (bool)interactiveOverlayDismissable;
 - (IKDOMDocument *)interactiveOverlayDocument;
+- (bool)muted;
 - (void)next;
 - (IKJSMediaItem *)nextMediaItem;
 - (IKDOMDocument *)overlayDocument;
@@ -24,11 +28,17 @@
 - (void)previous;
 - (IKJSMediaItem *)previousMediaItem;
 - (void)seekToTime:(double)arg1;
+- (void)setContextMenuData:(NSDictionary *)arg1;
 - (void)setInteractiveOverlayDismissable:(bool)arg1;
 - (void)setInteractiveOverlayDocument:(IKDOMDocument *)arg1;
+- (void)setMuted:(bool)arg1;
 - (void)setOverlayDocument:(IKDOMDocument *)arg1;
 - (void)setPlaybackRate:(double)arg1;
 - (void)setPlaylist:(IKJSPlaylist *)arg1;
+- (void)setShowsResumeMenu:(bool)arg1;
+- (void)setUserInfo:(NSDictionary *)arg1;
+- (bool)showsResumeMenu;
 - (void)stop;
+- (NSDictionary *)userInfo;
 
 @end

@@ -238,6 +238,7 @@
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)oneUpPresentationPhotosDetailsContext:(id)arg1;
 - (bool)oneUpPresentationShouldAutoPlay:(id)arg1;
 - (void)playButtonTileWasTapped:(id)arg1;

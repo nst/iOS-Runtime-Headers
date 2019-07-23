@@ -39,6 +39,7 @@
 - (void)_tidyUpGesture;
 - (void)_willBeginIndirectSelectionGesture:(id)arg1;
 - (struct CGPoint { double x1; double x2; })acceleratedTranslation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2 isActive:(bool)arg3;
+- (double)additionalPressDurationForTypingCadence:(id)arg1;
 - (void)beginCursorManipulationFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)beginIndirectBlockPanWithTranslation:(struct CGPoint { double x1; double x2; })arg1 executionContext:(id)arg2;
 - (void)beginTwoFingerCursorPanWithTranslation:(struct CGPoint { double x1; double x2; })arg1 executionContext:(id)arg2;
@@ -58,7 +59,6 @@
 - (void)finishTwoFingerLongPressWithExecutionContext:(id)arg1;
 - (bool)forceTouchGestureRecognizerShouldBegin:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2 forForce:(bool)arg3;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)gestureRecognizerShouldBeginResponse:(id)arg1;

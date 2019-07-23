@@ -6,6 +6,7 @@
     NSArray * _TCIs;
     NSError * _error;
     NSArray * _merchantIdentifiers;
+    bool  _shouldIgnore;
     unsigned long long  _technology;
     long long  _terminalType;
     long long  _valueAddedServiceMode;
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSArray *TCIs;
 @property (nonatomic, copy) NSError *error;
 @property (nonatomic, copy) NSArray *merchantIdentifiers;
+@property (nonatomic) bool shouldIgnore;
 @property (nonatomic, readonly) unsigned long long technology;
 @property (nonatomic, readonly) long long terminalType;
 @property (nonatomic, readonly) long long valueAddedServiceMode;
@@ -31,7 +33,9 @@
 - (id)merchantIdentifiers;
 - (void)setError:(id)arg1;
 - (void)setMerchantIdentifiers:(id)arg1;
+- (void)setShouldIgnore:(bool)arg1;
 - (void)setTCIs:(id)arg1;
+- (bool)shouldIgnore;
 - (unsigned long long)technology;
 - (long long)terminalType;
 - (long long)valueAddedServiceMode;

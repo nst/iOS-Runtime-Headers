@@ -11,11 +11,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)hash;
-- (id)initWithParentEventTrack:(id)arg1 archive:(const struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct RecordingNavigationEventArchive {} *x6; struct RecordingLaserEventArchive {} *x7; struct RecordingPauseEventArchive {} *x8; struct RecordingMovieEventArchive {} *x9; }*)arg2 unarchiver:(id)arg3;
+- (id)initWithParentEventTrack:(id)arg1 archive:(const struct RecordingEventArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RecordingNavigationEventArchive {} *x5; struct RecordingLaserEventArchive {} *x6; struct RecordingPauseEventArchive {} *x7; struct RecordingMovieEventArchive {} *x8; double x9; }*)arg2 unarchiver:(id)arg3;
 - (id)initWithStartTime:(double)arg1;
 - (id)initWithStartTime:(double)arg1 pauseEventType:(long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (long long)pauseEventType;
-- (void)saveToArchive:(struct RecordingEventArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; struct RecordingNavigationEventArchive {} *x6; struct RecordingLaserEventArchive {} *x7; struct RecordingPauseEventArchive {} *x8; struct RecordingMovieEventArchive {} *x9; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct RecordingEventArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RecordingNavigationEventArchive {} *x5; struct RecordingLaserEventArchive {} *x6; struct RecordingPauseEventArchive {} *x7; struct RecordingMovieEventArchive {} *x8; double x9; }*)arg1 archiver:(id)arg2;
 
 @end

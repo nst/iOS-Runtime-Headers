@@ -8,6 +8,7 @@
     REMLMetricsSet * _metrics;
     REMLLinearModel * _model;
     NSString * _modelFileLocation;
+    unsigned long long  _modelStorageBehavior;
     REObserverStore * _observers;
     NSArray * _orderedFeatures;
     bool  _supportsContentRanking;
@@ -22,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)_createOrderFeatureListFromModelFileURL:(id)arg1 mlFeatures:(id)arg2;
 - (bool)_loadModelAtPath:(id)arg1 mlFeatures:(id)arg2 checkModelVersion:(bool)arg3;
+- (void)_logMetrics;
 - (void)_notifyObserversThatModelUpdated;
 - (id)_orderedModelFeatures;
 - (bool)_saveModelToDisk:(id*)arg1;
@@ -30,7 +32,9 @@
 - (id)comparatorWithRules:(id)arg1;
 - (id)createOutputFeatureFromDouble:(double)arg1 error:(id*)arg2;
 - (void)dealloc;
+- (void)flushTraining;
 - (id)initWithRelevanceEngine:(id)arg1;
+- (void)manuallySaveModel;
 - (void)performModelClear;
 - (void)performTrainingWithFeatureMaps:(id)arg1 content:(id)arg2 events:(id)arg3 interactions:(id)arg4 purgeCaches:(bool)arg5;
 - (id)predicitionForLogicalElement:(id)arg1;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)fetchDataForHeadline:(void *)arg1 cellStyle:(void *)arg2 subscriptionAdContext:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: <FCHeadlineProviding> *, long long, NSSet *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TSArticleRecirculationData *, void*
+- (void)fetchDataForHeadline:(void *)arg1 context:(void *)arg2 cellStyle:(void *)arg3 subscriptionAdContext:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: <FCHeadlineProviding> *, long long, long long, NSSet *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TSArticleRecirculationData *, void*
 
 @end

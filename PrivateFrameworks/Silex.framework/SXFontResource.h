@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFontResource : SXResource <SXFontFace>
+@interface SXFontResource : SXResource <SXFontResource>
 
+@property (nonatomic, readonly) NSURL *URL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <SXFontAttributes> *fontAttributes;
 @property (nonatomic, readonly) NSString *fontName;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
 @property (readonly) Class superclass;
 
 + (id)typeString;

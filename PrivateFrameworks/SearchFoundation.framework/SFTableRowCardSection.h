@@ -62,6 +62,7 @@
 @property (nonatomic, copy) NSString *tabGroupIdentifier;
 @property (nonatomic, copy) NSString *tableIdentifier;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 @property (nonatomic) int verticalAlign;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation

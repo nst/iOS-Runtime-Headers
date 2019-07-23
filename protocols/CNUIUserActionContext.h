@@ -7,7 +7,9 @@
 
 - (<CNUIUserActionCurator> *)actionCurator;
 - (<CNUIUserActionRecorder> *)actionRecorder;
+- (NSString *)channelIdentifier;
 - (<CNUIUserActionDialRequestOpener> *)dialRequestOpener;
+- (void)setChannelIdentifier:(NSString *)arg1;
 - (<CNUIUserActionURLOpener> *)urlOpener;
 - (<CNUIUserActionUserActivityOpener> *)userActivityOpener;
 

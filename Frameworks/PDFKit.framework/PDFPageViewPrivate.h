@@ -3,7 +3,6 @@
  */
 
 @interface PDFPageViewPrivate : NSObject {
-    UITextView * activeTextView;
     PDFAnnotation * activeWidgetAnnotation;
     UIView * activeWidgetControl;
     UIImage * backgroundImage;

@@ -3,46 +3,71 @@
  */
 
 @interface VUIPlistMediaDatabaseItem : VUIPlistMediaDatabaseEntity <NSCopying> {
+    NSNumber * _HLSColorCapability;
+    NSNumber * _colorCapability;
     VUIContentRating * _contentRating;
     VUIMediaItemCredits * _credits;
+    NSString * _downloadState;
     NSNumber * _duration;
     NSNumber * _episodeNumber;
+    NSURL * _filePathURL;
     NSNumber * _local;
+    NSDictionary * _offlineFPSKeys;
+    NSURL * _playbackURL;
     NSURL * _previewFrameURL;
     NSDate * _releaseDate;
     VUIPlistMediaDatabaseSeason * _season;
     NSString * _studio;
 }
 
+@property (nonatomic, copy) NSNumber *HLSColorCapability;
+@property (nonatomic, copy) NSNumber *colorCapability;
 @property (nonatomic, copy) VUIContentRating *contentRating;
 @property (nonatomic, copy) VUIMediaItemCredits *credits;
+@property (nonatomic, copy) NSString *downloadState;
 @property (nonatomic, copy) NSNumber *duration;
 @property (nonatomic, copy) NSNumber *episodeNumber;
+@property (nonatomic, copy) NSURL *filePathURL;
+@property (nonatomic, copy) NSDictionary *offlineFPSKeys;
 @property (getter=isPlayable, nonatomic, readonly, copy) NSNumber *playable;
+@property (nonatomic, copy) NSURL *playbackURL;
 @property (nonatomic, copy) NSURL *previewFrameURL;
 @property (nonatomic, copy) NSDate *releaseDate;
 @property (nonatomic) VUIPlistMediaDatabaseSeason *season;
 @property (nonatomic, copy) NSString *studio;
 
 - (void).cxx_destruct;
+- (id)HLSColorCapability;
+- (id)colorCapability;
 - (id)contentRating;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)credits;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)downloadState;
 - (id)duration;
 - (id)episodeNumber;
+- (id)filePathURL;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)isLocal;
 - (id)isPlayable;
+- (id)offlineFPSKeys;
+- (id)playbackURL;
 - (id)previewFrameURL;
 - (id)releaseDate;
 - (id)season;
+- (void)setColorCapability:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setCredits:(id)arg1;
+- (void)setDownloadState:(id)arg1;
 - (void)setDuration:(id)arg1;
 - (void)setEpisodeNumber:(id)arg1;
+- (void)setFilePathURL:(id)arg1;
+- (void)setHLSColorCapability:(id)arg1;
+- (void)setOfflineFPSKeys:(id)arg1;
+- (void)setPlaybackURL:(id)arg1;
 - (void)setPreviewFrameURL:(id)arg1;
 - (void)setReleaseDate:(id)arg1;
 - (void)setSeason:(id)arg1;

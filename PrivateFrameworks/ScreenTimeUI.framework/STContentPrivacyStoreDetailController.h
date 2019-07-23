@@ -3,16 +3,22 @@
  */
 
 @interface STContentPrivacyStoreDetailController : PSListController {
-    <STContentPrivacyViewModelCoordinator> * _coordinator;
+    STContentPrivacyListController * _contentPrivacyController;
+    NSObject<STContentPrivacyViewModelCoordinator> * _coordinator;
 }
 
-@property (nonatomic, retain) <STContentPrivacyViewModelCoordinator> *coordinator;
+@property STContentPrivacyListController *contentPrivacyController;
+@property (nonatomic, retain) NSObject<STContentPrivacyViewModelCoordinator> *coordinator;
 
 - (void).cxx_destruct;
+- (id)contentPrivacyController;
 - (id)coordinator;
+- (void)dealloc;
 - (id)init;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setContentPrivacyController:(id)arg1;
 - (void)setCoordinator:(id)arg1;
-- (bool)shouldReloadSpecifiersOnResume;
+- (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

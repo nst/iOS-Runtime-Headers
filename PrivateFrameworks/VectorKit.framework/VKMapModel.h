@@ -50,6 +50,7 @@
     bool  _forceMapDrawStyleUpdate;
     double  _forcedMaxZoomLevel;
     bool  _fullyDrawn;
+    double  _gridAnalyticsDurationThreshold;
     bool  _hasFailedTile;
     VKTimedAnimation * _highZoomTransitionAnimation;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
@@ -59,8 +60,10 @@
     bool  _isEmphasisSet;
     bool  _isTransitioningToTransit;
     unsigned char  _labelScaleFactor;
+    int  _lastGridAnalyticsState;
     bool  _limitingNavCameraHeight;
     long long  _loadingCount;
+    bool  _loadingRequiredLayers;
     NSLocale * _locale;
     bool  _localizeLabels;
     double  _lodBias;
@@ -146,6 +149,7 @@
         struct __shared_weak_count {} *__cntrl_; 
     }  _sceneManager;
     VKPolylineOverlay * _selectedPolyline;
+    bool  _sendGridDurationAnalytics;
     long long  _shieldIdiom;
     long long  _shieldSize;
     bool  _shouldNotifyFullyDrawn;
@@ -154,6 +158,7 @@
     bool  _showsPointsOfInterest;
     bool  _showsVenues;
     float  _standardMapZoomLevelTransitionZ;
+    double  _startedShowingGridTimestamp;
     struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { 
         struct StylesheetQuery<gss::PropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 

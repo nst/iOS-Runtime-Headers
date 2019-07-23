@@ -12,7 +12,6 @@
 @property (nonatomic) bool shouldDirectToStorageManagement;
 @property (getter=isSimulatedDeviceStorageAlmostFull, nonatomic) bool simulatedDeviceStorageAlmostFull;
 @property (nonatomic, retain) NSNumber *simulatedPhotosLibrarySize;
-@property (nonatomic) bool useHysteresisForDeviceStorageAlmostFull;
 
 + (id)ckBackupDeviceID;
 + (id)sharedDaemonOfferManager;
@@ -65,7 +64,6 @@
 - (void)setShouldDirectToStorageManagement:(bool)arg1;
 - (void)setSimulatedDeviceStorageAlmostFull:(bool)arg1;
 - (void)setSimulatedPhotosLibrarySize:(id)arg1;
-- (void)setUseHysteresisForDeviceStorageAlmostFull:(bool)arg1;
 - (bool)shouldDirectToStorageManagement;
 - (id)simulatedPhotosLibrarySize;
 - (id)soonestOfferOrStubExpirationDate;
@@ -76,6 +74,5 @@
 - (void)teardownCachedOffers;
 - (void)teardownOffersForAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateOfferForAccount:(id)arg1 offerId:(id)arg2 buttonId:(id)arg3 info:(id)arg4 completion:(id /* block */)arg5;
-- (bool)useHysteresisForDeviceStorageAlmostFull;
 
 @end

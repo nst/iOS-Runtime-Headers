@@ -12,7 +12,6 @@
 + (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2;
 
 - (void).cxx_destruct;
-- (id)_stringForCellularType:(long long)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)badgeView;
 - (void)setBadgeView:(id)arg1;

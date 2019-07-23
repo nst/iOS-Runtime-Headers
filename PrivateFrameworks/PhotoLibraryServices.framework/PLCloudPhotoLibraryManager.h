@@ -42,6 +42,7 @@
     PLCloudResourceManager * _resourceManager;
     bool  _significantWork;
     bool  _stopped;
+    PLCloudPhotoLibraryUserSwitchHandler * _switchHandler;
     PLCloudTaskManager * _taskManager;
     NSObject<OS_dispatch_source> * _unpauseDispatchTimer;
     NSObject<OS_dispatch_queue> * _uploadDownloadCountQueue;
@@ -80,7 +81,6 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (id)_addPrefix:(id)arg1 toKeysInDictionary:(id)arg2;
 - (id)_assetResourceForAsset:(id)arg1 resourceType:(unsigned long long)arg2 masterResourceOnly:(bool)arg3 isPhoto:(bool*)arg4;
 - (id)_calculateUnpauseTimeForPauseTime:(id)arg1;
 - (bool)_canExternallyTransitionToNewLibraryModeIgnoringPause:(bool)arg1 ignoringBatterySaver:(bool)arg2;
@@ -128,6 +128,8 @@
 - (void)_processUploadBatch;
 - (void)_processUploadBatchWithStartupFailureCount:(unsigned long long)arg1;
 - (void)_promptForCameraCaptureSettingChangeWithReason:(int)arg1;
+- (void)_repushVideoAssetsMetadata;
+- (void)_repushVideoAssetsMetadataIfNecessary;
 - (void)_resetCPLLibrary;
 - (void)_runAsyncOnIsolationQueueWithTransaction:(id)arg1 afterDelay:(double)arg2 block:(id /* block */)arg3;
 - (void)_runAsyncOnIsolationQueueWithTransaction:(id)arg1 block:(id /* block */)arg2;
@@ -213,8 +215,7 @@
 - (id)readMigrationMarker;
 - (id)readTokenObject;
 - (void)registerPlaceholderAssetAvailabilityHandler:(id /* block */)arg1 forAssetUUID:(id)arg2;
-- (void)reportDeviceData:(id)arg1;
-- (void)reportLibrarySizeIfNeeded;
+- (void)reportMiscInformation:(id)arg1;
 - (void)resetSyncDueToMigrationMarker;
 - (void)saveLastKnownChangeTrackerTokenToDisk;
 - (void)saveTokenObject:(id)arg1;
@@ -222,6 +223,7 @@
 - (void)setMigratedLocalVersion:(id)arg1;
 - (void)setMigrationMarker:(id)arg1;
 - (void)setPause:(bool)arg1 reason:(short)arg2;
+- (long long)sizeOfResourcesToUploadByCPL:(id*)arg1;
 - (void)sizeOfResourcesToUploadDidChangeForLibraryManager:(id)arg1;
 - (void)startAutomaticPrefetchOrPrune;
 - (void)statusDidChange:(id)arg1;

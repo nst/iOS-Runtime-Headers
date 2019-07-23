@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupDelegate, PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentSetupRequiresPreflightProtocol, PKPaymentSetupViewControllerDelegate, RemoteUIControllerDelegate> {
+@interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupDelegate, PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentSetupViewControllerDelegate, PKViewControllerPreflightable, RemoteUIControllerDelegate> {
     bool  _acceptedTerms;
     UIActivityIndicatorView * _activityIndicator;
     PKPaymentSetupPurchaseAmountView * _amountView;
@@ -18,6 +18,7 @@
     PKPaymentSetupPurchaseController * _purchaseController;
     long long  _setupContext;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
+    bool  _snapshotNeedsCorners;
     RemoteUIController * _termsController;
     UILabel * _titleLabel;
 }
@@ -52,10 +53,10 @@
 - (void)_presentAddCardAlert:(id)arg1;
 - (void)_presentTermsAndConditionsWithCompletion:(id /* block */)arg1;
 - (void)_presetPaymentRequest:(id)arg1 forResultType:(long long)arg2;
+- (bool)_readerModeIsSupported;
 - (id)_rightBarButton;
 - (void)_rightBarButtonPressed:(id)arg1;
 - (bool)_shouldHideImage;
-- (bool)_shouldShowTransferButton;
 - (void)_showSpinner:(bool)arg1;
 - (id)_spinnerBarButton;
 - (bool)acceptedTerms;

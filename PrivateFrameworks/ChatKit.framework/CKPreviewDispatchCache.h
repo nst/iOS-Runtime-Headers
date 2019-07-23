@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)beginGeneratingForKey:(id)arg1;
 - (id)cachedPreviewForKey:(id)arg1;
+- (void)clearQueueAndCachedPreviews;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)dispatchCache;
@@ -39,6 +40,7 @@
 - (void)setDispatchCache:(id)arg1;
 - (void)setPendingBlocks:(id)arg1;
 - (bool)shouldReplaceCachedPreview:(id)arg1 withPreview:(id)arg2;
+- (void)suspend;
 - (void)systemApplicationDidSuspend;
 - (void)transferFinished:(id)arg1;
 - (void)transferRemoved:(id)arg1;

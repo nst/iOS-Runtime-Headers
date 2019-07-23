@@ -48,6 +48,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) unsigned long long titleWeight;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 + (bool)supportsSecureCoding;
 

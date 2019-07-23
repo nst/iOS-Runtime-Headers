@@ -22,6 +22,7 @@
 - (void)deleteObjectsWithLimits:(id)arg1;
 - (void)deleteObjectsWithUniqueIds:(id)arg1;
 - (id)fetchAllObjects;
+- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithLimits:(id)arg1;
 - (id)init;

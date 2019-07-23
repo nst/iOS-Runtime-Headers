@@ -230,6 +230,7 @@
 
 - (void).cxx_destruct;
 - (void)__addMediaSession:(id)arg1;
+- (void)__encodeAccessoriesWithCoder:(id)arg1 options:(unsigned long long)arg2;
 - (void)__handleAcceptedOutgoingInvitationResponse:(id)arg1 destinationAddress:(id)arg2 publicKey:(id)arg3 username:(id)arg4 presenceAuthStatus:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)__handleAddHAPAccessoryModel:(id)arg1 message:(id)arg2;
 - (void)__handleAddMediaAccessoryModel:(id)arg1 message:(id)arg2;
@@ -238,6 +239,7 @@
 - (id)__residentDeviceForAccesory:(id)arg1 fromMap:(id)arg2;
 - (void)__saveConfigurationVersionTransaction;
 - (bool)_accessoryServerIsBlocked:(id)arg1;
+- (void)_addAccessoryToBalancedResidentMap:(id)arg1 residentDevice:(id)arg2 balancedResidentMap:(id)arg3;
 - (void)_addAllUsersToAccessory:(id)arg1;
 - (id)_addMediaSessionForCurrentAccessory:(id)arg1;
 - (void)_addNewTrigger:(id)arg1 message:(id)arg2 notification:(id)arg3 payloadAnnex:(id)arg4 triggerModel:(id)arg5;
@@ -277,8 +279,8 @@
 - (bool)_ensureDevicesSymptomDiscoveryMessageCanBeHandled:(id)arg1;
 - (void)_evaluateShouldRelaunchAndSetRelaunch;
 - (id)_getContainerForAppData:(id)arg1 keyName:(id*)arg2;
-- (id)_getLogEventsForOperation:(bool)arg1 accessories:(id)arg2 readRequestMap:(id)arg3 identifier:(id)arg4;
-- (void)_getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
+- (id)_getLogEventsForOperation:(bool)arg1 accessories:(id)arg2 requestMap:(id)arg3 identifier:(id)arg4 source:(unsigned long long)arg5;
+- (void)_getRunTimeStateUpdateWithOptions:(unsigned long long)arg1 includeMediaAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
 - (id)_getTunnelAccessoryUpdate:(id)arg1;
 - (void)_handleAccessoryReachabilityChange:(id)arg1;
 - (void)_handleAccessoryReachabilityRegistration:(id)arg1 register:(bool)arg2;
@@ -374,6 +376,7 @@
 - (void)_handleUpdatePresenceConsent:(id)arg1;
 - (void)_handleUpdateRequestForHomeInvitationFromInvitee:(id)arg1;
 - (void)_handleUpdateUserAccess:(id)arg1;
+- (void)_handleUpdatedCharacteristics:(id)arg1 accessoryServer:(id)arg2 stateNumber:(id)arg3 broadcast:(bool)arg4;
 - (void)_handleUserConsentResponseForAccessory:(id)arg1;
 - (void)_handleUserInvitations:(id)arg1;
 - (void)_handleWriteMediaProperties:(struct NSDictionary { Class x1; }*)arg1 source:(unsigned long long)arg2 requestMessage:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -518,6 +521,7 @@
 - (void)accessoryBrowser:(id)arg1 identifier:(id)arg2 reachable:(bool)arg3;
 - (void)accessoryBrowser:(id)arg1 setupID:(id)arg2 isPairedWithCompletionHandler:(id /* block */)arg3;
 - (unsigned long long)accessoryCountForRoom:(id)arg1;
+- (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2 stateNumber:(id)arg3 broadcast:(bool)arg4;
 - (id)accessoryWithIdentifier:(id)arg1;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)actionSetWithName:(id)arg1;
@@ -545,6 +549,7 @@
 - (id)assistantUniqueIdentifier;
 - (long long)atHomeLevel;
 - (void)auditUsersForNotifications:(id)arg1;
+- (bool)awdPrimaryReportingDevice;
 - (id)backingStore;
 - (id)backingStoreObjects:(long long)arg1;
 - (void)btleAccessoryReachabilityProbeTimer:(bool)arg1;
@@ -597,7 +602,7 @@
 - (id)getHomeConfigurationForAWD;
 - (id)getReachabilityTupleForAccessoryUUID:(id)arg1;
 - (void)getReachableIPAccessories:(unsigned long long*)arg1 btleAccessories:(unsigned long long*)arg2 mediaAccessories:(unsigned long long*)arg3;
-- (void)getRunTimeStateUpdate:(bool)arg1 includeHAPAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
+- (void)getRunTimeStateUpdateWithOptions:(unsigned long long)arg1 includeMediaAccessoryState:(bool)arg2 includeResidentDeviceState:(bool)arg3 completion:(id /* block */)arg4;
 - (id)getServiceTransaction:(id)arg1 parentUUID:(id)arg2 changeType:(unsigned long long)arg3;
 - (id)getTransactionFromHAPAccessory:(id)arg1 hmdAccessory:(id)arg2 uuid:(id)arg3 bridgeUUID:(id)arg4 configurationAppIdentifier:(id)arg5 objectChangeType:(unsigned long long)arg6;
 - (bool)getUpdateTransactionForAccessory:(id)arg1 hapAccessory:(id)arg2 accessoryTransaction:(id*)arg3 addSvcTransactions:(id*)arg4 updateSvcTransactions:(id*)arg5 removeSvcTransactions:(id*)arg6;
@@ -620,6 +625,7 @@
 - (id)hapAccessoryServerIdentifiers;
 - (id)hapAccessoryUniqueIdentifiers;
 - (id)hapAccessoryWithIdentifier:(id)arg1;
+- (id)hapAccessoryWithIdentifier:(id)arg1 instanceID:(id)arg2;
 - (id)heartbeatPingMessagesQueuedWithServer;
 - (id)homeConfigurationModelObjectWithChangeType:(unsigned long long)arg1;
 - (id)homeConfigurationUUID;

@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) bool didTakePriority;
 @property (nonatomic, readonly) NSThread *threadIdentifier;
 
-+ (id)priorityMainThreadWriterQueueItem;
++ (id)priorityPrimaryThreadWriterQueueItemForAccessController:(id)arg1;
 + (id)writerQueueItemWithThreadIdentifier:(struct NSThread { Class x1; id x2; /* Warning: Unrecognized filer type: '4' using 'void*' */ void*x3; void*x4; unsigned char x5; void*x6; }*)arg1;
 
 - (void).cxx_destruct;

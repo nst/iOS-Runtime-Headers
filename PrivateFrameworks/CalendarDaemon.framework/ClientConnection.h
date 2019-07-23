@@ -18,6 +18,7 @@
     NSMutableDictionary * _insertedObjects;
     NSOperationQueue * _operations;
     long long  _reminderAccess;
+    <CADAccountAccessHandler> * _strictAccountAccessHandler;
     NSObject<OS_dispatch_queue> * _workQueue;
     NSXPCConnection * _xpcConnection;
 }
@@ -64,6 +65,7 @@
 - (bool)isObjectWithObjectIDAJunkEvent:(id)arg1;
 - (bool)isStoreManaged:(void*)arg1;
 - (bool)isStoreRestricted:(void*)arg1 forAction:(unsigned long long)arg2;
+- (bool)isStoreRestricted:(void*)arg1 forAction:(unsigned long long)arg2 strict:(bool)arg3;
 - (void*)objectForKey:(id)arg1;
 - (id)operations;
 - (bool)reminderAccessGranted;
@@ -72,6 +74,7 @@
 - (void)setDatabaseInitializationOptions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (id)strictAccountAccessHandler;
 - (id)workQueue;
 - (id)xpcConnection;
 

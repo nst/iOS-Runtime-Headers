@@ -44,18 +44,13 @@
 @property (nonatomic) <UIKeyboardSplitTransitionDataSource> *splitTransitionDataSource;
 @property (nonatomic) <UIKeyboardKeyplaneTransitionDelegate> *splitTransitionDelegate;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundLayers;
 - (id)bottomDropShadow;
 - (bool)canDisplayTransition;
 - (id)centerDropShadow;
 - (id)colorsForBackgroundLayer:(int)arg1;
 - (id /* block */)completionBlock;
+- (void)dealloc;
 - (struct CGImage { }*)defaultKeyboardImage;
 - (void)didMoveToWindow;
 - (void)finalizeTransition;

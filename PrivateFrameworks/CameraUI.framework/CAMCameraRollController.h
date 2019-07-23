@@ -159,6 +159,7 @@
 - (long long)oneUpPresentationHelperPreferredPresentationOrientation:(id)arg1;
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)persistedThumbnailImage;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;

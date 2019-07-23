@@ -17,8 +17,12 @@
 + (double)generateScoreForHeuristic:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)actionPredictionBlacklist;
+- (id)blacklistSubstitutionForBundleId:(id)arg1;
+- (id)bundleIdForAction:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (id)digitalHealthBlacklist;
 - (id)init;
 - (void)invalidate;
 - (bool)isActionBlacklisted:(id)arg1;

@@ -14,6 +14,7 @@
 - (void)didAdoptAttachmentGroup:(DEDAttachmentGroup *)arg1;
 - (void)didCancelCollectionOnExtension:(NSString *)arg1;
 - (void)didCollectAttachmentGroup:(DEDAttachmentGroup *)arg1;
+- (void)didFinishAllCollections;
 - (void)didStartCollectingDiagnosticExtensionWithIdentifier:(NSString *)arg1;
 
 @end

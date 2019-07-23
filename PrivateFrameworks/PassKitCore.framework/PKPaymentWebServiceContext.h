@@ -3,6 +3,9 @@
  */
 
 @interface PKPaymentWebServiceContext : PKWebServiceContext {
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _cacheLock;
     NSArray * _certificates;
     NSString * _companionSerialNumber;
     PKPaymentWebServiceConfiguration * _configuration;
@@ -10,6 +13,7 @@
     long long  _consistencyCheckBackoffLevel;
     bool  _devSigned;
     NSString * _deviceID;
+    NSMutableDictionary * _featureSupportedLangaugeCache;
     bool  _ignoreProvisioningEnablementPercentage;
     NSString * _lastUpdatedTag;
     bool  _messageServiceDisabled;
@@ -54,7 +58,11 @@
 - (id)TSMPushTopics;
 - (id)TSMURLStringByPushTopic;
 - (double)_contextProvisioningEnablementValue;
+- (void)_localizationUpdated;
 - (void)addVerificationRequestRecord:(id)arg1 forUniqueID:(id)arg2;
+- (id)applyServiceFeaturesForRegionMeetingEnablementThreshold:(id)arg1;
+- (id)applyServiceLocalizationBundleForfeatureIdentifier:(unsigned long long)arg1;
+- (id)applyServicePreferredLangaugeForFeatureIdentifier:(unsigned long long)arg1;
 - (id)betaPaymentNetworksForRegion:(id)arg1;
 - (id)certificates;
 - (id)companionSerialNumber;
@@ -63,6 +71,8 @@
 - (long long)consistencyCheckBackoffLevel;
 - (bool)contextMeetsMarketGeoNotificationThresholdForRegion:(id)arg1 paymentNetwork:(long long)arg2;
 - (bool)contextMeetsProvisioningEnablementPercentageThresholdForRegion:(id)arg1;
+- (void)dealloc;
+- (id)debugDescription;
 - (bool)devSigned;
 - (id)deviceID;
 - (void)encodeWithCoder:(id)arg1;

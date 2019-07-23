@@ -28,17 +28,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool suppressesBackdrops;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)defaultDimmingColor;
 
 - (void).cxx_destruct;
 - (id)_backdropViewsToAnimate;
 - (void)_simulateTap;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)delegate;
 - (id)dimmingColor;
 - (void)dimmingRemovalAnimationDidStop;

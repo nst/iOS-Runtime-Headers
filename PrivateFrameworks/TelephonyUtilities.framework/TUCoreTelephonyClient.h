@@ -2,13 +2,21 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUCoreTelephonyClient : NSObject {
+@interface TUCoreTelephonyClient : NSObject <TUCoreTelephonyClient, TUEmergencyCoreTelephonyClient, TUTTYCoreTelephonyClient> {
     CoreTelephonyClient * _client;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) CoreTelephonyClient *client;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+
++ (Class)RTTSettingsClass;
++ (Class)RTTTelephonyUtilitiesClass;
++ (id)sharedRTTTelephonyUtilities;
 
 - (void).cxx_destruct;
 - (id)client;
@@ -16,9 +24,30 @@
 - (id)initWithQueue:(id)arg1;
 - (bool)isEmergencyNumberForDigits:(id)arg1 subscription:(id)arg2 error:(id*)arg3;
 - (bool)isEmergencyNumberForDigits:(id)arg1 subscriptionUUID:(id)arg2 error:(id*)arg3;
+- (bool)isRTTSupportedForSubscription:(id)arg1;
+- (bool)isRTTSupportedForSubscriptionUUID:(id)arg1;
+- (bool)isTTYEnabledForSubscription:(id)arg1;
+- (bool)isTTYEnabledForSubscriptionUUID:(id)arg1;
+- (bool)isTTYHardwareAvailableForSubscription:(id)arg1;
+- (bool)isTTYHardwareAvailableForSubscriptionUUID:(id)arg1;
+- (bool)isTTYHardwareEnabledForSubscription:(id)arg1;
+- (bool)isTTYHardwareEnabledForSubscriptionUUID:(id)arg1;
+- (bool)isTTYHardwareSupportedForSubscription:(id)arg1;
+- (bool)isTTYHardwareSupportedForSubscriptionUUID:(id)arg1;
+- (bool)isTTYSoftwareAvailableForSubscription:(id)arg1;
+- (bool)isTTYSoftwareAvailableForSubscriptionUUID:(id)arg1;
+- (bool)isTTYSoftwareEnabledForSubscription:(id)arg1;
+- (bool)isTTYSoftwareEnabledForSubscriptionUUID:(id)arg1;
+- (bool)isTTYSoftwareSupportedForSubscription:(id)arg1;
+- (bool)isTTYSoftwareSupportedForSubscriptionUUID:(id)arg1;
+- (bool)isTTYSupportedForSubscription:(id)arg1;
+- (bool)isTTYSupportedForSubscriptionUUID:(id)arg1;
 - (bool)isWhitelistedEmergencyNumberForDigits:(id)arg1 subscription:(id)arg2 error:(id*)arg3;
 - (bool)isWhitelistedEmergencyNumberForDigits:(id)arg1 subscriptionUUID:(id)arg2 error:(id*)arg3;
+- (unsigned long long)preferredTransportMethodForSubscription:(id)arg1;
 - (id)queue;
-- (id)subscriptionContextForSubscriptionUUID:(id)arg1;
+- (bool)shouldShowEmergencyCallbackModeAlertForSubscription:(id)arg1 error:(id*)arg2;
+- (bool)shouldShowEmergencyCallbackModeAlertForSubscriptionUUID:(id)arg1 error:(id*)arg2;
+- (id)subscriptionForUUID:(id)arg1;
 
 @end

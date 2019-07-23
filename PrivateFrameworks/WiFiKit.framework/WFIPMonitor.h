@@ -3,6 +3,7 @@
  */
 
 @interface WFIPMonitor : NSObject {
+    NSString * _bundleIdentifier;
     NSString * _interfaceName;
     bool  _isMonitoring;
     struct __SCDynamicStore { } * _networkServiceStore;
@@ -12,6 +13,7 @@
     struct __SCDynamicStore { } * _storeRef;
 }
 
+@property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *interfaceName;
 @property struct __SCDynamicStore { }*networkServiceStore;
 @property struct __SCPreferences { }*prefsRef;
@@ -32,6 +34,7 @@
 - (id)__proxiesSetupConfig;
 - (id)__wifiServiceID;
 - (void)_postChangesNotification:(id)arg1;
+- (id)bundleIdentifier;
 - (id)dnsDomainName;
 - (id)dnsSearchDomains;
 - (id)dnsServerAddresses;
@@ -67,6 +70,7 @@
 - (id)queue;
 - (bool)renewLease;
 - (id)serviceID;
+- (void)setBundleIdentifier:(id)arg1;
 - (void)setInterfaceName:(id)arg1;
 - (void)setNetworkServiceStore:(struct __SCDynamicStore { }*)arg1;
 - (void)setPrefsRef:(struct __SCPreferences { }*)arg1;

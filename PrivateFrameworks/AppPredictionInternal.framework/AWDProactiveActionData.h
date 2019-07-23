@@ -5,6 +5,7 @@
 @interface AWDProactiveActionData : PBCodable <NSCopying> {
     NSString * _actionKey;
     int  _cacheRank;
+    NSString * _engaged;
     bool  _engagedAction;
     bool  _futureMedia;
     struct { 
@@ -15,6 +16,7 @@
         unsigned int futureMedia : 1; 
         unsigned int shown : 1; 
     }  _has;
+    NSString * _heuristicName;
     double  _score;
     bool  _shown;
     AWDProactiveAppPredictionSubscores * _subscores;
@@ -23,16 +25,20 @@
 
 @property (nonatomic, retain) NSString *actionKey;
 @property (nonatomic) int cacheRank;
+@property (nonatomic, retain) NSString *engaged;
 @property (nonatomic) bool engagedAction;
 @property (nonatomic) bool futureMedia;
 @property (nonatomic, readonly) bool hasActionKey;
 @property (nonatomic) bool hasCacheRank;
+@property (nonatomic, readonly) bool hasEngaged;
 @property (nonatomic) bool hasEngagedAction;
 @property (nonatomic) bool hasFutureMedia;
+@property (nonatomic, readonly) bool hasHeuristicName;
 @property (nonatomic) bool hasScore;
 @property (nonatomic) bool hasShown;
 @property (nonatomic, readonly) bool hasSubscores;
 @property (nonatomic) bool hasTimestamp;
+@property (nonatomic, retain) NSString *heuristicName;
 @property (nonatomic) double score;
 @property (nonatomic) bool shown;
 @property (nonatomic, retain) AWDProactiveAppPredictionSubscores *subscores;
@@ -45,23 +51,28 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)engaged;
 - (bool)engagedAction;
 - (bool)futureMedia;
 - (bool)hasActionKey;
 - (bool)hasCacheRank;
+- (bool)hasEngaged;
 - (bool)hasEngagedAction;
 - (bool)hasFutureMedia;
+- (bool)hasHeuristicName;
 - (bool)hasScore;
 - (bool)hasShown;
 - (bool)hasSubscores;
 - (bool)hasTimestamp;
 - (unsigned long long)hash;
+- (id)heuristicName;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (double)score;
 - (void)setActionKey:(id)arg1;
 - (void)setCacheRank:(int)arg1;
+- (void)setEngaged:(id)arg1;
 - (void)setEngagedAction:(bool)arg1;
 - (void)setFutureMedia:(bool)arg1;
 - (void)setHasCacheRank:(bool)arg1;
@@ -70,6 +81,7 @@
 - (void)setHasScore:(bool)arg1;
 - (void)setHasShown:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
+- (void)setHeuristicName:(id)arg1;
 - (void)setScore:(double)arg1;
 - (void)setShown:(bool)arg1;
 - (void)setSubscores:(id)arg1;

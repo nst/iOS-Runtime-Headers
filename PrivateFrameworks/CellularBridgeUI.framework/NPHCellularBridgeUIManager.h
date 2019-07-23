@@ -11,7 +11,7 @@
     NSMutableSet * _outstandingRemotePlanItemsRequestedForCSN;
     NSArray * _proxyPlanItems;
     CTXPCServiceSubscriptionInfo * _serviceSubscriptionInfo;
-    NSMutableArray * _serviceSubscriptionInfoList;
+    NSMutableDictionary * _serviceSubscriptionInfoList;
     bool  _shouldOfferSignupCompletion;
 }
 
@@ -51,6 +51,7 @@
 - (bool)_isCarrierSetupFlowUnsupportedForServiceSubscription:(id)arg1;
 - (bool)_isPersistentError:(id)arg1;
 - (bool)_isSetupBlockingError:(id)arg1;
+- (void)_localPlanInfoDidChange:(id)arg1;
 - (void)_prePromptForUserConsentIfNecessary:(id /* block */)arg1;
 - (void)_prePromptUserForConsentTextType:(long long)arg1 relevantPlanItem:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_promptUserToPickSubscriptionContextOnViewController:(id)arg1;
@@ -66,6 +67,7 @@
 - (void)_updateServiceSubscriptionInfo:(id)arg1;
 - (void)_updateShouldShowAddNewRemotePlan;
 - (void)_updateShouldWarnAboutLTEMayImpactService;
+- (void)activeSubscriptionsDidChange;
 - (bool)allCompanionSIMsMissing;
 - (id)carrierNameForSubscription:(id)arg1;
 - (bool)cellularPlanIsSetUp;
@@ -93,6 +95,7 @@
 - (bool)shouldShowAddNewRemotePlan;
 - (void)simStatusDidChange:(id)arg1 status:(id)arg2;
 - (void)startRemoteProvisioning;
+- (void)subscriptionInfoDidChange;
 - (id)trialPlanType;
 - (void)updateCellularPlansWithFetch:(bool)arg1;
 - (id)userConsentMessageForConsentType:(long long)arg1 relevantPlanItem:(id)arg2;

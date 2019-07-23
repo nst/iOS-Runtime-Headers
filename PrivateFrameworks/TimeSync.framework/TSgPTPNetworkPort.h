@@ -6,6 +6,7 @@
     bool  _asCapable;
     unsigned int  _connection;
     NSString * _destinationAddressString;
+    bool  _enabled;
     bool  _hasLocalFrequencyStability;
     bool  _hasLocalFrequencyTolerance;
     bool  _hasRemoteFrequencyStability;
@@ -41,6 +42,7 @@
 @property (getter=isASCapable, nonatomic) bool asCapable;
 @property (nonatomic, readonly) unsigned int connection;
 @property (nonatomic, copy) NSString *destinationAddressString;
+@property (nonatomic) bool enabled;
 @property (nonatomic) bool hasLocalFrequencyStability;
 @property (nonatomic) bool hasLocalFrequencyTolerance;
 @property (nonatomic) bool hasRemoteFrequencyStability;
@@ -76,6 +78,7 @@
 
 - (bool)_commonInitWithService:(unsigned int)arg1;
 - (id)_destinationAddressString;
+- (bool)_enabled;
 - (bool)_hasLocalFrequencyStability;
 - (bool)_hasLocalFrequencyTolerance;
 - (bool)_hasRemoteFrequencyStability;
@@ -109,6 +112,9 @@
 - (unsigned int)connection;
 - (void)dealloc;
 - (id)destinationAddressString;
+- (bool)disablePortError:(id*)arg1;
+- (bool)enablePortError:(id*)arg1;
+- (bool)enabled;
 - (bool)getCurrentPortInfo:(struct { int x1; int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; unsigned long long x7; unsigned short x8; }*)arg1 error:(id*)arg2;
 - (bool)hasLocalFrequencyStability;
 - (bool)hasLocalFrequencyTolerance;
@@ -147,6 +153,7 @@
 - (bool)restoreReceiveMatchingError:(id*)arg1;
 - (void)setAsCapable:(bool)arg1;
 - (void)setDestinationAddressString:(id)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHasLocalFrequencyStability:(bool)arg1;
 - (void)setHasLocalFrequencyTolerance:(bool)arg1;
 - (void)setHasRemoteFrequencyStability:(bool)arg1;

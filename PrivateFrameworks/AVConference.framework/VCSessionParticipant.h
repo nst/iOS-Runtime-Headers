@@ -40,6 +40,7 @@
     NSMutableSet * _pausingVideoStreams;
     VCAudioPowerSpectrumSource * _powerSpectrumSource;
     int  _processId;
+    unsigned int  _pullAudioSamplesCount;
     id  _reportingAgentWeak;
     NSMutableSet * _resumingAudioStreams;
     NSMutableSet * _resumingVideoStreams;
@@ -132,11 +133,12 @@
 - (void)dispatchedStream:(id)arg1 didStart:(bool)arg2 error:(id)arg3;
 - (void)dispatchedStreamDidStop:(id)arg1;
 - (id)generateEncryptionKey;
+- (id)getAudioDumpName;
 - (void)handleActiveConnectionChange:(id)arg1;
 - (bool)handleEncryptionInfoChange:(id)arg1;
 - (unsigned long long)idsParticipantID;
 - (id)initWithIDSDestination:(id)arg1 delegate:(id)arg2 processId:(int)arg3 sessionUUID:(id)arg4;
-- (bool)isAnyStreamRunning;
+- (bool)isAnyStreamRunningOrPaused;
 - (bool)isAudioEnabled;
 - (bool)isAudioPaused;
 - (bool)isAudioStream:(id)arg1;
@@ -181,11 +183,13 @@
 - (void)setupNetworkAddressesForMediaConfig:(id)arg1;
 - (bool)shouldStartAudioIO;
 - (void)start;
+- (void)startAudioDump;
 - (void)startAudioIO;
 - (void)startAudioStreams;
 - (void)startVideoStreams;
 - (id)statisticsCollector;
 - (void)stop;
+- (void)stopAudioDump;
 - (void)stopAudioIOCompletion;
 - (void)stopAudioStreams;
 - (void)stopAudioStreamsCompletion;

@@ -69,6 +69,7 @@
     UIStatusBarBackgroundView * _newStyleBackgroundView;
     UIStatusBarForegroundView * _newStyleForegroundView;
     UIStatusBarStyleAnimationParameters * _nextTintTransition;
+    bool  _observingDefaults;
     NSNumber * _overrideHeight;
     bool  _showOnlyCenterItems;
     bool  _showsForeground;
@@ -87,8 +88,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (getter=isTimeHidden, nonatomic) bool timeHidden;
-
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(bool)arg3;
 + (bool)_isLightContentStyle:(long long)arg1;
@@ -121,6 +120,7 @@
 - (id)_currentComposedData;
 - (id)_currentComposedDataForStyle:(id)arg1;
 - (id)_currentStyleAttributes;
+- (void)_dateTimePreferencesUpdated;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (id)_doubleHeightStatusStringForStyle:(long long)arg1;
 - (void)_endDisablingRasterizationForReason:(id)arg1;
@@ -160,10 +160,6 @@
 - (void)_updateShouldRasterize;
 - (void)_updateUIWithStyleAttributes:(id)arg1 animationParameters:(id)arg2;
 - (void)_updateUIWithStyleAttributes:(id)arg1 animationParameters:(id)arg2 forced:(bool)arg3;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (id)activeTintColor;
 - (void)animateUnlock;
@@ -171,6 +167,7 @@
 - (id)currentDoubleHeightLabelText;
 - (long long)currentStyle;
 - (id)currentStyleRequestForStyle:(long long)arg1;
+- (void)dealloc;
 - (double)defaultDoubleHeight;
 - (double)defaultHeight;
 - (bool)disablesRasterization;
@@ -189,6 +186,7 @@
 - (void)jiggleLockIcon;
 - (void)layoutSubviews;
 - (void)noteStyleOverridesChangedLocally;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)requestStyle:(long long)arg1 animation:(int)arg2 startTime:(double)arg3 duration:(double)arg4 curve:(long long)arg5;
 - (void)setAction:(id)arg1 forPartWithIdentifier:(id)arg2;

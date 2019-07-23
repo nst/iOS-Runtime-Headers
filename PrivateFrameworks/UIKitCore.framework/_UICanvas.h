@@ -4,6 +4,7 @@
 
 @interface _UICanvas : UIResponder <FBSSceneDelegate, UICoordinateSpace, _UICanvasLifecycleStateMonitoring, _UIContextBinderDelegate> {
     bool  _active;
+    long long  _avkitRequestedOverscanCompensation;
     _UIContextBinder * _binder;
     <_UICanvasDelegate> * _delegate;
     NSPointerArray * _inheritingCanvases;
@@ -13,6 +14,7 @@
     __UISceneSubstrate * _sceenSubstrate;
     FBSScene * _scene;
     UIScreen * _screen;
+    long long  _screenRequestedOverscanCompensation;
     _UICanvas * _settingsCanvas;
     bool  respondingToLifecycleEvent;
     bool  runningInTaskSwitcher;
@@ -32,26 +34,25 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <_UICanvasDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=_displayConfigurationRequest, setter=_setDisplayConfigurationRequest:, nonatomic, retain) FBSDisplayConfigurationRequest *displayConfigurationRequest;
 @property (getter=_effectiveSettings, nonatomic, readonly) FBSSceneSettings *effectiveSettings;
 @property (getter=_hasLifecycle, nonatomic, readonly) bool hasLifecycle;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool keepContextAssociationInBackground;
 @property (getter=_oldSettings, nonatomic, readonly) FBSSceneSettings *oldSettings;
-@property (getter=_requestedDisplayPixelSize, setter=_setRequestedDisplayPixelSize:, nonatomic) struct CGSize { double x1; double x2; } requestedDisplayPixelSize;
-@property (getter=_requestedHDRMode, nonatomic, readonly) long long requestedHDRMode;
-@property (getter=_requestedOverscanCompensation, setter=_setRequestedOverscanCompensation:, nonatomic) long long requestedOverscanCompensation;
-@property (getter=_requestedRefreshRate, nonatomic, readonly) double requestedRefreshRate;
 @property (getter=_isRespondingToLifecycleEvent, setter=_setIsRespondingToLifecycleEvent:, nonatomic) bool respondingToLifecycleEvent;
 @property (getter=_runningInTaskSwitcher, setter=_setRunningInTaskSwitcher:, nonatomic) bool runningInTaskSwitcher;
 @property (nonatomic, readonly) FBSScene *scene;
 @property (nonatomic, readonly) UIScreen *screen;
+@property (getter=_screenRequestedDisplayNativePixelSize, setter=_setScreenRequestedDisplayNativePixelSize:, nonatomic) struct CGSize { double x1; double x2; } screenRequestedDisplayNativePixelSize;
+@property (getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:, nonatomic) long long screenRequestedOverscanCompensation;
 @property (nonatomic, readonly) _UICanvas *settingsCanvas;
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (getter=_suspendedEventsOnly, setter=_setSuspendedEventsOnly:, nonatomic) bool suspendedEventsOnly;
 @property (getter=_suspendedUnderLock, setter=_setSuspendedUnderLock:, nonatomic) bool suspendedUnderLock;
 @property (nonatomic, readonly) NSArray *windows;
+
+// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (id)_actionsHandlers;
 + (id)_canvasForScene:(id)arg1 create:(bool)arg2;
@@ -94,19 +95,18 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_referenceBounds;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_referenceBoundsForOrientation:(long long)arg1;
 - (void)_removeInheritingCanvas:(id)arg1;
-- (struct CGSize { double x1; double x2; })_requestedDisplayPixelSize;
-- (long long)_requestedHDRMode;
-- (long long)_requestedOverscanCompensation;
-- (double)_requestedRefreshRate;
+- (long long)_resolvedOverscanCompensation;
 - (bool)_runningInTaskSwitcher;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_safeAreaInsetsForInterfaceOrientation:(long long)arg1;
+- (struct CGSize { double x1; double x2; })_screenRequestedDisplayNativePixelSize;
+- (long long)_screenRequestedOverscanCompensation;
+- (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
 - (void)_setDisplayConfigurationRequest:(id)arg1;
 - (void)_setIsActive:(bool)arg1;
 - (void)_setIsRespondingToLifecycleEvent:(bool)arg1;
-- (void)_setRequestedDisplayPixelSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)_setRequestedOverscanCompensation:(long long)arg1;
-- (void)_setRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2;
 - (void)_setRunningInTaskSwitcher:(bool)arg1;
+- (void)_setScreenRequestedDisplayNativePixelSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setScreenRequestedOverscanCompensation:(long long)arg1;
 - (void)_setSuspendedEventsOnly:(bool)arg1;
 - (void)_setSuspendedUnderLock:(bool)arg1;
 - (bool)_suspendedEventsOnly;
@@ -145,5 +145,14 @@
 - (id)settingsCanvas;
 - (long long)state;
 - (id)windows;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (void)_avkit_setPreferredRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
+- (bool)avkit_isInBackground;
+- (void)avkit_resetPreferredModeSwitchRequest;
+- (bool)avkit_screenHasWindowsExcludingWindow:(id)arg1;
+- (long long)avkit_screenType;
+- (void)avkit_setPreferredRefreshRate:(double)arg1 HDRMode:(long long)arg2;
 
 @end

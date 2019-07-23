@@ -41,6 +41,8 @@
 - (id)_fetchChatRecordOperation;
 - (id)_generateLockRecord;
 - (void)_handleChatDeletionCompletionForRecordIDs:(id)arg1 error:(id)arg2;
+- (void)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(id /* block */)arg2 isUsingStingRay:(bool)arg3;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(id /* block */)arg1 isUsingStingRay:(bool)arg2;
 - (bool)_lockRecordHadConflict:(id)arg1;
 - (void)_logGreenTeaLogsForChats:(id)arg1;
 - (void)_markChatAsDefferedForSyncingUsingRecord:(id)arg1;

@@ -24,6 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)lookupSelectionType;
+- (unsigned int)nwActivityLabel;
 - (id)queryContext;
 - (id)queryString;
 - (void)setAppBundleId:(id)arg1;

@@ -23,7 +23,6 @@
 - (void).cxx_destruct;
 - (Class)_controllerClassForCurrentProfilesAndUpdatedUserInfo:(id)arg1;
 - (bool)_isProfileSectionEmpty;
-- (unsigned long long)_profileCount;
 - (id)_profileInfoForSpecifier:(id)arg1;
 - (id)_specifier;
 - (void)_unpairedNotification:(id)arg1;

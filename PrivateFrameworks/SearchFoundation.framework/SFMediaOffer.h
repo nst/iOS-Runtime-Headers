@@ -36,10 +36,12 @@
 @property (nonatomic, retain) SFLatLng *location;
 @property (nonatomic) double longitude;
 @property (nonatomic, copy) NSData *mapsData;
+@property (nonatomic) int mediaEntityType;
 @property (nonatomic, copy) NSString *messageIdentifier;
 @property (nonatomic, copy) NSURL *messageURL;
 @property (nonatomic, copy) NSString *offerIdentifier;
 @property (nonatomic, copy) NSString *offerType;
+@property (nonatomic, copy) NSString *persistentID;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *provider;
 @property (nonatomic, retain) SFPunchout *punchout;

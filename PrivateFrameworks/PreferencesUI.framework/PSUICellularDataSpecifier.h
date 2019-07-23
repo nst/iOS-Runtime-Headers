@@ -38,6 +38,7 @@
 - (bool)isSubcontrollerNeeded;
 - (id)planItemForListItem:(id)arg1;
 - (id)planManagerCache;
+- (void)setAirplaneMode:(bool)arg1;
 - (void)setCachedPlanItems:(id)arg1;
 - (void)setCallCache:(id)arg1;
 - (void)setCellularDataEnabled:(id)arg1 specifier:(id)arg2;
@@ -48,6 +49,7 @@
 - (void)setSimStatusCache:(id)arg1;
 - (void)setWifiState:(id)arg1;
 - (id)simStatusCache;
+- (id)subscriptionContextForListItem:(id)arg1;
 - (void)updateCachedState;
 - (id)wifiState;
 

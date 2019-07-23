@@ -30,8 +30,6 @@
 @property (nonatomic) long long selectedKeyBeforeDictation;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
 + (struct CGSize { double x1; double x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(long long)arg3;
 
@@ -46,10 +44,6 @@
 - (bool)_menuTapShouldExitVariants;
 - (void)_moveWithEvent:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptRecentInputIfNecessary;
 - (int)activeStateForKey:(id)arg1;
 - (void)alertDidDismiss;
@@ -61,6 +55,7 @@
 - (id)currentKey;
 - (unsigned long long)cursorLocation;
 - (void)deactivateKey:(id)arg1;
+- (void)dealloc;
 - (long long)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
 - (bool)diacriticForwardCompose;
 - (void)didSelectRecentInputString:(id)arg1;

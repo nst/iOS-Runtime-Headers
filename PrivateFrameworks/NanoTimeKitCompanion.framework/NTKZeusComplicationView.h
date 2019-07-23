@@ -4,7 +4,6 @@
 
 @interface NTKZeusComplicationView : UIView <NTKComplicationDisplay, NTKZeusComplicationDisplay> {
     CLKDevice * _device;
-    UIView * _highlightView;
     bool  _highlighted;
     NTKZeusColorPalette * _palette;
     unsigned long long  _style;
@@ -35,7 +34,6 @@
 - (id)displayObserver;
 - (id)init;
 - (bool)isHighlighted;
-- (void)layoutSubviews;
 - (id)palette;
 - (void)setCanUseCurvedText:(bool)arg1;
 - (void)setDisplayObserver:(id)arg1;

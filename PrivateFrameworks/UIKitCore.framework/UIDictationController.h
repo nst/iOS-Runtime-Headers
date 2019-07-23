@@ -26,6 +26,7 @@
     double  _lastAnimationUpdateTimeStamp;
     id  _lastCorrectionIdentifier;
     NSString * _lastHypothesis;
+    NSString * _lastMessageKeyboardLanguage;
     long long  _lastOfflineDictationMetricEvent;
     NSString * _lastRecognitionText;
     _UIDictationTelephonyMonitor * _monitor;
@@ -61,6 +62,7 @@
 @property (nonatomic, retain) UIKeyboardInputMode *keyboardInputModeToReturn;
 @property (nonatomic, copy) id lastCorrectionIdentifier;
 @property (nonatomic, copy) NSString *lastHypothesis;
+@property (nonatomic, copy) NSString *lastMessageKeyboardLanguage;
 @property (nonatomic, copy) NSString *lastRecognitionText;
 @property (nonatomic, retain) NSMutableArray *pendingEdits;
 @property (nonatomic) bool performingStreamingEditingOperation;
@@ -204,6 +206,7 @@
 - (id)languageCodeForAssistantLanguageCode:(id)arg1;
 - (id)lastCorrectionIdentifier;
 - (id)lastHypothesis;
+- (id)lastMessageKeyboardLanguage;
 - (id)lastRecognitionText;
 - (void)logAlternativeSelected:(id)arg1 correctionIdentifier:(id)arg2;
 - (void)logDidAcceptDictationResult:(id)arg1 reasonType:(unsigned long long)arg2;
@@ -239,6 +242,7 @@
 - (void)setLanguage:(id)arg1;
 - (void)setLastCorrectionIdentifier:(id)arg1;
 - (void)setLastHypothesis:(id)arg1;
+- (void)setLastMessageKeyboardLanguage:(id)arg1;
 - (void)setLastRecognitionText:(id)arg1;
 - (void)setPendingEdits:(id)arg1;
 - (void)setPerformingStreamingEditingOperation:(bool)arg1;

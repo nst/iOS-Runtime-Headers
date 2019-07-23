@@ -5,7 +5,7 @@
 @interface HKDataMetadataBeatToBeatSection : HKDataMetadataSection {
     HKDisplayTypeController * _displayTypeController;
     HKHealthStore * _healthStore;
-    HKQuantitySample * _hrvSample;
+    HKSample * _sample;
     HKUnitPreferenceController * _unitController;
 }
 

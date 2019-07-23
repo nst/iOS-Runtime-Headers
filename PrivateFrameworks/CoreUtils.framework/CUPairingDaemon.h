@@ -5,6 +5,8 @@
 @interface CUPairingDaemon : NSObject <NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     CUHomeKitManager * _homeKitManager;
+    int  _rpIdentityNotifier;
+    NSData * _rpSelfIRK;
     unsigned long long  _stateHandle;
     bool  _testMode;
     struct NSMutableSet { Class x1; } * _xpcConnections;
@@ -36,7 +38,9 @@
 - (id)_findHomeKitPairedPeer:(id)arg1 options:(unsigned long long)arg2 error:(int*)arg3;
 - (id)_findPairedPeer:(id)arg1 options:(unsigned long long)arg2 error:(int*)arg3;
 - (void)_invalidate;
+- (void)_removeDups:(id)arg1;
 - (int)_removePairedPeer:(id)arg1 options:(unsigned long long)arg2 removeAdminAllowed:(bool)arg3;
+- (void)_rpIdentityUpdate;
 - (int)_saveIdentity:(id)arg1 options:(unsigned long long)arg2;
 - (int)_savePairedPeer:(id)arg1 options:(unsigned long long)arg2 removeAdminAllowed:(bool)arg3;
 - (void)activate;

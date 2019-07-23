@@ -6,6 +6,9 @@
     NSString * _assetAuthorizationResponseUUID;
     NSData * _assetCopyMetadata;
     NSData * _clearAssetKey;
+    long long  _constructedAssetDownloadEstimatedSize;
+    NSString * _constructedAssetDownloadURL;
+    long long  _constructedAssetDownloadURLExpiration;
     NSString * _contentBaseURL;
     NSString * _derivedContentType;
     NSString * _downloadBaseURL;
@@ -14,6 +17,8 @@
     long long  _downloadTokenExpiration;
     long long  _downloadURLExpiration;
     struct { 
+        unsigned int constructedAssetDownloadEstimatedSize : 1; 
+        unsigned int constructedAssetDownloadURLExpiration : 1; 
         unsigned int downloadTokenExpiration : 1; 
         unsigned int downloadURLExpiration : 1; 
         unsigned int size : 1; 
@@ -32,6 +37,9 @@
 @property (nonatomic, retain) NSString *assetAuthorizationResponseUUID;
 @property (nonatomic, retain) NSData *assetCopyMetadata;
 @property (nonatomic, retain) NSData *clearAssetKey;
+@property (nonatomic) long long constructedAssetDownloadEstimatedSize;
+@property (nonatomic, retain) NSString *constructedAssetDownloadURL;
+@property (nonatomic) long long constructedAssetDownloadURLExpiration;
 @property (nonatomic, retain) NSString *contentBaseURL;
 @property (nonatomic, retain) NSString *derivedContentType;
 @property (nonatomic, retain) NSString *downloadBaseURL;
@@ -42,6 +50,9 @@
 @property (nonatomic, readonly) bool hasAssetAuthorizationResponseUUID;
 @property (nonatomic, readonly) bool hasAssetCopyMetadata;
 @property (nonatomic, readonly) bool hasClearAssetKey;
+@property (nonatomic) bool hasConstructedAssetDownloadEstimatedSize;
+@property (nonatomic, readonly) bool hasConstructedAssetDownloadURL;
+@property (nonatomic) bool hasConstructedAssetDownloadURLExpiration;
 @property (nonatomic, readonly) bool hasContentBaseURL;
 @property (nonatomic, readonly) bool hasDerivedContentType;
 @property (nonatomic, readonly) bool hasDownloadBaseURL;
@@ -72,6 +83,9 @@
 - (id)assetAuthorizationResponseUUID;
 - (id)assetCopyMetadata;
 - (id)clearAssetKey;
+- (long long)constructedAssetDownloadEstimatedSize;
+- (id)constructedAssetDownloadURL;
+- (long long)constructedAssetDownloadURLExpiration;
 - (id)contentBaseURL;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -86,6 +100,9 @@
 - (bool)hasAssetAuthorizationResponseUUID;
 - (bool)hasAssetCopyMetadata;
 - (bool)hasClearAssetKey;
+- (bool)hasConstructedAssetDownloadEstimatedSize;
+- (bool)hasConstructedAssetDownloadURL;
+- (bool)hasConstructedAssetDownloadURLExpiration;
 - (bool)hasContentBaseURL;
 - (bool)hasDerivedContentType;
 - (bool)hasDownloadBaseURL;
@@ -115,6 +132,9 @@
 - (void)setAssetAuthorizationResponseUUID:(id)arg1;
 - (void)setAssetCopyMetadata:(id)arg1;
 - (void)setClearAssetKey:(id)arg1;
+- (void)setConstructedAssetDownloadEstimatedSize:(long long)arg1;
+- (void)setConstructedAssetDownloadURL:(id)arg1;
+- (void)setConstructedAssetDownloadURLExpiration:(long long)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDerivedContentType:(id)arg1;
 - (void)setDownloadBaseURL:(id)arg1;
@@ -122,6 +142,8 @@
 - (void)setDownloadToken:(id)arg1;
 - (void)setDownloadTokenExpiration:(long long)arg1;
 - (void)setDownloadURLExpiration:(long long)arg1;
+- (void)setHasConstructedAssetDownloadEstimatedSize:(bool)arg1;
+- (void)setHasConstructedAssetDownloadURLExpiration:(bool)arg1;
 - (void)setHasDownloadTokenExpiration:(bool)arg1;
 - (void)setHasDownloadURLExpiration:(bool)arg1;
 - (void)setHasSize:(bool)arg1;

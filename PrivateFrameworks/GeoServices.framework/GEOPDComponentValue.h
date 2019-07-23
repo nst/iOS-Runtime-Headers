@@ -12,6 +12,7 @@
     GEOPDBounds * _bounds;
     GEOPDBrowseCategories * _browseCategories;
     GEOPDBusinessClaim * _businessClaim;
+    GEOPDBusinessHours * _businessHours;
     GEOPDCaptionedPhoto * _captionedPhoto;
     GEONonComponentPlaceData * _clientExtNonComponentData;
     GEOPDContainedPlace * _containedPlace;
@@ -22,6 +23,7 @@
     GEOPDFlyover * _flyover;
     GEOPDHours * _hours;
     GEOPDIcon * _icon;
+    GEOPDLinkedService * _linkedService;
     GEOPDLocationEvent * _locationEvent;
     GEOPDMessageLink * _messageLink;
     GEOPDPhoto * _photo;
@@ -61,6 +63,7 @@
 @property (nonatomic, retain) GEOPDBounds *bounds;
 @property (nonatomic, retain) GEOPDBrowseCategories *browseCategories;
 @property (nonatomic, retain) GEOPDBusinessClaim *businessClaim;
+@property (nonatomic, retain) GEOPDBusinessHours *businessHours;
 @property (nonatomic, retain) GEOPDCaptionedPhoto *captionedPhoto;
 @property (nonatomic, retain) GEONonComponentPlaceData *clientExtNonComponentData;
 @property (nonatomic, retain) GEOPDContainedPlace *containedPlace;
@@ -78,6 +81,7 @@
 @property (nonatomic, readonly) bool hasBounds;
 @property (nonatomic, readonly) bool hasBrowseCategories;
 @property (nonatomic, readonly) bool hasBusinessClaim;
+@property (nonatomic, readonly) bool hasBusinessHours;
 @property (nonatomic, readonly) bool hasCaptionedPhoto;
 @property (nonatomic, readonly) bool hasClientExtNonComponentData;
 @property (nonatomic, readonly) bool hasContainedPlace;
@@ -88,6 +92,7 @@
 @property (nonatomic, readonly) bool hasFlyover;
 @property (nonatomic, readonly) bool hasHours;
 @property (nonatomic, readonly) bool hasIcon;
+@property (nonatomic, readonly) bool hasLinkedService;
 @property (nonatomic, readonly) bool hasLocationEvent;
 @property (nonatomic, readonly) bool hasMessageLink;
 @property (nonatomic, readonly) bool hasPhoto;
@@ -117,6 +122,7 @@
 @property (nonatomic, readonly) bool hasWifiFingerprint;
 @property (nonatomic, retain) GEOPDHours *hours;
 @property (nonatomic, retain) GEOPDIcon *icon;
+@property (nonatomic, retain) GEOPDLinkedService *linkedService;
 @property (nonatomic, retain) GEOPDLocationEvent *locationEvent;
 @property (nonatomic, retain) GEOPDMessageLink *messageLink;
 @property (nonatomic, retain) GEOPDPhoto *photo;
@@ -156,6 +162,7 @@
 - (id)bounds;
 - (id)browseCategories;
 - (id)businessClaim;
+- (id)businessHours;
 - (id)captionedPhoto;
 - (id)clientExtNonComponentData;
 - (id)containedPlace;
@@ -177,6 +184,7 @@
 - (bool)hasBounds;
 - (bool)hasBrowseCategories;
 - (bool)hasBusinessClaim;
+- (bool)hasBusinessHours;
 - (bool)hasCaptionedPhoto;
 - (bool)hasClientExtNonComponentData;
 - (bool)hasContainedPlace;
@@ -187,6 +195,7 @@
 - (bool)hasFlyover;
 - (bool)hasHours;
 - (bool)hasIcon;
+- (bool)hasLinkedService;
 - (bool)hasLocationEvent;
 - (bool)hasMessageLink;
 - (bool)hasPhoto;
@@ -218,6 +227,7 @@
 - (id)hours;
 - (id)icon;
 - (bool)isEqual:(id)arg1;
+- (id)linkedService;
 - (id)locationEvent;
 - (void)mergeFrom:(id)arg1;
 - (id)messageLink;
@@ -244,6 +254,7 @@
 - (void)setBounds:(id)arg1;
 - (void)setBrowseCategories:(id)arg1;
 - (void)setBusinessClaim:(id)arg1;
+- (void)setBusinessHours:(id)arg1;
 - (void)setCaptionedPhoto:(id)arg1;
 - (void)setClientExtNonComponentData:(id)arg1;
 - (void)setContainedPlace:(id)arg1;
@@ -254,6 +265,7 @@
 - (void)setFlyover:(id)arg1;
 - (void)setHours:(id)arg1;
 - (void)setIcon:(id)arg1;
+- (void)setLinkedService:(id)arg1;
 - (void)setLocationEvent:(id)arg1;
 - (void)setMessageLink:(id)arg1;
 - (void)setPhoto:(id)arg1;

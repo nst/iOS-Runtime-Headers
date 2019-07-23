@@ -3,11 +3,13 @@
  */
 
 @interface FCRegisterDeviceTokenCommand : FCCommand {
+    unsigned long long  _bundleSubscriptionState;
     NSString * _deviceToken;
     NSString * _storefrontID;
     NSString * _userID;
 }
 
+@property (nonatomic, readonly) unsigned long long bundleSubscriptionState;
 @property (nonatomic, copy) NSString *deviceToken;
 @property (nonatomic, copy) NSString *storefrontID;
 @property (nonatomic, copy) NSString *userID;
@@ -15,11 +17,12 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)bundleSubscriptionState;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3;
+- (id)initWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3 bundleSubscriptionState:(unsigned long long)arg4;
 - (void)setDeviceToken:(id)arg1;
 - (void)setStorefrontID:(id)arg1;
 - (void)setUserID:(id)arg1;

@@ -33,7 +33,7 @@
 + (id)photosApplicationActivities;
 
 - (void).cxx_destruct;
-- (void)_activity:(id)arg1 didComplete:(bool)arg2;
+- (void)_activity:(id)arg1 category:(long long)arg2 didComplete:(bool)arg3;
 - (void)_cancel;
 - (void)_cleanUpActivityState;
 - (void)_handlePostReadyToInteractUpdatesIfNeeded;

@@ -7,6 +7,7 @@
 @property (nonatomic, retain) NSSet *assets;
 @property (nonatomic) short cloudLocalState;
 @property (nonatomic, retain) NSString *cloudMasterGUID;
+@property (nonatomic) NSString *codecName;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSSet *resources;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *uniformTypeIdentifier;
+@property (nonatomic) short videoFrameRate;
 
 + (id)_originalTypes;
 + (id)cloudMasterWithGUID:(id)arg1 inMomentShare:(id)arg2 inManagedObjectContext:(id)arg3;
@@ -35,6 +37,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2 inMomentShare:(id)arg3;
++ (id)listOfSyncedProperties;
 + (void)resetCloudMastersStateInManagedObjectContext:(id)arg1 hardReset:(bool)arg2;
 
 - (void)_promptForNilScopeIdentifierRadar;
@@ -48,10 +51,12 @@
 - (id)cloudResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
 - (id)cloudResourcesForResourceType:(unsigned long long)arg1;
 - (id)cplFullRecord;
+- (id)cplPropertyRecord;
 - (id)cplResourceForResourceType:(unsigned long long)arg1 forAssetUuid:(id)arg2;
 - (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)description;
 - (bool)hasResourcesOtherThanForAssetUuid:(id)arg1;
+- (bool)isSyncableChange;
 - (id)localID;
 - (void)nrm_applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
 - (id)nrm_assetUUIDToCloudResources;
@@ -59,5 +64,6 @@
 - (id)nrm_cloudResourcesForResourceType:(unsigned long long)arg1;
 - (id)scopedIdentifier;
 - (unsigned long long)sizeOfOriginal;
+- (bool)supportsCloudUpload;
 
 @end

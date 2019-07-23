@@ -11,8 +11,8 @@
     NSArray * _resultArticleListIDs;
     NSDictionary * _resultHeldRecordsByType;
     NSDictionary * _resultWidgetSectionConfigDictionary;
-    NSData * _widgetConfigData;
     id /* block */  _widgetConfigDataCompletionHandler;
+    NSDictionary * _widgetConfiguration;
 }
 
 @property (nonatomic, retain) FCHeldRecords *cachedRecords;
@@ -23,11 +23,11 @@
 @property (nonatomic, retain) NSArray *resultArticleListIDs;
 @property (nonatomic, retain) NSDictionary *resultHeldRecordsByType;
 @property (nonatomic, retain) NSDictionary *resultWidgetSectionConfigDictionary;
-@property (nonatomic, copy) NSData *widgetConfigData;
 @property (nonatomic, copy) id /* block */ widgetConfigDataCompletionHandler;
+@property (nonatomic, copy) NSDictionary *widgetConfiguration;
 
 - (void).cxx_destruct;
-- (void)_collectRecordsFromJSONData:(id)arg1;
+- (void)_collectRecordsFromWidgetConfigDictionary:(id)arg1;
 - (void)_finalizeResultFromCachedRecords;
 - (id)_recordSourceForRecordType:(id)arg1;
 - (id)cachedRecords;
@@ -49,10 +49,10 @@
 - (void)setResultArticleListIDs:(id)arg1;
 - (void)setResultHeldRecordsByType:(id)arg1;
 - (void)setResultWidgetSectionConfigDictionary:(id)arg1;
-- (void)setWidgetConfigData:(id)arg1;
 - (void)setWidgetConfigDataCompletionHandler:(id /* block */)arg1;
+- (void)setWidgetConfiguration:(id)arg1;
 - (bool)validateOperation;
-- (id)widgetConfigData;
 - (id /* block */)widgetConfigDataCompletionHandler;
+- (id)widgetConfiguration;
 
 @end

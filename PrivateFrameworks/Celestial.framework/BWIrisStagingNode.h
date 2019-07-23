@@ -15,7 +15,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _bufferingTime;
-    <BWIrisStagingNodeEmitIrisRequestDelegate> * _delegate;
+    <BWIrisStagingNodeIrisRequestDelegate> * _delegate;
     int  _emittedIrisRequestCount;
     struct { 
         long long value; 
@@ -79,6 +79,8 @@
         unsigned int flags; 
         long long epoch; 
     }  _readyToEmitPTS;
+    bool  _readyToReceiveRequests;
+    NSObject<OS_dispatch_group> * _readyToReceiveRequestsGroup;
     BWIrisSequenceAdjuster * _sequenceAdjuster;
     NSMutableArray * _stagingQueues;
     struct OpaqueFigSimpleMutex { } * _stateMutex;
@@ -104,6 +106,7 @@
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_adjustedStartTimeForTrimmedStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ensuringAtLeast3FramesBeforeStillTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 ensuringFrameIsAfterTrimmedStartTime:(bool)arg3 butNotEarlierThanOriginalStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (struct opaqueCMSampleBuffer { }*)_createIntermediateJPEGSampleBufferFromUncompressedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_earliestAllowedStillHostPTS;
 - (int)_emissionStatusForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forInputIndex:(unsigned long long)arg2;
@@ -146,7 +149,7 @@
 - (int)enqueueIrisRequest:(id)arg1;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (id)initWithNumberOfVideoInputs:(unsigned long long)arg1 numberOfAudioInputs:(unsigned long long)arg2 numberOfMetadataInputs:(unsigned long long)arg3 autoTrimMethod:(int)arg4 intermediateJPEGCompressionQuality:(float)arg5 temporaryMovieDirectoryURL:(id)arg6 emitIrisRequestDelegate:(id)arg7;
+- (id)initWithNumberOfVideoInputs:(unsigned long long)arg1 numberOfAudioInputs:(unsigned long long)arg2 numberOfMetadataInputs:(unsigned long long)arg3 autoTrimMethod:(int)arg4 intermediateJPEGCompressionQuality:(float)arg5 temporaryMovieDirectoryURL:(id)arg6 irisRequestDelegate:(id)arg7;
 - (int)intermediateJPEGDownstreamRetainedBufferCount;
 - (struct OpaqueCMClock { }*)masterClock;
 - (bool)openValveWithIrisRequest:(id)arg1;
@@ -160,5 +163,6 @@
 - (void)setTargetFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })targetFrameDuration;
 - (id)temporaryMovieDirectoryURL;
+- (bool)waitUntilReadyToReceiveRequestsWithTimeout:(float)arg1;
 
 @end

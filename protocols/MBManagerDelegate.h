@@ -10,11 +10,16 @@
 - (void)manager:(MBManager *)arg1 didFailRestoreWithError:(NSError *)arg2;
 - (void)manager:(MBManager *)arg1 didFailScanWithError:(NSError *)arg2;
 - (void)manager:(MBManager *)arg1 didFailVerificationWithError:(NSError *)arg2;
+- (void)manager:(MBManager *)arg1 didFinishDeviceTransferKeychainTransfer:(id)arg2;
+- (void)manager:(MBManager *)arg1 didFinishDeviceTransferPreflight:(MBDeviceTransferPreflight *)arg2 error:(NSError *)arg3;
+- (void)manager:(MBManager *)arg1 didFinishDeviceTransferWithError:(NSError *)arg2;
 - (void)manager:(MBManager *)arg1 didFinishRestoreForPath:(NSString *)arg2;
 - (void)manager:(MBManager *)arg1 didScanBundleWithID:(NSString *)arg2 bytesUsed:(unsigned long long)arg3;
 - (void)manager:(MBManager *)arg1 didScanDomainWithName:(NSString *)arg2 forBundleID:(NSString *)arg3 bytesUsed:(unsigned long long)arg4;
 - (void)manager:(MBManager *)arg1 didScanFiles:(NSSet *)arg2 forDomainWithName:(NSString *)arg3 bundleID:(NSString *)arg4;
 - (void)manager:(MBManager *)arg1 didSetBackupEnabled:(bool)arg2;
+- (void)manager:(MBManager *)arg1 didUpdateDeviceTransferConnectionInfo:(MBDeviceTransferConnectionInfo *)arg2;
+- (void)manager:(MBManager *)arg1 didUpdateDeviceTransferProgress:(MBDeviceTransferProgress *)arg2;
 - (void)manager:(MBManager *)arg1 didUpdateProgress:(float)arg2 estimatedTimeRemaining:(unsigned long long)arg3;
 - (void)managerDidCancelRestore:(MBManager *)arg1;
 - (void)managerDidFinishBackup:(MBManager *)arg1;

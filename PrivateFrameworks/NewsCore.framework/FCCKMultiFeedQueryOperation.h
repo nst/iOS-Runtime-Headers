@@ -3,7 +3,7 @@
  */
 
 @interface FCCKMultiFeedQueryOperation : FCOperation {
-    NSArray * _articleKeysMappingToTag;
+    NSArray * _articleLinkKeys;
     FCCKContentDatabase * _database;
     NSArray * _desiredKeys;
     NSArray * _feedRequests;
@@ -13,12 +13,13 @@
     NSError * _resultError;
     NSArray * _resultFeedItemAndArticleRecords;
     NSArray * _resultFeedResponses;
+    NSArray * _resultIssueRecords;
     NSArray * _resultTagRecords;
     unsigned long long  _resultsLimit;
     long long  _sortingFunction;
 }
 
-@property (nonatomic, copy) NSArray *articleKeysMappingToTag;
+@property (nonatomic, copy) NSArray *articleLinkKeys;
 @property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSArray *feedRequests;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) NSArray *resultFeedItemAndArticleRecords;
 @property (nonatomic, retain) NSArray *resultFeedResponses;
+@property (nonatomic, retain) NSArray *resultIssueRecords;
 @property (nonatomic, retain) NSArray *resultTagRecords;
 @property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic) long long sortingFunction;
@@ -36,9 +38,9 @@
 - (id)_constructFeedQuery;
 - (id)_feedRelativeDictionaryFromResultsArray:(id)arg1;
 - (id)_predicateForPerFeedFieldName:(id)arg1 key:(id)arg2 defaultValue:(id)arg3;
-- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3;
+- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3 issueRecords:(id)arg4;
 - (id)_requiredKeys;
-- (id)articleKeysMappingToTag;
+- (id)articleLinkKeys;
 - (id)database;
 - (id)desiredKeys;
 - (id)feedRequests;
@@ -52,9 +54,10 @@
 - (id)resultError;
 - (id)resultFeedItemAndArticleRecords;
 - (id)resultFeedResponses;
+- (id)resultIssueRecords;
 - (id)resultTagRecords;
 - (unsigned long long)resultsLimit;
-- (void)setArticleKeysMappingToTag:(id)arg1;
+- (void)setArticleLinkKeys:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFeedRequests:(id)arg1;
@@ -64,6 +67,7 @@
 - (void)setResultError:(id)arg1;
 - (void)setResultFeedItemAndArticleRecords:(id)arg1;
 - (void)setResultFeedResponses:(id)arg1;
+- (void)setResultIssueRecords:(id)arg1;
 - (void)setResultTagRecords:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setSortingFunction:(long long)arg1;

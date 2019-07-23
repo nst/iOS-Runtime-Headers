@@ -33,14 +33,15 @@
 - (void)_activatePaymentPass:(id)arg1 withActivationCode:(id)arg2 activationData:(id)arg3 completion:(id /* block */)arg4;
 - (void)_applyDataAccessorToObject:(id)arg1;
 - (void)_applyDataAccessorToObjects:(id)arg1;
+- (long long)_currentNotificationCountForIdentifier:(id)arg1;
 - (id)_defaultPaymentPassForPaymentRequest:(id)arg1;
 - (id)_extendedRemoteObjectProxy;
 - (id)_extendedRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_extendedRemoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (void)_fetchContentForUniqueID:(id)arg1 usingSynchronousProxy:(bool)arg2 withCompletion:(id /* block */)arg3;
-- (void)_fetchImageSetContainerForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 usingSynchronousProxy:(bool)arg4 withCompletion:(id /* block */)arg5;
-- (void)_fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 usingSynchronousProxy:(bool)arg4 withCompletion:(id /* block */)arg5;
-- (id)_filterPeerPaymentPass:(id)arg1;
+- (void)_fetchImageSetContainerForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 suffix:(id)arg4 usingSynchronousProxy:(bool)arg5 withCompletion:(id /* block */)arg6;
+- (void)_fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 suffix:(id)arg4 usingSynchronousProxy:(bool)arg5 withCompletion:(id /* block */)arg6;
+- (id)_filterPeerPaymentPass:(id)arg1 request:(id)arg2;
 - (void)_getPassesAndCatalogOfPassTypes:(unsigned long long)arg1 synchronously:(bool)arg2 limitResults:(bool)arg3 withRetries:(unsigned long long)arg4 handler:(id /* block */)arg5;
 - (bool)_hasInterfaceOfType:(unsigned long long)arg1;
 - (bool)_hasRemoteLibrary;
@@ -71,6 +72,7 @@
 - (bool)canAddPaymentPassWithPrimaryAccountIdentifier:(id)arg1;
 - (void)canPresentPaymentRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)catalogChanged:(id)arg1 withNewPasses:(id)arg2;
+- (void)checkForTransitNotification;
 - (void)contactlessInterfaceDidDismissFromSource:(long long)arg1;
 - (void)contactlessInterfaceDidPresentFromSource:(long long)arg1;
 - (bool)containsPass:(id)arg1;
@@ -88,7 +90,7 @@
 - (void)fetchContentForUniqueID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchCurrentRelevantPassInfo:(id /* block */)arg1;
 - (void)fetchHasCandidatePasses:(id /* block */)arg1;
-- (void)fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 suffix:(id)arg4 withCompletion:(id /* block */)arg5;
 - (void)forceImmediateRevocationCheck;
 - (void)getContainmentStatusAndSettingsForPass:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getPassUniqueIdentifiersForFieldProperties:(id)arg1 withHandler:(id /* block */)arg2;
@@ -102,7 +104,7 @@
 - (void)hasInAppPrivateLabelPaymentPassesForWebDomain:(id)arg1 issuerCountryCodes:(id)arg2 withHandler:(id /* block */)arg3;
 - (bool)hasPassesOfType:(unsigned long long)arg1;
 - (bool)hasPassesWithSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned long long)arg2 webDomain:(id)arg3;
-- (id)imageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3;
+- (id)imageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 suffix:(id)arg4;
 - (id)inAppPaymentPassesForPaymentRequest:(id)arg1;
 - (id)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 issuerCountryCodes:(id)arg2;
 - (id)inAppPrivateLabelPaymentPassesForWebDomain:(id)arg1 issuerCountryCodes:(id)arg2;
@@ -134,10 +136,14 @@
 - (id)passesOfType:(unsigned long long)arg1;
 - (id)passesPendingActivation;
 - (id)paymentPassesWithLocallyStoredValue;
+- (void)paymentSetupFeaturesForConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (id)peerPaymentPassUniqueID;
+- (void)pendingUserNotificationsWithCompletion:(id /* block */)arg1;
+- (void)postUpgradedPassNotificationForMarket:(id)arg1 passUniqueID:(id)arg2;
 - (void)presentContactlessInterfaceForDefaultPassFromSource:(long long)arg1 completion:(id /* block */)arg2;
 - (void)presentContactlessInterfaceForPassWithUniqueIdentifier:(id)arg1 fromSource:(long long)arg2 completion:(id /* block */)arg3;
 - (void)presentPaymentPass:(id)arg1;
+- (void)presentPaymentSetupRequest:(id)arg1 orientation:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentWalletWithRelevantPassUniqueID:(id)arg1;
 - (void)recomputeRelevantPassesWithSearchMode:(long long)arg1;
 - (id)remotePaymentPasses;
@@ -166,13 +172,15 @@
 - (bool)setNotificationServiceUpdatesEnabled:(bool)arg1 forPass:(id)arg2;
 - (bool)setShowInLockScreenEnabled:(bool)arg1 forPass:(id)arg2;
 - (bool)setSuppressNotificationsEnabled:(bool)arg1 forPass:(id)arg2;
+- (bool)setSuppressPromotionsEnabled:(bool)arg1 forPass:(id)arg2;
 - (void)shuffleGroups:(int)arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(id)arg1 completion:(id /* block */)arg2;
 - (void)spotlightDeleteIndexEntriesForAllPassesWithCompletion:(id /* block */)arg1;
 - (void)spotlightReindexAllPassesWithCompletion:(id /* block */)arg1;
 - (void)spotlightReindexPassesWithUniqueIDs:(id)arg1 completion:(id /* block */)arg2;
-- (void)supportedPartnersForDigitalIssuance:(id /* block */)arg1;
 - (void)supportedTransitPartnersForDigitalIssuance:(id /* block */)arg1;
+- (void)transitMessageDidDisplay:(id)arg1;
+- (void)transitMessageForRouteInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateSettings:(unsigned long long)arg1 forObjectWithUniqueID:(id)arg2;
 
 @end

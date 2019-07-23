@@ -12,6 +12,11 @@
 @property (nonatomic) double trailingWidth;
 @property (nonatomic) bool userInitiated;
 
+- (id)_closestEqualOrLargerState:(id)arg1;
+- (id)_closestEqualOrLargerState:(id)arg1 returningDistance:(double*)arg2;
+- (id)_closestState:(id)arg1;
+- (id)_closestState:(id)arg1 returningDistance:(double*)arg2;
+- (id)_matchingState:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)hash;

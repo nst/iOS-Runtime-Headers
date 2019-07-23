@@ -19,6 +19,7 @@
 - (bool)emitsSingletonGroups;
 - (bool)isRequiredByFollowingEmitters;
 - (long long)requiredForYouContentTypes;
+- (bool)requiresHeavyweightContent;
 - (bool)supportsPagination;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartResizer : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DChartScenePropertyAccessor * mAccessor;
     TSCH3DChartType * mChartType;
     struct ResizeData { 
         struct tvec2<float> { 

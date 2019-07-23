@@ -18,6 +18,12 @@
         } __tree_; 
     }  _apcDecoderConfig;
     AUPasscodeCodecConfiguration * _codecConfig;
+    struct mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long long __sig; 
+            BOOL __opaque[56]; 
+        } __m_; 
+    }  _ctMutex;
     id /* block */  _dataHandler;
     bool  _deliverDataSerially;
     unsigned int  _desiredChannelCount;
@@ -50,6 +56,7 @@
     }  _messagePool;
     AUAudioUnitBus * _outputBus;
     AUAudioUnitBusArray * _outputBusArray;
+    APCListenerResultData * _resultData;
     struct unique_ptr<RealtimeMessenger, std::__1::default_delete<RealtimeMessenger> > { 
         struct __compressed_pair<RealtimeMessenger *, std::__1::default_delete<RealtimeMessenger> > { 
             struct RealtimeMessenger {} *__value_; 
@@ -67,6 +74,7 @@
 @property (nonatomic, retain) AUPasscodeCodecConfiguration *codecConfig;
 @property (nonatomic, copy) id /* block */ dataHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, retain) APCListenerResultData *resultData;
 
 + (struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })getAUDesc;
 + (void)registerAU;
@@ -84,10 +92,12 @@
 - (id)inputBusses;
 - (id /* block */)internalRenderBlock;
 - (id)outputBusses;
+- (id)resultData;
 - (void)setCodecConfig:(id)arg1;
 - (void)setDataHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setRenderingOffline:(bool)arg1;
+- (void)setResultData:(id)arg1;
 - (void)startAudioLogCapture;
 - (void)stopAudioLogCapture;
 

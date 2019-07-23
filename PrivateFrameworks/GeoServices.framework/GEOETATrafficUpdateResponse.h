@@ -6,6 +6,7 @@
     NSMutableArray * _cameras;
     GEOClientMetrics * _clientMetrics;
     GEOPDDatasetABStatus * _datasetAbStatus;
+    NSString * _debugData;
     unsigned long long  _debugServerLatencyMs;
     GEOETAServiceResponseSummary * _etaServiceSummary;
     struct { 
@@ -21,10 +22,12 @@
 @property (nonatomic, retain) NSMutableArray *cameras;
 @property (nonatomic, retain) GEOClientMetrics *clientMetrics;
 @property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
+@property (nonatomic, retain) NSString *debugData;
 @property (nonatomic) unsigned long long debugServerLatencyMs;
 @property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
 @property (nonatomic, readonly) bool hasClientMetrics;
 @property (nonatomic, readonly) bool hasDatasetAbStatus;
+@property (nonatomic, readonly) bool hasDebugData;
 @property (nonatomic) bool hasDebugServerLatencyMs;
 @property (nonatomic, readonly) bool hasEtaServiceSummary;
 @property (nonatomic, readonly) bool hasResponseId;
@@ -51,12 +54,14 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)datasetAbStatus;
+- (id)debugData;
 - (unsigned long long)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etaServiceSummary;
 - (bool)hasClientMetrics;
 - (bool)hasDatasetAbStatus;
+- (bool)hasDebugData;
 - (bool)hasDebugServerLatencyMs;
 - (bool)hasEtaServiceSummary;
 - (bool)hasResponseId;
@@ -74,6 +79,7 @@
 - (void)setCameras:(id)arg1;
 - (void)setClientMetrics:(id)arg1;
 - (void)setDatasetAbStatus:(id)arg1;
+- (void)setDebugData:(id)arg1;
 - (void)setDebugServerLatencyMs:(unsigned long long)arg1;
 - (void)setEtaServiceSummary:(id)arg1;
 - (void)setHasDebugServerLatencyMs:(bool)arg1;

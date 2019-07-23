@@ -36,12 +36,15 @@
 - (void)vcMediaStream:(id)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveRTCPPackets:(id)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveTTYCharacter:(unsigned short)arg2;
+- (void)vcMediaStream:(id)arg1 didReceiveText:(struct NSString { Class x1; }*)arg2;
 - (void)vcMediaStream:(id)arg1 didResumeStream:(bool)arg2 error:(id)arg3;
 - (void)vcMediaStream:(id)arg1 didStartStream:(bool)arg2 error:(id)arg3;
 - (void)vcMediaStream:(id)arg1 didUpdateVideoConfiguration:(bool)arg2 error:(id)arg3 dictionary:(id)arg4;
 - (void)vcMediaStream:(id)arg1 downlinkQualityDidChange:(id)arg2;
 - (void)vcMediaStream:(id)arg1 updateFrequencyLevel:(id)arg2 isInputMeter:(bool)arg3;
 - (void)vcMediaStream:(id)arg1 uplinkQualityDidChange:(id)arg2;
+- (void)vcMediaStreamDidInterruptionBegin:(id)arg1;
+- (void)vcMediaStreamDidInterruptionEnd:(id)arg1;
 - (void)vcMediaStreamDidRTCPTimeOut:(id)arg1;
 - (void)vcMediaStreamDidRTPTimeOut:(id)arg1;
 - (void)vcMediaStreamDidStop:(id)arg1;

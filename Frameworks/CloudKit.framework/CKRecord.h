@@ -416,13 +416,17 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
+- (id)_arrayFromStringValue:(id)arg1;
+- (id)_dictionaryFromStringValue:(id)arg1;
 - (id)description;
+- (id)pk_arrayForKey:(id)arg1;
 - (bool)pk_boolForKey:(id)arg1;
 - (id)pk_dataForKey:(id)arg1;
 - (id)pk_dateForKey:(id)arg1;
 - (id)pk_decimalNumberForKey:(id)arg1;
 - (id)pk_description;
 - (id)pk_dictionaryForKey:(id)arg1;
+- (id)pk_encryptedArrayForKey:(id)arg1;
 - (bool)pk_encryptedBoolForKey:(id)arg1;
 - (id)pk_encryptedDataForKey:(id)arg1;
 - (id)pk_encryptedDateForKey:(id)arg1;
@@ -443,10 +447,22 @@
 - (id)pk_locationForKey:(id)arg1;
 - (id)pk_numberForKey:(id)arg1;
 - (id)pk_objectForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)pk_referenceForKey:(id)arg1;
 - (id)pk_stringForKey:(id)arg1;
 - (unsigned long long)pk_uint64ForKey:(id)arg1;
 - (unsigned long long)pk_unsignedIntegerForKey:(id)arg1;
 - (id)pk_urlForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RTTUtilities.framework/RTTUtilities
+
+- (id)data;
+- (bool)hasLargeDataAsset;
+- (id)largeDataAsset;
+- (void)setData:(id)arg1;
+- (void)setHasLargeDataAsset:(bool)arg1;
+- (void)setLargeDataAsset:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)version;
 
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 

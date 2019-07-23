@@ -8,19 +8,22 @@
         int pqEOTF; 
         int bt2020YCC; 
         int hdrStaticMetadataType1; 
+        bool legacyHDMI; 
     }  _edid_attributes;
 }
 
 @property (readonly) long long bt2020YCC;
 @property (readonly) long long dolbyVision;
 @property (readonly) long long hdrStaticMetadataType1;
+@property (readonly) bool legacyHDMIEDID;
 @property (readonly) long long pqEOTF;
 
 - (id).cxx_construct;
-- (id)_initWithAttributes:(struct EDIDAttributes { int x1; int x2; int x3; int x4; })arg1;
+- (id)_initWithAttributes:(struct EDIDAttributes { int x1; int x2; int x3; int x4; bool x5; })arg1;
 - (long long)bt2020YCC;
 - (long long)dolbyVision;
 - (long long)hdrStaticMetadataType1;
+- (bool)legacyHDMIEDID;
 - (long long)pqEOTF;
 
 @end

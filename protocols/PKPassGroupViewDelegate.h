@@ -18,6 +18,8 @@
 - (void)groupViewPanDidBegin:(PKPassGroupView *)arg1;
 - (void)groupViewPanDidEnd:(PKPassGroupView *)arg1;
 - (unsigned long long)groupViewPassesSuppressedContent:(PKPassGroupView *)arg1;
+- (void)groupViewPressed:(PKPassGroupView *)arg1;
+- (void)groupViewPressedDidEnd:(PKPassGroupView *)arg1;
 - (PKReusablePassViewQueue *)groupViewReusablePassViewQueue:(PKPassGroupView *)arg1;
 - (bool)groupViewShouldAllowPanning:(PKPassGroupView *)arg1;
 - (void)groupViewTapped:(PKPassGroupView *)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.IDSCapabilitiesChecker : SwiftObject {
+@interface ConversationKit.IDSCapabilitiesChecker : Swift._SwiftObject {
     void delegate;
     void lookupManager;
     void participantCapabilities;

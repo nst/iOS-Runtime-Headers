@@ -14,6 +14,8 @@
     NSMutableSet * _biometricMatchingEnabledOverrideReasons;
     unsigned long long  _biometricMatchingState;
     <SBUIBiometricResource> * _biometricResource;
+    bool  _canSuggestSwipeToRetry;
+    bool  _confirmedNotInPocket;
     double  _currentBacklightLevel;
     int  _currentPendingBioUnlockToken;
     UIColor * _customBackgroundColor;
@@ -35,11 +37,21 @@
         bool showScanningState; 
         bool showScanningStateDuringFaceDetect; 
         double minimumDurationBeforeShowScanningState; 
+        bool bkCoachingHintsEnabled; 
+        double minimumDurationBetweenLeavingCoachingAndCoaching; 
+        double minimumDurationShowingCoaching; 
+        double durationOnCameraCoveredGlyphBeforeCoaching; 
+        double durationToSuppressCameraCoveredWhenWakingWithSmartCover; 
+        bool coachingDelaysUnlock; 
+        bool suppressFaceIDDisabledState; 
+        bool spinBeforeCoaching; 
+        unsigned long long substate; 
     }  _proudLockConfiguration;
     SBUIProudLockContainerViewController * _proudLockContainerViewController;
     bool  _proudLockShowsBiometricStates;
     NSTimer * _screenBrightnessChangedTimer;
     bool  _screenOn;
+    bool  _shouldConsiderTapGuard;
     bool  _shouldResetForFailedPasscodeAttempt;
     bool  _showsProudLock;
     bool  _showsStatusField;
@@ -65,6 +77,8 @@
 @property (nonatomic, retain) UIView *biometricAuthenticationView;
 @property (nonatomic) bool biometricPresentationAncillaryButtonsVisible;
 @property (nonatomic, retain) <SBUIBiometricResource> *biometricResource;
+@property (nonatomic) bool canSuggestSwipeToRetry;
+@property (nonatomic) bool confirmedNotInPocket;
 @property (nonatomic, retain) UIColor *customBackgroundColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPasscodeLockViewDelegate> *delegate;
@@ -80,7 +94,7 @@
 @property (nonatomic, retain) UIView *passcodeAuthenticationView;
 @property (nonatomic) long long passcodeLockViewState;
 @property (nonatomic) bool playsKeypadSounds;
-@property (nonatomic) struct { bool x1; bool x2; double x3; } proudLockConfiguration;
+@property (nonatomic) struct { bool x1; bool x2; double x3; bool x4; double x5; double x6; double x7; double x8; bool x9; bool x10; bool x11; unsigned long long x12; } proudLockConfiguration;
 @property (nonatomic) bool proudLockShowsBiometricStates;
 @property (nonatomic, retain) NSTimer *screenBrightnessChangedTimer;
 @property (getter=isScreenOn, nonatomic) bool screenOn;
@@ -100,13 +114,14 @@
 
 - (void).cxx_destruct;
 - (void)_advanceToPasscodeForMatchFailure:(bool)arg1;
-- (void)_advanceToPasscodeTimerFired;
+- (void)_advanceToPasscodeTimerFiredWithReason:(id)arg1;
 - (void)_applyProudLockContainerViewControllerConfiguration;
-- (void)_armAdvanceToPasscodeTimer;
+- (void)_armAdvanceToPasscodeTimerWithReason:(id)arg1;
 - (double)_biometricViewAlphaFromPasscodeLockViewState:(long long)arg1;
 - (bool)_canRecognizeBiometricAuthentication;
 - (void)_clearBrightnessChangeTimer;
 - (id)_defaultStatusText;
+- (id)_deviceSpecificTemperatureStringForTemperatureState:(unsigned long long)arg1;
 - (void)_disarmAdvanceToPasscodeTimer;
 - (id)_entryField;
 - (void)_evaluateBiometricMatchingState;
@@ -141,6 +156,7 @@
 - (void)_setPasscodeLockViewState:(long long)arg1 animated:(bool)arg2;
 - (void)_setStatusState:(unsigned long long)arg1;
 - (void)_setStatusState:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)_setStatusStateSwipeToRetryAnimated:(bool)arg1;
 - (void)_setStatusSubtitleText:(id)arg1;
 - (void)_setStatusText:(id)arg1;
 - (void)_setSuppressTitleText:(bool)arg1 animated:(bool)arg2;
@@ -149,7 +165,6 @@
 - (id)_statusSubtitleText;
 - (id)_statusText;
 - (bool)_supportsProudLock;
-- (bool)_swipeToRetryEnabled;
 - (void)_updateBiometricAlpha;
 - (void)_updateBiometricGlyphForBioEvent:(unsigned long long)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_updateBiometricLayout;
@@ -172,6 +187,8 @@
 - (void)biometricResource:(id)arg1 observeEvent:(unsigned long long)arg2;
 - (bool)canBecomeFirstResponder;
 - (bool)canResignFirstResponder;
+- (bool)canSuggestSwipeToRetry;
+- (bool)confirmedNotInPocket;
 - (id)customBackgroundColor;
 - (void)dealloc;
 - (id)delegate;
@@ -195,7 +212,7 @@
 - (void)passcodeBiometricAuthenticationViewUsePasscodeButtonHit:(id)arg1;
 - (long long)passcodeLockViewState;
 - (bool)playsKeypadSounds;
-- (struct { bool x1; bool x2; double x3; })proudLockConfiguration;
+- (struct { bool x1; bool x2; double x3; bool x4; double x5; double x6; double x7; double x8; bool x9; bool x10; bool x11; unsigned long long x12; })proudLockConfiguration;
 - (bool)proudLockShowsBiometricStates;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)reset;
@@ -214,6 +231,8 @@
 - (void)setBiometricAuthenticationView:(id)arg1;
 - (void)setBiometricPresentationAncillaryButtonsVisible:(bool)arg1;
 - (void)setBiometricResource:(id)arg1;
+- (void)setCanSuggestSwipeToRetry:(bool)arg1;
+- (void)setConfirmedNotInPocket:(bool)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsTransitioning:(bool)arg1;
@@ -225,7 +244,7 @@
 - (void)setPasscodeLockViewState:(long long)arg1;
 - (void)setPasscodeLockViewState:(long long)arg1 animated:(bool)arg2;
 - (void)setPlaysKeypadSounds:(bool)arg1;
-- (void)setProudLockConfiguration:(struct { bool x1; bool x2; double x3; })arg1;
+- (void)setProudLockConfiguration:(struct { bool x1; bool x2; double x3; bool x4; double x5; double x6; double x7; double x8; bool x9; bool x10; bool x11; unsigned long long x12; })arg1;
 - (void)setProudLockShowsBiometricStates:(bool)arg1;
 - (void)setScreenBrightnessChangedTimer:(id)arg1;
 - (void)setScreenOn:(bool)arg1;

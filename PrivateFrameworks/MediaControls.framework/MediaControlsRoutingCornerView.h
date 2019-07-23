@@ -3,22 +3,22 @@
  */
 
 @interface MediaControlsRoutingCornerView : CCUICAPackageView {
+    long long  _deviceType;
     bool  _routesAvailable;
     bool  _routing;
-    bool  _shouldPauseAnimations;
 }
 
+@property (nonatomic) long long deviceType;
 @property (getter=routesAreAvailable, nonatomic) bool routesAvailable;
 @property (getter=isRouting, nonatomic) bool routing;
-@property (nonatomic) bool shouldPauseAnimations;
 
 - (void)_updateGlyph;
+- (long long)deviceType;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isRouting;
 - (bool)routesAreAvailable;
+- (void)setDeviceType:(long long)arg1;
 - (void)setRoutesAvailable:(bool)arg1;
 - (void)setRouting:(bool)arg1;
-- (void)setShouldPauseAnimations:(bool)arg1;
-- (bool)shouldPauseAnimations;
 
 @end

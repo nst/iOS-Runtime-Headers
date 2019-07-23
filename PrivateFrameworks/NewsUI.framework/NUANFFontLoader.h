@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUANFFontLoader : NSObject {
+@interface NUANFFontLoader : NSObject <NUFontRegistrator> {
     FCAsyncOnceOperation * _asyncOnceOperation;
     FCFlintManifest * _flintManifest;
     FCFlintResourceManager * _flintResourceManager;
@@ -13,12 +13,16 @@
 }
 
 @property (nonatomic, readonly) FCAsyncOnceOperation *asyncOnceOperation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) FCFlintManifest *flintManifest;
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
 @property (nonatomic, readonly) <NUFontRegistration> *fontRegistration;
 @property (nonatomic, readonly) NSMutableArray *fontResourcesRegistered;
 @property (nonatomic, readonly) NSMutableArray *fontResourcesToRegister;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) long long relativePriority;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)asyncLoadFontsOnceWithCompletion:(id /* block */)arg1;

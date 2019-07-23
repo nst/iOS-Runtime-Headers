@@ -31,7 +31,7 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
-- (void)didExpressModeStateChange:(unsigned int)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(id)arg2;
 - (void)didFailDeferredAuthorization;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didReceiveActivityTimeout:(id)arg1;

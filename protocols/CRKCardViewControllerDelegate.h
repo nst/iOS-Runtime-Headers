@@ -11,6 +11,7 @@
 - (void)cardViewController:(UIViewController<CRKCardViewControlling> *)arg1 didFailToLoadCard:(id <CRCard>)arg2;
 - (void)cardViewController:(void *)arg1 requestCardSectionViewSourceForCard:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: UIViewController<CRKCardViewControlling> *, <CRCard> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CRKCardSectionViewSourcing> *, NSError *, void*
 - (void)cardViewController:(UIViewController<CRKCardViewControlling> *)arg1 requestsHandlingOfIntent:(INIntent *)arg2;
+- (void)cardViewController:(UIViewController<CRKCardViewControlling> *)arg1 willDismissViewController:(UIViewController *)arg2;
 - (void)cardViewControllerBoundsDidChange:(UIViewController<CRKCardViewControlling> *)arg1;
 - (void)cardViewControllerDidLoad:(UIViewController<CRKCardViewControlling> *)arg1;
 - (unsigned long long)navigationIndexOfCardViewController:(UIViewController<CRKCardViewControlling> *)arg1;

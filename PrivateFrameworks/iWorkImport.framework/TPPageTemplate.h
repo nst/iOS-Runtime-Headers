@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) unsigned long long countOfMasterDrawables;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) TPDrawablesZOrder *drawablesZOrder;
+@property (nonatomic, readonly) TPDrawablesZOrder *drawablesZOrder;
 @property (getter=isFloatingAboveText, nonatomic, readonly) bool floatingAboveText;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
 @property (readonly) unsigned long long hash;
@@ -89,7 +89,6 @@
 - (Class)repClass;
 - (void)saveToArchiver:(id)arg1;
 - (void)setBackgroundFill:(id)arg1;
-- (void)setDrawablesZOrder:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setHeadersFootersMatchPreviousPage:(bool)arg1;
 - (void)setHideHeadersFooters:(bool)arg1;

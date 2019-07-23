@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UISearchBar : UIView <DebugHierarchyObject_Fallback, UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal, _UINavigationBarAugmentedTitleView> {
+@interface UISearchBar : UIView <UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal, _UINavigationBarAugmentedTitleView> {
     bool  __forceCenteredPlaceholderLayout;
     unsigned long long  __scopeBarPosition;
     UISearchController * __searchController;
@@ -342,17 +342,6 @@
 - (id)_viewForChildViews;
 - (bool)_wantsTwoPartTransition;
 - (bool)_wouldCombineLandscapeBarsForSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-- (id)__dbg_scopeButtonTitles;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundImage;
 - (id)backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
 - (long long)barPosition;
@@ -368,6 +357,7 @@
 - (bool)combinesLandscapeBars;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)controller;
+- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;

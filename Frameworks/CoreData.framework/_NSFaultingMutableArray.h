@@ -20,10 +20,13 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (Class)classForKeyedUnarchiver;
 
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
 - (void)addObject:(id)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;

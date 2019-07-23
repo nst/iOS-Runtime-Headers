@@ -5,6 +5,7 @@
 
 @required
 
+- (UIColor *)backgroundColor;
 - (long long)statusBarStyle;
 - (void)styleTabBar:(UITabBar *)arg1;
 - (void)styleToolbar:(UIToolbar *)arg1;

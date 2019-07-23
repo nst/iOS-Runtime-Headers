@@ -77,17 +77,16 @@
 - (id)description;
 - (id)deviceClass;
 - (id)deviceColor;
+- (id)deviceCommandQueue;
 - (id)deviceEnclosureColor;
+- (id)deviceNotificationQueue;
 - (id)devicePairedState;
-- (id)deviceQSemaphore;
 - (void)discardCameraFiles:(id)arg1;
 - (void)dispatchAsyncForOperationType:(long long)arg1 block:(id /* block */)arg2;
 - (double)downloadCancelTimestamp;
 - (long long)enumerationOrder;
-- (id)enumerationQ;
 - (unsigned long long)estimatedNumberOfDownloadableItems;
 - (id)filesOfType:(id)arg1;
-- (id)generalQ;
 - (void)grindMedia:(/* Warning: unhandled array encoding: '[10@]' */ id)arg1 index:(int*)arg2 file:(id)arg3;
 - (void)handleCommandCompletionNotification:(id)arg1;
 - (void)handleImageCaptureEventNotification:(id)arg1;
@@ -123,7 +122,6 @@
 - (void)removeCameraFolderFromIndex:(id)arg1;
 - (void)removeFolder:(id)arg1;
 - (void)removeMediaFile:(id)arg1;
-- (void)removeMediaFiles:(id)arg1;
 - (void)requestCloseSession;
 - (void)requestDeleteFiles:(id)arg1;
 - (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
@@ -148,13 +146,11 @@
 - (void)setMediaPresentation:(unsigned long long)arg1;
 - (void)setNumberOfDownloadableItems:(unsigned long long)arg1;
 - (void)setVolumePath:(id)arg1;
-- (void)signalCommandCompletion;
 - (long long)stitchMedia:(id)arg1 withMedia:(id)arg2;
 - (id)supportedSidecarFiles;
 - (bool)supportsMediaFormatCatalog;
 - (double)timeOffset;
 - (bool)updateMediaPresentation;
 - (id)volumePath;
-- (void)waitForCommandCompletion;
 
 @end

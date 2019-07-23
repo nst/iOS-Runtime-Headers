@@ -22,8 +22,9 @@
 - (id)queue;
 - (void)setAudioBuffer:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1;
+- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
+- (void)voiceTriggerGotSuperVector:(id)arg1;
 
 @end

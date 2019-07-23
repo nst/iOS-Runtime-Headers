@@ -40,6 +40,7 @@
 - (void)_buttonOverlayWasTouchedUpInside:(id)arg1;
 - (void)_buttonOverlayWasTouchedUpOutside:(id)arg1;
 - (void)_cancelTouchesIfNecessary;
+- (void)_cardSectionTapped;
 - (bool)_checkIfCardSectionIsNull:(id)arg1;
 - (id)_commands;
 - (id)_destinationPunchout;
@@ -97,5 +98,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)willDismissViewController:(id)arg1;
 
 @end

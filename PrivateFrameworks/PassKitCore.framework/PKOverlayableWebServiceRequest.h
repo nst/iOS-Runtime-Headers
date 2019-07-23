@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKOverlayableWebServiceRequest : PKWebServiceRequest {
+@interface PKOverlayableWebServiceRequest : PKWebServiceRequest <NSSecureCoding> {
     NSMutableDictionary * _overlayParameters;
     NSArray * _overridenKeys;
     bool  _requiresConfigurationForRedirect;
@@ -15,14 +15,18 @@
 @property (nonatomic) bool requiresConfigurationForRetry;
 @property (nonatomic, copy) NSDictionary *secureOverlayParameters;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_applyOverlayToDictionary:(id)arg1;
 - (void)_applySecureOverlayToDictionary:(id)arg1;
 - (void)_setOverriddenKeys:(id)arg1;
 - (void)_updateRequestForRedirect:(id)arg1 overrides:(id)arg2 webService:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)_updateRequestForRetry:(id)arg1 retryFields:(id)arg2 webService:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)encodeWithCoder:(id)arg1;
 - (bool)hasOverlayParameters;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)overlayParameters;
 - (id)overlayValueForKey:(id)arg1;
 - (bool)requiresConfigurationForRedirect;

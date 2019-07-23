@@ -24,17 +24,12 @@
 @property (nonatomic) bool cachedImageHasAccessoryImage;
 @property (nonatomic, retain) _UILegibilityImageSet *cachedImageSet;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_accessoryImage;
 - (struct CGSize { double x1; double x2; })_batteryOffsetWithBackground:(id)arg1;
 - (id)_contentsImage;
 - (bool)_needsAccessoryImage;
 - (void)_updateAccessoryImage;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (int)cachedAXHUDCapacity;
 - (id)cachedAXHUDImage;

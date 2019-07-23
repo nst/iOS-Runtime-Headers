@@ -10,6 +10,7 @@
 + (unsigned int)_firstLongCharacterOfString:(id)arg1;
 + (bool)_genderEmojiBaseStringNeedVariantSelector:(id)arg1;
 + (bool)_hasSkinToneVariantsForString:(id)arg1;
++ (bool)_isNewlyAddedEmoji:(id)arg1;
 + (id)_preferenceIndexString:(id)arg1;
 + (int)_skinToneForString:(id)arg1;
 + (id)_skinToneVariantsForString:(id)arg1;

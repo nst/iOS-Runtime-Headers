@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic) unsigned long long limit;
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
+@property (nonatomic, readonly) bool requiresHeavyweightContent;
 @property (readonly) Class superclass;
 
 + (bool)greatStoriesMayEmit:(id)arg1;

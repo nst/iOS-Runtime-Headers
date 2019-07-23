@@ -12,6 +12,7 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (Class)classForKeyedUnarchiver;
 + (id)init;
 + (id)initForKeys:(id)arg1;
 + (id)initWithCapacity:(unsigned long long)arg1;

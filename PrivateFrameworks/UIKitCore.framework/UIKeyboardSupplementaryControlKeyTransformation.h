@@ -10,9 +10,11 @@
 @property (readonly) Class superclass;
 
 + (id)_cachedUndoOrRedoKeyForKeyplane:(id)arg1;
-+ (double)_derivedLeadingControlKeyWidthForRow:(unsigned long long)arg1 keyCountForRow:(unsigned long long)arg2 orientation:(long long)arg3;
++ (double)_derivedLeadingControlKeyWidthForRow:(unsigned long long)arg1 keysForRow:(id)arg2 context:(id)arg3;
 + (double)_derivedTrailingControlKeyWidthForRow:(unsigned long long)arg1 orientation:(long long)arg2;
++ (double)_keyPitchForKeyplane:(id)arg1;
 + (double)_keyplanePaddingForOrientation:(long long)arg1;
++ (unsigned long long)_numberOfKeysInRow:(id)arg1 firstKey:(id*)arg2 lastKey:(id*)arg3;
 + (id)_supplementaryControlKeySetForOrientation:(long long)arg1 context:(id)arg2;
 + (id)_supplementaryControlKeyWithName:(id)arg1 context:(id)arg2;
 + (id)_supplementaryScriptSwitchKeyWithContext:(id)arg1;

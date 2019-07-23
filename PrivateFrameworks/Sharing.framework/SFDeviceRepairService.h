@@ -5,11 +5,13 @@
 @interface SFDeviceRepairService : NSObject {
     ACAccountStore * _accountStore;
     bool  _activateCalled;
+    SFDeviceOperationHandlerCDPSetup * _cdpSetupHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     HMDeviceSetupOperationHandler * _homeKitSetupHandler;
     bool  _invalidateCalled;
     bool  _invalidateDone;
     unsigned int  _invalidateFlags;
+    bool  _prefCDPEnabled;
     unsigned long long  _problemFlags;
     id /* block */  _progressHandler;
     SFService * _sfService;

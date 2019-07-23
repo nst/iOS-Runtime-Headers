@@ -31,6 +31,7 @@
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *titleDisallowingEmptyString;
 @property (nonatomic, copy) NSString *uniqueID;
+@property (nonatomic, readonly) bool uploaded;
 @property (nonatomic, readonly, copy) NSURL *url;
 
 + (id)playablePredicate;
@@ -75,6 +76,7 @@
 - (bool)synchronizeWithExistingAudioFuture:(id*)arg1;
 - (id)title;
 - (id)titleDisallowingEmptyString;
+- (bool)uploaded;
 - (id)url;
 - (void)willSave;
 

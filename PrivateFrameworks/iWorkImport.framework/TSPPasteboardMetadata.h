@@ -9,24 +9,35 @@
     bool  _isCrossDocumentPaste;
     struct PasteboardMetadata { 
         int (**_vptr$MessageLite)(); 
-        struct UnknownFieldSet { 
-            struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *fields_; 
-        } _unknown_fields_; 
-        unsigned int _has_bits_[1]; 
-        int _cached_size_; 
+        struct InternalMetadataWithArena { 
+            void *ptr_; 
+        } _internal_metadata_; 
+        struct HasBits<1> { 
+            unsigned int has_bits_[1]; 
+        } _has_bits_; 
+        struct CachedSize { 
+            struct atomic<int> { 
+                int __a_; 
+            } size_; 
+        } _cached_size_; 
         struct RepeatedField<unsigned int> { 
-            unsigned int *elements_; 
             int current_size_; 
             int total_size_; 
+            union Pointer { 
+                struct Arena {} *arena; 
+                struct Rep {} *rep; 
+            } ptr_; 
         } version_; 
         int _version_cached_byte_size_; 
-        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *app_name_; 
         struct RepeatedPtrField<TSP::DataInfo> { 
-            void **elements_; 
+            struct Arena {} *arena_; 
             int current_size_; 
-            int allocated_size_; 
             int total_size_; 
+            struct Rep {} *rep_; 
         } datas_; 
+        struct ArenaStringPtr { 
+            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *ptr_; 
+        } app_name_; 
         struct UUID {} *source_document_uuid_; 
         struct Reference {} *data_metadata_map_; 
     }  _message;
@@ -48,7 +59,7 @@
 - (bool)isCrossAppPaste;
 - (bool)isCrossDocumentPaste;
 - (void)loadFromUnarchiver:(id)arg1;
-- (struct PasteboardMetadata { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedPtrField<TSP::DataInfo> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct UUID {} *x9; struct Reference {} *x10; }*)message;
+- (struct PasteboardMetadata { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedField<unsigned int> { int x_5_1_1; int x_5_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_5_1_3; } x5; int x6; struct RepeatedPtrField<TSP::DataInfo> { struct Arena {} *x_7_1_1; int x_7_1_2; int x_7_1_3; struct Rep {} *x_7_1_4; } x7; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_8_1_1; } x8; struct UUID {} *x9; struct Reference {} *x10; }*)message;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDataMetadata:(id)arg1 forDataIdentifier:(long long)arg2;
 - (long long)tsp_identifier;

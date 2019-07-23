@@ -9,7 +9,7 @@
     void participantIsShownInGrid;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)init;

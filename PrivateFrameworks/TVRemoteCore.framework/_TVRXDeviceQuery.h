@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
  */
 
-@interface _TVRXDeviceQuery : NSObject <_TVRCMediaRemoteDeviceQueryDelegate> {
+@interface _TVRXDeviceQuery : NSObject <_TVRCMatchPointDeviceQueryDelegate, _TVRCMediaRemoteDeviceQueryDelegate, _TVRCRapportDeviceQueryDelegate> {
     NSMutableDictionary * _aggregateDevices;
     <_TVRXDeviceQueryDelegate> * _delegate;
     bool  _isRunning;
+    _TVRCMatchPointDeviceQuery * _matchPointQuery;
     _TVRCMediaRemoteDeviceQuery * _mediaRemoteQuery;
+    _TVRCRapportDeviceQuery * _rapportDeviceQuery;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *aggregateDevices;
@@ -16,7 +18,9 @@
 @property (nonatomic, readonly, copy) NSSet *devices;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isRunning;
+@property (nonatomic, retain) _TVRCMatchPointDeviceQuery *matchPointQuery;
 @property (nonatomic, retain) _TVRCMediaRemoteDeviceQuery *mediaRemoteQuery;
+@property (nonatomic, retain) _TVRCRapportDeviceQuery *rapportDeviceQuery;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,13 +34,21 @@
 - (id)devices;
 - (id)init;
 - (bool)isRunning;
+- (id)matchPointQuery;
+- (void)matchpointDeviceQuery:(id)arg1 addedService:(id)arg2;
+- (void)matchpointDeviceQuery:(id)arg1 removedService:(id)arg2;
 - (void)mediaRemoteDeviceQuery:(id)arg1 addedTelevision:(id)arg2;
 - (void)mediaRemoteDeviceQuery:(id)arg1 removedTelevision:(id)arg2;
 - (id)mediaRemoteQuery;
+- (id)rapportDeviceQuery;
+- (void)rapportDeviceQuery:(id)arg1 addedDevice:(id)arg2;
+- (void)rapportDeviceQuery:(id)arg1 removedDevice:(id)arg2;
 - (void)setAggregateDevices:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsRunning:(bool)arg1;
+- (void)setMatchPointQuery:(id)arg1;
 - (void)setMediaRemoteQuery:(id)arg1;
+- (void)setRapportDeviceQuery:(id)arg1;
 - (void)start;
 - (void)stop;
 

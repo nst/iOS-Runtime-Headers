@@ -35,6 +35,7 @@
 - (void)setGroupName:(id)arg1;
 - (void)setInputField:(id)arg1;
 - (void)setPlaceholderLabel:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;

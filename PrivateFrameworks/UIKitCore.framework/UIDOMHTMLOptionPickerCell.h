@@ -8,12 +8,7 @@
 
 @property (nonatomic) bool disabled;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (bool)_isSelectable;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)disabled;
 - (id)initCommon;
 - (id)initWithHTMLOptionNode:(id)arg1;

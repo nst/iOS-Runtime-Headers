@@ -26,6 +26,7 @@
         unsigned long long location; 
         unsigned long long length; 
     }  _range;
+    bool  _textIsVertical;
     bool  _usedParagraphHeights;
 }
 
@@ -41,6 +42,7 @@
 @property (nonatomic) unsigned long long nextWidowPullsDownFromCharIndex;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property (readonly) Class superclass;
+@property (nonatomic) bool textIsVertical;
 @property (nonatomic) bool usedParagraphHeights;
 
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })anchoredRange;
@@ -63,7 +65,9 @@
 - (void)setLineFragmentCount:(unsigned long long)arg1;
 - (void)setNextWidowPullsDownFromCharIndex:(unsigned long long)arg1;
 - (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTextIsVertical:(bool)arg1;
 - (void)setUsedParagraphHeights:(bool)arg1;
+- (bool)textIsVertical;
 - (void)trimToCharIndex:(unsigned long long)arg1 inTarget:(id)arg2 removeFootnoteReferenceCount:(unsigned long long)arg3 removeAutoNumberFootnoteCount:(unsigned long long)arg4;
 - (bool)usedParagraphHeights;
 

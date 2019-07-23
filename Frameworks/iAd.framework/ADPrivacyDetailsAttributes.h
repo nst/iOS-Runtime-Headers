@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSString *transparencyRendererPayload;
 @property (nonatomic, retain) NSString *transparencyRendererURL;
 
+- (void)dealloc;
 - (void)setTransparencyDetailsUnavailableMessage:(id)arg1;
 - (void)setTransparencyRendererPayload:(id)arg1;
 - (void)setTransparencyRendererURL:(id)arg1;

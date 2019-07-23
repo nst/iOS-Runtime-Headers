@@ -58,8 +58,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double upArrowWidth;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultCandidateWidth;
 + (double)defaultPagingDistanceThreshold;
 + (double)defaultPagingVelocityThreshold;
@@ -93,6 +91,7 @@
 - (void)_scrollToFirstCandidateInSection:(long long)arg1 withAnimation:(bool)arg2;
 - (long long)_sectionForSectionIndex:(unsigned long long)arg1 candidateView:(id)arg2;
 - (unsigned long long)_sectionIndexForSection:(long long)arg1;
+- (bool)_selectedCellCloseToLeftBorder;
 - (bool)_shouldShowBorders;
 - (void)_showCandidateAtIndex:(unsigned long long)arg1 inSection:(long long)arg2 scrollCellToVisible:(bool)arg3 animated:(bool)arg4;
 - (void)_showPageAtIndexPath:(id)arg1;
@@ -103,10 +102,6 @@
 - (void)_updateCandidateViews;
 - (void)_updateCorners;
 - (double)_widthOfItemAtIndex:(unsigned long long)arg1 inSection:(long long)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)adjustSelectionToNearestVisibleCandidate;
 - (bool)canExtend;
 - (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
@@ -132,6 +127,7 @@
 - (id)currentCandidateView;
 - (unsigned long long)currentCandidateViewIndex;
 - (unsigned long long)currentIndex;
+- (void)dealloc;
 - (id)delegate;
 - (void)dimKeys:(id)arg1;
 - (id)dragStartNextPageIndexPath;
@@ -159,6 +155,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })scrollInsets;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;

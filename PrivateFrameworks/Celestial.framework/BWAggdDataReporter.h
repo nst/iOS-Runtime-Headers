@@ -35,6 +35,7 @@
 - (void)reportCameraLaunchWithPrewarm:(int)arg1 reason:(id)arg2;
 - (void)reportCameraLaunchWithoutPrewarm:(int)arg1;
 - (void)reportCameraStreamingTimeInMilliseconds:(unsigned long long)arg1 deviceType:(int)arg2 devicePosition:(int)arg3;
+- (void)reportCriticalFocusErrorOccurredForPortType:(id)arg1;
 - (void)reportFaceCount:(unsigned int)arg1 frontCamera:(bool)arg2;
 - (void)reportGNRSampleBufferProcessorProcessingStatus:(int)arg1;
 - (void)reportISPCreateDuration:(int)arg1;
@@ -46,6 +47,7 @@
 - (void)reportShutterLag:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 sceneFlags:(unsigned long long)arg5 stillDuringVideo:(bool)arg6 frontCamera:(bool)arg7;
 - (void)reportSphereCalibrationForPosition:(int)arg1 freqX:(float)arg2 deltaFreqX:(float)arg3 qX:(float)arg4 deltaQX:(float)arg5 gainX:(float)arg6 freqY:(float)arg7 deltaFreqY:(float)arg8 qY:(float)arg9 deltaQY:(float)arg10 gainY:(float)arg11 calibrationStatus:(unsigned int)arg12 isValid:(bool)arg13;
 - (void)reportSphereEndStopCalibrationForPosition:(int)arg1 oisPositiveX:(int)arg2 oisNegativeX:(int)arg3 oisPositiveY:(int)arg4 oisNegativeY:(int)arg5 maxPositiveXDriftFromNVM:(int)arg6 maxNegativeXDriftFromNVM:(int)arg7 maxPositiveYDriftFromNVM:(int)arg8 maxNegativeYDriftFromNVM:(int)arg9 sphereStrokeX:(int)arg10 sphereStrokeY:(int)arg11 calibrationStatus:(unsigned int)arg12 isValid:(bool)arg13;
+- (void)reportSphereJitterDetectionsForPortType:(id)arg1 detectionAttemps:(int)arg2 successfulDetections:(int)arg3;
 - (void)reportStereoFusionProcessingTypeForCaptureType:(int)arg1 isStereoFusionCapture:(bool)arg2 wideSubCaptureType:(int)arg3 teleSubCaptureType:(int)arg4 isOriginalImage:(bool)arg5;
 - (void)reportStereoFusionSampleBufferProcessorProcessingStatus:(int)arg1;
 - (void)reportStillImageAPSStatisticsForPortType:(id)arg1 logicalFocusPosition:(int)arg2 apsMotion:(float)arg3 sphereMotion:(float)arg4 accelMotion:(float)arg5 gyroMotion:(float)arg6 subjectDistance:(float)arg7 luxLevel:(int)arg8;

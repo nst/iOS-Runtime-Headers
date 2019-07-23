@@ -29,7 +29,7 @@
 - (id)componentIdentifierForTextView:(id)arg1;
 - (void)didApplyBehavior:(id)arg1;
 - (void)didMoveToWindow;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 tangierController:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 tangierController:(id)arg5;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)provideInfosLayoutTo:(id)arg1;

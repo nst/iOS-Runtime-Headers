@@ -5,6 +5,8 @@
 
 @required
 
+- (NSString *)backIssuesListID;
+- (NSArray *)currentIssueIDs;
 - (NSString *)defaultSectionID;
 - (NSString *)freeFeedIDForSection:(NSString *)arg1 bin:(long long)arg2;
 - (bool)isWhitelisted;

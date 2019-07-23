@@ -7,7 +7,7 @@
     MFIMAPConnection * _cachedConnection;
     DeliveryAccount * _deliveryAccount;
     NSRecursiveLock * _flagChangesLock;
-    bool  _managed;
+    bool  managed;
 }
 
 @property (nonatomic, retain) DeliveryAccount *deliveryAccount;

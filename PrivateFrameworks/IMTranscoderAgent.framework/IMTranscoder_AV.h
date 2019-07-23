@@ -6,6 +6,7 @@
 
 + (id)supportedUTIs;
 
+- (unsigned long long)_fileSizeForTransfer:(id)arg1 error:(id)arg2;
 - (bool)_isHEVCVideo:(id)arg1;
 - (void)_transcodeVideoAsync:(id)arg1 target:(long long)arg2 maxBytes:(unsigned long long)arg3 userInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (long long)shouldTranscodeTransfer:(id)arg1 transcoderUserInfo:(id)arg2 target:(long long)arg3 utiType:(id)arg4 allowUnfilteredUTIs:(id)arg5 fileSizeLimit:(unsigned long long)arg6;

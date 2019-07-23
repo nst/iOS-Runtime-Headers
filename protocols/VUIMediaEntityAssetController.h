@@ -5,14 +5,13 @@
 
 @required
 
-- (void)cancelDownload;
+- (void)cancelAndRemoveDownload;
 - (NSObject<OS_dispatch_queue> *)completionDispatchQueue;
 - (<VUIMediaEntityAssetControllerDelegate> *)delegate;
 - (void)invalidate;
 - (NSObject<VUIMediaEntityIdentifier> *)mediaEntityIdentifier;
 - (VUIMediaEntityType *)mediaEntityType;
 - (void)pauseDownload;
-- (void)removeDownloadWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)resumeDownload;
 - (void)setCompletionDispatchQueue:(NSObject<OS_dispatch_queue> *)arg1;
 - (void)setDelegate:(id <VUIMediaEntityAssetControllerDelegate>)arg1;

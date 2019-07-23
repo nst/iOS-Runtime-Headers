@@ -36,7 +36,8 @@
 - (bool)isMultiPageForQuickLook;
 - (bool)isSharedReadOnly;
 - (bool)isShowcastAllowed;
-- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
+- (id)knDelegate;
+- (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct DocumentArchive {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)nameForResolverContainer:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -54,7 +55,7 @@
 - (id)resolverMatchingName:(id)arg1 contextContainerName:(id)arg2;
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
 - (id)resolversMatchingPrefix:(id)arg1;
-- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DocumentArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DocumentArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct DocumentArchive {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRecordingSyncMaintainer:(id)arg1;

@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface _UIPreviewInteractionHighlighter : NSObject {
+@interface _UIPreviewInteractionHighlighter : NSObject <UIInteractionEffect> {
     NSArray * _accessoryHighlightEffects;
+    bool  _active;
     bool  _animatesBackgroundEffects;
     bool  _animatesContentEffects;
     id /* block */  _backgroundEffectApplyBlock;
     bool  _cancelsInteractionWhenScrolling;
+    unsigned long long  _clickEffectPhase;
     UIControl * _compatibilityHighlightView;
     id /* block */  _completionBlock;
     NSUUID * _contentAnimationIdentifier;
@@ -31,9 +33,13 @@
 
 @property (nonatomic, copy) id /* block */ backgroundEffectApplyBlock;
 @property (nonatomic) bool cancelsInteractionWhenScrolling;
+@property (nonatomic) unsigned long long clickEffectPhase;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) UIView *customBackgroundEffectView;
 @property (nonatomic) UIView *customContainerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _UIInteractiveHighlightEffect *interactiveHighlightEffect;
 @property (nonatomic, copy) id /* block */ privateCompletionBlock;
 @property (nonatomic) bool shouldApplyBackgroundEffects;
@@ -41,6 +47,7 @@
 @property (nonatomic) bool shouldApplyEffectsOnProxyView;
 @property (nonatomic) bool shouldEndWithCancelAnimation;
 @property (nonatomic) bool shouldTransferViewOwnership;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
 - (void).cxx_destruct;
@@ -59,14 +66,17 @@
 - (void)_viewControllerPresentationDidEnd;
 - (id /* block */)backgroundEffectApplyBlock;
 - (bool)cancelsInteractionWhenScrolling;
+- (unsigned long long)clickEffectPhase;
 - (id /* block */)completionBlock;
 - (id)customBackgroundEffectView;
 - (id)customContainerView;
 - (id)initWithView:(id)arg1;
+- (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)interactiveHighlightEffect;
 - (id /* block */)privateCompletionBlock;
 - (void)setBackgroundEffectApplyBlock:(id /* block */)arg1;
 - (void)setCancelsInteractionWhenScrolling:(bool)arg1;
+- (void)setClickEffectPhase:(unsigned long long)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCustomBackgroundEffectView:(id)arg1;
 - (void)setCustomContainerView:(id)arg1;

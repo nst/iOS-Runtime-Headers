@@ -4,6 +4,7 @@
 
 @interface TTTextController : NSObject <TTTextStorageStyler> {
     double  _bodyStyleFontSizeThreshold;
+    bool  _disableSingleLineA;
     double  _headingStyleFontSizeThreshold;
     bool  _keepNSTextTableAttributes;
     TTZoomController * _zoomController;
@@ -12,6 +13,7 @@
 @property (nonatomic) double bodyStyleFontSizeThreshold;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableSingleLineA;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double headingStyleFontSizeThreshold;
 @property (nonatomic) bool keepNSTextTableAttributes;
@@ -41,6 +43,7 @@
 - (id)defaultListAttributesWithContentSizeCategory:(id)arg1;
 - (id)defaultParagraphStyle;
 - (id)defaultTypingAttributesForEmptyDocument;
+- (bool)disableSingleLineA;
 - (id)filterStyleAttributes:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)fixModelAttributesInTextStorage:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)fixedWidthAttributes;
@@ -58,6 +61,7 @@
 - (void)removeLetterpressInTextStorage:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)resetGuessedFontSizes;
 - (void)setBodyStyleFontSizeThreshold:(double)arg1;
+- (void)setDisableSingleLineA:(bool)arg1;
 - (void)setHeadingStyleFontSizeThreshold:(double)arg1;
 - (void)setKeepNSTextTableAttributes:(bool)arg1;
 - (void)setZoomController:(id)arg1;

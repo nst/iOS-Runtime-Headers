@@ -8,12 +8,14 @@
     bool  _fetchAllChanges;
     id /* block */  _fetchRecordZoneChangesCompletionBlock;
     NSMutableDictionary * _perItemErrors;
+    id /* block */  _perRecordChangeCompletionBlock;
     id /* block */  _recordChangedBlock;
     id /* block */  _recordWithIDWasDeletedBlock;
     id /* block */  _recordZoneChangeTokensUpdatedBlock;
     id /* block */  _recordZoneFetchCompletionBlock;
     NSArray * _recordZoneIDs;
     bool  _shouldFetchAssetContents;
+    bool  _shouldReportAllPerItemFailures;
     NSMutableDictionary * _statusByZoneID;
     NSMutableSet * _zoneIDsWithPendingArchivedRecords;
 }
@@ -27,6 +29,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *optionsByRecordZoneID;
 @property (nonatomic, retain) NSMutableDictionary *perItemErrors;
+@property (nonatomic, copy) id /* block */ perRecordChangeCompletionBlock;
 @property (nonatomic, copy) id /* block */ recordChangedBlock;
 @property (nonatomic, copy) id /* block */ recordWithIDWasDeletedBlock;
 @property (nonatomic, copy) id /* block */ recordZoneChangeTokensUpdatedBlock;
@@ -34,6 +37,7 @@
 @property (nonatomic, copy) NSArray *recordZoneIDs;
 @property (nonatomic, readonly) bool shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
 @property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic) bool shouldReportAllPerItemFailures;
 @property (nonatomic, retain) NSMutableDictionary *statusByZoneID;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableSet *zoneIDsWithPendingArchivedRecords;
@@ -57,7 +61,9 @@
 - (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;
 - (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
 - (id)optionsByRecordZoneID;
+- (id)partialFailureForItemsInZone:(id)arg1;
 - (id)perItemErrors;
+- (id /* block */)perRecordChangeCompletionBlock;
 - (void)performCKOperation;
 - (id /* block */)recordChangedBlock;
 - (id /* block */)recordWithIDWasDeletedBlock;
@@ -72,15 +78,18 @@
 - (void)setFetchRecordZoneChangesCompletionBlock:(id /* block */)arg1;
 - (void)setOptionsByRecordZoneID:(id)arg1;
 - (void)setPerItemErrors:(id)arg1;
+- (void)setPerRecordChangeCompletionBlock:(id /* block */)arg1;
 - (void)setRecordChangedBlock:(id /* block */)arg1;
 - (void)setRecordWithIDWasDeletedBlock:(id /* block */)arg1;
 - (void)setRecordZoneChangeTokensUpdatedBlock:(id /* block */)arg1;
 - (void)setRecordZoneFetchCompletionBlock:(id /* block */)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 - (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setShouldReportAllPerItemFailures:(bool)arg1;
 - (void)setStatusByZoneID:(id)arg1;
 - (void)setZoneIDsWithPendingArchivedRecords:(id)arg1;
 - (bool)shouldFetchAssetContents;
+- (bool)shouldReportAllPerItemFailures;
 - (id)statusByZoneID;
 - (id)zoneIDsWithPendingArchivedRecords;
 

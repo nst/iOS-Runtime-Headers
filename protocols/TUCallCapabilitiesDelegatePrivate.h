@@ -6,7 +6,6 @@
 @optional
 
 - (void)didAddCapabilitiesForSenderIdentityWithUUID:(NSUUID *)arg1;
-- (void)didChangeCarrierSpaceCapabilities;
 - (void)didChangeCloudCallingDevices;
 - (void)didChangeEmergencyCallbackMode;
 - (void)didChangeEmergencyCallbackPossible;

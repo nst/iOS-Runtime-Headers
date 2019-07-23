@@ -22,6 +22,7 @@
         double width; 
         double height; 
     }  _localPortraitAspectRatio;
+    NSUUID * _localSenderIdentityAccountUUID;
     NSUUID * _localSenderIdentityUUID;
     long long  _originatingUIType;
     bool  _performDialAssist;
@@ -59,6 +60,8 @@
 @property (nonatomic, copy) id /* block */ isEmergencyNumberOrIsWhitelistedBlock;
 @property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
 @property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
+@property (nonatomic, readonly, copy) TUSenderIdentity *localSenderIdentity;
+@property (nonatomic, copy) NSUUID *localSenderIdentityAccountUUID;
 @property (nonatomic, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic) long long originatingUIType;
 @property (nonatomic) bool performDialAssist;
@@ -67,12 +70,14 @@
 @property (nonatomic, copy) NSString *providerCustomIdentifier;
 @property (nonatomic, readonly) TUCallProviderManager *providerManager;
 @property (getter=isRedial, nonatomic) bool redial;
+@property (getter=isRTTAvailable, nonatomic, readonly) bool rttAvailable;
 @property (nonatomic, readonly) TUSenderIdentityClient *senderIdentityClient;
 @property (nonatomic, readonly) int service;
 @property (nonatomic) bool shouldSuppressInCallUI;
 @property (nonatomic) bool showUIPrompt;
 @property (getter=isSOS, setter=setSOS:, nonatomic) bool sos;
 @property (readonly) Class superclass;
+@property (getter=isTTYAvailable, nonatomic, readonly) bool ttyAvailable;
 @property (nonatomic) long long ttyType;
 @property (nonatomic, copy) NSString *uniqueProxyIdentifier;
 @property (nonatomic, readonly) bool useTTY;
@@ -143,8 +148,10 @@
 - (id /* block */)isEmergencyNumberOrIsWhitelistedBlock;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToDialRequest:(id)arg1;
+- (bool)isRTTAvailable;
 - (bool)isRedial;
 - (bool)isSOS;
+- (bool)isTTYAvailable;
 - (bool)isValid;
 - (bool)isVideo;
 - (id)isVoicemailURLQueryItem;
@@ -152,6 +159,9 @@
 - (id)legacyAddressBookIdentifierQueryItemName;
 - (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
 - (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (id)localSenderIdentity;
+- (id)localSenderIdentityAccountUUID;
+- (id)localSenderIdentityAccountUUIDURLQueryItem;
 - (id)localSenderIdentityUUID;
 - (id)localSenderIdentityUUIDURLQueryItem;
 - (id)noPromptURLQueryItem;
@@ -180,6 +190,7 @@
 - (void)setIsEmergencyNumberOrIsWhitelistedBlock:(id /* block */)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalSenderIdentityAccountUUID:(id)arg1;
 - (void)setLocalSenderIdentityUUID:(id)arg1;
 - (void)setOriginatingUIType:(long long)arg1;
 - (void)setPerformDialAssist:(bool)arg1;

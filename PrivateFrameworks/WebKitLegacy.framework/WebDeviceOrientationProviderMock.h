@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProvider> {
+@interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProvider, WebDeviceOrientationProviderMock> {
     WebDeviceOrientationProviderMockInternal * m_internal;
 }
 

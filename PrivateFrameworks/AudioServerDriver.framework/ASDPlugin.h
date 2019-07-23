@@ -20,7 +20,7 @@
     unsigned int  _pluginRefCount;
     unsigned int  _powerConnection;
     struct IONotificationPort { } * _powerNotificationPort;
-    NSObject<OS_dispatch_queue> * _powerNotificcationQueue;
+    NSObject<OS_dispatch_queue> * _powerNotificationQueue;
     unsigned int  _powerNotifier;
     unsigned int  _transportType;
 }

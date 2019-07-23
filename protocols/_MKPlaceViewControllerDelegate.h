@@ -37,6 +37,7 @@
 - (void)placeViewControllerDidSelectShowBrandCard:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectWriteAReview:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidUpdateHeight:(_MKPlaceViewController *)arg1;
+- (void)placeViewControllerLinkedServicesDidTapHeaderButton:(_MKPlaceViewController *)arg1;
 - (double)placeViewControllerPlaceCardHeaderTitleTrailingConstant:(_MKPlaceViewController *)arg1;
 - (GEOMapServiceTraits *)traitsForPlaceViewController:(_MKPlaceViewController *)arg1;
 

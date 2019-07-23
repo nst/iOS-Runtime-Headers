@@ -61,6 +61,7 @@
 - (void)setBackupDisabled:(bool)arg1 identifier:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 host:(struct __CFString { }*)arg4 container:(struct __CFString { }*)arg5;
 - (void)setCloudSyncEnabled:(bool)arg1 forKey:(struct __CFString { }*)arg2 appIdentifier:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4;
 - (void)setDaemonCacheEnabled:(bool)arg1 identifier:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 host:(struct __CFString { }*)arg4 container:(struct __CFString { }*)arg5;
+- (void)setFileProtectionClass:(int)arg1 identifier:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 host:(struct __CFString { }*)arg4 container:(struct __CFString { }*)arg5;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 appIdentifier:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4 configurationURL:(struct __CFURL { }*)arg5;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 identifier:(struct __CFString { }*)arg3 user:(struct __CFString { }*)arg4 host:(struct __CFString { }*)arg5 container:(struct __CFString { }*)arg6;
 - (void)setValuesForKeys:(struct __CFDictionary { }*)arg1 removingValuesForKeys:(struct __CFArray { }*)arg2 identifier:(struct __CFString { }*)arg3 user:(struct __CFString { }*)arg4 host:(struct __CFString { }*)arg5 container:(struct __CFString { }*)arg6;

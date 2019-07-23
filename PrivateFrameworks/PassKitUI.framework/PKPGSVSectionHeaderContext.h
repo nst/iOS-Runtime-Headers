@@ -9,7 +9,7 @@
         double bottom; 
         double right; 
     }  _headerMargins;
-    UIView * _headerView;
+    UIView<PKPGSVSectionHeaderView> * _headerView;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -21,7 +21,7 @@
 
 @property (nonatomic, readonly) double headerHeight;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } headerMargins;
-@property (nonatomic, readonly) UIView *headerView;
+@property (nonatomic, readonly) UIView<PKPGSVSectionHeaderView> *headerView;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } subheaderMargins;
 @property (nonatomic, readonly) UIView<PKPGSVSectionSubheaderView> *subheaderView;
 @property (nonatomic, readonly) double totalHeight;

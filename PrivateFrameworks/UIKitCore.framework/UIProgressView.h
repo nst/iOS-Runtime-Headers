@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIProgressView : UIView <DebugHierarchyObject_Fallback, NSCoding> {
+@interface UIProgressView : UIView <NSCoding> {
     long long  _barStyle;
     UIView * _contentView;
     double  _currentCornerRadius;
@@ -23,15 +23,11 @@
     UIImageView * _trackView;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSProgress *observedProgress;
 @property (nonatomic) float progress;
 @property (nonatomic, retain) UIImage *progressImage;
 @property (nonatomic, retain) UIColor *progressTintColor;
 @property (nonatomic) long long progressViewStyle;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *trackImage;
 @property (nonatomic, retain) UIColor *trackTintColor;
 
@@ -68,14 +64,6 @@
 - (bool)_shouldTintTrack;
 - (void)_updateCornerRadiusWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updateImages;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (long long)barStyle;
 - (void)encodeWithCoder:(id)arg1;

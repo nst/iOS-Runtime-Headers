@@ -11,6 +11,7 @@
 
 - (void).cxx_destruct;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (id)currentDestination;
 - (unsigned long long)desiredLocationProviderType;
 - (unsigned long long)desiredResourcePolicy;
 - (void)enterState;

@@ -4,7 +4,9 @@
 
 @interface TSKOperationPropertiesUtils : NSObject
 
-+ (void)initialize;
-+ (bool)isFirstOneWinProperty:(id)arg1;
++ (struct vector<TSKOperationPropertyId, std::__1::allocator<TSKOperationPropertyId> > { unsigned short *x1; unsigned short *x2; struct __compressed_pair<TSKOperationPropertyId *, std::__1::allocator<TSKOperationPropertyId> > { unsigned short *x_3_1_1; } x3; })propertyIdsForPropertyNames:(id)arg1 allowUnknown:(bool)arg2;
++ (id)propertyNameForPropertyId:(unsigned short)arg1;
++ (struct { unsigned short x1; bool x2; bool x3; unsigned short x4[6]; })propertyTypeWithId:(unsigned short)arg1;
++ (struct { unsigned short x1; bool x2; bool x3; unsigned short x4[6]; })propertyTypeWithName:(id)arg1;
 
 @end

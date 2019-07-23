@@ -2,10 +2,35 @@
    Image: /System/Library/PrivateFrameworks/BiometricKitUI.framework/BiometricKitUI
  */
 
-@interface BKUIPearlMovieLoopView : UIView
+@interface BKUIPearlMovieLoopView : UIView {
+    AVAsset * _assets;
+    UIImageView * _imageView;
+    AVPlayer * _player;
+    UIImage * _selfPortraite;
+}
+
+@property (nonatomic, retain) AVAsset *assets;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic, retain) UIImage *selfPortraite;
 
 + (Class)layerClass;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 player:(id)arg2;
+- (void).cxx_destruct;
+- (id)assets;
+- (void)hideAVPlayerReplaceWithSnapshot;
+- (id)imageView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 player:(id)arg2 asset:(id)arg3;
+- (id)player;
+- (id)playerLayer;
+- (bool)portrait;
+- (id)selfPortrait;
+- (id)selfPortraite;
+- (void)setAlphaHideOnZero:(double)arg1;
+- (void)setAssets:(id)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setPlayer:(id)arg1;
+- (void)setSelfPortraite:(id)arg1;
+- (void)unhideAVPlayerRemoveSnapshot;
 
 @end

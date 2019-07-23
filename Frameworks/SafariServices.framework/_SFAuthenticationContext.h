@@ -23,11 +23,11 @@
 }
 
 @property (nonatomic) <_SFAuthenticationContextDelegate> *delegate;
+@property (nonatomic, readonly) NSData *externalizedContext;
 @property (nonatomic, readonly) bool needsAuthentication;
 
 - (void).cxx_destruct;
 - (id)_authenticationContext;
-- (bool)_biometricProtectionEnabled;
 - (bool)_canInvalidateAuthentication;
 - (void)_cancelOngoingAndPendingAuthentications;
 - (void)_cancelOngoingAuthentication;
@@ -43,10 +43,10 @@
 - (void)applicationDidEnterBackground;
 - (void)applicationWillEnterForeground;
 - (void)authenticateForClient:(id)arg1 userInitiated:(bool)arg2 completion:(id /* block */)arg3;
-- (bool)authenticateWithNoPromptForClient:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;
+- (id)externalizedContext;
 - (id)init;
 - (void)invalidateClient:(id)arg1;
 - (bool)needsAuthentication;

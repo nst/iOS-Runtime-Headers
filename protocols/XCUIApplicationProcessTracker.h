@@ -7,6 +7,7 @@
 
 - (XCUIApplicationProcess *)applicationProcessWithPID:(int)arg1;
 - (XCUIApplicationProcess *)applicationProcessWithToken:(NSNumber *)arg1;
+- (XCUIApplication *)monitoredApplicationWithProcessIdentifier:(int)arg1;
 - (void)setApplicationProcess:(XCUIApplicationProcess *)arg1 forPID:(int)arg2;
 - (void)setApplicationProcess:(XCUIApplicationProcess *)arg1 forToken:(NSNumber *)arg2;
 

@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)cancelOutstandingOperations;
+- (void)clearPrewarmedFlag;
 - (id)common;
 - (id)delegate;
 - (void)fetchAdditionsHighWaterMarkWithPeer:(id)arg1 highPriority:(bool)arg2 completion:(id /* block */)arg3;

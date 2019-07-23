@@ -25,6 +25,7 @@
     int  _minSentRate;
     unsigned int  _numStatsDroppedDueToLinkID;
     unsigned int  _numStatsDroppedDueToStatsID;
+    unsigned int  _numStatsDroppedDueToTooLate;
     unsigned int  _numStatsProcessed;
     unsigned int  _numStatsTriggered;
     unsigned int  _previousTotalPacketReceived;
@@ -60,6 +61,7 @@
 - (void)handleRemoteSessionStats:(struct { unsigned char x1; double x2; unsigned char x3[1472]; int x4; int x5; struct { unsigned short x_6_1_1[12]; unsigned char x_6_1_2; bool x_6_1_3; unsigned short x_6_1_4; unsigned char x_6_1_5; bool x_6_1_6; bool x_6_1_7; unsigned long long x_6_1_8; bool x_6_1_9; bool x_6_1_10; bool x_6_1_11; unsigned short x_6_1_12; struct { unsigned short x_13_2_1; unsigned short x_13_2_2; unsigned short x_13_2_3; unsigned short x_13_2_4; unsigned short x_13_2_5; } x_6_1_13; bool x_6_1_14; } x6; }*)arg1;
 - (void)healthPrintForServerStats;
 - (id)initWithConnectionManager:(id)arg1 uplinkStatsCollector:(id)arg2 downlinkStatsCollector:(id)arg3 reportingAgent:(struct opaqueRTCReporting { }*)arg4 transportSessionID:(unsigned int)arg5 streamID:(unsigned short)arg6 mediaQueue:(struct tagVCMediaQueue { }*)arg7;
+- (bool)isRemoteSessionStatsTooLateWithStatsId:(unsigned short)arg1;
 - (void)periodicTask:(void*)arg1;
 - (void)registerPeriodicTask;
 - (id)reportingAgent;

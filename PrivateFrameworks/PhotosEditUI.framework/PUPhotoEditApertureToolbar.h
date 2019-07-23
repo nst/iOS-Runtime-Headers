@@ -3,11 +3,12 @@
  */
 
 @interface PUPhotoEditApertureToolbar : UIViewController <PUApertureSliderDelegate, PUPhotoEditLayoutDynamicAdaptable> {
-    UIView * _backdropBackgroundView;
+    _UIBackdropView * _backdropBackgroundView;
+    NSString * _backdropViewGroupName;
     struct CGSize { 
         double width; 
         double height; 
-    }  _cachedContainerSize;
+    }  _cachedSize;
     NSMutableArray * _constraints;
     UIView * _containerView;
     <PUPhotoEditApertureToolbarDelegate> * _delegate;
@@ -15,12 +16,14 @@
     bool  _isResizing;
     long long  _layoutOrientation;
     PUApertureSlider * _slider;
+    double  _sliderLength;
     UIView * _solidBackgroundView;
     bool  _useTranslucentBackground;
     UILabel * _valueLabel;
 }
 
 @property (nonatomic, readonly) double apertureValue;
+@property (nonatomic, copy) NSString *backdropViewGroupName;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotoEditApertureToolbarDelegate> *delegate;
 @property (nonatomic, retain) UILabel *depthEffectLabel;
@@ -33,6 +36,7 @@
 @property (nonatomic, readonly) double originalApertureValue;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } preferredPreviewViewInsets;
 @property (nonatomic, retain) PUApertureSlider *slider;
+@property (nonatomic) double sliderLength;
 @property (readonly) Class superclass;
 @property (nonatomic) bool useTranslucentBackground;
 @property (nonatomic, retain) UILabel *valueLabel;
@@ -41,6 +45,7 @@
 - (void)_updateBackgroundAnimated:(bool)arg1;
 - (void)apertureSliderDidChangeApertureValue:(id)arg1;
 - (double)apertureValue;
+- (id)backdropViewGroupName;
 - (id)delegate;
 - (id)depthEffectLabel;
 - (bool)enabled;
@@ -52,6 +57,7 @@
 - (double)originalApertureValue;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
 - (void)setApertureValueClosestTo:(double)arg1;
+- (void)setBackdropViewGroupName:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDepthEffectLabel:(id)arg1;
 - (void)setEnabled:(bool)arg1;
@@ -61,10 +67,12 @@
 - (void)setMinimumApertureValue:(double)arg1;
 - (void)setOriginalApertureValueClosestTo:(double)arg1;
 - (void)setSlider:(id)arg1;
+- (void)setSliderLength:(double)arg1;
 - (void)setUseTranslucentBackground:(bool)arg1;
 - (void)setUseTranslucentBackground:(bool)arg1 animated:(bool)arg2;
 - (void)setValueLabel:(id)arg1;
 - (id)slider;
+- (double)sliderLength;
 - (void)updateViewConstraints;
 - (bool)useTranslucentBackground;
 - (id)valueLabel;

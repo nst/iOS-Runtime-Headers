@@ -4,7 +4,9 @@
 
 @interface SFDeviceSetupSessioniOS : NSObject {
     bool  _activateCalled;
+    unsigned int  _appNextID;
     bool  _buddyComplete;
+    bool  _buddyConfigured;
     BYDeviceSetupSourceSession * _buddySession;
     CDPContext * _cdpContext;
     CDPStateController * _cdpController;
@@ -12,6 +14,7 @@
     bool  _configRequestSent;
     bool  _configResponseReceived;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    RPFileTransferSession * _fileTransferSessionTemplate;
     id /* block */  _interruptionHandler;
     bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
@@ -26,11 +29,16 @@
     id /* block */  _progressHandler;
     id /* block */  _promptForPINHandler;
     id /* block */  _receivedObjectHandler;
+    NSData * _resumeAuthTag;
+    SFDeviceDiscovery * _resumeDiscovery;
+    NSString * _resumePassword;
+    int  _resumeState;
     SFSession * _sfSession;
     bool  _sfSessionActivated;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, retain) RPFileTransferSession *fileTransferSessionTemplate;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic) unsigned int pairFlags;
@@ -44,10 +52,15 @@
 - (void)_completedWithError:(id)arg1;
 - (void)_handleBuddyProgress:(id)arg1;
 - (void)_handleSetupActionRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (void)_handleSetupActionSoftwareUpdate;
+- (void)_handleSetupPeerSuspended;
+- (void)_handleSetupResumeFoundDevice:(id)arg1;
+- (void)_receivedConfigResponse:(id)arg1;
 - (void)_receivedObject:(id)arg1 flags:(unsigned int)arg2;
 - (void)_run;
 - (int)_runCoreCDPSetup;
 - (int)_runPreAuthPairSetup;
+- (int)_runResume;
 - (void)_runSFSessionActivated;
 - (void)_runSFSessionStart;
 - (void)_sendConfigInfo;
@@ -56,6 +69,7 @@
 - (void)activate;
 - (void)dealloc;
 - (id)dispatchQueue;
+- (id)fileTransferSessionTemplate;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
@@ -65,7 +79,9 @@
 - (id /* block */)progressHandler;
 - (id /* block */)promptForPINHandler;
 - (id /* block */)receivedObjectHandler;
+- (void)sendAppEvent:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setFileTransferSessionTemplate:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setPairFlags:(unsigned int)arg1;

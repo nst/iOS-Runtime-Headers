@@ -14,7 +14,7 @@
 + (id)comparatorWithFilteringRules:(id)arg1 rankingRules:(id)arg2 model:(id)arg3;
 
 - (void).cxx_destruct;
-- (float)_relevanceForElement:(id)arg1 actionProbability:(float*)arg2;
+- (float)_relevanceForElement:(id)arg1 actionProbability:(float*)arg2 appActionProbability:(float*)arg3;
 - (long long)compareElement:(id)arg1 toElement:(id)arg2 level:(unsigned long long)arg3;
 - (unsigned long long)comparisonLevels;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

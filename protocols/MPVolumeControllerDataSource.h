@@ -24,6 +24,10 @@
 
 @optional
 
+- (void)beginDecreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
+- (void)endDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
 - (void)reloadWarning;
 
 @end

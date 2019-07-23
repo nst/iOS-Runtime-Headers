@@ -6,14 +6,18 @@
     NSString * _localizedBlankGroupName;
     NSString * _localizedErrorGroupName;
     NSString * _localizedFalseGroupName;
+    NSString * _localizedFalseGroupNameForColumn;
     NSString * _localizedTrueGroupName;
+    NSString * _localizedTrueGroupNameForColumn;
     NSMutableArray * _quotedComponents;
 }
 
 @property (nonatomic, retain) NSString *localizedBlankGroupName;
 @property (nonatomic, retain) NSString *localizedErrorGroupName;
 @property (nonatomic, retain) NSString *localizedFalseGroupName;
+@property (nonatomic, retain) NSString *localizedFalseGroupNameForColumn;
 @property (nonatomic, retain) NSString *localizedTrueGroupName;
+@property (nonatomic, retain) NSString *localizedTrueGroupNameForColumn;
 
 + (bool)isColon:(id)arg1;
 + (bool)isDollar:(id)arg1;
@@ -31,12 +35,16 @@
 - (id)localizedBlankGroupName;
 - (id)localizedErrorGroupName;
 - (id)localizedFalseGroupName;
+- (id)localizedFalseGroupNameForColumn;
 - (id)localizedTrueGroupName;
+- (id)localizedTrueGroupNameForColumn;
 - (unsigned long long)numComponents;
 - (void)setLocalizedBlankGroupName:(id)arg1;
 - (void)setLocalizedErrorGroupName:(id)arg1;
 - (void)setLocalizedFalseGroupName:(id)arg1;
+- (void)setLocalizedFalseGroupNameForColumn:(id)arg1;
 - (void)setLocalizedTrueGroupName:(id)arg1;
+- (void)setLocalizedTrueGroupNameForColumn:(id)arg1;
 - (void)splitRefPath:(id)arg1;
 
 @end

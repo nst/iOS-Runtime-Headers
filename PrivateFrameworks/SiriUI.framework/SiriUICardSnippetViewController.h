@@ -36,6 +36,7 @@
 - (id)_cardViewController;
 - (void)_forwardProgressEvent:(unsigned long long)arg1 toCardViewController:(id)arg2 animated:(bool)arg3;
 - (void)_forwardProgressEventToCardViewController:(unsigned long long)arg1;
+- (void)_logReferencedCommands;
 - (id)_metricsContextOfEventsForCard:(id)arg1;
 - (id)_metricsContextOfEventsForCardSection:(id)arg1 inCard:(id)arg2;
 - (void)_removeCardViewControllerFromParentViewController:(id)arg1;
@@ -44,6 +45,7 @@
 - (void)_updateContentSizeAndNotifyDelegateIfNecessary:(bool)arg1;
 - (void)_validateCardForParsecFeedbackDelivery:(id)arg1 validHandler:(id /* block */)arg2;
 - (void)_validateCardSectionForParsecFeedbackDelivery:(id)arg1 validHandler:(id /* block */)arg2;
+- (double)boundingWidthForPresentation:(id)arg1;
 - (bool)cardLoader:(id)arg1 loadCard:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (bool)cardLoader:(id)arg1 shouldLoadCard:(id)arg2;
 - (void)cardLoadingMonitor:(id)arg1 didReceiveCardSnippet:(id)arg2;
@@ -53,6 +55,7 @@
 - (void)cardSnippetViewSashWasTapped:(id)arg1;
 - (struct CGSize { double x1; double x2; })cardViewController:(id)arg1 boundingSizeForCardSectionViewController:(id)arg2;
 - (void)cardViewController:(id)arg1 requestsHandlingOfIntent:(id)arg2;
+- (void)cardViewController:(id)arg1 willDismissViewController:(id)arg2;
 - (void)cardViewControllerBoundsDidChange:(id)arg1;
 - (id)cardViewControllerDelegate;
 - (void)cardViewControllerDidLoad:(id)arg1;
@@ -89,6 +92,7 @@
 - (Class)transparentHeaderViewClass;
 - (bool)usePlatterStyle;
 - (void)userDidEngageCardSection:(id)arg1 withEngagementFeedback:(id)arg2;
+- (void)userDidReportFeedback:(id)arg1 fromCardSection:(id)arg2;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)wasAddedToTranscript;

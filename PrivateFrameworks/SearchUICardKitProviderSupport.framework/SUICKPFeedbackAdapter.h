@@ -15,10 +15,12 @@
 - (void).cxx_destruct;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(bool)arg2;
 - (void)didEngageCardSection:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (id)feedbackDelegate;
 - (id)feedbackListener;
 - (void)presentViewController:(id)arg1;
 - (void)setFeedbackDelegate:(id)arg1;
 - (bool)shouldHandleCardSectionEngagement:(id)arg1;
+- (void)willDismissViewController:(id)arg1;
 
 @end

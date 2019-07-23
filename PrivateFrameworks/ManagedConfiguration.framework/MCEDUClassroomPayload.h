@@ -4,8 +4,6 @@
 
 @interface MCEDUClassroomPayload : MCPayload {
     CRKEDUPayload * _crk_payload;
-    NSData * _resourcePayloadCertificatePersistentID;
-    NSString * _resourcePayloadCertificateUUID;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *configuration;

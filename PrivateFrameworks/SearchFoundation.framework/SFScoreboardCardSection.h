@@ -54,6 +54,7 @@
 @property (nonatomic, retain) SFSportsTeam *team2;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 

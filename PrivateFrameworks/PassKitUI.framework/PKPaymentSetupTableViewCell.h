@@ -6,10 +6,12 @@
     UILabel * _betaLabel;
     bool  _showBetaBadge;
     UIImageView * _thumbnailImageView;
+    bool  _thumbnailImageViewHasBorder;
 }
 
 @property (nonatomic) bool showBetaBadge;
 @property (nonatomic, readonly) UIImageView *thumbnailImageView;
+@property (nonatomic) bool thumbnailImageViewHasBorder;
 
 + (struct CGSize { double x1; double x2; })defaultImageViewSize;
 
@@ -18,8 +20,11 @@
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setShowBetaBadge:(bool)arg1;
+- (void)setThumbnailImageHasBorder:(bool)arg1;
+- (void)setThumbnailImageViewHasBorder:(bool)arg1;
 - (bool)showBetaBadge;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)thumbnailImageView;
+- (bool)thumbnailImageViewHasBorder;
 
 @end

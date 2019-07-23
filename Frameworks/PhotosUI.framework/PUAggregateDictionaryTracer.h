@@ -8,6 +8,8 @@
     NSDate * __lastPlayStartDate;
     <PUDisplayAsset> * __lastPlayedAsset;
     <PUDisplayAsset> * __lastViewedAsset;
+    <PUDisplayAsset> * __lastViewedAssetPerOrigin;
+    long long  __oneUpPresentationOrigin;
     <PUDisplayAsset> * __streamedVideo;
     double  __streamedVideoBeginTime;
     bool  __streamedVideoDidStartPlaying;
@@ -19,6 +21,8 @@
 @property (setter=_setLastPlayStartDate:, nonatomic, retain) NSDate *_lastPlayStartDate;
 @property (setter=_setLastPlayedAsset:, nonatomic) <PUDisplayAsset> *_lastPlayedAsset;
 @property (setter=_setLastViewedAsset:, nonatomic) <PUDisplayAsset> *_lastViewedAsset;
+@property (nonatomic, retain) <PUDisplayAsset> *_lastViewedAssetPerOrigin;
+@property (nonatomic) long long _oneUpPresentationOrigin;
 @property (setter=_setStreamedVideo:, nonatomic) <PUDisplayAsset> *_streamedVideo;
 @property (setter=_setStreamedVideoBeginTime:, nonatomic) double _streamedVideoBeginTime;
 @property (setter=_setStreamedVideoDidStartPlaying:, nonatomic) bool _streamedVideoDidStartPlaying;
@@ -34,6 +38,8 @@
 - (id)_lastPlayStartDate;
 - (id)_lastPlayedAsset;
 - (id)_lastViewedAsset;
+- (id)_lastViewedAssetPerOrigin;
+- (long long)_oneUpPresentationOrigin;
 - (void)_setAssetPlayCount:(long long)arg1;
 - (void)_setLastPlayStartDate:(id)arg1;
 - (void)_setLastPlayedAsset:(id)arg1;
@@ -48,11 +54,14 @@
 - (long long)_streamedVideoStallCount;
 - (id)init;
 - (void)invalidateContext:(id)arg1;
+- (void)set_lastViewedAssetPerOrigin:(id)arg1;
+- (void)set_oneUpPresentationOrigin:(long long)arg1;
 - (void)streamedVideoPlaybackBegan:(id)arg1;
 - (void)streamedVideoPlaybackEnded;
 - (void)streamedVideoPlaybackStalled:(id)arg1;
 - (void)streamedVideoPlaybackStartedActuallyPlaying:(id)arg1;
 - (void)userBrowsedOneUpFor:(double)arg1;
+- (void)userDidEnterOneUpFromOrigin:(long long)arg1;
 - (void)userDidPlayAssetInOneUp:(id)arg1;
 - (void)userStartedViewingCollection:(id)arg1 withListViewItemSelectionTrackerKey:(struct __CFString { }*)arg2;
 - (void)userStartedViewingCurrentAssetOfBrowsingViewModel:(id)arg1 inContext:(id)arg2;

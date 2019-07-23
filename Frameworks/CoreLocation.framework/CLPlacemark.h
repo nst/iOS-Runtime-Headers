@@ -74,6 +74,7 @@
 
 + (id)placemarkWithLocation:(id)arg1 name:(id)arg2 postalAddress:(id)arg3;
 
+- (id)_intents_indexingRepresentation;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (id)initIntentPlacemarkWithLocation:(id)arg1 addressDictionary:(id)arg2;
 

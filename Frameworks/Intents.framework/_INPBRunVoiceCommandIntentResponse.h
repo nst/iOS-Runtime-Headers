@@ -18,6 +18,7 @@
     NSString * _localizedAppName;
     _INPBDictionary * _parameters;
     NSString * _responseTemplate;
+    NSArray * _steps;
     int  _toggleState;
     _INPBArchivedObject * _underlyingIntent;
     _INPBArchivedObject * _underlyingIntentResponse;
@@ -49,6 +50,8 @@
 @property (nonatomic, copy) NSString *localizedAppName;
 @property (nonatomic, retain) _INPBDictionary *parameters;
 @property (nonatomic, copy) NSString *responseTemplate;
+@property (nonatomic, copy) NSArray *steps;
+@property (nonatomic, readonly) unsigned long long stepsCount;
 @property (readonly) Class superclass;
 @property (nonatomic) int toggleState;
 @property (nonatomic, retain) _INPBArchivedObject *underlyingIntent;
@@ -56,10 +59,14 @@
 @property (nonatomic, copy) NSString *underlyingIntentTitle;
 @property (nonatomic, copy) NSString *verb;
 
++ (Class)stepType;
+
 - (void).cxx_destruct;
 - (int)StringAsIntentCategory:(id)arg1;
 - (int)StringAsToggleState:(id)arg1;
+- (void)addStep:(id)arg1;
 - (id)appBundleId;
+- (void)clearSteps;
 - (bool)continueRunning;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)customResponsesDisabled;
@@ -99,11 +106,15 @@
 - (void)setLocalizedAppName:(id)arg1;
 - (void)setParameters:(id)arg1;
 - (void)setResponseTemplate:(id)arg1;
+- (void)setSteps:(id)arg1;
 - (void)setToggleState:(int)arg1;
 - (void)setUnderlyingIntent:(id)arg1;
 - (void)setUnderlyingIntentResponse:(id)arg1;
 - (void)setUnderlyingIntentTitle:(id)arg1;
 - (void)setVerb:(id)arg1;
+- (id)stepAtIndex:(unsigned long long)arg1;
+- (id)steps;
+- (unsigned long long)stepsCount;
 - (int)toggleState;
 - (id)toggleStateAsString:(int)arg1;
 - (id)underlyingIntent;

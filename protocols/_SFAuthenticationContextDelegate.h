@@ -5,7 +5,6 @@
 
 @optional
 
-- (bool)authenticationEnabledForContext:(_SFAuthenticationContext *)arg1;
 - (bool)contextRequiresSessionBasedAuthentication:(_SFAuthenticationContext *)arg1;
 - (bool)contextShouldAllowMultipleBiometricFailures:(_SFAuthenticationContext *)arg1;
 - (bool)contextShouldAllowPasscodeFallback:(_SFAuthenticationContext *)arg1;

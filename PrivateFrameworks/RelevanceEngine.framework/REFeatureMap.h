@@ -4,8 +4,8 @@
 
 @interface REFeatureMap : NSObject <MLFeatureProvider, NSCopying, REIndentedDescription> {
     unsigned long long  _hash;
-    NSDictionary * _indicies;
-    NSPointerArray * _values;
+    NSDictionary * _indices;
+    unsigned long long * _values;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,9 @@
 + (id)defaultFeatureName;
 
 - (void).cxx_destruct;
+- (unsigned long long)_count;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndent:(unsigned long long)arg1;
 - (void)enumerateBoolFeaturesUsingBlock:(id /* block */)arg1;
@@ -35,6 +37,7 @@
 - (unsigned long long)hash;
 - (id)initWithFeatureMap:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (void)removeAllValues;
 - (void)removeValueForFeature:(id)arg1;
 - (void)setValue:(id)arg1 forFeature:(id)arg2;
 - (id)valueForFeature:(id)arg1;

@@ -71,6 +71,7 @@
 - (void)clearFromStage;
 - (void)clearVersionSignatures:(unsigned long long)arg1 isPackage:(bool)arg2;
 - (id)conflictLoserState;
+- (bool)contentRecordNeedsForceAllFieldsWhenDeadInServerTruth:(bool)arg1;
 - (id)contentsRecordID;
 - (id)currentVersion;
 - (id)descriptionWithContext:(id)arg1;

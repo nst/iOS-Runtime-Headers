@@ -17,6 +17,7 @@
 + (id)logDirectoryURL;
 + (id)matchingNameExpression;
 + (id)memoriesAndRelatedDiagnosticsOutputURL;
++ (bool)shouldSuppressRadarUserNotificationWithMessage:(id)arg1 radarTitle:(id)arg2;
 + (void)tapToRadarWithTitle:(id)arg1 description:(id)arg2;
 
 @end

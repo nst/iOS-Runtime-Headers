@@ -13,6 +13,7 @@
     bool  _containsActiveElement;
     NSNumber * _containsAtLeastOneSecureTextField;
     NSArray * _controls;
+    bool  _eligibleForAutomaticLogin;
     NSString * _firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
     bool  _isSearchForm;
     NSString * _oldPasswordElementUniqueID;
@@ -39,6 +40,7 @@
 @property (nonatomic, readonly) bool containsAtLeastOneSecureTextField;
 @property (nonatomic, readonly, copy) NSArray *controls;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
+@property (getter=isEligibleForAutomaticLogin, nonatomic, readonly) bool eligibleForAutomaticLogin;
 @property (nonatomic, readonly, copy) NSString *firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
 @property (nonatomic, readonly) bool isSearchForm;
 @property (nonatomic, readonly, copy) NSString *oldPasswordElementUniqueID;
@@ -74,6 +76,7 @@
 - (bool)isBestForCredentialPreFill;
 - (bool)isBestForPageLevelAutoFill;
 - (bool)isBestForStreamlinedLogin;
+- (bool)isEligibleForAutomaticLogin;
 - (bool)isEqual:(id)arg1;
 - (bool)isSearchForm;
 - (bool)isVisible;

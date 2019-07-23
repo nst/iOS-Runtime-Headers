@@ -39,6 +39,7 @@
 - (void)setMetadata:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)topCaptionForStyle:(long long)arg1;
+- (id)unspecializedPresentationProperties;
 - (id)videoForStyle:(long long)arg1;
 
 @end

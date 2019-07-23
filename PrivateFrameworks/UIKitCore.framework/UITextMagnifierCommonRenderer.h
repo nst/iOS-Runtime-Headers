@@ -13,13 +13,8 @@
     NSDictionary * m_offsets;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundColourIfNecessary;
 - (void)didMoveToSuperview;
 - (void)loadImages;

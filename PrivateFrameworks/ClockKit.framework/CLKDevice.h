@@ -7,6 +7,7 @@
     bool  _isBridgeActive;
     bool  _isExplorer;
     bool  _isLuxo;
+    bool  _limitedToPreGlory;
     unsigned long long  _materialType;
     NRDevice * _nrDevice;
     struct CGRect { 
@@ -22,19 +23,19 @@
     double  _screenCornerRadius;
     double  _screenScale;
     unsigned long long  _sizeClass;
-    bool  _supportsNewInGallery;
 }
 
-@property (nonatomic, readonly) NRDevice *_rawNRDevice;
 @property (nonatomic, readonly) bool canCustomize;
 @property (nonatomic) unsigned long long collectionType;
 @property (nonatomic) bool isBridgeActive;
 @property (nonatomic, readonly) bool isBridgeActive;
+@property (nonatomic, readonly) bool isEcgPhoneComplicationEnabled;
 @property (nonatomic) bool isExplorer;
 @property (nonatomic, readonly) bool isLocked;
 @property (nonatomic) bool isLuxo;
 @property (nonatomic, readonly) bool isPaired;
 @property (nonatomic, readonly) bool isRadioPhoneComplicationEnabled;
+@property (nonatomic, readonly) bool limitedToPreGlory;
 @property (nonatomic) unsigned long long materialType;
 @property (nonatomic, retain) NRDevice *nrDevice;
 @property (nonatomic, readonly) NSUUID *nrDeviceUUID;
@@ -43,7 +44,6 @@
 @property (nonatomic) double screenCornerRadius;
 @property (nonatomic) double screenScale;
 @property (nonatomic) unsigned long long sizeClass;
-@property (nonatomic, readonly) bool supportsNewInGallery;
 @property (nonatomic, readonly) bool unlockedSinceBoot;
 
 // Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
@@ -60,15 +60,14 @@
 
 - (void).cxx_destruct;
 - (void)_loadDeviceInfo;
-- (id)_rawNRDevice;
 - (unsigned long long)collectionType;
-- (id)init;
 - (id)initWithNRDevice:(id)arg1;
 - (bool)isBridgeActive;
 - (bool)isEqual:(id)arg1;
 - (bool)isExplorer;
 - (bool)isLocked;
 - (bool)isLuxo;
+- (bool)limitedToPreGlory;
 - (unsigned long long)materialType;
 - (id)nrDevice;
 - (id)nrDeviceUUID;
@@ -87,7 +86,6 @@
 - (void)setScreenScale:(double)arg1;
 - (void)setSizeClass:(unsigned long long)arg1;
 - (unsigned long long)sizeClass;
-- (bool)supportsNewInGallery;
 - (bool)unlockedSinceBoot;
 
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
@@ -95,6 +93,7 @@
 + (void)setBridgeActiveNRDevice:(id)arg1;
 
 - (bool)canCustomize;
+- (bool)isEcgPhoneComplicationEnabled;
 - (bool)isPaired;
 - (bool)isRadioPhoneComplicationEnabled;
 

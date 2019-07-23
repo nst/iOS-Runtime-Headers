@@ -21,6 +21,7 @@
 + (id)makeClosedCaptionLayer;
 + (id)playerLayerWithPlayer:(id)arg1;
 
+- (long long)_activeMode;
 - (void)_addAnimationsForClosedCaptionLayer:(id)arg1 gravity:(id)arg2 forKey:(id)arg3;
 - (void)_addAnimationsForMaskLayer:(id)arg1 forKey:(id)arg2;
 - (void)_addAnimationsForPIPPlaceholderLayer:(id)arg1 forKey:(id)arg2;
@@ -29,22 +30,28 @@
 - (void)_addPositionAnimationToLayer:(id)arg1 usingAnimation:(id)arg2 forKey:(id)arg3;
 - (void)_addSublayerTransformAnimationToLayer:(id)arg1 fromTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2 usingAnimation:(id)arg3 gravity:(id)arg4 presentationSize:(struct CGSize { double x1; double x2; })arg5 forKey:(id)arg6;
 - (void)_applyCurrentItemPresentationSizeChangeAndForceUpdate:(bool)arg1;
-- (void)_associateWithPIPLayer:(id)arg1;
-- (id)_associatedPIPLayer;
+- (void)_associateWithLayer:(id)arg1 forMode:(long long)arg2;
+- (id)_associatedRemoteModeLayer;
 - (id)_closedCaptionLayer;
 - (void)_configurePlayerWhenEnteringPIP;
 - (void)_configurePlayerWhenLeavingPIP;
-- (void)_disassociateWithPIPLayer;
+- (void)_disassociateWithLayerForMode:(long long)arg1;
 - (struct CGSize { double x1; double x2; })_displaySize;
+- (void)_enterPIPModeRedirectingVideoToLayer:(id)arg1;
+- (void)_enterSecondScreenModeRedirectingVideoToLayer:(id)arg1;
 - (void)_forBoundsAnimations:(id)arg1 applyBlock:(id /* block */)arg2;
 - (void)_forceLayout;
 - (void)_getMaskLayer:(id*)arg1 videoLayer:(id*)arg2 subtitleLayer:(id*)arg3 closedCaptionLayer:(id*)arg4;
+- (bool)_isConnectedToSecondScreen;
+- (void)_leavePIPModeForLayer:(id)arg1;
+- (void)_leaveSecondScreenModeForLayer:(id)arg1;
 - (id)_maskLayer;
 - (void)_mergeClientLayersIntoMaskLayer:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
 - (struct CGSize { double x1; double x2; })_playerCurrentItemPresentationSize;
 - (bool)_preventsChangesToSublayerHierarchy;
 - (void)_restoreClientLayers:(id)arg1 intoMaskLayer:(id)arg2;
+- (void)_setIsConnectedToSecondScreen:(bool)arg1;
 - (void)_setPreventsChangesToSublayerHierarchy:(bool)arg1;
 - (void)_setSublayersForPIP:(id)arg1;
 - (void)_setSublayersPreventChangesToSublayerHierarchy:(bool)arg1;
@@ -98,7 +105,10 @@
 - (void)setPlayer:(id)arg1;
 - (void)setSublayers:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
+- (void)startRedirectingVideoToLayer:(id)arg1 forMode:(long long)arg2;
+- (void)stopRedirectingVideoToLayer:(id)arg1;
 - (id)videoGravity;
+- (id)videoPerformanceMetrics;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
 
 @end

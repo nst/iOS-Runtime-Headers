@@ -25,6 +25,7 @@
 - (void)contactsWithPhone:(id)arg1 callback:(id /* block */)arg2;
 - (void)contentsWithCallback:(id /* block */)arg1;
 - (void)dealloc;
+- (void)duetInteractionCountForHandles:(id)arg1 sinceDate:(id)arg2 callback:(id /* block */)arg3;
 - (void)favoritesWithContacts:(id)arg1 callback:(id /* block */)arg2;
 - (void)getEventsWithProminentFeature:(id)arg1 callback:(id /* block */)arg2;
 - (id)init;

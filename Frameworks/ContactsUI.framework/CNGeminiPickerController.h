@@ -3,14 +3,12 @@
  */
 
 @interface CNGeminiPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate> {
-    NSString * _contactName;
     NSMutableArray * _geminiChannels;
     CNGeminiChannel * _preferredGeminiChannel;
     NSIndexPath * _selectedIndexPath;
     UITableViewController * _tableViewController;
 }
 
-@property (nonatomic, retain) NSString *contactName;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNPickerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -23,19 +21,19 @@
 
 - (void).cxx_destruct;
 - (void)cancelPicker:(id)arg1;
-- (id)contactName;
 - (void)didPickItem;
 - (void)donePicker:(id)arg1;
 - (id)geminiChannelForIndexPath:(id)arg1;
 - (id)geminiChannels;
 - (id)indexPathForGeminiChannel:(id)arg1;
-- (id)initWithGeminiItem:(id)arg1;
+- (id)initWithGeminiResult:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)preferredGeminiChannel;
 - (void)prepareCell:(id)arg1 atIndexPath:(id)arg2;
 - (id)selectedIndexPath;
-- (void)setContactName:(id)arg1;
 - (void)setGeminiChannels:(id)arg1;
+- (void)setGeminiResult:(id)arg1;
+- (void)setGeminiResult:(id)arg1 reload:(bool)arg2;
 - (void)setPreferredGeminiChannel:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
 - (void)setTableViewController:(id)arg1;

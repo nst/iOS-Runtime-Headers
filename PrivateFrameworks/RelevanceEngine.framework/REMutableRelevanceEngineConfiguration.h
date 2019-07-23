@@ -11,6 +11,7 @@
 @property (nonatomic) bool ignoreDeviceLockState;
 @property (nonatomic, retain) RELocationManager *locationManager;
 @property (nonatomic, copy) NSURL *modelFileURL;
+@property (nonatomic) unsigned long long modelStorageBehavior;
 @property (nonatomic, copy) NSString *preferenceDomain;
 @property (nonatomic, copy) REFeatureSet *primaryFeatures;
 @property (nonatomic) unsigned long long trainingBehavior;
@@ -36,6 +37,7 @@
 - (void)setIgnoreDeviceLockState:(bool)arg1;
 - (void)setLocationManager:(id)arg1;
 - (void)setModelFileURL:(id)arg1;
+- (void)setModelStorageBehavior:(unsigned long long)arg1;
 - (void)setPreferenceDomain:(id)arg1;
 - (void)setPrimaryFeatures:(id)arg1;
 - (void)setTrainingBehavior:(unsigned long long)arg1;

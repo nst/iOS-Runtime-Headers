@@ -151,8 +151,6 @@
 @property (nonatomic, retain) UISelectionFeedbackGenerator *slideBehaviour;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (Class)_subclassForScreenTraits:(id)arg1;
 + (void)accessibilitySensitivityChanged;
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
@@ -180,12 +178,9 @@
 - (bool)_shouldAttemptToAddSupplementaryControlKeys;
 - (bool)_shouldInheritScreenScaleAsContentScaleFactor;
 - (bool)_stringContainsCurrencyCharacters:(id)arg1;
+- (void)_swapGlobeAndMoreKeysIfNecessary;
 - (void)_updateSupplementaryKeys;
 - (id)_variantsByAppendingDualStringKey:(id)arg1 toVariants:(id)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)accessibilitySensitivityChanged;
 - (id)activationIndicatorView;
 - (id)activeKey;
@@ -237,6 +232,7 @@
 - (void)deactivateActiveKey;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
+- (void)dealloc;
 - (id)defaultKeyplaneForKeyplane:(id)arg1;
 - (id)defaultNameForKeyplaneName:(id)arg1;
 - (long long)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
@@ -319,6 +315,7 @@
 - (bool)isAlphabeticPlane;
 - (bool)isDeadkeyInput:(id)arg1;
 - (bool)isEmojiKeyplane;
+- (bool)isKeyScriptSwitchKey:(id)arg1;
 - (bool)isLongPressedKey:(id)arg1;
 - (bool)isMultitapKey:(id)arg1;
 - (bool)isRotating;
@@ -487,6 +484,7 @@
 - (bool)supportsEmoji;
 - (void)swipeDetected:(id)arg1;
 - (id)synthesizeTouchUpEventForKey:(id)arg1;
+- (unsigned long long)targetEdgesForScreenGestureRecognition;
 - (void)tearDownSplitTransitionView;
 - (unsigned long long)textEditingKeyMask;
 - (void)touchCancelled:(id)arg1 executionContext:(id)arg2;

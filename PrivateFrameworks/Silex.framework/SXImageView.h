@@ -58,7 +58,7 @@
 @property (nonatomic, readonly) bool hasInterest;
 @property (nonatomic, readonly) bool hasLoadedImage;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) UIImage *highQualityImage;
+@property (nonatomic) UIImage *highQualityImage;
 @property (nonatomic, copy) id /* block */ highQualityImageRequestCancelHandler;
 @property (nonatomic) unsigned long long highQualityInterest;
 @property (nonatomic, readonly) SXImageResource *imageResource;
@@ -69,7 +69,7 @@
 @property (nonatomic, readonly) bool paused;
 @property (nonatomic) unsigned long long playCount;
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredImageSize;
-@property (nonatomic, retain) UIImage *preferredQualityImage;
+@property (nonatomic) UIImage *preferredQualityImage;
 @property (nonatomic, copy) id /* block */ preferredQualityImageRequestCancelHandler;
 @property (nonatomic) unsigned long long preferredQualityInterest;
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredQualityLoadingImageSize;

@@ -6,6 +6,13 @@
 
 @property (nonatomic, readonly, retain) NSArray *items;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
 - (id)items;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (bool)vui_containsOnlyClips;
+- (bool)vui_isNonPurchasedContent;
 
 @end

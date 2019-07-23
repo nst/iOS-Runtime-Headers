@@ -9,11 +9,13 @@
     struct _mutationFlags { 
         unsigned int isDirty : 1; 
         unsigned int hasTimestamp : 1; 
-        unsigned int hasEvent : 1; 
         unsigned int hasSource : 1; 
+        unsigned int hasEvent : 1; 
+        unsigned int hasOptions : 1; 
         unsigned int hasDeviceID : 1; 
         unsigned int hasUserInfo : 1; 
     }  _mutationFlags;
+    unsigned long long  _options;
     long long  _source;
     unsigned long long  _timestamp;
     NSDictionary * _userInfo;
@@ -30,6 +32,7 @@
 - (id)initWithBaseModel:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setEvent:(long long)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setSource:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUserInfo:(id)arg1;

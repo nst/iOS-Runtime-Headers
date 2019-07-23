@@ -14,6 +14,7 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (Class)classForKeyedUnarchiver;
 + (void)initialize;
 + (bool)supportsSecureCoding;
 

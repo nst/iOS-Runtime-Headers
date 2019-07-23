@@ -38,15 +38,9 @@
 @property (nonatomic, readonly) bool selectionCommandsShowing;
 @property (nonatomic) bool visible;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(bool)arg2;
 - (void)_showSelectionCommandsForContextMenu:(bool)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)activate;
 - (bool)affectedByScrollerNotification:(id)arg1;
 - (void)animateBoxShrinkOn:(id)arg1;
@@ -71,6 +65,7 @@
 - (void)configureForRevealHighlightMode;
 - (void)configureForSelectionMode;
 - (void)deactivate;
+- (void)dealloc;
 - (void)deferredUpdateSelectionCommands;
 - (void)deferredUpdateSelectionRects;
 - (void)detach;

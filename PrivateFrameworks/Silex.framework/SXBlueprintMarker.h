@@ -28,6 +28,7 @@
 - (id)componentAnchor;
 - (id)description;
 - (id)initWithLeadingComponent:(id)arg1 trailingComponent:(id)arg2 approximateLocation:(struct CGPoint { double x1; double x2; })arg3 path:(id)arg4;
+- (bool)isEqualToMarker:(id)arg1;
 - (id)leadingComponent;
 - (id)path;
 - (void)setComponentAnchor:(id)arg1;

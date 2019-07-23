@@ -126,6 +126,10 @@
 - (id)MSVBase64UUIDString;
 - (id)initWithMSVBase64UUIDString:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
+
+- (id)base62String;
+
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 + (id)_navigation_dataForUUID;
@@ -181,10 +185,15 @@
 - (void)populateReferencesUsingBuffer:(const void*)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
+// Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
+
++ (id)vm_UUIDv5ForData:(id)arg1 namespaceUUID:(id)arg2;
++ (id)vm_UUIDv5ForString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-- (id)tsp_initWithMessage:(const struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
-- (void)tsp_saveToMessage:(struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
+- (id)tsp_initWithMessage:(const struct UUID { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; unsigned long long x5; unsigned long long x6; }*)arg1;
+- (void)tsp_saveToMessage:(struct UUID { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; unsigned long long x5; unsigned long long x6; }*)arg1;
 
 // Image: /usr/lib/libprequelite.dylib
 

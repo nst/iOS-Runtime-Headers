@@ -25,6 +25,7 @@
 - (void)captureFailedMsgMetricFromLogFrameworkAdaptor:(bool)arg1;
 - (void)captureFullNavTraceEventWithData:(id)arg1;
 - (void)captureGenericAppErrorDomain:(id)arg1 appErrorCode:(long long)arg2;
+- (void)captureGridDurationEventWithDuration:(double)arg1 endState:(int)arg2 errors:(id)arg3 previousState:(int)arg4 displayType:(int)arg5;
 - (void)captureListInteractionSessionEventWithListType:(int)arg1 listResultItems:(id)arg2 searchString:(id)arg3;
 - (void)captureLogFrameworkEventForMetricType:(int)arg1 metricState:(int)arg2 purgeReason:(int)arg3 logCollectionRequest:(id)arg4;
 - (void)captureLogFrameworkEventForMetricType:(int)arg1 metricState:(int)arg2 purgeReason:(int)arg3 logMessageType:(int)arg4;

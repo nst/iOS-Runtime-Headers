@@ -11,6 +11,7 @@
         unsigned int certified : 1; 
         unsigned int duration : 1; 
         unsigned int errorCode : 1; 
+        unsigned int retryCount : 1; 
         unsigned int transportType : 1; 
         unsigned int isAdd : 1; 
         unsigned int isAddedViaWAC : 1; 
@@ -19,6 +20,7 @@
     bool  _isAdd;
     bool  _isAddedViaWAC;
     bool  _isSecureWAC;
+    unsigned int  _retryCount;
     unsigned long long  _timestamp;
     int  _transportType;
     AWDHomeKitVendorInformation * _vendorDetails;
@@ -33,12 +35,14 @@
 @property (nonatomic) bool hasIsAdd;
 @property (nonatomic) bool hasIsAddedViaWAC;
 @property (nonatomic) bool hasIsSecureWAC;
+@property (nonatomic) bool hasRetryCount;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool hasTransportType;
 @property (nonatomic, readonly) bool hasVendorDetails;
 @property (nonatomic) bool isAdd;
 @property (nonatomic) bool isAddedViaWAC;
 @property (nonatomic) bool isSecureWAC;
+@property (nonatomic) unsigned int retryCount;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int transportType;
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorDetails;
@@ -60,6 +64,7 @@
 - (bool)hasIsAdd;
 - (bool)hasIsAddedViaWAC;
 - (bool)hasIsSecureWAC;
+- (bool)hasRetryCount;
 - (bool)hasTimestamp;
 - (bool)hasTransportType;
 - (bool)hasVendorDetails;
@@ -70,6 +75,7 @@
 - (bool)isSecureWAC;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (unsigned int)retryCount;
 - (void)setCertified:(int)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setErrorCode:(int)arg1;
@@ -79,11 +85,13 @@
 - (void)setHasIsAdd:(bool)arg1;
 - (void)setHasIsAddedViaWAC:(bool)arg1;
 - (void)setHasIsSecureWAC:(bool)arg1;
+- (void)setHasRetryCount:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
 - (void)setIsAdd:(bool)arg1;
 - (void)setIsAddedViaWAC:(bool)arg1;
 - (void)setIsSecureWAC:(bool)arg1;
+- (void)setRetryCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setVendorDetails:(id)arg1;

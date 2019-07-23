@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFHomeKitDispatcher : NSObject <HFHomeAppInstallStateArbiterObserver, HFLocationSensingCoordinatorDelegate, HFMediaObjectObserver, HFMediaSessionObserver, HFStateRestorationSettingsObserver, HMAccessoryDelegatePrivate, HMAccessorySettingsDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegatePrivate, HMMediaProfileDelegate, HMResidentDeviceDelegate, HMSoftwareUpdateControllerDelegate, HMSoftwareUpdateDelegate, HMSymptomFixSessionDelegate, HMSymptomsHandlerDelegate, HMUserDelegatePrivate, _HFSettingsObserverTupleOwning> {
+@interface HFHomeKitDispatcher : NSObject <HFHomeAppInstallStateArbiterObserver, HFLocationSensingCoordinatorDelegate, HFMediaObjectObserver, HFMediaSessionObserver, HFStateRestorationSettingsObserver, HFSymptomFixSessionObserver, HMAccessoryDelegatePrivate, HMAccessorySettingsDelegate, HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMHomeDelegatePrivate, HMHomeManagerDelegatePrivate, HMMediaProfileDelegate, HMResidentDeviceDelegate, HMSoftwareUpdateControllerDelegate, HMSoftwareUpdateDelegate, HMSymptomsHandlerDelegate, HMTelevisionProfileDelegate, HMUserDelegatePrivate, _HFSettingsObserverTupleOwning> {
     NSHashTable * _accessoryObservers;
     NSMutableArray * _allHomesPromises;
     NSHashTable * _cameraObservers;
@@ -29,6 +29,7 @@
     NSHashTable * _softwareUpdateObservers;
     NSHashTable * _symptomFixSessionObservers;
     NSHashTable * _symptomsHandlerObservers;
+    NSHashTable * _televisionObservers;
     NSHashTable * _userObservers;
 }
 
@@ -67,6 +68,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSHashTable *symptomFixSessionObservers;
 @property (nonatomic, retain) NSHashTable *symptomsHandlerObservers;
+@property (nonatomic, retain) NSHashTable *televisionObservers;
 @property (nonatomic, retain) NSHashTable *userObservers;
 
 + (unsigned long long)_homeManagerCreationPolicy;
@@ -99,6 +101,7 @@
 - (void)accessory:(id)arg1 didUpdateFirmwareUpdateAvailable:(bool)arg2;
 - (void)accessory:(id)arg1 didUpdateFirmwareVersion:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateLastKnownSleepDiscoveryModeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateLoggedInAccount:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateServiceSubtypeForService:(id)arg2;
@@ -129,6 +132,7 @@
 - (void)addSoftwareUpdateObserver:(id)arg1;
 - (void)addSymptomFixSessionObserver:(id)arg1;
 - (void)addSymptomsHandlerObserver:(id)arg1;
+- (void)addTelevisionObserver:(id)arg1;
 - (void)addUserObserver:(id)arg1;
 - (id)allHomesFuture;
 - (id)allHomesPromises;
@@ -154,7 +158,7 @@
 - (void)dispatchUserObserverMessage:(id /* block */)arg1 sender:(id)arg2;
 - (id)firstHomeAddedFuture;
 - (id)firstHomeAddedPromises;
-- (void)fixSession:(id)arg1 didChangeState:(long long)arg2;
+- (void)fixSessionDidChangeForAccessory:(id)arg1;
 - (bool)hasLoadedHomes;
 - (bool)hasRequestedUpdate:(id)arg1;
 - (id)home;
@@ -243,6 +247,7 @@
 - (void)mediaSystem:(id)arg1 didUpdateConfiguredName:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (id)overrideHome;
+- (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
 - (id)remoteAccessStateByHomeID;
 - (void)removeAccessoryObserver:(id)arg1;
 - (void)removeCameraObserver:(id)arg1;
@@ -259,6 +264,7 @@
 - (void)removeSoftwareUpdateObserver:(id)arg1;
 - (void)removeSymptomFixSessionObserver:(id)arg1;
 - (void)removeSymptomsHandlerObserver:(id)arg1;
+- (void)removeTelevisionObserver:(id)arg1;
 - (void)removeUserObserver:(id)arg1;
 - (id)requestedSoftwareUpdates;
 - (void)residentDevice:(id)arg1 didUpdateCapabilities:(unsigned long long)arg2;
@@ -295,6 +301,7 @@
 - (void)setSoftwareUpdateObservers:(id)arg1;
 - (void)setSymptomFixSessionObservers:(id)arg1;
 - (void)setSymptomsHandlerObservers:(id)arg1;
+- (void)setTelevisionObservers:(id)arg1;
 - (void)setUserObservers:(id)arg1;
 - (void)settingsDidUpdate:(id)arg1;
 - (void)settingsObserverTupleWasInvalidated:(id)arg1;
@@ -311,6 +318,7 @@
 - (id)symptomFixSessionObservers;
 - (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (id)symptomsHandlerObservers;
+- (id)televisionObservers;
 - (void)updateHome;
 - (void)updateSelectedHome;
 - (void)updateStopHomeSensingIdleTimerState;

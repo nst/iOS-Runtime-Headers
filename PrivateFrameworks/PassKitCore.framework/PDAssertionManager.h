@@ -18,14 +18,18 @@
 - (void).cxx_destruct;
 - (void)_addAssertionCoordinator:(id)arg1 forProcessIdentifier:(id)arg2;
 - (void)_applicationStateChanged:(id)arg1;
+- (id)_coordinatorsBundleIdentifier;
+- (id)_processNameWithPID:(int)arg1;
 - (void)_removeAllAssertionCoordinators;
 - (void)_removeAssertionCoordinator:(id)arg1;
+- (void)acquireAssertionOfType:(unsigned long long)arg1 withIdentifier:(id)arg2 reason:(id)arg3 handler:(id /* block */)arg4;
 - (bool)assertionCoordinator:(id)arg1 canAcquireAssertion:(id)arg2;
 - (void)assertionCoordinator:(id)arg1 didAcquireAssertion:(id)arg2;
 - (void)assertionCoordinator:(id)arg1 didInvalidateAssertion:(id)arg2;
 - (id)assertionsOfType:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)invalidateAssertionOfType:(unsigned long long)arg1 withIdentifier:(id)arg2 handler:(id /* block */)arg3;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)registerObserver:(id)arg1;
 - (void)unregisterObserver:(id)arg1;

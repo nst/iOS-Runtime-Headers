@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
  */
 
-@interface PKInkAttributesPicker : UIViewController <UIPopoverPresentationControllerDelegate> {
+@interface PKInkAttributesPicker : UIViewController <UIPopoverPresentationControllerDelegate, _PKInkAttributesPickerViewDelegate> {
     <PKInkAttributesPickerDelegate> * _delegate;
-    unsigned long long  _displayMode;
     _PKInkAttributesPickerView * _pickerView;
 }
 
@@ -17,9 +16,9 @@
 @property (nonatomic, retain) PKInk *selectedInk;
 @property (readonly) Class superclass;
 
-+ (double)representableOpacityForOpacity:(double)arg1;
-
 - (void).cxx_destruct;
+- (void)_inkAttributesPickerViewUserDidEndDraggingSlider:(id)arg1;
+- (void)_inkAttributesPickerViewUserDidStartDraggingSlider:(id)arg1;
 - (id)delegate;
 - (unsigned long long)displayMode;
 - (id)initWithInk:(id)arg1;
@@ -30,6 +29,7 @@
 - (void)setDisplayMode:(unsigned long long)arg1;
 - (void)setPickerView:(id)arg1;
 - (void)setSelectedInk:(id)arg1;
+- (void)setSelectedInk:(id)arg1 animated:(bool)arg2;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

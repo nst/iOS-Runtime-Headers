@@ -7,8 +7,11 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     AVTAvatarFetchRequest * _fetchRequest;
     <AVTUILogger> * _logger;
+    NSNotificationCenter * _notificationCenter;
+    <NSObject> * _nts_changeNotificationObserver;
     NSPointerArray * _nts_observers;
     NSMutableArray * _nts_recordStorage;
+    AVTAvatarStore * _underlyingStore;
 }
 
 @property (nonatomic, readonly) AVTObservableAvatarStore *backingStore;
@@ -18,9 +21,12 @@
 @property (nonatomic, readonly) AVTAvatarFetchRequest *fetchRequest;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <AVTUILogger> *logger;
+@property (nonatomic, readonly) NSNotificationCenter *notificationCenter;
+@property (nonatomic, retain) <NSObject> *nts_changeNotificationObserver;
 @property (nonatomic, readonly) NSPointerArray *nts_observers;
 @property (nonatomic, retain) NSMutableArray *nts_recordStorage;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) AVTAvatarStore *underlyingStore;
 
 + (id)defaultUIDataSourceWithDomainIdentifier:(id)arg1;
 + (unsigned long long)indexForInsertingDuplicateRecord:(id)arg1 original:(id)arg2 inRecords:(id)arg3;
@@ -32,16 +38,21 @@
 - (void)addObserver:(id)arg1;
 - (void)addPriorityObserver:(id)arg1;
 - (bool)areRecordsLoaded;
+- (void)avatarStoreDidChange:(id)arg1;
 - (id)backingStore;
 - (id)callbackQueue;
+- (void)dealloc;
 - (void)enumerateObserversRespondingToSelector:(SEL)arg1 withBlock:(id /* block */)arg2;
 - (id)fetchRequest;
 - (unsigned long long)indexOfRecordPassingTest:(id /* block */)arg1;
 - (id)indexesOfRecordsPassingTest:(id /* block */)arg1;
 - (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2;
-- (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 callbackQueue:(id)arg3 logger:(id)arg4;
+- (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 callbackQueue:(id)arg3 environment:(id)arg4;
+- (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 callbackQueue:(id)arg3 logger:(id)arg4 notificationCenter:(id)arg5;
 - (id)internalRecordStore;
 - (id)logger;
+- (id)notificationCenter;
+- (id)nts_changeNotificationObserver;
 - (id)nts_observers;
 - (id)nts_recordStorage;
 - (unsigned long long)numberOfRecords;
@@ -50,9 +61,11 @@
 - (id)recordAtIndex:(unsigned long long)arg1;
 - (id)recordStore;
 - (void)removeObserver:(id)arg1;
+- (void)setNts_changeNotificationObserver:(id)arg1;
 - (void)setNts_recordStorage:(id)arg1;
 - (void)store:(id)arg1 didCreateDuplicateAvatar:(id)arg2 forOriginal:(id)arg3 postCompletionHandler:(id /* block */)arg4;
 - (void)store:(id)arg1 didDeleteAvatarWithIdentifier:(id)arg2 postCompletionHandler:(id /* block */)arg3;
 - (void)store:(id)arg1 didSaveAvatar:(id)arg2 postCompletionHandler:(id /* block */)arg3;
+- (id)underlyingStore;
 
 @end

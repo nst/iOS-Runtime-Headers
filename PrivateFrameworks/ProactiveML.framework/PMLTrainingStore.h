@@ -13,7 +13,10 @@
 + (id)inMemoryStoreForTesting;
 
 - (void).cxx_destruct;
-- (void)_loadSessionsForModel:(id)arg1 since:(double)arg2 positiveRowId:(unsigned long long)arg3 negativeRowId:(unsigned long long)arg4 limit:(unsigned long long)arg5 onlyAppleInternal:(bool)arg6 positiveLabel:(unsigned long long)arg7 skew:(double)arg8 ignoreIfSingular:(bool)arg9 block:(id /* block */)arg10;
+- (void)_loadSessionsForModel:(id)arg1 positiveRowId:(unsigned long long)arg2 negativeRowId:(unsigned long long)arg3 excludeItemIdsUsedWithin:(double)arg4 limit:(unsigned long long)arg5 onlyAppleInternal:(bool)arg6 positiveLabel:(unsigned long long)arg7 skew:(double)arg8 ignoreIfSingular:(bool)arg9 block:(id /* block */)arg10;
+- (void)_loadSessionsForModel:(id)arg1 privacyBudgetRefreshPeriod:(double)arg2 labelAndStartRows:(id)arg3 batchSize:(unsigned long long)arg4 supportPerLabel:(unsigned long long)arg5 block:(id /* block */)arg6;
+- (void)_loadSessionsFromLabelAndTuples:(id)arg1 model:(id)arg2 numberOfRows:(unsigned long long)arg3 numberOfColumns:(unsigned long long)arg4 lastUsedMax:(double)arg5 block:(id /* block */)arg6;
+- (void)_loadSessionsFromTupleDescriptors:(id)arg1 model:(id)arg2 onlyAppleInternal:(bool)arg3 positiveLabel:(unsigned long long)arg4 ignoreIfSingular:(bool)arg5 numberOfRows:(unsigned long long)arg6 numberOfColumns:(unsigned long long)arg7 lastUsedMax:(double)arg8 block:(id /* block */)arg9;
 - (long long)_migrate;
 - (long long)_migrateTo:(id)arg1;
 - (long long)_openDbIfUnlocked;
@@ -39,15 +42,17 @@
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 allowSkipSchema:(bool)arg2;
 - (bool)isDbOpen;
-- (void)limitNegativeSessionsWithSessionDescriptor:(id)arg1 negativeLabel:(unsigned long long)arg2 limit:(unsigned long long)arg3;
-- (void)limitSessionsWithSessionDescriptor:(id)arg1 limit:(unsigned long long)arg2;
+- (void)limitLabeledSessionsWithSessionDescriptor:(id)arg1 label:(long long)arg2 limit:(unsigned long long)arg3;
+- (void)limitSessionsForEachLabelWithSessionDescriptor:(id)arg1 totalSessionLimit:(unsigned long long)arg2;
 - (id)loadRecentTrainingLogForPlan:(struct NSString { Class x1; }*)arg1;
+- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(bool)arg4 block:(id /* block */)arg5;
+- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(bool)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 ignoreIfSingular:(bool)arg7 block:(id /* block */)arg8;
+- (void)loadSessionsForModel:(id)arg1 excludeItemIdsUsedWithin:(double)arg2 withSkew:(double)arg3 andLimit:(int)arg4 block:(id /* block */)arg5;
+- (void)loadSessionsForModel:(id)arg1 privacyBudgetRefreshPeriod:(double)arg2 labels:(id)arg3 batchSize:(unsigned long long)arg4 supportPerLabel:(unsigned long long)arg5 block:(id /* block */)arg6;
 - (void)loadSessionsForModel:(id)arg1 since:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(bool)arg4 block:(id /* block */)arg5;
 - (void)loadSessionsForModel:(id)arg1 since:(double)arg2 limit:(unsigned long long)arg3 onlyAppleInternal:(bool)arg4 positiveLabel:(unsigned long long)arg5 skew:(double)arg6 ignoreIfSingular:(bool)arg7 block:(id /* block */)arg8;
-- (void)loadSessionsForModel:(id)arg1 withSkew:(double)arg2 block:(id /* block */)arg3;
-- (void)loadSessionsFromTupleDescriptors:(id)arg1 model:(id)arg2 since:(double)arg3 onlyAppleInternal:(bool)arg4 positiveLabel:(unsigned long long)arg5 ignoreIfSingular:(bool)arg6 numberOfRows:(unsigned long long)arg7 numberOfColumns:(unsigned long long)arg8 block:(id /* block */)arg9;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
-- (id)sessionDimensionsForModel:(id)arg1 startingRowId:(unsigned long long)arg2 since:(double)arg3 onlyAppleInternal:(bool)arg4 labelFilter:(id)arg5;
+- (id)sessionDimensionsForModel:(id)arg1 startingRowId:(unsigned long long)arg2 onlyAppleInternal:(bool)arg3 labelFilter:(id)arg4;
 - (id)sessionStats;
 - (id)sessionStatsForSessionDescriptor:(id)arg1;
 - (void)storeLogEntryForPlan:(struct NSString { Class x1; }*)arg1 model:(id)arg2 serverIteration:(unsigned long long)arg3 timestamp:(double)arg4;

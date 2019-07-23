@@ -9,6 +9,7 @@
 @property (nonatomic, readonly, copy) NSNumber *assetType;
 @property (nonatomic, copy) NSNumber *bookmark;
 @property (nonatomic, readonly, copy) VUIMediaItemCredits *credits;
+@property (nonatomic, readonly, copy) NSDate *downloadExpirationDate;
 @property (nonatomic, readonly, copy) NSNumber *duration;
 @property (nonatomic, readonly, copy) NSNumber *episodeNumber;
 @property (nonatomic, readonly, copy) NSURL *extrasURL;
@@ -33,6 +34,7 @@
 - (id)creationDate;
 - (id)credits;
 - (id)description;
+- (id)downloadExpirationDate;
 - (id)duration;
 - (id)episodeNumber;
 - (id)extrasURL;

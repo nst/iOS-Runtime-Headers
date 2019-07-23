@@ -7,6 +7,7 @@
 
 - (unsigned long long)artworkSubtype;
 - (bool)canShowAlerts;
+- (BSCornerRadiusConfiguration *)cornerRadiusConfiguration;
 - (unsigned long long)deactivationReasons;
 - (long long)deviceOrientation;
 - (bool)deviceOrientationEventsEnabled;

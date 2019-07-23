@@ -45,6 +45,7 @@
     int  _minLength;
     NSString * _nextControlUniqueID;
     NSString * _passwordRules;
+    NSString * _placeholder;
     NSDictionary * _radioButtonInfo;
     double  _rectHeight;
     double  _rectLeft;
@@ -92,6 +93,7 @@
 @property (nonatomic, readonly) unsigned long long minLength;
 @property (nonatomic, readonly, copy) NSString *nextControlUniqueID;
 @property (nonatomic, readonly, copy) NSString *passwordRules;
+@property (nonatomic, readonly, copy) NSString *placeholder;
 @property (nonatomic, readonly, copy) NSDictionary *radioButtonInfo;
 @property (getter=isReadOnly, nonatomic, readonly) bool readOnly;
 @property (nonatomic, readonly) double rectHeight;
@@ -160,6 +162,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)nextControlUniqueID;
 - (id)passwordRules;
+- (id)placeholder;
 - (id)radioButtonInfo;
 - (double)rectHeight;
 - (double)rectLeft;

@@ -12,6 +12,7 @@
 + (void)_configureCardInfo:(id)arg1 forVoiceShortcutWithPhrase:(id)arg2 name:(id)arg3 description:(id)arg4 keyImage:(id)arg5 applicationBundleIdentifier:(id)arg6 config:(id)arg7;
 + (id)_generateCardSectionWithInfo:(id)arg1 config:(id)arg2;
 + (unsigned long long)_searchUIStyleForAPUIStyle:(unsigned long long)arg1;
++ (id)_subtitleForAction:(id)arg1;
 + (id)cardForCardSection:(id)arg1;
 + (id)cardSectionForATXAction:(id)arg1 withConfig:(id)arg2;
 + (id)cardSectionForINIntent:(id)arg1 withConfig:(id)arg2;

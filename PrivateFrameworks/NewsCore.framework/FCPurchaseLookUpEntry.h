@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSString *tagID;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateOfExpiration;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -37,6 +38,7 @@
 - (bool)isNewsAppPurchase;
 - (id)lastVerificationFailureTime;
 - (id)lastVerificationTime;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)purchaseID;
 - (unsigned long long)purchaseType;
 - (unsigned long long)purchaseValidationState;

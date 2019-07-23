@@ -5,6 +5,7 @@
 @interface ICMutableUserIdentityProperties : ICUserIdentityProperties
 
 @property (nonatomic, copy) NSNumber *DSID;
+@property (nonatomic, copy) NSDate *ageVerificationExpirationDate;
 @property (nonatomic, copy) NSString *alternateDSID;
 @property (nonatomic, copy) NSString *carrierBundleDeviceIdentifier;
 @property (nonatomic, copy) ICDelegateToken *delegateToken;
@@ -14,9 +15,11 @@
 @property (getter=isManagedAppleID, nonatomic) bool managedAppleID;
 @property (getter=isSandboxed, nonatomic) bool sandboxed;
 @property (nonatomic, copy) NSString *storefrontIdentifier;
+@property (getter=isSubscriptionStatusEnabled, nonatomic) bool subscriptionStatusEnabled;
 @property (nonatomic, copy) NSString *username;
 
 - (void)replaceValuesWithValuesFromProperties:(id)arg1;
+- (void)setAgeVerificationExpirationDate:(id)arg1;
 - (void)setAlternateDSID:(id)arg1;
 - (void)setCarrierBundleDeviceIdentifier:(id)arg1;
 - (void)setCloudBackupEnabled:(bool)arg1;
@@ -29,6 +32,7 @@
 - (void)setManagedAppleID:(bool)arg1;
 - (void)setSandboxed:(bool)arg1;
 - (void)setStorefrontIdentifier:(id)arg1;
+- (void)setSubscriptionStatusEnabled:(bool)arg1;
 - (void)setUsername:(id)arg1;
 
 @end

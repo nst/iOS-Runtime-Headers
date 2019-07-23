@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UINavigationController : UIViewController <DebugHierarchyObject_Fallback, GKContentRefresh, GKURLHandling, HUPreloadableViewController, HUPresentationDelegate, UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
+@interface UINavigationController : UIViewController <GKContentRefresh, GKURLHandling, HUPreloadableViewController, HUPresentationDelegate, UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
     NSString * __backdropGroupName;
     _UIAnimationCoordinator * __barInteractiveAnimationCoordinator;
     _UIBarPanGestureRecognizer * __barSwipeHideGesture;
@@ -707,11 +707,6 @@
 - (void)willShowViewController:(id)arg1 animated:(bool)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (id)mf_classesForUICustomization;
@@ -777,12 +772,11 @@
 
 - (id)initWithRootViewController:(id)arg1 forceLegacyBars:(bool)arg2;
 
-// Image: /System/Library/PrivateFrameworks/News/Tea.framework/Tea
-
-- (void)dismissTop;
-
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (void)popToRootViewControllerOppositeDirectionAnimated:(bool)arg1;
+- (void)popToViewControllerOppositeDirection:(id)arg1 animated:(bool)arg2;
+- (void)popViewControllerOppositeDirectionAnimated:(bool)arg1;
 - (void)ts_setNavigationBarBackgroundHidden:(bool)arg1;
 - (void)ts_setPaletteBackgroundHidden:(bool)arg1;
 - (void)ts_setPaletteBlurthroughBackground;
@@ -792,8 +786,13 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
+- (void)_pk_popToViewControllerMarker:(id)arg1 animated:(bool)arg2;
+- (void)_pk_presentPaymentSetupViewController:(id)arg1 animated:(bool)arg2 performPreflight:(bool)arg3 delay:(long long)arg4 completion:(id /* block */)arg5;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
+- (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(bool)arg2 delay:(long long)arg3 completion:(id /* block */)arg4;
+- (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(bool)arg2 performPreflight:(bool)arg3 completion:(id /* block */)arg4;
 - (id)pkui_compactNavigationContainer;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
@@ -829,7 +828,7 @@
 - (void)ts_setTopPaletteShadowHidden:(bool)arg1;
 - (void)ts_setTranslucentNavigationBarBackgroundEnabled:(bool)arg1;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 - (void)_VideosExtras_replaceViewController:(id)arg1 withViewController:(id)arg2 animated:(bool)arg3;
 

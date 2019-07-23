@@ -345,6 +345,7 @@
 + (Class)layerClass;
 + (id)standardTextViewPreferences;
 
+- (id)URL;
 - (void)_WAKViewSizeDidChange:(id)arg1;
 - (bool)_acceptsFirstResponder;
 - (SEL)_actionForLongPressOnElement:(id)arg1;
@@ -495,12 +496,6 @@
 - (void)_updateWebKitExposedScrollViewRect;
 - (void)_webthread_webView:(id)arg1 attachRootLayer:(id)arg2;
 - (double)_zoomedDocumentScale;
-- (void)dealloc;
-- (void)webThreadWebViewDidLayout:(id)arg1 byScrolling:(bool)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (id)URL;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)actionDidFinish;
 - (void)addInputString:(id)arg1;
@@ -576,6 +571,7 @@
 - (unsigned long long)currentDragSourceAction;
 - (void)cut:(id)arg1;
 - (unsigned long long)dataDetectorTypes;
+- (void)dealloc;
 - (void)decreaseSize:(id)arg1;
 - (id)deepestNodeAtViewportLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)deferInteraction;
@@ -932,6 +928,7 @@
 - (bool)wantsMinimalUI;
 - (id)webDraggingDelegate;
 - (id)webSelectionAssistant;
+- (void)webThreadWebViewDidLayout:(id)arg1 byScrolling:(bool)arg2;
 - (id)webView;
 - (void)webView:(id)arg1 didChangeLocationWithinPageForFrame:(id)arg2;
 - (void)webView:(id)arg1 didCommitLoadForFrame:(id)arg2;

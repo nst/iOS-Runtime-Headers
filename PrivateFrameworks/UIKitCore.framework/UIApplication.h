@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIApplication : UIResponder <DebugHierarchyEntryPoint_Fallback, DebugHierarchyObject_Fallback, FBSDisplayLayoutObserver, FBSUIApplicationWorkspaceDelegate, UIActivityContinuationManagerApplicationContext, UIApplicationSnapshotPreparing, UIStatusBarStyleDelegate_SpringBoardOnly, UNRemoteNotificationRegistrarDelegate> {
+@interface UIApplication : UIResponder <FBSDisplayLayoutObserver, FBSUIApplicationWorkspaceDelegate, UIActivityContinuationManagerApplicationContext, UIApplicationSnapshotPreparing, UIStatusBarStyleDelegate_SpringBoardOnly, UNRemoteNotificationRegistrarDelegate> {
     id /* block */  _HIDGameControllerEventObserver;
     NSObject<OS_dispatch_queue> * _HIDGameControllerEventQueue;
     id /* block */  ___queuedOrientationChange;
@@ -193,6 +193,7 @@
 @property (nonatomic, readonly) bool supportsAlternateIcons;
 @property (nonatomic, readonly) UIViewController *topmostViewController;
 @property (nonatomic, readonly) long long userInterfaceLayoutDirection;
+@property (nonatomic, readonly) <VUIApplicationDelegate> *vui_delegate;
 @property (nonatomic, readonly) NSArray *windows;
 
 // Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
@@ -211,7 +212,6 @@
 + (bool)_isSystemUIService;
 + (void)_screensHaveConnected;
 + (bool)_shouldBigify;
-+ (bool)_shouldForceClassicForExtensions;
 + (void)_startStatusBarServerIfNecessary;
 + (void)_startWindowServerIfNecessary;
 + (Class)_statusBarClass;
@@ -240,6 +240,7 @@
 + (id)stringForStatusBarStyle:(long long)arg1;
 
 - (void).cxx_destruct;
+- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1 forceRebuild:(bool)arg2;
 - (bool)_UIApplicationLegacyVoipAllowed;
 - (unsigned long long)__beginBackgroundTaskWithExpirationHandler:(id /* block */)arg1;
 - (void)__completeAndRunAsPlugin;
@@ -653,23 +654,6 @@
 - (id)_whitePointAdaptivityStyleControllingWindow;
 - (id)_windowForSystemAppButtonEventsForScreen:(id)arg1;
 - (id)_workspace;
-- (unsigned long long)beginBackgroundTaskWithExpirationHandler:(id /* block */)arg1;
-- (unsigned long long)beginBackgroundTaskWithName:(id)arg1 expirationHandler:(id /* block */)arg2;
-- (void)dealloc;
-- (void)endBackgroundTask:(unsigned long long)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyAdditionalGroupingIDs;
-+ (id)fallback_debugHierarchyGroupingIDs;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1 forceRebuild:(bool)arg2;
 - (void)acceleratedInX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (long long)activeInterfaceOrientation;
@@ -710,6 +694,8 @@
 - (float)backlightLevel;
 - (void)batteryStatusDidChange:(id)arg1;
 - (bool)becomeFirstResponder;
+- (unsigned long long)beginBackgroundTaskWithExpirationHandler:(id /* block */)arg1;
+- (unsigned long long)beginBackgroundTaskWithName:(id)arg1 expirationHandler:(id /* block */)arg2;
 - (void)beginIgnoringInteractionEvents;
 - (void)beginReceivingRemoteControlEvents;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
@@ -727,6 +713,7 @@
 - (void)clearKeepAliveTimeout;
 - (void)completeStateRestoration;
 - (id)currentUserNotificationSettings;
+- (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)delegate;
 - (void)didDismissMiniAlert;
@@ -737,6 +724,7 @@
 - (void)emitPPTStartTracePointForSubTestName:(id)arg1 identifier:(unsigned long long)arg2 testIdentifier:(unsigned long long)arg3;
 - (void)emitPPTStartTracePointForTestName:(id)arg1 identifier:(unsigned long long)arg2;
 - (unsigned long long)enabledRemoteNotificationTypes;
+- (void)endBackgroundTask:(unsigned long long)arg1;
 - (void)endIgnoringInteractionEvents;
 - (void)endReceivingRemoteControlEvents;
 - (void)endRemoteSheet:(id)arg1;
@@ -1049,7 +1037,9 @@
 
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
+- (double)defaultStatusBarHeight;
 - (bool)isRunningPerformanceTest;
+- (id)ts_statusBarWindow;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -1103,6 +1093,10 @@
 - (id)accessibilityLastGesturedTextInputStatusChange;
 - (id)accessibilityPresentingViewController;
 - (void)setAccessibilityLastGesturedTextInputStatusChange:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (id)vui_delegate;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

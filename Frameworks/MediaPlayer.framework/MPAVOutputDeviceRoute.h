@@ -24,6 +24,7 @@
 - (id)description;
 - (id)groupUID;
 - (id)initWithOutputDevices:(id)arg1;
+- (bool)isAirPlayRoute;
 - (bool)isAppleTVRoute;
 - (bool)isCarplayRoute;
 - (bool)isDeviceRoute;

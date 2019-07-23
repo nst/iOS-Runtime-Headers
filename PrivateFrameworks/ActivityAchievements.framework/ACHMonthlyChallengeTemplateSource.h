@@ -40,9 +40,9 @@
 - (id)_modelsDirectoryBasePathForTemplate:(id)arg1;
 - (id)_monthStringFromTemplateName:(id)arg1;
 - (id)_monthlyAchievementsAssetsDirectoryBasePath;
-- (bool)_monthlyChallengeIsRingBased:(unsigned long long)arg1;
 - (unsigned long long)_numberOfDaysInMonthForDate:(id)arg1;
 - (double)_roundedGoalValue:(double)arg1 monthlyChallengeType:(unsigned long long)arg2;
+- (double)_targetGoalValueForCurrentMonthForType:(unsigned long long)arg1;
 - (id)currentCalendar;
 - (id)currentDate;
 - (id)customPlaceholderValuesForTemplate:(id)arg1;
@@ -66,8 +66,10 @@
 - (void)setTemplateDataProvider:(id)arg1;
 - (bool)sourceShouldRunForDate:(id)arg1;
 - (id)stickerBundleURLForTemplate:(id)arg1;
+- (bool)subObjectsHaveDatabaseAssertions;
 - (id)templateCache;
 - (id)templateDataProvider;
 - (void)templatesForDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)templatesForDate:(id)arg1 databaseContext:(id)arg2 completion:(id /* block */)arg3;
 
 @end

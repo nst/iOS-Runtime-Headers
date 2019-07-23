@@ -178,6 +178,11 @@
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_studentDaemonConnection;
++ (unsigned long long)xpcConnectionOptions;
+
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)CKValueForEntitlements:(id)arg1 error:(id*)arg2;
@@ -189,6 +194,10 @@
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 - (id)sgd_clientName;
+
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
+- (id)cuValueForEntitlementNoCache:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DoNotDisturbServer.framework/DoNotDisturbServer
 

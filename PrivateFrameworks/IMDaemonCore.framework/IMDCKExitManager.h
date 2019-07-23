@@ -28,16 +28,20 @@
 
 + (id)sharedInstance;
 
+- (bool)_analyticZoneCreated;
+- (bool)_canSubmitCloudKitAnalytic;
+- (bool)_canSubmitCloudKitMetric;
 - (void)_evalToggleiCloudSettingsSwitch;
 - (void)_fetchExitRecordDateWithCompletion:(id /* block */)arg1;
 - (id)_modifiedOpGroupName:(id)arg1 useManatee:(bool)arg2;
 - (bool)_saltZoneCreated;
 - (void)_scheduleMetricOperation:(id)arg1 useManate:(bool)arg2;
 - (void)_scheduleOperation:(id)arg1;
-- (bool)_serverAllowsMetricSubmission;
 - (void)_setUpSubscription;
 - (id)_sharedCKUtilities;
+- (void)_submitCloudKitMetricWithOperationGroupName:(id)arg1 record:(id)arg2 useManatee:(bool)arg3 ignoreZoneNotFoundError:(bool)arg4 completion:(id /* block */)arg5;
 - (bool)_subscriptionCreated;
+- (id)analyticZoneRecordID;
 - (id)ckQueue;
 - (id)databaseManager;
 - (void)dealloc;
@@ -63,6 +67,8 @@
 - (void)setRecordZoneManager:(id)arg1;
 - (void)setSaltZoneCreatedOverride:(id)arg1;
 - (void)setSubscriptionCreatedOverride:(id)arg1;
+- (void)submitCloudKitAnalyticWithDictionary:(id)arg1 operationGroupName:(id)arg2 useManatee:(bool)arg3 completion:(id /* block */)arg4;
+- (void)submitCloudKitAnalyticWithOperationGroupName:(id)arg1 useManatee:(bool)arg2 analyticDictionary:(id)arg3;
 - (void)submitCloudKitMetricWithData:(id)arg1 operationGroupName:(id)arg2 useManatee:(bool)arg3 completion:(id /* block */)arg4;
 - (void)submitCloudKitMetricWithOperationGroupName:(id)arg1 useManatee:(bool)arg2;
 - (id)subscriptionCreatedOverride;

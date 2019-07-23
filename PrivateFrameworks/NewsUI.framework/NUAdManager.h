@@ -30,6 +30,7 @@
 - (id)defaultBodyDefinition;
 - (id)defaultFeedMetadataDefinition;
 - (id)defaultHeaderDefinition;
+- (id)defaultIssueDefinition;
 - (id)defaultRootDefinition;
 - (id)device;
 - (id)inArticleContextConstructor;

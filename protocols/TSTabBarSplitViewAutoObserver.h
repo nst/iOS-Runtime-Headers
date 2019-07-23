@@ -3,15 +3,9 @@
 
 @protocol TSTabBarSplitViewAutoObserver
 
-@required
-
-- (void)tabBarSplitViewWillChangeDisplayModeTo:(long long)arg1;
-
 @optional
 
-- (void)tabBarSplitViewControllerDidAcquireInitialState;
-- (void)tabBarSplitViewControllerWillCollapseWithDisplayMode:(long long)arg1;
-- (void)tabBarSplitViewControllerWillExpandWithDisplayMode:(long long)arg1;
-- (void)tabBarSplitViewDidChangeTraitCollectionTo:(UITraitCollection *)arg1;
+- (void)tabBarSplitViewDidChangeTraitCollectionToTraitCollection:(UITraitCollection *)arg1;
+- (void)tabBarSplitViewWillChangeDisplayModeToDisplayMode:(long long)arg1;
 
 @end

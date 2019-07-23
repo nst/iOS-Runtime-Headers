@@ -18,13 +18,14 @@
     double  _contentDurationWithinEndTimes;
     WebAVMediaSelectionOption * _currentAudioMediaSelectionOption;
     WebAVMediaSelectionOption * _currentLegibleMediaSelectionOption;
-    struct PlaybackSessionModel { int (**x1)(); } * _delegate;
+    struct PlaybackSessionModel { int (**x1)(); struct WeakPtrFactory<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_2_1_1; } x2; } * _delegate;
     bool  _externalPlaybackActive;
     NSString * _externalPlaybackAirPlayDeviceLocalizedName;
     long long  _externalPlaybackType;
     bool  _hasEnabledAudio;
     bool  _hasEnabledVideo;
     bool  _hasVideo;
+    bool  _isScrubbing;
     NSArray * _legibleMediaSelectionOptions;
     bool  _liveStreamEventModePossible;
     double  _liveUpdateInterval;
@@ -34,7 +35,7 @@
     bool  _muted;
     bool  _pictureInPictureInterrupted;
     bool  _pictureInPicturePossible;
-    struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; } * _playbackSessionInterface;
+    struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WeakPtr<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_5_1_1; } x5; } * _playbackSessionInterface;
     AVPlayerController * _playerControllerProxy;
     bool  _playingOnSecondScreen;
     double  _rate;
@@ -59,7 +60,7 @@
 @property double contentDurationWithinEndTimes;
 @property (retain) WebAVMediaSelectionOption *currentAudioMediaSelectionOption;
 @property (retain) WebAVMediaSelectionOption *currentLegibleMediaSelectionOption;
-@property struct PlaybackSessionModel { int (**x1)(); }*delegate;
+@property /* Warning: unhandled struct encoding: '{PlaybackSessionModel=^^?{WeakPtrFactory<WebCore::PlaybackSessionModel>={RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>' */ struct *delegate; /* unknown property attribute:  WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > >=^{WeakReference<WebCore::PlaybackSessionModel>}}}} */
 @property (getter=isExternalPlaybackActive) bool externalPlaybackActive;
 @property (retain) NSString *externalPlaybackAirPlayDeviceLocalizedName;
 @property long long externalPlaybackType;
@@ -69,6 +70,7 @@
 @property (readonly) bool hasLegibleMediaSelectionOptions;
 @property (readonly) bool hasMediaSelectionOptions;
 @property bool hasVideo;
+@property (readonly) bool isScrubbing;
 @property (retain) NSArray *legibleMediaSelectionOptions;
 @property double liveUpdateInterval;
 @property (retain) NSArray *loadedTimeRanges;
@@ -79,7 +81,7 @@
 @property (getter=isMuted) bool muted;
 @property (getter=isPictureInPictureInterrupted) bool pictureInPictureInterrupted;
 @property (getter=isPictureInPicturePossible) bool pictureInPicturePossible;
-@property struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*playbackSessionInterface;
+@property struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; /* Warning: unhandled struct encoding: '{WeakPtr<WebCore::PlaybackSessionModel>={RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>' */ struct x5; }*playbackSessionInterface; /* unknown property attribute:  WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > >=^{WeakReference<WebCore::PlaybackSessionModel>}}}} */
 @property (retain) AVPlayerController *playerControllerProxy;
 @property (getter=isPlaying) bool playing;
 @property (getter=isPlayingOnExternalScreen, readonly) bool playingOnExternalScreen;
@@ -125,7 +127,7 @@
 - (id)currentLegibleMediaSelectionOption;
 - (double)currentTimeWithinEndTimes;
 - (void)dealloc;
-- (struct PlaybackSessionModel { int (**x1)(); }*)delegate;
+- (struct PlaybackSessionModel { int (**x1)(); struct WeakPtrFactory<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_2_1_1; } x2; }*)delegate;
 - (void)endScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;
 - (void)endScrubbing:(id)arg1;
@@ -149,6 +151,7 @@
 - (bool)isPlaying;
 - (bool)isPlayingOnExternalScreen;
 - (bool)isPlayingOnSecondScreen;
+- (bool)isScrubbing;
 - (id)legibleMediaSelectionOptions;
 - (double)liveUpdateInterval;
 - (id)loadedTimeRanges;
@@ -159,11 +162,10 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
-- (struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*)playbackSessionInterface;
+- (struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WeakPtr<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_5_1_1; } x5; }*)playbackSessionInterface;
 - (id)player;
 - (id)playerControllerProxy;
 - (double)rate;
-- (void)resetMediaState;
 - (void)seekByTimeInterval:(double)arg1;
 - (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekChapterBackward:(id)arg1;
@@ -187,7 +189,7 @@
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (void)setCurrentTimeWithinEndTimes:(double)arg1;
-- (void)setDelegate:(struct PlaybackSessionModel { int (**x1)(); }*)arg1;
+- (void)setDelegate:(struct PlaybackSessionModel { int (**x1)(); struct WeakPtrFactory<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_2_1_1; } x2; }*)arg1;
 - (void)setExternalPlaybackActive:(bool)arg1;
 - (void)setExternalPlaybackAirPlayDeviceLocalizedName:(id)arg1;
 - (void)setExternalPlaybackType:(long long)arg1;
@@ -202,7 +204,7 @@
 - (void)setMuted:(bool)arg1;
 - (void)setPictureInPictureInterrupted:(bool)arg1;
 - (void)setPictureInPicturePossible:(bool)arg1;
-- (void)setPlaybackSessionInterface:(struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*)arg1;
+- (void)setPlaybackSessionInterface:(struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WeakPtr<WebCore::PlaybackSessionModel> { struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel> > > { struct WeakReference<WebCore::PlaybackSessionModel> {} *x_1_2_1; } x_5_1_1; } x5; }*)arg1;
 - (void)setPlayerControllerProxy:(id)arg1;
 - (void)setPlaying:(bool)arg1;
 - (void)setPlayingOnSecondScreen:(bool)arg1;

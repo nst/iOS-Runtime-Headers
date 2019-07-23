@@ -18,10 +18,10 @@
     void trailingTextShowingButtonLayoutConstraint;
 }
 
-@property (nonatomic, readonly) UIButton *messagesButton;
+@property (nonatomic, readonly) _TtC15ConversationKit19InCallControlButton *messagesButton;
 
-- (id /* block */).cxx_destruct;
-- (void)didTapMessagesButton;
+- (void).cxx_destruct;
+- (void)didTapMessagesButton:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

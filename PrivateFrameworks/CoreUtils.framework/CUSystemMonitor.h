@@ -14,15 +14,18 @@
     bool  _invalidateCalled;
     bool  _invalidateCalled2;
     id /* block */  _invalidationHandler;
+    id /* block */  _manateeChangedHandler;
     id /* block */  _meDeviceChangedHandler;
     id /* block */  _netFlagsChangedHandler;
     id /* block */  _powerUnlimitedChangedHandler;
     id /* block */  _primaryAppleIDChangedHandler;
     id /* block */  _primaryIPChangedHandler;
+    id /* block */  _primaryNetworkChangedHandler;
     id /* block */  _rotatingIdentifierChangedHandler;
     id /* block */  _screenLockedChangedHandler;
     id /* block */  _screenOnChangedHandler;
     id /* block */  _screenSaverChangedHandler;
+    id /* block */  _systemLockStateChangedHandler;
     id /* block */  _wifiStateChangedHandler;
 }
 
@@ -31,6 +34,7 @@
 @property (copy) id /* block */ bluetoothAddressChangedHandler;
 @property (readonly, copy) NSData *bluetoothAddressData;
 @property (copy) id /* block */ callChangedHandler;
+@property (readonly) int connectedCallCount;
 @property (nonatomic, copy) id /* block */ consoleUserChangedHandler;
 @property (readonly) unsigned int consoleUserID;
 @property (readonly, copy) NSString *consoleUserName;
@@ -40,9 +44,12 @@
 @property (nonatomic, copy) id /* block */ firstUnlockHandler;
 @property (nonatomic, readonly) bool firstUnlocked;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (readonly) bool manateeAvailable;
+@property (nonatomic, copy) id /* block */ manateeChangedHandler;
 @property (copy) id /* block */ meDeviceChangedHandler;
 @property (readonly, copy) NSString *meDeviceFMFDeviceID;
 @property (readonly, copy) NSString *meDeviceIDSDeviceID;
+@property (readonly) bool meDeviceIsMe;
 @property (readonly, copy) NSString *meDeviceName;
 @property (readonly) bool meDeviceValid;
 @property (readonly) unsigned int netFlags;
@@ -54,6 +61,8 @@
 @property (copy) id /* block */ primaryIPChangedHandler;
 @property (nonatomic, readonly) union { struct sockaddr { unsigned char x_1_1_1; unsigned char x_1_1_2; BOOL x_1_1_3[14]; } x1; struct sockaddr_in { unsigned char x_2_1_1; unsigned char x_2_1_2; unsigned short x_2_1_3; struct in_addr { unsigned int x_4_2_1; } x_2_1_4; BOOL x_2_1_5[8]; } x2; struct sockaddr_in6 { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; struct in6_addr { union { unsigned char x_1_3_1[16]; unsigned short x_1_3_2[8]; unsigned int x_1_3_3[4]; } x_5_2_1; } x_3_1_5; unsigned int x_3_1_6; } x3; } primaryIPv4Addr;
 @property (nonatomic, readonly) union { struct sockaddr { unsigned char x_1_1_1; unsigned char x_1_1_2; BOOL x_1_1_3[14]; } x1; struct sockaddr_in { unsigned char x_2_1_1; unsigned char x_2_1_2; unsigned short x_2_1_3; struct in_addr { unsigned int x_4_2_1; } x_2_1_4; BOOL x_2_1_5[8]; } x2; struct sockaddr_in6 { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; struct in6_addr { union { unsigned char x_1_3_1[16]; unsigned short x_1_3_2[8]; unsigned int x_1_3_3[4]; } x_5_2_1; } x_3_1_5; unsigned int x_3_1_6; } x3; } primaryIPv6Addr;
+@property (nonatomic, copy) id /* block */ primaryNetworkChangedHandler;
+@property (nonatomic, readonly, copy) NSString *primaryNetworkSignature;
 @property (readonly) struct { unsigned char x1[6]; } rotatingIdentifier48;
 @property (copy) id /* block */ rotatingIdentifierChangedHandler;
 @property (readonly, copy) NSData *rotatingIdentifierData;
@@ -63,6 +72,8 @@
 @property (copy) id /* block */ screenOnChangedHandler;
 @property (readonly) bool screenSaverActive;
 @property (copy) id /* block */ screenSaverChangedHandler;
+@property (nonatomic, readonly) int systemLockState;
+@property (nonatomic, copy) id /* block */ systemLockStateChangedHandler;
 @property (nonatomic, readonly) unsigned int wifiFlags;
 @property (nonatomic, readonly) int wifiState;
 @property (nonatomic, copy) id /* block */ wifiStateChangedHandler;
@@ -74,6 +85,7 @@
 - (id /* block */)bluetoothAddressChangedHandler;
 - (id)bluetoothAddressData;
 - (id /* block */)callChangedHandler;
+- (int)connectedCallCount;
 - (id /* block */)consoleUserChangedHandler;
 - (unsigned int)consoleUserID;
 - (id)consoleUserName;
@@ -85,9 +97,12 @@
 - (id)init;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (bool)manateeAvailable;
+- (id /* block */)manateeChangedHandler;
 - (id /* block */)meDeviceChangedHandler;
 - (id)meDeviceFMFDeviceID;
 - (id)meDeviceIDSDeviceID;
+- (bool)meDeviceIsMe;
 - (id)meDeviceName;
 - (bool)meDeviceValid;
 - (unsigned int)netFlags;
@@ -99,6 +114,8 @@
 - (id /* block */)primaryIPChangedHandler;
 - (union { struct sockaddr { unsigned char x_1_1_1; unsigned char x_1_1_2; BOOL x_1_1_3[14]; } x1; struct sockaddr_in { unsigned char x_2_1_1; unsigned char x_2_1_2; unsigned short x_2_1_3; struct in_addr { unsigned int x_4_2_1; } x_2_1_4; BOOL x_2_1_5[8]; } x2; struct sockaddr_in6 { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; struct in6_addr { union { unsigned char x_1_3_1[16]; unsigned short x_1_3_2[8]; unsigned int x_1_3_3[4]; } x_5_2_1; } x_3_1_5; unsigned int x_3_1_6; } x3; })primaryIPv4Addr;
 - (union { struct sockaddr { unsigned char x_1_1_1; unsigned char x_1_1_2; BOOL x_1_1_3[14]; } x1; struct sockaddr_in { unsigned char x_2_1_1; unsigned char x_2_1_2; unsigned short x_2_1_3; struct in_addr { unsigned int x_4_2_1; } x_2_1_4; BOOL x_2_1_5[8]; } x2; struct sockaddr_in6 { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; struct in6_addr { union { unsigned char x_1_3_1[16]; unsigned short x_1_3_2[8]; unsigned int x_1_3_3[4]; } x_5_2_1; } x_3_1_5; unsigned int x_3_1_6; } x3; })primaryIPv6Addr;
+- (id /* block */)primaryNetworkChangedHandler;
+- (id)primaryNetworkSignature;
 - (struct { unsigned char x1[6]; })rotatingIdentifier48;
 - (id /* block */)rotatingIdentifierChangedHandler;
 - (id)rotatingIdentifierData;
@@ -115,16 +132,21 @@
 - (void)setFamilyUpdatedHandler:(id /* block */)arg1;
 - (void)setFirstUnlockHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setManateeChangedHandler:(id /* block */)arg1;
 - (void)setMeDeviceChangedHandler:(id /* block */)arg1;
 - (void)setNetFlagsChangedHandler:(id /* block */)arg1;
 - (void)setPowerUnlimitedChangedHandler:(id /* block */)arg1;
 - (void)setPrimaryAppleIDChangedHandler:(id /* block */)arg1;
 - (void)setPrimaryIPChangedHandler:(id /* block */)arg1;
+- (void)setPrimaryNetworkChangedHandler:(id /* block */)arg1;
 - (void)setRotatingIdentifierChangedHandler:(id /* block */)arg1;
 - (void)setScreenLockedChangedHandler:(id /* block */)arg1;
 - (void)setScreenOnChangedHandler:(id /* block */)arg1;
 - (void)setScreenSaverChangedHandler:(id /* block */)arg1;
+- (void)setSystemLockStateChangedHandler:(id /* block */)arg1;
 - (void)setWifiStateChangedHandler:(id /* block */)arg1;
+- (int)systemLockState;
+- (id /* block */)systemLockStateChangedHandler;
 - (unsigned int)wifiFlags;
 - (int)wifiState;
 - (id /* block */)wifiStateChangedHandler;

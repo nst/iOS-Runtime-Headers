@@ -12,6 +12,7 @@
 - (MPCPlayerCommandRequest *)nextSection;
 - (MPCPlayerCommandRequest *)previousChapter;
 - (MPCPlayerCommandRequest *)previousItem;
+- (MPCPlayerCommandRequest *)previousItemDeferringToPlaybackQueuePosition;
 - (MPCPlayerCommandRequest *)previousSection;
 
 @end

@@ -17,8 +17,6 @@
 @property (getter=_tabBarButton, setter=_setTabBarButton:, nonatomic) UITabBarButton *tabBarButton;
 @property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)_fontPointSizeForIdiom:(long long)arg1;
 
 - (void).cxx_destruct;
@@ -30,6 +28,7 @@
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
 - (id)_fontForIdiom:(long long)arg1;
+- (id)_fontForIdiom:(long long)arg1 forTabBarDisplayStyle:(long long)arg2;
 - (long long)_idiomForFontGivenIdiom:(long long)arg1;
 - (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBadgeColor:(id)arg1;
@@ -45,10 +44,8 @@
 - (id)_unselectedTintColor;
 - (void)_updateForFontChangeWithIdiom:(long long)arg1;
 - (void)_updateLabelsVibrancy;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithTabBarDisplayStyle:(long long)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)sizeToFitBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

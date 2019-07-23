@@ -7,6 +7,7 @@
     NSNumber * fCurrentCadence;
     NSNumber * fCurrentPace;
     NSNumber * fDistance;
+    NSNumber * fDistanceSource;
     NSNumber * fElevationAscended;
     NSNumber * fElevationDescended;
     NSDate * fEndDate;
@@ -28,6 +29,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSNumber *distance;
+@property (nonatomic, readonly) NSNumber *distanceSource;
 @property (nonatomic, readonly) NSNumber *elevationAscended;
 @property (nonatomic, readonly) NSNumber *elevationDescended;
 @property (nonatomic, readonly) NSDate *endDate;
@@ -55,6 +57,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)distance;
+- (id)distanceSource;
 - (id)elevationAscended;
 - (id)elevationDescended;
 - (void)encodeWithCoder:(id)arg1;
@@ -62,7 +65,7 @@
 - (id)floorsAscended;
 - (id)floorsDescended;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15 elevationAscended:(id)arg16 elevationDescended:(id)arg17;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15 elevationAscended:(id)arg16 elevationDescended:(id)arg17 distanceSource:(int)arg18;
 - (bool)isOdometerDistance;
 - (bool)isOdometerPace;
 - (id)numberOfPushes;

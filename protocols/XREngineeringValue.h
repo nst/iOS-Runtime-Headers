@@ -18,4 +18,8 @@
 - (unsigned int)uint32;
 - (unsigned long long)uint64;
 
+@optional
+
+- (NSUUID *)uuidFromEngineeringValue;
+
 @end

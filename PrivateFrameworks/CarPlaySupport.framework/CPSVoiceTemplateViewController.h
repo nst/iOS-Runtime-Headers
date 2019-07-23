@@ -27,6 +27,7 @@
 - (void)setLastVoiceTemplateStateChangeTime:(double)arg1;
 - (void)setTitleView:(id)arg1;
 - (id)titleView;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;

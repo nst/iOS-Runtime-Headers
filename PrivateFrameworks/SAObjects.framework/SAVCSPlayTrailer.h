@@ -8,6 +8,7 @@
 @property (nonatomic, copy) NSURL *hiresTrailerUri;
 @property (nonatomic, retain) SAUIImageResource *image;
 @property (nonatomic, copy) NSURL *lowresTrailerUri;
+@property (nonatomic, copy) NSURL *url;
 @property (nonatomic, copy) NSString *utsId;
 
 + (id)playTrailer;
@@ -23,7 +24,9 @@
 - (void)setHiresTrailerUri:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLowresTrailerUri:(id)arg1;
+- (void)setUrl:(id)arg1;
 - (void)setUtsId:(id)arg1;
+- (id)url;
 - (id)utsId;
 
 @end

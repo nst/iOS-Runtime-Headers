@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKSiriSearchRequestOperation : WLKNetworkRequestOperation {
-    NSDictionary * _options;
+@interface WLKSiriSearchRequestOperation : WLKUTSNetworkRequestOperation {
+    NSDictionary * _query;
+    WLKSiriSearchResponse * _response;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *options;
+@property (nonatomic, readonly, copy) NSDictionary *query;
+@property (nonatomic, readonly) WLKSiriSearchResponse *response;
 
 - (void).cxx_destruct;
-- (id)initWithOptions:(id)arg1;
-- (id)options;
-- (id)responseProcessor;
+- (id)initWithQuery:(id)arg1 caller:(id)arg2;
+- (void)processResponse;
+- (id)query;
+- (id)response;
 
 @end

@@ -5,6 +5,8 @@
 @interface PKPassContent : PKContent <NSSecureCoding> {
     NSDictionary * _allSemantics;
     NSArray * _backFieldBuckets;
+    NSArray * _balanceFields;
+    NSString * _businessChatIdentifier;
     PKImage * _footerImage;
     NSArray * _frontFieldBuckets;
     NSString * _logoText;
@@ -15,6 +17,8 @@
 
 @property (nonatomic, copy) NSDictionary *allSemantics;
 @property (nonatomic, copy) NSArray *backFieldBuckets;
+@property (nonatomic, copy) NSArray *balanceFields;
+@property (nonatomic, copy) NSString *businessChatIdentifier;
 @property (nonatomic, retain) PKImage *footerImage;
 @property (nonatomic, copy) NSArray *frontFieldBuckets;
 @property (nonatomic, copy) NSString *logoText;
@@ -28,6 +32,8 @@
 - (void).cxx_destruct;
 - (id)allSemantics;
 - (id)backFieldBuckets;
+- (id)balanceFields;
+- (id)businessChatIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (id)footerImage;
@@ -40,6 +46,8 @@
 - (id)semantics;
 - (void)setAllSemantics:(id)arg1;
 - (void)setBackFieldBuckets:(id)arg1;
+- (void)setBalanceFields:(id)arg1;
+- (void)setBusinessChatIdentifier:(id)arg1;
 - (void)setFooterImage:(id)arg1;
 - (void)setFrontFieldBuckets:(id)arg1;
 - (void)setLogoText:(id)arg1;

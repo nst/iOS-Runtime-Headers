@@ -6,7 +6,7 @@
 
 + (float)chartSeriesDepth;
 + (id)chartSeriesType;
-+ (struct MeshData { id x1; })createMeshForSeries:(id)arg1;
++ (id)createMeshForSeries:(id)arg1;
 + (bool)supportsChartSeriesDepthOffset;
 
 @end

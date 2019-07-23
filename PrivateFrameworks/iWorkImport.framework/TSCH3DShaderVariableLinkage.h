@@ -59,6 +59,7 @@
 - (void)addShader:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2;
 - (bool)canHaveFragment;
 - (void)dealloc;
+- (bool)declaredInShader:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2;
 - (struct TSCH3DShaderVariableScopes { struct array<TSCH3DShaderVariableScopeType, 2> { struct TSCH3DShaderVariableScopeType { unsigned long long x_1_2_1; } x_1_1_1[2]; } x1; })declaredScope;
 - (id)dependees;
 - (id)description;
@@ -101,7 +102,7 @@
 - (bool)updateLinkage:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (bool)updateShader:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2;
 - (id)variable;
-- (id)variableDeclarationInShader:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2;
-- (id)variableQualifiersWithStorageQualifier:(id)arg1;
+- (id)variableDeclarationInShader:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2 isMetal:(bool)arg3;
+- (id)variableQualifiersWithStorageQualifier:(id)arg1 isMetal:(bool)arg2;
 
 @end

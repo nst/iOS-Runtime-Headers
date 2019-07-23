@@ -4,7 +4,6 @@
 
 @interface TPFootnoteContainerRep : TSDContainerRep
 
-- (void)didUpdateLayer:(id)arg1;
 - (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (bool)p_hasContent;

@@ -13,7 +13,6 @@
     CLKTextProvider * _modularSmallBottom;
     CLKImageProvider * _modularSmallTop;
     CLKTextProvider * _signatureBezel;
-    CLKComplicationTemplateGraphicCircular * _signatureCircular;
     CLKTextProvider * _signatureCornerTextProvider;
     CLKImageProvider * _utilityImageProvider;
     CLKTextProvider * _utilityLarge;
@@ -30,7 +29,6 @@
 @property (nonatomic, retain) CLKTextProvider *modularSmallBottom;
 @property (nonatomic, retain) CLKImageProvider *modularSmallTop;
 @property (nonatomic, retain) CLKTextProvider *signatureBezel;
-@property (nonatomic, retain) CLKComplicationTemplateGraphicCircular *signatureCircular;
 @property (nonatomic, retain) CLKTextProvider *signatureCornerTextProvider;
 @property (nonatomic, retain) CLKImageProvider *utilityImageProvider;
 @property (nonatomic, retain) CLKTextProvider *utilityLarge;
@@ -56,13 +54,11 @@
 - (void)setModularSmallBottom:(id)arg1;
 - (void)setModularSmallTop:(id)arg1;
 - (void)setSignatureBezel:(id)arg1;
-- (void)setSignatureCircular:(id)arg1;
 - (void)setSignatureCornerTextProvider:(id)arg1;
 - (void)setUtilityImageProvider:(id)arg1;
 - (void)setUtilityLarge:(id)arg1;
 - (void)setUtilitySmall:(id)arg1;
 - (id)signatureBezel;
-- (id)signatureCircular;
 - (id)signatureCornerTextProvider;
 - (id)utilityImageProvider;
 - (id)utilityLarge;

@@ -9,7 +9,7 @@
     void viewContent;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)initWithCoder:(id)arg1;

@@ -6,7 +6,7 @@
     NSKeyedArchiver * _archiver;
 }
 
-@property (nonatomic, retain) NSKeyedArchiver *archiver;
+@property (nonatomic, readonly) NSKeyedArchiver *archiver;
 
 - (void).cxx_destruct;
 - (void)_configure;
@@ -16,6 +16,5 @@
 - (id)encodedData;
 - (void)finishEncoding;
 - (id)initForWritingWithMessage:(id)arg1;
-- (void)setArchiver:(id)arg1;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface TSCH3DFramebufferGaussianBlurAndBlendPipeline : TSCH3DFramebufferGaussianBlurPipeline {
     float  mBlendFactor;
-    TSCH3DGLFramebuffer * mBlendTexture;
+    TSCH3DFramebuffer * mBlendTexture;
 }
 
 @property (nonatomic) float blendFactor;
-@property (nonatomic, retain) TSCH3DGLFramebuffer *blendTexture;
+@property (nonatomic, retain) TSCH3DFramebuffer *blendTexture;
 
 + (id)effectsArray;
 

@@ -10,6 +10,7 @@
     ACDClientAuthorizationManager * _authorizationManager;
     ACDClient * _client;
     ACDDatabase * _database;
+    ACDDatabaseBackupActivity * _databaseBackupActivity;
     ACDDataclassOwnersManager * _dataclassOwnersManager;
     <ACDAccountStoreDelegate> * _delegate;
     ACDFakeRemoteAccountStoreSession * _fakeRemoteAccountStoreSession;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) ACDAuthenticationPluginManager *authenticationPluginManager;
 @property (nonatomic, readonly) ACDClientAuthorizationManager *authorizationManager;
 @property (nonatomic) ACDClient *client;
+@property (nonatomic, retain) ACDDatabaseBackupActivity *databaseBackupActivity;
 @property (nonatomic, retain) ACDDataclassOwnersManager *dataclassOwnersManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ACDAccountStoreDelegate> *delegate;
@@ -103,6 +105,7 @@
 - (void)credentialForAccountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)credentialItemForAccount:(id)arg1 serviceName:(id)arg2 completion:(id /* block */)arg3;
 - (void)credentialItemsWithCompletion:(id /* block */)arg1;
+- (id)databaseBackupActivity;
 - (void)dataclassActionsForAccountDeletion:(id)arg1 completion:(id /* block */)arg2;
 - (void)dataclassActionsForAccountSave:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataclassOwnersManager;
@@ -154,6 +157,7 @@
 - (void)setClient:(id)arg1;
 - (void)setClientBundleID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)setCredential:(id)arg1 forAccount:(id)arg2 serviceID:(id)arg3 completion:(id /* block */)arg4;
+- (void)setDatabaseBackupActivity:(id)arg1;
 - (void)setDataclassOwnersManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;

@@ -7,6 +7,7 @@
     NSString * _identifier;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSString * _label;
+    AMSMetricsEvent * _metricsEvent;
     NSURL * _url;
     NSMutableDictionary * _userInfo;
 }
@@ -16,7 +17,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) NSString *logKey;
-@property (nonatomic, retain) NSDictionary *metrics;
+@property (nonatomic, retain) AMSMetricsEvent *metricsEvent;
 @property (nonatomic, retain) NSString *preferredClient;
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic) bool requiresFollowUpUI;
@@ -33,7 +34,7 @@
 - (id)internalQueue;
 - (id)label;
 - (id)logKey;
-- (id)metrics;
+- (id)metricsEvent;
 - (id)performActionsWithContract:(id)arg1 account:(id)arg2;
 - (id)postMetricsWithBagContract:(id)arg1;
 - (id)preferredClient;
@@ -44,7 +45,7 @@
 - (void)setInternalQueue:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLogKey:(id)arg1;
-- (void)setMetrics:(id)arg1;
+- (void)setMetricsEvent:(id)arg1;
 - (void)setPreferredClient:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequiresFollowUpUI:(bool)arg1;

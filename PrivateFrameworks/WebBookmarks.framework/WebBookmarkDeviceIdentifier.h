@@ -25,6 +25,7 @@
 - (void)_metaDataDidChange:(id)arg1;
 - (void)_registerForMedadaDataFileChangeDistributedNotification;
 - (void)_resumeMonitoringMetaDataFile;
+- (void)_setUpWithPlistURL:(id)arg1 readOnly:(bool)arg2 queue:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (bool)encounteredErrorWhileObtainingUUID;

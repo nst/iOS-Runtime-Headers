@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface _UIStatusBarVisualProvider_Split : _UIStatusBarVisualProvider_Phone {
+@interface _UIStatusBarVisualProvider_Split : _UIStatusBarVisualProvider_Phone <_UIStatusBarCellularItemTypeStringProvider> {
     NSTimer * _airplaneModeIgnoreChangesTimer;
     _UIStatusBarDisplayItemPlacement * _batteryChargingPlacement;
     NSTimer * _batteryExpansionTimer;
@@ -24,9 +24,12 @@
 @property (nonatomic, retain) _UIStatusBarDisplayItemPlacement *batteryChargingPlacement;
 @property (nonatomic, retain) NSTimer *batteryExpansionTimer;
 @property (nonatomic, retain) UILayoutGuide *cutoutLayoutGuide;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _UIStatusBarDisplayItemPlacement *dualServiceNamePlacement;
 @property (nonatomic, retain) NSLayoutConstraint *expandedLeadingLowerTopConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *expandedTrailingBottomConstraint;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSLayoutConstraint *leadingBottomConstraint;
 @property (nonatomic, retain) _UIStatusBarDisplayItemPlacementGroup *lowerWifiGroup;
 @property (nonatomic, retain) UILayoutGuide *mainRegionsLayoutGuide;
@@ -34,11 +37,13 @@
 @property (nonatomic, retain) _UIStatusBarDisplayItemPlacement *pillIconPlacement;
 @property (nonatomic, retain) NSTimer *pillTimer;
 @property (nonatomic, retain) _UIStatusBarDisplayItemPlacement *serviceNamePlacement;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSTimer *systemUpdatesTimer;
 
 + (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsFromCenteringEdgeInset:(double)arg1 trailing:(bool)arg2;
 + (double)baseIconScale;
 + (double)baselineBottomInset;
++ (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double*)arg3;
 + (double)cornerRadius;
 + (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })expandedEdgeInsets;
 + (id)expandedFont;
@@ -92,6 +97,7 @@
 - (id)batteryChargingPlacement;
 - (id)batteryExpansionTimer;
 - (bool)canFixupDisplayItemAttributes;
+- (id)condensedFontForCellularType:(long long)arg1 defaultFont:(id)arg2 baselineOffset:(double*)arg3;
 - (id)cutoutLayoutGuide;
 - (void)dataUpdated:(id)arg1;
 - (id)defaultAnimationForDisplayItemWithIdentifier:(id)arg1;
@@ -99,6 +105,7 @@
 - (id)dualServiceNamePlacement;
 - (id)expandedLeadingLowerTopConstraint;
 - (id)expandedTrailingBottomConstraint;
+- (void)itemCreated:(id)arg1;
 - (id)leadingBottomConstraint;
 - (id)lowerWifiGroup;
 - (id)mainRegionsLayoutGuide;
@@ -130,6 +137,7 @@
 - (void)setSystemUpdatesTimer:(id)arg1;
 - (id)setupInContainerView:(id)arg1;
 - (void)statusBarRegionsUpdated;
+- (id)stringForCellularType:(long long)arg1 condensed:(bool)arg2;
 - (id)styleAttributes;
 - (void)styleUpdatedFromStyle:(long long)arg1;
 - (id)systemUpdatesTimer;

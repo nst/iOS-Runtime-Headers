@@ -53,7 +53,7 @@
 + (id)standardPathForRecording:(id)arg1;
 + (id)standardPathForRecordingWithCreationDate:(id)arg1 uniqueID:(id)arg2;
 + (id)standardURLForRecordingWithCreationDate:(id)arg1;
-+ (id)startStoreServers;
++ (id)startStoreServers:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (bool)__saveManagedObjectContext:(id*)arg1;

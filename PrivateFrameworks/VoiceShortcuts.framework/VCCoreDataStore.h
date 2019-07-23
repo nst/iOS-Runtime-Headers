@@ -19,15 +19,11 @@
 + (bool)destroyPersistentStoreInDirectory:(id)arg1 error:(id*)arg2;
 + (void)initialize;
 + (bool)persistentStoreExistsInDirectory:(id)arg1;
-+ (void)persistentStoreWillNeedRecreation;
-+ (void)resetSpotlightIndex;
 
 - (void).cxx_destruct;
 - (id)activeManagedObjectWithVoiceShortcutIdentifier:(id)arg1 accessSpecifier:(id)arg2 error:(id*)arg3;
 - (id)activeManagedObjectsMatchingPredicate:(id)arg1 accessSpecifier:(id)arg2 error:(id*)arg3;
 - (id)activeManagedObjectsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 accessSpecifier:(id)arg3 error:(id*)arg4;
-- (void)addMissingSpotlightIndexedItemsForApps:(id)arg1;
-- (void)addSpotlightIndexedItemForVoiceShortcut:(id)arg1;
 - (void)addVoiceShortcut:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)applyChangeSet:(struct NSOrderedSet { Class x1; }*)arg1 fromSyncServiceWithIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)callbackQueue;
@@ -35,17 +31,18 @@
 - (id)context;
 - (bool)deleteAllSyncedData:(id*)arg1;
 - (void)deleteShortcutSuggestionsKeepingApps:(id)arg1;
-- (void)deleteSpotlightIndexedItemsKeepingApps:(id)arg1;
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)describeSyncStateIncludingDeleted:(bool)arg1 completion:(id /* block */)arg2;
+- (id)existingSyncStateOfManagedObject:(id)arg1 forSyncServiceWithIdentifier:(id)arg2;
 - (id)existingVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 error:(id*)arg3;
+- (void)getAppsWithVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getNumberOfVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)getUnsyncedChangesForSyncServiceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)getVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
-- (void)getVoiceShortcutsForAppWithBundleIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)getVoiceShortcutsForAppsWithBundleIdentifiers:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)getVoiceShortcutsMatchingPredicate:(id)arg1 accessSpecifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)getVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)indexingQueue;
@@ -62,7 +59,7 @@
 - (void)markManagedObject:(id)arg1 asSynced:(bool)arg2 withSyncServiceWithIdentifier:(id)arg3 syncMetadata:(id)arg4;
 - (bool)markManagedObjectAsDeleted:(id)arg1 error:(id*)arg2;
 - (void)markManagedObjectAsUnsynced:(id)arg1;
-- (void)removeSpotlightIndexedItemForVoiceShortcutIdentifier:(id)arg1;
+- (void)removeSyncStateForChanges:(id)arg1 withSyncServiceWithIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)removeSyncStateForSyncServiceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (bool)resetPersistentStore:(id*)arg1;
 - (bool)saveContext:(id)arg1 orRollback:(id*)arg2;

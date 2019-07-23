@@ -3,11 +3,11 @@
  */
 
 @interface STWebFilterDetailController : PSListController {
-    <STContentPrivacyViewModelCoordinator> * _coordinator;
+    NSObject<STContentPrivacyViewModelCoordinator> * _coordinator;
     STContentPrivacyMediaRestrictionsDetailController * _parentMediaRestrictionsController;
 }
 
-@property (nonatomic, retain) <STContentPrivacyViewModelCoordinator> *coordinator;
+@property (nonatomic, retain) NSObject<STContentPrivacyViewModelCoordinator> *coordinator;
 @property STContentPrivacyMediaRestrictionsDetailController *parentMediaRestrictionsController;
 
 - (void).cxx_destruct;
@@ -17,10 +17,12 @@
 - (void)addNamedSite:(id)arg1;
 - (void)addSite:(id)arg1;
 - (id)coordinator;
+- (void)dealloc;
 - (id)getItemSpecifierValue:(id)arg1;
 - (id)groupSpecifierWithConfiguration:(id)arg1 key:(id)arg2 footerText:(id)arg3 radio:(bool)arg4;
 - (id)init;
 - (id)listItemSpecifierWithGroup:(id)arg1 name:(id)arg2 value:(id)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)parentMediaRestrictionsController;
 - (void)saveItemValue:(id)arg1 specifier:(id)arg2;
 - (void)saveRemovingItem:(id)arg1 value:(id)arg2;

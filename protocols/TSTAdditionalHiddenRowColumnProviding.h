@@ -16,6 +16,8 @@
 - (bool)hideRowAtIndex:(unsigned int)arg1 forAction:(unsigned char)arg2;
 - (unsigned char)hidingActionForColumnAtIndex:(unsigned short)arg1;
 - (unsigned char)hidingActionForRowAtIndex:(unsigned int)arg1;
+- (NSMutableIndexSet *)indexesOfCollapsedRowsInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (NSIndexSet *)indexesOfFilteredRowsInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (NSIndexSet *)indexesOfHiddenColumnsInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (NSIndexSet *)indexesOfHiddenRowsInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (NSIndexSet *)indexesOfUserHiddenColumnsInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;

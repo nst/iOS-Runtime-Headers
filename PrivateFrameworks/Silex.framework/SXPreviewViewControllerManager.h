@@ -4,7 +4,7 @@
 
 @interface SXPreviewViewControllerManager : NSObject <SXPreviewViewControllerManager> {
     <SXActionManager> * _actionManager;
-    SXComponentController * _componentController;
+    <SXComponentController> * _componentController;
     <SXComponentInteractionManager> * _componentInteractionManager;
     unsigned long long  _previewType;
     SXTangierController * _tangierController;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly) <SXActionManager> *actionManager;
-@property (nonatomic, readonly) SXComponentController *componentController;
+@property (nonatomic, readonly) <SXComponentController> *componentController;
 @property (nonatomic, readonly) <SXComponentInteractionManager> *componentInteractionManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SXPreviewViewControllerManagerDelegate> *delegate;

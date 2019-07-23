@@ -16,9 +16,11 @@
 - (void)_handlePrefsChange;
 - (void)addToBlacklists:(id)arg1 blacklistAppList:(id)arg2 blacklistActionList:(id)arg3 blacklistAppAndActionList:(id)arg4;
 - (void)dealloc;
+- (id)disabledBundlesInSettings;
 - (id)init;
 - (id)initWithAppPredictionBlacklist:(id)arg1;
 - (bool)isBundleIdBlacklisted:(id)arg1;
+- (id)preprocessBundleId:(id)arg1;
 - (void)setBlacklistFromAssetData:(id)arg1 predictionBlacklist:(id)arg2 shortcutBlacklist:(id)arg3 primaryShortcutBlacklist:(id)arg4;
 - (bool)shouldPredictBundleId:(id)arg1 action:(id)arg2;
 - (bool)shouldPredictBundleIdForShortcuts:(id)arg1 action:(id)arg2;

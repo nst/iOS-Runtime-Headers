@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFWebProcessPlugInReaderEnabledPageController : _SFWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol> {
+@interface _SFWebProcessPlugInReaderEnabledPageController : _SFWebProcessPlugInAutoFillPageController <SFReaderWebProcessControllerProtocol> {
     _SFWebProcessPlugInAppleConnectExtensionController * _appleConnectExtensionController;
     _WKRemoteObjectInterface * _availabilityControllerInterface;
     long long  _cachedReaderTopScrollOffset;
     SFWebProcessPlugInCertificateWarningController * _certificateWarningController;
-    NSMutableDictionary * _domainToUserAgentPolicyMap;
     SFWebProcessPlugInPageExtensionController * _extensionController;
     NSDictionary * _initalArticleScrollPositionAsDictionary;
     NSDictionary * _initialReaderConfiguration;
@@ -19,9 +18,6 @@
         } __ptr_; 
     }  _readerAvailabilityController;
     _SFReaderWebProcessPlugInPageController * _readerPageController;
-    <RequestDesktopSiteUIProcessListener> * _requestDesktopSiteUIProcessListener;
-    _WKRemoteObjectInterface * _requestDesktopSiteWebProcessPlugInListenerInterface;
-    _SFWebProcessPlugInPageSafeBrowsingController * _safeBrowsingController;
     _SFWebProcessSharingLinkExtractor * _sharingLinkExtractor;
     bool  _viewingReadingListArchive;
 }
@@ -39,29 +35,23 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_clearReaderControllerInterface;
-- (void)_deferPageLoadingUntilSafeBrowsingCheckCompleteForFrame:(id)arg1 isMainFrame:(bool)arg2;
 - (void)_detectAvailabilityAfterDelay:(double)arg1 loadEvent:(int)arg2;
 - (void)_detectReaderAvailabilityAfterSameDocumentNavigation;
-- (void)_removeLoadDeferringReasonsForSafeBrowsingIfNecessary;
 - (void)_setUpReaderActivityListenerProxy;
 - (void)_setUpReaderControllerInterface;
-- (void)_setUpUIProcessListenerIfNeeded;
 - (void)articleContentDidChange;
 - (long long)cachedReaderTopScrollOffset;
 - (void)collectReaderContentForMail;
 - (void)collectReadingListItemInfoWithBookmarkID:(id)arg1;
-- (void)decreaseReaderTextSize;
 - (void)didCreateReaderPageContextHandle:(id)arg1;
 - (void)didDetermineReaderAvailability:(bool)arg1 dueToSameDocumentNavigation:(bool)arg2;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)didSetReaderConfiguration:(id)arg1;
-- (void)increaseReaderTextSize;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
 - (id)initalArticleScrollPositionAsDictionary;
 - (id)initialReaderConfiguration;
 - (bool)isViewingReadingListArchive;
 - (void)loadNewReaderArticle;
-- (void)markURLAsNeedingDesktopUserAgent:(id)arg1;
 - (struct OpaqueJSValue { }*)originalArticleFinder;
 - (void)prepareReaderContentForPrinting;
 - (void)prepareToTransitionToReader;
@@ -69,17 +59,15 @@
 - (id)readerPageController;
 - (void)readerTextWasExtracted:(id)arg1 withMetadata:(id)arg2 wasDeterminingAvailability:(bool)arg3;
 - (void)setCachedReaderTopScrollOffset:(long long)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setInitalArticleScrollPositionAsDictionary:(id)arg1;
-- (void)setReaderFont:(id)arg1;
 - (void)setReaderInitialTopScrollOffset:(long long)arg1 configuration:(id)arg2 isViewingArchive:(bool)arg3;
 - (void)setReaderPageController:(id)arg1;
-- (void)setReaderTheme:(id)arg1;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didSameDocumentNavigation:(long long)arg2 forFrame:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 userAgentForURL:(id)arg3;
 - (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned long long)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 renderingProgressDidChange:(unsigned long long)arg2;

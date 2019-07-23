@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, GEOLogContextDelegate, MKActivityViewControllerDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKOfficialAppViewControllerDelegate, MKPlaceCardActionControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKPlaceVenueBrowseViewControllerDelegate, MKStackingViewControllerDelegate, MKTransitAttributionViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, RadiosPreferencesDelegate, _MKInfoCardAnalyticsDelegate, _MKInfoCardController> {
+@interface _MKPlaceViewController : MKLayoutCardViewController <CNContactPickerDelegate, CNContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, GEOLogContextDelegate, MKActivityViewControllerDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKOfficialAppViewControllerDelegate, MKPlaceCardActionControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceParentInfoViewControllerDelegate, MKPlaceServiceHoursViewControllerProtocol, MKPlaceVenueBrowseViewControllerDelegate, MKStackingViewControllerDelegate, MKTransitAttributionViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, RadiosPreferencesDelegate, _MKInfoCardAnalyticsDelegate, _MKInfoCardController> {
     MKPlaceActionManager * _actionManager;
     NSMapTable * _additionalViewControllers;
     bool  _attemptedToCreateAddressBook;
@@ -66,6 +66,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double headerHeight;
 @property (nonatomic, retain) _MKPlaceActionButtonController *headerSecondaryButtonController;
+@property (nonatomic, readonly) double headerSecondaryNameLabelPadding;
 @property (nonatomic, retain) _MKPlaceActionButtonController *headerTertiaryButtonController;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic) bool hideDirectionsButtons;
@@ -164,6 +165,7 @@
 - (bool)hasCheckedDistanceAvailability;
 - (double)headerHeight;
 - (id)headerSecondaryButtonController;
+- (double)headerSecondaryNameLabelPadding;
 - (id)headerTertiaryButtonController;
 - (id)headerTitle;
 - (bool)hideDirectionsButtons;
@@ -222,6 +224,7 @@
 - (bool)placeInBookmarks;
 - (id)placeItem;
 - (void)placeParentInfoViewController:(id)arg1 didSelectParent:(id)arg2;
+- (void)placeServiceViewControllerDidTapHeaderButton:(id)arg1;
 - (void)placeVenueBrowseViewController:(id)arg1 didTapOnSearchCategory:(id)arg2;
 - (id)placeViewControllerDelegate;
 - (id /* block */)placeViewFeedbackAppLaunchHandler;
@@ -236,6 +239,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (id)serviceHoursVC;
 - (void)setAllowTransitLineSelection:(bool)arg1;
 - (void)setAutomobileOptions:(id)arg1;
 - (void)setContactsNavigationController:(id)arg1;

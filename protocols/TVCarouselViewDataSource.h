@@ -5,7 +5,7 @@
 
 @required
 
-- (UICollectionViewCell *)carouselView:(TVCarouselView *)arg1 cellForItemAtIndex:(unsigned long long)arg2;
-- (unsigned long long)numberOfItemsInCarouselView:(TVCarouselView *)arg1;
+- (UICollectionViewCell *)carouselView:(_TVCarouselView *)arg1 cellForItemAtIndex:(unsigned long long)arg2;
+- (unsigned long long)numberOfItemsInCarouselView:(_TVCarouselView *)arg1;
 
 @end

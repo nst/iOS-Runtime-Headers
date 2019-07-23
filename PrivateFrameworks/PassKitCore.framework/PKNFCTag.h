@@ -10,6 +10,7 @@
     NSData * _systemCode;
     NSData * _tagIdentifier;
     unsigned long long  _technology;
+    NFTag * _underlyingTag;
 }
 
 @property (nonatomic, copy) NSData *UID;

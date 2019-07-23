@@ -12,6 +12,7 @@
     unsigned int  _retainSearchTime;
     NSMutableArray * _sections;
     bool  _shouldDisplayNoResults;
+    NSMutableArray * _sortPriorityMappings;
     PBUnknownFields * _unknownFields;
 }
 
@@ -22,13 +23,17 @@
 @property (nonatomic) unsigned int retainSearchTime;
 @property (nonatomic, retain) NSMutableArray *sections;
 @property (nonatomic) bool shouldDisplayNoResults;
+@property (nonatomic, retain) NSMutableArray *sortPriorityMappings;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)sectionsType;
++ (Class)sortPriorityMappingType;
 
 - (void).cxx_destruct;
 - (void)addSections:(id)arg1;
+- (void)addSortPriorityMapping:(id)arg1;
 - (void)clearSections;
+- (void)clearSortPriorityMappings;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -52,7 +57,11 @@
 - (void)setRetainSearchTime:(unsigned int)arg1;
 - (void)setSections:(id)arg1;
 - (void)setShouldDisplayNoResults:(bool)arg1;
+- (void)setSortPriorityMappings:(id)arg1;
 - (bool)shouldDisplayNoResults;
+- (id)sortPriorityMappingAtIndex:(unsigned long long)arg1;
+- (id)sortPriorityMappings;
+- (unsigned long long)sortPriorityMappingsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

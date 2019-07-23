@@ -21,13 +21,8 @@
 @property (nonatomic, retain) UIImageView *iconImageView;
 @property (nonatomic, readonly) bool itemHasBundleIdentifier;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)badgeView;
 - (id)bundleIdentifier;
 - (bool)canBecomeFocused;

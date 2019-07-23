@@ -8,11 +8,15 @@
 - (void)_overrideBiometricMatchingEnabled:(bool)arg1 forReason:(NSString *)arg2;
 - (void)_resumeBiometricMatchingAdvisory:(bool)arg1;
 - (void)beginTransitionToState:(long long)arg1;
+- (bool)canSuggestSwipeToRetry;
+- (bool)confirmedNotInPocket;
 - (void)didEndTransitionToState:(long long)arg1;
 - (SBUIProudLockContainerViewController *)overrideProudLockContainerViewController;
-- (struct { bool x1; bool x2; double x3; })proudLockConfiguration;
+- (struct { bool x1; bool x2; double x3; bool x4; double x5; double x6; double x7; double x8; bool x9; bool x10; bool x11; unsigned long long x12; })proudLockConfiguration;
+- (void)setCanSuggestSwipeToRetry:(bool)arg1;
+- (void)setConfirmedNotInPocket:(bool)arg1;
 - (void)setOverrideProudLockContainerViewController:(SBUIProudLockContainerViewController *)arg1;
-- (void)setProudLockConfiguration:(struct { bool x1; bool x2; double x3; })arg1;
+- (void)setProudLockConfiguration:(struct { bool x1; bool x2; double x3; bool x4; double x5; double x6; double x7; double x8; bool x9; bool x10; bool x11; unsigned long long x12; })arg1;
 - (void)updateTransitionWithProgress:(double)arg1;
 - (void)willEndTransitionToState:(long long)arg1;
 

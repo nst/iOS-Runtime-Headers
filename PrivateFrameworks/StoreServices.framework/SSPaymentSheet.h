@@ -4,6 +4,7 @@
 
 @interface SSPaymentSheet : NSObject <NSCopying> {
     NSString * _accountHeader;
+    NSString * _accountName;
     NSString * _buyParams;
     long long  _confirmationTitleType;
     NSString * _countryCode;
@@ -15,6 +16,7 @@
     NSArray * _flexList;
     NSArray * _inlineImages;
     NSLock * _lock;
+    NSDictionary * _merchantSession;
     NSString * _message;
     long long  _payeeType;
     NSString * _paymentSummary;
@@ -34,6 +36,7 @@
 }
 
 @property (copy) NSString *accountHeader;
+@property (copy) NSString *accountName;
 @property (readonly, copy) NSString *buyParams;
 @property long long confirmationTitleType;
 @property (copy) NSString *countryCode;
@@ -44,6 +47,7 @@
 @property (copy) NSString *explanation;
 @property (readonly) NSArray *flexList;
 @property (readonly, copy) NSArray *inlineImages;
+@property (copy) NSDictionary *merchantSession;
 @property (copy) NSString *message;
 @property long long payeeType;
 @property (copy) NSString *paymentSummary;
@@ -83,6 +87,7 @@
 - (void)_stringValuesToUppercase;
 - (void)_unlock;
 - (id)accountHeader;
+- (id)accountName;
 - (id)buyParams;
 - (long long)confirmationTitleType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -100,6 +105,7 @@
 - (id)initWithServerResponse:(id)arg1 buyParams:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)inlineImages;
+- (id)merchantSession;
 - (id)message;
 - (long long)payeeType;
 - (id)paymentSummary;
@@ -113,12 +119,14 @@
 - (id)salableInfo;
 - (id)salableInfoLabel;
 - (void)setAccountHeader:(id)arg1;
+- (void)setAccountName:(id)arg1;
 - (void)setConfirmationTitleType:(long long)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setDialogId:(id)arg1;
 - (void)setDisplayPrice:(id)arg1;
 - (void)setExplanation:(id)arg1;
+- (void)setMerchantSession:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPayeeType:(long long)arg1;
 - (void)setPaymentSummary:(id)arg1;

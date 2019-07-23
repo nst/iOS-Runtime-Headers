@@ -25,7 +25,7 @@
 - (double)getAveragePowerDB;
 - (double)getPeakPowerDB;
 - (id)initWithSampleRate:(float)arg1;
-- (void)process:(const short*)arg1 stride:(int)arg2 inFrameToProcess:(int)arg3;
+- (void)process:(const short*)arg1 stride:(int)arg2 inFrameToProcess:(int)arg3 boost:(float)arg4;
 - (void)reset;
 
 @end

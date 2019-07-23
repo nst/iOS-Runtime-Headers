@@ -12,6 +12,7 @@
     bool  _supportsTransitOnly;
     NSString * _transactionPushTopic;
     NSURL * _transactionServiceURL;
+    NSArray * _upgradeRequests;
 }
 
 @property (nonatomic, copy) NSString *appURLScheme;
@@ -23,6 +24,7 @@
 @property (nonatomic) bool supportsTransitOnly;
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
+@property (nonatomic, copy) NSArray *upgradeRequests;
 
 + (bool)supportsSecureCoding;
 
@@ -45,8 +47,10 @@
 - (void)setSupportsTransitOnly:(bool)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
+- (void)setUpgradeRequests:(id)arg1;
 - (bool)supportsTransitOnly;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
+- (id)upgradeRequests;
 
 @end

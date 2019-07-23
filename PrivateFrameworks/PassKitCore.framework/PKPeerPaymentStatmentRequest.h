@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSString *emailAddress;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)emailAddress;
 - (void)setEmailAddress:(id)arg1;
 

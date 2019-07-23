@@ -5,9 +5,11 @@
 @interface SFDeviceSetupAppleTVService : NSObject {
     bool  _activateCalled;
     bool  _advertiseFast;
+    SFDeviceOperationHandlerCDPSetup * _cdpSetupHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     HMDeviceSetupOperationHandler * _homeKitSetupHandler;
     bool  _invalidateCalled;
+    bool  _prefCDPEnabled;
     SFClient * _preventExitForLocaleClient;
     id /* block */  _progressHandler;
     SFService * _sfService;

@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) TSWPSwipeGestureRecognizer *textLeftSwipeGestureRecognizer;
 @property (nonatomic, readonly) TSWPSwipeGestureRecognizer *textRightSwipeGestureRecognizer;
 
+- (void)_clearSelectedRange;
 - (id)_dragItemsForInteraction:(id)arg1 session:(id)arg2 withTouchAtPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (id)actionForHyperlink:(id)arg1 inRep:(id)arg2 gesture:(id)arg3;
 - (void)addSwipeGestureRecognizers;

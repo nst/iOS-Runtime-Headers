@@ -38,6 +38,7 @@
 - (id)initWithQueue:(id)arg1;
 - (void)isPasscodeLockedOrBlockedWithResult:(id /* block */)arg1;
 - (bool)isPendingExit;
+- (void)prepareDisplaysForExit;
 - (void)prepareForExitAndRelaunch:(bool)arg1;
 - (id)queue;
 - (id)server;

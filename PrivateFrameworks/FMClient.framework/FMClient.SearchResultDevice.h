@@ -33,7 +33,7 @@
 
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)description;
 - (id)deviceClass;
 - (id)deviceName;

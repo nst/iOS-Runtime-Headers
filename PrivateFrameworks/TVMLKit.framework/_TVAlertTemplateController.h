@@ -5,8 +5,8 @@
 @interface _TVAlertTemplateController : _TVBgImageLoadingViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, _TVCollectionViewDelegate> {
     IKImageElement * _bgHeroImageElement;
     IKImageElement * _bgImageElement;
-    NSArray * _buttonElements;
     _TVCollectionView * _collectionView;
+    NSArray * _collectionViewElements;
     NSIndexPath * _lastFocusedIndexPath;
     IKViewElement * _templateElement;
     bool  _updateAutoHighlight;
@@ -26,6 +26,8 @@
 - (void)_scrollToPreferredFocusView;
 - (bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;

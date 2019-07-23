@@ -6,6 +6,7 @@
 @required
 
 - (NSArray *)devices;
+- (bool)isRefreshing;
 - (void)refreshUsageData;
 - (NSString *)selectedDeviceIdentifier;
 - (void)setSelectedDeviceIdentifier:(NSString *)arg1;

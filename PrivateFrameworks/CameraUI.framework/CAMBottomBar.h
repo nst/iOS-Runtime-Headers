@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMBottomBar : UIView <CAMAccessibilityHUDItemProvider, CAMBarsAccessibilityHUDManagerGestureProvider, CAMExpandableMenuButtonDelegate> {
+@interface CAMBottomBar : UIView <CAMApertureButtonDelegate, CAMExpandableMenuButtonDelegate> {
     CAMHDRButton * _HDRButton;
     CAMExpandableMenuButton * __expandedMenuButton;
+    CAMApertureButton * _apertureButton;
     long long  _backgroundStyle;
     UIView * _backgroundView;
     CAMCreativeCameraButton * _creativeCameraButton;
@@ -20,20 +21,19 @@
     CUShutterButton * _stillDuringVideoButton;
     CAMTimerButton * _timerButton;
     CAMUtilityBar * _utilityBar;
-    double  _utilityBarExtensionAboveTopEdge;
+    double  _utilityBarExtensionDistance;
+    <CAMControlVisibilityUpdateDelegate> * _visibilityUpdateDelegate;
 }
 
 @property (nonatomic, retain) CAMHDRButton *HDRButton;
 @property (setter=_setExpandedMenuButton:, nonatomic, retain) CAMExpandableMenuButton *_expandedMenuButton;
+@property (nonatomic, retain) CAMApertureButton *apertureButton;
 @property (nonatomic) long long backgroundStyle;
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, retain) CAMCreativeCameraButton *creativeCameraButton;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PUReviewScreenDoneButton *doneButton;
 @property (nonatomic, retain) CAMFlashButton *flashButton;
 @property (nonatomic, retain) CAMFlipButton *flipButton;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CAMImageWell *imageWell;
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic, retain) CAMLivePhotoButton *livePhotoButton;
@@ -41,10 +41,10 @@
 @property (nonatomic, retain) UIButton *reviewButton;
 @property (nonatomic, retain) CUShutterButton *shutterButton;
 @property (nonatomic, retain) CUShutterButton *stillDuringVideoButton;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) CAMTimerButton *timerButton;
 @property (nonatomic, retain) CAMUtilityBar *utilityBar;
-@property (nonatomic) double utilityBarExtensionAboveTopEdge;
+@property (nonatomic) double utilityBarExtensionDistance;
+@property (nonatomic) <CAMControlVisibilityUpdateDelegate> *visibilityUpdateDelegate;
 
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shutterButtonAlignmentRectInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forLayoutStyle:(long long)arg2;
 + (bool)wantsVerticalBarForLayoutStyle:(long long)arg1;
@@ -68,9 +68,12 @@
 - (void)_layoutUtilityBarForLayoutStyle:(long long)arg1;
 - (double)_opacityForBackgroundStyle:(long long)arg1;
 - (void)_setExpandedMenuButton:(id)arg1;
+- (void)_updateControlVisibilityAnimated:(bool)arg1;
 - (void)_updateCreativeCameraButtonTappableEdgeInsets;
 - (void)_updateFlipButtonTappableEdgeInsets;
 - (void)_updateImageWellTappableEdgeInsets;
+- (id)apertureButton;
+- (void)apertureButtonNeedsLayout:(id)arg1;
 - (long long)backgroundStyle;
 - (id)backgroundView;
 - (void)collapseMenuButton:(id)arg1 animated:(bool)arg2;
@@ -94,6 +97,7 @@
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)reviewButton;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
+- (void)setApertureButton:(id)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1 animated:(bool)arg2;
 - (void)setCreativeCameraButton:(id)arg1;
@@ -110,12 +114,14 @@
 - (void)setStillDuringVideoButton:(id)arg1;
 - (void)setTimerButton:(id)arg1;
 - (void)setUtilityBar:(id)arg1;
-- (void)setUtilityBarExtensionAboveTopEdge:(double)arg1;
+- (void)setUtilityBarExtensionDistance:(double)arg1;
+- (void)setVisibilityUpdateDelegate:(id)arg1;
 - (id)shutterButton;
 - (id)stillDuringVideoButton;
 - (id)timerButton;
 - (id)touchingRecognizersToCancel;
 - (id)utilityBar;
-- (double)utilityBarExtensionAboveTopEdge;
+- (double)utilityBarExtensionDistance;
+- (id)visibilityUpdateDelegate;
 
 @end

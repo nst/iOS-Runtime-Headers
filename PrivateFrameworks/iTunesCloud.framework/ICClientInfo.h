@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICClientInfo : NSObject <NSCopying, NSMutableCopying> {
+@interface ICClientInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSString * _clientIdentifier;
     NSString * _clientVersion;
     NSString * _processName;
@@ -17,13 +17,16 @@
 @property (nonatomic, readonly, copy) NSString *requestingBundleVersion;
 
 + (id)defaultInfo;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_clientInfoCopyWithClass:(Class)arg1;
 - (id)clientIdentifier;
 - (id)clientVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)processName;
 - (id)requestingBundleIdentifier;

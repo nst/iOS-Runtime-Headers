@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, PKExplanationViewDelegate, PKPaymentSetupViewControllerDelegate, RemoteUIControllerDelegate> {
+@interface PKPeerPaymentPassActivationViewController : PKExplanationViewController <AAUIDeviceToDeviceEncryptionHelperDelegate, PKExplanationViewControllerDelegate, PKPaymentSetupViewControllerDelegate> {
     PKPeerPaymentCredential * _credential;
     <PKPaymentSetupViewControllerDelegate> * _delegate;
     PKPeerPaymentSetupFlowHeroView * _heroView;
@@ -12,7 +12,7 @@
     PKPaymentProvisioningController * _provisioningController;
     bool  _shouldShowAddDebitCardViewController;
     unsigned long long  _state;
-    RemoteUIController * _termsController;
+    PKPeerPaymentTermsController * _termsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -52,7 +52,6 @@
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 credential:(id)arg4 passSnapShot:(id)arg5;
 - (bool)presentedDeviceToDeviceEncryptionFlow;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long*)arg3;
 - (void)setPresentedDeviceToDeviceEncryptionFlow:(bool)arg1;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;

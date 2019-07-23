@@ -7,6 +7,7 @@
     bool  _addViaWAC;
     unsigned long long  _authMethod;
     long long  _certificationStatus;
+    NSString * _identifier;
     long long  _linkType;
     AWDHomeKitVendorInformation * _vendorInfo;
     bool  _wacLegacy;
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) long long linkType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorInfo;
@@ -34,6 +36,7 @@
 - (unsigned int)AWDMessageType;
 - (unsigned long long)authMethod;
 - (long long)certificationStatus;
+- (id)identifier;
 - (id)initWithAccessoryDescription:(id)arg1;
 - (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 isAddOperation:(bool)arg4;
 - (bool)isAddOperation;
@@ -48,6 +51,7 @@
 - (void)setAuthMethod:(unsigned long long)arg1;
 - (void)setAuthenticationMethod:(unsigned long long)arg1;
 - (void)setCertificationStatus:(long long)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setLinkType:(long long)arg1;
 - (void)setVendorInfo:(id)arg1;
 - (void)setWacLegacy:(bool)arg1;

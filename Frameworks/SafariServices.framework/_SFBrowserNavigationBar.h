@@ -4,15 +4,11 @@
 
 @interface _SFBrowserNavigationBar : _SFNavigationBar
 
-@property (nonatomic, readonly) _SFBrowserToolbar *toolbar;
-
 + (long long)_metricsCategory;
 
 - (id)newTextField;
 - (double)placeholderHorizontalInset;
-- (void)tintColorDidChange;
-- (id)toolbar;
 - (id)toolbarPlacedOnTop;
-- (void)updateToolbarTintColor;
+- (void)updateToolbarTintColor:(id)arg1;
 
 @end

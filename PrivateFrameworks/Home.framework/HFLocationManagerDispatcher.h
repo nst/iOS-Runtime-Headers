@@ -25,7 +25,9 @@
 + (id)sharedDispatcher;
 
 - (void).cxx_destruct;
+- (void)_authorizeHomeKitLocationServices;
 - (void)_updateCachedAuthorizationStatus:(int)arg1;
+- (void)_updateMacAuthorizationStatus:(int)arg1;
 - (void)addObserver:(id)arg1;
 - (int)authorizationStatus;
 - (id)authorizationStatusFuture;

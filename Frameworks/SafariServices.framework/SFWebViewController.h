@@ -10,6 +10,7 @@
     bool  _didFirstLayout;
     bool  _didFirstVisuallyNonEmptyLayout;
     NSString * _domainWhereUserDeclinedAutomaticStrongPassword;
+    bool  _hasFocusedInputFieldOnCurrentPage;
     bool  _loading;
     WBSOneTimeCodeMonitor * _oneTimeCodeMonitor;
     bool  _shouldSuppressDialogsThatBlockWebProcess;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) _SFDialogController *dialogController;
 @property (nonatomic, readonly) bool didFirstVisuallyNonEmptyLayout;
+@property (nonatomic, readonly) bool hasFocusedInputFieldOnCurrentPage;
 @property (readonly) unsigned long long hash;
 @property (getter=isLoading, nonatomic) bool loading;
 @property (readonly) Class superclass;
@@ -42,6 +44,7 @@
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
 - (long long)_webView:(id)arg1 decidePolicyForFocusedElement:(id)arg2;
+- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 userInfo:(id)arg3 decisionHandler:(id /* block */)arg4;
 - (void)_webView:(id)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(bool)arg2;
 - (void)_webView:(id)arg1 didResignInputElementStrongPasswordAppearanceWithUserInfo:(id)arg2;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
@@ -73,14 +76,15 @@
 - (void)dialogController:(id)arg1 willPresentDialog:(id)arg2;
 - (bool)didFirstVisuallyNonEmptyLayout;
 - (bool)formAutoFillControllerCanPrefillForm:(id)arg1;
+- (void)formAutoFillControllerDidFocusSensitiveFormField:(id)arg1;
 - (bool)formAutoFillControllerDidUserDeclineAutomaticStrongPasswordForCurrentDomain:(id)arg1;
-- (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 onPageLoad:(bool)arg2 completion:(id /* block */)arg3;
-- (void)formAutoFillControllerGetAuthenticationForAutoFillOnPageLoad:(id)arg1 completion:(id /* block */)arg2;
+- (void)formAutoFillControllerGetAuthenticationForAutoFill:(id)arg1 completion:(id /* block */)arg2;
 - (id)formAutoFillControllerOneTimeCodeMonitor:(id)arg1;
 - (bool)formAutoFillControllerShouldDisableStreamlinedLogin:(id)arg1;
 - (bool)formAutoFillControllerShouldShowIconsInPasswordPicker:(id)arg1;
 - (id)formAutoFillControllerURLForFormAutoFill:(id)arg1;
 - (void)formAutoFillControllerUserChoseToUseGeneratedPassword:(id)arg1;
+- (bool)hasFocusedInputFieldOnCurrentPage;
 - (id)initWithWebViewConfiguration:(id)arg1;
 - (bool)isLoading;
 - (void)loadView;
@@ -91,8 +95,8 @@
 - (void)setLoading:(bool)arg1;
 - (void)sfWebViewDidBecomeFirstResponder:(id)arg1;
 - (void)sfWebViewDidChangeSafeAreaInsets:(id)arg1;
+- (void)sfWebViewDidEndFormControlInteraction:(id)arg1;
 - (id)webView;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(id /* block */)arg3;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;

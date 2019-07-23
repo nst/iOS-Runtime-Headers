@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) NSMutableArray *cohorts;
 
+// Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
+
 + (Class)cohortsType;
 
 - (void).cxx_destruct;
@@ -26,5 +28,9 @@
 - (bool)readFrom:(id)arg1;
 - (void)setCohorts:(id)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)cohortWithPreferredType:(int)arg1;
 
 @end

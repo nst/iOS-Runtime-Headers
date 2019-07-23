@@ -7,8 +7,9 @@
     UIButton * _actionButton;
     UIActivityIndicatorView * _activityIndicator;
     double  _bottomPadding;
-    UIImageView * _checkmarkView;
+    PKCheckGlyphLayer * _checkmarkLayer;
     UIImageView * _imageView;
+    double  _minimumHeight;
     struct CGSize { 
         double width; 
         double height; 
@@ -24,8 +25,9 @@
 @property (nonatomic, readonly) UIButton *actionButton;
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) double bottomPadding;
-@property (nonatomic, readonly) UIImageView *checkmarkView;
+@property (nonatomic, readonly) PKCheckGlyphLayer *checkmarkLayer;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) double minimumHeight;
 @property (nonatomic) bool shouldResizeImageToFit;
 @property (nonatomic) unsigned long long style;
 @property (nonatomic, readonly) UILabel *subtitleLabel;
@@ -44,16 +46,17 @@
 - (id)actionButton;
 - (id)activityIndicator;
 - (double)bottomPadding;
-- (id)checkmarkView;
+- (id)checkmarkLayer;
 - (void)dealloc;
 - (id)imageView;
 - (void)layoutSubviews;
+- (double)minimumHeight;
 - (void)setAccessoryViewsDisabled:(bool)arg1;
 - (void)setBottomPadding:(double)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setImageViewImage:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 animated:(bool)arg3;
-- (void)setPassSnapshotUsingDefaultSize:(id)arg1;
-- (void)setPassSnapshotUsingDefaultSize:(id)arg1 animated:(bool)arg2;
+- (void)setMinimumHeight:(double)arg1;
+- (void)setPassSnapshotUsingDefaultSize:(id)arg1 animated:(bool)arg2 needsCorners:(bool)arg3;
 - (void)setShouldResizeImageToFit:(bool)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setTopPadding:(double)arg1;

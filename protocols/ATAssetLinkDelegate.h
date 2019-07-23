@@ -7,6 +7,7 @@
 
 - (void)assetLink:(id <ATAssetLink>)arg1 didCloseWithOutstandingAssets:(NSArray *)arg2;
 - (void)assetLink:(id <ATAssetLink>)arg1 didFinishAsset:(ATAsset *)arg2 error:(NSError *)arg3 retryable:(bool)arg4;
+- (void)assetLink:(id <ATAssetLink>)arg1 didFinishAsset:(ATAsset *)arg2 error:(NSError *)arg3 retryable:(bool)arg4 cancelPendingAssetsInBatch:(bool)arg5;
 - (void)assetLink:(id <ATAssetLink>)arg1 didOpenWithPendingAssets:(NSArray *)arg2;
 - (void)assetLink:(id <ATAssetLink>)arg1 didPauseAsseDownload:(ATAsset *)arg2 error:(NSError *)arg3;
 - (void)assetLink:(id <ATAssetLink>)arg1 didTransitionAssetStates:(NSArray *)arg2;

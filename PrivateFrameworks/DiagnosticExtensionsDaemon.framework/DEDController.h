@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDController : NSObject <DEDPairingProtocol, DEDSecureArchiving, DEDXPCProtocol> {
+@interface DEDController : NSObject <DEDPairingProtocol, DEDSecureArchiving, DEDXPCConnectorDaemonDelegate, DEDXPCProtocol> {
     DEDIDSConnection * __idsConnection;
     DEDSharingConnection * __sharingConnection;
+    NSObject<OS_dispatch_queue> * _bugSessionCallbackQueue;
     <DEDClientProtocol> * _clientDelegate;
     NSMutableDictionary * _devices;
     id /* block */  _devicesCompletion;
@@ -32,6 +33,7 @@
 
 @property (retain) DEDIDSConnection *_idsConnection;
 @property (retain) DEDSharingConnection *_sharingConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *bugSessionCallbackQueue;
 @property <DEDClientProtocol> *clientDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -77,6 +79,7 @@
 - (void)addDidStartSessionCompletion:(id /* block */)arg1 withIdentifier:(id)arg2;
 - (void)addSessionStartCompletion:(id /* block */)arg1 withIdentifier:(id)arg2;
 - (id)allKnownDevices;
+- (id)bugSessionCallbackQueue;
 - (id)clientDelegate;
 - (void)configureClientDelegate:(id)arg1;
 - (void)configureForDaemon;
@@ -85,7 +88,7 @@
 - (void)configureForSharing:(bool)arg1;
 - (void)configurePairingDelegate:(id)arg1;
 - (void)configureWorkerDelegate:(id)arg1;
-- (id)deviceForIdentifier:(id)arg1;
+- (void)connector:(id)arg1 didLooseConnectionToProcessWithPid:(int)arg2;
 - (id)devices;
 - (id /* block */)devicesCompletion;
 - (id)devicesWithIdentifier:(id)arg1;
@@ -104,7 +107,6 @@
 - (bool)induceTimeOutIfNeededAndReturnCanProceedWithDevice:(id)arg1 sessionId:(id)arg2;
 - (id)init;
 - (bool)isDaemon;
-- (id)knownDevices;
 - (id)knownSessions;
 - (id)log;
 - (id)pairingDelegate;
@@ -127,6 +129,7 @@
 - (double)sessionStartTimeout;
 - (void)sessionWithIdentifier:(id)arg1 isActive:(bool)arg2;
 - (id)sessions;
+- (void)setBugSessionCallbackQueue:(id)arg1;
 - (void)setClientDelegate:(id)arg1;
 - (void)setDevices:(id)arg1;
 - (void)setDevicesCompletion:(id /* block */)arg1;

@@ -27,11 +27,9 @@
     bool  _hasRegisteredScriptMessageHandlers;
     WKNavigation * _initialNavigation;
     bool  _isCurrentlyLoadingEmbedData;
-    struct CGPoint { 
-        double x; 
-        double y; 
-    }  _lastKnownTouchPoint;
+    <SXLayoutInvalidator> * _layoutInvalidator;
     <SXReachabilityProvider> * _reachabilityProvider;
+    NFMultiDelegate * _scriptMessageHandler;
     NSString * _userScript;
     SXWebCrashRetryThrottler * _webCrashRetryThrottler;
     WKWebView * _webView;
@@ -56,8 +54,9 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WKNavigation *initialNavigation;
 @property (nonatomic) bool isCurrentlyLoadingEmbedData;
-@property (nonatomic) struct CGPoint { double x1; double x2; } lastKnownTouchPoint;
+@property (nonatomic, readonly) <SXLayoutInvalidator> *layoutInvalidator;
 @property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
+@property (nonatomic, readonly) NFMultiDelegate *scriptMessageHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *userScript;
 @property (nonatomic, retain) SXWebCrashRetryThrottler *webCrashRetryThrottler;
@@ -77,6 +76,7 @@
 - (struct CGSize { double x1; double x2; })currentLayoutSize;
 - (struct CGSize { double x1; double x2; })currentViewportSize;
 - (struct CGSize { double x1; double x2; })currentlyLayoutingForSize;
+- (void)dealloc;
 - (void)discardContents;
 - (void)displayEmbedIfNeeded;
 - (id)embedConfiguration;
@@ -89,14 +89,13 @@
 - (void)finalizeLayoutForSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleError:(id)arg1;
-- (void)handleLongPress:(id)arg1;
 - (bool)hasLoadedEmbedData;
 - (bool)hasRegisteredScriptMessageHandlers;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 reachabilityProvider:(id)arg5 embedService:(id)arg6 actionHandler:(id)arg7 layoutInvalidator:(id)arg8;
 - (id)initialNavigation;
 - (double)initialScale;
 - (bool)isCurrentlyLoadingEmbedData;
-- (struct CGPoint { double x1; double x2; })lastKnownTouchPoint;
+- (id)layoutInvalidator;
 - (void)layoutWebViewForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)loadEmbedData;
 - (void)loadEmbedIfNeeded;
@@ -106,6 +105,7 @@
 - (void)reloadEmbed;
 - (void)removeScriptMessageHandlers;
 - (void)renderContents;
+- (id)scriptMessageHandler;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setCurrentLayoutSize:(struct CGSize { double x1; double x2; })arg1;
@@ -120,7 +120,6 @@
 - (void)setHasRegisteredScriptMessageHandlers:(bool)arg1;
 - (void)setInitialNavigation:(id)arg1;
 - (void)setIsCurrentlyLoadingEmbedData:(bool)arg1;
-- (void)setLastKnownTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setUserScript:(id)arg1;
 - (void)setWebCrashRetryThrottler:(id)arg1;
 - (void)setWebView:(id)arg1;
@@ -142,6 +141,6 @@
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (id)webViewPresentingInFullscreen;
-- (void)willPresentComponent;
+- (void)willPresentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 
 @end

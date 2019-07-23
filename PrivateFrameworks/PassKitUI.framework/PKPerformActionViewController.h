@@ -53,6 +53,7 @@
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(id /* block */)arg3;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePurchase:(id)arg2 completion:(id /* block */)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
+- (bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (bool)pkui_prefersNavigationBarShadowHidden;
 - (void)setDelegate:(id)arg1;
 - (void)setRightBarButtonEnabled:(bool)arg1;

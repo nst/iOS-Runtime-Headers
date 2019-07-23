@@ -26,8 +26,10 @@
 @property float idealRefreshRate;
 @property bool invertsColors;
 @property float maximumBrightness;
+@property (readonly) float maximumLuminance;
 @property (getter=isMirroringEnabled) bool mirroringEnabled;
 @property (readonly) NSString *name;
+@property float nits;
 @property (copy) NSString *orientation;
 @property double overscanAmount;
 @property struct CGSize { double x1; double x2; } overscanAmounts;
@@ -39,6 +41,7 @@
 @property long long tag;
 @property (readonly) NSString *uniqueId;
 @property bool usesPreferredModeRefreshRate;
+@property (readonly) struct { float x1; float x2; } whitepoint;
 
 - (id)TVMode;
 - (id)TVSignalType;
@@ -74,9 +77,11 @@
 - (bool)isMirroringEnabled;
 - (bool)isSecure;
 - (float)maximumBrightness;
+- (float)maximumLuminance;
 - (float)maximumRefreshRate;
 - (float)minimumRefreshRate;
 - (id)name;
+- (float)nits;
 - (id)orientation;
 - (double)overscanAmount;
 - (struct CGSize { double x1; double x2; })overscanAmounts;
@@ -120,6 +125,7 @@
 - (id)uniqueId;
 - (void)update;
 - (bool)usesPreferredModeRefreshRate;
+- (struct { float x1; float x2; })whitepoint;
 - (void)willUnblank;
 
 @end

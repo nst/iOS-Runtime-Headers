@@ -3,21 +3,26 @@
  */
 
 @interface MPModelLibrarySearchSectionedCollectionDataSource : NSObject <MPLazySectionedCollectionDataSource> {
+    MPModelRequest * _request;
     NSArray * _resultContainers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MPModelRequest *request;
 @property (nonatomic, readonly, copy) NSArray *resultContainers;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)initWithEntitiesQueryResultContainers:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
+- (id)request;
 - (id)resultContainers;
 - (id)sectionAtIndex:(unsigned long long)arg1;
+- (void)setRequest:(id)arg1;
 
 @end

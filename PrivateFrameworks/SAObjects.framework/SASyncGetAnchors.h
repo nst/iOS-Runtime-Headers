@@ -27,6 +27,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (bool)includeAllKnownAnchors;
+- (bool)mutatingCommand;
 - (bool)requiresResponse;
 - (void)setAppMetaDataList:(id)arg1;
 - (void)setCustomVocabSources:(id)arg1;

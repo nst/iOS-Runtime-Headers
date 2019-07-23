@@ -3,22 +3,26 @@
  */
 
 @interface PKPaymentCredentialCache : NSObject {
+    NSString * _cellSubtitle;
     PKPaymentCredential * _credential;
     bool  _isSelected;
     UIImage * _passSnapshot;
     PKPaymentPass * _paymentPass;
 }
 
+@property (nonatomic, copy) NSString *cellSubtitle;
 @property (nonatomic, retain) PKPaymentCredential *credential;
 @property (nonatomic) bool isSelected;
 @property (nonatomic, retain) UIImage *passSnapshot;
 @property (nonatomic, retain) PKPaymentPass *paymentPass;
 
 - (void).cxx_destruct;
+- (id)cellSubtitle;
 - (id)credential;
 - (bool)isSelected;
 - (id)passSnapshot;
 - (id)paymentPass;
+- (void)setCellSubtitle:(id)arg1;
 - (void)setCredential:(id)arg1;
 - (void)setIsSelected:(bool)arg1;
 - (void)setPassSnapshot:(id)arg1;

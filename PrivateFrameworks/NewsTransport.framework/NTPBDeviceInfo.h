@@ -3,6 +3,8 @@
  */
 
 @interface NTPBDeviceInfo : PBCodable <NSCopying> {
+    NSString * _deviceAppBundleId;
+    NSString * _deviceAppVersion;
     long long  _deviceDstOffset;
     NSString * _deviceOsVersion;
     NSMutableArray * _devicePreferredLanguages;
@@ -18,6 +20,8 @@
     }  _has;
 }
 
+@property (nonatomic, retain) NSString *deviceAppBundleId;
+@property (nonatomic, retain) NSString *deviceAppVersion;
 @property (nonatomic) long long deviceDstOffset;
 @property (nonatomic, retain) NSString *deviceOsVersion;
 @property (nonatomic, retain) NSMutableArray *devicePreferredLanguages;
@@ -26,6 +30,8 @@
 @property (nonatomic) int deviceTokenEnv;
 @property (nonatomic, retain) NSString *deviceType;
 @property (nonatomic) long long deviceUtcOffset;
+@property (nonatomic, readonly) bool hasDeviceAppBundleId;
+@property (nonatomic, readonly) bool hasDeviceAppVersion;
 @property (nonatomic) bool hasDeviceDstOffset;
 @property (nonatomic, readonly) bool hasDeviceOsVersion;
 @property (nonatomic, readonly) bool hasDevicePushToken;
@@ -41,6 +47,8 @@
 - (void)clearDevicePreferredLanguages;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)deviceAppBundleId;
+- (id)deviceAppVersion;
 - (long long)deviceDstOffset;
 - (id)deviceOsVersion;
 - (id)devicePreferredLanguageAtIndex:(unsigned long long)arg1;
@@ -52,6 +60,8 @@
 - (id)deviceType;
 - (long long)deviceUtcOffset;
 - (id)dictionaryRepresentation;
+- (bool)hasDeviceAppBundleId;
+- (bool)hasDeviceAppVersion;
 - (bool)hasDeviceDstOffset;
 - (bool)hasDeviceOsVersion;
 - (bool)hasDevicePushToken;
@@ -63,6 +73,8 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setDeviceAppBundleId:(id)arg1;
+- (void)setDeviceAppVersion:(id)arg1;
 - (void)setDeviceDstOffset:(long long)arg1;
 - (void)setDeviceOsVersion:(id)arg1;
 - (void)setDevicePreferredLanguages:(id)arg1;

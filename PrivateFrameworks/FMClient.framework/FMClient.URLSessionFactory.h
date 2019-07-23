@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMClient.framework/FMClient
  */
 
-@interface FMClient.URLSessionFactory : SwiftObject
+@interface FMClient.URLSessionFactory : Swift._SwiftObject
 
 @end

@@ -63,6 +63,8 @@
 - (void)_fetchETAWithRouteMatch:(id)arg1;
 - (void)_finishEtaUpdaterInit;
 - (bool)_hasInitialRoute;
+- (bool)_isNavigating;
+- (bool)_isNavigatingToDestination;
 - (void)_recalculateETAWithRouteMatch:(id)arg1;
 - (void)_recievedRouteResponse:(id)arg1 forLocation:(id)arg2 isReroute:(bool)arg3;
 - (void)_recordTraceForEvent:(long long)arg1 parameters:(id)arg2;
@@ -92,6 +94,7 @@
 - (id)hypothesis;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1 toDestination:(id)arg2 transportType:(int)arg3 arrivalDate:(id)arg4 traceName:(id)arg5 traits:(id)arg6;
+- (id)navDestination;
 - (void)recordETAUpdatesAfterEventStart;
 - (id)routeMatchForLocation:(id)arg1;
 - (id)routeName;

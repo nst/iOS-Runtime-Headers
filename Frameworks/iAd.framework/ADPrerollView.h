@@ -9,7 +9,7 @@
     <ADPrerollViewDelegate> * _delegate;
     bool  _hasAction;
     NSTimer * _passiveWatchingTimer;
-    ADPrivacyButton * _privacyButton;
+    ADPrivacyMarker * _privacyMarker;
     bool  _skipButtonCountingDown;
     UIImageView * _swooshView;
     ADPrerollTopBar * _topBar;
@@ -24,7 +24,7 @@
 @property (nonatomic) bool hasAction;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSTimer *passiveWatchingTimer;
-@property (nonatomic, retain) ADPrivacyButton *privacyButton;
+@property (nonatomic, retain) ADPrivacyMarker *privacyMarker;
 @property (nonatomic) bool skipButtonCountingDown;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImageView *swooshView;
@@ -58,7 +58,7 @@
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)passiveWatchingTimer;
-- (id)privacyButton;
+- (id)privacyMarker;
 - (void)setAccumulatedViewingTime:(double)arg1;
 - (void)setBarsVisible:(bool)arg1;
 - (void)setBottomBar:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
 - (void)setHasAction:(bool)arg1;
 - (void)setPassiveWatchingTimer:(id)arg1;
-- (void)setPrivacyButton:(id)arg1;
+- (void)setPrivacyMarker:(id)arg1;
 - (void)setSkipButtonCountingDown:(bool)arg1;
 - (void)setSwooshView:(id)arg1;
 - (void)setTopBar:(id)arg1;

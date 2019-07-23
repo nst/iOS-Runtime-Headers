@@ -8,6 +8,7 @@
     NSMutableArray * _diagnosticReasons;
     NSMutableDictionary * _diagnosticReasonsByTaskID;
     NSObject<OS_dispatch_queue> * _diagnosticReasonsQueue;
+    NSSet * _sensitiveKeys;
     NSObject<OS_dispatch_queue> * _sessionQueue;
     NSObject<OS_dispatch_queue> * _stateQueue;
     unsigned long long  _taskIDCounter;
@@ -36,6 +37,8 @@
 - (id)_accountStore;
 - (void)_associateDiagnosticReasonsWithTaskID:(unsigned long long)arg1;
 - (void)_cleanUpDiagnosticReasonsForTaskID:(unsigned long long)arg1;
+- (void)_redactLogsFromJSONObject:(id)arg1;
+- (id)_redactLogsWithData:(id)arg1;
 - (bool)_trustPassesExtendedValidation:(struct __SecTrust { }*)arg1;
 - (id)_urlRequestTaggedWithDiagnosticReasonHeader:(id)arg1 forTaskID:(unsigned long long)arg2;
 - (id)_urlRequestTaggedWithWebServiceSessionMarkerHeader:(id)arg1;

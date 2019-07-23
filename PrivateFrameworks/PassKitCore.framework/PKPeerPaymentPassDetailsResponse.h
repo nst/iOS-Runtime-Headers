@@ -4,6 +4,7 @@
 
 @interface PKPeerPaymentPassDetailsResponse : PKPeerPaymentWebServiceResponse {
     long long  _cardType;
+    NSString * _ownershipTokenIdentifier;
     NSString * _passSerialNumber;
     NSString * _passTypeIdentifier;
     NSURL * _passURL;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, readonly) long long cardType;
+@property (nonatomic, readonly, copy) NSString *ownershipTokenIdentifier;
 @property (nonatomic, readonly, copy) NSString *passSerialNumber;
 @property (nonatomic, readonly, copy) NSString *passTypeIdentifier;
 @property (nonatomic, readonly, copy) NSURL *passURL;
@@ -23,6 +25,7 @@
 - (void).cxx_destruct;
 - (long long)cardType;
 - (id)initWithData:(id)arg1;
+- (id)ownershipTokenIdentifier;
 - (id)passSerialNumber;
 - (id)passTypeIdentifier;
 - (id)passURL;

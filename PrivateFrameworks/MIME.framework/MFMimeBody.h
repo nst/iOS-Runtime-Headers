@@ -6,6 +6,7 @@
     long long  _encryptedDescendantState;
     unsigned int  _numAlternatives;
     unsigned int  _preferredAlternative;
+    NSArray * _signers;
     MFMimePart * _topLevelPart;
 }
 
@@ -15,6 +16,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *mimeSubtype;
 @property (nonatomic, readonly, copy) NSString *mimeType;
+@property (nonatomic, retain) NSArray *signers;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MFMimePart *topLevelPart;
 @property (nonatomic, readonly) unsigned long long totalTextSize;
@@ -38,7 +40,9 @@
 - (long long)preferredAlternative;
 - (id)preferredBodyPart;
 - (void)setPreferredAlternative:(long long)arg1;
+- (void)setSigners:(id)arg1;
 - (void)setTopLevelPart:(id)arg1;
+- (id)signers;
 - (id)textHtmlPart;
 - (id)topLevelPart;
 - (unsigned long long)totalTextSize;

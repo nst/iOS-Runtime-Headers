@@ -10,6 +10,7 @@
     long long  _backendArticleVersionInt64;
     NSString * _campaignId;
     NSString * _campaignType;
+    NTPBChannelData * _channelData;
     int  _characterCount;
     NSString * _contentId;
     int  _contentType;
@@ -69,6 +70,8 @@
     bool  _isSearchResult;
     bool  _isTopStoryArticle;
     bool  _isUserSubscribedToFeed;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
     NSString * _language;
     NSMutableArray * _namedEntities;
     NSString * _nativeCampaignData;
@@ -101,6 +104,7 @@
 @property (nonatomic) long long backendArticleVersionInt64;
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NTPBChannelData *channelData;
 @property (nonatomic) int characterCount;
 @property (nonatomic, retain) NSString *contentId;
 @property (nonatomic) int contentType;
@@ -121,6 +125,7 @@
 @property (nonatomic) bool hasBackendArticleVersionInt64;
 @property (nonatomic, readonly) bool hasCampaignId;
 @property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasChannelData;
 @property (nonatomic) bool hasCharacterCount;
 @property (nonatomic, readonly) bool hasContentId;
 @property (nonatomic) bool hasContentType;
@@ -149,6 +154,8 @@
 @property (nonatomic) bool hasIsSearchResult;
 @property (nonatomic) bool hasIsTopStoryArticle;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
 @property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic, readonly) bool hasNativeCampaignData;
 @property (nonatomic) bool hasNextArticleAffordanceType;
@@ -187,6 +194,8 @@
 @property (nonatomic) bool isSearchResult;
 @property (nonatomic) bool isTopStoryArticle;
 @property (nonatomic) bool isUserSubscribedToFeed;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
 @property (nonatomic, retain) NSString *nativeCampaignData;
@@ -231,6 +240,7 @@
 - (long long)backendArticleVersionInt64;
 - (id)campaignId;
 - (id)campaignType;
+- (id)channelData;
 - (int)characterCount;
 - (void)clearFractionalCohortMemberships;
 - (void)clearNamedEntities;
@@ -261,6 +271,7 @@
 - (bool)hasBackendArticleVersionInt64;
 - (bool)hasCampaignId;
 - (bool)hasCampaignType;
+- (bool)hasChannelData;
 - (bool)hasCharacterCount;
 - (bool)hasContentId;
 - (bool)hasContentType;
@@ -289,6 +300,8 @@
 - (bool)hasIsSearchResult;
 - (bool)hasIsTopStoryArticle;
 - (bool)hasIsUserSubscribedToFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
 - (bool)hasLanguage;
 - (bool)hasNativeCampaignData;
 - (bool)hasNextArticleAffordanceType;
@@ -329,6 +342,8 @@
 - (bool)isSearchResult;
 - (bool)isTopStoryArticle;
 - (bool)isUserSubscribedToFeed;
+- (id)issueData;
+- (id)issueExposureData;
 - (id)language;
 - (void)mergeFrom:(id)arg1;
 - (id)namedEntities;
@@ -356,6 +371,7 @@
 - (void)setBackendArticleVersionInt64:(long long)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
+- (void)setChannelData:(id)arg1;
 - (void)setCharacterCount:(int)arg1;
 - (void)setContentId:(id)arg1;
 - (void)setContentType:(int)arg1;
@@ -413,6 +429,8 @@
 - (void)setIsSearchResult:(bool)arg1;
 - (void)setIsTopStoryArticle:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setNamedEntities:(id)arg1;
 - (void)setNativeCampaignData:(id)arg1;

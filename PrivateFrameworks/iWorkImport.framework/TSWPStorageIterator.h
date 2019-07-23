@@ -25,7 +25,7 @@
 @property (nonatomic, retain) TSWPStorage *storage;
 
 - (void).cxx_destruct;
-- (void)addAttributeRangeProvider:(int)arg1;
+- (void)addAttributeRangeProvider:(unsigned long long)arg1;
 - (void)addLocationProvider:(id)arg1;
 - (void)addRangeProvider:(id)arg1;
 - (unsigned long long)charIndex;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIBarButtonItem : UIBarItem <DebugHierarchyObject_Fallback, MFPopoverPresentationSource, NSCoding, UISpringLoadedInteractionSupporting> {
+@interface UIBarButtonItem : UIBarItem <MFPopoverPresentationSource, NSCoding, UISpringLoadedInteractionSupporting> {
     id /* block */  __autoValidationHandler;
     NSArray * __backButtonAlternateTitles;
     bool  __hidden;
@@ -276,11 +276,6 @@
 - (double)width;
 - (id)window;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
@@ -321,6 +316,12 @@
 + (id)hk_backButtonWithTitle:(id)arg1;
 + (id)hk_sequencingButtonWithTitle:(id)arg1 accessibilityFormatString:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
+
++ (id)backBarButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
+
+- (id)ts_barButtonItemView;
+
 // Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
 
 - (id)nu_view;
@@ -333,6 +334,14 @@
 
 + (id)telephonyUI_fixedSpaceBarButtonItem;
 + (id)telephonyUI_flexibleSpaceBarButtonItem;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
+- (id)initWithBarButtonSystemItem:(long long)arg1;
+- (id)initWithImage:(id)arg1 style:(long long)arg2;
+- (id)initWithTitle:(id)arg1 style:(long long)arg2;
+- (void)tmlSignalAttach:(id)arg1;
+- (void)tmlSignalDetach:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

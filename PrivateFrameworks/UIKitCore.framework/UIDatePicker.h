@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIDatePicker : UIControl <DebugHierarchyObject_Fallback, NSCoding, UIPickerViewScrollTesting> {
+@interface UIDatePicker : UIControl <NSCoding, UIPickerViewScrollTesting> {
     _UIDatePickerView * _pickerView;
     bool  _useCurrentDateDuringDecoding;
     bool  shouldAnimateSetDateCall;
@@ -17,10 +17,7 @@
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic) long long datePickerMode;
 @property (getter=_dateUnderSelectionBar, nonatomic, readonly) NSDate *dateUnderSelectionBar;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (getter=_drawsBackground, setter=_setDrawsBackground:, nonatomic) bool drawsBackground;
-@property (readonly) unsigned long long hash;
 @property (getter=_highlightColor, setter=_setHighlightColor:, nonatomic, retain) UIColor *highlightColor;
 @property (getter=_isTimeIntervalMode, nonatomic, readonly) bool isTimeIntervalMode;
 @property (nonatomic, retain) NSLocale *locale;
@@ -28,7 +25,6 @@
 @property (nonatomic, retain) NSDate *minimumDate;
 @property (nonatomic) long long minuteInterval;
 @property (getter=_shouldAnimateSetDateCall, setter=_setShouldAnimateSetDateCall:, nonatomic) bool shouldAnimateSetDateCall;
-@property (readonly) Class superclass;
 @property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *textColor;
 @property (getter=_textShadowColor, setter=_setTextShadowColor:, nonatomic, retain) UIColor *textShadowColor;
 @property (nonatomic) double timeInterval;
@@ -78,14 +74,6 @@
 - (bool)_useCurrentDateDuringDecoding;
 - (bool)_usesBlackChrome;
 - (bool)_usesModernStyle;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)awakeFromNib;
 - (id)calendar;
 - (double)countDownDuration;

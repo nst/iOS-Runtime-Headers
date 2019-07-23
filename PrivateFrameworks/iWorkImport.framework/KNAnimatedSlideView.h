@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAnimatedSlideView : NSObject <KNCanvasDelegate, TSDConnectedInfoReplacing> {
+@interface KNAnimatedSlideView : NSObject <KNCanvasDelegate, TSDConnectedInfoReplacing, TSDLiveTexturedRectangleSource> {
     NSMutableSet * _activeAnimatedBuilds;
     SEL  _ambientBuildEndCallbackSelector;
     id  _ambientBuildEndCallbackTarget;
@@ -33,6 +33,7 @@
     bool  _isSerialized;
     bool  _isSlideBuildable;
     KNAnimatedSlideModel * _model;
+    NSMutableSet * _movieControllers;
     bool  _playsAutomaticTransitions;
     bool  _sInDelayBeforeActiveTransition;
     KNPlaybackSession * _session;
@@ -65,7 +66,9 @@
 @property (nonatomic, readonly) bool isInDelayBeforeActiveTransition;
 @property (nonatomic, readonly) bool isNonAmbientAnimationActive;
 @property (nonatomic, readonly) bool isNonAmbientAnimationAnimating;
+@property (readonly) bool isPlayingMovies;
 @property (nonatomic, readonly) KNAnimatedSlideModel *model;
+@property (readonly) NSSet *movieControllers;
 @property (nonatomic, readonly) NSSet *movieRenderers;
 @property (nonatomic, readonly) KNAnimatedSlideView *nextASV;
 @property (nonatomic) bool playsAutomaticTransitions;
@@ -86,6 +89,7 @@
 - (id)activeAnimatedBuilds;
 - (void)addActiveAnimatedBuild:(id)arg1;
 - (id)allInfos;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvasForInfo:(id)arg1;
 - (unsigned long long)buildEventCount;
 - (void)buildHasFinishedAnimating:(id)arg1;
 - (id)canvas;
@@ -95,7 +99,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentRoot;
+- (void)drawToMetalTextureWithContext:(id)arg1;
 - (id)eventIndexesToAnimate;
+- (void)evictInactiveRenderers;
 - (void)generateTextures;
 - (bool)hasEventStarted;
 - (bool)hasTransitionAtEventIndex:(long long)arg1;
@@ -114,9 +120,12 @@
 - (bool)isInfoAKeynoteMasterObject:(id)arg1;
 - (bool)isNonAmbientAnimationActive;
 - (bool)isNonAmbientAnimationAnimating;
+- (bool)isPlayingMovies;
 - (bool)isPrintingCanvas;
 - (bool)isRenderingForKPF;
 - (id)model;
+- (id)movieControllerForInfo:(id)arg1;
+- (id)movieControllers;
 - (id)movieRenderers;
 - (id)newSlideTextureForEvent:(unsigned long long)arg1;
 - (id)nextASV;
@@ -135,7 +144,6 @@
 - (void)p_evictCacheAmbientBuildTexturesForTransition:(id)arg1;
 - (id)p_initializeTextureSetForRep:(id)arg1 info:(id)arg2 eventIndex:(unsigned long long)arg3 ignoreBuildVisibility:(bool)arg4 isRenderingToContext:(bool)arg5;
 - (void)p_loadPerformanceAnalysisFrameWork;
-- (void)p_makeMetalLayerVisible;
 - (double)p_minimumDelay;
 - (void)p_notifyAmbientBuildEndWithObject:(id)arg1;
 - (void)p_notifyAmbientBuildStartWithObject:(id)arg1;
@@ -160,6 +168,7 @@
 - (bool)playAutomaticEvents;
 - (bool)playsAutomaticTransitions;
 - (void)prepareAnimations;
+- (void)prepareAsLiveTextureSource;
 - (void)registerForAmbientBuildEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForAmbientBuildStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)registerForEventAnimationActiveCallback:(SEL)arg1 target:(id)arg2;
@@ -185,6 +194,7 @@
 - (void)setTexture:(id)arg1 forRep:(id)arg2 forDescription:(id)arg3;
 - (id)setTextureLock;
 - (void)setTriggerQueued:(bool)arg1;
+- (bool)shouldDrawToMetalTextureWithContext:(id)arg1;
 - (bool)shouldPreCache;
 - (bool)shouldPrepareAnimationsAsynchronously;
 - (bool)shouldShowInstructionalText;

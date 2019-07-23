@@ -9,7 +9,6 @@
 @property (nonatomic, readonly) CKRecordZoneID *zoneId;
 
 - (void).cxx_destruct;
-- (id)initWithDatabase:(id)arg1;
 - (id)initWithDatabase:(id)arg1 zoneId:(id)arg2;
 - (void)main;
 - (id)resetOperation;

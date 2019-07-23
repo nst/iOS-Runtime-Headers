@@ -3,7 +3,7 @@
  */
 
 @interface SXAdOpportunityEvent : SXAnalyticsEvent {
-    ADBannerView * _bannerView;
+    SXADBannerView * _bannerView;
     NSString * _componentIdentifier;
     NSError * _error;
     bool  _expanded;
@@ -13,7 +13,7 @@
     bool  _shown;
 }
 
-@property (nonatomic, retain) ADBannerView *bannerView;
+@property (nonatomic, retain) SXADBannerView *bannerView;
 @property (nonatomic, retain) NSString *componentIdentifier;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) bool expanded;

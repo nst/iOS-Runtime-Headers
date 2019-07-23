@@ -13,10 +13,14 @@
 - (id)_downloadOptionsWithUserInitiation:(bool)arg1;
 - (void)_queryAssetsWithAssetType:(id)arg1 predicate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_retrieveAssetWithAssetType:(id)arg1 userInitiated:(bool)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)fetchEducationVideoWithPeerPaymentCard:(bool)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchNeededAssetsForThisDeviceWithPeerPaymentCard:(bool)arg1;
+- (id)_sortDescriptorWithPreferredFeatureKey:(id)arg1 isFeaturePreferred:(bool)arg2 keyPath:(id)arg3;
+- (void)fetchAssetsForMarketWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchEducationVideoWithPreferredFeatures:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchNeededAssetsForThisDeviceWithPreferredFeatures:(unsigned long long)arg1;
 - (id)init;
 - (id)predicateForEducationVideo;
-- (id)sortDescriptorsForEducationVideoWithPeerPaymentCard:(bool)arg1;
+- (id)predicateForMarketIdentifier:(id)arg1;
+- (id)sortDescriptorsForEducationVideoWithPreferredFeatures:(unsigned long long)arg1;
+- (id)sortDescriptorsForMarkets;
 
 @end

@@ -10,6 +10,7 @@
     NSArray * _latestPreferences;
     PKPassSnapshotter * _passSnapshotter;
     PKPaymentPass * _paymentPassForBillingErrors;
+    UISwitch * _peerPaymentAccountPaymentSwitch;
     id /* block */  _pickedContactHandler;
     id /* block */  _pickedContactPropertyHandler;
     NSArray * _preferences;
@@ -35,10 +36,12 @@
 - (id)_cellOfClass:(Class)arg1;
 - (void)_cleanupInlineEdits;
 - (void)_editPreferenceAtIndexPath:(id)arg1;
+- (id)_hyperlinkFooterViewForPreference:(id)arg1;
 - (bool)_isPaymentStyle;
 - (bool)_isViewTranslucent;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
+- (id)_peerPaymentAccountPaymentSwitch;
 - (void)_presentMeCardAlertControllerWithContact:(id)arg1 contactKey:(id)arg2 handler:(id /* block */)arg3;
 - (id)_requiredKeysForPreference:(id)arg1 contact:(id)arg2;
 - (void)_savePickedContact:(id)arg1 inPreference:(id)arg2;
@@ -56,6 +59,7 @@
 - (void)addressEditorViewControllerDidCancel:(id)arg1;
 - (void)addressSearcherViewController:(id)arg1 selectedContact:(id)arg2;
 - (void)addressSearcherViewControllerDidCancel:(id)arg1;
+- (void)applePayCashSwitchValueChanged:(id)arg1;
 - (void)clearErrorsForPreference:(Class)arg1;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
@@ -92,6 +96,7 @@
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;

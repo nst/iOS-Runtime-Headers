@@ -19,6 +19,7 @@
     double  _previewDuration;
     unsigned long long  _previewFrameRate;
     JTEffectsPreviewGenerator * _previewGenerator;
+    unsigned long long  _previewStartFrameIndex;
     unsigned long long  _targetFrameCount;
     NSObject<OS_dispatch_queue> * _writerQueue;
 }
@@ -33,6 +34,7 @@
 @property (nonatomic) double previewDuration;
 @property (nonatomic) unsigned long long previewFrameRate;
 @property (nonatomic, retain) JTEffectsPreviewGenerator *previewGenerator;
+@property (nonatomic) unsigned long long previewStartFrameIndex;
 @property (nonatomic) unsigned long long targetFrameCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *writerQueue;
 
@@ -46,12 +48,13 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentRenderTime;
 - (id)destinationPath;
 - (id)frameProperties;
-- (id)initWithOverlayEffectId:(id)arg1 previewDuration:(double)arg2 previewFrameRate:(unsigned long long)arg3;
+- (id)initWithOverlayEffectId:(id)arg1 previewDuration:(double)arg2 previewFrameRate:(unsigned long long)arg3 previewStartFrameIndex:(unsigned long long)arg4;
 - (bool)isFirstAnimatedFrame;
 - (id)overlay;
 - (double)previewDuration;
 - (unsigned long long)previewFrameRate;
 - (id)previewGenerator;
+- (unsigned long long)previewStartFrameIndex;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCurrentFrameCount:(unsigned long long)arg1;
 - (void)setCurrentRenderTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -62,6 +65,7 @@
 - (void)setPreviewDuration:(double)arg1;
 - (void)setPreviewFrameRate:(unsigned long long)arg1;
 - (void)setPreviewGenerator:(id)arg1;
+- (void)setPreviewStartFrameIndex:(unsigned long long)arg1;
 - (void)setTargetFrameCount:(unsigned long long)arg1;
 - (unsigned long long)targetFrameCount;
 - (void)writeAnimatedPreviewToPath:(id)arg1 completion:(id /* block */)arg2;

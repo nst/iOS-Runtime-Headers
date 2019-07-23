@@ -5,6 +5,7 @@
 
 @required
 
+- (void)logInputDict:(ATXScoreDict *)arg1 subscores:(ATXScoreDict *)arg2 forBundleId:(NSString *)arg3;
 - (void)logInputs:(NSDictionary *)arg1 subscores:(NSDictionary *)arg2 forBundleId:(NSString *)arg3;
 - (void)logStageScores:(NSArray *)arg1 secondStageScores:(NSArray *)arg2 thirdStageScores:(NSArray *)arg3;
 - (void)setAssetVersion:(unsigned long long)arg1;

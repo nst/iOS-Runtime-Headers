@@ -31,6 +31,7 @@
     double  _lastAudioFractionChangeTime;
     double  _lastAudioStallFlushTime;
     double  _lastBasebandFlushAudioTime;
+    double  _lastBasebandFlushCountChangeTime;
     double  _lastBasebandFlushVideoTime;
     double  _lastBasebandHighNBDCDTime;
     double  _lastVideoKeyFrameTime;
@@ -66,6 +67,7 @@
 @property (nonatomic) bool isSenderProbingEnabled;
 @property (nonatomic, readonly) bool isVideoStopped;
 @property (nonatomic, readonly) bool isVideoStoppedByVCRateControl;
+@property (nonatomic) double lastBasebandFlushCountChangeTime;
 @property (nonatomic, readonly) double lastVideoKeyFrameTime;
 @property (nonatomic) unsigned int minTargetBitrate;
 @property (nonatomic, readonly) unsigned int probingLargeFrameSize;
@@ -101,6 +103,7 @@
 - (bool)isSenderProbingEnabled;
 - (bool)isVideoStopped;
 - (bool)isVideoStoppedByVCRateControl;
+- (double)lastBasebandFlushCountChangeTime;
 - (double)lastVideoKeyFrameTime;
 - (unsigned int)minTargetBitrate;
 - (void)pauseVideoByUser:(bool)arg1;
@@ -122,6 +125,7 @@
 - (void)setIsRTPFlushBasebandFromVCRateControl:(bool)arg1;
 - (void)setIsRateLimitedMaxTimeExceeded:(bool)arg1;
 - (void)setIsSenderProbingEnabled:(bool)arg1;
+- (void)setLastBasebandFlushCountChangeTime:(double)arg1;
 - (void)setMinTargetBitrate:(unsigned int)arg1;
 - (void)setShouldDisableLargeFrameRequestsWhenInitialRampUp:(bool)arg1;
 - (void)setStatisticsCollector:(id)arg1;

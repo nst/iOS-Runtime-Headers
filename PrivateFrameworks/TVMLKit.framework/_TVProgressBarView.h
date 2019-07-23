@@ -5,29 +5,51 @@
 @interface _TVProgressBarView : UIView {
     UIColor * _completeTintColor;
     double  _cornerRadius;
+    UIColor * _gradientEndColor;
+    UIColor * _gradientStartColor;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
     double  _progress;
     UIColor * _progressTintColor;
+    bool  _shouldProgressBarUseRoundCorner;
     bool  _useMaterial;
 }
 
 @property (nonatomic, retain) UIColor *completeTintColor;
 @property (nonatomic) double cornerRadius;
+@property (nonatomic, retain) UIColor *gradientEndColor;
+@property (nonatomic, retain) UIColor *gradientStartColor;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic) double progress;
 @property (nonatomic, retain) UIColor *progressTintColor;
+@property (nonatomic) bool shouldProgressBarUseRoundCorner;
 @property (nonatomic) bool useMaterial;
 
 - (void).cxx_destruct;
 - (id)completeTintColor;
 - (double)cornerRadius;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)gradientEndColor;
+- (id)gradientStartColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (double)progress;
 - (id)progressTintColor;
 - (void)setCompleteTintColor:(id)arg1;
 - (void)setCornerRadius:(double)arg1;
+- (void)setGradientEndColor:(id)arg1;
+- (void)setGradientStartColor:(id)arg1;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setProgress:(double)arg1;
 - (void)setProgressTintColor:(id)arg1;
+- (void)setShouldProgressBarUseRoundCorner:(bool)arg1;
 - (void)setUseMaterial:(bool)arg1;
+- (void)setgradientEndColor:(id)arg1;
+- (bool)shouldProgressBarUseRoundCorner;
 - (bool)useMaterial;
 
 @end

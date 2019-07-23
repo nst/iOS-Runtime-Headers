@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_eraseAllPrivateData;
 - (id)_prepareHistoryAndReturnExpectations;
+- (id)_prepareIssueHistoryAndReturnExpectations;
 - (id)_preparePersonalizationProfileAndReturnExpectations;
 - (id)_prepareReadingListAndReturnExpectations;
 - (id)_prepareReferenceToChannelMembershipsAndReturnExpectations;

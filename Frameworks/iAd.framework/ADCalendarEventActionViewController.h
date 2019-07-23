@@ -5,7 +5,6 @@
 @interface ADCalendarEventActionViewController : ADActionViewController <EKEventEditViewDelegate> {
     EKEvent * _calendarEvent;
     ADEventEditViewController * _eventKitEditViewController;
-    ADHomeButtonHandler * _homeButtonHandler;
 }
 
 @property (nonatomic, retain) EKEvent *calendarEvent;
@@ -13,7 +12,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) ADEventEditViewController *eventKitEditViewController;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) ADHomeButtonHandler *homeButtonHandler;
 @property (readonly) Class superclass;
 
 - (id)calendarEvent;
@@ -23,10 +21,8 @@
 - (void)dismiss;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
 - (id)eventKitEditViewController;
-- (id)homeButtonHandler;
 - (void)setCalendarEvent:(id)arg1;
 - (void)setEventKitEditViewController:(id)arg1;
-- (void)setHomeButtonHandler:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 

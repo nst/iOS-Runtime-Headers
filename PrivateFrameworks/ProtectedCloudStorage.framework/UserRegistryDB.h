@@ -108,7 +108,6 @@
 - (void)setUpdateEscrowKey:(struct sqlite3_stmt { }*)arg1;
 - (void)setUpdateMirrorKey:(struct sqlite3_stmt { }*)arg1;
 - (void)setUpdateWatch:(struct sqlite3_stmt { }*)arg1;
-- (bool)setUserVersion:(int)arg1;
 - (bool)setupDatabase;
 - (struct sqlite3 { }*)sqliteHandle;
 - (id)syncDevices;
@@ -119,6 +118,5 @@
 - (bool)updateMirrorKey:(id)arg1 service:(int)arg2 type:(int)arg3 newType:(int)arg4 current:(bool)arg5;
 - (bool)updateSyncDevice:(id)arg1 seen:(id)arg2 version:(id)arg3;
 - (struct sqlite3_stmt { }*)updateWatch;
-- (int)userVersion;
 
 @end

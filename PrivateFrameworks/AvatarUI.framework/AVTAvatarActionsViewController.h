@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
  */
 
-@interface AVTAvatarActionsViewController : UIViewController <AVTAvatarActionsModelDelegate, UINavigationControllerDelegate> {
+@interface AVTAvatarActionsViewController : UIViewController <AVTAvatarActionsModelDelegate, AVTFaceTrackingManagerDelegate, UINavigationControllerDelegate> {
     AVTAvatarActionsModel * _actionsModel;
     AVTImageTransitioningContainerView * _avatarContainer;
     AVTViewSession * _avtViewSession;
@@ -75,6 +75,7 @@
 - (id)editButton;
 - (id)environment;
 - (id)initWithAVTViewSessionProvider:(id)arg1 actionsModel:(id)arg2 environment:(id)arg3;
+- (long long)interfaceOrientationForFaceTrackingManager:(id)arg1;
 - (bool)isAnimating;
 - (void)layoutViewFromModel:(id)arg1;
 - (void)loadView;

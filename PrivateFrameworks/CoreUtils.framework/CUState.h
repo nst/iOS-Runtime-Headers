@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (id)description;
 - (id /* block */)eventHandler;
-- (id)init;
 - (id)initWithName:(id)arg1 parent:(id)arg2;
 - (void)invalidate;
 - (id)name;

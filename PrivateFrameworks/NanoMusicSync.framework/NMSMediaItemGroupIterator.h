@@ -19,6 +19,7 @@
 
 @property (nonatomic) unsigned long long currentContainerIndex;
 @property (nonatomic) unsigned long long currentItemIndex;
+@property (nonatomic, readonly) NMSQuotaEvaluationState *evaluationState;
 @property (nonatomic, retain) NSMutableArray *indexesToBeRemoved;
 @property (nonatomic, retain) NSArray *itemGroups;
 @property (nonatomic, readonly) NSArray *itemListWithinQuota;
@@ -26,12 +27,13 @@
 @property (nonatomic, readonly) unsigned long long iteratingOrder;
 @property (nonatomic, retain) NSMutableOrderedSet *mutableItemListWithinQuota;
 @property (nonatomic, retain) NSMutableOrderedSet *mutableOffPowerItemListWithinQuota;
-@property (nonatomic, readonly) unsigned long long nominatedItemSize;
+@property (nonatomic) unsigned long long nominatedItemSize;
 @property (nonatomic, readonly) NSArray *offPowerItemListWithinQuota;
 @property (nonatomic, retain) NSMutableArray *remainingContainers;
 @property (nonatomic, retain) NSMutableArray *remainingItemLists;
-@property (nonatomic, readonly) unsigned long long sizeForItemListWithinQuota;
-@property (nonatomic, readonly) unsigned long long sizeForOffPowerItemListWithinQuota;
+@property (nonatomic, readonly) unsigned long long sizeForCurrentIdentifier;
+@property (nonatomic) unsigned long long sizeForItemListWithinQuota;
+@property (nonatomic) unsigned long long sizeForOffPowerItemListWithinQuota;
 
 - (void).cxx_destruct;
 - (void)_continueToNextIdentifier;
@@ -41,6 +43,7 @@
 - (unsigned long long)currentContainerIndex;
 - (id)currentIdentifier;
 - (unsigned long long)currentItemIndex;
+- (id)evaluationState;
 - (id)identifiersForContainersOfType:(unsigned long long)arg1;
 - (id)indexesToBeRemoved;
 - (id)initWithItemGroups:(id)arg1;
@@ -49,7 +52,6 @@
 - (id)itemGroupForIdentifiers:(id)arg1;
 - (id)itemGroups;
 - (id)itemListWithinQuota;
-- (id)itemSizeForCurrentIdentifier;
 - (id)itemSizesDict;
 - (unsigned long long)iteratingOrder;
 - (id)mediaContainersAboveQuota;
@@ -68,8 +70,12 @@
 - (void)setItemSizesDict:(id)arg1;
 - (void)setMutableItemListWithinQuota:(id)arg1;
 - (void)setMutableOffPowerItemListWithinQuota:(id)arg1;
+- (void)setNominatedItemSize:(unsigned long long)arg1;
 - (void)setRemainingContainers:(id)arg1;
 - (void)setRemainingItemLists:(id)arg1;
+- (void)setSizeForItemListWithinQuota:(unsigned long long)arg1;
+- (void)setSizeForOffPowerItemListWithinQuota:(unsigned long long)arg1;
+- (unsigned long long)sizeForCurrentIdentifier;
 - (unsigned long long)sizeForItemListWithinQuota;
 - (unsigned long long)sizeForOffPowerItemListWithinQuota;
 - (void)skipCurrentIdentifier;

@@ -2,35 +2,40 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUITextBadgeLayout : NSObject <NSCopying> {
-    unsigned long long  _badgeStyle;
-    UIColor * _bgColor;
+@interface VUITextBadgeLayout : TVViewLayout {
+    unsigned long long  _badgeKind;
     double  _cornerRadius;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  _padding;
+    NSArray * _gradientBgColors;
+    TVImageLayout * _imageLayout;
     VUITextLayout * _textLayout;
 }
 
-@property (nonatomic) unsigned long long badgeStyle;
-@property (nonatomic, retain) UIColor *bgColor;
+@property (nonatomic) unsigned long long badgeKind;
 @property (nonatomic) double cornerRadius;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic, retain) NSArray *gradientBgColors;
+@property (nonatomic, retain) TVImageLayout *imageLayout;
 @property (nonatomic, retain) VUITextLayout *textLayout;
 
++ (long long)_badgeSizeForElement:(id)arg1;
++ (id)_glyphImageLayoutWithTintColor:(id)arg1 viewElement:(id)arg2;
++ (id)_spotlightBadgeLayoutWithViewElement:(id)arg1;
++ (id)_textBadgeLayoutWithViewElement:(id)arg1 withBadgeType:(unsigned long long)arg2;
++ (id)layoutWithViewElement:(id)arg1;
++ (id)layoutWithViewElement:(id)arg1 withTextBadgeType:(unsigned long long)arg2;
++ (unsigned long long)textBadgeTypeFromString:(id)arg1;
+
 - (void).cxx_destruct;
-- (unsigned long long)badgeStyle;
-- (id)bgColor;
+- (void)_updateBgColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
+- (void)_updateTextColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
+- (unsigned long long)badgeKind;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)cornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
-- (void)setBadgeStyle:(unsigned long long)arg1;
-- (void)setBgColor:(id)arg1;
+- (id)gradientBgColors;
+- (id)imageLayout;
+- (void)setBadgeKind:(unsigned long long)arg1;
 - (void)setCornerRadius:(double)arg1;
-- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setGradientBgColors:(id)arg1;
+- (void)setImageLayout:(id)arg1;
 - (void)setTextLayout:(id)arg1;
 - (id)textLayout;
 

@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *pushToken;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 - (id)deviceData;
 - (id)pushToken;
 - (void)setDeviceData:(id)arg1;

@@ -5,10 +5,14 @@
 
 @required
 
-- (long long)decode:(WK_RTCEncodedImage *)arg1 missingFrames:(bool)arg2 fragmentationHeader:(WK_RTCRtpFragmentationHeader *)arg3 codecSpecificInfo:(id <WK_RTCCodecSpecificInfo>)arg4 renderTimeMs:(long long)arg5;
+- (long long)decode:(WK_RTCEncodedImage *)arg1 missingFrames:(bool)arg2 codecSpecificInfo:(id <WK_RTCCodecSpecificInfo>)arg3 renderTimeMs:(long long)arg4;
 - (NSString *)implementationName;
 - (long long)releaseDecoder;
 - (void)setCallback:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WK_RTCVideoFrame *, void*
 - (long long)startDecodeWithSettings:(WK_RTCVideoEncoderSettings *)arg1 numberOfCores:(int)arg2;
+
+@optional
+
+- (long long)startDecodeWithNumberOfCores:(int)arg1;
 
 @end

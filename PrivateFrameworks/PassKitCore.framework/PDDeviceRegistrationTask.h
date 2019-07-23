@@ -5,10 +5,12 @@
 @interface PDDeviceRegistrationTask : NSObject {
     NSMutableArray * _completionHandlers;
     NSString * _reason;
+    bool  _shouldForce;
 }
 
 @property (nonatomic, retain) NSMutableArray *completionHandlers;
 @property (nonatomic, copy) NSString *reason;
+@property (nonatomic) bool shouldForce;
 
 - (void).cxx_destruct;
 - (id)completionHandlers;
@@ -16,5 +18,7 @@
 - (id)reason;
 - (void)setCompletionHandlers:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setShouldForce:(bool)arg1;
+- (bool)shouldForce;
 
 @end

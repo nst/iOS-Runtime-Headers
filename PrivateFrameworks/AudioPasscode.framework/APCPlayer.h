@@ -15,6 +15,7 @@
 
 @property (nonatomic, readonly, copy) NSData *configurationData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, readonly) APCPlayerEmbedInfo *embeddingInfo;
 @property (readonly) bool isPlaying;
 @property (nonatomic, readonly, copy) NSData *payload;
 
@@ -27,6 +28,7 @@
 - (struct NSData { Class x1; }*)configurationData;
 - (id)createCompatibleConfigForCapabilites:(id)arg1;
 - (id)dispatchQueue;
+- (id)embeddingInfo;
 - (void)endPasscodeEmbedding;
 - (id)init;
 - (id)initWithCodecConfiguration:(id)arg1;
@@ -38,6 +40,7 @@
 - (float)preparePayload:(id)arg1 usingCarrierAtURL:(id)arg2 error:(id*)arg3;
 - (void)setDispatchQueue:(id)arg1;
 - (bool)startSend;
+- (bool)startSendAtTime:(unsigned long long)arg1 withBeginning:(id /* block */)arg2;
 - (void)stopSend:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)stopSendAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)stopSendWithFadeOut:(float)arg1 completion:(id /* block */)arg2;

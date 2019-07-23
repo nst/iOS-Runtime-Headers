@@ -7,7 +7,7 @@
     double  _animationDuration;
     NSMutableArray * _charactersToDraw;
     double  _dynamicRollPitchMix;
-    bool  _hasFullyRendered;
+    unsigned long long  _framesFullyRendered;
     double  _lastRenderTime;
     bool  _layoutRequested;
     bool  _liveMotionEnabled;
@@ -20,6 +20,8 @@
     bool  _snapshotRequested;
     double  _startAnimationTime;
     NSString * _text;
+    bool  _usedForSnapshotting;
+    bool  _willAnimate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,7 +39,7 @@
 - (void)didMoveToWindow;
 - (id)generatedSnapshot;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 renderStyle:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 renderStyle:(unsigned long long)arg2 usedForSnapshotting:(bool)arg3;
 - (void)layoutSubviews;
 - (void)layoutText;
 - (void)loadCharactersAndLayout;

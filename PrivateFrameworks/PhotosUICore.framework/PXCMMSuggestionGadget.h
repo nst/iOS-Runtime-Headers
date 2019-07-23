@@ -45,6 +45,7 @@
 - (void)_updatePeopleSuggestionFaceTileImagesForPersons:(id)arg1;
 - (id)backgroundColor;
 - (void)commitPreviewViewController:(id)arg1;
+- (void)contentHasBeenSeen;
 - (struct NSObject { Class x1; }*)contentView;
 - (id)delegate;
 - (void)gadgetControllerHasAppeared;

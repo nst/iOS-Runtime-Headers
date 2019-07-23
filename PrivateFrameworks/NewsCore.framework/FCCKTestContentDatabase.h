@@ -5,6 +5,7 @@
 @interface FCCKTestContentDatabase : FCCKContentDatabase {
     NSMutableSet * _droppedFeeds;
     FCCKTestFeedQueryEndpoint * _feedQueryEndpoint;
+    NSSet * _fetchedKeys;
     FCCKTestMultiFetchQueryEndpoint * _multiFetchQueryEndpoint;
     FCCKTestOrderFeedQueryEndpoint * _orderFeedQueryEndpoint;
     NSMutableArray * _records;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, retain) NSMutableSet *droppedFeeds;
 @property (nonatomic, retain) FCCKTestFeedQueryEndpoint *feedQueryEndpoint;
+@property (nonatomic, copy) NSSet *fetchedKeys;
 @property (nonatomic, retain) FCCKTestMultiFetchQueryEndpoint *multiFetchQueryEndpoint;
 @property (nonatomic, retain) FCCKTestOrderFeedQueryEndpoint *orderFeedQueryEndpoint;
 @property (nonatomic, retain) NSMutableArray *records;
@@ -27,6 +29,7 @@
 - (void)deleteFeedID:(id)arg1;
 - (id)droppedFeeds;
 - (id)feedQueryEndpoint;
+- (id)fetchedKeys;
 - (id)initWithContainerIdentifier:(id)arg1 productionEnvironment:(bool)arg2 networkBehaviorMonitor:(id)arg3;
 - (void)insertArticleID:(id)arg1 atBottomOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 atTopOfFeedID:(id)arg2;
@@ -34,8 +37,14 @@
 - (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3 subOrder:(unsigned long long)arg4;
 - (void)insertRecord:(id)arg1;
 - (id)insertTestArticle;
+- (id)insertTestArticleListReferencingArticleIDs:(id)arg1;
 - (void)insertTestArticleWithID:(id)arg1 properties:(id)arg2;
 - (id)insertTestArticleWithProperties:(id)arg1;
+- (id)insertTestForYouConfigWithProperties:(id)arg1;
+- (id)insertTestIssueListReferencingIssueIDs:(id)arg1;
+- (void)insertTestIssueWithID:(id)arg1 properties:(id)arg2;
+- (id)insertTestIssueWithProperties:(id)arg1;
+- (void)insertTestTagWithID:(id)arg1 type:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2;
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 properties:(id)arg2;
@@ -47,6 +56,7 @@
 - (id)records:(id)arg1 withDesiredKeys:(id)arg2;
 - (void)setDroppedFeeds:(id)arg1;
 - (void)setFeedQueryEndpoint:(id)arg1;
+- (void)setFetchedKeys:(id)arg1;
 - (void)setMultiFetchQueryEndpoint:(id)arg1;
 - (void)setOrderFeedQueryEndpoint:(id)arg1;
 - (void)setRecords:(id)arg1;

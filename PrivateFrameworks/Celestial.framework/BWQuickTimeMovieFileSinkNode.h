@@ -80,12 +80,6 @@
         unsigned int flags; 
         long long epoch; 
     }  _lastKnownAudioDuration;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    }  _lastKnownVideoDuration;
     BWLimitedGMErrorLogger * _limitedGMErrorLogger;
     unsigned long long  _masterInputIndex;
     int  _masterInputTimeScale;
@@ -114,6 +108,12 @@
     struct OpaqueFigSimpleMutex { } * _propertyMutex;
     bool  _recordingIsForFrontCamera;
     int  _recordingState;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _secondLargestWrittenVideoPTS;
     FigCaptureMovieFileRecordingSettings * _settings;
     struct { 
         long long value; 

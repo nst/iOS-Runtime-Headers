@@ -8,12 +8,13 @@
     unsigned int  _reserved;
 }
 
-+ (Class)classForCoder;
++ (Class)classForKeyedUnarchiver;
 
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
 - (const void*)bytes;
 - (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)getBytes:(void*)arg1 length:(unsigned long long)arg2;

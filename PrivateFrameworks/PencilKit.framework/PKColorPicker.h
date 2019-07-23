@@ -28,7 +28,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedColor:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

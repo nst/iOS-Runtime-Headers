@@ -7,6 +7,9 @@
 }
 
 @property (nonatomic, readonly, copy) NSSet *autoFavoriteTagIDs;
+@property (nonatomic, readonly, copy) NSString *bundleIAP;
+@property (nonatomic, readonly) FCBundleSubscription *bundleSubscription;
+@property (nonatomic, readonly) unsigned long long bundleSubscriptionState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) <FCDerivedPersonalizationData><NSCoding> *derivedPersonalizationData;
 @property (readonly, copy) NSString *description;
@@ -22,6 +25,9 @@
 
 - (void).cxx_destruct;
 - (id)autoFavoriteTagIDs;
+- (id)bundleIAP;
+- (id)bundleSubscription;
+- (unsigned long long)bundleSubscriptionState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)derivedPersonalizationData;
 - (id)dictionary;

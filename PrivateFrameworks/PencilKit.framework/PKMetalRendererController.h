@@ -15,6 +15,7 @@
     double  _inputScale;
     bool  _isTorndown;
     double  _lastFrameDuration;
+    unsigned long long  _lastPresentationTime;
     PKLinedPaper * _linedPaper;
     struct CGAffineTransform { 
         double a; 
@@ -48,6 +49,19 @@
         double ty; 
     }  _renderTransform;
     PKMetalRenderer * _renderer;
+    struct PKRunningStat { 
+        long long numValues; 
+        long long numValuesOverLimit; 
+        double oldM; 
+        double newM; 
+        double oldS; 
+        double newS; 
+        double maxValue; 
+        double limit; 
+        struct os_unfair_lock_s { 
+            unsigned int _os_unfair_lock_opaque; 
+        } lock; 
+    }  _strokeLatencyStat;
     struct CGAffineTransform { 
         double a; 
         double b; 
@@ -87,6 +101,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } viewScissor;
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_copyIntoTilesFromRenderQueue:(id)arg1 tileTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)_drawStrokesAfterClear:(id)arg1 clippedToStrokeSpaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 strokeTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 useLayerContext:(bool)arg4 renderCompletion:(id /* block */)arg5;
@@ -132,6 +147,7 @@
 - (struct CGImage { }*)newCGImageWithClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })paperTransform;
 - (struct CGSize { double x1; double x2; })pixelSize;
+- (void)pokeEventDispatcher;
 - (bool)prerenderWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 inputScale:(double)arg2 at:(double)arg3;
 - (id)presentationLayer;
 - (void)purgeOriginalBackFramebuffer;
@@ -157,7 +173,7 @@
 - (void)setViewScissor:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setup;
 - (bool)setupCurrentDrawable;
-- (void)signalVSyncSemaphore:(double)arg1;
+- (void)signalVSyncSemaphore:(double)arg1 presentationTime:(unsigned long long)arg2;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })strokeTransform;
 - (void)teardown;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })viewScissor;

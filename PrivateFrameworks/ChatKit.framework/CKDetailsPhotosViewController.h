@@ -39,6 +39,7 @@
 - (void)_deleteSelectedAttachments:(id)arg1;
 - (void)_faultInAttachments;
 - (id)_iconForFileURL:(id)arg1 UTIType:(id)arg2;
+- (void)_invalidateCaches;
 - (void)_prewarmNextChunk;
 - (void)_saveAttachments:(id)arg1;
 - (void)_saveSelectedAttachments:(id)arg1;
@@ -109,7 +110,6 @@
 - (id)qlPreviewController;
 - (void)reloadData;
 - (id)saveButton;
-- (struct CGSize { double x1; double x2; })screenSize;
 - (void)selectAttachments:(id)arg1;
 - (id)selectedAttachmentIndexes;
 - (void)setCollectionView:(id)arg1;

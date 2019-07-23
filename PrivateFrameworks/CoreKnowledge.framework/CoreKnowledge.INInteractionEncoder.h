@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.INInteractionEncoder : SwiftObject {
+@interface CoreKnowledge.INInteractionEncoder : Swift._SwiftObject {
     void interaction;
 }
 

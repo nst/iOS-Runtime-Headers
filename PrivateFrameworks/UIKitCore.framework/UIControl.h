@@ -81,16 +81,6 @@
 - (bool)_touchHasHighlighted;
 - (void)_unhighlight;
 - (bool)_wasLastHighlightSuccessful;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned long long)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(int)arg3;
@@ -105,6 +95,7 @@
 - (long long)contentHorizontalAlignment;
 - (long long)contentVerticalAlignment;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)dealloc;
 - (long long)effectiveContentHorizontalAlignment;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -156,5 +147,10 @@
 
 - (id)adPrivacyData;
 - (void)setAdPrivacyData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
+- (void)tmlSignalAttach:(id)arg1;
+- (void)tmlSignalDetach:(id)arg1;
 
 @end

@@ -2,28 +2,48 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVStackTemplateController : _TVStackCommonTemplateController {
+@interface _TVStackTemplateController : _TVStackCommonTemplateController <TVShowcasing, _TVStackViewDelegateFlowLayout> {
+    bool  _adjustForMenuBar;
     UIView * _backdropTintView;
     UIViewController * _backdropTintViewController;
+    double  _contentHeight;
+    IKChangeSet * _filteredChangeSet;
     NSIndexPath * _lastFocusedIndexPath;
     double  _lastLayoutWidth;
     _TVNeedsMoreContentEvaluator * _needsMoreContentEvaluator;
+    TVObservableEventController * _observableEventController;
+    double  _showcaseFactor;
+    double  _showcaseInset;
     NSArray * _stackRows;
     NSArray * _stackSections;
+    NSArray * _unfilteredViewControllers;
     NSArray * _viewControllers;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) TVObservableEventController *observableEventController;
+@property (nonatomic, readonly) double showcaseFactor;
+@property (nonatomic) double showcaseInset;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_adjustedContentOffsetForRowIndex:(long long)arg1 targetContentOffset:(struct CGPoint { double x1; double x2; }*)arg2;
 - (void)_buildStackSections;
 - (void)_configureBackgroundTintView;
+- (bool)_didExtendContentForPeekMetrics:(struct { double x1; double x2; double x3; struct _NSRange { unsigned long long x_4_1_1; unsigned long long x_4_1_2; } x4; }*)arg1 above:(bool)arg2 initial:(bool)arg3;
 - (struct CGSize { double x1; double x2; })_maxContentSize;
 - (double)_maxViewWidth;
+- (double)_offsetToScrollStop:(id)arg1;
+- (bool)_requiresShowcasing;
+- (void)_scrollToTopAnimated:(bool)arg1;
 - (void)_updateBackgroundTintView;
 - (void)_updateBackgroundTintViewEffects;
 - (void)_updateFirstItemRowIndexes;
-- (bool)_updateWithCollectionListElement:(id)arg1 autoHighlightIndexPath:(id*)arg2;
-- (id)_viewControllerWithElement:(id)arg1 existingController:(id)arg2;
+- (id)_updateWithCollectionListElement:(id)arg1 commits:(id /* block */*)arg2 autoHighlightIndexPath:(id*)arg3;
+- (id)_viewControllerWithElement:(id)arg1 layout:(id)arg2 existingController:(id)arg3;
+- (void)addObserver:(id)arg1 forEvent:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionListMargin;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -31,12 +51,30 @@
 - (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 showcaseFactorDidChangeForLayout:(id)arg2;
+- (struct CGPoint { double x1; double x2; })collectionView:(id)arg1 targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (id)contentScrollView;
+- (void)dealloc;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (void)didUpdateSectionInfo;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (id)init;
+- (long long)numberOfCollections;
+- (id)observableEventController;
+- (void)removeObserver:(id)arg1;
+- (void)removeObserver:(id)arg1 forEvent:(id)arg2;
+- (id)scrollStopForEnteringSectionAtIndex:(long long)arg1 fromEdge:(long long)arg2;
+- (id)scrollStopForShowcaseTransition;
 - (void)scrollViewDidScroll:(id)arg1;
-- (long long)updateCollectionViewControllersAndForceReload:(bool)arg1;
+- (void)setShowcaseInset:(double)arg1;
+- (bool)shouldAdjustForTabBarSafeAreaInsets;
+- (double)showcaseFactor;
+- (void)showcaseFactorDidChange;
+- (double)showcaseInset;
+- (void)updateBackdropMaskFactor;
+- (void)updateBackgroundAndBackdrop;
+- (void)updateCollectionViewControllersAndForceReload:(bool)arg1;
 - (id)viewControllers;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

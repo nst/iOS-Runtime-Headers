@@ -2,15 +2,14 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <SFCredentialProviderExtensionManagerObserver, SFPasswordPickerServiceViewControllerProtocol, _ASCredentialProviderExtensionViewControllerDelegate, _ASPasswordCredentialAuthenticationViewControllerDelegate, _SFAuthenticationClient, _SFAuthenticationContextDelegate> {
+@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <SFCredentialProviderExtensionManagerObserver, SFPasswordPickerServiceViewControllerProtocol, _ASCredentialListViewControllerDelegate, _ASPasswordCredentialAuthenticationViewControllerDelegate, _SFAuthenticationClient, _SFAuthenticationContextDelegate> {
     double  _authenticationGracePeriod;
     _SFAuthenticationContext * _context;
-    bool  _credentialListPresentedDirectly;
-    id /* block */  _credentialProviderDismissalHandler;
     _ASPasswordCredentialAuthenticationViewController * _externalCredentialViewController;
     NSArray * _externallyVerifiedAssociatedDomains;
     bool  _hasAuthenticationForOtherPasswords;
-    _SFPasswordPickerViewController * _passwordPickerViewController;
+    SFPasswordPickerViewController * _passwordPickerViewController;
+    id /* block */  _presentCredentialsHandler;
     bool  _presentInPopover;
     NSString * _remoteAppID;
     NSString * _remoteLocalizedAppName;
@@ -28,24 +27,21 @@
 
 - (void).cxx_destruct;
 - (id)_actionForPresentingPasswordManagerExtension:(id)arg1;
+- (void)_authenticateAndSetPresentCredentialsHandlerWithCompletion:(id /* block */)arg1;
 - (void)_authenticateToViewOtherPasswordsWithCompletion:(id /* block */)arg1;
 - (id)_context;
 - (void)_dismiss;
 - (void)_fillCredential:(id)arg1 needsAuthentication:(bool)arg2;
-- (void)_gatherAndShowPasswordsWithCompletion:(id /* block */)arg1;
-- (void)_presentCredentialListForExtension:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
+- (void)_presentCredentialListForExtension:(id)arg1;
 - (void)_sendCredentialToClientAndDismiss:(id)arg1;
-- (bool)_shouldDismissOnCompletion;
 - (void)authenticateToPresentInPopover:(bool)arg1 completion:(id /* block */)arg2;
 - (id)authenticationCustomUIProgressObserverForContext:(id)arg1;
-- (bool)authenticationEnabledForContext:(id)arg1;
 - (id)authenticationMessageForContext:(id)arg1;
 - (bool)contextRequiresSessionBasedAuthentication:(id)arg1;
 - (bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;
 - (bool)contextShouldAllowPasscodeFallback:(id)arg1;
+- (void)credentialListViewController:(id)arg1 didFinishWithCredential:(id)arg2 completion:(id /* block */)arg3;
 - (void)credentialProviderExtensionManagerExtensionListDidChange:(id)arg1;
-- (void)credentialProviderExtensionViewController:(id)arg1 didFinishWithCredential:(id)arg2 completion:(id /* block */)arg3;
-- (void)dealloc;
 - (bool)displayMessageAsTitleForContext:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)passcodePromptForContext:(id)arg1;
@@ -57,6 +53,7 @@
 - (void)setRemoteLocalizedAppName:(id)arg1;
 - (void)setRemoteUnlocalizedAppName:(id)arg1;
 - (void)setWebViewURL:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 
 @end

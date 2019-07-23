@@ -3,6 +3,7 @@
  */
 
 @interface TDRenditionsDistiller : NSObject {
+    NSObject<OS_dispatch_group> * _group;
     TDLogger * _logger;
     CoreThemeDocument * document;
     NSConditionLock * inQueueLock;
@@ -33,5 +34,6 @@
 - (id)logger;
 - (id)nextCSIDataInfoFromQueue;
 - (void)setLogger:(id)arg1;
+- (void)waitUntilFinished;
 
 @end

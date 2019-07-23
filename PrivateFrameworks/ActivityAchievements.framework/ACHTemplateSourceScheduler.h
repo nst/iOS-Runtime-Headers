@@ -36,7 +36,7 @@
 
 - (void).cxx_destruct;
 - (id)_currentDate;
-- (void)_queue_runTemplateSources:(id)arg1 requiringRunnnableForDate:(bool)arg2;
+- (bool)_queue_runTemplateSources:(id)arg1 requiringRunnnableForDate:(bool)arg2;
 - (void)_runAllTemplateSources;
 - (void)_runSynchronously;
 - (id)_runnableSourcesInSources:(id)arg1 forDate:(id)arg2 calendar:(id)arg3;

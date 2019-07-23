@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSString *primaryEmail;
 @property (nonatomic, readonly) NSURL *privateCloudDBURL;
 @property (nonatomic, readonly) NSURL *privateCodeServiceURL;
+@property (nonatomic, readonly) NSURL *privateDatabaseRPCServiceURL;
 @property (nonatomic, readonly) NSURL *privateDeviceServiceURL;
 @property (nonatomic, readonly) NSURL *privateMetricsServiceURL;
 @property (nonatomic, readonly) NSURL *privateShareServiceURL;
@@ -51,6 +52,7 @@
 - (id)primaryEmail;
 - (id)privateCloudDBURL;
 - (id)privateCodeServiceURL;
+- (id)privateDatabaseRPCServiceURL;
 - (id)privateDeviceServiceURL;
 - (id)privateMetricsServiceURL;
 - (id)privateShareServiceURL;

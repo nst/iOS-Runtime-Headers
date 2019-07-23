@@ -4,6 +4,7 @@
 
 @interface ATXDisplayCache : NSObject <ATXActionProducerDelegate> {
     NSString * _cacheBasePath;
+    _ATXAppPredictorJSONScoreLogger * _cacheValuationScoreLogger;
     NSArray * _producers;
     ATXActionCriteriaWorldState * _worldState;
 }
@@ -20,11 +21,13 @@
 
 - (void).cxx_destruct;
 - (id)_criteriaForJobOnDate:(id)arg1;
+- (void)_logCacheUpdateWithSpotlightDiff:(double)arg1 spotlightSetDiff:(double)arg2 lockscreenDiff:(double)arg3 lockscreenSetDiff:(double)arg4;
 - (void)actionProducerProducedNewActions:(id)arg1;
 - (id)actions;
 - (id)cacheBasePath;
 - (id)filteredActionsFromActions:(id)arg1;
 - (id)initWithProducers:(id)arg1 cacheBasePath:(id)arg2;
+- (void)logDisplayCacheActionResults:(id)arg1 lockscreenPredictionIndices:(id)arg2;
 - (void)setUpdateJobForCriteria:(id)arg1;
 - (void)setUpdateJobForDate:(id)arg1;
 - (void)setWorldState:(id)arg1;

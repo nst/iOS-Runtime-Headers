@@ -14,7 +14,7 @@
     void selectedParticipant;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (void)forceBumpPriority;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

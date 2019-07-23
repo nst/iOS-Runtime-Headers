@@ -88,6 +88,9 @@
 - (bool)hasEncryptedData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRecordType:(id)arg1;
+- (id)initWithRecordType:(id)arg1 recordID:(id)arg2;
+- (id)initWithRecordType:(id)arg1 zoneID:(id)arg2;
 - (id)initWithRootRecord:(id)arg1;
 - (id)initWithRootRecord:(id)arg1 shareID:(id)arg2;
 - (id)invitedKeysToRemove;

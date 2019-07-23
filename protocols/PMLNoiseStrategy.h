@@ -5,14 +5,10 @@
 
 @required
 
-- (void)addNoiseToDenseVector:(PMLMutableDenseVector *)arg1;
-- (void)addNoiseToFeatureMatrix:(PMLDenseMatrix *)arg1;
-- (void)addNoiseToGradient:(PMLMutableDenseVector *)arg1;
-- (void)addNoiseToObjectiveFeatures:(PMLMutableDenseVector *)arg1;
 - (void)addNoiseToSparseMatrix:(PMLSparseMatrix *)arg1;
 - (void)addNoiseToSparseVector:(PMLSparseVector *)arg1;
-- (void)addNoiseToWeights:(PMLModelWeights *)arg1;
 - (int)maxIterations;
+- (float)scaleAndAddNoiseToDenseVector:(PMLMutableDenseVector *)arg1 usingNorm:(bool)arg2;
 - (void)setMaxIterations:(int)arg1;
 
 @end

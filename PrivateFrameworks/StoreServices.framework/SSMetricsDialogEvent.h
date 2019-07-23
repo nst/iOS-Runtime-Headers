@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSDictionary *details;
 @property (nonatomic, copy) NSString *dialogId;
 @property (nonatomic, copy) NSString *dialogType;
+@property (nonatomic, copy) NSString *dualAction;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *result;
@@ -24,6 +25,7 @@
 - (id)details;
 - (id)dialogId;
 - (id)dialogType;
+- (id)dualAction;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)message;
@@ -33,6 +35,7 @@
 - (void)setDetails:(id)arg1;
 - (void)setDialogId:(id)arg1;
 - (void)setDialogType:(id)arg1;
+- (void)setDualAction:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setTargetId:(id)arg1;

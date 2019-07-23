@@ -5,18 +5,23 @@
 @interface ACHVisibilityEvaluator : NSObject {
     NSCalendar * _calendar;
     NSDate * _injectedNow;
+    NSString * _injectedWatchCountryCode;
 }
 
 @property (nonatomic, retain) NSCalendar *calendar;
 @property (nonatomic, retain) NSDate *injectedNow;
+@property (nonatomic, retain) NSString *injectedWatchCountryCode;
 
 - (void).cxx_destruct;
 - (void)_injectNow:(id)arg1;
+- (void)_injectWatchCountryCode:(id)arg1;
 - (id)calendar;
 - (id)init;
 - (id)injectedNow;
+- (id)injectedWatchCountryCode;
 - (void)setCalendar:(id)arg1;
 - (void)setInjectedNow:(id)arg1;
+- (void)setInjectedWatchCountryCode:(id)arg1;
 - (bool)unearnedAchievementIsVisibleNow:(id)arg1;
 
 @end

@@ -5,7 +5,6 @@
 @interface CKUIBehaviorNano : CKUIBehavior
 
 - (struct CGSize { double x1; double x2; })aggregateAcknowledgmentTranscriptBalloonSize;
-- (id)arouetReplyImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })attachmentBalloonAlignmentRectInsets;
 - (struct CGSize { double x1; double x2; })attachmentBalloonSize;
 - (id)attachmentTextFont;
@@ -50,11 +49,8 @@
 - (unsigned long long)defaultConversationLoadMoreCount;
 - (unsigned long long)defaultConversationViewingMessageCount;
 - (id)defaultWaveformImage;
-- (id)dictationReplyImage;
-- (id)digitalTouchReplyImage;
 - (struct CGSize { double x1; double x2; })documentIconSize;
 - (double)emojiPreviewMaxWidth;
-- (id)emojiReplyImage;
 - (double)extensionBalloonMaximumHeight;
 - (id)grayChevronImage;
 - (id)gray_chevronImage;
@@ -128,7 +124,6 @@
 - (id)strokedTaillessBalloonName;
 - (double)summaryDateConversationListSpace;
 - (bool)supportsContiguousAttachments;
-- (id)surfReplyImage;
 - (id)systemGrayChevronImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })taillessAttachmentBalloonAlignmentRectInsets;
 - (id)taillessBallonName;

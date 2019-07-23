@@ -41,6 +41,7 @@
         double height; 
     }  dimensionsOfReservedVideoMemory;
     bool  disallowsAMRAudio;
+    bool  disallowsAutoPauseOnRouteRemovalIfNoAudio;
     bool  disallowsHardwareAcceleratedVideoDecoder;
     bool  disallowsVideoLayerDisplayCompositing;
     NSArray * displaysUsedForPlayback;
@@ -56,6 +57,7 @@
     bool  hadAssociatedOnscreenPlayerLayerWhenSuspended;
     NSMutableArray * handlersToCallWhenReadyToPlay;
     bool  hostApplicationInForeground;
+    bool  isConnectedToPhysicalSecondScreen;
     bool  isDisplayingClosedCaptions;
     NSMutableSet * items;
     NSArray * itemsInFigPlayQueue;
@@ -94,6 +96,7 @@
     NSObject<OS_dispatch_queue> * stateDispatchQueue;
     long long  status;
     NSMutableArray * subtitleLayers;
+    bool  suspensionExpected;
     long long  timeControlStatus;
     float  userVolume;
     bool  usesAudioOnlyModeForExternalPlayback;

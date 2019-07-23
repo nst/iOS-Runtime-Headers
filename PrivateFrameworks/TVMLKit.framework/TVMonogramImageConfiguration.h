@@ -11,6 +11,7 @@
     NSString * _lastName;
     long long  _style;
     NSString * _text;
+    UIColor * _textColor;
 }
 
 @property (nonatomic, retain) UIColor *bgColor;
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, readonly) long long style;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)bgColor;
@@ -38,7 +40,9 @@
 - (void)setFont:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setTextColor:(id)arg1;
 - (long long)style;
 - (id)text;
+- (id)textColor;
 
 @end

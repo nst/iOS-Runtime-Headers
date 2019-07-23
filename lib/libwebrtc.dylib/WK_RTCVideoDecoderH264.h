@@ -6,6 +6,7 @@
     id /* block */  _callback;
     struct OpaqueVTDecompressionSession { } * _decompressionSession;
     int  _error;
+    struct OpaqueCMMemoryPool { } * _memoryPool;
     struct opaqueCMFormatDescription { } * _videoFormat;
 }
 
@@ -17,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)configureDecompressionSession;
 - (void)dealloc;
-- (long long)decode:(id)arg1 missingFrames:(bool)arg2 fragmentationHeader:(id)arg3 codecSpecificInfo:(id)arg4 renderTimeMs:(long long)arg5;
+- (long long)decode:(id)arg1 missingFrames:(bool)arg2 codecSpecificInfo:(id)arg3 renderTimeMs:(long long)arg4;
 - (void)destroyDecompressionSession;
 - (id)implementationName;
 - (id)init;
@@ -26,6 +27,7 @@
 - (void)setCallback:(id /* block */)arg1;
 - (void)setError:(int)arg1;
 - (void)setVideoFormat:(struct opaqueCMFormatDescription { }*)arg1;
+- (long long)startDecodeWithNumberOfCores:(int)arg1;
 - (long long)startDecodeWithSettings:(id)arg1 numberOfCores:(int)arg2;
 
 @end

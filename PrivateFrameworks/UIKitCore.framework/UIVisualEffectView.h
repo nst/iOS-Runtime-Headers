@@ -114,13 +114,10 @@
 - (bool)_useLiveMasking;
 - (bool)_useReducedTransparencyForContentEffects;
 - (id)_whatsWrongWithThisEffect;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundEffects;
 - (id)contentEffects;
 - (id)contentView;
+- (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (id)effect;
@@ -136,5 +133,9 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
+
+- (void)ts_setGroupName:(id)arg1;
 
 @end

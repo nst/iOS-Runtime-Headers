@@ -4,17 +4,20 @@
 
 @interface _TVListViewCell : UICollectionViewCell {
     UIColor * _backgroundColor;
+    UIVisualEffectView * _backgroundVisualEffectView;
     <_TVListViewCellDelegate> * _delegate;
     bool  _disabled;
     _UIFloatingContentView * _floatingView;
     UIColor * _highlightedBackgroundColor;
     bool  _shouldAppearSelected;
+    bool  _visualEffectViewBackgroundEnabled;
 }
 
 @property (nonatomic) <_TVListViewCellDelegate> *delegate;
 @property (getter=isDisabled, nonatomic) bool disabled;
 @property (nonatomic, retain) _UIFloatingContentView *floatingView;
 @property (nonatomic) bool shouldAppearSelected;
+@property (nonatomic) bool visualEffectViewBackgroundEnabled;
 
 - (void).cxx_destruct;
 - (bool)_descendantsShouldHighlight;
@@ -41,8 +44,10 @@
 - (void)setSelected:(bool)arg1;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)setShouldAppearSelected:(bool)arg1;
+- (void)setVisualEffectViewBackgroundEnabled:(bool)arg1;
 - (bool)shouldAppearSelected;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFloatingViewControlStateForPreviouslyFocusedView:(id)arg1;
+- (bool)visualEffectViewBackgroundEnabled;
 
 @end

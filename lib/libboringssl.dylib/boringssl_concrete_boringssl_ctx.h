@@ -94,7 +94,6 @@
         unsigned long long length; 
         char *data; 
     }  ssl_psk_secret;
-    struct tls_buffer_list_s { struct tls_buffer_list_s {} *x1; struct { unsigned long long x_2_1_1; char *x_2_1_2; } x2; } * ssl_sct_list;
     struct ssl_st { } * ssl_session;
     struct { 
         unsigned long long length; 

@@ -424,6 +424,7 @@
 
 + (id)mf_contactFromEmailAddress:(id)arg1;
 + (id)mf_contactWithPersonNameComponents:(id)arg1 emailAddress:(id)arg2;
++ (id)mf_contactWithPersonNameComponents:(id)arg1 emailAddress:(id)arg2 allowInvalidEmailAddress:(bool)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
 
@@ -483,6 +484,8 @@
 - (id)pkDictionaryForProperty:(id)arg1;
 - (id)pkFormattedContactAddress;
 - (id)pkFormattedContactAddressIncludingPhoneticName:(bool)arg1;
+- (id)pkFormattedContactAddressIncludingPhoneticName:(bool)arg1 showName:(bool)arg2;
+- (id)pkFormattedContactAddressWithoutName;
 - (id)pkFullAndPhoneticName;
 - (id)pkFullName;
 - (id)pkFullyQualifiedName;
@@ -496,6 +499,12 @@
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
 + (id)pl_findBestMatchingContactFromMatchingContacts:(id)arg1 firstName:(id)arg2 lastName:(id)arg3 contactFormatter:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/RTTUtilities.framework/RTTUtilities
+
++ (id)contactForPhoneNumber:(id)arg1;
+
+- (bool)ttyIsMe;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

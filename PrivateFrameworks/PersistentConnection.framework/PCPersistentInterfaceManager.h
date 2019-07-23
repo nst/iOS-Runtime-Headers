@@ -10,6 +10,7 @@
     CoreTelephonyClient * _ctClient;
     bool  _ctIsWWANInHomeCountry;
     void * _ctServerConnection;
+    CTXPCServiceSubscriptionContext * _currentDataSimContext;
     NSMapTable * _delegatesAndQueues;
     bool  _hasWWANStatusIndicator;
     NSTimer * _inCallWWANOverrideTimer;
@@ -64,6 +65,7 @@
 - (void)_ctConnectionAttempt;
 - (void)_inCallWWANOverrideTimerFired;
 - (bool)_isCellularCall:(struct __CTCall { }*)arg1;
+- (bool)_isCurrentDataSimContextLocked:(id)arg1;
 - (bool)_isInternetReachableLocked;
 - (bool)_isWWANInHomeCountryLocked;
 - (bool)_isWiFiUsable;
@@ -71,6 +73,7 @@
 - (id)_nonCellularMonitor;
 - (void)_processCallStatusChanged:(id)arg1;
 - (void)_processConnectionStatusLocked:(id)arg1;
+- (void)_processCurrentDataSimChangedLocked:(id)arg1;
 - (void)_processDataStatusLocked:(id)arg1;
 - (void)_scheduleCalloutsForSelector:(SEL)arg1;
 - (void)_updateCTIsWWANInHomeCountry:(bool)arg1 isWWANInterfaceDataActive:(bool)arg2;
@@ -88,6 +91,7 @@
 - (void)bindCFStreamToWWANInterface:(struct __CFReadStream { }*)arg1;
 - (void)connectionActivationError:(id)arg1 connection:(int)arg2 error:(int)arg3;
 - (void)connectionStateChanged:(id)arg1 connection:(int)arg2 dataConnectionStatusInfo:(id)arg3;
+- (void)currentDataSimChanged:(id)arg1;
 - (id)currentLinkQualityString;
 - (void)cutWiFiManagerDeviceAttached:(id)arg1;
 - (void)dataStatus:(id)arg1 dataStatusInfo:(id)arg2;

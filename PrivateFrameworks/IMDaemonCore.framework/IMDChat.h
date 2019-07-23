@@ -37,6 +37,7 @@
     long long  _state;
     unsigned char  _style;
     unsigned long long  _unreadCount;
+    bool  _wasReportedAsJunk;
 }
 
 @property (readonly, retain) IMDAccount *account;
@@ -87,6 +88,7 @@
 @property (readonly) Class superclass;
 @property (setter=_setUnreadCount:) unsigned long long unreadCount;
 @property (nonatomic, readonly) NSString *vocabularyIdentifier;
+@property bool wasReportedAsJunk;
 
 + (id)_recordType;
 
@@ -186,6 +188,7 @@
 - (void)setSrServerChangeToken:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setStyle:(unsigned char)arg1;
+- (void)setWasReportedAsJunk:(bool)arg1;
 - (id)spokenPhrase;
 - (id)srCloudKitRecordID;
 - (long long)srCloudKitSyncState;
@@ -218,5 +221,6 @@
 - (void)updateShouldForceToSMS:(bool)arg1;
 - (void)updateSrCloudKitRecordID:(id)arg1;
 - (id)vocabularyIdentifier;
+- (bool)wasReportedAsJunk;
 
 @end

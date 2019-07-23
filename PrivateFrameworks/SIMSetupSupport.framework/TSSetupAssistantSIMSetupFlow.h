@@ -3,34 +3,25 @@
  */
 
 @interface TSSetupAssistantSIMSetupFlow : TSSIMSetupFlow <TSCellularPlanManagerCacheDelegate, TSSIMSetupFlowDelegate> {
-    bool  _allowDismiss;
+    UIBarButtonItem * _cancelButton;
     NSMutableArray * _danglingPlanItems;
     NSString * _iccid;
     bool  _showAddPlan;
 }
 
-@property bool allowDismiss;
-@property (retain) NSMutableArray *danglingPlanItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (readonly) NSString *iccid;
-@property bool showAddPlan;
 @property (readonly) Class superclass;
 
 + (void)needsToRun:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (bool)allowDismiss;
-- (id)danglingPlanItems;
 - (id)firstViewController;
-- (id)iccid;
 - (id)initWithIccid:(id)arg1 showAddPlan:(bool)arg2 allowDismiss:(bool)arg3;
+- (bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
-- (void)setAllowDismiss:(bool)arg1;
-- (void)setDanglingPlanItems:(id)arg1;
-- (void)setShowAddPlan:(bool)arg1;
-- (bool)showAddPlan;
+- (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
 
 @end

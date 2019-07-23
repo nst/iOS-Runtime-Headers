@@ -89,6 +89,7 @@
 - (long long)indicatorType;
 - (id)initWithConversation:(id)arg1;
 - (id)initWithConversation:(id)arg1 navigationController:(id)arg2;
+- (bool)isFaceTimeVideoSupported;
 - (bool)isMultiwayFaceTimeAudioSupported;
 - (void)loadView;
 - (void)multiwayStateChanged:(id)arg1;

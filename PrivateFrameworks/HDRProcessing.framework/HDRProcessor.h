@@ -23,6 +23,8 @@
     float  _defaultEDRFactorValue;
     float  _defaultMaxEDRValue;
     <MTLDevice> * _device;
+    float  _displayCompensationGammaValue;
+    unsigned int  _displayCompensationType;
     unsigned long long  _displayDiagonalSize;
     unsigned int  _displayType;
     DolbyVisionDisplayManagement * _dm;
@@ -138,6 +140,7 @@
         } dmData; 
         struct ToneCurve_Control { 
             double targetMaxLinear; 
+            double targetMinLinear; 
             float maxEDRValue; 
             float EDRFactor; 
             float AmbientLight; 
@@ -145,14 +148,71 @@
             bool HDRProcessingFullAmbientAdaptation; 
             struct __CFString {} *targetColorPrimaries; 
             unsigned int outputPixelFormat; 
+            int hdr10_tm_mode; 
+            unsigned int operationFromDict; 
             float forwardDM_tMaxPq; 
             float forwardDM_tMinPq; 
             float mid; 
             float crush; 
             float clip; 
+            bool passThroughTM; 
+            struct _HDR10AuxData { 
+                unsigned int processingType; 
+                unsigned int tm_preset; 
+                int tm_mode; 
+                int tm_curve_type; 
+                float EDRFactor; 
+                float maxEDRValue; 
+                int amb_adaptation_mode; 
+                float amb_adaptation_lux2nits_ratio; 
+                float ambientNits; 
+                float target_display_contrast_ratio; 
+                float target_display_reflection_ratio; 
+                unsigned int dpc_mode; 
+                float dpc_gain; 
+                float Smin_nits; 
+                float Smax_nits; 
+                float Tmin_nits; 
+                float targetMaxLinear; 
+                float Send_nits; 
+                float tm_Send_nits; 
+            } auxData; 
+            struct _HDR10TMParam { 
+                float tm_Smin_nits; 
+                float tm_Smax_nits; 
+                float tm_Send_nits; 
+                float tm_Tmin_nits; 
+                float tm_Tmax_nits; 
+                float tm_Tend_nits; 
+                float tm_Smin_C; 
+                float tm_Smax_C; 
+                float tm_Send_C; 
+                float tm_Tmin_C; 
+                float tm_Tmax_C; 
+                float tm_Tend_C; 
+                int tm_curve_type; 
+                unsigned short numPs; 
+                float AsC[4]; 
+                float PsC[4]; 
+                float MsC[4]; 
+                unsigned short n; 
+                float XsC[4]; 
+                float YsC[4]; 
+                unsigned short ms[3]; 
+                float arrPsC[3][14]; 
+            } tmParam; 
+            struct _HDR10AmbAdaptationParam { 
+                unsigned short numPs; 
+                float AsC[3]; 
+                float PsC[3]; 
+                float MsC[3]; 
+                float aL; 
+                float bL; 
+            } ambAdaptationParam; 
         } tcControl; 
         struct { 
             unsigned int hdrContent; 
+            unsigned int hwType; 
             unsigned int bitDepth; 
             unsigned int displayType; 
             unsigned int displayDiagonalSize; 
@@ -165,6 +225,8 @@
             float RGBtoLMS_coef[9]; 
             unsigned int maxMasteringNits; 
             float minMasteringNits; 
+            unsigned int displayPipelineCompensationType; 
+            float displayPipelineGammaValue; 
         } hdrControl; 
         struct { 
             struct { 
@@ -185,6 +247,7 @@
             } ll; 
         } infoFrameData; 
     }  _edrMetaData;
+    struct __CFError { } * _error_success;
     unsigned int  _hardwareType;
     unsigned int  _hdrMode;
     unsigned long long  _matrixCoeffs;
@@ -202,6 +265,7 @@
     NSObject<OS_dispatch_semaphore> * _scheduleSemaphone;
     unsigned long long  _sdrMaxBrightnessInNits;
     struct __CFString { } * _targetColorPrimaries;
+    double  _targetMinNits;
     double  _targetNits;
     unsigned long long  _transferFunction;
     unsigned long long  _videoFullRangeFlag;
@@ -212,12 +276,13 @@
 @property float defaultEDRFactorValue;
 @property float defaultMaxEDRValue;
 @property struct __CFString { }*targetColorPrimaries;
+@property double targetMinNits;
 @property double targetNits;
 
 + (void)dolbyIOMFBMetadata:(struct { unsigned int x1; union { struct { struct { unsigned char x_1_3_1[4][128]; unsigned int x_1_3_2; unsigned int x_1_3_3; } x_1_2_1; } x_2_1_1; } x2; }*)arg1 withMinBrightness:(float)arg2 maxBrightness:(float)arg3;
 
 - (void).cxx_destruct;
-- (long long)ValidateMSRColorConfigInput:(unsigned int)arg1 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; unsigned char x_1_4_4; int x_1_4_5; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg2 inputSurface:(struct __IOSurface { }*)arg3 outputSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg6;
+- (long long)ValidateMSRColorConfigInput:(unsigned int)arg1 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; bool x_1_4_4; float x_1_4_5; float x_1_4_6; unsigned char x_1_4_7; int x_1_4_8; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg2 inputSurface:(struct __IOSurface { }*)arg3 outputSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg6;
 - (bool)allocateResources;
 - (void)checkIOSurface:(struct __IOSurface { }*)arg1 forInfoFrame:(struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned short x_1_1_7; unsigned short x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg2 withRPUData:(bool)arg3;
 - (void)dealloc;
@@ -226,25 +291,28 @@
 - (float)defaultMaxEDRValue;
 - (long long)encodeToCommandBuffer:(id)arg1 inputSurfaceLayer0:(struct __IOSurface { }*)arg2 inputSurfacelayer1:(struct __IOSurface { }*)arg3 outputSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5;
 - (void)extractCAMetaData:(id)arg1 withRPU:(bool)arg2;
-- (void)extractFrameMetadata:(struct __CFDictionary { }*)arg1 intoTCControl:(struct ToneCurve_Control { double x1; float x2; float x3; float x4; float x5; bool x6; struct __CFString {} *x7; unsigned int x8; float x9; float x10; float x11; float x12; float x13; }*)arg2;
+- (void)extractFrameMetadata:(struct __CFDictionary { }*)arg1 intoTCControl:(struct ToneCurve_Control { double x1; double x2; float x3; float x4; float x5; float x6; bool x7; struct __CFString {} *x8; unsigned int x9; int x10; unsigned int x11; float x12; float x13; float x14; float x15; float x16; bool x17; struct _HDR10AuxData { unsigned int x_18_1_1; unsigned int x_18_1_2; int x_18_1_3; int x_18_1_4; float x_18_1_5; float x_18_1_6; int x_18_1_7; float x_18_1_8; float x_18_1_9; float x_18_1_10; float x_18_1_11; unsigned int x_18_1_12; float x_18_1_13; float x_18_1_14; float x_18_1_15; float x_18_1_16; float x_18_1_17; float x_18_1_18; float x_18_1_19; } x18; struct _HDR10TMParam { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; float x_19_1_5; float x_19_1_6; float x_19_1_7; float x_19_1_8; float x_19_1_9; float x_19_1_10; float x_19_1_11; float x_19_1_12; int x_19_1_13; unsigned short x_19_1_14; float x_19_1_15[4]; float x_19_1_16[4]; float x_19_1_17[4]; unsigned short x_19_1_18; float x_19_1_19[4]; float x_19_1_20[4]; unsigned short x_19_1_21[3]; float x_19_1_22[3][14]; } x19; struct _HDR10AmbAdaptationParam { unsigned short x_20_1_1; float x_20_1_2[3]; float x_20_1_3[3]; float x_20_1_4[3]; float x_20_1_5; float x_20_1_6; } x20; }*)arg2;
 - (void)extractHEVCHDRParameterFromInputIOSurface:(struct __IOSurface { }*)arg1 forInfoFrame:(struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned short x_1_1_7; unsigned short x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg2;
-- (long long)generateMSRColorConfigWithOperation:(unsigned int)arg1 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; unsigned char x_1_4_4; int x_1_4_5; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg2 inputSurface:(struct __IOSurface { }*)arg3 outputSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg6;
+- (long long)generateMSRColorConfigWithOperation:(unsigned int)arg1 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; bool x_1_4_4; float x_1_4_5; float x_1_4_6; unsigned char x_1_4_7; int x_1_4_8; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg2 inputSurface:(struct __IOSurface { }*)arg3 outputSurface:(struct __IOSurface { }*)arg4 metadata:(id)arg5 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg6;
+- (void)getDisplayPipelineCompensationType:(id)arg1 gamma:(float)arg2;
 - (bool)hasMetalDeviceChanged:(id)arg1;
 - (id)initWithConfig:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct __CFString {} *x6; unsigned int x7; unsigned int x8; }*)arg1;
 - (id)initWithDevice:(id)arg1 config:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct __CFString {} *x6; unsigned int x7; unsigned int x8; }*)arg2;
-- (void)processFrameInternalWithLayer0:(struct __IOSurface { }*)arg1 layer1:(struct __IOSurface { }*)arg2 outout:(struct __IOSurface { }*)arg3 metadata:(id)arg4 commandbuffer:(id)arg5 operation:(unsigned int)arg6 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; unsigned char x_1_4_4; int x_1_4_5; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg7 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg8;
+- (long long)processFrameInternalWithLayer0:(struct __IOSurface { }*)arg1 layer1:(struct __IOSurface { }*)arg2 outout:(struct __IOSurface { }*)arg3 metadata:(id)arg4 commandbuffer:(id)arg5 operation:(unsigned int)arg6 config:(struct { int x1; unsigned int x2; struct HDRFrameProcessingControl_t { union { unsigned int x_1_2_1[9216]; struct ProcessingControlV0_t { struct DMAConfig_t { unsigned char x_1_4_1; int x_1_4_2; int x_1_4_3; bool x_1_4_4; float x_1_4_5; float x_1_4_6; unsigned char x_1_4_7; int x_1_4_8; } x_2_3_1; struct Reshaping_t { unsigned short x_2_4_1; unsigned short x_2_4_2[3][1024]; } x_2_3_2; struct ChromaScaling_t { unsigned short x_3_4_1; unsigned char x_3_4_2; float x_3_4_3[15][32]; unsigned short x_3_4_4; unsigned char x_3_4_5; float x_3_4_6[9][32]; } x_2_3_3; struct SourceToRGB_t { unsigned int x_4_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_4_4_2; } x_2_3_4; struct Linearization_t { unsigned int x_5_4_1; unsigned int x_5_4_2[3][514]; } x_2_3_5; struct ColorspaceAToCommonColorspace_t { unsigned int x_6_4_1; struct MSRCSC_t { unsigned int x_2_5_1; float x_2_5_2[3]; float x_2_5_3[3]; float x_2_5_4[3]; int x_2_5_5[3][3]; float x_2_5_6[3]; float x_2_5_7[3]; float x_2_5_8[3]; } x_6_4_2; } x_2_3_6; struct ChromaticAdaptation_t { bool x_7_4_1; unsigned int x_7_4_2; struct MSRCSC_t { unsigned int x_3_5_1; float x_3_5_2[3]; float x_3_5_3[3]; float x_3_5_4[3]; int x_3_5_5[3][3]; float x_3_5_6[3]; float x_3_5_7[3]; float x_3_5_8[3]; } x_7_4_3; int x_7_4_4; union { struct { unsigned int x_1_6_1; } x_5_5_1; struct { unsigned char x_2_6_1; unsigned char x_2_6_2; unsigned char x_2_6_3; unsigned char x_2_6_4; unsigned char x_2_6_5; int x_2_6_6[3]; int x_2_6_7; int x_2_6_8[3]; unsigned int x_2_6_9[8]; } x_5_5_2; struct { unsigned char x_3_6_1; unsigned char x_3_6_2; unsigned char x_3_6_3; unsigned char x_3_6_4; unsigned char x_3_6_5; unsigned char x_3_6_6; } x_5_5_3; } x_7_4_5; unsigned int x_7_4_6[4][513]; unsigned int x_7_4_7; float x_7_4_8[11]; float x_7_4_9[5]; float x_7_4_10[5]; float x_7_4_11[5]; float x_7_4_12[11]; float x_7_4_13; float x_7_4_14; unsigned int x_7_4_15; struct MSRCSC_t { unsigned int x_16_5_1; float x_16_5_2[3]; float x_16_5_3[3]; float x_16_5_4[3]; int x_16_5_5[3][3]; float x_16_5_6[3]; float x_16_5_7[3]; float x_16_5_8[3]; } x_7_4_16; } x_2_3_7; } x_1_2_2; } x_3_1_1; } x3; }*)arg7 histogram:(struct RgbHistogram_t { unsigned int x1; unsigned int x2[128]; unsigned int x3[128]; unsigned int x4[128]; }*)arg8;
 - (long long)processFrameWithLayer0:(struct __CVBuffer { }*)arg1 layer1:(struct __CVBuffer { }*)arg2 output:(struct __CVBuffer { }*)arg3 metadata:(id)arg4 commandbuffer:(id)arg5 callback:(id /* block */)arg6;
-- (long long)processPixelsWithLayer0:(struct __IOSurface { }*)arg1 layer1:(struct __IOSurface { }*)arg2 output:(struct __IOSurface { }*)arg3 metaData:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; unsigned int x_1_1_11; unsigned int x_1_1_12; unsigned int x_1_1_13[3]; unsigned int x_1_1_14[3][18]; unsigned int x_1_1_15[1][1][3][9]; unsigned int x_1_1_16[1][1][3][9]; unsigned int x_1_1_17[1][1][3][9]; unsigned int x_1_1_18[1][1][3][9]; unsigned int x_1_1_19[1][1][3][9]; int x_1_1_20[1][1][3][9][3]; unsigned int x_1_1_21[1][1][3][9][3]; long long x_1_1_22[1][1][3][9][6]; float x_1_1_23[1][1][3][9][6]; unsigned int x_1_1_24[1][1][3][9]; int x_1_1_25[1][1][3][9]; unsigned int x_1_1_26[1][1][3][9]; int x_1_1_27[1][1][3][9][4][7]; unsigned int x_1_1_28[1][1][3][9][4][7]; long long x_1_1_29[1][1][3][9][4][7]; float x_1_1_30[1][1][3][9][4][7]; int x_1_1_31[1][1][3][9][6]; unsigned int x_1_1_32[1][1][3][9][6]; unsigned int x_1_1_33; unsigned int x_1_1_34; unsigned int x_1_1_35; unsigned int x_1_1_36[9]; } x1; }*)arg4 tcControl:(struct ToneCurve_Control { double x1; float x2; float x3; float x4; float x5; bool x6; struct __CFString {} *x7; unsigned int x8; float x9; float x10; float x11; float x12; float x13; }*)arg5 hdrControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; unsigned int x7; unsigned int x8; unsigned int x9; float x10[9]; float x11[9]; unsigned int x12; float x13; }*)arg6 hdr10InfoFrame:(struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned short x_1_1_7; unsigned short x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg7 commandbuffer:(id)arg8;
+- (long long)processPixelsWithLayer0:(struct __IOSurface { }*)arg1 layer1:(struct __IOSurface { }*)arg2 output:(struct __IOSurface { }*)arg3 metaData:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; unsigned int x_1_1_11; unsigned int x_1_1_12; unsigned int x_1_1_13[3]; unsigned int x_1_1_14[3][18]; unsigned int x_1_1_15[1][1][3][9]; unsigned int x_1_1_16[1][1][3][9]; unsigned int x_1_1_17[1][1][3][9]; unsigned int x_1_1_18[1][1][3][9]; unsigned int x_1_1_19[1][1][3][9]; int x_1_1_20[1][1][3][9][3]; unsigned int x_1_1_21[1][1][3][9][3]; long long x_1_1_22[1][1][3][9][6]; float x_1_1_23[1][1][3][9][6]; unsigned int x_1_1_24[1][1][3][9]; int x_1_1_25[1][1][3][9]; unsigned int x_1_1_26[1][1][3][9]; int x_1_1_27[1][1][3][9][4][7]; unsigned int x_1_1_28[1][1][3][9][4][7]; long long x_1_1_29[1][1][3][9][4][7]; float x_1_1_30[1][1][3][9][4][7]; int x_1_1_31[1][1][3][9][6]; unsigned int x_1_1_32[1][1][3][9][6]; unsigned int x_1_1_33; unsigned int x_1_1_34; unsigned int x_1_1_35; unsigned int x_1_1_36[9]; } x1; }*)arg4 tcControl:(struct ToneCurve_Control { double x1; double x2; float x3; float x4; float x5; float x6; bool x7; struct __CFString {} *x8; unsigned int x9; int x10; unsigned int x11; float x12; float x13; float x14; float x15; float x16; bool x17; struct _HDR10AuxData { unsigned int x_18_1_1; unsigned int x_18_1_2; int x_18_1_3; int x_18_1_4; float x_18_1_5; float x_18_1_6; int x_18_1_7; float x_18_1_8; float x_18_1_9; float x_18_1_10; float x_18_1_11; unsigned int x_18_1_12; float x_18_1_13; float x_18_1_14; float x_18_1_15; float x_18_1_16; float x_18_1_17; float x_18_1_18; float x_18_1_19; } x18; struct _HDR10TMParam { float x_19_1_1; float x_19_1_2; float x_19_1_3; float x_19_1_4; float x_19_1_5; float x_19_1_6; float x_19_1_7; float x_19_1_8; float x_19_1_9; float x_19_1_10; float x_19_1_11; float x_19_1_12; int x_19_1_13; unsigned short x_19_1_14; float x_19_1_15[4]; float x_19_1_16[4]; float x_19_1_17[4]; unsigned short x_19_1_18; float x_19_1_19[4]; float x_19_1_20[4]; unsigned short x_19_1_21[3]; float x_19_1_22[3][14]; } x19; struct _HDR10AmbAdaptationParam { unsigned short x_20_1_1; float x_20_1_2[3]; float x_20_1_3[3]; float x_20_1_4[3]; float x_20_1_5; float x_20_1_6; } x20; }*)arg5 hdrControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; float x7; unsigned int x8; unsigned int x9; unsigned int x10; float x11[9]; float x12[9]; unsigned int x13; float x14; unsigned int x15; float x16; }*)arg6 hdr10InfoFrame:(struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned short x_1_1_7; unsigned short x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; }*)arg7 commandbuffer:(id)arg8;
 - (void)releaseResources;
 - (unsigned int)selectHDRUsage;
-- (void)setCSCMatrixInHDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; unsigned int x7; unsigned int x8; unsigned int x9; float x10[9]; float x11[9]; unsigned int x12; float x13; }*)arg1 forIndex:(unsigned int)arg2;
+- (void)setCSCMatrixInHDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; float x7; unsigned int x8; unsigned int x9; unsigned int x10; float x11[9]; float x12[9]; unsigned int x13; float x14; unsigned int x15; float x16; }*)arg1 forIndex:(unsigned int)arg2;
 - (void)setDefaultAmbientLightValue:(float)arg1;
 - (void)setDefaultEDRFactorValue:(float)arg1;
 - (void)setDefaultMaxEDRValue:(float)arg1;
-- (void)setHDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; float x6; unsigned int x7; unsigned int x8; unsigned int x9; float x10[9]; float x11[9]; unsigned int x12; float x13; }*)arg1 withRUP:(bool)arg2;
+- (void)setHDRControl:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; float x7; unsigned int x8; unsigned int x9; unsigned int x10; float x11[9]; float x12[9]; unsigned int x13; float x14; unsigned int x15; float x16; }*)arg1 withRUP:(bool)arg2;
 - (void)setTargetColorPrimaries:(struct __CFString { }*)arg1;
+- (void)setTargetMinNits:(double)arg1;
 - (void)setTargetNits:(double)arg1;
 - (struct __CFString { }*)targetColorPrimaries;
+- (double)targetMinNits;
 - (double)targetNits;
 
 @end

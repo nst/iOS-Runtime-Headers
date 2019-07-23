@@ -22,14 +22,9 @@
 @property (nonatomic) bool usesDarkTheme;
 @property (nonatomic) bool usesStraightLeftEdge;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)reuseIdentifier;
 
 - (void)_updateRoundedCorners;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })interactiveInsets;
 - (bool)isFirst;

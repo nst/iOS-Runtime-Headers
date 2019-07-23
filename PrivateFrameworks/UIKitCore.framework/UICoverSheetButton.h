@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UICoverSheetButton : UIControl <UIClickInteractionDelegate, _UIInteractiveHighlighting> {
+@interface UICoverSheetButton : UIControl <_UIClickInteractionDelegate> {
     UIVisualEffectView * _backgroundEffectView;
     NSString * _backgroundEffectViewGroupName;
     NSArray * _backgroundEffects;
     UIView * _backgroundHighlightView;
-    UIClickInteraction * _clickInteraction;
+    _UIClickInteraction * _clickInteraction;
     UIView * _containerView;
     UIImageView * _contentView;
     bool  _didActivateDuringInteraction;
@@ -17,9 +17,9 @@
         double bottom; 
         double right; 
     }  _edgeInsets;
+    double  _highlightProgress;
     UIImage * _image;
     bool  _interactive;
-    double  _interactiveHighlightMagnitude;
     NSString * _localizedAccessoryTitle;
     double  _maxForceDuringInteraction;
     bool  _pronounced;
@@ -43,24 +43,20 @@
 @property (nonatomic, copy) NSString *statisticsIdentifier;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
+- (void)_animateEffectUpdateWithProgress:(double)arg1 ended:(bool)arg2;
 - (id)_backgroundEffectsWithBrightness:(double)arg1;
 - (id)_firstActivationDurationStat;
-- (void)_highlightForInteraction:(id)arg1 fractionComplete:(double)arg2 ended:(bool)arg3;
 - (id)_interactionCountStatWithActivation:(bool)arg1;
 - (id)_interactionDurationStat;
 - (id)_maxForceStatWithActivation:(bool)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundEffectViewGroupName;
 - (void)clickInteraction:(id)arg1 didObserveForce:(double)arg2;
-- (void)clickInteractionDidBegin:(id)arg1;
+- (void)clickInteractionDidClickUp:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
-- (bool)clickInteractionShouldInvokeAction:(id)arg1;
+- (bool)clickInteractionShouldBegin:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (id)highlightEffectForClickInteraction:(id)arg1;
 - (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isLatching;
@@ -82,6 +78,5 @@
 - (void)setStatisticsIdentifier:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)statisticsIdentifier;
-- (void)traitCollectionDidChange:(id)arg1;
 
 @end

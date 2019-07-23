@@ -22,6 +22,7 @@
     bool  _didPreventSleepWhenStartingExternalPlayback;
     bool  _disablingAutomaticTermination;
     bool  _forceScanning;
+    bool  _handlesAudioSessionInterruptions;
     bool  _hasProtectedContent;
     bool  _ignoreRateKeyValueChange;
     bool  _inspectionSuspended;
@@ -75,6 +76,7 @@
     bool  _seekingInternal;
     bool  _shouldPlayImmediately;
     bool  _shouldPlayWhenLikelyToKeepUp;
+    long long  _status;
     double  _timeOfLastUpdate;
     AVValueTiming * _timing;
     struct { 
@@ -105,8 +107,10 @@
 @property (getter=isDeviceBatteryChargingOrFull, nonatomic) bool deviceBatteryChargingOrFull;
 @property (getter=isDisablingAutomaticTermination, nonatomic) bool disablingAutomaticTermination;
 @property (nonatomic, readonly) NSError *error;
+@property (nonatomic) bool handlesAudioSessionInterruptions;
 @property (nonatomic) bool hasProtectedContent;
 @property (nonatomic, retain) AVValueTiming *maxTiming;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maximumVideoResolution;
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) AVValueTiming *minTiming;
 @property (nonatomic, readonly) AVObservationController *observationController;
@@ -125,7 +129,7 @@
 @property (getter=isSeeking, nonatomic) bool seeking;
 @property (getter=isSeekingInternal) bool seekingInternal;
 @property (nonatomic, readonly) bool shouldPreventIdleDisplaySleep;
-@property (nonatomic, readonly) long long status;
+@property (nonatomic) long long status;
 @property (nonatomic, retain) AVValueTiming *timing;
 @property (nonatomic, readonly) bool usesExternalPlaybackWhileExternalScreenIsActive;
 
@@ -168,16 +172,17 @@
 + (id)keyPathsForValuesAffectingHasVideo;
 + (id)keyPathsForValuesAffectingLoadedTimeRanges;
 + (id)keyPathsForValuesAffectingMaxTime;
++ (id)keyPathsForValuesAffectingMaximumVideoResolution;
 + (id)keyPathsForValuesAffectingMinTime;
 + (id)keyPathsForValuesAffectingMuted;
 + (id)keyPathsForValuesAffectingPictureInPicturePossible;
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
++ (id)keyPathsForValuesAffectingPreferredDisplayCriteria;
 + (id)keyPathsForValuesAffectingReadyToPlay;
 + (id)keyPathsForValuesAffectingReversePlaybackEndTime;
 + (id)keyPathsForValuesAffectingSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingShouldPreventIdleDisplaySleep;
-+ (id)keyPathsForValuesAffectingStatus;
 + (id)keyPathsForValuesAffectingStreaming;
 + (id)keyPathsForValuesAffectingTimeControlStatus;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
@@ -185,7 +190,9 @@
 - (void).cxx_destruct;
 - (void)_cancelPendingSeeksIfNeeded;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
+- (void)_disableLegibleMediaSelectionOptions:(id)arg1 shouldUpdateUserPreference:(bool)arg2;
 - (void)_enableAutoMediaSelection:(id)arg1;
+- (void)_enableAutoMediaSelection:(id)arg1 shouldUpdateUserPreference:(bool)arg2;
 - (void)_handleSeekTimerEvent;
 - (bool)_isMarkedNotSerializablePlayerItem:(id)arg1;
 - (bool)_isRestrictedFromSavingPlayerItem:(id)arg1;
@@ -197,8 +204,10 @@
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
 - (void)_setMinTiming:(id)arg1 maxTiming:(id)arg2;
+- (void)_updateRateForScrubbingAndSeeking;
 - (void)_updateScanningBackwardRate;
 - (void)_updateScanningForwardRate;
+- (void)_updateStatus;
 - (void)actuallySeekToTime;
 - (bool)allowsExternalPlayback;
 - (bool)allowsIdleSleepPrevention;
@@ -249,6 +258,7 @@
 - (long long)externalPlaybackType;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;
 - (void)gotoEndOfSeekableRanges:(id)arg1;
+- (bool)handlesAudioSessionInterruptions;
 - (bool)hasAudioMediaSelectionOptions;
 - (bool)hasContent;
 - (bool)hasContentChapters;
@@ -296,6 +306,7 @@
 - (id)loadedTimeRanges;
 - (double)maxTime;
 - (id)maxTiming;
+- (struct CGSize { double x1; double x2; })maximumVideoResolution;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)metadata;
 - (double)minTime;
@@ -306,6 +317,7 @@
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
 - (id)player;
+- (id)preferredDisplayCriteria;
 - (struct CGSize { double x1; double x2; })presentationSize;
 - (double)rate;
 - (double)rateBeforeScrubBegan;
@@ -351,6 +363,7 @@
 - (void)setDeviceBatteryChargingOrFull:(bool)arg1;
 - (void)setDisablingAutomaticTermination:(bool)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setHandlesAudioSessionInterruptions:(bool)arg1;
 - (void)setHasProtectedContent:(bool)arg1;
 - (void)setInspectionSuspended:(bool)arg1;
 - (void)setLegibleMediaSelectionOptions:(id)arg1;
@@ -380,6 +393,7 @@
 - (void)setSeekToTimeInternal:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSeeking:(bool)arg1;
 - (void)setSeekingInternal:(bool)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setTiming:(id)arg1;
 - (void)setVolume:(double)arg1;
 - (bool)shouldPreventIdleDisplaySleep;

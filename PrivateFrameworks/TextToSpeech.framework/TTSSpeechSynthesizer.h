@@ -51,6 +51,7 @@
 @property (nonatomic) float volume;
 
 + (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(long long)arg3;
++ (id)_speechVoiceForIdentifier:(id)arg1 language:(id)arg2 footprint:(long long)arg3 useFallbackDefault:(bool)arg4;
 + (id)allAvailableVoices;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
@@ -59,9 +60,13 @@
 + (void)initialize;
 + (bool)isSystemSpeaking;
 + (void)refreshAllAvailableVoices;
++ (void)setVoiceAssetsForTesting:(id)arg1;
 + (id)speechMarkupStringForType:(long long)arg1 forIdentifier:(id)arg2 string:(id)arg3;
 + (id)supportedIPAPhonemeLanguages;
++ (id)testingLastRuleConversion;
 + (void)testingSetAllVoices:(id)arg1;
++ (void)testingSetLastRuleConversion:(id)arg1 replacement:(id)arg2;
++ (id)voiceAssetsForTesting;
 + (id)voiceForIdentifier:(id)arg1;
 
 - (void).cxx_destruct;

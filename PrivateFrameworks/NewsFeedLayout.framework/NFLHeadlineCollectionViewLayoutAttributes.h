@@ -4,11 +4,14 @@
 
 @interface NFLHeadlineCollectionViewLayoutAttributes : NFLFeedCollectionViewLayoutAttributes {
     long long  _accessoryContentMode;
+    double  _accessoryContentViewLeftPadding;
+    double  _accessoryContentViewRightPadding;
     UIColor * _accessoryFontColor;
     NSString * _accessoryFontName;
     double  _accessoryFontSize;
     UIColor * _accessoryIconColor;
     double  _accessoryLineHeight;
+    double  _accessoryViewBottomPadding;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -19,6 +22,7 @@
             double height; 
         } size; 
     }  _accessoryViewFrame;
+    double  _accessoryViewTopPadding;
     UIColor * _backgroundColor;
     struct UIEdgeInsets { 
         double top; 
@@ -53,6 +57,7 @@
     }  _imageViewFrame;
     bool  _layoutHasTooMuchWhiteSpaceInCurrentState;
     double  _minimumHeightBetweenLowestTextFrameAndBottomOfContent;
+    unsigned long long  _numberOfSegments;
     UIColor * _numberedCircleColor;
     struct CGRect { 
         struct CGPoint { 
@@ -76,6 +81,17 @@
             double height; 
         } size; 
     }  _publisherLogoFrame;
+    unsigned long long  _segmentedColorViewDirection;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _segmentedColorViewFrame;
     double  _selectionCornerRadius;
     struct UIEdgeInsets { 
         double top; 
@@ -114,12 +130,16 @@
 }
 
 @property (nonatomic) long long accessoryContentMode;
+@property (nonatomic) double accessoryContentViewLeftPadding;
+@property (nonatomic) double accessoryContentViewRightPadding;
 @property (nonatomic, retain) UIColor *accessoryFontColor;
 @property (nonatomic, retain) NSString *accessoryFontName;
 @property (nonatomic) double accessoryFontSize;
 @property (nonatomic, retain) UIColor *accessoryIconColor;
 @property (nonatomic) double accessoryLineHeight;
+@property (nonatomic) double accessoryViewBottomPadding;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } accessoryViewFrame;
+@property (nonatomic) double accessoryViewTopPadding;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (nonatomic, retain) NSString *excerptFontName;
@@ -131,11 +151,14 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } imageViewFrame;
 @property (nonatomic) bool layoutHasTooMuchWhiteSpaceInCurrentState;
 @property (nonatomic) double minimumHeightBetweenLowestTextFrameAndBottomOfContent;
+@property (nonatomic) unsigned long long numberOfSegments;
 @property (nonatomic, retain) UIColor *numberedCircleColor;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } numberedCircleFrame;
 @property (nonatomic, retain) UIColor *publisherLogoColor;
 @property (nonatomic) long long publisherLogoContentMode;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } publisherLogoFrame;
+@property (nonatomic) unsigned long long segmentedColorViewDirection;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } segmentedColorViewFrame;
 @property (nonatomic) double selectionCornerRadius;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } selectionInset;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sharrowFrame;
@@ -154,12 +177,16 @@
 
 - (void).cxx_destruct;
 - (long long)accessoryContentMode;
+- (double)accessoryContentViewLeftPadding;
+- (double)accessoryContentViewRightPadding;
 - (id)accessoryFontColor;
 - (id)accessoryFontName;
 - (double)accessoryFontSize;
 - (id)accessoryIconColor;
 - (double)accessoryLineHeight;
+- (double)accessoryViewBottomPadding;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessoryViewFrame;
+- (double)accessoryViewTopPadding;
 - (id)backgroundColor;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -175,6 +202,7 @@
 - (bool)isShowingAccessoryText;
 - (bool)layoutHasTooMuchWhiteSpaceInCurrentState;
 - (double)minimumHeightBetweenLowestTextFrameAndBottomOfContent;
+- (unsigned long long)numberOfSegments;
 - (id)numberedCircleColor;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })numberedCircleFrame;
 - (void)populateWithProtobuf:(id)arg1 normalizedWithFeedGutter:(double)arg2;
@@ -182,15 +210,21 @@
 - (id)publisherLogoColor;
 - (long long)publisherLogoContentMode;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })publisherLogoFrame;
+- (unsigned long long)segmentedColorViewDirection;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })segmentedColorViewFrame;
 - (double)selectionCornerRadius;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionInset;
 - (void)setAccessoryContentMode:(long long)arg1;
+- (void)setAccessoryContentViewLeftPadding:(double)arg1;
+- (void)setAccessoryContentViewRightPadding:(double)arg1;
 - (void)setAccessoryFontColor:(id)arg1;
 - (void)setAccessoryFontName:(id)arg1;
 - (void)setAccessoryFontSize:(double)arg1;
 - (void)setAccessoryIconColor:(id)arg1;
 - (void)setAccessoryLineHeight:(double)arg1;
+- (void)setAccessoryViewBottomPadding:(double)arg1;
 - (void)setAccessoryViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAccessoryViewTopPadding:(double)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setExcerptFontName:(id)arg1;
@@ -202,11 +236,14 @@
 - (void)setImageViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLayoutHasTooMuchWhiteSpaceInCurrentState:(bool)arg1;
 - (void)setMinimumHeightBetweenLowestTextFrameAndBottomOfContent:(double)arg1;
+- (void)setNumberOfSegments:(unsigned long long)arg1;
 - (void)setNumberedCircleColor:(id)arg1;
 - (void)setNumberedCircleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPublisherLogoColor:(id)arg1;
 - (void)setPublisherLogoContentMode:(long long)arg1;
 - (void)setPublisherLogoFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSegmentedColorViewDirection:(unsigned long long)arg1;
+- (void)setSegmentedColorViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSelectionCornerRadius:(double)arg1;
 - (void)setSelectionInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSharrowFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -31,6 +31,7 @@
 - (id)groupIdentifier;
 - (id)intentSlotName;
 - (id)key;
+- (bool)mutatingCommand;
 - (id)postGen;
 - (id)preGen;
 - (bool)requiresResponse;

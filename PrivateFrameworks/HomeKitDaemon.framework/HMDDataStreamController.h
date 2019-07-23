@@ -35,6 +35,7 @@
 - (void)_finishStreamTransport;
 - (void)_generateStreamKeys;
 - (id)_getActiveProtocolWithClass:(Class)arg1;
+- (void)_handleAccessoryIsReachable;
 - (void)_initiateStreamSetup;
 - (id)accessory;
 - (id)activeProtocols;

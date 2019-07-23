@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
+@interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol> {
     bool  _allowsManualEntry;
     double  _cachedHeaderViewWidth;
     NSMutableArray * _credentialCaches;
     bool  _hideSetupLaterButton;
     unsigned long long  _maximumNumberOfSelectableCredentials;
+    PKPaymentCredentialCache * _peerPaymentCredentialCache;
     UIImage * _placeHolder;
     PKPaymentSetupProduct * _product;
     PKPaymentProvisioningController * _provisioningController;
@@ -26,13 +27,15 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_canSelectCredential:(id)arg1;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)_numberOfSelectedCredentials;
 - (void)_presentManualAddController;
-- (void)_presentViewController:(id)arg1 completion:(id /* block */)arg2;
+- (void)_presentSecurityCapabilitiesFlowWithFeature:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)_setPassSnapshotOnCell:(id)arg1 cell:(id)arg2;
 - (void)_setUserInteractionEnabled:(bool)arg1;
 - (void)_showRefund:(id)arg1;
+- (void)_sortCredentialCaches:(id)arg1;
 - (void)_startProvisioningForCredentials:(id)arg1;
 - (void)_startProvisioningForSelectedCards;
 - (void)_terminateSetupFlow;
@@ -45,6 +48,8 @@
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3 credentials:(id)arg4 allowsManualEntry:(bool)arg5;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
+- (id)paymentSetupMarker;
+- (void)performSecurityCheckForCredentials:(id)arg1 completion:(id /* block */)arg2;
 - (id)product;
 - (void)setHideSetupLaterButton:(bool)arg1;
 - (void)setProduct:(id)arg1;

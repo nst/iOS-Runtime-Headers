@@ -229,6 +229,15 @@
 
 - (struct CGSize { double x1; double x2; })naturalSizeWithPreferredTransforms;
 
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
++ (id)tvp_filteredAndSubsortedMainProgramSubtitleOptionsFromOptions:(id)arg1;
++ (id)tvp_groupedAudioAVMediaSelectionOptionsFromOptions:(id)arg1;
++ (id)tvp_sortedAuxSubtitleOptionsFromOptions:(id)arg1;
+
+- (id)tvp_sortedAudioAVMediaSelectionOptions;
+- (id)tvp_sortedSubtitleAVMediaSelectionOptions;
+
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
 - (id)vcp_assetWithoutAdjustments:(id)arg1 duration:(double)arg2;

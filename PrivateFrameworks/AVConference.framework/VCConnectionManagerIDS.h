@@ -32,6 +32,7 @@
 - (int)removeConnection:(id)arg1;
 - (void)reportConnection:(id)arg1 isInitialConnection:(bool)arg2;
 - (void)resetPacketCountAndByteCountWithConnection:(id)arg1;
+- (void)resetParticipantGenerationCounter;
 - (bool)selectPrimaryAndSecondaryWithConnection:(id)arg1;
 - (void)setPreferredLocalInterfaceForDuplication:(int)arg1;
 - (void)setPreferredRemoteInterfaceForDuplication:(int)arg1;

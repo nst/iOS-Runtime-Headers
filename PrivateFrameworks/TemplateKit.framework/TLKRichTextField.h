@@ -23,6 +23,7 @@
 @property (retain) TLKRoundedCornerLabels *roundedCornerLabels;
 @property (retain) TLKStarsView *starRatingView;
 @property (readonly) Class superclass;
+@property (readonly) UIColor *textColor;
 @property (retain) TLKEmojiableVibrantLabel *textLabel;
 
 - (void).cxx_destruct;
@@ -49,6 +50,7 @@
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setTextLabel:(id)arg1;
 - (id)starRatingView;
+- (id)textColor;
 - (id)textLabel;
 - (void)updateIcons:(id)arg1;
 - (void)updateRoundedCornerLabels:(id)arg1;

@@ -11,11 +11,17 @@
         unsigned int reportFrequencyBase : 1; 
         unsigned int triggers : 1; 
         unsigned int metricType : 1; 
+        unsigned int reportTransportAllowExpensiveAccess : 1; 
+        unsigned int reportTransportAllowPowerNapScheduling : 1; 
     }  _has;
     int  _metricType;
     C2MPNetworkEvent * _networkEvent;
     unsigned long long  _reportFrequency;
     unsigned long long  _reportFrequencyBase;
+    bool  _reportTransportAllowExpensiveAccess;
+    bool  _reportTransportAllowPowerNapScheduling;
+    NSString * _reportTransportSourceApplicationBundleIdentifier;
+    NSString * _reportTransportSourceApplicationSecondaryIdentifier;
     C2MPServerInfo * _serverInfo;
     unsigned long long  _triggers;
 }
@@ -30,12 +36,20 @@
 @property (nonatomic, readonly) bool hasNetworkEvent;
 @property (nonatomic) bool hasReportFrequency;
 @property (nonatomic) bool hasReportFrequencyBase;
+@property (nonatomic) bool hasReportTransportAllowExpensiveAccess;
+@property (nonatomic) bool hasReportTransportAllowPowerNapScheduling;
+@property (nonatomic, readonly) bool hasReportTransportSourceApplicationBundleIdentifier;
+@property (nonatomic, readonly) bool hasReportTransportSourceApplicationSecondaryIdentifier;
 @property (nonatomic, readonly) bool hasServerInfo;
 @property (nonatomic) bool hasTriggers;
 @property (nonatomic) int metricType;
 @property (nonatomic, retain) C2MPNetworkEvent *networkEvent;
 @property (nonatomic) unsigned long long reportFrequency;
 @property (nonatomic) unsigned long long reportFrequencyBase;
+@property (nonatomic) bool reportTransportAllowExpensiveAccess;
+@property (nonatomic) bool reportTransportAllowPowerNapScheduling;
+@property (nonatomic, retain) NSString *reportTransportSourceApplicationBundleIdentifier;
+@property (nonatomic, retain) NSString *reportTransportSourceApplicationSecondaryIdentifier;
 @property (nonatomic, retain) C2MPServerInfo *serverInfo;
 @property (nonatomic) unsigned long long triggers;
 
@@ -55,6 +69,10 @@
 - (bool)hasNetworkEvent;
 - (bool)hasReportFrequency;
 - (bool)hasReportFrequencyBase;
+- (bool)hasReportTransportAllowExpensiveAccess;
+- (bool)hasReportTransportAllowPowerNapScheduling;
+- (bool)hasReportTransportSourceApplicationBundleIdentifier;
+- (bool)hasReportTransportSourceApplicationSecondaryIdentifier;
 - (bool)hasServerInfo;
 - (bool)hasTriggers;
 - (unsigned long long)hash;
@@ -66,6 +84,10 @@
 - (bool)readFrom:(id)arg1;
 - (unsigned long long)reportFrequency;
 - (unsigned long long)reportFrequencyBase;
+- (bool)reportTransportAllowExpensiveAccess;
+- (bool)reportTransportAllowPowerNapScheduling;
+- (id)reportTransportSourceApplicationBundleIdentifier;
+- (id)reportTransportSourceApplicationSecondaryIdentifier;
 - (id)serverInfo;
 - (void)setCloudkitInfo:(id)arg1;
 - (void)setDeviceInfo:(id)arg1;
@@ -73,11 +95,17 @@
 - (void)setHasMetricType:(bool)arg1;
 - (void)setHasReportFrequency:(bool)arg1;
 - (void)setHasReportFrequencyBase:(bool)arg1;
+- (void)setHasReportTransportAllowExpensiveAccess:(bool)arg1;
+- (void)setHasReportTransportAllowPowerNapScheduling:(bool)arg1;
 - (void)setHasTriggers:(bool)arg1;
 - (void)setMetricType:(int)arg1;
 - (void)setNetworkEvent:(id)arg1;
 - (void)setReportFrequency:(unsigned long long)arg1;
 - (void)setReportFrequencyBase:(unsigned long long)arg1;
+- (void)setReportTransportAllowExpensiveAccess:(bool)arg1;
+- (void)setReportTransportAllowPowerNapScheduling:(bool)arg1;
+- (void)setReportTransportSourceApplicationBundleIdentifier:(id)arg1;
+- (void)setReportTransportSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setServerInfo:(id)arg1;
 - (void)setTriggers:(unsigned long long)arg1;
 - (unsigned long long)triggers;

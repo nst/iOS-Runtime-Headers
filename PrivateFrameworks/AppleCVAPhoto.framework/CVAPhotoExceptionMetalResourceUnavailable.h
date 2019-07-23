@@ -4,7 +4,7 @@
 
 @interface CVAPhotoExceptionMetalResourceUnavailable : CVAPhotoExceptionBase
 
-+ (void)populateError:(id*)arg1;
++ (id)error;
 + (id)throwIfNil:(id)arg1;
 
 - (int)getErrorCode;

@@ -36,6 +36,7 @@
     long long  _soundRegion;
     NSString * _sourceIdentifier;
     int  _transitionStatus;
+    int  _ttyType;
     NSString * _uniqueProxyIdentifier;
     bool  _video;
     TUVideoCallAttributes * _videoCallAttributes;
@@ -112,10 +113,12 @@
 @property (nonatomic, readonly) NSData *localFrequency;
 @property (nonatomic, readonly) float localMeterLevel;
 @property (nonatomic, readonly, copy) TUSenderIdentity *localSenderIdentity;
+@property (nonatomic, readonly, copy) NSUUID *localSenderIdentityAccountUUID;
 @property (nonatomic, readonly, copy) NSUUID *localSenderIdentityUUID;
 @property (nonatomic, readonly, copy) NSString *localizedLabel;
 @property (getter=isMediaStalled, nonatomic, readonly) bool mediaStalled;
 @property (nonatomic, copy) TUCallModel *model;
+@property (getter=isMutuallyExclusiveCall, nonatomic, readonly) bool mutuallyExclusiveCall;
 @property (nonatomic, readonly) bool needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic, readonly) bool outgoing;
 @property (nonatomic, readonly) long long outputAudioPowerSpectrumToken;
@@ -155,7 +158,7 @@
 @property (getter=isThirdPartyVideo, nonatomic, readonly) bool thirdPartyVideo;
 @property (nonatomic) int transitionStatus;
 @property (getter=isTTY, nonatomic, readonly) bool tty;
-@property (nonatomic, readonly) int ttyType;
+@property (nonatomic) int ttyType;
 @property (nonatomic, copy) NSString *uniqueProxyIdentifier;
 @property (nonatomic, readonly, copy) NSUUID *uniqueProxyIdentifierUUID;
 @property (getter=isUplinkMuted, nonatomic) bool uplinkMuted;
@@ -267,6 +270,7 @@
 - (bool)isIncoming;
 - (bool)isMediaStalled;
 - (bool)isMuted;
+- (bool)isMutuallyExclusiveCall;
 - (bool)isOnHold;
 - (bool)isOutgoing;
 - (bool)isRTT;
@@ -291,6 +295,7 @@
 - (id)localFrequency;
 - (float)localMeterLevel;
 - (id)localSenderIdentity;
+- (id)localSenderIdentityAccountUUID;
 - (id)localSenderIdentityUUID;
 - (id)localizedLabel;
 - (id)model;
@@ -353,6 +358,7 @@
 - (void)setSoundRegion:(long long)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setTransitionStatus:(int)arg1;
+- (void)setTtyType:(int)arg1;
 - (void)setUniqueProxyIdentifier:(id)arg1;
 - (void)setUplinkMuted:(bool)arg1;
 - (void)setVideo:(bool)arg1;

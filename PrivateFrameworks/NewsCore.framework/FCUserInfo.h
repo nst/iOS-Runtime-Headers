@@ -3,17 +3,17 @@
  */
 
 @interface FCUserInfo : FCPrivateDataController <FCTagSettingsDelegate> {
-    NSDate * _dateLastResetMeteredCount;
     bool  _iCloudAccountChanged;
     NSDictionary * _readOnlyUserInfo;
     FCTagSettings * _tagSettings;
-    NSNumber * _totalMeteredCount;
     bool  _useParsecResults;
-    FCMTWriterMutexLock * _userInfoLock;
+    FCMTWriterLock * _userInfoLock;
 }
 
+@property (nonatomic, copy) NSDate *aLaCarteSubscriptionMeteredCountLastResetDate;
+@property (nonatomic, copy) NSDate *bundleSubscriptionMeteredCountLastResetDate;
+@property (nonatomic, copy) NSString *canonicalLanguage;
 @property (nonatomic, copy) NSDate *dateLastOpened;
-@property (nonatomic, copy) NSDate *dateLastResetMeteredCount;
 @property (nonatomic, readonly) NSDate *dateLastViewedSaved;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -22,8 +22,11 @@
 @property (nonatomic) bool hasShownProgressivePersonalizationWelcomeBrick;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool iCloudAccountChanged;
+@property (nonatomic) bool marketingNotificationsEnabled;
 @property (nonatomic, readonly) bool mightNeedToUpdateOnboardingVersion;
-@property (nonatomic, copy) NSNumber *monthlyMeteredCount;
+@property (nonatomic, copy) NSNumber *monthlyALaCarteSubscriptionMeteredCount;
+@property (nonatomic, copy) NSNumber *monthlyBundleSubscriptionMeteredCount;
+@property (nonatomic) bool newIssueNotificationsEnabled;
 @property (nonatomic, readonly, copy) NSString *notificationsUserID;
 @property (nonatomic, copy) NSNumber *onboardingVersionNumber;
 @property (nonatomic, readonly) unsigned long long progressivePersonalization;
@@ -31,10 +34,9 @@
 @property (nonatomic, readonly) bool shouldShowDefaultForYou;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
-@property (nonatomic, copy) NSNumber *totalMeteredCount;
 @property (nonatomic, readonly) bool useParsecResults;
 @property (nonatomic) bool userHasCompletedFavoritesSetup;
-@property (nonatomic, retain) FCMTWriterMutexLock *userInfoLock;
+@property (nonatomic, retain) FCMTWriterLock *userInfoLock;
 @property (nonatomic, copy) NSDate *userStartDate;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
@@ -60,14 +62,16 @@
 - (void)_removeiCloudDataValues;
 - (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
 - (id)_userInfoValueForKey:(id)arg1;
+- (id)aLaCarteSubscriptionMeteredCountLastResetDate;
 - (void)accessTokenDidChangeForTagID:(id)arg1;
 - (void)accessTokenRemovedForTagID:(id)arg1 userInitiated:(bool)arg2;
 - (void)addModifyTagSettingsCommandToCommandQueue:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)asCKRecord;
+- (id)bundleSubscriptionMeteredCountLastResetDate;
 - (bool)canHelpRestoreZoneName:(id)arg1;
+- (id)canonicalLanguage;
 - (id)dateLastOpened;
-- (id)dateLastResetMeteredCount;
 - (id)dateLastViewedSaved;
 - (id)editorialArticleVersion;
 - (id)feldsparID;
@@ -75,31 +79,38 @@
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
 - (bool)hasShownProgressivePersonalizationWelcomeBrick;
 - (bool)iCloudAccountChanged;
-- (void)incrementMonthlyMeteredCountByOneWithArticleID:(id)arg1;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3 iCloudAccountChanged:(bool)arg4;
 - (void)loadLocalCachesFromStore;
 - (void)markSavedAsViewed;
+- (bool)marketingNotificationsEnabled;
 - (void)maybeUpdateOnboardingVersion:(id /* block */)arg1;
 - (bool)mightNeedToUpdateOnboardingVersion;
-- (id)monthlyMeteredCount;
+- (id)monthlyALaCarteSubscriptionMeteredCount;
+- (id)monthlyBundleSubscriptionMeteredCount;
+- (bool)newIssueNotificationsEnabled;
 - (id)notificationsUserID;
 - (id)onboardingVersionNumber;
 - (void)prepareForUse;
 - (unsigned long long)progressivePersonalization;
 - (id)readOnlyUserInfo;
 - (id)recordsForRestoringZoneName:(id)arg1;
+- (void)refreshOnboardingVersion:(id /* block */)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)setALaCarteSubscriptionMeteredCountLastResetDate:(id)arg1;
+- (void)setBundleSubscriptionMeteredCountLastResetDate:(id)arg1;
+- (void)setCanonicalLanguage:(id)arg1;
 - (void)setDateLastOpened:(id)arg1;
-- (void)setDateLastResetMeteredCount:(id)arg1;
 - (void)setEditorialArticleVersion:(id)arg1;
 - (void)setFeldsparID:(id)arg1;
 - (void)setHasShownProgressivePersonalizationWelcomeBrick:(bool)arg1;
 - (void)setICloudAccountChanged:(bool)arg1;
-- (void)setMonthlyMeteredCount:(id)arg1;
+- (void)setMarketingNotificationsEnabled:(bool)arg1;
+- (void)setMonthlyALaCarteSubscriptionMeteredCount:(id)arg1;
+- (void)setMonthlyBundleSubscriptionMeteredCount:(id)arg1;
+- (void)setNewIssueNotificationsEnabled:(bool)arg1;
 - (void)setOnboardingVersionNumber:(id)arg1;
 - (void)setReadOnlyUserInfo:(id)arg1;
 - (void)setTagSettings:(id)arg1;
-- (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserHasCompletedFavoritesSetup:(bool)arg1;
 - (void)setUserInfoLock:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
@@ -107,12 +118,11 @@
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (id)tagSettings;
-- (id)totalMeteredCount;
+- (void)updateOnboardingVersion;
 - (bool)useParsecResults;
 - (bool)userHasCompletedFavoritesSetup;
 - (id)userInfoLock;
 - (id)userStartDate;
-- (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Stocks/StocksCore.framework/StocksCore
 

@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } elementBounds;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *frame;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isSelectElement;
 @property (readonly) Class superclass;
 
 + (id)nodeHandleWithJSValue:(id)arg1 inContext:(id)arg2;
@@ -38,6 +39,7 @@
 - (long long)htmlInputElementAutoFillButtonType;
 - (long long)htmlInputElementLastAutoFillButtonType;
 - (bool)isHTMLInputElementAutoFillButtonEnabled;
+- (bool)isSelectElement;
 - (bool)isTextField;
 - (id)renderedImageWithOptions:(unsigned int)arg1;
 - (id)renderedImageWithOptions:(unsigned int)arg1 width:(id)arg2;

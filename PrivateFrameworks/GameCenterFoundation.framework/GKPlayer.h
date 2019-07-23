@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *firstName;
 @property (nonatomic, readonly) NSString *friendLevel;
 @property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, readonly, retain) NSString *gamePlayerID;
 @property (nonatomic, readonly) NSString *guestIdentifier;
 @property (nonatomic, readonly) bool hasPhoto;
 @property (retain) GKPlayerInternal *internal;
@@ -36,6 +37,7 @@
 @property (nonatomic) int source;
 @property (nonatomic, readonly) struct { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; } stats;
 @property (nonatomic, copy) NSString *status;
+@property (nonatomic, readonly, retain) NSString *teamPlayerID;
 @property (nonatomic, retain) NSAttributedString *whenString;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
@@ -68,6 +70,7 @@
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)friendLevel;
 - (id)friends;
+- (id)gamePlayerID;
 - (bool)hasPhoto;
 - (unsigned long long)hash;
 - (id)identifierForIDS;
@@ -99,6 +102,7 @@
 - (void)setWhenString:(id)arg1;
 - (id)sortName;
 - (struct { long long x1; long long x2; long long x3; long long x4; long long x5; long long x6; long long x7; long long x8; long long x9; })stats;
+- (id)teamPlayerID;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)whenString;
 

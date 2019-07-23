@@ -4,6 +4,10 @@
 
 @interface SFDeviceRepairSession : NSObject {
     bool  _activateCalled;
+    bool  _cdpEnabled;
+    SFDeviceOperationCDPSetup * _cdpSetupOperation;
+    double  _cdpSetupSecs;
+    int  _cdpState;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     int  _finishState;
     int  _getProblemsState;
@@ -29,7 +33,6 @@
     TRSession * _trSession;
     int  _trSessionState;
     unsigned long long  _triggerMs;
-    bool  _wifiSetupEnabled;
     SFDeviceOperationWiFiSetup * _wifiSetupOperation;
     double  _wifiSetupSecs;
     int  _wifiSetupState;
@@ -47,6 +50,7 @@
 - (void)_cleanup;
 - (void)_reportError:(id)arg1;
 - (void)_run;
+- (int)_runCDPSetup;
 - (int)_runFinish;
 - (int)_runGetProblems;
 - (int)_runHomeKitSetup;

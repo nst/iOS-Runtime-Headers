@@ -5,6 +5,6 @@
 
 @required
 
-- (NUArticleAdManager *)createArticleAdManagerForArticle:(FCArticle *)arg1;
+- (NUArticleAdManager *)createArticleAdManagerForArticle:(FCArticle *)arg1 issue:(FCIssue *)arg2;
 
 @end

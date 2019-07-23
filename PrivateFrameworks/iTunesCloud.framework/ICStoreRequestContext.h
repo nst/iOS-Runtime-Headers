@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICStoreRequestContext : ICRequestContext {
+@interface ICStoreRequestContext : ICRequestContext <NSSecureCoding> {
     bool  _allowsExpiredBags;
     ICUserIdentity * _delegatedIdentity;
     ICUserIdentity * _identity;
@@ -19,14 +19,17 @@
 @property (nonatomic, readonly, copy) ICStoreDialogResponseHandler *storeDialogResponseHandler;
 
 + (id)activeStoreAccountRequestContext;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)allowsExpiredBags;
 - (id)copyWithBlock:(id /* block */)arg1;
 - (id)delegatedIdentity;
+- (void)encodeWithCoder:(id)arg1;
 - (id)identity;
 - (id)identityStore;
 - (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentity:(id)arg1;
 - (id)initWithIdentity:(id)arg1 clientInfo:(id)arg2;
 - (id)initWithIdentity:(id)arg1 identityStore:(id)arg2 clientInfo:(id)arg3;

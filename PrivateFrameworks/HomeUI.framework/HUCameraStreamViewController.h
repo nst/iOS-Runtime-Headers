@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUCameraStreamViewController : UIViewController <HFItemManagerDelegate, HUItemPresentationContainer, HUPresentationDelegate, HUPresentationDelegateHost, PGPictureInPictureProxyDelegate> {
+@interface HUCameraStreamViewController : UIViewController <HFExecutionEnvironmentObserver, HFItemManagerDelegate, HUItemPresentationContainer, HUPresentationDelegate, HUPresentationDelegateHost, PGPictureInPictureProxyDelegate> {
     bool  _barsHidden;
     HFCameraAudioManager * _cameraAudioManager;
     HUCameraStreamContentViewController * _cameraStreamContentViewController;
@@ -94,6 +94,7 @@
 - (id)demoPlayerView;
 - (bool)didSetupToolbarMicrophoneButtonConstraints;
 - (bool)didSetupVolumeSliderConstraints;
+- (void)executionEnvironmentDidBecomeScreenLocked:(id)arg1;
 - (id)finishPresentation:(id)arg1 animated:(bool)arg2;
 - (id)floatingMicrophoneButton;
 - (id)hu_presentedItem;

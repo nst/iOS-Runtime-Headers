@@ -4,7 +4,6 @@
 
 @interface KNAnimationPluginContext : NSObject <KNAnimationPluginContext> {
     TSDGLState * _GLState;
-    NSArray * _allTextures;
     KNAnimatedBuild * _animatedBuild;
     struct CGRect { 
         struct CGPoint { 
@@ -16,6 +15,7 @@
             double height; 
         } size; 
     }  _animationFrame;
+    TSDAnimationSet * _animationSet;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -48,27 +48,27 @@
         } size; 
     }  _drawableFrame;
     double  _duration;
-    NSArray * _highlightingTextures;
     bool  _isMotionBlurred;
     bool  _isMovieExport;
     bool  _isPreview;
     bool  _isWarmingUp;
     NSArray * _magicMoveMatches;
     TSDMetalContext * _metalContext;
+    TSDMetalTextureRenderer * _metalTextureRenderer;
     double  _percent;
     KNAnimationRandomGenerator * _randomGenerator;
     long long  _rendererType;
     TSDRep * _rep;
-    NSDictionary * _scaledTextures;
+    NSArray * _scaledTextures;
     NSArray * _tags;
     NSArray * _textures;
     NSDictionary * _transitionAttributes;
 }
 
 @property (nonatomic, retain) TSDGLState *GLState;
-@property (nonatomic, retain) NSArray *allTextures;
 @property (nonatomic) KNAnimatedBuild *animatedBuild;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } animationFrame;
+@property (nonatomic, retain) TSDAnimationSet *animationSet;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRect;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } boundingRectOnCanvas;
 @property (readonly, copy) NSString *debugDescription;
@@ -76,8 +76,8 @@
 @property (nonatomic) unsigned long long direction;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } drawableFrame;
 @property (nonatomic) double duration;
+@property (nonatomic, readonly) bool hasLiveTextureSources;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSArray *highlightingTextures;
 @property (nonatomic, readonly) bool isBuild;
 @property (nonatomic, readonly) bool isFrameRenderer;
 @property (nonatomic, readonly) bool isMagicMove;
@@ -90,11 +90,12 @@
 @property (nonatomic) bool isWarmingUp;
 @property (nonatomic) NSArray *magicMoveMatches;
 @property (nonatomic, retain) TSDMetalContext *metalContext;
+@property (nonatomic, retain) TSDMetalTextureRenderer *metalTextureRenderer;
 @property (nonatomic) double percent;
 @property (nonatomic, retain) KNAnimationRandomGenerator *randomGenerator;
 @property (nonatomic) long long rendererType;
 @property (nonatomic) TSDRep *rep;
-@property (nonatomic, retain) NSDictionary *scaledTextures;
+@property (nonatomic, retain) NSArray *scaledTextures;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *tags;
 @property (nonatomic, retain) NSArray *textures;
@@ -102,16 +103,16 @@
 
 - (void).cxx_destruct;
 - (id)GLState;
-- (id)allTextures;
 - (id)animatedBuild;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })animationFrame;
+- (id)animationSet;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvas;
 - (id)description;
 - (unsigned long long)direction;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawableFrame;
 - (double)duration;
-- (id)highlightingTextures;
+- (bool)hasLiveTextureSources;
 - (bool)isBuild;
 - (bool)isFrameRenderer;
 - (bool)isMagicMove;
@@ -124,27 +125,28 @@
 - (bool)isWarmingUp;
 - (id)magicMoveMatches;
 - (id)metalContext;
+- (id)metalTextureRenderer;
 - (double)percent;
 - (id)randomGenerator;
 - (long long)rendererType;
 - (id)rep;
 - (id)scaledTextures;
-- (void)setAllTextures:(id)arg1;
 - (void)setAnimatedBuild:(id)arg1;
 - (void)setAnimationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setAnimationSet:(id)arg1;
 - (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBoundingRectOnCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDirection:(unsigned long long)arg1;
 - (void)setDrawableFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDuration:(double)arg1;
 - (void)setGLState:(id)arg1;
-- (void)setHighlightingTextures:(id)arg1;
 - (void)setIsMotionBlurred:(bool)arg1;
 - (void)setIsMovieExport:(bool)arg1;
 - (void)setIsPreview:(bool)arg1;
 - (void)setIsWarmingUp:(bool)arg1;
 - (void)setMagicMoveMatches:(id)arg1;
 - (void)setMetalContext:(id)arg1;
+- (void)setMetalTextureRenderer:(id)arg1;
 - (void)setPercent:(double)arg1;
 - (void)setRandomGenerator:(id)arg1;
 - (void)setRendererType:(long long)arg1;

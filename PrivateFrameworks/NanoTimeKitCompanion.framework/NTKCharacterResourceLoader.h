@@ -18,7 +18,7 @@
     struct NTKCharacterPrograms { 
         struct NUProgram { 
             unsigned int program; 
-            int uniforms[12]; 
+            int uniforms[13]; 
         } programs[6]; 
     }  _programs;
 }

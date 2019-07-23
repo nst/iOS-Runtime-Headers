@@ -12,6 +12,7 @@
     bool  _isTemplate;
     NSString * _keyColor;
     _SFPBLocalImage * _localImage;
+    _SFPBMediaArtworkImage * _mediaArtworkImage;
     _SFPBMonogramImage * _monogramImage;
     _SFPBGraphicalFloat * _scale;
     bool  _shouldCropToCircle;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, copy) NSString *keyColor;
 @property (nonatomic, retain) _SFPBLocalImage *localImage;
+@property (nonatomic, retain) _SFPBMediaArtworkImage *mediaArtworkImage;
 @property (nonatomic, retain) _SFPBMonogramImage *monogramImage;
 @property (nonatomic, retain) _SFPBGraphicalFloat *scale;
 @property (nonatomic) bool shouldCropToCircle;
@@ -63,6 +65,7 @@
 - (id)jsonData;
 - (id)keyColor;
 - (id)localImage;
+- (id)mediaArtworkImage;
 - (id)monogramImage;
 - (bool)readFrom:(id)arg1;
 - (id)scale;
@@ -75,6 +78,7 @@
 - (void)setIsTemplate:(bool)arg1;
 - (void)setKeyColor:(id)arg1;
 - (void)setLocalImage:(id)arg1;
+- (void)setMediaArtworkImage:(id)arg1;
 - (void)setMonogramImage:(id)arg1;
 - (void)setScale:(id)arg1;
 - (void)setShouldCropToCircle:(bool)arg1;

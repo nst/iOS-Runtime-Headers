@@ -4,10 +4,10 @@
 
 @interface AVTAvatarAttributeEditorSectionController : NSObject <AVTAvatarAttributeEditorSectionController> {
     AVTUIEnvironment * _environment;
-    <AVTScheduler> * _renderingScheduler;
+    <AVTTaskScheduler> * _renderingScheduler;
     AVTAvatarAttributeEditorSection * _section;
     long long  _selectedIndex;
-    <AVTIndexBasedScheduler> * _thumbnailScheduler;
+    <AVTIndexBasedTaskScheduler> * _thumbnailScheduler;
     AVTTransitionCoordinator * _transitionCoordinator;
     <AVTAvatarAttributeEditorControllerSubSelectionDelegate> * delegate;
 }
@@ -17,11 +17,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) AVTUIEnvironment *environment;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) <AVTScheduler> *renderingScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
 @property (nonatomic, retain) AVTAvatarAttributeEditorSection *section;
 @property (nonatomic) long long selectedIndex;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <AVTIndexBasedScheduler> *thumbnailScheduler;
+@property (nonatomic, readonly) <AVTIndexBasedTaskScheduler> *thumbnailScheduler;
 @property (nonatomic, retain) AVTTransitionCoordinator *transitionCoordinator;
 
 + (struct CGSize { double x1; double x2; })cellSizeForSectionItem:(id)arg1 inSection:(id)arg2 fittingWidth:(double)arg3 environment:(id)arg4;
@@ -39,7 +39,7 @@
 - (id)environment;
 - (unsigned long long)indexForItem:(id)arg1;
 - (id)initWithThumbnailScheduler:(id)arg1 renderingScheduler:(id)arg2 environment:(id)arg3;
-- (void)invalidateLayout;
+- (void)invalidateLayoutForNewContainerSize:(struct CGSize { double x1; double x2; })arg1;
 - (long long)numberOfItems;
 - (id)prefetchingSectionItemForIndex:(long long)arg1;
 - (id)renderingScheduler;

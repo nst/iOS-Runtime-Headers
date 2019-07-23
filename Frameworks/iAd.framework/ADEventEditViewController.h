@@ -5,17 +5,21 @@
 @interface ADEventEditViewController : EKEventEditViewController {
     ADAdSpace * _adSpace;
     ADHomeButtonHandler * _homeButtonHandler;
+    id  _notificationObserver;
 }
 
 @property (nonatomic, retain) ADAdSpace *adSpace;
 @property (nonatomic, retain) ADHomeButtonHandler *homeButtonHandler;
+@property (nonatomic, retain) id notificationObserver;
 
 - (id)adSpace;
 - (void)cancelAndDismiss;
 - (void)dealloc;
 - (id)homeButtonHandler;
+- (id)notificationObserver;
 - (void)setAdSpace:(id)arg1;
 - (void)setHomeButtonHandler:(id)arg1;
+- (void)setNotificationObserver:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 

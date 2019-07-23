@@ -11,6 +11,7 @@
 
 - (NSArray *)arrayWithAXAttribute:(long long)arg1;
 - (bool)boolWithAXAttribute:(long long)arg1;
+- (NSMutableDictionary *)cachedAttributes;
 - (bool)canPerformAXAction:(int)arg1;
 - (struct CGColor { }*)colorWithAXAttribute:(long long)arg1;
 - (void)disableCache;

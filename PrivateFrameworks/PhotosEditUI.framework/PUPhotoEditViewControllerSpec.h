@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previewViewInsetsLandscape;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previewViewInsetsPortrait;
+@property (nonatomic, readonly) bool shouldAnchorLightingAgainstToolbar;
 @property (nonatomic, readonly) bool shouldDisplayCompactToolbar;
 @property (nonatomic, readonly) bool shouldDisplayExtensionButtonInMainToolbar;
 @property (nonatomic, readonly) bool shouldDisplaySecondaryToolButtonsInMainToolbar;
@@ -13,6 +14,7 @@
 
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previewViewInsetsLandscape;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previewViewInsetsPortrait;
+- (bool)shouldAnchorLightingAgainstToolbar;
 - (bool)shouldDisplayCompactToolbar;
 - (bool)shouldDisplayExtensionButtonInMainToolbar;
 - (bool)shouldDisplaySecondaryToolButtonsInMainToolbar;

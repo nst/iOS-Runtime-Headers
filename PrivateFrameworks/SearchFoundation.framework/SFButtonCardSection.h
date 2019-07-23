@@ -43,6 +43,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SFRichText *title;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 + (bool)supportsSecureCoding;
 

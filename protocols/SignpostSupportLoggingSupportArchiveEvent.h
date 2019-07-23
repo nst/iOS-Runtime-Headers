@@ -6,6 +6,8 @@
 @required
 
 - (unsigned long long)_machContinuousTimestamp;
+- (NSString *)beginWallTimeStringWithTimeZoneName:(NSString *)arg1;
+- (NSString *)endWallTimeStringWithTimeZoneName:(NSString *)arg1;
 - (int)processID;
 - (NSString *)processImagePath;
 - (NSUUID *)processImageUUID;
@@ -22,7 +24,6 @@
 - (void)setTz_dsttime:(int)arg1;
 - (void)setTz_minuteswest:(int)arg1;
 - (void)set_machContinuousTimestamp:(unsigned long long)arg1;
-- (NSString *)startWallTimeStringWithTimeZone:(NSString *)arg1;
 - (unsigned long long)threadID;
 - (long long)tv_sec;
 - (int)tv_usec;

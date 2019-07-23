@@ -7,6 +7,7 @@
     NSUUID * _idsIdentifier;
     HMFUnfairLock * _lock;
     NSString * _name;
+    HMFKey * _rapportIRK;
     NSUUID * _uniqueIdentifier;
     NSUUID * _uuid;
 }
@@ -17,6 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly, copy) NSUUID *idsIdentifier;
 @property (copy) NSString *name;
+@property (copy) HMFKey *rapportIRK;
 @property (readonly) Class superclass;
 @property (readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly, copy) NSUUID *uuid;
@@ -36,7 +38,9 @@
 - (bool)isCurrentDevice;
 - (bool)isEqual:(id)arg1;
 - (id)name;
+- (id)rapportIRK;
 - (void)setName:(id)arg1;
+- (void)setRapportIRK:(id)arg1;
 - (id)uniqueIdentifier;
 - (id)uuid;
 

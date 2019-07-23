@@ -112,7 +112,7 @@
 - (bool)isObjectInDocument:(id)arg1;
 - (long long)modifyObjectTokenForNewObject;
 - (long long)newObjectIdentifier;
-- (id)newObjectUUIDForObject:(id)arg1;
+- (id)newObjectUUIDForObject:(id)arg1 baseOffset:(unsigned long long)arg2 ignoringBaseUUIDForObjectUUID:(bool)arg3;
 - (long long)objectIdentifierForUUID:(id)arg1;
 - (struct ObjectInfo { struct vector<TSP::ReferenceCompletionInfo, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_1_1_1; struct ReferenceCompletionInfo {} *x_1_1_2; struct __compressed_pair<TSP::ReferenceCompletionInfo *, std::__1::allocator<TSP::ReferenceCompletionInfo> > { struct ReferenceCompletionInfo {} *x_3_2_1; } x_1_1_3; } x1; }*)objectInfoForIdentifier:(long long)arg1;
 - (id)objectUUIDMap;

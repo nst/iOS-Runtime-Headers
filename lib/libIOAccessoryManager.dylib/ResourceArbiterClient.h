@@ -16,12 +16,13 @@
 }
 
 @property (nonatomic, readonly) int clientPriority;
-@property (nonatomic, retain) <ResourceArbiterClientDelegate> *delegate;
+@property (nonatomic) <ResourceArbiterClientDelegate> *delegate;
 @property (nonatomic, readonly) unsigned int ioService;
 @property (nonatomic, readonly) int pendingResourceRequest;
 @property (nonatomic, readonly) bool resourceAccessStatus;
 @property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *sema;
 
+- (void).cxx_destruct;
 - (void)_processResourceAccessStatus:(bool)arg1;
 - (bool)asynchRequestResourceAccess:(bool)arg1;
 - (int)clientPriority;

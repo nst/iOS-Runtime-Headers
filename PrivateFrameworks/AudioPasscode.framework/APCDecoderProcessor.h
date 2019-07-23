@@ -9,7 +9,9 @@
 }
 
 - (void).cxx_destruct;
+- (bool)getResultData:(id*)arg1;
 - (id)initWithInputURL:(id)arg1 codecConfig:(id)arg2 error:(id*)arg3;
+- (id)initWithInputURL:(id)arg1 codecConfig:(id)arg2 resultData:(id)arg3 error:(id*)arg4;
 - (id)run;
 
 @end

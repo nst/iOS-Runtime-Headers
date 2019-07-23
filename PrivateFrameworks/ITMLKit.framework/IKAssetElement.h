@@ -20,6 +20,8 @@
 @property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, retain) NSURL *url;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
 + (bool)shouldParseChildDOMElements;
 
 - (id)_numberForAttribute:(id)arg1;
@@ -37,5 +39,23 @@
 - (id)serviceID;
 - (long long)type;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (bool)videos_disableLocalAsset;
+- (id)videos_fpsCertificateURL;
+- (id)videos_fpsKeyServerURL;
+- (id)videos_persistentID;
+- (id)videos_rentalAdamIDString;
+- (id)videos_resumeTime;
+- (id)vui_contentRatingRank;
+- (bool)vui_disableResumeMenu;
+- (id)vui_fpsCertificateURL;
+- (id)vui_fpsKeyServerURL;
+- (id)vui_hlsPlaylistURL;
+- (id)vui_launchPlaybackURL;
+- (id)vui_rentalAdamIDString;
+- (id)vui_resumeTime;
+- (id)vui_scrubVideoURL;
 
 @end

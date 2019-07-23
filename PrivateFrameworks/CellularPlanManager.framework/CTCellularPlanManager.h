@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-@interface CTCellularPlanManager : NSObject <CTCellularPlanClientDelegate> {
+@interface CTCellularPlanManager : NSObject {
     NSXPCConnection * _connection;
     NSData * _cookieData;
+    CTCellularPlanManagerDelegate * _delegate;
     NSString * _lastSessionId;
     struct dispatch_queue_s { } * _queue;
     NSMutableArray * _subscriptionCompletions;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 
 + (long long)calculateInstallConsentTextTypeFor:(id)arg1;
 + (id)sharedManager;
@@ -22,25 +18,16 @@
 - (void)_ensureConnected_sync;
 - (void)_plansForRenewal:(bool)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3 additionalParameters:(id)arg4;
 - (void)_reconnect;
-- (void)addNewPlanWithAddress:(id)arg1 matchingId:(id)arg2 oid:(id)arg3 confirmationCode:(id)arg4 duringBuddy:(bool)arg5 userConsent:(long long)arg6 completion:(id /* block */)arg7;
 - (void)addNewPlanWithAddress:(id)arg1 matchingId:(id)arg2 oid:(id)arg3 confirmationCode:(id)arg4 triggerType:(long long)arg5 userConsent:(long long)arg6 completion:(id /* block */)arg7;
 - (void)addNewPlanWithCardData:(id)arg1 confirmationCode:(id)arg2 triggerType:(long long)arg3 userConsent:(long long)arg4 completion:(id /* block */)arg5;
-- (void)addNewPlanWithCardData:(id)arg1 duringBuddy:(bool)arg2 userConsent:(long long)arg3 completion:(id /* block */)arg4;
-- (void)addNewPlanWithCardData:(id)arg1 triggerType:(long long)arg2 userConsent:(long long)arg3 completion:(id /* block */)arg4;
-- (void)addNewPlanWithCarrierItem:(id)arg1 duringBuddy:(bool)arg2 userConsent:(long long)arg3 completion:(id /* block */)arg4;
 - (void)addNewPlanWithCarrierItem:(id)arg1 triggerType:(long long)arg2 userConsent:(long long)arg3 completion:(id /* block */)arg4;
 - (void)addNewPlanWithFlowType:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)addNewPlanWithUserInWebsheetWithCompletion:(id /* block */)arg1;
-- (void)addNewRemotePlan:(bool)arg1 userConsent:(long long)arg2 completion:(id /* block */)arg3;
+- (void)addNewPlanWithUserInWebsheetWithUserConsent:(long long)arg1 completion:(id /* block */)arg2;
 - (void)addNewRemotePlan:(bool)arg1 withCSN:(id)arg2 withContext:(id)arg3 userConsent:(long long)arg4 completion:(id /* block */)arg5;
-- (void)addNewRemotePlanWithAddress:(id)arg1 matchingId:(id)arg2 oid:(id)arg3 confirmationCode:(id)arg4 isPairing:(bool)arg5 userConsent:(long long)arg6 completion:(id /* block */)arg7;
 - (void)addNewRemotePlanWithAddress:(id)arg1 matchingId:(id)arg2 oid:(id)arg3 confirmationCode:(id)arg4 isPairing:(bool)arg5 withCSN:(id)arg6 withContext:(id)arg7 userConsent:(long long)arg8 completion:(id /* block */)arg9;
-- (void)addNewRemotePlanWithCardData:(id)arg1 confirmationCode:(id)arg2 isPairing:(bool)arg3 userConsent:(long long)arg4 completion:(id /* block */)arg5;
 - (void)addNewRemotePlanWithCardData:(id)arg1 confirmationCode:(id)arg2 isPairing:(bool)arg3 withCSN:(id)arg4 withContext:(id)arg5 userConsent:(long long)arg6 completion:(id /* block */)arg7;
-- (void)addNewRemotePlanWithCardData:(id)arg1 isPairing:(bool)arg2 userConsent:(long long)arg3 completion:(id /* block */)arg4;
-- (void)addNewRemotePlanWithCardData:(id)arg1 isPairing:(bool)arg2 withCSN:(id)arg3 withContext:(id)arg4 userConsent:(long long)arg5 completion:(id /* block */)arg6;
 - (void)carrierHandoffToken:(id /* block */)arg1;
-- (void)carrierInfoDidUpdate;
 - (void)carrierItemsShouldUpdate:(bool)arg1 completion:(id /* block */)arg2;
 - (void)connectionSettings:(id /* block */)arg1;
 - (id)danglingPlanItemsShouldUpdate:(bool)arg1;
@@ -60,7 +47,6 @@
 - (void)didSelectPlanForDefaultVoice:(id)arg1 completion:(id /* block */)arg2;
 - (id)didSelectPlanForIMessage:(id)arg1;
 - (void)didSelectPlanForIMessage:(id)arg1 completion:(id /* block */)arg2;
-- (void)didSelectPlanItem:(id)arg1 completion:(id /* block */)arg2;
 - (id)didSelectPlanItem:(id)arg1 isEnable:(bool)arg2;
 - (void)didSelectPlanItem:(id)arg1 isEnable:(bool)arg2 completion:(id /* block */)arg3;
 - (void)didSelectRemotePlanItem:(id)arg1 completion:(id /* block */)arg2;
@@ -74,7 +60,6 @@
 - (void)fetchRemoteProfiles:(id)arg1;
 - (void)finishProvisioningWithCompletion:(id /* block */)arg1;
 - (void)finishRemoteProvisioningForCSN:(id)arg1 completion:(id /* block */)arg2;
-- (void)finishRemoteProvisioningWithCompletion:(id /* block */)arg1;
 - (void)getAutoPlanSelectionWithCompletion:(id /* block */)arg1;
 - (void)getDeviceInfo:(id /* block */)arg1;
 - (void)getESimServerURL:(id /* block */)arg1;
@@ -86,6 +71,7 @@
 - (void)getSelectedEnv:(id /* block */)arg1;
 - (void)getSelectedProxy:(id /* block */)arg1;
 - (id)getShortLabelsForLabels:(id)arg1;
+- (void)getSkipEligibilityCheck:(id /* block */)arg1;
 - (id)getSubscriptionContextUUIDforPlan:(id)arg1;
 - (unsigned long long)getSupportedFlowTypes;
 - (void)getSupportedFlowTypes:(id /* block */)arg1;
@@ -94,21 +80,17 @@
 - (void)isAddButtonEnabled:(id /* block */)arg1;
 - (void)isMultipleDataPlanSupportAvailable:(id /* block */)arg1;
 - (void)isNewDataPlanCapable:(id /* block */)arg1;
-- (void)isRemotePlanCapable:(id /* block */)arg1;
 - (void)isRemotePlanCapableWithContext:(id)arg1 completion:(id /* block */)arg2;
-- (void)isRoamingPlanSupportAvailable:(id /* block */)arg1;
 - (void)latitudeLongitudeOverride:(id /* block */)arg1;
 - (void)launchDataActivationNextWithUrl:(id)arg1;
 - (void)launchSequoia;
 - (void)loadPlansWithUrl:(id)arg1 postData:(id)arg2 completion:(id /* block */)arg3;
-- (void)localPlanInfoDidUpdate:(id)arg1;
 - (void)manageAccountForPlan:(id)arg1 completion:(id /* block */)arg2;
 - (void)manageAccountForRemotePlan:(id)arg1 completion:(id /* block */)arg2;
 - (void)mccMncOverride:(id /* block */)arg1;
 - (void)openInternalUrlId:(long long)arg1;
 - (void)pendingReleaseRemotePlan;
 - (void)ping;
-- (void)planInfoDidUpdate;
 - (id)planItemsShouldUpdate:(bool)arg1;
 - (void)planItemsShouldUpdate:(bool)arg1 completion:(id /* block */)arg2;
 - (void)planItemsWithCompletion:(id /* block */)arg1;
@@ -119,21 +101,16 @@
 - (id)remapSimLabel:(id)arg1 to:(id)arg2;
 - (void)remapSimLabel:(id)arg1 to:(id)arg2 completion:(id /* block */)arg3;
 - (void)remotePlanItemsWithCompletion:(id /* block */)arg1;
-- (void)remotePlanItemsWithUpdateFetch:(bool)arg1 completion:(id /* block */)arg2;
 - (void)remotePlanItemsWithUpdateFetch:(bool)arg1 withCSN:(id)arg2 completion:(id /* block */)arg3;
 - (void)remotePlanLaunchInfoForEid:(id)arg1 completion:(id /* block */)arg2;
-- (void)remotePlansSignupParamsForCsn:(id)arg1 completion:(id /* block */)arg2;
-- (void)remoteProvisioningDidBecomeAvailable;
-- (void)remoteplansWithCsn:(id)arg1 parameters:(id)arg2 andRemoteCompletion:(id /* block */)arg3;
 - (id)resolveSimLabel:(id)arg1;
 - (void)resolveSimLabel:(id)arg1 completion:(id /* block */)arg2;
+- (void)resumePlanProvisioning:(bool)arg1 userConsent:(long long)arg2 completion:(id /* block */)arg3;
 - (void)selectRemoteProfile:(id)arg1;
-- (void)setActivePlan:(id)arg1 completion:(id /* block */)arg2;
 - (void)setAutoPlanSelection:(bool)arg1;
 - (void)setESimServerURL:(id)arg1;
 - (void)setIMEIPrefix:(id)arg1;
 - (id)setLabelForPlan:(id)arg1 label:(id)arg2;
-- (void)setLabelForPlan:(id)arg1 label:(id)arg2 completion:(id /* block */)arg3;
 - (void)setLatitude:(id)arg1 andLongitude:(id)arg2;
 - (void)setMcc:(long long)arg1 andMnc:(long long)arg2;
 - (void)setRoamingSignupOverride:(bool)arg1;
@@ -143,20 +120,17 @@
 - (void)setUseNewCellularPlanUI:(bool)arg1;
 - (void)setUserInPurchaseFlow:(bool)arg1;
 - (void)shouldShowAddNewRemotePlanWithContext:(id)arg1 completion:(id /* block */)arg2;
-- (void)shouldShowAddNewRemotePlanWithFlowTypeAndTrialPlanType:(id /* block */)arg1;
 - (bool)shouldShowPlanList;
 - (void)shouldShowPlanList:(id /* block */)arg1;
 - (void)shouldShowPlanSetup:(id /* block */)arg1;
 - (void)showUiIgnoringActivationFlags:(bool)arg1;
 - (void)startProvisioningWithCompletion:(id /* block */)arg1;
 - (void)startRemoteProvisioningForCSN:(id)arg1 completion:(id /* block */)arg2;
-- (void)startRemoteProvisioningWithCompletion:(id /* block */)arg1;
 - (void)subscriptionDetailsForCompletion:(id)arg1;
-- (void)subscriptionDetailsWithCompletion:(id /* block */)arg1;
 - (id)synchronousProxyWithErrorHandler:(id /* block */)arg1;
 - (void)triggerAddNewDataPlan:(id /* block */)arg1;
-- (void)userDidProvideConsentResponse:(long long)arg1 forPlan:(id)arg2 completion:(id /* block */)arg3;
 - (void)userDidProvideConsentResponse:(long long)arg1 forPlan:(id)arg2 isRemote:(bool)arg3 completion:(id /* block */)arg4;
+- (void)userDidProvideResponse:(long long)arg1 confirmationCode:(id)arg2 forPlan:(id)arg3 isRemote:(bool)arg4 completion:(id /* block */)arg5;
 - (void)willDisplayPlanItems;
 
 @end

@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXComponentExposureMonitor : NSObject <SXViewportChangeListener> {
+@interface SXComponentExposureMonitor : NSObject <SXComponentControllerObserver, SXComponentExposureMonitor, SXViewportChangeListener> {
+    <SXHost> * _host;
     NSMutableSet * _trackingComponents;
     SXViewport * _viewport;
 }
@@ -10,15 +11,23 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableSet *trackingComponents;
 @property (nonatomic, readonly) SXViewport *viewport;
 
 - (void).cxx_destruct;
-- (id)initWithViewport:(id)arg1;
-- (void)onExposureOf:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2;
+- (void)beginExposure:(id)arg1;
+- (void)componentControllerDidPresent:(id)arg1;
+- (void)conditionsChanged;
+- (void)endExposure:(id)arg1;
+- (id)host;
+- (id)initWithViewport:(id)arg1 appStateMonitor:(id)arg2 componentController:(id)arg3 host:(id)arg4;
+- (void)onExposureOf:(id)arg1 then:(id /* block */)arg2;
+- (void)onExposureOf:(id)arg1 then:(id /* block */)arg2 when:(id /* block */)arg3;
 - (void)performMonitoring;
 - (void)setTrackingComponents:(id)arg1;
+- (void)stopTrackingExposureOfComponentView:(id)arg1;
 - (void)trackExposureForTracking:(id)arg1;
 - (id)trackingComponents;
 - (id)viewport;

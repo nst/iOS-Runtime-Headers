@@ -6,6 +6,7 @@
     GEOClientMetrics * _clientMetrics;
     NSString * _dataVersion;
     GEOPDDatasetABStatus * _datasetAbStatus;
+    NSString * _debugData;
     unsigned long long  _debugLatencyMs;
     GEOTransitDecoderData * _decoderData;
     NSData * _directionsResponseID;
@@ -65,6 +66,7 @@
 @property (nonatomic, retain) GEOClientMetrics *clientMetrics;
 @property (nonatomic, retain) NSString *dataVersion;
 @property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
+@property (nonatomic, retain) NSString *debugData;
 @property (nonatomic) unsigned long long debugLatencyMs;
 @property (nonatomic, retain) GEOTransitDecoderData *decoderData;
 @property (nonatomic, retain) NSData *directionsResponseID;
@@ -74,6 +76,7 @@
 @property (nonatomic, readonly) bool hasClientMetrics;
 @property (nonatomic, readonly) bool hasDataVersion;
 @property (nonatomic, readonly) bool hasDatasetAbStatus;
+@property (nonatomic, readonly) bool hasDebugData;
 @property (nonatomic) bool hasDebugLatencyMs;
 @property (nonatomic, readonly) bool hasDecoderData;
 @property (nonatomic, readonly) bool hasDirectionsResponseID;
@@ -160,6 +163,7 @@
 - (id)dataVersion;
 - (id)datasetAbStatus;
 - (void)dealloc;
+- (id)debugData;
 - (unsigned long long)debugLatencyMs;
 - (id)decoderData;
 - (id)description;
@@ -171,6 +175,7 @@
 - (bool)hasClientMetrics;
 - (bool)hasDataVersion;
 - (bool)hasDatasetAbStatus;
+- (bool)hasDebugData;
 - (bool)hasDebugLatencyMs;
 - (bool)hasDecoderData;
 - (bool)hasDirectionsResponseID;
@@ -229,6 +234,7 @@
 - (void)setClientMetrics:(id)arg1;
 - (void)setDataVersion:(id)arg1;
 - (void)setDatasetAbStatus:(id)arg1;
+- (void)setDebugData:(id)arg1;
 - (void)setDebugLatencyMs:(unsigned long long)arg1;
 - (void)setDecoderData:(id)arg1;
 - (void)setDirectionsResponseID:(id)arg1;

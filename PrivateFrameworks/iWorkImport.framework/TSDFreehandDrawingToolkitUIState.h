@@ -30,7 +30,7 @@
 - (id)initWithContext:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToFreehandDrawingToolkitUIState:(id)arg1;
-- (void)loadFromArchive:(const struct FreehandDrawingToolkitUIState { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; int x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; bool x15; struct Color {} *x16; struct Color {} *x17; struct Color {} *x18; struct Color {} *x19; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct FreehandDrawingToolkitUIState { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Color {} *x5; struct Color {} *x6; struct Color {} *x7; struct Color {} *x8; struct Color {} *x9; int x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; bool x19; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (unsigned long long)mostRecentPenToolType;
 - (double)p_defaultStrokeWidthForToolType:(unsigned long long)arg1;
@@ -39,7 +39,7 @@
 - (void)p_setColor:(id)arg1 forToolType:(unsigned long long)arg2;
 - (void)p_setDefaultToolType:(unsigned long long)arg1;
 - (void)p_setupDefaultValuesFromUnarchive:(bool)arg1;
-- (void)saveToArchive:(struct FreehandDrawingToolkitUIState { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; int x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; bool x15; struct Color {} *x16; struct Color {} *x17; struct Color {} *x18; struct Color {} *x19; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct FreehandDrawingToolkitUIState { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Color {} *x5; struct Color {} *x6; struct Color {} *x7; struct Color {} *x8; struct Color {} *x9; int x10; float x11; float x12; float x13; float x14; float x15; float x16; float x17; float x18; bool x19; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCurrentToolType:(unsigned long long)arg1;
 - (id)strokeWidthsForFreehandDrawingToolType:(unsigned long long)arg1;

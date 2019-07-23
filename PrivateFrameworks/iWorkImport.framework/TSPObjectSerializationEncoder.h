@@ -7,16 +7,22 @@
     bool  _alwaysDefragmentData;
     struct ObjectSerializationDirectory { 
         int (**_vptr$MessageLite)(); 
-        struct UnknownFieldSet { 
-            struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *fields_; 
-        } _unknown_fields_; 
-        unsigned int _has_bits_[1]; 
-        int _cached_size_; 
+        struct InternalMetadataWithArena { 
+            void *ptr_; 
+        } _internal_metadata_; 
+        struct HasBits<1> { 
+            unsigned int has_bits_[1]; 
+        } _has_bits_; 
+        struct CachedSize { 
+            struct atomic<int> { 
+                int __a_; 
+            } size_; 
+        } _cached_size_; 
         struct RepeatedPtrField<TSP::ObjectSerializationDirectory_Entry> { 
-            void **elements_; 
+            struct Arena {} *arena_; 
             int current_size_; 
-            int allocated_size_; 
             int total_size_; 
+            struct Rep {} *rep_; 
         } entries_; 
     }  _directory;
     NSObject<OS_dispatch_data> * _encodedData;

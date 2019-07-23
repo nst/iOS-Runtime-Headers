@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIButton : UIControl <ABText, CAMAccessibilityHUDItemProvider, DebugHierarchyObject_Fallback, NSCoding, TSDPlatformButtonProtocol, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
+@interface UIButton : UIControl <ABText, CAMAccessibilityHUDItemProvider, NSCoding, TSDPlatformButtonProtocol, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
     long long  __imageContentMode;
     UIColor * __plainButtonBackgroundColor;
     UIImageView * _backgroundView;
@@ -292,15 +292,6 @@
 - (bool)_wantsAccessibilityUnderline;
 - (bool)_wantsContentBackdropView;
 - (void)_willMoveToWindow:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
 - (bool)adjustsImageWhenDisabled;
 - (bool)adjustsImageWhenHighlighted;
@@ -321,6 +312,7 @@
 - (id)currentTitle;
 - (id)currentTitleColor;
 - (id)currentTitleShadowColor;
+- (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
@@ -448,12 +440,17 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
++ (id)_hkecg_detailButton;
 + (double)hk_buddyButtonHorizontalMargin;
 + (id)hk_buddyButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)hk_buttonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)hk_multiLineRoundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)hk_roundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)hk_roundedRectBuddyButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (id)_iam_closeButton;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

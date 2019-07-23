@@ -24,6 +24,7 @@
     bool  isHighlighted;
     bool  isSelected;
     bool  isSignature;
+    NSLayoutManager * layoutManager;
     bool  loggingEnabled;
     UIColor * mouseHoverBackgroundColor;
     struct CGPDFForm { } * normalAppearance;
@@ -49,6 +50,13 @@
         double x; 
         double y; 
     }  startPoint;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  textInsets;
+    NSTextStorage * textStorage;
     NSString * widgetOnStateString;
 }
 

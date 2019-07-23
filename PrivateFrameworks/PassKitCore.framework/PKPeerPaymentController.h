@@ -44,6 +44,7 @@
 + (unsigned long long)proposedResolutionForError:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)_contactInfoIsValidForAuthorizedQuote:(id)arg1 errors:(id*)arg2;
 - (id)_contactResolver;
 - (id)_defaultAlternateFundingSourceForMode:(unsigned long long)arg1;
 - (bool)_ensureState:(unsigned long long)arg1;
@@ -66,6 +67,7 @@
 - (void)formalRequestTokenForAmount:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleIdentityVerificationWithError:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleTermsAcceptanceRequiredWithError:(id)arg1 completion:(id /* block */)arg2;
+- (void)identifyRecipientDebitCardWithCompletion:(id /* block */)arg1;
 - (void)identifyRecipientSelf;
 - (void)identifyRecipientWithAddress:(id)arg1 completion:(id /* block */)arg2;
 - (void)identifyRecipientWithAddress:(id)arg1 senderAddress:(id)arg2 completion:(id /* block */)arg3;

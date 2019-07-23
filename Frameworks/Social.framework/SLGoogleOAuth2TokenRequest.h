@@ -2,11 +2,16 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleOAuth2TokenRequest : NSObject
+@interface SLGoogleOAuth2TokenRequest : NSObject <SLWebOAuth2TokenRequest>
 
-+ (id)_urlRequestForParams:(id)arg1;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 codeVerifier:(id)arg5;
-+ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 refreshToken:(id)arg3;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)_urlRequestForParams:(id)arg1 tokenURL:(id)arg2;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 tokenURL:(id)arg5;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4 tokenURL:(id)arg5 codeVerifier:(id)arg6;
++ (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 refreshToken:(id)arg3 tokenURL:(id)arg4;
 
 @end

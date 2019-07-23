@@ -3,17 +3,17 @@
  */
 
 @interface STNoUsageDataView : UIView {
+    bool  _localDevice;
     UILabel * _noDataDetailTextLabel;
-    STUser * _user;
 }
 
+@property (getter=isLocalDevice, nonatomic) bool localDevice;
 @property (nonatomic, readonly) UILabel *noDataDetailTextLabel;
-@property (nonatomic, retain) STUser *user;
 
 - (void).cxx_destruct;
-- (id)initWithPreferredFontTextStyle:(id)arg1 isWidget:(bool)arg2;
+- (id)initWithPreferredFontTextStyle:(id)arg1;
+- (bool)isLocalDevice;
 - (id)noDataDetailTextLabel;
-- (void)setUser:(id)arg1;
-- (id)user;
+- (void)setLocalDevice:(bool)arg1;
 
 @end

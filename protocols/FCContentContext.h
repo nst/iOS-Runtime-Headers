@@ -16,10 +16,12 @@
 - (NSString *)contentStoreFrontID;
 - (FCFlintResourceManager *)flintResourceManager;
 - (<FCContentContextInternal> *)internalContentContext;
+- (<FCMagazinesConfigurationManager> *)magazinesConfigurationManager;
 - (FCNetworkBehaviorMonitor *)networkBehaviorMonitor;
 - (<FCCoreConfigurationManager><FCNewsAppConfigurationManager> *)news_core_ConfigurationManager;
 - (<FCPPTContext> *)pptContext;
 - (void)ppt_overrideFeedEndpoint:(long long)arg1;
+- (long long)preferredMediaQuality;
 - (<FCJSONRecordSourceType> *)recordSourceWithSchema:(FCJSONRecordSourceSchema *)arg1;
 - (<FCJSONRecordTreeSourceType> *)recordTreeSourceWithRecordSources:(NSArray *)arg1;
 - (void)setWebArchiveSource:(id <FCWebArchiveSource>)arg1;

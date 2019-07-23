@@ -10,6 +10,7 @@
 }
 
 @property (nonatomic, readonly) NSString *_baseString;
+@property (nonatomic, readonly) bool _shouldHighlightEmoji;
 @property (nonatomic, readonly, copy) NSArray *_skinToneVariantStrings;
 @property (nonatomic, readonly) const struct __EmojiTokenWrapper { }*emojiTokenRef;
 @property (nonatomic, readonly) bool isCommon;
@@ -30,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)_baseString;
 - (void)_createEmojiTokenRefIfNecessary;
+- (bool)_shouldHighlightEmoji;
 - (id)_skinToneVariantStrings;
 - (id)copyWithPresentationStyle:(int)arg1;
 - (id)copyWithSkinToneVariant:(int)arg1;

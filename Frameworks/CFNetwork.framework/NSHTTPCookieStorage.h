@@ -3,9 +3,11 @@
  */
 
 @interface NSHTTPCookieStorage : NSObject {
+    bool  __overrideSessionCookieAcceptPolicy;
     NSHTTPCookieStorageInternal * _internal;
 }
 
+@property (nonatomic) bool _overrideSessionCookieAcceptPolicy;
 @property unsigned long long cookieAcceptPolicy;
 @property (readonly, copy) NSArray *cookies;
 @property (readonly) unsigned long long webui_safariCookieAcceptPolicyEnumValue;
@@ -31,6 +33,7 @@
 - (void)_getCookiesForURL:(id)arg1 mainDocumentURL:(id)arg2 partition:(id)arg3 policyProperties:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
+- (bool)_overrideSessionCookieAcceptPolicy;
 - (void)_saveCookies;
 - (void)_saveCookies:(id /* block */)arg1;
 - (void)_setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3 policyProperties:(id)arg4;
@@ -50,6 +53,7 @@
 - (void)setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)setCookies:(id)arg1 forURL:(id)arg2 mainDocumentURL:(id)arg3;
 - (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
+- (void)set_overrideSessionCookieAcceptPolicy:(bool)arg1;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;
 - (void)storeCookies:(id)arg1 forTask:(id)arg2;
 

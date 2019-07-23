@@ -23,7 +23,6 @@
 - (void).cxx_destruct;
 - (unsigned long long)URLOptions;
 - (void)_dispatchAssetURLsForRecord:(id)arg1 recordID:(id)arg2 pcs:(struct _OpaquePCSShareProtection { }*)arg3 error:(id)arg4;
-- (id)_expandTemplateURL:(id)arg1 fieldValues:(id)arg2;
 - (void)_fetchPCSForRecords;
 - (void)_fetchRecords;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

@@ -18,6 +18,8 @@
 - (void)groupStackView:(PKPassGroupStackView *)arg1 transitioningToState:(long long)arg2 animated:(bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 wantsBottomContentSeparatorWithVisibility:(double)arg2 animated:(bool)arg3;
 - (void)groupStackView:(PKPassGroupStackView *)arg1 wantsTopContentSeparatorWithVisibility:(double)arg2 animated:(bool)arg3;
+- (void)groupStackViewDidChangeCoachingState:(PKPassGroupStackView *)arg1;
 - (bool)groupStackViewShouldAllowReordering:(PKPassGroupStackView *)arg1;
+- (void)groupStackViewWantsForcedPayment:(PKPassGroupStackView *)arg1;
 
 @end

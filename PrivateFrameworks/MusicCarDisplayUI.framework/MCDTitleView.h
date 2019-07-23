@@ -3,22 +3,30 @@
  */
 
 @interface MCDTitleView : UIView {
-    UIImageView * _explicitImageView;
-    NSLayoutConstraint * _explicitImageViewWidthConstraint;
+    UILabel * _explicitLabel;
     bool  _explicitTrack;
+    bool  _shouldUseMusicExplicitGlyph;
     UILabel * _titleLabel;
     NSLayoutConstraint * _titlePaddingConstraint;
+    NSLayoutConstraint * _titleRightEdgeConstraint;
 }
 
+@property (nonatomic, retain) UILabel *explicitLabel;
 @property (getter=isExplicitTrack, nonatomic) bool explicitTrack;
+@property (nonatomic) bool shouldUseMusicExplicitGlyph;
 @property (nonatomic, readonly) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (void)_addConstraints;
 - (id)_addLabelWithFont:(id)arg1;
+- (void)_updateExplicitTreatmentString;
+- (id)explicitLabel;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isExplicitTrack;
+- (void)setExplicitLabel:(id)arg1;
 - (void)setExplicitTrack:(bool)arg1;
+- (void)setShouldUseMusicExplicitGlyph:(bool)arg1;
+- (bool)shouldUseMusicExplicitGlyph;
 - (id)titleLabel;
 
 @end

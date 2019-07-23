@@ -18,9 +18,11 @@
     _SFPBLatLng * _location;
     _SFPBGraphicalFloat * _longitude;
     NSData * _mapsData;
+    int  _mediaEntityType;
     NSString * _messageIdentifier;
     _SFPBURL * _messageURL;
     NSString * _offerType;
+    NSString * _persistentID;
     NSString * _phoneNumber;
     NSString * _provider;
     _SFPBPunchout * _punchout;
@@ -48,9 +50,11 @@
 @property (nonatomic, retain) _SFPBLatLng *location;
 @property (nonatomic, retain) _SFPBGraphicalFloat *longitude;
 @property (nonatomic, copy) NSData *mapsData;
+@property (nonatomic) int mediaEntityType;
 @property (nonatomic, copy) NSString *messageIdentifier;
 @property (nonatomic, retain) _SFPBURL *messageURL;
 @property (nonatomic, copy) NSString *offerType;
+@property (nonatomic, copy) NSString *persistentID;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *provider;
 @property (nonatomic, retain) _SFPBPunchout *punchout;
@@ -84,9 +88,11 @@
 - (id)location;
 - (id)longitude;
 - (id)mapsData;
+- (int)mediaEntityType;
 - (id)messageIdentifier;
 - (id)messageURL;
 - (id)offerType;
+- (id)persistentID;
 - (id)phoneNumber;
 - (id)provider;
 - (id)punchout;
@@ -107,9 +113,11 @@
 - (void)setLocation:(id)arg1;
 - (void)setLongitude:(id)arg1;
 - (void)setMapsData:(id)arg1;
+- (void)setMediaEntityType:(int)arg1;
 - (void)setMessageIdentifier:(id)arg1;
 - (void)setMessageURL:(id)arg1;
 - (void)setOfferType:(id)arg1;
+- (void)setPersistentID:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProvider:(id)arg1;
 - (void)setPunchout:(id)arg1;

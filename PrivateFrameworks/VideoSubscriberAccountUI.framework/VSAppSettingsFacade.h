@@ -9,6 +9,9 @@
     VSIdentityProvider * _identityProvider;
     VSOptional * _identityProviderID;
     NSArray * _knownAppBundles;
+    VSAppSettingsViewModel * _mvpdAppSettingsViewModel;
+    UIViewController * _mvpdInstallPromptPresentingViewController;
+    bool  _needsPresentationOfMVPDAppInstallPromptIfAvailable;
     bool  _needsUpdateApps;
     NSOperationQueue * _privateQueue;
     int  _registrationToken;
@@ -24,6 +27,9 @@
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (nonatomic, copy) VSOptional *identityProviderID;
 @property (nonatomic, copy) NSArray *knownAppBundles;
+@property (nonatomic, retain) VSAppSettingsViewModel *mvpdAppSettingsViewModel;
+@property (nonatomic, retain) UIViewController *mvpdInstallPromptPresentingViewController;
+@property (nonatomic) bool needsPresentationOfMVPDAppInstallPromptIfAvailable;
 @property (nonatomic) bool needsUpdateApps;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic) int registrationToken;
@@ -46,7 +52,11 @@
 - (id)init;
 - (id)initWithStorage:(id)arg1 restrictionsCenter:(id)arg2;
 - (id)knownAppBundles;
+- (id)mvpdAppSettingsViewModel;
+- (id)mvpdInstallPromptPresentingViewController;
+- (bool)needsPresentationOfMVPDAppInstallPromptIfAvailable;
 - (bool)needsUpdateApps;
+- (void)presentMVPDAppInstallPromptFromViewController:(id)arg1;
 - (id)privateQueue;
 - (int)registrationToken;
 - (oneway void)release;
@@ -58,6 +68,9 @@
 - (void)setIdentityProvider:(id)arg1;
 - (void)setIdentityProviderID:(id)arg1;
 - (void)setKnownAppBundles:(id)arg1;
+- (void)setMvpdAppSettingsViewModel:(id)arg1;
+- (void)setMvpdInstallPromptPresentingViewController:(id)arg1;
+- (void)setNeedsPresentationOfMVPDAppInstallPromptIfAvailable:(bool)arg1;
 - (void)setNeedsUpdateApps:(bool)arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setRegistrationToken:(int)arg1;
@@ -65,6 +78,8 @@
 - (void)setStorage:(id)arg1;
 - (void)setUnredeemedVouchers:(id)arg1;
 - (void)setVoucherApps:(id)arg1;
+- (bool)shouldShowMVPDAppInstallPrompt;
+- (bool)shouldShowMVPDAppInstallPromptFromViewController:(id)arg1;
 - (id)storage;
 - (id)unredeemedVouchers;
 - (id)voucherApps;

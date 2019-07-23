@@ -28,7 +28,11 @@
 + (id)valueWithNewArrayInContext:(id)arg1;
 + (id)valueWithNewErrorFromMessage:(id)arg1 inContext:(id)arg2;
 + (id)valueWithNewObjectInContext:(id)arg1;
++ (id)valueWithNewPromiseInContext:(id)arg1 fromExecutor:(id /* block */)arg2;
++ (id)valueWithNewPromiseRejectedWithReason:(id)arg1 inContext:(id)arg2;
++ (id)valueWithNewPromiseResolvedWithResult:(id)arg1 inContext:(id)arg2;
 + (id)valueWithNewRegularExpressionFromPattern:(id)arg1 flags:(id)arg2 inContext:(id)arg3;
++ (id)valueWithNewSymbolFromDescription:(id)arg1 inContext:(id)arg2;
 + (id)valueWithNullInContext:(id)arg1;
 + (id)valueWithObject:(id)arg1 inContext:(id)arg2;
 + (id)valueWithPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(id)arg2;
@@ -60,6 +64,7 @@
 - (bool)isNumber;
 - (bool)isObject;
 - (bool)isString;
+- (bool)isSymbol;
 - (bool)isUndefined;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
@@ -84,6 +89,17 @@
 - (unsigned int)toUInt32;
 - (id)valueAtIndex:(unsigned long long)arg1;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
+- (id)_ikdb_globalObject;
+- (id)_ikdo_boxedInstance;
+- (void)_ikdo_setBoxedInstance:(id)arg1;
+- (bool)ikdb_isArray;
+- (bool)ikdb_isObject;
+- (id)ikdb_prototype;
+- (id)ikdo_box;
+- (id)ikdo_toDataObservableOfClass:(Class)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NeutrinoCore.framework/NeutrinoCore
 

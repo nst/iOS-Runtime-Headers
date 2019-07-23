@@ -27,6 +27,7 @@
     SAStartRequest * _startRequest;
     NSString * _text;
     unsigned long long  _timestamp;
+    struct NSUUID { Class x1; } * _turnIdentifier;
     NSString * _utteranceSource;
 }
 
@@ -54,7 +55,10 @@
 @property (nonatomic, copy) SAStartRequest *startRequest;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, readonly) unsigned long long timestamp;
+@property (nonatomic, copy) NSUUID *turnIdentifier;
 @property (nonatomic, copy) NSString *utteranceSource;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 + (bool)supportsSecureCoding;
 
@@ -109,12 +113,19 @@
 - (void)setStartLocalRequest:(id)arg1;
 - (void)setStartRequest:(id)arg1;
 - (void)setText:(id)arg1;
+- (void)setTurnIdentifier:(struct NSUUID { Class x1; }*)arg1;
 - (void)setUtteranceSource:(id)arg1;
 - (id)speechRequestOptions;
 - (id)startLocalRequest;
 - (id)startRequest;
 - (id)text;
 - (unsigned long long)timestamp;
+- (struct NSUUID { Class x1; }*)turnIdentifier;
 - (id)utteranceSource;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (bool)afui_isRemoteHeadsetActivation;
+- (bool)afui_isRemoteVoiceActivation;
 
 @end

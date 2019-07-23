@@ -7,6 +7,7 @@
 
 - (<FCPrivateDataContextInternal> *)internalPrivateDataContext;
 - (bool)isPrivateDataSyncingEnabled;
+- (FCIssueReadingHistory *)issueReadingHistory;
 - (FCNetworkBehaviorMonitor *)networkBehaviorMonitor;
 - (FCPersonalizationData *)personalizationData;
 - (FCPrivateChannelMembershipController *)privateChannelMembershipController;

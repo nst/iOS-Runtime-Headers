@@ -17,9 +17,9 @@
 @optional
 
 - (NSArray *)allDroppedFileURLs;
+- (NSArray *)fileUploadURLsAtIndex:(unsigned long long)arg1 fileTypes:(id*)arg2;
 - (long long)numberOfFiles;
 - (NSArray *)pasteboardTypesByFidelityForItemAtIndex:(unsigned long long)arg1;
-- (NSURL *)preferredFileUploadURLAtIndex:(unsigned long long)arg1 fileType:(id*)arg2;
 - (void)setItems:(NSArray *)arg1;
 - (void)stageRegistrationList:(WebItemProviderRegistrationInfoList *)arg1;
 - (WebItemProviderRegistrationInfoList *)takeRegistrationList;

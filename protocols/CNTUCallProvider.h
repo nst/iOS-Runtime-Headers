@@ -7,7 +7,6 @@
 
 - (NSString *)bundleIdentifier;
 - (<CNTUDialRequest> *)dialRequestForHandle:(CNHandle *)arg1 contact:(CNContact *)arg2 video:(bool)arg3;
-- (<CNTUDialRequest> *)dialRequestForHandle:(CNHandle *)arg1 contact:(CNContact *)arg2 video:(bool)arg3 senderIdentity:(id <CNTUSenderIdentity>)arg4;
 - (NSString *)localizedName;
 - (NSSet *)supportedHandleTypes;
 - (bool)supportsAudio;

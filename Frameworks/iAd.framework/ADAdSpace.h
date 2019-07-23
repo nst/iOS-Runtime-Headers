@@ -35,6 +35,7 @@
     unsigned long long  _reUseCount;
     <ADAdRecipient> * _recipient;
     ADSInternalSize * _reorientedContainerSize;
+    long long  _requestOrientation;
     bool  _requiresFastVisibiltyTestOnly;
     struct CGRect { 
         struct CGPoint { 
@@ -96,6 +97,7 @@
 @property (nonatomic) unsigned long long reUseCount;
 @property (nonatomic, readonly) <ADAdRecipient> *recipient;
 @property (nonatomic, retain) ADSInternalSize *reorientedContainerSize;
+@property (nonatomic) long long requestOrientation;
 @property (nonatomic) bool requiresFastVisibiltyTestOnly;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } selectedAdFrame;
 @property (nonatomic, copy) NSURL *serverURL;
@@ -196,6 +198,7 @@
 - (id)initForRecipient:(id)arg1;
 - (void)installCreativeView;
 - (void)internalAdTypeDidChange;
+- (bool)isInternalDeepLinkURL:(id)arg1;
 - (float)lastPlayTime;
 - (double)lastSlowCheck;
 - (float)lastVolume;
@@ -224,6 +227,7 @@
 - (void)reportAdPrivacySheetDidLinkOut;
 - (void)reportAdPrivacySheetDidRender;
 - (void)reportNativeClickEvent;
+- (long long)requestOrientation;
 - (bool)requiresFastVisibiltyTestOnly;
 - (void)safariViewControllerDidFinish:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })selectedAdFrame;
@@ -259,6 +263,7 @@
 - (void)setProgressMileStoneMet:(long long)arg1;
 - (void)setReUseCount:(unsigned long long)arg1;
 - (void)setReorientedContainerSize:(id)arg1;
+- (void)setRequestOrientation:(long long)arg1;
 - (void)setRequiresFastVisibiltyTestOnly:(bool)arg1;
 - (void)setSelectedAdFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setServerURL:(id)arg1;
@@ -282,6 +287,7 @@
 - (void)uninstallCreativeView;
 - (void)updateCreativeControllerVisibility;
 - (void)updateVisibility;
+- (void)useSafariViewControllerToOpenURL:(id)arg1;
 - (int)videoPlayCount;
 - (long long)visibility;
 - (bool)visibilityCheckScheduled;

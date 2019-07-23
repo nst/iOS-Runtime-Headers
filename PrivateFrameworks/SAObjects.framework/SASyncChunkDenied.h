@@ -24,6 +24,7 @@
 - (long long)errorCode;
 - (id)groupIdentifier;
 - (id)initWithErrorCode:(long long)arg1;
+- (bool)mutatingCommand;
 - (bool)requiresResponse;
 - (void)setCurrent:(id)arg1;
 - (void)setErrorCode:(long long)arg1;

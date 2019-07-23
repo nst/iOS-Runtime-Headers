@@ -16,6 +16,7 @@
         unsigned int _value; 
     }  _flags;
     NSString * _friendLevel;
+    NSString * _gamePlayerID;
     NSString * _messagesID;
     unsigned int  _numberOfAchievementPoints;
     unsigned int  _numberOfAchievements;
@@ -25,6 +26,7 @@
     unsigned short  _numberOfGamesInCommon;
     NSDictionary * _photos;
     NSString * _playerID;
+    NSString * _teamPlayerID;
 }
 
 @property (nonatomic, retain) NSString *accountName;
@@ -37,6 +39,7 @@
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, retain) NSString *friendLevel;
 @property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, retain) NSString *gamePlayerID;
 @property (nonatomic, retain) NSString *guestIdentifier;
 @property (nonatomic, retain) NSNumber *iCloudUserID;
 @property (nonatomic, readonly) bool isAnonymousPlayer;
@@ -64,6 +67,7 @@
 @property (nonatomic, retain) NSString *playerID;
 @property (getter=isPurpleBuddyAccount, nonatomic) bool purpleBuddyAccount;
 @property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSString *teamPlayerID;
 @property (getter=isUnderage, nonatomic) bool underage;
 
 + (Class)classForFamiliarity:(int)arg1;
@@ -88,6 +92,7 @@
 - (unsigned int)flags;
 - (id)friendLevel;
 - (id)friends;
+- (id)gamePlayerID;
 - (id)guestIdentifier;
 - (unsigned long long)hash;
 - (id)iCloudUserID;
@@ -131,6 +136,7 @@
 - (void)setFlags:(unsigned int)arg1;
 - (void)setFriendLevel:(id)arg1;
 - (void)setFriends:(id)arg1;
+- (void)setGamePlayerID:(id)arg1;
 - (void)setICloudUserID:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLastPlayedDate:(id)arg1;
@@ -150,7 +156,9 @@
 - (void)setPlayerID:(id)arg1;
 - (void)setPurpleBuddyAccount:(bool)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setTeamPlayerID:(id)arg1;
 - (void)setUnderage:(bool)arg1;
 - (id)status;
+- (id)teamPlayerID;
 
 @end

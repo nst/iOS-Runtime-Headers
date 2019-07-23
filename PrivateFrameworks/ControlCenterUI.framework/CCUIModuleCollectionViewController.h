@@ -6,6 +6,8 @@
     NSHashTable * _currentModules;
     <CCUIModuleCollectionViewControllerDelegate> * _delegate;
     NSHashTable * _expandedModules;
+    bool  _homeGestureDismissalAllowed;
+    NSHashTable * _homeGestureDismissalAllowedModules;
     CCUIControlCenterPositionProvider * _landscapePositionProvider;
     CCUILayoutOptions * _layoutOptions;
     NSObject<OS_dispatch_group> * _moduleCloseDispatchGroup;
@@ -23,6 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long expandedModuleCount;
 @property (readonly) unsigned long long hash;
+@property (getter=isHomeGestureDismissalAllowed, nonatomic, readonly) bool homeGestureDismissalAllowed;
 @property (nonatomic, retain) CCUIModuleCollectionView *moduleCollectionView;
 @property (readonly) Class superclass;
 
@@ -39,6 +42,7 @@
 - (bool)_shouldApplyBackgroundEffects;
 - (id)_sizesForModuleIdentifiers:(id)arg1 moduleInstanceByIdentifier:(id)arg2 interfaceOrientation:(long long)arg3;
 - (void)_updateEnabledModuleIdentifiers;
+- (void)_updateHomeGestureDismissalAllowed;
 - (void)_updateModuleControllers;
 - (id)backgroundViewForContentModuleContainerViewController:(id)arg1;
 - (id)childViewControllersForAppearancePropagation;
@@ -51,6 +55,7 @@
 - (void)contentModuleContainerViewController:(id)arg1 willCloseExpandedModule:(id)arg2;
 - (void)contentModuleContainerViewController:(id)arg1 willOpenExpandedModule:(id)arg2;
 - (id)delegate;
+- (void)didUpdateHomeGestureDismissalAllowed:(bool)arg1 forModuleWithIdentifier:(id)arg2;
 - (void)dismissExpandedModuleAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)dismissPresentedContentAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)expandModuleWithIdentifier:(id)arg1;
@@ -58,6 +63,7 @@
 - (void)expandedModuleDidChangeSizeWithIdentifier:(id)arg1;
 - (id)initWithModuleInstanceManager:(id)arg1;
 - (bool)isAtMaxHeight;
+- (bool)isHomeGestureDismissalAllowed;
 - (bool)isModuleExpandedForIdentifier:(id)arg1;
 - (struct CCUILayoutSize { unsigned long long x1; unsigned long long x2; })layoutSizeForLayoutView:(id)arg1;
 - (struct CCUILayoutRect { struct CCUILayoutPoint { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct CCUILayoutSize { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })layoutView:(id)arg1 layoutRectForSubview:(id)arg2;

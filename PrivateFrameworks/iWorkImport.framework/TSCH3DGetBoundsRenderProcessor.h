@@ -134,6 +134,6 @@
 - (int)mode;
 - (void)resetBounds;
 - (void)setMode:(int)arg1;
-- (void)submit:(const /* Warning: unhandled struct encoding: '{PrimitiveInfo=iii@}' */ struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;
+- (void)submit:(id)arg1;
 
 @end

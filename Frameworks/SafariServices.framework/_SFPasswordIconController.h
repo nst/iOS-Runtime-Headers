@@ -19,6 +19,8 @@
 
 @property (nonatomic) <_SFPasswordIconControllerDelegate> *delegate;
 
++ (struct CGSize { double x1; double x2; })preferredIconSize;
+
 - (void).cxx_destruct;
 - (void)_checkForLocalVisitToDomain:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_fetchAppIconForDomain:(id)arg1;

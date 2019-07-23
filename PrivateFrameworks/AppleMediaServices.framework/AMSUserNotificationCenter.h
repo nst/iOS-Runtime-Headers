@@ -3,31 +3,18 @@
  */
 
 @interface AMSUserNotificationCenter : NSObject {
-    NSString * _bundleIdentifier;
-    <AMSUserNotificationCenterDelegate> * _delegate;
-    bool  _runningInDaemon;
     <AMSUserNotificationStrategy> * _strategy;
 }
 
-@property (nonatomic, readonly) NSArray *activeNotifications;
-@property (nonatomic, readonly) NSString *bundleIdentifier;
-@property (nonatomic) <AMSUserNotificationCenterDelegate> *delegate;
-@property (nonatomic, readonly) bool runningInDaemon;
 @property (nonatomic, readonly) <AMSUserNotificationStrategy> *strategy;
 
 + (Class)_determineStrategyForBundleId:(id)arg1;
-+ (id)currentCenter;
++ (id)activeNotificationsWithCenterBundleId:(id)arg1;
++ (id)postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)removeNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)activeNotifications;
-- (id)bundleIdentifier;
-- (id)delegate;
-- (id)initWithBundleIdentifier:(id)arg1;
-- (id)initWithBundleIdentifier:(id)arg1 runningInDaemon:(bool)arg2;
-- (id)postNotification:(id)arg1;
-- (id)removeNotification:(id)arg1;
-- (bool)runningInDaemon;
-- (void)setDelegate:(id)arg1;
 - (id)strategy;
 
 @end

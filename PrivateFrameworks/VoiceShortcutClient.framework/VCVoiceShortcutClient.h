@@ -26,8 +26,8 @@
 - (void)getVoiceShortcutsWithCompletion:(id /* block */)arg1;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)remoteDataStoreWithErrorHandler:(id /* block */)arg1;
+- (void)requestDataMigration:(id /* block */)arg1;
 - (void)requestSyncForServiceClassName:(id)arg1 forceReset:(bool)arg2 completion:(id /* block */)arg3;
-- (void)scheduleVocabularySyncToServer:(id /* block */)arg1;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2;
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;

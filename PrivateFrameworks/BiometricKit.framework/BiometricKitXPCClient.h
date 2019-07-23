@@ -46,6 +46,7 @@
 - (id)getIdentitiesDatabaseHashForUser:(unsigned int)arg1;
 - (id)getIdentitiesDatabaseUUIDForUser:(unsigned int)arg1;
 - (id)getIdentityFromUUID:(id)arg1;
+- (int)getLastMatchEvent:(id*)arg1;
 - (id)getLogs:(bool)arg1 withDetails:(id*)arg2;
 - (long long)getMaxIdentityCount:(int)arg1;
 - (id)getNodeTopologyForIdentity:(id)arg1;

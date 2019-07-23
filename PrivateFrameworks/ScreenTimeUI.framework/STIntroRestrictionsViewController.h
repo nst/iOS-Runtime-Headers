@@ -5,7 +5,6 @@
 @interface STIntroRestrictionsViewController : STIntroSplashViewController <UITableViewDataSource, UITableViewDelegate> {
     STAllowance * _allowance;
     UITableView * _categoriesTableView;
-    bool  _hasSetTimeAmount;
     UITableView * _settingsTableView;
     bool  _showAllCategories;
     bool  _showingDatePicker;
@@ -15,7 +14,6 @@
 @property (retain) UITableView *categoriesTableView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property bool hasSetTimeAmount;
 @property (readonly) unsigned long long hash;
 @property (retain) UITableView *settingsTableView;
 @property bool showAllCategories;
@@ -23,17 +21,17 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_hasSetTimeAmount;
+- (void)_updateSaveButton;
 - (id)allowance;
 - (id)categoriesTableView;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (bool)hasSetTimeAmount;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)selectedCategories;
 - (void)setAllowance:(id)arg1;
 - (void)setCategoriesTableView:(id)arg1;
-- (void)setHasSetTimeAmount:(bool)arg1;
 - (void)setSettingsTableView:(id)arg1;
 - (void)setShowAllCategories:(bool)arg1;
 - (void)setShowingDatePicker:(bool)arg1;

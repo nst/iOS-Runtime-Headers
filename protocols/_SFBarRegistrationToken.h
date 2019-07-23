@@ -6,6 +6,7 @@
 @required
 
 - (UIBarButtonItem *)UIBarButtonItemForItem:(long long)arg1;
+- (bool)containsBarItem:(long long)arg1;
 - (<_SFPopoverSourceInfo> *)popoverSourceInfoForItem:(long long)arg1;
 
 @end

@@ -324,7 +324,7 @@
 - (void)composeHeaderViewDidConfirmValue:(id)arg1;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
-- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didAddRecipients:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
 - (void)composeRecipientView:(id)arg1 didReplaceRecipients:(id)arg2 withRecipients:(id)arg3;

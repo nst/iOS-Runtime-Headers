@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCDraftCoverStoriesGroupEmitter : FCDraftsFeedGroupEmitter
+@interface FCDraftCoverStoriesGroupEmitter : FCDraftArticlesFeedGroupEmitter
 
 - (bool)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;

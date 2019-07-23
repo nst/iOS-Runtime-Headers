@@ -2,29 +2,38 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICMusicSubscriptionStatus : NSObject <NSCopying> {
-    bool  _administrator;
+@interface ICMusicSubscriptionStatus : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
+    long long  _carrierBundlingErrorCode;
     long long  _carrierBundlingStatusType;
-    NSDictionary * _dictionaryRepresentation;
-    bool  _eligibleForFreeTrial;
+    NSString * _cellularOperatorName;
     NSDate * _expirationDate;
     bool  _hasFamily;
     bool  _hasFamilyGreaterThanOneMember;
     bool  _hasOfflineSlots;
-    bool  _headOfHousehold;
-    bool  _inFreeTrial;
-    bool  _matchEnabled;
-    bool  _minorAccountHolder;
-    bool  _purchaser;
+    bool  _isAdministrator;
+    bool  _isDiscoveryModeEligible;
+    bool  _isEligibleForFreeTrial;
+    bool  _isHeadOfHousehold;
+    bool  _isInFreeTrial;
+    bool  _isMatchEnabled;
+    bool  _isMinorAccountHolder;
+    bool  _isPurchaser;
+    NSString * _phoneNumber;
     long long  _reasonType;
+    NSDictionary * _responseDictionary;
+    NSString * _sessionIdentifier;
+    long long  _sourceType;
     long long  _statusCode;
     long long  _statusType;
     NSArray * _termsStatusList;
 }
 
 @property (getter=isAdministrator, nonatomic, readonly) bool administrator;
+@property (nonatomic, readonly) long long carrierBundlingErrorCode;
 @property (nonatomic, readonly) long long carrierBundlingStatusType;
+@property (nonatomic, readonly, copy) NSString *cellularOperatorName;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
+@property (getter=isDiscoveryModeEligible, nonatomic, readonly) bool discoveryModeEligible;
 @property (getter=isEligibleForFreeTrial, nonatomic, readonly) bool eligibleForFreeTrial;
 @property (nonatomic, readonly, copy) NSDate *expirationDate;
 @property (nonatomic, readonly) bool hasFamily;
@@ -34,31 +43,49 @@
 @property (getter=isInFreeTrial, nonatomic, readonly) bool inFreeTrial;
 @property (getter=isMatchEnabled, nonatomic, readonly) bool matchEnabled;
 @property (getter=isMinorAccountHolder, nonatomic, readonly) bool minorAccountHolder;
+@property (nonatomic, readonly, copy) NSString *phoneNumber;
 @property (getter=isPurchaser, nonatomic, readonly) bool purchaser;
 @property (nonatomic, readonly) long long reasonType;
+@property (nonatomic, readonly, copy) NSDictionary *responseDictionary;
+@property (nonatomic, readonly, copy) NSString *sessionIdentifier;
+@property (nonatomic, readonly) long long sourceType;
 @property (nonatomic, readonly) long long statusCode;
 @property (nonatomic, readonly) long long statusType;
 @property (nonatomic, readonly, copy) NSArray *termsStatusList;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (void)_copySubscriptionStatusPropertiesToStatus:(id)arg1 withZone:(struct _NSZone { }*)arg2;
+- (long long)carrierBundlingErrorCode;
 - (long long)carrierBundlingStatusType;
+- (id)cellularOperatorName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
 - (bool)hasFamily;
 - (bool)hasFamilyGreaterThanOneMember;
 - (bool)hasOfflineSlots;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithResponseDictionary:(id)arg1;
 - (bool)isAdministrator;
+- (bool)isDiscoveryModeEligible;
 - (bool)isEligibleForFreeTrial;
+- (bool)isEqual:(id)arg1;
 - (bool)isEqualToStatus:(id)arg1;
 - (bool)isHeadOfHousehold;
 - (bool)isInFreeTrial;
 - (bool)isMatchEnabled;
 - (bool)isMinorAccountHolder;
 - (bool)isPurchaser;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)phoneNumber;
 - (long long)reasonType;
+- (id)responseDictionary;
+- (id)sessionIdentifier;
+- (long long)sourceType;
 - (long long)statusCode;
 - (long long)statusType;
 - (id)termsStatusList;

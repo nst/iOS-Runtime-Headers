@@ -7,7 +7,7 @@
     NSArray * _apps;
     UILabel * _bodyLabel;
     UIStackView * _buttonStack;
-    TVCarouselView * _carouselView;
+    _TVCarouselView * _carouselView;
     UILayoutGuide * _contentGuide;
     UIStackView * _contentStack;
     bool  _didLayout;

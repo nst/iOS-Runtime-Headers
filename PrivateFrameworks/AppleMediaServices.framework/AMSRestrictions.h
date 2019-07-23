@@ -5,6 +5,7 @@
 @interface AMSRestrictions : NSObject
 
 + (bool)allowAccountModifications;
++ (bool)explicitContentAllowed;
 + (bool)onDeviceDiagnosticsAllowed;
 
 @end

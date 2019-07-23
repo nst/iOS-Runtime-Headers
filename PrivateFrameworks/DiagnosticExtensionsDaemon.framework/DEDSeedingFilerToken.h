@@ -3,13 +3,13 @@
  */
 
 @interface DEDSeedingFilerToken : NSObject {
-    NSNumber * _dsid;
+    NSString * _dsid;
     NSNumber * _entityID;
     long long  _submissionType;
     NSString * _token;
 }
 
-@property (nonatomic, readonly) NSNumber *dsid;
+@property (nonatomic, readonly) NSString *dsid;
 @property (nonatomic, readonly) NSNumber *entityID;
 @property (nonatomic, readonly) long long submissionType;
 @property (nonatomic, readonly) NSString *token;

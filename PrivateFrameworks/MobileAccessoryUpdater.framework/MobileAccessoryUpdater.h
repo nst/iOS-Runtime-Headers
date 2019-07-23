@@ -4,6 +4,7 @@
 
 @interface MobileAccessoryUpdater : NSObject {
     NSString * _activeFilter;
+    NSObject<OS_dispatch_queue_attr> * _attr;
     NSString * _bundleIdentifier;
     char * _cClientIdentifier;
     NSObject<OS_dispatch_queue> * _callbackQueue;
@@ -21,6 +22,7 @@
 - (void)createConnection;
 - (void)dealloc;
 - (bool)doesOperationCodeRequireFilter:(int)arg1;
+- (void)doneWithOptions:(id)arg1;
 - (id)getActiveDeviceClass;
 - (const char *)getActiveDeviceClassCString;
 - (int)getOperationCodeFromName:(id)arg1;

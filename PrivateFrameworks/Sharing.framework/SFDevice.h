@@ -3,6 +3,7 @@
  */
 
 @interface SFDevice : NSObject <HFHomeKitObject, NSSecureCoding> {
+    NSString * _accountID;
     bool  _autoUnlockEnabled;
     bool  _autoUnlockWatch;
     NSArray * _batteryInfo;
@@ -16,6 +17,7 @@
     long long  _distance;
     bool  _duetSync;
     bool  _hasProblem;
+    unsigned int  _hotspotInfo;
     NSUUID * _identifier;
     NSString * _idsIdentifier;
     NSString * _model;
@@ -33,6 +35,7 @@
     bool  _wifiP2P;
 }
 
+@property (nonatomic, copy) NSString *accountID;
 @property (nonatomic) bool autoUnlockEnabled;
 @property (nonatomic) bool autoUnlockWatch;
 @property (nonatomic, copy) NSArray *batteryInfo;
@@ -49,6 +52,7 @@
 @property (nonatomic, readonly) bool duetSync;
 @property (nonatomic) bool hasProblem;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned int hotspotInfo;
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic, copy) NSString *model;
@@ -73,6 +77,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)accountID;
 - (bool)autoUnlockEnabled;
 - (bool)autoUnlockWatch;
 - (id)batteryInfo;
@@ -88,6 +93,7 @@
 - (bool)duetSync;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasProblem;
+- (unsigned int)hotspotInfo;
 - (id)identifier;
 - (id)idsIdentifier;
 - (id)init;
@@ -102,6 +108,7 @@
 - (bool)paired;
 - (unsigned long long)problemFlags;
 - (id)requestSSID;
+- (void)setAccountID:(id)arg1;
 - (void)setAutoUnlockEnabled:(bool)arg1;
 - (void)setAutoUnlockWatch:(bool)arg1;
 - (void)setBatteryInfo:(id)arg1;
@@ -112,6 +119,7 @@
 - (void)setDeviceFlags:(unsigned int)arg1;
 - (void)setDistance:(long long)arg1;
 - (void)setHasProblem:(bool)arg1;
+- (void)setHotspotInfo:(unsigned int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setModel:(id)arg1;
@@ -130,6 +138,12 @@
 - (bool)wakeDevice;
 - (bool)watchLocked;
 - (bool)wifiP2P;
+
+// Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
+
+- (bool)isValidDEDPingDevice;
+- (bool)isValidDEDPongDevice;
+- (bool)isWithinDEDRange;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 

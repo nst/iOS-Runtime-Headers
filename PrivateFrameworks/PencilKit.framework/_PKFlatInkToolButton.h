@@ -43,6 +43,7 @@
 - (id)opacityLabel;
 - (void)setAttributeSet:(unsigned long long)arg1;
 - (void)setColor:(id)arg1;
+- (void)setColor:(id)arg1 animated:(bool)arg2;
 - (void)setIdentifier:(id)arg1;
 - (void)setIsUsedOnDarkBackground:(bool)arg1;
 - (void)setNibImageView:(id)arg1;

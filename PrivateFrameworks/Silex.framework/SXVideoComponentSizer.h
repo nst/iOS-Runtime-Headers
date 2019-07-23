@@ -4,6 +4,6 @@
 
 @interface SXVideoComponentSizer : SXComponentSizer
 
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 
 @end

@@ -14,6 +14,8 @@
 @property (nonatomic, retain) AMSPromiseResult *promiseResult;
 @property (nonatomic, retain) NSConditionLock *stateLock;
 
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
 + (void)_configureAllPromise:(id)arg1 withResults:(id)arg2 promises:(id)arg3 currentPromiseIndex:(unsigned long long)arg4;
 + (void)_configureAnyPromise:(id)arg1 withPomises:(id)arg2 currentPromiseIndex:(unsigned long long)arg3;
 + (bool)_errorIsCanceledError:(id)arg1;
@@ -55,5 +57,9 @@
 - (id)thenWithBlock:(id /* block */)arg1;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedWithTimeout:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (void)pk_addQueue:(id)arg1 finishBlock:(id /* block */)arg2;
 
 @end

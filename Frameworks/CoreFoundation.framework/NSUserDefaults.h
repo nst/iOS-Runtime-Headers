@@ -9,6 +9,11 @@
     void * _reserved;
 }
 
+@property (getter=hk_atrialFibrillationSetupModalViewHasBeenPresented, setter=hk_setAtrialFibrillationSetupModalViewPresented:, nonatomic) bool hk_atrialFibrillationSetupModalViewPresented;
+@property (setter=hk_setDemoResultKeys:, nonatomic, retain) NSArray *hk_demoResultKeys;
+@property (getter=hk_electrocardiogramSetupModalViewHasBeenPresented, setter=hk_setElectrocardiogramSetupModalViewPresented:, nonatomic) bool hk_electrocardiogramSetupModalViewPresented;
+@property (nonatomic, readonly) bool hk_hfeModeEnabled;
+
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 - (struct __CFString { }*)_container;
@@ -88,9 +93,17 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)hk_featureAvailabilityUserDefaults;
++ (id)hk_heartRhythmDefaults;
 
+- (bool)hk_atrialFibrillationSetupModalViewHasBeenPresented;
+- (id)hk_demoResultKeys;
+- (bool)hk_electrocardiogramSetupModalViewHasBeenPresented;
+- (bool)hk_hfeModeEnabled;
 - (bool)hk_keyExists:(id)arg1;
 - (void)hk_removeObjectsForKeysWithPrefix:(id)arg1;
+- (void)hk_setAtrialFibrillationSetupModalViewPresented:(bool)arg1;
+- (void)hk_setDemoResultKeys:(id)arg1;
+- (void)hk_setElectrocardiogramSetupModalViewPresented:(bool)arg1;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -196,9 +209,13 @@
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 + (id)safari_cloudBookmarksDefaults;
++ (id)safari_notificationNameForUserDefaultsKey:(id)arg1;
 
 - (id)safari_dateForKey:(id)arg1;
+- (void)safari_setBool:(bool)arg1 andNotifyForKey:(id)arg2;
 - (void)safari_setDate:(id)arg1 forKey:(id)arg2;
+- (bool)safari_toggleBoolAndNotifyForKey:(id)arg1;
+- (bool)safari_toggleBoolForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

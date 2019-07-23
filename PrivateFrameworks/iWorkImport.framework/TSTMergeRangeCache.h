@@ -71,6 +71,7 @@
 }
 
 @property (nonatomic) unsigned long long count;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, retain) NSMutableIndexSet *mergeIndexes;
 @property (nonatomic) TSTMergeOwner *mergeOwner;
 
@@ -90,6 +91,7 @@
 - (bool)hasRangeSpanningRowsForCellRect:(struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })arg1;
 - (bool)hasRangeSpanningRowsForCellRegion:(id)arg1;
 - (id)initWithMergeOwner:(id)arg1;
+- (bool)isEmpty;
 - (id)mergeIndexes;
 - (id)mergeOwner;
 - (struct TSUModelCellRect { struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_2_1; unsigned short x_1_2_2; bool x_1_2_3; bool x_1_2_4; } x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; })mergeRangeAtIndex:(unsigned long long)arg1;

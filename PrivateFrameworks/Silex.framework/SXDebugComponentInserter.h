@@ -4,11 +4,10 @@
 
 @interface SXDebugComponentInserter : NSObject <SXComponentInserter> {
     <SXComponentInsertionConditionEngine> * _conditionEngine;
-    NSArray * _conditions;
 }
 
+@property (nonatomic, readonly) unsigned long long componentTraits;
 @property (nonatomic, readonly) <SXComponentInsertionConditionEngine> *conditionEngine;
-@property (nonatomic, readonly) NSArray *conditions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -18,7 +17,7 @@
 - (id)componentInsertForMarker:(id)arg1 layoutProvider:(id)arg2;
 - (unsigned long long)componentTraits;
 - (id)conditionEngine;
-- (id)conditions;
+- (id)conditionsForDOMObjectProvider:(id)arg1;
 - (bool)validateMarker:(id)arg1 remainingMarkerCount:(unsigned long long)arg2 layoutProvider:(id)arg3;
 
 @end

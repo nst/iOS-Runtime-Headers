@@ -2,8 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXImage2Resource : SXImageResource
+@interface SXImage2Resource : SXImageResource {
+    bool  wideColorSpace;
+}
 
 + (id)typeString;
+
+- (bool)wideColorSpace;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate> {
     bool  _active;
+    PKMerchantCategoryCodeMap * _categoryCodeMap;
     <PKPaymentTransactionProcessorDelegate> * _delegate;
     CLGeocoder * _geocoder;
     CLLocationManager * _locationManager;
@@ -32,11 +33,13 @@
 - (id)_pendingMerchantCleanupItemForTransaction:(id)arg1;
 - (id)_pendingReverseGeocodeUpdateItemForTransaction:(id)arg1;
 - (id)_pendingStationsUpdateItemForTransaction:(id)arg1;
-- (void)_processItemForMerchantCleanup:(id)arg1;
+- (void)_processForLocalMCCLookup:(id)arg1;
+- (void)_processItemForMerchantCleanup:(id)arg1 clearingAttempt:(bool)arg2;
 - (void)_processItemForStationsCleanup:(id)arg1;
 - (void)_processPaymentTransactionForLocationUpdate:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
-- (void)_processPaymentTransactionForMerchantCleanup:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
+- (void)_processPaymentTransactionForMerchantCleanup:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 clearingAttempt:(bool)arg4;
 - (void)_processPaymentTransactionForStationsUpdate:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
+- (void)_processTransactionPostLocation:(id)arg1 withPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;
 - (void)_startUpdatingLocationIfPossible;
 - (void)_stopUpdatingLocationIfPossible;
 - (void)_updateActiveState;

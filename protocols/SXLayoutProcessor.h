@@ -5,6 +5,6 @@
 
 @required
 
-- (void)processLayoutBlueprint:(SXLayoutBlueprint *)arg1 layoutDataProvider:(SXLayoutDataProvider *)arg2;
+- (void)processLayoutTask:(SXLayoutTask *)arg1 layoutBlueprint:(SXLayoutBlueprint *)arg2 DOMObjectProvider:(SXDOMObjectProvider *)arg3;
 
 @end

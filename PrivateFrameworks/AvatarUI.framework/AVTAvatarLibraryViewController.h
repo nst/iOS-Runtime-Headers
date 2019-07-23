@@ -26,7 +26,9 @@
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)delegate;
 - (void)didAddRecord:(id)arg1;
 - (void)didDeleteRecord:(id)arg1;
@@ -48,6 +50,7 @@
 - (void)presentUIViewController:(id)arg1;
 - (void)presetEditorViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)updateVisibleHeaders;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

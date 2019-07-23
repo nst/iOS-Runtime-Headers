@@ -19,6 +19,7 @@
 - (NSDictionary *)customPlaceholderValuesForTemplate:(ACHTemplate *)arg1;
 - (NSObject<ACHTemplateSourceDelegate> *)delegate;
 - (void)setDelegate:(NSObject<ACHTemplateSourceDelegate> *)arg1;
+- (void)templatesForDate:(void *)arg1 databaseContext:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSDate *, HDDatabaseTransactionContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
 - (NSString *)textureFilenameForTemplate:(ACHTemplate *)arg1;
 
 @end

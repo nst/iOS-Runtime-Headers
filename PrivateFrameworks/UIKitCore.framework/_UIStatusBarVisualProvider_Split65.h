@@ -6,6 +6,7 @@
 
 + (double)baseIconScale;
 + (double)baselineBottomInset;
++ (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double*)arg3;
 + (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })expandedEdgeInsets;
 + (id)expandedFont;
 + (double)itemSpacing;
@@ -17,7 +18,9 @@
 + (id)pillFont;
 + (struct CGSize { double x1; double x2; })pillSize;
 + (double)referenceWidth;
++ (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })trailingEdgeInsets;
 
+- (id)stringForCellularType:(long long)arg1 condensed:(bool)arg2;
 - (id)styleAttributes;
 
 @end

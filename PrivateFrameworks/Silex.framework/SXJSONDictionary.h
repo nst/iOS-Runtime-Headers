@@ -8,8 +8,6 @@
     NSArray * _keys;
     id /* block */  _objectValueClassBlock;
     NSMutableDictionary * _objects;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
-    NSString * _specificationVersion;
     id /* block */  _valueClassBlock;
 }
 
@@ -18,7 +16,6 @@
 @property (nonatomic, readonly) NSArray *keys;
 @property (nonatomic, readonly) id /* block */ objectValueClassBlock;
 @property (nonatomic, readonly) NSMutableDictionary *objects;
-@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 @property (nonatomic, readonly) id /* block */ valueClassBlock;
 
 - (void).cxx_destruct;
@@ -36,8 +33,6 @@
 - (id)objectForKey:(id)arg1;
 - (id /* block */)objectValueClassBlock;
 - (id)objects;
-- (id)semaphore;
-- (id)specificationVersion;
 - (id /* block */)valueClassBlock;
 
 @end

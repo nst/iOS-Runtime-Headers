@@ -12,6 +12,7 @@
     long long  _idsResponseCode;
     NSNumber * _isDeviceBlackedOut;
     bool  _lastCall;
+    bool  _lastCourierAck;
     NSNumber * _localMessageState;
     long long  _responseCode;
     NSNumber * _responseCommand;
@@ -31,6 +32,7 @@
 @property (nonatomic) long long idsResponseCode;
 @property (nonatomic, copy) NSNumber *isDeviceBlackedOut;
 @property (nonatomic) bool lastCall;
+@property (nonatomic) bool lastCourierAck;
 @property (nonatomic, copy) NSNumber *localMessageState;
 @property (nonatomic) long long responseCode;
 @property (nonatomic, copy) NSNumber *responseCommand;
@@ -55,6 +57,7 @@
 - (id)initWithServerResponseDictionary:(id)arg1;
 - (id)isDeviceBlackedOut;
 - (bool)lastCall;
+- (bool)lastCourierAck;
 - (id)localMessageState;
 - (long long)responseCode;
 - (id)responseCommand;
@@ -69,6 +72,7 @@
 - (void)setIdsResponseCode:(long long)arg1;
 - (void)setIsDeviceBlackedOut:(id)arg1;
 - (void)setLastCall:(bool)arg1;
+- (void)setLastCourierAck:(bool)arg1;
 - (void)setLocalMessageState:(id)arg1;
 - (void)setResponseCode:(long long)arg1;
 - (void)setResponseCommand:(id)arg1;

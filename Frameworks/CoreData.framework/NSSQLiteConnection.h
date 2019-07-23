@@ -67,7 +67,6 @@
 + (int)readMagicWordFromPath:(const char *)arg1 options:(id)arg2;
 
 - (void)_adoptQueryGenerationWithSnapshot:(id)arg1;
-- (id)_beginPowerAssertionWithAssert:(unsigned long long*)arg1;
 - (void)_bindVariablesForConstrainedValuesWithRow:(id)arg1;
 - (void)_bindVariablesWithDeletedRow:(id)arg1;
 - (void)_bindVariablesWithInsertedRow:(id)arg1;
@@ -98,12 +97,11 @@
 - (void)_dropOldHistoryTrackingTablesV1;
 - (void)_dropTableForCloudKitMetadataEntity:(id)arg1;
 - (void)_endFetch;
-- (void)_endPowerAssertionWithAssert:(unsigned long long)arg1 andApp:(id)arg2;
 - (void)_ensureDatabaseOpen;
 - (void)_ensureNoFetchInProgress;
 - (void)_ensureNoStatementPrepared;
 - (void)_ensureNoTransactionOpen;
-- (void)_ensureWalFileExists;
+- (long long)_ensureWalFileExists;
 - (void)_executeSQLString:(id)arg1;
 - (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_finalizeStatement;

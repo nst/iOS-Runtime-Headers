@@ -4,6 +4,8 @@
 
 @interface CLSDataStore : NSObject <CLSFaultProcessorDelegate, NSLocking> {
     int  _accountChangeToken;
+    NSString * _appBundleIdentifier;
+    NSString * _appName;
     CLSAuthTree * _authTree;
     CLSCurrentUser * _cachedCurrentUser;
     NSMutableSet * _dataObservers;
@@ -74,6 +76,7 @@
 - (id)cachedCurrentUser;
 - (id)cachedMainAppContext;
 - (void)classesForPersonID:(id)arg1 role:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)completeAllAssignedActivitiesMatching:(id)arg1;
 - (void)contextsMatchingIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)contextsMatchingIdentifierPath:(id)arg1 completion:(id /* block */)arg2;
 - (void)contextsMatchingIdentifierPath:(id)arg1 parentContext:(id)arg2 completion:(id /* block */)arg3;
@@ -92,6 +95,7 @@
 - (void)executeQuery:(id)arg1;
 - (void)faultMainAppContext;
 - (bool)faultProcessor:(id)arg1 shouldFaultRelation:(id)arg2 fromObject:(struct NSObject { Class x1; }*)arg3;
+- (void)fetchAndCompleteAllAssignedActivitiesForContextPath:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchTransparencyMessageInfoWithCompletion:(id /* block */)arg1;
 - (id)graph;
 - (void)handoutAttachmentForDocumentURL:(id)arg1 completion:(id /* block */)arg2;

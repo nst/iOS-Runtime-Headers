@@ -11,6 +11,7 @@
     UIImage * _displayIcon;
     NSString * _displayName;
     bool  _me;
+    NSString * _model;
     bool  _monogram;
     id  _node;
     NSString * _realName;
@@ -32,6 +33,7 @@
 @property (retain) NSString *displayName;
 @property (getter=isKnown, readonly) bool known;
 @property (getter=isMe) bool me;
+@property (retain) NSString *model;
 @property (getter=isMonogram) bool monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
@@ -62,6 +64,7 @@
 - (bool)isMonogram;
 - (bool)isUnknown;
 - (bool)isclassroomGroup;
+- (id)model;
 - (id)node;
 - (id)realName;
 - (id)secondaryName;
@@ -72,6 +75,7 @@
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setMe:(bool)arg1;
+- (void)setModel:(id)arg1;
 - (void)setMonogram:(bool)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRealName:(id)arg1;

@@ -13,9 +13,13 @@
 - (void)insertFilename:(NSString *)arg1 MIMEType:(NSString *)arg2 exportedFilename:(NSString *)arg3 options:(NSDictionary *)arg4;
 - (void)insertRemoteItemForSending:(CKRemoteItemForSending *)arg1;
 - (void)setCanEditRecipients:(bool)arg1;
+- (void)setCloudPhotoIDs:(NSArray *)arg1;
+- (void)setContentText:(NSArray *)arg1;
+- (void)setContentURLs:(NSArray *)arg1;
 - (void)setGameCenterModeWithPickerBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)setGameCenterPickedHandles:(NSArray *)arg1 playerNames:(NSArray *)arg2;
 - (void)setPendingAddresses:(NSArray *)arg1;
+- (void)setPhotoIDs:(NSArray *)arg1;
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)setTextEntryContentsVisible:(bool)arg1;
 - (void)setUICustomizationData:(NSData *)arg1;

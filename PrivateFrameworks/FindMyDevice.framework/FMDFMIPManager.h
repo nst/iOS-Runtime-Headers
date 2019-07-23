@@ -15,6 +15,7 @@
 - (unsigned long long)_needsAckLostModeType;
 - (id)_postWipePrefPath;
 - (bool)_quickFetchFMIPEnabledstate;
+- (void)_stopAlarm;
 - (void)_updateManagedLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateNeedsLocateAckLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)activationLockVersionWithCompletion:(id /* block */)arg1;

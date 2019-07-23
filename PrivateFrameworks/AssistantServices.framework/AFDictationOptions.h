@@ -16,6 +16,7 @@
     NSString * _keyboardIdentifier;
     long long  _keyboardType;
     NSString * _languageCodeOverride;
+    AFLanguageDetectionUserContext * _languageDetectionUserContext;
     double  _maximumRecognitionDuration;
     NSString * _microphoneIdentifier;
     NSURL * _modelOverrideURL;
@@ -51,6 +52,7 @@
 @property (nonatomic, copy) NSString *keyboardIdentifier;
 @property (nonatomic) long long keyboardType;
 @property (nonatomic, copy) NSString *languageCodeOverride;
+@property (nonatomic, copy) AFLanguageDetectionUserContext *languageDetectionUserContext;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, copy) NSString *microphoneIdentifier;
 @property (nonatomic, copy) NSURL *modelOverrideURL;
@@ -93,6 +95,7 @@
 - (id)keyboardIdentifier;
 - (long long)keyboardType;
 - (id)languageCodeOverride;
+- (id)languageDetectionUserContext;
 - (double)maximumRecognitionDuration;
 - (id)microphoneIdentifier;
 - (id)modelOverrideURL;
@@ -120,6 +123,7 @@
 - (void)setKeyboardIdentifier:(id)arg1;
 - (void)setKeyboardType:(long long)arg1;
 - (void)setLanguageCodeOverride:(id)arg1;
+- (void)setLanguageDetectionUserContext:(id)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
 - (void)setMicrophoneIdentifier:(id)arg1;
 - (void)setModelOverrideURL:(id)arg1;

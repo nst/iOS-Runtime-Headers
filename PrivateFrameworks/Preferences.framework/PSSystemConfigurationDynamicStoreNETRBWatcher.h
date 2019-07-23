@@ -14,7 +14,10 @@
 - (void)dealloc;
 - (void)getNETRBState:(int*)arg1 andReason:(int*)arg2;
 - (id)init;
+- (bool)isDataEnabled;
+- (bool)isTetheringEnabled;
 - (void)readNETRBState:(int*)arg1 andReason:(int*)arg2;
 - (void)sendStateUpdate;
+- (bool)shouldShowTethering;
 
 @end

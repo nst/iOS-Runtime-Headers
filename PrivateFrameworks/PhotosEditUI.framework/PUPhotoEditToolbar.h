@@ -5,6 +5,7 @@
 @interface PUPhotoEditToolbar : UIView <PUPhotoEditLayoutStaticAdaptable> {
     UILongPressGestureRecognizer * _accessibilityLongPressGestureRecognizer;
     _UIBackdropView * _backdropBackgroundView;
+    NSString * _backdropViewGroupName;
     NSArray * _basicViewsConstraints;
     long long  _buttonSpacing;
     struct UIEdgeInsets { 
@@ -30,6 +31,7 @@
     bool  _useTranslucentBackground;
 }
 
+@property (nonatomic, copy) NSString *backdropViewGroupName;
 @property (nonatomic, readonly) long long buttonSpacing;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentPadding;
 @property (readonly, copy) NSString *debugDescription;
@@ -44,6 +46,7 @@
 @property (nonatomic, readonly) UIView *stretchableView;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *toolButtons;
+@property (nonatomic, readonly) double toolbarButtonsLength;
 @property (nonatomic) bool useLargeShortSideHeight;
 @property (nonatomic) bool useTranslucentBackground;
 
@@ -52,6 +55,7 @@
 - (void)_setToolButtons:(id)arg1 buttonSpacing:(long long)arg2 mainActionButton:(id)arg3 secondaryActionButton:(id)arg4 stretchableView:(id)arg5;
 - (void)_updateBackgroundAnimated:(bool)arg1;
 - (void)accessibilityLongPressChanged:(id)arg1;
+- (id)backdropViewGroupName;
 - (long long)buttonSpacing;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentPadding;
 - (id)delegate;
@@ -61,6 +65,7 @@
 - (double)longSideMargin;
 - (id)mainActionButton;
 - (id)secondaryActionButton;
+- (void)setBackdropViewGroupName:(id)arg1;
 - (void)setContentPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLongSideMargin:(double)arg1;
@@ -74,6 +79,7 @@
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stretchableView;
 - (id)toolButtons;
+- (double)toolbarButtonsLength;
 - (void)updateConstraints;
 - (bool)useLargeShortSideHeight;
 - (bool)useTranslucentBackground;

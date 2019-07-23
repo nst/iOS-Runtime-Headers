@@ -37,6 +37,7 @@
     bool  _saveSamplesSeenInReset;
     double  _startWaitTime;
     NSDictionary * _topLevelParameterDict;
+    double  _trailingSilenceDurationAtEndpoint;
     unsigned long long  _vtEndInSampleCount;
 }
 
@@ -82,6 +83,7 @@
 @property (nonatomic) double startWaitTime;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *topLevelParameterDict;
+@property (nonatomic) double trailingSilenceDurationAtEndpoint;
 @property (nonatomic) unsigned long long vtEndInSampleCount;
 
 - (void).cxx_destruct;
@@ -129,7 +131,7 @@
 - (bool)recordingDidStop;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 - (void)reset;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (double)sampleRate;
 - (double)samplesSeen;
 - (bool)saveSamplesSeenInReset;
@@ -166,9 +168,11 @@
 - (void)setSaveSamplesSeenInReset:(bool)arg1;
 - (void)setStartWaitTime:(double)arg1;
 - (void)setTopLevelParameterDict:(id)arg1;
+- (void)setTrailingSilenceDurationAtEndpoint:(double)arg1;
 - (void)setVtEndInSampleCount:(unsigned long long)arg1;
 - (double)startWaitTime;
 - (id)topLevelParameterDict;
+- (double)trailingSilenceDurationAtEndpoint;
 - (unsigned long long)vtEndInSampleCount;
 
 @end

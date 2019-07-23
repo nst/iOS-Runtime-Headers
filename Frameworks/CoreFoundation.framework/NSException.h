@@ -68,8 +68,13 @@
 
 - (id)nr_safeDescription;
 
+// Image: /System/Library/PrivateFrameworks/News/AppAnalytics.framework/AppAnalytics
+
++ (bool)aa_tryCatch:(id /* block */)arg1 error:(id*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/News/TeaFoundation.framework/TeaFoundation
 
++ (void)tf_throw:(id)arg1;
 + (bool)tf_tryCatch:(id /* block */)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
@@ -84,6 +89,10 @@
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 
 - (id)psy_safeDescription;
+
+// Image: /System/Library/PrivateFrameworks/Stocks/AppAnalytics.framework/AppAnalytics
+
++ (bool)aa_tryCatch:(id /* block */)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Stocks/TeaFoundation.framework/TeaFoundation
 

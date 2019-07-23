@@ -106,6 +106,10 @@
 
 - (void)geo_updateQueryItemsWithBlock:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
+
++ (id)queryParameterStringForDictionary:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (bool)ic_boolValueForQueryItemWithKey:(id)arg1;
@@ -125,5 +129,9 @@
 
 - (bool)containsQueryItemWithName:(id)arg1;
 - (id)firstQueryItemWithName:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (void)tsp_setQueryDictionary:(id)arg1;
 
 @end

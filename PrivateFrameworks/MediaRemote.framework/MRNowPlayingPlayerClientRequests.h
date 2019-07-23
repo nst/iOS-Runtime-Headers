@@ -8,18 +8,22 @@
     _MRPlaybackQueueProtobuf * _playbackQueue;
     NSMutableDictionary * _playbackQueueCompletions;
     unsigned int  _playbackState;
+    NSMutableArray * _playbackStateCompletions;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _responseQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
     MRPlaybackQueueSubscriptionController * _subscriptionController;
+    NSArray * _supportedCommands;
+    NSMutableArray * _supportedCommandsCompletions;
     NSMutableDictionary * _transactionCallbacks;
     NSMutableDictionary * _transactions;
 }
 
-@property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
+@property (nonatomic, copy) _MRPlaybackQueueProtobuf *playbackQueue;
 @property (nonatomic) unsigned int playbackState;
 @property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic, readonly) MRPlaybackQueueSubscriptionController *subscriptionController;
+@property (nonatomic, retain) NSArray *supportedCommands;
 
 - (void).cxx_destruct;
 - (void)_handleEnqueuedPlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
@@ -31,6 +35,8 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (void)enqueuePlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)handlePlaybackStateRequestWithCompletion:(id /* block */)arg1;
+- (void)handleSupportedCommandsRequestWithCompletion:(id /* block */)arg1;
 - (id)initWithPlayerPath:(id)arg1;
 - (id)playbackQueue;
 - (unsigned int)playbackState;
@@ -40,7 +46,9 @@
 - (void)restoreNowPlayingClientState;
 - (void)setPlaybackQueue:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
+- (void)setSupportedCommands:(id)arg1;
 - (id)subscriptionController;
+- (id)supportedCommands;
 - (id)transactionCallbacksForName:(unsigned long long)arg1;
 - (void)updateContentItemArtwork:(id)arg1;
 - (void)updateContentItems:(id)arg1;

@@ -10,15 +10,15 @@
     NSPointerArray * _topRowStrokes;
 }
 
-@property (nonatomic, retain) NSPointerArray *bottomRowStrokes;
+@property (nonatomic, readonly) NSPointerArray *bottomRowStrokes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NSPointerArray *leftColumnStrokes;
+@property (nonatomic, readonly) NSPointerArray *leftColumnStrokes;
 @property (nonatomic) int maxOrder;
-@property (nonatomic, retain) NSPointerArray *rightColumnStrokes;
+@property (nonatomic, readonly) NSPointerArray *rightColumnStrokes;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSPointerArray *topRowStrokes;
+@property (nonatomic, readonly) NSPointerArray *topRowStrokes;
 
 - (void).cxx_destruct;
 - (id)bottomRowStrokes;
@@ -46,21 +46,18 @@
 - (id)rightColumnStrokes;
 - (void)saveToArchiver:(id)arg1;
 - (void)setBordersWithCellMap:(id)arg1;
-- (void)setBottomRowStrokes:(id)arg1;
 - (void)setCellBorder:(id)arg1 atCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
-- (void)setLeftColumnStrokes:(id)arg1;
 - (void)setMaxOrder:(int)arg1;
-- (void)setRightColumnStrokes:(id)arg1;
 - (void)setStroke:(id)arg1 forBottomOfRow:(unsigned int)arg2 order:(int)arg3 columnRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg4;
 - (void)setStroke:(id)arg1 forLeftOfColumn:(unsigned short)arg2 order:(int)arg3 rowRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg4;
 - (void)setStroke:(id)arg1 forRightOfColumn:(unsigned short)arg2 order:(int)arg3 rowRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg4;
 - (void)setStroke:(id)arg1 forTopOfRow:(unsigned int)arg2 order:(int)arg3 columnRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg4;
-- (void)setTopRowStrokes:(id)arg1;
 - (id)strokeLayerForBottomOfRow:(unsigned int)arg1;
 - (id)strokeLayerForLeftSideOfColumn:(unsigned short)arg1;
 - (id)strokeLayerForRightSideOfColumn:(unsigned short)arg1;
 - (id)strokeLayerForTopOfRow:(unsigned int)arg1;
 - (void)swapRowAtIndex:(unsigned int)arg1 withRowAtIndex:(unsigned int)arg2;
 - (id)topRowStrokes;
+- (void)updateForTableSize:(struct { unsigned int x1; unsigned int x2; })arg1;
 
 @end

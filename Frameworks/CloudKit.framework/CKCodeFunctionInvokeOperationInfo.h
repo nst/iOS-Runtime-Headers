@@ -4,13 +4,17 @@
 
 @interface CKCodeFunctionInvokeOperationInfo : CKDatabaseOperationInfo {
     NSString * _functionName;
-    NSData * _serializedParameters;
+    bool  _local;
+    NSArray * _requestLocalSerializations;
     NSString * _serviceName;
+    bool  _shouldFetchAssetContentInMemory;
 }
 
 @property (nonatomic, copy) NSString *functionName;
-@property (nonatomic, copy) NSData *serializedParameters;
+@property (nonatomic) bool local;
+@property (nonatomic, copy) NSArray *requestLocalSerializations;
 @property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic) bool shouldFetchAssetContentInMemory;
 
 + (bool)supportsSecureCoding;
 
@@ -18,10 +22,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)functionName;
 - (id)initWithCoder:(id)arg1;
-- (id)serializedParameters;
+- (bool)local;
+- (id)requestLocalSerializations;
 - (id)serviceName;
 - (void)setFunctionName:(id)arg1;
-- (void)setSerializedParameters:(id)arg1;
+- (void)setLocal:(bool)arg1;
+- (void)setRequestLocalSerializations:(id)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
+- (bool)shouldFetchAssetContentInMemory;
 
 @end

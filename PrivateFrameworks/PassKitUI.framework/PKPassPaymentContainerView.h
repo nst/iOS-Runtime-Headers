@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassPaymentContainerView : PKPassFooterContentView <PKAuthenticatorDelegate, PKContactlessInterfaceSessionDelegate, PKForegroundActiveArbiterObserver, PKPassPaymentApplicationViewDelegate, PKPassPaymentPayStateViewDelegate, PKPassPaymentSummaryViewDelegate, PKPaymentServiceDelegate, PKUIForegroundActiveArbiterDeactivationObserver> {
+@interface PKPassPaymentContainerView : PKPassFooterContentView <PKAuthenticatorDelegate, PKContactlessInterfaceSessionDelegate, PKForegroundActiveArbiterObserver, PKPassPaymentApplicationViewDelegate, PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate, PKUIForegroundActiveArbiterDeactivationObserver> {
     bool  _VASInfoViewHidden;
     bool  _VASInfoViewSuppressedTransactionUpdate;
     bool  _VASInfoViewWillShow;
@@ -31,14 +31,12 @@
     double  _lastFingerOnTime;
     double  _lastTransactionTime;
     PKPassLibrary * _passLibrary;
-    UIViewController * _passcodePresenterVC;
+    UIViewController * _passcodeVC;
     unsigned long long  _payStateTransitionCounter;
     PKPassPaymentPayStateView * _payStateView;
     PKPaymentService * _paymentService;
-    PKPassPaymentSummaryView * _paymentSummaryView;
     long long  _pearlState;
     PKPeerPaymentAccountResolutionController * _peerPaymentAccountResolutionController;
-    PKPassPeerPaymentAccountResolutionView * _peerPaymentAccountResolutionView;
     PKPeerPaymentService * _peerPaymentService;
     bool  _pendingAutomaticAuthorization;
     NSMutableArray * _pendingGlyphStateCompletionHandlers;
@@ -51,18 +49,19 @@
     bool  _pendingPerformAuthorization;
     NSNumber * _pendingPresentationContextState;
     LAUIPhysicalButtonView * _physicalButtonView;
+    bool  _presentationWasForced;
     bool  _presentingPasscode;
     bool  _recognizing;
     bool  _requiresPasscodeDismissal;
     bool  _returnToSummaryOnFingerOff;
     NSObject<OS_dispatch_source> * _summaryAuthenticationTimer;
-    UIView * _summaryView;
     PKPeerPaymentContactResolver * _transactionFooterContactResolver;
     NSObject<OS_dispatch_source> * _transactionResolutionTimer;
     long long  _transactionSubstate;
     NSObject<OS_dispatch_source> * _transactionTerminalResponseTimer;
     unsigned long long  _transactionUpdateCounter;
     PKFooterTransactionView * _transactionView;
+    PKTransitBalanceModel * _transitBalanceModel;
     NSMutableArray * _transitionCompletionHandlers;
     bool  _transitioning;
     NSMutableArray * _valueAddedPasses;
@@ -85,7 +84,6 @@
 - (void)_activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_addTransitionCompletionHandler:(id /* block */)arg1;
 - (void)_applyLatestContentToViews;
-- (void)_applyLatestTransactionContentWithCompletion:(id /* block */)arg1;
 - (void)_applyPayState:(long long)arg1;
 - (void)_applyPayState:(long long)arg1 withTextOverride:(id)arg2;
 - (void)_applyPayState:(long long)arg1 withTextOverride:(id)arg2 animated:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -101,7 +99,6 @@
 - (void)_beginSummaryAuthenticationIfNecessary;
 - (void)_beginTerminalResponseTimeout;
 - (id)_buttonForState:(long long)arg1;
-- (id)_buttonWithTitle:(id)arg1 alignment:(long long)arg2 action:(SEL)arg3;
 - (bool)_canAuthenticateWithBiometrics;
 - (bool)_canAuthenticateWithPasscode;
 - (void)_cancelBiometricRecognitionAndPromptUserAction:(long long)arg1;
@@ -113,7 +110,6 @@
 - (void)_configureForStyle:(long long)arg1 context:(id)arg2;
 - (void)_configureForValueAddedServiceWithPass:(id)arg1 context:(id)arg2;
 - (void)_didAuthorizePaymentApplicationWithAuthenticationIdentifier:(unsigned long long)arg1;
-- (void)_dismissPile;
 - (id)_emphasisButtonForState:(long long)arg1;
 - (void)_emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2;
 - (void)_emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2 playSystemSound:(bool)arg3;
@@ -122,7 +118,7 @@
 - (void)_endTransition:(bool)arg1;
 - (void)_executePendingGlyphStateCompletionHandlers:(bool)arg1;
 - (void)_executeTransitionCompletionHandlers:(bool)arg1;
-- (id)_filledButtonWithTitle:(id)arg1 alignment:(long long)arg2 action:(SEL)arg3;
+- (id)_filledButtonWithTitle:(id)arg1;
 - (void)_finishHoldingTerminalTransactionSubstateAfterDelay:(double)arg1;
 - (void)_handleContactlessInterfaceSessionDidEnterField:(id)arg1 withProperties:(id)arg2;
 - (bool)_hasValueAddedServicePasses;
@@ -143,7 +139,6 @@
 - (id)_paymentApplicationForAutomaticAuthorizationFromPaymentApplications:(id)arg1;
 - (void)_performActivationStateUpdate:(id /* block */)arg1;
 - (void)_performAuthentication;
-- (id)_preArmButtonTitle;
 - (void)_prearmButtonPressed:(id)arg1;
 - (void)_presentPassWithUniqueIdentifier:(id)arg1 additionalPassUniqueIdentifiers:(id)arg2;
 - (void)_presentPassWithUniqueIdentifier:(id)arg1 additionalPassUniqueIdentifiers:(id)arg2 payState:(long long)arg3;
@@ -165,8 +160,6 @@
 - (bool)_shouldDisplayTransaction:(id)arg1;
 - (bool)_shouldDisplayTransactionView;
 - (bool)_shouldShowTerminalIsNotRequestingPaymentError;
-- (bool)_showPeerPaymentAccountResolutionView;
-- (bool)_showSummaryState;
 - (void)_showTerminalIsNotRequestingPaymentError;
 - (void)_showTerminalIsRequestingPaymentError;
 - (bool)_showTransactionViewDuringPayment;
@@ -177,13 +170,12 @@
 - (void)_transitionViewsFromPayState:(long long)arg1 animated:(bool)arg2;
 - (void)_updateApplicationsView;
 - (void)_updateAuthenticatorState;
-- (void)_updateContentViewsWithMessage:(id)arg1 appLaunchToken:(id)arg2;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
-- (void)_updateContentViewsWithTransaction:(id)arg1 transitProperties:(id)arg2;
-- (void)_updateContentViewsWithTransitProperties:(id)arg1;
+- (void)_updateContentViewsWithTransaction:(id)arg1 transitBalanceModel:(id)arg2;
+- (void)_updateContentViewsWithTransitBalanceModel:(id)arg1;
 - (void)_updateVASInfoViewSuppressedTransactionIfNecessary;
-- (double)_valueAddedServiceInfoViewTopMargin;
 - (void)authenticator:(id)arg1 didRequestUserAction:(long long)arg2;
+- (void)authenticator:(id)arg1 didTransitionToCoachingState:(long long)arg2;
 - (void)authenticator:(id)arg1 didTransitionToPearlState:(long long)arg2;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
@@ -217,15 +209,13 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)payStateView:(id)arg1 revealingCheckmark:(bool)arg2;
 - (void)paymentApplicationView:(id)arg1 didSelectApplication:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentServiceReceivedInterruption;
 - (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
-- (void)summaryView:(id)arg1 didArchiveMessage:(id)arg2;
 - (void)willBecomeHiddenAnimated:(bool)arg1;
 - (void)willBecomeVisibleAnimated:(bool)arg1;
 

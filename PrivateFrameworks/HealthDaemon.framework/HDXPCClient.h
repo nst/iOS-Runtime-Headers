@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
+- (id)_antimonySourceFilterWithSourceManager:(id)arg1;
 - (id)_initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)_watchKitAvailabilityFilter;
 - (id)applicationIdentifier;

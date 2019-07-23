@@ -25,15 +25,10 @@
 @property struct CGSize { double x1; double x2; } presentationSize;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultExtendedControlHeight;
 
 - (id)_inheritedRenderConfig;
 - (unsigned long long)_numberOfColumns:(bool)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
 - (int)candidatesVisualStyle;

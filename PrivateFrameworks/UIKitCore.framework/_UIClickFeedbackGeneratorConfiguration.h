@@ -3,23 +3,32 @@
  */
 
 @interface _UIClickFeedbackGeneratorConfiguration : _UIFeedbackGeneratorUserInteractionDrivenConfiguration {
-    _UIFeedback<_UIFeedbackDiscretePlayable> * _pressedDownFeedback;
-    _UIFeedback<_UIFeedbackDiscretePlayable> * _pressedUpFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> * _clickDownAudioFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> * _clickDownFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> * _clickUpAudioFeedback;
+    _UIFeedback<_UIFeedbackDiscretePlayable> * _clickUpFeedback;
 }
 
-@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *pressedDownFeedback;
-@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *pressedUpFeedback;
+@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownAudioFeedback;
+@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *clickDownFeedback;
+@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpAudioFeedback;
+@property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *clickUpFeedback;
 
 + (id)defaultConfiguration;
 + (id)latchingOffConfiguration;
 + (id)latchingOnConfiguration;
 
 - (void).cxx_destruct;
+- (id)clickDownAudioFeedback;
+- (id)clickDownFeedback;
+- (id)clickUpAudioFeedback;
+- (id)clickUpFeedback;
 - (id)feedbackKeyPaths;
-- (id)pressedDownFeedback;
-- (id)pressedUpFeedback;
 - (long long)requiredSupportLevel;
-- (void)setPressedDownFeedback:(id)arg1;
-- (void)setPressedUpFeedback:(id)arg1;
+- (void)setClickDownAudioFeedback:(id)arg1;
+- (void)setClickDownFeedback:(id)arg1;
+- (void)setClickUpAudioFeedback:(id)arg1;
+- (void)setClickUpFeedback:(id)arg1;
+- (void)setclickDownFeedback:(id)arg1;
 
 @end

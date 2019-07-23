@@ -206,16 +206,14 @@
 
 - (id)pl_safeInitForReadingFromData:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
-
-+ (int)_swift_checkClassAndWarnForKeyedArchivingoperation;
-
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)tsu_securelyUnarchiveObjectWithFile:(id)arg1 ofClasses:(id)arg2;
 + (id)tsu_securelyUnarchiveRoot:(id)arg1 forClass:(Class)arg2;
 + (id)tsu_securelyUnarchiveRoot:(id)arg1 forClasses:(id)arg2;
 
-- (id)tsu_initSecurelyFromData:(id)arg1 error:(id*)arg2;
+// Image: /usr/lib/swift/libswiftFoundation.dylib
+
++ (int)_swift_checkClassAndWarnForKeyedArchiving:(Class)arg1 operation:(int)arg2;
 
 @end

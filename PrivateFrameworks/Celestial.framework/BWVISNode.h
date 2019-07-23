@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_semaphore> * _emitSampleBufferSemaphore;
     bool  _fillExtendedRowsOfOutputBuffer;
     bool  _flushingSBP;
+    BWStats * _ioSurfaceCompressionRatioStats;
     bool  _irisVIS;
     struct OpaqueFigCaptureISPProcessingSession { } * _ispProcessingSession;
     BWLimitedGMErrorLogger * _limitedGMErrorLogger;
@@ -22,11 +23,14 @@
     struct opaqueCMFormatDescription { } * _outputFormatDescription;
     unsigned long long  _outputHeight;
     unsigned long long  _outputWidth;
+    int  _pixelBufferCompressionType;
     struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
     bool  _sphereVideoEnabled;
     int  _stabilizationMethod;
     int  _stabilizationType;
     NSArray * _supportedOutputPixelFormats;
+    unsigned long long  _totalCompressedDataSize;
+    unsigned long long  _totalUncompressedDataSize;
 }
 
 + (void)initialize;
@@ -36,9 +40,11 @@
 - (void)_flushBuffers;
 - (struct __CVBuffer { }*)_newOutputPixelBuffer;
 - (void)_prepareISPProcessingSession;
+- (void)_reportIOSurfaceCompressionCoreAnalyticsData;
 - (int)_setupSampleBufferProcessor;
 - (void)_tallyAndEmitDroppedSample:(id)arg1;
 - (void)_tallyAndEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_tallyCompressedIOSurfaceStatsForSBuf:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_updateOutputRequirements;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;

@@ -25,8 +25,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addNotificationRecord:(id)arg1 shouldRepost:(bool)arg2 forBundleIdentifier:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)_addNotificationRequest:(id)arg1 shouldRepost:(bool)arg2 forBundleIdentifier:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id)_currentConnection;
 - (void)_queue_addConnection:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)_queue_delegateConnectionForBundleIdentifier:(id)arg1;
@@ -39,6 +37,8 @@
 - (void)_queue_removeConnection:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_removeConnectionForAllBundleIdentifiers:(id)arg1;
 - (void)_removeConnectionForAllBundleIdentifiers:(id)arg1;
+- (void)_saveNotificationRecord:(id)arg1 shouldRepost:(bool)arg2 forBundleIdentifier:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_saveNotificationRequest:(id)arg1 shouldRepost:(bool)arg2 forBundleIdentifier:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)addNotificationRequest:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;

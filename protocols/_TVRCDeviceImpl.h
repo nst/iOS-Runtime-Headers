@@ -5,11 +5,12 @@
 
 @required
 
+- (NSDictionary *)alternateIdentifiers;
 - (void)connect;
-- (_TVRXDeviceDescriptor *)descriptor;
 - (void)disconnect;
 - (NSString *)identifier;
 - (_TVRXKeyboardController *)keyboardController;
+- (NSString *)model;
 - (NSString *)name;
 - (unsigned long long)pairingCapability;
 - (void)sendButtonEvent:(TVRCButtonEvent *)arg1;
@@ -18,6 +19,7 @@
 - (void)setAuthenticationSupported:(bool)arg1;
 - (void)setDevice:(_TVRXDevice *)arg1;
 - (NSSet *)supportedButtons;
+- (bool)supportsTouchEvents;
 - (_TVRXVoiceRecorder *)voiceRecorder;
 
 @end

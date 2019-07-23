@@ -18,6 +18,7 @@
         bool respondsToActionContext; 
         bool respondsToGestureProvider; 
         bool respondsToImportStatusManager; 
+        bool respondsToOrigin; 
     }  _delegateFlags;
     bool  _enabled;
     <PXOneUpPresentationImplementationDelegate> * _implementationDelegate;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) <PXImportStatusManager> *importStatusManager;
 @property (nonatomic, readonly) PXAssetReference *initialAssetReference;
 @property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
+@property (nonatomic, readonly) long long origin;
 @property (nonatomic) UIViewController *originalPresentingViewController;
 @property (nonatomic, readonly) PXPhotosDetailsContext *photosDetailsContext;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
@@ -80,6 +82,7 @@
 - (void)invalidatePresentingGeometry;
 - (bool)isEnabled;
 - (id)mediaProvider;
+- (long long)origin;
 - (id)originalPresentingViewController;
 - (id)photosDetailsContext;
 - (id)presentingViewController;

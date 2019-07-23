@@ -3,11 +3,13 @@
  */
 
 @interface AWDHomeKitCameraSnapshot : PBCodable <NSCopying> {
+    int  _certified;
     AWDHomeKitCameraSnapshotMessaging * _controllerMessaging;
     unsigned int  _errorCode;
     bool  _forNotification;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int certified : 1; 
         unsigned int errorCode : 1; 
         unsigned int receivedSnapshotFromAccessory : 1; 
         unsigned int sentSnapshotRequestToAccessory : 1; 
@@ -30,9 +32,11 @@
     AWDHomeKitCameraSnapshotMessaging * _watchMessaging;
 }
 
+@property (nonatomic) int certified;
 @property (nonatomic, retain) AWDHomeKitCameraSnapshotMessaging *controllerMessaging;
 @property (nonatomic) unsigned int errorCode;
 @property (nonatomic) bool forNotification;
+@property (nonatomic) bool hasCertified;
 @property (nonatomic, readonly) bool hasControllerMessaging;
 @property (nonatomic) bool hasErrorCode;
 @property (nonatomic) bool hasForNotification;
@@ -64,6 +68,9 @@
 @property (nonatomic, retain) AWDHomeKitCameraSnapshotMessaging *watchMessaging;
 
 - (void).cxx_destruct;
+- (int)StringAsCertified:(id)arg1;
+- (int)certified;
+- (id)certifiedAsString:(int)arg1;
 - (id)controllerMessaging;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -71,6 +78,7 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)errorCode;
 - (bool)forNotification;
+- (bool)hasCertified;
 - (bool)hasControllerMessaging;
 - (bool)hasErrorCode;
 - (bool)hasForNotification;
@@ -99,9 +107,11 @@
 - (id)residentToPhone;
 - (unsigned int)sentSnapshotRequestToAccessory;
 - (id)sessionID;
+- (void)setCertified:(int)arg1;
 - (void)setControllerMessaging:(id)arg1;
 - (void)setErrorCode:(unsigned int)arg1;
 - (void)setForNotification:(bool)arg1;
+- (void)setHasCertified:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasForNotification:(bool)arg1;
 - (void)setHasIsLocal:(bool)arg1;

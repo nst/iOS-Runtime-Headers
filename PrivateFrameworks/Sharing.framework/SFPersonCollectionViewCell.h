@@ -136,6 +136,7 @@
 - (void)setSelectionHaptic:(id)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setStateBeingRestored:(bool)arg1;
+- (void)setupConstraints;
 - (bool)stateBeingRestored;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)triggerKVOForKeyPaths:(id)arg1 ofObject:(id)arg2;

@@ -12,6 +12,7 @@
         unsigned int domain; 
         unsigned int event; 
     }  event;
+    unsigned int  has_better_path;
     unsigned char  id_chain;
     BOOL  id_str;
     NSObject<OS_xpc_object> * inactive_agent_dictionaries;

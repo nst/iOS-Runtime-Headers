@@ -3,8 +3,9 @@
  */
 
 @interface SFBarRegistration : UIResponder <_SFBarRegistrationToken> {
+    NSOrderedSet * _arrangedBarItems;
     UIBarButtonItem * _backItem;
-    UIView * _bar;
+    UIToolbar * _bar;
     _SFBarManager * _barManager;
     UIBarButtonItem * _bookmarksItem;
     UIBarButtonItem * _forwardItem;
@@ -27,6 +28,7 @@
 - (void)_itemReceivedTap:(id)arg1;
 - (void)_itemReceivedTouchDown:(id)arg1;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (bool)containsBarItem:(long long)arg1;
 - (id)initWithBar:(id)arg1 barManager:(id)arg2 layout:(long long)arg3 persona:(unsigned long long)arg4;
 - (id)popoverSourceInfoForItem:(long long)arg1;
 - (void)setBarItem:(long long)arg1 enabled:(bool)arg2;

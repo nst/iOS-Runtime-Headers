@@ -2,33 +2,54 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VMAccount : NSObject {
-    VMVoicemailManager * _voicemailManager;
+@interface VMAccount : NSObject <NSCopying, NSMutableCopying, VMSecureCoding> {
+    NSUUID * _UUID;
+    NSString * _abbreviatedAccountDescription;
+    NSString * _accountDescription;
+    VMHandle * _handle;
+    NSString * _isoCountryCode;
+    bool  _provisioned;
+    NSString * _serviceName;
 }
 
-@property (nonatomic, retain) VMVoicemailManager *voicemailManager;
+@property (nonatomic, retain) NSUUID *UUID;
+@property (nonatomic, copy) NSString *abbreviatedAccountDescription;
+@property (nonatomic, copy) NSString *accountDescription;
+@property (nonatomic, retain) VMHandle *handle;
+@property (nonatomic, copy) NSString *isoCountryCode;
+@property (getter=isProvisioned, nonatomic) bool provisioned;
+@property (nonatomic, copy) NSString *serviceName;
+
++ (bool)supportsSecureCoding;
++ (id)unarchivedObjectClasses;
++ (id)unarchivedObjectFromData:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
-- (id)allVoicemailsWithFlags:(unsigned long long)arg1 withoutFlags:(unsigned long long)arg2;
-- (void)changePassword:(id)arg1 fromPassword:(id)arg2;
-- (bool)greetingAvailable;
-- (void)handlePasswordNotificationResponse:(id)arg1;
+- (id)UUID;
+- (id)abbreviatedAccountDescription;
+- (id)accountDescription;
+- (id)archivedDataWithError:(id*)arg1;
+- (void)copyPropertiesWithZone:(struct _NSZone { }*)arg1 toAccount:(id)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)handle;
+- (unsigned long long)hash;
 - (id)init;
-- (bool)isMessageWaiting;
-- (bool)isOfflineDueToRoaming;
-- (bool)isOnline;
-- (bool)isSubscribed;
-- (bool)mailboxRequiresSetup;
-- (int)mailboxUsage;
-- (void)moveVoicemailFromTrash:(id)arg1;
-- (void)moveVoicemailToTrash:(id)arg1;
-- (unsigned int)recentUnreadCount;
-- (void)setGreetingType:(long long)arg1 withData:(id)arg2 duration:(unsigned int)arg3;
-- (void)setProvisionalPassword:(id)arg1;
-- (void)setVoicemailManager:(id)arg1;
-- (void)synchronize:(bool)arg1;
-- (unsigned int)unreadCount;
-- (id)voicemailManager;
-- (id)voicemailWithIdentifier:(unsigned long long)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithUUID:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToAccount:(id)arg1;
+- (bool)isProvisioned;
+- (id)isoCountryCode;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)serviceName;
+- (void)setAbbreviatedAccountDescription:(id)arg1;
+- (void)setAccountDescription:(id)arg1;
+- (void)setHandle:(id)arg1;
+- (void)setIsoCountryCode:(id)arg1;
+- (void)setProvisioned:(bool)arg1;
+- (void)setServiceName:(id)arg1;
+- (void)setUUID:(id)arg1;
 
 @end

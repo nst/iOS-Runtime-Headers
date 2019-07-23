@@ -4,6 +4,8 @@
 
 @interface _PFEncodedString : _PFString
 
++ (Class)classForKeyedUnarchiver;
+
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
 - (Class)classForArchiver;

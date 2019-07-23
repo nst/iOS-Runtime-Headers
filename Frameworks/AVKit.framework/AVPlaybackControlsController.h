@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVPlaybackControlsController : NSObject <AVPlayerViewControllerContentViewDelegate, AVRoutePickerViewDelegate, AVScrollViewObserverDelegate, AVTransportControlsViewDelegate> {
+@interface AVPlaybackControlsController : NSObject <AVPlayerViewControllerContentViewDelegate, AVRoutePickerViewInternalDelegate, AVScrollViewObserverDelegate, AVTransportControlsViewDelegate> {
     id  _AVRouteDetectorCoordinatorMultipleRoutesDetectedObserver;
     NSArray * _allVisibilityControllerItems;
     bool  _allowsEnteringFullScreen;
@@ -11,6 +11,7 @@
     bool  _coveringWindow;
     AVTimeFormatter * _elapsedTimeFormatter;
     bool  _entersFullScreenWhenPlaybackBegins;
+    bool  _hasBecomeReadyToPlay;
     bool  _hasPlaybackBegunSincePlayerControllerBecameReadyToPlay;
     bool  _hasSeekableLiveStreamingContent;
     bool  _hasStartedUpdates;
@@ -57,6 +58,7 @@
     UIAlertController * _routePickerAlertController;
     AVScrollViewObserver * _scrollViewObserver;
     bool  _scrubbingOrSeeking;
+    AVSecondScreenContentViewConnection * _secondScreenConnection;
     bool  _shouldIgnoreTimeResolverUpdates;
     bool  _showsDoneButtonWhenFullScreen;
     bool  _showsLoadingIndicator;
@@ -72,8 +74,8 @@
     AVPlaybackControlsVisibilityControllerItem * _turboModePlaybackControlsVisibilityItem;
     NSString * _uniqueIdentifer;
     bool  _updatesNowPlayingInfoCenter;
-    NSString * _videoGravity;
     long long  _videoGravityButtonType;
+    bool  _videoScaled;
     AVVolumeController * _volumeController;
     bool  _volumeControlsCanShowSlider;
     AVPlaybackControlsVisibilityControllerItem * _volumeControlsContainerVisibilityItem;
@@ -93,6 +95,7 @@
 @property (nonatomic) bool entersFullScreenWhenPlaybackBegins;
 @property (nonatomic, readonly) bool entersFullScreenWhenTapped;
 @property (getter=isFullScreen, nonatomic, readonly) bool fullScreen;
+@property (nonatomic) bool hasBecomeReadyToPlay;
 @property (nonatomic) bool hasPlaybackBegunSincePlayerControllerBecameReadyToPlay;
 @property (nonatomic) bool hasSeekableLiveStreamingContent;
 @property (nonatomic) bool hasStartedUpdates;
@@ -138,6 +141,7 @@
 @property (nonatomic) UIAlertController *routePickerAlertController;
 @property (nonatomic, retain) AVScrollViewObserver *scrollViewObserver;
 @property (getter=isScrubbingOrSeeking, nonatomic) bool scrubbingOrSeeking;
+@property (nonatomic, retain) AVSecondScreenContentViewConnection *secondScreenConnection;
 @property (getter=isSeekingEnabled, nonatomic, readonly) bool seekingEnabled;
 @property (nonatomic, readonly) bool shouldEnterFullScreenWhenPlaybackBegins;
 @property (nonatomic) bool shouldIgnoreTimeResolverUpdates;
@@ -164,8 +168,8 @@
 @property (nonatomic, readonly) AVPlaybackControlsVisibilityControllerItem *turboModePlaybackControlsVisibilityItem;
 @property (nonatomic, readonly) NSString *uniqueIdentifer;
 @property (nonatomic) bool updatesNowPlayingInfoCenter;
-@property (nonatomic, copy) NSString *videoGravity;
 @property (nonatomic) long long videoGravityButtonType;
+@property (getter=isVideoScaled, nonatomic) bool videoScaled;
 @property (nonatomic, readonly) AVVolumeController *volumeController;
 @property (nonatomic) bool volumeControlsCanShowSlider;
 @property (nonatomic, readonly) AVPlaybackControlsVisibilityControllerItem *volumeControlsContainerVisibilityItem;
@@ -210,6 +214,8 @@
 - (void)_updatePreferredPlaybackControlsLoadedStatusNotifyingContentViewOfChanges:(bool)arg1;
 - (void)_updatePrefersInspectionSuspended;
 - (void)_updateScrubberAndTimeLabels;
+- (void)_updateSecondScreenConnectionReadyToConnect;
+- (void)_updateSkipButtonsEnableLongPress;
 - (void)_updateVideoGravityButtonType;
 - (void)_updateVolumeButtonGlyph;
 - (void)_updateVolumeSliderValueWithSystemVolume:(float)arg1 animated:(bool)arg2;
@@ -225,6 +231,7 @@
 - (bool)entersFullScreenWhenTapped;
 - (void)handleCurrentRouteSupportsVolumeControlChanged:(id)arg1;
 - (void)handleVolumeChange:(id)arg1;
+- (bool)hasBecomeReadyToPlay;
 - (bool)hasPlaybackBegunSincePlayerControllerBecameReadyToPlay;
 - (bool)hasSeekableLiveStreamingContent;
 - (bool)hasStartedUpdates;
@@ -242,6 +249,7 @@
 - (bool)isSeekingEnabled;
 - (bool)isStartLeftwardContentTransitionButtonEnabled;
 - (bool)isStartRightwardContentTransitionButtonEnabled;
+- (bool)isVideoScaled;
 - (id)loadingIndicatorTimer;
 - (double)loadingIndicatorTimerDelay;
 - (double)maximumTime;
@@ -250,6 +258,8 @@
 - (bool)needsTimeResolver;
 - (id)nowPlayingInfoControllerIfLoaded;
 - (id)observationController;
+- (unsigned long long)overrideRouteSharingPolicyForRoutePickerView:(id)arg1;
+- (id)overrideRoutingContextUIDForRoutePickerView:(id)arg1;
 - (id)pictureInPictureController;
 - (id /* block */)playButtonHandlerForLazyPlayerLoading;
 - (bool)playButtonsShowPauseGlyph;
@@ -292,12 +302,16 @@
 - (void)routePickerViewWillBeginPresentingRoutes:(id)arg1;
 - (id)scrollViewObserver;
 - (void)scrollViewObserverValuesDidChange:(id)arg1;
+- (id)secondScreenConnection;
+- (void)secondScreenConnectionDidBecomeActive:(id)arg1;
+- (void)secondScreenConnectionDidResignActive:(id)arg1;
 - (void)setAVRouteDetectorCoordinatorMultipleRoutesDetectedObserver:(id)arg1;
 - (void)setAllowsEnteringFullScreen:(bool)arg1;
 - (void)setCollapseExpandSliderAnimator:(id)arg1;
 - (void)setContentViewBeingScrolledOrOffScreen:(bool)arg1;
 - (void)setCoveringWindow:(bool)arg1;
 - (void)setEntersFullScreenWhenPlaybackBegins:(bool)arg1;
+- (void)setHasBecomeReadyToPlay:(bool)arg1;
 - (void)setHasPlaybackBegunSincePlayerControllerBecameReadyToPlay:(bool)arg1;
 - (void)setHasSeekableLiveStreamingContent:(bool)arg1;
 - (void)setHasStartedUpdates:(bool)arg1;
@@ -331,6 +345,7 @@
 - (void)setRoutePickerAlertController:(id)arg1;
 - (void)setScrollViewObserver:(id)arg1;
 - (void)setScrubbingOrSeeking:(bool)arg1;
+- (void)setSecondScreenConnection:(id)arg1;
 - (void)setShouldIgnoreTimeResolverUpdates:(bool)arg1;
 - (void)setShowsDoneButtonWhenFullScreen:(bool)arg1;
 - (void)setShowsLoadingIndicator:(bool)arg1;
@@ -344,8 +359,8 @@
 - (void)setTimeResolver:(id)arg1;
 - (void)setTurboModePlaybackControlsPlaceholderView:(id)arg1;
 - (void)setUpdatesNowPlayingInfoCenter:(bool)arg1;
-- (void)setVideoGravity:(id)arg1;
 - (void)setVideoGravityButtonType:(long long)arg1;
+- (void)setVideoScaled:(bool)arg1;
 - (void)setVolumeControlsCanShowSlider:(bool)arg1;
 - (bool)shouldEnterFullScreenWhenPlaybackBegins;
 - (bool)shouldIgnoreTimeResolverUpdates;
@@ -380,7 +395,6 @@
 - (id)turboModePlaybackControlsVisibilityItem;
 - (id)uniqueIdentifer;
 - (bool)updatesNowPlayingInfoCenter;
-- (id)videoGravity;
 - (long long)videoGravityButtonType;
 - (void)volumeButtonLongPressTriggered:(id)arg1;
 - (void)volumeButtonPanChanged:(id)arg1;

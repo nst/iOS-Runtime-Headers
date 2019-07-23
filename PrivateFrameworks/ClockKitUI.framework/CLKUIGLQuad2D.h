@@ -15,7 +15,7 @@
 - (void)_createVertexArray;
 - (void)_deleteVertexArray;
 - (void)encodeGLforSize:(struct CLKUIQuadSize { int x1; int x2; })arg1;
-- (void)prepare;
+- (void)prepareForQuadView:(id)arg1;
 - (void)purge;
 
 @end

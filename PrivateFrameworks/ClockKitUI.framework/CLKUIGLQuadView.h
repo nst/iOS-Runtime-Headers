@@ -10,6 +10,7 @@
     unsigned int  _defaultFramebuffer;
     unsigned int  _depthRenderbuffer;
     unsigned int  _isDepthBufferRequired;
+    unsigned int  _isTimeoutFixRequired;
     struct CGSize { 
         double width; 
         double height; 
@@ -20,8 +21,7 @@
 + (Class)layerClass;
 
 - (void).cxx_destruct;
-- (void)_discardContents;
-- (void)_display;
+- (bool)_displayWithCompletion:(id /* block */)arg1;
 - (void)_handleQuadArrayChange:(id)arg1;
 - (void)_resizeFramebuffer;
 - (void)_setupGL;
@@ -29,6 +29,7 @@
 - (void)addQuad:(id)arg1;
 - (void)addQuadsFromArray:(id)arg1;
 - (void)dealloc;
+- (void)discardContents;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(unsigned long long)arg2;
 - (void)layoutSubviews;
 - (void)removeAllQuads;

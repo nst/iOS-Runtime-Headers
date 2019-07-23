@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_dispatchEventWithBlock:(id /* block */)arg1;
 - (void)archiveWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (id)controller;
 - (id)currentFrameIdentifier;

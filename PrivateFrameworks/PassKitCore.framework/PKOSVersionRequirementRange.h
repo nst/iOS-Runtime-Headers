@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKOSVersionRequirementRange : NSObject {
+@interface PKOSVersionRequirementRange : NSObject <NSCopying, NSSecureCoding> {
     PKOSVersionRequirement * _maximum;
     PKOSVersionRequirement * _minimum;
 }
@@ -10,7 +10,12 @@
 @property (nonatomic, readonly) PKOSVersionRequirement *maximum;
 @property (nonatomic, readonly) PKOSVersionRequirement *minimum;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithMinimumVersion:(id)arg1 maximumVersion:(id)arg2;
 - (id)maximum;

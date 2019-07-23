@@ -21,6 +21,7 @@
 
 - (void)web_beginAnimatedResizeWithUpdates:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (NSData *)web_dataRepresentation;
+- (bool)web_handleKeyEvent:(UIEvent *)arg1;
 - (bool)web_isBackground;
 - (void)web_scrollViewDidEndZooming:(UIScrollView *)arg1 withView:(UIView *)arg2 atScale:(double)arg3;
 - (void)web_scrollViewDidScroll:(UIScrollView *)arg1;

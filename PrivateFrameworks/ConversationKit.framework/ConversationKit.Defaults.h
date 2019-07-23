@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.Defaults : SwiftObject {
+@interface ConversationKit.Defaults : Swift._SwiftObject {
     void demo_currentRequiredParticipantHandles;
     void demo_didOriginateFromFaceTime;
     void demo_fakeParticipantIdentifiers;

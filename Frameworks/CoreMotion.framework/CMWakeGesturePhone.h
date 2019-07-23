@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> * fPrivateQueue;
     NSString * fProcessName;
     int  fScreenDimmingNotificationToken;
+    int  fSelector;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fWakeDispatcher;
     struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor> > { 
         struct __compressed_pair<CMWakeGestureVisitor *, std::__1::default_delete<CMWakeGestureVisitor> > { 
@@ -47,9 +48,10 @@
 - (void)onBacklightServiceUpdated:(unsigned int)arg1;
 - (void)onNotificationControl:(id)arg1;
 - (void)onPowerStateUpdated:(const struct Sample { unsigned int x1; }*)arg1;
-- (void)onWakeUpdated:(const struct Sample { double x1; struct CLGestureReport {} *x2; }*)arg1;
+- (void)onWakeUpdated:(const struct Sample { unsigned long long x1; struct CLGestureReport {} *x2; }*)arg1;
 - (void)playAlert;
 - (void)reenableDetectedStateRecognition;
+- (void)setDelegate:(id)arg1;
 - (bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)startWakeGestureUpdates;
 - (void)stopWakeGestureUpdates;

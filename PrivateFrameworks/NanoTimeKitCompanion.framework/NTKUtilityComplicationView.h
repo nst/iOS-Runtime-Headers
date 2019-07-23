@@ -4,6 +4,7 @@
 
 @interface NTKUtilityComplicationView : UIView <NTKComplicationDisplay, NTKTemplateComplicationDisplay> {
     UIColor * _accentColor;
+    bool  _alwaysEnforcePlatterInset;
     UIImageView * _backgroundPlatter;
     bool  _canUseCurvedText;
     NTKFaceColorScheme * _colorScheme;
@@ -36,12 +37,14 @@
         double bottom; 
         double right; 
     }  _touchEdgeInsets;
+    bool  _useBlockyHighlightCorners;
     bool  _useRoundedFontDesign;
     bool  _usesLegibility;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
 @property (nonatomic, retain) UIColor *accentColor;
+@property (nonatomic) bool alwaysEnforcePlatterInset;
 @property (nonatomic, retain) UIImageView *backgroundPlatter;
 @property (nonatomic) bool canUseCurvedText;
 @property (nonatomic, retain) NTKFaceColorScheme *colorScheme;
@@ -72,6 +75,7 @@
 @property (nonatomic) bool suppressesInternalColorOverrides;
 @property (readonly) NSDate *timeTravelDate;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchEdgeInsets;
+@property (nonatomic) bool useBlockyHighlightCorners;
 @property (nonatomic) bool useRoundedFontDesign;
 @property (nonatomic) bool usesLegibility;
 
@@ -110,6 +114,7 @@
 - (void)_updateLabelsForFontChange;
 - (double)_widthThatFits;
 - (id)accentColor;
+- (bool)alwaysEnforcePlatterInset;
 - (void)applyFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
 - (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 units:(unsigned long long)arg4 brightenedUnits:(unsigned long long)arg5;
 - (id)backgroundPlatter;
@@ -136,6 +141,7 @@
 - (id)platterColor;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setAccentColor:(id)arg1;
+- (void)setAlwaysEnforcePlatterInset:(bool)arg1;
 - (void)setBackgroundPlatter:(id)arg1;
 - (void)setCanUseCurvedText:(bool)arg1;
 - (void)setColorScheme:(id)arg1;
@@ -161,14 +167,17 @@
 - (void)setSuppressesInternalColorOverrides:(bool)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
 - (void)setTouchEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setUseBlockyHighlightCorners:(bool)arg1;
 - (void)setUseRoundedFontDesign:(bool)arg1;
 - (void)setUsesLegibility:(bool)arg1;
 - (id)shadowColor;
 - (bool)shouldUseBackgroundPlatter;
+- (bool)shouldUsePlatterInset;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)suppressesInternalColorOverrides;
 - (id)timeTravelDate;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchEdgeInsets;
+- (bool)useBlockyHighlightCorners;
 - (bool)useRoundedFontDesign;
 - (bool)usesLegibility;
 

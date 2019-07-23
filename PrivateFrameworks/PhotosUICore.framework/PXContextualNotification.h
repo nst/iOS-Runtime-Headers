@@ -29,6 +29,7 @@
         bool shouldPassthroughPointInCoordinateSpace; 
         bool wasTapped; 
         bool wasDiscarded; 
+        bool didAppear; 
         bool didDisappear; 
     }  _delegateRespondsTo;
     UIImage * _image;

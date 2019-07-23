@@ -38,6 +38,7 @@
 - (id)libraryItemsFromAvatarRecords:(id)arg1;
 - (void)load;
 - (id)mutableLibraryItems;
+- (unsigned long long)numberOfRecords;
 - (void)performActionOnItemAtIndex:(unsigned long long)arg1;
 - (void)presentActionSheetForRecordItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)presentEditor:(id)arg1 forCreating:(bool)arg2;
@@ -46,6 +47,7 @@
 - (void)removeItemForRecordAtIndex:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsCreatingAvatar:(bool)arg1;
+- (void)storeDidChangeNotification:(id)arg1;
 - (void)updateForCreatedRecord:(id)arg1;
 - (void)updateForEditedRecord:(id)arg1;
 

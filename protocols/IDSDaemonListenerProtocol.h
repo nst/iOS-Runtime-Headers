@@ -65,7 +65,6 @@
 - (void)didSwitchActivePairedDevice:(NSString *)arg1;
 - (void)didSwitchActivePairedDevice:(NSString *)arg1 forService:(NSString *)arg2 wasHandled:(bool*)arg3;
 - (void)engramDataReceived:(NSDictionary *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;
-- (void)groupSession:(NSString *)arg1 didReceiveReport:(NSArray *)arg2;
 - (void)groupSessionDidTerminate:(NSString *)arg1;
 - (void)groupSessionEnded:(NSString *)arg1 withReason:(unsigned int)arg2 error:(NSError *)arg3;
 - (void)groupShareReceived:(NSData *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;

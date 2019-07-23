@@ -14,7 +14,7 @@
 
 @optional
 
-- (void)didExpressModeStateChange:(unsigned int)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(NSString *)arg2;
 - (void)didPerformValueAddedServiceTransactions:(NSArray *)arg1;
 - (void)didReceiveActivityTimeout:(NSString *)arg1;
 - (void)didReceivePendingServerRequest;

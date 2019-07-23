@@ -20,6 +20,7 @@
 - (void)_dateChangedSetAsString;
 - (id)_sanitizeInputValueForFormatter:(id)arg1;
 - (long long)_timeZoneOffsetFromGMT:(id)arg1;
+- (id)calendarType;
 - (void)controlBeginEditing;
 - (void)controlEndEditing;
 - (id)controlView;
@@ -27,5 +28,6 @@
 - (id)datePicker;
 - (void)dealloc;
 - (id)initWithView:(id)arg1 datePickerMode:(long long)arg2;
+- (bool)shouldPresentGregorianCalendar:(const struct FocusedElementInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntPoint { int x_2_1_1; int x_2_1_2; } x2; double x3; double x4; double x5; double x6; bool x7; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_8_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_8_1_2; } x8; bool x9; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_10_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_10_1_2; } x10; bool x11; bool x12; bool x13; bool x14; bool x15; bool x16; bool x17; int x18; int x19; unsigned char x20; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_21_1_1; } x21; struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x_22_1_1; unsigned int x_22_1_2; unsigned int x_22_1_3; } x22; int x23; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_24_1_1; } x24; }*)arg1;
 
 @end

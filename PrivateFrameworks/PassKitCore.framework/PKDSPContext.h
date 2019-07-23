@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKDSPContext : NSObject <NSCopying> {
+@interface PKDSPContext : NSObject <NSCopying, NSSecureCoding> {
     NSString * _cardholderName;
     unsigned long long  _eventFrequency;
     NSString * _peerPaymentRecipientAddress;
@@ -22,11 +22,15 @@
 @property (nonatomic, copy) NSString *secureElementID;
 @property (nonatomic, copy) NSString *serverEndpointIdentifier;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)cardholderName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)eventFrequency;
 - (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)peerPaymentRecipientAddress;
 - (id)phoneNumber;

@@ -74,7 +74,6 @@
 - (id)init;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (bool)isLastIndexPathWithContent:(id)arg1;
 - (bool)isShowingAllAttributes;
 - (bool)isSnappingEnabled;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

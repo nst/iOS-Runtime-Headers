@@ -9,15 +9,10 @@
     bool  _syncActivity;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (long long)_activityIndicatorStyle;
 - (void)_startAnimating;
 - (void)_stopAnimating;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (void)setVisible:(bool)arg1;
 - (double)shadowPadding;

@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)fieldCellDidTapButton:(PKPaymentSetupFieldCell *)arg1;
 - (bool)fieldCellEditableTextFieldShouldBeginEditing:(PKPaymentSetupFieldCell *)arg1;
 - (bool)fieldCellEditableTextFieldShouldClear:(PKPaymentSetupFieldCell *)arg1;
 - (bool)fieldCellEditableTextFieldShouldReturn:(PKPaymentSetupFieldCell *)arg1;

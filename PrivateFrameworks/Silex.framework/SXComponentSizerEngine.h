@@ -17,6 +17,6 @@
 - (id)factoryMatching;
 - (id)init;
 - (void)removeFactory:(id)arg1;
-- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutAttributes:(id)arg3;
+- (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;
 
 @end

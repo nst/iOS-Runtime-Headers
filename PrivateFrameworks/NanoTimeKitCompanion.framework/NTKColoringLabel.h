@@ -38,6 +38,8 @@
 
 @property (nonatomic, readonly) double _lastLineBaseline;
 @property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } cachedOpticalEdgeInsets;
+@property (nonatomic) bool cachedOpticalEdgeInsetsIsValid;
 @property (nonatomic) struct CGSize { double x1; double x2; } cachedSingleLineSize;
 @property (nonatomic) bool cachedSizeIsValid;
 @property (nonatomic, retain) UIColor *color;
@@ -78,6 +80,8 @@
 - (void)_requeryTextProviderAndNotify:(bool)arg1;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateDynamicTracking;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cachedOpticalEdgeInsets;
+- (bool)cachedOpticalEdgeInsetsIsValid;
 - (struct CGSize { double x1; double x2; })cachedSingleLineSize;
 - (bool)cachedSizeIsValid;
 - (id)color;
@@ -99,6 +103,7 @@
 - (void)setAttributedText:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCachedOpticalEdgeInsetsIsValid:(bool)arg1;
 - (void)setCachedSingleLineSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCachedSizeIsValid:(bool)arg1;
 - (void)setColor:(id)arg1;

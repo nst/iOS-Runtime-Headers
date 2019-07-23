@@ -20,6 +20,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)flightQuery;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)nwActivityLabel;
 - (Class)responseClass;
 - (void)setAppBundleId:(id)arg1;
 - (void)setDate:(id)arg1;

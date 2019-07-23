@@ -26,8 +26,10 @@
 - (id)_homeShareMediaLibraries;
 - (void)_notifyDelegateHomeShareMediaLibrariesDidUpdate:(id)arg1 withChangeSet:(id)arg2;
 - (void)_updateMediaLibrariesWithSharedMPMediaLibraries:(id)arg1;
+- (void)beginDiscoveringMediaLibraries;
 - (void)dealloc;
 - (id)delegate;
+- (void)endDiscoveringMediaLibraries;
 - (id)homeShareMediaLibraries;
 - (id)initWithManager:(id)arg1;
 - (id)manager;

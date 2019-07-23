@@ -49,6 +49,7 @@
 
 - (void).cxx_destruct;
 - (void)CFX_addSticker:(id)arg1 atDropTarget:(id)arg2;
+- (void)CFX_updateAVTAvatarPickerforMessagesAppViewController:(id)arg1;
 - (void)addSticker:(id)arg1;
 - (void)addSticker:(id)arg1 atDropTarget:(id)arg2;
 - (id)animatedPreviewProcessingGroup;
@@ -88,6 +89,7 @@
 - (id)messagesAppsDockContainerView;
 - (id)messagesAppsDockViewController;
 - (void)presentExpandedAppViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
+- (void)refreshEffectBrowserForCameraFlip;
 - (void)removeEffectPickerViewController;
 - (id)selectedAnimojiIdentifierForEffectBrowserViewController:(id)arg1;
 - (id)selectedAppIdentifier;
@@ -109,6 +111,7 @@
 - (void)setMessagesAppsDockContainerView:(id)arg1;
 - (void)setMessagesAppsDockViewController:(id)arg1;
 - (void)setSelectedAppIdentifier:(id)arg1;
+- (bool)shouldRotateCellsForDeviceOrientation;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

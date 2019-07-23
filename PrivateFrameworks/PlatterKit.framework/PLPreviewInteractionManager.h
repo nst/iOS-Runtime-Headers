@@ -20,6 +20,7 @@
 @property (nonatomic) <PLPreviewInteractionManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (setter=_setDidInteractionInitiateWithHint:, nonatomic) bool didInteractionInitiateWithHint;
+@property (nonatomic, readonly) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIViewController<PLPreviewInteractionPresentable> *presentedViewController;
 @property (readonly) Class superclass;
@@ -29,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (bool)_dismissIfPossibleWithTrigger:(long long)arg1;
+- (id)_newPreviewInteractionWithView:(id)arg1;
 - (id)_previewInteraction:(id)arg1 viewControllerPresentationForPresentingViewController:(id)arg2;
 - (id)_previewInteractionHighlighterForPreviewTransition:(id)arg1;
 - (bool)_previewInteractionShouldAutomaticallyTransitionToPreviewAfterDelay:(id)arg1;
@@ -41,6 +43,7 @@
 - (id)delegate;
 - (bool)didInteractionInitiateWithHint;
 - (bool)dismissIfPossible:(id /* block */)arg1;
+- (id)gestureRecognizerForExclusionRelationship;
 - (bool)hasCommittedToPresentation;
 - (id)initWithPresentingViewController:(id)arg1;
 - (bool)presentIfPossible:(id /* block */)arg1;

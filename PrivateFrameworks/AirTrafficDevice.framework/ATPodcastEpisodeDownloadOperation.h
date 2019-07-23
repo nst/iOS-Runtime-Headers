@@ -9,6 +9,7 @@
 
 - (void).cxx_destruct;
 - (id)_podcastsAppBundleID;
+- (id)_urlSession;
 - (void)cancel;
 - (void)execute;
 - (void)finishWithError:(id)arg1;

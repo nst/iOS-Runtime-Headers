@@ -17,6 +17,7 @@
 - (void)client:(SUManagerClient *)arg1 installDidFinish:(SUDescriptor *)arg2;
 - (void)client:(SUManagerClient *)arg1 installDidStart:(SUDescriptor *)arg2;
 - (void)client:(SUManagerClient *)arg1 installPolicyDidChange:(SUInstallPolicy *)arg2;
+- (void)client:(SUManagerClient *)arg1 managedInstallationRequested:(SUInstallPolicy *)arg2;
 - (void)client:(SUManagerClient *)arg1 scanDidCompleteWithNewUpdateAvailable:(SUDescriptor *)arg2 error:(NSError *)arg3;
 - (void)client:(SUManagerClient *)arg1 scanRequestDidFinishForOptions:(SUScanOptions *)arg2 update:(SUDescriptor *)arg3 error:(NSError *)arg4;
 - (void)client:(SUManagerClient *)arg1 scanRequestDidStartForOptions:(SUScanOptions *)arg2;

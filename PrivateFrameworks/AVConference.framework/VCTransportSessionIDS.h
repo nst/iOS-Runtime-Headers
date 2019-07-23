@@ -6,7 +6,6 @@
     VCDatagramChannelIDS * _datagramChannel;
     NSString * _destination;
     bool  _isIDSDCEventUsageErrorReported;
-    bool  _isSessionStarted;
     bool  _requireEncryptionInfo;
     VCIDSSessionInfoSynchronizer * _sessionInfoSynchronizer;
     int  _socket;
@@ -28,6 +27,7 @@
 - (id)destination;
 - (void)didEnableDuplication:(bool)arg1 activeConnection:(id)arg2;
 - (void)discardConnection:(id)arg1;
+- (void)dispatchedProcessDatagramChannelEventInfo:(id)arg1;
 - (int)flushBasebandQueueForConnection:(id)arg1 payloadInfoList:(id)arg2;
 - (bool)getConnectionSetupData:(id*)arg1 withOptions:(id)arg2 error:(id*)arg3;
 - (int)getSignalStrength:(int*)arg1 signalRaw:(int*)arg2 signalGrade:(int*)arg3;
@@ -47,6 +47,7 @@
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
 - (void)processDatagramChannelEventInfo:(id)arg1;
 - (int)registerBasebandNotificationsForConnection:(id)arg1;
+- (void)resetParticipantGenerationCounter;
 - (id)sessionInfoSynchronizer;
 - (void)setConnectionSetupPiggybackBlob:(id)arg1;
 - (void)setConnectionSetupTime;

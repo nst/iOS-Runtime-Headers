@@ -5,6 +5,7 @@
 @interface CKTranscriptCollectionViewLayout : UICollectionViewLayout {
     double  _anchorYPosition;
     NSArray * _associatedLayoutAttributes;
+    bool  _coalesceInvalidations;
     struct CGSize { 
         double width; 
         double height; 
@@ -19,6 +20,7 @@
     NSIndexSet * _indicesOfChatItemsToBeRemovedWithoutFading;
     NSMutableDictionary * _initialParentLayoutAttributes;
     NSMutableIndexSet * _insertedAssociatedLayoutAttributes;
+    bool  _invalidatedViaBoundsChange;
     bool  _isResting;
     NSArray * _layoutAttributes;
     NSArray * _oldAssociatedLayoutAttributes;
@@ -44,6 +46,7 @@
 
 @property (nonatomic) double anchorYPosition;
 @property (nonatomic, copy) NSArray *associatedLayoutAttributes;
+@property (nonatomic) bool coalesceInvalidations;
 @property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, copy) NSArray *decorationLayoutAttributes;
 @property (nonatomic, retain) CADisplayLink *displayLink;
@@ -55,6 +58,7 @@
 @property (nonatomic, retain) NSIndexSet *indicesOfChatItemsToBeRemovedWithoutFading;
 @property (nonatomic, retain) NSMutableDictionary *initialParentLayoutAttributes;
 @property (nonatomic, retain) NSMutableIndexSet *insertedAssociatedLayoutAttributes;
+@property (nonatomic) bool invalidatedViaBoundsChange;
 @property (nonatomic) bool isResting;
 @property (nonatomic, copy) NSArray *layoutAttributes;
 @property (nonatomic, copy) NSArray *oldAssociatedLayoutAttributes;
@@ -70,10 +74,12 @@
 
 - (void).cxx_destruct;
 - (void)_dealloc;
+- (void)_invalidateLayoutForDisplayLink;
 - (double)anchorYPosition;
 - (id)associatedLayoutAttributes;
 - (double)bezierPointForPercentage:(double)arg1 anchor1:(double)arg2 anchor2:(double)arg3 control1:(double)arg4 control2:(double)arg5;
 - (void)clearParentInitialIndexesAndFinalOffsets;
+- (bool)coalesceInvalidations;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (struct CGSize { double x1; double x2; })contentSize;
 - (void)dealloc;
@@ -92,6 +98,7 @@
 - (id)initialParentLayoutAttributes;
 - (id)insertedAssociatedLayoutAttributes;
 - (void)invalidateDisplayLink;
+- (bool)invalidatedViaBoundsChange;
 - (bool)isHoldingBoundsInvalidation;
 - (bool)isResting;
 - (bool)isUsingInitialLayoutAttributesForRotation;
@@ -107,6 +114,7 @@
 - (void)reloadData;
 - (void)setAnchorYPosition:(double)arg1;
 - (void)setAssociatedLayoutAttributes:(id)arg1;
+- (void)setCoalesceInvalidations:(bool)arg1;
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDecorationLayoutAttributes:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
@@ -119,6 +127,7 @@
 - (void)setInitialIndex:(unsigned long long)arg1 forParentOfAssociatedItemInsertedAtIndex:(unsigned long long)arg2;
 - (void)setInitialParentLayoutAttributes:(id)arg1;
 - (void)setInsertedAssociatedLayoutAttributes:(id)arg1;
+- (void)setInvalidatedViaBoundsChange:(bool)arg1;
 - (void)setIsResting:(bool)arg1;
 - (void)setLayoutAttributes:(id)arg1;
 - (void)setOldAssociatedLayoutAttributes:(id)arg1;

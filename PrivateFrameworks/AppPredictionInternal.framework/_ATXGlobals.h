@@ -56,6 +56,8 @@
 - (int)heuristicsEngagementPriorBeta;
 - (id)init;
 - (id)initWithAssetClass:(Class)arg1;
+- (bool)isCrashReporterEnabledForActionPredictions;
+- (bool)isCrashReporterEnabledForAppPredictions;
 - (double)launchSequenceDecayHalflife;
 - (int)locationOfInterestSearchRadius;
 - (int)locationOfInterestUpdateInterval;
@@ -80,6 +82,8 @@
 - (double)notificationsPromotingEngageRateThreshold;
 - (double)notificationsQuietingEngageRateStd;
 - (double)notificationsQuietingEngageRateThreshold;
+- (double)notificationsQuietingProbabilityThreshold;
+- (bool)notificationsQuietingUseLogisticRegression;
 - (double)notificationsSeedSamplingRate;
 - (double)nsuaDonationWeight;
 - (int)numberOfActionsToKeepForLogging;
@@ -88,6 +92,7 @@
 - (int)numberOfTopSASAppsToLog;
 - (bool)onlyUseEligibleForPrediction;
 - (double)penaltyForMultipleActionsPerApp;
+- (double)predictedRouteAcceptThreshold;
 - (double)predictionsForMultiStageLoggingLimit;
 - (double)predictionsPerAppActionLimit;
 - (int)previousAppActionCompareCount;
@@ -102,9 +107,11 @@
 - (double)sessionLoggingLatLongAccuracy;
 - (bool)sessionLoggingLatLongEnable;
 - (bool)sessionLoggingSchoolDistanceEnable;
+- (int)sessionLoggingUniqueAppActionSequenceLength;
 - (bool)sessionLoggingWorkDistanceEnable;
 - (double)sessionObjectLogSamplingRate;
 - (double)shadowLogSamplingRate;
+- (double)shouldIgnoreUpcomingMediaExpirationDateForTV;
 - (int)siriExperienceHighConfidenceIntentCountThreshold;
 - (int)siriExperienceHighConfidenceLaunchCountThreshold;
 - (double)siriExperienceHighConfidenceThreshold;
@@ -115,6 +122,7 @@
 - (double)slotResolutionLaunchDecayHalflife;
 - (double)slotResolutionLocationLaunchDecayHalflife;
 - (double)slotResolutionMotionTypeLaunchDecayHalflife;
+- (double)slotResolutionPartOfWeekLaunchDecayHalflife;
 - (double)slotResolutionPreviousLocationLaunchDecayHalflife;
 - (double)slotResolutionRatioSmoothingThreshold;
 - (double)slotResolutionTimeOfDayLaunchDecayHalflife;
@@ -127,6 +135,7 @@
 - (int)spotlightMaxValidCacheAge;
 - (double)trendingLaunchDecayHalflife;
 - (double)unlockTimeDecayHalflife;
+- (id)whitelistedDonationDaemonBundleIds;
 - (double)wifiSSIDLaunchDecayHalflife;
 
 @end

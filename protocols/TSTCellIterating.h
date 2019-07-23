@@ -12,6 +12,6 @@
 
 @optional
 
-- (TSTInfo *)tableInfo;
+- (TSTTableInfo *)tableInfo;
 
 @end

@@ -31,8 +31,6 @@
 @property (nonatomic, copy) UIColor *trackingBackgroundColor;
 @property (nonatomic, retain) <UIIndexBarVisualStyle> *visualStyle;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (bool)_canDrawContent;
 - (bool)_didSelectEntry:(id)arg1 atIndex:(long long)arg2;
@@ -41,9 +39,6 @@
 - (void)_updateDisplayEntries;
 - (void)_userInteractionStarted;
 - (void)_userInteractionStopped;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundColor;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (double)cachedDisplayHighlightedIndex;

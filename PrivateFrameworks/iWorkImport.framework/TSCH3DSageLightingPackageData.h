@@ -12,7 +12,7 @@
 - (struct Color { float x1; float x2; float x3; float x4; })ambientColorAtIndex:(unsigned long long)arg1;
 - (struct Vector3 { float x1; float x2; float x3; })attenuationAtIndex:(unsigned long long)arg1;
 - (struct Color { float x1; float x2; float x3; float x4; })colorAtIndex:(unsigned long long)arg1 redKey:(id)arg2 greenKey:(id)arg3 blueKey:(id)arg4;
-- (int)coordinateSpaceAtIndex:(unsigned long long)arg1;
+- (long long)coordinateSpaceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (float)cutOffAngleAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
@@ -26,6 +26,6 @@
 - (id)packageName;
 - (struct Vector3 { float x1; float x2; float x3; })positionAtIndex:(unsigned long long)arg1;
 - (struct Color { float x1; float x2; float x3; float x4; })specularColorAtIndex:(unsigned long long)arg1;
-- (int)typeAtIndex:(unsigned long long)arg1;
+- (long long)typeAtIndex:(unsigned long long)arg1;
 
 @end

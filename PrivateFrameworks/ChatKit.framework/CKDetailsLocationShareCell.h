@@ -29,6 +29,7 @@
 - (void)setShowOfferTimeRemaining:(bool)arg1;
 - (void)setTimeRemainingLabel:(id)arg1;
 - (bool)showOfferTimeRemaining;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)timeRemainingLabel;
 - (id)timeStringForTimeInterval:(double)arg1;
 

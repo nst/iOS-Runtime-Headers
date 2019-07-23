@@ -15,12 +15,12 @@
 @property (nonatomic, readonly) bool needsUpdate;
 @property (readonly) _UIStatusBar *statusBar;
 
-+ (id)createItemForIdentifier:(id)arg1 visualProvider:(id)arg2;
++ (id)createItemForIdentifier:(id)arg1 statusBar:(id)arg2;
 + (id)defaultDisplayIdentifier;
 + (id)displayItemIdentifierFromIdentifier:(id)arg1 string:(id)arg2;
 + (id)displayItemIdentifierFromString:(id)arg1;
 + (id)identifier;
-+ (Class)itemClassForIdentifier:(id)arg1 visualProvider:(id)arg2;
++ (Class)itemClassForIdentifier:(id)arg1;
 + (id)itemIdentifierForDisplayItemIdentifier:(id)arg1;
 + (id)itemIdentifierFromString:(id)arg1;
 
@@ -43,6 +43,7 @@
 - (void)setDisplayItems:(id)arg1;
 - (void)setNeedsUpdate;
 - (id)statusBar;
+- (void)updatedDisplayItemsWithData:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;
 
 @end

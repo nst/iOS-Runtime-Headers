@@ -6,6 +6,15 @@
     NSString * __documentURI;
     <IKNetworkRequestLoader> * __requestLoader;
     <IKJSDOMDocumentAppBridge> * _appBridge;
+    struct { 
+        bool hasSetNeedsUpdate; 
+        bool hasSnapshotImpressions; 
+        bool hasRecordedImpressions; 
+        bool hasImpressionsMatchingTag; 
+        bool hasScrollToTop; 
+        bool hasRunTest; 
+    }  _appBridgeFlags;
+    bool  _embeddedScriptExecuted;
     unsigned long long  _itmlIDSequence;
 }
 
@@ -16,6 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) IKDOMElement *documentElement;
 @property (nonatomic, retain) NSString *documentURI;
+@property (getter=isEmbeddedScriptExecuted, nonatomic) bool embeddedScriptExecuted;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) IKDOMImplementation *implementation;
 @property (nonatomic, readonly, retain) NSString *inputEncoding;
@@ -32,6 +42,7 @@
 
 - (void).cxx_destruct;
 - (id)_documentURI;
+- (void)_executeEmbeddedScriptWithExtraInfo:(id)arg1;
 - (id)_requestLoader;
 - (void)_setDocumentURI:(id)arg1;
 - (void)_updateITMLIDRecursivelyForNodePtr:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
@@ -56,18 +67,21 @@
 - (id)initWithAppContext:(id)arg1 qualifiedName:(id)arg2;
 - (id)initWithAppContext:(id)arg1 xmlStr:(id)arg2 error:(id*)arg3;
 - (id)inputEncoding;
+- (bool)isEmbeddedScriptExecuted;
 - (unsigned long long)itmlIDSequence;
 - (bool)markUpdated;
 - (id)matchingImpressions:(id)arg1 :(id)arg2;
 - (id)navigationDocument;
 - (id)nodeName;
 - (long long)nodeType;
+- (void)prepareForPresentationWithExtraInfo:(id)arg1;
 - (id)recordedImpressions:(id)arg1;
 - (void)replace:(id)arg1;
 - (void)runTest:(id)arg1 :(id)arg2;
 - (void)scrollToTop;
 - (void)setAppBridge:(id)arg1;
 - (void)setDocumentURI:(id)arg1;
+- (void)setEmbeddedScriptExecuted:(bool)arg1;
 - (void)setITMLIDForNode:(id)arg1;
 - (void)setItmlIDSequence:(unsigned long long)arg1;
 - (void)setNavigationDocument:(id)arg1;

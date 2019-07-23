@@ -8,7 +8,7 @@
 - (void)encodeWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 - (id)initWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 - (unsigned long long)itemType;
-- (NSDictionary *)recordTypesAndNames;
+- (NSArray *)recordTypesAndNames;
 
 @optional
 

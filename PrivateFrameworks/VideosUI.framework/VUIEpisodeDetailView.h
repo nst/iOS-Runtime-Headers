@@ -4,21 +4,20 @@
 
 @interface VUIEpisodeDetailView : UIScrollView <VUILibraryEpisodeFrameViewDelegate> {
     UIFont * _contentDescriptionFont;
-    TVFocusableTextView * _contentDescriptionView;
-    UIImageView * _contentRatingImageView;
+    VUIFocusableTextView * _contentDescriptionView;
     VUILabel * _dotSeparatorLabel;
     VUILabel * _episodeNumberLabel;
     VUILabel * _episodeTitleLabel;
     <VUIEpisodeDetailViewDelegate> * _episodeViewDelegate;
     VUILibraryEpisodeFrameView * _imageFrameView;
+    VUIMediaTagsView * _mediaBadgeTagsView;
     VUIMediaItem * _mediaItem;
     VUILabel * _releaseDateLabel;
     VUILabel * _seasonNumberLabel;
 }
 
 @property (nonatomic, retain) UIFont *contentDescriptionFont;
-@property (nonatomic, retain) TVFocusableTextView *contentDescriptionView;
-@property (nonatomic, retain) UIImageView *contentRatingImageView;
+@property (nonatomic, retain) VUIFocusableTextView *contentDescriptionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) VUILabel *dotSeparatorLabel;
@@ -27,6 +26,7 @@
 @property (nonatomic) <VUIEpisodeDetailViewDelegate> *episodeViewDelegate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VUILibraryEpisodeFrameView *imageFrameView;
+@property (nonatomic, retain) VUIMediaTagsView *mediaBadgeTagsView;
 @property (nonatomic, retain) VUIMediaItem *mediaItem;
 @property (nonatomic, retain) VUILabel *releaseDateLabel;
 @property (nonatomic, retain) VUILabel *seasonNumberLabel;
@@ -41,7 +41,6 @@
 - (double)_descriptionTopMarginWithBaselineMargin:(double)arg1 otherFont:(id)arg2;
 - (id)contentDescriptionFont;
 - (id)contentDescriptionView;
-- (id)contentRatingImageView;
 - (void)didTapButtonForEpisodeFrameView:(id)arg1;
 - (id)dotSeparatorLabel;
 - (id)episodeNumberLabel;
@@ -50,17 +49,18 @@
 - (id)imageFrameView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)mediaBadgeTagsView;
 - (id)mediaItem;
 - (id)releaseDateLabel;
 - (id)seasonNumberLabel;
 - (void)setContentDescriptionFont:(id)arg1;
 - (void)setContentDescriptionView:(id)arg1;
-- (void)setContentRatingImageView:(id)arg1;
 - (void)setDotSeparatorLabel:(id)arg1;
 - (void)setEpisodeNumberLabel:(id)arg1;
 - (void)setEpisodeTitleLabel:(id)arg1;
 - (void)setEpisodeViewDelegate:(id)arg1;
 - (void)setImageFrameView:(id)arg1;
+- (void)setMediaBadgeTagsView:(id)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setReleaseDateLabel:(id)arg1;
 - (void)setSeasonNumberLabel:(id)arg1;

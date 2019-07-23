@@ -6,15 +6,17 @@
     NSString * _containerIdentifier;
     bool  _isProductionEnvironment;
     FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
+    bool  _shouldBypassCDNForCKAssetURLs;
     bool  _shouldUseCloudd;
-    bool  _shouldUseSecureConnectionForPermanentURLs;
+    bool  _shouldUseSecureConnectionForCKAssetURLs;
 }
 
 @property (nonatomic, readonly, copy) NSString *containerIdentifier;
 @property (nonatomic, readonly) bool isProductionEnvironment;
 @property (nonatomic, readonly) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
+@property (nonatomic) bool shouldBypassCDNForCKAssetURLs;
 @property (nonatomic, readonly) bool shouldUseCloudd;
-@property (nonatomic) bool shouldUseSecureConnectionForPermanentURLs;
+@property (nonatomic) bool shouldUseSecureConnectionForCKAssetURLs;
 
 - (void).cxx_destruct;
 - (void)addOperation:(id)arg1;
@@ -26,8 +28,10 @@
 - (id)networkBehaviorMonitor;
 - (id)permanentURLForRecordID:(id)arg1 field:(long long)arg2;
 - (id)permanentURLForRecordID:(id)arg1 field:(long long)arg2 useSecureConnection:(bool)arg3;
-- (void)setShouldUseSecureConnectionForPermanentURLs:(bool)arg1;
+- (void)setShouldBypassCDNForCKAssetURLs:(bool)arg1;
+- (void)setShouldUseSecureConnectionForCKAssetURLs:(bool)arg1;
+- (bool)shouldBypassCDNForCKAssetURLs;
 - (bool)shouldUseCloudd;
-- (bool)shouldUseSecureConnectionForPermanentURLs;
+- (bool)shouldUseSecureConnectionForCKAssetURLs;
 
 @end

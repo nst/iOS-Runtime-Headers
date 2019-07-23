@@ -15,8 +15,10 @@
 - (bool)contentEqualForAttribute:(int)arg1 withRenditionInfo:(id)arg2;
 - (bool)contentPresentForAttribute:(int)arg1;
 - (void)dealloc;
+- (void)decrementValue:(long long*)arg1 forAttribute:(int)arg2;
 - (id)description;
 - (bool)diverseContentPresentForAttribute:(int)arg1;
+- (void)incrementIndex:(unsigned long long*)arg1 inValues:(id)arg2 forAttribute:(int)arg3;
 - (id)initWithData:(id)arg1 andKeyFormat:(const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)arg2;
 - (id)initWithKeyFormat:(const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)arg1;
 - (bool)isEqual:(id)arg1;

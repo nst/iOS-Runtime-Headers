@@ -10,12 +10,14 @@
     NSArray * _dataArray;
     bool  _endOfData;
     NSError * _error;
+    bool  _hasMessageUUID;
     int  _ion;
     struct iovec { void *x1; unsigned long long x2; } * _iop;
     struct iovec { 
         void *iov_base; 
         unsigned long long iov_len; 
     }  _iov;
+    unsigned char  _messageUUID;
     unsigned long long  _offset;
 }
 
@@ -26,6 +28,8 @@
 @property (nonatomic, retain) NSArray *dataArray;
 @property (nonatomic) bool endOfData;
 @property (nonatomic, readonly) NSError *error;
+@property (nonatomic) bool hasMessageUUID;
+@property (nonatomic, readonly) char *messageUUID;
 
 - (void).cxx_destruct;
 - (struct iovec { void *x1; unsigned long long x2; }*)bytesIOArray;
@@ -35,10 +39,13 @@
 - (id)dataArray;
 - (bool)endOfData;
 - (id)error;
+- (bool)hasMessageUUID;
 - (id)init;
+- (char *)messageUUID;
 - (void)setBytesIOCount:(unsigned long long)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setDataArray:(id)arg1;
 - (void)setEndOfData:(bool)arg1;
+- (void)setHasMessageUUID:(bool)arg1;
 
 @end

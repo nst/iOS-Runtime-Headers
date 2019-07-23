@@ -4,7 +4,7 @@
 
 @interface TSCH3DSceneRenderPipeline : TSCH3DRenderPipeline {
     TSCH3DCamera * mCamera;
-    TSCH3DGLFramebuffer * mFramebuffer;
+    TSCH3DFramebuffer * mFramebuffer;
     TSCH3DSceneRenderPipeline * mOriginal;
     NSNumber * mPreserveFramebufferContent;
     NSNumber * mSamples;
@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, readonly) TSCH3DCamera *camera;
-@property (nonatomic, retain) TSCH3DGLFramebuffer *framebuffer;
+@property (nonatomic, retain) TSCH3DFramebuffer *framebuffer;
 @property (nonatomic, retain) TSCH3DSceneRenderPipeline *original;
 @property (nonatomic) bool preserveFramebufferContent;
 @property (nonatomic, readonly) float renderScale;

@@ -11,6 +11,8 @@
 @property (setter=_setNeedsUpdateWallpaperModificationAllowed:, nonatomic) bool _needsUpdateWallpaperModificationAllowed;
 @property (getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:, nonatomic) bool _wallpaperModificationAllowed;
 
++ (bool)_isCapabilityBasedActivity;
+
 - (void).cxx_destruct;
 - (id)_activityBundleImageConfiguration;
 - (id)_activityImageName;

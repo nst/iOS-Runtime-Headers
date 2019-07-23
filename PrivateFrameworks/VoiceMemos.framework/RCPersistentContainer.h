@@ -13,6 +13,7 @@
     NSPersistentStore * _localStore;
     RCDatabaseMetadata * _metadata;
     NSCloudKitMirroringDelegateOptions * _mirroringOptions;
+    NSSet * _relevantProperties;
     NSString * _transactionAuthor;
     NSMutableArray * _transactionsBuffer;
 }
@@ -23,7 +24,6 @@
 @property (nonatomic, readonly) NSCloudKitMirroringDelegateOptions *mirroringOptions;
 
 + (void)initialize;
-+ (id)mirroringContainer;
 + (id)newObjectModel;
 + (id)sharedContainer;
 
@@ -34,6 +34,7 @@
 - (void)_handleRemoteChangeNotification:(id)arg1;
 - (void)_handleRemoteChangeNotificationOnMainQueue:(id)arg1;
 - (id)_initWithMirroring:(bool)arg1 useXPCStore:(bool)arg2;
+- (bool)_isRelevantTransaction:(id)arg1;
 - (id)_legacyRecordingWithUniqueID:(id)arg1 context:(id)arg2;
 - (void)_migrateDatabaseIfNecessary;
 - (id)_nextTransactionAfterToken:(id)arg1 context:(id)arg2 error:(id*)arg3;

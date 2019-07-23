@@ -5,6 +5,7 @@
 @interface TUAnswerRequest : NSObject <NSSecureCoding, TUCallRequest, TUVideoRequest> {
     long long  _behavior;
     NSDate * _dateAnswered;
+    bool  _downgradeToAudio;
     struct CGSize { 
         double width; 
         double height; 
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSDate *dateAnswered;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool downgradeToAudio;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
 @property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
@@ -38,6 +40,7 @@
 - (long long)behavior;
 - (id)dateAnswered;
 - (id)description;
+- (bool)downgradeToAudio;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCall:(id)arg1;
@@ -48,6 +51,7 @@
 - (bool)pauseVideoToStart;
 - (void)setBehavior:(long long)arg1;
 - (void)setDateAnswered:(id)arg1;
+- (void)setDowngradeToAudio:(bool)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPauseVideoToStart:(bool)arg1;

@@ -17,8 +17,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)remoteKeyboardWindowForScreen:(id)arg1 create:(bool)arg2;
 
 - (double)_adjustedWindowLevelFromLevel:(double)arg1;
@@ -36,11 +34,8 @@
 - (bool)_usesWindowServerHitTesting;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_viewTransformForInterfaceOrientation:(long long)arg1;
 - (bool)_wantsSceneAssociation;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)attachBindable;
+- (void)dealloc;
 - (void)detachBindable;
 - (void)endDisablingInterfaceAutorotation;
 - (void)invalidate;

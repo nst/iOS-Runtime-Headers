@@ -54,6 +54,7 @@
 - (id)fetchScopeListChangesForScopeListSyncAnchor:(struct NSData { Class x1; }*)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (id)fetchTaskForMomentShareURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)fetchTransportScopeForScope:(id)arg1 transportScope:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)getCurrentSyncAnchorWithTransportScope:(id)arg1 scope:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)getLibraryInfoAndStateWithTransportScope:(id)arg1 scope:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)getPushEnvironmentWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusDictionaryWithCompletionHandler:(id /* block */)arg1;
@@ -61,6 +62,7 @@
 - (void)getSystemBudgetsWithCompletionHandler:(id /* block */)arg1;
 - (id)inMemoryDownloadTaskForResource:(id)arg1 transportScope:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)initWithEngineLibrary:(id)arg1;
+- (bool)isResourceDynamic:(id)arg1;
 - (void)noteClientIsBeginningSignificantWork;
 - (void)noteClientIsEndingSignificantWork;
 - (void)openWithCompletionHandler:(id /* block */)arg1;

@@ -53,6 +53,10 @@
 - (void)setTighteningFactorForTruncation:(float)arg1;
 - (void)setUsesOpticalAlignment:(bool)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
+- (void)ik_applyViewElementStyle:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
 + (id)NTKHyphenationParagraphStyle;

@@ -7,18 +7,20 @@
     bool  _isSelectable;
     NSLocale * _locale;
     NSSet * _rangedExclusionPaths;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
     bool  _shouldHyphenate;
     NSCache * _tokenizersCache;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfairLock;
 }
 
 @property (nonatomic, retain) NSMutableArray *attachments;
 @property (nonatomic) bool isSelectable;
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, retain) NSSet *rangedExclusionPaths;
-@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 @property (nonatomic) bool shouldHyphenate;
 @property (nonatomic, retain) NSCache *tokenizersCache;
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } unfairLock;
 
 - (void).cxx_destruct;
 - (id)attachments;
@@ -28,7 +30,6 @@
 - (bool)isSelectable;
 - (id)locale;
 - (id)rangedExclusionPaths;
-- (id)semaphore;
 - (void)setAttachments:(id)arg1;
 - (void)setIsSelectable:(bool)arg1;
 - (void)setRangedExclusionPaths:(id)arg1;
@@ -37,6 +38,7 @@
 - (bool)shouldHyphenate;
 - (bool)supportsSections;
 - (id)tokenizersCache;
+- (struct os_unfair_lock_s { unsigned int x1; })unfairLock;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })wordAtCharIndex:(unsigned long long)arg1 includePreviousWord:(bool)arg2;
 
 @end

@@ -13,6 +13,7 @@
 - (id)array;
 - (id)concurrentQueue;
 - (unsigned long long)count;
+- (void)dealloc;
 - (id)dequeue;
 - (void)enqueue:(id)arg1;
 - (id)init;

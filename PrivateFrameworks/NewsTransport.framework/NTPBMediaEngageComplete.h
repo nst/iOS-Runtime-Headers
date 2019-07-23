@@ -52,6 +52,9 @@
     bool  _isNativeAd;
     bool  _isUserSubscribedToFeed;
     bool  _isVideoInFeed;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
+    NTPBIssueViewData * _issueViewData;
     long long  _mediaDuration;
     NSString * _mediaId;
     int  _mediaPlayLocation;
@@ -117,6 +120,9 @@
 @property (nonatomic) bool hasIsNativeAd;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
 @property (nonatomic) bool hasIsVideoInFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
+@property (nonatomic, readonly) bool hasIssueViewData;
 @property (nonatomic) bool hasMediaDuration;
 @property (nonatomic, readonly) bool hasMediaId;
 @property (nonatomic) bool hasMediaPlayLocation;
@@ -148,6 +154,9 @@
 @property (nonatomic) bool isNativeAd;
 @property (nonatomic) bool isUserSubscribedToFeed;
 @property (nonatomic) bool isVideoInFeed;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
+@property (nonatomic, retain) NTPBIssueViewData *issueViewData;
 @property (nonatomic) long long mediaDuration;
 @property (nonatomic, retain) NSString *mediaId;
 @property (nonatomic) int mediaPlayLocation;
@@ -235,6 +244,9 @@
 - (bool)hasIsNativeAd;
 - (bool)hasIsUserSubscribedToFeed;
 - (bool)hasIsVideoInFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
+- (bool)hasIssueViewData;
 - (bool)hasMediaDuration;
 - (bool)hasMediaId;
 - (bool)hasMediaPlayLocation;
@@ -268,6 +280,9 @@
 - (bool)isNativeAd;
 - (bool)isUserSubscribedToFeed;
 - (bool)isVideoInFeed;
+- (id)issueData;
+- (id)issueExposureData;
+- (id)issueViewData;
 - (long long)mediaDuration;
 - (id)mediaId;
 - (int)mediaPlayLocation;
@@ -337,6 +352,9 @@
 - (void)setIsNativeAd:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;
 - (void)setIsVideoInFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
+- (void)setIssueViewData:(id)arg1;
 - (void)setMediaDuration:(long long)arg1;
 - (void)setMediaId:(id)arg1;
 - (void)setMediaPlayLocation:(int)arg1;

@@ -5,9 +5,11 @@
 @interface MBEngine : NSObject {
     MBAppManager * _appManager;
     MBDebugContext * _debugContext;
+    bool  _deviceTransferEngine;
     MBDomainManager * _domainManager;
     NSMutableDictionary * _domainRestoreBehaviors;
     bool  _encrypted;
+    MBProperties * _preflightProperties;
     MBProperties * _properties;
     MBSettingsContext * _settingsContext;
 }
@@ -18,6 +20,7 @@
 @property (getter=isCloudKitEngine, nonatomic, readonly) bool cloudKitEngine;
 @property (getter=shouldCommitIfPossible, nonatomic, readonly) bool commitIfPossible;
 @property (nonatomic, readonly) MBDebugContext *debugContext;
+@property (getter=isDeviceTransferEngine, nonatomic, readonly) bool deviceTransferEngine;
 @property (nonatomic, readonly) MBDomainManager *domainManager;
 @property (nonatomic, retain) NSMutableDictionary *domainRestoreBehaviors;
 @property (getter=isDriveEngine, nonatomic, readonly) bool driveEngine;
@@ -28,6 +31,7 @@
 @property (nonatomic, readonly) NSString *engineTypeString;
 @property (getter=isForegroundRestore, nonatomic, readonly) bool foregroundRestore;
 @property (getter=isMigrate, nonatomic, readonly) bool migrate;
+@property (nonatomic, readonly) MBProperties *preflightProperties;
 @property (nonatomic, readonly) MBProperties *properties;
 @property (getter=isRestoreEngine, nonatomic, readonly) bool restoreEngine;
 @property (nonatomic, readonly) int restoreType;
@@ -57,12 +61,14 @@
 - (bool)isBackgroundRestore;
 - (bool)isBackupEngine;
 - (bool)isCloudKitEngine;
+- (bool)isDeviceTransferEngine;
 - (bool)isDriveEngine;
 - (bool)isForegroundRestore;
 - (bool)isMigrate;
 - (bool)isRestoreEngine;
 - (bool)isServiceEngine;
 - (id)localRootPathForDomain:(id)arg1;
+- (id)preflightProperties;
 - (id)properties;
 - (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
 - (long long)restoreBehaviorForDomain:(id)arg1 error:(id*)arg2;

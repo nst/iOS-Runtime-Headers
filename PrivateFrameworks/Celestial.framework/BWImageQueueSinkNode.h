@@ -56,6 +56,7 @@
 - (void)_collectUnconsumedBuffersWithReason:(id)arg1;
 - (struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)_createContextForBuffer:(struct opaqueCMSampleBuffer { }*)arg1 bufferId:(unsigned long long)arg2 framePTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (double)_displayTimeSyncedWithFramePTS:(double)arg1;
+- (bool)_doesCaptureDeviceHaveISPJitter;
 - (void)_ensureImageQueue;
 - (id)_inputFormatRequirements;
 - (void)_processBufferContext:(struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x4; void*x5; long long x6; int x7; unsigned int x8; long long x9; }*)arg1;

@@ -3,13 +3,15 @@
  */
 
 @interface NUANFArticleAdManagerFactory : NSObject <NUArticleAdManagerFactory> {
+    <NUAdControllerFactory> * _adControllerFactory;
     <NUAdMetadataFactory> * _adMetadataFactory;
     <NUAdProvider> * _adProvider;
     <NUDevice> * _device;
     <NUAdLayoutOptionsFactory> * _layoutOptionsFactory;
-    <NUAdSettings> * _settings;
+    <NUAdContextProvider> * _subscriptionAdContextProvider;
 }
 
+@property (nonatomic, readonly) <NUAdControllerFactory> *adControllerFactory;
 @property (nonatomic, readonly) <NUAdMetadataFactory> *adMetadataFactory;
 @property (nonatomic, readonly) <NUAdProvider> *adProvider;
 @property (readonly, copy) NSString *debugDescription;
@@ -17,16 +19,17 @@
 @property (nonatomic, readonly) <NUDevice> *device;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <NUAdLayoutOptionsFactory> *layoutOptionsFactory;
-@property (nonatomic, readonly) <NUAdSettings> *settings;
+@property (nonatomic, readonly) <NUAdContextProvider> *subscriptionAdContextProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)adControllerFactory;
 - (id)adMetadataFactory;
 - (id)adProvider;
-- (id)createArticleAdManagerForArticle:(id)arg1;
+- (id)createArticleAdManagerForArticle:(id)arg1 issue:(id)arg2;
 - (id)device;
-- (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 settings:(id)arg3 device:(id)arg4 layoutOptionsFactory:(id)arg5;
+- (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 adControllerFactory:(id)arg3 device:(id)arg4 layoutOptionsFactory:(id)arg5 subscriptionAdContextProvider:(id)arg6;
 - (id)layoutOptionsFactory;
-- (id)settings;
+- (id)subscriptionAdContextProvider;
 
 @end

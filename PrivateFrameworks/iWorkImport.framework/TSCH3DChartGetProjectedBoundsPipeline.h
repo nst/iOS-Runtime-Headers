@@ -372,7 +372,7 @@
         } mMax; 
     }  mOrientBounds;
     TSCH3DCamera * mOriginalCamera;
-    struct ChartScenePropertyAccessor { id x1; } * mOriginalSceneAccessor;
+    TSCH3DChartScenePropertyAccessor * mOriginalSceneAccessor;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 

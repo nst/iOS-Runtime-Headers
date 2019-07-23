@@ -17,8 +17,7 @@
 - (void)_pageChangedNotification:(id)arg1;
 - (void)_pdfViewZoomToRect:(id)arg1;
 - (void)_selectionChangedNotification:(id)arg1;
-- (void)_setupAutoScaleFactor;
-- (void)_setupScrollViewContentSize;
+- (void)_setupDocumentViewSize;
 - (void)_textSelectionDidCopyDataNotification:(id)arg1;
 - (void)_textSelectionDidCopyStringNotification:(id)arg1;
 - (void)_textSelectionPointChangedNotification:(id)arg1;
@@ -26,15 +25,15 @@
 - (void)_textSelectionStateChangedNotification:(id)arg1;
 - (void)_updateDocumentIsLocked;
 - (void)_updatePageCount;
+- (void)_updateSelectionRects;
+- (void)_updateTextSelectionPoints;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)beginPDFViewRotation:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)cancelFindString;
 - (void)cancelFindStringWithHighlightsCleared:(bool)arg1;
 - (void)clearSearchHighlights;
 - (void)copy;
 - (void)didMatchString:(id)arg1;
 - (void)documentDidEndDocumentFind:(id)arg1;
-- (void)endPDFViewRotation;
 - (void)findString:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)focusOnSearchResultAtIndex:(unsigned long long)arg1;
 - (void)goToPageIndex:(long long)arg1;
@@ -44,11 +43,9 @@
 - (void)setDocumentData:(id)arg1;
 - (void)setMaximumZoomScale:(double)arg1;
 - (void)setMinimumZoomScale:(double)arg1;
-- (void)setScrollViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setup;
 - (void)setupPDFView;
 - (void)unlockWithPassword:(id)arg1;
-- (void)updatePDFViewLayout:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 boundsInView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 scrollViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 zoomScale:(double)arg4;
+- (void)updatePDFViewLayout:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scrollViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 zoomScale:(double)arg4;
 - (void)viewDidLoad;
 
 @end

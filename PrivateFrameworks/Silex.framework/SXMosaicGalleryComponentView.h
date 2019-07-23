@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXMosaicGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXMosaicGalleryLayouterDataSource, SXTextSourceDataSource, SXViewportChangeListener> {
-    <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
+@interface SXMosaicGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXFullscreenCaptionDataSource, SXImageViewDelegate, SXMosaicGalleryLayouterDataSource, SXViewportChangeListener> {
     NSMutableSet * _exposedGalleryItems;
     SXFullscreenCanvasController * _fullScreenCanvasController;
     SXMosaicGalleryLayouter * _galleryLayouter;
@@ -15,7 +14,6 @@
     NSMutableArray * _visibleImageViews;
 }
 
-@property (nonatomic, readonly) <SXFullscreenCanvasControllerFactory> *canvasControllerFactory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *exposedGalleryItems;
@@ -31,16 +29,14 @@
 @property (nonatomic, readonly) NSMutableArray *visibleImageViews;
 
 - (void).cxx_destruct;
-- (id)additionsForTextSource:(id)arg1;
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsGalleryType;
 - (unsigned long long)analyticsMediaType;
-- (id)canvasControllerFactory;
-- (id)contentSizeCategoryForTextSource:(id)arg1;
+- (id)componentTextStyleForIdentifier:(id)arg1 inheritingFromComponentTextStyle:(id)arg2;
+- (id)contentSizeCategoryForCaption:(id)arg1;
 - (void)createMediaViewEventForGalleryItem:(id)arg1;
 - (void)discardContents;
 - (id)documentColumnLayoutForGalleryLayouter:(id)arg1;
-- (id)documentControllerForTextSource:(id)arg1;
 - (id)exposedGalleryItems;
 - (void)finishMediaViewEvent;
 - (void)forceImageViewFullscreen:(id)arg1;
@@ -73,9 +69,7 @@
 - (id)imageViewForItemAtIndex:(unsigned long long)arg1;
 - (id)imageViewForLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)imageViews;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
-- (id)inlineTextStylesForTextSource:(id)arg1;
-- (void)loadComponent:(id)arg1;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 mediaSharingPolicyProvider:(id)arg7 imageViewFactory:(id)arg8 canvasControllerFactory:(id)arg9;
 - (bool)loadedAtleastOneImage;
 - (id)mediaViewEvent;
 - (unsigned long long)numberOfItemsForGalleryLayouter:(id)arg1;
@@ -91,9 +85,9 @@
 - (void)setMediaViewEvent:(id)arg1;
 - (bool)shouldSubmitMediaExposureEventForExposedBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)submitEvents;
-- (id)textResizerForTextSource:(id)arg1;
-- (id)textRulesForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
+- (id)textResizerForCaption:(id)arg1;
+- (id)textRulesForCaption:(id)arg1;
+- (id)textStyleForIdentifier:(id)arg1;
 - (void)visibleBoundsChanged;
 - (id)visibleImageViews;
 - (void)willSubmitMediaExposureEvent:(id)arg1;

@@ -30,6 +30,7 @@
 - (void)_dismissExpressTransitAlert;
 - (void)_scheduleDismissalOfExpressTransitAlertWithTimeout:(double)arg1;
 - (id)appletHistoryFetcher;
+- (bool)candHandleExpressEventsFromPass:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;

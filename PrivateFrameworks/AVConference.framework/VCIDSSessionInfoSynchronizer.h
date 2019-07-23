@@ -27,6 +27,7 @@
     id  _reportingAgentWeak;
     int  _sessionInfoRequestBytesUsed;
     int  _sessionInfoResponseBytesUsed;
+    NSObject<OS_dispatch_queue> * _stateQueue;
     NSMutableDictionary * _subscribedStreams;
 }
 
@@ -53,6 +54,7 @@
 - (id)primaryLinkID;
 - (void)registerPeriodicTask;
 - (id)reportingAgent;
+- (void)resetParticipantGenerationCounter;
 - (id)sessionInfoSynchronizerDelegate;
 - (void)setDuplicationLinkID:(id)arg1;
 - (void)setErrorReponseCallback:(id /* block */)arg1;

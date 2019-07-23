@@ -13,6 +13,10 @@
     PDFRenderingProperties * renderingProperties;
     UIScrollView * scrollView;
     bool  showTextSelectionHandles;
+    NSHashTable * weakPageViewControllers;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  weakPageViewControllersLock;
 }
 
 - (void).cxx_destruct;

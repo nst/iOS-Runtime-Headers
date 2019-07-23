@@ -11,6 +11,7 @@
     NSString * mSenderName;
     NSString * mSourceBundleIdentifier;
     bool  mTransferAccepted;
+    NSURL * mTransferDirectoryURL;
     bool  mTransferFinished;
     NSString * mTransferIdentifier;
     CRKAirDropTransferInfo * mTransferInfo;
@@ -27,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (void)cleanupHiddenTransferItemsIfNeeded;
 - (void)failWithError:(id)arg1;
 - (id)initWithFileURLs:(id)arg1 keepOriginalFiles:(bool)arg2 previewImageData:(id)arg3 senderName:(id)arg4 autoAccept:(bool)arg5;
 - (id)initWithFileURLs:(id)arg1 keepOriginalFiles:(bool)arg2 previewImageData:(id)arg3 senderName:(id)arg4 autoAccept:(bool)arg5 sourceBundleIdentifier:(id)arg6;

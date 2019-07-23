@@ -4,11 +4,13 @@
 
 @interface AWDHomeKitAccessoryRelaySetup : PBCodable <NSCopying> {
     int  _actionType;
+    int  _certified;
     unsigned int  _duration;
     int  _errorCode;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int actionType : 1; 
+        unsigned int certified : 1; 
         unsigned int duration : 1; 
         unsigned int errorCode : 1; 
     }  _has;
@@ -18,9 +20,11 @@
 }
 
 @property (nonatomic) int actionType;
+@property (nonatomic) int certified;
 @property (nonatomic) unsigned int duration;
 @property (nonatomic) int errorCode;
 @property (nonatomic) bool hasActionType;
+@property (nonatomic) bool hasCertified;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasErrorCode;
 @property (nonatomic, readonly) bool hasReason;
@@ -32,8 +36,11 @@
 
 - (void).cxx_destruct;
 - (int)StringAsActionType:(id)arg1;
+- (int)StringAsCertified:(id)arg1;
 - (int)actionType;
 - (id)actionTypeAsString:(int)arg1;
+- (int)certified;
+- (id)certifiedAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -41,6 +48,7 @@
 - (unsigned int)duration;
 - (int)errorCode;
 - (bool)hasActionType;
+- (bool)hasCertified;
 - (bool)hasDuration;
 - (bool)hasErrorCode;
 - (bool)hasReason;
@@ -52,9 +60,11 @@
 - (bool)readFrom:(id)arg1;
 - (id)reason;
 - (void)setActionType:(int)arg1;
+- (void)setCertified:(int)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setHasActionType:(bool)arg1;
+- (void)setHasCertified:(bool)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;

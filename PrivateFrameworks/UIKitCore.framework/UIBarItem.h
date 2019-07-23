@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIBarItem : NSObject <DebugHierarchyObject_Fallback, NSCoding, UIAppearance> {
+@interface UIBarItem : NSObject <NSCoding, UIAppearance> {
     bool  _hasCustomizableInstanceAppearanceModifications;
     UIImage * _largeContentSizeImage;
     struct UIEdgeInsets { 
@@ -35,8 +35,6 @@
 @property (nonatomic) long long tag;
 @property (nonatomic, copy) NSString *title;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_appearanceBlindViewClasses;
 + (id)_appearanceWhenContainedIn:(id)arg1;
 + (id)appearance;
@@ -68,10 +66,5 @@
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (long long)tag;
 - (id)titleTextAttributesForState:(unsigned long long)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 @end

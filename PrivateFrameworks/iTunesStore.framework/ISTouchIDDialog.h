@@ -4,6 +4,7 @@
 
 @interface ISTouchIDDialog : ISDialog {
     NSString * _body;
+    bool  _isDualAction;
     bool  _isFree;
     NSLock * _lock;
     SSPaymentSheet * _paymentSheet;
@@ -13,6 +14,7 @@
 @property (nonatomic, copy) NSString *body;
 @property (copy) NSString *fallbackExplanation;
 @property (copy) NSString *fallbackMessage;
+@property (readonly) bool isDualAction;
 @property (nonatomic) bool isFree;
 @property (nonatomic, copy) NSString *username;
 
@@ -24,6 +26,7 @@
 - (id)fallbackExplanation;
 - (id)fallbackMessage;
 - (id)initWithDialogDictionary:(id)arg1;
+- (bool)isDualAction;
 - (bool)isFree;
 - (id)paymentSheet;
 - (void)setBody:(id)arg1;

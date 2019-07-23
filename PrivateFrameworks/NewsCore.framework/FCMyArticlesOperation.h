@@ -13,7 +13,7 @@
     NSArray * _feedItems;
     id /* block */  _feedItemsChangedHandler;
     unsigned long long  _maxNumberOfFeedsToQuery;
-    FCFeedPersonalizedArticles * _nonEditorialPersonalizedArticles;
+    FCFeedPersonalizedItems * _nonEditorialPersonalizedArticles;
     unsigned long long  _perFeedLimit;
     bool  _streamFeedItems;
 }
@@ -29,7 +29,7 @@
 @property (nonatomic, copy) id /* block */ feedItemsChangedHandler;
 @property (nonatomic) unsigned long long maxNumberOfFeedsToQuery;
 @property (readonly, copy) NSArray *nonEditorialFeedItems;
-@property (retain) FCFeedPersonalizedArticles *nonEditorialPersonalizedArticles;
+@property (retain) FCFeedPersonalizedItems *nonEditorialPersonalizedArticles;
 @property (nonatomic) unsigned long long perFeedLimit;
 @property (nonatomic) bool streamFeedItems;
 

@@ -5,11 +5,11 @@
 
 @required
 
-- (bool)isBackupEnabled;
+- (bool)isCloudBackupEnabled;
 - (NSDate *)lastDirtyDate;
 - (NSDate *)lastSyncDate;
 - (CKServerChangeToken *)serverChangeToken;
-- (void)setBackupEnabled:(bool)arg1;
+- (void)setCloudBackupEnabled:(bool)arg1;
 - (void)setLastDirtyDate:(NSDate *)arg1;
 - (void)setLastSyncDate:(NSDate *)arg1;
 - (void)setServerChangeToken:(CKServerChangeToken *)arg1;

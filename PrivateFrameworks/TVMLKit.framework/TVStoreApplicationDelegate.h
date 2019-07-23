@@ -53,7 +53,6 @@
 - (void)setWindow:(id)arg1;
 - (void)setupWithBootURL:(id)arg1;
 - (bool)shouldBeForcedLeftToRight;
-- (bool)shouldUseTabBarAsRootViewController;
 - (bool)supportsIdleModeVisualEffects;
 - (void)updateIdleModeVisualEffectsStatus:(bool)arg1;
 - (id)window;

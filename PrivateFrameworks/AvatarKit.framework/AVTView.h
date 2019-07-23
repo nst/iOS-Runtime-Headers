@@ -22,6 +22,7 @@
     <AVTViewFaceTrackingDelegate> * _faceTrackingDelegate;
     bool  _faceTrackingPaused;
     <SCNSceneRendererDelegate> * _fwdDelegate;
+    bool  _isSensorCovered;
     AVTAvatar * _lastRenderedAvatar;
     unsigned long long  _lastTrackingUpdateTimestamp;
     NSLock * _lock;
@@ -51,6 +52,7 @@
 @property (nonatomic) bool enableReticle;
 @property (nonatomic, readonly) bool faceIsTracked;
 @property (getter=faceTrackingIsPaused, nonatomic) bool faceTrackingPaused;
+@property (getter=isSensorCovered, nonatomic, readonly) bool sensorCovered;
 
 // Image: /System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit
 
@@ -99,6 +101,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(id)arg2;
 - (long long)interfaceOrientation;
 - (bool)isDoubleBuffered;
+- (bool)isSensorCovered;
 - (void)layoutSubviews;
 - (void)lockAvatar;
 - (void)renderer:(id)arg1 didApplyAnimationsAtTime:(double)arg2;
@@ -119,6 +122,7 @@
 - (void)setFaceTrackingDelegate:(id)arg1;
 - (void)setFaceTrackingPaused:(bool)arg1;
 - (void)setInterfaceOrientation:(long long)arg1;
+- (void)setSensorCovered:(bool)arg1;
 - (void)setShowPerfHUD:(bool)arg1;
 - (void)setup;
 - (void)setupOrientation;

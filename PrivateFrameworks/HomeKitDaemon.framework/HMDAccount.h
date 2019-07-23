@@ -45,6 +45,7 @@
 - (id)contact;
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (id)currentDevice;
+- (id)currentDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)destination;
 - (id)deviceForHandle:(id)arg1;
 - (id)deviceForIdentifier:(id)arg1;
@@ -64,6 +65,8 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToAccount:(id)arg1;
 - (bool)isRelatedToAccount:(id)arg1;
+- (id)locallyTrackedAccountHandleModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+- (id)locallyTrackedDeviceModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)logIdentifier;
 - (id)manager;
 - (bool)mergeObject:(id)arg1;

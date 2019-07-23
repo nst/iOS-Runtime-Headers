@@ -3,9 +3,9 @@
  */
 
 @interface MediaControlsMaterialView : UIView {
+    UIView * _backgroundView;
     UIView * _highlightView;
     bool  _highlighted;
-    MTMaterialView * _materialView;
 }
 
 @property (getter=isHighlighted, nonatomic) bool highlighted;

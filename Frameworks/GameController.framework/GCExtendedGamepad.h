@@ -12,9 +12,11 @@
 @property (nonatomic, readonly) GCControllerDirectionPad *dpad;
 @property (nonatomic, readonly) GCControllerButtonInput *leftShoulder;
 @property (nonatomic, readonly) GCControllerDirectionPad *leftThumbstick;
+@property (nonatomic, readonly) GCControllerButtonInput *leftThumbstickButton;
 @property (nonatomic, readonly) GCControllerButtonInput *leftTrigger;
 @property (nonatomic, readonly) GCControllerButtonInput *rightShoulder;
 @property (nonatomic, readonly) GCControllerDirectionPad *rightThumbstick;
+@property (nonatomic, readonly) GCControllerButtonInput *rightThumbstickButton;
 @property (nonatomic, readonly) GCControllerButtonInput *rightTrigger;
 @property (nonatomic, copy) id /* block */ valueChangedHandler;
 
@@ -35,10 +37,12 @@
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
 - (id)leftShoulder;
 - (id)leftThumbstick;
+- (id)leftThumbstickButton;
 - (id)leftTrigger;
 - (bool)reportsAbsoluteDpadValues;
 - (id)rightShoulder;
 - (id)rightThumbstick;
+- (id)rightThumbstickButton;
 - (id)rightTrigger;
 - (id)saveSnapshot;
 - (void)setAllowsRotation:(bool)arg1;

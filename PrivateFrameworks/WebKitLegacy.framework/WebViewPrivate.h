@@ -13,9 +13,6 @@
     bool  _didPerformFirstNavigation;
     WebFixedPositionContent * _fixedPositionContent;
     <WebGeolocationProvider> * _geolocationProvider;
-    struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem> > { 
-        struct HistoryItem {} *m_ptr; 
-    }  _globalHistoryItem;
     int  _keyboardUIMode;
     bool  _keyboardUIModeAccessed;
     <WebNotificationProvider> * _notificationProvider;

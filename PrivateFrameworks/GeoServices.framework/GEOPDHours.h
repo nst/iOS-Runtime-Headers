@@ -26,7 +26,6 @@
 + (id)_allHoursForPlaceData:(id)arg1;
 + (id)completeOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (bool)currentOperatingHoursAvailableForPlaceData:(id)arg1 withTimeZone:(id)arg2;
-+ (id)currentOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (bool)operatingHoursAvailableForPlaceData:(id)arg1;
 
 - (void).cxx_destruct;

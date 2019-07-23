@@ -22,6 +22,5 @@
 - (id)initWithDisplayMode:(id)arg1 mainScreen:(bool)arg2;
 - (double)pixelAspectRatio;
 - (struct CGSize { double x1; double x2; })size;
-- (id)valueForKey:(id)arg1;
 
 @end

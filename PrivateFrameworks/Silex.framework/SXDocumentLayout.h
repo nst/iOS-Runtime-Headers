@@ -2,13 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXDocumentLayout : SXJSONObject
+@interface SXDocumentLayout : NSObject <SXDocumentLayout> {
+    unsigned long long  _columns;
+    long long  _gutter;
+    long long  _margin;
+    long long  _width;
+}
 
 @property (nonatomic, readonly) unsigned long long columns;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long gutter;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long margin;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long width;
 
-- (long long)gutterWithValue:(id)arg1 withType:(int)arg2;
+- (unsigned long long)columns;
+- (long long)gutter;
+- (id)initWithWidth:(long long)arg1 margin:(long long)arg2 gutter:(long long)arg3 columns:(unsigned long long)arg4;
+- (long long)margin;
+- (long long)width;
 
 @end

@@ -52,6 +52,7 @@
     NSOperationQueue * _timedMetadataOperationQueue;
     MPCModelGenericAVItemTimedMetadataRequest * _timedMetadataRequest;
     MPCModelGenericAVItemTimedMetadataResponse * _timedMetadataResponse;
+    NSDictionary * _trackInfo;
     bool  supportsRadioTrackActions;
 }
 
@@ -77,6 +78,7 @@
 @property (nonatomic) long long stationItemLikedState;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsRadioTrackActions;
+@property (nonatomic, retain) NSDictionary *trackInfo;
 
 + (bool)_prefersHighQualityAudioContentForNetworkType:(long long)arg1;
 + (bool)_prefersHighQualityVideoContentForNetworkType:(long long)arg1;
@@ -137,6 +139,7 @@
 - (id)assetCacheProvider;
 - (id)assetSourceStoreFrontID;
 - (id)bookmarkTime;
+- (bool)canUseLoadedAsset;
 - (id)chapterTimeMarkers;
 - (id)cloudAlbumID;
 - (unsigned long long)cloudID;
@@ -186,6 +189,7 @@
 - (bool)mpcReporting_shouldReportPlayEventsToStore;
 - (bool)mpcReporting_shouldUseRelativeTimePositions;
 - (id)mpcReporting_siriInitiated;
+- (id)mpcReporting_trackInfo;
 - (void)notePlaybackFinishedByHittingEnd;
 - (void)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)persistentID;
@@ -217,6 +221,7 @@
 - (void)setSiriInitiated:(id)arg1;
 - (void)setStationItemLikedState:(long long)arg1;
 - (void)setSupportsRadioTrackActions:(bool)arg1;
+- (void)setTrackInfo:(id)arg1;
 - (bool)shouldPreventPlayback;
 - (bool)shouldReportPlayEventsToStore;
 - (bool)shouldShowComposer;
@@ -230,6 +235,7 @@
 - (long long)storeSubscriptionAdamID;
 - (bool)supportsLikedState;
 - (bool)supportsRadioTrackActions;
+- (id)trackInfo;
 - (long long)type;
 - (id)urlTimeMarkers;
 - (bool)useEmbeddedChapterData;

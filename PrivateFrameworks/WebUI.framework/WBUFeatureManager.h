@@ -30,6 +30,7 @@
 @property (getter=isUserRemotelyManagedAndLocallyRestricted, nonatomic, readonly) bool userRemotelyManagedAndLocallyRestricted;
 
 + (long long)accessLevel;
++ (bool)shouldOfferVirtualCards;
 + (id)webui_sharedFeatureManager;
 
 - (void).cxx_destruct;

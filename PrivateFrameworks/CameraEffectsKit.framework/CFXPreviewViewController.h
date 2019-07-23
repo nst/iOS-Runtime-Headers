@@ -45,6 +45,7 @@
 @property (nonatomic, retain) JTClipSequenceExporter *exporter;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CFXMediaItem *mediaItem;
+@property (nonatomic, readonly) struct { double x1; double x2; } normalizedMinimumHitTestArea;
 @property (nonatomic) CFXPlayButtonView *playButton;
 @property (nonatomic) UIView *playerContainerView;
 @property (getter=isPresentingFilterPicker, nonatomic) bool presentingFilterPicker;
@@ -101,11 +102,11 @@
 - (void)effectEditorView:(id)arg1 didEditTextForEffect:(id)arg2 newText:(id)arg3;
 - (void)effectEditorView:(id)arg1 didEndEditingByTappingOutSideEffectAtScreenPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)effectEditorView:(id)arg1 didEndEditingTextForEffect:(id)arg2 wasCancelled:(bool)arg3;
-- (void)effectEditorView:(id)arg1 didMoveEffect:(id)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (void)effectEditorView:(id)arg1 didMoveEffect:(id)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg4;
 - (void)effectEditorView:(id)arg1 didRemoveEffect:(id)arg2;
 - (void)effectEditorView:(id)arg1 didTransformEffect:(id)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)effectEditorView:(id)arg1 effectAtPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(id)arg1 frameForEffect:(id)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(id)arg1 frameForEffect:(id)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4 adjustForMinimumHitTestArea:(bool)arg5;
 - (bool)effectEditorView:(id)arg1 isEffectAtPoint:(struct CGPoint { double x1; double x2; })arg2 effect:(id)arg3;
 - (unsigned long long)effectEditorView:(id)arg1 maximumTextLengthForEffect:(id)arg2;
 - (bool)effectEditorView:(id)arg1 presentCustomTextEditingUI:(id)arg2;
@@ -132,6 +133,7 @@
 - (bool)isEditingEffect;
 - (bool)isPresentingFilterPicker;
 - (id)mediaItem;
+- (struct { double x1; double x2; })normalizedMinimumHitTestArea;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)playButton;
 - (void)playButtonViewDidTapPause:(id)arg1;

@@ -44,17 +44,11 @@
 @property (nonatomic, retain) UIKBRenderingContext *renderingContext;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (bool)_canDrawContent;
 - (void)_generateFactoryIfNeeded;
 - (void)_generateRenderingContextIfNeeded;
 - (bool)_shouldAllowKey:(id)arg1;
 - (bool)_shouldInheritScreenScaleAsContentScaleFactor;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)activateKeys;
 - (id)activeKeyViews;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
@@ -72,6 +66,7 @@
 - (void)deactivateAdaptiveKey:(id)arg1;
 - (void)deactivateKey:(id)arg1 previousState:(int)arg2;
 - (void)deactivateKeys;
+- (void)dealloc;
 - (id)defaultKeyplane;
 - (id)defaultKeyplaneCacheToken;
 - (void)dimKeys:(id)arg1;

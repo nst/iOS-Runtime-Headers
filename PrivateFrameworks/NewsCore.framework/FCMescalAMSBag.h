@@ -35,6 +35,7 @@
 @property (nonatomic, readonly) AMSBagValue *unpersonalizedLookupURL;
 
 + (id)_keySet;
++ (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)bag;

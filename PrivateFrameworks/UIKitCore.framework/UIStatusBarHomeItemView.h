@@ -4,8 +4,6 @@
 
 @interface UIStatusBarHomeItemView : UIStatusBarButtonActionItemView
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)buttonType;
 - (id)contentsImage;
 - (bool)extendsHitTestingFrame;

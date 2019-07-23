@@ -56,6 +56,7 @@
     NSObject<OS_dispatch_group> * _proxyPreparationGroup;
     NSURL * _publicCloudDBURL;
     NSURL * _publicCodeServiceURL;
+    NSURL * _publicDatabaseRPCServiceURL;
     NSURL * _publicDeviceServiceURL;
     CKDKeyValueDiskCache * _publicIdentitiesDiskCache;
     NSURL * _publicMetricsServiceURL;
@@ -146,6 +147,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *proxyPreparationGroup;
 @property (copy) NSURL *publicCloudDBURL;
 @property (copy) NSURL *publicCodeServiceURL;
+@property (copy) NSURL *publicDatabaseRPCServiceURL;
 @property (copy) NSURL *publicDeviceServiceURL;
 @property (nonatomic, retain) CKDKeyValueDiskCache *publicIdentitiesDiskCache;
 @property (copy) NSURL *publicMetricsServiceURL;
@@ -184,6 +186,7 @@
 - (id)account;
 - (id)accountInfoOverride;
 - (void)addClientProxy:(id)arg1;
+- (unsigned long long)aggregatedOutstandingOperationCount;
 - (bool)allowsCellularAccess;
 - (bool)allowsPowerNapScheduling;
 - (id)appContainerIntersectionMetadata;
@@ -272,6 +275,7 @@
 - (id)proxyPreparationGroup;
 - (id)publicCloudDBURL;
 - (id)publicCodeServiceURL;
+- (id)publicDatabaseRPCServiceURL;
 - (id)publicDeviceServiceURL;
 - (id)publicIdentitiesDiskCache;
 - (double)publicIdentitiesExpirationTimeout;
@@ -344,6 +348,7 @@
 - (void)setProxyPreparationGroup:(id)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicCodeServiceURL:(id)arg1;
+- (void)setPublicDatabaseRPCServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
 - (void)setPublicIdentitiesDiskCache:(id)arg1;
 - (void)setPublicMetricsServiceURL:(id)arg1;

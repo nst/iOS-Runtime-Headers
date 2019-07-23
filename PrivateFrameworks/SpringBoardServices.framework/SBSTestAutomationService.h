@@ -4,7 +4,7 @@
 
 @interface SBSTestAutomationService : SBSAbstractSystemService
 
-- (void)resetToHomeScreenAnimated:(bool)arg1 useSafeTransitions:(bool)arg2;
+- (void)resetToHomeScreenAnimated:(bool)arg1;
 - (void)setAlertsEnabled:(bool)arg1;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(bool)arg2;
 - (void)setIdleTimerEnabled:(bool)arg1;

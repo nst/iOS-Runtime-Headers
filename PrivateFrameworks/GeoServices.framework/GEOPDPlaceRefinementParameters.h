@@ -12,12 +12,14 @@
         unsigned int addressGeocodeAccuracyHint : 1; 
         unsigned int placeTypeHint : 1; 
         unsigned int resultProviderId : 1; 
+        unsigned int supportCoordinatesOnlyRefinement : 1; 
     }  _has;
     GEOLatLng * _locationHint;
     unsigned long long  _muid;
     NSString * _placeNameHint;
     int  _placeTypeHint;
     int  _resultProviderId;
+    bool  _supportCoordinatesOnlyRefinement;
     PBUnknownFields * _unknownFields;
 }
 
@@ -33,11 +35,13 @@
 @property (nonatomic, readonly) bool hasPlaceNameHint;
 @property (nonatomic) bool hasPlaceTypeHint;
 @property (nonatomic) bool hasResultProviderId;
+@property (nonatomic) bool hasSupportCoordinatesOnlyRefinement;
 @property (nonatomic, retain) GEOLatLng *locationHint;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic, retain) NSString *placeNameHint;
 @property (nonatomic) int placeTypeHint;
 @property (nonatomic) int resultProviderId;
+@property (nonatomic) bool supportCoordinatesOnlyRefinement;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)formattedAddressLineHintType;
@@ -69,6 +73,7 @@
 - (bool)hasPlaceNameHint;
 - (bool)hasPlaceTypeHint;
 - (bool)hasResultProviderId;
+- (bool)hasSupportCoordinatesOnlyRefinement;
 - (unsigned long long)hash;
 - (id)initWithMapItemToRefine:(id)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (id)initWithMuid:(unsigned long long)arg1 locationHint:(struct { double x1; double x2; })arg2 placeNameHint:(id)arg3 resultProviderId:(int)arg4;
@@ -90,11 +95,14 @@
 - (void)setHasMuid:(bool)arg1;
 - (void)setHasPlaceTypeHint:(bool)arg1;
 - (void)setHasResultProviderId:(bool)arg1;
+- (void)setHasSupportCoordinatesOnlyRefinement:(bool)arg1;
 - (void)setLocationHint:(id)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setPlaceNameHint:(id)arg1;
 - (void)setPlaceTypeHint:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
+- (void)setSupportCoordinatesOnlyRefinement:(bool)arg1;
+- (bool)supportCoordinatesOnlyRefinement;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

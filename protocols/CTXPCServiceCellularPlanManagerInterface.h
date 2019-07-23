@@ -6,6 +6,6 @@
 @required
 
 - (void)addPlanWith:(void *)arg1 request:(void *)arg2 appName:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: CTXPCServiceSubscriptionContext *, CTCellularPlanProvisioningRequest *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, NSError *, void*
-- (void)supportsPlanProvisioning:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: CTXPCServiceSubscriptionContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)supportsPlanProvisioning:(void *)arg1 carrierDescriptors:(void *)arg2 smdpUrl:(void *)arg3 iccidPrefix:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 10: CTXPCServiceSubscriptionContext *, NSArray *, NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 
 @end

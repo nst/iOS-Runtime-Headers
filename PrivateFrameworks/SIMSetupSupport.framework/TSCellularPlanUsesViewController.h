@@ -3,53 +3,42 @@
  */
 
 @interface TSCellularPlanUsesViewController : BFFSplashController <TSSetupFlowItem, UITableViewDataSource, UITableViewDelegate> {
-    UIColor * _buttonSystemBlue;
     NSIndexPath * _chosenComboIndexPath;
     <TSSIMSetupFlowDelegate> * _delegate;
     bool  _hasDoneButton;
-    NSString * _iccid;
     UITableViewCell * _sectionFooter;
     NSArray * _selectedPlanItems;
-    bool  _showAddPlan;
     UITableView * _tableView;
 }
 
-@property (retain) UIColor *buttonSystemBlue;
 @property (retain) NSIndexPath *chosenComboIndexPath;
 @property (readonly, copy) NSString *debugDescription;
 @property <TSSIMSetupFlowDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property bool hasDoneButton;
 @property (readonly) unsigned long long hash;
-@property (readonly) NSString *iccid;
 @property (retain) UITableViewCell *sectionFooter;
 @property (retain) NSArray *selectedPlanItems;
-@property bool showAddPlan;
 @property (readonly) Class superclass;
 @property (retain) UITableView *tableView;
 
 - (void).cxx_destruct;
-- (id)buttonSystemBlue;
 - (id)chosenComboIndexPath;
 - (void)configureDefaultVoice:(id)arg1 configureUserData:(id)arg2 configureIMessage:(id)arg3;
 - (id)delegate;
 - (bool)hasDoneButton;
-- (id)iccid;
-- (id)initWithIccid:(id)arg1 showAddPlan:(bool)arg2 hasDoneButton:(bool)arg3;
+- (id)initWithDoneButton:(bool)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)prepare:(id /* block */)arg1;
 - (void)savePlanUses:(id /* block */)arg1;
 - (id)sectionFooter;
 - (id)selectedPlanItems;
-- (void)setButtonSystemBlue:(id)arg1;
 - (void)setChosenComboIndexPath:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasDoneButton:(bool)arg1;
 - (void)setSectionFooter:(id)arg1;
 - (void)setSelectedPlanItems:(id)arg1;
-- (void)setShowAddPlan:(bool)arg1;
 - (void)setTableView:(id)arg1;
-- (bool)showAddPlan;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;

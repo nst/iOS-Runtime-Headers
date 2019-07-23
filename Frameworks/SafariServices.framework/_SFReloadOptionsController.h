@@ -2,12 +2,10 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener, SFContentBlockerManagerObserver> {
+@interface _SFReloadOptionsController : NSObject <SFContentBlockerManagerObserver> {
     _SFInjectedJavaScriptController * _activityJSController;
     NSMutableDictionary * _domainToUserAgentPolicyMap;
     bool  _hasEnabledContentBlockers;
-    _WKRemoteObjectInterface * _requestDesktopSiteUIProcessPlugInListenerInterface;
-    <RequestDesktopSiteWebProcessPlugInListener> * _requestDesktopSiteWebProcessPlugInListener;
     WKWebView * _webView;
 }
 
@@ -21,9 +19,10 @@
 
 - (void).cxx_destruct;
 - (void)_checkForContentBlockers;
-- (void)_setUpPlugInListenersIfNeeded;
 - (id)activityJSController;
 - (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
+- (id)customUserAgentForSetting:(long long)arg1;
+- (void)customUserAgentSettingForMainFrameURL:(id)arg1 withTimeout:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
 - (bool)hasEnabledContentBlockers;

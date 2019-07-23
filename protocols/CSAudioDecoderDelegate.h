@@ -5,6 +5,6 @@
 
 @required
 
-- (void)audioDecoderDidDecodePackets:(CSAudioDecoder *)arg1 buffer:(NSData *)arg2 timestamp:(unsigned long long)arg3;
+- (void)audioDecoderDidDecodePackets:(CSAudioDecoder *)arg1 buffer:(NSData *)arg2 remoteVAD:(NSData *)arg3 timestamp:(unsigned long long)arg4;
 
 @end

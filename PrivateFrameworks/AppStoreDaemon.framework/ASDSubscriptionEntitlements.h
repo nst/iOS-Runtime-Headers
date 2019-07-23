@@ -3,6 +3,7 @@
  */
 
 @interface ASDSubscriptionEntitlements : NSObject {
+    int  _cacheUpdatedNotificationToken;
     ASDServiceBroker * _serviceBroker;
 }
 
@@ -10,7 +11,10 @@
 
 - (void).cxx_destruct;
 - (id)_initWithServiceBroker:(id)arg1;
+- (void)dealloc;
+- (void)getSubscriptionEntitlementsForActiveAccountWithResultAndExpiryHandler:(id /* block */)arg1;
 - (void)getSubscriptionEntitlementsForActiveAccountWithResultHandler:(id /* block */)arg1;
+- (void)getSubscriptionEntitlementsIgnoreCaches:(bool)arg1 forActiveAccountWithResultAndExpiryHandler:(id /* block */)arg2;
 - (void)getSubscriptionEntitlementsIgnoreCaches:(bool)arg1 forActiveAccountWithResultHandler:(id /* block */)arg2;
 - (id)init;
 - (void)setSubscriptionEntitlementsWithDictionary:(id)arg1 forAccountID:(id)arg2;

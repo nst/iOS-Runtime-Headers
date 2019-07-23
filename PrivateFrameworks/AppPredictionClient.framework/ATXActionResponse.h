@@ -10,6 +10,8 @@
     NSError * _error;
     NSIndexSet * _explicitlyDismissedActionIndices;
     unsigned long long  _feedbackStage;
+    bool  _isRoutable;
+    bool  _isRoutableInternal;
     ATXAction * _matchingIntentDonatedAction;
     NSDate * _predictionDate;
     NSArray * _scoredActions;
@@ -27,6 +29,7 @@
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *explicitlyDismissedActions;
 @property (nonatomic, readonly) unsigned long long feedbackStage;
+@property (nonatomic, readonly) bool isRoutable;
 @property (nonatomic, readonly) ATXAction *matchingIntentDonatedAction;
 @property (nonatomic, readonly) NSDate *predictionDate;
 @property (nonatomic, readonly) NSArray *scoredActions;
@@ -52,13 +55,17 @@
 - (id)initWithScoredActions:(id)arg1 cacheFileData:(id)arg2 consumerSubType:(unsigned char)arg3 error:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToActionResponse:(id)arg1;
+- (bool)isRoutable;
+- (bool)isRoutable;
 - (id)json;
 - (id)jsonData;
 - (id)jsonDescription;
 - (id)matchingIntentDonatedAction;
 - (id)predictionDate;
+- (id)routeDestinationType;
 - (id)scoredActions;
 - (id)sessionId;
+- (void)setRoutableState:(bool)arg1;
 - (id)shownActions;
 - (id)uiFeedbackDate;
 - (void)updateConsumerSubType:(unsigned char)arg1 engagedAction:(id)arg2 shownActions:(id)arg3 feedbackStage:(unsigned long long)arg4 explicitlyDismissedActions:(id)arg5;

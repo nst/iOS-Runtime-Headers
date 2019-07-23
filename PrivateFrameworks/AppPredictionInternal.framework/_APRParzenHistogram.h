@@ -28,6 +28,5 @@
 - (void)pruneHistogram:(id)arg1 threshold:(float)arg2;
 - (void)pruneWithEvents:(id)arg1;
 - (void)removeHistoryForAllBundleIds:(id)arg1;
-- (void)swapWithCoder:(id)arg1;
 
 @end

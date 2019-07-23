@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface AboutDataSource : PSSpecifierDataSource {
+@interface AboutDataSource : PSSpecifierDataSource <NDOAppleCareFlowDelegate> {
     bool  _accessory;
     PSSpecifier * _accessoryDividerSpecifier;
     bool  _cancel;
@@ -15,6 +15,8 @@
     NSString * _loading;
     NSLock * _lock;
     NSMutableDictionary * _mediaDict;
+    NDOManager * _ndoManager;
+    NSArray * _ndoSpecifiers;
     <NSObject> * _photoVideoNotificationToken;
     NSTimer * _reloadTimer;
     NSMutableDictionary * _simCellState;
@@ -22,6 +24,8 @@
 }
 
 @property (nonatomic, retain) NSString *deviceNameToIgnoreOnce;
+@property (nonatomic, retain) NDOManager *ndoManager;
+@property (nonatomic, retain) NSArray *ndoSpecifiers;
 
 - (void).cxx_destruct;
 - (id)_CSNString:(id)arg1;
@@ -41,14 +45,19 @@
 - (void)_loadValues;
 - (id)_macAddress;
 - (id)_macAddressSpecifierKey;
+- (id)_modelNameString;
 - (id)_modelRegionString;
 - (id)_myNumber;
 - (id)_photos:(id)arg1;
+- (id)_productBuildVersionString;
+- (id)_productVersionString;
 - (id)_regulatoryModelNumberString;
 - (void)_setValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)_setValue:(id)arg1 forSpecifierWithKey:(id)arg2;
 - (id)_songs:(id)arg1;
 - (id)_videos:(id)arg1;
+- (id)aboutController;
+- (void)appleCareCoveragePressed:(id)arg1;
 - (bool)areSpecifiersLoaded;
 - (void)cleanupMLReloadTimer;
 - (id)countForKey:(id)arg1;
@@ -60,17 +69,26 @@
 - (id)init;
 - (void)loadSpecifiers;
 - (void)mediaLibraryDidChange:(id)arg1;
+- (id)ndoManager;
+- (id)ndoSpecifiers;
 - (void)newCarrierNotification;
+- (void)outreachFinishedWithCompletion:(unsigned long long)arg1;
 - (void)reloadDeviceName;
 - (void)reloadSpecifiers;
 - (void)setDeviceName:(id)arg1 specifier:(id)arg2;
 - (void)setDeviceNameToIgnoreOnce:(id)arg1;
+- (void)setNdoManager:(id)arg1;
+- (void)setNdoSpecifiers:(id)arg1;
 - (bool)shouldShowSIMSpecifier:(id)arg1;
 - (void)simStatusChangedToReady;
 - (id)specifiersForSpecifier:(id)arg1 observer:(id)arg2;
 - (void)updateCarrierSpecifier:(id)arg1;
+- (void)updateNDOSpecifiersWithPolicy:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)updateProductModelSpecifier:(id)arg1;
+- (void)updateProductVersionSpecifier:(id)arg1;
 - (void)updateSIMSpecifier:(id)arg1;
 - (id)valueForSpecifier:(id)arg1;
+- (id)warrantyDetailText:(id)arg1;
+- (id)warrantySpecifiersFromWarranty:(id)arg1;
 
 @end

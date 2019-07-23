@@ -15,6 +15,7 @@
     FCFeedEdition * _followingEdition;
     NSArray * _followingGroups;
     FCForYouCatchUpOperation * _forYouCatchUpOperation;
+    NSSet * _groupIDs;
     NSHashTable * _groupsFromPage;
     bool  _isFirstPageInRefreshSession;
     bool  _isOffline;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) FCFeedEdition *followingEdition;
 @property (nonatomic, readonly, copy) NSArray *followingGroups;
 @property (nonatomic, readonly) FCForYouCatchUpOperation *forYouCatchUpOperation;
+@property (nonatomic, readonly, copy) NSSet *groupIDs;
 @property (nonatomic, retain) NSHashTable *groupsFromPage;
 @property (nonatomic, readonly) bool isFirstPageInRefreshSession;
 @property (nonatomic, readonly) bool isOffline;
@@ -61,6 +63,7 @@
 - (void).cxx_destruct;
 - (id)_filterTransformationWithFilterOptions:(long long)arg1 groupTypes:(id)arg2 includeArticlesFromGroupTypes:(bool)arg3;
 - (id)allArticleIDs;
+- (id)allGroupIDs;
 - (id)articleIDs;
 - (id)articleIDsContainedByGroupType:(long long)arg1;
 - (id)cloudContext;
@@ -68,6 +71,7 @@
 - (id)configuration;
 - (id)copyWithRefreshSession:(id)arg1;
 - (unsigned long long)countOfArticlesInPrecedingGroup;
+- (unsigned long long)countOfGroupsFromPageWithType:(long long)arg1;
 - (unsigned long long)countOfPrecedingAdjacentGroupsWithTypes:(id)arg1;
 - (id)creationDateOfFollowingGroupWithType:(long long)arg1;
 - (id)creationDateOfGroupWithType:(long long)arg1;
@@ -86,7 +90,10 @@
 - (id)followingGroups;
 - (id)forYouCatchUpOperation;
 - (id)groupFromPageWithType:(long long)arg1;
+- (id)groupIDs;
+- (id)groupOfGroupType:(long long)arg1;
 - (id)groupsFromPage;
+- (bool)hasPrecedingGroupsWithType:(long long)arg1;
 - (id)initWithConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(bool)arg13 forYouCatchUpOperation:(id)arg14;
 - (bool)isFirstPageInRefreshSession;
 - (bool)isNewEdition;

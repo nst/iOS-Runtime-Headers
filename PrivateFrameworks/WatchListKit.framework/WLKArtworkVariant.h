@@ -9,7 +9,6 @@
         double height; 
     }  _artworkSize;
     long long  _artworkType;
-    NSURL * _artworkURL;
     NSString * _artworkURLString;
     NSString * _artworkURLTemplate;
     NSString * _format;

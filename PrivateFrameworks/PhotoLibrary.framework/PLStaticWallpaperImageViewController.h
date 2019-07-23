@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController
+@interface PLStaticWallpaperImageViewController : PLWallpaperImageViewController {
+    bool  _moveAndScaleDisabled;
+}
 
 @property (nonatomic) bool colorSamplingEnabled;
+@property (nonatomic) bool moveAndScaleDisabled;
 
 - (void)_fetchImageForWallPaperAsset:(id)arg1 resultHandler:(id /* block */)arg2;
+- (id)_findSubviewOfView:(id)arg1 withClass:(Class)arg2;
 - (long long)_preferredWhitePointAdaptivityStyle;
 - (id)_wallPaperPreviewControllerForAsset:(id)arg1;
 - (id)_wallPaperPreviewControllerForPhotoIrisAsset:(id)arg1;
@@ -15,10 +19,13 @@
 - (id)initWithPhoto:(id)arg1;
 - (id)initWithUIImage:(id)arg1;
 - (id)initWithUIImage:(id)arg1 name:(id)arg2;
+- (bool)moveAndScaleDisabled;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
 - (void)setColorSamplingEnabled:(bool)arg1;
+- (void)setMoveAndScaleDisabled:(bool)arg1;
 - (void)setWallpaperForLocations:(long long)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (id)wallpaperImage;
 

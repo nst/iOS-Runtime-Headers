@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCPlaybackEngine : NSObject {
+@interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate> {
     NSString * _audioSessionCategory;
     <MPCPlaybackEngineDelegate> * _delegate;
     MPProtocolProxy<MPCPlaybackEngineEventObserving> * _eventObserver;
@@ -20,9 +20,12 @@
 }
 
 @property (nonatomic, copy) NSString *audioSessionCategory;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPCPlaybackEngineDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) MPProtocolProxy<MPCPlaybackEngineEventObserving> *eventObserver;
 @property (nonatomic, retain) MPCPlaybackIntent *fallbackPlaybackIntent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _MPCAVController *implementation;
 @property (nonatomic, readonly) _MPCLeaseManager *leaseManager;
 @property (nonatomic, readonly) _MPCMediaRemotePublisher *mediaRemotePublisher;
@@ -32,11 +35,13 @@
 @property (nonatomic, readonly) _MPCReportingController *reportingController;
 @property (getter=hasScheduledPlaybackStatePreservation, nonatomic) bool scheduledPlaybackStatePreservation;
 @property (getter=isStateRestorationSupported, nonatomic) bool stateRestorationSupported;
+@property (readonly) Class superclass;
 @property (getter=isSystemMusicApplication, nonatomic) bool systemMusicApplication;
 @property (getter=isVideoSupported, nonatomic) bool videoSupported;
 @property (nonatomic, readonly) UIView *videoView;
 
 + (void)preheatPlayback;
++ (bool)requiresMainThread;
 
 - (void).cxx_destruct;
 - (void)_initializePlaybackStack;
@@ -64,6 +69,7 @@
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (id)reportingController;
+- (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(long long)arg2 completion:(id /* block */)arg3;
 - (void)restoreStateWithCompletion:(id /* block */)arg1;
 - (void)schedulePlaybackStatePreservation;
 - (void)setAudioSessionCategory:(id)arg1;

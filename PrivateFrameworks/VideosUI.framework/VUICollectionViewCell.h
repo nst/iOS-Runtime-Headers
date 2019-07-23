@@ -9,6 +9,7 @@
 @property (nonatomic, retain) UIView *childView;
 
 - (void).cxx_destruct;
+- (bool)canBecomeFocused;
 - (id)childView;
 - (void)layoutSubviews;
 - (void)setChildView:(id)arg1;

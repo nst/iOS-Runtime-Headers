@@ -18,6 +18,7 @@
 
 - (long long)buildVersionNumber;
 - (id)init;
+- (bool)isContentAllowedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
 - (bool)isContentBlockedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
 - (bool)isExplicitContentAllowed;
 - (long long)isExplicitContentAllowedOverride;

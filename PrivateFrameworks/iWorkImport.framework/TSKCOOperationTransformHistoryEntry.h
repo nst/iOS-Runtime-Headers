@@ -9,8 +9,8 @@
 }
 
 - (void).cxx_destruct;
-- (bool)applyResult:(id)arg1;
+- (bool)applyResult:(const struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (id)description;
-- (id)initWithOriginalOperation:(id)arg1 transformingOperation:(id)arg2;
+- (id)initWithOriginalOperation:(const struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; }*)arg1 transformingOperation:(const struct shared_ptr<TSKCO::AbstractOperation> { struct AbstractOperation {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 
 @end

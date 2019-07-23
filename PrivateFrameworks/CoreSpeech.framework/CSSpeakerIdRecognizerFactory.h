@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
  */
 
-@interface CSSpeakerIdRecognizerFactory : NSObject <CSAssetManagerDelegate> {
+@interface CSSpeakerIdRecognizerFactory : NSObject <CSVoiceTriggerAssetDownloadMonitorDelegate> {
     bool  _currentlyRetraining;
     NSObject<OS_dispatch_queue> * _stateSerialQueue;
 }
@@ -15,7 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)CSAssetManagerDidDownloadNewAsset:(id)arg1;
+- (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(bool)arg2;
 - (bool)currentlyRetraining;
 - (id)init;
 - (void)setCurrentlyRetraining:(bool)arg1;

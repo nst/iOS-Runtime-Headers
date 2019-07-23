@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteManagement.framework/RemoteManagement
  */
 
-@interface RMBlueprintScheduleCustomDayItem : NSObject {
+@interface RMBlueprintScheduleCustomDayItem : NSObject <NSCopying> {
     unsigned long long  _day;
     NSDateComponents * _endTime;
     NSDateComponents * _startTime;
@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSDateComponents *startTime;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)day;
 - (id)endTime;
 - (void)setDay:(unsigned long long)arg1;

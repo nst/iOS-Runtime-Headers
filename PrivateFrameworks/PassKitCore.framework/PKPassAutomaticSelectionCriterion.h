@@ -4,12 +4,16 @@
 
 @interface PKPassAutomaticSelectionCriterion : NSObject <NSCopying, NSSecureCoding> {
     NSSet * _TCIs;
+    NSData * _mask;
+    NSSet * _primaryTCIs;
     bool  _supportsExpress;
     long long  _technologyType;
     NSString * _type;
 }
 
 @property (nonatomic, copy) NSSet *TCIs;
+@property (nonatomic, copy) NSData *mask;
+@property (nonatomic, copy) NSSet *primaryTCIs;
 @property (nonatomic) bool supportsExpress;
 @property (nonatomic) long long technologyType;
 @property (nonatomic, copy) NSString *type;
@@ -26,6 +30,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)mask;
+- (id)primaryTCIs;
+- (void)setMask:(id)arg1;
+- (void)setPrimaryTCIs:(id)arg1;
 - (void)setSupportsExpress:(bool)arg1;
 - (void)setTCIs:(id)arg1;
 - (void)setTechnologyType:(long long)arg1;

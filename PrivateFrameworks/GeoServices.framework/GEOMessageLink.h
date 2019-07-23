@@ -15,12 +15,10 @@
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
-- (unsigned long long)currentMessageOpeningHoursOptions;
 - (id)initWithMessageLink:(id)arg1;
 - (bool)isVerified;
 - (id)messageBusinessHours;
 - (id)messageID;
-- (id)messageOperationBusinessDates;
 - (id)messageURLString;
 - (id)navBackgroundColorString;
 - (id)navTintColorString;

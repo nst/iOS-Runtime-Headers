@@ -8,10 +8,13 @@
     NSSet * _allAcceptedRemotePaymentInstruments;
     NSArray * _allRemoteDevices;
     NSSet * _allUnavailableRemotePaymentInstruments;
+    PKBankAccountInformation * _bankAccount;
     CNContact * _billingAddress;
+    NSString * _bundleIdentifier;
     CNContact * _cachedRecentAddress;
     NSArray * _clientErrors;
     PKPaymentOptionsDefaults * _defaults;
+    PKDisbursementApplicationInformation * _disbursementApplicationInformation;
     unsigned long long  _holdPendingUpdatesCount;
     NSString * _hostAppLocalizedName;
     NSString * _hostApplicationIdentifier;
@@ -30,6 +33,7 @@
     NSArray * _paymentErrors;
     PKPaymentRequest * _paymentRequest;
     PKPaymentWebService * _paymentWebService;
+    PKCurrencyAmount * _peerPaymentBalanceForAccountPayment;
     PKPaymentPass * _peerPaymentPass;
     PKPeerPaymentQuote * _peerPaymentQuote;
     PKPeerPaymentService * _peerPaymentService;
@@ -47,6 +51,7 @@
     CNContact * _shippingPhone;
     NSString * _shippingType;
     NSMutableDictionary * _statusForPass;
+    NSString * _teamIdentifier;
     NSMutableDictionary * _typeToItemMap;
     NSArray * _unavailablePasses;
     id /* block */  _updateHandler;
@@ -57,13 +62,16 @@
 @property (nonatomic, readonly) NSArray *allNearbyRemoteDevices;
 @property (nonatomic, readonly) NSArray *allRemoteDevices;
 @property (nonatomic, readonly) NSSet *allUnavailableRemotePaymentInstruments;
+@property (nonatomic, retain) PKBankAccountInformation *bankAccount;
 @property (nonatomic, retain) CNContact *billingAddress;
+@property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) CNContact *cachedRecentAddress;
 @property (nonatomic, readonly) NSString *currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSString *defaultPaymentPassUniqueIdentifier;
 @property (nonatomic, retain) PKPaymentOptionsDefaults *defaults;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) PKDisbursementApplicationInformation *disbursementApplicationInformation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
 @property (nonatomic, retain) NSString *hostApplicationIdentifier;
@@ -81,6 +89,7 @@
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (nonatomic, retain) NSArray *paymentSummaryItems;
 @property (nonatomic, retain) PKPaymentWebService *paymentWebService;
+@property (nonatomic, retain) PKCurrencyAmount *peerPaymentBalanceForAccountPayment;
 @property (nonatomic, retain) PKPaymentPass *peerPaymentPass;
 @property (nonatomic, retain) PKPeerPaymentQuote *peerPaymentQuote;
 @property (nonatomic, retain) PKPeerPaymentService *peerPaymentService;
@@ -99,6 +108,7 @@
 @property (nonatomic, retain) CNContact *shippingPhone;
 @property (nonatomic, retain) NSString *shippingType;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *teamIdentifier;
 @property (nonatomic, readonly) NSDecimalNumber *transactionAmount;
 @property (nonatomic, readonly) NSArray *unavailablePasses;
 @property (nonatomic, copy) id /* block */ updateHandler;
@@ -108,6 +118,7 @@
 
 - (void).cxx_destruct;
 - (id)_defaultSelectedPaymentApplicationForPaymentApplications:(id)arg1;
+- (long long)_displayOrderForDataType:(long long)arg1;
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePaymentContentItems;
@@ -132,15 +143,19 @@
 - (id)allRemoteDevices;
 - (id)allUnavailableRemotePaymentInstruments;
 - (id)automaticallyPresentedPassFromAcceptedPasses:(id)arg1;
+- (id)bankAccount;
 - (void)beginUpdates;
 - (id)billingAddress;
+- (id)bundleIdentifier;
 - (id)cachedRecentAddress;
 - (id)currencyCode;
 - (id)defaultPaymentPassUniqueIdentifier;
 - (id)defaultSelectedPaymentApplicationForPass:(id)arg1;
 - (id)defaultSelectedPaymentApplicationForRemoteInstrument:(id)arg1;
 - (id)defaults;
+- (id)disbursementApplicationInformation;
 - (void)endUpdates;
+- (void)fallbackToBypassMode;
 - (id)hostAppLocalizedName;
 - (id)hostApplicationIdentifier;
 - (id)init;
@@ -163,6 +178,7 @@
 - (id)paymentRequest;
 - (id)paymentSummaryItems;
 - (id)paymentWebService;
+- (id)peerPaymentBalanceForAccountPayment;
 - (id)peerPaymentPass;
 - (id)peerPaymentQuote;
 - (id)peerPaymentService;
@@ -172,9 +188,12 @@
 - (id)remoteDevice;
 - (id)remoteDevices;
 - (id)remotePaymentInstrument;
+- (void)setBankAccount:(id)arg1;
 - (void)setBillingAddress:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 - (void)setCachedRecentAddress:(id)arg1;
 - (void)setDefaults:(id)arg1;
+- (void)setDisbursementApplicationInformation:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
 - (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setInitialRemotePaymentInstrument:(id)arg1;
@@ -185,10 +204,13 @@
 - (void)setPayment:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
 - (void)setPaymentContentItems:(id)arg1;
+- (void)setPaymentDateForPaymentRequest:(id)arg1;
 - (void)setPaymentErrors:(id)arg1;
+- (void)setPaymentPassWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (void)setPaymentRequest:(id)arg1;
 - (void)setPaymentSummaryItems:(id)arg1;
 - (void)setPaymentWebService:(id)arg1;
+- (void)setPeerPaymentBalanceForAccountPayment:(id)arg1;
 - (void)setPeerPaymentPass:(id)arg1;
 - (void)setPeerPaymentQuote:(id)arg1;
 - (void)setPeerPaymentService:(id)arg1;
@@ -208,6 +230,7 @@
 - (void)setShippingType:(id)arg1;
 - (void)setStatus:(long long)arg1 forItemWithType:(long long)arg2;
 - (void)setStatus:(long long)arg1 forItemWithType:(long long)arg2 notify:(bool)arg3;
+- (void)setTeamIdentifier:(id)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id)shippingAddress;
 - (id)shippingEditableMessage;
@@ -217,6 +240,7 @@
 - (id)shippingPhone;
 - (id)shippingType;
 - (bool)shouldUpdateContactDataItem;
+- (id)teamIdentifier;
 - (id)transactionAmount;
 - (id)unavailablePasses;
 - (id)unavailablePaymentApplicationsForPass:(id)arg1;

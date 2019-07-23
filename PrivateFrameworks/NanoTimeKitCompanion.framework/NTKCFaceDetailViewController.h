@@ -74,6 +74,7 @@
 - (void)_faceChangedOptionsForEditMode:(long long)arg1;
 - (void)_faceDidChange;
 - (void)_faceDidChangeResourceDirectory;
+- (id)_facesUnsupportedByWatchOSVersion:(unsigned int)arg1;
 - (bool)_hasRemovedSystemApp;
 - (bool)_isEditOptionFullyVisible:(id)arg1;
 - (bool)_isEditable;

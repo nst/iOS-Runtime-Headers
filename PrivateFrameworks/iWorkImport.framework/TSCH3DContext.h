@@ -11,13 +11,18 @@
         int depthDataType; 
         bool linearFilter; 
         bool discardHint; 
+        bool useIOSurfaceBacking; 
     }  mCurrentFramebufferAttributes;
 }
 
+@property (nonatomic, readonly) NSSet *childrenContexts;
+
 - (id).cxx_construct;
+- (id)childrenContexts;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)currentFramebufferAttributes;
+- (const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; bool x8; }*)currentFramebufferAttributes;
 - (unsigned long long)hash;
-- (void)setCurrentFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)arg1;
+- (void)setCurrentFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; bool x8; }*)arg1;
+- (id)sharedContext;
 
 @end

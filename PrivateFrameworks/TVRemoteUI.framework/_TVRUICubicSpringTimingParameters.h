@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) UICubicTimingParameters *springCubicTimingParameters;
 
++ (id)standardTimingParameters;
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cubicTimingParameters;

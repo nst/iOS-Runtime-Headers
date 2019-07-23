@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFPrintController : NSObject {
+@interface _SFPrintController : NSObject <UIPrintInteractionControllerDelegate, WBUPrintPageRendererDelegate> {
     UIPrintInfo * _cachedPrintInfo;
     WBUPrintPageRenderer * _cachedPrintPageRenderer;
     SFPrintQueueItem * _currentItem;
     <_SFPrintControllerDelegate> * _delegate;
     <_SFDialogPresenting> * _dialogPresenter;
+    bool  _hasReservedPrintInteractionController;
     NSString * _loadingDialogTitle;
     NSString * _pageTitle;
     UIPrintInteractionController * _printInteractionController;
@@ -15,16 +16,18 @@
     _SFReaderController * _readerController;
     bool  _suppressingPrintUI;
     NSString * _urlString;
-    UIViewController * _viewControllerForPresentation;
     WKWebView * _webView;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SFPrintControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) <_SFDialogPresenting> *dialogPresenter;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIPrintInfo *printInfo;
 @property (nonatomic, readonly) WBUPrintPageRenderer *printRenderer;
 @property (nonatomic) _SFReaderController *readerController;
-@property (nonatomic) UIViewController *viewControllerForPresentation;
+@property (readonly) Class superclass;
 @property (nonatomic) WKWebView *webView;
 
 - (void).cxx_destruct;
@@ -42,9 +45,11 @@
 - (void)handleNextPrintRequest;
 - (id)init;
 - (void)preparePrintInteractionControllerForUsage:(long long)arg1 completion:(id /* block */)arg2;
+- (id)presentingViewControllerForPrintPageRenderer:(id)arg1;
 - (void)printFrame:(id)arg1 initiatedByWebContent:(bool)arg2 completion:(id /* block */)arg3;
 - (id)printInfo;
 - (void)printInteractionControllerDidFinish;
+- (id)printInteractionControllerParentViewController:(id)arg1;
 - (id)printRenderer;
 - (id)readerController;
 - (bool)reservePrintInteractionController;
@@ -52,10 +57,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDialogPresenter:(id)arg1;
 - (void)setReaderController:(id)arg1;
-- (void)setViewControllerForPresentation:(id)arg1;
 - (void)setWebView:(id)arg1;
 - (void)updatePrintInfo;
-- (id)viewControllerForPresentation;
 - (id)webView;
 
 @end

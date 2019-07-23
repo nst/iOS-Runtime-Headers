@@ -8,6 +8,7 @@
     REKeyValueMap * _remoteApplicationsMap;
     NSMutableDictionary * _removedApps;
     NSMutableDictionary * _restrictedApps;
+    NSMutableDictionary * _watchKitExtensions;
     NARApplicationWorkspace * _workspace;
 }
 
@@ -36,5 +37,6 @@
 - (id)localApplicationForRemoteApplication:(struct NSString { Class x1; }*)arg1;
 - (id)remoteApplicationForLocalApplication:(struct NSString { Class x1; }*)arg1;
 - (unsigned long long)typeForApplication:(id)arg1;
+- (id)watchKitExtensionForApplication:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITabBarItem : UIBarItem <DebugHierarchyObject_Fallback, UISpringLoadedInteractionSupporting> {
+@interface UITabBarItem : UIBarItem <UISpringLoadedInteractionSupporting> {
     long long  __barMetrics;
     long long  __imageStyle;
     UIColor * __tintColor;
@@ -72,7 +72,9 @@
 - (id)_internalLargeContentSizeImage;
 - (id)_internalTemplateImage;
 - (id)_internalTemplateImages;
+- (id)_internalTemplateImagesForTabBarDisplayStyle:(long long)arg1;
 - (id)_internalTitle;
+- (id)_internalTitleForTabBarDisplayStyle:(long long)arg1;
 - (bool)_isSelected;
 - (void)_setBarMetrics:(long long)arg1;
 - (void)_setImageStyle:(long long)arg1;
@@ -146,11 +148,6 @@
 - (id)titleTextAttributesForState:(unsigned long long)arg1;
 - (id)unselectedImage;
 - (id)view;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

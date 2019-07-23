@@ -5,6 +5,7 @@
 @interface MPMusicPlayerController : NSObject <MPMediaPlayback, MPRequestResponseControllerDelegate, MPSystemMusicPlayerController, MPVolumeControllerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     bool  _hasPreparedToPlay;
+    bool  _hasTracklistUIDChangedWhilePreparingToPlay;
     bool  _legacyClient;
     MPMediaItem * _pendingNowPlayingItem;
     NSObject<OS_dispatch_queue> * _pendingPrepareCalloutQueue;
@@ -48,6 +49,8 @@
 - (id)_init;
 - (id)_mediaItemFromSong:(id)arg1;
 - (void)_preflightRequestIfNeeded;
+- (void)_queueDidChangeWithResponse:(id)arg1;
+- (void)adjustLoadedQueueRangeToReverseCount:(long long)arg1 forwardCount:(long long)arg2;
 - (void)appendQueueDescriptor:(id)arg1;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)beginSeekingBackward;

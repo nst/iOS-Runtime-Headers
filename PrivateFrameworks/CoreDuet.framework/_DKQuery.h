@@ -37,6 +37,7 @@
 + (id)predicateForEventsWithStartDateAfter:(id)arg1;
 + (id)predicateForEventsWithStartDateOrCreationDateBefore:(id)arg1;
 + (id)predicateForEventsWithStartInDateRangeFrom:(id)arg1 to:(id)arg2;
++ (id)predicateForEventsWithStartInDateRangeFromAfter:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartOrEndInDateRangeWithFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStreamName:(id)arg1;
 + (id)predicateForEventsWithStreamNames:(id)arg1;

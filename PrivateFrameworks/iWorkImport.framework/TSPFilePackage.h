@@ -4,6 +4,7 @@
 
 @interface TSPFilePackage : TSPPackage {
     TSUZipArchive * _componentZipArchive;
+    TSUTemporaryDirectory * _componentZipArchiveTemporaryDirectory;
 }
 
 + (bool)isValidOrEmptyPackageOrTangierEditingFormatAtURL:(id)arg1 hasNativeUTI:(bool)arg2;
@@ -16,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)componentZipArchive;
-- (bool)didReloadZipArchive:(id)arg1 error:(id*)arg2;
+- (bool)didReloadZipArchive:(id)arg1 packageURL:(id)arg2 error:(id*)arg3;
 - (bool)hasDataAtRelativePath:(id)arg1;
 - (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2 packageURL:(id)arg3 lastModificationDate:(out id*)arg4;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;

@@ -10,7 +10,9 @@
 
 - (id)alias;
 - (void)encodeWithCoder:(id)arg1;
+- (id)gamePlayerID;
 - (bool)isEqual:(id)arg1;
 - (id)playerID;
+- (id)teamPlayerID;
 
 @end

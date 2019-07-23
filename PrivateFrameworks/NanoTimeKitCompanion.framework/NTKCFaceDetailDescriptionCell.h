@@ -17,6 +17,7 @@
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
+- (id)_fontDescriptor;
 - (void)_fontSizeDidChange;
 - (id)attributedText;
 - (id)init;

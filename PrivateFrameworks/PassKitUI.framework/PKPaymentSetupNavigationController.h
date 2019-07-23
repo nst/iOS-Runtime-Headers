@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupRequiresPreflightProtocol, PKPaymentSetupViewControllerDelegate> {
+@interface PKPaymentSetupNavigationController : PKNavigationController <PKPaymentSetupViewControllerDelegate, PKViewControllerPreflightable> {
     bool  _allowsManualEntry;
     long long  _context;
     long long  _paymentSetupMode;
@@ -45,6 +45,7 @@
 - (bool)showsWelcomeViewController;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
+- (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidLoad;

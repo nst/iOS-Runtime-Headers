@@ -19,7 +19,7 @@
 @property (nonatomic, retain) MPPlayableContentManagerContext *context;
 @property (nonatomic) <MPPlayableContentDataSource> *dataSource;
 @property (nonatomic) <MPPlayableContentDelegate> *delegate;
-@property (nonatomic, retain) NSArray *nowPlayingIdentifiers;
+@property (nonatomic, copy) NSArray *nowPlayingIdentifiers;
 
 + (bool)_deviceIsCarplayCapable;
 + (id)sharedContentManager;

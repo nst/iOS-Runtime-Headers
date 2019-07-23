@@ -57,21 +57,16 @@
 @property (nonatomic) bool usesStraightLeftEdge;
 @property (readonly) bool usesTable;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_delayedFade;
 - (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)applicationWillSuspend:(id)arg1;
 - (void)autoscrollTimerFired:(id)arg1;
 - (bool)centerPopUpOverKey;
 - (void)clear;
 - (id)containerView;
 - (void)customizeCell:(id)arg1 forItemAtIndex:(unsigned long long)arg2;
+- (void)dealloc;
 - (unsigned long long)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(unsigned long long)arg1;
 - (id)dimmingView;

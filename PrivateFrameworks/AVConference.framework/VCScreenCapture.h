@@ -9,6 +9,8 @@
     bool  _isCapturing;
     bool  _isPreviewing;
     NSDictionary * _options;
+    struct __CVPixelBufferPool { } * _resizeBufferPool;
+    struct OpaqueVTPixelTransferSession { } * _resizeTransferSession;
     struct __CVPixelBufferPool { } * _rotationBufferPool;
     struct OpaqueVTImageRotationSession { } * _rotationSession;
     struct _opaque_pthread_mutex_t { 
@@ -16,6 +18,8 @@
         BOOL __opaque[56]; 
     }  _screenCaptureLock;
     struct OpaqueFigVirtualDisplaySession { } * _session;
+    bool  _shouldResize;
+    bool  _shouldResizeInitialized;
 }
 
 - (int)_startCapture;

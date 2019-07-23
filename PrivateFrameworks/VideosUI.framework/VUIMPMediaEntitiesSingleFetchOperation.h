@@ -3,6 +3,7 @@
  */
 
 @interface VUIMPMediaEntitiesSingleFetchOperation : VUIAsynchronousOperation {
+    VUIMediaEntityType * _currentFetchMediaEntityType;
     NSError * _error;
     VUIMediaEntityKind * _mediaEntityKind;
     VUIMPMediaLibrary * _mediaLibrary;
@@ -17,6 +18,7 @@
     VUIMediaEntityFetchResponse * _response;
 }
 
+@property (nonatomic, retain) VUIMediaEntityType *currentFetchMediaEntityType;
 @property (nonatomic, copy) NSError *error;
 @property (nonatomic, retain) VUIMediaEntityKind *mediaEntityKind;
 @property (nonatomic, retain) VUIMPMediaLibrary *mediaLibrary;
@@ -39,8 +41,9 @@
 - (void)_addSortingPropertiesToMediaQuery:(id)arg1;
 - (id)_baseMediaQuery;
 - (id)_bitTestMediaQueryPropertyPredicateWithKeyPathBitTestExpression:(id)arg1 operatorType:(unsigned long long)arg2 constantExpression:(id)arg3;
+- (id)_coalesceResponses:(id)arg1;
 - (id)_collectionsFetchResponseWithMediaQuery:(id)arg1;
-- (id)_fetchResponseWithMediaEntities:(id)arg1 mediaEntitySubtype:(unsigned long long)arg2 mediaQuerySections:(id)arg3;
+- (id)_fetchResponseWithMediaEntities:(id)arg1 mediaQuerySections:(id)arg2;
 - (bool)_isSortingBeingPerformedByMediaQuery;
 - (id)_itemsFetchResponseWithMediaQuery:(id)arg1;
 - (id)_keyPathMediaQueryPropertyPredicateWithKeyPathExpression:(id)arg1 operatorType:(unsigned long long)arg2 constantExpression:(id)arg3;
@@ -57,6 +60,7 @@
 - (void)_processRange;
 - (void)_processSortDescriptors;
 - (bool)_shouldSortUsingMediaQuery;
+- (id)currentFetchMediaEntityType;
 - (id)error;
 - (void)executionDidBegin;
 - (id)init;
@@ -72,6 +76,7 @@
 - (bool)processRangeAfterFetch;
 - (id)request;
 - (id)response;
+- (void)setCurrentFetchMediaEntityType:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setMediaEntityKind:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;

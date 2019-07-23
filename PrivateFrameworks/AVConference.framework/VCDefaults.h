@@ -142,6 +142,8 @@
 - (bool)disableVAD;
 - (bool)dumpMediaBlob;
 - (int)enable2vuyCapture;
+- (bool)enableAudioDumpParticipantLocal:(bool)arg1;
+- (bool)enableAudioDumpParticipantRemote:(bool)arg1;
 - (bool)enableBitstreamCapture;
 - (bool)enablePacketLogging;
 - (bool)enableRecvBitstreamDump;

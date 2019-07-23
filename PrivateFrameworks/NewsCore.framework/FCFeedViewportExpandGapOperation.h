@@ -17,6 +17,7 @@
     bool  _offlineMode;
     FCFeedViewportDiff * _resultDiff;
     FCFeedViewport * _resultViewport;
+    FCFeedViewport * _sanitizedViewport;
     FCFeedViewport * _viewport;
 }
 
@@ -34,7 +35,10 @@
 @property bool offlineMode;
 @property (nonatomic, retain) FCFeedViewportDiff *resultDiff;
 @property (nonatomic, retain) FCFeedViewport *resultViewport;
+@property (nonatomic, retain) FCFeedViewport *sanitizedViewport;
 @property (nonatomic, retain) FCFeedViewport *viewport;
+
++ (id)_sanitizeViewport:(id)arg1 context:(id)arg2 feedDescriptor:(id)arg3 configuration:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)_groupEmitterWithIdentifier:(id)arg1;
@@ -53,8 +57,10 @@
 - (bool)offlineMode;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)prepareOperation;
 - (id)resultDiff;
 - (id)resultViewport;
+- (id)sanitizedViewport;
 - (void)setBookmark:(id)arg1;
 - (void)setCachedOnly:(bool)arg1;
 - (void)setConfiguration:(id)arg1;
@@ -69,6 +75,7 @@
 - (void)setOfflineMode:(bool)arg1;
 - (void)setResultDiff:(id)arg1;
 - (void)setResultViewport:(id)arg1;
+- (void)setSanitizedViewport:(id)arg1;
 - (void)setViewport:(id)arg1;
 - (bool)validateOperation;
 - (id)viewport;

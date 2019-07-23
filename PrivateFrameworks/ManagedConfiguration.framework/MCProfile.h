@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_queue> * _signerEvaluationQueue;
     NSArray * _signerQueueSignerCertificates;
     NSString * _signerQueueSignerSummary;
+    unsigned long long  _targetDeviceType;
     NSObject<OS_dispatch_queue> * _trustEvaluationQueue;
     bool  _trustQueueTrustHasBeenEvaluated;
     int  _trustQueueTrustLevel;
@@ -57,6 +58,7 @@
 @property (nonatomic, readonly, retain) NSArray *payloads;
 @property (nonatomic, readonly, retain) NSString *productBuildVersion;
 @property (nonatomic, readonly, retain) NSString *productVersion;
+@property (nonatomic, readonly, retain) NSString *profileDataFileName;
 @property (nonatomic, readonly, retain) NSString *profileDescription;
 @property (nonatomic, readonly, retain) NSString *profileIDHashFileName;
 @property (nonatomic, readonly) NSDate *removalDate;
@@ -66,6 +68,7 @@
 @property (nonatomic, retain) NSArray *signerCertificates;
 @property (nonatomic, readonly) NSString *signerSummary;
 @property (nonatomic, readonly, retain) NSString *stubFileName;
+@property (nonatomic, readonly) unsigned long long targetDeviceType;
 @property (nonatomic, readonly) int trustLevel;
 @property (nonatomic, readonly) long long version;
 
@@ -82,16 +85,17 @@
 + (int)evaluateTrustOfCertificateChain:(id)arg1 signatureVersion:(id)arg2 outIsAllowedToWriteDefaults:(bool*)arg3;
 + (id)missingFieldErrorWithField:(id)arg1;
 + (id)newProfileSignatureVersion;
-+ (id)profileDictionaryFromProfileData:(id)arg1 outError:(id*)arg2;
++ (id)profileDictionaryFromProfileData:(id)arg1 outSignerCerts:(id*)arg2 outError:(id*)arg3;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(bool)arg3 outError:(id*)arg4;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 outError:(id*)arg3;
 + (id)profileWithData:(id)arg1 outError:(id*)arg2;
-+ (id)profileWithDictionary:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(bool)arg3 outError:(id*)arg4;
++ (id)profileWithDictionary:(id)arg1 signerCerts:(id)arg2 fileName:(id)arg3 allowEmptyPayload:(bool)arg4 outError:(id*)arg5;
 + (id)removeOptionalNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 invalidDataCode:(long long)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 + (id)removeOptionalObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 invalidDataCode:(long long)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 + (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(long long)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(long long)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
 + (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(long long)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(long long)arg7 invalidDataErrorString:(id)arg8 outError:(id*)arg9;
 + (id)signerSummaryOfCertificate:(struct __SecCertificate { }*)arg1;
++ (id)stringForDeviceType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)UUID;
@@ -112,7 +116,7 @@
 - (id)expiryDate;
 - (id)friendlyName;
 - (id)identifier;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (id)initWithDictionary:(id)arg1 signerCerts:(id)arg2 allowEmptyPayload:(bool)arg3 outError:(id*)arg4;
 - (id)installDate;
 - (id)installOptions;
 - (long long)installType;
@@ -123,6 +127,7 @@
 - (bool)isInstalledForUser;
 - (bool)isLocked;
 - (bool)isManagedByProfileService;
+- (bool)isProfileUIInstallationEffectivelyAllowed;
 - (bool)isSigned;
 - (bool)isStub;
 - (id)localizedConsentText;
@@ -138,6 +143,7 @@
 - (id)payloads;
 - (id)productBuildVersion;
 - (id)productVersion;
+- (id)profileDataFileName;
 - (id)profileDescription;
 - (id)profileIDHashFileName;
 - (id)removalDate;
@@ -161,6 +167,7 @@
 - (id)stubFileName;
 - (id)subjectSummaryFromCertificatePayloadWithUUID:(id)arg1;
 - (id)subjectSummaryFromCertificateWithPersistentID:(id)arg1;
+- (unsigned long long)targetDeviceType;
 - (int)trustLevel;
 - (long long)version;
 - (bool)writeStubToDirectory:(id)arg1;

@@ -29,8 +29,6 @@
 @property (nonatomic) bool usesContiguousBarBackground;
 @property (nonatomic) bool usesEmbeddedAppearance;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
 - (long long)_barPosition;
@@ -41,9 +39,6 @@
 - (void)_setBehavesAsIfSearchBarHasController:(bool)arg1;
 - (void)_updateBackgroundImage;
 - (void)_updateBackgroundImageIfPossible;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundImage;
 - (id)backgroundImagePrompt;
 - (long long)barStyle;

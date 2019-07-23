@@ -3,6 +3,7 @@
  */
 
 @interface SUPurchaseManager : NSObject <SSDownloadManagerObserver, SSPurchaseRequestDelegate, SSPurchaseRequestDelegatePrivate, SUContinuationDelegate> {
+    NSNumber * _accountDSID;
     <SUPurchaseManagerDelegate> * _delegate;
     NSMutableSet * _futurePurchases;
     NSMutableSet * _inflightContinuations;
@@ -19,6 +20,7 @@
     bool  _waitingForAuthentication;
 }
 
+@property (nonatomic, copy) NSNumber *accountDSID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUPurchaseManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,7 +33,7 @@
 @property (nonatomic, copy) NSDictionary *tidHeaders;
 @property (nonatomic, copy) NSString *userAgent;
 
-- (id)_accountForPurchase:(id)arg1;
+- (id)_accountDSIDForPurchase:(id)arg1;
 - (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;
 - (void)_dialogDidFinish:(id)arg1;
 - (id)_downloadManagerForDownloadKind:(id)arg1;
@@ -52,6 +54,7 @@
 - (void)_showDialogsForErrors:(id)arg1;
 - (void)_startContinuations:(id)arg1;
 - (void)_startPurchases:(id)arg1;
+- (id)accountDSID;
 - (void)addExternalDownloads:(id)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (void)addExternalDownloads:(id)arg1 withOptions:(id)arg2 inContext:(struct OpaqueJSContext { }*)arg3;
 - (void)addFuturePurchase:(id)arg1;
@@ -84,6 +87,7 @@
 - (void)removePurchasedItemIdentifier:(unsigned long long)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
+- (void)setAccountDSID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueueSessionManager:(id)arg1;
 - (void)setTidHeaders:(id)arg1;

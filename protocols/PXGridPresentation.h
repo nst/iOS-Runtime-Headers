@@ -6,7 +6,7 @@
 @optional
 
 - (UIViewController *)createAlbumListViewControllerWithConfiguration:(PXPhotoKitCollectionsDataSourceManagerConfiguration *)arg1;
-- (void)createGridViewControllerWithAssets:(void *)arg1 withTitle:(void *)arg2 hideTabBar:(void *)arg3 containerViewController:(void *)arg4 navigationItemDelegate:(void *)arg5 andCompletion:(void *)arg6; // needs 6 arg types, found 11: <NSFastEnumeration> *, NSString *, bool, UIViewController *, <PXGridPresentationNavigationItemDelegate> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIViewController *, void*
+- (void)createGridViewControllerWithAssets:(void *)arg1 withTitle:(void *)arg2 hideTabBar:(void *)arg3 gridPresentationContext:(void *)arg4 containerViewController:(void *)arg5 navigationItemDelegate:(void *)arg6 andCompletion:(void *)arg7; // needs 7 arg types, found 12: <NSFastEnumeration> *, NSString *, bool, long long, UIViewController *, <PXGridPresentationNavigationItemDelegate> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIViewController *, void*
 - (UIViewController *)createImportHistoryGridViewControllerWithCollection:(PHCollection *)arg1;
 - (UIViewController *)createPanoramaViewController;
 - (UIViewController *)createPhotosAlbumViewControllerForAlbum:(PHAssetCollection *)arg1 withFetchResult:(PHFetchResult *)arg2;

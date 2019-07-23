@@ -6,6 +6,7 @@
     ACAccountStore * _accountStore;
     bool  _allowsManualEntry;
     <PKPaymentSetupViewControllerDelegate> * _delegate;
+    NSArray * _featuredImages;
     bool  _hasFelicaSecureElement;
     PKPaymentHeroImageController * _heroImageController;
     bool  _hideSetupLater;
@@ -29,12 +30,10 @@
 
 - (void).cxx_destruct;
 - (id)_bodyText;
-- (void)_credentialRenewalRequired:(id)arg1;
 - (void)_next:(id)arg1;
 - (void)_preflightWithCompletion:(id /* block */)arg1;
 - (void)_terminateSetupFlow;
 - (bool)allowsManualEntry;
-- (void)dealloc;
 - (id)delegate;
 - (unsigned long long)edgesForExtendedLayout;
 - (void)explanationViewDidSelectContinue:(id)arg1;
@@ -46,6 +45,7 @@
 - (id)provisioningController;
 - (void)setAllowsManualEntry:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFeaturedHeroImages:(id)arg1;
 - (void)setPaymentSetupMode:(long long)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

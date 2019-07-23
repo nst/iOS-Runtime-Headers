@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoader, WBSHistoryLoaderDelegate, WBSHistoryStore> {
+@interface WBSHistorySQLiteStore : NSObject <WBSHistoryLoader, WBSHistoryStore> {
     long long  _cachedNumberOfDevicesInSyncCircle;
     bool  _checkpointWriteAheadLogOnNextWrite;
     NSMutableDictionary * _clientVersions;
@@ -17,7 +17,6 @@
     NSData * _fetchThrottlerData;
     double  _historyAgeLimit;
     Class  _historyItemClass;
-    int  _importState;
     bool  _isClosed;
     unsigned long long  _itemCountLimit;
     NSMutableDictionary * _itemsByDatabaseID;
@@ -56,6 +55,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double historyAgeLimit;
 @property (nonatomic, readonly) bool isUsingInMemoryDatabase;
+@property (nonatomic, copy) NSData *longLivedSaveOperationData;
 @property (nonatomic) bool pushNotificationsAreInitialized;
 @property (nonatomic, copy) NSData *pushThrottlerData;
 @property (nonatomic, readonly) NSData *salt;
@@ -82,7 +82,6 @@
 - (void)_insertItem:(id)arg1;
 - (void)_insertTombstone:(id)arg1;
 - (void)_insertVisit:(id)arg1;
-- (id)_itemsOrderedForInsertion:(id)arg1;
 - (id)_lastSeenDateForCloudClientVersionOnDatabaseQueue:(unsigned long long)arg1;
 - (long long)_lastSyncedGeneration;
 - (void)_loadClientVersions;
@@ -119,7 +118,6 @@
 - (id)_visitsCreatedMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3;
 - (id)_visitsFromRows:(id)arg1 predicate:(id /* block */)arg2;
 - (id)_visitsNeedingSyncWithVisitSyncWindow:(double)arg1;
-- (id)_visitsOrderedForInsertion:(id)arg1;
 - (id)_visitsWithOrigins:(id)arg1;
 - (void)_writeTimerFired;
 - (void)addOrUpdateItemsOnDatabaseQueue:(id)arg1;
@@ -143,14 +141,13 @@
 - (void)getVisitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completion:(id /* block */)arg2;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (double)historyAgeLimit;
-- (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
-- (void)historyLoaderDidFinishLoading:(id)arg1;
 - (id)initWithURL:(id)arg1 itemCountLimit:(unsigned long long)arg2 historyAgeLimit:(double)arg3 historyItemClass:(Class)arg4;
 - (bool)isUsingInMemoryDatabase;
 - (void)itemWasReplaced:(id)arg1 byItem:(id)arg2;
 - (void)itemsWereAdded:(id)arg1 byUserInitiatedAction:(bool)arg2;
 - (void)itemsWereModified:(id)arg1 byUserInitiatedAction:(bool)arg2;
 - (id)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
+- (id)longLivedSaveOperationData;
 - (void)performMaintenance:(id /* block */)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
 - (bool)pushNotificationsAreInitialized;
@@ -158,7 +155,7 @@
 - (void)removeItemsOnDatabaseQueue:(id)arg1;
 - (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeVisitsOnDatabaseQueue:(id)arg1;
-- (void)replayAndAddTombstone:(id)arg1;
+- (void)replayAndAddTombstones:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetCloudHistoryDataWithCompletionHandler:(id /* block */)arg1;
 - (id)salt;
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned long long)arg1;
@@ -166,6 +163,7 @@
 - (void)setFetchThrottlerData:(id)arg1;
 - (void)setHistoryAgeLimit:(double)arg1;
 - (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned long long)arg2;
+- (void)setLongLivedSaveOperationData:(id)arg1;
 - (void)setPushNotificationsAreInitialized:(bool)arg1;
 - (void)setPushThrottlerData:(id)arg1;
 - (void)setServerChangeTokenData:(id)arg1;

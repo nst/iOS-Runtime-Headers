@@ -11,10 +11,12 @@
 @property (nonatomic, retain) PSSpecifier *usageSummarySpecifier;
 
 - (void).cxx_destruct;
+- (void)_refreshingDidChange:(bool)arg1;
 - (id)getCoordinator:(id)arg1;
 - (id)getUsageDescription:(id)arg1;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)reloadScreenTimeSummarySpecifier;
 - (void)setCoordinator:(id)arg1;
 - (void)setThisDeviceSpecifier:(id)arg1;
 - (void)setUsageSummarySpecifier:(id)arg1;

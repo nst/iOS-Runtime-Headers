@@ -18,6 +18,7 @@
 @property (nonatomic, retain) <FCHeadlineClustering> *headlineClusterer;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
+@property (nonatomic, readonly) bool requiresHeavyweightContent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

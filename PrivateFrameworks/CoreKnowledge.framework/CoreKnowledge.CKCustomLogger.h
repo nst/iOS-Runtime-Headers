@@ -10,14 +10,7 @@
     void settings;
 }
 
-@property (nonatomic) bool enabled;
-@property (nonatomic, readonly) NSString *name;
-
-- (id /* block */).cxx_destruct;
-- (bool)enabled;
+- (void).cxx_destruct;
 - (id)init;
-- (id)name;
-- (void)setEnabled:(bool)arg1;
-- (void)setFormatWithName:(bool)arg1 file:(bool)arg2 method:(bool)arg3;
 
 @end

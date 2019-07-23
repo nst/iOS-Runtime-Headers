@@ -7,15 +7,19 @@
 }
 
 @property (nonatomic, copy) PKPaymentSetupFieldPickerItem *currentValue;
-@property (nonatomic, readonly, copy) NSArray *pickerItems;
+@property (nonatomic, copy) NSArray *pickerItems;
 
 - (void).cxx_destruct;
+- (void)_commonUpdate;
+- (id)_submissionStringForValue:(id)arg1;
 - (id)currentValue;
 - (id)displayString;
 - (unsigned long long)fieldType;
 - (id)pickerItems;
 - (void)setCurrentValue:(id)arg1;
-- (id)submissionString;
+- (void)setPickerItems:(id)arg1;
+- (bool)submissionStringMeetsAllRequirements;
+- (void)updateWithAttribute:(id)arg1;
 - (void)updateWithConfiguration:(id)arg1;
 
 @end

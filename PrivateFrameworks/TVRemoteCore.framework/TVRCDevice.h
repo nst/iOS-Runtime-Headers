@@ -6,6 +6,7 @@
     <TVRCDeviceDelegate> * _delegate;
     _TVRCDeviceState * _deviceState;
     NSString * _identifier;
+    TVRCDeviceInfo * _info;
     TVRCKeyboardController * _keyboardController;
     NSString * _name;
     TVRCVoiceRecorder * _voiceRecorder;
@@ -15,11 +16,13 @@
 @property (nonatomic) <TVRCDeviceDelegate> *delegate;
 @property (nonatomic, retain) _TVRCDeviceState *deviceState;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) TVRCDeviceInfo *info;
 @property (nonatomic, retain) TVRCKeyboardController *keyboardController;
+@property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) unsigned long long pairingCapability;
 @property (nonatomic, readonly, copy) NSSet *supportedButtons;
-@property (nonatomic, readonly) long long touchProcessorKind;
+@property (nonatomic, readonly) bool supportsTouchEvents;
 @property (nonatomic, retain) TVRCVoiceRecorder *voiceRecorder;
 
 - (void).cxx_destruct;
@@ -29,15 +32,19 @@
 - (void)_sendRTIDataPayload:(id)arg1;
 - (void)connect;
 - (long long)connectionState;
+- (bool)containsIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)deviceState;
-- (void)disconnect;
+- (void)disconnectWithType:(unsigned long long)arg1;
 - (id)identifier;
+- (id)info;
 - (id)initWithDeviceIdentifier:(id)arg1;
+- (bool)isEqualToDevice:(id)arg1;
 - (bool)isInEditingSession;
 - (id)keyboardController;
+- (id)model;
 - (id)name;
 - (unsigned long long)pairingCapability;
 - (void)sendButtonEvent:(id)arg1;
@@ -46,11 +53,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceState:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setInfo:(id)arg1;
 - (void)setKeyboardController:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setVoiceRecorder:(id)arg1;
 - (id)supportedButtons;
-- (long long)touchProcessorKind;
+- (bool)supportsTouchEvents;
 - (id)voiceRecorder;
 
 @end

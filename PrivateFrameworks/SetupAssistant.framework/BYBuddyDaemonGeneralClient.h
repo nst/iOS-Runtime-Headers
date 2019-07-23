@@ -10,6 +10,8 @@
 - (void).cxx_destruct;
 - (id)_daemonConnection;
 - (id)backupMetadata;
+- (void)cancelDataMigratorDeferredExit;
+- (void)deferDataMigratorExit;
 - (void)ensureSilentLoginUpgrade;
 - (id)init;
 - (void)observeFinishSetupTriggers;

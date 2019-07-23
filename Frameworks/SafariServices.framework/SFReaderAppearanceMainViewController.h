@@ -4,11 +4,11 @@
 
 @interface SFReaderAppearanceMainViewController : _SFPopoverSizingTableViewController <SFReaderAppearanceFontSizeSelectorDelegate, SFReaderAppearanceThemeSelectorTableViewCellDelegate> {
     UIImage * _checkmarkImage;
+    WBSReaderConfigurationManager * _configurationManager;
     WBSReaderFontManager * _fontManager;
-    NSDictionary * _initialReaderConfiguration;
     _SFReaderAppearanceViewController * _ownerAppearanceViewController;
     long long  _selectedFontIndex;
-    NSString * _themeName;
+    long long  _theme;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,20 +17,19 @@
 @property (nonatomic) _SFReaderAppearanceViewController *ownerAppearanceViewController;
 @property (nonatomic, readonly) WBSReaderFont *selectedFont;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSString *themeName;
+@property (nonatomic, readonly) long long theme;
 
 - (void).cxx_destruct;
 - (bool)_canSelectRowAtIndexPath:(id)arg1;
 - (void)_determineSelectedFontIndex;
-- (void)_determineSelectedTheme;
 - (void)_determineSelectedValues;
-- (long long)_themeFromThemeName:(id)arg1;
-- (id)_themeNameFromTheme:(long long)arg1;
 - (id)checkmarkImage;
-- (id)initWithInitialReaderConfiguration:(id)arg1 fontManager:(id)arg2;
+- (id)initWithConfigurationManager:(id)arg1 fontManager:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)ownerAppearanceViewController;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (bool)readerAppearanceFontSizeCanDecrease:(id)arg1;
+- (bool)readerAppearanceFontSizeCanIncrease:(id)arg1;
 - (void)readerAppearanceFontSizeDidDecrease:(id)arg1;
 - (void)readerAppearanceFontSizeDidIncrease:(id)arg1;
 - (void)readerAppearanceThemeSelectorDidChangeTheme:(id)arg1;
@@ -42,7 +41,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)themeName;
+- (long long)theme;
 - (void)viewDidLoad;
 
 @end

@@ -53,9 +53,7 @@
 - (void)_handleConfiguredQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (long long)_hardQueueIndexForIndex:(long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_hardQueuePlaylistIndexRangeIncludingCurrentItem:(bool)arg1;
-- (unsigned long long)_indexOfMediaItem:(id)arg1;
 - (void)_insertSoftQueueSourceContext:(id)arg1 atIndex:(long long)arg2;
-- (void)_invalidateCachedMusicPlayerControllerQueue;
 - (id)_itemForPlaylistIndex:(long long)arg1;
 - (id)_itemForSourceContext:(id)arg1;
 - (bool)_itemIsHardQueueItem:(id)arg1;
@@ -73,8 +71,8 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_softQueuePlaylistIndexRangeIncludingCurrentItem:(bool)arg1;
 - (id)_softQueueSourceContextForIndex:(long long)arg1;
 - (id)_sourceContextForPlaylistIndex:(unsigned long long)arg1;
-- (void)_updateMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
+- (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 atIndex:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (bool)allowsQueueResetWhenReachingEnd;
 - (bool)canSkipToPreviousItemForItem:(id)arg1;
@@ -82,7 +80,6 @@
 - (void)clearSoftQueue;
 - (id)contentItemIDForPlaylistIndex:(long long)arg1;
 - (long long)currentIndex;
-- (id)currentQueueUUID;
 - (bool)disableQueueModifications;
 - (unsigned long long)displayCountForItem:(id)arg1;
 - (unsigned long long)displayIndexForItem:(id)arg1;
@@ -103,7 +100,6 @@
 - (id)lastPlayedSoftQueueItem;
 - (id)metadataItemForPlaylistIndex:(long long)arg1;
 - (void)moveItemAtPlaybackIndex:(long long)arg1 toPlaybackIndex:(long long)arg2 intoHardQueue:(bool)arg3;
-- (id)musicPlayerControllerQueueForUUID:(id)arg1;
 - (long long)nextCurrentIndex;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (id)playlistFeeder;
@@ -121,13 +117,11 @@
 - (void)queueFeederDidInvalidateRealShuffleType:(id)arg1;
 - (void)removeItemAtPlaybackIndex:(long long)arg1;
 - (id)repeatPlaylistIdentifer;
-- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)setCurrentIndex:(long long)arg1 selectionDirection:(long long)arg2;
 - (void)setDisableQueueModifications:(bool)arg1;
 - (void)setHardQueueInsertionIndex:(long long)arg1;
 - (void)setHardQueueSourceContexts:(id)arg1;
 - (void)setLastPlayedSoftQueueItem:(id)arg1;
-- (bool)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setNextCurrentIndex:(long long)arg1;
 - (bool)setPlaylistFeeder:(id)arg1 startIndex:(long long)arg2 keepPlaying:(bool)arg3;
 - (void)setRepeatMode:(long long)arg1;

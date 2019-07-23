@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) WLKArtworkVariantListing *showImages;
 @property (nonatomic, readonly, copy) NSString *showTitle;
 
-+ (id)episodesWithDictionaries:(id)arg1;
++ (id)episodesWithDictionaries:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)canonicalSeasonID;
@@ -37,6 +37,7 @@
 - (double)duration;
 - (id)episodeNumber;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)playable;
 - (id)releaseDate;
 - (id)seasonImages;

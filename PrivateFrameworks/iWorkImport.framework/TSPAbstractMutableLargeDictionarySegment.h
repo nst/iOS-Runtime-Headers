@@ -35,14 +35,14 @@
 - (id)initWithObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned long long)arg3 context:(id)arg4;
 - (id)keyEnumerator;
 - (double)keyHashAverage;
-- (void)loadFromLargeDictionarySegmentMessage:(const struct LargeDictionarySegment { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; bool x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromLargeDictionarySegmentMessage:(const struct LargeDictionarySegment { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; bool x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)loadStoreOutsideObjectArchiveFromUnarchiver:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)packageLocator;
 - (void)removeObjectForKey:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)saveToLargeDictionarySegmentMessage:(struct LargeDictionarySegment { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; bool x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; }*)arg1 archiver:(id)arg2;
+- (void)saveToLargeDictionarySegmentMessage:(struct LargeDictionarySegment { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; bool x6; unsigned int x7; }*)arg1 archiver:(id)arg2;
 - (void)setDelayedArchivingPriority:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEstimatedByteSize:(unsigned long long)arg1;

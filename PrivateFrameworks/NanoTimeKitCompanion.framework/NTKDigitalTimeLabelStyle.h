@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) NTKLayoutRule *layoutRule;
 
++ (id)defaultRoundedStyleForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withRightSideMargin:(double)arg2 forDevice:(id)arg3;
 + (id)defaultStyleForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withRightSideMargin:(double)arg2 forDevice:(id)arg3;
 + (id)defaultStyleForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withRightSideMargin:(double)arg2 withBaselineY:(double)arg3 forDevice:(id)arg4;
 + (id)defaultStyleForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withRightSideMargin:(double)arg2 withBaselineY:(double)arg3 withFont:(id)arg4 forDevice:(id)arg5;

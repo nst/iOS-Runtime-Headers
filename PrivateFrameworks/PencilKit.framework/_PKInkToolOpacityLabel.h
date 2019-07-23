@@ -28,6 +28,7 @@
 - (id)label;
 - (void)layoutSubviews;
 - (void)setInkOpacity:(double)arg1;
+- (void)setInkOpacity:(double)arg1 animated:(bool)arg2;
 - (void)setLabel:(id)arg1;
 - (void)setSizeState:(unsigned long long)arg1;
 - (unsigned long long)sizeState;

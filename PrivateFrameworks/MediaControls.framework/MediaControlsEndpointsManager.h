@@ -27,6 +27,7 @@
 @property (nonatomic) long long discoveryMode;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MediaControlsHomeObserver *homeObserver;
+@property (nonatomic, readonly) bool isActiveSystemEndpointEqualToLocalEndpoint;
 @property (nonatomic, readonly, copy) NSString *pendingActiveSystemRouteUID;
 @property (nonatomic, readonly, copy) NSArray *routes;
 @property (nonatomic, readonly) MPAVRoutingController *routingController;
@@ -51,6 +52,7 @@
 - (id)homeObserver;
 - (void)homeObserverDidUpdateKnownUIDs:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
+- (bool)isActiveSystemEndpointEqualToLocalEndpoint;
 - (id)pendingActiveSystemRouteUID;
 - (id)routes;
 - (id)routingController;

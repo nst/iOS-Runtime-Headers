@@ -11,6 +11,8 @@
     NSNumber * _payloadCCPMPPE128Enabled;
     NSNumber * _payloadCCPMPPE40Enabled;
     NSString * _payloadCommRemoteAddress;
+    NSNumber * _payloadDisconnectOnIdle;
+    NSNumber * _payloadDisconnectOnIdleTimer;
     NSNumber * _payloadTokenCard;
 }
 
@@ -22,11 +24,13 @@
 @property (nonatomic, copy) NSNumber *payloadCCPMPPE128Enabled;
 @property (nonatomic, copy) NSNumber *payloadCCPMPPE40Enabled;
 @property (nonatomic, copy) NSString *payloadCommRemoteAddress;
+@property (nonatomic, copy) NSNumber *payloadDisconnectOnIdle;
+@property (nonatomic, copy) NSNumber *payloadDisconnectOnIdleTimer;
 @property (nonatomic, copy) NSNumber *payloadTokenCard;
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnly;
-+ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withTokenCard:(id)arg3 withCommRemoteAddress:(id)arg4 withAuthEAPPlugins:(id)arg5 withAuthProtocol:(id)arg6 withCCPMPPE40Enabled:(id)arg7 withCCPMPPE128Enabled:(id)arg8 withCCPEnabled:(id)arg9;
++ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withTokenCard:(id)arg3 withCommRemoteAddress:(id)arg4 withAuthEAPPlugins:(id)arg5 withAuthProtocol:(id)arg6 withCCPMPPE40Enabled:(id)arg7 withCCPMPPE128Enabled:(id)arg8 withCCPEnabled:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,6 +43,8 @@
 - (id)payloadCCPMPPE128Enabled;
 - (id)payloadCCPMPPE40Enabled;
 - (id)payloadCommRemoteAddress;
+- (id)payloadDisconnectOnIdle;
+- (id)payloadDisconnectOnIdleTimer;
 - (id)payloadTokenCard;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (void)setPayloadAuthEAPPlugins:(id)arg1;
@@ -49,6 +55,8 @@
 - (void)setPayloadCCPMPPE128Enabled:(id)arg1;
 - (void)setPayloadCCPMPPE40Enabled:(id)arg1;
 - (void)setPayloadCommRemoteAddress:(id)arg1;
+- (void)setPayloadDisconnectOnIdle:(id)arg1;
+- (void)setPayloadDisconnectOnIdleTimer:(id)arg1;
 - (void)setPayloadTokenCard:(id)arg1;
 
 @end

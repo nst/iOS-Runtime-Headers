@@ -178,6 +178,7 @@
 - (void)_presentLoadedPreviewCollection:(id)arg1;
 - (void)_presentPreviewCollection;
 - (void)_previousPreview;
+- (void)_promptUserAndOpenURLIfNeeded:(id)arg1;
 - (bool)_quickLookWillBecomeVisible;
 - (void)_refreshCurrentPreviewItemAnimated:(bool)arg1;
 - (void)_registerForApplicationStateChangesNotifications;

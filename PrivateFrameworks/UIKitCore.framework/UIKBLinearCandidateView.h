@@ -6,11 +6,7 @@
 
 @property (nonatomic, readonly) UIKBCandidateCollectionView *candidatesCollectionView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (Class)cellClass;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (unsigned long long)focusableVariantCount;
 - (void)refreshSelectedCandidate;

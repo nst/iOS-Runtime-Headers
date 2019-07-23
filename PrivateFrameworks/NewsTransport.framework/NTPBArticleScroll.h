@@ -17,6 +17,9 @@
         unsigned int verticalScrollPositionStarting : 1; 
         unsigned int adSupportedChannel : 1; 
     }  _has;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
+    NTPBIssueViewData * _issueViewData;
     NSString * _referencedArticleId;
     int  _scrollHostViewType;
     NSString * _scrollVelocity;
@@ -42,6 +45,9 @@
 @property (nonatomic, readonly) bool hasArticleSessionId;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
+@property (nonatomic, readonly) bool hasIssueViewData;
 @property (nonatomic, readonly) bool hasReferencedArticleId;
 @property (nonatomic) bool hasScrollHostViewType;
 @property (nonatomic, readonly) bool hasScrollVelocity;
@@ -52,6 +58,9 @@
 @property (nonatomic) bool hasVerticalScrollPositionEnding;
 @property (nonatomic, readonly) bool hasVerticalScrollPositionStart;
 @property (nonatomic) bool hasVerticalScrollPositionStarting;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
+@property (nonatomic, retain) NTPBIssueViewData *issueViewData;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic) int scrollHostViewType;
 @property (nonatomic, retain) NSString *scrollVelocity;
@@ -86,6 +95,9 @@
 - (bool)hasArticleSessionId;
 - (bool)hasArticleViewingSessionId;
 - (bool)hasFeedViewExposureId;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
+- (bool)hasIssueViewData;
 - (bool)hasReferencedArticleId;
 - (bool)hasScrollHostViewType;
 - (bool)hasScrollVelocity;
@@ -98,6 +110,9 @@
 - (bool)hasVerticalScrollPositionStarting;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (id)issueData;
+- (id)issueExposureData;
+- (id)issueViewData;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)referencedArticleId;
@@ -117,6 +132,9 @@
 - (void)setHasScrollingVelocity:(bool)arg1;
 - (void)setHasVerticalScrollPositionEnding:(bool)arg1;
 - (void)setHasVerticalScrollPositionStarting:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
+- (void)setIssueViewData:(id)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setScrollHostViewType:(int)arg1;
 - (void)setScrollVelocity:(id)arg1;

@@ -15,7 +15,7 @@
         } size; 
     }  _dismissButtonRect;
     ADInterstitialAd * _interstitialAd;
-    ADPrivacyButton * _privacyButton;
+    ADPrivacyMarker * _privacyMarker;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } dismissButtonRect;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) ADInterstitialAd *interstitialAd;
-@property (nonatomic, retain) ADPrivacyButton *privacyButton;
+@property (nonatomic, retain) ADPrivacyMarker *privacyMarker;
 @property (readonly) Class superclass;
 
 + (bool)requiresConstraintBasedLayout;
@@ -42,14 +42,14 @@
 - (id)interstitialAd;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)positionAdPrivacyMark;
-- (id)privacyButton;
+- (id)privacyMarker;
 - (void)removeFromSuperview;
 - (void)setAlpha:(double)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDimmerView:(id)arg1;
 - (void)setDismissButtonRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHidden:(bool)arg1;
-- (void)setPrivacyButton:(id)arg1;
+- (void)setPrivacyMarker:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 

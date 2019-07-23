@@ -3,32 +3,29 @@
  */
 
 @interface STMAppSizer : NSObject <STMSizeCacheDelegate> {
+    NSDictionary * _appContainersByPath;
+    NSDictionary * _dataContainersByPath;
     <STMAppSizerDelegate> * _delegate;
-    STMAppDynamicSizeCache * _dynamicSizes;
-    NSObject<OS_dispatch_queue> * _fsQueue;
-    struct __FSEventStream { } * _fsStream;
+    STMAppDynamicSizer * _dynamicSizer;
     NSArray * _proxies;
     NSDictionary * _proxiesByBundlePath;
     NSDictionary * _proxiesByDataPath;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _proxyLock;
-    STMAppPurgeableSizeCache * _purgeableSizes;
-    STMAppStaticSizeCache * _staticSizes;
-    bool  _streamRunning;
-    NSObject<OS_dispatch_queue> * _updateQueue;
+    STMAppPurgeableSizer * _purgeableSizer;
+    STMAppStaticSizer * _staticSizer;
 }
 
 @property (nonatomic, retain) NSArray *appProxies;
 @property (readonly, copy) NSString *debugDescription;
 @property <STMAppSizerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (retain) STMAppDynamicSizeCache *dynamicSizes;
+@property (retain) STMAppDynamicSizer *dynamicSizer;
 @property (readonly) unsigned long long hash;
-@property (retain) STMAppPurgeableSizeCache *purgeableSizes;
-@property (retain) STMAppStaticSizeCache *staticSizes;
+@property (retain) STMAppPurgeableSizer *purgeableSizer;
+@property (retain) STMAppStaticSizer *staticSizer;
 @property (readonly) Class superclass;
-@property (retain) NSObject<OS_dispatch_queue> *updateQueue;
 
 + (id)sharedSizer;
 
@@ -40,26 +37,22 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dynamicSizeForApp:(id)arg1;
-- (id)dynamicSizes;
+- (id)dynamicSizer;
 - (id)init;
 - (void)notifySizesUpdated;
-- (void)pathChanged:(id)arg1 flags:(unsigned int)arg2 event:(unsigned long long)arg3;
 - (id)purgeableSizeForApp:(id)arg1;
-- (id)purgeableSizes;
+- (id)purgeableSizer;
 - (void)setAppProxies:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDynamicSizes:(id)arg1;
-- (void)setPurgeableSizes:(id)arg1;
-- (void)setRootPaths:(id)arg1;
-- (void)setStaticSizes:(id)arg1;
-- (void)setUpdateQueue:(id)arg1;
+- (void)setDynamicSizer:(id)arg1;
+- (void)setPurgeableSizer:(id)arg1;
+- (void)setStaticSizer:(id)arg1;
 - (void)sizeCacheItemsUpdated:(id)arg1;
 - (void)sizeCacheSizesUpdated:(id)arg1;
 - (void)startSizer;
 - (id)staticSizeForApp:(id)arg1;
-- (id)staticSizes;
+- (id)staticSizer;
 - (void)stopSizer;
 - (long long)totalSizeOfItems;
-- (id)updateQueue;
 
 @end

@@ -3,10 +3,6 @@
  */
 
 @interface _ATXFeedback : NSObject {
-    NSString * _abGroupIdentifier;
-    double  _baseAlpha;
-    double  _baseBeta;
-    double  _decayHalfLifeSeconds;
     double  _priorAlpha;
     double  _priorBeta;
     double  _priorMean;
@@ -14,18 +10,12 @@
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
-@property (nonatomic, readonly) NSString *abGroupIdentifier;
-@property (nonatomic, readonly) double baseAlpha;
-@property (nonatomic, readonly) double baseBeta;
 @property (nonatomic, readonly) double currentAlpha;
 @property (nonatomic, readonly) double currentBeta;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)abGroupIdentifier;
-- (double)baseAlpha;
-- (double)baseBeta;
 - (double)currentAlpha;
 - (double)currentBeta;
 - (void)decayCounts;

@@ -18,6 +18,8 @@
 @property (nonatomic, readonly) unsigned long long version;
 @property (nonatomic) double weight;
 
+// Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
+
 + (unsigned int)commandTypeForIdentifier:(id)arg1 wantsObjectErase:(bool)arg2;
 + (double)defaultOpacityForIdentifier:(id)arg1;
 + (double)defaultWeightForIdentifier:(id)arg1;
@@ -51,5 +53,13 @@
 - (id)variant;
 - (unsigned long long)version;
 - (double)weight;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
++ (id)akDefaultInkWithIdentifier:(id)arg1;
++ (id)akDefaultInkWithIdentifier:(id)arg1 color:(id)arg2 strokeWidth:(double)arg3;
++ (id)akInkFromInk:(id)arg1 color:(id)arg2 strokeWidth:(double)arg3;
++ (id)akInkFromInk:(id)arg1 strokeWidth:(double)arg2;
++ (double)inkWeightFromAKValue:(double)arg1;
 
 @end

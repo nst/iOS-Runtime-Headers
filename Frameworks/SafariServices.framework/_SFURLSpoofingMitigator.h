@@ -5,10 +5,14 @@
 @interface _SFURLSpoofingMitigator : NSObject {
     bool  _UIShouldReflectCommittedURLInsteadOfCurrentURL;
     NSDate * _dateOfStartOfLastProvisionalNavigation;
+    long long  _navigationSource;
     unsigned long long  _recentlyInterruptedNavigationCount;
+    NSTimer * _timerForRevertingToCommittedURL;
+    _WKUserInitiatedAction * _userInitiatedAction;
 }
 
 @property (nonatomic, readonly) bool UIShouldReflectCommittedURLInsteadOfCurrentURL;
+@property (nonatomic) long long navigationSource;
 
 + (bool)automaticallyNotifiesObserversOfUIShouldReflectCommittedURLInsteadOfCurrentURL;
 
@@ -19,6 +23,8 @@
 - (void)_stopTrackingInterruptedProvisionalNavigations;
 - (void)didCommitNavigation;
 - (void)didFailProvisionalNavigationWithError:(id)arg1;
-- (void)didStartProvisionalNavigation;
+- (void)didStartProvisionalNavigationWithUserInitiatedAction:(id)arg1;
+- (long long)navigationSource;
+- (void)setNavigationSource:(long long)arg1;
 
 @end

@@ -6,7 +6,7 @@
     NSSet * _autoFavoriteTagIDs;
     NSSet * _groupableTagIDs;
     NSSet * _ignoredTagIDs;
-    FCMTWriterMutexLock * _itemsLock;
+    FCMTWriterLock * _itemsLock;
     NSMutableDictionary * _mutableSubscriptionsBySubscriptionID;
     NSSet * _mutedTagIDs;
     NSOrderedSet * _orderedSubscribedTagIDs;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSSet *autoFavoriteTagIDs;
 @property (nonatomic, copy) NSSet *groupableTagIDs;
 @property (nonatomic, copy) NSSet *ignoredTagIDs;
-@property (nonatomic, retain) FCMTWriterMutexLock *itemsLock;
+@property (nonatomic, retain) FCMTWriterLock *itemsLock;
 @property (nonatomic, retain) NSMutableDictionary *mutableSubscriptionsBySubscriptionID;
 @property (nonatomic, copy) NSSet *mutedTagIDs;
 @property (nonatomic, copy) NSOrderedSet *orderedSubscribedTagIDs;

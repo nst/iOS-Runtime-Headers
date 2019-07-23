@@ -5,17 +5,14 @@
 @interface CKContextCompleter : NSObject {
     unsigned long long  _couldHaveShown;
     bool  _discarded;
-    bool  _engaged;
+    bool  _hideCompletions;
+    NSDate * _hideCompletionsAfterDate;
     NSString * _ignorePrefix;
     NSString * _input;
-    unsigned int  _loggingCouldHaveShownMax;
-    unsigned int  _loggingInputLengthMax;
-    bool  _loggingServerOverride;
-    unsigned int  _loggingShownMax;
+    unsigned long long  _mustPrefixMatchLength;
     CKContextResponse * _response;
     NSLocale * _searchLocale;
-    bool  _shown;
-    bool  _transactionSuccessful;
+    NSMutableArray * _zkwResults;
 }
 
 - (void).cxx_destruct;

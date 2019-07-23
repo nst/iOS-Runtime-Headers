@@ -23,17 +23,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool switchingLanguage;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)activeInstance;
 + (Class)dictationViewClass;
 + (struct CGSize { double x1; double x2; })layoutSize;
 + (id)sharedInstance;
 + (struct CGSize { double x1; double x2; })viewSize;
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
@@ -41,6 +35,7 @@
 - (struct CGPoint { double x1; double x2; })backgroundOffset;
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (struct CGSize { double x1; double x2; })currentScreenSize;
+- (void)dealloc;
 - (id)displayDelegate;
 - (bool)drawsOwnBackground;
 - (id)endpointButton;

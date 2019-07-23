@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
+@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol> {
     bool  _allowsManualEntry;
     NSSet * _betaNetworks;
     PKPaymentSetupFooterView * _footerView;
@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)_didSelectProducts:(id)arg1;
+- (void)_prepareViewControllerForProvsioningFlow:(id)arg1;
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setupLater:(id)arg1;
 - (void)_terminateSetupFlow;
@@ -45,9 +46,10 @@
 - (bool)hideSetupLaterButton;
 - (id)initWithSetupDelegate:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)paymentSetupMarker;
 - (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)productSelectionViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)provisioningController;
+- (void)provisioningViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setAllowsManualEntry:(bool)arg1;
 - (void)setHideSetupLaterButton:(bool)arg1;
 - (long long)setupContext;

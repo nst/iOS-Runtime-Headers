@@ -3,9 +3,16 @@
  */
 
 @interface VMVoicemailManager : NSObject <VMClientXPCProtocol> {
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _accessorLock;
+    NSArray * _accounts;
+    bool  _canChangeGreeting;
+    bool  _canChangePassword;
     VMVoicemailCapabilities * _capabilities;
     VMClientWrapper * _client;
     NSObject<OS_dispatch_queue> * _completionQueue;
+    bool  _mailboxRequiresSetup;
     bool  _messageWaiting;
     bool  _online;
     NSObject<OS_dispatch_queue> * _serialDispatchQueue;
@@ -20,6 +27,8 @@
     NSOrderedSet * _voicemails;
 }
 
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } accessorLock;
+@property (nonatomic, copy) NSArray *accounts;
 @property (nonatomic, readonly) NSArray *allVoicemails;
 @property (nonatomic, readonly) bool canChangeGreeting;
 @property (nonatomic, readonly) bool canChangePassword;
@@ -29,12 +38,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) long long mailboxGreetingState;
 @property (nonatomic, readonly) bool mailboxRequiresSetup;
-@property (nonatomic, readonly) double maximumGreetingDuration;
-@property (nonatomic, readonly) unsigned long long maximumPasswordLength;
 @property (getter=isMessageWaiting, nonatomic) bool messageWaiting;
-@property (nonatomic, readonly) unsigned long long minimumPasswordLength;
 @property (getter=isOnline, nonatomic) bool online;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialDispatchQueue;
 @property (nonatomic, readonly) <VMServerXPCProtocol> *serverConnection;
@@ -52,6 +57,8 @@
 
 - (void).cxx_destruct;
 - (void)_requestInitialStateIfNecessaryAndSendNotifications:(bool)arg1;
+- (struct os_unfair_lock_s { unsigned int x1; })accessorLock;
+- (id)accounts;
 - (id)allVoicemails;
 - (bool)canChangeGreeting;
 - (bool)canChangePassword;
@@ -64,23 +71,26 @@
 - (void)dealloc;
 - (id)deleteVoicemail:(id)arg1;
 - (id)deleteVoicemails:(id)arg1;
+- (void)greetingForAccountUUID:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithClient:(id)arg1;
+- (bool)isGreetingChangeSupportedForAccountUUID:(id)arg1;
 - (bool)isMessageWaiting;
 - (bool)isOnline;
+- (bool)isPasscodeChangeSupportedForAccountUUID:(id)arg1;
 - (bool)isSubscribed;
 - (bool)isSyncInProgress;
 - (bool)isTranscribing;
 - (bool)isTranscriptionEnabled;
 - (bool)isTranscriptionEnabled;
-- (long long)mailboxGreetingState;
 - (bool)mailboxRequiresSetup;
 - (id)markVoicemailAsRead:(id)arg1;
 - (id)markVoicemailsAsRead:(id)arg1;
-- (double)maximumGreetingDuration;
-- (unsigned long long)maximumPasswordLength;
-- (unsigned long long)minimumPasswordLength;
+- (double)maximumGreetingDurationForAccountUUID:(id)arg1;
+- (long long)maximumPasscodeLengthForAccountUUID:(id)arg1;
+- (long long)minimumPasscodeLengthForAccountUUID:(id)arg1;
 - (void)obliterate;
+- (void)performAtomicAccessorBlock:(id /* block */)arg1;
 - (void)performSynchronousBlock:(id /* block */)arg1;
 - (id)removeVoicemailFromTrash:(id)arg1;
 - (id)removeVoicemailsFromTrash:(id)arg1;
@@ -88,16 +98,18 @@
 - (void)reportTranscriptionRatedAccurate:(bool)arg1 forVoicemail:(id)arg2;
 - (void)requestInitialStateIfNecessaryAndSendNotifications:(bool)arg1;
 - (void)retrieveDataForVoicemail:(id)arg1;
-- (void)retrieveGreetingWithCompletionHandler:(id /* block */)arg1;
 - (void)saveGreeting:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)serialDispatchQueue;
 - (id)serverConnection;
 - (id)serverConnectionWithErrorHandler:(id /* block */)arg1;
+- (void)setAccounts:(id)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setCompletionQueue:(id)arg1;
+- (void)setGreeting:(id)arg1 forAccountUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setMessageWaiting:(bool)arg1;
 - (void)setOnline:(bool)arg1;
+- (void)setPasscode:(id)arg1 forAccountUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setStorageUsage:(unsigned long long)arg1;
 - (void)setSubscribed:(bool)arg1;
 - (void)setSyncInProgress:(bool)arg1;
@@ -115,6 +127,7 @@
 - (id)trashedMessages;
 - (id)uniqueIdentifierForVoiceMail:(id)arg1;
 - (long long)unreadCount;
+- (oneway void)updateAccounts:(id)arg1;
 - (id)voicemailWithIdentifier:(unsigned long long)arg1;
 - (id)voicemails;
 - (id)voicemailsPassingTest:(id /* block */)arg1;

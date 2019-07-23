@@ -17,6 +17,7 @@
 }
 
 @property (nonatomic, copy) NSNumber *dsid;
+@property (nonatomic, readonly, copy) NSString *givenName;
 @property (nonatomic) bool hasAllowances;
 @property (nonatomic, readonly) bool hasPasscode;
 @property (nonatomic, readonly) bool isChild;
@@ -31,11 +32,13 @@
 @property (nonatomic, copy) NSManagedObjectID *userObjectID;
 @property (getter=isWebUsageEnabled, nonatomic) bool webUsageEnabled;
 
++ (id)keyPathsForValuesAffectingGivenName;
 + (id)keyPathsForValuesAffectingHasPasscode;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dsid;
+- (id)givenName;
 - (bool)hasAllowances;
 - (bool)hasPasscode;
 - (id)init;

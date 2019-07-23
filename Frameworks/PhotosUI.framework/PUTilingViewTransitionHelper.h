@@ -21,6 +21,7 @@
     double  _presentationDuration;
     PUViewControllerTransition<PUTilingViewControllerTransition><PUInterruptibleViewControllerTransition> * _transition;
     bool  _transitionPaused;
+    NSArray * _transitionPausingCall;
 }
 
 @property (setter=_setBackgroundProgressOffset:, nonatomic) double _backgroundProgressOffset;
@@ -45,6 +46,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) PUViewControllerTransition<PUTilingViewControllerTransition><PUInterruptibleViewControllerTransition> *transition;
 @property (getter=isTransitionPaused, setter=_setTransitionPaused:, nonatomic) bool transitionPaused;
+@property (nonatomic, copy) NSArray *transitionPausingCall;
 
 + (void)registerTransitionEndPoint:(id)arg1 forViewController:(id)arg2;
 + (id)transitionEndPointWithViewController:(id)arg1;
@@ -95,7 +97,9 @@
 - (double)presentationDuration;
 - (void)resumeTransition:(bool)arg1;
 - (void)setTransition:(id)arg1;
+- (void)setTransitionPausingCall:(id)arg1;
 - (id)transition;
+- (id)transitionPausingCall;
 - (void)updatePausedTransitionWithProgress:(double)arg1 interactionProgress:(double)arg2;
 
 @end

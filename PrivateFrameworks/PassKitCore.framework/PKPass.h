@@ -31,6 +31,7 @@
     long long  _sharingMethod;
     NSString * _sharingText;
     NSURL * _sharingURL;
+    bool  _supportsCategoryVisualization;
     NSString * _teamID;
     NSDictionary * _userInfo;
     bool  _voided;
@@ -43,6 +44,7 @@
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, readonly) NSArray *backFieldBuckets;
 @property (nonatomic, readonly) PKBarcode *barcode;
+@property (nonatomic, readonly) NSString *businessChatIdentifier;
 @property (nonatomic, readonly) PKImage *cardHolderPicture;
 @property (nonatomic, copy) NSString *deviceName;
 @property (nonatomic, copy) PKPassDisplayProfile *displayProfile;
@@ -106,6 +108,7 @@
 @property (nonatomic, readonly) NSArray *storeIdentifiers;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } stripRect;
 @property (nonatomic, readonly) long long style;
+@property (nonatomic) bool supportsCategoryVisualization;
 @property (nonatomic, copy) NSString *teamID;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailRect;
 @property (nonatomic, readonly) long long transitType;
@@ -134,7 +137,9 @@
 - (bool)availableForAutomaticPresentationUsingVASContext;
 - (id)backFieldBuckets;
 - (id)backgroundImage;
+- (id)balanceFields;
 - (id)barcode;
+- (id)businessChatIdentifier;
 - (id)cardHolderPicture;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyAmountForSemanticKey:(id)arg1;
@@ -241,6 +246,7 @@
 - (void)setSharingMethod:(long long)arg1;
 - (void)setSharingText:(id)arg1;
 - (void)setSharingURL:(id)arg1;
+- (void)setSupportsCategoryVisualization:(bool)arg1;
 - (void)setTeamID:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setVoided:(bool)arg1;
@@ -255,6 +261,7 @@
 - (id)stripImage;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stripRect;
 - (long long)style;
+- (bool)supportsCategoryVisualization;
 - (bool)supportsSharing;
 - (id)teamID;
 - (id)thumbnailImage;
@@ -284,6 +291,7 @@
 
 - (id)_generateIcon:(id)arg1 withVariant:(int)arg2;
 - (id)_icon;
+- (id)cardImageWithDimensions:(struct CGSize { double x1; double x2; })arg1;
 - (id)icon;
 - (id)mailAttachmentIcon;
 

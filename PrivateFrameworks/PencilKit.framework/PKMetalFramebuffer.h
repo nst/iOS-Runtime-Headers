@@ -7,9 +7,11 @@
     <MTLTexture> * _colorTexture;
     <MTLDevice> * _device;
     struct __IOSurface { } * _ioSurface;
+    bool  _isPurgeable;
     bool  _memoryless;
     struct __CVBuffer { } * _pixelBuffer;
     unsigned long long  _pixelFormat;
+    unsigned long long  _sampleCount;
     struct CGSize { 
         double width; 
         double height; 
@@ -22,6 +24,7 @@
 @property (nonatomic, readonly) bool memoryless;
 @property (nonatomic, readonly) struct __CVBuffer { }*pixelBuffer;
 @property (nonatomic, readonly) unsigned long long pixelFormat;
+@property (nonatomic, readonly) unsigned long long sampleCount;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
@@ -32,10 +35,13 @@
 - (void)dealloc;
 - (id)device;
 - (id)init;
-- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(unsigned long long)arg2 device:(id)arg3 memoryless:(bool)arg4 backedByIOSurface:(bool)arg5;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 pixelFormat:(unsigned long long)arg2 device:(id)arg3 memoryless:(bool)arg4 backedByIOSurface:(bool)arg5 sampleCount:(unsigned long long)arg6;
+- (bool)makeNonPurgeable;
+- (void)makePurgeable;
 - (bool)memoryless;
 - (struct __CVBuffer { }*)pixelBuffer;
 - (unsigned long long)pixelFormat;
+- (unsigned long long)sampleCount;
 - (struct CGSize { double x1; double x2; })size;
 
 @end

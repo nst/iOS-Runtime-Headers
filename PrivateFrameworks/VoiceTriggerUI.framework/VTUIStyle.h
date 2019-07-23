@@ -3,6 +3,9 @@
  */
 
 @interface VTUIStyle : NSObject {
+    long long  _audioProductID;
+    NSString * _audioProductName;
+    bool  _bluetoothDeviceSupportsHeySiri;
     UIFontMetrics * _bodyMetricsForScaling;
     NSString * _deviceClass;
     NSArray * _deviceImageDoneSuffixes;
@@ -18,6 +21,9 @@
     bool  _supportSideButtonActivation;
 }
 
+@property (nonatomic) long long audioProductID;
+@property (nonatomic, copy) NSString *audioProductName;
+@property (nonatomic) bool bluetoothDeviceSupportsHeySiri;
 @property (nonatomic) long long enrollmentMode;
 @property (nonatomic) bool isBuddy;
 @property (nonatomic) bool isHeySiriAlwaysOn;
@@ -31,6 +37,9 @@
 - (void)_createImageSuffixesForDevice;
 - (void)_createStringSuffixesForDevice;
 - (id)_deviceImageForBaseImageName:(id)arg1;
+- (long long)audioProductID;
+- (id)audioProductName;
+- (bool)bluetoothDeviceSupportsHeySiri;
 - (double)bottomOfContinueToNotNowFirstBaseline;
 - (id)buttonTextColor;
 - (double)continueButtonPaddingTop;
@@ -73,31 +82,62 @@
 - (id)primaryButtonFont;
 - (double)primaryButtonHeight;
 - (double)primaryButtonHorizontalInset;
+- (id)proxCancelFont;
+- (double)proxContainerCornerRadius;
+- (double)proxContainerHorizontalVerticalPadding;
 - (double)proxFlamesViewCenterYOffset;
 - (double)proxFlamesViewHeight;
+- (id)proxFooterFont;
+- (id)proxHSDescription:(id)arg1;
 - (id)proxHeaderColor;
 - (id)proxHeaderFont;
 - (double)proxLeading;
+- (double)proxLeadingLandscape;
+- (double)proxPaddingFootnoteButton;
 - (double)proxPaddingFromBottom;
 - (double)proxPaddingFromTop;
 - (double)proxPaddingImageSubtitle;
-- (double)proxPaddingSubtitleButton;
+- (double)proxPaddingImageSubtitleFromTop;
+- (double)proxPaddingIntroSubtitleButton;
+- (double)proxPaddingIntroTitleImage;
+- (double)proxPaddingSkipButtonPageLabel;
 - (double)proxPaddingTitleImage;
+- (double)proxPaddingTryAgainSubtitle;
 - (double)proxPageFirstBaselineBottom;
 - (id)proxPageFont;
 - (id)proxPageLabelColor;
 - (id)proxPrimaryButtonColor;
 - (id)proxPrimaryButtonFont;
 - (double)proxPrimaryButtonHeight;
+- (double)proxSettingsLabelBottomMargin;
 - (double)proxSiriLogoHeightWidth;
+- (double)proxSiriLogoHeightWidthSmall;
+- (double)proxSkipButtonBaselineBottomMargin;
 - (double)proxStatusLabelMaxHeight;
 - (id)proxSubtitleFont;
+- (double)proxTitleFirstBaselineFromTop;
+- (double)proxTitleTrailingLandscape;
 - (double)proxTrailing;
+- (double)proxTrailingLandscape;
+- (double)proxTrainingDismissButtonHorizontalPadding;
+- (double)proxTrainingDismissButtonPhoneLandscapeHorizontalPadding;
+- (double)proxTrainingDismissButtonVerticalPaddingBottom;
+- (double)proxTrainingDismissButtonVerticalPaddingTop;
+- (double)proxTrainingDismissButtonWidthOrHeight;
+- (double)proxTrainingInstructionLabelHoriztonalOffset;
+- (id)proxTryAgainTitleColor;
 - (double)proxViewHeight;
+- (double)proxViewHeightPhoneLandscape;
+- (double)proxViewLanguageOptionsHeight;
+- (double)proxViewLanguageOptionsHeightPhoneLandscape;
 - (double)proxViewMaxWidth;
+- (double)proxViewMaxWidthPhoneLandscape;
 - (double)radarBtnHorizontalPadding;
 - (double)radarBtnVerticalPadding;
 - (id)secondaryButtonFont;
+- (void)setAudioProductID:(long long)arg1;
+- (void)setAudioProductName:(id)arg1;
+- (void)setBluetoothDeviceSupportsHeySiri:(bool)arg1;
 - (void)setEnrollmentMode:(long long)arg1;
 - (void)setIsBuddy:(bool)arg1;
 - (void)setIsHeySiriAlwaysOn:(bool)arg1;

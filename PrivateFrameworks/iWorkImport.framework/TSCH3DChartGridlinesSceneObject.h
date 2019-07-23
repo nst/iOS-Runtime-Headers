@@ -6,7 +6,7 @@
     TSCH3DPrefilteredLineRenderer * mRenderer;
 }
 
-+ (struct TSCH3DScenePart { id x1; })partWithAxes:(id)arg1;
++ (id)partWithAxes:(id)arg1;
 
 - (void)dealloc;
 - (id)effects;

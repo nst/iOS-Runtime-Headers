@@ -19,6 +19,7 @@
 - (void)_updateVisibleViewAnimated:(bool)arg1;
 - (id)apertureSlider;
 - (id)filterScrubberView;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)setApertureSlider:(id)arg1;
 - (void)setFilterScrubberView:(id)arg1;

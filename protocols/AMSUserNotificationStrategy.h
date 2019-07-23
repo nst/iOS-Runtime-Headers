@@ -5,12 +5,9 @@
 
 @required
 
-- (NSArray *)activeNotifications;
-- (<AMSUserNotificationCenterDelegate> *)delegate;
-- (id)initWithOriginalCenter:(AMSUserNotificationCenter *)arg1 bundleId:(NSString *)arg2 runningInDaemon:(bool)arg3;
-- (AMSUserNotificationCenter *)originalCenter;
-- (AMSBinaryPromise *)postNotification:(AMSUserNotification *)arg1;
-- (AMSBinaryPromise *)removeNotification:(AMSUserNotification *)arg1;
-- (void)setDelegate:(id <AMSUserNotificationCenterDelegate>)arg1;
++ (NSArray *)_activeNotificationsWithCenterBundleId:(NSString *)arg1;
++ (AMSBinaryPromise *)_postNotification:(AMSUserNotification *)arg1 centerBundleId:(NSString *)arg2;
++ (AMSBinaryPromise *)_removeNotification:(AMSUserNotification *)arg1 centerBundleId:(NSString *)arg2;
++ (AMSBinaryPromise *)_removeNotificationWithIdentifier:(NSString *)arg1 centerBundleId:(NSString *)arg2 logKey:(NSString *)arg3;
 
 @end

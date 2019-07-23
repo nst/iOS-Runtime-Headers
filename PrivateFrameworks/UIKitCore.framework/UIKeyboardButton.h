@@ -8,8 +8,6 @@
 
 @property (nonatomic, readonly) long long keyboardButtonStyle;
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithKeyboardButtonStyle:(long long)arg1;
 - (long long)keyboardButtonStyle;
 

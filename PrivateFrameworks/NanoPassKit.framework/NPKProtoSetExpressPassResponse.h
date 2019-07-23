@@ -6,6 +6,7 @@
     NSData * _actualExpressPassInformation;
     NSString * _actualUniqueID;
     bool  _cancelled;
+    NSMutableArray * _currentExpressPasseInformations;
     NSMutableArray * _currentUniqueIDs;
     struct { 
         unsigned int cancelled : 1; 
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSData *actualExpressPassInformation;
 @property (nonatomic, retain) NSString *actualUniqueID;
 @property (nonatomic) bool cancelled;
+@property (nonatomic, retain) NSMutableArray *currentExpressPasseInformations;
 @property (nonatomic, retain) NSMutableArray *currentUniqueIDs;
 @property (nonatomic, readonly) bool hasActualExpressPassInformation;
 @property (nonatomic, readonly) bool hasActualUniqueID;
@@ -32,16 +34,22 @@
 @property (nonatomic) bool pending;
 @property (nonatomic) bool success;
 
++ (Class)currentExpressPasseInformationType;
 + (Class)currentUniqueIDsType;
 
 - (void).cxx_destruct;
 - (id)actualExpressPassInformation;
 - (id)actualUniqueID;
+- (void)addCurrentExpressPasseInformation:(id)arg1;
 - (void)addCurrentUniqueIDs:(id)arg1;
 - (bool)cancelled;
+- (void)clearCurrentExpressPasseInformations;
 - (void)clearCurrentUniqueIDs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentExpressPasseInformationAtIndex:(unsigned long long)arg1;
+- (id)currentExpressPasseInformations;
+- (unsigned long long)currentExpressPasseInformationsCount;
 - (id)currentUniqueIDs;
 - (id)currentUniqueIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)currentUniqueIDsCount;
@@ -62,6 +70,7 @@
 - (void)setActualExpressPassInformation:(id)arg1;
 - (void)setActualUniqueID:(id)arg1;
 - (void)setCancelled:(bool)arg1;
+- (void)setCurrentExpressPasseInformations:(id)arg1;
 - (void)setCurrentUniqueIDs:(id)arg1;
 - (void)setHasCancelled:(bool)arg1;
 - (void)setHasNeedsUnlock:(bool)arg1;

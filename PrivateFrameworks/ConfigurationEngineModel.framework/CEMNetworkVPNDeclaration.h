@@ -4,6 +4,7 @@
 
 @interface CEMNetworkVPNDeclaration : CEMConfigurationBase <CEMRegisteredTypeProtocol> {
     CEMNetworkVPNDeclaration_AlwaysOn * _payloadAlwaysOn;
+    CEMNetworkVPNDeclaration_DNS * _payloadDNS;
     NSNumber * _payloadDisconnectOnIdle;
     NSNumber * _payloadDisconnectOnIdleTimer;
     CEMNetworkVPNDeclaration_IKEv2 * _payloadIKEv2;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) CEMNetworkVPNDeclaration_AlwaysOn *payloadAlwaysOn;
+@property (nonatomic, copy) CEMNetworkVPNDeclaration_DNS *payloadDNS;
 @property (nonatomic, copy) NSNumber *payloadDisconnectOnIdle;
 @property (nonatomic, copy) NSNumber *payloadDisconnectOnIdleTimer;
 @property (nonatomic, copy) CEMNetworkVPNDeclaration_IKEv2 *payloadIKEv2;
@@ -38,7 +40,7 @@
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1 withVPNType:(id)arg2 withUserDefinedName:(id)arg3;
-+ (id)buildWithIdentifier:(id)arg1 withVPNType:(id)arg2 withVPNSubType:(id)arg3 withUserDefinedName:(id)arg4 withVendorConfig:(id)arg5 withVPN:(id)arg6 withIPv4:(id)arg7 withPPP:(id)arg8 withIPSec:(id)arg9 withIKEv2:(id)arg10 withProxies:(id)arg11 withAlwaysOn:(id)arg12 withDisconnectOnIdle:(id)arg13 withDisconnectOnIdleTimer:(id)arg14;
++ (id)buildWithIdentifier:(id)arg1 withVPNType:(id)arg2 withVPNSubType:(id)arg3 withUserDefinedName:(id)arg4 withVendorConfig:(id)arg5 withVPN:(id)arg6 withIPv4:(id)arg7 withPPP:(id)arg8 withIPSec:(id)arg9 withIKEv2:(id)arg10 withProxies:(id)arg11 withAlwaysOn:(id)arg12 withDisconnectOnIdle:(id)arg13 withDisconnectOnIdleTimer:(id)arg14 withDNS:(id)arg15;
 + (id)profileType;
 + (id)registeredClassName;
 + (id)registeredIdentifier;
@@ -52,6 +54,7 @@
 - (bool)multipleAllowed;
 - (bool)mustBeSupervised;
 - (id)payloadAlwaysOn;
+- (id)payloadDNS;
 - (id)payloadDisconnectOnIdle;
 - (id)payloadDisconnectOnIdleTimer;
 - (id)payloadIKEv2;
@@ -66,6 +69,7 @@
 - (id)payloadVendorConfig;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (void)setPayloadAlwaysOn:(id)arg1;
+- (void)setPayloadDNS:(id)arg1;
 - (void)setPayloadDisconnectOnIdle:(id)arg1;
 - (void)setPayloadDisconnectOnIdleTimer:(id)arg1;
 - (void)setPayloadIKEv2:(id)arg1;

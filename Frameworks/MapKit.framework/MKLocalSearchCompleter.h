@@ -26,10 +26,12 @@
         } span; 
     }  _region;
     NSArray * _results;
+    bool  _resultsAreCurrent;
     GEORetainedSearchMetadata * _retainedSearchMetadata;
     bool  _shouldDisplayNoResults;
     bool  _shouldPreloadTransitInfo;
     <MKLocationManagerOperation> * _singleLocationUpdate;
+    GEOSortPriorityMapping * _sortPriorityMapping;
     int  _source;
     <GEOMapServiceCompletionTicket> * _ticket;
     double  _timeSinceLastInBoundingRegion;
@@ -56,6 +58,7 @@
 @property (getter=isSearching, nonatomic, readonly) bool searching;
 @property (getter=_shouldDisplayNoResults, nonatomic, readonly) bool shouldDisplayNoResults;
 @property (getter=_shouldPreloadTransitInfo, setter=_setShouldPreloadTransitInfo:, nonatomic) bool shouldPreloadTransitInfo;
+@property (getter=_sortPriorityMapping, nonatomic, readonly) GEOSortPriorityMapping *sortPriorityMapping;
 @property (nonatomic) double timeSinceLastInBoundingRegion;
 @property (nonatomic, retain) GEOMapServiceTraits *traits;
 
@@ -72,6 +75,7 @@
 - (void)_setShouldPreloadTransitInfo:(bool)arg1;
 - (bool)_shouldDisplayNoResults;
 - (bool)_shouldPreloadTransitInfo;
+- (id)_sortPriorityMapping;
 - (id)analyticsProvider;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRegion;
 - (void)cancel;

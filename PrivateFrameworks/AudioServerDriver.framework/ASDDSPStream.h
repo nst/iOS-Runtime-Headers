@@ -3,9 +3,9 @@
  */
 
 @interface ASDDSPStream : ASDStream {
-    struct unique_ptr<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
-        struct __compressed_pair<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> *, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
-            struct LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> {} *__value_; 
+    struct unique_ptr<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
+        struct __compressed_pair<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3> *, std::__1::default_delete<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
+            struct guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3> {} *__value_; 
         } __ptr_; 
     }  _clientToGraphMap;
     ASDStreamDSPConfiguration * _currentDSPConfiguration;

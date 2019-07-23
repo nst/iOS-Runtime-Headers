@@ -15,7 +15,7 @@
     PKPassColorProfile * _colorProfile;
     UIView * _contentView;
     unsigned long long  _contentViewCreatedRegions;
-    <PKPassFaceDelegate> * _delegate;
+    NSMutableArray * _delayedAnimations;
     double  _dimmer;
     CAFilter * _dimmingFilter;
     UIImage * _faceImage;
@@ -25,6 +25,7 @@
     NSMutableArray * _headerBucketViews;
     NSMutableSet * _headerContentViews;
     NSMutableSet * _headerInvariantViews;
+    bool  _invalidated;
     unsigned long long  _invariantViewCreatedRegions;
     PKLiveRenderedCardFaceView * _liveBackgroundView;
     bool  _liveMotionEnabled;
@@ -37,6 +38,7 @@
     bool  _showingHeader;
     bool  _showsLiveRendering;
     long long  _style;
+    PKTransactionDataOverlayCardFaceView * _transactionDataOverlayView;
     unsigned long long  _visibleRegions;
 }
 
@@ -51,13 +53,14 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <PKPassFaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKPassFaceTemplate *faceTemplate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *headerBucketViews;
 @property (nonatomic) bool liveMotionEnabled;
 @property (nonatomic, readonly) PKPass *pass;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic, readonly) PKPassFaceViewRendererState *rendererState;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } shadowInsets;
 @property (nonatomic) bool showsLiveRendering;
 @property (nonatomic) long long style;
@@ -101,12 +104,14 @@
 - (void)createHeaderContentViews;
 - (void)createHeaderInvariantViews;
 - (void)dealloc;
-- (id)delegate;
+- (void)didAuthenticate;
 - (id)faceTemplate;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(struct { bool x1; bool x2; })arg2;
 - (id)headerBucketViews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertContentView:(id)arg1 ofType:(long long)arg2;
+- (void)invalidate;
+- (bool)isPaused;
 - (void)layoutSubviews;
 - (bool)liveMotionEnabled;
 - (id)pass;
@@ -114,16 +119,18 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeContentView:(id)arg1 ofType:(long long)arg2;
+- (id)rendererState;
 - (void)setAllowBackgroundPlaceHolders:(bool)arg1;
 - (void)setBackgroundMode:(long long)arg1;
 - (void)setClippedContentHeight:(double)arg1;
 - (void)setClipsContent:(bool)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setDimmer:(double)arg1 animated:(bool)arg2;
 - (void)setHeaderBucketViews:(id)arg1;
 - (void)setLiveMotionEnabled:(bool)arg1;
 - (void)setPass:(id)arg1 colorProfile:(id)arg2;
+- (void)setPaused:(bool)arg1;
 - (void)setShowsLiveRendering:(bool)arg1;
+- (void)setShowsLiveRendering:(bool)arg1 rendererState:(id)arg2;
 - (void)setStyle:(long long)arg1;
 - (void)setVisibleRegions:(unsigned long long)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })shadowBackgroundInsets;

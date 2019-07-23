@@ -55,11 +55,14 @@
         unsigned int deviceInVehicle : 1; 
         unsigned int isAPICall : 1; 
         unsigned int isRedoSearch : 1; 
+        unsigned int isRefund : 1; 
+        unsigned int isSettlement : 1; 
         unsigned int navigating : 1; 
         unsigned int supportDirectionIntentAutocomplete : 1; 
         unsigned int supportDirectionIntentSearch : 1; 
         unsigned int supportDymSuggestion : 1; 
         unsigned int supportUnresolvedDirectionIntent : 1; 
+        unsigned int supportsBrandFallback : 1; 
         unsigned int useBackgroundUrl : 1; 
         unsigned int wantsBrandIcon : 1; 
     }  _has;
@@ -67,6 +70,8 @@
     unsigned int  _httpRequestPriority;
     bool  _isAPICall;
     bool  _isRedoSearch;
+    bool  _isRefund;
+    bool  _isSettlement;
     struct { 
         int *list; 
         unsigned long long count; 
@@ -93,6 +98,7 @@
     bool  _supportDirectionIntentSearch;
     bool  _supportDymSuggestion;
     bool  _supportUnresolvedDirectionIntent;
+    bool  _supportsBrandFallback;
     unsigned int  _timeSinceMapEnteredForeground;
     unsigned int  _timeSinceMapViewportChanged;
     GEOTransitOptions * _transitOptions;
@@ -157,6 +163,8 @@
 @property (nonatomic) bool hasHttpRequestPriority;
 @property (nonatomic) bool hasIsAPICall;
 @property (nonatomic) bool hasIsRedoSearch;
+@property (nonatomic) bool hasIsRefund;
+@property (nonatomic) bool hasIsSettlement;
 @property (nonatomic, readonly) bool hasMapRegion;
 @property (nonatomic) bool hasMapZoomLevel;
 @property (nonatomic) bool hasMode;
@@ -173,6 +181,7 @@
 @property (nonatomic) bool hasSupportDirectionIntentSearch;
 @property (nonatomic) bool hasSupportDymSuggestion;
 @property (nonatomic) bool hasSupportUnresolvedDirectionIntent;
+@property (nonatomic) bool hasSupportsBrandFallback;
 @property (nonatomic) bool hasTimeSinceMapEnteredForeground;
 @property (nonatomic) bool hasTimeSinceMapViewportChanged;
 @property (nonatomic, readonly) bool hasTransitOptions;
@@ -185,6 +194,8 @@
 @property (nonatomic) unsigned int httpRequestPriority;
 @property (nonatomic) bool isAPICall;
 @property (nonatomic) bool isRedoSearch;
+@property (nonatomic) bool isRefund;
+@property (nonatomic) bool isSettlement;
 @property (nonatomic, readonly) int*knownClientResolvedTypes;
 @property (nonatomic, readonly) unsigned long long knownClientResolvedTypesCount;
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
@@ -205,6 +216,7 @@
 @property (nonatomic) bool supportDirectionIntentSearch;
 @property (nonatomic) bool supportDymSuggestion;
 @property (nonatomic) bool supportUnresolvedDirectionIntent;
+@property (nonatomic) bool supportsBrandFallback;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
 @property (nonatomic, retain) GEOTransitOptions *transitOptions;
@@ -312,6 +324,8 @@
 - (bool)hasHttpRequestPriority;
 - (bool)hasIsAPICall;
 - (bool)hasIsRedoSearch;
+- (bool)hasIsRefund;
+- (bool)hasIsSettlement;
 - (bool)hasMapRegion;
 - (bool)hasMapZoomLevel;
 - (bool)hasMode;
@@ -328,6 +342,7 @@
 - (bool)hasSupportDirectionIntentSearch;
 - (bool)hasSupportDymSuggestion;
 - (bool)hasSupportUnresolvedDirectionIntent;
+- (bool)hasSupportsBrandFallback;
 - (bool)hasTimeSinceMapEnteredForeground;
 - (bool)hasTimeSinceMapViewportChanged;
 - (bool)hasTransitOptions;
@@ -344,6 +359,8 @@
 - (bool)isAPICall;
 - (bool)isEqual:(id)arg1;
 - (bool)isRedoSearch;
+- (bool)isRefund;
+- (bool)isSettlement;
 - (int)knownClientResolvedTypeAtIndex:(unsigned long long)arg1;
 - (int*)knownClientResolvedTypes;
 - (id)knownClientResolvedTypesAsString:(int)arg1;
@@ -405,6 +422,8 @@
 - (void)setHasHttpRequestPriority:(bool)arg1;
 - (void)setHasIsAPICall:(bool)arg1;
 - (void)setHasIsRedoSearch:(bool)arg1;
+- (void)setHasIsRefund:(bool)arg1;
+- (void)setHasIsSettlement:(bool)arg1;
 - (void)setHasMapZoomLevel:(bool)arg1;
 - (void)setHasMode:(bool)arg1;
 - (void)setHasNavigating:(bool)arg1;
@@ -419,6 +438,7 @@
 - (void)setHasSupportDirectionIntentSearch:(bool)arg1;
 - (void)setHasSupportDymSuggestion:(bool)arg1;
 - (void)setHasSupportUnresolvedDirectionIntent:(bool)arg1;
+- (void)setHasSupportsBrandFallback:(bool)arg1;
 - (void)setHasTimeSinceMapEnteredForeground:(bool)arg1;
 - (void)setHasTimeSinceMapViewportChanged:(bool)arg1;
 - (void)setHasUseBackgroundUrl:(bool)arg1;
@@ -427,6 +447,8 @@
 - (void)setHttpRequestPriority:(unsigned int)arg1;
 - (void)setIsAPICall:(bool)arg1;
 - (void)setIsRedoSearch:(bool)arg1;
+- (void)setIsRefund:(bool)arg1;
+- (void)setIsSettlement:(bool)arg1;
 - (void)setKnownClientResolvedTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setMapRegion:(id)arg1;
 - (void)setMapZoomLevel:(double)arg1;
@@ -446,6 +468,7 @@
 - (void)setSupportDirectionIntentSearch:(bool)arg1;
 - (void)setSupportDymSuggestion:(bool)arg1;
 - (void)setSupportUnresolvedDirectionIntent:(bool)arg1;
+- (void)setSupportsBrandFallback:(bool)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;
 - (void)setTransitOptions:(id)arg1;
@@ -461,6 +484,7 @@
 - (bool)supportDirectionIntentSearch;
 - (bool)supportDymSuggestion;
 - (bool)supportUnresolvedDirectionIntent;
+- (bool)supportsBrandFallback;
 - (unsigned int)timeSinceMapEnteredForeground;
 - (unsigned int)timeSinceMapViewportChanged;
 - (id)transitOptions;

@@ -3,36 +3,47 @@
  */
 
 @interface NUArticleViewControllerFactory : NSObject <NUArticleViewControllerFactory> {
+    <SXURLHandling> * _URLHandler;
     <SXAppStateMonitor> * _appStateMonitor;
     <NUArticleAdManagerFactory> * _articleAdManagerFactory;
     <NUArticleDataProviderFactory> * _articleDataProviderFactory;
+    <NUArticlePrefetcherType> * _articlePrefetcher;
     <NUDynamicTypeProviding> * _dynamicTypeProviding;
+    <NUDocumentSectionBlueprintProvider> * _headerBlueprintProvider;
     <NUArticleKeyCommandManager> * _keyCommandManager;
     NSHashTable * _loadingListeners;
     <NFResolver> * _resolver;
 }
 
+@property (nonatomic, readonly) <SXURLHandling> *URLHandler;
 @property (nonatomic, readonly) <SXAppStateMonitor> *appStateMonitor;
 @property (nonatomic, readonly) <NUArticleAdManagerFactory> *articleAdManagerFactory;
 @property (nonatomic, readonly) <NUArticleDataProviderFactory> *articleDataProviderFactory;
+@property (nonatomic, readonly) <NUArticlePrefetcherType> *articlePrefetcher;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <NUDynamicTypeProviding> *dynamicTypeProviding;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <NUDocumentSectionBlueprintProvider> *headerBlueprintProvider;
 @property (nonatomic, readonly) <NUArticleKeyCommandManager> *keyCommandManager;
 @property (nonatomic, readonly) NSHashTable *loadingListeners;
 @property (nonatomic, readonly) <NFResolver> *resolver;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)URLHandler;
 - (id)appStateMonitor;
 - (id)articleAdManagerFactory;
 - (id)articleDataProviderFactory;
+- (id)articlePrefetcher;
 - (id)createArticleExcerptViewControllerWithArticle:(id)arg1 traits:(id)arg2;
 - (id)createArticleViewControllerWithArticle:(id)arg1;
+- (id)createArticleViewControllerWithArticle:(id)arg1 issue:(id)arg2;
 - (id)createArticleWebViewControllerWithArticle:(id)arg1;
 - (id)dynamicTypeProviding;
-- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 dynamicTypeProviding:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 resolver:(id)arg6;
+- (id)headerBlueprintProvider;
+- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 dynamicTypeProviding:(id)arg3 appStateMonitor:(id)arg4 URLHandler:(id)arg5 keyCommandManager:(id)arg6 headerBlueprintProvider:(id)arg7 articlePrefetcher:(id)arg8 resolver:(id)arg9;
+- (id)initWithArticleDataProviderFactory:(id)arg1 articleAdManagerFactory:(id)arg2 dynamicTypeProviding:(id)arg3 appStateMonitor:(id)arg4 keyCommandManager:(id)arg5 headerBlueprintProvider:(id)arg6 articlePrefetcher:(id)arg7 resolver:(id)arg8;
 - (id)keyCommandManager;
 - (id)loadingListeners;
 - (id)resolver;

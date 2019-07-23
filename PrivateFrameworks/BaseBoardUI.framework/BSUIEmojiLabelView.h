@@ -43,5 +43,6 @@
 // Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
 
 - (void)mt_applyVibrantStyling:(id)arg1;
+- (void)mt_removeAllVibrantStyling;
 
 @end

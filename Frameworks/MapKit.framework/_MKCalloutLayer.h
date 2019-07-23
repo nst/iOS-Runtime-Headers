@@ -22,6 +22,7 @@
 - (struct CGImage { }*)_newContentImage;
 - (double)arrowOffset;
 - (long long)arrowPosition;
+- (void)dealloc;
 - (id)fillColor;
 - (id)init;
 - (void)layoutSublayers;

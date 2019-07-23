@@ -4,17 +4,23 @@
 
 @interface _GCControllerButtonInput : GCControllerButtonInput {
     NSString * _descriptionName;
+    bool  _nonAnalog;
     id /* block */  _pressedChangedHandler;
     float  _value;
     id /* block */  _valueChangedHandler;
 }
+
+@property bool nonAnalog;
 
 - (void).cxx_destruct;
 - (bool)_setValue:(float)arg1;
 - (bool)_setValue:(float)arg1 queue:(id)arg2;
 - (id)description;
 - (id)initWithDescriptionName:(id)arg1;
+- (bool)isAnalog;
+- (bool)nonAnalog;
 - (id /* block */)pressedChangedHandler;
+- (void)setNonAnalog:(bool)arg1;
 - (void)setPressedChangedHandler:(id /* block */)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (float)value;

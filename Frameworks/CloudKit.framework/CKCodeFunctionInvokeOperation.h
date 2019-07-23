@@ -5,23 +5,29 @@
 @interface CKCodeFunctionInvokeOperation : CKDatabaseOperation {
     id /* block */  _functionInvokeCompletionBlock;
     NSString * _functionName;
-    NSError * _reponseError;
-    NSData * _serializedParameters;
+    bool  _local;
+    id /* block */  _perRecordProgressBlock;
+    NSError * _responseError;
+    NSData * _serializedRequest;
     NSData * _serializedResponse;
     NSString * _serviceName;
+    bool  _shouldFetchAssetContentInMemory;
 }
 
 @property (nonatomic, copy) id /* block */ functionInvokeCompletionBlock;
 @property (nonatomic, copy) NSString *functionName;
-@property (nonatomic, retain) NSError *reponseError;
-@property (nonatomic, copy) NSData *serializedParameters;
+@property (nonatomic) bool local;
+@property (nonatomic, copy) id /* block */ perRecordProgressBlock;
+@property (nonatomic, retain) NSError *responseError;
+@property (nonatomic, copy) NSData *serializedRequest;
 @property (nonatomic, copy) NSData *serializedResponse;
 @property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic) bool shouldFetchAssetContentInMemory;
 
 - (void).cxx_destruct;
 - (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleProgressCallback:(id)arg1;
+- (void)_handleProgressCallback:(id)arg1 completion:(id /* block */)arg2;
 - (id)activityCreate;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
@@ -29,16 +35,23 @@
 - (id)functionName;
 - (bool)hasCKOperationCallbacksSet;
 - (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3;
+- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3 local:(bool)arg4;
+- (bool)local;
+- (id /* block */)perRecordProgressBlock;
 - (void)performCKOperation;
-- (id)reponseError;
-- (id)serializedParameters;
+- (id)responseError;
+- (id)serializedRequest;
 - (id)serializedResponse;
 - (id)serviceName;
 - (void)setFunctionInvokeCompletionBlock:(id /* block */)arg1;
 - (void)setFunctionName:(id)arg1;
-- (void)setReponseError:(id)arg1;
-- (void)setSerializedParameters:(id)arg1;
+- (void)setLocal:(bool)arg1;
+- (void)setPerRecordProgressBlock:(id /* block */)arg1;
+- (void)setResponseError:(id)arg1;
+- (void)setSerializedRequest:(id)arg1;
 - (void)setSerializedResponse:(id)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
+- (bool)shouldFetchAssetContentInMemory;
 
 @end

@@ -25,12 +25,14 @@
 
 @property (nonatomic, retain) PKStackedTextItemGroup *content;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic, readonly) double headerPadding;
 @property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
 - (void)_updateSubviewsAnimated:(bool)arg1;
 - (id)content;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
+- (double)headerPadding;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(long long)arg1;

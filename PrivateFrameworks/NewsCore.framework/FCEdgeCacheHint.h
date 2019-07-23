@@ -11,8 +11,11 @@
 @property (nonatomic, readonly, copy) NSString *groupName;
 
 + (id)edgeCacheHintForBreaking;
++ (id)edgeCacheHintForCoverArticles;
 + (id)edgeCacheHintForEditorial;
-+ (id)edgeCacheHintForFeatured;
++ (id)edgeCacheHintForFeaturedArticles;
++ (id)edgeCacheHintForMagazineContent;
++ (id)edgeCacheHintForSpotlight;
 + (id)edgeCacheHintForToday;
 + (id)edgeCacheHintForTopStories;
 + (id)edgeCacheHintForTrending;

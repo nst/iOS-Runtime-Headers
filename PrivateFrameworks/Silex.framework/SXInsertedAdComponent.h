@@ -12,6 +12,7 @@
     unsigned long long  _bannerType;
     SXJSONArray * _behaviors;
     SXComponentConditions * _conditions;
+    bool  _hidden;
     NSString * _identifier;
     NSString * _layout;
     NSString * _style;
@@ -26,12 +27,14 @@
 @property (nonatomic, readonly) unsigned long long bannerType;
 @property (nonatomic, readonly) SXJSONArray *behaviors;
 @property (nonatomic, readonly) SXComponentClassification *classification;
+@property (nonatomic, readonly) SXJSONArray *conditional;
 @property (nonatomic, readonly) SXComponentConditions *conditions;
 @property (nonatomic, readonly) unsigned long long contentRelevance;
 @property (nonatomic, readonly) UIColor *debugColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hidden;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *layout;
 @property (nonatomic, readonly) unsigned long long placementType;
@@ -54,6 +57,7 @@
 - (id)conditions;
 - (unsigned long long)contentRelevance;
 - (id)debugColor;
+- (bool)hidden;
 - (id)identifier;
 - (id)initWithAdType:(unsigned long long)arg1;
 - (id)layout;

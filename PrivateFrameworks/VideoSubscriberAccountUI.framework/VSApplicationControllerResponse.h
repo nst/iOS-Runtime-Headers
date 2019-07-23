@@ -9,6 +9,8 @@
     NSNumber * _expectedAction;
     NSString * _responseStatusCode;
     NSString * _responseString;
+    NSArray * _subscriptionsToAdd;
+    NSArray * _subscriptionsToRemoveByBundleID;
 }
 
 @property (nonatomic, retain) VSAccountAuthentication *accountAuthentication;
@@ -17,6 +19,8 @@
 @property (nonatomic, copy) NSNumber *expectedAction;
 @property (nonatomic, copy) NSString *responseStatusCode;
 @property (nonatomic, copy) NSString *responseString;
+@property (nonatomic, copy) NSArray *subscriptionsToAdd;
+@property (nonatomic, copy) NSArray *subscriptionsToRemoveByBundleID;
 
 - (void).cxx_destruct;
 - (id)accountAuthentication;
@@ -32,5 +36,9 @@
 - (void)setExpectedAction:(id)arg1;
 - (void)setResponseStatusCode:(id)arg1;
 - (void)setResponseString:(id)arg1;
+- (void)setSubscriptionsToAdd:(id)arg1;
+- (void)setSubscriptionsToRemoveByBundleID:(id)arg1;
+- (id)subscriptionsToAdd;
+- (id)subscriptionsToRemoveByBundleID;
 
 @end

@@ -6,8 +6,8 @@
 
 + (id)messsageHoursWithMapItem:(id)arg1;
 
-- (id)completeHours;
-- (id)localizedHoursBuilder;
+- (id)businessHours;
+- (id)hoursBuilderWithHours:(id)arg1;
 - (id)timeZone;
 - (id)titleString;
 

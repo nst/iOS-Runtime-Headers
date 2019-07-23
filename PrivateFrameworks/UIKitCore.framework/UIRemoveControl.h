@@ -19,8 +19,6 @@
     UIView * _target;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)hideAllRemoveConfirmationsInView:(id)arg1;
 + (float)removeButtonWidth;
 + (bool)removeConfirmationsVisibleInView:(id)arg1;
@@ -43,12 +41,9 @@
 - (void)_shouldRemoveTarget;
 - (void)_showDeleteConfirmation:(id)arg1;
 - (float)_verticalOffsetFromTarget;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConfirmationButtonSubview:(id)arg1 withWidth:(float)arg2 target:(id)arg3;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
+- (void)dealloc;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultRemoveButtonEndingFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultRemoveButtonStartingFrame;
 - (id)delegate;

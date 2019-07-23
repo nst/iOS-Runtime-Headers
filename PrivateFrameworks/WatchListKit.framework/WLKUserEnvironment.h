@@ -3,23 +3,29 @@
  */
 
 @interface WLKUserEnvironment : NSObject {
-    NSString * _DSID;
+    NSNumber * _DSID;
     bool  _consented;
     NSArray * _consentedBrands;
+    NSArray * _deniedBrands;
     NSDictionary * _entitlements;
+    bool  _internalBuild;
     NSString * _localeIdentifier;
     NSDictionary * _location;
+    NSString * _platform;
     unsigned long long  _protocolVersion;
     NSString * _restrictions;
     NSString * _storeFrontIdentifier;
 }
 
-@property (nonatomic, retain) NSString *DSID;
+@property (nonatomic, retain) NSNumber *DSID;
 @property (nonatomic) bool consented;
 @property (nonatomic, retain) NSArray *consentedBrands;
+@property (nonatomic, retain) NSArray *deniedBrands;
 @property (nonatomic, retain) NSDictionary *entitlements;
+@property (nonatomic) bool internalBuild;
 @property (nonatomic, retain) NSString *localeIdentifier;
 @property (nonatomic, readonly) NSDictionary *location;
+@property (nonatomic, retain) NSString *platform;
 @property (nonatomic) unsigned long long protocolVersion;
 @property (nonatomic, retain) NSString *restrictions;
 @property (nonatomic, retain) NSString *storeFrontIdentifier;
@@ -29,24 +35,33 @@
 
 - (void).cxx_destruct;
 - (id)DSID;
-- (unsigned long long)_hashForStoreStuff;
+- (id)_consentQuery;
+- (id)_entitlementsQuery;
+- (id)_locationQueryParameters;
+- (id)_queryParameters;
 - (bool)consented;
 - (id)consentedBrands;
+- (id)deniedBrands;
 - (id)description;
 - (id)entitlements;
 - (unsigned long long)hash;
 - (id)init;
+- (bool)internalBuild;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToEnvironment:(id)arg1;
 - (id)localeIdentifier;
 - (id)location;
+- (id)platform;
 - (unsigned long long)protocolVersion;
 - (id)restrictions;
 - (void)setConsented:(bool)arg1;
 - (void)setConsentedBrands:(id)arg1;
 - (void)setDSID:(id)arg1;
+- (void)setDeniedBrands:(id)arg1;
 - (void)setEntitlements:(id)arg1;
+- (void)setInternalBuild:(bool)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
+- (void)setPlatform:(id)arg1;
 - (void)setProtocolVersion:(unsigned long long)arg1;
 - (void)setRestrictions:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;

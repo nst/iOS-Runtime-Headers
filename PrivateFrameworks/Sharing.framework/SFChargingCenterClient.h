@@ -2,28 +2,44 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFChargingCenterClient : NSObject {
+@interface SFChargingCenterClient : NSObject <SBSRemoteAlertHandleObserver> {
     bool  _activateCalled;
+    SBSRemoteAlertHandle * _currentRemoteHandle;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    NSMutableDictionary * _errorNotifications;
     bool  _forcePill;
     bool  _invalidateCalled;
     bool  _invalidateDone;
     SFWirelessChargingMonitor * _monitor;
+    NSDate * _mostRecentDeactivationDate;
+    NSString * _mostRecentSuccessfullActivationReason;
+    double  _previousPhoneChargeLevel;
+    unsigned char  _processedErrorCode;
     id /* block */  _requestHandler;
     int  _triggerEngagementToken;
+    int  _triggerError1;
+    int  _triggerError4;
+    bool  _triggerUIForInBandComms;
     SFChargingUICoordinator * _uiCoordinator;
     id /* block */  _visualInformationRequestHandler;
+    NSObject<OS_dispatch_source> * _watchUITimer;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic) SBSRemoteAlertHandle *currentRemoteHandle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, retain) NSMutableDictionary *errorNotifications;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SFWirelessChargingMonitor *monitor;
+@property (nonatomic, retain) NSDate *mostRecentDeactivationDate;
+@property (nonatomic, retain) NSString *mostRecentSuccessfullActivationReason;
 @property (nonatomic, readonly) long long numberOfDevicesCharging;
+@property (nonatomic, readonly) PLTitledSummaryPlatterView *platterView;
 @property (nonatomic, copy) id /* block */ requestHandler;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) SFChargingUICoordinator *uiCoordinator;
 @property (nonatomic, copy) id /* block */ visualInformationRequestHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *watchUITimer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (void)notificationFeedbackConfigurationWithSound:(bool)arg1 andHaptic:(bool)arg2 forFeedbackType:(long long)arg3 completion:(id /* block */)arg4;
@@ -34,35 +50,47 @@
 - (void)checkDefaults;
 - (void)contextsForRemoteAlertActivationWithReason:(id)arg1 completion:(id /* block */)arg2;
 - (void)createWorkQueue;
+- (id)currentRemoteHandle;
 - (void)dealloc;
 - (id)dispatchQueue;
-- (id)errorNotifications;
 - (id)init;
 - (void)invalidate;
 - (void)listenToNotifications;
 - (id)monitor;
+- (id)mostRecentDeactivationDate;
+- (id)mostRecentSuccessfullActivationReason;
 - (long long)numberOfDevicesCharging;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)onqueue_activate;
-- (id)onqueue_dataRepresentationForInformationProvider:(id)arg1;
+- (void)onqueue_canPresentForDevice:(id)arg1 handler:(id /* block */)arg2;
 - (void)onqueue_invalidate;
 - (void)onqueue_presentationRequestContextsForReason:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)onqueue_sendPresentationRequestForPowerSource:(id)arg1 removed:(bool)arg2;
-- (void)onqueue_updateConfigurationContext:(id)arg1 withInformationProvider:(id)arg2;
-- (void)onqueue_updateConfigurationContext:(id)arg1 withKeyPowerSource:(id)arg2;
-- (void)onqueue_updateConfigurationContextWithPowerSourcesData:(id)arg1;
+- (void)onqueue_requestPresentationForReason:(id)arg1 withKeyChargingDevice:(id)arg2 completion:(id /* block */)arg3;
+- (void)onqueue_sendPresentationRequestForChargingDevice:(id)arg1;
+- (void)onqueue_updateActivationContext:(id)arg1 withCoverSheetPlatterFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)onqueue_updateActivationContext:(id)arg1 withKeyChargingDevice:(id)arg2;
+- (void)onqueue_updateActivationContextWithPowerSourcesData:(id)arg1;
+- (id)platterView;
+- (void)reevaluatePlatterViewShowEligibility;
+- (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (id /* block */)requestHandler;
+- (void)restorePersistedErrorNotifications;
+- (void)setCurrentRemoteHandle:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setErrorNotifications:(id)arg1;
 - (void)setMonitor:(id)arg1;
+- (void)setMostRecentDeactivationDate:(id)arg1;
+- (void)setMostRecentSuccessfullActivationReason:(id)arg1;
 - (void)setRequestHandler:(id /* block */)arg1;
 - (void)setUiCoordinator:(id)arg1;
-- (void)setUpMonitor;
+- (void)setUpPlatterView;
+- (void)setUpPowerMonitor;
 - (void)setVisualInformationRequestHandler:(id /* block */)arg1;
+- (void)setWatchUITimer:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)uiCoordinator;
-- (void)updateErrorNotificationsForPowerSource:(id)arg1 removed:(bool)arg2;
+- (void)updatePlatterView;
 - (id /* block */)visualInformationRequestHandler;
+- (id)watchUITimer;
 - (id)workQueue;
 
 @end

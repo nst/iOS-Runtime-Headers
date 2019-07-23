@@ -9,7 +9,7 @@
     struct ATXPredictionItem { 
         NSString *key; 
         unsigned long long actionHash; 
-        float inputSignals[259]; 
+        float inputSignals[348]; 
         float score; 
     }  _predictionItem;
 }
@@ -24,14 +24,14 @@
 - (unsigned long long)hash;
 - (id)initWithMinimalSlotResolutionParameters:(id)arg1 score:(float)arg2 actionKey:(id)arg3;
 - (id)initWithScoredAction:(struct ATXScoredPrediction { Class x1; }*)arg1 slotSet:(id)arg2 actionKey:(id)arg3;
-- (id)initWithScoredAction:(struct ATXScoredPrediction { Class x1; }*)arg1 slotSet:(id)arg2 minimalSlotResolutionParameters:(id)arg3 score:(float)arg4 actionKey:(id)arg5 predictionItem:(struct ATXPredictionItem { id x1; float x2[259]; float x3; })arg6;
+- (id)initWithScoredAction:(struct ATXScoredPrediction { Class x1; }*)arg1 slotSet:(id)arg2 minimalSlotResolutionParameters:(id)arg3 score:(float)arg4 actionKey:(id)arg5 predictionItem:(struct ATXPredictionItem { id x1; float x2[348]; float x3; })arg6;
 - (void)initializeScoredActionAndSlotSet;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToActionPredictionContainer:(id)arg1;
-- (struct ATXPredictionItem { id x1; float x2[259]; float x3; })predictionItem;
+- (struct ATXPredictionItem { id x1; float x2[348]; float x3; })predictionItem;
 - (float)score;
 - (struct ATXScoredPrediction { Class x1; }*)scoredAction;
-- (void)setPredictionItem:(struct ATXPredictionItem { id x1; float x2[259]; float x3; })arg1;
+- (void)setPredictionItem:(struct ATXPredictionItem { id x1; float x2[348]; float x3; })arg1;
 - (void)setScore:(float)arg1;
 - (id)slotSet;
 

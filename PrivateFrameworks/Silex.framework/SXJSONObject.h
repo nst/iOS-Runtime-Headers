@@ -3,18 +3,18 @@
  */
 
 @interface SXJSONObject : NSObject {
-    id  _backingObject;
     NSDictionary * _jsonDictionary;
     NSMutableDictionary * _objectStorage;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
     NSString * _specificationVersion;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfairLock;
 }
 
-@property (nonatomic, retain) id backingObject;
-@property (nonatomic, retain) NSDictionary *jsonDictionary;
-@property (nonatomic, retain) NSMutableDictionary *objectStorage;
-@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (nonatomic, readonly) NSDictionary *jsonDictionary;
+@property (nonatomic, readonly) NSMutableDictionary *objectStorage;
 @property (nonatomic, readonly) NSString *specificationVersion;
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } unfairLock;
 
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
 + (Class)classOverrideAtInitialization:(Class)arg1 type:(id)arg2;
@@ -30,26 +30,20 @@
 + (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)backingObject;
+- (id)JSONRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)explodedBackingObjects;
-- (id)flatCopy;
-- (bool)hasJSONStore;
-- (id)initWithBackingObject:(id)arg1 andVersion:(id)arg2;
+- (id)init;
 - (id)initWithJSONData:(id)arg1 andVersion:(id)arg2;
 - (id)initWithJSONObject:(id)arg1 andVersion:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)jsonData;
 - (id)jsonDictionary;
 - (id)objectForLookupKey:(id)arg1;
 - (id)objectStorage;
-- (id)semaphore;
-- (void)setBackingObject:(id)arg1;
-- (void)setBackingObject:(id)arg1 forPropertiesOfClass:(Class)arg2;
-- (void)setJsonDictionary:(id)arg1;
-- (void)setObjectStorage:(id)arg1;
 - (id)specificationVersion;
 - (void)storeObject:(id)arg1 forLookupKey:(id)arg2;
 - (void)storeValue:(id)arg1 forLookupKey:(id)arg2;
+- (struct os_unfair_lock_s { unsigned int x1; })unfairLock;
 - (id)valueForLookupKey:(id)arg1;
 
 @end

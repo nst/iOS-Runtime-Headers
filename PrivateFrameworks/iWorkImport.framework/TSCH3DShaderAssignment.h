@@ -48,6 +48,7 @@
 - (id)forceLinkageForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (id)initWithAssigneeLinkage:(id)arg1 statement:(id)arg2 dependees:(id)arg3 program:(id)arg4;
 - (bool)isLinked;
+- (bool)isMetal;
 - (struct TSCH3DShaderType { unsigned long long x1; })linkageType;
 - (id)resolve;
 - (id)resolveDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
@@ -58,6 +59,7 @@
 - (id)updateDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (bool)updateLinkageTypeAddVaryingToAdditions:(id)arg1;
 - (id)updateVaryingAssignmentForLinkage:(id)arg1;
+- (id)variableDeclaration;
 - (id)varyingAssignmentForLinkage:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
     NSData * _bluetoothAddressData;
     CUBluetoothClient * _bluetoothClient;
     CXCallObserver * _callObserver;
+    int  _connectedCallCount;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _familyFailed;
     NSArray * _familyMembers;
@@ -19,9 +20,12 @@
     int  _firstUnlockToken;
     bool  _firstUnlocked;
     int  _fmfDevicesChangedToken;
+    bool  _manateeAvailable;
+    bool  _manateeObserving;
     int  _meDeviceChangedToken;
     NSString * _meDeviceFMFDeviceID;
     NSString * _meDeviceIDSDeviceID;
+    bool  _meDeviceIsMe;
     NSString * _meDeviceName;
     int  _meDeviceRetryToken;
     bool  _meDeviceValid;
@@ -30,7 +34,9 @@
     CUNetInterfaceMonitor * _netInterfaceMonitor;
     int  _powerSourceToken;
     bool  _powerUnlimited;
+    bool  _primaryAppleIDActive;
     bool  _primaryAppleIDIsHSA2;
+    int  _primaryAppleIDNotifyToken;
     bool  _primaryAppleIDObserving;
     union { 
         struct sockaddr { 
@@ -92,10 +98,10 @@
             unsigned int sin6_scope_id; 
         } v6; 
     }  _primaryIPv6Addr;
+    NSString * _primaryNetworkSignature;
     struct { 
         unsigned char bytes[6]; 
     }  _rotatingIdentifier48;
-    CUSystemMonitor * _rotatingIdentifierBluetoothAddressMonitor;
     NSData * _rotatingIdentifierData;
     NSObject<OS_dispatch_source> * _rotatingIdentifierTimer;
     int  _screenBlankedToken;
@@ -103,6 +109,8 @@
     int  _screenLockedToken;
     bool  _screenOn;
     bool  _screenSaverActive;
+    int  _systemLockState;
+    int  _systemLockStateToken;
     unsigned int  _wifiFlags;
     CUWiFiManager * _wifiManager;
     int  _wifiState;
@@ -119,6 +127,7 @@
 - (void)_bluetoothAddressMonitorStop;
 - (void)_callMonitorStart;
 - (void)_callMonitorStop;
+- (int)_connectedCallCountUnached;
 - (void)_familyGetMembers:(bool)arg1;
 - (void)_familyMonitorStart;
 - (void)_familyMonitorStop;
@@ -129,6 +138,9 @@
 - (void)_firstUnlockMonitorStop;
 - (bool)_hasMonitorPassingTest:(id /* block */)arg1;
 - (void)_invokeBlock:(id /* block */)arg1 passingTest:(id /* block */)arg2;
+- (void)_manateeChanged:(id)arg1;
+- (void)_manateeMonitorStart;
+- (void)_manateeMonitorStop;
 - (void)_meDeviceCheckCompletion:(id)arg1 error:(id)arg2 firstCheck:(bool)arg3;
 - (void)_meDeviceCheckStart:(bool)arg1;
 - (void)_meDeviceMonitorStart;
@@ -137,14 +149,13 @@
 - (void)_netInterfaceMonitorStop;
 - (void)_powerUnlimitedMonitorStart;
 - (void)_powerUnlimitedMonitorStop;
+- (id)_primaryAppleIDAccount;
 - (void)_primaryAppleIDChanged:(id)arg1;
 - (void)_primaryAppleIDMonitorStart;
 - (void)_primaryAppleIDMonitorStop;
-- (void)_rotatingIdentifierBTUpdated;
 - (void)_rotatingIdentifierMonitorStart;
 - (void)_rotatingIdentifierMonitorStop;
 - (void)_rotatingIdentifierTimerFired;
-- (void)_rotatingIdentifierTimerReset:(bool)arg1;
 - (void)_screenChanged:(bool)arg1;
 - (void)_screenLockedChanged;
 - (void)_screenLockedMonitorStart;
@@ -153,6 +164,9 @@
 - (void)_screenOnMonitorStop;
 - (void)_screenSaverMonitorStart;
 - (void)_screenSaverMonitorStop;
+- (void)_systemLockStateMonitorStart;
+- (void)_systemLockStateMonitorStop;
+- (void)_systemLockStateUpdate:(bool)arg1;
 - (void)_update;
 - (void)_wifiMonitorStart;
 - (void)_wifiMonitorStateChanged:(bool)arg1;

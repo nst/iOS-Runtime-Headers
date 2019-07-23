@@ -9,7 +9,6 @@
 - (bool)isEditing;
 - (void)sendReturnKey;
 - (void)setKeyboardController:(_TVRXKeyboardController *)arg1;
-- (void)setTelevision:(_TVRCMRTelevisionWrapper *)arg1;
 - (void)setText:(NSString *)arg1;
 - (NSString *)text;
 

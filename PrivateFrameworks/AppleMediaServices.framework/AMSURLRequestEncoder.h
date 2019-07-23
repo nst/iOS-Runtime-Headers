@@ -13,6 +13,7 @@
     long long  _dialogOptions;
     bool  _disableAccountMediaTypeComponent;
     bool  _includeClientVersions;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     NSString * _logUUID;
     long long  _mescalType;
     <AMSResponseDecoding> * _responseDecoder;
@@ -32,6 +33,7 @@
 @property (nonatomic) bool disableAccountMediaTypeComponent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool includeClientVersions;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSString *logUUID;
 @property (nonatomic) long long mescalType;
 @property (nonatomic, retain) <AMSResponseDecoding> *responseDecoder;
@@ -52,14 +54,18 @@
 - (bool)includeClientVersions;
 - (id)init;
 - (id)initWithBagContract:(id)arg1;
+- (id)internalQueue;
 - (id)logUUID;
 - (long long)mescalType;
+- (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2;
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2 error:(id*)arg3;
 - (id)requestWithMethod:(long long)arg1 URL:(id)arg2 error:(id*)arg3;
+- (id)requestWithMethod:(long long)arg1 URL:(id)arg2 parameters:(id)arg3;
 - (id)requestWithMethod:(long long)arg1 URL:(id)arg2 parameters:(id)arg3 error:(id*)arg4;
 - (id)requestWithMethod:(long long)arg1 URLString:(id)arg2 error:(id*)arg3;
 - (id)requestWithMethod:(long long)arg1 URLString:(id)arg2 parameters:(id)arg3 error:(id*)arg4;
 - (id)requestWithMethod:(long long)arg1 bagURL:(id)arg2 error:(id*)arg3;
+- (id)requestWithMethod:(long long)arg1 bagURL:(id)arg2 parameters:(id)arg3;
 - (id)requestWithMethod:(long long)arg1 bagURL:(id)arg2 parameters:(id)arg3 error:(id*)arg4;
 - (id)responseDecoder;
 - (void)setAccount:(id)arg1;
@@ -72,6 +78,7 @@
 - (void)setDialogOptions:(long long)arg1;
 - (void)setDisableAccountMediaTypeComponent:(bool)arg1;
 - (void)setIncludeClientVersions:(bool)arg1;
+- (void)setInternalQueue:(id)arg1;
 - (void)setLogUUID:(id)arg1;
 - (void)setMescalType:(long long)arg1;
 - (void)setResponseDecoder:(id)arg1;

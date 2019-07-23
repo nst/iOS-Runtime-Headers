@@ -3,6 +3,7 @@
  */
 
 @interface PXActionMenuController : NSObject <PXActionPerformerDelegate, PXChangeObserver> {
+    NSArray * _actionTypes;
     NSArray * _actions;
     PXPhotoKitAssetActionManager * _assetActionManager;
     PXPhotoKitAssetCollectionActionManager * _assetCollectionActionManager;
@@ -16,6 +17,7 @@
     PXCMMSendBackSuggestionSource * _sendBackSuggestionSource;
 }
 
+@property (nonatomic, retain) NSArray *actionTypes;
 @property (nonatomic, retain) NSArray *actions;
 @property (nonatomic, readonly) PXPhotoKitAssetActionManager *assetActionManager;
 @property (nonatomic, readonly) PXPhotoKitAssetCollectionActionManager *assetCollectionActionManager;
@@ -36,6 +38,7 @@
 - (void)actionPerformer:(id)arg1 didChangeState:(unsigned long long)arg2;
 - (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
 - (bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
+- (id)actionTypes;
 - (id)actions;
 - (id)assetActionManager;
 - (id)assetCollectionActionManager;
@@ -47,6 +50,7 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)people;
 - (id)sendBackSuggestionSource;
+- (void)setActionTypes:(id)arg1;
 - (void)setActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledActionTypes:(id)arg1;

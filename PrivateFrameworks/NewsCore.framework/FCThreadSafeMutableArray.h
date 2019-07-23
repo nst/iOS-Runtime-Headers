@@ -4,7 +4,7 @@
 
 @interface FCThreadSafeMutableArray : NSObject {
     NSMutableArray * _array;
-    NFMutexLock * _mutexLock;
+    NFUnfairLock * _lock;
 }
 
 @property (nonatomic, readonly, copy) NSArray *readOnlyArray;

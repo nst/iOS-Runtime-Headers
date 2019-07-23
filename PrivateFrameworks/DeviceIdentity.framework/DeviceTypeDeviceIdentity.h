@@ -4,7 +4,10 @@
 
 @interface DeviceTypeDeviceIdentity : NSObject {
     NSString * _device_class;
+    NSString * _hardware_model;
+    bool  _has_internal_diagnostics;
     bool  _has_telephony;
+    bool  _is_dev_board;
     bool  _is_fpga;
     bool  _is_internal_build;
     bool  _is_ipad;
@@ -14,7 +17,10 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *device_class;
+@property (nonatomic, readonly, copy) NSString *hardware_model;
+@property (nonatomic, readonly) bool has_internal_diagnostics;
 @property (nonatomic, readonly) bool has_telephony;
+@property (nonatomic, readonly) bool is_dev_board;
 @property (nonatomic, readonly) bool is_fpga;
 @property (nonatomic, readonly) bool is_internal_build;
 @property (nonatomic, readonly) bool is_ipad;
@@ -25,11 +31,15 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)copyBootArgs;
 - (id)copyDeviceTreeInt:(id)arg1 key:(id)arg2 defaultValue:(int)arg3;
 - (id)copyDeviceTreeProperty:(id)arg1 key:(id)arg2;
 - (id)device_class;
+- (id)hardware_model;
+- (bool)has_internal_diagnostics;
 - (bool)has_telephony;
 - (id)init;
+- (bool)is_dev_board;
 - (bool)is_fpga;
 - (bool)is_internal_build;
 - (bool)is_ipad;

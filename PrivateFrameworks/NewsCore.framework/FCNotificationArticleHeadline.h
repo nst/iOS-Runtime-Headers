@@ -17,7 +17,6 @@
     NSURL * _contentURL;
     FCCoverArt * _coverArt;
     bool  _deleted;
-    NSArray * _endOfArticleTopicIDs;
     bool  _featureCandidate;
     NSData * _flintDocumentPrefetchedData;
     NSString * _flintDocumentUrlString;
@@ -30,6 +29,7 @@
     NSArray * _iAdSectionIDs;
     NSString * _identifier;
     bool  _isDraft;
+    bool  _isLocalDraft;
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
     long long  _minimumNewsVersion;
@@ -94,7 +94,6 @@
 - (unsigned long long)contentType;
 - (id)contentURL;
 - (id)coverArt;
-- (id)endOfArticleTopicIDs;
 - (id)flintDocumentPrefetchedData;
 - (id)flintDocumentUrlString;
 - (id)flintFontResourceIDs;
@@ -112,6 +111,7 @@
 - (bool)isFeatureCandidate;
 - (bool)isHiddenFromAutoFavorites;
 - (bool)isHiddenFromFeeds;
+- (bool)isLocalDraft;
 - (bool)isPaid;
 - (bool)isPressRelease;
 - (bool)isSponsored;
@@ -126,6 +126,7 @@
 - (long long)publisherArticleVersion;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
+- (void)setAccessoryText:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setArticlePayload:(id)arg1;
 - (void)setAssetManager:(id)arg1;

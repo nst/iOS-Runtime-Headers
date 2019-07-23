@@ -16,7 +16,6 @@
     NSNumber * _payloadIsHotspot;
     NSArray * _payloadMCCAndMNCs;
     NSArray * _payloadNAIRealmNames;
-    NSString * _payloadNONEXISTENT;
     NSString * _payloadPassword;
     NSString * _payloadPayloadCertificateUUID;
     NSNumber * _payloadPriority;
@@ -51,7 +50,6 @@
 @property (nonatomic, copy) NSNumber *payloadIsHotspot;
 @property (nonatomic, copy) NSArray *payloadMCCAndMNCs;
 @property (nonatomic, copy) NSArray *payloadNAIRealmNames;
-@property (nonatomic, copy) NSString *payloadNONEXISTENT;
 @property (nonatomic, copy) NSString *payloadPassword;
 @property (nonatomic, copy) NSString *payloadPayloadCertificateUUID;
 @property (nonatomic, copy) NSNumber *payloadPriority;
@@ -72,7 +70,7 @@
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1;
-+ (id)buildWithIdentifier:(id)arg1 withAutoJoin:(id)arg2 withSSIDSTR:(id)arg3 withHIDDENNETWORK:(id)arg4 withProxyType:(id)arg5 withEncryptionType:(id)arg6 withPassword:(id)arg7 withPayloadCertificateUUID:(id)arg8 withEAPClientConfiguration:(id)arg9 withDisplayedOperatorName:(id)arg10 withDomainName:(id)arg11 withRoamingConsortiumOIs:(id)arg12 withServiceProviderRoamingEnabled:(id)arg13 withIsHotspot:(id)arg14 withHESSID:(id)arg15 withNAIRealmNames:(id)arg16 withMCCAndMNCs:(id)arg17 withCaptiveBypass:(id)arg18 withQoSMarkingPolicy:(id)arg19 withInterface:(id)arg20 withSetupModes:(id)arg21 withPriority:(id)arg22 withEnableIPv6:(id)arg23 withNONEXISTENT:(id)arg24 withTLSCertificateRequired:(id)arg25 withProxyServer:(id)arg26 withProxyServerPort:(id)arg27 withProxyUsername:(id)arg28 withProxyPassword:(id)arg29 withProxyPACURL:(id)arg30 withProxyPACFallbackAllowed:(id)arg31;
++ (id)buildWithIdentifier:(id)arg1 withAutoJoin:(id)arg2 withSSIDSTR:(id)arg3 withHIDDENNETWORK:(id)arg4 withProxyType:(id)arg5 withEncryptionType:(id)arg6 withPassword:(id)arg7 withPayloadCertificateUUID:(id)arg8 withEAPClientConfiguration:(id)arg9 withDisplayedOperatorName:(id)arg10 withDomainName:(id)arg11 withRoamingConsortiumOIs:(id)arg12 withServiceProviderRoamingEnabled:(id)arg13 withIsHotspot:(id)arg14 withHESSID:(id)arg15 withNAIRealmNames:(id)arg16 withMCCAndMNCs:(id)arg17 withCaptiveBypass:(id)arg18 withQoSMarkingPolicy:(id)arg19 withInterface:(id)arg20 withSetupModes:(id)arg21 withPriority:(id)arg22 withEnableIPv6:(id)arg23 withTLSCertificateRequired:(id)arg24 withProxyServer:(id)arg25 withProxyServerPort:(id)arg26 withProxyUsername:(id)arg27 withProxyPassword:(id)arg28 withProxyPACURL:(id)arg29 withProxyPACFallbackAllowed:(id)arg30;
 + (id)profileType;
 + (id)registeredClassName;
 + (id)registeredIdentifier;
@@ -98,7 +96,6 @@
 - (id)payloadIsHotspot;
 - (id)payloadMCCAndMNCs;
 - (id)payloadNAIRealmNames;
-- (id)payloadNONEXISTENT;
 - (id)payloadPassword;
 - (id)payloadPayloadCertificateUUID;
 - (id)payloadPriority;
@@ -129,7 +126,6 @@
 - (void)setPayloadIsHotspot:(id)arg1;
 - (void)setPayloadMCCAndMNCs:(id)arg1;
 - (void)setPayloadNAIRealmNames:(id)arg1;
-- (void)setPayloadNONEXISTENT:(id)arg1;
 - (void)setPayloadPassword:(id)arg1;
 - (void)setPayloadPayloadCertificateUUID:(id)arg1;
 - (void)setPayloadPriority:(id)arg1;

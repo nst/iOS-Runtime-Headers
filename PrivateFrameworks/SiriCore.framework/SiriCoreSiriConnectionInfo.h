@@ -8,6 +8,7 @@
     NSString * _connectionId;
     SAConnectionPolicy * _connectionPolicy;
     SAConnectionPolicyRoute * _connectionPolicyRoute;
+    bool  _enableSiriServerLogging;
     bool  _forceReconnect;
     bool  _imposePolicyBan;
     NSString * _languageCode;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) NSString *connectionId;
 @property (nonatomic, copy) SAConnectionPolicy *connectionPolicy;
 @property (nonatomic, copy) SAConnectionPolicyRoute *connectionPolicyRoute;
+@property (getter=isSiriServerLoggingEnabled, nonatomic) bool enableSiriServerLogging;
 @property (nonatomic) bool forceReconnect;
 @property (nonatomic) bool imposePolicyBan;
 @property (nonatomic, copy) NSString *languageCode;
@@ -48,6 +50,7 @@
 - (id)description;
 - (bool)forceReconnect;
 - (bool)imposePolicyBan;
+- (bool)isSiriServerLoggingEnabled;
 - (id)languageCode;
 - (id)peerAssistantIdentifier;
 - (bool)prefersWWAN;
@@ -57,6 +60,7 @@
 - (void)setConnectionId:(id)arg1;
 - (void)setConnectionPolicy:(id)arg1;
 - (void)setConnectionPolicyRoute:(id)arg1;
+- (void)setEnableSiriServerLogging:(bool)arg1;
 - (void)setForceReconnect:(bool)arg1;
 - (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;

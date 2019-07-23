@@ -28,5 +28,6 @@
 - (void)messageEntryViewSwipeDownGestureRecognized:(CKMessageEntryView *)arg1;
 - (void)sendCurrentLocationMessage:(CKMessageEntryView *)arg1;
 - (bool)shouldMessageEntryViewReportBrowserButtonHitToInputDelegate:(CKMessageEntryView *)arg1;
+- (UITextView *)textViewOnscreenWithEntryView;
 
 @end

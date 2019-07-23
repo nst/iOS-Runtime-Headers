@@ -19,6 +19,7 @@
 + (bool)isiPhone;
 + (bool)isiPod;
 + (double)networkingEnergyWithBytes:(int)arg1 withDuration:(double)arg2;
++ (bool)shouldShowBatteryGraphs;
 + (id)valueForMobileGestaltCapability:(id)arg1;
 
 @end

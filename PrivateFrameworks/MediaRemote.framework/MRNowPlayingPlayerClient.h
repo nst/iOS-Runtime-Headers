@@ -15,7 +15,7 @@
     NSDictionary * _nowPlayingInfo;
     _MRPlaybackQueueProtobuf * _playbackQueue;
     unsigned int  _playbackState;
-    double  _playbackStateSetToPlayTimestamp;
+    NSDate * _playbackStateDate;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
     MRPlaybackQueueSubscriptionController * _subscriptionController;
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) _MRContentItemProtobuf *nowPlayingContentItem;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
-@property (nonatomic) unsigned int playbackState;
+@property (nonatomic, readonly) unsigned int playbackState;
 @property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic, readonly) MRPlaybackQueueSubscriptionController *subscriptionController;
 @property (nonatomic, copy) NSArray *supportedCommands;
@@ -67,7 +67,6 @@
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueue:(id)arg1;
-- (void)setPlaybackState:(unsigned int)arg1;
 - (void)setPlayerPath:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)startCachingContentItemUpdatesForItem:(id)arg1 forPendingRequest:(id)arg2;
@@ -82,6 +81,7 @@
 - (void)updateCacheWithItem:(id)arg1;
 - (void)updateCacheWithPlaybackQueue:(id)arg1;
 - (void)updatePlaybackQueueWithCachedUpdates:(id)arg1 forPendingRequest:(id)arg2;
+- (void)updatePlaybackState:(unsigned int)arg1 date:(id)arg2;
 - (void)updatePlayer:(id)arg1;
 
 @end

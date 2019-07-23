@@ -3,24 +3,30 @@
  */
 
 @interface SXComponentStyleRendererFactory : NSObject <SXComponentStyleRendererFactory> {
-    <SXDocumentControllerProvider> * _documentControllerProvider;
     <SXGradientFactory> * _gradientFactory;
-    <SXImageViewFactory> * _imageViewFactory;
+    <SXImageFillViewFactory> * _imageFillViewFactory;
+    <SXRepeatableImageFillViewFactory> * _repeatableImageFillViewFactory;
+    <SXVideoFillViewFactory> * _videoFillViewFactory;
+    SXViewport * _viewport;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) <SXDocumentControllerProvider> *documentControllerProvider;
 @property (nonatomic, readonly) <SXGradientFactory> *gradientFactory;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
+@property (nonatomic, readonly) <SXImageFillViewFactory> *imageFillViewFactory;
+@property (nonatomic, readonly) <SXRepeatableImageFillViewFactory> *repeatableImageFillViewFactory;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) <SXVideoFillViewFactory> *videoFillViewFactory;
+@property (nonatomic, readonly) SXViewport *viewport;
 
 - (void).cxx_destruct;
-- (id)componentStyleRendererForComponent:(id)arg1;
-- (id)documentControllerProvider;
+- (id)componentStyleRendererForComponentStyle:(id)arg1;
 - (id)gradientFactory;
-- (id)imageViewFactory;
-- (id)initWithDocumentControllerProvider:(id)arg1 imageViewFactory:(id)arg2 gradientFactory:(id)arg3;
+- (id)imageFillViewFactory;
+- (id)initWithImageFillViewFactory:(id)arg1 videoFillViewFactory:(id)arg2 gradientFactory:(id)arg3 repeatableImageFillViewFactory:(id)arg4 viewport:(id)arg5;
+- (id)repeatableImageFillViewFactory;
+- (id)videoFillViewFactory;
+- (id)viewport;
 
 @end

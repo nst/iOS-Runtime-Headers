@@ -11,7 +11,7 @@
     unsigned int  _scannable;
     unsigned int  _size;
     unsigned int  _stride;
-    NSArray * _subFieldArray;
+    NSMutableArray * _subFieldArray;
     NSString * _typeName;
 }
 

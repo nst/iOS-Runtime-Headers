@@ -41,7 +41,7 @@
 + (id)_extraLargeConflictImageProvider;
 + (id)_modularSmallCalendarImageProvider;
 + (id)_modularSmallConflictImageProvider;
-+ (id)_signatureCircularCalendarProvider;
++ (id)_signatureCircularCalendarProvider:(id)arg1;
 + (id)_signatureCornerImageProvider;
 + (id)_swapPlaceholderString:(id)arg1 withTimeStringForDate:(id)arg2 inString:(id)arg3 usingBaseFont:(id)arg4 smallCapsBaseFont:(id)arg5 timeZone:(id)arg6 options:(unsigned long long)arg7;
 + (id)_utilityCalendarImageProvider;

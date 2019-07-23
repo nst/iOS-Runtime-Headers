@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (double)alphaForElementWithAttributes:(id)arg1;
+- (double)alphaForSunflowerElementWithEngagement:(double)arg1;
 - (id)backIndexPath;
 - (id)currentUpdateItem;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })engagementInsetsForCollectionViewBounds:(struct CGSize { double x1; double x2; })arg1;

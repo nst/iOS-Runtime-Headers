@@ -10,6 +10,8 @@
 
 @property (nonatomic, retain) UIImage *highlightOrSelectedImage;
 
++ (id)imageWithImage:(id)arg1 existingImageView:(id)arg2;
+
 - (void).cxx_destruct;
 - (void)_updateImage;
 - (id)highlightOrSelectedImage;

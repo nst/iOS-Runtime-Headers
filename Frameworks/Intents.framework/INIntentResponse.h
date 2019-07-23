@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntentResponse : NSObject <INCacheableContainer, INGenericIntentResponse, INImageProxyInjecting, INIntentResponseExport, INIntentSlotComposing, INKeyImageProducing, INRuntimeObject, NSCopying, NSSecureCoding> {
+@interface INIntentResponse : NSObject <INCacheableContainer, INFileURLEnumerable, INGenericIntentResponse, INImageProxyInjecting, INIntentResponseExport, INIntentSlotComposing, INKeyImageProducing, INRuntimeObject, NSCopying, NSSecureCoding> {
     bool  __userConfirmationRequired;
     _INPBIntentResponse * _backingStore;
     long long  _code;
@@ -53,6 +53,7 @@
 - (long long)_code;
 - (bool)_commonInit;
 - (id)_dictionaryRepresentation;
+- (void)_enumerateFileURLsWithMutatingBlock:(id /* block */)arg1;
 - (id)_impl;
 - (id)_inCodable;
 - (id)_initWithCode:(long long)arg1 userActivity:(id)arg2;

@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)dropdownView:(_TVRDropDownView *)arg1 didUpdateState:(bool)arg2;
 - (void)dropdownView:(_TVRDropDownView *)arg1 selectedDevice:(TVRCDevice *)arg2;
+- (void)dropdownView:(_TVRDropDownView *)arg1 willUpdateState:(bool)arg2;
 
 @end

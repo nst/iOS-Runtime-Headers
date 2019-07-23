@@ -38,8 +38,8 @@
 - (void)engine:(id)arg1 didChangeQueueWithReason:(id)arg2;
 - (void)engine:(id)arg1 didChangeRepeatType:(long long)arg2;
 - (void)engine:(id)arg1 didChangeShuffleType:(long long)arg2;
+- (void)engine:(id)arg1 didChangeToItem:(id)arg2;
 - (void)engine:(id)arg1 didChangeToState:(unsigned long long)arg2;
-- (void)engine:(id)arg1 willChangeToItem:(id)arg2 fromItem:(id)arg3;
 - (void)engineDidEndStateRestoration:(id)arg1;
 - (void)engineWillBeginStateRestoration:(id)arg1;
 - (bool)hasInitializedSupportedCommands;

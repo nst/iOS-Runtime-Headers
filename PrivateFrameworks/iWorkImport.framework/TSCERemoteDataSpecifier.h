@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) NSString *symbol;
 @property (nonatomic, readonly) long long year;
 
-+ (id)specifierFromArchive:(const struct RemoteDataSpecifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
++ (id)specifierFromArchive:(const struct RemoteDataSpecifierArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
 + (id)specifierWithFunctionIndex:(int)arg1 symbol:(id)arg2 attribute:(long long)arg3 date:(id)arg4;
 
 - (void).cxx_destruct;
@@ -31,12 +31,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
-- (void)encodeToArchive:(struct RemoteDataSpecifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
+- (void)encodeToArchive:(struct RemoteDataSpecifierArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
 - (int)functionIndex;
 - (id)functionName;
 - (unsigned long long)hash;
 - (unsigned long long)hashVal;
-- (id)initFromArchive:(const struct RemoteDataSpecifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
+- (id)initFromArchive:(const struct RemoteDataSpecifierArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; unsigned int x6; unsigned int x7; double x8; }*)arg1;
 - (id)initWithFunctionIndex:(int)arg1 symbol:(id)arg2 attribute:(long long)arg3 date:(id)arg4;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })invalidAttributeErrorValue;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })invalidSymbolErrorValue;

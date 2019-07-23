@@ -3,29 +3,29 @@
  */
 
 @interface SXDocumentStyleRenderer : NSObject <SXDocumentStyleRenderer, SXViewportChangeListener> {
-    <SXDocumentControllerProvider> * _documentControllerProvider;
+    SXFillView * _fillView;
     <SXGradientFactory> * _gradientFactory;
     SXGradientFillView * _gradientFillView;
     SXImageFillView * _imageFillView;
-    <SXImageViewFactory> * _imageViewFactory;
-    <SXPresentationDelegate> * _presentationDelegate;
+    <SXImageFillViewFactory> * _imageFillViewFactory;
     UIView * _topBackgroundView;
     SXVideoFillView * _videoFillView;
+    <SXVideoFillViewFactory> * _videoFillViewFactory;
     SXViewport * _viewport;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) <SXDocumentControllerProvider> *documentControllerProvider;
+@property (nonatomic, retain) SXFillView *fillView;
 @property (nonatomic, readonly) <SXGradientFactory> *gradientFactory;
 @property (nonatomic, retain) SXGradientFillView *gradientFillView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SXImageFillView *imageFillView;
-@property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
-@property (nonatomic) <SXPresentationDelegate> *presentationDelegate;
+@property (nonatomic, readonly) <SXImageFillViewFactory> *imageFillViewFactory;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *topBackgroundView;
 @property (nonatomic, retain) SXVideoFillView *videoFillView;
+@property (nonatomic, readonly) <SXVideoFillViewFactory> *videoFillViewFactory;
 @property (nonatomic, readonly) SXViewport *viewport;
 
 - (void).cxx_destruct;
@@ -33,23 +33,24 @@
 - (void)applyFillForStyle:(id)arg1 onView:(id)arg2;
 - (void)applyStyle:(id)arg1 onView:(id)arg2;
 - (void)applyTopBackgroundForStyle:(id)arg1 onView:(id)arg2;
-- (id)documentControllerProvider;
+- (id)fillView;
 - (id)gradientFactory;
 - (id)gradientFillView;
 - (id)gradientViewForFill:(id)arg1;
 - (id)imageFillView;
-- (id)imageViewFactory;
+- (id)imageFillViewFactory;
 - (id)imageViewForFill:(id)arg1;
-- (id)initWithDocumentControllerProvider:(id)arg1 viewport:(id)arg2 imageViewFactory:(id)arg3 gradientFactory:(id)arg4;
+- (id)initWithViewport:(id)arg1 imageFillViewFactory:(id)arg2 videoFillViewFactory:(id)arg3 gradientFactory:(id)arg4;
+- (void)layoutFillView;
 - (void)layoutTopBackgroundView;
-- (id)presentationDelegate;
+- (void)setFillView:(id)arg1;
 - (void)setGradientFillView:(id)arg1;
 - (void)setImageFillView:(id)arg1;
-- (void)setPresentationDelegate:(id)arg1;
 - (void)setTopBackgroundView:(id)arg1;
 - (void)setVideoFillView:(id)arg1;
 - (id)topBackgroundView;
 - (id)videoFillView;
+- (id)videoFillViewFactory;
 - (id)videoPlayerViewForFill:(id)arg1;
 - (id)viewForFill:(id)arg1;
 - (id)viewport;

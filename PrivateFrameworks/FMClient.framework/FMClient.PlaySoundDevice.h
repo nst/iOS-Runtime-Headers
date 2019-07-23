@@ -19,7 +19,7 @@
 + (id)PlaySoundDeviceLocalityUnknown;
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

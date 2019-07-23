@@ -39,7 +39,7 @@
 - (void)_prewarmFeedNavAssetsInOrderedSubscribedTags:(id)arg1 limit:(unsigned long long)arg2;
 - (void)_purchaseListDidAddTagIDs:(id)arg1;
 - (void)_purchaseListDidRemoveTagIDs:(id)arg1;
-- (void)_refreshChannelsWithNotificationsEnabled;
+- (void)_refreshNotificationRegistrations;
 - (void)_updateNotificationsForPurchaseTagIDs:(id)arg1 isPaid:(bool)arg2;
 - (void)activityObservingApplicationDidEnterBackground;
 - (void)addAutoFavoriteSubscriptionForTagIDs:(id)arg1 groupableSubscriptionForTagIDs:(id)arg2 originProvider:(id /* block */)arg3 eventInitiationLevelProvider:(id /* block */)arg4 completion:(id /* block */)arg5;

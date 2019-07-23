@@ -3,12 +3,10 @@
  */
 
 @interface STUsageGraphView : UIView <UIGestureRecognizerDelegate> {
+    NSArray * _barIndicators;
     UILayoutGuide * _barSectionLayoutGuide;
     NSArray * _barViewHeightConstraints;
     NSArray * _barViews;
-    STDeviceBedtime * _bedtime;
-    UILayoutGuide * _bedtimeFieldLayoutGuide;
-    NSArray * _bedtimeFields;
     STUsageReportGraphDataSet * _dataSet;
     UILayoutGuide * _graphLayoutGuide;
     UIImageView * _horizontalBaseline;
@@ -27,12 +25,10 @@
     NSLayoutConstraint * _weeklyAverageTrailingConstraint;
 }
 
+@property (nonatomic, copy) NSArray *barIndicators;
 @property (nonatomic, retain) UILayoutGuide *barSectionLayoutGuide;
 @property (nonatomic, copy) NSArray *barViewHeightConstraints;
 @property (nonatomic, copy) NSArray *barViews;
-@property (nonatomic, copy) STDeviceBedtime *bedtime;
-@property (nonatomic, retain) UILayoutGuide *bedtimeFieldLayoutGuide;
-@property (nonatomic, copy) NSArray *bedtimeFields;
 @property (nonatomic, retain) STUsageReportGraphDataSet *dataSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -55,18 +51,15 @@
 @property (nonatomic, retain) NSLayoutConstraint *weeklyAverageTrailingConstraint;
 
 + (id)baselineImage;
-+ (id)bedtimeFieldImage;
 + (id)dashedAverageLineImage;
 
 - (void).cxx_destruct;
+- (id)barIndicators;
 - (id)barSectionLayoutGuide;
 - (id)barViewHeightConstraints;
 - (id)barViews;
-- (id)bedtime;
-- (id)bedtimeFieldLayoutGuide;
-- (id)bedtimeFields;
+- (id)createBarIndicatorWithImageName:(id)arg1 barView:(id)arg2;
 - (id)createBarViewWithDataPoint:(id)arg1 layoutGuide:(id)arg2 previousView:(id)arg3 previousLayoutGuide:(id)arg4 layoutGuideWidthMultiplier:(double)arg5;
-- (id)createBedtimeField;
 - (id)createDividerWithView:(id)arg1 layoutGuide:(id)arg2 previousLayoutGuide:(id)arg3 layoutGuideWidthMultiplier:(double)arg4;
 - (id)createFirstDivider;
 - (id)createWeeklyAverageLineWithLayoutGuide:(id)arg1;
@@ -83,12 +76,10 @@
 - (id)paddleViewConnectorCenterXConstraint;
 - (void)selectBarWithClosestHorizontalPositionToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)selectedBarView;
+- (void)setBarIndicators:(id)arg1;
 - (void)setBarSectionLayoutGuide:(id)arg1;
 - (void)setBarViewHeightConstraints:(id)arg1;
 - (void)setBarViews:(id)arg1;
-- (void)setBedtime:(id)arg1;
-- (void)setBedtimeFieldLayoutGuide:(id)arg1;
-- (void)setBedtimeFields:(id)arg1;
 - (void)setDataSet:(id)arg1;
 - (void)setDataSet:(id)arg1 animated:(bool)arg2;
 - (void)setGraphLayoutGuide:(id)arg1;
@@ -100,8 +91,7 @@
 - (void)setPaddleViewConnectorCenterXConstraint:(id)arg1;
 - (void)setSelectedBarView:(id)arg1;
 - (void)setUpBarViewHeightContraints;
-- (void)setUpBedtimeFields;
-- (void)setUpGraphWithDividerInterval:(unsigned long long)arg1 labelFormatter:(id)arg2;
+- (void)setUpGraphWithLabelFormatter:(id)arg1;
 - (void)setUpWeeklyAverageLine:(bool)arg1;
 - (void)setVerticalDividers:(id)arg1;
 - (void)setVerticalLayoutGuides:(id)arg1;

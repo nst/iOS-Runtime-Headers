@@ -5,6 +5,8 @@
 @interface CKDTrafficMetadata : NSObject <NSSecureCoding> {
     NSDictionary * _headers;
     NSString * _method;
+    bool  _parsingStandaloneMessage;
+    NSString * _requestClassName;
     long long  _status;
     NSDate * _timestamp;
     NSURL * _url;
@@ -12,6 +14,8 @@
 
 @property (nonatomic, retain) NSDictionary *headers;
 @property (nonatomic, retain) NSString *method;
+@property (nonatomic) bool parsingStandaloneMessage;
+@property (nonatomic, retain) NSString *requestClassName;
 @property (nonatomic) long long status;
 @property (nonatomic, retain) NSDate *timestamp;
 @property (nonatomic, retain) NSURL *url;
@@ -23,8 +27,12 @@
 - (id)headers;
 - (id)initWithCoder:(id)arg1;
 - (id)method;
+- (bool)parsingStandaloneMessage;
+- (id)requestClassName;
 - (void)setHeaders:(id)arg1;
 - (void)setMethod:(id)arg1;
+- (void)setParsingStandaloneMessage:(bool)arg1;
+- (void)setRequestClassName:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setUrl:(id)arg1;

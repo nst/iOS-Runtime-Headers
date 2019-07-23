@@ -21,8 +21,6 @@
 
 - (NSString *)deviceName;
 - (bool)hasFelicaSecureElement;
-- (NSArray *)setupBrowsableProductTypesForDevice;
-- (NSArray *)setupFeaturedNetworksForDevice;
 - (bool)supportsCredentialType:(long long)arg1;
 
 @end

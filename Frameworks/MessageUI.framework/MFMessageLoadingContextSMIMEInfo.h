@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) MFMessageLoadingContextEvent *loadEvent;
 @property (getter=isMessageEncrypted, nonatomic, readonly) bool messageEncrypted;
 @property (getter=isMessageSigned, nonatomic, readonly) bool messageSigned;
+@property (nonatomic, readonly) NSArray *signers;
 
 + (id)smimeInfoForLoadEvent:(id)arg1;
 

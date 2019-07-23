@@ -8,10 +8,13 @@
     }  _control;
 }
 
+@property (nonatomic, readonly) NSString *dateTimePickerCalendarType;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)assistantView;
 - (void)beginEditing;
+- (id)dateTimePickerCalendarType;
 - (void)endEditing;
 - (id)initWithView:(id)arg1;
 

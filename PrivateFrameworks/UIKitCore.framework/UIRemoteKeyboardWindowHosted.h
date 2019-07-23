@@ -4,15 +4,12 @@
 
 @interface UIRemoteKeyboardWindowHosted : UIRemoteKeyboardWindow
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
++ (bool)_isSecure;
 
 - (bool)_isHostedInAnotherProcess;
 - (bool)_isTextEffectsWindowHosting;
 - (long long)_orientationForRootTransform;
 - (long long)_orientationForViewTransform;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 
 @end

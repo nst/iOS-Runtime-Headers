@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CarPlaySupport.framework/CarPlaySupport
  */
 
-@interface CPSMapTemplateViewController : CPSBaseTemplateViewController <CARNavigationOwnershipManagerDelegate, CARSessionObserving, CPMapTemplateProviding, CPSApplicationStateObserving, CPSButtonDelegate, CPSEventObserverDelegate, CPSLinearFocusProviding, CPSNavigationAlertQueueDelegate, CPSNavigationDisplaying, CPSPanEventDelegate, CPSTripInitiating, UIGestureRecognizerDelegate> {
+@interface CPSMapTemplateViewController : CPSBaseTemplateViewController <CARNavigationOwnershipManagerDelegate, CARSessionObserving, CPMapTemplateProviding, CPSApplicationStateObserving, CPSButtonDelegate, CPSEventObserverDelegate, CPSLayoutHelperViewDelegate, CPSLinearFocusProviding, CPSNavigationAlertQueueDelegate, CPSNavigationDisplaying, CPSPanEventDelegate, CPSTripInitiating, UIGestureRecognizerDelegate> {
     bool  _applicationIsFrontmost;
     CPSApplicationStateMonitor * _applicationStateMonitor;
     NSMutableSet * _autoHideDisabledReasons;
     NSTimer * _autoHideTimer;
     bool  _autoHidesNavigationBar;
-    NSLayoutConstraint * _cardViewBottomConstraint;
-    NSLayoutConstraint * _cardViewHeightConstraint;
-    NSLayoutConstraint * _cardViewTopConstraint;
     bool  _demoAutoHideTimerDisabled;
     CPSEventObserver * _eventObserver;
     UIFocusGuide * _focusHolderLeftFocusGuide;
@@ -33,8 +30,14 @@
     NSLayoutConstraint * _navigationAlertHeightConstraint;
     CPSNavigationAlertQueue * _navigationAlertQueue;
     CPSNavigationCardView * _navigationCardView;
-    NSLayoutConstraint * _navigationETABottomConstraint;
+    NSLayoutConstraint * _navigationCardViewBottomConstraint;
+    NSLayoutConstraint * _navigationCardViewHeightConstraint;
+    CPSLayoutHelperView * _navigationCardViewLayoutHelperView;
+    NSLayoutConstraint * _navigationCardViewLayoutViewBottomConstraint;
+    NSLayoutConstraint * _navigationCardViewTopConstraint;
     CPSNavigationETAView * _navigationETAView;
+    NSLayoutConstraint * _navigationETAViewBottomConstraint;
+    CPSLayoutHelperView * _navigationETAViewLayoutHelperView;
     CPSNavigator * _navigator;
     NSLayoutConstraint * _panContainerLeftConstraint;
     NSLayoutConstraint * _panContainerRightConstraint;
@@ -58,9 +61,6 @@
 @property (nonatomic, retain) NSMutableSet *autoHideDisabledReasons;
 @property (nonatomic, retain) NSTimer *autoHideTimer;
 @property (nonatomic) bool autoHidesNavigationBar;
-@property (nonatomic, retain) NSLayoutConstraint *cardViewBottomConstraint;
-@property (nonatomic, retain) NSLayoutConstraint *cardViewHeightConstraint;
-@property (nonatomic, retain) NSLayoutConstraint *cardViewTopConstraint;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) bool demoAutoHideTimerDisabled;
 @property (readonly, copy) NSString *description;
@@ -85,8 +85,14 @@
 @property (nonatomic, retain) NSLayoutConstraint *navigationAlertHeightConstraint;
 @property (nonatomic, retain) CPSNavigationAlertQueue *navigationAlertQueue;
 @property (nonatomic, retain) CPSNavigationCardView *navigationCardView;
-@property (nonatomic, retain) NSLayoutConstraint *navigationETABottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *navigationCardViewBottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *navigationCardViewHeightConstraint;
+@property (nonatomic, retain) CPSLayoutHelperView *navigationCardViewLayoutHelperView;
+@property (nonatomic, retain) NSLayoutConstraint *navigationCardViewLayoutViewBottomConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *navigationCardViewTopConstraint;
 @property (nonatomic, retain) CPSNavigationETAView *navigationETAView;
+@property (nonatomic, retain) NSLayoutConstraint *navigationETAViewBottomConstraint;
+@property (nonatomic, retain) CPSLayoutHelperView *navigationETAViewLayoutHelperView;
 @property (nonatomic, retain) CPSNavigator *navigator;
 @property (nonatomic, retain) NSLayoutConstraint *panContainerLeftConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *panContainerRightConstraint;
@@ -133,7 +139,6 @@
 - (void)_showBar;
 - (id)_tripDidBegin:(id)arg1 withEstimates:(id)arg2 forIdentifier:(id)arg3;
 - (void)_updateInterestingArea;
-- (void)_updateManeuverCardIfNeededForAlertShowing:(bool)arg1;
 - (void)_updateMapButtonVisibility;
 - (void)_updateMapButtonsWithButtons:(id)arg1;
 - (void)_updateSafeArea;
@@ -144,11 +149,9 @@
 - (id)autoHideTimer;
 - (bool)autoHidesNavigationBar;
 - (bool)canAnimateNavigationAlert;
-- (id)cardViewBottomConstraint;
-- (id)cardViewHeightConstraint;
-- (id)cardViewTopConstraint;
 - (void)dealloc;
 - (bool)demoAutoHideTimerDisabled;
+- (void)didChangeLayout:(id)arg1;
 - (void)didSelectButton:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)dismissNavigationAlertAnimated:(bool)arg1 completion:(id /* block */)arg2;
@@ -182,8 +185,14 @@
 - (void)navigationAlertQueue:(id)arg1 shouldDisplayAlertView:(id)arg2 animated:(bool)arg3;
 - (void)navigationAlertQueue:(id)arg1 shouldRemoveAlertView:(id)arg2 animated:(bool)arg3 dismissalContext:(unsigned long long)arg4;
 - (id)navigationCardView;
-- (id)navigationETABottomConstraint;
+- (id)navigationCardViewBottomConstraint;
+- (id)navigationCardViewHeightConstraint;
+- (id)navigationCardViewLayoutHelperView;
+- (id)navigationCardViewLayoutViewBottomConstraint;
+- (id)navigationCardViewTopConstraint;
 - (id)navigationETAView;
+- (id)navigationETAViewBottomConstraint;
+- (id)navigationETAViewLayoutHelperView;
 - (void)navigationOwnershipChangedToOwner:(unsigned long long)arg1;
 - (id)navigator;
 - (void)navigator:(id)arg1 didEndTrip:(bool)arg2;
@@ -208,9 +217,6 @@
 - (void)setAutoHideDisabledReasons:(id)arg1;
 - (void)setAutoHideTimer:(id)arg1;
 - (void)setAutoHidesNavigationBar:(bool)arg1;
-- (void)setCardViewBottomConstraint:(id)arg1;
-- (void)setCardViewHeightConstraint:(id)arg1;
-- (void)setCardViewTopConstraint:(id)arg1;
 - (void)setControl:(id)arg1 enabled:(bool)arg2;
 - (void)setDemoAutoHideTimerDisabled:(bool)arg1;
 - (void)setEventObserver:(id)arg1;
@@ -239,8 +245,14 @@
 - (void)setNavigationAlertHeightConstraint:(id)arg1;
 - (void)setNavigationAlertQueue:(id)arg1;
 - (void)setNavigationCardView:(id)arg1;
-- (void)setNavigationETABottomConstraint:(id)arg1;
+- (void)setNavigationCardViewBottomConstraint:(id)arg1;
+- (void)setNavigationCardViewHeightConstraint:(id)arg1;
+- (void)setNavigationCardViewLayoutHelperView:(id)arg1;
+- (void)setNavigationCardViewLayoutViewBottomConstraint:(id)arg1;
+- (void)setNavigationCardViewTopConstraint:(id)arg1;
 - (void)setNavigationETAView:(id)arg1;
+- (void)setNavigationETAViewBottomConstraint:(id)arg1;
+- (void)setNavigationETAViewLayoutHelperView:(id)arg1;
 - (void)setNavigator:(id)arg1;
 - (void)setPanContainerLeftConstraint:(id)arg1;
 - (void)setPanContainerRightConstraint:(id)arg1;
@@ -267,6 +279,7 @@
 - (id)tripPreviews;
 - (void)tripView:(id)arg1 selectedTrip:(id)arg2 routeChoice:(id)arg3;
 - (void)tripView:(id)arg1 startedTrip:(id)arg2 routeChoice:(id)arg3;
+- (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
 - (void)updateNavigationAlert:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;

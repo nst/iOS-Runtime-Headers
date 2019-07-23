@@ -20,6 +20,5 @@
 - (void)setDelegate:(id)arg1;
 - (id)settingsURL;
 - (bool)shouldWarnAboutPlaybackQualityForRentalMediaItem:(id)arg1;
-- (void)startFullScreenPlaybackWithMediaItem:(id)arg1;
 
 @end

@@ -8,6 +8,7 @@
     NSURLSessionTask * _metricTask;
     C2RequestOptions * _metricsTransportRequestOptions;
     NSString * _requestThrottleIdentifier;
+    unsigned long long  _requestThrottleLimit;
     id /* block */  _testBehavior_didCompleteWithError;
     id /* block */  _testBehavior_tooManyTasksRunning;
 }
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NSURLSessionTask *metricTask;
 @property (nonatomic, retain) C2RequestOptions *metricsTransportRequestOptions;
 @property (nonatomic, retain) NSString *requestThrottleIdentifier;
+@property (nonatomic) unsigned long long requestThrottleLimit;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ testBehavior_didCompleteWithError;
 @property (nonatomic, copy) id /* block */ testBehavior_tooManyTasksRunning;
@@ -30,7 +32,7 @@
 + (id)gzipEncode:(id)arg1;
 + (void)reportMetricWithOptions:(id)arg1 genericMetricType:(long long)arg2 eventName:(id)arg3 startTime:(id)arg4 endTime:(id)arg5 attributes:(id)arg6;
 + (void)reportNetworkEvent:(id)arg1 triggers:(int)arg2 originalSessionTask:(id)arg3;
-+ (id)requestForMetricOptions:(id)arg1 networkEvent:(id)arg2 genericEvent:(id)arg3 triggers:(int)arg4;
++ (id)requestForMetricRequestOptions:(id)arg1 networkEvent:(id)arg2 genericEvent:(id)arg3 triggers:(int)arg4;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 _taskIsWaitingForConnection:(id)arg2;
@@ -44,17 +46,19 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (bool)ignoreRequestThrottle;
-- (id)initWithMetricRequest:(id)arg1 metricRequestOptions:(id)arg2 ignoreRequestThrottle:(bool)arg3 requestThrottleIdentifier:(id)arg4;
+- (id)initWithMetricRequest:(id)arg1 metricRequestOptions:(id)arg2 ignoreRequestThrottle:(bool)arg3 requestThrottleIdentifier:(id)arg4 requestThrottleLimit:(unsigned long long)arg5;
 - (id)metricRequest;
 - (id)metricTask;
 - (id)metricsTransportRequestOptions;
 - (id)requestThrottleIdentifier;
+- (unsigned long long)requestThrottleLimit;
 - (void)send;
 - (void)setIgnoreRequestThrottle:(bool)arg1;
 - (void)setMetricRequest:(id)arg1;
 - (void)setMetricTask:(id)arg1;
 - (void)setMetricsTransportRequestOptions:(id)arg1;
 - (void)setRequestThrottleIdentifier:(id)arg1;
+- (void)setRequestThrottleLimit:(unsigned long long)arg1;
 - (void)setTestBehavior_didCompleteWithError:(id /* block */)arg1;
 - (void)setTestBehavior_tooManyTasksRunning:(id /* block */)arg1;
 - (id /* block */)testBehavior_didCompleteWithError;

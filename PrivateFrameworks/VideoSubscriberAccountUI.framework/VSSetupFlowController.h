@@ -2,24 +2,38 @@
    Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
  */
 
-@interface VSSetupFlowController : NSObject <VSIdentityProviderPickerViewControllerDelegate, VSIdentityProviderViewControllerDelegate, VSRemoteNotifierDelegate, VSSupportedAppsViewControllerDelegate> {
+@interface VSSetupFlowController : NSObject <VSIdentityProviderPickerViewControllerDelegate, VSIdentityProviderRequestManagerDelegate, VSIdentityProviderViewControllerDelegate, VSRemoteNotifierDelegate, VSSupportedAppsViewControllerDelegate> {
+    VSAppDescription * _appDescription;
+    VSDevice * _currentDevice;
     <VSSetupFlowControllerDelegate> * _delegate;
     NSArray * _freeOnBoardingBundleIDs;
+    id /* block */  _goingBackActivationCompletionBlock;
+    bool  _isInSTBMode;
+    bool  _notifyDelegateFromActivation;
     VSPreferences * _preferences;
     NSOperationQueue * _privateQueue;
+    NSString * _providerAccountUsername;
     VSRemoteNotifier * _remoteNotifier;
+    VSIdentityProviderRequestManager * _requestManager;
     bool  _signingIn;
     VSPersistentStorage * _storage;
 }
 
+@property (nonatomic, retain) VSAppDescription *appDescription;
+@property (nonatomic, retain) VSDevice *currentDevice;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSSetupFlowControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *freeOnBoardingBundleIDs;
+@property (nonatomic, copy) id /* block */ goingBackActivationCompletionBlock;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool isInSTBMode;
+@property (nonatomic) bool notifyDelegateFromActivation;
 @property (nonatomic, retain) VSPreferences *preferences;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
+@property (nonatomic, retain) NSString *providerAccountUsername;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
+@property (nonatomic, retain) VSIdentityProviderRequestManager *requestManager;
 @property (getter=isSigningIn, nonatomic) bool signingIn;
 @property (nonatomic, retain) VSPersistentStorage *storage;
 @property (readonly) Class superclass;
@@ -29,8 +43,10 @@
 - (void)_didStartLoading;
 - (void)_dismissViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_finishAfterOfferingOptions:(bool)arg1 endingUndoGrouping:(bool)arg2;
+- (id)_getProviderWithUserTokenFromAllProviders:(id)arg1;
 - (void)_obtainConsentForBundleIDs:(id)arg1 vouchers:(id)arg2 withAppleAccount:(id)arg3 identityProvider:(id)arg4 endingUndoGrouping:(bool)arg5 arrivedViaNotNowButton:(bool)arg6 arrivedAfterSigningIn:(bool)arg7 goingBack:(bool)arg8;
-- (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(bool)arg2;
+- (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(bool)arg2 msoAppDescription:(id)arg3;
+- (void)_offerAuthenticationForSTBProvider:(id)arg1 msoAppDescription:(id)arg2 providerAccountUsername:(id)arg3;
 - (void)_offerAuthenticationWithSupportedAppsButton:(bool)arg1;
 - (void)_offerFreeOnBoardingIfNeededAfterOfferingOptions:(bool)arg1 endingUndoGrouping:(bool)arg2 arrivedViaNotNowButton:(bool)arg3 arrivedAfterSigningIn:(bool)arg4 goingBack:(bool)arg5;
 - (void)_pickProviderWithViewController:(id)arg1;
@@ -38,32 +54,54 @@
 - (void)_presentViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_requestAccessWithViewController:(id)arg1;
 - (void)_startLoadingAfterOfferingOptions:(bool)arg1 endingUndoGrouping:(bool)arg2 arrivedViaNotNowButton:(bool)arg3 arrivedAfterSigningIn:(bool)arg4 goingBack:(bool)arg5;
+- (id)appDescription;
+- (id)currentDevice;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissIdentityProviderViewController:(id)arg1;
+- (void)finishSTBSuccessFlowForProvider:(id)arg1;
+- (void)forceSignOutWithAccount:(id)arg1;
 - (id)freeOnBoardingBundleIDs;
+- (id /* block */)goingBackActivationCompletionBlock;
 - (void)identityProviderPickerViewController:(id)arg1 didPickIdentityProvider:(id)arg2;
+- (void)identityProviderRequestManager:(id)arg1 finishedRequest:(id)arg2 withResult:(id)arg3;
 - (void)identityProviderViewController:(id)arg1 didAuthenticateAccount:(id)arg2 forRequest:(id)arg3;
 - (void)identityProviderViewController:(id)arg1 didFinishRequest:(id)arg2 withResult:(id)arg3;
 - (void)identityProviderViewControllerDidCancel:(id)arg1;
 - (id)init;
+- (bool)isInSTBMode;
 - (bool)isSigningIn;
+- (void)markSTBProviderAppForInstallation:(id)arg1 withAppPlacementPosition:(id)arg2;
 - (void)notNow;
+- (void)notNowWithIdentityProvider:(id)arg1;
+- (bool)notifyDelegateFromActivation;
+- (void)performDismissalOfIdentityProviderViewController:(id)arg1;
 - (id)preferences;
 - (id)privateQueue;
+- (id)providerAccountUsername;
 - (id)remoteNotifier;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;
+- (id)requestManager;
+- (void)setAppDescription:(id)arg1;
+- (void)setCurrentDevice:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFreeOnBoardingBundleIDs:(id)arg1;
+- (void)setGoingBackActivationCompletionBlock:(id /* block */)arg1;
+- (void)setIsInSTBMode:(bool)arg1;
+- (void)setNotifyDelegateFromActivation:(bool)arg1;
 - (void)setPreferences:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;
+- (void)setProviderAccountUsername:(id)arg1;
 - (void)setRemoteNotifier:(id)arg1;
+- (void)setRequestManager:(id)arg1;
 - (void)setSigningIn:(bool)arg1;
 - (void)setStorage:(id)arg1;
 - (void)showSupportedApps;
+- (void)signOutForNotNowFlowWithIdentityProvider:(id)arg1;
 - (void)startLoadingWhenGoingBack:(bool)arg1;
 - (void)startSigningIn;
 - (void)startSigningInForIdentityProvider:(id)arg1;
+- (void)startSilentSigningInForSTBFromActivation:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)storage;
 - (void)supportedAppsViewControllerDidFinish:(id)arg1;
 

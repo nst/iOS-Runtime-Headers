@@ -17,13 +17,14 @@
 @property (nonatomic, readonly) NSArray *areasOfInterest;
 @property (getter=_associatedApp, nonatomic, readonly) GEOAssociatedApp *associatedApp;
 @property (getter=_attribution, nonatomic, readonly) GEOMapItemPlaceAttribution *attribution;
+@property (getter=_brandMUID, nonatomic, readonly) unsigned long long brandMUID;
 @property (getter=_browseCategories, nonatomic, readonly) NSArray *browseCategories;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
+@property (getter=_businessHours, nonatomic, readonly) NSArray *businessHours;
 @property (getter=_businessURL, nonatomic, readonly) NSString *businessURL;
 @property (nonatomic, readonly) struct { double x1; double x2; } centerCoordinate;
 @property (getter=_childPlaces, nonatomic, readonly) NSArray *childPlaces;
 @property (getter=_clientAttributes, nonatomic, readonly) GEOMapItemClientAttributes *clientAttributes;
-@property (getter=_completeOperatingHours, nonatomic, readonly) NSArray *completeOperatingHours;
 @property (nonatomic, readonly) int contactAddressType;
 @property (nonatomic, readonly) bool contactIsMe;
 @property (nonatomic, readonly) NSString *contactName;
@@ -54,7 +55,9 @@
 @property (getter=_hasAcceptsApplePayAmenity, nonatomic, readonly) bool hasAcceptsApplePayAmenity;
 @property (getter=_hasAnyAmenities, nonatomic, readonly) bool hasAnyAmenities;
 @property (getter=_hasAreaInMeters, nonatomic, readonly) bool hasAreaInMeters;
+@property (getter=_hasBrandMUID, nonatomic, readonly) bool hasBrandMUID;
 @property (getter=_hasBusinessClaim, nonatomic, readonly) bool hasBusinessClaim;
+@property (getter=_hasBusinessHours, nonatomic, readonly) bool hasBusinessHours;
 @property (getter=_hasCurrentOperatingHours, nonatomic, readonly) bool hasCurrentOperatingHours;
 @property (getter=_hasDelivery, nonatomic, readonly) bool hasDelivery;
 @property (getter=_hasDeliveryAmenity, nonatomic, readonly) bool hasDeliveryAmenity;
@@ -67,6 +70,7 @@
 @property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
 @property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
+@property (getter=_hasLinkedServices, nonatomic, readonly) bool hasLinkedServices;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
 @property (getter=_hasOperatingHours, nonatomic, readonly) bool hasOperatingHours;
 @property (getter=_hasPriceRange, nonatomic, readonly) bool hasPriceRange;
@@ -87,13 +91,13 @@
 @property (nonatomic, readonly) bool isEventAllDay;
 @property (getter=_isStandaloneBrand, nonatomic, readonly) bool isStandAloneBrand;
 @property (getter=_isTransitDisplayFeature, nonatomic, readonly) bool isTransitDisplayFeature;
+@property (getter=_linkedServices, nonatomic, readonly) NSArray *linkedServices;
 @property (getter=_messageLink, nonatomic, readonly) GEOMessageLink *messageLink;
 @property (getter=_muid, nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
 @property (getter=_needsAttribution, nonatomic, readonly) bool needsAttribution;
 @property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
 @property (getter=_openingHoursOptions, nonatomic, readonly) unsigned long long openingHoursOptions;
-@property (getter=_operatingHours, nonatomic, readonly) NSArray *operatingHours;
 @property (getter=_optsOutOfTelephoneAds, nonatomic, readonly) bool optsOutOfTelephoneAds;
 @property (getter=_parsecSectionType, nonatomic, readonly) int parsecSectionType;
 @property (getter=_photos, nonatomic, readonly) NSArray *photos;
@@ -120,6 +124,8 @@
 @property (getter=_reviewsAttribution, nonatomic, readonly) GEOMapItemReviewsAttribution *reviewsAttribution;
 @property (getter=_roadAccessPoints, nonatomic, readonly) NSArray *roadAccessPoints;
 @property (getter=_sampleSizeForUserRatingScore, nonatomic, readonly) unsigned int sampleSizeForUserRatingScore;
+@property (nonatomic, readonly) NSString *secondaryName;
+@property (nonatomic, readonly) NSString *secondarySpokenName;
 @property (nonatomic, readonly) NSArray *spatialMappedCategories;
 @property (nonatomic, readonly) NSArray *spatialMappedPlaceCategories;
 @property (getter=_styleAttributes, nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
@@ -135,6 +141,14 @@
 @property (nonatomic, readonly) long long venueCapacity;
 @property (getter=_venueFeatureType, nonatomic, readonly) int venueFeatureType;
 @property (getter=_venueInfo, nonatomic, readonly) <GEOMapItemVenueInfo> *venueInfo;
+@property (getter=_walletCategoryIdentifier, nonatomic, readonly) NSString *walletCategoryIdentifier;
+@property (getter=_walletCategoryLocalizedString, nonatomic, readonly) NSString *walletCategoryLocalizedString;
+@property (getter=_walletCategoryLocalizedStringLocale, nonatomic, readonly) NSString *walletCategoryLocalizedStringLocale;
+@property (getter=_walletCategoryStyling, nonatomic, readonly) GEOStyleAttributes *walletCategoryStyling;
+@property (getter=_walletMapsCategoryIdentifier, nonatomic, readonly) NSString *walletMapsCategoryIdentifier;
+@property (getter=_walletPlaceLocalizedString, nonatomic, readonly) NSString *walletPlaceLocalizedString;
+@property (getter=_walletPlaceLocalizedStringLocale, nonatomic, readonly) NSString *walletPlaceLocalizedStringLocale;
+@property (getter=_walletPlaceStyling, nonatomic, readonly) GEOStyleAttributes *walletPlaceStyling;
 @property (getter=_webURL, nonatomic, readonly, copy) NSURL *webURL;
 @property (getter=_wifiFingerprintConfidence, nonatomic, readonly) unsigned int wifiFingerprintConfidence;
 @property (getter=_wifiFingerprintLabelStatusCode, nonatomic, readonly) int wifiFingerprintLabelStatusCode;
@@ -153,7 +167,6 @@
 - (id)_businessURL;
 - (id)_childPlaces;
 - (id)_clientAttributes;
-- (id)_completeOperatingHours;
 - (unsigned long long)_customIconID;
 - (id)_disambiguationName;
 - (id)_encyclopedicInfo;
@@ -191,7 +204,6 @@
 - (bool)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned long long)_openingHoursOptions;
-- (id)_operatingHours;
 - (bool)_optsOutOfTelephoneAds;
 - (int)_parsecSectionType;
 - (id)_photos;

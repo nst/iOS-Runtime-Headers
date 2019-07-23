@@ -44,6 +44,7 @@
 - (void)getIdentitiesDatabaseHashForUser:(unsigned int)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getIdentitiesDatabaseUUIDForUser:(unsigned int)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getIdentityFromUUID:(id)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
+- (void)getLastMatchEvent:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
 - (void)getLogs:(bool)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getMaxIdentityCount:(int)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getNodeTopologyForIdentity:(id)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;

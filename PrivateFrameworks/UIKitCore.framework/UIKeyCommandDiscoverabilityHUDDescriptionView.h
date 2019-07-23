@@ -23,12 +23,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)font;
 - (id)initWithText:(id)arg1 font:(id)arg2 lineHeight:(double)arg3 lineSpacing:(double)arg4 color:(id)arg5 edgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg6;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

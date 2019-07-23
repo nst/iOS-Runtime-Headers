@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.EffectsBrowserViewConstraintManager : SwiftObject {
-    void constraints;
+@interface ConversationKit.EffectsBrowserViewConstraintManager : Swift._SwiftObject {
+    void constantConstraints;
+    void effectsBrowserViewTopAnchor;
 }
 
 @end

@@ -11,8 +11,12 @@
 @property (nonatomic, retain) STUsageSummaryView *summaryView;
 
 - (void).cxx_destruct;
+- (void)_layoutDidChangeFrom:(bool)arg1 to:(bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
 - (id)dailyAverageTitleLabel;
+- (void)dealloc;
 - (id)initWithUsageReport:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setDailyAverageTitleLabel:(id)arg1;
 - (void)setSummaryView:(id)arg1;
 - (id)summaryView;

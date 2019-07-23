@@ -10,9 +10,13 @@
 }
 
 @property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MFError *error;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MFDAMessageStore *store;
 @property (nonatomic, readonly) bool succeeded;
+@property (readonly) Class superclass;
 
 - (id)data;
 - (void)dealloc;

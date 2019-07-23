@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_recordForResource:(long long)arg1 withInitiator:(long long)arg2 synchronousOperation:(bool)arg3;
 - (id)agent;
 - (double)currentTimeIntervalSince1970;
 - (id)debugDescription;
@@ -29,7 +30,7 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 parentIdentifier:(id)arg2 agent:(id)arg3 dispatcher:(id)arg4;
 - (id)parentIdentifier;
-- (id)recordWithForResource:(long long)arg1 withInitiator:(long long)arg2;
+- (id)recordForResource:(long long)arg1 withInitiator:(long long)arg2;
 - (id)requestRecords;
 - (void)setParentIdentifier:(id)arg1;
 

@@ -11,13 +11,10 @@
 @property (nonatomic, readonly) CKContainer *container;
 @property (nonatomic, readonly) <APSConnectionDelegate> *delegate;
 
-+ (id)new;
-
 - (void).cxx_destruct;
 - (id)buildPushTopic;
 - (id)container;
 - (id)delegate;
-- (id)init;
 - (id)initWithDelegate:(id)arg1 container:(id)arg2;
 - (bool)isAsynchronous;
 - (void)main;

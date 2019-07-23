@@ -3,6 +3,7 @@
  */
 
 @interface FCIAdConfiguration : NSObject {
+    NSDictionary * _adStatusConditionsByType;
     NSDictionary * _configDict;
     NSArray * _iAdSegmentIDs;
     NTPBIAdConfig * _pbConfig;
@@ -13,6 +14,7 @@
     double  _segmentsThreshold;
 }
 
+@property (nonatomic, readonly) NSDictionary *adStatusConditionsByType;
 @property (nonatomic, readonly) NSArray *iAdSegmentIDs;
 @property (getter=areSegmentsEnabled, nonatomic, readonly) bool segmentsEnabled;
 @property (nonatomic, readonly) long long segmentsHistoryWindowInterval;
@@ -21,6 +23,7 @@
 @property (nonatomic, readonly) double segmentsThreshold;
 
 - (void).cxx_destruct;
+- (id)adStatusConditionsByType;
 - (bool)areSegmentsEnabled;
 - (unsigned long long)hash;
 - (id)iAdSegmentIDs;

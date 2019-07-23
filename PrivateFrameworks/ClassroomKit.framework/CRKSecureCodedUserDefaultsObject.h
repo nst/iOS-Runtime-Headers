@@ -10,9 +10,9 @@
 
 - (void).cxx_destruct;
 - (id)classes;
-- (id)initWithDefaults:(id)arg1 key:(id)arg2;
 - (id)initWithDefaults:(id)arg1 key:(id)arg2 classes:(id)arg3;
 - (id)initWithKey:(id)arg1 classes:(id)arg2;
+- (id)initWithStore:(id)arg1 key:(id)arg2 classes:(id)arg3;
 - (void)setValue:(id)arg1;
 - (bool)setValue:(id)arg1 error:(id*)arg2;
 - (id)value;

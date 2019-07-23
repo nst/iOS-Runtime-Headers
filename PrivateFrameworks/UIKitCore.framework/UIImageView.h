@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIImageView : UIView <DebugHierarchyObject_Fallback, NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
+@interface UIImageView : UIView <NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
     bool  __animatesContents;
     bool  _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
@@ -118,21 +118,13 @@
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
 - (void)_updateTemplateProperties;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
 - (bool)adjustsImageWhenAncestorFocused;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
 - (long long)animationRepeatCount;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (unsigned long long)defaultAccessibilityTraits;
 - (int)drawMode;
@@ -208,5 +200,11 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
 - (struct CGSize { double x1; double x2; })alignmentSize;
 - (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
++ (void)tmlLoadCategory;
+
+- (void)tmlTraitCollectionDidChange:(id)arg1;
 
 @end

@@ -13,11 +13,11 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
-- (id)initFromUnarchiver:(id)arg1 message:(const struct ChartReferenceLineNonStyleItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
+- (id)initFromUnarchiver:(id)arg1 message:(const struct ChartReferenceLineNonStyleItem { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
 - (id)initWithNonStyle:(id)arg1 uuid:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)nonStyle;
-- (void)saveToArchiver:(id)arg1 message:(struct ChartReferenceLineNonStyleItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
+- (void)saveToArchiver:(id)arg1 message:(struct ChartReferenceLineNonStyleItem { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
 - (void)setNonStyle:(id)arg1;
 - (id)uuid;
 

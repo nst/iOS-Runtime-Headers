@@ -47,6 +47,7 @@
 
 - (id)copyArrayOrDictionaryWithContext:(struct OpaqueJSContext { }*)arg1;
 - (id)copyArrayValueWithValidator:(int (*)arg1 context:(void*)arg2;
+- (id)copyDate;
 - (id)copyJSONDataWithContext:(struct OpaqueJSContext { }*)arg1;
 - (id)copyValuesForKeys:(id)arg1;
 - (id)safeCallWebScriptMethod:(id)arg1 withArguments:(id)arg2;

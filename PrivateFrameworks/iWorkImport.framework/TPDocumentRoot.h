@@ -4,7 +4,7 @@
 
 @interface TPDocumentRoot : TSADocumentRoot <TPPageControllerDelegate, TSCEResolverContainer, TSDInfoUUIDPathPrefixComponentsProvider, TSTResolverContainerNameProvider, TSWPChangeSessionManager, TSWPChangeVisibility, TSWPDrawableOLC, TSWPStorageParent> {
     TSWPChangeSession * _activeChangeSession;
-    TPBackgroundLayoutController * _backgroundLayoutController;
+    TPBackgroundPaginationController * _backgroundPaginationController;
     TSWPStorage * _bodyStorage;
     TPBookmarkController * _bookmarkController;
     double  _bottomMargin;
@@ -20,7 +20,7 @@
     double  _footerMargin;
     double  _headerMargin;
     struct __CFLocale { } * _hyphenationLocale;
-    bool  _layoutBodyVertically;
+    bool  _laysOutBodyVertically;
     double  _leftMargin;
     TSWPChangeSession * _mostRecentChangeSession;
     bool  _needsAdditionalViewStateValidation;
@@ -49,6 +49,7 @@
     NSMutableDictionary * _tablesWithUniqueNames;
     TPTheme * _theme;
     TSDThumbnailController * _thumbnailController;
+    <TSWPTOCController> * _tocController;
     double  _topMargin;
     TPUIState * _uiState;
     bool  _usesSingleHeaderFooter;
@@ -61,7 +62,7 @@
 @property (nonatomic, retain) TSWPChangeSession *activeChangeSession;
 @property (nonatomic, readonly) bool autoListRecognition;
 @property (nonatomic, readonly) bool autoListTermination;
-@property (nonatomic, readonly) TPBackgroundLayoutController *backgroundLayoutController;
+@property (nonatomic, readonly) TPBackgroundPaginationController *backgroundPaginationController;
 @property (nonatomic, readonly) TSWPStorage *bodyStorage;
 @property (nonatomic, readonly) TPBookmarkController *bookmarkController;
 @property (nonatomic) double bottomMargin;
@@ -85,7 +86,7 @@
 @property (nonatomic) bool initiallyShowTwoUp;
 @property (nonatomic, readonly) bool isNewDocument;
 @property (nonatomic, readonly) bool isTrackingChanges;
-@property (nonatomic) bool layoutBodyVertically;
+@property (nonatomic) bool laysOutBodyVertically;
 @property (nonatomic) double leftMargin;
 @property (nonatomic, retain) TSWPChangeSession *mostRecentChangeSession;
 @property (nonatomic) bool needsAdditionalViewStateValidation;
@@ -111,7 +112,6 @@
 @property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic) bool suppressViewStateCapture;
 @property (nonatomic, readonly) bool textIsLinked;
-@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, retain) TPTheme *theme;
 @property (nonatomic, readonly) TSDThumbnailController *thumbnailController;
 @property (nonatomic) double topMargin;
@@ -119,6 +119,7 @@
 @property (nonatomic, copy) TPUIState *uiState;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } unrotatedPaperSize;
 @property (nonatomic) bool usesSingleHeaderFooter;
+@property (nonatomic, readonly) TPDocumentViewController *viewController;
 @property (nonatomic, readonly) bool wasCreatedFromTemplate;
 
 + (void)localizeModelObject:(id)arg1 withTemplateBundle:(id)arg2 andLocale:(id)arg3;
@@ -133,7 +134,7 @@
 - (unsigned long long)applicationType;
 - (bool)autoListRecognition;
 - (bool)autoListTermination;
-- (id)backgroundLayoutController;
+- (id)backgroundPaginationController;
 - (id)bodyStorage;
 - (double)bodyWidth;
 - (id)bookmarkController;
@@ -147,10 +148,11 @@
 - (id)childEnumerator;
 - (id)citationRecords;
 - (void)clearRemappedTableNames;
+- (bool)containsVerticalText;
 - (long long)contentWritingDirection;
+- (double)currentDesiredPencilAnnotationDrawingScale;
 - (void)dealloc;
 - (void)didAddDrawable:(id)arg1;
-- (void)didEnterBackground;
 - (bool)documentAllowsPencilAnnotationsOnModel:(id)arg1;
 - (void)documentDidLoad;
 - (bool)documentDisallowsHighlightsOnStorage:(id)arg1;
@@ -189,7 +191,7 @@
 - (bool)isPendingTableNameUniquification;
 - (bool)isSectionModel:(id)arg1;
 - (bool)isTrackingChanges;
-- (bool)layoutBodyVertically;
+- (bool)laysOutBodyVertically;
 - (double)leftMargin;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)markStringForFootnoteReferenceStorage:(id)arg1;
@@ -238,7 +240,7 @@
 - (long long)pageViewState;
 - (id)paperID;
 - (struct CGSize { double x1; double x2; })paperSize;
-- (bool)prepareAndValidateSidecarViewStateObjectWithVersionUUIDMismatch:(id)arg1 originalDocumentViewStateObject:(id)arg2;
+- (bool)prepareAndValidateSidecarViewStateRootWithVersionUUIDMismatch:(id)arg1 sidecarDocumentRevision:(id)arg2 originalDocumentViewStateRoot:(id)arg3;
 - (void)prepareNewDocumentWithTemplateBundle:(id)arg1 documentLocale:(id)arg2;
 - (double)presentationAutoScrollSpeed;
 - (bool)preventsChangeTracking;
@@ -256,7 +258,6 @@
 - (id)resolverMatchingName:(id)arg1 contextResolver:(id)arg2;
 - (bool)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
-- (void)resumeBackgroundActivities;
 - (double)rightMargin;
 - (void)rollbackNextUntitledResolverIndex:(unsigned int)arg1;
 - (unsigned long long)rootIndexForObject:(id)arg1;
@@ -277,7 +278,7 @@
 - (void)setIndex:(int)arg1 forObject:(id)arg2;
 - (void)setInitiallyShowRuler:(bool)arg1;
 - (void)setInitiallyShowTwoUp:(bool)arg1;
-- (void)setLayoutBodyVertically:(bool)arg1;
+- (void)setLaysOutBodyVertically:(bool)arg1;
 - (void)setLeftMargin:(double)arg1;
 - (void)setMostRecentChangeSession:(id)arg1;
 - (void)setNeedsAdditionalViewStateValidation:(bool)arg1;
@@ -309,18 +310,20 @@
 - (bool)supportHeaderFooterParagraphAlignmentInInspectors;
 - (bool)supportsMultipleColumns;
 - (bool)suppressViewStateCapture;
-- (void)suspendBackgroundActivities;
 - (bool)textIsLinked;
-- (bool)textIsVertical;
+- (bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
+- (bool)textIsVerticalForFootnoteReferenceStorage:(id)arg1;
 - (id)theme;
 - (id)thumbnailController;
 - (id)thumbnailIdentifierForPageIndex:(unsigned long long)arg1;
 - (Class)thumbnailImagerClass;
+- (id)tocController;
 - (double)topMargin;
 - (id)uiState;
 - (struct CGSize { double x1; double x2; })unrotatedPaperSize;
 - (void)updateWritingDirection:(unsigned long long)arg1;
 - (void)upgradeFromOldSectionWithPageSize:(struct CGSize { double x1; double x2; })arg1 leftMargin:(double)arg2 rightMargin:(double)arg3 topMargin:(double)arg4 bottomMargin:(double)arg5 headerMargin:(double)arg6 footerMargin:(double)arg7;
+- (void)upgradeParagraphStylesForTOCNavigator;
 - (bool)useLigatures;
 - (bool)usesSingleHeaderFooter;
 - (id)uuidPathPrefixComponentsForInfo:(id)arg1;
@@ -330,7 +333,6 @@
 - (void)viewWillAppear;
 - (bool)wasCreatedFromTemplate;
 - (void)willClose;
-- (void)willEnterForeground;
 - (void)willHide;
 - (void)willRemoveDrawable:(id)arg1;
 

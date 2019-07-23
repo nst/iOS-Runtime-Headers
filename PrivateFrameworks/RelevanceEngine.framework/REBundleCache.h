@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
  */
 
-@interface REBundleCache : RESingleton {
-    NSMutableDictionary * _cachedBundles;
+@interface REBundleCache : NSObject {
+    REConcurrentDictionary * _cachedBundles;
 }
+
++ (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)bundleAtPath:(id)arg1;

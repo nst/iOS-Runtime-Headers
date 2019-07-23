@@ -80,8 +80,6 @@
 - (id /* block */)captureHandler;
 - (void)captureHandlerWithAudioSample:(id)arg1 absdData:(id)arg2 itemCount:(long long)arg3 bufferType:(long long)arg4 timingData:(id)arg5;
 - (void)captureHandlerWithSample:(id)arg1 timingData:(id)arg2;
-- (void)clientDidBecomeActive;
-- (void)clientWillResignActive;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (unsigned int)currentWindowLayerContextID;
@@ -106,7 +104,9 @@
 - (unsigned long long)previousAudioSessionOptions;
 - (id)privateDelegate;
 - (int)processIDForAudioCapture;
+- (void)recordingDidPause;
 - (void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
+- (void)recordingShouldResume;
 - (void)recordingTimerDidUpdate:(id)arg1;
 - (void)resumeRecording;
 - (id /* block */)saveVideoToCameraRollCompletionBlock;

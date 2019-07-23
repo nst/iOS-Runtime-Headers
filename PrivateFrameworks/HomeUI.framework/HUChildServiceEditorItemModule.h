@@ -3,7 +3,6 @@
  */
 
 @interface HUChildServiceEditorItemModule : HFItemModule {
-    HMAccessory * _accessory;
     HFServiceItemProvider * _childServiceItemProvider;
     unsigned long long  _editingMode;
     HMHome * _home;
@@ -24,6 +23,7 @@
 - (id)_createItemProviders;
 - (id)_isConfiguredControlItemForItem:(id)arg1;
 - (id)accessory;
+- (bool)canToggleConfigurationStateForItem:(id)arg1;
 - (id)childServiceItemProvider;
 - (long long)configurationStateForItem:(id)arg1;
 - (unsigned long long)editingMode;

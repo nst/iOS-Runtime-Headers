@@ -45,7 +45,6 @@
 - (id)date;
 - (void)dealloc;
 - (id)dispatchQueue;
-- (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (double)interval;
 - (void)invalidate;

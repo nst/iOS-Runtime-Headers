@@ -17,6 +17,7 @@
     double  _defaultUnfocusedShadowOpacity;
     double  _defaultUnfocusedShadowRadius;
     double  _defaultUnfocusedShadowVerticalOffset;
+    bool  _disableMask;
     bool  _flatImageContainsCornerRadius;
     double  _focusCursorBorderWidth;
     bool  _focusCursorEnabled;
@@ -71,6 +72,7 @@
 @property (nonatomic) double defaultUnfocusedShadowOpacity;
 @property (nonatomic) double defaultUnfocusedShadowRadius;
 @property (nonatomic) double defaultUnfocusedShadowVerticalOffset;
+@property (nonatomic) bool disableMask;
 @property (nonatomic) bool flatImageContainsCornerRadius;
 @property (nonatomic, readonly, copy) _UIFocusAnimationConfiguration *focusAnimationConfiguration;
 @property (nonatomic) double focusCursorBorderWidth;
@@ -129,6 +131,7 @@
 - (double)defaultUnfocusedShadowOpacity;
 - (double)defaultUnfocusedShadowRadius;
 - (double)defaultUnfocusedShadowVerticalOffset;
+- (bool)disableMask;
 - (bool)flatImageContainsCornerRadius;
 - (id)focusAnimationConfiguration;
 - (double)focusCursorBorderWidth;
@@ -172,6 +175,7 @@
 - (void)setDefaultUnfocusedShadowOpacity:(double)arg1;
 - (void)setDefaultUnfocusedShadowRadius:(double)arg1;
 - (void)setDefaultUnfocusedShadowVerticalOffset:(double)arg1;
+- (void)setDisableMask:(bool)arg1;
 - (void)setFlatImageContainsCornerRadius:(bool)arg1;
 - (void)setFocusCursorBorderWidth:(double)arg1;
 - (void)setFocusCursorEnabled:(bool)arg1;

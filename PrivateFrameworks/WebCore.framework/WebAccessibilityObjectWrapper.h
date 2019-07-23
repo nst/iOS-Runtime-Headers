@@ -64,9 +64,10 @@
 - (unsigned long long)_axVisitedTrait;
 - (unsigned long long)_axWebContentTrait;
 - (struct RefPtr<WebCore::Range, WTF::DumbPtrTraits<WebCore::Range> > { struct Range {} *x1; })_convertToDOMRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document, WTF::DumbPtrTraits<WebCore::Document> > { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_3_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_1_2_1; } x_4_1_1; struct Optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node, WTF::DumbPtrTraits<WebCore::Node> > { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
 - (bool)_prepareAccessibilityCall;
 - (id)_stringForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 attributed:(bool)arg2;
+- (id)_stringFromStartMarker:(id)arg1 toEndMarker:(id)arg2 attributed:(bool)arg3;
 - (unsigned long long)accessibilityARIAColumnCount;
 - (unsigned long long)accessibilityARIAColumnIndex;
 - (id)accessibilityARIACurrentStatus;
@@ -81,6 +82,7 @@
 - (bool)accessibilityCanFuzzyHitTest;
 - (bool)accessibilityCanSetValue;
 - (struct CGPoint { double x1; double x2; })accessibilityClickPoint;
+- (id)accessibilityColorStringValue;
 - (unsigned long long)accessibilityColumnCount;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })accessibilityColumnRange;
 - (id)accessibilityContainer;
@@ -151,6 +153,7 @@
 - (id)accessibilitySpeechHint;
 - (bool)accessibilitySupportsARIAExpanded;
 - (bool)accessibilitySupportsARIAPressed;
+- (id)accessibilityTextualContext;
 - (id)accessibilityTitleElement;
 - (void)accessibilityToggleMuteForMedia;
 - (unsigned long long)accessibilityTraits;
@@ -160,6 +163,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityVisibleContentRect;
 - (id)arrayOfTextForTextMarkers:(id)arg1 attributed:(bool)arg2;
 - (id)attachmentView;
+- (id)attributedStringForElement;
 - (id)attributedStringForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (bool)containsUnnaturallySegmentedChildren;
 - (struct CGPoint { double x1; double x2; })convertPointToScreenSpace:(struct FloatPoint { float x1; float x2; }*)arg1;

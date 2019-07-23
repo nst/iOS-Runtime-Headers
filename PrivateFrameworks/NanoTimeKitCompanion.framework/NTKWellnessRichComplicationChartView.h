@@ -9,28 +9,23 @@
     UIColor * _exerciseBarFadedColor;
     struct CGGradient { } * _exerciseBarGradient;
     double  _exerciseChartBottomLineY;
-    NSArray * _exerciseChartPoints;
+    NSDictionary * _exerciseChartPoints;
     NSArray * _exerciseGraphData;
     NSDateFormatter * _hourFormatter;
     NSNumber * _maxExerciseValue;
     NSNumber * _maxMoveValue;
     UILabel * _midnightHourLabel;
-    NSNumber * _minExerciseValue;
-    NSNumber * _minMoveValue;
     UIColor * _moveBarFadedColor;
     struct CGGradient { } * _moveBarGradient;
     double  _moveChartBottomLineY;
-    NSArray * _moveChartPoints;
+    NSDictionary * _moveChartPoints;
     NSArray * _moveGraphData;
     UILabel * _noonHourLabel;
-    unsigned long long  _quantityBucketCount;
-    NSArray * _quantityBucketDates;
     UILabel * _sixAMHourLabel;
     UILabel * _sixPMHourLabel;
     struct CGGradient { } * _standBarGradient;
-    unsigned long long  _standBucketCount;
     double  _standChartBottomLineY;
-    NSArray * _standChartPoints;
+    NSDictionary * _standChartPoints;
     NSArray * _standGraphData;
 }
 
@@ -40,18 +35,16 @@
 
 - (void).cxx_destruct;
 - (void)_createHourFormatter;
-- (void)_createQuantityDateBuckets;
 - (void)_currentLocaleChangeOccurred;
-- (bool)_date:(id)arg1 fallsBetweenDate:(id)arg2 andDate:(id)arg3;
 - (void)_drawChartsBarsInContext:(struct CGContext { }*)arg1 lineNumber:(unsigned long long)arg2 xPosition:(double)arg3;
 - (double)_exercisePointRelativeHeightForValue:(double)arg1;
+- (void)_generateChartPoints;
 - (id)_generateChartPointsForQuantityStatisticsInfo:(id)arg1 withUnit:(id)arg2 accumulateFractionalValues:(bool)arg3;
 - (void)_generateExerciseChartPoints;
 - (void)_generateMoveChartPoints;
 - (void)_generateStandChartPointsForStandHourInfo:(id)arg1;
+- (id)_keyForDate:(id)arg1;
 - (double)_movePointRelativeHeightForValue:(double)arg1;
-- (long long)_qauntityBucketIndexForDate:(id)arg1;
-- (id)_quantityBucketDateForIndex:(unsigned long long)arg1;
 - (void)_registerForNotifications;
 - (void)_updateHourLabelsText;
 - (void)dealloc;

@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupLabelFieldCell : PKPaymentSetupFieldCell
+@interface PKPaymentSetupLabelFieldCell : PKPaymentSetupFieldCell {
+    UIButton * _button;
+}
 
 + (long long)tableViewCellStyle;
 
+- (void).cxx_destruct;
+- (void)_buttonTapped;
 - (void)_updateDisplay:(bool)arg1;
 - (void)_updateDisplayForFieldTypeLabel:(id)arg1;
 - (id)editableTextField;

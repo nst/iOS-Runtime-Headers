@@ -21,6 +21,7 @@
 - (id)nextSection;
 - (id)previousChapter;
 - (id)previousItem;
+- (id)previousItemDeferringToPlaybackQueuePosition;
 - (id)previousSection;
 
 @end

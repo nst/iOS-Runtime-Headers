@@ -6,6 +6,7 @@
 
 @property (readonly, copy) NSString *name;
 @property (readonly, retain) id object;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (readonly, copy) NSDictionary *userInfo;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -35,5 +36,9 @@
 // Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
 
 - (id)_avtui_changedRecordIdentifiers;
+
+// Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
+
+- (id)playerPath;
 
 @end

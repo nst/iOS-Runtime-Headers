@@ -18,6 +18,7 @@
 @property (nonatomic, retain) CNContact *person;
 @property (readonly) Class superclass;
 
++ (bool)_isCapabilityBasedActivity;
 + (unsigned long long)_xpcAttributes;
 
 - (void).cxx_destruct;

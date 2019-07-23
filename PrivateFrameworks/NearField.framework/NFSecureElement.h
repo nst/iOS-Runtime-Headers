@@ -35,6 +35,7 @@
 - (id)info;
 - (bool)isInRestrictedMode;
 - (bool)isProductionSigned;
+- (bool)isSeshatAvailabledInRestrictedMode;
 - (id)manifestQueryBlob;
 - (id)rsaCertificate;
 - (id)sequenceCounter;

@@ -2,13 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGContactPipelineHelper : NSObject
+@interface SGContactPipelineHelper : NSObject {
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _helperLock;
+    NSMutableDictionary * _lengthsCounts;
+    NSString * _mostCommonCountryCode;
+    unsigned long long  _phonesSeenInContacts;
+}
 
 + (bool)contactExistsInArray:(id)arg1 withName:(id)arg2;
 + (id)contactStore;
-+ (id)findContactFromEntity:(id)arg1 withType:(unsigned long long)arg2 detailValue:(id)arg3;
++ (id)dialingCodeForPhone:(id)arg1;
 + (id)findContactInArray:(id)arg1 withDetailType:(unsigned long long)arg2 andValue:(id)arg3;
 + (id)findContactsForDetailType:(unsigned long long)arg1 andValue:(id)arg2;
 + (id)findContactsForPerson:(id)arg1 fetchingKeys:(id)arg2;
++ (id)normalizedDigits:(id)arg1;
+
+- (void).cxx_destruct;
+- (void)dealloc;
+- (id)init;
+- (bool)numberMatchesContactsForm:(id)arg1;
 
 @end

@@ -6,7 +6,10 @@
 @optional
 
 - (void)authenticator:(PKAuthenticator *)arg1 didRequestUserAction:(long long)arg2;
+- (void)authenticator:(PKAuthenticator *)arg1 didTransitionToCoachingState:(long long)arg2;
 - (void)authenticator:(PKAuthenticator *)arg1 didTransitionToPearlState:(long long)arg2;
+- (void)authenticatorDidActivateTouchID:(PKAuthenticator *)arg1;
+- (void)authenticatorDidDeactivateTouchID:(PKAuthenticator *)arg1 status:(long long)arg2;
 - (void)authenticatorDidEncounterBiometricLockout:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterFingerOff:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterFingerOn:(PKAuthenticator *)arg1;

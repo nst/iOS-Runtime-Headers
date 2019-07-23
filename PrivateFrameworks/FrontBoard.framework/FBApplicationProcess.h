@@ -62,6 +62,7 @@
 - (long long)_exceptionCodeForKillReason:(int)arg1;
 - (unsigned long long)_queue_activationInfoForEvent:(int)arg1 withToken:(unsigned long long)arg2 didWatchdog:(bool)arg3;
 - (void)_queue_addAllowedLockedFilePath:(id)arg1;
+- (void)_queue_addAllowedLockedPaths;
 - (long long)_queue_bksVisibilityForVisibility:(int)arg1;
 - (bool)_queue_bootstrapAndExecWithContext:(id)arg1;
 - (void)_queue_callExitObservers;
@@ -83,6 +84,7 @@
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
 - (bool)_queue_isAllowedLockedFilePath:(id)arg1 standardizedPath:(out id*)arg2;
+- (bool)_queue_isPlatformExecutable;
 - (void)_queue_killForReason:(long long)arg1 andReport:(bool)arg2 withDescription:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_killWithSignal:(int)arg1;
 - (void)_queue_launchIfNecessary;

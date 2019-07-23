@@ -35,18 +35,22 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)_deleteFileAtURL:(id)arg1 error:(id*)arg2;
 - (id)_init;
+- (id)_initWithFileURL:(id)arg1;
 - (id)brItemID;
 - (id)brOwnerName;
 - (id)brShareName;
 - (id)brZoneName;
 - (void)createShareIfNeeded:(id /* block */)arg1;
 - (bool)deleteFile:(id*)arg1;
+- (void)deleteFileWithCompletion:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchUsersAndAddToShare:(id)arg1 completion:(id /* block */)arg2;
 - (id)fileURL;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileURL:(id)arg1;
+- (id)initWithFileURL:(id)arg1 withOwnerPersonID:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (bool)isOriginal;
 - (bool)isUploaded;

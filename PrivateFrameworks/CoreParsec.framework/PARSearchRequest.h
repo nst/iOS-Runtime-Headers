@@ -30,6 +30,7 @@
 - (id)l2version;
 - (id)l3version;
 - (id)localContextualSuggestions;
+- (unsigned int)nwActivityLabel;
 - (id)queryString;
 - (void)setCompletionCacheSuggestions:(id)arg1;
 - (void)setEngagedSuggestion:(id)arg1;

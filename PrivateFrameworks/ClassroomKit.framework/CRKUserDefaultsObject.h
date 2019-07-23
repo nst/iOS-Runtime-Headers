@@ -3,21 +3,21 @@
  */
 
 @interface CRKUserDefaultsObject : NSObject {
-    NSUserDefaults * _defaults;
     NSString * _key;
+    NSObject<CRKKeyObjectStoring> * _store;
 }
 
-@property (nonatomic, readonly) NSUserDefaults *defaults;
 @property (nonatomic, readonly, copy) NSString *key;
-@property (retain) id value;
+@property (nonatomic, readonly) NSObject<CRKKeyObjectStoring> *store;
+@property (copy) id value;
 
 - (void).cxx_destruct;
-- (id)defaults;
-- (id)init;
 - (id)initWithDefaults:(id)arg1 key:(id)arg2;
 - (id)initWithKey:(id)arg1;
+- (id)initWithStore:(id)arg1 key:(id)arg2;
 - (id)key;
 - (void)setValue:(id)arg1;
+- (id)store;
 - (id)value;
 
 @end

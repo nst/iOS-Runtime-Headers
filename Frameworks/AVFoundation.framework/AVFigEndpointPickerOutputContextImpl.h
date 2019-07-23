@@ -73,6 +73,7 @@
 - (void)removeOutputDevice:(id)arg1;
 - (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setOutputDevices:(id)arg1;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setParentOutputContext:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (bool)supportsMultipleOutputDevices;

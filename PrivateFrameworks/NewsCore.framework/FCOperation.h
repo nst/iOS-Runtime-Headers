@@ -5,7 +5,7 @@
 @interface FCOperation : NSOperation <FCOperationCanceling, FCOperationIdentifying, FCOperationPrioritizing> {
     NSMutableArray * _childOperations;
     bool  _childOperationsCancelled;
-    NFMutexLock * _childOperationsLock;
+    NFUnfairLock * _childOperationsLock;
     bool  _executing;
     bool  _finished;
     NSObject<OS_dispatch_group> * _finishedGroup;
@@ -21,9 +21,10 @@
 
 @property (nonatomic, retain) NSMutableArray *childOperations;
 @property (nonatomic) bool childOperationsCancelled;
-@property (nonatomic, retain) NFMutexLock *childOperationsLock;
+@property (nonatomic, retain) NFUnfairLock *childOperationsLock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSDictionary *errorUserInfo;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *finishedGroup;
 @property (nonatomic, readonly) bool hasOperationStarted;
 @property (readonly) unsigned long long hash;
@@ -40,7 +41,6 @@
 
 - (void).cxx_destruct;
 - (void)_associateChildOperation:(id)arg1;
-- (id)_errorUserInfo;
 - (void)_finishOperationWithError:(id)arg1;
 - (void)_finishedPerformingOperationWithError:(id)arg1;
 - (void)_handleRetryFromError:(id)arg1 signal:(id)arg2;
@@ -58,6 +58,7 @@
 - (bool)childOperationsCancelled;
 - (id)childOperationsLock;
 - (void)dealloc;
+- (id)errorUserInfo;
 - (void)finishFromEarlyCancellation;
 - (id)finishedGroup;
 - (void)finishedPerformingOperationWithError:(id)arg1;

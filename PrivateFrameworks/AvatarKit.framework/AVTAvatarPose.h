@@ -3,6 +3,7 @@
  */
 
 @interface AVTAvatarPose : NSObject {
+    double  _bakedAnimationBlendFactor;
     struct SCNVector4 { 
         float x; 
         float y; 
@@ -17,6 +18,7 @@
     NSMutableDictionary * _weights;
 }
 
+@property (nonatomic) double bakedAnimationBlendFactor;
 @property (nonatomic) struct SCNVector4 { float x1; float x2; float x3; float x4; } neckOrientation;
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } neckPosition;
 
@@ -26,10 +28,12 @@
 + (id)neutralPose;
 
 - (void).cxx_destruct;
+- (double)bakedAnimationBlendFactor;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })neckOrientation;
 - (struct SCNVector3 { float x1; float x2; float x3; })neckPosition;
+- (void)setBakedAnimationBlendFactor:(double)arg1;
 - (void)setNeckOrientation:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1;
 - (void)setNeckPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setWeight:(double)arg1 forBlendShapeNamed:(id)arg2;

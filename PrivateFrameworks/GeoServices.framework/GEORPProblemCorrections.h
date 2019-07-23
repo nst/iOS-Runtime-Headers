@@ -15,6 +15,7 @@
     struct { 
         unsigned int delayed : 1; 
     }  _has;
+    GEORPMerchantLookupCorrections * _merchantLookupCorrections;
     NSMutableArray * _photoWithMetadatas;
     GEORPPlaceProblem * _placeProblem;
 }
@@ -35,7 +36,9 @@
 @property (nonatomic, readonly) bool hasCorrectedSearch;
 @property (nonatomic) bool hasDelayed;
 @property (nonatomic, readonly) bool hasDirectionsProblem;
+@property (nonatomic, readonly) bool hasMerchantLookupCorrections;
 @property (nonatomic, readonly) bool hasPlaceProblem;
+@property (nonatomic, retain) GEORPMerchantLookupCorrections *merchantLookupCorrections;
 @property (nonatomic, retain) NSMutableArray *photoWithMetadatas;
 @property (nonatomic, retain) GEORPPlaceProblem *placeProblem;
 
@@ -74,9 +77,11 @@
 - (bool)hasCorrectedSearch;
 - (bool)hasDelayed;
 - (bool)hasDirectionsProblem;
+- (bool)hasMerchantLookupCorrections;
 - (bool)hasPlaceProblem;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (id)merchantLookupCorrections;
 - (void)mergeFrom:(id)arg1;
 - (id)photoWithMetadataAtIndex:(unsigned long long)arg1;
 - (id)photoWithMetadatas;
@@ -93,6 +98,7 @@
 - (void)setDelayed:(bool)arg1;
 - (void)setDirectionsProblem:(id)arg1;
 - (void)setHasDelayed:(bool)arg1;
+- (void)setMerchantLookupCorrections:(id)arg1;
 - (void)setPhotoWithMetadatas:(id)arg1;
 - (void)setPlaceProblem:(id)arg1;
 - (void)writeTo:(id)arg1;

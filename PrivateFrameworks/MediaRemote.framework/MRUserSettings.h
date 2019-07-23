@@ -7,11 +7,18 @@
     NSUserDefaults * _userDefaults;
 }
 
+@property (nonatomic, readonly) double activeSystemEndpointStartupDelayToAllowAllPreviousClientsTimeToInitializeInterval;
 @property (nonatomic, readonly) double airPlayOutputContextInitTimeoutDuration;
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
 @property (nonatomic, readonly) bool computeNowPlayingApplication;
+@property (nonatomic, readonly) bool connectToAllEndpointsWhenAnyEndpointBeginsPlayback;
+@property (nonatomic, readonly) bool connectToEndpointWhenBeginsPlayback;
+@property (nonatomic, readonly) bool connectToUserSelectedEndpoint;
 @property (nonatomic, retain) NSArray *connectedClientPIDs;
+@property (nonatomic, readonly) double deviceRecentlyUsedInterval;
+@property (nonatomic, readonly) double discoverEndpointTimeoutInterval;
+@property (nonatomic, readonly) double endpointRecentlyUserSelectedInterval;
 @property (nonatomic, readonly) double externalDeviceDisconnectSleepDuration;
 @property (nonatomic, readonly) double externalDeviceDisconnectWaitDuration;
 @property (nonatomic, readonly) double externalDeviceNowPlayingInfoArtworkCoalesceDuration;
@@ -22,9 +29,11 @@
 @property (nonatomic, readonly) double externalDeviceTimeoutDuration;
 @property (nonatomic, readonly) bool hasExternalDeviceSocketQOSLevelSet;
 @property (nonatomic, readonly) long long maxTransactionMemorySize;
+@property (nonatomic, readonly) double mediaRecentlyPlayedInterval;
+@property (nonatomic, readonly) bool needNowPlayingForegroundState;
 @property (nonatomic, readonly) double nowPlayingApplicationTimeout;
-@property (nonatomic, readonly) double pauseWhileOnLockScreenTimeout;
 @property (nonatomic, readonly) bool shouldInitializeGenericBonjourService;
+@property (nonatomic, readonly) bool shouldInitializeRapportService;
 @property (nonatomic, readonly) bool shouldInitializeTelevisionBonjourService;
 @property (nonatomic, readonly) bool shouldLogArtwork;
 @property (nonatomic, readonly) bool shouldLogPairingSetupCode;
@@ -33,10 +42,12 @@
 @property (nonatomic, readonly) double transactionWaitDurationOnOutOfMemory;
 @property (nonatomic, readonly) double transactionWaitDurationOnXpcSend;
 @property (nonatomic, readonly) bool useDebugAVRouteWithoutVolumeControl;
+@property (nonatomic, readonly) bool useDeviceLockStateToRestoreDeferredPlayerPaths;
 @property (nonatomic, readonly) bool useExternalDeviceSystemPairing;
 @property (nonatomic, readonly) bool useGenericTransportForHostedEndpoints;
 @property (nonatomic, readonly) bool useNoDelayOptionForExternalDeviceSockets;
 @property (nonatomic, readonly) bool usePeerToPeerExternalDeviceConnections;
+@property (nonatomic, readonly) bool useProactiveEndpoint;
 @property (nonatomic, readonly) bool useSystemAudioContextForAirPlayTransport;
 
 + (id)currentSettings;
@@ -46,11 +57,18 @@
 - (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;
 - (long long)_integerValueForKey:(id)arg1 usingDefaultValue:(long long)arg2;
 - (void)_removeValueForKey:(id)arg1;
+- (double)activeSystemEndpointStartupDelayToAllowAllPreviousClientsTimeToInitializeInterval;
 - (double)airPlayOutputContextInitTimeoutDuration;
 - (double)bluetoothDeviceResumeDuration;
 - (double)broadcastCommandWaitDuration;
 - (bool)computeNowPlayingApplication;
+- (bool)connectToAllEndpointsWhenAnyEndpointBeginsPlayback;
+- (bool)connectToEndpointWhenBeginsPlayback;
+- (bool)connectToUserSelectedEndpoint;
 - (id)connectedClientPIDs;
+- (double)deviceRecentlyUsedInterval;
+- (double)discoverEndpointTimeoutInterval;
+- (double)endpointRecentlyUserSelectedInterval;
 - (double)externalDeviceDisconnectSleepDuration;
 - (double)externalDeviceDisconnectWaitDuration;
 - (double)externalDeviceNowPlayingInfoArtworkCoalesceDuration;
@@ -62,11 +80,13 @@
 - (id)init;
 - (bool)isExternalDevicePairingAllowed;
 - (long long)maxTransactionMemorySize;
+- (double)mediaRecentlyPlayedInterval;
+- (bool)needNowPlayingForegroundState;
 - (double)nowPlayingApplicationTimeout;
-- (double)pauseWhileOnLockScreenTimeout;
 - (void)setConnectedClientPIDs:(id)arg1;
 - (void)setExternalDevicePairingAllowed:(bool)arg1;
 - (bool)shouldInitializeGenericBonjourService;
+- (bool)shouldInitializeRapportService;
 - (bool)shouldInitializeTelevisionBonjourService;
 - (bool)shouldLogArtwork;
 - (bool)shouldLogPairingSetupCode;
@@ -75,10 +95,12 @@
 - (double)transactionWaitDurationOnOutOfMemory;
 - (double)transactionWaitDurationOnXpcSend;
 - (bool)useDebugAVRouteWithoutVolumeControl;
+- (bool)useDeviceLockStateToRestoreDeferredPlayerPaths;
 - (bool)useExternalDeviceSystemPairing;
 - (bool)useGenericTransportForHostedEndpoints;
 - (bool)useNoDelayOptionForExternalDeviceSockets;
 - (bool)usePeerToPeerExternalDeviceConnections;
+- (bool)useProactiveEndpoint;
 - (bool)useSystemAudioContextForAirPlayTransport;
 
 @end

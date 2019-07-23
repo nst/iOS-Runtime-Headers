@@ -14,6 +14,7 @@
 - (id)dictionaryKeyPath;
 - (Class)objectClass;
 - (id)processResponseData:(id)arg1 error:(id*)arg2;
+- (id)processResponseData:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (void)setDictionaryKeyPath:(id)arg1;
 - (void)setObjectClass:(Class)arg1;
 

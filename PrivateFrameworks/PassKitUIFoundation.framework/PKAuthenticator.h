@@ -12,6 +12,7 @@
 }
 
 @property (nonatomic, readonly) unsigned long long authenticationIdentifier;
+@property (nonatomic, readonly) long long coachingState;
 @property (nonatomic) <PKAuthenticatorDelegate> *delegate;
 @property (nonatomic, readonly) bool fingerPresent;
 @property (nonatomic) double fingerPresentTimeout;
@@ -26,6 +27,7 @@
 + (unsigned long long)cachedStateForPolicy:(long long)arg1;
 + (unsigned long long)currentStateForAccessControl:(struct __SecAccessControl { }*)arg1;
 + (unsigned long long)currentStateForPolicy:(long long)arg1;
++ (void)delayCoachingStateTransition;
 + (bool)isUserIntentAvailable;
 + (void)preheatAuthenticator;
 + (void)removeUserIntentAvailable;
@@ -46,6 +48,7 @@
 - (unsigned long long)authenticationIdentifier;
 - (void)cancelEvaluation;
 - (void)cancelEvaluationWithOptions:(unsigned long long)arg1;
+- (long long)coachingState;
 - (void)dealloc;
 - (id)delegate;
 - (void)evaluateRequest:(id)arg1 withCompletion:(id /* block */)arg2;

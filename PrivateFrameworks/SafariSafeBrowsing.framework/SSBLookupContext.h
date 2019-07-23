@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
  */
 
-@interface SSBLookupContext : NSObject {
+@interface SSBLookupContext : NSObject <MCProfileConnectionObserver> {
     struct shared_ptr<SafeBrowsing::LookupContext> { 
         struct LookupContext {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _lookupContext;
     unsigned int  _observerToken;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (id)sharedLookupContext;
 
@@ -23,8 +28,10 @@
 - (void)_getLastDatabaseUpdateTimeWithCompletionHandler:(id /* block */)arg1;
 - (void)_getServiceStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)_lookUpURLs:(id)arg1 forProtectionType:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)_setSafeBrowsingEnabledStateNeedsUpdate;
 - (void)dealloc;
 - (id)init;
 - (void)lookUpURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 
 @end

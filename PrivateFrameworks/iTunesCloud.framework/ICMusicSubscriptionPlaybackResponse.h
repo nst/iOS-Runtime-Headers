@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICMusicSubscriptionPlaybackResponse : NSObject {
+@interface ICMusicSubscriptionPlaybackResponse : NSObject <ICStoreResponseProtocol> {
     NSDate * _requestDate;
     NSDictionary * _responseDictionary;
     ICURLBag * _urlBag;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) ICStoreDialogResponse *dialog;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *householdID;
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic, readonly, copy) NSDate *leaseExpirationDate;
@@ -16,6 +19,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *metricsDictionary;
 @property (nonatomic, readonly, copy) NSError *serverError;
 @property (nonatomic, readonly, copy) NSData *subscriptionKeyBagData;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)dialog;

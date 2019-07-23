@@ -4,6 +4,7 @@
 
 @interface AVTFunCamAvatarPickerController : UIViewController <AVTAvatarPicker, AVTObjectViewController, AVTViewSessionProviderDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     AVTCenteringCollectionViewDelegate * _centeringDelegate;
+    <NSObject> * _changeNotificationToken;
     UICollectionView * _collectionView;
     UIView * _container;
     NSArray * _editableRecords;
@@ -20,6 +21,7 @@
     unsigned long long  _mode;
     AVTAvatarListImageItem * _noneItem;
     NSArray * _puppetRecords;
+    <AVTAvatarRecord> * _selectedAvatarRecord;
     <AVTAvatarStoreInternal> * _store;
     <AVTAvatarPickerDelegate> * avatarPickerDelegate;
     <AVTPresenterDelegate> * presenterDelegate;
@@ -27,6 +29,7 @@
 
 @property (nonatomic) <AVTAvatarPickerDelegate> *avatarPickerDelegate;
 @property (nonatomic, retain) AVTCenteringCollectionViewDelegate *centeringDelegate;
+@property (nonatomic, retain) <NSObject> *changeNotificationToken;
 @property (nonatomic, retain) UICollectionView *collectionView;
 @property (nonatomic, retain) UIView *container;
 @property (readonly, copy) NSString *debugDescription;
@@ -47,6 +50,7 @@
 @property (nonatomic, retain) AVTAvatarListImageItem *noneItem;
 @property (nonatomic) <AVTPresenterDelegate> *presenterDelegate;
 @property (nonatomic, retain) NSArray *puppetRecords;
+@property (nonatomic, retain) <AVTAvatarRecord> *selectedAvatarRecord;
 @property (nonatomic, retain) <AVTAvatarStoreInternal> *store;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
@@ -65,6 +69,7 @@
 - (void)buildCollectionView;
 - (bool)canCreateAvatar;
 - (id)centeringDelegate;
+- (id)changeNotificationToken;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -103,13 +108,15 @@
 - (void)selectAvatarRecordWithIdentifier:(id)arg1 animated:(bool)arg2;
 - (void)selectItemAtCenterNotifyDelegate:(bool)arg1;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(bool)arg2 notifyDelegate:(bool)arg3;
-- (void)selectItemForAvatarRecord:(id)arg1 notifyDelegate:(bool)arg2;
+- (void)selectItemForAvatarRecord:(id)arg1 animated:(bool)arg2 notifyDelegate:(bool)arg3;
+- (id)selectedAvatarRecord;
 - (id)selectedIndexPath;
 - (void)sendSelectionEventToDelegateForItemAtIndexPath:(id)arg1;
 - (void)sessionProviderDidEndCameraSession:(id)arg1;
 - (void)sessionProviderWillStartCameraSession:(id)arg1;
 - (void)setAvatarPickerDelegate:(id)arg1;
 - (void)setCenteringDelegate:(id)arg1;
+- (void)setChangeNotificationToken:(id)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setEditableRecords:(id)arg1;
@@ -122,9 +129,11 @@
 - (void)setNoneItem:(id)arg1;
 - (void)setPresenterDelegate:(id)arg1;
 - (void)setPuppetRecords:(id)arg1;
+- (void)setSelectedAvatarRecord:(id)arg1;
 - (void)setStore:(id)arg1;
+- (void)startObservingChangesIfNeeded;
 - (id)store;
-- (void)updateForCurrentMode;
+- (void)updateViewForCurrentMode;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 

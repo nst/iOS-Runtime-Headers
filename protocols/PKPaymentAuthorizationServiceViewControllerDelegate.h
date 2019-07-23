@@ -5,6 +5,7 @@
 
 @required
 
+- (void)authorizationViewControllerDidChangeCoachingState:(PKPaymentAuthorizationServiceViewController *)arg1;
 - (void)authorizationViewControllerDidChangeUserIntentRequirement:(PKPaymentAuthorizationServiceViewController *)arg1;
 
 @optional

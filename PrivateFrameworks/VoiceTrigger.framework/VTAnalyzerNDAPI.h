@@ -31,14 +31,18 @@
 - (double)getNDAPILoggingThreshold;
 - (double)getNDAPISecondChanceThreshold;
 - (double)getNDAPITriggerThreshold;
+- (int)getPayloadUtteranceLifeTimeInDays;
 - (id)getRecognizerConfig;
 - (double)getRecognizerScoreScaleFactor;
 - (double)getRecognizerThresholdOffset;
 - (double)getRecognizerWaitTime;
+- (double)getRetrainExplicitUttThresholdSAT;
+- (double)getRetrainExplicitUttThresholdTDSR;
 - (int)getRetrainNumExplicitUtt;
 - (int)getRetrainNumImplicitUtt;
 - (id)getRetrainSamplingPolicy;
 - (double)getRetrainThresholdSAT;
+- (double)getRetrainThresholdTDSR;
 - (double)getRetrainThresholdTrigger;
 - (int)getSATVectorCount;
 - (const struct _ndsvscore { float x1; }*)getScoreSuperVector:(const float*)arg1 size:(unsigned int)arg2;
@@ -50,6 +54,8 @@
 - (bool)getUseFallbackThresholdUponTimeout;
 - (bool)getUseKeywordSpotting;
 - (bool)getUseRecognizer;
+- (id)getVoiceProfilePruningCookie;
+- (int)getVoiceProfilePruningNumRetentionUtterances;
 - (id)initWithConfigPath:(id)arg1 resourcePath:(id)arg2;
 - (bool)initializeSAT:(id)arg1;
 - (void)reset;

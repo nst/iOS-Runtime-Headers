@@ -16,6 +16,7 @@
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveFirstVideoFrameWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveRTCPPackets:(NSArray *)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveTTYCharacter:(unsigned short)arg2;
+- (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didReceiveText:(struct NSString { Class x1; }*)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchFromStreamID:(unsigned short)arg2 toStreamID:(unsigned short)arg3;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 didUpdateVideoConfiguration:(bool)arg2 error:(NSError *)arg3 dictionary:(NSDictionary *)arg4;
@@ -26,6 +27,8 @@
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 updateFrequencyLevel:(NSData *)arg2 isInputMeter:(bool)arg3;
 - (void)vcMediaStream:(id <VCMediaStreamProtocol>)arg1 uplinkQualityDidChange:(NSDictionary *)arg2;
 - (void)vcMediaStreamDidDecryptionTimeOut:(id <VCMediaStreamProtocol>)arg1;
+- (void)vcMediaStreamDidInterruptionBegin:(id <VCMediaStreamProtocol>)arg1;
+- (void)vcMediaStreamDidInterruptionEnd:(id <VCMediaStreamProtocol>)arg1;
 - (void)vcMediaStreamDidRTCPTimeOut:(id <VCMediaStreamProtocol>)arg1;
 - (void)vcMediaStreamDidRTPTimeOut:(id <VCMediaStreamProtocol>)arg1;
 

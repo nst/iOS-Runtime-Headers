@@ -18,6 +18,7 @@
 + (id)hashTransform;
 + (id)logTransformerWithBase:(id)arg1;
 + (id)maskTransformWithWidth:(unsigned long long)arg1;
++ (id)roundTransformer;
 
 - (void).cxx_destruct;
 - (id)name;

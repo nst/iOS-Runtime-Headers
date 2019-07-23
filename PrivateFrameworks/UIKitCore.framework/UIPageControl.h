@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIPageControl : UIControl <DebugHierarchyObject_Fallback> {
+@interface UIPageControl : UIControl {
     UIVisualEffectView * _backgroundVisualEffectView;
     long long  _currentPage;
     UIImage * _currentPageImage;
@@ -24,18 +24,12 @@
 
 @property (nonatomic) long long currentPage;
 @property (nonatomic, retain) UIColor *currentPageIndicatorTintColor;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) bool defersCurrentPageDisplay;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesForSinglePage;
 @property (getter=_legibilitySettings, setter=_setLegibilitySettings:, nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (getter=_legibilityStyle, setter=_setLegibilityStyle:, nonatomic) long long legibilityStyle;
 @property (nonatomic) long long numberOfPages;
 @property (nonatomic, retain) UIColor *pageIndicatorTintColor;
-@property (readonly) Class superclass;
-
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 + (bool)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
 
@@ -79,14 +73,6 @@
 - (void)_transitionIndicator:(id)arg1 toEnabled:(bool)arg2 index:(long long)arg3;
 - (void)_transitionIndicator:(id)arg1 toEnabled:(bool)arg2 index:(long long)arg3 legible:(bool)arg4;
 - (void)_updateCurrentPageDisplay;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)canBecomeFocused;
 - (long long)currentPage;
 - (id)currentPageIndicatorTintColor;

@@ -4,6 +4,10 @@
 
 @interface TVViewFactory : NSObject
 
-+ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 scaleMode:(long long)arg4;
++ (struct CGSize { double x1; double x2; })decorateImageProxy:(id)arg1 forLayout:(id)arg2;
++ (id)imageProxyWithURL:(id)arg1;
++ (id)imageStackViewWithDescription:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
++ (id)imageURLWithDescription:(id)arg1;
++ (id)imageViewWithDescription:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 
 @end

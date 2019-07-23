@@ -3,8 +3,6 @@
  */
 
 @interface PMLLogRegTrainingPlan : NSObject <PMLPlanProtocol> {
-    long long  _beforeNoiseScaling;
-    float  _constantScaleFactor;
     PMLModelWeights * _currentModelWeights;
     unsigned long long  _currentServerIteration;
     unsigned long long  _evaluationLevel;
@@ -29,8 +27,6 @@
     bool  _useOnlyAppleInternalSessions;
 }
 
-@property (nonatomic, readonly) long long beforeNoiseScaling;
-@property (nonatomic, readonly) float constantScaleFactor;
 @property (nonatomic, readonly) PMLModelWeights *currentModelWeights;
 @property (nonatomic, readonly) unsigned long long currentServerIteration;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,8 +53,6 @@
 + (id)planWithStore:(id)arg1 tracker:(id)arg2 sessionDescriptor:(id)arg3 arguments:(id)arg4;
 
 - (void).cxx_destruct;
-- (long long)beforeNoiseScaling;
-- (float)constantScaleFactor;
 - (id)currentModelWeights;
 - (unsigned long long)currentServerIteration;
 - (id)description;
@@ -66,11 +60,11 @@
 - (id)evaluationMetricsForPredictions:(id)arg1 objectives:(id)arg2 predicate:(id /* block */)arg3 start:(id)arg4;
 - (id)init;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
-- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString { Class x1; }*)arg4 isSynchronous:(bool)arg5 sessionDescriptor:(id)arg6 maxSessionsLimit:(unsigned long long)arg7 sessionsInBatch:(unsigned long long)arg8 currentServerIteration:(unsigned long long)arg9 currentModelWeights:(id)arg10 localLearningRate:(float)arg11 stoppingThreshold:(float)arg12 localMinimumIterations:(unsigned long long)arg13 localGradientIterations:(unsigned long long)arg14 useOnlyAppleInternalSessions:(bool)arg15 skew:(double)arg16 threshold:(double)arg17 isMultiLabel:(bool)arg18 intercept:(bool)arg19 positiveLabel:(unsigned long long)arg20 beforeNoiseScaling:(long long)arg21 constantScaleFactor:(float)arg22 evaluationLevel:(unsigned long long)arg23 reportScale:(bool)arg24;
+- (id)initWithStore:(id)arg1 tracker:(id)arg2 noiseStrategy:(id)arg3 planId:(struct NSString { Class x1; }*)arg4 isSynchronous:(bool)arg5 sessionDescriptor:(id)arg6 maxSessionsLimit:(unsigned long long)arg7 sessionsInBatch:(unsigned long long)arg8 currentServerIteration:(unsigned long long)arg9 currentModelWeights:(id)arg10 localLearningRate:(float)arg11 stoppingThreshold:(float)arg12 localMinimumIterations:(unsigned long long)arg13 localGradientIterations:(unsigned long long)arg14 useOnlyAppleInternalSessions:(bool)arg15 skew:(double)arg16 threshold:(double)arg17 isMultiLabel:(bool)arg18 intercept:(bool)arg19 positiveLabel:(unsigned long long)arg20 evaluationLevel:(unsigned long long)arg21 reportScale:(bool)arg22;
 - (bool)intercept;
 - (bool)isMultiLabel;
 - (bool)isSynchronous;
-- (void)loadSessionsSince:(double)arg1 block:(id /* block */)arg2;
+- (void)loadSessionsWithBlock:(id /* block */)arg1;
 - (unsigned long long)localGradientIterations;
 - (float)localLearningRate;
 - (unsigned long long)localMinimumIterations;
@@ -81,7 +75,6 @@
 - (bool)reportScale;
 - (void)runUntilDoneForTesting;
 - (id)runWhile:(id /* block */)arg1 didFinish:(bool*)arg2;
-- (float)scaleFactorFor:(id)arg1;
 - (id)sessionDescriptor;
 - (float)stoppingThreshold;
 - (id)store;

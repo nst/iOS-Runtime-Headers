@@ -4,10 +4,12 @@
 
 @interface PSSpotlightSearchResultsController : UITableViewController <PSKeyboardNavigationSearchResultsController> {
     <PSSpotlightSearchResultsControllerDelegate> * _delegate;
+    long long  _deviceOrientation;
     NSMutableDictionary * _iconViewMap;
     NSArray * _results;
     NSMutableArray * _reusableIconViews;
     NSMutableArray * _tableData;
+    double  originalInset;
 }
 
 @property (nonatomic) <PSSpotlightSearchResultsControllerDelegate> *delegate;
@@ -42,5 +44,6 @@
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (void)_handleAccountChangedNotification:(id)arg1;
 - (id)account;
+- (id)appleAccountInformation;
 - (id)bridgedClientInfo;
 - (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
 - (void)cloudStoreStatusWithCompletion:(id /* block */)arg1;
@@ -25,8 +26,9 @@
 - (id)init;
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
-- (void)peerPaymentReRegisterWithURL:(id)arg1 pushToken:(id)arg2 completion:(id /* block */)arg3;
+- (void)peerPaymentReRegisterWithURL:(id)arg1 pushToken:(id)arg2 peerPaymentWebService:(id)arg3 completion:(id /* block */)arg4;
 - (void)provisionPeerPaymentPassWithProvisioningController:(id)arg1 credential:(id)arg2 completion:(id /* block */)arg3;
+- (void)renewAppleAccountWithCompletionHandler:(id /* block */)arg1;
 - (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
 - (id)secureElementIdentifiers;
 - (void)setUserHasDisabledPeerPayment:(bool)arg1;

@@ -28,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)_establishStreamOfTags;
+- (id)_localIdentifier;
 - (void)_performSearchQuery:(id /* block */)arg1;
 - (id)assetManager;
 - (unsigned long long)batchSize;

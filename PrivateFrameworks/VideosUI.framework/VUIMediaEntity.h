@@ -18,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSDate *addedDate;
 @property (nonatomic, readonly, copy) NSNumber *audioCapability;
 @property (nonatomic) bool cachesPropertiesOnFirstAccess;
+@property (nonatomic, readonly, copy) NSString *canonicalID;
 @property (nonatomic, readonly, copy) NSNumber *colorCapability;
 @property (nonatomic, readonly, copy) NSString *contentDescription;
 @property (nonatomic, readonly, copy) VUIContentRating *contentRating;
@@ -28,9 +29,10 @@
 @property (nonatomic, copy) NSObject<VUIMediaEntityIdentifierInternal> *identifierInternal;
 @property (nonatomic, readonly, copy) NSNumber *isLocal;
 @property (nonatomic, readonly) VUIMediaEntityKind *kind;
-@property (getter=hasLocalChanges, nonatomic, readonly) bool localChanges;
+@property (getter=hasLocalChanges, nonatomic) bool localChanges;
 @property (nonatomic, retain) VUIMediaLibrary *mediaLibrary;
 @property (nonatomic, copy) NSNumber *playedState;
+@property (nonatomic, readonly, copy) NSNumber *purchaseHistoryID;
 @property (nonatomic, readonly, copy) NSDate *releaseDate;
 @property (nonatomic, readonly, copy) NSNumber *releaseYear;
 @property (nonatomic, readonly) NSSet *requestedProperties;
@@ -56,6 +58,7 @@
 - (id)assetController;
 - (id)audioCapability;
 - (bool)cachesPropertiesOnFirstAccess;
+- (id)canonicalID;
 - (id)colorCapability;
 - (id)contentDescription;
 - (id)contentRating;
@@ -76,6 +79,7 @@
 - (id)mediaLibrary;
 - (id)playedState;
 - (void)populateMetadata;
+- (id)purchaseHistoryID;
 - (id)releaseDate;
 - (id)releaseYear;
 - (id)requestedProperties;
@@ -84,6 +88,7 @@
 - (void)setCachesPropertiesOnFirstAccess:(bool)arg1;
 - (void)setFirstAccessPropertiesCache:(id)arg1;
 - (void)setIdentifierInternal:(id)arg1;
+- (void)setLocalChanges:(bool)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setPlayedState:(id)arg1;
 - (id)showIdentifier;

@@ -17,8 +17,9 @@
 - (void)confirmIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (id)connection;
 - (id)createExtensionConnectionForIntent:(id)arg1;
+- (void)dealloc;
 - (id)errorWithCode:(long long)arg1 localizedDescription:(id)arg2 localizedTitle:(id)arg3 underlyingError:(id)arg4 intentResponse:(id)arg5;
-- (void)finishRunningByContinuingInApp;
+- (void)finishRunningByContinuingInAppForIntent:(id)arg1 response:(id)arg2;
 - (void)handleIntent:(id)arg1 inBackgroundAppWithBundleIdentifier:(id)arg2 reply:(id /* block */)arg3;
 - (void)handleIntent:(id)arg1 withExtensionProxy:(id)arg2;
 - (void)launchAppWithCompletionHandler:(id /* block */)arg1;

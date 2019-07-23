@@ -8,6 +8,6 @@
 - (void)enterState;
 - (void)leaveState;
 - (void)setFullGuidanceMode:(bool)arg1;
-- (unsigned long long)type;
+- (long long)type;
 
 @end

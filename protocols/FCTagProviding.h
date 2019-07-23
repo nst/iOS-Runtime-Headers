@@ -37,7 +37,9 @@
 - (bool)isPurchaseSetup;
 - (bool)isRealTimeTrackingEnabled;
 - (bool)isSubscribable;
+- (NSString *)language;
 - (NSDate *)loadDate;
+- (NSString *)magazineGenre;
 - (long long)minimumNewsVersion;
 - (NSString *)name;
 - (NSString *)nameCompact;
@@ -45,11 +47,11 @@
 - (FCAssetHandle *)nameImageMaskWidgetHQAssetHandle;
 - (FCAssetHandle *)nameImageMaskWidgetLQAssetHandle;
 - (NSString *)paidFeedIDForBin:(long long)arg1;
-- (NSArray *)pinnedArticleIDs;
 - (void)ppt_overrideFeedID:(NSString *)arg1;
 - (FCPurchaseOfferableConfiguration *)prefetchPurchaseOffer;
 - (NSString *)primaryAudience;
 - (NSString *)publisherPaidAuthorizationURL;
+- (NSArray *)publisherPaidBundlePurchaseIDs;
 - (NTPBPublisherPaidDescriptionStrings *)publisherPaidDescriptionStrings;
 - (NSArray *)publisherPaidFeldsparablePurchaseIDs;
 - (bool)publisherPaidLeakyPaywallOptOut;
@@ -59,10 +61,6 @@
 - (NSString *)publisherPaidWebAccessURL;
 - (NSArray *)publisherSpecifiedArticleIDs;
 - (NSDate *)publisherSpecifiedArticleIDsModifiedDate;
-- (NSArray *)relatedChannelIDs;
-- (NSArray *)relatedChannelIDsForOnboarding;
-- (NSArray *)relatedTopicIDs;
-- (NSArray *)relatedTopicIDsForOnboarding;
 - (NSString *)replacementID;
 - (long long)score;
 - (NSString *)subtitle;

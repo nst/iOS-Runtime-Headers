@@ -5,8 +5,10 @@
 @interface SXTextSource : NSObject {
     <SXTextSourceDataSource> * _dataSource;
     <SXTextStyleFontDescribing> * _defaultFontDescribing;
+    SXTextSourceDefaults * _defaults;
     NSMutableIndexSet * _deletedRangeOffsets;
-    SXFontAttributesConstructor * _fontAttributeConstructor;
+    <SXDocumentLanguageProviding> * _documentLanguageProvider;
+    <SXFontAttributesConstructor> * _fontAttributeConstructor;
     NSMutableIndexSet * _insertedRangeOffsets;
     NSMutableIndexSet * _rangesExcludedOfParagraphSpacing;
     <SXSmartFieldFactory> * _smartFieldFactory;
@@ -15,8 +17,10 @@
 
 @property (nonatomic, readonly) <SXTextSourceDataSource> *dataSource;
 @property (nonatomic, readonly) <SXTextStyleFontDescribing> *defaultFontDescribing;
+@property (nonatomic, readonly) SXTextSourceDefaults *defaults;
 @property (nonatomic, retain) NSMutableIndexSet *deletedRangeOffsets;
-@property (nonatomic, readonly) SXFontAttributesConstructor *fontAttributeConstructor;
+@property (nonatomic, readonly) <SXDocumentLanguageProviding> *documentLanguageProvider;
+@property (nonatomic, readonly) <SXFontAttributesConstructor> *fontAttributeConstructor;
 @property (nonatomic, retain) NSMutableIndexSet *insertedRangeOffsets;
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, retain) NSMutableIndexSet *rangesExcludedOfParagraphSpacing;
@@ -27,20 +31,24 @@
 - (void)applyAdditionsOnTextTangierStorage:(id)arg1;
 - (void)applyListStylingOnTextTangierStorage:(id)arg1 usingAttributesMap:(id)arg2;
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
-- (id)attributesForTextStyle:(id)arg1 baseTextStyle:(id)arg2 onParagraphStyle:(id)arg3 forRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 resultingDropCapStyle:(id*)arg5 textResizer:(id)arg6;
+- (id)attributesForTextStyle:(id)arg1 onParagraphStyle:(id)arg2 forRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 resultingDropCapStyle:(id*)arg4 textResizer:(id)arg5 fontFace:(id)arg6;
 - (id)characterStyleFromAttributes:(id)arg1 context:(id)arg2;
 - (id)cleanString:(id)arg1;
 - (id)dataSource;
 - (id)defaultFontDescribing;
+- (id)defaults;
 - (id)deletedRangeOffsets;
 - (id)description;
+- (id)documentLanguageProvider;
 - (id)fontAttributeConstructor;
-- (id)fontFaceForTextDescribing:(id)arg1 inheritingFromTextStyle:(id)arg2;
-- (id)initWithString:(id)arg1 smartFieldFactory:(id)arg2 dataSource:(id)arg3;
+- (id)fontDescriptionsForTextStyle:(id)arg1 defaultTextStyles:(id)arg2;
+- (id)fontFaceForTextStyle:(id)arg1 defaultTextStyle:(id)arg2 fontDescriptions:(id)arg3;
+- (id)initWithString:(id)arg1 defaults:(id)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4 documentLanguageProvider:(id)arg5 fontAttributesConstructor:(id)arg6;
 - (id)insertedRangeOffsets;
 - (int)listLabelTypeForListType:(unsigned long long)arg1;
 - (int)listNumberTypeForListType:(unsigned long long)arg1;
 - (id)locale;
+- (unsigned int)paragraphAlignmentForTextAlignment:(long long)arg1;
 - (id)populateArray:(id)arg1 withValue:(id)arg2 forSize:(unsigned long long)arg3;
 - (id)randomColorWithAlpha:(double)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

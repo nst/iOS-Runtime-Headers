@@ -17,6 +17,7 @@
 - (void)fetchSavedRecordInfoWithCompletion:(id /* block */)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (bool)isPermitted;
+- (void)saveCoreDuetEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)saveRecordWithData:(id)arg1 recordInfo:(id)arg2 completion:(id /* block */)arg3;
 - (bool)shouldMakeRecord;
 - (bool)shouldMakeRecordWithFrequency:(unsigned long long)arg1;

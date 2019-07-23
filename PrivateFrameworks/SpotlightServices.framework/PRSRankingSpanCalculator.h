@@ -7,6 +7,7 @@
     float  _normCount;
     float  _ordered;
     float  _pairDist;
+    bool  _pathExists;
     float  _unordered;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic) float normCount;
 @property (nonatomic) float ordered;
 @property (nonatomic) float pairDist;
+@property (nonatomic) bool pathExists;
 @property (nonatomic) float unordered;
 
 + (bool)doesOrderedSpanExistWithStartingIndex:(unsigned long long)arg1 nextArray:(id)arg2 arrayOfIndexArrays:(id)arg3 level:(unsigned long long)arg4 currentOrderedSpan:(long long*)arg5;
@@ -24,13 +26,16 @@
 - (float)normCount;
 - (float)ordered;
 - (float)pairDist;
+- (bool)pathExists;
 - (void)reset;
+- (void)resetSpans;
 - (void)setFirstTermPosition:(float)arg1;
 - (void)setNormCount:(float)arg1;
 - (void)setOrdered:(float)arg1;
 - (void)setPairDist:(float)arg1;
+- (void)setPathExists:(bool)arg1;
 - (void)setUnordered:(float)arg1;
 - (float)unordered;
-- (void)updateWithTermPositions:(id)arg1 queryTermCount:(unsigned long long)arg2;
+- (void)updateWithTermPositions:(id)arg1 queryTermCount:(unsigned long long)arg2 tokenCount:(unsigned long long)arg3;
 
 @end

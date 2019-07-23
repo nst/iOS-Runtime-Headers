@@ -14,6 +14,7 @@
 - (id)cardURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (unsigned int)nwActivityLabel;
 - (void)setCardURL:(id)arg1;
 
 @end

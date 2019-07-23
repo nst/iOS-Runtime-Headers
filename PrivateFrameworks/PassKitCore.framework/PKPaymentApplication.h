@@ -23,8 +23,10 @@
     NSString * _secureElementIdentifier;
     long long  _state;
     NSArray * _supportedExpressModes;
+    NSArray * _supportedTransitNetworkIdentifiers;
     bool  _supportsContactlessPayment;
     bool  _supportsInAppPayment;
+    bool  _supportsInstantFundsIn;
     bool  _supportsOptionalAuthentication;
     NSString * _suspendedReason;
     PKTransitPassProperties * _transitProperties;
@@ -55,13 +57,16 @@
 @property (nonatomic, readonly) NSString *stateAsString;
 @property (nonatomic, readonly) NSString *stationCodeProvider;
 @property (nonatomic, copy) NSArray *supportedExpressModes;
+@property (nonatomic, copy) NSArray *supportedTransitNetworkIdentifiers;
 @property (nonatomic) bool supportsContactlessPayment;
 @property (nonatomic, readonly) bool supportsExpressSuica;
 @property (nonatomic, readonly) bool supportsExpressTransit;
 @property (nonatomic) bool supportsInAppPayment;
+@property (nonatomic) bool supportsInstantFundsIn;
 @property (nonatomic) bool supportsOptionalAuthentication;
 @property (nonatomic, readonly) bool supportsSuica;
 @property (nonatomic, readonly) bool supportsTransit;
+@property (nonatomic, readonly) bool supportsTransitHistory;
 @property (nonatomic, copy) NSString *suspendedReason;
 @property (nonatomic, copy) PKTransitPassProperties *transitProperties;
 
@@ -125,8 +130,10 @@
 - (void)setSecureElementIdentifier:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setSupportedExpressModes:(id)arg1;
+- (void)setSupportedTransitNetworkIdentifiers:(id)arg1;
 - (void)setSupportsContactlessPayment:(bool)arg1;
 - (void)setSupportsInAppPayment:(bool)arg1;
+- (void)setSupportsInstantFundsIn:(bool)arg1;
 - (void)setSupportsOptionalAuthentication:(bool)arg1;
 - (void)setSuspendedReason:(id)arg1;
 - (void)setTransitProperties:(id)arg1;
@@ -134,6 +141,7 @@
 - (id)stateAsString;
 - (id)stationCodeProvider;
 - (id)supportedExpressModes;
+- (id)supportedTransitNetworkIdentifiers;
 - (bool)supportsContactlessPayment;
 - (bool)supportsExpress;
 - (bool)supportsExpressForAutomaticPresentationTechnologyType:(long long)arg1;
@@ -141,9 +149,11 @@
 - (bool)supportsExpressSuica;
 - (bool)supportsExpressTransit;
 - (bool)supportsInAppPayment;
+- (bool)supportsInstantFundsIn;
 - (bool)supportsOptionalAuthentication;
 - (bool)supportsSuica;
 - (bool)supportsTransit;
+- (bool)supportsTransitHistory;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (id)suspendedReason;

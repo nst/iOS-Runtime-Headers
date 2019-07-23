@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKCourse : NSObject <NSSecureCoding> {
+@interface CRKCourse : NSObject <NSCopying, NSSecureCoding> {
     NSDate * _automaticRemovalDate;
+    unsigned long long  _courseColorType;
     NSString * _courseDescription;
     DMFControlGroupIdentifier * _courseIdentifier;
+    unsigned long long  _courseMascotType;
     NSString * _courseName;
     CRKUser * _courseUser;
     bool  _expired;
@@ -19,8 +21,10 @@
 }
 
 @property (nonatomic, retain) NSDate *automaticRemovalDate;
+@property (nonatomic) unsigned long long courseColorType;
 @property (nonatomic, copy) NSString *courseDescription;
 @property (nonatomic, retain) DMFControlGroupIdentifier *courseIdentifier;
+@property (nonatomic) unsigned long long courseMascotType;
 @property (nonatomic, copy) NSString *courseName;
 @property (nonatomic, retain) CRKUser *courseUser;
 @property (getter=isExpired, nonatomic) bool expired;
@@ -39,8 +43,11 @@
 
 - (void).cxx_destruct;
 - (id)automaticRemovalDate;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)courseColorType;
 - (id)courseDescription;
 - (id)courseIdentifier;
+- (unsigned long long)courseMascotType;
 - (id)courseName;
 - (id)courseUser;
 - (id)description;
@@ -59,8 +66,10 @@
 - (bool)isRequestingUnenroll;
 - (bool)mustRequestUnenroll;
 - (void)setAutomaticRemovalDate:(id)arg1;
+- (void)setCourseColorType:(unsigned long long)arg1;
 - (void)setCourseDescription:(id)arg1;
 - (void)setCourseIdentifier:(id)arg1;
+- (void)setCourseMascotType:(unsigned long long)arg1;
 - (void)setCourseName:(id)arg1;
 - (void)setCourseUser:(id)arg1;
 - (void)setExpired:(bool)arg1;

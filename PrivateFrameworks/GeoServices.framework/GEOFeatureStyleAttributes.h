@@ -47,6 +47,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGEOStyleAttributes:(id)arg1;
 - (id)initWithPlaceDataStyleAttributes:(id)arg1;
+- (id)initWithPlaceStyleAttributes:(id)arg1;
 - (id)initWithSharedStyleAttributes:(id)arg1 extAttributes:(const struct { unsigned int x1; unsigned long long x2; }*)arg2 extAttributeCount:(unsigned char)arg3;
 - (id)initWithStyleAttributes:(id)arg1;
 - (bool)isBorder;
@@ -77,6 +78,7 @@
 
 + (id)annotationViewProvidedCustomFeatureStyleAttributes;
 + (id)genericMarkerStyleAttributes;
++ (id)genericServiceStyleAttributes;
 + (id)markerStyleAttributes;
 + (id)styleAttributesForCalloutWithAttributes:(id)arg1;
 + (id)styleAttributesForDraggingWithAttributes:(id)arg1;

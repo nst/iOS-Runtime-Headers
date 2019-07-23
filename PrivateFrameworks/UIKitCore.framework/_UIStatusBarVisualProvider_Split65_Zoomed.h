@@ -4,7 +4,8 @@
 
 @interface _UIStatusBarVisualProvider_Split65_Zoomed : _UIStatusBarVisualProvider_Split58
 
-+ (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })leadingEdgeInsets;
++ (double)baselineBottomInset;
++ (double)leadingCenteringEdgeInset;
 + (double)referenceScale;
 
 @end

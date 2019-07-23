@@ -13,6 +13,8 @@
     unsigned long long  _configNumber;
     NSString * _configurationAppIdentifier;
     NSString * _configuredName;
+    bool  _custom1WoBLE;
+    bool  _custom1WoWLAN;
     HMDAccessoryVersion * _firmwareVersion;
     HMDHome * _home;
     NSString * _identifier;
@@ -27,6 +29,7 @@
     bool  _remotelyReachable;
     HMDRoom * _room;
     NSString * _serialNumber;
+    bool  _suspendCapable;
     HMDAccessoryTransaction * _transaction;
     bool  _unblockPending;
     NSUUID * _uuid;
@@ -46,6 +49,8 @@
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (getter=isCurrentAccessory, readonly) bool currentAccessory;
+@property (nonatomic) bool custom1WoBLE;
+@property (nonatomic) bool custom1WoWLAN;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) HMDAccessoryVersion *firmwareVersion;
@@ -73,6 +78,7 @@
 @property (nonatomic, readonly) bool supportsTargetControl;
 @property (nonatomic, readonly) bool supportsTargetController;
 @property (readonly) bool supportsUserManagement;
+@property (getter=isSuspendCapable, nonatomic) bool suspendCapable;
 @property (nonatomic, retain) HMDAccessoryTransaction *transaction;
 @property (nonatomic) bool unblockPending;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -120,6 +126,8 @@
 - (id)configuredName;
 - (id)contextID;
 - (id)contextSPIUniqueIdentifier;
+- (bool)custom1WoBLE;
+- (bool)custom1WoWLAN;
 - (void)dealloc;
 - (id)description;
 - (void)didEncounterError:(id)arg1;
@@ -144,6 +152,7 @@
 - (bool)isReachableForXPCClients;
 - (bool)isRemoteAccessEnabled;
 - (bool)isRemotelyReachable;
+- (bool)isSuspendCapable;
 - (void)logDuetRoomEvent;
 - (id)logIdentifier;
 - (id)manufacturer;
@@ -178,6 +187,8 @@
 - (void)setConfigNumber:(unsigned long long)arg1;
 - (void)setConfigurationAppIdentifier:(id)arg1;
 - (void)setConfiguredName:(id)arg1;
+- (void)setCustom1WoBLE:(bool)arg1;
+- (void)setCustom1WoWLAN:(bool)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -191,6 +202,8 @@
 - (void)setRemotelyReachable:(bool)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (void)setSuspendCapable:(bool)arg1;
+- (void)setSuspendedCapable:(bool)arg1;
 - (void)setTransaction:(id)arg1;
 - (void)setUnblockPending:(bool)arg1;
 - (void)setUuid:(id)arg1;

@@ -2,9 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKFavoritesRequestOperation : WLKNetworkRequestOperation
+@interface WLKFavoritesRequestOperation : WLKUTSNetworkRequestOperation {
+    NSArray * _favorites;
+}
 
-- (id)init;
-- (id)responseProcessor;
+@property (nonatomic, readonly) NSArray *favorites;
+
+- (void).cxx_destruct;
+- (id)favorites;
+- (id)initWithCaller:(id)arg1;
+- (void)prepareURLRequest:(id /* block */)arg1;
+- (void)processResponse;
 
 @end

@@ -3,16 +3,25 @@
  */
 
 @interface SearchUIMediaArtworkImage : SearchUIImage {
-    NSString * _mediaArtworkIdentifier;
+    long long  _mediaEntityType;
+    NSString * _persistentID;
+    NSString * _spotlightIdentifier;
 }
 
-@property (retain) NSString *mediaArtworkIdentifier;
+@property long long mediaEntityType;
+@property (retain) NSString *persistentID;
+@property (retain) NSString *spotlightIdentifier;
 
 - (void).cxx_destruct;
 - (Class)classForCoder;
-- (id)initWithIdentifier:(id)arg1;
+- (id)initWithSFImage:(id)arg1;
+- (id)initWithSpotlightIdentifier:(id)arg1;
 - (void)loadImageWithCompletionHandler:(id /* block */)arg1;
-- (id)mediaArtworkIdentifier;
-- (void)setMediaArtworkIdentifier:(id)arg1;
+- (long long)mediaEntityType;
+- (id)persistentID;
+- (void)setMediaEntityType:(long long)arg1;
+- (void)setPersistentID:(id)arg1;
+- (void)setSpotlightIdentifier:(id)arg1;
+- (id)spotlightIdentifier;
 
 @end

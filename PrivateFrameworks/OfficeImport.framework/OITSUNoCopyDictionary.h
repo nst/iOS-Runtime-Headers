@@ -6,6 +6,8 @@
     struct __CFDictionary { } * mDictionary;
 }
 
++ (Class)classForKeyedUnarchiver;
+
 - (id)allKeys;
 - (id)allValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -8,18 +8,13 @@
 
 @property (nonatomic, readonly) NSArray *stuckToBackViews;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (bool)_forwardsToParentScroller;
 - (void)_stickViewToBack:(id)arg1;
 - (void)_unstickView:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)bringSubviewToFront:(id)arg1;
+- (void)dealloc;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleSwipeBeginning:(id)arg1;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

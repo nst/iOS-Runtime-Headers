@@ -22,6 +22,7 @@
 - (SFMapsDetailedRowCardSection *)mapsDetailedRowCardSection;
 - (SFMediaInfoCardSection *)mediaInfoCardSection;
 - (SFMediaPlayerCardSection *)mediaPlayerCardSection;
+- (SFMediaRemoteControlCardSection *)mediaRemoteControlCardSection;
 - (SFMessageCardSection *)messageCardSection;
 - (SFMetaInfoCardSection *)metaInfoCardSection;
 - (SFNowPlayingCardSection *)nowPlayingCardSection;
@@ -46,6 +47,7 @@
 - (void)setMapsDetailedRowCardSection:(SFMapsDetailedRowCardSection *)arg1;
 - (void)setMediaInfoCardSection:(SFMediaInfoCardSection *)arg1;
 - (void)setMediaPlayerCardSection:(SFMediaPlayerCardSection *)arg1;
+- (void)setMediaRemoteControlCardSection:(SFMediaRemoteControlCardSection *)arg1;
 - (void)setMessageCardSection:(SFMessageCardSection *)arg1;
 - (void)setMetaInfoCardSection:(SFMetaInfoCardSection *)arg1;
 - (void)setNowPlayingCardSection:(SFNowPlayingCardSection *)arg1;

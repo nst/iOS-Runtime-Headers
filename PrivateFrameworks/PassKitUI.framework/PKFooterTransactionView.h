@@ -3,32 +3,48 @@
  */
 
 @interface PKFooterTransactionView : UIView <PKPeerPaymentContactResolverDelegate> {
+    PKPaymentPassAction * _action;
+    PKContinuousButton * _actionButton;
+    id /* block */  _actionHandler;
     bool  _animated;
+    bool  _contentRequiresDisclosure;
     PKStackedTextItemGroupView * _contentView;
     unsigned long long  _deferUpdateCounter;
+    bool  _disableCommutePlanDisplay;
+    UIImageView * _disclosureView;
     PKStackedTextItemGroup * _displayItem;
+    bool  _enableDisclosure;
+    PKStackedTextItemGroupView * _footerView;
     PKStackedTextItemGroupView * _headerView;
     UIImageView * _imageView;
     bool  _needsContentUpdate;
     PKPaymentPass * _pass;
     PKPeerPaymentContactResolver * _peerPaymentContactResolver;
+    NSString * _requiredActionPropertyIdentifier;
     UIView * _separatorView;
     PKPaymentTransaction * _transaction;
-    PKTransitPassProperties * _transitProperties;
+    PKTransitBalanceModel * _transitBalanceModel;
 }
 
+@property (nonatomic, copy) id /* block */ actionHandler;
+@property (nonatomic, readonly) bool contentRequiresDisclosure;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool disableCommutePlanDisplay;
+@property (nonatomic) bool enableDisclosure;
 @property (nonatomic, readonly) bool hasContent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKPaymentPass *pass;
 @property (nonatomic, readonly) PKPeerPaymentContactResolver *peerPaymentContactResolver;
+@property (nonatomic, retain) NSString *requiredActionPropertyIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PKPaymentTransaction *transaction;
-@property (nonatomic, readonly) PKTransitPassProperties *transitProperties;
+@property (nonatomic, copy) PKTransitBalanceModel *transitBalanceModel;
 
 - (void).cxx_destruct;
+- (void)_actionButtonTapped:(id)arg1;
 - (bool)_deemphasizeAmount;
+- (id)_firstRenewActionForPass:(id)arg1;
 - (id)_image;
 - (id)_locationText;
 - (id)_merchantText;
@@ -37,8 +53,12 @@
 - (id)_statusText;
 - (bool)_strikethroughAmount;
 - (void)_updateContentAnimated:(bool)arg1;
+- (id /* block */)actionHandler;
 - (void)beginUpdates;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
+- (bool)contentRequiresDisclosure;
+- (bool)disableCommutePlanDisplay;
+- (bool)enableDisclosure;
 - (void)endUpdates:(bool)arg1;
 - (bool)hasContent;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 peerPaymentContactResolver:(id)arg2;
@@ -46,11 +66,18 @@
 - (void)layoutSubviews;
 - (id)pass;
 - (id)peerPaymentContactResolver;
+- (id)requiredActionPropertyIdentifier;
+- (void)setActionHandler:(id /* block */)arg1;
+- (void)setDisableCommutePlanDisplay:(bool)arg1;
+- (void)setEnableDisclosure:(bool)arg1;
 - (void)setPass:(id)arg1 animated:(bool)arg2;
+- (void)setRequiredActionPropertyIdentifier:(id)arg1;
 - (void)setTransaction:(id)arg1 animated:(bool)arg2;
-- (void)setTransitProperties:(id)arg1 animated:(bool)arg2;
+- (void)setTransitBalanceModel:(id)arg1;
+- (void)setTransitBalanceModel:(id)arg1 animated:(bool)arg2;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)transaction;
-- (id)transitProperties;
+- (id)transitBalanceModel;
 
 @end

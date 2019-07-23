@@ -10,12 +10,11 @@
 
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSPredicate *predicate;
-@property (nonatomic, copy) NSString *sql;
 
 + (void)setSupportsSecureCoding:(bool)arg1;
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)and:(id)arg1;
 - (id)copyWithZone:(void*)arg1;
 - (id)description;
@@ -27,7 +26,5 @@
 - (id)initWithValue:(bool)arg1;
 - (id)or:(id)arg1;
 - (id)predicate;
-- (void)setSql:(id)arg1;
-- (id)sql;
 
 @end

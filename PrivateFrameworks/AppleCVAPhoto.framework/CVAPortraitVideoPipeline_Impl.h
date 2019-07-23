@@ -53,53 +53,10 @@
         <MTLCommandQueue> *commandQueue; 
         <MTLLibrary> *library; 
         <MTLCaptureScope> *captureScope; 
-        struct CVAPerfEndTimeProfilerSet { 
-            bool _display; 
-            bool _log; 
-            long long _frameIndex; 
-            struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> >, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > > > > { 
-                struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > > > > { 
-                    struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> *> > > { 
-                        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> *> > > { 
-                            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> {} **__value_; 
-                            struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> *> > { 
-                                struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> *> > { 
-                                    unsigned long long __value_; 
-                                } __data_; 
-                            } __value_; 
-                        } __ptr_; 
-                    } __bucket_list_; 
-                    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> > > { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> { 
-                            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, void *> *> {} *__next_; 
-                        } __value_; 
-                    } __p1_; 
-                    struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                        unsigned long long __value_; 
-                    } __p2_; 
-                    struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<boost::accumulators::accumulator_set<double, boost::accumulators::stats<boost::accumulators::tag::rolling_mean, boost::accumulators::tag::mean, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>, void> > >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
-                        float __value_; 
-                    } __p3_; 
-                } __table_; 
-            } _nameToTimeStats; 
-            struct optional<CVAPerfEndTimeProfilerSet::TimeSample> { 
-                union { 
-                    BOOL __null_state_; 
-                    struct TimeSample { 
-                        double endTime; 
-                    } __val_; 
-                } ; 
-                bool __engaged_; 
-            } _prevTimeSample; 
-            double _frameTotalTime; 
-            struct mutex { 
-                struct _opaque_pthread_mutex_t { 
-                    long long __sig; 
-                    BOOL __opaque[56]; 
-                } __m_; 
-            } _mutex; 
-            <MTLTexture> *_texStubSrc; 
-            <MTLTexture> *_texStubDst; 
+        struct unique_ptr<CVAPerfEndTimeProfilerSet, std::__1::default_delete<CVAPerfEndTimeProfilerSet> > { 
+            struct __compressed_pair<CVAPerfEndTimeProfilerSet *, std::__1::default_delete<CVAPerfEndTimeProfilerSet> > { 
+                struct CVAPerfEndTimeProfilerSet {} *__value_; 
+            } __ptr_; 
         } profiler; 
         bool _alreadyInCaptureScope; 
     }  _metalContext;
@@ -122,7 +79,6 @@
         float colorCubeIntensity; 
         float colorCubeLerpSelfToOther; 
         int otherCubeType; 
-        float rgbTransformMapLerpSelfToOther; 
     }  _relightingTransitionData;
     struct unique_ptr<SdofStateMachine, std::__1::default_delete<SdofStateMachine> > { 
         struct __compressed_pair<SdofStateMachine *, std::__1::default_delete<SdofStateMachine> > { 
@@ -184,11 +140,15 @@
         float alphaContrastExponent; 
         float shiftFilterColorStd; 
         float shiftFilterUpdateRate; 
+        float minimumConfidenceToKeepDisparity; 
+        float maximumSimilarityToKeepDisparity; 
         float maxShiftFillingInconsistency; 
         float maxShiftFillingDistFromFg; 
         unsigned int maxDistToPushShiftEdgesFwd; 
         unsigned int maxDistToPushShiftEdgesRev; 
         int shiftPushingBgToFgShiftDifference; 
+        float foregroundMaskDilationRadius; 
+        float lowResolutionMatteDownsamplingScale; 
     }  _vmStaticParams;
     VideoRelightingMetal * _vrAccelerator;
 }
@@ -208,10 +168,10 @@
 - (int)extractMatteWithRequest:(id)arg1;
 - (int)extractMatteWithRequest:(id)arg1 disparityPostprocessingCompletionHandler:(id /* block */)arg2 mattingCompletionHandler:(id /* block */)arg3;
 - (id)initWithProperties:(id)arg1 error:(id*)arg2;
-- (id)internal_extractMatteWithRequest:(id)arg1 disparityPostprocessingResult:(id)arg2 usePostprocessedDisparity:(bool)arg3 gravity:(struct CVAVector { double x1; double x2; double x3; })arg4 transitionData:(const struct TransitionData { bool x1; }*)arg5 mattingCompletionHandler:(id /* block */)arg6 isFinalStage:(bool)arg7 status:(int*)arg8;
+- (id)internal_extractMatteWithRequest:(id)arg1 disparityPostprocessingResult:(id)arg2 usePostprocessedDisparity:(bool)arg3 dilateForegroundMask:(bool)arg4 gravity:(struct CVAVector { double x1; double x2; double x3; })arg5 transitionData:(const struct TransitionData { bool x1; }*)arg6 mattingCompletionHandler:(id /* block */)arg7 isFinalStage:(bool)arg8 status:(int*)arg9;
 - (int)internal_fixFocusPositionWithDisparityPostprocessingRequest:(id)arg1;
 - (id)internal_postprocessDisparityWithRequest:(id)arg1 disparityPostprocessingCompletionHandler:(id /* block */)arg2 isFinalStage:(bool)arg3 status:(int*)arg4;
-- (void)internal_relightWithRequest:(id)arg1 intermediateSourceBuffer:(struct __CVBuffer { }*)arg2 faceKitProcessOutput:(id)arg3 mattingResult:(id)arg4 singleCubeData:(id)arg5 transitionData:(const struct RelightingTransitionData { float x1; float x2; float x3; float x4; float x5; int x6; float x7; }*)arg6 portraitCompletionHandler:(id /* block */)arg7 timestamp:(long long)arg8 status:(int*)arg9;
+- (void)internal_relightWithRequest:(id)arg1 intermediateSourceBuffer:(struct __CVBuffer { }*)arg2 faceKitProcessOutput:(id)arg3 mattingResult:(id)arg4 singleCubeData:(id)arg5 transitionData:(const struct RelightingTransitionData { float x1; float x2; float x3; float x4; float x5; int x6; }*)arg6 portraitCompletionHandler:(id /* block */)arg7 timestamp:(long long)arg8 status:(int*)arg9;
 - (void)internal_renderStageLightWithRequest:(id)arg1 mattingResult:(id)arg2 portraitCompletionHandler:(id /* block */)arg3 status:(int*)arg4;
 - (void)internal_renderWithRequest:(id)arg1 dstBuffer:(struct __CVBuffer { }*)arg2 mattingResult:(id)arg3 portraitCompletionHandler:(id /* block */)arg4 status:(int*)arg5 timestamp:(long long)arg6;
 - (int)postprocessDisparityWithRequest:(id)arg1;

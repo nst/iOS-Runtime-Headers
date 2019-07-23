@@ -2,32 +2,37 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSCloudHistoryVisit : NSObject {
+@interface WBSCloudHistoryVisit : NSObject <NSSecureCoding> {
     bool  _httpNonGet;
     bool  _loadSuccessful;
     WBSCloudHistoryVisit * _redirectDestinationVisit;
-    WBSCloudHistoryVisitIdentifier * _redirectDestinationVisitIdentifier;
+    WBSHistoryVisitIdentifier * _redirectDestinationVisitIdentifier;
     WBSCloudHistoryVisit * _redirectSourceVisit;
-    WBSCloudHistoryVisitIdentifier * _redirectSourceVisitIdentifier;
+    WBSHistoryVisitIdentifier * _redirectSourceVisitIdentifier;
     NSString * _title;
-    WBSCloudHistoryVisitIdentifier * _visitIdentifier;
+    WBSHistoryVisitIdentifier * _visitIdentifier;
 }
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (getter=wasHTTPNonGet, nonatomic) bool httpNonGet;
 @property (getter=loadWasSuccessful, nonatomic) bool loadSuccessful;
 @property (nonatomic) WBSCloudHistoryVisit *redirectDestinationVisit;
-@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *redirectDestinationVisitIdentifier;
+@property (nonatomic, copy) WBSHistoryVisitIdentifier *redirectDestinationVisitIdentifier;
 @property (nonatomic) WBSCloudHistoryVisit *redirectSourceVisit;
-@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *redirectSourceVisitIdentifier;
+@property (nonatomic, copy) WBSHistoryVisitIdentifier *redirectSourceVisitIdentifier;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *visitIdentifier;
+@property (nonatomic, copy) WBSHistoryVisitIdentifier *visitIdentifier;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHistoryVisit:(id)arg1;
+- (id)initWithVisitIdentifier:(id)arg1 title:(id)arg2 loadSuccessful:(bool)arg3 httpNonGet:(bool)arg4 redirectSourceVisitIdentifier:(id)arg5 redirectDestinationVisitIdentifier:(id)arg6;
 - (bool)loadWasSuccessful;
 - (id)redirectDestinationVisit;
 - (id)redirectDestinationVisitIdentifier;

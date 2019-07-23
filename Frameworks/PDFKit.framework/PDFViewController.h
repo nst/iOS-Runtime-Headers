@@ -27,6 +27,7 @@
 - (void)_showTextSelectionMenu;
 - (unsigned long long)_typeForGestureRecognizer:(id)arg1;
 - (void)_updateLollipopDragAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_updateLollipopDragAtLocation:(struct CGPoint { double x1; double x2; })arg1 locationOfFirstTouch:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_updateState:(int)arg1 forGesture:(unsigned long long)arg2 atLocation:(struct CGPoint { double x1; double x2; })arg3 locationOfFirstTouch:(struct CGPoint { double x1; double x2; })arg4;
 - (void)_updateWordDragAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)activateNextAnnotation:(bool)arg1;

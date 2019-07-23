@@ -10,17 +10,17 @@
 @property (nonatomic) float rotation;
 @property (nonatomic) struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; } scale;
 
-+ (id)instanceWithArchive:(const struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 unarchiver:(id)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)didInitFromSOS;
 - (unsigned long long)hash;
-- (id)initWithArchive:(const struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 unarchiver:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (void)restoreDefault;
 - (float)rotation;
-- (void)saveToArchive:(struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct Chart3DBaseImageTextureTilingArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Chart3DVectorArchive {} *x5; float x6; }*)arg1 archiver:(id)arg2;
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })scale;
 - (void)setRotation:(float)arg1;
 - (void)setScale:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1;

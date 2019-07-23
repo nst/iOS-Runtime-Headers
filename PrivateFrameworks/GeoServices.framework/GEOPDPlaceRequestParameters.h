@@ -148,7 +148,7 @@
 - (id)initWithIdentifiers:(id)arg1 resultProviderID:(int)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 traits:(id)arg3;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7;
+- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7 terminalId:(id)arg8 transactionCurrencyCode:(id)arg9 transactionType:(int)arg10 transactionId:(id)arg11 warsawMerchantDomain:(id)arg12 warsawMerchantName:(id)arg13 warsawMerchantId:(id)arg14 adamId:(id)arg15 merchantId:(id)arg16 merchantDoingBizAsName:(id)arg17 merchantEnhancedName:(id)arg18 merchantCity:(id)arg19 merchantRawCity:(id)arg20 merchantState:(id)arg21 merchantRawState:(id)arg22 merchantZip:(id)arg23 merchantAddress:(id)arg24 merchantRawAddress:(id)arg25 merchantCountryCode:(id)arg26 merchantType:(id)arg27 merchantCleanConfidenceLevel:(id)arg28 merchantAdditionalData:(id)arg29 merchantCanl:(id)arg30 brandFallbackSupported:(bool)arg31 isSettlement:(bool)arg32 isRefund:(bool)arg33;
 - (id)initWithPlaceRefinementParameters:(id)arg1 traits:(id)arg2;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 preserveOriginalLocation:(bool)arg2;

@@ -26,7 +26,7 @@
     bool  _requirePasscode;
     bool  _requireRestrictionsCode;
     bool  _returningFromPINSheetWithSuccess;
-    bool  _shouldEraseDataPlans;
+    bool  _shouldEraseCellularPlans;
     bool  _shouldEraseWithFMiP;
     bool  _shouldSkipBasebandStatusCheck;
     bool  _shouldSkipCloudStatusCheck;
@@ -44,6 +44,7 @@
 - (void)_eraseSettingsAndContent;
 - (void)_managerDidFailBackup;
 - (bool)_networkConnectivityAvailable;
+- (void)_removeAllPairingRecords;
 - (void)_resetWithMode:(int)arg1;
 - (void)_showStockholmLocallyStoredValueOfflineWarningIfNeeded:(id /* block */)arg1;
 - (void)changeAlertMessageIfNeeded:(bool)arg1;

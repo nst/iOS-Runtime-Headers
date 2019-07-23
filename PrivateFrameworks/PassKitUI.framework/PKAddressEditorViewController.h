@@ -4,6 +4,7 @@
 
 @interface PKAddressEditorViewController : UITableViewController <MKLocalSearchCompleterDelegate, PKAddressTextFieldDelegate, PKCountryPickerViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     CNPostalAddressFormattingSpecification * _addressFormatter;
+    bool  _countryIsEditable;
     PKAddressTextField * _currentlySelectedField;
     <PKAddressEditorViewControllerDelegate> * _delegate;
     bool  _displayGivenNameFirst;
@@ -37,6 +38,7 @@
 }
 
 @property (nonatomic, retain) CNPostalAddressFormattingSpecification *addressFormatter;
+@property (nonatomic) bool countryIsEditable;
 @property (nonatomic, retain) PKAddressTextField *currentlySelectedField;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKAddressEditorViewControllerDelegate> *delegate;
@@ -78,9 +80,11 @@
 - (id)addressFormatter;
 - (void)addressTextField:(id)arg1 textDidChange:(id)arg2;
 - (void)assignErrorToField:(id)arg1;
+- (bool)canChangeCountry;
 - (void)cancel;
 - (void)completer:(id)arg1 didFailWithError:(id)arg2;
 - (void)completerDidUpdateResults:(id)arg1;
+- (bool)countryIsEditable;
 - (void)countryPicker:(id)arg1 didPickCountryCode:(id)arg2;
 - (id)currentlySelectedField;
 - (id)delegate;
@@ -114,6 +118,7 @@
 - (bool)requirementsMet;
 - (id)searchCompleter;
 - (void)setAddressFormatter:(id)arg1;
+- (void)setCountryIsEditable:(bool)arg1;
 - (void)setCurrentlySelectedField:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditingFields:(id)arg1;

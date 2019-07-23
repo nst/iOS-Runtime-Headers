@@ -3,6 +3,7 @@
  */
 
 @interface VUIPlistMediaDatabaseEntity : NSObject <NSCopying> {
+    NSString * _canonicalID;
     NSString * _contentDescription;
     NSURL * _coverArtURL;
     NSString * _genreTitle;
@@ -11,6 +12,7 @@
     unsigned long long  _type;
 }
 
+@property (nonatomic, copy) NSString *canonicalID;
 @property (nonatomic, copy) NSString *contentDescription;
 @property (nonatomic, copy) NSURL *coverArtURL;
 @property (nonatomic, copy) NSString *genreTitle;
@@ -20,9 +22,12 @@
 @property (nonatomic) unsigned long long type;
 
 - (void).cxx_destruct;
+- (void)_mediaEntityPropertyDidChange:(id)arg1;
+- (id)canonicalID;
 - (id)contentDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArtURL;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)genreTitle;
@@ -33,6 +38,7 @@
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)isLocal;
+- (void)setCanonicalID:(id)arg1;
 - (void)setContentDescription:(id)arg1;
 - (void)setCoverArtURL:(id)arg1;
 - (void)setGenreTitle:(id)arg1;

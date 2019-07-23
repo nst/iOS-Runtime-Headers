@@ -6,6 +6,9 @@
     WKWebView * __webView;
     SEL  _action;
     bool  _animating;
+    struct RetainPtr<UIView> { 
+        void *m_ptr; 
+    }  _animatingView;
     struct RetainPtr<_WKExtrinsicButton> { 
         void *m_ptr; 
     }  _cancelButton;
@@ -66,10 +69,17 @@
     struct RetainPtr<UILongPressGestureRecognizer> { 
         void *m_ptr; 
     }  _touchGestureRecognizer;
+    struct WKFullScreenViewControllerVideoFullscreenModelClient { 
+        int (**_vptr$VideoFullscreenModelClient)(); 
+        WKFullScreenViewController *m_parent; 
+        struct RefPtr<WebCore::VideoFullscreenInterfaceAVKit, WTF::DumbPtrTraits<WebCore::VideoFullscreenInterfaceAVKit> > { 
+            struct VideoFullscreenInterfaceAVKit {} *m_ptr; 
+        } m_interface; 
+    }  _videoFullscreenClient;
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{RectEdges<float>={array<float' */ struct  _effectiveFullscreenInsets; /* unknown property attribute:  4>=[4f]}} */
-@property (nonatomic, readonly) struct WebFullScreenManagerProxy { int (**x1)(); unsigned int x2; struct WebPageProxy {} *x3; struct WebFullScreenManagerProxyClient {} *x4; }*_manager;
+@property (nonatomic, readonly) struct WebFullScreenManagerProxy { int (**x1)(); struct WebPageProxy {} *x2; struct WebFullScreenManagerProxyClient {} *x3; }*_manager;
 @property (nonatomic) WKWebView *_webView;
 @property (nonatomic) SEL action;
 @property (getter=isAnimating, nonatomic) bool animating;
@@ -88,7 +98,7 @@
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;
 - (struct RectEdges<float> { struct array<float, 4> { float x_1_1_1[4]; } x1; })_effectiveFullscreenInsets;
-- (struct WebFullScreenManagerProxy { int (**x1)(); unsigned int x2; struct WebPageProxy {} *x3; struct WebFullScreenManagerProxyClient {} *x4; }*)_manager;
+- (struct WebFullScreenManagerProxy { int (**x1)(); struct WebPageProxy {} *x2; struct WebFullScreenManagerProxyClient {} *x3; }*)_manager;
 - (void)_showPhishingAlert;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_togglePiPAction:(id)arg1;
@@ -97,6 +107,8 @@
 - (id)_webView;
 - (SEL)action;
 - (void)dealloc;
+- (void)didEnterPictureInPicture;
+- (void)failedToEnterPictureInPicture;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)hideUI;
@@ -124,5 +136,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willEnterPictureInPicture;
 
 @end

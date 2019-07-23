@@ -29,6 +29,7 @@
 - (void)invalidate;
 - (void)optinStreamIDs:(id)arg1;
 - (void)optoutStreamIDs:(id)arg1;
+- (void)osChannelInfoLog;
 - (void)processMetadataForDatagram:(char *)arg1 size:(unsigned long long)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; unsigned short x3; unsigned char x4; }*)arg3 options:(struct { unsigned int x1; unsigned long long x2; unsigned short x3; unsigned char x4; BOOL x5; unsigned short x6[12]; unsigned char x7; unsigned short x8; struct { unsigned short x_9_1_1; unsigned short x_9_1_2; unsigned short x_9_1_3; unsigned short x_9_1_4; unsigned short x_9_1_5; } x9; double x10; }*)arg4;
 - (void)readDatagramWithCompletionHandler:(id /* block */)arg1;
 - (void)readDatagramsWithCompletionHandler:(id /* block */)arg1;

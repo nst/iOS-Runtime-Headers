@@ -32,6 +32,7 @@
 - (id)copyXPCEncoding;
 - (id)downloads;
 - (id)error;
+- (id)getPaymentDiscountFromTransactionXPCEncoding:(id)arg1;
 - (id)init;
 - (id)initWithPayment:(id)arg1;
 - (id)initWithServerTransaction:(id)arg1;

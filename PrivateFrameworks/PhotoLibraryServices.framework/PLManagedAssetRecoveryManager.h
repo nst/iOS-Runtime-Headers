@@ -35,7 +35,7 @@
 - (bool)_fixRawUTIForAsset:(id)arg1 error:(id*)arg2;
 - (void)_performAssetRecoveryTaskForInconsistentState:(id)arg1 state:(long long)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)_recoverAsset:(id)arg1 usingCloudPhotoLibraryManager:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)_setCloudRecoveryState:(long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultsFilterPredicate:(id)arg3;
+- (void)_setCloudRecoveryState:(long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultFilterBlock:(id /* block */)arg3;
 - (int)assetsDownloadsCount;
 - (void)identifyAssetsInInconsistentCloudState;
 - (id)init;

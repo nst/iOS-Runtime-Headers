@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CarPlaySupport.framework/CarPlaySupport
  */
 
-@interface CPSBaseTemplateViewController : UIViewController <CPBaseTemplateProviding, CPSBaseTemplateViewController, CPSButtonDelegate> {
+@interface CPSBaseTemplateViewController : UIViewController <CPBaseTemplateProviding, CPSBaseTemplateViewController, CPSButtonDelegate, UIGestureRecognizerDelegate> {
     CPTemplate * _associatedTemplate;
+    UITapGestureRecognizer * _backGestureRecognizer;
     bool  _didDisappear;
     bool  _isPopping;
     <CPTemplateDelegate> * _templateDelegate;
@@ -11,6 +12,7 @@
 }
 
 @property (nonatomic, retain) CPTemplate *associatedTemplate;
+@property (nonatomic, retain) UITapGestureRecognizer *backGestureRecognizer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didDisappear;
@@ -21,19 +23,27 @@
 @property (nonatomic) <CPSTemplateViewControllerDelegate> *viewControllerDelegate;
 
 - (void).cxx_destruct;
+- (void)_addGestureRecognizerIfNecessary;
+- (void)_backGestureFired:(id)arg1;
 - (id)_barButtonItemForIdentifier:(id)arg1;
 - (void)_cps_viewControllerWasPopped;
 - (void)_dismissTemplateViewController;
+- (void)_updateLeadingBarButtons;
+- (void)_updateTrailingBarButtons;
 - (id)associatedTemplate;
+- (id)backGestureRecognizer;
 - (bool)didDisappear;
 - (void)didSelectButton:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (id)initWithTemplate:(id)arg1 templateDelegate:(id)arg2;
 - (bool)isPopping;
 - (void)setAssociatedTemplate:(id)arg1;
+- (void)setBackGestureRecognizer:(id)arg1;
 - (void)setBarButton:(id)arg1 image:(id)arg2;
 - (void)setBarButton:(id)arg1 title:(id)arg2;
 - (void)setControl:(id)arg1 enabled:(bool)arg2;
 - (void)setDidDisappear:(bool)arg1;
+- (void)setHostBackButton:(id)arg1;
 - (void)setIsPopping:(bool)arg1;
 - (void)setLeadingNavigationBarButtons:(id)arg1;
 - (void)setTemplateDelegate:(id)arg1;

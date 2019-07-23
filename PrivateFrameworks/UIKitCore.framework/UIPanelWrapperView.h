@@ -4,12 +4,8 @@
 
 @interface UIPanelWrapperView : UIView
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)existingWrapperViewForView:(id)arg1;
 + (id)wrapperViewForView:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (void)layoutSubviews;
 

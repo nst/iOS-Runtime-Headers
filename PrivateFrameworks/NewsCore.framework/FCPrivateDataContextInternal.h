@@ -13,6 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) FCCKRecordZone *issueReadingHistoryRecordZone;
 @property (nonatomic, retain) FCCKPrivateDatabase *privateDatabase;
 @property (nonatomic, readonly) FCCKRecordZone *readingHistoryRecordZone;
 @property (nonatomic, readonly) FCCKRecordZone *readingListRecordZone;
@@ -26,6 +27,7 @@
 - (id)appActivityMonitor;
 - (id)channelMembershipsRecordZone;
 - (id)init;
+- (id)issueReadingHistoryRecordZone;
 - (void)prepareRecordZonesForUseWithCompletionHandler:(id /* block */)arg1;
 - (id)privateDatabase;
 - (id)readingHistoryRecordZone;

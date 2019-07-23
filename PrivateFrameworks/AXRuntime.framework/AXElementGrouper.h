@@ -12,7 +12,10 @@
 @property (nonatomic, readonly) unsigned long long minimumGroupSize;
 @property (nonatomic, readonly) unsigned long long preferredGroupSize;
 @property (nonatomic, readonly) double thresholdForDeterminingEqualSize;
+@property (nonatomic, readonly) NSArray *transformationPasses;
 
+- (id)_applyTransformationPass:(id)arg1 toGroup:(id)arg2;
+- (id)_applyTransformationPassesToRootGroup:(id)arg1;
 - (id)_buildHierarchyForGroup:(id)arg1 indexOfKeyboard:(unsigned long long*)arg2;
 - (id)_flattenHierarchyForGroup:(id)arg1 rootLevel:(bool)arg2;
 - (bool)_frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 isApproximatelySameSizeAsFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
@@ -27,5 +30,6 @@
 - (unsigned long long)preferredGroupSize;
 - (void)setHeuristics:(long long)arg1;
 - (double)thresholdForDeterminingEqualSize;
+- (id)transformationPasses;
 
 @end

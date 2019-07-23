@@ -6,6 +6,7 @@
     bool  _allowSecondaryCredentialSource;
     bool  _allowServerDialogs;
     unsigned long long  _authenticationType;
+    bool  _canMakeAccountActive;
     NSDictionary * _createAccountQueryParams;
     unsigned long long  _credentialSource;
     NSString * _defaultButtonString;
@@ -24,6 +25,7 @@
 @property (nonatomic) bool allowServerDialogs;
 @property (nonatomic, readonly) bool allowSilentAuthentication;
 @property (nonatomic) unsigned long long authenticationType;
+@property (nonatomic) bool canMakeAccountActive;
 @property (nonatomic, retain) NSDictionary *createAccountQueryParams;
 @property (nonatomic) unsigned long long credentialSource;
 @property (nonatomic, retain) NSString *defaultButtonString;
@@ -43,6 +45,7 @@
 - (bool)allowServerDialogs;
 - (bool)allowSilentAuthentication;
 - (unsigned long long)authenticationType;
+- (bool)canMakeAccountActive;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createAccountQueryParams;
 - (unsigned long long)credentialSource;
@@ -63,6 +66,7 @@
 - (void)setAllowSecondaryCredentialSource:(bool)arg1;
 - (void)setAllowServerDialogs:(bool)arg1;
 - (void)setAuthenticationType:(unsigned long long)arg1;
+- (void)setCanMakeAccountActive:(bool)arg1;
 - (void)setCreateAccountQueryParams:(id)arg1;
 - (void)setCredentialSource:(unsigned long long)arg1;
 - (void)setDefaultButtonString:(id)arg1;

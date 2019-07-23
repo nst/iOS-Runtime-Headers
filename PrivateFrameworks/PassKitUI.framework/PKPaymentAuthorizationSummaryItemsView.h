@@ -6,12 +6,14 @@
     NSMutableArray * _hasBottomPadding;
     NSMutableArray * _labelViews;
     PKPaymentAuthorizationLayout * _layout;
+    bool  _showsBoldValueText;
     NSString * _title;
     UILabel * _titleLabel;
     NSMutableArray * _valueViews;
 }
 
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;
+@property (nonatomic) bool showsBoldValueText;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
@@ -25,7 +27,9 @@
 - (void)layoutSubviews;
 - (void)removeLabelsAndValues;
 - (void)setLayout:(id)arg1;
+- (void)setShowsBoldValueText:(bool)arg1;
 - (void)setTitle:(id)arg1;
+- (bool)showsBoldValueText;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 andLayout:(bool)arg2;
 - (id)title;

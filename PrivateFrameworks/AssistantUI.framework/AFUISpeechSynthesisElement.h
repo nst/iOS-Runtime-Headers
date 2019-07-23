@@ -19,9 +19,11 @@
     bool  _preparationBlockCompleted;
     VSPresynthesizedAudioRequest * _presynthesizedAudioRequest;
     bool  _provisional;
+    bool  _shouldCache;
     NSDictionary * _speakableContextInfo;
     VSSpeechRequest * _speechRequest;
     long long  _synthesisResult;
+    bool  _synthesizesWhileRecording;
     NSString * _text;
 }
 
@@ -41,9 +43,11 @@
 @property (setter=_setPreparationBlockCompleted:) bool preparationBlockCompleted;
 @property (nonatomic, retain) VSPresynthesizedAudioRequest *presynthesizedAudioRequest;
 @property (getter=isProvisional, nonatomic, readonly) bool provisional;
+@property (nonatomic) bool shouldCache;
 @property (nonatomic, retain) NSDictionary *speakableContextInfo;
 @property (nonatomic, retain) VSSpeechRequest *speechRequest;
 @property (nonatomic) long long synthesisResult;
+@property (nonatomic) bool synthesizesWhileRecording;
 @property (setter=_setText:, nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
@@ -77,12 +81,16 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIsPhonetic:(bool)arg1;
 - (void)setPresynthesizedAudioRequest:(id)arg1;
+- (void)setShouldCache:(bool)arg1;
 - (void)setSpeakableContextInfo:(id)arg1;
 - (void)setSpeechRequest:(id)arg1;
 - (void)setSynthesisResult:(long long)arg1;
+- (void)setSynthesizesWhileRecording:(bool)arg1;
+- (bool)shouldCache;
 - (id)speakableContextInfo;
 - (id)speechRequest;
 - (long long)synthesisResult;
+- (bool)synthesizesWhileRecording;
 - (id)text;
 
 @end

@@ -6,7 +6,8 @@
     NSString * _articleID;
     id  _classificationFetchedObject;
     id  _contentFetchedObject;
-    FCCloudContext * _context;
+    <FCContentContext> * _context;
+    <FCFlintHelper> * _flintHelper;
     FCHeadline * _headline;
     id  _thumbnailFetchedObject;
 }
@@ -14,7 +15,8 @@
 @property (nonatomic, copy) NSString *articleID;
 @property (nonatomic, retain) id classificationFetchedObject;
 @property (nonatomic, retain) id contentFetchedObject;
-@property (nonatomic, retain) FCCloudContext *context;
+@property (nonatomic, retain) <FCContentContext> *context;
+@property (nonatomic, retain) <FCFlintHelper> *flintHelper;
 @property (nonatomic, retain) FCHeadline *headline;
 @property (nonatomic, retain) id thumbnailFetchedObject;
 
@@ -24,16 +26,17 @@
 - (id)completeFetchOperation;
 - (id)contentFetchedObject;
 - (id)context;
-- (id)fetchClassificationWithCompletion:(id /* block */)arg1;
 - (id)fetchContentWithCompletion:(id /* block */)arg1;
 - (id)fetchHeadlineWithCompletion:(id /* block */)arg1;
 - (id)fetchThumbnailWithCompletion:(id /* block */)arg1;
+- (id)flintHelper;
 - (id)headline;
-- (id)initWithContext:(id)arg1 articleID:(id)arg2;
+- (id)initWithContext:(id)arg1 flintHelper:(id)arg2 articleID:(id)arg3;
 - (void)setArticleID:(id)arg1;
 - (void)setClassificationFetchedObject:(id)arg1;
 - (void)setContentFetchedObject:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setFlintHelper:(id)arg1;
 - (void)setHeadline:(id)arg1;
 - (void)setThumbnailFetchedObject:(id)arg1;
 - (id)thumbnailFetchedObject;

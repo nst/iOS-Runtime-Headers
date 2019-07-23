@@ -7,4 +7,8 @@
 
 - (bool)needsUpdate;
 
+@optional
+
+- (void)setSubheaderDelegate:(id <PKPGSVSectionSubheaderDelegate>)arg1;
+
 @end

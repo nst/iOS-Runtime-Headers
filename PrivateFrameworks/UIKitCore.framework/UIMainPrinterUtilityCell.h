@@ -11,12 +11,7 @@
 @property (nonatomic) bool showSupplyDataUnderPrinterName;
 @property (nonatomic, retain) NSArray *supplies;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)layoutSubviews;
 - (void)setShowSupplyDataUnderPrinterName:(bool)arg1;
 - (void)setSupplies:(id)arg1;

@@ -51,6 +51,8 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic) bool wasHandled;
 
++ (unsigned int)modifierFlags;
+
 - (id)_eventDescription;
 - (id)_modiferFlagsDescription;
 - (id)_touchIdentifiersDescription;
@@ -66,7 +68,6 @@
 - (id)description;
 - (float)gestureRotation;
 - (float)gestureScale;
-- (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(bool)arg6 withFlags:(unsigned long long)arg7 keyCode:(unsigned short)arg8 isTabKey:(bool)arg9 characterSet:(int)arg10;
 - (id)initWithKeyEventType:(int)arg1 timeStamp:(double)arg2 characters:(id)arg3 charactersIgnoringModifiers:(id)arg4 modifiers:(unsigned int)arg5 isRepeating:(bool)arg6 withFlags:(unsigned long long)arg7 withInputManagerHint:(id)arg8 keyCode:(unsigned short)arg9 isTabKey:(bool)arg10;
 - (id)initWithMouseEventType:(int)arg1 timeStamp:(double)arg2 location:(struct CGPoint { double x1; double x2; })arg3;
 - (id)initWithScrollWheelEventWithTimeStamp:(double)arg1 location:(struct CGPoint { double x1; double x2; })arg2 deltaX:(float)arg3 deltaY:(float)arg4;

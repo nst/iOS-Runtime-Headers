@@ -10,6 +10,7 @@
     NSString * _paymentNetwork;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountSuffix;
+    NSSet * _productIdentifiers;
     bool  _requiresFelicaSecureElement;
     long long  _style;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSString *paymentNetwork;
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountSuffix;
+@property (nonatomic, copy) NSSet *productIdentifiers;
 @property (nonatomic) bool requiresFelicaSecureElement;
 @property (nonatomic) long long style;
 
@@ -39,6 +41,7 @@
 - (id)paymentNetwork;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountSuffix;
+- (id)productIdentifiers;
 - (bool)requiresFelicaSecureElement;
 - (void)setCardDetails:(id)arg1;
 - (void)setCardholderName:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)setPaymentNetwork:(id)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountSuffix:(id)arg1;
+- (void)setProductIdentifiers:(id)arg1;
 - (void)setRequiresFelicaSecureElement:(bool)arg1;
 - (void)setStyle:(long long)arg1;
 - (long long)style;

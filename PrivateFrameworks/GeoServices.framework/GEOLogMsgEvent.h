@@ -11,6 +11,7 @@
     int  _eventType;
     GEOLogMsgEventFullNavTrace * _fullNavTrace;
     GEOLogMsgEventGenericAppError * _genericAppErrorEvent;
+    GEOLogMsgEventGridDuration * _gridDuration;
     struct { 
         unsigned int usageEventTime : 1; 
         unsigned int eventType : 1; 
@@ -51,6 +52,7 @@
 @property (nonatomic) int eventType;
 @property (nonatomic, retain) GEOLogMsgEventFullNavTrace *fullNavTrace;
 @property (nonatomic, retain) GEOLogMsgEventGenericAppError *genericAppErrorEvent;
+@property (nonatomic, retain) GEOLogMsgEventGridDuration *gridDuration;
 @property (nonatomic, readonly) bool hasBatchTrafficProbeCollection;
 @property (nonatomic, readonly) bool hasCacheHitEvent;
 @property (nonatomic, readonly) bool hasClientAcSuggestions;
@@ -59,6 +61,7 @@
 @property (nonatomic) bool hasEventType;
 @property (nonatomic, readonly) bool hasFullNavTrace;
 @property (nonatomic, readonly) bool hasGenericAppErrorEvent;
+@property (nonatomic, readonly) bool hasGridDuration;
 @property (nonatomic, readonly) bool hasListInteractionSession;
 @property (nonatomic, readonly) bool hasLogFrameworkEvent;
 @property (nonatomic, readonly) bool hasMapLaunchEvent;
@@ -135,6 +138,7 @@
 - (id)eventTypeAsString:(int)arg1;
 - (id)fullNavTrace;
 - (id)genericAppErrorEvent;
+- (id)gridDuration;
 - (bool)hasBatchTrafficProbeCollection;
 - (bool)hasCacheHitEvent;
 - (bool)hasClientAcSuggestions;
@@ -143,6 +147,7 @@
 - (bool)hasEventType;
 - (bool)hasFullNavTrace;
 - (bool)hasGenericAppErrorEvent;
+- (bool)hasGridDuration;
 - (bool)hasListInteractionSession;
 - (bool)hasLogFrameworkEvent;
 - (bool)hasMapLaunchEvent;
@@ -199,6 +204,7 @@
 - (void)setEventType:(int)arg1;
 - (void)setFullNavTrace:(id)arg1;
 - (void)setGenericAppErrorEvent:(id)arg1;
+- (void)setGridDuration:(id)arg1;
 - (void)setHasEventType:(bool)arg1;
 - (void)setHasUsageEventTime:(bool)arg1;
 - (void)setListInteractionSession:(id)arg1;

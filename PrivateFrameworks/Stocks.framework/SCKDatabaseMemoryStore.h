@@ -3,14 +3,14 @@
  */
 
 @interface SCKDatabaseMemoryStore : NSObject <SCKDatabaseStore> {
-    bool  _backupEnabled;
+    bool  _cloudBackupEnabled;
     NSDate * _lastDirtyDate;
     NSDate * _lastSyncDate;
     CKServerChangeToken * _serverChangeToken;
     NSMutableDictionary * _zoneStoresByName;
 }
 
-@property (getter=isBackupEnabled, nonatomic) bool backupEnabled;
+@property (getter=isCloudBackupEnabled, nonatomic) bool cloudBackupEnabled;
 @property (nonatomic, copy) NSDate *lastDirtyDate;
 @property (nonatomic, copy) NSDate *lastSyncDate;
 @property (nonatomic, copy) CKServerChangeToken *serverChangeToken;
@@ -18,11 +18,11 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (bool)isBackupEnabled;
+- (bool)isCloudBackupEnabled;
 - (id)lastDirtyDate;
 - (id)lastSyncDate;
 - (id)serverChangeToken;
-- (void)setBackupEnabled:(bool)arg1;
+- (void)setCloudBackupEnabled:(bool)arg1;
 - (void)setLastDirtyDate:(id)arg1;
 - (void)setLastSyncDate:(id)arg1;
 - (void)setServerChangeToken:(id)arg1;

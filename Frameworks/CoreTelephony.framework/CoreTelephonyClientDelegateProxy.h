@@ -23,7 +23,6 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithQueue:(struct queue { struct object { struct dispatch_object_s {} *x_1_1_1; } x1; })arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (void)remoteObjectRespondsToSelector:(SEL)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

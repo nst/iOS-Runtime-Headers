@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyVideoPlayerTransform;
+- (id)_complicationsCompanionForegroundColor;
 - (void)_customizeVideoPlayerOnSetup;
 - (id)_editOptionThatHidesAllComplications;
 - (void)_handleEitherScreenWake;

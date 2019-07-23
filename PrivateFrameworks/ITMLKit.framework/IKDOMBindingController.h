@@ -2,54 +2,65 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMBindingController : NSObject <IKJSDataItemObserver> {
+@interface IKDOMBindingController : NSObject <IKJSDataObserving> {
     IKAppContext * _appContext;
     IKDataBinding * _binding;
     NSDictionary * _bindingKeysByPathString;
     IKJSDataItem * _dataItem;
-    <IKDOMBindingControllerDelegate> * _delegate;
-    struct { 
-        bool hasDidLoadBinding; 
-        bool hasShouldResolveData; 
-        bool hasDoKeysAffectChildren; 
-        bool hasDoKeysAffectSubtree; 
-        bool hasAdditionalKeysToResolve; 
-        bool hasApplyValueForKey; 
-        bool hasDidResolveKeys; 
-    }  _delegateFlags;
     IKDOMElement * _domElement;
+    _IKDOMMutationRules * _mutationRules;
     IKDOMBindingController * _parent;
+    NSDictionary * _prototypesByType;
     NSMutableArray * _scheduledUpdaters;
     bool  _shouldResolveData;
+    <IKDOMBindingStrategy> * _strategy;
+    struct { 
+        bool hasKeysAffectingChildren; 
+        bool hasKeysAffectingSubtree; 
+        bool hasPrototypeDependentKeys; 
+        bool hasValueDidChangeForKey; 
+        bool hasDidResolveKeys; 
+    }  _strategyFlags;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, readonly) IKDataBinding *binding;
 @property (nonatomic, readonly) IKJSDataItem *dataItem;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <IKDOMBindingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) IKDOMElement *domElement;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) _IKDOMMutationRules *mutationRules;
 @property (nonatomic, readonly) IKDOMBindingController *parent;
+@property (nonatomic, readonly) NSDictionary *prototypesByType;
 @property (nonatomic, readonly) bool shouldResolveData;
+@property (nonatomic, readonly) <IKDOMBindingStrategy> *strategy;
 @property (readonly) Class superclass;
 
++ (id)_parsedMutationRulesForDOMElement:(id)arg1;
++ (id)_prototypesByTypeForDOMElement:(id)arg1;
++ (id)domBindingControllerForDOMElement:(id)arg1;
++ (id)instantiateDOMElementForItem:(id)arg1 withPrototype:(id)arg2 parentDOMElement:(id)arg3 existingDOMElement:(id)arg4;
 + (id)parsedBindingForDOMElement:(id)arg1;
++ (void)prepareForDOMElement:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_resolve;
+- (bool)_canBeReused;
+- (void)_evaluateMutationRules;
+- (void)_resolveBinding;
 - (id)appContext;
 - (id)binding;
 - (id)dataItem;
-- (void)dataItem:(id)arg1 didChangePropertyPathWithString:(id)arg2;
-- (id)delegate;
+- (void)dataObservable:(id)arg1 didChangePropertyPathWithString:(id)arg2 extraInfo:(id)arg3;
+- (void)dealloc;
 - (id)domElement;
-- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 delegate:(id)arg3;
+- (id)findPrototypeForType:(id)arg1;
+- (id)initWithDOMElement:(id)arg1;
+- (id)mutationRules;
 - (id)parent;
+- (id)prototypesByType;
 - (void)scheduleUpdateUsingPreUpdate:(id /* block */)arg1 update:(id /* block */)arg2;
-- (void)setDelegate:(id)arg1;
 - (bool)shouldResolveData;
-- (void)teardown;
+- (id)strategy;
 
 @end

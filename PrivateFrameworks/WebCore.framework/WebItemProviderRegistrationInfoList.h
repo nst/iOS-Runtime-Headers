@@ -15,7 +15,7 @@
     NSData * _teamData;
 }
 
-@property (nonatomic, readonly) UIItemProvider *itemProvider;
+@property (nonatomic, readonly) NSItemProvider *itemProvider;
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredPresentationSize;
 @property (nonatomic) long long preferredPresentationStyle;
 @property (nonatomic, copy) NSString *suggestedName;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationData : FCPrivateDataController <FCAppActivityObserving, FCCoreConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
+@interface FCPersonalizationData : FCPrivateDataController <FCAppActivityObserving, FCCoreConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate> {
     NSMutableDictionary * _aggregates;
     bool  _attemptingUpload;
     NSMutableArray * _closedChangeGroups;
@@ -11,7 +11,6 @@
     CKRecord * _remoteRecord;
     <FCOperationThrottler> * _saveThrottler;
     FCPersonalizationTreatment * _treatment;
-    FCUserInfo * _userInfo;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *aggregates;
@@ -27,7 +26,6 @@
 @property (nonatomic, retain) <FCOperationThrottler> *saveThrottler;
 @property (readonly) Class superclass;
 @property (retain) FCPersonalizationTreatment *treatment;
-@property (nonatomic, retain) FCUserInfo *userInfo;
 
 + (id)backingRecordIDs;
 + (id)backingRecordZoneIDs;
@@ -46,9 +44,9 @@
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground;
-- (void)_closeOpenChangeGroup;
+- (void)_closeOpenChangeGroupFromInstance:(id)arg1;
 - (id)_instanceIdentifier;
-- (void)_reloadTreatmentWithReliablyFetchedCoreConfig:(bool)arg1 feldsparID:(id)arg2;
+- (void)_reloadTreatmentWithReliablyFetchedCoreConfig:(bool)arg1;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
 - (void)_writeToLocalStoreWithCompletionHandler:(id /* block */)arg1;
 - (void)activityObservingApplicationDidEnterBackground;
@@ -70,7 +68,6 @@
 - (void)generateDerivedDataWithQualityOfService:(long long)arg1 completion:(id /* block */)arg2;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
-- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3 userInfo:(id)arg4;
 - (void)loadLocalCachesFromStore;
 - (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned long long)arg2 actionCount:(unsigned long long)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5 impressionBias:(double)arg6;
 - (id)openChangeGroupDeltas;
@@ -90,11 +87,8 @@
 - (void)setRemoteRecord:(id)arg1;
 - (void)setSaveThrottler:(id)arg1;
 - (void)setTreatment:(id)arg1;
-- (void)setUserInfo:(id)arg1;
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (id)treatment;
 - (void)updateFeatures:(id)arg1 withAction:(unsigned long long)arg2 displayRank:(long long)arg3 groupRank:(long long)arg4 individually:(bool)arg5 configurableValues:(id)arg6 featuresUpdatedBlock:(id /* block */)arg7;
-- (id)userInfo;
-- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(bool)arg2;
 
 @end

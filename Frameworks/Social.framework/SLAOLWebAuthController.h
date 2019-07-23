@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLAOLWebAuthController : SLYahooWebAuthController
+@interface SLAOLWebAuthController : SLWebAuthController
 
-- (unsigned long long)_clientType;
+- (id)_extentionIdentifier;
+- (id)_webClient;
 
 @end

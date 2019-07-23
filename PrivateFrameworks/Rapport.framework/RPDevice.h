@@ -3,14 +3,18 @@
  */
 
 @interface RPDevice : NSObject <NSSecureCoding> {
+    NSString * _accountID;
+    int  _activityLevel;
     NSData * _authTag;
     NSData * _bleAdvertisementData;
     NSData * _bleDeviceAddress;
     unsigned int  _blePairState;
+    NSString * _contactID;
     unsigned char  _deviceActionType;
     unsigned int  _flags;
     NSString * _identifier;
     NSUUID * _identifierUUID;
+    NSString * _idsDeviceIdentifier;
     CUMobileDevice * _mobileDevice;
     NSString * _model;
     NSString * _name;
@@ -19,6 +23,7 @@
     NSUUID * _pairingIdentifier;
     int  _proximity;
     int  _rawRSSI;
+    CURangingMeasurement * _relativeLocation;
     int  _smoothedRSSI;
     unsigned int  _systemPairState;
     NSData * _txtData;
@@ -34,14 +39,18 @@
     NSString * _wifiSSID;
 }
 
+@property (nonatomic, readonly, copy) NSString *accountID;
+@property (nonatomic, readonly) int activityLevel;
 @property (nonatomic, readonly, copy) NSData *authTag;
 @property (nonatomic, readonly, copy) NSData *bleAdvertisementData;
 @property (nonatomic, readonly, copy) NSData *bleDeviceAddress;
 @property (nonatomic, readonly) unsigned int blePairState;
+@property (nonatomic, readonly, copy) NSString *contactID;
 @property (nonatomic, readonly) unsigned char deviceActionType;
 @property (nonatomic, readonly) unsigned int flags;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSUUID *identifierUUID;
+@property (nonatomic, readonly, copy) NSString *idsDeviceIdentifier;
 @property (nonatomic, retain) CUMobileDevice *mobileDevice;
 @property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
@@ -50,6 +59,7 @@
 @property (nonatomic, copy) NSUUID *pairingIdentifier;
 @property (nonatomic, readonly) int proximity;
 @property (nonatomic, readonly) int rawRSSI;
+@property (retain) CURangingMeasurement *relativeLocation;
 @property (nonatomic, readonly) int smoothedRSSI;
 @property (nonatomic) unsigned int systemPairState;
 @property (nonatomic, readonly, copy) NSData *txtData;
@@ -68,10 +78,13 @@
 
 - (void).cxx_destruct;
 - (void)_updateTXTDictionary:(id)arg1;
+- (id)accountID;
+- (int)activityLevel;
 - (id)authTag;
 - (id)bleAdvertisementData;
 - (id)bleDeviceAddress;
 - (unsigned int)blePairState;
+- (id)contactID;
 - (id)description;
 - (id)descriptionWithLevel:(int)arg1;
 - (unsigned char)deviceActionType;
@@ -79,6 +92,7 @@
 - (unsigned int)flags;
 - (id)identifier;
 - (id)identifierUUID;
+- (id)idsDeviceIdentifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)mobileDevice;
@@ -89,12 +103,14 @@
 - (id)pairingIdentifier;
 - (int)proximity;
 - (int)rawRSSI;
+- (id)relativeLocation;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierUUID:(id)arg1;
 - (void)setMobileDevice:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPairedPeer:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
+- (void)setRelativeLocation:(id)arg1;
 - (void)setSystemPairState:(unsigned int)arg1;
 - (void)setUdid:(id)arg1;
 - (void)setWifiAddress:(id)arg1;

@@ -9,6 +9,7 @@
     HDProfile * _profile;
     ACHAchievementProgressEngine * _progressProvider;
     ACHTemplateStore * _templateStore;
+    NSString * _watchCountryCodeOverride;
     ACHWorkoutUtility * _workoutUtility;
 }
 
@@ -23,6 +24,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) ACHTemplateStore *templateStore;
 @property (nonatomic, readonly) NSString *uniqueName;
+@property (nonatomic, retain) NSString *watchCountryCodeOverride;
 @property (nonatomic) ACHWorkoutUtility *workoutUtility;
 
 - (void).cxx_destruct;
@@ -48,9 +50,12 @@
 - (void)setProfile:(id)arg1;
 - (void)setProgressProvider:(id)arg1;
 - (void)setTemplateStore:(id)arg1;
+- (void)setWatchCountryCodeOverride:(id)arg1;
 - (void)setWorkoutUtility:(id)arg1;
 - (id)templateStore;
 - (id)uniqueName;
+- (id)watchCountryCode;
+- (id)watchCountryCodeOverride;
 - (id)workoutUtility;
 
 @end

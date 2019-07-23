@@ -6,11 +6,9 @@
     NSMutableDictionary * _categoryToCategoryId;
     ATXHistogramData * _histogramData;
     NSMutableDictionary * _lastDates;
-    double  _launchThreshold;
     unsigned short  _maxCategoryCount;
     unsigned short  _maxCategoryId;
     double  _maxSSIDCount;
-    NSDictionary * _parameters;
     NSString * _prevCategory;
     unsigned short  _prevCategoryId;
     long long  _pruningMethod;
@@ -29,6 +27,7 @@
 - (unsigned short)_eventIdforBundleId:(id)arg1;
 - (void)_garbageCollectCategoryIds;
 - (void)_reduceCategoryCountTo:(unsigned short)arg1;
+- (void)_removeMappingForCategory:(id)arg1;
 - (void)_setMaxCategoryCount:(unsigned short)arg1 pruningMethod:(long long)arg2;
 - (bool)_tryGetCategoryIdforCategory:(id)arg1 createIfMissing:(bool)arg2 categoryIdOut:(unsigned short*)arg3;
 - (bool)_tryGetEventIdforBundleId:(id)arg1 createIfMissing:(bool)arg2 eventIdOut:(unsigned short*)arg3;
@@ -43,7 +42,6 @@
 - (double)entropy;
 - (double)entropyForBundleId:(id)arg1;
 - (double)entropyForCategory:(id)arg1;
-- (void)executeBlockOnHistogramData:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistogram:(id)arg1 categoryToCategoryId:(id)arg2 maxCategoryId:(unsigned short)arg3 maxCategoryCount:(unsigned short)arg4 lastDates:(id)arg5 pruningMethod:(long long)arg6;
@@ -61,10 +59,8 @@
 - (bool)removeHistoryForBundleId:(id)arg1;
 - (int)removeHistoryForBundleIds:(id)arg1;
 - (bool)removeHistoryForCategory:(id)arg1;
-- (void)removeMappingForCategory:(id)arg1;
 - (void)resetData;
 - (void)resetHistogram:(id)arg1;
-- (void)swapWithCoder:(id)arg1;
 - (double)totalLaunches;
 - (double)totalLaunchesForBundleId:(id)arg1;
 - (double)totalLaunchesForBundleId:(id)arg1 category:(id)arg2;

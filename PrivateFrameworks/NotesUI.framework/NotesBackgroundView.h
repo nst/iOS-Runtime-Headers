@@ -6,6 +6,7 @@
     NSLayoutConstraint * _bottomBarConstraint;
     NotesTextureBackgroundView * _bottomTextureView;
     UIView * _contentView;
+    NSLayoutConstraint * _contentViewBottomConstraint;
     bool  _contentViewVisible;
     <ICAccessibilityChildReparentingProvider> * _elementForAccessibilityReparenting;
     NSLayoutConstraint * _heightConstraint;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *bottomBarConstraint;
 @property (nonatomic, retain) NotesTextureBackgroundView *bottomTextureView;
 @property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) NSLayoutConstraint *contentViewBottomConstraint;
 @property (getter=isContentViewVisible, nonatomic) bool contentViewVisible;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -40,6 +42,7 @@
 - (id)bottomTextureView;
 - (void)commonInit;
 - (id)contentView;
+- (id)contentViewBottomConstraint;
 - (id)elementForAccessibilityReparenting;
 - (void)fadeInBottomToolbar:(id)arg1 duration:(double)arg2;
 - (void)fadeOutBottomToolbar:(id)arg1 duration:(double)arg2;
@@ -57,12 +60,14 @@
 - (void)setContentView:(id)arg1;
 - (void)setContentView:(id)arg1 useReadableLayoutGuide:(bool)arg2;
 - (void)setContentView:(id)arg1 useReadableLayoutGuide:(bool)arg2 topMargin:(double)arg3;
+- (void)setContentViewBottomConstraint:(id)arg1;
 - (void)setContentViewVisible:(bool)arg1;
 - (void)setElementForAccessibilityReparenting:(id)arg1;
 - (void)setHeightConstraint:(id)arg1;
 - (void)setTextureView:(id)arg1;
 - (void)setTopTextureView:(id)arg1;
 - (void)setTopViewVisible:(bool)arg1;
+- (void)setupContentViewHomeIndicatorAvoidanceWithSize:(double)arg1;
 - (void)snapshotContentIntoSnapshotView:(id)arg1;
 - (id)textureView;
 - (id)topTextureView;

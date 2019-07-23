@@ -24,15 +24,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic) NSIndexPath *tappedSkinToneEmoji;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
++ (bool)shouldHighlightEmoji:(id)arg1;
 
 - (void)_setUserHasSelectedSkinToneEmoji:(bool)arg1;
 - (bool)_shouldReverseLayoutDirection;
 - (bool)_userHasSelectedSkinToneEmoji;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)category;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
@@ -41,6 +37,7 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id /* block */)completionBlock;
+- (void)dealloc;
 - (long long)didInputSubTree:(id)arg1;
 - (void)didMoveToWindow;
 - (void)dimKeys:(id)arg1;

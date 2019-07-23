@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *accounts;
+@property (getter=ams_isActiveAccountCombined, nonatomic, readonly) bool ams_activeAccountCombined;
 @property (nonatomic, readonly) ACAccount *ams_activeiCloudAccount;
 @property (nonatomic, readonly) ACAccount *ams_activeiTunesAccount;
 @property (nonatomic, readonly) NSArray *ams_iTunesAccounts;
@@ -218,17 +219,21 @@
 - (bool)_addUserCookiesForResponse:(id)arg1 account:(id)arg2 error:(id*)arg3;
 - (id)_allCommerceiTunesAccounts;
 - (id)_alliTunesAccounts;
+- (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2;
 - (void)_createLocalAccount;
+- (id)ams_IDMSAccountForAccount:(id)arg1;
 - (id)ams_activeiCloudAccount;
 - (id)ams_activeiTunesAccount;
 - (bool)ams_addCookiesForResponse:(id)arg1 account:(id)arg2 error:(id*)arg3;
 - (bool)ams_addCookiesForResponse:(id)arg1 request:(id)arg2 account:(id)arg3 error:(id*)arg4;
+- (id)ams_cookiesForURL:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithUsername:(id)arg1;
 - (id)ams_iTunesAccounts;
 - (id)ams_iTunesSandboxAccounts;
+- (bool)ams_isActiveAccountCombined;
 - (id)ams_localiTunesAccount;
 - (id)ams_mediaType;
 - (bool)ams_removeCookiesMatchingProperties:(id)arg1 error:(id*)arg2;
@@ -271,6 +276,14 @@
 - (id)_mailAccountTypeIdentifiers;
 - (bool)hasMailAccountsForSync;
 - (id)mailAccountsForSync;
+
+// Image: /System/Library/PrivateFrameworks/SocialServices.framework/SocialServices
+
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(bool)arg2 completion:(id /* block */)arg3;
+- (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(bool)arg2 delegateClassName:(id)arg3 completion:(id /* block */)arg4;
+- (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
+- (void)sl_openYouTubeAuthenticationSheetWithUsername:(id)arg1 accountDescription:(id)arg2 completion:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

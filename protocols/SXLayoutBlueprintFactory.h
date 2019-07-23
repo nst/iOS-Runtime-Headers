@@ -5,6 +5,6 @@
 
 @required
 
-- (SXLayoutBlueprint *)createLayoutBlueprint;
+- (SXLayoutBlueprint *)createLayoutBlueprintWithLayoutOptions:(SXLayoutOptions *)arg1;
 
 @end

@@ -217,6 +217,7 @@
 - (bool)_isDuplicate:(id)arg1;
 - (void)_itemsDidChange:(id)arg1;
 - (id)_lastFinishedMessage;
+- (void)_launchAppForJoinRequest:(id)arg1;
 - (void)_leaveChat:(bool)arg1;
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
@@ -232,6 +233,7 @@
 - (void)_removeParticipantsFromChat:(id)arg1 reason:(id)arg2 fromiMessageChat:(bool)arg3;
 - (id)_renderingDataDictionary;
 - (void)_replaceStaleChatItems;
+- (void)_resetChatIdToLastMessageItemMap;
 - (bool)_sanityCheckAccounts;
 - (void)_sendCurrentLocationMessageUsingLocationManager:(id)arg1;
 - (void)_sendMessage:(id)arg1 adjustingSender:(bool)arg2 shouldQueue:(bool)arg3;
@@ -314,6 +316,7 @@
 - (void)closeSession;
 - (long long)compareChatByDate:(id)arg1;
 - (long long)compareChatByTUDateAndLastFinishedMessageDate:(id)arg1;
+- (bool)containsMessageFromContactOrMe;
 - (void*)contextInfo;
 - (id)conversation;
 - (id)conversation;
@@ -352,7 +355,7 @@
 - (bool)hasSurfRequestNotFromMe:(id)arg1;
 - (bool)hasUnhandledInvitation;
 - (id)init;
-- (void)initiateTUConversationWithVideo:(bool)arg1;
+- (void)initiateTUConversationWithVideoEnabled:(bool)arg1;
 - (id)invitationForPendingParticipants;
 - (void)inviteParticipants:(id)arg1 reason:(id)arg2;
 - (void)inviteParticipantsToiMessageChat:(id)arg1 reason:(id)arg2;
@@ -366,9 +369,10 @@
 - (bool)isInScrutinyMode;
 - (bool)isMakoChat;
 - (bool)isReplyEnabled;
+- (bool)isSMS;
 - (bool)isVIP;
 - (void)join;
-- (void)joinExistingTUConversation;
+- (void)joinExistingTUConversationWithVideoEnabled:(bool)arg1;
 - (long long)joinState;
 - (id)lastAddressedHandleID;
 - (id)lastAddressedSIMID;
@@ -418,6 +422,7 @@
 - (id)messageForGUID:(id)arg1;
 - (id)messagesToReportAsSpamFromChatItems:(id)arg1;
 - (unsigned long long)numberOfMessagesToKeepLoaded;
+- (long long)numberOfTimesRespondedToThread;
 - (unsigned long long)overallChatStatus;
 - (id)participants;
 - (id)participantsWithState:(unsigned long long)arg1;
@@ -482,6 +487,7 @@
 - (void)updateIsFiltered:(bool)arg1;
 - (void)updateMessage:(id)arg1;
 - (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
+- (void)updateShouldForceToSMS:(bool)arg1;
 - (void)updateWasDetectedAsSMSSpam:(bool)arg1;
 - (void)updateWatermarks;
 - (void)userToggledReadReceiptSwitch:(bool)arg1;

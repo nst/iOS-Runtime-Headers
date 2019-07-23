@@ -35,6 +35,7 @@
         double x; 
         double y; 
     }  _lastPoint;
+    double  _latestNonPredictedTimestamp;
     long long  _outputImmutableCount;
     struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> > { 
         struct _PKStrokePoint {} *__begin_; 
@@ -83,6 +84,7 @@
 @property (nonatomic) double inputScale;
 @property (nonatomic) struct PKInputSmoother { int (**x1)(); struct PKInputProvider<_PKStrokePoint> {} *x2; bool x3; double x4; long long x5; long long x6; /* Warning: unhandled struct encoding: '{vector<_PKStrokePoint' */ struct x7; }*inputSmoother; /* unknown property attribute:  std::__1::allocator<PKSmoothingPoint> >=^{PKSmoothingPoint}}}@} */
 @property (nonatomic) struct PKInputToOutputFilter { int (**x1)(); struct PKInputProvider<PKInputPoint> {} *x2; bool x3; double x4; long long x5; long long x6; /* Warning: unhandled struct encoding: '{vector<PKInputPoint' */ struct x7; }*inputToOutputFilter; /* unknown property attribute:  std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}}}@} */
+@property (nonatomic, readonly) long long inputType;
 @property bool isSnappedToRuler;
 @property (nonatomic) bool isSnappedToRulerTopSide;
 @property struct CGPoint { double x1; double x2; } lastPoint;
@@ -123,6 +125,7 @@
 - (void)drawingCancelledWithCompletion:(id /* block */)arg1;
 - (void)drawingEndedWithCompletion:(id /* block */)arg1;
 - (void)drawingUpdateAllPoints;
+- (void)drawingUpdateAllPointsDidTimeout:(bool)arg1;
 - (void)drawingUpdatePoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; double x5; double x6; bool x7; long long x8; double x9; bool x10; })arg1;
 - (struct PKEndCapsFilter { int (**x1)(); struct PKInputProvider<_PKStrokePoint> {} *x2; bool x3; double x4; double x5; double x6; double x7; }*)endCapFilter;
 - (struct PKEndHookFilter { int (**x1)(); struct PKInputProvider<PKInputPoint> {} *x2; bool x3; double x4; long long x5; bool x6; }*)endHookFilter;
@@ -137,10 +140,12 @@
 - (double)inputScale;
 - (/* Warning: unhandled struct encoding: '{PKInputSmoother=^^?^{PKInputProvider<_PKStrokePoint>}Bdqq{vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}^{_PKStrokePoint}{__compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}}}q{vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}^{_PKStrokePoint}{__compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}}}d{vector<PKSmoothingPoint, std::__1::allocator<PKSmoothingPoint> >=^{PKSmoothingPoint}^{PKSmoothingPoint}{__compressed_pair<PKSmoothingPoint *, std::__1::allocator<PKSmoothingPoint> >=^{PKSmoothingPoint}}}@}' */ struct PKInputSmoother { int (**x1)(); struct PKInputProvider<_PKStrokePoint> {} *x2; bool x3; double x4; long long x5; long long x6; struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_7_1_1; struct _PKStrokePoint {} *x_7_1_2; struct __compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_3_2_1; } x_7_1_3; } x7; long long x8; struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_9_1_1; struct _PKStrokePoint {} *x_9_1_2; struct __compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_3_2_1; } x_9_1_3; } x9; double x10; struct vector<PKSmoothingPoint, std::__1::allocator<PKSmoothingPoint> > { struct PKSmoothingPoint {} *x_11_1_1; struct PKSmoothingPoint {} *x_11_1_2; struct __compressed_pair<PKSmoothingPoint *, std::__1::allocator<PKSmoothingPoint> > { struct PKSmoothingPoint {} *x_3_2_1; } x_11_1_3; } x11; id x12; }*)inputSmoother;
 - (/* Warning: unhandled struct encoding: '{PKInputToOutputFilter=^^?^{PKInputProvider<PKInputPoint>}Bdqq{vector<PKInputPoint, std::__1::allocator<PKInputPoint> >=^{?}^{?}{__compressed_pair<PKInputPoint *, std::__1::allocator<PKInputPoint> >=^{?}}}q{vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}^{_PKStrokePoint}{__compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> >=^{_PKStrokePoint}}}@}' */ struct PKInputToOutputFilter { int (**x1)(); struct PKInputProvider<PKInputPoint> {} *x2; bool x3; double x4; long long x5; long long x6; struct vector<PKInputPoint, std::__1::allocator<PKInputPoint> > { struct { /* ? */ } *x_7_1_1; struct { /* ? */ } *x_7_1_2; struct __compressed_pair<PKInputPoint *, std::__1::allocator<PKInputPoint> > { struct { /* ? */ } *x_3_2_1; } x_7_1_3; } x7; long long x8; struct vector<_PKStrokePoint, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_9_1_1; struct _PKStrokePoint {} *x_9_1_2; struct __compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> > { struct _PKStrokePoint {} *x_3_2_1; } x_9_1_3; } x9; id x10; }*)inputToOutputFilter;
+- (long long)inputType;
 - (bool)isSnappedToRuler;
 - (bool)isSnappedToRulerTopSide;
 - (struct CGPoint { double x1; double x2; })lastPoint;
 - (bool)lastPointIsMasked;
+- (double)latestNonPredictedTimestamp;
 - (void)maskToRuler;
 - (struct _PKStrokePoint { double x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })outputCurrentStrokePoint:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; double x2; double x3; double x4; double x5; double x6; bool x7; long long x8; double x9; bool x10; })arg1;
 - (struct PKInputProvider<_PKStrokePoint> { int (**x1)(); }*)outputFilter;

@@ -16,7 +16,7 @@
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
 @property (readonly) unsigned long long hash;
 @property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
-@property (nonatomic, readonly) bool layoutVertically;
+@property (nonatomic, readonly) bool laysOutVertically;
 @property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic, readonly) <TSDHint> *nextTargetFirstChildHint;
 @property (nonatomic, readonly) <TSWPOffscreenColumn> *nextTargetFirstColumn;
@@ -44,7 +44,7 @@
 - (bool)isSelectable;
 - (bool)isThemeContent;
 - (Class)layoutClass;
-- (bool)layoutVertically;
+- (bool)laysOutVertically;
 - (long long)modelRootIndex;
 - (id)nextTargetFirstChildHint;
 - (id)nextTargetFirstColumn;

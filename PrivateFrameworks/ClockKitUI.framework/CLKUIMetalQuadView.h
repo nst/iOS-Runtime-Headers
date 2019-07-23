@@ -3,7 +3,9 @@
  */
 
 @interface CLKUIMetalQuadView : CLKUIQuadView {
+    unsigned long long  _colorPixelFormat;
     bool  _drawableSizeNeedsUpdate;
+    CAMetalLayer * _metalLayer;
     struct CLKUIQuadSize { 
         int width; 
         int height; 
@@ -11,13 +13,16 @@
     CLKUIMetalQuadRenderer * _renderer;
 }
 
-+ (Class)layerClass;
+@property (nonatomic, readonly) unsigned long long colorPixelFormat;
 
 - (void).cxx_destruct;
-- (void)_discardContents;
-- (void)_display;
+- (bool)_displayWithCompletion:(id /* block */)arg1;
 - (void)_handleQuadArrayChange:(id)arg1;
+- (id)_snapshotInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scale:(double)arg2 time:(double)arg3;
+- (id)_snapshotTexture:(id)arg1;
 - (void)_updateDrawableSizeIfNecessary;
+- (unsigned long long)colorPixelFormat;
+- (void)discardContents;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 options:(unsigned long long)arg2;
 - (void)layoutSubviews;
 - (id)metalLayer;

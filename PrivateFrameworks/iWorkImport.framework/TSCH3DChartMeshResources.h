@@ -3,12 +3,7 @@
  */
 
 @interface TSCH3DChartMeshResources : NSObject <TSCHUnretainedParent> {
-    struct GeometryArrays { 
-        unsigned int offset; 
-        unsigned int count; 
-        unsigned int capoffset; 
-        unsigned int capcount; 
-    }  mArrays;
+    TSCH3DGeometryArrays * mArrays;
     TSCH3DChartMeshSharedResource * mBounds;
     TSCH3DResource * mCachedBounds;
     TSUOnce * mCachedBoundsOnce;
@@ -28,11 +23,10 @@
 + (id)nullBuffer;
 + (id)resourcesWithSeries:(id)arg1 creator:(id)arg2;
 
-- (id).cxx_construct;
 - (id)bounds;
 - (void)clearParent;
 - (void)dealloc;
-- (struct GeometryResource { int x1; /* Warning: unhandled struct encoding: '{ObjcSharedPtr<TSCH3DResource>=@}{GeometryArrays=IIII}{ObjcSharedPtr<TSCH3DGeometry>=@}}' */ struct ObjcSharedPtr<TSCH3DResource> { id x_2_1_1; struct GeometryArrays { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; unsigned int x_2_2_4; } x_2_1_2; struct ObjcSharedPtr<TSCH3DGeometry> { id x_3_2_1; } x_2_1_3; } x2; })geometryResourceWithPrimitiveType:(int)arg1;
+- (id)geometryResourceWithPrimitiveType:(int)arg1;
 - (id)initWithSeries:(id)arg1 creator:(id)arg2;
 - (id)normal;
 - (void)regenerate;

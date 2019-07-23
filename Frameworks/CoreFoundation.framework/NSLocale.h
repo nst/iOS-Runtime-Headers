@@ -7,6 +7,7 @@
 @property (readonly) long long ITUCountryCode;
 @property (readonly) long long _calendarDirection;
 @property (readonly, copy) NSArray *availableNumberingSystems;
+@property (nonatomic, readonly) bool hk_isUSLocale;
 @property (nonatomic, readonly) NSString *languageIdentifier;
 @property (readonly) NSString *languageIdentifier;
 @property (readonly, copy) NSString *numberingSystem;
@@ -110,6 +111,8 @@
 + (void)hk_setTestLocale:(id)arg1;
 + (id)hk_testableAutoupdatingCurrentLocale;
 
+- (bool)hk_isUSLocale;
+
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (unsigned long long)pu_currentCharacterDirection;
@@ -148,6 +151,10 @@
 
 + (id)__ck_currentLocale;
 + (void)__ck_setTestLocale:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (bool)crk_showPhoneticNames;
 
 // Image: /System/Library/PrivateFrameworks/InternationalSupport.framework/InternationalSupport
 
@@ -280,6 +287,10 @@
 + (id)_nonRomanLanguages;
 
 - (bool)usesRomanTextProcessing;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (id)tvp_subtitleLanguageCode;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 

@@ -2,21 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupMoreInfoViewController : UIViewController {
+@interface PKPaymentSetupMoreInfoViewController : UIViewController <UIScrollViewDelegate> {
     long long  _context;
     id /* block */  _dismissalHandler;
     bool  _isFinalViewController;
     NSArray * _moreInfoItems;
     PKPaymentSetupMoreInfoView * _moreInfoView;
+    bool  _navigationBarOpaque;
     PKPaymentPass * _pass;
 }
 
 @property (nonatomic, readonly) long long context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ dismissalHandler;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool isFinalViewController;
 @property (nonatomic, readonly, retain) NSArray *moreInfoItems;
 @property (nonatomic, readonly, retain) PKPaymentSetupMoreInfoView *moreInfoView;
 @property (nonatomic, readonly, retain) PKPaymentPass *pass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_configureNavigationItem;
@@ -25,6 +30,7 @@
 - (void)_handlePush;
 - (id)_nextItems;
 - (void)_nextTapped:(id)arg1;
+- (void)_updateNavBarContent;
 - (long long)context;
 - (id /* block */)dismissalHandler;
 - (unsigned long long)edgesForExtendedLayout;
@@ -34,6 +40,10 @@
 - (id)moreInfoItems;
 - (id)moreInfoView;
 - (id)pass;
+- (double)pkui_preferredNavigationBarBackgroundOpacity;
+- (bool)pkui_prefersNavigationBarShadowHidden;
+- (long long)preferredStatusBarStyle;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)setDismissalHandler:(id /* block */)arg1;
 - (void)setIsFinalViewController:(bool)arg1;
 - (void)viewDidLoad;

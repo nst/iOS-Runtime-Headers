@@ -10,15 +10,13 @@
 - (bool)allowInteractivityFocusForComponent:(SXComponentView *)arg1;
 - (SXComponentAnimationController *)animationController;
 - (SXComponentBehaviorController *)behaviorController;
-- (SXComponentController *)componentController;
+- (<SXComponentController> *)componentController;
 - (void)dismissFullscreenCanvasForComponent:(SXComponentView *)arg1;
 - (SXFullscreenVideoPlaybackManager *)fullscreenVideoPlaybackManager;
 - (bool)isScrolling;
-- (void)maintainPositionOfViewWhileScrolling:(UIView *)arg1;
 - (SXMediaPlaybackController *)mediaPlaybackController;
 - (SXPresentationAttributes *)presentationAttributes;
 - (UIViewController *)presentingContentViewController;
-- (void)releasePositionOfView:(UIView *)arg1;
 - (void)removeInteractivityFocusForComponent:(SXComponentView *)arg1;
 - (UIViewController *)requestFullScreenCanvasViewControllerForComponent:(void *)arg1 canvasController:(void *)arg2 withCompletionBlock:(void *)arg3; // needs 3 arg types, found 7: SXComponentView *, SXFullscreenCanvasController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (UIViewController *)requestFullScreenCanvasViewControllerForComponent:(void *)arg1 withCompletionBlock:(void *)arg2; // needs 2 arg types, found 6: SXComponentView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
@@ -26,6 +24,5 @@
 - (SXTangierController *)tangierController;
 - (<SXTextSelectionManager> *)textSelectionManager;
 - (void)updateBehaviorForComponentView:(SXComponentView *)arg1;
-- (SXViewport *)viewport;
 
 @end

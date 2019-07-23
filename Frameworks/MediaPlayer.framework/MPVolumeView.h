@@ -8,7 +8,7 @@
     bool  _hasNonDefaultRouteButtonImages;
     bool  _hidesRouteLabelWhenNoRouteChoice;
     MPAVLightweightRoutingController * _lightweightRoutingController;
-    MPMediaControlsStandaloneViewController * _mediaControlsViewController;
+    MPMediaControls * _mediaControls;
     bool  _pushedRouteDiscoveryModeState;
     UIButton * _routeButton;
     bool  _routeButtonShowsTouchWhenHighlighted;
@@ -64,13 +64,11 @@
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (void)dismissActiveOverlaysAnimated:(bool)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hidesRouteLabelWhenNoRouteChoice;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
-- (bool)isShowingActiveOverlays;
 - (bool)isShowingRouteButton;
 - (bool)isVisible;
 - (bool)isWirelessRouteActive;

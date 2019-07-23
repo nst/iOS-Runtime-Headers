@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.RemoteParticipantVideoProvider : SwiftObject {
+@interface ConversationKit.RemoteParticipantVideoProvider : Swift._SwiftObject {
     void avcRemoteVideoClient;
 }
 

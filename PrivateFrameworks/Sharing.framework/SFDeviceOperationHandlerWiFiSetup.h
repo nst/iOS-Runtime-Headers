@@ -3,18 +3,23 @@
  */
 
 @interface SFDeviceOperationHandlerWiFiSetup : NSObject {
+    CUBonjourAdvertiser * _bonjourAdvertiser;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
+    bool  _reachabilityEnabled;
     CUReachabilityMonitor * _reachabilityMonitor;
     unsigned int  _repairFlags;
     id /* block */  _responseHandler;
     NSDictionary * _scanResult;
+    unsigned int  _setupFlags;
     SFSession * _sfSession;
     int  _state;
     bool  _stepDone;
     NSError * _stepError;
     int  _wifiChannel;
     bool  _wifiDirected;
+    id  _wifiEAPConfig;
+    id  _wifiEAPTrustExceptions;
     bool  _wifiHomeNetwork;
     NSData * _wifiPSK;
     NSString * _wifiPassword;
@@ -27,6 +32,8 @@
 - (void).cxx_destruct;
 - (void)_activate;
 - (void)_completeError:(id)arg1;
+- (void)_handleRequestBonjourTestDone:(id)arg1 responseHandler:(id /* block */)arg2;
+- (void)_handleRequestBonjourTestStart:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)_handleWiFiSetupRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)_run;
 - (void)_runJoinStart:(int)arg1;

@@ -3,27 +3,35 @@
  */
 
 @interface PKPaymentAuthorizationAuthorizedStateParam : PKPaymentAuthorizationStateParam {
+    PKApplePayTrustSignature * _applePayTrustSignature;
     PKAuthorizedPeerPaymentQuote * _authorizedPeerPaymentQuote;
+    PKDisbursementVoucher * _disbursementVoucher;
     PKPayment * _payment;
     PKPaymentToken * _paymentToken;
     PKServiceProviderPurchase * _purchase;
     NSString * _purchaseTransactionIdentifier;
 }
 
+@property (nonatomic, readonly) PKApplePayTrustSignature *applePayTrustSignature;
 @property (nonatomic, readonly) PKAuthorizedPeerPaymentQuote *authorizedPeerPaymentQuote;
+@property (nonatomic, readonly) PKDisbursementVoucher *disbursementVoucher;
 @property (nonatomic, retain) PKPayment *payment;
 @property (nonatomic, retain) PKPaymentToken *paymentToken;
 @property (nonatomic, retain) PKServiceProviderPurchase *purchase;
 @property (nonatomic, copy) NSString *purchaseTransactionIdentifier;
 
++ (id)paramWithApplePayTrustSignature:(id)arg1;
 + (id)paramWithAuthorizedPeerPaymentQuote:(id)arg1;
++ (id)paramWithDisbursementVoucher:(id)arg1;
 + (id)paramWithPayment:(id)arg1;
 + (id)paramWithPaymentToken:(id)arg1;
 + (id)paramWithPurchase:(id)arg1 purchaseTransactionIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)applePayTrustSignature;
 - (id)authorizedPeerPaymentQuote;
 - (id)description;
+- (id)disbursementVoucher;
 - (id)payment;
 - (id)paymentToken;
 - (id)purchase;

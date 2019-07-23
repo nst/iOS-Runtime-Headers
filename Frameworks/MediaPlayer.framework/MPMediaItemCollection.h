@@ -63,7 +63,7 @@
 
 - (id)MPU_contentItemIdentifierCollection;
 
-// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 + (id)wlk_JSgenericProperties;
 

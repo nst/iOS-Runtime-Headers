@@ -8,8 +8,12 @@
     bool  _displayFullPhotoInline;
     struct { 
         unsigned int displayFullPhotoInline : 1; 
+        unsigned int highQuality : 1; 
+        unsigned int isBusinessOwned : 1; 
         unsigned int useGallery : 1; 
     }  _has;
+    bool  _highQuality;
+    bool  _isBusinessOwned;
     NSString * _licenseDescription;
     NSString * _licenseUrl;
     GEOPDPhoto * _photo;
@@ -23,10 +27,14 @@
 @property (nonatomic, readonly) bool hasAuthor;
 @property (nonatomic, readonly) bool hasCaption;
 @property (nonatomic) bool hasDisplayFullPhotoInline;
+@property (nonatomic) bool hasHighQuality;
+@property (nonatomic) bool hasIsBusinessOwned;
 @property (nonatomic, readonly) bool hasLicenseDescription;
 @property (nonatomic, readonly) bool hasLicenseUrl;
 @property (nonatomic, readonly) bool hasPhoto;
 @property (nonatomic) bool hasUseGallery;
+@property (nonatomic) bool highQuality;
+@property (nonatomic) bool isBusinessOwned;
 @property (nonatomic, retain) NSString *licenseDescription;
 @property (nonatomic, retain) NSString *licenseUrl;
 @property (nonatomic, retain) GEOPDPhoto *photo;
@@ -46,11 +54,15 @@
 - (bool)hasAuthor;
 - (bool)hasCaption;
 - (bool)hasDisplayFullPhotoInline;
+- (bool)hasHighQuality;
+- (bool)hasIsBusinessOwned;
 - (bool)hasLicenseDescription;
 - (bool)hasLicenseUrl;
 - (bool)hasPhoto;
 - (bool)hasUseGallery;
 - (unsigned long long)hash;
+- (bool)highQuality;
+- (bool)isBusinessOwned;
 - (bool)isEqual:(id)arg1;
 - (id)licenseDescription;
 - (id)licenseUrl;
@@ -61,7 +73,11 @@
 - (void)setCaption:(id)arg1;
 - (void)setDisplayFullPhotoInline:(bool)arg1;
 - (void)setHasDisplayFullPhotoInline:(bool)arg1;
+- (void)setHasHighQuality:(bool)arg1;
+- (void)setHasIsBusinessOwned:(bool)arg1;
 - (void)setHasUseGallery:(bool)arg1;
+- (void)setHighQuality:(bool)arg1;
+- (void)setIsBusinessOwned:(bool)arg1;
 - (void)setLicenseDescription:(id)arg1;
 - (void)setLicenseUrl:(id)arg1;
 - (void)setPhoto:(id)arg1;

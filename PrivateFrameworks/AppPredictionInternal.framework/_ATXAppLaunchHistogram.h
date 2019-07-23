@@ -3,7 +3,6 @@
  */
 
 @interface _ATXAppLaunchHistogram : NSObject <NSSecureCoding, _ATXAppLaunchHistogramProtocol> {
-    double  _launchThreshold;
     _PASLock * _lock;
     NSDate * _prevDate;
     unsigned short  _prevLocaltime;
@@ -39,7 +38,6 @@
 - (double)entropy;
 - (double)entropyForBundleId:(id)arg1;
 - (double)entropyForDate:(id)arg1;
-- (void)executeBlockOnHistogramData:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistogram:(id)arg1 bucketCount:(unsigned short)arg2 filter:(bool)arg3 timeBase:(int)arg4;
@@ -55,7 +53,6 @@
 - (void)removeLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 weight:(float)arg4;
 - (void)resetData;
 - (void)resetHistogram:(id)arg1;
-- (void)swapWithCoder:(id)arg1;
 - (double)totalLaunches;
 - (double)totalLaunchesForBundleIds:(id)arg1;
 - (double)totalTimeOfDayLaunchesForDate:(id)arg1;

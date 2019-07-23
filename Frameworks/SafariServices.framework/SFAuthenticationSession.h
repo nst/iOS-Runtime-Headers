@@ -9,6 +9,7 @@
     id /* block */  _completionHandler;
     NSURL * _initialURL;
     bool  _isSessionStarted;
+    bool  _usingEphemeralSession;
 }
 
 @property (nonatomic) <_SFAuthenticationSessionDelegate> *_delegate;
@@ -23,6 +24,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)presentingViewControllerForAuthenticationViewController:(id)arg1;
 - (void)safariViewController:(id)arg1 didDecideCookieSharingForURL:(id)arg2 shouldCancel:(bool)arg3;
 - (void)safariViewController:(id)arg1 hostApplicationOpenURL:(id)arg2;

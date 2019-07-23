@@ -24,6 +24,8 @@
 - (id)channelIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handle;
+- (id)initInvalidChannel;
+- (id)initUnavailableChannelWithIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDanglingPlanItem:(id)arg1;
 - (id)initWithSenderIdentity:(id)arg1;

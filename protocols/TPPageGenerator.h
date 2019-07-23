@@ -5,7 +5,7 @@
 
 @required
 
-- (void)createOrUpdatePageHintInSectionHint:(TPSectionHint *)arg1 withState:(TPPageLayoutState *)arg2;
-- (bool)wantsPageInSectionHint:(TPSectionHint *)arg1 withState:(TPPageLayoutState *)arg2;
+- (void)createOrUpdatePageHintInSectionHint:(TPSectionHint *)arg1 withState:(TPPaginationState *)arg2;
+- (bool)wantsPageInSectionHint:(TPSectionHint *)arg1 withState:(TPPaginationState *)arg2;
 
 @end

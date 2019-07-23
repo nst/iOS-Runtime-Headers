@@ -4,6 +4,8 @@
 
 @interface PKTiledView : UIView <PKDrawableView, PKSelectionDelegate, PKTiledCanvasViewDelegate, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollObserver> {
     NSArray * _additionalStrokes;
+    long long  _aggd_cachedVisibleStrokeCount;
+    bool  _aggd_didMergeWithCollaborator;
     UIView * _attachmentContainerView;
     PKDrawing * _cachedDrawingForHiddenAdditionalStrokes;
     NSArray * _cachedHiddenAdditionalStrokes;
@@ -42,6 +44,8 @@
 }
 
 @property (nonatomic, readonly) NSArray *additionalStrokes;
+@property (nonatomic) long long aggd_cachedVisibleStrokeCount;
+@property (nonatomic) bool aggd_didMergeWithCollaborator;
 @property (nonatomic) UIView *attachmentContainerView;
 @property (nonatomic, copy) PKDrawing *cachedDrawingForHiddenAdditionalStrokes;
 @property (nonatomic, copy) NSArray *cachedHiddenAdditionalStrokes;
@@ -52,7 +56,7 @@
 @property (nonatomic, retain) PKDrawing *createdDrawingForTouchThatHitNothing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) UITouch *drawingTouchThatHitNothing;
+@property (nonatomic, readonly) UITouch *drawingTouchThatHitNothing;
 @property (getter=isFingerDrawingEnabled, nonatomic) bool fingerDrawingEnabled;
 @property (nonatomic, retain) UIView *gestureView;
 @property (nonatomic, readonly) bool hasSelection;
@@ -67,7 +71,7 @@
 @property (nonatomic, retain) PKAttachmentView *liveAttachment;
 @property (nonatomic) struct CGPoint { double x1; double x2; } liveStrokeContentOffset;
 @property (nonatomic) UIScrollView *scrollView;
-@property (nonatomic, retain) PKSelectionController *selectionController;
+@property (nonatomic, readonly) PKSelectionController *selectionController;
 @property (nonatomic) bool shouldHideCanvasAfterScroll;
 @property (nonatomic) bool showDebugOutlines;
 @property (readonly) Class superclass;
@@ -92,10 +96,13 @@
 - (void)_layoutSubviews;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)_scrollViewDidLayoutSubviews:(id)arg1;
+- (long long)_totalVisibleStrokes;
 - (void)_updateAttachmentHeightIfNecessaryForDrawing:(id)arg1;
 - (void)_updateHeightOfAttachmentIfNecessary:(id)arg1;
 - (id)_visibleTilesForAttachment:(id)arg1 includePartiallyVisible:(bool)arg2;
 - (id)additionalStrokes;
+- (long long)aggd_cachedVisibleStrokeCount;
+- (bool)aggd_didMergeWithCollaborator;
 - (void)applyCommand:(id)arg1 toDrawing:(id)arg2;
 - (id)attachmentContainerView;
 - (id)attachmentForUUID:(id)arg1;
@@ -177,6 +184,8 @@
 - (struct CGPoint { double x1; double x2; })selectionOffsetForDrawing:(id)arg1;
 - (void)selectionRefreshWithChangeToDrawings:(id)arg1;
 - (id)selectionTopView;
+- (void)setAggd_cachedVisibleStrokeCount:(long long)arg1;
+- (void)setAggd_didMergeWithCollaborator:(bool)arg1;
 - (void)setAttachmentContainerView:(id)arg1;
 - (void)setCachedDrawingForHiddenAdditionalStrokes:(id)arg1;
 - (void)setCachedHiddenAdditionalStrokes:(id)arg1;
@@ -184,7 +193,6 @@
 - (void)setCachedVisibleStrokesMinusHiddenStrokesForDirtyDrawing:(id)arg1;
 - (void)setCanvasView:(id)arg1;
 - (void)setCreatedDrawingForTouchThatHitNothing:(id)arg1;
-- (void)setDrawingTouchThatHitNothing:(id)arg1;
 - (void)setFingerDrawingEnabled:(bool)arg1;
 - (void)setGestureView:(id)arg1;
 - (void)setInk:(id)arg1;
@@ -196,7 +204,6 @@
 - (void)setLiveAttachment:(id)arg1;
 - (void)setLiveStrokeContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setScrollView:(id)arg1;
-- (void)setSelectionController:(id)arg1;
 - (void)setShouldHideCanvasAfterScroll:(bool)arg1;
 - (void)setShowDebugOutlines:(bool)arg1;
 - (void)setTileController:(id)arg1;

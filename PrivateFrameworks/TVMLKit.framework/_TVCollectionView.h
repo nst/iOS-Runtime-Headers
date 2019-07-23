@@ -52,5 +52,6 @@
 - (void)setBottomPaddingForVisibleBounds:(double)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setScrollEnabled:(bool)arg1;
 
 @end

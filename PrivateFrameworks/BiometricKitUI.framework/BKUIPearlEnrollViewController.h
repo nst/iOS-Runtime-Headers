@@ -27,8 +27,10 @@
     BKIdentity * _identity;
     bool  _inBuddy;
     bool  _inDemo;
+    UILayoutGuide * _instructionBaselineLayoutGuide;
     BKUIPearlInstructionView * _instructionView;
     NSArray * _instructionViewConstraints;
+    bool  _isDisplayZoomEnabled;
     NSDate * _lastFaceFoundDate;
     _UIBackdropView * _lightTrayBackdrop;
     UIButton * _nextStateButton;
@@ -63,18 +65,21 @@
 @property (nonatomic, retain) BKIdentity *identity;
 @property (nonatomic) bool inBuddy;
 @property (nonatomic) bool inDemo;
+@property (nonatomic, retain) UILayoutGuide *instructionBaselineLayoutGuide;
+@property (nonatomic) bool isDisplayZoomEnabled;
 @property (nonatomic, readonly) int state;
 @property (readonly) Class superclass;
 
 + (id)_entryAnimationImages;
 + (bool)_shouldShowAccessibilityOptionForState:(int)arg1 poseStatus:(id)arg2;
-+ (bool)_shouldShowEscapeHatchForState:(int)arg1 inBuddy:(bool)arg2;
++ (bool)_shouldShowEscapeHatchForState:(int)arg1 inBuddy:(bool)arg2 inDemo:(bool)arg3;
 + (void)preloadWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)_checkForCompletion;
 - (void)_cleanUpHaptics;
 - (void)_cleanupEnroll;
+- (void)_cleanupEnroll:(bool)arg1;
 - (void)_cleanupSound;
 - (void)_configureInstructionView:(id)arg1 forState:(int)arg2 substate:(int)arg3;
 - (id)_constraintsForInstructionView:(id)arg1 state:(int)arg2 position:(long long)arg3;
@@ -97,6 +102,7 @@
 - (void)_updateLeftBarButtonItem;
 - (bool)_validateEnrolledPoses:(id)arg1;
 - (void)animateInstruction;
+- (void)animateWithOrientation:(long long)arg1;
 - (void)cancelEnroll;
 - (id)credential;
 - (bool)darkBackground;
@@ -119,10 +125,13 @@
 - (void)fadeCurrentSound:(double)arg1 completion:(id /* block */)arg2;
 - (void)finalizeInstructionAnimation;
 - (id)getAuthContextForCredentialError:(id*)arg1;
+- (id)getEnrollview;
 - (id)identity;
 - (bool)inBuddy;
 - (bool)inDemo;
 - (id)initWithPreloadedState:(id)arg1;
+- (id)instructionBaselineLayoutGuide;
+- (bool)isDisplayZoomEnabled;
 - (void)nextStateButtonPressed:(id)arg1;
 - (void)operation:(id)arg1 faceDetectStateChanged:(id)arg2;
 - (void)playHaptic:(unsigned long long)arg1 withDelay:(double)arg2 gain:(double)arg3;
@@ -137,10 +146,13 @@
 - (void)setDarkBackground:(bool)arg1;
 - (void)setDarkBackground:(bool)arg1 animated:(bool)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setEnrollMovieViewHidden:(bool)arg1;
 - (void)setEnrollViewTopConstraint:(id)arg1;
 - (void)setIdentity:(id)arg1;
 - (void)setInBuddy:(bool)arg1;
 - (void)setInDemo:(bool)arg1;
+- (void)setInstructionBaselineLayoutGuide:(id)arg1;
+- (void)setIsDisplayZoomEnabled:(bool)arg1;
 - (void)setSplashImageView:(id)arg1;
 - (void)setState:(int)arg1 animated:(bool)arg2;
 - (void)setState:(int)arg1 animated:(bool)arg2 afterDelay:(double)arg3;

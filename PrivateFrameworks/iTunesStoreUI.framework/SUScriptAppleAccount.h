@@ -33,6 +33,7 @@
 - (id)nativeAccountStore;
 - (void)reload;
 - (id)scriptAttributeKeys;
+- (void)setAgeVerificationExpirationDate:(id)arg1 completionHandler:(id)arg2;
 - (id)username;
 
 @end

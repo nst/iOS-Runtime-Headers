@@ -38,6 +38,7 @@
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSString *titleDisallowingEmptyString;
 @property (nonatomic, readonly, copy) NSString *uniqueID;
+@property (nonatomic, readonly) bool uploaded;
 @property (nonatomic, readonly, copy) NSURL *url;
 
 + (id)localizedStringForRecordingLabel:(long long)arg1;
@@ -91,6 +92,7 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)titleDisallowingEmptyString;
+- (bool)uploaded;
 - (id)url;
 - (void)willChangeValueForKey:(id)arg1;
 - (void)willSave;

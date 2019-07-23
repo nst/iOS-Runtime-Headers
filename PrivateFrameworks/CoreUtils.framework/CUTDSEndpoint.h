@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@interface CUTDSEndpoint : NSObject {
+@interface CUTDSEndpoint : NSObject <NSSecureCoding> {
     int  _dataLinkType;
     NSData * _deviceAddress;
     NSString * _serviceType;
@@ -12,10 +12,14 @@
 @property (nonatomic, copy) NSData *deviceAddress;
 @property (nonatomic, copy) NSString *serviceType;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (int)dataLinkType;
 - (id)description;
 - (id)deviceAddress;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)serviceType;
 - (void)setDataLinkType:(int)arg1;
 - (void)setDeviceAddress:(id)arg1;

@@ -16,6 +16,8 @@
 - (void)stream:(AVCAudioStream *)arg1 didStartSynchronizer:(bool)arg2 error:(NSError *)arg3;
 - (void)stream:(AVCAudioStream *)arg1 updateInputFrequencyLevel:(NSData *)arg2;
 - (void)stream:(AVCAudioStream *)arg1 updateOutputFrequencyLevel:(NSData *)arg2;
+- (void)streamDidInterruptionBegin:(AVCAudioStream *)arg1;
+- (void)streamDidInterruptionEnd:(AVCAudioStream *)arg1;
 - (void)streamDidRTCPTimeOut:(AVCAudioStream *)arg1;
 - (void)streamDidRTPTimeOut:(AVCAudioStream *)arg1;
 - (void)streamDidServerDie:(AVCAudioStream *)arg1;

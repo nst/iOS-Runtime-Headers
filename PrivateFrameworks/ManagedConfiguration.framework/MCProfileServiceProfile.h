@@ -30,7 +30,7 @@
 - (id)description;
 - (id)deviceAttributes;
 - (id)enrollmentIdentityPersistentID;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (id)initWithDictionary:(id)arg1 signerCerts:(id)arg2 allowEmptyPayload:(bool)arg3 outError:(id*)arg4;
 - (id)localizedManagedPayloadSummaryByType;
 - (id)localizedPayloadSummaryByType;
 - (id)managedPayloads;

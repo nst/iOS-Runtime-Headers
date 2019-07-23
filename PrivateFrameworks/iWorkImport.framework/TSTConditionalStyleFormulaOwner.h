@@ -3,7 +3,7 @@
  */
 
 @interface TSTConditionalStyleFormulaOwner : NSObject <TSCEFormulaOwning> {
-    TSCECalculationEngine * _calculationEngine;
+    TSCECalculationEngine * _calcEngine;
     TSCECellCoordinateVector * _cellsToInvalidate;
     struct UUIDData<TSP::UUIDData> { 
         union { 
@@ -32,6 +32,66 @@
             } ; 
         } ; 
     }  _ownerUID;
+    struct TSCESubFormulaOwnerID { 
+        struct UUIDData<TSP::UUIDData> { 
+            union { 
+                unsigned char _uuid[16]; 
+                struct { 
+                    unsigned char byte0; 
+                    unsigned char byte1; 
+                    unsigned char byte2; 
+                    unsigned char byte3; 
+                    unsigned char byte4; 
+                    unsigned char byte5; 
+                    unsigned char byte6; 
+                    unsigned char byte7; 
+                    unsigned char byte8; 
+                    unsigned char byte9; 
+                    unsigned char byte10; 
+                    unsigned char byte11; 
+                    unsigned char byte12; 
+                    unsigned char byte13; 
+                    unsigned char byte14; 
+                    unsigned char byte15; 
+                } _cfuuid; 
+                struct { 
+                    unsigned long long _lower; 
+                    unsigned long long _upper; 
+                } ; 
+            } ; 
+        } _baseOwnerUID; 
+        unsigned short _ownerIndex; 
+    }  _planeUID;
+    struct TSCESubFormulaOwnerID { 
+        struct UUIDData<TSP::UUIDData> { 
+            union { 
+                unsigned char _uuid[16]; 
+                struct { 
+                    unsigned char byte0; 
+                    unsigned char byte1; 
+                    unsigned char byte2; 
+                    unsigned char byte3; 
+                    unsigned char byte4; 
+                    unsigned char byte5; 
+                    unsigned char byte6; 
+                    unsigned char byte7; 
+                    unsigned char byte8; 
+                    unsigned char byte9; 
+                    unsigned char byte10; 
+                    unsigned char byte11; 
+                    unsigned char byte12; 
+                    unsigned char byte13; 
+                    unsigned char byte14; 
+                    unsigned char byte15; 
+                } _cfuuid; 
+                struct { 
+                    unsigned long long _lower; 
+                    unsigned long long _upper; 
+                } ; 
+            } ; 
+        } _baseOwnerUID; 
+        unsigned short _ownerIndex; 
+    }  _subOwnerID;
     TSTTableModel * _tableModel;
 }
 
@@ -39,6 +99,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } ownerUID;
+@property (nonatomic) struct TSCESubFormulaOwnerID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; unsigned short x2; } subOwnerID;
 @property (readonly) Class superclass;
 @property (nonatomic) TSTTableModel *tableModel;
 
@@ -53,15 +114,17 @@
 - (id)initWithTableModel:(id)arg1 ownerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg2;
 - (void)invalidateForCalcEngine:(id)arg1;
 - (id)linkedResolver;
-- (int)ownerKind;
+- (unsigned short)ownerKind;
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })ownerUID;
 - (struct { bool x1; bool x2; bool x3; })recalculateForCalcEngine:(id)arg1 atFormulaCoord:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2 recalcOptions:(struct { bool x1; bool x2; })arg3;
-- (int)registerWithCalcEngine:(id)arg1;
+- (int)registerWithCalcEngine:(id)arg1 baseOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg2;
 - (void)removeFormulaAtCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1;
 - (void)removeFormulasInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (void)replaceFormulaForConditionalStyle:(id)arg1 atCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 - (void)setOwnerUID:(struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })arg1;
+- (void)setSubOwnerID:(struct TSCESubFormulaOwnerID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; unsigned short x2; })arg1;
 - (void)setTableModel:(id)arg1;
+- (struct TSCESubFormulaOwnerID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; unsigned short x2; })subOwnerID;
 - (id)tableModel;
 - (void)unregisterFromCalcEngine;
 - (void)writeResultsForCalcEngine:(id)arg1;

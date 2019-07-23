@@ -35,7 +35,9 @@
 - (unsigned long long)powerAssertionRetainCount:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;
 - (void)releasePowerAssertion:(id)arg1;
+- (void)releaseWifiAssertion;
 - (void)retainPowerAssertion:(id)arg1 withGroupIdentifier:(id)arg2;
+- (void)retainWifiAssertion;
 - (void)setContextToGroupIdentifier:(id)arg1;
 - (void)setContextToPowerAssertionRef:(id)arg1;
 - (void)setContexts:(id)arg1;

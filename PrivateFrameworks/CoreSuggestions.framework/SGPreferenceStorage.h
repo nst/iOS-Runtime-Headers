@@ -8,6 +8,7 @@
 + (bool)allowGeocode;
 + (bool)alwaysShowCancelledEvents;
 + (id)cloudKitPersistedState;
++ (float)contactSharingNegativeSamplingRate;
 + (id)defaults;
 + (id)defaultsForTests;
 + (bool)detectContacts;
@@ -26,6 +27,7 @@
 + (void)setAllowGeocodeForTests:(bool)arg1;
 + (void)setAlwaysShowCancelledEvents:(bool)arg1;
 + (void)setCloudKitPersistedState:(id)arg1;
++ (void)setContactSharingNegativeSamplingRate:(float)arg1;
 + (void)setContactsDetectionEnabledForTests:(bool)arg1;
 + (void)setDetectContacts:(bool)arg1;
 + (void)setDetectNLEvents:(bool)arg1;
@@ -49,6 +51,7 @@
 + (void)setStructuredEventsDetectionEnabledForTests:(bool)arg1;
 + (void)setSyncHistoryToCloud:(bool)arg1;
 + (void)setSyncHistoryToCloudForTests:(bool)arg1;
++ (void)setUseMLModelForContactSharing:(bool)arg1;
 + (void)setUseMLModelForContacts:(bool)arg1;
 + (void)setUseMLModelForSelfId:(bool)arg1;
 + (void)setUseMLModelForSelfIdForTests:(bool)arg1;
@@ -61,6 +64,7 @@
 + (bool)syncHistoryToCloud;
 + (void)updateBoolSettingKey:(id)arg1 withValue:(bool)arg2;
 + (void)updateIntSettingKey:(id)arg1 withValue:(int)arg2;
++ (bool)useMLModelForContactSharing;
 + (bool)useMLModelForContacts;
 + (bool)useMLModelForSelfId;
 

@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DFramebuffer : NSObject {
+@interface TSCH3DFramebuffer : NSObject <TSCH3DPipelineLinkable> {
+    unsigned long long  _uniqueIdentifier;
     struct FramebufferAttributes { 
         int type; 
         long long samples; 
@@ -11,13 +12,25 @@
         int depthDataType; 
         bool linearFilter; 
         bool discardHint; 
+        bool useIOSurfaceBacking; 
     }  mFramebufferAttributes;
 }
 
-+ (id)framebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)arg1;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long uniqueIdentifier;
+
++ (id)framebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; bool x8; }*)arg1;
 
 - (id).cxx_construct;
-- (const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)framebufferAttributes;
-- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)arg1;
+- (void)dealloc;
+- (const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; bool x8; }*)framebufferAttributes;
+- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; bool x8; }*)arg1;
+- (id)output;
+- (id)pixelBufferFromViewport:(const struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; }*)arg1 components:(unsigned long long)arg2 flipped:(bool)arg3 forProcessor:(id)arg4 session:(id)arg5;
+- (id)resolvingFramebuffer;
+- (unsigned long long)uniqueIdentifier;
 
 @end

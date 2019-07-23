@@ -14,7 +14,10 @@
         unsigned long long *sectionToIndex; 
     }  _currentMap;
     unsigned long long  _numberOfSections;
+    bool  _useRoundedInsetSections;
 }
+
+@property (nonatomic) bool useRoundedInsetSections;
 
 - (bool)_recomputeMappedSections;
 - (void)_swapBuffers;
@@ -36,10 +39,12 @@
 - (long long)rowAnimationForInsertingSection:(unsigned long long)arg1;
 - (long long)rowAnimationForReloadingSection:(unsigned long long)arg1;
 - (unsigned long long)sectionForIndex:(unsigned long long)arg1;
+- (void)setUseRoundedInsetSections:(bool)arg1;
 - (bool)shouldMapSection:(unsigned long long)arg1;
 - (void)updateSectionVisibilityAndReloadIfNecessaryForAllSections;
 - (void)updateSectionVisibilityAndReloadIfNecessaryForSection:(unsigned long long)arg1;
 - (void)updateSectionVisibilityAndReloadIfNecessaryForSections:(id)arg1;
+- (bool)useRoundedInsetSections;
 - (void)viewDidLoad;
 
 @end

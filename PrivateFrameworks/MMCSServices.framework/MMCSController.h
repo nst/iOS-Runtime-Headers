@@ -29,6 +29,7 @@
 - (id)_MMCSICloudRequestHeadersCopy:(struct __CFString { }*)arg1;
 - (void)_MMCSRegisterItems:(struct _mmcs_engine { }*)arg1 requestorContext:(void*)arg2 requestOptions:(id)arg3 completionCallback:(int (*)arg4;
 - (void)_addPreauthorizationOptions:(id)arg1 forFiles:(id)arg2;
+- (void)_cancelRequest:(id)arg1;
 - (struct _mmcs_engine { }*)_engine;
 - (void)_getItemCompleted:(id)arg1 path:(id)arg2 error:(id)arg3;
 - (void)_getItemUpdated:(id)arg1 progress:(double)arg2 state:(int)arg3 error:(id)arg4;

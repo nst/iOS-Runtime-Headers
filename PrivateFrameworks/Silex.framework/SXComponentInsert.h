@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)component;
 - (id)componentLayout;
+- (id)description;
 - (id)initWithComponent:(id)arg1 componentLayout:(id)arg2;
 
 @end

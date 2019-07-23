@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) NSError *error;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool outputObscuredDueToInsufficientExternalProtection;
+@property (nonatomic) bool preventsCapture;
 @property (getter=isReadyForMoreMediaData, readonly) bool readyForMoreMediaData;
 @property (nonatomic, readonly) long long status;
 @property (readonly) Class superclass;
@@ -53,9 +54,11 @@
 - (id)init;
 - (bool)isReadyForMoreMediaData;
 - (bool)outputObscuredDueToInsufficientExternalProtection;
+- (bool)preventsCapture;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
+- (void)setPreventsCapture:(bool)arg1;
 - (bool)setRenderSynchronizer:(id)arg1 error:(id*)arg2;
 - (void)setVideoGravity:(id)arg1;
 - (long long)status;

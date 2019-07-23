@@ -39,8 +39,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIKBThemedView *themedView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)annotationFont;
 + (id)attributedStringForIcon:(id)arg1 text:(id)arg2 font:(id)arg3 color:(id)arg4;
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cacheInsets;
@@ -54,9 +52,6 @@
 
 - (void).cxx_destruct;
 - (void)_setRenderConfig:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)annotationLabel;
 - (id)annotationText;
 - (void)applyLayoutAttributes:(id)arg1;

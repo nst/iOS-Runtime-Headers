@@ -12,7 +12,7 @@
     <AVTUILogger> * _logger;
     NSObject<OS_dispatch_queue> * _presetQueue;
     AVTAvatarConfigurationImageRenderer * _renderer;
-    <AVTScheduler> * _renderingScheduler;
+    <AVTTaskScheduler> * _renderingScheduler;
 }
 
 @property (nonatomic, readonly) <AVTImageCache> *cache;
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) <AVTUILogger> *logger;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *presetQueue;
 @property (nonatomic, readonly) AVTAvatarConfigurationImageRenderer *renderer;
-@property (nonatomic, readonly) <AVTScheduler> *renderingScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
 @property (readonly) Class superclass;
 
 + (id)configurationToRenderForPreset:(id)arg1 overrides:(id)arg2 baseConfiguration:(id)arg3;

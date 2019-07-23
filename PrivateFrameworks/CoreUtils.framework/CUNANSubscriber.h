@@ -14,11 +14,16 @@
     bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     NSString * _label;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _mutex;
     NSString * _serviceType;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
 }
 
 @property (nonatomic) unsigned int changeFlags;
+@property (readonly, copy) NSArray *discoveredEndpoints;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ endpointChangedHandler;
 @property (nonatomic, copy) id /* block */ endpointFoundHandler;
@@ -37,6 +42,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLevel:(int)arg1;
+- (id)discoveredEndpoints;
 - (id)dispatchQueue;
 - (id /* block */)endpointChangedHandler;
 - (id /* block */)endpointFoundHandler;

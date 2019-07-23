@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.StagingAreaViewControllerLayout : SwiftObject {
+@interface ConversationKit.StagingAreaViewControllerLayout : Swift._SwiftObject {
     void currentConstraints;
+    void effectsConstraintManagers;
     void stateConstraints;
 }
 

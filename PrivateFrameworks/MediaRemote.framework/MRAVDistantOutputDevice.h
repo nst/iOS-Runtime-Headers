@@ -19,6 +19,7 @@
 - (bool)canFetchMediaDataFromSender;
 - (bool)canPlayEncryptedProgressiveDownloadAssets;
 - (bool)canRelayCommunicationChannel;
+- (id)description;
 - (id)descriptor;
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
@@ -30,6 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
 - (id)initWithSkeleton:(id)arg1;
+- (bool)isAddedToHomeKit;
 - (bool)isAirPlayReceiverSessionActive;
 - (bool)isDeviceGroupable;
 - (bool)isGroupLeader;
@@ -51,5 +53,6 @@
 - (bool)supportsExternalScreen;
 - (id)uid;
 - (float)volume;
+- (unsigned int)volumeCapabilities;
 
 @end

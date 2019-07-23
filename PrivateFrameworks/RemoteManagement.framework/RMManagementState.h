@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (bool)cachedIsRestrictionsPasscodeSet;
 - (bool)cachedShouldRequestMoreTime;
+- (bool)clearRestrictionsPasscodeWithError:(id*)arg1;
 - (id)connection;
 - (void)dealloc;
 - (id)init;

@@ -4,6 +4,7 @@
 
 @interface _LSStringLocalizer : NSObject {
     NSArray * _bundleLocalizations;
+    bool  _isDifferentInChina;
     bool  _isMainBundle;
     NSString * _stringsFile;
     NSMutableDictionary * _stringsFileContent;
@@ -13,6 +14,7 @@
 
 + (id)coreTypesLocalizer;
 + (id)frameworkBundleLocalizer;
++ (bool)isChinaSKU;
 + (id)preferredLocalizationsForXCTests;
 + (id)queue;
 + (void)setPreferredLocalizationsForXCTests:(id)arg1;

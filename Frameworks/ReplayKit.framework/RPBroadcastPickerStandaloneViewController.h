@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)dismissAfter:(double)arg1;
+- (void)loadViewControllerWithBundleIdentifier:(id)arg1 showMicrophoneButton:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)presentAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)viewControllerDidFinish;

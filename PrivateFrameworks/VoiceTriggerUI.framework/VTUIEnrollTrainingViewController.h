@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUIEnrollTrainingViewController : UIViewController <AFMyriadDelegate, AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate, VTUITrainingManagerDelegate> {
+@interface VTUIEnrollTrainingViewController : UIViewController <AFMyriadDelegate, AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, CSVTUITrainingManagerDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate> {
     unsigned long long  _AVVCRetryCount;
     UIView * _aboutTappedSender;
     VTUIAudioHintPlayer * _audioHintPlayer;
@@ -37,7 +37,7 @@
     UILabel * _statusLabel;
     VTUIEnrollmentSuccessView * _successView;
     VTUITickMarkView * _tickMark;
-    VTUITrainingManager * _trainingManager;
+    CSVTUITrainingManager * _trainingManager;
     NSArray * _trainingPageInstructions;
 }
 
@@ -67,7 +67,7 @@
 @property (nonatomic, retain) VTUIEnrollmentSuccessView *successView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VTUITickMarkView *tickMark;
-@property (nonatomic, retain) VTUITrainingManager *trainingManager;
+@property (nonatomic, retain) CSVTUITrainingManager *trainingManager;
 @property (nonatomic, retain) NSArray *trainingPageInstructions;
 
 - (void).cxx_destruct;
@@ -93,6 +93,7 @@
 - (bool)_hasPHSCloudDataForSpokenLanguage;
 - (void)_hideInstruction;
 - (bool)_isLocaleSupported:(id)arg1;
+- (bool)_isTrainingInProgress;
 - (void)_logAggdCount:(long long)arg1 forKey:(id)arg2;
 - (void)_logAggdScalar:(long long)arg1 forKey:(id)arg2;
 - (void)_presentRadarView;
@@ -154,7 +155,7 @@
 - (bool)hasRetriedTraining;
 - (id)init;
 - (id)instructionPagedLabel;
-- (id)interpretAudioSource:(int)arg1;
+- (id)interpretAudioSource:(unsigned long long)arg1;
 - (long long)interpretSessionManagerStatus:(int)arg1 forInstruction:(long long)arg2;
 - (id)introView;
 - (id)languageOptionsView;

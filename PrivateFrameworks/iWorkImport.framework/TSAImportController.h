@@ -19,6 +19,7 @@
     NSMutableSet * _importWarnings;
     <TSKImporter> * _importer;
     NSObject<OS_dispatch_group> * _passphraseCompletionGroup;
+    <TSADocumentPassphraseProvider> * _passphraseProvider;
     NSOperationQueue * _presentedItemOperationQueue;
     NSURL * _presentedItemURL;
     TSUProgressContext * _progressContext;
@@ -52,6 +53,7 @@
 @property (nonatomic, readonly) bool isImportCancelled;
 @property (nonatomic, readonly) bool isPasswordProtected;
 @property (readonly) NSSet *observedPresentedItemUbiquityAttributes;
+@property (nonatomic) <TSADocumentPassphraseProvider> *passphraseProvider;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
@@ -83,8 +85,8 @@
 - (void)dealloc;
 - (id)defaultDraftName;
 - (id)delegate;
-- (void)didSaveImportedDocumentWithPassphrase:(id)arg1;
 - (id)documentContext;
+- (id)documentProvider;
 - (long long)documentTypeCategory;
 - (id)error;
 - (id)fileURL;
@@ -106,6 +108,7 @@
 - (bool)needsFileCoordination;
 - (id)packageDataForWrite;
 - (long long)packageType;
+- (id)passphraseProvider;
 - (void)prepareForImportDisplayingProgress:(bool)arg1;
 - (void)presentPersistenceError:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
@@ -121,8 +124,8 @@
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFileURL:(id)arg1;
+- (void)setPassphraseProvider:(id)arg1;
 - (void)setProgressContext:(id)arg1;
-- (id)sharingStateForContext:(id)arg1;
 - (bool)shouldUpdateAdditionalResourceRequestsAfterImport;
 - (void)showProgressIfNeededForURL:(id)arg1;
 - (id)sourcePath;

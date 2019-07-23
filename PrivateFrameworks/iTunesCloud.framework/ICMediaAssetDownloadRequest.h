@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSURL *destinationURL;
 @property (getter=isDiscretionary, nonatomic) bool discretionary;
 @property (nonatomic) bool requiresPower;
-@property (nonatomic, retain) NSData *resumeData;
+@property (nonatomic, copy) NSData *resumeData;
 
 - (void).cxx_destruct;
 - (id)_sessionIdentifier;

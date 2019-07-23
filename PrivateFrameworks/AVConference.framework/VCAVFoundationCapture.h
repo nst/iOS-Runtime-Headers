@@ -60,7 +60,6 @@
 - (bool)cameraSupportsNoQueueFormatWidth:(int)arg1 height:(int)arg2;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
 - (void)captureSessionNotification:(id)arg1;
-- (void)cleanupOutputs;
 - (void)configureCaptureDeviceDepthFormat;
 - (int)copyColorInfo:(const struct __CFDictionary {}**)arg1;
 - (struct __CVBuffer { }*)copyPixelBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -76,6 +75,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })frameDurationForVideoDeviceFormat:(id)arg1 frameRate:(int)arg2;
 - (struct CGSize { double x1; double x2; })getBestCaptureSizeForEncodingSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)getCameraUID;
+- (int)getMaxAllowedFrameRate:(int)arg1;
 - (int)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(bool)arg3;
 - (id)initWithCaptureServer:(id)arg1 width:(int)arg2 height:(int)arg3 frameRate:(int)arg4 cameraUID:(id)arg5;
 - (void)initializeDepthDataOutput;

@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) bool hasAnyHistoryItems;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double historyAgeLimit;
+@property (nonatomic, copy) NSData *longLivedSaveOperationData;
 @property (nonatomic, readonly) unsigned long long numberOfHistoryItems;
 @property (nonatomic, readonly) unsigned long long numberOfHistoryItemsOnHistoryQueue;
 @property (nonatomic) bool pushNotificationsAreInitialized;
@@ -97,6 +98,7 @@
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(bool)arg4 wasFailure:(bool)arg5 increaseVisitCount:(bool)arg6 origin:(long long)arg7 attributes:(unsigned long long)arg8;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 wasHTTPNonGet:(bool)arg3 wasFailure:(bool)arg4 increaseVisitCount:(bool)arg5;
 - (id)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
+- (id)longLivedSaveOperationData;
 - (unsigned long long)numberOfHistoryItems;
 - (unsigned long long)numberOfHistoryItemsOnHistoryQueue;
 - (void)performBlockAfterHistoryHasLoaded:(id /* block */)arg1;
@@ -107,13 +109,14 @@
 - (id)pushThrottlerData;
 - (void)removeAttributes:(unsigned long long)arg1 fromVisit:(id)arg2;
 - (void)removeItemsInResponseToUserAction:(id)arg1;
-- (void)replayAndAddTombstone:(id)arg1;
+- (void)replayAndAddTombstones:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetCloudHistoryDataWithCompletionHandler:(id /* block */)arg1;
 - (void)savePendingChangesBeforeTerminationWithCompletionHandler:(id /* block */)arg1;
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned long long)arg1;
 - (void)setFetchThrottlerData:(id)arg1;
 - (void)setHistoryAgeLimit:(double)arg1;
 - (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned long long)arg2;
+- (void)setLongLivedSaveOperationData:(id)arg1;
 - (void)setPushNotificationsAreInitialized:(bool)arg1;
 - (void)setPushThrottlerData:(id)arg1;
 - (void)setServerChangeTokenData:(id)arg1;

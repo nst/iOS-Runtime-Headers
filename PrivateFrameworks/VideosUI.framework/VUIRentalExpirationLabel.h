@@ -14,10 +14,11 @@
 @property (nonatomic, retain) NSTimer *expiryUpdateTimer;
 @property (nonatomic, copy) NSString *formatString;
 
++ (id)_calculateExpirationStringForDate:(id)arg1 displayWarningColor:(bool*)arg2 updateInterval:(long long*)arg3 formatString:(id)arg4;
++ (id)calculateExpirationStringForDate:(id)arg1 updateInterval:(long long*)arg2 formatString:(id)arg3;
 + (id)labelWithExpirationDate:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3 formatString:(id)arg4;
 
 - (void).cxx_destruct;
-- (id)_calculateExpirationStringForDate:(id)arg1 displayWarningColor:(bool*)arg2 updateInterval:(long long*)arg3 formatString:(id)arg4;
 - (void)_computeExpirationLabel:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

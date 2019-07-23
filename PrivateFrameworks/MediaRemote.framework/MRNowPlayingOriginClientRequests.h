@@ -4,8 +4,10 @@
 
 @interface MRNowPlayingOriginClientRequests : NSObject <MRNowPlayingClientState> {
     _MRDeviceInfoMessageProtobuf * _deviceInfo;
+    NSMutableArray * _deviceInfoCompletions;
     NSMutableArray * _nowPlayingClients;
     _MROriginProtobuf * _origin;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSMutableDictionary * _transactionCallbacks;
     float  _volume;
@@ -14,6 +16,7 @@
 
 @property (nonatomic, copy) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, readonly) _MROriginProtobuf *origin;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic) float volume;
 @property (nonatomic) unsigned int volumeCapabilities;
 
@@ -21,10 +24,12 @@
 - (id)debugDescription;
 - (id)deviceInfo;
 - (id)existingNowPlayingClientRequestsForPlayerPath:(id)arg1;
+- (void)handleDeviceInfoRequestWithCompletion:(id /* block */)arg1;
 - (id)initWithOrigin:(id)arg1;
 - (id)nowPlayingClientRequestsForPlayerPath:(id)arg1;
 - (id)nowPlayingClients;
 - (id)origin;
+- (id)playerPath;
 - (void)removeClient:(id)arg1;
 - (void)restoreNowPlayingClientState;
 - (void)setDeviceInfo:(id)arg1;

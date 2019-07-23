@@ -6,8 +6,12 @@
     NSString * _backupDeviceID;
     NSString * _backupDeviceUDID;
     NSString * _backupDeviceUUID;
+    struct { 
+        unsigned int originalLibrarySize : 1; 
+    }  _has;
     NSString * _iCPLDeviceID;
     NSString * _mPSDeviceID;
+    long long  _originalLibrarySize;
 }
 
 @property (nonatomic, retain) NSString *backupDeviceID;
@@ -18,8 +22,10 @@
 @property (nonatomic, readonly) bool hasBackupDeviceUUID;
 @property (nonatomic, readonly) bool hasICPLDeviceID;
 @property (nonatomic, readonly) bool hasMPSDeviceID;
+@property (nonatomic) bool hasOriginalLibrarySize;
 @property (nonatomic, retain) NSString *iCPLDeviceID;
 @property (nonatomic, retain) NSString *mPSDeviceID;
+@property (nonatomic) long long originalLibrarySize;
 
 - (void).cxx_destruct;
 - (id)backupDeviceID;
@@ -34,17 +40,21 @@
 - (bool)hasBackupDeviceUUID;
 - (bool)hasICPLDeviceID;
 - (bool)hasMPSDeviceID;
+- (bool)hasOriginalLibrarySize;
 - (unsigned long long)hash;
 - (id)iCPLDeviceID;
 - (bool)isEqual:(id)arg1;
 - (id)mPSDeviceID;
 - (void)mergeFrom:(id)arg1;
+- (long long)originalLibrarySize;
 - (bool)readFrom:(id)arg1;
 - (void)setBackupDeviceID:(id)arg1;
 - (void)setBackupDeviceUDID:(id)arg1;
 - (void)setBackupDeviceUUID:(id)arg1;
+- (void)setHasOriginalLibrarySize:(bool)arg1;
 - (void)setICPLDeviceID:(id)arg1;
 - (void)setMPSDeviceID:(id)arg1;
+- (void)setOriginalLibrarySize:(long long)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

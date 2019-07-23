@@ -56,8 +56,6 @@
 @property (setter=_setSelectionBarRow:, nonatomic) long long selectionBarRow;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_anyDateLabel;
 - (bool)_beginTrackingWithEvent:(id)arg1;
@@ -94,11 +92,8 @@
 - (double)_yRangingFromZeroTo:(double)arg1 forUnitY:(double)arg2;
 - (double)_zCoordinateForYCoordinate:(double)arg1;
 - (double)_zForUnitY:(double)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct CGPoint { double x1; double x2; })contentOffsetForRowAtIndexPath:(id)arg1;
+- (void)dealloc;
 - (bool)didSelectDisabled:(bool)arg1;
 - (bool)generatorActivated;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2 visibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;

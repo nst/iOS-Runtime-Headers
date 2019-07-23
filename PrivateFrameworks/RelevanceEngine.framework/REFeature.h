@@ -50,6 +50,7 @@
 + (id)sentimentAnalysisFeature;
 + (id)sessionFeature;
 + (id)siriActionDailyAveragePerformedCountFeature;
++ (id)siriActionHasRelevanceProvidersFeature;
 + (id)siriActionPerformedCountFeature;
 + (id)siriActionRoleFeature;
 + (id)siriDomainFeature;

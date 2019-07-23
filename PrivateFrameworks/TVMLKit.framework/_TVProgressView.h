@@ -5,41 +5,66 @@
 @interface _TVProgressView : UIView {
     UIColor * _completeTintColor;
     double  _cornerRadius;
+    UIColor * _gradientEndColor;
+    UIColor * _gradientStartColor;
     UIVisualEffectView * _materialView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
     double  _progress;
     _TVProgressBarView * _progressBarView;
     UIColor * _progressTintColor;
     UIImageView * _shadowImageView;
+    bool  _shouldProgressBarUseRoundCorner;
     long long  _style;
     bool  _useMaterial;
 }
 
 @property (nonatomic, retain) UIColor *completeTintColor;
 @property (nonatomic) double cornerRadius;
+@property (nonatomic, retain) UIColor *gradientEndColor;
+@property (nonatomic, retain) UIColor *gradientStartColor;
+@property (nonatomic, retain) UIVisualEffectView *materialView;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic) double progress;
 @property (nonatomic, retain) UIColor *progressTintColor;
 @property (nonatomic, retain) UIImageView *shadowImageView;
+@property (nonatomic) bool shouldProgressBarUseRoundCorner;
 @property (nonatomic) long long style;
 @property (nonatomic) bool useMaterial;
 
 - (void).cxx_destruct;
+- (void)_layoutMaterialView;
 - (id)_maskImageForProgressBar;
 - (void)_updateForStyleChange;
 - (id)completeTintColor;
 - (double)cornerRadius;
+- (id)gradientEndColor;
+- (id)gradientStartColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)materialView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (double)progress;
 - (id)progressTintColor;
 - (void)setCompleteTintColor:(id)arg1;
 - (void)setCornerRadius:(double)arg1;
+- (void)setGradientEndColor:(id)arg1;
+- (void)setGradientStartColor:(id)arg1;
+- (void)setMaterialView:(id)arg1;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setProgress:(double)arg1;
 - (void)setProgressTintColor:(id)arg1;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)setShadowImageView:(id)arg1;
+- (void)setShouldProgressBarUseRoundCorner:(bool)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setUseMaterial:(bool)arg1;
 - (id)shadowImageView;
+- (bool)shouldProgressBarUseRoundCorner;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)style;
 - (bool)useMaterial;

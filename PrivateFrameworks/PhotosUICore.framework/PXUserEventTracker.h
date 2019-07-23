@@ -33,7 +33,9 @@
 - (void)didFavoriteMemory;
 - (void)didFinishViewingDetailsWithCurrentContext:(id)arg1;
 - (void)didFinishViewingMemoriesFeedView;
+- (void)didNavigateInOneUpFromOrigin:(long long)arg1;
 - (void)didPlayMiroMovieForAssetCollection:(id)arg1;
+- (void)didPresentOneUpFromOrigin:(long long)arg1;
 - (void)didViewDetailsForAssetCollection:(id)arg1;
 - (id)init;
 - (bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
@@ -62,7 +64,6 @@
 - (void)logForYouMemoriesFeedCount;
 - (void)logForYouNavigatedToSharedAlbumActivityViewFromCollageView;
 - (void)logForYouNavigatedToSharedAlbumActivityViewFromRecentActivityEntry;
-- (void)logForYouSharedAlbumActivityViewed1UpCount;
 - (void)logForYouSharedAlbumInvitationAcceptedCount;
 - (void)logForYouSharedAlbumInvitationDeclinedCount;
 - (void)logForYouSharedAlbumInvitationReportedAsJunkCount;

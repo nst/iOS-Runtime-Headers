@@ -61,6 +61,7 @@
 - (long long)_getNumberOfCoordinates;
 - (void)_loadFeatureVector:(struct vector<unsigned long long, std::__1::allocator<unsigned long long> > { unsigned long long *x1; unsigned long long *x2; struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long> > { unsigned long long *x_3_1_1; } x3; }*)arg1 fromFeatureMap:(id)arg2;
 - (bool)_loadModelFromURL:(id)arg1 error:(id*)arg2;
+- (unsigned long long)_maxFeatureCoordinates;
 - (id)_predictWithFeatures:(id)arg1;
 - (bool)_saveDebugModelToURL:(id)arg1 error:(id*)arg2;
 - (bool)_saveModelToURL:(id)arg1 error:(id*)arg2;
@@ -68,5 +69,6 @@
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (void)collectLoggableState:(id /* block */)arg1;
 - (id)initWithFeatureSet:(id)arg1;
+- (void)logCoreAnalyticsMetrics;
 
 @end

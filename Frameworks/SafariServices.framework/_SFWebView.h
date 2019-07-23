@@ -13,6 +13,7 @@
         double right; 
     }  _hitTestInsets;
     long long  _navigationGesturePolicy;
+    double  _placeholderOffset;
     UIImageView * _placeholderView;
     NSTimer * _placeholderViewRemovalTimer;
 }
@@ -55,6 +56,7 @@
 - (void)setHitTestInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNavigationGesturePolicy:(long long)arg1;
 - (void)setPlaceholderImage:(id)arg1;
+- (void)setPlaceholderImage:(id)arg1 offset:(double)arg2;
 - (int)webProcessIDForDialogController:(id)arg1;
 
 @end

@@ -24,13 +24,16 @@
 - (id)blueLightSchedule:(id)arg1;
 - (id)boldTextEnabledForSpecifier:(id)arg1;
 - (void)brightnessChangedExternally;
+- (id)connectedDisplaySpecifiers;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
 - (id)getAutoWhiteBalanceEnabled:(id)arg1;
-- (void)handleBlueLightStatusChanged:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; }*)arg1;
+- (void)handleBlueLightStatusChanged:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; bool x7; }*)arg1;
 - (void)handleBrightnessChangedNotification:(id)arg1;
+- (void)handlePSUIExternalDisplayManagerCurrentModeDidChangeNotification:(id)arg1;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)insertExternalDisplaySpecifiers;
 - (id)localizedMagnifyModeName;
 - (id)localizedTimeForTime:(struct { int x1; int x2; })arg1;
 - (id)lockGroupFooter;
@@ -39,6 +42,7 @@
 - (void)presentModalMagnifyController;
 - (void)profileNotification:(id)arg1;
 - (void)reloadBlueLightSpecifiers;
+- (void)removeExternalDisplaySpecifiers;
 - (id)screenLock:(id)arg1;
 - (void)setAutoWhiteBalanceEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setBacklightValue:(id)arg1 specifier:(id)arg2;

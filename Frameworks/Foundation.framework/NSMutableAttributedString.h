@@ -64,6 +64,16 @@
 - (double)scaleNumericAttribute:(id)arg1 byAmount:(double)arg2;
 - (void)scaleToFitWidth:(double)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)hk_attributedStringForText:(id)arg1 style:(id)arg2 color:(id)arg3 boldText:(id)arg4;
++ (id)hk_initWithString:(id)arg1 font:(id)arg2 hyphenationFactor:(double)arg3;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)hrui_attributedStringForText:(id)arg1 style:(id)arg2 color:(id)arg3 boldText:(id)arg4;
++ (id)hrui_bulletedString:(id)arg1 textStyle:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)removeCharactersWithAttribute:(id)arg1;
@@ -83,6 +93,10 @@
 - (void)ic_addTextBlocks:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)ic_convertParagraphStyleToBodyInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setParagraphStyleForWritingDirection:(long long)arg1 andAlignment:(bool)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (void)pk_addLinkURL:(id)arg1 toRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withColor:(id)arg3 isUnderlined:(bool)arg4;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 

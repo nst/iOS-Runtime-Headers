@@ -23,7 +23,6 @@
         double height; 
     }  _fullSize;
     UIScrollView * _scrollView;
-    <SXSmartFieldFactory> * _smartFieldFactory;
     UISwipeGestureRecognizer * _swipeGestureRecognizer;
     UITapGestureRecognizer * _tapGestureRecognizer;
     struct CGRect { 
@@ -37,6 +36,7 @@
         } size; 
     }  _temporaryLayoutRect;
     SXTextSource * _textSource;
+    <SXTextSourceFactory> * _textSourceFactory;
     STTextTangierStorage * _textStorage;
     unsigned long long  _viewIndex;
 }
@@ -57,12 +57,12 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } fullSize;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic, readonly) <SXSmartFieldFactory> *smartFieldFactory;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } temporaryLayoutRect;
 @property (nonatomic, retain) SXTextSource *textSource;
+@property (nonatomic, readonly) <SXTextSourceFactory> *textSourceFactory;
 @property (nonatomic, retain) STTextTangierStorage *textStorage;
 @property (nonatomic, readonly) unsigned long long viewIndex;
 
@@ -93,7 +93,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleSwipeGestureRecognizer:(id)arg1;
 - (void)handleTapGestureRecognizer:(id)arg1;
-- (id)initWithSmartFieldFactory:(id)arg1 actionHandler:(id)arg2;
+- (id)initWithTextSourceFactory:(id)arg1 actionHandler:(id)arg2;
 - (void)initializeTangier;
 - (void)layoutSubviews;
 - (double)marginForTextLayout:(id)arg1;
@@ -120,11 +120,11 @@
 - (void)setTextStorage:(id)arg1;
 - (void)setupGestureRecognizers;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (id)smartFieldFactory;
 - (id)swipeGestureRecognizer;
 - (id)tapGestureRecognizer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })temporaryLayoutRect;
 - (id)textSource;
+- (id)textSourceFactory;
 - (id)textStorage;
 - (void)updateFrameAnimated:(bool)arg1;
 - (void)updateWithCaption:(id)arg1 forViewIndex:(unsigned long long)arg2 animated:(bool)arg3;

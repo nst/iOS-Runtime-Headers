@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)init;
+- (void)itemCreated:(id)arg1;
 - (id)leadingRegionTrailingAnchorConstraint;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)orderedDisplayItemPlacements;

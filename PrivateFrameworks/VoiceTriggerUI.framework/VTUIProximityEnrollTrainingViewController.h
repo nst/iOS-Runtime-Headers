@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUIProximityEnrollTrainingViewController : UIViewController <AFMyriadDelegate, AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate, VTUITrainingManagerDelegate> {
+@interface VTUIProximityEnrollTrainingViewController : UIViewController <AFMyriadDelegate, AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, CSVTUITrainingManagerDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate> {
     unsigned long long  _AVVCRetryCount;
     UIView * _aboutTappedSender;
     VTUIAudioHintPlayer * _audioHintPlayer;
@@ -22,6 +22,7 @@
     bool  _isResignedActive;
     VTUIProximityEnrollmentLanguageOptionsView * _languageOptionsView;
     AFMyriadCoordinator * _myriadCoordinator;
+    long long  _orientation;
     unsigned long long  _sessionId;
     bool  _shouldTurnOnMyriad;
     AFUISiriLanguage * _siriLanguage;
@@ -29,8 +30,9 @@
     bool  _skipToEndForTesting;
     NSString * _spokenLanguageCode;
     VTUIProximityEnrollmentSuccessView * _successView;
-    VTUITrainingManager * _trainingManager;
+    CSVTUITrainingManager * _trainingManager;
     NSArray * _trainingPageInstructions;
+    VTUIProximityTryAgainView * _tryAgainView;
 }
 
 @property (nonatomic) unsigned long long AVVCRetryCount;
@@ -43,19 +45,22 @@
 @property (nonatomic) <VTUIEnrollTrainingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool disambiguateLanguageOptionsForTesting;
+@property (nonatomic, retain) VTUIProximityEnrollTrainingView *enrollTrainingView;
 @property (nonatomic) bool hasRetriedTraining;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VTUIProximityEnrollmentSetupIntroView *introView;
 @property (nonatomic, retain) VTUIProximityEnrollmentLanguageOptionsView *languageOptionsView;
 @property (nonatomic, retain) AFMyriadCoordinator *myriadCoordinator;
+@property (nonatomic) long long orientation;
 @property (nonatomic, readonly) unsigned long long sessionId;
 @property (nonatomic) bool shouldTurnOnMyriad;
 @property (nonatomic) bool skipToEndForTesting;
 @property (nonatomic, retain) NSString *spokenLanguageCode;
 @property (nonatomic, retain) VTUIProximityEnrollmentSuccessView *successView;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) VTUITrainingManager *trainingManager;
+@property (nonatomic, retain) CSVTUITrainingManager *trainingManager;
 @property (nonatomic, retain) NSArray *trainingPageInstructions;
+@property (nonatomic, retain) VTUIProximityTryAgainView *tryAgainView;
 
 - (void).cxx_destruct;
 - (unsigned long long)AVVCRetryCount;
@@ -70,8 +75,10 @@
 - (void)_clearAggdScalar:(id)arg1;
 - (void)_continueFromIntro:(id)arg1;
 - (void)_continueFromLanguageOptions:(id)arg1;
+- (void)_continueFromRetry:(id)arg1;
 - (void)_createTrainingManagerIfNeeded;
 - (void)_didEnterBackground;
+- (void)_dismiss:(id)arg1;
 - (void)_finishSiriSetup:(id)arg1;
 - (id)_getSetupModeString;
 - (void)_handleTrainingResultForNonRetryablePhraseWithStatus:(int)arg1;
@@ -79,6 +86,7 @@
 - (bool)_hasPHSCloudDataForSpokenLanguage;
 - (void)_hideInstruction;
 - (bool)_isLocaleSupported:(id)arg1;
+- (bool)_isTrainingInProgress;
 - (void)_logAggdCount:(long long)arg1 forKey:(id)arg2;
 - (void)_logAggdScalar:(long long)arg1 forKey:(id)arg2;
 - (void)_presentRadarView;
@@ -112,6 +120,7 @@
 - (void)_startTraining;
 - (void)_stopGLDrawing;
 - (void)_triggerEndpoint:(id)arg1;
+- (void)_updateCurrentConstraintsToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)_updateFlamesForStatus:(long long)arg1;
 - (void)_updatePageNumberForInstruction:(long long)arg1;
 - (void)_warnForLanguageCompatibilityIfNecessary:(id /* block */)arg1;
@@ -130,15 +139,17 @@
 - (void)debugController:(id)arg1 wantsPresentViewController:(id)arg2;
 - (id)delegate;
 - (bool)disambiguateLanguageOptionsForTesting;
+- (id)enrollTrainingView;
 - (void)finish:(id)arg1;
 - (void)getScreenshotImageForDebugController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (bool)hasRetriedTraining;
 - (id)init;
-- (id)interpretAudioSource:(int)arg1;
+- (id)interpretAudioSource:(unsigned long long)arg1;
 - (long long)interpretSessionManagerStatus:(int)arg1 forInstruction:(long long)arg2;
 - (id)introView;
 - (id)languageOptionsView;
 - (id)myriadCoordinator;
+- (long long)orientation;
 - (id)presentedViewControllerForDebugController;
 - (unsigned long long)sessionId;
 - (void)setAVVCRetryCount:(unsigned long long)arg1;
@@ -149,16 +160,19 @@
 - (void)setCurrentTrainingState:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisambiguateLanguageOptionsForTesting:(bool)arg1;
+- (void)setEnrollTrainingView:(id)arg1;
 - (void)setHasRetriedTraining:(bool)arg1;
 - (void)setIntroView:(id)arg1;
 - (void)setLanguageOptionsView:(id)arg1;
 - (void)setMyriadCoordinator:(id)arg1;
+- (void)setOrientation:(long long)arg1;
 - (void)setShouldTurnOnMyriad:(bool)arg1;
 - (void)setSkipToEndForTesting:(bool)arg1;
 - (void)setSpokenLanguageCode:(id)arg1;
 - (void)setSuccessView:(id)arg1;
 - (void)setTrainingManager:(id)arg1;
 - (void)setTrainingPageInstructions:(id)arg1;
+- (void)setTryAgainView:(id)arg1;
 - (void)setupNavigationBarStyleForAppearing:(bool)arg1;
 - (void)shouldAbortAnotherDeviceBetter:(id)arg1;
 - (void)shouldContinue:(id)arg1;
@@ -171,7 +185,9 @@
 - (id)successView;
 - (id)trainingManager;
 - (id)trainingPageInstructions;
+- (id)tryAgainView;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;

@@ -2,8 +2,10 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable, _SetOperable>
 
+@property (nonatomic, readonly, copy) NSArray *allObjects;
+@property (nonatomic, readonly) long long count;
 @property (readonly) unsigned long long count;
 @property (nonatomic, readonly, copy) NSString *crk_stableDescription;
 @property (readonly, copy) NSString *debugDescription;
@@ -218,6 +220,8 @@
 - (id)crk_setByAddingSet:(id)arg1;
 - (id)crk_setBySubtractingSet:(id)arg1;
 - (id)crk_stableDescription;
+- (id)setByIntersectingSet:(id)arg1;
+- (id)setBySubtractingSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
@@ -448,8 +452,8 @@
 + (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
 
-- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
 - (bool)tss_containsStyleOrVariationOfStyle:(id)arg1;
 - (bool)tss_hasVariations;
 - (bool)tsu_containsObjectIdenticalTo:(id)arg1;

@@ -16,6 +16,7 @@
         unsigned int channelSubscriptionCount : 1; 
         unsigned int internalAutoSubscribeFeedCount : 1; 
         unsigned int notificationEnabledChannelsCount : 1; 
+        unsigned int notificationType : 1; 
         unsigned int notitificationsEnabledChannelsCount : 1; 
         unsigned int portraitAutoSubscribeFeedCount : 1; 
         unsigned int safariAutoSubscribeFeedCount : 1; 
@@ -25,9 +26,13 @@
         unsigned int widgetArticleRank : 1; 
         unsigned int widgetSection : 1; 
         unsigned int widgetSectionArticleRank : 1; 
+        unsigned int isMarketingNotificationEnabled : 1; 
+        unsigned int isNewIssuesNotificationEnabled : 1; 
         unsigned int startedFromNotification : 1; 
     }  _has;
     int  _internalAutoSubscribeFeedCount;
+    bool  _isMarketingNotificationEnabled;
+    bool  _isNewIssuesNotificationEnabled;
     long long  _lastAppSessionTimestamp;
     NSString * _notificationArticleId;
     NSMutableArray * _notificationChannelIds;
@@ -35,6 +40,7 @@
     NSString * _notificationId;
     NSString * _notificationSenderChannelId;
     NSString * _notificationSourceChannelId;
+    int  _notificationType;
     int  _notitificationsEnabledChannelsCount;
     NSMutableArray * _paidSubscriptionChannelIds;
     int  _portraitAutoSubscribeFeedCount;
@@ -67,12 +73,15 @@
 @property (nonatomic) bool hasChannelSubscriptionCount;
 @property (nonatomic, readonly) bool hasCreativeId;
 @property (nonatomic) bool hasInternalAutoSubscribeFeedCount;
+@property (nonatomic) bool hasIsMarketingNotificationEnabled;
+@property (nonatomic) bool hasIsNewIssuesNotificationEnabled;
 @property (nonatomic) bool hasLastAppSessionTimestamp;
 @property (nonatomic, readonly) bool hasNotificationArticleId;
 @property (nonatomic) bool hasNotificationEnabledChannelsCount;
 @property (nonatomic, readonly) bool hasNotificationId;
 @property (nonatomic, readonly) bool hasNotificationSenderChannelId;
 @property (nonatomic, readonly) bool hasNotificationSourceChannelId;
+@property (nonatomic) bool hasNotificationType;
 @property (nonatomic) bool hasNotitificationsEnabledChannelsCount;
 @property (nonatomic) bool hasPortraitAutoSubscribeFeedCount;
 @property (nonatomic, readonly) bool hasReferringSourceApplication;
@@ -88,6 +97,8 @@
 @property (nonatomic) bool hasWidgetSection;
 @property (nonatomic) bool hasWidgetSectionArticleRank;
 @property (nonatomic) int internalAutoSubscribeFeedCount;
+@property (nonatomic) bool isMarketingNotificationEnabled;
+@property (nonatomic) bool isNewIssuesNotificationEnabled;
 @property (nonatomic) long long lastAppSessionTimestamp;
 @property (nonatomic, retain) NSString *notificationArticleId;
 @property (nonatomic, retain) NSMutableArray *notificationChannelIds;
@@ -95,6 +106,7 @@
 @property (nonatomic, retain) NSString *notificationId;
 @property (nonatomic, retain) NSString *notificationSenderChannelId;
 @property (nonatomic, retain) NSString *notificationSourceChannelId;
+@property (nonatomic) int notificationType;
 @property (nonatomic) int notitificationsEnabledChannelsCount;
 @property (nonatomic, retain) NSMutableArray *paidSubscriptionChannelIds;
 @property (nonatomic) int portraitAutoSubscribeFeedCount;
@@ -154,12 +166,15 @@
 - (bool)hasChannelSubscriptionCount;
 - (bool)hasCreativeId;
 - (bool)hasInternalAutoSubscribeFeedCount;
+- (bool)hasIsMarketingNotificationEnabled;
+- (bool)hasIsNewIssuesNotificationEnabled;
 - (bool)hasLastAppSessionTimestamp;
 - (bool)hasNotificationArticleId;
 - (bool)hasNotificationEnabledChannelsCount;
 - (bool)hasNotificationId;
 - (bool)hasNotificationSenderChannelId;
 - (bool)hasNotificationSourceChannelId;
+- (bool)hasNotificationType;
 - (bool)hasNotitificationsEnabledChannelsCount;
 - (bool)hasPortraitAutoSubscribeFeedCount;
 - (bool)hasReferringSourceApplication;
@@ -177,6 +192,8 @@
 - (unsigned long long)hash;
 - (int)internalAutoSubscribeFeedCount;
 - (bool)isEqual:(id)arg1;
+- (bool)isMarketingNotificationEnabled;
+- (bool)isNewIssuesNotificationEnabled;
 - (long long)lastAppSessionTimestamp;
 - (void)mergeFrom:(id)arg1;
 - (id)notificationArticleId;
@@ -187,6 +204,7 @@
 - (id)notificationId;
 - (id)notificationSenderChannelId;
 - (id)notificationSourceChannelId;
+- (int)notificationType;
 - (int)notitificationsEnabledChannelsCount;
 - (id)paidSubscriptionChannelIds;
 - (id)paidSubscriptionChannelIdsAtIndex:(unsigned long long)arg1;
@@ -207,8 +225,11 @@
 - (void)setHasAppsAutoSubscribeFeedCount:(bool)arg1;
 - (void)setHasChannelSubscriptionCount:(bool)arg1;
 - (void)setHasInternalAutoSubscribeFeedCount:(bool)arg1;
+- (void)setHasIsMarketingNotificationEnabled:(bool)arg1;
+- (void)setHasIsNewIssuesNotificationEnabled:(bool)arg1;
 - (void)setHasLastAppSessionTimestamp:(bool)arg1;
 - (void)setHasNotificationEnabledChannelsCount:(bool)arg1;
+- (void)setHasNotificationType:(bool)arg1;
 - (void)setHasNotitificationsEnabledChannelsCount:(bool)arg1;
 - (void)setHasPortraitAutoSubscribeFeedCount:(bool)arg1;
 - (void)setHasSafariAutoSubscribeFeedCount:(bool)arg1;
@@ -220,6 +241,8 @@
 - (void)setHasWidgetSection:(bool)arg1;
 - (void)setHasWidgetSectionArticleRank:(bool)arg1;
 - (void)setInternalAutoSubscribeFeedCount:(int)arg1;
+- (void)setIsMarketingNotificationEnabled:(bool)arg1;
+- (void)setIsNewIssuesNotificationEnabled:(bool)arg1;
 - (void)setLastAppSessionTimestamp:(long long)arg1;
 - (void)setNotificationArticleId:(id)arg1;
 - (void)setNotificationChannelIds:(id)arg1;
@@ -227,6 +250,7 @@
 - (void)setNotificationId:(id)arg1;
 - (void)setNotificationSenderChannelId:(id)arg1;
 - (void)setNotificationSourceChannelId:(id)arg1;
+- (void)setNotificationType:(int)arg1;
 - (void)setNotitificationsEnabledChannelsCount:(int)arg1;
 - (void)setPaidSubscriptionChannelIds:(id)arg1;
 - (void)setPortraitAutoSubscribeFeedCount:(int)arg1;

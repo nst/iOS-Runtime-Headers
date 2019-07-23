@@ -4,14 +4,12 @@
 
 @interface ML3DatabaseStatement : NSObject {
     bool  _clearBindingsAfterRunning;
-    ML3DatabaseConnection * _connection;
     bool  _isExecuting;
     NSString * _sql;
     struct sqlite3_stmt { } * _sqliteStatement;
 }
 
 @property (nonatomic) bool clearBindingsAfterRunning;
-@property (nonatomic, readonly) ML3DatabaseConnection *connection;
 @property (nonatomic) bool isExecuting;
 @property (nonatomic, readonly) NSString *sql;
 @property (nonatomic, readonly) struct sqlite3_stmt { }*sqliteStatement;
@@ -31,11 +29,10 @@
 - (void)bindValuesInArray:(id)arg1;
 - (int)clearBindings;
 - (bool)clearBindingsAfterRunning;
-- (id)connection;
 - (void)dealloc;
 - (id)description;
 - (int)finalizeStatement;
-- (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 SQL:(id)arg2 connection:(id)arg3;
+- (id)initWithSQLiteStatement:(struct sqlite3_stmt { }*)arg1 SQL:(id)arg2;
 - (bool)isBusy;
 - (bool)isExecuting;
 - (bool)isReadOnly;

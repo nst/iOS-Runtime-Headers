@@ -62,6 +62,7 @@
 - (void)setHandler:(id /* block */)arg1 forEndpointProperty:(id)arg2;
 - (bool)setProperties:(id)arg1 forConnectionWithUUID:(id)arg2;
 - (bool)setProperties:(id)arg1 forEndpointWithUUID:(id)arg2;
+- (bool)setSupervisedTransportsRestricted:(bool)arg1 forConnectionWithUUID:(id)arg2;
 - (void)startPlugin;
 - (void)stopPlugin;
 - (int)transportTypeForEndpointWithUUID:(id)arg1;

@@ -86,12 +86,6 @@
 @property (nonatomic) bool useInterfaceLanguageForLocalization;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } validTextRange;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)acceptsEmoji;
 - (long long)baseWritingDirectionForPosition:(id)arg1 inDirection:(long long)arg2;
 - (bool)becomesEditableWithGestures;
@@ -108,6 +102,7 @@
 - (long long)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (void)confirmMarkedText:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertCaretRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)deleteBackward;
 - (id)endOfDocument;

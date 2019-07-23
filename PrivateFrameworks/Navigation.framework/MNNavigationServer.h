@@ -24,6 +24,7 @@
 - (void)dealloc;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)navSessionDestination;
 - (void)navigationServiceProxy:(id)arg1 didActivateAudioSession:(bool)arg2;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 didChangeNavigationState:(int)arg2;

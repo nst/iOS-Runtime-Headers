@@ -4,7 +4,11 @@
 
 @interface PKContinuousButton : UIButton {
     UIActivityIndicatorView * _activityIndicatorView;
+    long long  _activityIndicatorViewStyle;
     UIColor * _appliedInputColor;
+    long long  _backdropStyle;
+    _UIBackdropView * _backdropView;
+    bool  _blurDisabled;
     struct CGSize { 
         double width; 
         double height; 
@@ -33,18 +37,23 @@
         double bottom; 
         double right; 
     }  _touchMargins;
+    bool  _updatingBackdropSettings;
 }
 
+@property (nonatomic) bool blurDisabled;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } touchMargins;
 
 + (id)_filterInputColorForEffect:(long long)arg1;
 + (Class)layerClass;
 
 - (void).cxx_destruct;
+- (void)_accessibilitySettingsDidChange:(id)arg1;
 - (void)_createHighlightFilterIfNecessary;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)_updateBackdropSettings;
 - (void)_updateFilter;
 - (void)_updateTintColorWithColor:(id)arg1;
+- (bool)blurDisabled;
 - (void)dealloc;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -55,6 +64,7 @@
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setBlurDisabled:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setSelected:(bool)arg1;
@@ -62,6 +72,7 @@
 - (void)showSpinner:(bool)arg1;
 - (void)tintColorDidChange;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })touchMargins;
+- (void)updateSpinnerViewStyleWithStyle:(long long)arg1;
 - (void)updateTitleColorWithColor:(id)arg1;
 - (void)updateWithImage:(id)arg1;
 

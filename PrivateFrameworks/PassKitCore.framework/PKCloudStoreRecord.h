@@ -15,8 +15,8 @@
 - (id)cloudStoreSpecificKeys;
 - (id)description;
 - (id)initWithRecords:(id)arg1;
-- (id)recordWithRecordType:(id)arg1;
 - (id)records;
+- (id)recordsWithRecordType:(id)arg1;
 - (void)setCloudStoreSpecificKeys:(id)arg1;
 
 @end

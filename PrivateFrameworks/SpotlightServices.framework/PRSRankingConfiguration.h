@@ -36,16 +36,14 @@
 - (id)categoryEngagements;
 - (id)cepBlacklistSet;
 - (bool)disableResultTruncation;
-- (float)enagementProbabilityForCategoryCooked:(id)arg1;
 - (float)engagementProbabilityForCategory:(id)arg1;
-- (float)engagementProbabilityForCategory:(id)arg1 allowDefault:(bool)arg2;
 - (id)init;
 - (void)mergeWith:(id)arg1;
 - (id)parsecCategoryOrder;
 - (id)queryDependentCategoryProbabilities;
-- (double)queryDependentProbabilityForCategoryWithDefaultFloor:(id)arg1;
+- (double)queryDependentProbabilityForCategory:(id)arg1;
 - (id)queryIndependentCategoryProbabilities;
-- (double)queryIndependentProbabilityForCategoryWithDefaultFloor:(id)arg1;
+- (double)queryIndependentProbabilityForCategory:(id)arg1;
 - (id)rankingQueries;
 - (id)serverFeatures;
 - (id)serverKnobs;

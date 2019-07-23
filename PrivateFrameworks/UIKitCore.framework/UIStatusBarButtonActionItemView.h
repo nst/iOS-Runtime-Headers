@@ -13,8 +13,6 @@
 @property (nonatomic, retain) CALayer *ringLayer;
 @property (nonatomic) bool selected;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentsImageFrame;
 - (id)_createButton;
@@ -22,9 +20,6 @@
 - (void)_pressAndHoldButton:(id)arg1;
 - (void)_pressButton:(id)arg1;
 - (void)_triggerButtonWithAction:(long long)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsUserInteraction;
 - (long long)buttonType;
 - (bool)canBecomeFocused;

@@ -8,7 +8,7 @@
     unsigned long long  _gameControllerID;
     long long  _gameControllerState;
     _TVRXKeyboardController * _keyboardController;
-    <_TVRXKeyboardImpl> * _keyboardImpl;
+    _TVRCMediaRemoteKeyboardImplManager * _keyboardImplManager;
     NSSet * _mediaButtons;
     _TVRCMROriginWrapper * _origin;
     NSMutableArray * _queuedAudioBuffers;
@@ -27,7 +27,7 @@
 @property (nonatomic) long long gameControllerState;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _TVRXKeyboardController *keyboardController;
-@property (nonatomic, retain) <_TVRXKeyboardImpl> *keyboardImpl;
+@property (nonatomic, retain) _TVRCMediaRemoteKeyboardImplManager *keyboardImplManager;
 @property (nonatomic, copy) NSSet *mediaButtons;
 @property (nonatomic, retain) _TVRCMROriginWrapper *origin;
 @property (nonatomic, retain) NSMutableArray *queuedAudioBuffers;
@@ -70,10 +70,10 @@
 - (void)_unregisterGameControllerInputModeHandler;
 - (void)_voiceRecorderStateChanged:(unsigned int)arg1;
 - (void)_volumeControlsDidUpdate:(id)arg1;
+- (id)alternateIdentifiers;
 - (void)connect;
 - (id)createBufferWithSettings:(id)arg1 packetCapacity:(unsigned long long)arg2 maxPacketSize:(unsigned long long)arg3;
 - (void)dealloc;
-- (id)descriptor;
 - (id)device;
 - (void)disconnect;
 - (id)eventTranslator;
@@ -82,8 +82,9 @@
 - (id)identifier;
 - (id)initWithTelevision:(id)arg1;
 - (id)keyboardController;
-- (id)keyboardImpl;
+- (id)keyboardImplManager;
 - (id)mediaButtons;
+- (id)model;
 - (id)name;
 - (id)origin;
 - (void)origin:(id)arg1 updatedSupportedCommands:(id)arg2;
@@ -98,7 +99,7 @@
 - (void)setGameControllerID:(unsigned long long)arg1;
 - (void)setGameControllerState:(long long)arg1;
 - (void)setKeyboardController:(id)arg1;
-- (void)setKeyboardImpl:(id)arg1;
+- (void)setKeyboardImplManager:(id)arg1;
 - (void)setMediaButtons:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setQueuedAudioBuffers:(id)arg1;
@@ -108,6 +109,7 @@
 - (void)setVoiceRecorder:(id)arg1;
 - (void)setVolumeButtons:(id)arg1;
 - (id)supportedButtons;
+- (bool)supportsTouchEvents;
 - (id)television;
 - (unsigned long long)touchDeviceID;
 - (unsigned int)voiceDeviceID;

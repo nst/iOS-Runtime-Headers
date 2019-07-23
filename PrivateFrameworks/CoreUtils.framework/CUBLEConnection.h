@@ -5,6 +5,7 @@
 @interface CUBLEConnection : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate, CUReadWriteRequestable> {
     id /* block */  _activateCompletion;
     CBCentralManager * _centralManager;
+    int  _connectionLatency;
     unsigned short  _destinationPSM;
     NSUUID * _destinationUUID;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -30,6 +31,7 @@
     unsigned char  _writeSuspended;
 }
 
+@property (nonatomic) int connectionLatency;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned short destinationPSM;
@@ -66,6 +68,7 @@
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (int)connectionLatency;
 - (void)dealloc;
 - (unsigned short)destinationPSM;
 - (id)destinationUUID;
@@ -79,6 +82,7 @@
 - (void)peripheral:(id)arg1 didOpenL2CAPChannel:(id)arg2 error:(id)arg3;
 - (void)readWithRequest:(id)arg1;
 - (id /* block */)serverInvalidationHandler;
+- (void)setConnectionLatency:(int)arg1;
 - (void)setDestinationPSM:(unsigned short)arg1;
 - (void)setDestinationUUID:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;

@@ -22,6 +22,7 @@
 + (id)_activityFacesForDevice:(id)arg1;
 + (id)_astronomyFacesForDevice:(id)arg1;
 + (id)_breatheFacesForDevice:(id)arg1;
++ (id)_calloutNameForNewFaces:(id)arg1 withDevice:(id)arg2;
 + (id)_chronographFacesForDevice:(id)arg1;
 + (id)_colorFacesForDevice:(id)arg1;
 + (id)_explorerFacesForDevice:(id)arg1;
@@ -34,6 +35,7 @@
 + (id)_mickeyAndMinnieFacesForDevice:(id)arg1;
 + (id)_modularFacesForDevice:(id)arg1;
 + (id)_motionFacesForDevice:(id)arg1;
++ (id)_newFacesExcludingRestrictedForDevice:(id)arg1;
 + (id)_newFacesForDevice:(id)arg1;
 + (id)_numeralsFacesForDevice:(id)arg1;
 + (id)_photoFacesForDevice:(id)arg1;

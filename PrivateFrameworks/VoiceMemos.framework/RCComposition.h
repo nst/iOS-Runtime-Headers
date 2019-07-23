@@ -49,6 +49,9 @@
 + (id)compositionLoadedFromCompositionBundleURL:(id)arg1;
 + (id)compositionWithComposedAVURL:(id)arg1;
 + (void)deleteFromFilesystem:(id)arg1;
++ (bool)excludeFromBackup:(id)arg1 error:(id*)arg2;
++ (bool)includeInBackup:(id)arg1 error:(id*)arg2;
++ (bool)migrateBackupExclusionFlag:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_calculateComposedFragments;

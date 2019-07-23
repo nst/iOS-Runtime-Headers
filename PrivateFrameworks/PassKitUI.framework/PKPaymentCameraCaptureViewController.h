@@ -5,6 +5,7 @@
 @interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
     PKPaymentSetupBrowseProductsViewController * _browseCardsController;
     <PKPaymentCameraCaptureViewControllerDelegate> * _cameraCaptureDelegate;
+    unsigned long long  _cameraCaptureStartTime;
     UIView * _cameraInstructionContainerView;
     PKCameraCaptureInstructionView * _cameraInstructionView;
     UIView * _cameraView;

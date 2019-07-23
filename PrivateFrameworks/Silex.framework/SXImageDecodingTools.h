@@ -21,7 +21,7 @@
 - (id)imageFromData:(id)arg1;
 - (id)imageFromData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)init;
-- (id)loadAnimatedImageFromImageData:(id)arg1;
+- (id)loadAnimatedImageFromImageData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)loadImageFromImageData:(id)arg1 completion:(id /* block */)arg2;
 - (struct CGImage { }*)newImageByDecodingImage:(struct CGImage { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)rootLayer;

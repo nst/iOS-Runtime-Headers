@@ -14,6 +14,7 @@
 - (bool)hasMigrationEntitlement;
 - (bool)hasSyncClientEntitlement;
 - (bool)internalAccessLevelGranted;
+- (bool)shouldTrustClientEnforcedManagedConfigurationAccess;
 - (bool)testingAccessLevelGranted;
 
 @end

@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXColumnCalculator : NSObject
+@interface SXColumnCalculator : NSObject <SXColumnCalculator>
 
-+ (id)columnLayoutWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 documentLayout:(id)arg3;
-+ (id)columnLayoutWithViewportSize:(struct CGSize { double x1; double x2; })arg1 targetedViewportSize:(struct CGSize { double x1; double x2; })arg2 additionalMargins:(double)arg3 documentLayout:(id)arg4;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (id)columnLayoutWithConstrainedViewportSize:(struct CGSize { double x1; double x2; })arg1 viewportSize:(struct CGSize { double x1; double x2; })arg2 additionalMargins:(double)arg3 documentLayout:(id)arg4;
+- (id)columnLayoutWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 documentLayout:(id)arg3;
 
 @end

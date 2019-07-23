@@ -23,7 +23,6 @@
 - (FCIAdConfiguration *)iAdConfig;
 - (double)interstitialAdLoadDelay;
 - (NSArray *)mediaSharingBlacklistedChannelIDs;
-- (long long)minimumFollowCountToRemovePersonalizePlacardInFollowingAndForYou;
 - (long long)newFavoriteNotificationAlertsFrequency;
 - (long long)notificationArticleCacheTimeout;
 - (long long)notificationArticleWithRapidUpdatesCacheTimeout;
@@ -38,14 +37,8 @@
 - (double)prerollLoadingTimeout;
 - (NTPBDiscoverMoreVideosInfo *)shareDiscoverMoreVideosInfo;
 - (long long)stateRestorationAllowedTimeWindow;
-- (long long)subscriptionsGracePeriodForTokenVerificationSeconds;
-- (long long)subscriptionsPlacardGlobalMaximumPerDay;
-- (long long)subscriptionsPlacardPublisherFrequencyInSeconds;
 - (bool)terminateAppOnBackgroundAfterJoiningOrLeavingExperiment;
 - (double)tileProminenceScoreBalanceValue;
-- (NSArray *)topLevelCuratedTagIDs;
-- (NSArray *)topLevelRecommendedChannelTagIDs;
-- (NSArray *)topLevelRecommendedTopicTagIDs;
 - (NSArray *)topStoriesPublishDates;
 - (unsigned long long)trendingStyle;
 - (bool)universalLinksEnabled;
@@ -56,12 +49,18 @@
 @optional
 
 - (long long)articleRecirculationPopularFeedQueryTimeRange;
+- (unsigned long long)bestOfBundleFeedGroupKind;
+- (long long)criticalStorageThreshold;
 - (NSString *)description;
 - (bool)disableThumbnailsForArticleRecirculation;
 - (bool)enableBadgeInSpotlightTabBar;
+- (long long)feedContentExposureTestMaximumInterval;
 - (NSString *)feedNavigationConfigJSON;
+- (bool)isArticleToolbarCompressionEnabled;
 - (bool)isExpired;
-- (long long)showCardNavHintMaxCount;
+- (NSString *)issueArticleRecirculationConfigJSON;
+- (long long)lowStorageThreshold;
+- (NSString *)translationMapResourceID;
 - (NSString *)webEmbedContentBlockers;
 
 @end

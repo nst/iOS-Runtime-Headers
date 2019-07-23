@@ -5,7 +5,7 @@
 
 @required
 
-- (void)sessionDidStart;
+- (void)sessionDidStartWithSessionID:(NSString *)arg1;
 - (void)sessionWillEnd;
 
 @end

@@ -20,8 +20,6 @@
 - (void).cxx_destruct;
 - (void)_initializeReaderJSControllerForFrame:(id)arg1;
 - (id)collectReaderContentFromPrintAndMailingFrame;
-- (void)decreaseReaderTextSize;
-- (void)increaseReaderTextSize;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
 - (id)isolatedWorldForNextPageDetection;
 - (void)loadNewArticle;
@@ -29,9 +27,8 @@
 - (id)originalPageController;
 - (id)printingMailingFrame;
 - (void)reloadArticle;
+- (void)setConfiguration:(id)arg1;
 - (void)setOriginalPageController:(id)arg1;
-- (void)setReaderFont:(id)arg1;
-- (void)setReaderTheme:(id)arg1;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)willDestroyBrowserContextController:(id)arg1;
 

@@ -4,6 +4,7 @@
 
 @interface SXLayoutBlueprintFactory : NSObject <SXLayoutBlueprintFactory> {
     <SXComponentBlueprintFactory> * _componentBlueprintFactory;
+    <SXUnitConverterFactory> * _unitConverterFactory;
 }
 
 @property (nonatomic, readonly) <SXComponentBlueprintFactory> *componentBlueprintFactory;
@@ -11,10 +12,12 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) <SXUnitConverterFactory> *unitConverterFactory;
 
 - (void).cxx_destruct;
 - (id)componentBlueprintFactory;
-- (id)createLayoutBlueprint;
-- (id)initWithComponentBlueprintFactory:(id)arg1;
+- (id)createLayoutBlueprintWithLayoutOptions:(id)arg1;
+- (id)initWithComponentBlueprintFactory:(id)arg1 unitConverterFactory:(id)arg2;
+- (id)unitConverterFactory;
 
 @end

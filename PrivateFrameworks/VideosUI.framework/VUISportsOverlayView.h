@@ -2,86 +2,103 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUISportsOverlayView : UIView <VUIOverlayViewProtocol, VUIScorecardViewDelegate> {
+@interface VUISportsOverlayView : UIView <VUIOverlayWithMaterialRendering, VUIScorecardViewDelegate, VUISportsScoreboardManagerDelegate> {
     UIImage * _backgroundImageForMaterialRendering;
     bool  _backgroundImageHasChanged;
-    NSOperationQueue * _backgroundImageOperationQueue;
-    _TVImageView * _logo;
-    TVImageElement * _logoElement;
+    UICollectionReusableView * _containingCell;
+    bool  _isHostSetup;
+    IKImageElement * _logoElement;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _logoSize;
+    _TVImageView * _logoView;
     VUISportsOverlayLayout * _overlayLayout;
-    NSArray * _scorecardData;
-    TVViewElement * _scorecardElement;
+    NSOperation * _pendingOperation;
+    VUISportsScoreboardViewModel * _scoreboardViewModel;
     VUIScorecardView * _scorecardView;
     UIImage * _scorecardViewBackgroundImage;
     VUITextBadgeView * _textBadge;
     bool  _textBadgeHasMaterial;
-    TVViewElement * _viewElement;
+    IKViewElement * _viewElement;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImageForMaterialRendering;
 @property (nonatomic) bool backgroundImageHasChanged;
-@property (nonatomic, retain) NSOperationQueue *backgroundImageOperationQueue;
+@property (nonatomic) UICollectionReusableView *containingCell;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) _TVImageView *logo;
-@property (nonatomic, retain) TVImageElement *logoElement;
+@property (nonatomic) bool isHostSetup;
+@property (nonatomic, retain) IKImageElement *logoElement;
+@property (nonatomic) struct CGSize { double x1; double x2; } logoSize;
+@property (nonatomic, retain) _TVImageView *logoView;
 @property (nonatomic, retain) VUISportsOverlayLayout *overlayLayout;
-@property (nonatomic, copy) NSArray *scorecardData;
-@property (nonatomic, retain) TVViewElement *scorecardElement;
+@property (nonatomic, retain) NSOperation *pendingOperation;
+@property (nonatomic, retain) VUISportsScoreboardViewModel *scoreboardViewModel;
 @property (nonatomic, retain) VUIScorecardView *scorecardView;
 @property (nonatomic, retain) UIImage *scorecardViewBackgroundImage;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VUITextBadgeView *textBadge;
 @property (nonatomic) bool textBadgeHasMaterial;
-@property (nonatomic, retain) TVViewElement *viewElement;
+@property (nonatomic, retain) IKViewElement *viewElement;
 
++ (id)_sharedDrawQueue;
 + (bool)_viewBackgroundImageNeedsUpdatingWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 currentBackgroundImage:(id)arg2;
 + (id)sportsOverlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
 
 - (void).cxx_destruct;
-- (void)_layoutWithElement:(id)arg1;
 - (void)_redrawScorecardViewWithDuration:(double)arg1;
 - (void)_redrawTextBadgeWithDuration:(double)arg1;
 - (void)_redrawView:(id)arg1 withDuration:(double)arg2;
+- (void)_registerOverlayView;
 - (bool)_scorecardViewBackgroundImageNeedsUpdating;
 - (bool)_scorecardViewRequiresBackgroundImage;
+- (void)_setupHosting;
+- (void)_teardownHosting;
 - (bool)_textBadgeBackgroundImageNeedsUpdating;
 - (bool)_textBadgeRequiresBackgroundImage;
+- (void)_unregisterOverlayView;
 - (void)_updateBackgroundImagesWithCompletedOperation:(id)arg1;
 - (void)_updateBackgroundMaterialImagesWithBackgroundImageSize:(struct CGSize { double x1; double x2; })arg1 performSynchronously:(bool)arg2;
 - (void)_updateBadgePosition;
-- (void)_updateLogo:(id)arg1;
-- (void)_updateLogoPosition;
 - (bool)_updateScoreView:(id)arg1;
 - (bool)_updateTextBadge:(id)arg1;
-- (int)backgroundBlendModeForElementInRow:(long long)arg1 atIndex:(long long)arg2;
+- (int)backgroundBlendModeForScoreValueInRow:(long long)arg1 atIndex:(long long)arg2;
 - (id)backgroundImageForMaterialRendering;
 - (id)backgroundImageForScorecardViewMaterial:(id)arg1;
 - (bool)backgroundImageHasChanged;
-- (id)backgroundImageOperationQueue;
 - (void)backgroundImageSizeDidChange:(struct CGSize { double x1; double x2; })arg1;
+- (id)containingCell;
+- (void)dealloc;
+- (id)getJSContextDictionary;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isHostSetup;
 - (void)layoutSubviews;
-- (id)logo;
 - (id)logoElement;
+- (struct CGSize { double x1; double x2; })logoSize;
+- (id)logoView;
 - (double)maximumWidthForScorecardView:(id)arg1;
-- (long long)numberOfElementsForScorecardView:(id)arg1 inRow:(long long)arg2;
 - (long long)numberOfRowsInScorecardView:(id)arg1;
+- (long long)numberOfScoreValuesForScorecardView:(id)arg1 inRow:(long long)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)overlayLayout;
+- (id)pendingOperation;
 - (void)reset;
-- (id)scorecardData;
-- (id)scorecardElement;
+- (id)scoreValue:(id)arg1 inRow:(long long)arg2 atIndex:(long long)arg3;
+- (id)scoreboardViewModel;
 - (id)scorecardView;
 - (id)scorecardViewBackgroundImage;
 - (void)setBackgroundImageForMaterialRendering:(id)arg1;
 - (void)setBackgroundImageHasChanged:(bool)arg1;
-- (void)setBackgroundImageOperationQueue:(id)arg1;
-- (void)setLogo:(id)arg1;
+- (void)setContainingCell:(id)arg1;
+- (void)setIsHostSetup:(bool)arg1;
 - (void)setLogoElement:(id)arg1;
+- (void)setLogoSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLogoView:(id)arg1;
 - (void)setOverlayLayout:(id)arg1;
-- (void)setScorecardData:(id)arg1;
-- (void)setScorecardElement:(id)arg1;
+- (void)setPendingOperation:(id)arg1;
+- (void)setScoreboardViewModel:(id)arg1;
 - (void)setScorecardView:(id)arg1;
 - (void)setScorecardViewBackgroundImage:(id)arg1;
 - (void)setTextBadge:(id)arg1;
@@ -90,7 +107,8 @@
 - (long long)styleForScorecardView:(id)arg1;
 - (id)textBadge;
 - (bool)textBadgeHasMaterial;
+- (void)updateScoreboard:(id)arg1;
 - (id)viewElement;
-- (id)viewElementForScorecard:(id)arg1 inRow:(long long)arg2 atIndex:(long long)arg3;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

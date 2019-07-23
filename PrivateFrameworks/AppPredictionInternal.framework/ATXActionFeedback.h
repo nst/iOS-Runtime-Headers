@@ -3,7 +3,6 @@
  */
 
 @interface ATXActionFeedback : NSObject {
-    double  _decayHalfLifeSeconds;
     PETScalarEventTracker * _engagedInitTracker;
     PETDistributionEventTracker * _engagedSlotTracker;
     PETScalarEventTracker * _engagementTracker;
@@ -11,6 +10,8 @@
     PETScalarEventTracker * _predictionItemsTracker;
     PETDistributionEventTracker * _predictionsTracker;
     bool  _spotlightEngagmentMatchedLockscreen;
+    PETScalarEventTracker * _tvEngagementTracker;
+    PETScalarEventTracker * _tvShownTracker;
 }
 
 + (id)sharedInstance;

@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) bool isStoreOriginated;
 @property (nonatomic, readonly, copy) NSString *partnerIdentifier;
 @property (nonatomic, readonly, copy) NSString *partnerTransactionIdentifier;
+@property (nonatomic, readonly, copy) SKPaymentDiscount *paymentDiscount;
 @property (nonatomic, readonly, copy) NSString *productIdentifier;
 @property (nonatomic, readonly) long long quantity;
 @property (nonatomic, readonly, copy) NSData *requestData;
@@ -30,6 +31,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)partnerIdentifier;
 - (id)partnerTransactionIdentifier;
+- (id)paymentDiscount;
 - (id)productIdentifier;
 - (long long)quantity;
 - (id)requestData;

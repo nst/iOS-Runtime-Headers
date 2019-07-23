@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKTimedDispatch : SwiftObject {
+@interface CoreKnowledge.CKTimedDispatch : Swift._SwiftObject {
     void _group;
     void _interruptError;
     void _timeout;

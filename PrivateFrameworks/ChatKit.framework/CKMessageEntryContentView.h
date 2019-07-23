@@ -3,7 +3,7 @@
  */
 
 @interface CKMessageEntryContentView : UIScrollView <CKMessageEntryRichTextViewDelegate, CKMessageEntryViewStyleProtocol, UITextViewDelegate> {
-    UIView * _activeView;
+    CKMessageEntryTextView * _activeView;
     UIButton * _clearPluginButton;
     CKComposition * _composition;
     double  _containerViewLineWidth;
@@ -30,7 +30,7 @@
 }
 
 @property (getter=isActive, nonatomic, readonly) bool active;
-@property (nonatomic) UIView *activeView;
+@property (nonatomic) CKMessageEntryTextView *activeView;
 @property (nonatomic) BOOL balloonColor;
 @property (nonatomic, retain) UIButton *clearPluginButton;
 @property (nonatomic, retain) CKComposition *composition;

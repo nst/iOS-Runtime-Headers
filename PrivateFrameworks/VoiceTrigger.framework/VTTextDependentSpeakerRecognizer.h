@@ -51,6 +51,7 @@
 - (id)assetHash;
 - (void)dealloc;
 - (id)delegate;
+- (void)deleteExistingSATModel;
 - (void)deleteVectorAtIndex:(int)arg1;
 - (void)endAudio;
 - (double)getCombinationWeight;
@@ -64,7 +65,6 @@
 - (id)psrAudioDataForLogging;
 - (void)psrAudioProcessor:(id)arg1 hasResult:(id)arg2 numElements:(unsigned long long)arg3;
 - (id)queue;
-- (void)removeInvalidSATModel;
 - (void)resetForNewRequest;
 - (id)resourcePath;
 - (id)satDirectory;

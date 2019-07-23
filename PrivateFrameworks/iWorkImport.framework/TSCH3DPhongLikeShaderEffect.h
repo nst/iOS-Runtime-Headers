@@ -4,8 +4,8 @@
 
 @interface TSCH3DPhongLikeShaderEffect : TSCH3DShaderEffect
 
-- (void)inject:(id)arg1;
 - (void)injectAmbientToProgram:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (void)injectDiffuseToProgram:(id)arg1;
 - (void)injectEmissiveToProgram:(id)arg1;
 - (void)injectSpecularToProgram:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface TSCH3DFramebufferTransformPipeline : TSCH3DLinkablePipeline {
-    TSCH3DGLFramebuffer * mInput;
+    TSCH3DFramebuffer * mInput;
     <TSCH3DPipelineLinkable> * mSource;
-    TSCH3DGLFramebuffer * mTarget;
+    TSCH3DFramebuffer * mTarget;
 }
 
 @property (nonatomic, retain) <TSCH3DPipelineLinkable> *source;
-@property (nonatomic, retain) TSCH3DGLFramebuffer *target;
+@property (nonatomic, retain) TSCH3DFramebuffer *target;
 
 - (void)dealloc;
 - (void)loadSource;

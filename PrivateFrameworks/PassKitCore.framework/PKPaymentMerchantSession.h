@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentMerchantSession : NSObject <NSCopying, NSSecureCoding> {
+    NSData * _ampEnrollmentPinning;
     NSString * _displayName;
     NSString * _domain;
     unsigned long long  _epochTimestamp;
@@ -17,6 +18,7 @@
     NSArray * _signedFields;
 }
 
+@property (nonatomic, readonly) NSData *ampEnrollmentPinning;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *domain;
 @property (nonatomic, readonly) unsigned long long epochTimestamp;
@@ -36,6 +38,7 @@
 
 - (void).cxx_destruct;
 - (bool)_isModern;
+- (id)ampEnrollmentPinning;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayName;
 - (id)domain;
@@ -47,6 +50,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 domain:(id)arg5 displayName:(id)arg6 signature:(id)arg7;
+- (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 ampEnrollmentPinning:(id)arg9 signedFields:(id)arg10 signature:(id)arg11;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 displayName:(id)arg6 initiativeContext:(id)arg7 initiative:(id)arg8 signedFields:(id)arg9 signature:(id)arg10;
 - (id)initWithMerchantIdentifier:(id)arg1 merchantSessionIdentifier:(id)arg2 nonce:(id)arg3 epochTimestamp:(unsigned long long)arg4 expiresAt:(unsigned long long)arg5 domain:(id)arg6 displayName:(id)arg7 signature:(id)arg8;
 - (id)initiative;

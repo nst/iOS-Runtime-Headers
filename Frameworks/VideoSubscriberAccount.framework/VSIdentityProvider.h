@@ -4,27 +4,36 @@
 
 @interface VSIdentityProvider : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _appAdamIDs;
+    NSNumber * _appPlacementPosition;
     NSURL * _appStoreRoomURL;
     NSURL * _authenticationURL;
     bool  _developer;
     NSString * _displayName;
+    bool  _isSetTopBoxSupported;
     NSString * _nameForSorting;
     bool  _prohibitedByStore;
+    NSString * _providerAppArtworkTemplateURL;
+    NSString * _providerArtworkTemplateURL;
     VSOptional * _providerID;
     VSOptional * _providerInfo;
     NSNumber * _rankForSorting;
     NSArray * _supportedAuthenticationSchemes;
     NSArray * _supportedTemplates;
     VSOptional * _uniqueID;
+    NSString * _userToken;
 }
 
 @property (nonatomic, copy) NSArray *appAdamIDs;
+@property (nonatomic, copy) NSNumber *appPlacementPosition;
 @property (nonatomic, copy) NSURL *appStoreRoomURL;
 @property (nonatomic, copy) NSURL *authenticationURL;
 @property (getter=isDeveloper, nonatomic) bool developer;
 @property (nonatomic, readonly) VSOptional *displayName;
+@property (nonatomic) bool isSetTopBoxSupported;
 @property (nonatomic, copy) NSString *nameForSorting;
 @property (getter=isProhibitedByStore, nonatomic) bool prohibitedByStore;
+@property (nonatomic, copy) NSString *providerAppArtworkTemplateURL;
+@property (nonatomic, copy) NSString *providerArtworkTemplateURL;
 @property (nonatomic, retain) VSOptional *providerID;
 @property (nonatomic, retain) VSOptional *providerInfo;
 @property (nonatomic, copy) NSNumber *rankForSorting;
@@ -33,11 +42,13 @@
 @property (nonatomic, readonly) bool supportsTemplatesSufficientForCurrentPlatform;
 @property (nonatomic, readonly) bool supportsTemplatesSufficientForSomeKnownPlatform;
 @property (nonatomic, retain) VSOptional *uniqueID;
+@property (nonatomic, copy) NSString *userToken;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appAdamIDs;
+- (id)appPlacementPosition;
 - (id)appStoreRoomURL;
 - (id)authenticationURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -51,27 +62,36 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isFullySupportedForRequestsExpectingAuthenticationSchemes:(id)arg1;
 - (bool)isProhibitedByStore;
+- (bool)isSetTopBoxSupported;
 - (id)nameForSorting;
+- (id)providerAppArtworkTemplateURL;
+- (id)providerArtworkTemplateURL;
 - (id)providerID;
 - (id)providerInfo;
 - (id)rankForSorting;
 - (void)setAppAdamIDs:(id)arg1;
+- (void)setAppPlacementPosition:(id)arg1;
 - (void)setAppStoreRoomURL:(id)arg1;
 - (void)setAuthenticationURL:(id)arg1;
 - (void)setDeveloper:(bool)arg1;
+- (void)setIsSetTopBoxSupported:(bool)arg1;
 - (void)setNameForSorting:(id)arg1;
 - (void)setProhibitedByStore:(bool)arg1;
+- (void)setProviderAppArtworkTemplateURL:(id)arg1;
+- (void)setProviderArtworkTemplateURL:(id)arg1;
 - (void)setProviderID:(id)arg1;
 - (void)setProviderInfo:(id)arg1;
 - (void)setRankForSorting:(id)arg1;
 - (void)setSupportedAuthenticationSchemes:(id)arg1;
 - (void)setSupportedTemplates:(id)arg1;
 - (void)setUniqueID:(id)arg1;
+- (void)setUserToken:(id)arg1;
 - (id)supportedAuthenticationSchemes;
 - (id)supportedTemplates;
 - (bool)supportsRequestsExpectingAuthenticationSchemes:(id)arg1;
 - (bool)supportsTemplatesSufficientForCurrentPlatform;
 - (bool)supportsTemplatesSufficientForSomeKnownPlatform;
 - (id)uniqueID;
+- (id)userToken;
 
 @end

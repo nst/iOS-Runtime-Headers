@@ -8,6 +8,7 @@
 @property (nonatomic) int eventListenerId;
 @property (nonatomic, retain) RWIProtocolRuntimeRemoteObject *handler;
 @property (nonatomic, copy) NSString *handlerBody;
+@property (nonatomic) bool hasBreakpoint;
 @property (nonatomic) bool isAttribute;
 @property (nonatomic, retain) RWIProtocolDebuggerLocation *location;
 @property (nonatomic) int nodeId;
@@ -23,6 +24,7 @@
 - (int)eventListenerId;
 - (id)handler;
 - (id)handlerBody;
+- (bool)hasBreakpoint;
 - (id)initWithEventListenerId:(int)arg1 type:(id)arg2 useCapture:(bool)arg3 isAttribute:(bool)arg4 nodeId:(int)arg5 handlerBody:(id)arg6;
 - (bool)isAttribute;
 - (id)location;
@@ -33,6 +35,7 @@
 - (void)setEventListenerId:(int)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setHandlerBody:(id)arg1;
+- (void)setHasBreakpoint:(bool)arg1;
 - (void)setIsAttribute:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNodeId:(int)arg1;

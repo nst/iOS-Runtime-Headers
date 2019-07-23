@@ -30,8 +30,6 @@
 @property (nonatomic) double timeInterval;
 @property (nonatomic, readonly) bool use24HourTime;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_dateFormatter;
 + (id)_relativeDateFormatter;
 + (id)_timeOnlyDateFormatter;
@@ -54,12 +52,9 @@
 - (id)_todayDate;
 - (double)_tomorrow;
 - (double)_yesterday;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)boldForAllLocales;
 - (id)date;
+- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)font;

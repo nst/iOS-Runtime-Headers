@@ -36,6 +36,7 @@
 @property (nonatomic) bool isFacebook;
 @property (nonatomic, readonly) bool isFacebookSource;
 @property (nonatomic, readonly) bool isSyncing;
+@property (nonatomic, readonly) bool isWritable;
 @property (nonatomic, retain) NSDate *lastSyncEndDate;
 @property (nonatomic) unsigned long long lastSyncError;
 @property (nonatomic, retain) NSDate *lastSyncStartDate;
@@ -113,9 +114,11 @@
 - (bool)isFacebook;
 - (bool)isFacebookSource;
 - (bool)isSyncing;
+- (bool)isWritable;
 - (id)lastSyncEndDate;
 - (unsigned long long)lastSyncError;
 - (id)lastSyncStartDate;
+- (int)managedConfigurationAccountAccess;
 - (bool)onlyCreatorCanModify;
 - (id)ownerAddresses;
 - (long long)preferredEventPrivateValue;

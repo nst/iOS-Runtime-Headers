@@ -95,7 +95,6 @@
 - (void)__handleFocusMovementAction:(id)arg1;
 - (bool)__interdictServiceViewTouches;
 - (void)__setInterdictServiceViewTouches:(bool)arg1;
-- (void)__setServiceMaxFrameSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)__setSupportedInterfaceOrientations:(id)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(bool)arg1;
 - (bool)__shouldRemoteViewControllerFenceOperations;
@@ -132,7 +131,6 @@
 - (void)_cancelProxiedEditAlertViewAnimated:(bool)arg1;
 - (id)_cancelTouchesForCurrentEventInHostedContent;
 - (id)_clientDeferralProperties;
-- (void)_configureSizeViewConstraintsForWindow:(id)arg1 interfaceOrientation:(long long)arg2;
 - (bool)_customizesForPresentationInPopover;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didRotateFromInterfaceOrientation:(long long)arg1 forwardToChildControllers:(bool)arg2 skipSelf:(bool)arg3;

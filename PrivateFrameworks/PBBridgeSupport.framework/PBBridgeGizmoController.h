@@ -82,6 +82,7 @@
 - (void)refreshTimeoutTimer;
 - (id)regionIdentifer;
 - (void)remoteRequestToKeepAlive:(id)arg1;
+- (bool)reportRemoteActivationFailureError:(id)arg1;
 - (void)retryActivation:(id)arg1;
 - (bool)sendCompanionPerformanceResults;
 - (id)serviceIdentifier;

@@ -12,6 +12,7 @@
     NSString * _overrideProcessName;
     bool  _shouldCrashOnError;
     bool  _shouldLogToConsole;
+    bool  _shouldPerformValidationChecks;
     bool  _shouldReportToServer;
     <AXValidationReportingServices> * _validationReportingServices;
     NSString * _validationTargetName;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) NSString *overrideProcessName;
 @property (nonatomic) bool shouldCrashOnError;
 @property (nonatomic) bool shouldLogToConsole;
+@property (nonatomic) bool shouldPerformValidationChecks;
 @property (nonatomic) bool shouldReportToServer;
 @property (nonatomic, retain) <AXValidationReportingServices> *validationReportingServices;
 @property (nonatomic, copy) NSString *validationTargetName;
@@ -33,6 +35,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_clearState;
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasClassMethod:(id)arg3 withFullSignature:(const char *)arg4 argList:(char *)arg5;
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasMethod:(id)arg3 methodType:(int)arg4;
 - (bool)_client:(id)arg1 validateClass:(id)arg2 hasMethod:(id)arg3 methodType:(int)arg4 returnType:(id)arg5 arguments:(id)arg6;
@@ -42,6 +45,7 @@
 - (void)_iterateMethodsOfType:(int)arg1 onClass:(Class)arg2 block:(id /* block */)arg3;
 - (id)_nameForMethod:(struct objc_method { }*)arg1;
 - (void)_printConsoleReport:(bool)arg1 isDelayed:(bool)arg2;
+- (void)_resetState;
 - (bool)client:(id)arg1 validateClass:(id)arg2;
 - (bool)client:(id)arg1 validateClass:(id)arg2 conformsToProtocol:(id)arg3;
 - (bool)client:(id)arg1 validateClass:(id)arg2 hasClassMethod:(id)arg3 withFullSignature:(const char *)arg4;
@@ -62,7 +66,6 @@
 - (bool)forceDoNotReport;
 - (id)init;
 - (void)installSafeCategories:(id /* block */)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4;
-- (void)installSafeCategories:(id /* block */)arg1 afterDelay:(double)arg2 validationTargetName:(id)arg3 overrideProcessName:(id)arg4 forceDoNotReport:(bool)arg5;
 - (bool)installSafeCategory:(id)arg1;
 - (bool)installSafeCategory:(id)arg1 canInteractWithTargetClass:(bool)arg2;
 - (bool)isDebugBuild;
@@ -98,11 +101,13 @@
 - (void)setOverrideProcessName:(id)arg1;
 - (void)setShouldCrashOnError:(bool)arg1;
 - (void)setShouldLogToConsole:(bool)arg1;
+- (void)setShouldPerformValidationChecks:(bool)arg1;
 - (void)setShouldReportToServer:(bool)arg1;
 - (void)setValidationReportingServices:(id)arg1;
 - (void)setValidationTargetName:(id)arg1;
 - (bool)shouldCrashOnError;
 - (bool)shouldLogToConsole;
+- (bool)shouldPerformValidationChecks;
 - (bool)shouldReportToServer;
 - (bool)validateClass:(id)arg1;
 - (bool)validateClass:(id)arg1 conformsToProtocol:(id)arg2;

@@ -6,25 +6,25 @@
     NSDate * _date;
     <PKDatePickerDelegate> * _delegate;
     struct UIView { Class x1; } * _internalPicker;
-    bool  _representsCardExpiration;
     bool  _showsDay;
     bool  _showsMonth;
     bool  _showsYear;
+    unsigned long long  _style;
     bool  _usesDarkAppearance;
 }
 
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic) <PKDatePickerDelegate> *delegate;
-@property (nonatomic, readonly) bool representsCardExpiration;
 @property (nonatomic, readonly) bool showsDay;
 @property (nonatomic, readonly) bool showsMonth;
 @property (nonatomic, readonly) bool showsYear;
+@property (nonatomic, readonly) unsigned long long style;
 @property (nonatomic) bool usesDarkAppearance;
 
 + (bool)_preventsAppearanceProxyCustomization;
 
 - (void).cxx_destruct;
-- (Class)_classForDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 representingCardExpiration:(bool)arg4;
+- (Class)_classForDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 style:(unsigned long long)arg4;
 - (void)_dateValueChanged:(struct UIView { Class x1; }*)arg1;
 - (void)_forceReloadInternalPicker;
 - (id)date;
@@ -36,8 +36,7 @@
 - (void)layoutSubviews;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
-- (void)reconfigureToShowDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 representingCardExpiration:(bool)arg4;
-- (bool)representsCardExpiration;
+- (void)reconfigureToShowDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 style:(unsigned long long)arg4;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -46,6 +45,7 @@
 - (bool)showsMonth;
 - (bool)showsYear;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)style;
 - (bool)usesDarkAppearance;
 
 @end

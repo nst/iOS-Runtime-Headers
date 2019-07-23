@@ -74,6 +74,7 @@
 @property (nonatomic, retain) SFRichText *trailingSubtitle;
 @property (nonatomic, retain) SFRichText *trailingText;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic) bool valueNoWrap;
 @property (nonatomic, copy) NSNumber *valueWeight;

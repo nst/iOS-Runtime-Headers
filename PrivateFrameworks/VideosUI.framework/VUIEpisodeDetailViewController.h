@@ -6,7 +6,6 @@
     <VUIEpisodeDetailViewControllerDelegate> * _delegate;
     VUIEpisodeDetailView * _detailView;
     VUIMediaItem * _mediaItem;
-    VUIMetricsController * _metricsController;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
@@ -16,7 +15,6 @@
 @property (nonatomic, retain) VUIEpisodeDetailView *detailView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VUIMediaItem *mediaItem;
-@property (nonatomic, retain) VUIMetricsController *metricsController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 
@@ -33,11 +31,10 @@
 - (id)initWithMediaItem:(id)arg1;
 - (id)initWithMediaLibrary:(id)arg1;
 - (id)mediaItem;
-- (id)metricsController;
+- (void)reportMetricsPageEvent;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailView:(id)arg1;
 - (void)setMediaItem:(id)arg1;
-- (void)setMetricsController:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
 - (id)tapGestureRecognizer;
 - (void)traitCollectionDidChange:(id)arg1;

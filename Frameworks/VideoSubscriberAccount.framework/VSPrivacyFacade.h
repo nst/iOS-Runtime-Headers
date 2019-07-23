@@ -28,7 +28,7 @@
 - (id)knownAppBundles;
 - (void)preflightCheckForProcessIdentifier:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)privateQueue;
-- (void)requestAccessForAuditToken:(struct { unsigned int x1[8]; })arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 identityProviderID:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)requestAccessForAuditToken:(struct { unsigned int x1[8]; })arg1 processIdentifier:(int)arg2 identityProviderDisplayName:(id)arg3 identityProviderID:(id)arg4 allowUI:(bool)arg5 completionHandler:(id /* block */)arg6;
 - (bool)reset;
 - (id)service;
 - (bool)setAccessGranted:(bool)arg1 forAuditToken:(struct { unsigned int x1[8]; })arg2;

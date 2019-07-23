@@ -24,7 +24,6 @@
 - (id)_initWithMediaCollectionType:(unsigned long long)arg1 mediaCategoryType:(unsigned long long)arg2;
 - (id)_initWithMediaItemCategoryType:(unsigned long long)arg1 isRental:(bool)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;
 - (id)init;
@@ -36,6 +35,7 @@
 - (void)setMediaCollectionType:(unsigned long long)arg1;
 - (void)setRental:(bool)arg1;
 - (void)setSubtype:(unsigned long long)arg1;
+- (id)stringDescription;
 - (unsigned long long)subtype;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (bool)_parseFromTLVData;
-- (NSString *)descriptionWithIndent:(HMUIndent *)arg1;
+- (NSString *)descriptionWithIndent:(HMFStringIndentation *)arg1;
 - (NSData *)tlvData;
 
 @end

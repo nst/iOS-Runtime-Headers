@@ -6,21 +6,25 @@
     id /* block */  _addToFilteredEventsBlock;
     struct __CFRunLoop { } * _cfRunLoop;
     double  _commitTimeForTouchEvents;
+    long long  _countOfDigitizerEventsReceivedInPreviousFrame;
     long long  _countOfDigitizerEventsReceivedSinceLastDisplayLinkCallback;
-    bool  _didDispatchOneMoveEventSinceLastDisplayLinkCallback;
+    bool  _didSignalOneMoveEventSinceLastDisplayLinkCallback;
     CADisplayLink * _displayLink;
     int  _displayLinkIdleTicks;
+    double  _estimatedDisplayLinkDrift;
     <UIEventFetcherSink> * _eventFetcherSink;
     NSMutableArray * _eventFilters;
     id /* block */  _gameControllerEventFilterGenerator;
     NSMutableArray * _incomingHIDEvents;
     NSMutableArray * _incomingHIDEventsFiltered;
     double  _lastImportantEventTimestamp;
+    double  _lastSignalTimestamp;
+    long long  _lastSignalType;
     double  _latestMoveDragEventResendTimestamp;
     double  _latestMoveDragEventTimestamp;
     NSMutableDictionary * _latestMoveDragEventsBySessionID;
+    bool  _needsSignalOnDisplayLink;
     id /* block */  _receiveBlock;
-    bool  _shouldSignalOnDisplayLink;
     struct __CFRunLoopSource { } * _triggerHandOffEventsRunLoopSource;
     id /* block */  _watchSystemAppFilter;
 }
@@ -30,7 +34,7 @@
 @property (nonatomic) double latestMoveDragEventResendTimestamp;
 @property (nonatomic) double latestMoveDragEventTimestamp;
 @property (nonatomic, retain) NSMutableDictionary *latestMoveDragEventsBySessionID;
-@property (nonatomic) bool shouldSignalOnDisplayLink;
+@property (nonatomic) bool needsSignalOnDisplayLink;
 
 - (void).cxx_destruct;
 - (void)_addHIDEventFilter:(id /* block */)arg1;
@@ -49,15 +53,15 @@
 - (double)latestMoveDragEventResendTimestamp;
 - (double)latestMoveDragEventTimestamp;
 - (id)latestMoveDragEventsBySessionID;
+- (bool)needsSignalOnDisplayLink;
 - (void)setCommitTimeForTouchEvents:(double)arg1;
 - (void)setEventFetcherSink:(id)arg1;
 - (void)setLatestMoveDragEventResendTimestamp:(double)arg1;
 - (void)setLatestMoveDragEventTimestamp:(double)arg1;
 - (void)setLatestMoveDragEventsBySessionID:(id)arg1;
-- (void)setShouldSignalOnDisplayLink:(bool)arg1;
+- (void)setNeedsSignalOnDisplayLink:(bool)arg1;
 - (void)setupForRunLoop:(id)arg1;
 - (void)setupThreadAndRun;
-- (bool)shouldSignalOnDisplayLink;
 - (void)signalEventsAvailableWithReason:(unsigned long long)arg1 filteredEventCount:(long long)arg2;
 - (void)threadMain;
 

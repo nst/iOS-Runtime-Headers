@@ -3,8 +3,10 @@
  */
 
 @interface AWDExpressTransactionType : PBCodable <NSCopying> {
+    unsigned int  _appletType;
     unsigned int  _count;
     struct { 
+        unsigned int appletType : 1; 
         unsigned int count : 1; 
         unsigned int spid : 1; 
     }  _has;
@@ -12,19 +14,23 @@
     unsigned int  _spid;
 }
 
+@property (nonatomic) unsigned int appletType;
 @property (nonatomic) unsigned int count;
+@property (nonatomic) bool hasAppletType;
 @property (nonatomic) bool hasCount;
 @property (nonatomic, readonly) bool hasRidAndPix;
 @property (nonatomic) bool hasSpid;
 @property (nonatomic, retain) NSData *ridAndPix;
 @property (nonatomic) unsigned int spid;
 
+- (unsigned int)appletType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasAppletType;
 - (bool)hasCount;
 - (bool)hasRidAndPix;
 - (bool)hasSpid;
@@ -33,7 +39,9 @@
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)ridAndPix;
+- (void)setAppletType:(unsigned int)arg1;
 - (void)setCount:(unsigned int)arg1;
+- (void)setHasAppletType:(bool)arg1;
 - (void)setHasCount:(bool)arg1;
 - (void)setHasSpid:(bool)arg1;
 - (void)setRidAndPix:(id)arg1;

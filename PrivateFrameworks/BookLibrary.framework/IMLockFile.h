@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (bool)lock:(bool)arg1;
+- (bool)lockWithBlock:(id /* block */)arg1 error:(id*)arg2;
 - (bool)locked;
 - (id)path;
 - (bool)tryLock:(bool)arg1;

@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *paymentIdentifier;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)action;
 - (id)paymentIdentifier;
 - (void)setAction:(id)arg1;

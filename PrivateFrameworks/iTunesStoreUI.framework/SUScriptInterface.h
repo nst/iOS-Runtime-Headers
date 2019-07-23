@@ -131,6 +131,7 @@
 - (void)addExternalDownloadsFromManifestURL:(id)arg1;
 - (void)addPurchaseWithInfo:(id)arg1;
 - (void)addPurchaseWithInfo:(id)arg1 options:(id)arg2;
+- (void)addiTunesPassWithCompletionFunction:(id)arg1;
 - (id)appleAccountStore;
 - (id)application;
 - (id)applicationAccessibilityEnabled;
@@ -142,6 +143,7 @@
 - (void)authenticateAppleIdWithUsername:(id)arg1 password:(id)arg2 callback:(id)arg3;
 - (void)authenticateForAccount:(id)arg1 withOptions:(id)arg2;
 - (id)authenticationContext;
+- (void)authorizeApplePayEnrollmentWithParameters:(id)arg1 callback:(id)arg2;
 - (bool)canSendEmail;
 - (id)carrierBundlingController;
 - (bool)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(bool)arg2;
@@ -172,6 +174,9 @@
 - (void)dismissWindowsWithOptions:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
 - (void)dispatchXEvent:(id)arg1;
+- (void)fetchAppleCardMetadata:(id)arg1 callback:(id)arg2;
+- (void)fetchWalletCardData:(id)arg1;
+- (void)fetchWalletCardMetadata:(id)arg1 callback:(id)arg2;
 - (void)financeInterruptionResolved:(id)arg1;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (id)getAudioPlayerForURL:(id)arg1 keyURL:(id)arg2 certificateURL:(id)arg3;
@@ -179,6 +184,7 @@
 - (void)getInstalledSoftwareApplicationsWithCompletionFunction:(id)arg1;
 - (void)getSoftwareApplicationWithAdamID:(id)arg1 completionFunction:(id)arg2;
 - (void)getSoftwareApplicationWithBundleID:(id)arg1 completionFunction:(id)arg2;
+- (id)getiTunesPass;
 - (id)globalRootObject;
 - (void)goBack;
 - (void)gotoStoreURL:(id)arg1;
@@ -229,6 +235,7 @@
 - (id)makeNumberFormatterWithStyle:(id)arg1;
 - (id)makePopOverWithViewController:(id)arg1;
 - (id)makeRadialGradientWithX0:(double)arg1 y0:(double)arg2 r0:(double)arg3 x1:(double)arg4 y1:(double)arg5 r1:(double)arg6;
+- (id)makeRedeemCameraViewController;
 - (id)makeRedeemViewController;
 - (id)makeReportAProblemViewControllerWithAdamID:(id)arg1;
 - (id)makeReviewWithAdamID:(id)arg1;
@@ -255,6 +262,7 @@
 - (id)orientation;
 - (id)parentViewController;
 - (id)passbookLibrary;
+- (void)paymentSetupFeatureSupported:(id)arg1 callback:(id)arg2;
 - (void)perfLog:(id)arg1;
 - (void)performPurchaseAnimationForIdentifier:(id)arg1 style:(id)arg2;
 - (void)pingURL:(id)arg1;
@@ -264,9 +272,13 @@
 - (id)previewOverlay;
 - (id)primaryAccount;
 - (id)primaryLockerAccount;
+- (id)primaryiCloudAccount;
 - (id)protocol;
 - (id)purchaseManager;
+- (id)redeemCameraAvailable;
 - (void)redeemCode:(id)arg1;
+- (void)redeemCodes:(id)arg1 params:(id)arg2 completion:(id)arg3;
+- (void)redeemCodesReloadDownloadManager;
 - (id)referrerURL;
 - (id)referringUserAgent;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
@@ -337,6 +349,7 @@
 - (id)showPromptWithMessage:(id)arg1 initialValue:(id)arg2 title:(id)arg3 okButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5;
 - (void)showSafariViewControllerWithURLString:(id)arg1 identifier:(id)arg2 animated:(bool)arg3;
 - (void)signOutPrimaryAccount;
+- (void)signupInWallet:(id)arg1 callback:(id)arg2;
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (id)softwareApplicationWithBundleID:(id)arg1;
 - (void)startListeningForAuthenticationTokenWithCallback:(id)arg1;

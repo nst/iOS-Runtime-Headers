@@ -14,7 +14,7 @@
 - (id)_newRenderPassDescriptor;
 - (id)init;
 - (id)quads;
-- (void)renderDrawable:(id)arg1 size:(struct CLKUIQuadSize { int x1; int x2; })arg2;
+- (bool)renderTexture:(id /* block */)arg1 preCommit:(id /* block */)arg2 postCommit:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)setQuads:(id)arg1;
 
 @end

@@ -8,6 +8,7 @@
     bool  _isHigh;
     bool  _isLow;
     bool  _isMetadata;
+    bool  _isSmartKeyboard;
     bool  _isStart;
     bool  _isTerminal;
 }
@@ -17,6 +18,7 @@
 @property (readonly) bool isHigh;
 @property (readonly) bool isLow;
 @property (readonly) bool isMetadata;
+@property (readonly) bool isSmartKeyboard;
 @property (readonly) bool isStart;
 @property (readonly) bool isTerminal;
 
@@ -29,6 +31,7 @@
 - (bool)isHigh;
 - (bool)isLow;
 - (bool)isMetadata;
+- (bool)isSmartKeyboard;
 - (bool)isStart;
 - (bool)isTerminal;
 - (void)setProperties;

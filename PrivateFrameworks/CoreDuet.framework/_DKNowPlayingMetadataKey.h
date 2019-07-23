@@ -10,6 +10,9 @@
 + (id)elapsed;
 + (id)genre;
 + (id)identifier;
++ (id)isAirPlayVideo;
++ (id)mediaType;
++ (id)outputDeviceIDs;
 + (id)playing;
 + (id)title;
 

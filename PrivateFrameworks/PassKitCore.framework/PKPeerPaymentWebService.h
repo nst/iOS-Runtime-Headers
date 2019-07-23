@@ -5,6 +5,7 @@
 @interface PKPeerPaymentWebService : PKWebService <NSURLSessionTaskDelegate> {
     <PKPeerPaymentWebServiceArchiver> * _archiver;
     PKPeerPaymentWebServiceContext * _context;
+    PKPaymentDevice * _paymentDevice;
     PKPeerPaymentService * _peerPaymentService;
     NSMutableDictionary * _prewarmedDeviceScorers;
     NSObject<OS_dispatch_queue> * _prewarmedDeviceScorersQueue;
@@ -28,21 +29,25 @@
 + (id)sharedService;
 
 - (void).cxx_destruct;
+- (id)_appleAccountInformation;
 - (void)_archiveContext;
 - (id)_createDeviceScorerForEndpoint:(id)arg1 recipientAddress:(id)arg2;
 - (id)_deviceIdentifier;
-- (id)_deviceMetadata;
 - (void)_deviceRegistrationDataWithCompletion:(id /* block */)arg1;
 - (void)_deviceScoreForEndpoint:(id)arg1 recipientAddress:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_deviceScoreForEndpoint:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_handleRetryAfterRegisterWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)_isValidResponse:(id)arg1 error:(id)arg2;
+- (void)_peerPaymentDeviceMetadataWithCompletion:(id /* block */)arg1;
+- (void)_renewAppleAccountWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (id)archiver;
 - (id)badRequestErrorWithResponse:(id)arg1;
 - (bool)canBypassTrustExtendedValidation;
 - (id)context;
+- (unsigned long long)disbursementVoucherWithRequest:(id)arg1 certificates:(id)arg2 completion:(id /* block */)arg3;
 - (id)forbiddenErrorWithResponse:(id)arg1;
+- (void)handleAuthenticationFailureWithCompletionHandler:(id /* block */)arg1;
 - (void)handleResponse:(id)arg1 withError:(id)arg2 data:(id)arg3 task:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(id /* block */)arg2;
 - (id)init;
@@ -55,6 +60,7 @@
 - (unsigned long long)peerPaymentAccountWithCompletion:(id /* block */)arg1;
 - (unsigned long long)peerPaymentBankLookupWithCountryCode:(id)arg1 query:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)peerPaymentDocumentSubmissionRequest:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)peerPaymentEmailTermsWithCompletion:(id /* block */)arg1;
 - (unsigned long long)peerPaymentIdentityVerificationRequest:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)peerPaymentPassDetailsWithCompletion:(id /* block */)arg1;
 - (unsigned long long)peerPaymentPerformAction:(id)arg1 withPaymentIdentifier:(id)arg2 completion:(id /* block */)arg3;

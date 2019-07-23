@@ -25,7 +25,7 @@
 - (void)handleKeyFrameRequestWithSizeAndFistMBs:(unsigned short*)arg1 count:(int)arg2 didReceiveRTCPFB:(bool)arg3 didReceiveFIR:(bool)arg4;
 - (void)handleRemoteFrame:(struct __CVBuffer { }*)arg1 timestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 cameraStatusBits:(unsigned char)arg3;
 - (void)handleRequestingKeyFrameGenerationWithStreamID:(unsigned short)arg1;
-- (id)initWithConfig:(struct tagVCVideoReceiverConfig { unsigned int x1; struct tagVCVideoReceiverStreamConfig { struct tagHANDLE {} *x_2_1_1; unsigned short x_2_1_2; unsigned short x_2_1_3; bool x_2_1_4; unsigned int x_2_1_5; unsigned int x_2_1_6[4]; unsigned int x_2_1_7[4]; unsigned short x_2_1_8; } x2[4]; bool x3; long long x4; int x5; int x6; int x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; int x14; bool x15; void *x16; int (*x17)(); int (*x18)(); int (*x19)(); unsigned long long x20; }*)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting { }*)arg3 statisticsCollector:(id)arg4;
+- (id)initWithConfig:(struct tagVCVideoReceiverConfig { unsigned int x1; struct tagVCVideoReceiverStreamConfig { struct tagHANDLE {} *x_2_1_1; unsigned short x_2_1_2; unsigned short x_2_1_3; bool x_2_1_4; unsigned int x_2_1_5; unsigned short x_2_1_6[4]; unsigned short x_2_1_7[4]; unsigned short x_2_1_8; } x2[4]; bool x3; long long x4; int x5; int x6; int x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; int x14; bool x15; void *x16; int (*x17)(); int (*x18)(); int (*x19)(); unsigned long long x20; }*)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting { }*)arg3 statisticsCollector:(id)arg4;
 - (double)lastReceivedVideoRTCPPacketTime;
 - (double)lastReceivedVideoRTPPacketTime;
 - (void)pauseVideo;

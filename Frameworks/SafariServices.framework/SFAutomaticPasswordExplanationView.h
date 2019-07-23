@@ -6,6 +6,7 @@
     UILayoutGuide * _contentLayoutGuide;
     NSLayoutConstraint * _contentLayoutGuideBottomConstraint;
     UILabel * _explanationLabel;
+    NSLayoutConstraint * _iPadWidthConstraint;
     bool  _isPad;
     long long  _keyboardAppearance;
     long long  _keyboardType;

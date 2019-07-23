@@ -51,7 +51,7 @@
 - (void)encodeReconstructToCommandBuffer:(id)arg1 inGuidancePixelBuffer:(struct __CVBuffer { }*)arg2 inCoeffTexture:(id)arg3 outFilteredTexture:(id)arg4;
 - (void)encodeRegressionToCommandBuffer:(id)arg1 inSourceTexture:(id)arg2 inGuidanceTexture:(id)arg3 inWeightTexture:(id)arg4 outCoeffTexture:(id)arg5 epsilon:(float)arg6;
 - (void)initSourceTexture:(struct __CVBuffer { }*)arg1;
-- (id)initWithDevice:(id)arg1 library:(id)arg2 commandQueue:(id)arg3 textureSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg4 alphaSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg5 kernelSize:(int)arg6 error:(id*)arg7;
+- (id)initWithDevice:(id)arg1 library:(id)arg2 commandQueue:(id)arg3 textureSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg4 alphaSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg5 kernelSize:(int)arg6 alphaDownsamplingScale:(float)arg7 error:(id*)arg8;
 - (id)label;
 
 @end

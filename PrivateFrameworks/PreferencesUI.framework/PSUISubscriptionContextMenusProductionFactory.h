@@ -20,6 +20,7 @@
 - (id)createCarrierSpaceSubgroup;
 - (id)createCellularPlanManager;
 - (id)createCellularPlanManagerCache;
+- (id)createDataCache;
 - (id)createMyNumberSubgroup;
 - (id)createNetworkSelectionSubgroup;
 - (id)createNetworkSettingsSubgroup;

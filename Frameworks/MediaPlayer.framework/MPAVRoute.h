@@ -30,12 +30,13 @@
     MPAVRoute * _wirelessDisplayRoute;
 }
 
+@property (getter=isAirPlayRoute, nonatomic, readonly) bool airPlayRoute;
 @property (getter=isAirPlayingToDevice, nonatomic, readonly) bool airPlayingToDevice;
 @property (getter=isAirpodsRoute, nonatomic, readonly) bool airpodsRoute;
 @property (getter=isAppleTVRoute, nonatomic, readonly) bool appleTVRoute;
 @property (nonatomic, readonly) NSArray *auxiliaryDevices;
 @property (nonatomic, readonly) NSDictionary *avRouteDescription;
-@property (getter=isB238Route, nonatomic, readonly) bool b238Route;
+@property (getter=isB444Route, nonatomic, readonly) bool b444Route;
 @property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
 @property (getter=isBeatsSoloRoute, nonatomic, readonly) bool beatsSoloRoute;
 @property (getter=isBeatsStudioRoute, nonatomic, readonly) bool beatsStudioRoute;
@@ -50,7 +51,10 @@
 @property (getter=isDisplayedAsPicked, nonatomic, readonly) bool displayAsPicked;
 @property (nonatomic) long long displayRouteType;
 @property (getter=_externalDevice, nonatomic, readonly) void*externalDevice;
+@property (nonatomic, readonly) NSString *groupLeaderAirplayIdentifier;
 @property (nonatomic, readonly) NSString *groupUID;
+@property (getter=isH1Route, nonatomic, readonly) bool h1Route;
+@property (getter=isHearingDeviceRoute, nonatomic, readonly) bool hearingDeviceRoute;
 @property (getter=isHomePodRoute, nonatomic, readonly) bool homePodRoute;
 @property (nonatomic, readonly) bool isDeviceRoute;
 @property (nonatomic, readonly) long long passwordType;
@@ -75,8 +79,10 @@
 @property (nonatomic, readonly) bool supportsGrouping;
 @property (nonatomic, readonly) bool supportsRemoteControl;
 @property (nonatomic, readonly) bool supportsWirelessDisplay;
+@property (getter=isTVRoute, nonatomic, readonly) bool tvRoute;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
 @property (getter=isW1Route, nonatomic, readonly) bool w1Route;
+@property (getter=isW2Route, nonatomic, readonly) bool w2Route;
 @property (nonatomic, retain) MPAVRoute *wirelessDisplayRoute;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -97,13 +103,15 @@
 - (id)designatedGroupLeaderName;
 - (long long)displayRouteType;
 - (void)encodeWithCoder:(id)arg1;
+- (id)groupLeaderAirplayIdentifier;
 - (id)groupUID;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (bool)isAirPlayRoute;
 - (bool)isAirPlayingToDevice;
 - (bool)isAirpodsRoute;
 - (bool)isAppleTVRoute;
-- (bool)isB238Route;
+- (bool)isB444Route;
 - (bool)isBeatsSoloRoute;
 - (bool)isBeatsStudioRoute;
 - (bool)isBeatsXRoute;
@@ -112,6 +120,8 @@
 - (bool)isDeviceSpeakerRoute;
 - (bool)isDisplayedAsPicked;
 - (bool)isEqual:(id)arg1;
+- (bool)isH1Route;
+- (bool)isHearingDeviceRoute;
 - (bool)isHomePodRoute;
 - (bool)isPicked;
 - (bool)isPickedOnPairedDevice;
@@ -121,8 +131,10 @@
 - (bool)isRoutingToWirelessDevice;
 - (bool)isSmartAudio;
 - (bool)isStereoPair;
+- (bool)isTVRoute;
 - (bool)isVolumeControlAvailable;
 - (bool)isW1Route;
+- (bool)isW2Route;
 - (long long)passwordType;
 - (long long)pickableRouteType;
 - (id)playingPairedDeviceName;

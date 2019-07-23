@@ -29,6 +29,7 @@
 - (void)collectLoggableState:(id /* block */)arg1;
 - (id)currentTrainingContext;
 - (void)dealloc;
+- (void)flushTraining;
 - (id)initWithRelevanceEngine:(id)arg1;
 - (void)makeContextCurrent:(id)arg1;
 - (void)manuallyPerformTraining;

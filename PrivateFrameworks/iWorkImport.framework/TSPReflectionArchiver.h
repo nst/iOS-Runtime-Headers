@@ -4,6 +4,7 @@
 
 @interface TSPReflectionArchiver : TSPArchiver
 
+- (id)initWithObject:(id)arg1;
 - (long long)targetType;
 
 @end

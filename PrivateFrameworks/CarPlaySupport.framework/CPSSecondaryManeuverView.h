@@ -14,8 +14,9 @@
 
 - (void).cxx_destruct;
 - (void)backgroundColorDidChange;
-- (id)initWithManeuver:(id)arg1 minimalMode:(bool)arg2 style:(long long)arg3;
+- (id)initWithManeuver:(id)arg1 style:(long long)arg2;
 - (id)instructionLabel;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)maneuver;
 - (void)setInstructionLabel:(id)arg1;
 - (void)setManeuver:(id)arg1;

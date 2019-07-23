@@ -3,20 +3,22 @@
  */
 
 @interface STAllowance : NSObject <NSCopying> {
+    bool  _allowanceEnabled;
     unsigned long long  _allowanceType;
     unsigned long long  _behaviorOption;
     NSArray * _budgetedIdentifiers;
-    NSArray * _iCloudPredicateUserDSIDs;
     NSString * _identifier;
+    bool  _shouldAllowEditing;
     NSDateComponents * _time;
     NSDictionary * _timeByDay;
 }
 
+@property bool allowanceEnabled;
 @property (nonatomic) unsigned long long allowanceType;
 @property (nonatomic) unsigned long long behaviorOption;
 @property (nonatomic, copy) NSArray *budgetedIdentifiers;
-@property (nonatomic, readonly, copy) NSArray *iCloudPredicateUserDSIDs;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic) bool shouldAllowEditing;
 @property (nonatomic, copy) NSDateComponents *time;
 @property (nonatomic, copy) NSDictionary *timeByDay;
 @property (nonatomic, readonly) double timeToday;
@@ -29,24 +31,24 @@
 + (id)usageLimitTypeForAllowanceType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (void)_stAllowanceInitByParsingFamilyBudgetAllPredicate:(id)arg1;
-- (void)_stAllowanceInitByParsingPersonalBudgetPredicate:(id)arg1;
+- (bool)allowanceEnabled;
 - (unsigned long long)allowanceType;
 - (unsigned long long)behaviorOption;
 - (id)budgetedIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultBudgetTime;
 - (id)defaultTimeByDay;
-- (id)iCloudPredicateUserDSIDs;
 - (id)identifier;
 - (id)init;
 - (id)initWithBlueprint:(id)arg1;
-- (id)initWithBudget:(id)arg1;
+- (void)setAllowanceEnabled:(bool)arg1;
 - (void)setAllowanceType:(unsigned long long)arg1;
 - (void)setBehaviorOption:(unsigned long long)arg1;
 - (void)setBudgetedIdentifiers:(id)arg1;
+- (void)setShouldAllowEditing:(bool)arg1;
 - (void)setTime:(id)arg1;
 - (void)setTimeByDay:(id)arg1;
+- (bool)shouldAllowEditing;
 - (id)time;
 - (id)timeByDay;
 - (double)timeToday;

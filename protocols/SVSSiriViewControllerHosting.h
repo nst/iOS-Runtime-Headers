@@ -56,5 +56,6 @@
 
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;
+- (void)setTypeToSiriViewHidden:(bool)arg1;
 
 @end

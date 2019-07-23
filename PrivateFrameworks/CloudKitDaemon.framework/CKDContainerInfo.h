@@ -8,6 +8,7 @@
     NSString * _orgAdminUserID;
     NSURL * _publicCloudDBURL;
     NSURL * _publicCodeServiceURL;
+    NSURL * _publicDatabaseRPCServiceURL;
     NSURL * _publicDeviceServiceURL;
     NSURL * _publicMetricsServiceURL;
     NSURL * _publicShareServiceURL;
@@ -18,6 +19,7 @@
 @property (nonatomic, copy) NSString *orgAdminUserID;
 @property (nonatomic, copy) NSURL *publicCloudDBURL;
 @property (nonatomic, copy) NSURL *publicCodeServiceURL;
+@property (nonatomic, copy) NSURL *publicDatabaseRPCServiceURL;
 @property (nonatomic, copy) NSURL *publicDeviceServiceURL;
 @property (nonatomic, copy) NSURL *publicMetricsServiceURL;
 @property (nonatomic, copy) NSURL *publicShareServiceURL;
@@ -38,6 +40,7 @@
 - (id)orgAdminUserID;
 - (id)publicCloudDBURL;
 - (id)publicCodeServiceURL;
+- (id)publicDatabaseRPCServiceURL;
 - (id)publicDeviceServiceURL;
 - (id)publicMetricsServiceURL;
 - (id)publicShareServiceURL;
@@ -46,6 +49,7 @@
 - (void)setOrgAdminUserID:(id)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicCodeServiceURL:(id)arg1;
+- (void)setPublicDatabaseRPCServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
 - (void)setPublicMetricsServiceURL:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;

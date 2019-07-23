@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)controller;
 - (long long)currentLineWidthTag;
+- (id)indexPathForLineWidthTag:(long long)arg1;
 - (id)initWithController:(id)arg1;
 - (id)lineWidthTags;
 - (void)selectRowForTag:(long long)arg1;

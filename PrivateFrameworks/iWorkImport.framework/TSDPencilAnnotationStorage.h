@@ -5,6 +5,9 @@
 @interface TSDPencilAnnotationStorage : TSPObject <TSKPencilAnnotationStorage> {
     long long  _attachedLocation;
     long long  _attachedType;
+    long long  _compoundAnnotationType;
+    NSDate * _creationDate;
+    TSKPKDrawing * _drawing;
     PKDrawing * _drawingForTextRecognition;
     TSPData * _encodedDrawingTSPData;
     struct CGPoint { 
@@ -18,6 +21,7 @@
     <TSKPencilAnnotationStorage> * _parentStorage;
     struct CGPath { } * _path;
     TSUColor * _penColor;
+    double  _pencilAnnotationDrawingScale;
     double  _percentOfPAContainedInParentRep;
     struct CGSize { 
         double width; 
@@ -42,21 +46,28 @@
 
 @property (nonatomic) long long attachedLocation;
 @property (nonatomic) long long attachedType;
-@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } centerOfStrokes;
+@property (nonatomic) long long compoundAnnotationType;
+@property (nonatomic, readonly) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) PKDrawing *drawing;
+@property (nonatomic, retain) TSKPKDrawing *drawing;
 @property (nonatomic, retain) PKDrawing *drawingForTextRecognition;
 @property (nonatomic, readonly) NSData *encodedDrawing;
 @property (nonatomic, readonly) TSPData *encodedDrawingTSPData;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCalloutLine;
+@property (nonatomic, readonly) bool isCalloutMarginAnnotation;
+@property (nonatomic, readonly) bool isCalloutParentStorage;
+@property (nonatomic, readonly) bool isStretchableParagraphAnnotation;
 @property (nonatomic) struct CGPoint { double x1; double x2; } markupOffset;
 @property (nonatomic, readonly) bool needsTextRecognition;
 @property (nonatomic) struct CGSize { double x1; double x2; } originalAttachedSize;
 @property (nonatomic) <TSKPencilAnnotationStorage> *parentStorage;
 @property (nonatomic, readonly) struct CGPath { }*path;
 @property (nonatomic, readonly) TSUColor *penColor;
+@property (nonatomic) double pencilAnnotationDrawingScale;
 @property (nonatomic) double percentOfPAContainedInParentRep;
+@property (nonatomic, readonly) TSUImage *rasterizedImage;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } rasterizedImageSize;
 @property (nonatomic, readonly) TSPData *rasterizedImageTSPData;
 @property (nonatomic, readonly) bool shouldResizeWithAnchor;
@@ -67,42 +78,61 @@
 @property (nonatomic) unsigned long long textBaselinesTouchedCount;
 @property (nonatomic, readonly) long long toolType;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledBoundsOfStrokes;
+@property (nonatomic, readonly) struct CGPath { }*unscaledPath;
 @property (nonatomic) unsigned long long visibleStrokesCount;
 
 - (void).cxx_destruct;
 - (long long)attachedLocation;
 - (long long)attachedType;
-- (struct CGPoint { double x1; double x2; })centerOfStrokes;
+- (long long)compoundAnnotationType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertStrokeRectToUnscaledCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertStrokeToUnscaledCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })convertStrokeToUnscaledCanvasSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertUnscaledCanvasToStrokePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertUnscaledCanvasToStrokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })convertUnscaledCanvasToStrokeSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creationDate;
 - (void)dealloc;
 - (id)description;
 - (id)drawing;
 - (id)drawingForTextRecognition;
 - (id)encodedDrawing;
 - (id)encodedDrawingTSPData;
-- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint { double x1; double x2; })arg2 rasterizedImage:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath { }*)arg7 unscaledBoundsOfStrokes:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg8 originalAttachedSize:(struct CGSize { double x1; double x2; })arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 subStorages:(id)arg15;
-- (id)initWithContext:(id)arg1 markupOffset:(struct CGPoint { double x1; double x2; })arg2 rasterizedImageTSPData:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath { }*)arg7 unscaledBoundsOfStrokes:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg8 originalAttachedSize:(struct CGSize { double x1; double x2; })arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 subStorages:(id)arg15;
-- (void)initializeTextRecognitionIfNeeded;
-- (void)loadFromArchive:(const struct PencilAnnotationStorageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct DataReference {} *x6; struct DataReference {} *x7; int x8; int x9; struct Path {} *x10; struct Point {} *x11; struct Size {} *x12; struct Size {} *x13; double x14; unsigned long long x15; unsigned long long x16; struct Color {} *x17; struct RepeatedPtrField<TSP::Reference> { void **x_18_1_1; int x_18_1_2; int x_18_1_3; int x_18_1_4; } x18; int x19; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromSOSWithContext:(id)arg1 markupOffset:(struct CGPoint { double x1; double x2; })arg2 rasterizedImageTSPData:(id)arg3 attachedLocation:(long long)arg4 attachedType:(long long)arg5 encodedDrawing:(id)arg6 path:(struct CGPath { }*)arg7 unscaledBoundsOfStrokes:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg8 originalAttachedSize:(struct CGSize { double x1; double x2; })arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 compoundAnnotationType:(long long)arg15 subStorages:(id)arg16 creationDate:(id)arg17 pencilAnnotationDrawingScale:(double)arg18;
+- (id)initWithContext:(id)arg1 drawing:(id)arg2 markupOffset:(struct CGPoint { double x1; double x2; })arg3 rasterizedImage:(id)arg4 attachedLocation:(long long)arg5 attachedType:(long long)arg6 path:(struct CGPath { }*)arg7 unscaledBoundsOfStrokes:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg8 originalAttachedSize:(struct CGSize { double x1; double x2; })arg9 percentOfPAContainedInParentRep:(double)arg10 textBaselinesTouchedCount:(unsigned long long)arg11 visibleStrokesCount:(unsigned long long)arg12 penColor:(id)arg13 toolType:(long long)arg14 compoundAnnotationType:(long long)arg15 subStorages:(id)arg16 creationDate:(id)arg17 pencilAnnotationDrawingScale:(double)arg18;
+- (id)initWithContext:(id)arg1 drawing:(id)arg2 markupOffset:(struct CGPoint { double x1; double x2; })arg3 rasterizedImageTSPData:(id)arg4 attachedLocation:(long long)arg5 attachedType:(long long)arg6 encodedDrawing:(id)arg7 path:(struct CGPath { }*)arg8 unscaledBoundsOfStrokes:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg9 originalAttachedSize:(struct CGSize { double x1; double x2; })arg10 percentOfPAContainedInParentRep:(double)arg11 textBaselinesTouchedCount:(unsigned long long)arg12 visibleStrokesCount:(unsigned long long)arg13 penColor:(id)arg14 toolType:(long long)arg15 compoundAnnotationType:(long long)arg16 subStorages:(id)arg17 creationDate:(id)arg18 pencilAnnotationDrawingScale:(double)arg19;
+- (void)initializeTextRecognition;
+- (bool)isCalloutLine;
+- (bool)isCalloutMarginAnnotation;
+- (bool)isCalloutParentStorage;
+- (bool)isStretchableParagraphAnnotation;
+- (void)loadFromArchive:(const struct PencilAnnotationStorageArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSP::Reference> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct Point {} *x7; struct DataReference {} *x8; struct DataReference {} *x9; struct Path {} *x10; struct Point {} *x11; struct Size {} *x12; struct Size {} *x13; struct Color {} *x14; struct Date {} *x15; int x16; int x17; double x18; unsigned long long x19; unsigned long long x20; int x21; int x22; double x23; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (struct CGPoint { double x1; double x2; })markupOffset;
 - (bool)needsTextRecognition;
 - (struct CGSize { double x1; double x2; })originalAttachedSize;
+- (id)p_drawingFromLegacyEncodedData:(id)arg1 pencilAnnotationDrawingScale:(double)arg2;
 - (bool)p_isSubStorage;
 - (id)parentStorage;
 - (struct CGPath { }*)path;
 - (id)penColor;
+- (double)pencilAnnotationDrawingScale;
 - (double)percentOfPAContainedInParentRep;
+- (id)rasterizedImage;
 - (struct CGSize { double x1; double x2; })rasterizedImageSize;
 - (id)rasterizedImageTSPData;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAttachedLocation:(long long)arg1;
 - (void)setAttachedType:(long long)arg1;
+- (void)setCompoundAnnotationType:(long long)arg1;
+- (void)setDrawing:(id)arg1;
 - (void)setDrawingForTextRecognition:(id)arg1;
 - (void)setMarkupOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setOriginalAttachedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setParentStorage:(id)arg1;
+- (void)setPencilAnnotationDrawingScale:(double)arg1;
 - (void)setPercentOfPAContainedInParentRep:(double)arg1;
 - (void)setSubStorages:(id)arg1;
 - (void)setTextBaselinesTouchedCount:(unsigned long long)arg1;
@@ -115,6 +145,7 @@
 - (unsigned long long)textBaselinesTouchedCount;
 - (long long)toolType;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledBoundsOfStrokes;
+- (struct CGPath { }*)unscaledPath;
 - (unsigned long long)visibleStrokesCount;
 
 @end

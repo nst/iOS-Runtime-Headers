@@ -87,6 +87,7 @@
         unsigned int tfoConfigured : 1; 
         unsigned int tfoUsed : 1; 
         unsigned int tlsConfigured : 1; 
+        unsigned int tlsHandshakeTimedOut : 1; 
         unsigned int tlsVersionTimeout : 1; 
         unsigned int triggeredPath : 1; 
         unsigned int usedFallback : 1; 
@@ -126,6 +127,7 @@
     bool  _tfoUsed;
     unsigned long long  _timestamp;
     bool  _tlsConfigured;
+    bool  _tlsHandshakeTimedOut;
     unsigned long long  _tlsMilliseconds;
     int  _tlsVersion;
     bool  _tlsVersionTimeout;
@@ -217,6 +219,7 @@
 @property (nonatomic) bool hasTfoUsed;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool hasTlsConfigured;
+@property (nonatomic) bool hasTlsHandshakeTimedOut;
 @property (nonatomic) bool hasTlsMilliseconds;
 @property (nonatomic) bool hasTlsVersion;
 @property (nonatomic) bool hasTlsVersionTimeout;
@@ -259,6 +262,7 @@
 @property (nonatomic) bool tfoUsed;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) bool tlsConfigured;
+@property (nonatomic) bool tlsHandshakeTimedOut;
 @property (nonatomic) unsigned long long tlsMilliseconds;
 @property (nonatomic) int tlsVersion;
 @property (nonatomic) bool tlsVersionTimeout;
@@ -377,6 +381,7 @@
 - (bool)hasTfoUsed;
 - (bool)hasTimestamp;
 - (bool)hasTlsConfigured;
+- (bool)hasTlsHandshakeTimedOut;
 - (bool)hasTlsMilliseconds;
 - (bool)hasTlsVersion;
 - (bool)hasTlsVersionTimeout;
@@ -492,6 +497,7 @@
 - (void)setHasTfoUsed:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasTlsConfigured:(bool)arg1;
+- (void)setHasTlsHandshakeTimedOut:(bool)arg1;
 - (void)setHasTlsMilliseconds:(bool)arg1;
 - (void)setHasTlsVersion:(bool)arg1;
 - (void)setHasTlsVersionTimeout:(bool)arg1;
@@ -534,6 +540,7 @@
 - (void)setTfoUsed:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTlsConfigured:(bool)arg1;
+- (void)setTlsHandshakeTimedOut:(bool)arg1;
 - (void)setTlsMilliseconds:(unsigned long long)arg1;
 - (void)setTlsVersion:(int)arg1;
 - (void)setTlsVersionTimeout:(bool)arg1;
@@ -553,6 +560,7 @@
 - (bool)tfoUsed;
 - (unsigned long long)timestamp;
 - (bool)tlsConfigured;
+- (bool)tlsHandshakeTimedOut;
 - (unsigned long long)tlsMilliseconds;
 - (int)tlsVersion;
 - (id)tlsVersionAsString:(int)arg1;

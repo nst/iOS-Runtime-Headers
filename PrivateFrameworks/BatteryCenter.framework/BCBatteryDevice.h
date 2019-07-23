@@ -24,6 +24,7 @@
     long long  _productIdentifier;
     long long  _transportType;
     long long  _vendor;
+    bool  _wirelesslyCharging;
 }
 
 @property (nonatomic) unsigned long long accessoryCategory;
@@ -47,6 +48,7 @@
 @property (nonatomic, readonly) long long productIdentifier;
 @property (nonatomic) long long transportType;
 @property (nonatomic, readonly) long long vendor;
+@property (getter=isWirelesslyCharging, nonatomic) bool wirelesslyCharging;
 
 + (id)batteryDeviceWithIdentifier:(id)arg1 vendor:(long long)arg2 productIdentifier:(long long)arg3 parts:(unsigned long long)arg4 matchIdentifier:(id)arg5;
 + (bool)supportsSecureCoding;
@@ -71,6 +73,7 @@
 - (bool)isInternal;
 - (bool)isLowBattery;
 - (bool)isPowerSource;
+- (bool)isWirelesslyCharging;
 - (id)matchIdentifier;
 - (id)name;
 - (unsigned long long)parts;
@@ -94,6 +97,7 @@
 - (void)setPowerSource:(bool)arg1;
 - (void)setPowerSourceState:(long long)arg1;
 - (void)setTransportType:(long long)arg1;
+- (void)setWirelesslyCharging:(bool)arg1;
 - (long long)transportType;
 - (long long)vendor;
 

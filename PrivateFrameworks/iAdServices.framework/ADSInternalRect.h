@@ -7,8 +7,8 @@
     ADSInternalSize * _size;
 }
 
-@property (nonatomic, retain) ADSInternalPoint *origin;
-@property (nonatomic, retain) ADSInternalSize *size;
+@property (nonatomic, copy) ADSInternalPoint *origin;
+@property (nonatomic, copy) ADSInternalSize *size;
 
 + (bool)supportsSecureCoding;
 

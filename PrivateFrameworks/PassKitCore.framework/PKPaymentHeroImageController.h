@@ -3,38 +3,36 @@
  */
 
 @interface PKPaymentHeroImageController : NSObject {
-    NSMutableArray * _currentNetworksDownloading;
     <PKPaymentHeroImageControllerDelegate> * _delegate;
-    NSArray * _featuredNetworks;
+    NSArray * _featuredImages;
     PKPaymentHeroImageManifest * _manifest;
+    NSString * _primaryImageIdentifier;
     long long  _watchSize;
+    PKPaymentWebService * _webService;
 }
 
 @property (nonatomic) <PKPaymentHeroImageControllerDelegate> *delegate;
-@property (nonatomic, copy) NSArray *featuredNetworks;
+@property (nonatomic, copy) NSArray *featuredImages;
+@property (nonatomic, readonly) PKPaymentHeroImageManifest *manifest;
+@property (nonatomic, copy) NSString *primaryImageIdentifier;
 @property (nonatomic) long long watchSize;
 
-+ (void)_addNetworkImageDownloadError:(id)arg1 downloadedSha1:(id)arg2;
-+ (bool)_networkImageHasDownloadedWithError:(id)arg1;
-+ (id)defaultPaymentCredentials;
++ (id)defaultImages;
 
 - (void).cxx_destruct;
-- (void)_alertDelgateOfDownloadedImageData:(id)arg1 network:(id)arg2 error:(id)arg3;
-- (id)_builtInNetworksCardImageData;
-- (id)_debugString;
-- (void)beginDownloadingRemoteImages;
-- (void)beginDownloadingRemoteImagesWithCompletion:(id /* block */)arg1;
 - (struct CGSize { double x1; double x2; })cardArtSizeForSize:(struct CGSize { double x1; double x2; })arg1;
-- (bool)containsPaymentCredentialType:(long long)arg1;
 - (id)delegate;
-- (void)downloadRemoteImageForNetwork:(id)arg1 completion:(id /* block */)arg2;
-- (id)featuredNetworks;
-- (id)featuredNetworksImageData;
-- (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2;
-- (id)initWithManifest:(id)arg1 featuredNetworks:(id)arg2 webService:(id)arg3;
-- (id)primaryFeaturedNetwork;
+- (void)downloadImages:(id)arg1;
+- (id)featuredDefaultImages;
+- (id)featuredImageIdentifiers;
+- (id)featuredImages;
+- (id)filterImages:(id)arg1;
+- (id)initWithManifest:(id)arg1 webService:(id)arg2;
+- (id)manifest;
+- (id)primaryImageIdentifier;
 - (void)setDelegate:(id)arg1;
-- (void)setFeaturedNetworks:(id)arg1;
+- (void)setFeaturedImages:(id)arg1;
+- (void)setPrimaryImageIdentifier:(id)arg1;
 - (void)setWatchSize:(long long)arg1;
 - (long long)watchSize;
 

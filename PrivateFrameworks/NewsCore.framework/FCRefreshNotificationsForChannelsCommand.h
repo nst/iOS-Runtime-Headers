@@ -3,6 +3,7 @@
  */
 
 @interface FCRefreshNotificationsForChannelsCommand : FCCommand {
+    unsigned long long  _bundleSubscriptionState;
     NSArray * _channelIDs;
     NSString * _deviceToken;
     NSArray * _paidChannelIDs;
@@ -10,6 +11,7 @@
     NSString * _userID;
 }
 
+@property (nonatomic, readonly) unsigned long long bundleSubscriptionState;
 @property (nonatomic, copy) NSArray *channelIDs;
 @property (nonatomic, copy) NSString *deviceToken;
 @property (nonatomic, copy) NSArray *paidChannelIDs;
@@ -19,11 +21,12 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)bundleSubscriptionState;
 - (id)channelIDs;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
-- (id)initWithChannelIDs:(id)arg1 paidChannelIDs:(id)arg2 userID:(id)arg3 deviceToken:(id)arg4 storefrontID:(id)arg5;
+- (id)initWithChannelIDs:(id)arg1 paidChannelIDs:(id)arg2 userID:(id)arg3 deviceToken:(id)arg4 storefrontID:(id)arg5 bundleSubscriptionState:(unsigned long long)arg6;
 - (id)initWithCoder:(id)arg1;
 - (id)paidChannelIDs;
 - (void)setChannelIDs:(id)arg1;

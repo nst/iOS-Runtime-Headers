@@ -20,6 +20,7 @@
     int  _groupType;
     NSData * _groupViewExposureId;
     NSMutableArray * _groupedArticleIds;
+    NSMutableArray * _groupedIssueIds;
     struct { 
         unsigned int curatedContentType : 1; 
         unsigned int feedAutoSubscribeType : 1; 
@@ -34,9 +35,11 @@
         unsigned int screenfulsFromTop : 1; 
         unsigned int topStoryMandatoryArticleCount : 1; 
         unsigned int topStoryOptionalArticleCount : 1; 
+        unsigned int isIssueContext : 1; 
         unsigned int isSubscribedToGroupFeed : 1; 
         unsigned int reachedEndOfGroup : 1; 
     }  _has;
+    bool  _isIssueContext;
     bool  _isSubscribedToGroupFeed;
     bool  _reachedEndOfGroup;
     int  _screenfulsFromTop;
@@ -61,6 +64,7 @@
 @property (nonatomic) int groupType;
 @property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic, retain) NSMutableArray *groupedArticleIds;
+@property (nonatomic, retain) NSMutableArray *groupedIssueIds;
 @property (nonatomic, readonly) bool hasArticleViewingSessionId;
 @property (nonatomic) bool hasCuratedContentType;
 @property (nonatomic) bool hasFeedAutoSubscribeType;
@@ -77,11 +81,13 @@
 @property (nonatomic) bool hasGroupPresentationReason;
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasGroupViewExposureId;
+@property (nonatomic) bool hasIsIssueContext;
 @property (nonatomic) bool hasIsSubscribedToGroupFeed;
 @property (nonatomic) bool hasReachedEndOfGroup;
 @property (nonatomic) bool hasScreenfulsFromTop;
 @property (nonatomic) bool hasTopStoryMandatoryArticleCount;
 @property (nonatomic) bool hasTopStoryOptionalArticleCount;
+@property (nonatomic) bool isIssueContext;
 @property (nonatomic) bool isSubscribedToGroupFeed;
 @property (nonatomic) bool reachedEndOfGroup;
 @property (nonatomic) int screenfulsFromTop;
@@ -89,6 +95,7 @@
 @property (nonatomic) int topStoryOptionalArticleCount;
 
 + (Class)groupedArticleIdsType;
++ (Class)groupedIssueIdsType;
 
 - (void).cxx_destruct;
 - (int)StringAsCuratedContentType:(id)arg1;
@@ -99,8 +106,10 @@
 - (int)StringAsGroupPresentationReason:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
 - (void)addGroupedArticleIds:(id)arg1;
+- (void)addGroupedIssueIds:(id)arg1;
 - (id)articleViewingSessionId;
 - (void)clearGroupedArticleIds;
+- (void)clearGroupedIssueIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)curatedContentType;
 - (id)curatedContentTypeAsString:(int)arg1;
@@ -129,6 +138,9 @@
 - (id)groupedArticleIds;
 - (id)groupedArticleIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)groupedArticleIdsCount;
+- (id)groupedIssueIds;
+- (id)groupedIssueIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)groupedIssueIdsCount;
 - (bool)hasArticleViewingSessionId;
 - (bool)hasCuratedContentType;
 - (bool)hasFeedAutoSubscribeType;
@@ -145,6 +157,7 @@
 - (bool)hasGroupPresentationReason;
 - (bool)hasGroupType;
 - (bool)hasGroupViewExposureId;
+- (bool)hasIsIssueContext;
 - (bool)hasIsSubscribedToGroupFeed;
 - (bool)hasReachedEndOfGroup;
 - (bool)hasScreenfulsFromTop;
@@ -152,6 +165,7 @@
 - (bool)hasTopStoryOptionalArticleCount;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (bool)isIssueContext;
 - (bool)isSubscribedToGroupFeed;
 - (void)mergeFrom:(id)arg1;
 - (bool)reachedEndOfGroup;
@@ -174,6 +188,7 @@
 - (void)setGroupType:(int)arg1;
 - (void)setGroupViewExposureId:(id)arg1;
 - (void)setGroupedArticleIds:(id)arg1;
+- (void)setGroupedIssueIds:(id)arg1;
 - (void)setHasCuratedContentType:(bool)arg1;
 - (void)setHasFeedAutoSubscribeType:(bool)arg1;
 - (void)setHasGroupArticleCountInForYou:(bool)arg1;
@@ -184,11 +199,13 @@
 - (void)setHasGroupLocationFeedType:(bool)arg1;
 - (void)setHasGroupPresentationReason:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
+- (void)setHasIsIssueContext:(bool)arg1;
 - (void)setHasIsSubscribedToGroupFeed:(bool)arg1;
 - (void)setHasReachedEndOfGroup:(bool)arg1;
 - (void)setHasScreenfulsFromTop:(bool)arg1;
 - (void)setHasTopStoryMandatoryArticleCount:(bool)arg1;
 - (void)setHasTopStoryOptionalArticleCount:(bool)arg1;
+- (void)setIsIssueContext:(bool)arg1;
 - (void)setIsSubscribedToGroupFeed:(bool)arg1;
 - (void)setReachedEndOfGroup:(bool)arg1;
 - (void)setScreenfulsFromTop:(int)arg1;

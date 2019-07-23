@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/Frameworks/libwebrtc.dylib
  */
 
-@interface WK_RTCMutableI420Buffer : WK_RTCI420Buffer <WK_RTCMutableI420Buffer>
+@interface WK_RTCMutableI420Buffer : WK_RTCI420Buffer <RTCMutableI420Buffer>
 
 @property (nonatomic, readonly) int chromaHeight;
 @property (nonatomic, readonly) int chromaWidth;

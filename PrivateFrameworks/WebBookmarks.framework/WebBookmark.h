@@ -149,6 +149,7 @@
 - (unsigned long long)modifiedAttributes;
 - (bool)needsSyncUpdate;
 - (id)nextPageURLs;
+- (id)offlineArchiveDirectoryPath;
 - (int)parentID;
 - (id)previewText;
 - (id)readingListIconURL;

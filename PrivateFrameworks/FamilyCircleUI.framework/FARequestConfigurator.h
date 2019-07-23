@@ -10,6 +10,7 @@
     AAGrandSlamSigner * _familyGrandSlamSigner;
     ACAccount * _grandSlamAccount;
     AAGrandSlamSigner * _grandSlamSigner;
+    NSData * _pushToken;
     AIDAServiceOwnersManager * _serviceOwnersManager;
 }
 
@@ -27,6 +28,7 @@
 - (id)_fresnoPayloadWithAdditionalHeaders:(id)arg1;
 - (id)_grandSlamAccount;
 - (id)_grandSlamSigner;
+- (id)_pushToken;
 - (id)_serviceOwnersManager;
 - (id)_urlForEventType:(id)arg1;
 - (void)addFresnoHeadersToRequest:(id)arg1;

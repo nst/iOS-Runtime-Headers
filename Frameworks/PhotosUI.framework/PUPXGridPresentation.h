@@ -20,7 +20,7 @@
 - (bool)_isEmpty:(id)arg1;
 - (bool)_isRunningInPhotoPicker;
 - (id)createAlbumListViewControllerWithConfiguration:(id)arg1;
-- (void)createGridViewControllerWithAssets:(id)arg1 withTitle:(id)arg2 hideTabBar:(bool)arg3 containerViewController:(id)arg4 navigationItemDelegate:(id)arg5 andCompletion:(id /* block */)arg6;
+- (void)createGridViewControllerWithAssets:(id)arg1 withTitle:(id)arg2 hideTabBar:(bool)arg3 gridPresentationContext:(long long)arg4 containerViewController:(id)arg5 navigationItemDelegate:(id)arg6 andCompletion:(id /* block */)arg7;
 - (id)createImportHistoryGridViewControllerWithCollection:(id)arg1;
 - (id)createPanoramaViewController;
 - (id)createPhotosAlbumViewControllerForAlbum:(id)arg1 withFetchResult:(id)arg2;

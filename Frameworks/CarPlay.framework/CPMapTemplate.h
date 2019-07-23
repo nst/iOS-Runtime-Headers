@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic) bool automaticallyHidesNavigationBar;
+@property (nonatomic, retain) CPBarButton *backButton;
 @property (nonatomic, retain) <CPBannerProviding> *bannerProvider;
 @property (nonatomic, readonly) CPNavigationAlert *currentNavigationAlert;
 @property (readonly, copy) NSString *debugDescription;

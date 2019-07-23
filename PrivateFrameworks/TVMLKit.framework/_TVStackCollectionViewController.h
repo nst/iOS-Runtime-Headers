@@ -6,6 +6,10 @@
     UIView * _backdropTintView;
     UIViewController * _backdropTintViewController;
     bool  _configureForListTemplate;
+    <_TVStackCollectionViewControllerDelegate> * _delegate;
+    struct { 
+        bool respondsToStackCollectionViewControllerScrollViewDidScroll; 
+    }  _delegateFlags;
     NSIndexPath * _lastFocusedIndexPath;
     _TVNeedsMoreContentEvaluator * _needsMoreContentEvaluator;
     NSArray * _stackRows;
@@ -15,6 +19,7 @@
 }
 
 @property (nonatomic, retain) _TVStackCollectionView *collectionView;
+@property (nonatomic) <_TVStackCollectionViewControllerDelegate> *delegate;
 @property (nonatomic, readonly) IKViewElement *viewElement;
 
 - (void).cxx_destruct;
@@ -36,12 +41,14 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (id)delegate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)loadView;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidLayoutSubviews;

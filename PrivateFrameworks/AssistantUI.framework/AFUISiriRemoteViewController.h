@@ -87,6 +87,7 @@
 - (void)setStatusViewHeight:(double)arg1;
 - (void)setStatusViewHidden:(bool)arg1;
 - (void)setStatusViewUserInteractionEnabled:(bool)arg1;
+- (void)setTypeToSiriViewHidden:(bool)arg1;
 - (void)setViewServiceApplicationInfo:(id)arg1;
 - (void)setWaitingForTelephonyToStart:(bool)arg1;
 - (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2 lockState:(unsigned long long)arg3;

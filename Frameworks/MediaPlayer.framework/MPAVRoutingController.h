@@ -19,6 +19,9 @@
     MPAVRoute * _legacyCachedRoute;
     NSString * _name;
     <MPAVOutputDevicePlaybackDataSource> * _playbackDataSource;
+    NSString * _presentedBundleID;
+    NSString * _representedBundleID;
+    bool  _representsLongFormVideoContent;
     long long  _routeTypes;
     MPAVRoutingControllerSelectionQueue * _routingControllerSelectionQueue;
     bool  _scheduledSendDelegateRoutesChanged;
@@ -40,6 +43,9 @@
 @property (nonatomic, readonly) MPAVRoute *pickedRoute;
 @property (nonatomic, readonly) NSArray *pickedRoutes;
 @property (nonatomic) <MPAVOutputDevicePlaybackDataSource> *playbackDataSource;
+@property (nonatomic, copy) NSString *presentedBundleID;
+@property (nonatomic, copy) NSString *representedBundleID;
+@property (nonatomic, readonly) bool representsLongFormVideoContent;
 @property (nonatomic) long long routeTypes;
 @property (nonatomic, readonly) bool supportsMultipleSelection;
 @property (nonatomic, readonly) bool volumeControlIsAvailable;
@@ -49,9 +55,11 @@
 + (void)_getActiveRouteWithTimeout:(double)arg1 discoveredRoutes:(id)arg2 completion:(id /* block */)arg3;
 + (id)_iconImageForRoute:(id)arg1;
 + (id)_sharedSerialQueue;
++ (bool)bundleIdRepresentsLongFormVideoContent:(id)arg1;
 + (void)getActiveRouteWithCompletion:(id /* block */)arg1;
 + (void)getActiveRouteWithTimeout:(double)arg1 completion:(id /* block */)arg2;
 + (void)setActiveRoute:(id)arg1 completion:(id /* block */)arg2;
++ (void)setActiveRoute:(id)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
 + (id)systemRoute;
 + (id)systemRouteWithContextUID:(id)arg1;
 
@@ -114,9 +122,12 @@
 - (id)pickedRoute;
 - (id)pickedRoutes;
 - (id)playbackDataSource;
+- (id)presentedBundleID;
 - (bool)receiverRouteIsPicked;
 - (bool)removePickedRoute:(id)arg1;
 - (bool)removePickedRoute:(id)arg1 completion:(id /* block */)arg2;
+- (id)representedBundleID;
+- (bool)representsLongFormVideoContent;
 - (bool)routeIsLeaderOfEndpoint:(id)arg1;
 - (bool)routeIsPendingPick:(id)arg1;
 - (bool)routeOtherThanHandsetAndSpeakerAvailable;
@@ -130,10 +141,13 @@
 - (void)setLegacyCachedRoute:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPlaybackDataSource:(id)arg1;
+- (void)setPresentedBundleID:(id)arg1;
+- (void)setRepresentedBundleID:(id)arg1;
 - (void)setRouteTypes:(long long)arg1;
 - (bool)speakerRouteIsPicked;
 - (bool)supportsMultipleSelection;
 - (void)unpickAirPlayScreenRouteWithCompletion:(id /* block */)arg1;
+- (void)unpickTVRoutes;
 - (id)videoRouteForRoute:(id)arg1;
 - (bool)volumeControlIsAvailable;
 - (bool)wirelessDisplayRouteIsPicked;

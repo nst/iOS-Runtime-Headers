@@ -4,21 +4,26 @@
 
 @interface IKDOMNodeData : NSObject {
     bool  _autoHighlightRead;
-    bool  _bindingUpdated;
+    bool  _bindingParsed;
     bool  _childrenUpdated;
-    bool  _dataUpdated;
+    bool  _dataResolved;
     NSMutableDictionary * _featuresMap;
     IKDOMNode * _ownerJSNode;
+    bool  _prototypesResolved;
+    bool  _rulesParsed;
     bool  _subtreeUpdated;
     bool  _updated;
 }
 
 @property (getter=isAutoHighlightRead, nonatomic) bool autoHighlightRead;
-@property (getter=isBindingUpdated, nonatomic) bool bindingUpdated;
+@property (getter=isBindingParsed, nonatomic) bool bindingParsed;
 @property (getter=isChildrenUpdated, nonatomic) bool childrenUpdated;
-@property (getter=isDataUpdated, nonatomic) bool dataUpdated;
+@property (nonatomic, readonly) bool containsUpdates;
+@property (getter=isDataResolved, nonatomic) bool dataResolved;
 @property (nonatomic, retain) NSMutableDictionary *featuresMap;
 @property (nonatomic) IKDOMNode *ownerJSNode;
+@property (getter=arePrototypesResolved, nonatomic) bool prototypesResolved;
+@property (getter=areRulesParsed, nonatomic) bool rulesParsed;
 @property (getter=isSubtreeUpdated, nonatomic) bool subtreeUpdated;
 @property (getter=isUpdated, nonatomic) bool updated;
 
@@ -26,22 +31,27 @@
 + (id)jsNodeDataForNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 create:(bool)arg2;
 
 - (void).cxx_destruct;
+- (bool)arePrototypesResolved;
+- (bool)areRulesParsed;
+- (bool)containsUpdates;
 - (id)featureForName:(id)arg1;
 - (id)featuresMap;
 - (bool)isAutoHighlightRead;
-- (bool)isBindingUpdated;
+- (bool)isBindingParsed;
 - (bool)isChildrenUpdated;
-- (bool)isDataUpdated;
+- (bool)isDataResolved;
 - (bool)isSubtreeUpdated;
 - (bool)isUpdated;
 - (id)ownerJSNode;
 - (void)setAutoHighlightRead:(bool)arg1;
-- (void)setBindingUpdated:(bool)arg1;
+- (void)setBindingParsed:(bool)arg1;
 - (void)setChildrenUpdated:(bool)arg1;
-- (void)setDataUpdated:(bool)arg1;
+- (void)setDataResolved:(bool)arg1;
 - (void)setFeature:(id)arg1 forName:(id)arg2;
 - (void)setFeaturesMap:(id)arg1;
 - (void)setOwnerJSNode:(id)arg1;
+- (void)setPrototypesResolved:(bool)arg1;
+- (void)setRulesParsed:(bool)arg1;
 - (void)setSubtreeUpdated:(bool)arg1;
 - (void)setUpdated:(bool)arg1;
 

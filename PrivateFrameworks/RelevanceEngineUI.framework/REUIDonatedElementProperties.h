@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) bool isBeginWorkoutDonation;
 @property (nonatomic, readonly) bool isEndWorkoutDonation;
 @property (nonatomic, readonly) bool isMediaDonation;
+@property (nonatomic, readonly) bool isWorkoutDonation;
 @property (nonatomic, readonly) NSString *localBundleIdentifier;
 @property (getter=isLocalDonation, nonatomic, readonly) bool localDonation;
 @property (nonatomic, readonly) INRelevantShortcut *relevantShortcut;
@@ -39,7 +40,6 @@
 @property (nonatomic, readonly) bool supportsLocalIntentExecution;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSUserActivity *userActivity;
-@property (nonatomic, readonly) bool wantsThreeLineLayout;
 
 + (void)createWithDonatedAction:(id)arg1 completion:(id /* block */)arg2;
 + (bool)supportsSecureCoding;
@@ -53,6 +53,7 @@
 - (void)_loadContentForUserActivity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_loadContentForUserActivityOnShortcut:(id)arg1 completion:(id /* block */)arg2;
 - (id)_placeholderImageNameForBundleID:(id)arg1;
+- (id)_scaleImageForDisplay:(id)arg1;
 - (id)action;
 - (id)appIcon;
 - (id)appName;
@@ -71,16 +72,15 @@
 - (bool)isEndWorkoutDonation;
 - (bool)isLocalDonation;
 - (bool)isMediaDonation;
+- (bool)isWorkoutDonation;
 - (void)loadWithCompletion:(id /* block */)arg1;
 - (id)localBundleIdentifier;
 - (id)relevantShortcut;
 - (id)remoteBundleIdentifier;
 - (bool)requiresRemoteExecution;
-- (id)scaleImageForDisplay:(id)arg1;
 - (id)subtitle;
 - (bool)supportsLocalIntentExecution;
 - (id)title;
 - (id)userActivity;
-- (bool)wantsThreeLineLayout;
 
 @end

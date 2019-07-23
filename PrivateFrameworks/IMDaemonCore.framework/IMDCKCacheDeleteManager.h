@@ -6,11 +6,13 @@
     bool  _allowsWritingToDisk;
     bool  _alreadyCapturedErrorWithAutoBugCapture;
     bool  _deviceLowOnDiskSpace;
+    bool  _isUpdatingAttachmentFileSizes;
 }
 
 @property (nonatomic) bool allowsWritingToDisk;
 @property (nonatomic) bool alreadyCapturedErrorWithAutoBugCapture;
 @property (getter=isDeviceLowOnDiskSpace, nonatomic) bool deviceLowOnDiskSpace;
+@property bool isUpdatingAttachmentFileSizes;
 
 + (id)sharedInstance;
 
@@ -21,8 +23,9 @@
 - (id)_ckUtilitiesSharedInstance;
 - (long long)_deleteAttachmentsAndReturnBytesDeleted:(int)arg1;
 - (long long)_deleteFilesOnDiskAndUpdateTransfers:(id)arg1;
+- (bool)_deviceConditionsAllowsAttachmentFileSizeUpdateForActivity:(id)arg1;
 - (void)_fetchTransfersFromCloudKit:(id)arg1;
-- (void)_fetchTransfersFromCloudKit:(id)arg1 indexOfTransfers:(unsigned long long)arg2 numberOfBatchesToFetch:(unsigned long long)arg3;
+- (void)_fetchTransfersFromCloudKit:(id)arg1 indexOfTransfers:(unsigned long long)arg2 numberOfBatchesToFetch:(unsigned long long)arg3 withCompletion:(id /* block */)arg4;
 - (id)_fileTransfersToDelete:(struct __CFArray { }*)arg1;
 - (id)_fileTransfersToValidate:(struct __CFArray { }*)arg1;
 - (id)_getIndexSetForBatch:(id)arg1 indexOfTransfers:(unsigned long long)arg2;
@@ -37,6 +40,7 @@
 - (id)deleteAttachmentsAndReturnBytesDeleted:(id)arg1 urgency:(int)arg2;
 - (id)init;
 - (bool)isDeviceLowOnDiskSpace;
+- (bool)isUpdatingAttachmentFileSizes;
 - (void)metricAttachmentsToPurge:(long long)arg1;
 - (long long)purgeAttachments:(long long)arg1;
 - (long long)purgeableAttachmentSize;
@@ -45,6 +49,8 @@
 - (void)setAllowsWritingToDisk:(bool)arg1;
 - (void)setAlreadyCapturedErrorWithAutoBugCapture:(bool)arg1;
 - (void)setDeviceLowOnDiskSpace:(bool)arg1;
+- (void)setIsUpdatingAttachmentFileSizes:(bool)arg1;
 - (bool)shouldDownloadAssetsOfSize:(unsigned long long)arg1 refreshCachedValue:(bool)arg2;
+- (void)updateAttachmentFileSizesWithActivity:(id)arg1;
 
 @end

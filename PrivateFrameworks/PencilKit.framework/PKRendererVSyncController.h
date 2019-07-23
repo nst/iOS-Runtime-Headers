@@ -16,6 +16,6 @@
 - (id)init;
 - (void)removeRendererController:(id)arg1;
 - (void)removeVSyncNotifications;
-- (void)signalVSyncSemaphore:(double)arg1;
+- (void)signalVSyncSemaphore:(double)arg1 presentationTime:(unsigned long long)arg2;
 
 @end

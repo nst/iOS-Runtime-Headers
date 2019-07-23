@@ -7,32 +7,43 @@
     NSString * _PINTitle;
     struct __SecAccessControl { } * _accessControlRef;
     bool  _assumeUserIntentAvailable;
+    long long  _authenticatorPolicy;
     NSData * _externalizedContext;
+    NSString * _passcodeTitle;
+    NSString * _physicalButtonTitle;
     long long  _policy;
     NSNumber * _processIdentifier;
     NSString * _processName;
     NSString * _reason;
+    bool  _useStockAuthInterface;
 }
 
 @property (nonatomic, copy) NSNumber *PINLength;
 @property (nonatomic, copy) NSString *PINTitle;
 @property (nonatomic) struct __SecAccessControl { }*accessControlRef;
 @property (nonatomic) bool assumeUserIntentAvailable;
+@property (nonatomic, readonly) long long authenticatorPolicy;
 @property (nonatomic, retain) NSData *externalizedContext;
+@property (nonatomic, copy) NSString *passcodeTitle;
+@property (nonatomic, copy) NSString *physicalButtonTitle;
 @property (nonatomic, readonly) long long policy;
 @property (nonatomic, copy) NSNumber *processIdentifier;
 @property (nonatomic, copy) NSString *processName;
 @property (nonatomic, copy) NSString *reason;
+@property (nonatomic) bool useStockAuthInterface;
 
 - (void).cxx_destruct;
 - (id)PINLength;
 - (id)PINTitle;
 - (struct __SecAccessControl { }*)accessControlRef;
 - (bool)assumeUserIntentAvailable;
+- (long long)authenticatorPolicy;
 - (void)dealloc;
 - (id)externalizedContext;
 - (id)init;
 - (id)initWithPolicy:(long long)arg1;
+- (id)passcodeTitle;
+- (id)physicalButtonTitle;
 - (long long)policy;
 - (id)processIdentifier;
 - (id)processName;
@@ -42,8 +53,12 @@
 - (void)setExternalizedContext:(id)arg1;
 - (void)setPINLength:(id)arg1;
 - (void)setPINTitle:(id)arg1;
+- (void)setPasscodeTitle:(id)arg1;
+- (void)setPhysicalButtonTitle:(id)arg1;
 - (void)setProcessIdentifier:(id)arg1;
 - (void)setProcessName:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setUseStockAuthInterface:(bool)arg1;
+- (bool)useStockAuthInterface;
 
 @end

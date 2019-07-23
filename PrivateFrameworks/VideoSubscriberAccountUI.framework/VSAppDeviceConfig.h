@@ -2,17 +2,24 @@
    Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
  */
 
-@interface VSAppDeviceConfig : NSObject <IKAppDeviceConfig>
+@interface VSAppDeviceConfig : NSObject <IKAppDeviceConfig> {
+    NSOperationQueue * _privateQueue;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (id)init;
 - (bool)isTimeZoneSet;
 - (unsigned long long)preferredVideoFormat;
 - (unsigned long long)preferredVideoPreviewFormat;
+- (id)privateQueue;
 - (struct CGSize { double x1; double x2; })screenSize;
+- (void)setPrivateQueue:(id)arg1;
 - (id)storeFrontCountryCode;
 - (id)systemLanguage;
 - (id)timeZone;

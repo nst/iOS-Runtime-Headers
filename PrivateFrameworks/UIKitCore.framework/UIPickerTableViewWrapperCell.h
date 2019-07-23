@@ -13,16 +13,11 @@
 
 @property (nonatomic, retain) UIView *wrappedView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_anyDateLabel;
 - (void)_setIsCenterCell:(bool)arg1 shouldModifyAlphaOfView:(bool)arg2;
 - (void)_updateWrappedView;
 - (void)_updateWrappedViewFrame;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { double x1; double x2; })arg1;

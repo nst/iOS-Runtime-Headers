@@ -29,6 +29,7 @@
 - (void)becomeCurrent;
 - (id)cachedAttributeContext;
 - (void)dealloc;
+- (void)flushTraining;
 - (id)init;
 - (bool)isCurrent;
 - (bool)performSimulationCommand:(id)arg1 withOptions:(id)arg2;

@@ -3,16 +3,27 @@
  */
 
 @interface MediaControlsTransportButton : MPButton {
+    struct CGAffineTransform { 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _highlightTransform;
     MPCPlayerCommandRequest * _holdBeginCommandRequest;
     MPCPlayerCommandRequest * _holdEndCommandRequest;
     bool  _performingHighlightAnimation;
+    double  _scaleFactor;
     bool  _shouldPresentActionSheet;
     MPCPlayerCommandRequest * _touchUpInsideCommandRequest;
 }
 
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } highlightTransform;
 @property (nonatomic, retain) MPCPlayerCommandRequest *holdBeginCommandRequest;
 @property (nonatomic, retain) MPCPlayerCommandRequest *holdEndCommandRequest;
 @property (getter=isPerformingHighlightAnimation, nonatomic, readonly) bool performingHighlightAnimation;
+@property (nonatomic) double scaleFactor;
 @property (nonatomic) bool shouldPresentActionSheet;
 @property (nonatomic, retain) MPCPlayerCommandRequest *touchUpInsideCommandRequest;
 
@@ -20,13 +31,17 @@
 - (void)_layoutImageView;
 - (void)beginHighlight;
 - (void)endHighlight;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })highlightTransform;
 - (id)holdBeginCommandRequest;
 - (id)holdEndCommandRequest;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isPerformingHighlightAnimation;
+- (double)scaleFactor;
+- (void)setHighlightTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setHoldBeginCommandRequest:(id)arg1;
 - (void)setHoldEndCommandRequest:(id)arg1;
+- (void)setScaleFactor:(double)arg1;
 - (void)setShouldPresentActionSheet:(bool)arg1;
 - (void)setTouchUpInsideCommandRequest:(id)arg1;
 - (bool)shouldPresentActionSheet;

@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)_createLegacyPropertiesIfNecessary;
 - (void)_createModernPropertiesIfNecessary;
+- (id)_initForPaymentPass:(id)arg1 configuration:(id)arg2;
 - (long long)cardType;
 - (id)criteriaForPaymentApplicationIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -33,6 +34,7 @@
 - (bool)forceModernEncoding;
 - (unsigned long long)hash;
 - (id)init;
+- (id)initDummyExpressInfoForAutomaticSelectionCriteriaUpgradeRequest:(id)arg1 paymentPass:(id)arg2 withTechologyTest:(id /* block */)arg3;
 - (id)initForExpressMode:(id)arg1 withPassUniqueIdentifier:(id)arg2 paymentApplicationIdentifier:(id)arg3;
 - (id)initForPaymentPass:(id)arg1 withTechologyTest:(id /* block */)arg2;
 - (id)initWithCoder:(id)arg1;

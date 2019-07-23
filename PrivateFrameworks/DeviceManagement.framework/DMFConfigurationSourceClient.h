@@ -37,6 +37,9 @@
 @property unsigned long long state;
 @property (readonly) Class superclass;
 
++ (id)activeRestrictionsURL;
++ (id)setOfActiveRestrictionUUIDs;
+
 - (void).cxx_destruct;
 - (void)assetResolutionOperationDidFinish:(id)arg1 completion:(id /* block */)arg2;
 - (void)configurationEngineRequestedAsset:(id)arg1 completion:(id /* block */)arg2;

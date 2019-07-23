@@ -194,11 +194,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)widthAnchor;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 - (id)avkit_constraintsFromCenterAnchorsToCenterAnchorsOfItem:(id)arg1;

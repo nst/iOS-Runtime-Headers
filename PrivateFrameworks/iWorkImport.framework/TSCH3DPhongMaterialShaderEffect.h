@@ -4,6 +4,6 @@
 
 @interface TSCH3DPhongMaterialShaderEffect : TSCH3DMaterialShaderEffect
 
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 
 @end

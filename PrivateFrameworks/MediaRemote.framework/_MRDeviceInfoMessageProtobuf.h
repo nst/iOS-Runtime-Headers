@@ -20,6 +20,7 @@
         unsigned int sharedQueueVersion : 1; 
         unsigned int allowsPairing : 1; 
         unsigned int connected : 1; 
+        unsigned int isAirplayActive : 1; 
         unsigned int isGroupLeader : 1; 
         unsigned int isProxyGroupPlayer : 1; 
         unsigned int supportsACL : 1; 
@@ -28,6 +29,7 @@
         unsigned int supportsSystemPairing : 1; 
         unsigned int tightlySyncedGroup : 1; 
     }  _has;
+    bool  _isAirplayActive;
     bool  _isGroupLeader;
     bool  _isProxyGroupPlayer;
     unsigned int  _lastSupportedMessageType;
@@ -55,6 +57,7 @@
 @property (nonatomic, retain) NSData *bluetoothAddress;
 @property (nonatomic) bool connected;
 @property (nonatomic) int deviceClass;
+@property (nonatomic, readonly) NSString *deviceUID;
 @property (nonatomic, retain) NSString *groupName;
 @property (nonatomic, retain) NSString *groupUID;
 @property (nonatomic, retain) NSMutableArray *groupedDevices;
@@ -66,6 +69,7 @@
 @property (nonatomic) bool hasDeviceClass;
 @property (nonatomic, readonly) bool hasGroupName;
 @property (nonatomic, readonly) bool hasGroupUID;
+@property (nonatomic) bool hasIsAirplayActive;
 @property (nonatomic) bool hasIsGroupLeader;
 @property (nonatomic) bool hasIsProxyGroupPlayer;
 @property (nonatomic) bool hasLastSupportedMessageType;
@@ -85,6 +89,7 @@
 @property (nonatomic, readonly) bool hasTightSyncUID;
 @property (nonatomic) bool hasTightlySyncedGroup;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
+@property (nonatomic) bool isAirplayActive;
 @property (nonatomic) bool isGroupLeader;
 @property (nonatomic) bool isProxyGroupPlayer;
 @property (nonatomic) unsigned int lastSupportedMessageType;
@@ -121,6 +126,7 @@
 - (id)description;
 - (int)deviceClass;
 - (id)deviceClassAsString:(int)arg1;
+- (id)deviceUID;
 - (id)dictionaryRepresentation;
 - (id)groupName;
 - (id)groupUID;
@@ -135,6 +141,7 @@
 - (bool)hasDeviceClass;
 - (bool)hasGroupName;
 - (bool)hasGroupUID;
+- (bool)hasIsAirplayActive;
 - (bool)hasIsGroupLeader;
 - (bool)hasIsProxyGroupPlayer;
 - (bool)hasLastSupportedMessageType;
@@ -155,6 +162,7 @@
 - (bool)hasTightlySyncedGroup;
 - (bool)hasUniqueIdentifier;
 - (unsigned long long)hash;
+- (bool)isAirplayActive;
 - (bool)isEqual:(id)arg1;
 - (bool)isGroupLeader;
 - (bool)isProxyGroupPlayer;
@@ -179,6 +187,7 @@
 - (void)setHasAllowsPairing:(bool)arg1;
 - (void)setHasConnected:(bool)arg1;
 - (void)setHasDeviceClass:(bool)arg1;
+- (void)setHasIsAirplayActive:(bool)arg1;
 - (void)setHasIsGroupLeader:(bool)arg1;
 - (void)setHasIsProxyGroupPlayer:(bool)arg1;
 - (void)setHasLastSupportedMessageType:(bool)arg1;
@@ -190,6 +199,7 @@
 - (void)setHasSupportsSharedQueue:(bool)arg1;
 - (void)setHasSupportsSystemPairing:(bool)arg1;
 - (void)setHasTightlySyncedGroup:(bool)arg1;
+- (void)setIsAirplayActive:(bool)arg1;
 - (void)setIsGroupLeader:(bool)arg1;
 - (void)setIsProxyGroupPlayer:(bool)arg1;
 - (void)setLastSupportedMessageType:(unsigned int)arg1;

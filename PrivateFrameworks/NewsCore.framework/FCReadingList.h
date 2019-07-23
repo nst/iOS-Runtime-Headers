@@ -3,22 +3,20 @@
  */
 
 @interface FCReadingList : FCPrivateDataController <FCOperationThrottlerDelegate, FCReadingListContentControllerObserving> {
-    NSArray * _allSortedEntriesInReadingList;
     <FCOperationThrottler> * _articleIDsAvailableForOfflineReadingUpdateThrottler;
     FCCloudContext * _cloudContext;
     NSMutableDictionary * _entriesByArticleID;
-    FCMTWriterMutexLock * _itemsLock;
+    FCMTWriterLock * _itemsLock;
     FCReadingListContentController * _readingListContentController;
 }
 
-@property (nonatomic, retain) NSArray *allSortedEntriesInReadingList;
 @property (nonatomic, retain) <FCOperationThrottler> *articleIDsAvailableForOfflineReadingUpdateThrottler;
 @property (nonatomic, retain) FCCloudContext *cloudContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableDictionary *entriesByArticleID;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) FCMTWriterMutexLock *itemsLock;
+@property (nonatomic, retain) FCMTWriterLock *itemsLock;
 @property (nonatomic, retain) FCReadingListContentController *readingListContentController;
 @property (readonly) Class superclass;
 
@@ -36,16 +34,17 @@
 
 - (void).cxx_destruct;
 - (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2 eventInitiationLevel:(long long)arg3;
+- (id)_allEntriesInReadingList;
+- (id)_allSortedEntriesInReadingList;
 - (void)_fetchArticleIDsAvailableForOfflineReadingWithCompletion:(id /* block */)arg1;
-- (void)_invalidateAllSortedEntriesInReadingList;
 - (unsigned long long)_maxCountOfArticlesAvailableOfflineWithConfiguration:(id)arg1;
+- (id)_readingListEntryForArticleID:(id)arg1;
 - (void)addArticleToReadingList:(id)arg1;
 - (void)addArticleToReadingList:(id)arg1 eventInitiationLevel:(long long)arg2 origin:(unsigned long long)arg3;
 - (void)addObserver:(id)arg1;
 - (id)allNonConsumedArticleIDsInReadingList;
 - (id)allNonConsumedArticleIDsInReadingListForOfflineReading;
 - (id)allSortedArticleIDsInReadingList;
-- (id)allSortedEntriesInReadingList;
 - (id)articleIDsAvailableForOfflineReadingUpdateThrottler;
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (id)cloudContext;
@@ -67,7 +66,6 @@
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (void)removeArticleFromReadingList:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)setAllSortedEntriesInReadingList:(id)arg1;
 - (void)setArticleIDsAvailableForOfflineReadingUpdateThrottler:(id)arg1;
 - (void)setCloudContext:(id)arg1;
 - (void)setEntriesByArticleID:(id)arg1;

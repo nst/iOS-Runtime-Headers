@@ -9,14 +9,12 @@
     _SFPrintController * _printController;
     _SFSafariSharingExtensionController * _sharingExtensionController;
     NSURL * _sharingURL;
-    bool  _viewCanEarlyDismiss;
 }
 
 @property (nonatomic, copy) NSString *currentExtensionIdentifier;
 @property (nonatomic) <_SFActivityViewControllerDelegate> *delegate;
 @property (nonatomic) _SFSafariSharingExtensionController *sharingExtensionController;
 @property (nonatomic, retain) NSURL *sharingURL;
-@property (nonatomic, readonly) bool viewCanEarlyDismiss;
 
 + (id)activeWebPageExtensionItemForURL:(id)arg1 withPreviewImageHandler:(id /* block */)arg2;
 
@@ -30,6 +28,7 @@
 - (void)_updatePrintControllerWithActivityItems:(id)arg1;
 - (void)activityDidComplete:(id)arg1 withReturnedItems:(id)arg2 success:(bool)arg3;
 - (id)currentExtensionIdentifier;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2 sharingURL:(id)arg3 sourceURL:(id)arg4;
 - (void)prepareJavaScriptExtensionItemForActivity:(id)arg1;
@@ -40,6 +39,5 @@
 - (void)setSharingURL:(id)arg1;
 - (id)sharingExtensionController;
 - (id)sharingURL;
-- (bool)viewCanEarlyDismiss;
 
 @end

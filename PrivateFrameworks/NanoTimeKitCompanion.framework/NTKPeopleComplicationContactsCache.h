@@ -5,7 +5,9 @@
 @interface NTKPeopleComplicationContactsCache : NSObject {
     int  _deviceLockStateChangeNotifyToken;
     NSDictionary * _favoritesMapping;
+    NSLock * _favoritesMappingLock;
     bool  _hasSetupNotifications;
+    NSLock * _hasSetupNotificationsLock;
 }
 
 + (id)sharedCache;
@@ -22,6 +24,7 @@
 - (void)dealloc;
 - (id)favoriteContacts;
 - (id)fullNameForContact:(id)arg1;
+- (id)init;
 - (void)setupNotificationsIfNecessary;
 - (id)shortNameForContact:(id)arg1;
 

@@ -24,8 +24,8 @@
 - (id)bundleIdentifier;
 - (id)descriptionLocalizationKey;
 - (id)displayNameLocalizationKey;
-- (id)initWithBundleIdentifier:(id)arg1 parameterName:(id)arg2 baseLocalizationKey:(id)arg3 requiresFollowup:(bool)arg4 retry:(bool)arg5;
-- (id)initWithBundleIdentifier:(id)arg1 parameterName:(id)arg2 displayNameLocalizationKey:(id)arg3 descriptionLocalizationKey:(id)arg4 sensitiveInformationLocalizationKey:(id)arg5 requiresFollowup:(bool)arg6 retry:(bool)arg7;
+- (id)initWithBundleIdentifier:(id)arg1 parameterName:(id)arg2 baseLocalizationKey:(id)arg3 needsWAPIKeys:(bool)arg4 requiresFollowup:(bool)arg5 retry:(bool)arg6;
+- (id)initWithBundleIdentifier:(id)arg1 parameterName:(id)arg2 displayNameLocalizationKey:(id)arg3 descriptionLocalizationKey:(id)arg4 sensitiveInformationLocalizationKey:(id)arg5 needsWAPIKeys:(bool)arg6 requiresFollowup:(bool)arg7 retry:(bool)arg8;
 - (id)parameterName;
 - (bool)requiresFollowup;
 - (bool)retry;

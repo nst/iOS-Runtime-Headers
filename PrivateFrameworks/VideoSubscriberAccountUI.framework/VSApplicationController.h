@@ -10,6 +10,7 @@
     VSAuditToken * _auditToken;
     <VSApplicationControllerDelegate> * _delegate;
     NSError * _delegateError;
+    NSURL * _fetchedURL;
     VSIdentityProvider * _identityProvider;
     NSError * _onLaunchError;
     VSPreferences * _preferences;
@@ -27,6 +28,7 @@
 @property (nonatomic) <VSApplicationControllerDelegate> *delegate;
 @property (retain) NSError *delegateError;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSURL *fetchedURL;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
 @property (retain) NSError *onLaunchError;
@@ -70,6 +72,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateError;
+- (id)fetchedURL;
 - (id)identityProvider;
 - (id)init;
 - (id)initWithIdentityProvider:(id)arg1;
@@ -86,6 +89,7 @@
 - (void)setAuditToken:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateError:(id)arg1;
+- (void)setFetchedURL:(id)arg1;
 - (void)setIdentityProvider:(id)arg1;
 - (void)setOnLaunchError:(id)arg1;
 - (void)setPreferences:(id)arg1;
@@ -100,6 +104,7 @@
 - (void)transitionToInvalidState;
 - (void)transitionToNotifyingOfLaunchFailureState;
 - (void)transitionToReadyState;
+- (void)transitionToWaitingForBootUrlState;
 - (void)transitionToWaitingForBothLaunchCallbacksState;
 
 @end

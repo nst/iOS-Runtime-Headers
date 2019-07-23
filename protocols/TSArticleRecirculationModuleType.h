@@ -5,6 +5,6 @@
 
 @required
 
-- (<TSArticleRecirculationViewControllersProviderType> *)createViewControllersWithData:(TSArticleRecirculationData *)arg1 nativeAdCellDataProvider:(id <TSNativeAdDataProviderType>)arg2;
+- (<TSArticleRecirculationViewControllersProviderType> *)createViewControllersWithHeadline:(id <FCHeadlineProviding>)arg1 data:(TSArticleRecirculationData *)arg2 nativeAdCellDataProvider:(id <TSNativeAdDataProviderType>)arg3;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@interface GLKView : UIView <DebugHierarchyObject_Fallback, NSCoding> {
+@interface GLKView : UIView <NSCoding> {
     EAGLContext * _context;
     <GLKViewDelegate> * _delegate;
     unsigned int  _depthRenderbuffer;
@@ -37,11 +37,9 @@
 }
 
 @property (nonatomic, retain) EAGLContext *context;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GLKViewDelegate> *delegate;
 @property (nonatomic) unsigned int depthRenderbuffer;
 @property (nonatomic) unsigned int depthStencilRenderbuffer;
-@property (readonly, copy) NSString *description;
 @property (nonatomic) int (*drawRectIMP;
 @property (nonatomic) int drawableColorFormat;
 @property (nonatomic) int drawableDepthFormat;
@@ -51,7 +49,6 @@
 @property (nonatomic) int drawableStencilFormat;
 @property (nonatomic, readonly) long long drawableWidth;
 @property (nonatomic) bool enableSetNeedsDisplay;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) bool inDraw;
 @property (nonatomic) unsigned int multisampleColorRenderbuffer;
 @property (nonatomic) unsigned int multisampleFramebuffer;
@@ -60,11 +57,8 @@
 @property (nonatomic) bool shouldDeleteFramebuffer;
 @property (readonly) UIImage *snapshot;
 @property (nonatomic) unsigned int stencilRenderbuffer;
-@property (readonly) Class superclass;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } viewBounds;
 @property (nonatomic) double viewContentScaleFactor;
-
-// Image: /System/Library/Frameworks/GLKit.framework/GLKit
 
 + (Class)layerClass;
 
@@ -131,10 +125,5 @@
 - (unsigned int)stencilRenderbuffer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })viewBounds;
 - (double)viewContentScaleFactor;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 @end

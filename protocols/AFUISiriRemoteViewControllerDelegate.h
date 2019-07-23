@@ -30,6 +30,7 @@
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setStatusViewDisabled:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setStatusViewHidden:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setStatusViewUserInteractionEnabled:(bool)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setTypeToSiriViewHidden:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 siriIdleAndQuietStatusDidChange:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 startRequestWithOptions:(AFUIRequestOptions *)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 viewServiceDidTerminateWithError:(NSError *)arg2;

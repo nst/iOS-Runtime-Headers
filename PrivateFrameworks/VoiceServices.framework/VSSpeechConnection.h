@@ -47,6 +47,7 @@
 - (void)pauseCurrentSpeechRequestAtMark:(long long)arg1;
 - (id)presynthesizedAudioRequest;
 - (void)prewarmIfNeededWithRequest:(id)arg1;
+- (bool)queryPhaticCapabilityWithRequest:(id)arg1;
 - (id)request;
 - (void)setAutoDownloadedVoiceAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;

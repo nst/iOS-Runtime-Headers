@@ -8,6 +8,13 @@
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didChangeSizeState:(unsigned long long)arg2;
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didSelectColor:(UIColor *)arg2;
 - (void)inlineInkPicker:(PKInlineInkPicker *)arg1 didSelectTool:(NSString *)arg2;
+- (void)inlineInkPicker:(PKInlineInkPicker *)arg1 toolIndicatorWillPresent:(bool)arg2 animated:(bool)arg3;
+- (UIBarButtonItem *)inlineInkPickerBarButtonItemForContentsHiddenColorPickerPresentation:(PKInlineInkPicker *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inlineInkPickerCenteringRectForToolIndicator:(PKInlineInkPicker *)arg1;
+- (void)inlineInkPickerDidToggleRuler:(PKInlineInkPicker *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inlineInkPickerRectForContentsHiddenColorPickerPresentation:(PKInlineInkPicker *)arg1;
+- (bool)inlineInkPickerShouldChangeToolColorForSelectedColor:(PKInlineInkPicker *)arg1;
+- (bool)inlineInkPickerShouldRespondToPencilGestures:(PKInlineInkPicker *)arg1;
 - (UIViewController *)viewControllerForPopoverPresentationFromInlineInkPicker:(PKInlineInkPicker *)arg1;
 
 @end

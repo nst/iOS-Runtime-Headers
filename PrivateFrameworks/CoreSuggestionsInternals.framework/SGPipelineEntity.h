@@ -30,7 +30,6 @@
     }  _inhumanFeatures;
     NSArray * _instantMessageAddresses;
     NSArray * _invalidatedMessageIdentifiers;
-    NSNumber * _isAppleInternalConversation;
     SGMessage * _message;
     bool  _pendingGeocode;
     NSString * _plainTextContentCache;
@@ -134,8 +133,6 @@
 - (id)initWithUnrecognizedContactWithKey:(id)arg1;
 - (id)instantMessageAddresses;
 - (id)invalidatedMessageIdentifiers;
-- (bool)isAppleInternalConversation;
-- (bool)isAuthorKnownAppleContact;
 - (bool)isEvent;
 - (bool)isPerson;
 - (id)message;

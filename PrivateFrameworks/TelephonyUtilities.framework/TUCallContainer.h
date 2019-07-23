@@ -29,6 +29,7 @@
 @property (nonatomic, readonly, copy) NSArray *currentVideoCalls;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSArray *displayedAudioAndVideoCalls;
 @property (nonatomic, readonly) TUCall *displayedCall;
 @property (nonatomic, readonly, copy) NSArray *displayedCalls;
 @property (nonatomic, readonly) bool existingCallsHaveMultipleProviders;
@@ -81,6 +82,7 @@
 - (id)currentVideoCall;
 - (unsigned long long)currentVideoCallCount;
 - (id)currentVideoCalls;
+- (id)displayedAudioAndVideoCalls;
 - (id)displayedCall;
 - (id)displayedCallFromCalls:(id)arg1;
 - (id)displayedCalls;

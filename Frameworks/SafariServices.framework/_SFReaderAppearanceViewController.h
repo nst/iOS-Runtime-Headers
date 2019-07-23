@@ -13,15 +13,15 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) WBSReaderFont *selectedFont;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSString *themeName;
+@property (nonatomic, readonly) long long theme;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)initWithInitialReaderConfiguration:(id)arg1 fontManager:(id)arg2;
+- (id)initWithConfigurationManager:(id)arg1 fontManager:(id)arg2;
 - (void)loadView;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
 - (id)selectedFont;
 - (void)setDelegate:(id)arg1;
-- (id)themeName;
+- (long long)theme;
 
 @end

@@ -21,6 +21,8 @@
 @property (nonatomic, readonly, copy) NSNumber *hf_absoluteValue;
 @property (nonatomic, readonly) bool hf_isFloatValue;
 @property (nonatomic, readonly) bool hf_isSignedValue;
+@property (setter=ik_setUnit:, nonatomic) unsigned long long ik_unit;
+@property (nonatomic, readonly) NSString *ik_unitStringValue;
 @property (readonly) int intValue;
 @property (readonly) long long integerValue;
 @property (readonly) long long longLongValue;
@@ -108,10 +110,6 @@
 - (unsigned long long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-- (id)dbgStringForType:(id)arg1 error:(id*)arg2;
-
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
 - (long long)_cn_reputationScoreValue;
@@ -188,6 +186,12 @@
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)__ck_localizedString;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (unsigned long long)crk_featureBoolTypeFromNumber:(id)arg1;
+
+- (unsigned long long)crk_featureBoolType;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
@@ -287,6 +291,12 @@
 
 - (bool)isArchivable_im;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
+- (void)ik_setUnit:(unsigned long long)arg1;
+- (unsigned long long)ik_unit;
+- (id)ik_unitStringValue;
+
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 - (id)_lp_CSSText;
@@ -312,6 +322,10 @@
 - (bool)nu_isInfinite;
 - (bool)nu_isInteger;
 - (bool)nu_isNaN;
+
+// Image: /System/Library/PrivateFrameworks/News/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
@@ -345,6 +359,9 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 - (bool)pk_isIntegralNumber;
+- (bool)pk_isNegativeNumber;
+- (bool)pk_isPositiveNumber;
+- (bool)pk_isZeroNumber;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
@@ -412,20 +429,19 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)numberWithCGFloat:(double)arg1;
-+ (id)tsch_instanceWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
++ (id)tsch_instanceWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1 unarchiver:(id)arg2;
 + (id)tsch_numberWithStyleInt:(int)arg1;
 + (id)tsch_numberWithStyleProperty:(int)arg1;
-+ (id)tsch_optionalNumberWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
-+ (void)tsch_saveOptionalNumber:(id)arg1 toArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg2 archiver:(id)arg3;
++ (id)tsch_optionalNumberWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1 unarchiver:(id)arg2;
++ (void)tsch_saveOptionalNumber:(id)arg1 toArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg2 archiver:(id)arg3;
 
 - (double)CGFloatValue;
 - (int)chartGridValueType;
 - (bool)isFloatingPointType;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (void)sfu_appendJsonStringToString:(id)arg1;
-- (id)tsch_initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 archiver:(id)arg2;
+- (id)tsch_initWithArchive:(const struct ChartsNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; double x5; }*)arg1 archiver:(id)arg2;
 - (int)tsch_styleIntValue;
 - (int)tsch_stylePropertyValue;
 - (int)tss_propertyValue;

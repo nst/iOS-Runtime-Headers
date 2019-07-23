@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)actionPredictionsForActionKey:(id)arg1 statistics:(id)arg2 appActionPredictionItem:(const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*)arg3 appActionLogProbability:(double)arg4 scoreLogger:(id)arg5 andLimit:(int)arg6 forMagicalMoments:(bool)arg7;
-- (id)actionPredictionsForActionKey:(id)arg1 statistics:(id)arg2 appActionPredictionItem:(const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*)arg3 appActionLogProbability:(double)arg4 scoreLogger:(id)arg5 andLimit:(int)arg6 forMagicalMoments:(bool)arg7 predictionItemsToKeep:(struct vector<ATXPredictionItem, std::__1::allocator<ATXPredictionItem> > { }*)arg8;
+- (id)actionPredictionsForActionKey:(id)arg1 statistics:(id)arg2 appActionPredictionItem:(const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*)arg3 appActionLogProbability:(double)arg4 scoreLogger:(id)arg5 andLimit:(int)arg6 forMagicalMoments:(bool)arg7;
+- (id)actionPredictionsForActionKey:(id)arg1 statistics:(id)arg2 appActionPredictionItem:(const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*)arg3 appActionLogProbability:(double)arg4 scoreLogger:(id)arg5 andLimit:(int)arg6 forMagicalMoments:(bool)arg7 predictionItemsToKeep:(struct vector<ATXPredictionItem, std::__1::allocator<ATXPredictionItem> > { }*)arg8;
 - (id)init;
 - (id)initWithSlotResolver:(id)arg1;
 - (id)statisticsForActionKey:(id)arg1;

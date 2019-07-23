@@ -36,6 +36,7 @@
 - (void*)endpoint;
 - (id)endpointWrapper;
 - (void)establishGroup;
+- (id)groupLeaderAirplayIdentifier;
 - (id)groupUID;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEndpoint:(void*)arg1;
@@ -47,6 +48,7 @@
 - (bool)isProxyGroupPlayer;
 - (bool)isRoutingToWirelessDevice;
 - (bool)isStereoPair;
+- (bool)isTVRoute;
 - (bool)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (id)routeName;
 - (id)routeNames;

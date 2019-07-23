@@ -127,7 +127,7 @@
         unsigned long long length; 
     }  _searchReferenceRange;
     long long  _selectionType;
-    TSTInfo * _tableInfo;
+    TSTTableInfo * _tableInfo;
 }
 
 @property (nonatomic, readonly) struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; } anchorCellID;
@@ -168,7 +168,7 @@
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } searchReferenceRange;
 @property (nonatomic, readonly) long long selectionType;
 @property (readonly) Class superclass;
-@property (nonatomic) TSTInfo *tableInfo;
+@property (nonatomic) TSTTableInfo *tableInfo;
 
 + (Class)archivedSelectionClass;
 + (id)selectionWithTableInfo:(id)arg1 cellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
@@ -220,11 +220,11 @@
 - (id)description;
 - (bool)getAggregateType:(out unsigned char*)arg1;
 - (id)initForUpgradeWithTableInfo:(id)arg1 cellRegion:(id)arg2 anchorCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg3 cursorCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg4 baseRegion:(id)arg5 selectionType:(long long)arg6;
-- (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CellID {} *x6; struct RepeatedPtrField<TST::CellRange> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TST::CellRange> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct CellID {} *x9; struct Reference {} *x10; struct CellUIDRegionArchive {} *x11; struct CellUIDRegionArchive {} *x12; struct UUIDCoordArchive {} *x13; struct UUIDCoordArchive {} *x14; int x15; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithRdar39989167Archive:(const struct DeathhawkRdar39989167CellSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CellUIDRegionArchive {} *x6; struct CellUIDRegionArchive {} *x7; struct UUIDCoordArchive {} *x8; struct UUIDCoordArchive {} *x9; int x10; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::CellRange> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TST::CellRange> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct Reference {} *x7; struct CellID {} *x8; struct CellID {} *x9; struct Reference {} *x10; struct CellUIDRegionArchive {} *x11; struct CellUIDRegionArchive {} *x12; struct UUIDCoordArchive {} *x13; struct UUIDCoordArchive {} *x14; int x15; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithRdar39989167Archive:(const struct DeathhawkRdar39989167CellSelectionArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct CellUIDRegionArchive {} *x6; struct CellUIDRegionArchive {} *x7; struct UUIDCoordArchive {} *x8; struct UUIDCoordArchive {} *x9; int x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 andCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2;
 - (id)initWithTableInfo:(id)arg1 andCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg2;
-- (id)initWithTableInfo:(id)arg1 andPreviousSelection:(id)arg2 offsetBy:(struct { int x1; int x2; })arg3;
+- (id)initWithTableInfo:(id)arg1 andPreviousSelection:(id)arg2 offsetBy:(struct TSUColumnRowOffset { int x1; int x2; })arg3;
 - (id)initWithTableInfo:(id)arg1 cellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg2 selectionType:(long long)arg3;
 - (id)initWithTableInfo:(id)arg1 cellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg2 type:(long long)arg3 anchorCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg4 cursorCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg5;
 - (id)initWithTableInfo:(id)arg1 cellRegion:(id)arg2;
@@ -248,7 +248,7 @@
 - (struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })logicalCellIDInTable:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)remove:(long long)arg1 atIndex:(unsigned int)arg2 count:(unsigned int)arg3;
-- (void)saveToArchive:(struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CellID {} *x6; struct RepeatedPtrField<TST::CellRange> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TST::CellRange> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct CellID {} *x9; struct Reference {} *x10; struct CellUIDRegionArchive {} *x11; struct CellUIDRegionArchive {} *x12; struct UUIDCoordArchive {} *x13; struct UUIDCoordArchive {} *x14; int x15; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct SelectionArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::CellRange> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TST::CellRange> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; struct Reference {} *x7; struct CellID {} *x8; struct CellID {} *x9; struct Reference {} *x10; struct CellUIDRegionArchive {} *x11; struct CellUIDRegionArchive {} *x12; struct UUIDCoordArchive {} *x13; struct UUIDCoordArchive {} *x14; int x15; }*)arg1 archiver:(id)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })searchReferenceRange;
 - (id)selectionAdjustedForColumnVisibilityInTableInfo:(id)arg1;
 - (id)selectionAdjustedForGeometryInTableInfo:(id)arg1;

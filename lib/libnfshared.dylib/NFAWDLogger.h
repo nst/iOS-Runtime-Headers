@@ -76,6 +76,7 @@
 - (void)postAWDPLLUnlockEvent;
 - (void)postAWDPeerPaymentEnrollmentWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentRequestWithParameters:(id)arg1;
+- (void)postAWDPurpleTrustOperationWithParameters:(id)arg1;
 - (void)postAWDReaderModeExceptionForType:(unsigned int)arg1 withErrorCode:(unsigned int)arg2;
 - (void)postAWDReaderSessionEventWithParameters:(id)arg1;
 - (void)postAWDRestrictedModeFromContactlessMode:(bool)arg1 isIcf:(bool)arg2;

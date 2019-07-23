@@ -26,6 +26,7 @@
     CKInlineAudioReplyButtonController * _audioReplyButton;
     _UIBackdropView * _backdropView;
     CKEntryViewButton * _browserButton;
+    UIView * _buttonAndTextAreaContainerView;
     bool  _characterCountHidden;
     UILabel * _characterCountLabel;
     struct CGSize { 
@@ -116,6 +117,7 @@
 @property (nonatomic, retain) CKInlineAudioReplyButtonController *audioReplyButton;
 @property (nonatomic, retain) _UIBackdropView *backdropView;
 @property (nonatomic, retain) CKEntryViewButton *browserButton;
+@property (nonatomic, retain) UIView *buttonAndTextAreaContainerView;
 @property (getter=isCharacterCountHidden, nonatomic) bool characterCountHidden;
 @property (nonatomic, retain) UILabel *characterCountLabel;
 @property (nonatomic) struct CGSize { double x1; double x2; } characterCountSize;
@@ -195,6 +197,7 @@
 - (void)_animateExpandWithCompletion:(id /* block */)arg1;
 - (void)_animateToCompactLayoutCollapsing:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_currentInputDelegate;
+- (unsigned long long)_durationBucketForAudioComposition:(id)arg1;
 - (void)_initializeInputContextHistory;
 - (bool)_isRunningInMVS;
 - (bool)_isSURFInShelf;
@@ -203,6 +206,8 @@
 - (void)_setupWaveformView;
 - (bool)_shouldNotAnimateCollapseInteractive;
 - (void)_swipeDownGestureRecognized:(id)arg1;
+- (void)_trackAudioMessageRecordingStarted;
+- (void)_trackAudioMessageSentWithComposition:(id)arg1;
 - (void)_updateUIForEntryFieldCollapsedStateChange;
 - (void)actionMenuControllerDidDismissActionMenu:(id)arg1;
 - (void)actionMenuControllerWillDismissActionMenu:(id)arg1 animated:(bool)arg2;
@@ -244,6 +249,7 @@
 - (id)browserButton;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserButtonFrame;
 - (void)browserButtonTapped:(id)arg1;
+- (id)buttonAndTextAreaContainerView;
 - (void)cancelRecordingAndShowAudioHint;
 - (id)characterCountLabel;
 - (struct CGSize { double x1; double x2; })characterCountSize;
@@ -273,6 +279,7 @@
 - (bool)entryFieldUpdaterCollapsedValue;
 - (void)expandGestureRecongnized;
 - (bool)extendAppStripBlurToKeyplaneTop;
+- (void)finishSmallBrowserSwitcherTransition;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleContentViewChangeWithCompletion:(id /* block */)arg1;
 - (bool)hasFailedRecipients;
@@ -327,6 +334,7 @@
 - (double)placeholderHeight;
 - (void)playMenuItemAction:(id)arg1;
 - (bool)pluginButtonsEnabled;
+- (void)prepareForSmallBrowserSwitcherTransition;
 - (void)presentAudioActionMenu;
 - (id)previewInteractionDelegate;
 - (id)recordedAudioView;
@@ -358,6 +366,7 @@
 - (void)setAudioReplyButton:(id)arg1;
 - (void)setBackdropView:(id)arg1;
 - (void)setBrowserButton:(id)arg1;
+- (void)setButtonAndTextAreaContainerView:(id)arg1;
 - (void)setCharacterCountHidden:(bool)arg1;
 - (void)setCharacterCountLabel:(id)arg1;
 - (void)setCharacterCountSize:(struct CGSize { double x1; double x2; })arg1;

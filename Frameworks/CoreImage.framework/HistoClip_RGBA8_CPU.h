@@ -4,6 +4,8 @@
 
 @interface HistoClip_RGBA8_CPU : CIFilter {
     NSNumber * inputAbortMaxCenterDist;
+    CIVector * inputCenterExtentLeft;
+    CIVector * inputCenterExtentRight;
     CIImage * inputCenterLeft;
     CIVector * inputCenterOffsetLeft;
     CIVector * inputCenterOffsetRight;
@@ -14,6 +16,8 @@
     CIImage * inputImage;
     NSNumber * inputInterPeakMinRepair;
     CIVector * inputMaxArea;
+    CIVector * inputMaxAreaRatio;
+    NSNumber * inputMaxInterDispersion;
     NSNumber * inputMaxRelDensity;
     NSNumber * inputMinDensity;
     CIVector * inputMinimum;
@@ -25,6 +29,8 @@
 }
 
 @property (nonatomic, retain) NSNumber *inputAbortMaxCenterDist;
+@property (nonatomic, retain) CIVector *inputCenterExtentLeft;
+@property (nonatomic, retain) CIVector *inputCenterExtentRight;
 @property (nonatomic, retain) CIImage *inputCenterLeft;
 @property (nonatomic, retain) CIVector *inputCenterOffsetLeft;
 @property (nonatomic, retain) CIVector *inputCenterOffsetRight;
@@ -34,6 +40,8 @@
 @property (nonatomic, retain) CIImage *inputDetectionRight;
 @property (nonatomic, retain) NSNumber *inputInterPeakMinRepair;
 @property (nonatomic, retain) CIVector *inputMaxArea;
+@property (nonatomic, retain) CIVector *inputMaxAreaRatio;
+@property (nonatomic, retain) NSNumber *inputMaxInterDispersion;
 @property (nonatomic, retain) NSNumber *inputMaxRelDensity;
 @property (nonatomic, retain) NSNumber *inputMinDensity;
 @property (nonatomic, retain) CIVector *inputMinimum;
@@ -44,6 +52,8 @@
 @property (nonatomic, retain) NSNumber *inputTuning;
 
 - (id)inputAbortMaxCenterDist;
+- (id)inputCenterExtentLeft;
+- (id)inputCenterExtentRight;
 - (id)inputCenterLeft;
 - (id)inputCenterOffsetLeft;
 - (id)inputCenterOffsetRight;
@@ -53,6 +63,8 @@
 - (id)inputDetectionRight;
 - (id)inputInterPeakMinRepair;
 - (id)inputMaxArea;
+- (id)inputMaxAreaRatio;
+- (id)inputMaxInterDispersion;
 - (id)inputMaxRelDensity;
 - (id)inputMinDensity;
 - (id)inputMinimum;
@@ -63,6 +75,8 @@
 - (id)inputTuning;
 - (id)outputImage;
 - (void)setInputAbortMaxCenterDist:(id)arg1;
+- (void)setInputCenterExtentLeft:(id)arg1;
+- (void)setInputCenterExtentRight:(id)arg1;
 - (void)setInputCenterLeft:(id)arg1;
 - (void)setInputCenterOffsetLeft:(id)arg1;
 - (void)setInputCenterOffsetRight:(id)arg1;
@@ -72,6 +86,8 @@
 - (void)setInputDetectionRight:(id)arg1;
 - (void)setInputInterPeakMinRepair:(id)arg1;
 - (void)setInputMaxArea:(id)arg1;
+- (void)setInputMaxAreaRatio:(id)arg1;
+- (void)setInputMaxInterDispersion:(id)arg1;
 - (void)setInputMaxRelDensity:(id)arg1;
 - (void)setInputMinDensity:(id)arg1;
 - (void)setInputMinimum:(id)arg1;

@@ -20,7 +20,7 @@
 - (bool)_hasUserMadeMetricChangesToWorkoutType:(id)arg1 enabledMetrics:(id)arg2 settingOverridesByMetric:(id)arg3 metricFormatVersion:(id)arg4;
 - (void)_migratePaceViewSettingIfNeeded;
 - (void)_readFromDomain;
-- (void)_writeToDomain;
+- (void)_writeToDomainWithShouldUpdateVersion:(bool)arg1;
 - (long long)disabledIndexForMetricType:(unsigned long long)arg1;
 - (id)domainAccessor;
 - (id)init;

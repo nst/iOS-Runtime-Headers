@@ -5,8 +5,7 @@
 
 @required
 
-- (double)sectionItemHeightFor:(double)arg1;
-- (double)sectionItemHeightFor:(double)arg1;
+- (double)sectionItemHeightFor:(double)arg1 traitCollection:(UITraitCollection *)arg2;
 - (UIViewController *)sectionItemViewController;
 
 @end

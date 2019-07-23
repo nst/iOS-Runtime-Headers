@@ -25,6 +25,8 @@
 - (void)_LSFailedToOpenURL:(id)arg1 withBundle:(id)arg2;
 - (bool)_LSPrivateDatabaseNeedsRebuild;
 - (bool)_LSPrivateRebuildApplicationDatabasesForSystemApps:(bool)arg1 internal:(bool)arg2 user:(bool)arg3;
+- (id)_LSPrivateRemovedSystemAppIdentifiers;
+- (void)_LSPrivateSetRemovedSystemAppIdentifiers:(id)arg1;
 - (void)_LSPrivateSyncWithMobileInstallation;
 - (void)_LSPrivateUpdateAppRemovalRestrictions;
 - (void)addObserver:(id)arg1;

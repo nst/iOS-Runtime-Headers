@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long hdrMode;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } nativePixelSize;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
 @property (nonatomic, readonly) double refreshRate;
 @property (nonatomic, readonly) double scale;
@@ -54,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })nativePixelSize;
 - (struct CGSize { double x1; double x2; })pixelSize;
 - (double)refreshRate;
 - (double)scale;

@@ -35,6 +35,7 @@
 - (bool)inLastViewport;
 - (id)initWithComponentView:(id)arg1 withBehavior:(id)arg2;
 - (bool)isRotating;
+- (bool)requiresContinuousUpdates;
 - (void)setAbsoluteContentViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDirection:(int)arg1;
 - (void)setInFirstViewport:(bool)arg1;

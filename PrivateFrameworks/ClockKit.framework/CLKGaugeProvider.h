@@ -3,6 +3,7 @@
  */
 
 @interface CLKGaugeProvider : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _accessibilityLabel;
     bool  _finalized;
     NSArray * _gaugeColorLocations;
     NSArray * _gaugeColors;
@@ -10,6 +11,7 @@
     long long  _style;
 }
 
+@property (nonatomic, retain) NSString *accessibilityLabel;
 @property (nonatomic) bool finalized;
 @property (nonatomic, retain) NSArray *gaugeColorLocations;
 @property (nonatomic, retain) NSArray *gaugeColors;
@@ -21,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
+- (id)accessibilityLabel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
@@ -34,6 +37,7 @@
 - (bool)needsTimerUpdates;
 - (bool)paused;
 - (double)progressFractionForNow:(id)arg1;
+- (void)setAccessibilityLabel:(id)arg1;
 - (void)setFinalized:(bool)arg1;
 - (void)setGaugeColorLocations:(id)arg1;
 - (void)setGaugeColors:(id)arg1;

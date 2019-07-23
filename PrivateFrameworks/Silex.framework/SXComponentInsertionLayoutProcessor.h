@@ -4,17 +4,21 @@
 
 @interface SXComponentInsertionLayoutProcessor : NSObject <SXLayoutProcessor> {
     <SXComponentInsertionManager> * _componentInsertionManager;
+    SXLayoutOptions * _layoutOptions;
 }
 
 @property (nonatomic, readonly) <SXComponentInsertionManager> *componentInsertionManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) SXLayoutOptions *layoutOptions;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)componentInsertionManager;
 - (id)initWithComponentInsertionManager:(id)arg1;
-- (void)processLayoutBlueprint:(id)arg1 layoutDataProvider:(id)arg2;
+- (id)layoutOptions;
+- (void)processLayoutTask:(id)arg1 layoutBlueprint:(id)arg2 DOMObjectProvider:(id)arg3;
+- (void)setLayoutOptions:(id)arg1;
 
 @end

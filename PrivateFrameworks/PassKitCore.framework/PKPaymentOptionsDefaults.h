@@ -28,8 +28,10 @@
 - (void).cxx_destruct;
 - (id)_contactForKeychainKey:(id)arg1;
 - (void)_deleteKeychainDataForKey:(id)arg1;
+- (void)_deleteKeychainDataForKey:(id)arg1 localOnly:(bool)arg2;
 - (void)_hardDeleteDefaultBillingAddress;
 - (id)_keychainDataForKey:(id)arg1;
+- (id)_lastUpdatedDatesForBillingAddresses;
 - (id)_rawDefaultBillingAddresses;
 - (void)_registerForChangeNotifications;
 - (void)_setContact:(id)arg1 forKeychainKey:(id)arg2;
@@ -47,6 +49,7 @@
 - (id)defaultContactPhone;
 - (id)defaultShippingAddress;
 - (void)deleteAllDefaults;
+- (void)deleteAllLocalDefaults;
 - (void)deleteDefaultBillingAddress:(id)arg1;
 - (void)deleteDefaultContactEmail;
 - (void)deleteDefaultContactName;
@@ -54,6 +57,7 @@
 - (void)deleteDefaultForContactKey:(id)arg1;
 - (void)deleteDefaultShippingAddress;
 - (id)init;
+- (id)lastUpdatedDateForPrimaryAccountIdentifier:(id)arg1;
 - (void)migrateToSyncable;
 - (void)optionsSynchronizationDidChangeTo:(bool)arg1;
 - (void)setDefaultBillingAddress:(id)arg1 forPaymentPass:(id)arg2;
@@ -63,5 +67,6 @@
 - (void)setDefaultContactName:(id)arg1;
 - (void)setDefaultContactPhone:(id)arg1;
 - (void)setDefaultShippingAddress:(id)arg1;
+- (void)updateLastUpdatedDate:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
 
 @end

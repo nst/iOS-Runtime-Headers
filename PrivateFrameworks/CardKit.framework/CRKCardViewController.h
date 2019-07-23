@@ -101,11 +101,13 @@
 - (void)setLoadBundles:(bool)arg1;
 - (void)setPreferredPunchoutIndex:(long long)arg1;
 - (void)userDidEngageCardSection:(id)arg1 withEngagementFeedback:(id)arg2;
+- (void)userDidReportFeedback:(id)arg1 fromCardSection:(id)arg2;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)willDismissViewController:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

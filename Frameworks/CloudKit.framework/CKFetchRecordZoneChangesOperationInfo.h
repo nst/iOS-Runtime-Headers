@@ -10,6 +10,7 @@
     bool  _forcePCSDecryptionAttempt;
     NSArray * _recordZoneIDs;
     bool  _shouldFetchAssetContents;
+    bool  _shouldReportAllPerItemFailures;
 }
 
 @property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
@@ -19,6 +20,7 @@
 @property (nonatomic) bool forcePCSDecryptionAttempt;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
 @property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic) bool shouldReportAllPerItemFailures;
 
 + (bool)supportsSecureCoding;
 
@@ -38,6 +40,8 @@
 - (void)setForcePCSDecryptionAttempt:(bool)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
 - (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setShouldReportAllPerItemFailures:(bool)arg1;
 - (bool)shouldFetchAssetContents;
+- (bool)shouldReportAllPerItemFailures;
 
 @end

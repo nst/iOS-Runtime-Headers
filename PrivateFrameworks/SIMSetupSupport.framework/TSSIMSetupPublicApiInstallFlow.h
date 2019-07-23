@@ -3,48 +3,32 @@
  */
 
 @interface TSSIMSetupPublicApiInstallFlow : TSSIMSetupFlow <TSCellularPlanManagerCacheDelegate, TSSIMSetupFlowDelegate> {
+    UIBarButtonItem * _cancelButton;
+    NSString * _carrierName;
+    UIViewController<TSSetupFlowItem> * _currentViewController;
+    NSMutableArray * _danglingPlanItems;
     NSString * _installName;
+    bool  _isPreinstallingViewControllerActive;
     NSError * _planInstallError;
-    bool  _planInstalled;
-    NSString * _planInstallingUuid;
     bool  _requireSetup;
-    TSCellularPlanAddingViewController * _spinnerViewController;
     unsigned long long  _userConsentType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (retain) NSString *installName;
-@property NSError *planInstallError;
-@property bool planInstalled;
-@property (retain) NSString *planInstallingUuid;
-@property (nonatomic) bool requireSetup;
-@property TSCellularPlanAddingViewController *spinnerViewController;
 @property (readonly) Class superclass;
-@property unsigned long long userConsentType;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)firstViewController;
 - (void)firstViewController:(id /* block */)arg1;
 - (id)initWithAppName:(id)arg1 requireSetup:(bool)arg2;
-- (id)installName;
+- (bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
-- (id)planInstallError;
-- (bool)planInstalled;
-- (id)planInstallingUuid;
 - (void)planItemsUpdated:(id)arg1 planListError:(id)arg2;
-- (bool)requireSetup;
-- (void)setInstallName:(id)arg1;
-- (void)setPlanInstallError:(id)arg1;
-- (void)setPlanInstalled:(bool)arg1;
-- (void)setPlanInstallingUuid:(id)arg1;
-- (void)setRequireSetup:(bool)arg1;
-- (void)setSpinnerViewController:(id)arg1;
-- (void)setUserConsentType:(unsigned long long)arg1;
-- (id)spinnerViewController;
-- (unsigned long long)userConsentType;
+- (void)setDefaultNavigationItems:(id)arg1;
+- (long long)signupUserConsentResponse;
 - (void)viewControllerDidComplete:(id)arg1;
 
 @end

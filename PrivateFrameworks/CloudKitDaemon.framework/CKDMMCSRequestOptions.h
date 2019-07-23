@@ -16,6 +16,7 @@
     long long  _databaseScope;
     NSString * _deviceHardwareID;
     unsigned long long  _discretionaryNetworkBehavior;
+    C2MetricOptions * _metricOptions;
     unsigned long long  _networkServiceType;
     long long  _qualityOfService;
     NSString * _topmostParentOperationGroupID;
@@ -36,6 +37,7 @@
 @property (nonatomic) long long databaseScope;
 @property (nonatomic, retain) NSString *deviceHardwareID;
 @property (nonatomic) unsigned long long discretionaryNetworkBehavior;
+@property (nonatomic, retain) C2MetricOptions *metricOptions;
 @property (nonatomic) unsigned long long networkServiceType;
 @property (nonatomic) long long qualityOfService;
 @property (nonatomic, retain) NSString *topmostParentOperationGroupID;
@@ -60,6 +62,7 @@
 - (id)deviceHardwareID;
 - (unsigned long long)discretionaryNetworkBehavior;
 - (id)initWithOperation:(id)arg1;
+- (id)metricOptions;
 - (unsigned long long)networkServiceType;
 - (long long)qualityOfService;
 - (void)setAllowsCellularAccess:(bool)arg1;
@@ -75,6 +78,7 @@
 - (void)setDeviceHardwareID:(id)arg1;
 - (void)setDiscretionaryNetworkBehavior:(unsigned long long)arg1;
 - (void)setMMCSRequestOptions:(id)arg1;
+- (void)setMetricOptions:(id)arg1;
 - (void)setNetworkServiceType:(unsigned long long)arg1;
 - (void)setQualityOfService:(long long)arg1;
 - (void)setTopmostParentOperationGroupID:(id)arg1;

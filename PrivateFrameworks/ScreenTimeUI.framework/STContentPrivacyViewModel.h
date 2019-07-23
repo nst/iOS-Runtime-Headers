@@ -6,6 +6,7 @@
     bool  _isLoaded;
     bool  _isLocalDevice;
     bool  _restrictionsEnabled;
+    bool  _shouldAllowEditing;
     NSNumber * _userDSID;
     NSString * _userName;
     NSMutableDictionary * _valuesByRestriction;
@@ -15,6 +16,7 @@
 @property (nonatomic) bool isLoaded;
 @property (nonatomic) bool isLocalDevice;
 @property (nonatomic) bool restrictionsEnabled;
+@property (nonatomic) bool shouldAllowEditing;
 @property (nonatomic, copy) NSNumber *userDSID;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, retain) NSMutableDictionary *valuesByRestriction;
@@ -29,10 +31,12 @@
 - (void)setIsLoaded:(bool)arg1;
 - (void)setIsLocalDevice:(bool)arg1;
 - (void)setRestrictionsEnabled:(bool)arg1;
+- (void)setShouldAllowEditing:(bool)arg1;
 - (void)setUserDSID:(id)arg1;
 - (void)setUserName:(id)arg1;
 - (void)setValuesByRestriction:(id)arg1;
 - (void)setVisibleRestrictions:(id)arg1;
+- (bool)shouldAllowEditing;
 - (id)userDSID;
 - (id)userName;
 - (id)valuesByRestriction;

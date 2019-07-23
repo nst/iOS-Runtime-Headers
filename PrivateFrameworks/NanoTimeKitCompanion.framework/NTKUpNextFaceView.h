@@ -15,6 +15,7 @@
     NSSet * _dwellIndexPathes;
     REUIRelevanceEngineController * _engineController;
     unsigned long long  _faceColor;
+    bool  _hasPerformedAnyBatchUpdates;
     bool  _inBatchUpdate;
     long long  _interactiveState;
     bool  _isAnimating;
@@ -35,6 +36,7 @@
         double x; 
         double y; 
     }  _secondaryOffsetForModeTransition;
+    NSMutableArray * _snapshotCallbacks;
     struct CGPoint { 
         double x; 
         double y; 
@@ -155,6 +157,7 @@
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (id)intentActionWantsBackgroundImageForAlert:(id)arg1;
+- (id)intentActionWantsBackgroundToBlurForAlert:(id)arg1;
 - (id)intentActionWantsViewToBlurForAlert:(id)arg1;
 - (void)layoutSubviews;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;

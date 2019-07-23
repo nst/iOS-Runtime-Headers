@@ -3,21 +3,34 @@
  */
 
 @interface VUIProductMetadataView : UIView {
+    VUIProductInfoAiringView * _airingView;
+    UIView * _defaultFocusView;
     NSArray * _sectionViews;
+    VUISeparatorView * _separatorView;
     VUIProductMetadataLayout * _viewLayout;
 }
 
+@property (nonatomic, retain) VUIProductInfoAiringView *airingView;
+@property (nonatomic, retain) UIView *defaultFocusView;
 @property (nonatomic, retain) NSArray *sectionViews;
+@property (nonatomic, retain) VUISeparatorView *separatorView;
 @property (nonatomic, retain) VUIProductMetadataLayout *viewLayout;
 
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;
-+ (id)configureViewWithSections:(id)arg1 existingView:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_generateSectionViewFromElement:(id)arg1;
+- (id)airingView;
+- (bool)canBecomeFocused;
+- (id)defaultFocusView;
 - (void)layoutSubviews;
+- (id)preferredFocusEnvironments;
 - (id)sectionViews;
+- (id)separatorView;
+- (void)setAiringView:(id)arg1;
+- (void)setDefaultFocusView:(id)arg1;
 - (void)setSectionViews:(id)arg1;
+- (void)setSeparatorView:(id)arg1;
 - (void)setViewLayout:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateViewWithSections:(id)arg1;

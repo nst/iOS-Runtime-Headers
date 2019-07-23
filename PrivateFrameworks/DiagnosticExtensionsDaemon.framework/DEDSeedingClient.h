@@ -4,6 +4,7 @@
 
 @interface DEDSeedingClient : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     NSURLSession * _backgroundSession;
+    NSString * _bugSessionIdentifier;
     DEDBugSessionConfiguration * _config;
     NSURLSession * _foregroundSession;
     NSObject<OS_os_log> * _log;
@@ -11,6 +12,7 @@
 }
 
 @property (retain) NSURLSession *backgroundSession;
+@property (retain) NSString *bugSessionIdentifier;
 @property (retain) DEDBugSessionConfiguration *config;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -33,6 +35,7 @@
 - (id)backgroundSession;
 - (id)beginUploadWithRequest:(id)arg1 fromFileURL:(id)arg2;
 - (id)bodyDataForParameters:(id)arg1 encoding:(unsigned long long)arg2 error:(id*)arg3;
+- (id)bugSessionIdentifier;
 - (void)cancelPromise:(id)arg1 withSuccess:(id /* block */)arg2 error:(id /* block */)arg3;
 - (void)cleanup;
 - (id)config;
@@ -62,6 +65,7 @@
 - (id)seedingURL;
 - (void)sendFile:(id)arg1 promise:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setBackgroundSession:(id)arg1;
+- (void)setBugSessionIdentifier:(id)arg1;
 - (void)setConfig:(id)arg1;
 - (void)setForegroundSession:(id)arg1;
 - (void)setLog:(id)arg1;

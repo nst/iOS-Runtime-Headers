@@ -47,11 +47,13 @@
 - (void)_removeMovieRental:(id)arg1;
 - (void)_removeSeason:(id)arg1 fromShow:(id)arg2;
 - (void)_removeShow:(id)arg1;
+- (bool)_saveWithError:(out id*)arg1;
 - (id)_seasons;
 - (void)_startMonitoringDatabaseFile;
 - (void)addEntity:(id)arg1 showIdentifier:(id)arg2 seasonIdentifier:(id)arg3;
 - (id)databaseFileDispatchSource;
 - (void)dealloc;
+- (id)entityForIdentifier:(id)arg1;
 - (id)episodes;
 - (id)fileURL;
 - (unsigned long long)hash;
@@ -60,10 +62,12 @@
 - (id)init;
 - (id)initWithURL:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)itemForIdentifier:(id)arg1;
 - (id)movieByIdentifier;
 - (id)movieRentalByIdentifier;
 - (id)movieRentals;
 - (id)movies;
+- (void)removeDownloadedMediaForIdentifier:(id)arg1;
 - (void)removeEntityWithIdentifier:(id)arg1;
 - (bool)saveToFileURL:(id)arg1 error:(out id*)arg2;
 - (id)seasons;
@@ -77,6 +81,7 @@
 - (void)setShowByIdentifier:(id)arg1;
 - (id)showByIdentifier;
 - (id)shows;
+- (void)updateEntity:(id)arg1 propertyName:(id)arg2 propertyValue:(id)arg3;
 - (void)updateEntityWithIdentifier:(id)arg1 propertyName:(id)arg2 propertyValue:(id)arg3;
 
 @end

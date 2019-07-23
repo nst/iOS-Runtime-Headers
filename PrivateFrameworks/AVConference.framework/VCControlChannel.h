@@ -30,6 +30,7 @@
 - (bool)sendReliableMessageAndWait:(id)arg1;
 - (bool)sendReliableMessageAndWait:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)sendUnreliableMessage:(id)arg1 participantID:(unsigned long long)arg2;
+- (void)setEncryptionWithEncryptionMaterial:(struct { struct tagSRTPExchangeInfo { BOOL x_1_1_1[65]; BOOL x_1_1_2[29]; void *x_1_1_3; } x1; unsigned int x2; struct tagSRTPExchangeInfo { BOOL x_3_1_1[65]; BOOL x_3_1_2[29]; void *x_3_1_3; } x3; unsigned int x4; int x5; int x6; }*)arg1;
 - (void)setMessageReceivedDelegate:(id)arg1;
 - (void)throwNotSupportedExceptionForMethod:(id)arg1;
 

@@ -18,6 +18,7 @@
     bool  _disconnecting;
     bool  _forceReconnectOnConnectionFailure;
     bool  _isCallingClientCallback;
+    bool  _isClientSyncActive;
     id /* block */  _nameCallback;
     NSObject<OS_dispatch_queue> * _nameCallbackQueue;
     NSObject<OS_dispatch_queue> * _notificationQueue;
@@ -35,6 +36,7 @@
     NSObject<OS_dispatch_queue> * _pairingCallbackQueue;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     unsigned long long  _reconnectionAttemptCount;
+    NSRunLoop * _runLoop;
     CURunLoopThread * _runLoopThread;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSObject<OS_os_transaction> * _transaction;
@@ -78,6 +80,7 @@
 @property (nonatomic, copy) id /* block */ pairingCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *pairingCallbackQueue;
 @property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
+@property (nonatomic, retain) NSRunLoop *runLoop;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MRExternalDeviceTransport *transport;
 @property (nonatomic, copy) id /* block */ volumeCallback;
@@ -95,6 +98,8 @@
 - (void)_callOutputDevicesUpdatedCallbackWithOutputDevices:(id)arg1;
 - (void)_callVolumeCallback:(float)arg1 outputDeviceUID:(id)arg2;
 - (void)_callVolumeControlCapabilitiesCallback:(unsigned int)arg1 outputDeviceUID:(id)arg2;
+- (void)_cleanUpStreamsWithReason:(long long)arg1;
+- (void)_cleanUpWithReason:(long long)arg1;
 - (void)_contentItemUpdatedNotification:(id)arg1;
 - (id)_createPlaybackQueue:(bool)arg1;
 - (void)_handleCryptoPairingMessage:(id)arg1;
@@ -130,16 +135,16 @@
 - (void)_handleVolumeControlCapabilitiesDidChangeMessage:(id)arg1;
 - (void)_handleVolumeDidChangeMessage:(id)arg1;
 - (void)_localDeviceInfoDidChangeNotification:(id)arg1;
-- (void)_onSerialQueue_connectWithOptions:(unsigned int)arg1;
+- (void)_onSerialQueue_prepareToConnectWithOptions:(unsigned int)arg1;
+- (void)_onSerialQueue_prepareToDisconnect:(id)arg1;
 - (void)_onSerialQueue_registerOriginCallbacks;
-- (void)_onWorkerQueue_cleanUpWithReason:(long long)arg1;
 - (void)_onWorkerQueue_connectWithOptions:(unsigned int)arg1 isRetry:(bool)arg2;
+- (void)_onWorkerQueue_disconnect:(id)arg1;
 - (id)_onWorkerQueue_initializeConnectionWithOptions:(unsigned int)arg1;
 - (id)_onWorkerQueue_loadDeviceInfo;
 - (id)_onWorkerQueue_openSecuritySession;
 - (id)_onWorkerQueue_setupCustomOrigin;
 - (void)_onWorkerQueue_syncClientState;
-- (void)_tearDownCustomOriginWithReason:(long long)arg1;
 - (void)_transportDeviceInfoDidChangeNotification:(id)arg1;
 - (void)_updateNowPlayingInfo;
 - (id)clientConnection;
@@ -188,6 +193,8 @@
 - (id)playerPath;
 - (long long)port;
 - (void)removeFromParentGroup:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (id)runLoop;
+- (void)sendButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
 - (void)sendClientUpdatesConfigMessage;
 - (void)sendClientUpdatesConfigMessageWithCompletion:(id /* block */)arg1;
 - (void)sendCustomData:(id)arg1 withName:(id)arg2;
@@ -225,6 +232,7 @@
 - (void)setPairingCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setPairingCallbackQueue:(id)arg1;
 - (void)setPlayerPath:(id)arg1;
+- (void)setRunLoop:(id)arg1;
 - (void)setUsingSystemPairing:(bool)arg1;
 - (void)setVolumeCallback:(id /* block */)arg1;
 - (void)setVolumeCallback:(id /* block */)arg1 withQueue:(id)arg2;
@@ -239,6 +247,7 @@
 - (id)supportedMessages;
 - (id)transport;
 - (void)unpair;
+- (void)veirfyConnectionStatusAndMaybeDisconnect:(id)arg1;
 - (id /* block */)volumeCallback;
 - (id)volumeCallbackQueue;
 - (id /* block */)volumeControlCapabilitiesCallback;

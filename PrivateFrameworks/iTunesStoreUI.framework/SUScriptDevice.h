@@ -166,6 +166,7 @@
 - (long long)hardwareTypeWildcatK48;
 - (id)hasCapability:(id)arg1;
 - (id)init;
+- (id)isRestrictionLockedDown:(id)arg1;
 - (id)mainScreenScale;
 - (id)metricsPostFrequencyOverride;
 - (id)needsToneRegrantOption;
@@ -196,6 +197,7 @@
 - (long long)restrictionBoolYes;
 - (id)restrictionCameraAllowed;
 - (id)restrictionCellularHDUploadsAllowed;
+- (id)restrictionExplicitMedia;
 - (id)restrictionITunesAllowed;
 - (id)restrictionITunesSocialAllowed;
 - (id)restrictionLevelForType:(id)arg1;
@@ -210,6 +212,7 @@
 - (id)scriptAttributeKeys;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)setDiskUsageDictionary:(id)arg1;
+- (void)setValueForRestriction:(id)arg1 enabled:(id)arg2;
 - (id)valueForRestriction:(id)arg1;
 
 @end

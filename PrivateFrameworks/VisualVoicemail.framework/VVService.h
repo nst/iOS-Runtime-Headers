@@ -2,12 +2,18 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VVService : NSObject <VMStateRequestControllerDelegate> {
+@interface VVService : NSObject {
+    bool  _SMSReady;
+    bool  _WiFiNetworkReachable;
+    bool  _WiFiNetworkSupported;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _accessorLock;
     NSDictionary * _accountDictionary;
     NSError * _activationError;
-    long long  _capabilities;
     id  _carrierParameters;
-    CTXPCServiceSubscriptionContext * _context;
+    bool  _cellularNetworkAvailable;
+    NSString * _isoCountryCode;
     struct __CFString { } * _lastConnectionTypeUsed;
     NSRecursiveLock * _lock;
     int  _mailboxUsage;
@@ -32,28 +38,34 @@
     }  _serviceFlags;
     NSString * _serviceIdentifier;
     NSMutableDictionary * _stateRequestAttemptCount;
-    VMStateRequestController * _stateRequestController;
+    VMCarrierStateRequestController * _stateRequestController;
+    <VMTelephonySubscription> * _subscription;
     VMTranscriptionService * _transcriptionService;
     double  _trashCompactionAge;
-    unsigned int  _trashedCount;
-    unsigned int  _unreadCount;
+    unsigned long long  _trashedCount;
+    unsigned long long  _unreadCount;
     VVVerifier * _verifier;
 }
 
+@property (getter=isSMSReady, nonatomic) bool SMSReady;
+@property (getter=isWiFiNetworkAvailable, nonatomic, readonly) bool WiFiNetworkAvailable;
+@property (getter=isWiFiNetworkReachable, nonatomic) bool WiFiNetworkReachable;
+@property (getter=isWiFiNetworkSupported, nonatomic) bool WiFiNetworkSupported;
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } accessorLock;
 @property (nonatomic, retain) NSDictionary *accountDictionary;
-@property (nonatomic, readonly) CTXPCServiceSubscriptionContext *context;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
+@property (getter=isCellularNetworkAvailable, nonatomic) bool cellularNetworkAvailable;
+@property (nonatomic, readonly, copy) NSString *isoCountryCode;
 @property (nonatomic) struct __CFString { }*lastConnectionTypeUsed;
 @property (nonatomic) unsigned long long numFailedAttemptsToSyncOverWifi;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialDispatchQueue;
-@property (nonatomic, retain) NSString *serviceDestinationID;
-@property (nonatomic, retain) NSString *serviceIdentifier;
+@property (nonatomic, copy) NSString *serviceDestinationID;
+@property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *stateRequestAttemptCount;
-@property (nonatomic, readonly) VMStateRequestController *stateRequestController;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) VMCarrierStateRequestController *stateRequestController;
+@property (nonatomic, readonly) <VMTelephonySubscription> *subscription;
 @property (nonatomic, retain) VMTranscriptionService *transcriptionService;
+@property (nonatomic) unsigned long long trashedCount;
+@property (nonatomic) unsigned long long unreadCount;
 @property (nonatomic, retain) VVVerifier *verifier;
 
 + (struct __CTServerConnection { }*)CTServerConnection;
@@ -66,7 +78,7 @@
 + (void)initialize;
 + (void)obtainInsomniaAssertion;
 + (void)releaseInsomniaAssertion;
-+ (id)serviceWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)serviceWithIdentifier:(id)arg1 destinationID:(id)arg2 name:(id)arg3 isoCountryCode:(id)arg4 subscription:(id)arg5 stateRequestController:(id)arg6;
 + (bool)sharedServiceIsSubscribed;
 
 - (void).cxx_destruct;
@@ -76,21 +88,18 @@
 - (void)_cancelAutomatedTrashCompaction;
 - (void)_cancelIndicatorAction;
 - (void)_carrierBundleChanged;
-- (void)_dataAvailabilityChanged;
 - (void)_dataRoamingStatusChanged;
 - (void)_deliverFallbackNotification;
 - (void)_enterFallbackMode;
-- (void)_handleIndicatorNotification:(struct __CFDictionary { }*)arg1;
 - (void)_handleSMSCAvailable;
-- (void)_handleSMSReady:(bool)arg1;
 - (bool)_isOfflineDueToRoamingWithDataStatusDict:(struct __CFDictionary { }*)arg1;
 - (void)_reactToIndicator;
-- (void)_reportReachabilityChange:(id)arg1;
 - (void)_scheduleAutomatedTrashCompaction;
 - (void)_scheduleFallbackActivityIfNecessary;
 - (void)_setActivationError:(id)arg1;
 - (void)_setOnline:(bool)arg1 fallbackMode:(bool)arg2;
 - (void)_updateOnlineStatus;
+- (struct os_unfair_lock_s { unsigned int x1; })accessorLock;
 - (id)accountDictionary;
 - (id)accountParamsAtFilePath:(id)arg1;
 - (id)activationError;
@@ -99,13 +108,10 @@
 - (void)cancelDelayedSynchronize;
 - (void)cancelNotificationFallback;
 - (void)cancelPasswordRequest;
-- (long long)capabilities;
 - (id)carrierParameterValueForKey:(id)arg1;
-- (void)changePassword:(id)arg1 fromPassword:(id)arg2;
 - (void)clearActivationError;
 - (void)clearRemoteUIDsForDetachedMessages;
 - (struct __CFString { }*)connectionServiceType;
-- (id)context;
 - (struct __CFString { }*)dataConnectionServiceTypeOverride;
 - (bool)dataForRecordPending:(void*)arg1 progressiveLoadInProgress:(bool*)arg2;
 - (void)dealloc;
@@ -114,23 +120,28 @@
 - (bool)doesClientManageTrashCompaction;
 - (bool)greetingAvailable;
 - (bool)greetingFetchExistsProgressiveLoadInProgress:(bool*)arg1;
+- (void)handleCPNetworkObserverNetworkReachableNotification:(id)arg1;
 - (void)handleDataContextDeactivated;
 - (void)handleNotification:(id)arg1 isMWI:(bool)arg2;
-- (void)handlePasswordNotificationResponse:(id)arg1;
 - (void)handlePasswordRequestCancellation;
 - (void)handleVVServiceDataAvailableNotification:(id)arg1;
 - (void)handleVoicemailInfoUpdate:(id)arg1;
 - (bool)headerChangesPending;
 - (void)incrementAttemptCountForStateRequest:(id)arg1;
-- (id)initWithServiceIdentifier:(id)arg1 context:(id)arg2;
+- (id)initWithServiceIdentifier:(id)arg1 destinationID:(id)arg2 isoCountryCode:(id)arg3 subscription:(id)arg4 stateRequestController:(id)arg5;
+- (bool)isCellularNetworkAvailable;
 - (bool)isInSync;
 - (bool)isMessageWaiting;
 - (bool)isOfflineDueToRoaming;
 - (bool)isOnline;
 - (bool)isPasswordReady;
+- (bool)isSMSReady;
 - (bool)isSubscribed;
 - (bool)isSyncInProgress;
-- (bool)isVVMAvailableOverWiFi;
+- (bool)isWiFiNetworkAvailable;
+- (bool)isWiFiNetworkReachable;
+- (bool)isWiFiNetworkSupported;
+- (id)isoCountryCode;
 - (void)kill;
 - (struct __CFString { }*)lastConnectionTypeUsed;
 - (bool)lastUsedConnectionTypeWasCellular;
@@ -138,7 +149,6 @@
 - (id)mailboxName;
 - (bool)mailboxRequiresSetup;
 - (int)mailboxUsage;
-- (int)maximumGreetingDuration;
 - (int)maximumPasswordLength;
 - (int)maximumRecordedNameDuration;
 - (int)minimumPasswordLength;
@@ -150,12 +160,12 @@
 - (id)password;
 - (bool)passwordChangeRequiresEnteringOldPassword;
 - (id)passwordIgnoringSubscription:(bool)arg1;
+- (void)performAtomicAccessorBlock:(id /* block */)arg1;
 - (void)performSynchronousBlock:(id /* block */)arg1;
 - (void)progressiveDataLengthsForRecord:(void*)arg1 expected:(unsigned int*)arg2 current:(unsigned int*)arg3;
 - (id)provisionalPassword;
-- (void)removeAllNonDetachedRecords;
-- (void)removeAllRecords;
 - (void)removeAttemptCountForStateRequest:(id)arg1;
+- (void)removeServiceInformation;
 - (void)reportError:(id)arg1;
 - (void)reportFailedToSyncOverWifi;
 - (void)reportSucessfulSync;
@@ -163,7 +173,7 @@
 - (void)resetDelayedSynchronizationAttemptCount;
 - (bool)respectsMWINotifications;
 - (void)retrieveDataForRecord:(void*)arg1;
-- (void)retrieveGreeting;
+- (void)retrieveGreetingForAccountUUID:(id)arg1;
 - (id)retryIntervals;
 - (void)scheduleAutomatedTrashCompaction;
 - (void)scheduleDelayedSynchronize;
@@ -172,7 +182,8 @@
 - (id)serviceDestinationID;
 - (id)serviceIdentifier;
 - (void)setAccountDictionary:(id)arg1;
-- (void)setGreetingType:(long long)arg1 withData:(id)arg2 duration:(unsigned long long)arg3;
+- (void)setCellularNetworkAvailable:(bool)arg1;
+- (void)setGreetingType:(long long)arg1 data:(id)arg2 duration:(unsigned long long)arg3 forAccountUUID:(id)arg4;
 - (void)setLastConnectionTypeUsed:(struct __CFString { }*)arg1;
 - (void)setLastUsedConnectionType:(struct __CFString { }*)arg1;
 - (void)setMailboxRequiresSetup:(bool)arg1;
@@ -180,30 +191,34 @@
 - (void)setMessageWaiting:(bool)arg1;
 - (void)setNumFailedAttemptsToSyncOverWifi:(unsigned long long)arg1;
 - (void)setOnline:(bool)arg1;
+- (void)setPasscode:(id)arg1 completion:(id /* block */)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setProvisionalPassword:(id)arg1;
+- (void)setSMSReady:(bool)arg1;
 - (void)setServiceDestinationID:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setSubscribed:(bool)arg1;
 - (void)setTranscriptionService:(id)arg1;
-- (void)setTrashedCount:(unsigned int)arg1;
-- (void)setUnreadCount:(unsigned int)arg1;
+- (void)setTrashedCount:(unsigned long long)arg1;
+- (void)setUnreadCount:(unsigned long long)arg1;
 - (void)setVerifier:(id)arg1;
+- (void)setWiFiNetworkReachable:(bool)arg1;
+- (void)setWiFiNetworkSupported:(bool)arg1;
 - (bool)sharedSubscriptionRequiresSetup;
 - (bool)shouldImmediatelyRetrySyncOverCellular;
 - (bool)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (bool)shouldTrashCompactRecord:(void*)arg1;
 - (id)stateRequestAttemptCount;
 - (id)stateRequestController;
+- (id)subscription;
 - (bool)synchronizationPending;
 - (void)synchronize:(bool)arg1;
 - (bool)taskOfTypeExists:(long long)arg1;
 - (id)transcriptionService;
 - (double)trashCompactionAge;
-- (unsigned int)trashedCount;
-- (unsigned int)unreadCount;
+- (unsigned long long)trashedCount;
+- (unsigned long long)unreadCount;
 - (void)updateCountsForChangedFlags:(unsigned int)arg1 currentRecordFlags:(unsigned int)arg2;
-- (void)updateLoggingSettings;
 - (id)verifier;
 
 @end

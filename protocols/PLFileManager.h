@@ -6,6 +6,8 @@
 @required
 
 - (NSDictionary *)attributesOfItemAtPath:(NSString *)arg1 error:(id*)arg2;
+- (bool)changeCurrentDirectoryPath:(NSString *)arg1;
+- (NSString *)currentDirectoryPath;
 - (bool)fileExistsAtPath:(NSString *)arg1;
 - (bool)fileExistsAtPath:(NSString *)arg1 isDirectory:(bool*)arg2;
 

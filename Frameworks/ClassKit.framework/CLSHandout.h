@@ -7,6 +7,7 @@
     NSDate * _dateOfPublication;
     NSDate * _dueDate;
     NSString * _instructions;
+    NSDate * _lastReviewedDate;
     NSError * _publishError;
     long long  _publishingState;
     bool  _reviewed;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) CLSClass *effectiveClass;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *instructions;
+@property (nonatomic, retain) NSDate *lastReviewedDate;
 @property (nonatomic, retain) NSError *publishError;
 @property (nonatomic) long long publishingState;
 @property (nonatomic, readonly) NSArray *recipients;
@@ -50,6 +52,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)instructions;
 - (bool)isReviewed;
+- (id)lastReviewedDate;
 - (void)mergeWithObject:(id)arg1;
 - (id)publishError;
 - (long long)publishingState;
@@ -60,6 +63,7 @@
 - (void)setDateOfPublication:(id)arg1;
 - (void)setDueDate:(id)arg1;
 - (void)setInstructions:(id)arg1;
+- (void)setLastReviewedDate:(id)arg1;
 - (void)setPublishError:(id)arg1;
 - (void)setPublishingState:(long long)arg1;
 - (void)setReviewed:(bool)arg1;

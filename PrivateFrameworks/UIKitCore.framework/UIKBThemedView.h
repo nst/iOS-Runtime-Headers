@@ -40,15 +40,10 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool usePersistentCaching;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (bool)_canDrawContent;
 - (bool)_hasInsets;
 - (void)_populateLayer:(id)arg1 withContents:(id)arg2;
 - (void)_setRenderConfig:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)active;
 - (id)borderFilterTypeForCurrentStyle;
 - (bool)cacheDeferable;

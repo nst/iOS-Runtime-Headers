@@ -6,6 +6,7 @@
     HAPAuthSession * _authSession;
     bool  _authenticated;
     HAPAccessoryProtocolInfo * _authenticatedProtocolInfo;
+    HMFMACAddress * _bluetoothAddress;
     NSDictionary * _bonjourDeviceInfo;
     HMFTimer * _bonjourEventTimer;
     HAPAccessoryServerBrowserIP * _browser;
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) HAPAuthSession *authSession;
 @property (nonatomic) bool authenticated;
 @property (nonatomic, retain) HAPAccessoryProtocolInfo *authenticatedProtocolInfo;
+@property (nonatomic, copy) HMFMACAddress *bluetoothAddress;
 @property (nonatomic, retain) NSDictionary *bonjourDeviceInfo;
 @property (nonatomic, retain) HMFTimer *bonjourEventTimer;
 @property (nonatomic) HAPAccessoryServerBrowserIP *browser;
@@ -92,6 +94,7 @@
 - (int)_continuePairingAfterAuthPrompt;
 - (void)_continuePairingAfterConfirmingSecureWAC;
 - (void)_continuePairingAfterConfirmingSoftAuthWAC;
+- (void)_continuePairingAfterMFiCertValidation;
 - (void)_continuePairingAfterWAC:(id)arg1;
 - (void)_continuePairingUsingWAC;
 - (int)_continuePairingWithSetupCode:(id)arg1;
@@ -103,10 +106,12 @@
 - (void)_error:(id)arg1 forWriteCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_establishSecureConnectionAndFetchAttributeDatabase;
 - (void)_establishSecureSession;
+- (void)_establishSecureSessionAndRemovePairing:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_getAttributeDatabase;
 - (void)_handleEventResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(bool)arg6 completion:(id /* block */)arg7 queue:(id)arg8;
 - (void)_handleHTTPClientErrors;
 - (void)_handleListPairingsResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 httpError:(id)arg4 completionQueue:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)_handleMFiCertValidation;
 - (int)_handlePairSetupCompletionWithData:(id)arg1;
 - (int)_handlePairVerifyCompletionWithData:(id)arg1;
 - (void)_handlePairingsResponseObject:(id)arg1 type:(unsigned long long)arg2 httpStatus:(int)arg3 httpError:(id)arg4 removeRequest:(bool)arg5 completionQueue:(id)arg6 completionBlock:(id /* block */)arg7;
@@ -154,6 +159,7 @@
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_reset;
+- (void)_sendRemovePairingWithData:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(bool)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)_tearDownSession;
 - (void)_tearDownWAC;
@@ -172,6 +178,7 @@
 - (void)authenticateAccessory;
 - (bool)authenticated;
 - (id)authenticatedProtocolInfo;
+- (id)bluetoothAddress;
 - (id)bonjourDeviceInfo;
 - (id)bonjourEventTimer;
 - (id)browser;
@@ -240,6 +247,7 @@
 - (id)services;
 - (void)setAuthenticated:(bool)arg1;
 - (void)setAuthenticatedProtocolInfo:(id)arg1;
+- (void)setBluetoothAddress:(id)arg1;
 - (void)setBonjourDeviceInfo:(id)arg1;
 - (void)setBonjourEventTimer:(id)arg1;
 - (void)setBrowser:(id)arg1;

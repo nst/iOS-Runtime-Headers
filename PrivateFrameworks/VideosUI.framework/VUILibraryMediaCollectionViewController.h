@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUILibraryMediaCollectionViewController : VUILibraryStackViewController <TVShelfViewLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, VUILibraryEpisodeFooterCellDelegate, VUILibraryEpisodeShelfViewControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaEntityDownloadViewControllerDelegate, VUIProductLockupViewDelegate> {
+@interface VUILibraryMediaCollectionViewController : VUILibraryStackViewController <TVShelfViewLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, VUILibraryEpisodeFooterCellDelegate, VUILibraryEpisodeShelfViewControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIProductLockupViewDelegate> {
     bool  _canShowMultipleSeasons;
-    NSMutableDictionary * _downloadViewControllerBySeasonIdentifier;
+    NSMutableDictionary * _downloadButtonBySeasonIdentifier;
     NSArray * _episodeGroups;
     NSArray * _episodes;
     VUIMediaCollection * _mediaCollection;
@@ -16,7 +16,7 @@
 @property (nonatomic) bool canShowMultipleSeasons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSMutableDictionary *downloadViewControllerBySeasonIdentifier;
+@property (nonatomic, retain) NSMutableDictionary *downloadButtonBySeasonIdentifier;
 @property (nonatomic, retain) NSArray *episodeGroups;
 @property (nonatomic, retain) NSArray *episodes;
 @property (readonly) unsigned long long hash;
@@ -38,7 +38,7 @@
 - (void)_updateProductLockupView:(id)arg1 withSeason:(id)arg2;
 - (void)_updateProductLockupViewWithSeasonIdentifier:(id)arg1;
 - (bool)_usingEpisodesGroupFetch;
-- (void)addDownloadViewControllerToProductLockupView:(id)arg1 forSeason:(id)arg2;
+- (void)addDownloadButtonToProductLockupView:(id)arg1 forSeason:(id)arg2;
 - (bool)canShowMultipleSeasons;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
@@ -49,8 +49,7 @@
 - (void)contentDescriptionExpanded;
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
 - (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)downloadViewController:(id)arg1 didRemoveDownloadForAssetController:(id)arg2;
-- (id)downloadViewControllerBySeasonIdentifier;
+- (id)downloadButtonBySeasonIdentifier;
 - (id)episodeGroups;
 - (id)episodes;
 - (id)initWithMediaCollection:(id)arg1 showMultipleSeasons:(bool)arg2;
@@ -59,7 +58,7 @@
 - (id)mediaCollectionViewModel;
 - (id)seasons;
 - (void)setCanShowMultipleSeasons:(bool)arg1;
-- (void)setDownloadViewControllerBySeasonIdentifier:(id)arg1;
+- (void)setDownloadButtonBySeasonIdentifier:(id)arg1;
 - (void)setEpisodeGroups:(id)arg1;
 - (void)setEpisodes:(id)arg1;
 - (void)setMediaCollectionViewModel:(id)arg1;
@@ -69,5 +68,6 @@
 - (void)start;
 - (void)titleButtonPressedForStoreId:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

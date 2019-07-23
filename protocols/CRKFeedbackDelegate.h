@@ -6,5 +6,6 @@
 @optional
 
 - (void)presentViewController:(UIViewController *)arg1;
+- (void)willDismissViewController:(UIViewController *)arg1;
 
 @end

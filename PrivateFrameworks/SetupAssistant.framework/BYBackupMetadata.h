@@ -6,12 +6,14 @@
     unsigned int  _appAnalyticsOptIn;
     bool  _autoUpdateEnabled;
     unsigned int  _deviceAnalyticsOptIn;
+    bool  _didSeeTrueTonePane;
     bool  _findMyiPhoneOptIn;
     struct { 
         unsigned int appAnalyticsOptIn : 1; 
         unsigned int deviceAnalyticsOptIn : 1; 
         unsigned int homeButtonHapticKind : 1; 
         unsigned int autoUpdateEnabled : 1; 
+        unsigned int didSeeTrueTonePane : 1; 
         unsigned int findMyiPhoneOptIn : 1; 
         unsigned int locationServicesOptIn : 1; 
         unsigned int screenTimeEnabled : 1; 
@@ -28,10 +30,12 @@
 @property (nonatomic) unsigned int appAnalyticsOptIn;
 @property (nonatomic) bool autoUpdateEnabled;
 @property (nonatomic) unsigned int deviceAnalyticsOptIn;
+@property (nonatomic) bool didSeeTrueTonePane;
 @property (nonatomic) bool findMyiPhoneOptIn;
 @property (nonatomic) bool hasAppAnalyticsOptIn;
 @property (nonatomic) bool hasAutoUpdateEnabled;
 @property (nonatomic) bool hasDeviceAnalyticsOptIn;
+@property (nonatomic) bool hasDidSeeTrueTonePane;
 @property (nonatomic) bool hasFindMyiPhoneOptIn;
 @property (nonatomic) bool hasHomeButtonHapticKind;
 @property (nonatomic) bool hasLocationServicesOptIn;
@@ -53,10 +57,12 @@
 - (id)description;
 - (unsigned int)deviceAnalyticsOptIn;
 - (id)dictionaryRepresentation;
+- (bool)didSeeTrueTonePane;
 - (bool)findMyiPhoneOptIn;
 - (bool)hasAppAnalyticsOptIn;
 - (bool)hasAutoUpdateEnabled;
 - (bool)hasDeviceAnalyticsOptIn;
+- (bool)hasDidSeeTrueTonePane;
 - (bool)hasFindMyiPhoneOptIn;
 - (bool)hasHomeButtonHapticKind;
 - (bool)hasLocationServicesOptIn;
@@ -74,10 +80,12 @@
 - (void)setAppAnalyticsOptIn:(unsigned int)arg1;
 - (void)setAutoUpdateEnabled:(bool)arg1;
 - (void)setDeviceAnalyticsOptIn:(unsigned int)arg1;
+- (void)setDidSeeTrueTonePane:(bool)arg1;
 - (void)setFindMyiPhoneOptIn:(bool)arg1;
 - (void)setHasAppAnalyticsOptIn:(bool)arg1;
 - (void)setHasAutoUpdateEnabled:(bool)arg1;
 - (void)setHasDeviceAnalyticsOptIn:(bool)arg1;
+- (void)setHasDidSeeTrueTonePane:(bool)arg1;
 - (void)setHasFindMyiPhoneOptIn:(bool)arg1;
 - (void)setHasHomeButtonHapticKind:(bool)arg1;
 - (void)setHasLocationServicesOptIn:(bool)arg1;

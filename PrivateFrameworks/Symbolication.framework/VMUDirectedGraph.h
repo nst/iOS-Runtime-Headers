@@ -9,7 +9,9 @@
     unsigned int  _edgeCount;
     struct _VMUDirectedGraphEdge { unsigned int x1; unsigned int x2; unsigned int x3; } * _edges;
     unsigned int  _externalEdges;
+    long long  _graphCompatibilityVersion;
     bool  _graphIs64bit;
+    long long  _graphVersion;
     unsigned int  _indexedEdges;
     unsigned int  _indexedNodeSpace;
     int  _insideSearch;
@@ -84,6 +86,8 @@
 - (void)removeMarkedNodes:(void*)arg1;
 - (id)renormalizedGraph;
 - (void)setAdditionalProperties:(id)arg1;
+- (void)setGraphCompatibilityVersion:(long long)arg1;
+- (void)setGraphVersion:(long long)arg1;
 - (void)setInverted:(bool)arg1;
 - (id)subgraphWithMarkedNodes:(void*)arg1;
 - (void)ungroupNode:(unsigned int)arg1;

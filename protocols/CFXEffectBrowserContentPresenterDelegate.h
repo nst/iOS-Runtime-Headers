@@ -5,7 +5,6 @@
 
 @optional
 
-- (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1;
 - (void)effectBrowserViewController:(void *)arg1 dismissExpandedAppViewController:(void *)arg2 animated:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: CFXEffectBrowserViewController *, UIViewController *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)effectBrowserViewController:(void *)arg1 presentExpandedAppViewController:(void *)arg2 animated:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: CFXEffectBrowserViewController *, UIViewController *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1 willChangeDockHeight:(double)arg2;

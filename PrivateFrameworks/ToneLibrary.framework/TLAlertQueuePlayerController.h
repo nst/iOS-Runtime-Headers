@@ -45,7 +45,9 @@
 
 - (void).cxx_destruct;
 - (void)_activateAudioSessionIfNeeded;
+- (float)_adjustAudioVolumeForOptimalRampingPerception:(float)arg1;
 - (void)_assertRunningOnAudioEventQueue;
+- (id)_audioMixForVolumeRampingWithDuration:(double)arg1 toneAsset:(id)arg2 toneAssetDuration:(double)arg3 itemIndex:(unsigned long long)arg4;
 - (float)_audioVolumeForAlert:(id)arg1 audioCategory:(id)arg2;
 - (void)_beginPreventingAudioSessionDeactivation;
 - (bool)_canPlayToneAsset:(id)arg1;
@@ -61,6 +63,7 @@
 - (void)_handleAudioSessionInterruptionNotification:(id)arg1;
 - (void)_handleAudioSessionInterruptionOfType:(unsigned long long)arg1 withOptions:(unsigned long long)arg2;
 - (void)_performBlockOnAudioEventQueue:(id /* block */)arg1;
+- (void)_performDelayedAudioPlaybackInitiationForAlert:(id)arg1;
 - (void)_playAlert:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_prepareAudioEnvironment;
 - (void)_queuePlayer:(id)arg1 currentItemStatusWasUpdatedToValue:(long long)arg2;

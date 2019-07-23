@@ -3,6 +3,7 @@
  */
 
 @interface _DKSyncPeerStatusTracker : NSObject {
+    NSDate * _firstForeignPeersCountDate;
     NSMutableDictionary * _lastSuccessfulActivityDates;
     NSMutableArray * _observers;
     NSMutableDictionary * _peerInfos;
@@ -39,6 +40,7 @@
 - (void)removeActiveTransports:(long long)arg1 fromPeer:(id)arg2;
 - (void)removePeer:(id)arg1;
 - (void)removeStatusChangeObserver:(id)arg1;
+- (void)setLastSeenDate:(id)arg1 onPeer:(id)arg2;
 - (void)setLastSuccessfulActivityDate:(id)arg1 onTransport:(long long)arg2 forPeer:(id)arg3;
 - (void)setSourceDeviceID:(id)arg1 peer:(id)arg2;
 - (void)setStorage:(id)arg1;

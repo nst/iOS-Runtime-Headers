@@ -62,10 +62,19 @@
 @optional
 
 - (double)delayBeforeRetryingDroppedFeeds;
+- (long long)entitlementsCacheRecoveryAttemptDurationInSeconds;
+- (double)feedLineHeightMultiplier;
 - (bool)isSpecialEventsMicaAnimationDisabled;
+- (NSString *)magazinesConfigRecordID;
 - (long long)maxRetriesForDroppedFeeds;
+- (FCPaidBundleConfiguration *)paidBundleConfig;
+- (FCPersonalizationTreatment *)personalizationTreatment;
 - (bool)shouldShowAlternateHeadlines;
 - (long long)singleChannelFeedMinFeedItemsPerRequest;
 - (long long)singleTopicFeedMinFeedItemsPerRequest;
+- (NSString *)spotlightChannelID;
+- (long long)subscriptionsGracePeriodForTokenVerificationSeconds;
+- (long long)subscriptionsPlacardGlobalMaximumPerDay;
+- (long long)subscriptionsPlacardPublisherFrequencyInSeconds;
 
 @end

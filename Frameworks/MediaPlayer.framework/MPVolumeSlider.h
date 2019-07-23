@@ -4,6 +4,7 @@
 
 @interface MPVolumeSlider : UISlider <MPVolumeControllerDelegate, MPVolumeDisplaying> {
     bool  _beganTrackingFromEUVolumeLimit;
+    int  _coalescedVolumeDidChangeLogCount;
     NSTimer * _commitTimer;
     bool  _configuredLayoutGuide;
     bool  _forcingOffscreenVisibility;
@@ -14,6 +15,7 @@
         double bottom; 
         double right; 
     }  _hitRectInsets;
+    bool  _isCurrentlyTracking;
     bool  _isOffScreen;
     bool  _optimisticState;
     float  _optimisticValue;
@@ -23,6 +25,7 @@
     MPAVOutputDeviceRoute * _outputDeviceRoute;
     MPAVController * _player;
     UILabel * _routeNameLabel;
+    float  _setVolumeStartValue;
     long long  _style;
     UIImageView * _thumbImageView;
     bool  _thumbIsDefault;
@@ -66,10 +69,12 @@
 - (bool)_isOffScreen;
 - (void)_layoutForAvailableRoutes;
 - (void)_layoutVolumeWarningView;
+- (void)_logVolumeValueDidChange:(float)arg1;
 - (id)_maxTrackImageForStyle:(long long)arg1;
 - (id)_minTrackImageForStyle:(long long)arg1;
 - (id)_newVolumeWarningView;
 - (void)_resetThumbImageForState:(unsigned long long)arg1;
+- (id)_routeName;
 - (void)_setIsOffScreen:(bool)arg1;
 - (id)_thumbImageForStyle:(long long)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -123,6 +128,7 @@
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(bool)arg2;
+- (void)volumeController:(id)arg1 volumeControlCapabilitiesDidChange:(unsigned int)arg2;
 - (void)volumeController:(id)arg1 volumeControlLabelDidChange:(id)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 volumeWarningStateDidChange:(long long)arg2;

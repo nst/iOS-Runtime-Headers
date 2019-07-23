@@ -3,7 +3,7 @@
  */
 
 @interface WebItemProviderWritableObjectRegistrar : NSObject <WebItemProviderRegistrar> {
-    struct RetainPtr<id<UIItemProviderWriting> > { 
+    struct RetainPtr<id<NSItemProviderWriting> > { 
         void *m_ptr; 
     }  _representingObject;
 }
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) <UIItemProviderWriting> *representingObject;
+@property (nonatomic, readonly) <NSItemProviderWriting> *representingObject;
 @property (nonatomic, readonly) <NSItemProviderWriting> *representingObjectForClient;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *typeIdentifierForClient;

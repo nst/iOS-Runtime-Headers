@@ -3,29 +3,37 @@
  */
 
 @interface VCMediaNegotiatorResults : NSObject {
+    bool  _SIPDisabled;
     NSMutableDictionary * _bandwidthSettings;
     NSString * _remoteBasebandCodec;
     unsigned int  _remoteBasebandCodecSampleRate;
     NSString * _remoteUserAgent;
+    bool  _secureMessagingRequired;
     bool  _supportsDynamicMaxBitrate;
 }
 
+@property (nonatomic) bool SIPDisabled;
 @property (nonatomic, retain) NSMutableDictionary *bandwidthSettings;
 @property (nonatomic, retain) NSString *remoteBasebandCodec;
 @property (nonatomic) unsigned int remoteBasebandCodecSampleRate;
 @property (nonatomic, retain) NSString *remoteUserAgent;
+@property (nonatomic) bool secureMessagingRequired;
 @property (nonatomic) bool supportsDynamicMaxBitrate;
 
+- (bool)SIPDisabled;
 - (id)bandwidthSettings;
 - (void)dealloc;
 - (id)init;
 - (id)remoteBasebandCodec;
 - (unsigned int)remoteBasebandCodecSampleRate;
 - (id)remoteUserAgent;
+- (bool)secureMessagingRequired;
 - (void)setBandwidthSettings:(id)arg1;
 - (void)setRemoteBasebandCodec:(id)arg1;
 - (void)setRemoteBasebandCodecSampleRate:(unsigned int)arg1;
 - (void)setRemoteUserAgent:(id)arg1;
+- (void)setSIPDisabled:(bool)arg1;
+- (void)setSecureMessagingRequired:(bool)arg1;
 - (void)setSupportsDynamicMaxBitrate:(bool)arg1;
 - (bool)supportsDynamicMaxBitrate;
 

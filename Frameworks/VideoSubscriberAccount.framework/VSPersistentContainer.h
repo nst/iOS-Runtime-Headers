@@ -12,13 +12,15 @@
 @property (nonatomic, retain) NSPersistentContainer *persistentContainer;
 @property (nonatomic, retain) NSManagedObjectContext *viewContext;
 
-+ (id)defaultDirectoryURL;
++ (id)directoryURL;
++ (id)legacyDirectoryURL;
 
 - (void).cxx_destruct;
 - (id)developerIdentityProviderFetchRequest;
 - (id)init;
 - (id)initWithModelVersion:(long long)arg1;
 - (id)insertDeveloperIdentityProviderInContext:(id)arg1;
+- (void)migrateContainerIfNecessary;
 - (long long)modelVersion;
 - (void)performBlock:(id /* block */)arg1;
 - (id)persistentContainer;

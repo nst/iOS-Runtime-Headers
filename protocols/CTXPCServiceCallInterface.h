@@ -9,5 +9,6 @@
 - (void)getOperatorMultiPartyCallCountMaximum:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: CTXPCServiceSubscriptionContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSNumber *, NSError *, void*
 - (void)isEmergencyNumber:(void *)arg1 number:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: CTXPCServiceSubscriptionContext *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)isEmergencyNumberWithWhitelistIncluded:(void *)arg1 number:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: CTXPCServiceSubscriptionContext *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)shouldShowUserWarningWhenDialingCallOnContext:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: CTXPCServiceSubscriptionContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 
 @end

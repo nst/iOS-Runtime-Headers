@@ -19,7 +19,7 @@
     id /* block */  _assetEndedAndSilencedHandler;
     long long  _assetLength;
     long long  _assetSampleCount;
-    NSDictionary * _carrierInfo;
+    unsigned long long  _beginningTime;
     AUPasscodeCodecConfiguration * _codecConfig;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _embedPasscode;
@@ -49,6 +49,7 @@
     AUAudioUnitBus * _outputBus;
     AUAudioUnitBusArray * _outputBusArray;
     bool  _outputIsSilenced;
+    NSMutableDictionary * _passcodeEmbedInfo;
     NSData * _payload;
     struct unique_ptr<RealtimeMessenger, std::__1::default_delete<RealtimeMessenger> > { 
         struct __compressed_pair<RealtimeMessenger *, std::__1::default_delete<RealtimeMessenger> > { 
@@ -61,12 +62,12 @@
 
 @property (nonatomic, copy) id /* block */ assetEndedAndSilencedHandler;
 @property (nonatomic) long long assetLength;
-@property (nonatomic, retain) NSDictionary *carrierInfo;
 @property (nonatomic, retain) AUPasscodeCodecConfiguration *codecConfig;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) bool embedPasscode;
 @property (nonatomic) float fadeOutTimeSeconds;
 @property (nonatomic) unsigned long long numLoopsToStopAfter;
+@property (nonatomic, retain) NSMutableDictionary *passcodeEmbedInfo;
 @property (nonatomic, copy) NSData *payload;
 @property (nonatomic) bool silenceOutputOnNextAssetEnding;
 @property (nonatomic) bool triggerFadeOut;
@@ -81,7 +82,6 @@
 - (id /* block */)assetEndedAndSilencedHandler;
 - (long long)assetLength;
 - (bool)canProcessInPlace;
-- (id)carrierInfo;
 - (id)codecConfig;
 - (void)dealloc;
 - (void)deallocateRenderResources;
@@ -94,16 +94,17 @@
 - (id /* block */)internalRenderBlock;
 - (unsigned long long)numLoopsToStopAfter;
 - (id)outputBusses;
+- (id)passcodeEmbedInfo;
 - (id)payload;
 - (void)reset;
 - (void)setAssetEndedAndSilencedHandler:(id /* block */)arg1;
 - (void)setAssetLength:(long long)arg1;
-- (void)setCarrierInfo:(id)arg1;
 - (void)setCodecConfig:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setEmbedPasscode:(bool)arg1;
 - (void)setFadeOutTimeSeconds:(float)arg1;
 - (void)setNumLoopsToStopAfter:(unsigned long long)arg1;
+- (void)setPasscodeEmbedInfo:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setSilenceOutputOnNextAssetEnding:(bool)arg1;
 - (void)setTriggerFadeOut:(bool)arg1;

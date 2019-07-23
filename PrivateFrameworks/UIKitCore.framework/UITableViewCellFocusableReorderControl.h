@@ -15,8 +15,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_arrowButton:(long long)arg1;
 - (void)_beginIndirectTracking;
@@ -27,9 +25,6 @@
 - (void)_upArrowButton:(id)arg1;
 - (void)_updateFloatingViewForCurrentTraits;
 - (void)_updateFocusedFloatingContentView:(bool)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

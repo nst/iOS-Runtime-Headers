@@ -3,15 +3,20 @@
  */
 
 @interface ConversationKit.InCallControlsAddParticipantTableViewCell : UITableViewCell {
-    void enabled;
-    void icon;
+    void button;
+    void delegate;
     void isAccessiblityConstraintsEnabled;
-    void nameLabel;
+    void isEnabled;
     void nameLabelFirstBaselineLayoutConstraint;
     void nameLabelLastBaselineLayoutConstraint;
+    void titleLabel;
 }
 
-- (id /* block */).cxx_destruct;
+@property (nonatomic, readonly) _TtC15ConversationKit19InCallControlButton *button;
+
+- (void).cxx_destruct;
+- (id)button;
+- (void)didTapButton:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

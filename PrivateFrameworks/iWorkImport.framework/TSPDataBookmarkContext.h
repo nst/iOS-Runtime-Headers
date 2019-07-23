@@ -6,12 +6,13 @@
     NSMutableDictionary * _bookmarkDataURLsForFilenames;
     NSMutableDictionary * _digestStringsForFilenames;
     NSObject<OS_dispatch_queue> * _queue;
-    TSUTemporaryDirectory * _temporaryDirectory;
+    TSUManagedTemporaryDirectory * _temporaryDirectory;
 }
 
 - (void).cxx_destruct;
 - (bool)bookmarkDataNeedsWriteForData:(id)arg1;
 - (id)init;
+- (bool)isEncryptedDataStorate:(id)arg1;
 - (id)makeBookmarkDataForData:(id)arg1 filename:(id)arg2 options:(unsigned long long)arg3 error:(out id*)arg4;
 
 @end

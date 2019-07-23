@@ -11,7 +11,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)_addObject:(id)arg1 replaceObjectUsingTest:(id /* block */)arg2 atPath:(id)arg3;
+- (id)_addObject:(id)arg1 replaceObjectUsingTest:(id /* block */)arg2 mustReplace:(bool)arg3 atPath:(id)arg4;
 - (id)_dataAtPath:(id)arg1;
 - (id)_directoryForKey:(id)arg1;
 - (id)_objectsAtPath:(id)arg1;
@@ -22,6 +22,7 @@
 - (void)_setObjects:(id)arg1 atPath:(id)arg2;
 - (id)addObject:(id)arg1 forKey:(id)arg2;
 - (id)addObject:(id)arg1 replaceObjectUsingTest:(id /* block */)arg2 forKey:(id)arg3;
+- (id)addObject:(id)arg1 replaceObjectUsingTest:(id /* block */)arg2 mustReplace:(bool)arg3 forKey:(id)arg4;
 - (id)allKeys;
 - (id)directoryForKey:(id)arg1;
 - (id)directoryPath;
@@ -32,6 +33,7 @@
 - (void)removeDataStoreRepository;
 - (id)removeObjectsPassingTest:(id /* block */)arg1 forKey:(id)arg2;
 - (void)removeStoreForKey:(id)arg1;
+- (id)replaceObject:(id)arg1 usingTest:(id /* block */)arg2 forKey:(id)arg3;
 - (void)setObjects:(id)arg1 forKey:(id)arg2;
 
 @end

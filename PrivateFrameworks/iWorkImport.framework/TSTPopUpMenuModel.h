@@ -31,7 +31,7 @@
 - (id)initWithItems:(id)arg1 context:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToChoices:(id)arg1;
-- (void)loadFromArchive:(const struct PopUpMenuModel { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1;
+- (void)loadFromArchive:(const struct PopUpMenuModel { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; }*)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (double)numberAtIndex:(unsigned long long)arg1;
 - (bool)p_booleanForListItem:(id)arg1;
@@ -45,7 +45,7 @@
 - (id)popUpItemFromDate:(id)arg1 format:(id)arg2;
 - (id)popUpItemFromNumber:(double)arg1 format:(id)arg2;
 - (id)popUpItemFromString:(id)arg1;
-- (void)saveToArchive:(struct PopUpMenuModel { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct PopUpMenuModel { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::PopUpMenuModel_CellValue> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedPtrField<TSCE::CellValueArchive> { struct Arena {} *x_6_1_1; int x_6_1_2; int x_6_1_3; struct Rep {} *x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (id)stringAtIndex:(unsigned long long)arg1;
 - (int)valueTypeOfItemAtIndex:(unsigned long long)arg1;

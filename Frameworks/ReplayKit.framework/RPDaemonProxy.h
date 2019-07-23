@@ -20,8 +20,6 @@
 - (id)broadcastURL;
 - (oneway void)captureHandlerWithAudioSample:(id)arg1 absdData:(id)arg2 itemCount:(long long)arg3 bufferType:(long long)arg4 timingData:(id)arg5;
 - (oneway void)captureHandlerWithSample:(id)arg1 timingData:(id)arg2;
-- (oneway void)clientDidBecomeActive;
-- (oneway void)clientDidResignActive;
 - (id)connection;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (oneway void)discardRecordingWithHandler:(id /* block */)arg1;
@@ -29,8 +27,10 @@
 - (oneway void)getSystemBroadcastExtensionInfo:(id /* block */)arg1;
 - (id)init;
 - (oneway void)pauseRecording;
+- (oneway void)recordingDidPause;
 - (oneway void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)recordingLockInterrupted:(id)arg1;
+- (oneway void)recordingShouldResume;
 - (oneway void)recordingTimerDidUpdate:(id)arg1;
 - (oneway void)reportCameraUsage:(int)arg1;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1;

@@ -60,6 +60,7 @@
 - (void)_addMatchingAssertion:(id)arg1;
 - (void)_addSimulatedLockoutAssertion:(id)arg1;
 - (id)_biometricKitInterface;
+- (void)_clearFinishedOperationsIfNeededForAssertion:(id)arg1;
 - (void)_deactivateAllPearlAssertions;
 - (void)_deactivateAssertion:(id)arg1;
 - (void)_deviceWillWake;

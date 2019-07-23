@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate, MFMailCompositionUTITypes> {
+@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate, MFMailCompositionAdditionalDonating> {
     NSMutableArray * _attachments;
     id  _autorotationDelegate;
     _UIAsyncInvocation * _cancellationInvocation;
@@ -26,7 +26,11 @@
 
 @property (nonatomic, copy) NSArray *UTITypes;
 @property (nonatomic) id autorotationDelegate;
+@property (nonatomic, copy) NSArray *cloudPhotoIDs;
+@property (nonatomic, copy) NSArray *contentText;
+@property (nonatomic, copy) NSArray *contentURLs;
 @property (nonatomic) <MFMailComposeViewControllerDelegate> *mailComposeDelegate;
+@property (nonatomic, copy) NSArray *photoIDs;
 
 - (id)UTITypes;
 - (void)_beginDelayingCompositionPresenation;
@@ -49,14 +53,18 @@
 - (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)autorotationDelegate;
 - (void)autosaveWithHandler:(id /* block */)arg1;
+- (id)cloudPhotoIDs;
 - (void)compositionFinishedWithResult:(long long)arg1 error:(id)arg2;
 - (void)compositionRequestsSendWithBody:(id)arg1 recipients:(id)arg2 completion:(id /* block */)arg3;
 - (void)compositionViewServiceTerminatedWithError:(id)arg1;
+- (id)contentText;
+- (id)contentURLs;
 - (void)dealloc;
 - (void)finalizeCompositionValues;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)mailComposeDelegate;
+- (id)photoIDs;
 - (id)placeholderForFileName:(id)arg1 fileSize:(long long)arg2 mimeType:(id)arg3 contentID:(id)arg4 proxy:(id)arg5;
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id /* block */)arg2;
 - (id)securityScopeForURL:(id)arg1 proxy:(id)arg2;
@@ -65,9 +73,13 @@
 - (void)setBccRecipients:(id)arg1;
 - (void)setCaretPosition:(unsigned long long)arg1;
 - (void)setCcRecipients:(id)arg1;
+- (void)setCloudPhotoIDs:(id)arg1;
+- (void)setContentText:(id)arg1;
+- (void)setContentURLs:(id)arg1;
 - (void)setContentVisible:(bool)arg1;
 - (void)setMailComposeDelegate:(id)arg1;
 - (void)setMessageBody:(id)arg1 isHTML:(bool)arg2;
+- (void)setPhotoIDs:(id)arg1;
 - (void)setPreferredSendingEmailAddress:(id)arg1;
 - (void)setShowKeyboardImmediately:(bool)arg1;
 - (void)setSourceAccountManagement:(int)arg1;

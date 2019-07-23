@@ -15,7 +15,7 @@
 @property (retain) NSUUID *externallyVisibleNwActivity;
 @property (nonatomic, readonly) NSUUID *nwActivity;
 
-+ (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; long long x4; long long x5; long long x6; unsigned long long x7; unsigned char x8[16]; int x9; bool x10; unsigned long long x11; struct { int x_12_1_1; long long x_12_1_2; bool x_12_1_3; bool x_12_1_4; unsigned long long x_12_1_5; unsigned long long x_12_1_6; unsigned long long x_12_1_7; unsigned long long x_12_1_8; unsigned long long x_12_1_9; unsigned long long x_12_1_10; unsigned char x_12_1_11[16]; } x12[0]; }*)createCFNetworkTaskMetrics_s:(id)arg1;
++ (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; long long x4; long long x5; long long x6; unsigned long long x7; unsigned char x8[16]; int x9; bool x10; unsigned long long x11; bool x12; long long x13; struct { int x_14_1_1; long long x_14_1_2; bool x_14_1_3; bool x_14_1_4; unsigned long long x_14_1_5; unsigned long long x_14_1_6; unsigned long long x_14_1_7; unsigned long long x_14_1_8; unsigned long long x_14_1_9; unsigned long long x_14_1_10; unsigned char x_14_1_11[16]; } x14[0]; }*)createCFNetworkTaskMetrics_s:(id)arg1;
 + (void)fillCFNetworkTransactionMetricStruct:(struct { int x1; long long x2; bool x3; bool x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned char x11[16]; }*)arg1 from:(id)arg2 forTaskUUID:(unsigned char)arg3;
 + (int)getNetworkProtocol:(id)arg1;
 + (int)getTaskType:(id)arg1;

@@ -62,6 +62,7 @@
 - (id)binaryImagesDescription;
 - (id)binaryImagesDescriptionForBacktraces:(id)arg1;
 - (id)bundleIdentifier;
+- (void)cleansePathsIncludingBinaryImageList:(bool)arg1;
 - (void)clearCrashReporterInfo;
 - (int)cpuType;
 - (id)date;
@@ -76,7 +77,9 @@
 - (id)initWithTask:(unsigned int)arg1 getBinariesList:(bool)arg2;
 - (bool)is64Bit;
 - (bool)isAppleApplication;
+- (int)parentPid;
 - (id)parentProcessName;
+- (id)parentProcessPath;
 - (unsigned long long)physicalFootprint;
 - (unsigned long long)physicalFootprintPeak;
 - (int)pid;

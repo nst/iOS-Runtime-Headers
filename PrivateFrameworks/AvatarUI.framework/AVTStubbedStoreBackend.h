@@ -4,15 +4,21 @@
 
 @interface AVTStubbedStoreBackend : NSObject <AVTStoreBackend>
 
+@property (nonatomic) <AVTStoreBackendDelegate> *backendDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <AVTAvatarRecordChangeTracker> *recordChangeTracker;
 @property (readonly) Class superclass;
 
 - (id)avatarsForFetchRequest:(id)arg1 error:(id*)arg2;
+- (id)backendDelegate;
 - (bool)canCreateAvatarWithError:(id*)arg1;
 - (bool)deleteAvatarWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)duplicateAvatarRecord:(id)arg1 error:(id*)arg2;
+- (id)recordChangeTracker;
 - (bool)saveAvatar:(id)arg1 error:(id*)arg2;
+- (bool)saveAvatars:(id)arg1 error:(id*)arg2;
+- (void)setBackendDelegate:(id)arg1;
 
 @end

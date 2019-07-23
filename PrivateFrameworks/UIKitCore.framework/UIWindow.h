@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIWindow : UIView <DebugHierarchyEntryPoint_Fallback, NSISEngineDelegate, _UIContextBindable, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding> {
+@interface UIWindow : UIView <NSISEngineDelegate, _UIContextBindable, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding> {
     bool  ___hostViewUnderlapsStatusBar;
     _UIWindowAnimationController * __animationController;
     bool  __containedGestureRecognizersShouldRespectGestureServerInstructions;
@@ -511,19 +511,6 @@
 - (void)_windowInternalConstraints_sizeDidChange;
 - (bool)_windowOwnsInterfaceOrientation;
 - (void)_writeLayerTreeToPath:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyAdditionalGroupingIDs;
-+ (id)fallback_debugHierarchyGroupingIDs;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addRootViewControllerViewIfPossible;
 - (bool)autorotates;
 - (void)awakeFromNib;
@@ -541,6 +528,7 @@
 - (struct CGPoint { double x1; double x2; })convertWindowToDevice:(struct CGPoint { double x1; double x2; })arg1;
 - (void*)createIOSurface;
 - (void*)createIOSurfaceWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endDisablingInterfaceAutorotation;
@@ -649,14 +637,20 @@
 
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
-+ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_safeAreaInsetsForDevice;
-+ (double)_vui_interitemSpaceForGridZone:(long long)arg1 gridType:(long long)arg2;
++ (double)_adjustedWindowSizeFor:(id)arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_safeAreaInsetsForDeviceWithElement:(id)arg1;
++ (double)_vui_interitemSpaceForSizeClass:(long long)arg1 gridType:(long long)arg2;
 + (double)vui_collectionInteritemSpace:(long long)arg1 gridType:(long long)arg2;
++ (double)vui_collectionInteritemSpace:(long long)arg1 gridType:(long long)arg2 withElement:(id)arg3;
 + (long long)vui_currentSizeClass;
++ (long long)vui_currentSizeClassForElement:(id)arg1;
 + (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2;
 + (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3;
++ (double)vui_itemWidthForGridStyle:(long long)arg1 gridType:(long long)arg2 numGridColumns:(unsigned long long)arg3 element:(id)arg4;
++ (id)vui_keyWindow;
 + (long long)vui_layoutType;
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vui_padding;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vui_paddingForElement:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

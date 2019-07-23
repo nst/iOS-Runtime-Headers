@@ -2,16 +2,21 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleWebAuthRequest : NSObject
+@interface SLGoogleWebAuthRequest : NSObject <SLWebAuthRequest>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)_parametersForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 codeChallenge:(id)arg5;
++ (id)authCodeFromRedirectURL:(id)arg1;
 + (id)authCodeFromWebPageTitle:(id)arg1;
-+ (void)clearCookiesFromStorage:(id)arg1;
++ (void)clearCookiesFromStorage:(id)arg1 authRequestURL:(id)arg2;
 + (id)requestForURL:(id)arg1;
-+ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
++ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5;
++ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5 codeChallenge:(id)arg6;
 + (bool)urlPageWillContainAuthorizationCode:(id)arg1;
-+ (id)urlRequestForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
-+ (id)v2_authCodeFromRedirectURL:(id)arg1;
-+ (id)v2_urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
-+ (id)v2_urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 codeChallenge:(id)arg5;
++ (id)urlRequestForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4 authRequestURL:(id)arg5;
 
 @end

@@ -20,8 +20,10 @@
 - (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1 didDismissPickerForEffectType:(CFXEffectType *)arg2;
 - (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1 didPresentPickerForEffectType:(CFXEffectType *)arg2;
 - (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1 didSelectApp:(NSString *)arg2;
+- (void)effectBrowserViewController:(CFXEffectBrowserViewController *)arg1 didSelectAppWithIdentifier:(NSString *)arg2;
 - (void)effectBrowserViewControllerDidStartCaptureSession:(CFXEffectBrowserViewController *)arg1;
 - (void)effectBrowserViewControllerDidStopCaptureSession:(CFXEffectBrowserViewController *)arg1;
 - (CFXMediaItem *)mediaItemForEffectBrowserViewController:(CFXEffectBrowserViewController *)arg1;
+- (bool)shouldRotateCellsForDeviceOrientation;
 
 @end

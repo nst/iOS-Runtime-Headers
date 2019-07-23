@@ -15,6 +15,7 @@
     CALayer * _customImageLayer;
     <PKGlyphViewDelegate> * _delegate;
     PKFingerprintGlyphView * _fingerprintView;
+    bool  _isPad;
     NSObject<OS_dispatch_group> * _lastAnimationGroup;
     double  _lastAnimationWillFinish;
     struct { 
@@ -39,6 +40,7 @@
     bool  _transitioningAnimated;
     PKMicaLayer * _userIntentArrowLayer;
     PKMicaLayer * _userIntentDeviceLayer;
+    unsigned int  _userIntentEdge;
     CALayer * _userIntentLayer;
 }
 
@@ -53,6 +55,7 @@
 @property (nonatomic, readonly, copy) UIColor *primaryColor;
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int userIntentEdge;
 
 + (bool)automaticallyNotifiesObserversOfState;
 + (id)sharedStaticResources;
@@ -80,6 +83,7 @@
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)_updatePhoneLayoutWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_updatePhoneWiggleIfNecessary;
+- (void)_updateUserIntentLayerRotation;
 - (void)_updateUserIntentLayoutAnimated:(bool)arg1;
 - (long long)colorMode;
 - (id)createCustomImageLayer;
@@ -105,5 +109,7 @@
 - (long long)state;
 - (void)tintColorDidChange;
 - (void)updateRasterizationScale:(double)arg1;
+- (void)updateRotation;
+- (unsigned int)userIntentEdge;
 
 @end

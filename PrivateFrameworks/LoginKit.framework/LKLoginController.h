@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LoginKit.framework/LoginKit
  */
 
-@interface LKLoginController : NSObject <LKLoginControllerProtocol> {
+@interface LKLoginController : NSObject <LKLoginDaemonProtocol> {
     id /* block */  _completionHandler;
     NSXPCConnection * _connection;
 }
@@ -13,11 +13,15 @@
 + (id)sharedController;
 
 - (void).cxx_destruct;
+- (void)checkInWithCurrentEnvironment:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)chooseUserWithIdentifier:(id)arg1 inClassWithID:(id)arg2 password:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id /* block */)completionHandler;
 - (id)connection;
 - (id)init;
+- (void)isReadyToLoginWithCompletionHandler:(id /* block */)arg1;
+- (void)isReadyToLogoutWithCompletionHandler:(id /* block */)arg1;
 - (void)loginAppleID:(id)arg1 password:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)logoutWithLogoutType:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)proxy;
 - (id)recentUsers;
 - (void)saveClassConfiguration:(id)arg1 withCompletionHandler:(id /* block */)arg2;

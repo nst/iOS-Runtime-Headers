@@ -5,7 +5,10 @@
 
 @required
 
-- (void)connectToDaemon;
 - (bool)settingsUIVisible;
+
+@optional
+
+- (void)connectToDaemon;
 
 @end

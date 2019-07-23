@@ -68,6 +68,7 @@
 - (id)buttonTray;
 - (unsigned long long)clientRequests;
 - (void)createOrUpdateCurrentVoiceShortcut;
+- (void)createPhraseRecognizerIfNeeded;
 - (void)createShortcut;
 - (void)createShortcutAndDismissOnSuccess:(bool)arg1;
 - (id)createdVoiceShortcut;
@@ -101,6 +102,7 @@
 - (void)phraseRecognizer:(id)arg1 availabilityDidChange:(bool)arg2;
 - (void)phraseRecognizer:(id)arg1 didReceiveFinalTranscription:(id)arg2 alternativeTranscriptions:(id)arg3;
 - (void)phraseRecognizer:(id)arg1 didReceiveHypothesizedTranscription:(id)arg2;
+- (void)phraseRecognizerDidFailToStartRecording:(id)arg1;
 - (void)phraseRecognizerDidStartRecording:(id)arg1 successfully:(bool)arg2 error:(id)arg3;
 - (void)phraseRecognizerDidStopRecording:(id)arg1 withError:(id)arg2;
 - (bool)phraseRecognizerInErrorState;

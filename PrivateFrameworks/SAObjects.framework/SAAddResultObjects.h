@@ -7,6 +7,8 @@
 @property (nonatomic, copy) NSArray *objects;
 @property (nonatomic, copy) NSArray *resultObjects;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)addResultObjects;
 + (id)addResultObjectsWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -17,5 +19,12 @@
 - (id)resultObjects;
 - (void)setObjects:(id)arg1;
 - (void)setResultObjects:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriTape.framework/SiriTape
+
+- (id)st_cfscripts;
+- (bool)st_hasRequestCompleted;
+- (id)st_replaceRefIDsWithID:(id)arg1;
+- (id)st_setCFScripts:(id)arg1;
 
 @end

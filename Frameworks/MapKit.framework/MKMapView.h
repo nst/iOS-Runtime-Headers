@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapView : UIView <DebugHierarchyObject_Fallback, GEOLogContextDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKRotationFilterDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
+@interface MKMapView : UIView <GEOLogContextDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKRotationFilterDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
     MKAnnotationContainerView * _annotationContainer;
     id /* block */  _annotationCoordinateTest;
     MKAnnotationManager * _annotationManager;
@@ -947,11 +947,6 @@
 - (void)willMoveToWindow:(id)arg1;
 - (double)zoomToFocusVenue:(id)arg1;
 - (double)zoomToFocusVenueBuilding:(id)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

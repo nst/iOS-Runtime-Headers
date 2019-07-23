@@ -12,7 +12,7 @@
 - (void)enterState;
 - (bool)requiresHighMemoryThreshold;
 - (void)stopPredictingDestinations;
-- (unsigned long long)type;
+- (long long)type;
 - (void)updateMapsActive:(bool)arg1;
 
 @end

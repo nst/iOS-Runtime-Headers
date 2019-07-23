@@ -21,6 +21,7 @@
 - (id)_delegate;
 - (void)_fetchPeerData:(id /* block */)arg1;
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
+- (void)_getSharedCompanionInfo:(id /* block */)arg1;
 - (void)_runServiceMaintenance;
 - (void)_setDelegate:(id)arg1;
 - (void)_setSyncNeededForReason:(id)arg1;
@@ -46,14 +47,21 @@
 - (void)fetchExperimentConfigurationsWithCompletion:(id /* block */)arg1;
 - (void)fetchExperimentContextWithCompletion:(id /* block */)arg1;
 - (void)fetchSupportedLanguageCodes:(id /* block */)arg1;
+- (void)forceMultiUserSync:(bool)arg1 download:(bool)arg2 completion:(id /* block */)arg3;
 - (void)getAvailableVoicesForLanguage:(id)arg1 includeAssetInfo:(bool)arg2 completion:(id /* block */)arg3;
 - (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 includeAssetInfo:(bool)arg2 completion:(id /* block */)arg3;
 - (void)getAvailableVoicesForSynthesisLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)getBluetoothDeviceWithAddress:(id)arg1 completion:(id /* block */)arg2;
+- (void)getBluetoothDeviceWithUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getConnectedBluetoothDeviceInfoArrayWithCompletion:(id /* block */)arg1;
 - (void)getDevicesWithAvailablePHSAssetsForLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)getDevicesWithAvailablePHSAssetsOnDeviceCheck:(id /* block */)arg1;
 - (void)getHorsemanSupplementalLanguageDictionary:(id /* block */)arg1;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
+- (void)getPairedBluetoothDeviceInfoArrayWithCompletion:(id /* block */)arg1;
 - (void)getPeerIdentifiers:(id /* block */)arg1;
+- (void)getSiriOutputVolumeWithCompletion:(id /* block */)arg1;
 - (void)getStereoPairState:(id /* block */)arg1;
 - (void)getStereoPartnerLastMyriadWinDate:(id /* block */)arg1;
 - (void)getSupplementalLanguageDictionaryForProduct:(id)arg1 completion:(id /* block */)arg2;
@@ -76,6 +84,7 @@
 - (void)setOfflineDictationProfileOverridePath:(id)arg1 completion:(id /* block */)arg2;
 - (void)setOutputVoice:(id)arg1;
 - (void)setOutputVoice:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setSiriOutputVolume:(float)arg1 completion:(id /* block */)arg2;
 - (void)setSupplementalLanguageDictionary:(id)arg1 forProduct:(id)arg2 completion:(id /* block */)arg3;
 - (void)setSupplementalLanguages:(id)arg1 forProduct:(id)arg2 forBuildVersion:(id)arg3 completion:(id /* block */)arg4;
 - (void)startAudioPlaybackRequest:(id)arg1 completion:(id /* block */)arg2;

@@ -4,22 +4,29 @@
 
 @interface STDevicePickupsSummaryCell : STTableCell {
     UILabel * _averagePickupsLabel;
-    UILabel * _averagePickupsTextLabel;
+    NSLayoutConstraint * _bottomConstraint;
+    UILabel * _firstUsedAfterPickupLabel;
     STUsageGraphView * _graphView;
+    STHorizontallySegmentedView * _pickupMetricsView;
 }
 
-@property (nonatomic, retain) UILabel *averagePickupsLabel;
-@property (nonatomic, retain) UILabel *averagePickupsTextLabel;
-@property (nonatomic, retain) STUsageGraphView *graphView;
+@property (nonatomic, readonly) UILabel *averagePickupsLabel;
+@property (nonatomic, retain) NSLayoutConstraint *bottomConstraint;
+@property (nonatomic, readonly) UILabel *firstUsedAfterPickupLabel;
+@property (nonatomic, readonly) STUsageGraphView *graphView;
+@property (nonatomic, readonly) STHorizontallySegmentedView *pickupMetricsView;
 
 - (void).cxx_destruct;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
 - (id)averagePickupsLabel;
-- (id)averagePickupsTextLabel;
+- (id)bottomConstraint;
+- (void)dealloc;
+- (id)firstUsedAfterPickupLabel;
 - (id)graphView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)setAveragePickupsLabel:(id)arg1;
-- (void)setAveragePickupsTextLabel:(id)arg1;
-- (void)setGraphView:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)pickupMetricsView;
+- (void)setBottomConstraint:(id)arg1;
 - (void)setValue:(id)arg1;
 
 @end

@@ -11,6 +11,7 @@
     <IMADockViewControllerDelegate> * _delegate;
     CKFullScreenAppViewController * _expandedAppViewController;
     bool  _hidesCompactAppForStickerDrag;
+    bool  _isTransitioningPresentationStyles;
     CKBrowserSwitcherViewController * _switcherViewController;
 }
 
@@ -34,8 +35,11 @@
 - (id)appViewControllerPresenter;
 - (struct CGSize { double x1; double x2; })browserTransitionCoordinator:(id)arg1 preferredSizeForBrowser:(id)arg2;
 - (double)browserTransitionCoordinatorCollapsedContentHeight:(id)arg1;
+- (void)browserTransitionCoordinatorDidCollapseOrDismiss:(id)arg1 withReason:(long long)arg2;
 - (void)browserTransitionCoordinatorDidTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
 - (bool)browserTransitionCoordinatorShouldDismissOnDragSuccess:(id)arg1;
+- (void)browserTransitionCoordinatorWillCollapseOrDismiss:(id)arg1 withReason:(long long)arg2;
+- (void)browserTransitionCoordinatorWillTransitionOrPresentToFullscreen:(id)arg1 withReason:(long long)arg2;
 - (void)cleanupRunningApps;
 - (void)commitPayload:(id)arg1;
 - (void)commitSticker:(id)arg1;

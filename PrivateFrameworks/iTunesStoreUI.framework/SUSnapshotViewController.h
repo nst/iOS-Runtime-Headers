@@ -3,20 +3,34 @@
  */
 
 @interface SUSnapshotViewController : UIViewController {
+    UIActivityIndicatorView * _activityIndicatorView;
     UIImageView * _imageView;
+    long long  _originalOrientation;
     UIViewController * _originalViewController;
 }
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) long long originalOrientation;
 @property (nonatomic, retain) UIViewController *originalViewController;
 
 - (void).cxx_destruct;
+- (long long)_currentOrientation;
+- (id)_snapshotOfView:(id)arg1;
+- (void)_startActivityIndicator;
+- (void)_stopActivityIndicator;
+- (id)activityIndicatorView;
 - (id)imageView;
 - (id)initWithOriginal:(id)arg1;
+- (long long)originalOrientation;
 - (id)originalViewController;
+- (void)setActivityIndicatorView:(id)arg1;
 - (void)setImageView:(id)arg1;
+- (void)setOriginalOrientation:(long long)arg1;
 - (void)setOriginalViewController:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

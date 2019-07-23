@@ -47,11 +47,13 @@
 - (bool)didPromptForCloudKitSync;
 - (void)disableAllSyncEnabledCloudKitDevices;
 - (id)eventHandlers;
+- (void)fetchRampStateWithCompletion:(id /* block */)arg1;
 - (id)fetchStatsTimer;
 - (void)fetchSyncDebuggingInfo:(id)arg1;
 - (void)fetchSyncState;
 - (void)fetchSyncStateAfterClearingErrors;
-- (void)fetchSyncStateAfterClearingErrorsWithCompletion:(id /* block */)arg1;
+- (void)fetchSyncStateAfterClearingErrorsWithRepairSuccess:(bool)arg1 completion:(id /* block */)arg2;
+- (void)fetchSyncStateAfterFetchingAccountStatus;
 - (void)fetchSyncStateStatistics;
 - (void)fetchSyncStateStatisticsWithCompletion:(id /* block */)arg1;
 - (void)fetchSyncStateWithCompletion:(id /* block */)arg1;
@@ -73,7 +75,6 @@
 - (void)setPreviousState:(id)arg1;
 - (void)setProgressPollingInterval:(double)arg1;
 - (void)setProgressToSend:(id)arg1;
-- (void)startFetchingSyncProgress;
 - (void)startInitialSync;
 - (void)startPeriodicSync;
 - (id)syncState;

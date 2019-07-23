@@ -21,7 +21,6 @@
 - (void)_configureAudioSession;
 - (void)_connectAVPlayer;
 - (void)_contentsChanged;
-- (void)_delegateAuthorizationForItem:(id)arg1 completion:(id /* block */)arg2;
 - (id)_expectedAssetTypesForPlaybackMode:(long long)arg1;
 - (void)_itemDidChange:(id)arg1;
 - (void)_itemWillChange:(id)arg1;

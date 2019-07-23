@@ -26,6 +26,7 @@
 - (id)contentView;
 - (id)init;
 - (void)loadView;
+- (id)preferredFocusEnvironments;
 - (void)setBackgroundImageProxy:(id)arg1;
 - (void)setBackgroundImageView:(id)arg1;
 - (void)setContentView:(id)arg1;

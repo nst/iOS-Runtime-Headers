@@ -8,6 +8,7 @@
 
 + (id)contentKeyResponseWithClearKeyData:(id)arg1 initializationVector:(id)arg2;
 + (id)contentKeyResponseWithFairPlayStreamingKeyResponseData:(id)arg1;
++ (id)contentKeyResponseWithFairPlayStreamingKeyResponseData:(id)arg1 renewalDate:(id)arg2;
 
 - (void)dealloc;
 - (id)initWithKeySystem:(id)arg1;

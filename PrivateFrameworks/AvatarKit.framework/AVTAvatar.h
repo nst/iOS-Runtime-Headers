@@ -8,6 +8,8 @@
     float  _arScale;
     AVTMemoji * _avatar;
     SCNNode * _avatarNode;
+    CAAnimation * _bakedAnimation;
+    SCNAnimationPlayer * _bakedAnimationPlayer_lazy;
     NSMutableArray * _clipsPlaying;
     NSMutableArray * _correctiveMorpherDescriptors;
     AVTEyeSkinningDescriptor * _eyeSkinningDescriptor;
@@ -50,6 +52,7 @@
 + (bool)canLoadDataRepresentation:(id)arg1;
 + (bool)canLoadDataRepresentationWithVersion:(unsigned short)arg1 minimumCompatibleVersion:(unsigned short)arg2 error:(id*)arg3;
 + (unsigned char)classIdentifier;
++ (void)initialize;
 + (void)preloadAvatar:(id)arg1;
 
 - (void).cxx_destruct;
@@ -74,6 +77,8 @@
 - (float)arScale;
 - (void)avatarCommonInit;
 - (id)avatarNode;
+- (id)bakedAnimationCopy;
+- (id)bakedAnimationPlayer;
 - (id)cameraNode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })currentLookAt;
@@ -93,6 +98,7 @@
 - (bool)morphTargetNameIsDrivenByARKit:(id)arg1;
 - (id)neckNode;
 - (bool)optimizeForSnapshot;
+- (void)pauseBakedAnimation;
 - (id)playAnimationClip:(id)arg1;
 - (id)playAnimationClip:(id)arg1 usingSceneTime:(bool)arg2;
 - (id)playAnimationClip:(id)arg1 usingSceneTime:(bool)arg2 withCompletion:(id /* block */)arg3;
@@ -111,9 +117,11 @@
 - (void)resetMorpherDrivenMaterials;
 - (void)resetMorphingSkinningControllers;
 - (void)resetPhysicalizedMorpherDescriptors;
+- (void)resumeBakedAnimation;
 - (void)rotateHead:(double)arg1;
 - (void)setArMode:(bool)arg1;
 - (void)setAvatarNode:(id)arg1;
+- (void)setBakedAnimationReferenceTime:(double)arg1;
 - (void)setHeadNode:(id)arg1;
 - (void)setOptimizeForSnapshot:(bool)arg1;
 - (void)setPhysicsScaleFactor:(double)arg1;

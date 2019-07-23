@@ -57,11 +57,13 @@
 - (void)setPreviewBackgroundImage:(id)arg1;
 - (void)setPreviewing:(bool)arg1;
 - (bool)shouldDisplayExpandedModeForFilterPickerView:(id)arg1;
+- (bool)shouldRotateCellsForDeviceOrientation;
 - (void)startPreviewing;
 - (void)stopPreviewing;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

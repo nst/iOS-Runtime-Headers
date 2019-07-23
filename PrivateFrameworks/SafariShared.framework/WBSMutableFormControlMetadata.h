@@ -85,6 +85,7 @@
 - (void)setMinLength:(unsigned long long)arg1;
 - (void)setNextControlUniqueID:(id)arg1;
 - (void)setPasswordRules:(id)arg1;
+- (void)setPlaceholder:(id)arg1;
 - (void)setRadioButtonInfo:(id)arg1;
 - (void)setReadOnly:(bool)arg1;
 - (void)setRectHeight:(double)arg1;

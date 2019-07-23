@@ -7,6 +7,7 @@
     unsigned long long  _currentActionIndex;
     <WFLWorkflowControllerDelegate> * _delegate;
     long long  _executionContext;
+    INVoiceCommandDeviceInformation * _originDeviceInformation;
     WFLActionImplementation * _previousActionImplementation;
     NSProgress * _progress;
     bool  _running;
@@ -17,6 +18,7 @@
 @property (nonatomic) unsigned long long currentActionIndex;
 @property (nonatomic) <WFLWorkflowControllerDelegate> *delegate;
 @property (nonatomic) long long executionContext;
+@property (nonatomic, retain) INVoiceCommandDeviceInformation *originDeviceInformation;
 @property (nonatomic, retain) WFLActionImplementation *previousActionImplementation;
 @property (nonatomic, retain) NSProgress *progress;
 @property (getter=isRunning, nonatomic) bool running;
@@ -34,6 +36,7 @@
 - (id)initWithWorkflow:(id)arg1;
 - (bool)isRunning;
 - (void)launchAppWithCompletionHandler:(id /* block */)arg1;
+- (id)originDeviceInformation;
 - (id)previousActionImplementation;
 - (id)progress;
 - (void)runWithInput:(id)arg1;
@@ -41,6 +44,7 @@
 - (void)setCurrentActionIndex:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExecutionContext:(long long)arg1;
+- (void)setOriginDeviceInformation:(id)arg1;
 - (void)setPreviousActionImplementation:(id)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setRunning:(bool)arg1;

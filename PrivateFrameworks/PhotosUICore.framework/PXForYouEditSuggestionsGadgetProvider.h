@@ -27,6 +27,7 @@
 - (id)oneUpPresentationGestureProvider:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)presentOneUpForSuggestion:(id)arg1;
 - (void)suggestionGadget:(id)arg1 commitViewController:(id)arg2;
 - (void)suggestionGadget:(id)arg1 didDismissPreviewController:(id)arg2 committing:(bool)arg3;

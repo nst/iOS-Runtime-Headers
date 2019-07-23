@@ -2,32 +2,35 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNPropertyGroupGeminiItem : CNPropertyGroupItem {
-    bool  _allowsPickerAction;
-    CNGeminiChannel * _bestChannel;
-    long long  _channelType;
+@interface CNPropertyGroupGeminiItem : CNPropertyGroupItem <CNUIGeminiDataSourceDelegate> {
+    CNMutableContact * _editingContact;
     CNGeminiResult * _geminiResult;
+    <CNUIGeminiDataSourceDelegate> * _geminiUpdateDelegate;
 }
 
-@property bool allowsPickerAction;
-@property (nonatomic, retain) CNGeminiChannel *bestChannel;
-@property (nonatomic) long long channelType;
-@property (retain) CNGeminiResult *geminiResult;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CNMutableContact *editingContact;
+@property (nonatomic, retain) CNGeminiResult *geminiResult;
+@property (nonatomic) <CNUIGeminiDataSourceDelegate> *geminiUpdateDelegate;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (bool)allowsPickerAction;
-- (id)bestChannel;
-- (long long)channelType;
+- (bool)canRemove;
 - (id)description;
 - (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
 - (id)displayValue;
+- (id)editingContact;
+- (void)geminiDataSourceDidUpdate:(id)arg1;
 - (id)geminiResult;
+- (id)geminiUpdateDelegate;
 - (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
 - (bool)isValidValue:(id)arg1;
-- (void)setAllowsPickerAction:(bool)arg1;
-- (void)setBestChannel:(id)arg1;
-- (void)setChannelType:(long long)arg1;
+- (void)setEditingContact:(id)arg1;
 - (void)setGeminiResult:(id)arg1;
+- (void)setGeminiUpdateDelegate:(id)arg1;
+- (void)updateLabeledValueWithValue:(id)arg1;
 
 @end

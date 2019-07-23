@@ -4,6 +4,8 @@
 
 @interface SADynamiteClientState : SAAceClientState <SABackgroundContextObject>
 
+@property (nonatomic) bool activeTvUser;
+@property (nonatomic) bool ageVerificationRequired;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SACalendar *expirationDate;
@@ -21,9 +23,13 @@
 + (id)syncKey;
 + (id)uniqueObjectIdentifier;
 
+- (bool)activeTvUser;
+- (bool)ageVerificationRequired;
 - (id)encodedClassName;
 - (id)expirationDate;
 - (id)groupIdentifier;
+- (void)setActiveTvUser:(bool)arg1;
+- (void)setAgeVerificationRequired:(bool)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (void)setUserHistoryUnmodifiable:(id)arg1;

@@ -5,6 +5,7 @@
 @interface NMSMediaPinningManager : NSObject <ICEnvironmentMonitorObserver> {
     NSArray * _cachedAlbumIdentifiers;
     NSArray * _cachedPlaylistIdentifiers;
+    NSArray * _cachedPodcastFeedURLs;
     NSObject<OS_dispatch_queue> * _internalQueue;
     bool  _pinnedPlaylistsValidated;
     NMSPodcastSizeCache * _podcastSizeCache;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSArray *pinnedPlaylists;
 @property (nonatomic) bool pinnedPodcastsAreUserSet;
 @property (nonatomic, readonly) NSArray *playlistIdentifiers;
+@property (nonatomic, readonly) NSArray *podcastFeedURLs;
 @property (nonatomic, retain) NSNumber *podcastsAssetSyncLimit;
 @property (nonatomic, retain) NMSMediaQuotaManager *quotaManager;
 @property (readonly) Class superclass;
@@ -35,6 +37,7 @@
 + (id)_cachedAlbumIdentifiersFilePath;
 + (id)_cachedIdentifiersDirectoryPath;
 + (id)_cachedPlaylistIdentifiersFilePath;
++ (id)_cachedPodcastFeedURLsFilePath;
 + (id)_fetchMusicRecommendations;
 + (unsigned long long)_mediaStorageSizeForCurrentDevice;
 + (void)_persistNewClientToken;
@@ -43,6 +46,7 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryEntitiesAddedOrRemovedNotification:(id)arg1;
 - (void)_handleMusicPinningSelectionsDidChangeNotification:(id)arg1;
 - (void)_handlePairedDeviceDidBecomeActiveNotification:(id)arg1;
@@ -61,9 +65,10 @@
 - (id)_newPodcastsGroupIteratorWithDownloadedItemsOnly:(bool)arg1;
 - (void)_notePinningSettingsChangedLocally;
 - (unsigned int)_pairedWatchVersion;
-- (bool)_quotaManagerShouldFetchDownloadedItemsOnly;
+- (bool)_quotaManagerShouldFetchDownloadedItemsOnlyForBundleID:(id)arg1;
 - (void)_refreshAlbumIdentifiersWithPath:(id)arg1;
 - (void)_refreshPlaylistIdentifiersWithPath:(id)arg1;
+- (void)_refreshPodcastFeedURLsWithPath:(id)arg1;
 - (void)_setWorkoutPlaylistID:(id)arg1;
 - (void)_updateWorkoutSettingsPlaylistPIDTo:(id)arg1;
 - (id)addedItems;
@@ -86,8 +91,6 @@
 - (bool)isPodcastWithFeedURLPinned:(id)arg1;
 - (bool)isPodcastWithIdentifiersPinned:(id)arg1;
 - (id)itemGroupForIdentifiers:(id)arg1;
-- (id)itemsWithinAvailableSpace:(unsigned long long)arg1 downloadedItemsOnly:(bool)arg2;
-- (unsigned long long)minimumCacheDeleteQuotaForDevice;
 - (unsigned long long)nominatedSongsSize;
 - (id)offPowerEligibleSongsList;
 - (id)onlyOnPowerSongsList;
@@ -99,6 +102,7 @@
 - (id)pinnedPlaylists;
 - (bool)pinnedPodcastsAreUserSet;
 - (id)playlistIdentifiers;
+- (id)podcastFeedURLs;
 - (id)podcastsAssetSyncLimit;
 - (id)quotaManager;
 - (void)removePodcastWithFeedURL:(id)arg1;

@@ -5,6 +5,7 @@
 @interface CKDDownloadAssetsOperation : CKDDatabaseOperation {
     NSMutableArray * _MMCSItemsToDownload;
     NSMutableArray * _MMCSItemsToDownloadInMemory;
+    NSArray * _assetURLInfosToFillOut;
     NSArray * _assetsToDownload;
     NSArray * _assetsToDownloadInMemory;
     CKDCancelTokenGroup * _cancelTokens;
@@ -13,14 +14,16 @@
     id /* block */  _downloadPreparationBlock;
     id /* block */  _downloadProgressBlock;
     NSMapTable * _downloadTasksByPackages;
+    NSMutableDictionary * _keyOrErrorForHostname;
     unsigned long long  _maxPackageDownloadsPerBatch;
     NSArray * _packageIndexSets;
     NSObject<OS_dispatch_queue> * _queue;
-    bool  _shouldFetchAssetContentInMemory;
+    id /* block */  _urlFilledOutBlock;
 }
 
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToDownload;
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToDownloadInMemory;
+@property (nonatomic, retain) NSArray *assetURLInfosToFillOut;
 @property (nonatomic, retain) NSArray *assetsToDownload;
 @property (nonatomic, retain) NSArray *assetsToDownloadInMemory;
 @property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
@@ -29,10 +32,11 @@
 @property (nonatomic, copy) id /* block */ downloadPreparationBlock;
 @property (nonatomic, copy) id /* block */ downloadProgressBlock;
 @property (nonatomic, retain) NSMapTable *downloadTasksByPackages;
+@property (nonatomic, retain) NSMutableDictionary *keyOrErrorForHostname;
 @property (nonatomic) unsigned long long maxPackageDownloadsPerBatch;
 @property (nonatomic, retain) NSArray *packageIndexSets;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) bool shouldFetchAssetContentInMemory;
+@property (nonatomic, copy) id /* block */ urlFilledOutBlock;
 
 - (void).cxx_destruct;
 - (id)CKStatusReportLogGroups;
@@ -59,9 +63,12 @@
 - (void)_downloadPackageSectionsWithSectionEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_downloadPackageSectionsWithTask:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (bool)_postProcess;
 - (bool)_prepareForDownload;
 - (void)_removeUntrackedMMCSItems:(id)arg1;
+- (id)_tryToFillInTheDerivativeTemplateWithAsset:(id)arg1;
 - (id)activityCreate;
+- (id)assetURLInfosToFillOut;
 - (id)assetsToDownload;
 - (id)assetsToDownloadInMemory;
 - (void)cancel;
@@ -72,12 +79,14 @@
 - (id /* block */)downloadProgressBlock;
 - (id)downloadTasksByPackages;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
+- (id)keyOrErrorForHostname;
 - (void)main;
 - (bool)makeStateTransition;
 - (unsigned long long)maxPackageDownloadsPerBatch;
 - (id)nameForState:(unsigned long long)arg1;
 - (id)packageIndexSets;
 - (id)queue;
+- (void)setAssetURLInfosToFillOut:(id)arg1;
 - (void)setAssetsToDownload:(id)arg1;
 - (void)setAssetsToDownloadInMemory:(id)arg1;
 - (void)setCancelTokens:(id)arg1;
@@ -86,12 +95,13 @@
 - (void)setDownloadPreparationBlock:(id /* block */)arg1;
 - (void)setDownloadProgressBlock:(id /* block */)arg1;
 - (void)setDownloadTasksByPackages:(id)arg1;
+- (void)setKeyOrErrorForHostname:(id)arg1;
 - (void)setMMCSItemsToDownload:(id)arg1;
 - (void)setMMCSItemsToDownloadInMemory:(id)arg1;
 - (void)setMaxPackageDownloadsPerBatch:(unsigned long long)arg1;
 - (void)setPackageIndexSets:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
-- (bool)shouldFetchAssetContentInMemory;
+- (void)setUrlFilledOutBlock:(id /* block */)arg1;
+- (id /* block */)urlFilledOutBlock;
 
 @end

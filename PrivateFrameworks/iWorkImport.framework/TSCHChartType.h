@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) TSCHChartFeature *feature;
 @property (nonatomic, readonly) bool is3D;
 
++ (id)all3DChartTypes;
 + (id)allChartTypes;
 + (id)areaChart;
 + (id)areaChart3D;

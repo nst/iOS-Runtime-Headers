@@ -149,6 +149,7 @@
 @property (nonatomic, readonly) bool shouldFixupBundleBitOnPackages;
 @property (nonatomic, readonly) bool shouldFixupTargetCZMAliases;
 @property (nonatomic, readonly) bool shouldPreparePCSMigration;
+@property (nonatomic, readonly) bool shouldReportAllPerItemFailures;
 @property (nonatomic, readonly) bool shouldSessionBeGreedy;
 @property (nonatomic, readonly) bool skipPerItemSyncUpThrottling;
 @property (nonatomic, readonly) bool skipServerSideThrottling;
@@ -373,6 +374,7 @@
 - (bool)shouldFixupBundleBitOnPackages;
 - (bool)shouldFixupTargetCZMAliases;
 - (bool)shouldPreparePCSMigration;
+- (bool)shouldReportAllPerItemFailures;
 - (bool)shouldSessionBeGreedy;
 - (bool)skipPerItemSyncUpThrottling;
 - (bool)skipServerSideThrottling;

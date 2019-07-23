@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXScalableImageComponentView : SXMediaComponentView <SXDragManagerDataSource, SXFullscreenCanvasShowable, SXImageViewDelegate, SXTextSourceDataSource> {
+@interface SXScalableImageComponentView : SXMediaComponentView <SXDragManagerDataSource, SXFullscreenCanvasShowable, SXFullscreenCaptionDataSource, SXImageViewDelegate> {
     SXMediaViewEvent * _activeViewEvent;
     <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
     SXDragManager * _dragManager;
@@ -11,10 +11,7 @@
     SXImageResource * _imageResource;
     SXImageView * _imageView;
     <SXImageViewFactory> * _imageViewFactory;
-    double  _lastKnownPinchVelocity;
-    double  _lastKnownRotationVelocity;
     <SXMediaSharingPolicyProvider> * _mediaSharingPolicyProvider;
-    bool  _presentingOnFullScreenCanvas;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -38,24 +35,20 @@
 @property (nonatomic, retain) SXImageResource *imageResource;
 @property (nonatomic, readonly) SXImageView *imageView;
 @property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
-@property (nonatomic) double lastKnownPinchVelocity;
-@property (nonatomic) double lastKnownRotationVelocity;
 @property (nonatomic, readonly) <SXMediaSharingPolicyProvider> *mediaSharingPolicyProvider;
-@property (getter=isPresentingOnFullScreenCanvas, nonatomic) bool presentingOnFullScreenCanvas;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } previousContentFrame;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)activeViewEvent;
-- (id)additionsForTextSource:(id)arg1;
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsMediaType;
 - (id)canvasControllerFactory;
-- (id)contentSizeCategoryForTextSource:(id)arg1;
+- (id)componentTextStyleForIdentifier:(id)arg1 inheritingFromComponentTextStyle:(id)arg2;
+- (id)contentSizeCategoryForCaption:(id)arg1;
 - (void)createMediaViewEvent;
 - (id)description;
 - (void)discardContents;
-- (id)documentControllerForTextSource:(id)arg1;
 - (id)dragManager;
 - (id)dragManager:(id)arg1 dragableAtLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)finishMediaViewEvent;
@@ -81,11 +74,7 @@
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
 - (id)imageViewFactory;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
-- (id)inlineTextStylesForTextSource:(id)arg1;
-- (bool)isPresentingOnFullScreenCanvas;
-- (double)lastKnownPinchVelocity;
-- (double)lastKnownRotationVelocity;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8 mediaSharingPolicyProvider:(id)arg9;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
 - (id)mediaSharingPolicyProvider;
@@ -100,17 +89,14 @@
 - (void)setFullScreenCanvasController:(id)arg1;
 - (void)setGestureView:(id)arg1;
 - (void)setImageResource:(id)arg1;
-- (void)setLastKnownPinchVelocity:(double)arg1;
-- (void)setLastKnownRotationVelocity:(double)arg1;
-- (void)setPresentingOnFullScreenCanvas:(bool)arg1;
 - (void)setPreviousContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)submitEvents;
-- (id)textResizerForTextSource:(id)arg1;
-- (id)textRulesForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
+- (id)textResizerForCaption:(id)arg1;
+- (id)textRulesForCaption:(id)arg1;
+- (id)textStyleForIdentifier:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContentFrame;
 - (id)transitionContentView;
-- (bool)transitionViewUsesThumbnail;
+- (bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (id)viewForDragManager:(id)arg1;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
 

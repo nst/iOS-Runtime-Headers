@@ -3,6 +3,7 @@
  */
 
 @interface CNCardPropertyGroup : CNCardGroup {
+    bool  _allowsDisplayModePickerActions;
     CNContactStore * _contactStore;
     NSArray * _deletedItems;
     NSArray * _displayItems;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, readonly) bool allowsAdding;
+@property (nonatomic) bool allowsDisplayModePickerActions;
 @property (nonatomic, readonly) CNContactStore *contactStore;
 @property (nonatomic, retain) NSArray *deletedItems;
 @property (nonatomic, retain) NSArray *editingItems;
@@ -47,6 +49,7 @@
 - (void)_updateNameValuesForItems:(id)arg1;
 - (bool)addEditingItem;
 - (bool)allowsAdding;
+- (bool)allowsDisplayModePickerActions;
 - (bool)canAddEditingItem;
 - (id)contactStore;
 - (id)deletedItems;
@@ -72,6 +75,7 @@
 - (void)removeEditingItem:(id)arg1;
 - (void)saveChanges;
 - (void)saveChangesForItems:(id)arg1;
+- (void)setAllowsDisplayModePickerActions:(bool)arg1;
 - (void)setDeletedItems:(id)arg1;
 - (void)setEditingItems:(id)arg1;
 - (void)setIsAdded:(bool)arg1;

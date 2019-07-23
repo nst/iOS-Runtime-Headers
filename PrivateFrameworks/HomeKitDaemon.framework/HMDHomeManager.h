@@ -302,7 +302,7 @@
 - (id)_getAssistantTeamIdentifierForKey;
 - (id)_getHomeConfigurationLogEvent;
 - (id)_getRequestedState:(id)arg1 activity:(id)arg2;
-- (void)_getRuntimeStateUpdateForHomeManager:(bool)arg1 includeMediaAccessoryState:(bool)arg2 includeHAPAccessoryState:(bool)arg3 includeResidentDeviceState:(bool)arg4 completion:(id /* block */)arg5;
+- (void)_getRuntimeStateUpdateForHomeManager:(bool)arg1 includeMediaAccessoryState:(bool)arg2 options:(unsigned long long)arg3 includeResidentDeviceState:(bool)arg4 completion:(id /* block */)arg5;
 - (void)_handleAccessAllowedWhenLockedRequest:(id)arg1;
 - (void)_handleAccessHomeInvite:(id)arg1;
 - (void)_handleAccountAvailabilityChanged:(id /* block */)arg1;
@@ -311,6 +311,7 @@
 - (void)_handleAreYouAtHome:(id)arg1;
 - (void)_handleAssistantTeamIdentifierChanged:(id)arg1;
 - (void)_handleCompanionKeysSync:(id)arg1;
+- (void)_handleConnectivityInfoRequest:(id)arg1;
 - (void)_handleContactStoreChanged;
 - (bool)_handleControllerKeyAvailable;
 - (void)_handleCurrentHomeChanged:(id)arg1;
@@ -486,7 +487,6 @@
 - (void)_updateModelChangesAsPushed:(id)arg1 home:(id)arg2 pushMask:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (id)_updatePrimaryHome:(id)arg1 message:(id*)arg2;
 - (void)_updateResidentEnabledOnThisDevice:(bool)arg1 forceNotify:(bool)arg2 message:(id)arg3;
-- (void)_updateTransportInformationInstances:(id)arg1 remoteAccessories:(id)arg2;
 - (void)_updateUserPushCachedForUser:(id)arg1 device:(id)arg2;
 - (void)_uploadHomeConfigToCloud:(bool)arg1 withDelay:(double)arg2;
 - (void)_uploadHomeManagerToCloudSyncCompletion:(id /* block */)arg1;
@@ -595,6 +595,7 @@
 - (unsigned long long)homeDatabaseSize;
 - (id)homeManagerObjectChangeHandler;
 - (id)homeNames;
+- (id)homeUserFromMessage:(id)arg1 home:(id)arg2;
 - (id)homes;
 - (id)identifiersOfAccessories:(id)arg1;
 - (id)identifiersOfAccessoriesForHome:(id)arg1;

@@ -9,6 +9,7 @@
     PETScalarEventTracker * _notifyInitTracker;
     PETScalarEventTracker * _notifySuccessTracker;
     PETScalarEventTracker * _removeTracker;
+    <ATXTVIntentHandler> * _tvIntentHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,20 +19,23 @@
 
 + (id)_requestIdentifierForBundleId:(id)arg1;
 + (id)bundleIdFromRequestIdentifier:(id)arg1;
++ (id)localizedContentBodyStringWithString:(id)arg1 forAction:(id)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)_attachmentForIdentifier:(id)arg1;
+- (void)_handleIntent:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (bool)_isRTL;
 - (id)_localizedStringForKey:(id)arg1 defaultValue:(id)arg2 languageCode:(id)arg3;
 - (void)_postNotificationForATXAction:(id)arg1 actionResponse:(id)arg2;
 - (void)_postTestNotification;
 - (void)_postTestNotificationWithPredictionCount:(long long)arg1;
 - (void)_setupNotifications;
+- (void)_verifyNotificationCountAtMostExpectedMax:(unsigned long long)arg1;
 - (id)init;
 - (void)postNotificationForATXAction:(id)arg1 actionResponse:(id)arg2;
 - (void)postNotificationForATXActionResponse:(id)arg1;
-- (void)removeAllNotifications;
+- (void)removeAllNotificationsAndTrackEvent:(bool)arg1;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)workflowController:(id)arg1 didRunAction:(id)arg2;
 - (id)workflowController:(id)arg1 userInterfaceForRunningAction:(id)arg2;

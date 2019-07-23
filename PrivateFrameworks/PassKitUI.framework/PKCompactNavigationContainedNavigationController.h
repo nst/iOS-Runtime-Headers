@@ -7,6 +7,7 @@
     NSHashTable * _observers;
     NSLock * _observersLock;
     bool  _overridesContentOverlayInsets;
+    unsigned long long  _style;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool overridesContentOverlayInsets;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
+@property (nonatomic, readonly) unsigned long long style;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,11 +23,14 @@
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)addContentContainerObserver:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (void)loadView;
 - (bool)overridesContentOverlayInsets;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)pushViewController:(id)arg1 animated:(bool)arg2;
 - (void)removeContentContainerObserver:(id)arg1;
 - (void)setOverridesContentOverlayInsets:(bool)arg1;
+- (unsigned long long)style;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

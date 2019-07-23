@@ -24,6 +24,7 @@
 - (void)cancelOutstandingOperations;
 - (id)changeSetForSyncWithEventsToInsert:(id)arg1 eventIDsToDeletes:(id)arg2 error:(id*)arg3;
 - (id)changeSetFromCompressedData:(id)arg1 deviceIdentifier:(id)arg2 sequenceNumber:(unsigned long long)arg3;
+- (void)clearPrewarmedFlag;
 - (id)clientForPeer:(id)arg1;
 - (void)companionLinkCleanupTimerFired;
 - (void)createOrRescheduleCompanionLinkClientsCleanupTimer;
@@ -45,11 +46,11 @@
 - (void)handleDeviceFound:(id)arg1;
 - (void)handleDeviceLost:(id)arg1;
 - (void)handleFetchDeletedEventIDsWithRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
-- (void)handleFetchDeletedEventIDsWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 completion:(id /* block */)arg5;
+- (void)handleFetchDeletedEventIDsWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 plStartDate:(id)arg5 completion:(id /* block */)arg6;
 - (void)handleFetchEventsWithRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
-- (void)handleFetchEventsWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 completion:(id /* block */)arg5;
+- (void)handleFetchEventsWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 plStartDate:(id)arg5 completion:(id /* block */)arg6;
 - (void)handleFetchSourceDeviceIDWithRequest:(id)arg1 options:(id)arg2 responseHandler:(id /* block */)arg3;
-- (void)handleFetchSourceDeviceIDWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 completion:(id /* block */)arg5;
+- (void)handleFetchSourceDeviceIDWithResponse:(id)arg1 options:(id)arg2 error:(id)arg3 peer:(id)arg4 plStartDate:(id)arg5 completion:(id /* block */)arg6;
 - (void)handleInvalidation;
 - (void)handshakeWithDuetSyncPeer:(id)arg1 orError:(id)arg2;
 - (bool)hasAdditionsFlagForPeer:(id)arg1;

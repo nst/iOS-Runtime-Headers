@@ -18,10 +18,10 @@
 @property (nonatomic) bool didWriteSupportBundleSuccessfuly;
 @property (nonatomic, copy) NSUUID *documentUUID;
 @property (nonatomic, readonly) bool isSameDocumentUpdate;
+@property (nonatomic, readonly) bool isSavingCurrentDocument;
 @property (nonatomic, readonly) NSUUID *originalDocumentUUID;
 @property (nonatomic, copy) NSURL *originalURL;
 @property (nonatomic, readonly) NSUUID *originalVersionUUID;
-@property (nonatomic, readonly) bool preserveDocumentUUID;
 @property (nonatomic, retain) TSUSafeSaveAssistant *safeSaveAssistant;
 @property (nonatomic) bool shouldLeavePendingEndSave;
 @property (nonatomic, readonly) bool shouldUpdate;
@@ -34,10 +34,10 @@
 - (id)init;
 - (id)initWithOriginalDocumentUUID:(id)arg1 originalVersionUUID:(id)arg2 originalURL:(id)arg3 updateType:(long long)arg4;
 - (bool)isSameDocumentUpdate;
+- (bool)isSavingCurrentDocument;
 - (id)originalDocumentUUID;
 - (id)originalURL;
 - (id)originalVersionUUID;
-- (bool)preserveDocumentUUID;
 - (id)safeSaveAssistant;
 - (void)setDidWriteSupportBundleSuccessfuly:(bool)arg1;
 - (void)setDocumentUUID:(id)arg1;

@@ -100,6 +100,7 @@
 - (void)migrationPre44WriteActionType:(id)arg1 bundleId:(id)arg2 date:(id)arg3 action:(id)arg4 slotSets:(id)arg5 timeZone:(id)arg6 prevLocationUUID:(id)arg7 locationUUID:(id)arg8 weight:(double)arg9 actionUUID:(id)arg10 motionType:(long long)arg11;
 - (bool)migrationUpdateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;
 - (long long)migration_AddExtensionInfo;
+- (long long)migration_AddFeedbackColumns;
 - (long long)migration_AppLaunchHistogramToTable;
 - (long long)migration_DelinkFromCoreLocationVisitMonitoring;
 - (long long)migration_DeprecateGenericAppIntentModels;
@@ -107,6 +108,7 @@
 - (long long)migration_InstallDateToAppTable;
 - (long long)migration_LaunchHistoriesToAppTable;
 - (long long)migration_PrefillActionHistograms;
+- (long long)migration_RecreatePredictionFeedbackInfo;
 - (long long)migration_RemoveActionsWithoutTitle;
 - (long long)migration_RemoveAllSubsequentLaunches;
 - (long long)migration_RemoveFeedbackForUninstalledApps;
@@ -116,7 +118,7 @@
 - (long long)migration_failForTests;
 - (long long)migration_moveCacheFiles;
 - (void)pruneMessageRecipientsAddedBefore:(id)arg1;
-- (void)recordConfirms:(double)arg1 rejects:(double)arg2 forActionType:(id)arg3 bundleId:(id)arg4 action:(id)arg5 slotSet:(id)arg6 actionUUID:(id)arg7 date:(id)arg8;
+- (void)recordConfirms:(double)arg1 rejects:(double)arg2 forFeedbackType:(unsigned long long)arg3 forActionType:(id)arg4 bundleId:(id)arg5 action:(id)arg6 slotSet:(id)arg7 actionUUID:(id)arg8 date:(id)arg9 consumerSubType:(unsigned char)arg10;
 - (void)regenerateSlotSetKeyForBundleId:(id)arg1;
 - (void)removeActionDataForActionUUID:(id)arg1;
 - (void)removeActionDataForBundleId:(id)arg1;

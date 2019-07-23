@@ -9,6 +9,7 @@
 - (void)volumeController:(MPVolumeController *)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 mutedStateDidChange:(bool)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeControlAvailableDidChange:(bool)arg2;
+- (void)volumeController:(MPVolumeController *)arg1 volumeControlCapabilitiesDidChange:(unsigned int)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeControlLabelDidChange:(NSString *)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeValueDidChange:(float)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeWarningStateDidChange:(long long)arg2;

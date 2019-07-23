@@ -15,7 +15,7 @@
     }  _interactionSheet;
     bool  _isPresentingDDUserInterface;
     bool  _needsLinkIndicator;
-    struct optional<WebKit::InteractionInformationAtPosition> { 
+    struct Optional<WebKit::InteractionInformationAtPosition> { 
         bool init_; 
         union storage_t<WebKit::InteractionInformationAtPosition> { 
             unsigned char dummy_; 
@@ -28,7 +28,7 @@
                     bool includeSnapshot; 
                     bool includeLinkIndicator; 
                 } request; 
-                bool nodeAtPositionIsAssistedNode; 
+                bool nodeAtPositionIsFocusedElement; 
                 bool hasSelectionAtPosition; 
                 bool isSelectable; 
                 bool isNearMarkedText; 
@@ -39,6 +39,7 @@
                 bool isAnimatedImage; 
                 bool isElement; 
                 bool isDataDetectorLink; 
+                bool preventTextInteraction; 
                 struct FloatPoint { 
                     float m_x; 
                     float m_y; 
@@ -197,6 +198,7 @@
 - (void)_appendOpenActionsForURL:(id)arg1 actions:(id)arg2 elementInfo:(id)arg3;
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_presentationRectForSheetGivenPoint:(struct CGPoint { double x1; double x2; })arg1 inHostView:(id)arg2;
+- (long long)_presentationStyleForPositionInfo:(const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; struct FloatPoint { float x_14_1_1; float x_14_1_2; } x14; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_15_1_1; unsigned int x_15_1_2 : 1; unsigned int x_15_1_3 : 1; unsigned int x_15_1_4 : 1; unsigned int x_15_1_5 : 3; unsigned int x_15_1_6 : 26; unsigned int x_15_1_7; unsigned int x_15_1_8; unsigned int x_15_1_9; unsigned int x_15_1_10; unsigned int x_15_1_11; unsigned int x_15_1_12; unsigned int x_15_1_13; } x15; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_16_1_1; unsigned int x_16_1_2 : 1; unsigned int x_16_1_3 : 1; unsigned int x_16_1_4 : 1; unsigned int x_16_1_5 : 3; unsigned int x_16_1_6 : 26; unsigned int x_16_1_7; unsigned int x_16_1_8; unsigned int x_16_1_9; unsigned int x_16_1_10; unsigned int x_16_1_11; unsigned int x_16_1_12; unsigned int x_16_1_13; } x16; }*)arg1 elementInfo:(id)arg2;
 - (void)cleanupSheet;
 - (id)currentAvailableActionTitles;
 - (void)dealloc;

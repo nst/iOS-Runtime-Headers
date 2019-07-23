@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) NSOperationQueue *serialOperationQueue;
 @property (nonatomic) bool suspended;
+@property (nonatomic, readonly) NSOperationQueue *underlyingOperationQueue;
 
 - (void).cxx_destruct;
 - (void)cancelAllBlocks;
@@ -20,6 +21,7 @@
 - (void)setSerialOperationQueue:(id)arg1;
 - (void)setSuspended:(bool)arg1;
 - (bool)suspended;
+- (id)underlyingOperationQueue;
 - (void)withQualityOfService:(long long)arg1 enqueueBlockForMainThread:(id /* block */)arg2;
 
 @end

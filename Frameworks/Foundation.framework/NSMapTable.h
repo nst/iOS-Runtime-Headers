@@ -148,5 +148,6 @@
 - (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 - (id)tsu_allKeys;
 - (id)tsu_allObjects;
+- (void)tsu_enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 
 @end

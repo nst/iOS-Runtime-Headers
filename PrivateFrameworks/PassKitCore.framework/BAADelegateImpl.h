@@ -12,6 +12,7 @@
 + (int)confirmSigKey:(unsigned int)arg1 status:(int)arg2;
 + (int)generateSigKey:(unsigned int)arg1 keyData:(id*)arg2 attestation:(id*)arg3 pubKey:(id*)arg4;
 + (int)getBlessedUser:(unsigned int*)arg1 keybagUUID:(unsigned char)arg2;
++ (int)getSigKeyCertificates:(unsigned int)arg1 certificates:(id*)arg2;
 + (int)getSigKeyExpDate:(unsigned int)arg1 expirationDate:(unsigned long long*)arg2;
 + (bool)isInternal;
 + (int)setSigKey:(unsigned int)arg1 expirationDate:(unsigned long long)arg2 keyData:(id)arg3 certificates:(id)arg4;

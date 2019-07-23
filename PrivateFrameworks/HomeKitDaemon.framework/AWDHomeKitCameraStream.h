@@ -3,6 +3,7 @@
  */
 
 @interface AWDHomeKitCameraStream : PBCodable <NSCopying> {
+    int  _certified;
     AWDHomeKitCameraStreamMessaging * _controllerMessaging;
     unsigned long long  _duration;
     unsigned int  _errorCode;
@@ -10,6 +11,7 @@
         unsigned int duration : 1; 
         unsigned int startupDelay : 1; 
         unsigned int timestamp : 1; 
+        unsigned int certified : 1; 
         unsigned int errorCode : 1; 
         unsigned int receivedFirstFrame : 1; 
         unsigned int resolutionOnClose : 1; 
@@ -37,9 +39,11 @@
     AWDHomeKitCameraStreamMessaging * _watchMessaging;
 }
 
+@property (nonatomic) int certified;
 @property (nonatomic, retain) AWDHomeKitCameraStreamMessaging *controllerMessaging;
 @property (nonatomic) unsigned long long duration;
 @property (nonatomic) unsigned int errorCode;
+@property (nonatomic) bool hasCertified;
 @property (nonatomic, readonly) bool hasControllerMessaging;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasErrorCode;
@@ -82,9 +86,12 @@
 + (Class)resolutionCountType;
 
 - (void).cxx_destruct;
+- (int)StringAsCertified:(id)arg1;
 - (int)StringAsResolutionOnClose:(id)arg1;
 - (void)addReconfigurations:(id)arg1;
 - (void)addResolutionCount:(id)arg1;
+- (int)certified;
+- (id)certifiedAsString:(int)arg1;
 - (void)clearReconfigurations;
 - (void)clearResolutionCounts;
 - (id)controllerMessaging;
@@ -94,6 +101,7 @@
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
 - (unsigned int)errorCode;
+- (bool)hasCertified;
 - (bool)hasControllerMessaging;
 - (bool)hasDuration;
 - (bool)hasErrorCode;
@@ -133,9 +141,11 @@
 - (int)resolutionOnClose;
 - (id)resolutionOnCloseAsString:(int)arg1;
 - (id)sessionID;
+- (void)setCertified:(int)arg1;
 - (void)setControllerMessaging:(id)arg1;
 - (void)setDuration:(unsigned long long)arg1;
 - (void)setErrorCode:(unsigned int)arg1;
+- (void)setHasCertified:(bool)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasIsLocal:(bool)arg1;

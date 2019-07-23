@@ -2,17 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassView : UIView <PKPassFaceDelegate, PKPasscodeLockManagerObserver, UIGestureRecognizerDelegate> {
+@interface PKPassView : UIView <PKPasscodeLockManagerObserver, UIGestureRecognizerDelegate> {
     PKPassColorProfile * _colorProfile;
     long long  _contentMode;
     unsigned long long  _contentModeToken;
+    NSMutableArray * _delayedAnimations;
     <WLCardViewDelegate> * _delegate;
     PKPassFrontFaceView * _frontFace;
+    bool  _invalidated;
     double  _modalShadowVisibility;
     bool  _modallyPresented;
     PKPass * _pass;
     PKPasscodeLockManager * _passcodeLockManager;
     long long  _priorContentMode;
+    PKPassFaceViewRendererState * _rendererState;
     unsigned long long  _suppressedContent;
     NSString * _suppressingIdentifier;
     UITapGestureRecognizer * _tapRecognizer;
@@ -29,9 +32,10 @@
 @property (nonatomic) double modalShadowVisibility;
 @property (getter=isModallyPresented, nonatomic) bool modallyPresented;
 @property (nonatomic, readonly, retain) PKPass *pass;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (nonatomic, readonly) PKPassFaceViewRendererState *rendererState;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long suppressedContent;
-@property (nonatomic, readonly) bool suppressesPile;
 @property (nonatomic, readonly) NSString *uniqueID;
 
 - (void).cxx_destruct;
@@ -48,6 +52,7 @@
 - (long long)contentMode;
 - (void)dealloc;
 - (id)delegate;
+- (void)didAuthenticate;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfVisibleFace;
 - (bool)frontFaceBodyContentCreated;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -55,29 +60,30 @@
 - (id)initWithPass:(id)arg1;
 - (id)initWithPass:(id)arg1 content:(long long)arg2;
 - (id)initWithPass:(id)arg1 content:(long long)arg2 suppressedContent:(unsigned long long)arg3;
+- (id)initWithPass:(id)arg1 content:(long long)arg2 suppressedContent:(unsigned long long)arg3 rendererState:(id)arg4;
+- (void)invalidate;
 - (bool)isForcedFrontFaceResized;
 - (bool)isFrontFaceResized;
 - (bool)isModallyPresented;
+- (bool)isPaused;
 - (id)item;
 - (void)layoutSubviews;
 - (double)modalShadowVisibility;
 - (id)pass;
-- (bool)passFaceDeleteButtonEnabled;
-- (void)passFaceDeleteButtonPressed:(id)arg1;
-- (void)passFaceInfoButtonPressed:(id)arg1;
 - (void)passcodeLockManager:(id)arg1 didReceivePasscodeSet:(bool)arg2;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;
+- (id)rendererState;
 - (void)resizePassAnimated:(bool)arg1 notify:(bool)arg2;
 - (void)setContentMode:(long long)arg1;
 - (void)setContentMode:(long long)arg1 animated:(bool)arg2;
 - (void)setContentMode:(long long)arg1 animated:(bool)arg2 withDelay:(double)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmer:(double)arg1 animated:(bool)arg2;
-- (void)setLiveMotionEnabled:(bool)arg1;
 - (void)setModalShadowVisibility:(double)arg1;
 - (void)setModalShadowVisibility:(double)arg1 animated:(bool)arg2;
 - (void)setModalShadowVisibility:(double)arg1 animated:(bool)arg2 withDelay:(double)arg3;
 - (void)setModallyPresented:(bool)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setSuppressedContent:(unsigned long long)arg1;
 - (struct CGSize { double x1; double x2; })sizeOfFront;
 - (struct CGSize { double x1; double x2; })sizeOfFrontFace;
@@ -86,7 +92,6 @@
 - (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(bool)arg1;
 - (unsigned long long)suppressedContent;
-- (bool)suppressesPile;
 - (void)tapRecognized:(id)arg1;
 - (id)uniqueID;
 - (void)updateValidityDisplay;

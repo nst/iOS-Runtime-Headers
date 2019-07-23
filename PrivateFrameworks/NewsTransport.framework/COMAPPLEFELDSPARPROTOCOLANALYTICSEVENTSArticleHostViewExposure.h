@@ -26,6 +26,7 @@
     int  _breakingNewsArticlePosition;
     NSString * _campaignId;
     NSString * _campaignType;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSChannelData * _channelData;
     int  _characterCount;
     double  _computedGlobalScoreCoefficient;
     int  _coverArticleDisplayRank;
@@ -110,6 +111,7 @@
         unsigned int previousWebEmbedLocation : 1; 
         unsigned int publisherArticleVersion : 1; 
         unsigned int rankInVideoPlaylist : 1; 
+        unsigned int role : 1; 
         unsigned int topStoryMandatoryArticleCount : 1; 
         unsigned int topStoryOptionalArticleCount : 1; 
         unsigned int topStoryType : 1; 
@@ -161,6 +163,10 @@
     bool  _isTopStoryArticle;
     bool  _isUserSubscribedToParentFeed;
     bool  _isVideoInFeed;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueData * _issueData;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData * _issueExposureData;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData * _issueViewContextData;
+    COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData * _issueViewData;
     NSString * _language;
     int  _loadFailureReason;
     int  _maxActiveTimeSpent;
@@ -193,6 +199,7 @@
     NSString * _referencedArticleId;
     NSString * _referringSourceApplication;
     NSString * _referringUrl;
+    int  _role;
     NSString * _sectionHeadlineId;
     NSString * _sourceBinId;
     NSString * _sourceChannelId;
@@ -239,6 +246,7 @@
 @property (nonatomic) int breakingNewsArticlePosition;
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSChannelData *channelData;
 @property (nonatomic) int characterCount;
 @property (nonatomic) double computedGlobalScoreCoefficient;
 @property (nonatomic) int coverArticleDisplayRank;
@@ -292,6 +300,7 @@
 @property (nonatomic) bool hasBreakingNewsArticlePosition;
 @property (nonatomic, readonly) bool hasCampaignId;
 @property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasChannelData;
 @property (nonatomic) bool hasCharacterCount;
 @property (nonatomic) bool hasComputedGlobalScoreCoefficient;
 @property (nonatomic) bool hasCoverArticleDisplayRank;
@@ -341,6 +350,10 @@
 @property (nonatomic) bool hasIsTopStoryArticle;
 @property (nonatomic) bool hasIsUserSubscribedToParentFeed;
 @property (nonatomic) bool hasIsVideoInFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
+@property (nonatomic, readonly) bool hasIssueViewContextData;
+@property (nonatomic, readonly) bool hasIssueViewData;
 @property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic) bool hasLoadFailureReason;
 @property (nonatomic) bool hasMaxActiveTimeSpent;
@@ -372,6 +385,7 @@
 @property (nonatomic, readonly) bool hasReferencedArticleId;
 @property (nonatomic, readonly) bool hasReferringSourceApplication;
 @property (nonatomic, readonly) bool hasReferringUrl;
+@property (nonatomic) bool hasRole;
 @property (nonatomic, readonly) bool hasSectionHeadlineId;
 @property (nonatomic, readonly) bool hasSourceBinId;
 @property (nonatomic, readonly) bool hasSourceChannelId;
@@ -412,6 +426,10 @@
 @property (nonatomic) bool isTopStoryArticle;
 @property (nonatomic) bool isUserSubscribedToParentFeed;
 @property (nonatomic) bool isVideoInFeed;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueData *issueData;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueExposureData *issueExposureData;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewContextData *issueViewContextData;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLANALYTICSEVENTSIssueViewData *issueViewData;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic) int loadFailureReason;
 @property (nonatomic) int maxActiveTimeSpent;
@@ -444,6 +462,7 @@
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic, retain) NSString *referringSourceApplication;
 @property (nonatomic, retain) NSString *referringUrl;
+@property (nonatomic) int role;
 @property (nonatomic, retain) NSString *sectionHeadlineId;
 @property (nonatomic, retain) NSString *sourceBinId;
 @property (nonatomic, retain) NSString *sourceChannelId;
@@ -493,6 +512,7 @@
 - (int)StringAsParentFeedType:(id)arg1;
 - (int)StringAsPreviousArticleHostViewTypeIfSwipe:(id)arg1;
 - (int)StringAsPreviousWebEmbedLocation:(id)arg1;
+- (int)StringAsRole:(id)arg1;
 - (int)StringAsTopStoryType:(id)arg1;
 - (int)StringAsWidgetSection:(id)arg1;
 - (int)activeTimeSpent;
@@ -525,6 +545,7 @@
 - (int)breakingNewsArticlePosition;
 - (id)campaignId;
 - (id)campaignType;
+- (id)channelData;
 - (int)characterCount;
 - (void)clearFractionalCohortMemberships;
 - (void)clearNamedEntities;
@@ -597,6 +618,7 @@
 - (bool)hasBreakingNewsArticlePosition;
 - (bool)hasCampaignId;
 - (bool)hasCampaignType;
+- (bool)hasChannelData;
 - (bool)hasCharacterCount;
 - (bool)hasComputedGlobalScoreCoefficient;
 - (bool)hasCoverArticleDisplayRank;
@@ -646,6 +668,10 @@
 - (bool)hasIsTopStoryArticle;
 - (bool)hasIsUserSubscribedToParentFeed;
 - (bool)hasIsVideoInFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
+- (bool)hasIssueViewContextData;
+- (bool)hasIssueViewData;
 - (bool)hasLanguage;
 - (bool)hasLoadFailureReason;
 - (bool)hasMaxActiveTimeSpent;
@@ -677,6 +703,7 @@
 - (bool)hasReferencedArticleId;
 - (bool)hasReferringSourceApplication;
 - (bool)hasReferringUrl;
+- (bool)hasRole;
 - (bool)hasSectionHeadlineId;
 - (bool)hasSourceBinId;
 - (bool)hasSourceChannelId;
@@ -719,6 +746,10 @@
 - (bool)isTopStoryArticle;
 - (bool)isUserSubscribedToParentFeed;
 - (bool)isVideoInFeed;
+- (id)issueData;
+- (id)issueExposureData;
+- (id)issueViewContextData;
+- (id)issueViewData;
 - (id)language;
 - (int)loadFailureReason;
 - (id)loadFailureReasonAsString:(int)arg1;
@@ -763,6 +794,8 @@
 - (id)referencedArticleId;
 - (id)referringSourceApplication;
 - (id)referringUrl;
+- (int)role;
+- (id)roleAsString:(int)arg1;
 - (id)sectionHeadlineId;
 - (void)setActiveTimeSpent:(int)arg1;
 - (void)setAdSupportedChannel:(bool)arg1;
@@ -787,6 +820,7 @@
 - (void)setBreakingNewsArticlePosition:(int)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
+- (void)setChannelData:(id)arg1;
 - (void)setCharacterCount:(int)arg1;
 - (void)setComputedGlobalScoreCoefficient:(double)arg1;
 - (void)setCoverArticleDisplayRank:(int)arg1;
@@ -890,6 +924,7 @@
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersionInt64:(bool)arg1;
 - (void)setHasRankInVideoPlaylist:(bool)arg1;
+- (void)setHasRole:(bool)arg1;
 - (void)setHasSubscribedChannelCtr:(bool)arg1;
 - (void)setHasSubscriptionOnlyArticle:(bool)arg1;
 - (void)setHasTopStoryMandatoryArticleCount:(bool)arg1;
@@ -920,6 +955,10 @@
 - (void)setIsTopStoryArticle:(bool)arg1;
 - (void)setIsUserSubscribedToParentFeed:(bool)arg1;
 - (void)setIsVideoInFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
+- (void)setIssueViewContextData:(id)arg1;
+- (void)setIssueViewData:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setLoadFailureReason:(int)arg1;
 - (void)setMaxActiveTimeSpent:(int)arg1;
@@ -952,6 +991,7 @@
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setReferringSourceApplication:(id)arg1;
 - (void)setReferringUrl:(id)arg1;
+- (void)setRole:(int)arg1;
 - (void)setSectionHeadlineId:(id)arg1;
 - (void)setSourceBinId:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;

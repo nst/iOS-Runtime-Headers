@@ -12,7 +12,9 @@
     NSDictionary * _heuristicMetadata;
     INIntent * _intent;
     bool  _isFutureMedia;
+    bool  _isTVWhiteListedLongFormMedia;
     NSString * _itemIdentifier;
+    ATXAVRouteInfo * _routeInfo;
     NSString * _subtitle;
     NSString * _title;
     NSUserActivity * _userActivity;
@@ -25,6 +27,8 @@
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) CSSearchableItemAttributeSet *contentAttributeSet;
 @property (nonatomic, readonly) ATXActionCriteria *criteria;
+@property (nonatomic, readonly) NSString *customSubtitle;
+@property (nonatomic, readonly) NSString *customTitle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -33,7 +37,9 @@
 @property (nonatomic, readonly) INIntent *intent;
 @property (nonatomic, readonly) bool isFutureMedia;
 @property (nonatomic, readonly) bool isHeuristic;
+@property (nonatomic, readonly) bool isTVWhiteListedLongFormMedia;
 @property (nonatomic, readonly) NSString *itemIdentifier;
+@property (nonatomic, readonly) ATXAVRouteInfo *routeInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUserActivity *userActivity;
 @property (nonatomic, readonly) NSString *userActivityString;
@@ -41,6 +47,7 @@
 // Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
 
 + (id)_extractValueInKeyValueBlob:(id)arg1 withKey:(id)arg2;
++ (bool)_isTVWhiteListedLongFormMediaIntent:(id)arg1 bundleId:(id)arg2;
 + (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
 + (id)getActionKeyForBundleId:(id)arg1 actionType:(id)arg2;
 + (id)getDateFromUserActivityString:(id)arg1 forActionKey:(id)arg2;
@@ -56,11 +63,14 @@
 - (id)actionTitle;
 - (unsigned long long)actionType;
 - (id)actionUUID;
+- (id)atx_actionWithRouteInfo:(id)arg1;
 - (id)bundleId;
 - (id)contentAttributeSet;
 - (id)copyWithParameterWhitelist:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)criteria;
+- (id)customSubtitle;
+- (id)customTitle;
 - (id)dateForAction;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -69,7 +79,7 @@
 - (id)heuristic;
 - (id)heuristicMetadata;
 - (id)init;
-- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(bool)arg12 title:(id)arg13 subtitle:(id)arg14;
+- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(bool)arg12 routeInfo:(id)arg13 title:(id)arg14 subtitle:(id)arg15;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 criteria:(id)arg5 isFutureMedia:(bool)arg6 title:(id)arg7 subtitle:(id)arg8;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(bool)arg7 title:(id)arg8 subtitle:(id)arg9;
@@ -81,9 +91,11 @@
 - (bool)isEqualToAction:(id)arg1;
 - (bool)isFutureMedia;
 - (bool)isHeuristic;
+- (bool)isTVWhiteListedLongFormMedia;
 - (id)itemIdentifier;
 - (id)json;
 - (id)predictionTypeStringForPET;
+- (id)routeInfo;
 - (void)setCriteria:(id)arg1;
 - (void)setHeuristic:(id)arg1;
 - (id)underlyingInteraction;

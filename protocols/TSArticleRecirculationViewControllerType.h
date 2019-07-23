@@ -8,11 +8,7 @@
 - (struct CGSize { double x1; double x2; })contentSize;
 - (<TSArticleRecirculationViewControllerDelegate> *)delegate;
 - (NSArray *)headlines;
-- (<TSParentViewBoundsProvider> *)parentViewBoundsProvider;
-- (<TSPurchaseContextProvider> *)purchaseContextProvider;
 - (long long)section;
 - (void)setDelegate:(id <TSArticleRecirculationViewControllerDelegate>)arg1;
-- (void)setParentViewBoundsProvider:(id <TSParentViewBoundsProvider>)arg1;
-- (void)setPurchaseContextProvider:(id <TSPurchaseContextProvider>)arg1;
 
 @end

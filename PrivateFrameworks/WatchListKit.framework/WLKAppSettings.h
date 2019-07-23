@@ -24,6 +24,7 @@
 - (id)_statusStrings;
 - (unsigned long long)accessStatus;
 - (id)channelID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;

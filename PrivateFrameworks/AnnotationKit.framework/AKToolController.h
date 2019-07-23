@@ -29,6 +29,7 @@
 - (double)_modelBaseScaleFactorForNewAnnotation;
 - (void)_peripheralAvailabilityDidUpdate:(id)arg1;
 - (void)_setRectangleToFitTextOnTextAnnotation:(id)arg1;
+- (id)_strokeColorForNewAnnotation;
 - (double)_strokeWidthForNewAnnotation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_validatedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fitsInVisibleRegionOfOverlayView:(id)arg2 ownedByPageController:(id)arg3 centeredAtPoint:(struct CGPoint { double x1; double x2; })arg4;
 - (void)addNewAnnotation:(id)arg1 onPageController:(id)arg2 shouldSelect:(bool)arg3 shouldCascade:(bool)arg4;

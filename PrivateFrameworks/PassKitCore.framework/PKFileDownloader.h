@@ -14,10 +14,13 @@
 @property long long concurrentRequests;
 @property (retain) NSURLSession *session;
 
++ (id)sharedImageAssetDownloader;
+
 - (void).cxx_destruct;
 - (void)_handleResponseForURL:(id)arg1 data:(id)arg2 response:(id)arg3 error:(id)arg4;
 - (void)_scheduleDownload:(id)arg1 forURL:(id)arg2;
 - (void)_schedulePendingDownloads;
+- (id)cachedDataForURL:(id)arg1;
 - (long long)concurrentRequests;
 - (void)downloadFromUrl:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)downloadWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;

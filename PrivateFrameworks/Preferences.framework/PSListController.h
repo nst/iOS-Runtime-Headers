@@ -163,6 +163,7 @@
 - (id)editableTextColor;
 - (void)endUpdates;
 - (id)findFirstVisibleResponder;
+- (void)fontSliderDidEndSlidingNotificationPosted:(id)arg1;
 - (id)footerHyperlinkColor;
 - (bool)forceSynchronousIconLoadForCreatedCells;
 - (id)foregroundColor;

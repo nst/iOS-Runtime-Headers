@@ -34,5 +34,6 @@
 - (void)snapshotWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
+- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 suppressedContent:(unsigned long long)arg3 completion:(id /* block */)arg4;
 
 @end

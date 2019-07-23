@@ -39,6 +39,7 @@
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithUUID:(id)arg1 services:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;

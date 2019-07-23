@@ -22,6 +22,7 @@
 - (bool)hasMediaContainer;
 - (bool)hasPlayShuffled;
 - (bool)hasPlaybackRepeatMode;
+- (bool)hasProxiedBundleIdentifier;
 - (bool)hasRecoID;
 - (bool)hasResumePlayback;
 - (_INPBIntentMetadata *)intentMetadata;
@@ -32,6 +33,7 @@
 - (bool)playShuffled;
 - (int)playbackRepeatMode;
 - (NSString *)playbackRepeatModeAsString:(int)arg1;
+- (NSString *)proxiedBundleIdentifier;
 - (NSString *)recoID;
 - (bool)resumePlayback;
 - (void)setBuckets:(NSArray *)arg1;
@@ -44,6 +46,7 @@
 - (void)setMediaItems:(NSArray *)arg1;
 - (void)setPlayShuffled:(bool)arg1;
 - (void)setPlaybackRepeatMode:(int)arg1;
+- (void)setProxiedBundleIdentifier:(NSString *)arg1;
 - (void)setRecoID:(NSString *)arg1;
 - (void)setResumePlayback:(bool)arg1;
 

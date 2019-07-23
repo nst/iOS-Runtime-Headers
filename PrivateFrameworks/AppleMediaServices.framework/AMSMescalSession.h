@@ -16,13 +16,15 @@
 + (id)sessionWithType:(long long)arg1;
 
 - (void).cxx_destruct;
-- (bool)_cacheCertData:(id)arg1;
+- (bool)_cacheCertData:(id)arg1 expiration:(double)arg2;
 - (id)_cachedCertData;
+- (id)_cachedCertPath;
 - (id)_establishContextWithContract:(id)arg1 logKey:(id)arg2 error:(id*)arg3;
 - (id)_loadCertificateDataWithContract:(id)arg1 logKey:(id)arg2 error:(id*)arg3;
 - (id)_postExchangeData:(id)arg1 contract:(id)arg2 logKey:(id)arg3 error:(id*)arg4;
 - (void)_resetSession;
 - (bool)_shouldRetryFairPlayForError:(id)arg1;
+- (bool)_verifyEntitlements;
 - (bool)_verifyPrimeResponse:(id)arg1 error:(id*)arg2;
 - (id)initWithType:(long long)arg1;
 - (bool)primeTheConnectionWithContract:(id)arg1 logKey:(id)arg2 error:(id*)arg3;

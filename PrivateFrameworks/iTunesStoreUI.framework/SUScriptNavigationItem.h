@@ -41,7 +41,6 @@
 - (id)scriptAttributeKeys;
 - (void)setBackButtonTitle:(id)arg1;
 - (void)setHidesBackButton:(id)arg1;
-- (void)setHidesBackButton:(bool)arg1 animated:(bool)arg2;
 - (void)setLeftItem:(id)arg1;
 - (void)setLeftItem:(id)arg1 animated:(bool)arg2;
 - (void)setLeftItems:(id)arg1;

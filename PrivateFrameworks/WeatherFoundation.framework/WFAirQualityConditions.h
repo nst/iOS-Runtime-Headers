@@ -3,6 +3,7 @@
  */
 
 @interface WFAirQualityConditions : NSObject <NSSecureCoding> {
+    NSString * _airQualityScale;
     unsigned long long  _category;
     NSDate * _date;
     NSDate * _expirationDate;
@@ -14,6 +15,7 @@
     NSString * _provider;
 }
 
+@property (nonatomic, copy) NSString *airQualityScale;
 @property (nonatomic) unsigned long long category;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, retain) NSDate *expirationDate;
@@ -29,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (long long)airQualityIndex;
+- (id)airQualityScale;
 - (unsigned long long)category;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
@@ -41,6 +44,7 @@
 - (id)location;
 - (id)pollutants;
 - (id)provider;
+- (void)setAirQualityScale:(id)arg1;
 - (void)setCategory:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
 - (void)setExpirationDate:(id)arg1;

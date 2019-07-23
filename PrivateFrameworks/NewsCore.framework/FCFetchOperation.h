@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_semaphore> * _finishedSemaphore;
     double  _maximumCachedAge;
     FCFetchOperationResult * _result;
+    bool  _shouldFailOnMissingObjects;
     bool  _wifiOnly;
 }
 
@@ -19,6 +20,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *fetchCompletionQueue;
 @property double maximumCachedAge;
 @property (readonly) FCFetchOperationResult *result;
+@property bool shouldFailOnMissingObjects;
 @property bool wifiOnly;
 
 - (void).cxx_destruct;
@@ -41,7 +43,9 @@
 - (void)setFetchCompletionBlock:(id /* block */)arg1;
 - (void)setFetchCompletionQueue:(id)arg1;
 - (void)setMaximumCachedAge:(double)arg1;
+- (void)setShouldFailOnMissingObjects:(bool)arg1;
 - (void)setWifiOnly:(bool)arg1;
+- (bool)shouldFailOnMissingObjects;
 - (void)takeInputsFromFetchOperation:(id)arg1;
 - (bool)waitUntilFinishedWithTimeout:(double)arg1;
 - (bool)wifiOnly;

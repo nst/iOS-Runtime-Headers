@@ -8,6 +8,7 @@
         unsigned int continueRunning : 1; 
         unsigned int waitingForResume : 1; 
     }  _has;
+    NSArray * _steps;
     _INPBArchivedObject * _underlyingIntent;
     _INPBArchivedObject * _underlyingIntentResponse;
     NSString * _utterance;
@@ -23,13 +24,19 @@
 @property (nonatomic, readonly) bool hasUtterance;
 @property (nonatomic) bool hasWaitingForResume;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *steps;
+@property (nonatomic, readonly) unsigned long long stepsCount;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _INPBArchivedObject *underlyingIntent;
 @property (nonatomic, retain) _INPBArchivedObject *underlyingIntentResponse;
 @property (nonatomic, copy) NSString *utterance;
 @property (nonatomic) bool waitingForResume;
 
++ (Class)stepType;
+
 - (void).cxx_destruct;
+- (void)addStep:(id)arg1;
+- (void)clearSteps;
 - (bool)continueRunning;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
@@ -44,10 +51,14 @@
 - (void)setContinueRunning:(bool)arg1;
 - (void)setHasContinueRunning:(bool)arg1;
 - (void)setHasWaitingForResume:(bool)arg1;
+- (void)setSteps:(id)arg1;
 - (void)setUnderlyingIntent:(id)arg1;
 - (void)setUnderlyingIntentResponse:(id)arg1;
 - (void)setUtterance:(id)arg1;
 - (void)setWaitingForResume:(bool)arg1;
+- (id)stepAtIndex:(unsigned long long)arg1;
+- (id)steps;
+- (unsigned long long)stepsCount;
 - (id)underlyingIntent;
 - (id)underlyingIntentResponse;
 - (id)utterance;

@@ -19,7 +19,7 @@
 // Image: /System/Library/PrivateFrameworks/SignpostSupport.framework/SignpostSupport
 
 - (void).cxx_destruct;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1 shouldRedact:(bool)arg2 didRedactOut:(bool*)arg3;
 - (id)argument;
 - (id)initWithArgumentObject:(id)arg1 typeNamespace:(id)arg2 type:(id)arg3 tokens:(id)arg4 stringPrefix:(id)arg5;
 - (id)initWithDictionary:(id)arg1;

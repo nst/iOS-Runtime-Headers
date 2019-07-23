@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConversationKit.framework/ConversationKit
  */
 
-@interface ConversationKit.PlatformDisplayLinkBase : SwiftObject {
+@interface ConversationKit.PlatformDisplayLinkBase : Swift._SwiftObject {
     void callbackWrapper;
     void displayLink.storage;
 }

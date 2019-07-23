@@ -3,14 +3,14 @@
  */
 
 @interface WLKSiriSearchRequest : WLKRequest {
-    NSDictionary * _options;
+    NSDictionary * _query;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *options;
+@property (nonatomic, readonly, copy) NSDictionary *query;
 
 - (void).cxx_destruct;
-- (id)initWithOptions:(id)arg1;
+- (id)initWithQuery:(id)arg1;
 - (void)makeRequestWithCompletion:(id /* block */)arg1;
-- (id)options;
+- (id)query;
 
 @end

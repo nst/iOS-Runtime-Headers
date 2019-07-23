@@ -10,15 +10,10 @@
 
 @property (nonatomic, copy) NSString *currentText;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_invalidateTable;
 - (void)_tapGestureChanged:(id)arg1;
 - (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)currentText;
 - (id)initWithTable:(id)arg1;
 - (void)layoutSubviews;

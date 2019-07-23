@@ -33,14 +33,9 @@
 @property (nonatomic, readonly) bool terminalPointPlacedCarefully;
 @property (nonatomic, retain) UIResponder<UITextInput> *text;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)getLoupeBackgroundColor:(id)arg1;
 
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)animateToAutoscrollRenderer;
 - (void)animateToMagnifierRenderer;
 - (struct CGPoint { double x1; double x2; })animationPoint;

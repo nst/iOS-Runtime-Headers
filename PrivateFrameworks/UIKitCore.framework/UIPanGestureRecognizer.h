@@ -44,6 +44,8 @@
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } direction;
 @property (nonatomic) unsigned long long maximumNumberOfTouches;
 @property (nonatomic) unsigned long long minimumNumberOfTouches;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } translation;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } velocity;
 
 // Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
@@ -126,5 +128,10 @@
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 
 - (struct CGPoint { double x1; double x2; })direction;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
+- (struct CGPoint { double x1; double x2; })translation;
+- (struct CGPoint { double x1; double x2; })velocity;
 
 @end

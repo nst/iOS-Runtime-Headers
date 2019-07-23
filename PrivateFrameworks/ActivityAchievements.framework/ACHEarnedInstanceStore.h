@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ActivityAchievements.framework/ActivityAchievements
  */
 
-@interface ACHEarnedInstanceStore : NSObject <ACHEarnedInstanceEntitySyncedEarnedInstancesObserver> {
+@interface ACHEarnedInstanceStore : NSObject <ACHEarnedInstanceEntityJournalEntryAppliedObserver, ACHEarnedInstanceEntitySyncedEarnedInstancesObserver> {
     NSMutableArray * _allEarnedInstances;
     unsigned char  _device;
     ACHEarnedInstanceDuplicateUtility * _duplicateUtility;
@@ -44,6 +44,7 @@
 - (id)allEarnedInstances;
 - (unsigned char)device;
 - (id)duplicateUtility;
+- (void)earnedInstanceEntityDidApplyJournalEntriesInsertedEarnedInstances:(id)arg1 removedEarnedInstances:(id)arg2;
 - (bool)earnedInstanceEntityDidReceiveSyncedEarnedInstances:(id)arg1 provenance:(long long)arg2;
 - (id)earnedInstanceQueue;
 - (id)earnedInstances;

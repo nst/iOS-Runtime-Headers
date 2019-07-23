@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupRequiresPreflightProtocol> {
+@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupPresentationProtocol, PKViewControllerPreflightable> {
     bool  _allowsManualEntry;
     unsigned long long  _credentialProvisioningType;
     unsigned long long  _displayType;
@@ -13,12 +13,12 @@
     bool  _previouslyAcceptedTerms;
     PKPaymentSetupProduct * _setupProduct;
     bool  _shouldAutoProvision;
+    bool  _snapshotNeedsCorners;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, copy) UIImage *passSnapshot;
 @property (nonatomic) bool shouldAutoProvision;
 @property (readonly) Class superclass;
 
@@ -47,12 +47,12 @@
 - (void)loadView;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentRequirementsRequest;
-- (id)passSnapshot;
+- (id)onPresentationRemoveViewControllersAfterMarker;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)preflightWithCompletion:(id /* block */)arg1;
 - (id)readonlyFieldIdentifiers;
-- (void)setPassSnapshot:(id)arg1;
+- (void)setPassSnapshot:(id)arg1 needsCorners:(bool)arg2;
 - (void)setShouldAutoProvision:(bool)arg1;
 - (bool)shouldAutoProvision;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

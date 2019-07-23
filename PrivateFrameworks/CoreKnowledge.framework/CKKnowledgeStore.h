@@ -11,10 +11,8 @@
 
 @property (nonatomic, retain) <CKKnowledgeStoreDelegate> *delegate;
 @property (nonatomic, readonly) long long hash;
-@property (nonatomic, readonly) long long hashValue;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *path;
-@property (nonatomic, readonly) OS_dispatch_queue *sparqlQueue;
 
 + (id)defaultKnowledgeStore;
 + (id)defaultSynchedKnowledgeStore;
@@ -24,7 +22,7 @@
 + (id)synchedKnowledgeStoreWithName:(id)arg1;
 + (id)userDefaultsKnowledgeStore;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)delegate;
 - (id)dictionaryRepresentationAndReturnError:(id*)arg1;
 - (void)dictionaryRepresentationForKeysMatching:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -34,11 +32,8 @@
 - (id)entitiesAndReturnError:(id*)arg1;
 - (void)entitiesWithCompletionHandler:(id /* block */)arg1;
 - (id)entityWithIdentifier:(id)arg1;
-- (void)evaluateJSONLDEntryForEntity:(id)arg1 key:(id)arg2 value:(id)arg3 completionHandler:(id /* block */)arg4;
 - (long long)hash;
-- (long long)hashValue;
 - (void)importContentsOfJSONLDAtPath:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)importJSONLDWithData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)importTriplesFromFileAtPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 error:(id*)arg4;
@@ -63,7 +58,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 completionHandler:(id /* block */)arg3;
-- (id)sparqlQueue;
 - (void)sparqlResultsForQuery:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)subgraphWithEntities:(id)arg1;
 - (void)triplesMatching:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -72,7 +66,6 @@
 - (void)valueForKey:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)valuesAndReturnError:(id*)arg1;
 - (void)valuesForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)valuesForKeys:(id)arg1 error:(id*)arg2;
 - (void)valuesForKeysMatching:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)valuesForKeysMatching:(id)arg1 error:(id*)arg2;
 - (void)valuesWithCompletionHandler:(id /* block */)arg1;

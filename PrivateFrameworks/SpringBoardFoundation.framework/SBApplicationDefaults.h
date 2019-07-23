@@ -5,6 +5,7 @@
 @interface SBApplicationDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, readonly) double backgroundMultitaskingWatchdogTimeout;
+@property (nonatomic) NSString *bundleIdentifierToForceHomeAffordanceInset;
 @property (nonatomic, readonly) bool forcesMedusaAdoption;
 @property (nonatomic, readonly) bool ignoresDeclaredNetworkUsage;
 @property (nonatomic, readonly) bool shouldAllowScreenshotsInLoginWindow;

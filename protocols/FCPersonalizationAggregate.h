@@ -13,7 +13,8 @@
 - (NSDate *)lastModified;
 - (double)personalizationValueWithBaseline:(id <FCPersonalizationAggregate>)arg1 decayRate:(double)arg2;
 - (double)personalizationValueWithBaseline:(id <FCPersonalizationAggregate>)arg1 decayRate:(double)arg2 baselineClicksMultiplier:(double)arg3;
+- (double)personalizationValueWithCorrelatedAggregate:(id <FCPersonalizationAggregate>)arg1 baseline:(id <FCPersonalizationAggregate>)arg2 decayRate:(double)arg3 baselineClicksMultiplier:(double)arg4;
 - (double)powerWithDecayFactor:(double)arg1;
-- (double)relativePersonalizationValueWithBaselineAggregate:(id <FCPersonalizationAggregate>)arg1 decayFactor:(double)arg2 baselineClicksMultiplier:(double)arg3;
+- (double)relativePersonalizationValueWithCorrelatedAggregate:(id <FCPersonalizationAggregate>)arg1 baseline:(id <FCPersonalizationAggregate>)arg2 decayFactor:(double)arg3 baselineClicksMultiplier:(double)arg4;
 
 @end

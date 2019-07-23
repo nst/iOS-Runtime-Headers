@@ -21,6 +21,7 @@
         unsigned int successfulNewsTokenVerification : 1; 
     }  _has;
     NSString * _iadQtoken;
+    NTPBIssueData * _issueData;
     int  _paidSubscriptionConversionPointType;
     int  _parentFeedType;
     NSString * _sectionId;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) bool hasErrorMessage;
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadQtoken;
+@property (nonatomic, readonly) bool hasIssueData;
 @property (nonatomic) bool hasPaidSubscriptionConversionPointType;
 @property (nonatomic) bool hasParentFeedType;
 @property (nonatomic, readonly) bool hasSectionId;
@@ -57,6 +59,7 @@
 @property (nonatomic, readonly) bool hasSubscriptionPurchaseSessionId;
 @property (nonatomic) bool hasSuccessfulNewsTokenVerification;
 @property (nonatomic, retain) NSString *iadQtoken;
+@property (nonatomic, retain) NTPBIssueData *issueData;
 @property (nonatomic) int paidSubscriptionConversionPointType;
 @property (nonatomic) int parentFeedType;
 @property (nonatomic, retain) NSString *sectionId;
@@ -92,6 +95,7 @@
 - (bool)hasErrorMessage;
 - (bool)hasGroupType;
 - (bool)hasIadQtoken;
+- (bool)hasIssueData;
 - (bool)hasPaidSubscriptionConversionPointType;
 - (bool)hasParentFeedType;
 - (bool)hasSectionId;
@@ -102,6 +106,7 @@
 - (unsigned long long)hash;
 - (id)iadQtoken;
 - (bool)isEqual:(id)arg1;
+- (id)issueData;
 - (void)mergeFrom:(id)arg1;
 - (int)paidSubscriptionConversionPointType;
 - (id)paidSubscriptionConversionPointTypeAsString:(int)arg1;
@@ -125,6 +130,7 @@
 - (void)setHasSubscriptionOnlyArticlePreview:(bool)arg1;
 - (void)setHasSuccessfulNewsTokenVerification:(bool)arg1;
 - (void)setIadQtoken:(id)arg1;
+- (void)setIssueData:(id)arg1;
 - (void)setPaidSubscriptionConversionPointType:(int)arg1;
 - (void)setParentFeedType:(int)arg1;
 - (void)setSectionId:(id)arg1;

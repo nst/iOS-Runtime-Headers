@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) unsigned long long artworkSubtype;
 @property (nonatomic, readonly) bool canShowAlerts;
+@property (nonatomic, readonly) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property (nonatomic, readonly) unsigned long long deactivationReasons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -36,6 +37,7 @@
 - (unsigned long long)artworkSubtype;
 - (bool)canShowAlerts;
 - (Class)canvasClass;
+- (id)cornerRadiusConfiguration;
 - (unsigned long long)deactivationReasons;
 - (long long)deviceOrientation;
 - (bool)deviceOrientationEventsEnabled;

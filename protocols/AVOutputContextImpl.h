@@ -33,6 +33,7 @@
 - (void)removeOutputDevice:(AVOutputDevice *)arg1;
 - (void)setOutputDevice:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: AVOutputDevice *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AVOutputContextDestinationChange *, void*
 - (void)setOutputDevices:(NSArray *)arg1;
+- (void)setOutputDevices:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSArray *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AVOutputContextDestinationChange *, void*
 - (void)setParentOutputContext:(AVOutputContext *)arg1;
 - (void)setVolume:(float)arg1;
 - (bool)supportsMultipleOutputDevices;

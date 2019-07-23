@@ -35,7 +35,7 @@
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2;
 - (id)imageViewFactory;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 mediaSharingPolicyProvider:(id)arg8;
 - (void)layoutImageView;
 - (void)loadComponent:(id)arg1;
 - (id)mediaSharingPolicyProvider;
@@ -46,7 +46,7 @@
 - (void)setDragManager:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContentFrame;
 - (id)transitionContentView;
-- (bool)transitionViewUsesThumbnail;
+- (bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (id)viewForDragManager:(id)arg1;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
 

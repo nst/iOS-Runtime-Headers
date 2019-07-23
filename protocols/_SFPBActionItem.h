@@ -25,9 +25,11 @@
 - (_SFPBLatLng *)location;
 - (_SFPBGraphicalFloat *)longitude;
 - (NSData *)mapsData;
+- (int)mediaEntityType;
 - (NSString *)messageIdentifier;
 - (_SFPBURL *)messageURL;
 - (NSString *)offerType;
+- (NSString *)persistentID;
 - (NSString *)phoneNumber;
 - (NSString *)provider;
 - (_SFPBPunchout *)punchout;
@@ -47,9 +49,11 @@
 - (void)setLocation:(_SFPBLatLng *)arg1;
 - (void)setLongitude:(_SFPBGraphicalFloat *)arg1;
 - (void)setMapsData:(NSData *)arg1;
+- (void)setMediaEntityType:(int)arg1;
 - (void)setMessageIdentifier:(NSString *)arg1;
 - (void)setMessageURL:(_SFPBURL *)arg1;
 - (void)setOfferType:(NSString *)arg1;
+- (void)setPersistentID:(NSString *)arg1;
 - (void)setPhoneNumber:(NSString *)arg1;
 - (void)setProvider:(NSString *)arg1;
 - (void)setPunchout:(_SFPBPunchout *)arg1;

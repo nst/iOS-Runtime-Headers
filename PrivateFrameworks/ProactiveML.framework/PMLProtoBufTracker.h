@@ -12,6 +12,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (readonly) AWDProactiveModelFittingModelInfo *modelInfo;
+@property (readonly) unsigned long long quantizationNumberOfBuckets;
 @property (readonly) Class superclass;
 
 + (id)awdTrackerForPlanId:(struct NSString { Class x1; }*)arg1;
@@ -26,6 +28,8 @@
 - (id)initWithAdapter:(id)arg1 modelInfo:(id)arg2;
 - (id)initWithAdapter:(id)arg1 modelInfo:(id)arg2 quantizationBuckets:(unsigned long long)arg3;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)modelInfo;
+- (unsigned long long)quantizationNumberOfBuckets;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)trackEvaluationMetrics:(id)arg1 minibatchStats:(id)arg2;
 - (id)trackGradient:(id)arg1 scaleFactor:(float)arg2 minibatchStats:(id)arg3 evaluationMetrics:(id)arg4 serverIteration:(unsigned long long)arg5;

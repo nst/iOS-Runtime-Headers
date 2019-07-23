@@ -10,5 +10,6 @@
 @optional
 
 - (bool)shouldBindRowsTogether;
+- (NSArray *)showcaseRowMetricsForExpectedWidth:(double)arg1;
 
 @end

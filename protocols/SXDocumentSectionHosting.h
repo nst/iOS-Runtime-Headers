@@ -5,7 +5,7 @@
 
 @required
 
-- (UIView *)sectionHostingView;
+- (UIScrollView *)sectionHostingView;
 - (UIViewController *)sectionHostingViewController;
 
 @end

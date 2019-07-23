@@ -18,6 +18,7 @@
 - (id)imageViewForResource:(id)arg1;
 - (id)initWithResourceDataSourceProvider:(id)arg1 reachabilityProvider:(id)arg2;
 - (id)reachabilityProvider;
+- (id)repeatableImageViewForResource:(id)arg1;
 - (id)resourceDataSourceProvider;
 
 @end

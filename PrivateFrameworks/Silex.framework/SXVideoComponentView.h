@@ -54,7 +54,7 @@
 - (bool)canEnterFullscreen;
 - (void)discardContents;
 - (void)enterFullscreen;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 resourceDataSource:(id)arg7 reachabilityProvider:(id)arg8 adController:(id)arg9 scrollObserverManager:(id)arg10 volumeProvider:(id)arg11 videoPlayerViewControllerManager:(id)arg12 bookmarkManager:(id)arg13;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 resourceDataSource:(id)arg7 reachabilityProvider:(id)arg8 adController:(id)arg9 scrollObserverManager:(id)arg10 volumeProvider:(id)arg11 videoPlayerViewControllerManager:(id)arg12 bookmarkManager:(id)arg13;
 - (bool)isReceivingViewportDynamicBoundsChanges;
 - (void)loadComponent:(id)arg1;
 - (void)loadPosterFrameImage;
@@ -84,9 +84,9 @@
 - (id /* block */)thumbnailRequestCancelHandler;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContentFrame;
 - (id)transitionContentView;
-- (bool)transitionViewUsesThumbnail;
 - (void)unloadVideoPlayerIfShowingAd;
 - (void)unregisterForViewportDynamicBoundsChanges;
+- (bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (id)videoAdForVideoPlayerViewController:(id)arg1;
 - (id /* block */)videoAdWithCompletionBlock:(id /* block */)arg1;
 - (id)videoComponentAnalyticsReporter;

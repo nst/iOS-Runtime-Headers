@@ -13,8 +13,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultExtendedControlHeight;
 
 - (void).cxx_destruct;
@@ -23,9 +21,6 @@
 - (bool)_shouldShowHideKeyboard;
 - (bool)_shouldUseFullMetrics;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })extendedViewInsets;
 - (double)extendedViewTop;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVMLShelfView : _TVShelfView <TVRowHosting_Collection>
+@interface _TVMLShelfView : _TVShelfView <TVRowHosting_Collection> {
+    double  _showcaseFactor;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -10,6 +12,7 @@
 @property (nonatomic, readonly) bool shouldBindRowsTogether;
 @property (readonly) Class superclass;
 
+- (id)_rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 firstItemRowIndex:(long long*)arg3 forShowcase:(bool)arg4;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_selectionMarginsForCell:(id)arg1;
 - (bool)_shouldFadeCellsForBoundChangeWhileRotating;
 - (id)init;
@@ -17,8 +20,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 _shelfViewLayout:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 shelfViewLayout:(id)arg2;
+- (void)layoutSubviews;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long*)arg2;
 - (id)rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 firstItemRowIndex:(long long*)arg3;
 - (bool)shouldBindRowsTogether;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)tv_setShowcaseFactor:(double)arg1;
 
 @end

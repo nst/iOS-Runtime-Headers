@@ -16,9 +16,11 @@
 - (id)_initWithAccessorSequence:(id)arg1;
 - (id)accessorSequence;
 - (unsigned long long)hash;
+- (id)initWithAccessorSequence:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (bool)isEqual:(id)arg1;
-- (id)propertyPathByCombiningAccesserSequence:(id)arg1;
+- (id)propertyPathByCombiningAccessorSequence:(id)arg1;
+- (id)propertyPathByRemovingFirstAccessor;
 - (id)string;
 
 @end

@@ -34,7 +34,7 @@
 - (id)executable;
 - (int)executeOnSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 usingStorage:(id)arg2 withExecutionTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
 - (id)extractable;
-- (id)initWithInputRequirement:(id)arg1 outputRequirements:(id)arg2 applyingValidBufferRectIfPresent:(bool)arg3;
+- (id)initWithInputRequirement:(id)arg1 outputRequirements:(id)arg2;
 - (bool)mustExecuteWhenAllowed;
 - (id)newStorage;
 - (int)prepareForExecution;

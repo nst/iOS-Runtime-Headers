@@ -13,11 +13,13 @@
 + (bool)_performMigrationIfNeededForStoreAtLocation:(id)arg1 logger:(id)arg2 fileManager:(id)arg3 error:(id*)arg4;
 + (id)_readContentFromDiskAtLocation:(id)arg1 logger:(id)arg2 error:(id*)arg3;
 + (bool)_writeContent:(id)arg1 toDiskAtLocation:(id)arg2 logger:(id)arg3 error:(id*)arg4;
++ (bool)contentExistsAtLocation:(id)arg1;
 + (id)currentVersion;
 + (id)dbLocationForStoreLocation:(id)arg1;
 + (bool)isFileNotFoundError:(id)arg1;
 + (id)readContentFromDiskAtLocation:(id)arg1 logger:(id)arg2 error:(id*)arg3;
 + (id)readVersionForStoreAtLocation:(id)arg1 error:(id*)arg2;
++ (bool)removeFilesAtLocation:(id)arg1 error:(id*)arg2;
 + (bool)writeContent:(id)arg1 toDiskAtLocation:(id)arg2 logger:(id)arg3 error:(id*)arg4;
 + (bool)writeVersion:(id)arg1 toDiskAtLocation:(id)arg2 error:(id*)arg3;
 

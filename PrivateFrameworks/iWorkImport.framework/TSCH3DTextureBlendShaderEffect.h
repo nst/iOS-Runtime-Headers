@@ -10,11 +10,12 @@
 + (void)setBlendFactor:(float)arg1 unit:(long long)arg2 effectsStates:(id)arg3;
 + (id)variableBlendFactor;
 + (id)variableBlendTexture;
++ (id)variableTexture;
 
 - (void)addVariables:(id)arg1;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
 - (oneway void)release;
 - (id)retain;
 - (unsigned long long)retainCount;

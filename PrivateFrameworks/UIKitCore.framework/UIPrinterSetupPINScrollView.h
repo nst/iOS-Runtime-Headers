@@ -10,15 +10,10 @@
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic) double visibleHeight;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (bool)_scrollsToMakeFirstResponderVisible;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)contentView;
+- (void)dealloc;
 - (id)initWithContentView:(id)arg1;
 - (void)keyboardDidChangeFrame:(id)arg1;
 - (void)layoutSubviews;

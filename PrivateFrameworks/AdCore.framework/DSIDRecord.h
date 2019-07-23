@@ -132,7 +132,8 @@
 - (bool)isEqual:(id)arg1;
 - (void)reconcileIDFAandLAT;
 - (void)removeIDForClientType:(long long)arg1;
-- (void)resetiAdIDs:(id /* block */)arg1;
+- (void)resetiAdIDs;
+- (void)resetiAdIDsAndDPID:(id /* block */)arg1;
 - (void)retrieveSegmentDataFromiTunes:(id /* block */)arg1;
 - (void)sendLATStatusToAdPlatforms:(id /* block */)arg1;
 - (void)sendSegmentDataToAdPlatforms:(id /* block */)arg1;

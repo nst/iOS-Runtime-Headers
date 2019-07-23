@@ -4,11 +4,13 @@
 
 @interface TTSSpeechVoice : NSObject <NSCopying, NSSecureCoding> {
     bool  _canBeDownloaded;
+    bool  _excludeInAvailableVoiceList;
     long long  _footprint;
     long long  _gender;
     NSString * _identifier;
     bool  _isCombinedFootprint;
     bool  _isDefault;
+    bool  _isFallbackDefault;
     NSString * _language;
     NSString * _name;
     NSString * _nonCombinedVoiceId;
@@ -18,11 +20,13 @@
 }
 
 @property (nonatomic) bool canBeDownloaded;
+@property (nonatomic, readonly) bool excludeInAvailableVoiceList;
 @property (nonatomic) long long footprint;
 @property (nonatomic) long long gender;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) bool isCombinedFootprint;
 @property (nonatomic, readonly) bool isDefault;
+@property (nonatomic, readonly) bool isFallbackDefault;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nonCombinedVoiceId;
@@ -38,6 +42,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)excludeInAvailableVoiceList;
 - (long long)footprint;
 - (long long)gender;
 - (id)identifier;
@@ -46,6 +51,7 @@
 - (bool)isCombinedFootprint;
 - (bool)isDefault;
 - (bool)isEqual:(id)arg1;
+- (bool)isFallbackDefault;
 - (id)language;
 - (id)name;
 - (id)nonCombinedVoiceId;

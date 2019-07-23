@@ -34,9 +34,12 @@
 @property (nonatomic, readonly) NSString *unatomizedRecipientText;
 
 - (void).cxx_destruct;
+- (id)_anisetteData;
 - (bool)_chatShowsUnexpectedlyLoggedOutNotification;
 - (double)_entryViewTopInsetPadding;
+- (bool)_isWhitelistedBusinessRecipient;
 - (void)_passKitUIDismissed:(id)arg1;
+- (void)_processBizIntentIfNeeded;
 - (void)_saveDraftState;
 - (void)_setConversationDeferredSetup;
 - (bool)_shouldSetToFieldAsFirstResponder;
@@ -102,6 +105,7 @@
 - (void)setPrepopulatedComposition:(id)arg1;
 - (void)setPrepopulatedRecipients:(id)arg1;
 - (bool)shouldUseNavigationBarCanvasView;
+- (id)textViewOnscreenWithEntryView;
 - (double)topInsetPadding;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;

@@ -4,6 +4,10 @@
 
 @interface FBSDisplayConfigurationRequest : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     long long  _hdrMode;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _nativePixelSize;
     long long  _overscanCompensation;
     struct CGSize { 
         double width; 
@@ -16,6 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long hdrMode;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } nativePixelSize;
 @property (nonatomic, readonly) long long overscanCompensation;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
 @property (nonatomic, readonly) double refreshRate;
@@ -36,6 +41,7 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (struct CGSize { double x1; double x2; })nativePixelSize;
 - (long long)overscanCompensation;
 - (struct CGSize { double x1; double x2; })pixelSize;
 - (double)refreshRate;

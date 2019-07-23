@@ -3,6 +3,12 @@
  */
 
 @interface IKJSNavigationDocument : IKJSObject <IKJSNavigationDocument> {
+    struct { 
+        bool hasClear; 
+        bool hasSetDocuments; 
+        bool hasPresentModal; 
+        bool hasDismissModal; 
+    }  _delegateSelectors;
     <IKAppNavigationController> * _navigationControllerDelegate;
 }
 
@@ -24,5 +30,6 @@
 - (void)pushDocument:(id)arg1 :(id)arg2;
 - (void)removeDocument:(id)arg1;
 - (void)replaceDocument:(id)arg1 :(id)arg2 :(id)arg3;
+- (void)setDocuments:(id)arg1 :(id)arg2;
 
 @end

@@ -11,8 +11,9 @@
     NSString * _phoneticFamilyName;
     NSString * _phoneticGivenName;
     long long  _role;
+    bool  _useMeCardIfAvailable;
     NSString * _userIdentifier;
-    CRKImage * _userImage;
+    CRKNotSoGoodImage * _userImage;
     NSData * _userImageData;
     NSString * _userSource;
 }
@@ -32,11 +33,13 @@
 @property (nonatomic, copy) NSString *phoneticGivenName;
 @property (nonatomic) long long role;
 @property (readonly) Class superclass;
+@property (getter=shouldUseMeCardIfAvailable, nonatomic) bool useMeCardIfAvailable;
 @property (nonatomic, copy) NSString *userIdentifier;
-@property (nonatomic, copy) CRKImage *userImage;
+@property (nonatomic, copy) CRKNotSoGoodImage *userImage;
 @property (nonatomic, copy) NSData *userImageData;
 @property (nonatomic, copy) NSString *userSource;
 
++ (id)customUserFromMeCardUser:(id)arg1;
 + (id)instanceWithKeyValue:(id)arg1;
 + (id)instanceWithParentObject:(id)arg1 keyValue:(id)arg2;
 + (id)instanceWithRecord:(id)arg1;
@@ -62,6 +65,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (bool)isChangedFrom:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqualToUser:(id)arg1;
 - (bool)isMeCardUser;
 - (bool)isValid;
 - (id)nameComponents;
@@ -77,10 +81,12 @@
 - (void)setPhoneticFamilyName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;
 - (void)setRole:(long long)arg1;
+- (void)setUseMeCardIfAvailable:(bool)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setUserImage:(id)arg1;
 - (void)setUserImageData:(id)arg1;
 - (void)setUserSource:(id)arg1;
+- (bool)shouldUseMeCardIfAvailable;
 - (void)updateUserImage;
 - (id)userIdentifier;
 - (id)userImage;

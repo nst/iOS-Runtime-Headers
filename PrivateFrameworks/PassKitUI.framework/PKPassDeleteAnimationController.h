@@ -13,7 +13,7 @@
 @property (nonatomic, readonly, retain) PKPassGroupView *groupView;
 @property (nonatomic, readonly, retain) PKPassView *passView;
 
-+ (void)performPassbookDeleteWithView:(id)arg1 completion:(id /* block */)arg2;
++ (void)performPassbookDeleteWithView:(id)arg1 inSuperview:(id)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;

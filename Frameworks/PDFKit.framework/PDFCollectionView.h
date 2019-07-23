@@ -8,6 +8,7 @@
     UIColor * _pdfBackgroundColor;
     <PDFCollectionViewDataSource> * _pdfDataSource;
     <PDFCollectionViewDelegate> * _pdfDelegate;
+    PDFThumbnailView * _thumbnailView;
 }
 
 @property (nonatomic, copy) UIColor *pdfBackgroundColor;
@@ -25,6 +26,7 @@
 - (void)setPdfBackgroundColor:(id)arg1;
 - (void)setPdfDataSource:(id)arg1;
 - (void)setPdfDelegate:(id)arg1;
+- (void)setThumbnailView:(id)arg1;
 - (void)setup;
 
 @end

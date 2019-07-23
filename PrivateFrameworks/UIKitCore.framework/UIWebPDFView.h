@@ -73,8 +73,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long totalPages;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)initialize;
 + (void)setAsPDFDocRepAndView;
 
@@ -103,16 +101,13 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewCachingBoundsInUIViewCoords;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewportBoundsInUIVIewCoordsWithView:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewportBoundsInUIViewCoords;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)annotation:(id)arg1 isBeingPressedAtPoint:(struct CGPoint { double x1; double x2; })arg2 controller:(id)arg3;
 - (void)annotation:(id)arg1 wasTouchedAtPoint:(struct CGPoint { double x1; double x2; })arg2 controller:(id)arg3;
 - (id)backgroundColorForUnRenderedContent;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (struct CGPDFDocument { }*)cgPDFDocument;
 - (void)clearSelection;
+- (void)dealloc;
 - (void)didCompleteLayout;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)didRotate:(id)arg1;

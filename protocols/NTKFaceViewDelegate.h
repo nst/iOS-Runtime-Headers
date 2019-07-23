@@ -9,6 +9,9 @@
 - (NSString *)faceViewComplicationAppIdentifierForSlot:(NSString *)arg1;
 - (NTKComplication *)faceViewComplicationForSlot:(NSString *)arg1;
 - (bool)faceViewComplicationIsEmptyForSlot:(NSString *)arg1;
+- (NSArray *)faceViewComplicationSlots;
+- (void)faceViewDidChangeVerticalPaddingForStatusBar;
+- (void)faceViewDidChangeWantsStatusBarIconShadow;
 - (void)faceViewDidHideOrShowComplicationSlot;
 - (void)faceViewDidLayoutSubviews;
 - (void)faceViewDidReloadSnapshotContentViews;

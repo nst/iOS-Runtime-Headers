@@ -5,6 +5,7 @@
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying> {
     GEOPDAddressObjectGeocodingResult * _addressObjectGeocodingResult;
     GEOPDAutocompleteResult * _autocompleteResult;
+    GEOPDBatchCategoryLookupResult * _batchCategoryLookupResult;
     GEOPDBatchPopularNearbySearchResult * _batchPopularNearbySearchResult;
     GEOPDBatchSpatialLookupResult * _batchSpatialLookupResult;
     GEOPDBrandLookupResult * _brandLookupResult;
@@ -36,6 +37,7 @@
 
 @property (nonatomic, retain) GEOPDAddressObjectGeocodingResult *addressObjectGeocodingResult;
 @property (nonatomic, retain) GEOPDAutocompleteResult *autocompleteResult;
+@property (nonatomic, retain) GEOPDBatchCategoryLookupResult *batchCategoryLookupResult;
 @property (nonatomic, retain) GEOPDBatchPopularNearbySearchResult *batchPopularNearbySearchResult;
 @property (nonatomic, retain) GEOPDBatchSpatialLookupResult *batchSpatialLookupResult;
 @property (nonatomic, retain) GEOPDBrandLookupResult *brandLookupResult;
@@ -48,6 +50,7 @@
 @property (nonatomic, retain) GEOPDGeocodingResult *geocodingResult;
 @property (nonatomic, readonly) bool hasAddressObjectGeocodingResult;
 @property (nonatomic, readonly) bool hasAutocompleteResult;
+@property (nonatomic, readonly) bool hasBatchCategoryLookupResult;
 @property (nonatomic, readonly) bool hasBatchPopularNearbySearchResult;
 @property (nonatomic, readonly) bool hasBatchSpatialLookupResult;
 @property (nonatomic, readonly) bool hasBrandLookupResult;
@@ -95,6 +98,7 @@
 - (void).cxx_destruct;
 - (id)addressObjectGeocodingResult;
 - (id)autocompleteResult;
+- (id)batchCategoryLookupResult;
 - (id)batchPopularNearbySearchResult;
 - (id)batchSpatialLookupResult;
 - (id)brandLookupResult;
@@ -111,6 +115,7 @@
 - (id)geocodingResult;
 - (bool)hasAddressObjectGeocodingResult;
 - (bool)hasAutocompleteResult;
+- (bool)hasBatchCategoryLookupResult;
 - (bool)hasBatchPopularNearbySearchResult;
 - (bool)hasBatchSpatialLookupResult;
 - (bool)hasBrandLookupResult;
@@ -156,6 +161,7 @@
 - (id)searchZeroKeywordWithSearchResultsSuggestionResult;
 - (void)setAddressObjectGeocodingResult:(id)arg1;
 - (void)setAutocompleteResult:(id)arg1;
+- (void)setBatchCategoryLookupResult:(id)arg1;
 - (void)setBatchPopularNearbySearchResult:(id)arg1;
 - (void)setBatchSpatialLookupResult:(id)arg1;
 - (void)setBrandLookupResult:(id)arg1;

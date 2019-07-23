@@ -22,7 +22,8 @@
 
 - (void).cxx_destruct;
 - (id)_actionDescriptionString;
-- (id)_actionTypeString;
+- (id)_actionTypeStringForNFC;
+- (id)_actionTypeStringForQRCode;
 - (id)_bbActionFromActionPickerItem:(id)arg1;
 - (bool)_contentIsPreviewable;
 - (id)_defaultURL;

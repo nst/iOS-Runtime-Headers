@@ -82,6 +82,7 @@
 - (id)newScriptInterface;
 - (id)newScriptInterfaceForWebViewManager:(id)arg1;
 - (void)parentViewControllerHierarchyDidChange;
+- (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (void)setAccount:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;

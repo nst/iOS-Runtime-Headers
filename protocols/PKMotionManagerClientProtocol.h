@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setRollPitch;
+- (void)motionManager:(PKMotionManager *)arg1 didReceiveMotion:(CMDeviceMotion *)arg2;
 
 @end

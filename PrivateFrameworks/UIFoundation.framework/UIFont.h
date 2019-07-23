@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface UIFont : NSObject <DebugHierarchyValue_Fallback, NSCopying, NSSecureCoding>
+@interface UIFont : NSObject <NSCopying, NSSecureCoding>
 
 @property (nonatomic, readonly) double ascender;
 @property (nonatomic, readonly) double capHeight;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double descender;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *familyName;
 @property (nonatomic, readonly) UIFontDescriptor *fontDescriptor;
 @property (nonatomic, readonly) NSString *fontName;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double leading;
 @property (nonatomic, readonly) double lineHeight;
 @property (nonatomic, readonly) double maximumPointSizeAfterScaling;
@@ -22,7 +19,6 @@
 @property (nonatomic, readonly) UIFont *pu_fontWithMonospacedNumbers;
 @property (nonatomic, readonly) UIFont *px_fontWithMonospacedNumbers;
 @property (nonatomic, readonly) NSString *rc_textStyle;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *textStyleForScaling;
 @property (nonatomic, readonly) double xHeight;
 
@@ -148,10 +144,6 @@
 - (double)underlineThickness;
 - (id)verticalFont;
 - (double)xHeight;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)fallback_debugHierarchyValueWithOutOptions:(id*)arg1 outError:(id*)arg2;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
@@ -366,6 +358,14 @@
 - (id)hk_fontByAddingSymbolicTraits:(unsigned int)arg1;
 - (id)hk_fontByRemovingSymbolicTraits:(unsigned int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)hr_roundedFontOfSize:(double)arg1;
++ (id)hr_roundedFontOfSize:(double)arg1 weight:(double)arg2;
++ (id)hr_roundedFontOfStyle:(id)arg1 weight:(double)arg2;
+
+- (id)hr_monospacedFont;
+
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 - (id)_lp_CSSFontWeight;
@@ -392,10 +392,16 @@
 
 - (id)naui_dynamicFontTextStyleDescriptor;
 
+// Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
+
++ (id)ts_preferredFontForTextStyle:(unsigned long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NewsFeedLayout.framework/NewsFeedLayout
 
 + (id)_nfl_fontNameWithPrefix:(id)arg1 midfix:(id)arg2 suffix:(id)arg3;
 + (id)_nfl_fontWeightLookup;
++ (id)nfl_drukTextBoldForSize:(double)arg1;
++ (id)nfl_drukWideMediumForSize:(double)arg1;
 + (id)nfl_fontWithName:(id)arg1 size:(double)arg2;
 + (id)nfl_systemFontNameForWeight:(double)arg1;
 + (id)nfl_systemFontNameForWeight:(double)arg1 condensed:(bool)arg2;
@@ -439,6 +445,7 @@
 - (bool)fontHasSingleLineA;
 - (id)fontWithSingleLineA;
 - (id)fontWithTabularNumbers;
+- (id)ic_fontWithoutSingleLineA;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
@@ -519,8 +526,11 @@
 
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
++ (id)_fontFromTextStyle:(long long)arg1 maximumContentSizeCategory:(id)arg2 fontWeight:(long long)arg3 fontSize:(double)arg4 symbolicTraits:(unsigned int)arg5 fontFeature:(long long)arg6;
++ (id)_uiFontAttributesForFeature:(long long)arg1;
++ (id)_uifontWeightFromFontWeight:(long long)arg1;
++ (id)vui_fontFromTextLayout:(id)arg1;
 + (id)vui_fontFromTextStyle:(long long)arg1 fontWeight:(long long)arg2 fontSize:(double)arg3 symbolicTraits:(unsigned int)arg4;
-+ (id)vui_fontFromTextStyle:(long long)arg1 maximumContentSizeCategory:(id)arg2 fontWeight:(long long)arg3 fontSize:(double)arg4 symbolicTraits:(unsigned int)arg5;
 
 - (double)baselineHeight;
 - (double)bottomMarginWithBaselineMargin:(double)arg1 traitCollection:(id)arg2;

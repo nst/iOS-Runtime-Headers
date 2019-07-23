@@ -22,7 +22,6 @@
 @property (nonatomic, copy) NSArray *pseudoElements;
 @property (nonatomic) long long pseudoType;
 @property (nonatomic, copy) NSString *publicId;
-@property (nonatomic, copy) NSString *role;
 @property (nonatomic) long long shadowRootType;
 @property (nonatomic, copy) NSArray *shadowRoots;
 @property (nonatomic, copy) NSString *systemId;
@@ -51,7 +50,6 @@
 - (id)pseudoElements;
 - (long long)pseudoType;
 - (id)publicId;
-- (id)role;
 - (void)setAttributes:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setChildNodeCount:(int)arg1;
@@ -70,7 +68,6 @@
 - (void)setPseudoElements:(id)arg1;
 - (void)setPseudoType:(long long)arg1;
 - (void)setPublicId:(id)arg1;
-- (void)setRole:(id)arg1;
 - (void)setShadowRootType:(long long)arg1;
 - (void)setShadowRoots:(id)arg1;
 - (void)setSystemId:(id)arg1;

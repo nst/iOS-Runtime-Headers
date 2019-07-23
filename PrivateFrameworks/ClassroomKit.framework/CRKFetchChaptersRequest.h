@@ -20,6 +20,7 @@
 - (id)identifier;
 - (id)identifierType;
 - (id)initWithCoder:(id)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)path;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierType:(id)arg1;

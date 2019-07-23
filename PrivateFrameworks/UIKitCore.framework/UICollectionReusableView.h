@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UICollectionReusableView : UIView <DebugHierarchyObject_Fallback> {
+@interface UICollectionReusableView : UIView {
     UICollectionView * _collectionView;
     UICollectionViewLayoutAttributes * _layoutAttributes;
     bool  _preferredAttributesValid;
@@ -16,14 +16,10 @@
 }
 
 @property (getter=_collectionView, setter=_setCollectionView:, nonatomic) UICollectionView *collectionView;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (getter=_isInUpdateAnimation, nonatomic, readonly) bool inUpdateAnimation;
 @property (getter=_layoutAttributes, setter=_setLayoutAttributes:, nonatomic, copy) UICollectionViewLayoutAttributes *layoutAttributes;
 @property (getter=_arePreferredAttributesValid, nonatomic) bool preferredAttributesValid;
 @property (setter=_setReuseIdentifier:, nonatomic, copy) NSString *reuseIdentifier;
-@property (readonly) Class superclass;
 @property (setter=tv_setBelongsToOldIndexPath:, nonatomic) bool tv_belongsToOldIndexPath;
 @property (getter=tv_isDisplayed, setter=tv_setDisplayed:, nonatomic) bool tv_displayed;
 @property (getter=tv_isFocused, setter=tv_setFocused:, nonatomic) bool tv_focused;
@@ -46,14 +42,6 @@
 - (void)_setLayoutAttributes:(id)arg1;
 - (void)_setReuseIdentifier:(id)arg1;
 - (bool)_wasDequeued;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)applyLayoutAttributes:(id)arg1;
 - (bool)canBeEdited;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;

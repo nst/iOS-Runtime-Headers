@@ -36,7 +36,7 @@
 - (void)__accessoryRemoved:(id)arg1;
 - (void)__activeSelectionChanged:(id)arg1;
 - (void)__activeSelectionReset:(id)arg1;
-- (void)__characteristicsChanged:(id)arg1;
+- (void)__characteristicsEventsReceived:(id)arg1;
 - (void)__controllerRefreshedConfiguration:(id)arg1;
 - (id)__getOrCreateEventReceiver:(id)arg1;
 - (id)__selectButtonConfiguration:(id)arg1 receiver:(id)arg2;

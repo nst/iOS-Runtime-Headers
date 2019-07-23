@@ -6,7 +6,7 @@
     void details;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

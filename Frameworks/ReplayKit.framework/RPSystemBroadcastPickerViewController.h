@@ -14,7 +14,6 @@
 
 - (void).cxx_destruct;
 - (id)hostViewController;
-- (id)initWithBundleIdentifier:(id)arg1 showsMicrophoneButton:(bool)arg2;
 - (void)setHostViewController:(id)arg1;
 - (void)viewControllerDidFinish;
 

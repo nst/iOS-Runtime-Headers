@@ -7,12 +7,7 @@
     UILabel * _title;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initInView:(id)arg1 title:(id)arg2;
 - (void)setMessage:(id)arg1;
 

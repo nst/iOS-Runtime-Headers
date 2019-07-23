@@ -16,7 +16,6 @@
     NSString * _legacyUserAgent;
     NSString * _localStoreFrontIdentifier;
     id  _mediaLibraryIdentifier;
-    NSObject<OS_dispatch_queue> * _notificationQueue;
     NSString * _phoneNumber;
     bool  _pluggedIn;
     int  _pluggedInToken;
@@ -24,8 +23,6 @@
     NSString * _productType;
     NSString * _productVersion;
     id  _softwareLibraryIdentifier;
-    int  _telephonyCapability;
-    struct __CTServerConnection { } * _telephonyServer;
     NSString * _udid;
     SSURLBag * _urlBag;
     NSString * _userAgent;

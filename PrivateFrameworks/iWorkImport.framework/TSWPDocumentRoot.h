@@ -4,6 +4,7 @@
 
 @interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
     bool  _didRemoveMissingAttachments;
+    <TSWPTOCController> * _tocController;
     NSUUID * _uuid;
 }
 
@@ -12,6 +13,7 @@
 @property (nonatomic, readonly) EQKitEnvironment *equationEnvironment;
 @property (nonatomic, readonly) double stickyCommentScaleMultiplier;
 @property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
+@property (nonatomic, readonly) <TSWPTOCController> *tocController;
 @property (nonatomic, readonly) TSULocale *typesettingLocale;
 
 - (void).cxx_destruct;
@@ -19,6 +21,7 @@
 - (bool)cellCommentsAllowedOnInfo:(id)arg1;
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
+- (bool)containsVerticalText;
 - (bool)didRemoveMissingAttachments;
 - (void)documentDidLoad;
 - (id)documentFonts;
@@ -37,6 +40,7 @@
 - (bool)shouldHyphenate;
 - (double)stickyCommentScaleMultiplier;
 - (bool)supportHeaderFooterParagraphAlignmentInInspectors;
+- (id)tocController;
 - (id)typesettingLocale;
 - (id)unavailableDocumentFonts;
 - (bool)useLigatures;

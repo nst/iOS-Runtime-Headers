@@ -126,6 +126,8 @@
         float digitalZoomFactorOverride; 
         int ISPStripOffsetX; 
         int ISPStripOffsetY; 
+        int ISPHorizontalTileCount; 
+        int ISPVerticalTileCount; 
         bool isUsing1kLineBuffers; 
         struct { /* ? */ } *visStripParams; 
         unsigned long long visStripParamsSize; 

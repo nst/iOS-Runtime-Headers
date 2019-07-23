@@ -3,57 +3,78 @@
  */
 
 @interface MediaControlsTransportStackView : UIView {
+    <MediaControlsActionsDelegate> * _actionsDelegate;
     bool  _empty;
+    NSArray * _fiveButtonContraints;
+    MediaControlsTransportButton * _languageOptionsButton;
     MediaControlsTransportButton * _leftButton;
     NSBundle * _mediaControlsBundle;
     MediaControlsTransportButton * _middleButton;
-    <MediaControlsRatingActionSheet> * _ratingActionSheetDelegate;
     MPCPlayerResponse * _response;
     MediaControlsTransportButton * _rightButton;
     long long  _style;
+    NSArray * _threeButtonContraints;
     UIColor * _tintColorForCurrentStyle;
+    MediaControlsTransportButton * _tvRemoteButton;
 }
 
+@property (nonatomic) <MediaControlsActionsDelegate> *actionsDelegate;
 @property (getter=isEmpty, nonatomic) bool empty;
+@property (nonatomic, retain) NSArray *fiveButtonContraints;
+@property (nonatomic, retain) MediaControlsTransportButton *languageOptionsButton;
 @property (nonatomic, retain) MediaControlsTransportButton *leftButton;
 @property (nonatomic, retain) NSBundle *mediaControlsBundle;
 @property (nonatomic, retain) MediaControlsTransportButton *middleButton;
-@property (nonatomic) <MediaControlsRatingActionSheet> *ratingActionSheetDelegate;
 @property (nonatomic, retain) MPCPlayerResponse *response;
 @property (nonatomic, retain) MediaControlsTransportButton *rightButton;
 @property (nonatomic) long long style;
+@property (nonatomic, retain) NSArray *threeButtonContraints;
 @property (nonatomic, retain) UIColor *tintColorForCurrentStyle;
+@property (nonatomic, retain) MediaControlsTransportButton *tvRemoteButton;
 
 - (void).cxx_destruct;
+- (id)_createTransportButtonWithImageNamed:(id)arg1;
 - (void)_resetTransportButton:(id)arg1;
 - (void)_updateButtonBlendMode:(id)arg1;
 - (void)_updateButtonImage:(id)arg1 button:(id)arg2;
+- (void)_updateButtonLayout;
+- (id)actionsDelegate;
 - (void)buttonHoldBegan:(id)arg1;
 - (void)buttonHoldReleased:(id)arg1;
+- (id)fiveButtonContraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isEmpty;
+- (id)languageOptionsButton;
 - (void)layoutSubviews;
 - (id)leftButton;
 - (id)mediaControlsBundle;
 - (id)middleButton;
-- (id)ratingActionSheetDelegate;
 - (id)response;
 - (id)rightButton;
+- (void)setActionsDelegate:(id)arg1;
 - (void)setEmpty:(bool)arg1;
+- (void)setFiveButtonContraints:(id)arg1;
+- (void)setLanguageOptionsButton:(id)arg1;
 - (void)setLeftButton:(id)arg1;
 - (void)setMediaControlsBundle:(id)arg1;
 - (void)setMiddleButton:(id)arg1;
-- (void)setRatingActionSheetDelegate:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setRightButton:(id)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setThreeButtonContraints:(id)arg1;
 - (void)setTintColorForCurrentStyle:(id)arg1;
+- (void)setTvRemoteButton:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)style;
+- (id)threeButtonContraints;
 - (id)tintColorForCurrentStyle;
+- (void)touchUpInsideCaptionsButton:(id)arg1;
+- (void)touchUpInsideHangdogButton:(id)arg1;
 - (void)touchUpInsideLeftButton:(id)arg1;
 - (void)touchUpInsideMiddleButton:(id)arg1;
 - (void)touchUpInsideRightButton:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (id)tvRemoteButton;
+- (void)updateOnRouteChange;
 
 @end

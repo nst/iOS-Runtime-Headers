@@ -6,6 +6,7 @@
 @required
 
 - (UIViewController *)oneUpPresentationHelperViewController:(PUOneUpPresentationHelper *)arg1;
+- (long long)oneUpPresentationOrigin:(PUOneUpPresentationHelper *)arg1;
 
 @optional
 

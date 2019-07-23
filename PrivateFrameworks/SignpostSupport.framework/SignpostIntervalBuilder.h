@@ -4,8 +4,13 @@
 
 @interface SignpostIntervalBuilder : NSObject {
     bool  _buildAnimationCompositeIntervalTimelines;
+    SignpostCAInstrumentationProcessor * _caInstrumentationProcessor;
     bool  _compositeIntervalIsInFlight;
-    NSMapTable * _outstandingAnimationStarts;
+    bool  _foundCAWSInMemoryData;
+    bool  _foundIPhoneOSSpecificData;
+    bool  _foundMacOSSpecificData;
+    NSMapTable * _outstandingAnimationState;
+    unsigned long long  _previousMCT;
     NSMutableDictionary * _processwideDictionary;
     NSObject<OS_dispatch_queue> * _syncQueue;
     NSMutableDictionary * _systemwideDictionary;
@@ -14,8 +19,13 @@
 }
 
 @property (nonatomic) bool buildAnimationCompositeIntervalTimelines;
+@property (nonatomic, readonly) SignpostCAInstrumentationProcessor *caInstrumentationProcessor;
 @property (nonatomic) bool compositeIntervalIsInFlight;
-@property (nonatomic, retain) NSMapTable *outstandingAnimationStarts;
+@property (nonatomic) bool foundCAWSInMemoryData;
+@property (nonatomic) bool foundIPhoneOSSpecificData;
+@property (nonatomic) bool foundMacOSSpecificData;
+@property (nonatomic, retain) NSMapTable *outstandingAnimationState;
+@property (nonatomic) unsigned long long previousMCT;
 @property (nonatomic, readonly) NSMutableDictionary *processwideDictionary;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;
 @property (nonatomic, readonly) NSMutableDictionary *systemwideDictionary;
@@ -26,28 +36,50 @@
 + (id)_framerateCalculationWhitelist;
 
 - (void).cxx_destruct;
-- (void)_cleanupState;
+- (id)_animationWithBegin:(id)arg1 endEvent:(id)arg2;
+- (void)_cleanupStateForBeginEvent:(id)arg1;
+- (bool)_handleCommonSpecialIntervals:(id)arg1;
+- (bool)_handleIPhoneOsSpecialEvents:(id)arg1;
+- (bool)_handleIPhoneOsSpecialIntervals:(id)arg1;
+- (bool)_handleMacOsSpecialIntervals:(id)arg1;
+- (bool)_hasOutstandingAnimations;
+- (void)_initializeMapsIfNecessary;
 - (id)_matchingEventForEvent:(id)arg1 removeIfFound:(bool)arg2;
 - (void)_processCompositeInterval:(id)arg1;
+- (void)_startTrackingAnimationWithBeginEvent:(id)arg1;
 - (bool)_trackBegin:(id)arg1;
 - (bool)buildAnimationCompositeIntervalTimelines;
+- (id)caInstrumentationProcessor;
 - (bool)compositeIntervalIsInFlight;
 - (id)doneProcessing;
-- (bool)eventIsCompositeLoopEvent:(id)arg1;
+- (void)dropAccumulatedState;
+- (bool)foundCAWSInMemoryData;
+- (bool)foundIPhoneOSSpecificData;
+- (bool)foundMacOSSpecificData;
 - (id)init;
 - (bool)isCompositeLoopSubsystem:(id)arg1 category:(id)arg2;
+- (bool)isMetadataSubsystem:(id)arg1 category:(id)arg2;
 - (id)matchingEventForEvent:(id)arg1 removeIfFound:(bool)arg2;
-- (id)outstandingAnimationStarts;
+- (id)outstandingAnimationState;
+- (unsigned long long)previousMCT;
 - (bool)processBeginEvent:(id)arg1;
+- (void)processEmittedEvent:(id)arg1;
 - (id)processEndEvent:(id)arg1 isAnimation:(bool*)arg2;
 - (id)processwideDictionary;
 - (void)setBuildAnimationCompositeIntervalTimelines:(bool)arg1;
 - (void)setCompositeIntervalIsInFlight:(bool)arg1;
-- (void)setOutstandingAnimationStarts:(id)arg1;
+- (void)setFoundCAWSInMemoryData:(bool)arg1;
+- (void)setFoundIPhoneOSSpecificData:(bool)arg1;
+- (void)setFoundMacOSSpecificData:(bool)arg1;
+- (void)setOutstandingAnimationState:(id)arg1;
+- (void)setPreviousMCT:(unsigned long long)arg1;
 - (void)setTotalCompositeIntervalCount:(unsigned long long)arg1;
+- (bool)signpostIsAnimationMetadata:(id)arg1;
+- (bool)signpostIsCompositeLoop:(id)arg1;
 - (id)syncQueue;
 - (id)systemwideDictionary;
 - (id)threadwideDictionary;
+- (bool)timestampIndicatesDeviceReboot:(unsigned long long)arg1;
 - (unsigned long long)totalCompositeIntervalCount;
 
 @end

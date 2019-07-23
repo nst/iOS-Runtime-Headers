@@ -4,11 +4,9 @@
 
 @interface STAllowanceDetailListController : PSListController <STAllowanceSetupListControllerDelegate, STCustomizeDaysListControllerDelegate, STUIDateTimePickerCellDelegate> {
     STAllowance * _allowance;
-    PSSpecifier * _appsCategoriesGroupSpecifier;
-    PSSpecifier * _atAllowanceGroupSpecifier;
-    PSSpecifier * _atAllowanceSpecifier;
     NSArray * _budgetedItemSpecifiers;
     NSObject<STRootViewModelCoordinator> * _coordinator;
+    bool  _creatingNewAllowance;
     PSSpecifier * _customizeDaysSpecifier;
     UIColor * _defaultTimeCellDetailTextColor;
     <STAllowanceDetailListControllerDelegate> * _delegate;
@@ -18,14 +16,13 @@
     PSSpecifier * _timeGroupSpecifier;
     PSSpecifier * _timePickerSpecifier;
     PSSpecifier * _timeSpecifier;
+    bool  _useBackButton;
 }
 
 @property (nonatomic, copy) STAllowance *allowance;
-@property (nonatomic, retain) PSSpecifier *appsCategoriesGroupSpecifier;
-@property (nonatomic, retain) PSSpecifier *atAllowanceGroupSpecifier;
-@property (nonatomic, retain) PSSpecifier *atAllowanceSpecifier;
 @property (nonatomic, retain) NSArray *budgetedItemSpecifiers;
 @property (nonatomic, readonly) NSObject<STRootViewModelCoordinator> *coordinator;
+@property (nonatomic) bool creatingNewAllowance;
 @property (nonatomic, retain) PSSpecifier *customizeDaysSpecifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) UIColor *defaultTimeCellDetailTextColor;
@@ -35,19 +32,21 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isSetupController;
 @property (nonatomic, retain) PSSpecifier *selectedTimeSpecifier;
+@property (readonly) bool shouldShowCompatibilityAlert;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PSSpecifier *timeGroupSpecifier;
 @property (nonatomic, retain) PSSpecifier *timePickerSpecifier;
 @property (nonatomic, retain) PSSpecifier *timeSpecifier;
+@property bool useBackButton;
 
 - (void).cxx_destruct;
+- (id)_allowanceEnabled:(id)arg1;
+- (id)_askForMoreTime:(id)arg1;
+- (void)_setAllowanceEnabled:(id)arg1 specifier:(id)arg2;
+- (void)_setAskForMoreTime:(id)arg1 specifier:(id)arg2;
 - (id)allowance;
 - (void)allowanceSetupListController:(id)arg1 didSelectAllowanceIdentifiers:(id)arg2;
 - (void)allowanceSetupListControllerDidCancel:(id)arg1;
-- (id)appsCategoriesGroupSpecifier;
-- (id)askForMoreTime:(id)arg1;
-- (id)atAllowanceGroupSpecifier;
-- (id)atAllowanceSpecifier;
 - (id)atEndOfLimitFooterText;
 - (id)budgetTime;
 - (id)budgetedItemSpecifiers;
@@ -56,6 +55,7 @@
 - (void)confirmDeletion:(id)arg1;
 - (id)coordinator;
 - (id)createBudgetedItemSpecifiers;
+- (bool)creatingNewAllowance;
 - (void)customizeDaysListController:(id)arg1 didFinishEditingTimeByDay:(id)arg2;
 - (id)customizeDaysSpecifier;
 - (void)datePickerChanged:(id)arg1;
@@ -73,11 +73,8 @@
 - (void)saveButtonTapped:(id)arg1;
 - (id)selectedTimeSpecifier;
 - (void)setAllowance:(id)arg1;
-- (void)setAppsCategoriesGroupSpecifier:(id)arg1;
-- (void)setAskForMoreTime:(id)arg1 specifier:(id)arg2;
-- (void)setAtAllowanceGroupSpecifier:(id)arg1;
-- (void)setAtAllowanceSpecifier:(id)arg1;
 - (void)setBudgetedItemSpecifiers:(id)arg1;
+- (void)setCreatingNewAllowance:(bool)arg1;
 - (void)setCustomizeDaysSpecifier:(id)arg1;
 - (void)setDefaultTimeCellDetailTextColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -87,7 +84,9 @@
 - (void)setTimeGroupSpecifier:(id)arg1;
 - (void)setTimePickerSpecifier:(id)arg1;
 - (void)setTimeSpecifier:(id)arg1;
+- (void)setUseBackButton:(bool)arg1;
 - (bool)shouldReloadSpecifiersOnResume;
+- (bool)shouldShowCompatibilityAlert;
 - (void)showCustomizeDaysController:(id)arg1;
 - (void)showOrHideCustomizeDaysSpecifier;
 - (void)showPickerSpecifierForSpecifier:(id)arg1 highlight:(bool)arg2;
@@ -99,6 +98,7 @@
 - (id)timePickerSpecifier;
 - (id)timeSpecifier;
 - (void)updateSaveButton;
+- (bool)useBackButton;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;

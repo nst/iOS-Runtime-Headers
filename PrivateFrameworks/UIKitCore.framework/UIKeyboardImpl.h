@@ -3,6 +3,7 @@
  */
 
 @interface UIKeyboardImpl : UIView <RTIInputSystemClientDelegate, RTIInputSystemSessionDelegate, TIKeyboardInputManagerToImplProtocol, UIKeyboardCandidateListDelegate, UITextInputSuggestionDelegate, _UIIVCResponseDelegateImpl, _UIKeyboardTextSelectionGestureControllerDelegate> {
+    bool  _applicationStateIsActiveForRTI;
     UIKeyboardScheduledTask * _autocorrectPromptTask;
     NSDictionary * _candidateRequestInfo;
     int  _currentAlertReason;
@@ -12,6 +13,7 @@
     unsigned long long  _requestedInteractionModel;
     bool  _suppressRTIClient;
     _UIKeyboardTextSelectionController * _textSelectionController;
+    bool  _viewServiceStateIsActiveForRTI;
     bool  committingCandidate;
     bool  geometryIsChanging;
     UIAlertView * keyboardAlertView;
@@ -168,6 +170,7 @@
 }
 
 @property (nonatomic) bool animateUpdateBars;
+@property (nonatomic) bool applicationStateIsActiveForRTI;
 @property (nonatomic, retain) UITextInputArrowKeyHistory *arrowKeyHistory;
 @property (nonatomic, readonly) UIResponder<UIWKInteractionViewProtocol> *asynchronousInputDelegate;
 @property (nonatomic, retain) UIKeyboardScheduledTask *autocorrectPromptTask;
@@ -231,8 +234,7 @@
 @property (nonatomic, retain) _UIKeyboardTextSelectionController *textSelectionController;
 @property (nonatomic, readonly) double timestampOfLastTouchesEnded;
 @property (nonatomic, retain) TIKeyboardTouchEvent *touchEventWaitingForKeyInputEvent;
-
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+@property (nonatomic) bool viewServiceStateIsActiveForRTI;
 
 + (void)_clearHardwareKeyboardMinimizationPreference;
 + (id)activeInstance;
@@ -272,6 +274,7 @@
 + (bool)rivenInstalled;
 + (bool)rivenPreference;
 + (bool)rivenTranslationPreference;
++ (void)screenModeDidChange:(id)arg1;
 + (void)sendPerformanceNotification:(id)arg1;
 + (void)sendPerformanceNotification:(id)arg1 userInfo:(id)arg2;
 + (void)setParentTestForProfiling:(id)arg1;
@@ -292,6 +295,7 @@
 + (void)viewServiceHostDidBecomeActive:(id)arg1;
 + (void)viewServiceHostWillResignActive:(id)arg1;
 
+- (id)UILanguagePreference;
 - (bool)_activeCandidateViewNeedsBackdrop;
 - (id)_autofillContext;
 - (id)_autofillGroup;
@@ -351,16 +355,12 @@
 - (void)_updateExternalDeviceInputSettingForWindow:(id)arg1;
 - (void)_updateInputViewControllerOutput:(id)arg1 forKeyboardOutput:(id)arg2;
 - (void)_updateKeyboardConfigurations;
+- (void)_updateRTIAllowedAndNotify:(bool)arg1 withReason:(id)arg2;
 - (void)_updateRTIObjectsIfNecessary;
 - (void)_updateRTIStateIfNecessary;
 - (void)_updateRTITraitsIfNecessary;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (id)UILanguagePreference;
 - (void)acceptAutocorrection;
 - (void)acceptAutocorrection:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (void)acceptAutocorrectionAndEndComposition;
@@ -401,6 +401,7 @@
 - (void)animateAutocorrectionToText:(id)arg1 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (bool)animateUpdateBars;
 - (void)applicationResumedEventsOnly:(id)arg1;
+- (bool)applicationStateIsActiveForRTI;
 - (void)applicationSuspendedEventsOnly:(id)arg1;
 - (bool)applyAutocorrection:(id)arg1;
 - (void)applyRemoteDocumentStateIfNecessary:(id)arg1 force:(bool)arg2;
@@ -507,6 +508,7 @@
 - (bool)currentKeyboardTraitsAllowCandidateBarWhileIgnoringHidePredictionTrait:(bool)arg1;
 - (bool)cursorIsAtEndOfMarkedText;
 - (void)deactivateLayout;
+- (void)dealloc;
 - (void)defaultsDidChange;
 - (id)deferredDidSetDelegateAction;
 - (id)delayedCandidateRequest;
@@ -753,7 +755,6 @@
 - (void)resizeCandidateBarWithDelta:(double)arg1;
 - (id)responderForSendCurrentLocation;
 - (void)responseContextDidChange;
-- (void)restoreAutofillCustomInfoOnAppBecomeActiveIfNeeded;
 - (id)returnKeyDisplayName;
 - (bool)returnKeyEnabled;
 - (int)returnKeyType;
@@ -776,6 +777,7 @@
 - (void)sendCallbacksForPostCorrectionsRemoval;
 - (void)sendCallbacksForPreCorrectionsDisplay;
 - (void)setAnimateUpdateBars:(bool)arg1;
+- (void)setApplicationStateIsActiveForRTI:(bool)arg1;
 - (void)setArrowKeyHistory:(id)arg1;
 - (void)setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 inputString:(id)arg3 searchString:(id)arg4;
 - (void)setAutocorrectPromptTask:(id)arg1;
@@ -872,6 +874,7 @@
 - (void)setTwoFingerTapTimestamp:(double)arg1;
 - (void)setUserSelectedCurrentCandidate:(bool)arg1;
 - (void)setUsesCandidateSelection:(bool)arg1;
+- (void)setViewServiceStateIsActiveForRTI:(bool)arg1;
 - (bool)shiftLockPreference;
 - (bool)shiftLockedEnabled;
 - (bool)shouldAcceptCandidate:(id)arg1 beforeInputString:(id)arg2;
@@ -1007,6 +1010,7 @@
 - (bool)usesAutoDeleteWord;
 - (bool)usesAutocorrectionLists;
 - (bool)usesCandidateSelection;
+- (bool)viewServiceStateIsActiveForRTI;
 - (bool)willDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(bool)arg2 elapsedTime:(double)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willReplaceTextInRangedSelectionWithKeyboardInput;

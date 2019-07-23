@@ -24,6 +24,7 @@
 - (void)dealloc;
 - (struct { bool x1; float x2; float x3; })effectParameters;
 - (id)initWithEffectParameters:(struct { bool x1; float x2; float x3; })arg1;
+- (bool)isAttentionAwarenessAudioMix:(id)arg1;
 - (void)setEffectParameters:(struct { bool x1; float x2; float x3; })arg1;
 - (void)setEffectParameters:(struct { bool x1; float x2; float x3; })arg1 effectMixFadeDuration:(double)arg2;
 

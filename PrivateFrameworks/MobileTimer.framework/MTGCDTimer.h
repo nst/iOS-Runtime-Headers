@@ -3,6 +3,7 @@
  */
 
 @interface MTGCDTimer : NSObject {
+    MTPowerAssertion * _powerAssertion;
     NSObject<OS_dispatch_source> * _timer;
 }
 

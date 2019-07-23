@@ -17,67 +17,28 @@
             double height; 
         } size; 
     }  boundsInDocument;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  boundsInView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  contentInset;
     long long  currentPageIndex;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  documentViewCenter;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  documentViewSize;
     UITapGestureRecognizer * doubleTapGestureRecognizer;
     NSExtension * extension;
     <PDFExtensionProtocol> * extensionProxy;
     bool  hasSelection;
+    double  horizontalScaleFactor;
     UIScrollView * hostScrollView;
-    struct { 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } contentInset; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } safeAreaInsets; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } expandedContentInsetPortrait; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } collapsedContentInsetPortrait; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } expandedContentInsetLandscape; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } collapsedContentInsetLandscape; 
-        struct UIEdgeInsets { 
-            double top; 
-            double left; 
-            double bottom; 
-            double right; 
-        } endRotationContentInset; 
-        bool contentInsetIsExpandedDuringRotation; 
-    }  hostScrollViewInsets;
+    bool  hostScrollViewObserverIsActive;
     <PDFHostViewControllerDelegate> * hostViewControllerDelegate;
     bool  isUnlocked;
     UILongPressGestureRecognizer * longPressGestureRecognizer;
@@ -88,7 +49,14 @@
     PDFPanGestureRecognizer * panGestureRecognizer;
     NSString * password;
     PDFPasswordViewController * passwordViewController;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  pdfSafeAreaInsets;
     bool  pdfViewIsRotating;
+    bool  pdfViewNeedsUpdate;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -100,7 +68,6 @@
         } size; 
     }  scrollViewFrame;
     NSMutableArray * selectionRects;
-    UISwipeGestureRecognizer * swipeGestureRecognizer;
     UITapGestureRecognizer * tapGestureRecognizer;
     int  textSelectionState;
     struct CGPoint { 
@@ -108,7 +75,6 @@
         double y; 
     }  topLeftSelectionPoint;
     PDFExtensionTopView * topView;
-    double  zoomScale;
 }
 
 - (void).cxx_destruct;

@@ -7,6 +7,7 @@
     NSCountedSet * _delayScheduledActions;
     NSCountedSet * _minimumIntervalScheduledActions;
     <_DKSimpleKeyValueStore> * _store;
+    NSObject<OS_dispatch_queue> * _storeQueue;
 }
 
 @property (nonatomic, retain) <_DKSimpleKeyValueStore> *store;

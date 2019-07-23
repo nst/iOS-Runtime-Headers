@@ -7,7 +7,6 @@
 
 - (void)__dismissTextServiceSessionAnimated:(bool)arg1;
 - (void)__handleFocusMovementAction:(UIFocusMovementAction *)arg1;
-- (void)__setServiceMaxFrameSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)__setSupportedInterfaceOrientations:(NSArray *)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(bool)arg1;
 - (void)__showEditAlertViewWithToken:(long long)arg1 canUndo:(bool)arg2 canRedo:(bool)arg3;

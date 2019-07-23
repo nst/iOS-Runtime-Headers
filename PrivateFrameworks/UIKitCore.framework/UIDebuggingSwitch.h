@@ -8,12 +8,7 @@
 
 @property (nonatomic) NSLayoutConstraint *constraint;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)constraint;
 - (void)setConstraint:(id)arg1;
 

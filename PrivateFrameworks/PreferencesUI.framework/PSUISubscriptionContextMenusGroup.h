@@ -7,6 +7,7 @@
     PSUICoreTelephonyCarrierBundleCache * _carrierBundleCache;
     PSUICarrierSpaceGroup * _carrierSpaceSubgroup;
     CTCellularPlanManager * _cellularPlanManager;
+    PSUICoreTelephonyDataCache * _dataCache;
     PSSpecifier * _groupSpecifier;
     PSListController * _listController;
     PSUIMyNumberSubgroup * _myNumberSubgroup;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) PSUICoreTelephonyCarrierBundleCache *carrierBundleCache;
 @property (nonatomic, retain) PSUICarrierSpaceGroup *carrierSpaceSubgroup;
 @property (nonatomic, retain) CTCellularPlanManager *cellularPlanManager;
+@property (nonatomic, retain) PSUICoreTelephonyDataCache *dataCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) PSSpecifier *groupSpecifier;
@@ -43,6 +45,7 @@
 - (id)carrierBundleCache;
 - (id)carrierSpaceSubgroup;
 - (id)cellularPlanManager;
+- (id)dataCache;
 - (id)groupSpecifier;
 - (id)initWithFactory:(id)arg1;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
@@ -57,6 +60,7 @@
 - (void)setCarrierBundleCache:(id)arg1;
 - (void)setCarrierSpaceSubgroup:(id)arg1;
 - (void)setCellularPlanManager:(id)arg1;
+- (void)setDataCache:(id)arg1;
 - (void)setGroupSpecifier:(id)arg1;
 - (void)setListController:(id)arg1;
 - (void)setMyNumberSubgroup:(id)arg1;

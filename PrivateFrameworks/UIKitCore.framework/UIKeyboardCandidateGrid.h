@@ -50,13 +50,7 @@
 @property (nonatomic, retain) NSArray *sortedCandidates;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backdropView;
 - (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
 - (void)candidateListAcceptCandidate:(id)arg1;
@@ -74,6 +68,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)currentCandidate;
 - (unsigned long long)currentIndex;
+- (void)dealloc;
 - (bool)drawBottomShadow;
 - (bool)drawTopShadow;
 - (unsigned long long)gridCollectionViewNumberOfColumns:(id)arg1;

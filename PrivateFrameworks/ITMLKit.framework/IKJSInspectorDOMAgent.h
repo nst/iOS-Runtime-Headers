@@ -36,6 +36,7 @@
 - (void)getEventListenersForNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 objectGroup:(id*)arg4;
 - (void)getOuterHTMLWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)getSearchResultsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 searchId:(id)arg3 fromIndex:(int)arg4 toIndex:(int)arg5;
+- (void)getSupportedEventNamesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (bool)hideHighlight;
 - (void)hideHighlightWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)highlightFrameWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 contentColor:(id*)arg4 contentOutlineColor:(id*)arg5;
@@ -58,12 +59,14 @@
 - (void)redoWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)releaseBackendNodeIdsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeGroup:(id)arg3;
 - (void)removeAttributeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4;
+- (void)removeBreakpointForEventListenerWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 eventListenerId:(int)arg3;
 - (void)removeNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)requestChildNodesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 depth:(int*)arg4;
 - (void)requestNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 objectId:(id)arg3;
 - (void)resolveNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 objectGroup:(id*)arg4;
 - (void)setAttributeValueWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4 value:(id)arg5;
 - (void)setAttributesAsTextWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 text:(id)arg4 name:(id*)arg5;
+- (void)setBreakpointForEventListenerWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 eventListenerId:(int)arg3;
 - (void)setEventListenerDisabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 eventListenerId:(int)arg3 disabled:(bool)arg4;
 - (void)setInspectModeEnabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 enabled:(bool)arg3 highlightConfig:(id*)arg4;
 - (void)setInspectedNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;

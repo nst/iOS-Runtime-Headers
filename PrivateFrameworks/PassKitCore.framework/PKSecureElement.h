@@ -85,8 +85,8 @@
 - (id)primaryJSBLSequenceCounter;
 - (id)primaryRegionTopic;
 - (id)primarySecureElementIdentifier;
-- (bool)queueConnectionToSeverForAppletIdentifiers:(id)arg1;
-- (bool)queueConnectionToSeverWithPushTopic:(id)arg1;
+- (bool)queueConnectionToServerForAppletIdentifiers:(id)arg1;
+- (bool)queueConnectionToServerWithPushTopic:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (void)remoteAdminCleanupProgress:(double)arg1;
 - (void)secureElement:(id)arg1 didChangeRestrictedMode:(bool)arg2;

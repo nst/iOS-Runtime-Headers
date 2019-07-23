@@ -11,12 +11,7 @@
 @property (nonatomic) bool drawsBackground;
 @property (nonatomic) bool drawsPocketShadow;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)dimKeys:(id)arg1;
 - (bool)drawsBackground;
 - (bool)drawsPocketShadow;

@@ -7,14 +7,12 @@
 }
 
 @property (nonatomic, readonly) CKKnowledgeStore *backingStore;
-@property (nonatomic, readonly) CKKnowledgeStore *knowledgeStore;
 
 + (id)createEventWithIdentifier:(id)arg1 dateInterval:(id)arg2 metadata:(id)arg3 fromEvent:(id)arg4;
 + (id)defaultStore;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)backingStore;
-- (void)createEventIfNotExistsWithIdentifier:(id)arg1 dateInterval:(id)arg2 metadata:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)deleteEventWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)deleteEventWithIdentifier:(id)arg1 error:(id*)arg2;
 - (void)deleteInteractionsWithBundleId:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -25,7 +23,6 @@
 - (void)historicEventsWithSourceBundleIdentifier:(id)arg1 andIntent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (id)initWithKnowledgeStore:(id)arg1;
-- (id)knowledgeStore;
 - (void)recordEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)recordEvent:(id)arg1 error:(id*)arg2;
 - (void)recordInteraction:(id)arg1 bundleId:(id)arg2 completionHandler:(id /* block */)arg3;

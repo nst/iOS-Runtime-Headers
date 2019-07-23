@@ -85,6 +85,7 @@
 - (bool)indeterminate;
 - (void)insertTextSuggestion:(id)arg1;
 - (id)labels;
+- (id)list;
 - (id)max;
 - (int)maxLength;
 - (id)min;

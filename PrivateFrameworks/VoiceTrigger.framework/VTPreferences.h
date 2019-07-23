@@ -4,13 +4,12 @@
 
 @interface VTPreferences : NSObject
 
-+ (unsigned long long)_deviceCategoryForDeviceProductType:(id)arg1;
 + (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
 + (id)sharedPreferences;
 
 - (id)_VTSATBasePath;
 - (id)_VTSATCachePath;
-- (id)_getSATEnrollmentAudioPathForLanguageCode:(id)arg1;
+- (id)_getSATEnrollmentAudioPathForLanguageCodeForLegacyVoiceProfile:(id)arg1;
 - (bool)_isLocalVoiceTriggerAvailable;
 - (bool)_isSATMarkedForMarker:(id)arg1 languageCode:(id)arg2;
 - (id)_languageCode;
@@ -26,10 +25,12 @@
 - (bool)fileLoggingIsEnabled;
 - (id)fileLoggingLevel;
 - (bool)gestureSubscriptionEnabled;
+- (id)getCachedVoiceProfileAvailabilityMetaBlob;
 - (id)getMD5HashForSATEnrollmentAudioForLanguageCode:(id)arg1;
 - (id)getSATEnrollmentPath;
 - (bool)hasExplicitlySetVoiceTriggerEnabled;
 - (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
+- (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1 withBackupMetaBlob:(id)arg2;
 - (id)init;
 - (bool)isRemoteVoiceTriggerAvailable;
 - (bool)isSATAvailable;

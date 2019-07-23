@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUArticleHostViewController : UIViewController <NULoadingDelegate, NUPageable, SXAnalyticsReporting> {
+@interface NUArticleHostViewController : UIViewController <NUBarCompressible, NULoadingDelegate, NUPageable, SXAnalyticsReporting> {
     <NUAnalyticsReporting> * _analyticsReporting;
     FCArticle * _article;
     <NUArticleViewControllerFactory> * _articleViewControllerFactory;
+    FCObservable * _articleViewStyler;
     UIViewController * _contentTypeViewController;
     <NUErrorMessageFactory> * _errorMessageFactory;
+    FCIssue * _issue;
     <NULoadingDelegate> * _loadingDelegate;
     UIView<NULoadingViewProviding> * _loadingView;
     NFMultiDelegate * _multiLoadingDelegate;
@@ -18,16 +20,19 @@
 @property (nonatomic, readonly) <NUAnalyticsReporting> *analyticsReporting;
 @property (nonatomic, readonly) FCArticle *article;
 @property (nonatomic, readonly) <NUArticleViewControllerFactory> *articleViewControllerFactory;
+@property (nonatomic, readonly) FCObservable *articleViewStyler;
 @property (nonatomic, retain) UIViewController *contentTypeViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <NUErrorMessageFactory> *errorMessageFactory;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) FCIssue *issue;
 @property (nonatomic) <NULoadingDelegate> *loadingDelegate;
 @property (nonatomic, readonly) NSHashTable *loadingListeners;
 @property (nonatomic, retain) UIView<NULoadingViewProviding> *loadingView;
 @property (nonatomic, readonly) NFMultiDelegate *multiLoadingDelegate;
 @property (nonatomic, readonly, copy) NSString *pageIdentifier;
+@property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly, copy) <NUSettings> *settings;
 @property (readonly) Class superclass;
 
@@ -35,10 +40,13 @@
 - (id)analyticsReporting;
 - (id)article;
 - (id)articleViewControllerFactory;
+- (id)articleViewStyler;
 - (id)contentTypeViewController;
 - (id)errorMessageFactory;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4;
 - (id)initWithArticle:(id)arg1 articleViewControllerFactory:(id)arg2 settings:(id)arg3 errorMessageFactory:(id)arg4 analyticsReporting:(id)arg5;
+- (id)initWithArticle:(id)arg1 issue:(id)arg2 articleViewControllerFactory:(id)arg3 settings:(id)arg4 errorMessageFactory:(id)arg5 analyticsReporting:(id)arg6;
+- (id)issue;
 - (void)loadArticleAndEmbedArticleViewController;
 - (id)loadingDelegate;
 - (void)loadingDidFinishWithError:(id)arg1;
@@ -50,11 +58,11 @@
 - (id)multiLoadingDelegate;
 - (id)pageIdentifier;
 - (void)reportEvent:(id)arg1;
+- (id)scrollView;
 - (void)setContentTypeViewController:(id)arg1;
 - (void)setLoadingDelegate:(id)arg1;
 - (void)setLoadingView:(id)arg1;
 - (id)settings;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

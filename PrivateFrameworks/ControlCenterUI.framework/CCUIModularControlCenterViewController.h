@@ -15,6 +15,7 @@
 @property (nonatomic) <CCUIModularControlCenterViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (getter=isHomeGestureDismissalAllowed, nonatomic, readonly) bool homeGestureDismissalAllowed;
 @property (getter=isHostedInTestApp, nonatomic) bool hostedInTestApp;
 @property (nonatomic, readonly) CCUIModuleCollectionViewController *moduleCollectionViewController;
 @property (nonatomic, readonly) CCUIModuleInstanceManager *moduleInstanceManager;
@@ -36,6 +37,7 @@
 - (id)_statusLabelViewContainerView;
 - (bool)canDismissPresentedContent;
 - (void)closeCurrentModuleWithCompletionHandler:(id /* block */)arg1;
+- (void)contentModuleContext:(id)arg1 didUpdateHomeGestureDismissalAllowed:(bool)arg2;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
 - (id)delegate;
 - (void)didUpdatePreferredSizeForContentModuleContext:(id)arg1;
@@ -49,6 +51,7 @@
 - (id)initWithSystemAgent:(id)arg1;
 - (id)interactionHighlightContainerViewForModuleCollectionViewController:(id)arg1;
 - (long long)interfaceOrientationForModuleCollectionViewController:(id)arg1;
+- (bool)isHomeGestureDismissalAllowed;
 - (bool)isHostedInTestApp;
 - (id)moduleCollectionViewController;
 - (void)moduleCollectionViewController:(id)arg1 didAddModuleContainerViewController:(id)arg2;
@@ -56,6 +59,7 @@
 - (void)moduleCollectionViewController:(id)arg1 didCloseExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didFinishInteractionWithModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didOpenExpandedModule:(id)arg2;
+- (void)moduleCollectionViewController:(id)arg1 didUpdateHomeGestureDismissalAllowed:(bool)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willCloseExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willOpenExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willRemoveModuleContainerViewController:(id)arg2;

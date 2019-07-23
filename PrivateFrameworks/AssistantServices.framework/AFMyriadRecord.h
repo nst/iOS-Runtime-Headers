@@ -39,6 +39,8 @@
 - (bool)isATrump;
 - (bool)isAnEmergency;
 - (bool)isAnEmergencyHandled;
+- (bool)isCarplayTrump;
+- (bool)isInEarTrump;
 - (bool)isMe;
 - (bool)isSane;
 - (bool)isSlowdown;

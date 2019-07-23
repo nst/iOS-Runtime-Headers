@@ -70,6 +70,7 @@
 - (bool)taskIsRunning:(id)arg1;
 - (id)tasksDescription;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willBecomeActive;
 - (void)willDismissFormSheetView;
 - (void)willDismissPopupView;

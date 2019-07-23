@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_didFinishWithSuccess:(bool)arg1;
 - (id)initWithCompletionHandler:(id /* block */)arg1;
 - (void)openResourceOperation:(id)arg1 didFailWithError:(id)arg2;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;

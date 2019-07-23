@@ -3,10 +3,11 @@
  */
 
 @interface FCHeadlineClusteringSol : NSObject <FCHeadlineClustering> {
+    NSMutableArray * _articleGroups;
     NSSet * _articleIds;
     NSDictionary * _articlesByTag;
     FCSolHeuristic * _autoFavoriteHeuristic;
-    NSSet * _groupableTags;
+    NSMutableSet * _groupableTags;
     NSSet * _hardOrphans;
     NSDictionary * _headlinesById;
     FCSolHeuristic * _heuristic;
@@ -15,12 +16,13 @@
     NSDictionary * _tagsByArticle;
 }
 
+@property (nonatomic, retain) NSMutableArray *articleGroups;
 @property (nonatomic, retain) NSSet *articleIds;
 @property (nonatomic, retain) NSDictionary *articlesByTag;
 @property (nonatomic, retain) FCSolHeuristic *autoFavoriteHeuristic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSSet *groupableTags;
+@property (nonatomic, retain) NSMutableSet *groupableTags;
 @property (nonatomic, retain) NSSet *hardOrphans;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *headlinesById;
@@ -31,10 +33,11 @@
 @property (nonatomic, retain) NSDictionary *tagsByArticle;
 
 - (void).cxx_destruct;
+- (id)articleGroups;
 - (id)articleIds;
 - (id)articlesByTag;
 - (id)autoFavoriteHeuristic;
-- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4;
+- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4 translationProvider:(id)arg5 unpaidHeadlineIDs:(id)arg6;
 - (id)computeBestGrouping:(id)arg1 tagScores:(id)arg2 headlinesById:(id)arg3;
 - (void)computeGrouping:(id)arg1 topK:(double)arg2;
 - (double)computeGroupingUtility:(id)arg1;
@@ -45,6 +48,7 @@
 - (id)heuristic;
 - (void)optimizeForLayout:(id)arg1;
 - (id)rules;
+- (void)setArticleGroups:(id)arg1;
 - (void)setArticleIds:(id)arg1;
 - (void)setArticlesByTag:(id)arg1;
 - (void)setAutoFavoriteHeuristic:(id)arg1;

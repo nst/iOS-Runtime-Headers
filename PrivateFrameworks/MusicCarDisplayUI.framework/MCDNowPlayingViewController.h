@@ -15,6 +15,7 @@
     bool  _handledWillAppear;
     long long  _heldAction;
     bool  _highTouchMode;
+    bool  _isForMusic;
     bool  _isScrubbing;
     UITapGestureRecognizer * _knobPressRecognizer;
     UILongPressGestureRecognizer * _leftButtonLongPressRecognizer;
@@ -56,6 +57,8 @@
 @property (nonatomic, retain) UITapGestureRecognizer *rightNudgePressRecognizer;
 @property (nonatomic, readonly) MCDTitleView *titleView;
 @property (nonatomic, readonly) MCDTransportControlView *transportControlView;
+
++ (id)nowPlayingViewControllerForMusic:(bool)arg1;
 
 - (void).cxx_destruct;
 - (void)_addToLibraryButtonTouchUp:(id)arg1;

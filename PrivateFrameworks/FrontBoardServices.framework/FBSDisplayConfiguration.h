@@ -17,11 +17,12 @@
     CADisplay * _caDisplay;
     bool  _cloningSupported;
     FBSDisplayMode * _currentMode;
-    unsigned int  _deprecated_seed;
     NSString * _deviceName;
     NSString * _hardwareIdentifier;
     FBSDisplayIdentity * _identity;
     NSString * _name;
+    bool  _noEqual_comparable;
+    unsigned int  _noEqual_seed;
     NSSet * _otherModes;
     struct CGSize { 
         double width; 
@@ -71,6 +72,7 @@
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } renderingCenter;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } safeOverscanRatio;
 @property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) unsigned int seed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long tags;
 
@@ -80,8 +82,8 @@
 
 - (void).cxx_destruct;
 - (id)CADisplay;
-- (id)_initWithDisplay:(id)arg1 assertIfInvalid:(bool)arg2;
-- (id)_initWithIdentity:(id)arg1 hardwareIdentifier:(id)arg2 name:(id)arg3 deviceName:(id)arg4 seed:(unsigned int)arg5 tags:(long long)arg6 currentMode:(id)arg7 preferredMode:(id)arg8 otherModes:(id)arg9 cloningSupported:(bool)arg10 overscanned:(bool)arg11 overscanCompensation:(long long)arg12 safeOverscanRatio:(struct CGSize { double x1; double x2; })arg13 pixelSize:(struct CGSize { double x1; double x2; })arg14 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg15 renderingCenter:(struct CGPoint { double x1; double x2; })arg16 validityCheck:(long long)arg17;
+- (id)_initWithIdentity:(id)arg1 hardwareIdentifier:(id)arg2 name:(id)arg3 deviceName:(id)arg4 seed:(unsigned int)arg5 comparable:(bool)arg6 tags:(long long)arg7 currentMode:(id)arg8 preferredMode:(id)arg9 otherModes:(id)arg10 cloningSupported:(bool)arg11 overscanned:(bool)arg12 overscanCompensation:(long long)arg13 safeOverscanRatio:(struct CGSize { double x1; double x2; })arg14 pixelSize:(struct CGSize { double x1; double x2; })arg15 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg16 renderingCenter:(struct CGPoint { double x1; double x2; })arg17 validityCheck:(long long)arg18;
+- (id)_initWithImmutableDisplay:(id)arg1 originalDisplay:(id)arg2 assertIfInvalid:(bool)arg3;
 - (id)_nameForDisplayType;
 - (long long)_nativeRotation;
 - (id)availableModes;
@@ -118,6 +120,7 @@
 - (bool)isHiddenDisplay;
 - (bool)isMainDisplay;
 - (bool)isOverscanned;
+- (id)laterConfiguration:(id)arg1;
 - (id)name;
 - (struct CGPoint { double x1; double x2; })nativeCenter;
 - (double)nativeOrientation;
@@ -138,6 +141,7 @@
 - (long long)type;
 - (id)uniqueID;
 - (id)uniqueIdentifier;
+- (bool)wantsConnectionDebouncing;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 

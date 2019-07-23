@@ -98,7 +98,7 @@
 @property (nonatomic, readonly) ARFrame *stillImageFrame;
 @property (nonatomic, retain) ARFrame *stillImageFrame_queryDataQueue;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) VCPCaptureAnalysisSession *vcpAnalyzer;
+@property (nonatomic, readonly) VCPCaptureAnalysisSession *vcpAnalyzer;
 @property (nonatomic) double zoomFactor;
 @property (nonatomic, copy) id /* block */ zoomUpdatedBlock_captureSessionQueue;
 
@@ -126,7 +126,7 @@
 - (bool)JT_isUsingInternalMicCaptureSessionQueue;
 - (void)JT_notifyVideoDelegatesOfFrameSetDataOutSynchQueue:(id)arg1;
 - (void)JT_processMetadataObjectsMetadataOutQueue:(id)arg1;
-- (id)JT_processPixelBufferForFaceTransform:(struct __CVBuffer { }*)arg1 forNormalizedFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withRollAngle:(double)arg3 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 detectionOrientation:(long long)arg6 interfaceOrientation:(long long)arg7 needsMirroring:(bool)arg8;
+- (id)JT_processPixelBufferForFaceTransform:(struct __CVBuffer { }*)arg1 forNormalizedFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withRollAngle:(float)arg3 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 detectionOrientation:(long long)arg6 interfaceOrientation:(long long)arg7 needsMirroring:(bool)arg8;
 - (void)JT_resetSessionCaptureSessionQueue;
 - (void)JT_resetVideoDataOutVideoSettingsCaptureSessionQueue;
 - (void)JT_setCaptureDevicePositionCaptureSessionQueue:(long long)arg1;
@@ -237,10 +237,8 @@
 - (void)setSessionRequiresFaceTracking_queryDataQueue:(bool)arg1;
 - (void)setStillImageFaceAnchor_queryDataQueue:(id)arg1;
 - (void)setStillImageFrame_queryDataQueue:(id)arg1;
-- (void)setVcpAnalyzer:(id)arg1;
 - (void)setZoomFactor:(double)arg1;
 - (void)setZoomUpdatedBlock_captureSessionQueue:(id /* block */)arg1;
-- (void)setup;
 - (void)startCameraSession:(id /* block */)arg1;
 - (void)startCameraSessionInPosition:(long long)arg1 completion:(id /* block */)arg2;
 - (id)stillImageFaceAnchor;

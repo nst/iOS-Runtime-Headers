@@ -3,16 +3,16 @@
  */
 
 @interface _TVMLKitApplication : NSObject <_TVMLKitApplication> {
+    UIViewController<TVAppRootViewController> * _appRootViewController;
     bool  _headless;
     NSDictionary * _javaScriptLaunchOptions;
     <UITraitEnvironment> * _keyTraitEnvironment;
     UIWindow * _keyWindow;
     TVApplicationControllerContext * _launchContext;
     IKAppDataStorage * _localDataStorage;
-    _TVRootMenuBarController * _menuBarController;
-    _TVAppNavigationController * _navigationController;
 }
 
+@property (nonatomic) UIViewController<TVAppRootViewController> *appRootViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -22,8 +22,6 @@
 @property (nonatomic) UIWindow *keyWindow;
 @property (nonatomic) TVApplicationControllerContext *launchContext;
 @property (nonatomic) IKAppDataStorage *localDataStorage;
-@property (nonatomic) _TVRootMenuBarController *menuBarController;
-@property (nonatomic) _TVAppNavigationController *navigationController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,6 +33,7 @@
 - (id)appJSURL;
 - (id)appLaunchParams;
 - (id)appLocalJSURL;
+- (id)appRootViewController;
 - (id)appTraitCollection;
 - (id)bagBootURLKey;
 - (bool)headless;
@@ -45,17 +44,14 @@
 - (id)launchContext;
 - (id)localDataStorage;
 - (id)localStorage;
-- (id)menuBarController;
-- (id)navigationController;
 - (id)offlineJSURL;
+- (void)setAppRootViewController:(id)arg1;
 - (void)setHeadless:(bool)arg1;
 - (void)setJavaScriptLaunchOptions:(id)arg1;
 - (void)setKeyTraitEnvironment:(id)arg1;
 - (void)setKeyWindow:(id)arg1;
 - (void)setLaunchContext:(id)arg1;
 - (void)setLocalDataStorage:(id)arg1;
-- (void)setMenuBarController:(id)arg1;
-- (void)setNavigationController:(id)arg1;
 - (bool)shouldIgnoreJSValidation;
 - (id)userDefaultsStorage;
 - (id)vendorIdentifier;

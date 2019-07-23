@@ -8,7 +8,6 @@
     FCCloudContext * _context;
     FCDateRange * _dateRange;
     FCFeedItemFeature * _feature;
-    bool  _purchasedChannelsOnly;
     NSDictionary * _resultFeedContextByFeedID;
     NSArray * _resultFeedItems;
     id /* block */  _searchCompletionHandler;
@@ -20,7 +19,6 @@
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) FCDateRange *dateRange;
 @property (nonatomic, copy) FCFeedItemFeature *feature;
-@property (nonatomic) bool purchasedChannelsOnly;
 @property (copy) NSDictionary *resultFeedContextByFeedID;
 @property (nonatomic, retain) NSArray *resultFeedItems;
 @property (nonatomic, copy) id /* block */ searchCompletionHandler;
@@ -36,7 +34,6 @@
 - (id)init;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (bool)purchasedChannelsOnly;
 - (id)resultFeedContextByFeedID;
 - (id)resultFeedItems;
 - (id /* block */)searchCompletionHandler;
@@ -45,7 +42,6 @@
 - (void)setContext:(id)arg1;
 - (void)setDateRange:(id)arg1;
 - (void)setFeature:(id)arg1;
-- (void)setPurchasedChannelsOnly:(bool)arg1;
 - (void)setResultFeedContextByFeedID:(id)arg1;
 - (void)setResultFeedItems:(id)arg1;
 - (void)setSearchCompletionHandler:(id /* block */)arg1;

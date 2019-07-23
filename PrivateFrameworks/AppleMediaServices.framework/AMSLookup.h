@@ -8,6 +8,7 @@
     <AMSLookupBagContract> * _contract;
     NSString * _imageProfile;
     NSString * _keyProfile;
+    NSString * _language;
     NSString * _platform;
     long long  _signatureType;
     long long  _version;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) <AMSLookupBagContract> *contract;
 @property (nonatomic, retain) NSString *imageProfile;
 @property (nonatomic, retain) NSString *keyProfile;
+@property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSString *platform;
 @property (nonatomic) long long signatureType;
 @property (nonatomic) long long version;
@@ -32,6 +34,7 @@
 - (id)initWithBagContract:(id)arg1;
 - (id)initWithBagContract:(id)arg1 caller:(id)arg2 keyProfile:(id)arg3;
 - (id)keyProfile;
+- (id)language;
 - (id)performLookupWithBundleIdentifiers:(id)arg1 itemIdentifiers:(id)arg2;
 - (id)platform;
 - (void)setCaller:(id)arg1;
@@ -39,6 +42,7 @@
 - (void)setContract:(id)arg1;
 - (void)setImageProfile:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setPlatform:(id)arg1;
 - (void)setSignatureType:(long long)arg1;
 - (void)setVersion:(long long)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface FirmwareBundle : NSObject {
+    NSDictionary * _buildManifest;
     NSString * _bundleDescription;
     NSData * _certificate;
     NSData * _firmwareImage;
@@ -13,16 +14,19 @@
     NSData * _signature;
 }
 
+@property (nonatomic, retain) NSDictionary *buildManifest;
 @property (readonly) NSData *certificate;
 @property (readonly) NSData *firmwareImage;
 @property (readonly) unsigned int firmwareImageBaseAddress;
 @property (readonly) unsigned int firmwareImageSize;
 @property (readonly) NSData *hash;
-@property (readonly) unsigned int productIDCode;
+@property unsigned int productIDCode;
 @property (readonly) NSData *signature;
 
 + (id)defaultBundlePath;
 
+- (id)buildManifest;
+- (void)calculateHash;
 - (id)certificate;
 - (void)dealloc;
 - (id)description;
@@ -40,6 +44,8 @@
 - (id)parseSRECFile:(id)arg1 withDefaultByteValue:(unsigned char)arg2;
 - (void)parseSRECLine:(id)arg1 intoImage:(id)arg2;
 - (unsigned int)productIDCode;
+- (void)setBuildManifest:(id)arg1;
+- (void)setProductIDCode:(unsigned int)arg1;
 - (id)signature;
 
 @end

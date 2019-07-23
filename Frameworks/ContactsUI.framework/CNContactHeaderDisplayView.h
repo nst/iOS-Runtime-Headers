@@ -2,10 +2,15 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactHeaderDisplayView : CNContactHeaderView <CNUIReusableView> {
+@interface CNContactHeaderDisplayView : CNContactHeaderView <CNPickerControllerDelegate, CNUIReusableView> {
+    bool  _allowsPickerActions;
     NSString * _alternateName;
     NSLayoutConstraint * _avatarNameSpacingConstraint;
     CNContactFormatter * _contactFormatter;
+    CNGeminiPickerController * _geminiPicker;
+    CNGeminiResult * _geminiResult;
+    NSDictionary * _geminiTextAttributes;
+    CNContactGeminiView * _geminiView;
     double  _lastViewWidth;
     double  _maxHeight;
     struct CGSize { 
@@ -17,16 +22,21 @@
     UIView * _personHeaderView;
     NSLayoutConstraint * _photoHeightConstraint;
     NSLayoutConstraint * _photoTopConstraint;
+    bool  _shouldShowGemini;
     UILabel * _taglineLabel;
     NSDictionary * _taglineTextAttributes;
 }
 
+@property (nonatomic) bool allowsPickerActions;
 @property (nonatomic, retain) NSString *alternateName;
 @property (retain) NSLayoutConstraint *avatarNameSpacingConstraint;
 @property (nonatomic) unsigned long long avatarStyle;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CNGeminiPickerController *geminiPicker;
+@property (retain) CNGeminiResult *geminiResult;
+@property (retain) CNContactGeminiView *geminiView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double lastViewWidth;
 @property (nonatomic) double maxHeight;
@@ -38,6 +48,7 @@
 @property (nonatomic, readonly) double photoLabelSpacing;
 @property (nonatomic, readonly) double photoMinTopMargin;
 @property (retain) NSLayoutConstraint *photoTopConstraint;
+@property (nonatomic) bool shouldShowGemini;
 @property (readonly) Class superclass;
 @property (retain) UILabel *taglineLabel;
 @property (nonatomic, copy) NSDictionary *taglineTextAttributes;
@@ -51,15 +62,22 @@
 - (id)_headerStringForContacts:(id)arg1;
 - (id)_taglineStringForContacts:(id)arg1;
 - (void)_updatePhotoView;
+- (bool)allowsPickerActions;
 - (id)alternateName;
 - (id)avatarNameSpacingConstraint;
 - (unsigned long long)avatarStyle;
 - (void)calculateLabelSizes;
+- (void)calculateLabelSizesIfNeeded;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)contactFormatter;
 - (void)copy:(id)arg1;
 - (id)descriptorForRequiredKeys;
 - (void)disablePhotoTapGesture;
+- (id)geminiPicker;
+- (id)geminiResult;
+- (id)geminiTextAttributes;
+- (id)geminiView;
+- (void)handleGeminiViewTouch:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 delegate:(id)arg3;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(long long)arg3 shouldAllowImageDrops:(bool)arg4 delegate:(id)arg5;
@@ -75,11 +93,18 @@
 - (double)photoLabelSpacing;
 - (double)photoMinTopMargin;
 - (id)photoTopConstraint;
+- (void)picker:(id)arg1 didPickItem:(id)arg2;
+- (void)pickerDidCancel:(id)arg1;
 - (void)reloadDataPreservingChanges:(bool)arg1;
+- (void)setAllowsPickerActions:(bool)arg1;
 - (void)setAlternateName:(id)arg1;
 - (void)setAvatarNameSpacingConstraint:(id)arg1;
 - (void)setAvatarStyle:(unsigned long long)arg1;
 - (void)setContactFormatter:(id)arg1;
+- (void)setGeminiPicker:(id)arg1;
+- (void)setGeminiResult:(id)arg1;
+- (void)setGeminiTextAttributes:(id)arg1;
+- (void)setGeminiView:(id)arg1;
 - (void)setLastViewWidth:(double)arg1;
 - (void)setMaxHeight:(double)arg1;
 - (void)setMaxNameSize:(struct CGSize { double x1; double x2; })arg1;
@@ -89,13 +114,16 @@
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPhotoHeightConstraint:(id)arg1;
 - (void)setPhotoTopConstraint:(id)arg1;
+- (void)setShouldShowGemini:(bool)arg1;
 - (void)setTaglineLabel:(id)arg1;
 - (void)setTaglineTextAttributes:(id)arg1;
+- (bool)shouldShowGemini;
 - (id)taglineLabel;
 - (id)taglineTextAttributes;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
 - (void)updateFontSizes;
+- (void)updateGeminiResult:(id)arg1;
 - (void)updateSizeDependentAttributes;
 
 @end

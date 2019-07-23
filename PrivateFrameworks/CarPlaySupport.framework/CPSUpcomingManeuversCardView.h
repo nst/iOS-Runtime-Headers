@@ -3,14 +3,15 @@
  */
 
 @interface CPSUpcomingManeuversCardView : CPSInheritedBackgroundColorView <CPSNavigationDisplaying> {
+    NSMutableDictionary * _currentTravelEstimatesForManeuverIdentifiers;
     CPSHairlineView * _hairlineView;
     NSArray * _maneuverStyles;
     NSMutableArray * _maneuverViewStack;
     NSArray * _maneuvers;
-    bool  _minimalMode;
     NSMutableArray * _verticalConstraints;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *currentTravelEstimatesForManeuverIdentifiers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CPSHairlineView *hairlineView;
@@ -18,22 +19,24 @@
 @property (nonatomic, readonly) NSArray *maneuverStyles;
 @property (nonatomic, readonly) NSMutableArray *maneuverViewStack;
 @property (nonatomic, readonly) NSArray *maneuvers;
-@property (getter=isMinimalMode, nonatomic) bool minimalMode;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSMutableArray *verticalConstraints;
 
 - (void).cxx_destruct;
 - (void)_clearManeuvers;
+- (id)_maneuverViews;
+- (void)_resetToFull;
 - (void)_updateVerticalConstraints;
 - (void)backgroundColorDidChange;
+- (id)currentTravelEstimatesForManeuverIdentifiers;
 - (id)hairlineView;
 - (id)init;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
-- (bool)isMinimalMode;
+- (void)layoutSubviews;
 - (id)maneuverStyles;
 - (id)maneuverViewStack;
 - (id)maneuvers;
-- (void)setMinimalMode:(bool)arg1;
+- (void)setCurrentTravelEstimatesForManeuverIdentifiers:(id)arg1;
 - (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
 - (void)updateEstimates:(id)arg1 forManeuver:(id)arg2;
 - (id)verticalConstraints;

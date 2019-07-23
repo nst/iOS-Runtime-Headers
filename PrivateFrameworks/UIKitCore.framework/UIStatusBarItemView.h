@@ -25,19 +25,12 @@
 @property (nonatomic, readonly) bool shouldTintContentImage;
 @property (getter=isVisible, nonatomic) bool visible;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 
 - (void).cxx_destruct;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (bool)_shouldReverseLayoutDirection;
 - (void)_tintContentLayerIfNeeded;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)addContentOverlap:(double)arg1;
 - (double)adjustFrameToNewSize:(double)arg1;
@@ -53,6 +46,8 @@
 - (double)currentLeftOverlap;
 - (double)currentOverlap;
 - (double)currentRightOverlap;
+- (void)dealloc;
+- (id)description;
 - (void)endDisablingRasterization;
 - (void)endImageContext;
 - (double)extraLeftPadding;

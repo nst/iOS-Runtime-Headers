@@ -17,6 +17,7 @@
     UIView * _contentOverlayView;
     bool  _observingStatusBarHidden;
     __AVPlayerLayerView * _playerLayerView;
+    bool  _playingOnSecondScreen;
     AVStatusBarBackgroundGradientView * _statusBarBackgroundGradientView;
 }
 
@@ -25,10 +26,12 @@
 @property (nonatomic, readonly) UIView *contentOverlayView;
 @property (getter=isObservingStatusBarHidden, nonatomic) bool observingStatusBarHidden;
 @property (nonatomic, retain) __AVPlayerLayerView *playerLayerView;
+@property (getter=isPlayingOnSecondScreen, nonatomic) bool playingOnSecondScreen;
 @property (nonatomic, readonly) AVStatusBarBackgroundGradientView *statusBarBackgroundGradientView;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForStatusBarBackgroundGradientView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_resolvedContentFrame;
 - (void)_updateStatusBarBackgroundGradientViewAlpha;
 - (bool)canShowStatusBarBackgroundGradientWhenStatusBarVisible;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
@@ -38,12 +41,14 @@
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 playerLayerView:(id)arg2;
 - (bool)isObservingStatusBarHidden;
+- (bool)isPlayingOnSecondScreen;
 - (void)layoutSubviews;
 - (id)playerLayerView;
 - (void)setCanShowStatusBarBackgroundGradientWhenStatusBarVisible:(bool)arg1;
 - (void)setContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setObservingStatusBarHidden:(bool)arg1;
 - (void)setPlayerLayerView:(id)arg1;
+- (void)setPlayingOnSecondScreen:(bool)arg1;
 - (id)statusBarBackgroundGradientView;
 
 @end

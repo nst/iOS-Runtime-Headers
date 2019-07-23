@@ -7,9 +7,12 @@
     NSMutableArray * _accessHandlers;
     unsigned long long  _activeMechanisms;
     PKAuthenticator * _authenticator;
+    long long  _coachingState;
+    long long  _coachingStatus;
     unsigned long long  _completedMechanisms;
     id /* block */  _completionHandler;
     NSObject<OS_dispatch_source> * _delayedBiometricMissFeedback;
+    NSObject<OS_dispatch_source> * _delayedCoachingStateUpdate;
     <PKAuthenticatorDelegate> * _delegate;
     double  _evaluationMinimumTime;
     unsigned long long  _externalContextInvalidationPolicy;
@@ -31,6 +34,7 @@
 }
 
 @property (nonatomic, readonly) bool biometricMatch;
+@property (nonatomic, readonly) long long coachingState;
 @property (nonatomic) <PKAuthenticatorDelegate> *delegate;
 @property (nonatomic, readonly) bool fingerPresent;
 @property (nonatomic, readonly) bool fingerPresentTimeoutExpired;
@@ -57,12 +61,16 @@
 - (void)_presentAuthenticatorViewOfType:(long long)arg1 withParams:(id)arg2;
 - (unsigned long long)_presentationFlagForAuthenticatorViewType:(long long)arg1;
 - (void)_requestRemoteAuthenticatorViewControllerOfType:(long long)arg1 withClassName:(id)arg2 bundleIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)_setCoachingState:(long long)arg1;
 - (void)_setLiftFingerTimer;
 - (void)_setPearlState:(long long)arg1;
+- (void)_updateCoachingState;
 - (void)_updatePearlState;
 - (void)accessLAContext:(id /* block */)arg1;
 - (bool)biometricMatch;
+- (long long)coachingState;
 - (void)dealloc;
+- (void)delayCoachingTransition:(id)arg1;
 - (id)delegate;
 - (void)evaluateWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;

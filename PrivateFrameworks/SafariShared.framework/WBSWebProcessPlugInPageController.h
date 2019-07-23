@@ -20,7 +20,6 @@
 - (id)init;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
 - (id)mainFrame;
-- (id)requestIfDoNotTrackEnabled:(id)arg1;
 - (id)webProcessPlugIn;
 - (void)willDestroyBrowserContextController:(id)arg1;
 

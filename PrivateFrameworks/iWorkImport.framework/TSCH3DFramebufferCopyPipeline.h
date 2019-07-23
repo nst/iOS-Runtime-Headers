@@ -5,10 +5,14 @@
 @interface TSCH3DFramebufferCopyPipeline : TSCH3DFramebufferTransformPipeline {
     NSArray * mEffects;
     struct RenderState { 
-        bool mBlend; 
-        int blendMode; 
-        bool depthTest; 
-        bool depthMask; 
+        struct BlendState { 
+            bool mBlend; 
+            int mBlendMode; 
+        } blendState; 
+        struct DepthState { 
+            bool depthTest; 
+            bool depthMask; 
+        } depthState; 
         bool culling; 
         bool cullBack; 
         bool polygonOffset; 
@@ -99,7 +103,7 @@
 }
 
 @property (nonatomic, copy) NSArray *effects;
-@property (nonatomic) /* Warning: unhandled struct encoding: '{RenderState=BiBBBBBff{EnableClipDistances={array<bool' */ struct  renderState; /* unknown property attribute:  8>=[8B]}}} */
+@property (nonatomic) struct RenderState { struct BlendState { bool x_1_1_1; int x_1_1_2; } x1; struct DepthState { bool x_2_1_1; bool x_2_1_2; } x2; bool x3; bool x4; bool x5; float x6; float x7; /* Warning: unhandled struct encoding: '{EnableClipDistances={array<bool' */ struct x8; } renderState; /* unknown property attribute:  8>=[8B]}}} */
 @property (nonatomic) struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; } targetViewport;
 @property (nonatomic, retain) TSCH3DResource *texcoords;
 @property (nonatomic) struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; } transform;
@@ -112,9 +116,9 @@
 - (void)dealloc;
 - (id)effects;
 - (id)initWithProcessor:(id)arg1 session:(id)arg2;
-- (struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; float x8; float x9; struct EnableClipDistances { struct array<bool, 8> { bool x_1_2_1[8]; } x_10_1_1; } x10; })renderState;
+- (struct RenderState { struct BlendState { bool x_1_1_1; int x_1_1_2; } x1; struct DepthState { bool x_2_1_1; bool x_2_1_2; } x2; bool x3; bool x4; bool x5; float x6; float x7; struct EnableClipDistances { struct array<bool, 8> { bool x_1_2_1[8]; } x_8_1_1; } x8; })renderState;
 - (void)setEffects:(id)arg1;
-- (void)setRenderState:(struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; float x8; float x9; struct EnableClipDistances { struct array<bool, 8> { bool x_1_2_1[8]; } x_10_1_1; } x10; })arg1;
+- (void)setRenderState:(struct RenderState { struct BlendState { bool x_1_1_1; int x_1_1_2; } x1; struct DepthState { bool x_2_1_1; bool x_2_1_2; } x2; bool x3; bool x4; bool x5; float x6; float x7; struct EnableClipDistances { struct array<bool, 8> { bool x_1_2_1[8]; } x_8_1_1; } x8; })arg1;
 - (void)setTargetViewport:(struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })arg1;
 - (void)setTexcoords:(id)arg1;
 - (void)setTransform:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })arg1;

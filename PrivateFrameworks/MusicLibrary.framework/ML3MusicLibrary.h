@@ -37,6 +37,9 @@
 @property (nonatomic) <ML3MusicLibraryDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool downloadOnAddToLibrary;
+@property (nonatomic, readonly) bool hasAddedToLibraryAppleMusicContent;
+@property (nonatomic, readonly) bool hasUserPlaylists;
+@property (nonatomic, readonly) bool hasUserPlaylistsContainingAppleMusicContent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isHomeSharingLibrary;
 @property (nonatomic, retain) NSArray *libraryContainerFilterPredicates;
@@ -206,7 +209,10 @@
 - (void)getChangedPersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(long long)arg2 maximumRevisionType:(int)arg3 usingBlock:(id /* block */)arg4;
 - (id)groupingKeyForString:(id)arg1;
 - (id)groupingKeysForStrings:(id)arg1;
+- (bool)hasAddedToLibraryAppleMusicContent;
 - (bool)hasPresignedValidity;
+- (bool)hasUserPlaylists;
+- (bool)hasUserPlaylistsContainingAppleMusicContent;
 - (void)importArtworkTokenForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkToken:(id)arg3 artworkType:(long long)arg4 sourceType:(long long)arg5;
 - (void)importArtworkTokenForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkToken:(id)arg3 artworkType:(long long)arg4 sourceType:(long long)arg5 usingConnection:(id)arg6;
 - (bool)importExistingOriginalArtworkWithArtworkToken:(id)arg1 artworkType:(long long)arg2 sourceType:(long long)arg3 mediaType:(unsigned int)arg4;

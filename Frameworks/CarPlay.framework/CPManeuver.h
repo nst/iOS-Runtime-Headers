@@ -9,6 +9,7 @@
     NSArray * _instructionVariants;
     NSSet * _junctionElementAngles;
     NSMeasurement * _junctionExitAngle;
+    UIImage * _junctionImage;
     unsigned long long  _junctionType;
     unsigned long long  _maneuverType;
     NSArray * _roadFollowingManeuverVariants;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSArray *instructionVariants;
 @property (nonatomic, copy) NSSet *junctionElementAngles;
 @property (nonatomic, copy) NSMeasurement *junctionExitAngle;
+@property (nonatomic, retain) UIImage *junctionImage;
 @property (nonatomic) unsigned long long junctionType;
 @property (nonatomic) unsigned long long maneuverType;
 @property (nonatomic, copy) NSArray *roadFollowingManeuverVariants;
@@ -48,6 +50,7 @@
 - (id)instructionVariants;
 - (id)junctionElementAngles;
 - (id)junctionExitAngle;
+- (id)junctionImage;
 - (unsigned long long)junctionType;
 - (unsigned long long)maneuverType;
 - (id)roadFollowingManeuverVariants;
@@ -56,6 +59,7 @@
 - (void)setInstructionVariants:(id)arg1;
 - (void)setJunctionElementAngles:(id)arg1;
 - (void)setJunctionExitAngle:(id)arg1;
+- (void)setJunctionImage:(id)arg1;
 - (void)setJunctionType:(unsigned long long)arg1;
 - (void)setManeuverType:(unsigned long long)arg1;
 - (void)setRoadFollowingManeuverVariants:(id)arg1;

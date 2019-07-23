@@ -21,8 +21,6 @@
 @property (nonatomic) bool popoverWillCleanUpNavigationTransition;
 @property (nonatomic) bool usesRoundedCorners;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultDurationForTransition:(long long)arg1;
 
 - (void).cxx_destruct;
@@ -32,9 +30,6 @@
 - (void)_navigationTransitionDidStop;
 - (void)_notifyDelegateTransitionDidStopWithContext:(id)arg1;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;

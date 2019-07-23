@@ -8,22 +8,22 @@
     struct ATXPredictionItem { 
         NSString *key; 
         unsigned long long actionHash; 
-        float inputSignals[259]; 
+        float inputSignals[348]; 
         float score; 
     }  _predictionItem;
     struct ATXScoredPrediction { Class x1; } * _scoredAction;
 }
 
 @property (nonatomic, readonly) NSString *actionKey;
-@property (nonatomic, readonly) const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*predictionItem;
+@property (nonatomic, readonly) const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*predictionItem;
 @property (nonatomic, readonly) ATXScoredPrediction *scoredAction;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)actionKey;
-- (id)initWithScoredAction:(struct ATXScoredPrediction { Class x1; }*)arg1 predictionItem:(const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*)arg2 actionKey:(id)arg3;
-- (const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*)predictionItem;
+- (id)initWithScoredAction:(struct ATXScoredPrediction { Class x1; }*)arg1 predictionItem:(const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*)arg2 actionKey:(id)arg3;
+- (const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*)predictionItem;
 - (struct ATXScoredPrediction { Class x1; }*)scoredAction;
-- (void)setPredictionItem:(const struct ATXPredictionItem { id x1; float x2[259]; float x3; }*)arg1;
+- (void)setPredictionItem:(const struct ATXPredictionItem { id x1; float x2[348]; float x3; }*)arg1;
 
 @end

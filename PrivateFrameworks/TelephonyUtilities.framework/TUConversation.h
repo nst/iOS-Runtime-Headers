@@ -11,10 +11,13 @@
     NSUUID * _groupUUID;
     TUHandle * _initiator;
     bool  _locallyCreated;
+    long long  _maxVideoDecodesAllowed;
     NSString * _messagesGroupName;
     NSUUID * _messagesGroupUUID;
     NSSet * _participantHandles;
     NSSet * _remoteMembers;
+    NSObject * _reportingHierarchySubToken;
+    NSObject * _reportingHierarchyToken;
     long long  _state;
     bool  _videoEnabled;
 }
@@ -27,10 +30,13 @@
 @property (nonatomic, readonly) NSUUID *groupUUID;
 @property (nonatomic, retain) TUHandle *initiator;
 @property (getter=isLocallyCreated, nonatomic) bool locallyCreated;
+@property (nonatomic) long long maxVideoDecodesAllowed;
 @property (nonatomic, copy) NSString *messagesGroupName;
 @property (nonatomic, retain) NSUUID *messagesGroupUUID;
 @property (nonatomic, copy) NSSet *participantHandles;
 @property (nonatomic, copy) NSSet *remoteMembers;
+@property (nonatomic, retain) NSObject *reportingHierarchySubToken;
+@property (nonatomic, retain) NSObject *reportingHierarchyToken;
 @property (nonatomic) long long state;
 @property (getter=isVideoEnabled, nonatomic) bool videoEnabled;
 
@@ -59,19 +65,25 @@
 - (bool)isLocallyCreated;
 - (bool)isRepresentedByRemoteMembers:(id)arg1;
 - (bool)isVideoEnabled;
+- (long long)maxVideoDecodesAllowed;
 - (id)messagesGroupName;
 - (id)messagesGroupUUID;
 - (id)participantHandles;
 - (id)remoteMembers;
+- (id)reportingHierarchySubToken;
+- (id)reportingHierarchyToken;
 - (void)setActiveRemoteParticipants:(id)arg1;
 - (void)setAudioEnabled:(bool)arg1;
 - (void)setAvcSessionToken:(long long)arg1;
 - (void)setInitiator:(id)arg1;
 - (void)setLocallyCreated:(bool)arg1;
+- (void)setMaxVideoDecodesAllowed:(long long)arg1;
 - (void)setMessagesGroupName:(id)arg1;
 - (void)setMessagesGroupUUID:(id)arg1;
 - (void)setParticipantHandles:(id)arg1;
 - (void)setRemoteMembers:(id)arg1;
+- (void)setReportingHierarchySubToken:(id)arg1;
+- (void)setReportingHierarchyToken:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setVideoEnabled:(bool)arg1;
 - (long long)state;

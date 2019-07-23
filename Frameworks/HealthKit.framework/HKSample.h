@@ -79,6 +79,7 @@
 - (id)detailedReportName;
 - (void)fetchSubSampleTypesWithHealthStore:(id)arg1 completion:(id /* block */)arg2;
 - (id)fixedAggregateValuesWithDisplayTypeController:(id)arg1 unitController:(id)arg2;
+- (id)hk_additionalMetadataSectionsWithHealthStore:(id)arg1 displayTypeController:(id)arg2 unitController:(id)arg3;
 - (id)subSamplePredicate;
 - (id)subSampleSectionTitle;
 

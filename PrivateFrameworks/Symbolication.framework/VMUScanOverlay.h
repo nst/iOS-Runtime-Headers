@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)addMetadataRefinementRule:(id /* block */)arg1;
-- (id)init;
+- (id)initWithScanner:(id)arg1;
 - (id)refinementRules;
 
 @end

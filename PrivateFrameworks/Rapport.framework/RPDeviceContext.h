@@ -4,16 +4,16 @@
 
 @interface RPDeviceContext : NSObject {
     RPDevice * _device;
-    RPDeviceDiscovery * _discovery;
+    RPLegacyDeviceDiscovery * _discovery;
     bool  _reported;
-    RPSession * _session;
+    RPLegacySession * _session;
     int  _state;
 }
 
 @property (nonatomic, retain) RPDevice *device;
-@property (nonatomic, retain) RPDeviceDiscovery *discovery;
+@property (nonatomic, retain) RPLegacyDeviceDiscovery *discovery;
 @property (nonatomic) bool reported;
-@property (nonatomic, retain) RPSession *session;
+@property (nonatomic, retain) RPLegacySession *session;
 @property (nonatomic) int state;
 
 - (void).cxx_destruct;

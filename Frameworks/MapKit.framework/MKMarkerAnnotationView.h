@@ -23,6 +23,7 @@
     UIImageView * _shadowView;
     long long  _subtitleVisibility;
     long long  _titleVisibility;
+    MKWalletMerchantStylingInfo * _walletMerchantStylingInfo;
 }
 
 @property (nonatomic) bool animatesWhenAdded;
@@ -37,6 +38,7 @@
 @property (getter=_styleAttributes, setter=_setStyleAttributes:, nonatomic, retain) GEOFeatureStyleAttributes *styleAttributes;
 @property (nonatomic) long long subtitleVisibility;
 @property (nonatomic) long long titleVisibility;
+@property (getter=_walletMerchantStylingInfo, setter=_setWalletMerchantStylingInfo:, nonatomic, retain) MKWalletMerchantStylingInfo *walletMerchantStylingInfo;
 
 + (float)_defaultDisplayPriority;
 
@@ -57,6 +59,7 @@
 - (bool)_hasDataRequiringCallout;
 - (void)_setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)_setStyleAttributes:(id)arg1;
+- (void)_setWalletMerchantStylingInfo:(id)arg1;
 - (void)_setupNormalViewsIfNeeded;
 - (void)_setupSelectedViewsIfNeededUsesCallout:(bool)arg1;
 - (bool)_shouldDeselectWhenDragged;
@@ -65,6 +68,7 @@
 - (void)_unhideForDisplay;
 - (void)_updateContentForState:(long long)arg1;
 - (void)_updateContentForState:(long long)arg1 forceUpdate:(bool)arg2;
+- (id)_walletMerchantStylingInfo;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (bool)animatesWhenAdded;
 - (bool)canShowCallout;

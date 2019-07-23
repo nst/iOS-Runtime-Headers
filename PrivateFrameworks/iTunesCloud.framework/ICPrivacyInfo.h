@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICPrivacyInfo : NSObject
+@interface ICPrivacyInfo : NSObject {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableDictionary * _cache;
+}
 
 @property (nonatomic, readonly) bool privacyAcknowledgementRequiredForApplications;
 @property (nonatomic, readonly) bool privacyAcknowledgementRequiredForBooks;
@@ -12,7 +15,10 @@
 
 + (id)sharedPrivacyInfo;
 
+- (void).cxx_destruct;
+- (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
 - (bool)_privacyAcknowledgementRequiredForIdentifier:(id)arg1;
+- (id)init;
 - (bool)privacyAcknowledgementRequiredForApplications;
 - (bool)privacyAcknowledgementRequiredForBooks;
 - (bool)privacyAcknowledgementRequiredForMedia;

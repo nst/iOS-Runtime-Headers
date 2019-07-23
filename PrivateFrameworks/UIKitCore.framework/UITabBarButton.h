@@ -71,8 +71,6 @@
 @property (nonatomic, readonly) UITabBar *tabBar;
 @property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_defaultLabelColor;
 
 - (void).cxx_destruct;
@@ -112,6 +110,7 @@
 - (void)_setHorizontalLayout:(bool)arg1;
 - (void)_setImage:(id)arg1 selected:(bool)arg2 offset:(struct UIOffset { double x1; double x2; })arg3;
 - (void)_setInfoOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)_setLabelCompositingMode:(long long)arg1;
 - (void)_setLabelHidden:(bool)arg1;
 - (void)_setSelected:(bool)arg1;
 - (void)_setSelectedInfoOffset:(struct UIOffset { double x1; double x2; })arg1;
@@ -132,9 +131,6 @@
 - (void)_updateSelectedIndicatorView;
 - (void)_updateToMatchCurrentState;
 - (void)_updateVibrancyEffectView;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithImage:(id)arg1 landscapeImage:(id)arg2 selectedImage:(id)arg3 landscapeSelectedImage:(id)arg4 label:(id)arg5 withInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg6 landscapeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg7 tabBar:(id)arg8;

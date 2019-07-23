@@ -10,6 +10,7 @@
 - (bool)isInRetailDemoMode;
 - (double)lastNetworkChangedTime;
 - (NSString *)networkType;
+- (NSString *)osBuildNumber;
 - (NSNumber *)pixelRatio;
 - (bool)runningAnInternalBuild;
 - (NSString *)vendorID;

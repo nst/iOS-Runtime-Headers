@@ -31,6 +31,10 @@
 - (id)attachmentRecords;
 - (id)attachmentURLs;
 - (id)attachments;
+- (void)didCancelCollectionOnExtension:(id)arg1;
+- (void)didCollectAttachmentGroup:(id)arg1;
+- (void)didFinishAllCollections;
+- (void)didStartCollectingDiagnosticExtensionWithIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finishSession:(id)arg1 withConfiguration:(id)arg2;
 - (id)flattenDirectories:(id)arg1;

@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQ;
+- (id)description;
 - (void)flushUpdates:(id)arg1 accessory:(id)arg2;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (int)lastUpdateType;

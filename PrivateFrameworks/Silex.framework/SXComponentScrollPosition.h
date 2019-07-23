@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString *componentIdentifier;
 @property (nonatomic) double relativePageOffset;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (double)canvasWidth;
 - (id)componentIdentifier;

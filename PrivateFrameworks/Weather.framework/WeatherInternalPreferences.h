@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WeatherInternalPreferences : NSObject {
+@interface WeatherInternalPreferences : NSUserDefaults {
     <WeatherPreferencesPersistence> * _persistence;
 }
 
@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (bool)isInternalInstall;
-- (id)objectForKey:(id)arg1;
 - (id)persistence;
 - (void)setPersistence:(id)arg1;
 

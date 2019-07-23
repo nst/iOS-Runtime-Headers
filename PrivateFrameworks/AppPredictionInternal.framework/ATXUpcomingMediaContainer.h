@@ -8,6 +8,8 @@
     NSMutableDictionary * _containerExpiredUpcomingMedia;
     NSMutableDictionary * _containerValidUpcomingMedia;
     bool  _isInternalApplication;
+    NSMutableDictionary * _itemExpiredUpcomingMedia;
+    NSMutableDictionary * _itemValidUpcomingMedia;
     NSMutableArray * _maybeSortedUpcomingMedia;
     bool  _preferUpcomingMediaForPredictions;
     bool  _preferenceForUpcomingMediaIsSet;
@@ -19,6 +21,8 @@
 @property (nonatomic, readonly) NSMutableDictionary *containerExpiredUpcomingMedia;
 @property (nonatomic, readonly) NSMutableDictionary *containerValidUpcomingMedia;
 @property (nonatomic) bool isInternalApplication;
+@property (nonatomic, readonly) NSMutableDictionary *itemExpiredUpcomingMedia;
+@property (nonatomic, readonly) NSMutableDictionary *itemValidUpcomingMedia;
 @property (nonatomic) bool preferUpcomingMediaForPredictions;
 @property (nonatomic) bool preferenceForUpcomingMediaIsSet;
 @property (nonatomic, readonly) NSMutableArray *sortedUpcomingMedia;
@@ -33,6 +37,8 @@
 - (id)containerValidUpcomingMedia;
 - (id)init;
 - (bool)isInternalApplication;
+- (id)itemExpiredUpcomingMedia;
+- (id)itemValidUpcomingMedia;
 - (bool)preferUpcomingMediaForPredictions;
 - (bool)preferenceForUpcomingMediaIsSet;
 - (void)setIsInternalApplication:(bool)arg1;

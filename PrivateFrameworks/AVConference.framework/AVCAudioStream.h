@@ -37,6 +37,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deregisterBlocksForDelegateNotifications;
+- (void)didInterruptionBeginHandler;
+- (void)didInterruptionEndHandler;
 - (long long)direction;
 - (id)initWithIDSDestination:(id)arg1 isOriginator:(bool)arg2 callID:(id)arg3 error:(id*)arg4;
 - (id)initWithIDSDestination:(id)arg1 isOriginator:(bool)arg2 error:(id*)arg3;

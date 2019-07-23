@@ -80,8 +80,6 @@
 @property (nonatomic) long long titleLineBreakMode;
 @property (nonatomic) long long titleTextAlignment;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)_backgroundImage;
 + (id)_bottomAnchorImage;
 + (id)_leftCapImage;
@@ -91,6 +89,14 @@
 + (id)sharedCalloutView;
 
 - (void).cxx_destruct;
+- (double)UICalloutViewButtonPadding;
+- (double)UICalloutViewCapHeight;
+- (double)UICalloutViewCapPaddingTop;
+- (double)UICalloutViewHorizontalMargin;
+- (double)UICalloutViewHorizontalPadding;
+- (double)UICalloutViewLayoutDuration;
+- (double)UICalloutViewMinimumWidth;
+- (double)UICalloutViewVerticalMargin;
 - (void)_fadeViewsIn:(bool)arg1;
 - (void)_layoutAnimation;
 - (void)_layoutSubviews:(bool)arg1;
@@ -102,23 +108,12 @@
 - (void)_setLeftView:(id)arg1;
 - (void)_setOriginForScale:(double)arg1;
 - (void)_setRightView:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (double)UICalloutViewButtonPadding;
-- (double)UICalloutViewCapHeight;
-- (double)UICalloutViewCapPaddingTop;
-- (double)UICalloutViewHorizontalMargin;
-- (double)UICalloutViewHorizontalPadding;
-- (double)UICalloutViewLayoutDuration;
-- (double)UICalloutViewMinimumWidth;
-- (double)UICalloutViewVerticalMargin;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (struct CGPoint { double x1; double x2; })anchorPoint;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (bool)canAnchorFromBottom;
 - (void)completeBounceAnimation;
+- (void)dealloc;
 - (id)delegate;
 - (void)fadeOutWithDuration:(double)arg1;
 - (void)getActualAnchorPoint:(struct CGPoint { double x1; double x2; }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 position:(int*)arg3 forDesiredAnchorPoint:(struct CGPoint { double x1; double x2; })arg4 boundaryRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;

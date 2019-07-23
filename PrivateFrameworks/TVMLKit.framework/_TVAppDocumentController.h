@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVAppDocumentController : UIViewController <UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _TVIKAppDocumentDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate> {
+@interface _TVAppDocumentController : UIViewController <IKAppDocumentDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _TVIKAppDocumentDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate> {
+    <_TVAppDocumentControllerDelegate> * _appDelegate;
     IKAppDocument * _appDocument;
     bool  _applicationDeactivatedOnMenu;
     <_TVAppDocumentControllerDelegate> * _delegate;
     struct { 
-        unsigned int mediaQueryEvaluatorForAppDocumentController : 1; 
+        bool hasMediaQueryEvaluator; 
+        bool hasWillHostTemplateViewController; 
+        bool hasDidHostTemplateViewController; 
     }  _delegateFlags;
     bool  _dismissAppOnMenu;
     TVMediaQueryEvaluator * _mediaQueryEvaluator;
@@ -16,12 +19,14 @@
     bool  _opaque;
     _TVPagePerformanceController * _pagePerformance;
     UIView * _pagePerformanceView;
+    bool  _presentedModal;
     bool  _shouldMarkStylesDirtyBeforeLayout;
     UIViewController * _templateViewController;
     bool  _transitioning;
     bool  _visualEffectDisablementNeeded;
 }
 
+@property (nonatomic) <_TVAppDocumentControllerDelegate> *appDelegate;
 @property (nonatomic, retain) IKAppDocument *appDocument;
 @property (nonatomic, readonly) bool applicationDeactivatedOnMenu;
 @property (readonly, copy) NSString *debugDescription;
@@ -39,6 +44,7 @@
 @property (nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
+@property (getter=isPresentedModal, nonatomic) bool presentedModal;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *templateViewController;
 @property (getter=isTransitioning, nonatomic) bool transitioning;
@@ -47,31 +53,39 @@
 - (void).cxx_destruct;
 - (id)_alertControllerWithError:(id)arg1;
 - (void)_darkerSystemColorStatusChanged:(id)arg1;
+- (void)_didHostTemplateViewController:(id)arg1 usedTransitions:(bool)arg2;
 - (bool)_isFlowcaseStack;
 - (void)_markAndNotifyStylesDirty;
 - (id)_mediaQueryEvaluator;
 - (void)_menuGestureHandler:(id)arg1;
 - (bool)_tvTabBarShouldOverlap;
 - (void)_updateIdleModeStatus;
+- (void)_updateModalPresentationStateWithTemplateView:(id)arg1;
 - (void)_updateTemplateViewController;
+- (void)_willHostTemplateViewController:(id)arg1 usesTransitions:(bool*)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
+- (id)appDelegate;
 - (id)appDocument;
 - (bool)applicationDeactivatedOnMenu;
 - (bool)automaticallyAdjustsScrollViewInsets;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForStatusBarHidden;
+- (id)contentScrollView;
+- (id)currentImpressionableElements;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)didMoveToParentViewController:(id)arg1;
+- (void)didHostTemplateViewController:(id)arg1 usedTransitions:(bool)arg2;
 - (bool)dismissAppOnMenu;
 - (bool)document:(id)arg1 evaluateStyleMediaQuery:(id)arg2;
 - (void)documentDidUpdate:(id)arg1;
+- (void)documentDidUpdateImplicitly:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (struct CGSize { double x1; double x2; })formSize;
 - (id)impressionableViewElementsForDocument:(id)arg1;
 - (id)initWithAppDocument:(id)arg1;
+- (bool)isPresentedModal;
 - (bool)isTransitioning;
 - (bool)isVisualEffectDisablementNeeded;
 - (void)loadView;
@@ -90,6 +104,7 @@
 - (void)reload;
 - (void)replaceAppDocumentWithAppDocument:(id)arg1;
 - (void)scrollToTop;
+- (void)setAppDelegate:(id)arg1;
 - (void)setAppDocument:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissAppOnMenu:(bool)arg1;
@@ -99,14 +114,17 @@
 - (void)setOpaque:(bool)arg1;
 - (void)setPagePerformance:(id)arg1;
 - (void)setPagePerformanceView:(id)arg1;
+- (void)setPresentedModal:(bool)arg1;
 - (void)setTemplateViewController:(id)arg1;
 - (void)setTransitioning:(bool)arg1;
 - (void)setVisualEffectDisablementNeeded:(bool)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (void)snapshotImpressions;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)templateViewController;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize { double x1; double x2; })tv_adjustedWindowSizeForDocument:(id)arg1;
+- (bool)tv_isPresentedModalForDocument:(id)arg1;
 - (void)tvmlkit_handleEvent:(id)arg1 forElement:(id)arg2 andSourceView:(id)arg3;
 - (void)updatePreferredFocusedViewStateForFocus:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
@@ -116,6 +134,6 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (void)willMoveToParentViewController:(id)arg1;
+- (void)willHostTemplateViewController:(id)arg1 usesTransitions:(bool*)arg2;
 
 @end

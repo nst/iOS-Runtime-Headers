@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) double lastNetworkChangedTime;
 @property (nonatomic, readonly) NSString *model;
 @property (nonatomic, readonly) NSString *networkType;
+@property (nonatomic, readonly) NSString *osBuildNumber;
 @property (nonatomic, readonly) NSNumber *pixelRatio;
 @property (nonatomic, readonly) NSString *productType;
 @property (nonatomic, readonly) bool runningAnInternalBuild;
@@ -47,6 +48,7 @@
 - (double)lastNetworkChangedTime;
 - (id)model;
 - (id)networkType;
+- (id)osBuildNumber;
 - (id)pixelRatio;
 - (id)productType;
 - (bool)runningAnInternalBuild;

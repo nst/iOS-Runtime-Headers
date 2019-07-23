@@ -3,6 +3,19 @@
  */
 
 @interface TVAppStyle : NSObject {
+    IKColor * _backgroundColor;
+    struct { 
+        union { 
+            struct UIEdgeInsets { 
+                double top; 
+                double left; 
+                double bottom; 
+                double right; 
+            } insetValue; 
+            double doubleValue; 
+        } ; 
+        bool isValueSet; 
+    }  _borderRadius;
     struct { 
         union { 
             struct UIEdgeInsets { 
@@ -126,6 +139,8 @@
     }  _width;
 }
 
+@property (nonatomic, retain) IKColor *backgroundColor;
+@property (nonatomic) struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; } borderRadius;
 @property (nonatomic) struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; } fontSize;
 @property (nonatomic) struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; } height;
 @property (nonatomic) struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; } interitemSpacing;
@@ -139,6 +154,8 @@
 
 - (void).cxx_destruct;
 - (void)_setValue:(id)arg1 forStyleProperty:(id)arg2;
+- (id)backgroundColor;
+- (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })borderRadius;
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })fontSize;
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })height;
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })interitemSpacing;
@@ -148,6 +165,8 @@
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })minHeight;
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })minWidth;
 - (struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })padding;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setBorderRadius:(struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })arg1;
 - (void)setFontSize:(struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })arg1;
 - (void)setHeight:(struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })arg1;
 - (void)setInteritemSpacing:(struct { union { struct UIEdgeInsets { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_1_1_1; double x_1_1_2; } x1; bool x2; })arg1;

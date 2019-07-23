@@ -13,6 +13,7 @@
     NSURL * _faceTrackingRecordingURL;
     long long  _frame_id;
     bool  _isActive;
+    bool  _isSensorCovered;
     double  _lastARFrameTime;
     unsigned long long  _lastTrackingCaptureTimestamp;
     double  _lastTrackingDate;
@@ -37,6 +38,7 @@
     NSLock * _trackingDataLock;
     AVTFaceTrackingInfo * _trackingInfo;
     bool  _trackingIsPaused;
+    bool  limitRoll;
 }
 
 @property (nonatomic, readonly) double arDelegateTimestamp;
@@ -56,8 +58,10 @@
 @property (nonatomic) long long interfaceOrientation;
 @property (readonly) unsigned long long lastTrackingCaptureTimestamp;
 @property (readonly) double lastTrackingDate;
+@property (nonatomic) bool limitRoll;
 @property (readonly) bool lowLight;
 @property (readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } rawTransform;
+@property (getter=isSensorCovered, readonly) bool sensorCovered;
 @property (nonatomic) bool shouldConstraintHeadPose;
 @property (nonatomic) bool skipUpdates;
 @property (readonly) Class superclass;
@@ -89,8 +93,10 @@
 - (id)init;
 - (long long)interfaceOrientation;
 - (bool)isActive;
+- (bool)isSensorCovered;
 - (unsigned long long)lastTrackingCaptureTimestamp;
 - (double)lastTrackingDate;
+- (bool)limitRoll;
 - (bool)lowLight;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })rawTransform;
 - (void)removeDelegate:(id)arg1;
@@ -105,7 +111,9 @@
 - (void)setFaceTrackingPaused:(bool)arg1;
 - (void)setFaceTrackingRecordingURL:(id)arg1;
 - (void)setInterfaceOrientation:(long long)arg1;
+- (void)setLimitRoll:(bool)arg1;
 - (void)setLowLight:(bool)arg1;
+- (void)setSensorCovered:(bool)arg1;
 - (void)setShouldConstraintHeadPose:(bool)arg1;
 - (void)setSkipUpdates:(bool)arg1;
 - (void)setupARKit;

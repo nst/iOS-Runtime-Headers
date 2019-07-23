@@ -14,6 +14,7 @@
     UIView * _leftColumnDivider;
     bool  _remembersLastFocusedItem;
     UIView * _rightColumnDivider;
+    double  _showcaseFactor;
 }
 
 @property (nonatomic, retain) UIView *backgroundImageView;
@@ -27,6 +28,7 @@
 @property (nonatomic, copy) NSDictionary *divSizesByPosition;
 @property (nonatomic, copy) NSDictionary *divsByPosition;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) UIView *preferredFocusedComponent;
 @property (nonatomic) bool remembersLastFocusedItem;
 @property (readonly) Class superclass;
 
@@ -47,6 +49,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;
+- (id)preferredFocusedComponent;
 - (bool)remembersLastFocusedItem;
 - (void)setBackgroundImageView:(id)arg1;
 - (void)setColumnDividerColor:(id)arg1;
@@ -58,8 +61,10 @@
 - (void)setDivSizesByPosition:(id)arg1;
 - (void)setDivsByPosition:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
+- (void)setPreferredFocusedComponent:(id)arg1;
 - (void)setRemembersLastFocusedItem:(bool)arg1;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2 withAnimationCoordinator:(id)arg3;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tv_alignmentInsetsForExpectedWidth:(double)arg1;
 

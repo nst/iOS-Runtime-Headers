@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKPersistentParticipant : EKPersistentObject
+@interface EKPersistentParticipant : EKPersistentObject <EKParticipantSemanticIdentifierGeneratorDelegate>
 
 + (id)defaultPropertiesToLoad;
 
@@ -30,5 +30,6 @@
 - (void)setProposedStartDate:(id)arg1;
 - (void)setProposedStartDateStatus:(int)arg1;
 - (void)setUUID:(id)arg1;
+- (id)url;
 
 @end

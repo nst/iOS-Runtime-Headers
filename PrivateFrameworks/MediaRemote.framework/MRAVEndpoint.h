@@ -16,6 +16,7 @@
 
 @property (nonatomic, readonly) bool canModifyGroupMembership;
 @property (nonatomic, readonly) long long connectionType;
+@property (nonatomic, readonly) NSString *debugName;
 @property (nonatomic, readonly) _MRAVEndpointDescriptorProtobuf *descriptor;
 @property (nonatomic, readonly) MRAVOutputDevice *designatedGroupLeader;
 @property (nonatomic, readonly) MRExternalDevice *externalDevice;
@@ -44,9 +45,11 @@
 - (long long)connectionType;
 - (bool)containsOutputDevice:(id)arg1;
 - (void)dealloc;
+- (id)debugName;
 - (id)description;
 - (id)descriptor;
 - (id)designatedGroupLeader;
+- (bool)effectivelyEqual:(id)arg1;
 - (id)externalDevice;
 - (bool)isEqual:(id)arg1;
 - (bool)isLocalEndpoint;

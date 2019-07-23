@@ -25,6 +25,7 @@
 + (bool)_releaseReservedMapFileDescriptor;
 + (bool)_reserveMapFileDescriptor;
 + (bool)_updateFileDescriptorsInUseReserveNew:(bool)arg1;
++ (Class)classForKeyedUnarchiver;
 
 - (id)UUID;
 - (bool)_attemptToMapData:(id*)arg1;

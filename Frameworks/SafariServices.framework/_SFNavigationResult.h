@@ -7,6 +7,7 @@
     LSAppLink * _appLink;
     LSApplicationProxy * _externalApplication;
     long long  _externalApplicationCategory;
+    bool  _loadWasUserDriven;
     long long  _type;
 }
 
@@ -15,7 +16,8 @@
 @property (nonatomic, readonly) bool appliesOneTimeUserInitiatedActionPolicy;
 @property (nonatomic, readonly) LSApplicationProxy *externalApplication;
 @property (nonatomic, readonly) long long externalApplicationCategory;
-@property (nonatomic, readonly) bool isRedirectToAppStore;
+@property (nonatomic, readonly) bool isRedirectToAppleServices;
+@property (nonatomic) bool loadWasUserDriven;
 @property (nonatomic, readonly) long long type;
 
 + (id)resultOfLoadingRequest:(id)arg1 isMainFrame:(bool)arg2 disallowRedirectToExternalApps:(bool)arg3 preferredApplicationBundleIdentifier:(id)arg4;
@@ -30,7 +32,9 @@
 - (bool)appliesOneTimeUserInitiatedActionPolicy;
 - (id)externalApplication;
 - (long long)externalApplicationCategory;
-- (bool)isRedirectToAppStore;
+- (bool)isRedirectToAppleServices;
+- (bool)loadWasUserDriven;
+- (void)setLoadWasUserDriven:(bool)arg1;
 - (bool)shouldPromptWithPolicy:(long long)arg1 telephonyNavigationPolicy:(id)arg2 userAction:(id)arg3;
 - (long long)type;
 

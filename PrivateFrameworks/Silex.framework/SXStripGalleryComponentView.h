@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXStripGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXTextSourceDataSource> {
+@interface SXStripGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXFullscreenCaptionDataSource, SXImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate> {
     <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
     double  _contentOffset;
     double  _contentWidth;
@@ -45,17 +45,16 @@
 @property (nonatomic, readonly) double xOffset;
 
 - (void).cxx_destruct;
-- (id)additionsForTextSource:(id)arg1;
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsGalleryType;
 - (unsigned long long)analyticsMediaType;
 - (id)canvasControllerFactory;
+- (id)componentTextStyleForIdentifier:(id)arg1 inheritingFromComponentTextStyle:(id)arg2;
 - (double)contentOffset;
-- (id)contentSizeCategoryForTextSource:(id)arg1;
+- (id)contentSizeCategoryForCaption:(id)arg1;
 - (double)contentWidth;
 - (void)createMediaViewEventForGalleryItem:(id)arg1;
 - (id)createViewForViewIndex:(unsigned long long)arg1;
-- (id)documentControllerForTextSource:(id)arg1;
 - (id)exposedGalleryItems;
 - (void)finishMediaViewEvent;
 - (void)forceImageViewFullscreen:(id)arg1;
@@ -88,8 +87,7 @@
 - (id)imageViewFactory;
 - (id)imageViewForLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)imageViews;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
-- (id)inlineTextStylesForTextSource:(id)arg1;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 mediaSharingPolicyProvider:(id)arg7 imageViewFactory:(id)arg8 canvasControllerFactory:(id)arg9;
 - (id)itemizedScrollView;
 - (void)itemizedScrollView:(id)arg1 didChangeToActiveViewIndex:(unsigned long long)arg2;
 - (void)itemizedScrollView:(id)arg1 didShowViewWithIndex:(unsigned long long)arg2;
@@ -123,14 +121,14 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })snapRegion;
 - (void)submitEvents;
 - (id)targetGalleryItem;
-- (id)textResizerForTextSource:(id)arg1;
-- (id)textRulesForTextSource:(id)arg1;
-- (id)textStyleForTextSource:(id)arg1;
+- (id)textResizerForCaption:(id)arg1;
+- (id)textRulesForCaption:(id)arg1;
+- (id)textStyleForIdentifier:(id)arg1;
 - (void)trackExposedGalleryItems;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContentFrame;
 - (id)transitionContentView;
-- (bool)transitionViewUsesThumbnail;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionVisibleFrame;
+- (bool)usesThumbnailWithImageIdentifier:(id)arg1;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
 - (id)visibleGalleryItemViewForImageIdentifier:(id)arg1;
 - (long long)visibleImageViewIndex;

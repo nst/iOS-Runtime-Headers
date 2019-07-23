@@ -4,11 +4,14 @@
 
 @interface NTPBPersonalizationLocalData : PBCodable <NSCopying> {
     NSMutableArray * _closedChangeGroups;
+    NSString * _currentInstanceIdentifier;
     NSMutableArray * _openChangeGroupDeltas;
     NSData * _remoteRecordData;
 }
 
 @property (nonatomic, retain) NSMutableArray *closedChangeGroups;
+@property (nonatomic, retain) NSString *currentInstanceIdentifier;
+@property (nonatomic, readonly) bool hasCurrentInstanceIdentifier;
 @property (nonatomic, readonly) bool hasRemoteRecordData;
 @property (nonatomic, retain) NSMutableArray *openChangeGroupDeltas;
 @property (nonatomic, readonly) NSDictionary *openChangeGroupDeltasByFeatureKey;
@@ -28,9 +31,11 @@
 - (id)closedChangeGroupsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)closedChangeGroupsCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentInstanceIdentifier;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasCurrentInstanceIdentifier;
 - (bool)hasRemoteRecordData;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
@@ -41,6 +46,7 @@
 - (bool)readFrom:(id)arg1;
 - (id)remoteRecordData;
 - (void)setClosedChangeGroups:(id)arg1;
+- (void)setCurrentInstanceIdentifier:(id)arg1;
 - (void)setOpenChangeGroupDeltas:(id)arg1;
 - (void)setRemoteRecordData:(id)arg1;
 - (void)writeTo:(id)arg1;

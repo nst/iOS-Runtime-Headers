@@ -6,10 +6,12 @@
 @required
 
 - (unsigned long long)bookmarkOffsetType;
-- (bool)bookmarkable;
+- (NFLHeadlineTileInfo *)feedTileInfoForBookmarking;
+- (NSString *)groupIdentifier;
 - (NSString *)identifier;
 - (bool)pageable;
 - (unsigned long long)tileInfoType;
 - (NSArray *)underlyingFeedElements;
+- (<NFLFeedTileInfo> *)updatedTileInfoWithNewHeadline:(id <FCHeadlineProviding>)arg1;
 
 @end

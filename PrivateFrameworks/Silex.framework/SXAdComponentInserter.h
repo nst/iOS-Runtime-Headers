@@ -3,15 +3,15 @@
  */
 
 @interface SXAdComponentInserter : NSObject <SXComponentInserter> {
-    <SXAdvertisingSettingsProvider> * _advertisingSettingsProvider;
+    <SXAdvertisingSettingsFactory> * _advertisingSettingsFactory;
     <SXComponentInsertionConditionEngine> * _conditionEngine;
     long long  _insertedCount;
     double  _lastInsertedYOffset;
 }
 
-@property (nonatomic, readonly) <SXAdvertisingSettingsProvider> *advertisingSettingsProvider;
+@property (nonatomic, readonly) <SXAdvertisingSettingsFactory> *advertisingSettingsFactory;
+@property (nonatomic, readonly) unsigned long long componentTraits;
 @property (nonatomic, readonly) <SXComponentInsertionConditionEngine> *conditionEngine;
-@property (nonatomic, readonly) NSArray *conditions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -21,16 +21,18 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)adTypeFromBannerType:(unsigned long long)arg1;
-- (id)advertisingSettingsProvider;
-- (id)componentInsertForMarker:(id)arg1 layoutProvider:(id)arg2;
+- (id)advertisingSettingsFactory;
+- (id)cacheValidatorForCache:(id)arg1 DOMObjectProvider:(id)arg2;
+- (id)componentInsertForMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
+- (void)componentInsertionCompleted;
 - (unsigned long long)componentTraits;
 - (id)conditionEngine;
-- (id)conditions;
-- (id)initWithConditionEngine:(id)arg1 advertisingSettingsProvider:(id)arg2;
+- (id)conditionsForDOMObjectProvider:(id)arg1;
+- (id)initWithConditionEngine:(id)arg1 advertisingSettingsFactory:(id)arg2;
 - (long long)insertedCount;
 - (double)lastInsertedYOffset;
 - (void)setInsertedCount:(long long)arg1;
 - (void)setLastInsertedYOffset:(double)arg1;
-- (bool)validateMarker:(id)arg1 remainingMarkerCount:(unsigned long long)arg2 layoutProvider:(id)arg3;
+- (bool)validateMarker:(id)arg1 DOMObjectProvider:(id)arg2 layoutProvider:(id)arg3;
 
 @end

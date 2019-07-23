@@ -32,6 +32,7 @@
             double height; 
         } size; 
     }  _frameForTransitioningContentView;
+    bool  _playingOnSecondScreen;
     NSString * _stateDescription;
     NSValue * _targetContentOffset;
     long long  _transitionDirection;
@@ -50,6 +51,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frameForActiveContentView;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frameForTransitioningContentView;
 @property (readonly) unsigned long long hash;
+@property (getter=isPlayingOnSecondScreen, nonatomic) bool playingOnSecondScreen;
 @property (nonatomic, copy) NSString *stateDescription;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSValue *targetContentOffset;
@@ -79,6 +81,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForTransitioningContentView;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 playerLayerView:(id)arg2;
+- (bool)isPlayingOnSecondScreen;
 - (bool)isTransitionInteractive;
 - (void)performTransition:(long long)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -93,6 +96,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFrameForActiveContentView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFrameForTransitioningContentView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setPlayingOnSecondScreen:(bool)arg1;
 - (void)setStateDescription:(id)arg1;
 - (void)setTargetContentOffset:(id)arg1;
 - (void)setTransitionInteractive:(bool)arg1;

@@ -75,6 +75,7 @@
             } toTime; 
         } schedule; 
         unsigned long long disableFlags; 
+        bool available; 
     }  _status;
     bool  _statusUpdated;
     double  _sunriseAbsolute;
@@ -84,7 +85,7 @@
     SunriseSunsetProvider * _sunriseSunsetProvider;
     double  _sunsetAbsolute;
     double  _sunsetPreviousAbsolute;
-    <NightShiftSupportProtocol> * _supportObj;
+    NSMutableArray * _supportObjs;
     float  _transitionLength;
     float  _transitionLengthActual;
     float  _transitionRate;
@@ -94,13 +95,15 @@
     double  _untilNexTransitionTimestamp;
 }
 
+- (void)addSupportObject:(id)arg1;
 - (void)aggdKeysUpdate;
 - (void)cancelAggdPeriodicUpdate;
 - (void)cancelSchedule;
 - (void)cancelTransition;
 - (void)clockChanged;
-- (id)copyDictionaryFromStatus:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; }*)arg1;
+- (id)copyDictionaryFromStatus:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; bool x7; }*)arg1;
 - (id)copyLowPowerModeState;
+- (id)copyPreferenceForKey:(id)arg1 user:(id)arg2;
 - (id)copyStatusDictionaryFromPrefs;
 - (id)copyTimeStringWithHour:(int)arg1 minute:(int)arg2 second:(int)arg3;
 - (void)dealloc;
@@ -112,9 +115,10 @@
 - (void)initiateFullMinTransition;
 - (void)initiateRestrictedMaxTransition;
 - (void)initiateTransitionTo:(float)arg1 andRampLength:(float)arg2;
-- (bool)parseStatusDictionary:(id)arg1 intoStruct:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; }*)arg2 shouldUpdatePrefs:(bool*)arg3;
+- (bool)parseStatusDictionary:(id)arg1 intoStruct:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; bool x7; }*)arg2 shouldUpdatePrefs:(bool*)arg3;
 - (void)reevaluateCurrentState;
 - (void)reevaluateCurrentStateWithFactorFadeOption:(float)arg1;
+- (void)removeSupportObject:(id)arg1;
 - (void)retrieveSunriseSunsetTimesFromBackup:(double)arg1;
 - (void)saveStatusToPrefs:(id)arg1;
 - (void)scheduleAggdKeysUpdate;
@@ -123,6 +127,8 @@
 - (void)setMode:(int)arg1;
 - (void)setNightModeFactor:(float)arg1;
 - (void)setNightModeFactor:(float)arg1 withFadePeriod:(float)arg2;
+- (void)setNightShiftFactorDictionary:(id)arg1;
+- (void)setPreference:(id)arg1 forKey:(id)arg2 user:(id)arg3;
 - (bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)setSchedule:(id)arg1;
 - (void)setSunPermitted:(bool)arg1;

@@ -64,6 +64,7 @@
 @property bool _preventsSystemHTTPProxyAuthentication;
 @property long long _priority;
 @property long long _priorityValue;
+@property (retain) NSObject<OS_nw_activity> *_private_nw_activity;
 @property bool _prohibitAuthUI;
 @property (nonatomic) id _protocolForTask;
 @property (copy) NSDictionary *_proxySettings;
@@ -82,7 +83,7 @@
 @property (copy) NSString *_storagePartitionIdentifier;
 @property bool _strictContentLength;
 @property long long _suspensionThreshhold;
-@property (copy) __NSCFTaskPerformanceTiming *_taskPerformanceTiming;
+@property (retain) __NSCFTaskPerformanceTiming *_taskPerformanceTiming;
 @property double _timeWindowDelay;
 @property double _timeWindowDuration;
 @property double _timeoutInterval;
@@ -169,6 +170,10 @@
 - (bool)shouldHandleCookiesAndSchemeIsAppropriate;
 - (void)suspend;
 - (void)updateCurrentRequest:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssetCacheServices.framework/AssetCacheServices
+
+- (id)descriptionWithAddress;
 
 // Image: /System/Library/PrivateFrameworks/News/TeaFoundation.framework/TeaFoundation
 

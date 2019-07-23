@@ -4,6 +4,7 @@
 
 @interface SignpostSupportLogMessage : SignpostSupportObject <SignpostSupportLoggingSupportArchiveEvent> {
     unsigned long long  __machContinuousTimestamp;
+    bool  _hasNonScalarDynamicData;
     NSString * _message;
     unsigned char  _messageType;
     int  _processID;
@@ -21,6 +22,7 @@
 @property (nonatomic) unsigned long long _machContinuousTimestamp;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasNonScalarDynamicData;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic) unsigned char messageType;
@@ -41,12 +43,13 @@
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(bool)arg3;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1 shouldRedact:(bool)arg2;
 - (unsigned long long)_machContinuousTimestamp;
 - (id)debugDescription;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (unsigned long long)durationMachContinuousTime;
 - (unsigned long long)endMachContinuousTime;
+- (bool)hasNonScalarDynamicData;
 - (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval { long long x1; int x2; }*)arg4 unixTimeZone:(struct timezone { int x1; int x2; }*)arg5;
@@ -58,6 +61,7 @@
 - (id)processImageUUID;
 - (id)processName;
 - (unsigned long long)processUniqueID;
+- (void)setHasNonScalarDynamicData:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageType:(unsigned char)arg1;
 - (void)setProcessID:(int)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIImage : NSObject <DOCThumbnail, DebugHierarchyValue_Fallback, MKArtworkImageSource, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting> {
+@interface UIImage : NSObject <DOCThumbnail, MKArtworkImageSource, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, UIImageJSExports, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting> {
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -29,14 +29,22 @@
 }
 
 @property (nonatomic, readonly) struct CGImage { }*CGImage;
+@property (nonatomic, readonly) id CGImageRef;
 @property (getter=_CGPDFPage, nonatomic, readonly) struct CGPDFPage { }*CGPDFPage;
 @property (nonatomic, readonly) CIImage *CIImage;
 @property (nonatomic, retain) NSString *MCD_identifier;
 @property (readonly) struct CGImage { }*_gkCGImage;
 @property (readonly) long long _gkImageOrientation;
 @property (readonly) double _gkScale;
+@property (nonatomic, copy) NSString *accessibilityHint;
+@property (nonatomic, copy) NSString *accessibilityLabel;
+@property (nonatomic, retain) NSString *accessibilityLanguage;
+@property (nonatomic) unsigned long long accessibilityTraits;
+@property (nonatomic, copy) NSString *accessibilityValue;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
 @property (nonatomic, readonly) NSURL *artworkCatalogBackingFileURL;
+@property (nonatomic, readonly) double aspectRatio;
+@property (nonatomic, readonly) TMLRect *bounds;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } capInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -297,10 +305,6 @@
 - (id)vectorImageSupport;
 - (bool)writeToCPBitmapFile:(id)arg1 flags:(int)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)fallback_debugHierarchyValueWithOutOptions:(id*)arg1 outError:(id*)arg2;
-
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 + (id)avkit_flatWhiteResizableTemplateImage;
@@ -538,6 +542,7 @@
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_disclosureChevronImage;
++ (id)hk_electrocardiogramHeartImage;
 + (id)hk_transparentInterfaceImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (id)hk_croppedImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -545,6 +550,19 @@
 - (id)hk_resizedInterfaceImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)hk_scaledImageViewHeightWithScaledWidth:(double)arg1;
 - (id)hk_watchIconImage;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)hrui_ECGAppIconImage;
++ (id)hrui_ECGOnboardingWristImage;
++ (id)hrui_appleWatchSetupCompleteImage;
++ (id)hrui_atrialFibrillationDetectionIllustrationImage;
++ (id)hrui_cannotDoImage;
++ (id)hrui_fingerCrownImage;
++ (id)hrui_heartRateIconImage;
++ (id)hrui_screenWidthImageWithName:(id)arg1;
++ (id)hrui_warningImage;
++ (id)hrui_waveformImage;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
@@ -639,6 +657,7 @@
 // Image: /System/Library/PrivateFrameworks/News/TeaUI.framework/TeaUI
 
 + (id)ts_disclosureIndicator;
++ (id)ts_navigationVerticalColumnShadow;
 
 // Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
 
@@ -676,6 +695,7 @@
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
 + (id)imageWithPKImage:(id)arg1;
++ (id)pkui_imageWithColor:(id)arg1;
 
 - (struct CGSize { double x1; double x2; })alignmentSize;
 - (id)pkui_imageOverlaidWithColor:(id)arg1;
@@ -931,20 +951,33 @@
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(double)arg2;
 - (id)imageWithShadow:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
++ (void)initializeJSContext:(id)arg1;
+
+- (id)CGImageRef;
+- (double)aspectRatio;
+- (id)bounds;
+- (id)colorPattern;
+- (id)resizableImage:(id)arg1 :(long long)arg2;
+- (id)withRenderingMode:(long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
 + (id)nc_imageFromPDFWithFileURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)nc_imageWithPDDocument:(struct CGPDFDocument { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
-
-+ (id)imageForPlaceholderURL:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
++ (id)imageForPlaceholderURL:(id)arg1;
 + (id)imageWithColor:(id)arg1;
++ (unsigned long long)vui_bytesNeededForSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 withContextType:(int)arg3;
++ (id)vui_imageFromContextWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5;
++ (id)vui_imageFromContextWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5 encapsulation:(id /* block */)arg6;
 + (id)vui_videosUIImageNamed:(id)arg1;
 
+- (id)vui_iconImageOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)vui_iconImageOfSize:(struct CGSize { double x1; double x2; })arg1 radius:(double)arg2 stroke:(double)arg3;
 - (id)vui_imageWithColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceShortcutsUI.framework/VoiceShortcutsUI
@@ -952,10 +985,6 @@
 + (id)vcui_imageFromColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
-
-+ (unsigned long long)sbg_bytesNeededForSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 withContextType:(int)arg3;
-+ (id)sbg_imageFromContextWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5;
-+ (id)sbg_imageFromContextWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5 encapsulation:(id /* block */)arg6;
 
 - (id)_wlkui_iconImageOfSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_wlkui_iconImageOfSize:(struct CGSize { double x1; double x2; })arg1 radius:(double)arg2 stroke:(double)arg3;

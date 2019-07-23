@@ -18,6 +18,7 @@
 - (id)initWithStreamToken:(long long)arg1 error:(id*)arg2;
 - (void)registerBlocksForDelegateNotifications;
 - (id)sendCharacter:(unsigned short)arg1;
+- (bool)sendText:(struct NSString { Class x1; }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)start;
 - (void)stop;

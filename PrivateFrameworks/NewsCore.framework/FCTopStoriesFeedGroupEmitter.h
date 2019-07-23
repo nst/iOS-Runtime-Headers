@@ -13,6 +13,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
+@property (nonatomic, readonly) bool requiresHeavyweightContent;
 @property (readonly) Class superclass;
 
 - (id)backingChannelTagIDWithConfiguration:(id)arg1;

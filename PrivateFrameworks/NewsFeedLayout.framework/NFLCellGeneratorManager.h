@@ -10,6 +10,8 @@
     NFLCellGenerator * _imageOnTopCellGenerator;
     NFLCellGenerator * _noImageCellGenerator;
     NFLCellGenerator * _premiumCellGenerator;
+    NFLCellGenerator * _spotlightImageOnSideCellGenerator;
+    NFLCellGenerator * _spotlightImageOnTopCellGenerator;
     NFLCellGenerator * _trendingCellGenerator;
 }
 
@@ -20,6 +22,8 @@
 @property (nonatomic, retain) NFLCellGenerator *imageOnTopCellGenerator;
 @property (nonatomic, retain) NFLCellGenerator *noImageCellGenerator;
 @property (nonatomic, retain) NFLCellGenerator *premiumCellGenerator;
+@property (nonatomic, retain) NFLCellGenerator *spotlightImageOnSideCellGenerator;
+@property (nonatomic, retain) NFLCellGenerator *spotlightImageOnTopCellGenerator;
 @property (nonatomic, retain) NFLCellGenerator *trendingCellGenerator;
 
 + (id)cellGeneratorWithFeedSettings:(id)arg1;
@@ -41,7 +45,11 @@
 - (void)setImageOnTopCellGenerator:(id)arg1;
 - (void)setNoImageCellGenerator:(id)arg1;
 - (void)setPremiumCellGenerator:(id)arg1;
+- (void)setSpotlightImageOnSideCellGenerator:(id)arg1;
+- (void)setSpotlightImageOnTopCellGenerator:(id)arg1;
 - (void)setTrendingCellGenerator:(id)arg1;
+- (id)spotlightImageOnSideCellGenerator;
+- (id)spotlightImageOnTopCellGenerator;
 - (id)trendingCellGenerator;
 
 @end

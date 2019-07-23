@@ -3,7 +3,7 @@
  */
 
 @interface CAWindowServer : NSObject {
-    /* Warning: unhandled struct encoding: '{CAWindowServerImpl=^{__CFArray}I@}' */ struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; id x3; } * _impl;
+    struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; } * _impl;
     bool  _mirroringEnabled;
 }
 
@@ -20,7 +20,6 @@
 
 - (void)_detectDisplays;
 - (id)_init;
-- (void)_initializeBrightnessNotifications;
 - (void)addDisplay:(id)arg1;
 - (unsigned int)clientPortOfContextId:(unsigned int)arg1;
 - (unsigned int)contextIdHostingContextId:(unsigned int)arg1;

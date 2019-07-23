@@ -13,14 +13,9 @@
 @property (nonatomic) double maxWidth;
 @property (nonatomic, retain) NSString *title;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_buttonSize;
 - (bool)_shouldLayoutImageOnRight;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)addContentOverlap:(double)arg1;
 - (id)button;

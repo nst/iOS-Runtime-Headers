@@ -6,16 +6,6 @@
     AVOutputDeviceInternal * _outputDevice;
 }
 
-@property (nonatomic, readonly) NSString *deviceID;
-@property (nonatomic, readonly) long long deviceSubType;
-@property (nonatomic, readonly) long long deviceType;
-@property (nonatomic, readonly) NSString *firmwareVersion;
-@property (nonatomic, readonly) NSData *identifyingMACAddress;
-@property (nonatomic, readonly) NSString *manufacturer;
-@property (nonatomic, readonly) NSString *modelID;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *serialNumber;
-
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (void)initialize;
@@ -50,6 +40,7 @@
 - (id)description;
 - (unsigned long long)deviceFeatures;
 - (id)deviceID;
+- (id)deviceName;
 - (long long)deviceSubType;
 - (long long)deviceType;
 - (id)figEndpointOutputImpl;

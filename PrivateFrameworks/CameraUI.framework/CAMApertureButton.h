@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMApertureButton : UIControl {
+@interface CAMApertureButton : UIButton <CAMAccessibilityHUDImageProvider> {
     double  __cachedSpaceWidth;
     double  __cachedSymbolLabelWidth;
     double  __cachedValueLabelWidth;
+    UIImageView * __circleBackgroundView;
+    UIImageView * __circleOutlineView;
     NSNumberFormatter * __decimalFormatter;
-    UIImageView * __imageView;
     bool  __rightToLeftFormatting;
     UILabel * __symbolLabel;
     UILabel * __valueLabel;
@@ -29,40 +30,50 @@
 @property (nonatomic, readonly) double _cachedSpaceWidth;
 @property (nonatomic, readonly) double _cachedSymbolLabelWidth;
 @property (setter=_setCachedValueLabelWidth:, nonatomic) double _cachedValueLabelWidth;
+@property (nonatomic, retain) UIImageView *_circleBackgroundView;
+@property (nonatomic, readonly) UIImageView *_circleOutlineView;
 @property (nonatomic, readonly) NSNumberFormatter *_decimalFormatter;
-@property (nonatomic, readonly) UIImageView *_imageView;
 @property (getter=_isRightToLeftFormatting, nonatomic, readonly) bool _rightToLeftFormatting;
 @property (nonatomic, readonly) UILabel *_symbolLabel;
 @property (nonatomic, readonly) UILabel *_valueLabel;
 @property (nonatomic, readonly) NSNumberFormatter *_wholeNumberFormatter;
 @property (getter=isActive, nonatomic) bool active;
 @property (nonatomic) double apertureValue;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CAMApertureButtonDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) long long expansionDirection;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) long long layoutStyle;
 @property (nonatomic) long long orientation;
 @property (nonatomic) bool shouldShowApertureValue;
+@property (readonly) Class superclass;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
 
 - (void).cxx_destruct;
 - (double)_cachedSpaceWidth;
 - (double)_cachedSymbolLabelWidth;
 - (double)_cachedValueLabelWidth;
+- (id)_circleBackgroundView;
 - (id)_circleImageWithColor:(id)arg1;
+- (id)_circleOutlineView;
 - (id)_decimalFormatter;
-- (id)_imageView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_expansionInsets;
 - (bool)_isRightToLeftFormatting;
 - (void)_setCachedValueLabelWidth:(double)arg1;
 - (id)_symbolLabel;
+- (void)_updateBackgroundView;
 - (void)_updateColorsAnimated:(bool)arg1;
 - (void)_updateSymbolLabelOrientationAnimated:(bool)arg1;
 - (void)_updateValueLabel;
 - (id)_valueLabel;
+- (bool)_wantsBackgroundForLayoutStyle:(long long)arg1;
 - (id)_wholeNumberFormatter;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (double)apertureValue;
 - (id)delegate;
 - (long long)expansionDirection;
+- (id)imageForAccessibilityHUD;
 - (id)initWithLayoutStyle:(long long)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isActive;
@@ -81,6 +92,7 @@
 - (void)setShouldShowApertureValue:(bool)arg1;
 - (void)setShouldShowApertureValue:(bool)arg1 animated:(bool)arg2;
 - (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)set_circleBackgroundView:(id)arg1;
 - (bool)shouldShowApertureValue;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;
 

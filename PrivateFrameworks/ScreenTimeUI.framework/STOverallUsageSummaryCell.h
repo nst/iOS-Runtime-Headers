@@ -4,53 +4,40 @@
 
 @interface STOverallUsageSummaryCell : STTableCell {
     STCandyBarView * _candyBarView;
-    STUsageTotalDeltaView * _deltaView;
-    bool  _isVibrancyEnabled;
     bool  _isWidget;
     STDeviceUnlockStateListener * _lockStateListener;
-    bool  _monitorDeviceLockState;
     STNoUsageDataView * _noUsageDataView;
-    UILabel * _screenTimeLabel;
-    STTopUsageItemsView * _topItemsView;
+    STScreenTimeSummaryView * _summaryView;
+    STHorizontallySegmentedView * _topItemsView;
     STUnlockForContentView * _unlockView;
 }
 
-@property (nonatomic, retain) STCandyBarView *candyBarView;
-@property (nonatomic, retain) STUsageTotalDeltaView *deltaView;
-@property (nonatomic, readonly) bool isVibrancyEnabled;
+@property (nonatomic, readonly) STCandyBarView *candyBarView;
 @property (nonatomic, readonly) bool isWidget;
 @property (nonatomic, retain) STDeviceUnlockStateListener *lockStateListener;
-@property (nonatomic) bool monitorDeviceLockState;
-@property (nonatomic, retain) STNoUsageDataView *noUsageDataView;
-@property (nonatomic, retain) UILabel *screenTimeLabel;
-@property (nonatomic, retain) STTopUsageItemsView *topItemsView;
-@property (nonatomic, retain) STUnlockForContentView *unlockView;
+@property (nonatomic, readonly) STNoUsageDataView *noUsageDataView;
+@property (nonatomic, readonly) STScreenTimeSummaryView *summaryView;
+@property (nonatomic, readonly) STHorizontallySegmentedView *topItemsView;
+@property (nonatomic, readonly) STUnlockForContentView *unlockView;
 
 - (void).cxx_destruct;
+- (void)_heightDidChange;
+- (void)_layoutDidChangeFrom:(bool)arg1 to:(bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
 - (id)candyBarView;
 - (void)dealloc;
-- (id)deltaView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3 isVibrancyEnabled:(bool)arg4 isWidget:(bool)arg5;
-- (bool)isVibrancyEnabled;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3 isWidget:(bool)arg4;
 - (bool)isWidget;
 - (id)lockStateListener;
-- (bool)monitorDeviceLockState;
 - (id)noUsageDataView;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)refreshWithCoordinator:(id)arg1;
-- (id)screenTimeLabel;
-- (void)setCandyBarView:(id)arg1;
-- (void)setDeltaView:(id)arg1;
 - (void)setLockStateListener:(id)arg1;
-- (void)setMonitorDeviceLockState:(bool)arg1;
-- (void)setNoUsageDataView:(id)arg1;
-- (void)setScreenTimeLabel:(id)arg1;
-- (void)setTopItemsView:(id)arg1;
-- (void)setUnlockView:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)stOverallUsageSummaryCellCommonInit;
 - (void)startMonitoringDeviceLockChanges;
-- (void)stopMonitoringDeviceLockChanges;
+- (id)summaryView;
 - (id)topItemsView;
 - (id)unlockView;
 - (void)updateViewsForLockState:(bool)arg1;

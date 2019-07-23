@@ -12,9 +12,8 @@
 @property (nonatomic, readonly) _SFPrintController *printController;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (bool)hasReservedPrintInteractionController;
-- (id)initWithPrintController:(id)arg1;
+- (id)initWithPrintController:(id)arg1 webView:(id)arg2;
 - (id)item;
 - (id)printController;
 

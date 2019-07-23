@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didReceiveCharacter:(unsigned short)arg1;
+- (void)didReceiveText:(struct NSString { Class x1; }*)arg1;
 
 @end

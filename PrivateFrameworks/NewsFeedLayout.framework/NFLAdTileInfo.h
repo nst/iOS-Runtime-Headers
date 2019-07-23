@@ -7,6 +7,7 @@
     NSString * _adUnitIdentifier;
     bool  _appearedOnScreen;
     bool  _appearedWithAd;
+    NSString * _groupIdentifier;
     bool  _isDisplayingAd;
     bool  _isOnScreen;
 }
@@ -16,9 +17,10 @@
 @property (nonatomic) bool appearedOnScreen;
 @property (nonatomic) bool appearedWithAd;
 @property (nonatomic, readonly) unsigned long long bookmarkOffsetType;
-@property (nonatomic, readonly) bool bookmarkable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NFLHeadlineTileInfo *feedTileInfoForBookmarking;
+@property (nonatomic, readonly, copy) NSString *groupIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic) bool isDisplayingAd;
@@ -38,10 +40,11 @@
 - (bool)appearedOnScreen;
 - (bool)appearedWithAd;
 - (unsigned long long)bookmarkOffsetType;
-- (bool)bookmarkable;
 - (void)commonInit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)feedTileInfoForBookmarking;
+- (id)groupIdentifier;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
@@ -59,5 +62,6 @@
 - (void)setIsOnScreen:(bool)arg1;
 - (unsigned long long)tileInfoType;
 - (id)underlyingFeedElements;
+- (id)updatedTileInfoWithNewHeadline:(id)arg1;
 
 @end

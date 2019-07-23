@@ -53,6 +53,7 @@
 - (void)setAccessRestricted:(bool)arg1;
 - (void)setConfigurationPath:(struct __CFString { }*)arg1;
 - (void)setDaemonCacheEnabled:(bool)arg1;
+- (void)setFileProtectionClass:(int)arg1;
 - (void)setStoreName:(struct __CFString { }*)arg1;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2 from:(id)arg3;
 - (void)setValues:(const void**)arg1 forKeys:(const struct __CFString {}**)arg2 count:(long long)arg3 copyValues:(bool)arg4 from:(id)arg5;

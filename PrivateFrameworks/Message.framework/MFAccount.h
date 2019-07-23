@@ -18,6 +18,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *hostname;
 @property (readonly, copy) NSString *identifier;
+@property (getter=isManaged, nonatomic, readonly) bool managed;
 @property (readonly) NSString *managedTag;
 @property (nonatomic, readonly, copy) NSString *mf_publicDescription;
 @property (readonly) ACAccount *parentAccount;

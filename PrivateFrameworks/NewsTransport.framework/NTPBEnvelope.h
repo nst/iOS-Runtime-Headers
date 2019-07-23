@@ -12,6 +12,7 @@
         unsigned int contentTypeMinorVersion : 1; 
         unsigned int contentTypePatchVersion : 1; 
     }  _has;
+    NSData * _identifier;
 }
 
 @property (nonatomic, retain) NSData *content;
@@ -21,6 +22,10 @@
 @property (nonatomic) int contentTypeVersion;
 @property (nonatomic) bool hasContentTypeMinorVersion;
 @property (nonatomic) bool hasContentTypePatchVersion;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, retain) NSData *identifier;
+
+// Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
 - (void).cxx_destruct;
 - (id)content;
@@ -33,7 +38,9 @@
 - (id)dictionaryRepresentation;
 - (bool)hasContentTypeMinorVersion;
 - (bool)hasContentTypePatchVersion;
+- (bool)hasIdentifier;
 - (unsigned long long)hash;
+- (id)identifier;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
@@ -44,6 +51,11 @@
 - (void)setContentTypeVersion:(int)arg1;
 - (void)setHasContentTypeMinorVersion:(bool)arg1;
 - (void)setHasContentTypePatchVersion:(bool)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsServicesInternal.framework/NewsServicesInternal
+
++ (id)nss_envelopeWithIdentifier;
 
 @end

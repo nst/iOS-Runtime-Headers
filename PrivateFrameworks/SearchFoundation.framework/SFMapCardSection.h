@@ -62,6 +62,7 @@
 @property (nonatomic) int sizeFormat;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 

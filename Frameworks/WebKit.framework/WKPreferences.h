@@ -23,6 +23,7 @@
 @property (setter=_setDefaultFixedPitchFontSize:, nonatomic) unsigned long long _defaultFixedPitchFontSize;
 @property (setter=_setDefaultFontSize:, nonatomic) unsigned long long _defaultFontSize;
 @property (setter=_setDeveloperExtrasEnabled:, nonatomic) bool _developerExtrasEnabled;
+@property (setter=_setDeviceOrientationEventEnabled:, nonatomic) bool _deviceOrientationEventEnabled;
 @property (setter=_setDiagnosticLoggingEnabled:, nonatomic) bool _diagnosticLoggingEnabled;
 @property (setter=_setDisplayListDrawingEnabled:, nonatomic) bool _displayListDrawingEnabled;
 @property (setter=_setDOMPasteAllowed:, nonatomic) bool _domPasteAllowed;
@@ -39,6 +40,7 @@
 @property (setter=_setLargeImageAsyncDecodingEnabled:, nonatomic) bool _largeImageAsyncDecodingEnabled;
 @property (setter=_setLoadsImagesAutomatically:, nonatomic) bool _loadsImagesAutomatically;
 @property (setter=_setLogsPageMessagesToSystemConsoleEnabled:, nonatomic) bool _logsPageMessagesToSystemConsoleEnabled;
+@property (setter=_setLowPowerVideoAudioBufferSizeEnabled:, nonatomic) bool _lowPowerVideoAudioBufferSizeEnabled;
 @property (setter=_setMediaCaptureRequiresSecureConnection:, nonatomic) bool _mediaCaptureRequiresSecureConnection;
 @property (setter=_setMediaDevicesEnabled:, nonatomic) bool _mediaDevicesEnabled;
 @property (setter=_setMockCaptureDevicesEnabled:, nonatomic) bool _mockCaptureDevicesEnabled;
@@ -48,9 +50,11 @@
 @property (setter=_setPeerConnectionEnabled:, nonatomic) bool _peerConnectionEnabled;
 @property (setter=_setPunchOutWhiteBackgroundsInDarkMode:, nonatomic) bool _punchOutWhiteBackgroundsInDarkMode;
 @property (setter=_setResourceUsageOverlayVisible:, nonatomic) bool _resourceUsageOverlayVisible;
+@property (getter=_isSafeBrowsingEnabled, setter=_setSafeBrowsingEnabled:, nonatomic) bool _safeBrowsingEnabled;
 @property (setter=_setScreenCaptureEnabled:, nonatomic) bool _screenCaptureEnabled;
 @property (setter=_setShouldAllowUserInstalledFonts:, nonatomic) bool _shouldAllowUserInstalledFonts;
 @property (setter=_setShouldEnableTextAutosizingBoost:, nonatomic) bool _shouldEnableTextAutosizingBoost;
+@property (setter=_setShouldIgnoreMetaViewport:, nonatomic) bool _shouldIgnoreMetaViewport;
 @property (setter=_setShouldSuppressKeyboardInputDuringProvisionalNavigation:, nonatomic) bool _shouldSuppressKeyboardInputDuringProvisionalNavigation;
 @property (setter=_setSimpleLineLayoutDebugBordersEnabled:, nonatomic) bool _simpleLineLayoutDebugBordersEnabled;
 @property (setter=_setSimpleLineLayoutEnabled:, nonatomic) bool _simpleLineLayoutEnabled;
@@ -61,8 +65,10 @@
 @property (setter=_setTelephoneNumberDetectionIsEnabled:, nonatomic) bool _telephoneNumberDetectionIsEnabled;
 @property (setter=_setTextAutosizingEnabled:, nonatomic) bool _textAutosizingEnabled;
 @property (setter=_setTiledScrollingIndicatorVisible:, nonatomic) bool _tiledScrollingIndicatorVisible;
+@property (setter=_setVideoQualityIncludesDisplayCompositingEnabled:, nonatomic) bool _videoQualityIncludesDisplayCompositingEnabled;
 @property (setter=_setVisibleDebugOverlayRegions:, nonatomic) unsigned long long _visibleDebugOverlayRegions;
 @property (setter=_setVisualViewportEnabled:, nonatomic) bool _visualViewportEnabled;
+@property (setter=_setWebAnimationsCSSIntegrationEnabled:, nonatomic) bool _webAnimationsCSSIntegrationEnabled;
 @property (setter=_setWebRTCLegacyAPIEnabled:, nonatomic) bool _webRTCLegacyAPIEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -73,6 +79,7 @@
 @property (readonly) Class superclass;
 
 + (id)_experimentalFeatures;
++ (id)_internalDebugFeatures;
 + (bool)supportsSecureCoding;
 
 - (bool)_acceleratedDrawingEnabled;
@@ -88,6 +95,7 @@
 - (unsigned long long)_defaultFixedPitchFontSize;
 - (unsigned long long)_defaultFontSize;
 - (bool)_developerExtrasEnabled;
+- (bool)_deviceOrientationEventEnabled;
 - (bool)_diagnosticLoggingEnabled;
 - (bool)_displayListDrawingEnabled;
 - (bool)_domPasteAllowed;
@@ -99,13 +107,17 @@
 - (bool)_hiddenPageDOMTimerThrottlingEnabled;
 - (bool)_iceCandidateFilteringEnabled;
 - (double)_inactiveMediaCaptureSteamRepromptIntervalInMinutes;
+- (bool)_isEnabledForExperimentalFeature:(id)arg1;
 - (bool)_isEnabledForFeature:(id)arg1;
+- (bool)_isEnabledForInternalDebugFeature:(id)arg1;
+- (bool)_isSafeBrowsingEnabled;
 - (bool)_isStandalone;
 - (bool)_javaScriptCanAccessClipboard;
 - (unsigned long long)_javaScriptRuntimeFlags;
 - (bool)_largeImageAsyncDecodingEnabled;
 - (bool)_loadsImagesAutomatically;
 - (bool)_logsPageMessagesToSystemConsoleEnabled;
+- (bool)_lowPowerVideoAudioBufferSizeEnabled;
 - (bool)_mediaCaptureRequiresSecureConnection;
 - (bool)_mediaDevicesEnabled;
 - (bool)_mockCaptureDevicesEnabled;
@@ -129,10 +141,13 @@
 - (void)_setDefaultFixedPitchFontSize:(unsigned long long)arg1;
 - (void)_setDefaultFontSize:(unsigned long long)arg1;
 - (void)_setDeveloperExtrasEnabled:(bool)arg1;
+- (void)_setDeviceOrientationEventEnabled:(bool)arg1;
 - (void)_setDiagnosticLoggingEnabled:(bool)arg1;
 - (void)_setDisplayListDrawingEnabled:(bool)arg1;
 - (void)_setEditableLinkBehavior:(long long)arg1;
+- (void)_setEnabled:(bool)arg1 forExperimentalFeature:(id)arg2;
 - (void)_setEnabled:(bool)arg1 forFeature:(id)arg2;
+- (void)_setEnabled:(bool)arg1 forInternalDebugFeature:(id)arg2;
 - (void)_setEnumeratingAllNetworkInterfacesEnabled:(bool)arg1;
 - (void)_setFixedPitchFontFamily:(id)arg1;
 - (void)_setFullScreenEnabled:(bool)arg1;
@@ -145,6 +160,7 @@
 - (void)_setLargeImageAsyncDecodingEnabled:(bool)arg1;
 - (void)_setLoadsImagesAutomatically:(bool)arg1;
 - (void)_setLogsPageMessagesToSystemConsoleEnabled:(bool)arg1;
+- (void)_setLowPowerVideoAudioBufferSizeEnabled:(bool)arg1;
 - (void)_setMediaCaptureRequiresSecureConnection:(bool)arg1;
 - (void)_setMediaDevicesEnabled:(bool)arg1;
 - (void)_setMockCaptureDevicesEnabled:(bool)arg1;
@@ -154,9 +170,11 @@
 - (void)_setPeerConnectionEnabled:(bool)arg1;
 - (void)_setPunchOutWhiteBackgroundsInDarkMode:(bool)arg1;
 - (void)_setResourceUsageOverlayVisible:(bool)arg1;
+- (void)_setSafeBrowsingEnabled:(bool)arg1;
 - (void)_setScreenCaptureEnabled:(bool)arg1;
 - (void)_setShouldAllowUserInstalledFonts:(bool)arg1;
 - (void)_setShouldEnableTextAutosizingBoost:(bool)arg1;
+- (void)_setShouldIgnoreMetaViewport:(bool)arg1;
 - (void)_setShouldSuppressKeyboardInputDuringProvisionalNavigation:(bool)arg1;
 - (void)_setSimpleLineLayoutDebugBordersEnabled:(bool)arg1;
 - (void)_setSimpleLineLayoutEnabled:(bool)arg1;
@@ -167,11 +185,14 @@
 - (void)_setTelephoneNumberDetectionIsEnabled:(bool)arg1;
 - (void)_setTextAutosizingEnabled:(bool)arg1;
 - (void)_setTiledScrollingIndicatorVisible:(bool)arg1;
+- (void)_setVideoQualityIncludesDisplayCompositingEnabled:(bool)arg1;
 - (void)_setVisibleDebugOverlayRegions:(unsigned long long)arg1;
 - (void)_setVisualViewportEnabled:(bool)arg1;
+- (void)_setWebAnimationsCSSIntegrationEnabled:(bool)arg1;
 - (void)_setWebRTCLegacyAPIEnabled:(bool)arg1;
 - (bool)_shouldAllowUserInstalledFonts;
 - (bool)_shouldEnableTextAutosizingBoost;
+- (bool)_shouldIgnoreMetaViewport;
 - (bool)_shouldSuppressKeyboardInputDuringProvisionalNavigation;
 - (bool)_simpleLineLayoutDebugBordersEnabled;
 - (bool)_simpleLineLayoutEnabled;
@@ -181,8 +202,10 @@
 - (bool)_telephoneNumberDetectionIsEnabled;
 - (bool)_textAutosizingEnabled;
 - (bool)_tiledScrollingIndicatorVisible;
+- (bool)_videoQualityIncludesDisplayCompositingEnabled;
 - (unsigned long long)_visibleDebugOverlayRegions;
 - (bool)_visualViewportEnabled;
+- (bool)_webAnimationsCSSIntegrationEnabled;
 - (bool)_webRTCLegacyAPIEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

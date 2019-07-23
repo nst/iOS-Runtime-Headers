@@ -6,5 +6,6 @@
 @required
 
 - (void)apertureToolbar:(PUPhotoEditApertureToolbar *)arg1 didChangeValue:(double)arg2;
+- (bool)apertureToolbarShouldRotateLabelsWithOrientation:(PUPhotoEditApertureToolbar *)arg1;
 
 @end

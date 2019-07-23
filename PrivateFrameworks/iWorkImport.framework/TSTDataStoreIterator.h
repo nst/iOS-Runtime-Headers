@@ -41,7 +41,7 @@
 @property (nonatomic) bool rightToLeft;
 @property (nonatomic) unsigned long long searchMask;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) TSTInfo *tableInfo;
+@property (nonatomic, readonly, retain) TSTTableInfo *tableInfo;
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 @property (nonatomic) bool terminated;
 

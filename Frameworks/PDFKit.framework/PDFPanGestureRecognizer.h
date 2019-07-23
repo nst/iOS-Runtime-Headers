@@ -8,10 +8,12 @@
         double x; 
         double y; 
     }  _locationOfFirstTouch;
+    bool  _touchesDidHavePressure;
 }
 
 @property (nonatomic) bool didForcePress;
 @property (nonatomic) struct CGPoint { double x1; double x2; } locationOfFirstTouch;
+@property (nonatomic) bool touchesDidHavePressure;
 
 - (bool)didForcePress;
 - (struct CGPoint { double x1; double x2; })locationOfFirstTouch;
@@ -19,6 +21,9 @@
 - (void)reset;
 - (void)setDidForcePress:(bool)arg1;
 - (void)setLocationOfFirstTouch:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTouchesDidHavePressure:(bool)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (bool)touchesDidHavePressure;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

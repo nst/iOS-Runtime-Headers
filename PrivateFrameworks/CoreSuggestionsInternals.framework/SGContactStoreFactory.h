@@ -5,7 +5,7 @@
 @interface SGContactStoreFactory : NSObject
 
 + (id)contactStore;
-+ (id)contactStoreWithDonatedAndSuggestedContacts;
++ (id)contactStoreWithDonatedContacts;
 + (void)useMockContactStore:(id)arg1;
 
 @end

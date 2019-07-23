@@ -4,6 +4,7 @@
 
 @interface CRKFileBasedKeyedDataStoreUtility : NSObject
 
++ (id)ephemeralStore;
 + (id)extendedStoreWithDirectoryName:(id)arg1 store:(id)arg2;
 + (id)fileBasedKeyedDataStoreFromDirectoryURL:(id)arg1;
 + (bool)wipeStore:(id*)arg1;

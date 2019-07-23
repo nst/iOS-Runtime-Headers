@@ -13,6 +13,8 @@
 @property (getter=isLoaded, nonatomic, readonly) bool loaded;
 @property (nonatomic) unsigned long long valueType;
 
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
 + (bool)_value:(id)arg1 isKindOfValueType:(unsigned long long)arg2;
 + (id)_valueFromDictionary:(id)arg1 forBagKey:(id)arg2;
 + (id)failingBagValueWithKey:(id)arg1 valueType:(unsigned long long)arg2 error:(id)arg3;
@@ -31,5 +33,10 @@
 - (unsigned long long)valueType;
 - (void)valueWithCompletion:(id /* block */)arg1;
 - (id)valueWithError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
+- (void)wlk_quietValueWithCompletion:(id /* block */)arg1;
+- (id)wlk_quietValueWithError:(id*)arg1;
 
 @end

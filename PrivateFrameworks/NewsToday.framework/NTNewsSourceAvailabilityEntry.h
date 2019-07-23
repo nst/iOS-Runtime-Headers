@@ -6,6 +6,7 @@
     NSSNewsAvailabilityMonitor * _NewsAvailabilityMonitor;
     id /* block */  _availabilityChangedNotificationBlock;
     bool  _available;
+    FCNetworkReachability * _networkReachability;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) FCNetworkReachability *networkReachability;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) Class todayResultsFetchDescriptorClass;
@@ -25,12 +27,14 @@
 - (id /* block */)availabilityChangedNotificationBlock;
 - (void)dealloc;
 - (id)init;
-- (id)initWithProcessVariant:(unsigned long long)arg1 queue:(id)arg2;
+- (id)initWithNetworkReachability:(id)arg1 processVariant:(unsigned long long)arg2 queue:(id)arg3;
 - (bool)isAvailable;
+- (id)networkReachability;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)queue;
 - (void)setAvailabilityChangedNotificationBlock:(id /* block */)arg1;
 - (void)setAvailable:(bool)arg1;
+- (void)setNetworkReachability:(id)arg1;
 - (void)setNewsAvailabilityMonitor:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (Class)todayResultsFetchDescriptorClass;

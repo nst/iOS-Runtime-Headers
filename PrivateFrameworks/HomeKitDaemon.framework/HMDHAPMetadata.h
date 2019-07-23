@@ -18,6 +18,7 @@
     NSSet * _hmBulletinBoardEnabledTuples;
     NSSet * _hmCoalesceNotificationsTuples;
     NSSet * _hmNotificationAutoEnabledTuples;
+    NSDictionary * _hmPowerOnWriteFilter;
     NSSet * _hmRequiresDeviceUnlockTuples;
     bool  _incomplete;
     NSDictionary * _rawPlist;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) NSSet *hmBulletinBoardEnabledTuples;
 @property (nonatomic, retain) NSSet *hmCoalesceNotificationsTuples;
 @property (nonatomic, retain) NSSet *hmNotificationAutoEnabledTuples;
+@property (nonatomic, retain) NSDictionary *hmPowerOnWriteFilter;
 @property (nonatomic, retain) NSSet *hmRequiresDeviceUnlockTuples;
 @property (nonatomic) bool incomplete;
 @property (nonatomic, readonly) NSDictionary *rawPlist;
@@ -82,6 +84,7 @@
 - (bool)checkTupleExistsInSet:(id)arg1 forChrType:(id)arg2 svcType:(id)arg3;
 - (id)descriptionForCharacteristicType:(id)arg1;
 - (id)descriptionForServiceType:(id)arg1;
+- (bool)generateNotificationOnConfigurationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (id)getAliasedCharacteristicTypes:(id)arg1;
 - (id)getAliasedServiceType:(id)arg1;
 - (id)getCharacteristicTypeAlias:(id)arg1;
@@ -97,6 +100,7 @@
 - (id)hmBulletinBoardEnabledTuples;
 - (id)hmCoalesceNotificationsTuples;
 - (id)hmNotificationAutoEnabledTuples;
+- (id)hmPowerOnWriteFilter;
 - (id)hmRequiresDeviceUnlockTuples;
 - (bool)incomplete;
 - (id)initWithDictionary:(id)arg1 hapMetadata:(id)arg2 error:(id*)arg3;
@@ -121,6 +125,7 @@
 - (bool)parseAndSetAssistantUnits:(id)arg1;
 - (void)parseAndSetHMCategories:(id)arg1;
 - (bool)parseAndSetHMMetadataWithHMPlist:(id)arg1;
+- (void)parseAndSetPowerOnWriteFilter:(id)arg1;
 - (id)parseAndSetRawPlist:(id)arg1;
 - (id)parseCharacteristicArray:(id)arg1;
 - (id)parseMetadataTupleSetFromPlist:(id)arg1;
@@ -148,11 +153,13 @@
 - (void)setHmBulletinBoardEnabledTuples:(id)arg1;
 - (void)setHmCoalesceNotificationsTuples:(id)arg1;
 - (void)setHmNotificationAutoEnabledTuples:(id)arg1;
+- (void)setHmPowerOnWriteFilter:(id)arg1;
 - (void)setHmRequiresDeviceUnlockTuples:(id)arg1;
 - (void)setIncomplete:(bool)arg1;
 - (void)setSchemaVersion:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (bool)shouldAllowHomeNotificationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
+- (bool)shouldAllowWriteToWakeSuspendedAccessoryForService:(id)arg1 characteristicType:(id)arg2 value:(id)arg3;
 - (bool)shouldAutoEnableNotificationForCharacteristic:(id)arg1 ofService:(id)arg2;
 - (bool)shouldCoalesceCharacteristicNotifications:(id)arg1 forService:(id)arg2;
 - (bool)shouldFilterChangeNotificationsForCharacteristicType:(id)arg1 serviceType:(id)arg2;

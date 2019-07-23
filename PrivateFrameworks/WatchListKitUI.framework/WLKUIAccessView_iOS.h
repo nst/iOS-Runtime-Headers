@@ -8,7 +8,7 @@
     UILabel * _bodyLabel;
     UIScrollView * _bodyScroll;
     UIStackView * _bottomStack;
-    TVCarouselView * _carouselView;
+    _TVCarouselView * _carouselView;
     bool  _didLayout;
     UIButton * _disallowButton;
     UIStackView * _logoStack;

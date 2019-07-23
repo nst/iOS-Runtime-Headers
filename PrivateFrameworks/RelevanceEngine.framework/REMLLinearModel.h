@@ -15,7 +15,6 @@
 - (long long)_getNumberOfCoordinates;
 - (bool)_loadModelFromURL:(id)arg1 error:(id*)arg2;
 - (id)_predictWithFeatures:(id)arg1;
-- (bool)_saveDebugModelToURL:(id)arg1 error:(id*)arg2;
 - (bool)_saveModelToURL:(id)arg1 error:(id*)arg2;
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (void)collectLoggableState:(id /* block */)arg1;

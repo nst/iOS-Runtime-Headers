@@ -5,6 +5,7 @@
 @interface BSDateTimeCache : NSObject {
     double  _2daysFromNow;
     double  _6daysAgo;
+    bool  _isResetting;
     double  _lastAttemptedResetTime;
     double  _lastSuccessfulResetTime;
     double  _nextWeek;
@@ -16,6 +17,8 @@
 
 + (id)sharedInstance;
 
+- (struct __CFCalendar { }*)_copyCurrentCalendar;
+- (double)_currentAbsoluteTime;
 - (bool)_isToday:(double)arg1;
 - (void)_resetAndConfigure;
 - (void)_resetAndConfigureAndPostNotification:(bool)arg1;

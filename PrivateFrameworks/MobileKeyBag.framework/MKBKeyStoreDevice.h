@@ -11,6 +11,7 @@
 - (bool)MKBUserSessionSetInternalTest:(bool)arg1 WithReturnedError:(id*)arg2;
 - (int)SeshatDebug:(int)arg1;
 - (int)SeshatEnroll:(id)arg1;
+- (int)SeshatRecover:(id)arg1;
 - (int)SeshatUnlock:(id)arg1;
 - (id)_CreateMKBServerConnection;
 - (bool)addSyncServiceSource:(id)arg1 ToUserSessionWithID:(int)arg2 WithReturnedError:(id*)arg3;

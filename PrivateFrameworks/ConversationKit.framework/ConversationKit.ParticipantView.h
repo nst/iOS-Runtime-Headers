@@ -19,6 +19,7 @@
     void labelState;
     void lastConfigurationHashValue;
     void loggingIdentifier;
+    void overallLayoutState;
     void overlayBackdropView;
     void overlayConstraints;
     void overlayIconView;
@@ -42,7 +43,7 @@
 @property (nonatomic, readonly) UILabel *overlaySubtitleLabel;
 @property (nonatomic) long long style;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (bool)accessibilityIsShowingVideo;
 - (id)bottomBar;
 - (id)bottomBarLabel;

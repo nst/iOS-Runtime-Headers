@@ -28,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)_constructQuery;
+- (id)_desiredKeys;
 - (id)database;
 - (id)edgeCacheHint;
 - (id)fetchedRecords;

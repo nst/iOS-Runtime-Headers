@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@interface VTStateManager : NSObject <VTGestureMonitorDelegate> {
+@interface VTStateManager : NSObject <VTFirstUnlockMonitorDelegate, VTGestureMonitorDelegate> {
     id /* block */  _callbackWithMessageAndTimestamp;
     VTPolicy * _enablePolicy;
     VTGestureMonitor * _gestureMonitor;
@@ -40,6 +40,7 @@
 + (void)requestVoiceTriggerEnabled:(bool)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)VTFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(bool)arg2;
 - (void)_initializeXPCService;
 - (void)_notifyStateTransitionToState:(long long)arg1 withStartTimestamp:(unsigned long long)arg2;
 - (void)_powerlog:(id)arg1;

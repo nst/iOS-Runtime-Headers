@@ -33,6 +33,7 @@
 - (id)init;
 - (id)initWithFeatureSet:(id)arg1;
 - (bool)loadModelFromURL:(id)arg1 error:(id*)arg2;
+- (void)logCoreAnalyticsMetrics;
 - (id)predictWithFeatures:(id)arg1;
 - (bool)requiresDirectory;
 - (bool)saveModelToURL:(id)arg1 error:(id*)arg2;

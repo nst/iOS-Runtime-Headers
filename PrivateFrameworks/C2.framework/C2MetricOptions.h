@@ -81,8 +81,9 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
-+ (id)metricOperationsForNetworkRequest:(id)arg1;
 + (id)metricOptionsForEventMetric:(id)arg1 metricType:(long long)arg2 proxy:(id)arg3 config:(id)arg4;
++ (id)metricOptionsForNetworkOperation:(id)arg1;
++ (id)metricOptionsForNetworkRequest:(id)arg1;
 
 - (void)_attributeCurrentProxy:(id)arg1 config:(id)arg2;
 - (void)_setupC2MetricsEndpointWithAccount:(id)arg1;

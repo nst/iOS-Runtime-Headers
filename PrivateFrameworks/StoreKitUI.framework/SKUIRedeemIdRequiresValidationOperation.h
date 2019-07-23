@@ -3,14 +3,14 @@
  */
 
 @interface SKUIRedeemIdRequiresValidationOperation : ISOperation <ISDialogOperationDelegate> {
-    SKUIRedeemViewController * _redeemViewController;
+    SKUIRedeemViewControllerLegacy * _redeemViewController;
     id /* block */  _resultBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) SKUIRedeemViewController *redeemViewController;
+@property (nonatomic) SKUIRedeemViewControllerLegacy *redeemViewController;
 @property (copy) id /* block */ resultBlock;
 @property (readonly) Class superclass;
 

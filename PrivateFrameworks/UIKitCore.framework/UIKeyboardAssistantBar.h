@@ -39,16 +39,10 @@
 @property (nonatomic) bool shouldShow;
 @property (nonatomic) bool show;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)activeInstance;
 + (double)assistantBarHeight;
 + (id)sharedInstance;
 + (double)sideBarWidthForOrientation:(long long)arg1;
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (id)BIUGenerator;
 - (SEL)action:(int)arg1;
@@ -68,6 +62,7 @@
 - (id)barButtonItem:(unsigned long long)arg1;
 - (bool)canPerformAction:(int)arg1;
 - (id)currentAssistantItem;
+- (void)dealloc;
 - (id)defaultAssistantItem;
 - (id)deleteButtonItem;
 - (double)deleteKeyWidth;

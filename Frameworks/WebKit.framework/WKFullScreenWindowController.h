@@ -115,7 +115,7 @@
 - (void)_interactivePinchDismissChanged:(id)arg1;
 - (void)_invalidateEVOrganizationName;
 - (bool)_isSecure;
-- (struct WebFullScreenManagerProxy { int (**x1)(); unsigned int x2; struct WebPageProxy {} *x3; struct WebFullScreenManagerProxyClient {} *x4; }*)_manager;
+- (struct WebFullScreenManagerProxy { int (**x1)(); struct WebPageProxy {} *x2; struct WebFullScreenManagerProxyClient {} *x3; }*)_manager;
 - (struct __SecTrust { }*)_serverTrust;
 - (void)_startToDismissFullscreenChanged:(id)arg1;
 - (void)_updateLocationInfo;

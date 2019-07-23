@@ -51,6 +51,7 @@
 - (void)_queue_finishWithStatus:(long long)arg1 error:(id)arg2;
 - (void)_queue_garbageCollectZones;
 - (bool)_queue_hasFinished;
+- (void)_queue_markOwnedZonesAsSeized;
 - (void)_queue_performCleanupAndFinishFetch;
 - (long long)_queue_processFetchedRecord:(id)arg1 container:(id)arg2 error:(id*)arg3;
 - (long long)_queue_processFetchedRecord:(id)arg1 recordClass:(Class)arg2 zone:(id)arg3 error:(id*)arg4;

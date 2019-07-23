@@ -6,6 +6,7 @@
     TSPArchiverManager * _archiverManager;
     bool  _captureSnapshots;
     NSObject<OS_dispatch_group> * _completionGroup;
+    NSObject<OS_dispatch_queue> * _completionQueue;
     struct unordered_map<const long long, TSP::ComponentPropertiesSnapshot, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot> > > { 
         struct __hash_table<std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot>, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot> > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> *> > > { 
@@ -45,6 +46,7 @@
     NSObject<OS_dispatch_queue> * _externalLazyReferencesQueue;
     NSMutableArray * _externalReferenceBlocks;
     NSObject<OS_dispatch_queue> * _externalReferenceQueue;
+    NSMutableSet * _featureIdentifiers;
     unsigned long long  _fileFormatVersion;
     bool  _isCancelled;
     bool  _isRecoverableError;
@@ -175,6 +177,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSSet *featureIdentifiers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSPObjectContainer *objectContainer;
 @property (nonatomic, readonly) TSPPackageMetadata *packageMetadata;
@@ -185,10 +188,10 @@
 - (void).cxx_destruct;
 - (void)addDataFinalizeHandlerForSuccessfulSave:(id /* block */)arg1;
 - (void)addDelayedObject:(id)arg1 forComponentRootObject:(id)arg2 claimingComponent:(id)arg3 isDelayedObjectReferencedByObjectContainer:(bool)arg4 completion:(id /* block */)arg5;
-- (void)archiveComponent:(id)arg1 locator:(id)arg2 storeOutsideObjectArchive:(bool)arg3 rootObject:(id)arg4 withPackageWriter:(id)arg5;
+- (void)archiveComponent:(id)arg1 locator:(id)arg2 compressionAlgorithm:(long long)arg3 storeOutsideObjectArchive:(bool)arg4 rootObject:(id)arg5 withPackageWriter:(id)arg6;
 - (void)calculateExternalReferences;
 - (id)componentForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2;
-- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2 objectUUIDOrNil:(id)arg3;
+- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2 objectUUIDOrNil:(id)arg3 outComponentIsVersioned:(bool*)arg4;
 - (void)componentWriter:(id)arg1 canSkipArchivingStronglyReferencedObject:(id)arg2 fromComponentRootObject:(id)arg3 completion:(id /* block */)arg4;
 - (void)componentWriter:(id)arg1 locatorForClaimingComponent:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (bool)componentWriter:(id)arg1 object:(id)arg2 belongsToLinkedComponent:(id)arg3;
@@ -209,9 +212,10 @@
 - (void)enumerateWrittenObjectsWithBlock:(id /* block */)arg1;
 - (id)explicitComponentRootObjectForObject:(id)arg1;
 - (id)explicitComponentRootObjectForObject:(id)arg1 archiverOrNil:(id)arg2 claimingComponent:(id)arg3 newClaimingComponent:(id)arg4 hasArchiverAccessLock:(bool)arg5;
+- (id)featureIdentifiers;
 - (id)init;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(long long)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(long long)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8 packageWriteCoordinator:(id)arg9 captureSnapshots:(bool)arg10;
+- (id)initWithContext:(id)arg1 archiverClass:(Class)arg2 archiverFlags:(BOOL)arg3 documentRevision:(id)arg4 saveToken:(unsigned long long)arg5 packageIdentifier:(unsigned char)arg6 fileFormatVersion:(unsigned long long)arg7 preferredPackageType:(long long)arg8 metadataObject:(id)arg9 dataAttributesSnapshot:(id)arg10;
+- (id)initWithContext:(id)arg1 archiverClass:(Class)arg2 archiverFlags:(BOOL)arg3 documentRevision:(id)arg4 saveToken:(unsigned long long)arg5 packageIdentifier:(unsigned char)arg6 fileFormatVersion:(unsigned long long)arg7 preferredPackageType:(long long)arg8 metadataObject:(id)arg9 dataAttributesSnapshot:(id)arg10 packageWriteCoordinator:(id)arg11 captureSnapshots:(bool)arg12;
 - (bool)isComponentExternal:(id)arg1 wasWritten:(bool*)arg2 wasCopied:(bool*)arg3;
 - (bool)isComponentPersisted:(id)arg1;
 - (bool)isObjectInExternalPackage:(id)arg1 claimingComponent:(id*)arg2;

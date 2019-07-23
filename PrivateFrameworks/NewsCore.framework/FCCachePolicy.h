@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCCachePolicy : NSObject {
+@interface FCCachePolicy : NSObject <NSCopying> {
     unsigned long long  _cachePolicy;
     double  _maximumCachedAge;
 }
@@ -16,6 +16,7 @@
 + (id)ignoreCacheCachePolicy;
 
 - (unsigned long long)cachePolicy;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)maximumCachedAge;
 - (void)setCachePolicy:(unsigned long long)arg1;
 - (void)setMaximumCachedAge:(double)arg1;

@@ -43,6 +43,7 @@
 @property (readonly) Class superclass;
 
 + (struct CGSize { double x1; double x2; })cellSizeFittingWidth:(double)arg1 environment:(id)arg2;
++ (struct CGPoint { double x1; double x2; })clampedContentOffsetForOffset:(struct CGPoint { double x1; double x2; })arg1 collectionView:(id)arg2;
 + (double)edgeLengthFittingWidth:(double)arg1 environment:(id)arg2;
 + (bool)supportsSelection;
 + (bool)updateCollectionViewLayout:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2 environment:(id)arg3 forExtended:(bool)arg4 withSlider:(bool)arg5 subSection:(bool)arg6 subSectionHeight:(double)arg7 numberOfItems:(long long)arg8;
@@ -85,7 +86,7 @@
 - (id)initWithDataSource:(id)arg1 showsHeader:(bool)arg2 environment:(id)arg3;
 - (id)initWithEnvironment:(id)arg1;
 - (id)initWithEnvironment:(id)arg1 showsHeader:(bool)arg2;
-- (void)invalidateLayout;
+- (void)invalidateLayoutForNewContainerSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)layoutSubviewsForIndex:(long long)arg1;
 - (bool)needsScrollToSelected;
 - (long long)numberOfItems;
@@ -119,7 +120,7 @@
 - (id)subController;
 - (id)subControllerView;
 - (void)updateCell:(id)arg1 forItemAtIndex:(long long)arg2;
-- (void)updateCollectionViewLayoutWithSizeChanged:(bool)arg1;
+- (void)updateCollectionViewLayoutWithSizeChanged:(bool)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)updateSectionItem:(id)arg1 withVariation:(double)arg2;
 - (void)updateWithSection:(id)arg1;
 - (id)viewForIndex:(long long)arg1;

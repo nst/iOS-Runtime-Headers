@@ -9,6 +9,7 @@
 @property (nonatomic, retain) NSUUID *identifier;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) HMFProductInfo *productInfo;
+@property (nonatomic, retain) HMDRPIdentity *rpIdentity;
 @property (nonatomic, retain) HMDHomeKitVersion *version;
 
 + (id)properties;

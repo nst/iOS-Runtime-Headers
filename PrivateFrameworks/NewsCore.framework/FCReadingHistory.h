@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCReadingHistory : FCPrivateDataController {
+@interface FCReadingHistory : FCPrivateDataController <FCClearableReadingHistory> {
     NSMutableDictionary * _itemsByArticleID;
     NSMutableDictionary * _itemsByIdentifier;
-    FCMTWriterMutexLock * _itemsLock;
+    FCMTWriterLock * _itemsLock;
 }
 
 @property (nonatomic, readonly) NSSet *allConsumedArticleIDs;
 @property (nonatomic, readonly) NSSet *allReadArticleIDs;
 @property (nonatomic, readonly) NSSet *allSeenArticleIDs;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *itemsByArticleID;
 @property (nonatomic, retain) NSMutableDictionary *itemsByIdentifier;
-@property (nonatomic, retain) FCMTWriterMutexLock *itemsLock;
+@property (nonatomic, retain) FCMTWriterLock *itemsLock;
+@property (readonly) Class superclass;
 
 + (id)backingRecordIDs;
 + (id)backingRecordZoneIDs;
@@ -69,6 +73,7 @@
 - (void)markArticleAsReadWithHeadline:(id)arg1;
 - (void)markArticleAsReadWithHeadline:(id)arg1 fromGroupType:(long long)arg2 swipedToArticle:(bool)arg3 onScreenChecker:(id /* block */)arg4;
 - (bool)markArticleAsSeenWithHeadline:(id)arg1;
+- (id)markArticlesAsSeenWithHeadlines:(id)arg1;
 - (id)mostRecentlyReadArticlesWithMaxCount:(unsigned long long)arg1;
 - (id)pruneRecords:(id)arg1 forZoneName:(id)arg2;
 - (id)recordsForRestoringZoneName:(id)arg1;

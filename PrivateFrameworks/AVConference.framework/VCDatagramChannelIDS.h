@@ -25,6 +25,7 @@
 - (void)invalidate;
 - (void)optInStreamIDs:(id)arg1;
 - (void)optOutStreamIDs:(id)arg1;
+- (void)osChannelInfoLog;
 - (void)readyToRead;
 - (void)requestSessionInfoWithOptions:(id)arg1;
 - (void)setChannelPreferences:(id)arg1;

@@ -39,6 +39,7 @@
 - (void)presentInvitationGadget:(id)arg1 animated:(bool)arg2;
 - (void)presentQuickActionsForInvitationGadget:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
+- (long long)shareOriginForSession:(id)arg1 workflowCoordinator:(id)arg2;
 - (void)workflowCoordinator:(id)arg1 workflowViewController:(id)arg2 didFinishSession:(id)arg3 withActivityState:(unsigned long long)arg4;
 
 @end

@@ -7,6 +7,7 @@
     NSNumber * _stashedAssistantVoiceTriggerEnabled;
     NSNumber * _stashedAutoUpdateEnabled;
     NSMutableArray * _stashedButtonHaptics;
+    NSDictionary * _stashedDeviceToDeviceMigrationSuccessInfo;
     NSArray * _stashedFlowSkipIdentifiers;
     NSNumber * _stashedLocationServicesEnabled;
     NSMutableDictionary * _stashedManagedConfigurationSettings;
@@ -60,6 +61,7 @@
 - (void)setScreenTimeEnabled:(bool)arg1;
 - (id)stashBuildVersion;
 - (long long)stashConfigurationType;
+- (void)stashDeviceToDeviceMigrationSuccessInfo:(id)arg1;
 - (void)stashFlowSkipIdentifiers:(id)arg1;
 - (void)stashHapticType:(long long)arg1 forButtonKind:(long long)arg2;
 - (void)stashLocationServicesChoice:(bool)arg1;

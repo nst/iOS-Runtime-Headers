@@ -6,6 +6,7 @@
     SXMediaEngageEvent * _activeMediaEngageEvent;
     NSArray * _annotations;
     NSMutableDictionary * _cachedSnapshots;
+    <SXDocumentTitleProviding> * _documentTitleProvider;
     UIBarButtonItem * _doneBarButtonItem;
     UIViewController * _fullScreenCanvasViewController;
     UIImageView * _imageView;
@@ -40,6 +41,7 @@
 @property (nonatomic, retain) NSMutableDictionary *cachedSnapshots;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXDocumentTitleProviding> *documentTitleProvider;
 @property (nonatomic, retain) UIBarButtonItem *doneBarButtonItem;
 @property (nonatomic, retain) UIViewController *fullScreenCanvasViewController;
 @property (readonly) unsigned long long hash;
@@ -68,6 +70,7 @@
 - (void)dealloc;
 - (void)discardContents;
 - (void)dismissFullScreen;
+- (id)documentTitleProvider;
 - (id)doneBarButtonItem;
 - (void)enableMapViewInteraction:(bool)arg1;
 - (void)finishMediaEngageEvent;
@@ -76,7 +79,7 @@
 - (void)handleTap:(id)arg1;
 - (bool)hasSelectedAnnotations;
 - (id)imageView;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6 documentTitleProvider:(id)arg7;
 - (bool)isPresentingFullscreen;
 - (bool)isUserInteractingWithMap;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;

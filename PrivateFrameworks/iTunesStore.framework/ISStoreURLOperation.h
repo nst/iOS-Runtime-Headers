@@ -18,6 +18,7 @@
     SSVFairPlaySAPSession * _sapSession;
     bool  _shouldAppendAuthKitHeaders;
     bool  _shouldAppendStorefrontToURL;
+    bool  _shouldCancelBiometricTokenUpdate;
     bool  _shouldSendAKClientInfoHeaders;
     bool  _shouldSendDSIDHeader;
     bool  _shouldSendXTokenHeader;
@@ -46,6 +47,7 @@
 @property bool performsMachineDataActions;
 @property (nonatomic) bool shouldAppendAuthKitHeaders;
 @property (nonatomic) bool shouldAppendStorefrontToURL;
+@property bool shouldCancelBiometricTokenUpdate;
 @property bool shouldSendAKClientInfoHeaders;
 @property bool shouldSendDSIDHeader;
 @property bool shouldSendXTokenHeader;
@@ -132,6 +134,7 @@
 - (void)setSAPSession:(id)arg1;
 - (void)setShouldAppendAuthKitHeaders:(bool)arg1;
 - (void)setShouldAppendStorefrontToURL:(bool)arg1;
+- (void)setShouldCancelBiometricTokenUpdate:(bool)arg1;
 - (void)setShouldSendAKClientInfoHeaders:(bool)arg1;
 - (void)setShouldSendDSIDHeader:(bool)arg1;
 - (void)setShouldSendXTokenHeader:(bool)arg1;
@@ -141,6 +144,7 @@
 - (void)setUseUserSpecificURLBag:(bool)arg1;
 - (bool)shouldAppendAuthKitHeaders;
 - (bool)shouldAppendStorefrontToURL;
+- (bool)shouldCancelBiometricTokenUpdate;
 - (bool)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
 - (bool)shouldSendAKClientInfoHeaders;
 - (bool)shouldSendDSIDHeader;

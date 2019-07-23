@@ -3,13 +3,13 @@
  */
 
 @interface SXDataTableComponentSizer : SXComponentSizer <SXDataTableComponentControllerDataSource> {
-    double  _currentWidth;
+    <SXLayoutContext> * _currentLayoutContext;
     SXDataTableComponentController * _dataTableComponentController;
     SXDataTableLayouter * _layouter;
     <SXTextComponentLayoutHosting> * _textComponentLayoutHosting;
 }
 
-@property (nonatomic) double currentWidth;
+@property (nonatomic, retain) <SXLayoutContext> *currentLayoutContext;
 @property (nonatomic, retain) SXDataTableComponentController *dataTableComponentController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -19,21 +19,21 @@
 @property (nonatomic, readonly) <SXTextComponentLayoutHosting> *textComponentLayoutHosting;
 
 - (void).cxx_destruct;
-- (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
+- (id)DOMObjectProviderForDataTableComponentController:(id)arg1;
+- (double)calculateHeightForWidth:(double)arg1 layoutContext:(id)arg2;
 - (id)componentForDataTableComponentController:(id)arg1;
 - (id)contentSizeCategoryForDataTableComponentController:(id)arg1;
-- (double)currentWidth;
+- (id)currentLayoutContext;
 - (id)dataTableComponentController;
 - (id)documentColumnLayoutForDataTableComponentController:(id)arg1;
-- (id)documentControllerForDataTableComponentController:(id)arg1;
-- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5 textComponentLayoutHosting:(id)arg6 textSourceFactory:(id)arg7;
+- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 DOMObjectProvider:(id)arg4 layoutOptions:(id)arg5 textComponentLayoutHosting:(id)arg6 textSourceFactory:(id)arg7 recordValueTransformerFactory:(id)arg8;
 - (id)layouter;
-- (void)setCurrentWidth:(double)arg1;
+- (void)setCurrentLayoutContext:(id)arg1;
 - (void)setDataTableComponentController:(id)arg1;
 - (void)setLayouter:(id)arg1;
-- (id)tableStyleForComponent:(id)arg1 documentController:(id)arg2;
+- (id)tableStyleForComponent:(id)arg1;
 - (id)textComponentLayoutHosting;
 - (id)textComponentLayoutHostingForDataTableComponentController:(id)arg1;
-- (double)widthForDataTableComponentController:(id)arg1;
+- (id)unitConverterForDataTableComponentController:(id)arg1;
 
 @end

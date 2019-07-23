@@ -2,35 +2,38 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUIOverlayLayout : NSObject <VUIOverlayLayoutProtocol> {
-    VUIImageLayout * _appImageLayout;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  _padding;
+@interface VUIOverlayLayout : TVViewLayout {
+    TVImageLayout * _badgeLayout;
+    bool  _isDarkTheme;
+    long long  _overlayType;
     VUIProgressBarLayout * _progressBarLayout;
+    VUITextBadgeLayout * _textBadgeLayout;
+    VUITextLayout * _titleLayout;
 }
 
-@property (nonatomic, retain) VUIImageLayout *appImageLayout;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic, retain) TVImageLayout *badgeLayout;
+@property (nonatomic) long long overlayType;
 @property (nonatomic, retain) VUIProgressBarLayout *progressBarLayout;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly) long long type;
+@property (nonatomic, retain) VUITextBadgeLayout *textBadgeLayout;
+@property (nonatomic, retain) VUITextLayout *titleLayout;
 
-+ (id)overlayLayoutForInterfaceIdiom:(long long)arg1;
++ (id)layoutWithLayout:(id)arg1 overlayType:(long long)arg2 element:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)appImageLayout;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (id)_editorialTitleLayout;
+- (id)_navBrickTitleLayout;
+- (id)_ribbonTitleLayout;
+- (id)_spotlightTitleLayout;
+- (void)_updateLayoutWithElement:(id)arg1 andType:(long long)arg2;
+- (id)badgeLayout;
+- (long long)overlayType;
 - (id)progressBarLayout;
-- (void)setAppImageLayout:(id)arg1;
-- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBadgeLayout:(id)arg1;
+- (void)setOverlayType:(long long)arg1;
 - (void)setProgressBarLayout:(id)arg1;
-- (long long)type;
+- (void)setTextBadgeLayout:(id)arg1;
+- (void)setTitleLayout:(id)arg1;
+- (id)textBadgeLayout;
+- (id)titleLayout;
 
 @end

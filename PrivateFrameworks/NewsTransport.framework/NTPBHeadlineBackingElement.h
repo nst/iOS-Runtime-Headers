@@ -4,12 +4,15 @@
 
 @interface NTPBHeadlineBackingElement : PBCodable <NSCopying> {
     NSData * _articleRecordData;
+    NSData * _masterIssueRecordData;
     NSData * _sourceChannelRecordData;
 }
 
 @property (nonatomic, retain) NSData *articleRecordData;
 @property (nonatomic, readonly) bool hasArticleRecordData;
+@property (nonatomic, readonly) bool hasMasterIssueRecordData;
 @property (nonatomic, readonly) bool hasSourceChannelRecordData;
+@property (nonatomic, retain) NSData *masterIssueRecordData;
 @property (nonatomic, retain) NSData *sourceChannelRecordData;
 
 - (void).cxx_destruct;
@@ -18,12 +21,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasArticleRecordData;
+- (bool)hasMasterIssueRecordData;
 - (bool)hasSourceChannelRecordData;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (id)masterIssueRecordData;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setArticleRecordData:(id)arg1;
+- (void)setMasterIssueRecordData:(id)arg1;
 - (void)setSourceChannelRecordData:(id)arg1;
 - (id)sourceChannelRecordData;
 - (void)writeTo:(id)arg1;

@@ -286,6 +286,7 @@
 - (int)operationType;
 - (id)overriddenHeaders;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
+- (bool)parsingStandaloneMessage;
 - (long long)partitionType;
 - (id)path;
 - (void)performASyncOnLifecycleQueueIfNotFinished:(id /* block */)arg1;
@@ -308,6 +309,7 @@
 - (void)requestDidParsePlistObject:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (bool)requestGETPreAuth;
+- (Class)requestMessageClass;
 - (id)requestOperationClasses;
 - (id)requestOperationCountsByOperationType;
 - (id)requestOperations;

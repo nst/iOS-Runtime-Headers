@@ -3,22 +3,24 @@
  */
 
 @interface CPTemplate : NSObject <CPBarButtonDelegate, CPBarButtonProviding, CPControlDelegate, CPTemplateDelegate, NSSecureCoding> {
+    CPBarButton * _backButton;
     NSOperationQueue * _deferredOperationQueue;
     NSUUID * _identifier;
-    NSMutableArray * _internalLeadingBarButtons;
-    NSMutableArray * _internalTrailingBarButtons;
+    NSArray * _internalLeadingBarButtons;
+    NSArray * _internalTrailingBarButtons;
     <CPTemplateDelegate> * _templateDelegate;
     <CPBaseTemplateProviding> * _templateProvider;
     id  _userInfo;
 }
 
+@property (nonatomic, retain) CPBarButton *backButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSOperationQueue *deferredOperationQueue;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic, retain) NSMutableArray *internalLeadingBarButtons;
-@property (nonatomic, retain) NSMutableArray *internalTrailingBarButtons;
+@property (nonatomic, retain) NSArray *internalLeadingBarButtons;
+@property (nonatomic, retain) NSArray *internalTrailingBarButtons;
 @property (nonatomic, retain) NSArray *leadingNavigationBarButtons;
 @property (readonly) Class superclass;
 @property (nonatomic) <CPTemplateDelegate> *templateDelegate;
@@ -29,6 +31,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)backButton;
 - (bool)barButton:(id)arg1 setImage:(id)arg2;
 - (bool)barButton:(id)arg1 setTitle:(id)arg2;
 - (bool)control:(id)arg1 setEnabled:(bool)arg2;
@@ -43,6 +46,7 @@
 - (id)internalLeadingBarButtons;
 - (id)internalTrailingBarButtons;
 - (id)leadingNavigationBarButtons;
+- (void)setBackButton:(id)arg1;
 - (void)setDeferredOperationQueue:(id)arg1;
 - (void)setInternalLeadingBarButtons:(id)arg1;
 - (void)setInternalTrailingBarButtons:(id)arg1;

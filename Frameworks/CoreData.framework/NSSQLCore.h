@@ -77,7 +77,6 @@
 + (bool)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (bool)useConcurrentFetching;
 
-- (bool)_aContextSomewhereCaresAboutGenerations;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (void)_cacheModelIfNecessaryUsingConnection:(id)arg1;
 - (void)_cacheRows:(id)arg1;
@@ -99,6 +98,7 @@
 - (void)_fixPrimaryKeyTableFromEntitiesUsingConnection:(id)arg1;
 - (bool)_fixPrimaryKeyTablesUsingConnection:(id)arg1;
 - (void)_initializeQueryGenerationTrackingConnection;
+- (bool)_isQueryGenerationSupportActive;
 - (id)_loadAndSetMetadata;
 - (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
@@ -152,6 +152,7 @@
 - (id)entityForEntityDescription:(id)arg1;
 - (id)entityForFetchRequest:(id)arg1;
 - (id)entityForObject:(id)arg1;
+- (id)entityForObjectID:(id)arg1;
 - (void)evictResolvedRelationships:(id)arg1;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)externalDataLinksDirectory;

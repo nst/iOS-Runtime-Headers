@@ -3,7 +3,12 @@
  */
 
 @interface NTPBEvent : PBCodable <NSCopying> {
+    NSString * _appAnalyticsEventIdentifier;
+    NSString * _appAnalyticsEventPath;
     long long  _appConfigTreatmentId;
+    NSString * _bundleOfferId;
+    NSString * _bundlePurchaseId;
+    int  _bundleSubscriptionStatus;
     int  _cellularRadioAccessTechnology;
     int  _deviceOrientation;
     long long  _duration;
@@ -15,17 +20,20 @@
         unsigned int personalizationTreatmentId : 1; 
         unsigned int personalizedTreatmentId : 1; 
         unsigned int startTimestamp : 1; 
+        unsigned int bundleSubscriptionStatus : 1; 
         unsigned int cellularRadioAccessTechnology : 1; 
         unsigned int deviceOrientation : 1; 
         unsigned int gestureType : 1; 
         unsigned int interfaceOrientation : 1; 
         unsigned int reachabilityStatus : 1; 
+        unsigned int isBundlePurchaser : 1; 
         unsigned int isPaidSubscriberDuringEvent : 1; 
         unsigned int isPaidSubscriberFromAppStoreDuringEvent : 1; 
         unsigned int isPaidSubscriberFromNewsDuringEvent : 1; 
         unsigned int isPaidSubscriberFromThirdPartyDuringEvent : 1; 
     }  _has;
     int  _interfaceOrientation;
+    bool  _isBundlePurchaser;
     bool  _isPaidSubscriberDuringEvent;
     bool  _isPaidSubscriberFromAppStoreDuringEvent;
     bool  _isPaidSubscriberFromNewsDuringEvent;
@@ -47,19 +55,30 @@
     NSString * _windowFrameInScreen;
 }
 
+@property (nonatomic, retain) NSString *appAnalyticsEventIdentifier;
+@property (nonatomic, retain) NSString *appAnalyticsEventPath;
 @property (nonatomic) long long appConfigTreatmentId;
+@property (nonatomic, retain) NSString *bundleOfferId;
+@property (nonatomic, retain) NSString *bundlePurchaseId;
+@property (nonatomic) int bundleSubscriptionStatus;
 @property (nonatomic) int cellularRadioAccessTechnology;
 @property (nonatomic) int deviceOrientation;
 @property (nonatomic) long long duration;
 @property (nonatomic, retain) NTPBEventObject *eventObject;
 @property (nonatomic) int gestureType;
+@property (nonatomic, readonly) bool hasAppAnalyticsEventIdentifier;
+@property (nonatomic, readonly) bool hasAppAnalyticsEventPath;
 @property (nonatomic) bool hasAppConfigTreatmentId;
+@property (nonatomic, readonly) bool hasBundleOfferId;
+@property (nonatomic, readonly) bool hasBundlePurchaseId;
+@property (nonatomic) bool hasBundleSubscriptionStatus;
 @property (nonatomic) bool hasCellularRadioAccessTechnology;
 @property (nonatomic) bool hasDeviceOrientation;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic, readonly) bool hasEventObject;
 @property (nonatomic) bool hasGestureType;
 @property (nonatomic) bool hasInterfaceOrientation;
+@property (nonatomic) bool hasIsBundlePurchaser;
 @property (nonatomic) bool hasIsPaidSubscriberDuringEvent;
 @property (nonatomic) bool hasIsPaidSubscriberFromAppStoreDuringEvent;
 @property (nonatomic) bool hasIsPaidSubscriberFromNewsDuringEvent;
@@ -79,6 +98,7 @@
 @property (nonatomic, readonly) bool hasWidgetUserId;
 @property (nonatomic, readonly) bool hasWindowFrameInScreen;
 @property (nonatomic) int interfaceOrientation;
+@property (nonatomic) bool isBundlePurchaser;
 @property (nonatomic) bool isPaidSubscriberDuringEvent;
 @property (nonatomic) bool isPaidSubscriberFromAppStoreDuringEvent;
 @property (nonatomic) bool isPaidSubscriberFromNewsDuringEvent;
@@ -104,10 +124,17 @@
 + (Class)userPaidSubscriptionStatusType;
 
 - (void).cxx_destruct;
+- (int)StringAsBundleSubscriptionStatus:(id)arg1;
 - (int)StringAsCellularRadioAccessTechnology:(id)arg1;
 - (int)StringAsReachabilityStatus:(id)arg1;
 - (void)addUserPaidSubscriptionStatus:(id)arg1;
+- (id)appAnalyticsEventIdentifier;
+- (id)appAnalyticsEventPath;
 - (long long)appConfigTreatmentId;
+- (id)bundleOfferId;
+- (id)bundlePurchaseId;
+- (int)bundleSubscriptionStatus;
+- (id)bundleSubscriptionStatusAsString:(int)arg1;
 - (int)cellularRadioAccessTechnology;
 - (id)cellularRadioAccessTechnologyAsString:(int)arg1;
 - (void)clearUserPaidSubscriptionStatus;
@@ -118,13 +145,19 @@
 - (long long)duration;
 - (id)eventObject;
 - (int)gestureType;
+- (bool)hasAppAnalyticsEventIdentifier;
+- (bool)hasAppAnalyticsEventPath;
 - (bool)hasAppConfigTreatmentId;
+- (bool)hasBundleOfferId;
+- (bool)hasBundlePurchaseId;
+- (bool)hasBundleSubscriptionStatus;
 - (bool)hasCellularRadioAccessTechnology;
 - (bool)hasDeviceOrientation;
 - (bool)hasDuration;
 - (bool)hasEventObject;
 - (bool)hasGestureType;
 - (bool)hasInterfaceOrientation;
+- (bool)hasIsBundlePurchaser;
 - (bool)hasIsPaidSubscriberDuringEvent;
 - (bool)hasIsPaidSubscriberFromAppStoreDuringEvent;
 - (bool)hasIsPaidSubscriberFromNewsDuringEvent;
@@ -145,6 +178,7 @@
 - (bool)hasWindowFrameInScreen;
 - (unsigned long long)hash;
 - (int)interfaceOrientation;
+- (bool)isBundlePurchaser;
 - (bool)isEqual:(id)arg1;
 - (bool)isPaidSubscriberDuringEvent;
 - (bool)isPaidSubscriberFromAppStoreDuringEvent;
@@ -161,18 +195,25 @@
 - (id)referringType;
 - (id)sessionId;
 - (id)sessionIdWatch;
+- (void)setAppAnalyticsEventIdentifier:(id)arg1;
+- (void)setAppAnalyticsEventPath:(id)arg1;
 - (void)setAppConfigTreatmentId:(long long)arg1;
+- (void)setBundleOfferId:(id)arg1;
+- (void)setBundlePurchaseId:(id)arg1;
+- (void)setBundleSubscriptionStatus:(int)arg1;
 - (void)setCellularRadioAccessTechnology:(int)arg1;
 - (void)setDeviceOrientation:(int)arg1;
 - (void)setDuration:(long long)arg1;
 - (void)setEventObject:(id)arg1;
 - (void)setGestureType:(int)arg1;
 - (void)setHasAppConfigTreatmentId:(bool)arg1;
+- (void)setHasBundleSubscriptionStatus:(bool)arg1;
 - (void)setHasCellularRadioAccessTechnology:(bool)arg1;
 - (void)setHasDeviceOrientation:(bool)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasGestureType:(bool)arg1;
 - (void)setHasInterfaceOrientation:(bool)arg1;
+- (void)setHasIsBundlePurchaser:(bool)arg1;
 - (void)setHasIsPaidSubscriberDuringEvent:(bool)arg1;
 - (void)setHasIsPaidSubscriberFromAppStoreDuringEvent:(bool)arg1;
 - (void)setHasIsPaidSubscriberFromNewsDuringEvent:(bool)arg1;
@@ -182,6 +223,7 @@
 - (void)setHasReachabilityStatus:(bool)arg1;
 - (void)setHasStartTimestamp:(bool)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
+- (void)setIsBundlePurchaser:(bool)arg1;
 - (void)setIsPaidSubscriberDuringEvent:(bool)arg1;
 - (void)setIsPaidSubscriberFromAppStoreDuringEvent:(bool)arg1;
 - (void)setIsPaidSubscriberFromNewsDuringEvent:(bool)arg1;
@@ -213,6 +255,8 @@
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsServicesInternal.framework/NewsServicesInternal
+
++ (id)nss_eventWithIdentifier;
 
 - (void)nss_setEndDate:(id)arg1;
 - (void)nss_setStartDate:(id)arg1;

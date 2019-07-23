@@ -5,8 +5,10 @@
 @interface _SFBarManager : NSObject {
     NSMapTable * _barToRegistrationMap;
     bool  _bookmarksItemSelected;
+    bool  _deferUpdateAllRegistrations;
     <_SFBarManagerDelegate> * _delegate;
     bool  _itemEnabledMap;
+    bool  _needsUpdateAllRegistrations;
 }
 
 @property (getter=isBookmarksItemSelected, nonatomic) bool bookmarksItemSelected;
@@ -23,6 +25,7 @@
 - (id)init;
 - (bool)isBarItemEnabled:(long long)arg1;
 - (bool)isBookmarksItemSelected;
+- (void)performCoalescedUpdates:(id /* block */)arg1;
 - (void)registerToolbar:(id)arg1 withLayout:(long long)arg2 persona:(unsigned long long)arg3;
 - (void)setBarItem:(long long)arg1 enabled:(bool)arg2;
 - (void)setBookmarksItemSelected:(bool)arg1;

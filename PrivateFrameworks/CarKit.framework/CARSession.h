@@ -15,6 +15,7 @@
     <CARSessionDelegate> * _sessionDelegate;
 }
 
+@property (nonatomic, readonly, copy) NSDictionary *APEndPointInfo;
 @property (nonatomic, readonly, copy) NSData *MFiCertificateSerialNumber;
 @property (getter=isAuthenticated, nonatomic, readonly) bool authenticated;
 @property (nonatomic, readonly) CARSessionConfiguration *configuration;
@@ -35,12 +36,13 @@
 + (long long)_siriRequestEventForEndpointAction:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)APEndPointInfo;
 - (id)MFiCertificateSerialNumber;
 - (id)_endpointValueForKey:(struct __CFString { }*)arg1;
 - (void)_fetchAuthenticationStatus;
 - (void)_fetchMapsFallbackAmbientBrightnessWithToken:(int)arg1;
 - (void)_handleOpenURL:(id)arg1;
-- (void)_handleSiriRequestEvent:(long long)arg1;
+- (void)_handleSiriRequestEvent:(long long)arg1 withPayload:(id)arg2;
 - (void)_performExtendedEndpointAction:(id /* block */)arg1;
 - (void)_setEndpointValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
@@ -74,6 +76,7 @@
 - (void)setScreenIDs:(id)arg1;
 - (void)setScreenInfo:(id)arg1;
 - (void)setSessionDelegate:(id)arg1;
+- (void)setSiriForwardingEnabled:(bool)arg1;
 - (id)systemNightMode;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 - (void)takeScreenForConnection;

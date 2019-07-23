@@ -163,6 +163,8 @@
 + (bool)mainBundleRequiresStatusBarHidden;
 + (bool)mainBundleSupportsBackgroundAudio;
 
+- (id)ql_applicationName;
+
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 + (id)_rpFrameworkBundle;
@@ -188,6 +190,11 @@
 
 + (id)vs_bundleForProcessIdentifier:(int)arg1;
 + (id)vs_frameworkBundle;
+
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
++ (id)ams_AppleMediaServicesBundle;
++ (id)ams_iTunesBundle;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
@@ -291,6 +298,10 @@
 + (id)__IS__frameworkBundle;
 + (id)__IS__frameworkLocalizedString:(id)arg1;
 + (id)__IS__iconsetResourceBundle;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (id)inAppMessagesBundle;
 
 // Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
 
@@ -460,10 +471,6 @@
 
 + (id)vcp_mediaAnalysisBundle;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
-
-+ (id)videosExtrasBundle;
-
 // Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 + (id)vui_videosUIBundle;
@@ -484,7 +491,13 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)tsu_resourcesBundle;
+
 - (id)localizedDocumentStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 locale:(id)arg4;
+
+// Image: /usr/lib/swift/libswiftFoundation.dylib
+
++ (id)_swift_bundleWithExecutablePath:(const char *)arg1;
 
 @end

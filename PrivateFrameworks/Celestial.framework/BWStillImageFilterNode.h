@@ -3,6 +3,7 @@
  */
 
 @interface BWStillImageFilterNode : BWNode <BWRendererResourceProvider> {
+    NSDictionary * _cameraInfoByPortType;
     BWColorLookupCache * _colorLookupCache;
     bool  _depthDataDeliveryEnabled;
     struct { 
@@ -35,6 +36,7 @@
 - (void)_emitSampleBufferAsync:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)_initWithDepthDataDeliveryEnabled:(bool)arg1 personSegmentationEnabled:(bool)arg2 refinedDepthEnabled:(bool)arg3 renderResourceProvider:(id)arg4;
 - (void)_prepareStillImageFilterRenderersForOriginalFilters:(id)arg1 processedFilters:(id)arg2;
+- (id)cameraInfoByPortType;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2 forAttachedMediaKey:(id)arg3;
@@ -52,6 +54,7 @@
 - (id)provideStreamingCVAFilterRenderer;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (id)sensorIDDictionary;
+- (void)setCameraInfoByPortType:(id)arg1;
 - (void)setSensorIDDictionary:(id)arg1;
 
 @end

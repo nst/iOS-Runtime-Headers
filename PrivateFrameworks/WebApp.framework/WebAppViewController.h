@@ -21,6 +21,8 @@
 
 - (void).cxx_destruct;
 - (void)_cancelHideSnapshotTimer;
+- (void)_connectToService;
+- (void)_removeRemoteView;
 - (void)_setUpContentViewController:(id)arg1;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForScreenEdgesDeferringSystemGestures;
@@ -33,6 +35,7 @@
 - (void)timeLimitForLoadCompletionExpired;
 - (void)viewDidAppear:(bool)arg1;
 - (void)webAppViewController:(id)arg1 didChangeLoadingState:(bool)arg2;
+- (void)webAppViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)webAppViewControllerDidFinishInitialLoad:(id)arg1;
 - (id)webClip;
 

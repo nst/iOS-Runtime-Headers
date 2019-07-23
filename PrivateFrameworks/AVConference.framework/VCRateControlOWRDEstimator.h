@@ -3,6 +3,8 @@
  */
 
 @interface VCRateControlOWRDEstimator : NSObject {
+    double  _averageReceiveInterval;
+    double  _averageSendInterval;
     double  _firstReceiveTime;
     unsigned int  _firstReceiveTimestamp;
     double  _firstSendTime;
@@ -13,7 +15,9 @@
     unsigned int  _previousReceiveTimestampDiff;
     unsigned int  _previousSendTimestamp;
     unsigned int  _previousSendTimestampDiff;
+    bool  _receiveTimestampSpikeDetected;
     int  _receiveTimestampWrappedAround;
+    bool  _sendTimestampSpikeDetected;
     int  _sendTimestampWrappedAround;
     double  _shortAverageLag;
 }
@@ -21,8 +25,11 @@
 @property (nonatomic, readonly) double owrd;
 
 - (void)calculateOWRDWithSendTime:(double)arg1 receiveTime:(double)arg2;
+- (bool)detectOutOfOrderAndSpikeWithReceiveTimestamp:(unsigned short)arg1;
+- (bool)detectOutOfOrderAndSpikeWithSendTimestamp:(unsigned short)arg1;
 - (double)owrd;
 - (double)relativeReceiveTimeWithTimestamp:(unsigned short)arg1 timestampRate:(unsigned short)arg2;
 - (double)relativeSendTimeWithTimestamp:(unsigned short)arg1 timestampRate:(unsigned short)arg2;
+- (void)resetOWRDEstimation;
 
 @end

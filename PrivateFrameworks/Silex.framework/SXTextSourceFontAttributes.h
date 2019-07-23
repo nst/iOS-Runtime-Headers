@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXTextSourceFontAttributes : NSObject <SXFontAttributes> {
+@interface SXTextSourceFontAttributes : SXFontAttributes <SXFontAttributes> {
     NSString * _familyName;
     long long  _style;
     long long  _weight;

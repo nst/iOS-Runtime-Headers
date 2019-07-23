@@ -33,7 +33,7 @@
 @property (readonly) int signingPolicy;
 @property (readonly) int signingStatus;
 
-+ (id)copyEncryptionCertificatesForAccount:(id)arg1 recipientAddress:(id)arg2 error:(id*)arg3;
++ (id)copyEncryptionCertificatesForAccount:(id)arg1 recipientAddresses:(id)arg2 errorsByAddress:(id*)arg3;
 + (struct __SecIdentity { }*)copyEncryptionIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 + (struct __SecIdentity { }*)copySigningIdentityForAccount:(id)arg1 sendingAddress:(id)arg2 error:(id*)arg3;
 + (unsigned int)evaluateTrustForSigningCertificate:(struct __SecCertificate { }*)arg1 sendingAddress:(id)arg2;

@@ -39,8 +39,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long uncompressedByteSizePerFrame;
 
-+ (id)animatedImageWithData:(id)arg1;
-+ (id)animatedImageWithData:(id)arg1 scale:(double)arg2;
++ (id)animatedImageWithData:(id)arg1 scale:(double)arg2 size:(struct CGSize { double x1; double x2; })arg3;
++ (id)animatedImageWithData:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 + (id)animatedImageWithURL:(id)arg1 scale:(double)arg2 type:(long long)arg3;
 + (id)animatedImageWithURL:(id)arg1 type:(long long)arg2;
 
@@ -59,8 +59,8 @@
 - (struct CGSize { double x1; double x2; })imageSize;
 - (struct CGImageSource { }*)imageSource;
 - (long long)imageType;
-- (id)initWithDataProvider:(struct CGDataProvider { }*)arg1 scale:(double)arg2 type:(long long)arg3;
-- (id)initWithImageSource:(struct CGImageSource { }*)arg1 scale:(double)arg2 type:(long long)arg3;
+- (id)initWithDataProvider:(struct CGDataProvider { }*)arg1 scale:(double)arg2 type:(long long)arg3 size:(struct CGSize { double x1; double x2; })arg4;
+- (id)initWithImageSource:(struct CGImageSource { }*)arg1 scale:(double)arg2 type:(long long)arg3 size:(struct CGSize { double x1; double x2; })arg4;
 - (bool)invalidFile;
 - (unsigned long long)loopCount;
 - (unsigned long long)numberOfFrames;

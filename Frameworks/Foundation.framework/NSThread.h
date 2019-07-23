@@ -16,6 +16,7 @@
 @property unsigned long long stackSize;
 @property (readonly, retain) NSMutableDictionary *threadDictionary;
 @property double threadPriority;
+@property (readonly) unsigned int tsu_qualityOfServiceClass;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -114,5 +115,7 @@
 + (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id /* block */)arg3;
 + (void)tsp_runFinalizeHandlersForReadCompletionInfo:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)tsu_currentThreadName;
+
+- (unsigned int)tsu_qualityOfServiceClass;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) double suggestionUpdateFrequency;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MNNavigationTraceManager *traceManager;
-@property (nonatomic, readonly) unsigned long long type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
@@ -61,7 +61,7 @@
 - (double)suggestionUpdateFrequency;
 - (void)switchToRouteWithDetails:(id)arg1;
 - (id)traceManager;
-- (unsigned long long)type;
+- (long long)type;
 - (void)updateDestination:(id)arg1;
 - (void)updateMapsActive:(bool)arg1;
 - (void)updateVehicleDetected:(bool)arg1;

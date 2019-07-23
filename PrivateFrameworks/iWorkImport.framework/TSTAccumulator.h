@@ -128,14 +128,14 @@
 - (unsigned int)dateCount;
 - (unsigned int)durationCount;
 - (unsigned int)errorCount;
-- (id)initWithArchive:(const struct AccumulatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; bool x12; struct CellValueArchive {} *x13; struct CellValueArchive {} *x14; struct CellValueArchive {} *x15; struct CellValueArchive {} *x16; double x17; double x18; }*)arg1;
+- (id)initWithArchive:(const struct AccumulatorArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct CellValueArchive {} *x5; struct CellValueArchive {} *x6; struct CellValueArchive {} *x7; struct CellValueArchive {} *x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; double x15; double x16; unsigned int x17; bool x18; }*)arg1;
 - (id)initWithLocale:(id)arg1;
 - (bool)isCircularReference;
 - (id)locale;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })maxValue;
 - (struct TSCEValue { unsigned long long x1[18]; int x2; })minValue;
 - (unsigned int)numberCount;
-- (void)saveToArchive:(struct AccumulatorArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; bool x12; struct CellValueArchive {} *x13; struct CellValueArchive {} *x14; struct CellValueArchive {} *x15; struct CellValueArchive {} *x16; double x17; double x18; }*)arg1;
+- (void)saveToArchive:(struct AccumulatorArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct CellValueArchive {} *x5; struct CellValueArchive {} *x6; struct CellValueArchive {} *x7; struct CellValueArchive {} *x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; double x15; double x16; unsigned int x17; bool x18; }*)arg1;
 - (void)setIsCircularReference:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (unsigned int)stringCount;

@@ -15,6 +15,7 @@
 @property (readonly) NSSet *blacklistedBundleIDs;
 @property (readonly) NSNumber *maximumRating;
 @property (getter=isOpenInRestrictionInEffect, readonly) bool openInRestrictionInEffect;
+@property (nonatomic, copy) NSSet *removedSystemApplicationIdentifiers;
 @property (readonly) NSSet *restrictedBundleIDs;
 @property (getter=isSystemAppDeletionEnabled, readonly) bool systemAppDeletionEnabled;
 @property (getter=isWhitelistEnabled, readonly) bool whitelistEnabled;
@@ -49,9 +50,11 @@
 - (bool)isSystemAppDeletionEnabled;
 - (bool)isWhitelistEnabled;
 - (id)maximumRating;
+- (id)removedSystemApplicationIdentifiers;
 - (id)restrictedBundleIDs;
 - (bool)setApplication:(id)arg1 removed:(bool)arg2;
 - (void)setBlacklistedBundleIDs:(id)arg1;
+- (void)setRemovedSystemApplicationIdentifiers:(id)arg1;
 - (void)setRestrictedBundleIDs:(id)arg1;
 - (void)setWhitelistedBundleIDs:(id)arg1;
 - (id)whitelistedBundleIDs;

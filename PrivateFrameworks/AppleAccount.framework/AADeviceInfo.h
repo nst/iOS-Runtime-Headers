@@ -11,6 +11,7 @@
 + (id)infoDictionary;
 + (bool)isInternalBuild;
 + (bool)isMultiUserMode;
++ (bool)locationServicesRestricted;
 + (id)osVersion;
 + (id)productVersion;
 + (id)serialNumber;

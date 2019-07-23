@@ -6,7 +6,6 @@
     unsigned long long  _backgroundMaterialOptions;
     MTMaterialView * _backgroundMaterialView;
     UIImageView * _glyphView;
-    NSString * _groupName;
     UIView * _highlightView;
     long long  _materialRecipe;
     unsigned long long  _overlayMaterialOptions;

@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) HKGradient *gradient;
 
++ (id)hk_verticalWaveformMaskGradientWithInsetLocation:(double)arg1;
 + (Class)layerClass;
 
 - (void).cxx_destruct;

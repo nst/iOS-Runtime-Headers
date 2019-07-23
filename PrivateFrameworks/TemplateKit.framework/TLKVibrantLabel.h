@@ -4,10 +4,12 @@
 
 @interface TLKVibrantLabel : UILabel {
     bool  _enableVibrancy;
+    bool  _isTertiary;
     unsigned long long  _style;
 }
 
 @property bool enableVibrancy;
+@property bool isTertiary;
 @property (nonatomic) unsigned long long style;
 
 + (id)textColorForStyle:(unsigned long long)arg1;
@@ -16,8 +18,10 @@
 - (id)attributedStringForRichText:(id)arg1;
 - (bool)enableVibrancy;
 - (id)init;
+- (bool)isTertiary;
 - (bool)isVibrancyEnabled;
 - (void)setEnableVibrancy:(bool)arg1;
+- (void)setIsTertiary:(bool)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setVibrancyEnabled:(bool)arg1;
 - (id)stringForFormattedText:(id)arg1;

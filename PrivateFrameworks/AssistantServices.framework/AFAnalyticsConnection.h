@@ -36,6 +36,7 @@
 - (oneway void)endEventsGrouping;
 - (oneway void)flushStagedEventsWithReply:(id /* block */)arg1;
 - (id)init;
+- (oneway void)logInstrumentationOfType:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(id)arg3;
 - (bool)needsCleanUpConnection;
 - (void)setNeedsCleanUpConnection:(bool)arg1;
 - (oneway void)stageEvent:(id)arg1;

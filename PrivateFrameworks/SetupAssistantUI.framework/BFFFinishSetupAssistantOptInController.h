@@ -21,6 +21,7 @@
 - (id /* block */)completion;
 - (void)continueSetup;
 - (id)init;
+- (void)performExtendedInitializationWithCompletion:(id /* block */)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)showLearnMore;
 - (void)skipSetup;

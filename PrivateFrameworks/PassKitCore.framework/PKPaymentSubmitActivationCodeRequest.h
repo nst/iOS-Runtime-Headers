@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSData *verificationData;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)pass;
 - (void)setPass:(id)arg1;
 - (void)setVerificationCode:(id)arg1;

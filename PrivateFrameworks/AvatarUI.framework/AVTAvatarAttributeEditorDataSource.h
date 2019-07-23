@@ -6,14 +6,14 @@
     NSArray * _categories;
     unsigned long long  _currentCategoryIndex;
     AVTUIEnvironment * _environment;
-    <AVTScheduler> * _renderingScheduler;
+    <AVTTaskScheduler> * _renderingScheduler;
     NSMutableDictionary * _sectionControllers;
 }
 
 @property (nonatomic, retain) NSArray *categories;
 @property (nonatomic) unsigned long long currentCategoryIndex;
 @property (nonatomic, readonly) AVTUIEnvironment *environment;
-@property (nonatomic, readonly) <AVTScheduler> *renderingScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
 @property (nonatomic, retain) NSMutableDictionary *sectionControllers;
 
 + (unsigned long long)indexForCurrentCategoryGivenPreferredIdentifier:(id)arg1 categories:(id)arg2;

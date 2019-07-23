@@ -6,6 +6,7 @@
     NSNumber * _acceptedStoreTermsVersion;
     NSString * _accountIdentifier;
     NSString * _accountStatus;
+    NSNumber * _carrierBundlingErrorCode;
     NSString * _carrierBundlingStatus;
     id  _discoveryModeEligible;
     NSString * _eligibilityStatus;
@@ -27,6 +28,7 @@
 @property (readonly) NSString *accountStatusNotSubscribed;
 @property (readonly) NSString *accountStatusSubscribed;
 @property (readonly) NSString *accountStatusUnknown;
+@property (readonly) NSNumber *carrierBundlingErrorCode;
 @property (readonly) NSString *carrierBundlingStatus;
 @property (getter=isDiscoveryModeEligible, readonly) id discoveryModeEligible;
 @property (readonly) NSString *eligibilityStatus;
@@ -56,6 +58,7 @@
 - (id)accountStatusSubscribed;
 - (id)accountStatusUnknown;
 - (id)attributeKeys;
+- (id)carrierBundlingErrorCode;
 - (id)carrierBundlingStatus;
 - (id)eligibilityStatus;
 - (id)eligibilityStatusEligible;

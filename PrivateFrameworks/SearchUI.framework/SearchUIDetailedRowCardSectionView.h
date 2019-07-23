@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate> {
+@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, SearchUIFeedbackDelegate, TLKDetailsViewDelegate> {
     SearchUIAccessoryViewController * _accessoryViewControllerForSection;
     NSMutableDictionary * _accessoryViewControllers;
     UIButton * _buttonView;
@@ -36,6 +36,8 @@
 - (id)buttonView;
 - (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;
 - (id)detailsView;
+- (void)didEngageActionItem:(id)arg1 actionPerformed:(bool)arg2;
+- (void)footnoteButtonPressed;
 - (id)innerStackView;
 - (void)setAccessoryViewControllerForSection:(id)arg1;
 - (void)setAccessoryViewControllers:(id)arg1;

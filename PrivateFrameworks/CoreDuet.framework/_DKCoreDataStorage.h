@@ -17,6 +17,7 @@
     NSMutableDictionary * _paths;
     NSMutableDictionary * _persistentStoreCoordinators;
     bool  _readOnly;
+    bool  _requiresManualMigration;
     bool  _sync;
 }
 
@@ -28,6 +29,7 @@
 @property (readonly) NSCloudKitMirroringDelegate *mirroringDelegate;
 @property (readonly) NSURL *modelURL;
 @property (readonly) bool readOnly;
+@property (nonatomic) bool requiresManualMigration;
 @property (readonly) bool sync;
 
 + (unsigned long long)anonymizeObjectStringsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 batchFetchLimit:(unsigned long long)arg5 totalFetchLimit:(unsigned long long)arg6 includeSubentities:(bool)arg7 salt:(id)arg8;
@@ -84,9 +86,11 @@
 - (void)removeManagedObjectContextForKey:(id)arg1;
 - (void)removePersistentStoreCoordinatorFor:(id)arg1;
 - (void)removePersistentStoresInCoordinator:(id)arg1;
+- (bool)requiresManualMigration;
 - (void)setDelegate:(id)arg1;
 - (void)setManagedObjectContext:(id)arg1 forKey:(id)arg2;
 - (void)setManagedObjectModel:(id)arg1;
+- (void)setRequiresManualMigration:(bool)arg1;
 - (bool)sync;
 - (bool)willAutoMigrateStoreAtURL:(id)arg1 fromManagedObjectModel:(id)arg2 havingVersion:(unsigned long long)arg3 error:(id*)arg4;
 

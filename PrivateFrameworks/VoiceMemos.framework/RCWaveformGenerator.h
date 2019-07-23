@@ -47,7 +47,7 @@
     NSHashTable * _weakObservers;
 }
 
-@property (nonatomic, readonly) bool canceled;
+@property (nonatomic) bool canceled;
 @property (nonatomic, readonly) bool finished;
 @property (nonatomic, readonly) bool idle;
 @property (nonatomic, readonly) bool loadable;
@@ -97,6 +97,7 @@
 - (bool)paused;
 - (void)removeSegmentOutputObserver:(id)arg1;
 - (double)segmentFlushInterval;
+- (void)setCanceled:(bool)arg1;
 - (void)setOverviewUnitsPerSecond:(long long)arg1;
 - (void)setPaused:(bool)arg1;
 - (long long)state;

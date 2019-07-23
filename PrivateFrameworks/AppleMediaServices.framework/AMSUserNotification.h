@@ -3,6 +3,8 @@
  */
 
 @interface AMSUserNotification : NSObject {
+    ACAccount * _account;
+    NSURL * _artworkUrl;
     NSArray * _buttonActions;
     NSString * _categoryIdentifier;
     AMSUserNotificationAction * _defaultAction;
@@ -11,52 +13,70 @@
     long long  _intent;
     NSString * _logKey;
     NSString * _subtitle;
+    NSString * _threadIdentifier;
     NSString * _title;
     NSMutableDictionary * _userInfo;
+    NSURL * _videoUrl;
 }
 
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) NSURL *artworkUrl;
 @property (nonatomic, retain) NSArray *buttonActions;
-@property (nonatomic, readonly) NSString *categoryIdentifier;
+@property (nonatomic, retain) NSString *categoryIdentifier;
 @property (nonatomic, retain) AMSUserNotificationAction *defaultAction;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *informativeText;
 @property (nonatomic) long long intent;
 @property (nonatomic, retain) NSString *logKey;
 @property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *threadIdentifier;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSMutableDictionary *userInfo;
+@property (nonatomic, retain) NSURL *videoUrl;
+
++ (bool)_canParseNotificationWithUserInfo:(id)arg1;
++ (id)handleNotificationResponse:(id)arg1 bagContract:(id)arg2;
++ (bool)shouldHandleNotificationResponse:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_compileStoredUserInfo;
 - (void)_populatePropertiesFromStoredUserInfo:(id)arg1;
+- (id)account;
 - (void)addButtonAction:(id)arg1;
+- (id)artworkUrl;
 - (id)buttonActions;
 - (id)categoryIdentifier;
 - (id)createNSUserNotification;
-- (id)createUNNotificationCategory;
+- (id)createUNNotificationActions;
 - (id)createUNNotificationContent;
 - (id)defaultAction;
-- (void)handleSelectedButton:(id)arg1;
+- (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
 - (id)identifier;
 - (id)informativeText;
-- (id)initWithNSUserNotification:(id)arg1 center:(id)arg2;
+- (id)initWithNSUserNotification:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 - (id)initWithTitle:(id)arg1 intent:(long long)arg2;
-- (id)initWithUNNotification:(id)arg1 center:(id)arg2;
+- (id)initWithUNNotification:(id)arg1;
 - (long long)intent;
 - (id)logKey;
+- (void)setAccount:(id)arg1;
+- (void)setArtworkUrl:(id)arg1;
 - (void)setButtonActions:(id)arg1;
+- (void)setCategoryIdentifier:(id)arg1;
 - (void)setDefaultAction:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInformativeText:(id)arg1;
 - (void)setIntent:(long long)arg1;
 - (void)setLogKey:(id)arg1;
 - (void)setSubtitle:(id)arg1;
+- (void)setThreadIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (bool)shouldHandleSelection;
+- (void)setVideoUrl:(id)arg1;
 - (id)subtitle;
+- (id)threadIdentifier;
 - (id)title;
 - (id)userInfo;
+- (id)videoUrl;
 
 @end

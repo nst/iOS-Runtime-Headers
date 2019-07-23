@@ -457,6 +457,7 @@
 - (id)oneUpPresentationHelperScrollView:(id)arg1;
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)performWhenReadyToNavigate:(id /* block */)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)ppt_currentCollectionView;

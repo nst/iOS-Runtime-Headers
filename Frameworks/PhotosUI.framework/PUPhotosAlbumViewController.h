@@ -78,6 +78,7 @@
 - (bool)isTrashBinViewController;
 - (id)localizedTitleForAssets:(id)arg1;
 - (id)newGridLayout;
+- (long long)oneUpPresentationOrigin;
 - (void)photosDataSource:(id)arg1 didReceivePhotoLibraryChange:(id)arg2;
 - (bool)prepareForDismissingForced:(bool)arg1;
 - (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;

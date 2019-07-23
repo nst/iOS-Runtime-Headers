@@ -3,25 +3,26 @@
  */
 
 @interface STMSizer : STMSizeCache {
-    NSObject<OS_dispatch_queue> * _fsQueue;
     struct __FSEventStream { } * _fsStream;
+    NSMutableDictionary * _pendingEventsByPath;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _pendingEventsLock;
     NSArray * _rootPaths;
     bool  _streamRunning;
-    NSObject<OS_dispatch_queue> * _updateQueue;
 }
 
 @property (nonatomic, retain) NSArray *rootPaths;
-@property (retain) NSObject<OS_dispatch_queue> *updateQueue;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithPrefsKey:(id)arg1;
-- (void)pathChanged:(id)arg1 flags:(unsigned int)arg2 event:(unsigned long long)arg3;
+- (void)processEvents:(id)arg1;
 - (id)rootPaths;
+- (void)setEvent:(id)arg1 forItem:(id)arg2;
 - (void)setRootPaths:(id)arg1;
-- (void)setUpdateQueue:(id)arg1;
 - (void)startSizer;
+- (void)startSizing:(id)arg1;
 - (void)stopSizer;
-- (id)updateQueue;
 
 @end

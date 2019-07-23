@@ -5,6 +5,6 @@
 
 @required
 
-- (<SXComponentStyleRenderer> *)componentStyleRendererForComponent:(id <SXComponent>)arg1;
+- (<SXComponentStyleRenderer> *)componentStyleRendererForComponentStyle:(id <SXComponentStyle>)arg1;
 
 @end

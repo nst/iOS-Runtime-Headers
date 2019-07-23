@@ -12,8 +12,10 @@
 
 - (id)alias;
 - (long long)automatchPosition;
+- (id)gamePlayerID;
 - (bool)isAutomatchPlayer;
 - (id)playerID;
 - (void)setAutomatchPosition:(long long)arg1;
+- (id)teamPlayerID;
 
 @end

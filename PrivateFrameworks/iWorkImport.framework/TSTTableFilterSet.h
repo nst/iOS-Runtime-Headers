@@ -47,7 +47,7 @@
 - (id)initWithFilterRules:(id)arg1 type:(int)arg2 context:(id)arg3;
 - (bool)isEnabled;
 - (bool)isEqual:(id)arg1;
-- (void)loadFromArchive:(const struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; struct RepeatedField<bool> { bool *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct FilterSetArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::FilterRuleArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedField<unsigned int> { int x_6_1_1; int x_6_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_6_1_3; } x6; struct RepeatedField<bool> { int x_7_1_1; int x_7_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_7_1_3; } x7; int x8; bool x9; bool x10; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (bool)needsFormulaRewriteForImport;
 - (unsigned long long)newFilterIndex;
@@ -63,7 +63,7 @@
 - (unsigned long long)ruleCount;
 - (id)ruleInFilter:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (unsigned long long)ruleIndexInFilter:(unsigned long long)arg1 matchingCell:(id)arg2;
-- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; struct RepeatedPtrField<TST::FilterRuleArchive> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedField<unsigned int> { unsigned int *x_9_1_1; int x_9_1_2; int x_9_1_3; } x9; struct RepeatedField<bool> { bool *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct FilterSetArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TST::FilterRuleArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; struct RepeatedField<unsigned int> { int x_6_1_1; int x_6_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_6_1_3; } x6; struct RepeatedField<bool> { int x_7_1_1; int x_7_1_2; union Pointer { struct Arena {} *x_3_2_1; struct Rep {} *x_3_2_2; } x_7_1_3; } x7; int x8; bool x9; bool x10; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setFilterSetType:(int)arg1;
 - (void)setIsEnabled:(bool)arg1;

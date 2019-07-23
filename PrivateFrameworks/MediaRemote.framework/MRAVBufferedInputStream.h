@@ -5,6 +5,7 @@
 @interface MRAVBufferedInputStream : NSInputStream {
     NSMutableData * _buffer;
     <NSStreamDelegate> * _delegate;
+    NSMutableData * _preBuffer;
     NSMutableDictionary * _properties;
     NSRunLoop * _scheduledRunLoop;
     NSObject<OS_dispatch_queue> * _serialQueue;
@@ -14,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)_init;
 - (void)_onRunLoop_notifyDelegateOfStreamEvent:(unsigned long long)arg1;
+- (void)_onSerialQueue_handleDataReceived:(id)arg1;
 - (void)close;
 - (id)delegate;
 - (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;

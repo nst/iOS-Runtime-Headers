@@ -5,11 +5,15 @@
 @interface TPFloatingDrawables : TSPObject <TSKDocumentObject> {
     TPDocumentRoot * _documentRoot;
     NSMutableDictionary * _drawablesByPageIndex;
-    TSUPointerKeyDictionary * _pageIndexByDrawable;
-    TSUPointerKeyDictionary * _tagByDrawable;
+    NSMapTable * _pageIndexByDrawable;
+    NSMapTable * _tagByDrawable;
 }
 
+@property (nonatomic, readonly) NSSet *allDrawables;
+@property (nonatomic, readonly) unsigned long long countOfAllDrawables;
 @property (nonatomic, readonly) TPDocumentRoot *documentRoot;
+@property (nonatomic, readonly) bool hasAnyDrawables;
+@property (nonatomic, readonly) unsigned long long maximumPageIndex;
 
 - (void).cxx_destruct;
 - (void)addDrawable:(id)arg1 toPageIndex:(unsigned long long)arg2 insertContext:(id)arg3;
@@ -18,7 +22,6 @@
 - (id)allDrawables;
 - (void)applyTag:(id)arg1 toDrawable:(id)arg2;
 - (unsigned long long)countOfAllDrawables;
-- (id)debugDescription;
 - (id)documentRoot;
 - (id)drawableEnumerator;
 - (id)drawablesOnPageIndex:(unsigned long long)arg1;

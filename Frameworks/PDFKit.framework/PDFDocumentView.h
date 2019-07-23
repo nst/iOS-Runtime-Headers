@@ -32,6 +32,7 @@
 - (void)forceUpdateActivePageIndex:(unsigned long long)arg1 withMaxDuration:(double)arg2;
 - (id)initWithPDFView:(id)arg1;
 - (void)layoutDocumentView;
+- (id)pageBackgroundManager;
 - (id)pageViewForPageAtIndex:(unsigned long long)arg1;
 - (id)pageViews;
 - (void)previewRotateShiftPages:(double)arg1;

@@ -4,6 +4,7 @@
 
 @interface PKPassFooterView : UIView <PKForegroundActiveArbiterObserver, PKPassFooterContentViewDelegate, PKUIForegroundActiveArbiterDeactivationObserver> {
     bool  _acquiringSession;
+    long long  _coachingState;
     PKPassFooterContentView * _contentView;
     unsigned char  _contentViewVisibility;
     <PKPassFooterViewDelegate> * _delegate;
@@ -11,7 +12,6 @@
     bool  _isAssistantActive;
     bool  _isBackgrounded;
     PKPassView * _passView;
-    long long  _paymentApplicationState;
     NSObject<OS_dispatch_group> * _sessionDelayGroup;
     PKPaymentSessionHandle * _sessionHandle;
     NSObject<OS_dispatch_source> * _sessionStartTimer;
@@ -21,12 +21,14 @@
     unsigned char  _visibility;
 }
 
+@property (nonatomic, readonly) long long coachingState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPassFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (getter=isPassAuthorized, nonatomic, readonly) bool passAuthorized;
 @property (nonatomic, retain) PKPassView *passView;
+@property (nonatomic, readonly) bool requestPileSuppression;
 @property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (getter=isUserIntentRequired, nonatomic, readonly) bool userIntentRequired;
@@ -40,16 +42,20 @@
 - (void)_configureForPersonalizedPaymentApplicationWithContext:(id)arg1;
 - (void)_configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
 - (void)_configureForValueAddedServiceWithContext:(id)arg1;
-- (id)_contentViewForPaymentApplicationWithContext:(id)arg1;
-- (void)_deleteButtonTapped;
 - (void)_endSession;
 - (void)_endSessionStartTimer;
-- (void)_lostModeButtonTapped;
+- (id)_messageContentViewFromMessage:(id)arg1;
+- (id)_messageForPaymentApplicationState;
+- (id)_messageForPeerPaymentZeroBalance;
+- (id)_messageForRestrictedState;
+- (id)_messageForUnavailableState;
+- (void)_setCoachingState:(long long)arg1;
 - (void)_setContentView:(id)arg1 animated:(bool)arg2;
 - (void)_setUserIntentRequired:(bool)arg1;
 - (void)_startContactlessInterfaceSessionWithContext:(id)arg1 sessionAvailable:(id /* block */)arg2 sessionUnavailable:(id /* block */)arg3;
 - (void)_updateForForegroundActivePresentationIfNecessaryAnimated:(bool)arg1;
 - (void)_updateForNonForegroundActivePresentationAnimated:(bool)arg1;
+- (long long)coachingState;
 - (void)configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
@@ -63,11 +69,13 @@
 - (bool)isPassFooterContentViewInGroup:(id)arg1;
 - (bool)isUserIntentRequired;
 - (void)layoutSubviews;
-- (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
+- (void)passFooterContentViewDidAuthenticate:(id)arg1;
+- (void)passFooterContentViewDidChangeCoachingState:(id)arg1;
+- (void)passFooterContentViewDidChangePileSuppressionRequirement:(id)arg1;
 - (void)passFooterContentViewDidChangeUserIntentRequirement:(id)arg1;
-- (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
 - (void)passFooterContentViewRequestsSessionSuppression:(id)arg1;
 - (id)passView;
+- (bool)requestPileSuppression;
 - (void)setDelegate:(id)arg1;
 - (void)setPassView:(id)arg1;
 - (long long)state;

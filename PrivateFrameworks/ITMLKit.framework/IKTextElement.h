@@ -3,8 +3,10 @@
  */
 
 @interface IKTextElement : IKViewElement {
+    NSMutableArray * _textBadgeElements;
     NSMutableArray * _textBadges;
     IKTextParser * _textParser;
+    NSMutableArray * _textSpanElements;
     unsigned long long  _textStyle;
 }
 
@@ -32,7 +34,10 @@
 - (id)attributedStringWithFontHandler:(id /* block */)arg1 foregroundColor:(id)arg2 textAlignment:(long long)arg3 defaultAttributes:(id*)arg4;
 - (id)badges;
 - (id)color;
+- (id)debugDescription;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (id)initWithOriginalElement:(id)arg1;
+- (id)initWithPrototypeElement:(id)arg1 parent:(id)arg2 appDataItem:(id)arg3;
 - (long long)maxLines;
 - (id)text;
 - (unsigned long long)textStyle;
@@ -42,12 +47,12 @@
 - (id)tv_associatedViewElement;
 - (id)tv_attributedString;
 - (id)tv_attributedStringWithForegroundColor:(id)arg1 textAlignment:(long long)arg2;
-- (id)tv_paragraphStyle;
-- (id)tv_paragraphStyleWithTextAlignment:(long long)arg1;
+- (id)tv_paragraphStyleForDefaultStyle:(id)arg1;
+- (id)tv_paragraphStyleForDefaultStyle:(id)arg1 withTextAlignment:(long long)arg2;
 - (id)tv_textAttributes;
 - (long long)tv_textStyle;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 - (id)textAttributes;
 

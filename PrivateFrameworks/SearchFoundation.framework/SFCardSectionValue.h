@@ -18,6 +18,7 @@
     SFMapsDetailedRowCardSection * _mapsDetailedRowCardSection;
     SFMediaInfoCardSection * _mediaInfoCardSection;
     SFMediaPlayerCardSection * _mediaPlayerCardSection;
+    SFMediaRemoteControlCardSection * _mediaRemoteControlCardSection;
     SFMessageCardSection * _messageCardSection;
     SFMetaInfoCardSection * _metaInfoCardSection;
     SFNowPlayingCardSection * _nowPlayingCardSection;
@@ -60,6 +61,7 @@
 @property (nonatomic, retain) SFMapsDetailedRowCardSection *mapsDetailedRowCardSection;
 @property (nonatomic, retain) SFMediaInfoCardSection *mediaInfoCardSection;
 @property (nonatomic, retain) SFMediaPlayerCardSection *mediaPlayerCardSection;
+@property (nonatomic, retain) SFMediaRemoteControlCardSection *mediaRemoteControlCardSection;
 @property (nonatomic, retain) SFMessageCardSection *messageCardSection;
 @property (nonatomic, retain) SFMetaInfoCardSection *metaInfoCardSection;
 @property (nonatomic, retain) SFNowPlayingCardSection *nowPlayingCardSection;
@@ -106,6 +108,7 @@
 - (id)mapsDetailedRowCardSection;
 - (id)mediaInfoCardSection;
 - (id)mediaPlayerCardSection;
+- (id)mediaRemoteControlCardSection;
 - (id)messageCardSection;
 - (id)metaInfoCardSection;
 - (id)nowPlayingCardSection;
@@ -130,6 +133,7 @@
 - (void)setMapsDetailedRowCardSection:(id)arg1;
 - (void)setMediaInfoCardSection:(id)arg1;
 - (void)setMediaPlayerCardSection:(id)arg1;
+- (void)setMediaRemoteControlCardSection:(id)arg1;
 - (void)setMessageCardSection:(id)arg1;
 - (void)setMetaInfoCardSection:(id)arg1;
 - (void)setNowPlayingCardSection:(id)arg1;

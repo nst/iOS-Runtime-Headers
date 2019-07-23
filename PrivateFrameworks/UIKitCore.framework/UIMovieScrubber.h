@@ -105,8 +105,6 @@
 @property (nonatomic, readonly) double zoomMaximumValue;
 @property (nonatomic, readonly) double zoomMinimumValue;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (bool)_allowActionsToQueue;
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(bool)arg2 isElapsed:(bool)arg3;
 
@@ -137,10 +135,6 @@
 - (void)_updateThumbLocation;
 - (void)_updateTimes;
 - (double)_valueForLocatable:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentMargins;
 - (void)animateAfterEdit;
 - (void)animateCancelEdit;
@@ -148,6 +142,7 @@
 - (bool)cancelTouchTracking;
 - (void)continueTrackingWithLocatable:(id)arg1;
 - (id)dataSource;
+- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;

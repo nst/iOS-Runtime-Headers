@@ -109,6 +109,7 @@
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (long long)priority;
 - (void)setAssets:(id)arg1;
 - (void)setAssetsDataSourceManager:(id)arg1;

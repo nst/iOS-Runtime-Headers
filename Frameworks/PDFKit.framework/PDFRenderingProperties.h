@@ -8,6 +8,7 @@
 
 @property (nonatomic) struct CGColorSpace { }*deviceColorSpace;
 @property (nonatomic) long long displayBox;
+@property (nonatomic) bool enableBackgroundImages;
 @property (nonatomic) bool enablePageShadows;
 @property (nonatomic) bool enableTileUpdates;
 @property (nonatomic) double greekingThreshold;
@@ -27,6 +28,7 @@
 - (void)dealloc;
 - (struct CGColorSpace { }*)deviceColorSpace;
 - (long long)displayBox;
+- (bool)enableBackgroundImages;
 - (bool)enablePageShadows;
 - (bool)enableTileUpdates;
 - (void)forceWebKitMainThread:(bool)arg1;
@@ -43,6 +45,7 @@
 - (double)screenScaleFactor;
 - (void)setDeviceColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setDisplayBox:(long long)arg1;
+- (void)setEnableBackgroundImages:(bool)arg1;
 - (void)setEnablePageShadows:(bool)arg1;
 - (void)setEnableTileUpdates:(bool)arg1;
 - (void)setGreekingThreshold:(double)arg1;

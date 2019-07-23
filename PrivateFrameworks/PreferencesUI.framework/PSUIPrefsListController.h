@@ -5,6 +5,7 @@
 @interface PSUIPrefsListController : PSListController <AAUISignInControllerDelegate, CoreTelephonyClientSubscriberDelegate, DevicePINControllerDelegate, PSSpotlightSearchResultsControllerDelegate, RadiosPreferencesDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     ACAccountStore * _accountStore;
     PSSpecifier * _appleAccountSpecifier;
+    PSSpecifier * _applePencilSpecifier;
     NSString * _bluetoothString;
     bool  _bluetoothValueIsClean;
     PSSpecifier * _carrierSelectionSpecifier;
@@ -22,6 +23,7 @@
     NSArray * _followupSpecifiers;
     PSSpecifier * _gameCenterSpecifier;
     PSSpecifier * _healthKitSpecifier;
+    struct __IOHIDManager { } * _hidManager;
     PSSpecifier * _homeKitSpecifier;
     HFHomeSettingsVisibilityArbitrator * _homeKitVisibilityArbitrator;
     bool  _initiallyLoadingThirdPartySpecifiers;
@@ -59,6 +61,7 @@
 @property (nonatomic, readonly) UIViewController<PSController> *categoryController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FLPreferencesController *followupController;
 @property (nonatomic, retain) NSArray *followupSpecifiers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool skipSelectingGeneralOnLaunch;
@@ -73,6 +76,7 @@
 
 - (void).cxx_destruct;
 - (void)NETRBStateChangedNotification:(id)arg1;
+- (void)NETRBStateChangedNotification:(id)arg1 completion:(id /* block */)arg2;
 - (id)_accountStore;
 - (void)_beginObservingAccountStoreDidChangeNotification;
 - (void)_beginObservingProfilePictureStoreDidChangeNotification;
@@ -116,9 +120,9 @@
 - (bool)canBecomeFirstResponder;
 - (id)categoryController;
 - (id)cellularDataStatusForSpecifier:(id)arg1;
-- (id)cellularDisabledStatusForSpecifier:(id)arg1;
 - (void)checkDeveloperSettingsState;
 - (void)clearCache;
+- (void)configureApplePencilSpecifier;
 - (id)configurePasscodeSpecifierFromSpecifiers:(id)arg1;
 - (void)confirmationSpecifierCancelled:(id)arg1;
 - (void)confirmationSpecifierConfirmed:(id)arg1;
@@ -129,6 +133,7 @@
 - (void)didDismissSearchController:(id)arg1;
 - (void)dismissPopover;
 - (void)displayIdentifiersChanged;
+- (id)followupController;
 - (id)followupSpecifiers;
 - (id)generalViewController;
 - (id)getAirplaneMode:(id)arg1;
@@ -159,6 +164,7 @@
 - (void)reloadCellularRelatedSpecifiers;
 - (void)reloadSpecifiers;
 - (void)removeAndReload3rdPartyBundles;
+- (void)removeApplePencilListener;
 - (void)rerootNavigationController;
 - (bool)searchBarShouldEndEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
@@ -171,6 +177,7 @@
 - (void)setAirplaneMode:(id)arg1 specifier:(id)arg2;
 - (void)setBluetoothString:(id)arg1;
 - (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
+- (void)setFollowupController:(id)arg1;
 - (void)setFollowupSpecifiers:(id)arg1;
 - (void)setSkipSelectingGeneralOnLaunch:(bool)arg1;
 - (void)setSpeakerAccessory:(id)arg1 eqAvailable:(bool)arg2;
@@ -181,9 +188,13 @@
 - (void)setupPrimaryAppleAccountGroup:(id)arg1;
 - (bool)shouldDeferPushForSpecifierID:(id)arg1;
 - (bool)shouldReloadSpecifiersOnResume;
+- (bool)shouldShowApplePencilSpecifier;
 - (bool)shouldShowClassKitSpecifier;
 - (bool)shouldShowClassroomSpecifier;
 - (bool)shouldShowEthernetSpecifier;
+- (bool)shouldShowFaceID;
+- (bool)shouldShowSimulatorSettings;
+- (bool)shouldShowTouchID;
 - (void)showDeviceSupervisionInfo;
 - (void)showPINSheet:(id)arg1;
 - (void)signInController:(id)arg1 didCompleteWithSuccess:(bool)arg2 error:(id)arg3;
@@ -201,12 +212,14 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)testSpecifierCountAfterBlock:(id /* block */)arg1;
 - (void)updateAccountSpecifiers;
+- (void)updateApplePencil;
 - (void)updateClassKitSpecifier;
 - (void)updateClassroomSpecifier;
 - (void)updateEthernet;
+- (void)updateEthernetWithCompletion:(id /* block */)arg1;
 - (void)updateFollowupSpecifiers;
 - (void)updateHomeKitSpecifier;
-- (void)updatePersonalHotspotWithState:(int)arg1 andReason:(int)arg2;
+- (void)updatePersonalHotspot;
 - (void)updateRestrictedSettings;
 - (void)updateSOS;
 - (void)updateSearchResultsForSearchController:(id)arg1;

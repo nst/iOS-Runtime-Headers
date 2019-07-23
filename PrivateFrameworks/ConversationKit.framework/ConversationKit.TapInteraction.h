@@ -10,7 +10,7 @@
 @property (nonatomic) long long numberOfTapsRequired;
 @property (nonatomic) UIView *view;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (void)didMoveToView:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (void)handleRecognizer:(id)arg1;

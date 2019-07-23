@@ -16,6 +16,7 @@
         bool isLoading; 
     }  _duration;
     NSIndexPath * _indexPath;
+    NSArray * _languageOptionGroups;
     MPModelGenericObject * _metadataObject;
     bool  _placeholder;
     MPCPlayerResponse * _response;
@@ -26,12 +27,14 @@
 @property (nonatomic, readonly) NSString *contentItemIdentifier;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; float x6; float x7; bool x8; bool x9; } duration;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
+@property (nonatomic, readonly) NSArray *languageOptionGroups;
 @property (nonatomic, readonly) MPModelGenericObject *metadataObject;
 @property (getter=isPlaceholder, nonatomic, readonly) bool placeholder;
 @property (nonatomic, readonly) MPCPlayerResponse *response;
 @property (nonatomic, readonly) long long revision;
 
 - (void).cxx_destruct;
+- (id)_buildLanguageOptionGroups:(id)arg1 currentLanguageOptions:(id)arg2;
 - (unsigned long long)_determineSeekSupport;
 - (id)_feedbackCommandWithMediaRemoteCommand:(unsigned int)arg1;
 - (id)contentItemIdentifier;
@@ -40,6 +43,7 @@
 - (id)indexPath;
 - (id)initWithModelGenericObject:(id)arg1 indexPath:(id)arg2 response:(id)arg3;
 - (bool)isPlaceholder;
+- (id)languageOptionGroups;
 - (id)likeCommand;
 - (id)metadataObject;
 - (id)playbackRateCommand;

@@ -22,7 +22,7 @@
 - (id)initWithEdgeDetectionParameters:(const struct EdgeDetectionParameters { bool x1; bool x2; float x3; }*)arg1;
 - (id)matrix;
 - (void)setVertices:(id)arg1;
-- (void)submit:(const /* Warning: unhandled struct encoding: '{PrimitiveInfo=iii@}' */ struct PrimitiveInfo { int x1; int x2; int x3; id x4; }*)arg1;
+- (void)submit:(id)arg1;
 - (id)vertices;
 
 @end

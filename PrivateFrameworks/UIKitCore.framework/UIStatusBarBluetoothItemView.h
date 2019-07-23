@@ -7,12 +7,7 @@
     bool  _shouldAnimateConnection;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)_blinkAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)alphaForConnected:(bool)arg1;
 - (id)contentsImage;

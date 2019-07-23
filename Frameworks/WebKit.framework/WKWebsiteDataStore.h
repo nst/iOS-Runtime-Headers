@@ -19,6 +19,8 @@
 @property (setter=_setResourceLoadStatisticsDebugMode:, nonatomic) bool _resourceLoadStatisticsDebugMode;
 @property (setter=_setResourceLoadStatisticsEnabled:, nonatomic) bool _resourceLoadStatisticsEnabled;
 @property (setter=_setServiceWorkerRegistrationDirectory:, nonatomic) NSString *_serviceWorkerRegistrationDirectory;
+@property (setter=_setSourceApplicationBundleIdentifier:, nonatomic, copy) NSString *_sourceApplicationBundleIdentifier;
+@property (setter=_setSourceApplicationSecondaryIdentifier:, nonatomic, copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -31,6 +33,7 @@
 + (id)_allWebsiteDataTypesIncludingPrivate;
 + (void)_allowWebsiteDataRecordsForAllOrigins;
 + (bool)_defaultDataStoreExists;
++ (void)_deleteDefaultDataStoreForTesting;
 + (id)allWebsiteDataTypes;
 + (id)defaultDataStore;
 + (id)nonPersistentDataStore;
@@ -59,6 +62,10 @@
 - (void)_setResourceLoadStatisticsEnabled:(bool)arg1;
 - (void)_setResourceLoadStatisticsTestingCallback:(id /* block */)arg1;
 - (void)_setServiceWorkerRegistrationDirectory:(id)arg1;
+- (void)_setSourceApplicationBundleIdentifier:(id)arg1;
+- (void)_setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (id)_sourceApplicationBundleIdentifier;
+- (id)_sourceApplicationSecondaryIdentifier;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchDataRecordsOfTypes:(id)arg1 completionHandler:(id /* block */)arg2;

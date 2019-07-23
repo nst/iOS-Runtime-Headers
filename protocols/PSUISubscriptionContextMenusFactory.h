@@ -10,6 +10,7 @@
 - (PSUICarrierSpaceGroup *)createCarrierSpaceSubgroup;
 - (CTCellularPlanManager *)createCellularPlanManager;
 - (PSUICellularPlanManagerCache *)createCellularPlanManagerCache;
+- (PSUICoreTelephonyDataCache *)createDataCache;
 - (PSUIMyNumberSubgroup *)createMyNumberSubgroup;
 - (PSUINetworkSelectionSubgroup *)createNetworkSelectionSubgroup;
 - (PSUINetworkSettingsSubgroup *)createNetworkSettingsSubgroup;

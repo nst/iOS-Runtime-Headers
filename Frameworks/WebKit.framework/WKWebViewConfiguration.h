@@ -3,6 +3,9 @@
  */
 
 @interface WKWebViewConfiguration : NSObject <NSCopying, NSSecureCoding> {
+    struct RetainPtr<NSArray<NSString *> > { 
+        void *m_ptr; 
+    }  _additionalSupportedImageTypes;
     bool  _allowMediaContentTypesRequiringHardwareSupportAsFallback;
     bool  _allowUniversalAccessFromFileURLs;
     bool  _allowsAirPlayForMediaPlayback;
@@ -14,11 +17,7 @@
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
     }  _alternateWebViewForNavigationGestures;
-    bool  _alwaysRunsAtForegroundPriority;
     bool  _applePayEnabled;
-    struct RetainPtr<_WKApplicationManifest> { 
-        void *m_ptr; 
-    }  _applicationManifest;
     struct LazyInitialized<WTF::RetainPtr<NSString> > { 
         bool m_isInitialized; 
         struct RetainPtr<NSString> { 
@@ -26,6 +25,7 @@
         } m_value; 
     }  _applicationNameForUserAgent;
     bool  _attachmentElementEnabled;
+    Class  _attachmentFileWrapperClass;
     bool  _colorFilterEnabled;
     struct LazyInitialized<WTF::RetainPtr<WKWebViewContentProviderRegistry> > { 
         bool m_isInitialized; 
@@ -38,13 +38,13 @@
     unsigned long long  _dataDetectorTypes;
     unsigned long long  _dragLiftDelay;
     bool  _drawsBackground;
+    bool  _editableImagesEnabled;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _groupIdentifier;
     bool  _ignoresViewportScaleLimits;
     bool  _incompleteImageBorderEnabled;
     double  _incrementalRenderingSuppressionTimeout;
-    bool  _initialCapitalizationEnabled;
     bool  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
     bool  _invisibleAutoplayNotPermitted;
     bool  _legacyEncryptedMediaAPIEnabled;
@@ -56,9 +56,9 @@
     bool  _mediaDataLoadsAutomatically;
     unsigned long long  _mediaTypesRequiringUserActionForPlayback;
     bool  _needsStorageAccessFromFileURLsQuirk;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
-    }  _overrideContentSecurityPolicy;
+    struct RefPtr<API::PageConfiguration, WTF::DumbPtrTraits<API::PageConfiguration> > { 
+        struct PageConfiguration {} *m_ptr; 
+    }  _pageConfiguration;
     struct LazyInitialized<WTF::RetainPtr<WKPreferences> > { 
         bool m_isInitialized; 
         struct RetainPtr<WKPreferences> { 
@@ -81,13 +81,6 @@
     bool  _suppressesIncrementalRendering;
     bool  _systemPreviewEnabled;
     bool  _textInteractionGesturesEnabled;
-    bool  _treatsSHA1SignedCertificatesAsInsecure;
-    struct LazyInitialized<WTF::RetainPtr<NSMutableDictionary<NSString *,id<WKURLSchemeHandler>> > > { 
-        bool m_isInitialized; 
-        struct RetainPtr<NSMutableDictionary<NSString *,id<WKURLSchemeHandler>> > { 
-            void *m_ptr; 
-        } m_value; 
-    }  _urlSchemeHandlers;
     struct LazyInitialized<WTF::RetainPtr<WKUserContentController> > { 
         bool m_isInitialized; 
         struct RetainPtr<WKUserContentController> { 
@@ -109,6 +102,7 @@
     }  _websiteDataStore;
 }
 
+@property (setter=_setAdditionalSupportedImageTypes:, nonatomic, copy) NSArray *_additionalSupportedImageTypes;
 @property (setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:, nonatomic) bool _allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property (setter=_setAllowUniversalAccessFromFileURLs:, nonatomic) bool _allowUniversalAccessFromFileURLs;
 @property (setter=_setAllowsInlineMediaPlaybackAfterFullscreen:, nonatomic) bool _allowsInlineMediaPlaybackAfterFullscreen;
@@ -119,12 +113,14 @@
 @property (setter=_setApplePayEnabled:, nonatomic) bool _applePayEnabled;
 @property (setter=_setApplicationManifest:, nonatomic) _WKApplicationManifest *_applicationManifest;
 @property (setter=_setAttachmentElementEnabled:, nonatomic) bool _attachmentElementEnabled;
+@property (setter=_setAttachmentFileWrapperClass:, nonatomic) Class _attachmentFileWrapperClass;
 @property (setter=_setColorFilterEnabled:, nonatomic) bool _colorFilterEnabled;
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (getter=_isControlledByAutomation, setter=_setControlledByAutomation:, nonatomic) bool _controlledByAutomation;
 @property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) bool _convertsPositionStyleOnCopy;
 @property (setter=_setDragLiftDelay:, nonatomic) unsigned long long _dragLiftDelay;
 @property (setter=_setDrawsBackground:, nonatomic) bool _drawsBackground;
+@property (setter=_setEditableImagesEnabled:, nonatomic) bool _editableImagesEnabled;
 @property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
 @property (setter=_setIncompleteImageBorderEnabled:, nonatomic) bool _incompleteImageBorderEnabled;
 @property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) double _incrementalRenderingSuppressionTimeout;
@@ -147,7 +143,6 @@
 @property (setter=_setSystemPreviewEnabled:, nonatomic) bool _systemPreviewEnabled;
 @property (setter=_setTextInteractionGesturesEnabled:, nonatomic) bool _textInteractionGesturesEnabled;
 @property (setter=_setTreatsSHA1SignedCertificatesAsInsecure:, nonatomic) bool _treatsSHA1SignedCertificatesAsInsecure;
-@property (nonatomic, readonly) NSMutableDictionary *_urlSchemeHandlers;
 @property (setter=_setVisitedLinkStore:, nonatomic, retain) _WKVisitedLinkStore *_visitedLinkStore;
 @property (setter=_setWaitsForPaintAfterViewDidMoveToWindow:, nonatomic) bool _waitsForPaintAfterViewDidMoveToWindow;
 @property (setter=_setWebsiteDataStore:, nonatomic, retain) _WKWebsiteDataStore *_websiteDataStore;
@@ -174,6 +169,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)_additionalSupportedImageTypes;
 - (bool)_allowMediaContentTypesRequiringHardwareSupportAsFallback;
 - (bool)_allowUniversalAccessFromFileURLs;
 - (bool)_allowsInlineMediaPlaybackAfterFullscreen;
@@ -184,11 +180,13 @@
 - (bool)_applePayEnabled;
 - (id)_applicationManifest;
 - (bool)_attachmentElementEnabled;
+- (Class)_attachmentFileWrapperClass;
 - (bool)_colorFilterEnabled;
 - (id)_contentProviderRegistry;
 - (bool)_convertsPositionStyleOnCopy;
 - (unsigned long long)_dragLiftDelay;
 - (bool)_drawsBackground;
+- (bool)_editableImagesEnabled;
 - (id)_groupIdentifier;
 - (bool)_incompleteImageBorderEnabled;
 - (double)_incrementalRenderingSuppressionTimeout;
@@ -208,6 +206,7 @@
 - (bool)_requiresUserActionForAudioPlayback;
 - (bool)_requiresUserActionForVideoPlayback;
 - (bool)_respectsImageOrientation;
+- (void)_setAdditionalSupportedImageTypes:(id)arg1;
 - (void)_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:(bool)arg1;
 - (void)_setAllowUniversalAccessFromFileURLs:(bool)arg1;
 - (void)_setAllowsInlineMediaPlaybackAfterFullscreen:(bool)arg1;
@@ -218,12 +217,14 @@
 - (void)_setApplePayEnabled:(bool)arg1;
 - (void)_setApplicationManifest:(id)arg1;
 - (void)_setAttachmentElementEnabled:(bool)arg1;
+- (void)_setAttachmentFileWrapperClass:(Class)arg1;
 - (void)_setColorFilterEnabled:(bool)arg1;
 - (void)_setContentProviderRegistry:(id)arg1;
 - (void)_setControlledByAutomation:(bool)arg1;
 - (void)_setConvertsPositionStyleOnCopy:(bool)arg1;
 - (void)_setDragLiftDelay:(unsigned long long)arg1;
 - (void)_setDrawsBackground:(bool)arg1;
+- (void)_setEditableImagesEnabled:(bool)arg1;
 - (void)_setGroupIdentifier:(id)arg1;
 - (void)_setIncompleteImageBorderEnabled:(bool)arg1;
 - (void)_setIncrementalRenderingSuppressionTimeout:(double)arg1;
@@ -254,7 +255,6 @@
 - (bool)_systemPreviewEnabled;
 - (bool)_textInteractionGesturesEnabled;
 - (bool)_treatsSHA1SignedCertificatesAsInsecure;
-- (id)_urlSchemeHandlers;
 - (id)_visitedLinkProvider;
 - (id)_visitedLinkStore;
 - (bool)_waitsForPaintAfterViewDidMoveToWindow;
@@ -263,6 +263,7 @@
 - (bool)allowsInlineMediaPlayback;
 - (bool)allowsPictureInPictureMediaPlayback;
 - (id)applicationNameForUserAgent;
+- (struct Ref<API::PageConfiguration, WTF::DumbPtrTraits<API::PageConfiguration> > { struct PageConfiguration {} *x1; })copyPageConfiguration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)dataDetectorTypes;
 - (id)description;
@@ -301,9 +302,13 @@
 
 // Image: /System/Library/Frameworks/iAd.framework/iAd
 
-+ (id)_createSharedConfiguration:(bool)arg1 forVideo:(bool)arg2;
++ (id)_newSharedConfiguration:(bool)arg1 forVideo:(bool)arg2;
 + (bool)excludeCustomJavaScript;
 + (id)sharedAdvertisingConfiguration:(bool)arg1;
 + (id)sharedAdvertisingConfigurationForVideo:(bool)arg1;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
++ (id)sharedMessagesConfiguration;
 
 @end

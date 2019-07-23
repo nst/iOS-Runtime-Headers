@@ -60,7 +60,7 @@
             } ; 
         } _row; 
     }  _cellUID;
-    TSTInfo * _tableInfo;
+    TSTTableInfo * _tableInfo;
     TSDCommentStorage * mStorage;
 }
 
@@ -77,7 +77,7 @@
 @property (nonatomic, readonly) bool isHighlight;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) TSTInfo *tableInfo;
+@property (nonatomic, retain) TSTTableInfo *tableInfo;
 @property (nonatomic, readonly) struct TSUViewCellCoord { struct TSUCellCoord { unsigned int x_1_1_1; unsigned short x_1_1_2; bool x_1_1_3; bool x_1_1_4; } x1; } viewCellCoord;
 
 - (id).cxx_construct;

@@ -45,6 +45,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSURL *thirdPartyContentURL;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 + (bool)supportsSecureCoding;
 

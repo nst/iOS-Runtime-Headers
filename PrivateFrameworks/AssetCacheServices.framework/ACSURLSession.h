@@ -80,6 +80,7 @@
 - (void)_onqueue_resumeTask:(id)arg1;
 - (void)_onqueue_task:(id)arg1 willUseCachingServer:(bool)arg2 newRequest:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_onqueue_taskForNSURLTask:(id)arg1;
+- (id)_onqueue_uniqueTasks;
 - (int)_phase;
 - (id)_queue;
 - (void)_removeTask:(id)arg1;

@@ -10,6 +10,7 @@
     NSData * _imageData;
     NSString * _phoneticFamilyName;
     NSString * _phoneticGivenName;
+    NSNumber * _useMeCardIfAvailable;
     NSString * _userIdentifier;
     NSString * _userSource;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSData *imageData;
 @property (nonatomic, copy) NSString *phoneticFamilyName;
 @property (nonatomic, copy) NSString *phoneticGivenName;
+@property (nonatomic, retain) NSNumber *useMeCardIfAvailable;
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSString *userSource;
 
@@ -44,8 +46,10 @@
 - (void)setImageData:(id)arg1;
 - (void)setPhoneticFamilyName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;
+- (void)setUseMeCardIfAvailable:(id)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setUserSource:(id)arg1;
+- (id)useMeCardIfAvailable;
 - (id)userIdentifier;
 - (id)userSource;
 

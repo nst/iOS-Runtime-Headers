@@ -11,6 +11,5 @@
 
 - (short)acceptNode:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 
 @end

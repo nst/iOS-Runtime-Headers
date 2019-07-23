@@ -10,6 +10,7 @@
     NSMutableDictionary * _writableAttributes;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *attributes;
 @property (nonatomic, copy) id /* block */ cacheUpdatedCallback;
 @property (nonatomic) bool usesCarriageReturnAsLinesSeparator;
 
@@ -21,9 +22,11 @@
 - (id)_valueForAttribute:(long long)arg1;
 - (unsigned long long)arrayCountWithAXAttribute:(long long)arg1;
 - (id)arrayWithAXAttribute:(long long)arg1;
+- (id)attributes;
 - (struct __AXUIElement { }*)axElement;
 - (bool)boolWithAXAttribute:(long long)arg1;
 - (id /* block */)cacheUpdatedCallback;
+- (id)cachedAttributes;
 - (bool)canPerformAXAction:(int)arg1;
 - (bool)canSetAXAttribute:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -67,6 +70,7 @@
 - (void)setAXAttribute:(long long)arg1 withString:(id)arg2;
 - (void)setAXAttribute:(long long)arg1 withUIElement:(id)arg2;
 - (void)setAXAttribute:(long long)arg1 withUIElementArray:(id)arg2;
+- (void)setAttributes:(id)arg1;
 - (void)setCacheUpdatedCallback:(id /* block */)arg1;
 - (void)setUsesCarriageReturnAsLinesSeparator:(bool)arg1;
 - (void)setValue:(id)arg1 forAXAttribute:(long long)arg2;

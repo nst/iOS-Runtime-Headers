@@ -12,6 +12,7 @@
 - (NSArray *)mediaItems;
 - (NSNumber *)playShuffled;
 - (long long)playbackRepeatMode;
+- (NSString *)proxiedBundleIdentifier;
 - (NSString *)recoID;
 - (NSNumber *)resumePlayback;
 - (void)setBuckets:(NSArray *)arg1;
@@ -20,6 +21,7 @@
 - (void)setMediaItems:(NSArray *)arg1;
 - (void)setPlayShuffled:(NSNumber *)arg1;
 - (void)setPlaybackRepeatMode:(long long)arg1;
+- (void)setProxiedBundleIdentifier:(NSString *)arg1;
 - (void)setRecoID:(NSString *)arg1;
 - (void)setResumePlayback:(NSNumber *)arg1;
 

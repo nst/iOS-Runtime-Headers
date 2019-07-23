@@ -29,6 +29,7 @@
     }  _lastKnownEnvironmentSize;
     bool  _needsReloadData;
     NSMutableArray * _pendingUpdates;
+    double  _preferredItemHeight;
     UIScrollView * _scrollView;
     struct UIEdgeInsets { 
         double top; 
@@ -49,6 +50,7 @@
 @property (nonatomic, copy) id /* block */ dismissalBlock;
 @property (nonatomic) long long displayMode;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) double preferredItemHeight;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollViewInsets;
 @property (nonatomic) long long selectedItemIndex;
@@ -103,7 +105,6 @@
 - (void)_transitionToDisplayMode:(long long)arg1 usingTransitionCoordinator:(id)arg2 assumingSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)_transitionToVisible:(bool)arg1;
 - (void)_transitionTopAndBottomViewControllersToVisible:(bool)arg1 completion:(id /* block */)arg2;
-- (void)_updateContentInsets;
 - (void)_updateContentSize;
 - (void)_updateFrameForViewController:(id)arg1 atIndex:(long long)arg2 withCoordinator:(id)arg3 assumingSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)_updateFramesForActiveViewControllersWithCoordinator:(id)arg1 assumingSize:(struct CGSize { double x1; double x2; })arg2;
@@ -128,6 +129,8 @@
 - (long long)itemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)moveItemAtIndex:(long long)arg1 toIndex:(long long)arg2;
 - (void)performBatchUpdates:(id /* block */)arg1;
+- (double)preferredItemHeight;
+- (double)preferredItemHeightGivenWidth:(double)arg1;
 - (void)reloadData;
 - (void)reloadItemAtIndex:(long long)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1;
@@ -142,6 +145,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDismissalBlock:(id /* block */)arg1;
 - (void)setDisplayMode:(long long)arg1;
+- (void)setPreferredItemHeight:(double)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setScrollViewInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSelectedItemIndex:(long long)arg1;
@@ -149,6 +153,7 @@
 - (void)setTapGestureRecognizer:(id)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (id)tapGestureRecognizer;
+- (void)updateContentInsets;
 - (id)viewControllerForItemAtIndex:(long long)arg1;
 - (id)viewControllerForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)viewControllerForSelectedItem;

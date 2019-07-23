@@ -67,14 +67,13 @@
 @property (nonatomic, retain) NSMutableSet *touchIgnoredUUIDSet;
 @property (nonatomic, retain) _UIKBRTTouchVelocities *touchVelocities;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (bool)_showSmallDisplayKeyplane;
 + (Class)_subclassForScreenTraits:(id)arg1;
 + (struct CGSize { double x1; double x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(long long)arg3;
 
 - (void)_addTouchToScreenEdgePanRecognizer:(id)arg1;
 - (bool)_canAddTouchesToScreenGestureRecognizer:(id)arg1;
+- (void)_clearDeferredTouchTasks;
 - (void)_enumerateDeferredTouchUUIDs:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_executeDeferredTouchTasks;
 - (bool)_handRestRecognizerCancelShouldBeEnd;
@@ -82,7 +81,6 @@
 - (void)_ignoreTouchState:(id)arg1;
 - (id)_keyboardLayoutView;
 - (id)_keyboardLongPressInteractionRegions;
-- (void)_notifyLayoutOfGesturePosition:(struct CGPoint { double x1; double x2; })arg1 relativeToEdge:(unsigned long long)arg2;
 - (void)_removeTouchesFromProcessing:(id)arg1;
 - (void)_resetFingerDetectionFromLayout;
 - (void)_setRequiresExclusiveTouch:(bool)arg1;
@@ -96,10 +94,6 @@
 - (id)_uikbrtTouchDrifting:(id)arg1 touchIdentifiersForFingerID:(unsigned long long)arg2;
 - (void)_uikbrtTouchDriftingStateChanged:(id)arg1;
 - (void)_updateTouchState:(id)arg1 errorVector:(struct CGPoint { double x1; double x2; })arg2 rowOffsetFromHomeRow:(long long)arg3;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptRecentInputIfNecessary;
 - (id)activationIndicatorView;
 - (id)activeTouchUUID;
@@ -125,6 +119,7 @@
 - (unsigned long long)cursorLocation;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
+- (void)dealloc;
 - (id /* block */)deferredTaskForActiveTouch;
 - (id /* block */)deferredTouchDownTask;
 - (id /* block */)deferredTouchMovedTask;
@@ -134,8 +129,7 @@
 - (void)didClearInput;
 - (void)didCommitTouchState:(id)arg1;
 - (void)didEndIndirectSelectionGesture;
-- (void)didFinishScreenGestureRecognition;
-- (void)didRecognizeGestureOnEdge:(unsigned long long)arg1 withDistance:(double)arg2;
+- (void)didMoveToWindow;
 - (bool)disableInteraction;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })dragGestureRectInView:(id)arg1;
 - (void)fadeWithInvocation:(id)arg1;

@@ -4,12 +4,16 @@
 
 @interface TVFocusableTextView : UIView <UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
     bool  _alwaysFocusable;
+    bool  _alwaysShowBackground;
     UITextView * _auxilliaryTextView;
+    UIColor * _backgroundColor;
     UIVisualEffectView * _backgroundView;
     UIColor * _descriptionTextColor;
     UIColor * _descriptionTextHighlightColor;
     UITextView * _descriptionTextView;
+    bool  _disableFocus;
     _UIFloatingContentView * _floatingView;
+    unsigned long long  _focusSizeIncrease;
     UIColor * _highlightBackgroundColor;
     double  _moreHighlightPadding;
     UILabel * _moreLabel;
@@ -17,6 +21,12 @@
     UITapGestureRecognizer * _moreLabelTapGestureRecognizer;
     UIColor * _moreLabelTextColor;
     bool  _needsTextSizeComputation;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
     id /* block */  _playHandler;
     UITapGestureRecognizer * _playRecognizer;
     UITapGestureRecognizer * _selectRecognizer;
@@ -27,6 +37,7 @@
 }
 
 @property (getter=isAlwaysFocusable, nonatomic) bool alwaysFocusable;
+@property (nonatomic) bool alwaysShowBackground;
 @property (nonatomic, retain) UIVisualEffectView *backgroundView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -34,7 +45,9 @@
 @property (nonatomic, retain) UIColor *descriptionTextColor;
 @property (nonatomic, retain) UIColor *descriptionTextHighlightColor;
 @property (nonatomic, retain) UITextView *descriptionTextView;
+@property (nonatomic) bool disableFocus;
 @property (nonatomic, retain) _UIFloatingContentView *floatingView;
+@property (nonatomic) unsigned long long focusSizeIncrease;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIColor *highlightBackgroundColor;
 @property (nonatomic) unsigned long long maximumNumberOfLines;
@@ -44,6 +57,7 @@
 @property (nonatomic, readonly) UITapGestureRecognizer *moreLabelTapGestureRecognizer;
 @property (nonatomic, retain) UIColor *moreLabelTextColor;
 @property (nonatomic) bool needsTextSizeComputation;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic, copy) id /* block */ playHandler;
 @property (nonatomic, retain) UITapGestureRecognizer *playRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer *selectRecognizer;
@@ -55,12 +69,16 @@
 + (double)cornerRadius;
 
 - (void).cxx_destruct;
-- (id)_moreLabelExclusionPath;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_moreLabelExclusionPathFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_moreLabelFrame;
 - (void)_playButtonAction:(id)arg1;
 - (void)_recomputeTextSizeIfNeeded;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_setNeedsTextSizeComputation;
+- (void)_updateBackgroundColors;
+- (void)_updateTextColorsForFocusState:(bool)arg1;
+- (void)_updateTextColorsIfNeeded;
+- (bool)alwaysShowBackground;
 - (id)backgroundView;
 - (bool)canBecomeFocused;
 - (id)descriptionText;
@@ -68,8 +86,10 @@
 - (id)descriptionTextHighlightColor;
 - (id)descriptionTextView;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (bool)disableFocus;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (id)floatingView;
+- (unsigned long long)focusSizeIncrease;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)highlightBackgroundColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -84,18 +104,23 @@
 - (id)moreLabelTapGestureRecognizer;
 - (id)moreLabelTextColor;
 - (bool)needsTextSizeComputation;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (id /* block */)playHandler;
 - (id)playRecognizer;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)selectRecognizer;
 - (id /* block */)selectionHandler;
 - (void)setAlwaysFocusable:(bool)arg1;
+- (void)setAlwaysShowBackground:(bool)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
 - (void)setDescriptionTextColor:(id)arg1;
 - (void)setDescriptionTextHighlightColor:(id)arg1;
 - (void)setDescriptionTextView:(id)arg1;
+- (void)setDisableFocus:(bool)arg1;
 - (void)setFloatingView:(id)arg1;
+- (void)setFocusSizeIncrease:(unsigned long long)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHighlightBackgroundColor:(id)arg1;
 - (void)setMaximumNumberOfLines:(unsigned long long)arg1;
@@ -104,6 +129,7 @@
 - (void)setMoreLabelOnNewLine:(bool)arg1;
 - (void)setMoreLabelTextColor:(id)arg1;
 - (void)setNeedsTextSizeComputation:(bool)arg1;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPlayHandler:(id /* block */)arg1;
 - (void)setPlayRecognizer:(id)arg1;
 - (void)setSelectRecognizer:(id)arg1;

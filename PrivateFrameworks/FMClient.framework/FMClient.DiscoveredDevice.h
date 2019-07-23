@@ -11,17 +11,17 @@
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) NSString *deviceName;
 @property (nonatomic, readonly) NSString *discoveryId;
-@property (nonatomic, readonly) long long hashValue;
+@property (nonatomic, readonly) long long hash;
 
 + (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)deviceName;
 - (id)discoveryId;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)hashValue;
+- (long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 discoveryId:(id)arg2;

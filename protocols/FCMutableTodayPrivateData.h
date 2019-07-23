@@ -6,6 +6,8 @@
 @required
 
 - (NSSet *)autoFavoriteTagIDs;
+- (NSString *)bundleIAP;
+- (unsigned long long)bundleSubscriptionState;
 - (<FCDerivedPersonalizationData><NSCoding> *)derivedPersonalizationData;
 - (NSSet *)mutedTagIDs;
 - (NSNumber *)onboardingVersion;
@@ -14,6 +16,8 @@
 - (NSDictionary *)recentlyReadHistoryItems;
 - (NSArray *)recentlySeenHistoryItems;
 - (void)setAutoFavoriteTagIDs:(NSSet *)arg1;
+- (void)setBundleIAP:(NSString *)arg1;
+- (void)setBundleSubscriptionState:(unsigned long long)arg1;
 - (void)setDerivedPersonalizationData:(id <FCDerivedPersonalizationData><NSCoding>)arg1;
 - (void)setMutedTagIDs:(NSSet *)arg1;
 - (void)setOnboardingVersion:(NSNumber *)arg1;

@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)_adoptSentinel:(id)arg1 secureSentinel:(id)arg2 forDatabase:(id)arg3 completion:(id /* block */)arg4;
+- (void)_associateChildOperation:(id)arg1;
 - (void)_createSentinelsIfNeededForDatabase:(id)arg1 completion:(id /* block */)arg2;
 - (void)_deleteOldDataIfDesiredWithSentinel:(id)arg1 secureSentinel:(id)arg2 database:(id)arg3 completion:(id /* block */)arg4;
 - (void)_deleteOldDataWithSentinel:(id)arg1 secureSentinel:(id)arg2 database:(id)arg3 completion:(id /* block */)arg4;

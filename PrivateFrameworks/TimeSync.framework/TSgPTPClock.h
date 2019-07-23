@@ -31,6 +31,7 @@
 - (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;
 - (bool)addLinkLayerPortOnInterfaceNamed:(id)arg1 allocatedPortNumber:(unsigned short*)arg2 error:(id*)arg3;
 - (bool)addLinkLayerPortOnInterfaceNamed:(id)arg1 error:(id*)arg2;
+- (bool)addReverseSyncOnInterfaceNamed:(id)arg1 withDomainNumner:(unsigned char)arg2 syncInterval:(unsigned int)arg3 error:(id*)arg4;
 - (bool)addUnicastLinkLayerEtEPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 allocatedPortNumber:(unsigned short*)arg3 error:(id*)arg4;
 - (bool)addUnicastLinkLayerEtEPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 error:(id*)arg3;
 - (bool)addUnicastLinkLayerPtPPortOnInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 allocatedPortNumber:(unsigned short*)arg3 error:(id*)arg4;
@@ -67,6 +68,7 @@
 - (id)portWithPortNumber:(unsigned short)arg1;
 - (id)ports;
 - (bool)removeLinkLayerPortFromInterfaceNamed:(id)arg1 error:(id*)arg2;
+- (bool)removeReverseSyncFromInterfaceNamed:(id)arg1 withDomainNumner:(unsigned char)arg2 error:(id*)arg3;
 - (bool)removeUnicastLinkLayerEtEPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 error:(id*)arg3;
 - (bool)removeUnicastLinkLayerPtPPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(const char *)arg2 error:(id*)arg3;
 - (bool)removeUnicastUDPv4EtEPortFromInterfaceNamed:(id)arg1 withDestinationAddress:(unsigned int)arg2 error:(id*)arg3;

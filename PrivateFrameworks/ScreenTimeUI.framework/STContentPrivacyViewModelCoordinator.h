@@ -3,12 +3,10 @@
  */
 
 @interface STContentPrivacyViewModelCoordinator : NSObject <NSFetchedResultsControllerDelegate, STContentPrivacyViewModelCoordinator> {
-    NSFetchedResultsController * _blueprintFetchController;
-    NSFetchedResultsController * _configurationFetchController;
     NSMutableDictionary * _configurationPayloadsByType;
-    unsigned long long  _expectedChanges;
+    NSArray * _fetchedResultsControllers;
     bool  _isLocalDevice;
-    bool  _needsViewModelRefresh;
+    unsigned long long  _numExpectedChanges;
     NSString * _organizationIdentifier;
     <RMPersistenceControllerProtocol> * _persistenceController;
     NSNumber * _userDSID;
@@ -17,15 +15,13 @@
     STContentPrivacyViewModel * _viewModel;
 }
 
-@property (nonatomic, readonly) NSFetchedResultsController *blueprintFetchController;
-@property (nonatomic, readonly) NSFetchedResultsController *configurationFetchController;
 @property (nonatomic, retain) NSMutableDictionary *configurationPayloadsByType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property unsigned long long expectedChanges;
+@property (nonatomic, retain) NSArray *fetchedResultsControllers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isLocalDevice;
-@property (nonatomic) bool needsViewModelRefresh;
+@property unsigned long long numExpectedChanges;
 @property (nonatomic, copy) NSString *organizationIdentifier;
 @property (nonatomic, readonly) <RMPersistenceControllerProtocol> *persistenceController;
 @property (readonly) Class superclass;
@@ -54,25 +50,23 @@
 - (id)_valueInConfiguration:(id)arg1 keyPath:(id)arg2;
 - (id)_valuesByRestriction;
 - (id)_visibleRestrictions;
-- (id)blueprintFetchController;
-- (id)configurationFetchController;
 - (id)configurationPayloadsByType;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
-- (void)controllerDidChangeContent:(id)arg1;
-- (unsigned long long)expectedChanges;
+- (id)fetchedResultsControllers;
 - (id)initWithPersistenceController:(id)arg1 organizationIdentifier:(id)arg2 userDSID:(id)arg3 userName:(id)arg4;
 - (bool)isLocalDevice;
 - (void)loadViewModelWithCompletionHandler:(id /* block */)arg1;
-- (bool)needsViewModelRefresh;
+- (unsigned long long)numExpectedChanges;
 - (id)organizationIdentifier;
 - (id)persistenceController;
+- (void)reloadViewModelForRemoteChanges;
 - (void)saveContentPrivacyEnabled:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveRestrictionValue:(id)arg1 forItem:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)saveValuesForRestrictions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setConfigurationPayloadsByType:(id)arg1;
-- (void)setExpectedChanges:(unsigned long long)arg1;
+- (void)setFetchedResultsControllers:(id)arg1;
 - (void)setIsLocalDevice:(bool)arg1;
-- (void)setNeedsViewModelRefresh:(bool)arg1;
+- (void)setNumExpectedChanges:(unsigned long long)arg1;
 - (void)setOrganizationIdentifier:(id)arg1;
 - (void)setUserDSID:(id)arg1;
 - (void)setUserName:(id)arg1;

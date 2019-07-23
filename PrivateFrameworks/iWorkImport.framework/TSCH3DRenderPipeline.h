@@ -7,7 +7,7 @@
     TSCH3DSession * mSession;
 }
 
-@property (nonatomic, readonly) TSCH3DGLContext *context;
+@property (nonatomic, readonly) TSCH3DContext *context;
 @property (nonatomic, retain) TSCH3DRenderProcessor *processor;
 @property (nonatomic, readonly) TSCH3DSession *session;
 

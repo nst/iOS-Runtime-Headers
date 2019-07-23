@@ -10,6 +10,7 @@
 @property (nonatomic, readonly, retain) NSString *string;
 
 + (id)textWithDOMElement:(id)arg1 usingParseBlock:(id /* block */)arg2;
++ (id)textWithString:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_attributedStringFromDomElement:(id)arg1 usingParseBlock:(id /* block */)arg2;

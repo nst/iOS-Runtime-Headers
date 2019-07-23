@@ -21,7 +21,8 @@
 - (void)_handleDeviceRegistrationCompletedWithResult:(unsigned long long)arg1;
 - (void)_handlePaymentWebServiceContextChanged:(id)arg1;
 - (void)_peerPaymentRegisterWithURL:(id)arg1 paymentWebService:(id)arg2 completion:(id /* block */)arg3;
-- (void)_performDeviceRegistrationWithReason:(id)arg1;
+- (void)_performDeviceRegistrationWithReason:(id)arg1 forceRegister:(bool)arg2;
+- (void)_performDeviceRegistrationWithReason:(id)arg1 forceRegister:(bool)arg2 completion:(id /* block */)arg3;
 - (bool)_shouldAttemptBackgroundPeerPaymentRegistration;
 - (void)dealloc;
 - (id)init;
@@ -29,6 +30,6 @@
 - (void)notePasscodeChanged;
 - (id)paymentWebServiceCoordinator;
 - (id)peerPaymentWebServiceCoordinator;
-- (void)performDeviceRegistrationForReason:(id)arg1 action:(long long)arg2 completion:(id /* block */)arg3;
+- (void)performDeviceRegistrationForReason:(id)arg1 action:(long long)arg2 forceRegister:(bool)arg3 completion:(id /* block */)arg4;
 
 @end

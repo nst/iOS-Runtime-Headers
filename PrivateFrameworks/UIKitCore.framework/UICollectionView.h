@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UICollectionView : UIScrollView <DebugHierarchyObject_Fallback, UIDataSourceTranslating, _UIDataSourceBackedView, _UIKeyboardAutoRespondingScrollView> {
+@interface UICollectionView : UIScrollView <UIDataSourceTranslating, _UIDataSourceBackedView, _UIHorizontalIndexTitleBarDelegate, _UIKeyboardAutoRespondingScrollView> {
     NSTimer * _autoscrollTimer;
     UIView * _backgroundView;
     NSIndexPath * _cancellingToIndexPath;
@@ -45,6 +45,7 @@
         unsigned int delegateDidUpdateFocusInContext : 1; 
         unsigned int delegateTemplateLayoutCell : 1; 
         unsigned int delegateWillLayoutCellUsingTemplateLayoutCell : 1; 
+        unsigned int delegateHorizontalIndexTitleBarSelectedEntry : 1; 
         unsigned int delegateWasNonNil : 1; 
         unsigned int dataSourceNumberOfSections : 1; 
         unsigned int dataSourceViewForSupplementaryElement : 1; 
@@ -68,6 +69,7 @@
         unsigned int allowsMultipleSelection : 1; 
         unsigned int allowsSelectionDuringEditing : 1; 
         unsigned int allowsMultipleSelectionDuringEditing : 1; 
+        unsigned int displaysHorizontalIndexTitleBar : 1; 
         unsigned int fadeCellsForBoundsChange : 1; 
         unsigned int updatingLayout : 1; 
         unsigned int needsReload : 1; 
@@ -140,6 +142,12 @@
     NSIndexPath * _focusedCellIndexPath;
     long long  _focusedViewType;
     NSIndexPath * _highlightedSpringLoadedItem;
+    _UIHorizontalIndexTitleBar * _horizontalIndexTitleBar;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _horizontalIndexTitleBarOffset;
+    NSIndexPath * _indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar;
     NSMutableSet * _indexPathsForHighlightedItems;
     NSMutableSet * _indexPathsForSelectedItems;
     NSMutableArray * _insertItems;
@@ -151,6 +159,7 @@
     NSMutableDictionary * _invalidatedSupplementaryIndexPaths;
     id /* block */  _invalidationBlock;
     bool  _isInInteractiveTransition;
+    bool  _isMovingFocusFromHorizontalIndexTitleBarToContent;
     struct CGPoint { 
         double x; 
         double y; 
@@ -201,6 +210,7 @@
         double x; 
         double y; 
     }  _rotationBoundsOffset;
+    _UIFocusFastScrollingIndexBarEntry * _selectedIndexTitleEntry;
     bool  _shouldAccumulateTrackedLayoutValues;
     double  _startTimeStamp;
     NSMutableDictionary * _supplementaryViewClassDict;
@@ -265,8 +275,11 @@
 @property (nonatomic, readonly) bool hasUncommittedUpdates;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool headersRegistered;
+@property (getter=_horizontalIndexTitleBar, setter=_setHorizontalIndexTitleBar:, nonatomic, retain) _UIHorizontalIndexTitleBar *horizontalIndexTitleBar;
+@property (nonatomic, retain) NSIndexPath *indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar;
 @property (nonatomic, readonly) NSArray *indexPathsForSelectedItems;
 @property (nonatomic, readonly) NSArray *indexPathsForVisibleItems;
+@property (nonatomic) bool isMovingFocusFromHorizontalIndexTitleBarToContent;
 @property (getter=_keepsFirstResponderVisibleOnBoundsChange, setter=_setKeepsFirstResponderVisibleOnBoundsChange:, nonatomic) bool keepsFirstResponderVisibleOnBoundsChange;
 @property (getter=_navigationCompletion, setter=_setNavigationCompletion:, nonatomic, copy) id /* block */ navigationCompletion;
 @property (nonatomic, readonly) long long numberOfSections;
@@ -277,6 +290,7 @@
 @property (getter=_reorderedItems, nonatomic, readonly) NSArray *reorderedItems;
 @property (nonatomic) long long reorderingCadence;
 @property (getter=_reorderingTargetPosition, nonatomic, readonly) struct CGPoint { double x1; double x2; } reorderingTargetPosition;
+@property (nonatomic, retain) _UIFocusFastScrollingIndexBarEntry *selectedIndexTitleEntry;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *visibleCells;
 @property (getter=_visibleViews, nonatomic, readonly) NSArray *visibleViews;
@@ -293,6 +307,7 @@
 - (void)_addEntriesFromDictionary:(id)arg1 inDictionary:(id)arg2 andSet:(id)arg3;
 - (void)_addItemAtIndexPathToActiveDragSession:(id)arg1;
 - (void)_addUpdateToShadowControllerIfNeeded:(id)arg1;
+- (struct CGPoint { double x1; double x2; })_adjustFocusContentOffset:(struct CGPoint { double x1; double x2; })arg1 toShowFocusItemWithInfo:(id)arg2;
 - (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(bool)arg2 lastAdjustment:(double*)arg3;
 - (bool)_allowsEffectiveMultipleSelection;
 - (bool)_allowsEffectiveSelection;
@@ -363,6 +378,7 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didScroll;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (bool)_displaysHorizontalIndexTitleBar;
 - (id)_doubleSidedAnimationsForView:(id)arg1 withStartingLayoutAttributes:(id)arg2 startingLayout:(id)arg3 endingLayoutAttributes:(id)arg4 endingLayout:(id)arg5 withAnimationSetup:(id /* block */)arg6 animationCompletion:(id /* block */)arg7 enableCustomAnimations:(bool)arg8 customAnimationsType:(unsigned long long)arg9;
 - (id)_dragAndDropController;
 - (id)_dragDelegateActual;
@@ -412,6 +428,8 @@
 - (bool)_highlightItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
 - (bool)_highlightItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(long long)arg3 notifyDelegate:(bool)arg4;
 - (void)_highlightSpringLoadedItemAtIndexPath:(id)arg1;
+- (id)_horizontalIndexTitleBar;
+- (struct CGPoint { double x1; double x2; })_horizontalIndexTitleBarOffset;
 - (void)_incrementSuspendLayoutCount;
 - (id)_indexBarEntries;
 - (id)_indexPathAfterShadowUpdatesForIndexPath:(id)arg1;
@@ -438,6 +456,7 @@
 - (bool)_isCurrentlyPerformingLegacyReordering;
 - (bool)_isDragDestinationInteractivelyReordering;
 - (bool)_isEditing;
+- (bool)_isMovingFocusFromHorizontalIndexBarToCellContent:(id)arg1;
 - (bool)_isOperatingWithPresentationValues;
 - (bool)_isReordering;
 - (bool)_isViewInReuseQueue:(id)arg1;
@@ -525,6 +544,7 @@
 - (void)_setCurrentTouch:(id)arg1;
 - (void)_setDefaultLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setDefaultLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 fromViewController:(bool)arg2;
+- (void)_setDisplaysHorizontalIndexTitleBar:(bool)arg1;
 - (void)_setDragPlaceholderInsertionCadence:(long long)arg1;
 - (void)_setDragReorderingCadence:(long long)arg1;
 - (void)_setEffectiveDataSource:(id)arg1;
@@ -533,6 +553,8 @@
 - (void)_setFocusedCell:(id)arg1;
 - (void)_setFocusedCellElementKind:(id)arg1;
 - (void)_setFocusedCellIndexPath:(id)arg1;
+- (void)_setHorizontalIndexTitleBar:(id)arg1;
+- (void)_setHorizontalIndexTitleBarOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setIsAncestorOfFirstResponder:(bool)arg1;
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(bool)arg1;
 - (void)_setNavigationCompletion:(id /* block */)arg1;
@@ -584,6 +606,7 @@
 - (void)_updateDragInteractionForCurrentInteractionEnabledState;
 - (void)_updateEditing:(bool)arg1 forView:(id)arg2 atIndexPath:(id)arg3;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_updateHorizontalIndexTitleBarSelectionForFocusedIndexPath:(id)arg1;
 - (void)_updateIndex;
 - (void)_updateReorderingTargetPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updateReorderingTargetPosition:(struct CGPoint { double x1; double x2; })arg1 forced:(bool)arg2;
@@ -612,16 +635,6 @@
 - (id)_visibleViewDictForElementCategory:(unsigned long long)arg1 elementKind:(id)arg2;
 - (id)_visibleViewForLayoutAttributes:(id)arg1;
 - (id)_visibleViews;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsMultipleSelection;
 - (bool)allowsSelection;
 - (id)backgroundView;
@@ -636,11 +649,13 @@
 - (id)dataSource;
 - (id)dataSourceIndexPathForPresentationIndexPath:(id)arg1;
 - (long long)dataSourceSectionIndexForPresentationSectionIndex:(long long)arg1;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
+- (id)description;
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(bool)arg2;
 - (void)didMoveToWindow;
 - (id)dragDelegate;
@@ -656,10 +671,12 @@
 - (bool)hasActiveDrop;
 - (bool)hasUncommittedUpdates;
 - (long long)highlightedGlobalItem;
+- (void)horizontalIndexBar:(id)arg1 selectedEntry:(id)arg2;
 - (struct CGPoint { double x1; double x2; })indexBarAccessoryView:(id)arg1 contentOffsetForEntry:(id)arg2 atIndex:(long long)arg3;
 - (id)indexPathForCell:(id)arg1;
 - (id)indexPathForItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)indexPathForSupplementaryView:(id)arg1;
+- (id)indexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar;
 - (id)indexPathsForSelectedItems;
 - (id)indexPathsForVisibleItems;
 - (id)indexPathsForVisibleSupplementaryElementsOfKind:(id)arg1;
@@ -671,10 +688,12 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isDragSessionActive;
 - (bool)isEditing;
+- (bool)isMovingFocusFromHorizontalIndexTitleBarToContent;
 - (bool)isPrefetchingEnabled;
 - (bool)isSpringLoaded;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (void)layoutHorizontalIndexTitleBar;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (long long)maximumGlobalItemIndex;
@@ -707,6 +726,7 @@
 - (void)safeAreaInsetsDidChange;
 - (void)scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned long long)arg2 animated:(bool)arg3;
 - (void)selectItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
+- (id)selectedIndexTitleEntry;
 - (void)setAllowsMultipleSelection:(bool)arg1;
 - (void)setAllowsSelection:(bool)arg1;
 - (void)setBackgroundView:(id)arg1;
@@ -716,6 +736,7 @@
 - (void)setCollectionViewLayout:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setCollectionViewLayout:(id)arg1 withAnimator:(id)arg2;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDataSource:(id)arg1;
@@ -728,16 +749,21 @@
 - (void)setDropDelegate:(id)arg1;
 - (void)setEditing:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setIndexPathOfFocusedCellBeforeFocusingOnHorizontalIndexTitleBar:(id)arg1;
+- (void)setIsMovingFocusFromHorizontalIndexTitleBarToContent:(bool)arg1;
 - (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPrefetchDataSource:(id)arg1;
 - (void)setPrefetchingEnabled:(bool)arg1;
 - (void)setRemembersLastFocusedIndexPath:(bool)arg1;
 - (void)setReorderingCadence:(long long)arg1;
 - (void)setScrollEnabled:(bool)arg1;
+- (void)setSelectedIndexTitleEntry:(id)arg1;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)setSpringLoaded:(bool)arg1;
+- (void)setupHorizontalIndexTitleBar;
 - (id)startInteractiveTransitionToCollectionViewLayout:(id)arg1 completion:(id /* block */)arg2;
 - (id)supplementaryViewForElementKind:(id)arg1 atIndexPath:(id)arg2;
+- (void)teardownHorizontalIndexTitleBar;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

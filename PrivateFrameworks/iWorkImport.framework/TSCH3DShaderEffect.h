@@ -11,6 +11,9 @@
 - (void)addVariables:(id)arg1;
 - (bool)alwaysUploadData;
 - (unsigned long long)hash;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
+- (void)injectGLSLInto:(id)arg1 context:(id)arg2;
+- (void)injectMetalShaderInto:(id)arg1 context:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (Class)stateClass;
 - (id)stateSharingID;

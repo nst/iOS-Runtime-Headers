@@ -24,15 +24,10 @@
 @property (nonatomic, retain) UITextField *textEntryField;
 @property (nonatomic, retain) UILabel *titleLabel;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
+- (id)PIN;
 - (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (id)PIN;
 - (id)enterLabel;
 - (long long)failedAttemptCount;
 - (id)failedBackground;

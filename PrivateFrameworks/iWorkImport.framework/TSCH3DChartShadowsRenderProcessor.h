@@ -4,4 +4,6 @@
 
 @interface TSCH3DChartShadowsRenderProcessor : TSCH3DRetargetRenderProcessor
 
+- (void)setActiveFramebuffer:(id)arg1;
+
 @end

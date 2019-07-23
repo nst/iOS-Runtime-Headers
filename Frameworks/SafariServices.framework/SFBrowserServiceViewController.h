@@ -8,6 +8,7 @@
     bool  _canNotifyHostApplicationOfRedirects;
     bool  _hasBegunFirstNavigation;
     NSString * _hostApplicationCallbackURLScheme;
+    bool  _hostApplicationIsForeground;
     bool  _isExpectingClientRedirect;
     NSDate * _lastHostApplicationSuspendDate;
     WKProcessPool * _processPool;
@@ -43,6 +44,7 @@
 - (void)_recordHostAppIdAndURLForTapToRadar:(id)arg1;
 - (bool)_redirectToHostAppWithExpectedCallbackSchemeIfPossible:(id)arg1;
 - (bool)_redirectToHostAppWithNavigationResult:(id)arg1 options:(id)arg2;
+- (bool)_shouldReloadImmediatelyAfterPageLoadError;
 - (void)_updateRemoteSwipeGestureState;
 - (id)_webDataStoreRootURL;
 - (void)_willAppearInRemoteViewController;

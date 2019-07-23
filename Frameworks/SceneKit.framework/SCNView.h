@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNView : UIView <DebugHierarchyObject_Fallback, SCNSceneRenderer, SCNTechniqueSupport> {
+@interface SCNView : UIView <SCNSceneRenderer, SCNTechniqueSupport> {
     unsigned long long  __ibPreferredRenderingAPI;
     NSString * __ibSceneName;
     unsigned int  _appIsDeactivated;
@@ -76,8 +76,6 @@
 @property (nonatomic, readonly) unsigned long long stencilPixelFormat;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) SCNTechnique *technique;
-
-// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 + (bool)_isMetalSupported;
 + (id)_kvoKeysForwardedToRenderer;
@@ -262,14 +260,5 @@
 - (struct SCNVector3 { float x1; float x2; float x3; })unprojectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)updateAtTime:(double)arg1;
 - (void)willMoveToWindow:(id)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyAdditionalGroupingIDs;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-- (id)__dbg_pointOfViewIndexPath;
 
 @end

@@ -5,6 +5,7 @@
 @interface AFSiriActivationContext : NSObject <NSCopying, NSSecureCoding> {
     NSString * _deviceID;
     long long  _event;
+    unsigned long long  _options;
     long long  _source;
     unsigned long long  _timestamp;
     NSDictionary * _userInfo;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, readonly, copy) NSString *deviceID;
 @property (nonatomic, readonly) long long event;
+@property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) long long source;
 @property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic, readonly, copy) NSDictionary *userInfo;
@@ -28,9 +30,10 @@
 - (long long)event;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTimestamp:(unsigned long long)arg1 event:(long long)arg2 source:(long long)arg3 deviceID:(id)arg4 userInfo:(id)arg5;
+- (id)initWithTimestamp:(unsigned long long)arg1 source:(long long)arg2 event:(long long)arg3 options:(unsigned long long)arg4 deviceID:(id)arg5 userInfo:(id)arg6;
 - (bool)isEqual:(id)arg1;
 - (id)mutatedCopyWithMutator:(id /* block */)arg1;
+- (unsigned long long)options;
 - (long long)source;
 - (unsigned long long)timestamp;
 - (id)userInfo;

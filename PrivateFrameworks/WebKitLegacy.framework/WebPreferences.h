@@ -6,6 +6,7 @@
     /* Warning: unhandled struct encoding: '{WebPreferencesPrivate={RetainPtr<NSMutableDictionary>=^v}B{RetainPtr<NSString>=^v}BBI@}' */ struct WebPreferencesPrivate { struct RetainPtr<NSMutableDictionary> { void *x_1_1_1; } x1; bool x2; struct RetainPtr<NSString> { void *x_3_1_1; } x3; bool x4; bool x5; unsigned int x6; id x7; } * _private;
 }
 
+@property (nonatomic) bool CSSOMViewScrollingAPIEnabled;
 @property (nonatomic) bool accessibilityObjectModelEnabled;
 @property (nonatomic) bool allowCrossOriginSubresourcesToAskForCredentials;
 @property (nonatomic) bool allowMediaContentTypesRequiringHardwareSupportAsFallback;
@@ -14,6 +15,7 @@
 @property (nonatomic) bool allowsAnimatedImages;
 @property (nonatomic) bool allowsInlineMediaPlaybackAfterFullscreen;
 @property (nonatomic) bool animatedImageAsyncDecodingEnabled;
+@property (nonatomic) bool ariaReflectionEnabled;
 @property (nonatomic) bool attachmentElementEnabled;
 @property (nonatomic) bool autosaves;
 @property (nonatomic) unsigned long long cacheModel;
@@ -42,6 +44,7 @@
 @property (nonatomic) bool mediaCapabilitiesEnabled;
 @property (nonatomic) NSString *mediaContentTypesRequiringHardwareSupport;
 @property (nonatomic) bool mediaDataLoadsAutomatically;
+@property (nonatomic) bool mediaRecorderEnabled;
 @property (nonatomic) bool mediaUserGestureInheritsFromDocument;
 @property (nonatomic) bool menuItemElementEnabled;
 @property (nonatomic) int minimumFontSize;
@@ -53,6 +56,7 @@
 @property (nonatomic) bool resourceTimingEnabled;
 @property (nonatomic, copy) NSString *sansSerifFontFamily;
 @property (nonatomic, copy) NSString *serifFontFamily;
+@property (nonatomic) bool sourceBufferChangeTypeEnabled;
 @property (nonatomic, copy) NSString *standardFontFamily;
 @property (nonatomic) bool suppressesIncrementalRendering;
 @property (nonatomic) bool userStyleSheetEnabled;
@@ -62,7 +66,6 @@
 @property (nonatomic) bool viewportFitEnabled;
 @property (nonatomic) bool visualViewportAPIEnabled;
 @property (nonatomic) bool visualViewportEnabled;
-@property (nonatomic) bool webAuthenticationEnabled;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
@@ -82,6 +85,7 @@
 + (void)setWebKitLinkTimeVersion:(int)arg1;
 + (id)standardPreferences;
 
+- (bool)CSSOMViewScrollingAPIEnabled;
 - (bool)_allowMultiElementImplicitFormSubmission;
 - (bool)_allowPasswordEcho;
 - (bool)_alwaysRequestGeolocationPermission;
@@ -154,6 +158,7 @@
 - (long long)applicationCacheTotalQuota;
 - (bool)applicationChromeModeEnabled;
 - (bool)arePlugInsEnabled;
+- (bool)ariaReflectionEnabled;
 - (bool)asyncFrameScrollingEnabled;
 - (bool)asynchronousSpellCheckingEnabled;
 - (bool)attachmentElementEnabled;
@@ -169,7 +174,6 @@
 - (bool)canvasUsesAcceleratedDrawing;
 - (bool)colorFilterEnabled;
 - (bool)constantPropertiesEnabled;
-- (bool)crossOriginWindowPolicySupportEnabled;
 - (id)cursiveFontFamily;
 - (bool)customElementsEnabled;
 - (bool)customPasteboardDataEnabled;
@@ -254,6 +258,7 @@
 - (bool)mediaPlaybackAllowsInline;
 - (bool)mediaPlaybackRequiresUserGesture;
 - (bool)mediaPreloadingEnabled;
+- (bool)mediaRecorderEnabled;
 - (bool)mediaSourceEnabled;
 - (bool)mediaStreamEnabled;
 - (bool)mediaUserGestureInheritsFromDocument;
@@ -284,6 +289,7 @@
 - (bool)resourceLoadStatisticsEnabled;
 - (bool)resourceTimingEnabled;
 - (id)sansSerifFontFamily;
+- (bool)selectionAcrossShadowBoundariesEnabled;
 - (id)serifFontFamily;
 - (bool)serverTimingEnabled;
 - (bool)serviceControlsEnabled;
@@ -308,6 +314,7 @@
 - (void)setApplicationCacheDefaultOriginQuota:(long long)arg1;
 - (void)setApplicationCacheTotalQuota:(long long)arg1;
 - (void)setApplicationChromeModeEnabled:(bool)arg1;
+- (void)setAriaReflectionEnabled:(bool)arg1;
 - (void)setAsyncFrameScrollingEnabled:(bool)arg1;
 - (void)setAsynchronousSpellCheckingEnabled:(bool)arg1;
 - (void)setAttachmentElementEnabled:(bool)arg1;
@@ -317,12 +324,12 @@
 - (void)setAutomaticallyDetectsCacheModel:(bool)arg1;
 - (void)setAutosaves:(bool)arg1;
 - (void)setBackspaceKeyNavigationEnabled:(bool)arg1;
+- (void)setCSSOMViewScrollingAPIEnabled:(bool)arg1;
 - (void)setCacheAPIEnabled:(bool)arg1;
 - (void)setCacheModel:(unsigned long long)arg1;
 - (void)setCanvasUsesAcceleratedDrawing:(bool)arg1;
 - (void)setColorFilterEnabled:(bool)arg1;
 - (void)setConstantPropertiesEnabled:(bool)arg1;
-- (void)setCrossOriginWindowPolicySupportEnabled:(bool)arg1;
 - (void)setCursiveFontFamily:(id)arg1;
 - (void)setCustomElementsEnabled:(bool)arg1;
 - (void)setCustomPasteboardDataEnabled:(bool)arg1;
@@ -394,6 +401,7 @@
 - (void)setMediaPlaybackAllowsInline:(bool)arg1;
 - (void)setMediaPlaybackRequiresUserGesture:(bool)arg1;
 - (void)setMediaPreloadingEnabled:(bool)arg1;
+- (void)setMediaRecorderEnabled:(bool)arg1;
 - (void)setMediaSourceEnabled:(bool)arg1;
 - (void)setMediaStreamEnabled:(bool)arg1;
 - (void)setMediaUserGestureInheritsFromDocument:(bool)arg1;
@@ -425,6 +433,7 @@
 - (void)setResourceLoadStatisticsEnabled:(bool)arg1;
 - (void)setResourceTimingEnabled:(bool)arg1;
 - (void)setSansSerifFontFamily:(id)arg1;
+- (void)setSelectionAcrossShadowBoundariesEnabled:(bool)arg1;
 - (void)setSerifFontFamily:(id)arg1;
 - (void)setServerTimingEnabled:(bool)arg1;
 - (void)setServiceControlsEnabled:(bool)arg1;
@@ -439,6 +448,7 @@
 - (void)setShrinksStandaloneImagesToFit:(bool)arg1;
 - (void)setSimpleLineLayoutDebugBordersEnabled:(bool)arg1;
 - (void)setSimpleLineLayoutEnabled:(bool)arg1;
+- (void)setSourceBufferChangeTypeEnabled:(bool)arg1;
 - (void)setSpatialNavigationEnabled:(bool)arg1;
 - (void)setStandardFontFamily:(id)arg1;
 - (void)setStorageBlockingPolicy:(int)arg1;
@@ -464,11 +474,10 @@
 - (void)setWebAnimationsEnabled:(bool)arg1;
 - (void)setWebArchiveDebugModeEnabled:(bool)arg1;
 - (void)setWebAudioEnabled:(bool)arg1;
-- (void)setWebAuthenticationEnabled:(bool)arg1;
 - (void)setWebGL2Enabled:(bool)arg1;
 - (void)setWebGLEnabled:(bool)arg1;
 - (void)setWebGPUEnabled:(bool)arg1;
-- (void)setWebRTCLegacyAPIEnabled:(bool)arg1;
+- (void)setWebMetalEnabled:(bool)arg1;
 - (void)setWebSecurityEnabled:(bool)arg1;
 - (void)setWritableStreamAPIEnabled:(bool)arg1;
 - (void)setXSSAuditorEnabled:(bool)arg1;
@@ -484,6 +493,7 @@
 - (bool)shrinksStandaloneImagesToFit;
 - (bool)simpleLineLayoutDebugBordersEnabled;
 - (bool)simpleLineLayoutEnabled;
+- (bool)sourceBufferChangeTypeEnabled;
 - (id)standardFontFamily;
 - (int)storageBlockingPolicy;
 - (bool)storageTrackerEnabled;
@@ -507,11 +517,10 @@
 - (bool)webAnimationsEnabled;
 - (bool)webArchiveDebugModeEnabled;
 - (bool)webAudioEnabled;
-- (bool)webAuthenticationEnabled;
 - (bool)webGL2Enabled;
 - (bool)webGLEnabled;
 - (bool)webGPUEnabled;
-- (bool)webRTCLegacyAPIEnabled;
+- (bool)webMetalEnabled;
 - (void)willAddToWebView;
 - (bool)writableStreamAPIEnabled;
 - (bool)zoomsTextOnly;

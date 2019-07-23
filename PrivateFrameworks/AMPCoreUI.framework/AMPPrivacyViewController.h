@@ -2,25 +2,8 @@
    Image: /System/Library/PrivateFrameworks/AMPCoreUI.framework/AMPCoreUI
  */
 
-@interface AMPPrivacyViewController : UIAlertController {
-    <AMPPrivacyViewControllerDelegate> * _acknowledgementDelegate;
-    NSString * _identifier;
-    NSURL * _url;
-}
+@interface AMPPrivacyViewController : UIAlertController
 
-@property (nonatomic) <AMPPrivacyViewControllerDelegate> *acknowledgementDelegate;
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) NSURL *url;
-
-+ (id)privacyControllerWithIdentifier:(id)arg1 URL:(id)arg2;
-
-- (void).cxx_destruct;
-- (void)_finishWithResult:(unsigned long long)arg1;
-- (id)acknowledgementDelegate;
-- (id)identifier;
-- (void)setAcknowledgementDelegate:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setUrl:(id)arg1;
-- (id)url;
++ (id)privacyControllerWithIdentifier:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 
 @end

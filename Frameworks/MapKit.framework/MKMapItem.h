@@ -31,8 +31,10 @@
 @property (getter=_alternativeAppAdamIds, nonatomic, readonly) NSArray *alternativeAppAdamIds;
 @property (getter=_annotatedItemList, nonatomic, readonly) <GEOAnnotatedItemList> *annotatedItemList;
 @property (getter=_attribution, nonatomic, readonly) _MKMapItemPlaceAttribution *attribution;
+@property (getter=_brandMUID, nonatomic, readonly) unsigned long long brand;
 @property (getter=_browseCategories, nonatomic, readonly) NSArray *browseCategories;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
+@property (getter=_businessHours, nonatomic, readonly) NSArray *businessHours;
 @property (getter=_coordinate, nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (getter=_customIconID, nonatomic, readonly) unsigned long long customIconID;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,7 +59,9 @@
 @property (getter=_handle, nonatomic, readonly) NSData *handle;
 @property (getter=_hasAcceptsApplePayAmenity, nonatomic, readonly) bool hasAcceptsApplePayAmenity;
 @property (getter=_hasAnyAmenities, nonatomic, readonly) bool hasAnyAmenities;
+@property (getter=_hasBrandMUID, nonatomic, readonly) bool hasBrandMUID;
 @property (getter=_hasBusinessClaim, nonatomic, readonly) bool hasBusinessClaim;
+@property (getter=_hasBusinessHours, nonatomic, readonly) bool hasBusinessHours;
 @property (getter=_hasCorrectedHomeWorkAddress, nonatomic, readonly) bool hasCorrectedHomeWorkAddress;
 @property (getter=_hasCorrectedHomeWorkCoordinate, nonatomic, readonly) bool hasCorrectedHomeWorkCoordinate;
 @property (getter=_hasDelivery, nonatomic, readonly) bool hasDelivery;
@@ -70,6 +74,7 @@
 @property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
 @property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
+@property (getter=_hasLinkedServices, nonatomic, readonly) bool hasLinkedServices;
 @property (getter=_hasLocalizedOperatingHours, nonatomic, readonly) bool hasLocalizedOperatingHours;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
 @property (getter=_hasOperatingHours, nonatomic, readonly) bool hasOperatingHours;
@@ -96,9 +101,10 @@
 @property (getter=_isMessageIDVerified, nonatomic, readonly) bool isMessageIDVerified;
 @property (nonatomic, readonly) bool isPlaceHolder;
 @property (getter=_isStandAloneBrand, nonatomic, readonly) bool isStandAloneBrand;
+@property (getter=_linkedServices, nonatomic, readonly) NSArray *linkedServices;
 @property (getter=_localizedResponseTime, nonatomic, readonly) NSString *localizedResponseTime;
 @property (getter=_localizedSampleSizeForUserRatingScoreString, nonatomic, readonly) NSString *localizedSampleSizeForUserRatingScoreString;
-@property (getter=_messageBusinessHours, nonatomic, readonly) NSArray *messageBusinessHours;
+@property (getter=_messageBusinessHours, nonatomic, readonly) GEOBusinessHours *messageBusinessHours;
 @property (getter=_messageID, nonatomic, readonly) NSString *messageID;
 @property (getter=_messageURLString, nonatomic, readonly) NSString *messageURLString;
 @property (nonatomic, readonly) MKMapItemMetadata *metadata;
@@ -134,6 +140,8 @@
 @property (getter=_reviewsDisplayName, nonatomic, readonly) NSString *reviewsDisplayName;
 @property (nonatomic, readonly) NSString *reviewsProviderDisplayName;
 @property (getter=_sampleSizeForUserRatingScore, nonatomic, readonly) unsigned int sampleSizeForUserRatingScore;
+@property (getter=_secondaryName, nonatomic, readonly) NSString *secondaryName;
+@property (getter=_secondarySpokenName, nonatomic, readonly) NSString *secondarySpokenName;
 @property (getter=_shortAddress, nonatomic, readonly) NSString *shortAddress;
 @property (getter=_styleAttributes, nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
 @property (readonly) Class superclass;
@@ -216,8 +224,10 @@
 - (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3 isSnippetLogo:(bool)arg4;
 - (id)_bestBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (id)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (unsigned long long)_brandMUID;
 - (id)_browseCategories;
 - (id)_businessClaim;
+- (id)_businessHours;
 - (bool)_canGetDirections;
 - (id)_cnPostalAddress;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_coordinate;
@@ -243,7 +253,9 @@
 - (id)_handle;
 - (bool)_hasAcceptsApplePayAmenity;
 - (bool)_hasAnyAmenities;
+- (bool)_hasBrandMUID;
 - (bool)_hasBusinessClaim;
+- (bool)_hasBusinessHours;
 - (bool)_hasCorrectedHomeWorkAddress;
 - (bool)_hasCorrectedHomeWorkCoordinate;
 - (bool)_hasDelivery;
@@ -256,6 +268,7 @@
 - (bool)_hasGenderNeutralRestroom;
 - (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
+- (bool)_hasLinkedServices;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasLocalizedOperatingHours;
 - (bool)_hasMUID;
@@ -285,6 +298,7 @@
 - (bool)_isMessageIDVerified;
 - (bool)_isStandAloneBrand;
 - (void)_launchActivityForBrandItem;
+- (id)_linkedServices;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedNextOpeningStringShort:(bool)arg1;
 - (id)_localizedResponseTime;
@@ -330,6 +344,8 @@
 - (id)_reviewsAttribution;
 - (id)_reviewsDisplayName;
 - (unsigned int)_sampleSizeForUserRatingScore;
+- (id)_secondaryName;
+- (id)_secondarySpokenName;
 - (id)_shortAddress;
 - (id)_styleAttributes;
 - (bool)_takesReservations;

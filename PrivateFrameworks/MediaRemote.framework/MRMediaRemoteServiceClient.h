@@ -8,7 +8,7 @@
     MRNotificationServiceClient * _notificationService;
     int  _notifyRestoreClientStateForLaunch;
     NSObject<OS_dispatch_queue> * _playbackQueueDispatchQueue;
-    NSMutableDictionary * _playerPathInvalidationHandlers;
+    NSMutableSet * _playerPathInvalidationHandlers;
     NSString * _preparedBundleID;
     NSMutableArray * _registeredOrigins;
     MRAVRoutingClientController * _routingClientController;
@@ -40,7 +40,6 @@
 - (id)playbackQueueDispatchQueue;
 - (void)processPlayerPathInvalidationHandlersWithBlock:(id /* block */)arg1;
 - (void)processPlayerPathInvalidationHandlersWithInvalidOrigin:(id)arg1;
-- (void)registerCallbacks;
 - (void)registerOrigin:(id)arg1 withDeviceInfo:(id)arg2 completion:(id /* block */)arg3;
 - (id)registeredOrigins;
 - (void)removeInvalidationHandler:(id)arg1;

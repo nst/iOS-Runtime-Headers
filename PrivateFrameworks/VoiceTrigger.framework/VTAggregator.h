@@ -28,9 +28,12 @@
 - (id)init;
 - (void)logActivation;
 - (void)logFalseWakeUp:(bool)arg1;
-- (void)logProfileUpdateNumDeletedUttsPHS:(int)arg1;
 - (void)logProfileUpdateNumDeletedUttsStrategy:(int)arg1;
+- (void)logProfileUpdateNumDiscardedUttsPHS:(int)arg1;
+- (void)logProfileUpdateNumPrunedUttsPHS:(int)arg1;
+- (void)logProfileUpdateNumRetainedUttsPHS:(int)arg1;
 - (void)logProfileUpdateScoreMSE:(double)arg1;
+- (void)logProfileUpdateUtt:(id)arg1 withScore:(double)arg2;
 - (void)logRecognizerTimedOut;
 - (void)logSecondPassResult:(bool)arg1;
 - (void)logTdPsrExtraAudioSamplesProcessed:(unsigned long long)arg1;
@@ -41,6 +44,7 @@
 - (void)logTdPsrSATRetrainingTimedOut;
 - (void)logTdPsrSATRetrainingWaitTimeMs:(double)arg1;
 - (void)logTimeVoiceTriggerTransitionsToState:(unsigned long long)arg1;
+- (void)logVoiceProfilePruningFailureWithReasonCode:(unsigned long long)arg1;
 - (void)logZeroRunAudio:(int)arg1;
 - (void)setAssetString:(id)arg1;
 - (void)setLanguageCode:(id)arg1;

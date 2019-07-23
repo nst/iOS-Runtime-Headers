@@ -3,24 +3,36 @@
  */
 
 @interface SXUnitConverter : NSObject {
-    id /* block */  _contextBlock;
+    double  _componentWidth;
+    double  _documentGutter;
+    double  _documentMargin;
+    double  _parentWidth;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _viewportSize;
 }
 
-@property (nonatomic, copy) id /* block */ contextBlock;
+@property (nonatomic, readonly) double componentWidth;
+@property (nonatomic, readonly) double documentGutter;
+@property (nonatomic, readonly) double documentMargin;
+@property (nonatomic, readonly) double parentWidth;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
-+ (double)convertColumnGutterToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertComponentWidthToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertDocumentMarginToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertValueToPoints:(struct _SXConvertibleValue { double x1; unsigned long long x2; })arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertViewportHeightToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertViewportMaxToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertViewportMinToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-+ (double)convertViewportWidthToPoints:(double)arg1 contextBlock:(id /* block */)arg2;
-
-- (void).cxx_destruct;
-- (id /* block */)contextBlock;
+- (double)componentWidth;
+- (double)convertColumnGutterToPoints:(double)arg1;
+- (double)convertComponentWidthToPoints:(double)arg1;
+- (double)convertDocumentMarginToPoints:(double)arg1;
+- (double)convertParentWidthToPoints:(double)arg1;
 - (double)convertValueToPoints:(struct _SXConvertibleValue { double x1; unsigned long long x2; })arg1;
-- (id)initWithContextBlock:(id /* block */)arg1;
-- (void)setContextBlock:(id /* block */)arg1;
+- (double)convertViewportHeightToPoints:(double)arg1;
+- (double)convertViewportMaxToPoints:(double)arg1;
+- (double)convertViewportMinToPoints:(double)arg1;
+- (double)convertViewportWidthToPoints:(double)arg1;
+- (double)documentGutter;
+- (double)documentMargin;
+- (id)initWithComponentWidth:(double)arg1 parentWidth:(double)arg2 documentGutter:(double)arg3 documentMargin:(double)arg4 viewportSize:(struct CGSize { double x1; double x2; })arg5;
+- (double)parentWidth;
+- (struct CGSize { double x1; double x2; })viewportSize;
 
 @end

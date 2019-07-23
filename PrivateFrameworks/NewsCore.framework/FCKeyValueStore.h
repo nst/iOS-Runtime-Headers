@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCKeyValueStore : NSObject <FCJSONEncodableObjectProviding, FCOperationThrottlerDelegate, FRRingBufferContainer> {
+@interface FCKeyValueStore : NSObject <FCJSONEncodableObjectProviding, FRRingBufferContainer> {
     id /* block */  _arrayObjectHandler;
     FCKeyValueStoreClassRegistry * _classRegistry;
     unsigned long long  _clientVersion;
     id /* block */  _dictionaryKeyHandler;
     id /* block */  _dictionaryValueHandler;
+    <NFLocking> * _lock;
     <FCKeyValueStoreMigrating> * _migrator;
     NSString * _name;
-    bool  _needSave;
     id /* block */  _objectHandler;
-    NSMutableDictionary * _objectsByKey;
     unsigned long long  _optionsMask;
-    <FCOperationThrottler> * _saveThrottler;
     bool  _shouldExportJSONSidecar;
     NSString * _storeDirectory;
     unsigned long long  _storeSize;
-    NFMutexLock * _writeLock;
+    NSMutableDictionary * _unsafeObjectsByKey;
+    bool  _unsafeWaitingOnSave;
 }
 
 @property (nonatomic, copy) id /* block */ arrayObjectHandler;
@@ -30,18 +29,17 @@
 @property (nonatomic, copy) id /* block */ dictionaryKeyHandler;
 @property (nonatomic, copy) id /* block */ dictionaryValueHandler;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <NFLocking> *lock;
 @property (nonatomic, retain) <FCKeyValueStoreMigrating> *migrator;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) bool needSave;
 @property (nonatomic, copy) id /* block */ objectHandler;
-@property (nonatomic, retain) NSMutableDictionary *objectsByKey;
 @property (nonatomic) unsigned long long optionsMask;
-@property (nonatomic, retain) <FCOperationThrottler> *saveThrottler;
 @property (nonatomic) bool shouldExportJSONSidecar;
 @property (nonatomic, retain) NSString *storeDirectory;
 @property (nonatomic) unsigned long long storeSize;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NFMutexLock *writeLock;
+@property (nonatomic, retain) NSMutableDictionary *unsafeObjectsByKey;
+@property (nonatomic) bool unsafeWaitingOnSave;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
@@ -52,14 +50,17 @@
 - (void)_clearStore;
 - (id)_dictionary;
 - (id)_initializeStoreDirectoryWithName:(id)arg1;
-- (bool)_isBackupEnabled;
+- (bool)_isCloudBackupEnabled;
 - (id)_loadFromDisk;
 - (void)_logCacheStatus;
 - (void)_maybeSaveJSONRepresentationWithDictionary:(id)arg1;
+- (void)_maybeWriteObjectsByKey:(id /* block */)arg1;
 - (bool)_persistOnlyInMemoryEnabled;
-- (void)_queueSave;
-- (void)_saveAsyncWithCompletionHandler:(id /* block */)arg1;
+- (void)_readObjectsByKey:(id /* block */)arg1;
+- (void)_save;
 - (bool)_shouldMigrateOnUpgrade;
+- (bool)_threadSafe;
+- (void)_writeObjectsByKey:(id /* block */)arg1;
 - (void)addAllEntriesToDictionary:(id)arg1;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
@@ -79,48 +80,47 @@
 - (id)initWithName:(id)arg1 directory:(id)arg2 version:(unsigned long long)arg3 options:(unsigned long long)arg4 classRegistry:(id)arg5;
 - (id)initWithName:(id)arg1 directory:(id)arg2 version:(unsigned long long)arg3 options:(unsigned long long)arg4 classRegistry:(id)arg5 migrator:(id)arg6;
 - (id)jsonEncodableObject;
+- (id)keysOfEntriesPassingTest:(id /* block */)arg1;
+- (id)lock;
 - (id)migrator;
 - (id)name;
-- (bool)needSave;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id /* block */)objectHandler;
-- (id)objectsByKey;
 - (id)objectsForKeys:(id)arg1;
-- (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (unsigned long long)optionsMask;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;
-- (id)saveThrottler;
+- (void)save;
 - (void)saveWithCompletionHandler:(id /* block */)arg1;
 - (void)setArrayObjectHandler:(id /* block */)arg1;
 - (void)setBoolValue:(bool)arg1 forKey:(id)arg2;
 - (void)setClassRegistry:(id)arg1;
 - (void)setClientVersion:(unsigned long long)arg1;
+- (void)setCloudBackupEnabled:(bool)arg1;
 - (void)setDictionaryKeyHandler:(id /* block */)arg1;
 - (void)setDictionaryValueHandler:(id /* block */)arg1;
 - (void)setJSONEncodingHandlersWithObjectHandler:(id /* block */)arg1 arrayObjectHandler:(id /* block */)arg2 dictionaryKeyHandler:(id /* block */)arg3 dictionaryValueHandler:(id /* block */)arg4;
+- (void)setLock:(id)arg1;
 - (void)setMigrator:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNeedSave:(bool)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjectHandler:(id /* block */)arg1;
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
-- (void)setObjectsByKey:(id)arg1;
-- (void)setOptionBackupEnabled:(bool)arg1;
 - (void)setOptionsMask:(unsigned long long)arg1;
-- (void)setSaveThrottler:(id)arg1;
 - (void)setShouldExportJSONSidecar:(bool)arg1;
 - (void)setStoreDirectory:(id)arg1;
 - (void)setStoreSize:(unsigned long long)arg1;
-- (void)setWriteLock:(id)arg1;
+- (void)setUnsafeObjectsByKey:(id)arg1;
+- (void)setUnsafeWaitingOnSave:(bool)arg1;
 - (bool)shouldExportJSONSidecar;
 - (id)storeDirectory;
 - (unsigned long long)storeSize;
+- (id)unsafeObjectsByKey;
+- (bool)unsafeWaitingOnSave;
 - (void)updateObjectsForKeys:(id)arg1 withBlock:(id /* block */)arg2;
-- (id)writeLock;
 
 // Image: /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
 

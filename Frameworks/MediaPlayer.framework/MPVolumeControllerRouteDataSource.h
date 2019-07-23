@@ -39,13 +39,18 @@
 - (float)EUVolumeLimit;
 - (void)_routeVolumeControlCapabilitiesDidChangeNotification:(id)arg1;
 - (void)_routeVolumeDidChangeNotification:(id)arg1;
+- (void)_sendVolumeButtonEventWithUsagePage:(unsigned int)arg1 usage:(unsigned int)arg2 down:(bool)arg3;
 - (void)_setPendingVolumeIfNeeded;
 - (void)_updateVolumeControlCapabilities:(unsigned int)arg1;
 - (void)adjustVolumeValue:(float)arg1;
 - (bool)applicationShouldOverrideHardwareVolumeBehavior;
+- (void)beginDecreasingRelativeVolume;
+- (void)beginIncreasingRelativeVolume;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (void)endDecreasingRelativeVolume;
+- (void)endIncreasingRelativeVolume;
 - (void)getVolumeValueWithCompletion:(id /* block */)arg1;
 - (id)groupRoute;
 - (id)initWithGroupRoute:(id)arg1 outputDeviceRoute:(id)arg2;

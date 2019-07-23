@@ -145,12 +145,6 @@
 - (bool)getRecommendedRecoveryAction:(id*)arg1 parameter:(id*)arg2;
 - (bool)isCapabilityRequirementFailure;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-+ (id)debugHierarchyErrorFromException:(id)arg1 caughtDuringRequest:(id)arg2 forMethodSignature:(const char *)arg3;
-
-- (id)debugHierarchyResponseDataForRequest:(id)arg1;
-
 // Image: /System/Library/Frameworks/Accounts.framework/Accounts
 
 - (id)_sanitizeObject:(id)arg1;
@@ -422,7 +416,7 @@
 + (id)AVConferenceServiceError:(long long)arg1 detailedCode:(long long)arg2 filePath:(id)arg3 description:(id)arg4 reason:(id)arg5;
 + (id)AVConferenceServiceError:(long long)arg1 detailedCode:(long long)arg2 returnCode:(long long)arg3 filePath:(id)arg4 description:(id)arg5 reason:(id)arg6;
 
-// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+// Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
 
 + (id)ax_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
 + (id)ax_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 arguments:(char *)arg4;
@@ -602,6 +596,7 @@
 - (bool)brc_isCloudKitErrorZoneMigrated;
 - (bool)brc_isCloudKitErrorZoneUndergoingMigration;
 - (bool)brc_isCloudKitOutOfQuota;
+- (bool)brc_isCloudKitPCSDecryptionFailure;
 - (bool)brc_isCloudKitUnknownItemError;
 - (bool)brc_isEverRetriable;
 - (bool)brc_isOutOfSpaceError;
@@ -849,8 +844,9 @@
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
 + (id)_xcui_error:(long long)arg1 description:(id)arg2;
-+ (id)_xcui_error:(long long)arg1 description:(id)arg2 userInfo:(id)arg3;
++ (id)_xcui_error:(long long)arg1 userInfo:(id)arg2 description:(id)arg3;
 + (id)_xcui_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
++ (id)_xcui_errorWithDomain:(id)arg1 code:(long long)arg2 userInfo:(id)arg3 description:(id)arg4 arguments:(char *)arg5;
 
 - (bool)xcui_isUITestingError:(long long)arg1;
 
@@ -881,6 +877,7 @@
 
 + (id)MFAA_errorWithDomain:(id)arg1 code:(long long)arg2;
 + (id)MFAA_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
++ (id)MFAA_errorWithDomain:(id)arg1 code:(long long)arg2 failureReason:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -922,6 +919,8 @@
 + (id)MPCErrorWithDomain:(id)arg1 code:(long long)arg2 debugDescription:(id)arg3;
 + (id)MPCErrorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3 debugDescription:(id)arg4;
 + (id)_MPCErrorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3 debugDescriptionFormat:(id)arg4 arguments:(char *)arg5;
++ (bool)_isAgeVerificationError:(id)arg1;
++ (id)errorForICError:(id)arg1 response:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -971,6 +970,7 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)fc_belowMinimumVersionError;
++ (id)fc_blockedInCurrentStorefrontErrorWithIdentifiers:(id)arg1;
 + (id)fc_canaryDownError;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1 description:(id)arg2;
@@ -978,11 +978,22 @@
 + (id)fc_errorWithCode:(long long)arg1 description:(id)arg2;
 + (id)fc_errorWithCode:(long long)arg1 description:(id)arg2 additionalUserInfo:(id)arg3;
 + (id)fc_feedDroppedError;
++ (id)fc_invalidBookmarkErrorWithUserInfo:(id)arg1;
++ (id)fc_invalidGapErrorWithUserInfo:(id)arg1;
++ (id)fc_missingANFDocumentErrorForArticleID:(id)arg1;
 + (id)fc_missingAppConfigErrorWithUnderlyingError:(id)arg1;
++ (id)fc_missingAssetError;
++ (id)fc_missingAssetKeyError;
++ (id)fc_missingMagazineGroupError;
++ (id)fc_missingResourceErrorWithDescription:(id)arg1;
 + (id)fc_notAvailableError;
 + (id)fc_notCachedError;
 + (id)fc_offlineErrorWithReason:(long long)arg1;
++ (id)fc_operationCancelledErrorWithAdditionalUserInfo:(id)arg1;
++ (id)fc_partialFailureError;
 + (id)fc_requestDroppedErrorForDroppedFeeds:(unsigned long long)arg1 totalFeeds:(unsigned long long)arg2;
++ (id)fc_unauthorizedAssetKeyErrorWithWrappingKeyID:(id)arg1;
++ (id)fc_unzipFailedErrorWithErrorCode:(int)arg1;
 
 - (bool)fc_hasCKErrorWithCodePassingTest:(id /* block */)arg1;
 - (bool)fc_hasIdentityLostError;
@@ -998,6 +1009,7 @@
 - (bool)fc_isOperationThrottledError;
 - (bool)fc_isServiceUnavailableError;
 - (bool)fc_isTemporaryNetworkOrServerError;
+- (bool)fc_isUnknownItemError;
 - (bool)fc_shouldRetry;
 - (id)fc_underlyingCKErrorUserInfoValueForKey:(id)arg1 forItemID:(id)arg2;
 
@@ -1268,10 +1280,6 @@
 
 - (id)_initWithPluginErrorCode:(int)arg1 contentURL:(id)arg2 pluginPageURL:(id)arg3 pluginName:(id)arg4 MIMEType:(id)arg5;
 - (id)_webkit_initWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-+ (id)_webUI_WebUIErrorWithCode:(unsigned long long)arg1 URL:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
 

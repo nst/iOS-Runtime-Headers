@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentSetupFieldBuiltInDateOfBirth : PKPaymentSetupFieldDate {
-    NSDate * _defaultDate;
-}
+@interface PKPaymentSetupFieldBuiltInDateOfBirth : PKPaymentSetupFieldDate
 
-- (void).cxx_destruct;
-- (id)defaultDate;
+- (id)_locale;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (bool)isBuiltIn;
 

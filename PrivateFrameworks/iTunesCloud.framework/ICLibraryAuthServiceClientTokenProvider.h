@@ -9,6 +9,7 @@
     NSNumber * _cachedDSID;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSObject<OS_dispatch_queue> * _delayQueue;
+    NSOperationQueue * _operationQueue;
     id /* block */  _requestDelayBlock;
 }
 
@@ -17,9 +18,10 @@
 - (void).cxx_destruct;
 - (id)_activeAccountDSID;
 - (void)_handleITunesStoreAccountsChanged;
-- (void)_handleRequestToken;
+- (void)_handleRequestTokenForExternalRequest:(bool)arg1;
 - (void)_handleTokenResponse:(id)arg1 tokenRequest:(id)arg2;
-- (id /* block */)_requestTokenWithDelay:(long long)arg1;
+- (id /* block */)_requestTokenWithDelay:(long long)arg1 forExternalRequest:(bool)arg2;
+- (void)_userIdentityStoreDidChangeNotification:(id)arg1;
 - (id)cachedTokenAndResetCache:(bool)arg1;
 - (id)init;
 

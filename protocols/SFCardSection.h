@@ -34,6 +34,8 @@
 - (void)setResultIdentifier:(NSString *)arg1;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)setType:(NSString *)arg1;
+- (void)setUserReportRequest:(SFUserReportRequest *)arg1;
 - (NSString *)type;
+- (SFUserReportRequest *)userReportRequest;
 
 @end

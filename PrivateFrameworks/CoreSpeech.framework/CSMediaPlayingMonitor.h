@@ -17,5 +17,6 @@
 - (id)init;
 - (void)initializeMediaPlayingState;
 - (long long)mediaPlayingState;
+- (void)mediaPlayingStateWithCompletion:(id /* block */)arg1;
 
 @end

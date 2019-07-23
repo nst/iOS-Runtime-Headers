@@ -5,6 +5,7 @@
 @interface DataClassMigrator : NSObject {
     NSDictionary * _context;
     bool  _didUpgrade;
+    unsigned int  _userDataDisposition;
 }
 
 @property (nonatomic, retain) NSDictionary *context;
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly) bool didRestoreFromCloudBackup;
 @property (nonatomic) bool didUpgrade;
 @property (nonatomic, readonly) bool shouldPreserveSettingsAfterRestore;
+@property (nonatomic) unsigned int userDataDisposition;
 @property (nonatomic, readonly) bool wasPasscodeSetInBackup;
 
 + (id)dataClassMigratorForBundleAtPath:(id)arg1;
@@ -29,7 +31,9 @@
 - (bool)performMigration;
 - (void)setContext:(id)arg1;
 - (void)setDidUpgrade:(bool)arg1;
+- (void)setUserDataDisposition:(unsigned int)arg1;
 - (bool)shouldPreserveSettingsAfterRestore;
+- (unsigned int)userDataDisposition;
 - (bool)wasPasscodeSetInBackup;
 
 @end

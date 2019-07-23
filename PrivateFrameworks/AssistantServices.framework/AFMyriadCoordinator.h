@@ -9,12 +9,14 @@
     struct __CFNotificationCenter { } * _center;
     bool  _clientDoneRespondingToSlowdown;
     bool  _clientIsDirectActivating;
+    bool  _clientIsInEarActivation;
     bool  _clientIsListeningAfterRecentWin;
     bool  _clientIsRespondingToSlowdown;
     bool  _clientIsWatchActivation;
     bool  _clientIsWatchTrumpPromote;
     bool  _clientLostDueToTrumping;
     bool  _clientRecentlyLostElection;
+    bool  _clientRespondingToCarPlay;
     int  _constantGoodness;
     bool  _coordinationEnabled;
     _DKKnowledgeStore * _coreDuetStore;
@@ -27,6 +29,8 @@
     NSString * _deviceClassName;
     double  _deviceDelay;
     unsigned char  _deviceGroup;
+    double  _deviceInEarDelay;
+    double  _deviceInEarInterval;
     double  _deviceTrumpDelay;
     bool  _ducking;
     WPHeySiri * _heySiriBTLE;
@@ -161,7 +165,10 @@
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
+- (void)startAdvertisingFromAlertFiringVoiceTrigger;
+- (void)startAdvertisingFromCarPlayTrigger;
 - (void)startAdvertisingFromDirectTrigger;
+- (void)startAdvertisingFromInEarTrigger;
 - (void)startAdvertisingFromInTaskVoiceTrigger;
 - (void)startAdvertisingFromOutgoingTrigger;
 - (void)startAdvertisingFromVoiceTrigger;

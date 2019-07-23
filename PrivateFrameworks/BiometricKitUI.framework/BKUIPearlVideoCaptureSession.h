@@ -3,6 +3,7 @@
  */
 
 @interface BKUIPearlVideoCaptureSession : NSObject {
+    double  _additionalPreviewScalingAllowedByCameraFormat;
     AVCaptureSession * _captureSession;
     bool  _captureSessionInterrupted;
     unsigned long long  _captureSessionRestarts;
@@ -11,6 +12,7 @@
     AVCaptureVideoPreviewLayer * _previewLayer;
 }
 
+@property (nonatomic, readonly) double additionalPreviewScalingAllowedByCameraFormat;
 @property (nonatomic) <BKUIVideoCaptureSesssionDelegate> *delegate;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
 
@@ -19,9 +21,11 @@
 - (void)_captureSessionStarted:(id)arg1;
 - (void)_captureSessionStopped:(id)arg1;
 - (id)_frontCamera;
+- (double)additionalPreviewScalingAllowedByCameraFormat;
 - (void)dealloc;
 - (id)delegate;
 - (void)endCapture;
+- (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)previewLayer;
 - (void)setDelegate:(id)arg1;

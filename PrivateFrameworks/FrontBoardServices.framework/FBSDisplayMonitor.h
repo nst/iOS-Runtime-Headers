@@ -3,47 +3,47 @@
  */
 
 @interface FBSDisplayMonitor : NSObject <BSInvalidatable> {
-    <FBSDisplayObserving> * _bookendObserver;
-    <FBSDisplayMonitorDelegate> * _displayMonitorDelegate;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    <FBSDisplayObserving> * _lock_bookendObserver;
+    NSHashTable * _lock_observers;
+    NSMapTable * _lock_sourcesByDisplay;
     CADisplay * _mainDisplay;
-    FBSDisplayStatus * _mainDisplayStatus;
-    NSHashTable * _observers;
-    NSMapTable * _statusByDisplay;
+    FBSDisplaySource * _mainDisplaySource;
 }
 
-@property (nonatomic) <FBSDisplayObserving> *bookendObserver;
+@property (nonatomic, readonly) <FBSDisplayObserving> *bookendObserver;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callOutQueue;
 @property (nonatomic, readonly, copy) NSSet *connectedIdentities;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) <FBSDisplayMonitorDelegate> *displayMonitorDelegate;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) FBSDisplayConfiguration *mainConfiguration;
 @property (nonatomic, readonly, copy) FBSDisplayIdentity *mainIdentity;
+@property (nonatomic, readonly, copy) NSEnumerator *observersEnumerator;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_enumerateConnectedWithBlock:(id /* block */)arg1;
-- (void)_invalidate;
-- (void)_noteConnectStatus:(id)arg1 withConfiguration:(id)arg2 debounce:(bool)arg3 broadcast:(bool)arg4;
-- (void)_noteDisconnectStatus:(id)arg1;
-- (void)_noteUpdateStatus:(id)arg1 withConfiguration:(id)arg2;
-- (void)_reevaluateConnectionStatusForAllDisplays;
-- (void)_updateDisplaysIfNecessary;
+- (id)_initWithBookendObserver:(id)arg1;
+- (void)_lock_enumerateConnectedWithBlock:(id /* block */)arg1;
+- (void)_lock_enumerateSourcesWithBlock:(id /* block */)arg1;
+- (id)_sortedSources;
 - (void)addObserver:(id)arg1;
 - (id)bookendObserver;
+- (id)callOutQueue;
 - (id)configurationForIdentity:(id)arg1;
 - (id)connectedIdentities;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)description;
-- (id)displayMonitorDelegate;
 - (id)init;
 - (id)initWithInitializationCompletion:(id /* block */)arg1;
 - (void)invalidate;
 - (id)mainConfiguration;
 - (id)mainIdentity;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)observersEnumerator;
 - (void)removeObserver:(id)arg1;
-- (void)setBookendObserver:(id)arg1;
-- (void)setDisplayMonitorDelegate:(id)arg1;
 
 @end

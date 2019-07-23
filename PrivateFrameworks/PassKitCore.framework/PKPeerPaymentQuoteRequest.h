@@ -11,6 +11,7 @@
     unsigned long long  _destination;
     NSString * _dpanIdentifier;
     unsigned long long  _externalFundingSource;
+    NSString * _fpanIdentifier;
     NSString * _orderIdentifier;
     unsigned long long  _paymentMethodType;
     long long  _paymentNetwork;
@@ -29,6 +30,7 @@
 @property (nonatomic) unsigned long long destination;
 @property (setter=setDPANIdentifier:, nonatomic, copy) NSString *dpanIdentifier;
 @property (nonatomic) unsigned long long externalFundingSource;
+@property (setter=setFPANIdentifier:, nonatomic, copy) NSString *fpanIdentifier;
 @property (nonatomic, readonly, copy) NSString *orderIdentifier;
 @property (nonatomic) unsigned long long paymentMethodType;
 @property (nonatomic) long long paymentNetwork;
@@ -41,7 +43,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3;
 - (id)accountNumber;
 - (id)amount;
 - (id)bankName;
@@ -52,6 +54,7 @@
 - (id)dpanIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)externalFundingSource;
+- (id)fpanIdentifier;
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -73,6 +76,7 @@
 - (void)setDPANIdentifier:(id)arg1;
 - (void)setDestination:(unsigned long long)arg1;
 - (void)setExternalFundingSource:(unsigned long long)arg1;
+- (void)setFPANIdentifier:(id)arg1;
 - (void)setPaymentMethodType:(unsigned long long)arg1;
 - (void)setPaymentNetwork:(long long)arg1;
 - (void)setQuoteCertificatesResponse:(id)arg1;
@@ -81,5 +85,6 @@
 - (void)setRoutingNumber:(id)arg1;
 - (void)setSenderAddress:(id)arg1;
 - (void)updateWithPaymentPass:(id)arg1;
+- (void)updateWithPaymentPass:(id)arg1 externalFundingSource:(unsigned long long)arg2;
 
 @end

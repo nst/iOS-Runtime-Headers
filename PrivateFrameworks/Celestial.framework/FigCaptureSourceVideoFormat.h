@@ -163,6 +163,7 @@
 - (float)minSimulatedAperture;
 - (float)minSupportedFrameRate;
 - (float)minZoomFactorForDepthDataDelivery;
+- (struct { int x1; int x2; })nativeDimensions;
 - (bool)needsPreviewDPCC;
 - (id)nonSIFRCompanionFormat;
 - (bool)prefersSensorHDREnabled;

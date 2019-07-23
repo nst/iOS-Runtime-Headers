@@ -13,8 +13,15 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct shared_ptr<Espresso::blob<float, 1> > { struct blob<float, 1> {} *x1; struct __shared_weak_count {} *x2; })biasesForLayer:(id)arg1;
 - (id)initWithNetwork:(id)arg1;
+- (struct layer { int (**x1)(); int x2; int x3; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; }*)innerProductLayerForName:(id)arg1;
 - (struct shared_ptr<Espresso::net> { struct net {} *x1; struct __shared_weak_count {} *x2; })network;
+- (void)randomizeWeightsForLayer:(id)arg1 withSeed:(float)arg2;
 - (void)setNetwork:(struct shared_ptr<Espresso::net> { struct net {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (struct shared_ptr<std::__1::basic_string<char> > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x1; struct __shared_weak_count {} *x2; })topNamesForLayerIndex:(int)arg1;
+- (void)updateLayer:(id)arg1 withBiases:(struct shared_ptr<float> { float *x1; struct __shared_weak_count {} *x2; })arg2 length:(unsigned long long)arg3;
+- (void)updateLayer:(id)arg1 withWeights:(struct shared_ptr<float> { float *x1; struct __shared_weak_count {} *x2; })arg2 length:(unsigned long long)arg3;
+- (struct shared_ptr<Espresso::blob<float, 2> > { struct blob<float, 2> {} *x1; struct __shared_weak_count {} *x2; })weightsForLayer:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSArray *displayHeaderSubstitutes;
 @property (nonatomic, readonly) unsigned int dymSuggestionVisibleTime;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) GEOPDMerchantLookupResult *merchantLookupResult;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;

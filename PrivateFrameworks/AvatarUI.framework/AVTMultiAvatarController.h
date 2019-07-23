@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
  */
 
-@interface AVTMultiAvatarController : NSObject <AVTAvatarDisplayingController, AVTAvatarListContainerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface AVTMultiAvatarController : NSObject <AVTAvatarDisplayingController, AVTNotifyingContainerViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     AVTPlusButtonView * _addItemView;
     <AVTAvatarListItem> * _addListItem;
     bool  _allowsCreate;
@@ -67,8 +67,6 @@
 - (id)addItemView;
 - (id)addListItem;
 - (bool)allowsCreate;
-- (void)avatarListDidChangeSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)avatarListWillChangeSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)avtViewLayout;
 - (id)avtViewSession;
 - (void)buildCollectionViewAndConfigureLayoutIfNeeded;
@@ -106,6 +104,8 @@
 - (id)logger;
 - (void)notifyDelegateForScrollingTowardItem:(id)arg1 ratio:(double)arg2;
 - (void)notifyDelegateForScrollingTowardItemFromOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)notifyingContainerViewDidChangeSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)notifyingContainerViewWillChangeSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)preloadAll;
 - (void)prepareToTransitionToVisible:(bool)arg1 completionHandler:(id /* block */*)arg2;
 - (id)presenterDelegate;

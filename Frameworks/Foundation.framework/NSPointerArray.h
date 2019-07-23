@@ -37,14 +37,6 @@
 - (void)replacePointerAtIndex:(unsigned long long)arg1 withPointer:(void*)arg2;
 - (void)setCount:(unsigned long long)arg1;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-- (void)dbg_addObject:(id)arg1;
-- (unsigned long long)dbg_indexOfObjectIdenticalTo:(id)arg1;
-- (void)dbg_insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
-- (id)dbg_objectAtIndex:(unsigned long long)arg1;
-- (void)dbg_replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/BookDataStore.framework/BookDataStore
 
 - (void)bds_chainSuccessAndErrorCompletionSelectorCallsForSelector:(SEL)arg1 successSoFar:(bool)arg2 errorSoFar:(id)arg3 completion:(id /* block */)arg4;

@@ -6,12 +6,7 @@
     MKStarkCompassView * _compassView;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (double)updateContentsAndWidth;
 
 @end

@@ -124,6 +124,7 @@
 - (float)pitch;
 - (bool)prewarmIfNeeded;
 - (id)prewarmIfNeededWithRequest:(id)arg1;
+- (bool)queryPhaticCapability:(id)arg1;
 - (float)rate;
 - (void)setAutoDownloadedVoiceAssets:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -3,24 +3,30 @@
  */
 
 @interface ACCBLEPairingProvider : NSObject {
+    int  _accDetectToken;
     NSMutableDictionary * _accessories;
     <ACCBLEPairingProviderProtocol> * _delegate;
+    int  _lastScorpiusDetectType;
     NSString * _providerUID;
     <ACCBLEPairingXPCServerProtocol> * _remoteObject;
     NSXPCConnection * _serverConnection;
 }
 
+@property (nonatomic) int accDetectToken;
 @property (nonatomic, retain) NSMutableDictionary *accessories;
 @property (nonatomic) <ACCBLEPairingProviderProtocol> *delegate;
+@property (nonatomic) int lastScorpiusDetectType;
 @property (nonatomic, retain) NSString *providerUID;
 @property (nonatomic, retain) <ACCBLEPairingXPCServerProtocol> *remoteObject;
 @property (nonatomic, retain) NSXPCConnection *serverConnection;
 
 - (void).cxx_destruct;
+- (int)accDetectToken;
 - (id)accessories;
 - (void)accessoryBLEPairingAttached:(id)arg1 blePairingUUID:(id)arg2 accInfoDict:(id)arg3 supportedPairTypes:(id)arg4;
 - (void)accessoryBLEPairingDataUpdate:(id)arg1 blePairingUUID:(id)arg2 pairType:(unsigned char)arg3 pairData:(id)arg4;
 - (void)accessoryBLEPairingDetached:(id)arg1 blePairingUUID:(id)arg2;
+- (void)accessoryBLEPairingFinished:(id)arg1 blePairingUUID:(id)arg2;
 - (void)accessoryBLEPairingInfoUpdate:(id)arg1 blePairingUUID:(id)arg2 pairType:(unsigned char)arg3 pairInfoList:(id)arg4;
 - (void)accessoryBLEPairingStateUpdate:(id)arg1 blePairingUUID:(id)arg2 validMask:(unsigned int)arg3 btRadioOn:(bool)arg4 pairingState:(int)arg5 pairingModeOn:(bool)arg6;
 - (void)connectToServer;
@@ -29,12 +35,16 @@
 - (void)devicePairingData:(id)arg1 blePairingUUID:(id)arg2 pairType:(int)arg3 pairData:(id)arg4;
 - (void)deviceStateUpdate:(id)arg1 blePairingUUID:(id)arg2 bRadioOn:(bool)arg3 pairState:(int)arg4 bPairModeOn:(bool)arg5;
 - (void)deviceUpdatePairingInfo:(id)arg1 blePairingUUID:(id)arg2 pairType:(int)arg3 pairInfo:(id)arg4;
+- (int)getAccDetectType:(int)arg1;
 - (id)initWithDelegate:(id)arg1;
+- (int)lastScorpiusDetectType;
 - (id)providerUID;
 - (id)remoteObject;
 - (id)serverConnection;
+- (void)setAccDetectToken:(int)arg1;
 - (void)setAccessories:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLastScorpiusDetectType:(int)arg1;
 - (void)setProviderUID:(id)arg1;
 - (void)setRemoteObject:(id)arg1;
 - (void)setServerConnection:(id)arg1;

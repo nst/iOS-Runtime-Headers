@@ -8,5 +8,6 @@
 - (void)inCallControlsDragController:(CNKFaceTimeInCallControlsDragController *)arg1 didEndDragAt:(long long)arg2;
 - (void)inCallControlsDragController:(CNKFaceTimeInCallControlsDragController *)arg1 didStartDragTo:(long long)arg2;
 - (void)inCallControlsDragController:(CNKFaceTimeInCallControlsDragController *)arg1 willStartDragFrom:(long long)arg2;
+- (long long)inCallControlsDragControllerShortestState:(CNKFaceTimeInCallControlsDragController *)arg1;
 
 @end

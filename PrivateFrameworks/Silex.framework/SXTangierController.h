@@ -5,7 +5,7 @@
 @interface SXTangierController : NSObject <STTextTangierInteractiveCanvasControllerDataSource, STTextTangierInteractiveCanvasControllerDelegate, SXTextComponentLayoutHosting, SXTextSelecting, SXViewportChangeListener> {
     UIView * _aboveRepsHost;
     <SXComponentActionHandler> * _componentActionHandler;
-    SXComponentController * _componentController;
+    <SXComponentController> * _componentController;
     <SXComponentInteractionManager> * _componentInteractionManager;
     STTextTangierCanvasViewController * _cvc;
     <SXTangierControllerDelegate> * _delegate;
@@ -22,10 +22,12 @@
     bool  _preventScrollViewDidScrollReentrance;
     bool  _rebuildFlows;
     STScrollView * _scrollView;
-    NSObject<OS_dispatch_semaphore> * _semaphore;
     TSWPSelection * _storedSelection;
     STTangierTextRenderCollector * _textRenderCollector;
     UIView * _underRepsHost;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfairLock;
     SXViewport * _viewport;
 }
 
@@ -33,7 +35,7 @@
 @property (nonatomic, readonly) bool allowEditMenuToAppear;
 @property (nonatomic, readonly) bool allowTextEditingToBegin;
 @property (nonatomic, readonly) <SXComponentActionHandler> *componentActionHandler;
-@property (nonatomic, readonly) SXComponentController *componentController;
+@property (nonatomic, readonly) <SXComponentController> *componentController;
 @property (nonatomic, readonly) <SXComponentInteractionManager> *componentInteractionManager;
 @property (nonatomic, readonly) STTextTangierCanvasViewController *cvc;
 @property (readonly, copy) NSString *debugDescription;
@@ -52,11 +54,10 @@
 @property (nonatomic, readonly) bool isPrintingCanvas;
 @property (nonatomic, readonly) UIView *overlayRepsHost;
 @property (nonatomic) bool performedInitialLayoutAndRender;
-@property (nonatomic, retain) NSMutableSet *presentedTextViews;
+@property (nonatomic, readonly) NSMutableSet *presentedTextViews;
 @property (nonatomic) bool preventScrollViewDidScrollReentrance;
 @property (nonatomic) bool rebuildFlows;
 @property (nonatomic, retain) STScrollView *scrollView;
-@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 @property (nonatomic, readonly) bool shouldClipToScrollViewBoundsInVisibleBounds;
 @property (nonatomic, readonly) bool shouldPopKnobsOutsideEnclosingScrollView;
 @property (nonatomic, readonly) bool shouldResizeCanvasToScrollView;
@@ -69,6 +70,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) STTangierTextRenderCollector *textRenderCollector;
 @property (nonatomic, readonly) UIView *underRepsHost;
+@property (nonatomic, readonly) struct os_unfair_lock_s { unsigned int x1; } unfairLock;
 @property (nonatomic, retain) SXViewport *viewport;
 
 - (void).cxx_destruct;
@@ -119,13 +121,11 @@
 - (bool)rebuildFlows;
 - (id)scrollPositionForVisibleRectWithComponentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)scrollView;
-- (id)semaphore;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableClippingForTiles:(bool)arg1;
 - (void)setEnclosingCanvasScrolling:(bool)arg1;
 - (void)setInitialSubviewCount:(unsigned long long)arg1;
 - (void)setPerformedInitialLayoutAndRender:(bool)arg1;
-- (void)setPresentedTextViews:(id)arg1;
 - (void)setPreventScrollViewDidScrollReentrance:(bool)arg1;
 - (void)setRebuildFlows:(bool)arg1;
 - (void)setScrollView:(id)arg1;
@@ -140,6 +140,7 @@
 - (id)topLevelLayersForInteractiveCanvasController:(id)arg1;
 - (id)topLevelRepsForInteractiveCanvasController:(id)arg1;
 - (id)underRepsHost;
+- (struct os_unfair_lock_s { unsigned int x1; })unfairLock;
 - (void)updateCanvasSize:(struct CGSize { double x1; double x2; })arg1 forComponentViews:(id)arg2;
 - (void)updateHUD;
 - (void)updateInfosWithBlock:(id /* block */)arg1;

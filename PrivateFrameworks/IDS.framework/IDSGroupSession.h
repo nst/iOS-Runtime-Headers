@@ -12,10 +12,12 @@
 
 - (void).cxx_destruct;
 - (id)_internal;
+- (id)_internal_sessionWithValidityCheck;
 - (void)dealloc;
 - (id)destination;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
 - (id)initWithAccount:(id)arg1 options:(id)arg2;
+- (void)invalidate;
 - (void)joinGroupSession;
 - (void)joinWithOptions:(id)arg1;
 - (void)leaveGroupSession;

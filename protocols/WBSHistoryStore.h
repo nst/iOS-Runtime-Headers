@@ -27,6 +27,7 @@
 - (void)itemsWereAdded:(NSArray *)arg1 byUserInitiatedAction:(bool)arg2;
 - (void)itemsWereModified:(NSArray *)arg1 byUserInitiatedAction:(bool)arg2;
 - (NSDate *)lastSeenDateForCloudClientVersion:(unsigned long long)arg1;
+- (NSData *)longLivedSaveOperationData;
 - (void)performMaintenance:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)pruneTombstonesWithEndDatePriorToDate:(NSDate *)arg1;
 - (bool)pushNotificationsAreInitialized;
@@ -34,13 +35,14 @@
 - (void)removeItemsOnDatabaseQueue:(NSSet *)arg1;
 - (void)removePastHistoryVisitsForItem:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 6: WBSHistoryItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)removeVisitsOnDatabaseQueue:(NSSet *)arg1;
-- (void)replayAndAddTombstone:(WBSHistoryTombstone *)arg1;
+- (void)replayAndAddTombstones:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)resetCloudHistoryDataWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned long long)arg1;
 - (void)setDelegate:(id <WBSHistoryStoreDelegate>)arg1;
 - (void)setFetchThrottlerData:(NSData *)arg1;
 - (void)setHistoryAgeLimit:(double)arg1;
 - (void)setLastSeenDate:(NSDate *)arg1 forCloudClientVersion:(unsigned long long)arg2;
+- (void)setLongLivedSaveOperationData:(NSData *)arg1;
 - (void)setPushNotificationsAreInitialized:(bool)arg1;
 - (void)setPushThrottlerData:(NSData *)arg1;
 - (void)setServerChangeTokenData:(NSData *)arg1;

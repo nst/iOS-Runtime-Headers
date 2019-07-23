@@ -25,7 +25,7 @@
     unsigned long long  _streamStatus;
 }
 
-@property (nonatomic) <NSStreamDelegate> *delegate;
+@property <NSStreamDelegate> *delegate;
 @property (readonly) unsigned long long totalBytes;
 
 - (void).cxx_destruct;

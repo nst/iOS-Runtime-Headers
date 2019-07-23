@@ -39,6 +39,7 @@
 - (void)installProfileWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)invalidate;
 - (id)peerDevice;
+- (void)rebootSystemWithCompletion:(id /* block */)arg1;
 - (void)removeProfileWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)setAllowUnencrypted:(bool)arg1;
 - (void)setDispatchQueue:(id)arg1;

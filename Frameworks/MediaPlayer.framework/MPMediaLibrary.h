@@ -114,6 +114,7 @@
 + (bool)supportsSecureCoding;
 + (void)syncGenerationDidChangeForLibraryDataProvider:(id)arg1;
 + (void)uniqueIdentifierDidChangeForLibraryDataProvider:(id)arg1;
++ (void)validatePermissionsExpiryWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (id)URLForHomeSharingRequest:(id)arg1;
@@ -202,6 +203,7 @@
 - (unsigned long long)filterAvailableContentGroups:(unsigned long long)arg1 withOptions:(unsigned long long)arg2;
 - (void)geniusItemsForSeedItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)getPlaylistWithUUID:(id)arg1 creationMetadata:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)hasAddedToLibraryAppleMusicContent;
 - (bool)hasAlbums;
 - (bool)hasArtists;
 - (bool)hasAudibleAudioBooks;
@@ -223,6 +225,8 @@
 - (bool)hasSongs;
 - (bool)hasTVShows;
 - (bool)hasUbiquitousBookmarkableItems;
+- (bool)hasUserPlaylists;
+- (bool)hasUserPlaylistsContainingAppleMusicContent;
 - (bool)hasVideoITunesUContent;
 - (bool)hasVideoPodcasts;
 - (bool)hasVideos;

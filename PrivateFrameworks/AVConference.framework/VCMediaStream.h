@@ -95,6 +95,7 @@
 
 - (id)basebandCongestionDetector;
 - (void)checkDecryptionTimeoutAgainstTime:(double)arg1 decryptionErrorStartTime:(double)arg2;
+- (void)checkForDecryptionTimeout;
 - (void)checkRTCPPacketTimeoutAgainstTime:(double)arg1 lastReceivedPacketTime:(double)arg2;
 - (void)checkRTPPacketTimeoutAgainstTime:(double)arg1 lastReceivedPacketTime:(double)arg2;
 - (void)collectRxChannelMetrics:(struct { unsigned int x1; unsigned int x2; double x3; }*)arg1;

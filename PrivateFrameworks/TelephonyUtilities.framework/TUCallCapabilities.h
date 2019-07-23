@@ -12,7 +12,9 @@
 + (bool)areCTCapabilitiesValid;
 + (bool)areRelayCallingFeaturesEnabled;
 + (bool)canAttemptEmergencyCallsWithoutCellularConnection;
++ (bool)canAttemptEmergencyCallsWithoutCellularConnectionWithUUID:(id)arg1;
 + (bool)canAttemptTelephonyCallsWithoutCellularConnection;
++ (bool)canAttemptTelephonyCallsWithoutCellularConnectionWithSenderIdentityCapabilities:(id)arg1;
 + (void)cancelPinRequestFromPrimaryDevice;
 + (id)client;
 + (id)cloudCallingDevices;
@@ -52,13 +54,13 @@
 + (void)setRelayCallingEnabled:(bool)arg1;
 + (void)setRelayCallingEnabled:(bool)arg1 forDeviceWithID:(id)arg2;
 + (void)setThumperCallingAllowed:(bool)arg1 onSecondaryDeviceWithID:(id)arg2;
++ (void)setThumperCallingAllowed:(bool)arg1 onSecondaryDeviceWithID:(id)arg2 forSenderIdentityWithUUID:(id)arg3;
 + (void)setThumperCallingAllowedOnDefaultPairedSecondaryDevice:(bool)arg1;
 + (void)setThumperCallingEnabled:(bool)arg1;
 + (void)setVoLTECallingEnabled:(bool)arg1;
 + (void)setWiFiCallingEnabled:(bool)arg1;
 + (void)setWiFiCallingRoamingEnabled:(bool)arg1;
 + (bool)supportsBasebandCalling;
-+ (bool)supportsCarrierServices;
 + (bool)supportsDisplayingFaceTimeAudioCalls;
 + (bool)supportsDisplayingFaceTimeVideoCalls;
 + (bool)supportsDisplayingTelephonyCalls;

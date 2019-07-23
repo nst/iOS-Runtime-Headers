@@ -4,7 +4,7 @@
 
 @interface FCCKOrderFeedQueryOperation : FCOperation {
     NSDictionary * _additionalRequestHTTPHeaders;
-    NSArray * _articleKeysMappingToTag;
+    NSArray * _articleLinkKeys;
     FCCKContentDatabase * _database;
     NSArray * _desiredKeys;
     FCEdgeCacheHint * _edgeCacheHint;
@@ -15,12 +15,13 @@
     NSError * _resultError;
     NSArray * _resultFeedItemAndArticleRecords;
     NSArray * _resultFeedResponses;
+    NSArray * _resultIssueRecords;
     NSArray * _resultTagRecords;
     unsigned long long  _resultsLimit;
 }
 
 @property (nonatomic, copy) NSDictionary *additionalRequestHTTPHeaders;
-@property (nonatomic, copy) NSArray *articleKeysMappingToTag;
+@property (nonatomic, copy) NSArray *articleLinkKeys;
 @property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) FCEdgeCacheHint *edgeCacheHint;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) NSArray *resultFeedItemAndArticleRecords;
 @property (nonatomic, retain) NSArray *resultFeedResponses;
+@property (nonatomic, retain) NSArray *resultIssueRecords;
 @property (nonatomic, retain) NSArray *resultTagRecords;
 @property (nonatomic) unsigned long long resultsLimit;
 
@@ -38,10 +40,10 @@
 - (id)_constructFeedQuery;
 - (id)_feedRelativeDictionaryFromResultsArray:(id)arg1;
 - (id)_predicateForPerFeedFieldName:(id)arg1 key:(id)arg2 defaultValue:(id)arg3;
-- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3;
+- (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3 issueRecords:(id)arg4;
 - (id)_requiredKeys;
 - (id)additionalRequestHTTPHeaders;
-- (id)articleKeysMappingToTag;
+- (id)articleLinkKeys;
 - (id)database;
 - (id)desiredKeys;
 - (id)edgeCacheHint;
@@ -56,10 +58,11 @@
 - (id)resultError;
 - (id)resultFeedItemAndArticleRecords;
 - (id)resultFeedResponses;
+- (id)resultIssueRecords;
 - (id)resultTagRecords;
 - (unsigned long long)resultsLimit;
 - (void)setAdditionalRequestHTTPHeaders:(id)arg1;
-- (void)setArticleKeysMappingToTag:(id)arg1;
+- (void)setArticleLinkKeys:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setEdgeCacheHint:(id)arg1;
@@ -70,6 +73,7 @@
 - (void)setResultError:(id)arg1;
 - (void)setResultFeedItemAndArticleRecords:(id)arg1;
 - (void)setResultFeedResponses:(id)arg1;
+- (void)setResultIssueRecords:(id)arg1;
 - (void)setResultTagRecords:(id)arg1;
 - (void)setResultsLimit:(unsigned long long)arg1;
 - (bool)validateOperation;

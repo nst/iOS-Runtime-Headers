@@ -34,7 +34,7 @@
 - (Class)cellClass;
 - (id)cellIdentifier;
 - (id)composition;
-- (void)configureWithConversationID:(id)arg1 recipients:(id)arg2;
+- (void)configureWithConversationID:(id)arg1 recipients:(id)arg2 isBusiness:(bool)arg3;
 - (id)contact;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)contentViewController;

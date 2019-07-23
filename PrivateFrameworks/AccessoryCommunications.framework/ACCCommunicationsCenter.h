@@ -5,6 +5,7 @@
 @interface ACCCommunicationsCenter : NSObject <ACCCommunicationsXPCClientProtocol> {
     NSMutableDictionary * _cachedCommStatus;
     <ACCCommunicationsCenterCallControlsDelegate> * _callControlsDelegate;
+    NSMutableDictionary * _callStateCache;
     <ACCCommunicationsCenterCallStateDelegate> * _callStateDelegate;
     <ACCCommunicationsCenterCommunicationsDelegate> * _communicationsDelegate;
     <ACCCommunicationsCenterListUpdatesDelegate> * _listUpdatesDelegate;
@@ -17,6 +18,7 @@
 
 @property (retain) NSMutableDictionary *cachedCommStatus;
 @property (nonatomic) <ACCCommunicationsCenterCallControlsDelegate> *callControlsDelegate;
+@property (retain) NSMutableDictionary *callStateCache;
 @property (nonatomic) <ACCCommunicationsCenterCallStateDelegate> *callStateDelegate;
 @property (nonatomic) <ACCCommunicationsCenterCommunicationsDelegate> *communicationsDelegate;
 @property (readonly, copy) NSString *debugDescription;
@@ -34,6 +36,7 @@
 - (void)acceptCallWithAction:(int)arg1 callUUID:(id)arg2;
 - (id)cachedCommStatus;
 - (id)callControlsDelegate;
+- (id)callStateCache;
 - (id)callStateDelegate;
 - (void)callStateDidChange:(id)arg1;
 - (void)commStatusDidChange:(id)arg1;
@@ -58,6 +61,7 @@
 - (id)serverConnection;
 - (void)setCachedCommStatus:(id)arg1;
 - (void)setCallControlsDelegate:(id)arg1;
+- (void)setCallStateCache:(id)arg1;
 - (void)setCallStateDelegate:(id)arg1;
 - (void)setCommunicationsDelegate:(id)arg1;
 - (void)setListUpdatesDelegate:(id)arg1;

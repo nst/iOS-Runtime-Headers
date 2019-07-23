@@ -12,11 +12,14 @@
     SSMutableURLRequestProperties * _requestProperties;
     NSDictionary * _responseHeaders;
     NSString * _responseText;
+    bool  _shouldSendGUIDHeader;
     unsigned long long  _status;
     NSString * _statusText;
     unsigned long long  _timeout;
+    bool  _useJSONEncoding;
 }
 
+@property (getter=isJSONEncoded, retain) id JSONEncoded;
 @property (nonatomic, retain) SSAuthenticationContext *authenticationContext;
 @property (nonatomic, retain) ISDataProvider *dataProvider;
 @property <SUScriptXMLHTTPStoreRequestDelegate> *delegate;
@@ -28,6 +31,7 @@
 @property (retain) WebScriptObject *ontimeout;
 @property (readonly) unsigned long long readyState;
 @property (readonly, copy) NSString *responseText;
+@property (retain) id shouldSendGUIDHeader;
 @property (readonly) unsigned long long status;
 @property (readonly, copy) NSString *statusText;
 @property unsigned long long timeout;
@@ -39,8 +43,11 @@
 - (void).cxx_destruct;
 - (void)_callFunctionWithName:(id)arg1 arguments:(id)arg2;
 - (id)_className;
+- (id)_clientInfoHeader;
+- (id)_gsTokenForAIDAAccount:(id)arg1 accountStore:(id)arg2;
 - (id)_scriptObjectForFunctionName:(id)arg1;
 - (void)_setScriptObject:(id)arg1 forFunctionName:(id)arg2;
+- (id)_uniqueDeviceID;
 - (void)abort;
 - (id)attributeKeys;
 - (id)authenticationContext;
@@ -50,6 +57,7 @@
 - (id)getAllResponseHeaders;
 - (id)getResponseHeader:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
+- (id)isJSONEncoded;
 - (id)onabort;
 - (id)onerror;
 - (id)onload;
@@ -64,14 +72,17 @@
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDataProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setJSONEncoded:(id)arg1;
 - (void)setOnabort:(id)arg1;
 - (void)setOnerror:(id)arg1;
 - (void)setOnload:(id)arg1;
 - (void)setOnloadend:(id)arg1;
 - (void)setOnreadystatechange:(id)arg1;
 - (void)setOntimeout:(id)arg1;
+- (void)setShouldSendGUIDHeader:(id)arg1;
 - (void)setTimeout:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
+- (id)shouldSendGUIDHeader;
 - (unsigned long long)status;
 - (id)statusText;
 - (unsigned long long)timeout;

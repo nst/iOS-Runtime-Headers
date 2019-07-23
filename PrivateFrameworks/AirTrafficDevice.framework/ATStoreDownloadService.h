@@ -14,7 +14,7 @@
 + (id)sharedService;
 
 - (void).cxx_destruct;
-- (void)_finishAsset:(id)arg1 withError:(id)arg2;
+- (void)_finishAsset:(id)arg1 withError:(id)arg2 cancelPendingDownloads:(bool)arg3;
 - (id)_newDownloadOperationForAsset:(id)arg1;
 - (void)_updateProgressForAsset:(id)arg1 progress:(float)arg2;
 - (void)_updateStateForAsset:(id)arg1 oldState:(long long)arg2 newState:(long long)arg3;

@@ -3,12 +3,10 @@
  */
 
 @interface RPCompanionLinkDevice : RPEndpoint <NSSecureCoding> {
-    bool  _btPipeConnected;
     bool  _changed;
     bool  _daemon;
     NSString * _deviceColor;
     unsigned int  _flags;
-    NSString * _groupID;
     NSUUID * _homeKitIdentifier;
     NSString * _idsPersonalDeviceIdentifier;
     NSUUID * _mediaSystemIdentifier;
@@ -25,17 +23,16 @@
     NSString * _publicIdentifier;
     NSString * _role;
     NSString * _roomName;
+    int  _serversChangedState;
     NSDictionary * _siriInfo;
-    NSString * _sourceVersion;
+    bool  _uiTriggered;
 }
 
-@property (nonatomic) bool btPipeConnected;
 @property (nonatomic) bool changed;
 @property (nonatomic) bool daemon;
 @property (nonatomic, copy) NSString *deviceColor;
 @property (nonatomic, readonly, copy) NSString *effectiveIdentifier;
 @property (nonatomic) unsigned int flags;
-@property (nonatomic, readonly, copy) NSString *groupID;
 @property (nonatomic, copy) NSUUID *homeKitIdentifier;
 @property (nonatomic, copy) NSString *idsPersonalDeviceIdentifier;
 @property (nonatomic, copy) NSUUID *mediaSystemIdentifier;
@@ -52,13 +49,13 @@
 @property (nonatomic, copy) NSString *publicIdentifier;
 @property (nonatomic, copy) NSString *role;
 @property (nonatomic, copy) NSString *roomName;
+@property (nonatomic) int serversChangedState;
 @property (nonatomic, copy) NSDictionary *siriInfo;
-@property (nonatomic, copy) NSString *sourceVersion;
+@property (nonatomic) bool uiTriggered;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (bool)btPipeConnected;
 - (bool)changed;
 - (bool)daemon;
 - (id)description;
@@ -67,7 +64,6 @@
 - (id)effectiveIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)flags;
-- (id)groupID;
 - (id)homeKitIdentifier;
 - (id)idsPersonalDeviceIdentifier;
 - (id)initWithCoder:(id)arg1;
@@ -85,7 +81,7 @@
 - (id)publicIdentifier;
 - (id)role;
 - (id)roomName;
-- (void)setBtPipeConnected:(bool)arg1;
+- (int)serversChangedState;
 - (void)setChanged:(bool)arg1;
 - (void)setDaemon:(bool)arg1;
 - (void)setDeviceColor:(id)arg1;
@@ -106,10 +102,12 @@
 - (void)setPublicIdentifier:(id)arg1;
 - (void)setRole:(id)arg1;
 - (void)setRoomName:(id)arg1;
+- (void)setServersChangedState:(int)arg1;
 - (void)setSiriInfo:(id)arg1;
-- (void)setSourceVersion:(id)arg1;
+- (void)setUiTriggered:(bool)arg1;
 - (id)siriInfo;
-- (id)sourceVersion;
+- (bool)uiTriggered;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
+- (unsigned int)updateWithSFDevice:(id)arg1;
 
 @end

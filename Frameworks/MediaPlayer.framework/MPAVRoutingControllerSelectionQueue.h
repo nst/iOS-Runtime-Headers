@@ -34,6 +34,7 @@
 - (void)pickedRouteDidChange;
 - (void)removeAllPendingRoutes;
 - (void)removePendingRoute:(id)arg1;
+- (void)removePendingRoute:(id)arg1 withError:(bool)arg2;
 - (bool)routeIsPendingPick:(id)arg1;
 - (id)routingController;
 

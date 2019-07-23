@@ -8,14 +8,9 @@
 
 @property (nonatomic, readonly) UIInputSwitcherSegmentControl *segmentControl;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (struct CGSize { double x1; double x2; })preferredSizeWithSegmentCount:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)segmentControl;

@@ -6,8 +6,10 @@
     _UIStatusBarImageView * _callForwardingView;
     _UIStatusBarStringView * _networkTypeView;
     _UIStatusBarStringView * _serviceNameView;
+    bool  _showsDisabledSignalBars;
     _UIStatusBarCellularSignalView * _signalView;
     _UIStatusBarImageView * _sosView;
+    <_UIStatusBarCellularItemTypeStringProvider> * _typeStringProvider;
     _UIStatusBarImageView * _warningView;
 }
 
@@ -15,8 +17,10 @@
 @property (nonatomic, readonly) NSString *cellularDataEntryKey;
 @property (nonatomic, retain) _UIStatusBarStringView *networkTypeView;
 @property (nonatomic, retain) _UIStatusBarStringView *serviceNameView;
+@property (nonatomic) bool showsDisabledSignalBars;
 @property (nonatomic, retain) _UIStatusBarCellularSignalView *signalView;
 @property (nonatomic, retain) _UIStatusBarImageView *sosView;
+@property (nonatomic) <_UIStatusBarCellularItemTypeStringProvider> *typeStringProvider;
 @property (nonatomic, retain) _UIStatusBarImageView *warningView;
 
 + (id)callForwardingDisplayIdentifier;
@@ -37,17 +41,22 @@
 - (id)cellularDataEntryKey;
 - (id)dependentEntryKeys;
 - (id)entryForDisplayItemWithIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 statusBar:(id)arg2;
 - (id)networkTypeView;
 - (void)prepareAnimation:(id)arg1 forDisplayItem:(id)arg2;
 - (id)serviceNameView;
 - (void)setCallForwardingView:(id)arg1;
 - (void)setNetworkTypeView:(id)arg1;
 - (void)setServiceNameView:(id)arg1;
+- (void)setShowsDisabledSignalBars:(bool)arg1;
 - (void)setSignalView:(id)arg1;
 - (void)setSosView:(id)arg1;
+- (void)setTypeStringProvider:(id)arg1;
 - (void)setWarningView:(id)arg1;
+- (bool)showsDisabledSignalBars;
 - (id)signalView;
 - (id)sosView;
+- (id)typeStringProvider;
 - (id)viewForIdentifier:(id)arg1;
 - (id)warningView;
 

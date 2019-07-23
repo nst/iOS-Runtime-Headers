@@ -76,6 +76,7 @@
 - (id)modelNumber;
 - (id)name;
 - (bool)pointOfInterestHandoffEnabled;
+- (id)ppid;
 - (id)preferredApp;
 - (id)protocolStrings;
 - (void)requestIAPAccessoryWiFiCredentials;

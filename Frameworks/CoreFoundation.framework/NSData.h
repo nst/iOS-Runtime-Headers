@@ -41,11 +41,6 @@
 
 + (bool)supportsSecureCoding;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-- (id)dbg_gzipDeflate;
-- (id)dbg_gzipInflate;
-
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 - (bool)_isSafeResumeDataForBackgroundDownload;
@@ -243,8 +238,18 @@
 
 // Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
 
++ (id)_AESKeyForDataProtectionClass:(unsigned long long)arg1 error:(id*)arg2;
++ (const struct __CFString { }*)_accessibleAttributeForDataProtectionClass:(unsigned long long)arg1;
++ (id)_generateInitializationVectorDataWithError:(id*)arg1;
++ (id)_labelForDataProtectionClass:(unsigned long long)arg1;
++ (id)ams_generateEncryptionKey;
+
 - (id)ams_compressedData;
 - (id)ams_decompressedData;
+- (id)ams_decryptUsingDataProtectionClass:(unsigned long long)arg1 initializationVectorData:(id)arg2 tagData:(id)arg3 error:(id*)arg4;
+- (id)ams_decryptUsingKey:(id)arg1 initializationVectorData:(id)arg2 tagData:(id)arg3 error:(id*)arg4;
+- (/* Warning: unhandled struct encoding: '{?=@@@}' */ struct { id x1; id x2; })ams_encryptDataUsingDataProtectionClass:(unsigned long long)arg1 error:(id*)arg2;
+- (/* Warning: unhandled struct encoding: '{?=@@@}' */ struct { id x1; id x2; })ams_encryptDataUsingKey:(id)arg1 error:(id*)arg2;
 - (id)ams_nvramDescription;
 
 // Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit
@@ -293,6 +298,8 @@
 
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
+- (id)crk_certificateCommonNames;
+- (id)crk_certificateFingerprint;
 - (id)crk_hexString;
 - (id)crk_sha1Hash;
 
@@ -653,6 +660,9 @@
 + (id)readValueFromKeyValuePair:(id)arg1;
 
 - (id)fc_URLSafeBase64EncodedStringWithOptions:(unsigned long long)arg1;
+- (id)fc_anefDecryptWithKey:(id)arg1;
+- (id)fc_anefEncryptWithKey:(id)arg1;
+- (bool)fc_anefKeyIsValid:(id)arg1;
 - (id)fc_decryptAESSIVWithKey:(id)arg1 additionalData:(id)arg2;
 - (id)fc_encryptAESSIVWithKey:(id)arg1 additionalData:(id)arg2;
 - (id)fc_gzipDeflate;
@@ -699,6 +709,7 @@
 - (id)SHA1Hash;
 - (id)SHA256Hash;
 - (id)fileSafeBase64Encoding;
+- (bool)hasPDFMIMEType;
 - (id)hexEncoding;
 
 // Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
@@ -800,8 +811,11 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 
++ (id)SHA1:(id)arg1;
 + (id)base64StringFromData:(id)arg1;
 + (id)dataFromBase64String:(id)arg1;
+
+- (id)SHA256;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
@@ -862,6 +876,14 @@
 - (id)tv_SHA256Digest;
 - (id)tv_lowercaseHexString;
 
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (id)tvp_MD5Digest;
+- (id)tvp_SHA1Digest;
+- (id)tvp_SHA256Digest;
+- (id)tvp_lowercaseHexString;
+- (id)tvp_uppercaseHexString;
+
 // Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
 
 - (id)TR_compressedGzipData;
@@ -908,6 +930,11 @@
 
 - (id)copyDeflatedData;
 
+// Image: /System/Library/PrivateFrameworks/iAdServices.framework/iAdServices
+
+- (id)asHexString;
+- (id)sha1;
+
 // Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
 
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
@@ -933,6 +960,7 @@
 - (unsigned long long)tsp_length;
 - (void)tsp_splitDataWithMaxSize:(unsigned long long)arg1 subdataHandlerBlock:(id /* block */)arg2;
 - (bool)tsp_writeToURL:(id)arg1 encryptionKey:(id)arg2;
+- (id)tsu_compressWithAlgorithm:(int)arg1 operation:(int)arg2;
 - (id)tsu_encodeToBase64String;
 - (id)tsu_encodeToBase64URLSafeString;
 

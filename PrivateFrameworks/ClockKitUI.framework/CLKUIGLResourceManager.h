@@ -8,6 +8,7 @@
     EAGLSharegroup * _shareGroup;
 }
 
++ (id)context;
 + (id)programWithName:(id)arg1;
 + (id)shareGroup;
 + (id)sharedGLInstance;

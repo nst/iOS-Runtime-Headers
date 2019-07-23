@@ -29,6 +29,7 @@
 - (id)imageView;
 - (id)initWithImageFill:(id)arg1 imageResource:(id)arg2 imageViewFactory:(id)arg3;
 - (void)layoutSubviews;
+- (void)load;
 - (void)pause;
 - (void)play;
 - (void)setClippingView:(id)arg1;

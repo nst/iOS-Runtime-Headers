@@ -4,7 +4,12 @@
 
 @interface WKFormInputSession : NSObject <_WKFormInputSession> {
     bool  _accessoryViewShouldNotShow;
-    WKContentView * _contentView;
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKContentView>="m_weakReference"@}' */ struct WeakObjCPtr<WKContentView> { 
+        id m_weakReference; 
+    }  _contentView;
+    struct RetainPtr<UIView> { 
+        void *m_ptr; 
+    }  _customInputAccessoryView;
     struct RetainPtr<UIView> { 
         void *m_ptr; 
     }  _customInputView;
@@ -20,6 +25,7 @@
 
 @property (nonatomic, copy) NSString *accessoryViewCustomButtonTitle;
 @property (nonatomic) bool accessoryViewShouldNotShow;
+@property (nonatomic, retain) UIView *customInputAccessoryView;
 @property (nonatomic, retain) UIView *customInputView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -36,7 +42,9 @@
 - (void).cxx_destruct;
 - (id)accessoryViewCustomButtonTitle;
 - (bool)accessoryViewShouldNotShow;
+- (id)customInputAccessoryView;
 - (id)customInputView;
+- (void)endEditing;
 - (id)focusedElementInfo;
 - (bool)forceSecureTextEntry;
 - (id)initWithContentView:(id)arg1 focusedElementInfo:(id)arg2 requiresStrongPasswordAssistance:(bool)arg3;
@@ -46,6 +54,7 @@
 - (bool)requiresStrongPasswordAssistance;
 - (void)setAccessoryViewCustomButtonTitle:(id)arg1;
 - (void)setAccessoryViewShouldNotShow:(bool)arg1;
+- (void)setCustomInputAccessoryView:(id)arg1;
 - (void)setCustomInputView:(id)arg1;
 - (void)setForceSecureTextEntry:(bool)arg1;
 - (void)setSuggestions:(id)arg1;

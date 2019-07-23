@@ -29,6 +29,7 @@
 - (id)dispatchQueue;
 - (void)displayNameForEmailHash:(id)arg1 phoneHash:(id)arg2 completion:(id /* block */)arg3;
 - (void)displayStringForContactIdentifier:(id)arg1 deviceIdentifier:(id)arg2 completion:(id /* block */)arg3;
+- (void)findContact:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
@@ -45,6 +46,7 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setupDevice:(id)arg1 home:(id)arg2 completion:(id /* block */)arg3;
 - (void)showDevicePickerWithInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)testContinuityKeyboardBegin:(bool)arg1;
 - (void)triggerHomeKitDeviceDetectedWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)triggerProximityAutoFillDetectedWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(id /* block */)arg1;

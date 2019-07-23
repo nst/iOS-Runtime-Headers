@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     bool  _cancelled;
     NSObject<OS_dispatch_queue> * _checkRestoreStatusQueue;
+    bool  _deviceRestoreActive;
     bool  _iCloudRestoreActive;
     bool  _iTunesRestoreActive;
     NSObject<OS_dispatch_queue> * _queue;
@@ -28,7 +29,6 @@
 - (id)_dataClasses;
 - (bool)_iCloudPhotoLibraryEnabled;
 - (void)_start;
-- (void)_updateSettingsForiTunesRestoreState:(bool)arg1 iCloudRestoreState:(bool)arg2;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (id)init;
 - (void)restoreAssetLinkDidCancelRestore:(id)arg1;

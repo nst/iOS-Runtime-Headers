@@ -8,7 +8,7 @@
 + (id)chartSeriesType;
 + (bool)isHorizontalChart;
 + (bool)isStacked;
-+ (struct TSCH3DScenePart { id x1; })partWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg2;
++ (id)partWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg2;
 + (void)updateLightingEffectsState:(id)arg1 scene:(id)arg2;
 
 - (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })labelObjectSpacePosition:(unsigned int)arg1 axisValue:(double)arg2 intercept:(double)arg3;

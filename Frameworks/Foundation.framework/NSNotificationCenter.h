@@ -50,6 +50,12 @@
 
 - (id)mtNotifiyingQueue;
 
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
+- (void)safari_addObserver:(id)arg1 selector:(SEL)arg2 forUserDefaultKey:(id)arg3;
+- (id)safari_addObserverForUserDefaultKey:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)safari_removeObserver:(id)arg1 forUserDefaultKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (id)tsu_addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;

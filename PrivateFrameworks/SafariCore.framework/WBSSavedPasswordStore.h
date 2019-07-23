@@ -3,7 +3,6 @@
  */
 
 @interface WBSSavedPasswordStore : NSObject {
-    WBSAutoFillQuirksManager * _autoFillQuirksManager;
     NSMutableDictionary * _domainToUsers;
     bool  _hasPasswordsEligibleForAutoFill;
     WBSKeychainCredentialNotificationMonitor * _keychainMonitor;
@@ -12,7 +11,6 @@
     NSArray * _savedPasswords;
 }
 
-@property (nonatomic, readonly) bool hasDuplicatedPasswords;
 @property (nonatomic, readonly) bool hasPasswordsEligibleForAutoFill;
 @property (nonatomic, readonly) NSSet *highLevelDomainsOfAllSavedPasswordsExcludingNeverSaveMarkerPasswords;
 @property (nonatomic, readonly) NSArray *savedPasswords;
@@ -34,19 +32,16 @@
 - (bool)canSaveUser:(id)arg1 password:(id)arg2 forProtectionSpace:(id)arg3 highLevelDomain:(id)arg4;
 - (bool)changeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
 - (void)dealloc;
-- (bool)hasDuplicatedPasswords;
 - (bool)hasPasswordsEligibleForAutoFill;
 - (id)highLevelDomainsOfAllSavedPasswordsExcludingNeverSaveMarkerPasswords;
-- (id)initUsingAutoFillQuirksManager:(bool)arg1;
+- (id)init;
 - (void)removePassword:(id)arg1;
-- (void)removeSite:(id)arg1 fromPassword:(id)arg2;
+- (void)removeSite:(id)arg1 fromPassword:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)reset;
 - (id)saveUser:(id)arg1 password:(id)arg2 forProtectionSpace:(id)arg3 highLevelDomain:(id)arg4;
 - (id)savedPasswordForURL:(id)arg1 user:(id)arg2 password:(id)arg3;
-- (bool)savedPasswordHasReusedPassword:(id)arg1;
 - (id)savedPasswords;
 - (id)savedPasswordsExcludingNeverSaveMarkerPasswords;
-- (id)savedPasswordsWithDuplicatedPassword:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

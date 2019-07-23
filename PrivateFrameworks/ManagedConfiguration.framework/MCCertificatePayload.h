@@ -3,8 +3,13 @@
  */
 
 @interface MCCertificatePayload : MCPayload {
+    NSString * _certIssuer;
+    NSString * _certSubject;
     NSData * _certificatePersistentID;
+    NSNumber * _expiryInterval;
     NSString * _installedOnDeviceID;
+    NSNumber * _isIdentity;
+    NSNumber * _isRoot;
 }
 
 @property (nonatomic, retain) NSData *certificatePersistentID;
@@ -17,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)certificatePersistentID;
+- (id)certificateSubject;
 - (struct __SecCertificate { }*)copyCertificate;
 - (struct __SecIdentity { }*)copyIdentityFromKeychain;
 - (id)description;
@@ -27,6 +33,7 @@
 - (bool)isIdentity;
 - (bool)isRoot;
 - (bool)isSigned;
+- (id)issuer;
 - (void)setCertificatePersistentID:(id)arg1;
 - (void)setInstalledOnDeviceID:(id)arg1;
 - (id)stubDictionary;

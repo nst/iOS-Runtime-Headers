@@ -360,7 +360,7 @@
 - (void)sendDeleteCommand:(id)arg1 forChatGUID:(id)arg2;
 - (void)sendFileTransfer:(id)arg1 toPerson:(id)arg2;
 - (void)sendLocationSharingInfo:(id)arg1 toID:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(bool)arg3;
+- (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(bool)arg3 withCompletion:(id /* block */)arg4;
 - (void)sendMessage:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3;
 - (void)sendMessage:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
 - (void)sendMessage:(id)arg1 toChatID:(id)arg2 identifier:(id)arg3 style:(unsigned char)arg4;

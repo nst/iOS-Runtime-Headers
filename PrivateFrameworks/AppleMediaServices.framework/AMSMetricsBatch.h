@@ -4,22 +4,26 @@
 
 @interface AMSMetricsBatch : NSObject {
     ACAccount * _account;
+    NSArray * _blacklistedEvents;
     NSArray * _eventDictionaries;
     NSArray * _events;
     NSURL * _reportURL;
 }
 
 @property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) NSArray *blacklistedEvents;
 @property (nonatomic, retain) NSArray *eventDictionaries;
 @property (nonatomic, retain) NSArray *events;
 @property (nonatomic, retain) NSURL *reportURL;
 
 - (void).cxx_destruct;
 - (id)account;
+- (id)blacklistedEvents;
 - (id)eventDictionaries;
 - (id)events;
 - (id)reportURL;
 - (void)setAccount:(id)arg1;
+- (void)setBlacklistedEvents:(id)arg1;
 - (void)setEventDictionaries:(id)arg1;
 - (void)setEvents:(id)arg1;
 - (void)setReportURL:(id)arg1;

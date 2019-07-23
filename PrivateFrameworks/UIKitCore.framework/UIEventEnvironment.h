@@ -18,6 +18,7 @@
     _UIGameControllerEvent * _gameControllerEvent;
     bool  _hasSeenAnyPencilEvents;
     bool  _isSystemApplication;
+    UIPencilEvent * _pencilEvent;
     UIPhysicalKeyboardEvent * _physicalKeyboardEvent;
     UIPressesEvent * _pressesEvent;
     NSMutableDictionary * _pressesMap;

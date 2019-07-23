@@ -41,6 +41,7 @@
 - (id)groupID;
 - (bool)hasBatteryLevel;
 - (id)initWithAVOutputDevice:(id)arg1 sourceInfo:(id)arg2;
+- (bool)isAddedToHomeKit;
 - (bool)isAirPlayReceiverSessionActive;
 - (bool)isDeviceGroupable;
 - (bool)isGroupLeader;
@@ -66,6 +67,7 @@
 - (id)sourceInfo;
 - (bool)supportsBufferedAirPlay;
 - (bool)supportsExternalScreen;
+- (bool)supportsRapport;
 - (id)uid;
 - (float)volume;
 

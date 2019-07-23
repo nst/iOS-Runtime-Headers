@@ -44,7 +44,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsMultipleColumns;
 @property (nonatomic, readonly) bool textIsLinked;
-@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, readonly) int verticalAlignment;
 
 + (bool)needsObjectUUID;
@@ -72,7 +71,7 @@
 - (bool)isSelectable;
 - (bool)isThemeContent;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct NoteArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)objectUUIDPath;
 - (id)owningAttachment;
@@ -81,7 +80,7 @@
 - (bool)preventsChangeTracking;
 - (bool)preventsComments;
 - (Class)repClass;
-- (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setContainedStorage:(id)arg1;
 - (void)setFrameForPrinting:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -94,7 +93,7 @@
 - (bool)shrinkTextForPrinting;
 - (bool)supportsMultipleColumns;
 - (bool)textIsLinked;
-- (bool)textIsVertical;
+- (bool)textIsVerticalAtCharIndex:(unsigned long long)arg1;
 - (int)verticalAlignment;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

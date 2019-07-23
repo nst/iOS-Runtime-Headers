@@ -15,6 +15,7 @@
     NSDictionary * _clientAnalyticsContext;
     double  _expectedActivationEventTime;
     bool  _fetchSmartSiriVolume;
+    bool  _hasPlayedStartAlert;
     unsigned long long  _homeButtonDownEventMachAbsoluteTime;
     double  _homeButtonDownEventTime;
     NSNumber * _homeButtonUpFromBeep;
@@ -33,6 +34,7 @@
     NSDictionary * _startContext;
     NSDictionary * _stopContext;
     bool  _suppressStopAlert;
+    struct NSUUID { Class x1; } * _turnIdentifier;
     bool  _useAutomaticEndpointing;
     bool  _useBorealisBuffer;
     bool  _usePrelisteningMode;
@@ -53,6 +55,7 @@
 @property (nonatomic, copy) NSDictionary *clientAnalyticsContext;
 @property (nonatomic) double expectedActivationEventTime;
 @property (nonatomic) bool fetchSmartSiriVolume;
+@property (nonatomic) bool hasPlayedStartAlert;
 @property (nonatomic) unsigned long long homeButtonDownEventMachAbsoluteTime;
 @property (nonatomic) double homeButtonDownEventTime;
 @property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
@@ -71,6 +74,7 @@
 @property (nonatomic, copy) NSDictionary *startContext;
 @property (nonatomic, copy) NSDictionary *stopContext;
 @property (nonatomic) bool suppressStopAlert;
+@property (nonatomic, copy) NSUUID *turnIdentifier;
 @property (nonatomic) bool useAutomaticEndpointing;
 @property (nonatomic) bool useBorealisBuffer;
 @property (nonatomic) bool usePrelisteningMode;
@@ -96,6 +100,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (double)expectedActivationEventTime;
 - (bool)fetchSmartSiriVolume;
+- (bool)hasPlayedStartAlert;
 - (unsigned long long)homeButtonDownEventMachAbsoluteTime;
 - (double)homeButtonDownEventTime;
 - (id)homeButtonUpFromBeep;
@@ -126,6 +131,7 @@
 - (void)setClientAnalyticsContext:(id)arg1;
 - (void)setExpectedActivationEventTime:(double)arg1;
 - (void)setFetchSmartSiriVolume:(bool)arg1;
+- (void)setHasPlayedStartAlert:(bool)arg1;
 - (void)setHomeButtonDownEventMachAbsoluteTime:(unsigned long long)arg1;
 - (void)setHomeButtonDownEventTime:(double)arg1;
 - (void)setHomeButtonUpFromBeep:(id)arg1;
@@ -144,6 +150,7 @@
 - (void)setStartContext:(id)arg1;
 - (void)setStopContext:(id)arg1;
 - (void)setSuppressStopAlert:(bool)arg1;
+- (void)setTurnIdentifier:(struct NSUUID { Class x1; }*)arg1;
 - (void)setUseAutomaticEndpointing:(bool)arg1;
 - (void)setUseBorealisBuffer:(bool)arg1;
 - (void)setUsePrelisteningMode:(bool)arg1;
@@ -154,6 +161,7 @@
 - (id)startContext;
 - (id)stopContext;
 - (bool)suppressStopAlert;
+- (struct NSUUID { Class x1; }*)turnIdentifier;
 - (bool)useAutomaticEndpointing;
 - (bool)useBorealisBuffer;
 - (bool)usePrelisteningMode;

@@ -8,18 +8,20 @@
     long long  _feedSortMethod;
     long long  _feedType;
     <FCTagProviding> * _masterTag;
+    <FCPaidAccessCheckerType> * _paidAccessChecker;
     <FCTagProviding> * _tag;
 }
 
 @property (nonatomic, readonly, copy) <FCTagProviding> *masterTag;
+@property (nonatomic, retain) <FCPaidAccessCheckerType> *paidAccessChecker;
 @property (nonatomic, copy) <FCTagProviding> *tag;
 
 - (void).cxx_destruct;
+- (id)backingChannel;
 - (id)backingChannelID;
 - (id)backingSectionID;
 - (id)backingTag;
 - (id)backingTopicID;
-- (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (long long)feedFilterOptions;
 - (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (long long)feedPersonalizationConfigurationSet;
@@ -33,16 +35,20 @@
 - (id)iAdKeywords;
 - (id)iAdPrimaryAudience;
 - (id)iAdSectionID;
-- (id)initWithContext:(id)arg1 tag:(id)arg2;
-- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4 personalizationConfigurationSet:(long long)arg5;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 paidAccessChecker:(id)arg3;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4 personalizationConfigurationSet:(long long)arg5 paidAccessChecker:(id)arg6;
 - (id)initWithIdentifier:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isMutedWithSubscriptionController:(id)arg1;
 - (bool)isSubscribable;
 - (bool)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)languagesWithSubscriptionController:(id)arg1;
 - (id)masterTag;
 - (id)name;
+- (id)paidAccessChecker;
+- (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setFeedType:(long long)arg1;
+- (void)setPaidAccessChecker:(id)arg1;
 - (void)setTag:(id)arg1;
 - (bool)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(long long)arg2 error:(id*)arg3;
 - (id)tag;

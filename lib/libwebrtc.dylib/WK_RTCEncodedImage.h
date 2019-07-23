@@ -16,6 +16,7 @@
     long long  _ntpTimeMs;
     NSNumber * _qp;
     long long  _rotation;
+    int  _spatialIndex;
     unsigned int  _timeStamp;
 }
 
@@ -32,6 +33,7 @@
 @property (nonatomic) long long ntpTimeMs;
 @property (nonatomic, retain) NSNumber *qp;
 @property (nonatomic) long long rotation;
+@property (nonatomic) int spatialIndex;
 @property (nonatomic) unsigned int timeStamp;
 
 - (void).cxx_destruct;
@@ -45,8 +47,8 @@
 - (int)encodedWidth;
 - (unsigned char)flags;
 - (unsigned long long)frameType;
-- (id)initWithNativeEncodedImage:(struct EncodedImage { unsigned int x1; unsigned int x2; unsigned int x3; long long x4; long long x5; int x6; char *x7; unsigned long long x8; unsigned long long x9; int x10; unsigned char x11; bool x12; int x13; struct PlayoutDelay { int x_14_1_1; int x_14_1_2; } x14; struct Timing { unsigned char x_15_1_1; long long x_15_1_2; long long x_15_1_3; long long x_15_1_4; long long x_15_1_5; long long x_15_1_6; long long x_15_1_7; long long x_15_1_8; long long x_15_1_9; } x15; })arg1;
-- (struct EncodedImage { unsigned int x1; unsigned int x2; unsigned int x3; long long x4; long long x5; int x6; char *x7; unsigned long long x8; unsigned long long x9; int x10; unsigned char x11; bool x12; int x13; struct PlayoutDelay { int x_14_1_1; int x_14_1_2; } x14; struct Timing { unsigned char x_15_1_1; long long x_15_1_2; long long x_15_1_3; long long x_15_1_4; long long x_15_1_5; long long x_15_1_6; long long x_15_1_7; long long x_15_1_8; long long x_15_1_9; } x15; })nativeEncodedImage;
+- (id)initWithNativeEncodedImage:(struct EncodedImage { unsigned int x1; unsigned int x2; long long x3; long long x4; int x5; char *x6; unsigned long long x7; unsigned long long x8; int x9; unsigned char x10; bool x11; int x12; struct PlayoutDelay { int x_13_1_1; int x_13_1_2; } x13; struct Timing { unsigned char x_14_1_1; long long x_14_1_2; long long x_14_1_3; long long x_14_1_4; long long x_14_1_5; long long x_14_1_6; long long x_14_1_7; long long x_14_1_8; long long x_14_1_9; } x14; unsigned int x15; struct optional<int> { bool x_16_1_1; union { struct dummy_type { struct empty_struct { } x_1_3_1[4]; } x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct optional<webrtc::ColorSpace> { bool x_17_1_1; union { struct dummy_type { struct empty_struct { } x_1_3_1[60]; } x_2_2_1; struct ColorSpace { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; int x_2_3_4; struct optional<webrtc::HdrMetadata> { bool x_5_4_1; union { struct dummy_type { struct empty_struct { } x_1_6_1[48]; } x_2_5_1; struct HdrMetadata { struct HdrMasteringMetadata { struct Chromaticity { float x_1_8_1; float x_1_8_2; } x_1_7_1; struct Chromaticity { float x_2_8_1; float x_2_8_2; } x_1_7_2; struct Chromaticity { float x_3_8_1; float x_3_8_2; } x_1_7_3; struct Chromaticity { float x_4_8_1; float x_4_8_2; } x_1_7_4; float x_1_7_5; float x_1_7_6; } x_2_6_1; unsigned int x_2_6_2; unsigned int x_2_6_3; } x_2_5_2; } x_5_4_2; } x_2_3_5; } x_2_2_2; } x_17_1_2; } x17; })arg1;
+- (struct EncodedImage { unsigned int x1; unsigned int x2; long long x3; long long x4; int x5; char *x6; unsigned long long x7; unsigned long long x8; int x9; unsigned char x10; bool x11; int x12; struct PlayoutDelay { int x_13_1_1; int x_13_1_2; } x13; struct Timing { unsigned char x_14_1_1; long long x_14_1_2; long long x_14_1_3; long long x_14_1_4; long long x_14_1_5; long long x_14_1_6; long long x_14_1_7; long long x_14_1_8; long long x_14_1_9; } x14; unsigned int x15; struct optional<int> { bool x_16_1_1; union { struct dummy_type { struct empty_struct { } x_1_3_1[4]; } x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct optional<webrtc::ColorSpace> { bool x_17_1_1; union { struct dummy_type { struct empty_struct { } x_1_3_1[60]; } x_2_2_1; struct ColorSpace { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; int x_2_3_4; struct optional<webrtc::HdrMetadata> { bool x_5_4_1; union { struct dummy_type { struct empty_struct { } x_1_6_1[48]; } x_2_5_1; struct HdrMetadata { struct HdrMasteringMetadata { struct Chromaticity { float x_1_8_1; float x_1_8_2; } x_1_7_1; struct Chromaticity { float x_2_8_1; float x_2_8_2; } x_1_7_2; struct Chromaticity { float x_3_8_1; float x_3_8_2; } x_1_7_3; struct Chromaticity { float x_4_8_1; float x_4_8_2; } x_1_7_4; float x_1_7_5; float x_1_7_6; } x_2_6_1; unsigned int x_2_6_2; unsigned int x_2_6_3; } x_2_5_2; } x_5_4_2; } x_2_3_5; } x_2_2_2; } x_17_1_2; } x17; })nativeEncodedImage;
 - (long long)ntpTimeMs;
 - (id)qp;
 - (long long)rotation;
@@ -63,7 +65,9 @@
 - (void)setNtpTimeMs:(long long)arg1;
 - (void)setQp:(id)arg1;
 - (void)setRotation:(long long)arg1;
+- (void)setSpatialIndex:(int)arg1;
 - (void)setTimeStamp:(unsigned int)arg1;
+- (int)spatialIndex;
 - (unsigned int)timeStamp;
 
 @end

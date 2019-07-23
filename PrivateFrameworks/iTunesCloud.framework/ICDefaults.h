@@ -3,36 +3,49 @@
  */
 
 @interface ICDefaults : NSObject {
+    bool  _bypassBagSanityChecks;
+    NSUserDefaults * _internalDefaults;
     NSUserDefaults * _userDefaults;
 }
 
+@property (nonatomic, copy) NSDate *ageVerificationExpirationDate;
 @property (nonatomic, copy) NSString *authServiceClientToken;
 @property (nonatomic, copy) NSNumber *authServiceClientTokenDSID;
 @property (nonatomic, copy) NSDate *authServiceClientTokenExpiration;
+@property (nonatomic, readonly, copy) NSNumber *authServiceClientTokenTimeToLive;
+@property (nonatomic) bool bypassBagSanityChecks;
 @property (nonatomic, copy) NSDictionary *cachedSubscriptionStatus;
 @property (nonatomic, copy) NSString *cloudMediaLibraryUID;
 @property (nonatomic, copy) NSString *defaultStoreFront;
 @property (nonatomic, readonly, copy) NSNumber *deviceClassOverride;
 @property (nonatomic, readonly, copy) NSString *deviceModelOverride;
+@property (getter=isExplicitContentAllowedForCurrentYear, nonatomic) bool explicitContentAllowedForCurrentYear;
+@property (getter=isExplicitContentAllowedForExpirationYear, nonatomic) bool explicitContentAllowedForExpirationYear;
 @property (nonatomic, readonly, copy) NSNumber *fairPlayDeviceTypeOverride;
 @property (nonatomic, readonly, copy) NSString *hardwarePlatformOverride;
 @property (nonatomic) bool ignoreExtendedCertificateValidation;
+@property (nonatomic, readonly) NSUserDefaults *internalDefaults;
 @property (nonatomic, copy) NSNumber *lastActiveAccountDSID;
+@property (nonatomic) double lastAuthenticationDialogResponseTime;
 @property (nonatomic, copy) NSDictionary *lastCookieHeadersForRevokingMusicUserTokens;
 @property (nonatomic, copy) NSDictionary *mediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates;
 @property (nonatomic, readonly, copy) NSString *productPlatformOverride;
 @property (nonatomic, readonly, copy) NSString *productVersionOverride;
 @property (nonatomic, copy) NSDictionary *pushNotificationState;
 @property (nonatomic, readonly) bool shouldForceiPhoneBehaviors;
+@property (nonatomic) bool shouldRunAgeVerification;
 
 + (id)standardDefaults;
 
 - (void).cxx_destruct;
 - (void)_setOrRemoveObject:(id)arg1 forKey:(id)arg2;
 - (bool)_shouldSpoofIPhoneRequestProperties;
+- (id)ageVerificationExpirationDate;
 - (id)authServiceClientToken;
 - (id)authServiceClientTokenDSID;
 - (id)authServiceClientTokenExpiration;
+- (id)authServiceClientTokenTimeToLive;
+- (bool)bypassBagSanityChecks;
 - (id)cachedSubscriptionStatus;
 - (id)cloudMediaLibraryUID;
 - (id)defaultStoreFront;
@@ -42,24 +55,35 @@
 - (id)hardwarePlatformOverride;
 - (bool)ignoreExtendedCertificateValidation;
 - (id)init;
+- (id)internalDefaults;
+- (bool)isExplicitContentAllowedForCurrentYear;
+- (bool)isExplicitContentAllowedForExpirationYear;
 - (id)lastActiveAccountDSID;
+- (double)lastAuthenticationDialogResponseTime;
 - (id)lastCookieHeadersForRevokingMusicUserTokens;
 - (id)mediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates;
 - (id)productPlatformOverride;
 - (id)productVersionOverride;
 - (id)pushNotificationState;
+- (void)setAgeVerificationExpirationDate:(id)arg1;
 - (void)setAuthServiceClientToken:(id)arg1;
 - (void)setAuthServiceClientTokenDSID:(id)arg1;
 - (void)setAuthServiceClientTokenExpiration:(id)arg1;
+- (void)setBypassBagSanityChecks:(bool)arg1;
 - (void)setCachedSubscriptionStatus:(id)arg1;
 - (void)setCloudMediaLibraryUID:(id)arg1;
 - (void)setDefaultStoreFront:(id)arg1;
+- (void)setExplicitContentAllowedForCurrentYear:(bool)arg1;
+- (void)setExplicitContentAllowedForExpirationYear:(bool)arg1;
 - (void)setIgnoreExtendedCertificateValidation:(bool)arg1;
 - (void)setLastActiveAccountDSID:(id)arg1;
+- (void)setLastAuthenticationDialogResponseTime:(double)arg1;
 - (void)setLastCookieHeadersForRevokingMusicUserTokens:(id)arg1;
 - (void)setMediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates:(id)arg1;
 - (void)setPushNotificationState:(id)arg1;
+- (void)setShouldRunAgeVerification:(bool)arg1;
 - (bool)shouldForceiPhoneBehaviors;
+- (bool)shouldRunAgeVerification;
 - (void)synchronize;
 
 @end

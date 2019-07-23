@@ -107,6 +107,13 @@
 
 - (void)siriCore_invokeThunk;
 
+// Image: /System/Library/PrivateFrameworks/SiriTape.framework/SiriTape
+
+- (id)st_CFScripts;
+- (bool)st_hasRequestCompleted;
+- (id)st_replaceRefIDsWithID:(id)arg1;
+- (id)st_setCFScripts:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 - (void)_siriui_applyUserInfoDictionary:(id)arg1;

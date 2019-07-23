@@ -8,7 +8,7 @@
     FCCacheCoordinatorFlushPolicy * _flushPolicy;
     <FCOperationThrottler> * _flushThrottler;
     bool  _flushingEnabled;
-    NFMutexLock * _interestLock;
+    NFUnfairLock * _interestLock;
     NSCountedSet * _interestedKeys;
     NSMutableSet * _storedKeys;
     <FCCacheCoordinatorLocking> * _underlyingLock;
@@ -18,12 +18,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FCCacheCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) FCCacheCoordinatorFlushPolicy *flushPolicy;
+@property (retain) FCCacheCoordinatorFlushPolicy *flushPolicy;
 @property (nonatomic, retain) <FCOperationThrottler> *flushThrottler;
 @property (getter=isFlushingEnabled) bool flushingEnabled;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) NFMutexLock *interestLock;
+@property (nonatomic, retain) NFUnfairLock *interestLock;
 @property (nonatomic, retain) NSCountedSet *interestedKeys;
+@property (nonatomic, readonly) NSArray *keysWithNonZeroInterest;
+@property (nonatomic, readonly) NSArray *keysWithZeroInterest;
 @property (nonatomic, retain) NSMutableSet *storedKeys;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <FCCacheCoordinatorLocking> *underlyingLock;
@@ -50,6 +52,8 @@
 - (id)interestLock;
 - (id)interestedKeys;
 - (bool)isFlushingEnabled;
+- (id)keysWithNonZeroInterest;
+- (id)keysWithZeroInterest;
 - (void)operationThrottlerPerformOperation:(id)arg1;
 - (void)performCacheRead:(id /* block */)arg1;
 - (void)performCacheWrite:(id /* block */)arg1;

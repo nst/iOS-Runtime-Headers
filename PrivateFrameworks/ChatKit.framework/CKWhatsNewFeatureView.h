@@ -16,10 +16,13 @@
 - (id)descriptionLabel;
 - (id)iconView;
 - (double)iconViewLeadingConstant;
+- (double)iconViewLeadingConstantMic;
 - (double)iconViewMaxSize;
+- (id)initWithIcon:(id)arg1 tintColor:(id)arg2 title:(id)arg3 description:(id)arg4;
 - (id)initWithIcon:(id)arg1 title:(id)arg2 description:(id)arg3;
 - (id)titleLabel;
 - (double)titleLabelLeadingConstant;
+- (double)titleLabelLeadingConstantMic;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFonts;
 - (id)viewForFirstBaselineLayout;

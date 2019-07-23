@@ -6,6 +6,7 @@
 @required
 
 - (double)AXTimeout;
+- (XCAccessibilityElement *)accessibilityElementForElementAtPoint:(struct CGPoint { double x1; double x2; })arg1 error:(id*)arg2;
 - (id)addObserverForAXNotification:(void *)arg1 handler:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, XCAccessibilityElement *, NSDictionary *, void*
 - (bool)cachedAccessibilityLoadedValueForPID:(int)arg1;
 - (bool)enableFauxCollectionViewCells:(id*)arg1;
@@ -20,6 +21,7 @@
 - (void)notifyWhenViewControllerViewDidDisappearReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 - (id)parameterizedAttribute:(NSString *)arg1 forElement:(XCAccessibilityElement *)arg2 parameter:(id)arg3 error:(id*)arg4;
 - (bool)performAction:(int)arg1 onElement:(XCAccessibilityElement *)arg2 value:(id)arg3 error:(id*)arg4;
+- (void)performWhenMenuOpens:(void *)arg1 block:(void *)arg2; // needs 2 arg types, found 6: XCAccessibilityElement *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)registerForAXNotificationsForApplicationWithPID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)removeObserver:(id)arg1 forAXNotification:(NSString *)arg2;
 - (void)setAXTimeout:(double)arg1;

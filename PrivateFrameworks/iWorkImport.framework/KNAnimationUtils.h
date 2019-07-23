@@ -5,7 +5,6 @@
 @interface KNAnimationUtils : NSObject
 
 + (id)CAAccelerationFromSFXActionAcceleration:(unsigned long long)arg1;
-+ (bool)areGLActionBuildsEnabled;
 + (id)customAttributesArrayWithDeliveryOptions:(id)arg1;
 + (id)customAttributesArrayWithJiggleIntensityOptions:(id)arg1;
 + (id)customAttributesArrayWithTextDeliveryOptions:(id)arg1;
@@ -15,6 +14,7 @@
 + (void)initialize;
 + (bool)isAnimationTestingEnabled;
 + (bool)isCustomEffectTimingCurveEditingEnabled;
++ (bool)isDiscreteGPUNeededInShow:(id)arg1;
 + (bool)isDisplayLoggingEnabled;
 + (bool)isFPSGraphEnabled;
 + (bool)isFPSLoggingEnabled;

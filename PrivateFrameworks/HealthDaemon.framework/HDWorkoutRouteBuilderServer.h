@@ -12,7 +12,6 @@
 @property (nonatomic, retain) HKWorkoutRoute *route;
 @property (readonly) Class superclass;
 
-+ (id)serverEntitlements;
 + (id)taskIdentifier;
 
 - (void).cxx_destruct;

@@ -14,10 +14,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) FCAsyncSerialQueue *requestSerialQueue;
+@property (nonatomic, readonly) FCAsyncSerialQueue *requestSerialQueue;
 @property (nonatomic, retain) NSURLSession *session;
 @property (readonly) Class superclass;
 
++ (id)_CAPIBaseURLStringFromConfiguration:(id)arg1;
 + (id)_errorByUpdatingRetryStatusForError:(id)arg1;
 + (id)_errorForStatus:(long long)arg1 url:(id)arg2;
 
@@ -32,7 +33,6 @@
 - (id)session;
 - (void)setBaseURL:(id)arg1;
 - (void)setConfigurationManager:(id)arg1;
-- (void)setRequestSerialQueue:(id)arg1;
 - (void)setSession:(id)arg1;
 
 @end

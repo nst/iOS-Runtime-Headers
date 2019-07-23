@@ -24,8 +24,6 @@
 @property (nonatomic, readonly) UIStatusBar *statusBar;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint { double x1; double x2; })arg2;
@@ -42,11 +40,8 @@
 - (id)_statusBarItemViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_statusBarWindowForAccessibilityHUD;
 - (bool)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(double*)arg4 allowSwap:(bool)arg5 swappedItem:(id*)arg6;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)animateUnlock;
+- (void)dealloc;
 - (void)didMoveToWindow;
 - (id)foregroundStyle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForAllItemsInRegion:(int)arg1;

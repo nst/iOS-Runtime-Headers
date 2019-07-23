@@ -21,12 +21,14 @@
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;
 + (bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 maxEncodedBytesPerMessage:(long long)arg4 profile:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
 + (id)insertEarnedInstances:(id)arg1 provenance:(long long)arg2 profile:(id)arg3 databaseContext:(id)arg4 error:(id*)arg5;
++ (id)journalEntryAppliedObserver;
 + (long long)nextSyncAnchorWithSession:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 profile:(id)arg4 error:(id*)arg5;
 + (id)propertyForSyncProvenance;
 + (long long)protectionClass;
 + (long long)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (bool)removeAllEarnedInstancesWithProfile:(id)arg1 error:(id*)arg2;
 + (bool)removeEarnedInstances:(id)arg1 profile:(id)arg2 error:(id*)arg3;
++ (void)setJournalEntryAppliedObserver:(id)arg1;
 + (void)setSyncedEarnedInstancesObserver:(id)arg1;
 + (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (bool)supportsSyncStore:(id)arg1;

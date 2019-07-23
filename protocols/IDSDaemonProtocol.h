@@ -30,6 +30,7 @@
 - (void)cancelInvitation:(NSString *)arg1 withRemoteEndedReasonOverride:(unsigned int)arg2;
 - (void)cancelItemWithIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)cleanupSession:(NSString *)arg1;
+- (void)cleanupSessionWithInstanceID:(NSString *)arg1;
 - (void)closeSocketWithOptions:(NSDictionary *)arg1;
 - (void)connectPairedDevice:(NSString *)arg1;
 - (void)connectPairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;

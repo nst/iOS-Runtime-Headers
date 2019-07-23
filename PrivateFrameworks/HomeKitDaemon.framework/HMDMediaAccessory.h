@@ -14,7 +14,6 @@
 @property (readonly) HMDMediaProfile *mediaProfile;
 @property (readonly) Class superclass;
 
-+ (id)computedNameForCategoryType:(id)arg1 inRoom:(id)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

@@ -23,5 +23,8 @@
 - (void)setAllowed:(bool)arg1 completionBlock:(id /* block */)arg2;
 - (void)setEnabled:(bool)arg1 withAuthToken:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setEnabled:(bool)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)tokenUpdateDidFinishWithLogKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)tokenUpdateShouldStartWithLogKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)tokenUpdateStateWithCompletionBlock:(id /* block */)arg1;
 
 @end

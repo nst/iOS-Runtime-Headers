@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXDocumentStyle : SXJSONObject
+@interface SXDocumentStyle : SXJSONObject <SXDocumentStyle>
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) SXFill *fill;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) UIColor *topBackgroundColor;
 @property (nonatomic, readonly) SXJSONLinearGradient *topBackgroundGradient;
 

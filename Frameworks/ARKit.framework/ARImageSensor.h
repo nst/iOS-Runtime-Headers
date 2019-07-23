@@ -51,6 +51,7 @@
 - (void)_configureCameraFocusForDevice:(id)arg1;
 - (void)_configureCameraWhiteBalanceForDevice:(id)arg1;
 - (void)_configureFrameRateForDevice:(id)arg1;
+- (void)_configureImageControlModeForDevice:(id)arg1;
 - (void)_configureVisionDataOutputForSession:(id)arg1;
 - (void)_dispatchImageData:(id)arg1;
 - (id)_setActiveFormat;

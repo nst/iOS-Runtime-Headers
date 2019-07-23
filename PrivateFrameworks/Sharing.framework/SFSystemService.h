@@ -16,6 +16,7 @@
 - (void)_handleProfileInstallForSession:(id)arg1 request:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)_handleProfileRemoveForSession:(id)arg1 request:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)_handleProfilesGetForSession:(id)arg1 request:(id)arg2 responseHandler:(id /* block */)arg3;
+- (void)_handleRebootSystemForSession:(id)arg1 request:(id)arg2 responseHandler:(id /* block */)arg3;
 - (void)_handleSessionEnded:(id)arg1;
 - (void)_handleSessionStarted:(id)arg1;
 - (void)_sfServiceStart;

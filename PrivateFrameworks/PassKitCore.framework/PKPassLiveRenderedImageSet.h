@@ -11,6 +11,7 @@
     PKImage * _metalnessMaterialPropertyImage;
     PKImage * _multiplyMaterialPropertyImage;
     PKImage * _normalMaterialPropertyImage;
+    PKImage * _overlayMaterialPropertyImage;
     PKImage * _reflectiveMaterialPropertyImage;
     PKImage * _roughnessMaterialPropertyImage;
     PKImage * _selfIlluminationMaterialPropertyImage;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) PKImage *metalnessMaterialPropertyImage;
 @property (nonatomic, retain) PKImage *multiplyMaterialPropertyImage;
 @property (nonatomic, retain) PKImage *normalMaterialPropertyImage;
+@property (nonatomic, retain) PKImage *overlayMaterialPropertyImage;
 @property (nonatomic, retain) PKImage *reflectiveMaterialPropertyImage;
 @property (nonatomic, retain) PKImage *roughnessMaterialPropertyImage;
 @property (nonatomic, retain) PKImage *selfIlluminationMaterialPropertyImage;
@@ -52,6 +54,7 @@
 - (id)metalnessMaterialPropertyImage;
 - (id)multiplyMaterialPropertyImage;
 - (id)normalMaterialPropertyImage;
+- (id)overlayMaterialPropertyImage;
 - (void)preheatImages;
 - (id)reflectiveMaterialPropertyImage;
 - (id)roughnessMaterialPropertyImage;
@@ -64,6 +67,7 @@
 - (void)setMetalnessMaterialPropertyImage:(id)arg1;
 - (void)setMultiplyMaterialPropertyImage:(id)arg1;
 - (void)setNormalMaterialPropertyImage:(id)arg1;
+- (void)setOverlayMaterialPropertyImage:(id)arg1;
 - (void)setReflectiveMaterialPropertyImage:(id)arg1;
 - (void)setRoughnessMaterialPropertyImage:(id)arg1;
 - (void)setSelfIlluminationMaterialPropertyImage:(id)arg1;

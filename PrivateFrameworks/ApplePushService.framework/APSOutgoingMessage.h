@@ -28,7 +28,6 @@
 - (unsigned long long)payloadLength;
 - (long long)priority;
 - (id)rawTimeoutTime;
-- (long long)retries;
 - (long long)sendInterface;
 - (id)sendTimeoutTime;
 - (id)senderTokenName;
@@ -41,7 +40,6 @@
 - (void)setPayloadFormat:(unsigned long long)arg1;
 - (void)setPayloadLength:(unsigned long long)arg1;
 - (void)setPriority:(long long)arg1;
-- (void)setRetries:(long long)arg1;
 - (void)setSendInterface:(long long)arg1;
 - (void)setSenderTokenName:(id)arg1;
 - (void)setSent:(bool)arg1;

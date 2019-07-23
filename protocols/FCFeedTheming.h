@@ -20,6 +20,7 @@
 - (FCTextInfo *)headlineBylineTextInfo;
 - (FCTextInfo *)headlineExcerptTextInfo;
 - (FCTextInfo *)headlineTitleTextInfo;
+- (bool)isDark;
 - (bool)isWhite;
 - (NSArray *)loadableFonts;
 - (FCAssetHandle *)logoImageAssetHandle;

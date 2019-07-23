@@ -8,6 +8,7 @@
     NSMutableArray * _destinationsToQuery;
     bool  _isDead;
     NSString * _listenerID;
+    id  _negativeTTLCache;
     NSTimer * _nextQueryTimer;
     int  _numberOfQueriesDone;
     NSObject<OS_dispatch_queue> * _queue;

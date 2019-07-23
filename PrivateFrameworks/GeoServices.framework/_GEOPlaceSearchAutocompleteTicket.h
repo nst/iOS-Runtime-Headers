@@ -24,6 +24,7 @@
 - (bool)matchesFragment:(id)arg1;
 - (double)retainSearchTime;
 - (bool)shouldDisplayNoResults;
+- (id)sortPriorityMapping;
 - (void)submitWithAutoCompletionHandler:(id /* block */)arg1 auditToken:(id)arg2 networkActivity:(id /* block */)arg3;
 - (void)submitWithAutoCompletionHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 

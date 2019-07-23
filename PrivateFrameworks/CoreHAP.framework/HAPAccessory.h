@@ -3,6 +3,7 @@
  */
 
 @interface HAPAccessory : HMFObject <HMFMerging> {
+    HMFMACAddress * _bluetoothClassicMacAddress;
     <HAPAccessoryDelegate> * _delegate;
     NSString * _firmwareVersion;
     NSString * _identifier;
@@ -22,6 +23,7 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (copy) HMFMACAddress *bluetoothClassicMacAddress;
 @property (nonatomic, readonly, copy) NSNumber *category;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HAPAccessoryDelegate> *delegate;
@@ -57,6 +59,7 @@
 - (bool)_updateAndValidateServices;
 - (bool)_updateForAccessoryInformationService;
 - (bool)_updateService:(id)arg1;
+- (id)bluetoothClassicMacAddress;
 - (id)category;
 - (id)characteristicOfType:(id)arg1 serviceType:(id)arg2;
 - (id)characteristicsOfType:(id)arg1;
@@ -86,6 +89,7 @@
 - (id)serverIdentifier;
 - (id)services;
 - (id)servicesOfType:(id)arg1;
+- (void)setBluetoothClassicMacAddress:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setIdentifier:(id)arg1;

@@ -29,6 +29,7 @@
 - (id)obj0;
 - (id)obj1;
 - (id)objectAtIndex:(long long)arg1;
+- (id)objectAtIndexedSubscript:(long long)arg1;
 - (id)objectEnumerator;
 - (void)setArrayStore:(id)arg1;
 - (void)setObj0:(id)arg1;

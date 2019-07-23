@@ -6,11 +6,15 @@
     NSArray * _UTITypes;
     NSArray * _attachments;
     NSString * _body;
+    NSArray * _cloudPhotoIDs;
+    NSArray * _contentText;
+    NSArray * _contentURLs;
     unsigned long long  _currentAttachedAudioCount;
     unsigned long long  _currentAttachedImageCount;
     unsigned long long  _currentAttachedVideoCount;
     MSMessage * _message;
     <MFMessageComposeViewControllerDelegate> * _messageComposeDelegate;
+    NSArray * _photoIDs;
     NSArray * _recipients;
     NSString * _subject;
 }
@@ -60,6 +64,9 @@
 - (bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)body;
 - (bool)canAddAttachmentURL:(id)arg1;
+- (id)cloudPhotoIDs;
+- (id)contentText;
+- (id)contentURLs;
 - (unsigned long long)currentAttachedAudioCount;
 - (unsigned long long)currentAttachedImageCount;
 - (unsigned long long)currentAttachedVideoCount;
@@ -69,14 +76,19 @@
 - (id)message;
 - (id)messageComposeDelegate;
 - (id)mutableAttachmentURLs;
+- (id)photoIDs;
 - (id)recipients;
 - (void)setBody:(id)arg1;
+- (void)setCloudPhotoIDs:(id)arg1;
+- (void)setContentText:(id)arg1;
+- (void)setContentURLs:(id)arg1;
 - (void)setCurrentAttachedAudioCount:(unsigned long long)arg1;
 - (void)setCurrentAttachedImageCount:(unsigned long long)arg1;
 - (void)setCurrentAttachedVideoCount:(unsigned long long)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageComposeDelegate:(id)arg1;
 - (void)setModalPresentationStyle:(long long)arg1;
+- (void)setPhotoIDs:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setUTITypes:(id)arg1;

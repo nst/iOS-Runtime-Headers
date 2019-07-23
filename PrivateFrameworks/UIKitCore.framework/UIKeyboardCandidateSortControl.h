@@ -20,15 +20,10 @@
 @property (readonly) bool shouldShowTitles;
 @property (nonatomic, retain) UIKBThemedView *themedView;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (bool)_preventsAppearanceProxyCustomization;
 
 - (void).cxx_destruct;
 - (void)_setRenderConfig:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addSegmentedControlWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })additionalInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 candidatesVisualStyle:(int)arg2 legacyAlertAppearance:(bool)arg3;

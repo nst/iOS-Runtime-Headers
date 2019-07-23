@@ -33,5 +33,6 @@
 - (void)setDate:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)setNumber:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)setValuesWithDictionary:(id)arg1 completion:(id /* block */)arg2;
+- (void)stringForKey:(id)arg1 completion:(id /* block */)arg2;
 
 @end

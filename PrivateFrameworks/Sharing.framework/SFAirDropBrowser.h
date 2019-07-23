@@ -21,6 +21,7 @@
 - (id)batchDelegate;
 - (void)dealloc;
 - (id)delegate;
+- (void)getChangedIndexesForClientPeopleList:(id)arg1 peopleList:(unsigned long long)arg2 withCompletion:(id /* block */)arg3;
 - (void)getChangedIndexesForClientPeopleList:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)handleBrowserCallBack;
 - (id)init;

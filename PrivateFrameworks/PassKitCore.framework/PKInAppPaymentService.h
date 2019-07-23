@@ -12,6 +12,10 @@
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)cardDataForMerchantIdentifier:(id)arg1 countryCode:(id)arg2 completion:(id /* block */)arg3;
+- (long long)cardsAvailableForAMPWithCountryCode:(id)arg1;
+- (void)cardsAvailableForAMPWithCountryCode:(id)arg1 completion:(id /* block */)arg2;
+- (void)enrollPaymentPassWithUniqueIdentifier:(id)arg1 merchantSession:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (void)merchantStatusCheck:(id)arg1 merchantDomain:(id)arg2 sourceApplicationSecondaryIdentifier:(id)arg3 completion:(id /* block */)arg4;
 - (void)paymentHardwareStatusWithCompletion:(id /* block */)arg1;

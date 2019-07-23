@@ -327,7 +327,9 @@
 - (long long)migration_RebuildIdentityTables;
 - (long long)migration_RecreateFTSTableWithITS;
 - (long long)migration_RemoveEntityReferencesWithoutBundleIdentifier;
+- (long long)migration_deleteEmergencyExtractions;
 - (long long)migration_deleteInteractions;
+- (long long)migration_deleteSerializedContactsForEmergencyExtractions;
 - (long long)migration_rebuildFTSWithDetailEntityIDDocIDs;
 - (long long)migration_reimport;
 - (long long)migration_separateMessageEntities;

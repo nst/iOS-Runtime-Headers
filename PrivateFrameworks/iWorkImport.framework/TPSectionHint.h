@@ -25,13 +25,13 @@
 - (bool)hasPageHintOfKind:(long long)arg1 atPageIndex:(unsigned long long)arg2;
 - (bool)hasPageHintOfKind:(long long)arg1 beforePageIndex:(unsigned long long)arg2;
 - (id)init;
-- (id)initWithArchive:(const struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct SectionHintArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TP::PageHintArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; unsigned int x6; }*)arg1 unarchiver:(id)arg2;
 - (unsigned long long)lastPageIndex;
 - (unsigned long long)pageCount;
 - (unsigned long long)pageCountWithoutFillerPage;
 - (id)pageHintForPageIndex:(unsigned long long)arg1;
 - (id)pageHints;
-- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id /* block */)arg4;
+- (void)saveToArchive:(struct SectionHintArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TP::PageHintArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; unsigned int x6; }*)arg1 archiver:(id)arg2 context:(id)arg3 shouldArchiveHintBlock:(id /* block */)arg4;
 - (void)setDocumentStartPageIndex:(unsigned long long)arg1;
 - (void)setPageHints:(id)arg1;
 - (void)trimPageHintsFromPageIndex:(unsigned long long)arg1;

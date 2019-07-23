@@ -15,6 +15,7 @@
     NSObject * _resultAssetsHoldToken;
     NSDictionary * _resultTodayItemsBySectionDescriptor;
     NSDictionary * _slotAllocationByDynamicSlotItemID;
+    <FCTodayPrivateData> * _todayData;
     id /* block */  _todayItemCompletion;
 }
 
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSObject *resultAssetsHoldToken;
 @property (nonatomic, retain) NSDictionary *resultTodayItemsBySectionDescriptor;
 @property (nonatomic, copy) NSDictionary *slotAllocationByDynamicSlotItemID;
+@property (nonatomic, retain) <FCTodayPrivateData> *todayData;
 @property (nonatomic, copy) id /* block */ todayItemCompletion;
 
 - (void).cxx_destruct;
@@ -61,8 +63,10 @@
 - (void)setResultAssetsHoldToken:(id)arg1;
 - (void)setResultTodayItemsBySectionDescriptor:(id)arg1;
 - (void)setSlotAllocationByDynamicSlotItemID:(id)arg1;
+- (void)setTodayData:(id)arg1;
 - (void)setTodayItemCompletion:(id /* block */)arg1;
 - (id)slotAllocationByDynamicSlotItemID;
+- (id)todayData;
 - (id /* block */)todayItemCompletion;
 - (bool)validateOperation;
 

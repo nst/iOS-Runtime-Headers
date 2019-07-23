@@ -6,6 +6,7 @@
     GEOABSecondPartyPlaceRequestClientMetaData * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
     NSMutableArray * _businessChatPreflightIdentifiers;
+    int  _clientRevision;
     unsigned int  _dayOfWeek;
     NSString * _debugApiKey;
     NSString * _deviceCountryCode;
@@ -16,6 +17,7 @@
     NSString * _deviceSpokenLanguage;
     bool  _enablePreflightVenues;
     struct { 
+        unsigned int clientRevision : 1; 
         unsigned int dayOfWeek : 1; 
         unsigned int hourOfDay : 1; 
         unsigned int requiredVersion : 1; 
@@ -43,6 +45,7 @@
 @property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic, retain) NSMutableArray *businessChatPreflightIdentifiers;
+@property (nonatomic) int clientRevision;
 @property (nonatomic) unsigned int dayOfWeek;
 @property (nonatomic, retain) NSString *debugApiKey;
 @property (nonatomic, retain) NSString *deviceCountryCode;
@@ -54,6 +57,7 @@
 @property (nonatomic) bool enablePreflightVenues;
 @property (nonatomic, readonly) bool hasAbClientMetadata;
 @property (nonatomic, readonly) bool hasAdditionalEnabledMarkets;
+@property (nonatomic) bool hasClientRevision;
 @property (nonatomic) bool hasDayOfWeek;
 @property (nonatomic, readonly) bool hasDebugApiKey;
 @property (nonatomic, readonly) bool hasDeviceCountryCode;
@@ -80,6 +84,7 @@
 + (Class)deviceHistoricalLocationType;
 
 - (void).cxx_destruct;
+- (int)StringAsClientRevision:(id)arg1;
 - (int)StringAsKnownClientResolvedTypeDeprecateds:(id)arg1;
 - (int)StringAsKnownClientResolvedTypes:(id)arg1;
 - (int)StringAsRequiredVersion:(id)arg1;
@@ -98,6 +103,8 @@
 - (void)clearKnownClientResolvedTypeDeprecateds;
 - (void)clearKnownClientResolvedTypes;
 - (void)clearLocations;
+- (int)clientRevision;
+- (id)clientRevisionAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dayOfWeek;
@@ -116,6 +123,7 @@
 - (bool)enablePreflightVenues;
 - (bool)hasAbClientMetadata;
 - (bool)hasAdditionalEnabledMarkets;
+- (bool)hasClientRevision;
 - (bool)hasDayOfWeek;
 - (bool)hasDebugApiKey;
 - (bool)hasDeviceCountryCode;
@@ -149,6 +157,7 @@
 - (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setBusinessChatPreflightIdentifiers:(id)arg1;
+- (void)setClientRevision:(int)arg1;
 - (void)setDayOfWeek:(unsigned int)arg1;
 - (void)setDebugApiKey:(id)arg1;
 - (void)setDeviceCountryCode:(id)arg1;
@@ -158,6 +167,7 @@
 - (void)setDeviceKeyboardLanguage:(id)arg1;
 - (void)setDeviceSpokenLanguage:(id)arg1;
 - (void)setEnablePreflightVenues:(bool)arg1;
+- (void)setHasClientRevision:(bool)arg1;
 - (void)setHasDayOfWeek:(bool)arg1;
 - (void)setHasEnablePreflightVenues:(bool)arg1;
 - (void)setHasHourOfDay:(bool)arg1;

@@ -7,12 +7,7 @@
     int  _thermalColor;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (id)_color;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)contentsImage;
 - (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 

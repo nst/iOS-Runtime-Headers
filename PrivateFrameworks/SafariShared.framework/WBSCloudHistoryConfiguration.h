@@ -6,6 +6,8 @@
     unsigned long long  _maximumRequestCharacterCount;
     NSString * _multipleDeviceFetchChangesThrottlingPolicyString;
     NSString * _multipleDeviceSaveChangesThrottlingPolicyString;
+    bool  _shouldBatchSaveRecords;
+    bool  _shouldUseLongLivedOperationsToSaveRecords;
     NSString * _singleDeviceFetchChangesThrottlingPolicyString;
     NSString * _singleDeviceSaveChangesThrottlingPolicyString;
     NSString * _syncCircleSizeRetrievalThrottlingPolicyString;
@@ -29,7 +31,9 @@
 - (id)_sharedBuiltInConfiguration;
 - (void)applyPlatformConfiguration:(id)arg1 withTolerance:(long long)arg2;
 - (void)applyRemoteConfiguration:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)init;
+- (id)initWithDictionary:(id)arg1;
 - (unsigned long long)maximumRequestCharacterCount;
 - (id)multipleDeviceFetchChangesThrottlingPolicyString;
 - (id)multipleDeviceSaveChangesThrottlingPolicyString;

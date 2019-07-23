@@ -3,12 +3,14 @@
  */
 
 @interface SXComponentClassification : NSObject {
+    NSArray * _defaultStyleIdentifiers;
     SXComponentLayoutRules * _layoutRules;
     SXComponentTextRules * _textRules;
 }
 
 @property (nonatomic, readonly) unsigned long long contentRelevance;
 @property (nonatomic, readonly) NSArray *defaultComponentStyleIdentifiers;
+@property (nonatomic, readonly) NSArray *defaultStyleIdentifiers;
 @property (nonatomic, readonly) NSArray *defaultTextStyleIdentifiers;
 @property (nonatomic, readonly) SXComponentLayoutRules *layoutRules;
 @property (nonatomic, readonly) SXComponentTextRules *textRules;
@@ -32,10 +34,13 @@
 - (Class)componentModelClass;
 - (unsigned long long)contentRelevance;
 - (id)defaultComponentStyleIdentifiers;
+- (id)defaultStyleIdentifiers;
 - (id)defaultTextStyleIdentifiers;
 - (bool)hasAffiliationWithClassification:(id)arg1 forDirection:(long long)arg2;
+- (id)init;
 - (bool)isCollapsible;
 - (id)layoutRules;
+- (void)setupStyleIdentifiersForRole:(id)arg1;
 - (id)textRules;
 
 @end

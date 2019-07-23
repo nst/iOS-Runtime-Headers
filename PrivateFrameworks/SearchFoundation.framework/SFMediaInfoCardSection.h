@@ -58,6 +58,7 @@
 @property (nonatomic, retain) SFRichText *specialOfferButtonLabel;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 @property (nonatomic, copy) NSString *watchListButtonLabel;
 @property (nonatomic, copy) NSString *watchListConfirmationText;
 @property (nonatomic, copy) NSString *watchListContinuationText;

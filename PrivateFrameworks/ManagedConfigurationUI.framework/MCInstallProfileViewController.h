@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
  */
 
-@interface MCInstallProfileViewController : UIViewController <DevicePINControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCInteractionDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate> {
+@interface MCInstallProfileViewController : UIViewController <DevicePINControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCInteractionDelegate, MCProfileQuestionsControllerDelegate, MCProfileViewControllerDelegate, PSStateRestoration, UIAlertViewDelegate> {
     UIAlertController * _activeAlertController;
     bool  _delayUserInput;
     <MCInstallProfileDelegate> * _delegate;
@@ -10,6 +10,7 @@
     bool  _initialQuestionsHaveBeenAsked;
     bool  _installHasFailed;
     int  _installState;
+    bool  _installingFromPurgatory;
     bool  _isInteractionDelegate;
     NSSManager * _nssManager;
     MCProfile * _originalProfile;
@@ -36,6 +37,7 @@
 @property (nonatomic) bool initialQuestionsHaveBeenAsked;
 @property (nonatomic) bool installHasFailed;
 @property (nonatomic) int installState;
+@property (nonatomic) bool installingFromPurgatory;
 @property (nonatomic) bool isInteractionDelegate;
 @property (nonatomic, retain) NSSManager *nssManager;
 @property (nonatomic, retain) MCProfile *originalProfile;
@@ -69,13 +71,17 @@
 - (bool)_installErrorIsUserCancelledError:(id)arg1;
 - (void)_installFinishedWithIdentifier:(id)arg1 error:(id)arg2;
 - (void)_installProfile;
+- (bool)_isProfileInstalled;
 - (id)_localizedCPLFinalWarningString;
 - (void)_performInstall;
 - (void)_performInstallAfterPINVerification;
 - (void)_presentConsent:(id)arg1;
+- (void)_profileRemovalDidFinish;
 - (void)_promptUserWithUserInput:(id)arg1;
 - (void)_pushInstallationWarningControllerWithWarnings:(id)arg1;
 - (id)_redirectURLFromInstallError:(id)arg1;
+- (void)_removePhoneProfileWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_removeWatchProfileWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_resetInstallationVariables;
 - (void)_setDidAppearBlock:(id /* block */)arg1;
 - (void)_showAlertForInstallError:(id)arg1;
@@ -96,20 +102,23 @@
 - (id)delegate;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)didCancelEnteringPIN;
-- (void)didReceiveMemoryWarning;
-- (id)initWithProfile:(id)arg1;
-- (id)initWithProfileData:(id)arg1;
+- (id)initCommonWithProfile:(id)arg1 profileViewMode:(long long)arg2 swizzle:(bool)arg3;
+- (id)initCommonWithProfileData:(id)arg1 profileViewMode:(long long)arg2 swizzle:(bool)arg3;
+- (id)initWithProfileDataFromPurgatory:(id)arg1;
+- (id)initWithProfileDataFromSettingsJump:(id)arg1;
 - (bool)initialQuestionsHaveBeenAsked;
 - (bool)installHasFailed;
 - (void)installProfileRemotelyWithCompletionHandler:(id /* block */)arg1;
 - (int)installState;
 - (void)installationConsentViewController:(id)arg1 finishedWithUserContinueResponse:(bool)arg2;
 - (void)installationWarningViewController:(id)arg1 finishedWithUserContinueResponse:(bool)arg2;
+- (bool)installingFromPurgatory;
 - (bool)isInteractionDelegate;
 - (id)newRightBarButtonItem;
 - (id)nssManager;
 - (id)originalProfile;
 - (id)originalProfileData;
+- (void)performRemoveAfterFinalVerification;
 - (id)pin;
 - (bool)processingPayload;
 - (id)profile;
@@ -123,6 +132,7 @@
 - (id)profileData;
 - (id)profileListChangedObserver;
 - (id)profileViewController;
+- (void)profileViewControllerDidSelectRemoveProfile:(id)arg1;
 - (void)questionsController:(id)arg1 didFinishWithResponses:(id)arg2;
 - (bool)questionsControllerIsDisplayedInSheet:(id)arg1;
 - (void)queueNextProfileData:(id)arg1;
@@ -135,6 +145,7 @@
 - (void)setInstallHasFailed:(bool)arg1;
 - (void)setInstallState:(int)arg1;
 - (void)setInstallState:(int)arg1 animated:(bool)arg2;
+- (void)setInstallingFromPurgatory:(bool)arg1;
 - (void)setIsInteractionDelegate:(bool)arg1;
 - (void)setNssManager:(id)arg1;
 - (void)setOriginalProfile:(id)arg1;
@@ -153,8 +164,6 @@
 - (void)updateTitleForProfileInstallationState:(int)arg1;
 - (bool)userCancelledInstall;
 - (void)viewDidAppear:(bool)arg1;
-- (void)viewDidLoad;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (bool)waitingForMoreInput;
 - (id)warningsToPresent;

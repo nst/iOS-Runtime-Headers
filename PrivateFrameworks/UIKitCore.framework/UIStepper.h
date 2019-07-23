@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIStepper : UIControl <DebugHierarchyObject_Fallback> {
+@interface UIStepper : UIControl {
     bool  _autorepeat;
     bool  _continuous;
     NSMutableDictionary * _dividerImages;
@@ -21,18 +21,12 @@
 
 @property (nonatomic) bool autorepeat;
 @property (getter=isContinuous, nonatomic) bool continuous;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) double maximumValue;
 @property (nonatomic) double minimumValue;
 @property (nonatomic) double stepValue;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) double value;
 @property (nonatomic) bool wraps;
-
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
 
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserValueChangedEvent;
@@ -54,14 +48,6 @@
 - (void)_updateDividerImageForButtonState;
 - (void)_updateHighlightingAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)_updateImages;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)autorepeat;
 - (id)backgroundImageForState:(unsigned long long)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

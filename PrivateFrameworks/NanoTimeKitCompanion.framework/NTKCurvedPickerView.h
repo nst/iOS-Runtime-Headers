@@ -30,9 +30,8 @@
 - (void).cxx_destruct;
 - (double)_alphaForIndex:(unsigned long long)arg1;
 - (double)_angleForIndex:(unsigned long long)arg1;
-- (double)_fractionForSideIndex:(unsigned long long)arg1;
 - (void)_setCurrentFraction:(double)arg1;
-- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForIndex:(unsigned long long)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForAngle:(double)arg1;
 - (double)centerAngle;
 - (struct CGPoint { double x1; double x2; })circleCenter;
 - (double)circleRadius;

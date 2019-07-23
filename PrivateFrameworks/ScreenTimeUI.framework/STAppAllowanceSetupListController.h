@@ -15,12 +15,14 @@
 @property (nonatomic, copy) NSSet *installedBundleIDs;
 
 - (void).cxx_destruct;
+- (void)_selectInitialSelectedIdentifiersIfNeeded;
 - (void)addButtonTapped:(id)arg1;
 - (id)appSpecifiersForBundleIDs:(id)arg1;
 - (id)chooseAppsGroupSpecifier;
 - (id)chooseAppsSpecifiers;
 - (id)chooseBundleIDs;
 - (id)createChooseAppsSpecifiers;
+- (id)initWithSelectedIdentifiers:(id)arg1 creatingNewAllowance:(bool)arg2;
 - (id)installedBundleIDs;
 - (void)setChooseAppsGroupSpecifier:(id)arg1;
 - (void)setChooseAppsSpecifiers:(id)arg1;
@@ -29,6 +31,7 @@
 - (bool)shouldReloadSpecifiersOnResume;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)viewWillAppear:(bool)arg1;
 
 @end

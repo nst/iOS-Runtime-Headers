@@ -21,6 +21,7 @@
 - (void)setTimeout:(double)arg1;
 - (void)startBioOperation:(bool)arg1 reply:(id /* block */)arg2;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
+- (void)statusMessage:(unsigned int)arg1 details:(id)arg2 client:(unsigned long long)arg3;
 - (double)timeout;
 
 @end

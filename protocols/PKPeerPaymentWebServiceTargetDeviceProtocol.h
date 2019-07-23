@@ -17,11 +17,14 @@
 
 @optional
 
+- (PKAppleAccountInformation *)appleAccountInformation;
 - (void)checkTLKsMissingWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (NSString *)deviceRegion;
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)peerPaymentReRegisterWithURL:(void *)arg1 pushToken:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSURL *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)peerPaymentReRegisterWithURL:(void *)arg1 pushToken:(void *)arg2 peerPaymentWebService:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: NSURL *, NSString *, PKPeerPaymentWebService *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
+- (void)renewAppleAccountWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, PKAppleAccountInformation *, void*
 - (void)resetApplePayManateeViewWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 
 @end

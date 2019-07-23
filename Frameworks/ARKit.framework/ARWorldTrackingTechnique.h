@@ -29,10 +29,10 @@
     double  _lastRelocalizationTimestamp;
     double  _minVergenceAngleCosine;
     struct CV3DMLModel { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct CV3DMLModelData {} *x2; } * _mlModel;
+    ARWorldTrackingOptions * _mutableOptions;
     NSDictionary * _objectDetectionOptions;
     NSHashTable * _observers;
     NSObject<OS_dispatch_semaphore> * _observersSemaphore;
-    ARWorldTrackingOptions * _options;
     long long  _previousKeyframeCount;
     long long  _reinitializationAttempts;
     long long  _reinitializationAttemptsAtInitialization;
@@ -57,10 +57,9 @@
     NSObject<OS_dispatch_semaphore> * _vioObjectDetectionSemaphore;
 }
 
-@property (nonatomic, readonly) ARWorldTrackingOptions *mutableOptions;
+@property (retain) ARWorldTrackingOptions *mutableOptions;
 @property (nonatomic, readonly, copy) ARWorldTrackingOptions *options;
-@property (nonatomic, readonly) struct CV3DVIOContext { }*vioHandle;
-@property (nonatomic, readonly) long long vioHandleState;
+@property (nonatomic) struct CV3DVIOContext { }*vioHandle;
 
 + (bool)isSupported;
 + (bool)supportsVideoResolution:(struct CGSize { double x1; double x2; })arg1;
@@ -106,6 +105,8 @@
 - (id)resultDataClasses;
 - (id)serializeMapData;
 - (id)serializeSurfaceData;
+- (void)setMutableOptions:(id)arg1;
+- (void)setVioHandle:(struct CV3DVIOContext { }*)arg1;
 - (bool)setupObjectDetection:(id)arg1;
 - (struct CV3DVIOContext { }*)vioHandle;
 - (long long)vioHandleState;

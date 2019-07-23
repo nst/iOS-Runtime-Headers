@@ -69,6 +69,8 @@
 @property (nonatomic, readonly) NSString *vui_coverArtImageIdentifier;
 @property (nonatomic, readonly) VUIMediaItemCredits *vui_credits;
 @property (nonatomic, readonly) NSURL *vui_extrasURL;
+@property (nonatomic, readonly) HSHomeSharingLibrary *vui_homeSharingLibrary;
+@property (nonatomic, readonly) bool vui_isHomeSharingMediaItem;
 @property (nonatomic, readonly) NSNumber *vui_isLocal;
 @property (nonatomic, readonly) NSNumber *vui_isPlayable;
 @property (nonatomic, readonly) VUIMediaEntityType *vui_mediaEntityType;
@@ -240,6 +242,11 @@
 + (unsigned long long)vui_VUIMediaEntityAudioCapabilityFromMPMediaItemAudioCapability:(long long)arg1;
 + (unsigned long long)vui_VUIMediaEntityColorCapabilityFromMPMediaItemColorCapability:(long long)arg1;
 + (unsigned long long)vui_VUIMediaEntityResolutionFromMPMediaItemVideoQuality:(long long)arg1;
++ (id)wlk_JSgenericProperties;
++ (id)wlk_JSmovieProperties;
++ (id)wlk_JStvShowProperties;
++ (id)wlk_mediaItemForPersistentIdentifier:(id)arg1;
++ (id)wlk_mediaItemForStoreIdentifier:(id)arg1;
 
 - (id)_vui_imageIdentifierWithImageType:(unsigned long long)arg1;
 - (id)vui_HLSAudioCapability;
@@ -254,8 +261,10 @@
 - (id)vui_coverArtImageIdentifier;
 - (id)vui_credits;
 - (id)vui_extrasURL;
+- (id)vui_homeSharingLibrary;
 - (id)vui_imageIdentifierWithImageType:(unsigned long long)arg1;
 - (id)vui_imageLoadParamsWithImageType:(unsigned long long)arg1;
+- (bool)vui_isHomeSharingMediaItem;
 - (id)vui_isLocal;
 - (id)vui_isPlayable;
 - (id)vui_mediaEntityType;
@@ -268,15 +277,6 @@
 - (id)vui_seasonIdentifier;
 - (id)vui_showIdentifier;
 - (id)vui_studio;
-
-// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
-
-+ (id)wlk_JSgenericProperties;
-+ (id)wlk_JSmovieProperties;
-+ (id)wlk_JStvShowProperties;
-+ (id)wlk_mediaItemForPersistentIdentifier:(id)arg1;
-+ (id)wlk_mediaItemForStoreIdentifier:(id)arg1;
-
 - (id)wlk_jsPropertyStrings;
 - (id)wlk_mediaTypeString;
 - (id)wlk_playState;

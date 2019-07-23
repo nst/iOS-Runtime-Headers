@@ -9,7 +9,9 @@
     NSDate * _certificateExpirationDate;
     NSData * _certificatePersistentReference;
     NSString * _encDSID;
+    NSDate * _intermediateCertificateExpirationDate;
     NSData * _intermediateCertificatePersistentReference;
+    NSString * _intermediateCertificateSerialNumber;
     NSDate * _lastValidationAttemptDate;
     NSDate * _lastValidationDate;
     bool  _linkedToCurrentUser;
@@ -24,7 +26,10 @@
 @property (nonatomic, retain) NSDate *certificateExpirationDate;
 @property (nonatomic, readonly) bool certificateExpired;
 @property (nonatomic, retain) NSData *certificatePersistentReference;
+@property (nonatomic, retain) NSDate *intermediateCertificateExpirationDate;
+@property (nonatomic, readonly) bool intermediateCertificateExpired;
 @property (nonatomic, retain) NSData *intermediateCertificatePersistentReference;
+@property (nonatomic, readonly) NSString *intermediateCertificateSerialNumber;
 @property (nonatomic, readonly) bool isInvalid;
 @property (nonatomic, retain) NSDate *lastValidationAttemptDate;
 @property (nonatomic, retain) NSDate *lastValidationDate;
@@ -54,7 +59,11 @@
 - (id)initWithAppleID:(id)arg1 altDSID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (id)intermediateCertificateExpirationDate;
+- (bool)intermediateCertificateExpired;
 - (id)intermediateCertificatePersistentReference;
+- (id)intermediateCertificateSerialNumber;
+- (bool)isDateInThePast:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToIdentity:(id)arg1;
 - (bool)isInvalid;
@@ -69,6 +78,7 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setCertificateExpirationDate:(id)arg1;
 - (void)setCertificatePersistentReference:(id)arg1;
+- (void)setIntermediateCertificateExpirationDate:(id)arg1;
 - (void)setIntermediateCertificatePersistentReference:(id)arg1;
 - (void)setLastValidationAttemptDate:(id)arg1;
 - (void)setLastValidationDate:(id)arg1;

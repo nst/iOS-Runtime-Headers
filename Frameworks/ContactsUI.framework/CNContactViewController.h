@@ -7,6 +7,8 @@
     long long  _actions;
     CNContact * _additionalContact;
     void * _addressBook;
+    bool  _allowsDisplayModePickerActions;
+    bool  _allowsEditPhoto;
     NSString * _alternateName;
     CNContact * _contact;
     CNContactFormatter * _contactFormatter;
@@ -42,6 +44,8 @@
 @property (nonatomic) long long actions;
 @property (nonatomic, retain) CNContact *additionalContact;
 @property (nonatomic) bool allowsActions;
+@property (nonatomic) bool allowsDisplayModePickerActions;
+@property (nonatomic) bool allowsEditPhoto;
 @property (nonatomic) bool allowsEditing;
 @property (nonatomic, copy) NSString *alternateName;
 @property (nonatomic, retain) CNContact *contact;
@@ -99,6 +103,8 @@
 - (long long)actions;
 - (id)additionalContact;
 - (bool)allowsActions;
+- (bool)allowsDisplayModePickerActions;
+- (bool)allowsEditPhoto;
 - (bool)allowsEditing;
 - (id)alternateName;
 - (void)configureNavigationItem:(id)arg1;
@@ -146,6 +152,8 @@
 - (void)setActions:(long long)arg1;
 - (void)setAdditionalContact:(id)arg1;
 - (void)setAllowsActions:(bool)arg1;
+- (void)setAllowsDisplayModePickerActions:(bool)arg1;
+- (void)setAllowsEditPhoto:(bool)arg1;
 - (void)setAllowsEditing:(bool)arg1;
 - (void)setAlternateName:(id)arg1;
 - (void)setContact:(id)arg1;

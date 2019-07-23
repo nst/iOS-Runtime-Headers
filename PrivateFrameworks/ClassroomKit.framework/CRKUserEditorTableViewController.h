@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKUserEditorTableViewController : UITableViewController <CRKSwitchTableViewCellDelegate> {
+@interface CRKUserEditorTableViewController : UITableViewController <CRKSwitchTableViewCellDelegate, CRKUserTableViewCellDelegate> {
     <CRKUserEditorTableViewControllerDelegate> * _delegate;
     bool  _showFamilyNameFirst;
     bool  _showPhoneticName;
@@ -40,6 +40,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)updateTableView;
 - (id)user;
+- (void)userTableViewCellDidEditUser:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(bool)arg1;
 

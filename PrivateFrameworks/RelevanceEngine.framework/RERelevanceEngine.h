@@ -56,6 +56,8 @@
 @property (nonatomic, readonly) RETrainingManager *trainingManager;
 @property (nonatomic, readonly) bool wantsImmutableContent;
 
++ (void)prewarmWithConfiguration:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)_addSubsystem:(id)arg1;
 - (void)_captureAndStoreDiagnosticLogs:(id /* block */)arg1;
@@ -108,6 +110,7 @@
 - (void)resume;
 - (void)resumeFromSimulation;
 - (id)rootFeatures;
+- (void)saveModelFile;
 - (id)sectionDescriptors;
 - (id)sectionForHistoricSection:(id)arg1;
 - (void)setAutomaticallyResumeEngine:(bool)arg1;

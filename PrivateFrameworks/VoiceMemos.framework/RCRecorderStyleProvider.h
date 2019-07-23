@@ -51,6 +51,8 @@
 - (id)creationDateLabelFont;
 - (id)creationDateLabelFontForTableViewCell;
 - (long long)currentUserInterfaceStyle;
+- (double)dateDurationLabelLockScreenVerticalPadding;
+- (double)dateLabelLockScreenHorizontalPadding;
 - (double)defaultFlushRate;
 - (double)descriptionCompactViewTitleToSecondaryPadding;
 - (double)descriptionViewCreationDateInfoLabelXOffset;
@@ -68,6 +70,7 @@
 - (double)dragToCompactTransitionEpsilon;
 - (id)durationLabelFont;
 - (id)durationLabelFontForCompactRecordingView;
+- (double)durationLabelLockScreenHorizontalPadding;
 - (double)editToolbarButtonTopInset;
 - (double)editToolbarCompactHeight;
 - (double)editToolbarHeight;
@@ -174,6 +177,7 @@
 - (double)recordingControlAlphaWhenPressed;
 - (double)recordingControlAnimationDuration;
 - (double)recordingControlDiameter;
+- (double)recordingControlExtraHitOutset;
 - (id)recordingControlFontColor;
 - (id)recordingControlFontColorResume;
 - (double)recordingControlHeight;
@@ -254,6 +258,7 @@
 - (id)tableViewSelectionCellBackgroundColor;
 - (id)tableViewSeparatorColor;
 - (id)tableViewToolboxSeparatorColor;
+- (double)timeDisplayLabelLockScreenPadding;
 - (id)timeLineBackgroundColor;
 - (id)timeLineLabelFont;
 - (id)timeLineMajorMarkerColor;
@@ -267,6 +272,7 @@
 - (id)timelinePlaybackBackgroundColor;
 - (id)timelinePlaybackTimeColor;
 - (id)titleEditingInsertionPointColor;
+- (double)titleLabelLockScreenTopPaddingMultiplier;
 - (bool)toolbarButtonsShouldHaveNonDefaultColor;
 - (bool)toolbarShouldBeTransparent;
 - (double)topMarginForCardView;
@@ -308,6 +314,8 @@
 - (id)waveformHighlightColor;
 - (id)waveformHighlightedBackgroundColor;
 - (double)waveformHorizontalSpacing;
+- (double)waveformLockScreenBottomPadding;
+- (double)waveformLockScreenTopPadding;
 - (id)waveformOverviewBackgroundColor;
 - (id)waveformOverviewHighlightedBackgroundColor;
 - (id)waveformPlaybackBackgroundColor;

@@ -11,6 +11,7 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (Class)classForKeyedUnarchiver;
 
 - (const char *)UTF8String;
 - (const char *)_fastCStringContents:(bool)arg1;
@@ -19,11 +20,12 @@
 - (const char *)cString;
 - (unsigned long long)cStringLength;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
 - (void)getCString:(char *)arg1;
 - (void)getCharacters:(unsigned short*)arg1;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;

@@ -19,6 +19,7 @@
 @property (readonly) bool hasSyncClientEntitlement;
 @property (readonly) unsigned long long hash;
 @property (readonly) bool internalAccessLevelGranted;
+@property (readonly) bool shouldTrustClientEnforcedManagedConfigurationAccess;
 @property (readonly) Class superclass;
 @property (readonly) bool testingAccessLevelGranted;
 
@@ -35,6 +36,7 @@
 - (bool)hasSyncClientEntitlement;
 - (id)initWithClientConnection:(id)arg1;
 - (bool)internalAccessLevelGranted;
+- (bool)shouldTrustClientEnforcedManagedConfigurationAccess;
 - (bool)testingAccessLevelGranted;
 
 @end

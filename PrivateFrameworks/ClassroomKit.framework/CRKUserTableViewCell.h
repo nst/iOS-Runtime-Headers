@@ -41,7 +41,7 @@
 @property (getter=shouldShowFamilyNameFirst, nonatomic) bool showFamilyNameFirst;
 @property (getter=shouldShowPhoneticName, nonatomic) bool showPhoneticName;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) CRKUser *user;
+@property (nonatomic, copy) CRKUser *user;
 @property (nonatomic, readonly) CRKUserFullNameEditorView *userFullNameEditorView;
 @property (nonatomic, readonly) UIImageView *userImageView;
 @property (nonatomic, readonly) UIView *userImageWrapperView;

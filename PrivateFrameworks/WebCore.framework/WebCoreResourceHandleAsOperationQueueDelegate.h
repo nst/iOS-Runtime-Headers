@@ -19,7 +19,7 @@
     struct RetainPtr<NSURLRequest> { 
         void *m_ptr; 
     }  m_requestResult;
-    struct optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> >, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> > > > > { 
+    struct Optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> >, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> > > > > { 
         bool init_; 
         union storage_t<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> >, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair> > > > > { 
             unsigned char dummy_; 
@@ -34,7 +34,23 @@
             } value_; 
         } storage_; 
     }  m_scheduledPairs;
-    NSObject<OS_dispatch_semaphore> * m_semaphore;
+    struct BinarySemaphore { 
+        bool m_isSet; 
+        struct Lock { 
+            struct Atomic<unsigned char> { 
+                struct atomic<unsigned char> { 
+                    unsigned char __a_; 
+                } value; 
+            } m_byte; 
+        } m_lock; 
+        struct Condition { 
+            struct Atomic<bool> { 
+                struct atomic<bool> { 
+                    bool __a_; 
+                } value; 
+            } m_hasWaiters; 
+        } m_condition; 
+    }  m_semaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

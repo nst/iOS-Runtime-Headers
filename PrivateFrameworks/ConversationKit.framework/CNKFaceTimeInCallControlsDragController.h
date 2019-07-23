@@ -12,13 +12,15 @@
 }
 
 @property (nonatomic) <CNKFaceTimeInCallControlsDragControllerDelegate> *delegate;
+@property (nonatomic, readonly) bool isDragging;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)delegate;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handlePanGestureRecognizer:(id)arg1;
 - (id)init;
 - (id)initInCallControlsView:(id)arg1 constraintsController:(id)arg2;
+- (bool)isDragging;
 - (void)resetGestureRecognizer;
 - (void)setDelegate:(id)arg1;
 

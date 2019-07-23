@@ -14,7 +14,7 @@
 - (id)dictionary;
 - (id)enrolledPoses;
 - (id)initFromDictionary:(id)arg1;
-- (id)initFromEnrollInfo:(const struct { unsigned short x1; unsigned short x2; struct { unsigned short x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; unsigned short x4; unsigned short x5; unsigned char x6[0]; }*)arg1;
+- (id)initFromEnrollInfo:(const struct { unsigned short x1; unsigned short x2; struct { unsigned short x_3_1_1; unsigned int x_3_1_2; float x_3_1_3; float x_3_1_4; float x_3_1_5; } x3; unsigned short x4; unsigned short x5; unsigned char x6[0]; }*)arg1;
 - (id)initWithPercents:(long long)arg1;
 - (long long)percentageCompleted;
 - (void)setEnrolledPoses:(id)arg1;

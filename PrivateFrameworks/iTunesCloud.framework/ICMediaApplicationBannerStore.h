@@ -17,6 +17,7 @@
 - (void)_load;
 - (bool)addBanner:(id)arg1 error:(id*)arg2;
 - (id)allBannersWithResult:(id*)arg1;
+- (id)allProperties;
 - (id)bannerStorePropertyForKey:(id)arg1;
 - (id)bannersForBundleIdentifier:(id)arg1 target:(id)arg2 error:(id*)arg3;
 - (id)init;

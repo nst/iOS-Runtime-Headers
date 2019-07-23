@@ -122,11 +122,11 @@
 
 - (void).cxx_destruct;
 - (void)CFX_addEffect:(id)arg1 allowImmediateTextEditing:(bool)arg2;
+- (void)CFX_adjustOverlaysForCaptureOrientationChanged:(long long)arg1 oldCaptureOrientation:(long long)arg2;
 - (long long)CFX_camFlashModeForCaptureFlashMode:(long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })CFX_cameraViewFinderUncroppedFrame;
 - (long long)CFX_captureFlashModeForCAMFlashMode:(long long)arg1;
 - (long long)CFX_captureTorchModeForCAMFlashMode:(long long)arg1;
-- (void)CFX_disableFaceTrackingForFullScreenTextEditingEffect:(id)arg1;
 - (void)CFX_executeBlockAfterNextFrameRendered:(id /* block */)arg1;
 - (void)CFX_hideAppStripUpperBackgroundView:(bool)arg1;
 - (void)CFX_setRenderSize;
@@ -155,7 +155,6 @@
 - (id)captureControlsContainerTrailingConstraint;
 - (id)captureControlsContainerWidthConstraint;
 - (long long)captureMode;
-- (void)clear;
 - (void)completedStillRecordWithURL:(id)arg1;
 - (void)completedVideoRecordWithURL:(id)arg1;
 - (id)composition;
@@ -178,11 +177,11 @@
 - (void)effectEditorView:(id)arg1 didEditTextForEffect:(id)arg2 newText:(id)arg3;
 - (void)effectEditorView:(id)arg1 didEndEditingEffect:(id)arg2;
 - (void)effectEditorView:(id)arg1 didEndEditingTextForEffect:(id)arg2 wasCancelled:(bool)arg3;
-- (void)effectEditorView:(id)arg1 didMoveEffect:(id)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3;
+- (void)effectEditorView:(id)arg1 didMoveEffect:(id)arg2 withTouchPoint:(struct CGPoint { double x1; double x2; })arg3 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg4;
 - (void)effectEditorView:(id)arg1 didRemoveEffect:(id)arg2;
 - (void)effectEditorView:(id)arg1 didTransformEffect:(id)arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)effectEditorView:(id)arg1 effectAtPoint:(struct CGPoint { double x1; double x2; })arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(id)arg1 frameForEffect:(id)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })effectEditorView:(id)arg1 frameForEffect:(id)arg2 relativeToBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 includeTracking:(bool)arg4 adjustForMinimumHitTestArea:(bool)arg5;
 - (bool)effectEditorView:(id)arg1 isEffectAtPoint:(struct CGPoint { double x1; double x2; })arg2 effect:(id)arg3;
 - (unsigned long long)effectEditorView:(id)arg1 maximumTextLengthForEffect:(id)arg2;
 - (bool)effectEditorView:(id)arg1 presentCustomTextEditingUI:(id)arg2;
@@ -226,10 +225,12 @@
 - (double)maxZoom;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (bool)observingOrientationChanges;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })overlayTransformForLocalViewfinder;
 - (bool)passThroughContainerView:(id)arg1 shouldHandleTouchWithinView:(id)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)prepareForSegue:(id)arg1 sender:(id)arg2;
 - (bool)presentFullScreenTextEditorForEffect:(id)arg1 insertingEffect:(bool)arg2;
-- (void)removeAllEffectsOfType:(id)arg1;
+- (void)removeAllEffectsAnimated:(bool)arg1;
+- (void)removeAllEffectsOfType:(id)arg1 animated:(bool)arg2;
 - (void)removeEffectEditorAnimated:(bool)arg1;
 - (void)removeEffectsForCameraSwitch;
 - (void)removeLiveCaptureSnapshot;
@@ -299,10 +300,8 @@
 - (bool)useLocalCameraViewfinder;
 - (double)userInterfaceAlpha;
 - (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)viewfinderFlipTransition;
 - (void)willDropCameraFrame;

@@ -45,9 +45,9 @@
 @property (nonatomic, readonly) double eventStartTime;
 @property (nonatomic, copy) NSDictionary *finalAttributes;
 @property (nonatomic, readonly) double finalScale;
-@property (nonatomic, readonly) KNBuildAttributeValue *finalScaleAttribute;
+@property (nonatomic, readonly) bool hasPreviousActionRotate;
+@property (nonatomic, readonly) bool hasPreviousActionScale;
 @property (nonatomic, readonly) double initialScale;
-@property (nonatomic, readonly) KNBuildAttributeValue *initialScaleAttribute;
 @property (nonatomic, readonly) bool isActionBuild;
 @property (nonatomic, readonly) bool isActionMotionPath;
 @property (nonatomic, readonly) bool isActionOpacity;
@@ -67,13 +67,10 @@
 @property (nonatomic) bool isVisibleAtBeginning;
 @property (nonatomic) bool isVisibleAtEnd;
 @property (nonatomic, readonly) double maxScale;
-@property (nonatomic, readonly) KNBuildAttributeValue *maxScaleAttribute;
 @property (nonatomic) KNAnimatedBuild *parentBuild;
 @property (nonatomic, readonly) Class pluginClass;
 @property (nonatomic, copy) NSDictionary *previousAttributes;
-@property (nonatomic, readonly) NSArray *requiredScaleAttributes;
 @property (nonatomic, readonly) NSArray *requiredScales;
-@property (nonatomic, readonly) bool requiresMaxScale;
 @property (nonatomic, readonly) long long stageIndex;
 @property (nonatomic, readonly) double startTime;
 
@@ -97,10 +94,10 @@
 - (double)eventStartTime;
 - (id)finalAttributes;
 - (double)finalScale;
-- (id)finalScaleAttribute;
+- (bool)hasPreviousActionRotate;
+- (bool)hasPreviousActionScale;
 - (id)initWithBuildType:(long long)arg1 effectIdentifier:(id)arg2 attributes:(id)arg3 pluginClass:(Class)arg4 deliveryStyle:(unsigned long long)arg5 eventIndex:(long long)arg6 stageIndex:(long long)arg7 startTime:(double)arg8 eventStartTime:(double)arg9 duration:(double)arg10 direction:(unsigned long long)arg11 automatic:(bool)arg12 animateAtEndOfPreviousBuild:(bool)arg13 parentBuild:(id)arg14;
 - (double)initialScale;
-- (id)initialScaleAttribute;
 - (bool)isActionBuild;
 - (bool)isActionMotionPath;
 - (bool)isActionOpacity;
@@ -117,17 +114,16 @@
 - (bool)isLineDrawBuild;
 - (bool)isMagicChartBuild;
 - (bool)isParentBuild;
+- (bool)isRelatedTo:(id)arg1;
+- (bool)isSiblingTo:(id)arg1;
 - (bool)isVisibleAtBeginning;
 - (bool)isVisibleAtEnd;
 - (double)maxScale;
-- (id)maxScaleAttribute;
 - (bool)p_isActionEffect:(id)arg1;
 - (id)parentBuild;
 - (Class)pluginClass;
 - (id)previousAttributes;
-- (id)requiredScaleAttributes;
 - (id)requiredScales;
-- (bool)requiresMaxScale;
 - (void)setAnimateAtEndOfPreviousBuild:(bool)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEventIndex:(long long)arg1;

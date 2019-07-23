@@ -11,9 +11,10 @@
 - (void).cxx_destruct;
 - (id)initWithUIState:(id)arg1 context:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
+- (bool)p_validateViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (id)uiState;
-- (bool)validateDesktopViewStateWithDocumentRoot:(id)arg1;
-- (bool)validateMobileViewStateWithDocumentRoot:(id)arg1;
+- (bool)validateDesktopViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
+- (bool)validateMobileViewStateWithDocumentRoot:(id)arg1 documentRevision:(id)arg2;
 
 @end

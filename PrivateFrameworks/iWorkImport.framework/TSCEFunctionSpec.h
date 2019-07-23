@@ -41,7 +41,7 @@
 + (bool)hasAnyDateArgumentsToFunction:(int)arg1;
 + (bool)isModeEnabled:(short)arg1 functionIndex:(short)arg2;
 + (id)specDictionary;
-+ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
++ (id)specWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(short)arg4 isOperator:(int)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
 + (id)unsupportedFunctionNameForLocale:(id)arg1;
 
 - (id).cxx_construct;
@@ -53,8 +53,9 @@
 - (id)displayStringForLocale:(id)arg1;
 - (int)functionIndex;
 - (id)functionName;
-- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(int)arg4 isOperator:(bool)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
+- (id)initWithFunctionName:(id)arg1 minArgs:(int)arg2 maxArgs:(int)arg3 repeatingGroupSize:(short)arg4 isOperator:(bool)arg5 shipVersion:(int)arg6 arguments:(const struct vector<TSCEFunctionArgSpec, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x1; struct TSCEFunctionArgSpec {} *x2; struct __compressed_pair<TSCEFunctionArgSpec *, std::__1::allocator<TSCEFunctionArgSpec> > { struct TSCEFunctionArgSpec {} *x_3_1_1; } x3; }*)arg7 functionIndex:(int)arg8;
 - (bool)isOperator;
+- (void)loadRepeatingArguments;
 - (id)localizedFunctionNameForLocale:(id)arg1;
 - (id)localizedToolTipStringForLocale:(id)arg1;
 - (short)maxArguments;

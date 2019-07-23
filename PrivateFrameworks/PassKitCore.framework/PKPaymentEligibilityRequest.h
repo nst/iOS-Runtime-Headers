@@ -15,6 +15,7 @@
     NSString * _hostApplicationVersion;
     NSString * _issuerIdentifier;
     NSString * _nonce;
+    NSString * _passOwnershipToken;
     PKPaymentCredential * _paymentCredential;
     NSString * _primaryAccountNumber;
     long long  _primaryAccountNumberInputMethod;
@@ -37,6 +38,7 @@
 @property (nonatomic, copy) NSString *hostApplicationVersion;
 @property (nonatomic, copy) NSString *issuerIdentifier;
 @property (nonatomic, copy) NSString *nonce;
+@property (nonatomic, copy) NSString *passOwnershipToken;
 @property (nonatomic, retain) PKPaymentCredential *paymentCredential;
 @property (nonatomic, copy) NSString *primaryAccountNumber;
 @property (nonatomic) long long primaryAccountNumberInputMethod;
@@ -46,14 +48,17 @@
 @property (nonatomic, readonly) long long source;
 @property (nonatomic, copy) NSData *wrappedKey;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)FPInfo;
 - (unsigned long long)_requestHTTPMethod;
 - (void)_updateRequestForRedirect:(id)arg1 overrides:(id)arg2 webService:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)_updateRequestForRetry:(id)arg1 retryFields:(id)arg2 webService:(id)arg3 withCompletion:(id /* block */)arg4;
-- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 certChain:(id)arg4 devSigned:(bool)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(id /* block */)arg8;
+- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3 certChain:(id)arg4 devSigned:(bool)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(id /* block */)arg8;
 - (id)cardholderName;
 - (long long)cardholderNameInputMethod;
+- (void)encodeWithCoder:(id)arg1;
 - (id)encryptedCardData;
 - (id)encryptionVersion;
 - (id)ephemeralPublicKey;
@@ -62,10 +67,12 @@
 - (id)hostApplicationIdentifier;
 - (id)hostApplicationVersion;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentCredential:(id)arg1;
 - (id)initWithSource:(long long)arg1;
 - (id)issuerIdentifier;
 - (id)nonce;
+- (id)passOwnershipToken;
 - (id)paymentCredential;
 - (id)primaryAccountNumber;
 - (long long)primaryAccountNumberInputMethod;
@@ -85,6 +92,7 @@
 - (void)setHostApplicationVersion:(id)arg1;
 - (void)setIssuerIdentifier:(id)arg1;
 - (void)setNonce:(id)arg1;
+- (void)setPassOwnershipToken:(id)arg1;
 - (void)setPaymentCredential:(id)arg1;
 - (void)setPrimaryAccountNumber:(id)arg1;
 - (void)setPrimaryAccountNumberInputMethod:(long long)arg1;

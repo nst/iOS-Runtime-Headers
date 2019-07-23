@@ -13,6 +13,9 @@
 }
 
 @property (nonatomic, readonly) unsigned long long count;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<_NSRange' */ struct *rangeVector; /* unknown property attribute:  std::__1::allocator<_NSRange> >=^{_NSRange}}} */
+
++ (id)stringValueForRangeVector:(const struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -21,9 +24,12 @@
 - (unsigned long long)count;
 - (id)initWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)initWithRangeList:(id)arg1;
+- (id)initWithRangeVector:(const struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
+- (id)initWithRangeVectorMove:(struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
 - (id)initWithString:(id)arg1;
 - (void)insertRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(unsigned long long)arg1;
+- (const struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)rangeVector;
 - (void)removeRangeAtIndex:(unsigned long long)arg1;
 - (void)replaceWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 atIndex:(unsigned long long)arg2;
 - (void)reverse;

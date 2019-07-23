@@ -64,8 +64,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)_prewarmForDevice:(id)arg1;
-
 - (void).cxx_destruct;
 - (void)_animateTransitionToViewMode:(long long)arg1;
 - (void)_applyDataMode;

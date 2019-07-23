@@ -4,6 +4,7 @@
 
 @interface AVCSession : NSObject <AVCSessionParticipantControlProtocol, AVCSessionParticipantDelegate> {
     int  _activeConfigurationCount;
+    NSDictionary * _capabilities;
     AVCSessionConfiguration * _configuration;
     VCXPCClientShared * _connection;
     id  _delegate;
@@ -21,6 +22,7 @@
 @property (getter=isAudioEnabled, nonatomic) bool audioEnabled;
 @property (getter=isAudioMuted, nonatomic) bool audioMuted;
 @property (getter=isAudioPaused, nonatomic) bool audioPaused;
+@property (nonatomic, retain) NSDictionary *capabilities;
 @property (nonatomic, retain) AVCSessionConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AVCSessionDelegate> *delegate;
@@ -44,13 +46,13 @@
 - (void)addParticipant:(id)arg1;
 - (void)addParticipants:(id)arg1;
 - (void)beginParticipantConfiguration;
+- (id)capabilities;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateNotificationQueue;
 - (void)deregisterFromNotifications;
 - (id)description;
-- (void)didDetectErrorHandler:(id)arg1;
 - (void)endParticipantConfiguration;
 - (id)frequencyLevels;
 - (id)initWithTransportToken:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 queue:(id)arg4;
@@ -61,6 +63,7 @@
 - (bool)isVideoPaused;
 - (id)localParticipant;
 - (id)negotiationData;
+- (id)newNSErrorWithErrorDictionary:(id)arg1;
 - (void)participant:(id)arg1 audioEnabled:(bool)arg2 didSucceed:(bool)arg3 error:(id)arg4;
 - (void)participant:(id)arg1 audioPaused:(bool)arg2 didSucceed:(bool)arg3 error:(id)arg4;
 - (void)participant:(id)arg1 frequencyLevelsDidChange:(id)arg2;
@@ -76,6 +79,7 @@
 - (void)setAudioEnabled:(bool)arg1;
 - (void)setAudioMuted:(bool)arg1;
 - (void)setAudioPaused:(bool)arg1;
+- (void)setCapabilities:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setVideoEnabled:(bool)arg1;

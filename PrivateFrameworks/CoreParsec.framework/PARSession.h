@@ -30,6 +30,8 @@
 + (id)sharedSession;
 
 - (void).cxx_destruct;
+- (void)_flushUsingConnectionToFBF:(id)arg1;
+- (void)_scheduleEagerFlush;
 - (id)awaitBag;
 - (id)bag;
 - (void)cardViewDidAppear:(id)arg1;
@@ -52,7 +54,9 @@
 - (void)didGradeResultRelevancy:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (void)didStartSearch:(id)arg1;
+- (void)didSubmitUserReportFeedback:(id)arg1;
 - (unsigned long long)enabledStatus;
 - (void)fileHandleAndAttributesForResource:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithConfiguration:(id)arg1;

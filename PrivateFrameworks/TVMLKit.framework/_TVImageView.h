@@ -3,6 +3,7 @@
  */
 
 @interface _TVImageView : UIControl {
+    UIColor * __darkTintColor;
     bool  __enableEdgeAntialiasingOnSelected;
     UIColor * __focusedColor;
     UIColor * __tintColor;
@@ -23,6 +24,7 @@
     bool  _selected;
 }
 
+@property (setter=_setDarkTintColor:, nonatomic, retain) UIColor *_darkTintColor;
 @property (setter=_setEnableEdgeAntialiasingOnSelected:, nonatomic) bool _enableEdgeAntialiasingOnSelected;
 @property (setter=_setFocusedColor:, nonatomic, retain) UIColor *_focusedColor;
 @property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
@@ -37,6 +39,7 @@
 - (void).cxx_destruct;
 - (double)_continuousCornerRadius;
 - (double)_cornerRadius;
+- (id)_darkTintColor;
 - (bool)_enableEdgeAntialiasingOnSelected;
 - (id)_focusedColor;
 - (id)_imageView;
@@ -46,6 +49,7 @@
 - (void)_setContentRectInPixels:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)_setCornerRadius:(double)arg1;
+- (void)_setDarkTintColor:(id)arg1;
 - (void)_setEnableEdgeAntialiasingOnSelected:(bool)arg1;
 - (void)_setFocusedColor:(id)arg1;
 - (void)_setImage:(id)arg1;
@@ -53,6 +57,7 @@
 - (id)_tintColor;
 - (void)_updateCornerRadius;
 - (void)_updateImageView;
+- (void)_updateTintColor;
 - (id)backgroundColor;
 - (id /* block */)completion;
 - (long long)contentMode;

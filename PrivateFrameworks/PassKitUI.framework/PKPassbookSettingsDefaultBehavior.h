@@ -29,9 +29,7 @@
 - (id)peerPaymentDelegate;
 - (id)secureElementID;
 - (bool)secureElementIsProductionSigned;
-- (id)setupBrowsableProductTypesForDevice;
 - (id)setupDelegate;
-- (id)setupFeaturedNetworksForDevice;
 - (bool)supportsCredentialType:(long long)arg1;
 
 @end

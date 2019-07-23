@@ -16,6 +16,10 @@
 @property (nonatomic) double separatorThickness;
 @property (nonatomic) double trailingMargin;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)_hkecg_separatorView;
+
 - (void).cxx_destruct;
 - (void)_applyStyleToContext:(struct CGContext { }*)arg1;
 - (bool)_isVertical;
@@ -34,5 +38,10 @@
 - (void)setSeparatorThickness:(double)arg1;
 - (void)setTrailingMargin:(double)arg1;
 - (double)trailingMargin;
+
+// Image: /System/Library/PrivateFrameworks/HeartRhythmUI.framework/HeartRhythmUI
+
++ (id)_hrafibgate_separatorView;
++ (id)_hragegate_separatorView;
 
 @end

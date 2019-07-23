@@ -75,5 +75,6 @@
 - (void)sanitizeWithCompletionBlock:(id /* block */)arg1;
 - (id)savedRecordingUUID;
 - (void)setComposition:(id)arg1;
+- (void)trimDidSave;
 
 @end

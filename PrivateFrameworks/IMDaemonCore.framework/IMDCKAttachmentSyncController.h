@@ -56,6 +56,8 @@
 - (void)_fetchAttachmentZoneRecords:(id)arg1 desiredKeys:(long long)arg2 useNonHSA2ManateeDatabase:(bool)arg3 completion:(id /* block */)arg4;
 - (bool)_fetchedAllChangesFromCloudKit;
 - (void)_kickOffAssetFetchForTransfersIfNeeded;
+- (bool)_kickOffWriteIfNeededForSyncType:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_kickOffWriteOnCKQueueWithCompletion:(id /* block */)arg1;
 - (void)_markAllUnsuccessFullSyncAttachmentsAsNeedingSync;
 - (void)_markAttachmentWithROWIDAsSyncedWithCloudKit:(id)arg1;
 - (void)_markTransferAsNotBeingAbleToSyncUsingCKRecord:(id)arg1;
@@ -63,6 +65,7 @@
 - (unsigned long long)_numberOfAttachmentsToDownload;
 - (unsigned long long)_numberOfAttachmentsToWriteUp;
 - (long long)_numberOfBatchesOfAttachmentsToFetchInInitialSync;
+- (long long)_numberOfMetadataBatchesOfAttachmentsToFetchInInitialSync;
 - (id)_operationErrorForModifyingRecordCompletion:(id)arg1;
 - (void)_processAndValidateAttachmentRecordsEligibleForPurge:(id)arg1 recordIDsToTransfers:(id)arg2 capturedWithABC:(bool)arg3 completion:(id /* block */)arg4;
 - (void)_processAssetFetchOperationCompletionBlock:(id)arg1 operationID:(id)arg2 error:(id)arg3;
@@ -85,7 +88,7 @@
 - (bool)_shouldMarkAttachmentsAsNeedingReupload;
 - (void)_updateAllAttachmentsAsNotNeedingReUpload;
 - (id)_updateAttachmentGUIDIfNeededAndReturnTransfersToForceMarkAsSync:(id)arg1 transfersToSyncRowIDs:(id)arg2;
-- (void)_updateDeviceCondictionsToCheckIfNeededForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
+- (void)_updateDeviceConditionsToCheckIfNeededForCurrentBatchCount:(long long)arg1 maxBatchCount:(long long)arg2;
 - (void)_updateTransferUsingCKRecord:(id)arg1 wasFetched:(bool)arg2;
 - (void)_validateTransferFromCloudKit:(id)arg1 localTransfer:(id)arg2 validateCompletion:(id /* block */)arg3;
 - (void)_writeAttachmentsToCloudKit:(id /* block */)arg1;

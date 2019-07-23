@@ -9,15 +9,10 @@
     UIView * _rightCorner;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)cornerRadius;
 
 - (void).cxx_destruct;
 - (id)_imageForCornerWithStyle:(int)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (int)cornerStyle;
 - (id)initForAlignment:(int)arg1 style:(int)arg2;
 - (void)layoutSubviews;

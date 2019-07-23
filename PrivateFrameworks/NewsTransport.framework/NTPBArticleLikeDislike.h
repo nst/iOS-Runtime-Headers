@@ -11,7 +11,9 @@
     long long  _backendArticleVersionInt64;
     NSString * _campaignId;
     NSString * _campaignType;
+    NTPBChannelData * _channelData;
     int  _characterCount;
+    int  _contentType;
     NSString * _creativeId;
     NSString * _feedId;
     int  _feedType;
@@ -29,6 +31,7 @@
         unsigned int articleType : 1; 
         unsigned int backendArticleVersion : 1; 
         unsigned int characterCount : 1; 
+        unsigned int contentType : 1; 
         unsigned int feedType : 1; 
         unsigned int groupType : 1; 
         unsigned int likeDislikeLocation : 1; 
@@ -62,6 +65,8 @@
     bool  _isSearchResultArticle;
     bool  _isTopStoryArticle;
     bool  _isUserSubscribedToFeed;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
     NSString * _language;
     int  _likeDislikeLocation;
     NSMutableArray * _namedEntities;
@@ -93,7 +98,9 @@
 @property (nonatomic) long long backendArticleVersionInt64;
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NTPBChannelData *channelData;
 @property (nonatomic) int characterCount;
+@property (nonatomic) int contentType;
 @property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
@@ -111,7 +118,9 @@
 @property (nonatomic) bool hasBackendArticleVersionInt64;
 @property (nonatomic, readonly) bool hasCampaignId;
 @property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasChannelData;
 @property (nonatomic) bool hasCharacterCount;
+@property (nonatomic) bool hasContentType;
 @property (nonatomic, readonly) bool hasCreativeId;
 @property (nonatomic, readonly) bool hasFeedId;
 @property (nonatomic) bool hasFeedType;
@@ -134,6 +143,8 @@
 @property (nonatomic) bool hasIsSearchResultArticle;
 @property (nonatomic) bool hasIsTopStoryArticle;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
 @property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic) bool hasLikeDislikeLocation;
 @property (nonatomic, readonly) bool hasNativeCampaignData;
@@ -168,6 +179,8 @@
 @property (nonatomic) bool isSearchResultArticle;
 @property (nonatomic) bool isTopStoryArticle;
 @property (nonatomic) bool isUserSubscribedToFeed;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic) int likeDislikeLocation;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
@@ -195,6 +208,7 @@
 
 - (void).cxx_destruct;
 - (int)StringAsArticleType:(id)arg1;
+- (int)StringAsContentType:(id)arg1;
 - (int)StringAsFeedType:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
 - (int)StringAsNextArticleAffordanceType:(id)arg1;
@@ -210,9 +224,12 @@
 - (long long)backendArticleVersionInt64;
 - (id)campaignId;
 - (id)campaignType;
+- (id)channelData;
 - (int)characterCount;
 - (void)clearFractionalCohortMemberships;
 - (void)clearNamedEntities;
+- (int)contentType;
+- (id)contentTypeAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creativeId;
 - (id)description;
@@ -237,7 +254,9 @@
 - (bool)hasBackendArticleVersionInt64;
 - (bool)hasCampaignId;
 - (bool)hasCampaignType;
+- (bool)hasChannelData;
 - (bool)hasCharacterCount;
+- (bool)hasContentType;
 - (bool)hasCreativeId;
 - (bool)hasFeedId;
 - (bool)hasFeedType;
@@ -260,6 +279,8 @@
 - (bool)hasIsSearchResultArticle;
 - (bool)hasIsTopStoryArticle;
 - (bool)hasIsUserSubscribedToFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
 - (bool)hasLanguage;
 - (bool)hasLikeDislikeLocation;
 - (bool)hasNativeCampaignData;
@@ -296,6 +317,8 @@
 - (bool)isSearchResultArticle;
 - (bool)isTopStoryArticle;
 - (bool)isUserSubscribedToFeed;
+- (id)issueData;
+- (id)issueExposureData;
 - (id)language;
 - (int)likeDislikeLocation;
 - (void)mergeFrom:(id)arg1;
@@ -323,7 +346,9 @@
 - (void)setBackendArticleVersionInt64:(long long)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
+- (void)setChannelData:(id)arg1;
 - (void)setCharacterCount:(int)arg1;
+- (void)setContentType:(int)arg1;
 - (void)setCreativeId:(id)arg1;
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
@@ -337,6 +362,7 @@
 - (void)setHasBackendArticleVersion:(bool)arg1;
 - (void)setHasBackendArticleVersionInt64:(bool)arg1;
 - (void)setHasCharacterCount:(bool)arg1;
+- (void)setHasContentType:(bool)arg1;
 - (void)setHasFeedType:(bool)arg1;
 - (void)setHasFromNextArticleAffordanceTap:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
@@ -372,6 +398,8 @@
 - (void)setIsSearchResultArticle:(bool)arg1;
 - (void)setIsTopStoryArticle:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setLikeDislikeLocation:(int)arg1;
 - (void)setNamedEntities:(id)arg1;

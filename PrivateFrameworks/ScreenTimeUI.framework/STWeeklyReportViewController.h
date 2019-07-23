@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSArray *tableViewCells;
 
 - (void).cxx_destruct;
+- (void)_heightDidChange:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithUsageReport:(id)arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;

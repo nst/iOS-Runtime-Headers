@@ -27,11 +27,13 @@
 - (id)moveFileAtPath:(id)arg1 withKey:(id)arg2;
 - (id)preferredExtension;
 - (bool)removeAllFiles;
+- (bool)removeAllFilesExceptKeys:(id)arg1;
 - (bool)removeFileWithKey:(id)arg1;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setFileURLsByKey:(id)arg1;
 - (void)setPreferredExtension:(id)arg1;
 - (unsigned long long)sizeOfFileForKey:(id)arg1;
 - (unsigned long long)storeSize;
+- (unsigned long long)storeSizeForKeys:(id)arg1;
 
 @end

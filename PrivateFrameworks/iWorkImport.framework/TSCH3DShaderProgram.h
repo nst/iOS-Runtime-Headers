@@ -3,6 +3,8 @@
  */
 
 @interface TSCH3DShaderProgram : NSObject {
+    NSSet * _interleavedAttributeVariables;
+    NSSet * _variablesWithBackingResources;
     NSMutableString * mAccumulator;
     NSMutableArray * mConclusionSection;
     NSMutableArray * mDeclarationSection;
@@ -16,12 +18,17 @@
     NSMutableArray * mSections;
     NSMutableArray * mStatementSection;
     NSMutableArray * mTemporarySection;
-    TSCH3DGLVersion * mVersion;
+    TSCH3DOrderedDictionary * mTypeDeclarations;
+    TSCH3DVersion * mVersion;
     NSString * mVertex;
 }
 
+@property (nonatomic, readonly) unsigned long long attributeBindingsCount;
 @property (nonatomic, readonly) NSString *fragment;
-@property (nonatomic, readonly) TSCH3DGLVersion *version;
+@property (nonatomic, copy) NSSet *interleavedAttributeVariables;
+@property (nonatomic, readonly) unsigned long long textureBindingsCount;
+@property (nonatomic, copy) NSSet *variablesWithBackingResources;
+@property (nonatomic, readonly) TSCH3DVersion *version;
 @property (nonatomic, readonly) NSString *vertex;
 
 - (void)accumulateSection:(id)arg1 intoArray:(id)arg2;
@@ -121,29 +128,65 @@
 - (void)addVertexTemporary:(id)arg1 statement:(id)arg2;
 - (void)addVertexTemporaryWithFormat:(id)arg1;
 - (void)assignVariable:(id)arg1 statement:(id)arg2 substitutes:(id)arg3 type:(struct TSCH3DShaderType { unsigned long long x1; })arg4 toSection:(int)arg5;
+- (unsigned long long)attributeBindingsCount;
 - (void)dealloc;
+- (void)declareType:(id)arg1 name:(id)arg2;
 - (id)existingLinkageOfVariable:(id)arg1;
 - (id)fragment;
+- (long long)fragmentUniformBufferIndex;
 - (bool)hasFunction:(id)arg1;
 - (id)init;
 - (id)initWithVersion:(id)arg1;
+- (id)interleavedAttributeVariables;
+- (id)interleavedLinkedVertexAttributeVariables;
+- (bool)isMetal;
 - (bool)isSamplerVariable:(id)arg1;
 - (void)link;
 - (id)linkageOfVariable:(id)arg1;
+- (id)linkedInputVariablesForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2;
+- (id)linkedTextureVariables;
+- (id)linkedUniformVariablesForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1 isTexture:(bool)arg2;
+- (id)linkedVertexAttributeVariables;
 - (void)p_addCompatibilityFunctions;
 - (void)p_addToSection:(id)arg1 variable:(id)arg2 space:(id)arg3 type:(struct TSCH3DShaderType { unsigned long long x1; })arg4 format:(id)arg5 substitutes:(id)arg6;
+- (id)p_boundArgumentDeclarationForLinkedVariable:(id)arg1 variableType:(id)arg2 variableName:(id)arg3 bindingType:(id)arg4 bufferIndex:(unsigned long long)arg5;
+- (id)p_boundBufferArgumentDeclarationForLinkedVariable:(id)arg1 variableType:(id)arg2 variableName:(id)arg3 bufferIndex:(unsigned long long)arg4;
+- (id)p_boundSamplerArgumentDeclarationForLinkedVariable:(id)arg1 bufferIndex:(unsigned long long)arg2;
+- (id)p_boundTextureArgumentDeclarationForLinkedVariable:(id)arg1 bufferIndex:(unsigned long long)arg2;
+- (unsigned long long)p_countOfAttributeBindingsForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (unsigned long long)p_fragmentAttributeBindingsCount;
+- (void)p_generateFunctions;
 - (void)p_generateGlobalsForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (void)p_generateMetalFragmentGlobals;
+- (void)p_generateMetalFragmentInputs;
+- (void)p_generateMetalFragmentTextureVariable;
+- (void)p_generateMetalVertexAttributes;
+- (void)p_generateMetalVertexGlobals;
+- (void)p_generateMetalVertexInputs;
 - (void)p_generatePreprocessorDefinitionsForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (void)p_generateSection:(id)arg1 type:(struct TSCH3DShaderType { unsigned long long x1; })arg2;
 - (id)p_generateType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (void)p_generateType:(struct TSCH3DShaderType { unsigned long long x1; })arg1 globalType:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg2 storageQualifier:(id)arg3;
+- (void)p_generateTypeDeclarations;
+- (unsigned long long)p_metalVertexBufferCount;
+- (id)p_metalVertexInputLines;
+- (unsigned long long)p_vertexAttributeBindingsCount;
 - (unsigned long long)processSection:(id)arg1 accumulate:(id)arg2 conclusions:(id)arg3;
 - (/* Warning: unhandled struct encoding: '{pair<bool, TSCH3DShaderVariableLinkage *>=B@}' */ struct pair<bool, TSCH3DShaderVariableLinkage *> { bool x1; id x2; })resultLinkageOfVariable:(id)arg1;
+- (void)setInterleavedAttributeVariables:(id)arg1;
+- (void)setVariablesWithBackingResources:(id)arg1;
+- (id)sortedLinks;
+- (unsigned long long)textureBindingsCount;
+- (long long)uniformBufferIndexForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (struct TSCH3DShaderType { unsigned long long x1; })uniformLinkageFor:(id)arg1;
+- (id)uniformVariablesForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (id)usedAttributeNameForVariable:(id)arg1;
 - (id)usedNameForVariable:(id)arg1 type:(struct TSCH3DShaderType { unsigned long long x1; })arg2 scope:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg3;
 - (id)usedUniformNameForVariable:(id)arg1;
+- (id)variablesWithBackingResources;
 - (id)version;
 - (id)vertex;
+- (unsigned long long)vertexAttributeLocationForVariable:(id)arg1;
+- (long long)vertexUniformBufferIndex;
 
 @end

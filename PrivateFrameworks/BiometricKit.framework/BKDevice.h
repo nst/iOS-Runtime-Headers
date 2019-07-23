@@ -3,14 +3,18 @@
  */
 
 @interface BKDevice : NSObject <BiometricKitDelegateXpcProtocol> {
+    <BKDeviceDelegate> * _delegate;
     BKDeviceDescriptor * _descriptor;
+    NSObject<OS_dispatch_queue> * _queue;
     BiometricKitXPCClient * _xpcClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BKDeviceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BKDeviceDescriptor *descriptor;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 + (bool)biometryAvailabilityInfo:(long long*)arg1 fromDeviceInfo:(long long)arg2 error:(id*)arg3;
@@ -25,7 +29,9 @@
 - (id)createMatchOperationWithError:(id*)arg1;
 - (id)createPresenceDetectOperationWithError:(id*)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (id)descriptor;
+- (id)dispatchQueue;
 - (bool)dropAllUnlockTokensWithError:(id*)arg1;
 - (id)effectiveProtectedConfigurationForUser:(unsigned int)arg1 error:(id*)arg2;
 - (void)enrollFeedback:(id)arg1 client:(unsigned long long)arg2;
@@ -42,13 +48,17 @@
 - (id)identitiesWithError:(id*)arg1;
 - (id)identityForUUID:(id)arg1 error:(id*)arg2;
 - (bool)isDelegate;
+- (id)lastMatchEventWithError:(id*)arg1;
 - (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;
 - (id)maxIdentityCountWithError:(id*)arg1;
 - (id)protectedConfigurationForUser:(unsigned int)arg1 error:(id*)arg2;
+- (id)queue;
 - (bool)removeAllIdentitiesForUser:(unsigned int)arg1 error:(id*)arg2;
 - (bool)removeIdentity:(id)arg1 error:(id*)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setDescriptor:(id)arg1;
 - (bool)setProtectedConfiguration:(id)arg1 forUser:(unsigned int)arg2 credentialSet:(id)arg3 error:(id*)arg4;
+- (void)setQueue:(id)arg1;
 - (bool)setSystemProtectedConfiguration:(id)arg1 credentialSet:(id)arg2 error:(id*)arg3;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
 - (void)statusMessage:(unsigned int)arg1 details:(id)arg2 client:(unsigned long long)arg3;

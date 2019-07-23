@@ -55,6 +55,10 @@
 + (bool)_assetsLibrary_isSharedPhotoStreamsSupportEnabled;
 + (bool)_assetsdQueueingMode;
 + (bool)_canSetPauseMarkerWithUnpauseTime:(id)arg1 onPauseData:(id)arg2;
++ (void)_context:(id)arg1 saveFailedWithError:(id)arg2;
++ (void)_contextSaveFailedWithError:(id)arg1;
++ (void)_contextSaveFailedWithSQLiteError:(id)arg1;
++ (void)_contextSaveFailedWithTimeoutError:(id)arg1;
 + (void)_createPauseMarkerForReason:(short)arg1 withUnpauseTime:(id)arg2 withPath:(id)arg3;
 + (id)_dataMigratorFinishedFilePath;
 + (id)_dataMigratorFinishedMarkerQueue;
@@ -69,6 +73,7 @@
 + (id)_pauseDataOnPath:(id)arg1;
 + (id)_rebuildingPersonsIndicatorFilePath;
 + (void)_setIsRebuildingPersons:(bool)arg1;
++ (void)_setSqliteErrorAndExitIfNecessaryForReason:(int)arg1;
 + (id)_statusDescriptionForQueue:(id)arg1;
 + (void)_updateAssetCountKeyPath:(id)arg1 withPendingCountKeyPath:(id)arg2 inContext:(id)arg3;
 + (void)_updateMemoryCountKeyPath:(id)arg1 withPendingCountKeyPath:(id)arg2 inContext:(id)arg3;
@@ -89,6 +94,7 @@
 + (unsigned long long)defaultUnverifiedFaceCountThreshold;
 + (void)delayedRefreshCachedCountsInAlbumIDs:(id)arg1;
 + (void)deleteCPLDownloadFinishedMarkerFilePath;
++ (void)deleteITunesSyncedContentForEnablingiCPL;
 + (id)deletedMemoryUUIDsFilePath;
 + (id)disableICloudPhotosFilePath;
 + (void)disableOpportunisticTasks;
@@ -101,6 +107,7 @@
 + (id)forceSoftResetSyncPath;
 + (void)handlePossibleCoreDataError:(id)arg1;
 + (bool)hasITunesSyncedContent;
++ (id)iTunesSyncedContentInfo;
 + (bool)isAlbumSynced:(id)arg1;
 + (bool)isApplicationWildcat;
 + (bool)isAudioFileExtension:(id)arg1;
@@ -156,6 +163,7 @@
 + (void)setLibraryAvailableIndicatorState:(bool)arg1;
 + (void)setMomentAnalysisNeeded:(bool)arg1;
 + (void)setPhotoStreamEnabled:(bool)arg1;
++ (void)setSqliteErrorAndExitIfNecessaryForDemoContentInstallation;
 + (void)setSqliteErrorAndExitIfNecessaryForSimulatedCorruption:(bool)arg1;
 + (void)setStreamsLibraryUpdatingExpired:(bool)arg1;
 + (void)setTakingPhotoIsBusy:(bool)arg1;
@@ -181,7 +189,6 @@
 - (id)_dataMigrationInfo;
 - (unsigned long long)_dbFileSizes;
 - (void)_deleteEmptyImportAlbumsWithAddedAlbums:(id)arg1;
-- (void)_deleteITunesSyncedContentWithReason:(id)arg1;
 - (void)_deleteObsoleteMetadataFiles;
 - (void)_doFilesystemImportIfNeededWithMOC:(id)arg1 reason:(id)arg2;
 - (void)_enumerateFilesAtURL:(id)arg1 withBlock:(id /* block */)arg2;
@@ -196,6 +203,7 @@
 - (bool)_hasPendingAssetsIgnoreiTunes:(bool)arg1;
 - (bool)_isHeifUTI:(struct __CFString { }*)arg1;
 - (bool)_isOTARestoreInProgress;
+- (void)_legacyCleanupForStoreDemoMode;
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)_loadDatabase:(const char *)arg1;
 - (void)_photoLibraryCorruptNotification;
@@ -209,6 +217,7 @@
 - (void)_safeSave:(id)arg1;
 - (bool)_safeSave:(id)arg1 error:(id*)arg2;
 - (bool)_shouldCreateDatabase;
+- (bool)_stageDemoLibraryContentForStoreDemoMode;
 - (void)_updateWithInsertedAssetsCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2;
 - (void)_userApplyTrashedState:(short)arg1 toAlbums:(id)arg2;
 - (void)_userApplyTrashedState:(short)arg1 toAssets:(id)arg2;
@@ -265,7 +274,6 @@
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbum;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbumIfExists;
 - (id)iTunesSyncedAssetsDCIMDirectory;
-- (id)iTunesSyncedContentInfo;
 - (id)imageForFormat:(int)arg1 forAsset:(id)arg2;
 - (id)importAlbums;
 - (id)incompleteRestoreProcesses;

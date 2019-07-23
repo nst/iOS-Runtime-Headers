@@ -4,6 +4,7 @@
 
 @interface NSFileManager : NSObject <PLFileManager>
 
+@property (readonly) bool crk_isStudentdInstalled;
 @property (readonly, copy) NSString *currentDirectoryPath;
 @property (readonly, copy) NSString *debugDescription;
 @property <NSFileManagerDelegate> *delegate;
@@ -166,9 +167,18 @@
 - (id)_deleteLastValidComponentOfPath:(id)arg1;
 - (id)ensureDirectoryExistsAtPath:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
+
++ (bool)ams_ensureDirectoryExists:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
++ (id)crk_computeNonContainerizedHomeDirectoryURL;
++ (id)crk_nonContainerizedHomeDirectoryURL;
+
+- (id)crk_collisionAvoidingURLForURL:(id)arg1;
 - (id)crk_deepContentsOfDirectoryAtPath:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)crk_isStudentdInstalled;
 - (bool)crk_safeRemoveItemAtURL:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
@@ -367,6 +377,7 @@
 - (id)safari_createTemporaryDirectoryWithTemplate:(id)arg1;
 - (id)safari_ensureDirectoryExists:(id)arg1;
 - (bool)safari_moveDownloadedFileAtURL:(id)arg1 toURL:(id)arg2;
+- (id)safari_nonContaineredSettingsDirectoryURL;
 - (id)safari_pathWithUniqueFilenameForPath:(id)arg1;
 - (id)safari_productionSafariSettingsDirectory;
 - (bool)safari_removeFileAtURL:(id)arg1 error:(id*)arg2;
@@ -457,7 +468,7 @@
 - (bool)tsu_canCloneItemAtURL:(id)arg1 toURL:(id)arg2;
 - (bool)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
 - (bool)tsu_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
-- (bool)tsu_makeWritableItemAtURL:(id)arg1 permissionsOverride:(id)arg2 error:(id*)arg3;
+- (bool)tsu_makeWritableItemAtURL:(id)arg1 permissionsOverride:(id)arg2 resetCreationDate:(bool)arg3 error:(id*)arg4;
 - (bool)tsu_replaceItemAtURL:(id)arg1 withItemAtURL:(id)arg2 backupItemName:(id)arg3 options:(unsigned long long)arg4 resultingItemURL:(id*)arg5 error:(id*)arg6;
 
 @end

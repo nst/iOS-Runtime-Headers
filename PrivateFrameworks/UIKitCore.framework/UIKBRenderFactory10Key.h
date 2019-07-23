@@ -21,8 +21,10 @@
 - (unsigned long long)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
 - (struct CGPoint { double x1; double x2; })globeKeyTextOffset;
 - (double)interkeyGapsCenterXOfKeyplaneFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)keyCornerRadius;
 - (long long)lightHighQualityEnabledBlendForm;
 - (struct CGPoint { double x1; double x2; })longVowelSignKeyTextOffset;
+- (void)modifyTraitsForDetachedInputSwitcher:(id)arg1 withKey:(id)arg2;
 - (double)numberPadKeyPrimarySymbolSize;
 - (struct CGPoint { double x1; double x2; })numberPadKeyPrimaryTextOffset;
 - (struct CGPoint { double x1; double x2; })numberPadKeySecondaryTextOffset;

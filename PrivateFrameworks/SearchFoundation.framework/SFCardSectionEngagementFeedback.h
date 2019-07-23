@@ -4,11 +4,13 @@
 
 @interface SFCardSectionEngagementFeedback : SFCardSectionFeedback <CRCardSectionEngagementFeedback> {
     unsigned long long  _actionCardType;
+    unsigned long long  _actionTarget;
     SFPunchout * _destination;
     unsigned long long  _triggerEvent;
 }
 
 @property (nonatomic) unsigned long long actionCardType;
+@property (nonatomic) unsigned long long actionTarget;
 @property (nonatomic, readonly) SFFeedback *backingFeedback;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -23,11 +25,13 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)actionCardType;
+- (unsigned long long)actionTarget;
 - (id)destination;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCardSection:(id)arg1 destination:(id)arg2 triggerEvent:(unsigned long long)arg3 actionCardType:(unsigned long long)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)setActionCardType:(unsigned long long)arg1;
+- (void)setActionTarget:(unsigned long long)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setTriggerEvent:(unsigned long long)arg1;
 - (unsigned long long)triggerEvent;

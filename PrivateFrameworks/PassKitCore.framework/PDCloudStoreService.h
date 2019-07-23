@@ -15,20 +15,26 @@
 
 - (void).cxx_destruct;
 - (void)allItemsOfItemType:(unsigned long long)arg1 storeLocally:(bool)arg2 completion:(id /* block */)arg3;
+- (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
 - (id)cloudStoreNotificationCoordinator;
+- (void)cloudStoreStatusForContainer:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithConnection:(id)arg1;
 - (void)itemOfItemType:(unsigned long long)arg1 recordName:(id)arg2 completion:(id /* block */)arg3;
 - (void)noteAccountDeletedWithHandler:(id /* block */)arg1;
 - (void)noteCloudSyncPassesSwitchChangedWithHandler:(id /* block */)arg1;
+- (void)populateEvents:(id)arg1 forAccountIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)removeItemsWithRecordNames:(id)arg1 itemType:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
 - (void)resetContainerWithCompletion:(id /* block */)arg1;
 - (void)resetContainerWithHandler:(id /* block */)arg1;
 - (void)resetContainerWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCloudStoreNotificationCoordinator:(id)arg1;
+- (void)setupCloudDatabaseForContainerName:(id)arg1 completion:(id /* block */)arg2;
 - (void)simulateCloudStorePushForContainerIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)simulateCloudStorePushWithCompletion:(id /* block */)arg1;
 - (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(id /* block */)arg3;
+- (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 
 @end

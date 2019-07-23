@@ -11,7 +11,7 @@
 
 - (struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)ast;
 - (void)dealloc;
-- (void)encodeToArchive:(struct TrackedReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ASTNodeArrayArchive {} *x5; unsigned int x6; }*)arg1;
+- (void)encodeToArchive:(struct TrackedReferenceArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ASTNodeArrayArchive {} *x5; unsigned int x6; }*)arg1;
 - (struct { unsigned int x1 : 48; })formulaID;
 - (void)saveToArchiver:(id)arg1;
 - (bool)validatedLoadFromUnarchiver:(id)arg1;

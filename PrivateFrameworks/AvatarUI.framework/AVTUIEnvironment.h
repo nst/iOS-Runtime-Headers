@@ -5,28 +5,27 @@
 @interface AVTUIEnvironment : NSObject {
     double  _actionAnimationsMultiplier;
     NSObject<OS_dispatch_queue> * _backgroundQueue;
+    NSObject<OS_dispatch_queue> * _backgroundRenderingQueue;
+    AVTCoreEnvironment * _coreEnvironment;
+    bool  _deviceIsSunflower;
     AVTDeviceResourceManager * _deviceResourceManager;
     AVTCoreModel * _editorCoreModel;
-    NSURL * _imageCacheStoreLocation;
-    NSURL * _imageStoreLocation;
     AVTInMemoryImageCache * _inMemoryImageCache;
-    id /* block */  _lockProvider;
-    <AVTUILogger> * _logger;
     double  _mainScreenScale;
     struct CGSize { 
         double width; 
         double height; 
     }  _mainScreenSize;
-    NSNotificationCenter * _notificationCenter;
     AVTAvatarConfigurationImageRenderer * _renderer;
-    id /* block */  _serialQueueProvider;
-    NSURL * _storeLocation;
     <AVTUsageTrackingSession> * _usageTrackingSession;
     long long  _userInterfaceLayoutDirection;
 }
 
 @property (nonatomic) double actionAnimationsMultiplier;
 @property (nonatomic, readonly, copy) NSObject<OS_dispatch_queue> *backgroundQueue;
+@property (nonatomic, readonly, copy) NSObject<OS_dispatch_queue> *backgroundRenderingQueue;
+@property (nonatomic, readonly) AVTCoreEnvironment *coreEnvironment;
+@property (nonatomic, readonly) bool deviceIsSunflower;
 @property (nonatomic, readonly) AVTDeviceResourceManager *deviceResourceManager;
 @property (nonatomic, readonly) AVTCoreModel *editorCoreModel;
 @property (nonatomic, readonly, copy) NSURL *imageCacheStoreLocation;
@@ -45,23 +44,22 @@
 
 + (id)createEditorCoreModelWithLogger:(id)arg1;
 + (id)createFunCamEnvironment;
-+ (id)createQueueWithQoSClass:(unsigned int)arg1;
++ (id)createQueueWithQoSClass:(unsigned int)arg1 label:(const char *)arg2;
 + (id)createUsageTrackingSessionWithCoreModel:(id)arg1 serialQueueProvider:(id /* block */)arg2 logger:(id)arg3;
 + (id)defaultEnvironment;
-+ (id)imageCacheStoreLocationWithError:(id*)arg1;
-+ (id)imageStoreLocation;
-+ (id /* block */)serialQueueProvider;
-+ (id)storeLocation;
 
 - (void).cxx_destruct;
 - (double)actionAnimationsMultiplier;
 - (id)backgroundQueue;
+- (id)backgroundRenderingQueue;
+- (id)coreEnvironment;
+- (bool)deviceIsSunflower;
 - (id)deviceResourceManager;
 - (id)editorCoreModel;
 - (id)imageCacheStoreLocation;
 - (id)imageStoreLocation;
 - (id)inMemoryImageCache;
-- (id)init;
+- (id)initWithCoreEnvironment:(id)arg1;
 - (id /* block */)lockProvider;
 - (id)logger;
 - (double)mainScreenScale;

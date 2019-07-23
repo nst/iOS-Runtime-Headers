@@ -4,6 +4,7 @@
 
 @interface PXSharingSettings : PXSettings {
     unsigned long long  _confidentialityWarningsVersion;
+    bool  _disableMoveAndScaleWallpaper;
     bool  _sharingSuggestionsWidgetAllStreamEnabled;
     bool  _sharingSuggestionsWidgetCoreDuetEnabled;
     bool  _sharingSuggestionsWidgetHeuristicsEnabled;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic) unsigned long long confidentialityWarningsVersion;
+@property (nonatomic) bool disableMoveAndScaleWallpaper;
 @property (nonatomic) bool sharingSuggestionsWidgetAllStreamEnabled;
 @property (nonatomic) bool sharingSuggestionsWidgetCoreDuetEnabled;
 @property (nonatomic) bool sharingSuggestionsWidgetHeuristicsEnabled;
@@ -26,9 +28,11 @@
 - (unsigned long long)confidentialityWarningsVersion;
 - (id)debugDescription;
 - (void)defaultValueDidChangeForKey:(id)arg1;
+- (bool)disableMoveAndScaleWallpaper;
 - (id)parentSettings;
 - (void)setConfidentialityWarningsVersion:(unsigned long long)arg1;
 - (void)setDefaultValues;
+- (void)setDisableMoveAndScaleWallpaper:(bool)arg1;
 - (void)setSharingSuggestionsWidgetAllStreamEnabled:(bool)arg1;
 - (void)setSharingSuggestionsWidgetCoreDuetEnabled:(bool)arg1;
 - (void)setSharingSuggestionsWidgetHeuristicsEnabled:(bool)arg1;

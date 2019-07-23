@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (long long)dispatchPriority;
 - (id)dispatchQueue;
+- (void)emptyCache;
 - (void)endGeneratingForKey:(id)arg1;
 - (void)enqueueBlock:(id /* block */)arg1 withPriority:(long long)arg2;
 - (void)enqueueGenerationBlock:(id /* block */)arg1 completion:(id /* block */)arg2 withPriority:(long long)arg3 forKey:(id)arg4;
@@ -45,6 +46,7 @@
 - (void)setObjectCache:(id)arg1;
 - (void)setPendingGroups:(id)arg1;
 - (void)setPendingKeys:(id)arg1;
+- (void)suspend;
 - (void)systemApplicationDidSuspend;
 - (bool)waitOnGenerationForKey:(id)arg1;
 

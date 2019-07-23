@@ -8,6 +8,8 @@
     <SBUIPasscodeBiometricAuthenticationViewDelegate> * _delegate;
     SBUIButton * _emergencyCallButton;
     UILabel * _faceIDLabel;
+    UILayoutGuide * _faceIDLabelAndReasonHelperGuide;
+    UILayoutGuide * _faceIDLabelAndReasonLayoutGuide;
     NSLayoutConstraint * _faceIDLabelFaceIDReasonBaselineConstraint;
     NSString * _faceIDReason;
     UILabel * _faceIDReasonLabel;
@@ -28,6 +30,8 @@
 @property (nonatomic) <SBUIPasscodeBiometricAuthenticationViewDelegate> *delegate;
 @property (nonatomic, retain) SBUIButton *emergencyCallButton;
 @property (nonatomic, retain) UILabel *faceIDLabel;
+@property (nonatomic, retain) UILayoutGuide *faceIDLabelAndReasonHelperGuide;
+@property (nonatomic, retain) UILayoutGuide *faceIDLabelAndReasonLayoutGuide;
 @property (nonatomic, retain) NSLayoutConstraint *faceIDLabelFaceIDReasonBaselineConstraint;
 @property (setter=_setFaceIDReason:, nonatomic, copy) NSString *faceIDReason;
 @property (nonatomic, retain) UILabel *faceIDReasonLabel;
@@ -62,6 +66,8 @@
 - (id)delegate;
 - (id)emergencyCallButton;
 - (id)faceIDLabel;
+- (id)faceIDLabelAndReasonHelperGuide;
+- (id)faceIDLabelAndReasonLayoutGuide;
 - (id)faceIDLabelFaceIDReasonBaselineConstraint;
 - (id)faceIDReason;
 - (id)faceIDReasonLabel;
@@ -77,6 +83,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEmergencyCallButton:(id)arg1;
 - (void)setFaceIDLabel:(id)arg1;
+- (void)setFaceIDLabelAndReasonHelperGuide:(id)arg1;
+- (void)setFaceIDLabelAndReasonLayoutGuide:(id)arg1;
 - (void)setFaceIDLabelFaceIDReasonBaselineConstraint:(id)arg1;
 - (void)setFaceIDReasonLabel:(id)arg1;
 - (void)setFaceIDUsePasscodeButton:(id)arg1;

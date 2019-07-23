@@ -60,6 +60,7 @@
 @property (nonatomic, readonly) bool isActivitySummary;
 @property (nonatomic, readonly) bool isCharacteristic;
 @property (nonatomic, readonly) bool isDocument;
+@property (nonatomic, readonly) bool isElectrocardiogram;
 @property (nonatomic, readonly) NSSet *keywords;
 @property (nonatomic, readonly) NSString *labelDisplayName;
 @property (nonatomic, readonly) UIImage *listIcon;
@@ -175,6 +176,7 @@
 - (bool)isActivitySummary;
 - (bool)isCharacteristic;
 - (bool)isDocument;
+- (bool)isElectrocardiogram;
 - (bool)isEqual:(id)arg1;
 - (id)keywords;
 - (id)labelDisplayName;

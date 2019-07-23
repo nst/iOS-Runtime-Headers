@@ -6,6 +6,7 @@
     UIColor * _analogComplicationsColor;
     UIColor * _analogDotColor;
     UIColor * _backgroundColor;
+    unsigned long long  _bleed;
     UIColor * _digitalComplicationsColor;
     UIColor * _digitalComplicationsPlatterColor;
     UIColor * _handInlayColor;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) UIColor *analogComplicationsColor;
 @property (nonatomic, readonly) UIColor *analogDotColor;
 @property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) unsigned long long bleed;
 @property (nonatomic, readonly) UIColor *digitalComplicationsColor;
 @property (nonatomic, readonly) UIColor *digitalComplicationsPlatterColor;
 @property (nonatomic, readonly) UIColor *handInlayColor;
@@ -38,6 +40,7 @@
 - (id)analogComplicationsColor;
 - (id)analogDotColor;
 - (id)backgroundColor;
+- (unsigned long long)bleed;
 - (id)digitalComplicationsColor;
 - (id)digitalComplicationsPlatterColor;
 - (id)handInlayColor;

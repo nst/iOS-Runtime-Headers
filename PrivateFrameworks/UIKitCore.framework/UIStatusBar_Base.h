@@ -67,8 +67,6 @@
 @property (nonatomic, copy) UIStatusBarStyleRequest *styleRequest;
 @property (nonatomic) bool suppressesHiddenSideEffects;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3;
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3 activeStyleOverride:(int*)arg4;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameInSceneReferenceSpaceForStyle:(long long)arg1 orientation:(long long)arg2 inSceneWithReferenceSize:(struct CGSize { double x1; double x2; })arg3;
@@ -106,10 +104,6 @@
 - (id)_transitionCoordinator;
 - (bool)_usesModernBar;
 - (void)_willEnterForeground:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (id)actionForRegionWithIdentifier:(id)arg1;
 - (int)activeStyleOverride;
@@ -122,6 +116,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentFrame;
 - (double)currentHeight;
 - (long long)currentStyle;
+- (void)dealloc;
 - (double)defaultDoubleHeight;
 - (double)defaultHeight;
 - (void)didMoveToSuperview;

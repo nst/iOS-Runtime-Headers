@@ -5,7 +5,6 @@
 @interface _SFImageActivityItemProvider : _SFActivityItemProvider {
     NSString * _documentUTI;
     NSData * _imageOnlyDocumentData;
-    WKWebView * _webView;
 }
 
 - (void).cxx_destruct;

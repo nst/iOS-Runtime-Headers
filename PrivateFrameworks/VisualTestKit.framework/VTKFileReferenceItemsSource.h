@@ -14,8 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)itemsDirectory;
-- (id)referenceImageURLWithTestCase:(id)arg1;
-- (id)referenceImageWithID:(id)arg1 testCase:(id)arg2;
+- (id)referenceImageWithID:(id)arg1 testCase:(id)arg2 error:(id*)arg3;
 - (void)setItemsDirectory:(id)arg1;
 
 @end

@@ -33,6 +33,13 @@
 - (void)setTarget:(id)arg1;
 - (id)target;
 
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
+- (id)init;
+- (id)initWithName:(id)arg1;
+- (void)tmlSignalAttach:(id)arg1;
+- (void)tmlSignalDetach:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 - (id)_accessibilityAXAttributedName;

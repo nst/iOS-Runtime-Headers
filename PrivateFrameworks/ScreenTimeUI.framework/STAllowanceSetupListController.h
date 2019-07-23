@@ -5,14 +5,16 @@
 @interface STAllowanceSetupListController : PSListController {
     PSSpecifier * _allAppsAndCategoriesSpecifier;
     PSSpecifier * _categoriesGroupSpecifier;
+    bool  _creatingNewAllowance;
     <STAllowanceSetupListControllerDelegate> * _delegate;
     NSArray * _initialSelectedIdentifiers;
 }
 
 @property (nonatomic, retain) PSSpecifier *allAppsAndCategoriesSpecifier;
 @property (nonatomic, retain) PSSpecifier *categoriesGroupSpecifier;
+@property (nonatomic, readonly) bool creatingNewAllowance;
 @property <STAllowanceSetupListControllerDelegate> *delegate;
-@property (nonatomic, readonly, copy) NSArray *initialSelectedIdentifiers;
+@property (nonatomic, copy) NSArray *initialSelectedIdentifiers;
 
 - (void).cxx_destruct;
 - (void)addButtonTapped:(id)arg1;
@@ -20,14 +22,15 @@
 - (bool)canBeShownFromSuspendedState;
 - (void)cancelButtonTapped:(id)arg1;
 - (id)categoriesGroupSpecifier;
+- (bool)creatingNewAllowance;
 - (id)delegate;
-- (id)init;
-- (id)initWithSelectedIdentifiers:(id)arg1;
+- (id)initWithSelectedIdentifiers:(id)arg1 creatingNewAllowance:(bool)arg2;
 - (id)initialSelectedIdentifiers;
 - (void)loadView;
 - (void)setAllAppsAndCategoriesSpecifier:(id)arg1;
 - (void)setCategoriesGroupSpecifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setInitialSelectedIdentifiers:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;

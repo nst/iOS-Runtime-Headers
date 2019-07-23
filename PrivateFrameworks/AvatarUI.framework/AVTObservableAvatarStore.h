@@ -16,6 +16,9 @@
 @property (nonatomic, readonly) <AVTAvatarStoreInternal> *store;
 @property (readonly) Class superclass;
 
++ (unsigned long long)maximumNumberOfFetchableAvatars;
++ (unsigned long long)maximumNumberOfSavableAvatars;
+
 - (void).cxx_destruct;
 - (id)avatarsForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)callbackQueue;

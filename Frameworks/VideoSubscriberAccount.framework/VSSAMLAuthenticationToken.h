@@ -20,6 +20,7 @@
 - (unsigned long long)hash;
 - (id)initWithSerializedData:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)isFromUnsupportedProvider;
 - (bool)isOpaque;
 - (bool)isValid;
 - (id)serializedData;

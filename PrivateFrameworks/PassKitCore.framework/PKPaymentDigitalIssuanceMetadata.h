@@ -4,6 +4,7 @@
 
 @interface PKPaymentDigitalIssuanceMetadata : NSObject {
     NSString * _action;
+    NSArray * _defaultSuggestions;
     NSString * _merchantID;
     NSArray * _serviceProviderCapabilities;
     NSString * _serviceProviderCountryCode;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *action;
+@property (nonatomic, readonly, copy) NSArray *defaultSuggestions;
 @property (nonatomic, readonly, copy) NSString *merchantID;
 @property (nonatomic, readonly, copy) NSArray *serviceProviderCapabilities;
 @property (nonatomic, readonly, copy) NSString *serviceProviderCountryCode;
@@ -22,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)action;
+- (id)defaultSuggestions;
 - (id)initWithDictionary:(id)arg1;
 - (id)merchantID;
 - (id)serviceProviderCapabilities;

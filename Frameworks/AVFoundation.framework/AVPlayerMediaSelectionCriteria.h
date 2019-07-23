@@ -9,6 +9,8 @@
 @property (nonatomic, readonly) NSArray *preferredLanguages;
 @property (nonatomic, readonly) NSArray *preferredMediaCharacteristics;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 - (void)dealloc;
 - (id)description;
 - (id)figDictionary;
@@ -25,5 +27,9 @@
 - (id)preferredLanguages;
 - (id)preferredMediaCharacteristics;
 - (id)preferredMediaSubTypes;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (bool)tvp_isEqualToCriteria:(id)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface NTKVictoryAnalogFaceView : NTKAnalogFaceView <NTKUtilityComplicationFactoryDelegate, NTKVictoryAnalogBackgroundViewDelegate> {
     NTKVictoryAnalogBackgroundView * _backgroundView;
     NTKRoundedCornerOverlayView * _cornerView;
+    bool  _isFullBleed;
     NTKUtilityComplicationFactory * _utilityComplicationFactory;
 }
 
@@ -32,6 +33,7 @@
 - (void)_configureReusableTimeView:(id)arg1;
 - (struct CGPoint { double x1; double x2; })_contentCenterOffset;
 - (id)_editOptionThatHidesAllComplications;
+- (double)_editSpeedForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (double)_handsAlphaForEditMode:(long long)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
@@ -50,6 +52,7 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_prepareForEditing;
 - (void)_prepareTimeViewForReuse:(id)arg1;
+- (void)_setFullBleed:(bool)arg1;
 - (id)_slotForUtilitySlot:(long long)arg1;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)_swatchImageForEditOption:(id)arg1 mode:(long long)arg2 withSelectedOptions:(id)arg3;
@@ -58,6 +61,7 @@
 - (void)_unloadSnapshotContentViews;
 - (long long)_utilitySlotForSlot:(id)arg1;
 - (double)_verticalPaddingForStatusBar;
+- (bool)_wantsStatusBarIconShadow;
 - (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 - (void)logoTappedFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)slotUsesCurvedText:(long long)arg1;

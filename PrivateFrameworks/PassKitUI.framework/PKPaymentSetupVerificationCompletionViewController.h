@@ -5,6 +5,7 @@
 @interface PKPaymentSetupVerificationCompletionViewController : PKPaymentSetupTableViewController <PKPaymentVerificationObserverDelegate, UITextFieldDelegate> {
     UIColor * _editableTextFieldColor;
     long long  _mode;
+    bool  _offerOtherMethods;
     PKPaymentProvisioningController * _provisioningController;
     bool  _resignedResponder;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
@@ -37,7 +38,7 @@
 - (void)_submitVerificationCode;
 - (void)_terminateFlow;
 - (void)dealloc;
-- (id)initWithVerificationController:(id)arg1 mode:(long long)arg2;
+- (id)initWithVerificationController:(id)arg1 mode:(long long)arg2 offerOtherMethods:(bool)arg3;
 - (void)loadView;
 - (void)next:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;

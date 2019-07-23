@@ -4,11 +4,13 @@
 
 @interface WBSCreditCardFormatter : NSFormatter {
     bool  _allowsUnknownCardTypes;
+    bool  _isVirtualCard;
     bool  _showCreditCardNumber;
     bool  _showLastFourDigits;
 }
 
 @property (nonatomic) bool allowsUnknownCardTypes;
+@property (nonatomic) bool isVirtualCard;
 @property (nonatomic) bool showCreditCardNumber;
 @property (nonatomic) bool showLastFourDigits;
 
@@ -19,7 +21,9 @@
 - (bool)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
 - (bool)isPartialStringValid:(id)arg1 newEditingString:(id*)arg2 errorDescription:(id*)arg3;
 - (bool)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 errorDescription:(id*)arg5;
+- (bool)isVirtualCard;
 - (void)setAllowsUnknownCardTypes:(bool)arg1;
+- (void)setIsVirtualCard:(bool)arg1;
 - (void)setShowCreditCardNumber:(bool)arg1;
 - (void)setShowLastFourDigits:(bool)arg1;
 - (bool)showCreditCardNumber;

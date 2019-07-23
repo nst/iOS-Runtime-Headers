@@ -58,8 +58,6 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } rightContentViewSize;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)_setupAppearanceIfNecessary;
 
 - (double)_additionalClipHeight;
@@ -87,14 +85,11 @@
 - (id)_toolbarBorderedBackground;
 - (void)_updateClipCorners;
 - (void)_updateWithSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsSelfSizing;
 - (bool)assertSizingWithPredictionBar;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundEdgeInsets;
 - (double)contentRatio;
+- (void)dealloc;
 - (void)didEndSplitTransition;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -17,6 +17,7 @@
 - (unsigned int)dymSuggestionVisibleTime;
 - (bool)isCancelled;
 - (bool)isChainResultSet;
+- (GEOPDMerchantLookupResult *)merchantLookupResult;
 - (NSArray *)relatedSearchSuggestions;
 - (NSDictionary *)responseUserInfo;
 - (GEOMapRegion *)resultBoundingRegion;

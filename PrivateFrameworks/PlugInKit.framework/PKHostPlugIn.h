@@ -153,6 +153,7 @@
 - (id)syncService;
 - (bool)terminating;
 - (void)unwind:(unsigned long long)arg1 force:(bool)arg2;
+- (void)updateFromForm:(id)arg1;
 - (bool)useBundle:(id)arg1 error:(id*)arg2;
 - (unsigned int)useCount;
 - (long long)userElection;

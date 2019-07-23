@@ -3,12 +3,14 @@
  */
 
 @interface PKProtobufPaymentRequest : PBRequest <NSCopying> {
+    unsigned int  _apiType;
     NSData * _applicationData;
     NSData * _billingContact;
     NSString * _countryCode;
     NSString * _currencyCode;
     bool  _expectsMerchantSession;
     struct { 
+        unsigned int apiType : 1; 
         unsigned int merchantCapabilities : 1; 
         unsigned int requiredBillingAddressFields : 1; 
         unsigned int requiredShippingAddressFields : 1; 
@@ -30,11 +32,13 @@
     NSMutableArray * _thumbnailURLs;
 }
 
+@property (nonatomic) unsigned int apiType;
 @property (nonatomic, retain) NSData *applicationData;
 @property (nonatomic, retain) NSData *billingContact;
 @property (nonatomic, retain) NSString *countryCode;
 @property (nonatomic, retain) NSString *currencyCode;
 @property (nonatomic) bool expectsMerchantSession;
+@property (nonatomic) bool hasApiType;
 @property (nonatomic, readonly) bool hasApplicationData;
 @property (nonatomic, readonly) bool hasBillingContact;
 @property (nonatomic, readonly) bool hasCountryCode;
@@ -78,6 +82,7 @@
 - (void)addSupportedCountries:(id)arg1;
 - (void)addSupportedNetworks:(id)arg1;
 - (void)addThumbnailURLs:(id)arg1;
+- (unsigned int)apiType;
 - (id)applicationData;
 - (id)billingContact;
 - (void)clearRequiredBillingContactFields;
@@ -94,6 +99,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)expectsMerchantSession;
+- (bool)hasApiType;
 - (bool)hasApplicationData;
 - (bool)hasBillingContact;
 - (bool)hasCountryCode;
@@ -122,11 +128,13 @@
 - (id)requiredShippingContactFields;
 - (id)requiredShippingContactFieldsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)requiredShippingContactFieldsCount;
+- (void)setApiType:(unsigned int)arg1;
 - (void)setApplicationData:(id)arg1;
 - (void)setBillingContact:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setExpectsMerchantSession:(bool)arg1;
+- (void)setHasApiType:(bool)arg1;
 - (void)setHasExpectsMerchantSession:(bool)arg1;
 - (void)setHasMerchantCapabilities:(bool)arg1;
 - (void)setHasRequiredBillingAddressFields:(bool)arg1;

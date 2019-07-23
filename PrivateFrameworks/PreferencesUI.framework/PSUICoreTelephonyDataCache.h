@@ -35,9 +35,12 @@
 - (id)intlDataAccessGroup;
 - (bool)intlDataAccessStatus;
 - (bool)intlDataAccessStatusInitialized;
+- (bool)isAirplaneModeEnabled;
 - (bool)isCellularDataEnabled;
+- (bool)isDataFallbackEnabled;
 - (void)setCellularDataEnabled:(bool)arg1;
 - (void)setClient:(id)arg1;
+- (void)setDataFallbackEnabled:(bool)arg1;
 - (void)setDataStatusDict:(id)arg1;
 - (void)setInternationalDataAccessStatus:(bool)arg1;
 - (void)setIntlDataAccessGroup:(id)arg1;

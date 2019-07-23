@@ -12,6 +12,7 @@
     id /* block */  _dynamicCachePolicyBlock;
     FCEdgeCacheHint * _edgeCacheHint;
     NSDictionary * _linkKeysByRecordType;
+    NSMutableSet * _missingCachedOnlyTopLevelRecordIDs;
     NSMutableArray * _mutableNetworkEvents;
     NSDictionary * _pbRecordTypesByRecordType;
     id /* block */  _recordChainCompletionHandler;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) id /* block */ dynamicCachePolicyBlock;
 @property (nonatomic, copy) FCEdgeCacheHint *edgeCacheHint;
 @property (nonatomic, copy) NSDictionary *linkKeysByRecordType;
+@property (nonatomic, retain) NSMutableSet *missingCachedOnlyTopLevelRecordIDs;
 @property (nonatomic, retain) NSMutableArray *mutableNetworkEvents;
 @property (nonatomic, readonly, copy) NSArray *networkEvents;
 @property (nonatomic, retain) NSDictionary *pbRecordTypesByRecordType;
@@ -46,19 +48,20 @@
 @property (nonatomic, copy) NSArray *topLevelRecordIDs;
 
 - (void).cxx_destruct;
-- (void)_collectActualTopLevelRecordIDsFromRecordIDs:(id)arg1;
+- (void)_collectActualTopLevelRecordIDsFromRecordIDs:(id)arg1 visitedRecordIDs:(id)arg2;
 - (void)_collectCachedRecordsFromRecordIDs:(id)arg1;
 - (id)_errorForMissingRecordNames:(id)arg1;
 - (void)_filterOrphansFromCachedRecords;
 - (void)_finalizeResultFromCachedRecords;
 - (void)_issueCloudRequestIfNeeded;
-- (id)_partialErrorForMissingRecordName:(id)arg1;
+- (id)_partialFetchErrorForMissingRecordName:(id)arg1;
+- (id)_partialUncachedErrorForMissingRecordName:(id)arg1;
 - (int)_pbRecordTypeForRecordID:(id)arg1;
 - (int)_pbRecordTypeForRecordType:(id)arg1;
 - (id)_recordIDsMissingFromCachedRecords;
 - (id)_recordSourceForRecordType:(id)arg1;
 - (id)_recordTypeForRecordID:(id)arg1;
-- (void)_walkRecordChainStartingWithRecordIDs:(id)arg1 recordsLookupBlock:(id /* block */)arg2 visitorBlock:(id /* block */)arg3;
+- (void)_walkRecordChainStartingWithRecordIDs:(id)arg1 visitedRecordIDs:(id)arg2 recordsLookupBlock:(id /* block */)arg3 visitorBlock:(id /* block */)arg4;
 - (id)actualTopLevelRecordIDs;
 - (id)additionalRecordSources;
 - (id)cachePoliciesByRecordType;
@@ -69,6 +72,7 @@
 - (id)edgeCacheHint;
 - (id)init;
 - (id)linkKeysByRecordType;
+- (id)missingCachedOnlyTopLevelRecordIDs;
 - (id)mutableNetworkEvents;
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -88,6 +92,7 @@
 - (void)setDynamicCachePolicyBlock:(id /* block */)arg1;
 - (void)setEdgeCacheHint:(id)arg1;
 - (void)setLinkKeysByRecordType:(id)arg1;
+- (void)setMissingCachedOnlyTopLevelRecordIDs:(id)arg1;
 - (void)setMutableNetworkEvents:(id)arg1;
 - (void)setPbRecordTypesByRecordType:(id)arg1;
 - (void)setRecordChainCompletionHandler:(id /* block */)arg1;

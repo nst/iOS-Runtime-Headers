@@ -126,6 +126,14 @@
 - (id)_gkIndexSetByAddingIndex:(long long)arg1;
 - (id)_gkIndexSetByRemovingIndex:(long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)indexSetWithIndexesInCyclicRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 itemCount:(unsigned long long)arg2;
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_allInclusiveCyclicRangeForItemCount:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_filteredCyclicRangeForItemCount:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })cyclicRangeForItemCount:(unsigned long long)arg1 includeAllIndexes:(bool)arg2;
+
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 + (id)differenceOf:(id)arg1 with:(id)arg2;
@@ -220,8 +228,8 @@
 
 + (id)tsu_indexSetWithIndices:(unsigned long long*)arg1 count:(unsigned long long)arg2;
 
-- (id)tsp_initWithMessage:(const struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
-- (void)tsp_saveToMessage:(struct IndexSet { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Range> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (id)tsp_initWithMessage:(const struct IndexSet { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Range> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
+- (void)tsp_saveToMessage:(struct IndexSet { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSP::Range> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })tsu_boundingRange;
 - (unsigned long long)tsu_firstCommonIndexWithIndexes:(id)arg1;
 - (unsigned long long)tsu_indexAtPosition:(unsigned long long)arg1;

@@ -198,6 +198,7 @@
 - (void)setShouldUseFastPreviewText:(bool)arg1;
 - (void)setSyncProgressViewController:(id)arg1;
 - (void)setUpdater:(id)arg1;
+- (bool)shouldCleanupFilter;
 - (bool)shouldShowPendingCell;
 - (bool)shouldUseFastPreviewText;
 - (void)significantTimeChange;

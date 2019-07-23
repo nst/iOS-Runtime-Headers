@@ -4,8 +4,6 @@
 
 @interface UITextLabel : UILabel
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)alignment;
 - (bool)centersHorizontally;
 - (id)color;

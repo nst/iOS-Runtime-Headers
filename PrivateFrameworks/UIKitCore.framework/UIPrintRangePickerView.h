@@ -6,13 +6,8 @@
     double  _shift;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (bool)_forceTextAlignmentCentered;
 - (double)_wheelShift;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)layoutSubviews;
 
 @end

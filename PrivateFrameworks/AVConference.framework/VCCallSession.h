@@ -8,6 +8,7 @@
     VCCaptionsReceiver * _captionsReceiver;
     bool  _cleanupDone;
     int  _currentRedPayloadType;
+    bool  _currentlyMediaStall;
     int  _deviceRole;
     bool  _didSendBasebandCodec;
     bool  _inviteDataRequested;
@@ -16,8 +17,11 @@
     bool  _isRedEnabled;
     bool  _isRemoteCellular_LowestConnectionQuality;
     bool  _isUseCaseWatchContinuity;
+    double  _lastMediaStallDuration;
     VCRateControlMediaController * _mediaController;
     VCMediaNegotiator * _mediaNegotiator;
+    unsigned int  _mediaStallCount;
+    double  _mediaStallTotalTime;
     unsigned int  _peerProtocolVersion;
     unsigned int  _rateChangeCounter;
     AVCRateController * _rateController;
@@ -118,6 +122,7 @@
     float  packetLateAndMissingRatio;
     double  packetLossRate;
     long long  packetMultiplexMode;
+    int  packetsSinceMediaStall;
     int  packetsSinceStall;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
@@ -171,6 +176,7 @@
     long long  samplesPerFrame;
     long long  screenPayload;
     struct __CFData { } * secretKey;
+    VCControlChannelMultiWay * secureControlChannel;
     VCSecureDataChannel * secureDataChannel;
     bool  sentClientSuccessfulDidStart;
     NSObject<OS_dispatch_source> * sessionHealthMonitor;
@@ -309,6 +315,7 @@
 + (int)setRxPayloadList:(struct tagHANDLE { int x1; }*)arg1 withPayloadTypes:(id)arg2 isRedEnabled:(bool)arg3;
 
 - (int)Conference_SetBWEstMode:(bool)arg1 bFakeLargeFrameMode:(bool)arg2;
+- (id)activeControlChannel;
 - (id)addAudioPayload:(int)arg1;
 - (void)addLocalCallInfoToInviteDictionary:(id)arg1;
 - (void)addScreenConfigToSDP:(id)arg1;
@@ -433,6 +440,7 @@
 - (bool)isRTCPFBEnabled;
 - (bool)isRemoteMediaStalled;
 - (bool)isSKEOptimizationEnabled;
+- (bool)isSecureMessagingRequired;
 - (bool)isStarted;
 - (bool)isValidVideoPayloadOverride:(id)arg1;
 - (bool)isVideoRunning;

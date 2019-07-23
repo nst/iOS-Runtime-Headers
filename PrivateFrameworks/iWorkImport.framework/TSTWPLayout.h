@@ -4,7 +4,7 @@
 
 @interface TSTWPLayout : TSWPLayout {
     bool  _cacheIsValid;
-    unsigned int  _cachedAutoSizeFlags;
+    unsigned long long  _cachedAutoSizeFlags;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -64,7 +64,7 @@
 }
 
 @property (nonatomic) bool cacheIsValid;
-@property (nonatomic) unsigned int cachedAutoSizeFlags;
+@property (nonatomic) unsigned long long cachedAutoSizeFlags;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cachedAutosizedFrame;
 @property (nonatomic) struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; } cachedCellID;
 @property (nonatomic, retain) TSTCellStyle *cachedCellStyle;
@@ -78,7 +78,7 @@
 @property (nonatomic) int cachedVerticalAlignment;
 
 - (bool)cacheIsValid;
-- (unsigned int)cachedAutoSizeFlags;
+- (unsigned long long)cachedAutoSizeFlags;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cachedAutosizedFrame;
 - (struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })cachedCellID;
 - (id)cachedCellStyle;
@@ -95,7 +95,7 @@
 - (void)invalidate;
 - (bool)invalidateForPageCountChange;
 - (void)setCacheIsValid:(bool)arg1;
-- (void)setCachedAutoSizeFlags:(unsigned int)arg1;
+- (void)setCachedAutoSizeFlags:(unsigned long long)arg1;
 - (void)setCachedAutosizedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCachedCellID:(struct TSUCellCoord { unsigned int x1; unsigned short x2; bool x3; bool x4; })arg1;
 - (void)setCachedCellStyle:(id)arg1;

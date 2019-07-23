@@ -17,12 +17,14 @@
     NSObject<OS_dispatch_source> * _fullScreenCheckTimer;
     bool  _isFullScreen;
     bool  _isPlaying;
+    bool  _isRedirectingVideoForPIP;
     AVObservationController * _keyValueObservationController;
     PGPictureInPictureProxy * _pictureInPictureProxy;
     AVPictureInPictureViewController * _pictureInPictureViewController;
     AVPlayerController * _playerController;
     AVPlayerLayer * _playerLayer;
     __AVPlayerLayerView * _playerLayerView;
+    AVSecondScreenConnection * _secondScreenConnection;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -61,6 +63,8 @@
 - (void).cxx_destruct;
 - (void)_checkIsFullScreenAndUpdatePictureInPictureShouldStartWhenEnteringBackground;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_playerLayerVideoRectInScreen;
+- (void)_startRedirectingLayerForPictureInPicture;
+- (void)_stopRedirectingLayerForPictureInPicture;
 - (void)_updatePictureInPictureShouldStartWhenEnteringBackground;
 - (void)_updatePlaybackProgress;
 - (id)_window;

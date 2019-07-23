@@ -8,12 +8,7 @@
 
 @property (nonatomic, copy) NSArray *personLinkIDs;
 
-+ (bool)supportsSecureCoding;
-+ (Class)whitelistedClassForResultObject;
-
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)personLinkIDs;
 - (void)setPersonLinkIDs:(id)arg1;
 

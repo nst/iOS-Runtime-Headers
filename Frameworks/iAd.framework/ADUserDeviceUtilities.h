@@ -23,6 +23,7 @@
 + (bool)isiTunesManagedAppleId;
 + (id)sharedInstance;
 
+- (void)dealloc;
 - (bool)deviceHasHomeButton;
 - (id)lastiTunesAccountID;
 - (id)notifyToken;

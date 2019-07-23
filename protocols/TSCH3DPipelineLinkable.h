@@ -5,6 +5,6 @@
 
 @required
 
-- (TSCH3DGLFramebuffer *)output;
+- (TSCH3DFramebuffer *)output;
 
 @end

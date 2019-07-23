@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (id)labeledBadge;
 - (void)setLabeledBadge:(id)arg1;
+- (void)setText:(id)arg1;
 - (void)setViewAttributes:(id)arg1;
 - (id)viewAttributes;
 

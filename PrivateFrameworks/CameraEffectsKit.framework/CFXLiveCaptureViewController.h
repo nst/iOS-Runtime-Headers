@@ -41,6 +41,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *liveCaptureRenderedImageQ;
 @property (nonatomic, readonly) bool livePlayerIsSaturated;
 @property (nonatomic, readonly) UIView *localCameraViewfinderView;
+@property (nonatomic, readonly) struct { double x1; double x2; } normalizedMinimumHitTestArea;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *recordingQ;
 @property (nonatomic) JTImageView *renderImageView;
 @property (nonatomic, retain) NSOperationQueue *renderedFrameCallbacksOperationQueue;
@@ -80,10 +81,11 @@
 - (bool)livePlayerIsSaturated;
 - (id)localCameraViewfinderView;
 - (struct CGPoint { double x1; double x2; })locationInCaptureViewForGestureRecognizer:(id)arg1;
+- (struct { double x1; double x2; })normalizedMinimumHitTestArea;
 - (void)processAudioSample:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)recordingQ;
-- (void)removeAllEffectsOfType:(id)arg1;
-- (void)removeAllOverlayEffects;
+- (void)removeAllEffects:(id /* block */)arg1;
+- (void)removeAllEffectsOfType:(id)arg1 completion:(id /* block */)arg2;
 - (id)renderImageView;
 - (void)renderVideoFrame:(id)arg1;
 - (id)renderedFrameCallbacksOperationQueue;

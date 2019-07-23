@@ -4,13 +4,8 @@
 
 @interface UICollectionViewControllerWrapperView : UIView
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (id)_collectionViewController;
 - (id)_viewControllerToNotifyOnLayoutSubviews;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)didMoveToSuperview;
 - (id)preferredFocusedView;
 

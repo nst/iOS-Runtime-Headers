@@ -2,9 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKPlayHistoryRemoveRequestOperation : WLKNetworkRequestOperation
+@interface WLKPlayHistoryRemoveRequestOperation : WLKUTSNetworkRequestOperation {
+    WLKContinueWatchingResponse * _response;
+}
 
-- (id)initWithChannelID:(id)arg1 externalID:(id)arg2;
-- (id)responseProcessor;
+@property (nonatomic, readonly) WLKContinueWatchingResponse *response;
+
+- (void).cxx_destruct;
+- (id)initWithChannelID:(id)arg1 externalID:(id)arg2 caller:(id)arg3;
+- (void)processResponse;
+- (id)response;
 
 @end

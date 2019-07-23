@@ -16,6 +16,7 @@
         unsigned int pictureInPictureRemoteObject_didHidePictureInPictureViewController : 1; 
         unsigned int pictureInPictureRemoteObject_willDestroyPictureInPictureViewController : 1; 
     }  _delegateRespondsTo;
+    NSUUID * _finishTaskInvalidationUUID;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -26,8 +27,8 @@
             double height; 
         } size; 
     }  _initialLayerFrame;
+    BKSProcessAssertion * _interruptionBeganFinishTaskAssertion;
     bool  _isPictureInPicturePossible;
-    bool  _isStartingStoppingOrCancellingPictureInPicture;
     NSArray * _loadedTimeRanges;
     PGPictureInPictureApplication * _pictureInPictureApplication;
     long long  _pictureInPictureInterruptionCounter;
@@ -42,6 +43,7 @@
     NSObject<OS_dispatch_queue> * _queue;
     bool  _shouldShowAlternateActionButtonImage;
     bool  _shouldShowLoadingIndicator;
+    unsigned long long  _transitioningState;
 }
 
 @property (nonatomic, readonly) NSXPCConnection *connection;
@@ -57,8 +59,11 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) bool shouldStartPictureInPictureEnteringBackground;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long transitioningState;
 
 - (void).cxx_destruct;
+- (id)_finishTaskAssertionForProcessIdentifier:(int)arg1;
+- (void)_invalidateInterruptionBeganFinishTaskAssertion;
 - (id)_processAssertionForProcessIdentifier:(int)arg1;
 - (void)_tearDownAndNotifyClientAboutCancellation:(bool)arg1;
 - (void)cancel;
@@ -100,6 +105,7 @@
 - (void)startPictureInPictureEnteringBackgroundAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (oneway void)stopPictureInPictureAnimated:(bool)arg1 withFinalInterfaceOrientation:(long long)arg2 finalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)suspend;
+- (unsigned long long)transitioningState;
 - (oneway void)updateInitialLayerFrameForInteractiveTransitionAnimationUponBackgrounding:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withCompletionHandler:(id /* block */)arg2;
 - (oneway void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 withCompletionHandler:(id /* block */)arg2;
 

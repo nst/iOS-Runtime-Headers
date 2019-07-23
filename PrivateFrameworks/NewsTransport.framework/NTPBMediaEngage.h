@@ -66,6 +66,9 @@
     bool  _isTopStoryArticle;
     bool  _isUserSubscribedToFeed;
     bool  _isVideoInFeed;
+    NTPBIssueData * _issueData;
+    NTPBIssueExposureData * _issueExposureData;
+    NTPBIssueViewData * _issueViewData;
     int  _loadFailureReason;
     long long  _mediaDuration;
     NSString * _mediaId;
@@ -144,6 +147,9 @@
 @property (nonatomic) bool hasIsTopStoryArticle;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
 @property (nonatomic) bool hasIsVideoInFeed;
+@property (nonatomic, readonly) bool hasIssueData;
+@property (nonatomic, readonly) bool hasIssueExposureData;
+@property (nonatomic, readonly) bool hasIssueViewData;
 @property (nonatomic) bool hasLoadFailureReason;
 @property (nonatomic) bool hasMediaDuration;
 @property (nonatomic, readonly) bool hasMediaId;
@@ -188,6 +194,9 @@
 @property (nonatomic) bool isTopStoryArticle;
 @property (nonatomic) bool isUserSubscribedToFeed;
 @property (nonatomic) bool isVideoInFeed;
+@property (nonatomic, retain) NTPBIssueData *issueData;
+@property (nonatomic, retain) NTPBIssueExposureData *issueExposureData;
+@property (nonatomic, retain) NTPBIssueViewData *issueViewData;
 @property (nonatomic) int loadFailureReason;
 @property (nonatomic) long long mediaDuration;
 @property (nonatomic, retain) NSString *mediaId;
@@ -289,6 +298,9 @@
 - (bool)hasIsTopStoryArticle;
 - (bool)hasIsUserSubscribedToFeed;
 - (bool)hasIsVideoInFeed;
+- (bool)hasIssueData;
+- (bool)hasIssueExposureData;
+- (bool)hasIssueViewData;
 - (bool)hasLoadFailureReason;
 - (bool)hasMediaDuration;
 - (bool)hasMediaId;
@@ -335,6 +347,9 @@
 - (bool)isTopStoryArticle;
 - (bool)isUserSubscribedToFeed;
 - (bool)isVideoInFeed;
+- (id)issueData;
+- (id)issueExposureData;
+- (id)issueViewData;
 - (int)loadFailureReason;
 - (long long)mediaDuration;
 - (id)mediaId;
@@ -428,6 +443,9 @@
 - (void)setIsTopStoryArticle:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;
 - (void)setIsVideoInFeed:(bool)arg1;
+- (void)setIssueData:(id)arg1;
+- (void)setIssueExposureData:(id)arg1;
+- (void)setIssueViewData:(id)arg1;
 - (void)setLoadFailureReason:(int)arg1;
 - (void)setMediaDuration:(long long)arg1;
 - (void)setMediaId:(id)arg1;

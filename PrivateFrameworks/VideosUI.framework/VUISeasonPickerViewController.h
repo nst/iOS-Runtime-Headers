@@ -44,6 +44,7 @@
 - (void)setPickerTitle:(id)arg1;
 - (void)setSeasonPickerView:(id)arg1;
 - (void)setSeasons:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

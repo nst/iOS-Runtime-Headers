@@ -5,32 +5,36 @@
 @interface FCResourcesFetchOperation : FCMultiStepFetchOperation {
     long long  _cacheLifetimeHint;
     <FCContentContext> * _context;
+    bool  _downloadAssets;
+    id /* block */  _progressHandler;
     NSArray * _resourceIDs;
     NSArray * _resources;
-    bool  _shouldDownloadAssets;
 }
 
 @property (nonatomic) long long cacheLifetimeHint;
 @property (nonatomic, retain) <FCContentContext> *context;
+@property (nonatomic, readonly) bool downloadAssets;
+@property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic, readonly) NSArray *resourceIDs;
 @property (nonatomic, retain) NSArray *resources;
-@property (nonatomic) bool shouldDownloadAssets;
 
 - (void).cxx_destruct;
 - (bool)_shoudUsePermanentURLForResourceID:(id)arg1;
 - (long long)cacheLifetimeHint;
 - (id)completeFetchOperation;
 - (id)context;
+- (bool)downloadAssets;
 - (id)downloadAssetsWithCompletion:(id /* block */)arg1;
 - (id)fetchResourcesWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (id)initWithContext:(id)arg1 resourceIDs:(id)arg2;
+- (id)initWithContext:(id)arg1 resourceIDs:(id)arg2 downloadAssets:(bool)arg3;
+- (id /* block */)progressHandler;
 - (id)resourceIDs;
 - (id)resources;
 - (void)setCacheLifetimeHint:(long long)arg1;
 - (void)setContext:(id)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 - (void)setResources:(id)arg1;
-- (void)setShouldDownloadAssets:(bool)arg1;
-- (bool)shouldDownloadAssets;
+- (bool)validateOperation;
 
 @end

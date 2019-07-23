@@ -3,6 +3,7 @@
  */
 
 @interface AVTRenderer : SCNRenderer <SCNSceneRendererDelegate, _SCNSceneRendererDelegateSPI> {
+    unsigned long long  _antialiasingMode;
     bool  _arMode;
     SCNTechnique * _arTechnique;
     AVTAvatar * _avatar;
@@ -20,6 +21,7 @@
 
 @property (nonatomic) bool arMode;
 @property (nonatomic, retain) AVTAvatar *avatar;
+@property (nonatomic) unsigned long long avt_antialiasingMode;
 @property (nonatomic, retain) <MTLTexture> *capturedDepth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -43,6 +45,7 @@
 - (bool)arMode;
 - (id)avatar;
 - (void)avatarDidChange;
+- (unsigned long long)avt_antialiasingMode;
 - (id)capturedDepth;
 - (void)dealloc;
 - (id)delegate;
@@ -59,6 +62,7 @@
 - (void)renderer:(id)arg1 willRenderScene:(id)arg2 atTime:(double)arg3;
 - (void)setArMode:(bool)arg1;
 - (void)setAvatar:(id)arg1;
+- (void)setAvt_antialiasingMode:(unsigned long long)arg1;
 - (void)setCapturedDepth:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableDepthMask:(bool)arg1;

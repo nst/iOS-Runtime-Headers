@@ -7,6 +7,8 @@
     NSNumber * _callerPID;
     NSObject<OS_xpc_object> * _clientConnection;
     <TKTokenSessionDelegate> * _delegate;
+    NSObject<OS_xpc_object> * _event;
+    id  _inputParameter2;
     NSDictionary * _parameters;
     NSObject<OS_dispatch_queue> * _sessionQueue;
     TKToken * _token;
@@ -16,6 +18,7 @@
 @property (retain) NSNumber *callerPID;
 @property (readonly) NSObject<OS_xpc_object> *clientConnection;
 @property <TKTokenSessionDelegate> *delegate;
+@property (readonly) id inputParameter2;
 @property (nonatomic, readonly) NSString *name;
 @property (retain) NSDictionary *parameters;
 @property (readonly) <TKTokenSessionPrivateDelegate> *privateDelegate;
@@ -56,6 +59,7 @@
 - (bool)handleReadDataEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleUpdateObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 attributes:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)initWithToken:(id)arg1;
+- (id)inputParameter2;
 - (id)name;
 - (id)parameters;
 - (void)performKeyExchangeWithPublicKey:(id)arg1 usingKey:(id)arg2 algorithm:(id)arg3 parameters:(id)arg4 reply:(id /* block */)arg5;

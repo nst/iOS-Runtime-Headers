@@ -6,6 +6,7 @@
 
 + (id)defaultManager;
 
+- (id)_cloneFileToClearExtraFileReferences:(id)arg1 entry:(struct _ftsent { struct _ftsent {} *x1; struct _ftsent {} *x2; struct _ftsent {} *x3; long long x4; void *x5; char *x6; char *x7; int x8; int x9; unsigned short x10; unsigned short x11; unsigned long long x12; int x13; unsigned short x14; short x15; unsigned short x16; unsigned short x17; unsigned short x18; struct stat {} *x19; BOOL x20[1]; }*)arg2 usingStagingDir:(id)arg3 clonedReplacementFiles:(id)arg4 error:(id*)arg5;
 - (bool)_copyItemAtURL:(id)arg1 toURL:(id)arg2 failIfSrcMissing:(bool)arg3 alwaysClone:(bool)arg4 error:(id*)arg5;
 - (bool)_moveItemAtURL:(id)arg1 toURL:(id)arg2 failIfSrcMissing:(bool)arg3 error:(id*)arg4;
 - (id)_realPathForURL:(id)arg1 allowNonExistentPathComponents:(bool)arg2;
@@ -38,7 +39,7 @@
 - (bool)setOwnerOfURL:(id)arg1 toUID:(unsigned int)arg2 gid:(unsigned int)arg3 error:(id*)arg4;
 - (bool)setPermissionsForURL:(id)arg1 toMode:(unsigned short)arg2 error:(id*)arg3;
 - (bool)setUniqueInstallID:(id)arg1 onBundle:(id)arg2 error:(id*)arg3;
-- (bool)standardizeOwnershipAtURL:(id)arg1 toUID:(unsigned int)arg2 GID:(unsigned int)arg3 removeACLs:(bool)arg4 setProtectionClass:(bool)arg5 foundSymlink:(bool*)arg6 error:(id*)arg7;
+- (bool)standardizeOwnershipAtURL:(id)arg1 toUID:(unsigned int)arg2 GID:(unsigned int)arg3 removeACLs:(bool)arg4 setProtectionClass:(bool)arg5 foundSymlink:(bool*)arg6 clearExtraFileReferencesUsingStagingDir:(id)arg7 error:(id*)arg8;
 - (bool)traverseDirectory:(id)arg1 error:(id*)arg2 withBlock:(id /* block */)arg3;
 - (id)uniqueInstallIDForBundle:(id)arg1 error:(id*)arg2;
 - (id)urlsForItemsInDirectoryAtURL:(id)arg1 ignoringSymlinks:(bool)arg2 error:(id*)arg3;

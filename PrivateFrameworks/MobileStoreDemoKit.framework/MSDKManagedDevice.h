@@ -17,7 +17,9 @@
 - (bool)configureWiFi:(id)arg1 password:(id)arg2;
 - (id)connection;
 - (id)delegate;
+- (bool)deleteDataBlob;
 - (id)errorWithXPCDictionary:(id)arg1;
+- (id)getCacheIdentifier;
 - (id)getDeviceOptions;
 - (id)getScreenSaverConfig;
 - (id)getStoreID;
@@ -31,7 +33,8 @@
 - (bool)lockDemoContent;
 - (bool)prepare;
 - (bool)prepareWithWiFi:(id)arg1 password:(id)arg2;
-- (id)readNVRam:(id)arg1;
+- (int)readDemoMode;
+- (id)retrieveDataBlob;
 - (bool)saveScreenSaverConfig:(id)arg1;
 - (id)saveScreenSaverIdleDelay:(id)arg1;
 - (id)saveStoreHour:(id)arg1;
@@ -40,6 +43,7 @@
 - (bool)setIdleDelay:(long long)arg1;
 - (bool)setStoreOpenAt:(long long)arg1 openMinute:(long long)arg2 closeHour:(long long)arg3 closeMinute:(long long)arg4;
 - (bool)setupConnection;
+- (bool)storeDataBlob:(id)arg1;
 - (bool)unenroll:(bool)arg1;
 - (bool)unlockDemoContent;
 

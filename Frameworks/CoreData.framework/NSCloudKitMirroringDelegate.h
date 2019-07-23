@@ -3,6 +3,7 @@
  */
 
 @interface NSCloudKitMirroringDelegate : NSObject <NSPersistentStoreMirroringDelegate, PFCloudKitExporterDelegate> {
+    int  _accountChangeNotificationIteration;
     NSString * _ckDatabaseName;
     NSObject<OS_dispatch_queue> * _cloudKitQueue;
     NSObject<OS_dispatch_semaphore> * _cloudKitQueueSemaphore;
@@ -53,6 +54,7 @@
 - (void)_requestAbortedNotInitialized:(id)arg1;
 - (void)_requestEncounteredRecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestEncounteredUnrecoverableError:(id)arg1 withResult:(id)arg2;
+- (void)_setAccountNotificationBackoffInterval:(long long)arg1;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;

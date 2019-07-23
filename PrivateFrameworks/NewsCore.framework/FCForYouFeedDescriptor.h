@@ -4,6 +4,8 @@
 
 @interface FCForYouFeedDescriptor : FCFeedDescriptor <FCFeedPaginating> {
     <FCCoreConfigurationManager> * _configurationManager;
+    <FCFeedPersonalizing> * _feedPersonalizer;
+    <FCPaidAccessCheckerType> * _paidAccessChecker;
     FCSubscriptionList * _subscriptionList;
     unsigned long long  _trendingAndSavedStoriesCount;
 }
@@ -11,7 +13,9 @@
 @property (nonatomic, retain) <FCCoreConfigurationManager> *configurationManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <FCFeedPersonalizing> *feedPersonalizer;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) <FCPaidAccessCheckerType> *paidAccessChecker;
 @property (nonatomic, retain) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long trendingAndSavedStoriesCount;
@@ -27,13 +31,19 @@
 - (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)feedPaginator;
 - (long long)feedPersonalizationConfigurationSet;
+- (id)feedPersonalizer;
 - (long long)feedSortMethod;
+- (bool)hasEditions;
 - (id)iAdFeedID;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5 paidAccessChecker:(id)arg6;
+- (id)languagesWithSubscriptionController:(id)arg1;
 - (id)name;
 - (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;
+- (id)paidAccessChecker;
 - (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setConfigurationManager:(id)arg1;
+- (void)setFeedPersonalizer:(id)arg1;
+- (void)setPaidAccessChecker:(id)arg1;
 - (void)setSubscriptionList:(id)arg1;
 - (void)setTrendingAndSavedStoriesCount:(unsigned long long)arg1;
 - (bool)shouldFilterFeedGroupEmitter:(id)arg1 withConfiguration:(id)arg2;

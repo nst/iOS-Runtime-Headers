@@ -14,7 +14,8 @@
 + (void)deleteAllHistoryWithCompletion:(id /* block */)arg1;
 + (void)forceUpdateWithCompletion:(id /* block */)arg1;
 + (void)resetAccountWithCompletion:(id /* block */)arg1;
-+ (bool)synchronizeSettingsFromCloudIfNeeded;
++ (bool)synchronizeSettingsFromCloudIfNeeded:(id*)arg1;
++ (void)synchronizeSettingsFromCloudIfNeededWithCompletion:(id /* block */)arg1;
 + (void)updateCloudStoreAccountLevelSetting:(id)arg1 value:(id)arg2 completion:(id /* block */)arg3;
 + (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(bool)arg2 completion:(id /* block */)arg3;
 + (void)updateCloudStoreAppSettings:(id)arg1 deleteHistory:(bool)arg2 removeEntry:(bool)arg3 completion:(id /* block */)arg4;

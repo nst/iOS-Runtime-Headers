@@ -10,6 +10,7 @@
     NSDictionary * _faceModel;
     NSArray * _facesArray;
     struct __CVBuffer { } * _fixedPointDisparityPixelBuffer;
+    float  _focusDistanceToMaxAllowedFocusDistanceRatio;
     unsigned short  _focusMapHeight;
     unsigned short  _focusMapWidth;
     NSArray * _focusRegion;
@@ -52,6 +53,7 @@
 @property (readonly) NSDictionary *faceModel;
 @property (readonly) NSArray *facesArray;
 @property (readonly) struct __CVBuffer { }*fixedPointDisparityPixelBuffer;
+@property float focusDistanceToMaxAllowedFocusDistanceRatio;
 @property (readonly) unsigned short focusMapHeight;
 @property (readonly) unsigned short focusMapWidth;
 @property (readonly) NSArray *focusRegion;
@@ -82,6 +84,7 @@
 - (id)faceModel;
 - (id)facesArray;
 - (struct __CVBuffer { }*)fixedPointDisparityPixelBuffer;
+- (float)focusDistanceToMaxAllowedFocusDistanceRatio;
 - (unsigned short)focusMapHeight;
 - (unsigned short)focusMapWidth;
 - (id)focusRegion;
@@ -92,11 +95,13 @@
 - (short)focusTileXOffset;
 - (short)focusTileYOffset;
 - (id)initWithSourceColorPixelBuffer:(struct __CVBuffer { }*)arg1 fixedPointDisparityPixelBuffer:(struct __CVBuffer { }*)arg2 destinationDisparityPixelBuffer:(struct __CVBuffer { }*)arg3 focusRegion:(id)arg4 focusRegionType:(int)arg5 currentFocusPosition:(float)arg6 lockFocalPlane:(bool)arg7 sourceColorPixelBufferOrientation:(struct CVAQuaternion { double x1; double x2; double x3; double x4; })arg8 sourceColorPixelBufferGravity:(struct CVAVector { double x1; double x2; double x3; })arg9 sourceColorPixelBufferGlobalMotion:(struct CVAVector { double x1; double x2; double x3; })arg10 facesArray:(id)arg11 disparityNormalizationMultiplier:(float)arg12 disparityNormalizationOffset:(float)arg13;
+- (id)initWithSourceColorPixelBuffer:(struct __CVBuffer { }*)arg1 segmentationPixelBuffer:(struct __CVBuffer { }*)arg2 focusTileData:(id)arg3 focusTileXOffset:(short)arg4 focusTileYOffset:(short)arg5 focusTileWidth:(unsigned short)arg6 focusTileHeight:(unsigned short)arg7 focusMapWidth:(unsigned short)arg8 focusMapHeight:(unsigned short)arg9 totalSensorCropXOffset:(short)arg10 totalSensorCropYOffset:(short)arg11 totalSensorCropWidth:(unsigned short)arg12 totalSensorCropHeight:(unsigned short)arg13 phaseToBlurFactor:(float)arg14 destinationDisparityPixelBuffer:(struct __CVBuffer { }*)arg15 focusRegion:(id)arg16 focusRegionType:(int)arg17 currentFocusPosition:(float)arg18 lockFocalPlane:(bool)arg19 focusDistanceToMaxAllowedFocusDistanceRatio:(float)arg20 sourceColorPixelBufferOrientation:(struct CVAQuaternion { double x1; double x2; double x3; double x4; })arg21 sourceColorPixelBufferGravity:(struct CVAVector { double x1; double x2; double x3; })arg22 sourceColorPixelBufferGlobalMotion:(struct CVAVector { double x1; double x2; double x3; })arg23 facesArray:(id)arg24;
 - (id)initWithSourceColorPixelBuffer:(struct __CVBuffer { }*)arg1 segmentationPixelBuffer:(struct __CVBuffer { }*)arg2 focusTileData:(id)arg3 focusTileXOffset:(short)arg4 focusTileYOffset:(short)arg5 focusTileWidth:(unsigned short)arg6 focusTileHeight:(unsigned short)arg7 focusMapWidth:(unsigned short)arg8 focusMapHeight:(unsigned short)arg9 totalSensorCropXOffset:(short)arg10 totalSensorCropYOffset:(short)arg11 totalSensorCropWidth:(unsigned short)arg12 totalSensorCropHeight:(unsigned short)arg13 phaseToBlurFactor:(float)arg14 destinationDisparityPixelBuffer:(struct __CVBuffer { }*)arg15 focusRegion:(id)arg16 focusRegionType:(int)arg17 currentFocusPosition:(float)arg18 lockFocalPlane:(bool)arg19 sourceColorPixelBufferOrientation:(struct CVAQuaternion { double x1; double x2; double x3; double x4; })arg20 sourceColorPixelBufferGravity:(struct CVAVector { double x1; double x2; double x3; })arg21 sourceColorPixelBufferGlobalMotion:(struct CVAVector { double x1; double x2; double x3; })arg22 facesArray:(id)arg23;
 - (id)initWithSourceColorPixelBuffer:(struct __CVBuffer { }*)arg1 segmentationPixelBuffer:(struct __CVBuffer { }*)arg2 focusTileData:(id)arg3 focusTileXOffset:(float)arg4 focusTileYOffset:(float)arg5 focusTileWidth:(float)arg6 focusTileHeight:(float)arg7 phaseToBlurFactor:(float)arg8 destinationDisparityPixelBuffer:(struct __CVBuffer { }*)arg9 focusRegion:(id)arg10 focusRegionType:(int)arg11 currentFocusPosition:(float)arg12 lockFocalPlane:(bool)arg13 sourceColorPixelBufferOrientation:(struct CVAQuaternion { double x1; double x2; double x3; double x4; })arg14 sourceColorPixelBufferGravity:(struct CVAVector { double x1; double x2; double x3; })arg15 sourceColorPixelBufferGlobalMotion:(struct CVAVector { double x1; double x2; double x3; })arg16 facesArray:(id)arg17;
 - (bool)isFocalPlaneLocked;
 - (float)phaseToBlurFactor;
 - (struct __CVBuffer { }*)segmentationPixelBuffer;
+- (void)setFocusDistanceToMaxAllowedFocusDistanceRatio:(float)arg1;
 - (struct __CVBuffer { }*)sourceColorPixelBuffer;
 - (struct CVAVector { double x1; double x2; double x3; })sourceColorPixelBufferGlobalMotion;
 - (struct CVAVector { double x1; double x2; double x3; })sourceColorPixelBufferGravity;

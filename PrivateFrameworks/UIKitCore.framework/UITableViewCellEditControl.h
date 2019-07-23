@@ -19,8 +19,6 @@
 @property (nonatomic, readonly) bool wantsImageShadow;
 @property (nonatomic, readonly) bool wantsMaskingWhileAnimatingDisabled;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (unsigned long long)_controlEventsForActionTriggered;
@@ -38,9 +36,6 @@
 - (void)_toggleRotate;
 - (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)_updateImageView;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)adjustLayoutForFocalRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })defaultSize;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(long long)arg2;

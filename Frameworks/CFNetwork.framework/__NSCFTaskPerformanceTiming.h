@@ -8,6 +8,7 @@
     bool  __isBackground;
     long long  __numberOfRetries;
     NSDate * __resumeTime;
+    long long  __taskSchedulingTier;
 }
 
 @property (retain) NSUUID *_activityUUID;
@@ -15,15 +16,17 @@
 @property bool _isBackground;
 @property long long _numberOfRetries;
 @property (retain) NSDate *_resumeTime;
+@property long long _taskSchedulingTier;
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_activityUUID;
 - (id)_didCompleteWithError;
 - (bool)_isBackground;
 - (long long)_numberOfRetries;
 - (id)_resumeTime;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (long long)_taskSchedulingTier;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,5 +37,6 @@
 - (void)set_isBackground:(bool)arg1;
 - (void)set_numberOfRetries:(long long)arg1;
 - (void)set_resumeTime:(id)arg1;
+- (void)set_taskSchedulingTier:(long long)arg1;
 
 @end

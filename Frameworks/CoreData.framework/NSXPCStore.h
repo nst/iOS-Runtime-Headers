@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSXPCStore : NSIncrementalStore <NSSQLModelProvider> {
+@interface NSXPCStore : NSIncrementalStore <NSCoreDataKeyedArchivingDelegate, NSSQLModelProvider> {
     NSGenerationalRowCache * _cache;
     NSXPCStoreConnectionManager * _connectionManager;
     NSSQLCore * _core;
@@ -17,6 +17,7 @@
 
 @property (readonly, copy) NSString *remoteStoreChangedNotificationName;
 
++ (bool)_allowCoreDataFutures;
 + (bool)_isOnExtendedTimeout;
 + (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 + (int)debugDefault;
@@ -24,6 +25,7 @@
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 + (void)setDebugDefault:(int)arg1;
 
+- (bool)_allowCoreDataFutures;
 - (id)_cachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
 - (id)_cachedRowForRelationship:(id)arg1 onObjectWithID:(id)arg2 generation:(id)arg3;
 - (void)_clearCachedRowForObjectWithID:(id)arg1 generation:(id)arg2;

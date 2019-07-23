@@ -160,6 +160,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
++ (id)mainContextObjectFromObject:(id)arg1;
 + (id)sharedContext;
 
 // Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI

@@ -15,7 +15,6 @@
     NSString * _label;
     NSString * _name;
     int  _port;
-    CUNANServiceInfo * _serviceInfo;
     NSString * _serviceType;
     struct NSMutableDictionary { Class x1; } * _sessions;
     NSDictionary * _textInfo;

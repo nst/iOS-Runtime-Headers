@@ -14,6 +14,7 @@
     NSString * _artworkURL;
     NSData * _artworkURLTemplatesData;
     NSString * _assetURLString;
+    NSString * _brandIdentifier;
     int  _chapterCount;
     NSString * _collectionIdentifier;
     NSData * _collectionInfoData;
@@ -145,6 +146,7 @@
 @property (nonatomic, retain) NSString *artworkURL;
 @property (nonatomic, retain) NSData *artworkURLTemplatesData;
 @property (nonatomic, retain) NSString *assetURLString;
+@property (nonatomic, retain) NSString *brandIdentifier;
 @property (nonatomic) int chapterCount;
 @property (nonatomic, retain) NSString *collectionIdentifier;
 @property (nonatomic, retain) NSData *collectionInfoData;
@@ -175,6 +177,7 @@
 @property (nonatomic, readonly) bool hasArtworkURL;
 @property (nonatomic, readonly) bool hasArtworkURLTemplatesData;
 @property (nonatomic, readonly) bool hasAssetURLString;
+@property (nonatomic, readonly) bool hasBrandIdentifier;
 @property (nonatomic) bool hasChapterCount;
 @property (nonatomic, readonly) bool hasCollectionIdentifier;
 @property (nonatomic, readonly) bool hasCollectionInfoData;
@@ -307,6 +310,7 @@
 - (id)artworkURL;
 - (id)artworkURLTemplatesData;
 - (id)assetURLString;
+- (id)brandIdentifier;
 - (int)chapterCount;
 - (id)collectionIdentifier;
 - (id)collectionInfoData;
@@ -341,6 +345,7 @@
 - (bool)hasArtworkURL;
 - (bool)hasArtworkURLTemplatesData;
 - (bool)hasAssetURLString;
+- (bool)hasBrandIdentifier;
 - (bool)hasChapterCount;
 - (bool)hasCollectionIdentifier;
 - (bool)hasCollectionInfoData;
@@ -463,6 +468,7 @@
 - (void)setArtworkURL:(id)arg1;
 - (void)setArtworkURLTemplatesData:(id)arg1;
 - (void)setAssetURLString:(id)arg1;
+- (void)setBrandIdentifier:(id)arg1;
 - (void)setChapterCount:(int)arg1;
 - (void)setCollectionIdentifier:(id)arg1;
 - (void)setCollectionInfoData:(id)arg1;

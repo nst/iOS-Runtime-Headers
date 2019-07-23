@@ -5,6 +5,8 @@
 @interface NTKAstronomyVistaView : UIView <NUAnimationObserver, NUViewDelegate> {
     NSMutableSet * _activeContentsAnimations;
     CLKDevice * _device;
+    unsigned int  _isAnimating;
+    unsigned int  _isDisplayOn;
     unsigned int  _isSupplemental;
     <NTKAstronomyVistaViewObserver> * _observer;
     NUView * _viewer;
@@ -21,10 +23,12 @@
 
 - (void).cxx_destruct;
 - (void)_setVista:(unsigned long long)arg1 scene:(id)arg2;
+- (void)_updateAnimation;
 - (void)dealloc;
 - (id)device;
 - (id)generateAnimationArrayFromVista:(unsigned long long)arg1 toVista:(unsigned long long)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forDevice:(id)arg2 options:(unsigned long long)arg3;
 - (void)layoutSubviews;
 - (id)observer;
 - (void)renderSynchronouslyWithImageQueueDiscard:(bool)arg1;

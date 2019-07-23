@@ -28,6 +28,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_respondToIntentStreamChangingWithContext:(id)arg1;
 - (void)_syncForTests;
 - (void)_updateActionPredictionHistogramsRemovingActionUUIDs:(id)arg1;
 - (id)adjustedEndDateForFiveSecondFlooringWithAppSessionEndDate:(id)arg1;
@@ -38,6 +39,8 @@
 - (void)dealloc;
 - (void)displayDonationOnLockscreenWithAction:(id)arg1;
 - (void)endAppSession:(id)arg1;
+- (id)getLastAppIntentsFromDuetWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void)handleCompletedIntentForForUUID:(id)arg1 atxIntentSource:(long long)arg2;
 - (void)handleIntentDonationWithType:(id)arg1 bundleId:(id)arg2 startDate:(id)arg3 intentSource:(long long)arg4;
 - (void)handleIntentOrActivityDeletion;
 - (void)handleNonSiriKitIntentDonationWithType:(id)arg1 bundleId:(id)arg2 startDate:(id)arg3;
@@ -46,6 +49,7 @@
 - (id)init;
 - (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3 appInfoManager:(id)arg4 appActionLaunchSequenceManager:(id)arg5 dataStore:(id)arg6;
 - (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3 appInfoManager:(id)arg4 appActionLaunchSequenceManager:(id)arg5 duetHelper:(id)arg6 dataStore:(id)arg7;
+- (bool)isWhitelistedDaemonDonationBundleId:(id)arg1;
 - (void)listenToActivityStream;
 - (void)listenToAppSessionEnds;
 - (void)listenToAppSessionStarts;

@@ -23,7 +23,7 @@
     unsigned int  _curRowIndex;
     TSTGroupBy * _groupBy;
     unsigned char  _groupLevel;
-    TSTInfo * _info;
+    TSTTableInfo * _info;
     bool  _isLabelRow;
     bool  _isSummaryRow;
     struct unordered_map<TSUViewColumnIndex, TSUModelColumnIndex, std::__1::hash<TSUViewColumnIndex>, std::__1::equal_to<TSUViewColumnIndex>, std::__1::allocator<std::__1::pair<const TSUViewColumnIndex, TSUModelColumnIndex> > > { 
@@ -62,6 +62,7 @@
     unsigned long long  _searchMask;
     TSTSummaryCellVendor * _summaryCellVendor;
     TSTColumnRowUIDMap * _summaryMap;
+    TSTCell * _tempSummaryCell;
     bool  _terminated;
     TSTCategoryTranslator * _translator;
     struct UUIDData<TSP::UUIDData> { 
@@ -110,7 +111,7 @@
 @property (nonatomic, readonly) TSTGroupBy *groupBy;
 @property (nonatomic) unsigned char groupLevel;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) TSTInfo *info;
+@property (nonatomic, readonly) TSTTableInfo *info;
 @property (nonatomic) bool isLabelRow;
 @property (nonatomic) bool isSummaryRow;
 @property (nonatomic, retain) NSIndexSet *populatedColumnsForGroupLevel1;
@@ -125,7 +126,7 @@
 @property (nonatomic, readonly) TSTSummaryCellVendor *summaryCellVendor;
 @property (nonatomic, readonly) TSTColumnRowUIDMap *summaryMap;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) TSTInfo *tableInfo;
+@property (nonatomic, readonly, retain) TSTTableInfo *tableInfo;
 @property (nonatomic) bool terminated;
 @property (nonatomic, readonly) TSTCategoryTranslator *translator;
 @property (nonatomic) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } uuid;
@@ -187,6 +188,7 @@
 - (void)setViewColumnIndexesInCurrentRow:(id)arg1;
 - (id)summaryCellVendor;
 - (id)summaryMap;
+- (id)tempSummaryCell;
 - (void)terminate;
 - (bool)terminated;
 - (id)translator;

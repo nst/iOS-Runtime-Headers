@@ -7,7 +7,6 @@
     long long  _bottomRightItem;
     UIView * _bottomRightItemView;
     UIImageView * _contactlessLogoView;
-    WLEasyToHitCustomButton * _infoButton;
     PKLinkedAppIconView * _linkedApp;
     UILabel * _logoLabel;
     bool  _showsBarcodeView;
@@ -23,7 +22,6 @@
 @property (nonatomic) bool showsLiveBalance;
 
 - (void).cxx_destruct;
-- (void)_infoButtonPressed;
 - (void)_positionBarcodeView;
 - (id)_rebucketAuxiliaryFields:(id)arg1;
 - (id)_relevantBuckets;
@@ -34,7 +32,6 @@
 - (void)createBodyContentViews;
 - (id)createContactlessLogoView;
 - (void)createHeaderContentViews;
-- (id)createInfoButton;
 - (void)dealloc;
 - (id)init;
 - (void)insertContentView:(id)arg1 ofType:(long long)arg2;
@@ -42,7 +39,6 @@
 - (id)linkedApp;
 - (id)passFaceTemplate;
 - (void)setBottomRightItem:(long long)arg1;
-- (void)setClipsContent:(bool)arg1;
 - (void)setShowsBarcodeView:(bool)arg1;
 - (void)setShowsBarcodeView:(bool)arg1 animated:(bool)arg2;
 - (void)setShowsLinkedApp:(bool)arg1;

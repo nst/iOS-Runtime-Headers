@@ -6,10 +6,13 @@
     NSDictionary * mSettings;
 }
 
++ (bool)isMetalBlacklistedWithCapabilities:(id)arg1;
 + (id)p_defaultSettingsDictionary;
++ (bool)p_isMetalEnabled;
 + (id)p_platformSettingsDictionary;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (double)backgroundLayoutContentsScaleFactor;
 - (bool)backgroundLayoutUsesTiledRendering;
 - (unsigned long long)buildFramebufferMemoryLimitInBytes;
@@ -21,7 +24,6 @@
 - (bool)buildTextureRendersAsSingleImage;
 - (bool)buildsCanUseDynamicShadows;
 - (bool)buildsUseLowDetailedGeometries;
-- (void)dealloc;
 - (id)description;
 - (unsigned long long)highQualityShadowsSize;
 - (id)initWithDictionary:(id)arg1;
@@ -47,6 +49,7 @@
 - (bool)useHighQualityShadows;
 - (bool)useInteractiveModeWhileSelected;
 - (bool)useLayoutInwardForInsertionIcons;
+- (bool)useMetal;
 - (bool)useTiledFullSizeInteractiveLayer;
 
 @end

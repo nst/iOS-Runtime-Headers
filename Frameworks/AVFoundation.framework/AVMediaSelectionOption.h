@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, readonly) NSString *localizedDisplayName;
 @property (getter=isMain, readonly) bool main;
+@property (nonatomic, readonly) NSString *mediaRemoteIdentifier;
 @property (nonatomic, readonly) NSArray *mediaSubTypes;
 @property (nonatomic, readonly) NSString *mediaType;
 @property (nonatomic, readonly) bool mpIsOnlyAC3;
@@ -83,6 +84,7 @@
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
+- (id)avkit_title;
 - (bool)isAC3Only;
 - (bool)isAuxiliary;
 - (bool)isCC;
@@ -91,6 +93,7 @@
 - (bool)isSDH;
 - (long long)languageCompare:(id)arg1;
 - (id)localizedDisplayName;
+- (id)mediaRemoteIdentifier;
 - (id)shortLocalizedDisplayName;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -99,5 +102,10 @@
 - (id)makeNowPlayingInfoLanguageOption;
 - (bool)mpIsOnlyAC3;
 - (bool)mpIsSDH;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (id)tvp_languageCodeFromLocale;
+- (id)tvp_localizedDisplayString;
 
 @end

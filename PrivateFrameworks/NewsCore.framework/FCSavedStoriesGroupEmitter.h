@@ -20,6 +20,7 @@
 @property (nonatomic) unsigned long long minPrecedingTopicGroups;
 @property (nonatomic, retain) FCReadingList *readingList;
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
+@property (nonatomic, readonly) bool requiresHeavyweightContent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

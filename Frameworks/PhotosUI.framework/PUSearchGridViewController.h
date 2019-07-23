@@ -27,6 +27,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderHighlightInset;
 - (id)newEmptyPlaceholderView;
 - (id)newGridLayout;
+- (long long)oneUpPresentationOrigin;
 - (bool)pu_handleSecondTabTap;
 - (id)searchGridDataSource;
 - (void)searchGridDataSourceHasPendingChanges:(id)arg1;

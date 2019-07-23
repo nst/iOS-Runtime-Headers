@@ -15,12 +15,8 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } offset;
 @property (nonatomic) double yOffset;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (id)activeCaretMagnifier;
 + (id)sharedCaretMagnifier;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (struct CGPoint { double x1; double x2; })animationPoint;
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { double x1; double x2; })arg3 offset:(struct CGPoint { double x1; double x2; })arg4 animated:(bool)arg5;

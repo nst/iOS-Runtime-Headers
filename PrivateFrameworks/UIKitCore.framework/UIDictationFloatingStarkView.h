@@ -11,12 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)endpointButtonPressed;
 - (void)finishReturnToKeyboard;

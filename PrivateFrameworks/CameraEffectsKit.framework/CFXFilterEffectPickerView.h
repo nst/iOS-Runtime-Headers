@@ -65,6 +65,7 @@
 - (struct CGSize { double x1; double x2; })lastViewSize;
 - (id)layoutAttributesForNearestItemToCenterWithOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)layoutSubviews;
+- (void)orientationDidChange;
 - (struct CGPoint { double x1; double x2; })previousScrollOffset;
 - (void)reloadData;
 - (void)removeCompactSelectionViews;

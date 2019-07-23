@@ -10,6 +10,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *string;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSParagraphStyle *tv_currentParagraphStyle;
 @property (setter=tv_setDefaultAttributes:, nonatomic, copy) NSDictionary *tv_defaultAttributes;
 @property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
 
@@ -90,7 +91,6 @@
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_attributedStringForSpacing:(double)arg1;
-+ (id)hk_initWithString:(id)arg1 font:(id)arg2 hyphenationFactor:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
@@ -278,6 +278,7 @@
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectWithWidth:(double)arg1 lines:(unsigned long long)arg2;
+- (id)tv_currentParagraphStyle;
 - (id)tv_defaultAttributes;
 - (void)tv_setDefaultAttributes:(id)arg1;
 
@@ -376,7 +377,7 @@
 - (void)registerLoadHandlersToItemProvider:(id)arg1;
 - (id)writableTypeIdentifiersForItemProvider;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 + (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSHistoryTombstone : NSObject {
+@interface WBSHistoryTombstone : NSObject <NSSecureCoding> {
     double  _endTime;
     long long  _generation;
     double  _startTime;
@@ -20,11 +20,15 @@
 @property (nonatomic, readonly) NSData *urlSalt;
 @property (nonatomic, readonly) NSString *urlString;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
 - (long long)generation;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSQLiteRow:(id)arg1 crypto:(id)arg2;
 - (id)initWithURLString:(id)arg1 urlHash:(id)arg2 urlSalt:(id)arg3 startTime:(double)arg4 endTime:(double)arg5 generation:(long long)arg6;

@@ -24,7 +24,7 @@
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 albumID:(id)arg2 downloadedItemsOnly:(bool)arg3;
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 playlistID:(id)arg2 downloadedItemsOnly:(bool)arg3;
 + (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned long long)arg2;
-+ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned long long)arg2 downloadedItemsOnly:(bool)arg3;
++ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned long long)arg2 episodeLimit:(unsigned long long)arg3 downloadedItemsOnly:(bool)arg4;
 + (id)itemGroupWithQuotaRefObj:(id)arg1;
 + (id)itemGroupWithStoreRecommendation:(id)arg1 downloadedItemsOnly:(bool)arg2;
 + (id)itemGroupWithSyncedAlbumID:(id)arg1 downloadedItemsOnly:(bool)arg2;

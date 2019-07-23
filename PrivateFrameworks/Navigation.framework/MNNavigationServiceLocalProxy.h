@@ -16,7 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned long long)_serviceStateForStateType:(unsigned long long)arg1;
+- (unsigned long long)_serviceStateForStateType:(long long)arg1;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
 - (void)changeSettings:(id)arg1;
 - (void)dealloc;
@@ -91,10 +91,10 @@
 - (void)start;
 - (void)startNavigationForRouteDetails:(id)arg1 handler:(id /* block */)arg2;
 - (void)startPredictingDestinationsWithHandler:(id /* block */)arg1;
-- (void)stateManager:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)stateManager:(id)arg1 didChangeFromState:(long long)arg2 toState:(long long)arg3;
 - (void)stateManager:(id)arg1 didUpdateIsInVehicle:(bool)arg2;
 - (void)stateManager:(id)arg1 didUpdatePossibleDestinations:(id)arg2;
-- (void)stateManager:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)stateManager:(id)arg1 willChangeFromState:(long long)arg2 toState:(long long)arg3;
 - (void)stateManagerPredictingDidArrive:(id)arg1;
 - (void)stopCurrentGuidancePrompt;
 - (void)stopNavigation;

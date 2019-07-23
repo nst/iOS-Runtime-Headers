@@ -37,6 +37,7 @@
         } size; 
     }  _externalPresentationRect;
     long long  _initialFlashMode;
+    long long  _logDebug_faceDataDetectedFacesCount;
     CFXRemoteCommandServer * _remoteCommandServer;
     bool  _showsViewfinder;
     bool  _usesInternalCaptureSession;
@@ -86,6 +87,7 @@
 - (void)captureViewController:(id)arg1 didCaptureMediaItem:(id)arg2;
 - (void)captureViewController:(id)arg1 didChangeEffectComposition:(id)arg2;
 - (void)captureViewController:(id)arg1 didRenderFrame:(id)arg2;
+- (void)captureViewControllerCameraFlipButtonWasTapped:(id)arg1;
 - (void)captureViewControllerDidStartVideoRecording:(id)arg1;
 - (void)captureViewControllerDidStopVideoRecording:(id)arg1;
 - (void)captureViewControllerDoneButtonWasTapped:(id)arg1;
@@ -101,6 +103,7 @@
 - (void)effectBrowserViewController:(id)arg1 didDropOverlayEffect:(id)arg2 atScreenLocation:(struct CGPoint { double x1; double x2; })arg3 atScreenSize:(struct CGSize { double x1; double x2; })arg4 rotationAngle:(double)arg5;
 - (void)effectBrowserViewController:(id)arg1 didRemoveAllEffectsOfType:(id)arg2;
 - (void)effectBrowserViewController:(id)arg1 didSelectApp:(id)arg2;
+- (void)effectBrowserViewController:(id)arg1 didSelectAppWithIdentifier:(id)arg2;
 - (void)effectBrowserViewController:(id)arg1 didSelectEffect:(id)arg2;
 - (void)effectBrowserViewController:(id)arg1 filterPickerPreviewBackgroundImageAtSizeInPixels:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
 - (double)effectBrowserViewController:(id)arg1 screenTopBarHeightForWindowBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 orientation:(long long)arg3;
@@ -162,6 +165,7 @@
 - (void)setUserInterfaceAlpha:(double)arg1;
 - (void)setUsesInternalCaptureSession:(bool)arg1;
 - (bool)shouldAlwaysPresentExpandedAppsForEffectBrowserViewController:(id)arg1;
+- (bool)shouldRotateCellsForDeviceOrientation;
 - (bool)showsViewfinder;
 - (void)startCaptureSession;
 - (void)stopCaptureSession;

@@ -5,33 +5,31 @@
 @interface _WKAttachmentInfo : NSObject {
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    }  _contentType;
-    struct RetainPtr<NSData> { 
-        void *m_ptr; 
-    }  _data;
-    struct RetainPtr<NSError> { 
-        void *m_ptr; 
-    }  _fileLoadingError;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
     }  _filePath;
+    struct RetainPtr<NSFileWrapper> { 
+        void *m_ptr; 
+    }  _fileWrapper;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    }  _name;
+    }  _mimeType;
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  _utiType;
 }
 
 @property (nonatomic, readonly) NSString *contentType;
 @property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) NSString *filePath;
+@property (nonatomic, readonly) NSFileWrapper *fileWrapper;
 @property (nonatomic, readonly) NSString *name;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)contentType;
 - (id)data;
-- (id)fileLoadingError;
 - (id)filePath;
-- (id)initWithInfo:(const struct AttachmentInfo { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct RefPtr<WebCore::SharedBuffer, WTF::DumbPtrTraits<WebCore::SharedBuffer> > { struct SharedBuffer {} *x_4_1_1; } x4; }*)arg1;
+- (id)fileWrapper;
+- (id)initWithFileWrapper:(id)arg1 filePath:(id)arg2 mimeType:(id)arg3 utiType:(id)arg4;
 - (id)name;
 
 @end

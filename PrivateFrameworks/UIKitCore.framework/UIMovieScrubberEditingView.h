@@ -18,17 +18,12 @@
 @property (getter=isEditing, nonatomic) bool editing;
 @property (getter=isEnabled, nonatomic) bool enabled;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (double)_bounceValueForFraction:(double)arg1;
 - (id)_handleImages;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_leftHandleRect;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rightHandleRect;
 - (void)_updateHandleImages;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)bounce;
 - (double)edgeInset;
 - (int)handleForPoint:(struct CGPoint { double x1; double x2; })arg1 hitOffset:(double*)arg2;

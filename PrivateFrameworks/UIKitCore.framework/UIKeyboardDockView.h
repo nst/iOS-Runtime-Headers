@@ -14,8 +14,6 @@
 @property (nonatomic, retain) UIKeyboardDockItem *leftDockItem;
 @property (nonatomic, retain) UIKeyboardDockItem *rightDockItem;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (long long)_effectiveHandBias;
 + (struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })_itemFramesForBoundingSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)dockViewHomeGestureExclusionZones;
@@ -27,11 +25,8 @@
 - (id)_dockItemWithButton:(id)arg1;
 - (id)_keyboardLayoutView;
 - (id)_keyboardLongPressInteractionRegions;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)centerDockItem;
+- (void)dealloc;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

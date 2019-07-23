@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIDevice : NSObject <DebugHierarchyEntryPoint_Fallback, DebugHierarchyObject_Fallback> {
+@interface UIDevice : NSObject {
     float  _batteryLevel;
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
@@ -23,11 +23,8 @@
 @property (getter=isBatteryMonitoringEnabled, nonatomic) bool batteryMonitoringEnabled;
 @property (nonatomic, readonly) long long batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (getter=_feedbackSupportLevel, nonatomic, readonly) long long feedbackSupportLevel;
 @property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) bool generatesDeviceOrientationNotifications;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identifierForVendor;
 @property (nonatomic, readonly) NSString *localizedModel;
 @property (nonatomic, readonly) NSString *model;
@@ -37,7 +34,6 @@
 @property (nonatomic, readonly) long long orientation;
 @property (getter=isProximityMonitoringEnabled, nonatomic) bool proximityMonitoringEnabled;
 @property (nonatomic, readonly) bool proximityState;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *systemName;
 @property (nonatomic, readonly) NSString *systemVersion;
 @property (nonatomic, readonly) long long userInterfaceIdiom;
@@ -106,13 +102,6 @@
 - (id)systemName;
 - (id)systemVersion;
 - (long long)userInterfaceIdiom;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyGroupingIDs;
-+ (id)fallback_debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

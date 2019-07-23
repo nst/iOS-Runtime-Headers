@@ -20,12 +20,15 @@
 - (void).cxx_destruct;
 - (id)_accountStore;
 - (struct NSDictionary { Class x1; }*)_actionableDataclassOptions;
+- (id)_appendToSignoutMessage:(id)arg1 appendedString:(id)arg2;
 - (struct NSDictionary { Class x1; }*)_dataclassOptions;
 - (id)_dataclassViewController;
 - (void)_delegate_signOutControllerDidCancel;
 - (void)_delegate_signOutControllerDidCompleteWithSuccess:(bool)arg1 error:(id)arg2;
 - (bool)_hasHealthData;
 - (bool)_hasPaymentPasses;
+- (bool)_hasiCloudDriveData;
+- (bool)_hasiCloudPhotosData;
 - (void)_mainQueue_continueSignOutWithDataclassActions:(struct NSDictionary { Class x1; }*)arg1;
 - (void)_mainQueue_presentSpinnerPageWithDataclassActions:(struct NSDictionary { Class x1; }*)arg1 completion:(id /* block */)arg2;
 - (void)_mainQueue_promptForConfirmationInViewController:(id)arg1 simplified:(bool)arg2 withCompletion:(id /* block */)arg3;

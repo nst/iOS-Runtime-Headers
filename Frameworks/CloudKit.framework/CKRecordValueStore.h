@@ -31,6 +31,7 @@
 - (id)changedKeys;
 - (id)changedKeysSet;
 - (bool)checkProperties:(bool)arg1 withValueCheckBlock:(id /* block */)arg2;
+- (bool)checkPropertiesWithModifiedPropertiesOnly:(bool)arg1 includingAllArrayItems:(bool)arg2 withValueCheckBlock:(id /* block */)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -16,6 +16,7 @@
 - (void)_updateStrokeThickness;
 - (long long)axis;
 - (id)initWithAxis:(long long)arg1 color:(id)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setAxis:(long long)arg1;
 - (void)setStrokeThicknessConstraint:(id)arg1;
 - (id)strokeThicknessConstraint;

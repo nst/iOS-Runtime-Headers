@@ -33,7 +33,7 @@
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didExpireTransactionForApplet:(id)arg1;
-- (void)didExpressModeStateChange:(unsigned int)arg1;
+- (void)didExpressModeStateChange:(unsigned int)arg1 withObject:(id)arg2;
 - (void)didFailDeferredAuthorization;
 - (void)didFelicaStateChange:(id)arg1;
 - (void)didPerformValueAddedServiceTransactions:(id)arg1;
@@ -60,6 +60,7 @@
 - (bool)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id*)arg3;
 - (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
 - (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id*)arg3;
+- (bool)startExpressMode:(id*)arg1;
 - (bool)startHostCardEmulation;
 - (bool)startHostCardEmulation:(id*)arg1;
 - (bool)stopCardEmulation;

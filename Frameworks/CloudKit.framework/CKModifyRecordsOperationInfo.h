@@ -26,6 +26,8 @@
 @property (nonatomic) bool shouldOnlySaveAssetContent;
 @property (nonatomic) bool shouldReportRecordsInFlight;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -51,5 +53,9 @@
 - (void)setShouldReportRecordsInFlight:(bool)arg1;
 - (bool)shouldOnlySaveAssetContent;
 - (bool)shouldReportRecordsInFlight;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (bool)validateAgainstLiveProxy:(id)arg1 error:(id*)arg2;
 
 @end

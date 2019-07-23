@@ -7,6 +7,7 @@
     unsigned long long  _defaultRequestType;
     NSString * _indexVersionId;
     NSObject<OS_dispatch_queue> * _notificationsQueue;
+    NSMutableArray * _updateHandlers;
 }
 
 @property (nonatomic, readonly) NSSet *capabilities;
@@ -15,6 +16,7 @@
 + (id)clientWithDefaultRequestType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_handleConfigurationUpdate;
 - (void)_updateCachedCapabilites;
 - (id)capabilities;
 - (void)capabilitiesWithReply:(id /* block */)arg1;

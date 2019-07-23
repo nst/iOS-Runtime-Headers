@@ -4,6 +4,7 @@
 
 @interface FCTag : NSObject <FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTagProviding, FCTopicProviding> {
     NSArray * _allowedStorefrontIDs;
+    NSString * _backIssuesListID;
     NSString * _backgroundColorHexString;
     double  _bannerImageBaselineOffsetPercentage;
     FCTagBanner * _bannerImageForMask;
@@ -15,6 +16,7 @@
     long long  _contentProvider;
     NSString * _coverArticleListID;
     FCAssetHandle * _coverImageAssetHandle;
+    NSArray * _currentIssueIDs;
     FCHeadlineTemplate * _defaultHeadlineTemplate;
     NSString * _defaultSectionID;
     NTPBFeedConfiguration * _feedConfiguration;
@@ -36,8 +38,10 @@
     bool  _isNotificationEnabled;
     bool  _isPublic;
     bool  _isRealTimeTrackingEnabled;
+    NSString * _language;
     NSDate * _loadDate;
     FCAssetHandle * _logoImageAssetHandle;
+    NSString * _magazineGenre;
     long long  _minimumNewsVersion;
     NSString * _name;
     NSString * _nameCompact;
@@ -78,10 +82,10 @@
         double height; 
     }  _nameImageSize;
     NSString * _parentID;
-    NSArray * _pinnedArticleIDs;
     NSString * _pptFeedIDOverride;
     NSString * _primaryAudience;
     NSString * _publisherPaidAuthorizationURL;
+    NSArray * _publisherPaidBundlePurchaseIDs;
     NTPBPublisherPaidDescriptionStrings * _publisherPaidDescriptionStrings;
     NSArray * _publisherPaidFeldsparablePurchaseIDs;
     bool  _publisherPaidLeakyPaywallOptOut;
@@ -91,10 +95,6 @@
     NSString * _publisherPaidWebAccessURL;
     NSArray * _publisherSpecifiedArticleIDs;
     NSDate * _publisherSpecifiedArticleIDsModifiedDate;
-    NSArray * _relatedChannelIDs;
-    NSArray * _relatedChannelIDsForOnboarding;
-    NSArray * _relatedTopicIDs;
-    NSArray * _relatedTopicIDsForOnboarding;
     NSString * _replacementID;
     long long  _score;
     NSArray * _sectionFeedConfigurations;
@@ -113,6 +113,7 @@
 @property (nonatomic, readonly) <FCChannelProviding> *asChannel;
 @property (nonatomic, readonly) <FCSectionProviding> *asSection;
 @property (nonatomic, readonly) <FCTopicProviding> *asTopic;
+@property (nonatomic, readonly, copy) NSString *backIssuesListID;
 @property (nonatomic, readonly) FCColor *backgroundColor;
 @property (nonatomic, copy) NSString *backgroundColorHexString;
 @property (nonatomic, readonly) NSData *backingTagRecordData;
@@ -126,6 +127,7 @@
 @property (nonatomic, readonly) long long contentProvider;
 @property (nonatomic, readonly, copy) NSString *coverArticleListID;
 @property (nonatomic, readonly) FCAssetHandle *coverImageAssetHandle;
+@property (nonatomic, readonly, copy) NSArray *currentIssueIDs;
 @property (nonatomic, readonly) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) FCTagBanner *defaultBannerImage;
@@ -150,6 +152,7 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) bool isArticleReadCountReportingEnabled;
 @property (nonatomic, readonly) bool isBlockedExplicitContent;
+@property (nonatomic, readonly) bool isDark;
 @property (nonatomic, readonly) bool isDeprecated;
 @property (nonatomic, readonly) bool isExplicitContent;
 @property (nonatomic, readonly) bool isHidden;
@@ -159,9 +162,11 @@
 @property (nonatomic, readonly) bool isSubscribable;
 @property (nonatomic, readonly) bool isWhite;
 @property (nonatomic, readonly) bool isWhitelisted;
+@property (nonatomic, readonly, copy) NSString *language;
 @property (nonatomic, retain) NSDate *loadDate;
 @property (nonatomic, readonly) NSArray *loadableFonts;
 @property (nonatomic, readonly) FCAssetHandle *logoImageAssetHandle;
+@property (nonatomic, readonly, copy) NSString *magazineGenre;
 @property (nonatomic, readonly) long long minimumNewsVersion;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *nameCompact;
@@ -178,10 +183,10 @@
 @property (nonatomic, readonly) FCAssetHandle *nameImageMaskWidgetLQAssetHandle;
 @property (nonatomic) struct CGSize { double x1; double x2; } nameImageSize;
 @property (nonatomic, readonly, copy) NSString *parentID;
-@property (nonatomic, readonly) NSArray *pinnedArticleIDs;
 @property (nonatomic, copy) NSString *pptFeedIDOverride;
 @property (nonatomic, readonly, copy) NSString *primaryAudience;
 @property (nonatomic, readonly, copy) NSString *publisherPaidAuthorizationURL;
+@property (nonatomic, readonly) NSArray *publisherPaidBundlePurchaseIDs;
 @property (nonatomic, readonly) NTPBPublisherPaidDescriptionStrings *publisherPaidDescriptionStrings;
 @property (nonatomic, readonly) NSArray *publisherPaidFeldsparablePurchaseIDs;
 @property (nonatomic, readonly) bool publisherPaidLeakyPaywallOptOut;
@@ -191,10 +196,6 @@
 @property (nonatomic, readonly, copy) NSString *publisherPaidWebAccessURL;
 @property (nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
 @property (nonatomic, readonly) NSDate *publisherSpecifiedArticleIDsModifiedDate;
-@property (nonatomic, readonly) NSArray *relatedChannelIDs;
-@property (nonatomic, readonly) NSArray *relatedChannelIDsForOnboarding;
-@property (nonatomic, readonly) NSArray *relatedTopicIDs;
-@property (nonatomic, readonly) NSArray *relatedTopicIDsForOnboarding;
 @property (nonatomic, readonly, copy) NSString *replacementID;
 @property (nonatomic, readonly) long long score;
 @property (nonatomic, copy) NSArray *sectionFeedConfigurations;
@@ -214,6 +215,7 @@
 - (void)_inflateFromJSONDictionary:(id)arg1;
 - (void)_inflateFromJSONDictionary:(id)arg1 withVersion:(long long)arg2;
 - (void)_inflateFromVersionlessJSONDictionary:(id)arg1;
+- (bool)_isValidScheme:(id)arg1;
 - (bool)allowCustomBottomStyle;
 - (id)allowedStorefrontIDs;
 - (id)articleRecirculationConfigJSON;
@@ -221,6 +223,7 @@
 - (id)asSection;
 - (id)asTopic;
 - (id)authorizationURL;
+- (id)backIssuesListID;
 - (id)backgroundColor;
 - (id)backgroundColorHexString;
 - (id)backingTagRecordData;
@@ -235,6 +238,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticleListID;
 - (id)coverImageAssetHandle;
+- (id)currentIssueIDs;
 - (id)data;
 - (id)defaultBannerImage;
 - (id)defaultHeadlineTemplate;
@@ -260,6 +264,7 @@
 - (id)iAdKeywords;
 - (id)identifier;
 - (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 defaultSection:(id)arg3 publisherAuthorizationURL:(id)arg4 publisherVerificationURL:(id)arg5;
+- (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 publisherPaidBundlePurchaseIDs:(id)arg3;
 - (id)initChannelFromNotificationWithIdentifier:(id)arg1 name:(id)arg2 nameImageAssetHandle:(id)arg3;
 - (id)initForTestingWithTagType:(unsigned long long)arg1 identifier:(id)arg2 name:(id)arg3;
 - (id)initWithData:(id)arg1 context:(id)arg2;
@@ -268,6 +273,7 @@
 - (bool)isArticleReadCountReportingEnabled;
 - (bool)isAuthenticationSetup;
 - (bool)isBlockedExplicitContent;
+- (bool)isDark;
 - (bool)isDeprecated;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToTag:(id)arg1;
@@ -281,9 +287,11 @@
 - (bool)isSubscribable;
 - (bool)isWhite;
 - (bool)isWhitelisted;
+- (id)language;
 - (id)loadDate;
 - (id)loadableFonts;
 - (id)logoImageAssetHandle;
+- (id)magazineGenre;
 - (long long)minimumNewsVersion;
 - (id)name;
 - (id)nameCompact;
@@ -302,12 +310,12 @@
 - (id)paidFeedIDForBin:(long long)arg1;
 - (id)paidFeedIDForSection:(id)arg1 bin:(long long)arg2;
 - (id)parentID;
-- (id)pinnedArticleIDs;
 - (id)pptFeedIDOverride;
 - (void)ppt_overrideFeedID:(id)arg1;
 - (id)prefetchPurchaseOffer;
 - (id)primaryAudience;
 - (id)publisherPaidAuthorizationURL;
+- (id)publisherPaidBundlePurchaseIDs;
 - (id)publisherPaidDescriptionStrings;
 - (id)publisherPaidFeldsparablePurchaseIDs;
 - (bool)publisherPaidLeakyPaywallOptOut;
@@ -318,10 +326,6 @@
 - (id)publisherSpecifiedArticleIDs;
 - (id)publisherSpecifiedArticleIDsModifiedDate;
 - (id)purchaseOfferableConfigurationsFromProtobufList:(id)arg1;
-- (id)relatedChannelIDs;
-- (id)relatedChannelIDsForOnboarding;
-- (id)relatedTopicIDs;
-- (id)relatedTopicIDsForOnboarding;
 - (id)replacementID;
 - (long long)score;
 - (id)sectionFeedConfigurations;

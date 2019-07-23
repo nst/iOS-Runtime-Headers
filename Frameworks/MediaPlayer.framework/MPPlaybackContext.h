@@ -3,13 +3,13 @@
  */
 
 @interface MPPlaybackContext : NSObject <NSSecureCoding> {
+    long long  _actionAfterQueueLoad;
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
     MPAVItem * _playerCurrentItem;
     long long  _repeatType;
     bool  _requireFinalTracklist;
     bool  _shouldRestartPlayback;
-    bool  _shouldStartPlayback;
     long long  _shuffleType;
     NSString * _siriAssetInfo;
     NSString * _siriReferenceIdentifier;
@@ -17,14 +17,15 @@
     long long  _startIndex;
 }
 
+@property (nonatomic) long long actionAfterQueueLoad;
 @property (getter=mpcReporting_isQuickPlay, nonatomic, readonly) bool mpcReporting_quickPlay;
 @property (nonatomic, copy) NSString *playActivityFeatureName;
 @property (nonatomic, copy) NSData *playActivityRecommendationData;
 @property (nonatomic, retain) MPAVItem *playerCurrentItem;
 @property (nonatomic) long long repeatType;
 @property (nonatomic) bool requireFinalTracklist;
+@property (nonatomic, readonly) bool shouldBecomeActive;
 @property (nonatomic) bool shouldRestartPlayback;
-@property (nonatomic) bool shouldStartPlayback;
 @property (nonatomic) long long shuffleType;
 @property (nonatomic, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriReferenceIdentifier;
@@ -37,6 +38,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (long long)actionAfterQueueLoad;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
@@ -47,20 +49,20 @@
 - (id)playerCurrentItem;
 - (long long)repeatType;
 - (bool)requireFinalTracklist;
+- (void)setActionAfterQueueLoad:(long long)arg1;
 - (void)setPlayActivityFeatureName:(id)arg1;
 - (void)setPlayActivityRecommendationData:(id)arg1;
 - (void)setPlayerCurrentItem:(id)arg1;
 - (void)setRepeatType:(long long)arg1;
 - (void)setRequireFinalTracklist:(bool)arg1;
 - (void)setShouldRestartPlayback:(bool)arg1;
-- (void)setShouldStartPlayback:(bool)arg1;
 - (void)setShuffleType:(long long)arg1;
 - (void)setSiriAssetInfo:(id)arg1;
 - (void)setSiriReferenceIdentifier:(id)arg1;
 - (void)setSiriWHAMetricsInfo:(id)arg1;
 - (void)setStartIndex:(long long)arg1;
+- (bool)shouldBecomeActive;
 - (bool)shouldRestartPlayback;
-- (bool)shouldStartPlayback;
 - (long long)shuffleType;
 - (id)siriAssetInfo;
 - (id)siriReferenceIdentifier;

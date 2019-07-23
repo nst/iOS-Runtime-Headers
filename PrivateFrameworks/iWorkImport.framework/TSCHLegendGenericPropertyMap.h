@@ -6,9 +6,9 @@
 
 + (id)imageFillProperties;
 + (id)properties;
-+ (void)savePropertyMap:(id)arg1 toArchive:(struct LegendGenericPropertyMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FillArchive {} *x5; int x6; float x7; struct ShadowArchive {} *x8; struct StrokeArchive {} *x9; }*)arg2 archiver:(id)arg3;
++ (void)savePropertyMap:(id)arg1 toArchive:(struct LegendGenericPropertyMapArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FillArchive {} *x5; struct ShadowArchive {} *x6; struct StrokeArchive {} *x7; int x8; float x9; }*)arg2 archiver:(id)arg3;
 
-- (id)initWithArchive:(const struct LegendGenericPropertyMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FillArchive {} *x5; int x6; float x7; struct ShadowArchive {} *x8; struct StrokeArchive {} *x9; }*)arg1 unarchiver:(id)arg2;
-- (void)saveToArchive:(struct LegendGenericPropertyMapArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FillArchive {} *x5; int x6; float x7; struct ShadowArchive {} *x8; struct StrokeArchive {} *x9; }*)arg1 archiver:(id)arg2;
+- (id)initWithArchive:(const struct LegendGenericPropertyMapArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FillArchive {} *x5; struct ShadowArchive {} *x6; struct StrokeArchive {} *x7; int x8; float x9; }*)arg1 unarchiver:(id)arg2;
+- (void)saveToArchive:(struct LegendGenericPropertyMapArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FillArchive {} *x5; struct ShadowArchive {} *x6; struct StrokeArchive {} *x7; int x8; float x9; }*)arg1 archiver:(id)arg2;
 
 @end

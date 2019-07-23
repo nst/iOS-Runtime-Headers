@@ -3,7 +3,7 @@
  */
 
 @interface NTPBArticleTopic : PBCodable <NSCopying> {
-    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _cohort;
+    COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList * _cohorts;
     struct { 
         unsigned int isEligibleForGrouping : 1; 
         unsigned int isEligibleForGroupingIfFavorited : 1; 
@@ -15,8 +15,8 @@
     NSString * _tagID;
 }
 
-@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *cohort;
-@property (nonatomic, readonly) bool hasCohort;
+@property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *cohorts;
+@property (nonatomic, readonly) bool hasCohorts;
 @property (nonatomic) bool hasIsEligibleForGrouping;
 @property (nonatomic) bool hasIsEligibleForGroupingIfFavorited;
 @property (nonatomic) bool hasIsHidden;
@@ -26,12 +26,12 @@
 @property (nonatomic) bool isHidden;
 @property (nonatomic, retain) NSString *tagID;
 
-- (id)cohort;
+- (id)cohorts;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (bool)hasCohort;
+- (bool)hasCohorts;
 - (bool)hasIsEligibleForGrouping;
 - (bool)hasIsEligibleForGroupingIfFavorited;
 - (bool)hasIsHidden;
@@ -43,7 +43,7 @@
 - (bool)isHidden;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (void)setCohort:(id)arg1;
+- (void)setCohorts:(id)arg1;
 - (void)setHasIsEligibleForGrouping:(bool)arg1;
 - (void)setHasIsEligibleForGroupingIfFavorited:(bool)arg1;
 - (void)setHasIsHidden:(bool)arg1;

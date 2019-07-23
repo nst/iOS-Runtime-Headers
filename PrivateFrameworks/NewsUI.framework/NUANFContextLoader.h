@@ -9,6 +9,7 @@
     FCFlintManifest * _flintManifest;
     FCFlintResourceManager * _flintResourceManager;
     <SXHost> * _host;
+    NSOperationQueue * _imageDecodingQueue;
     <NUArticleResourceURLTranslator> * _resourceURLTranslator;
 }
 
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <SXHost> *host;
+@property (nonatomic, readonly) NSOperationQueue *imageDecodingQueue;
 @property (nonatomic, readonly) <NUArticleResourceURLTranslator> *resourceURLTranslator;
 @property (readonly) Class superclass;
 
@@ -33,6 +35,7 @@
 - (id)flintManifest;
 - (id)flintResourceManager;
 - (id)host;
+- (id)imageDecodingQueue;
 - (id)initWithFlintManifest:(id)arg1 flintResourceManager:(id)arg2 host:(id)arg3 resourceURLTranslator:(id)arg4;
 - (id)loadContextWithCompletion:(id /* block */)arg1;
 - (id /* block */)loadImagesForImageRequest:(id)arg1 completionBlock:(id /* block */)arg2;

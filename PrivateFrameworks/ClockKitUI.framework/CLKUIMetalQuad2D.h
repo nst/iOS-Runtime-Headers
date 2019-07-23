@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (id)_newRenderPipelineStateOpaque:(bool)arg1;
 - (void)encodeMetalForSize:(struct CLKUIQuadSize { int x1; int x2; })arg1 encoder:(id)arg2;
-- (void)prepare;
+- (void)prepareForQuadView:(id)arg1;
 - (void)purge;
 - (void)setOpaque:(bool)arg1;
 

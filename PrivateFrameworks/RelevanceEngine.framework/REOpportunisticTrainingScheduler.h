@@ -3,7 +3,6 @@
  */
 
 @interface REOpportunisticTrainingScheduler : RETrainingScheduler {
-    bool  _backlightOn;
     NSMutableArray * _blocks;
     NSObject<OS_xpc_object> * _criteria;
     NSObject<OS_dispatch_queue> * _queue;

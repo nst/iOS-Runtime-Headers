@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKPrivateIdentity : NSObject <CRKCloudStoringSubItem> {
+@interface CRKPrivateIdentity : NSObject <CRKCloudStoringSubItem, NSSecureCoding> {
     NSString * _commonNamePrefix;
     NSDate * _identityExpirationDate;
     NSData * _identityPersistentId;
@@ -26,7 +26,6 @@
 + (id)instanceWithParentObject:(id)arg1 keyValue:(id)arg2;
 + (id)instanceWithRecord:(id)arg1;
 + (id)keychainGroup;
-+ (id)new;
 + (id)recordType;
 + (id)skeletonInstance;
 + (bool)supportsSecureCoding;
@@ -39,7 +38,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)identityExpirationDate;
 - (id)identityPersistentId;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithIdentityPersistentId:(id)arg1 stagedIdentityPersistentId:(id)arg2 commonNamePrefix:(id)arg3;

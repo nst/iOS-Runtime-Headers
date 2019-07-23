@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSSet *assetPackMap;
 
-- (void)_storeRenditions;
+- (bool)_storeRenditions;
 - (id)assetPackForTags:(id)arg1;
 - (id)assetPackMap;
 - (bool)assetStoreWriteToDisk;

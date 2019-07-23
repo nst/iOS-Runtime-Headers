@@ -2,8 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
  */
 
-@interface STDailyAverageSummaryTableViewCell : UITableViewCell
+@interface STDailyAverageSummaryTableViewCell : UITableViewCell {
+    STDailyAverageView * _dailyAverageView;
+}
 
+@property (readonly) STDailyAverageView *dailyAverageView;
+
+- (void).cxx_destruct;
+- (id)dailyAverageView;
 - (id)initWithUsageReport:(id)arg1;
 
 @end

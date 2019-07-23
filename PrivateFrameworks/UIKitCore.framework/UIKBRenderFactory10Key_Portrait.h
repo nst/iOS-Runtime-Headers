@@ -4,7 +4,6 @@
 
 @interface UIKBRenderFactory10Key_Portrait : UIKBRenderFactory10Key_Round
 
-- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (double)controlColumnWidthFactor;
 - (struct CGPoint { double x1; double x2; })dictationKeyTextOffset;
 - (struct CGPoint { double x1; double x2; })globeKeyTextOffset;

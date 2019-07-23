@@ -3,21 +3,26 @@
  */
 
 @interface PUApertureGradientView : UIView {
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _edgeInsets;
     UIColor * _gradientColor;
-    double  _topPadding;
 }
 
-@property (nonatomic, copy) UIColor *gradientColor;
-@property (nonatomic) double topPadding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic, retain) UIColor *gradientColor;
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (id)gradientColor;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isOpaque;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setGradientColor:(id)arg1;
-- (void)setTopPadding:(double)arg1;
-- (double)topPadding;
 
 @end

@@ -61,7 +61,7 @@
 - (void)_handleAddEventToEventTrigger:(id)arg1;
 - (void)_handleCharacteristicRemove:(id)arg1 eventsToRemove:(id)arg2;
 - (void)_handleEventTriggerUpdate:(id)arg1 message:(id)arg2;
-- (void)_handleLocationAuthorizationMessage:(id)arg1;
+- (void)_handleLocationAuthorizationChangedNotification:(id)arg1;
 - (void)_handleRemoveEventModel:(id)arg1 message:(id)arg2;
 - (void)_handleRemoveEventsFromEventTrigger:(id)arg1;
 - (void)_handleUpdateEventTriggerCondition:(id)arg1;

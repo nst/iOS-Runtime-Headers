@@ -7,7 +7,6 @@
     SXDataTableDictionary * _columnDividers;
     SXDataTableDictionary * _contentBlueprint;
     unsigned long long  _dataOrientation;
-    unsigned long long  _layoutType;
     unsigned long long  _numberOfColumns;
     unsigned long long  _numberOfRows;
     SXDataTableDictionary * _rowDividers;
@@ -27,7 +26,6 @@
 @property (nonatomic, readonly) SXDataTableDictionary *columnDividers;
 @property (nonatomic, readonly) SXDataTableDictionary *contentBlueprint;
 @property (nonatomic) unsigned long long dataOrientation;
-@property (nonatomic, readonly) unsigned long long layoutType;
 @property (nonatomic, readonly) unsigned long long numberOfColumns;
 @property (nonatomic, readonly) unsigned long long numberOfRows;
 @property (nonatomic, readonly) SXDataTableDictionary *rowDividers;
@@ -48,7 +46,6 @@
 - (id)description;
 - (id)initWithNumberOfRows:(unsigned long long)arg1 numberOfColumns:(unsigned long long)arg2 withTableInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (bool)isRectValid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (unsigned long long)layoutType;
 - (unsigned long long)numberOfColumns;
 - (unsigned long long)numberOfRows;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForColumnAtIndex:(unsigned long long)arg1;

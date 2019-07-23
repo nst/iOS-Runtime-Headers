@@ -12,12 +12,7 @@
 @property (nonatomic, retain) UIImageView *symbol;
 @property (nonatomic, retain) UILabel *title;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)selectedCircle;
 - (void)setPressIndicatorHidden:(bool)arg1;

@@ -27,8 +27,10 @@
 - (void)setParameterKeyPaths:(NSArray *)arg1;
 - (void)setResultIdentifier:(NSString *)arg1;
 - (void)setType:(int)arg1;
+- (void)setUserReportRequest:(_SFPBUserReportRequest *)arg1;
 - (void)setValue:(_SFPBCardSectionValue *)arg1;
 - (int)type;
+- (_SFPBUserReportRequest *)userReportRequest;
 - (_SFPBCardSectionValue *)value;
 
 @end

@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) NSArray *entities;
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (id)entities;
 - (id)init;
 - (id)initWithEntities:(id)arg1;

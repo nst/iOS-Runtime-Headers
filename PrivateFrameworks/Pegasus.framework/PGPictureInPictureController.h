@@ -10,6 +10,7 @@
         unsigned int pictureInPictureController_didCreatePictureInPictureViewController : 1; 
         unsigned int pictureInPictureController_willDestroyPictureInPictureViewController : 1; 
         unsigned int pictureInPictureController_willHidePictureInPictureViewController : 1; 
+        unsigned int pictureInPictureController_didHidePictureInPictureViewController : 1; 
     }  _delegateRespondsTo;
     NSXPCListener * _listener;
     NSObject<OS_dispatch_queue> * _listenerQueue;
@@ -25,6 +26,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isStartingStoppingOrCancellingPictureInPicture;
+@property (nonatomic, readonly) bool isStoppingPictureInPictureForAlert;
 @property (getter=isPictureInPictureActive, nonatomic, readonly) bool pictureInPictureActive;
 @property (nonatomic, readonly) NSSet *pictureInPictureApplications;
 @property (readonly) Class superclass;
@@ -41,11 +43,13 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameForInteractivePictureInPictureAnimationEnteringBackgroundForApplication:(id)arg1;
 - (bool)isPictureInPictureActive;
 - (bool)isStartingStoppingOrCancellingPictureInPicture;
+- (bool)isStoppingPictureInPictureForAlert;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)pictureInPictureApplications;
 - (void)pictureInPictureInterruptionBegan;
 - (void)pictureInPictureInterruptionEnded;
 - (void)pictureInPictureRemoteObject:(id)arg1 didCreatePictureInPictureViewController:(id)arg2;
+- (void)pictureInPictureRemoteObject:(id)arg1 didHidePictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 didShowPictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 willDestroyPictureInPictureViewController:(id)arg2;
 - (void)pictureInPictureRemoteObject:(id)arg1 willHidePictureInPictureViewController:(id)arg2;

@@ -48,6 +48,7 @@
 @property (nonatomic) bool allowsCollectionInfluencing;
 @property (nonatomic) bool allowsYearAccumulation;
 
++ (id)_gregorianCalendar;
 + (double)maximumTimeThresholdBetweenMoments;
 
 - (id)_cachedCollectionTagByMomentID;

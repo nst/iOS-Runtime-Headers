@@ -3,7 +3,6 @@
  */
 
 @interface TSCellularPlanRemapViewController : BFFSplashController <TSSetupFlowItem, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIColor * _buttonSystemBlue;
     NSIndexPath * _chosenTargetCellularPlanItem;
     CTDanglingPlanItem * _danglingPlanItem;
     CTCellularPlanItem * _defaultVoiceItem;
@@ -15,7 +14,6 @@
     UITableView * _tableView;
 }
 
-@property (retain) UIColor *buttonSystemBlue;
 @property (retain) NSIndexPath *chosenTargetCellularPlanItem;
 @property (retain) CTDanglingPlanItem *danglingPlanItem;
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +29,6 @@
 @property (retain) UITableView *tableView;
 
 - (void).cxx_destruct;
-- (id)buttonSystemBlue;
 - (id)chosenTargetCellularPlanItem;
 - (id)danglingPlanItem;
 - (id)defaultVoiceItem;
@@ -44,7 +41,6 @@
 - (void)remapDanglingItem:(id /* block */)arg1;
 - (id)sectionFooter;
 - (id)selectedPlanItems;
-- (void)setButtonSystemBlue:(id)arg1;
 - (void)setChosenTargetCellularPlanItem:(id)arg1;
 - (void)setDanglingPlanItem:(id)arg1;
 - (void)setDefaultVoiceItem:(id)arg1;

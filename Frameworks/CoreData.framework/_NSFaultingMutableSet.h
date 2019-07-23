@@ -21,6 +21,7 @@
 + (bool)accessInstanceVariablesDirectly;
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (Class)classForKeyedUnarchiver;
 
 - (bool)_isDeallocating;
 - (bool)_isIdenticalFault:(id)arg1;

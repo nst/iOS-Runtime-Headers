@@ -12,6 +12,7 @@
     NSMutableArray * _interactionDescriptions;
     RELocationManager * _locationManager;
     NSURL * _modelFileURL;
+    unsigned long long  _modelStorageBehavior;
     NSString * _preferenceDomain;
     NSMutableArray * _sectionDescriptions;
     unsigned long long  _trainingBehavior;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly, copy) NSArray *interactionDescriptors;
 @property (nonatomic, readonly) RELocationManager *locationManager;
 @property (nonatomic, readonly, copy) NSURL *modelFileURL;
+@property (nonatomic, readonly) unsigned long long modelStorageBehavior;
 @property (nonatomic, readonly) NSString *preferenceDomain;
 @property (nonatomic, readonly, copy) REFeatureSet *primaryFeatures;
 @property (nonatomic, readonly, copy) NSArray *sectionDescriptors;
@@ -50,11 +52,12 @@
 - (id)descriptionWithIndent:(unsigned long long)arg1;
 - (unsigned long long)hash;
 - (bool)ignoreDeviceLockState;
-- (id)initWithModelFileURL:(id)arg1 baseModelFileURL:(id)arg2 allowsUpdatingModelFile:(bool)arg3 dataSourceLoader:(id)arg4 trainingBehavior:(unsigned long long)arg5 sectionDescriptions:(id)arg6 locationManager:(id)arg7 featureSet:(id)arg8 wantsImmutableContent:(bool)arg9 preferenceDomain:(id)arg10 interactionDescriptions:(id)arg11 allowsRemoteTraining:(bool)arg12 wantsBackup:(bool)arg13 ignoreDeviceLockState:(bool)arg14;
+- (id)initWithModelFileURL:(id)arg1 baseModelFileURL:(id)arg2 allowsUpdatingModelFile:(bool)arg3 dataSourceLoader:(id)arg4 trainingBehavior:(unsigned long long)arg5 modelStorageBehavior:(unsigned long long)arg6 sectionDescriptions:(id)arg7 locationManager:(id)arg8 featureSet:(id)arg9 wantsImmutableContent:(bool)arg10 preferenceDomain:(id)arg11 interactionDescriptions:(id)arg12 allowsRemoteTraining:(bool)arg13 wantsBackup:(bool)arg14 ignoreDeviceLockState:(bool)arg15;
 - (id)interactionDescriptors;
 - (bool)isEqual:(id)arg1;
 - (id)locationManager;
 - (id)modelFileURL;
+- (unsigned long long)modelStorageBehavior;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)preferenceDomain;
 - (id)primaryFeatures;

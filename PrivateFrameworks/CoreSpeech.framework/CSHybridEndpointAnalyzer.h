@@ -35,6 +35,7 @@
     NSDate * _lastServerFeatureTimestamp;
     double  _minimumDurationForEndpointer;
     unsigned long long  _numSamplesProcessed;
+    NSDictionary * _recordContext;
     bool  _recordingDidStop;
     bool  _saveSamplesSeenInReset;
     NSMutableArray * _serverFeatureLatencies;
@@ -43,6 +44,7 @@
     NSObject<OS_dispatch_queue> * _silencePosteriorGeneratorQueue;
     double  _startWaitTime;
     NSObject<OS_dispatch_queue> * _stateSerialQueue;
+    double  _trailingSilenceDurationAtEndpoint;
     bool  _useDefaultServerFeaturesOnClientLag;
     unsigned long long  _vtEndInSampleCount;
     double  _vtExtraAudioAtStartInMs;
@@ -86,6 +88,7 @@
 @property (nonatomic, readonly) double lastStartOfVoiceActivityTime;
 @property (nonatomic) double minimumDurationForEndpointer;
 @property (nonatomic) unsigned long long numSamplesProcessed;
+@property (nonatomic, retain) NSDictionary *recordContext;
 @property (nonatomic) bool recordingDidStop;
 @property (nonatomic) bool saveSamplesSeenInReset;
 @property (nonatomic, retain) NSMutableArray *serverFeatureLatencies;
@@ -95,6 +98,7 @@
 @property (nonatomic) double startWaitTime;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *stateSerialQueue;
 @property (readonly) Class superclass;
+@property (nonatomic) double trailingSilenceDurationAtEndpoint;
 @property (nonatomic) bool useDefaultServerFeaturesOnClientLag;
 @property (nonatomic) unsigned long long vtEndInSampleCount;
 @property (nonatomic) double vtExtraAudioAtStartInMs;
@@ -146,10 +150,11 @@
 - (void)preheat;
 - (void)processAudioSamplesAsynchronously:(id)arg1;
 - (void)processServerEndpointFeatures:(id)arg1;
+- (id)recordContext;
 - (bool)recordingDidStop;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 - (void)reset;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (bool)saveSamplesSeenInReset;
 - (id)serverFeatureLatencies;
 - (id)serverFeaturesLatencyDistributionDictionary;
@@ -187,6 +192,7 @@
 - (void)setLastServerFeatureTimestamp:(id)arg1;
 - (void)setMinimumDurationForEndpointer:(double)arg1;
 - (void)setNumSamplesProcessed:(unsigned long long)arg1;
+- (void)setRecordContext:(id)arg1;
 - (void)setRecordingDidStop:(bool)arg1;
 - (void)setSaveSamplesSeenInReset:(bool)arg1;
 - (void)setServerFeatureLatencies:(id)arg1;
@@ -195,6 +201,7 @@
 - (void)setSilencePosteriorGeneratorQueue:(id)arg1;
 - (void)setStartWaitTime:(double)arg1;
 - (void)setStateSerialQueue:(id)arg1;
+- (void)setTrailingSilenceDurationAtEndpoint:(double)arg1;
 - (void)setUseDefaultServerFeaturesOnClientLag:(bool)arg1;
 - (void)setVtEndInSampleCount:(unsigned long long)arg1;
 - (void)setVtExtraAudioAtStartInMs:(double)arg1;
@@ -202,6 +209,7 @@
 - (id)silencePosteriorGeneratorQueue;
 - (double)startWaitTime;
 - (id)stateSerialQueue;
+- (double)trailingSilenceDurationAtEndpoint;
 - (void)updateEndpointerDelayedTrigger:(bool)arg1;
 - (void)updateEndpointerThreshold:(float)arg1;
 - (bool)useDefaultServerFeaturesOnClientLag;

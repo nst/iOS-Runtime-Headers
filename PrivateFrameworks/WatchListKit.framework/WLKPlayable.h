@@ -9,6 +9,8 @@
     bool  _appInstalled;
     NSArray * _audioTrackFormats;
     NSArray * _audioTrackLocales;
+    SSLookupItemOffer * _bestBuyOffer;
+    SSLookupItemOffer * _bestRentalOffer;
     NSString * _canonicalID;
     WLKChannelDetails * _channelDetails;
     NSString * _channelID;
@@ -20,19 +22,24 @@
     NSNumber * _duration;
     NSDate * _endAirTime;
     bool  _entitled;
+    bool  _entitledAnywhere;
     NSString * _externalID;
     NSString * _externalServiceID;
     NSDictionary * _itsData;
     bool  _itunes;
     SSLookupItem * _lookupItem;
     NSArray * _movieClips;
+    NSArray * _offers;
     WLKPlayEvent * _playEvent;
     NSString * _playableID;
     WLKLocale * _primaryLocale;
     NSDictionary * _punchoutUrls;
     NSDate * _startAirTime;
+    NSArray * _storeOffers;
+    NSArray * _subscriptionOffers;
     bool  _subtitled;
     NSArray * _subtitledLocales;
+    NSURL * _tvAppDeeplinkURL;
     NSString * _videoQuality;
 }
 
@@ -44,6 +51,9 @@
 @property (nonatomic, readonly, copy) NSArray *audioTrackLocales;
 @property (nonatomic, readonly, copy) SSLookupItemOffer *bestBuyOffer;
 @property (nonatomic, readonly, copy) SSLookupItemOffer *bestRentalOffer;
+@property (nonatomic, readonly, copy) WLKStoreOffer *bestStoreBuyOffer;
+@property (nonatomic, readonly, copy) WLKStoreOffer *bestStoreRentalOffer;
+@property (nonatomic, readonly, copy) WLKStoreOffer *bestStoreSubscriptionOffer;
 @property (nonatomic, readonly, copy) NSString *canonicalID;
 @property (nonatomic, readonly, copy) WLKChannelDetails *channelDetails;
 @property (nonatomic, readonly, copy) NSString *channelID;
@@ -55,6 +65,7 @@
 @property (nonatomic, readonly) NSNumber *duration;
 @property (nonatomic, readonly, copy) NSDate *endAirTime;
 @property (getter=isEntitled, nonatomic, readonly) bool entitled;
+@property (getter=isEntitledAnywhere, nonatomic, readonly) bool entitledAnywhere;
 @property (nonatomic, readonly, copy) NSString *externalID;
 @property (nonatomic, readonly, copy) NSString *externalServiceID;
 @property (nonatomic, readonly, copy) NSDictionary *itsData;
@@ -67,15 +78,18 @@
 @property (nonatomic, readonly, copy) WLKLocale *primaryLocale;
 @property (nonatomic, readonly, copy) NSDictionary *punchoutUrls;
 @property (nonatomic, readonly, copy) NSDate *startAirTime;
+@property (nonatomic, readonly, copy) NSArray *storeOffers;
+@property (nonatomic, readonly, copy) NSArray *subscriptionOffers;
 @property (getter=isSubtitled, nonatomic, readonly) bool subtitled;
 @property (nonatomic, readonly, copy) NSArray *subtitledLocales;
+@property (nonatomic, readonly, copy) NSURL *tvAppDeeplinkURL;
 @property (nonatomic, readonly, copy) NSString *videoQuality;
 
-+ (id)playablesWithDictionaries:(id)arg1 canonicalID:(id)arg2;
++ (id)playablesWithDictionaries:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)SDHLocales;
-- (id)_filteredContentSource:(id)arg1;
+- (id)_filteredStoreContentSource:(id)arg1;
 - (id)_localesArrayForDictionary:(id)arg1 andKey:(id)arg2;
 - (bool)_supportsHD;
 - (id)adLocales;
@@ -84,6 +98,9 @@
 - (id)audioTrackLocales;
 - (id)bestBuyOffer;
 - (id)bestRentalOffer;
+- (id)bestStoreBuyOffer;
+- (id)bestStoreRentalOffer;
+- (id)bestStoreSubscriptionOffer;
 - (id)canonicalID;
 - (id)channelDetails;
 - (id)channelID;
@@ -100,9 +117,10 @@
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithDictionary:(id)arg1 canonicalID:(id)arg2;
+- (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (bool)isAppInstalled;
 - (bool)isEntitled;
+- (bool)isEntitledAnywhere;
 - (bool)isEqual:(id)arg1;
 - (bool)isSubtitled;
 - (bool)isiTunes;
@@ -110,12 +128,17 @@
 - (id)lookupItem;
 - (id)movieClips;
 - (id)offers;
+- (id)openPunchoutURL;
 - (id)playEvent;
+- (id)playPunchoutURL;
 - (id)playableID;
 - (id)primaryLocale;
 - (id)punchoutUrls;
 - (id)startAirTime;
+- (id)storeOffers;
+- (id)subscriptionOffers;
 - (id)subtitledLocales;
+- (id)tvAppDeeplinkURL;
 - (id)videoQuality;
 
 @end

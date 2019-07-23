@@ -20,7 +20,10 @@
         bool didTapAddMoreButton; 
         bool oneUpPresentation; 
     }  _delegateRespondsTo;
+    bool  _didIncrementNumberOfPresentableSendBacks;
+    bool  _didIncrementNumberOfPresentedSendBacks;
     NSMutableSet * _inUseTiles;
+    bool  _isWaitingForSendBackPresentationConfirmationTimeout;
     struct CGSize { 
         double width; 
         double height; 
@@ -44,6 +47,7 @@
     PXContextualNotification * _sendBackNotification;
     bool  _sendBackNotificationWasDiscarded;
     bool  _sendBackNotificationWasTapped;
+    unsigned long long  _sendBackPresentationConfirmationGeneration;
     PXCMMSendBackSuggestionSource * _sendBackSuggestionSource;
     PXCMMSpec * _spec;
     PXCMMSpecManager * _specManager;
@@ -77,6 +81,7 @@
 - (id)_assetReferenceAtPoint:(struct CGPoint { double x1; double x2; })arg1 padding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (double)_bannerHeightFromReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_canShowSendBackSuggestion;
+- (void)_checkSendBackPresentationStatus;
 - (void)_configureBannerTile:(id)arg1;
 - (void)_configureLayout:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
@@ -92,15 +97,21 @@
 - (id)_createStatusFooter;
 - (id)_createStatusTileView;
 - (void)_deselectAllAssets;
+- (void)_didFindPresentableSendBack;
+- (void)_didPresentSendBack;
 - (void)_handleLongPress:(id)arg1;
+- (void)_handleSendBackPresentationConfirmationTimeoutForGeneration:(unsigned long long)arg1;
 - (void)_handleTap:(id)arg1;
 - (double)_headerHeightFromReferenceSize:(struct CGSize { double x1; double x2; })arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)_hiddenAssetReferences;
 - (id)_indexPathsForAssetReferences:(id)arg1 inDataSource:(id)arg2;
 - (void)_invalidateLayoutGenerator;
+- (void)_invokeSendBackAction;
 - (bool)_isAssetAlreadyImportedAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (bool)_isAssetAlreadyImportedAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1 withEngineDrivenLayout:(id)arg2;
 - (bool)_isLocationWithinCurrentLayoutBounds:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_isSendBackBannerViewContentsAtAllVisible;
+- (bool)_isSendBackBannerViewContentsFullyVisible;
 - (long long)_layoutType;
 - (id)_oneUpPresentation;
 - (void)_performInitialSelectionIfNeeded;
@@ -140,6 +151,7 @@
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1 layout:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contextualNotification:(id)arg1 containingFrameInCoordinateSpace:(id)arg2;
+- (void)contextualNotificationDidAppear:(id)arg1;
 - (void)contextualNotificationDidDisappear:(id)arg1;
 - (void)contextualNotificationWasDiscarded:(id)arg1;
 - (void)contextualNotificationWasTapped:(id)arg1;
@@ -166,6 +178,7 @@
 - (id)oneUpPresentationImportStatusManager:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)photosGlobalFooterView:(id)arg1 presentViewController:(id)arg2;
 - (id)preferredContainerViewForContextualNotification:(id)arg1;
 - (void)presentSendBackNotification;

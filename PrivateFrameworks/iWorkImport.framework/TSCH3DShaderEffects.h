@@ -21,7 +21,8 @@
 - (void)enumerateEffectsUsingBlock:(id /* block */)arg1;
 - (id)identifier;
 - (id)init;
-- (void)inject:(id)arg1;
+- (void)injectGLSLInto:(id)arg1 context:(id)arg2;
+- (void)injectMetalShaderInto:(id)arg1 context:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isSectionEnabled:(int)arg1;
 - (void)prependEffect:(id)arg1;

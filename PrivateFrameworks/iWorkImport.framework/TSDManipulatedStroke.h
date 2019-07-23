@@ -14,22 +14,22 @@
 + (Class)mutableClass;
 
 - (void)applyInteriorWrapPropertiesInContext:(struct CGContext { }*)arg1 insideStroke:(bool)arg2;
-- (bool)canApplyToCAShapeLayer;
+- (bool)canApplyToShapeRenderable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (bool)drawsOutsideStrokeBounds;
-- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StrokeArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Color {} *x5; struct StrokePatternArchive {} *x6; struct SmartStrokeArchive {} *x7; struct FrameArchive {} *x8; struct PatternedStrokeArchive {} *x9; float x10; int x11; int x12; float x13; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithName:(id)arg1 color:(id)arg2 width:(double)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6 miterLimit:(double)arg7;
 - (struct CGPath { }*)manipulatePath:(struct CGPath { }*)arg1 withLineWidth:(double)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)p_setupDoodlesManipulation;
-- (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(bool)arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(bool)arg4 parameterized:(bool)arg5 drawWithOpenGL:(bool)arg6 shouldReverseDrawOrder:(bool)arg7;
+- (void)paintPath:(struct CGPath { }*)arg1 wantsInteriorStroke:(bool)arg2 inContext:(struct CGContext { }*)arg3 useFastDrawing:(bool)arg4 parameterized:(bool)arg5 shouldReverseDrawOrder:(bool)arg6;
 - (id)pathManipulation;
-- (struct CGPath { }*)pathToStrokeFromCGPath:(struct CGPath { }*)arg1;
-- (bool)prefersToApplyToCAShapeLayerDuringManipulation;
+- (const struct CGPath { }*)pathToStrokeFromCGPath:(struct CGPath { }*)arg1;
+- (bool)prefersToApplyToShapeRenderableDuringManipulation;
 - (unsigned int)randomSeed;
 - (double)renderedWidth;
-- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Color {} *x5; float x6; int x7; int x8; float x9; struct StrokePatternArchive {} *x10; struct SmartStrokeArchive {} *x11; struct FrameArchive {} *x12; struct PatternedStrokeArchive {} *x13; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StrokeArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Color {} *x5; struct StrokePatternArchive {} *x6; struct SmartStrokeArchive {} *x7; struct FrameArchive {} *x8; struct PatternedStrokeArchive {} *x9; float x10; int x11; int x12; float x13; }*)arg1 archiver:(id)arg2;
 - (void)seedRandom;
 - (void)setPathManipulation:(id)arg1;
 - (void)setRandomSeed:(unsigned int)arg1;

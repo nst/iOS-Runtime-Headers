@@ -93,10 +93,6 @@
 - (void)_updateMessageAndSubtitle;
 - (void)_useLegacyUI:(bool)arg1;
 - (void)_useUndoStyle:(bool)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)addButtonWithTitle:(id)arg1;
 - (id)addButtonWithTitle:(id)arg1 buttonClass:(Class)arg2;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
@@ -111,6 +107,7 @@
 - (id)buttonTitleAtIndex:(long long)arg1;
 - (long long)cancelButtonIndex;
 - (id)context;
+- (void)dealloc;
 - (id)defaultButton;
 - (long long)defaultButtonIndex;
 - (id)delegate;
@@ -184,13 +181,13 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRect;
 - (id)window;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
-
-- (id)initWithTitlemessagedelegatecancelButtonTitle;
-
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
 
 - (id)initWithError:(id)arg1;
 - (void)showWithCompletionHandler:(id /* block */)arg1;
+
+// Image: /usr/lib/swift/libswiftUIKit.dylib
+
+- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4;
 
 @end

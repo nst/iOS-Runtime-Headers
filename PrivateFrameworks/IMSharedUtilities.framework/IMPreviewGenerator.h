@@ -5,8 +5,11 @@
 @interface IMPreviewGenerator : NSObject <IMPreviewGeneratorProtocol, IMUTITypeInformation>
 
 + (id)UTITypes;
++ (double)_scaleFactorForThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 constraints:(struct IMPreviewConstraints { double x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; bool x4; })arg2 targetPxSize:(struct CGSize { double x1; double x2; })arg3;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledTargetRectForSize:(struct CGSize { double x1; double x2; })arg1 andThumbnailSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)generateAndPersistPreviewFromSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints { double x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; bool x4; })arg2 error:(id*)arg3;
 + (double)maxUpScale;
++ (struct CGImage { }*)newCroppedAndRescaledImageFromImage:(struct CGImage { }*)arg1 constraints:(struct IMPreviewConstraints { double x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; bool x4; })arg2 targetPxSize:(struct CGSize { double x1; double x2; })arg3;
 + (struct CGImage { }*)newPreviewFromSourceURL:(id)arg1 withPreviewConstraints:(struct IMPreviewConstraints { double x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; bool x4; })arg2 error:(id*)arg3;
 + (id)previewExtension;
 + (bool)shouldScaleUpPreview;

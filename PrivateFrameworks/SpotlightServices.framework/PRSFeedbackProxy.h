@@ -26,6 +26,7 @@
 - (void)didGradeResultRelevancy:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
+- (void)didReportUserResponseFeedback:(id)arg1;
 - (void)didStartSearch:(id)arg1;
 - (id)listener;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;

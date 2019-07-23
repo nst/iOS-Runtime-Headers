@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
  */
 
-@interface CoreKnowledge.CKSQLStatement : SwiftObject {
+@interface CoreKnowledge.CKSQLStatement : Swift._SwiftObject {
     void columnCount.storage;
     void columnNames.storage;
     void connection;

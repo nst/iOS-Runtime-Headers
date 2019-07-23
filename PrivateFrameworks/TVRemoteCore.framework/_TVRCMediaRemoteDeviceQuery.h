@@ -12,6 +12,7 @@
 - (void).cxx_destruct;
 - (void)_discoveredTelevision:(void*)arg1;
 - (void)_removedTelevision:(void*)arg1;
+- (bool)_shouldUseMediaRemoteForConnection:(void*)arg1;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 - (void)start;

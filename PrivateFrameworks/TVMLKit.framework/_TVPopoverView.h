@@ -6,7 +6,7 @@
     bool  _imageLoaded;
     TVImageProxy * _imageProxy;
     _TVPopoverDescriptor * _popoverDescriptor;
-    _TVButton * _tvPopoverButton;
+    TVButton * _tvPopoverButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) TVImageProxy *imageProxy;
 @property (nonatomic, retain) _TVPopoverDescriptor *popoverDescriptor;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) _TVButton *tvPopoverButton;
+@property (nonatomic, retain) TVButton *tvPopoverButton;
 
 - (void).cxx_destruct;
 - (void)_popoverButtonPressed:(id)arg1;

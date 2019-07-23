@@ -11,7 +11,6 @@
 + (id)functionWithName:(id)arg1;
 + (id)sharedDevice;
 + (id)sharedLibrary;
-+ (id)sharedMetalInstance;
 
 - (void).cxx_destruct;
 - (id)_newAtlasForUuid:(id)arg1;

@@ -51,6 +51,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ disconnectCallPreflight;
+@property (nonatomic, readonly, copy) NSArray *displayedAudioAndVideoCalls;
 @property (nonatomic, readonly, copy) NSArray *displayedCalls;
 @property (getter=isEndAndAnswerAllowed, nonatomic, readonly) bool endAndAnswerAllowed;
 @property (nonatomic, readonly) bool hasCurrentAudioCalls;
@@ -143,6 +144,7 @@
 - (void)disconnectCall:(id)arg1 withReason:(int)arg2;
 - (id /* block */)disconnectCallPreflight;
 - (void)disconnectCurrentCallAndActivateHeld;
+- (id)displayedAudioAndVideoCalls;
 - (id)displayedCall;
 - (id)displayedCallFromCalls:(id)arg1;
 - (id)displayedCalls;
@@ -211,6 +213,7 @@
 - (void)setTTYType:(int)arg1 forCall:(id)arg2;
 - (void)setVideoDeviceController:(id)arg1;
 - (bool)shouldPreferRelayOverDirectSecondaryCallingForProvider:(id)arg1 isVideo:(bool)arg2;
+- (void)shouldSuppressInCallStatusBar:(bool)arg1;
 - (void)swapCalls;
 - (void)ungroupCall:(id)arg1;
 - (void)unholdCall:(id)arg1;

@@ -17,14 +17,10 @@
 @property (nonatomic, readonly) bool supportsAudio;
 @property (nonatomic, readonly) bool supportsVideo;
 
-+ (void)setSenderIdentity:(id)arg1 forDialRequest:(id)arg2 handle:(id)arg3 contact:(id)arg4;
-+ (void)setSenderIdentity:(id)arg1 forDialRequest:(id)arg2 handle:(id)arg3 contact:(id)arg4 geminiManager:(id)arg5 contactStore:(id)arg6;
-
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)callProvider;
 - (id)dialRequestForHandle:(id)arg1 contact:(id)arg2 video:(bool)arg3;
-- (id)dialRequestForHandle:(id)arg1 contact:(id)arg2 video:(bool)arg3 senderIdentity:(id)arg4;
 - (id)initWithCallProvider:(id)arg1;
 - (id)localizedName;
 - (void)setCallProvider:(id)arg1;

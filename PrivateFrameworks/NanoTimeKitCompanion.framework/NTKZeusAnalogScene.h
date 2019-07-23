@@ -3,11 +3,12 @@
  */
 
 @interface NTKZeusAnalogScene : NTKAnalogScene {
+    double  _bleedZRotation;
     NSCalendar * _calendar;
     unsigned long long  _currentDensity;
     double  _currentTime;
     double  _endSplitRotation;
-    SKNode * _fontContainerNode;
+    SKNode * _fontContainerNodes;
     NSArray * _fontHourNodes;
     bool  _isEditing;
     bool  _isStatusIconVisible;
@@ -34,11 +35,13 @@
 - (void)_applyTransitionFraction:(double)arg1 fromHourLabelCollectionNode:(id)arg2 toHourLabelCollectionNode:(id)arg3;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
-- (double)_contentAlphaForEditing:(bool)arg1;
+- (double)_contentAlphaForEditMode:(long long)arg1;
 - (double)_digitAlphaForEditMode:(long long)arg1;
 - (void)_displayZoomScale:(double)arg1 fraction:(double)arg2;
 - (id)_hoursNodeForStyle:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
+- (struct CGPoint { double x1; double x2; })_logoContainerPositionForStyle:(unsigned long long)arg1;
 - (double)_lowerComplicationAlphaForEditing:(bool)arg1;
+- (id)_nodeForBleed:(unsigned long long)arg1;
 - (double)_secondHandAlphaForDensity:(unsigned long long)arg1 isEditing:(bool)arg2;
 - (void)_significantTimeChanged;
 - (double)_splitAngle;
@@ -52,6 +55,7 @@
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (id)auxiliaryScrubbingObscuredNodes;
 - (double)backgroundAlpha;
+- (struct CGPoint { double x1; double x2; })centerOf4NumeralForStyle:(unsigned long long)arg1;
 - (unsigned long long)currentDensity;
 - (void)dealloc;
 - (void)endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;

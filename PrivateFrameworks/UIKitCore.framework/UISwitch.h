@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UISwitch : UIControl <DebugHierarchyObject_Fallback, NSCoding, UISwitchControl, UISwitchVisualElementProvider> {
+@interface UISwitch : UIControl <NSCoding, UISwitchControl, UISwitchVisualElementProvider> {
     bool  _alwaysShowOnOffLabel;
     UIImage * _offImage;
     bool  _on;
@@ -27,8 +27,6 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) UISwitchVisualElement *visualElement;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (void)setVisualElementProvider:(id)arg1;
 + (id)visualElementForTraitCollection:(id)arg1;
 
@@ -50,16 +48,8 @@
 - (bool)_shouldAlterCodedFrame;
 - (bool)_shouldShowOnOffLabels;
 - (void)_showingOnOffLabelChanged;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

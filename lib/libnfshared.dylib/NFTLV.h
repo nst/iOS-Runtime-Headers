@@ -15,6 +15,7 @@
 + (id)TLVWithData:(id)arg1;
 + (id)TLVWithTag:(unsigned int)arg1 children:(id)arg2;
 + (id)TLVWithTag:(unsigned int)arg1 fromData:(id)arg2;
++ (id)TLVWithTag:(unsigned int)arg1 unsignedChar:(unsigned char)arg2;
 + (id)TLVWithTag:(unsigned int)arg1 unsignedLongValue:(unsigned int)arg2;
 + (id)TLVWithTag:(unsigned int)arg1 value:(id)arg2;
 + (id)TLVsWithData:(id)arg1;

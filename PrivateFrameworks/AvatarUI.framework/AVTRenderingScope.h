@@ -28,6 +28,7 @@
 + (double)thumbnailHeightRatioForFramingMode:(id)arg1;
 + (id)thumbnailScope;
 + (double)widthForRenderingType:(long long)arg1 options:(unsigned long long)arg2;
++ (double)widthForSunflowerRenderingType:(long long)arg1;
 
 - (id)adaptedFramingModeForObjectType:(long long)arg1;
 - (unsigned long long)cacheableResourceAssociatedCost;

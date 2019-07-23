@@ -69,4 +69,8 @@
 
 - (id)formattedText;
 
+// Image: /System/Library/PrivateFrameworks/SiriInstrumentation.framework/SiriInstrumentation
+
+- (id)si_dictionaryRepresentation;
+
 @end

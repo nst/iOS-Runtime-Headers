@@ -31,7 +31,7 @@
 - (id)positionOfNextBoundaryOfGranularity:(int)arg1 inDirection:(int)arg2;
 - (bool)requiresContextForWordBoundary;
 - (void)setAffinity:(int)arg1;
-- (int)textDirection;
+- (unsigned char)textDirection;
 - (bool)withinTextUnitOfGranularity:(int)arg1 inDirectionIfAtBoundary:(int)arg2;
 
 @end

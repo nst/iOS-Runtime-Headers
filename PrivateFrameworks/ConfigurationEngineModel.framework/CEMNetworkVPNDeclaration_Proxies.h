@@ -14,6 +14,7 @@
     NSNumber * _payloadProxyAutoConfigEnable;
     NSString * _payloadProxyAutoConfigURLString;
     NSNumber * _payloadProxyAutoDiscoveryEnable;
+    NSArray * _payloadSupplementalMatchDomains;
 }
 
 @property (nonatomic, copy) NSNumber *payloadHTTPEnable;
@@ -27,10 +28,11 @@
 @property (nonatomic, copy) NSNumber *payloadProxyAutoConfigEnable;
 @property (nonatomic, copy) NSString *payloadProxyAutoConfigURLString;
 @property (nonatomic, copy) NSNumber *payloadProxyAutoDiscoveryEnable;
+@property (nonatomic, copy) NSArray *payloadSupplementalMatchDomains;
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnly;
-+ (id)buildWithHTTPEnable:(id)arg1 withHTTPPort:(id)arg2 withHTTPProxy:(id)arg3 withHTTPProxyPassword:(id)arg4 withHTTPProxyUsername:(id)arg5 withHTTPSEnable:(id)arg6 withHTTPSPort:(id)arg7 withHTTPSProxy:(id)arg8 withProxyAutoConfigEnable:(id)arg9 withProxyAutoDiscoveryEnable:(id)arg10 withProxyAutoConfigURLString:(id)arg11;
++ (id)buildWithHTTPEnable:(id)arg1 withHTTPPort:(id)arg2 withHTTPProxy:(id)arg3 withHTTPProxyPassword:(id)arg4 withHTTPProxyUsername:(id)arg5 withHTTPSEnable:(id)arg6 withHTTPSPort:(id)arg7 withHTTPSProxy:(id)arg8 withProxyAutoConfigEnable:(id)arg9 withProxyAutoDiscoveryEnable:(id)arg10 withProxyAutoConfigURLString:(id)arg11 withSupplementalMatchDomains:(id)arg12;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -46,6 +48,7 @@
 - (id)payloadProxyAutoConfigEnable;
 - (id)payloadProxyAutoConfigURLString;
 - (id)payloadProxyAutoDiscoveryEnable;
+- (id)payloadSupplementalMatchDomains;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (void)setPayloadHTTPEnable:(id)arg1;
 - (void)setPayloadHTTPPort:(id)arg1;
@@ -58,5 +61,6 @@
 - (void)setPayloadProxyAutoConfigEnable:(id)arg1;
 - (void)setPayloadProxyAutoConfigURLString:(id)arg1;
 - (void)setPayloadProxyAutoDiscoveryEnable:(id)arg1;
+- (void)setPayloadSupplementalMatchDomains:(id)arg1;
 
 @end

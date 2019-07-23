@@ -147,7 +147,6 @@
 + (bool)featureProfile:(unsigned long long)arg1 supportsFeatureSet:(unsigned long long)arg2;
 + (bool)useNewPrimitiveRestartBehavior;
 
-- (void).cxx_destruct;
 - (void)_decrementCommandQueueCount;
 - (id)_deviceWrapper;
 - (void)_incrementCommandQueueCount;

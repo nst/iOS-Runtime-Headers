@@ -54,6 +54,7 @@
 @property (nonatomic, retain) <_DKSyncLocalKnowledgeStorage> *localStorage;
 @property (nonatomic, readonly) _DKKnowledgeStorage *storage;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) _DKSyncType *syncType;
 @property (nonatomic, retain) <_DKSyncRemoteKnowledgeStorage> *transportCloudDown;
 @property (nonatomic, retain) <_DKSyncRemoteKnowledgeStorage> *transportCloudUp;
 @property (nonatomic, retain) <_DKSyncRemoteKnowledgeStorage> *transportRapport;
@@ -149,6 +150,7 @@
 - (id)sortedEventsWithCreationDateBetweenDate:(id)arg1 andDate:(id)arg2 streamNames:(id)arg3 limit:(unsigned long long)arg4 fetchOrder:(long long)arg5 error:(id*)arg6;
 - (void)start;
 - (id)storage;
+- (id)syncType;
 - (void)syncWithReply:(id /* block */)arg1;
 - (void)synchronizeWithUrgency:(unsigned long long)arg1 client:(id)arg2 reply:(id /* block */)arg3;
 - (id)transportCloudDown;

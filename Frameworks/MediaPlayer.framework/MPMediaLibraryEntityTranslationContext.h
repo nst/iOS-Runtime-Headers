@@ -3,7 +3,7 @@
  */
 
 @interface MPMediaLibraryEntityTranslationContext : NSObject {
-    NSArray * _allowedItemIdentifiers;
+    NSArray * _allowedEntityIdentifiers;
     unsigned long long  _filteringOptions;
     MPMediaLibrary * _mediaLibrary;
     MPModelKind * _modelKind;
@@ -11,7 +11,7 @@
     NSArray * _scopedContainers;
 }
 
-@property (nonatomic, retain) NSArray *allowedItemIdentifiers;
+@property (nonatomic, retain) NSArray *allowedEntityIdentifiers;
 @property (nonatomic) unsigned long long filteringOptions;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, retain) MPModelKind *modelKind;
@@ -19,13 +19,13 @@
 @property (nonatomic, retain) NSArray *scopedContainers;
 
 - (void).cxx_destruct;
-- (id)allowedItemIdentifiers;
+- (id)allowedEntityIdentifiers;
 - (unsigned long long)filteringOptions;
 - (bool)isMultiQuery;
 - (id)mediaLibrary;
 - (id)modelKind;
 - (id)scopedContainers;
-- (void)setAllowedItemIdentifiers:(id)arg1;
+- (void)setAllowedEntityIdentifiers:(id)arg1;
 - (void)setFilteringOptions:(unsigned long long)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setModelKind:(id)arg1;

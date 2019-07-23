@@ -8,8 +8,8 @@
 - (void)labelsResourcesSessionWillBeginForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 pipeline:(TSCH3DSceneRenderPipeline *)arg2;
 - (void)labelsResourcesSessionWillEndForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 pipeline:(TSCH3DSceneRenderPipeline *)arg2;
 - (void)setOffset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 labelType:(int)arg2 boundsIndex:(long long)arg3 forSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg4;
-- (void)updateExternalLabelAttribute:(struct ExternalLabelAttribute { }*)arg1 sceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg2 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { }*)arg3;
-- (bool)willSubmitLabelForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { }*)arg2;
+- (void)updateExternalLabelAttribute:(TSCH3DExternalLabelAttribute *)arg1 sceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg2 labelRenderInfo:(TSCH3DChartLabelsContainingLabelRenderInfo *)arg3;
+- (bool)willSubmitLabelForSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg1 labelRenderInfo:(TSCH3DChartLabelsContainingLabelRenderInfo *)arg2;
 - (bool)willSubmitLabelType:(int)arg1 boundsIndex:(long long)arg2 alignment:(unsigned long long)arg3 elementIndex:(unsigned long long)arg4 forSceneObject:(TSCH3DChartLabelsContainingSceneObject *)arg5;
 
 @end

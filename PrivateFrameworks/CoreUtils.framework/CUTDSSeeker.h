@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@interface CUTDSSeeker : NSObject {
+@interface CUTDSSeeker : NSObject <CUTDSXPCClientInterface, NSSecureCoding> {
+    bool  _activateCalled;
     int  _dataLinkType;
     bool  _directedOnly;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -11,12 +12,16 @@
     struct NSMutableSet { Class x1; } * _endpoints;
     id /* block */  _interruptionHandler;
     bool  _invalidateCalled;
+    bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     NSString * _label;
     bool  _passive;
     NSString * _serviceType;
+    unsigned long long  _tdsHashProvide;
     unsigned long long  _tdsHashSeek;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
+    NSXPCConnection * _xpcCnx;
+    NSString * _xpcServiceName;
 }
 
 @property (nonatomic) int dataLinkType;
@@ -30,20 +35,30 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) bool passive;
 @property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic) unsigned long long tdsHashProvide;
 @property (nonatomic) unsigned long long tdsHashSeek;
+@property (nonatomic, copy) NSString *xpcServiceName;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_activateWithCompletion:(id /* block */)arg1;
+- (void)_activateDirectWithCompletion:(id /* block */)arg1;
+- (void)_activateXPCWithCompletion:(id /* block */)arg1 reactivate:(bool)arg2;
+- (void)_ensureXPCStarted;
+- (void)_interrupted;
 - (void)_invalidate;
+- (void)_invalidated;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (int)dataLinkType;
 - (void)dealloc;
 - (bool)directedOnly;
 - (id)dispatchQueue;
+- (void)encodeWithCoder:(id)arg1;
 - (id /* block */)endpointFoundHandler;
 - (id /* block */)endpointLostHandler;
 - (struct NSMutableSet { Class x1; }*)endpoints;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
@@ -61,8 +76,15 @@
 - (void)setLabel:(id)arg1;
 - (void)setPassive:(bool)arg1;
 - (void)setServiceType:(id)arg1;
+- (void)setTdsHashProvide:(unsigned long long)arg1;
 - (void)setTdsHashSeek:(unsigned long long)arg1;
+- (void)setXpcServiceName:(id)arg1;
+- (unsigned long long)tdsHashProvide;
 - (unsigned long long)tdsHashSeek;
 - (void)updateEndpointsForDevices:(struct NSMutableDictionary { Class x1; }*)arg1;
+- (id)xpcServiceName;
+- (void)xpcTDSProviderStateChanged:(unsigned int)arg1;
+- (void)xpcTDSSeekerEndpointFound:(id)arg1;
+- (void)xpcTDSSeekerEndpointLost:(id)arg1;
 
 @end

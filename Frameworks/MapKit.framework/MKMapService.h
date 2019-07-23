@@ -34,7 +34,7 @@
 - (void)captureMapSettingsWithPauseSpokenAudioEnabled:(bool)arg1;
 - (void)captureMapSettingsWithPreferredTransportMode:(int)arg1;
 - (void)captureMapSettingsWithTrafficEnabled:(bool)arg1;
-- (void)captureMapUIStateWithIsAirQualityShown:(bool)arg1;
+- (void)captureMapUIStateWithIsAirQualityShown:(bool)arg1 isWeatherShown:(bool)arg2;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (void)captureMapsSettingsWithPreferredTransportMode:(int)arg1 avoidTolls:(bool)arg2 avoidHighways:(bool)arg3 navVoiceVolume:(int)arg4 pauseSpokenAudioEnabled:(bool)arg5 findMyCarEnabled:(bool)arg6 trafficEnabled:(bool)arg7 labelEnabled:(bool)arg8;
@@ -64,9 +64,11 @@
 - (id)init;
 - (id)logContextForLogMsgEvent:(id)arg1;
 - (id)mapItemsForPlacesInDetails:(id)arg1;
+- (id)problemTicketForWalletRAPReport:(id)arg1;
 - (void)setDeviceOrientation:(int)arg1;
 - (void)setGetLogContextForEventBlock:(id /* block */)arg1;
 - (void)siriAnalyticsDonation:(int)arg1 target:(int)arg2 resultIndex:(int)arg3 mapItem:(id)arg4;
+- (id)stylingForWalletCategory:(id)arg1;
 - (id)ticketForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
@@ -105,5 +107,6 @@
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 retainedSearch:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForTransitLines:(id)arg1 traits:(id)arg2;
 - (id)ticketForURLQuery:(id)arg1 identifier:(id)arg2 resultProviderId:(int)arg3 contentProvider:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)ticketForWalletMerchantLookupRequest:(id)arg1 traits:(id)arg2;
 
 @end

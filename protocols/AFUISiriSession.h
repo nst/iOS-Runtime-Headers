@@ -11,6 +11,7 @@
 - (void)clearContext;
 - (void)end;
 - (void)forceAudioSessionActive;
+- (void)forceAudioSessionActiveForReason:(long long)arg1;
 - (void)forceAudioSessionInactive;
 - (void)performAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)performAceCommand:(void *)arg1 conflictHandler:(void *)arg2; // needs 2 arg types, found 6: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
@@ -33,6 +34,7 @@
 - (void)setLockState:(unsigned long long)arg1;
 - (void)startCorrectedRequestWithText:(NSString *)arg1 correctionIdentifier:(id)arg2 userSelectionResults:(AFUserUtteranceSelectionResults *)arg3;
 - (void)startRequestWithOptions:(AFUIRequestOptions *)arg1;
+- (void)startRequestWithOptions:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: AFUIRequestOptions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)stopRecordingSpeech;
 - (void)stopRequestWithOptions:(AFUIRequestOptions *)arg1;
 - (void)telephonyRequestCompleted;

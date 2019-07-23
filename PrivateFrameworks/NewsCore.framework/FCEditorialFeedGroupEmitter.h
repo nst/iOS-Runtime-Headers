@@ -16,6 +16,7 @@
 @property (nonatomic, readonly, copy) <FCFeedGroupInsertionDescriptor> *insertionDescriptor;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic, readonly) long long requiredForYouContentTypes;
+@property (nonatomic, readonly) bool requiresHeavyweightContent;
 @property (readonly) Class superclass;
 
 + (id)editorialFeedTransformationWithContext:(id)arg1;

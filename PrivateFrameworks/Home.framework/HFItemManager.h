@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFItemUpdating, HFMediaObjectObserver, HFMediaSessionObserver, HFResidentDeviceObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFStateDumpBuildable, HFSymptomFixSessionObserver, HFSymptomsHandlerObserver, HFTemperatureUnitObserver, HFUserObserver> {
+@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFItemUpdating, HFMediaObjectObserver, HFMediaSessionObserver, HFResidentDeviceObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFStateDumpBuildable, HFSymptomFixSessionObserver, HFSymptomsHandlerObserver, HFTelevisionObserver, HFTemperatureUnitObserver, HFUserObserver> {
     HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterAllowingReads;
     HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterDisallowingReads;
     NSMapTable * _childItemsByParentItem;
@@ -115,6 +115,7 @@
 - (id)_itemsToUpdateForModifiedZones:(id)arg1;
 - (id)_itemsToUpdateForOutgoingInvitation:(id)arg1;
 - (id)_itemsToUpdateForRemoteAccessChange;
+- (id)_itemsToUpdateForTelevisionProfiles:(id)arg1;
 - (id)_itemsWithDependenciesPassingTest:(id /* block */)arg1 forItems:(id)arg2;
 - (id)_legacy_buildSectionsWithDisplayedItems:(id)arg1;
 - (unsigned long long)_loadingStateForItem:(id)arg1;
@@ -164,6 +165,7 @@
 - (void)accessory:(id)arg1 didUpdateFirmwareUpdateAvailable:(bool)arg2;
 - (void)accessory:(id)arg1 didUpdateFirmwareVersion:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateLastKnownSleepDiscoveryModeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateLoggedInAccount:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateServiceSubtypeForService:(id)arg2;
@@ -210,7 +212,7 @@
 - (void)endSuppressingUpdatesForCharacteristicsWithReason:(id)arg1 updateAffectedItems:(bool)arg2;
 - (id)firstFastUpdateFuture;
 - (id)firstFullUpdateFuture;
-- (void)fixSession:(id)arg1 didChangeState:(long long)arg2;
+- (void)fixSessionDidChangeForAccessory:(id)arg1;
 - (id)footerTitleForSection:(unsigned long long)arg1;
 - (bool)hasRequestedFirstUpdate;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
@@ -297,6 +299,7 @@
 - (unsigned long long)numberOfSections;
 - (unsigned long long)overallLoadingState;
 - (id)performItemUpdateRequest:(id)arg1;
+- (void)profileDidUpdateMediaSourceDisplayOrder:(id)arg1;
 - (id)readPolicy;
 - (void)recalculateVisibilityAndSortAllItems;
 - (id)reloadAndUpdateAllItemsFromSenderSelector:(SEL)arg1;

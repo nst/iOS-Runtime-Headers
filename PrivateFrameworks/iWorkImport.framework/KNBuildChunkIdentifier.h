@@ -22,12 +22,12 @@
 - (unsigned long long)hash;
 - (id)initEmptyIdentifier;
 - (id)initWithBuild:(id)arg1 chunkID:(int)arg2;
-- (id)initWithMessage:(const struct BuildChunkIdentifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; int x6; }*)arg1;
+- (id)initWithMessage:(const struct BuildChunkIdentifierArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct UUID {} *x5; int x6; }*)arg1;
 - (bool)isEmpty;
 - (bool)isEqual:(id)arg1;
 - (bool)isValid;
 - (id)resolveToChunkOnSlide:(id)arg1;
 - (id)resolveToChunkUsingContext:(id)arg1;
-- (void)saveToMessage:(struct BuildChunkIdentifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; int x6; }*)arg1;
+- (void)saveToMessage:(struct BuildChunkIdentifierArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct UUID {} *x5; int x6; }*)arg1;
 
 @end

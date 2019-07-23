@@ -12,7 +12,7 @@
     void statusCodeHandlers;
 }
 
-- (id /* block */).cxx_destruct;
+- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 

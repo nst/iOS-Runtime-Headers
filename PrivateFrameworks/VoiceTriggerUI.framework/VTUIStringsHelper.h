@@ -6,6 +6,7 @@
     NSString * _heySiriTriggerPhrase;
     NSMutableDictionary * _languageLocalizedStringTables;
     NSDictionary * _localizedStringTable;
+    NSString * _siriLanguageCode;
 }
 
 @property (nonatomic, readonly) NSString *heySiriTriggerPhrase;
@@ -14,8 +15,8 @@
 + (id)sharedStringsHelper;
 
 - (void).cxx_destruct;
-- (id)_bundleStringTableForAllValidLanguages:(id)arg1;
-- (id)_bundleStringTableForLanguages:(id)arg1;
+- (id)_bundleStringTableForAllValidLanguages:(id)arg1 inLocalizedStringsFileName:(id)arg2;
+- (id)_bundleStringTableForLanguages:(id)arg1 inLocalizedStringsFileName:(id)arg2;
 - (id)_siriLanguageSubstitutedString:(id)arg1;
 - (id)heySiriTriggerPhrase;
 - (id)init;

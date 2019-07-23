@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned long long)hash;
 - (id)initWithCategory:(id)arg1 mode:(id)arg2;
 - (bool)isEqual:(id)arg1;

@@ -4,9 +4,11 @@
 
 @interface SFDeviceAssetQuery : NSObject {
     NSDictionary * _additionalQueryParameters;
+    NSString * _assetType;
     NSString * _color;
     NSString * _colorCoverGlass;
     NSString * _colorHousing;
+    NSString * _enclosureMaterial;
     bool  _forEngagement;
     bool  _legacyFormats;
     NSString * _mappedMarketingProductNumber;
@@ -18,9 +20,13 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *additionalQueryParameters;
+@property (nonatomic, readonly) NSString *assetType;
 @property (nonatomic, readonly) NSString *color;
 @property (nonatomic, readonly) NSString *colorCoverGlass;
 @property (nonatomic, readonly) NSString *colorHousing;
+@property (nonatomic, readonly) NSString *effectiveMarketingProductNumber;
+@property (nonatomic, readonly) NSString *effectiveProductType;
+@property (nonatomic, readonly) NSString *enclosureMaterial;
 @property (nonatomic, readonly) bool forEngagement;
 @property (nonatomic, readonly) bool legacyFormats;
 @property (nonatomic, retain) NSString *mappedMarketingProductNumber;
@@ -36,21 +42,24 @@
 
 - (void).cxx_destruct;
 - (id)additionalQueryParameters;
+- (id)assetType;
 - (id)color;
 - (id)colorCoverGlass;
 - (id)colorHousing;
+- (void)dealloc;
 - (id)description;
 - (id)effectiveMarketingProductNumber;
 - (id)effectiveProductType;
+- (id)enclosureMaterial;
 - (bool)forEngagement;
 - (unsigned long long)hash;
+- (id)initWithAssetType:(id)arg1 productType:(id)arg2;
 - (id)initWithBluetoothProductIdentifier:(unsigned long long)arg1 color:(unsigned long long)arg2 engagement:(bool)arg3;
 - (id)initWithHomePodColor:(unsigned long long)arg1;
 - (id)initWithPhoneCaseProductType:(id)arg1 color:(id)arg2;
 - (id)initWithPhoneProductType:(id)arg1 colorHousing:(id)arg2 colorCoverGlass:(id)arg3;
-- (id)initWithProductType:(id)arg1;
 - (id)initWithProductType:(id)arg1 additionalQueryParameters:(id)arg2;
-- (id)initWithWatchProductType:(id)arg1 marketingProductNumber:(id)arg2;
+- (id)initWithWatchProductType:(id)arg1 marketingProductNumber:(id)arg2 enclosureMaterial:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)legacyFormats;
 - (id)loggingMarketingProductNumber;

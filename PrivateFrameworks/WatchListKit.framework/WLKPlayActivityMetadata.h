@@ -12,6 +12,7 @@
     NSNumber * _isShowClosed;
     NSString * _key;
     NSString * _overrideChannelID;
+    NSArray * _siriActionsCategories;
 }
 
 @property (nonatomic, readonly) NSString *canonicalID;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly, copy) NSNumber *isShowClosed;
 @property (nonatomic, readonly) NSString *key;
 @property (nonatomic, readonly) NSString *overrideChannelID;
+@property (nonatomic, readonly, copy) NSArray *siriActionsCategories;
 
 - (void).cxx_destruct;
 - (id)canonicalID;
@@ -35,5 +37,6 @@
 - (id)isShowClosed;
 - (id)key;
 - (id)overrideChannelID;
+- (id)siriActionsCategories;
 
 @end

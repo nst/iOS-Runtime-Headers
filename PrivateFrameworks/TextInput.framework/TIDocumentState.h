@@ -21,6 +21,11 @@
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
++ (id)_contextStringByTrimmingPrecedingLines:(id)arg1;
++ (id)_contextStringByTrimmingSuccedingLines:(id)arg1;
++ (id)_selectedTextByDeletingInteriorSentences:(id)arg1;
++ (id)_string:(id)arg1 byTrimmingWordsAfterIndex:(unsigned long long)arg2;
++ (id)_string:(id)arg1 byTrimmingWordsBeforeIndex:(unsigned long long)arg2;
 + (id)documentStateForTestingWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
 + (id)documentStateForTestingWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 + (id)documentStateWithContextBefore:(id)arg1 markedText:(id)arg2 selectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 contextAfter:(id)arg4;

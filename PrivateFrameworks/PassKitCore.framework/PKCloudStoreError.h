@@ -19,5 +19,6 @@
 - (bool)isPCSError;
 - (bool)isPartialError;
 - (bool)isUnrecoverableDecryptionError;
+- (bool)isZoneNotFoundError;
 
 @end

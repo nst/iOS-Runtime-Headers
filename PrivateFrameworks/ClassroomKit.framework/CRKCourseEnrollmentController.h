@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKCourseEnrollmentController : NSObject <CATTaskOperationNotificationDelegate, CRKStudentDaemonProxyObserver> {
+@interface CRKCourseEnrollmentController : NSObject <CATTaskOperationNotificationDelegate, CRKSettingsPaneInfoProvider, CRKStudentDaemonProxyObserver> {
     NSArray * _activeCourseIdentifiers;
     NSArray * _activeInstructorIdentifiers;
-    long long  _cloudEnrollmentStatus;
     unsigned long long  _configurationType;
     NSArray * _courseInvitations;
     NSArray * _courses;
     NSDictionary * _observingInstructorIdentifiersByCourseIdentifiers;
     CATRemoteTaskOperation * mActiveCoursesOperation;
     CATRemoteTaskOperation * mBrowseOperation;
-    CATRemoteTaskOperation * mCloudStatusSubscriptionOperation;
     bool  mConfigurationFetched;
     CRKStudentDaemonProxy * mDaemonProxy;
     <CRKCourseEnrollmentControllerDelegate> * mDelegate;
+    CRKSettingsUIVisibleRemoteValue * mSettingsUIVisibleRemoteValue;
     CRKSecureCodedUserDefaultsObject * mStoredCourses;
 }
 
 @property (nonatomic, copy) NSArray *activeCourseIdentifiers;
 @property (nonatomic, copy) NSArray *activeInstructorIdentifiers;
-@property (nonatomic) long long cloudEnrollmentStatus;
 @property (nonatomic) unsigned long long configurationType;
 @property (nonatomic, copy) NSArray *courseInvitations;
 @property (nonatomic, copy) NSArray *courses;
@@ -29,6 +27,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *observingInstructorIdentifiersByCourseIdentifiers;
+@property (nonatomic, readonly) bool settingsUIVisible;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -37,8 +36,6 @@
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (bool)canBrowseForInvitations;
-- (long long)cloudEnrollmentStatus;
-- (void)cloudEnrollmentStatusDidChange:(long long)arg1;
 - (unsigned long long)configurationType;
 - (id)courseInvitations;
 - (id)courseWithIdentifier:(id)arg1;
@@ -50,8 +47,6 @@
 - (void)dealloc;
 - (void)fetchActiveCourses;
 - (void)fetchActiveCoursesOperationDidFinish:(id)arg1;
-- (void)fetchCloudEnrollmentStatus;
-- (void)fetchCloudEnrollmentStatusDidFinish:(id)arg1;
 - (void)fetchConfiguration;
 - (void)fetchConfigurationTypeOperationDidFinish:(id)arg1;
 - (void)fetchCourseInvitations;
@@ -65,15 +60,16 @@
 - (id)initWithStudentDaemonProxy:(id)arg1 delegate:(id)arg2;
 - (id)invitationWithCourseIdentifier:(id)arg1;
 - (bool)isEphemeralMultiUser;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)observingInstructorIdentifiersByCourseIdentifiers;
 - (void)screenObserversHaveChanged:(id)arg1;
 - (void)setActiveCourseIdentifiers:(id)arg1;
 - (void)setActiveInstructorIdentifiers:(id)arg1;
-- (void)setCloudEnrollmentStatus:(long long)arg1;
 - (void)setConfigurationType:(unsigned long long)arg1;
 - (void)setCourseInvitations:(id)arg1;
 - (void)setCourses:(id)arg1;
 - (void)setObservingInstructorIdentifiersByCourseIdentifiers:(id)arg1;
+- (bool)settingsUIVisible;
 - (void)startBrowsingForInvitations;
 - (void)startLongRunningOperations;
 - (void)stopBrowsingForInvitations;

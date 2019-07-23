@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGetBoundsProjector : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DChartScenePropertyAccessor * mAccessor;
     TSCH3DCamera * mCamera;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
@@ -112,6 +112,6 @@
 - (void)reset;
 - (void)resetTransformsForLayoutBounds;
 - (void)resetTransformsForRenderBounds;
-- (void)setCamera:(id)arg1 accessor:(struct ChartScenePropertyAccessor { id x1; }*)arg2;
+- (void)setCamera:(id)arg1 accessor:(id)arg2;
 
 @end

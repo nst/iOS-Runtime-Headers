@@ -3,6 +3,7 @@
  */
 
 @interface WMState : CMState {
+    WDParagraph * _currentParagraph;
     CMOutlineState * currentListState;
     NSMutableDictionary * listStates;
     unsigned long long  mBlockIndex;
@@ -21,11 +22,14 @@
     CMOutlineState * outlineState;
 }
 
+@property (retain) WDParagraph *currentParagraph;
+
 - (void).cxx_destruct;
 - (unsigned long long)blockIndex;
 - (void)clearCurrentListState;
 - (id)currentListState;
 - (unsigned int)currentPage;
+- (id)currentParagraph;
 - (void)dealloc;
 - (id)init;
 - (bool)isCurrentListDefinitionId:(int)arg1;
@@ -46,6 +50,7 @@
 - (void)setBlockIndex:(unsigned long long)arg1;
 - (void)setCurrentListState:(id)arg1;
 - (void)setCurrentPage:(unsigned int)arg1;
+- (void)setCurrentParagraph:(id)arg1;
 - (void)setIsFrame:(bool)arg1;
 - (void)setIsFrameEnd:(bool)arg1;
 - (void)setIsFrameStart:(bool)arg1;

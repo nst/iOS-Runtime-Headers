@@ -17,6 +17,8 @@
 @property (nonatomic) long long rotation;
 @property (nonatomic, readonly) NSString *string;
 
+// Image: /System/Library/Frameworks/PDFKit.framework/PDFKit
+
 + (id)fontWithPDFFont:(struct CGPDFFont { }*)arg1 size:(float)arg2;
 + (bool)isExcludingAKAnnotationRenderingForThisThread;
 + (bool)isNativeRotationDrawingEnabledForThisThread;
@@ -162,5 +164,9 @@
 - (id)unsupportedFeatures;
 - (id)view;
 - (bool)writeToConsumer:(struct CGDataConsumer { }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/News/NewsArticles.framework/NewsArticles
+
+- (id)na_thumbnailOfSize:(struct CGSize { double x1; double x2; })arg1 forBox:(long long)arg2;
 
 @end

@@ -2,20 +2,40 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@interface CTSubscriber : NSObject {
-    struct vector<dispatch::block<void (^)(NSDictionary *)>, std::__1::allocator<dispatch::block<void (^)(NSDictionary *)> > >="__begin_"^{block<void (^)(NSDictionary *)> {}  _authCallbacks;
-    struct __CTServerConnection { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; } * _server;
+@interface CTSubscriber : NSObject <CoreTelephonyClientSubscriberDelegate> {
+    CoreTelephonyClient * _client;
+    <CTSubscriberDelegate> * _delegate;
+    CTServiceDescriptor * _descriptor;
+    struct queue { 
+        struct object { 
+            struct dispatch_object_s {} *fObj; 
+        } fObj; 
+    }  _queue;
 }
 
 @property (nonatomic, readonly, retain) NSData *carrierToken;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CTSubscriberDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CTServiceDescriptor *descriptor;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)authTokenChanged:(id)arg1;
+- (void)authenticate:(id)arg1 completion:(id /* block */)arg2;
 - (void)authenticateWithInfo:(id)arg1 handleResult:(id /* block */)arg2;
 - (id)carrierToken;
-- (void)dealloc;
-- (void)handleAuthCallback:(id)arg1;
+- (id)delegate;
+- (id)descriptor;
+- (id)identifier;
 - (id)init;
+- (id)initWithDescriptor:(id)arg1;
+- (id)initWithDescriptor:(id)arg1 client:(id)arg2;
 - (bool)refreshCarrierToken;
+- (void)setDelegate:(id)arg1;
+- (void)setDescriptor:(id)arg1;
 
 @end

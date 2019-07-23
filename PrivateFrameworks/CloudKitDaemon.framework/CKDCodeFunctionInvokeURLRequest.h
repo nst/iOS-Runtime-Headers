@@ -22,6 +22,7 @@
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
+- (bool)requestGETPreAuth;
 - (id)requestOperationClasses;
 - (id)serializedParameters;
 - (id /* block */)serializedResultsCallback;

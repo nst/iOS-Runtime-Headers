@@ -13,7 +13,7 @@
 
 - (id)_initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)_invalidate;
-- (void)_usePolicy:(int)arg1;
+- (void)_usePolicy:(unsigned char)arg1;
 - (void)dealloc;
 - (void)download;
 - (void)ignore;

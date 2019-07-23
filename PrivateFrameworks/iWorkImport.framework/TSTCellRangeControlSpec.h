@@ -18,7 +18,7 @@
 + (id)cellSpecFromTSKFormat:(id)arg1;
 + (double)defaultCellValueForInteractionType:(int)arg1;
 + (id)defaultRangeControlSpecOfType:(int)arg1;
-+ (id)instanceWithArchive:(const struct CellSpecArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FormulaArchive {} *x5; double x6; double x7; double x8; unsigned int x9; bool x10; bool x11; struct Reference {} *x12; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct CellSpecArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FormulaArchive {} *x5; struct Reference {} *x6; double x7; double x8; double x9; unsigned int x10; bool x11; bool x12; }*)arg1 unarchiver:(id)arg2;
 + (bool)legalRangeControlMinimum:(double)arg1 maximum:(double)arg2 increment:(double)arg3;
 + (id)sliderSpecWithMinimum:(double)arg1 maximum:(double)arg2 increment:(double)arg3;
 + (id)stepperSpecWithMinimum:(double)arg1 maximum:(double)arg2 increment:(double)arg3;
@@ -26,7 +26,7 @@
 - (id)asRangeControlSpec;
 - (unsigned long long)hash;
 - (double)increment;
-- (id)initWithArchive:(const struct CellSpecArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FormulaArchive {} *x5; double x6; double x7; double x8; unsigned int x9; bool x10; bool x11; struct Reference {} *x12; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct CellSpecArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FormulaArchive {} *x5; struct Reference {} *x6; double x7; double x8; double x9; unsigned int x10; bool x11; bool x12; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithInteractionType:(int)arg1 minimum:(double)arg2 maximum:(double)arg3 increment:(double)arg4;
 - (int)interactionType;
 - (bool)isEqual:(id)arg1;
@@ -34,7 +34,7 @@
 - (double)maximum;
 - (double)minimum;
 - (double)recomputedValueFromValue:(double)arg1 changed:(bool*)arg2;
-- (void)saveToArchive:(struct CellSpecArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FormulaArchive {} *x5; double x6; double x7; double x8; unsigned int x9; bool x10; bool x11; struct Reference {} *x12; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct CellSpecArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct FormulaArchive {} *x5; struct Reference {} *x6; double x7; double x8; double x9; unsigned int x10; bool x11; bool x12; }*)arg1 archiver:(id)arg2;
 - (id)tskStepperSliderFormatWithDisplayFormatType:(int)arg1;
 - (bool)validateFormatAndValue:(id)arg1;
 - (double)valueFromString:(id)arg1 locale:(id)arg2;

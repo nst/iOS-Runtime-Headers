@@ -17,6 +17,7 @@
 - (NSData *)jsonData;
 - (NSString *)keyColor;
 - (_SFPBLocalImage *)localImage;
+- (_SFPBMediaArtworkImage *)mediaArtworkImage;
 - (_SFPBMonogramImage *)monogramImage;
 - (_SFPBGraphicalFloat *)scale;
 - (void)setAppIconImage:(_SFPBAppIconImage *)arg1;
@@ -28,6 +29,7 @@
 - (void)setIsTemplate:(bool)arg1;
 - (void)setKeyColor:(NSString *)arg1;
 - (void)setLocalImage:(_SFPBLocalImage *)arg1;
+- (void)setMediaArtworkImage:(_SFPBMediaArtworkImage *)arg1;
 - (void)setMonogramImage:(_SFPBMonogramImage *)arg1;
 - (void)setScale:(_SFPBGraphicalFloat *)arg1;
 - (void)setShouldCropToCircle:(bool)arg1;

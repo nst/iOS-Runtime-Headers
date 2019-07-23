@@ -86,9 +86,9 @@
 - (void)setMetadata:(id)arg1;
 - (bool)shouldSyncToCloud;
 - (struct CGSize { double x1; double x2; })size;
-- (void)updateFlagToExcludeFromBackup;
-- (void)updateFlagToExcludeFromBackupForURL:(id)arg1 touchFileIfNecessary:(bool)arg2;
-- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(bool)arg1;
+- (void)updateFlagToExcludeFromCloudBackup;
+- (void)updateFlagToExcludeFromCloudBackupForURL:(id)arg1;
+- (void)updateFlagToExcludeFromCloudBackupForURLs:(id)arg1;
 - (void)willTurnIntoFault;
 - (bool)writeEncryptedImageFromData:(id)arg1;
 

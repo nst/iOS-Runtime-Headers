@@ -5,19 +5,25 @@
 @interface _UIStatusBarBackgroundActivityItem : _UIStatusBarIndicatorItem {
     _UIStatusBarBackgroundActivityView * _backgroundView;
     _UIStatusBarBackgroundActivityView * _combinedView;
+    long long  _previousType;
 }
 
 @property (nonatomic, retain) _UIStatusBarBackgroundActivityView *backgroundView;
 @property (nonatomic, retain) _UIStatusBarBackgroundActivityView *combinedView;
+@property (nonatomic) long long previousType;
 
 + (id)backgroundDisplayIdentifier;
 + (id)combinedDisplayIdentifier;
 + (bool)shouldKeepIconVisibleForActivityType:(long long)arg1;
 
 - (void).cxx_destruct;
+- (id)_backgroundActivityViewForIdentifier:(id)arg1;
 - (id)_backgroundColorForActivityType:(long long)arg1;
+- (id)_customTintColorForActivityType:(long long)arg1;
 - (id)_imageNameForActivityType:(long long)arg1;
 - (struct CGSize { double x1; double x2; })_pillSizeAndBaselineOffset:(double*)arg1;
+- (bool)_shouldBounceWhenTransitioningFromType:(long long)arg1 toType:(long long)arg2;
+- (bool)_shouldPulseForActivityType:(long long)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)backgroundView;
 - (id)combinedView;
@@ -25,9 +31,13 @@
 - (id)imageForUpdate:(id)arg1;
 - (id)imageNameForUpdate:(id)arg1;
 - (id)indicatorEntryKey;
+- (id)initWithIdentifier:(id)arg1 statusBar:(id)arg2;
+- (long long)previousType;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCombinedView:(id)arg1;
+- (void)setPreviousType:(long long)arg1;
 - (bool)shouldUpdateIndicatorForIdentifier:(id)arg1;
+- (void)updatedDisplayItemsWithData:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;
 
 @end

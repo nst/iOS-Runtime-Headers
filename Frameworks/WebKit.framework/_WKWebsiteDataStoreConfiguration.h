@@ -2,30 +2,15 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface _WKWebsiteDataStoreConfiguration : NSObject {
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _cacheStorageDirectoryURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _cookieStorageFileURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _indexedDBDatabaseDirectoryURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _resourceLoadStatisticsDirectoryURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _serviceWorkerRegistrationDirectoryURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _webSQLDatabaseDirectoryURL;
-    struct RetainPtr<NSURL> { 
-        void *m_ptr; 
-    }  _webStorageDirectoryURL;
+@interface _WKWebsiteDataStoreConfiguration : NSObject <WKObject> {
+    struct ObjectStorage<WebKit::WebsiteDataStoreConfiguration> { 
+        struct type { 
+            unsigned char __lx[240]; 
+        } data; 
+    }  _configuration;
 }
 
+@property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (setter=_setCacheStorageDirectory:, nonatomic, copy) NSURL *_cacheStorageDirectory;
 @property (setter=_setCookieStorageFile:, nonatomic, copy) NSURL *_cookieStorageFile;
 @property (setter=_setIndexedDBDatabaseDirectory:, nonatomic, copy) NSURL *_indexedDBDatabaseDirectory;
@@ -33,9 +18,16 @@
 @property (setter=_setServiceWorkerRegistrationDirectory:, nonatomic, copy) NSURL *_serviceWorkerRegistrationDirectory;
 @property (setter=_setWebSQLDatabaseDirectory:, nonatomic, copy) NSURL *_webSQLDatabaseDirectory;
 @property (setter=_setWebStorageDirectory:, nonatomic, copy) NSURL *_webStorageDirectory;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (setter=setHTTPProxy:, nonatomic, copy) NSURL *httpProxy;
+@property (setter=setHTTPSProxy:, nonatomic, copy) NSURL *httpsProxy;
+@property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic, copy) NSString *sourceApplicationSecondaryIdentifier;
+@property (readonly) Class superclass;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
+- (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (id)_cacheStorageDirectory;
 - (id)_cookieStorageFile;
 - (id)_indexedDBDatabaseDirectory;
@@ -50,5 +42,13 @@
 - (void)_setWebStorageDirectory:(id)arg1;
 - (id)_webSQLDatabaseDirectory;
 - (id)_webStorageDirectory;
+- (id)httpProxy;
+- (id)httpsProxy;
+- (void)setHTTPProxy:(id)arg1;
+- (void)setHTTPSProxy:(id)arg1;
+- (void)setSourceApplicationBundleIdentifier:(id)arg1;
+- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (id)sourceApplicationBundleIdentifier;
+- (id)sourceApplicationSecondaryIdentifier;
 
 @end

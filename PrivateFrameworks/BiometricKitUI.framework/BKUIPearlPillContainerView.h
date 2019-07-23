@@ -30,7 +30,6 @@
 - (void)_animateToSecondEnrollInProgressCompletion:(id /* block */)arg1;
 - (long long)_indexForPillAtAngle:(double)arg1;
 - (unsigned long long)_numberOfVisiblePillViews;
-- (void)_setPillView:(id)arg1 toAngle:(double)arg2 radius:(double)arg3;
 - (void)animateToState:(int)arg1 completion:(id /* block */)arg2;
 - (struct CGPoint { double x1; double x2; })enrollViewCenter;
 - (bool)fillPillsAroundAngle:(double)arg1;
@@ -46,6 +45,7 @@
 - (void)setState:(int)arg1;
 - (void)stashPillStates;
 - (int)state;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)unfilledDirections;
 - (void)unstashPillStatesAnimated:(bool)arg1;
 - (bool)unstashPillStatesIfNeededAnimated:(bool)arg1;

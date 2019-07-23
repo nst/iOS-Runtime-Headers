@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIResponder : NSObject <DebugHierarchyObject_Fallback, UIResponderStandardEditActions, UITextInputAdditions, UITextInput_Internal, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable> {
+@interface UIResponder : NSObject <UIResponderStandardEditActions, UITextInputAdditions, UITextInput_Internal, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable> {
     unsigned int  _hasInputAssistantItem;
     unsigned int  _hasOverrideClient;
     unsigned int  _hasOverrideHost;
@@ -240,6 +240,7 @@
 - (void)beginSelectionChange;
 - (bool)canBecomeFirstResponder;
 - (bool)canPasteItemProviders:(id)arg1;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (bool)canResignFirstResponder;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
@@ -298,17 +299,6 @@
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 + (id)currentFirstResponder;
@@ -342,5 +332,9 @@
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
 - (id)tk_firstViewControllerInResponderChain;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (void)vui_handleEvent:(id)arg1 forElement:(id)arg2 sourceView:(id)arg3;
 
 @end

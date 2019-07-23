@@ -8,10 +8,14 @@
 
 @property (nonatomic, readonly) NSUUID *uuid;
 
++ (id)nullMicroLocation;
+
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithUUID:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToMicroLocation:(id)arg1;
 - (id)uuid;
 
 @end

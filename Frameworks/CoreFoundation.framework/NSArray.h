@@ -267,6 +267,7 @@
 - (id)_escapedComponentsJoinedByString:(id)arg1 forLocale:(id)arg2;
 - (void)_injectProxiesForImages:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_intents_cacheableObjects;
+- (id)_intents_indexingRepresentation;
 - (id)_intents_localizedCopyForLanguage:(id)arg1;
 - (id)_intents_readableDescriptionForLanguage:(id)arg1;
 - (void)_intents_updateContainerWithCache:(id)arg1;
@@ -354,6 +355,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AXCoreUtilities.framework/AXCoreUtilities
 
+- (bool)ax_containsObjectUsingBlock:(id /* block */)arg1;
 - (id)ax_filteredArrayUsingBlock:(id /* block */)arg1;
 - (id)ax_flatMappedArrayUsingBlock:(id /* block */)arg1;
 - (id)ax_mappedArrayUsingBlock:(id /* block */)arg1;
@@ -364,11 +366,6 @@
 - (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
-
-- (id)programThatMatchesProgram:(id)arg1;
-- (void)setProgram:(id)arg1 withOtherSidePrograms:(id)arg2 selected:(bool)arg3;
-
-// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/TTYUtilities.framework/TTYUtilities
 
 - (id)programThatMatchesProgram:(id)arg1;
 - (void)setProgram:(id)arg1 withOtherSidePrograms:(id)arg2 selected:(bool)arg3;
@@ -402,6 +399,8 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
+- (id)atx_actionsFromActionResults;
+- (id)atx_filterPlayMediaIntentsWithUnavailableAppDestinationGivenSBAppList:(id)arg1;
 - (id)atx_subarrayWithLimit:(unsigned long long)arg1;
 - (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
@@ -447,6 +446,7 @@
 // Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
 
 - (id)avt_description;
+- (id)avt_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -558,10 +558,13 @@
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
 - (id)crk_arrayByRemovingObject:(id)arg1;
+- (id)crk_dictionaryUsingKeyGenerator:(id /* block */)arg1 valueGenerator:(id /* block */)arg2;
 - (bool)crk_isSortedByComparator:(id /* block */)arg1;
 - (id)crk_mapUsingBlock:(id /* block */)arg1;
+- (id)crk_partitionUsingKeyGenerator:(id /* block */)arg1 valueGenerator:(id /* block */)arg2;
 - (id)crk_sortedArrayForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingComparator:(id /* block */)arg2;
 - (id)crk_sortedSubarrayWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 comparator:(id /* block */)arg2;
+- (bool)crk_startsWith:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
@@ -819,6 +822,11 @@
 - (id)secureDescriptionWithIndent:(id)arg1 newLine:(bool)arg2 blacklistedKeys:(id)arg3;
 - (id)shortDescription;
 
+// Image: /System/Library/PrivateFrameworks/HearingUtilities.framework/HearingUtilities
+
+- (id)programThatMatchesProgram:(id)arg1;
+- (void)setProgram:(id)arg1 withOtherSidePrograms:(id)arg2 selected:(bool)arg3;
+
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 + (id)hf_arrayWithNumbersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 stride:(unsigned long long)arg2;
@@ -894,6 +902,11 @@
 - (unsigned long long)indexForInsertingObject:(id)arg1 sortDescriptor:(id)arg2;
 - (unsigned long long)indexForInsertingObject:(id)arg1 sortFunction:(int (*)arg2 context:(void*)arg3;
 - (unsigned long long)indexForInsertingObject:(id)arg1 sortSelector:(SEL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/InAppMessages.framework/InAppMessages
+
+- (id)iam_dictionaryFromArrayOfICIIAMParameters;
+- (id)iam_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -971,6 +984,10 @@
 - (void)mf_enumerateByStoreUsingBlock:(id /* block */)arg1;
 - (unsigned long long)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MetricsKit.framework/MetricsKit
+
+- (void)verifyEventData;
+
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
 - (id)nnmk_description;
@@ -1010,6 +1027,10 @@
 - (id)nu_evaluateWithPipelineState:(id)arg1 error:(out id*)arg2;
 - (id)nu_unwrapJSValue;
 - (void)nu_updateDigest:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/News/AppAnalytics.framework/AppAnalytics
+
+- (id)toJsonValueAndReturnError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
@@ -1067,6 +1088,7 @@
 - (id)fc_firstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (unsigned long long)fc_indexOfFirstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (id)fc_indexesOfObjectsIdenticalTo:(id)arg1;
+- (id)fc_indexesOfObjectsPassingTest:(id /* block */)arg1;
 - (bool)fc_isEqualToArray:(id)arg1;
 - (bool)fc_isEqualToArray:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (bool)fc_isSortedUsingComparator:(id /* block */)arg1;
@@ -1243,6 +1265,22 @@
 
 - (bool)containsString:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/PrivateFederatedLearning
+
++ (void)flatten:(id)arg1 result:(id)arg2;
++ (void)pfl_readShape:(id)arg1 result:(id)arg2;
++ (id)pfl_reshape:(id)arg1 start:(unsigned long long)arg2 cuts:(id)arg3;
+
+- (id)pfl_flatten;
+- (double)pfl_innerProduct:(id)arg1;
+- (double)pfl_l2;
+- (id)pfl_minus:(id)arg1;
+- (id)pfl_mutableArrayMultipliedWithScale:(double)arg1;
+- (id)pfl_plus:(id)arg1;
+- (id)pfl_readShape;
+- (id)pfl_reshapeWithShape:(id)arg1;
+- (id)pfl_unitVectorAndL2;
+
 // Image: /System/Library/PrivateFrameworks/RelevanceEngine.framework/RelevanceEngine
 
 - (unsigned long long)re_actionIdentifierHashValue;
@@ -1272,7 +1310,6 @@
 - (id)safari_diffWithArray:(id)arg1;
 - (id)safari_filterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_firstObjectPassingTest:(id /* block */)arg1;
-- (id)safari_groupUsingBlock:(id /* block */)arg1;
 - (id)safari_mapAndFilterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_mapAndFilterObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)safari_mapObjectsUsingBlock:(id /* block */)arg1;
@@ -1305,6 +1342,10 @@
 
 - (void)sf_differencesFromArray:(id)arg1 removedIndexes:(id*)arg2 insertedIndexes:(id*)arg3;
 - (void)sf_differencesFromArray:(id)arg1 usingComparator:(id /* block */)arg2 removedIndexes:(id*)arg3 insertedIndexes:(id*)arg4;
+
+// Image: /System/Library/PrivateFrameworks/SilexVideo.framework/SilexVideo
+
+- (id)weakReferenceObjects;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
@@ -1384,6 +1425,13 @@
 - (id)tv_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tv_randomizedArray;
 
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (id)tvp_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
+- (id)tvp_objectsPassingTest:(id /* block */)arg1;
+- (id)tvp_randomizedArray;
+- (bool)tvp_shallowIsEqualToArray:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
 - (id)firstObjectPassingTest:(id /* block */)arg1;
@@ -1437,7 +1485,7 @@
 - (id)vcp_resourceWithType:(unsigned long long)arg1;
 - (id)vcp_thumbnailResource;
 
-// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
 
 - (bool)ikAssetArraysEqual:(id)arg1;
 - (id)ikAssetAttributes;
@@ -1497,40 +1545,40 @@
 + (id)tsu_arrayWithUIntegers:(const unsigned long long*)arg1 count:(unsigned long long)arg2;
 
 - (bool)kn_isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
-- (void)sfu_appendJsonStringToString:(id)arg1;
-- (id)tsch_initTSCHChartGridValuesArrayWithProtobufGridRowArray:(const struct RepeatedPtrField<TSCH::GridRow> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsch_initTSCHChartGridValuesWithProtobufGridRow:(const struct GridRow { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::GridValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
-- (id)tsch_initWithSwapTupleArray:(const struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { void **x1; int x2; int x3; int x4; }*)arg1 unarchiver:(id)arg2;
-- (id)tsch_initWithSwapTuples:(const struct StyleSwapUndoTuplesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2;
-- (id)tsch_initWithSwapTuplesArray:(const struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> { void **x1; int x2; int x3; int x4; }*)arg1 unarchiver:(id)arg2;
-- (void)tsch_saveTSCHChartGridValuesArrayToProtobufGridRowArray:(struct RepeatedPtrField<TSCH::GridRow> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsch_saveTSCHChartGridValuesToProtobufGridRow:(struct GridRow { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::GridValue> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
-- (void)tsch_saveToSwapTupleArray:(struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
-- (void)tsch_saveToSwapTuples:(struct StyleSwapUndoTuplesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 archiver:(id)arg2;
-- (void)tsch_saveToSwapTuplesArray:(struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
-- (id)tsd_initWithExteriorTextWrapArray:(const struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsd_initWithGeometryArray:(const struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsd_saveToExteriorTextWrapArray:(struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
-- (void)tsd_saveToGeometryArray:(struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
+- (id)tsch_initTSCHChartGridValuesArrayWithProtobufGridRowArray:(const struct RepeatedPtrField<TSCH::GridRow> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsch_initTSCHChartGridValuesWithProtobufGridRow:(const struct GridRow { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSCH::GridValue> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
+- (id)tsch_initWithSwapTupleArray:(const struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 unarchiver:(id)arg2;
+- (id)tsch_initWithSwapTuples:(const struct StyleSwapUndoTuplesArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2;
+- (id)tsch_initWithSwapTuplesArray:(const struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveTSCHChartGridValuesArrayToProtobufGridRowArray:(struct RepeatedPtrField<TSCH::GridRow> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsch_saveTSCHChartGridValuesToProtobufGridRow:(struct GridRow { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSCH::GridValue> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1;
+- (void)tsch_saveToSwapTupleArray:(struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 archiver:(id)arg2;
+- (void)tsch_saveToSwapTuples:(struct StyleSwapUndoTuplesArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive> { struct Arena {} *x_5_1_1; int x_5_1_2; int x_5_1_3; struct Rep {} *x_5_1_4; } x5; }*)arg1 archiver:(id)arg2;
+- (void)tsch_saveToSwapTuplesArray:(struct RepeatedPtrField<TSCH::StyleSwapUndoTuplesArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 archiver:(id)arg2;
+- (id)tsd_initWithExteriorTextWrapArray:(const struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsd_initWithGeometryArray:(const struct RepeatedPtrField<TSD::GeometryArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsd_saveToExteriorTextWrapArray:(struct RepeatedPtrField<TSD::ExteriorTextWrapArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 archiver:(id)arg2;
+- (void)tsd_saveToGeometryArray:(struct RepeatedPtrField<TSD::GeometryArchive> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1 archiver:(id)arg2;
 - (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 objectMap:(id*)arg3 error:(id*)arg4;
-- (id)tsp_initWithColorArray:(const struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsp_initWithNSRangeArray:(const struct RepeatedPtrField<TSP::Range> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsp_initWithProtobufUUIDArray:(const struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (id)tsp_initWithUInt32Array:(const struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
-- (void)tsp_saveToColorArray:(struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsp_saveToNSRangeArray:(struct RepeatedPtrField<TSP::Range> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsp_saveToProtobufUUIDArray:(struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
-- (void)tsp_saveToUInt32Array:(struct RepeatedField<unsigned int> { unsigned int *x1; int x2; int x3; }*)arg1;
+- (id)tsp_initWithColorArray:(const struct RepeatedPtrField<TSP::Color> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsp_initWithNSRangeArray:(const struct RepeatedPtrField<TSP::Range> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsp_initWithProtobufUUIDArray:(const struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (id)tsp_initWithUInt32Array:(const struct RepeatedField<unsigned int> { int x1; int x2; union Pointer { struct Arena {} *x_3_1_1; struct Rep {} *x_3_1_2; } x3; }*)arg1;
+- (void)tsp_saveToColorArray:(struct RepeatedPtrField<TSP::Color> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsp_saveToNSRangeArray:(struct RepeatedPtrField<TSP::Range> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsp_saveToProtobufUUIDArray:(struct RepeatedPtrField<TSP::UUID> { struct Arena {} *x1; int x2; int x3; struct Rep {} *x4; }*)arg1;
+- (void)tsp_saveToUInt32Array:(struct RepeatedField<unsigned int> { int x1; int x2; union Pointer { struct Arena {} *x_3_1_1; struct Rep {} *x_3_1_2; } x3; }*)arg1;
 - (int)tss_propertyAtIndex:(unsigned int)arg1;
 - (id)tsu_anyObject;
 - (id)tsu_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
 - (id)tsu_arrayByFlattening;
 - (id)tsu_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tsu_arrayByRemovingFirstObject;
+- (id)tsu_arrayByRemovingObjectsAtIndexes:(id)arg1;
 - (id)tsu_arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
 - (id)tsu_arrayByReversingOrder;
 - (id)tsu_arrayByTransformingWithBlock:(id /* block */)arg1;

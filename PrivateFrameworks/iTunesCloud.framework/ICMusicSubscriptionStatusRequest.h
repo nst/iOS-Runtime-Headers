@@ -2,29 +2,41 @@
    Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
  */
 
-@interface ICMusicSubscriptionStatusRequest : NSObject <NSCopying> {
+@interface ICMusicSubscriptionStatusRequest : NSObject <NSCopying, NSSecureCoding> {
     bool  _allowsFallbackToExpiredStatus;
     bool  _allowsFallbackToStatusNeedingReload;
+    long long  _carrierBundleProvisioningStyle;
     long long  _maximumRetryCount;
+    long long  _reason;
     bool  _shouldIgnoreCache;
     ICStoreRequestContext * _storeRequestContext;
 }
 
 @property (nonatomic) bool allowsFallbackToExpiredStatus;
 @property (nonatomic) bool allowsFallbackToStatusNeedingReload;
+@property (nonatomic) long long carrierBundleProvisioningStyle;
 @property (nonatomic) long long maximumRetryCount;
+@property (nonatomic) long long reason;
 @property (nonatomic) bool shouldIgnoreCache;
 @property (nonatomic, copy) ICStoreRequestContext *storeRequestContext;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)allowsFallbackToExpiredStatus;
 - (bool)allowsFallbackToStatusNeedingReload;
+- (long long)carrierBundleProvisioningStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithStoreRequestContext:(id)arg1;
 - (long long)maximumRetryCount;
+- (long long)reason;
 - (void)setAllowsFallbackToExpiredStatus:(bool)arg1;
 - (void)setAllowsFallbackToStatusNeedingReload:(bool)arg1;
+- (void)setCarrierBundleProvisioningStyle:(long long)arg1;
 - (void)setMaximumRetryCount:(long long)arg1;
+- (void)setReason:(long long)arg1;
 - (void)setShouldIgnoreCache:(bool)arg1;
 - (void)setStoreRequestContext:(id)arg1;
 - (bool)shouldIgnoreCache;

@@ -62,6 +62,7 @@
 - (void)continueSpeaking;
 - (void)dealloc;
 - (void)dispatchSpeechAction:(id)arg1;
+- (id)externalVoiceIdentifierUsedForLanguage:(id)arg1;
 - (id)init;
 - (bool)isPaused;
 - (bool)isSpeaking;

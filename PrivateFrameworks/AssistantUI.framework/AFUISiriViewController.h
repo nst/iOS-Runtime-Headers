@@ -159,6 +159,7 @@
 - (void)_setShowKeyboardIfTextInputEnabled:(bool)arg1 minimized:(bool)arg2;
 - (void)_setStatusBar:(id)arg1;
 - (void)_setStatusViewHidden:(bool)arg1;
+- (void)_setTypeToSiriViewHidden:(bool)arg1;
 - (void)_setUserUtteranceTapToEditInProgress:(bool)arg1;
 - (void)_setViewDidAppearTime:(double)arg1;
 - (void)_setVoiceTriggerEnabled:(bool)arg1;
@@ -282,6 +283,7 @@
 - (void)siriRemoteViewController:(id)arg1 setStatusViewDisabled:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusViewHidden:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusViewUserInteractionEnabled:(bool)arg2;
+- (void)siriRemoteViewController:(id)arg1 setTypeToSiriViewHidden:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 siriIdleAndQuietStatusDidChange:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 startRequestWithOptions:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
@@ -326,7 +328,9 @@
 - (void)siriWillActivateFromSource:(long long)arg1;
 - (void)startGuidedAccessForRemoteViewController:(id)arg1;
 - (void)startRequestWithActivationTrigger:(id)arg1;
+- (void)startRequestWithActivationTrigger:(id)arg1 completion:(id /* block */)arg2;
 - (void)startRequestWithOptions:(id)arg1;
+- (void)startRequestWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (bool)statusBarEnabled;
 - (void)stopRequestWithOptions:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;

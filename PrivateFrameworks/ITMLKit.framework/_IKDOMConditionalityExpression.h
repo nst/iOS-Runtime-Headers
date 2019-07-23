@@ -3,19 +3,19 @@
  */
 
 @interface _IKDOMConditionalityExpression : NSObject {
-    NSSet * _dependentPropertyPaths;
+    NSSet * _dependentPathStrings;
     bool  _isNegated;
     NSArray * _operations;
 }
 
-@property (nonatomic, readonly, copy) NSSet *dependentPropertyPaths;
+@property (nonatomic, readonly, copy) NSSet *dependentPathStrings;
 
 + (id)expressionFromString:(id)arg1;
 + (id)parseExpressionsFromString:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)dependentPropertyPaths;
-- (id)initWithOperations:(id)arg1 dependentPropertyPaths:(id)arg2 isNegated:(bool)arg3;
+- (id)dependentPathStrings;
+- (id)initWithOperations:(id)arg1 dependentPathStrings:(id)arg2 isNegated:(bool)arg3;
 - (bool)passesForDataItem:(id)arg1;
 
 @end

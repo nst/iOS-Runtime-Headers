@@ -6,11 +6,10 @@
 @required
 
 - (unsigned long long)browserPersonaForWebViewController:(SFWebViewController *)arg1;
-- (bool)currentLoadIsEligibleForAutoFillAuthenticationForWebViewController:(SFWebViewController *)arg1;
 - (UIViewController *)presentingViewControllerForWebViewController:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 commitPreviewedViewController:(UIViewController *)arg2;
 - (void)webViewController:(void *)arg1 createWebViewWithConfiguration:(void *)arg2 forNavigationAction:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: SFWebViewController *, WKWebViewConfiguration *, WKNavigationAction *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WKWebView *, void*
-- (void)webViewController:(void *)arg1 decidePolicyForNavigationAction:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: SFWebViewController *, WKNavigationAction *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
+- (void)webViewController:(void *)arg1 decidePolicyForNavigationAction:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 9: SFWebViewController *, WKNavigationAction *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, _WKWebsitePolicies *, void*
 - (void)webViewController:(void *)arg1 decidePolicyForNavigationResponse:(void *)arg2 decisionHandler:(void *)arg3; // needs 3 arg types, found 8: SFWebViewController *, WKNavigationResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (void)webViewController:(SFWebViewController *)arg1 didChangeFullScreen:(bool)arg2;
 - (void)webViewController:(SFWebViewController *)arg1 didCommitNavigation:(WKNavigation *)arg2;
@@ -36,10 +35,14 @@
 - (void)webViewControllerDidChangeSafeAreaShouldAffectObscuredInsets:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeURL:(SFWebViewController *)arg1;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(SFWebViewController *)arg1;
+- (void)webViewControllerUpdateNavigationBar:(SFWebViewController *)arg1;
 - (void)webViewControllerWebProcessDidBecomeResponsive:(SFWebViewController *)arg1;
 - (void)webViewControllerWebProcessDidBecomeUnresponsive:(SFWebViewController *)arg1;
 - (void)webViewControllerWebProcessDidCrash:(SFWebViewController *)arg1;
-- (void)webViewControllerWillAuthenticateForAutoFill:(SFWebViewController *)arg1;
 - (void)webViewControllerWillPresentJavaScriptDialog:(SFWebViewController *)arg1;
+
+@optional
+
+- (void)webViewControllerDidShowSafeBrowsingWarning:(SFWebViewController *)arg1;
 
 @end

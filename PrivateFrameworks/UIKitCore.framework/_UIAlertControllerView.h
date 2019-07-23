@@ -215,7 +215,6 @@
 - (double)_labelHorizontalInsets;
 - (void)_layoutAndPositionInParentIfNeeded;
 - (struct CGSize { double x1; double x2; })_layoutSize;
-- (id)_layoutWidthDeterminationViewToSizeAgainst;
 - (double)_layoutWidthForHorizontalLayout:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_mainActionButtonSequenceViewSizeForHorizontalLayout:(bool)arg1 itemSize:(struct CGSize { double x1; double x2; })arg2;
 - (double)_marginBetweenContentAndDiscreteCancelAction;

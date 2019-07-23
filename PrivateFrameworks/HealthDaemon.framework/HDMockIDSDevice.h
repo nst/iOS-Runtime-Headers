@@ -3,27 +3,48 @@
  */
 
 @interface HDMockIDSDevice : NSObject <NSCopying> {
+    NSString * _backgroundAtrialFibrillationVersion;
+    NSString * _buildType;
+    NSString * _electrocardiogramVersion;
     bool  _isActive;
+    NSString * _modelNumber;
     NSString * _name;
     NSUUID * _nanoRegistryPairingID;
     NSUUID * _nsuuid;
     NSString * _productBuildVersion;
+    NSString * _productType;
+    NSString * _regionCode;
     NSString * _service;
+    bool  _supportsCinnamonAntimonyGloryF;
+    bool  _supportsCinnamonHW;
+    NSString * _systemVersion;
     NSString * _uniqueIDOverride;
 }
 
+@property (nonatomic, copy) NSString *backgroundAtrialFibrillationVersion;
+@property (nonatomic, copy) NSString *buildType;
+@property (nonatomic, copy) NSString *electrocardiogramVersion;
 @property (nonatomic) bool isActive;
 @property (nonatomic, readonly) bool isDefaultPairedDevice;
 @property (nonatomic, readonly) bool isLocallyPaired;
+@property (nonatomic, copy) NSString *modelNumber;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSUUID *nanoRegistryPairingID;
 @property (nonatomic, retain) NSUUID *nsuuid;
 @property (nonatomic, copy) NSString *productBuildVersion;
+@property (nonatomic, copy) NSString *productType;
+@property (nonatomic, copy) NSString *regionCode;
 @property (nonatomic, copy) NSString *service;
+@property (nonatomic) bool supportsCinnamonAntimonyGloryF;
+@property (nonatomic) bool supportsCinnamonHW;
+@property (nonatomic, copy) NSString *systemVersion;
 @property (nonatomic, copy) NSString *uniqueIDOverride;
 
 - (void).cxx_destruct;
+- (id)backgroundAtrialFibrillationVersion;
+- (id)buildType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)electrocardiogramVersion;
 - (id)hd_destinationIdentifier;
 - (id)hd_deviceIdentifier;
 - (bool)hd_isEquivalentToDevice:(id)arg1;
@@ -31,18 +52,33 @@
 - (bool)isActive;
 - (bool)isDefaultPairedDevice;
 - (bool)isLocallyPaired;
+- (id)modelNumber;
 - (id)name;
 - (id)nanoRegistryPairingID;
 - (id)nsuuid;
 - (id)productBuildVersion;
+- (id)productType;
+- (id)regionCode;
 - (id)service;
+- (void)setBackgroundAtrialFibrillationVersion:(id)arg1;
+- (void)setBuildType:(id)arg1;
+- (void)setElectrocardiogramVersion:(id)arg1;
 - (void)setIsActive:(bool)arg1;
+- (void)setModelNumber:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNanoRegistryPairingID:(id)arg1;
 - (void)setNsuuid:(id)arg1;
 - (void)setProductBuildVersion:(id)arg1;
+- (void)setProductType:(id)arg1;
+- (void)setRegionCode:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)setSupportsCinnamonAntimonyGloryF:(bool)arg1;
+- (void)setSupportsCinnamonHW:(bool)arg1;
+- (void)setSystemVersion:(id)arg1;
 - (void)setUniqueIDOverride:(id)arg1;
+- (bool)supportsCinnamonAntimonyGloryF;
+- (bool)supportsCinnamonHW;
+- (id)systemVersion;
 - (id)uniqueIDOverride;
 
 @end

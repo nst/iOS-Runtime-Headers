@@ -4,11 +4,17 @@
 
 @interface SARequestCompleted : SABaseClientBoundCommand
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)requestCompleted;
 + (id)requestCompletedWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (bool)requiresResponse;
+
+// Image: /System/Library/PrivateFrameworks/SiriTape.framework/SiriTape
+
+- (bool)st_hasRequestCompleted;
 
 @end

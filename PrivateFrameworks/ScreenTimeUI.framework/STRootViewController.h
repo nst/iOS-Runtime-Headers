@@ -4,10 +4,12 @@
 
 @interface STRootViewController : STPINListViewController {
     STEnableScreenTimeGroupSpecifierProvider * _enableScreenTimeGroupSpecifierProvider;
+    STScreenTimeGroupSpecifierProvider * _screenTimeGroupSpecifierProvider;
     bool  _shouldRefreshUsageData;
 }
 
-@property (nonatomic, retain) STEnableScreenTimeGroupSpecifierProvider *enableScreenTimeGroupSpecifierProvider;
+@property (nonatomic, readonly) STEnableScreenTimeGroupSpecifierProvider *enableScreenTimeGroupSpecifierProvider;
+@property (nonatomic, readonly) STScreenTimeGroupSpecifierProvider *screenTimeGroupSpecifierProvider;
 @property (nonatomic) bool shouldRefreshUsageData;
 
 - (void).cxx_destruct;
@@ -16,7 +18,7 @@
 - (id)initWithRootViewModelCoordinator:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (bool)prepareHandlingURLForSpecifierID:(id)arg1 resourceDictionary:(id)arg2 animatePush:(bool*)arg3;
-- (void)setEnableScreenTimeGroupSpecifierProvider:(id)arg1;
+- (id)screenTimeGroupSpecifierProvider;
 - (void)setShouldRefreshUsageData:(bool)arg1;
 - (bool)shouldRefreshUsageData;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

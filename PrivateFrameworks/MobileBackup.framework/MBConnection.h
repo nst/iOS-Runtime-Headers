@@ -25,6 +25,7 @@
 - (id)messageHandler;
 - (void)resume;
 - (void)sendMessage:(id)arg1;
+- (void)sendMessage:(id)arg1 barrierBlock:(id /* block */)arg2;
 - (id)sendMessageWithReplyAndSync:(id)arg1 error:(id*)arg2;
 - (void)setMessageHandler:(id)arg1;
 - (void)suspend;

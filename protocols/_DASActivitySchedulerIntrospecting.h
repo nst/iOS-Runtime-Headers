@@ -8,6 +8,7 @@
 - (NSDictionary *)activityRunStatistics;
 - (NSDictionary *)currentPredictions;
 - (void)forceRunActivities:(NSArray *)arg1;
+- (void)pauseWithParameters:(NSDictionary *)arg1;
 - (double)remainingBalanceForBudgetWithName:(NSString *)arg1;
 - (NSArray *)runningActivities;
 - (NSArray *)runningGroupActivities;

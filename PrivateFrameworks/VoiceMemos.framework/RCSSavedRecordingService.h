@@ -21,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isDatabaseAvailable;
 @property (readonly) Class superclass;
 
 + (id)changeToken;
@@ -70,6 +71,7 @@
 - (oneway void)importRecordingWithSourceAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 importCompletionBlock:(id /* block */)arg4;
 - (oneway void)importRecordingsFromCloud:(id /* block */)arg1;
 - (id)init;
+- (bool)isDatabaseAvailable;
 - (oneway void)openAudioFile:(id)arg1 settings:(id)arg2 accessRequestHandler:(id /* block */)arg3;
 - (id)openAudioFile:(id)arg1 settings:(id)arg2 error:(id*)arg3;
 - (void)openServiceConnection;

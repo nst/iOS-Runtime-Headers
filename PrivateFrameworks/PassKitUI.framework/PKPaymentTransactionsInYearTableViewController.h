@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <CNAvatarViewDelegate, UIViewControllerPreviewingDelegate> {
+@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <CNAvatarViewDelegate, PKDashboardTransactionFetcherDelegate, UIViewControllerPreviewingDelegate> {
     NSCalendar * _calendar;
     PKPeerPaymentContactResolver * _contactResolver;
     NSDate * _dateFromYear;
@@ -11,6 +11,8 @@
     <PKPaymentDataProvider> * _paymentServiceDataProvider;
     PKPeerPaymentController * _peerPaymentController;
     PKPaymentTransactionCellController * _transactionCellController;
+    PKPaymentTransactionDetailsFactory * _transactionDetailsFactory;
+    PKDashboardTransactionFetcher * _transactionFetcher;
     NSDateFormatter * _transactionMonthFormatter;
     NSArray * _transactionsByMonth;
 }
@@ -25,6 +27,7 @@
 - (id)_transactionDetailViewControllerForTransaction:(id)arg1;
 - (id)_transactionMonthFormatter;
 - (id)_transactionsInYearTitleString;
+- (void)_updateWithTransactions:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithDateFromYear:(id)arg1 calendar:(id)arg2 paymentPass:(id)arg3 detailViewStyle:(long long)arg4 paymentServiceDataProvider:(id)arg5 contactResolver:(id)arg6 peerPaymentController:(id)arg7;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
@@ -34,6 +37,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (void)transactionsChanged:(id)arg1;
 - (void)viewDidLoad;
 
 @end

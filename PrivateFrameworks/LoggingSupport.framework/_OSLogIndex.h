@@ -52,11 +52,11 @@
 
 - (void).cxx_destruct;
 - (bool)_addFileToIndex:(const char *)arg1 error:(id*)arg2;
-- (bool)_buildFileIndex:(id*)arg1;
+- (bool)_buildFileIndex;
 - (bool)_buildSingleFileIndex:(id*)arg1;
 - (void)_enumerateEntriesInRange:(struct os_timesync_range_s { struct os_trace_uuid_map_s {} *x1; unsigned long long x2; unsigned long long x3; unsigned char x4[0][16]; }*)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (void)_foreachIndexFile:(id /* block */)arg1;
-- (bool)_openTimesyncDatabase:(id*)arg1;
+- (bool)_openTimesyncDatabase;
 - (bool)_readArchiveMetadata:(id*)arg1;
 - (bool)addReferenceToIndex:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
@@ -67,8 +67,7 @@
 - (void)enumerateEntriesUsingBlock:(id /* block */)arg1;
 - (void)enumerateFilesUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithCollection:(id)arg1 buildLocalIndex:(bool)arg2 error:(id*)arg3;
-- (id)initWithCollection:(id)arg1 error:(id*)arg2;
+- (id)initWithCollection:(id)arg1 buildLocalIndex:(bool)arg2;
 - (id)initWithCollection:(id)arg1 timesync:(struct _os_timesync_db_s { }*)arg2 metadata:(id)arg3;
 - (void)insertChunkStore:(id)arg1;
 - (void)insertIndexFile:(id)arg1;

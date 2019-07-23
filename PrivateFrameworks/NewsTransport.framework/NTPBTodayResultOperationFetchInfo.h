@@ -4,6 +4,7 @@
 
 @interface NTPBTodayResultOperationFetchInfo : PBCodable <NSCopying> {
     long long  _appConfigTreatmentIDInteger;
+    NSString * _bundleIap;
     long long  _cellularRadioAccessTechnology;
     NSData * _clickThroughRateByPersonalizationFeatureIDData;
     NSString * _contentStoreFrontID;
@@ -12,8 +13,10 @@
         unsigned int cellularRadioAccessTechnology : 1; 
         unsigned int onboardingVersion : 1; 
         unsigned int reachabilityStatus : 1; 
+        unsigned int isBundleSubscriber : 1; 
         unsigned int wifiReachable : 1; 
     }  _has;
+    bool  _isBundleSubscriber;
     NSString * _localeIdentifier;
     long long  _onboardingVersion;
     long long  _reachabilityStatus;
@@ -34,13 +37,16 @@
 }
 
 @property (nonatomic) long long appConfigTreatmentIDInteger;
+@property (nonatomic, retain) NSString *bundleIap;
 @property (nonatomic) long long cellularRadioAccessTechnology;
 @property (nonatomic, retain) NSData *clickThroughRateByPersonalizationFeatureIDData;
 @property (nonatomic, retain) NSString *contentStoreFrontID;
 @property (nonatomic) bool hasAppConfigTreatmentIDInteger;
+@property (nonatomic, readonly) bool hasBundleIap;
 @property (nonatomic) bool hasCellularRadioAccessTechnology;
 @property (nonatomic, readonly) bool hasClickThroughRateByPersonalizationFeatureIDData;
 @property (nonatomic, readonly) bool hasContentStoreFrontID;
+@property (nonatomic) bool hasIsBundleSubscriber;
 @property (nonatomic, readonly) bool hasLocaleIdentifier;
 @property (nonatomic) bool hasOnboardingVersion;
 @property (nonatomic) bool hasReachabilityStatus;
@@ -48,6 +54,7 @@
 @property (nonatomic, readonly) bool hasUserID;
 @property (nonatomic, readonly) bool hasWidgetConfig;
 @property (nonatomic) bool hasWifiReachable;
+@property (nonatomic) bool isBundleSubscriber;
 @property (nonatomic, retain) NSString *localeIdentifier;
 @property (nonatomic) long long onboardingVersion;
 @property (nonatomic) long long reachabilityStatus;
@@ -66,6 +73,7 @@
 - (void)addUserSegmentationSegmentSetIds:(int)arg1;
 - (void)addUserSegmentationTreatmentIds:(long long)arg1;
 - (long long)appConfigTreatmentIDInteger;
+- (id)bundleIap;
 - (long long)cellularRadioAccessTechnology;
 - (void)clearUserSegmentationSegmentSetIds;
 - (void)clearUserSegmentationTreatmentIds;
@@ -76,9 +84,11 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAppConfigTreatmentIDInteger;
+- (bool)hasBundleIap;
 - (bool)hasCellularRadioAccessTechnology;
 - (bool)hasClickThroughRateByPersonalizationFeatureIDData;
 - (bool)hasContentStoreFrontID;
+- (bool)hasIsBundleSubscriber;
 - (bool)hasLocaleIdentifier;
 - (bool)hasOnboardingVersion;
 - (bool)hasReachabilityStatus;
@@ -87,6 +97,7 @@
 - (bool)hasWidgetConfig;
 - (bool)hasWifiReachable;
 - (unsigned long long)hash;
+- (bool)isBundleSubscriber;
 - (bool)isEqual:(id)arg1;
 - (id)localeIdentifier;
 - (void)mergeFrom:(id)arg1;
@@ -94,14 +105,17 @@
 - (long long)reachabilityStatus;
 - (bool)readFrom:(id)arg1;
 - (void)setAppConfigTreatmentIDInteger:(long long)arg1;
+- (void)setBundleIap:(id)arg1;
 - (void)setCellularRadioAccessTechnology:(long long)arg1;
 - (void)setClickThroughRateByPersonalizationFeatureIDData:(id)arg1;
 - (void)setContentStoreFrontID:(id)arg1;
 - (void)setHasAppConfigTreatmentIDInteger:(bool)arg1;
 - (void)setHasCellularRadioAccessTechnology:(bool)arg1;
+- (void)setHasIsBundleSubscriber:(bool)arg1;
 - (void)setHasOnboardingVersion:(bool)arg1;
 - (void)setHasReachabilityStatus:(bool)arg1;
 - (void)setHasWifiReachable:(bool)arg1;
+- (void)setIsBundleSubscriber:(bool)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setOnboardingVersion:(long long)arg1;
 - (void)setReachabilityStatus:(long long)arg1;

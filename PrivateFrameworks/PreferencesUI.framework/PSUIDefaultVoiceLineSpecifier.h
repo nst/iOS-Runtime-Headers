@@ -34,6 +34,7 @@
 - (void)setPlanManagerCache:(id)arg1;
 - (void)setSimStatusCache:(id)arg1;
 - (id)simStatusCache;
+- (id)subscriptionContextForListItem:(id)arg1;
 - (void)updateCachedState;
 
 @end

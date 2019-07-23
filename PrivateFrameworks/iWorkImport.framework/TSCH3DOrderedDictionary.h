@@ -16,7 +16,10 @@
 - (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithMutableDictionaryStore:(id)arg1;
+- (id)lastKey;
+- (id)lastObject;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 

@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewControllerApplicationExtensionItem:(id)arg1;
-- (id)initWithQuickLookDocument:(id)arg1 URL:(id)arg2;
+- (id)initWithQuickLookDocument:(id)arg1 URL:(id)arg2 webView:(id)arg3;
 - (id)item;
 - (id)pageTitle;
 - (id)quickLookDocument;

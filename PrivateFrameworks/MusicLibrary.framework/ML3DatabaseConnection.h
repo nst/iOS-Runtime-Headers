@@ -55,6 +55,7 @@
 - (bool)_databaseFileExists;
 - (id)_databaseFilePaths;
 - (bool)_databaseFilesAreWritable;
+- (int)_distrustQueriesDuringBlock:(id /* block */)arg1;
 - (void)_ensureConnectionIsOpen;
 - (void)_enumerateTableColumnNamesAndDefinitionsFromTable:(id)arg1 usingBlock:(id /* block */)arg2;
 - (bool)_executeStatement:(id)arg1 withError:(id*)arg2;

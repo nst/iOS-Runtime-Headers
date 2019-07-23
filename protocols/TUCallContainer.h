@@ -36,6 +36,7 @@
 - (TUCall *)currentVideoCall;
 - (unsigned long long)currentVideoCallCount;
 - (NSArray *)currentVideoCalls;
+- (NSArray *)displayedAudioAndVideoCalls;
 - (TUCall *)displayedCallFromCalls:(NSArray *)arg1;
 - (NSArray *)displayedCalls;
 - (bool)hasCurrentAudioCalls;

@@ -18,6 +18,8 @@
 
 - (void)__postDBUpdate;
 - (id)_chatsForMessageGUID:(id)arg1 enableVerboseLogging:(bool)arg2;
+- (id)_cleanUnformattedPhoneNumber:(id)arg1 countryCode:(id)arg2;
+- (struct _IMDHandleRecordStruct { }*)_copyHandle:(id)arg1 onService:(id)arg2;
 - (void)_deleteMessagesWithGUIDs:(id)arg1 chatIdentifiers:(id)arg2 style:(unsigned char)arg3 onServices:(id)arg4 batchNumber:(unsigned long long)arg5 completion:(id /* block */)arg6;
 - (bool)_hasMessagesWithGUIDs:(id)arg1;
 - (bool)_isUsingStingRay;
@@ -68,6 +70,7 @@
 - (void)markAllMessagesAsNeedingCloudKitSync;
 - (void)markMessageAsCleanWithROWID:(long long)arg1;
 - (void)markMessageAsDeduplicated:(id)arg1;
+- (void)markMessageAsIgnoreButNeedingSyncWithROWID:(long long)arg1;
 - (id)markMessagesAsReadWithHandle:(id)arg1 onService:(id)arg2 upToGUID:(id)arg3 readDate:(id)arg4 fromMe:(bool)arg5;
 - (id)markMessagesAsReadWithHandles:(id)arg1 onServices:(id)arg2 upToGUID:(id)arg3 readDate:(id)arg4 fromMe:(bool)arg5;
 - (id)markMessagesAsReadWithRoomNames:(id)arg1 onServices:(id)arg2 upToGUID:(id)arg3 readDate:(id)arg4 fromMe:(bool)arg5;

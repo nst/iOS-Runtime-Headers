@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentMethod : NSObject <NSCopying, NSSecureCoding> {
+    PKDisbursementVoucher * _disbursementVoucher;
     NSString * _displayName;
     NSString * _network;
     PKPaymentPass * _paymentPass;
@@ -11,6 +12,7 @@
     unsigned long long  _type;
 }
 
+@property (nonatomic, retain) PKDisbursementVoucher *disbursementVoucher;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *network;
 @property (nonatomic, copy) PKPaymentPass *paymentPass;
@@ -25,9 +27,11 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
+- (id)disbursementVoucher;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDisbursementVoucher:(id)arg1;
 - (id)initWithPaymentPass:(id)arg1 obfuscateNetworks:(bool)arg2;
 - (id)initWithPaymentPass:(id)arg1 paymentApplication:(id)arg2 obfuscateNetworks:(bool)arg3;
 - (id)initWithPeerPaymentQuote:(id)arg1;
@@ -38,6 +42,7 @@
 - (id)peerPaymentQuoteIdentifier;
 - (id)protobuf;
 - (id)remoteInstrument;
+- (void)setDisbursementVoucher:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setNetwork:(id)arg1;
 - (void)setPaymentPass:(id)arg1;

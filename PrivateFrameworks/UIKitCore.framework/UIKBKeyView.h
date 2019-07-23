@@ -62,18 +62,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } variantFrame;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)_applyAppearanceInvocations;
 - (bool)_canDrawContent;
 - (id)_generateBackdropMaskImage;
 - (void)_populateLayer:(id)arg1 withContents:(id)arg2;
 - (bool)_shouldUpdateLayers;
 - (bool)_viewShouldBeOpaque;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowBackgroundCachingForRenderFlags:(long long)arg1;
 - (bool)cacheDeferable;
 - (id)cacheKey;
@@ -88,6 +82,7 @@
 - (void)changeBackgroundToActiveIfNecessary;
 - (void)changeBackgroundToEnabled;
 - (id)contentsKeyView;
+- (void)dealloc;
 - (long long)didInputSubTree:(id)arg1;
 - (void)dimKeys:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })displayInsets;

@@ -4,6 +4,7 @@
 
 @interface SKProductInternal : NSObject {
     NSString * _contentVersion;
+    NSArray * _discounts;
     NSArray * _downloadContentLengths;
     bool  _downloadable;
     SKProductDiscount * _introductoryPrice;

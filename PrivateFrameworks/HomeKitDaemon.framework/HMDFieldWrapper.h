@@ -7,7 +7,7 @@
     long long  _tlvid;
 }
 
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic) long long tlvid;
 
 - (void).cxx_destruct;

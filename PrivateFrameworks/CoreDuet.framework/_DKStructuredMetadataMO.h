@@ -11,6 +11,8 @@
 @property (nonatomic) double _CDPortraitMetadataKey__decayRate;
 @property (nonatomic, copy) NSString *_CDPortraitMetadataKey__osBuild;
 @property (nonatomic) double _CDPortraitMetadataKey__score;
+@property (nonatomic, copy) NSString *_DKAirPlayPredictionMetadataKey__outputDeviceID;
+@property (nonatomic, copy) NSString *_DKAirPlayPredictionMetadataKey__subtype;
 @property (nonatomic, copy) NSNumber *_DKAppInstallMetadataKey__isInstall;
 @property (nonatomic, copy) NSString *_DKAppInstallMetadataKey__primaryCategory;
 @property (nonatomic, retain) NSData *_DKAppInstallMetadataKey__subCategories;
@@ -95,8 +97,10 @@
 @property (nonatomic, copy) NSString *_DKMetadataHomeKitScene__clientName;
 @property (nonatomic, copy) NSString *_DKMetadataHomeKitScene__homeUUID;
 @property (nonatomic, copy) NSString *_DKMetadataHomeKitScene__sceneName;
+@property (nonatomic, copy) NSString *_DKMicroLocationMetadataKey__domain;
 @property (nonatomic, copy) NSString *_DKMicroLocationMetadataKey__locationDistribution;
 @property (nonatomic, copy) NSString *_DKMicroLocationMetadataKey__microLocationDistribution;
+@property (nonatomic, retain) NSData *_DKMicroLocationMetadataKey__probabilityVector;
 @property (nonatomic, copy) NSString *_DKNotificationUsageMetadataKey__bundleID;
 @property (nonatomic, copy) NSString *_DKNotificationUsageMetadataKey__identifier;
 @property (nonatomic, copy) NSString *_DKNowPlayingMetadataKey__album;
@@ -105,6 +109,9 @@
 @property (nonatomic, copy) NSNumber *_DKNowPlayingMetadataKey__elapsed;
 @property (nonatomic, copy) NSString *_DKNowPlayingMetadataKey__genre;
 @property (nonatomic, copy) NSNumber *_DKNowPlayingMetadataKey__identifier;
+@property (nonatomic) bool _DKNowPlayingMetadataKey__isAirPlayVideo;
+@property (nonatomic, copy) NSString *_DKNowPlayingMetadataKey__mediaType;
+@property (nonatomic, retain) NSData *_DKNowPlayingMetadataKey__outputDeviceIDs;
 @property (nonatomic) short _DKNowPlayingMetadataKey__playing;
 @property (nonatomic, copy) NSString *_DKNowPlayingMetadataKey__title;
 @property (nonatomic, copy) NSDate *_DKPeriodMetadataKey__periodEnd;

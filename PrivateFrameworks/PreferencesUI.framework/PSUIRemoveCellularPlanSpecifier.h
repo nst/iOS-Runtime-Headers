@@ -24,6 +24,7 @@
 - (id)planManagerCache;
 - (id)planReference;
 - (bool)popViewControllerOnPlanDeletion;
+- (void)removeCellularPlan:(id)arg1;
 - (void)removeCellularPlanConfirmed:(id)arg1;
 - (void)setCellularPlanManager:(id)arg1;
 - (void)setHostController:(id)arg1;

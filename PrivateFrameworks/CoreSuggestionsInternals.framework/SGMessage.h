@@ -58,6 +58,7 @@
 - (void)setUniqueIdentifier:(id)arg1;
 - (id)spotlightBundleIdentifier;
 - (id)spotlightDomainIdentifier;
+- (id)spotlightReference;
 - (id)spotlightUniqueIdentifier;
 - (id)subject;
 - (id)textContent;

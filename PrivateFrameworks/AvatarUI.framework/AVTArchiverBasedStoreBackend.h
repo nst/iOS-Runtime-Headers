@@ -5,34 +5,37 @@
 @interface AVTArchiverBasedStoreBackend : NSObject <AVTStoreBackend> {
     NSDictionary * _avatarsByIdentifiers;
     NSString * _domainIdentifier;
-    AVTUIEnvironment * _environment;
+    AVTCoreEnvironment * _environment;
     AVTArchiverBasedStoreRoot * _model;
     NSArray * _sortedAvatars;
     NSURL * _storeLocation;
 }
 
 @property (nonatomic, copy) NSDictionary *avatarsByIdentifiers;
+@property (nonatomic) <AVTStoreBackendDelegate> *backendDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domainIdentifier;
-@property (nonatomic, readonly) AVTUIEnvironment *environment;
+@property (nonatomic, readonly) AVTCoreEnvironment *environment;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AVTArchiverBasedStoreRoot *model;
+@property (nonatomic, readonly) <AVTAvatarRecordChangeTracker> *recordChangeTracker;
 @property (nonatomic, copy) NSArray *sortedAvatars;
 @property (nonatomic, readonly, copy) NSURL *storeLocation;
 @property (readonly) Class superclass;
 
 + (id)classifyRecordsByIdentifiers:(id)arg1;
-+ (unsigned long long)maximumNumberOfAvatars;
 + (id)rootByRemovingAvatarWithIdentifier:(id)arg1 fromRoot:(id)arg2;
 + (id)rootBySavingAvatarRecord:(id)arg1 afterAvatarRecord:(id)arg2 forDomainIdentifier:(id)arg3 toRoot:(id)arg4;
 + (id)storeLocationForDomainIdentifier:(id)arg1 environment:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)allAvatars;
+- (unsigned long long)avatarCountWithError:(id*)arg1;
 - (id)avatarsByIdentifiers;
 - (id)avatarsForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)avatarsWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)backendDelegate;
 - (bool)canCreateAvatarWithError:(id*)arg1;
 - (bool)deleteAvatarWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)domainIdentifier;
@@ -43,9 +46,12 @@
 - (bool)loadContentFromDiskIfNeeded:(id*)arg1;
 - (void)loadModel:(id)arg1;
 - (id)model;
+- (id)recordChangeTracker;
 - (bool)saveAvatar:(id)arg1 error:(id*)arg2;
+- (bool)saveAvatars:(id)arg1 error:(id*)arg2;
 - (bool)saveModel:(id)arg1 logger:(id)arg2 error:(id*)arg3;
 - (void)setAvatarsByIdentifiers:(id)arg1;
+- (void)setBackendDelegate:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setSortedAvatars:(id)arg1;
 - (id)sortedAvatars;

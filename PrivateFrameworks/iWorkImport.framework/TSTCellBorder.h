@@ -29,8 +29,8 @@
 @property (nonatomic, readonly) bool definedRightStroke;
 @property (nonatomic, readonly) bool definedTopStroke;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasContent;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, readonly, retain) TSDStroke *leftStroke;
 @property (nonatomic, readonly) int leftStrokeOrder;
 @property (nonatomic, readonly, retain) TSDStroke *rightStroke;
@@ -57,15 +57,15 @@
 - (bool)definedRightStroke;
 - (bool)definedTopStroke;
 - (void)didInitFromSOS;
-- (id)initFromMessage:(const struct CellBorderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; int x7; int x8; struct StrokeArchive {} *x9; struct StrokeArchive {} *x10; int x11; int x12; }*)arg1 unarchiver:(id)arg2;
+- (bool)hasContent;
+- (id)initFromMessage:(const struct CellBorderArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; struct StrokeArchive {} *x7; struct StrokeArchive {} *x8; int x9; int x10; int x11; int x12; }*)arg1 unarchiver:(id)arg2;
 - (id)initFromPropertyCommandMessage:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
-- (bool)isEmpty;
 - (id)leftStroke;
 - (int)leftStrokeOrder;
 - (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2 updateInverseResetPropertyMap:(id)arg3 updateInverseSetPropertyMap:(id)arg4;
 - (id)rightStroke;
 - (int)rightStrokeOrder;
-- (void)saveToMessage:(struct CellBorderArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; int x7; int x8; struct StrokeArchive {} *x9; struct StrokeArchive {} *x10; int x11; int x12; }*)arg1 archiver:(id)arg2;
+- (void)saveToMessage:(struct CellBorderArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct StrokeArchive {} *x5; struct StrokeArchive {} *x6; struct StrokeArchive {} *x7; struct StrokeArchive {} *x8; int x9; int x10; int x11; int x12; }*)arg1 archiver:(id)arg2;
 - (void)saveToPropertyCommandMessage:(struct Message { int (**x1)(); }*)arg1 archiver:(id)arg2;
 - (void)setBottomStroke:(id)arg1 order:(int)arg2;
 - (void)setLeftStroke:(id)arg1 order:(int)arg2;

@@ -33,6 +33,7 @@
 - (void)_queue_createDataProviderWithBundleIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_queue_createNewDefaultDataProviders;
 - (id)_queue_dataProviderForBundleIdentifier:(id)arg1;
+- (id)_queue_effectiveSectionInfoForBundleIdentifier:(id)arg1;
 - (id)_queue_notificationSettingsForBundleIdentifier:(id)arg1;
 - (void)_queue_notificationSourceDidInstall:(id)arg1;
 - (void)_queue_notificationSourceDidUninstall:(id)arg1;

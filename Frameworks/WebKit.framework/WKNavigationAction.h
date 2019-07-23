@@ -5,7 +5,7 @@
 @interface WKNavigationAction : NSObject <WKObject> {
     struct ObjectStorage<API::NavigationAction> { 
         struct type { 
-            unsigned char __lx[416]; 
+            unsigned char __lx[448]; 
         } data; 
     }  _navigationAction;
 }
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) bool _canHandleRequest;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } _clickLocationInRootViewCoordinates;
 @property (nonatomic, readonly) bool _isRedirect;
+@property (nonatomic, readonly) WKNavigation *_mainFrameNavigation;
 @property (nonatomic, readonly) NSURL *_originalURL;
 @property (nonatomic, readonly) bool _shouldOpenAppLinks;
 @property (nonatomic, readonly) bool _shouldOpenExternalSchemes;
@@ -35,6 +36,7 @@
 - (struct CGPoint { double x1; double x2; })_clickLocationInRootViewCoordinates;
 - (bool)_isRedirect;
 - (bool)_isUserInitiated;
+- (id)_mainFrameNavigation;
 - (id)_originalURL;
 - (bool)_shouldOpenAppLinks;
 - (bool)_shouldOpenExternalSchemes;

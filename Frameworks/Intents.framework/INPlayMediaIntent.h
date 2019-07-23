@@ -13,6 +13,7 @@
 @property (nonatomic, readonly, copy) NSArray *mediaItems;
 @property (nonatomic, readonly, copy) NSNumber *playShuffled;
 @property (nonatomic, readonly) long long playbackRepeatMode;
+@property (nonatomic, copy) NSString *proxiedBundleIdentifier;
 @property (nonatomic, copy) NSString *recoID;
 @property (nonatomic, readonly, copy) NSNumber *resumePlayback;
 @property (readonly) Class superclass;
@@ -41,6 +42,7 @@
 - (id)parametersByName;
 - (id)playShuffled;
 - (long long)playbackRepeatMode;
+- (id)proxiedBundleIdentifier;
 - (id)recoID;
 - (id)resumePlayback;
 - (void)setBuckets:(id)arg1;
@@ -51,6 +53,7 @@
 - (void)setParametersByName:(id)arg1;
 - (void)setPlayShuffled:(id)arg1;
 - (void)setPlaybackRepeatMode:(long long)arg1;
+- (void)setProxiedBundleIdentifier:(id)arg1;
 - (void)setRecoID:(id)arg1;
 - (void)setResumePlayback:(id)arg1;
 - (void)setVerb:(id)arg1;
@@ -59,6 +62,10 @@
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
 - (id)_intentsui_backgroundHandlingAssertionForAppBundleIdentifier:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionClient.framework/AppPredictionClient
+
+- (id)atx_nonNilParametersByName;
 
 // Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 

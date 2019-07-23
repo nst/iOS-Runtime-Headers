@@ -12,9 +12,12 @@
     NSString * _deviceModel;
     unsigned int  _fairPlayDeviceType;
     NSString * _hardwarePlatform;
+    NSNumber * _hasCellularDataCapabilityNumber;
     struct atomic_flag { 
         bool _Value; 
     }  _hasRegisteredForNameNotifications;
+    NSNumber * _hasTelephonyCapabilityNumber;
+    NSNumber * _isInternalBuildNumber;
     struct CGSize { 
         double width; 
         double height; 
@@ -36,6 +39,8 @@
 @property (nonatomic, readonly, copy) NSString *deviceModel;
 @property (nonatomic, readonly) unsigned int fairPlayDeviceType;
 @property (nonatomic, readonly, copy) NSString *hardwarePlatform;
+@property (nonatomic, readonly) bool hasCellularDataCapability;
+@property (nonatomic, readonly) bool hasTelephonyCapability;
 @property (getter=isInternalBuild, nonatomic, readonly) bool internalBuild;
 @property (nonatomic, readonly) bool isAppleTV;
 @property (nonatomic, readonly) bool isAudioAccessory;
@@ -67,6 +72,8 @@
 - (id)deviceModel;
 - (unsigned int)fairPlayDeviceType;
 - (id)hardwarePlatform;
+- (bool)hasCellularDataCapability;
+- (bool)hasTelephonyCapability;
 - (bool)isAppleTV;
 - (bool)isAudioAccessory;
 - (bool)isIPad;

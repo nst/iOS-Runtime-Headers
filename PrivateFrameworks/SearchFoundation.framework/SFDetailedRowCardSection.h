@@ -69,6 +69,7 @@
 @property (nonatomic, retain) SFFormattedText *trailingMiddleText;
 @property (nonatomic, retain) SFFormattedText *trailingTopText;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
@@ -135,5 +136,10 @@
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
 - (Class)_searchUIViewClass;
+
+// Image: /System/Library/PrivateFrameworks/SearchUICardKitProviderSupport.framework/SearchUICardKitProviderSupport
+
+- (bool)_SUICKPInteractiveCardSectionViewController_shouldHandlePunchout;
+- (bool)_SUICKPInteractiveCardSectionViewController_shouldRenderButtonOverlay;
 
 @end

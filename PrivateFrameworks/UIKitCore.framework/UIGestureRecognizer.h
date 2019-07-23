@@ -97,6 +97,7 @@
 @property (nonatomic, readonly) int gestureState;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double lastTouchTimestamp;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } location;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) unsigned long long numberOfTouches;
 @property (nonatomic) bool requiresExclusiveTouchType;
@@ -339,5 +340,11 @@
 - (void)setTargetRep:(id)arg1;
 - (id)targetRep;
 - (struct CGPoint { double x1; double x2; })unscaledLocationForICC:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TouchML.framework/TouchML
+
+- (struct CGPoint { double x1; double x2; })location;
+- (void)tmlSignalAttach:(id)arg1;
+- (void)tmlSignalDetach:(id)arg1;
 
 @end

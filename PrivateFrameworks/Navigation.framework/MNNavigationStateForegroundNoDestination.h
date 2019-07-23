@@ -8,7 +8,7 @@
 - (unsigned long long)desiredLocationProviderType;
 - (unsigned long long)desiredResourcePolicy;
 - (void)startPredictingDestinationsWithHandler:(id /* block */)arg1;
-- (unsigned long long)type;
+- (long long)type;
 - (void)updateMapsActive:(bool)arg1;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface CNContactHeaderEditView : CNContactHeaderView <CNPropertyGroupItemDelegate, UITableViewDataSource, UITableViewDelegate> {
+    bool  _allowsEditPhoto;
     NSArray * _editingGroups;
     UITableView * _editingTable;
     <CNPropertyCellDelegate> * _namePropertyDelegate;
@@ -11,6 +12,7 @@
     NSLayoutConstraint * _tableToTrailingReadableGuideConstraint;
 }
 
+@property (nonatomic) bool allowsEditPhoto;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *editingGroups;
@@ -26,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (id)_phoneticNameForValue:(id)arg1 property:(id)arg2;
+- (bool)allowsEditPhoto;
 - (bool)becomeFirstResponder;
 - (id)editingGroups;
 - (bool)hasPhoto;
@@ -37,6 +40,7 @@
 - (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)saveContactPhoto;
 - (id)selectEditingGroupAtIndex:(unsigned long long)arg1;
+- (void)setAllowsEditPhoto:(bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEditingGroups:(id)arg1;
 - (void)setEditingGroups:(id)arg1 withUpdate:(bool)arg2;

@@ -10,11 +10,14 @@
 
 - (void)_handleButtonEventConsumePressMessage:(id)arg1;
 - (void)acquireAssertionOfType:(long long)arg1 forReason:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)disableRemoteStateDumpWithCompletion:(id /* block */)arg1;
+- (void)enableRemoteStateDumpWithTimeout:(long long)arg1 completion:(id /* block */)arg2;
 - (void)fetchHapticTypeForButtonKind:(long long)arg1 completion:(id /* block */)arg2;
 - (void)fetchUnlockCredentialSetWithCompletion:(id /* block */)arg1;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)resetToHomeScreenAnimated:(bool)arg1 useSafeTransitions:(bool)arg2;
+- (void)requestStateDump:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
+- (void)resetToHomeScreenAnimated:(bool)arg1;
 - (void)setAlertsEnabled:(bool)arg1;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(bool)arg2;
 - (void)setButtonEventServiceIsWaitingForServerMessages:(bool)arg1;

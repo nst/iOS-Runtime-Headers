@@ -21,7 +21,7 @@
 - (void)audioRecorderBeginRecordInterruption:(id)arg1;
 - (void)audioRecorderBeginRecordInterruption:(id)arg1 withContext:(id)arg2;
 - (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 atTime:(unsigned long long)arg3;
+- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 atTime:(unsigned long long)arg4;
 - (void)audioRecorderDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
 - (void)audioRecorderDidStartRecording:(id)arg1 successfully:(bool)arg2 error:(id)arg3;
 - (void)audioRecorderDidStopRecording:(id)arg1 forReason:(long long)arg2;

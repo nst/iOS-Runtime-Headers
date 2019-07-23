@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
  */
 
-@interface VUILibraryViewController : VUILibraryStackViewController <UICollectionViewDataSource, UIGestureRecognizerDelegate, VUILibraryPopoverDataSource, VUILibraryPopoverDelegate, VUILibraryShelfCollectionViewControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaItemEntityTypesFetchControllerDelegate, VUIMediaLibraryFetchControllerQueueDelegate> {
+@interface VUILibraryViewController : VUILibraryStackViewController <UICollectionViewDataSource, UIGestureRecognizerDelegate, VUIDownloadDataSourceDelegate, VUILibraryPopoverDataSource, VUILibraryPopoverDelegate, VUILibraryShelfCollectionViewControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaItemEntityTypesFetchControllerDelegate, VUIMediaLibraryFetchControllerQueueDelegate> {
     bool  _appliedNavigationItem;
     bool  _areLocalMediaItemsAvailable;
     VUILibraryBannerCollectionViewCell * _bannerViewSizingCell;
@@ -10,22 +10,21 @@
     _VUILibrarySeeAllController * _currentSeeAllController;
     long long  _currentlySelectedPopoverCell;
     bool  _doesDeviceSupportHDR;
+    VUIDownloadDataSource * _downloadDataSource;
+    bool  _hasDownloadFetchCompleted;
     bool  _hasMediaEntitiesFetchCompleted;
     bool  _hasMenuItemFetchCompleted;
     NSArray * _homeShares;
     bool  _isIpad;
-    id  _isNetworkTypeChangedToken;
-    bool  _lastNetworkReachableStatus;
+    bool  _isUpdatingRentals;
     UIBarButtonItem * _libraryBarButton;
     NSArray * _menuCells;
     VUILibraryMenuItemViewCell * _menuItemSizingCell;
     NSArray * _menuMediaItemEntityTypes;
-    VUIMetricsController * _metricsController;
-    id  _networkReachabilityChangedToken;
     NSArray * _popoverDropdownCells;
     VUILibraryPopoverViewController * _popoverViewController;
     bool  _ppt_isLoaded;
-    VUILibraryDownloadViewController * _presentedDownloadViewController;
+    VUIDownloadViewController * _presentedDownloadViewController;
     NSDictionary * _shelfTypeByFetchRequestIdentifier;
     VUILibraryMediaEntityShelvesViewModel * _shelvesViewModel;
     VUILibraryListPopoverViewCell * _sizingPopoverCell;
@@ -40,16 +39,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool doesDeviceSupportHDR;
+@property (nonatomic, retain) VUIDownloadDataSource *downloadDataSource;
+@property (nonatomic) bool hasDownloadFetchCompleted;
 @property (nonatomic) bool hasMediaEntitiesFetchCompleted;
 @property (nonatomic) bool hasMenuItemFetchCompleted;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *homeShares;
 @property (nonatomic) bool isIpad;
+@property (nonatomic) bool isUpdatingRentals;
 @property (nonatomic, retain) UIBarButtonItem *libraryBarButton;
 @property (nonatomic, retain) NSArray *menuCells;
 @property (nonatomic, retain) VUILibraryMenuItemViewCell *menuItemSizingCell;
 @property (nonatomic, retain) NSArray *menuMediaItemEntityTypes;
-@property (nonatomic, retain) VUIMetricsController *metricsController;
 @property (nonatomic, retain) NSArray *popoverDropdownCells;
 @property (nonatomic, retain) VUILibraryPopoverViewController *popoverViewController;
 @property (nonatomic, retain) NSDictionary *shelfTypeByFetchRequestIdentifier;
@@ -61,27 +62,28 @@
 + (id /* block */)shelfTypesSortComparator;
 
 - (void).cxx_destruct;
+- (void)_accountsChanged:(id)arg1;
 - (void)_addMediaLibraryNotificationObservers;
 - (void)_addNotificationObserversWithDeviceLibrary:(id)arg1;
+- (void)_addRentalsUpdateNotificationObserver;
 - (void)_configureShelfViewController:(id)arg1 withShelfType:(long long)arg2;
 - (void)_constructLibraryDataSourceAndUpdateActiveView;
 - (id)_deviceMediaLibrary;
 - (void)_deviceMediaLibraryUpdateStateDidChange:(id)arg1;
 - (id)_fetchRequestsWithMediaLibrary:(id)arg1 shelfTypeMap:(id*)arg2;
-- (void)_handleApplicationBecomingActive:(id)arg1;
 - (bool)_haveAllInitialFetchesCompleted;
 - (void)_homeShareMediaLibrariesDidChange:(id)arg1;
 - (bool)_isDeviceMediaLibraryInitialUpdateInProgress;
-- (bool)_isNetworkReachable;
 - (id)_leftNavigationButtonWithTitle:(id)arg1;
 - (void)_libraryPopoverPressed;
 - (id)_localizedTitleForCellType:(long long)arg1;
 - (id)_menuItemsAndPopoverMenuItems:(id*)arg1;
-- (void)_networkStatusChanged;
+- (void)_networkReachabilityDidChange:(id)arg1;
 - (id)_popoverTitleForIndexPath:(id)arg1;
 - (void)_reloadPopoverViewController;
 - (void)_removeMediaLibraryNotificationObservers;
 - (void)_removeNotificationObserversWithDeviceLibrary:(id)arg1;
+- (void)_removeRentalsUpdateNotificationObserver;
 - (void)_reparentNavigationItem:(id)arg1;
 - (void)_selectLibraryCellType:(long long)arg1 fromPopover:(bool)arg2;
 - (bool)_shouldAutomaticallySelectHomeVideos;
@@ -94,6 +96,7 @@
 - (void)_updateNavigationTitle;
 - (void)_updatePopoverSelectedItem;
 - (void)_updatePopoverStateWithCellType:(long long)arg1;
+- (void)_updateRentals;
 - (void)_updateViewIfFetchComplete;
 - (id)_viewControllerWithCellType:(long long)arg1 forPopover:(bool)arg2;
 - (bool)appliedNavigationItem;
@@ -113,19 +116,23 @@
 - (long long)currentlySelectedPopoverCell;
 - (void)dealloc;
 - (bool)doesDeviceSupportHDR;
+- (id)downloadDataSource;
+- (void)downloadManager:(id)arg1 downloadedFetchDidFinishWithEntities:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
 - (void)fetchDidCompleteForMediaLibraryFetchControllerQueue:(id)arg1;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hasDownloadFetchCompleted;
 - (bool)hasMediaEntitiesFetchCompleted;
 - (bool)hasMenuItemFetchCompleted;
 - (id)homeShares;
 - (id)initWithMediaLibrary:(id)arg1;
 - (bool)isIpad;
+- (bool)isUpdatingRentals;
 - (id)libraryBarButton;
 - (void)loadView;
 - (id)menuCells;
 - (id)menuItemSizingCell;
 - (id)menuMediaItemEntityTypes;
-- (id)metricsController;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)numberOfSectionsInPopoverView:(id)arg1;
 - (id)popoverDropdownCells;
@@ -134,7 +141,6 @@
 - (long long)popoverView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (struct CGSize { double x1; double x2; })popoverView:(id)arg1 sizeForItemAtIndexPath:(id)arg2;
 - (id)popoverViewController;
-- (bool)ppt_isLoading;
 - (void)seeAllButtonPressed:(id)arg1;
 - (void)setAppliedNavigationItem:(bool)arg1;
 - (void)setAreLocalMediaItemsAvailable:(bool)arg1;
@@ -143,15 +149,17 @@
 - (void)setCurrentSeeAllController:(id)arg1;
 - (void)setCurrentlySelectedPopoverCell:(long long)arg1;
 - (void)setDoesDeviceSupportHDR:(bool)arg1;
+- (void)setDownloadDataSource:(id)arg1;
+- (void)setHasDownloadFetchCompleted:(bool)arg1;
 - (void)setHasMediaEntitiesFetchCompleted:(bool)arg1;
 - (void)setHasMenuItemFetchCompleted:(bool)arg1;
 - (void)setHomeShares:(id)arg1;
 - (void)setIsIpad:(bool)arg1;
+- (void)setIsUpdatingRentals:(bool)arg1;
 - (void)setLibraryBarButton:(id)arg1;
 - (void)setMenuCells:(id)arg1;
 - (void)setMenuItemSizingCell:(id)arg1;
 - (void)setMenuMediaItemEntityTypes:(id)arg1;
-- (void)setMetricsController:(id)arg1;
 - (void)setPopoverDropdownCells:(id)arg1;
 - (void)setPopoverViewController:(id)arg1;
 - (void)setShelfTypeByFetchRequestIdentifier:(id)arg1;
@@ -166,7 +174,7 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (bool)vui_ppt_isLoading;
 
 @end

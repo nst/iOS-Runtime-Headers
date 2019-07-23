@@ -4,12 +4,14 @@
 
 @interface NTPBKeyValuePair : PBCodable <NSCopying> {
     NTPBAppConfigurationResource * _appConfigurationResource;
+    NTPBAsset * _asset;
     NTPBCacheCoordinatorHints * _cacheCoordinatorHintsValue;
     NSData * _dataValue;
     NTPBDate * _dateValue;
     struct { 
         unsigned int valueType : 1; 
     }  _has;
+    NTPBIssueReadingHistoryItem * _issueReadingHistoryItem;
     NSString * _key;
     NTPBNetworkSessionList * _networkSessionList;
     NTPBPersonalizationLocalData * _personalizationLocalData;
@@ -21,13 +23,16 @@
 }
 
 @property (nonatomic, retain) NTPBAppConfigurationResource *appConfigurationResource;
+@property (nonatomic, retain) NTPBAsset *asset;
 @property (nonatomic, retain) NTPBCacheCoordinatorHints *cacheCoordinatorHintsValue;
 @property (nonatomic, retain) NSData *dataValue;
 @property (nonatomic, retain) NTPBDate *dateValue;
 @property (nonatomic, readonly) bool hasAppConfigurationResource;
+@property (nonatomic, readonly) bool hasAsset;
 @property (nonatomic, readonly) bool hasCacheCoordinatorHintsValue;
 @property (nonatomic, readonly) bool hasDataValue;
 @property (nonatomic, readonly) bool hasDateValue;
+@property (nonatomic, readonly) bool hasIssueReadingHistoryItem;
 @property (nonatomic, readonly) bool hasKey;
 @property (nonatomic, readonly) bool hasNetworkSessionList;
 @property (nonatomic, readonly) bool hasPersonalizationLocalData;
@@ -36,6 +41,7 @@
 @property (nonatomic, readonly) bool hasRecordData;
 @property (nonatomic, readonly) bool hasStringValue;
 @property (nonatomic) bool hasValueType;
+@property (nonatomic, retain) NTPBIssueReadingHistoryItem *issueReadingHistoryItem;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NTPBNetworkSessionList *networkSessionList;
 @property (nonatomic, retain) NTPBPersonalizationLocalData *personalizationLocalData;
@@ -46,6 +52,7 @@
 @property (nonatomic) int valueType;
 
 - (id)appConfigurationResource;
+- (id)asset;
 - (id)cacheCoordinatorHintsValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataValue;
@@ -54,9 +61,11 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAppConfigurationResource;
+- (bool)hasAsset;
 - (bool)hasCacheCoordinatorHintsValue;
 - (bool)hasDataValue;
 - (bool)hasDateValue;
+- (bool)hasIssueReadingHistoryItem;
 - (bool)hasKey;
 - (bool)hasNetworkSessionList;
 - (bool)hasPersonalizationLocalData;
@@ -67,6 +76,7 @@
 - (bool)hasValueType;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (id)issueReadingHistoryItem;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (id)networkSessionList;
@@ -76,10 +86,12 @@
 - (id)readingHistoryItem;
 - (id)recordData;
 - (void)setAppConfigurationResource:(id)arg1;
+- (void)setAsset:(id)arg1;
 - (void)setCacheCoordinatorHintsValue:(id)arg1;
 - (void)setDataValue:(id)arg1;
 - (void)setDateValue:(id)arg1;
 - (void)setHasValueType:(bool)arg1;
+- (void)setIssueReadingHistoryItem:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNetworkSessionList:(id)arg1;
 - (void)setPersonalizationLocalData:(id)arg1;

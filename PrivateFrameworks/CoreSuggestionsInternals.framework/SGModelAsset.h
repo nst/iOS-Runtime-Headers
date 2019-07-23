@@ -8,7 +8,9 @@
 + (void)_invokeOnUpdateBlock;
 + (void)_reset;
 + (id)asset;
++ (id)dictionaryWithResourceName:(id)arg1;
 + (id)mappings;
++ (id)quickResponses;
 + (void)registerOnUpdateBlock:(id /* block */)arg1;
 + (id)rules;
 

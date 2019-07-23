@@ -11,6 +11,7 @@
         unsigned int wbuf[16]; 
     }  _mescalSignature;
     Class  _messageClass;
+    bool  _parsingStandaloneMessage;
     NSMutableData * _tailParserData;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic) bool isParsing;
 @property (nonatomic) struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; } mescalSignature;
 @property (nonatomic) Class messageClass;
+@property (nonatomic) bool parsingStandaloneMessage;
 @property (nonatomic, retain) NSMutableData *tailParserData;
 
 - (void).cxx_destruct;
@@ -29,11 +31,13 @@
 - (bool)isParsing;
 - (struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })mescalSignature;
 - (Class)messageClass;
+- (bool)parsingStandaloneMessage;
 - (void)processData:(id)arg1;
 - (void)setCurObjectLength:(unsigned long long)arg1;
 - (void)setIsParsing:(bool)arg1;
 - (void)setMescalSignature:(struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })arg1;
 - (void)setMessageClass:(Class)arg1;
+- (void)setParsingStandaloneMessage:(bool)arg1;
 - (void)setTailParserData:(id)arg1;
 - (id)tailParserData;
 

@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@interface TPPillView : UIView {
+@interface TPPillView : TPView {
     TPBadgeView * _badgeView;
     <TPPillViewDelegate> * _delegate;
     UITapGestureRecognizer * _gestureRecognizer;
-    UILabel * _label;
     UIStackView * _stackView;
+    NSLayoutConstraint * _stackViewBottomAnchorLayoutConstraint;
+    NSLayoutConstraint * _stackViewLeftAnchorLayoutConstraint;
+    NSLayoutConstraint * _stackViewRightAnchorLayoutConstraint;
+    NSLayoutConstraint * _stackViewTopAnchorLayoutConstraint;
+    UILabel * _textLabel;
     unsigned long long  _theme;
 }
 
@@ -15,27 +19,43 @@
 @property (nonatomic, readonly) TPBadgeView *badgeView;
 @property (nonatomic) <TPPillViewDelegate> *delegate;
 @property (nonatomic, readonly) UITapGestureRecognizer *gestureRecognizer;
-@property (nonatomic, readonly) UILabel *label;
 @property (nonatomic, readonly) UIStackView *stackView;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewBottomAnchorLayoutConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewLeftAnchorLayoutConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewRightAnchorLayoutConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *stackViewTopAnchorLayoutConstraint;
+@property (nonatomic, readonly) UILabel *textLabel;
 @property (nonatomic) unsigned long long theme;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)badgeText;
 - (id)badgeView;
+- (void)commonInit;
 - (id)delegate;
 - (id)gestureRecognizer;
 - (void)handleTap:(id)arg1;
 - (id)initWithTitle:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)initWithTitle:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 theme:(unsigned long long)arg3;
-- (id)label;
+- (void)loadConstraints;
 - (void)setBadgeText:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setStackViewBottomAnchorLayoutConstraint:(id)arg1;
+- (void)setStackViewLeftAnchorLayoutConstraint:(id)arg1;
+- (void)setStackViewRightAnchorLayoutConstraint:(id)arg1;
+- (void)setStackViewTopAnchorLayoutConstraint:(id)arg1;
 - (void)setTheme:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)stackView;
+- (id)stackViewBottomAnchorLayoutConstraint;
+- (id)stackViewLeftAnchorLayoutConstraint;
+- (id)stackViewRightAnchorLayoutConstraint;
+- (id)stackViewTopAnchorLayoutConstraint;
+- (id)textLabel;
 - (unsigned long long)theme;
 - (id)title;
-- (void)updateView;
+- (void)unloadConstraints;
+- (void)updateFonts;
+- (void)updateTheme;
 
 @end

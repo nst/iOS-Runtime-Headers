@@ -15,20 +15,30 @@
     }  _avoidanceFrame;
     bool  _hidden;
     UIStatusBarStyleRequest * _leadingStyleRequest;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _statusBarInsets;
     UIStatusBarStyleRequest * _trailingStyleRequest;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } avoidanceFrame;
 @property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly, copy) UIStatusBarStyleRequest *leadingStyleRequest;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } statusBarInsets;
 @property (nonatomic, readonly, copy) UIStatusBarStyleRequest *trailingStyleRequest;
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })avoidanceFrame;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithHidden:(bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 avoidanceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (id)initWithHidden:(bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 statusBarFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 avoidanceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
+- (id)initWithHidden:(bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 statusBarInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 avoidanceFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5;
 - (bool)isHidden;
 - (id)leadingStyleRequest;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })statusBarInsets;
 - (id)trailingStyleRequest;
 
 @end

@@ -62,6 +62,8 @@
 @property (nonatomic, readonly, copy) NSNumber *staticUsage;
 @property (nonatomic, readonly, copy) NSString *unusedRedemptionCode;
 
+// Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -102,5 +104,9 @@
 - (unsigned long long)state;
 - (id)staticUsage;
 - (id)unusedRedemptionCode;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_applicationWithBundleIdentifier:(id)arg1 localizedName:(id)arg2 iconData:(id)arg3;
 
 @end

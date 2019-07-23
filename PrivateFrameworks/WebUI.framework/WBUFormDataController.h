@@ -18,7 +18,6 @@
 @property (nonatomic) bool shouldAutoFillPasswords;
 @property (readonly) Class superclass;
 
-+ (bool)_isDevicePasscodeSet;
 + (id)_meCard;
 + (id)_stringForCNContactObject:(id)arg1 contactObjectComponent:(id)arg2;
 + (bool)contactIsMe:(id)arg1;
@@ -31,23 +30,19 @@
 - (id)_addressBookMatchesForFullNameForContact:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (id)_autoFillCorrectionManager;
-- (void)_autoFillPreferencesDidChange;
 - (id)_credentialForLoginForm:(id)arg1 inFrame:(id)arg2 completingPartialUser:(bool)arg3 matches:(id*)arg4 potentialMatches:(id*)arg5;
 - (id)_credentialMatchesEligibleForUpdateForURL:(id)arg1 username:(id)arg2 oldPassword:(id)arg3;
-- (void)_didFillFieldWithGeneratedPassword:(id)arg1 inFrame:(id)arg2 webView:(id)arg3;
 - (id)_displayDataWithTextField:(id)arg1 displayedInQuickType:(bool)arg2 prefix:(id)arg3;
 - (void)_processCorrectionsForFormWithDomain:(id)arg1 formMetadata:(id)arg2 uniqueIDsOfControlsThatWereAutoFilled:(id)arg3;
 - (id)_relatedCredentialMatchesToUpdateForUser:(id)arg1 protectionSpace:(id)arg2 oldCredential:(id*)arg3 matchesForCurrentHost:(id*)arg4 matchesForAssociatedDomains:(id*)arg5;
 - (id)_relatedCredentialMatchesToUpdateForUser:(id)arg1 protectionSpace:(id)arg2 oldCredential:(id*)arg3 matchesForCurrentHost:(id*)arg4 matchesForAssociatedDomains:(id*)arg5 haveExistingCredentialWithSameUsernameAndDifferentPassword:(bool*)arg6;
 - (void)_replaceCredentialsWithDontSaveMarkerForProtectionSpace:(id)arg1;
-- (void)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 andPromptToUpdateRelatedCredentialsWithWebView:(id)arg4;
 - (bool)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 formType:(unsigned long long)arg4 promptingPolicy:(long long)arg5 webView:(id)arg6 completionHandler:(id /* block */)arg7;
 - (bool)_shouldSaveCreditCardDataInWebView:(id)arg1 frame:(id)arg2;
 - (bool)_shouldSaveUsernamesAndPasswordsForURL:(id)arg1 inWebView:(id)arg2;
 - (bool)_shouldTryToSaveCredentialsFromLastForm:(id)arg1 currentFormMetadata:(id)arg2 frame:(id)arg3;
 - (void)_showCreditCardPromptForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_showPasswordPromptForWebView:(id)arg1 formType:(unsigned long long)arg2 username:(id)arg3 host:(id)arg4 hasCredentialForCurrentHost:(bool)arg5 existingCredentialMatchesForCurrentHost:(id)arg6 otherSubdomainCredentialMatches:(id)arg7 haveExistingCredentialWithSameUsernameAndDifferentPassword:(bool)arg8 completionHandler:(id /* block */)arg9;
-- (id)_syncManager;
 - (bool)_updateCredentialsWithGeneratedPasswordForForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (bool)_webView:(id)arg1 formSubmission:(bool)arg2 willSubmitNewAccountOrChangePasswordFormWithMetadata:(id)arg3 fromFrame:(id)arg4 submissionHandler:(id /* block */)arg5;
 - (bool)_webView:(id)arg1 saveCredentialsForURL:(id)arg2 formSubmission:(bool)arg3 formWithMetadata:(id)arg4 fromFrame:(id)arg5 username:(id)arg6 password:(id)arg7 submissionHandler:(id /* block */)arg8;
@@ -62,9 +57,9 @@
 - (bool)autoFillCorrectionManagerShouldProcessFeedback:(id)arg1;
 - (void)clearAllFormCredentials;
 - (id)completionDBPath;
-- (id)credentialForLoginForm:(id)arg1 inFrame:(id)arg2;
 - (id)credentialFromMatches:(id)arg1 completingPartialUserInLoginForm:(id)arg2;
 - (void)dealloc;
+- (void)didFillFieldWithGeneratedPassword:(id)arg1 inFrame:(id)arg2 webView:(id)arg3;
 - (void)didFillFormWithGeneratedPassword:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (id)feedbackProcessorForAutoFillCorrectionManager:(id)arg1;
 - (id)formAutoFillCorrectionManagerForFormFieldClassificationCorrector:(id)arg1;
@@ -81,6 +76,7 @@
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)saveCompletionDBSoon;
 - (void)saveUnsubmittedGeneratedPasswordInFrame:(id)arg1 form:(id)arg2 closingWebView:(bool)arg3;
+- (void)saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 andPromptToUpdateRelatedCredentialsWithWebView:(id)arg4;
 - (void)setShouldAutoFillFromAddressBook:(bool)arg1;
 - (void)setShouldAutoFillFromCreditCardData:(bool)arg1;
 - (void)setShouldAutoFillPasswords:(bool)arg1;

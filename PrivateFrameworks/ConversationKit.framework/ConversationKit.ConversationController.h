@@ -5,11 +5,12 @@
 @interface ConversationKit.ConversationController : NSObject <AVCRemoteVideoClientDelegate, TUAudioFrequencyControllerDelegate> {
     void audioCallbackQueue;
     void audioFrequencyController;
-    void audioRouteDidChanged;
+    void audioRouteDidChange;
     void availableParticipantColors;
     void broadcastingState;
     void call;
     void callCenter;
+    void carPlayConnectedDidChange;
     void conversationState;
     void conversationStateDidChange;
     void conversationUUID;
@@ -26,17 +27,18 @@
     void participantAudioPowerDidChange;
     void participantMediaProviderCreator;
     void participantsMediaPrioritiesDidChange;
+    void recentPresentationContexts;
     void remoteParticipants;
     void visibleParticipantDidBecomeActive;
 }
 
 @property (nonatomic, readonly) NSString *description;
 
-- (id /* block */).cxx_destruct;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)frequencyController:(id)arg1 audioPowerChanged:(float)arg2 forParticipantWithStreamToken:(unsigned long long)arg3;
 - (void)handleLocalVideoPreviewFirstFrameArrived:(id)arg1;
+- (void)handleScreenConnectionDidUpdate:(id)arg1;
 - (id)init;
 - (void)remoteVideoClient:(id)arg1 remoteVideoAttributesDidChange:(id)arg2;
 - (void)remoteVideoClient:(id)arg1 remoteVideoDidPause:(bool)arg2;

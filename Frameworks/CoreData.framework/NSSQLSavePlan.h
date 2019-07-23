@@ -5,10 +5,10 @@
 @interface NSSQLSavePlan : NSObject {
     struct __CFDictionary { } * _changeCache;
     struct __CFDictionary { } * _deletedFOKRowsInCurrentSave;
-    NSMutableSet * _externalDataReferencesToDelete;
+    NSMutableArray * _externalDataReferencesToDelete;
     NSMutableArray * _externalDataReferencesToSave;
-    NSMutableSet * _fileBackedFuturesToCopy;
-    NSMutableSet * _fileBackedFuturesToDelete;
+    NSMutableArray * _fileBackedFuturesToCopy;
+    NSMutableArray * _fileBackedFuturesToDelete;
     struct _sqlSaveFlags { 
         unsigned int notifyFOKChanges : 1; 
         unsigned int hasChanges : 1; 

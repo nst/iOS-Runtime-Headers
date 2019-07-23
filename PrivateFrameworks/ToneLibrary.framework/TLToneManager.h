@@ -7,6 +7,7 @@
     NSDictionary * _alertTonesByIdentifier;
     NSDictionary * _cachedTonePreferences;
     bool  _cachedWatchPrefersSalientNotifications;
+    <NSCopying> * _contentProtectionStateObserverToken;
     bool  _hasValidCachedWatchPrefersSalientNotifications;
     bool  _shouldIgnoreNextToneDidChangeNotification;
     bool  _shouldSkipNextWatchPrefersSalientNotificationsDidChangeNotification;
@@ -26,9 +27,9 @@
 
 // Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
 
-+ (bool)_checkForFileExistenceAtPath:(id)arg1 allowingTCCPreflight:(bool)arg2;
 + (id)_currentOverridePolicyPreferenceKeyForAlertType:(long long)arg1;
 + (id)_defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
++ (bool)_ensureTCCAccessPreflightAndCheckForFileExistenceAtPath:(id)arg1;
 + (bool)_migrateLegacyToneSettings;
 + (id)_systemWideTonePreferenceKeyForAlertType:(long long)arg1;
 + (id)sharedToneManager;
@@ -59,6 +60,7 @@
 - (id)_fileNameFromToneIdentifier:(id)arg1 withPrefix:(id)arg2;
 - (id)_filePathForToneIdentifier:(id)arg1 isValid:(bool*)arg2;
 - (void)_handleDeviceRingtonesChangedNotification;
+- (void)_handleProtectionContentUnlockedEvent;
 - (void)_handleTonePreferencesChangedNotificationForPreferencesKinds:(unsigned long long)arg1;
 - (void)_handleWatchPrefersSalientNotificationDidChange;
 - (id)_iTunesRingtoneDirectory;

@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)__imSIMIDForSubscriptionSlot:(long long)arg1;
 - (long long)__imSlotIDSForPhoneNumber:(id)arg1;
+- (id)__im_contactPreferredSubscriptionContextForChatHandleIDs:(id)arg1;
 - (bool)__im_containsPhoneNumber:(id)arg1;
 - (bool)__im_hasMultipleSubscriptions;
 - (id)__im_labelForPhoneNumber:(id)arg1 simID:(id)arg2;
@@ -26,6 +27,7 @@
 - (id)__im_subscriptionContextForForSlotID:(long long)arg1;
 - (id)__im_subscriptionContextForPhoneNumber:(id)arg1;
 - (id)__im_subscriptionContextForPhoneNumberOrDefault:(id)arg1;
+- (id)__im_subscriptionContextForSenderIdentity:(id)arg1;
 - (id)__im_subscriptionContextOrDefaultForForSimID:(id)arg1 phoneNumber:(id)arg2;
 - (id)__im_subscriptionContextOrDefaultForForSlotID:(long long)arg1;
 - (id)__im_subscriptionsWithMMSSupport;
@@ -33,6 +35,7 @@
 - (id)__im_switchSubscriptionContextFromSubscriptionContext:(id)arg1;
 - (void)_generatePhoneNumbersCache;
 - (void)_invalidatePhoneNumbersCache;
+- (id)_senderIdentityManager;
 - (id)allPhoneNumbers;
 - (id)allSubscriptions;
 - (id)description;

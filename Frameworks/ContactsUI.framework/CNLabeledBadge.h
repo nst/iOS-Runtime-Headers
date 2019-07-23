@@ -13,5 +13,6 @@
 - (void).cxx_destruct;
 - (id)label;
 - (void)setLabel:(id)arg1;
+- (void)setText:(id)arg1;
 
 @end

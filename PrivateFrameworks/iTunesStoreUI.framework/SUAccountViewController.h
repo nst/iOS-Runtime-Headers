@@ -3,6 +3,7 @@
  */
 
 @interface SUAccountViewController : SUStorePageViewController {
+    ACAccount * _account;
     NSURL * _accountURL;
     bool  _failed;
     SUMescalSession * _mescalSession;
@@ -13,6 +14,7 @@
 }
 
 @property (getter=_mescalSession, nonatomic, readonly) SUMescalSession *_mescalSession;
+@property (nonatomic, retain) ACAccount *account;
 @property (nonatomic) long long style;
 
 + (id)_latestAccountViewController;
@@ -26,6 +28,7 @@
 - (void)_mescalDidOpenWithSession:(id)arg1 error:(id)arg2;
 - (id)_mescalSession;
 - (bool)_shouldUseWebViewFastPath;
+- (id)account;
 - (id)copyArchivableContext;
 - (void)enqueueFetchOperation;
 - (void)handleFailureWithError:(id)arg1;
@@ -33,6 +36,7 @@
 - (id)initWithExternalAccountURL:(id)arg1;
 - (id)newFetchOperation;
 - (id)newViewControllerForPage:(id)arg1 ofType:(long long)arg2 returningError:(id*)arg3;
+- (void)setAccount:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (bool)shouldSignRequests;
 - (long long)style;

@@ -19,7 +19,7 @@
 @property (retain) NSMutableDictionary *statisticsCallbacks;
 
 - (void).cxx_destruct;
-- (void)_performCallbackForOperation:(id)arg1 callback:(id /* block */)arg2;
+- (void)_performCallbackForOperation:(id)arg1 callback:(id /* block */)arg2 errorCallback:(id /* block */)arg3;
 - (id)checkpointCallbacks;
 - (id)commandCallbacks;
 - (id)completionCallbacks;

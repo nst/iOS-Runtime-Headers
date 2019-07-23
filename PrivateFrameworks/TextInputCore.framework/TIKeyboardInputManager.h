@@ -20,6 +20,7 @@
     TIEmojiCandidateGenerator * _emojiCandidateGenerator;
     TIKeyboardCandidate * _hitTestCorrectedInputMatchingCandidate;
     bool  _isEditingWordPrefix;
+    NSNumber * _isTrackingSentenceCountForPFL;
     TIKeyboardLayout * _keyLayout;
     TIKeyboardFeatureSpecialization * _keyboardFeatureSpecialization;
     TIKeyboardState * _keyboardState;
@@ -65,6 +66,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) TIKeyboardCandidate *hitTestCorrectedInputMatchingCandidate;
 @property (nonatomic) bool isEditingWordPrefix;
+@property (nonatomic, retain) NSNumber *isTrackingSentenceCountForPFL;
 @property (nonatomic, retain) TIKeyboardLayout *keyLayout;
 @property (nonatomic, readonly) TIKeyboardFeatureSpecialization *keyboardFeatureSpecialization;
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
@@ -215,6 +217,7 @@
 - (bool)inHardwareKeyboardMode;
 - (void)incrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4 saveToDifferentialPrivacy:(int)arg5;
 - (void)incrementUsageTrackingKey:(id)arg1;
+- (void)incrementUsageTrackingKeyForAppWithIsSentence:(bool)arg1;
 - (void)incrementUsageTrackingKeyForAutocorrectionStatistic:(id)arg1 autocorrectionTypes:(unsigned int)arg2;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
 - (id)indexTitlesForGroupTitles:(id)arg1 sortingMethod:(id)arg2;
@@ -242,6 +245,7 @@
 - (bool)isEditingWordPrefix;
 - (bool)isHardwareKeyboardAutocorrectionEnabled;
 - (bool)isLinguisticResourceUpdateScheduled;
+- (id)isTrackingSentenceCountForPFL;
 - (bool)isTypologyEnabled;
 - (bool)isWordLearningEnabled;
 - (id)keyEventMap;
@@ -332,6 +336,7 @@
 - (void)setInputIndex:(unsigned int)arg1;
 - (void)setInputStringFromDocumentState:(id)arg1;
 - (void)setIsEditingWordPrefix:(bool)arg1;
+- (void)setIsTrackingSentenceCountForPFL:(id)arg1;
 - (void)setKeyLayout:(id)arg1;
 - (void)setKeyboardEventsLagging:(bool)arg1;
 - (void)setKeyboardState:(id)arg1;

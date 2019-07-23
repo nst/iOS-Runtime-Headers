@@ -14,6 +14,9 @@
     bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     NSString * _label;
+    NSArray * _resolvableAccessories;
+    id /* block */  _resolvableAccessoriesChangedHandler;
+    struct NSMutableDictionary { Class x1; } * _resolvableAccessoriesMap;
     HMAccessory * _selfAccessory;
     NSDictionary * _selfAccessoryAppData;
     id /* block */  _selfAccessoryAppDataChangedHandler;
@@ -48,6 +51,8 @@
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly, copy) NSArray *resolvableAccessories;
+@property (nonatomic, copy) id /* block */ resolvableAccessoriesChangedHandler;
 @property (nonatomic, readonly) HMAccessory *selfAccessory;
 @property (nonatomic, readonly, copy) NSDictionary *selfAccessoryAppData;
 @property (nonatomic, copy) id /* block */ selfAccessoryAppDataChangedHandler;
@@ -80,6 +85,7 @@
 - (void)_invalidated;
 - (bool)_isOwnerOfHome:(id)arg1;
 - (id)_selfAccessoryMediaSystemUncached:(id*)arg1;
+- (void)_updateAccessories;
 - (void)_updateHomes;
 - (void)_updateSelfAccessoryIfNeeded;
 - (void)_updateSelfAccessoryMediaAccess;
@@ -115,6 +121,8 @@
 - (id)label;
 - (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
 - (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
+- (id)resolvableAccessories;
+- (id /* block */)resolvableAccessoriesChangedHandler;
 - (id)selfAccessory;
 - (id)selfAccessoryAppData;
 - (id /* block */)selfAccessoryAppDataChangedHandler;
@@ -134,6 +142,7 @@
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setResolvableAccessoriesChangedHandler:(id /* block */)arg1;
 - (void)setSelfAccessoryAppDataChangedHandler:(id /* block */)arg1;
 - (void)setSelfAccessoryMediaAccessUpdatedHandler:(id /* block */)arg1;
 - (void)setSelfAccessoryMediaSystemName:(id)arg1;

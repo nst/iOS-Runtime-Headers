@@ -4,17 +4,21 @@
 
 @interface MRNowPlayingPlayerClientCallbacks : NSObject {
     MSVMultiCallback * _artworkCallbacks;
+    MSVMultiCallback * _artworkToken;
     id /* block */  _audioAmplitudeSamplesCallback;
     id /* block */  _beginLyricsEventCallback;
     NSMutableDictionary * _commandHandlerBlocks;
     MSVMultiCallback * _createChildItemCallbacks;
     MSVMultiCallback * _createItemForOffsetCallbacks;
+    MSVMultiCallback * _createItemToken;
     MSVMultiCallback * _createPlaybackQueueForRequestCallbacks;
     id /* block */  _endLyricsEventCallback;
     MSVMultiCallback * _infoCallbacks;
     MSVMultiCallback * _languageOptionsCallbacks;
+    MSVMultiCallback * _languageToken;
     MSVMultiCallback * _lyricsCallbacks;
     MSVMultiCallback * _metadataCallbacks;
+    MSVMultiCallback * _metadataToken;
     _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
     id /* block */  _videoThumbnailsCallback;
@@ -56,11 +60,10 @@
 - (id)lyricsCallbacks;
 - (id)metadataCallbacks;
 - (id)playerPath;
-- (void)registerCallbacks;
 - (void)registerNowPlayingInfoArtworkAssetCallback:(id)arg1;
 - (void)registerNowPlayingInfoAssetCallbacks:(id)arg1;
+- (void)registerNowPlayingInfoBackedPlaybackQueueDataSourceCallbacks;
 - (void)registerNowPlayingInfoCallbacks:(id)arg1;
-- (void)registerNowPlayingInfoLanguageOptionsCallback:(id)arg1;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (void)setAudioAmplitudeSamplesCallback:(id /* block */)arg1;
 - (void)setBeginLyricsEventCallback:(id /* block */)arg1;

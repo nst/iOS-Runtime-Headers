@@ -56,6 +56,7 @@
 - (void)sendOutgoingData:(id)arg1 forEndpointWithUUID:(id)arg2 connectionUUID:(id)arg3 withReply:(id /* block */)arg4;
 - (id)serverConnection;
 - (bool)setAccessoryInfo:(id)arg1 forEndpointWithUUID:(id)arg2;
+- (void)setConnectionAuthenticated:(id)arg1 state:(bool)arg2;
 - (void)setConnectionPropertyChangeHandlers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndpointDataOutHandlers:(id)arg1;

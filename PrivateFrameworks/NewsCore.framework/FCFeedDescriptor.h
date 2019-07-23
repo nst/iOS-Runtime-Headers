@@ -9,6 +9,7 @@
     NSArray * _otherArticleIDs;
 }
 
+@property (nonatomic, readonly) <FCChannelProviding> *backingChannel;
 @property (nonatomic, readonly) NSString *backingChannelID;
 @property (nonatomic, readonly) NSString *backingSectionID;
 @property (nonatomic, readonly) <FCTagProviding> *backingTag;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) long long feedPersonalizationConfigurationSet;
 @property (nonatomic, readonly) long long feedSortMethod;
 @property (nonatomic) long long feedType;
+@property (nonatomic, readonly) bool hasEditions;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool hideAccessoryText;
 @property (nonatomic, readonly) NSArray *iAdCategories;
@@ -39,6 +41,7 @@
 @property (nonatomic, readonly) <FCFeedTheming> *theme;
 
 - (void).cxx_destruct;
+- (id)backingChannel;
 - (id)backingChannelID;
 - (id)backingSectionID;
 - (id)backingTag;
@@ -48,7 +51,6 @@
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(bool)arg3 personalize:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (bool)derivesContentsFromExplicitSubscriptions;
 - (id)description;
-- (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (long long)feedFilterOptions;
 - (id)feedGroupEmittersWithConfiguration:(id)arg1;
 - (id)feedPaginator;
@@ -57,6 +59,7 @@
 - (long long)feedType;
 - (void)fetchHeadlinesWithContext:(id)arg1 forIdentifiers:(id)arg2 downloadAssets:(bool)arg3 qualityOfService:(long long)arg4 completion:(id /* block */)arg5;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
+- (bool)hasEditions;
 - (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
 - (unsigned long long)hash;
 - (bool)hideAccessoryText;
@@ -74,6 +77,7 @@
 - (bool)isMutedWithSubscriptionController:(id)arg1;
 - (bool)isSubscribable;
 - (bool)isSubscribedToWithSubscriptionController:(id)arg1;
+- (id)languagesWithSubscriptionController:(id)arg1;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
 - (id)name;
 - (id)offlineFeedGroupEmittersWithConfiguration:(id)arg1;

@@ -130,6 +130,7 @@
 @property (nonatomic) bool guidedAccessAllowsUnlockWithTouchID;
 @property (nonatomic, readonly) NSString *guidedAccessDefaultToneIdentifierForTimeRestrictionEvents;
 @property (nonatomic) bool guidedAccessDisallowDirectInactiveToActiveTransition;
+@property (nonatomic) bool guidedAccessOverrideIdleTime;
 @property (nonatomic, retain) NSNumber *guidedAccessOverrideTimeRestrictionDuration;
 @property (nonatomic) bool guidedAccessShouldSpeakForTimeRestrictionEvents;
 @property (nonatomic) long long guidedAccessTimeLimitsUsageCount;
@@ -186,6 +187,7 @@
 @property (nonatomic) float quickSpeakVolume;
 @property (nonatomic) long long quickSpeakWordHighlightColor;
 @property (nonatomic) bool quickTypeWordFeedbackEnabled;
+@property bool reduceMotionAutoplayVideoPreviewsEnabled;
 @property bool reduceMotionEnabled;
 @property bool reduceWhitePointEnabled;
 @property (nonatomic) float reduceWhitePointLevel;
@@ -540,6 +542,7 @@
 - (bool)guidedAccessAllowsUnlockWithTouchID;
 - (id)guidedAccessDefaultToneIdentifierForTimeRestrictionEvents;
 - (bool)guidedAccessDisallowDirectInactiveToActiveTransition;
+- (bool)guidedAccessOverrideIdleTime;
 - (id)guidedAccessOverrideTimeRestrictionDuration;
 - (bool)guidedAccessShouldSpeakForTimeRestrictionEvents;
 - (long long)guidedAccessTimeLimitsUsageCount;
@@ -602,6 +605,7 @@
 - (float)quickSpeakVolume;
 - (long long)quickSpeakWordHighlightColor;
 - (bool)quickTypeWordFeedbackEnabled;
+- (bool)reduceMotionAutoplayVideoPreviewsEnabled;
 - (bool)reduceMotionEnabled;
 - (bool)reduceWhitePointEnabled;
 - (float)reduceWhitePointLevel;
@@ -713,6 +717,7 @@
 - (void)setGuidedAccessAXFeaturesEnabled:(bool)arg1;
 - (void)setGuidedAccessAllowsUnlockWithTouchID:(bool)arg1;
 - (void)setGuidedAccessDisallowDirectInactiveToActiveTransition:(bool)arg1;
+- (void)setGuidedAccessOverrideIdleTime:(bool)arg1;
 - (void)setGuidedAccessOverrideTimeRestrictionDuration:(id)arg1;
 - (void)setGuidedAccessShouldSpeakForTimeRestrictionEvents:(bool)arg1;
 - (void)setGuidedAccessTimeLimitsUsageCount:(long long)arg1;
@@ -769,6 +774,7 @@
 - (void)setQuickSpeakVolume:(float)arg1;
 - (void)setQuickSpeakWordHighlightColor:(long long)arg1;
 - (void)setQuickTypeWordFeedbackEnabled:(bool)arg1;
+- (void)setReduceMotionAutoplayVideoPreviewsEnabled:(bool)arg1;
 - (void)setReduceMotionEnabled:(bool)arg1;
 - (void)setReduceWhitePointEnabled:(bool)arg1;
 - (void)setReduceWhitePointLevel:(float)arg1;

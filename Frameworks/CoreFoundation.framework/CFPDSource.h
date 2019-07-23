@@ -10,6 +10,7 @@
     bool  _dirty;
     bool  _disableBackup;
     struct __CFString { } * _domain;
+    int  _fileProtectionClass;
     short  _generationShmemIndex;
     bool  _handlingRequest;
     NSObject<OS_dispatch_group> * _inProgressWriteGroup;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIObjectViewControllerDelegate, NSUserActivityDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
+@interface CNContactContentViewController : UIViewController <ABContactViewDataSource, ABContactViewDelegate, CNContactActionDelegate, CNContactContentViewController, CNContactContentViewControllerDelegate, CNContactGroupPickerDelegate, CNContactHeaderViewDelegate, CNContactInlineActionsViewControllerDelegate_Internal, CNPresenterDelegate, CNPropertyActionDelegate, CNPropertyCellDelegate, CNPropertyGroupItemDelegate, CNShareLocationProtocol, CNUIGeminiDataSourceDelegate, CNUIObjectViewControllerDelegate, NSUserActivityDelegate, UIAdaptivePresentationControllerDelegate, UIPopoverControllerDelegate, UIViewControllerRestoration> {
     CNUIUserActionListDataSource * _actionsDataSource;
     CNContactInlineActionsViewController * _actionsViewController;
     UIView * _actionsWrapperView;
@@ -20,9 +20,10 @@
     bool  _allowsConferencing;
     bool  _allowsContactBlocking;
     bool  _allowsDeletion;
+    bool  _allowsDisplayModePickerActions;
     bool  _allowsEditInApp;
+    bool  _allowsEditPhoto;
     bool  _allowsEditing;
-    bool  _allowsPickerActions;
     bool  _allowsPropertyActions;
     bool  _allowsSendMessage;
     bool  _allowsSettingLinkedContactsAsPreferred;
@@ -38,6 +39,7 @@
     CNCardGroup * _cardBottomGroup;
     CNCardGroup * _cardEditingActionsGroup;
     CNCardGroup * _cardEditingDeleteContactGroup;
+    CNCardPropertyGeminiGroup * _cardEditingGeminiGroup;
     CNCardFaceTimeGroup * _cardFaceTimeGroup;
     CNCardGroup * _cardFooterGroup;
     CNCardLinkedCardsGroup * _cardLinkedCardsGroup;
@@ -76,6 +78,7 @@
     <CNCancelable> * _faceTimeIDSLookupToken;
     CNMutableContact * _fakeEditableContact;
     UIView * _footerOverflowView;
+    CNUIGeminiDataSource * _geminiDataSource;
     NSMutableDictionary * _groupsAfterGroup;
     UIView * _headerDropShadowView;
     NSLayoutConstraint * _headerHeightConstraint;
@@ -148,9 +151,10 @@
 @property (nonatomic) bool allowsConferencing;
 @property (nonatomic) bool allowsContactBlocking;
 @property (nonatomic) bool allowsDeletion;
+@property (nonatomic) bool allowsDisplayModePickerActions;
 @property (nonatomic) bool allowsEditInApp;
+@property (nonatomic) bool allowsEditPhoto;
 @property (nonatomic) bool allowsEditing;
-@property (nonatomic) bool allowsPickerActions;
 @property (nonatomic) bool allowsPropertyActions;
 @property (nonatomic) bool allowsSendMessage;
 @property (nonatomic) bool allowsSettingLinkedContactsAsPreferred;
@@ -166,6 +170,7 @@
 @property (nonatomic, retain) CNCardGroup *cardBottomGroup;
 @property (nonatomic, retain) CNCardGroup *cardEditingActionsGroup;
 @property (nonatomic, retain) CNCardGroup *cardEditingDeleteContactGroup;
+@property (nonatomic, retain) CNCardPropertyGeminiGroup *cardEditingGeminiGroup;
 @property (nonatomic, retain) CNCardFaceTimeGroup *cardFaceTimeGroup;
 @property (nonatomic, readonly) CNCardGroup *cardFooterGroup;
 @property (nonatomic, retain) CNCardLinkedCardsGroup *cardLinkedCardsGroup;
@@ -206,6 +211,7 @@
 @property (nonatomic, retain) <CNCancelable> *faceTimeIDSLookupToken;
 @property (nonatomic, retain) CNMutableContact *fakeEditableContact;
 @property (nonatomic, retain) UIView *footerOverflowView;
+@property (nonatomic, readonly) CNUIGeminiDataSource *geminiDataSource;
 @property (nonatomic, retain) NSMutableDictionary *groupsAfterGroup;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *headerDropShadowView;
@@ -301,7 +307,9 @@
 - (id)_policyForContact:(id)arg1 mode:(long long)arg2;
 - (id)_propertyGroupsForKeys:(id)arg1;
 - (void)_refetchContact;
+- (void)_reloadAlertGroups;
 - (void)_reloadFaceTimeGroup;
+- (void)_reloadGeminiGroupPreservingChanges:(bool)arg1;
 - (void)_reloadLinkedCardsGroup;
 - (void)_reloadMedicalIDGroup;
 - (void)_reloadPropertyGroupsPreservingChanges:(bool)arg1;
@@ -370,9 +378,10 @@
 - (bool)allowsConferencing;
 - (bool)allowsContactBlocking;
 - (bool)allowsDeletion;
+- (bool)allowsDisplayModePickerActions;
 - (bool)allowsEditInApp;
+- (bool)allowsEditPhoto;
 - (bool)allowsEditing;
-- (bool)allowsPickerActions;
 - (bool)allowsPropertyActions;
 - (bool)allowsSendMessage;
 - (bool)allowsSettingLinkedContactsAsPreferred;
@@ -392,6 +401,7 @@
 - (id)cardBottomGroup;
 - (id)cardEditingActionsGroup;
 - (id)cardEditingDeleteContactGroup;
+- (id)cardEditingGeminiGroup;
 - (id)cardFaceTimeGroup;
 - (id)cardFooterGroup;
 - (id)cardGroupForProperty:(id)arg1;
@@ -456,6 +466,8 @@
 - (id)faceTimeIDSLookupToken;
 - (id)fakeEditableContact;
 - (id)footerOverflowView;
+- (id)geminiDataSource;
+- (void)geminiDataSourceDidUpdate:(id)arg1;
 - (double)globalHeaderHeightForContentOffset:(double)arg1 contentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (Class)groupClassForProperty:(id)arg1;
 - (unsigned long long)groupIndexFromTableViewSectionIndex:(unsigned long long)arg1;
@@ -465,6 +477,7 @@
 - (id)headerHeightConstraint;
 - (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerPhotoDidUpdate;
+- (void)headerViewDidPickPreferredChannel:(id)arg1;
 - (void)headerViewDidUpdateLabelSizes;
 - (id)healthStore;
 - (bool)hideCardActions;
@@ -475,13 +488,14 @@
 - (id)ignoreContactAction;
 - (long long)indexOfGroup:(id)arg1;
 - (id)indexPathOfDisplayedPropertyItem:(id)arg1;
+- (id)indexPathOfEditingPropertyItem:(id)arg1;
+- (id)indexPathOfPropertyItem:(id)arg1 editing:(bool)arg2;
 - (id)initWithContact:(id)arg1;
 - (id)initWithEnvironment:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)initializeTableViewsForHeaderHeight;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForDisplayTableView:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetsForEditingTableView:(id)arg1;
-- (bool)isGeminiAvailable;
 - (bool)isMailVIP;
 - (bool)isOutOfProcess;
 - (bool)isPresentingModalViewController;
@@ -535,6 +549,7 @@
 - (void)removeEditingItem:(id)arg1 atIndexPath:(id)arg2;
 - (void)removeFirstSectionHeaderViewControllerFromHierarchy;
 - (void)removeLinkedContact:(id)arg1;
+- (void)requestFavoritesUpdateWithGemini;
 - (struct CGSize { double x1; double x2; })requiredSizeForVisibleTableView;
 - (bool)runningPPT;
 - (bool)saveChanges;
@@ -566,9 +581,10 @@
 - (void)setAllowsConferencing:(bool)arg1;
 - (void)setAllowsContactBlocking:(bool)arg1;
 - (void)setAllowsDeletion:(bool)arg1;
+- (void)setAllowsDisplayModePickerActions:(bool)arg1;
 - (void)setAllowsEditInApp:(bool)arg1;
+- (void)setAllowsEditPhoto:(bool)arg1;
 - (void)setAllowsEditing:(bool)arg1;
-- (void)setAllowsPickerActions:(bool)arg1;
 - (void)setAllowsPropertyActions:(bool)arg1;
 - (void)setAllowsSendMessage:(bool)arg1;
 - (void)setAllowsSettingLinkedContactsAsPreferred:(bool)arg1;
@@ -584,6 +600,7 @@
 - (void)setCardBottomGroup:(id)arg1;
 - (void)setCardEditingActionsGroup:(id)arg1;
 - (void)setCardEditingDeleteContactGroup:(id)arg1;
+- (void)setCardEditingGeminiGroup:(id)arg1;
 - (void)setCardFaceTimeGroup:(id)arg1;
 - (void)setCardLinkedCardsGroup:(id)arg1;
 - (void)setCardMedicalIDGroup:(id)arg1;
@@ -680,6 +697,7 @@
 - (bool)shouldReallyShowLinkedContactsForEditingState:(bool)arg1;
 - (bool)shouldShowActionsForAvatarView:(id)arg1;
 - (bool)shouldShowFooterOverflowViewForEditingState:(bool)arg1;
+- (bool)shouldShowGemini;
 - (bool)shouldShowLinkedContacts;
 - (bool)showingMeContact;
 - (id)siriContextProvider;
@@ -735,5 +753,6 @@
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

@@ -9,6 +9,7 @@
 @property (getter=_localeIdentifier, setter=_setLocaleIdentifier:, nonatomic, copy) NSString *_localeIdentifier;
 @property (nonatomic, readonly) NSArray *contentLengths;
 @property (nonatomic, readonly) NSString *contentVersion;
+@property (nonatomic, readonly) NSArray *discounts;
 @property (nonatomic, readonly) NSArray *downloadContentLengths;
 @property (nonatomic, readonly) NSString *downloadContentVersion;
 @property (getter=isDownloadable, nonatomic, readonly) bool downloadable;
@@ -27,6 +28,7 @@
 - (void).cxx_destruct;
 - (id)_localeIdentifier;
 - (void)_setContentVersion:(id)arg1;
+- (void)_setDiscounts:(id)arg1;
 - (void)_setDownloadContentLengths:(id)arg1;
 - (void)_setDownloadable:(bool)arg1;
 - (void)_setIntroductoryPrice:(id)arg1;
@@ -42,6 +44,7 @@
 - (id)contentLengths;
 - (id)contentVersion;
 - (id)copyXPCEncoding;
+- (id)discounts;
 - (id)downloadContentLengths;
 - (id)downloadContentVersion;
 - (bool)downloadable;

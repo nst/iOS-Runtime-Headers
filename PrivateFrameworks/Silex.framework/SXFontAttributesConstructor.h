@@ -2,17 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFontAttributesConstructor : NSObject {
-    SXDocumentController * _documentController;
+@interface SXFontAttributesConstructor : NSObject <SXFontAttributesConstructor> {
+    <SXFontIndex> * _fontIndex;
 }
 
-@property (nonatomic, readonly) SXDocumentController *documentController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXFontIndex> *fontIndex;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)documentController;
 - (id)fontAttributesForFontDescriptions:(id)arg1;
+- (id)fontIndex;
 - (id)fontNameForAttributes:(id)arg1;
-- (id)initWithDocumentController:(id)arg1;
+- (id)initWithFontIndex:(id)arg1;
 - (long long)weightByApplyingWeightLabels:(id)arg1 toWeight:(long long)arg2;
 
 @end

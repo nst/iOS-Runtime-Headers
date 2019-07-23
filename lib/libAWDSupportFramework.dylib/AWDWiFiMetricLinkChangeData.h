@@ -4,6 +4,7 @@
 
 @interface AWDWiFiMetricLinkChangeData : PBCodable <NSCopying> {
     unsigned int  _akmSuites;
+    double  _associationDuration;
     struct { 
         int *list; 
         unsigned long long count; 
@@ -17,6 +18,7 @@
     unsigned int  _capabilities;
     unsigned int  _channel;
     unsigned int  _channelWidth;
+    NSString * _countryCode;
     unsigned int  _flags;
     struct { 
         int *list; 
@@ -30,6 +32,7 @@
     }  _fwTxPerHistorys;
     unsigned int  _gatewayARPHistory;
     struct { 
+        unsigned int associationDuration : 1; 
         unsigned int timestamp : 1; 
         unsigned int akmSuites : 1; 
         unsigned int capabilities : 1; 
@@ -61,6 +64,7 @@
     unsigned int  _htTxBf;
     bool  _isInVol;
     bool  _isLinkUp;
+    NSString * _locale;
     unsigned int  _mcastCipher;
     NSData * _oui;
     unsigned int  _phyMode;
@@ -87,9 +91,19 @@
     unsigned int  _vhtInfo;
     NSData * _vhtSupportedMcsSet;
     unsigned int  _wpaProtocol;
+    NSString * _wpsConfigMethods;
+    NSString * _wpsDeviceNameData;
+    NSString * _wpsDeviceNameElement;
+    NSString * _wpsManufacturerElement;
+    NSString * _wpsModelName;
+    NSString * _wpsModelNumber;
+    NSString * _wpsPrimaryDeviceTypeCategory;
+    NSString * _wpsPrimaryDeviceTypeSubCategory;
+    NSString * _wpsResponseType;
 }
 
 @property (nonatomic) unsigned int akmSuites;
+@property (nonatomic) double associationDuration;
 @property (nonatomic, readonly) int*bcnFrmsHistorys;
 @property (nonatomic, readonly) unsigned long long bcnFrmsHistorysCount;
 @property (nonatomic, readonly) int*bcnPerHistorys;
@@ -97,6 +111,7 @@
 @property (nonatomic) unsigned int capabilities;
 @property (nonatomic) unsigned int channel;
 @property (nonatomic) unsigned int channelWidth;
+@property (nonatomic, retain) NSString *countryCode;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, readonly) int*fwTxFrmsHistorys;
 @property (nonatomic, readonly) unsigned long long fwTxFrmsHistorysCount;
@@ -104,9 +119,11 @@
 @property (nonatomic, readonly) unsigned long long fwTxPerHistorysCount;
 @property (nonatomic) unsigned int gatewayARPHistory;
 @property (nonatomic) bool hasAkmSuites;
+@property (nonatomic) bool hasAssociationDuration;
 @property (nonatomic) bool hasCapabilities;
 @property (nonatomic) bool hasChannel;
 @property (nonatomic) bool hasChannelWidth;
+@property (nonatomic, readonly) bool hasCountryCode;
 @property (nonatomic) bool hasFlags;
 @property (nonatomic) bool hasGatewayARPHistory;
 @property (nonatomic) bool hasHtASel;
@@ -117,6 +134,7 @@
 @property (nonatomic) bool hasHtTxBf;
 @property (nonatomic) bool hasIsInVol;
 @property (nonatomic) bool hasIsLinkUp;
+@property (nonatomic, readonly) bool hasLocale;
 @property (nonatomic) bool hasMcastCipher;
 @property (nonatomic, readonly) bool hasOui;
 @property (nonatomic) bool hasPhyMode;
@@ -128,6 +146,15 @@
 @property (nonatomic) bool hasVhtInfo;
 @property (nonatomic, readonly) bool hasVhtSupportedMcsSet;
 @property (nonatomic) bool hasWpaProtocol;
+@property (nonatomic, readonly) bool hasWpsConfigMethods;
+@property (nonatomic, readonly) bool hasWpsDeviceNameData;
+@property (nonatomic, readonly) bool hasWpsDeviceNameElement;
+@property (nonatomic, readonly) bool hasWpsManufacturerElement;
+@property (nonatomic, readonly) bool hasWpsModelName;
+@property (nonatomic, readonly) bool hasWpsModelNumber;
+@property (nonatomic, readonly) bool hasWpsPrimaryDeviceTypeCategory;
+@property (nonatomic, readonly) bool hasWpsPrimaryDeviceTypeSubCategory;
+@property (nonatomic, readonly) bool hasWpsResponseType;
 @property (nonatomic) unsigned int htASel;
 @property (nonatomic) unsigned int htAmpduParams;
 @property (nonatomic) unsigned int htExtended;
@@ -136,6 +163,7 @@
 @property (nonatomic) unsigned int htTxBf;
 @property (nonatomic) bool isInVol;
 @property (nonatomic) bool isLinkUp;
+@property (nonatomic, retain) NSString *locale;
 @property (nonatomic) unsigned int mcastCipher;
 @property (nonatomic, retain) NSData *oui;
 @property (nonatomic) unsigned int phyMode;
@@ -153,6 +181,15 @@
 @property (nonatomic) unsigned int vhtInfo;
 @property (nonatomic, retain) NSData *vhtSupportedMcsSet;
 @property (nonatomic) unsigned int wpaProtocol;
+@property (nonatomic, retain) NSString *wpsConfigMethods;
+@property (nonatomic, retain) NSString *wpsDeviceNameData;
+@property (nonatomic, retain) NSString *wpsDeviceNameElement;
+@property (nonatomic, retain) NSString *wpsManufacturerElement;
+@property (nonatomic, retain) NSString *wpsModelName;
+@property (nonatomic, retain) NSString *wpsModelNumber;
+@property (nonatomic, retain) NSString *wpsPrimaryDeviceTypeCategory;
+@property (nonatomic, retain) NSString *wpsPrimaryDeviceTypeSubCategory;
+@property (nonatomic, retain) NSString *wpsResponseType;
 
 - (void)addBcnFrmsHistory:(int)arg1;
 - (void)addBcnPerHistory:(int)arg1;
@@ -162,6 +199,7 @@
 - (void)addTxFrmsHistory:(int)arg1;
 - (void)addTxPerHistory:(int)arg1;
 - (unsigned int)akmSuites;
+- (double)associationDuration;
 - (int)bcnFrmsHistoryAtIndex:(unsigned long long)arg1;
 - (int*)bcnFrmsHistorys;
 - (unsigned long long)bcnFrmsHistorysCount;
@@ -180,6 +218,7 @@
 - (void)clearTxPerHistorys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)countryCode;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -192,9 +231,11 @@
 - (unsigned long long)fwTxPerHistorysCount;
 - (unsigned int)gatewayARPHistory;
 - (bool)hasAkmSuites;
+- (bool)hasAssociationDuration;
 - (bool)hasCapabilities;
 - (bool)hasChannel;
 - (bool)hasChannelWidth;
+- (bool)hasCountryCode;
 - (bool)hasFlags;
 - (bool)hasGatewayARPHistory;
 - (bool)hasHtASel;
@@ -205,6 +246,7 @@
 - (bool)hasHtTxBf;
 - (bool)hasIsInVol;
 - (bool)hasIsLinkUp;
+- (bool)hasLocale;
 - (bool)hasMcastCipher;
 - (bool)hasOui;
 - (bool)hasPhyMode;
@@ -216,6 +258,15 @@
 - (bool)hasVhtInfo;
 - (bool)hasVhtSupportedMcsSet;
 - (bool)hasWpaProtocol;
+- (bool)hasWpsConfigMethods;
+- (bool)hasWpsDeviceNameData;
+- (bool)hasWpsDeviceNameElement;
+- (bool)hasWpsManufacturerElement;
+- (bool)hasWpsModelName;
+- (bool)hasWpsModelNumber;
+- (bool)hasWpsPrimaryDeviceTypeCategory;
+- (bool)hasWpsPrimaryDeviceTypeSubCategory;
+- (bool)hasWpsResponseType;
 - (unsigned long long)hash;
 - (unsigned int)htASel;
 - (unsigned int)htAmpduParams;
@@ -226,6 +277,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isInVol;
 - (bool)isLinkUp;
+- (id)locale;
 - (unsigned int)mcastCipher;
 - (void)mergeFrom:(id)arg1;
 - (id)oui;
@@ -237,16 +289,19 @@
 - (unsigned long long)rssiHistorysCount;
 - (unsigned int)securityType;
 - (void)setAkmSuites:(unsigned int)arg1;
+- (void)setAssociationDuration:(double)arg1;
 - (void)setBcnFrmsHistorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setBcnPerHistorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setCapabilities:(unsigned int)arg1;
 - (void)setChannel:(unsigned int)arg1;
 - (void)setChannelWidth:(unsigned int)arg1;
+- (void)setCountryCode:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setFwTxFrmsHistorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setFwTxPerHistorys:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setGatewayARPHistory:(unsigned int)arg1;
 - (void)setHasAkmSuites:(bool)arg1;
+- (void)setHasAssociationDuration:(bool)arg1;
 - (void)setHasCapabilities:(bool)arg1;
 - (void)setHasChannel:(bool)arg1;
 - (void)setHasChannelWidth:(bool)arg1;
@@ -276,6 +331,7 @@
 - (void)setHtTxBf:(unsigned int)arg1;
 - (void)setIsInVol:(bool)arg1;
 - (void)setIsLinkUp:(bool)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setMcastCipher:(unsigned int)arg1;
 - (void)setOui:(id)arg1;
 - (void)setPhyMode:(unsigned int)arg1;
@@ -290,6 +346,15 @@
 - (void)setVhtInfo:(unsigned int)arg1;
 - (void)setVhtSupportedMcsSet:(id)arg1;
 - (void)setWpaProtocol:(unsigned int)arg1;
+- (void)setWpsConfigMethods:(id)arg1;
+- (void)setWpsDeviceNameData:(id)arg1;
+- (void)setWpsDeviceNameElement:(id)arg1;
+- (void)setWpsManufacturerElement:(id)arg1;
+- (void)setWpsModelName:(id)arg1;
+- (void)setWpsModelNumber:(id)arg1;
+- (void)setWpsPrimaryDeviceTypeCategory:(id)arg1;
+- (void)setWpsPrimaryDeviceTypeSubCategory:(id)arg1;
+- (void)setWpsResponseType:(id)arg1;
 - (unsigned int)subreason;
 - (unsigned long long)timestamp;
 - (int)txFrmsHistoryAtIndex:(unsigned long long)arg1;
@@ -302,6 +367,15 @@
 - (unsigned int)vhtInfo;
 - (id)vhtSupportedMcsSet;
 - (unsigned int)wpaProtocol;
+- (id)wpsConfigMethods;
+- (id)wpsDeviceNameData;
+- (id)wpsDeviceNameElement;
+- (id)wpsManufacturerElement;
+- (id)wpsModelName;
+- (id)wpsModelNumber;
+- (id)wpsPrimaryDeviceTypeCategory;
+- (id)wpsPrimaryDeviceTypeSubCategory;
+- (id)wpsResponseType;
 - (void)writeTo:(id)arg1;
 
 @end

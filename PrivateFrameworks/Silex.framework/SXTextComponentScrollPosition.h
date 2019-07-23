@@ -10,6 +10,8 @@
 @property (nonatomic) long long characterIndex;
 @property (nonatomic) double relativeTextOffset;
 
++ (bool)supportsSecureCoding;
+
 - (long long)characterIndex;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

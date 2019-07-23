@@ -4,9 +4,7 @@
 
 @interface PKPassHeaderView : UIView {
     <PKPassHeaderViewDelegate> * _delegate;
-    bool  _largeStyle;
     UIImageView * _maskShadow;
-    UILabel * _modificationDate;
     PKPass * _pass;
     <PKPassLibraryDataProvider> * _passLibraryOverride;
     UIView * _passMaskView;
@@ -14,40 +12,42 @@
     PKPeerPaymentAccount * _peerPaymentAccount;
     UIColor * _primaryTextColor;
     PKRemoteDataAccessor * _remoteDataAccessor;
+    PKPassFaceViewRendererState * _rendererState;
     UIColor * _secondaryTextColor;
     bool  _showModificationDate;
+    bool  _small;
+    UILabel * _subtitle;
     unsigned long long  _suppressedContent;
     UILabel * _title;
-    PKTransitPassProperties * _transitProperties;
-    UILabel * _type;
-    UILabel * _value;
-    bool  _valueLabelsShouldStack;
-    UILabel * _valueTitle;
+    PKTransitBalanceModel * _transitBalanceModel;
+    double  passImageHeight;
 }
 
 @property (nonatomic) <PKPassHeaderViewDelegate> *delegate;
-@property (getter=isLargeStyle, nonatomic) bool largeStyle;
 @property (nonatomic, readonly) PKPass *pass;
 @property (nonatomic, retain) <PKPassLibraryDataProvider> *passLibraryOverride;
 @property (nonatomic, readonly) PKPassView *passView;
 @property (nonatomic, retain) PKPeerPaymentAccount *peerPaymentAccount;
 @property (nonatomic, retain) UIColor *primaryTextColor;
+@property (nonatomic, retain) PKPassFaceViewRendererState *rendererState;
 @property (nonatomic, retain) UIColor *secondaryTextColor;
 @property (nonatomic) bool showModificationDate;
+@property (getter=isSmall, nonatomic) bool small;
 @property (nonatomic) unsigned long long suppressedContent;
-@property (nonatomic, retain) PKTransitPassProperties *transitProperties;
-@property (nonatomic) bool valueLabelsShouldStack;
+@property (nonatomic, retain) PKTransitBalanceModel *transitBalanceModel;
 
 - (void).cxx_destruct;
 - (void)_passLibraryDidChange:(id)arg1;
 - (id)_primaryTextColor;
+- (void)_resetFonts;
 - (id)_secondaryTextColor;
 - (void)_updateContent;
 - (void)_updateTextContent;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithPass:(id)arg1;
-- (bool)isLargeStyle;
+- (id)initWithPass:(id)arg1 rendererState:(id)arg2;
+- (bool)isSmall;
 - (void)layoutSubviews;
 - (id)pass;
 - (id)passLibraryOverride;
@@ -56,24 +56,24 @@
 - (struct CGSize { double x1; double x2; })passViewSizeForHeight:(double)arg1;
 - (id)peerPaymentAccount;
 - (id)primaryTextColor;
+- (id)rendererState;
 - (id)secondaryTextColor;
 - (void)setDelegate:(id)arg1;
-- (void)setLargeStyle:(bool)arg1;
 - (void)setPassLibraryOverride:(id)arg1;
 - (void)setPeerPaymentAccount:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
+- (void)setRendererState:(id)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
 - (void)setShowModificationDate:(bool)arg1;
+- (void)setSmall:(bool)arg1;
 - (void)setSuppressedContent:(unsigned long long)arg1;
-- (void)setTransitProperties:(id)arg1;
-- (void)setValueLabelsShouldStack:(bool)arg1;
+- (void)setTransitBalanceModel:(id)arg1;
 - (bool)showModificationDate;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned long long)suppressedContent;
-- (bool)titleAndValueLabelCouldOverlapAtHeaderViewSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)transitProperties;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)transitBalanceModel;
 - (void)updateModifiedDate;
 - (void)updateShadow:(double)arg1;
-- (bool)valueLabelsShouldStack;
 
 @end

@@ -61,6 +61,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, copy) NSString *type;
+@property (nonatomic, retain) SFUserReportRequest *userReportRequest;
 @property (nonatomic, retain) SFImage *verifiedGlyph;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation

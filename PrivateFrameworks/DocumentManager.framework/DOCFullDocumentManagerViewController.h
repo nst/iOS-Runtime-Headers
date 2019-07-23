@@ -154,6 +154,7 @@
 - (void)setAdditionalLeadingNavigationBarButtonItems:(id)arg1;
 - (void)setAdditionalToolbarButtonItems:(id)arg1;
 - (void)setAdditionalTrailingNavigationBarButtonItems:(id)arg1;
+- (void)setAllowsDocumentCreation:(bool)arg1;
 - (void)setAllowsPickingMultipleItems:(bool)arg1;
 - (void)setCurrentBrowserViewController:(id)arg1;
 - (void)setCustomActions:(id)arg1;

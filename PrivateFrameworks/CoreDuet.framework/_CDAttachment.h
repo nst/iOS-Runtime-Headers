@@ -4,6 +4,8 @@
 
 @interface _CDAttachment : NSObject <NSCopying, NSSecureCoding> {
     NSUUID * _cloudIdentifier;
+    NSString * _contentText;
+    NSURL * _contentURL;
     NSDate * _creationDate;
     NSUUID * _identifier;
     NSNumber * _size;
@@ -11,16 +13,21 @@
 }
 
 @property (retain) NSUUID *cloudIdentifier;
+@property (retain) NSString *contentText;
+@property (retain) NSURL *contentURL;
 @property (retain) NSDate *creationDate;
 @property (retain) NSUUID *identifier;
 @property (retain) NSNumber *size;
 @property (retain) NSString *uti;
 
 + (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5;
++ (id)attachmentWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cloudIdentifier;
+- (id)contentText;
+- (id)contentURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (id)description;
@@ -28,9 +35,11 @@
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 - (bool)isEqual:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
+- (void)setContentText:(id)arg1;
+- (void)setContentURL:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setSize:(id)arg1;

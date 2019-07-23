@@ -49,6 +49,8 @@
 @property (nonatomic, readonly) double timeoutIntervalForResource;
 @property (nonatomic) bool wantsRequestStatistics;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -99,5 +101,9 @@
 - (double)timeoutIntervalForRequest;
 - (double)timeoutIntervalForResource;
 - (bool)wantsRequestStatistics;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (bool)validateAgainstLiveProxy:(id)arg1 error:(id*)arg2;
 
 @end

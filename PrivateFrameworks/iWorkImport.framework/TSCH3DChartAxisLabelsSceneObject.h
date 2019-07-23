@@ -11,7 +11,7 @@
 @property (retain) <TSCH3DAxisLabelPositioner> *valueLabelPositioner;
 
 + (void)cacheValueAxisLabelAlignmentForScene:(id)arg1;
-+ (struct TSCH3DScenePart { id x1; })partWithEnumerator:(id)arg1 chartInfo:(id)arg2 styleIndex:(unsigned long long)arg3;
++ (id)partWithEnumerator:(id)arg1 chartInfo:(id)arg2 styleIndex:(unsigned long long)arg3;
 + (void)setSelectionPath:(id)arg1 selectionMode:(int)arg2 forScene:(id)arg3;
 + (unsigned int)valueAxisLabelAlignmentForScene:(id)arg1;
 
@@ -24,13 +24,13 @@
 - (id)effects;
 - (int)knobsModeForLabelType:(int)arg1 scene:(id)arg2;
 - (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })labelPositionDirectionForScene:(id)arg1 enumerator:(id)arg2;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_categoryLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_categoryLabelsOffsetFromAccessor:(id)arg1;
 - (long long)p_categoryStride:(id)arg1;
 - (void)p_renderCategoryLabels:(id)arg1;
-- (void)p_renderLabels:(id)arg1 labelType:(int)arg2 part:(struct TSCH3DScenePart { id x1; })arg3 positioner:(id)arg4 offset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg5 offset2DBlock:(id /* block */)arg6 strideBlock:(id /* block */)arg7 skipFirst:(bool)arg8 showLast:(bool)arg9;
+- (void)p_renderLabels:(id)arg1 labelType:(int)arg2 part:(id)arg3 positioner:(id)arg4 offset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg5 offset2DBlock:(id /* block */)arg6 strideBlock:(id /* block */)arg7 skipFirst:(bool)arg8 showLast:(bool)arg9;
 - (void)p_renderValueLabels:(id)arg1;
-- (void)p_setOffset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 forLabelType:(int)arg2 pipeline:(id)arg3 part:(struct TSCH3DScenePart { id x1; })arg4 positioner:(id)arg5;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_valueLabelsOffsetFromAccessor:(const struct ChartScenePropertyAccessor { id x1; }*)arg1;
+- (void)p_setOffset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 forLabelType:(int)arg2 pipeline:(id)arg3 part:(id)arg4 positioner:(id)arg5;
+- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })p_valueLabelsOffsetFromAccessor:(id)arg1;
 - (void)postRenderBounds:(id)arg1;
 - (void)renderAnnotatedLabels:(id)arg1;
 - (id)renderInfoForSelectionPath:(id)arg1 info:(id)arg2;

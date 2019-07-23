@@ -28,6 +28,9 @@
 @property (nonatomic, readonly) UIColor *splitColor;
 
 + (id)ambreColor;
++ (id)bleuDarkColor;
++ (id)bleuLightColor;
++ (id)bleuMediumColor;
 + (id)bordeauxColor;
 + (id)capucineColor;
 + (id)charcoalColor;
@@ -38,6 +41,9 @@
 + (id)paletteForColor:(unsigned long long)arg1;
 + (id)roseAzaleeColor;
 + (id)roseExtremeColor;
++ (id)sakuraDarkColor;
++ (id)sakuraLightColor;
++ (id)sakuraMediumColor;
 + (id)swatchColorForColor:(unsigned long long)arg1;
 + (id)swatchImageForColor:(unsigned long long)arg1;
 + (id)zeusOrangeColor;

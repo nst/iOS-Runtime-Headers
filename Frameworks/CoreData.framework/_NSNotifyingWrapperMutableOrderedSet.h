@@ -8,6 +8,8 @@
     NSMutableOrderedSet * _mutableOrderedSet;
 }
 
++ (Class)classForKeyedUnarchiver;
+
 - (id)_orderedObjectsAndKeys;
 - (bool)_reorderObjectsToLocationsByOrderKey:(id)arg1 error:(id*)arg2;
 - (void)addObject:(id)arg1;
@@ -15,6 +17,8 @@
 - (void)addObjectsFromArray:(id)arg1;
 - (id)allObjects;
 - (id)array;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (bool)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)count;

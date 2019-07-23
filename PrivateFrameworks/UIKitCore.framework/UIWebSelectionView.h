@@ -66,14 +66,8 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } selectionFrame;
 @property (nonatomic, retain) UIWebSelectionNode *selectionNode;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void)_didScroll;
 - (void)_subscribeToScrollNotificationsIfNecessary:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)activeHandle;
 - (bool)activelyManipulatingTextSelectionHandle;
 - (void)animateSloppyReleaseOfHandleInText:(id)arg1 withMagnifier:(id)arg2;
@@ -84,6 +78,7 @@
 - (void)clearSelection;
 - (void)considerFlipping;
 - (bool)creatingSelection;
+- (void)dealloc;
 - (void)didEndScrollingOrZoomingPage;
 - (void)didEndScrollingOverflow;
 - (void)endSelectionCreationWithPoint:(struct CGPoint { double x1; double x2; })arg1;

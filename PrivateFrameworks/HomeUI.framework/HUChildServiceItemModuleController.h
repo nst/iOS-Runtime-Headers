@@ -26,13 +26,13 @@
 - (Class)cellClassForItem:(id)arg1;
 - (void)checkmarkTappedInCell:(id)arg1 forItem:(id)arg2;
 - (id)childServiceItemModule;
+- (id)currentTextForTextField:(id)arg1 item:(id)arg2;
 - (id)defaultTextForTextField:(id)arg1 item:(id)arg2;
 - (id)delegate;
 - (unsigned long long)didSelectItem:(id)arg1;
 - (id)identifyButtonMap;
 - (id)initWithModule:(id)arg1;
 - (id)initWithModule:(id)arg1 delegate:(id)arg2;
-- (id)placeholderTextForTextField:(id)arg1 item:(id)arg2;
 - (void)setActivelyEditingNameServiceBuilder:(id)arg1;
 - (void)setChildServiceItemModule:(id)arg1;
 - (void)setDelegate:(id)arg1;

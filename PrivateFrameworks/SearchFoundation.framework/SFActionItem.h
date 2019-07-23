@@ -13,6 +13,7 @@
         unsigned int latitude : 1; 
         unsigned int longitude : 1; 
         unsigned int isITunes : 1; 
+        unsigned int mediaEntityType : 1; 
     }  _has;
     SFImage * _icon;
     bool  _isITunes;
@@ -25,9 +26,11 @@
     SFLatLng * _location;
     double  _longitude;
     NSData * _mapsData;
+    int  _mediaEntityType;
     NSString * _messageIdentifier;
     NSURL * _messageURL;
     NSString * _offerType;
+    NSString * _persistentID;
     NSString * _phoneNumber;
     NSString * _provider;
     SFPunchout * _punchout;
@@ -56,9 +59,11 @@
 @property (nonatomic, retain) SFLatLng *location;
 @property (nonatomic) double longitude;
 @property (nonatomic, copy) NSData *mapsData;
+@property (nonatomic) int mediaEntityType;
 @property (nonatomic, copy) NSString *messageIdentifier;
 @property (nonatomic, copy) NSURL *messageURL;
 @property (nonatomic, copy) NSString *offerType;
+@property (nonatomic, copy) NSString *persistentID;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *provider;
 @property (nonatomic, retain) SFPunchout *punchout;
@@ -81,6 +86,7 @@
 - (bool)hasIsOverlay;
 - (bool)hasLatitude;
 - (bool)hasLongitude;
+- (bool)hasMediaEntityType;
 - (bool)hasRequiresLocalMedia;
 - (id)icon;
 - (id)initWithCoder:(id)arg1;
@@ -96,9 +102,11 @@
 - (id)location;
 - (double)longitude;
 - (id)mapsData;
+- (int)mediaEntityType;
 - (id)messageIdentifier;
 - (id)messageURL;
 - (id)offerType;
+- (id)persistentID;
 - (id)phoneNumber;
 - (id)provider;
 - (id)punchout;
@@ -118,9 +126,11 @@
 - (void)setLocation:(id)arg1;
 - (void)setLongitude:(double)arg1;
 - (void)setMapsData:(id)arg1;
+- (void)setMediaEntityType:(int)arg1;
 - (void)setMessageIdentifier:(id)arg1;
 - (void)setMessageURL:(id)arg1;
 - (void)setOfferType:(id)arg1;
+- (void)setPersistentID:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProvider:(id)arg1;
 - (void)setPunchout:(id)arg1;

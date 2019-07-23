@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUArticleViewController : UIViewController <NUDynamicTypeObserving, NULoadable, SXAnalyticsReporting, SXScrollViewControllerDelegate> {
+@interface NUArticleViewController : UIViewController <NUANFDebugSettingsObserver, NUBarCompressible, NUDynamicTypeObserving, NULoadable, SXAnalyticsReporting, SXScrollViewControllerDelegate> {
     NUArticleAdManager * _adManager;
     <SXAnalyticsReporting> * _analyticsReporting;
     NSString * _anchorFragment;
     <NUArticleDataProvider> * _articleDataProvider;
     bool  _articleIsPresentingFullscreen;
     FCObservable * _articleViewStyler;
+    <NUANFDebugSettingsProvider> * _debugSettingsProvider;
+    <NUDocumentSectionBlueprintProvider> * _documentSectionBlueprintProvider;
     <NUDynamicTypeProviding> * _dynamicTypeProviding;
     <NUEndOfArticleDataProvider> * _endOfArticleDataProvider;
     NFEventManager * _eventManager;
@@ -16,6 +18,7 @@
     <NULoadingDelegate> * _loadingDelegate;
     NSHashTable * _loadingListeners;
     NFMultiDelegate * _multiScrollViewDelegate;
+    unsigned long long  _presentationMode;
     UIScrollView * _scrollView;
     SXScrollViewController * _scrollViewController;
 }
@@ -27,7 +30,9 @@
 @property (nonatomic) bool articleIsPresentingFullscreen;
 @property (nonatomic, readonly) FCObservable *articleViewStyler;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <NUANFDebugSettingsProvider> *debugSettingsProvider;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <NUDocumentSectionBlueprintProvider> *documentSectionBlueprintProvider;
 @property (nonatomic, readonly) <NUDynamicTypeProviding> *dynamicTypeProviding;
 @property (nonatomic, readonly) <NUEndOfArticleDataProvider> *endOfArticleDataProvider;
 @property (nonatomic, readonly) NFEventManager *eventManager;
@@ -36,11 +41,15 @@
 @property (nonatomic) <NULoadingDelegate> *loadingDelegate;
 @property (nonatomic, readonly) NSHashTable *loadingListeners;
 @property (nonatomic, readonly) NFMultiDelegate *multiScrollViewDelegate;
+@property (nonatomic) unsigned long long presentationMode;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) SXScrollViewController *scrollViewController;
 @property (readonly) Class superclass;
 
++ (id)_parentOrPresentingViewControllerFor:(id)arg1;
+
 - (void).cxx_destruct;
+- (bool)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(bool)arg2;
 - (id)adManager;
 - (id)analyticsReporting;
 - (id)anchorFragment;
@@ -49,11 +58,13 @@
 - (id)articleViewStyler;
 - (bool)canBecomeFirstResponder;
 - (id)currentPresentationAttributes;
+- (id)debugSettingsProvider;
+- (id)documentSectionBlueprintProvider;
 - (void)dynamicTypeDidChange:(id)arg1;
 - (id)dynamicTypeProviding;
 - (id)endOfArticleDataProvider;
 - (id)eventManager;
-- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7;
+- (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7 headerBlueprintProvider:(id)arg8 debugSettingsProvider:(id)arg9;
 - (id)keyCommandManager;
 - (id)loadingDelegate;
 - (id)loadingListeners;
@@ -61,12 +72,14 @@
 - (double)navigationBarHeightForScrollViewController:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (bool)prefersStatusBarHidden;
+- (unsigned long long)presentationMode;
 - (void)reportEvent:(id)arg1;
 - (void)restoreScrollPositionIfNeeded;
 - (void)scrollToTopAnimated:(bool)arg1;
 - (id)scrollView;
 - (id)scrollViewController;
 - (void)scrollViewController:(id)arg1 enableNavigation:(bool)arg2;
+- (bool)scrollViewController:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (void)scrollViewControllerDidLayoutContent:(id)arg1;
 - (void)scrollViewControllerDismissFullscreen:(id)arg1;
 - (void)scrollViewControllerRequestsFullscreen:(id)arg1;
@@ -74,11 +87,18 @@
 - (void)setAnchorFragment:(id)arg1;
 - (void)setArticleIsPresentingFullscreen:(bool)arg1;
 - (void)setLoadingDelegate:(id)arg1;
+- (void)setPresentationMode:(unsigned long long)arg1;
+- (void)testingConditionEnabled:(bool)arg1;
 - (double)toolBarHeightForScrollViewController:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updatePresentationAttributes;
+- (void)updateScrollViewControllerWithFooterBlueprint:(id)arg1;
+- (void)updateScrollViewControllerWithHeaderBlueprint:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewWillDisappear:(bool)arg1;
+- (void)viewportDebuggingEnabled:(bool)arg1;
 
 @end

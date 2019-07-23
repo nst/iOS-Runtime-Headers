@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TemplateKit.framework/TemplateKit
  */
 
-@interface TLKDetailsView : TLKView <TLKTextAreaViewTesting> {
+@interface TLKDetailsView : TLKView <TLKDetailsViewDelegate, TLKTextAreaViewTesting> {
+    <TLKDetailsViewDelegate> * _delegate;
     NSArray * _details;
     TLKRichText * _footnote;
+    NSString * _footnoteButtonText;
     TLKMultilineText * _secondaryTitle;
     TLKImage * _secondaryTitleImage;
     bool  _secondaryTitleIsDetached;
@@ -13,9 +15,11 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property <TLKDetailsViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *details;
 @property (nonatomic, retain) TLKRichText *footnote;
+@property (nonatomic, retain) NSString *footnoteButtonText;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) TLKMultilineText *secondaryTitle;
 @property (nonatomic, retain) TLKImage *secondaryTitleImage;
@@ -25,8 +29,11 @@
 @property (nonatomic, retain) TLKRichText *title;
 
 - (void).cxx_destruct;
+- (id)delegate;
 - (id)details;
 - (id)footnote;
+- (void)footnoteButtonPressed;
+- (id)footnoteButtonText;
 - (id)footnoteLabelString;
 - (id)init;
 - (void)observedPropertiesChanged;
@@ -34,8 +41,10 @@
 - (id)secondaryTitleImage;
 - (bool)secondaryTitleIsDetached;
 - (id)secondaryTitleLabelString;
+- (void)setDelegate:(id)arg1;
 - (void)setDetails:(id)arg1;
 - (void)setFootnote:(id)arg1;
+- (void)setFootnoteButtonText:(id)arg1;
 - (void)setSecondaryTitle:(id)arg1;
 - (void)setSecondaryTitleImage:(id)arg1;
 - (void)setSecondaryTitleIsDetached:(bool)arg1;

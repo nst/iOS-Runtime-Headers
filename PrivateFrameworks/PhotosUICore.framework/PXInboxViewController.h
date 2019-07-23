@@ -108,6 +108,7 @@
 - (void)oneUpPresentation:(id)arg1 setHiddenAssetReferences:(id)arg2;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)ppt_performBlockAfterLoadingCompletes:(id /* block */)arg1;
 - (long long)priority;
 - (void)setCellLayoutCoordinator:(id)arg1;

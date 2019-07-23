@@ -4,7 +4,6 @@
 
 @interface NFAWDSERemoved : NSObject <NFAWDEventProtocol> {
     unsigned int  _hardwareType;
-    bool  _hasCardEmulationStarted;
     AWDNFCSERemovedEvent * _metric;
 }
 
@@ -23,14 +22,12 @@
 - (unsigned int)getMetricId;
 - (unsigned int)hardwareType;
 - (bool)hasCardEmulationStarted;
-- (bool)hasCardemulationStarted;
 - (bool)hasExpressTransactionStarted;
 - (id)init;
 - (id)metric;
 - (unsigned int)reason;
 - (void)setHardwareType:(unsigned int)arg1;
 - (void)setHasCardEmulationStarted:(bool)arg1;
-- (void)setHasCardemulationStarted:(bool)arg1;
 - (void)setHasExpressTransactionStarted:(bool)arg1;
 - (void)setMetric:(id)arg1;
 - (void)setReason:(unsigned int)arg1;

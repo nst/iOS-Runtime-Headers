@@ -4,6 +4,7 @@
 
 @interface STUsageReportGraphDataPoint : NSObject {
     NSDateInterval * _dateInterval;
+    NSString * _indicatorImageName;
     unsigned long long  _itemType;
     NSArray * _segments;
     unsigned long long  _timePeriod;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, retain) NSDateInterval *dateInterval;
+@property (nonatomic, copy) NSString *indicatorImageName;
 @property (nonatomic) unsigned long long itemType;
 @property (nonatomic, copy) NSArray *segments;
 @property (nonatomic) unsigned long long timePeriod;
@@ -23,10 +25,12 @@
 - (id)date;
 - (id)dateInterval;
 - (id)description;
+- (id)indicatorImageName;
 - (id)initWithTimePeriod:(unsigned long long)arg1 itemType:(unsigned long long)arg2 dateInterval:(id)arg3 total:(id)arg4 totalAsPercentageOfMax:(double)arg5 segments:(id)arg6;
 - (unsigned long long)itemType;
 - (id)segments;
 - (void)setDateInterval:(id)arg1;
+- (void)setIndicatorImageName:(id)arg1;
 - (void)setItemType:(unsigned long long)arg1;
 - (void)setSegments:(id)arg1;
 - (void)setTimePeriod:(unsigned long long)arg1;

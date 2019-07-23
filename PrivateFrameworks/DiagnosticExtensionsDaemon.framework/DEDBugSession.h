@@ -7,6 +7,7 @@
     <DEDNotifier><DEDSecureArchiving> * __notifier;
     NSMutableArray * _adoptFilesCompletions;
     NSDictionary * _cachedExtensions;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     <DEDClientProtocol> * _client;
     DEDBugSessionConfiguration * _config;
     NSMutableDictionary * _deCompletions;
@@ -32,6 +33,7 @@
 @property (retain) NSMutableArray *adoptFilesCompletions;
 @property (readonly) NSArray *allExtensionIdentifiers;
 @property (retain) NSDictionary *cachedExtensions;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (retain) <DEDClientProtocol> *client;
 @property (retain) DEDBugSessionConfiguration *config;
 @property (retain) NSMutableDictionary *deCompletions;
@@ -76,6 +78,7 @@
 - (id)attachmentHandler;
 - (void)beginSessionSubmission;
 - (id)cachedExtensions;
+- (id)callbackQueue;
 - (void)cancel;
 - (void)cancelDiagnosticExtension:(id)arg1;
 - (void)cancelDiagnosticExtensionWithDEDExtensionIdentifier:(id)arg1;
@@ -147,6 +150,7 @@
 - (id)scheduledDeferredExtensionCollectionOperations;
 - (void)setAdoptFilesCompletions:(id)arg1;
 - (void)setCachedExtensions:(id)arg1;
+- (void)setCallbackQueue:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setConfig:(id)arg1;
 - (void)setDeCompletions:(id)arg1;

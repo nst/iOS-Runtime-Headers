@@ -6,6 +6,7 @@
 
 + (bool)wantsHorizontalLayout;
 
+- (bool)allowsCellSelection;
 - (double)minCellHeight;
 - (bool)shouldIndentWhileEditing;
 - (id)variableConstraints;

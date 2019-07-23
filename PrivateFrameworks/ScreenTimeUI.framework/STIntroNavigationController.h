@@ -13,6 +13,7 @@
 - (void)dismissButtonPressed;
 - (id /* block */)dismissHandler;
 - (void)setDismissHandler:(id /* block */)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

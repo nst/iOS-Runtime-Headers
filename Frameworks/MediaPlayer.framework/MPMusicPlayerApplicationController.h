@@ -6,24 +6,40 @@
     long long  _notificationsCount;
     MPCRemotePlaybackEngine * _playbackEngine;
     MPCPlayerPath * _playerPath;
+    _MPMusicPlayerQueueTransaction * _queueTransaction;
+    NSObject<OS_dispatch_queue> * _queueTransactionQueue;
 }
 
-@property (nonatomic, retain) MPCRemotePlaybackEngine *playbackEngine;
-@property (nonatomic, retain) MPCPlayerPath *playerPath;
+@property (nonatomic) long long notificationsCount;
+@property (nonatomic, readonly) MPCRemotePlaybackEngine *playbackEngine;
+@property (nonatomic, readonly) MPCPlayerPath *playerPath;
+@property (nonatomic, retain) _MPMusicPlayerQueueTransaction *queueTransaction;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queueTransactionQueue;
 
 + (bool)_isPlayerInstalled;
 
 - (void).cxx_destruct;
 - (id)_init;
+- (id)_mutableQueueFromTracklist:(id)arg1 mediaToResponseItemMap:(id*)arg2;
+- (id)_onAccessQueue_beginQueueTransactionWithCompletionHandler:(id /* block */)arg1 usingSemaphore:(id)arg2;
+- (void)_onAccessQueue_endQueueTransactionWithTracklist:(id)arg1 forReason:(long long)arg2 error:(id)arg3;
+- (bool)_onAccessQueue_isPerformingQueueTransactionWithID:(id)arg1;
+- (void)_onAccessQueue_transitionQueueTransactionToState:(long long)arg1;
 - (void)_playbackEngineDidDisconnect:(id)arg1;
 - (void)_playerPathDidChange:(id)arg1;
+- (void)_queueDidChangeWithResponse:(id)arg1;
+- (id)_queueFromTracklist:(id)arg1;
+- (id)_queueModificationRequestsFromTracklist:(id)arg1 withMutatedQueue:(id)arg2 mediaToResponseItemMap:(id)arg3;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)endGeneratingPlaybackNotifications;
+- (long long)notificationsCount;
 - (void)performQueueTransaction:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)playbackEngine;
 - (id)playerPath;
 - (void)prepareToPlay;
-- (void)setPlaybackEngine:(id)arg1;
-- (void)setPlayerPath:(id)arg1;
+- (id)queueTransaction;
+- (id)queueTransactionQueue;
+- (void)setNotificationsCount:(long long)arg1;
+- (void)setQueueTransaction:(id)arg1;
 
 @end

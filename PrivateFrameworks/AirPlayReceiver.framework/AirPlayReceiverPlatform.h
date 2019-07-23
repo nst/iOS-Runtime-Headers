@@ -3,6 +3,7 @@
  */
 
 @interface AirPlayReceiverPlatform : NSObject {
+    unsigned int  _audioSessionID;
     AirPlayControllerServer * _controllerServer;
     unsigned char  _isMuted;
     int  _lockDownActivationStateToken;
@@ -11,7 +12,7 @@
     int  _playbackPreventNotifyToken;
     unsigned char  _playbackPrevented;
     int  _prefChangedNotifyToken;
-    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; void *x2; id x3; struct OpaqueAPAdvertiser {} *x4; unsigned char x5; unsigned char x6; struct HTTPServerPrivate {} *x7; id x8; struct HTTPServerPrivate {} x9; unsigned char x10[16]; float x11; unsigned char x12; int x13; unsigned char x14; unsigned char x15; struct OpaqueAPReceiverSystemInfo {} *x16; unsigned char x17; unsigned char x18; struct __CFDictionary {} *x19; struct __CFDictionary {} *x20; struct MediaControlServerPrivate {} *x21; struct __CFDictionary {} *x22; unsigned int x23; int x24; unsigned int x25; struct APReceiverSessionManagerOpaque {} *x26; struct OpaqueFigValeria {} *x27; int (*x28)(); unsigned char x29; unsigned char x30; unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; } * _server;
+    struct AirPlayReceiverServerPrivate { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; void *x2; id x3; struct OpaqueAPAdvertiser {} *x4; unsigned char x5; unsigned char x6; struct HTTPServerPrivate {} *x7; id x8; struct HTTPServerPrivate {} x9; unsigned char x10[16]; float x11; unsigned char x12; int x13; unsigned char x14; unsigned char x15; id x16; unsigned long long x17; struct OpaqueAPReceiverSystemInfo {} *x18; unsigned char x19; unsigned char x20; struct __CFDictionary {} *x21; struct __CFDictionary {} *x22; struct MediaControlServerPrivate {} *x23; struct __CFDictionary {} *x24; unsigned int x25; int x26; unsigned int x27; struct APReceiverSessionManagerOpaque {} *x28; struct OpaqueFigValeria {} *x29; int (*x30)(); unsigned char x31; unsigned char x32; unsigned char x33; unsigned char x34; unsigned char x35; unsigned char x36; } * _server;
     int  _systemBufferSamples;
     int  _systemSampleRate;
     struct AirPlayReceiverUIPrivate { } * _ui;

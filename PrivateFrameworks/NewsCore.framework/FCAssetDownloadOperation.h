@@ -7,7 +7,6 @@
     NSDictionary * _additionalRequestHTTPHeaders;
     id /* block */  _dataDownloadCompletionHandler;
     long long  _downloadDestination;
-    NSURLSessionTask * _downloadTask;
     NSData * _downloadedData;
     NSURL * _downloadedFileURL;
     NSError * _error;
@@ -27,7 +26,6 @@
 @property (nonatomic, copy) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic, copy) id /* block */ dataDownloadCompletionHandler;
 @property (nonatomic) long long downloadDestination;
-@property (retain) NSURLSessionTask *downloadTask;
 @property (nonatomic, retain) NSData *downloadedData;
 @property (nonatomic, retain) NSURL *downloadedFileURL;
 @property (nonatomic, retain) NSError *error;
@@ -42,6 +40,7 @@
 @property (nonatomic) double taskStartTime;
 @property (nonatomic, retain) NSDictionary *timingData;
 
++ (id)sharedURLRequestScheduler;
 + (id)sharedURLSession;
 
 - (void).cxx_destruct;
@@ -49,7 +48,6 @@
 - (id)additionalRequestHTTPHeaders;
 - (id /* block */)dataDownloadCompletionHandler;
 - (long long)downloadDestination;
-- (id)downloadTask;
 - (id)downloadedData;
 - (id)downloadedFileURL;
 - (id)error;
@@ -67,7 +65,6 @@
 - (void)setAdditionalRequestHTTPHeaders:(id)arg1;
 - (void)setDataDownloadCompletionHandler:(id /* block */)arg1;
 - (void)setDownloadDestination:(long long)arg1;
-- (void)setDownloadTask:(id)arg1;
 - (void)setDownloadedData:(id)arg1;
 - (void)setDownloadedFileURL:(id)arg1;
 - (void)setError:(id)arg1;
@@ -76,7 +73,6 @@
 - (void)setLoggingKey:(id)arg1;
 - (void)setNetworkBehaviorMonitor:(id)arg1;
 - (void)setNetworkEventType:(long long)arg1;
-- (void)setRelativePriority:(long long)arg1;
 - (void)setRequestUUID:(id)arg1;
 - (void)setResponseMIMEType:(id)arg1;
 - (void)setResponseSize:(unsigned long long)arg1;

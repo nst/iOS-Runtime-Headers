@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSDictionary *readerModeMetadata;
 
 - (void).cxx_destruct;
+- (long long)_cardTypeFromSetupProductType:(unsigned long long)arg1;
 - (id)cardSessionToken;
 - (id)init;
 - (id)initWithPaymentSetupProduct:(id)arg1;

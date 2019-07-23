@@ -9,6 +9,7 @@
     NSArray * _parameterKeyPaths;
     NSString * _resultIdentifier;
     int  _type;
+    _SFPBUserReportRequest * _userReportRequest;
     _SFPBCardSectionValue * _value;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSString *resultIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic) int type;
+@property (nonatomic, retain) _SFPBUserReportRequest *userReportRequest;
 @property (nonatomic, retain) _SFPBCardSectionValue *value;
 
 - (void).cxx_destruct;
@@ -53,8 +55,10 @@
 - (void)setParameterKeyPaths:(id)arg1;
 - (void)setResultIdentifier:(id)arg1;
 - (void)setType:(int)arg1;
+- (void)setUserReportRequest:(id)arg1;
 - (void)setValue:(id)arg1;
 - (int)type;
+- (id)userReportRequest;
 - (id)value;
 - (void)writeTo:(id)arg1;
 

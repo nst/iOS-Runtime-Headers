@@ -43,8 +43,6 @@
 @property (nonatomic, readonly) UIContextualAction *primarySwipeAction;
 @property (nonatomic) unsigned long long state;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (Class)_buttonClass;
 - (double)_directionalMultiplier;
@@ -53,10 +51,6 @@
 - (unsigned long long)_swipeActionCount;
 - (void)_tappedButton:(id)arg1;
 - (void)_unpressedButton:(id)arg1;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)autosizesButtons;
 - (id)backgroundPullColor;
 - (bool)buttonsUnderlapSwipedView;
@@ -66,6 +60,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (double)currentOffset;
 - (id)delegate;
+- (id)description;
 - (void)freeze;
 - (bool)hasActions;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

@@ -11,6 +11,7 @@
     NSString * _numberFormat;
     unsigned long long  _pageNumber;
     unsigned long long  _paragraphIndex;
+    TSWPStorage * _storage;
 }
 
 @property (nonatomic, readonly) NSString *heading;
@@ -21,8 +22,10 @@
 @property (nonatomic, readonly, copy) NSString *numberFormat;
 @property (nonatomic, readonly) unsigned long long pageNumber;
 @property (nonatomic, readonly) unsigned long long paragraphIndex;
+@property (nonatomic, readonly) unsigned long long sectionIndex;
+@property (nonatomic, readonly) TSWPStorage *storage;
 
-+ (id)tocEntryDataWithParagraphIndex:(unsigned long long)arg1 pageNumber:(unsigned long long)arg2 numberFormat:(id)arg3 heading:(id)arg4 indexedStyle:(id)arg5 indexedListStyle:(id)arg6 indexedListStart:(unsigned long long)arg7 indexedParagraphLevel:(unsigned long long)arg8;
++ (id)tocEntryDataWithStorage:(id)arg1 paragraphIndex:(unsigned long long)arg2 pageNumber:(unsigned long long)arg3 numberFormat:(id)arg4 heading:(id)arg5 indexedStyle:(id)arg6 indexedListStyle:(id)arg7 indexedListStart:(unsigned long long)arg8 indexedParagraphLevel:(unsigned long long)arg9;
 
 - (void).cxx_destruct;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
@@ -34,14 +37,16 @@
 - (id)indexedListStyle;
 - (unsigned long long)indexedParagraphLevel;
 - (id)indexedStyle;
-- (id)initWithParagraphIndex:(unsigned long long)arg1 pageNumber:(unsigned long long)arg2 numberFormat:(id)arg3 heading:(id)arg4 indexedStyle:(id)arg5 indexedListStyle:(id)arg6 indexedListStart:(unsigned long long)arg7 indexedParagraphLevel:(unsigned long long)arg8;
+- (id)initWithStorage:(id)arg1 paragraphIndex:(unsigned long long)arg2 pageNumber:(unsigned long long)arg3 numberFormat:(id)arg4 heading:(id)arg5 indexedStyle:(id)arg6 indexedListStyle:(id)arg7 indexedListStart:(unsigned long long)arg8 indexedParagraphLevel:(unsigned long long)arg9;
 - (bool)isEqual:(id)arg1;
-- (void)loadFromArchive:(const struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; unsigned int x13; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct TOCEntryInstanceArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_6_1_1; } x6; struct Reference {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)numberFormat;
 - (unsigned long long)pageNumber;
 - (unsigned long long)paragraphIndex;
-- (void)saveToArchive:(struct TOCEntryInstanceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; struct Reference {} *x11; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x12; unsigned int x13; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct TOCEntryInstanceArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_5_1_1; } x5; struct ArenaStringPtr { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_6_1_1; } x6; struct Reference {} *x7; struct Reference {} *x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
+- (unsigned long long)sectionIndex;
+- (id)storage;
 
 @end

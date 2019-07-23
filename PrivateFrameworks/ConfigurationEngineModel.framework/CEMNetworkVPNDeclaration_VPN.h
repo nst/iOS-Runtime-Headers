@@ -13,7 +13,9 @@
     NSArray * _payloadOnDemandMatchDomainsNever;
     NSArray * _payloadOnDemandMatchDomainsOnRetry;
     NSArray * _payloadOnDemandRules;
+    NSString * _payloadPassword;
     NSString * _payloadPayloadCertificateUUID;
+    NSString * _payloadProviderBundleIdentifier;
     NSString * _payloadRemoteAddress;
 }
 
@@ -27,12 +29,14 @@
 @property (nonatomic, copy) NSArray *payloadOnDemandMatchDomainsNever;
 @property (nonatomic, copy) NSArray *payloadOnDemandMatchDomainsOnRetry;
 @property (nonatomic, copy) NSArray *payloadOnDemandRules;
+@property (nonatomic, copy) NSString *payloadPassword;
 @property (nonatomic, copy) NSString *payloadPayloadCertificateUUID;
+@property (nonatomic, copy) NSString *payloadProviderBundleIdentifier;
 @property (nonatomic, copy) NSString *payloadRemoteAddress;
 
 + (id)allowedPayloadKeys;
 + (id)buildRequiredOnly;
-+ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withAuthenticationMethod:(id)arg3 withPayloadCertificateUUID:(id)arg4 withOnDemandEnabled:(id)arg5 withOnDemandMatchDomainsAlways:(id)arg6 withOnDemandMatchDomainsNever:(id)arg7 withOnDemandMatchDomainsOnRetry:(id)arg8 withOnDemandRules:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11 withRemoteAddress:(id)arg12;
++ (id)buildWithAuthName:(id)arg1 withAuthPassword:(id)arg2 withAuthenticationMethod:(id)arg3 withPayloadCertificateUUID:(id)arg4 withOnDemandEnabled:(id)arg5 withOnDemandMatchDomainsAlways:(id)arg6 withOnDemandMatchDomainsNever:(id)arg7 withOnDemandMatchDomainsOnRetry:(id)arg8 withOnDemandRules:(id)arg9 withDisconnectOnIdle:(id)arg10 withDisconnectOnIdleTimer:(id)arg11 withRemoteAddress:(id)arg12 withPassword:(id)arg13 withProviderBundleIdentifier:(id)arg14;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -47,7 +51,9 @@
 - (id)payloadOnDemandMatchDomainsNever;
 - (id)payloadOnDemandMatchDomainsOnRetry;
 - (id)payloadOnDemandRules;
+- (id)payloadPassword;
 - (id)payloadPayloadCertificateUUID;
+- (id)payloadProviderBundleIdentifier;
 - (id)payloadRemoteAddress;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (void)setPayloadAuthName:(id)arg1;
@@ -60,7 +66,9 @@
 - (void)setPayloadOnDemandMatchDomainsNever:(id)arg1;
 - (void)setPayloadOnDemandMatchDomainsOnRetry:(id)arg1;
 - (void)setPayloadOnDemandRules:(id)arg1;
+- (void)setPayloadPassword:(id)arg1;
 - (void)setPayloadPayloadCertificateUUID:(id)arg1;
+- (void)setPayloadProviderBundleIdentifier:(id)arg1;
 - (void)setPayloadRemoteAddress:(id)arg1;
 
 @end

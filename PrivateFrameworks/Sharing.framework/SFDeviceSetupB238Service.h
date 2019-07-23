@@ -8,6 +8,7 @@
     struct NSData { Class x1; } * _apcCapData;
     APCPlayer * _apcPlayer;
     CUAudioPlayer * _audioPlayer;
+    SFDeviceOperationHandlerCDPSetup * _cdpSetupHandler;
     RPCompanionLinkClient * _companionLinkClient;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSObject<OS_dispatch_source> * _finishApplyTimer;
@@ -26,6 +27,7 @@
     bool  _mediaSystemReady;
     double  _mediaSystemWaitSeconds;
     unsigned long long  _peerFeatureFlags;
+    bool  _prefCDPEnabled;
     id /* block */  _progressHandler;
     SFClient * _sfClient;
     SFService * _sfService;
@@ -79,7 +81,7 @@
 - (void)_setSystemName:(id)arg1 hostname:(id)arg2;
 - (void)_sfServiceStart;
 - (void)_siriGreetingDialogA;
-- (void)_siriGreetingDialogBPhrase:(id)arg1 error:(id)arg2;
+- (void)_siriGreetingDialogBPhrase:(id)arg1 localizedText:(id)arg2 error:(id)arg3;
 - (void)_siriGreetingDialogBStart;
 - (void)_siriGreetingDialogCPhrase:(id)arg1 error:(id)arg2;
 - (void)_siriGreetingDialogCStart;

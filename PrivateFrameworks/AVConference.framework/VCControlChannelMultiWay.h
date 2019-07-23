@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
  */
 
-@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelTransactionDelegate, VCControlChannelencryptionDelegate> {
+@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelTransactionDelegate> {
     NSMutableArray * _activeParticipants;
     NSMutableDictionary * _cryptors;
+    void * _currentReceiveMKI;
     void * _currentSendMKI;
     NSMutableDictionary * _dialogs;
     bool  _isCCReliableDataNotReceivedReported;
     bool  _isEncryptionEnabled;
+    bool  _isRunning;
     struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * _pidReceiveProc;
     NSObject<OS_dispatch_queue> * _sequentialKeyMaterialQueue;
     unsigned int  _transportSessionID;
@@ -21,6 +23,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *dialogs;
 @property (readonly) unsigned long long hash;
 @property (readonly) bool isEncryptionEnabled;
+@property (readonly) bool isRunning;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int transportSessionID;
 @property (nonatomic) int vfdCancel;
@@ -47,6 +50,7 @@
 - (void)initializeSRTPInfo:(struct tagSRTPINFO { int x1; int x2; struct _opaque_pthread_mutex_t { long long x_3_1_1; BOOL x_3_1_2[56]; } x3; struct _opaque_pthread_cond_t { long long x_4_1_1; BOOL x_4_1_2[40]; } x4; unsigned int x5; unsigned int x6; unsigned short x7; unsigned short x8; unsigned int x9; unsigned int x10; unsigned long long x11; int x12; int x13; unsigned char x14[32]; unsigned char x15[14]; unsigned char x16[32]; unsigned char x17[14]; unsigned char x18[20]; struct _opaque_pthread_mutex_t { long long x_19_1_1; BOOL x_19_1_2[56]; } x19; void *x20; void *x21; unsigned int x22; unsigned int x23; struct tagSRTPCryptContext { struct { unsigned long long x_1_2_1; char *x_1_2_2; } x_24_1_1; struct _CCCryptor {} *x_24_1_2; unsigned char x_24_1_3[404]; } x24; struct tagSRTPTransformPolicy { int x_25_1_1; int x_25_1_2; int x_25_1_3; int x_25_1_4; int x_25_1_5; int x_25_1_6; int x_25_1_7; } x25; unsigned int x26; }*)arg1;
 - (bool)isEncryptionEnabled;
 - (bool)isParticipantActive:(unsigned long long)arg1;
+- (bool)isRunning;
 - (id)lastUsedMKIBytes;
 - (void)messageReceived:(id)arg1 participantInfo:(struct { unsigned short x1[12]; unsigned char x2; bool x3; unsigned short x4; unsigned char x5; bool x6; bool x7; unsigned long long x8; bool x9; bool x10; bool x11; unsigned short x12; struct { unsigned short x_13_1_1; unsigned short x_13_1_2; unsigned short x_13_1_3; unsigned short x_13_1_4; unsigned short x_13_1_5; } x13; bool x14; }*)arg2;
 - (void)periodicTask:(void*)arg1;
@@ -59,11 +63,15 @@
 - (bool)sendReliableMessageAndWait:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)sendUnreliableMessage:(id)arg1 participantID:(unsigned long long)arg2;
 - (void)setCurrentSendMKIWithKeyMaterial:(id)arg1;
+- (void)setEncryptionWithEncryptionMaterial:(struct { struct tagSRTPExchangeInfo { BOOL x_1_1_1[65]; BOOL x_1_1_2[29]; void *x_1_1_3; } x1; unsigned int x2; struct tagSRTPExchangeInfo { BOOL x_3_1_1[65]; BOOL x_3_1_2[29]; void *x_3_1_3; } x3; unsigned int x4; int x5; int x6; }*)arg1;
 - (void)setTransportSessionID:(unsigned int)arg1;
 - (void)setVfdCancel:(int)arg1;
 - (void)setVfdMessage:(int)arg1;
+- (void)start;
+- (void)stop;
 - (unsigned int)transportSessionID;
 - (int)updateEncryption:(struct { BOOL x1[65]; int x2; BOOL x3[65]; int x4; void *x5; }*)arg1 derivedSSRC:(unsigned int)arg2;
+- (void)updateEncryptionWithEncryptionMaterial:(struct { struct tagSRTPExchangeInfo { BOOL x_1_1_1[65]; BOOL x_1_1_2[29]; void *x_1_1_3; } x1; unsigned int x2; struct tagSRTPExchangeInfo { BOOL x_3_1_1[65]; BOOL x_3_1_2[29]; void *x_3_1_3; } x3; unsigned int x4; int x5; int x6; }*)arg1;
 - (void)updateEncryptionWithKeyMaterial:(id)arg1;
 - (int)vfdCancel;
 - (int)vfdMessage;

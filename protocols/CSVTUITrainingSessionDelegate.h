@@ -10,6 +10,6 @@
 
 @optional
 
-- (void)CSVTUITrainingSession:(CSVTUITrainingSession *)arg1 hasTrainUtterance:(NSData *)arg2 languageCode:(NSString *)arg3;
+- (bool)CSVTUITrainingSession:(CSVTUITrainingSession *)arg1 hasTrainUtterance:(NSData *)arg2 languageCode:(NSString *)arg3 payload:(bool)arg4;
 
 @end

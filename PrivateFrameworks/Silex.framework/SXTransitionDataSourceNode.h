@@ -2,18 +2,42 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXTransitionDataSourceNode : NSObject {
-    <SXTransitionDataSource> * _transitionDataSource;
-    unsigned long long  _type;
+@interface SXTransitionDataSourceNode : NSObject <SXTransitionDataSource> {
+    <SXTransitionableComponentView> * _componentView;
+    unsigned long long  _transitionType;
+    bool  _usesThumbnail;
 }
 
-@property (nonatomic, readonly) <SXTransitionDataSource> *transitionDataSource;
-@property (nonatomic, readonly) unsigned long long type;
-
-+ (id)nodeWithType:(unsigned long long)arg1 dataSource:(id)arg2;
+@property (nonatomic, readonly) <SXTransitionableComponentView> *componentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isTransitionable;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitionContainerFrame;
+@property (nonatomic, readonly) UIView *transitionContainerView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitionContentFrame;
+@property (nonatomic, readonly) UIView *transitionContentView;
+@property (nonatomic, readonly) unsigned long long transitionType;
+@property (nonatomic, readonly) bool transitionViewIsVisible;
+@property (nonatomic, readonly) bool transitionViewShouldFadeInContent;
+@property (nonatomic, readonly) bool transitionViewUsesThumbnail;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitionVisibleFrame;
+@property (nonatomic, readonly) bool usesThumbnail;
 
 - (void).cxx_destruct;
-- (id)transitionDataSource;
-- (unsigned long long)type;
+- (id)componentView;
+- (id)initWithComponentView:(id)arg1 transitionType:(unsigned long long)arg2 usesThumbnail:(bool)arg3;
+- (bool)isTransitionable;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContainerFrame;
+- (id)transitionContainerView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionContentFrame;
+- (id)transitionContentView;
+- (unsigned long long)transitionType;
+- (bool)transitionViewIsVisible;
+- (bool)transitionViewShouldFadeInContent;
+- (bool)transitionViewUsesThumbnail;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitionVisibleFrame;
+- (bool)usesThumbnail;
 
 @end

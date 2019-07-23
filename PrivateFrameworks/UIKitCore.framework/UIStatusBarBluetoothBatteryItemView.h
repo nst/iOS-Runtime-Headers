@@ -8,14 +8,9 @@
     int  _capacity;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_accessibilityHUDBatteryInsidesInsets;
 - (double)_normalizedCapacity;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (id)contentsImage;
 - (double)extraLeftPadding;

@@ -7,13 +7,8 @@
     UIButton * _infoButton;
 }
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserTouchUpInsideEvent;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 cell:(id)arg3 shouldReverseLayoutDirection:(bool)arg4;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;

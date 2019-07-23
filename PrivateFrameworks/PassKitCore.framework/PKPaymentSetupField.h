@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentSetupField : NSObject {
+    DIAttribute * _attribute;
     <NSObject><NSCopying> * _currentValue;
     bool  _currentValueFromCameraCapture;
     NSString * _defaultValue;
@@ -11,12 +12,14 @@
     NSString * _localizedDisplayName;
     NSString * _localizedPlaceholder;
     bool  _optional;
+    <NSObject><NSCopying> * _originalCameraCaptureValue;
     NSDictionary * _rawConfigurationDictionary;
     bool  _requiresSecureSubmission;
     NSString * _submissionDestination;
     NSString * _submissionKey;
 }
 
+@property (nonatomic, retain) DIAttribute *attribute;
 @property (getter=isBuiltIn, nonatomic, readonly) bool builtIn;
 @property (nonatomic, readonly, copy) NSString *compactLocalizedDisplayName;
 @property (nonatomic, copy) <NSObject><NSCopying> *currentValue;
@@ -28,6 +31,7 @@
 @property (nonatomic, copy) NSString *localizedDisplayName;
 @property (nonatomic, copy) NSString *localizedPlaceholder;
 @property (getter=isOptional, nonatomic) bool optional;
+@property (nonatomic, copy) <NSObject><NSCopying> *originalCameraCaptureValue;
 @property (nonatomic, readonly, copy) NSDictionary *rawConfigurationDictionary;
 @property (nonatomic) bool requiresSecureSubmission;
 @property (nonatomic, copy) NSString *submissionDestination;
@@ -35,6 +39,7 @@
 
 + (Class)classForIdentifier:(id)arg1 type:(unsigned long long)arg2;
 + (id)newRandomlyGeneratedField;
++ (id)paymentSetupFieldWithDIAttribute:(id)arg1;
 + (id)paymentSetupFieldWithIdentifier:(id)arg1;
 + (id)paymentSetupFieldWithIdentifier:(id)arg1 configuration:(id)arg2;
 + (id)paymentSetupFieldWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
@@ -42,6 +47,8 @@
 
 - (void).cxx_destruct;
 - (void)_setLocalizedDisplayName:(id)arg1;
+- (id)_submissionStringForValue:(id)arg1;
+- (id)attribute;
 - (id)compactLocalizedDisplayName;
 - (id)currentValue;
 - (id)dateFieldObject;
@@ -67,9 +74,11 @@
 - (id)localizedDisplayName;
 - (id)localizedPlaceholder;
 - (void)noteCurrentValueChanged;
+- (id)originalCameraCaptureValue;
 - (id)pickerFieldObject;
 - (id)rawConfigurationDictionary;
 - (bool)requiresSecureSubmission;
+- (void)setAttribute:(id)arg1;
 - (void)setCurrentValue:(id)arg1;
 - (void)setCurrentValueFromCameraCapture:(bool)arg1;
 - (void)setDefaultValue:(id)arg1;
@@ -77,6 +86,7 @@
 - (void)setLocalizedDisplayName:(id)arg1;
 - (void)setLocalizedPlaceholder:(id)arg1;
 - (void)setOptional:(bool)arg1;
+- (void)setOriginalCameraCaptureValue:(id)arg1;
 - (void)setRequiresSecureSubmission:(bool)arg1;
 - (void)setSubmissionDestination:(id)arg1;
 - (void)setSubmissionKey:(id)arg1;
@@ -85,6 +95,7 @@
 - (id)submissionString;
 - (bool)submissionStringMeetsAllRequirements;
 - (id)textFieldObject;
+- (void)updateWithAttribute:(id)arg1;
 - (void)updateWithConfiguration:(id)arg1;
 
 @end

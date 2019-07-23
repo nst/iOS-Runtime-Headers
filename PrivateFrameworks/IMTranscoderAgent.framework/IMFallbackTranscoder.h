@@ -2,10 +2,19 @@
    Image: /System/Library/PrivateFrameworks/IMTranscoderAgent.framework/IMTranscoderAgent
  */
 
-@interface IMFallbackTranscoder : NSObject
+@interface IMFallbackTranscoder : NSObject {
+    IMFallbackTranscoder_AudioMessage * _audioTranscoder;
+}
+
+@property (nonatomic, retain) IMFallbackTranscoder_AudioMessage *audioTranscoder;
 
 - (id)_findPluginFallbackEncoder:(id)arg1 withBalloonBundleID:(id)arg2;
-- (void)transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_transcodeAudioMessageContents:(id)arg1 utiType:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_transcodeAutoloopContents:(id)arg1 utiType:(id)arg2 completionBlock:(id /* block */)arg3;
+- (id)audioTranscoder;
+- (void)dealloc;
+- (void)setAudioTranscoder:(id)arg1;
+- (void)transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 transcoderUserInfo:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)transcodeFileTransferData:(id)arg1 balloonBundleID:(id)arg2 attachments:(id)arg3 inFileURL:(id)arg4 fallBack:(bool)arg5 completionBlock:(id /* block */)arg6;
 
 @end

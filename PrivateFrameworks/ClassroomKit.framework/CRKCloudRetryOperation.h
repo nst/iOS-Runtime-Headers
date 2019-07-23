@@ -11,12 +11,9 @@
 @property (nonatomic, readonly) CRKCloudOperation<CRKCloudResetable> *cloudOperation;
 @property (nonatomic, readonly) CATOperationQueue *operationQueue;
 
-+ (id)new;
-
 - (void).cxx_destruct;
 - (id)cloudOperation;
 - (void)cloudOperationDidFinish:(id)arg1;
-- (id)init;
 - (id)initWithOperationQueue:(id)arg1 cloudOperation:(id)arg2;
 - (bool)isAsynchronous;
 - (void)main;

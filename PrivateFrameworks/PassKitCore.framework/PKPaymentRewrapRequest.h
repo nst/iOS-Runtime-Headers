@@ -3,16 +3,19 @@
  */
 
 @interface PKPaymentRewrapRequest : PKPaymentRewrapRequestBase {
+    NSString * _hostApplicationIdentifier;
     NSString * _merchantIdentifier;
 }
 
+@property (nonatomic, copy) NSString *hostApplicationIdentifier;
 @property (nonatomic, copy) NSString *merchantIdentifier;
 
 - (void).cxx_destruct;
-- (id)bodyDictionaryWithDeviceData:(id)arg1;
+- (id)bodyDictionary;
 - (id)endpointName;
-- (id)initWithWrappedPayment:(id)arg1 paymentPass:(id)arg2 merchantIdentifier:(id)arg3;
+- (id)hostApplicationIdentifier;
 - (id)merchantIdentifier;
+- (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setMerchantIdentifier:(id)arg1;
 
 @end

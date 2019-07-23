@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SilexText.framework/SilexText
  */
 
-@interface STScrollView : TSDScrollView {
+@interface STScrollView : TSDScrollView <STAXElementOccluder> {
     STAXCustomRotorProvider * _customRotorProvider;
     <STScrollViewDelegate> * _scrollViewDelegate;
 }
 
 @property (nonatomic, retain) STAXCustomRotorProvider *customRotorProvider;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isBouncing;
 @property (nonatomic) <STScrollViewDelegate> *scrollViewDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_accessibilityScrollingEnabled;
 - (id)accessibilityCustomRotors;
 - (id)customRotorProvider;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -20,6 +25,7 @@
 - (id)scrollViewDelegate;
 - (void)setCustomRotorProvider:(id)arg1;
 - (void)setScrollViewDelegate:(id)arg1;
+- (bool)shouldOccludeAccessibilityElement:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

@@ -3,14 +3,18 @@
  */
 
 @interface PKPaymentAvailableProductsRequest : PKPaymentWebServiceRequest {
+    bool  _ignoreCache;
     NSString * _type;
 }
 
+@property (nonatomic) bool ignoreCache;
 @property (nonatomic, copy) NSString *type;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
+- (bool)ignoreCache;
 - (id)initWithType:(id)arg1;
+- (void)setIgnoreCache:(bool)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
 

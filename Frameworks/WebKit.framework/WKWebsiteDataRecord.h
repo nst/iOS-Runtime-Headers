@@ -5,7 +5,7 @@
 @interface WKWebsiteDataRecord : NSObject <WKObject> {
     struct ObjectStorage<API::WebsiteDataRecord> { 
         struct type { 
-            unsigned char __lx[144]; 
+            unsigned char __lx[168]; 
         } data; 
     }  _websiteDataRecord;
 }

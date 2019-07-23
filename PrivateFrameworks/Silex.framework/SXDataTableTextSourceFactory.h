@@ -3,17 +3,23 @@
  */
 
 @interface SXDataTableTextSourceFactory : NSObject <SXDataTableTextSourceFactory> {
+    <SXDocumentLanguageProviding> * _documentLanguageProvider;
+    <SXFontAttributesConstructor> * _fontAttributesConstructor;
     <SXSmartFieldFactory> * _smartFieldFactory;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXDocumentLanguageProviding> *documentLanguageProvider;
+@property (nonatomic, readonly) <SXFontAttributesConstructor> *fontAttributesConstructor;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <SXSmartFieldFactory> *smartFieldFactory;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)initWithSmartFieldFactory:(id)arg1;
+- (id)documentLanguageProvider;
+- (id)fontAttributesConstructor;
+- (id)initWithSmartFieldFactory:(id)arg1 documentLanguageProvider:(id)arg2 fontAttributesConstructor:(id)arg3;
 - (id)smartFieldFactory;
 - (id)textSourceWithFormattedText:(id)arg1 indexPath:(struct { unsigned long long x1; unsigned long long x2; })arg2 dataSource:(id)arg3;
 

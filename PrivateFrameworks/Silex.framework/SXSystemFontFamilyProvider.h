@@ -17,6 +17,7 @@
 - (id)fontFamilies;
 - (id)fonts;
 - (id)fontsForMetadata:(id)arg1;
+- (id)init;
 - (id)initWithFontMetaData:(id)arg1;
 
 @end

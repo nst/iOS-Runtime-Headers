@@ -3,21 +3,21 @@
  */
 
 @interface STContentPrivacyAllowedAppsDetailController : PSListController {
-    <STContentPrivacyViewModelCoordinator> * _coordinator;
+    NSObject<STContentPrivacyViewModelCoordinator> * _coordinator;
 }
 
-@property (nonatomic, retain) <STContentPrivacyViewModelCoordinator> *coordinator;
+@property (nonatomic, retain) NSObject<STContentPrivacyViewModelCoordinator> *coordinator;
 
 - (void).cxx_destruct;
-- (void)_addSystemAppSwitchSpecifier:(id)arg1 forBundleID:(id)arg2;
-- (id)_nameForInstalledSystemApp:(id)arg1;
-- (void)addAppButtonPressed:(id)arg1;
+- (void)_addBlacklistAppSpecifier:(id)arg1 bundleID:(id)arg2;
+- (void)_addBooleanAppSpecifier:(id)arg1 configuration:(id)arg2 key:(id)arg3 bundleID:(id)arg4;
 - (id)coordinator;
+- (void)dealloc;
 - (id)defaultSwitchSpecifierWithConfiguration:(id)arg1 key:(id)arg2 label:(id)arg3 icon:(id)arg4;
-- (id)defaultSwitchSpecifierWithItem:(id)arg1 label:(id)arg2 icon:(id)arg3;
 - (id)getItemSpecifierValue:(id)arg1;
 - (id)init;
-- (id)radioGroupSpecifierWithName:(id)arg1 footerText:(id)arg2 item:(id)arg3;
+- (id)nameForInstalledSystemApp:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setCoordinator:(id)arg1;
 - (void)setItemSpecifierValue:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;

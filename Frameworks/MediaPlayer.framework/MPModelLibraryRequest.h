@@ -4,6 +4,7 @@
 
 @interface MPModelLibraryRequest : MPModelRequest <MPCModelPlaybackRequesting, MPCModelRequestRTCReporting, MPModelRequestDetailedKeepLocalStatusRequesting> {
     NSArray * _allowedItemIdentifiers;
+    NSArray * _allowedSectionIdentifiers;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -16,6 +17,7 @@
 }
 
 @property (nonatomic, copy) NSArray *allowedItemIdentifiers;
+@property (nonatomic, copy) NSArray *allowedSectionIdentifiers;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } contentRange;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -35,6 +37,7 @@
 
 - (void).cxx_destruct;
 - (id)allowedItemIdentifiers;
+- (id)allowedSectionIdentifiers;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })contentRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -49,6 +52,7 @@
 - (id)scopedContainers;
 - (id)sectionTranslationContext;
 - (void)setAllowedItemIdentifiers:(id)arg1;
+- (void)setAllowedSectionIdentifiers:(id)arg1;
 - (void)setContentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setFilteringOptions:(unsigned long long)arg1;
 - (void)setLegacyMediaQuery:(id)arg1;

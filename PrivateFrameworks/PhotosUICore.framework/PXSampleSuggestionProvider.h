@@ -52,6 +52,7 @@
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationInitialAssetReference:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (long long)oneUpPresentationOrigin:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (void)setIncludeHorizontal:(bool)arg1;
 - (void)setOneUpDataSourceManager:(id)arg1;

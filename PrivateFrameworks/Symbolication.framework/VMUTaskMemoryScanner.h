@@ -23,6 +23,7 @@
     }  _dataSegmentsRangeOutsideSharedCache;
     VMUDebugTimer * _debugTimer;
     bool  _exactScanningEnabled;
+    NSString * _executablePath;
     /* Warning: unhandled struct encoding: '{_VMUInstanceValues=Q@}' */ struct _VMUInstanceValues { unsigned long long x1; id x2; } * _instanceValues;
     unsigned int  _instanceValuesCount;
     unsigned int  _instanceValuesSize;
@@ -37,6 +38,7 @@
     NSString * _processDescriptionString;
     NSString * _processName;
     VMUProcessObjectGraph * _processObjectGraph;
+    unsigned int  _recordAutoreleasePoolBoundaries;
     id /* block */  _referenceLogger;
     unsigned long long  _regionDescriptionOptions;
     VMUVMRegionIdentifier * _regionIdentifier;
@@ -66,7 +68,9 @@
 @property (nonatomic, retain) VMUDebugTimer *debugTimer;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool exactScanningEnabled;
+@property (nonatomic, readonly) NSString *executablePath;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool is64bit;
 @property (nonatomic, readonly) unsigned int mallocNodeCount;
 @property (nonatomic) unsigned long long maxInteriorOffset;
 @property (nonatomic, readonly) VMUTaskMemoryCache *memoryCache;
@@ -92,6 +96,8 @@
 + (id)referenceDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })arg2 destinationNode:(/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })arg3 sortedVMRegions:(id)arg4 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg5 alignmentSpacing:(unsigned int)arg6;
 
 - (void).cxx_destruct;
+- (void)_addSpecialNodesFromTask;
+- (void)_addThreadNodesFromTask;
 - (void)_buildRegionPageBlockMaps;
 - (id)_cachedVariantForGenericInfo:(id)arg1 variantKey:(unsigned long long)arg2;
 - (void)_callRemoteMallocEnumerators:(unsigned int)arg1 block:(id /* block */)arg2;
@@ -129,10 +135,12 @@
 - (unsigned int)enumerateReferencesWithBlock:(id /* block */)arg1;
 - (unsigned int)enumerateRegionsWithBlock:(id /* block */)arg1;
 - (bool)exactScanningEnabled;
+- (id)executablePath;
 - (bool)hasLabelsForNodes;
 - (id)initWithSelfTaskAndOptions:(unsigned long long)arg1;
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 options:(unsigned long long)arg2;
+- (bool)is64bit;
 - (id)labelForNode:(unsigned int)arg1;
 - (unsigned int)mallocNodeCount;
 - (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
@@ -142,9 +150,10 @@
 - (id)nodeDescription:(unsigned int)arg1;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
+- (unsigned int)nodeForAddress:(unsigned long long)arg1;
 - (unsigned int)nodeNamespaceSize;
 - (id)objectIdentifier;
-- (void)orderedNodeTraversal:(int)arg1 withBlock:(id /* block */)arg2;
+- (void)orderedNodeTraversal:(unsigned int)arg1 withBlock:(id /* block */)arg2;
 - (unsigned long long)physicalFootprint;
 - (unsigned long long)physicalFootprintPeak;
 - (int)pid;

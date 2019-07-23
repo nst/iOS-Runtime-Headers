@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) NSData *entryMetadata;
 @property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
 @property (nonatomic, readonly) bool hasDisambiguationRadiusMeters;
+@property (nonatomic, readonly) bool hasSortPriority;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) GEOMapItemIdentifier *identifier;
 @property (nonatomic, readonly) NSData *metadata;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) int placeType;
 @property (nonatomic, readonly) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property (nonatomic, readonly) GEOSearchCategory *searchCategory;
+@property (nonatomic, readonly) long long sortPriority;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 
@@ -45,6 +47,7 @@
 - (id)geoMapItem;
 - (bool)getCoordinate:(struct { double x1; double x2; }*)arg1;
 - (bool)hasDisambiguationRadiusMeters;
+- (bool)hasSortPriority;
 - (unsigned long long)hash;
 - (id)highlightsForLine:(unsigned long long)arg1;
 - (id)identifier;
@@ -56,6 +59,7 @@
 - (id)retainedSearchMetadata;
 - (id)searchCategory;
 - (void)sendFeedback;
+- (long long)sortPriority;
 - (long long)type;
 
 @end

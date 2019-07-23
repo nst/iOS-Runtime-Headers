@@ -37,8 +37,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDVisualStyle *visualStyle;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_bestColumnSizeWithCellsPerColumn:(unsigned long long)arg1 maxColumnSize:(struct CGSize { double x1; double x2; })arg2 columnCount:(unsigned long long)arg3 usingColumnView:(id)arg4 getFontScaleFactor:(double*)arg5;
 - (id)_columnViewForColumnIndex:(unsigned long long)arg1 reusingView:(id)arg2;
@@ -49,9 +47,6 @@
 - (bool)_shouldUseWordsNotSymbols;
 - (id)_stringForInput:(id)arg1 withModifierFlags:(long long)arg2;
 - (id)_stringForModifierFlags:(long long)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)animateIn;
 - (void)animateOutWithCompletion:(id /* block */)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

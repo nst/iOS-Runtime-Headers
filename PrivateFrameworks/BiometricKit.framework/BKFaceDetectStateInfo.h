@@ -7,6 +7,7 @@
     bool  _flare;
     bool  _multipleFaces;
     bool  _occlusion;
+    unsigned long long  _orientation;
     bool  _partiallyOutOfView;
     NSNumber * _pitch;
     NSNumber * _roll;
@@ -19,6 +20,7 @@
 @property (nonatomic) bool flare;
 @property (nonatomic) bool multipleFaces;
 @property (nonatomic) bool occlusion;
+@property (nonatomic) unsigned long long orientation;
 @property (nonatomic, readonly) bool partiallyOutOfView;
 @property (nonatomic, retain) NSNumber *pitch;
 @property (nonatomic, retain) NSNumber *roll;
@@ -31,10 +33,12 @@
 - (bool)faceDetected;
 - (bool)flare;
 - (id)initFromDictionary:(id)arg1;
-- (id)initFromFaceInfo:(const struct { unsigned short x1; float x2; float x3; float x4; }*)arg1;
+- (id)initFromFaceInfo:(const struct { unsigned short x1; unsigned int x2; float x3; float x4; float x5; }*)arg1;
 - (id)initWithPresenceState:(bool)arg1;
+- (id)initWithPresenceState:(bool)arg1 details:(id)arg2;
 - (bool)multipleFaces;
 - (bool)occlusion;
+- (unsigned long long)orientation;
 - (bool)partiallyOutOfView;
 - (id)pitch;
 - (id)roll;
@@ -42,6 +46,7 @@
 - (void)setFlare:(bool)arg1;
 - (void)setMultipleFaces:(bool)arg1;
 - (void)setOcclusion:(bool)arg1;
+- (void)setOrientation:(unsigned long long)arg1;
 - (void)setPitch:(id)arg1;
 - (void)setRoll:(id)arg1;
 - (void)setTooCloseToCamera:(bool)arg1;

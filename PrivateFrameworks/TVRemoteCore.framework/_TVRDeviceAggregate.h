@@ -3,19 +3,27 @@
  */
 
 @interface _TVRDeviceAggregate : NSObject {
+    _TVRCHMServiceWrapper * _homeKit;
     _TVRCMRTelevisionWrapper * _mediaRemote;
     _TVRXDevice * _publicDevice;
+    _TVRCRPCompanionLinkClientWrapper * _rapport;
 }
 
+@property (nonatomic, retain) _TVRCHMServiceWrapper *homeKit;
 @property (nonatomic, retain) _TVRCMRTelevisionWrapper *mediaRemote;
 @property (nonatomic, retain) _TVRXDevice *publicDevice;
+@property (nonatomic, retain) _TVRCRPCompanionLinkClientWrapper *rapport;
 
 - (void).cxx_destruct;
 - (id)bestImpl;
+- (id)homeKit;
 - (bool)isEmpty;
 - (id)mediaRemote;
 - (id)publicDevice;
+- (id)rapport;
+- (void)setHomeKit:(id)arg1;
 - (void)setMediaRemote:(id)arg1;
 - (void)setPublicDevice:(id)arg1;
+- (void)setRapport:(id)arg1;
 
 @end

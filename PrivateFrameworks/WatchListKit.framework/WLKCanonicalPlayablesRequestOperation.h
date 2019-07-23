@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface WLKCanonicalPlayablesRequestOperation : WLKNetworkRequestOperation {
+@interface WLKCanonicalPlayablesRequestOperation : WLKUTSNetworkRequestOperation {
     NSString * _contentID;
+    WLKCanonicalPlayablesResponse * _response;
 }
 
 @property (nonatomic, readonly, copy) NSString *contentID;
+@property (nonatomic, readonly) WLKCanonicalPlayablesResponse *response;
 
 - (void).cxx_destruct;
 - (id)contentID;
-- (id)initWithContentID:(id)arg1 profiles:(id)arg2;
-- (id)responseProcessor;
+- (id)initWithContentID:(id)arg1 profiles:(id)arg2 caller:(id)arg3;
+- (void)processResponse;
+- (id)response;
 
 @end

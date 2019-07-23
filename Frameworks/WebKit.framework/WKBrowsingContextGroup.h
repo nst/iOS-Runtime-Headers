@@ -5,7 +5,7 @@
 @interface WKBrowsingContextGroup : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebPageGroup> { 
         struct type { 
-            unsigned char __lx[88]; 
+            unsigned char __lx[80]; 
         } data; 
     }  _pageGroup;
 }

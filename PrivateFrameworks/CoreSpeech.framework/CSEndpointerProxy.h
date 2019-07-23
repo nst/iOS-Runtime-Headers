@@ -61,6 +61,7 @@
 - (double)delay;
 - (bool)didEnterTwoshot;
 - (double)elapsedTimeWithNoSpeech;
+- (unsigned long long)endPointAnalyzerType;
 - (double)endWaitTime;
 - (long long)endpointMode;
 - (long long)endpointStyle;
@@ -80,7 +81,7 @@
 - (bool)recordingDidStop;
 - (void)recordingStoppedForReason:(unsigned long long)arg1;
 - (void)reset;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (void)resetForVoiceTriggerTwoShotWithSampleRate:(unsigned long long)arg1;
 - (bool)saveSamplesSeenInReset;
 - (void)setActiveChannel:(unsigned long long)arg1;
@@ -110,6 +111,7 @@
 - (void)setVad2StartWaitTime:(double)arg1;
 - (void)shouldAcceptEagerResultForDuration:(double)arg1 resultsCompletionHandler:(id /* block */)arg2;
 - (double)startWaitTime;
+- (double)trailingSilenceDurationAtEndpoint;
 - (void)updateEndpointerDelayedTrigger:(bool)arg1;
 - (void)updateEndpointerThreshold:(float)arg1;
 - (double)vad2AutomaticEndpointingSuspensionEndTime;

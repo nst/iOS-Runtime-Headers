@@ -4,6 +4,7 @@
 
 @interface VUIContentRatingSystemUtilities : NSObject
 
++ (id)_cleanedRatingSystem:(id)arg1;
 + (bool)_isRatingSystemForMovies:(long long)arg1;
 + (bool)_isRatingSystemForMusic:(long long)arg1;
 + (bool)_isRatingSystemForTV:(long long)arg1;

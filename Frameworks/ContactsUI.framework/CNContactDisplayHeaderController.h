@@ -38,6 +38,7 @@
 - (void)headerPhotoDidSaveEditsForImageDrop;
 - (void)headerPhotoDidUpdate;
 - (id)headerView;
+- (void)headerViewDidPickPreferredChannel:(id)arg1;
 - (void)headerViewDidUpdateLabelSizes;
 - (id)heightConstraint;
 - (id)init;

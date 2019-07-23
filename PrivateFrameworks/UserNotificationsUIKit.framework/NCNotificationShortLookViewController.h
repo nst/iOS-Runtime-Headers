@@ -107,6 +107,7 @@
 - (void)previewInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (void)previewInteractionManagerDidEndUserInteraction:(id)arg1;
 - (bool)previewInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(id)arg1;
+- (bool)previewInteractionManagerShouldUseHapticTouch:(id)arg1;
 - (void)previewInteractionManagerWillBeginUserInteraction:(id)arg1;
 - (void)removeAudioAccesoryViewObserver:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

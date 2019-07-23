@@ -14,6 +14,7 @@
 - (bool)isUsedOnDarkBackground;
 - (void)setAttributeSet:(unsigned long long)arg1;
 - (void)setColor:(UIColor *)arg1;
+- (void)setColor:(UIColor *)arg1 animated:(bool)arg2;
 - (void)setIdentifier:(NSString *)arg1;
 - (void)setIsUsedOnDarkBackground:(bool)arg1;
 - (void)setSizeState:(unsigned long long)arg1;

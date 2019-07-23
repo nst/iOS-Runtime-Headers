@@ -14,6 +14,7 @@
     NSNumber * _payloadEnablePFS;
     NSNumber * _payloadExtendedAuthEnabled;
     CEMNetworkVPNDeclaration_SecurityAssociationParameters * _payloadIKESecurityAssociationParameters;
+    NSArray * _payloadInterfaces;
     NSString * _payloadLocalIdentifier;
     NSNumber * _payloadNATKeepAliveInterval;
     NSNumber * _payloadNATKeepAliveOffloadEnable;
@@ -38,6 +39,7 @@
 @property (nonatomic, copy) NSNumber *payloadEnablePFS;
 @property (nonatomic, copy) NSNumber *payloadExtendedAuthEnabled;
 @property (nonatomic, copy) CEMNetworkVPNDeclaration_SecurityAssociationParameters *payloadIKESecurityAssociationParameters;
+@property (nonatomic, copy) NSArray *payloadInterfaces;
 @property (nonatomic, copy) NSString *payloadLocalIdentifier;
 @property (nonatomic, copy) NSNumber *payloadNATKeepAliveInterval;
 @property (nonatomic, copy) NSNumber *payloadNATKeepAliveOffloadEnable;
@@ -51,8 +53,8 @@
 @property (nonatomic, copy) NSNumber *payloadUseConfigurationAttributeInternalIPSubnet;
 
 + (id)allowedPayloadKeys;
-+ (id)buildRequiredOnlyWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4;
-+ (id)buildWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4 withPayloadCertificateUUID:(id)arg5 withSharedSecret:(id)arg6 withExtendedAuthEnabled:(id)arg7 withDisableRedirect:(id)arg8 withDisableMOBIKE:(id)arg9 withUseConfigurationAttributeInternalIPSubnet:(id)arg10 withEnablePFS:(id)arg11 withEnableCertificateRevocationCheck:(id)arg12 withNATKeepAliveOffloadEnable:(id)arg13 withNATKeepAliveInterval:(id)arg14 withAuthName:(id)arg15 withAuthPassword:(id)arg16 withDeadPeerDetectionRate:(id)arg17 withProtocolType:(id)arg18 withServerCertificateIssuerCommonName:(id)arg19 withServerCertificateCommonName:(id)arg20 withIKESecurityAssociationParameters:(id)arg21 withChildSecurityAssociationParameters:(id)arg22;
++ (id)buildRequiredOnlyWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4 withProtocolType:(id)arg5;
++ (id)buildWithRemoteAddress:(id)arg1 withLocalIdentifier:(id)arg2 withRemoteIdentifier:(id)arg3 withAuthenticationMethod:(id)arg4 withPayloadCertificateUUID:(id)arg5 withSharedSecret:(id)arg6 withExtendedAuthEnabled:(id)arg7 withDisableRedirect:(id)arg8 withDisableMOBIKE:(id)arg9 withUseConfigurationAttributeInternalIPSubnet:(id)arg10 withEnablePFS:(id)arg11 withEnableCertificateRevocationCheck:(id)arg12 withNATKeepAliveOffloadEnable:(id)arg13 withNATKeepAliveInterval:(id)arg14 withAuthName:(id)arg15 withAuthPassword:(id)arg16 withDeadPeerDetectionRate:(id)arg17 withProtocolType:(id)arg18 withServerCertificateIssuerCommonName:(id)arg19 withServerCertificateCommonName:(id)arg20 withIKESecurityAssociationParameters:(id)arg21 withChildSecurityAssociationParameters:(id)arg22 withInterfaces:(id)arg23;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -68,6 +70,7 @@
 - (id)payloadEnablePFS;
 - (id)payloadExtendedAuthEnabled;
 - (id)payloadIKESecurityAssociationParameters;
+- (id)payloadInterfaces;
 - (id)payloadLocalIdentifier;
 - (id)payloadNATKeepAliveInterval;
 - (id)payloadNATKeepAliveOffloadEnable;
@@ -91,6 +94,7 @@
 - (void)setPayloadEnablePFS:(id)arg1;
 - (void)setPayloadExtendedAuthEnabled:(id)arg1;
 - (void)setPayloadIKESecurityAssociationParameters:(id)arg1;
+- (void)setPayloadInterfaces:(id)arg1;
 - (void)setPayloadLocalIdentifier:(id)arg1;
 - (void)setPayloadNATKeepAliveInterval:(id)arg1;
 - (void)setPayloadNATKeepAliveOffloadEnable:(id)arg1;

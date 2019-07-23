@@ -4,12 +4,14 @@
 
 @interface AVPlayerLayerInternal : NSObject {
     NSSet * KVOInvokers;
-    AVPlayerLayer * associatedPIPLayer;
+    long long  activeMode;
+    AVPlayerLayer * associatedRemoteModeLayer;
     NSDictionary * clientLayers;
     FigBaseCALayer * closedCaptionLayer;
     NSObject<OS_dispatch_queue> * configurationQueue;
     AVKeyPathDependencyManager * dependencyManager;
     AVNetworkPlaybackPerfHUDLayer * hudLayer;
+    bool  isConnectedToSecondScreen;
     bool  isPIPModeEnabled;
     bool  isPresentationLayer;
     bool  isReadyForDisplay;

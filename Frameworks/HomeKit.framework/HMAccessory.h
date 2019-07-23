@@ -47,7 +47,9 @@
     bool  _supportsMediaAccessControl;
     bool  _supportsTargetControl;
     bool  _supportsTargetController;
+    bool  _suspendCapable;
     HMSymptomsHandler * _symptomsHandler;
+    bool  _targetControllerHardwareSupport;
     unsigned long long  _transportTypes;
     NSUUID * _uniqueIdentifier;
     NSArray * _uniqueIdentifiersForBridgedAccessories;
@@ -83,12 +85,14 @@
 @property (nonatomic, copy) NSString *firmwareVersion;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long hf_appPunchOutReason;
+@property (nonatomic, readonly) NSArray *hf_bridgedAccessories;
 @property (nonatomic, readonly, copy) NSSet *hf_componentServices;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_defaultName;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
 @property (nonatomic, readonly, copy) NSSet *hf_displayNamesForVisibleTiles;
 @property (nonatomic, readonly) NSString *hf_editingName;
+@property (nonatomic, readonly) bool hf_fake8021xNetworkSymptom;
 @property (nonatomic, readonly) NSSet *hf_fakeDebugSymptoms;
 @property (nonatomic, readonly) bool hf_fakeGeneralFixSymptom;
 @property (nonatomic, readonly) bool hf_fakeHardwareFixSymptom;
@@ -96,6 +100,9 @@
 @property (nonatomic, readonly) bool hf_fakeICloudSymptom;
 @property (nonatomic, readonly) bool hf_fakeITunesSymptom;
 @property (nonatomic, readonly) bool hf_fakeInternetFixSymptom;
+@property (nonatomic, readonly) bool hf_fakeNetworkNotShareableSymptom;
+@property (nonatomic, readonly) bool hf_fakeNetworkProfileFixSymptom;
+@property (nonatomic, readonly) bool hf_fakeNetworkProfileInstallSymptom;
 @property (nonatomic, readonly) bool hf_fakeShouldDisplayManualFixOption;
 @property (nonatomic, readonly) bool hf_fakeUnreachableError;
 @property (nonatomic, readonly) bool hf_fakeVPNProfileExpired;
@@ -155,7 +162,10 @@
 @property (nonatomic) bool supportsMediaAccessControl;
 @property (nonatomic) bool supportsTargetControl;
 @property (nonatomic) bool supportsTargetController;
+@property (nonatomic, readonly) bool suspendCapable;
 @property (copy) HMSymptomsHandler *symptomsHandler;
+@property (nonatomic) bool targetControllerHardwareSupport;
+@property (nonatomic, readonly, copy) NSArray *televisionProfiles;
 @property (nonatomic) unsigned long long transportTypes;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, copy) NSArray *uniqueIdentifiersForBridgedAccessories;
@@ -166,6 +176,7 @@
 
 + (id)_cameraProfilesForAccessoryProfiles:(id)arg1;
 + (id)_mediaProfilesForAccessoryProfiles:(id)arg1;
++ (id)_televisionProfilesForAccessoryServices:(id)arg1;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 
@@ -174,6 +185,7 @@
 - (void)__handleConnectivityChanged:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)__updateSymptomsHandler:(id)arg1 operations:(id)arg2;
 - (id)_accessoryInformationService;
+- (void)_checkForTelevisionProfileChanges:(id)arg1;
 - (void)_configureProfilesWithContext:(id)arg1;
 - (void)_copyFrom:(id)arg1;
 - (id)_findCharacteristic:(id)arg1 forService:(id)arg2;
@@ -194,6 +206,7 @@
 - (void)_handleServiceConfigurationState:(id)arg1;
 - (void)_handleServiceConfiguredNameUpdate:(id)arg1;
 - (void)_handleServiceDefaultNameUpdate:(id)arg1;
+- (void)_handleServiceMediaSourceIdentifierUpdated:(id)arg1;
 - (void)_handleServiceRenamed:(id)arg1;
 - (void)_handleServiceSubtype:(id)arg1;
 - (void)_handleServiceTypeAssociated:(id)arg1;
@@ -270,6 +283,7 @@
 - (bool)isCurrentAccessory;
 - (bool)isFirmwareUpdateAvailable;
 - (bool)isReachable;
+- (bool)isSuspendCapable;
 - (id)logIdentifier;
 - (id)manufacturer;
 - (id)mediaProfile;
@@ -335,7 +349,9 @@
 - (void)setSupportsMediaAccessControl:(bool)arg1;
 - (void)setSupportsTargetControl:(bool)arg1;
 - (void)setSupportsTargetController:(bool)arg1;
+- (void)setSuspendCapable:(bool)arg1;
 - (void)setSymptomsHandler:(id)arg1;
+- (void)setTargetControllerHardwareSupport:(bool)arg1;
 - (void)setTransportTypes:(unsigned long long)arg1;
 - (void)setUniqueIdentifiersForBridgedAccessories:(id)arg1;
 - (void)setUuid:(id)arg1;
@@ -348,8 +364,11 @@
 - (bool)supportsMediaAccessControl;
 - (bool)supportsTargetControl;
 - (bool)supportsTargetController;
+- (bool)suspendCapable;
 - (id)symptomsHandler;
+- (bool)targetControllerHardwareSupport;
 - (id)targetControllers;
+- (id)televisionProfiles;
 - (unsigned long long)transportTypes;
 - (id)uniqueIdentifier;
 - (id)uniqueIdentifiersForBridgedAccessories;
@@ -366,12 +385,14 @@
 - (void)_pushSymptomUpdate;
 - (id)accessories;
 - (long long)hf_appPunchOutReason;
+- (id)hf_bridgedAccessories;
 - (id)hf_componentServices;
 - (id)hf_dateAdded;
 - (id)hf_defaultName;
 - (id)hf_displayName;
 - (id)hf_displayNamesForVisibleTiles;
 - (id)hf_editingName;
+- (bool)hf_fake8021xNetworkSymptom;
 - (id)hf_fakeDebugSymptoms;
 - (bool)hf_fakeGeneralFixSymptom;
 - (bool)hf_fakeHardwareFixSymptom;
@@ -379,6 +400,9 @@
 - (bool)hf_fakeICloudSymptom;
 - (bool)hf_fakeITunesSymptom;
 - (bool)hf_fakeInternetFixSymptom;
+- (bool)hf_fakeNetworkNotShareableSymptom;
+- (bool)hf_fakeNetworkProfileFixSymptom;
+- (bool)hf_fakeNetworkProfileInstallSymptom;
 - (bool)hf_fakeShouldDisplayManualFixOption;
 - (bool)hf_fakeUnreachableError;
 - (bool)hf_fakeVPNProfileExpired;

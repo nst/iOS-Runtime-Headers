@@ -6,4 +6,6 @@
 
 + (bool)supportsSecureCoding;
 
+- (unsigned int)nwActivityLabel;
+
 @end

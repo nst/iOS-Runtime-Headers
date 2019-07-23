@@ -77,6 +77,7 @@
 - (void)outputDeviceVolumeControlCapabilities:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)ping:(double)arg1 callback:(id /* block */)arg2 withQueue:(id)arg3;
 - (long long)port;
+- (void)sendButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
 - (void)sendCustomData:(id)arg1 withName:(id)arg2;
 - (void)setConnectionStateCallback:(id /* block */)arg1;
 - (void)setConnectionStateCallback:(id /* block */)arg1 withQueue:(id)arg2;

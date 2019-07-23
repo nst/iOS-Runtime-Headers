@@ -10,12 +10,7 @@
 @property (nonatomic, retain) NSString *destinationText;
 @property (nonatomic, retain) UISystemNavigationAction *systemNavigationAction;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)destinationText;
 - (double)extraRightPadding;
 - (long long)labelLineBreakMode;

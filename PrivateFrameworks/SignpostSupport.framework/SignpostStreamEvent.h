@@ -17,7 +17,7 @@
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(bool)arg1 shouldRedact:(bool)arg2;
 - (bool)_hasTotalFrames;
 - (unsigned long long)_totalFrameCount;
 - (id)initWithDictionary:(id)arg1;

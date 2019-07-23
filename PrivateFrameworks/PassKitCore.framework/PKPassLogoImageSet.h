@@ -29,6 +29,7 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)archiveName;
++ (unsigned int)currentVersion;
 + (long long)imageSetType;
 + (bool)shouldCache;
 + (bool)supportsSecureCoding;

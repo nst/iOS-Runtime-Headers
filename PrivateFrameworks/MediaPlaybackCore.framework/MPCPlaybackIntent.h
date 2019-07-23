@@ -3,10 +3,10 @@
  */
 
 @interface MPCPlaybackIntent : NSObject {
+    long long  _actionAfterQueueLoad;
     NSString * _localizedTitle;
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
-    bool  _preventAutomaticPlayback;
     <MPCPlaybackIntentDataSource> * _resolvedTracklistDataSource;
     long long  _shuffleMode;
     NSString * _siriAssetInfo;
@@ -15,10 +15,10 @@
     <NSSecureCoding> * _tracklistToken;
 }
 
+@property (nonatomic) long long actionAfterQueueLoad;
 @property (nonatomic, copy) NSString *localizedTitle;
 @property (nonatomic, copy) NSString *playActivityFeatureName;
 @property (nonatomic, copy) NSData *playActivityRecommendationData;
-@property (nonatomic) bool preventAutomaticPlayback;
 @property (nonatomic) long long shuffleMode;
 @property (nonatomic, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriReferenceIdentifier;
@@ -36,6 +36,7 @@
 + (id)tracklistDataSourceForSource:(long long)arg1;
 
 - (void).cxx_destruct;
+- (long long)actionAfterQueueLoad;
 - (id)description;
 - (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
@@ -45,6 +46,7 @@
 - (id)playActivityFeatureName;
 - (id)playActivityRecommendationData;
 - (bool)preventAutomaticPlayback;
+- (void)setActionAfterQueueLoad:(long long)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 - (void)setPlayActivityFeatureName:(id)arg1;
 - (void)setPlayActivityRecommendationData:(id)arg1;

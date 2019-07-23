@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSSecureAppAssertion : NSObject {
+@interface SBSSecureAppAssertion : SBSLockScreenContentAssertion {
     SBSLockScreenContentAssertion * _actualAssertion;
 }
 
@@ -12,9 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)actualAssertion;
-- (void)dealloc;
-- (id)initWithType:(unsigned long long)arg1 errorHandler:(id /* block */)arg2;
-- (void)invalidate;
 - (void)setActualAssertion:(id)arg1;
 
 @end

@@ -32,6 +32,7 @@
 - (id)globalKeyImageName;
 - (double)hintNoneKeyFontSize;
 - (bool)iPadFudgeLayout;
+- (bool)iPadSansHomeButtonLayout;
 - (struct CGPoint { double x1; double x2; })internationalKeyOffset;
 - (bool)isTallPopup;
 - (struct CGPoint { double x1; double x2; })leftArrowKeyOffset;

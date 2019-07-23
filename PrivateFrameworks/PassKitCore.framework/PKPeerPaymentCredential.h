@@ -13,6 +13,7 @@
 
 @property (nonatomic, readonly) PKPeerPaymentAccount *account;
 @property (nonatomic, retain) PKCurrencyAmount *amount;
+@property (nonatomic, readonly, copy) NSString *ownershipTokenIdentifier;
 @property (nonatomic, retain) PKPeerPaymentPassDetailsResponse *passDetailsResponse;
 @property (nonatomic, copy) NSString *pendingPaymentSenderAddress;
 @property (nonatomic, readonly, copy) NSString *pendingPaymentSenderName;
@@ -26,6 +27,7 @@
 - (id)initWithPeerPaymentAccount:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)longDescription;
+- (id)ownershipTokenIdentifier;
 - (id)passDetailsResponse;
 - (id)pendingPaymentSenderAddress;
 - (id)pendingPaymentSenderName;

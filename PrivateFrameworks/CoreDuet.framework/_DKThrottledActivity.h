@@ -15,7 +15,6 @@
 - (id)activityThrottler;
 - (void)clearHistoryForName:(id)arg1;
 - (id)description;
-- (id)initWithStore:(id)arg1;
 - (id)initWithStore:(id)arg1 namespace:(id)arg2;
 - (void)performNoMoreOftenInDaysThan:(double)arg1 name:(id)arg2 activityBlock:(id /* block */)arg3;
 - (void)performNoMoreOftenInDaysThan:(double)arg1 name:(id)arg2 activityBlock:(id /* block */)arg3 throttleBlock:(id /* block */)arg4;

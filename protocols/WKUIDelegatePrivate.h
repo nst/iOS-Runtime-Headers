@@ -24,13 +24,15 @@
 - (long long)_webView:(WKWebView *)arg1 dataOwnerForDragSession:(id <UIDragSession>)arg2;
 - (long long)_webView:(WKWebView *)arg1 dataOwnerForDropSession:(id <UIDropSession>)arg2;
 - (void)_webView:(void *)arg1 decideDatabaseQuotaForSecurityOrigin:(void *)arg2 currentQuota:(void *)arg3 currentOriginUsage:(void *)arg4 currentDatabaseUsage:(void *)arg5 expectedUsage:(void *)arg6 decisionHandler:(void *)arg7; // needs 7 arg types, found 12: WKWebView *, WKSecurityOrigin *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(void *)arg1 decideDatabaseQuotaForSecurityOrigin:(void *)arg2 databaseName:(void *)arg3 displayName:(void *)arg4 currentQuota:(void *)arg5 currentOriginUsage:(void *)arg6 currentDatabaseUsage:(void *)arg7 expectedUsage:(void *)arg8 decisionHandler:(void *)arg9; // needs 9 arg types, found 14: WKWebView *, WKSecurityOrigin *, NSString *, NSString *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
 - (void)_webView:(void *)arg1 decideWebApplicationCacheQuotaForSecurityOrigin:(void *)arg2 currentQuota:(void *)arg3 totalBytesNeeded:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 10: WKWebView *, WKSecurityOrigin *, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
+- (void)_webView:(WKWebView *)arg1 didChangeFontAttributes:(NSDictionary *)arg2;
 - (void)_webView:(WKWebView *)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(bool)arg2;
 - (void)_webView:(WKWebView *)arg1 didDismissFocusedElementViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didDismissPreviewViewController:(UIViewController *)arg2 committing:(bool)arg3;
-- (void)_webView:(WKWebView *)arg1 didInsertAttachment:(_WKAttachment *)arg2;
 - (void)_webView:(WKWebView *)arg1 didInsertAttachment:(_WKAttachment *)arg2 withSource:(NSString *)arg3;
+- (void)_webView:(WKWebView *)arg1 didInvalidateDataForAttachment:(_WKAttachment *)arg2;
 - (void)_webView:(WKWebView *)arg1 didNotHandleTapAsClickAtPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_webView:(WKWebView *)arg1 didPresentFocusedElementViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didRemoveAttachment:(_WKAttachment *)arg2;
@@ -59,13 +61,18 @@
 - (bool)_webView:(WKWebView *)arg1 shouldIncludeAppLinkActionsForElement:(_WKActivatedElementInfo *)arg2;
 - (bool)_webView:(WKWebView *)arg1 shouldRequestGeolocationAuthorizationForURL:(NSURL *)arg2 isMainFrame:(bool)arg3 mainFrameURL:(NSURL *)arg4;
 - (bool)_webView:(WKWebView *)arg1 showCustomSheetForElement:(_WKActivatedElementInfo *)arg2;
+- (void)_webView:(WKWebView *)arg1 takeFocus:(long long)arg2;
 - (NSArray *)_webView:(WKWebView *)arg1 willPerformDropWithSession:(id <UIDropSession>)arg2;
 - (void)_webView:(WKWebView *)arg1 willPreviewImageWithURL:(NSURL *)arg2;
 - (unsigned long long)_webView:(WKWebView *)arg1 willUpdateDataInteractionOperationToOperation:(unsigned long long)arg2 forSession:(id)arg3;
+- (UIDropProposal *)_webView:(WKWebView *)arg1 willUpdateDropProposalToProposal:(UIDropProposal *)arg2 forSession:(id <UIDropSession>)arg3;
 - (void)_webViewClose:(WKWebView *)arg1;
+- (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidEnterFullscreen:(WKWebView *)arg1;
 - (void)_webViewDidExitFullscreen:(WKWebView *)arg1;
 - (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
+- (void)_webViewDidRequestPointerLock:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: WKWebView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewFullscreenMayReturnToInline:(WKWebView *)arg1;
 - (void)_webViewRequestPointerLock:(WKWebView *)arg1;
 

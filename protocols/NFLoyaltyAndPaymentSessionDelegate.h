@@ -11,6 +11,7 @@
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didEnterFieldWithNotification:(NFFieldNotification *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpireTransactionForApplet:(NFApplet *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpressModeStateChange:(unsigned int)arg2;
+- (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpressModeStateChange:(unsigned int)arg2 withObject:(NSString *)arg3;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFailDeferredAuthorization:(bool)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFelicaStateChange:(NSDictionary *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didPerformValueAddedServiceTransactions:(NSArray *)arg2;

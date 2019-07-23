@@ -3,11 +3,13 @@
  */
 
 @interface AWDHomeKitAccessoryReadWrite : PBCodable <NSCopying> {
+    int  _certified;
     NSMutableArray * _characteristics;
     unsigned int  _duration;
     int  _errorCode;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int certified : 1; 
         unsigned int duration : 1; 
         unsigned int errorCode : 1; 
         unsigned int source : 1; 
@@ -27,9 +29,11 @@
     AWDHomeKitVendorInformation * _vendorDetails;
 }
 
+@property (nonatomic) int certified;
 @property (nonatomic, retain) NSMutableArray *characteristics;
 @property (nonatomic) unsigned int duration;
 @property (nonatomic) int errorCode;
+@property (nonatomic) bool hasCertified;
 @property (nonatomic) bool hasDuration;
 @property (nonatomic) bool hasErrorCode;
 @property (nonatomic) bool hasIsRemote;
@@ -54,9 +58,12 @@
 + (Class)characteristicsType;
 
 - (void).cxx_destruct;
+- (int)StringAsCertified:(id)arg1;
 - (int)StringAsSource:(id)arg1;
 - (int)StringAsTransportType:(id)arg1;
 - (void)addCharacteristics:(id)arg1;
+- (int)certified;
+- (id)certifiedAsString:(int)arg1;
 - (id)characteristics;
 - (id)characteristicsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)characteristicsCount;
@@ -67,6 +74,7 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)duration;
 - (int)errorCode;
+- (bool)hasCertified;
 - (bool)hasDuration;
 - (bool)hasErrorCode;
 - (bool)hasIsRemote;
@@ -85,9 +93,11 @@
 - (bool)isWrite;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setCertified:(int)arg1;
 - (void)setCharacteristics:(id)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setErrorCode:(int)arg1;
+- (void)setHasCertified:(bool)arg1;
 - (void)setHasDuration:(bool)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasIsRemote:(bool)arg1;

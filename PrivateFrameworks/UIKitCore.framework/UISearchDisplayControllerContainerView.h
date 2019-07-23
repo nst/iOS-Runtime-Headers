@@ -17,13 +17,8 @@
 @property (nonatomic, retain) NSLayoutConstraint *topViewAttributeTopConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *topViewHeightConstraint;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)adjustTopAttributeConstantByDelta:(double)arg1;
 - (id)behindView;
 - (id)bottomView;

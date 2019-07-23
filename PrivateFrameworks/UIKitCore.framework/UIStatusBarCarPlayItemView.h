@@ -4,8 +4,6 @@
 
 @interface UIStatusBarCarPlayItemView : UIStatusBarIndicatorItemView
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 
 @end

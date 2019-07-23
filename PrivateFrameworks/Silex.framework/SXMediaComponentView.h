@@ -3,6 +3,7 @@
  */
 
 @interface SXMediaComponentView : SXComponentView <SXViewportChangeListener> {
+    <SXAnalyticsReporting> * _analyticsReporting;
     bool  _isDisplayingMedia;
     double  _maximumVisibleY;
     SXMediaExposureEvent * _mediaExposureEvent;
@@ -19,6 +20,7 @@
     }  _visibleBounds;
 }
 
+@property (nonatomic, readonly) <SXAnalyticsReporting> *analyticsReporting;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -32,11 +34,12 @@
 - (void).cxx_destruct;
 - (unsigned long long)analyticsGalleryType;
 - (unsigned long long)analyticsMediaType;
+- (id)analyticsReporting;
 - (unsigned long long)analyticsVideoType;
 - (void)calculateVisibleBounds;
 - (void)createMediaExposureEventIfNeeded;
 - (void)finishMediaExposureEventIfNeeded;
-- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
+- (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4 analyticsReporting:(id)arg5 appStateMonitor:(id)arg6;
 - (bool)isDisplayingMedia;
 - (double)maximumVisibleY;
 - (id)mediaEventForClass:(Class)arg1;

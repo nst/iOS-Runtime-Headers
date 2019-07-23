@@ -13,10 +13,13 @@
 @property (readonly) const void*mapping;
 @property (readonly, copy) NSURL *url;
 
++ (Class)classForKeyedUnarchiver;
+
 - (void)_closeMapping;
 - (void)_destroyMapping;
 - (const void*)_openMapping;
 - (const void*)bytes;
+- (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

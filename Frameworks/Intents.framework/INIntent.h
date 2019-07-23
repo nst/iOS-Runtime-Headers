@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INIntent : NSObject <ACSCardRequesting, CRContent, INGenericIntent, INImageProxyInjecting, INIntentExport, INIntentSlotComposing, INKeyImageProducing, INRuntimeObject, NSCopying, NSSecureCoding, REIndentedDescription> {
+@interface INIntent : NSObject <ACSCardRequesting, CRContent, INFileURLEnumerable, INGenericIntent, INImageProxyInjecting, INIntentExport, INIntentSlotComposing, INKeyImageProducing, INRuntimeObject, NSCopying, NSSecureCoding, REIndentedDescription> {
     NSArray * _airPlayRouteIds;
     PBCodable * _backingStore;
     NSString * _identifier;
@@ -79,6 +79,7 @@
 - (id)_dictionaryRepresentation;
 - (id)_displayOrderedAttributes;
 - (id)_emptyCopy;
+- (void)_enumerateFileURLsWithMutatingBlock:(id /* block */)arg1;
 - (long long)_executionContext;
 - (bool)_hasTitle;
 - (id)_imageForParameter:(id)arg1;
@@ -208,6 +209,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantCardServiceSupport.framework/AssistantCardServiceSupport
 
+- (bool)acs_needsTitleCardSection;
 - (id)acs_utteranceForCardService;
 - (void)requestCard:(id)arg1 reply:(id /* block */)arg2;
 - (unsigned long long)servicePriorityForCardRequest:(id)arg1;

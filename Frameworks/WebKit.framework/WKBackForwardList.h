@@ -5,7 +5,7 @@
 @interface WKBackForwardList : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebBackForwardList> { 
         struct type { 
-            unsigned char __lx[64]; 
+            unsigned char __lx[56]; 
         } data; 
     }  _list;
 }

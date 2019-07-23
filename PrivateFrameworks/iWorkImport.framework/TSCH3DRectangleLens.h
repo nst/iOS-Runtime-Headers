@@ -20,7 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)deviceNormalize;
-- (struct FrustumRect { float x1; float x2; float x3; float x4; })frustumRect;
+- (id)frustumRect;
 - (float)height;
 - (id)init;
 - (float)left;

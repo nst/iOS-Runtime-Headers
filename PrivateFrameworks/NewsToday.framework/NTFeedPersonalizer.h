@@ -34,16 +34,16 @@
 - (double)articleDiversificationUniquePublisherExpectationSlope;
 - (double)articleDiversificationUniquePublisherExpectationYIntercept;
 - (double)decayedPublisherDiversificationPenalty;
-- (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2;
-- (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2 preselectedArticles:(id)arg3;
+- (id)diversifyItems:(id)arg1 limit:(unsigned long long)arg2;
+- (id)diversifyItems:(id)arg1 limit:(unsigned long long)arg2 preselectedItems:(id)arg3;
 - (id)globalScoreRangesValueStore;
 - (id)globalScoresRingBufferContainer;
 - (id)init;
 - (id)initWithPersonalizationTreatment:(id)arg1 readonlyPersonalizationAggregateStore:(id)arg2 articleDiversificationSimilarityExpectationStart:(double)arg3 articleDiversificationSimilarityExpectationEnd:(double)arg4 articleDiversificationUniquePublisherExpectationSlope:(double)arg5 articleDiversificationUniquePublisherExpectationYIntercept:(double)arg6 todayData:(id)arg7;
-- (id)limitArticlesByFlowRate:(id)arg1 timeInterval:(double)arg2 publisherCount:(unsigned long long)arg3;
-- (id)limitArticlesByMinimumArticleQuality:(id)arg1;
+- (id)limitItemsByFlowRate:(id)arg1 timeInterval:(double)arg2 publisherCount:(unsigned long long)arg3;
+- (id)limitItemsByMinimumItemQuality:(id)arg1;
 - (id)personalizationTreatment;
-- (void)prepareAutoFavoritesWithCompletionHandler:(id /* block */)arg1;
+- (void)prepareFavoritesWithCompletionHandler:(id /* block */)arg1;
 - (void)prepareForUseWithCompletionHandler:(id /* block */)arg1;
 - (id)rankTagIDsDescending:(id)arg1;
 - (id)readonlyPersonalizationAggregateStore;
@@ -57,10 +57,10 @@
 - (void)setPersonalizationTreatment:(id)arg1;
 - (void)setReadonlyPersonalizationAggregateStore:(id)arg1;
 - (void)setTodayData:(id)arg1;
-- (id)sortArticles:(id)arg1;
-- (id)sortArticles:(id)arg1 configurationSet:(long long)arg2;
-- (id)sortArticles:(id)arg1 options:(long long)arg2;
-- (id)sortArticles:(id)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
+- (id)sortItems:(id)arg1;
+- (id)sortItems:(id)arg1 configurationSet:(long long)arg2;
+- (id)sortItems:(id)arg1 options:(long long)arg2;
+- (id)sortItems:(id)arg1 options:(long long)arg2 configurationSet:(long long)arg3;
 - (id)todayData;
 - (unsigned long long)whitelistLevelForTagID:(id)arg1;
 

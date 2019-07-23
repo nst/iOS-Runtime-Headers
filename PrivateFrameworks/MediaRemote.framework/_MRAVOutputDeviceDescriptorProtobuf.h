@@ -20,6 +20,7 @@
         unsigned int deviceSubType : 1; 
         unsigned int deviceType : 1; 
         unsigned int volume : 1; 
+        unsigned int volumeCapabilities : 1; 
         unsigned int canAccessAppleMusic : 1; 
         unsigned int canAccessRemoteAssets : 1; 
         unsigned int canAccessiCloudMusicLibrary : 1; 
@@ -27,6 +28,7 @@
         unsigned int canPlayEncryptedProgressiveDownloadAssets : 1; 
         unsigned int canRelayCommunicationChannel : 1; 
         unsigned int groupContainsGroupLeader : 1; 
+        unsigned int isAddedToHomeKit : 1; 
         unsigned int isAirPlayReceiverSessionActive : 1; 
         unsigned int isDeviceGroupable : 1; 
         unsigned int isGroupLeader : 1; 
@@ -42,6 +44,7 @@
         unsigned int supportsBufferedAirPlay : 1; 
         unsigned int supportsExternalScreen : 1; 
     }  _has;
+    bool  _isAddedToHomeKit;
     bool  _isAirPlayReceiverSessionActive;
     bool  _isDeviceGroupable;
     bool  _isGroupLeader;
@@ -65,6 +68,7 @@
     bool  _supportsExternalScreen;
     NSString * _uniqueIdentifier;
     float  _volume;
+    int  _volumeCapabilities;
 }
 
 @property (nonatomic) float batteryLevel;
@@ -91,6 +95,7 @@
 @property (nonatomic, readonly) bool hasFirmwareVersion;
 @property (nonatomic) bool hasGroupContainsGroupLeader;
 @property (nonatomic, readonly) bool hasGroupID;
+@property (nonatomic) bool hasIsAddedToHomeKit;
 @property (nonatomic) bool hasIsAirPlayReceiverSessionActive;
 @property (nonatomic) bool hasIsDeviceGroupable;
 @property (nonatomic) bool hasIsGroupLeader;
@@ -114,6 +119,8 @@
 @property (nonatomic) bool hasSupportsExternalScreen;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
 @property (nonatomic) bool hasVolume;
+@property (nonatomic) bool hasVolumeCapabilities;
+@property (nonatomic) bool isAddedToHomeKit;
 @property (nonatomic) bool isAirPlayReceiverSessionActive;
 @property (nonatomic) bool isDeviceGroupable;
 @property (nonatomic) bool isGroupLeader;
@@ -137,6 +144,7 @@
 @property (nonatomic) bool supportsExternalScreen;
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 @property (nonatomic) float volume;
+@property (nonatomic) int volumeCapabilities;
 
 - (void).cxx_destruct;
 - (int)StringAsDeviceSubType:(id)arg1;
@@ -171,6 +179,7 @@
 - (bool)hasFirmwareVersion;
 - (bool)hasGroupContainsGroupLeader;
 - (bool)hasGroupID;
+- (bool)hasIsAddedToHomeKit;
 - (bool)hasIsAirPlayReceiverSessionActive;
 - (bool)hasIsDeviceGroupable;
 - (bool)hasIsGroupLeader;
@@ -194,7 +203,9 @@
 - (bool)hasSupportsExternalScreen;
 - (bool)hasUniqueIdentifier;
 - (bool)hasVolume;
+- (bool)hasVolumeCapabilities;
 - (unsigned long long)hash;
+- (bool)isAddedToHomeKit;
 - (bool)isAirPlayReceiverSessionActive;
 - (bool)isDeviceGroupable;
 - (bool)isEqual:(id)arg1;
@@ -237,6 +248,7 @@
 - (void)setHasDeviceSubType:(bool)arg1;
 - (void)setHasDeviceType:(bool)arg1;
 - (void)setHasGroupContainsGroupLeader:(bool)arg1;
+- (void)setHasIsAddedToHomeKit:(bool)arg1;
 - (void)setHasIsAirPlayReceiverSessionActive:(bool)arg1;
 - (void)setHasIsDeviceGroupable:(bool)arg1;
 - (void)setHasIsGroupLeader:(bool)arg1;
@@ -252,6 +264,8 @@
 - (void)setHasSupportsBufferedAirPlay:(bool)arg1;
 - (void)setHasSupportsExternalScreen:(bool)arg1;
 - (void)setHasVolume:(bool)arg1;
+- (void)setHasVolumeCapabilities:(bool)arg1;
+- (void)setIsAddedToHomeKit:(bool)arg1;
 - (void)setIsAirPlayReceiverSessionActive:(bool)arg1;
 - (void)setIsDeviceGroupable:(bool)arg1;
 - (void)setIsGroupLeader:(bool)arg1;
@@ -275,12 +289,14 @@
 - (void)setSupportsExternalScreen:(bool)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setVolume:(float)arg1;
+- (void)setVolumeCapabilities:(int)arg1;
 - (bool)shouldForceRemoteControlabillity;
 - (id)sourceInfo;
 - (bool)supportsBufferedAirPlay;
 - (bool)supportsExternalScreen;
 - (id)uniqueIdentifier;
 - (float)volume;
+- (int)volumeCapabilities;
 - (void)writeTo:(id)arg1;
 
 @end

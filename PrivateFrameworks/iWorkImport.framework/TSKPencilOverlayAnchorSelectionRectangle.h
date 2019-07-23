@@ -4,7 +4,6 @@
 
 @interface TSKPencilOverlayAnchorSelectionRectangle : NSObject {
     struct CGColor { } * _fillColor;
-    struct CGColor { } * _strokeColor;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -14,20 +13,23 @@
             double width; 
             double height; 
         } size; 
-    }  _unscaledSelectionRect;
+    }  _rectangle;
+    struct CGColor { } * _strokeColor;
 }
 
 @property (nonatomic) struct CGColor { }*fillColor;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rectangle;
 @property (nonatomic) struct CGColor { }*strokeColor;
-@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unscaledSelectionRect;
 
+- (id)anchorOverlayLayerForElapsedAnimationTime:(double)arg1;
 - (void)dealloc;
 - (struct CGColor { }*)fillColor;
-- (id)initWithUnscaledRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 strokeColor:(struct CGColor { }*)arg2 fillColor:(struct CGColor { }*)arg3;
+- (id)initWithRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 strokeColor:(struct CGColor { }*)arg2 fillColor:(struct CGColor { }*)arg3;
+- (id)pencilAnchorBloopAnimationStartingAtElapsedTime:(double)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectangle;
 - (void)setFillColor:(struct CGColor { }*)arg1;
+- (void)setRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setStrokeColor:(struct CGColor { }*)arg1;
-- (void)setUnscaledSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGColor { }*)strokeColor;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledSelectionRect;
 
 @end

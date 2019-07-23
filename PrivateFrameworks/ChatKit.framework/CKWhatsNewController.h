@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) NSUserDefaults *userDefaults;
 
 - (void).cxx_destruct;
-- (void)_beginMOCFlowForState:(id)arg1;
+- (void)_beginMOCFlowForState:(id)arg1 rampState:(id)arg2;
 - (void)_beginMOCWhatsNew;
 - (void)_beginNewInMessages;
 - (void)_beginSurfWhatsNew;
@@ -40,6 +40,7 @@
 - (id)initWithPresentationViewController:(id)arg1 userDefaults:(id)arg2 cloudKitHooks:(id)arg3;
 - (void)presentViewControllerIfNeeded;
 - (id)presentedViewController;
+- (void)reportMoCLayoutShown:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPresentedViewController:(id)arg1;
 - (void)setSyncState:(id)arg1;

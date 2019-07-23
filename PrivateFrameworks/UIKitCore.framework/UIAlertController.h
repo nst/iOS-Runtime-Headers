@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UIAlertController : UIViewController <DebugHierarchyObject_Fallback, HUPreloadableViewController, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
+@interface UIAlertController : UIViewController <HUPreloadableViewController, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
     NSMutableArray * __actionDelimiterIndices;
     UIPopoverController * __compatibilityPopoverController;
     UIView * __presentationSourceRepresentationView;
@@ -11,7 +11,6 @@
     <UIAlertControllerSystemProvidedPresentationDelegate> * __systemProvidedPresentationDelegate;
     UIView * __systemProvidedPresentationView;
     UIAlertControllerVisualStyle * __visualStyle;
-    UIViewController * _accessibilityViewControllerForSizing;
     NSMutableDictionary * _actionToKeyCommandsDictionary;
     NSMutableArray * _actions;
     NSPointerArray * _actionsWithInvokedHandlers;
@@ -69,7 +68,6 @@
 @property (readonly) _UIAlertControllerTextFieldViewController *_textFieldViewController;
 @property (setter=_setTextFieldsHidden:) bool _textFieldsHidden;
 @property (setter=_setVisualStyle:, nonatomic, retain) UIAlertControllerVisualStyle *_visualStyle;
-@property (getter=_getAccessibilityViewControllerForSizing, setter=_setAccessibilityViewControllerForSizing:, nonatomic, retain) UIViewController *accessibilityViewControllerForSizing;
 @property (setter=_setActions:, nonatomic, retain) NSArray *actions;
 @property (getter=_attributedMessage, setter=_setAttributedMessage:, nonatomic, copy) NSAttributedString *attributedMessage;
 @property (getter=_attributedTitle, setter=_setAttributedTitle:, nonatomic, copy) NSAttributedString *attributedTitle;
@@ -146,7 +144,6 @@
 - (void)_flipFrameForShimDismissalIfNecessary;
 - (id)_focusedAction;
 - (id)_foregroundView;
-- (id)_getAccessibilityViewControllerForSizing;
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (void)_handleKeyCommand:(id)arg1;
 - (void)_handleReturn;
@@ -194,7 +191,6 @@
 - (void)_restoreInputViewsAnimated:(bool)arg1;
 - (id)_returnKeyCommand;
 - (void)_returnKeyPressedInLastTextField;
-- (void)_setAccessibilityViewControllerForSizing:(id)arg1;
 - (void)_setActions:(id)arg1;
 - (void)_setAttributedDetailMessage:(id)arg1;
 - (void)_setAttributedMessage:(id)arg1;
@@ -246,7 +242,6 @@
 - (void)_updateShouldAlignToKeyboard;
 - (void)_updateTextFieldViewControllerWithVisualStyle:(id)arg1;
 - (void)_updateViewFrameForLandscapePresentationInShimIfNecessary;
-- (id)_viewControllerForSizing;
 - (bool)_viewControllerIsPresentedInModalPresentationContext:(id)arg1;
 - (id)_visualStyle;
 - (void)_willParentTextFieldViewController;
@@ -300,11 +295,6 @@
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visualStyleForAlertControllerStyle:(long long)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 

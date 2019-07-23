@@ -3,32 +3,23 @@
  */
 
 @interface IKAppDataItem : NSObject <NSCopying> {
-    IKDataBinding * _binding;
+    NSDictionary * _dataDictionary;
     NSString * _identifier;
-    NSDictionary * _properties;
-    NSString * _selector;
-    NSString * _type;
+    IKAppDataItemType * _type;
 }
 
-@property (nonatomic, readonly) IKDataBinding *binding;
-@property (getter=isDisabled, nonatomic, readonly) bool disabled;
+@property (nonatomic, readonly, copy) NSDictionary *dataDictionary;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, copy) NSDictionary *properties;
-@property (nonatomic, readonly) NSString *selector;
-@property (nonatomic, readonly) NSString *type;
+@property (nonatomic, readonly) IKAppDataItemType *type;
 
 - (void).cxx_destruct;
-- (id)binding;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dataItemByUpdatingProperties:(id)arg1;
+- (id)dataDictionary;
 - (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithType:(id)arg1 selector:(id)arg2 identifier:(id)arg3 binding:(id)arg4;
-- (bool)isDisabled;
+- (id)initWithType:(id)arg1 identifier:(id)arg2 dataDictionary:(id)arg3;
 - (bool)isEqual:(id)arg1;
-- (id)properties;
-- (id)selector;
-- (void)setProperties:(id)arg1;
 - (id)type;
+- (id)valueForPropertyPath:(id)arg1;
 
 @end

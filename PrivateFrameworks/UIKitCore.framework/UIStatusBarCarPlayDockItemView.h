@@ -26,17 +26,12 @@
 @property (nonatomic) UIView *preferredItemViewToFocus;
 @property (getter=isShowingCallTimer, nonatomic) bool showingCallTimer;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 - (void).cxx_destruct;
 - (double)_neededSizeWithCallTimer;
 - (double)_neededSizeWithoutCallTimer;
 - (unsigned long long)_numberOfEnabledItems;
 - (id)_toItemViewForBundleIdentifier:(id)arg1;
 - (void)_updateInCallDurationIfNecessary:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsUserInteraction;
 - (bool)animatesDataChange;
 - (id)currentActiveBundleIdentifier;

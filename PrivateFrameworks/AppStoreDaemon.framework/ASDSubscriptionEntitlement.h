@@ -15,6 +15,8 @@
 @property (readonly, copy) NSNumber *familyID;
 @property (readonly, copy) NSNumber *inAppAdamID;
 @property (readonly, copy) NSString *inAppVersion;
+@property (readonly) bool isPurchaser;
+@property (readonly) bool isTrialPeriod;
 @property (getter=isNewsAppPurchase, readonly) bool newsAppPurchase;
 @property (readonly, copy) NSString *offerID;
 @property (readonly, copy) NSNumber *originalPurchaseDownloadID;
@@ -22,6 +24,8 @@
 @property (readonly, copy) NSNumber *purchaseDownloadID;
 @property (readonly, copy) NSNumber *quantity;
 @property (readonly, copy) NSString *vendorID;
+
+// Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
 
 + (bool)supportsSecureCoding;
 
@@ -40,11 +44,17 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 forAppAdamID:(id)arg2;
 - (bool)isNewsAppPurchase;
+- (bool)isPurchaser;
+- (bool)isTrialPeriod;
 - (id)offerID;
 - (id)originalPurchaseDownloadID;
 - (id)purchasabilityType;
 - (id)purchaseDownloadID;
 - (id)quantity;
 - (id)vendorID;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)description;
 
 @end

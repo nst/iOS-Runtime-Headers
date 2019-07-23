@@ -72,6 +72,7 @@
 - (bool)isVideoEnabled;
 - (bool)isVideoPaused;
 - (id)negotiationData;
+- (id)newNSErrorWithErrorDictionary:(id)arg1;
 - (unsigned long long)participantID;
 - (unsigned int)prominenceIndex;
 - (void)registerBlocksForNotifications;

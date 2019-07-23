@@ -140,6 +140,7 @@
 - (bool)usesCUISystemThemeRenditionKey;
 - (id)uuid;
 - (int)validateBitmapInfo;
+- (int)validatekeyformat;
 - (const char *)versionString;
 - (void*)zcbezeldb;
 - (void*)zcglyphdb;

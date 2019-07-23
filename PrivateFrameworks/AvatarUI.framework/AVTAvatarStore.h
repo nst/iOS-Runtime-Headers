@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AvatarUI.framework/AvatarUI
  */
 
-@interface AVTAvatarStore : NSObject <AVTAvatarStore, AVTAvatarStoreInternal> {
+@interface AVTAvatarStore : NSObject <AVTAvatarStore, AVTAvatarStoreInternal, AVTStoreBackendDelegate> {
     <AVTStoreBackend> * _backend;
     NSObject<OS_dispatch_queue> * _backendAccessQueue;
     NSString * _domainIdentifier;
@@ -28,12 +28,15 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (id)defaultBackendForDomainIdentifier:(id)arg1 environment:(id)arg2;
++ (id)defaultBackendForDomainIdentifier:(id)arg1 workQueue:(id)arg2 environment:(id)arg3;
 + (id)defaultImageGeneratorForEnvironment:(id)arg1;
++ (unsigned long long)maximumNumberOfFetchableAvatars;
++ (unsigned long long)maximumNumberOfSavableAvatars;
 
 - (void).cxx_destruct;
 - (id)avatarsForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)backend;
+- (void)backend:(id)arg1 didChangeRecordsWithIdentifiers:(id)arg2;
 - (id)backendAccessQueue;
 - (bool)canCreateAvatar;
 - (bool)canCreateAvatarWithError:(id*)arg1;
@@ -45,12 +48,12 @@
 - (void)fetchAvatarsForFetchRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)imageGenerator;
 - (id)initWithDomainIdentifier:(id)arg1;
-- (id)initWithDomainIdentifier:(id)arg1 backend:(id)arg2 puppetStore:(id)arg3 imageGenerator:(id)arg4 environment:(id)arg5;
+- (id)initWithDomainIdentifier:(id)arg1 backend:(id)arg2 backendAccessQueue:(id)arg3 puppetStore:(id)arg4 imageGenerator:(id)arg5 environment:(id)arg6;
 - (id)logger;
 - (void)performAsynchronousWork:(id /* block */)arg1;
 - (void)performBackendWork:(id /* block */)arg1;
 - (void)performPuppetStoreWork:(id /* block */)arg1;
-- (void)postChangeNotificationForRecordWithIdentifier:(id)arg1;
+- (void)postChangeNotificationForRecordWithIdentifiers:(id)arg1 remote:(bool)arg2;
 - (id)puppetStore;
 - (id)puppetStoreAccessQueue;
 - (void)saveAvatar:(id)arg1 completionBlock:(id /* block */)arg2 thumbnailGenerationCompletionBlock:(id /* block */)arg3;

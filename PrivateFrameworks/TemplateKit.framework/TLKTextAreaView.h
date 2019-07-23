@@ -3,17 +3,23 @@
  */
 
 @interface TLKTextAreaView : TLKStackView <NUIContainerStackViewDelegate, TLKTextAreaViewTesting> {
+    <TLKDetailsViewDelegate> * _buttonDelegate;
     NSMutableArray * _detailsFields;
     bool  _disableAllObservers;
+    UIButton * _footnoteButton;
+    NUIContainerStackView * _footnoteContainer;
     TLKRichTextField * _footnoteLabel;
     unsigned long long  _style;
     TLKTitleContainerView * _titleContainer;
 }
 
+@property <TLKDetailsViewDelegate> *buttonDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSMutableArray *detailsFields;
 @property bool disableAllObservers;
+@property (retain) UIButton *footnoteButton;
+@property (retain) NUIContainerStackView *footnoteContainer;
 @property (retain) TLKRichTextField *footnoteLabel;
 @property (readonly) unsigned long long hash;
 @property unsigned long long style;
@@ -23,9 +29,12 @@
 + (id)footNoteLabelFont;
 
 - (void).cxx_destruct;
+- (id)buttonDelegate;
 - (id)detailsFields;
 - (id)detailsViews;
 - (bool)disableAllObservers;
+- (id)footnoteButton;
+- (id)footnoteContainer;
 - (id)footnoteLabel;
 - (id)footnoteLabelString;
 - (id)init;
@@ -34,8 +43,11 @@
 - (bool)noRichTextFields;
 - (void)performBatchUpdates:(id /* block */)arg1;
 - (id)secondaryTitleLabelString;
+- (void)setButtonDelegate:(id)arg1;
 - (void)setDetailsFields:(id)arg1;
 - (void)setDisableAllObservers:(bool)arg1;
+- (void)setFootnoteButton:(id)arg1;
+- (void)setFootnoteContainer:(id)arg1;
 - (void)setFootnoteLabel:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setTitleContainer:(id)arg1;
@@ -46,7 +58,7 @@
 - (id)titleLabelString;
 - (id)titleView;
 - (void)updateDetails:(id)arg1;
-- (void)updateFootnote:(id)arg1;
+- (void)updateFootnote:(id)arg1 buttonText:(id)arg2;
 - (void)updateResultWithTitle:(id)arg1 secondaryTitle:(id)arg2 image:(id)arg3 detached:(bool)arg4;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;

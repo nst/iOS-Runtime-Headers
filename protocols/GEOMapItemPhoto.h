@@ -7,8 +7,10 @@
 
 - (NSString *)author;
 - (<GEOMapItemPhotoInfo> *)bestPhotoForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (bool)businessProvided;
 - (NSString *)caption;
 - (bool)displayFullPhotoInline;
+- (bool)highQuality;
 - (<GEOMapItemPhotoInfo> *)largestPhoto;
 - (NSString *)licenseDescription;
 - (NSURL *)licenseURL;

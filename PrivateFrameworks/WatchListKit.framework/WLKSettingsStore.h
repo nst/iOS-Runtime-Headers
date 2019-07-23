@@ -47,12 +47,14 @@
 - (id)_dictionaryOnDisk;
 - (void)_dictionaryOnDisk:(id /* block */)arg1;
 - (id)_dictionaryRepresentation;
+- (id)_dictionaryRepresentationCopyingItems:(bool)arg1;
 - (id)_dictionaryRepresentationDataOnly;
 - (void)_readFromDisk;
 - (void)_removeWatchListApp:(id)arg1;
 - (id)_supportPath;
 - (void)_tickleKVO;
 - (void)_updateDisplayNamesForUI:(id /* block */)arg1;
+- (id)_watchListAppsFiltered;
 - (void)_writeToDisk;
 - (void)_writeToDisk:(id)arg1 completion:(id /* block */)arg2;
 - (void)beginIgnoringChanges;

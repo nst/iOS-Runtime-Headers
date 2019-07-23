@@ -38,7 +38,7 @@
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)initWithStore:(id)arg1 tracker:(id)arg2 planId:(struct NSString { Class x1; }*)arg3 isSynchronous:(bool)arg4 sessionDescriptor:(id)arg5 maxSessionsLimit:(unsigned long long)arg6 sessionsInBatch:(unsigned long long)arg7 currentModelWeights:(id)arg8 intercept:(bool)arg9 skew:(double)arg10 threshold:(double)arg11 isMultiLabel:(bool)arg12 positiveLabel:(unsigned long long)arg13 evaluationLevel:(unsigned long long)arg14;
 - (bool)isSynchronous;
-- (void)loadSessionsSince:(double)arg1 block:(id /* block */)arg2;
+- (void)loadSessionsWithBlock:(id /* block */)arg1;
 - (unsigned long long)maxSessionsLimit;
 - (id)normalizeRegressor:(id)arg1;
 - (struct NSString { Class x1; }*)planId;

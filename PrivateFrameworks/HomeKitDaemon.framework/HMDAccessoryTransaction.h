@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString *providedName;
 @property (nonatomic, retain) NSString *roomUUID;
 @property (nonatomic, retain) NSString *serialNumber;
+@property (nonatomic, retain) NSNumber *suspendCapable;
 
 + (id)properties;
 

@@ -5,6 +5,7 @@
 @interface ATXActionPredictions : NSObject
 
 + (id)_predictionWithCandidateBundleIdentifiers:(id)arg1 candidateActiontypes:(id)arg2 consumerSubType:(unsigned char)arg3 firstStageScoreLogger:(id)arg4 secondStageScoreLogger:(id)arg5 thirdStageScoreLogger:(id)arg6 multiStageScoreLogger:(id)arg7;
++ (id)actionsFromActions:(id)arg1 byMovingActionsWithBundleIdentifiers:(id)arg2 toRemainingPredictionItems:(struct vector<ATXPredictionItem, std::__1::allocator<ATXPredictionItem> > { struct ATXPredictionItem {} *x1; struct ATXPredictionItem {} *x2; struct __compressed_pair<ATXPredictionItem *, std::__1::allocator<ATXPredictionItem> > { struct ATXPredictionItem {} *x_3_1_1; } x3; }*)arg3;
 + (void)fetchDataAndUpdateContentAttributeSetForAction:(id)arg1;
 + (void)fetchDataAndUpdateContentAttributeSetForActions:(id)arg1;
 + (void)penalizeMultipleActionsPerAppAndKeepSorted:(id)arg1;

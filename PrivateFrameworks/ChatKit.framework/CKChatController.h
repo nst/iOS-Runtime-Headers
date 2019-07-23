@@ -145,7 +145,7 @@
 - (void)_autorotationUpdaterFired;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_avoidanceInsets;
 - (void)_backbuttonPressed;
-- (void)_callButtonPressedWithVideo:(bool)arg1;
+- (void)_callButtonPressedWithVideoEnabled:(bool)arg1;
 - (bool)_canReloadEntryView;
 - (bool)_canShowBackButtonView;
 - (bool)_chatShowsUnexpectedlyLoggedOutNotification;
@@ -153,6 +153,7 @@
 - (void)_conversationJoinStateDidChange:(id)arg1;
 - (void)_conversationParticipantsChanged:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertedNavigationBarFrameInSendAnimationContainerView:(id)arg1;
+- (double)_currentScrollDelta;
 - (void)_dataDetectorsDidDismissNotification:(id)arg1;
 - (void)_dataDetectorsWillPresentNotification:(id)arg1;
 - (void)_deleteSelectedMessages:(id)arg1;
@@ -182,6 +183,7 @@
 - (void)_kickPhotoKit;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_marginInsetsForEntryView;
 - (void)_markAsReadIfNecessary;
+- (void)_markMessagesAsReadOnPushIfNeeded;
 - (double)_maxEntryViewHeight;
 - (bool)_mediaObjectNeedsTrimming:(id)arg1;
 - (id)_menuTitleForChatItem:(id)arg1;

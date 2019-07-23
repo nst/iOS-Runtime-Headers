@@ -79,7 +79,6 @@
 - (id /* block */)rtiCallback;
 - (id)rtiCallbackQueue;
 - (id)rtiSourceSession;
-- (void)sendButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
 - (void)sendGameControllerEvent:(id)arg1 controllerID:(unsigned long long)arg2;
 - (void)sendHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)sendTouchEvent:(struct _MRHIDTouchEvent { union _MRHIDPoint { struct { float x_1_2_1; float x_1_2_2; } x_1_1_1; float x_1_1_2[2]; } x1; unsigned int x2; unsigned long long x3; unsigned int x4; })arg1 toVirtualDeviceWithID:(unsigned long long)arg2;

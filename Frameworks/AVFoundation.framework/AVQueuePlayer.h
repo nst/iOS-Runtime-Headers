@@ -6,6 +6,10 @@
     AVQueuePlayerInternal * _queuePlayer;
 }
 
+@property (nonatomic, retain) AVPlayerMediaSelectionCriteria *tvp_cachedAudioSelectionCriteria;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (void)initialize;
 + (id)queuePlayerWithItems:(id)arg1;
 
@@ -20,5 +24,10 @@
 - (void)removeAllItems;
 - (void)removeItem:(id)arg1;
 - (void)setActionAtItemEnd:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVPlayback.framework/TVPlayback
+
+- (void)setTvp_cachedAudioSelectionCriteria:(id)arg1;
+- (id)tvp_cachedAudioSelectionCriteria;
 
 @end

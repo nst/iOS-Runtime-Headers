@@ -10,6 +10,7 @@
     HMDAuthServer * _authServer;
     NSMutableSet * _browsingConnections;
     HAPAccessoryServerBrowserBTLE * _btleAccessoryServerBrowser;
+    bool  _btlePowerState;
     NSMutableArray * _currentlyPairingAccessories;
     NSMutableArray * _currentlyPairingProgressHandlers;
     NSMapTable * _delegates;
@@ -48,6 +49,7 @@
 @property (nonatomic) bool appIsInForeground;
 @property (nonatomic, retain) HMDAuthServer *authServer;
 @property (nonatomic, retain) HAPAccessoryServerBrowserBTLE *btleAccessoryServerBrowser;
+@property (nonatomic) bool btlePowerState;
 @property (nonatomic, retain) NSMutableArray *currentlyPairingAccessories;
 @property (nonatomic, retain) NSMutableArray *currentlyPairingProgressHandlers;
 @property (readonly, copy) NSString *debugDescription;
@@ -184,6 +186,7 @@
 - (void)accessoryServer:(id)arg1 promptUserForPasswordWithType:(unsigned long long)arg2;
 - (void)accessoryServer:(id)arg1 promtDialog:(id)arg2 forNotCertifiedAccessory:(id)arg3 completion:(id /* block */)arg4;
 - (void)accessoryServer:(id)arg1 requestUserPermission:(long long)arg2 accessoryInfo:(id)arg3 error:(id)arg4;
+- (void)accessoryServer:(id)arg1 validateCert:(id)arg2 model:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateUUID:(id)arg2 token:(id)arg3 model:(id)arg4;
 - (void)accessoryServerBrowser:(id)arg1 accessoryServer:(id)arg2 didUpdateValuesForCharacteristics:(id)arg3 stateNumber:(id)arg4 broadcast:(bool)arg5;
 - (void)accessoryServerBrowser:(id)arg1 didChangeReachability:(bool)arg2 forAccessoryServerWithIdentifier:(id)arg3;
@@ -218,6 +221,7 @@
 - (id)browsingConnections;
 - (void)btleAccessoryReachabilityProbeTimer:(bool)arg1;
 - (id)btleAccessoryServerBrowser;
+- (bool)btlePowerState;
 - (void)cancelPairingWithAccessory:(id)arg1 error:(id)arg2;
 - (void)cancelPairingWithAccessoryDescription:(id)arg1 error:(id)arg2;
 - (void)configureAccessory:(id)arg1 trackState:(bool)arg2 connectionPriority:(bool)arg3;
@@ -304,6 +308,7 @@
 - (void)setAppIsInForeground:(bool)arg1;
 - (void)setAuthServer:(id)arg1;
 - (void)setBtleAccessoryServerBrowser:(id)arg1;
+- (void)setBtlePowerState:(bool)arg1;
 - (void)setCurrentlyPairingAccessories:(id)arg1;
 - (void)setCurrentlyPairingProgressHandlers:(id)arg1;
 - (void)setDelegates:(id)arg1;
@@ -339,7 +344,7 @@
 - (void)tombstoneAccessoryServer:(id)arg1;
 - (id)tombstonedHAPAccessoryServers;
 - (id)unassociatedAccessories;
-- (id)unassociatedHAPAccessories;
+- (id)unassociatedAccessoriesForNonEntitledClients;
 - (id)unassociatedMediaAccessories;
 - (void)unassociatedWACAccessoryDidFinishAssociation:(id)arg1 withError:(id)arg2;
 - (void)unassociatedWACAccessoryDidStartAssociation:(id)arg1;

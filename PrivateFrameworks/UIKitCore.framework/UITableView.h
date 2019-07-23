@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
  */
 
-@interface UITableView : UIScrollView <DebugHierarchyObject_Fallback, NSCoding, UIDataSourceTranslating, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, UISwipeActionHost, UITable_ForMailOnly, UITable_RowDataSource, UITable_UITableViewCellDelegate, _UIDataSourceBackedView, _UIKeyboardAutoRespondingScrollView, _UITableViewDragControllerDelegate, _UITableViewDropControllerDelegate, _UITableViewSubviewManagerDelegate> {
+@interface UITableView : UIScrollView <NSCoding, UIDataSourceTranslating, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, UISwipeActionHost, UITable_ForMailOnly, UITable_RowDataSource, UITable_UITableViewCellDelegate, _UIDataSourceBackedView, _UIKeyboardAutoRespondingScrollView, _UITableViewDragControllerDelegate, _UITableViewDropControllerDelegate, _UITableViewSubviewManagerDelegate> {
     UIColor * _accessoryBaseColor;
     UIView * _backgroundView;
     double  _bottomPadding;
@@ -488,7 +488,10 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)_UIAppearance_setBackgroundColor:(id)arg1;
 - (void)_UIAppearance_setBackgroundEffects:(id)arg1;
+- (void)_UIAppearance_setSeparatorColor:(id)arg1;
+- (void)_UIAppearance_setSeparatorStyle:(long long)arg1;
 - (void)_accessibilitySetInterfaceStyleIntent:(unsigned long long)arg1;
 - (id)_accessoryBaseColor;
 - (void)_accessoryButtonAction:(id)arg1;
@@ -857,7 +860,7 @@
 - (void)_reapTentativeViews;
 - (void)_rebaseExistingShadowUpdatesIfNecessaryWithItems:(id)arg1 insertItems:(id)arg2 deleteItems:(id)arg3 sortedInsertItems:(id)arg4 sortedDeleteItems:(id)arg5 sortedMoveItems:(id)arg6;
 - (void)_rebuildGeometry;
-- (void)_rebuildGeometryForcingRowDataUpdate:(bool)arg1;
+- (void)_rebuildGeometryForcingRowDataUpdate:(bool)arg1 skipContentOffsetAdjustment:(bool)arg2 updateImmediatelyIfPossible:(bool)arg3;
 - (void)_recomputeSectionIndexTitleIndex;
 - (void)_rectChangedWithNewSize:(struct CGSize { double x1; double x2; })arg1 oldSize:(struct CGSize { double x1; double x2; })arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForFooterInSection:(long long)arg1 usingPresentationValues:(bool)arg2;
@@ -974,6 +977,7 @@
 - (void)_setMarginWidth:(double)arg1;
 - (void)_setNeedsIndexBarInsetsUpdate;
 - (void)_setNeedsVisibleCellsUpdate:(bool)arg1 withFrames:(bool)arg2;
+- (void)_setNeedsVisibleCellsUpdate:(bool)arg1 withFrames:(bool)arg2 updateImmediatelyIfPossible:(bool)arg3;
 - (void)_setPinsTableHeaderView:(bool)arg1;
 - (void)_setPlaceholderContexts:(id)arg1;
 - (void)_setRemembersPreviouslyFocusedItem:(bool)arg1;
@@ -1104,6 +1108,7 @@
 - (void)_updateCell:(id)arg1 withValue:(id)arg2;
 - (void)_updateCellContentStringCallout:(id)arg1;
 - (void)_updateContentSize;
+- (void)_updateContentSizeSkippingContentOffsetAdjustment:(bool)arg1;
 - (void)_updateDragControllerEnabledState;
 - (void)_updateDragStateForCell:(id)arg1 atIndexPath:(id)arg2;
 - (void)_updateDropTargetAppearanceWithTargetIndexPath:(id)arg1 dropProposal:(id)arg2 dropSession:(id)arg3;
@@ -1170,21 +1175,6 @@
 - (double)_widthForContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
 - (id)_wrapperView;
-- (void)dealloc;
-- (void)setBackgroundColor:(id)arg1;
-- (void)setSeparatorColor:(id)arg1;
-- (void)setSeparatorStyle:(long long)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)fallback_debugHierarchyPropertyDescriptions;
-+ (id)fallback_debugHierarchyValueForPropertyWithName:(id)arg1 onObject:(id)arg2 outOptions:(id*)arg3 outError:(id*)arg4;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (void)_UIAppearance_setBackgroundColor:(id)arg1;
-- (void)_UIAppearance_setSeparatorColor:(id)arg1;
-- (void)_UIAppearance_setSeparatorStyle:(long long)arg1;
 - (void)accessoryInsetsDidChange:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)adjustIndexPaths:(id)arg1 forMoveOfIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (bool)allowsFooterViewsToFloat;
@@ -1208,6 +1198,7 @@
 - (id)dataSource;
 - (id)dataSourceIndexPathForPresentationIndexPath:(id)arg1;
 - (long long)dataSourceSectionIndexForPresentationSectionIndex:(long long)arg1;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (id)deleteConfirmationIndexPath;
@@ -1328,12 +1319,14 @@
 - (void)setAllowsMultipleSelectionDuringEditing:(bool)arg1;
 - (void)setAllowsSelection:(bool)arg1;
 - (void)setAllowsSelectionDuringEditing:(bool)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCellLayoutMarginsFollowReadableWidth:(bool)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1 skipContentOffsetAdjustment:(bool)arg2;
 - (void)setCountString:(id)arg1;
 - (void)setCountStringInsignificantRowCount:(unsigned long long)arg1;
 - (void)setCurrentTouch:(id)arg1;
@@ -1374,9 +1367,11 @@
 - (void)setSectionIndexTrackingBackgroundColor:(id)arg1;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)setSeparatorBottomShadowColor:(id)arg1;
+- (void)setSeparatorColor:(id)arg1;
 - (void)setSeparatorEffect:(id)arg1;
 - (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSeparatorInsetReference:(long long)arg1;
+- (void)setSeparatorStyle:(long long)arg1;
 - (void)setSeparatorTopShadowColor:(id)arg1;
 - (void)setShowsHorizontalScrollIndicator:(bool)arg1;
 - (void)setShowsVerticalScrollIndicator:(bool)arg1;
@@ -1429,6 +1424,10 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)_mapkit_dequeueReusableCellWithIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (id)selectedCell;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

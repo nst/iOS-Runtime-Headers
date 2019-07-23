@@ -106,6 +106,7 @@
 @property (nonatomic, readonly) NSString *processName;
 @property (nonatomic, readonly) AXElement *remoteParent;
 @property (nonatomic, readonly) bool representsScannerGroup;
+@property (nonatomic, readonly) NSString *roleDescription;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rowRange;
 @property (nonatomic, readonly) long long scannerActivateBehavior;
 @property (nonatomic, readonly) unsigned long long scanningBehaviorTraits;
@@ -285,6 +286,7 @@
 - (id)remoteApplication;
 - (id)remoteParent;
 - (bool)representsScannerGroup;
+- (id)roleDescription;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rowRange;
 - (long long)scannerActivateBehavior;
 - (unsigned long long)scanningBehaviorTraits;

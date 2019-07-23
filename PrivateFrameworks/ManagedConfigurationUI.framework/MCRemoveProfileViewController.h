@@ -25,7 +25,7 @@
 - (void)_cancelActiveAlert:(bool)arg1;
 - (void)_cancelActiveAlertController:(bool)arg1;
 - (void)_clearCachedTableCells;
-- (void)_hideProgressIndicatorWithSuccess:(bool)arg1 showButtons:(bool)arg2;
+- (bool)_isProfileInstalled;
 - (void)_leaveRemoteManagementAndErase;
 - (id)_mdmProfileRemovalAlertBody;
 - (void)_performReEnroll;
@@ -36,7 +36,6 @@
 - (void)_resetWithMode:(int)arg1;
 - (void)_showEraseDeviceAlert;
 - (void)_showLeaveRemoteManagementAlert;
-- (void)_showProgressIndicator;
 - (void)_showRemovalWarningActionSheet;
 - (void)_showRemovalWarningAfterPINVerification;
 - (void)_showRemovalWarningAlert;
@@ -47,10 +46,8 @@
 - (void)alertViewCancel:(id)arg1;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)didCancelEnteringPIN;
-- (void)didReceiveMemoryWarning;
 - (id)initWithProfile:(id)arg1;
 - (id)passwordField;
-- (void)performRemoveAfterFinalVerification;
 - (void)profileViewControllerDidSelectRemoveProfile:(id)arg1;
 - (void)profileViewControllerDidSelectUpdateProfile:(id)arg1;
 - (void)setInstallState:(int)arg1 animated:(bool)arg2;

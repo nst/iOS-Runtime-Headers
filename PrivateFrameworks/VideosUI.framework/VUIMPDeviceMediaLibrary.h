@@ -12,6 +12,8 @@
 + (bool)_isUpdateInProgress;
 
 - (void).cxx_destruct;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
+- (void)_handleApplicationWillResignActiveNotification:(id)arg1;
 - (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryIsUpdateInProgressDidChangeNotification:(id)arg1;
 - (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize { double x1; double x2; })arg2 cropToFit:(bool)arg3;
@@ -28,6 +30,7 @@
 - (id)saveMediaEntity:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setMediaLibrary:(id)arg1;
 - (id)title;
+- (void)updateFromCloudWithReason:(long long)arg1;
 - (void)updateProgressWithCompletionHandler:(id /* block */)arg1;
 
 @end

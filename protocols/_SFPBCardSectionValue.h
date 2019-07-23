@@ -23,6 +23,7 @@
 - (_SFPBMapsDetailedRowCardSection *)mapsDetailedRowCardSection;
 - (_SFPBMediaInfoCardSection *)mediaInfoCardSection;
 - (_SFPBMediaPlayerCardSection *)mediaPlayerCardSection;
+- (_SFPBMediaRemoteControlCardSection *)mediaRemoteControlCardSection;
 - (_SFPBMessageCardSection *)messageCardSection;
 - (_SFPBMetaInfoCardSection *)metaInfoCardSection;
 - (_SFPBNowPlayingCardSection *)nowPlayingCardSection;
@@ -47,6 +48,7 @@
 - (void)setMapsDetailedRowCardSection:(_SFPBMapsDetailedRowCardSection *)arg1;
 - (void)setMediaInfoCardSection:(_SFPBMediaInfoCardSection *)arg1;
 - (void)setMediaPlayerCardSection:(_SFPBMediaPlayerCardSection *)arg1;
+- (void)setMediaRemoteControlCardSection:(_SFPBMediaRemoteControlCardSection *)arg1;
 - (void)setMessageCardSection:(_SFPBMessageCardSection *)arg1;
 - (void)setMetaInfoCardSection:(_SFPBMetaInfoCardSection *)arg1;
 - (void)setNowPlayingCardSection:(_SFPBNowPlayingCardSection *)arg1;

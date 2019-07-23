@@ -13,8 +13,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
-
 + (double)defaultExtendedControlHeight;
 + (double)extendedHeight;
 
@@ -22,11 +20,8 @@
 - (double)_additionalClipHeight;
 - (int)_clipCornersOfView:(id)arg1;
 - (unsigned long long)_numberOfColumns:(bool)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)candidateBarDidScroll:(id)arg1;
+- (void)dealloc;
 - (void)didEndSplitTransition;
 - (double)extendedViewHeight;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -10,7 +10,7 @@
     AVTUIEnvironment * _environment;
     <AVTUILogger> * _logger;
     <AVTImageCache> * _peristentCache;
-    <AVTScheduler> * _renderingScheduler;
+    <AVTTaskScheduler> * _renderingScheduler;
     <AVTImageCache> * _volatileCache;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) AVTUIEnvironment *environment;
 @property (nonatomic, readonly) <AVTUILogger> *logger;
 @property (nonatomic, readonly) <AVTImageCache> *peristentCache;
-@property (nonatomic, readonly) <AVTScheduler> *renderingScheduler;
+@property (nonatomic, readonly) <AVTTaskScheduler> *renderingScheduler;
 @property (nonatomic, readonly) <AVTImageCache> *volatileCache;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -38,7 +38,7 @@
 - (id)environment;
 - (id)initWithEnvironment:(id)arg1;
 - (id)initWithPersistentCache:(id)arg1 volatileCache:(id)arg2 allowPreFlight:(bool)arg3 environment:(id)arg4;
-- (id)initWithPersistentCache:(id)arg1 volatileCache:(id)arg2 renderingQueueProvider:(id /* block */)arg3 callbackQueue:(id)arg4 configurationRenderer:(id)arg5 avatarRenderer:(id)arg6 allowPreFlight:(bool)arg7 environment:(id)arg8;
+- (id)initWithPersistentCache:(id)arg1 volatileCache:(id)arg2 renderingQueue:(id)arg3 callbackQueue:(id)arg4 configurationRenderer:(id)arg5 avatarRenderer:(id)arg6 allowPreFlight:(bool)arg7 environment:(id)arg8;
 - (id)logger;
 - (id)peristentCache;
 - (id /* block */)providerForRecord:(id)arg1 scope:(id)arg2;

@@ -57,6 +57,7 @@
     BWStillImageCaptureMetadata * _metadata;
     unsigned long long  _sceneFlags;
     long long  _settingsID;
+    long long  _stillImageRequestTime;
     int  _tempExpectedClientImageCount;
     int  _timeMachineReferenceFrameBracketedCaptureSequenceNumber;
     struct { 
@@ -79,6 +80,7 @@
 @property (nonatomic) int expectedClientImageCount;
 @property (nonatomic) unsigned long long sceneFlags;
 @property (nonatomic, readonly) long long settingsID;
+@property (nonatomic) long long stillImageRequestTime;
 @property (nonatomic) int timeMachineReferenceFrameBracketedCaptureSequenceNumber;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } zeroShutterLagPTS;
 @property (nonatomic) bool zeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled;
@@ -107,10 +109,12 @@
 - (void)setExpectedClientImageCount:(int)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setSceneFlags:(unsigned long long)arg1;
+- (void)setStillImageRequestTime:(long long)arg1;
 - (void)setTimeMachineReferenceFrameBracketedCaptureSequenceNumber:(int)arg1;
 - (void)setZeroShutterLagPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setZeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled:(bool)arg1;
 - (long long)settingsID;
+- (long long)stillImageRequestTime;
 - (int)timeMachineReferenceFrameBracketedCaptureSequenceNumber;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })zeroShutterLagPTS;
 - (bool)zeroShutterLagSmartCameraPostCaptureReferenceFrameSelectionEnabled;

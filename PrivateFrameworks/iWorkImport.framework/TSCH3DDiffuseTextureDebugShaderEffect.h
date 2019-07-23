@@ -4,7 +4,10 @@
 
 @interface TSCH3DDiffuseTextureDebugShaderEffect : TSCH3DShaderEffect
 
++ (id)variableTexture;
+
 - (void)addVariables:(id)arg1;
-- (void)inject:(id)arg1;
+- (void)injectCommonShaderInto:(id)arg1 context:(id)arg2;
+- (id)variableDiffuseTexture;
 
 @end

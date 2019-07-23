@@ -12,6 +12,7 @@
 - (id)current;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)mutatingCommand;
 - (bool)requiresResponse;
 - (void)setCurrent:(id)arg1;
 

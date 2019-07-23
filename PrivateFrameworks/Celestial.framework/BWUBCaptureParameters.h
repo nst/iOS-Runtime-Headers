@@ -3,19 +3,31 @@
  */
 
 @interface BWUBCaptureParameters : NSObject {
+    double  _longWithoutSphereEffectiveIntegrationTimeThreshold;
     double  _lowLightEffectiveIntegrationTimeThreshold;
+    double  _redSaturationMainEffectiveIntegrationTimeThreshold;
+    float  _redSaturationSIFRGainThreshold;
     float  _sifrGainThreshold;
     double  _sifrMainEffectiveIntegrationTimeThreshold;
+    bool  _useSquareRootToneCurveForHDRDisabled;
 }
 
+@property (nonatomic, readonly) double longWithoutSphereEffectiveIntegrationTimeThreshold;
 @property (nonatomic, readonly) double lowLightEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) double redSaturationMainEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) float redSaturationSIFRGainThreshold;
 @property (nonatomic, readonly) float sifrGainThreshold;
 @property (nonatomic, readonly) double sifrMainEffectiveIntegrationTimeThreshold;
+@property (nonatomic, readonly) bool useSquareRootToneCurveForHDRDisabled;
 
 - (id)description;
 - (id)initWithSensorIDDictionary:(id)arg1;
+- (double)longWithoutSphereEffectiveIntegrationTimeThreshold;
 - (double)lowLightEffectiveIntegrationTimeThreshold;
+- (double)redSaturationMainEffectiveIntegrationTimeThreshold;
+- (float)redSaturationSIFRGainThreshold;
 - (float)sifrGainThreshold;
 - (double)sifrMainEffectiveIntegrationTimeThreshold;
+- (bool)useSquareRootToneCurveForHDRDisabled;
 
 @end

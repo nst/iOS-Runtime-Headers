@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDServiceTransaction : HMDBackingStoreModelObject
+@interface HMDServiceTransaction : HMDBackingStoreModelObject {
+    NSString * _lastSeenConfiguredNameLocal;
+}
 
 @property (nonatomic, retain) NSString *associatedServiceType;
 @property (nonatomic, retain) NSArray *characteristics;
@@ -12,8 +14,11 @@
 @property (nonatomic, retain) NSNumber *instanceID;
 @property (nonatomic, retain) NSNumber *labelIndex;
 @property (nonatomic, retain) NSNumber *labelNamespace;
-@property (nonatomic, retain) NSString *lastSeenConfiguredName;
+@property (nonatomic, retain) NSNumber *lastKnownDiscoveryMode;
+@property (nonatomic, retain) NSString *lastSeenConfiguredNameLocal;
 @property (nonatomic, retain) NSArray *linkedServices;
+@property (nonatomic, retain) NSArray *mediaSourceDisplayOrder;
+@property (nonatomic, retain) NSNumber *mediaSourceIdentifier;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *primary;
 @property (nonatomic, retain) NSString *providedName;
@@ -21,5 +26,9 @@
 @property (nonatomic, retain) NSString *serviceType;
 
 + (id)properties;
+
+- (void).cxx_destruct;
+- (id)lastSeenConfiguredNameLocal;
+- (void)setLastSeenConfiguredNameLocal:(id)arg1;
 
 @end

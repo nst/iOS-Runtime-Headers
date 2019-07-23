@@ -9,6 +9,8 @@
 
 @property (nonatomic, readonly) unsigned long long lifecycleState;
 
++ (id)startApplePayTrustSessionWithCompletion:(id /* block */)arg1;
++ (id)startApplePayTrustSessionWithCompletion:(id /* block */)arg1 targetQueue:(id)arg2;
 + (id)startContactlessInterfaceSessionWithCompletion:(id /* block */)arg1;
 + (id)startContactlessInterfaceSessionWithCompletion:(id /* block */)arg1 targetQueue:(id)arg2;
 + (id)startInAppSessionWithCompletion:(id /* block */)arg1;

@@ -6,25 +6,26 @@
     PKCurrencyAmount * _balance;
     PKPaymentSetupProduct * _product;
     NSString * _productIdentifier;
-    NSString * _provisioningToken;
+    PKServiceProviderPurchase * _purchase;
 }
 
-@property (nonatomic, readonly, copy) PKCurrencyAmount *balance;
+@property (nonatomic, copy) PKCurrencyAmount *balance;
 @property (nonatomic, readonly, copy) NSArray *metadata;
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
 @property (nonatomic, copy) NSString *productIdentifier;
-@property (nonatomic, copy) NSString *provisioningToken;
+@property (nonatomic, retain) PKServiceProviderPurchase *purchase;
 
 - (void).cxx_destruct;
 - (id)balance;
-- (id)initWithPaymentSetupProduct:(id)arg1 provisioningToken:(id)arg2 balance:(id)arg3;
+- (id)initWithPaymentSetupProduct:(id)arg1 purchase:(id)arg2 balance:(id)arg3;
 - (id)metadata;
 - (id)product;
 - (id)productIdentifier;
-- (id)provisioningToken;
+- (id)purchase;
+- (void)setBalance:(id)arg1;
 - (void)setProduct:(id)arg1;
 - (void)setProductIdentifier:(id)arg1;
-- (void)setProvisioningToken:(id)arg1;
+- (void)setPurchase:(id)arg1;
 - (void)setRequirementsResponse:(id)arg1;
 
 @end

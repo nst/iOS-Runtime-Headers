@@ -2,10 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVCloudServiceCapabilitiesRequest : SSRequest
+@interface SSVCloudServiceCapabilitiesRequest : SSRequest <SSXPCCoding> {
+    bool  _allowsPromptingForPrivacyAcknowledgement;
+}
 
+@property (nonatomic) bool allowsPromptingForPrivacyAcknowledgement;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (bool)allowsPromptingForPrivacyAcknowledgement;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (void)setAllowsPromptingForPrivacyAcknowledgement:(bool)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 

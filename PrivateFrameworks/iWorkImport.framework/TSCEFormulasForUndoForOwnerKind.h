@@ -78,10 +78,10 @@
             } __p3_; 
         } __table_; 
     }  _nonFormulaCells;
-    int  _ownerKind;
+    unsigned short  _ownerKind;
 }
 
-@property (nonatomic) int ownerKind;
+@property (nonatomic) unsigned short ownerKind;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -91,7 +91,7 @@
 - (id)description;
 - (void)foreachFormula:(id /* block */)arg1;
 - (const struct unordered_set<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct __hash_table<TSU::UUIDData<TSP::UUIDData>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *>, std::__1::allocator<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> > > { struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> { struct __hash_node_base<std::__1::__hash_node<TSU::UUIDData<TSP::UUIDData>, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)formulaOwnerUIDs;
-- (int)ownerKind;
-- (void)setOwnerKind:(int)arg1;
+- (unsigned short)ownerKind;
+- (void)setOwnerKind:(unsigned short)arg1;
 
 @end

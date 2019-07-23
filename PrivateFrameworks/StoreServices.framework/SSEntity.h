@@ -22,6 +22,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
 + (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;
 + (long long)_getValueMessage;
@@ -60,5 +62,9 @@
 - (bool)setValuesWithDictionary:(id)arg1;
 - (id)valueForExternalProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VideosUI.framework/VideosUI
+
+- (id)vui_valuesForProperties:(id)arg1;
 
 @end

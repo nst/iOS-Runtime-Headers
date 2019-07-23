@@ -3,76 +3,67 @@
  */
 
 @interface SXLayoutOperation : NSOperation <SXLayouterDelegate> {
+    <SXDOMObjectProviding> * _DOMObjectProvider;
     id /* block */  _afterBlock;
     id /* block */  _beforeBlock;
     <SXComponentSizerEngine> * _componentSizerEngine;
-    double  _constrainedWidth;
+    double  _duration;
     bool  _executing;
     bool  _finished;
-    SXLayoutAttributes * _layoutAttributes;
     SXLayoutBlueprint * _layoutBlueprint;
     <SXLayoutBlueprintFactory> * _layoutBlueprintFactory;
-    SXLayoutDataProvider * _layoutDataProvider;
-    NSString * _targetComponentIdentifier;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _viewportSize;
+    SXColumnLayouter * _layouter;
+    double  _startTime;
+    SXLayoutTask * _task;
 }
 
+@property (nonatomic, readonly) <SXDOMObjectProviding> *DOMObjectProvider;
 @property (setter=afterLayout:, nonatomic, copy) id /* block */ afterBlock;
 @property (setter=beforeLayout:, nonatomic, copy) id /* block */ beforeBlock;
 @property (nonatomic, readonly) <SXComponentSizerEngine> *componentSizerEngine;
-@property (nonatomic, readonly) double constrainedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
 @property bool executing;
 @property bool finished;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) SXLayoutAttributes *layoutAttributes;
-@property (nonatomic, retain) SXLayoutBlueprint *layoutBlueprint;
+@property (nonatomic, readonly) SXLayoutBlueprint *layoutBlueprint;
 @property (nonatomic, readonly) <SXLayoutBlueprintFactory> *layoutBlueprintFactory;
-@property (nonatomic, readonly) SXLayoutDataProvider *layoutDataProvider;
+@property (nonatomic, readonly) SXColumnLayouter *layouter;
+@property (nonatomic, readonly) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSString *targetComponentIdentifier;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
+@property (nonatomic, readonly) SXLayoutTask *task;
 
 - (void).cxx_destruct;
+- (id)DOMObjectProvider;
 - (id /* block */)afterBlock;
 - (void)afterLayout:(id /* block */)arg1;
 - (id /* block */)beforeBlock;
 - (void)beforeLayout:(id /* block */)arg1;
 - (id)componentSizerEngine;
-- (double)constrainedWidth;
-- (id)createLayoutBlueprintForLayoutDataProvider:(id)arg1 documentColumnLayout:(id)arg2;
-- (void)doFinishBookKeeping;
-- (void)doStartBookKeeping;
+- (id)createLayoutBlueprintForComponents:(id)arg1;
+- (double)duration;
 - (bool)executing;
-- (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)finishBookKeeping;
 - (bool)finished;
-- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
+- (id)initWithTask:(id)arg1 layouter:(id)arg2 DOMObjectProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
 - (bool)isAsynchronous;
 - (bool)isExecuting;
 - (bool)isFinished;
-- (bool)isFinishedLayoutBlueprint:(id)arg1 forLayoutDataProvider:(id)arg2;
-- (bool)isValidLayoutBlueprint:(id)arg1 viewportSize:(struct CGSize { double x1; double x2; })arg2;
-- (id)layoutAttributes;
 - (id)layoutBlueprint;
+- (bool)layoutBlueprint:(id)arg1 containsComponents:(id)arg2;
 - (id)layoutBlueprintFactory;
-- (id)layoutDataProvider;
-- (bool)layoutInvalidationRequiredForComponentBlueprint:(id)arg1 columnLayout:(id)arg2 previousColumnLayout:(id)arg3;
-- (void)layouter:(id)arg1 didFinishLayoutForComponent:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(bool*)arg4;
+- (id)layoutWithBlueprint:(id)arg1;
+- (id)layouter;
+- (void)layouter:(id)arg1 didFinishLayoutForComponentBlueprint:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(bool*)arg4;
 - (void)prepareLayoutBlueprint:(id)arg1;
-- (void)registerComponent:(id)arg1 toLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3 documentColumnLayout:(id)arg4;
+- (void)registerComponent:(id)arg1 layoutBlueprint:(id)arg2 componentIndex:(unsigned long long)arg3;
 - (void)setExecuting:(bool)arg1;
 - (void)setFinished:(bool)arg1;
-- (void)setLayoutAttributes:(id)arg1;
-- (void)setLayoutBlueprint:(id)arg1;
-- (void)setTargetComponentIdentifier:(id)arg1;
 - (void)start;
-- (void)startLayoutWorkForBlueprint:(id)arg1;
-- (id)targetComponentIdentifier;
-- (void)updateLayoutBlueprint:(id)arg1 usingLayoutDataProvider:(id)arg2;
-- (struct CGSize { double x1; double x2; })viewportSize;
+- (void)startBookKeeping;
+- (double)startTime;
+- (id)task;
+- (void)updateLayoutBlueprint:(id)arg1 components:(id)arg2;
 
 @end

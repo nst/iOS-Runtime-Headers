@@ -4,15 +4,21 @@
 
 @interface RWIProtocolCSSPropertyInfo : RWIProtocolJSONObject
 
+@property (nonatomic, copy) NSArray *aliases;
+@property (nonatomic) bool inherited;
 @property (nonatomic, copy) NSArray *longhands;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSArray *values;
 
 // Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
 
+- (id)aliases;
+- (bool)inherited;
 - (id)initWithName:(id)arg1;
 - (id)longhands;
 - (id)name;
+- (void)setAliases:(id)arg1;
+- (void)setInherited:(bool)arg1;
 - (void)setLonghands:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setValues:(id)arg1;

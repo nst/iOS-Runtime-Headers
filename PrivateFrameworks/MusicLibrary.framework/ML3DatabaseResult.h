@@ -4,6 +4,7 @@
 
 @interface ML3DatabaseResult : NSObject {
     NSDictionary * _columnNameIndexMap;
+    ML3DatabaseConnection * _connection;
     unsigned long long  _limitIndex;
     NSString * _limitProperty;
     long long  _limitValue;
@@ -20,7 +21,7 @@
 - (bool)hasAtLeastOneRow;
 - (unsigned long long)indexForColumnName:(id)arg1;
 - (id)init;
-- (id)initWithStatement:(id)arg1;
+- (id)initWithStatement:(id)arg1 connection:(id)arg2;
 - (long long)int64ValueForFirstRowAndColumn;
 - (id)limitProperty;
 - (long long)limitValue;

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXTextStyle : SXJSONObject <SXTextStyleFontDescribing>
+@interface SXTextStyle : SXJSONObject <SXTextStyle>
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
+@property (nonatomic, readonly) SXJSONArray *conditional;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <SXTextStyleFontAttributes> *fontAttributes;

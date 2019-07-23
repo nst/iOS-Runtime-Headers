@@ -24,6 +24,8 @@
 @property (nonatomic, readonly, copy) NSString *termsID;
 @property (nonatomic, readonly, copy) NSURL *termsURL;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)applicationIdentifier;
 - (long long)cardType;

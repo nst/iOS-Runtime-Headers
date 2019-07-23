@@ -5,14 +5,14 @@
 @interface IKDOMPrototype : NSObject {
     IKDOMElement * _domElement;
     NSString * _identifier;
-    IKDOMRules * _rules;
+    _IKDOMPrototypeDerivationRules * _rules;
     NSString * _selector;
     NSString * _type;
 }
 
 @property (nonatomic, readonly) IKDOMElement *domElement;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly, copy) IKDOMRules *rules;
+@property (nonatomic, readonly, copy) _IKDOMPrototypeDerivationRules *rules;
 @property (nonatomic, readonly, copy) NSString *selector;
 @property (nonatomic, readonly, copy) NSString *type;
 

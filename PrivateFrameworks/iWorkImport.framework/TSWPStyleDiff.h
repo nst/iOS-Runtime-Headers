@@ -24,15 +24,15 @@
 - (id)initWithContext:(id)arg1 style:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToStyleDiff:(id)arg1;
-- (void)loadFromArchive:(const struct StyleDiffArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CharacterStylePropertyChangeSetArchive {} *x6; struct ParagraphStylePropertyChangeSetArchive {} *x7; struct ShapeStylePropertyChangeSetArchive {} *x8; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct StyleDiffArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct CharacterStylePropertyChangeSetArchive {} *x6; struct ParagraphStylePropertyChangeSetArchive {} *x7; struct ShapeStylePropertyChangeSetArchive {} *x8; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)previouslyAppliedChangeSet;
-- (void)saveToArchive:(struct StyleDiffArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CharacterStylePropertyChangeSetArchive {} *x6; struct ParagraphStylePropertyChangeSetArchive {} *x7; struct ShapeStylePropertyChangeSetArchive {} *x8; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StyleDiffArchive { int (**x1)(); struct InternalMetadataWithArena { void *x_2_1_1; } x2; struct HasBits<1> { unsigned int x_3_1_1[1]; } x3; struct CachedSize { struct atomic<int> { int x_1_2_1; } x_4_1_1; } x4; struct Reference {} *x5; struct CharacterStylePropertyChangeSetArchive {} *x6; struct ParagraphStylePropertyChangeSetArchive {} *x7; struct ShapeStylePropertyChangeSetArchive {} *x8; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setChangeSet:(id)arg1;
 - (void)setPreviouslyAppliedChangeSet:(id)arg1;
 - (void)setStyle:(id)arg1;
 - (id)style;
-- (id)styleDiffForTable:(int)arg1 storage:(id)arg2 currentObject:(id)arg3;
+- (id)styleDiffForTable:(unsigned long long)arg1 storage:(id)arg2 currentObject:(id)arg3;
 
 @end

@@ -7,6 +7,7 @@
     UILabel * _durationLabel;
     UIImageView * _iconImageView;
     UIButton * _joinButton;
+    NSString * _joinButtonText_TestingOverride;
     unsigned long long  _state;
     UILabel * _statusLabel;
     UILabel * _titleLabel;
@@ -17,6 +18,8 @@
 @property (nonatomic, retain) UILabel *durationLabel;
 @property (nonatomic, retain) UIImageView *iconImageView;
 @property (nonatomic, retain) UIButton *joinButton;
+@property (nonatomic, copy) NSString *joinButtonText_TestingOverride;
+@property (nonatomic, readonly) bool shouldRenderJoinButtonAsIcon;
 @property (nonatomic) unsigned long long state;
 @property (nonatomic, retain) UILabel *statusLabel;
 @property (nonatomic, retain) UILabel *titleLabel;
@@ -28,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)_currentCall;
 - (void)_joinButtonTapped:(id)arg1;
+- (id)_joinButtonText;
 - (id)_joinStateStatusString;
 - (void)_updateStatusLabelForDuration;
 - (bool)animating;
@@ -38,6 +42,9 @@
 - (id)iconImageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)joinButton;
+- (bool)joinButtonIsShowingImageContent;
+- (bool)joinButtonIsShowingTextContent;
+- (id)joinButtonText_TestingOverride;
 - (void)layoutSubviews;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;
@@ -45,10 +52,12 @@
 - (void)setDurationLabel:(id)arg1;
 - (void)setIconImageView:(id)arg1;
 - (void)setJoinButton:(id)arg1;
+- (void)setJoinButtonText_TestingOverride:(id)arg1;
 - (void)setState:(unsigned long long)arg1;
 - (void)setStatusLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTuConversationUUID:(id)arg1;
+- (bool)shouldRenderJoinButtonAsIcon;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (unsigned long long)state;
 - (id)statusLabel;

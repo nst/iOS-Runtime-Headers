@@ -15,6 +15,7 @@
     NSUUID * _modelIdentifier;
     NSString * _name;
     HMFProductInfo * _productInfo;
+    HMDRPIdentity * _rpIdentity;
     HMDHomeKitVersion * _version;
 }
 
@@ -38,6 +39,7 @@
 @property (readonly, copy) NSString *privateDescription;
 @property (copy) HMFProductInfo *productInfo;
 @property (readonly, copy) NSString *propertyDescription;
+@property (copy) HMDRPIdentity *rpIdentity;
 @property (readonly, copy) NSString *shortDescription;
 @property (readonly) Class superclass;
 @property (readonly, copy) HMDHomeKitVersion *version;
@@ -87,6 +89,7 @@
 - (id)name;
 - (id)productInfo;
 - (id)remoteDestinationString;
+- (id)rpIdentity;
 - (void)setAccount:(id)arg1;
 - (void)setCapabilities:(id)arg1;
 - (void)setCloudTracked:(bool)arg1;
@@ -96,6 +99,7 @@
 - (void)setLocallyTracked:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setProductInfo:(id)arg1;
+- (void)setRpIdentity:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (id)shortDescription;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;

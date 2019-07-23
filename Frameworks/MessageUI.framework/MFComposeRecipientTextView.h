@@ -102,6 +102,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_placeholderAttachmentRange;
 - (id)_placeholderAttachmentWithStaticWidth;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeForComposeRecipientAtom:(id)arg1;
+- (void)_recipientsWereAdded:(id)arg1;
 - (void)_recomputeTextContainerExclusionPaths;
 - (void)_removeAddressAtomSubview:(id)arg1;
 - (void)_removeAllRecipients;
@@ -123,6 +124,8 @@
 - (id)addButton;
 - (void)addRecipient:(id)arg1;
 - (void)addRecipient:(id)arg1 index:(unsigned long long)arg2 animate:(bool)arg3;
+- (void)addRecipient:(id)arg1 index:(unsigned long long)arg2 animate:(bool)arg3 notify:(bool)arg4;
+- (void)addRecipient:(id)arg1 notify:(bool)arg2;
 - (void)addRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 - (id)addresses;
 - (id)atomContainerView;

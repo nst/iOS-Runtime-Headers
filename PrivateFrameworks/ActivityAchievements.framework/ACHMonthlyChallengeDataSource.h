@@ -4,15 +4,18 @@
 
 @interface ACHMonthlyChallengeDataSource : NSObject {
     ACHActivitySummaryUtility * _activitySummaryUtility;
+    HDDatabaseTransactionContext * _databaseContext;
     ACHWorkoutUtility * _workoutUtility;
 }
 
 @property (nonatomic) ACHActivitySummaryUtility *activitySummaryUtility;
+@property (nonatomic) HDDatabaseTransactionContext *databaseContext;
 @property (nonatomic) ACHWorkoutUtility *workoutUtility;
 
 - (void).cxx_destruct;
 - (id)activitySummaryUtility;
 - (double)caloriesDuringDateComponentInterval:(id)arg1;
+- (id)databaseContext;
 - (double)exerciseMinutesDuringDateComponentInterval:(id)arg1;
 - (id)initWithActivitySummaryUtility:(id)arg1 workoutUtility:(id)arg2;
 - (long long)numberOfAllRingsClosedDuringDateComponentInterval:(id)arg1;
@@ -22,6 +25,7 @@
 - (long long)numberOfStandRingsClosedDuringDateComponentInterval:(id)arg1;
 - (long long)numberOfWorkoutsCompletedDuringDateInterval:(id)arg1;
 - (void)setActivitySummaryUtility:(id)arg1;
+- (void)setDatabaseContext:(id)arg1;
 - (void)setWorkoutUtility:(id)arg1;
 - (double)valueForMonthlyChallengeType:(unsigned long long)arg1 forDateComponentInterval:(id)arg2 inCalendar:(id)arg3;
 - (double)walkingRunningDistanceDuringDateComponentInterval:(id)arg1;

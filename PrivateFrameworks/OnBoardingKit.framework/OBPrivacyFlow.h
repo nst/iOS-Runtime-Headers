@@ -37,6 +37,7 @@
 - (bool)_conformsToRequirements:(id)arg1;
 - (id)_currentPlatform;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
+- (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 table:(id)arg3 preferredDeviceType:(unsigned long long)arg4;
 - (id)_textForConditionalItem:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 - (struct UIImage { Class x1; }*)buttonIcon;
 - (unsigned long long)contentVersion;

@@ -103,8 +103,11 @@
 + (id)breadcrumbMessageWithText:(id)arg1 associatedMessageGUID:(id)arg2 balloonBundleID:(id)arg3 fileTransferGUIDs:(id)arg4 payloadData:(id)arg5;
 + (id)defaultInvitationMessageFromSender:(id)arg1 flags:(unsigned long long)arg2;
 + (id)determineRichLinksInMessage:(id)arg1;
++ (id)determineRichLinksInMessage:(id)arg1 additionalSupportedSchemes:(id)arg2;
 + (id)editedMessageWithOriginalMessage:(id)arg1 originalPrefixedGUID:(id)arg2 newBody:(id)arg3;
 + (id)fromMeIMHandle:(id)arg1 withText:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
++ (bool)hasKnownSchemesForRichLinkURL:(id)arg1;
++ (bool)hasKnownSchemesForRichLinkURL:(id)arg1 additionalSupportedSchemes:(id)arg2;
 + (id)instantMessageWithAssociatedMessageContent:(id)arg1 flags:(unsigned long long)arg2 associatedMessageGUID:(id)arg3 associatedMessageType:(long long)arg4 associatedMessageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 messageSummaryInfo:(id)arg6;
 + (id)instantMessageWithText:(id)arg1 flags:(unsigned long long)arg2;
 + (id)instantMessageWithText:(id)arg1 messageSubject:(id)arg2 fileTransferGUIDs:(id)arg3 flags:(unsigned long long)arg4;
@@ -115,7 +118,8 @@
 + (id)messageFromIMMessageItem:(id)arg1 sender:(id)arg2 subject:(id)arg3;
 + (id)messageFromIMMessageItemDictionary:(id)arg1 body:(id)arg2 sender:(id)arg3 subject:(id)arg4;
 + (id)messageWithLocation:(id)arg1 flags:(unsigned long long)arg2 error:(id)arg3 guid:(id)arg4;
-+ (bool)supportedRichLinkURL:(id)arg1;
++ (Class)richLinksDataSourceClass;
++ (bool)supportedRichLinkURL:(id)arg1 additionalSupportedSchemes:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_associatedMessageGUID:(id)arg1;

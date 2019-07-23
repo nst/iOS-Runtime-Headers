@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ScreenTimeUI.framework/ScreenTimeUI
  */
 
-@interface STDevicePickupsUsageGroupSpecifierProvider : STUsageGroupSpecifierProvider {
-    PSSpecifier * _pickupsSummaryGraphSpecifier;
-}
+@interface STDevicePickupsUsageGroupSpecifierProvider : STShowMoreUsageGroupSpecifierProvider
 
-@property (nonatomic, retain) PSSpecifier *pickupsSummaryGraphSpecifier;
-
-- (void).cxx_destruct;
-- (id)getPickupInfo:(id)arg1;
+- (id)getPickupsInfo:(id)arg1;
+- (id)getUsageReport:(id)arg1;
 - (id)init;
-- (id)mostPickups:(id)arg1;
+- (id)newSpecifierWithUsageItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)pickupsSummaryGraphSpecifier;
 - (void)setCoordinator:(id)arg1;
-- (void)setPickupsSummaryGraphSpecifier:(id)arg1;
-- (id)totalPickups:(id)arg1;
+- (void)showMostUsedDetailListController:(id)arg1;
+- (void)updateSpecifier:(id)arg1 usageItem:(id)arg2;
 
 @end

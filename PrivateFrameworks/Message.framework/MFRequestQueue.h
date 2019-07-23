@@ -4,11 +4,12 @@
 
 @interface MFRequestQueue : NSObject {
     NSConditionLock * _condition;
-    NSMutableArray * _consumers;
     NSMutableArray * _requests;
     unsigned int  _waitingInside;
     unsigned int  _waitingOutside;
 }
+
+@property (nonatomic, retain) NSMutableArray *requests;
 
 - (void)_processRequests:(id)arg1 consumers:(id)arg2;
 - (void)addRequest:(id)arg1 consumer:(id)arg2;
@@ -17,6 +18,8 @@
 - (id)init;
 - (void)processRequest:(id)arg1 consumer:(id)arg2;
 - (void)processRequests:(id)arg1 consumers:(id)arg2;
+- (id)requests;
+- (void)setRequests:(id)arg1;
 - (void)willAddRequests:(id)arg1 consumers:(id)arg2;
 
 @end

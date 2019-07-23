@@ -4,8 +4,11 @@
 
 @interface CUPairingSession : NSObject {
     NSDictionary * _acl;
+    NSDictionary * _aclActual;
     NSDictionary * _additionalPeerInfo;
     NSDictionary * _additionalSelfInfo;
+    NSArray * _allowedMACAddresses;
+    NSDictionary * _appInfoSelf;
     id /* block */  _completionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSString * _fixedPIN;
@@ -23,6 +26,7 @@
     NSString * _peerAppleID;
     NSDictionary * _peerInfo;
     unsigned int  _pinType;
+    unsigned int  _pinTypeActual;
     id /* block */  _promptForPINHandler;
     unsigned long long  _selfAppFlags;
     id /* block */  _sendDataHandler;
@@ -35,8 +39,12 @@
 }
 
 @property (nonatomic, copy) NSDictionary *acl;
+@property (nonatomic, readonly, copy) NSDictionary *aclActual;
 @property (nonatomic, copy) NSDictionary *additionalPeerInfo;
 @property (nonatomic, copy) NSDictionary *additionalSelfInfo;
+@property (nonatomic, copy) NSArray *allowedMACAddresses;
+@property (nonatomic, readonly, copy) NSDictionary *appInfoPeer;
+@property (nonatomic, copy) NSDictionary *appInfoSelf;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) NSString *fixedPIN;
@@ -54,6 +62,7 @@
 @property (nonatomic, copy) NSString *peerAppleID;
 @property (nonatomic, readonly, copy) NSDictionary *peerInfo;
 @property (nonatomic) unsigned int pinType;
+@property (nonatomic, readonly) unsigned int pinTypeActual;
 @property (nonatomic, copy) id /* block */ promptForPINHandler;
 @property (nonatomic) unsigned long long selfAppFlags;
 @property (nonatomic, copy) id /* block */ sendDataHandler;
@@ -70,9 +79,13 @@
 - (void)_receivedData:(id)arg1 flags:(unsigned int)arg2;
 - (void)_tryPIN:(id)arg1;
 - (id)acl;
+- (id)aclActual;
 - (void)activate;
 - (id)additionalPeerInfo;
 - (id)additionalSelfInfo;
+- (id)allowedMACAddresses;
+- (id)appInfoPeer;
+- (id)appInfoSelf;
 - (void)closeStream:(id)arg1;
 - (id /* block */)completionHandler;
 - (void)dealloc;
@@ -91,11 +104,13 @@
 - (id)myAppleID;
 - (id)myAppleIDInfoClient;
 - (id)openStreamWithName:(id)arg1 error:(id*)arg2;
+- (id)openStreamWithName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)pairedPeer;
 - (unsigned long long)peerAppFlags;
 - (id)peerAppleID;
 - (id)peerInfo;
 - (unsigned int)pinType;
+- (unsigned int)pinTypeActual;
 - (id /* block */)promptForPINHandler;
 - (void)receivedData:(id)arg1;
 - (unsigned long long)selfAppFlags;
@@ -104,6 +119,8 @@
 - (void)setAcl:(id)arg1;
 - (void)setAdditionalPeerInfo:(id)arg1;
 - (void)setAdditionalSelfInfo:(id)arg1;
+- (void)setAllowedMACAddresses:(id)arg1;
+- (void)setAppInfoSelf:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setFixedPIN:(id)arg1;

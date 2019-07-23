@@ -2,34 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppleMediaServices.framework/AppleMediaServices
  */
 
-@interface AMSUNUserNotificationStrategy : NSObject <AMSUserNotificationStrategy, UNUserNotificationCenterDelegate> {
-    UNUserNotificationCenter * _center;
-    <AMSUserNotificationCenterDelegate> * _delegate;
-    AMSUserNotificationCenter * _originalCenter;
-}
+@interface AMSUNUserNotificationStrategy : NSObject <AMSUserNotificationStrategy>
 
-@property (nonatomic, readonly) NSArray *activeNotifications;
-@property (nonatomic, retain) UNUserNotificationCenter *center;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <AMSUserNotificationCenterDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) AMSUserNotificationCenter *originalCenter;
-@property (readonly) Class superclass;
-
-- (void).cxx_destruct;
-- (id)_createNoteFromNotification:(id)arg1;
-- (void)_requestPermissionWithCompletion:(id /* block */)arg1;
-- (id)activeNotifications;
-- (id)center;
-- (id)delegate;
-- (id)initWithOriginalCenter:(id)arg1 bundleId:(id)arg2 runningInDaemon:(bool)arg3;
-- (id)originalCenter;
-- (id)postNotification:(id)arg1;
-- (id)removeNotification:(id)arg1;
-- (void)setCenter:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(id /* block */)arg3;
++ (id)_activeNotificationsWithCenterBundleId:(id)arg1;
++ (id)_centerForBundleId:(id)arg1;
++ (id)_postNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_removeNotification:(id)arg1 centerBundleId:(id)arg2;
++ (id)_removeNotificationWithIdentifier:(id)arg1 centerBundleId:(id)arg2 logKey:(id)arg3;
 
 @end

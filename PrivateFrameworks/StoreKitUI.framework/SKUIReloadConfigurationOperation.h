@@ -11,6 +11,8 @@
 @property (retain) SSURLBag *URLBag;
 @property (copy) id /* block */ outputBlock;
 
++ (id)cachePath;
+
 - (void).cxx_destruct;
 - (id)URLBag;
 - (id)init;
